@@ -177,6 +177,42 @@ def main() -> None:
                        "near_pole_threshold": "0.9"},
         "data": {"atoms": out_atoms, "structural_diagnosis": structural},
         "cross_checks": structural,
+        # `allPassed` below was already derived from
+        # `tower_ordering_opposes_binding`, so this witness DID make a claim —
+        # but it carried no `assertions` array, so every consumer that reads
+        # the array saw "all zero of them passed" (bean `qou-srvu`). These
+        # three record the claim the producer already makes, in the form a
+        # consumer can check; `allPassed` keeps its existing definition and
+        # the verdict is unchanged. This probe writes its witness by hand via
+        # `stamp_staleness_metadata`, not through `WitnessBuilder.save()`, so
+        # the array is written literally in the same shape the builder emits.
+        "assertions": [
+            {
+                "name": "tower_monotone_He3_gt_T",
+                "computed": structural["tower_He3_gt_T"],
+                "expected": True,
+                "passed": structural["tower_He3_gt_T"],
+                "source": "sum_i -Li2^q(-|V_i^full|) at q_0: He3 > T",
+            },
+            {
+                "name": "binding_He3_lt_T_AME2020",
+                "computed": structural["B_He3_lt_T_AME"],
+                "expected": True,
+                "passed": structural["B_He3_lt_T_AME"],
+                "source": "AME2020: B(3He) < B(3H), the mirror-pair ordering",
+            },
+            {
+                "name": "tower_ordering_opposes_binding",
+                "computed": structural["tower_ordering_opposes_binding"],
+                "expected": True,
+                "passed": structural["tower_ordering_opposes_binding"],
+                "source": (
+                    "the structural deficit this probe exists to isolate: "
+                    "the two orderings above are OPPOSITE, so the "
+                    "per-generator tower has the wrong Z-ordering at A=3"
+                ),
+            },
+        ],
         "allPassed": structural["tower_ordering_opposes_binding"],
         "provenance": ["terms-2-3-atom-per-gen-mpfr-50dps.witness.json", "AME2020"],
     }

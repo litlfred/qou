@@ -260,3 +260,7 @@ scripts/lean/*.ilean
 computations/borromean-reconstruct-ckpt.json
 .leanscratch/
 *.checkpoint.jsonl
+
+# resumable-driver scratch checkpoint (not a witness — no provenance)
+computations/.bpp-higher-a-checkpoint.json
+computations/.bpp-higher-a-checkpoint.json.tmp

@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 14,
-    "distinct_values": 12,
-    "files": 7,
-    "live_files": 2,
-    "new_not_baselined": 2,
+    "occurrences": 69,
+    "distinct_values": 43,
+    "files": 9,
+    "live_files": 4,
+    "new_not_baselined": 57,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -92,15 +92,345 @@
         "field": "rows[2].M_pred_MeV",
         "value": "1876.123929999999973006197251379489898681640625",
         "real_value": "1876.12393"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[0].top_share",
+        "value": "0.199606982202767985201674605377775151282548904418945312500000",
+        "real_value": "0.19960698220276799"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[0].participation",
+        "value": "7.62425355471421717368230019928887486457824707031250000000000",
+        "real_value": "7.624253554714217"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[1].top_share",
+        "value": "0.196023382425606906842574517213506624102592468261718750000000",
+        "real_value": "0.1960233824256069"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[1].participation",
+        "value": "7.80139090412254621043075530906207859516143798828125000000000",
+        "real_value": "7.801390904122546"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[2].top_share",
+        "value": "0.190875256486908839725913367146858945488929748535156250000000",
+        "real_value": "0.19087525648690884"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.2[2].participation",
+        "value": "7.56003196062251880960047856206074357032775878906250000000000",
+        "real_value": "7.560031960622519"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[0].top_share",
+        "value": "0.0907049419354867964004895952712104190140962600708007812500000",
+        "real_value": "0.0907049419354868"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[0].participation",
+        "value": "18.8953174159189742908893094863742589950561523437500000000000",
+        "real_value": "18.895317415918974"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[1].top_share",
+        "value": "0.0802235785588943928203775612928438931703567504882812500000000",
+        "real_value": "0.08022357855889439"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[1].participation",
+        "value": "20.2557109694898862528589233988896012306213378906250000000000",
+        "real_value": "20.255710969489886"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[2].top_share",
+        "value": "0.0961008616506989071792688150708272587507963180541992187500000",
+        "real_value": "0.09610086165069891"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[2].participation",
+        "value": "20.5904773868754062959851580671966075897216796875000000000000",
+        "real_value": "20.590477386875406"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[3].top_share",
+        "value": "0.0968045112247200717492390253937628585845232009887695312500000",
+        "real_value": "0.09680451122472007"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.3[3].participation",
+        "value": "19.8185441795522834240728116128593683242797851562500000000000",
+        "real_value": "19.818544179552283"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[0].top_share",
+        "value": "0.0530284669146108139647921575487998779863119125366210937500000",
+        "real_value": "0.053028466914610814"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[0].participation",
+        "value": "42.1688734495197650176123715937137603759765625000000000000000",
+        "real_value": "42.168873449519765"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[1].top_share",
+        "value": "0.0435659540872939052280621297086327103897929191589355468750000",
+        "real_value": "0.043565954087293905"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[1].participation",
+        "value": "44.3999826823949987897321989294141530990600585937500000000000",
+        "real_value": "44.399982682395"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[2].top_share",
+        "value": "0.0503538081099217660341338387297582812607288360595703125000000",
+        "real_value": "0.050353808109921766"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[2].participation",
+        "value": "45.4866170466504797786910785362124443054199218750000000000000",
+        "real_value": "45.48661704665048"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[3].top_share",
+        "value": "0.0480683126806936283914595264832314569503068923950195312500000",
+        "real_value": "0.04806831268069363"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[3].participation",
+        "value": "44.8256767764511678819872031453996896743774414062500000000000",
+        "real_value": "44.82567677645117"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[4].top_share",
+        "value": "0.0566908310614428270768350159869441995397210121154785156250000",
+        "real_value": "0.05669083106144283"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "configurations.4[4].participation",
+        "value": "43.8182322342940153703239047899842262268066406250000000000000",
+        "real_value": "43.818232234294015"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.top_share.magic[0]",
+        "value": "0.199606982202767985201674605377775151282548904418945312500000",
+        "real_value": "0.19960698220276799"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.top_share.magic[1]",
+        "value": "0.190875256486908839725913367146858945488929748535156250000000",
+        "real_value": "0.19087525648690884"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.top_share.non_magic[0]",
+        "value": "0.196023382425606906842574517213506624102592468261718750000000",
+        "real_value": "0.1960233824256069"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.top_share.magic_mean_minus_non_magic_mean",
+        "value": "-0.000782263080768508256568338765646331012248992919921875000000000",
+        "real_value": "-0.0007822630807685083"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.participation.magic[0]",
+        "value": "7.62425355471421717368230019928887486457824707031250000000000",
+        "real_value": "7.624253554714217"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.participation.magic[1]",
+        "value": "7.56003196062251880960047856206074357032775878906250000000000",
+        "real_value": "7.560031960622519"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.participation.non_magic[0]",
+        "value": "7.80139090412254621043075530906207859516143798828125000000000",
+        "real_value": "7.801390904122546"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.2.participation.magic_mean_minus_non_magic_mean",
+        "value": "-0.209248146454178218789365928387269377708435058593750000000000",
+        "real_value": "-0.20924814645417822"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.top_share.magic[0]",
+        "value": "0.0802235785588943928203775612928438931703567504882812500000000",
+        "real_value": "0.08022357855889439"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.top_share.magic[1]",
+        "value": "0.0961008616506989071792688150708272587507963180541992187500000",
+        "real_value": "0.09610086165069891"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.top_share.non_magic[0]",
+        "value": "0.0907049419354867964004895952712104190140962600708007812500000",
+        "real_value": "0.0907049419354868"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.top_share.non_magic[1]",
+        "value": "0.0968045112247200717492390253937628585845232009887695312500000",
+        "real_value": "0.09680451122472007"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.top_share.magic_mean_minus_non_magic_mean",
+        "value": "-0.00559250647530677713614721824342268519103527069091796875000000",
+        "real_value": "-0.005592506475306777"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.participation.magic[0]",
+        "value": "20.2557109694898862528589233988896012306213378906250000000000",
+        "real_value": "20.255710969489886"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.participation.magic[1]",
+        "value": "20.5904773868754062959851580671966075897216796875000000000000",
+        "real_value": "20.590477386875406"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.participation.non_magic[0]",
+        "value": "18.8953174159189742908893094863742589950561523437500000000000",
+        "real_value": "18.895317415918974"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.participation.non_magic[1]",
+        "value": "19.8185441795522834240728116128593683242797851562500000000000",
+        "real_value": "19.818544179552283"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.3.participation.magic_mean_minus_non_magic_mean",
+        "value": "1.06616338044701564058414078317582607269287109375000000000000",
+        "real_value": "1.0661633804470156"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.magic[0]",
+        "value": "0.0503538081099217660341338387297582812607288360595703125000000",
+        "real_value": "0.050353808109921766"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.non_magic[0]",
+        "value": "0.0530284669146108139647921575487998779863119125366210937500000",
+        "real_value": "0.053028466914610814"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.non_magic[1]",
+        "value": "0.0435659540872939052280621297086327103897929191589355468750000",
+        "real_value": "0.043565954087293905"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.non_magic[2]",
+        "value": "0.0480683126806936283914595264832314569503068923950195312500000",
+        "real_value": "0.04806831268069363"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.non_magic[3]",
+        "value": "0.0566908310614428270768350159869441995397210121154785156250000",
+        "real_value": "0.05669083106144283"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.top_share.magic_mean_minus_non_magic_mean",
+        "value": "0.0000154169239114723688466312978562200441956520080566406250000000",
+        "real_value": "1.541692391147237e-05"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.magic[0]",
+        "value": "45.4866170466504797786910785362124443054199218750000000000000",
+        "real_value": "45.48661704665048"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.non_magic[0]",
+        "value": "42.1688734495197650176123715937137603759765625000000000000000",
+        "real_value": "42.168873449519765"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.non_magic[1]",
+        "value": "44.3999826823949987897321989294141530990600585937500000000000",
+        "real_value": "44.399982682395"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.non_magic[2]",
+        "value": "44.8256767764511678819872031453996896743774414062500000000000",
+        "real_value": "44.82567677645117"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.non_magic[3]",
+        "value": "43.8182322342940153703239047899842262268066406250000000000000",
+        "real_value": "43.818232234294015"
+      },
+      {
+        "file": "computations/probes/tower-walk-magic-replication.witness.json",
+        "field": "per_level_verdict.4.participation.magic_mean_minus_non_magic_mean",
+        "value": "1.68342576098549301377715892158448696136474609375000000000000",
+        "real_value": "1.683425760985493"
+      },
+      {
+        "file": "computations/qbeta/qbeta-three-nucleon-nf-alpha-spread.witness.json",
+        "field": "parameters.required_N1_factor",
+        "value": "0.99839767000000001484494305259431712329387664794922",
+        "real_value": "0.99839767"
       }
     ]
   },
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "ba7a8bbc7be0",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
+  "commitSha": "39019c3e0b209e02d627af057d4b32f308bbdfe7",
   "engine": "python",
-  "computedAt": "2026-08-30T13:00:17.471934+00:00",
+  "computedAt": "2026-08-31T04:35:58.373598+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

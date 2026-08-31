@@ -333,6 +333,7 @@ import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
 import QOU.Mass.SumSYTEqInvolution
 import QOU.Mathlib.YoungLatticeUpOperator
+import QOU.Mathlib.SkewSYTMaxCorner
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount

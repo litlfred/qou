@@ -1,0 +1,11380 @@
+{
+  "engine": "python+fractions",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:06:46.668377+00:00",
+  "commitSha": "c6b2667b91fd122f76a6574567e543b99e37468f",
+  "assertions": [
+    {
+      "name": "h3_quotient_jet_grades",
+      "computed": "4",
+      "expected": "4",
+      "passed": true
+    },
+    {
+      "name": "bond_sweep_control_reproduces_canonical_builder",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "h3_grades_vs_bond_product_grades_at_A4",
+      "computed": "4 vs 7",
+      "expected": "4 vs 7",
+      "passed": true
+    },
+    {
+      "name": "bond_sweep_distinct_shapes_over_configurations",
+      "computed": "107/222",
+      "expected": "107/222",
+      "passed": true
+    },
+    {
+      "name": "z2n2_shapes_over_bond_counts",
+      "computed": "6/7",
+      "expected": "6/7",
+      "passed": true
+    },
+    {
+      "name": "full_tower_max_grade_at_A2",
+      "computed": "15",
+      "expected": "15",
+      "passed": true
+    },
+    {
+      "name": "full_tower_max_grade_at_A20",
+      "computed": "1770",
+      "expected": "1770",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A2",
+      "computed": "2/1",
+      "expected": "2/1",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A3",
+      "computed": "2/2",
+      "expected": "2/2",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A4",
+      "computed": "1/4",
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A5",
+      "computed": "2/4",
+      "expected": "2/4",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A6",
+      "computed": "2/5",
+      "expected": "2/5",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A7",
+      "computed": "2/6",
+      "expected": "2/6",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A8",
+      "computed": "4/5",
+      "expected": "4/5",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A9",
+      "computed": "4/6",
+      "expected": "4/6",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A10",
+      "computed": "2/9",
+      "expected": "2/9",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A11",
+      "computed": "4/8",
+      "expected": "4/8",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A12",
+      "computed": "4/9",
+      "expected": "4/9",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A13",
+      "computed": "4/10",
+      "expected": "4/10",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A14",
+      "computed": "4/11",
+      "expected": "4/11",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A15",
+      "computed": "4/12",
+      "expected": "4/12",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A16",
+      "computed": "3/14",
+      "expected": "3/14",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A17",
+      "computed": "4/14",
+      "expected": "4/14",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A18",
+      "computed": "4/15",
+      "expected": "4/15",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A19",
+      "computed": "4/16",
+      "expected": "4/16",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A20",
+      "computed": "6/15",
+      "expected": "6/15",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 551197,
+  "computation": "gs-filtration-jet-shape-magic",
+  "scriptFile": "gs_filtration_jet_shape_magic_probe.py",
+  "scriptHash": "587ca1884b1e",
+  "scriptCommitSha": "c6b2667b91fd122f76a6574567e543b99e37468f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gs_filtration_jet_shape_magic_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gs_filtration_jet_shape_magic_probe.py"
+  },
+  "probe": "gs_filtration_jet_shape_magic",
+  "question": "does the Groebner-Shirshov filtration grading -- the jet vertical degree, indexed by Coxeter length of the normal-form word -- separate magic from non-magic nucleon configurations?",
+  "why_distinct_from_q_degree": "symbolic_nf_q_degree_magic_probe measured degree in q; this measures the filtration by NF word length, a different grading",
+  "ceiling": {
+    "h3_quotient_grades": 4,
+    "full_tower_max_coxeter_length": {
+      "2": 15,
+      "3": 36,
+      "4": 66,
+      "5": 105,
+      "6": 153,
+      "7": 210,
+      "8": 276,
+      "9": 351,
+      "10": 435,
+      "11": 528,
+      "12": 630,
+      "13": 741,
+      "14": 861,
+      "15": 990,
+      "16": 1128,
+      "17": 1275,
+      "18": 1431,
+      "19": 1596,
+      "20": 1770
+    },
+    "note": "unconditional arithmetic; NOT an exclusion of many-body structure. The GS word-length grading is NOT the bond-product grading -- see grading_identification: different cardinality (4 vs C(A,2)+1) and the folding is many-to-one on bond count. QOU.Mass.BodyOrderJetGrading.body_eq_graded IS discharged for the bond-product model by body_eq_graded_of_bond_product; an earlier draft of this probe wrongly called it assumed, and wrongly claimed the two models index in opposite directions (the complement bijection esymm_eq_compl_sum absorbs that)."
+  },
+  "grading_identification": {
+    "question": "is the GS word-length filtration (0..3) identifiable with the bond-product / Mayer grading (0..|s|)?",
+    "answer": "no -- different cardinality, and the folding loses bond count",
+    "control_keep_all_reproduces_canonical_builder": true,
+    "control_configurations": 24,
+    "h3_grades": 4,
+    "bond_product_grades": {
+      "2": 2,
+      "4": 7,
+      "8": 29,
+      "20": 191
+    },
+    "saturation_walk": [
+      {
+        "crossings": 0,
+        "support": [
+          0
+        ],
+        "terms_by_grade": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "crossings": 1,
+        "support": [
+          0,
+          1
+        ],
+        "terms_by_grade": [
+          2,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "crossings": 2,
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "terms_by_grade": [
+          3,
+          4,
+          1,
+          0
+        ]
+      },
+      {
+        "crossings": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          4,
+          3,
+          4,
+          1
+        ]
+      }
+    ],
+    "support_full_at_every_bond_count": true,
+    "bond_sweep_configurations": 222,
+    "bond_sweep_distinct_shapes": 107,
+    "bond_sweep_collisions": 115,
+    "z2n2_distinct_shapes": 6,
+    "z2n2_bond_counts": 7,
+    "collisions": [
+      {
+        "config": [
+          1,
+          3,
+          3
+        ],
+        "collides_with": [
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "config": [
+          1,
+          4,
+          3
+        ],
+        "collides_with": [
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "config": [
+          1,
+          4,
+          4
+        ],
+        "collides_with": [
+          1,
+          4,
+          2
+        ]
+      },
+      {
+        "config": [
+          1,
+          4,
+          6
+        ],
+        "collides_with": [
+          1,
+          4,
+          0
+        ]
+      },
+      {
+        "config": [
+          1,
+          4,
+          8
+        ],
+        "collides_with": [
+          1,
+          4,
+          0
+        ]
+      },
+      {
+        "config": [
+          2,
+          2,
+          5
+        ],
+        "collides_with": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "config": [
+          2,
+          3,
+          5
+        ],
+        "collides_with": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "config": [
+          2,
+          3,
+          6
+        ],
+        "collides_with": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "config": [
+          2,
+          3,
+          8
+        ],
+        "collides_with": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          5
+        ],
+        "collides_with": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          6
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          8
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          10
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          11
+        ],
+        "collides_with": [
+          2,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          2,
+          4,
+          12
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          0,
+          0
+        ],
+        "collides_with": [
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "config": [
+          3,
+          0,
+          1
+        ],
+        "collides_with": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "config": [
+          3,
+          0,
+          2
+        ],
+        "collides_with": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "config": [
+          3,
+          0,
+          3
+        ],
+        "collides_with": [
+          0,
+          4,
+          5
+        ]
+      },
+      {
+        "config": [
+          3,
+          1,
+          0
+        ],
+        "collides_with": [
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "config": [
+          3,
+          1,
+          1
+        ],
+        "collides_with": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "config": [
+          3,
+          1,
+          2
+        ],
+        "collides_with": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "config": [
+          3,
+          1,
+          3
+        ],
+        "collides_with": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          0
+        ],
+        "collides_with": [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          1
+        ],
+        "collides_with": [
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          2
+        ],
+        "collides_with": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          3
+        ],
+        "collides_with": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          4
+        ],
+        "collides_with": [
+          2,
+          3,
+          9
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          5
+        ],
+        "collides_with": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          2,
+          6
+        ],
+        "collides_with": [
+          2,
+          3,
+          9
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          0
+        ],
+        "collides_with": [
+          2,
+          4,
+          1
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          1
+        ],
+        "collides_with": [
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          2
+        ],
+        "collides_with": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          3
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          4
+        ],
+        "collides_with": [
+          2,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          5
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          6
+        ],
+        "collides_with": [
+          2,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          12
+        ],
+        "collides_with": [
+          3,
+          3,
+          10
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          13
+        ],
+        "collides_with": [
+          3,
+          3,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          14
+        ],
+        "collides_with": [
+          3,
+          3,
+          10
+        ]
+      },
+      {
+        "config": [
+          3,
+          3,
+          15
+        ],
+        "collides_with": [
+          3,
+          3,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          5
+        ],
+        "collides_with": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          6
+        ],
+        "collides_with": [
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          12
+        ],
+        "collides_with": [
+          3,
+          4,
+          10
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          13
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          14
+        ],
+        "collides_with": [
+          3,
+          4,
+          10
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          15
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          17
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          18
+        ],
+        "collides_with": [
+          3,
+          4,
+          16
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          19
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          20
+        ],
+        "collides_with": [
+          3,
+          4,
+          16
+        ]
+      },
+      {
+        "config": [
+          3,
+          4,
+          21
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          0
+        ],
+        "collides_with": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          1
+        ],
+        "collides_with": [
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          2
+        ],
+        "collides_with": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          3
+        ],
+        "collides_with": [
+          3,
+          1,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          4
+        ],
+        "collides_with": [
+          3,
+          1,
+          5
+        ]
+      },
+      {
+        "config": [
+          4,
+          0,
+          5
+        ],
+        "collides_with": [
+          3,
+          1,
+          6
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          0
+        ],
+        "collides_with": [
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          1
+        ],
+        "collides_with": [
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          2
+        ],
+        "collides_with": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          3
+        ],
+        "collides_with": [
+          2,
+          3,
+          9
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          4
+        ],
+        "collides_with": [
+          3,
+          2,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          5
+        ],
+        "collides_with": [
+          3,
+          2,
+          8
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          6
+        ],
+        "collides_with": [
+          3,
+          2,
+          9
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          7
+        ],
+        "collides_with": [
+          3,
+          2,
+          10
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          9
+        ],
+        "collides_with": [
+          2,
+          4,
+          0
+        ]
+      },
+      {
+        "config": [
+          4,
+          1,
+          10
+        ],
+        "collides_with": [
+          2,
+          4,
+          1
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          0
+        ],
+        "collides_with": [
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          1
+        ],
+        "collides_with": [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          2
+        ],
+        "collides_with": [
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          3
+        ],
+        "collides_with": [
+          2,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          4
+        ],
+        "collides_with": [
+          3,
+          3,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          5
+        ],
+        "collides_with": [
+          2,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          6
+        ],
+        "collides_with": [
+          3,
+          3,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          7
+        ],
+        "collides_with": [
+          3,
+          3,
+          8
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          8
+        ],
+        "collides_with": [
+          3,
+          3,
+          9
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          9
+        ],
+        "collides_with": [
+          3,
+          3,
+          10
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          10
+        ],
+        "collides_with": [
+          3,
+          3,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          12
+        ],
+        "collides_with": [
+          3,
+          4,
+          0
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          13
+        ],
+        "collides_with": [
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          14
+        ],
+        "collides_with": [
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "config": [
+          4,
+          2,
+          15
+        ],
+        "collides_with": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          0
+        ],
+        "collides_with": [
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          1
+        ],
+        "collides_with": [
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          2
+        ],
+        "collides_with": [
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          3
+        ],
+        "collides_with": [
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          4
+        ],
+        "collides_with": [
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          5
+        ],
+        "collides_with": [
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          6
+        ],
+        "collides_with": [
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          7
+        ],
+        "collides_with": [
+          3,
+          4,
+          8
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          8
+        ],
+        "collides_with": [
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          9
+        ],
+        "collides_with": [
+          3,
+          4,
+          10
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          10
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          11
+        ],
+        "collides_with": [
+          3,
+          4,
+          16
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          12
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          13
+        ],
+        "collides_with": [
+          3,
+          4,
+          16
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          14
+        ],
+        "collides_with": [
+          3,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          3,
+          15
+        ],
+        "collides_with": [
+          3,
+          4,
+          16
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          0
+        ],
+        "collides_with": [
+          4,
+          3,
+          17
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          1
+        ],
+        "collides_with": [
+          4,
+          3,
+          18
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          2
+        ],
+        "collides_with": [
+          4,
+          3,
+          19
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          3
+        ],
+        "collides_with": [
+          4,
+          3,
+          20
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          4
+        ],
+        "collides_with": [
+          4,
+          3,
+          21
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          5
+        ],
+        "collides_with": [
+          4,
+          3,
+          20
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          6
+        ],
+        "collides_with": [
+          4,
+          3,
+          21
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          12
+        ],
+        "collides_with": [
+          4,
+          4,
+          10
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          13
+        ],
+        "collides_with": [
+          4,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          14
+        ],
+        "collides_with": [
+          4,
+          4,
+          10
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          15
+        ],
+        "collides_with": [
+          4,
+          4,
+          11
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          23
+        ],
+        "collides_with": [
+          4,
+          4,
+          21
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          24
+        ],
+        "collides_with": [
+          4,
+          4,
+          22
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          25
+        ],
+        "collides_with": [
+          4,
+          4,
+          21
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          26
+        ],
+        "collides_with": [
+          4,
+          4,
+          22
+        ]
+      },
+      {
+        "config": [
+          4,
+          4,
+          27
+        ],
+        "collides_with": [
+          4,
+          4,
+          21
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "Z": 0,
+        "N": 2,
+        "bonds_kept": 0,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          21,
+          32,
+          34,
+          18
+        ],
+        "shape": [
+          "1/5",
+          "32/105",
+          "34/105",
+          "6/35"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 2,
+        "bonds_kept": 1,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          20,
+          36,
+          24,
+          17
+        ],
+        "shape": [
+          "20/97",
+          "36/97",
+          "24/97",
+          "17/97"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "bonds_kept": 0,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          30,
+          55,
+          52,
+          31
+        ],
+        "shape": [
+          "5/28",
+          "55/168",
+          "13/42",
+          "31/168"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "bonds_kept": 1,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          31,
+          56,
+          52,
+          30
+        ],
+        "shape": [
+          "31/169",
+          "56/169",
+          "4/13",
+          "30/169"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "bonds_kept": 2,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          30,
+          58,
+          48,
+          29
+        ],
+        "shape": [
+          "2/11",
+          "58/165",
+          "16/55",
+          "29/165"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "bonds_kept": 3,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          29,
+          58,
+          56,
+          24
+        ],
+        "shape": [
+          "29/167",
+          "58/167",
+          "56/167",
+          "24/167"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 0,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          43,
+          74,
+          78,
+          42
+        ],
+        "shape": [
+          "43/237",
+          "74/237",
+          "26/79",
+          "14/79"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 1,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          42,
+          74,
+          78,
+          41
+        ],
+        "shape": [
+          "42/235",
+          "74/235",
+          "78/235",
+          "41/235"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 2,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          39,
+          70,
+          76,
+          40
+        ],
+        "shape": [
+          "13/75",
+          "14/45",
+          "76/225",
+          "8/45"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 3,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          40,
+          74,
+          74,
+          39
+        ],
+        "shape": [
+          "40/227",
+          "74/227",
+          "74/227",
+          "39/227"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 4,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          39,
+          76,
+          68,
+          38
+        ],
+        "shape": [
+          "3/17",
+          "76/221",
+          "4/13",
+          "38/221"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 5,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          38,
+          76,
+          74,
+          35
+        ],
+        "shape": [
+          "38/223",
+          "76/223",
+          "74/223",
+          "35/223"
+        ]
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "bonds_kept": 6,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          37,
+          76,
+          76,
+          38
+        ],
+        "shape": [
+          "37/227",
+          "76/227",
+          "76/227",
+          "38/227"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "bonds_kept": 0,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          22,
+          44,
+          42,
+          17
+        ],
+        "shape": [
+          "22/125",
+          "44/125",
+          "42/125",
+          "17/125"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "bonds_kept": 1,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          23,
+          46,
+          43,
+          18
+        ],
+        "shape": [
+          "23/130",
+          "23/65",
+          "43/130",
+          "9/65"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "bonds_kept": 0,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          33,
+          64,
+          64,
+          28
+        ],
+        "shape": [
+          "11/63",
+          "64/189",
+          "64/189",
+          "4/27"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "bonds_kept": 1,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          34,
+          68,
+          66,
+          27
+        ],
+        "shape": [
+          "34/195",
+          "68/195",
+          "22/65",
+          "9/65"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "bonds_kept": 2,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          35,
+          70,
+          68,
+          30
+        ],
+        "shape": [
+          "5/29",
+          "10/29",
+          "68/203",
+          "30/203"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "bonds_kept": 3,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          34,
+          68,
+          64,
+          29
+        ],
+        "shape": [
+          "34/195",
+          "68/195",
+          "64/195",
+          "29/195"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 0,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          44,
+          88,
+          86,
+          39
+        ],
+        "shape": [
+          "44/257",
+          "88/257",
+          "86/257",
+          "39/257"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 1,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          45,
+          90,
+          88,
+          40
+        ],
+        "shape": [
+          "45/263",
+          "90/263",
+          "88/263",
+          "40/263"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 2,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          46,
+          92,
+          90,
+          41
+        ],
+        "shape": [
+          "46/269",
+          "92/269",
+          "90/269",
+          "41/269"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 3,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          45,
+          90,
+          88,
+          40
+        ],
+        "shape": [
+          "45/263",
+          "90/263",
+          "88/263",
+          "40/263"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 4,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          46,
+          92,
+          88,
+          41
+        ],
+        "shape": [
+          "46/267",
+          "92/267",
+          "88/267",
+          "41/267"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 5,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          45,
+          88,
+          86,
+          40
+        ],
+        "shape": [
+          "45/259",
+          "88/259",
+          "86/259",
+          "40/259"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "bonds_kept": 6,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          44,
+          88,
+          84,
+          41
+        ],
+        "shape": [
+          "44/257",
+          "88/257",
+          "84/257",
+          "41/257"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 0,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          55,
+          110,
+          108,
+          50
+        ],
+        "shape": [
+          "55/323",
+          "110/323",
+          "108/323",
+          "50/323"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 1,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          56,
+          112,
+          110,
+          51
+        ],
+        "shape": [
+          "8/47",
+          "16/47",
+          "110/329",
+          "51/329"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 2,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          57,
+          114,
+          112,
+          52
+        ],
+        "shape": [
+          "57/335",
+          "114/335",
+          "112/335",
+          "52/335"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 3,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          56,
+          112,
+          110,
+          51
+        ],
+        "shape": [
+          "8/47",
+          "16/47",
+          "110/329",
+          "51/329"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 4,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          57,
+          114,
+          112,
+          52
+        ],
+        "shape": [
+          "57/335",
+          "114/335",
+          "112/335",
+          "52/335"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 5,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          56,
+          112,
+          108,
+          51
+        ],
+        "shape": [
+          "56/327",
+          "112/327",
+          "36/109",
+          "17/109"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 6,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          55,
+          110,
+          108,
+          50
+        ],
+        "shape": [
+          "55/323",
+          "110/323",
+          "108/323",
+          "50/323"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 7,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          56,
+          112,
+          106,
+          49
+        ],
+        "shape": [
+          "56/323",
+          "112/323",
+          "106/323",
+          "49/323"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 8,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          55,
+          110,
+          108,
+          50
+        ],
+        "shape": [
+          "55/323",
+          "110/323",
+          "108/323",
+          "50/323"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 9,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          54,
+          106,
+          104,
+          51
+        ],
+        "shape": [
+          "6/35",
+          "106/315",
+          "104/315",
+          "17/105"
+        ]
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "bonds_kept": 10,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          53,
+          106,
+          104,
+          52
+        ],
+        "shape": [
+          "53/315",
+          "106/315",
+          "104/315",
+          "52/315"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 0,
+        "bonds_kept": 0,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          23,
+          46,
+          44,
+          20
+        ],
+        "shape": [
+          "23/133",
+          "46/133",
+          "44/133",
+          "20/133"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 0,
+        "bonds_kept": 1,
+        "bonds_total": 1,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          24,
+          48,
+          46,
+          21
+        ],
+        "shape": [
+          "24/139",
+          "48/139",
+          "46/139",
+          "21/139"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "bonds_kept": 0,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          34,
+          68,
+          66,
+          31
+        ],
+        "shape": [
+          "34/199",
+          "68/199",
+          "66/199",
+          "31/199"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "bonds_kept": 1,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          35,
+          70,
+          68,
+          32
+        ],
+        "shape": [
+          "7/41",
+          "14/41",
+          "68/205",
+          "32/205"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "bonds_kept": 2,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          36,
+          72,
+          70,
+          33
+        ],
+        "shape": [
+          "36/211",
+          "72/211",
+          "70/211",
+          "33/211"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "bonds_kept": 3,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          37,
+          74,
+          72,
+          34
+        ],
+        "shape": [
+          "37/217",
+          "74/217",
+          "72/217",
+          "34/217"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 0,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          45,
+          90,
+          88,
+          42
+        ],
+        "shape": [
+          "9/53",
+          "18/53",
+          "88/265",
+          "42/265"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 1,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          46,
+          92,
+          90,
+          43
+        ],
+        "shape": [
+          "46/271",
+          "92/271",
+          "90/271",
+          "43/271"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 2,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          47,
+          94,
+          92,
+          44
+        ],
+        "shape": [
+          "47/277",
+          "94/277",
+          "92/277",
+          "44/277"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 3,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          48,
+          96,
+          94,
+          45
+        ],
+        "shape": [
+          "48/283",
+          "96/283",
+          "94/283",
+          "45/283"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 4,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          49,
+          98,
+          96,
+          46
+        ],
+        "shape": [
+          "49/289",
+          "98/289",
+          "96/289",
+          "46/289"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 5,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          48,
+          96,
+          94,
+          45
+        ],
+        "shape": [
+          "48/283",
+          "96/283",
+          "94/283",
+          "45/283"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "bonds_kept": 6,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          49,
+          96,
+          96,
+          44
+        ],
+        "shape": [
+          "49/285",
+          "32/95",
+          "32/95",
+          "44/285"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 0,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          56,
+          112,
+          110,
+          53
+        ],
+        "shape": [
+          "56/331",
+          "112/331",
+          "110/331",
+          "53/331"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 1,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          57,
+          114,
+          112,
+          54
+        ],
+        "shape": [
+          "57/337",
+          "114/337",
+          "112/337",
+          "54/337"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 2,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          58,
+          116,
+          114,
+          55
+        ],
+        "shape": [
+          "58/343",
+          "116/343",
+          "114/343",
+          "55/343"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 3,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          59,
+          118,
+          116,
+          56
+        ],
+        "shape": [
+          "59/349",
+          "118/349",
+          "116/349",
+          "56/349"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 4,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 5,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          59,
+          118,
+          116,
+          56
+        ],
+        "shape": [
+          "59/349",
+          "118/349",
+          "116/349",
+          "56/349"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 6,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 7,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          61,
+          122,
+          118,
+          58
+        ],
+        "shape": [
+          "61/359",
+          "122/359",
+          "118/359",
+          "58/359"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 8,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 9,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          61,
+          122,
+          120,
+          58
+        ],
+        "shape": [
+          "61/361",
+          "122/361",
+          "120/361",
+          "58/361"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "bonds_kept": 10,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          55
+        ],
+        "shape": [
+          "60/353",
+          "120/353",
+          "118/353",
+          "55/353"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 0,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          67,
+          134,
+          132,
+          64
+        ],
+        "shape": [
+          "67/397",
+          "134/397",
+          "132/397",
+          "64/397"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 1,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          68,
+          136,
+          134,
+          65
+        ],
+        "shape": [
+          "68/403",
+          "136/403",
+          "134/403",
+          "5/31"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 2,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          69,
+          138,
+          136,
+          66
+        ],
+        "shape": [
+          "69/409",
+          "138/409",
+          "136/409",
+          "66/409"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 3,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          70,
+          140,
+          138,
+          67
+        ],
+        "shape": [
+          "14/83",
+          "28/83",
+          "138/415",
+          "67/415"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 4,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 5,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          70,
+          140,
+          138,
+          67
+        ],
+        "shape": [
+          "14/83",
+          "28/83",
+          "138/415",
+          "67/415"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 6,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 7,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 8,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 9,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          70,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "14/85",
+          "144/425",
+          "142/425",
+          "69/425"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 10,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 11,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 12,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 13,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          67
+        ],
+        "shape": [
+          "72/425",
+          "144/425",
+          "142/425",
+          "67/425"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 14,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          140,
+          136,
+          66
+        ],
+        "shape": [
+          "71/413",
+          "20/59",
+          "136/413",
+          "66/413"
+        ]
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "bonds_kept": 15,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          68,
+          122,
+          126,
+          67
+        ],
+        "shape": [
+          "68/383",
+          "122/383",
+          "126/383",
+          "67/383"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 0,
+        "bonds_kept": 0,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          35,
+          70,
+          68,
+          32
+        ],
+        "shape": [
+          "7/41",
+          "14/41",
+          "68/205",
+          "32/205"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 0,
+        "bonds_kept": 1,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          36,
+          72,
+          70,
+          33
+        ],
+        "shape": [
+          "36/211",
+          "72/211",
+          "70/211",
+          "33/211"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 0,
+        "bonds_kept": 2,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          37,
+          74,
+          72,
+          34
+        ],
+        "shape": [
+          "37/217",
+          "74/217",
+          "72/217",
+          "34/217"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 0,
+        "bonds_kept": 3,
+        "bonds_total": 3,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          38,
+          76,
+          74,
+          35
+        ],
+        "shape": [
+          "38/223",
+          "76/223",
+          "74/223",
+          "35/223"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 0,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          46,
+          92,
+          90,
+          43
+        ],
+        "shape": [
+          "46/271",
+          "92/271",
+          "90/271",
+          "43/271"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 1,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          47,
+          94,
+          92,
+          44
+        ],
+        "shape": [
+          "47/277",
+          "94/277",
+          "92/277",
+          "44/277"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 2,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          48,
+          96,
+          94,
+          45
+        ],
+        "shape": [
+          "48/283",
+          "96/283",
+          "94/283",
+          "45/283"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 3,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          49,
+          98,
+          96,
+          46
+        ],
+        "shape": [
+          "49/289",
+          "98/289",
+          "96/289",
+          "46/289"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 4,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          50,
+          100,
+          98,
+          47
+        ],
+        "shape": [
+          "10/59",
+          "20/59",
+          "98/295",
+          "47/295"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 5,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          51,
+          102,
+          100,
+          48
+        ],
+        "shape": [
+          "51/301",
+          "102/301",
+          "100/301",
+          "48/301"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "bonds_kept": 6,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          52,
+          104,
+          102,
+          49
+        ],
+        "shape": [
+          "52/307",
+          "104/307",
+          "102/307",
+          "49/307"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 0,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          57,
+          114,
+          112,
+          54
+        ],
+        "shape": [
+          "57/337",
+          "114/337",
+          "112/337",
+          "54/337"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 1,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          58,
+          116,
+          114,
+          55
+        ],
+        "shape": [
+          "58/343",
+          "116/343",
+          "114/343",
+          "55/343"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 2,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          59,
+          118,
+          116,
+          56
+        ],
+        "shape": [
+          "59/349",
+          "118/349",
+          "116/349",
+          "56/349"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 3,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 4,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          61,
+          122,
+          120,
+          58
+        ],
+        "shape": [
+          "61/361",
+          "122/361",
+          "120/361",
+          "58/361"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 5,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 6,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          61,
+          122,
+          120,
+          58
+        ],
+        "shape": [
+          "61/361",
+          "122/361",
+          "120/361",
+          "58/361"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 7,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          62,
+          124,
+          122,
+          59
+        ],
+        "shape": [
+          "62/367",
+          "124/367",
+          "122/367",
+          "59/367"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 8,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          63,
+          126,
+          124,
+          60
+        ],
+        "shape": [
+          "63/373",
+          "126/373",
+          "124/373",
+          "60/373"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 9,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          64,
+          128,
+          126,
+          61
+        ],
+        "shape": [
+          "64/379",
+          "128/379",
+          "126/379",
+          "61/379"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "bonds_kept": 10,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          65,
+          130,
+          128,
+          62
+        ],
+        "shape": [
+          "13/77",
+          "26/77",
+          "128/385",
+          "62/385"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 0,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          68,
+          136,
+          134,
+          65
+        ],
+        "shape": [
+          "68/403",
+          "136/403",
+          "134/403",
+          "5/31"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 1,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          69,
+          138,
+          136,
+          66
+        ],
+        "shape": [
+          "69/409",
+          "138/409",
+          "136/409",
+          "66/409"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 2,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          70,
+          140,
+          138,
+          67
+        ],
+        "shape": [
+          "14/83",
+          "28/83",
+          "138/415",
+          "67/415"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 3,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 4,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 5,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 6,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 7,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          73,
+          146,
+          144,
+          70
+        ],
+        "shape": [
+          "73/433",
+          "146/433",
+          "144/433",
+          "70/433"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 8,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          74,
+          148,
+          146,
+          71
+        ],
+        "shape": [
+          "74/439",
+          "148/439",
+          "146/439",
+          "71/439"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 9,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          75,
+          150,
+          148,
+          72
+        ],
+        "shape": [
+          "15/89",
+          "30/89",
+          "148/445",
+          "72/445"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 10,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          76,
+          152,
+          150,
+          73
+        ],
+        "shape": [
+          "76/451",
+          "152/451",
+          "150/451",
+          "73/451"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 11,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          77,
+          154,
+          152,
+          74
+        ],
+        "shape": [
+          "77/457",
+          "154/457",
+          "152/457",
+          "74/457"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 12,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          76,
+          152,
+          150,
+          73
+        ],
+        "shape": [
+          "76/451",
+          "152/451",
+          "150/451",
+          "73/451"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 13,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          77,
+          154,
+          152,
+          74
+        ],
+        "shape": [
+          "77/457",
+          "154/457",
+          "152/457",
+          "74/457"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 14,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          76,
+          152,
+          150,
+          73
+        ],
+        "shape": [
+          "76/451",
+          "152/451",
+          "150/451",
+          "73/451"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "bonds_kept": 15,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          77,
+          154,
+          152,
+          74
+        ],
+        "shape": [
+          "77/457",
+          "154/457",
+          "152/457",
+          "74/457"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 0,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          79,
+          158,
+          156,
+          76
+        ],
+        "shape": [
+          "79/469",
+          "158/469",
+          "156/469",
+          "76/469"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 1,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          80,
+          160,
+          158,
+          77
+        ],
+        "shape": [
+          "16/95",
+          "32/95",
+          "158/475",
+          "77/475"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 2,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          81,
+          162,
+          160,
+          78
+        ],
+        "shape": [
+          "81/481",
+          "162/481",
+          "160/481",
+          "6/37"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 3,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          82,
+          164,
+          162,
+          79
+        ],
+        "shape": [
+          "82/487",
+          "164/487",
+          "162/487",
+          "79/487"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 4,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          83,
+          166,
+          164,
+          80
+        ],
+        "shape": [
+          "83/493",
+          "166/493",
+          "164/493",
+          "80/493"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 5,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          82,
+          164,
+          162,
+          79
+        ],
+        "shape": [
+          "82/487",
+          "164/487",
+          "162/487",
+          "79/487"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 6,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          83,
+          166,
+          164,
+          80
+        ],
+        "shape": [
+          "83/493",
+          "166/493",
+          "164/493",
+          "80/493"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 7,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          84,
+          168,
+          166,
+          81
+        ],
+        "shape": [
+          "84/499",
+          "168/499",
+          "166/499",
+          "81/499"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 8,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          85,
+          170,
+          168,
+          82
+        ],
+        "shape": [
+          "17/101",
+          "34/101",
+          "168/505",
+          "82/505"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 9,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          86,
+          172,
+          170,
+          83
+        ],
+        "shape": [
+          "86/511",
+          "172/511",
+          "170/511",
+          "83/511"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 10,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          87,
+          174,
+          172,
+          84
+        ],
+        "shape": [
+          "87/517",
+          "174/517",
+          "172/517",
+          "84/517"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 11,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 12,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          87,
+          174,
+          172,
+          84
+        ],
+        "shape": [
+          "87/517",
+          "174/517",
+          "172/517",
+          "84/517"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 13,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 14,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          87,
+          174,
+          172,
+          84
+        ],
+        "shape": [
+          "87/517",
+          "174/517",
+          "172/517",
+          "84/517"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 15,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 16,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 17,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 18,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 19,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 20,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "bonds_kept": 21,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 0,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          47,
+          94,
+          92,
+          44
+        ],
+        "shape": [
+          "47/277",
+          "94/277",
+          "92/277",
+          "44/277"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 1,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          48,
+          96,
+          94,
+          45
+        ],
+        "shape": [
+          "48/283",
+          "96/283",
+          "94/283",
+          "45/283"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 2,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          49,
+          98,
+          96,
+          46
+        ],
+        "shape": [
+          "49/289",
+          "98/289",
+          "96/289",
+          "46/289"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 3,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          50,
+          100,
+          98,
+          47
+        ],
+        "shape": [
+          "10/59",
+          "20/59",
+          "98/295",
+          "47/295"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 4,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          51,
+          102,
+          100,
+          48
+        ],
+        "shape": [
+          "51/301",
+          "102/301",
+          "100/301",
+          "48/301"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 5,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          52,
+          104,
+          102,
+          49
+        ],
+        "shape": [
+          "52/307",
+          "104/307",
+          "102/307",
+          "49/307"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "bonds_kept": 6,
+        "bonds_total": 6,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          53,
+          106,
+          104,
+          50
+        ],
+        "shape": [
+          "53/313",
+          "106/313",
+          "104/313",
+          "50/313"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 0,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          58,
+          116,
+          114,
+          55
+        ],
+        "shape": [
+          "58/343",
+          "116/343",
+          "114/343",
+          "55/343"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 1,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          59,
+          118,
+          116,
+          56
+        ],
+        "shape": [
+          "59/349",
+          "118/349",
+          "116/349",
+          "56/349"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 2,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          60,
+          120,
+          118,
+          57
+        ],
+        "shape": [
+          "12/71",
+          "24/71",
+          "118/355",
+          "57/355"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 3,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          61,
+          122,
+          120,
+          58
+        ],
+        "shape": [
+          "61/361",
+          "122/361",
+          "120/361",
+          "58/361"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 4,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          62,
+          124,
+          122,
+          59
+        ],
+        "shape": [
+          "62/367",
+          "124/367",
+          "122/367",
+          "59/367"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 5,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          63,
+          126,
+          124,
+          60
+        ],
+        "shape": [
+          "63/373",
+          "126/373",
+          "124/373",
+          "60/373"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 6,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          64,
+          128,
+          126,
+          61
+        ],
+        "shape": [
+          "64/379",
+          "128/379",
+          "126/379",
+          "61/379"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 7,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          65,
+          130,
+          128,
+          62
+        ],
+        "shape": [
+          "13/77",
+          "26/77",
+          "128/385",
+          "62/385"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 8,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          66,
+          132,
+          130,
+          63
+        ],
+        "shape": [
+          "66/391",
+          "132/391",
+          "130/391",
+          "63/391"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 9,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          67,
+          134,
+          132,
+          64
+        ],
+        "shape": [
+          "67/397",
+          "134/397",
+          "132/397",
+          "64/397"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "bonds_kept": 10,
+        "bonds_total": 10,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          68,
+          136,
+          134,
+          65
+        ],
+        "shape": [
+          "68/403",
+          "136/403",
+          "134/403",
+          "5/31"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 0,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          69,
+          138,
+          136,
+          66
+        ],
+        "shape": [
+          "69/409",
+          "138/409",
+          "136/409",
+          "66/409"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 1,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          70,
+          140,
+          138,
+          67
+        ],
+        "shape": [
+          "14/83",
+          "28/83",
+          "138/415",
+          "67/415"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 2,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          71,
+          142,
+          140,
+          68
+        ],
+        "shape": [
+          "71/421",
+          "142/421",
+          "140/421",
+          "68/421"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 3,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 4,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          73,
+          146,
+          144,
+          70
+        ],
+        "shape": [
+          "73/433",
+          "146/433",
+          "144/433",
+          "70/433"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 5,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          72,
+          144,
+          142,
+          69
+        ],
+        "shape": [
+          "72/427",
+          "144/427",
+          "142/427",
+          "69/427"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 6,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          73,
+          146,
+          144,
+          70
+        ],
+        "shape": [
+          "73/433",
+          "146/433",
+          "144/433",
+          "70/433"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 7,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          74,
+          148,
+          146,
+          71
+        ],
+        "shape": [
+          "74/439",
+          "148/439",
+          "146/439",
+          "71/439"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 8,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          75,
+          150,
+          148,
+          72
+        ],
+        "shape": [
+          "15/89",
+          "30/89",
+          "148/445",
+          "72/445"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 9,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          76,
+          152,
+          150,
+          73
+        ],
+        "shape": [
+          "76/451",
+          "152/451",
+          "150/451",
+          "73/451"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 10,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          77,
+          154,
+          152,
+          74
+        ],
+        "shape": [
+          "77/457",
+          "154/457",
+          "152/457",
+          "74/457"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 11,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          78,
+          156,
+          154,
+          75
+        ],
+        "shape": [
+          "78/463",
+          "156/463",
+          "154/463",
+          "75/463"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 12,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          79,
+          158,
+          156,
+          76
+        ],
+        "shape": [
+          "79/469",
+          "158/469",
+          "156/469",
+          "76/469"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 13,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          80,
+          160,
+          158,
+          77
+        ],
+        "shape": [
+          "16/95",
+          "32/95",
+          "158/475",
+          "77/475"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 14,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          81,
+          162,
+          160,
+          78
+        ],
+        "shape": [
+          "81/481",
+          "162/481",
+          "160/481",
+          "6/37"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "bonds_kept": 15,
+        "bonds_total": 15,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          82,
+          164,
+          162,
+          79
+        ],
+        "shape": [
+          "82/487",
+          "164/487",
+          "162/487",
+          "79/487"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 0,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          80,
+          160,
+          158,
+          77
+        ],
+        "shape": [
+          "16/95",
+          "32/95",
+          "158/475",
+          "77/475"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 1,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          81,
+          162,
+          160,
+          78
+        ],
+        "shape": [
+          "81/481",
+          "162/481",
+          "160/481",
+          "6/37"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 2,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          82,
+          164,
+          162,
+          79
+        ],
+        "shape": [
+          "82/487",
+          "164/487",
+          "162/487",
+          "79/487"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 3,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          83,
+          166,
+          164,
+          80
+        ],
+        "shape": [
+          "83/493",
+          "166/493",
+          "164/493",
+          "80/493"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 4,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          84,
+          168,
+          166,
+          81
+        ],
+        "shape": [
+          "84/499",
+          "168/499",
+          "166/499",
+          "81/499"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 5,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          83,
+          166,
+          164,
+          80
+        ],
+        "shape": [
+          "83/493",
+          "166/493",
+          "164/493",
+          "80/493"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 6,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          84,
+          168,
+          166,
+          81
+        ],
+        "shape": [
+          "84/499",
+          "168/499",
+          "166/499",
+          "81/499"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 7,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          85,
+          170,
+          168,
+          82
+        ],
+        "shape": [
+          "17/101",
+          "34/101",
+          "168/505",
+          "82/505"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 8,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          86,
+          172,
+          170,
+          83
+        ],
+        "shape": [
+          "86/511",
+          "172/511",
+          "170/511",
+          "83/511"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 9,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          87,
+          174,
+          172,
+          84
+        ],
+        "shape": [
+          "87/517",
+          "174/517",
+          "172/517",
+          "84/517"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 10,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 11,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 12,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 13,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 14,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          88,
+          176,
+          174,
+          85
+        ],
+        "shape": [
+          "88/523",
+          "176/523",
+          "174/523",
+          "85/523"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 15,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          89,
+          178,
+          176,
+          86
+        ],
+        "shape": [
+          "89/529",
+          "178/529",
+          "176/529",
+          "86/529"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 16,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          90,
+          180,
+          178,
+          87
+        ],
+        "shape": [
+          "18/107",
+          "36/107",
+          "178/535",
+          "87/535"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 17,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          91,
+          182,
+          180,
+          88
+        ],
+        "shape": [
+          "91/541",
+          "182/541",
+          "180/541",
+          "88/541"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 18,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          92,
+          184,
+          182,
+          89
+        ],
+        "shape": [
+          "92/547",
+          "184/547",
+          "182/547",
+          "89/547"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 19,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          93,
+          186,
+          184,
+          90
+        ],
+        "shape": [
+          "93/553",
+          "186/553",
+          "184/553",
+          "90/553"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 20,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          94,
+          188,
+          186,
+          91
+        ],
+        "shape": [
+          "94/559",
+          "188/559",
+          "186/559",
+          "7/43"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "bonds_kept": 21,
+        "bonds_total": 21,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          95,
+          190,
+          188,
+          92
+        ],
+        "shape": [
+          "19/113",
+          "38/113",
+          "188/565",
+          "92/565"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 0,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          91,
+          182,
+          180,
+          88
+        ],
+        "shape": [
+          "91/541",
+          "182/541",
+          "180/541",
+          "88/541"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 1,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          92,
+          184,
+          182,
+          89
+        ],
+        "shape": [
+          "92/547",
+          "184/547",
+          "182/547",
+          "89/547"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 2,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          93,
+          186,
+          184,
+          90
+        ],
+        "shape": [
+          "93/553",
+          "186/553",
+          "184/553",
+          "90/553"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 3,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          94,
+          188,
+          186,
+          91
+        ],
+        "shape": [
+          "94/559",
+          "188/559",
+          "186/559",
+          "7/43"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 4,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          95,
+          190,
+          188,
+          92
+        ],
+        "shape": [
+          "19/113",
+          "38/113",
+          "188/565",
+          "92/565"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 5,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          94,
+          188,
+          186,
+          91
+        ],
+        "shape": [
+          "94/559",
+          "188/559",
+          "186/559",
+          "7/43"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 6,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          95,
+          190,
+          188,
+          92
+        ],
+        "shape": [
+          "19/113",
+          "38/113",
+          "188/565",
+          "92/565"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 7,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          96,
+          192,
+          190,
+          93
+        ],
+        "shape": [
+          "96/571",
+          "192/571",
+          "190/571",
+          "93/571"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 8,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          97,
+          194,
+          192,
+          94
+        ],
+        "shape": [
+          "97/577",
+          "194/577",
+          "192/577",
+          "94/577"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 9,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          98,
+          196,
+          194,
+          95
+        ],
+        "shape": [
+          "98/583",
+          "196/583",
+          "194/583",
+          "95/583"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 10,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          99,
+          198,
+          196,
+          96
+        ],
+        "shape": [
+          "99/589",
+          "198/589",
+          "196/589",
+          "96/589"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 11,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          100,
+          200,
+          198,
+          97
+        ],
+        "shape": [
+          "20/119",
+          "40/119",
+          "198/595",
+          "97/595"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 12,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          99,
+          198,
+          196,
+          96
+        ],
+        "shape": [
+          "99/589",
+          "198/589",
+          "196/589",
+          "96/589"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 13,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          100,
+          200,
+          198,
+          97
+        ],
+        "shape": [
+          "20/119",
+          "40/119",
+          "198/595",
+          "97/595"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 14,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          99,
+          198,
+          196,
+          96
+        ],
+        "shape": [
+          "99/589",
+          "198/589",
+          "196/589",
+          "96/589"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 15,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          100,
+          200,
+          198,
+          97
+        ],
+        "shape": [
+          "20/119",
+          "40/119",
+          "198/595",
+          "97/595"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 16,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          101,
+          202,
+          200,
+          98
+        ],
+        "shape": [
+          "101/601",
+          "202/601",
+          "200/601",
+          "98/601"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 17,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          102,
+          204,
+          202,
+          99
+        ],
+        "shape": [
+          "102/607",
+          "204/607",
+          "202/607",
+          "99/607"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 18,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          103,
+          206,
+          204,
+          100
+        ],
+        "shape": [
+          "103/613",
+          "206/613",
+          "204/613",
+          "100/613"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 19,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          104,
+          208,
+          206,
+          101
+        ],
+        "shape": [
+          "104/619",
+          "208/619",
+          "206/619",
+          "101/619"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 20,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          105,
+          210,
+          208,
+          102
+        ],
+        "shape": [
+          "21/125",
+          "42/125",
+          "208/625",
+          "102/625"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 21,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          106,
+          212,
+          210,
+          103
+        ],
+        "shape": [
+          "106/631",
+          "212/631",
+          "210/631",
+          "103/631"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 22,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          107,
+          214,
+          212,
+          104
+        ],
+        "shape": [
+          "107/637",
+          "214/637",
+          "212/637",
+          "8/49"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 23,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          106,
+          212,
+          210,
+          103
+        ],
+        "shape": [
+          "106/631",
+          "212/631",
+          "210/631",
+          "103/631"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 24,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          107,
+          214,
+          212,
+          104
+        ],
+        "shape": [
+          "107/637",
+          "214/637",
+          "212/637",
+          "8/49"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 25,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          106,
+          212,
+          210,
+          103
+        ],
+        "shape": [
+          "106/631",
+          "212/631",
+          "210/631",
+          "103/631"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 26,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          107,
+          214,
+          212,
+          104
+        ],
+        "shape": [
+          "107/637",
+          "214/637",
+          "212/637",
+          "8/49"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 27,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          106,
+          212,
+          210,
+          103
+        ],
+        "shape": [
+          "106/631",
+          "212/631",
+          "210/631",
+          "103/631"
+        ]
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "bonds_kept": 28,
+        "bonds_total": 28,
+        "support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "terms_by_grade": [
+          105,
+          208,
+          204,
+          100
+        ],
+        "shape": [
+          "105/617",
+          "208/617",
+          "204/617",
+          "100/617"
+        ]
+      }
+    ]
+  },
+  "control": "exhaustive at each level: every Z in 0..A",
+  "arithmetic": "exact over Q (fractions.Fraction); no float, no evaluation at any numerical q",
+  "configurations": [
+    {
+      "A": 2,
+      "Z": 2,
+      "N": 0,
+      "any_magic": true,
+      "terms_by_grade": [
+        24,
+        48,
+        46,
+        21
+      ],
+      "shape": [
+        "24/139",
+        "48/139",
+        "46/139",
+        "21/139"
+      ]
+    },
+    {
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        23,
+        46,
+        43,
+        18
+      ],
+      "shape": [
+        "23/130",
+        "23/65",
+        "43/130",
+        "9/65"
+      ]
+    },
+    {
+      "A": 2,
+      "Z": 0,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        20,
+        36,
+        24,
+        17
+      ],
+      "shape": [
+        "20/97",
+        "36/97",
+        "24/97",
+        "17/97"
+      ]
+    },
+    {
+      "A": 3,
+      "Z": 3,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        38,
+        76,
+        74,
+        35
+      ],
+      "shape": [
+        "38/223",
+        "76/223",
+        "74/223",
+        "35/223"
+      ]
+    },
+    {
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "any_magic": true,
+      "terms_by_grade": [
+        37,
+        74,
+        72,
+        34
+      ],
+      "shape": [
+        "37/217",
+        "74/217",
+        "72/217",
+        "34/217"
+      ]
+    },
+    {
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        34,
+        68,
+        64,
+        29
+      ],
+      "shape": [
+        "34/195",
+        "68/195",
+        "64/195",
+        "29/195"
+      ]
+    },
+    {
+      "A": 3,
+      "Z": 0,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        29,
+        58,
+        56,
+        24
+      ],
+      "shape": [
+        "29/167",
+        "58/167",
+        "56/167",
+        "24/167"
+      ]
+    },
+    {
+      "A": 4,
+      "Z": 4,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        53,
+        106,
+        104,
+        50
+      ],
+      "shape": [
+        "53/313",
+        "106/313",
+        "104/313",
+        "50/313"
+      ]
+    },
+    {
+      "A": 4,
+      "Z": 3,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        52,
+        104,
+        102,
+        49
+      ],
+      "shape": [
+        "52/307",
+        "104/307",
+        "102/307",
+        "49/307"
+      ]
+    },
+    {
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        49,
+        96,
+        96,
+        44
+      ],
+      "shape": [
+        "49/285",
+        "32/95",
+        "32/95",
+        "44/285"
+      ]
+    },
+    {
+      "A": 4,
+      "Z": 1,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        44,
+        88,
+        84,
+        41
+      ],
+      "shape": [
+        "44/257",
+        "88/257",
+        "84/257",
+        "41/257"
+      ]
+    },
+    {
+      "A": 4,
+      "Z": 0,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        37,
+        76,
+        76,
+        38
+      ],
+      "shape": [
+        "37/227",
+        "76/227",
+        "76/227",
+        "38/227"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 5,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        69,
+        138,
+        136,
+        66
+      ],
+      "shape": [
+        "69/409",
+        "138/409",
+        "136/409",
+        "66/409"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 4,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        68,
+        136,
+        134,
+        65
+      ],
+      "shape": [
+        "68/403",
+        "136/403",
+        "134/403",
+        "5/31"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 3,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        65,
+        130,
+        128,
+        62
+      ],
+      "shape": [
+        "13/77",
+        "26/77",
+        "128/385",
+        "62/385"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 2,
+      "N": 3,
+      "any_magic": true,
+      "terms_by_grade": [
+        60,
+        120,
+        118,
+        55
+      ],
+      "shape": [
+        "60/353",
+        "120/353",
+        "118/353",
+        "55/353"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 1,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        53,
+        106,
+        104,
+        52
+      ],
+      "shape": [
+        "53/315",
+        "106/315",
+        "104/315",
+        "52/315"
+      ]
+    },
+    {
+      "A": 5,
+      "Z": 0,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        30,
+        92,
+        94,
+        47
+      ],
+      "shape": [
+        "30/263",
+        "92/263",
+        "94/263",
+        "47/263"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 6,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        86,
+        172,
+        170,
+        83
+      ],
+      "shape": [
+        "86/511",
+        "172/511",
+        "170/511",
+        "83/511"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 5,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        85,
+        170,
+        168,
+        82
+      ],
+      "shape": [
+        "17/101",
+        "34/101",
+        "168/505",
+        "82/505"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 4,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        82,
+        164,
+        162,
+        79
+      ],
+      "shape": [
+        "82/487",
+        "164/487",
+        "162/487",
+        "79/487"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 3,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        77,
+        154,
+        152,
+        74
+      ],
+      "shape": [
+        "77/457",
+        "154/457",
+        "152/457",
+        "74/457"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 2,
+      "N": 4,
+      "any_magic": true,
+      "terms_by_grade": [
+        68,
+        122,
+        126,
+        67
+      ],
+      "shape": [
+        "68/383",
+        "122/383",
+        "126/383",
+        "67/383"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 1,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        63,
+        124,
+        120,
+        62
+      ],
+      "shape": [
+        "7/41",
+        "124/369",
+        "40/123",
+        "62/369"
+      ]
+    },
+    {
+      "A": 6,
+      "Z": 0,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        30,
+        82,
+        86,
+        43
+      ],
+      "shape": [
+        "30/241",
+        "82/241",
+        "86/241",
+        "43/241"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 7,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        104,
+        208,
+        206,
+        101
+      ],
+      "shape": [
+        "104/619",
+        "208/619",
+        "206/619",
+        "101/619"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 6,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        103,
+        206,
+        204,
+        100
+      ],
+      "shape": [
+        "103/613",
+        "206/613",
+        "204/613",
+        "100/613"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 5,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        100,
+        200,
+        198,
+        97
+      ],
+      "shape": [
+        "20/119",
+        "40/119",
+        "198/595",
+        "97/595"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 4,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        95,
+        190,
+        188,
+        92
+      ],
+      "shape": [
+        "19/113",
+        "38/113",
+        "188/565",
+        "92/565"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 3,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        88,
+        176,
+        174,
+        85
+      ],
+      "shape": [
+        "88/523",
+        "176/523",
+        "174/523",
+        "85/523"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 2,
+      "N": 5,
+      "any_magic": true,
+      "terms_by_grade": [
+        81,
+        162,
+        158,
+        76
+      ],
+      "shape": [
+        "9/53",
+        "18/53",
+        "158/477",
+        "76/477"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 1,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        72,
+        142,
+        134,
+        71
+      ],
+      "shape": [
+        "72/419",
+        "142/419",
+        "134/419",
+        "71/419"
+      ]
+    },
+    {
+      "A": 7,
+      "Z": 0,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        29,
+        74,
+        76,
+        38
+      ],
+      "shape": [
+        "29/217",
+        "74/217",
+        "76/217",
+        "38/217"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 8,
+      "N": 0,
+      "any_magic": true,
+      "terms_by_grade": [
+        123,
+        246,
+        244,
+        120
+      ],
+      "shape": [
+        "123/733",
+        "246/733",
+        "244/733",
+        "120/733"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 7,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        122,
+        244,
+        242,
+        119
+      ],
+      "shape": [
+        "122/727",
+        "244/727",
+        "242/727",
+        "119/727"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 6,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        119,
+        238,
+        236,
+        116
+      ],
+      "shape": [
+        "119/709",
+        "238/709",
+        "236/709",
+        "116/709"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 5,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        114,
+        228,
+        226,
+        111
+      ],
+      "shape": [
+        "114/679",
+        "228/679",
+        "226/679",
+        "111/679"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 4,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        105,
+        208,
+        204,
+        100
+      ],
+      "shape": [
+        "105/617",
+        "208/617",
+        "204/617",
+        "100/617"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 3,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        100,
+        200,
+        194,
+        97
+      ],
+      "shape": [
+        "100/591",
+        "200/591",
+        "194/591",
+        "97/591"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 2,
+      "N": 6,
+      "any_magic": true,
+      "terms_by_grade": [
+        77,
+        158,
+        156,
+        74
+      ],
+      "shape": [
+        "77/465",
+        "158/465",
+        "52/155",
+        "74/465"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 1,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        82,
+        162,
+        152,
+        81
+      ],
+      "shape": [
+        "82/477",
+        "18/53",
+        "152/477",
+        "9/53"
+      ]
+    },
+    {
+      "A": 8,
+      "Z": 0,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        37,
+        72,
+        70,
+        34
+      ],
+      "shape": [
+        "37/213",
+        "24/71",
+        "70/213",
+        "34/213"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 9,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        143,
+        286,
+        284,
+        140
+      ],
+      "shape": [
+        "143/853",
+        "286/853",
+        "284/853",
+        "140/853"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 8,
+      "N": 1,
+      "any_magic": true,
+      "terms_by_grade": [
+        142,
+        284,
+        282,
+        139
+      ],
+      "shape": [
+        "142/847",
+        "284/847",
+        "282/847",
+        "139/847"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 7,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        139,
+        278,
+        276,
+        136
+      ],
+      "shape": [
+        "139/829",
+        "278/829",
+        "276/829",
+        "136/829"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 6,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        134,
+        268,
+        266,
+        131
+      ],
+      "shape": [
+        "134/799",
+        "268/799",
+        "266/799",
+        "131/799"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 5,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        125,
+        250,
+        250,
+        124
+      ],
+      "shape": [
+        "125/749",
+        "250/749",
+        "250/749",
+        "124/749"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 4,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        120,
+        238,
+        234,
+        117
+      ],
+      "shape": [
+        "120/709",
+        "238/709",
+        "234/709",
+        "117/709"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 3,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        109,
+        220,
+        216,
+        108
+      ],
+      "shape": [
+        "109/653",
+        "220/653",
+        "216/653",
+        "108/653"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 2,
+      "N": 7,
+      "any_magic": true,
+      "terms_by_grade": [
+        76,
+        152,
+        150,
+        71
+      ],
+      "shape": [
+        "76/449",
+        "152/449",
+        "150/449",
+        "71/449"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 1,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        93,
+        184,
+        176,
+        92
+      ],
+      "shape": [
+        "93/545",
+        "184/545",
+        "176/545",
+        "92/545"
+      ]
+    },
+    {
+      "A": 9,
+      "Z": 0,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        42,
+        90,
+        88,
+        43
+      ],
+      "shape": [
+        "42/263",
+        "90/263",
+        "88/263",
+        "43/263"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 10,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        164,
+        328,
+        326,
+        161
+      ],
+      "shape": [
+        "164/979",
+        "328/979",
+        "326/979",
+        "161/979"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 9,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        163,
+        326,
+        324,
+        160
+      ],
+      "shape": [
+        "163/973",
+        "326/973",
+        "324/973",
+        "160/973"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 8,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        160,
+        320,
+        318,
+        157
+      ],
+      "shape": [
+        "32/191",
+        "64/191",
+        "318/955",
+        "157/955"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 7,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        155,
+        310,
+        308,
+        152
+      ],
+      "shape": [
+        "31/185",
+        "62/185",
+        "308/925",
+        "152/925"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 6,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        148,
+        296,
+        294,
+        145
+      ],
+      "shape": [
+        "148/883",
+        "296/883",
+        "294/883",
+        "145/883"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 5,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        141,
+        282,
+        280,
+        138
+      ],
+      "shape": [
+        "141/841",
+        "282/841",
+        "280/841",
+        "138/841"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 4,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        120,
+        240,
+        238,
+        117
+      ],
+      "shape": [
+        "24/143",
+        "48/143",
+        "238/715",
+        "9/55"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 3,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        121,
+        242,
+        242,
+        120
+      ],
+      "shape": [
+        "121/725",
+        "242/725",
+        "242/725",
+        "24/145"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 2,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        72,
+        144,
+        142,
+        67
+      ],
+      "shape": [
+        "72/425",
+        "144/425",
+        "142/425",
+        "67/425"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 1,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        105,
+        208,
+        200,
+        102
+      ],
+      "shape": [
+        "7/41",
+        "208/615",
+        "40/123",
+        "34/205"
+      ]
+    },
+    {
+      "A": 10,
+      "Z": 0,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        56,
+        108,
+        104,
+        51
+      ],
+      "shape": [
+        "56/319",
+        "108/319",
+        "104/319",
+        "51/319"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 11,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        186,
+        372,
+        370,
+        183
+      ],
+      "shape": [
+        "186/1111",
+        "372/1111",
+        "370/1111",
+        "183/1111"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 10,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        185,
+        370,
+        368,
+        182
+      ],
+      "shape": [
+        "37/221",
+        "74/221",
+        "368/1105",
+        "14/85"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 9,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        182,
+        364,
+        362,
+        179
+      ],
+      "shape": [
+        "182/1087",
+        "364/1087",
+        "362/1087",
+        "179/1087"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 8,
+      "N": 3,
+      "any_magic": true,
+      "terms_by_grade": [
+        177,
+        354,
+        352,
+        174
+      ],
+      "shape": [
+        "177/1057",
+        "354/1057",
+        "352/1057",
+        "174/1057"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 7,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        170,
+        340,
+        338,
+        167
+      ],
+      "shape": [
+        "34/203",
+        "68/203",
+        "338/1015",
+        "167/1015"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 6,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        161,
+        322,
+        320,
+        158
+      ],
+      "shape": [
+        "161/961",
+        "322/961",
+        "320/961",
+        "158/961"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 5,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        154,
+        308,
+        306,
+        151
+      ],
+      "shape": [
+        "154/919",
+        "308/919",
+        "306/919",
+        "151/919"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 4,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        117,
+        234,
+        232,
+        114
+      ],
+      "shape": [
+        "117/697",
+        "234/697",
+        "232/697",
+        "114/697"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 3,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        136,
+        272,
+        270,
+        131
+      ],
+      "shape": [
+        "136/809",
+        "272/809",
+        "270/809",
+        "131/809"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 2,
+      "N": 9,
+      "any_magic": true,
+      "terms_by_grade": [
+        65,
+        130,
+        128,
+        62
+      ],
+      "shape": [
+        "13/77",
+        "26/77",
+        "128/385",
+        "62/385"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 1,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        118,
+        232,
+        224,
+        117
+      ],
+      "shape": [
+        "118/691",
+        "232/691",
+        "224/691",
+        "117/691"
+      ]
+    },
+    {
+      "A": 11,
+      "Z": 0,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        67,
+        132,
+        130,
+        64
+      ],
+      "shape": [
+        "67/393",
+        "44/131",
+        "130/393",
+        "64/393"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 12,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        209,
+        418,
+        416,
+        206
+      ],
+      "shape": [
+        "209/1249",
+        "418/1249",
+        "416/1249",
+        "206/1249"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 11,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        208,
+        416,
+        414,
+        205
+      ],
+      "shape": [
+        "208/1243",
+        "416/1243",
+        "414/1243",
+        "205/1243"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 10,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        205,
+        410,
+        408,
+        202
+      ],
+      "shape": [
+        "41/245",
+        "82/245",
+        "408/1225",
+        "202/1225"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 9,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        200,
+        400,
+        398,
+        197
+      ],
+      "shape": [
+        "40/239",
+        "80/239",
+        "398/1195",
+        "197/1195"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 8,
+      "N": 4,
+      "any_magic": true,
+      "terms_by_grade": [
+        193,
+        386,
+        384,
+        190
+      ],
+      "shape": [
+        "193/1153",
+        "386/1153",
+        "384/1153",
+        "190/1153"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 7,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        184,
+        368,
+        366,
+        181
+      ],
+      "shape": [
+        "184/1099",
+        "368/1099",
+        "366/1099",
+        "181/1099"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 6,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        177,
+        354,
+        352,
+        174
+      ],
+      "shape": [
+        "177/1057",
+        "354/1057",
+        "352/1057",
+        "174/1057"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 5,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        168,
+        336,
+        334,
+        165
+      ],
+      "shape": [
+        "168/1003",
+        "336/1003",
+        "334/1003",
+        "165/1003"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 4,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        133,
+        266,
+        264,
+        130
+      ],
+      "shape": [
+        "133/793",
+        "266/793",
+        "264/793",
+        "10/61"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 3,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        150,
+        300,
+        298,
+        147
+      ],
+      "shape": [
+        "30/179",
+        "60/179",
+        "298/895",
+        "147/895"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 2,
+      "N": 10,
+      "any_magic": true,
+      "terms_by_grade": [
+        81,
+        162,
+        160,
+        74
+      ],
+      "shape": [
+        "9/53",
+        "18/53",
+        "160/477",
+        "74/477"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 1,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        130,
+        262,
+        254,
+        131
+      ],
+      "shape": [
+        "130/777",
+        "262/777",
+        "254/777",
+        "131/777"
+      ]
+    },
+    {
+      "A": 12,
+      "Z": 0,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        79,
+        156,
+        154,
+        76
+      ],
+      "shape": [
+        "79/465",
+        "52/155",
+        "154/465",
+        "76/465"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 13,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        233,
+        466,
+        464,
+        230
+      ],
+      "shape": [
+        "233/1393",
+        "466/1393",
+        "464/1393",
+        "230/1393"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 12,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        232,
+        464,
+        462,
+        229
+      ],
+      "shape": [
+        "232/1387",
+        "464/1387",
+        "462/1387",
+        "229/1387"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 11,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        229,
+        458,
+        456,
+        226
+      ],
+      "shape": [
+        "229/1369",
+        "458/1369",
+        "456/1369",
+        "226/1369"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 10,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        224,
+        448,
+        446,
+        221
+      ],
+      "shape": [
+        "224/1339",
+        "448/1339",
+        "446/1339",
+        "17/103"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 9,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        217,
+        434,
+        432,
+        214
+      ],
+      "shape": [
+        "217/1297",
+        "434/1297",
+        "432/1297",
+        "214/1297"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 8,
+      "N": 5,
+      "any_magic": true,
+      "terms_by_grade": [
+        208,
+        416,
+        414,
+        205
+      ],
+      "shape": [
+        "208/1243",
+        "416/1243",
+        "414/1243",
+        "205/1243"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 7,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        199,
+        398,
+        396,
+        196
+      ],
+      "shape": [
+        "199/1189",
+        "398/1189",
+        "396/1189",
+        "196/1189"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 6,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        192,
+        384,
+        382,
+        189
+      ],
+      "shape": [
+        "192/1147",
+        "384/1147",
+        "382/1147",
+        "189/1147"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 5,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        183,
+        366,
+        364,
+        180
+      ],
+      "shape": [
+        "183/1093",
+        "366/1093",
+        "364/1093",
+        "180/1093"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 4,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        148,
+        296,
+        294,
+        145
+      ],
+      "shape": [
+        "148/883",
+        "296/883",
+        "294/883",
+        "145/883"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 3,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        165,
+        330,
+        328,
+        162
+      ],
+      "shape": [
+        "33/197",
+        "66/197",
+        "328/985",
+        "162/985"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 2,
+      "N": 11,
+      "any_magic": true,
+      "terms_by_grade": [
+        96,
+        192,
+        190,
+        89
+      ],
+      "shape": [
+        "32/189",
+        "64/189",
+        "190/567",
+        "89/567"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 1,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        147,
+        292,
+        282,
+        146
+      ],
+      "shape": [
+        "49/289",
+        "292/867",
+        "94/289",
+        "146/867"
+      ]
+    },
+    {
+      "A": 13,
+      "Z": 0,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        92,
+        182,
+        180,
+        89
+      ],
+      "shape": [
+        "92/543",
+        "182/543",
+        "60/181",
+        "89/543"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 14,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        258,
+        516,
+        514,
+        255
+      ],
+      "shape": [
+        "258/1543",
+        "516/1543",
+        "514/1543",
+        "255/1543"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 13,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        257,
+        514,
+        512,
+        254
+      ],
+      "shape": [
+        "257/1537",
+        "514/1537",
+        "512/1537",
+        "254/1537"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 12,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        254,
+        508,
+        506,
+        251
+      ],
+      "shape": [
+        "254/1519",
+        "508/1519",
+        "506/1519",
+        "251/1519"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 11,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        249,
+        498,
+        496,
+        246
+      ],
+      "shape": [
+        "249/1489",
+        "498/1489",
+        "496/1489",
+        "246/1489"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 10,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        242,
+        484,
+        482,
+        239
+      ],
+      "shape": [
+        "242/1447",
+        "484/1447",
+        "482/1447",
+        "239/1447"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 9,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        233,
+        466,
+        464,
+        230
+      ],
+      "shape": [
+        "233/1393",
+        "466/1393",
+        "464/1393",
+        "230/1393"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 8,
+      "N": 6,
+      "any_magic": true,
+      "terms_by_grade": [
+        224,
+        448,
+        446,
+        221
+      ],
+      "shape": [
+        "224/1339",
+        "448/1339",
+        "446/1339",
+        "17/103"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 7,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        217,
+        434,
+        432,
+        214
+      ],
+      "shape": [
+        "217/1297",
+        "434/1297",
+        "432/1297",
+        "214/1297"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 6,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        208,
+        416,
+        414,
+        205
+      ],
+      "shape": [
+        "208/1243",
+        "416/1243",
+        "414/1243",
+        "205/1243"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 5,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        199,
+        398,
+        396,
+        196
+      ],
+      "shape": [
+        "199/1189",
+        "398/1189",
+        "396/1189",
+        "196/1189"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 4,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        164,
+        328,
+        326,
+        161
+      ],
+      "shape": [
+        "164/979",
+        "328/979",
+        "326/979",
+        "161/979"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 3,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        181,
+        362,
+        360,
+        178
+      ],
+      "shape": [
+        "181/1081",
+        "362/1081",
+        "360/1081",
+        "178/1081"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 2,
+      "N": 12,
+      "any_magic": true,
+      "terms_by_grade": [
+        112,
+        224,
+        222,
+        105
+      ],
+      "shape": [
+        "112/663",
+        "224/663",
+        "74/221",
+        "35/221"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 1,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        163,
+        324,
+        316,
+        162
+      ],
+      "shape": [
+        "163/965",
+        "324/965",
+        "316/965",
+        "162/965"
+      ]
+    },
+    {
+      "A": 14,
+      "Z": 0,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        106,
+        210,
+        208,
+        103
+      ],
+      "shape": [
+        "106/627",
+        "70/209",
+        "208/627",
+        "103/627"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 15,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        284,
+        568,
+        566,
+        281
+      ],
+      "shape": [
+        "284/1699",
+        "568/1699",
+        "566/1699",
+        "281/1699"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 14,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        283,
+        566,
+        564,
+        280
+      ],
+      "shape": [
+        "283/1693",
+        "566/1693",
+        "564/1693",
+        "280/1693"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 13,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        280,
+        560,
+        558,
+        277
+      ],
+      "shape": [
+        "56/335",
+        "112/335",
+        "558/1675",
+        "277/1675"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 12,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        275,
+        550,
+        548,
+        272
+      ],
+      "shape": [
+        "55/329",
+        "110/329",
+        "548/1645",
+        "272/1645"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 11,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        268,
+        536,
+        534,
+        265
+      ],
+      "shape": [
+        "268/1603",
+        "536/1603",
+        "534/1603",
+        "265/1603"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 10,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        259,
+        518,
+        516,
+        256
+      ],
+      "shape": [
+        "259/1549",
+        "518/1549",
+        "516/1549",
+        "256/1549"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 9,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        250,
+        500,
+        498,
+        247
+      ],
+      "shape": [
+        "50/299",
+        "100/299",
+        "498/1495",
+        "19/115"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 8,
+      "N": 7,
+      "any_magic": true,
+      "terms_by_grade": [
+        241,
+        482,
+        480,
+        238
+      ],
+      "shape": [
+        "241/1441",
+        "482/1441",
+        "480/1441",
+        "238/1441"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 7,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        234,
+        468,
+        466,
+        231
+      ],
+      "shape": [
+        "234/1399",
+        "468/1399",
+        "466/1399",
+        "231/1399"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 6,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        225,
+        450,
+        448,
+        222
+      ],
+      "shape": [
+        "45/269",
+        "90/269",
+        "448/1345",
+        "222/1345"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 5,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        216,
+        432,
+        430,
+        213
+      ],
+      "shape": [
+        "216/1291",
+        "432/1291",
+        "430/1291",
+        "213/1291"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 4,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        181,
+        362,
+        360,
+        178
+      ],
+      "shape": [
+        "181/1081",
+        "362/1081",
+        "360/1081",
+        "178/1081"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 3,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        198,
+        396,
+        394,
+        195
+      ],
+      "shape": [
+        "198/1183",
+        "396/1183",
+        "394/1183",
+        "15/91"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 2,
+      "N": 13,
+      "any_magic": true,
+      "terms_by_grade": [
+        129,
+        258,
+        256,
+        122
+      ],
+      "shape": [
+        "43/255",
+        "86/255",
+        "256/765",
+        "122/765"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 1,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        178,
+        358,
+        350,
+        179
+      ],
+      "shape": [
+        "178/1065",
+        "358/1065",
+        "70/213",
+        "179/1065"
+      ]
+    },
+    {
+      "A": 15,
+      "Z": 0,
+      "N": 15,
+      "any_magic": false,
+      "terms_by_grade": [
+        121,
+        240,
+        238,
+        118
+      ],
+      "shape": [
+        "121/717",
+        "80/239",
+        "238/717",
+        "118/717"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 16,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        311,
+        622,
+        620,
+        308
+      ],
+      "shape": [
+        "311/1861",
+        "622/1861",
+        "620/1861",
+        "308/1861"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 15,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        310,
+        620,
+        618,
+        307
+      ],
+      "shape": [
+        "62/371",
+        "124/371",
+        "618/1855",
+        "307/1855"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 14,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        307,
+        614,
+        612,
+        304
+      ],
+      "shape": [
+        "307/1837",
+        "614/1837",
+        "612/1837",
+        "304/1837"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 13,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        302,
+        604,
+        602,
+        299
+      ],
+      "shape": [
+        "302/1807",
+        "604/1807",
+        "602/1807",
+        "23/139"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 12,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        295,
+        590,
+        588,
+        292
+      ],
+      "shape": [
+        "59/353",
+        "118/353",
+        "588/1765",
+        "292/1765"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 11,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        286,
+        572,
+        570,
+        283
+      ],
+      "shape": [
+        "286/1711",
+        "572/1711",
+        "570/1711",
+        "283/1711"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 10,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        277,
+        554,
+        552,
+        274
+      ],
+      "shape": [
+        "277/1657",
+        "554/1657",
+        "552/1657",
+        "274/1657"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 9,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        268,
+        536,
+        534,
+        265
+      ],
+      "shape": [
+        "268/1603",
+        "536/1603",
+        "534/1603",
+        "265/1603"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 8,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        261,
+        522,
+        520,
+        258
+      ],
+      "shape": [
+        "261/1561",
+        "522/1561",
+        "520/1561",
+        "258/1561"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 7,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        252,
+        504,
+        502,
+        249
+      ],
+      "shape": [
+        "252/1507",
+        "504/1507",
+        "502/1507",
+        "249/1507"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 6,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        243,
+        486,
+        484,
+        240
+      ],
+      "shape": [
+        "243/1453",
+        "486/1453",
+        "484/1453",
+        "240/1453"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 5,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        234,
+        468,
+        466,
+        231
+      ],
+      "shape": [
+        "234/1399",
+        "468/1399",
+        "466/1399",
+        "231/1399"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 4,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        199,
+        398,
+        396,
+        196
+      ],
+      "shape": [
+        "199/1189",
+        "398/1189",
+        "396/1189",
+        "196/1189"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 3,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        216,
+        432,
+        430,
+        213
+      ],
+      "shape": [
+        "216/1291",
+        "432/1291",
+        "430/1291",
+        "213/1291"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 2,
+      "N": 14,
+      "any_magic": true,
+      "terms_by_grade": [
+        147,
+        294,
+        292,
+        140
+      ],
+      "shape": [
+        "49/291",
+        "98/291",
+        "292/873",
+        "140/873"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 1,
+      "N": 15,
+      "any_magic": false,
+      "terms_by_grade": [
+        198,
+        394,
+        386,
+        197
+      ],
+      "shape": [
+        "198/1175",
+        "394/1175",
+        "386/1175",
+        "197/1175"
+      ]
+    },
+    {
+      "A": 16,
+      "Z": 0,
+      "N": 16,
+      "any_magic": false,
+      "terms_by_grade": [
+        137,
+        272,
+        270,
+        134
+      ],
+      "shape": [
+        "137/813",
+        "272/813",
+        "90/271",
+        "134/813"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 17,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        339,
+        678,
+        676,
+        336
+      ],
+      "shape": [
+        "339/2029",
+        "678/2029",
+        "676/2029",
+        "336/2029"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 16,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        338,
+        676,
+        674,
+        335
+      ],
+      "shape": [
+        "338/2023",
+        "676/2023",
+        "674/2023",
+        "335/2023"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 15,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        335,
+        670,
+        668,
+        332
+      ],
+      "shape": [
+        "67/401",
+        "134/401",
+        "668/2005",
+        "332/2005"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 14,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        330,
+        660,
+        658,
+        327
+      ],
+      "shape": [
+        "66/395",
+        "132/395",
+        "658/1975",
+        "327/1975"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 13,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        323,
+        646,
+        644,
+        320
+      ],
+      "shape": [
+        "323/1933",
+        "646/1933",
+        "644/1933",
+        "320/1933"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 12,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        314,
+        628,
+        626,
+        311
+      ],
+      "shape": [
+        "314/1879",
+        "628/1879",
+        "626/1879",
+        "311/1879"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 11,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        305,
+        610,
+        608,
+        302
+      ],
+      "shape": [
+        "61/365",
+        "122/365",
+        "608/1825",
+        "302/1825"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 10,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        296,
+        592,
+        590,
+        293
+      ],
+      "shape": [
+        "296/1771",
+        "592/1771",
+        "590/1771",
+        "293/1771"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 9,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        287,
+        574,
+        572,
+        284
+      ],
+      "shape": [
+        "287/1717",
+        "574/1717",
+        "572/1717",
+        "284/1717"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 8,
+      "N": 9,
+      "any_magic": true,
+      "terms_by_grade": [
+        280,
+        560,
+        558,
+        277
+      ],
+      "shape": [
+        "56/335",
+        "112/335",
+        "558/1675",
+        "277/1675"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 7,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        271,
+        542,
+        540,
+        268
+      ],
+      "shape": [
+        "271/1621",
+        "542/1621",
+        "540/1621",
+        "268/1621"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 6,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        262,
+        524,
+        522,
+        259
+      ],
+      "shape": [
+        "262/1567",
+        "524/1567",
+        "522/1567",
+        "259/1567"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 5,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        253,
+        506,
+        504,
+        250
+      ],
+      "shape": [
+        "253/1513",
+        "506/1513",
+        "504/1513",
+        "250/1513"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 4,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        218,
+        436,
+        434,
+        215
+      ],
+      "shape": [
+        "218/1303",
+        "436/1303",
+        "434/1303",
+        "215/1303"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 3,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        235,
+        470,
+        468,
+        232
+      ],
+      "shape": [
+        "47/281",
+        "94/281",
+        "468/1405",
+        "232/1405"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 2,
+      "N": 15,
+      "any_magic": true,
+      "terms_by_grade": [
+        166,
+        332,
+        330,
+        159
+      ],
+      "shape": [
+        "166/987",
+        "332/987",
+        "110/329",
+        "53/329"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 1,
+      "N": 16,
+      "any_magic": false,
+      "terms_by_grade": [
+        217,
+        432,
+        422,
+        216
+      ],
+      "shape": [
+        "217/1287",
+        "48/143",
+        "422/1287",
+        "24/143"
+      ]
+    },
+    {
+      "A": 17,
+      "Z": 0,
+      "N": 17,
+      "any_magic": false,
+      "terms_by_grade": [
+        154,
+        306,
+        304,
+        151
+      ],
+      "shape": [
+        "154/915",
+        "102/305",
+        "304/915",
+        "151/915"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 18,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        368,
+        736,
+        734,
+        365
+      ],
+      "shape": [
+        "368/2203",
+        "736/2203",
+        "734/2203",
+        "365/2203"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 17,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        367,
+        734,
+        732,
+        364
+      ],
+      "shape": [
+        "367/2197",
+        "734/2197",
+        "732/2197",
+        "28/169"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 16,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        364,
+        728,
+        726,
+        361
+      ],
+      "shape": [
+        "364/2179",
+        "728/2179",
+        "726/2179",
+        "361/2179"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 15,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        359,
+        718,
+        716,
+        356
+      ],
+      "shape": [
+        "359/2149",
+        "718/2149",
+        "716/2149",
+        "356/2149"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 14,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        352,
+        704,
+        702,
+        349
+      ],
+      "shape": [
+        "352/2107",
+        "704/2107",
+        "702/2107",
+        "349/2107"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 13,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        343,
+        686,
+        684,
+        340
+      ],
+      "shape": [
+        "343/2053",
+        "686/2053",
+        "684/2053",
+        "340/2053"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 12,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        334,
+        668,
+        666,
+        331
+      ],
+      "shape": [
+        "334/1999",
+        "668/1999",
+        "666/1999",
+        "331/1999"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 11,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        325,
+        650,
+        648,
+        322
+      ],
+      "shape": [
+        "65/389",
+        "130/389",
+        "648/1945",
+        "322/1945"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 10,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        316,
+        632,
+        630,
+        313
+      ],
+      "shape": [
+        "316/1891",
+        "632/1891",
+        "630/1891",
+        "313/1891"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 9,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        309,
+        618,
+        616,
+        306
+      ],
+      "shape": [
+        "309/1849",
+        "618/1849",
+        "616/1849",
+        "306/1849"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 8,
+      "N": 10,
+      "any_magic": true,
+      "terms_by_grade": [
+        300,
+        600,
+        598,
+        297
+      ],
+      "shape": [
+        "60/359",
+        "120/359",
+        "598/1795",
+        "297/1795"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 7,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        291,
+        582,
+        580,
+        288
+      ],
+      "shape": [
+        "291/1741",
+        "582/1741",
+        "580/1741",
+        "288/1741"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 6,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        282,
+        564,
+        562,
+        279
+      ],
+      "shape": [
+        "282/1687",
+        "564/1687",
+        "562/1687",
+        "279/1687"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 5,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        273,
+        546,
+        544,
+        270
+      ],
+      "shape": [
+        "273/1633",
+        "546/1633",
+        "544/1633",
+        "270/1633"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 4,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        238,
+        476,
+        474,
+        235
+      ],
+      "shape": [
+        "238/1423",
+        "476/1423",
+        "474/1423",
+        "235/1423"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 3,
+      "N": 15,
+      "any_magic": false,
+      "terms_by_grade": [
+        255,
+        510,
+        508,
+        252
+      ],
+      "shape": [
+        "51/305",
+        "102/305",
+        "508/1525",
+        "252/1525"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 2,
+      "N": 16,
+      "any_magic": true,
+      "terms_by_grade": [
+        186,
+        372,
+        370,
+        179
+      ],
+      "shape": [
+        "62/369",
+        "124/369",
+        "370/1107",
+        "179/1107"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 1,
+      "N": 17,
+      "any_magic": false,
+      "terms_by_grade": [
+        237,
+        472,
+        464,
+        236
+      ],
+      "shape": [
+        "237/1409",
+        "472/1409",
+        "464/1409",
+        "236/1409"
+      ]
+    },
+    {
+      "A": 18,
+      "Z": 0,
+      "N": 18,
+      "any_magic": false,
+      "terms_by_grade": [
+        172,
+        342,
+        340,
+        169
+      ],
+      "shape": [
+        "172/1023",
+        "114/341",
+        "340/1023",
+        "169/1023"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 19,
+      "N": 0,
+      "any_magic": false,
+      "terms_by_grade": [
+        398,
+        796,
+        794,
+        395
+      ],
+      "shape": [
+        "398/2383",
+        "796/2383",
+        "794/2383",
+        "395/2383"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 18,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        397,
+        794,
+        792,
+        394
+      ],
+      "shape": [
+        "397/2377",
+        "794/2377",
+        "792/2377",
+        "394/2377"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 17,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        394,
+        788,
+        786,
+        391
+      ],
+      "shape": [
+        "394/2359",
+        "788/2359",
+        "786/2359",
+        "391/2359"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 16,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        389,
+        778,
+        776,
+        386
+      ],
+      "shape": [
+        "389/2329",
+        "778/2329",
+        "776/2329",
+        "386/2329"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 15,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        382,
+        764,
+        762,
+        379
+      ],
+      "shape": [
+        "382/2287",
+        "764/2287",
+        "762/2287",
+        "379/2287"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 14,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        373,
+        746,
+        744,
+        370
+      ],
+      "shape": [
+        "373/2233",
+        "746/2233",
+        "744/2233",
+        "370/2233"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 13,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        364,
+        728,
+        726,
+        361
+      ],
+      "shape": [
+        "364/2179",
+        "728/2179",
+        "726/2179",
+        "361/2179"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 12,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        355,
+        710,
+        708,
+        352
+      ],
+      "shape": [
+        "71/425",
+        "142/425",
+        "708/2125",
+        "352/2125"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 11,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        346,
+        692,
+        690,
+        343
+      ],
+      "shape": [
+        "346/2071",
+        "692/2071",
+        "690/2071",
+        "343/2071"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 10,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        337,
+        674,
+        672,
+        334
+      ],
+      "shape": [
+        "337/2017",
+        "674/2017",
+        "672/2017",
+        "334/2017"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 9,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        330,
+        660,
+        658,
+        327
+      ],
+      "shape": [
+        "66/395",
+        "132/395",
+        "658/1975",
+        "327/1975"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 8,
+      "N": 11,
+      "any_magic": true,
+      "terms_by_grade": [
+        321,
+        642,
+        640,
+        318
+      ],
+      "shape": [
+        "321/1921",
+        "642/1921",
+        "640/1921",
+        "318/1921"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 7,
+      "N": 12,
+      "any_magic": false,
+      "terms_by_grade": [
+        312,
+        624,
+        622,
+        309
+      ],
+      "shape": [
+        "312/1867",
+        "624/1867",
+        "622/1867",
+        "309/1867"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 6,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        303,
+        606,
+        604,
+        300
+      ],
+      "shape": [
+        "303/1813",
+        "606/1813",
+        "604/1813",
+        "300/1813"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 5,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        294,
+        588,
+        586,
+        291
+      ],
+      "shape": [
+        "294/1759",
+        "588/1759",
+        "586/1759",
+        "291/1759"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 4,
+      "N": 15,
+      "any_magic": false,
+      "terms_by_grade": [
+        259,
+        518,
+        516,
+        256
+      ],
+      "shape": [
+        "259/1549",
+        "518/1549",
+        "516/1549",
+        "256/1549"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 3,
+      "N": 16,
+      "any_magic": false,
+      "terms_by_grade": [
+        276,
+        552,
+        550,
+        273
+      ],
+      "shape": [
+        "276/1651",
+        "552/1651",
+        "550/1651",
+        "21/127"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 2,
+      "N": 17,
+      "any_magic": true,
+      "terms_by_grade": [
+        207,
+        414,
+        412,
+        200
+      ],
+      "shape": [
+        "23/137",
+        "46/137",
+        "412/1233",
+        "200/1233"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 1,
+      "N": 18,
+      "any_magic": false,
+      "terms_by_grade": [
+        258,
+        514,
+        506,
+        257
+      ],
+      "shape": [
+        "258/1535",
+        "514/1535",
+        "506/1535",
+        "257/1535"
+      ]
+    },
+    {
+      "A": 19,
+      "Z": 0,
+      "N": 19,
+      "any_magic": false,
+      "terms_by_grade": [
+        191,
+        380,
+        378,
+        188
+      ],
+      "shape": [
+        "191/1137",
+        "380/1137",
+        "126/379",
+        "188/1137"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 20,
+      "N": 0,
+      "any_magic": true,
+      "terms_by_grade": [
+        429,
+        858,
+        856,
+        426
+      ],
+      "shape": [
+        "429/2569",
+        "858/2569",
+        "856/2569",
+        "426/2569"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 19,
+      "N": 1,
+      "any_magic": false,
+      "terms_by_grade": [
+        428,
+        856,
+        854,
+        425
+      ],
+      "shape": [
+        "428/2563",
+        "856/2563",
+        "854/2563",
+        "425/2563"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 18,
+      "N": 2,
+      "any_magic": true,
+      "terms_by_grade": [
+        425,
+        850,
+        848,
+        422
+      ],
+      "shape": [
+        "85/509",
+        "170/509",
+        "848/2545",
+        "422/2545"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 17,
+      "N": 3,
+      "any_magic": false,
+      "terms_by_grade": [
+        420,
+        840,
+        838,
+        417
+      ],
+      "shape": [
+        "84/503",
+        "168/503",
+        "838/2515",
+        "417/2515"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 16,
+      "N": 4,
+      "any_magic": false,
+      "terms_by_grade": [
+        413,
+        826,
+        824,
+        410
+      ],
+      "shape": [
+        "413/2473",
+        "826/2473",
+        "824/2473",
+        "410/2473"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 15,
+      "N": 5,
+      "any_magic": false,
+      "terms_by_grade": [
+        404,
+        808,
+        806,
+        401
+      ],
+      "shape": [
+        "404/2419",
+        "808/2419",
+        "806/2419",
+        "401/2419"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 14,
+      "N": 6,
+      "any_magic": false,
+      "terms_by_grade": [
+        395,
+        790,
+        788,
+        392
+      ],
+      "shape": [
+        "79/473",
+        "158/473",
+        "788/2365",
+        "392/2365"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 13,
+      "N": 7,
+      "any_magic": false,
+      "terms_by_grade": [
+        386,
+        772,
+        770,
+        383
+      ],
+      "shape": [
+        "386/2311",
+        "772/2311",
+        "770/2311",
+        "383/2311"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 12,
+      "N": 8,
+      "any_magic": true,
+      "terms_by_grade": [
+        377,
+        754,
+        752,
+        374
+      ],
+      "shape": [
+        "377/2257",
+        "754/2257",
+        "752/2257",
+        "374/2257"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 11,
+      "N": 9,
+      "any_magic": false,
+      "terms_by_grade": [
+        368,
+        736,
+        734,
+        365
+      ],
+      "shape": [
+        "368/2203",
+        "736/2203",
+        "734/2203",
+        "365/2203"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 10,
+      "N": 10,
+      "any_magic": false,
+      "terms_by_grade": [
+        361,
+        722,
+        720,
+        358
+      ],
+      "shape": [
+        "361/2161",
+        "722/2161",
+        "720/2161",
+        "358/2161"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 9,
+      "N": 11,
+      "any_magic": false,
+      "terms_by_grade": [
+        352,
+        704,
+        702,
+        349
+      ],
+      "shape": [
+        "352/2107",
+        "704/2107",
+        "702/2107",
+        "349/2107"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 8,
+      "N": 12,
+      "any_magic": true,
+      "terms_by_grade": [
+        343,
+        686,
+        684,
+        340
+      ],
+      "shape": [
+        "343/2053",
+        "686/2053",
+        "684/2053",
+        "340/2053"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 7,
+      "N": 13,
+      "any_magic": false,
+      "terms_by_grade": [
+        334,
+        668,
+        666,
+        331
+      ],
+      "shape": [
+        "334/1999",
+        "668/1999",
+        "666/1999",
+        "331/1999"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 6,
+      "N": 14,
+      "any_magic": false,
+      "terms_by_grade": [
+        325,
+        650,
+        648,
+        322
+      ],
+      "shape": [
+        "65/389",
+        "130/389",
+        "648/1945",
+        "322/1945"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 5,
+      "N": 15,
+      "any_magic": false,
+      "terms_by_grade": [
+        316,
+        632,
+        630,
+        313
+      ],
+      "shape": [
+        "316/1891",
+        "632/1891",
+        "630/1891",
+        "313/1891"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 4,
+      "N": 16,
+      "any_magic": false,
+      "terms_by_grade": [
+        281,
+        562,
+        560,
+        278
+      ],
+      "shape": [
+        "281/1681",
+        "562/1681",
+        "560/1681",
+        "278/1681"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 3,
+      "N": 17,
+      "any_magic": false,
+      "terms_by_grade": [
+        298,
+        596,
+        594,
+        295
+      ],
+      "shape": [
+        "298/1783",
+        "596/1783",
+        "594/1783",
+        "295/1783"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 2,
+      "N": 18,
+      "any_magic": true,
+      "terms_by_grade": [
+        229,
+        458,
+        456,
+        222
+      ],
+      "shape": [
+        "229/1365",
+        "458/1365",
+        "152/455",
+        "74/455"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 1,
+      "N": 19,
+      "any_magic": false,
+      "terms_by_grade": [
+        278,
+        558,
+        550,
+        279
+      ],
+      "shape": [
+        "278/1665",
+        "62/185",
+        "110/333",
+        "31/185"
+      ]
+    },
+    {
+      "A": 20,
+      "Z": 0,
+      "N": 20,
+      "any_magic": true,
+      "terms_by_grade": [
+        211,
+        420,
+        418,
+        208
+      ],
+      "shape": [
+        "211/1257",
+        "140/419",
+        "418/1257",
+        "208/1257"
+      ]
+    }
+  ],
+  "per_level": {
+    "2": {
+      "n_magic": 2,
+      "n_non_magic": 1,
+      "null_p_per_observable": "2/3",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "magic_above"
+      ]
+    },
+    "3": {
+      "n_magic": 2,
+      "n_non_magic": 2,
+      "null_p_per_observable": "1/3",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "magic_below",
+        "interleaved"
+      ]
+    },
+    "4": {
+      "n_magic": 1,
+      "n_non_magic": 4,
+      "null_p_per_observable": "2/5",
+      "directions": [
+        "magic_above",
+        "interleaved",
+        "magic_above",
+        "magic_below"
+      ]
+    },
+    "5": {
+      "n_magic": 2,
+      "n_non_magic": 4,
+      "null_p_per_observable": "2/15",
+      "directions": [
+        "magic_above",
+        "interleaved",
+        "interleaved",
+        "magic_below"
+      ]
+    },
+    "6": {
+      "n_magic": 2,
+      "n_non_magic": 5,
+      "null_p_per_observable": "2/21",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "7": {
+      "n_magic": 2,
+      "n_non_magic": 6,
+      "null_p_per_observable": "1/14",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "8": {
+      "n_magic": 4,
+      "n_non_magic": 5,
+      "null_p_per_observable": "1/63",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "9": {
+      "n_magic": 4,
+      "n_non_magic": 6,
+      "null_p_per_observable": "1/105",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "10": {
+      "n_magic": 2,
+      "n_non_magic": 9,
+      "null_p_per_observable": "2/55",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "11": {
+      "n_magic": 4,
+      "n_non_magic": 8,
+      "null_p_per_observable": "2/495",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "12": {
+      "n_magic": 4,
+      "n_non_magic": 9,
+      "null_p_per_observable": "2/715",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "13": {
+      "n_magic": 4,
+      "n_non_magic": 10,
+      "null_p_per_observable": "2/1001",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "14": {
+      "n_magic": 4,
+      "n_non_magic": 11,
+      "null_p_per_observable": "2/1365",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "15": {
+      "n_magic": 4,
+      "n_non_magic": 12,
+      "null_p_per_observable": "1/910",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "16": {
+      "n_magic": 3,
+      "n_non_magic": 14,
+      "null_p_per_observable": "1/340",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "17": {
+      "n_magic": 4,
+      "n_non_magic": 14,
+      "null_p_per_observable": "1/1530",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "18": {
+      "n_magic": 4,
+      "n_non_magic": 15,
+      "null_p_per_observable": "1/1938",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "19": {
+      "n_magic": 4,
+      "n_non_magic": 16,
+      "null_p_per_observable": "2/4845",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    },
+    "20": {
+      "n_magic": 6,
+      "n_non_magic": 15,
+      "null_p_per_observable": "1/27132",
+      "directions": [
+        "interleaved",
+        "interleaved",
+        "interleaved",
+        "interleaved"
+      ]
+    }
+  },
+  "observed_clean_separations": 7,
+  "expected_under_null": "7958464/1119195",
+  "cross_level_replication": {
+    "0": {
+      "separating_levels": {
+        "4": "magic_above",
+        "5": "magic_above"
+      },
+      "contradictory": false,
+      "consistent": true
+    },
+    "1": {
+      "separating_levels": {},
+      "contradictory": false,
+      "consistent": false
+    },
+    "2": {
+      "separating_levels": {
+        "3": "magic_below",
+        "4": "magic_above"
+      },
+      "contradictory": true,
+      "consistent": false
+    },
+    "3": {
+      "separating_levels": {
+        "2": "magic_above",
+        "4": "magic_below",
+        "5": "magic_below"
+      },
+      "contradictory": true,
+      "consistent": false
+    }
+  },
+  "grade_ranges": {
+    "0": {
+      "min": "30/263",
+      "max": "20/97"
+    },
+    "1": {
+      "min": "122/383",
+      "max": "36/97"
+    },
+    "2": {
+      "min": "24/97",
+      "max": "94/263"
+    },
+    "3": {
+      "min": "9/65",
+      "max": "47/263"
+    }
+  },
+  "any_grade_replicates": true,
+  "auditOnly": true
+}

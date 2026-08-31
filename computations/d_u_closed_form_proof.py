@@ -369,6 +369,29 @@ def main() -> int:
         output_dir=HERE,
         start_time=_T0,
     )
+    # Assertions (bean qou-srvu). This witness carried none, so it claimed
+    # `allPassed: true` over an empty list while the script's stated purpose is
+    # to check two STRUCTURALLY PREDICTED exponents against an INDEPENDENT
+    # empirical table (`EMPIRICAL_D_U`). The comparison already ran above; it
+    # was recorded as `overall_match` / `all_predictions_match` and never
+    # asserted. Nothing new is claimed -- the existing claim becomes testable.
+    #
+    # SCOPE: only the two exponents the script says are PROVED by counting
+    # averaged crossings (2^(2A+1), (1+u^2)^(3A-1)). The u^shift = 18Z+21N+1
+    # relation is deliberately NOT asserted -- this script's own output calls it
+    # "EMPIRICAL CONJECTURE (numerology) ... NOT categorically proved", and
+    # asserting a fitted linear ansatz would be exactly the fit this repo bans.
+    _scored = [r for r in rows if r["empirical"] is not None]
+    _matched = [r for r in _scored if r["overall_match"] == "✓"]
+    b.add_assertion(
+        "structural_exponent_predictions_matching_empirical_count",
+        computed=str(len(_matched)),
+        expected=str(len(_scored)),
+        source="2^(2A+1) from averaged-crossing count and (1+u^2)^(3A-1) from "
+               "the Markov-trace z^(n-1) factor, each compared against the "
+               "independent EMPIRICAL_D_U table; expected is the number of "
+               "atoms that table covers, not a number chosen to match",
+    )
     out_path = b.save()
     print(f"\nWitness: {out_path}")
     return 0

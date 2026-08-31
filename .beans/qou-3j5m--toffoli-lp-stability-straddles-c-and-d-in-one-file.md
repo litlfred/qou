@@ -1,11 +1,11 @@
 ---
 # qou-3j5m
 title: 'toffoli-lp-stability straddles C and D in one file: D Gram, C-frame Phi and P_77 feeding the witness'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T09:49:28Z
+updated_at: 2026-08-30T14:46:15Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D

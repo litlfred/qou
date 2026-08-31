@@ -10,7 +10,7 @@ $$
   \;-\;
   \underbrace{C(\varrho)}_{\text{diagonal contact}} ,
 $$
-*excising the singular diagonal. Then the contact coefficient $C(\varrho)$ is the fundamental ($N=2$) Markov trace, whose braid closure is the Jones polynomial ([Jones–Markov trace](#thm:jones-markov-trace))*
+*Then the contact coefficient $C(\varrho)$ is the fundamental ($N=2$) Markov trace, whose braid closure is the Jones polynomial ([Jones–Markov trace](#thm:jones-markov-trace))*
 $$
   C(\varrho) \;=\; \mathrm{tr}_M(\rho(\beta_K)) \;=\; J_K(q).
 $$

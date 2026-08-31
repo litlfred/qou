@@ -10,4 +10,4 @@ $$
 
 The Hodge-star operator is induced by the Hermitian metric that the Levi form $L$ ([substrate parameter](#def:substrate-parameter)) defines on the horizontal distribution. The index $i$ runs over $1 \leq i \leq b_1(\mathcal{S}_n)$ ([Betti numbers on branes](#rem:betti-numbers-brane)).
 
-At the base level $n = 0$, with Euler characteristic $\chi(M) = 3$, there are three primary basis vectors $\{\phi_1, \phi_2, \phi_3\}$. At level $n = 1$ the basis lifts: it includes the original modes together with their $J^1$ prolongations ([jet prolongation](#prop:jet-prolongation)), which act as the first-order resolutions of the base flows.
+At the base level $n = 0$ the index range above gives $b_1(\mathcal{S}_0) = 3$, hence three primary basis vectors $\{\phi_1, \phi_2, \phi_3\}$. At level $n = 1$ the basis lifts: it includes the original modes together with their $J^1$ prolongations ([jet prolongation](#prop:jet-prolongation)), which act as the first-order resolutions of the base flows.

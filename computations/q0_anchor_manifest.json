@@ -537,6 +537,7 @@
     "qbeta_alpha_commutator_floor_probe",
     "qbeta_alpha_eff_hoefsmit_symbolic_probe",
     "qbeta_bar_parity_of_the_decay_trace_probe",
+    "qbeta_block_bar_defect_conjugation_probe",
     "qbeta_c3_bar_partner_extractor_breakdown",
     "qbeta_c3_complex_habiro_cross_anchor_probe",
     "qbeta_c3_complex_singularity_probe",
@@ -608,6 +609,7 @@
     "qbeta_mu_normalisation_is_derived_probe",
     "qbeta_multi_block_eigenphase_full_eps_probe",
     "qbeta_multi_block_eigenphase_probe",
+    "qbeta_n1_constant_two_anchor_filter_probe",
     "qbeta_net_as_trace_plus_longest_probe",
     "qbeta_net_is_tau_against_all_ones_probe",
     "qbeta_net_trace_invariance_probe",
@@ -765,5 +767,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

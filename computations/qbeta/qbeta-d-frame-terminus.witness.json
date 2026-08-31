@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:09:30.078021+00:00",
-  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
+  "computedAt": "2026-08-31T04:29:07.350279+00:00",
+  "commitSha": "6855a21deeac1683607b91a41650fd2066b75240",
   "assertions": [
     {
       "name": "normalisation y_3 + 2 y_21 = 1 at z_D (the cap leg is closed)",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-d-frame-terminus",
   "scriptFile": "qbeta_d_frame_terminus_probe.py",
-  "scriptHash": "a283d219c9cc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cf36ce49578f",
+  "scriptCommitSha": "dd7bd61b56405a5262815fcfb2e03e3228baf72f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

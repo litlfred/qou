@@ -287,3 +287,50 @@ one.
 Recompute `markov-trace-assembly-{proton,neutron}` steps on the canonical
 11-letter element. Both currently report tr_M of a legacy element under a
 canonical label. The deuteron chain shows what the corrected form looks like.
+
+
+---
+
+## CLOSED 2026-08-31 (PR #6322) — the recompute lands exactly on production
+
+The remaining half is done. Both chains recomputed on the canonical 11-letter
+element by the seminormal linear-functional route — the only one the producer's
+docstring permits — using the corpus's own `markov_weights_symbolic` path, exact
+over ℚ(q), no float64.
+
+| atom | recomputed (proton pin) | chain reported | off by |
+|---|---|---|---|
+| p | **1.1457596924573008697** | 1.0653062285923893 | 7.55 % |
+| n | **0.98774368811580957163** | 0.9232332299116371 | 6.99 % |
+
+**`rel = 0`** against `markov-peel-atomic-tr-m.witness.json` at the proton pin,
+and matching the muon-2022 witnesses too. The correct answer was never a new
+number — it is the one the rest of the stack already carried. That is the
+strongest check available that the linear-functional route is what the producers
+actually run, and it retires the question this bean opened with (*"which of each
+contradicting pair is right?"* — **neither**; both were computed on legacy words).
+
+### The proton chain's defect is real and also inert
+
+Under D, `y_(1,1,1) = 0`. The three-row weight **vanishes**, so the sign-rep step
+— one of the two carrying the false "all positive σ" premise — is multiplied by
+zero. Worth recording precisely because it is the kind of fact that makes a
+defect look harmless: it is inert *under the canonical convention*, not correct.
+
+### Frame
+
+All three sibling chains migrated to convention D at the proton pin. Not
+recomputed in C — those weights are excised, so a C recomputation is unavailable
+and would be work in a retired frame.
+
+### The deuteron's limit, stated
+
+Migrated for sibling consistency, but its **value is read from the live witnesses,
+not recomputed**: the symbolic H₆ route exceeds a 2-minute budget (that chain's
+own step 4 records ~155 s). Its method needed no repair. Written into the chain
+itself.
+
+### Not claimed
+
+That the reported values were wrong *within* convention C. Unanswerable now — the
+C weights are gone.

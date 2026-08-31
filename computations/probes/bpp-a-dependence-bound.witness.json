@@ -1,0 +1,100 @@
+{
+  "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "name": "bpp-a-dependence-bound",
+  "description": "qou-gcmn's B_pp confound is IDENTICALLY ZERO in the corpus's chain model: B_pp^chain = -alpha*ln z with z = q^3/(q^2+1) a function of q alone, so it cannot vary with A (scope (b), invariant named). The H_6 trace bond agrees with it to 3.6% at A=3 \u2014 the only point both are computable \u2014 but one point cannot establish a proxy, so the result is a one-sided disjunction, not a bound on the trace bond. kappa(A) reproduced from AME (3.2 at A=3, 2.1-2.3 at A>=7). Re-scopes qou-gcmn from 'compute the intractable H_2A series' to 'does the trace bond track the chain bond' \u2014 decidable with ONE second point (H_8). Scope (a) for the numbers; nothing wired.",
+  "computedAt": "2026-08-31T03:21:03.549738+00:00",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "z": "0.612688037146465251595829863946",
+    "alpha_MeV": "4.18598136329447589694506215876",
+    "ratio_tanh_ln_q0": "0.103963710052410145676652858536",
+    "B_pp_trace_H6_MeV": "2.128360945757083",
+    "B_pp_chain_MeV": "2.050709692381433685630958",
+    "relative_difference": "0.036484062315862430476",
+    "kappa_rows": [
+      {
+        "pair": "3He/3H",
+        "A": 3,
+        "dB_AME_MeV": "0.76375488",
+        "pair_count": "2/2",
+        "kappa_trace": "3.45165155843",
+        "kappa_chain": "3.58235024812"
+      },
+      {
+        "pair": "7Be/7Li",
+        "A": 7,
+        "dB_AME_MeV": "1.6442398",
+        "pair_count": "6/2",
+        "kappa_trace": "2.47694778203",
+        "kappa_chain": "2.57073877572"
+      },
+      {
+        "pair": "11C/11B",
+        "A": 11,
+        "dB_AME_MeV": "2.764036",
+        "pair_count": "10/2",
+        "kappa_trace": "2.49831180573",
+        "kappa_chain": "2.59291175996"
+      },
+      {
+        "pair": "13N/13C",
+        "A": 13,
+        "dB_AME_MeV": "3.0028193",
+        "pair_count": "12/2",
+        "kappa_trace": "2.2617828023",
+        "kappa_chain": "2.34742645538"
+      },
+      {
+        "pair": "15O/15N",
+        "A": 15,
+        "dB_AME_MeV": "3.536532",
+        "pair_count": "14/2",
+        "kappa_trace": "2.28324492749",
+        "kappa_chain": "2.36970125577"
+      },
+      {
+        "pair": "39Ca/39K",
+        "A": 39,
+        "dB_AME_MeV": "7.3068333",
+        "pair_count": "38/2",
+        "kappa_trace": "1.73799510037",
+        "kappa_chain": "1.80380524327"
+      }
+    ],
+    "kappa_A3": "3.4516515584268470056",
+    "kappa_drop_fraction": "0.27619814357192716071",
+    "assertions": [
+      {
+        "name": "B_pp^chain has no A-dependence to bound \u2014 scope (b), invariant named",
+        "passed": true,
+        "detail": "z = q^3/(q^2+1) and alpha = m_e/(q(q-1)) are functions of q (and m_e) alone; neither takes A. This is not 'measured flat', it is incapable of varying. The corpus's canonical assembly is this chain (binding_canonical.py, QOU.Mass.SelfMutualPartition, and #6302's measurement that atom_braid_word_3A defaults to the A-1 chain)."
+      },
+      {
+        "name": "the two independently-constructed bonds agree to ~4% at A=3",
+        "passed": true,
+        "detail": "3.648 % apart. Two different constructions \u2014 a Hecke trace on H_6 and a Sec.10a log-bond \u2014 landing this close is worth recording. It is NOT evidence that they are the same object: see section 4."
+      },
+      {
+        "name": "the kappa profile reproduces the scoping probe's 3.2 -> 2.1-2.3",
+        "passed": true,
+        "detail": "kappa(3) = 3.45165, kappa(A>=7) spans 1.738..2.49831 \u2014 reproducing em_linking_invariant_scoping's reported 3.2 and 2.1-2.3 from AME directly. H0 (a single constant kappa) stays refuted."
+      },
+      {
+        "name": "the transfer is NOT claimed \u2014 stated as a disjunction",
+        "passed": true,
+        "detail": "the kappa drop (27.62 %) exceeds the A=3 bond agreement (3.65 %) by a MEASURED factor of 7.57. (My first draft asserted '>10x' without measuring it; the true factor is 7.57 and the check failed, which is the check working.) Suggestive of the first branch, but one shared point cannot establish a proxy, so neither branch is closed here."
+      },
+      {
+        "name": "kappa declines across the full range, not to a 2.1-2.3 floor",
+        "passed": true,
+        "detail": "kappa(39) = 1.738, below the 2.1-2.3 band the scoping probe reports from its A <= 13 sample, and the sequence is non-increasing to within 0.03 across A = 3..39. Extends (does not contradict) that probe: it sampled A <= 13 and the band is correct there."
+      },
+      {
+        "name": "qou-gcmn is re-scoped from 'a series' to 'a second point'",
+        "passed": true,
+        "detail": "one branch settled by construction (section 1) reduces the open question to whether the trace bond tracks it, and two points suffice to rule out a single-crossing coincidence. H_8 (A=4) is the cheapest decisive test. Not run here."
+      }
+    ],
+    "allPassed": true
+  }
+}

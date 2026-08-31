@@ -91,7 +91,7 @@ witnessing the self-duality $A \cong A^\vee$ as objects of the
 rigid braided monoidal category. It is **not** a Lebesgue-style
 measure-theoretic integral, and it is **not** a surrogate for
 one. The Costin–Ehrlich–Friedman theorem
-[@costin-ehrlich-friedman2015] rules out any translation-
+\cite{costin-ehrlich-friedman2015} rules out any translation-
 invariant measure on the full ring $C(\mathbf{No})$, so no
 axiomatic stipulation could install one without contradicting a
 proved theorem.

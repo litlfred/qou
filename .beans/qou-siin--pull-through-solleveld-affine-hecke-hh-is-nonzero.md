@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T22:12:00Z
+updated_at: 2026-08-30T14:33:39Z
 ---
 
 `arxiv-1108.5286v3` (Solleveld, *Hochschild homology of affine Hecke algebras*)
@@ -221,3 +221,32 @@ It clears the direction test, the growth test and the degree-0 reduction, and
 then stops at a bridge the corpus has independently marked open. Anyone picking
 it up should know the mathematical work is not the obstacle — the missing object
 is.
+
+
+## CROSS-LINK 2026-08-30 — this bean's OBSERVATION 3 is also `qou-o6ml`'s route-(3) blocker
+
+`qou-o6ml` (EM-linking invariant attack, front 4-B) lists as its route (3) *"the
+h-graded per-pair Hecke trace channel at H_2A with Hochschild-homology
+classification of trace functionals (Solleveld 1108.5286, uploaded)"* — the same
+theorem this bean pulls through, aimed at the EM per-pair weight `w_ij` instead
+of at the body-order series.
+
+It inherits this bean's finite-vs-affine wall unchanged: the corpus's word lives
+in the **finite** `H_{3A}(q)`, the grading collapses to degree 0, and reaching
+the higher degrees needs the inductive limit that
+`markov-trace-inductive-limit.lean` marks open R&D. `qou-o6ml` did not name that
+blocker and was listing route (3) as its unblocked front; corrected there today.
+
+**One thing `qou-o6ml`'s framing adds that this bean did not state.** It asks for
+an **h-graded** channel. Solleveld's grading is by **de Rham form degree** and
+Theorem 2 says `HH_*` is *independent of `q`* — which this bean records — so
+there is no grading by powers of `h = ℏ_q` to look for at all. `h` enters only
+through the centre's action, i.e. the `c_{w,i}(q)` shifts of Theorem 1.c. That is
+a finite, explicit datum rather than a grading, and it is the *encouraging* half
+of the reading: a no-tuned-constant object of exactly the kind 4-B's GATE wants.
+Worth stating here because anyone taking this bean forward for either target will
+otherwise search for the wrong object.
+
+Also carried across: the convention trap in this bean's gate (i) — Solleveld's
+`q` is the corpus's `q²`, so `q_Sol = q₀² ≈ 1.23206` — now recorded on
+`qou-o6ml` too.

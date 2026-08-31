@@ -29,8 +29,8 @@ $$
   \frac{w_{\mathrm{photon}}}{w_{\mathrm{electron}}}
   = 
   \frac{d_H}{2}
-  \frac{1 + (1 - q^{-1})^2\langle\Delta_\xi\rangle_e /
-            \langle\Delta\rangle_e}{1}.
+  \left(1 + (1 - q^{-1})^2\frac{\langle\Delta_\xi\rangle_e}
+            {\langle\Delta\rangle_e}\right).
 $$
 
 Simultaneous electron–photon double-slit measurements isolate this ratio.

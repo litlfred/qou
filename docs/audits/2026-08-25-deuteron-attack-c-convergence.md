@@ -91,6 +91,52 @@ all three lines indict, and it is a modelling choice with no derivation in the c
 
 ## The functional form has no derivation and a DEAD citation (NEW)
 
+> ### Added 2026-08-31 — a SECOND derivation, and it is not KVC-conditional
+>
+> The "posited" verdict in this section is retracted **by this document itself**,
+> in the *RETRACTION + the real gap* section below, which derives the form via
+> `Vol_alg(W) := tr_M(W)` → `τ_arch = ln|Vol_alg|` → `vol_through_tau` → evaluate
+> at `q₀`. Nothing here disturbs that. This note adds a **second, independent**
+> derivation that the retraction does not cite, and draws out what having two
+> changes.
+>
+> [`2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`](2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md)
+> **§10a** — *"The functional is DERIVED, not chosen — and it is the log form"* —
+> argues from trace multiplicativity over bonds (`tr_atom = tr_free · ∏ μ_k`,
+> measured there to 1.2e-31) plus energy extensivity that the trace-to-energy map
+> obeys Cauchy's `f(xy) = f(x) + f(y)` on `(ℝ₊, ×)`, so the log form is forced.
+> `ursell_alternation_sign_identity_probe.py` cites it as a derivation.
+>
+> **Why the second route matters.** Gap **(a)** below says every binding number is
+> KVC-conditional, and gap **(b)** that the regime KVC licenses (`N → ∞`, `q` a
+> root of unity) is not the regime the framework uses (fixed finite braid, real
+> `q₀ > 1`). **§10a's route invokes neither the volume conjecture nor any
+> asymptotic regime** — only multiplicativity and extensivity, both of which hold
+> at fixed finite `n` and real `q`.
+>
+> So the two gaps do not bite equally: what is KVC-conditional is the
+> **identification of `ln|tr_M|` with a hyperbolic volume**, not the **log form
+> itself**. Gap (a) as stated — *"every binding number is therefore
+> KVC-conditional"* — is too strong for the form, though it stands for the
+> volume reading. Gaps (b) and (c) are untouched.
+>
+> **Now in Lean**, sorry-free, which the *Lean: nothing* row above correctly
+> reported was missing:
+> `QOU.QBeta.InterfaceScalar.{logForm_extensive, linearForm_extensivity_defect,
+> linearForm_not_extensive, linearForm_ceiling}`. The defect of the linear rival
+> has a closed form, `−α(1−x)(1−y)` — §10a gives only a measured number, and being
+> an identity this holds at every `q` with no anchor. §10a's *uniqueness* step
+> (only continuous solutions of Cauchy's equation are `c·ln x`) is classical and
+> is **not** formalised, so "forced" still rests on it.
+>
+> **§10a's own figure is convention-C frame** — it predates the 2026-08-09
+> convention-D excision by one day. At the proton pin: C gives **1.487498** (its
+> quoted 1.4875, to 1.6e-6), D gives **0.966887**. Conclusion unaffected either
+> way; the number needed the scope.
+>
+> Guard: `computations/probes/binding_functional_extensivity_probe.py` (4/4).
+
+
 `mass_binding_dashboard.py` cites the binding forms twice (lines 9 and 1116) as
 *"Defn: standard-part-functor.md"*. **That block does not define them.** Read in full
 (2500 bytes): it defines the standard-part map `st : No_fin → ℝ`, the induced iso

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T15:52:00Z
+updated_at: 2026-08-31T04:28:55Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -254,3 +254,197 @@ live target, and which `CrossingCountAffine.no_crossing_combination_is_protonPai
 proves the crossing counts cannot supply.
 
 No number moved; nothing wired. Recorded so the corroboration is not lost.
+
+
+---
+**Coordination cross-check 2026-08-31 — the "two named modelling inputs" count is short by one,
+and the third is a refutation.**
+
+`348cf21d8d` (`qou-v7ro×qou-brng`, Milnor deficit) measured `|D_A|` falling geometrically —
+`1.44e-3 → 8.2e-9` over `A = 3…8`, ratio `−h²(h²+2) = −0.0893226497` at every step — against a
+rising binding, and concluded `D_A` is the Milnor order/parity marker, not the magnitude. **That is
+right and is not disputed**; it holds under any normalisation, since a five-order-of-magnitude fall
+runs opposite to the binding read per-nucleon, per-cluster or per-body-order alike.
+
+Its forward sentence is what needs correcting: *"the magnitude lives in the `qou-brng` coordination
+free energy … whose only open pieces are two named modelling inputs"* (Markov-trace-as-amplitude;
+the `m = m_e·Vol·lw/ℏ_q²` dressing).
+
+**There is a third piece and it is not a modelling input.** `binding = −log I` is a *shape* with `I`
+unspecified. The corpus's filling for `I` is the coordination coefficient —
+`complete_minimal_clasp_coordination`, `C(A,2)` units at one per bonded pair, `z = A−1` — and that
+filling is **pair-local**, which forces `b₃ = 0`:
+
+* `CrossingModelPairLocality.b3_eq_zero_of_pairLocal` (`d2ed45489f`);
+* `InteractionFactorNotPairwise.pairFactorised_b3_eq_zero` (same) — the multiplicative face;
+* `CountChannelCarrierLocus.canonical_carriers_b3_eq_zero` (`773366d004`) — the count channel on the
+  Hopf/Borromean carriers sits *exactly* on that locus, `μ_Borromean = 3 = 3·μ_Hopf`.
+
+Measured `b₃ = +1.4262225 MeV`; model `0`. The scale cancels (`b3_over_b2_eq`), so it is
+zero-parameter, and the alternative full-energy reading gives `−3(q+q⁻¹) < 0` for every `q > 0`.
+
+**Timing:** `d2ed45489f` was on `main` 2 h 17 m before `348cf21d8d`; `773366d004` landed 7 minutes
+after. So this is a coordination miss, not a disagreement — recorded in
+`docs/coordination/2026-08-30-milnor-brunnian-deficit-arc.md` at the point the claim was made.
+
+**Net effect on this bean:** the open list is *type question proved, coordination coefficient
+proved, `binding = −log I` proved* — **plus** an unfilled `I` that must carry irreducibly many-body
+structure, with a one-line acceptance test (`carrier_must_break_three_to_one`: any carrier must
+break `μ_t = 3·μ_p`). The channel is not obstructed — small half-integer multiplicities reach the
+measured ratio to 0.27 % — so the burden is on **deriving** the crossing numbers; two free integers
+against one ratio is a fit.
+
+
+## Carrier crossing numbers ARE derivable — and every derivation gives b₃ ≤ 0 (2026-08-31)
+
+**The question is answered, and the answer is a quantisation obstruction with a
+width: 16.98 %.** Lean `QOU/Mass/CarrierCrossingQuantisation.lean` (11 decls,
+sorry-free, standard three axioms); probe
+`computations/probes/carrier_crossing_quantisation_probe.py` (8/8, exact
+`Fraction`, no free parameters).
+
+**The identity.** `CountChannelCarrierLocus` already fixes `μ = (n₊+n₋)/2` =
+half the carrier's crossing count, and the scale cancels, so
+`b₃/b₂ = c₃/c₂ − 3`. Both `c` are crossing counts of braid words, hence
+**integers**.
+
+**Why the retracted quantisation argument is now live.** That file records the
+half-integer argument as WRONG *because it assumed `μ_pair = 1` while `μ_pair`
+was free*. That retraction stands. **Owner ruling A of 2026-08-29 supplies the
+hypothesis** — the deuteron carrier is the canonical braid closure, Hopf,
+`σ_g²`, `c₂ = 2`. With `c₂` pinned the freedom collapses to one integer.
+
+**Four rules the corpus derives, all consistent, all `b₃/b₂ ≤ 0`:**
+
+| rule | `c₂` | `c₃` | `b₃/b₂` |
+|---|---|---|---|
+| min-length enumeration (`binding-k-enumerator`) | 2 | 2 | −2 |
+| chain / coordination `z = A−1` | 2 | 4 | −1 |
+| canonical Brunnian (Hopf, Borromean) | 2 | 6 | **0** |
+| census volume-match (AME-inverted) | 6 | 7 | −11/6 |
+
+Measured `+0.6411239316`.
+
+**Two findings inside that table.** (1) The `binding-k-enumerator` returns
+`bindingKWord = [3,3] = σ₃²` for deuterium, tritium **and** helium-3 alike — the
+`6₂`/`8₁₁`/`L6a4` on those Lean instances are retained *census names*, not what
+was enumerated. Its criterion (shortest PSD-feasible even word at `L ≤ 3`)
+cannot see `A`, so it can only ever give constant `μ`. (2) The census tier is
+flagged **AME-inverted by the atlas registry itself** — circular, not a
+derivation.
+
+**🛑 TRAP — the straddle manufactures the right sign.** `c₂ = 2` (owner-ruled
+Hopf) with `c₃ = 7` (census A=3 average) gives `+1/2` — right sign, 22 % low,
+and meaningless: two different carrier assignments. Read the census
+consistently and it is `−11/6`. I made exactly this error before catching it;
+`straddle_manufactures_the_sign` records the arithmetic so it is not
+rediscovered as a result.
+
+**The obstruction.** With `c₂ = 2`, `b₃/b₂` lands on the half-integer lattice
+(single A=3 carrier) or the quarter-integer lattice (distinct ³H/³He carriers).
+Measured value sits in a gap of both: nearest is `c(³H)+c(³He) = 15` →
+`3/4`, **+16.98 %**; single-carrier nearest is `c₃ = 7` → `1/2`, −22.01 %
+(`c₃ = 8` → `1`, +55.98 %). `quarter_lattice_gap` proves `≥ 161468/1483044` for
+**every** integer.
+
+**The selection principle points the wrong way — this is the substantive
+obstacle.** Escaping needs `c₃ > 6`, above the Borromean. But `6` is *minimal*:
+`QOU.Knots.KauffmanTL3` machine-checks no braid word of length `< 6` is both
+Brunnian and nontrivial. So a working carrier must be a **non-minimal** Brunnian
+representative, while the only selection principle the corpus derives —
+shortest PSD-feasible word — returns the minimum by construction.
+
+**Scope (b)** on the conjunction {count channel, `μ = c/2`, Hopf pair carrier,
+integer crossing counts}, invariant named: integrality of a crossing count.
+**(a)** on each ingredient; `brunnian_binding_survives` untouched. Conditional
+on owner ruling A.
+
+**Next, in priority order.** (1) `μ = c/2` is the cheapest thing to release — a
+multiplicity that is not half a crossing count is not lattice-valued, and this
+whole obstruction evaporates. Nothing derives `μ = c/2`; it is
+`countChannel`'s definition. (2) Find a selection principle that is not
+minimality. (3) Neither is started.
+
+
+### Sibling `be017ea57b` closes the other route (2026-08-31, same hour)
+
+Another session landed a numerology guard on this bean from the opposite
+direction: **inverting** the `CoordinationSaturation` plateau for a coordination
+number `k` is generic — 27 of 30 (`ε`, target) combinations land inside the
+plausible window — so `k ≈ 6` or `≈ 12` is not the framework predicting a
+lattice. Together with the result above, **both routes to a multiplicity are
+closed**: inverting an anchor for it is a fit, and deriving it from the carrier
+gives the wrong sign.
+
+Do not conflate the two `k`s. Theirs is a *bounded* degree; the `chain /
+coordination z = A−1` row above is the **complete** graph, which
+`CoordinationSaturation` already excludes by saturation. The chain row
+re-derives that excluded case from the crossing side (`−1`); it is not a second
+measurement of their `k`.
+
+
+### 🛑 Correcting my own recommendation: releasing `μ = c/2` is the MOST expensive escape, not the cheapest (2026-08-31)
+
+I recommended, above and in #6321, that *"the cheapest escape is releasing
+`μ = c/2`, which nothing derives — it is `countChannel`'s definition."*
+**Both halves are wrong.**
+
+**It IS a definition, and the constant is forced.** `countChannel`'s `½` is the
+unique solution of `BrunnianBindingChannel.pairEnergy_decomp` — the `ring`
+identity splitting `n₊q − n₋q⁻¹` into its bar-even and bar-odd parts,
+`½(n₊−n₋)(q+q⁻¹) + ½(n₊+n₋)(q−q⁻¹)`. Solving that 2×2 system in the basis
+`{q+q⁻¹, q−q⁻¹}` gives the `½`; it is not a convention anyone chose.
+
+**And dropping it would not help anyway.** `bRatio_scale_invariant` (new, proved):
+`b₃/b₂` is invariant under `μ ↦ κμ` for every `κ ≠ 0`. So `μ = c` gives the
+identical ratio to `μ = c/2` (`muOfCrossings_halving_immaterial`). The constant is
+not load-bearing in either direction.
+
+**What this does to the result — it STRENGTHENS it.** The hypothesis actually in
+force is not `μ = c/2` but the far weaker `μ ∝ c`. Escaping the lattice needs a
+**nonlinear** `μ(c)`, and `pairEnergy_decomp` is linear in `(n₊, n₋)` by
+construction. So the escape route runs through **`def:crossing-energy` itself**,
+upstream of the whole mass sector — not through a convention.
+
+**Revised next steps.** The `μ` route is closed harder than I said. What is left:
+(1) a selection principle that is not minimality — still unstarted, still the
+live one; (2) accept that the count channel does not carry `b₃` and look for the
+extensive term elsewhere, which is `qou-brng`'s original framing.
+
+
+### Two further corrections, both mine, before #6321 merges (2026-08-31)
+
+**(1) The selection principle is NOT minimality — I asserted it was.** Read
+`binding_k_enumerator.py`'s sort key, not the Lean instances' proxy field:
+`(0 if PSD_feasible else 1, markov_residual_to_target, L_K)`. **Length is the
+THIRD key, a tiebreak.** The criterion is **Frobenius-residual minimisation**,
+which depends on `tr_M` at `H_{3A}(q₀)` and is therefore `A`-dependent.
+
+The Lean instances carry `bindingKMinimalLength := length ≤ 4`, a decidable
+*proxy* field, and reading that as the criterion is exactly what makes minimality
+look load-bearing. So the reason all three nuclei returned `σ_g²` is
+**truncation, not principle**: the run used `L_K_max = 4 / 3 / 3`.
+
+**The range that matters has never been searched.** `c₃ ≥ 8` means word length
+`≥ 8`; over the 4 inter-nucleon generators that is ~87,000 words against the ~84
+actually tried. **This is a compute question with a definite answer, not a
+structural impasse** — and it is the live next step.
+
+**(2) Brunnian parity EXCLUDES both points the published gap was attained at.**
+`n₊ = n₋` (the condition emptying the signed channel) forces `c = n₊ + n₋`
+**even**. The two nearest approaches I published — `c(³H)+c(³He) = 15` and
+`c₃ = 7` — are **both odd**, hence unreachable.
+
+| | published | corrected under parity |
+|---|---|---|
+| distinct ³H/³He carriers | `15` → `3/4`, **+16.98 %** | `14` → `1/2`, **−22.01 %** |
+| single A=3 carrier | `7` → `1/2`, −22.01 % | `8` → `1`, **+55.98 %** |
+
+So the gap **widens**, and for a single Brunnian carrier `b₃/b₂` is an outright
+integer. This is not a refinement of the bound — parity deletes the points the
+bound was attained at. `even_lattice_gap` proves `≥ 209293/1483044` for every
+integer; `brunnian_crossings_even` and `single_brunnian_carrier_integer_valued`
+carry the rest. The `A = 2` Hopf carrier is unaffected: it is **not** Brunnian
+(`lk = 1`, `n₊ = 2`, `n₋ = 0`), the boundary case where `lk = z = 1`.
+
+File is now 20 declarations; probe 11/11.

@@ -281,6 +281,79 @@ theorem alpha_upper_bound (a mu B : ℝ) (ha : 0 < a) (hmu : 0 < mu)
 
 end EnergyFloor
 
+section FunctionalIsTheLog
+
+/-! ### Which functional carries a multiplicative trace to an additive energy
+
+`docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+§10a argues the binding functional is *derived* rather than chosen: `tr_M` is
+multiplicative over independent subsystems (`tr_atom = tr_free * Prod_bonds mu_k`,
+measured there to 1.2e-31) and energy is extensive, so the map from trace to
+energy satisfies Cauchy's `f(xy) = f(x) + f(y)` and the log form is forced.
+
+That argument lived only in audit prose. The five-path grep in
+`docs/audits/2026-08-25-deuteron-attack-c-convergence.md` recorded **"Lean:
+nothing"**, and that part was correct. This section supplies the half that is
+mechanically checkable.
+
+**What is proved here, and what is not.** The *comparison* the corpus actually
+runs — log versus linear, the two candidates §10a weighs — is proved: the log
+form is extensive, the linear form is not, its failure has an exact closed form,
+and it carries a ceiling that kills it above A = 2 independently of extensivity.
+The *uniqueness* step ("the only continuous solutions of Cauchy's equation on
+`(R_+, x)` are `c log x`") is a classical theorem that is **not** formalised
+here, so "forced" still rests on it. Do not cite this section as a formalisation
+of §10a's uniqueness claim. -/
+
+/-- **The log form is extensive.** A product of bond scalars becomes a sum of
+bond energies — the property §10a requires of the trace-to-energy map. -/
+theorem logForm_extensive (a x y : ℝ) (hx : 0 < x) (hy : 0 < y) :
+    -a * Real.log (x * y) = -a * Real.log x + -a * Real.log y := by
+  rw [Real.log_mul (ne_of_gt hx) (ne_of_gt hy)]
+  ring
+
+/-- **The linear form's extensivity defect, in closed form.** For the rival
+candidate `B = a(1 - t)` the failure is exactly `-a(1-x)(1-y)` — an identity, so
+it needs no positivity hypothesis and no anchor.
+
+This sharpens §10a, which reports the defect as a single measured number. That
+number is **convention-C frame**: the audit is dated one day before the
+2026-08-09 convention-D excision. Re-measured at the proton pin with
+`mu_pp = z`, `mu_nn = z - h`:
+
+    convention C   z = sqrt(q)/(q+1)   defect = 1.487498   <- the audit's 1.4875
+    convention D   z = q^3/(q^2+1)     defect = 0.966887
+
+The conclusion is unaffected in either convention — the closed form vanishes only
+when `x = 1` or `y = 1` — but the quoted figure needs the scope. -/
+theorem linearForm_extensivity_defect (a x y : ℝ) :
+    a * (1 - x * y) - (a * (1 - x) + a * (1 - y)) = -(a * ((1 - x) * (1 - y))) := by
+  ring
+
+/-- **The linear form is not extensive**, whenever neither bond scalar is
+trivial. `x = 1` or `y = 1` is the degenerate case of a bond that contributes
+nothing, so on any bond that binds at all the linear form fails. -/
+theorem linearForm_not_extensive (a x y : ℝ) (ha : a ≠ 0) (hx : x ≠ 1) (hy : y ≠ 1) :
+    a * (1 - x * y) - (a * (1 - x) + a * (1 - y)) ≠ 0 := by
+  rw [linearForm_extensivity_defect]
+  simp only [neg_ne_zero]
+  exact mul_ne_zero ha (mul_ne_zero (sub_ne_zero.mpr (Ne.symm hx))
+    (sub_ne_zero.mpr (Ne.symm hy)))
+
+/-- **The linear form's ceiling.** Because the atom trace is positive,
+`B_lin = a(t_free - t_atom)` is strictly bounded by `a * t_free` — no choice of
+word or convention escapes it.
+
+§10a's table is this bound in the open: with `t_free ~ 1` at every `A`, the
+ceiling sits near `a ~ 4.19 MeV`, so `B_AME` at ³H (8.48), ⁴He (28.30) and ⁷Li
+(39.24) is unreachable. That is a second, independent reason to reject the linear
+form, and unlike extensivity it does not depend on the convention. -/
+theorem linearForm_ceiling (a t_free t_atom : ℝ) (ha : 0 < a) (ht : 0 < t_atom) :
+    a * (t_free - t_atom) < a * t_free := by
+  nlinarith [mul_pos ha ht]
+
+end FunctionalIsTheLog
+
 section WeightsDetermineZ
 
 variable {R : Type*} [Field R]
@@ -516,6 +589,57 @@ theorem content_keyed_interface_refuted
 
 end ChannelSelection
 
+section SpaceIndexSeparability
+
+/-! ### Can a space index break the pn degeneracy?
+
+Bean `qou-vbyi` proposes a **space index** on the interface as *"the only route
+past the proved flavour-only degeneracy"*, on the strength of `qou-kj4v`'s
+observation that in the Standard Model the ³S₁/¹S₀ split is the tensor force —
+a spin-**space** coupling — and that *"the Hecke interface has one index (the
+strand) and no space index to carry it."*
+
+The reading of that as "add a space factor" does not survive a check, and the
+reason is in `qou-kj4v`'s own sentence: *"In S-wave Pauli LOCKS spin to isospin
+(**space symmetric** ⇒ spin and isospin symmetry opposite)."* **Both pn channels
+are S-wave**, `L = 0` — ³S₁ and ¹S₀ are both `S` in `²ᴹ⁺¹L_J`. So a factor keyed
+on `L` takes the *same* value on both, and a common factor cannot separate what
+was already equal.
+
+The theorem below states this for an arbitrary separable interface, so it covers
+any space index entering multiplicatively, keyed on anything constant across the
+two channels — not merely `L`. -/
+
+variable {R : Type*} [CommMonoid R]
+
+/-- **A separable interface stays degenerate on the two pn channels, whatever
+space index it carries.**
+
+The hypotheses encode the Pauli lock exactly as `qou-kj4v` states it: the
+triplet is `(S = 1, T = 0)` and the singlet `(S = 0, T = 1)`, and the *same* two
+projector scalars `μ₊`, `μ₋` appear in each SU(2) with the roles exchanged. The
+space factor is applied at one and the same `ell`, which is the physical input —
+both channels are S-wave.
+
+The conclusion holds for **every** `fSpace`, so no choice of space index rescues
+a separable interface. What the tensor force does in the Standard Model is
+*couple* spin to space; a product of a spin function and a space function is
+precisely what a coupling is not. -/
+theorem separable_interface_degenerate
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 * fIso t0 * fSpace ell = fSpin s0 * fIso t1 * fSpace ell := by
+  rw [hplus, hminus, mul_comm (fIso t1) (fIso t0)]
+
+/-- The bare form: a factor common to both channels cannot break a degeneracy
+that already holds. Stated separately because it is what makes the theorem above
+independent of *why* the space factor is common. -/
+theorem common_factor_preserves_degeneracy (x y g : R) (h : x = y) :
+    x * g = y * g := by rw [h]
+
+end SpaceIndexSeparability
+
 section ConjugationInvariance
 
 variable {A : Type*} [Ring A] {K : Type*}
@@ -579,5 +703,106 @@ theorem multiset_keyed_energy_well_defined
   rw [hsame]
 
 end ConjugationInvariance
+
+section MarkovRepeat
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- **Markov stabilisation on a REPEATED generator forces `z² = h·z + 1`.**
+
+`interface_scalar` above takes `tr (W * σ) = z * tr W` as a hypothesis — its own
+docstring flags this as an axiom standing in for Jones (1987), not a theorem. The
+question this answers is *when that hypothesis may be assumed*, which the corpus
+had not pinned down.
+
+Take the word `W = σ` itself, i.e. the interface generator already occurring once
+in the word it is being appended to. The Hecke quadratic then evaluates the
+left-hand side outright, and stabilisation becomes an equation on `z` alone.
+
+So stabilisation is not free: on a repeated generator it *forces* the Markov
+parameter to be a root of `x² - h·x - 1`. Whether that root condition holds is a
+property of the convention, settled for convention D below. -/
+theorem markov_repeat_forces_quadratic
+    (tr : A → R) (σ : A) (z h : R)
+    (hadd : ∀ x y : A, tr (x + y) = tr x + tr y)
+    (hsmul : ∀ (c : R) (x : A), tr (c • x) = c * tr x)
+    (hq : σ * σ = h • σ + 1)
+    (hone : tr (1 : A) = 1)
+    (hσ : tr σ = z)
+    (hrepeat : tr (σ * σ) = z * tr σ) :
+    z * z = h * z + 1 := by
+  have hlhs : tr (σ * σ) = h * tr σ + tr (1 : A) := by
+    rw [hq, hadd, hsmul]
+  rw [hrepeat, hσ, hone] at hlhs
+  exact hlhs
+
+end MarkovRepeat
+
+section MarkovRepeatConventionD
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- The convention-D defect `z² - h·z - 1` in closed form, with
+`z = q³/(q²+1)` and `h = q - q⁻¹`.
+
+Both quadratic factors are positive-definite over any linear ordered field
+(`q² ± q + 1 = (q ± 1/2)² + 3/4`), so the defect is a *strictly negative* rational
+function of `q` — it has no zero to be found by tuning the pin. -/
+theorem conventionD_markov_defect (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1)) * (q ^ 3 / (q ^ 2 + 1))
+        - (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) - 1
+      = -((q ^ 2 - q + 1) * (q ^ 2 + q + 1)) / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The convention-D Markov parameter is never a root of `x² - h·x - 1`.**
+The defect is strictly negative for every `q > 0`, so the equation
+`markov_repeat_forces_quadratic` extracts can never be satisfied. -/
+theorem conventionD_markov_defect_neg (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1)) * (q ^ 3 / (q ^ 2 + 1))
+        - (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) - 1 < 0 := by
+  rw [conventionD_markov_defect q hq]
+  apply div_neg_of_neg_of_pos
+  · have h1 : 0 < q ^ 2 - q + 1 := by nlinarith [sq_nonneg (2 * q - 1)]
+    have h2 : 0 < q ^ 2 + q + 1 := by positivity
+    nlinarith [mul_pos h1 h2]
+  · positivity
+
+/-- **The once-only-occurrence condition is NECESSARY, for every `q`.**
+
+Combining the two: if the interface generator already occurs in the word, Markov
+stabilisation would force `z² = h·z + 1`, and convention D's `z` misses that by a
+strictly negative amount at every `q > 0`. So `interface_scalar`'s hypothesis
+**cannot** be assumed on a repeated generator — the collapse of the interface to
+the single scalar `μ = a·z + b` is available only when the generator occurs once.
+
+This is a scope-(b) structural exclusion and the invariant is cited: the defect's
+closed form `-(q²-q+1)(q²+q+1)/(q²+1)²`, whose factors are positive-definite. It
+is not a numerical near-miss at one pin.
+
+Measured counterpart: `computations/probes/colour_weighting_markov_universality_probe.py`
+(PR #6319) fits `k` in `tr_M ∝ (d + k)` from the traces alone and finds `k = z_D` to
+`1e-48` on four canonical nuclear words — each of which uses its interface generator
+exactly once — and finds the identity **breaks** (`k - z_D = 1.2285`) on the same
+deuteron word with one extra `σ` on that generator. The Lean says why the control
+had to come out that way. -/
+theorem markov_stabilisation_fails_on_repeat
+    {A : Type*} [Ring A] [Algebra R A]
+    (tr : A → R) (σ : A) (q : R) (hq : 0 < q)
+    (hadd : ∀ x y : A, tr (x + y) = tr x + tr y)
+    (hsmul : ∀ (c : R) (x : A), tr (c • x) = c * tr x)
+    (hhecke : σ * σ = (q - q⁻¹) • σ + 1)
+    (hone : tr (1 : A) = 1)
+    (hσ : tr σ = q ^ 3 / (q ^ 2 + 1)) :
+    tr (σ * σ) ≠ (q ^ 3 / (q ^ 2 + 1)) * tr σ := by
+  intro hrepeat
+  have hquad := markov_repeat_forces_quadratic tr σ (q ^ 3 / (q ^ 2 + 1))
+    (q - q⁻¹) hadd hsmul hhecke hone hσ hrepeat
+  have hneg := conventionD_markov_defect_neg q hq
+  linarith [hquad, hneg]
+
+end MarkovRepeatConventionD
 
 end QOU.QBeta.InterfaceScalar

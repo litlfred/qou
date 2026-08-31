@@ -33,6 +33,7 @@ from datetime import datetime, timezone
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, re, log
 from mpmath import fabs as mpabs
+from mpmath import nstr  # noqa: E402 — assertion serialization (bean qou-srvu)
 
 from witness_base import WitnessBuilder
 
@@ -75,6 +76,9 @@ def main() -> None:
 
     # ── Closed-form vs direct cross-check ───────────────────────
     CLOSED_VS_DIRECT_RESIDUAL = mpabs(S_3_DIRECT - S_3_CLOSED_FORM)
+    # The threshold this script already states in its prints and in both
+    # `*_below_1e_40` field names. Named so the assertions reuse it.
+    RESID_TOL = mpf("1e-40")
 
     print("=" * 72)
     print("Kummer reflection at ζ_5 — depth-3 imaginary-part closed form")
@@ -86,7 +90,7 @@ def main() -> None:
     print(f"Closed form: 4π³ / 125         = {S_3_CLOSED_FORM}")
     print(f"Closed-vs-direct residual      = {CLOSED_VS_DIRECT_RESIDUAL}")
     print(f"residual < 1e-40               = "
-          f"{float(CLOSED_VS_DIRECT_RESIDUAL) < 1e-40}")
+          f"{CLOSED_VS_DIRECT_RESIDUAL < RESID_TOL}")
     print()
     print(f"Kummer reflection formula check:")
     print(f"  log(-ζ_5) [principal]        = {LOG_NEG_ZETA5}")
@@ -94,7 +98,7 @@ def main() -> None:
     print(f"  RHS = -log³(-z)/6 - π²log(-z)/6 = {RHS_KUMMER}")
     print(f"  residual = |LHS - RHS|        = {KUMMER_RESIDUAL}")
     print(f"  residual < 1e-40              = "
-          f"{float(KUMMER_RESIDUAL) < 1e-40}")
+          f"{KUMMER_RESIDUAL < RESID_TOL}")
     print()
     print("Interpretation:")
     print("  Im Li_3(ζ_5) = 4π³/125 — Tate-rational, lives in")
@@ -141,7 +145,7 @@ def main() -> None:
             "lhs_str": str(LHS_KUMMER),
             "rhs_str": str(RHS_KUMMER),
             "residual_str": str(KUMMER_RESIDUAL),
-            "residual_below_1e_40": float(KUMMER_RESIDUAL) < 1e-40,
+            "residual_below_1e_40": bool(KUMMER_RESIDUAL < RESID_TOL),
         },
         "interpretation": (
             "Im Li_3(ζ_5) is Tate-rational (4π³/125), in (2πi)³·ℚ. "
@@ -170,6 +174,36 @@ def main() -> None:
         script_path=__file__,
         engine="mpmath",
         start_time=start,
+    )
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    # Both residuals below were already computed, already printed, and
+    # already stored; only the assertion was missing, so no consumer
+    # could see either fail. Both compare against KNOWN external
+    # mathematics rather than against this script's own output, and the
+    # tolerance is the file's own 1e-40, quoted in its prints and in
+    # both `*_below_1e_40` field names.
+    builder.add_assertion(
+        "kummer_reflection_holds",
+        computed=nstr(KUMMER_RESIDUAL, 8),
+        expected="0",
+        tolerance=nstr(RESID_TOL, 2),
+        source=(
+            "Kummer's reflection formula Li_3(z) - Li_3(1/z) = "
+            "-log^3(-z)/6 - pi^2 log(-z)/6 at z = zeta_5; a wrong "
+            "principal branch for log(-zeta_5) breaks it"
+        ),
+    )
+    builder.add_assertion(
+        "im_Li3_zeta5_matches_closed_form",
+        computed=nstr(CLOSED_VS_DIRECT_RESIDUAL, 8),
+        expected="0",
+        tolerance=nstr(RESID_TOL, 2),
+        source=(
+            "Im Li_3(zeta_5) = 4*pi^3/125 — the closed form this "
+            "witness exists to record, checked against the direct "
+            "mpmath evaluation (two independent routes)"
+        ),
     )
     out = builder.save()
     print(f"\nwitness: {out}")

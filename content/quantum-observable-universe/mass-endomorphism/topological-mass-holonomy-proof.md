@@ -21,4 +21,4 @@ $$
 $$
 
 where the second equality is the nonabelian Stokes
-theorem \[yekutieli2015] applied to the disc $\Sigma_0$.  $\square$
+theorem \cite{yekutieli2015} applied to the disc $\Sigma_0$.  $\square$
