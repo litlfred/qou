@@ -12,6 +12,7 @@ updated_at: 2026-08-31T04:44:50Z
 updated_at: 2026-08-31T04:50:43Z
 updated_at: 2026-08-31T05:58:46Z
 updated_at: 2026-08-31T07:27:11Z
+updated_at: 2026-08-31T07:32:23Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1103,3 +1104,34 @@ extensive term is somewhere the crossing count does not reach.**
 Lean `QOU/Mass/BrunnianTripleExhaustion.lean` (8 decls, sorry-free, imports
 `rMeasured` from `CarrierCrossingQuantisation` rather than restating it, so the
 two cannot drift); probe 6/6.
+
+
+### Which ingredient is actually free — RESOLVED, not guessed (2026-08-31)
+
+I wrote that the free ingredient is *"that `b₃` is carried by the count channel at
+all"*. Resolving it to its source names it exactly, and it is sharper than that.
+
+`SelfMutualPartition.binding_eq_neg_mutualEnergy` is **a definitional partition**,
+not an empirical claim: it takes `energy : C → ℝ` as a **parameter** and proves
+`binding = −mutualEnergy` by `unfold` + `ring`. Nothing there pins what `energy`
+is.
+
+The pinning is in **`def:crossing-energy`**, which *defines*
+`𝔈_cross = Σ_crossings (q for L₊, −q⁻¹ for L₋)` — **one weight per crossing, the
+same whichever components it joins.** That uniformity **is** `μ ∝ c`: summing a
+constant over crossings is counting them. A pair-dependent weight would make `μ`
+a weighted sum, and the integrality driving the whole exclusion would vanish.
+
+**So the same defect sits at two levels, and the corpus already refuted the upper
+one.** `CrossingModelPairLocality` proved assembly-independent *pair* weights
+force `b₃ = 0`; one level down, crossing-independent *crossing* weights force
+`b₃/b₂ ∈ ℤ`. **The measured `b₃` refutes uniformity twice**, and the second
+refutation is what this arc supplies.
+
+**TRAP recorded — `ℝ` auto-binds silently.** `BrunnianTripleExhaustion` must
+`import Mathlib.Data.Real.Basic` explicitly; `CarrierCrossingQuantisation` does
+not, and without it Lean **auto-binds `ℝ` as a fresh type variable rather than
+erroring**, so the weight lemmas type-check over a meaningless type. Caught only
+because a `ring` failed downstream and the goal display showed `ℝ : Type u_1`.
+
+File now 12 declarations, sorry-free.
