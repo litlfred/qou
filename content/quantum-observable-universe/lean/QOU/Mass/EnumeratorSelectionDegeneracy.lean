@@ -194,6 +194,36 @@ theorem selfCrossing_not_admissible :
   rintro ⟨q, hq⟩
   exact hq (selfCrossing_countChannel_eq_zero q)
 
+/-! ## 2b. The binding cannot see WHICH band — only how many crossings -/
+
+/-- **The count channel depends only on the total crossing count.** Two carriers
+with the same `n₊ + n₋` on a pair give the *same* binding, whatever strands they
+actually use. -/
+theorem countChannel_depends_only_on_total (np nn np' nn' : ℕ) (q : ℝ)
+    (h : np + nn = np' + nn') : countChannel np nn q = countChannel np' nn' q := by
+  unfold countChannel
+  have : ((np : ℝ) + (nn : ℝ)) = ((np' : ℝ) + (nn' : ℝ)) := by exact_mod_cast h
+  rw [this]
+
+/-- **So the carrier is underdetermined by the binding itself.** In `B₉` there are
+**nine** band generators joining any given pair of nucleons (`3 × 3` strand
+choices), and `countChannel` assigns all nine the same value. Combined with
+`QOU.Mass.SelfMutualPartition`, which makes the binding a sum over
+inter-component crossings, the binding-relevant content of a carrier is just the
+per-pair crossing counts — a triple `(m₁, m₂, m₃)`, not a braid word.
+
+Measured, for a Brunnian carrier (`n₊ = n₋ = mᵢ` on each pair) with total
+crossings `c ≤ 12`: **20 triples**, against **382,637,520** structured band
+words — a collapse of about `1.9 × 10⁷`.
+
+**This is why a trace criterion cannot select the carrier, and it subsumes
+Defect 3.** The residual is being asked to make a distinction the binding does
+not use. Defect 3 (the exact `1|2`-vs-`2|3` tie) is the two-generator shadow of
+this: the trace ties them because the binding has no opinion either. -/
+theorem carrier_underdetermined_by_binding (np nn : ℕ) (q : ℝ) :
+    countChannel np nn q = countChannel (np + nn) 0 q :=
+  countChannel_depends_only_on_total _ _ _ _ q (by omega)
+
 /-! ## 3. The minimal interface set cannot carry a Brunnian link -/
 
 /-- Pairwise linking numbers of a carrier `σ₃^a σ₆^b` in `B₉`, doubled to stay in

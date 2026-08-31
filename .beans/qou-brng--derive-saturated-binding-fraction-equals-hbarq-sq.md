@@ -10,6 +10,7 @@ updated_at: 2026-08-31T21:20:07Z
 updated_at: 2026-08-31T04:40:24Z
 updated_at: 2026-08-31T04:44:50Z
 updated_at: 2026-08-31T04:50:43Z
+updated_at: 2026-08-31T05:58:46Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1017,3 +1018,47 @@ adopting it is a **citation, not a derivation**.
 than a longer search: re-run the binding-K enumeration over the 27 inter-nucleon
 bands (in `mpf`, not float64), which is a *smaller* space than the 87,380 words
 the length-extension would have walked.
+
+
+### 🛑 RETRACTED: "the band route is cheaper". It is ~4,400× LARGER (2026-08-31)
+
+I asserted, in the bean and in #6366, that re-running the enumeration over the
+27 inter-nucleon bands would be *cheaper* than the length-extension it replaces.
+**I did not compute it. It is wrong.**
+
+A Brunnian carrier needs `n₊ = n₋ ≥ 1` on **each** of the 3 nucleon-pairs, so at
+least **6** band letters:
+
+| | candidates |
+|---|---|
+| naive, 54 signed band letters, `L = 6` | 24,794,911,296 |
+| structured (one `+`/`−` per pair, ordered) | **382,637,520** |
+| the length-extension it replaces | 87,380 |
+| | **4,379× larger** |
+
+The band set is still the **only** one that can *reach* a Brunnian carrier — it
+is **necessary, not cheap**. Do not quote "cheaper".
+
+### And the correction produces the better result: the binding cannot see WHICH band
+
+`countChannel np nn q` depends only on `n₊ + n₋`
+(`countChannel_depends_only_on_total`, proved), and `SelfMutualPartition` makes
+binding a sum over inter-component crossings. **So all 9 bands joining a given
+nucleon-pair are binding-equivalent.** The binding-relevant content of a carrier
+is the triple `(m₁, m₂, m₃)` — **20 triples** at `c ≤ 12` against 382,637,520
+band words, a collapse of **1.9 × 10⁷**.
+
+**This subsumes Defect 3 rather than sitting beside it.** The residual is being
+asked to make a distinction *the binding does not use*; the exact `1|2`-vs-`2|3`
+tie is the two-generator shadow of the same fact. **So no repair of the
+arithmetic — `mpf` instead of float64 — can make a trace criterion select among
+binding-equivalent carriers.** The float64 fix is still right, but it fixes a
+smaller thing than I said.
+
+**Confirmed at the source, not just in the recorded output:**
+`_eval_word_per_block_cached` builds `np.eye(dim)` and multiplies float64
+matrices, so defect 2's root cause is in the producer.
+
+**Revised next step.** Search the **20 binding-relevant triples**, not band
+words — and select on something that is not the Markov trace, since the trace
+provably cannot separate binding-equivalent carriers.
