@@ -16,24 +16,39 @@ excludes the complete graph. Read its statement, not its headline:
 The object is `B = ε · M` — binding **ADDITIVE** in the bond count `M`, with a
 uniform per-bond `ε`. That is what is excluded.
 
-The live canonical producer does not compute that. `closed_form_tau_M` builds
+Two live channels read a binding off the multiplicative trace
+`tr_M(𝓑_K) = tr_p^Z · tr_n^N · ∏_bonds f_i(q)`, and they are different functions
+of the bond count `M`:
 
-    tr_M(𝓑_K) = tr_p^Z · tr_n^N · ∏_bonds f_i(q)          (MULTIPLICATIVE)
+* **free energy** — `derived_bond_graph_binding.py:170-171` computes
+  `B = E₀·Σ_bonds log(1/f_bond)` for the chain and for the complete graph. That IS
+  `ε·M`, so `complete_graph_no_saturation`'s premise is instantiated here.
+* **observe-early trace difference** — `binding_canonical.py:534` computes
+  `B_pred = Q_β·(|tr_free| − |tr_atom|) = Q_β·|tr_free|·(1 − ∏ f_i)`. Here the bond
+  count enters through `1 − ∏`, which is bounded by 1 whatever `M` is, so the
+  premise is NOT instantiated.
 
-and `binding_canonical.py:528-533` reads the binding off it as a **trace
-difference**, the form it labels `observe-early`:
+So whether the exclusion bites is not a matter of interpretation — it depends on
+which channel the binding is read in, and that is measurable. AGENTS.md §"Grep the
+claim SHAPE, not only the topic": a conditional lemma proves the implication, never
+the premise.
 
-    B_pred = Q_β · (|tr_free| − |tr_atom|) = Q_β · |tr_free| · (1 − ∏ f_i)
+Three things this docstring got wrong on the first pass, corrected here because the
+errors are the kind that propagate:
 
-with `tr_free = tr_p^Z·tr_n^N` (the `include_inter=False` word). The same file
-computes the log-like `B_late` and marks it **REFUTED**.
-
-Those are different functions of `M`. `Σ` over bonds is `ε·M`; `1 − ∏` is bounded by
-1 whatever `M` is. So whether `complete_graph_no_saturation` bites on the live
-producer is not a matter of interpretation — it depends on which channel the binding
-is read in, and that is measurable. AGENTS.md §"Grep the claim SHAPE, not only the
-topic": a conditional lemma proves the implication, never the premise, and "one
-proposition or a family" is decided by the type.
+1. `binding_canonical`'s third form `B_late` is **not** a log channel. It is
+   `Q_β·Σ_λ y_λ(θ_free[λ] − θ_atom[λ])` with `θ = acos(χ/dim)` or `acosh(|χ|/dim)`
+   — an ANGLE per Wedderburn block, summed over partitions rather than over bonds.
+   Its `# refuted: small/neg/shrinks` note says nothing about the free-energy
+   channel.
+2. The free-energy channel is **live**, not deprecated, and
+   `derived_bond_graph_binding` already runs exactly the chain-vs-complete
+   comparison this probe's Channel 1 reproduces. Channel 1 here is an independent
+   re-derivation and is cited as such, not offered as new.
+3. `binding_canonical` calls `atom_braid_word_3A(include_inter=True)`, which is the
+   **chain** (`A−1` bonds), not the complete graph. So it is not the producer the
+   complete-graph exclusion is about; `build_atom_nf` / `build_atom_nf_sym` is.
+   The channel finding below is about the CHANNEL and holds for either bond set.
 
 ## What is measured
 
@@ -152,6 +167,16 @@ def main() -> int:
     print("  => chain is BOUNDED (a plateau); complete GROWS without bound.")
     print("     That reproduces complete_graph_no_saturation exactly, and it is the")
     print("     channel in which the cited exclusion is a statement about this corpus.")
+    print("  NOT NEW: derived_bond_graph_binding.py:170-171 already computes")
+    print("     B = E0 * sum_bonds log(1/f_bond) for both bond sets.  This is an")
+    print("     independent re-derivation of that comparison, cited not claimed.")
+    print("     Two defects noticed in it while checking, neither fixed here:")
+    print("       * its docstring declares z = 1/(q^1/2+q^-1/2) (convention C) while")
+    print("         its body line 78 computes q0**3/(q0**2+1) (convention D) -- the")
+    print("         body is right, the docstring is stale.")
+    print("       * line 77 downcasts q0, h, me with float() and it computes in")
+    print("         math.log, i.e. float64, and it emits a witness.  That is a")
+    print("         NO-FLOAT64 violation in a live witness-emitting producer.")
     print()
 
     print("CHANNEL 2 — observe-early, the form binding_canonical actually computes:")
@@ -238,9 +263,10 @@ def main() -> int:
     print("  * binding_canonical computes the observe-early trace DIFFERENCE, where")
     print("    the bond set enters as (1 - prod f), bounded in [0,1) for every bond")
     print("    set.  complete_graph_no_saturation's premise is not instantiated")
-    print("    there, so it does not exclude the complete graph in the channel the")
-    print("    canonical producer uses.  That is an arity gap, not a refutation of")
-    print("    the theorem, which is correct as stated.")
+    print("    there.  So the corpus reads binding in two live channels and the")
+    print("    exclusion is a statement about one of them only.  That is an arity")
+    print("    gap in the CITATION; the theorem is correct as stated, and Channel 1")
+    print("    above reproduces it.")
     print("  * In that channel B/A is set by |tr_p|^Z|tr_n|^N, which is exponential")
     print("    in A and is NOT a function of the bond set at all.  Measured, the two")
     print("    bond sets agree to 10 significant figures from A = 12 on, and the")

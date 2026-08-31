@@ -39,6 +39,16 @@ CHANNEL 1 — free energy:  -log(prod f) / A  =  sum_bonds (-log f) / A
   => chain is BOUNDED (a plateau); complete GROWS without bound.
      That reproduces complete_graph_no_saturation exactly, and it is the
      channel in which the cited exclusion is a statement about this corpus.
+  NOT NEW: derived_bond_graph_binding.py:170-171 already computes
+     B = E0 * sum_bonds log(1/f_bond) for both bond sets.  This is an
+     independent re-derivation of that comparison, cited not claimed.
+     Two defects noticed in it while checking, neither fixed here:
+       * its docstring declares z = 1/(q^1/2+q^-1/2) (convention C) while
+         its body line 78 computes q0**3/(q0**2+1) (convention D) -- the
+         body is right, the docstring is stale.
+       * line 77 downcasts q0, h, me with float() and it computes in
+         math.log, i.e. float64, and it emits a witness.  That is a
+         NO-FLOAT64 violation in a live witness-emitting producer.
 
 CHANNEL 2 — observe-early, the form binding_canonical actually computes:
   B = Q_b * |tr_free| * (1 - prod f),   tr_free = tr_p^Z * tr_n^N
@@ -107,9 +117,10 @@ Reading
   * binding_canonical computes the observe-early trace DIFFERENCE, where
     the bond set enters as (1 - prod f), bounded in [0,1) for every bond
     set.  complete_graph_no_saturation's premise is not instantiated
-    there, so it does not exclude the complete graph in the channel the
-    canonical producer uses.  That is an arity gap, not a refutation of
-    the theorem, which is correct as stated.
+    there.  So the corpus reads binding in two live channels and the
+    exclusion is a statement about one of them only.  That is an arity
+    gap in the CITATION; the theorem is correct as stated, and Channel 1
+    above reproduces it.
   * In that channel B/A is set by |tr_p|^Z|tr_n|^N, which is exponential
     in A and is NOT a function of the bond set at all.  Measured, the two
     bond sets agree to 10 significant figures from A = 12 on, and the
