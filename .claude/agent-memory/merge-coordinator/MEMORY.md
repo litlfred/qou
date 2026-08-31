@@ -155,8 +155,8 @@ Detail: [`update-pull-request-partial-write.md`](update-pull-request-partial-wri
 
 ## TRAP — API dead session-wide · shared worktree · float64-guard marker
 
-2026-08-31 (#6395/#6396). Recipes + incident detail:
-[`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md).
+2026-08-31, TWICE (#6395/#6396, then #6400/#6401 — the API gate is **2/2, a
+STANDING condition**). Recipes: [`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md).
 
 1. **API dead session-wide, `git` fine.** All `mcp__github__*` → *"No such tool
    available"*, no `gh`, REST **403 "GitHub access is not enabled for this
