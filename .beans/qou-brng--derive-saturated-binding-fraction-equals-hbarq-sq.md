@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T18:32:18Z
+updated_at: 2026-08-31T19:36:17Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -735,3 +735,24 @@ only make the radical LARGER -- not measured); no candidate (h,z) pair proposed;
 no SDP run, no binding energy computed. And the trilemma's leg (2) is a
 DEFINITIONAL identity -- the measurement demonstrates it, the definition
 establishes it.
+
+
+**2026-08-31 — #6405: widening the isotope table is near-worthless; I proposed it**
+
+Widened 5 → 12 isotopes (³H … ¹⁶O). **Zero shapes changed verdict**; per-α
+window 1.29 % tighter ([11.1145, 17.4638] → [11.1145, 17.2392]). Every
+exclusion at 12 was already available at A ≤ 7. Correcting my own claim that
+this was "the highest-value cheap move" — it was cheap and nearly
+information-free.
+
+What it did establish: the discriminator among 8 shapes is **not** growth rate
+(`A` excluded, `floor(A/4)` survives despite being 4× smaller asymptotically).
+Two small-A constraints do the work — must vanish at A=3 (A=3 caps T at 2.34,
+⁴He demands ≥ 11.11), must not increment before A=8 (⁶Li → c ≤ 5.82, ⁷Li →
+5.35). So the survivor is a **step function counting complete 4-blocks**.
+
+Caveat recorded in the probe: `floor(A/4)` is built to satisfy those two
+constraints, so its survival is weak evidence, not support. The defensible
+claim is the negative one.
+
+`computations/wide_isotope_window_test_probe.py`, PR #6405.
