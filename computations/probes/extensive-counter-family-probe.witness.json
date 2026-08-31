@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:13:53.187570+00:00",
-  "commitSha": "ddd3523ac333dc5f033be3fb99d54e69d9810796",
+  "computedAt": "2026-08-31T03:17:17.842886+00:00",
+  "commitSha": "c2871f09a4038efaafb5f201972965fb856d807b",
   "assertions": [
     {
       "name": "all_counters_exactly_linear_in_A",
@@ -31,8 +31,8 @@
   "durationMs": 9,
   "computation": "extensive-counter-family-probe",
   "scriptFile": "extensive_counter_family_probe.py",
-  "scriptHash": "f47a4f135cfa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c16934981d14",
+  "scriptCommitSha": "999b4840fa34da1408ad701f067a56930fe0a09c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -158,7 +158,19 @@
       "shortfall_vs_plateau": "1.5010874",
       "shortfall_vs_a_V": "2.7902567"
     },
-    "verdict": "The missing factor is neither a normalisation nor a counter. Every extensive counter the atomic word offers is exactly linear in A with slope in {1,2,3,12}; crossed with every normaliser convention the coefficient spans 0.355..5.663 MeV/nucleon, and the maximum is still 1.50x short of the B/A plateau and 2.79x short of a_V. Both obvious places to look are now enumerated and both come up short. NOTE: switching from the strand counter to the letter counter shrinks the deficit from 6.9x to 1.50x -- suggestive, and exactly the member-picking the ROAST caught the original memo doing. Nothing here fixes which counter is physical, so no member is selected."
+    "which_counter_is_the_A1_object": {
+      "answer": "strands",
+      "why": "y_lambda_symbolic takes only n; tr_M = sum_lambda y_lambda * chi^lambda, so the word enters through chi and never through the normaliser. Z(n) is word-independent.",
+      "A1_coefficient_MeV_per_nucleon": {
+        "[2]_q = q + 1/q": "1.070922205",
+        "[2]_Q = 1 + q^2": "1.230876201",
+        "kauffman q^(1/2)+q^(-1/2)": "1.064677715",
+        "1 + q^4": "1.415640377"
+      },
+      "A1_deficit_vs_plateau": "6.00435x .. 7.98364x",
+      "correction": "An earlier reading of this grid treated all sixteen cells as conventions of one object. They are not. Only the STRANDS row is A1; the other rows are different physical proposals (a per-letter or per-bond energy) with no axiom source. Presenting them together overstated the available freedom and made A1's deficit look like 1.50x when for A1 it is 6.0-8.0x."
+    },
+    "verdict": "The missing factor is neither a normalisation nor a counter. Every extensive counter the atomic word offers is exactly linear in A with slope in {1,2,3,12}; crossed with every normaliser convention the coefficient spans 0.355..5.663 MeV/nucleon, and the maximum is still 1.50x short of the B/A plateau and 2.79x short of a_V. Both obvious places to look are now enumerated and both come up short. AND the counter is not free for A1: the normaliser Z(n) is word-independent, so the object A1 proposes to stop discarding counts STRANDS, giving 6.0-8.0x. The letter counter (which would give 1.50x) belongs to a DIFFERENT proposal with no axiom source -- crossing the two in one grid, as an earlier reading of this probe did, overstates the freedom and flatters A1."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

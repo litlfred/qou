@@ -42,14 +42,24 @@ So the missing factor is neither a normalisation nor a counter. Both of the
 obvious places to look have now been enumerated and both come up short — which is
 a stronger statement than "we have not found it yet".
 
-WHAT THIS PROBE REFUSES TO DO
------------------------------
-Moving from the strand counter to the letter counter shrinks the deficit from
-6.9× to 1.50×. That is *suggestive* and it is exactly the move the ROAST
-(`2026-08-07-l2-attack-options-ROAST.md` §R0.1) caught the original memo making:
-picking the family member that lands nearest the target and presenting the choice
-as structure. Nothing here fixes which counter is the physical one, so this probe
-reports the whole family and selects no member.
+WHICH COUNTER IS A1's? — STRANDS, and the normaliser settles it
+---------------------------------------------------------------
+`y_lambda_symbolic(n)` takes **only `n`**. The Markov trace is
+`tr_M(β) = Σ_λ y_λ(q)·χ^λ(β)`, so the word enters through `χ` and *never* through
+`y`. The normaliser `Z(n) = (1+q²)^n` is therefore **word-independent**, and the
+object A1 proposes to stop discarding counts **strands** — it cannot count
+letters or bonds, which are properties of the word.
+
+So for A1 the deficit is **6.0×–8.0×**, not the family minimum. The letter
+counter, which would give 1.50×, belongs to a *different* proposal (a per-letter
+energy) with no axiom source behind it.
+
+Crossing the two in one grid — as an earlier reading of this probe did — overstates
+the available freedom and flatters A1 by a factor of four. That is the same
+member-picking the ROAST (`2026-08-07-l2-attack-options-ROAST.md` §R0.1) caught the
+original memo doing, arrived at from the other direction. The grid is still
+reported in full, because the *other* rows are real proposals someone may want to
+motivate; but they are not conventions of one object, and no member is selected.
 
 Usage:
     python3 computations/probes/extensive_counter_family_probe.py
@@ -177,16 +187,40 @@ def main() -> int:
         "shortfall_vs_plateau": mp.nstr(B_OVER_A_PLATEAU / best, 8),
         "shortfall_vs_a_V": mp.nstr(SEMF_A_V / best, 8),
     })
+    # ---- which counter is the A1 object? The normaliser answers it. ---------
+    # `y_lambda_symbolic(n)` takes ONLY `n`. The Markov trace is
+    # `tr_M(beta) = sum_lambda y_lambda(q) * chi^lambda(beta)`: the word enters
+    # through `chi`, never through `y`. So the normaliser `Z(n) = (1+q^2)^n` is
+    # word-INDEPENDENT, and the quantity A1 proposes to stop discarding counts
+    # STRANDS. It cannot count letters, bonds, or anything else read off the word.
+    w.add_data("which_counter_is_the_A1_object", {
+        "answer": "strands",
+        "why": ("y_lambda_symbolic takes only n; tr_M = sum_lambda y_lambda * chi^lambda, "
+                "so the word enters through chi and never through the normaliser. Z(n) is "
+                "word-independent."),
+        "A1_coefficient_MeV_per_nucleon": grid["strands"],
+        "A1_deficit_vs_plateau": (
+            f"{mp.nstr(B_OVER_A_PLATEAU / (counters['strands'] * mp.log(max(normalisers.values())) * M_E_MEV), 6)}x"
+            f" .. {mp.nstr(B_OVER_A_PLATEAU / (counters['strands'] * mp.log(min(normalisers.values())) * M_E_MEV), 6)}x"),
+        "correction": ("An earlier reading of this grid treated all sixteen cells as "
+                       "conventions of one object. They are not. Only the STRANDS row is "
+                       "A1; the other rows are different physical proposals (a per-letter "
+                       "or per-bond energy) with no axiom source. Presenting them together "
+                       "overstated the available freedom and made A1's deficit look like "
+                       "1.50x when for A1 it is 6.0-8.0x."),
+    })
+
     w.add_data("verdict", (
         "The missing factor is neither a normalisation nor a counter. Every extensive "
         "counter the atomic word offers is exactly linear in A with slope in {1,2,3,12}; "
         "crossed with every normaliser convention the coefficient spans 0.355..5.663 "
         "MeV/nucleon, and the maximum is still 1.50x short of the B/A plateau and 2.79x "
         "short of a_V. Both obvious places to look are now enumerated and both come up "
-        "short. NOTE: switching from the strand counter to the letter counter shrinks the "
-        "deficit from 6.9x to 1.50x -- suggestive, and exactly the member-picking the "
-        "ROAST caught the original memo doing. Nothing here fixes which counter is "
-        "physical, so no member is selected."
+        "short. AND the counter is not free for A1: the normaliser Z(n) is word-independent, "
+        "so the object A1 proposes to stop discarding counts STRANDS, giving 6.0-8.0x. The "
+        "letter counter (which would give 1.50x) belongs to a DIFFERENT proposal with no "
+        "axiom source -- crossing the two in one grid, as an earlier reading of this probe "
+        "did, overstates the freedom and flatters A1."
     ))
 
     out = w.save()
