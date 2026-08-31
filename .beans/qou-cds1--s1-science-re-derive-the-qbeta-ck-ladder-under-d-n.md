@@ -4888,3 +4888,62 @@ could use a bare cosine (the midpoint rule is *vacuous* in C, since `alpha_C` is
 bar-odd and cosine is even); my Result 1 shows the *generator's* forced parity is
 bar-INVARIANT rather than bar-odd. Both are the same underlying fact — D's action
 is multiplicative, C's is affine — read at two different slots of the ladder.
+
+## CORRECTION to the previous entry — Result 2 tested a coefficient the corpus does not derive
+
+Probe: `computations/qbeta/qbeta_d_n2_factor_bar_invariance_probe.py`, **13/13**,
+sympy exact.
+
+The previous entry argued that `c_2 = -1`, being a rational constant of bar-weight
+0, is CONSISTENT with the forced expansion variable `X = u*Vhat_D` and INCONSISTENT
+with plain `u`. The weight arithmetic is right. The object it was applied to is
+not.
+
+### What the corpus actually derives
+
+AGENTS.md ties the derived rung to `u` **specifically**:
+
+    "1 - b^2*hbar^4 = 1 - (b*hbar^2)^2, a one-line `ring` identity: it proves
+     only that re-reading the N=2 factor in the ansatz form yields -1."
+
+So the derived object is `1 - u^2`, in the variable `u` — not an abstract
+`1 + c_2*X^2` whose variable is free to be chosen later.
+
+### That object is not bar-invariant under D
+
+    bar(1 - u^2) - (1 - u^2)  =  (1 - q^4)*u^2   != 0
+
+exactly, since `w(u) = +2` (`b` is bar-invariant, `bar(hbar_q)/hbar_q = -q`, and
+the sign squares away). Re-expressed in the forced variable:
+
+    1 - u^2  =  1 - X^2/Vhat_D^2   ->   c_2^(X) = -1/Vhat_D^2,  weight +4
+
+against the weight 0 the forced form requires. **INCONSISTENT.** The previous
+entry's "CONSISTENT" verdict came from reading `-1` as the coefficient of `X^2`
+when it is the coefficient of `u^2`; the two differ by `Vhat_D^2 = 1.27258` at
+the proton pin — the same +27.3% k=2 rescaling the forced-form probe already
+measured, arrived at from the other side.
+
+### What this does and does not say
+
+- **NOT** that `c_2 = -1` is wrong. It is correct in the frame it was derived in.
+  What fails is its TRANSPORT to D. Scope **(a)**: a scope-limited negative about
+  one construction, not a structural exclusion of anything.
+- **NOT** a new refutation of the ladder. It is the same failure already
+  established for `cos(alpha_eff)` (#6244) and for the product form (#6282),
+  now shown for the third and last leg.
+
+### The consolidated statement, which is cleaner than the three separate ones
+
+All three legs of the C-frame instrument — the leading phase `cos(alpha_eff)`,
+the product form `Prod(1 + c_k u^k)`, and the one structurally derived rung
+`1 - u^2` — fail to transport to D, **for a single reason**: D's bar action is
+multiplicative (a grading, `bar(x)/x = q^w`) where C's is affine. Nothing in the
+C ladder is a bar-eigenvector, so nothing in it survives the change of frame
+unmodified. That is a sharper result than "the ladder needs re-deriving": it says
+the ladder has no D-frame reading at all, in any of its three parts.
+
+The sibling's entries 10-10d supply the replacement for leg 1 (the bar-midpoint
+`M = cos(a_D - h^2/4)*cos(h^2/4)`). Legs 2 and 3 have no replacement yet, and per
+the previous entry the generator is not selectable without a new structural input
+or a fit.
