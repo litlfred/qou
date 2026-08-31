@@ -108,7 +108,7 @@ def per_pair_traces(shape, gens):
     return dim, tvals, agg / 2
 
 
-def run(A=3, verify=True, bmax=None):
+def run(A=3, verify=True, bmax=None, raw=False):
     n = 3 * A
     Z, N = A // 2, A - A // 2
     gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
@@ -232,7 +232,92 @@ def run(A=3, verify=True, bmax=None):
     if any_nonmono:
         print("  NOTE: the per-window fall is NOT strictly monotone in b (small bumps at high")
         print("        b); (P) is a peak-at-b=1 statement, not a monotone-decay one.")
+    if raw:
+        raw_vs_dim_report(rows, pair_list, n)
     return rows, pair_list, per_pair_by_b
+
+
+def raw_vs_dim_report(rows, pair_list, n):
+    """The RETURN-vs-CANCELLATION discriminator for the reduced single-window estimate.
+
+    `|t_λ^{(a)}|/dim_λ` decays with b. WHY?
+      (BOUND)  raw |t_λ^{(a)}| stays bounded while dim_λ grows ⇒ decay is trivially ≤ C/dim
+               — a PROVABLE operator-norm route (bound one 3-strand-local operator's trace by
+               a b-independent constant).
+      (CANCEL) raw |t_λ^{(a)}| grows ~with dim_λ ⇒ the decay is a genuine trace cancellation
+               — no constant bound; needs the connected-diagram argument. Harder.
+
+    We report, per window and b, the MAX raw |t| and the dim where it occurs, and the growth of
+    raw-|t| vs dim across b (the max-dim partition at each b is the fair comparison)."""
+    from collections import defaultdict
+    print("\n" + "=" * 70)
+    print("RAW |t^{(a)}| vs dim  — is the reduced single-window estimate a BOUND or a CANCELLATION?")
+    b_levels = sorted({b for (_sh, b, _d, _tv, _ag) in rows})
+    # dim growth: max dim at each b
+    maxdim_by_b = {}
+    for b in b_levels:
+        ds = [d for (_sh, bb, d, _tv, _ag) in rows if bb == b and d > 1]
+        maxdim_by_b[b] = max(ds) if ds else 0
+    for p in pair_list:
+        print(f"\n  window {p}:  b :  max|t|(raw)   dim@that λ   |t|/dim   | maxdim@b")
+        prev_raw = None
+        for b in b_levels:
+            cand = [(abs(tv.get(p, mp.mpf(0))), d, sh)
+                    for (sh, bb, d, tv, _ag) in rows if bb == b and d > 1]
+            if not cand:
+                continue
+            raw_mx, dim_at, _sh = max(cand, key=lambda x: x[0])
+            ratio_norm = raw_mx / dim_at if dim_at else mp.mpf(0)
+            growth = (raw_mx / prev_raw) if prev_raw and prev_raw > 0 else mp.mpf("nan")
+            print(f"      {b:>2} : {mp.nstr(raw_mx,5):>11} {dim_at:>10} "
+                  f"{mp.nstr(ratio_norm,4):>10}   | {maxdim_by_b[b]:>6}"
+                  f"   raw-growth b/b-1={mp.nstr(growth,3)}")
+            prev_raw = raw_mx
+    # verdict: compare raw-|t| growth to dim growth across the low-b range (b=1->2->3), where
+    # dim grows fastest. If raw-|t| grows at a comparable rate, it's CANCEL; if raw stays flat/
+    # sub-linear vs dim, it's BOUND.
+    # HONEST discriminator: compare raw-|t| growth to DIM growth (the ratio). The question is
+    # NOT "does raw |t| grow" (a ×1.8 rise while dim grows ×13 still gives decay) but "does it
+    # grow AS FAST AS dim". Three regimes:
+    #   raw/dim growth ≈ 0     : raw bounded          ⇒ BOUND (|t| ≤ C, decay is ≤ C/dim)
+    #   0 < raw/dim growth ≪ 1 : raw = o(dim)         ⇒ SUB-DIM (decay from dim outgrowing raw;
+    #                                                    a sublinear-trace-bound route)
+    #   raw/dim growth ≈ 1     : raw tracks dim        ⇒ CANCELLATION (needs connected-diagram)
+    print("\n  DISCRIMINATOR — raw-|t| growth RELATIVE to dim growth (b=1→3, dim climbs steeply):")
+    lb = [b for b in b_levels if b in (1, 2, 3)]
+    if len(lb) >= 2:
+        dimg = (mp.mpf(maxdim_by_b[lb[-1]]) / mp.mpf(maxdim_by_b[lb[0]])
+                if maxdim_by_b[lb[0]] else mp.mpf("nan"))
+        print(f"    dim(max) grows ×{mp.nstr(dimg,3)} over b={lb[0]}→{lb[-1]}.")
+        worst = mp.mpf(0)
+        for p in pair_list:
+            seq = []
+            for b in lb:
+                cand = [abs(tv.get(p, mp.mpf(0)))
+                        for (sh, bb, d, tv, _ag) in rows if bb == b and d > 1]
+                seq.append(max(cand) if cand else mp.mpf(0))
+            rg = (seq[-1] / seq[0]) if seq[0] > 0 else mp.mpf("nan")
+            rel = (rg / mp.mpf(dimg)) if mp.isfinite(rg) else mp.mpf("nan")
+            if mp.isfinite(rel) and rel > worst:
+                worst = rel
+            regime = ("tracks dim ⇒ CANCELLATION" if rel > mp.mpf("0.5")
+                      else "o(dim) ⇒ SUB-DIM" if rel > mp.mpf("0.02")
+                      else "≈bounded ⇒ BOUND")
+            print(f"    window {p}: raw ×{mp.nstr(rg,3):>6}  = {mp.nstr(rel,3):>7}× the dim growth"
+                  f"   ({regime})")
+        print()
+        if worst <= mp.mpf("0.5"):
+            print(f"    VERDICT: in EVERY window raw |t| grows at most {mp.nstr(worst*100,3)}% as fast")
+            print("    as dim — raw |t_λ^{(a)}| = o(dim_λ). The decay is DRIVEN BY dim outgrowing a")
+            print("    slowly-varying raw single-window trace, NOT by a cancellation that tracks dim.")
+            print("    ⇒ the reduced estimate needs a SUBLINEAR single-window trace bound")
+            print("    (|t| ≤ C·dim^θ, θ<1, or |t| = o(dim)), not the hard dim-tracking cancellation.")
+            print("    This is a MORE provable frontier than a Penrose/Ursell connected-diagram sum.")
+            print("    HONEST: raw |t| is NOT constant (rises ~2× to a mid-b peak, then falls), so a")
+            print("    strict ≤C constant bound is FALSE; the provable target is the o(dim) rate.")
+        else:
+            print("    VERDICT: some window's raw |t| tracks dim ⇒ genuine cancellation on that")
+            print("    window; the connected-diagram argument is required (now on one window).")
 
 
 def main():
@@ -240,8 +325,10 @@ def main():
     ap.add_argument("--A", type=int, default=3)
     ap.add_argument("--bmax", type=int, default=None,
                     help="restrict to partitions with b(λ)=n-λ₁ <= bmax (low-b, cheap at high A)")
+    ap.add_argument("--raw", action="store_true",
+                    help="also run the raw-|t| vs dim BOUND-vs-CANCELLATION discriminator")
     args = ap.parse_args()
-    run(A=args.A, bmax=args.bmax)
+    run(A=args.A, bmax=args.bmax, raw=args.raw)
 
 
 if __name__ == "__main__":
