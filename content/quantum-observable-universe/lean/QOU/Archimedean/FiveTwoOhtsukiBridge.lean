@@ -436,6 +436,15 @@ set no dilogarithm satisfies. It is gone, and nothing replaced it: the correct
 inversion is *derivable* here from `hbw` plus `D(1/z) = −D(z)`, so the theorem
 now needs one identity where it claimed to need two.
 
+**The check that failure teaches: are the surviving hypotheses satisfiable?**
+A theorem whose hypotheses no object satisfies is vacuous, and that is exactly
+what the old one was. `hbw` and `hone` are independent — `hbw` is asserted only
+off the real axis, `hone` only at `z = 1` — and the principal-branch `Li₂`
+satisfies both: `Im Li₂(1) = Im(π²/6) = 0`, and `hbw` was checked at 40 digits
+at fourteen random points in **both** half planes (worst deviation `7.8e-41`)
+as well as at all five arguments this proof actually uses. Any new hypothesis
+added here should get the same treatment before it is trusted.
+
 ## The proof, in one line per term
 
 Apply `hbw` at each of the five non-unit arguments, then use
