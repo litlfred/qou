@@ -34,6 +34,35 @@ extrapolated to `1.3e-10` and `3.0e-10`. Both are simple dyadic rationals, which
 is not what a numerical artefact looks like. The deviation from the floor is
 `ℏ_q^1` in both cases (`1.00078`, `1.0021`) [assertion 3].
 
+THE FLOOR HAS A CLOSED FORM, AND IT IS A PREDICTION
+-----------------------------------------------------
+`c₀ · 2^{3A}` is an integer for every nucleus measured — 8, 48, 48, 224 at
+`A = 2, 3, 3, 4` (and 960 at `A = 5`) — and those integers are
+`2^{A+1}(2^{A−1} − 1)`. So
+
+    c₀(A)  =  2^{−A} − 2^{1−2A}  =  (2^{A−1} − 1) / 2^{2A−1}      [assertion 6]
+
+**It depends only on `A`, not on the Z/N split** — T and ³He agree exactly, and
+so do ⁵Li and ⁵He. That is the right behaviour: at `q = 1` every one-crossing
+eigenvalue is `±1` and the flavour distinction disappears.
+
+Fitted on `A = 2, 3, 4`, then *tested* at `A = 5` on two isobars neither of which
+entered the fit: predicted `15/512 = 0.029296875`, measured `0.0292968747`
+(⁵Li) and `0.0292968747` (⁵He) — agreement to `9e-9`, which is the Richardson
+error, not a discrepancy.
+
+SO THE FLOOR IS EXACTLY SUBTRACTABLE — AND THAT COSTS THE ROUTE ITS BEST NUMBER
+--------------------------------------------------------------------------------
+`Δtr − c₀(A)` is a pure `ℏ_q^1` deformation observable, which pairs with
+convention A to total `ℏ_q^2` — matching `Δ(net)`'s bookkeeping exactly. That
+turns this from a diagnosis into a repair.
+
+But the repair is not free. The A-route's apparent near-hit at the deuteron —
+`2.3297` against AME `2.22456637`, 4.7 % — **degrades to `1.8064 MeV`, 1.23×
+short, once the floor is removed** [data]. 22.46 % of that agreement was the
+classical contamination. ⁴He is ~6× short either way, consistent with the known
+4-body α-residual.
+
 WHAT THAT MEANS
 ---------------
 At `q = 1` the Hecke algebra degenerates to `ℂ[S_n]` and there is no deformation
@@ -256,7 +285,75 @@ def main() -> int:
                  "identically zero and there is no floor.",
     )
 
+    # ---- assertion 6: the floor's closed form, TESTED at A = 5 -------------
+    # c0(A) = 2^-A - 2^(1-2A) is read off A = 2,3,4; A = 5 is a prediction, and
+    # the two A=5 isobars did not enter the reading. The Z/N-independence is
+    # itself a check: T vs 3He and 5Li vs 5He must agree if the floor is a
+    # q=1 quantity, since flavour disappears there.
+    closed = lambda A: mp.mpf(2) ** (-A) - mp.mpf(2) ** (1 - 2 * A)  # noqa: E731
+    predicted_rows, worst_rel = [], mp.mpf(0)
+    for name, (Z, N) in [("D", (1, 1)), ("T", (1, 2)), ("3He", (2, 1)),
+                         ("4He", (2, 2)), ("5Li", (3, 2)), ("5He", (2, 3))]:
+        A = Z + N
+        c0 = floors[name]["c0"] if name in floors else classical_floor_and_order(Z, N)[0]
+        pred = closed(A)
+        rel = abs(c0 - pred) / pred
+        worst_rel = max(worst_rel, rel)
+        predicted_rows.append({
+            "isotope": name, "A": A, "n_strands": 3 * A,
+            "measured_c0": mp.nstr(c0, 16),
+            "closed_form": mp.nstr(pred, 16),
+            "c0_times_2_pow_3A": mp.nstr(c0 * mp.mpf(2) ** (3 * A), 14),
+            "relative_error": mp.nstr(rel, 6),
+            "role": "read off" if A <= 4 else "PREDICTION (did not enter the reading)",
+        })
+    w.add_assertion(
+        "classical_floor_closed_form_holds_including_at_A_equals_5",
+        computed=mp.nstr(worst_rel, 8),
+        expected="0",
+        tolerance="1e-7",
+        source="worst relative error of the measured floor against "
+               "c0(A) = 2^-A - 2^(1-2A) over D, T, 3He, 4He, 5Li, 5He. The form is read "
+               "off A = 2,3,4; A = 5 is a genuine prediction on two isobars that did not "
+               "enter it. Residuals are Richardson extrapolation error (they grow with A), "
+               "not discrepancies.",
+    )
+
     # ---- data ---------------------------------------------------------------
+    w.add_data("classical_floor_closed_form", {
+        "formula": "c0(A) = 2^-A - 2^(1-2A) = (2^(A-1) - 1)/2^(2A-1)",
+        "depends_on": "A only -- NOT the Z/N split. T and 3He agree exactly, so do 5Li and "
+                      "5He. At q = 1 every one-crossing eigenvalue is +-1 and flavour "
+                      "disappears, so this is the required behaviour.",
+        "c0_times_2_pow_3A_is_an_integer": "8, 48, 48, 224, 960, 960 = 2^(A+1)(2^(A-1)-1)",
+        "rows": predicted_rows,
+    })
+
+    # what the repair costs
+    d_q0 = floors["D"]["at_q0"]
+    he_q0 = floors["4He"]["at_q0"]
+    w.add_data("subtracting_the_floor_costs_the_route_its_best_number", {
+        "deuteron_raw_conv_A_MeV": mp.nstr(mp.mpf(E0_A_MEV) * d_q0, 10),
+        "deuteron_floor_removed_conv_A_MeV":
+            mp.nstr(mp.mpf(E0_A_MEV) * (d_q0 - closed(2)), 10),
+        "AME_deuteron_MeV": mp.nstr(AME_B_DEUTERON, 10),
+        "raw_vs_AME": mp.nstr(AME_B_DEUTERON / (mp.mpf(E0_A_MEV) * d_q0), 6) + "x",
+        "floor_removed_vs_AME":
+            mp.nstr(AME_B_DEUTERON / (mp.mpf(E0_A_MEV) * (d_q0 - closed(2))), 6) + "x short",
+        "he4_raw_conv_A_MeV": mp.nstr(mp.mpf(E0_A_MEV) * he_q0, 10),
+        "he4_floor_removed_conv_A_MeV":
+            mp.nstr(mp.mpf(E0_A_MEV) * (he_q0 - closed(4)), 10),
+        "AME_he4_MeV": "28.29561",
+        "he4_floor_removed_vs_AME":
+            mp.nstr(mp.mpf("28.29561") / (mp.mpf(E0_A_MEV) * (he_q0 - closed(4))), 6) + "x short",
+        "reading": "The A-route's 4.7% near-hit at the deuteron was 22.46% classical "
+                   "contamination. Removing it -- which the hbar_q bookkeeping requires -- "
+                   "degrades the deuteron to 1.23x short. 4He is ~6x short either way, "
+                   "consistent with the known 4-body alpha residual. Reported because the "
+                   "repair making a number WORSE is the part most likely to be quietly "
+                   "dropped.",
+    })
+
     w.add_parameter("q0", mp.nstr(q0, 30))
     w.add_parameter("sweep", "q = exp(eta), eta = 1e-3 .. 1e-6")
 

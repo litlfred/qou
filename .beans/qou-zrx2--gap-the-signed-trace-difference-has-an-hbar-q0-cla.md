@@ -113,3 +113,60 @@ is the assumption that the trace difference belongs to that category.
    class should record `ℏ_q⁰ + ℏ_q¹`, not `ℏ_q²`, and the "≈ 102×" warning
    recomputed from the corrected index.
 3. **Adjudicate the two producers** — but only after (1) and (2).
+
+---
+
+## 2026-08-31 (later) — the floor has a CLOSED FORM, confirmed as a prediction
+
+`c₀·2^{3A}` is an integer for every nucleus measured — **8, 48, 48, 224, 960,
+960** at `A = 2, 3, 3, 4, 5, 5` — and those integers are `2^{A+1}(2^{A−1}−1)`. So
+
+    c₀(A)  =  2^{−A} − 2^{1−2A}  =  (2^{A−1} − 1)/2^{2A−1}
+
+**It depends only on `A`, not on the Z/N split.** T and ³He agree exactly; so do
+⁵Li and ⁵He. That is required behaviour rather than luck: at `q = 1` every
+one-crossing eigenvalue is `±1` and the flavour distinction disappears.
+
+Read off `A = 2,3,4`, then **tested** at `A = 5` on two isobars that did not
+enter the reading: predicted `15/512 = 0.029296875`, measured `0.0292968747`
+(⁵Li) and `0.0292968747` (⁵He). Agreement to `9e-9` — Richardson extrapolation
+error, which grows with `A` exactly as it should.
+
+### So the floor is exactly subtractable — which turns this into a repair
+
+`Δtr − c₀(A)` is a pure `ℏ_q¹` deformation observable, pairing with convention A
+to total `ℏ_q²` — the same bookkeeping as `Δ(net)×A`. Follow-up (1) above is
+therefore **done**, and it was the highest-value one.
+
+### ⚠ And the repair costs the route its best number
+
+| | conv A, raw | conv A, floor removed | AME |
+|---|---|---|---|
+| deuteron | 2.3297 MeV (0.955×) | **1.8064 MeV (1.231× short)** | 2.22456637 |
+| ⁴He | 4.6875 MeV | 4.4586 MeV (6.346× short) | 28.29561 |
+
+**The A-route's apparent 4.7 % near-hit at the deuteron was 22.46 % classical
+contamination.** Removing the floor — which the ℏ_q bookkeeping requires —
+degrades it to 1.23× short. ⁴He is ~6× short either way, consistent with the
+known 4-body α-residual (`derive_binding_chain_cooperative`'s own finding).
+
+Recorded prominently because a repair that makes a headline number *worse* is
+the part most likely to be quietly dropped, and because it removes the one piece
+of evidence that looked like it favoured convention A. It does not favour A; it
+was the floor.
+
+### Revised follow-ups
+
+1. ~~Is the floor derivable?~~ **DONE** — `c₀(A) = 2^{−A} − 2^{1−2A}`, verified
+   as a prediction at `A = 5`.
+2. **Fix `E_0_CONVENTIONS["B_q_value_absorbed"]`** — the operator class should
+   record `ℏ_q⁰ + ℏ_q¹` with the floor named, not `ℏ_q²`, and the "≈ 102×"
+   warning recomputed. Now unblocked, since the floor has a form to name.
+3. **Re-run the binding chain against `Δtr − c₀(A)`** and see what the per-bond
+   constants become. The current `b_pp/b_pn/b_nn = 2.38/2.49/2.53` (signed) and
+   `2.91/3.89/5.18` (log) all carry the floor.
+4. **Prove `c₀(A) = 2^{−A} − 2^{1−2A}`** from the `q → 1` limit of the Markov
+   trace. At `q = 1` the trace is a permutation-character sum over `2^{3A}`
+   states, so a dyadic rational with denominator `2^{3A}` is exactly the
+   expected shape — this should be a finite combinatorial argument, not an
+   analytic one, and it would make the subtraction exact rather than measured.

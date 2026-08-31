@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T10:14:48.809117+00:00",
-  "commitSha": "cf6dbfa1b351de6b9bfd156b625c87d57b4f990c",
+  "computedAt": "2026-08-31T10:17:52.203167+00:00",
+  "commitSha": "fd65598a96c828e676bd8e17ae5d43f78cb71aa9",
   "assertions": [
     {
       "name": "D_trace_difference_classical_floor_is_1_over_8",
@@ -43,14 +43,22 @@
       "passed": true,
       "tolerance": "1e-2",
       "source": "log-log slope of b_over_a_evaluator.spectral_b_over_a against hbar_q, worst case over D, 4He, 12C (measured D: 2.0002149, 4He: 2.0002152, 12C: 2.0002149). At q = 1 every one-crossing eigenvalue is +-1, so the log-ratio is identically zero and there is no floor."
+    },
+    {
+      "name": "classical_floor_closed_form_holds_including_at_A_equals_5",
+      "computed": "9.405791e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "worst relative error of the measured floor against c0(A) = 2^-A - 2^(1-2A) over D, T, 3He, 4He, 5Li, 5He. The form is read off A = 2,3,4; A = 5 is a genuine prediction on two isobars that did not enter it. Residuals are Richardson extrapolation error (they grow with A), not discrepancies."
     }
   ],
   "allPassed": true,
-  "durationMs": 598,
+  "durationMs": 3002,
   "computation": "hbar-q-order-of-binding-observables-probe",
   "scriptFile": "hbar_q_order_of_binding_observables_probe.py",
-  "scriptHash": "795abd067dc9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "efee8d7425fa",
+  "scriptCommitSha": "fd65598a96c828e676bd8e17ae5d43f78cb71aa9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,6 +83,85 @@
     "sweep": "q = exp(eta), eta = 1e-3 .. 1e-6"
   },
   "data": {
+    "classical_floor_closed_form": {
+      "formula": "c0(A) = 2^-A - 2^(1-2A) = (2^(A-1) - 1)/2^(2A-1)",
+      "depends_on": "A only -- NOT the Z/N split. T and 3He agree exactly, so do 5Li and 5He. At q = 1 every one-crossing eigenvalue is +-1 and flavour disappears, so this is the required behaviour.",
+      "c0_times_2_pow_3A_is_an_integer": "8, 48, 48, 224, 960, 960 = 2^(A+1)(2^(A-1)-1)",
+      "rows": [
+        {
+          "isotope": "D",
+          "A": 2,
+          "n_strands": 6,
+          "measured_c0": "0.1249999998740584",
+          "closed_form": "0.125",
+          "c0_times_2_pow_3A": "7.9999999919397",
+          "relative_error": "1.00753e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "T",
+          "A": 3,
+          "n_strands": 9,
+          "measured_c0": "0.0937499997433446",
+          "closed_form": "0.09375",
+          "c0_times_2_pow_3A": "47.999999868592",
+          "relative_error": "2.73766e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "n_strands": 9,
+          "measured_c0": "0.09374999973037627",
+          "closed_form": "0.09375",
+          "c0_times_2_pow_3A": "47.999999861953",
+          "relative_error": "2.87599e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "n_strands": 12,
+          "measured_c0": "0.05468749970100952",
+          "closed_form": "0.0546875",
+          "c0_times_2_pow_3A": "223.99999877533",
+          "relative_error": "5.46725e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "5Li",
+          "A": 5,
+          "n_strands": 15,
+          "measured_c0": "0.02929687472443972",
+          "closed_form": "0.029296875",
+          "c0_times_2_pow_3A": "959.99999097044",
+          "relative_error": "9.40579e-9",
+          "role": "PREDICTION (did not enter the reading)"
+        },
+        {
+          "isotope": "5He",
+          "A": 5,
+          "n_strands": 15,
+          "measured_c0": "0.02929687474942921",
+          "closed_form": "0.029296875",
+          "c0_times_2_pow_3A": "959.9999917893",
+          "relative_error": "8.55282e-9",
+          "role": "PREDICTION (did not enter the reading)"
+        }
+      ]
+    },
+    "subtracting_the_floor_costs_the_route_its_best_number": {
+      "deuteron_raw_conv_A_MeV": "2.329685576",
+      "deuteron_floor_removed_conv_A_MeV": "1.806437906",
+      "AME_deuteron_MeV": "2.22456637",
+      "raw_vs_AME": "0.954878x",
+      "floor_removed_vs_AME": "1.23147x short",
+      "he4_raw_conv_A_MeV": "4.68749963",
+      "he4_floor_removed_conv_A_MeV": "4.458578774",
+      "AME_he4_MeV": "28.29561",
+      "he4_floor_removed_vs_AME": "6.34633x short",
+      "reading": "The A-route's 4.7% near-hit at the deuteron was 22.46% classical contamination. Removing it -- which the hbar_q bookkeeping requires -- degrades the deuteron to 1.23x short. 4He is ~6x short either way, consistent with the known 4-body alpha residual. Reported because the repair making a number WORSE is the part most likely to be quietly dropped."
+    },
     "classification": [
       {
         "observable": "Delta(net) = h(h-2)/2, h = q - 1/q",
