@@ -1,0 +1,144 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T13:09:34.369779+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
+  "assertions": [
+    {
+      "name": "chi^(3)(Delta_S) is bar-ODD (bar/chi = -1 exactly)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "g is bar-EVEN exactly on the FULL-BAR condition bar(z) = z - h",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "g can NEVER be bar-ODD (no solution)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "definite parity <=> full-bar, at z = q (admissible, augmentation)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "definite parity <=> full-bar, at z_D = q^3/(q^2+1) (admissible)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "definite parity <=> full-bar, at z = 1 (coordinate sum)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "definite parity <=> full-bar, at z_C = sqrt(q)/(q+1) (excised)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "the FULL-BAR family is affine over bar-even functions (so it does NOT pin a unique z)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 38,
+  "computation": "qbeta-decay-fibre-bar-parity-derivation",
+  "scriptFile": "qbeta_decay_fibre_bar_parity_derivation_probe.py",
+  "scriptHash": "d9c1784795a9",
+  "scriptCommitSha": "eb5d1a683093a85ca662bef0a2c0e1425cce69fc",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_decay_fibre_bar_parity_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_decay_fibre_bar_parity_derivation_probe.py"
+  },
+  "description": "Derives a decay-fibre constraint from bar-parity alone, independently of the two-row cap: tr(Delta_S) has definite bar-parity iff z satisfies the full-bar condition bar(z) = z - h, and then it is ODD. Excludes z = 1 and z_C without appeal to the owner ruling. Narrows the fibre; does not pin a unique z. Nothing wired, no c_k proposed.",
+  "data": {
+    "g_symbolic": "(-q**2 + 2*q*z + 1)/(q**2 + 1)",
+    "chi3_deltaS_symbolic": "-(q - 1)*(q + 1)*(q**2 + 1)/(2*q**2)",
+    "chi3_bar_ratio": "-1",
+    "g_bar_even_condition": "-q + z + 1/q",
+    "g_bar_odd_condition": "NO SOLUTION",
+    "parity_by_markov_parameter": {
+      "z = q (admissible, augmentation)": {
+        "full_bar": true,
+        "bar_even": false,
+        "trace_parity": "bar-ODD",
+        "bar_ratio": "-1"
+      },
+      "z_D = q^3/(q^2+1) (admissible)": {
+        "full_bar": true,
+        "bar_even": false,
+        "trace_parity": "bar-ODD",
+        "bar_ratio": "-1"
+      },
+      "z = 1 (coordinate sum)": {
+        "full_bar": false,
+        "bar_even": true,
+        "trace_parity": "NO definite parity",
+        "bar_ratio": "(q**2 + 2*q - 1)/(q**2 - 2*q - 1)"
+      },
+      "z_C = sqrt(q)/(q+1) (excised)": {
+        "full_bar": false,
+        "bar_even": true,
+        "trace_parity": "NO definite parity",
+        "bar_ratio": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + 2*q**3)/(q**(3/2)*(-2*q**(3/2) + q**3 + q**2 - q - 1))"
+      }
+    },
+    "premise_not_proved_here": "the decay trace must have definite bar-parity (fig8Trace_im_odd, ZBarParity, eigenphase_barOdd_of_barEven) -- corpus-standard, cited not proved",
+    "limit": "the full-bar family is z_D + (any bar-even function) and contains z = q; bar-parity narrows the fibre, it does not pin a unique z",
+    "corrects": "this session's Step 10 framing 'the block is a ruling, not an impossibility' — right about the CAP, wrong about the exclusion as a whole, since bar-parity excludes z=1 independently",
+    "free_parameters": 0,
+    "verdict": "DERIVED (structural iff, no two-row cap): tr(Delta_S)(z) has DEFINITE bar-parity if and only if z satisfies the FULL-BAR condition bar(z) = z - h, and where it does the parity is ODD. chi^(3)(Delta_S) is bar-odd exactly; g is bar-even exactly on full-bar and can never be bar-odd. CONSEQUENCE: z = 1 and z_C are excluded a SECOND time, by bar-parity, with no appeal to the cap and hence none to the owner ruling. This CORRECTS this session's own Step 10 framing ('the block is a ruling, not an impossibility') -- that is right about the CAP and wrong as a statement about the exclusion as a whole. It also explains decayLadder_zC_threeRow_ne_zero: z_C is bar-EVEN, a DIFFERENT condition from full-bar. PREMISE for the application, stated not smuggled: 'the decay trace must have definite bar-parity', which is corpus-standard (fig8Trace_im_odd, ZBarParity) but is NOT proved here. LIMIT: the full-bar family is z_D + (any bar-even function) and contains z = q too, so this narrows the fibre to full-bar -- it does not pin a unique z.",
+    "scope": "(a) + a derived structural iff; z=1 NOT readmitted",
+    "q0Anchor": "proton",
+    "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

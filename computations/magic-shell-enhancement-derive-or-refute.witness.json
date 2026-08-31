@@ -1,0 +1,155 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T19:48:46.611847+00:00",
+  "commitSha": "fa7e57a8cf682353fdf8ad67e6ccf60d4da6b990",
+  "assertions": [
+    {
+      "name": "a_D_4_is_AME_free",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "q=1 limit of a_D^(4) is exactly I(4)/4 = 5/2 — a rational from the involution numbers, no AME input"
+    },
+    {
+      "name": "z_aD_refuted_at_A3",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "z*a_D^(3) overshoots 3H by 33.49 % and 3He by 29.73 %"
+    },
+    {
+      "name": "z_aD_misses_A4_by_half_percent",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "a_D^(4) is 0.5514 % above the AME read M_need/z"
+    },
+    {
+      "name": "near_match_is_generic",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "7 members of a pre-registered parameter-free family of 3996 land in the same window, so 2.519 is IN RANGE, not FORCED to be a_D^(4)"
+    },
+    {
+      "name": "only_A4_constrains_the_enhancement",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "source": "exactly one magic point (4He) exists in the Vol_A-covered range A <= 4, so the magic/non-magic selector is fitted on one datum with no out-of-sample test"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "magic-shell-enhancement-derive-or-refute",
+  "scriptFile": "magic_shell_enhancement_derive_or_refute.py",
+  "scriptHash": "13dd25c0c2bd",
+  "scriptCommitSha": "16f1c02613cb3f2843a6d780522c202a07383137",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/magic_shell_enhancement_derive_or_refute.py"
+    ],
+    "reproduce": "python3 -u computations/magic_shell_enhancement_derive_or_refute.py"
+  },
+  "description": "Is the 4He magic-shell enhancement M_need/z ~ 2.52 derived? a_D^(n) = sum_{lam|-n} dim_q lam / n IS derived (Schur-Weyl at q0, no AME; q=1 limit I(n)/n exactly). The a-priori law M(A) = z*a_D^(A) is REFUTED at A=3 (+33 %/+30 %) and misses 4He by 0.55 %. The block's composite magic/non-magic rule is one bit of selection fitted on the single 4He datum. Genericity: the same window is occupied by other parameter-free candidates - some CLOSER than a_D^(4) - so 2.519 is in range, not forced. Scope (a) - no structural exclusion claimed here.",
+  "data": {
+    "a_D_at_q0": {
+      "2": "1.00000000000000000000000000000000000000000000000000000000000",
+      "3": "1.33696562223570743325083065936395427196308024949471090319334",
+      "4": "2.53277965639939149205151450175804123232616047053512895683877",
+      "5": "5.37613772967931541168048746743487296808520021276844022819339"
+    },
+    "a_D_at_q_eq_1_exact": {
+      "2": "1/1",
+      "3": "4/3",
+      "4": "5/2",
+      "5": "26/5"
+    },
+    "isotopes": {
+      "3H": {
+        "A": 3,
+        "z": 2,
+        "vol": "8.28631681780659258810000000000000000000000000000000000000000",
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
+        "M_need": "2.00311687989243393476120611374479540214393187848567759824975",
+        "M_need_over_z": "1.00155843994621696738060305687239770107196593924283879912487",
+        "pred_z_aD": "2.67393124447141486650166131872790854392616049898942180638669",
+        "rel_err_z_aD": "0.334885283685994011499186624973526545121461136171485370215020",
+        "rel_err_z": "-0.00155601499029917274281327797312555092988440349462772984426265",
+        "B_pred_z_aD_MeV": "11.3222249266037859999565574187912825510103376032269999566010"
+      },
+      "3He": {
+        "A": 3,
+        "z": 2,
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "B_AME_MeV": "7.71804131999999999999999999999999999999999999999999571104141",
+        "M_need": "2.06118960302014635444752553417919894258198209056185791851915",
+        "M_need_over_z": "1.03059480151007317722376276708959947129099104528092895925957",
+        "pred_z_aD": "2.67393124447141486650166131872790854392616049898942180638669",
+        "rel_err_z_aD": "0.297275728808961729394529632625036059582297485534901203984414",
+        "rel_err_z": "-0.0296865474823318710188657882242402363181563193076964534567741",
+        "B_pred_z_aD_MeV": "10.0124276783806810137656382865644483743461539338904642305076"
+      },
+      "4He": {
+        "A": 4,
+        "z": 3,
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563",
+        "M_need": "7.55667438554838958079560022756062083141798333328754102071695",
+        "M_need_over_z": "2.51889146184946319359853340918687361047266111109584700690565",
+        "pred_z_aD": "7.59833896919817447615454350527412369697848141160538687051632",
+        "rel_err_z_aD": "0.00551361373059364487048149598331127458828078638686906034217171",
+        "rel_err_z": "-0.602999964410628854043536191595697839336150077474555797405250",
+        "B_pred_z_aD_MeV": "28.4516737527248823268406361357907318598636921280093542603920"
+      }
+    },
+    "he4_gap_relative": "0.00551361373059364487048149598331127458828078638686906034217171",
+    "genericity": {
+      "window_lo": "2.50500326729953489514555231661570598861916175165656505697253",
+      "window_hi": "2.53277965639939149205151450175804123232616047053512895683877",
+      "family_size": 3996,
+      "hits": 7,
+      "hit_labels": [
+        "q^3*11/6",
+        "q^4*5/3",
+        "q^4*10/6",
+        "q^5*3/2",
+        "q^5*6/4",
+        "q^5*9/6",
+        "q^5*12/8"
+      ],
+      "closer_than_a_D_4": [
+        "q^3*11/6",
+        "q^4*5/3",
+        "q^4*10/6",
+        "q^5*3/2",
+        "q^5*6/4",
+        "q^5*9/6",
+        "q^5*12/8"
+      ]
+    },
+    "scope": "a"
+  },
+  "caveats": [
+    "Scope (a): a construction tested alone. No proved invariant is cited here, so nothing is structurally excluded by THIS probe. The scope-(b) exclusion of the Wigner-SU(4) sizing route is in QOU.Mass.WignerSU4RowBoundInactive.",
+    "Only 4He is magic in the Vol_A-covered range (A <= 4). binding_link_volumes.py assigns links for 2H/3H/3He and the 4He L6a4 base only, so the magic/non-magic selector has ZERO out-of-sample support and cannot be validated until Vol_A extends past A=4."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "a_D^(n) = sum_{lam|-n} dim_q lam / n is evaluated at the experimental (proton) pin, the standing default for new compute. One pin only: the question is whether the derived period matches the AME read M_need/z, not how the two pins differ."
+}

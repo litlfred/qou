@@ -291,8 +291,11 @@ def main() -> int:
     )
     builder.add_assertion(
         "zeta4_residues_are_conjugate_half_i",
-        computed=float(sp.Abs(res_pi)),
-        expected=0.5,
+        # ||res| - 1/2| against 0: comparing two order-1 values cancels in the
+        # float64 verdict at ~1.1e-16, so 1e-30 was unreachable. sp.N(x, 50)
+        # rather than a bare float() so the residual keeps real digits.
+        computed=str(sp.N(sp.Abs(sp.Abs(res_pi) - sp.Rational(1, 2)), 50)),
+        expected="0",
         tolerance=1e-30,
         source=("The ζ_4 = ±i residues are ∓i/2 (|res| = 1/2) — the "
                 "exact WRT level-4 modular phase, an integer/2 constraint "

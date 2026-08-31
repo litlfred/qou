@@ -188,6 +188,7 @@ import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
+import QOU.MathlibExt.ManifoldVolumePositive
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
@@ -234,6 +235,10 @@ import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
+import QOU.MassTheory.CrossingCountAffine
+import QOU.MassTheory.CoulombFromCrossingCounts
+import QOU.MassTheory.BondChargeRule
+import QOU.MassTheory.BondArcTheorems
 import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
@@ -450,6 +455,7 @@ import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.LobMonotonicity
 import QOU.Archimedean.BlochWignerNonneg
+import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
@@ -1402,3 +1408,27 @@ import QOU.Archimedean.ParticleKnots
 -- either, since the old file type-checked fine; but an uncompiled module is one
 -- nobody has reason to open.  Wiring it in at least puts it in the build.
 import QOU.Observations.centered_hecke_variance_positive
+
+-- Hook-sum / balanced-twist cluster (bean qou-si7d). Four modules that nothing
+-- imported, so nothing that WALKS imports -- blueprint, doc-gen, dependency
+-- analysis, an import cone rooted at `QOU` -- could see them. They were still
+-- compiled: `globs = ["QOU", "QOU.+"]` (bean qou-rc7b) covers the whole tree,
+-- and qou-kljb closed on exactly that finding. So this buys visibility, not
+-- coverage; do not cite it as the latter.
+--
+-- `TwistUnconditional` is the one that matters. It discharges a previously
+-- HYPOTHESISED hook-sum exponent in the balanced-quantum-twist result using
+-- `HookSumComplete.hookSum_eq` -- a real theorem consuming a real dependency,
+-- invisible to every import-walking tool until now. Importing it also reaches
+-- `QOU.Common.BalancedQuantumTwist`, which nothing else imported either.
+--
+-- `HookSumGeneral` (the arm half, predecessor of `HookSumComplete`) and
+-- `HookSumIdentity` (`decide`-checked small shapes) are kept rather than
+-- deleted: the `decide` cases are a cheap INDEPENDENT check of an identity now
+-- proved twice in general -- once over `List ℕ` and once over `YoungDiagram`
+-- (`QOU.BraidKnot.HookSum`), with `HookSumRegisterBridge` proving the two equal.
+--
+-- All four verified to compile standalone before wiring (`lean` direct, EXIT=0).
+import QOU.Common.TwistUnconditional
+import QOU.Common.HookSumGeneral
+import QOU.Common.HookSumIdentity

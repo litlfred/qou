@@ -1,0 +1,79 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:09:30.078021+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
+  "assertions": [
+    {
+      "name": "normalisation y_3 + 2 y_21 = 1 at z_D (the cap leg is closed)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "the needed character ratio matches NO declared form (not isolated)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-d-frame-terminus",
+  "scriptFile": "qbeta_d_frame_terminus_probe.py",
+  "scriptHash": "a283d219c9cc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_terminus_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_terminus_probe.py"
+  },
+  "description": "With the two-row cap derived rather than ruled, the missing convention-D Q_beta factor has exactly three places to live -- the block-weight pairing, the decay element's character ratio, and the trace->MeV scale -- and all three are measured-negative. Records the needed character ratio as a target for a future DERIVATION, explicitly not as a search criterion.",
+  "data": {
+    "g_forced": "0.50540422650393080319",
+    "g_required": "0.88912581044405784613",
+    "shortfall_factor": "1.75923699054610623",
+    "needed_character_ratio_a21_over_a3": "1.5516573513266250051",
+    "nearest_declared": {
+      "[3]_q/[2]_q": "2.45228",
+      "3/2": "3.32917",
+      "1/z_D": "5.18766",
+      "q^2": "20.5976",
+      "[2]_q - h/2": "22.86"
+    },
+    "legs": {
+      "g (block weights)": "CLOSED — the cap is derived, z_D forced, no freedom left",
+      "chi (element characters)": "NEGATIVE — needed ratio matches no declared form",
+      "K (trace->MeV scale)": "NEGATIVE — enumerated 2026-08-29, nothing within 6.31%"
+    },
+    "not_claimed": "that the framework or convention D is wrong, or that no closure exists; only that none is findable by any enumeration this corpus has run",
+    "free_parameters": 0,
+    "verdict": "SCOPE-(a) TERMINUS. With the two-row cap DERIVED (2-dim mass fibre; FibreDimensionForcesTL, bean qou-n1dj), z = z_D is forced and the block-weight leg has NO remaining freedom -- g = 0.5054042265 against a required 0.8891258104. The other two legs are measured-negative: the character ratio an element would need, 1.5516573513, matches no declared form (nearest [3]_q/[2]_q at 2.45 %, next 3/2 at 3.33 % -- basket distance, not isolation), and the trace->MeV scale was enumerated on 2026-08-29 with nothing within 6.31 %. So no parameter-free closure of the convention-D Q_beta exists in any of the three legs, joining the four correction classes already closed. NOT a proved impossibility: this is an enumeration over declared classes, and a DERIVED (not searched) decay element with the right character ratio would still close it. Searching for such an element on the number would be a fit, so the ratio is recorded as a target to check a future derivation against, never as a search criterion.",
+    "scope": "(a) enumeration over declared classes, NOT a proved impossibility",
+    "q0Anchor": "proton",
+    "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

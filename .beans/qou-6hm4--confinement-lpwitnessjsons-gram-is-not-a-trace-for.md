@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-22T15:30:19Z
-updated_at: 2026-08-22T20:30:00Z
+updated_at: 2026-08-30T09:00:27Z
 ---
 
 
@@ -297,3 +297,102 @@ also the unlabelled `λ₀` in the proof's own spectrum. Three views of one fact
 - [x] Re-run the enumeration live — done, refuted.
 - [x] Establish the cause of the asymmetry — the stale `tr_M(e⁻)`, not a row
       swap. This bean's earlier diagnosis corrected.
+
+
+## What is ESTABLISHED (two independent proofs)
+
+The H_3 Markov-trace weight vector used across the corpus,
+
+    TR_M = [1, z, z, z^2, z^2, z^3]
+
+on the NF basis [(), (0,), (1,), (0,1), (1,0), (0,1,0)], is **not a trace**.
+
+**Proof 1 — not cyclic.** With x = T_s0 and y = T_s1 T_s0, computed in the H_3
+regular representation:
+
+    tr(xy) - tr(yx) = z (z - q) (q z + 1) / q
+
+which is nonzero: -0.426952471076 at z_C and -0.461171580324 at z_D. A trace is
+cyclic by definition. (Note the factor: it IS cyclic exactly at z = q and
+z = -1/q, the two degenerate roots -- which is why this can hide.)
+
+**Proof 2 — not a class function.** Solving TR_M = y_3 chi^(3) + y_21 chi^(2,1)
++ y_111 chi^(1^3) over the three irreducible characters returns NO SOLUTION.
+By Wedderburn any trace on H_3 must decompose that way.
+
+## The correct value, and where it comes from
+
+From the DEFINING Markov property tr(x T_n y) = z tr(x y) plus the Hecke
+relation T^2 = h T + 1:
+
+    tr(T_{s1 s2 s1}) = z * tr(T_{s1}^2) = z (h z + 1)      NOT z^3
+
+`z^3` is what you get from assuming tr(T_w) = z^{len(w)}, which holds for
+len <= 2 in H_3 and fails at len 3 because the Hecke relation kicks in. The
+comment at hecke_core_symbolic.py:160 says exactly that: "Word lengths
+0,1,1,2,2,3".
+
+**Convention-INDEPENDENT.** Both steps hold whatever value z takes, so this is
+wrong under C and under D alike. It is not the excision question.
+
+## Cross-check against the corpus's own record
+
+With z(hz+1) the solve reproduces `y-lambda-symbolic-witness.json` EXACTLY at
+z_D -- y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0. With
+z^3 there is no solution at all. So the corpus already holds the correct
+weights in one place while computing with the incorrect ones in another.
+
+Corroborating: `h4_markov_weights_closed_form.py` DOES carry Hecke corrections
+throughout (h*z^2 + z, h*z^3 + z^2, h^2*z^3 + ...), and its `h*z**2 + z` entry
+is precisely z(hz+1).
+
+## Blast radius — MEASURED IN PART, NOT COMPLETE
+
+`substrate/hecke_core_symbolic.py:161` defines TR_M_SYM with z^3 and is
+IMPORTED by `shift_from_nf_basis.py`, which computes
+`tr_q = sum(nf_list[i] * TR_M_SYM[i])` and describes it as "canonical Markov
+via TR_M_SYM".
+
+13 further live files carry the same literal (atom_mass_derived:102,
+basis_knot_tables:54, ch-bond-writhe-lp:30, compound_shift_nf:257,
+h4_markov_character_decomposition:111, h4_markov_weights_closed_form:111,
+hh-trefoil-corrected:51, intermediate_knot_detection:31, jet_knot_invariants:56,
+photon_operator_table:60, probes/markov_reduction_h3_to_h4_verify:115,
+probes/nucleon-lp-convention-probe:91), plus 14 in _deprecated/.
+
+**NOT established: that every downstream number is wrong.** A use whose words
+never reach the 6th basis element is unaffected, and I have not checked which
+do. Do not quote "13 broken producers" -- quote "13 live sites carry it;
+consumption not yet traced".
+
+## How I found it
+
+Chasing why the convention-D migration of compound_shift_nf moved 95 fields. I
+noticed the 6th weight looked wrong, and deliberately did NOT conflate it with
+the migration. It turns out to be the larger of the two problems, and it means
+the migration measurement was of a doubly-wrong quantity.
+
+
+## 2026-08-30 — ROOT CAUSE IDENTIFIED: see qou-isu5
+
+Part (i)'s asymmetry is NOT a row-ordering artefact. The H_3 Markov weight
+vector used to build this Gram is [1, z, z, z^2, z^2, z^3], and z^3 on the
+longest element is wrong -- the Ocneanu value is z(h z + 1), from the defining
+Markov property plus the Hecke relation. The z^3 functional is therefore NOT
+CYCLIC (tr(xy) - tr(yx) = z(z-q)(qz+1)/q, nonzero), hence not a trace, hence
+G = tr(b_i b_j) is not symmetric.
+
+At this witness's own q0 = 1.1099785955541805 and z_C:
+    z(hz+1) = 0.551443419919830  = this bean's G[1][3] = 0.551443
+    z^3     = 0.124490943129969  = this bean's G[3][1] = 0.124491
+    diff    = 0.4270             = this bean's max|G - G^T| = 0.4269
+
+Three figures to six digits. The row permutation this bean found hides the
+asymmetry without fixing the functional, which is exactly why the permuted
+matrix still has the WRONG RANK (6, not 5) -- that rank is the tell.
+
+(The append above this section, dated the same day, landed here by a shell
+glob error while filing qou-isu5. It is the correct analysis and it belongs
+with this bean, so it stays; qou-isu5 carries the same text as the primary.)
+
+Full derivation, blast radius and cross-checks: qou-isu5.

@@ -4,33 +4,33 @@
   "by_kind": {
     "remark": 988,
     "prose": 387,
-    "proposition": 625,
+    "proposition": 623,
     "proof": 442,
     "example": 101,
     "definition": 261,
     "theorem": 56,
-    "conjecture": 178,
+    "conjecture": 180,
     "corollary": 17,
     "lemma": 49,
     "diagram": 2,
     "simulator": 11
   },
   "provable": {
-    "total": 747,
-    "with_lean_field": 744,
-    "with_lean_file": 737,
-    "sorry_free": 736,
+    "total": 745,
+    "with_lean_field": 742,
+    "with_lean_file": 735,
+    "sorry_free": 734,
     "percent_sorry_free": 98.5
   },
   "conjectures": {
-    "total": 178,
+    "total": 180,
     "external": 15,
-    "qou_original": 163,
+    "qou_original": 165,
     "primary": 84,
-    "dependent": 79,
-    "primary_class_axiomatized": 74,
-    "percent_primary_class_axiomatized": 88.1,
-    "class_axiomatized": 164
+    "dependent": 81,
+    "primary_class_axiomatized": 73,
+    "percent_primary_class_axiomatized": 86.9,
+    "class_axiomatized": 165
   },
   "definitions": {
     "total": 261,

@@ -9,7 +9,7 @@ tags:
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T14:27:31Z
+updated_at: 2026-08-30T15:06:04Z
 parent: qou-8mtd
 ---
 
@@ -711,3 +711,71 @@ the `lean-axiom-guard.py` registry comment.
 the strict statement, at that. AGENTS.md §"Terse ≠ compressed" names this exact failure,
 and the corpus-grep checklist exists to catch it. I had walked path 2 (`content/`) and
 not path 2 into `MathlibExt/`, where the answer was sitting in a `rfl`.
+
+
+---
+
+## 2026-08-30 (later still) — item 3 is FULLY CLOSED
+
+Strict `0 < D(z)` landed in #6263 as `Archimedean.BlochWignerPositive.blochWigner_lob_pos`,
+by Rivin strict concavity along a chord whose endpoints stay strictly interior. Bean
+`qou-0ag0` carries the argument and the correction to what it cost.
+
+**The note two entries up says "item 3 should now read *strict* `0 < D(z)`, not
+positivity". Both halves are now proved; item 3 is done.** So this bean's "Still open" list
+is:
+
+1. Exactify both `MostowRigidity` instances (`figureEight`, `knot5_2`) — **still open**,
+   and #6234 recorded why the 5₂ half is not unblocked by the chord: the bound it gives is
+   `VOL_4_1 < VOL_5_2`, and `VOL_4_1` is the quantity already on the left of the comparison
+   that would use it. Exactifying the literal needs separation from the *next* spectrum
+   value up, which is a different bound.
+2. The inequalities as Lean facts — **closed** (#6141).
+3. General `0 < D(z)` — **closed**, non-strict #6234, strict #6263.
+
+Downstream, `MathlibExt/ManifoldVolumePositive.vol_pos_of_realises` now gives
+`0 < vol m` for any realised manifold with a nonempty triangulation, which is what item 3
+was wanted for.
+
+
+---
+
+## 2026-08-30 — item 1 is HALF closed: `knot5_2` exactified (#6263)
+
+`MostowRigidity.knot5_2.volume := 2.82812208833078` → `VOL_5_2`. Both instances are now
+keyed on exact constants, `figureEight` having been done in an earlier arc. Confirmed by
+`rfl`: `volumeInvariant Knot5_2 = VOL_5_2` and `volumeInvariant FigureEight = VOL_4_1` both
+hold definitionally, so no decimal survives on either side, and
+`figureEight_volume_lt_knot5_2_volume` is now the corpus's proved inequality directly
+rather than `nlinarith` against a certified bracket and a decimal.
+
+**#6234's prediction about what would unblock this was wrong, and worth reading before
+trusting the same reasoning elsewhere.** It said the chord does not unblock the 5₂ literal
+because it bounds `VOL_5_2` below by `VOL_4_1`, the quantity already on the left of the
+comparison. *That part is correct.* What it missed is that the field does not need a
+comparison at all — `volume_nonneg` needs `0 ≤ VOL_5_2` standing alone, which
+`BlochWignerPositive.blochWigner_lob_pos` (bean `qou-0ag0`) gives at `fiveTwoShape_im_pos`.
+The general lemma applies to the 5₂ shape **precisely because it does not route through a
+Clausen special value** — the very property the bridge header cites as the reason the 4₁
+argument fails there. The stated obstruction was what made the general route available.
+
+**Also fixed, found while there and unrelated to volumes:** `knot5_2.mostow_gap` was `0.5`,
+and the field is documented as a *lower bound* on the distance to the next distinct
+spectrum value. The next value above `Vol(5_2)` is `Vol(6_1) ≈ 3.16396`, i.e. a gap of
+`0.33584`, so `0.5` is not a lower bound — and the instance's own docstring called `0.5`
+"well under the nearest-neighbour gaps … `Vol(6_1) − Vol(5_2) ≈ 0.336`" while quoting that
+figure. Corrected to `0.3`. `figureEight`'s `0.5` is sound (its neighbour up is `Vol(5_2)`,
+gap `0.798`).
+
+Nothing in Lean broke, which is why it survived: the class carries only `mostow_gap_pos`
+and defers discreteness to Mathlib. **A field whose documented meaning exceeds its stated
+obligation is not checked by anything** — an agent trusting the doc would conclude no
+hyperbolic volume lies within `0.5` of `Vol(5_2)`, and one does.
+
+**What remains of item 1:** `computations/hyperbolic-volumes.witness.json`'s `description`
+still names `knot5_2.volume` as a consumer of the `:leanval[vol_5_2]` tag; nothing consumes
+it now. A witness description cannot be corrected without re-running its producer.
+
+Two further `:leanval[Vol_4_1]` sites were assessed and are **not** this defect class —
+decimal constant tables with nothing exact to be unsatisfiable against. One carries a
+separate `=`-should-be-`≈` defect: bean `qou-2u39`.

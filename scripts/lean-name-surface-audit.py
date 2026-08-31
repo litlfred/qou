@@ -72,8 +72,16 @@ def surface(p: Path) -> str:
 
 
 def collect():
-    """FQN -> {(surface, path): body}."""
+    """FQN -> {(surface, path): body}, plus FQN -> set of private sites.
+
+    Private sites are collected but kept out of the L~L bucket: Lean mangles a
+    `private` declaration's environment name per module, so two modules can
+    both declare one and be imported together without error. Counting such a
+    pair as "a hard import error once anything imports both" states something
+    that is not true of the code.
+    """
     out = collections.defaultdict(dict)
+    priv = collections.defaultdict(set)
     for p in sorted(PAPER.rglob("*.lean")):
         if ".lake" in p.parts:
             continue
@@ -106,8 +114,11 @@ def collect():
                 # Line comments are stripped: a trailing `-- note` differing
                 # between the two copies is not drift in the declaration.
                 text = " ".join(dfa.LINE_CMT.sub("", b) for b in body)
-                out[fq][(s, str(p.relative_to(REPO)))] = " ".join(text.split())
-    return out
+                site = (s, str(p.relative_to(REPO)))
+                out[fq][site] = " ".join(text.split())
+                if dfa.PRIV.match(ln):
+                    priv[fq].add(site)
+    return out, priv
 
 
 def main() -> int:
@@ -116,7 +127,8 @@ def main() -> int:
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
-    decls = collect()
+    decls, priv = collect()
+    priv_ll = 0
     surfaces = collections.Counter()
     for fq, sites in decls.items():
         for (s, _) in sites:
@@ -127,8 +139,11 @@ def main() -> int:
         if len(sites) < 2:
             continue
         kinds = set()
-        if sum(1 for s, _ in sites if s == "L") > 1:
+        lib_public = [k for k in sites if k[0] == "L" and k not in priv[fq]]
+        if len(lib_public) > 1:
             kinds.add("L~L")
+        elif sum(1 for s, _ in sites if s == "L") > 1:
+            priv_ll += 1
         if any(s == "L" for s, _ in sites) and any(s == "S" for s, _ in sites):
             kinds.add("L~S")
         if sum(1 for s, _ in sites if s == "S") > 1:
@@ -149,6 +164,9 @@ def main() -> int:
         ident = len(buckets[(k, "identical")])
         drift = len(buckets[(k, "DRIFTED")])
         print(f"  {k:18s} {ident:9d} {drift:9d}   {why}")
+    if priv_ll:
+        print(f"\n  {priv_ll} same-FQN library pair(s) excluded from L~L: at least one\n"
+              f"  side is `private`, so the names are mangled and cannot collide.")
 
     if args.detail:
         for k, _ in rows:

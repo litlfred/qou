@@ -30,6 +30,9 @@ which is what `slack_pos` says.
 import QOU.Mathlib.RothIntegerChain
 import QOU.Mathlib.RothNormalisation
 import QOU.Mathlib.RothSiegelBound
+import Mathlib.RingTheory.Localization.Integral
+import Mathlib.RingTheory.Algebraic.Integral
+import Mathlib.FieldTheory.IntermediateField.Adjoin.Basic
 
 open NumberField Finset
 
@@ -772,6 +775,213 @@ theorem not_approximable_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
   rw [hx] at hscaled
   exact not_approximable_of_algebraic α₀ ψ (half_pos hδ) hscaled
 
+/-- **Height form from denominator form.**  The classical statement bounds `|x − p/q|` by a power of
+the *denominator*; everything above is stated in terms of the *height* `max(|p|, q)`.  The two
+differ, and the difference costs a slice of the exponent.
+
+`H ≥ q` always, so `q^{-(2+ε)} ≥ H^{-(2+ε)}` — the height form is the *stronger* hypothesis, and it
+does not follow from the denominator form for free.  What makes it follow is that a rational close
+to a bounded `x` has a bounded numerator: `|p| ≤ (B+1)q`, hence `H ≤ (B+1)q`, and then
+`q^{-(2+ε)} ≤ H^{-(2+δ)}` once `(B+1)^{2+δ} ≤ q^{ε−δ}`.  True for large `q`, and the hypothesis
+supplies unboundedly many.
+
+This is flagged as **R0** in `docs/audits/2026-08-30-roth-arc-ROAST.md`: the gap is benign but it
+had never been written down, and "benign and unwritten" is what this repo's taxonomy exists to
+catch. -/
+theorem approximable_height_of_den {x B : ℝ} (hB0 : 0 ≤ B) (hBx : |x| ≤ B) {ε δ : ℝ}
+    (hδ0 : 0 < δ) (hlt : δ < ε)
+    (h : ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧ |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε))) :
+    ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+      |((κ : ℚ) : ℝ) - x| ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ)) := by
+  intro N
+  have hεd : (0 : ℝ) < ε - δ := by linarith
+  have hC1 : (1 : ℝ) ≤ B + 1 := by linarith
+  have hClog : (0 : ℝ) ≤ Real.log (B + 1) := Real.log_nonneg hC1
+  obtain ⟨N₀, hN₀⟩ :=
+    exists_nat_gt (max (Real.exp ((2 + δ) * Real.log (B + 1) / (ε - δ))) (N : ℝ))
+  obtain ⟨κ, hNκ, hclose⟩ := h N₀
+  refine ⟨κ, ?_, ?_⟩
+  · -- the height is at least the denominator, which is at least `N`
+    have h1 : (N : ℝ) < (N₀ : ℝ) := lt_of_le_of_lt (le_max_right _ _) hN₀
+    have h2 : N ≤ N₀ := by exact_mod_cast le_of_lt h1
+    exact le_trans (le_trans h2 hNκ) (le_max_right _ _)
+  · set qd : ℝ := ((κ.den : ℕ) : ℝ) with hqd_def
+    set Hk : ℝ := ((max κ.num.natAbs κ.den : ℕ) : ℝ) with hHk_def
+    have hqd1 : (1 : ℝ) ≤ qd := by rw [hqd_def]; exact_mod_cast κ.pos
+    have hqd0 : (0 : ℝ) < qd := lt_of_lt_of_le zero_lt_one hqd1
+    have hHk1 : (1 : ℝ) ≤ Hk := by rw [hHk_def]; exact_mod_cast one_le_height κ
+    have hHk0 : (0 : ℝ) < Hk := lt_of_lt_of_le zero_lt_one hHk1
+    -- the denominator is large enough
+    have hqdN : (N₀ : ℝ) ≤ qd := by rw [hqd_def]; exact_mod_cast hNκ
+    have hexp : Real.exp ((2 + δ) * Real.log (B + 1) / (ε - δ)) < qd :=
+      lt_of_lt_of_le (lt_of_le_of_lt (le_max_left _ _) hN₀) hqdN
+    have hlogq : (2 + δ) * Real.log (B + 1) / (ε - δ) < Real.log qd := by
+      have hh := Real.log_lt_log (Real.exp_pos _) hexp
+      rwa [Real.log_exp] at hh
+    have hkey : (2 + δ) * Real.log (B + 1) ≤ (ε - δ) * Real.log qd := by
+      rw [div_lt_iff₀ hεd] at hlogq
+      nlinarith [hlogq]
+    -- `|κ| ≤ B + 1`, hence `|num| ≤ (B+1)·den`, hence `H ≤ (B+1)·den`
+    have hle1 : (qd : ℝ) ^ (-(2 + ε)) ≤ 1 :=
+      Real.rpow_le_one_of_one_le_of_nonpos hqd1 (by linarith)
+    have hκB : |((κ : ℚ) : ℝ)| ≤ B + 1 := by
+      have h3 := abs_sub_abs_le_abs_sub (((κ : ℚ) : ℝ)) x
+      linarith [hclose, hle1, hBx]
+    have hHkle : Hk ≤ (B + 1) * qd := by
+      rw [hHk_def, hqd_def]
+      exact_mod_cast height_le_mul_den hC1 hκB
+    have hlogHk : Real.log Hk ≤ Real.log (B + 1) + Real.log qd := by
+      calc Real.log Hk ≤ Real.log ((B + 1) * qd) := Real.log_le_log hHk0 hHkle
+        _ = Real.log (B + 1) + Real.log qd :=
+            Real.log_mul (by linarith) (ne_of_gt hqd0)
+    -- assemble, in logarithms
+    refine le_trans hclose ?_
+    rw [Real.rpow_def_of_pos hqd0, Real.rpow_def_of_pos hHk0]
+    refine Real.exp_le_exp.mpr ?_
+    have hneg : (-(2 + δ) : ℝ) ≤ 0 := by linarith
+    have hstep : Real.log Hk * (-(2 + δ)) ≥ (Real.log (B + 1) + Real.log qd) * (-(2 + δ)) :=
+      mul_le_mul_of_nonpos_right hlogHk hneg
+    nlinarith [hstep, hkey]
+
+/-- **Roth in the classical denominator form**, for anything with an integral multiple in `𝓞 K`.
+
+Composes the two conversions: `approximable_height_of_den` moves from denominators to heights at
+the cost of an arbitrarily small slice of the exponent, and `not_approximable_of_nsmul_eq` moves
+from `x` to `n·x` at the cost of another.  Both slices are free because the conclusion quantifies
+over all `ε > 0`, so each is taken at `ε/2`. -/
+theorem not_approximable_den_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
+    (α₀ : 𝓞 K) (ψ : K →+* ℝ) {n : ℕ} (hn : 0 < n) {x : ℝ}
+    (hx : (n : ℝ) * x = ψ ((algebraMap (𝓞 K) K) α₀))
+    {B : ℝ} (hB0 : 0 ≤ B) (hBx : |x| ≤ B) {ε : ℝ} (hε : 0 < ε) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := by
+  intro happrox
+  exact not_approximable_of_nsmul_eq α₀ ψ hn hx (half_pos hε)
+    (approximable_height_of_den hB0 hBx (half_pos hε) (by linarith) happrox)
+
 end Scaling
+
+section Algebraic
+
+open IntermediateField
+
+/-- **Roth's theorem, for every real algebraic number.**
+
+`|x − p/q| ≤ q^{−(2+ε)}` has no solutions of unbounded denominator, for any real algebraic `x` and
+any `ε > 0`.
+
+Everything analytic is already done — `not_approximable_den_of_nsmul_eq` handles both exponent
+conversions.  What is left is **construction**, and it is the last step of the arc:
+
+* `IsFractionRing.isAlgebraic_iff ℤ ℚ ℝ` turns `IsAlgebraic ℚ x` into `IsAlgebraic ℤ x` by clearing
+  denominators, and `exists_integral_multiple` then produces a non-zero `c : ℤ` with `c • x`
+  integral.  The sign is discarded by passing to `c.natAbs`, since integrality survives negation.
+* `ℚ⟮y⟯ ⊆ ℝ` for `y = |c|·x` is a number field: finite-dimensional because `y` is integral over `ℚ`,
+  and of characteristic zero because it sits inside `ℝ`.
+* The real embedding is the inclusion, and it is injective because it is a ring map out of a field —
+  which is also what lets `IsIntegral.tower_bot` carry integrality *down* from `ℝ` to `ℚ⟮y⟯`, the
+  one step that does not go the obvious way.
+
+Note that `y` need not be primitive for anything: `ℚ⟮y⟯` is used only as *some* number field
+containing `y`, never as `ℚ(x)`. -/
+theorem not_approximable_of_isAlgebraic {x : ℝ} (hx : IsAlgebraic ℚ x) {ε : ℝ} (hε : 0 < ε) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := by
+  classical
+  -- an integer multiple of `x` that is an algebraic integer
+  have hxZ : IsAlgebraic ℤ x := (IsFractionRing.isAlgebraic_iff ℤ ℚ ℝ).mpr hx
+  obtain ⟨c, hc0, hcint⟩ := hxZ.exists_integral_multiple
+  have hn : 0 < c.natAbs := Int.natAbs_pos.mpr hc0
+  have hcast : ((c.natAbs : ℕ) : ℝ) = |(c : ℝ)| := by rw [Int.cast_natAbs, Int.cast_abs]
+  have hyint : IsIntegral ℤ (((c.natAbs : ℕ) : ℝ) * x) := by
+    rw [hcast]
+    rcases abs_choice (c : ℝ) with h | h
+    · rw [h, ← zsmul_eq_mul]; exact hcint
+    · have he : |(c : ℝ)| * x = -(c • x) := by rw [h, zsmul_eq_mul]; ring
+      rw [he]; exact hcint.neg
+  -- the number field it generates inside `ℝ`
+  have hyQ : IsIntegral ℚ (((c.natAbs : ℕ) : ℝ) * x) := hyint.tower_top
+  haveI : FiniteDimensional ℚ ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ := adjoin.finiteDimensional hyQ
+  haveI : NumberField ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ := ⟨⟩
+  have hymem : (((c.natAbs : ℕ) : ℝ) * x) ∈ ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ :=
+    mem_adjoin_simple_self ℚ _
+  have hinj : Function.Injective (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ) :=
+    (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ).injective
+  have hα₀ : IsIntegral ℤ
+      (⟨((c.natAbs : ℕ) : ℝ) * x, hymem⟩ : ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯) :=
+    IsIntegral.tower_bot hinj hyint
+  exact not_approximable_den_of_nsmul_eq
+    (K := ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯) ⟨⟨_, hymem⟩, hα₀⟩
+    (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ) hn rfl (abs_nonneg x) le_rfl hε
+
+/-- **Rationals of bounded denominator near a fixed real are finitely many.**  The `num`/`den` pair
+determines the rational, the denominator is bounded by hypothesis, and the numerator is bounded
+because `|κ| ≤ |x| + 1` forces `|num| ≤ (|x|+1)·den`.
+
+This is the discreteness of `ℚ`, and it is exactly what separates "no family of unbounded
+denominator" from "finitely many solutions".  Nothing earlier in the arc supplies it — every
+estimate so far is about *how good* an approximation is, none about *how many* there are. -/
+theorem finite_den_le (x : ℝ) (D : ℕ) :
+    {κ : ℚ | κ.den ≤ D ∧ |((κ : ℚ) : ℝ) - x| ≤ 1}.Finite := by
+  classical
+  have hinj : Set.InjOn (fun q : ℚ => (q.num, q.den))
+      {κ : ℚ | κ.den ≤ D ∧ |((κ : ℚ) : ℝ) - x| ≤ 1} := by
+    intro a _ b _ hab
+    simp only [Prod.mk.injEq] at hab
+    rw [← Rat.num_div_den a, ← Rat.num_div_den b, hab.1, hab.2]
+  refine Set.Finite.of_finite_image ?_ hinj
+  refine Set.Finite.subset
+    ((Set.finite_Icc (-⌈(|x| + 1) * (D : ℝ)⌉) ⌈(|x| + 1) * (D : ℝ)⌉).prod
+      (Set.finite_Iic D)) ?_
+  rintro ⟨a, d⟩ ⟨κ, ⟨hd, hclose⟩, heq⟩
+  simp only [Prod.mk.injEq] at heq
+  obtain ⟨rfl, rfl⟩ := heq
+  have hden0 : (0 : ℝ) < (κ.den : ℝ) := by exact_mod_cast κ.pos
+  have hdenD : (κ.den : ℝ) ≤ (D : ℝ) := by exact_mod_cast hd
+  have habs : |((κ.num : ℤ) : ℝ)| = |((κ : ℚ) : ℝ)| * (κ.den : ℝ) := by
+    rw [Rat.cast_def, abs_div, abs_of_pos hden0, div_mul_cancel₀ _ (ne_of_gt hden0)]
+  have hκabs : |((κ : ℚ) : ℝ)| ≤ |x| + 1 := by
+    have h := abs_sub_abs_le_abs_sub (((κ : ℚ) : ℝ)) x
+    linarith
+  have hnumR : |((κ.num : ℤ) : ℝ)| ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := by
+    rw [habs]
+    calc |((κ : ℚ) : ℝ)| * (κ.den : ℝ) ≤ (|x| + 1) * (κ.den : ℝ) :=
+          mul_le_mul_of_nonneg_right hκabs (le_of_lt hden0)
+      _ ≤ (|x| + 1) * (D : ℝ) := mul_le_mul_of_nonneg_left hdenD (by positivity)
+      _ ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := Int.le_ceil _
+  have hnumZ : |κ.num| ≤ ⌈(|x| + 1) * (D : ℝ)⌉ := by
+    have hcast : ((|κ.num| : ℤ) : ℝ) ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := by
+      rwa [Int.cast_abs]
+    exact_mod_cast hcast
+  exact Set.mk_mem_prod (Set.mem_Icc.mpr (abs_le.mp hnumZ)) (Set.mem_Iic.mpr hd)
+
+/-- **Roth's theorem, classical form.**  For a real algebraic `x` and any `ε > 0`, the inequality
+`|x − p/q| ≤ q^{−(2+ε)}` has only **finitely many** rational solutions.
+
+The step from `not_approximable_of_isAlgebraic` is not bookkeeping: "no family of unbounded
+denominator" and "finitely many solutions" differ by the discreteness of `ℚ`, which is
+`finite_den_le`.  What makes them meet is that a solution is automatically within `1` of `x`,
+because `q^{−(2+ε)} ≤ 1` — so an infinite solution set with bounded denominators would sit inside a
+finite set. -/
+theorem finite_approximations_of_isAlgebraic {x : ℝ} (hx : IsAlgebraic ℚ x) {ε : ℝ} (hε : 0 < ε) :
+    {κ : ℚ | |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε))}.Finite := by
+  classical
+  by_contra hinf
+  refine not_approximable_of_isAlgebraic hx hε ?_
+  intro N
+  by_contra hcon
+  push_neg at hcon
+  refine hinf (Set.Finite.subset (finite_den_le x N) ?_)
+  intro κ hκ
+  have hclose : |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := hκ
+  have hden1 : (1 : ℝ) ≤ ((κ.den : ℕ) : ℝ) := by exact_mod_cast κ.pos
+  have hle1 : ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) ≤ 1 :=
+    Real.rpow_le_one_of_one_le_of_nonpos hden1 (by linarith)
+  refine ⟨?_, le_trans hclose hle1⟩
+  by_contra hd
+  push_neg at hd
+  exact absurd hclose (not_le.mpr (hcon κ (le_of_lt hd)))
+
+end Algebraic
 
 end MvPolynomial

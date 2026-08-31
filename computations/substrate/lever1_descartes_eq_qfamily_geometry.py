@@ -97,7 +97,12 @@ def main() -> int:
                     source="descartes-elliptic-curve.md classical limit j(1)=128")
     w.add_assertion("j_at_q0_eq_129_86", computed=fmt(mp.nstr(jq0, 6)), expected=129.86,
                     tolerance=0.05, source="descartes-elliptic-curve.md j(q₀)=129.9")
-    w.add_assertion("golden_cusp_j_eq_1728", computed=fmt(mp.nstr(j_cusp, 8)), expected=1728.0,
+    # |j − 1728| against 0, at full precision. `mp.nstr(j, 8)` renders 1728.xxxx
+    # to 8 significant digits, i.e. an absolute resolution of 1.728e-4 -- so the
+    # 1e-4 bound sat just INSIDE what the serialization can express, and the
+    # comparison could not have resolved it. (The sibling assertion above is
+    # fine: 6 digits on 129.86 resolves ~1.3e-4 against a 0.05 bound.)
+    w.add_assertion("golden_cusp_j_eq_1728", computed=fmt(abs(j_cusp - 1728)), expected="0",
                     tolerance=1e-4, source="s=1/φ cusp (golden-ratio degeneration) is the j=1728 CM point")
     w.add_assertion("six_singular_fibres_in_q", computed=int(deg_s) // 2, expected=6, tolerance=0,
                     source="deg_s(Δ-core)=12 in s ⇒ 6 in q; matches color six-fibre count")

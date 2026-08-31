@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T10:51:23Z
+updated_at: 2026-08-30T15:52:00Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -162,3 +162,95 @@ unaffected. R3 stays numerology. **A possible author decision is framed in §8 o
 of *do nothing now, restate when the arc is next worked* — the default is safe.
 
 Audit: `docs/audits/2026-08-30-self-crossing-invariance-gate.md`.
+
+---
+**Update 2026-08-30 (session assembly-shortfall, PR #6271) — the "3x shortfall" is NOT this
+bean's extensive term, and it is not a coefficient either.**
+
+Scope (a) for the numbers, (b) for one exclusion. Nothing refuted, nothing wired.
+
+**A withdrawal first.** `bond_rule_dashboard_comparison_probe` (merged today, #6212 — my own)
+reported "both rules are ~3x short for A >= 4" and attributed it to "the extensivity problem
+(qou-brng)". **That attribution is wrong and is withdrawn.** The refuting numbers were in that
+probe's own output; they were read as a level rather than as a sequence in A.
+
+**Not extensivity.** The chain assembly lays down exactly A-1 bonds, so B_model is affine in
+(Z,N) — both second differences vanish to 0.0 exactly — and B_model/A converges to the closed
+form -(alpha/2)ln(f_pp*f_nn) = 2.92424631376189350737739190987 MeV/nucleon (monotone to 3.0e-4
+at A=10^4). model/AME is bounded BELOW by 0.307 over A=2..238, with an interior minimum near
+the AME peak and a RISE past it:
+
+    4He 0.3068  12C 0.3480  40Ca 0.3332  62Ni 0.3366  208Pb 0.3933  238U 0.4108
+
+An extensivity deficit sends that ratio to zero. This assembly is extensive by construction.
+
+**Not a coefficient.** (1) B_model/A is strictly increasing along N=Z and bounded above by its
+limit, so it can never turn over; AME B/A turns over at 62Ni. Any positive constant preserves
+monotonicity, so NO constant reproduces the fall — scope (b), invariant: monotonicity of an
+affine-in-(Z,N) functional over A. (2) The deuteron refuses a uniform factor 3 outright: the
+bare model already OVER-binds 2H by 1.2736x; tripling gives 3.8207x.
+
+**A THIRD instance of this arc's own trap, recorded as a negative.** 3*model/AME is 1.00091 at
+56Fe and 0.99945 at 40Ca — 0.06%, from the integer 3, nothing fitted — and it is worthless: the
+same quantity is 1.401 at 7Li and 1.180 at 208Pb. A constant-B/A model can only CROSS a
+rising-peaking-falling curve and it crosses near the peak. Identical in shape to R3's
+0.954*hbar_q^2 "saturation" (a match to the empirical B/A PEAK, not a fundamental coefficient)
+and to qou-vudb's flat line crossing a rising curve. Do NOT quote the 0.06%.
+
+**Where the gap actually is.** The fall past 62Ni is Coulomb, counting proton PAIRS Z(Z-1).
+QOU.MassTheory.CrossingCountAffine.no_crossing_combination_is_protonPairs (merged today, #6212,
+sorry-free, coefficients quantified first) proves no linear functional of the crossing counts is
+Z(Z-1) — second difference 2 against 0. So the object missing from the absolute binding table is
+the SAME one that theorem excludes, reached from the opposite side (that theorem was measured
+against mirror splittings; this against the table).
+
+**Consequence for this bean and for qou-0c19.** Both frame the target as a missing additive
+EXTENSIVE term. For the chain assembly that framing does not apply. The live target is the
+Z(Z-1) multiplicity plus the A^{1/3} geometry of a Coulomb energy — neither reachable from the
+crossing counts. This narrows the arc; it does not open anything.
+
+Probe: computations/probes/assembly_shortfall_shape_probe.py (8/8, no float64, mpmath 65 dps,
+AME read as exact decimal text).
+
+
+---
+**🛑 CORRECTION 2026-08-30 (bean `qou-bsfg`) — the R2-lift entry above overstates.**
+That entry says "Markov/Jones trace multiplicative under connected sum ⇒ free energy additive ⇒ the
+additivity SelfMutualPartition assumed is DERIVED; binding = −log I, =0 ⟺ independence". Two fixes:
+(a) the proved matrix theorem (Kronecker) models the DISJOINT UNION, which carries the loop value
+`δ = [2]_q` — `J(K₁⊔K₂) = δ·J·J` — not the connected sum, for which `J(K₁#K₂) = J·J` is exact; the
+connected-sum reading was not licensed by what was proved. (b) consequently "=0 ⟺ independence" is
+wrong as physics: an independent assembly has `I = δ`, so it carries `log δ ≈ 0.699` per
+juxtaposition (≈2.10 for ⁴He), and additivity holds only up to that factor
+(`QOU.Mass.ClosureNormalisationDefect.freeEnergy_closureNorm_additive_iff`: additivity iff δ=1,
+excluded for q>1). The R2 lift therefore stands as "log turns a multiplicative amplitude into an
+additive free energy" — which is `Real.log_mul` — but NOT as a discharge of the multiplicativity
+input; see the retraction on `qou-301d`.
+---
+**Update 2026-08-30 (convergence note) — R3's verdict now has TWO independent
+structural arguments, from opposite directions.**
+
+A sibling landed `QOU.Mass.SaturationPeakStructure` on main (`3109e09818`,
+sorry-free — verified directly, 0 sorry / 0 axiom, hypotheses `0 < a_S`,
+`0 ≤ a_C`, `0 < u`, not vacuous). For the volume−surface−Coulomb shape
+`f(u) = a_V − a_S/u − a_C·u²` in `u = A^{1/3}` it proves `perNucleon_lt_volume`
+(the curve is strictly below `a_V` for EVERY `u > 0`) and `peak_is_not_bulk`, so
+the empirical B/A peak is an interior maximum of a surface/Coulomb competition —
+*"matching any constant to it is a category error, whatever the constant."*
+
+That is the DATA-side argument. PR #6271 (this session, merged) is the same
+conclusion from the MODEL side: `B_model/A` is strictly increasing along `N = Z`
+and bounded above by its limit, so it can never turn over; multiplying by any
+positive constant preserves monotonicity; therefore the model can only CROSS the
+peaked curve, and the 0.06 % agreement of `3×model` at ⁴⁰Ca/⁵⁶Fe is that
+crossing, not evidence.
+
+Neither derives the other and neither was aware of the other while running.
+Together they say: the peak is not a bulk quantity (sibling), and a monotone
+model's near-match to it is an artifact (mine). Both point at the same missing
+ingredient — the sibling's `a_C·u²` Coulomb term with `u = A^{1/3}`, which is
+exactly the `Z(Z−1)` multiplicity plus `A^{1/3}` geometry #6271 named as the
+live target, and which `CrossingCountAffine.no_crossing_combination_is_protonPairs`
+proves the crossing counts cannot supply.
+
+No number moved; nothing wired. Recorded so the corroboration is not lost.

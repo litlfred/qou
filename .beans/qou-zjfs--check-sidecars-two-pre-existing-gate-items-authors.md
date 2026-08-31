@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-30T14:10:57Z
+updated_at: 2026-08-30T15:41:20Z
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on
@@ -208,3 +208,52 @@ the same loop.
 candidates are the `prose()` builder emitting no label (`authors-note.ts` is a bare
 `export default prose()`), and the chapter manifest walk. `intro` is *also* `prose`, which
 weakens the first candidate; do not assume it before measuring.
+
+
+---
+
+## 2026-08-30 (later) — the DIRECTORY form works, and its blast radius is 57 sidecars
+
+Measured on `content/quantum-observable-universe/observations/` while fixing one block
+(#6280). Completes the picture from the entry above, which established that neither
+documented invocation refreshes `authors-note`.
+
+For **`building-block-knots`**, a block the enumerator *does* reach:
+
+- The **block-stem** form that `check-sidecars.sh` prints —
+  `qa-sweep.ts …/observations/building-block-knots` — is the same silent no-op recorded
+  above: `blocks: 0`, exit 0, nothing written.
+- The **directory** form does refresh it correctly (the `lean` and `lean_statement` hashes
+  and `reviewed_sha` all update) — **and swept 56 other blocks in the same pass**, marking
+  dozens `needs-agent` on the `da-*` criteria. 57 sidecars modified for a one-file change.
+
+So the two documented invocations are, respectively, a **silent no-op** and a **blunt
+instrument**, and there is no documented way to refresh exactly one block. I reverted the 56
+and committed only the one — but an agent following `check-sidecars.sh`'s printed command
+gets nothing, and an agent reaching for the directory form under the AGENTS.md "≤ 10 sidecars
+per idle pass" cap blows through it 5.7× in a single invocation without noticing.
+
+**Practical guidance until this is fixed:** run the directory form, then revert everything
+except the block you meant to touch (`git checkout -- <dir>` after copying your file and its
+sidecar aside). Ugly, but it is the only route that both refreshes and stays in scope.
+
+Note this does **not** contradict the `authors-note` finding above: that block is not
+enumerated at all, so neither form reaches it. Two distinct failures — unreachable blocks,
+and no single-block granularity for the reachable ones.
+
+
+**Correction to the figure one entry up: the blast radius is not 57, it is criteria-dependent.**
+Same directory, same block, two invocations minutes apart:
+
+    --only da-false-claim,da-overclaim,wall-side-correct,one-voice-audit   ->  57 blocks
+    --only wall-side-correct                                              -> 258 blocks
+
+So the narrower criteria set swept FEWER blocks, which is the opposite of the obvious
+guess and means the enumeration is not simply "every block in the directory". Quoting a
+single number for the blast radius is wrong; quote the invocation with it. Either way the
+conclusion stands and gets stronger — both are far past the AGENTS.md ≤ 10 sidecars/idle-pass
+cap (5.7× and 25.8×), and neither is a way to refresh one block.
+
+I recorded 57 as though it were the directory's size. It is not: `observations/` holds
+enough blocks for the 258 figure, so the 57-run was the one being selective, by a rule I
+have not identified.

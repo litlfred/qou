@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T10:44:59.861408+00:00",
-  "commitSha": "e2c425af1ac6d695ce7f89dd62699a5eb79335f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T20:30:24.577931+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "two_body_su4_sum_is_exactly_proportional_to_pair_count",
@@ -24,20 +24,20 @@
     },
     {
       "name": "fit_is_the_fixed_three_quarter_interpolation",
-      "computed": "0.750000000000000000000000000000000000000000000000000000000000",
-      "expected": "0.75",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-50",
-      "unit": "interpolation weight",
+      "unit": "deviation from the 3/4 interpolation weight",
       "source": "lambda = (C2(3)-C2(4))/(C2(2)-C2(4)); no fitted freedom remains"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "su4-casimir-beta-derivation",
   "scriptFile": "su4_casimir_beta_derivation_probe.py",
-  "scriptHash": "d99e1a72f036",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c64655d882ea",
+  "scriptCommitSha": "24fc85a0eb7894fb26b9308c0f93c9b290404db7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,9 +47,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {

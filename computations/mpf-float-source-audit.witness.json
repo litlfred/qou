@@ -6,7 +6,7 @@
     "counts": {
       "advisory-cast": 16,
       "marked-cast": 1,
-      "benign": 12
+      "benign": 15
     },
     "defects": [],
     "rows": [
@@ -155,6 +155,30 @@
         "fix": null
       },
       {
+        "file": "computations/probes/pairing_delta_overdetermination_probe.py",
+        "line": 90,
+        "class": "benign",
+        "arg": "1.5",
+        "source": "P = {2: -mp.mpf(1) / mp.mpf(2) ** mp.mpf(1.5), 3: mp.mpf(0), 4: mp.mpf(1) / 8}",
+        "fix": "mpf(\"1.5\")"
+      },
+      {
+        "file": "computations/probes/pairing_delta_overdetermination_probe.py",
+        "line": 117,
+        "class": "benign",
+        "arg": "1.5",
+        "source": "e2 = d / mp.mpf(2) ** mp.mpf(1.5)",
+        "fix": "mpf(\"1.5\")"
+      },
+      {
+        "file": "computations/probes/pairing_parity_b3_sign_probe.py",
+        "line": 82,
+        "class": "benign",
+        "arg": "1.5",
+        "source": "P = {2: -mp.mpf(1) / mp.mpf(2) ** mp.mpf(1.5), 3: mp.mpf(0), 4: mp.mpf(1) / 8}",
+        "fix": "mpf(\"1.5\")"
+      },
+      {
         "file": "computations/probes/strong_unified_binding_probe.py",
         "line": 20,
         "class": "benign",
@@ -246,10 +270,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "cdeb737aadf9",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
-  "commitSha": "cf2689484ea0ca14289433eb2860b2027813abd9",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "1eeffe1b3ea2e4cfb8d7f9584bd095ebd17e17dd",
   "engine": "python",
-  "computedAt": "2026-08-30T12:40:28.722869+00:00",
+  "computedAt": "2026-08-30T14:24:54.765538+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

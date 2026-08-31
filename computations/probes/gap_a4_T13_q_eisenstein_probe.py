@@ -68,7 +68,7 @@ del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -255,15 +255,15 @@ def main():
     E6_at_zero = eisenstein_E_2k(mp.mpf(0), 3, n_terms=5)
     w.add_assertion(
         "E_4_at_q_zero_is_one",
-        computed=float(E4_at_zero),
-        expected=1.0,
+        computed=fmt(abs(E4_at_zero - 1)),
+        expected="0",
         tolerance=1e-30,
         source="E_4(q) = 1 + O(q); at q = 0 the constant term is 1.",
     )
     w.add_assertion(
         "E_6_at_q_zero_is_one",
-        computed=float(E6_at_zero),
-        expected=1.0,
+        computed=fmt(abs(E6_at_zero - 1)),
+        expected="0",
         tolerance=1e-30,
         source="E_6(q) = 1 + O(q); at q = 0 the constant term is 1.",
     )

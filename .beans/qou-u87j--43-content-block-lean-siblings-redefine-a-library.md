@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T12:04:35Z
+updated_at: 2026-08-30T16:53:16Z
 ---
 
 
@@ -785,3 +785,44 @@ carries three spellings of one quantity (`1 - q_inv` in the ground ring,
 `(q - 1) / q` at `ℝ`, and the generic `QEnergy.hbar := 1 - 1 / q` added by
 the `R_q` fix) — worth a cross-reference if someone is in these files
 anyway, not worth a pass of its own.
+
+
+## 2026-08-30 — PR #6278: the drain's own two regressions, found and fixed
+
+The def/abbrev half of this bean (#6191 hbarQ consolidation, #6257 the last
+three collisions) landed **two live breakages on main**, both from checking
+consumers one level deep and gating on `lean QOU.lean`:
+`Archimedean/MassGapGm.lean` (7 sites) and `BraidKnot/KeystoneMcKayValueMap.lean`
+(19 sites, reached via `open`). Both fixed in #6278, verified against a
+79-module at-risk sweep (2 real, 2 environment gaps, 1 pre-existing timeout,
+74 clean).
+
+The missing guard is beaned separately as `qou-s63a` — it is not part of this
+bean's scope and should not block it.
+
+Also fixed in #6278, in the guards this arc produced: the duplicate-FQN
+ratchet exited 0 without verifying when `--verify` was absent, and neither
+audit understood `private` (the surface audit was calling a private/public
+same-name pair a "hard import error", which it cannot be). Live instance was
+`QOU.BraidKnot.qIntBal`. Recorded as TRAP 8 in
+`.claude/agent-memory/lean-verifier/verification-harness.md`.
+
+
+## 2026-08-30 — #6278 MERGED (862a98357aa); main verified green
+
+Rebase-merged, 5 commits. Verified on the merged `main` with lean-direct:
+`MassGapGm`, `KeystoneMcKayValueMap`, `TransferMatrix`,
+`beta_decay_transfer_matrix` all **exit 0**; duplicate-FQN ratchet 0 proposed /
+0 confirmed; name-surface `L~L` 0/0 with the one private pair reported as
+excluded. The two live breakages this arc caused are gone from `main`.
+
+**Leftover I introduced, found while verifying the merge:** the `hbar_q` ->
+`hbarQ` rename in #6191 updated `MassGapGm`'s code and ONE docstring line but
+left FOUR others (28, 35, 56, 65) writing `hbar_q`, one of them in backticks as
+though it were an identifier. Partial, not absent — which is the harder kind to
+notice. Fixed on `claude/hbarq-docstring-residue-2026-08-30`.
+
+Note this is a class the guards cannot see: both audits parse `def`/`abbrev`
+heads, so a stale identifier reference inside a docstring is invisible to them
+and to the compiler alike. Not worth a detector; worth knowing that a rename's
+prose half has no gate at all.

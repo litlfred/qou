@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The thirteen
+## The twenty-six
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -42,10 +42,32 @@ question.
 | 22 | the **argument-passing form** — positional `args` only | every keyword call, i.e. 87 % of the corpus's call sites | `self_fulfilling_assertion_audit` reported `MEASURED: 0` against a true 56 (qou-3e5m) |
 | 23 | the **presence** of a field — every statement-strength matcher keys on a field that is present and *wrong* | a defect that is an **absent** clause: `RothGammaFull` lacked `two_le` and `degPos`, which made `RothLemmaTheta` false at `m = 1` | pre-fix `RothGammaFull` reconstructed; `limit-claim-encoding-audit.py` and `unbounded-quantifier-audit.py` both reported **0** (qou-4lbh) |
 | 24 | the **declaration form** — every field-keyed scan begins at `class\|structure … where` | a carrier that is a `def … : Prop`, which is how this corpus states Mahler's Lemma 4 and Roth's Lemma | pre-fix `RothLemma4` reconstructed; `unbounded-quantifier-audit.py` reported `0 candidate(s) over 18 file(s)` (qou-4lbh) |
+| 25 | the **assignment's proximity** — every literal-tracer follows a value to the call it sits in | a literal reaching an assertion through a **list slot**: `target_c[2] = sp.Integer(-1)` assigned 211 lines above `computed=float(target_c[2])`, so the assertion compares an input to itself and cannot fail | `qbeta_wenzl_habiro_ansatz_probe.py:479`; `assertion_on_literal_audit` reports it in NO bucket, confirmed by running it (qou-58zw) |
+| 26 | the **key's lexical form** — every key scan reads `ast.Constant(str)` | a witness key written as a **keyword argument**, i.e. a Python identifier: `result(A_odd_preimage_positions_on_main_chain=v)` | `qcollatz_backward_tree_structure_probe.py:127`; `witness_key_orphan_audit`'s own first version reported three orphans sitting in plain sight in the file it was auditing (qou-58zw) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 25 and 26 — added 2026-08-30 (bean `qou-58zw`), and BOTH were found by spot-checking, not by reasoning
+
+Row 26 is a near-neighbour of **row 22** and the pair is worth reading together:
+22 is a detector that could not read a call's *arguments* because it looked only
+at positional ones; 26 is a detector that could not read a *key* because a
+keyword argument is an identifier and every key scan looks for a string. Same
+underlying assumption — that the interesting text is a `str` in the AST — hit
+from two directions, in two different audits, two days apart.
+
+Row 25 is the assertion-side twin of the same family: a tracer that follows a
+literal to its call site cannot see a literal parked in a list slot two hundred
+lines earlier. `assertion_on_literal_audit` was written *for* vacuous assertions
+and reports this one in no bucket at all.
+
+**Both were found by spot-checking a detector's own output**, which is the only
+method on this page that has ever worked. Row 26 in particular was found in the
+output of the audit that introduced it: `witness_key_orphan_audit` reported
+three orphaned keys that are visible on line 127 of the file it was auditing.
+A detector's first count is a hypothesis.
 
 ### 15 — a convention set by an instance field, not a definition body
 
