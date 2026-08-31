@@ -52,16 +52,16 @@ most trivial model available and asking `lean` whether it type-checks:
 | **INHABITED with no hypotheses** | **52** (26 machine + 26 hand) |
 | scored NOT vacuous — genuine claim | 14 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall` + 6 already inhabited in the corpus) |
 | REFUTABLE — false at the corpus's own constants | 1 (`SkeinMassRelationHolds`) |
-| still undecided — INCONCLUSIVE, see method below | 12 |
+| **DRAINED — proved outright, class deleted** | 2 (`ProtonPairSkeinApprox`, `NeutronPairSkeinApprox`) |
+| still undecided — INCONCLUSIVE, see method below | 10 |
 | hand-verified before any tooling existed | 5 of 5 |
 
-The 12 that remain, so the next agent does not have to re-derive the list:
+The 10 that remain, so the next agent does not have to re-derive the list:
 `ConfinementPhaseStratificationContext`, `DeltaTauMSurrogateTaylorCoeff2`,
 `DoubleMagicConjecture`, `DressedMassSubstrateSplit`,
 `FiberAdjointInvolutionContext`, `H2SAngleS3HolonomyConjecture`,
-`HasDqSquaredNonvanishing`, `NeutronPairSkeinApprox`, `ProtonPairSkeinApprox`,
-`QuantumObservableUniverseExistsContext`, `RadiusOfConvergenceGateClass`,
-`WhiteheadVolumeConjectureLimit`.
+`HasDqSquaredNonvanishing`, `QuantumObservableUniverseExistsContext`,
+`RadiusOfConvergenceGateClass`, `WhiteheadVolumeConjectureLimit`.
 
 `HasDqSquaredNonvanishing` is worth a line of its own, because its ledger entry
 is arguably **already dispositioned**: on 2026-08-23 the circular instance
@@ -703,6 +703,48 @@ removes both routes at once: no model can be chosen to make
 nothing reduces. So it is neither witnessed nor refuted here and stays in the
 undecided column — recorded because "the LP duality class is settled" would be
 wrong, and the two are one grep apart.
+
+### The first two DRAINED the right way — proved, classes deleted
+
+`ProtonPairSkeinApprox` and `NeutronPairSkeinApprox` are the arc's first
+findings closed by **disposition 1** (prove it) rather than scored. Both carried
+a single field that was the bound itself, on the stated ground that *"the full
+proof reduces to a numerical evaluation of `Real.rpow` at `(substrate_q, 1/2)`,
+which `norm_num` cannot yet discharge"*.
+
+That is true of `norm_num` and is not a reason the bound cannot be proved. The
+root is **eliminated, not evaluated**: writing `s = q^{1/2}`, the only facts
+needed are `s > 0` and `s * s = q`; the denominator collapses to
+`s + s⁻¹ = (q+1)/s`, so every `pair_skein_mass` is *linear* in `s`, and
+`s ∈ (1.0534, 1.0535)` follows from `s * s = 1.1097` by `nlinarith`. Both bounds
+close by `field_simp; nlinarith`. Same technique as the `SkeinMassRelationHolds`
+refutation, pointed the other way. `HadronicMass.lean`: exit 0, 0 errors, 14 s.
+
+**And the side hypothesis both classes bound is FALSE.**
+`q^{1/2} + q^{-1/2} = 2.0027092783…` at `q = 1.1097`, so its distance from the
+asserted `2.00228` is `4.293e-4` — **4.3× the `1e-4` tolerance**. That hypothesis
+was an explicit argument of both theorems, so neither could ever be invoked: no
+proof of it exists to supply. A third failure mode, distinct from both the
+vacuous class and the false class field — **a true claim made unreachable by a
+false side condition**. Recorded as
+`HadronicMass.pair_skein_denom_hypothesis_false` (machine-refuted, not asserted).
+
+**The docstring numbers did not reproduce either**, and the corrections run in
+the flattering direction, which is why nobody caught them (mpmath, 50 dps):
+
+| | stated | measured |
+|---|---|---|
+| `√1.1097` | 1.05341 | 1.0534230 |
+| denominator | 2.00228 | 2.0027093 |
+| `S_ud` | 312.89 | 312.9442 |
+| `proton_from_pair_skein` | 938.15 | 938.25205 |
+| `neutron_from_pair_skein` | 939.46 | 939.54729 |
+| proton agreement | 0.12 MeV | **0.0200 MeV** |
+| neutron agreement | 0.10 MeV | **0.0181 MeV** |
+
+`S_uu = 312.3637` matches the stated `312.37`, so the arithmetic was right for
+one of the three pair masses and wrong for the other two. The agreements are 6×
+and 5× **better** than claimed.
 
 ## Adjacent observation, not a finding
 
