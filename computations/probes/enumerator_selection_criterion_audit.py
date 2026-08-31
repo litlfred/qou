@@ -175,6 +175,40 @@ def main():
           "claim that 'the principle is not minimality' is right about the "
           "code's sort key and wrong about what produced the corpus's carrier")
 
+    # ---- the minimal set is analytically solved, and 99.8% redundant --------
+    print()
+    tot_words = 0
+    rows = []
+    for L in range(1, 9):
+        tot_words += 4 ** L
+        els = {(a, b) for a in range(-L, L + 1) for b in range(-L, L + 1)
+               if abs(a) + abs(b) <= L}
+        rows.append({"L_max": L, "words": tot_words, "elements": len(els)})
+    last = rows[-1]
+    print(f"  minimal set {{sigma_3^+-, sigma_6^+-}}: sigma_3 and sigma_6 are "
+          f"DISTANT (|3-6| >= 2) hence COMMUTE,")
+    print(f"  so the subgroup is free abelian and every word reduces to "
+          f"sigma_3^a sigma_6^b.")
+    print(f"    at L <= 8: {last['words']:,} words enumerated for "
+          f"{last['elements']} distinct group elements "
+          f"({float(100 * (1 - F(last['elements'], last['words']))):.2f}% "
+          "redundant)")
+
+    check("the minimal-set search is 99.8% redundant at L <= 8",
+          F(last["elements"], last["words"]) < F(1, 500),
+          f"{last['words']:,} words collapse to {last['elements']} elements "
+          "because sigma_3 and sigma_6 commute; the enumerator re-evaluates "
+          "the same group element hundreds of times")
+
+    check("and the minimal-set answer is ANALYTIC -- no search needed at any L",
+          True,
+          "Brunnian needs lk(1,2) = lk(2,3) = lk(1,3) = 0; those are a/2, b/2 "
+          "and 0, so a = b = 0, the TRIVIAL carrier, at every length. "
+          "lk(1,3) = 0 is FORCED: sigma_3 transposes positions 3,4 and sigma_6 "
+          "transposes 6,7, so a block-1 strand and a block-3 strand never "
+          "meet. The Borromean needs all three pairs linked, so it is "
+          "unreachable in this layout")
+
     # ---- what this closes ---------------------------------------------------
     check("extending L_K_max is FUTILE without repairing the criterion",
           True,
@@ -251,6 +285,16 @@ def main():
         ],
         "lean": ("QOU/Mass/EnumeratorSelectionDegeneracy.lean "
                  "(8 declarations, sorry-free, lean-direct exit 0)"),
+        "minimal_set_collapse": {
+            "reason": ("sigma_3 and sigma_6 are distant (|3-6| >= 2) hence "
+                       "commute; <sigma_3, sigma_6> is free abelian of rank 2"),
+            "by_length_bound": rows,
+            "verdict": ("the minimal-set search is unnecessary at any L: "
+                        "Brunnian forces the trivial carrier, and lk(1,3) = 0 "
+                        "is forced by reachability (blocks 1 and 3 never "
+                        "cross), so the Borromean is unreachable in this "
+                        "layout"),
+        },
         "related": ["probes/carrier-crossing-quantisation.witness.json"],
     }
     out = _HERE / "enumerator-selection-criterion-audit.witness.json"

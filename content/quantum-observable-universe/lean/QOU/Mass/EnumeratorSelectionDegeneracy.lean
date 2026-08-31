@@ -168,7 +168,15 @@ theorem selfCrossing_not_admissible :
 
 /-- Pairwise linking numbers of a carrier `σ₃^a σ₆^b` in `B₉`, doubled to stay in
 `ℤ`: the `1|2` pair sees only the `σ₃` letters, the `2|3` pair only the `σ₆`
-letters, and the `1|3` pair sees neither. -/
+letters, and the `1|3` pair sees neither.
+
+**The third component being `0` is an ENCODING of a reachability fact, not
+something proved here.** `σ₃` transposes positions `3,4` and `σ₆` transposes
+`6,7`, so no strand starting in block 1 (`1…3`) can ever occupy a position
+adjacent to a strand of block 3 (`7…9`): the two blocks never cross, at any word
+length. Formalising that would need a braid-word model this file deliberately
+does not carry; it is stated in the header and taken as the definition of
+`twoLk`. Everything below is honest given that reading and vacuous without it. -/
 def twoLk (a b : ℤ) : ℤ × ℤ × ℤ := (a, b, 0)
 
 /-- **On the minimal interface set the only Brunnian carrier is trivial.**
