@@ -457,3 +457,39 @@ The remaining cost is genuine mpf matrix multiplication (`_matmul_dim`), which
 `qou-9ay6` now carries along with an owner question: the pipeline is float64 at
 both ends, so that cost may be protecting precision the inputs never had. That
 ruling, not more optimisation, is what unblocks these two.
+
+### QUANTIFIED: `hadron_knot_table` is infeasible, not slow
+
+The work in `unified_iterative_correction` is now measurable rather than
+mysterious, and it settles these two items.
+
+**Fixed cost per call.** It walks EVERY partition λ ⊢ k for k = 2..11
+(`K_PARTITION_MAX = 11`), which is 193 partitions — confirmed exactly by the
+profile's 193 `_build_ysn_matrices` calls. That part does not depend on A.
+
+**Cost that does depend on A.** `_step_chain_generic` emits one inter-nucleon
+crossing per PREVIOUS nucleon, so the crossings summed over a nucleus grow as
+A(A−1)/2:
+
+    A= 2 (deuterium)      1 inter-nucleon crossing     1x
+    A= 4 (he4)            6                            6x
+    A=12 (c12)           66                           66x
+    A=40 (ca40)         780                          780x
+
+`ATOMS` runs to ca40. So against a deuterium base that is **still running past
+14 minutes after both fixes**, ca40's crossing count alone is ~780x, before
+accounting for the larger YSN dimensions involved. hadron_knot_table then does
+this for 19 atoms.
+
+**So this is not a producer that needs a bigger timeout or one more
+optimisation.** A 780x multiplier on a 14-minute base is hours-to-days per
+atom, and no local change closes that. Either the algorithm changes (the
+per-atom cost must stop growing quadratically in A, or the 193-partition sweep
+must be cached across atoms — it is A-independent and currently recomputed),
+or `hadron_knot_table` is retired/rescoped to small A.
+
+That is a scoping decision, not a bug fix, so these two items are marked
+BLOCKED-BY-DESIGN rather than left looking like unfinished debugging. Note the
+one cheap idea in there: the 193-partition sweep is invariant across atoms
+within a run and is currently redone for every atom — caching it would not fix
+the A² growth but would cut the constant by up to 19x for this producer.
