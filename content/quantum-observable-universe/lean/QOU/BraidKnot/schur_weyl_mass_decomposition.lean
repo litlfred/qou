@@ -1,74 +1,34 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.BraidKnot.schur_weyl_mass_decomposition — `tr_M(𝒜) = Σ_λ (s_λ/H_q(λ)) · χ^λ(𝒜)`
+# `QOU.BraidKnot.schur_weyl_mass_decomposition` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Proposition** ([`prop:schur-weyl-mass-decomposition`](../../../quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.md)).
+This module used to hold `SchurWeylMassContext` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-*Let `(Z, N)` be an atom with atomic braid `𝒜 ∈ H_{3A}(q)` on `3A`
-strands, and let `V^{⊗ 3A} ≅ ⊕_{λ ⊢ 3A} S^λ ⊗ V_λ` be the
-Schur–Weyl decomposition.  The Markov trace of the atomic braid
-decomposes over partitions `λ ⊢ 3A`:*
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[SchurWeylMassContext]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
 
-```
-  tr_M(𝒜) = Σ_{λ ⊢ 3A} (s_λ(𝐪) / H_q(λ)) · χ^λ(𝒜)
-```
+**Why removal costs nothing readable.**  Three facts, all measured:
 
-*where `s_λ` is the Schur function evaluated on `𝐪 = (q, q⁻¹)`,
-`H_q(λ) = ∏_{x ∈ λ} [h_x(λ)]_q` is the `q`-hook product, and
-`χ^λ` is the character of irrep `λ` of `H_{3A}(q)`.*
+1. The content block's `lean.ref` is `qou:QOU.BraidKnot.schur_weyl_mass_decomposition`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`mass-theory/schur-weyl-mass-decomposition.lean`](../../mass-theory/schur-weyl-mass-decomposition.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `PartitionOfN`, `qHookProduct`, `schurAtQ`, `spechtCharacter`, `schurWeylWeight`, `a_eq_one_three_channels`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
 
-The Lean encoding records the sum identity against an abstract
-`SchurWeylContext` carrying the Schur-Weyl data.
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.md
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/BraidKnot/schur_weyl_mass_decomposition.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.BraidKnot
-
-/-- Abstract Schur–Weyl decomposition context for atomic braid trace.
-
-    **Base ring (§7c).** The Schur–Weyl data — the Hecke parameter `q`,
-    the Schur function `s_λ(q, q⁻¹)`, the `q`-hook product `H_q(λ)`, the
-    character `χ^λ`, and the Markov trace — are rational functions of `q`
-    over the coefficient field, and the decomposition is a field identity
-    (`+`, `*`, `/`, with `H_q(λ) ≠ 0`). No `Real.*`, no ordering. The
-    context is therefore stated over a generic field `(R : Type*) [Field R]`
-    rather than specialised to `ℝ`. -/
-class SchurWeylMassContext (R : Type*) [Field R] (Z N : ℕ) where
-  /-- Mass number `A = Z + N`. -/
-  A : ℕ := Z + N
-  /-- The Hecke parameter `q`. -/
-  q : R
-  /-- Indexing type for partitions of `3A`. -/
-  Partition : Type
-  /-- Finite set of partitions of `3A`. -/
-  partitions : Finset Partition
-  /-- Schur function `s_λ(q, q⁻¹) : R`. -/
-  schurFunction : Partition → R
-  /-- `q`-hook product `H_q(λ) : R`. -/
-  qHookProduct : Partition → R
-  /-- Character of the atomic braid `𝒜` on irrep `λ`. -/
-  chi_atomic : Partition → R
-  /-- Markov trace `tr_M(𝒜)`. -/
-  trM_atomic : R
-  /-- The hook product is non-zero (generic `q`). -/
-  qHookProduct_ne_zero : ∀ lam, qHookProduct lam ≠ 0
-  /-- Manuscript Schur–Weyl decomposition identity. -/
-  claim_schur_weyl_sum :
-    trM_atomic = partitions.sum
-      fun lam => schurFunction lam * chi_atomic lam / qHookProduct lam
-
-/-- **Schur–Weyl decomposition of the atomic Markov trace**
-    ([`prop:schur-weyl-mass-decomposition`]).
-
-    `tr_M(𝒜) = Σ_λ s_λ(𝐪) · χ^λ(𝒜) / H_q(λ)`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.md
-def schur_weyl_mass_decomposition
-    {R : Type*} [Field R] {Z N : ℕ} [ctx : SchurWeylMassContext R Z N] :
-    ctx.trM_atomic
-      = ctx.partitions.sum
-          fun lam => ctx.schurFunction lam * ctx.chi_atomic lam / ctx.qHookProduct lam :=
-  ctx.claim_schur_weyl_sum
-
-end QOU.BraidKnot
