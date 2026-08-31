@@ -1,0 +1,123 @@
+{
+ "probe": "m1_kendall_route",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "rows": [
+  {
+   "n": 8,
+   "rho": "0.88786875",
+   "q_meas": "0.0236593",
+   "q_gauss": "0.152185",
+   "ratio": "0.15546",
+   "tau": "0.952681",
+   "tau_gauss": "0.695629"
+  },
+  {
+   "n": 9,
+   "rho": "0.89800363",
+   "q_meas": "0.0297266",
+   "q_gauss": "0.145017",
+   "ratio": "0.20499",
+   "tau": "0.940547",
+   "tau_gauss": "0.709965"
+  },
+  {
+   "n": 10,
+   "rho": "0.89874255",
+   "q_meas": "0.0504576",
+   "q_gauss": "0.144482",
+   "ratio": "0.34923",
+   "tau": "0.899085",
+   "tau_gauss": "0.711036"
+  },
+  {
+   "n": 11,
+   "rho": "0.89915305",
+   "q_meas": "0.0563737",
+   "q_gauss": "0.144184",
+   "ratio": "0.39099",
+   "tau": "0.887253",
+   "tau_gauss": "0.711633"
+  },
+  {
+   "n": 12,
+   "rho": "0.90122336",
+   "q_meas": "0.041111",
+   "q_gauss": "0.14267",
+   "ratio": "0.28815",
+   "tau": "0.917778",
+   "tau_gauss": "0.714659"
+  },
+  {
+   "n": 13,
+   "rho": "0.90560967",
+   "q_meas": "0.0435782",
+   "q_gauss": "0.139414",
+   "ratio": "0.31258",
+   "tau": "0.912844",
+   "tau_gauss": "0.721172"
+  },
+  {
+   "n": 14,
+   "rho": "0.90986935",
+   "q_meas": "0.0510259",
+   "q_gauss": "0.136182",
+   "ratio": "0.37469",
+   "tau": "0.897948",
+   "tau_gauss": "0.727637"
+  },
+  {
+   "n": 15,
+   "rho": "0.91273961",
+   "q_meas": "0.0631138",
+   "q_gauss": "0.133963",
+   "ratio": "0.47113",
+   "tau": "0.873772",
+   "tau_gauss": "0.732075"
+  },
+  {
+   "n": 16,
+   "rho": "0.9146104",
+   "q_meas": "0.0606892",
+   "q_gauss": "0.132497",
+   "ratio": "0.45804",
+   "tau": "0.878622",
+   "tau_gauss": "0.735005"
+  },
+  {
+   "n": 17,
+   "rho": "0.91632008",
+   "q_meas": "0.0605907",
+   "q_gauss": "0.131145",
+   "ratio": "0.46201",
+   "tau": "0.878819",
+   "tau_gauss": "0.73771"
+  },
+  {
+   "n": 18,
+   "rho": "0.918422",
+   "q_meas": "0.0600657",
+   "q_gauss": "0.129464",
+   "ratio": "0.46396",
+   "tau": "0.879869",
+   "tau_gauss": "0.741072"
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 1 (HYPOTHESIS FALSIFIED, favourably): q is ~2.2x rarer than Gaussian",
+   "pass": true,
+   "detail": "For a centered bivariate normal with correlation rho, two iid draws give q_Gauss = 1/2 - arcsin(rho)/pi exactly. If measured q tracked it, the pairwise route would merely RESTATE rho > 0 and the 138x margin would be an illusion -- that was the outcome to rule out. Exact over n = 15..18: rho = ['0.91273961', '0.9146104', '0.91632008', '0.918422'], q measured = ['0.0631138', '0.0606892', '0.0605907', '0.0600657'], q Gaussian = ['0.133963', '0.132497', '0.131145', '0.129464'], ratio = ['0.47113', '0.45804', '0.46201', '0.46396'] -- settling near 0.4638, spread 0.0131. Discordance is ~2.2x rarer than a Gaussian with the SAME correlation, so the route carries structure beyond the Pearson correlation."
+  },
+  {
+   "name": "FINDING 2: the target is Kendall's tau, with a ~15x margin on q alone",
+   "pass": true,
+   "detail": "1 - 2q is KENDALL'S TAU, so 'q < 1/2' is exactly tau > 0 -- a RANK statement, invariant under monotone reparametrisation, neither implied by nor implying Pearson rho > 0. At n = 18: tau = 0.879869 against the Gaussian-implied (2/pi) arcsin(rho) = 0.741072, so the rank dependence is STRONGER than the linear one. And M_1 > 0 needs less than tau > 0: it needs [q/(1-q)] * [mean ratio] < 1, and the mean ratio is separately ~0.111 (previous probe), so q < 0.90 suffices against a measured q = 0.0600657 -- a ~15x margin on q ALONE. Two sufficient routes: (q < 1/2 and mean ratio <= 1), or (q < 0.90 and mean ratio <= 0.111). NOT CLOSED -- both still need a statement about the joint law; what changed is that the target is a rank quantity with a margin, not a Pearson sign with none."
+  }
+ ],
+ "passed": 2,
+ "total": 2,
+ "ms": 146
+}
