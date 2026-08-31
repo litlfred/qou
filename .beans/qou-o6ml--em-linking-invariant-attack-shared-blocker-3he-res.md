@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T03:13:44Z
+updated_at: 2026-08-31T03:17:16Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -598,3 +598,94 @@ mutual term through it, unconditional positivity, and the self/mutual
 relationship. What remains is **not** formalisation — it is the numerical
 minimisation on the three named carriers (Hopf, 8₁₁, L6a4/Borromean), plus the
 integration theory to turn pointwise statements into an energy.
+
+
+## 2026-08-31 — 🛑 CORRECTING MY OWN CLAIM: pointwise positivity is NOT "nonzero for unlinked pairs"
+
+Went to acquire `freedman1994` / `ohara1991` after `paper-search-mcp` reconnected.
+It could not be done (see below), but the literature check that replaced it
+found a defect in what I wrote here two entries ago.
+
+### What the literature says, and it confirms the formalisation
+
+The **Möbius cross energy** of a two-component link is
+
+  `E(γ₁,γ₂) = ∫∫ |γ₁'(s)| |γ₂'(t)| / |γ₁(s) − γ₂(t)|² ds dt`
+
+— **unsubtracted**, exactly as `mutualIntegrand` encodes it, and conformally
+invariant. So the self/mutual split recorded here is the standard one, not a
+reconstruction. Two hard facts arrive with it:
+
+- **`E(standard Hopf link) = 2π²`** — a value for one of the three carriers.
+- **Freedman–He–Wang conjectured** the Hopf link minimises cross energy among
+  nontrivial links; **Agol–Marques–Neves proved it** (`arXiv:1205.0825`,
+  *Min-max theory and the energy of links*): if `lk(C₁,C₂) = ±1` then
+  `E ≥ 2π²`, with equality iff the pair is a Möbius image of the standard Hopf
+  link.
+
+### 🛑 The correction
+
+The AMN bound is conditioned on **`lk = ±1`**. Our carriers are not uniformly
+that: Hopf (²H) has `lk = ±1`, but on **L6a4/Borromean every pairwise
+`lk_ij = 0`** ((A3) of `mirror_split_s3_em_functional_probe.py`) — which is the
+whole reason this front picked a Brunnian carrier.
+
+And for an unlinked pair the **infimum of the cross energy is 0**. The energy is
+invariant under scaling *both* components, but shrinking one alone by `ε` scales
+the numerator by `ε` and leaves the denominator, so `E → 0`. Nothing forbids
+that isotopy for a pair considered on its own.
+
+**So my entry above overstated `mutualIntegrand_pos`.** I wrote that its
+unconditional positivity is *"exactly what this bean asks of route (2) — nonzero
+for unlinked pairs"*. It is not. **Pointwise positivity of the integrand is
+strictly weaker than a positive lower bound on the energy**, and it is the
+second that route (2) needs. The Lean is correct; the gloss on it was not.
+`mutualIntegrand_pos_of_ne` and `mutualIntegrand_pos` stand as stated — they
+just do not carry the weight I gave them.
+
+### What survives, and it is the sharper recipe
+
+The Borromean link is **Brunnian**: no two components are linked, yet the whole
+is not splittable. So while each *pairwise* term can be driven to 0 in
+isolation, the **total** energy cannot — shrinking one component forces the
+other two through a smaller region, raising their mutual term. The minimum of
+the total is nontrivial and the minimising configuration distributes energy
+across pairs.
+
+**Therefore `w_ij` must be the pairwise cross energy evaluated AT THE MINIMISER
+OF THE TOTAL LINK ENERGY — not the minimum of the pairwise energy over that
+pair's own isotopy class, which is 0.** That is a joint minimisation over the
+whole carrier, not three independent ones. My previous entry said *"minimise on
+three named links"*, which is right per link and wrong if read per pair; this
+sharpens it.
+
+**Not claimed:** that the total minimum is positive for the Borromean carrier.
+That is the standard reading of Brunnian non-splittability, but I have not
+verified it against a source and the AMN theorem does not cover `lk = 0`.
+Whether a positive lower bound is known for Brunnian links is an open question
+for this front and is worth a targeted look before the minimisation is coded.
+
+### Acquisition: still blocked, and my last entry was wrong about that too
+
+`paper-search-mcp` **reconnected** this session and I reported that as making
+the gap closable. It does not. Measured: `search_arxiv("knot")` — a query that
+cannot legitimately return nothing — gives `[]`, as does `search_crossref`.
+Direct `curl` confirms the cause rather than inferring it from the empty result:
+
+```
+arxiv:    CONNECT tunnel failed, response 403
+crossref: CONNECT tunnel failed, response 403
+```
+
+and the agent proxy's own status reports `connect_rejected — gateway answered
+403 to CONNECT (policy denial)`.
+
+**TRAP for the next agent: an MCP server reconnecting is not its backend
+becoming reachable.** The tools load and return `[]`, which reads as "no
+results" rather than "blocked". The discriminator is a maximally-broad query
+plus a direct `curl`, and it costs two calls. **WebSearch remains the open
+out-of-band lane** — everything in this entry came through it — but it cannot
+put a PDF into `uploads/`, so the acquisition gap stands.
+
+New acquisition target, higher priority than the two originals because it is the
+one that actually bounds things: **`arXiv:1205.0825`** (Agol–Marques–Neves).
