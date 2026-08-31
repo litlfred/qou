@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T03:24:04Z
+updated_at: 2026-08-31T04:21:48Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -806,3 +806,34 @@ RSK ingredient is the same bijection that gave lead_inj.
 
 **next**: Mathas Lemma 3.9 + 3.14 — spanning — is now the SINGLE open input to (C1).
 Audit: docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md
+
+
+### 2026-08-31 (cont.) — the right-handed structure constants, x_λ two-sided
+
+`σ_mul_Tw` only goes one way, and the handedness is inverted: left multiplication by σ_i in
+the algebra is RIGHT multiplication by s_i on the permutation. So Murphy's `T_{d(t)}` factor
+had no lemma at all. Built the mirror, sorry-free, all from what was already on main:
+
+- `Tw_sw` — `T_{s_i} = σ_i` (reproved locally; the corpus copy is in TwGramRankOne, whose
+  Gram cone this file has no use for)
+- `Tw_mul_σ_of_length_add` — ascending case, ONE LINE from `Tw_mul_Tw` (whose convention
+  already reverses the order: `T_v · T_w = T_{wv}`)
+- `Tw_mul_σ_of_length_sub` — descending case, from the ascending one + `σ_quadratic`
+- `simple_eq_sw` — `(permCoxeterSystem n).simple i = sw i`, via `toPerm_simple`
+- `sw_length_dichotomy` — from Mathlib `length_simple_mul` + `length_simple`; this is what
+  makes the pair lemma UNCONDITIONAL, matching its left twin (whose dichotomy came free
+  from the concrete descent test)
+- `Tw_mul_σ_pair` / `Tw_mul_σ_pair'` — the right-handed q-eigenvector pair
+- `murphySum_mul_σ` — `x_S · σ_i = q·x_S` for S closed under LEFT mult by s_i
+- `murphySum_mul_σ_subgroup` — so `x_λ` is a **two-sided** q-eigenvector for every
+  generator of its Young subgroup. That is what Mathas uses throughout Lemma 3.9/3.12.
+
+All nine `[propext, Classical.choice, Quot.sound]`; downstream HeckeMurphyYoung re-verified
+exit 0. These three `Tw_mul_σ_*` belong upstream in `QOU.Hecke.TwMul` beside their left
+twins — left here because that file sits deep in the Hecke cluster and this is the only
+consumer so far.
+
+**next**: Mathas Lemma 3.13 — the Hecke Garnir decomposition `t = g·w` with
+`ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` — then Lemma 3.14's dominance induction. This is the q-analogue
+of `standardPolytabloid_straightening`, which the corpus already proved sorry-free on the
+`colWordNum` measure for the q=1 side; that proof is the template. Multi-session.
