@@ -1,15 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:48:23.427475+00:00",
-  "commitSha": "ea5333f3a530acd3b977cf35e38086b0b40d8db5",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:17:08.318947+00:00",
+  "commitSha": "6e9c05100a137786ea1b339b5c6851f6fc00dbab",
+  "assertions": [
+    {
+      "name": "hook_content_closed_form_equals_solved_block_weight_exactly",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "w_lambda = prod_cells (z q^c - z_- q^-c)/(q^h - q^-h), z_- = z - (q - q^-1); Ocneanu/HOMFLY form at a^2 = z/z_-"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 1439,
+  "durationMs": 1376,
   "computation": "markov-trace-weights-wenzl",
   "scriptFile": "markov_trace_weights_wenzl.py",
-  "scriptHash": "bd62a1b5fe03",
-  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "scriptHash": "c13861fa44c5",
+  "scriptCommitSha": "ae3821bfc52c5b2fffb3b7df03da5241c629e34a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +41,10 @@
     ],
     "reproduce": "python3 -u computations/markov_trace_weights_wenzl.py"
   },
-  "description": "Exact block weights of the canonical Markov trace (tr(1)=1, tr(x sigma_n)=z tr(x), z=1/(q^{1/2}+q^{-1/2})) on H_n(q), n<=5, at rational s=q^{1/2} samples; identified hook-content closed form w_lambda = prod_cells (z q^{c} - z_- q^{-c})/(q^{h} - q^{-h}) with z_- = z - (q - q^{-1}), equivalently the Ocneanu/HOMFLY quantum-dimension form at framing parameter a^2 = z/z_-, tested for exact equality.",
+  "description": "Exact block weights of the canonical Markov trace (tr(1)=1, tr(x sigma_n)=z tr(x), z=q^3/(q^2+1), convention D) on H_n(q), n<=5, at rational s=q^{1/2} samples; identified hook-content closed form w_lambda = prod_cells (z q^{c} - z_- q^{-c})/(q^{h} - q^{-h}) with z_- = z - (q - q^{-1}), equivalently the Ocneanu/HOMFLY quantum-dimension form at framing parameter a^2 = z/z_-, tested for exact equality.",
+  "parameters": {
+    "n_lambda_equalities_checked": 51
+  },
   "$schema": "witness/v1",
   "inputs": {
     "N_MAX": 5,

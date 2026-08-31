@@ -1,15 +1,24 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:32.599779+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:26:21.200207+00:00",
+  "commitSha": "dec71212654455bc26fdeb50e2258de64be54f0b",
+  "assertions": [
+    {
+      "name": "padded_family_stable_closed_form_exact_on_every_mu_n_pair",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "interpolation restriction property: rational in q, q^n per shape family"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deligne-stable-range-binding-period-probe",
   "scriptFile": "deligne_stable_range_binding_period_probe.py",
-  "scriptHash": "793afbda76f7",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "b0134f4e9e2c",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +30,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deligne_stable_range_binding_period_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deligne_stable_range_binding_period_probe.py"
   },
   "description": "Deligne/TL stable-range probe for T_q(n)=sum dim_q: (1) per-shape padded-family closed form (rational in q, q^n — the interpolation restriction property) verified exactly; (2) captured fraction of the stable truncation at substrate q_0 — feasibility verdict for interpolated-level evaluation of the binding period.",
+  "parameters": {
+    "restriction_property_pairs_checked": 99
+  },
   "audit_only": true,
   "tier": "decisive probe (formalize-first: formula derived then machine-verified; capture is a measurement, no fit)",
   "precision_dps": 50,
@@ -126,7 +146,7 @@
     "stable_truncation_captures_T_at_q0": false,
     "capture_decreasing_in_n": true
   },
-  "timestamp": "2026-08-21T14:57:32+00:00",
+  "timestamp": "2026-08-30T14:26:20+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
