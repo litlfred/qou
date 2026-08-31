@@ -137,6 +137,7 @@ export default chapter({
         "isospin-singlet-binds-more",
         "isospin-singlet-binds-more-proof",
         "content-keyed-interface-refuted",
+        "markov-stabilisation-needs-a-fresh-generator",
         "nucleon-pair-isospin-channel",
         "isospin-selection-class-inhabited",
         "branching-identity-isospin-weights",
