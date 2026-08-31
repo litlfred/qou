@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T04:42:26Z
+updated_at: 2026-08-31T04:56:32Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1107,3 +1107,49 @@ n = 50..1600, approaching from above, no significant violation.
 
 **Not proved:** steps 2–4 assume Kerov's CLT; Mathlib has no Plancherel measure.
 Lean file: 0 sorries.
+
+
+---
+
+### 2026-08-31 (cont.) — my "can't be formalized" framing was wrong; and κ_n exactly
+
+**🛑 CORRECTION (framing).** I repeatedly wrote "Mathlib has no Plancherel
+measure, so this can't be formalized" **without checking what this repo has**.
+It has a lot, all sorry-free: `QOU/MathlibExt/QPlancherel.lean`,
+`QOU/Observations/{QCltNonCommutative,QPlancherelAsymptoticSkeleton}.lean`,
+`QOU/Mass/FreeCumulants.lean`, `QOU/BraidsAndKnots/{YoungDiagramKernel,
+M1DescentDPPConvergence,ContentVarianceLeadingConstant}.lean`,
+`QOU/Archimedean/QHookBound.lean`.
+
+The accurate statement is narrower and more useful: those are typeclass
+**interfaces** per `§3b-cond` — `class QCltNonCommutative`,
+`class HasQPlancherelCLT`, `class DescentDPPMarginConvergence` — with **no
+instances**. The CLT is *hypothesised*, not proved. Filling it means supplying
+instances, which needs unconditional bricks.
+
+**Supplied one.** `ContentVarianceLeadingConstant.lean` scoped out, in its own
+header, "**not** the infinite sum (`= 1/8`, a tsum telescoping)". Now proved:
+
+> `vaTerm_hasSum : HasSum (fun k => 1/((2k+1)((2k+1)²−4)²)) (1/8)`
+
+sorry-free, via an exact closed form for **every** partial sum —
+`Σ_{k<N} = 1/8 + (1/32)(1/(2N−1) − 1/(2N+1) − 1/(2N−1)² − 1/(2N+1)²)` — which
+also holds at N=0, so no positivity side condition. Summability by AM-GM on the
+same formula. **Same summand family as my `f_m = 16/(m(m²−4)²)`**, so the two
+lines of work meet here.
+
+### κ_n exactly — 13 is the crossing point
+
+`M₁(n)` is an exact rational, so claim (b) needs no sampling.
+
+- **`κ_n < κ` for n = 2..12, `κ_n ≥ κ` for every n ≥ 13.** The gap's threshold
+  is exactly where the sequence crosses its own limit. **n = 13 is the binding
+  case, margin 0.23%.**
+- **My briefed expectation FALSIFIED.** I expected `κ_n` decreasing to κ, making
+  (b) a corollary of monotonicity. It is not monotone: `κ_n` **rises to a peak
+  at n = 32** (1.026988κ) and falls after, rejoining κ from above (sampled
+  0.0590 at n=50 → 0.0577 at n=1600).
+
+**So claim (b) is two regimes, not one:** n = 13..42 is a finite exact check
+(**done, to n = 42**), and n ≥ 43 needs an **effective error bound** on
+`κ_n − κ`. The remaining work is an error term, not a monotonicity.
