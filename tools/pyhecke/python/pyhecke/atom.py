@@ -41,7 +41,12 @@ from pyhecke.gram import (  # type: ignore[import-not-found]
     hm, hm_exact, nf_tr, nf_net,
     h_mp, hm_mp,
     G,
-    _H_FRAC, _Z_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
+    # `_TR_M_FRAC` was missing here until 2026-08-31 (bean `t7qv`), which made
+    # `nf_channel_exact` raise `NameError` on EVERY call — it is used in the
+    # body but was never imported. `gram` defines it and lists it in `__all__`;
+    # only this import line was short. Found while building the Phase B LR
+    # branching constraint, which needs exactly this channel decomposition.
+    _H_FRAC, _Z_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC, _TR_M_FRAC,
     _Q_FRAC, _QI_FRAC,
 )
 # Wedderburn primitives — pyhecke owns these (PR #1118).
