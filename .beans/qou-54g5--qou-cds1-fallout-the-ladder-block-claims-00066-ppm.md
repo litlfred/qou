@@ -270,3 +270,73 @@ By running the grep I should have run before writing "RESOLVED" — the corpus-g
 discipline exists for exactly this, and I skipped it because the context line
 read like a complete answer. A line that explains a finding is not the same as
 having measured its extent.
+
+## 2026-08-31 — DIRECTION SETTLED, and it is the reverse of how I posed it
+
+Probe: `computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py`, **15/15**.
+
+The retraction above left the direction undetermined and listed the step that
+would settle it: "find what produced table 3's column". Done.
+
+### `3c_3^2 + b` lives in exactly one place: a deprecated producer
+
+    computations/_deprecated/precision-ladder-superseded/
+        precision_ladder_ck_symbolic_probe.py:79
+            5: mpf("4") * 3 + b,      # c_3^2 * 3 + b = 12 + b
+
+Its coefficient family there is **identical to the live conjecture family at
+c_4, c_6 and c_7** and differs **only at c_5** — so c_5 is precisely what the
+supersession that retired this producer changed.
+
+### The SDP extraction decides it
+
+`computations/qbeta/qbeta_decay_sdp_full_ck.py` — the conjecture block's own
+declared producer, with a witness — records:
+
+    c_5 extracted        -1.2229
+    -(b^2 + 1/2)         -1.2527     2.44 % off        <- 6 sites, CURRENT
+    3c_3^2 + b          +12.8676   1152 % off, WRONG SIGN  <- 2 sites, SUPERSEDED
+
+No plausible refresh of that extraction moves it from `-1.22` to `+12.87`.
+
+### So the 0.202 % agreement means the opposite of what it looked like
+
+It is **not** evidence that `3c_3^2+b` is right. It is evidence that **the
+published headline was computed by the deprecated producer and never recomputed
+when c_5 changed.** Same for table 3, whose N=4/N=5 rows the block's declared
+producer (`probe_q_beta_operator_valued_N3.py`) **cannot generate** — it stops
+at N=3, and carries no c_5 at all.
+
+**The stale sites are the HEADLINE, TABLE 3, and the context's mixing-pattern
+line.** The six carriers are current. My first proposed fix — rewrite the two
+carriers to `3c_3^2+b` — would have propagated a superseded coefficient into the
+framework's formalized coefficient family and its Lean class.
+
+### On the "opposite sign" I corrected in the retraction
+
+Both readings were right about different objects, and the bean's original was
+the one that mattered. **As ladder coefficients** (with the box's leading minus
+folded in) both are negative — that is what I checked. **As quoted in their
+sources** they are opposite: `-(b^2+1/2) = -1.2527` against a bare
+`+(3c_3^2+b) = +12.8676`. The quoted forms are what compare against the
+extraction, so the original "opposite sign" reading was the useful one. Recorded
+so the retraction is not itself over-read.
+
+### Status
+
+Cause identified, localized, and **direction settled**. What remains before any
+edit:
+
+1. **The SIGN of the headline** (hypothesis 4) — unresolved. Correcting the
+   headline means recomputing a published number with the live c_5, and the sign
+   convention has to be settled first or the recomputation just re-publishes the
+   ambiguity.
+2. **A producer that reaches N=5.** The block's declared one stops at N=3. Table
+   3 and the headline need recomputing together from something that can actually
+   produce them.
+3. `q-beta-gamma-gamma-canonical-derivation.md` still publishes the retired
+   `b^2+1/2` at **c_4**, where the supersession replaced it. Separate defect.
+4. The stale `qbeta-ladder-convention-fee.witness.json` (holds 7.336484; live
+   gives 7.133937), unchanged.
+
+Bean stays open on (1)-(4). Everything here is C-frame.

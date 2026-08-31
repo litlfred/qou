@@ -6,22 +6,27 @@ question: "which fifth-rung coefficient is right, boxed -(b^2+1/2) = -1.2527 or
 context/table-3 3c_3^2+b = +12.8676, opposite sign and an order of magnitude
 apart."
 
-It is not a math question.  It is an INDEX SLIP, and the corpus already says so
-in its own words.  `q-beta-categorical-precision-ladder-context.md:29`:
+ANSWER: `-(b^2 + 1/2)` is CURRENT and `3c_3^2 + b` is SUPERSEDED, so the stale
+sites are the block's HEADLINE, TABLE 3, and the context's mixing-pattern line
+-- not the six carriers.  Evidence in finding 5 below.
 
-    "The earlier c_4 = b^2 + 1/2 form is superseded: it is 9.5% off the
-     empirical value, while c_3 * b^4 matches to 0.9%."
+  *** Two earlier versions of this docstring got this wrong in opposite     ***
+  *** directions.  The first called `b^2+1/2` a displaced leftover and      ***
+  *** counted two stale carriers against three good ones -- from a grep of  ***
+  *** only the two files already open.  The second had the count right      ***
+  *** (6 vs 2) but left the direction undetermined.  Both are recorded      ***
+  *** because the trap is real: the corpus says, at                         ***
+  *** `...-ladder-context.md:29`, "the earlier c_4 = b^2 + 1/2 form is      ***
+  *** superseded", and that line reads like a complete answer while         ***
+  *** describing a DIFFERENT slot's supersession.                           ***
 
-  *** An earlier version of this docstring called that a DISPLACED leftover  ***
-  *** and counted two carriers against three.  Both were wrong -- see below. ***
-
-The reassignment was DELIBERATE, and the corpus majority is on the other side.
+The c_4 -> c_5 reassignment was DELIBERATE.
 `q-beta-gamma-gamma-canonical-derivation.md:48` gives `b^2+1/2` at **c_4** with
 the reading "Kashiwara + half-Hopf mixed"; `conj-qbeta-c-k-closed-forms.md`
 gives it at **c_5** with THE SAME reading and a recorded **2.4 % empirical
-residual**.  So when c_4 was superseded to `c_3*b^4`, the expression was moved
-to the c_5 slot carrying its categorical interpretation -- an intentional,
-empirically-checked assignment, not a slip.
+residual**.  When c_4 was superseded to `c_3*b^4`, the expression moved to the
+c_5 slot carrying its interpretation -- an intentional, empirically-checked
+assignment, not a slip.
 
 Site by site, c_5 only:
 
@@ -39,9 +44,9 @@ Separately, `q-beta-gamma-gamma-canonical-derivation.md` is stale on the OTHER
 end: its table still publishes the retired `b^2+1/2` at **c_4**, where the
 supersession replaced it.  That is a third defect, not part of the c_5 question.
 
-The measurement below is unchanged by any of this and is what makes the
-inconsistency matter: the published headline is reproduced by the TWO-site form
-and missed by the SIX-site form.
+The measurement below is what makes it matter: the published headline is
+reproduced by the TWO-site form and missed by the SIX-site form -- which, given
+the direction above, means the HEADLINE is the stale artifact.
 
 This file measures what that costs.  Everything here is CONVENTION C, the frame
 the block was written in; the D-frame ladder does not exist (qou-cds1).
@@ -99,9 +104,11 @@ def ladder(q, c5_form, n_rungs=5):
     al = (z - 1) * h / 2
 
     c3 = mp.mpf(-2)                       # Hopf Jones at q=1
-    if c5_form == "boxed":                # -(b^2 + 1/2): the RETIRED c_4 form
+    if c5_form == "boxed":                # -(b^2 + 1/2): the CURRENT c_5
         rung5 = 1 - (b**2 + mp.mpf(1) / 2) * b**5 * hb**10
-    elif c5_form == "context":            # 3*c_3^2 + b, per context + table 3
+    elif c5_form == "context":            # 3*c_3^2 + b: SUPERSEDED (deprecated
+                                          # producer); kept to show what the
+                                          # published headline was computed with
         rung5 = 1 - (3 * c3**2 + b) * b**5 * hb**10
     else:
         raise ValueError(c5_form)
@@ -138,11 +145,13 @@ def main() -> int:
     print(f"  context c_5 = -(3c_3^2 + b) = {mp.nstr(c5_ctx, 10)}")
     print(f"  ratio                       = {mp.nstr(c5_ctx / c5_boxed, 8)}\n")
 
-    # 1. The two candidates are the SAME SIGN, not opposite.  The bean recorded
-    #    them as "opposite sign"; that came from comparing -(b^2+1/2) against a
-    #    bare +(3c_3^2+b), i.e. one with the box's minus folded in and one
-    #    without.  Both are negative coefficients of u^5.
-    checks.append(("both candidate c_5 are NEGATIVE (not opposite sign)",
+    # 1. AS LADDER COEFFICIENTS both are negative -- `c5_ctx` here carries the
+    #    box's leading minus.  AS QUOTED IN THEIR SOURCES they are opposite:
+    #    -(b^2+1/2) = -1.2527 against a bare +(3c_3^2+b) = +12.8676, which is
+    #    what the bean recorded.  Both readings are right about different
+    #    objects; finding 7 compares the QUOTED forms, which is the one that
+    #    matters against the SDP extraction.
+    checks.append(("as ladder coefficients (minus folded in) both are negative",
                    c5_boxed < 0 and c5_ctx < 0))
     checks.append(("they differ by ~10.3x in magnitude",
                    mp.mpf(10) < abs(c5_ctx / c5_boxed) < mp.mpf(11)))
@@ -207,6 +216,30 @@ def main() -> int:
     print(f"    boxed c_5, muon pin       = {mp.nstr(d_mu['boxed'], 8)} ppb"
           f"   <- what the live code gives")
 
+    # 7. WHICH IS RIGHT.  The live producer for the conjecture block,
+    #    `qbeta/qbeta_decay_sdp_full_ck.py`, records the SDP-extracted value
+    #    c_5 = -1.2229.  -(b^2+1/2) = -1.2527 is 2.4 % from it (exactly the
+    #    residual the conj block publishes).  3c_3^2+b = +12.8676 is ~10x off
+    #    AND the wrong sign.
+    c5_extracted = mp.mpf("-1.2229")
+    err_six = abs(c5_boxed - c5_extracted) / abs(c5_extracted)
+    err_two = abs(-c5_ctx - c5_extracted) / abs(c5_extracted)   # as quoted, +12.87
+    checks.append(("six-site -(b^2+1/2) is within 3 % of the SDP extraction",
+                   err_six < mp.mpf("0.03")))
+    checks.append(("two-site 3c_3^2+b is off by more than 5x",
+                   err_two > 5))
+    checks.append(("and has the opposite sign to the extraction",
+                   (-c5_ctx) > 0 and c5_extracted < 0))
+
+    print("\n  WHICH c_5 IS RIGHT -- against the SDP extraction:")
+    print(f"    extracted (qbeta_decay_sdp_full_ck) = {mp.nstr(c5_extracted, 6)}")
+    print(f"    six-site  -(b^2+1/2) = {mp.nstr(c5_boxed, 8)}"
+          f"   {mp.nstr(err_six * 100, 3)} % off")
+    print(f"    two-site  3c_3^2+b   = {mp.nstr(-c5_ctx, 8)}"
+          f"   {mp.nstr(err_two * 100, 4)} % off, WRONG SIGN")
+    print("    -> six-site form is CURRENT; two-site form is SUPERSEDED and")
+    print("       lives only in _deprecated/precision-ladder-superseded/.")
+
     hb = (q_pr - 1) / q_pr
     u5 = (b_pr * hb**2) ** 5
     print(f"\n  u^5 at the proton pin = {mp.nstr(u5, 6)}  <- why the swap is sub-ppb")
@@ -259,23 +292,37 @@ FINDINGS
    colour-blind w and today's constants.  What IS established is that the c_5
    slot is not the cause of THAT gap either.
 
-NO FIX IS APPLIED, and none should be until the direction is settled.  An
-earlier pass of this file proposed "correct the two carriers to 3c_3^2+b".  With
-the count the other way round that would mean rewriting six sites -- including a
-conjecture block and the Lean class it formalizes -- to match two, on the
-strength of one 2-significant-figure number.  That is not a documentation fix;
-it is a change of claim, and it needs the math, not a grep.
+5. DIRECTION SETTLED, and it is the reverse of how the question was posed.
+   `3c_3^2 + b` lives in exactly one place in the tree:
+   `computations/_deprecated/precision-ladder-superseded/`.  Its coefficient
+   family there is identical to the live conjecture family at c_4, c_6 and c_7
+   and differs ONLY at c_5 -- so c_5 is precisely what the supersession changed.
 
-What would settle it, in order:
-  1. Read `conj-qbeta-c-k-closed-forms`'s 2.4 % empirical residual for
-     -(b^2+1/2) at c_5 against the context's derivation of 3c_3^2+b.  They are
-     claims about the same slot with different provenance; one is wrong.
-  2. Find what produced table 3's column.  If it used 3c_3^2+b, the two-site
-     form is the computed one and the six-site family is the stale one.
-  3. Only then edit, in the direction the math gives.
+   Against the SDP extraction the live producer
+   (`qbeta/qbeta_decay_sdp_full_ck.py`) records:
 
-Also open, unchanged: the SIGN (hypothesis 4), and
-`q-beta-gamma-gamma-canonical-derivation.md`'s stale retired c_4 at rung 4.
+       extracted             -1.2229
+       -(b^2 + 1/2)          -1.2527    2.4 % off        <- six sites, CURRENT
+       3c_3^2 + b           +12.8676    ~10x, wrong sign <- two sites, SUPERSEDED
+
+   So the 0.202 % agreement in finding 3 is NOT evidence that `3c_3^2+b` is
+   right.  It is evidence that the PUBLISHED HEADLINE WAS COMPUTED BY THE
+   DEPRECATED PRODUCER and never recomputed when c_5 changed.  Same for table 3,
+   whose N=4/N=5 rows the block's own declared producer
+   (`probe_q_beta_operator_valued_N3.py`) cannot generate -- it stops at N=3.
+
+   The stale sites are the HEADLINE, TABLE 3, and the context's mixing-pattern
+   line -- NOT the six carriers.  An earlier pass of this file proposed
+   rewriting the six to match the two; that would have propagated a superseded
+   coefficient into the framework's formalized family.
+
+STILL NO FIX APPLIED, and this one must not be applied blind: correcting the
+headline means recomputing a published number with the live c_5, and its SIGN is
+unresolved (hypothesis 4).  Settle the sign, then recompute the headline and
+table 3 together from a producer that actually reaches N=5.
+
+Also open, unchanged: `q-beta-gamma-gamma-canonical-derivation.md` still
+publishes the retired `b^2+1/2` at **c_4**, where the supersession replaced it.
 
 Not to be closed by fitting: do not tune w, the pin, or CODATA to make a column
 come out -- that would manufacture provenance for numbers whose origin is the
