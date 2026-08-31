@@ -9,7 +9,7 @@ tags:
     - paper-qou
     - infra-blocked
 created_at: 2026-08-01T23:31:01Z
-updated_at: 2026-08-01T23:31:01Z
+updated_at: 2026-08-31T02:53:38Z
 parent: qou-k1mq
 ---
 
@@ -22,3 +22,11 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
 - **Tractability:** Irrationality of a single hyperbolic volume; transcendence result outside Mathlib's current reach.
 - **Next step:** Infra-blocked: needs Mathlib theory that does not exist. Track upstream; do not launder via axiom/class.
+
+## Verdict CONFIRMED 2026-08-31 (audit: docs/audits/2026-08-31-individuating-the-fourteen-infra-blocked-verdicts.md)
+
+Individuated with the other thirteen. For THIS item the boilerplate verdict is right: the named
+theory is genuinely absent from Mathlib and is genuinely required. Kept as-is.
+
+Recorded because the same verdict was WRONG on several siblings; "confirmed" here means checked,
+not merely un-revisited.

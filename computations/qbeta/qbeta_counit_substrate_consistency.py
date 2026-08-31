@@ -55,6 +55,10 @@ from qou_substrate.constants import M_E_MEV, q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 # --- precision: raised for bucket-B fix (bean qou-p77d) ---
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 

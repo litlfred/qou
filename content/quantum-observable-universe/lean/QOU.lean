@@ -236,6 +236,7 @@ import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
 import QOU.MassTheory.CrossingCountAffine
+import QOU.MassTheory.CoulombFromCrossingCounts
 import QOU.MassTheory.BondChargeRule
 import QOU.MassTheory.BondArcTheorems
 import QOU.MassTheory.PairIsospinAssignment
@@ -332,6 +333,7 @@ import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
 import QOU.Mass.SumSYTEqInvolution
 import QOU.Mathlib.YoungLatticeUpOperator
+import QOU.Mathlib.SkewSYTMaxCorner
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount

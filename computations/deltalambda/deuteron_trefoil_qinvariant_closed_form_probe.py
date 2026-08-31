@@ -61,6 +61,10 @@ mp.mp.dps = 60
 # clear it, because the producer was the source of the stale number. It now
 # resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
 # proton unless for an explicit reason ... otherwise pin proton").
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
 
 q0 = mp.mpf(_Q0_RESOLVED)
@@ -242,19 +246,27 @@ witness = {
     # Emitted BY THE PRODUCER.  These three were backfilled into the committed
     # witness by a provenance tool, not written here, so every regeneration
     # silently dropped them -- the qou-4un2 provenance-loss class.  q0 above is
-    # the frozen canonical MUON pin, held as a literal in this file; the anchor
-    # is recorded as what it actually is rather than inferred from a call site.
-    "q0Anchor": "muon",
+    # RESOLVED from substrate.q_parameter, not frozen; the anchor is recorded as
+    # what it actually is rather than inferred from a call site.
+    #
+    # These three said "muon" until 2026-08-30, describing the hard-coded muon
+    # literal that the qou-1c4y migration (2026-08-29) had already DELETED four
+    # lines up.  That same edit introduced the bare-name import with no sys.path
+    # bootstrap, so the producer could not run and nothing ever exercised the
+    # contradiction it had just created.
+    "q0Anchor": "proton",
     "q0Value": mp.nstr(q0, 50),
     "q0AnchorReason": (
-        "emitted by the producer: q0 is the frozen canonical muon pin, "
-        "hard-coded at module scope in this probe"),
+        "emitted by the producer: q0 is RESOLVED from "
+        "substrate.q_parameter.Q_50_DIGIT_STR, which returns the experimental "
+        "(proton) pin per the owner directive of 2026-08-15; this probe holds "
+        "no q0 literal"),
     "schema": "witness/v1",
     "computation": "deuteron_trefoil_qinvariant_closed_form_probe",
     "description": "Derive-then-check: does a 0-parameter closed-form q-invariant of the "
                    "sigma_1^3 trefoil (T(2,3)) at q0 reproduce the deuteron C_knot=5.853? "
                    "VERDICT: honest negative -- no parameter-free hit within exactness threshold.",
-    "q0_anchor": "muon",
+    "q0_anchor": "proton",
     "free_parameters": 0,
     "b_ame_role": "diagnostic-ratio-only-never-inverted",
     "targets": {

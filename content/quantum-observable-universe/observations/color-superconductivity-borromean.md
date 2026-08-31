@@ -66,12 +66,12 @@ $$
   \frac{q + q^{-1}}{V_B / \hbar_q^2}
    \cdot  m_pc^2
    \sim 
-  \frac{2.011}{749.2}
+  \frac{2.011}{746.4}
    \times  938  \mathrm{MeV}
    \approx  2.5  \mathrm{MeV}.
 $$
 
-This estimate aligns with perturbative QCD predictions of $\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at high density. Multi-diquark coherence effects likely amplify the single-pair gap.
+This estimate falls **below** perturbative QCD predictions of $\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at high density, by a factor of roughly $4$ to $40$. It is a single-pair estimate; multi-diquark coherence effects would raise it, and whether they close a gap of this size is not established here.
 
 **Phase sequence in neutron stars.**
 The [strangelet crossing energy](#prop:strangelet-crossing-energy) and [energy crossover](#prop:borromean-hopf-energy-crossover) establish a layered structure in neutron stars:

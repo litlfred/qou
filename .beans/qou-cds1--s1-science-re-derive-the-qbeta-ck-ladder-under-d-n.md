@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T19:38:03Z
+updated_at: 2026-08-31T03:15:57Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3970,3 +3970,479 @@ supply one, and any closure must come from outside them, as entry 14 concludes.
 
 Nothing here bears on entry 14's separate finding that the RULE fails at N=2;
 that is about the rule's authority, not about what the conditions force.
+## The z=1 exclusion is a WALL — measured, and it goes against the hypothesis (2026-08-30, PR #6144)
+
+I tested whether `one_not_root` is as strong as the framing treats it, expecting
+it to be weaker. It is not. Negative recorded.
+
+**The gap in the reasoning I was probing.** `AdmissibleRoots` defines admissible
+= the (1^3) weight VANISHES (the two-row cap), roots {q, z_D}, z=1 excluded. The
+2026-08-29 correction search measured that the augmentation base's required
+correction IS the trace's own z=q -> z=1 return to 0.17 %, and called that
+direction forbidden on the strength of `one_not_root`. That moves from a BINARY
+fact to a claim about a MAGNITUDE. `one_not_root` is an invariant about a SIGN:
+N(q,1) = (1-q)(q^2+1-q^3) < 0. It says the leak is nonzero, not that it is
+correction-sized.
+
+**MEASURED** (`qbeta_admissibility_is_a_magnitude_probe.py`, 4/4, exact sympy
+from the H_3 trace on the NF basis with the CORRECTED weight z(hz+1)):
+
+    y_(1^3) numerator == q^2 * wtNumer   EXACTLY  (independent Lean confirmation,
+                                         and it SURVIVES the qou-isu5 trace fix)
+    denominator = (q^2+1)(q^2-q+1)(q^2+q+1)
+
+    three-row share at z=1     1.4589 %
+    augmentation base needs   11.087 %   ->  leak 7.6x too small
+    tr_M base needs           75.924 %   ->  leak 52x too small
+
+**Two separate facts, neither dressed as the other:**
+1. The exclusion HOLDS, exactly as proved.
+2. The leak is the WRONG SIZE to be the correction, by 7.6x. So the 08-29
+   verdict is now quantitatively supported rather than merely defensible: the
+   near-coincidence net/aug = 0.8906 vs F_required = 0.88913 is NOT explained by
+   the admissibility violation being correction-sized.
+
+**Reference scale, because a verdict against a self-chosen threshold is not a
+measurement:** three-row share at other z. z=1 gives 1.459 %, the SECOND SMALLEST
+of seven sampled; generic z gives 3-33 %. So z=1 IS unusually close to two-row,
+just not close enough to matter. Worth knowing before anyone reaches for it again.
+
+LIMITATION: the leak is a weight SHARE, the correction a RATIO OF TRACE VALUES.
+Order-of-magnitude check, not a proof. 7.6x is outside what that could hide;
+1.2x would not have been.
+
+**What this does NOT do:** it does not derive F, does not readmit z=1, does not
+propose a correction. It closes off one way of rescuing the augmentation base
+and confirms the wall the 08-29 audit hit is real.
+
+**Also relevant to this bean from the same PR:** the scope-(a) negative published
+by `qbeta_c3_barodd_hs_matrix_resolvent_probe` is WITHDRAWN. Its trace vector was
+`z*z*z`; with the correct weight its finding 2 ("the pairing is bar-even") is
+falsified at mu=0 (BAR-ODD, 18.38 vs 6.86). Not a positive either -- still
+convention C, and inverting a now-singular Gram in float64. Re-run belongs here.
+
+### How this sits with Step 8 (added on the rebase that brought Step 8 in)
+
+Step 8 and this section are two DIFFERENT routes, both negative, and neither
+subsumes the other. Recording the relation so a later reader does not treat one
+as a restatement of the other:
+
+  Step 8   closes the ADDITIVE/cos route: under C the bar-invariant is the
+           constant 1, a fixed centre for a resummation; under D it is V^/q,
+           which moves with q, so nothing is available to centre on.
+  this     closes RESCUING THE AUGMENTATION BASE via the z=1 return: the
+           admissibility leak at z=1 is 1.459 %, against an 11.087 % required
+           correction -- 7.6x short, so the violation is not correction-sized.
+
+They converge on the same consequence from opposite ends: the D re-derivation
+needs a genuinely new form, not a repair of the C one. Step 8 says the C FORM
+has no D analogue; this says the nearest INADMISSIBLE point is not where the
+missing size comes from either.
+
+
+## Step 9 (2026-08-30, PR #6144) — the D decay carrier is ONE block, and that closes the block route
+
+**Lean-proved sorry-free**, `QOU/QBeta/DecayBlockCarrier.lean`, lean-direct exit 0,
+`#print axioms` = [propext, Classical.choice, Quot.sound] on all ten, no sorryAx.
+
+### The finding
+
+    chi^(2,1)(Delta_S) = 0     EXACTLY, at EVERY z
+
+The 2-dimensional block never carries the decay element. It follows from two
+one-line identities, both proved:
+
+    reg_char(Delta_S) = 0                  traceless in the regular rep
+    chi^(3)(Delta_S)  = -chi^(1^3)(Delta_S)  exact opposites
+
+so `chi^(2,1) = (reg - chi3 - chi111)/2 = 0`. Consequence, also proved:
+
+    tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3)(Delta_S)   for ALL z
+
+### What it does to the framing
+
+**The two-row cap does NOT take the decay carrier from 3 blocks to 2. It takes
+it from 2 to 1**, because (2,1) was never in it. Under D the decay lives
+entirely in a single 1-dimensional block with weight
+`y_(3)(z_D) = (q^4+1)/(q^2+1)^2` (proved), alongside
+`y_(2,1)(z_D) = q^2/(q^2+1)^2` and `y_(1^3)(z_D) = 0` (both proved), normalising
+to 1 (proved).
+
+### Why this closes a class
+
+I set out to test whether the D weights are FORCED: two surviving blocks, two
+constraints (normalisation + anchor), zero free parameters. They are -- and the
+solve is DEGENERATE. The anchor constrains only `y_3`, returning
+
+    y_3*  = F * y_3^D          exactly: the anchor can only RESCALE the one
+                               carrying weight
+    y_21* = normalisation's leftover, INVISIBLE to Q_beta
+
+**So block re-weighting cannot source the convention-D correction.** There is
+one weight after the cap and it is fixed by the trace axioms. The new form the
+D re-derivation needs cannot come from the Wedderburn decomposition at all.
+
+Recognition test ran against a candidate list declared BEFORE solving (nearest
+form 8.9 %, not isolated) -- but the structural verdict does not depend on it.
+
+### How this sits with Steps 7-8
+
+Three routes now closed from three directions, none subsuming another:
+
+  Step 8    the ADDITIVE/cos route: under D the bar-invariant V^/q moves with q,
+            so there is no fixed centre to resum around
+  z=1 wall  rescuing the AUGMENTATION base via the z=1 return: the admissibility
+            leak is 1.459 % against an 11.087 % correction, 7.6x short
+  Step 9    the BLOCK route: only one block carries the decay, so re-weighting
+            has nothing to re-weight
+
+The 2026-08-29 audit had already closed `admissible base x one multiplicative
+correction`. Four classes down. Still NOT established: the replacement form.
+
+### Caveat on scope, stated in the Lean too
+
+The two 1-dim characters are DEFINED by their defining evaluations; the REGULAR
+character's basis values are taken as DATA from the corpus's own
+trace-of-left-multiplication computation. Formalising the H_3 multiplication
+table is not what these results turn on. The theorems are exactly "given those
+values, these identities hold".
+
+
+## Step 10 (2026-08-30, PR #6144) — z_required = 0.99850, and the block is a RULING
+
+### The reduction makes the question exact
+
+Step 9 proved `tr(Delta_S)(z) = (y_3 - y_(1^3))(z) * chi^(3)(Delta_S)` with
+`chi^(3)` FIXED. So the whole z-dependence is one scalar, and it is AFFINE:
+
+    g(z) = (2qz - q^2 + 1)/(q^2 + 1)
+    g(z) * chi^(3)(Delta_S) = h^2/2 - h z        exact, all z
+    g(z_D) = (q^4+1)/(q^2+1)^2
+
+Affine => invertible => "what z does CODATA require" is EXACT and UNIQUE, zero
+free parameters. Not a fit.
+
+### The number
+
+    z_required = 0.998500302563
+    z = 1        PROVED inadmissible (one_not_root)
+    z_D          0.612688037146   admissible
+    z = q        1.109978582751   admissible
+
+**0.15 % from z = 1, and 257x nearer to it than the admissible z_D.** Both
+admissible bases give the SAME z_required to 10 digits -- as they must, since
+only one z reproduces the Q-value. The two "different bases" were never
+different problems; that agreement is the check the reduction is right.
+
+### The block is a ruling, not an impossibility — CHECKED, not assumed
+
+`MarkovZFullBarCondition`'s docstring says "Which horn is the decay channel's is
+NOT decided here: no corpus block derives the decay fibre, and the channel is
+registered `disputed`". That could be a stale status note superseded by the
+2026-08-15 ruling. It is not. The trace-convention registry preserves the
+distinction verbatim:
+
+  "Supersedes the CONTRADICTORY/null registration ... AS A STATUS, NOT AS
+   ANALYSIS: its finding that neither convention was DERIVED for this channel
+   stands"
+
+STATUS settled (D, by ruling); DERIVATION not. `AdmissibleRoots` proves
+`admissible <=> y_(1^3)=0 <=> z in {q,z_D}` -- a theorem ABOUT the condition.
+That the DECAY channel must satisfy it is the ruling.
+
+### Splitting my own results honestly
+
+UNCONDITIONAL (any z, any convention):
+  - chi^(2,1)(Delta_S) = 0                    (Lean, sorry-free)
+  - tr(Delta_S)(z) = g(z) * chi^(3), g affine
+  - the decay channel's entire z-content is ONE affine scalar
+  - z_required = 0.998500302563
+
+CONDITIONAL ON THE RULING:
+  - "under D the carrier is a single block"
+  - "block re-weighting cannot source the correction"  <- Step 9's own headline
+  - the inadmissibility of z_required
+  - the four closed correction routes (08-29, Step 8, z=1 wall, Step 9)
+
+conditional-proved != premise-established, applied to my own work.
+
+### The reframing — what the open problem actually is
+
+The D re-derivation is NOT blocked by a proved impossibility. The decay trace is
+one affine scalar; the data fixes it at 0.99850; the ruling fixes it at 0.61269.
+Closing that gap means **DERIVING THE DECAY FIBRE**, which the registry already
+names as the open item — not finding another correction.
+
+**The thing missing is not a form.** Every "new form" search, mine included, has
+been searching inside a constraint that was never derived for this channel.
+
+z = 1 is NOT readmitted: its admissibility leak is 7.6x too small to be the
+correction. "Nearly z=1" describes the tension; it is not a mechanism.
+
+
+## Step 11 (2026-08-30, PR #6144) — the decay fibre DERIVED from bar-parity, and the settled account
+
+Lean sorry-free, `QOU/QBeta/DecayFibreBarParity.lean`, lean-direct exit 0,
+axioms clean on all ten.
+
+### Derived: the bar-parity iff (uses NO two-row cap)
+
+    chi3S_bar_odd                  chi^(3)(Delta_S) at q^-1 is its NEGATIVE
+    g_bar_defect_mul               (g(q^-1,zbar) - g(q,z))(q^2+1) = 2q(zbar-(z-h))
+    g_bar_even_iff_fullBar         g bar-EVEN  <=>  bar(z) = z - h  (FULL-BAR)
+    decayTrace_bar_odd_of_fullBar  full-bar => the decay trace is bar-ODD
+    one_not_fullBar                the CONSTANT z == 1 is not full-bar
+    barEven_not_fullBar            a bar-EVEN z is NEVER full-bar (so z_C isn't)
+    y21_at_augmentation            y_(2,1)(q) = 0 EXACTLY
+
+g can never be bar-ODD (no solution). Measured parity:
+
+    z = q  full-bar YES -> bar-ODD      z = 1  full-bar NO -> NO definite parity
+    z_D    full-bar YES -> bar-ODD      z_C    full-bar NO -> NO definite parity
+
+This also explains `decayLadder_zC_threeRow_ne_zero` from the parity side:
+**z_C is bar-EVEN, which is a DIFFERENT condition from full-bar.** The two have
+sat adjacent in the corpus for weeks; what is new is that they are not the same
+one, and which one this channel needs.
+
+### THE SETTLED ACCOUNT — three conditions, three different jobs
+
+  cap  y_(1^3) = 0     RULING for this channel    narrows to {q, z_D}
+  faithful y_21 != 0   STRUCTURAL (corpus hfaith) picks z_D from that pair
+  full-bar             DERIVED here               excludes z_C and z == 1;
+                                                  constrains FORM, not VALUE
+
+**The limitation, and it narrows my own Step 11 first pass.** `fullBar_add_const`:
+z_D + c is full-bar for ANY constant c, since constants are bar-even. So a
+full-bar parameter can take ANY value at the pin. `one_not_fullBar` excludes
+z = 1 as a CHOICE OF PARAMETER; it does NOT exclude the required VALUE
+(z_required ~ 0.99850), which a full-bar function could attain.
+
+**So the narrowing to the admissible set — and hence the exclusion of what the
+data wants — still rests on the cap, i.e. on the ruling.** Bar-parity and
+faithfulness say WHICH POINT of that set is the decay channel's; they do not
+establish the set.
+
+### Correction trail, recorded so it stops oscillating
+
+  Step 10        "the block is a ruling, not an impossibility"  — right about
+                 the CAP
+  Step 11 (1st)  "bar-parity excludes z=1 independently"        — right about
+                 the CONSTANT, overstated as a closure of the gap
+  Step 11 (2nd)  this reconciliation                            — written INTO
+                 the Lean file's prose so it cannot be quoted away
+
+### Still open
+
+What establishes the admissible set for the DECAY channel without the ruling.
+Bar-parity + faithfulness pin z_D GIVEN the cap; nothing yet derives the cap
+for this channel. That is the same open item the registry names, now with the
+logical structure around it fully mapped.
+
+
+## Step 12 — the decay channel is BLIND to the cap (so it HAD to be a ruling)
+
+Lean sorry-free: `threeRow_undetermined_by_decay`, `cap_member_of_family`.
+
+tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3), so the decay pairing depends on the
+weights ONLY through the difference. With normalisation that is 2 constraints on
+3 unknowns:
+
+    y_3 = g + t,  y_21 = (1 - g - 2t)/2,  y_111 = t
+
+normalised, decay pairing g, for EVERY t. A one-parameter family all giving the
+same Q-value and sweeping every value of y_(1^3).
+
+**The cap is not merely un-derived for this channel — it is UNDETERMINABLE BY
+it.** No decay measurement at any precision can establish or refute
+y_(1^3) = 0. It selects one member of a family the channel cannot tell apart.
+
+So the cap had to arrive as a ruling: there was never a decay-side derivation to
+find. A derivation would have to come from another channel or a structural
+argument, never from Q_beta itself. This CLOSES the question Step 11 left open,
+with a negative, and retro-justifies the registry's "no corpus block derives the
+decay fibre".
+
+### Arc status after Steps 9-12
+
+  what the channel determines   g = y_3 - y_(1^3), one affine scalar; and the
+                                data fixes it exactly (z_required = 0.99850)
+  what it cannot determine      y_(1^3) separately — hence the cap, hence the
+                                admissible set, hence the exclusion of 0.99850
+  derived here                  the bar-parity iff (full-bar <=> definite parity)
+                                and faithfulness picking z_D within {q, z_D}
+  still open                    a cross-channel or structural derivation of the
+                                cap. NOT findable in Q_beta data.
+
+
+## Step 13 — WITHDRAWAL: the cap is DERIVED, not a ruling. Steps 10/12 framing was wrong.
+
+Asked "what condition makes the mass fibre functor land in Rep(SU_q(2))~TL".
+Answer: (a) tau monoidal, (b) dim tau(fundamental) = 2, i.e. Lambda^3_q V = 0 --
+the (1^3) block IS the image of the q-antisymmetrizer, which projects onto
+Lambda^3 V, zero for a 2-dim fibre.
+
+**And it is ALREADY VERIFIED.** Bean `qou-n1dj`, RESOLVED 2026-08-08, found on
+corpus-grep path 6 (`.beans/`):
+
+- `lem:feynman-eigenbasis-decomposition` writes the mass decomposition with the
+  row cap `l(lambda) <= 2` IN THE INDEX SET, so (1^3) is absent at n=3 by
+  construction — not an extra assumption.
+- `FibreDimensionForcesTL.lean` (verified today: lean-direct exit 0, 0 sorries)
+  proves `z*[N]_q = q^N` (fibre q-dim DETERMINES the Ocneanu parameter),
+  `N=2 => z_D`, and `z_D => y_(1^3) = 0`.
+
+### Why I got it wrong
+
+I read `MarkovTraceTLUniqueness.lean`'s "What this does NOT establish" section as
+current. It is STALE — the file establishing the premise is in the SAME
+DIRECTORY, and the audit that section cites is the one that POSED the question.
+AGENTS.md's "source-file status notes are NOT authoritative" applies to Lean
+docstrings too; mine only fired on `## Status` blocks. Fixed at the source.
+
+### Arc status
+
+  Step  9  chi^(2,1)(Delta_S) = 0                 STANDS
+  Step 10  z_required = 0.998500302563            STANDS
+  Step 10  "the block is a ruling"                WITHDRAWN
+  Step 11  bar-parity iff                         STANDS, less load-bearing
+  Step 12  decay cannot determine y_(1^3)         STANDS; the inference "hence
+                                                  the cap had to be a ruling" is
+                                                  WITHDRAWN
+  today    joint determinacy (decay+mass)         STANDS and GAINS: the derived
+                                                  cap is empirically falsifiable
+
+### The real remaining tension, restated
+
+The cap is derived, so z_D is forced, so z_required = 0.99850 is genuinely
+excluded. The gap between what the data wants and what the theory gives is
+therefore REAL and unexplained — not an artefact of an undecided convention.
+That is a sharper problem than the one I thought I had.
+
+
+## Step 14 (2026-08-30) — the terminus, stated as a negative
+
+With the two-row cap DERIVED (Step 13), the missing convention-D Q_beta
+factor `Q_beta = K · g · χ` has exactly three places to live, and all
+three are measured-negative. Probe
+`computations/qbeta/qbeta_d_frame_terminus_probe.py`, 2/2, proton pin.
+
+| leg | status |
+|---|---|
+| `g` block-weight pairing | **CLOSED.** Cap derived ⇒ `z = z_D` forced ⇒ `g = y_(3)(z_D) = (q⁴+1)/(q²+1)² = 0.5054042265`, no freedom left. Data wants `0.8891258104` — short by ×1.7592369905. Not a failed search; a DOF that does not exist. |
+| `χ` element characters | **NEGATIVE.** `χ^(2,1)(Δ_S) = 0` exactly (Lean-proved), so `Δ_S` is `(c, 0, −c)`. An element would need `a_(2,1)/a_(3) = 1.5516573513`. Nearest declared: `[3]_q/[2]_q` 2.45 %, `3/2` 3.33 % — basket distance, not isolation. |
+| `K` trace→MeV scale | **NEGATIVE.** Enumerated 2026-08-29 (`qbeta_d_frame_admissible_base_correction_search`): nothing parameter-free within 6.31 %. |
+
+Joins the four correction classes already closed: the 2026-08-29
+corrections, additive/cos (Step 8), the `z = 1` wall, block re-weighting
+(Step 9).
+
+**Scope-(a), explicitly.** An enumeration over DECLARED classes, not a
+proved impossibility. A *derived* (not searched) decay element with the
+right character ratio would still close it. Searching for one on the
+number would be a fit, so `1.5516573513` is recorded as a target to check
+a future derivation AGAINST, never a criterion to search ON.
+
+**Not claimed:** that the framework or convention D is wrong, or that no
+closure exists — only that none is findable by any enumeration this
+corpus has run.
+
+## Step 14b — my own Step-13 correction had not been propagated
+
+The Step-13 withdrawal ("the cap is a ruling" → the cap is DERIVED, from
+the 2-dim mass fibre, `FibreDimensionForcesTL.lean`, `qou-n1dj`) fixed
+the Lean docstring and this bean and left the same wrong sentence live in
+`qbeta_cap_is_jointly_determined_probe.py` — in its verdict string, its
+`premise_corrected` field, and the witness both write. Two copies, five
+commits apart, on one branch. Corrected in `c297bd7b04`.
+
+What stands unchanged: `χ^(3)(β_Bor) = χ^(1³)(β_Bor) = 1`, so mass sees
+`y₃ + y₁₃` and decay sees `y₃ − y₁₃`; with normalisation
+`det = −2(q−1)⁴(q+1)⁴(q²−q+1)(q²+q+1)/q⁶ ≠ 0` off `{0,1,−1}`, so the
+three functionals determine all three weights uniquely. Re-scoped, not
+retracted: the cap is *also* an observable — a falsifiable cross-check on
+the derived `z_D`, not a second route to be taken on trust.
+
+## Step 14c — all five of this branch's probes were `Q0_ANCHOR_MISSING`
+
+They read `q_at()` (proton) but no stem was in `q0_anchor_manifest.json`,
+and `WitnessBuilder.build()` stamps `q0Anchor` only on a positive
+declaration. `q0-anchor-consistency-audit` `Q0_ANCHOR_MISSING`
+1634 → 1639; the +5 was mine. Registered and re-run (`7820b814f6`) —
+fixed at the producer, no witness hand-edited, no computed value moved.
+
+
+---
+
+## 2026-08-31 — the Borromean trace with `z` SYMBOLIC, and the anomaly is NOT the convention
+
+Owner-requested. `computations/qbeta/qbeta_z_symbolic_borromean_crosscheck.py`,
+PR #6328.
+
+### Why it was needed
+
+`m_p_substrate_identity_50dps.trM_borromean(q)` is a closed form in `h` alone
+with **no `z` parameter** — convention D was substituted before it was written
+down. So `y_(1³) = 0` is baked into `F_Bor → canonical_mass`, and any attempt to
+*measure* the cap through that route measures its own assumption. Provably
+circular, not merely suspected.
+
+### The control, which is why the rest is trustworthy
+
+    tr_M(β_Bor)(z,q) = (−q¹⁰z + q⁹z² − q⁹ + 5q⁸z − 4q⁷z² + 4q⁷ − 10q⁶z + 6q⁵z²
+                        − 5q⁵ + 10q⁴z − 4q³z² + 4q³ − 5q²z + qz² − q + z) / q⁵
+
+At `z = z_D` this reproduces `BorromeanMarkovTrace.lean`'s
+`(4 + h² − 3h⁴ − h⁶)/(h² + 4)` with **symbolic difference exactly 0**.
+`y_(1³)(z) = 0` has exactly the two known roots `{q, z_D}`.
+
+### 🛑 A CORRECTION TO PR #6144's FRAMING — mine
+
+#6144 solved a 3×3 system treating `(y₃, y₂₁, y₁₁₁)` as three unknowns fixed by
+three independent functionals, and concluded the cap is **"jointly
+determined"**. Correct as linear algebra, **wrong about the object**: for a
+normalised Markov trace the 3×3 Markov system already consumes all freedom, so
+the weights are a **one-parameter family in `z`** and `y_(1³)` is a function of
+`z` alone.
+
+Mass and decay do **not** measure three independent weights — they each
+determine **the same single parameter**. The system is **over-determined**, not
+jointly determined. Do not repeat the "jointly determined" phrasing.
+
+### The measurement — muon pin, the only convention-free one
+
+The proton pin is fixed *through* `F_Bor` and so presupposes what is under test.
+The muon pin is `m_μ/m_e = Vol(4₁)/ℏ_q²` — pure geometry, no trace.
+
+| determination of `z` | value | vs cap |
+|---|---|---|
+| the **cap** (`y_(1³) = 0`, derived) | 0.612688050638272415 | — |
+| **mass** (measured `m_p`, non-circular) | 0.612812650836121753 | **0.0203 %** |
+| **decay** (measured `Q_β`) | 0.998500302563013 | **62.97 %** |
+
+**The anomaly is localised to the decay channel, not the convention.** An
+independent, non-circular measurement puts `z` essentially where the derived cap
+puts it. That is a materially different problem from the one this arc has been
+treating.
+
+### Quoted with its leverage — the agreement is weaker than it looks
+
+`d ln(tr_M)/d ln z = 0.00119` against decay's `1.206`: the mass channel is
+**1012× less sensitive** to `z`. A tr_M residual of 2.42e-7 opens out to 2.03e-4
+in `z`. This does **not** claim mass confirms the cap to 1e-7.
+
+### The residual is not absorbed
+
+2.42e-7 relative in tr_M is **~21× the μ–p substrate tension** (11.5 ppb), so it
+is neither obviously that tension nor obviously experimental. Open.
+
+### Standing owner rulings from this session
+
+- The **cross-check was green-lit** and has now run.
+- A **categorically constrained *and derived*** search is permitted; a fit is
+  not. This licenses `[3]_q/[2]_q` (2.45 % from the needed character ratio,
+  isolated by 2.1× inside the constrained class) as something to derive
+  *toward*, never to fit to.
+- Open with the owner: whether the **counit reading** now becomes the leading
+  hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
+  and mass independently confirms `z_D`.

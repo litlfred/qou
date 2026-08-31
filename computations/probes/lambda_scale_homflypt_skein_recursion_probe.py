@@ -94,36 +94,25 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Reuse Strategy G's Borromean HOMFLYPT closed form.
 #
-# THE MODULE THIS IMPORTS DOES NOT EXIST ANYWHERE IN THE REPOSITORY.
-# `lambda_scale_alt_g_skein_polynomial_direct.py` was moved to
-# `computations/_deprecated/strategy-spikes/` and then deleted from there as
-# well; `git ls-tree -r origin/main` returns no file of that name, and
-# `homflypt_borromean_at_az` is defined in NO file on main. So this probe has
-# been unrunnable -- not slow, not env-dependent, unrunnable -- since that
-# deletion, and it fails at import time before a single line of its own body
-# executes.
+# `lambda_scale_alt_g_skein_polynomial_direct` is NOT in this repository, and it
+# is not an import-path problem: the module was DELETED, not moved --
+# `git ls-tree -r origin/main` returns no file of that name, and
+# `homflypt_borromean_at_az` was defined in no file on main. This probe was
+# therefore unrunnable (not slow, not env-dependent -- unrunnable), failing at
+# import before a line of its own body ran.
 #
-# It is not repointable by an import path fix: the function is gone, not moved.
-# Reviving it means re-deriving the Borromean HOMFLYPT closed form (or
-# recovering the deleted file from history and judging whether it was deleted
-# for cause). Neither is a mechanical change, and the deletion may well have
-# been deliberate.
+# It is now runnable: the function was REBUILT from in-repo compute in
+# `homflypt_engine`, with its (a,z)-vs-(v,z) convention calibrated against this
+# file's own `homflypt_trefoil` and independently checked against the Borromean
+# rings' amphichirality. See that docstring.
 #
-# Raised explicitly rather than left as a bare ModuleNotFoundError, which reads
-# as a broken environment and sends the next agent hunting for a missing
-# install. Disposition is an owner decision; bean `qou-s1yn`.
-try:  # noqa: E402
-    from lambda_scale_alt_g_skein_polynomial_direct import (  # noqa: E402
-        homflypt_borromean_at_az,
-    )
-except ModuleNotFoundError as _exc:  # pragma: no cover
-    raise ModuleNotFoundError(
-        "lambda_scale_alt_g_skein_polynomial_direct is not in this repository "
-        "-- it was deleted, not moved, and `homflypt_borromean_at_az` is "
-        "defined in no file on main. This probe has been unrunnable since "
-        "then and cannot be fixed by adjusting sys.path. See the note above "
-        "this import and bean `qou-s1yn`."
-    ) from _exc
+# Two branches found this independently and stopped at different points:
+# `qou-s1yn` established the forensics above and left disposition to the owner;
+# `qou-s7g0` rebuilt the function. The rebuild supersedes the open question, so
+# `qou-s1yn` is answered rather than still pending -- recorded here because the
+# raise-with-explanation that stood in this spot is what a reader of `qou-s1yn`
+# would expect to find.
+from homflypt_engine import homflypt_borromean_at_az  # noqa: E402
 
 
 def homflypt_trefoil(a: mpf, z: mpf) -> mpf:
@@ -292,9 +281,14 @@ def main() -> int:
     w.add_assertion(
         "Multi-knot HOMFLYPT PSLQ — no closure relation expected "
         "for either target",
-        computed=float(not any_relation),
-        expected=1.0,
-        tolerance=0.5,
+        # mpf, not float: this is a boolean carried through the witness, and
+        # `float(...)` here is the raw-float64 idiom the ratchet exists to
+        # catch. It was invisible until 2026-08-30 only because the probe could
+        # not run at all (bean qou-s7g0) -- an unrunnable producer hides its
+        # precision defects along with everything else.
+        computed=mpf(1) if not any_relation else mpf(0),
+        expected=mpf(1),
+        tolerance=mpf("0.5"),
         unit="boolean",
         source=(
             "mpmath.pslq at max_coef=10^5, tol=1e-12 on a 12-element "

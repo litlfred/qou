@@ -50,6 +50,9 @@ Run:  PYTHONPATH=computations python3 -u computations/probes/trm5_zcubed_live_pr
 """
 from __future__ import annotations
 
+import ast
+import re
+
 import sys
 from pathlib import Path
 
@@ -159,6 +162,131 @@ def check4_same_gram(ranks: dict) -> dict:
     }
 
 
+
+# A REAL corpus scan, added 2026-08-30 (bean qou-isu5).
+#
+# The regression guard below iterates LIVE_SITES, a hardcoded five-name list.
+# On 2026-08-30 it printed "all five fixed: True" while SEVEN other files on
+# the same H_3 NF basis still carried the bug -- five of them found by hand
+# (hh-trefoil-corrected, ch-bond-writhe-lp, intermediate_knot_detection,
+# photon_operator_table, and the CORE MODULE substrate/hecke_core_symbolic),
+# and two more that no spelling in the guard could have matched:
+# electron_shell_sdp_capacity (`z ** 3` inside np.array) and
+# qbeta_c3_barodd_hs_matrix_resolvent_probe (`z * z * z`).
+#
+# The guard's own scope note was honest -- "not a claim about every z**3 in
+# the corpus" -- but its printed headline is what a reader acts on. So the
+# scan below keys on the SHAPE of the six-element vector rather than on a
+# file list or on `z**3` alone (which is an ordinary polynomial term almost
+# everywhere it appears).
+_SIX_VEC = re.compile(
+    r"\[\s*(?:1\.0|1|_?ONE|mp\.mpf\(1\)|sp\.Integer\(1\))\s*,"
+    r"\s*z\s*,\s*z\s*,"          # entries 2,3 = z
+    r"\s*z\s*(?:\*\*\s*2|\*\s*z)\s*,"   # entry 4 = z^2, either spelling
+    r"\s*z\s*(?:\*\*\s*2|\*\s*z)\s*,"   # entry 5 = z^2
+    r"\s*(?P<last>[^\]]+)\]"
+)
+# a sixth entry that is a CUBE of z and nothing else
+_CUBE = re.compile(r"^\s*z\s*(?:\*\*\s*3|\*\s*z\s*\*\s*z)\s*$")
+
+
+def scan_corpus_for_six_vectors(repo):
+    """Every 6-element H_3-shaped trace vector in the tree, with its 6th entry.
+
+    Returns (bad, ok). A hit is `bad` when the 6th entry is a bare cube of z.
+    Deliberate side-by-side comparisons name themselves on the same line
+    (`retired`, `OLD`, `bug`, `stale`, `historical`) and are not counted.
+    """
+    bad, ok = [], []
+    for path in sorted(repo.rglob("*.py")):
+        rel = str(path.relative_to(repo))
+        if "/_deprecated/" in f"/{rel}" or ".lake" in rel:
+            continue
+        try:
+            text = path.read_text()
+            lines = text.splitlines()
+        except (OSError, UnicodeDecodeError):
+            continue
+        # Lines living inside a STRING literal are prose or test fixtures, not
+        # code, and must not be flagged. Without this the scan reports four
+        # BUGs against `_selftest`'s own synthetic fixtures in this very file,
+        # and would flag any docstring that quotes the bug in order to warn
+        # about it -- the detector eating its own documentation.
+        in_string = set()
+        try:
+            for node in ast.walk(ast.parse(text)):
+                if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                    end = getattr(node, "end_lineno", None) or node.lineno
+                    in_string.update(range(node.lineno, end + 1))
+        except SyntaxError:
+            pass
+        for i, line in enumerate(lines, 1):
+            if i in in_string:
+                continue
+            m = _SIX_VEC.search(line)
+            if not m:
+                continue
+            last = m.group("last")
+            rec = {"file": rel, "line": i, "sixth_entry": last.strip()}
+            if _CUBE.match(last):
+                if re.search(r"retired|OLD\b|bug|stale|historical",
+                             line, re.I):
+                    rec["deliberate_comparison"] = True
+                    ok.append(rec)
+                else:
+                    bad.append(rec)
+            else:
+                ok.append(rec)
+    return bad, ok
+
+
+
+def _selftest() -> int:
+    """The scan must be shown able to REPORT a bug before its 0 means anything.
+
+    Four spellings, all of which were live in this corpus at some point, plus
+    two controls that must NOT be flagged.  Run with `--selftest`.
+    """
+    import pathlib
+    import tempfile
+    cases = {
+        "np_array_pow": "TR_M = np.array([1.0, z, z, z * z, z * z, z ** 3])",
+        "spaced_triple": "    TR_M = [mp.mpf(1), z, z, z * z, z * z, z * z * z]",
+        "sympy_pow": "TR_M_SYM = [ONE, z, z, z**2, z**2, z**3]",
+        "plain_pow": "tr_basis = [1, z, z, z**2, z**2, z**3]",
+        # controls
+        "CORRECT_ctl": "TR_M = [1.0, z, z, z**2, z**2, h * z**2 + z]",
+        "DELIB_ctl": '  "OLD  (retired: e-=z^3)": [1, z, z, z**2, z**2, z**3],',
+        # a six-vector quoted INSIDE a string is prose or a fixture, not code.
+        # This control is what stops the scan flagging its own _selftest above.
+        "STRING_ctl": 'DOC = """the bug was [1, z, z, z**2, z**2, z**3] here"""',
+    }
+    with tempfile.TemporaryDirectory() as d:
+        root = pathlib.Path(d)
+        for k, line in cases.items():
+            (root / f"{k}.py").write_text(line + "\n")
+        bad, ok = scan_corpus_for_six_vectors(root)
+    flagged = {b["file"].replace(".py", "") for b in bad}
+    seen = {o["file"].replace(".py", "") for o in ok}
+    want = {"np_array_pow", "spaced_triple", "sympy_pow", "plain_pow"}
+    checks = [
+        ("all four bug spellings caught", flagged == want),
+        ("correct weight not flagged",
+         "CORRECT_ctl" not in flagged and "CORRECT_ctl" in seen),
+        ("deliberate comparison not flagged",
+         "DELIB_ctl" not in flagged and "DELIB_ctl" in seen),
+        ("six-vector inside a string literal not flagged",
+         "STRING_ctl" not in flagged),
+    ]
+    ok_all = True
+    for name, passed in checks:
+        print(f"  [{'PASS' if passed else 'FAIL'}] {name}")
+        ok_all = ok_all and passed
+    if not ok_all:
+        print(f"    flagged={sorted(flagged)}  want={sorted(want)}")
+    return 0 if ok_all else 1
+
+
 def main() -> int:
     mp.mp.dps = 60
     q0 = q_at(55)
@@ -202,6 +330,14 @@ def main() -> int:
             "carries_h_z2_plus_z": has_fix,
         })
 
+    bad_sites, ok_sites = scan_corpus_for_six_vectors(repo)
+    print(f"  CORPUS SCAN  H_3-shaped six-vectors found : {len(bad_sites) + len(ok_sites)}")
+    print(f"               still ending in a cube of z  : {len(bad_sites)}")
+    for b in bad_sites:
+        print(f"               [BUG] {b['file']}:{b['line']}  -> {b['sixth_entry']}")
+    if not bad_sites:
+        print("               (deliberate retired-variant comparisons excluded)")
+
     payload = {
         "description": (
             "The 2026-05-19 TR_M[5] fix (h*z^2 + z, NOT z^3) reached "
@@ -219,6 +355,17 @@ def main() -> int:
             "all_five_fixed": all_fixed,
             "sites": sites,
         },
+        "corpus_scan": {
+            "note": ("Shape-keyed scan of the whole tree, not a file list. Added "
+                     "after the five-name guard printed all-clear while seven "
+                     "other files on the same basis still carried the bug -- two "
+                     "of them in spellings (`z ** 3` inside np.array, `z * z * z`) "
+                     "that no pattern in the guard could match."),
+            "six_vectors_found": len(bad_sites) + len(ok_sites),
+            "still_cubed": len(bad_sites),
+            "bug_sites": bad_sites,
+            "clean_sites": ok_sites,
+        },
         "check1_markov_derivation": c1,
         "check2_magnitude_at_q0": c2,
         "check3_gram_rank_live_producer": c3,
@@ -232,8 +379,12 @@ def main() -> int:
         "context": {
             "prior_audit": "docs/audits/2026-05-19-trm5-markov-bug.md",
             "beans": ["qou-t9r1", "qou-pmkh", "qou-cds2"],
-            "scope": ("(a) scope-limited -- five named files on one basis; not "
-                      "a claim about every z**3 in the corpus"),
+            "scope": ("Two claims, different scopes. The REGRESSION GUARD is "
+                      "scope-limited to five named files. The CORPUS SCAN is "
+                      "tree-wide but shape-limited: it sees six-element vectors "
+                      "[1,z,z,z^2,z^2,*] on the H_3 NF basis, so a trace built "
+                      "elementwise, in a loop, or on another basis is still "
+                      "invisible to it. It is NOT a claim about every z**3."),
         },
         "q0Anchor": "proton",
         "q0Value": str(q0),
@@ -265,4 +416,7 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    import sys as _sys
+    if "--selftest" in _sys.argv:
+        raise SystemExit(_selftest())
     raise SystemExit(main())

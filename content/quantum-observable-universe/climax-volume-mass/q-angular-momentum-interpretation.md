@@ -18,10 +18,10 @@ $$
 | Knot | $n$ (strands) | $j$ | $J_q^2$ at the substrate parameter $q$ | Classical $j(j+1)$ |
 |------|:---:|:---:|:---:|:---:|
 | $0_1$ (unknot) | $1$ | $0$ | $0$ | $0$ |
-| $3_1$ (trefoil) | $2$ | $\frac{1}{2}$ | $[1/2]_q [3/2]_q = 0.818$ | $0.75$ |
-| $4_1$ (figure-eight) | $2$ | $\frac{1}{2}$ | $0.818$ | $0.75$ |
-| $5_1$ (cinquefoil) | $2$ | $\frac{1}{2}$ | $0.818$ | $0.75$ |
-| $\mathcal{B}_3$ (Borromean) | $3$ | $\frac{1}{2}$ | $0.818$ | $0.75$ |
+| $3_1$ (trefoil) | $2$ | $\frac{1}{2}$ | $[1/2]_q [3/2]_q = 0.7507$ | $0.75$ |
+| $4_1$ (figure-eight) | $2$ | $\frac{1}{2}$ | $0.7507$ | $0.75$ |
+| $5_1$ (cinquefoil) | $2$ | $\frac{1}{2}$ | $0.7507$ | $0.75$ |
+| $\mathcal{B}_3$ (Borromean) | $3$ | $\frac{1}{2}$ | $0.7507$ | $0.75$ |
 
 All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$. The nuclear spin depends on coupling: $A$ nucleons (each $j = 1/2$) couple to total $J$ via $q$-Clebsch--Gordan coefficients. The parity of $A$ (modulo 2) determines the $J$ parity ([nuclear spin parity](#prop:nuclear-spin-parity)).
 

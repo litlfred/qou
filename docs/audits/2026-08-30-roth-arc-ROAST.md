@@ -123,11 +123,23 @@ changed, `total_defects` 133 → 67, `total_promoted_from_exempt` 66 → 0. The 
 depends on how much of the Lean build is present, so running the suite mid-build
 produces a *different committed artifact* than running it after.
 
-I reverted it and moved on. That is the right immediate call and the wrong final one:
-a test suite that rewrites a checked-in audit as a side effect will silently commit a
-half-built snapshot the first time someone runs `bun test` before `lake build`
-finishes and then `git add -A`. Filed rather than fixed — it is not this branch's
-defect, and this branch is not where it should be fixed.
+I reverted it and moved on, and filed `qou-9zh3`.
+
+> **Corrected 2026-08-30, after investigating (`qou-9zh3`).** The causal claim above —
+> that the content "depends on how much of the Lean build is present" — **is wrong**.
+> Nothing in that audit reads `.lake`. The real cause is
+> `lean-vacuity-ledger-foreign-entries.test.ts`, which runs a *whole-corpus* scan with a
+> two-entry test fixture as its `--review-ledger` and no `--json`, so the audit writes its
+> default path — the committed record — with promotions computed against the fixture.
+> Measured three ways on one tree: committed 133/59/66 (stale), fresh corpus run
+> 114/57/53 (correct), under `bun test` 67/125/0 (**fabricated from the fixture**).
+>
+> So the file was not a stale snapshot; it was a fabricated one, written every time
+> anyone ran `bun test`. That is worse than what I reported — and I reported it wrongly
+> because I diffed the numbers and reasoned about build state without checking what
+> actually invoked the script. Which is R3's failure mode again: a conclusion about a
+> tool drawn without looking at what the tool ran on. Fixed, with a byte-comparison
+> assertion checked to fail without the fix.
 
 ---
 
@@ -164,7 +176,7 @@ Stated positively, because a roast that finds everything wrong is not calibrated
 | R1 | docstring overclaim about `δ' = δ` | medium | fixed in the docstring |
 | R3 | `eslint` reported green over the wrong repo | medium — a false gate report | corrected in the PR body; no code change |
 | R4 | corpus build reported as "0 errors" not "NOT RUN" | medium | corrected in the PR body |
-| R5 | `bun test` mutates a committed audit | low for this branch, real for the repo | filed as a bean, not fixed here |
+| R5 | `bun test` mutates a committed audit | **raised** — the write is fabricated, not stale, and my diagnosis of it was wrong | fixed under `qou-9zh3`; R5's causal claim corrected above |
 
 Three of six are **reporting** defects rather than proof defects. That ratio is
 itself the finding: the Lean is checked by a machine that cannot be talked into

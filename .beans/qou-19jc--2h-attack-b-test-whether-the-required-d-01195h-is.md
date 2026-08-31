@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-08-25T18:39:30Z
+updated_at: 2026-08-31T03:03:50Z
 parent: qou-9ot5
 ---
 
@@ -59,3 +59,57 @@ It does **not** exclude every Hecke-admissible element — the list is 10 entrie
 algebra — and a genuinely-derived element from a space-indexed construction
 (`qou-vbyi`) would be a new candidate, not one of these. Do not cite this as a
 structural exclusion.
+
+
+## 2026-08-31 (PR #6320) — colour weighting priced (0.097% of the gap), and the once-only condition PROVED
+
+**ATTACK B's table predates R3.** Its "derived" row `(sigma+sigma^-1)/2`, d/h = -0.5,
+is the COLOUR-BLIND interface. Owner ruling R3 (2026-08-15) makes
+`bring_color_weighted` canonical, and that arm had never been evaluated here.
+Now measured (proton pin, 50 dps, B = -alpha ln mu, alpha = 4.185981 MeV):
+
+    interface                        mu                    B / MeV    err
+    colour-BLIND    d = -h/2         0.50815788774864559   2.8337548  +27.385%
+    colour-WEIGHTED d = -h(1/2-d/4)  0.50822978937673896   2.8331626  +27.358%
+    required (inverted from AME)     0.58776247263801610   2.224566    0
+
+    shortfall 0.6091888 MeV; weighting moves B by -0.0005923 MeV
+    => it closes 0.0972% of the gap.
+
+So "is the missing 27% the colour weighting?" is answered NO, by three orders of
+magnitude. That question is now closed rather than open.
+
+**Bookkeeping note:** this bean's quoted `REQUIRED mu = 0.58771506411074` differs
+from a self-consistent inversion of B = 2.224566 by 4.741e-5 (absolute, in mu).
+The colour-weighting shift is 7.190e-5 — the SAME ORDER, 1.52x larger. Neither
+affects the 13.5% conclusion; recorded so nobody reads more precision into the
+quoted value than it carries.
+
+## The identity behind the table is ALREADY PROVED — and now so is its side condition
+
+`QOU.QBeta.InterfaceScalar.interface_scalar` proves
+`tr(W(a.sigma + b.1)) = (a z + b) tr W`, which generates this bean's whole table
+(all 5 rows reproduced from `mu = a*z_D + b`). Its premise — Markov stabilisation
+— is carried there as a HYPOTHESIS standing in for Jones (1987).
+
+PR #6320 proves when that premise may be invoked (all sorry-free, lean-direct
+exit 0, no sorryAx):
+
+  markov_repeat_forces_quadratic        z^2 = h z + 1 if stabilisation is
+                                        assumed at W = sigma.  AXIOM-FREE.
+  conventionD_markov_defect             z^2 - h z - 1
+                                          = -(q^2-q+1)(q^2+q+1)/(q^2+1)^2
+  conventionD_markov_defect_neg         < 0 for EVERY q > 0
+  markov_stabilisation_fails_on_repeat  so the premise fails on a repeated
+                                        interface generator
+
+Scope-(b), invariant cited (both factors are (q +- 1/2)^2 + 3/4). The interface
+scalar is available exactly when the interface generator occurs ONCE — true of
+every canonical light nucleus (D/T at gen 2, 3He/4He at gen 5).
+
+Wired: paper `prop:markov-stabilisation-needs-a-fresh-generator`
+(nuclear-interactions, validate exit 0); compute
+`markov_repeat_defect_lean_guard_probe.py` (4/4, symbolic difference exactly 0).
+
+**This bean's redirect to ATTACK C stands.** Nothing here rescues the element
+search; it prices one candidate out and pins the side condition of the collapse.
