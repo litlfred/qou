@@ -25,6 +25,13 @@ identities the probe *relies on*:
    confirmed to 4.3e-57). It makes the b-decay *attributable window-by-window*, which is what
    lets "per-window vs inter-window" be a well-posed question.
 
+4. `trace_rho_commutator_reframe` / `trace_rho_commutator_reframe'` — the tool for the
+   OPEN sublinear bound: `tr(ρ·⁅A,B⁆) = tr(⁅ρ,A⁆·B) = −tr(⁅ρ,B⁆·A)`. This moves the
+   single-window trace onto the density, localizing the open estimate
+   `|tr(ρ_λ ⁅A_a,A_{a+1}⁆)| = o(dim_λ)` to a Frobenius bound on `⁅ρ_λ,A_a⁆` (how nearly
+   the global word commutes with the germ) — measured in
+   `magnus_single_window_frobenius_localization_probe.py`.
+
 The `ρ = I` control `tr(Ω₂)=0` is already proved sorry-free as
 `QOU.MassTheory.trace_commutator_eq_zero` (MagnusPairingSignStructure.lean) — cited, not
 re-proved.
@@ -95,5 +102,26 @@ theorem trace_rho_weightedLocalSum {ι : Type*} (s : Finset ι)
   refine Finset.sum_congr rfl ?_
   intro k _
   rw [mul_smul_comm, Matrix.trace_smul, smul_eq_mul]
+
+/-- **Trace-commutator reframing (the sublinear-bound tool).** The single-window trace can be
+moved onto the density: `tr(ρ·⁅A,B⁆) = tr(⁅ρ,A⁆·B)`. This localizes the open sublinear
+estimate `|tr(ρ_λ ⁅A_a,A_{a+1}⁆)| = o(dim_λ)` (bean `qou-o6ov`): the whole size of the
+single-window trace is controlled by `⁅ρ,A_a⁆`, i.e. by *how nearly the global word `ρ`
+commutes with the germ `A_a`*. Combined with Cauchy–Schwarz
+`|tr(X·B)| ≤ ‖X‖_F‖B‖_F` (not in this file) it reduces the `o(dim)` claim to a
+Frobenius-norm bound on `⁅ρ,A_a⁆`. General `CommRing`. -/
+theorem trace_rho_commutator_reframe (ρ A B : Matrix n n R) :
+    (ρ * (A * B - B * A)).trace = ((ρ * A - A * ρ) * B).trace := by
+  have h : (ρ * (B * A)).trace = (A * ρ * B).trace := by
+    rw [← mul_assoc, Matrix.trace_mul_comm (ρ * B) A, mul_assoc]
+  rw [mul_sub, sub_mul, Matrix.trace_sub, Matrix.trace_sub, ← mul_assoc ρ A B, h]
+
+/-- **Reframing onto the other germ (sign partner).** `tr(ρ·⁅A,B⁆) = −tr(⁅ρ,B⁆·A)`. Together
+with `trace_rho_commutator_reframe` this gives the estimator two handles — the trace is
+small when `ρ` nearly commutes with *either* germ. -/
+theorem trace_rho_commutator_reframe' (ρ A B : Matrix n n R) :
+    (ρ * (A * B - B * A)).trace = -((ρ * B - B * ρ) * A).trace := by
+  have hswap : A * B - B * A = -(B * A - A * B) := by abel
+  rw [hswap, mul_neg, Matrix.trace_neg, trace_rho_commutator_reframe ρ B A]
 
 end QOU.MassTheory
