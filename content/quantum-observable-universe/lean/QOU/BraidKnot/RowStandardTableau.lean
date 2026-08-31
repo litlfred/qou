@@ -1,4 +1,5 @@
 import QOU.BraidKnot.Specht
+import QOU.BraidKnot.SpechtStandardBasisCore
 
 /-!
 # QOU.BraidKnot.RowStandardTableau — the index set Murphy's straightening runs over
@@ -105,5 +106,68 @@ theorem card_eq_factorial_of_no_second_column (hμ : ((0 : ℕ), (1 : ℕ)) ∉ 
   rw [Fintype.card_congr (equivTableauOfNoSecondColumn hμ)]
   show Fintype.card (Fin (nOf μ) ≃ μ.cells) = _
   rw [Fintype.card_equiv e, Fintype.card_fin]
+
+/-! ## Standard ⟹ row-standard
+
+Mathas' Lemma 3.14 rewrites a row-standard pair as a combination of **standard** pairs, so the
+two index sets have to be related in the obvious direction: a standard tableau, read as a
+filling, is row-standard. That is the forgetful map `Std(μ) → RowStd(μ)`.
+
+It is not quite immediate. `StandardYoungTableau.row_strict` compares only **adjacent** cells
+(`entry i j < entry i (j+1)`), while row-standardness compares arbitrary pairs in a row, so the
+transitive form has to be proved first. `entry_lt_entry_of_lt` below does that by induction on
+the right-hand column, using the diagram's up-left closure to know the intermediate cells are
+present.
+
+`entry_lt_entry_of_lt` is a statement about `StandardYoungTableau` alone and **belongs upstream**
+in `QOU.BraidKnot.StandardYoungTableau`; it is here to keep this change to a single file, the
+same call as the `Tw_mul_σ_*` lemmas in `HeckeMurphyYoung`. -/
+
+open QOU.BraidKnot.SpechtStandardBasis in
+/-- **Row entries increase across a whole row, not just between neighbours.**
+
+The transitive closure of `row_strict`, by induction on the right-hand column. The up-left
+closure of a `YoungDiagram` supplies the intermediate cells: if `(i, j')` is in the diagram then
+so is every `(i, k)` with `k ≤ j'`. -/
+theorem entry_lt_entry_of_lt (T : QOU.BraidKnot.StandardYoungTableau μ) {i : ℕ} :
+    ∀ {j j' : ℕ}, j < j' → (i, j') ∈ μ → T.entry i j < T.entry i j' := by
+  intro j j'
+  induction j' with
+  | zero => intro h _; omega
+  | succ k ih =>
+    intro hlt hmem
+    rcases Nat.lt_succ_iff_lt_or_eq.mp hlt with h | h
+    · exact lt_trans (ih h (μ.up_left_mem (le_refl i) (Nat.le_succ k) hmem))
+        (T.row_strict i k hmem)
+    · subst h; exact T.row_strict i j hmem
+
+open QOU.BraidKnot.SpechtStandardBasis in
+/-- **A standard tableau, read as a filling, is row-standard** — the forgetful map
+`Std(μ) → RowStd(μ)` that Lemma 3.14's target side needs.
+
+`sytToTableau T` is the inverse of `cellLabel T`, so a label `l` sits at the cell `c` with
+`cellLabel T c = l`, and `cellLabel` is literally `T.entry` on that cell. Two labels in the same
+row with the earlier column therefore compare exactly as their entries do, which is
+`entry_lt_entry_of_lt`. -/
+theorem isRowStandard_sytToTableau (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    IsRowStandard (sytToTableau T) := by
+  intro l l' hrow hcol
+  -- `sytToTableau` is the inverse of `cellLabel`, so a label is its own cell's entry
+  have hl : cellLabel T (sytToTableau T l) = l :=
+    (Equiv.ofBijective (cellLabel T) (cellLabel_bijective T)).apply_symm_apply l
+  have hl' : cellLabel T (sytToTableau T l') = l' :=
+    (Equiv.ofBijective (cellLabel T) (cellLabel_bijective T)).apply_symm_apply l'
+  simp only [rowPattern, colPattern] at hrow hcol
+  -- the right-hand cell, in explicit `(i, j)` form
+  have hmem : ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ).1,
+      (((sytToTableau T) l' : μ.cells) : ℕ × ℕ).2) ∈ μ := by simp
+  have key : T.entry ((((sytToTableau T) l : μ.cells) : ℕ × ℕ)).1
+        ((((sytToTableau T) l : μ.cells) : ℕ × ℕ)).2
+      < T.entry ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ)).1
+        ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ)).2 := by
+    rw [hrow]
+    exact entry_lt_entry_of_lt T hcol hmem
+  rw [← hl, ← hl']
+  exact Fin.lt_def.mpr key
 
 end QOU.BraidKnot.RowStandardTableau
