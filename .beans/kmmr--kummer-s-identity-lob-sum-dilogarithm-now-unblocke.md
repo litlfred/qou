@@ -357,3 +357,61 @@ objection had established.
 surrounding claims were wrong in the direction of flattering the result. The three
 arguments also sit 1.15–2.02 away from the cut, so even a pointwise argument at
 those three values would do — the ∀-quantified form is stronger than the bridge needs.
+
+## 2026-08-31 (later) — CLOSED. The half-plane gate is gone, and so is the `Li₂` parameter.
+
+Two changes, both sorry-free (`#print axioms` → `[propext, Classical.choice,
+Quot.sound]` on every declaration named below).
+
+### 1. `hbw` weakened from a half plane to five named points
+
+`FiveTwoOhtsukiBridge` now takes `IsKummerAtOhtsukiArgs Li₂ y` — a five-field
+structure, one Kummer instance per non-unit argument of `ohtsukiSum` — instead
+of `∀ z, z.im ≠ 0 → …`. The proof applies it at **five** points, not three as the
+note above implies: `y₀` and `x₀y₀` are upper, `1/y₀`, `1/x₀`, `1/(x₀y₀)` lower.
+`IsKummerAtOhtsukiArgs.of_forall` recovers the old ∀-form, so nothing that could
+already discharge it is worse off.
+
+### 2. Schwarz reflection, done — and it was not the shape I predicted
+
+`isKummerAt_of_conj` proves that Kummer at `z̄` gives Kummer at `z` for
+`z.im ≠ 0`: every ingredient is odd under conjugation (`BlochWigner_lob_conj`,
+`arg_conj_of_im_ne_zero`, `‖z̄‖ = ‖z‖`), so the identity at `z̄` is `(−1)×` the
+identity at `z` and `linear_combination -h` closes it.
+`IsKummerAtOhtsukiArgs.of_upper_half_plane` then builds all five points from
+`KummerRadial.kummer`'s own `Im z > 0` range plus one hypothesis:
+`Li₂(z̄) = conj (Li₂ z)` off the real axis.
+
+**No continuation across the cut was needed.** The roast above expected the cut
+to be the difficulty and measured that it was not; the reason is now formal — the
+lower half plane is reached by an algebraic identity, and `kummer` is only ever
+evaluated where it is already proved.
+
+### 3. The hypothesis discharged at `cLiTwoExt` — and the parameter eliminated
+
+`QOU.MathlibExt.cLiTwoExt_conj` proves `Li₂(ȳ) = conj (Li₂ y)` for `y.im ≠ 0`
+directly from the integral definition: conjugation passes through the real-interval
+integral (`intervalIntegral_conj`, no integrability hypothesis — `conj` is an
+isometry, so both sides are Bochner junk `0` together), and pointwise
+`conj(log(1 − yz)/z) = log(1 − ȳz)/z` by `Complex.log_conj`, whose side condition
+`arg(1 − yz) ≠ π` holds because `Im(1 − yz) = −(Im y · z)` and `z = 0` gives `1`.
+`cLiTwoExt_one_im` discharges `hone` the same way, from the stronger local fact
+that the integrand is *real* on `[0,1]`.
+
+So `volume_conjecture_five_two_cLiTwoExt` has **no function parameter and no
+identity hypothesis**.
+
+**`hy : y.im ≠ 0` is load-bearing, not decorative.** The unrestricted
+`∀ y, Li₂(ȳ) = conj (Li₂ y)` is FALSE for the principal branch: on the cut it
+degenerates to `Li₂ y ∈ ℝ`, and `mpmath` gives
+`Li₂(5) = 1.78371916127 − 5.05619832211i`. Recorded because a theorem whose
+hypotheses nothing satisfies is exactly the failure this file already has one
+example of (the excised `hinv`).
+
+### What did NOT change — and the roast's claim 2 still stands
+
+`OhtsukiAsymptotic` and `FiveTwoTriangulation` still have **no instances**, per
+§3b-tax (`#synth` fails; checked). Eliminating the `Li₂` parameter is not
+"instantiating the bridge" and I am not repeating that claim: the theorem remains
+conditional on Ohtsuki's published asymptotic expansion and on the `5₂`
+triangulation, which is the whole and only residue.

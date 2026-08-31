@@ -3,6 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Archimedean.BlochWignerLobachevsky
 import QOU.Archimedean.BlochWignerSymmetry
 import QOU.MathlibExt.ExponentialGrowthRate
+import QOU.Knot.KummerRadial
 
 /-!
 # QOU.Archimedean.FiveTwoOhtsukiBridge — shrinking the `5₂` volume-conjecture axiom
@@ -33,6 +34,13 @@ dilogarithm, and nothing else — (B) and the identification of `ζ` are theorem
 here, not hypotheses. Its two class arguments are the honest residue:
 `OhtsukiAsymptotic` is Ohtsuki's published analysis, `FiveTwoTriangulation` is
 Thurston/SnapPea, and neither has an instance.
+
+The dilogarithm hypothesis is stated at the **five points** the proof applies it
+to (`IsKummerAtOhtsukiArgs`), not on a half plane. Two are in the upper half
+plane, where `QOU.Knot.KummerRadial.kummer` already proves Kummer's identity;
+`IsKummerAtOhtsukiArgs.of_upper_half_plane` reaches the other three from those,
+given only that `Li₂` commutes with conjugation off the real axis. So the file
+no longer depends on continuing `kummer` across the branch cut.
 
 ⚠ **(D) is stated at the conjugate-inverse shape, and that is not cosmetic.**
 `FiveTwoTriangulation` lives at `y₊`, the upper-half-plane root of the *saddle*
@@ -392,6 +400,155 @@ theorem one_sub_re_pos {y : ℂ} (him : y.im ≠ 0)
   nlinarith [mul_nonneg (neg_nonneg.mpr hcon) (sq_nonneg (2 * s + 1)), sq_nonneg (4 * s + 1),
     sq_nonneg s, sq_nonneg (2 * s + 1)]
 
+/-! ### Kummer's identity is used at five points, not on a half plane
+
+Part (B) below applies Kummer's identity exactly five times, at the five
+non-unit arguments of `ohtsukiSum`. Stating the hypothesis as
+`∀ z, z.im ≠ 0 → …`, as this file did until now, therefore charged the whole
+punctured plane to a hypothesis that `QOU.Knot.KummerRadial.kummer` proves only
+for `Im z > 0` — and made "extend `kummer` across the real axis" look like the
+blocker. Naming the five points instead does three things: it makes the
+dependency auditable, it makes it dischargeable one point at a time, and it
+reduces the reflection step to a *pointwise* symmetry of `Li₂`.
+
+Measured at Ohtsuki's shape `y₀ = 0.33764102137762698702 + 0.5622795120623012439i`
+(`mpmath`, 40 dps; `x₀y₀ = y₀ − 1` exactly, residual `0.0`):
+
+```
+z                        Im z       dist to [1,∞)    half plane
+y₀                    +0.5622795       0.8688370        upper
+x₀y₀ = y₀ − 1         +0.5622795       1.7548777        upper
+1/y₀                  −1.3071413       1.3247180        lower
+1/x₀                  −0.7448618       1.1509639        lower
+1/(x₀y₀)              −0.7448618       2.0198009        lower
+```
+
+Three of the five are below the axis — that is the entire gap — and none is
+within `0.86` of the branch cut, so nothing here is a delicate branch question.
+
+`IsKummerAtOhtsukiArgs.of_forall` recovers the old `∀`-form, so no caller that
+already had a half-plane statement is worse off. `of_upper_half_plane` is the
+new content: **conjugation symmetry of `Li₂` off the real axis is enough**, and
+no continuation across the cut is required, because `kummer` is then only ever
+evaluated where it is already proved.
+
+**Is the conjugation hypothesis satisfiable?** (The check the false `hinv` below
+should have been given.) It is stated at `w.im ≠ 0` and *must* be: the
+unrestricted `∀ w, Li₂(w̄) = conj (Li₂ w)` is false for the principal branch on
+the cut, where it degenerates to `Li₂ w ∈ ℝ` — at `w = 5`, `mpmath` gives
+`Li₂(5) = 1.78371916127 − 5.05619832211i`. Off the axis it holds exactly:
+residual `0.0` at 40 dps at all five points above, and still `0.0` at `1e−7`
+from the cut on both sides of `Re = 5`. -/
+
+/-- **Kummer's identity at one point**: the Λ-built `BlochWigner_lob` and the
+`Li₂`-built Bloch–Wigner function agree at `z`.
+
+Split out of the old `∀`-hypothesis so the bridge can name the points it uses.
+Not a convenience abbreviation — `IsKummerAtOhtsukiArgs` is the honest statement
+of everything the `5₂` bridge assumes about a dilogarithm away from `z = 1`. -/
+def IsKummerAt (Li₂ : ℂ → ℂ) (z : ℂ) : Prop :=
+  BlochWigner_lob z = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖
+
+/-- **The five points.** Exactly the Kummer instances
+`ohtsuki_sum_im_eq_three_blochWigner` consumes, one per non-unit argument of
+`ohtsukiSum`.
+
+`z = 1` is deliberately absent: it is handled by the separate `hone`, because
+there the identity holds only through Lean's `arg 0 = 0` convention. -/
+structure IsKummerAtOhtsukiArgs (Li₂ : ℂ → ℂ) (y : ℂ) : Prop where
+  /-- at `x₀y₀ = y₀ − 1` — upper half plane. -/
+  at_xy : IsKummerAt Li₂ (xOf y * y)
+  /-- at `1/(x₀y₀)` — lower half plane. -/
+  at_inv_xy : IsKummerAt Li₂ (1 / (xOf y * y))
+  /-- at `y₀` — upper half plane. -/
+  at_y : IsKummerAt Li₂ y
+  /-- at `1/y₀` — lower half plane. -/
+  at_inv_y : IsKummerAt Li₂ (1 / y)
+  /-- at `1/x₀` — lower half plane. -/
+  at_inv_x : IsKummerAt Li₂ (1 / xOf y)
+
+/-- `x₀ = 1 − 1/y` is off the real axis whenever `y` is: `Im x₀ = −Im (1/y)`. -/
+theorem xOf_im_ne_zero {y : ℂ} (hy : y.im ≠ 0) : (xOf y).im ≠ 0 := by
+  have hx : (xOf y).im = -(1 / y).im := by unfold xOf; simp
+  rw [hx]
+  exact neg_ne_zero.mpr (one_div_im_ne_zero hy)
+
+/-- `x₀y₀ = y₀ − 1` is off the real axis at any Ohtsuki shape — the shift is
+real, so it moves nothing. -/
+theorem xOf_mul_self_im_ne_zero {y : ℂ} (hy : IsOhtsukiShape y) :
+    (xOf y * y).im ≠ 0 := by
+  rw [xOf_mul_self y hy.ne_zero]
+  simpa using ne_of_gt hy.2
+
+/-- **The old half-plane hypothesis still discharges the new one.** Anything
+that could supply `∀ z, z.im ≠ 0 → …` to this bridge is unaffected by the
+weakening. -/
+theorem IsKummerAtOhtsukiArgs.of_forall {Li₂ : ℂ → ℂ} {y : ℂ} (hy : IsOhtsukiShape y)
+    (hbw : ∀ z : ℂ, z.im ≠ 0 → IsKummerAt Li₂ z) :
+    IsKummerAtOhtsukiArgs Li₂ y :=
+  have hyim : y.im ≠ 0 := ne_of_gt hy.2
+  have hxyim : (xOf y * y).im ≠ 0 := xOf_mul_self_im_ne_zero hy
+  have hxim : (xOf y).im ≠ 0 := xOf_im_ne_zero hyim
+  { at_xy := hbw _ hxyim
+    at_inv_xy := hbw _ (one_div_im_ne_zero hxyim)
+    at_y := hbw _ hyim
+    at_inv_y := hbw _ (one_div_im_ne_zero hyim)
+    at_inv_x := hbw _ (one_div_im_ne_zero hxim) }
+
+/-- **Kummer transports across the real axis by conjugation.**
+
+Every ingredient of the identity is odd under `z ↦ z̄` in the same way:
+`D(z̄) = −D(z)` (`BlochWigner_lob_conj`), `Im Li₂(z̄) = −Im Li₂(z)` (the
+hypothesis), `arg(1 − z̄) = −arg(1 − z)` (`arg_conj_of_im_ne_zero`, and
+`1 − z` is off the axis exactly when `z` is), and `‖z̄‖ = ‖z‖`. So the identity
+at `z̄` is `(−1)×` the identity at `z`, and `linear_combination -h` is the
+whole proof.
+
+The hypothesis is one equation at one point, not a functional equation: this is
+Schwarz reflection reduced to what the bridge actually needs. -/
+theorem isKummerAt_of_conj {Li₂ : ℂ → ℂ} {z : ℂ} (hz : z.im ≠ 0)
+    (hconj : Li₂ ((starRingEnd ℂ) z) = (starRingEnd ℂ) (Li₂ z))
+    (h : IsKummerAt Li₂ ((starRingEnd ℂ) z)) :
+    IsKummerAt Li₂ z := by
+  have h1z : ((1 : ℂ) - z).im ≠ 0 := by simpa using hz
+  have hc1 : (1 : ℂ) - (starRingEnd ℂ) z = (starRingEnd ℂ) (1 - z) := by simp
+  have hnorm : ‖(starRingEnd ℂ) z‖ = ‖z‖ := by simp
+  unfold IsKummerAt at h ⊢
+  rw [BlochWigner_lob_conj hz, hconj, hc1, arg_conj_of_im_ne_zero h1z, hnorm,
+    Complex.conj_im] at h
+  linear_combination -h
+
+/-- **Kummer on the upper half plane, plus conjugation symmetry, gives Kummer
+off the real axis.**
+
+This is *not* an analytic continuation: `hupper` is only ever evaluated where it
+already holds, and the lower half plane is reached by the algebraic identity
+above. `hconj` is restricted to `w.im ≠ 0` because the unrestricted form is
+false on the cut (see the section docstring). -/
+theorem isKummerAt_of_upper {Li₂ : ℂ → ℂ} {z : ℂ} (hz : z.im ≠ 0)
+    (hconj : ∀ w : ℂ, w.im ≠ 0 → Li₂ ((starRingEnd ℂ) w) = (starRingEnd ℂ) (Li₂ w))
+    (hupper : ∀ w : ℂ, 0 < w.im → IsKummerAt Li₂ w) :
+    IsKummerAt Li₂ z := by
+  rcases hz.lt_or_lt with hlt | hgt
+  · refine isKummerAt_of_conj hz (hconj z hz) (hupper _ ?_)
+    simpa using hlt
+  · exact hupper z hgt
+
+/-- **What the `5₂` bridge really needs of a dilogarithm.** Kummer's identity on
+the *upper* half plane — which `QOU.Knot.KummerRadial.kummer` proves — together
+with conjugation symmetry off the real axis.
+
+This retires "extend `kummer` across the real axis by Schwarz reflection" as the
+blocker: it is sufficient to know that `Li₂` commutes with conjugation, which is
+a statement about `Li₂`'s own series/integral representation and needs no
+continuation. -/
+theorem IsKummerAtOhtsukiArgs.of_upper_half_plane {Li₂ : ℂ → ℂ} {y : ℂ}
+    (hy : IsOhtsukiShape y)
+    (hconj : ∀ w : ℂ, w.im ≠ 0 → Li₂ ((starRingEnd ℂ) w) = (starRingEnd ℂ) (Li₂ w))
+    (hupper : ∀ w : ℂ, 0 < w.im → IsKummerAt Li₂ w) :
+    IsKummerAtOhtsukiArgs Li₂ y :=
+  IsKummerAtOhtsukiArgs.of_forall hy fun _ hz => isKummerAt_of_upper hz hconj hupper
+
 /-- **(B) — PROVED.**
 
 `Im` of Ohtsuki's five-term dilogarithm sum is `3·D(y₀)`, with no geometry and
@@ -405,11 +562,13 @@ exactly two facts, both of which the corpus proves for its **own** dilogarithm
 
 * `hbw` is **Kummer's identity**, `D(z) = Im Li₂(z) + arg(1−z)·log‖z‖` — the
   statement that the Λ-built `BlochWigner_lob` and the `Li₂`-built Bloch–Wigner
-  function are the same function. `QOU.Knot.KummerRadial.kummer` proves it,
-  sorry-free, for `Im z > 0`; it is stated here for `z.im ≠ 0`, since the
-  argument list contains `1/y₀`, `1/x₀` and `1/(x₀y₀)`, all in the *lower* half
-  plane. (Extending `kummer` across the real axis by Schwarz reflection is a
-  separate, small, unlanded job — recorded here rather than papered over.)
+  function are the same function — asserted at the **five points** this proof
+  applies it to and nowhere else (`IsKummerAtOhtsukiArgs`, above).
+  `QOU.Knot.KummerRadial.kummer` proves it sorry-free for `Im z > 0`, which
+  covers two of the five; the other three are `1/y₀`, `1/x₀` and `1/(x₀y₀)`, in
+  the *lower* half plane, and `IsKummerAtOhtsukiArgs.of_upper_half_plane`
+  reaches them from the upper ones given only that `Li₂` commutes with
+  conjugation off the real axis. So no continuation across the cut is needed.
 * `hone` is `Im Li₂(1) = 0`, i.e. `Li₂(1) = π²/6` is real. It is stated
   separately because `hbw` is deliberately *not* assumed at `z = 1`, where
   `arg(1 − z) = arg 0` and the identity holds only through Lean's `arg 0 = 0`
@@ -439,11 +598,13 @@ now needs one identity where it claimed to need two.
 **The check that failure teaches: are the surviving hypotheses satisfiable?**
 A theorem whose hypotheses no object satisfies is vacuous, and that is exactly
 what the old one was. `hbw` and `hone` are independent — `hbw` is asserted only
-off the real axis, `hone` only at `z = 1` — and the principal-branch `Li₂`
-satisfies both: `Im Li₂(1) = Im(π²/6) = 0`, and `hbw` was checked at 40 digits
-at fourteen random points in **both** half planes (worst deviation `7.8e-41`)
-as well as at all five arguments this proof actually uses. Any new hypothesis
-added here should get the same treatment before it is trusted.
+at the five non-unit arguments, `hone` only at `z = 1` — and the
+principal-branch `Li₂` satisfies both: `Im Li₂(1) = Im(π²/6) = 0`, and `hbw` was
+checked at 40 digits at fourteen random points in **both** half planes (worst
+deviation `7.8e-41`) as well as at all five arguments this proof actually uses.
+Any new hypothesis added here should get the same treatment before it is
+trusted — as the conjugation hypothesis of `of_upper_half_plane` was, where the
+check caught that the *unrestricted* form is unsatisfiable.
 
 ## The proof, in one line per term
 
@@ -480,8 +641,7 @@ cancel in pairs between `Li₂(x₀y₀)` and `Li₂(1/(x₀y₀))` before any o
   `arg_pow` is a `Real.Angle` statement and does not give it. -/
 theorem ohtsuki_sum_im_eq_three_blochWigner
     (Li₂ : ℂ → ℂ) (y : ℂ) (hy : IsOhtsukiShape y)
-    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
-      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
+    (hbw : IsKummerAtOhtsukiArgs Li₂ y)
     (hone : (Li₂ 1).im = 0) :
     (ohtsukiSum Li₂ y).im = 3 * BlochWigner_lob y := by
   obtain ⟨hcubic, hyim⟩ := hy
@@ -558,11 +718,11 @@ theorem ohtsuki_sum_im_eq_three_blochWigner
       arg_one_div_of_im_ne_zero hwim']
     ring
   ---------------------------------------------------------------- the five terms
-  have e1 := hbw (xOf y * y) hxyim
-  have e2 := hbw (1 / (xOf y * y)) (one_div_im_ne_zero hxyim)
-  have e3 := hbw y hyim'
-  have e4 := hbw (1 / y) (one_div_im_ne_zero hyim')
-  have e5 := hbw (1 / xOf y) (one_div_im_ne_zero hxim)
+  -- The five Kummer instances, in `ohtsukiSum`'s own argument order. `unfold`
+  -- is needed because `IsKummerAt` is a `def`, so `rw … at` cannot see the
+  -- equation through it.
+  obtain ⟨e1, e2, e3, e4, e5⟩ := hbw
+  unfold IsKummerAt at e1 e2 e3 e4 e5
   have hDx : BlochWigner_lob (xOf y) = BlochWigner_lob y := blochWigner_xOf_eq y hy0 hy1
   rw [h2y, hnormxy] at e1
   rw [BlochWigner_lob_inv hxyim, hargquot, hloginv, hnormxy] at e2
@@ -608,8 +768,7 @@ in Ohtsuki's Theorem 1.1, transcribed. What used to be an unproved identity
 between two independently-named quantities is now a substitution. -/
 theorem two_pi_re_zeta_eq_three_blochWigner
     (Li₂ : ℂ → ℂ) (y ζ : ℂ) (hy : IsOhtsukiShape y)
-    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
-      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
+    (hbw : IsKummerAtOhtsukiArgs Li₂ y)
     (hone : (Li₂ 1).im = 0)
     (hζ : ζ = ohtsukiSum Li₂ y / (2 * (Real.pi : ℂ) * Complex.I)) :
     2 * Real.pi * ζ.re = 3 * BlochWigner_lob y := by
@@ -771,7 +930,11 @@ What is assumed, and only this:
 * `[FiveTwoTriangulation (conj (1/y)) vol]` — (D), the corpus's own geometric
   axiom, at the shape `conj_inv_is_five_two_shape` certifies is admissible;
 * `hbw`, `hone` — that `Li₂` is a dilogarithm (Kummer plus `Li₂(1) ∈ ℝ`),
-  unavoidable while Mathlib has no polylogarithm;
+  unavoidable while Mathlib has no polylogarithm. `hbw` is now
+  `IsKummerAtOhtsukiArgs`: Kummer at **five named points**, not on a half plane.
+  `IsKummerAtOhtsukiArgs.of_upper_half_plane` builds it from `kummer`'s own
+  `Im z > 0` range plus conjugation symmetry, so nothing here waits on a
+  continuation across the branch cut;
 * `hζ` — Ohtsuki's own **definition** of `ζ`, transcribed.
 
 `hzeta` and `hvol`, which the raw bridge took on faith, are now theorems: the
@@ -786,8 +949,7 @@ theorem volume_conjecture_five_two_wired
     (Li₂ : ℂ → ℂ) (kashaev : ℕ → ℂ) (y ζ ω : ℂ) (vol : ℝ)
     [h : OhtsukiAsymptotic kashaev y ζ ω]
     [ht : FiveTwoTriangulation ((starRingEnd ℂ) (1 / y)) vol]
-    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
-      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
+    (hbw : IsKummerAtOhtsukiArgs Li₂ y)
     (hone : (Li₂ 1).im = 0)
     (hζ : ζ = ohtsukiSum Li₂ y / (2 * (Real.pi : ℂ) * Complex.I)) :
     Filter.Tendsto
@@ -796,5 +958,53 @@ theorem volume_conjecture_five_two_wired
   refine volume_conjecture_five_two kashaev y ζ ω vol
     (two_pi_re_zeta_eq_three_blochWigner Li₂ y ζ h.shape hbw hone hζ) ?_
   rw [ht.vol_eq_three_D, BlochWigner_lob_conj_inv (ne_of_gt h.shape.2)]
+
+/-! ## The dilogarithm parameter, eliminated
+
+Everything above is stated for an abstract `Li₂ : ℂ → ℂ` because Mathlib has no
+polylogarithm. The corpus does — `QOU.MathlibExt.cLiTwoExt`, the integral
+definition, proved analytic on `ℂ ∖ [1,∞)` and proved *the* continuation of the
+series — and it satisfies both hypotheses:
+
+* Kummer at the five points: `QOU.Knot.KummerRadial.kummer` gives them on the
+  upper half plane, `QOU.MathlibExt.cLiTwoExt_conj` reflects to the lower three;
+* `Im Li₂(1) = 0`: `QOU.MathlibExt.cLiTwoExt_one_im`.
+
+So `volume_conjecture_five_two_cLiTwoExt` below has **no function parameter and
+no identity hypothesis at all**. What is left is the two classes — Ohtsuki's
+asymptotic expansion and the `5₂` triangulation, neither with an instance,
+neither claimed — and `hζ`, which is Ohtsuki's own definition of `ζ`
+transcribed.
+-/
+
+/-- **Kummer's identity at Ohtsuki's five arguments, for the corpus's own
+dilogarithm.** No hypotheses beyond the shape.
+
+`kummer` states its right-hand side as `log‖z‖ · arg(1−z)`; `IsKummerAt` uses
+the other factor order, which is what the trailing `ring` is for. -/
+theorem isKummerAtOhtsukiArgs_cLiTwoExt {y : ℂ} (hy : IsOhtsukiShape y) :
+    IsKummerAtOhtsukiArgs QOU.MathlibExt.cLiTwoExt y :=
+  IsKummerAtOhtsukiArgs.of_upper_half_plane hy
+    (fun _ hw => QOU.MathlibExt.cLiTwoExt_conj hw)
+    (fun w hw => by
+      unfold IsKummerAt
+      rw [QOU.Knot.KummerRadial.kummer hw]
+      ring)
+
+/-- **The bridge at the corpus's own dilogarithm.** The `Li₂` parameter and both
+identity hypotheses of `volume_conjecture_five_two_wired` are gone.
+
+Read the residue directly off the statement: `[OhtsukiAsymptotic …]` is (A),
+`[FiveTwoTriangulation …]` is (D), and `hζ` is a transcription. Nothing else. -/
+theorem volume_conjecture_five_two_cLiTwoExt
+    (kashaev : ℕ → ℂ) (y ζ ω : ℂ) (vol : ℝ)
+    [h : OhtsukiAsymptotic kashaev y ζ ω]
+    [FiveTwoTriangulation ((starRingEnd ℂ) (1 / y)) vol]
+    (hζ : ζ = ohtsukiSum QOU.MathlibExt.cLiTwoExt y / (2 * (Real.pi : ℂ) * Complex.I)) :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖kashaev N‖)
+      Filter.atTop (nhds vol) :=
+  volume_conjecture_five_two_wired QOU.MathlibExt.cLiTwoExt kashaev y ζ ω vol
+    (isKummerAtOhtsukiArgs_cLiTwoExt h.shape) QOU.MathlibExt.cLiTwoExt_one_im hζ
 
 end QOU.Archimedean.FiveTwoOhtsukiBridge
