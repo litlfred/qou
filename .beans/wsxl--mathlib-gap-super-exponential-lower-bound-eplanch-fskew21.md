@@ -1,11 +1,11 @@
 ---
 # wsxl
 title: 'Mathlib-gap: prove the super-exponential lower bound on w_std(k)=E_Planch[f^{lambda/(2,1)}] (closes GAP-A-3 level-selection conditional)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-11T18:45:00Z
-updated_at: 2026-08-31T05:03:08Z
+updated_at: 2026-08-31T05:12:17Z
 ---
 
 ## What
@@ -93,3 +93,46 @@ the sense `TowerGeometricLowerBound` demands, and whether the algebra from there
 so the ratio does grow super-exponentially — but that asymptotic is not in the corpus as far as I
 looked, and 'the input is unconditional' is not 'the bean is closed'. Bean stays `todo`; someone
 should check the remaining chain before closing it.
+
+
+## 2026-08-31 — w_std DEFINED in Lean for the first time; square bound unconditional; the class as stated is REFUTED
+
+`QOU/Mass/WStdSuperExponential.lean` (new, sorry-free, lean-direct exit 0).
+
+**1. `w_std` had no Lean definition at all.** Three files reason about it —
+`LevelSelectionLogarithmic`, `CubeMomentLowerBound`, `BindingGevreyHalf` — and in every one
+it is either an abstract function parameter `w : ℕ → ℝ` or a pair of hypotheses. The name
+existed only in docstrings. `QOU.Mass.WStd.wStd` is now the definition.
+
+**2. The square bound is unconditional.** `BindingGevreyHalf.wstd_superexp_sq` proves
+`k!/(81·2^k) ≤ w_std(k)²` from two hypotheses its own docstring calls 'the open combinatorial
+core'. Both are now theorems: (A) `Σ f g = k!/3` is `branching_two_one_holds` (bean
+`qou-b21r`, PR #6363); (C) `Σ g ≤ I(k)` is `skew_le_straight` + `sum_dimSYT_eq_involution`,
+already unconditional. So `wStd_sq_lower k (hk : 3 ≤ k)` carries **no hypotheses but k ≥ 3**.
+
+**3. `TowerGeometricLowerBound wStd r c` is FALSE for every r, c — proved, not searched.**
+`not_towerGeometricLowerBound_wStd`. The class demands `c·r^k ≤ w k` for EVERY k; at k = 0 that
+reads `c ≤ w_std 0 = 0`, against `c_pos`. `w_std(k) = 0` for k < 3 because no diagram of fewer
+than three cells contains (2,1) and `fDimSkew` guards on containment
+(`wStd_eq_zero_of_lt_three`). This is a scope-(b) structural exclusion with a named invariant:
+no choice of r, c repairs it, and the fix has to be a **threshold in the class**, not a better
+constant.
+
+**4. The positive result is a threshold bound.** `wStd_geometric_from_nine`:
+`(1/9)·(√2)^k ≤ w_std(k)` for k ≥ 9 — exactly the class's `lower_bound` field with r = √2 > 1,
+c = 1/9 > 0, on that tail. Everything downstream (`no_linear_selection`,
+`no_superlinear_selection`) already works on a tail — both pick their A from an `atTop` filter
+— so a threshold class would serve them unchanged.
+
+## What is left, and what the file header was wrong about
+
+* **The class needs editing** (add a threshold `k₀`, or index the bound from it). Left to the
+  author; this file does not touch `LevelSelectionLogarithmic.lean`.
+* **The threshold 9 is my artifact, not the mathematics.** It comes from the crude step
+  `4^k ≤ k!` (false at k = 8: 65536 > 40320). The true `w_std` is positive from k = 3. Lowering
+  it needs the six values w_std(3)…w_std(8), a finite computation not done here.
+* **`LevelSelectionLogarithmic.lean`'s stated blocker is wrong.** It says a faithful proof
+  'needs SYT + skew-tableau + Plancherel-measure Mathlib infrastructure that does not yet exist
+  (a multi-session build)'. It did not: the square bound was already in the corpus, waiting on
+  two SYT identities that turned out not to need RSK. Same mis-diagnosis class as `qou-jlam`
+  and `qou-b21r` — that is now three.
