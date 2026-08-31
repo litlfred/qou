@@ -58,6 +58,38 @@ FINDING: the register held. Three results, in order of weight.
    the two blocks they annotate -- S_leak and q*_S -- are BOTH named explicitly
    in qou-cds1's §9g register.
 
+FINDING 4 (answering "excise C frame"): THE EXCISION IS ALREADY COMPLETE
+--------------------------------------------------------------------------
+closed_form_tau_M.py records the ruling verbatim: "OWNER RULING 2026-08-09
+excised convention C, z = 1/(q^{1/2} + q^{-1/2})". Production uses
+z_D = q^3/(q^2+1) (`markov_z`, line 165).
+
+Residual z_C surface across computations/ (110 production files mention it):
+
+    comment/doc only, documenting the excision       54   correct: prevents recurrence
+    probe-named (_probe.py etc.)                     42   exempt by repo convention
+    C<->D comparison machinery                       13   MUST keep z_C -- it is the
+                                                          object of comparison, and
+                                                          qou-cds1 needs exactly these
+    apparent production consumer                      1   closed_form_tau_M.py
+
+and that last one is AST-verified DOCSTRING-ONLY (z_C on lines 192, 193, 216,
+all inside docstrings; the live markov_z returns q**3/(q**2+1)). So there are
+ZERO live-code production consumers of z_C: "excise the C frame" is DONE at the
+z level, by owner ruling 2026-08-09.
+
+A naive line-based classifier calls that file live code, because its
+triple-quote toggle desyncs on nested docstrings. Recorded, because anyone
+re-running this audit with grep alone will make the same mistake.
+
+WHAT IS NOT EXCISABLE. The C-frame c_k LADDER values have no convention-D
+replacement: qou-cds1 says the ladder "must be re-derived, not re-evaluated",
+and the c_3 ~ -974 from feeding z_D to the current extractor is "a sensitivity
+measurement, not a proposed value. Do not wire it anywhere." Excising them now
+would delete recorded results with nothing in their place. That is not an
+excision task; it is the re-derivation, i.e. qou-cds1 itself.
+
+
 CONCLUSION. No unregistered C-conditional claim was found. Contrast Gap #3
 earlier today, where the headline number WAS an unflagged selection fit: the
 registration discipline held here. Recorded as a negative so the audit is not

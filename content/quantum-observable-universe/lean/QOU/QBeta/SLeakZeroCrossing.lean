@@ -44,7 +44,19 @@ Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_prob
 | muon   | −2.02020024 | **+0.00968298** |
 | proton | −2.06934258 | **−0.03945936** |
 
-`S_leak(muon) > 0 > S_leak(proton)`: a genuine sign change, `S_p/S_μ ≈ −4.08`.
+`S_leak(muon) > 0 > S_leak(proton)`
+> **🛑 CONVENTION-C SCOPE (added 2026-08-31).** The `c₃` values quoted here —
+> `−2.02020024` (muon) and `−2.06934258` (proton) — are **C-frame extractions**.
+> Owner ruling 2026-08-09 excised convention C at the `z` level (production uses
+> `z_D = q³/(q²+1)`), but the `c_k` **ladder** has not been re-derived under D:
+> bean `qou-cds1` states it "must be re-derived, not re-evaluated", and the
+> `c₃ ≈ −974` obtained by feeding `z_D` to the current extractor is a
+> sensitivity measurement, **not** a proposed value. So every value-level `c₃`
+> fact below is C-conditional and moves if `qou-cds1` lands.
+>
+> **No theorem in this file depends on it** — the values appear in this
+> docstring only, verified by AST scan in
+> `computations/deltalambda/wlambda_binding_c_frame_conditionality_audit.py`.: a genuine sign change, `S_p/S_μ ≈ −4.08`.
 
 ## ⚠ APPLICABILITY (2026-08-08): the anchor signs are NOT resolved by the data
 
