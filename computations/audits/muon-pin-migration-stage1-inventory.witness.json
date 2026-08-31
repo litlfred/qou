@@ -1,0 +1,1088 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "computedAt": "2026-08-31T07:37:16.232223+00:00",
+  "commitSha": "3dd2019254c2a6efe43c961831ba49dd274cc409",
+  "assertions": [
+    {
+      "name": "the flip gate cannot see most off-canonical live witnesses",
+      "computed": "49",
+      "expected": "49",
+      "passed": true,
+      "tolerance": "0",
+      "source": "declared anchor + top-level q0Value is the gate's whole input"
+    },
+    {
+      "name": "A and B are separable only at ~13 significant digits",
+      "computed": "2.84163e-12",
+      "expected": "2.84161e-12",
+      "passed": true,
+      "tolerance": "1e-17",
+      "source": "exact mpmath at 60 dps"
+    },
+    {
+      "name": "_Q0_PREFIXES muon prefix matches C and neither A nor B",
+      "computed": "C_only",
+      "expected": "C_only",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou_substrate/witness.py::_Q0_PREFIXES = 1.10997859564"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16806,
+  "computation": "muon-pin-migration-stage1-inventory",
+  "scriptFile": "muon_pin_migration_stage1_inventory.py",
+  "scriptHash": "59f7108ac18a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/muon_pin_migration_stage1_inventory.py",
+      "--list"
+    ],
+    "reproduce": "python3 -u computations/audits/muon_pin_migration_stage1_inventory.py --list"
+  },
+  "description": "Stage-1 inventory for the muon-pin migration to CODATA 2022. Classifies every tracked witness by the pin VALUE it records (exact mpmath nearest-neighbour, not a prefix match) and reports how much of the off-canonical surface the q0-anchor flip gate is structurally unable to examine.",
+  "result": {
+    "rev": "HEAD",
+    "tracked_witnesses": 3584,
+    "off_canonical_total": 317,
+    "off_canonical_deprecated": 220,
+    "off_canonical_live_audit": 36,
+    "off_canonical_live_non_audit": 61,
+    "by_declared_anchor": {
+      "independent": 6,
+      "None": 41,
+      "proton": 11,
+      "muon": 1,
+      "ambiguous": 2
+    },
+    "gate_visible": 12,
+    "gate_invisible": 49,
+    "gate_invisible_outside_q0_fields": 24,
+    "pin_gaps_relative": {
+      "A_B": "2.84163e-12",
+      "B_C": "7.97839e-11",
+      "A_P": "1.15371e-8"
+    },
+    "live_non_audit": [
+      {
+        "path": "computations/a3-magnitude-berezinian-crossterm.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "inputs/q0",
+            "results/natural_readings_scatter[3]/correction"
+          ]
+        }
+      },
+      {
+        "path": "computations/alpha-k-jones-markov-h4.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "substrate/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/build-six-term-substrate-model-b.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/c-3-categorical-derivation-attempt.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/anchors/q0_mp_pin",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/anchors/q0_muon_pin"
+          ]
+        }
+      },
+      {
+        "path": "computations/cal4-disguise-hunt.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen",
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "data/findings[3]/value",
+            "data/findings[9]/value",
+            "data/findings[13]/value",
+            "data/findings[17]/value",
+            "data/findings[18]/value",
+            "data/findings[133]/value",
+            "data/findings[246]/value",
+            "data/findings[273]/value",
+            "data/findings[298]/value",
+            "data/findings[318]/value"
+          ],
+          "P_proton": [
+            "data/findings[5]/value",
+            "data/findings[11]/value",
+            "data/findings[16]/value",
+            "data/findings[25]/value",
+            "data/findings[29]/value",
+            "data/findings[31]/value",
+            "data/findings[58]/value",
+            "data/findings[71]/value",
+            "data/findings[73]/value",
+            "data/findings[74]/value",
+            "data/findings[88]/value",
+            "data/findings[95]/value",
+            "data/findings[113]/value",
+            "data/findings[120]/value",
+            "data/findings[121]/value",
+            "data/findings[126]/value",
+            "data/findings[128]/value",
+            "data/findings[131]/value",
+            "data/findings[135]/value",
+            "data/findings[137]/value",
+            "data/findings[140]/value",
+            "data/findings[142]/value",
+            "data/findings[150]/value",
+            "data/findings[155]/value",
+            "data/findings[167]/value",
+            "data/findings[171]/value",
+            "data/findings[186]/value",
+            "data/findings[190]/value",
+            "data/findings[192]/value",
+            "data/findings[203]/value",
+            "data/findings[211]/value",
+            "data/findings[231]/value",
+            "data/findings[242]/value",
+            "data/findings[245]/value",
+            "data/findings[247]/value",
+            "data/findings[250]/value",
+            "data/findings[252]/value",
+            "data/findings[255]/value",
+            "data/findings[258]/value",
+            "data/findings[272]/value",
+            "data/findings[274]/value",
+            "data/findings[277]/value",
+            "data/findings[280]/value",
+            "data/findings[282]/value",
+            "data/findings[291]/value",
+            "data/findings[297]/value",
+            "data/findings[300]/value",
+            "data/findings[308]/value",
+            "data/findings[315]/value",
+            "data/findings[317]/value"
+          ],
+          "A_retired_frozen": [
+            "data/findings[30]/value",
+            "data/findings[35]/value",
+            "data/findings[57]/value",
+            "data/findings[79]/value",
+            "data/findings[101]/value",
+            "data/findings[112]/value",
+            "data/findings[125]/value",
+            "data/findings[130]/value",
+            "data/findings[136]/value",
+            "data/findings[143]/value",
+            "data/findings[146]/value",
+            "data/findings[148]/value",
+            "data/findings[156]/value",
+            "data/findings[165]/value",
+            "data/findings[169]/value",
+            "data/findings[170]/value",
+            "data/findings[180]/value",
+            "data/findings[191]/value",
+            "data/findings[194]/value",
+            "data/findings[198]/value",
+            "data/findings[210]/value",
+            "data/findings[214]/value",
+            "data/findings[215]/value",
+            "data/findings[217]/value",
+            "data/findings[220]/value",
+            "data/findings[243]/value",
+            "data/findings[259]/value",
+            "data/findings[270]/value",
+            "data/findings[276]/value",
+            "data/findings[281]/value",
+            "data/findings[294]/value",
+            "data/findings[301]/value",
+            "data/findings[305]/value",
+            "data/findings[316]/value"
+          ]
+        }
+      },
+      {
+        "path": "computations/casimir-xi-2-dig-deeper.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "parameters/substrate_q",
+            "q0Value"
+          ],
+          "A_retired_frozen": [
+            "data/finding_B1_normalized_trace_identically_one/across_q[1]/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/compound-binding-via-differences.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/confinement-operator-selection.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/d-from-scratch.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q_0_mpf50"
+          ]
+        }
+      },
+      {
+        "path": "computations/deltalambda/he4-binding-k-stage2.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "q_pin/value",
+            "gp_kernel_bug/gp_chi_trivial_rep",
+            "gp_kernel_bug/expected_exact",
+            "gp_kernel_bug/seminormal_mpfr_chi_trivial_rep"
+          ]
+        }
+      },
+      {
+        "path": "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "q_pin/value"
+          ]
+        }
+      },
+      {
+        "path": "computations/garside-irrep-qvalues.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/hadron-knot-table.witness.json",
+        "declared_anchor": "muon",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "A_retired_frozen": [
+            "parameters/q",
+            "q0Value"
+          ]
+        }
+      },
+      {
+        "path": "computations/hecke-core-symbolic-migration.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0_value"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-habiro-wrt-s3-2i.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-qdeform-projector-shift.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-schurweyl-dual-sides.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-schurweyl-su2-rowcount.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-wrt-color-schurweyl.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/keystone-wrt-schurweyl-plancherel-4count.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/markov-identity-symbolic.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "results[0]/residual_evaluations/proton_q0/q",
+            "results[1]/residual_evaluations/proton_q0/q"
+          ],
+          "A_retired_frozen": [
+            "results[0]/residual_evaluations/muon_q0/q",
+            "results[1]/residual_evaluations/muon_q0/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/metallic-q-n4-character-sweep.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "anchors/q_0_substrate"
+          ]
+        }
+      },
+      {
+        "path": "computations/mp-dk-decisive-test.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "B_codata_2018": [
+            "data/pins/stale_muon_pin_q0"
+          ],
+          "P_proton": [
+            "data/pins/canonical_mp_pin_q0",
+            "q0Value"
+          ]
+        }
+      },
+      {
+        "path": "computations/mu-p-pin-sensitivity-map.witness.json",
+        "declared_anchor": "ambiguous",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "data/proton_pin/q0"
+          ],
+          "A_retired_frozen": [
+            "data/muon_pin/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/neutron-error-diagnostic.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/peel-anchor-identification.witness.json",
+        "declared_anchor": "ambiguous",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "q0_pins/proton"
+          ],
+          "A_retired_frozen": [
+            "q0_pins/muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/per-basis-row-invariants-probe.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/pins/canonical_mp_pin_q0",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/pins/stale_muon_pin_q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/per-irrep-pole-neutron-h3.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/atom_chi_fingerprint/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/eunit-g2-derivation.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "parameters/q0_env_pin",
+            "data/numeric_env_pin/q0_used"
+          ],
+          "A_retired_frozen": [
+            "parameters/q0_muon_canonical"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/eunit-magnus-order2.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "parameters/q0_env_pin",
+            "data/forward_env_pin/q0_used"
+          ],
+          "A_retired_frozen": [
+            "parameters/q0_muon_canonical"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/ksel2id-sw-identification.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/q0_pins/muon"
+          ],
+          "P_proton": [
+            "data/q0_pins/proton"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/ksel2id-u1-promotion.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/q0_pins/muon"
+          ],
+          "P_proton": [
+            "data/q0_pins/proton"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/probe-mup-dressing-attribution.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "data/q0_muon_pin"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/probe-trace-convention-production-impact.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "data/S2_q0_current_muon_pinned"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/qbeta-borromean-cyclotomic.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "parameters/q0_proton"
+          ],
+          "A_retired_frozen": [
+            "parameters/q0_muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/qbeta-ck-basis-constrained-pslq.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/q0_canonical"
+          ],
+          "P_proton": [
+            "data/q0_proton"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/qbeta-ck-qholonomic-recurrence-test.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "data/q0_proton_50dps"
+          ],
+          "A_retired_frozen": [
+            "data/q0_muon_50dps"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/qbeta-exponentiated-per-block.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/anchors/proton_q0",
+            "q0Value"
+          ],
+          "A_retired_frozen": [
+            "data/anchors/muon_q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/qbeta-habiro-integrality-kill-test.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "data/anchors/proton_q0"
+          ],
+          "A_retired_frozen": [
+            "data/anchors/muon_q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/rho-f-categorical-probe.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "parameters/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/saddle-offset-zero-location.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/Q1_substrate_candidates/q0/value",
+            "data/Q3_c3_hook/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/tau-dictionary-fricke-spin-probe.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/q0_pins/muon"
+          ],
+          "P_proton": [
+            "data/q0_pins/proton"
+          ]
+        }
+      },
+      {
+        "path": "computations/probes/tau-dictionary-hauptmodul-validator.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "data/q0_pins/muon"
+          ],
+          "P_proton": [
+            "data/q0_pins/proton"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta-multi-block-eigenphase-full-eps-probe.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/pins/canonical_mp_pin_q0",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/pins/stale_muon_pin_q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta-multi-block-eigenphase-probe.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/pins/canonical_mp_pin_q0",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/pins/stale_muon_pin_q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-argu-phase-branch-selection.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "anchors/muon/q0"
+          ],
+          "P_proton": [
+            "anchors/proton/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-c3-imq-ratio-and-entropy.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "data/eps_zero_crossing/q_proton"
+          ],
+          "A_retired_frozen": [
+            "data/eps_zero_crossing/q_muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-chain4-kashiwara-step3-cross-anchor.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/q_proton",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/q_muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "data/q_proton",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/q_muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-h4-route-a-gate.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-meridian-holonomy-anchor-swing.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "per_anchor/muon/q0"
+          ],
+          "P_proton": [
+            "per_anchor/proton/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/qbeta/qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "P_proton": [
+            "results/anchors/q0_proton",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "results/anchors/q0_muon"
+          ]
+        }
+      },
+      {
+        "path": "computations/rho-binding-constancy.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "substrate/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/rho-k-leading-order-verification.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/substrate/hecke-core-symbolic-migration.witness.json",
+        "declared_anchor": "proton",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": true,
+        "paths": {
+          "B_codata_2018": [
+            "data/anchor_change/committed_witness_q0"
+          ],
+          "P_proton": [
+            "data/anchor_change/this_run_q0",
+            "q0Value"
+          ]
+        }
+      },
+      {
+        "path": "computations/t6-tau-h5-embedding-probe.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "constants/q_0"
+          ]
+        }
+      },
+      {
+        "path": "computations/toffoli-lp-stability.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "A_retired_frozen"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "A_retired_frozen": [
+            "constants/q0_physical",
+            "scan[9]/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/two-quark-active-set-mahler-sweep.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "anchors/q_0",
+            "lp_duals_at_anchors[0]/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/universal-ilp.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q"
+          ]
+        }
+      },
+      {
+        "path": "computations/wenzl-y-lambda-h12.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0"
+          ]
+        }
+      },
+      {
+        "path": "computations/wenzl-y-lambda-h9.witness.json",
+        "declared_anchor": "independent",
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "B_codata_2018": [
+            "parameters/q0"
+          ]
+        }
+      }
+    ]
+  },
+  "context": {
+    "beans": [
+      "qou-tekx"
+    ],
+    "note": "Not a migration and not a ruling. An off-canonical witness is a correct record of what its producer did; this measures whether anything in the corpus would ever say it is off-canonical."
+  }
+}
