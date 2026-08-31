@@ -914,12 +914,38 @@ this arc has now produced two instances of that (the other being a sibling bean
 treated as a primary source).
 
 **So the systematic drain step is: before adjudicating a content-block sibling,
-look for its library twin.** Three of the final findings dissolve on that step
-alone, and the fix is not Lean work at all — it is deleting siblings so the refs
-resolve to the library declarations they already name. That is a content-pipeline
-change (each block's `.qa.json` carries criteria keyed on `source_hashes.lean`)
-and wants its own validate-and-sweep cycle, so it is recorded here rather than
-done inside a Lean-only verification pass.
+look for its library twin.**
+
+> **🛑 But my first proposed FIX for that was wrong, and measuring stopped me
+> acting on it.** I wrote that the remedy is "deleting siblings so the refs
+> resolve to the library declarations they already name". Measured — comparing
+> every declaration in each sibling against its library twin — that would have
+> destroyed content in both cases:
+>
+> | sibling | decls | sibling-only | what deletion would lose |
+> |---|---|---|---|
+> | `confinement-phase-stratification` | 10 | **8** | the entire model: `ConfinedParticleTy`, `opaque confined/mu/sigmaF`, the class, and both claim theorems |
+> | `qbeta-per-block-chi-closed-forms` | 24 | **2** | the vacuous class (wanted) **and `ZRecursionCoeffs.unique`** (real content) |
+>
+> The confinement pair is not a twin pair in the sense I claimed at all: the
+> library formalises the same proposition over a **different particle type**
+> (`ConfinedParticle`, with `HasRealAxisData`), not over the sibling's
+> `ConfinedParticleTy`. Choosing between the two models is an authorial
+> question, not a stub removal.
+>
+> The shadowing observation stands — the sibling does intercept the declaration
+> the block's ref names. Only the proposed remedy was wrong, and it was wrong in
+> the expensive direction: a delete.
+
+**What was actually drained.** The `qbeta` case reduces to a two-declaration
+excision, and that is done: `DeltaTauMSurrogateTaylorCoeff2` and its projection
+are removed from the sibling (zero references outside the file, measured), with
+a note pointing at the library's sorry-free
+`delta_tau_M_surrogate_taylor_coeff_2`. Removed rather than re-proved —
+restating it would put a second independent formalisation of the same fact in
+the tree, and a content-block sibling cannot `import` the module that has it.
+`ZRecursionCoeffs.unique` is untouched. The block's `.qa.json` was refreshed
+with `qa-sweep` (exit 0) in the same commit.
 
 ## Adjacent observation, not a finding
 
