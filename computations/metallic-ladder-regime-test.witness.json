@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T20:15:12.077773+00:00",
-  "commitSha": "56b499230346e0ee6c8b854fe198ae1fc811fa8f",
+  "computedAt": "2026-08-31T20:40:10.819356+00:00",
+  "commitSha": "825d45ce967538f163b92019e87d8a6efd250f2e",
   "assertions": [
     {
       "name": "golden_bound_is_h_below_one",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 26,
   "computation": "metallic-ladder-regime-test",
   "scriptFile": "metallic_ladder_regime_test_probe.py",
-  "scriptHash": "d9148e077aaa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4de3f2028571",
+  "scriptCommitSha": "825d45ce967538f163b92019e87d8a6efd250f2e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
     ],
     "reproduce": "python3 -u computations/probes/metallic_ladder_regime_test_probe.py"
   },
-  "description": "EXPLORATORY (bean t7qv): translates the owner's constraint 1 < q_0 < phi and tests the prediction that the metallic ladder marks SDP regime changes. TRANSLATION (exact): since 1/phi = phi - 1, h(phi) = phi - 1/phi = 1 and h is strictly increasing, so 1 < q < phi is exactly 0 < h < 1 — below the first rung of the corpus's own metallic ladder delta_n = (n + sqrt(n^2+4))/2. At q_0, h = 0.20906. WHAT IT SECURES: one result, with margin — D_PN < 0 throughout, since its boundary q_c = 3.4580993 has h = 3.16892, over 3x the bound, so K always carries inverse-crossing (entanglement) content as a consequence of the bound rather than a measurement. It secures NONE of the positive-sector LP results, whose windows are strictly inside (1, phi). REGIME PREDICTION NOT SUPPORTED here: the Gram signature is constant (4,1,1) at every h from 0.2 to 4.5 across all four rungs, so the SDP cone never changes shape; the LP objective grows smoothly and its growth-rate maximum near h=1 is INHERITED — tr_M(free), a plain scalar with no LP in it, peaks at the same h = 0.9875, and the objective inherits it via the t = G e_1 row-1 bound; and the discrete flickers fall at h = 0.9, 2.9, 3.3, 3.4, 3.8, 3.9, off the rungs. The corpus's PR #1999 already recorded 'not a bifurcation' for per-block characters at H_3; this extends that negative to the cone and the H_9 selection. No fit; no B_AME; nothing wired.",
+  "description": "EXPLORATORY (bean t7qv): translates the owner's constraint 1 < q_0 < phi and tests the prediction that the metallic ladder marks SDP regime changes. TRANSLATION (exact): since 1/phi = phi - 1, h(phi) = phi - 1/phi = 1 and h is strictly increasing, so 1 < q < phi is exactly 0 < h < 1 — below the first rung of the corpus's own metallic ladder delta_n = (n + sqrt(n^2+4))/2. At q_0, h = 0.20906. WHAT IT SECURES: one result, with margin — D_PN < 0 throughout, since its boundary q_c = 3.4580993 has h = 3.16892, over 3x the bound, so K always carries inverse-crossing (entanglement) content as a consequence of the bound rather than a measurement. It secures NONE of the positive-sector LP results, whose windows are strictly inside (1, phi). REGIME PREDICTION NOT SUPPORTED here: the Gram signature is constant (4,1,1) at every h from 0.2 to 4.5 across all four rungs, so the SDP cone never changes shape; the LP objective grows smoothly and its growth-rate maximum near h=1 is INHERITED — tr_M(free), a plain scalar with no LP in it, peaks at the same h = 0.9875, and the objective inherits it via the t = G e_1 row-1 bound; and the discrete flickers fall at h = 0.9, 2.9, 3.3, 3.4, 3.8, 3.9, off the rungs. SUPERSEDED IN PART (2026-08-31): the PR #1999 corroboration this probe claimed is WITHDRAWN (pre-convention-D and wrong under D), and the negative is now known to be functional-specific — everything swept here is Markov-weighted, whereas under the q-Plancherel weighting T(sigma)/T(gamma) = h/2 exactly at every n, putting the cost coincidence at h = 2 = delta_silver for every strand count. See metallic_silver_coincidence_weighting_probe.py. No fit; no B_AME; nothing wired.",
   "data": {
     "h_of_phi": "1",
     "h_of_q0": "0.209060298796",

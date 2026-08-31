@@ -943,3 +943,98 @@ doing, and it is short:
    select the favourable class, but nothing in the corpus currently supplies it,
    and inventing it to reach a known number is the failure mode this arc has been
    auditing throughout.
+
+## 2026-08-31 — the silver coincidence is real, and it is the Plancherel functional
+
+Owner: *"this is VERY old and needs re-examination, it is pre convention D"*
+and *"isn't the LP dual shadow realizable as a representation?"* Both land.
+`computations/probes/metallic_silver_coincidence_weighting_probe.py`, 6/6.
+
+**My earlier negative was about the wrong object and I withdraw its framing.**
+
+1. **PR #1999's `metallic_q_illustration.py` fails three checks under D.**
+   Stale `q_0` (`1.1099785955541805` vs `1.1099785827513808`, off `1.3e-8`);
+   `chi^(2,1)(sigma_1 sigma_2) = h^2-1` is wrong — convention D gives the
+   constant `-1`, verified against the explicit 2x2 rep at four `q`; and it
+   plots bare `chi^lambda` while its docstring claims weighted
+   `y_lambda chi^lambda`. Its own `h^2-1` flips sign at `h = 1`, the golden
+   rung, contradicting its own "no sign flips at metallic ratios". The
+   corroboration `metallic_ladder_regime_test_probe.py` drew from it is
+   **withdrawn**; that probe's own measurements stand.
+
+2. **Under D only two blocks are live.** `y_alt = 0` identically. In `h`:
+   `y_sym = (h^2+2)/(h^2+4)`, `y_std = 1/(h^2+4) = 1/[2]_q^2`, exact.
+
+3. **THE RESULT.** Under the q-Plancherel weighting
+   `W_lambda = d_q^2 / sum d_q^2`,
+
+       T(sigma) = (h/2) * T(gamma)      identically, at every strand count n,
+
+   from three facts the corpus already holds: `W_lambda = W_lambda'` (hook
+   multisets are transpose-invariant; checked n=2..5), the transpose-pair
+   character sum `chi^lambda(sigma) + chi^lambda'(sigma) = dim(lambda) h`
+   (`GaloisPairCharacterSum` in `MetallicLPIdentities.lean`), and
+   `chi^lambda(gamma) = dim(lambda)`. Hence `T(gamma) = T(sigma)` iff `h = 2`
+   iff `q = delta_silver`, **for every n**.
+
+   That **generalises the sorry-free Lean `silver_lp_coincidence` (PR #2047)**
+   from `n = 2` to all `n`. Its cost vector `(2(q+1/q), q^2-q^-2)` is exactly
+   `2[2]_q * (T(gamma), T(sigma))`, so the theorem is that identity's `n = 2`
+   instance. Verified outright at n=2 and n=3; the n=3 coincidence polynomial
+   factors as `(q^2-2q-1)(q^4+3q^2+1)` — the silver minimal polynomial appears
+   as an explicit factor.
+
+4. **Which answers the owner's second point.** `T(sigma) = (h/2) T(gamma)` is
+   one identity that is simultaneously an optimisation fact (two LP cost
+   coefficients coincide) and a representation fact (the transpose-pair
+   character sum). My split between a "representation-theoretic regime" and
+   "an optimisation one" is **withdrawn** — the dual *is* the representation.
+
+5. **Why my H_3/H_9 sweep saw nothing.** Convention D's Markov trace is not
+   Plancherel-weighted: `T(sigma)/T(gamma) = z = q^2/[2]_q`, not `h/2`. Its
+   coincidence moves off silver to the **supergolden ratio** `q^3 = q^2+1`,
+   `q = 1.4655712318767680`, `h = 0.783243`; the only other Markov locus is
+   `q^5+q^4-2q^2-q-1 = 0`, `q = 1.2414315`, `h = 0.435910`. Neither metallic.
+   So the ladder is a feature of the Plancherel functional, and a metallic
+   result cannot be moved into the atom LP without first settling which
+   functional the physics extremises. **That is now the open question.**
+
+6. **What IS refuted.** `SDPDegeneracyDetectsMetallic`'s `S(n) ⊆ {delta_1..
+   delta_n}` fails at n=3 in both weightings: Plancherel `S(3)` also contains
+   `q = 2.8022805603737193` (`h = 2.44543`, between silver and bronze); Markov
+   `S(3)` is the two non-metallic roots above. Silver being *in* `S(n)` is now
+   a theorem; `S(n)` being *inside* the ladder is false. The conjecture should
+   be weakened to the direction that holds.
+
+## 2026-08-31 — lead: the atom LP is an n-fold integer program
+
+From the owner's paper drop (`5bbd4b33`), triaged not yet built. De Loera,
+Hemmecke, Onn, Weismantel, **N-Fold Integer Programming** (`math/0605242`).
+An *n-fold IP* has constraint matrix `A^(n) = (1_n ⊗ I_q) ⊕ (I_n ⊗ A)`: `n`
+independent copies of a fixed block `A x_k = b_k`, coupled by one global row
+block `sum_k x_k = b_0`. Their words: the programs are almost separable, *"the
+constraint sum x_k = b_0 **binds** these programs together."*
+
+That is the atom, exactly: `x_k` = nucleon `k`'s NF occupation (`q = 6`), `A
+x_k = b_k` the per-nucleon Hecke constraint, `sum_k x_k = b_0` the atom's
+conserved totals (baryon number, charge, closure arity `c_atom = 2A - #odd`).
+Two consequences worth testing:
+
+- **The cost becomes additive.** `sum_k c_k x_k`, not `t^{⊗A} · x`. Binding is
+  then `[sum_k min per-nucleon] - [min of the coupled program]` — the duality
+  gap contributed by the coupling block alone, a difference of two comparable
+  quantities in the same units. Our current Kronecker formulation takes a
+  difference of two products, which is where the `4He` L2 miss (8 meV wanted
+  out of 28.3 MeV, `2.5e9x` — bean `qou-1nvh`) plausibly gets destroyed.
+- **Theorem 1.1: poly-time in `n` for fixed `A`.** The `6^A` blowup goes away,
+  so heavy `A` becomes computable; and their Graver bases *stabilise* in `n`,
+  giving an `n`-independent set of augmentation directions — which is a direct
+  handle on the selection question `t = G e_1` left open.
+
+Runners-up from the same drop, not ingested: Bödi–Herr–Joswig *Algorithms for
+Highly Symmetric Linear and Integer Programs* (`1012.4941`) — reduce a
+symmetric LP via linear representations of the symmetry group, i.e. onto
+isotypic components; and van der Hulst, *Folding Mixed-Integer LPs and
+Reflection Symmetries* (`2603.12136`). Also `2203.06568` (SDP bounds via a
+split Terwilliger algebra) as a method template for block-diagonalising an SDP
+by a centraliser algebra's Wedderburn decomposition.

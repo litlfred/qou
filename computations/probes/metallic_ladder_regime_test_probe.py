@@ -59,25 +59,48 @@ not the selection's.
 1.8, 2.2, 2.5, 2.6, 3.5, 4.0`. Neither set clusters at integers. Flickering of
 this kind is the signature of LP vertex degeneracy.
 
-**The corpus already recorded a related negative.**
-`computations/metallic_q_illustration.py` states of the metallic crossings:
+**CORROBORATION WITHDRAWN (2026-08-31).** This section used to cite
+`computations/metallic_q_illustration.py` — *"not a bifurcation … no sign flips
+at metallic ratios for any `beta` at `n = 3`"* (PR #1999) — as independent
+support. That file is **pre-convention-D** (last touched 2026-08-15, one day
+before `qou-cds2`) and `metallic_silver_coincidence_weighting_probe.py` shows
+it fails three checks under D: its `q_0` is stale by `1.3e-8`; its
+`chi^(2,1)(sigma_1 sigma_2) = h^2 - 1` is wrong, the convention-D value being
+the constant `-1`; and it plots bare `chi^lambda` while claiming weighted
+`y_lambda · chi^lambda` — which matters because under D `y_alt = 0` and only
+two blocks are live. Its own `h^2 - 1` changes sign at `h = 1`, the golden
+rung, contradicting the sentence quoted. **The citation is withdrawn.** The
+measurements in this probe are unaffected.
 
-> *"This is the proven algebraic structure (PR #1999) — **not** a bifurcation …
-> The per-block characters `y_lambda · chi^lambda(beta)` inherit this
-> smoothness: no sign flips at metallic ratios for any `beta` at `n = 3`."*
+**AND THIS NEGATIVE IS ABOUT ONE FUNCTIONAL, NOT THE LADDER.** The same probe
+shows the metallic structure is real but lives in the **q-Plancherel**
+weighting `W_lambda = d_q^2 / sum d_q^2`, where
 
-So a bifurcation at metallic ratios was tested and refuted for the per-block
-characters at `H_3`. This probe extends that negative to the `H_3` Gram
-signature and to the positive-sector LP at `H_9`, and finds the same thing.
+    T(sigma) / T(gamma) = h/2      identically, at every strand count,
+
+so the cost coincidence sits at `h = 2 = delta_silver` for every `n` —
+generalising the sorry-free Lean `silver_lp_coincidence` (PR #2047) from its
+`n = 2` statement. Everything swept below is **Markov**-weighted (`y_lambda`,
+convention D), whose ratio is `z = q^2/[2]_q` instead and whose coincidence
+sits at the supergolden ratio `q^3 = q^2 + 1`. The negative below is therefore
+evidence about the Markov-weighted LP and **not** evidence that the metallic
+ladder is inert.
+
+The distinction this probe drew in its closing between a "representation-
+theoretic regime (which blocks exist)" and "an optimisation one" is likewise
+withdrawn. The owner's objection is right: `T(sigma) = (h/2) T(gamma)` is a
+single identity that is simultaneously an optimisation fact (two cost
+coefficients coincide) and a representation fact (the transpose-pair character
+sum `chi^lambda + chi^lambda' = dim(lambda) · h`). The dual *is* the
+representation.
 
 SCOPE
 -----
 This tests the observables that a *selection* regime would live in: the cone
-(Gram signature), the objective, and the discrete solution. A regime change
-could still live somewhere not formed here — a different algebra level, a
-different functional. What is established is narrower and worth stating
-plainly: **in the SDP data at `H_3` and the selection at `H_9`, the metallic
-rungs are not distinguished.**
+(Gram signature), the objective, and the discrete solution. What is established
+is narrow and now known to be functional-specific: **in the Markov-weighted SDP
+data at `H_3` and the Markov-weighted selection at `H_9`, the metallic rungs
+are not distinguished.** Under the Plancherel weighting they are.
 
 DISCIPLINE
 ----------
@@ -85,8 +108,11 @@ No fit; no `B_AME`; nothing wired. `h(phi) = 1` and the ladder are exact; the
 sweep is mpmath at 40 dps with everything rebuilt per `q`; the signature and
 growth-rate conclusions are f64 on well-separated quantities.
 
--- Ref: [manuscript] bean t7qv; metallic_q_illustration.py (PR #1999);
-   qc_is_the_convexity_boundary_probe.py; positive_sector_q_stability_probe.py
+-- Ref: [manuscript] bean t7qv
+-- Ref: [probe] metallic_silver_coincidence_weighting_probe.py (supersedes the
+   PR #1999 corroboration and localises this negative to the Markov weighting)
+-- Ref: [probe] qc_is_the_convexity_boundary_probe.py;
+   positive_sector_q_stability_probe.py
 """
 from __future__ import annotations
 
@@ -286,13 +312,19 @@ def main() -> int:
     print("\n### VERDICT: the golden bound is exactly h < 1 — below the first")
     print("    metallic rung — and it secures exactly one result, that K always")
     print("    carries entanglement content, with a 3x margin. The prediction")
-    print("    that the rungs mark SDP regime changes is NOT supported by what")
-    print("    can be measured here: the Gram signature is constant (4,1,1)")
-    print("    across all four rungs, the objective grows smoothly with its one")
-    print("    feature inherited from a plain scalar, and the discrete flickers")
-    print("    fall off the rungs. The corpus's own PR #1999 already recorded")
-    print("    'not a bifurcation' for the per-block characters; this extends")
-    print("    that negative to the cone and to the H_9 selection.")
+    print("    that the rungs mark SDP regime changes is NOT supported by the")
+    print("    MARKOV-WEIGHTED observables measured here: the Gram signature is")
+    print("    constant (4,1,1) across all four rungs, the objective grows")
+    print("    smoothly with its one feature inherited from a plain scalar, and")
+    print("    the discrete flickers fall off the rungs.")
+    print("\n    SUPERSEDED IN PART (2026-08-31). The PR #1999 corroboration")
+    print("    this probe used to claim is WITHDRAWN — that file is pre-")
+    print("    convention-D and wrong under D (see metallic_silver_coincidence")
+    print("    _weighting_probe.py). And the prediction IS supported under the")
+    print("    q-Plancherel weighting, where T(sigma)/T(gamma) = h/2 exactly at")
+    print("    every n, putting the cost coincidence at h = 2 = delta_silver")
+    print("    for every strand count. The negative above is about the Markov")
+    print("    functional, not about the ladder.")
 
     all_ok = all(a[1] for a in assertions)
 
@@ -321,10 +353,15 @@ def main() -> int:
                 "tr_M(free), a plain scalar with no LP in it, peaks at the same "
                 "h = 0.9875, and the objective inherits it via the t = G e_1 "
                 "row-1 bound; and the discrete flickers fall at h = 0.9, 2.9, "
-                "3.3, 3.4, 3.8, 3.9, off the rungs. The corpus's PR #1999 "
-                "already recorded 'not a bifurcation' for per-block characters "
-                "at H_3; this extends that negative to the cone and the H_9 "
-                "selection. No fit; no B_AME; nothing wired.")
+                "3.3, 3.4, 3.8, 3.9, off the rungs. SUPERSEDED IN PART "
+                "(2026-08-31): the PR #1999 corroboration this probe claimed "
+                "is WITHDRAWN (pre-convention-D and wrong under D), and the "
+                "negative is now known to be functional-specific — everything "
+                "swept here is Markov-weighted, whereas under the q-Plancherel "
+                "weighting T(sigma)/T(gamma) = h/2 exactly at every n, putting "
+                "the cost coincidence at h = 2 = delta_silver for every strand "
+                "count. See metallic_silver_coincidence_weighting_probe.py. "
+                "No fit; no B_AME; nothing wired.")
             wb.add_data("h_of_phi", "1")
             wb.add_data("h_of_q0", f"{H_Q0:.12f}")
             wb.add_data("metallic_ladder",
