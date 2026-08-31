@@ -65,3 +65,66 @@
 - Land the `DeficitRecursionReduction` Lean lemma (this branch).
 - The genuinely-open remaining piece stays `qou-v7ro`: formalize the two TL premises in Lean
   (quantum trace + cap-cup + Markov) to discharge the instance. Large, mechanical; not started.
+
+---
+
+## Cross-check on the forward claim: there is a THIRD open piece, and it is a refutation (2026-08-31)
+
+**The `D_A` measurement above is right and is not in question here.** Its conclusion is robust
+under any normalisation one might argue about: `|D_A|` falls five orders of magnitude from `A = 3`
+to `A = 8` (`1.44e-3 → 8.2e-9`, ratio `−0.0893226497` per step), so it runs opposite to the binding
+whether that is read per-nucleon, per-cluster, or per-body-order. Nothing below disputes it.
+
+What needs correcting is the **forward** sentence: *"The magnitude lives in the `qou-brng`
+coordination free energy … whose only open pieces are two named modelling inputs."*
+
+There is a third piece, it is not a modelling input, and it is a **refutation on `main`**.
+
+### The chain
+
+The coordination free energy is `binding = −log I` (`ArchimedeanTraceBridge`), and that is a
+**shape with `I` unspecified** — it constrains nothing until `I` is filled in. The "coordination
+coefficient" result is what fills it: `SelfMutualPartition.complete_minimal_clasp_coordination`
+gives `C(A,2)` coordination units for a fully-bonded `A`-cluster, one per bonded pair, hence
+`z = A−1`.
+
+That filling is **pair-local**, and pair-locality forces the connected 3-body cumulant to vanish:
+
+| result | on `main` | says |
+|---|---|---|
+| `QOU.Mass.CrossingModelPairLocality.b3_eq_zero_of_pairLocal` | `d2ed45489f` | assembly-independent pair weights ⇒ `b₃ = 0` identically |
+| `QOU.Mass.InteractionFactorNotPairwise.pairFactorised_b3_eq_zero` | `d2ed45489f` | and `−log ∏ I_ij` is the same thing multiplicatively |
+| `QOU.Mass.CountChannelCarrierLocus.canonical_carriers_b3_eq_zero` | `773366d004` | the count channel on the Hopf/Borromean carriers is *exactly* that locus |
+
+AME2020 measures `b₃ = +1.4262225 MeV`
+(`QOU.MassTheory.AmeBindingNotPairwise.ame_b3_eq`). The model gives `0`.
+
+**The MeV scale cancels** (`CountChannelCarrierLocus.b3_over_b2_eq`: `b₃/b₂ = μ_t/μ_p − 3`), so this
+is zero-parameter — no choice of `s`, `h`, or `q₀` moves it. And the natural alternative reading, the
+full mutual energy rather than the count channel, gives `−3(q + q⁻¹) < 0` for **every** `q > 0`
+(`fullEnergy_b3_neg`). The two readings bracket the measurement from below: `0` and `−2.7174806`
+against `+0.6411239316`.
+
+### What this changes, and what it does not
+
+It does **not** touch the `D_A` result, the type question (#6125), `binding = −log I`, or
+`brunnian_binding_survives` — the Brunnian mechanism remains the only thing that lets binding exist
+where `lk = 0`, which was the point of the route.
+
+It does mean the magnitude is **not** yet "living in the coordination free energy with two inputs
+left". The free energy is a shape; the one filling the corpus has for `I` lands on `b₃ = 0`. So `I`
+must carry irreducibly many-body structure — which is what a Brunnian carrier was meant to supply,
+and which the *canonical carrier assignment* demonstrably does not
+(`μ_Borromean = 3 = 3 · μ_Hopf`, exactly the degenerate point).
+
+The acceptance test for any replacement is one line
+(`CountChannelCarrierLocus.carrier_must_break_three_to_one`): it must break `μ_t = 3·μ_p`. Note the
+channel is **not** obstructed — small half-integer multiplicities reach the measured ratio to 0.27 %
+— so the burden is on *deriving* the carrier crossing numbers; two free integers against one ratio
+is a fit.
+
+### Timing, for the record
+
+`d2ed45489f` landed 2 h 17 m before `348cf21d8d`, so the first two rows were available and were not
+in scope for that session; `773366d004` landed 7 minutes after it and could not have been. Recorded
+so the gap reads as a coordination miss rather than a disagreement. Beans `qou-w6vh`, `qou-6vu3`.

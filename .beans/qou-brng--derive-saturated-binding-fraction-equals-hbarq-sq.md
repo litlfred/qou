@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T15:52:00Z
+updated_at: 2026-08-31T02:47:52Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -254,3 +254,42 @@ live target, and which `CrossingCountAffine.no_crossing_combination_is_protonPai
 proves the crossing counts cannot supply.
 
 No number moved; nothing wired. Recorded so the corroboration is not lost.
+
+
+---
+**Coordination cross-check 2026-08-31 — the "two named modelling inputs" count is short by one,
+and the third is a refutation.**
+
+`348cf21d8d` (`qou-v7ro×qou-brng`, Milnor deficit) measured `|D_A|` falling geometrically —
+`1.44e-3 → 8.2e-9` over `A = 3…8`, ratio `−h²(h²+2) = −0.0893226497` at every step — against a
+rising binding, and concluded `D_A` is the Milnor order/parity marker, not the magnitude. **That is
+right and is not disputed**; it holds under any normalisation, since a five-order-of-magnitude fall
+runs opposite to the binding read per-nucleon, per-cluster or per-body-order alike.
+
+Its forward sentence is what needs correcting: *"the magnitude lives in the `qou-brng` coordination
+free energy … whose only open pieces are two named modelling inputs"* (Markov-trace-as-amplitude;
+the `m = m_e·Vol·lw/ℏ_q²` dressing).
+
+**There is a third piece and it is not a modelling input.** `binding = −log I` is a *shape* with `I`
+unspecified. The corpus's filling for `I` is the coordination coefficient —
+`complete_minimal_clasp_coordination`, `C(A,2)` units at one per bonded pair, `z = A−1` — and that
+filling is **pair-local**, which forces `b₃ = 0`:
+
+* `CrossingModelPairLocality.b3_eq_zero_of_pairLocal` (`d2ed45489f`);
+* `InteractionFactorNotPairwise.pairFactorised_b3_eq_zero` (same) — the multiplicative face;
+* `CountChannelCarrierLocus.canonical_carriers_b3_eq_zero` (`773366d004`) — the count channel on the
+  Hopf/Borromean carriers sits *exactly* on that locus, `μ_Borromean = 3 = 3·μ_Hopf`.
+
+Measured `b₃ = +1.4262225 MeV`; model `0`. The scale cancels (`b3_over_b2_eq`), so it is
+zero-parameter, and the alternative full-energy reading gives `−3(q+q⁻¹) < 0` for every `q > 0`.
+
+**Timing:** `d2ed45489f` was on `main` 2 h 17 m before `348cf21d8d`; `773366d004` landed 7 minutes
+after. So this is a coordination miss, not a disagreement — recorded in
+`docs/coordination/2026-08-30-milnor-brunnian-deficit-arc.md` at the point the claim was made.
+
+**Net effect on this bean:** the open list is *type question proved, coordination coefficient
+proved, `binding = −log I` proved* — **plus** an unfilled `I` that must carry irreducibly many-body
+structure, with a one-line acceptance test (`carrier_must_break_three_to_one`: any carrier must
+break `μ_t = 3·μ_p`). The channel is not obstructed — small half-integer multiplicities reach the
+measured ratio to 0.27 % — so the burden is on **deriving** the crossing numbers; two free integers
+against one ratio is a fit.
