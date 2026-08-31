@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T04:24:20Z
+updated_at: 2026-08-31T04:45:11Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4593,3 +4593,74 @@ staleness. Re-measure the file you are editing.
 
 *I got that residual count wrong on the first pass — 15/5 against a true 17/8,
 and one of the eight was a file I had written an hour earlier.*
+
+
+---
+
+## Entry 17 (2026-08-31) — 🛑 the D column of this bean's own table is a HYBRID; with the right N=1 factor `c_3` is **−358.8**, not −974.4
+
+**Correcting this bean's headline table.** The "What moves" table at the top
+records `c₃ (proton) → **−974.43**` under D, and "N2/N1 residual ratio 0.89 (no
+convergence)". Both come from
+`qbeta_c3_ladder_trace_convention_sensitivity_probe`, which varies **only `z`**.
+Its line 126 is
+
+    q_n1 = q_a * mp.cos(alpha - b * hbar ** 2 / 2)
+
+for **both** conventions — and that cosine is the **convention-C** N=1 factor.
+So the recorded D column is *convention-D `z` inside a convention-C N=1*: a
+**hybrid**, not the D-frame ladder. The table already warns the number is "what
+the *current extractor* returns when fed `z_D`"; what it does not say is that
+the extractor is C-framed in a **second place besides `z`**.
+
+**Entry 10 already settled what the D N=1 must be.** Under C the phase is
+bar-**odd**, so `cos` is bar-invariant and the rule is vacuous. Under D,
+
+    bar(a_D) + a_D = h²/2        ← re-derived symbolically as a control
+
+so bar is a reflection about `h²/4`, and `QOU.QBeta.N1FactorUniqueness`
+(sorry-free) forces the centre there: **`cos(a_D − h²/4)·cos(h²/4)`**.
+
+### Measured, proton pin, same `Q_A` / same `u` / same structural `c_2 = −1`
+
+| frame | N1 res (ppb) | N2 res (ppb) | rung gain | `c_3` an extractor would return |
+|---|---|---|---|---|
+| **C** | −73 821.8 | −1 278.58 | **57.74×** | −2.0693 |
+| **HYBRID** | −674 570 | −602 070 | 1.120× | **−974.4319** ← the bean's D column |
+| **D** (entry-10 N=1) | −294 226.6 | −221 699.4 | **1.327×** | **−358.8134** |
+
+`computations/qbeta/qbeta_d_frame_n1_ladder_residual_probe.py`, 9/9.
+
+### Three findings
+
+1. **The table's D column is off by 63.2 %.** `−974.43` and `−358.81` are not
+   the same measurement and must not be quoted for each other. *(Neither is a
+   proposed value — both are what a machine returns, labelled as such.)*
+2. **The entry-10 centring genuinely helps and still is not enough.** N1
+   residual `674 570 → 294 227` ppb, rung gain `1.120 → 1.327`. Nowhere near
+   the C-frame's `57.74×`.
+3. **"Re-derive, do not re-evaluate" is now confirmed from the N=1 side too.**
+   That was previously shown only for `z` (via
+   `decayLadder_zC_threeRow_ne_zero`). Both places the ladder is C-framed have
+   now been varied independently, and neither substitution works. The D ladder
+   is not reachable by substitution in *either* slot.
+
+### What is NOT affected
+
+Entry 9's threshold `|c_4| ≤ target/u⁴ = 1.4816` is **unchanged** — `u =
+b·ℏ_q²` carries no Markov parameter and no phase. Only the "can one derived
+rung close the gap" reading was ever frame-dependent, exactly as entry 9 scoped
+it. Under C that reading is favourable (57.7× gain, order-unity `c_3`); under D
+it is not, at either N=1 factor.
+
+### Scope
+
+Scope (a). No `c_k` proposed, adopted, extracted into a cache or wired;
+`qbeta_ck_cache`'s convention-D refusal is untouched and is not called. Target
+read from the L2 dashboard row, refusing rather than falling back to a literal.
+
+*Self-inflicted bug recorded: the first version called `w.build()`, which
+returns the dict **without writing**, then printed a success line
+unconditionally — announcing a witness that did not exist while the run looked
+clean. Now calls `w.save()` and raises unless the file is on disk. A print is
+not evidence.*
