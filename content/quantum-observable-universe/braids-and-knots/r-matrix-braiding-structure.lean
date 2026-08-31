@@ -24,12 +24,12 @@ numerical evaluation.
 
 The md's two load-bearing statements are (i) the Yang–Baxter equation
 `R₁₂ R₁₃ R₂₃ = R₂₃ R₁₃ R₁₂` and (ii) that `Ř = P ∘ R` furnishes a braid-
-group representation.  These are stated below as theorems
-(`r_matrix_braiding_structure`, `braid_rep_from_R_check`) on an abstract
-`RMatrixBraidingContext`, mirroring the build-graph copy under
-`QOU/Braiding/r_matrix_braiding_structure.lean`.  The earlier version of
-this stub recorded only an `RMatrixBraidingData` carrier with a malformed
-`hecke_relation` field and **no** proposition stating either claim.
+group representation.  Both are **named** below — `YangBaxterHolds`,
+`BraidRelationHolds`, and their conjunction `r_matrix_braiding_structure` —
+as propositions over caller-supplied data.  Neither is asserted here: the
+`.md` attributes both to standard `R`-matrix theory for the universal
+`R`-matrix of `U_q(𝔰𝔲(2))`, an object this development never constructs.
+See the section note below for what this replaced and why.
 -/
 
 namespace QOU.Braiding
@@ -40,76 +40,71 @@ def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 end
 
-/-- Abstract context for the universal `R`-matrix, its Yang–Baxter
-    equation, and the braid relation satisfied by `Ř = P ∘ R`. -/
+/-! ### The two load-bearing claims, NAMED rather than asserted
+
+**Changed 2026-08-31.**  This section used to hold `RMatrixBraidingContext` — a
+class carrying the Yang–Baxter equation and the braid relation as its own fields
+— together with `r_matrix_braiding_structure` and `braid_rep_from_R_check`,
+each of which handed the corresponding field straight back.
+
+The old docstrings were candid about the shape (*"Assumed, not derived here.
+The body projects `RMatrixBraidingContext.claim_yang_baxter`"*) and even
+identified the risk: *"`comp`, `R12`, `R13`, `R23` are arbitrary context data,
+and YBE is false for a general assignment"*.  What was missed is that the data
+were **fields of the class**, not parameters, so the instance chose them — and a
+commutative model discharges both claims outright.  Measured: `V3 := ℕ`,
+`comp := (· * ·)`, `R12 := 2`, `R13 := 3`, `R23 := 5` satisfies
+`claim_yang_baxter` by `ring`, and the braid relation forces `Ř₁ = Ř₂` in any
+commutative model.  So a `[RMatrixBraidingContext]` binder assumed nothing and
+both declarations stated nothing (bean `qou-z9ws`).
+
+The replacement names each claim as a **proposition over caller-supplied data**
+and asserts neither.  That is AGENTS.md §1a disposition 3 — the honest form for
+a statement this development does not prove.  And it is not a loss: the `.md`
+attributes both to standard `R`-matrix theory (*"The underlying `R`-matrix
+theory is standard"*), for the universal `R`-matrix of `U_q(𝔰𝔲(2))` — an object
+this development never constructs.  Drinfeld and Kassel are cited for where the
+facts are established; naming them here as propositions records exactly that,
+without a Lean declaration claiming to have proved them.
+
+A caller who has a genuine `R`-matrix takes `YangBaxterHolds …` as an ordinary
+hypothesis. -/
+
+/-- **Yang–Baxter equation** `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`, as a
+proposition about a caller-supplied triple of `R`-matrix actions. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
-class RMatrixBraidingContext where
-  /-- The three-fold tensor product space `V ⊗ V ⊗ V`. -/
-  V3 : Type
-  /-- Composition of operators on `V3`. -/
-  comp : V3 → V3 → V3
-  /-- The three `R`-matrix actions on the three pairs of strands. -/
-  R12 : V3
-  R13 : V3
-  R23 : V3
-  /-- The braid operators `Ř₁ = (P∘R)₁`, `Ř₂ = (P∘R)₂` on adjacent strands. -/
-  Rcheck1 : V3
-  Rcheck2 : V3
-  /-- Universal Yang–Baxter equation:
-      `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
-  claim_yang_baxter :
-    comp (comp R12 R13) R23 = comp (comp R23 R13) R12
-  /-- Braid relation for `Ř = P ∘ R`:
-      `Ř₁ Ř₂ Ř₁ = Ř₂ Ř₁ Ř₂` — equivalent to the YBE and exhibiting the
-      braid-group representation. -/
-  claim_braid_relation :
-    comp (comp Rcheck1 Rcheck2) Rcheck1 = comp (comp Rcheck2 Rcheck1) Rcheck2
+def YangBaxterHolds {V3 : Type} (comp : V3 → V3 → V3) (R12 R13 R23 : V3) : Prop :=
+  comp (comp R12 R13) R23 = comp (comp R23 R13) R12
 
-/-- **Yang–Baxter equation for the universal `R`-matrix**
-    ([`prop:r-matrix-braiding-structure`]).
+/-- **Braid relation** `Ř₁ Ř₂ Ř₁ = Ř₂ Ř₁ Ř₂` for `Ř = P ∘ R`, as a proposition
+about caller-supplied braid operators.  This is what makes `σ_i ↦ Ř_i` extend to
+a braid-group representation. -/
+-- Ref: [kassel1995] Ch. XIII (Braided categories)
+def BraidRelationHolds {V3 : Type} (comp : V3 → V3 → V3) (Rcheck1 Rcheck2 : V3) :
+    Prop :=
+  comp (comp Rcheck1 Rcheck2) Rcheck1 = comp (comp Rcheck2 Rcheck1) Rcheck2
 
-    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`.
+/-- **The claim of `prop:r-matrix-braiding-structure`**: for the universal
+`R`-matrix of `U_q(𝔰𝔲(2))` and its braid operator `Ř = P ∘ R`, the Yang–Baxter
+equation and the braid relation both hold.
 
-    **Assumed, not derived here.** The body projects
-    `RMatrixBraidingContext.claim_yang_baxter`, so this declaration
-    *restates* the hypothesis rather than proving it. The citations below
-    record where the property is established for the object the abstract
-    context models — Drinfeld's universal `R`-matrix of a quantised
-    enveloping algebra — not a proof carried out in this development, which
-    never constructs that `R`-matrix. Note the statement is genuinely
-    conditional: `comp`, `R12`, `R13`, `R23` are arbitrary context data, and
-    YBE is false for a general assignment, so this may not be strengthened
-    to a global `axiom` over the context. -/
+Stated here as a named proposition over an arbitrary system, **not asserted**.
+Establishing it for Drinfeld's `R`-matrix is standard and cited; constructing
+that `R`-matrix is not done in this development, so no declaration here claims
+it. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
-def r_matrix_braiding_structure
-    [ctx : RMatrixBraidingContext] :
-    ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
-      = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 :=
-  ctx.claim_yang_baxter
+def r_matrix_braiding_structure {V3 : Type} (comp : V3 → V3 → V3)
+    (R12 R13 R23 Rcheck1 Rcheck2 : V3) : Prop :=
+  YangBaxterHolds comp R12 R13 R23 ∧ BraidRelationHolds comp Rcheck1 Rcheck2
 
-/-- **Braid-group representation from `Ř = P ∘ R`**
-    ([`prop:r-matrix-braiding-structure`]).
-
-    The braid operators satisfy the braid relation
-    `Ř₁ Ř₂ Ř₁ = Ř₂ Ř₁ Ř₂`, so `σ_i ↦ Ř_i` extends to a representation of
-    the braid group on any tensor power of a finite-dimensional
-    `U_q(𝔰𝔲(2))`-module.
-
-    **Assumed, not derived here** — the body projects
-    `RMatrixBraidingContext.claim_braid_relation`. Kassel is cited for where
-    the braid relation is established for `Ř = P ∘ R` built from a genuine
-    universal `R`-matrix; it is not a proof performed here. As with
-    `r_matrix_braiding_structure`, `Rcheck1`/`Rcheck2` are arbitrary context
-    data, so the statement is genuinely conditional. -/
+/-- Alias for the braid-relation half, kept because the manuscript refers to the
+braid-group representation separately from the Yang–Baxter equation. -/
 -- Ref: [kassel1995] Ch. XIII (Braided categories)
--- Ref: [manuscript] Ch. 4, §enveloping-algebras
-def braid_rep_from_R_check
-    [ctx : RMatrixBraidingContext] :
-    ctx.comp (ctx.comp ctx.Rcheck1 ctx.Rcheck2) ctx.Rcheck1
-      = ctx.comp (ctx.comp ctx.Rcheck2 ctx.Rcheck1) ctx.Rcheck2 :=
-  ctx.claim_braid_relation
+def braid_rep_from_R_check {V3 : Type} (comp : V3 → V3 → V3)
+    (Rcheck1 Rcheck2 : V3) : Prop :=
+  BraidRelationHolds comp Rcheck1 Rcheck2
 
 /-- The R-matrix eigenvalue data on the fundamental of `SU_q(2)`:
     `q` on the symmetric channel and `-q⁻¹` on the antisymmetric channel,

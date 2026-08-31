@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "88b6b0dfc47c",
     "ts": "c9c4ec59f6d3",
-    "lean": "f1a2189a1b4f",
-    "lean_statement": "f72e6c81ce83"
+    "lean": "84a639de6bd1",
+    "lean_statement": "31b86f380aef"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1293,6 +1293,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "88b6b0dfc47c",
+          "ts": "c9c4ec59f6d3",
+          "lean": "84a639de6bd1",
+          "lean_statement": "31b86f380aef"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "notes": "Lean and .md now DIVERGE deliberately, and the divergence is downward. The .md asserts the Yang-Baxter equation and the braid-group representation as facts of standard R-matrix theory for the universal R-matrix of U_q(su(2)). The Lean does not construct that R-matrix and does not prove either claim: it NAMES them as propositions over caller-supplied data (YangBaxterHolds, BraidRelationHolds, and their conjunction r_matrix_braiding_structure). Recorded as warn, not pass, because the Lean does not derive the .md claim. It was recorded pass while the previous encoding carried V3, comp, R12, R13, R23, Rcheck1, Rcheck2 as CLASS FIELDS -- so the instance chose them, and V3 := N, comp := (*), R12 := 2, R13 := 3, R23 := 5 discharges YBE by ring. That pass adjudicated nothing. A warn over an honest naming is a better record than a pass over a vacuous assertion (AGENTS.md 1a disposition 3; bean qou-z9ws).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-08-31"
+        },
+        "reviewed_at": "2026-08-31T10:59:49.787681Z",
+        "reviewed_sha": "3f45f73d4101063ecee2464c04ceece7e056b934"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2442,6 +2461,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-31T10:59:49.787681Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
