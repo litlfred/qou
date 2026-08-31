@@ -1,11 +1,11 @@
 ---
 # qou-hqs5
 title: durationMs is not a runtime in ~904 witnesses — WitnessBuilder built after the work with no start_time
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T20:22:29Z
-updated_at: 2026-08-31T02:42:32Z
+updated_at: 2026-08-31T02:46:11Z
 ---
 
 
