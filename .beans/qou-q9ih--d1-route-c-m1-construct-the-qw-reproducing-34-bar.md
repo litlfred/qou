@@ -153,3 +153,65 @@ anticipated (D1-a), near-trivial (D1-e), or a multi-session assembly (D1-c). O4 
 this periphery has no physics payoff. Not pursuing further absent an explicit pure-math
 directive. (Coordination: my gap-3 commit touched LadderPhaseMirrorCovariance.lean, which
 feeds D1-a/e — phaseTwice_eq_counit_sub_trace added there, no overlap with M1 construction.)
+
+── 2026-08-31: D1-f item (3) is DONE — the third-knot test was never blocked ──
+
+Owner directive to work this programme (the explicit pure-math directive the
+2026-08-22 assessment named as its own gate — that gate is now satisfied).
+
+`computations/qbeta/dt_third_knot_trefoil_count_probe.py`, **7/7**.
+
+**The blocker was true of 6₁ only.** The certified probe's docstring and witness
+both record the third-knot test as needing "the ptolemy DB or magma". But
+D1-f names **"a 6_1 (or 3_1) DT spectrum"** as the target, and
+`3_1__sl2_c0` / `3_1__sl2_c1` are bundled in the very directory the certified
+probe already reads. No DB, no Magma, no network.
+
+    knot   c1 orbits / degrees / field          irred + abelian = TOTAL
+    3_1      1 / [1] / Q                          1      1        2     NEW
+    4_1      1 / [2] / x^2 - x + 1                2      1        3     control
+    5_2      1 / [3] / x^3 + 2*x^2 + 3*x + 1      3      1        4     control
+
+Both controls reproduce the committed certified witness exactly, so the method
+is the corpus's own, not a new one.
+
+**It corroborates and discriminates NOTHING, and that must be said.** All three
+candidate readings predict 2 for the trefoil: `crossing − 1` (3−1), `deg(trace
+field) + 1` (1+1, the field is ℚ), and the corpus's R1 `full A-polynomial
+L-degree` (2). Reporting "the third-knot test passed" without this sentence
+would be exactly the over-read the `#4534 two-knot-linear-fit guard` warns of.
+
+**What it does buy.** The datum moves from TWO points to THREE: totals (2,3,4)
+at crossings (3,4,5), irreducibles (1,2,3) equal to the trace-field degrees.
+`AdjointIndexSetM3.knot_independent_core_forces_unit_remainder` fits two points
+by construction; a third collinear point is **one genuine spare constraint, and
+it passed**. Weak evidence — and more than none. It also changes the M1
+construction target: the DT counts to reproduce are now a 3-element family with
+a linear pattern, not the 2-element pair (4,3) the bean is written around.
+
+**What would discriminate, both blocked and neither guessed at.**
+`crossing − 2` and `trace-field degree` agree on all three and must diverge
+somewhere. Separating them needs (a) trace-field degrees for further knots —
+`M.trace_field_gens()` raises `SageNotAvailable` (SnapPy outside Sage here), or
+(b) ptolemy data for a fourth **knot** — not bundled; 6₁ = m032 has no fixture.
+
+**Inspected and EXCLUDED so it is not taken for a fourth point.**
+`DT_mcbbiceaibjklmdfgh__sl2_c0..c7` is also bundled and tempting, but it is
+**L13a5175** — a 3-component LINK, 3 cusps. Its abelian count is not 1 and its
+26 irreducible points (c4 degree 15, c5 degree 11) are not comparable. The other
+bundled fixtures (m019, m135, s000, t00000, v0000) are census manifolds that
+`identify()` returns only themselves for — not knot complements.
+
+**Scope caveat, stated because it is easy to miss:** 3₁ is a TORUS knot, volume
+0, not hyperbolic. The ptolemy variety and A-polynomial are defined regardless
+so the count and the R1 reading are meaningful, but the geometric-component
+reasoning motivating the hyperbolic cases does not apply, and its single orbit
+is rational rather than a genuine trace field. Scope-(a), nothing wired, no fit.
+
+**Two of my own errors this session, recorded because both were near-misses.**
+(1) I read a truncated `tail -30` of a 35-entry listing, concluded `3_1` was
+absent, and "corrected" a correct earlier claim into a wrong one — the sorted
+list puts `3_1__*` first, exactly where the truncation cut. (2) A bare
+`except: pass` around `find_field` turned `SageNotAvailable` into a printed
+`None`, i.e. a tool refusal reported as a measured absence. Same shape as the
+detector-blindness class this corpus catalogues.
