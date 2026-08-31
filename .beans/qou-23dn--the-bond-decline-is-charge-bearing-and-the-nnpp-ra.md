@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T04:36:07Z
-updated_at: 2026-08-31T04:36:33Z
+updated_at: 2026-08-31T10:26:30Z
 ---
 
 ## Measured 2026-08-31 — `computations/probes/bond_marginal_and_neutron_chain_probe.py` (6/6)
@@ -59,3 +59,46 @@ measured. `B_nn` has no committed twin so its absolute value is unanchored --
 only the pp leg is validated (reproduces `B_pp_strong_MeV` exactly at A=2).
 Three points; no asymptotic law claimed and no extrapolation to the A=39 end of
 the mirror series. Whether the nn marginal changes SIGN is not determined.
+
+
+## RETRACTION 2026-08-31 — "pp saturates" is WRONG, and Lean proves why
+
+`QOU.MassTheory.MarginalRatioExtensivity` (7 declarations, lean-direct exit 0,
+0 sorry, 0 axiom beyond propext/Classical.choice/Quot.sound).
+
+I wrote, in a merged PR body and in a probe, that a ratio sequence rising
+monotonically toward 1 from below is *"the signature of a marginal bond
+converging to a NONZERO limit — saturation rather than collapse."*
+
+**That is false.** `ratio_rising_to_one_insufficient` exhibits the
+counterexample: `r_k = (k+1)/(k+2)` is strictly increasing, lies strictly in
+`(0,1)`, has `1 - r_k = 1/(k+2) -> 0`, and its partial products are **exactly
+`1/(n+1)`** — which go to zero. Rising-to-1 is NECESSARY, not SUFFICIENT.
+
+### And the corpus already had the answer
+
+`docs/audits/2026-06-02-binding-intensive-vs-extensive-derivation.md`:
+*"`B = E_0*Delta tr_M` is an **intensive** observable: `|tr_M|` is a bounded
+trace, and its free-atom difference saturates"*. My `B_tot = E0*(S_off - S_on)`
+IS that difference. `card_large_marginals_le` turns a bounded total into "at
+most `M/eps` marginals can reach `eps`", so a nonzero limit is excluded
+outright.
+
+**Corrected picture: BOTH species collapse, at wildly different rates** — not
+"pp saturates, nn collapses". pp merely collapses so slowly that four points
+cannot see it, which is exactly what a `1 - r ~ c/k` tail looks like.
+
+A corpus-grep on the *claim shape* ("is the total bounded?") rather than on the
+topic would have caught this before the PR body went out.
+
+### What survives
+
+The **nn** half is now STRONGER, not weaker: a scope-(b) exclusion with a named
+invariant. `prod_le_pow_of_le` — ratios uniformly `<= c` force partial products
+`<= c^n`. The measured nn ratios are all `<= 0.387`, so the collapse is
+geometric and unconditional.
+
+### The measured gap sums
+
+    pp   sum (1 - r_k) over measured terms = 0.3002   (tail unbounded -> OPEN)
+    nn   sum (1 - r_k) over measured terms = 1.9318   (already > 1)

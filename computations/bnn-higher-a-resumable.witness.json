@@ -1,0 +1,55 @@
+{
+  "schema": "witness/v1",
+  "name": "bnn-higher-a-resumable",
+  "description": "B_pp(A) for the pure-proton chain through A=5 by the column-sparse Schur-Weyl route with per-partition checkpointing, reporting the marginal bond as well as the average.",
+  "beans": [
+    "qou-gcmn",
+    "qou-23dn",
+    "qou-brng"
+  ],
+  "scope": "(a) measurement; nothing fitted, nothing wired, no asymptote extrapolated",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "committed_B_pp_A2": "2.12836094575708",
+    "by_A": {
+      "2": {
+        "bonds": 1,
+        "B_total_MeV": "2.435584783746245594432895",
+        "B_avg_per_bond_MeV": "2.435584783746245594432895",
+        "B_marginal_MeV": "2.435584783746245594432895"
+      },
+      "3": {
+        "bonds": 2,
+        "B_total_MeV": "3.376754267491760844672683",
+        "B_avg_per_bond_MeV": "1.688377133745880422336341",
+        "B_marginal_MeV": "0.9411694837455152502397877"
+      },
+      "4": {
+        "bonds": 3,
+        "B_total_MeV": "3.722495003950136568863714",
+        "B_avg_per_bond_MeV": "1.240831667983378856287905",
+        "B_marginal_MeV": "0.3457407364583757241910312"
+      },
+      "5": {
+        "bonds": 4,
+        "B_total_MeV": "3.831211142834122185303359",
+        "B_avg_per_bond_MeV": "0.9578027857085305463258398",
+        "B_marginal_MeV": "0.1087161388839856164396454"
+      }
+    },
+    "successive_marginal_ratios": [
+      "0.3864244390202973751456912",
+      "0.3673522595340131873978111",
+      "0.3144441120755063957792621"
+    ],
+    "species": "nn",
+    "marginal_ratio_rising_below_one": false,
+    "marginal_ratio_falling": true,
+    "asymptote_extrapolated": false,
+    "gap_sum_measured": "1.931779189370183041677236",
+    "gap_sum_note": "sum (1 - r_k) over the MEASURED terms only. prod r_k > 0 iff the FULL sum converges; a finite prefix cannot decide it. See QOU.MassTheory.MarginalRatio.ratio_rising_to_one_insufficient for why rising-to-1 is not sufficient."
+  },
+  "checks_total": 1
+}
