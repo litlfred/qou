@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 41 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 42 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 15 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 16 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **41** (26 machine + 15 hand) |
-| still undecided — INCONCLUSIVE, see method below | 38 |
+| **INHABITED with no hypotheses** | **42** (26 machine + 16 hand) |
+| still undecided — INCONCLUSIVE, see method below | 37 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -294,6 +294,12 @@ class field in **three** independent places (`HasFiniteLPDuality`,
 noticing on its own: it is the same missing Mathlib result standing in three
 different places, and the `ProperCone` finding above says the ingredients for it
 are already available.
+
+**The `extends` family is now closed: all five.** Three shared parents were
+inhabited to do it — `MarkovTraceContext`, `OperatorSelectionLPContext` and
+`ArchimedeanEval` (the last being the first plus `Rat.castHom ℝ`, giving
+`q_real = 1`). The prober skipped all five on the single syntactic ground that
+they `extends` something; none of them was hard.
 
 The credit is theirs and the finding is the same one twice over, one layer
 apart: a hypothesis that reads as "this is the Hecke algebra with its Markov

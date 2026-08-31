@@ -55,6 +55,8 @@ import QOU.BraidsAndKnots.qmn_recursive_memoized
 import QOU.BraidsAndKnots.wedderburn_bratteli_recursion
 import QOU.Shared.OperatorSelectionLP
 import QOU.BraidsAndKnots.demazure_fiber_markov_trace
+import QOU.Shared.ArchimedeanEval
+import QOU.Information.toffoli_transfer_matrix
 
 /-! ## Inhabited with no hypotheses
 
@@ -379,3 +381,44 @@ noncomputable example : QOU.BraidsAndKnots.DemazureFiberMarkovTraceContext :=
     f_lambda := fun _ => 1
     n_partitions := 1
     claim_iii_plancherel_completeness := by simp }
+
+/-! ### A third parent: `ArchimedeanEval`, and the last of the `extends` family
+
+`ArchimedeanEval` is `MarkovTraceContext` plus a ring hom `R →+* ℝ`.  Over the
+degenerate context (`R = ℚ`, `q = 1`) that is `Rat.castHom ℝ`, so `q_real = 1`
+by `rfl`. -/
+
+noncomputable instance degenerateArchimedeanEval : QOU.Shared.ArchimedeanEval :=
+  { degenerateMarkovTraceContext with eval := Rat.castHom ℝ }
+
+theorem degenerateArchimedeanEval_q_real :
+    QOU.Shared.ArchimedeanEval.q_real degenerateArchimedeanEval = 1 := by
+  -- `rfl` alone suffices in a file importing only this instance, but not here:
+  -- with the other degenerate contexts in scope the projection does not reduce
+  -- definitionally.  Unfolding first is robust either way.
+  unfold QOU.Shared.ArchimedeanEval.q_real
+  exact map_one (Rat.castHom ℝ)
+
+/-- The Toffoli transfer matrix.  Two of its claims mention the archimedean
+`q_real`, and at `q_real = 1` both are satisfied by zero amplitudes: the
+classical-limit claim `q_real = 1 → P_flip k = 0` becomes `rfl`, and the
+diagonal formula `P₇₇ = (q + √q − 1)/(q + 1)` evaluates to `1/2`.
+
+Worth noting what this shows and does not.  The block's own source already
+records (bean `qou-3j5m`) that its sub-claim (i) was REMOVED because the three
+target-flip amplitudes it asserted equal are measurably different.  This witness
+is about the class that remains: even after that correction, nothing in it ties
+`P_flip` to the transfer matrix, so the surviving claims hold of the zero
+amplitude. -/
+noncomputable example : QOU.Information.ToffoliTransferMatrixContext :=
+  { degenerateArchimedeanEval with
+    P_flip := fun _ => 0
+    c := fun _ => 0
+    z_real := 0
+    V_hat_1 := fun _ => 0
+    d := fun _ => 0
+    claim_ii_generator_crossing_traced := by intro k; norm_num
+    claim_v_classical_limit := by intro k _; rfl
+    P_7_7 := 1/2
+    claim_vi_diagonal_formula := by
+      rw [degenerateArchimedeanEval_q_real, Real.sqrt_one]; norm_num }
