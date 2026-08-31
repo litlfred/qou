@@ -126,3 +126,112 @@ honest terminus and **independently corroborates the geometric redirect above**:
 
 Net: the Askey/Whipple algebraic direction for the binding weight is **exhausted**;
 t7qv's geometric M_n(K) frontier (Milnor linking + per-bond a_D) is the live route.
+
+---
+
+## 2026-08-31 — magnitude gate RESTATED, and `M_n(K)` corrected
+
+Probes: `computations/probes/alpha_residual_gb_jet_bodyorder_probe.py` (bean
+`qou-o1dh`) and `computations/probes/mixed_cluster_count_probe.py` (4 assertions
+each). Audit: `docs/audits/2026-08-31-alpha-residual-gb-jet-bodyorder.md`.
+
+### 1. The gate's target is misstated by ~4×
+
+This bean's magnitude gate is aimed at the "**irreducible 4-body α-unit
+(~16–21 MeV ⁴He residual)**". That figure is a **pairwise-chain residual** — what
+the `(A−1)`-bond sum fails to reach — which lumps together every body order ≥ 3
+*and* credits `pp`/`nn` bonds at ~2.4–2.5 MeV each.
+
+**Nature binds neither.** The deuteron is the only bound two-nucleon system
+(`³S₁`, 2.2246 MeV); `pp` and `nn` sit in the `¹S₀` channel by Pauli and are
+unbound virtual states (`a_pp ≈ −17.3 fm`, `a_nn ≈ −18.7 fm`, vs
+`a_np(¹S₀) ≈ −23.7 fm`).
+
+With `b₂(pn) = 2.2246`, `b₂(pp) = b₂(nn) = 0`, the Ursell–Mayer expansion of ⁴He
+from AME2020 alone is
+
+| order | MeV | share |
+|---|---|---|
+| 2-body | 8.8983 | 31.45 % |
+| **3-body** | **14.6032** | **51.61 %** |
+| 4-body — the genuine α unit | **4.7942** | 16.94 % |
+
+**Three-body dominates four-body by 3.05×.** So the gate should target
+**≈ 4.8 MeV**, and most of what it has been chasing is a *three-body* object.
+That matches standard nuclear physics — chiral-EFT 3N forces are essential at
+`A = 3,4`, genuine 4N forces are small.
+
+### 2. `M_n(K)` must count MIXED clusters only
+
+The 2026-07-11 frontier update takes `M_n` from the max-contact packing, with
+`A ≤ 4` simplex `= C(A,n)`. That over-counts: a cluster binds only if it has at
+least one proton **and** at least one neutron, since `pp`, `nn`, `ppp` and `nnn`
+are all unbound. So
+
+    M_n(Z,N) = C(A,n) − C(Z,n) − C(N,n)          (= Z·N at n = 2)
+
+Unfitted — forced by `(Z,N)` and by which channels bind. At `A ≤ 4` the simplex
+is complete, so there is **no arrangement freedom** and nothing is chosen.
+
+With the single deuteron anchor `E = B(D)`, `B(K) = E·Σ M_n·a_D^{(n)}`:
+
+| | `M_n` mixed | `C(A,n)` err | **mixed err** |
+|---|---|---|---|
+| ³H | `[2, 1]` | +13.75 % | **−12.48 %** |
+| ³He | `[2, 1]` | +25.00 % | **−3.82 %** |
+| ⁴He | `[4, 4, 1]` | +9.13 % | **−6.59 %** |
+| worst | | 25.00 % | **12.48 %** |
+
+**The worst error halves.** And the sign structure flips coherently: `C(A,n)`
+over-counts uniformly, mixed-only under-counts uniformly. An over-count that
+becomes an under-count on removing *exactly* the unbound channels is what a real
+correction looks like — the three-isotope sign agreement carries more than the
+magnitude.
+
+For scale in this same lane: the pairwise chain gives ⁴He at −76 %, the jet tower
+at unit weight −91 %.
+
+### 3. It does NOT rescue `A ≥ 5` — Part 5's refutation stands
+
+At ⁶Li: `C(A,n)` gives **+772.9 %**, mixed-only **+712.6 %**. Removing the
+pure-flavour clusters takes out ~8 % of the excess and nothing more. **The
+flavour correction is necessary and not sufficient**, and the `A ≥ 5` fix is
+Part 13's geometric saturation — flavour does not touch it. Part 5 and Part 13
+are one open item seen from two sides.
+
+### 4. ⚠ The geometric route is NOT yet fit-free
+
+Taking the contact graph seriously, `M_n` = number of `n`-cliques. Six
+close-packed spheres in an octahedral arrangement give `K_{2,2,2}`: 12 edges, 8
+triangles, **0 four-cliques** — the cap kills every `n ≥ 4` term outright, which
+is Part 13 made concrete. That collapses the divergence.
+
+But the 3p3n **arrangement** on those six sites is a free choice:
+
+| `M_2`, `M_3` | B (MeV) | err | labelings |
+|---|---|---|---|
+| 6, 6 | 31.193 | **−2.50 %** | 8 of 20 |
+| 8, 8 | 41.590 | +29.99 % | 12 of 20 |
+
+against `B(⁶Li) = 31.994`. **A 32.5-point spread, and the favourable member is
+the *minority* labeling.** Nothing derives the arrangement, so `−2.50 %` is a
+member-pick — the failure mode this corpus has withdrawn three times this
+session. Recorded because the number is attractive enough to be dangerous:
+**anyone carrying it forward must derive the arrangement first.**
+
+### What this does and does not close
+
+- **Advances** the open `θ_λ w_n(K) derive-or-refute` item: one factor of `M_n`
+  is now derived rather than assumed, and the `A ≤ 4` error halves.
+- **Does not close** it: the `A ≥ 5` behaviour is untouched, and the geometric
+  arrangement is undetermined.
+- **Restates** the magnitude gate's target from ~21 MeV to ≈ 4.8 MeV, and
+  reassigns the bulk to three-body — which changes what `Gap #2` (3-body /
+  whole-A link-volume) is for. That gap is no longer a side item; on this
+  accounting it is where the majority of the binding lives.
+
+### Also worth flagging
+
+`derive_binding_chain_cooperative`'s `pp`/`nn` per-bond constants (2.38/2.49/2.53
+signed, 2.91/3.89/5.18 log) have no empirical counterpart. That is a modelling
+choice and deserves a note wherever those constants are quoted.

@@ -1,0 +1,170 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T17:16:50.463615+00:00",
+  "commitSha": "32a6d03e276560911e13b1b8b4022578640100de",
+  "assertions": [
+    {
+      "name": "mixed_only_cluster_count_halves_the_worst_error_at_A_le_4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "worst |error| over T, 3He, 4He with a single deuteron anchor: C(A,n) gives 25.0049%, mixed-only gives 12.4787%. The mixed count M_n = C(A,n) - C(Z,n) - C(N,n) is forced by (Z,N) and by which two- and three-body channels nature binds (pp, nn, ppp, nnn all unbound); at A <= 4 the simplex is complete so there is no arrangement freedom and nothing is fitted."
+    },
+    {
+      "name": "mixed_only_does_not_rescue_the_A_ge_5_divergence",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "at 6Li the C(A,n) tower gives 772.95% and the mixed-only tower 712.64% — removing the pure-flavour clusters takes out only ~8% of the excess. Part 5's refutation of the full tower stands; the A >= 5 fix is geometric (Part 13 saturation), not flavour."
+    },
+    {
+      "name": "octahedral_contact_graph_has_no_four_cliques",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "K_{2,2,2} (six close-packed spheres, octahedral): 12 edges, 8 triangles, 0 4-cliques. At most four spheres can be mutually in contact in 3D and an octahedron achieves none, so the geometric cap kills every n >= 4 term outright. This is Part 13's 'A >= 5 saturates below', made concrete."
+    },
+    {
+      "name": "the_octahedral_arrangement_choice_is_worth_over_thirty_points",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "the two distinct 3p3n labelings of K_{2,2,2} give -2.5038% (8/20 labelings) and 29.995% (12/20 labelings), a spread of 32.499 points. The good one is the MINORITY (8/20). Nothing derives the arrangement, so quoting its error would be member-picking."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "mixed-cluster-count-probe",
+  "scriptFile": "mixed_cluster_count_probe.py",
+  "scriptHash": "0ef050595279",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mixed_cluster_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mixed_cluster_count_probe.py"
+  },
+  "description": "t7qv's cluster count M_n(K) must count only clusters containing at least one proton and one neutron, since pp/nn/ppp/nnn are unbound. At A <= 4, where the simplex is complete and there is no arrangement freedom, this halves the worst error (25.0% -> 12.5%) on a single deuteron anchor. It does NOT rescue A >= 5, where Part 5's refutation stands and the fix is geometric -- and that geometric route still carries a 32.5-point arrangement freedom.",
+  "parameters": {
+    "E_anchor_MeV": "2.22456637",
+    "a_D": {
+      "2": "1.0",
+      "3": "1.337",
+      "4": "2.5328",
+      "5": "5.3761",
+      "6": "13.5598"
+    }
+  },
+  "data": {
+    "formula": "B(K) = E · Σ_{n=2}^{A} M_n(Z,N) · a_D^(n), M_n = C(A,n) − C(Z,n) − C(N,n), E = B(D) = 2.2246 MeV",
+    "light_isotopes_A_le_4": [
+      {
+        "isotope": "T",
+        "Z": 1,
+        "N": 2,
+        "M_n_all": [
+          3,
+          1
+        ],
+        "M_n_mixed": [
+          2,
+          1
+        ],
+        "B_all_MeV": "9.6479443",
+        "B_mixed_MeV": "7.423378",
+        "B_AME_MeV": "8.4817966",
+        "err_all_percent": "13.749",
+        "err_mixed_percent": "-12.479"
+      },
+      {
+        "isotope": "3He",
+        "Z": 2,
+        "N": 1,
+        "M_n_all": [
+          3,
+          1
+        ],
+        "M_n_mixed": [
+          2,
+          1
+        ],
+        "B_all_MeV": "9.6479443",
+        "B_mixed_MeV": "7.423378",
+        "B_AME_MeV": "7.71805",
+        "err_all_percent": "25.005",
+        "err_mixed_percent": "-3.818"
+      },
+      {
+        "isotope": "4He",
+        "Z": 2,
+        "N": 2,
+        "M_n_all": [
+          6,
+          4,
+          1
+        ],
+        "M_n_mixed": [
+          4,
+          4,
+          1
+        ],
+        "B_all_MeV": "30.878761",
+        "B_mixed_MeV": "26.429628",
+        "B_AME_MeV": "28.29566",
+        "err_all_percent": "9.129",
+        "err_mixed_percent": "-6.5948"
+      }
+    ],
+    "worst_error_percent": {
+      "C(A,n)": "25.0049",
+      "mixed_only": "12.4787"
+    },
+    "sign_structure": "C(A,n) over-counts uniformly (+13.75, +25.00, +9.13); mixed-only under-counts uniformly (−12.48, −3.82, −6.60). An over-count that becomes an under-count on removing exactly the unbound channels is what a real correction looks like; the sign agreement across three isotopes carries more than the magnitude.",
+    "A_ge_5": {
+      "6Li_C(A,n)_percent": "772.95",
+      "6Li_mixed_percent": "712.64",
+      "reading": "flavour removes ~8% of the excess and nothing more. Part 5's refutation stands; the fix is geometric."
+    },
+    "octahedral_contact_graph": {
+      "graph": "K_{2,2,2} — 12 edges, 8 triangles, 0 four-cliques",
+      "why_it_matters": "n-clique counting caps the tower at n = 3 for six close-packed spheres, which is Part 13's saturation made concrete.",
+      "arrangements": [
+        {
+          "M_2": 6,
+          "M_3": 6,
+          "B_MeV": "31.19287",
+          "err_percent": "-2.5038",
+          "labelings_of_20": 8
+        },
+        {
+          "M_2": 8,
+          "M_3": 8,
+          "B_MeV": "41.590493",
+          "err_percent": "29.995",
+          "labelings_of_20": 12
+        }
+      ],
+      "spread_points": "32.499",
+      "warning": "the attractive number here is produced by CHOOSING the arrangement, and the good one is the minority labeling. Nothing derives it. Do not carry it forward without one."
+    },
+    "for_t7qv": [
+      "M_n should be the MIXED count C(A,n) − C(Z,n) − C(N,n), not C(A,n). Unfitted, and it halves the A <= 4 worst error from 25.0% to 12.5%.",
+      "The A >= 5 gate is geometric only — flavour does not touch it. Part 5's refutation and Part 13's saturation are one open item seen from two sides.",
+      "The geometric route needs the ARRANGEMENT derived before any number from it is quotable; it currently carries 32.5 points of freedom at 6Li."
+    ],
+    "verdict": "The cluster count M_n(K) in t7qv's geometric weight must count only mixed clusters — at least one proton and one neutron — because pp, nn, ppp and nnn are all unbound. M_n = C(A,n) − C(Z,n) − C(N,n), which is Z·N at n = 2. On a single deuteron anchor this halves the worst A <= 4 error, 25.0% -> 12.5%, with 4He at −6.60%, and flips a uniform over-count into a uniform under-count. It does not rescue A >= 5, where the divergence is geometric; and the geometric route still carries a 32.5-point arrangement freedom at 6Li whose favourable member is the minority labeling."
+  }
+}
