@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-11T18:45:00Z
-updated_at: 2026-08-31T06:40:52Z
+updated_at: 2026-08-31T07:45:39Z
 ---
 
 ## What
@@ -155,3 +155,78 @@ number under it.
 So the remaining work on this bean is **only the class edit** — adding a threshold k₀ to
 `TowerGeometricLowerBound`, which `not_towerGeometricLowerBound_wStd` shows is necessary and
 which is the author's call. The combinatorial side is done.
+
+
+## 2026-08-31 — blast radius of the class edit, MEASURED, and both migration routes verified compiling
+
+Asked by the author: what are the downstream implications of adopting the threshold assumption.
+Measured rather than estimated; both routes were patched into scratch copies, compiled, and the
+scratch deleted (repo tree clean).
+
+### Reframe: it REMOVES an assumption
+
+Today the class has no instance anywhere AND is false at the real w_std
+(`not_towerGeometricLowerBound_wStd`). So every downstream result is conditional on a proposition
+that cannot be satisfied. Thresholding turns the conjecture into a theorem.
+
+### Blast radius
+
+| surface | count | note |
+|---|---|---|
+| Lean declarations BINDING the class | **4** | all in `LevelSelectionLogarithmic.lean` |
+| Lean files merely mentioning it | 2 | `CubeMomentLowerBound`, `SWPeriodSuperExponential` — **0 binders**, prose only |
+| Lean consumers of its 4 theorems outside that file | **0** | so 2 signature changes are free |
+| content blocks | 2 | `conj:tower-geometric-lower-bound`, `prop:level-selection-not-linear` |
+| further uses[]/sidecar edges | 2 | `unified-curvature-rank-mass-formula-table-data`, generated `definition-index.md` |
+| QA criteria on the two blocks | 63 + 74 | hash-keyed; touched ones go stale on any .md/.ts edit |
+| beans / docs | 5 | `wsxl`, `qou-x66y`, `qou-mcgt`, 2026-07-11 audit, 2026-07-13 coordination ledger |
+
+### Route A — threshold the class (k₀ parameter). VERIFIED, compiled clean first try.
+
+* `level_geometric_bound`, `linear_selection_bound` — gain an explicit `k₀ ≤ …` hypothesis.
+  Signature change, but ZERO consumers, so free.
+* `no_linear_selection`, `no_superlinear_selection` — **statements unchanged**; each needs one
+  widened `eventually_atTop` witness and one threaded hypothesis, ~6 lines.
+* Then verified inhabited: `TowerGeometricLowerBound wStd (√2) (1/30) 3` discharged by
+  `wStd_geometric_from_three`, and `no_linear_selection` fires **at the real wStd, no abstract w**.
+
+### Route B — shift the index instead. VERIFIED, ZERO edits to the class or its 4 theorems.
+
+`w'(k) := wStd (k+3)` satisfies the **unmodified** ∀-k class at `r = √2`, `c = (√2)³/30`.
+Compiles, and the exclusion fires on the real object.
+**Trap:** the level index then differs from the physical one by 3, so `no_superlinear_selection`'s
+`kA` and the paper's `k(A)` silently disagree. That is the off-by-a-constant class this corpus's
+own history says gets quoted wrong months later.
+
+### Paper-facing consequences (the part that matters)
+
+1. **`conj:tower-geometric-lower-bound`'s .md is FALSE as written**, not merely open — it states the
+   bound *'for every jet level k'*. Once restated with the threshold it is **proved**, so the block
+   stops being a `conjecture` and becomes a `proposition`: a §3b block-kind change with uses[]
+   propagation effects.
+2. **`prop:level-selection-not-linear` drops its §3b-cond conditional banner.** Sidecar criteria
+   `proof-conditional-class-banner`, `proof-no-conj-propagation-violation`, `uses-formal-coverage`,
+   `lean-ref-owns-decl` all need re-sweeping.
+3. **One paragraph in that .md is wrong in its DIAGNOSIS, and it is the paragraph that should have
+   caught this.** It reads: *'The A = 0 case is a boundary artifact — the tower bound forces
+   w(0) ≥ c > 0 while M·0 = 0.'* The tower bound does not force that; w_std(0) = 0, so the
+   antecedent is false there. Same observation, opposite reading — filed as a nuisance of the
+   conclusion rather than as evidence against the hypothesis.
+4. The conjecture's authorNotes claim *'a faithful proof needs SYT / skew-tableau /
+   Plancherel-measure Mathlib infrastructure'* — third instance of the mis-diagnosis class.
+
+### What it does NOT buy (honest limits)
+
+* **The witness is weak**: r = √2 ≈ 1.414 against measured ratios 1.38 → 2.88. The class is
+  parameterised by (r, c), so a sharper instance can land later without touching anything.
+* **The super-exponential claim is not proved — only its geometric shadow.** `wStd_sq_lower`
+  genuinely carries super-exponential content (w_std ≥ √(k!)/(9·2^{k/2})), but it is not stated in
+  'for every r there is a c' form. Honest gap, cheap follow-up.
+* Route A adds a permanent small ergonomic cost: two theorems gain a hypothesis.
+
+### Recommendation (judgement, not a finding)
+
+**Route A.** Route B is cheaper in Lean and worse everywhere else — it buys tidiness by hiding a
+constant offset in the index, and the defect being fixed here is precisely a statement that was
+tidy and wrong. Route C (do nothing) is safe, but leaves a paper block asserting a false
+proposition. Awaiting the author.
