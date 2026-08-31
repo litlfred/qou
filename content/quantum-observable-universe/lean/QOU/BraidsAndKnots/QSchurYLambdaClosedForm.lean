@@ -90,7 +90,13 @@ confirms this numerically against `pn.trace_weights_n_q_schur(2, q)`.
 --   see bean qou-2joi.
 -/
 
-namespace QOU.BraidsAndKnots
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.BraidsAndKnots.YLambdaQSchur
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.BraidsAndKnots.QSchurYLambdaClosedForm
 
 /-- Row contribution to content sum for a row of length `row` starting at
     row-index `i`: `Σ_{j=0}^{row-1} (j - i)`.
@@ -370,4 +376,4 @@ theorem qSchur_H3_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
     (mul_ne_zero (q_add_inv_ne_zero hq) (q_sq_add_one_add_inv_sq_ne_zero q))]
   ring
 
-end QOU.BraidsAndKnots
+end QOU.BraidsAndKnots.QSchurYLambdaClosedForm

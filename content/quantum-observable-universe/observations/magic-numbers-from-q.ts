@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:magic-numbers-from-q",
+export default conjecture({
+  label: "conj:magic-numbers-from-q",
   title:
     "Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers",
   tags: [

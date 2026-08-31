@@ -11,7 +11,7 @@
         "nu_canonical": 1,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 7,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
@@ -28,7 +28,7 @@
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 25,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": []
       },
       "3He": {
@@ -36,7 +36,7 @@
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 25,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": []
       }
     },
@@ -46,7 +46,7 @@
         "nu_canonical": 1,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 7,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
@@ -63,7 +63,7 @@
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 25,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
@@ -83,7 +83,7 @@
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
         "blocks_indistinguishable_from_zero": 25,
-        "zero_tolerance": 1e-30,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
@@ -114,10 +114,10 @@
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
   "scriptFile": "he_nu_sdp_saturation_obstruction.py",
-  "scriptHash": "b65498e9fd93",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
-  "computedAt": "2026-08-30T11:41:32.399825+00:00",
+  "scriptHash": "e15ff60dc628",
+  "scriptCommitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "commitSha": "dbc0c4d42932bbb7ab854c9531e1002fae0dc1e1",
+  "computedAt": "2026-08-30T14:14:18.144250+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

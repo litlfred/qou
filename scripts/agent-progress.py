@@ -29,7 +29,12 @@ def latest_block(path: str):
                     obj = json.loads(line)
                 except Exception:
                     continue
-                for chunk in (obj.get("message", {}).get("content") or []):
+                if not isinstance(obj, dict):
+                    continue
+                msg = obj.get("message")
+                if not isinstance(msg, dict):
+                    continue
+                for chunk in (msg.get("content") or []):
                     if isinstance(chunk, dict) and chunk.get("type") == "text":
                         text = chunk.get("text", "")
                         if "⟦PROGRESS⟧" in text or "⟦DONE⟧" in text:
@@ -45,12 +50,36 @@ def latest_block(path: str):
     return last, is_done
 
 
+def read_map(tasks: str) -> dict:
+    """Map agentId -> label from a `dispatch-map.txt` beside the tasks dir.
+
+    Without this the extractor reports EVERY `*.output` in the session tasks
+    dir, including hundreds left by earlier dispatches, which buries the live
+    agents and makes the heartbeat table unreadable.
+    """
+    labels = {}
+    path = os.path.join(os.path.dirname(tasks.rstrip("/")), "dispatch-map.txt")
+    try:
+        with open(path) as fh:
+            for line in fh:
+                if "=" in line:
+                    aid, label = line.split("=", 1)
+                    labels[aid.strip()] = label.strip()
+    except FileNotFoundError:
+        pass
+    return labels
+
+
 def main() -> int:
     if len(sys.argv) != 2:
         print(__doc__)
         return 2
     tasks = sys.argv[1]
-    outputs = sorted(glob.glob(os.path.join(tasks, "*.output")))
+    labels = read_map(tasks)
+    if labels:
+        outputs = [os.path.join(tasks, aid + ".output") for aid in labels]
+    else:
+        outputs = sorted(glob.glob(os.path.join(tasks, "*.output")))
     if not outputs:
         print(f"(no agent output files in {tasks})")
         return 0
@@ -58,7 +87,7 @@ def main() -> int:
         aid = os.path.basename(path)[:-len(".output")]
         block, done = latest_block(path)
         tag = "[DONE]" if done else "[live]"
-        print(f"===== {aid[:12]} {tag} =====")
+        print(f"===== {labels.get(aid, aid[:12])} {tag} =====")
         if block:
             print(block.strip()[:900])
         else:

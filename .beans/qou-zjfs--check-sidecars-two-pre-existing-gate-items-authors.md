@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-29T20:04:43Z
+updated_at: 2026-08-30T15:41:20Z
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on
@@ -157,3 +157,103 @@ is real; what was wrong was calling it the cause of the 325.
 3614 blocks · **330** top-level stale · **23** criterion-level stale · **307** false positives.
 Was 3612 / 376 / 51 / 325. Real backlog 51 -> 23; false-positive rate **86 % -> 93 %** — the finding
 is stronger. See [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md) §4.
+
+
+---
+
+## 2026-08-30 — a THIRD mechanism, and it is in the 51, not the 325
+
+Found while running `check-sidecars.sh` as the pre-commit preflight on the 5₂-bridge
+inequality branch, which regenerates `authors-note.md` via the sanctioned
+`scripts/refresh-authors-note.ts`.
+
+**This bean's own correction applies to me first: I rediscovered its "documented refresh
+does not work" claim and was about to file it as new.** The false-positive analysis above
+is right and I am not disputing it. What follows is a case it does **not** cover.
+
+**Measured.** `content/quantum-observable-universe/introduction/` holds three blocks —
+`intro`, `chapter-overview`, `authors-note`, all three listed in `introduction.ts`'s
+`sections[].blocks[]`. A full dry-run enumerates **one**:
+
+    bun run folio-assistant/content/pipeline/qa-sweep.ts \
+        content/quantum-observable-universe/introduction --dry-run
+    → criteria: 96, blocks: 1
+
+96 criteria, so this is **not** a criterion-applicability filter — it is enumeration.
+Repeated with `--only wall-side-correct`: `blocks: 1`, and the only sidecar written is
+`intro.qa.json`. `authors-note.qa.json` is never touched, on any invocation.
+
+**And this one is genuinely stale, by this bean's own test.** After the refresh:
+
+    per-criterion field_hash.md   5966b92b5b16   ← the live, correct field
+    live sha256(authors-note.md)  99791415bc65   ← mismatched
+
+So it is in the **51 genuinely-unswept**, not the 325 false positives — and no documented
+invocation can reach it. The block-stem form that `check-sidecars.sh` prints
+(`… qa-sweep.ts <dir>/authors-note`) reports `blocks: 0`, **exits 0**, and writes nothing;
+the directory form skips the block. Both read as success.
+
+**Do NOT "fix" it by deleting the criterion entry**, which is what AGENTS.md
+§"Refresh stale sidecars" prescribes. I tried that. The sweep cannot repopulate what it
+does not enumerate, so the entry simply vanishes and the block goes from stale-verdict to
+no-verdict — strictly worse. Restored from HEAD; the sidecar on that branch is committed
+unchanged and stale, with the reason stated in the PR rather than papered over.
+
+**Why it recurs rather than sitting still:** `authors-note.md` is *generated*. Every
+Lean-coverage drift regenerates it, and `check-sidecars.sh` then tells the next agent to
+run a command that cannot help. `qou-ece6` and `qou-rz8m` are the coverage-drift side of
+the same loop.
+
+**Open:** why the enumerator stops at one block in this chapter. Not established here —
+candidates are the `prose()` builder emitting no label (`authors-note.ts` is a bare
+`export default prose()`), and the chapter manifest walk. `intro` is *also* `prose`, which
+weakens the first candidate; do not assume it before measuring.
+
+
+---
+
+## 2026-08-30 (later) — the DIRECTORY form works, and its blast radius is 57 sidecars
+
+Measured on `content/quantum-observable-universe/observations/` while fixing one block
+(#6280). Completes the picture from the entry above, which established that neither
+documented invocation refreshes `authors-note`.
+
+For **`building-block-knots`**, a block the enumerator *does* reach:
+
+- The **block-stem** form that `check-sidecars.sh` prints —
+  `qa-sweep.ts …/observations/building-block-knots` — is the same silent no-op recorded
+  above: `blocks: 0`, exit 0, nothing written.
+- The **directory** form does refresh it correctly (the `lean` and `lean_statement` hashes
+  and `reviewed_sha` all update) — **and swept 56 other blocks in the same pass**, marking
+  dozens `needs-agent` on the `da-*` criteria. 57 sidecars modified for a one-file change.
+
+So the two documented invocations are, respectively, a **silent no-op** and a **blunt
+instrument**, and there is no documented way to refresh exactly one block. I reverted the 56
+and committed only the one — but an agent following `check-sidecars.sh`'s printed command
+gets nothing, and an agent reaching for the directory form under the AGENTS.md "≤ 10 sidecars
+per idle pass" cap blows through it 5.7× in a single invocation without noticing.
+
+**Practical guidance until this is fixed:** run the directory form, then revert everything
+except the block you meant to touch (`git checkout -- <dir>` after copying your file and its
+sidecar aside). Ugly, but it is the only route that both refreshes and stays in scope.
+
+Note this does **not** contradict the `authors-note` finding above: that block is not
+enumerated at all, so neither form reaches it. Two distinct failures — unreachable blocks,
+and no single-block granularity for the reachable ones.
+
+
+**Correction to the figure one entry up: the blast radius is not 57, it is criteria-dependent.**
+Same directory, same block, two invocations minutes apart:
+
+    --only da-false-claim,da-overclaim,wall-side-correct,one-voice-audit   ->  57 blocks
+    --only wall-side-correct                                              -> 258 blocks
+
+So the narrower criteria set swept FEWER blocks, which is the opposite of the obvious
+guess and means the enumeration is not simply "every block in the directory". Quoting a
+single number for the blast radius is wrong; quote the invocation with it. Either way the
+conclusion stands and gets stronger — both are far past the AGENTS.md ≤ 10 sidecars/idle-pass
+cap (5.7× and 25.8×), and neither is a way to refresh one block.
+
+I recorded 57 as though it were the directory's size. It is not: `observations/` holds
+enough blocks for the 258 figure, so the 57-run was the one being selective, by a rule I
+have not identified.

@@ -79,7 +79,8 @@ def _ensure_y_lambda(n: int) -> None:
 PN_SPLIT_NOTE = (
     "isobars are degenerate by construction: the (sign, gen) wire format "
     "drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) "
-    "and qou-gdtb (representation)."
+    "and qou-fv0s (representation; retargeted from the COMPLETED qou-gdtb, "
+    "which closed the pair form, not the sign wire)."
 )
 
 
@@ -208,7 +209,10 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
         # tritium ≡ ³He identically at every q. Do NOT read a p–n asymmetry
         # (or an E₀ = Q_β/|Δtr_M|) out of this family. Deriving the sign from
         # `d` would restore σ vs σ⁻¹ but has nowhere to put an averaged
-        # crossing — the open representation question, bean qou-gdtb.
+        # crossing — the open representation question, bean qou-fv0s
+        # (NOT qou-gdtb, which is completed: it closed the pair form
+        # `(gen_idx, ctype)`, whose `d` round-trips exactly. The sign
+        # wire is a different encoding and is the one still lossy).
         "pn_split_carried": False,
         "pn_split_note": PN_SPLIT_NOTE,
         "q_0_50dps": str(q),

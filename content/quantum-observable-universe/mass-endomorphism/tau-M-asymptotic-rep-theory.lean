@@ -33,7 +33,7 @@ LaTeX label: `prop:tau-M-asymptotic-rep-theory`
 namespace QOU.BraidKnot
 
 /-- Quantum Planck constant `ℏ_q = (q - 1) / q`. -/
-noncomputable def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-! ## Anchor 1: Kashiwara crystal-graph operator
 

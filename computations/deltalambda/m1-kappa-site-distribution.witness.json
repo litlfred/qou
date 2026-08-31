@@ -1,0 +1,151 @@
+{
+ "probe": "m1_kappa_site_distribution",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "ns": [
+  12,
+  16,
+  20,
+  24,
+  28,
+  32,
+  36,
+  40,
+  44,
+  48
+ ],
+ "rows": [
+  {
+   "n": "12",
+   "kappa_sum": "1",
+   "E_dens": "15667/212306",
+   "kappa_dot_delta": "15667/212306",
+   "kappa_mean_pos": "1547123/636918",
+   "vkls_ceiling": "0.382621009827",
+   "pos_scaled": "0.701214191246",
+   "ratio": "0.192865595199"
+  },
+  {
+   "n": "16",
+   "kappa_sum": "1",
+   "E_dens": "904988409/8711628916",
+   "kappa_dot_delta": "904988409/8711628916",
+   "kappa_mean_pos": "164345465857/56625587954",
+   "vkls_ceiling": "0.377872116494",
+   "pos_scaled": "0.725579511821",
+   "ratio": "0.274915231897"
+  },
+  {
+   "n": "20",
+   "kappa_sum": "1",
+   "E_dens": "27146371832827/251286649017470",
+   "kappa_dot_delta": "27146371832827/251286649017470",
+   "kappa_mean_pos": "3018386786612751/854374606659398",
+   "vkls_ceiling": "0.36637115514",
+   "pos_scaled": "0.78997175064",
+   "ratio": "0.29486356008"
+  },
+  {
+   "n": "24",
+   "kappa_sum": "1",
+   "E_dens": "425364087147560943/3200200492630628242",
+   "kappa_dot_delta": "425364087147560943/3200200492630628242",
+   "kappa_mean_pos": "520236480545829032715/131208220197855757922",
+   "vkls_ceiling": "0.362938949973",
+   "pos_scaled": "0.809345837858",
+   "ratio": "0.366226742567"
+  },
+  {
+   "n": "28",
+   "kappa_sum": "1",
+   "E_dens": "2598263439451953798775493/16864509466317272858861388",
+   "kappa_dot_delta": "2598263439451953798775493/16864509466317272858861388",
+   "kappa_mean_pos": "299224344468353506884418853/70268789442988636911922450",
+   "vkls_ceiling": "0.36359882974",
+   "pos_scaled": "0.80473971848",
+   "ratio": "0.42372783307"
+  },
+  {
+   "n": "32",
+   "kappa_sum": "1",
+   "E_dens": "365352362283115557789105631/2293708583794238860177637040",
+   "kappa_dot_delta": "365352362283115557789105631/2293708583794238860177637040",
+   "kappa_mean_pos": "199076751797101505569860275568/42959250350646265318743660395",
+   "vkls_ceiling": "0.360871198769",
+   "pos_scaled": "0.819197960994",
+   "ratio": "0.441388951051"
+  },
+  {
+   "n": "36",
+   "kappa_sum": "1",
+   "E_dens": "161426121992990510175774129830632025785/995954446828228871272596867007300089666",
+   "kappa_dot_delta": "161426121992990510175774129830632025785/995954446828228871272596867007300089666",
+   "kappa_mean_pos": "5040929831171185583452729161729113802365/995954446828228871272596867007300089666",
+   "vkls_ceiling": "0.35640583638",
+   "pos_scaled": "0.843567669724",
+   "ratio": "0.454767616354"
+  },
+  {
+   "n": "40",
+   "kappa_sum": "1",
+   "E_dens": "1814422906932172548566051121148723283079561/10591630679387306493983096324759927766039122",
+   "kappa_dot_delta": "1814422906932172548566051121148723283079561/10591630679387306493983096324759927766039122",
+   "kappa_mean_pos": "48814708627340585594495126309725802017705837169/9013477708158597826379614972370698528899292822",
+   "vkls_ceiling": "0.354178896923",
+   "pos_scaled": "0.856304678272",
+   "ratio": "0.483674298293"
+  },
+  {
+   "n": "44",
+   "kappa_sum": "1",
+   "E_dens": "41603916346051225363541004800835871305060775165/227117449014956141418069167408996420501620452036",
+   "kappa_dot_delta": "41603916346051225363541004800835871305060775165/227117449014956141418069167408996420501620452036",
+   "kappa_mean_pos": "343175869476252147245554098662780382722399073656465/60526800162485811687915433114497546063681850467594",
+   "vkls_ceiling": "0.354400089734",
+   "pos_scaled": "0.854757046091",
+   "ratio": "0.516880192452"
+  },
+  {
+   "n": "48",
+   "kappa_sum": "1",
+   "E_dens": "29688077175570280922898476180221346264803236101889619169/155793455065227555672323281290554820808740201707724473550",
+   "kappa_dot_delta": "29688077175570280922898476180221346264803236101889619169/155793455065227555672323281290554820808740201707724473550",
+   "kappa_mean_pos": "2763668540897434691308412714353436244072021080222721687587/467380365195682667016969843871664462426220605123173420650",
+   "vkls_ceiling": "0.354510272453",
+   "pos_scaled": "0.853482995253",
+   "ratio": "0.537531645939"
+  }
+ ],
+ "checks": [
+  {
+   "name": "CONTROL: sum_t kappa(t) = 1 exactly (the `kappa_sum` theorem)",
+   "pass": true,
+   "detail": "exact Fraction equality at every n in [12, 16, 20, 24, 28, 32, 36, 40, 44, 48]. Each edge spreads exactly its own weight over the g sites it covers, so kappa normalises to a probability distribution ON SITES. Formalised sorry-free as QOU.BraidKnot.M1EdgeCalculus.kappa_sum."
+  },
+  {
+   "name": "CONTROL: E_omega[density] = sum_t kappa(t) delta(t) exactly",
+   "pass": true,
+   "detail": "exact Fraction equality at every n. The two sides are accumulated independently -- one per edge from (D(u)-D(v))/g, one per SITE from the drop indicator -- so agreement is a real check on the exchange of sums. Formalised as QOU.BraidKnot.M1EdgeCalculus.weighted_density_eq_kappa_dot."
+  },
+  {
+   "name": "kappa moves AWAY from the origin, then PLATEAUS -- it does not head for 0",
+   "pass": true,
+   "detail": "kappa-mean site position in units of sqrt(n): ['0.7012', '0.7256', '0.79', '0.8093', '0.8047', '0.8192', '0.8436', '0.8563', '0.8548', '0.8535'] over n = 12..48. It rises and then settles: the last three are ['0.8563', '0.85476', '0.85348'], flat to ~0.1% and NOT still rising. The claim actually checked is only last > first, which is the weak claim the data supports. This is what bears on the route: infl -> pi/2 requires kappa to concentrate AT the origin, where the VKLS local drop density attains its maximum 1/2."
+  },
+  {
+   "name": "CORRECTION (mine): 'infl < pi/2' is NOT independent headroom",
+   "pass": true,
+   "detail": "E_omega[D(0)/lambda_1] -> 1/pi, so asymptotically infl < pi/2 is the SAME statement as E_omega[density] < 1/2 -- the pointwise limit-shape bound that ..._edge_ratio_decomposition.py already showed to be exactly critical. I reported infl = 0.494 against pi/2 = 1.5708 as comfortable headroom. It is the constraint restated, not headroom, and that report was wrong."
+  },
+  {
+   "name": "MEASURED: the VKLS ceiling at kappa's actual position is ~0.35, not 0.5",
+   "pass": true,
+   "detail": "local density rho at the measured kappa position: ['0.38262', '0.37787', '0.36637', '0.36294', '0.3636', '0.36087', '0.35641', '0.35418', '0.3544', '0.35451'] -- it falls while kappa moves out and then SETTLES, last three ['0.35418', '0.3544', '0.35451']. Taking it at face value puts infl near pi*0.3545 ~ 1.11, well under pi/2 = 1.5708. EVIDENCE, NOT PROOF: the actual/ceiling ratio is ['0.1929', '0.2749', '0.2949', '0.3662', '0.4237', '0.4414', '0.4548', '0.4837', '0.5169', '0.5375'] -- 0.5375 at n = 48 and still climbing. The CEILING now looks settled; where E[density] lands under it is NOT pinned by this range."
+  }
+ ],
+ "passed": 5,
+ "total": 5,
+ "ms": 416988
+}

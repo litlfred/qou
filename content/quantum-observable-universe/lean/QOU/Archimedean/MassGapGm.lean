@@ -22,19 +22,19 @@ torsion avoidance, which is equivalent to positivity of the mass gap.
 ℤ[q, q⁻¹]  =  coordinate ring of 𝔾_m
     │
     ├─ HA = q − q⁻¹           (Hecke amplitude, vanishes at q = ±1)
-    ├─ hbar_q = 1 − q⁻¹       (Planck constant, vanishes at q = 1)
+    ├─ hbarQ = 1 − q⁻¹       (Planck constant, vanishes at q = 1)
     ├─ two_E_cross = HA        (doubled crossing energy)
     │
-    ├─ Δ_q = HA · hbar_q²     (doubled mass gap bound, in ℤ[q, q⁻¹])
+    ├─ Δ_q = HA · hbarQ²     (doubled mass gap bound, in ℤ[q, q⁻¹])
     │       = (q − q⁻¹)(1 − q⁻¹)²
     │
     └─ GS NF → 6×6 transfer matrix → eigenvalues ∈ ℤ[q, q⁻¹]
          └─ spectral gap ≥ Δ_q  (away from torsion)
 ```
 
-The obstruction to the mass gap is the vanishing locus of `HA · hbar_q²`:
+The obstruction to the mass gap is the vanishing locus of `HA · hbarQ²`:
 - `HA = 0`  ⟺  `q = ±1`  ⟺  `q ∈ 𝔾_m[2]`  (2-torsion)
-- `hbar_q = 0`  ⟺  `q = 1`  ⟺  `q ∈ 𝔾_m[1]`  (identity)
+- `hbarQ = 0`  ⟺  `q = 1`  ⟺  `q ∈ 𝔾_m[1]`  (identity)
 
 Combined: the mass gap vanishes iff `q ∈ {1, −1} = 𝔾_m[2]`.
 For `q > 1` (the physical range), the gap is strictly positive.
@@ -53,22 +53,22 @@ namespace QOU.Archimedean
 
 /-- The **doubled mass gap bound** as an element of `ℤ[q, q⁻¹]`.
 
-    `2Δ_q = HA · hbar_q² = (q − q⁻¹)(1 − q⁻¹)²`
+    `2Δ_q = HA · hbarQ² = (q − q⁻¹)(1 − q⁻¹)²`
 
     This is a regular function on 𝔾_m.  The factor of 2 keeps us
     in ℤ[q, q⁻¹] (avoiding the ½ in E_cross).
 
     Over ℝ at `q₀ > 1`:
     `2Δ(q₀) = (q₀ − q₀⁻¹)(1 − q₀⁻¹)² > 0` -/
-noncomputable def two_massGapBound : R_q := HA * hbar_q * hbar_q
+noncomputable def two_massGapBound : R_q := HA * hbarQ * hbarQ
 
-/-- The mass gap factors as `HA · hbar_q²`. -/
-theorem two_massGapBound_eq : two_massGapBound = HA * hbar_q * hbar_q := rfl
+/-- The mass gap factors as `HA · hbarQ²`. -/
+theorem two_massGapBound_eq : two_massGapBound = HA * hbarQ * hbarQ := rfl
 
 /-- Expanded form: `2Δ_q = (q − q⁻¹)(1 − q⁻¹)²`. -/
 theorem two_massGapBound_expanded :
     two_massGapBound = (q - q_inv) * (1 - q_inv) * (1 - q_inv) := by
-  unfold two_massGapBound HA hbar_q
+  unfold two_massGapBound HA hbarQ
   ring
 
 /-! ## §2  Real evaluation and torsion obstruction

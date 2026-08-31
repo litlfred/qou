@@ -1,0 +1,137 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T14:56:55.558053+00:00",
+  "commitSha": "393475e315fffb4e91bced3b69ef3ad055769866",
+  "assertions": [
+    {
+      "name": "every_cumulant_under_one_significant_digit",
+      "computed": "0.865269228997001954773098037841",
+      "expected": "0.865",
+      "passed": true,
+      "tolerance": "0.01",
+      "unit": "significant digits (the best)",
+      "source": "27 mirror-convention combinations, A=3/5/7; A=4 and A=6 are N=Z self-conjugate. Best is b6 at 0.865 digits"
+    },
+    {
+      "name": "scoring_quantity_carries_essentially_no_digits",
+      "computed": "0.0301645717580989895617195050079",
+      "expected": "0.0302",
+      "passed": true,
+      "tolerance": "0.002",
+      "unit": "significant digits",
+      "source": "b4/b3 spans 4.267..10.314 over the 27 combinations"
+    },
+    {
+      "name": "sign_pattern_is_convention_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "distinct sign patterns",
+      "source": "all 27 give (+,+,-,+,-); no interval straddles zero"
+    },
+    {
+      "name": "sign_pattern_is_generic_not_informative",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "of 5 arbitrary peaked functions with no nuclear input",
+      "source": "2 of 5 reproduce it; the 3 misses are systematic -- linear and triangle have a linear rise so b4 is EXACTLY 0, the gaussian is concave so b4 < 0. The pattern's whole content is that w is CONVEX on the rise: a sign condition, not a magnitude"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "binding-magnitude-is-not-validatable",
+  "scriptFile": "binding_magnitude_is_not_validatable_probe.py",
+  "scriptHash": "40f438ddca07",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_magnitude_is_not_validatable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_magnitude_is_not_validatable_probe.py"
+  },
+  "description": "The missing super-pairwise binding magnitude cannot be VALIDATED from AME light nuclei at any order: over all 27 mirror-convention combinations every cumulant b3..b7 is determined to under one significant digit (best b6, 0.865), and b4/b3 -- the quantity this arc scores candidates against -- to 0.030 digits (93.3% band, a factor of 2.4). The one convention-invariant feature, the (+,+,-,+,-) sign pattern, is mostly generic -- 2 of 5 arbitrary peaked functions reproduce it -- and its whole discriminating content is that w is CONVEX on the rise to the peak, a sign condition not a magnitude. Scope-(a) and about the DATA, not the framework: it refutes no mechanism, and says AME light-nucleus binding is the wrong observable to test one against.",
+  "data": {
+    "tower_convention_bands": {
+      "b3": {
+        "central": "1.42622016",
+        "min": "1.04434272",
+        "max": "1.8080976",
+        "band_fraction": "0.535509805162198801060279501308",
+        "digits": "0.271232572845473899063765906406"
+      },
+      "b4": {
+        "central": "9.24338456",
+        "min": "7.7158748",
+        "max": "10.77089432",
+        "band_fraction": "0.330508754684983051273158324595",
+        "digits": "0.480817032211556207827586487918"
+      },
+      "b5": {
+        "central": "-55.7791239",
+        "min": "-60.2128983",
+        "max": "-51.3453495",
+        "band_fraction": "0.158976121889214541786662949003",
+        "digits": "0.798668101531793515826664559653"
+      },
+      "b6": {
+        "central": "166.125066",
+        "min": "154.7975172",
+        "max": "177.4526148",
+        "band_fraction": "0.136373746271378456517814114819",
+        "digits": "0.865269228997001954773098037841"
+      },
+      "b7": {
+        "central": "-373.2429547",
+        "min": "-400.345785",
+        "max": "-346.1401244",
+        "band_fraction": "0.145228891576985471763547798321",
+        "digits": "0.837946977270280593440400707822"
+      }
+    },
+    "b4_over_b3": {
+      "central": "6.481036251794393370515811528",
+      "min": "4.26739950321265843171297832595",
+      "max": "10.3135628886272123388766476966",
+      "band_fraction": "0.932900719964428996969438397581",
+      "digits": "0.0301645717580989895617195050079"
+    },
+    "b7_over_b6": {
+      "central": "2.24675880459845836870878955738",
+      "band_fraction": "0.0495431735456023715063319848958",
+      "digits": "1.30501617762100488704848472999",
+      "note": "nothing in the corpus has looked at this"
+    },
+    "why_the_misses_miss": {
+      "lorentzian_peak_z3": "1.19999999999999973354647408996",
+      "linear_peak_z3": "-2.84867032372793962424197268087e-65",
+      "asym_exponential": "1.81943153856127335374984698567",
+      "gaussian_peak_z3": "-0.466356217131924931881597450059",
+      "triangle_peak_z3": "0.0"
+    },
+    "sign_pattern_genericity": {
+      "lorentzian_peak_z3": "True",
+      "linear_peak_z3": "False",
+      "asym_exponential": "True",
+      "gaussian_peak_z3": "False",
+      "triangle_peak_z3": "False"
+    }
+  }
+}

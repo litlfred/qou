@@ -109,6 +109,14 @@ first reported as an environment effect; that was wrong — re-run with
 byte-identically. Check the `environment` block, but this corpus has not yet
 produced a confirmed environment case.
 
+## TRAP — `fmt()` is not the universal answer (see `draining-raw-float64.md`)
+
+Right for a **computed** value, **wrong for a READ one**: `fmt(mpf("2.2245662"))` prints
+a 9-sig-fig measurement to 60 digits — emit the source's decimal **text verbatim**
+(`ame_2020_binding_energies.py`). **Read `draining-raw-float64.md` first**: float→string
+is not automatically a drain (`mp.dps` defaults to **15**); raising dps *manufactures*
+digits against a ±1e-12 divisor; a 2⁻⁵⁴/2⁻⁵⁵ residue is the arithmetic floor.
+
 ## TRAP — producers write SIBLING witnesses
 
 The isotope producer rewrote 21 `canonical-isotope-witness-Z*.json` files

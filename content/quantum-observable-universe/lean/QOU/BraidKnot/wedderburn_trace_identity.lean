@@ -26,7 +26,7 @@ infrastructure". The genuine identities the corpus needs are:
   `[n]_q! = Σ_w q^{maj(w)} = Σ_λ f^λ · q^{b(λ)} · dim_q(λ)` (ordinary dim × major-index generating
   function — note this is `f^λ · (q^{b}·dim_q)`, **not** `Σ dim_q²`).
 
-Only the concrete `qInt` / `qFactorial` definitions are retained below (the right-hand side `[n]_q!`,
+Only the concrete `qIntGeo` / `qFactorial` definitions are retained below (the right-hand side `[n]_q!`,
 which is well-defined and used directly as a Hecke-level scale, e.g. `λ_W = [5]_q!·m_e`). No theorem
 in this file asserts the old false equality.
 
@@ -38,12 +38,23 @@ namespace QOU.BraidKnot
 open scoped BigOperators
 
 /-- The `q`-integer `[k]_q = 1 + q + … + q^{k-1}`. -/
-abbrev qInt {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
+-- Named `qIntGeo`, not bare `qIntGeo` (bean `qou-qint`): the bare name was
+-- BALANCED in another module of this namespace and GEOMETRIC here. The two
+-- are related by `qIntBal_eq_twist` — `[k]^bal_q = q^-(k-1) [k]^geo_{q²}` —
+-- so a site is correct under either convention depending on whether its
+-- variable means q or q². The convention now lives in the name.
+-- Named `qIntGeo`, not bare `qInt` (bean `qou-qint`): the bare name was
+-- BALANCED in another module of this namespace and GEOMETRIC here, so the two
+-- could never both be imported and a call site did not say which object it
+-- had. They are related by `qIntBal_eq_twist` — `[k]^bal_q = q^-(k-1)·[k]^geo_{q²}` —
+-- so a geometric site is CORRECT when its variable means q²; that is why the
+-- fix is to name the convention, never to convert one to the other.
+abbrev qIntGeo {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
   QOU.QInteger.qIntGeo q k
 
 /-- The `q`-factorial `[n]_q! = [1]_q · [2]_q · … · [n]_q` — the Hecke-level scale (computed
     directly as this product, **not** as `Σ_λ dim_q²`, which is a different `q`-polynomial). -/
 def qFactorial {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
-  ∏ k ∈ Finset.range n, qInt q (k + 1)
+  ∏ k ∈ Finset.range n, qIntGeo q (k + 1)
 
 end QOU.BraidKnot

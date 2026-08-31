@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T12:53:43Z
+updated_at: 2026-08-30T14:55:58Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -142,3 +142,17 @@ STILL OPEN (Lean only): the BrunnianDeficitRecursion INSTANCE is NOT created —
 TL operator algebra (symbolic), not Lean-formalized. Discharging the instance requires formalizing
 the TL machinery (quantum trace, cap-cup, Markov) in Lean — mechanical formalization work, not a
 mathematical gap. Bean stays in-progress for that Lean formalization.
+
+## 2026-08-30 (option #3, brick 1) — concrete spin-½ TL relations formalized in Lean
+
+QOU.MassTheory.TemperleyLiebSpinHalf (Mathlib-only, generic [Field K], sorry-free, lean-direct
+exit 0, axioms {propext,Classical.choice,Quot.sound}):
+- eTL = q•1 − R (TL generator = q − Hecke R-matrix)
+- eTL_mul_eTL: e² = [2]·e (defining TL relation)
+- ptr_muInv_eTL: ptr_{μ⁻¹}(e) = 1 (the cap-cup weight correction — the crux μ⁻¹, now Lean)
+- ptr_mu_eTL: ptr_μ(e) = diag(q⁻²,q²) (the contrast that forces μ⁻¹)
+- band = q²•1 − h·e, bandInv = q⁻²•1 + h·e, band_mul_bandInv = 1
+
+This is brick 1 of the BrunnianDeficitRecursion instance: the 2-strand/4-dim atomic relations the
+∀A induction composes. STILL OPEN for the instance: the ∀n tensor-power quantum trace, ρ(w_n), and
+the composing induction. No instance fabricated.

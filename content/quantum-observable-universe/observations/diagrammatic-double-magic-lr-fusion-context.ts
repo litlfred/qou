@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:diagrammatic-double-magic-lr-fusion",
+  interprets: "conj:diagrammatic-double-magic-lr-fusion",
   label: "rem:diagrammatic-double-magic-lr-fusion-context",
   title: "LR-fusion rigidity: setup, mechanism, examples, and predictions",
   uses: [

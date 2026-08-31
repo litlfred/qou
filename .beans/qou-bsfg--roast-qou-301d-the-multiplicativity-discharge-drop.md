@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:46:58Z
-updated_at: 2026-08-30T14:26:36Z
+updated_at: 2026-08-30T14:32:23Z
 ---
 
 Red-team of `6033ea80f7` (`QOU.MathlibExt.MarkovTraceMultiplicative` + the
@@ -156,3 +156,30 @@ substance, but the `x − x = 0` docstring (item 4), the `n`-vs-2 section header
 (item 5), and "BOTH hypotheses from the juxtaposition alone" (item 6) are left for the sibling —
 they are rewording, not false claims. Item 3 (hypothesis renamed rather than discharged) is a
 scoping judgement for whoever owns `qou-301d`, not something to unilaterally revert.
+
+
+---
+**Item 5 closed 2026-08-30 — the `n`-fold statement now exists, so the section could be retitled honestly.**
+
+The phantom induction is gone, and the `A`-component statement it promised is proved — with the
+loop factor, which makes it say something the bare matrix identity cannot:
+
+* `closureNorm_prod` — normalised traces of a family collect at the summed exponent (bookkeeping).
+* `closureNorm_assemble` — **assembling `m + 1` components costs `δ^m`**: the composite normalised
+  trace is short by exactly that factor relative to the product of the parts. The two-fold
+  `closureNorm_juxtapose` is `m = 1`.
+* `freeEnergy_closureNorm_assemble` — so the free energy is short by `m · log δ`.
+
+**The deficit is extensive in the component count, not a fixed offset.** For ⁴He (`m = 3`) it is
+`3 · log [2]_q = 2.0957424747` at the proton pin — recomputed fresh against the docstring figure,
+exact match. That is the part worth carrying: a constant offset could be absorbed into a
+calibration, an `(A−1)`-growing one cannot.
+
+`MarkovTraceMultiplicative`'s section is retitled to "The two-fold case", with a note saying where
+the `n`-fold form lives and why it is not the same statement.
+
+**Remaining unfixed, unchanged:** item 3 (the hypothesis was renamed to `IsJuxtaposition`, not
+discharged — a scoping call for whoever owns `qou-301d`), item 4 (`binding_juxtapose_eq_zero`
+docstringed as "the falsifiable content of the whole bridge" while proving `x − x = 0`), item 6
+("BOTH hypotheses from the juxtaposition alone" — `_pos` takes both positivities as hypotheses).
+All three are wording, none is a false claim.

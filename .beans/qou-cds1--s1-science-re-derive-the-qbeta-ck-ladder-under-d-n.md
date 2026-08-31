@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:57:32Z
+updated_at: 2026-08-30T18:48:18Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3299,6 +3299,57 @@ A repair, a replacement phase, or any `c_k`. Naming an obstruction is not
 removing it. Steps 7 and 8 untouched. Scope (a).
 
 ### Where the arc stands — six entries
+## D's bar-odd slot is EMPTY OF CONTENT — no cos-type phase can express it (PR #6244)
+
+Closes the follow-up the previous entry left open: can the log form absorb the
+`h^2/2` defect? **No**, and for a structural reason rather than a failed search.
+Probe: `computations/qbeta/qbeta_d_odd_content_is_structure_free_probe.py`,
+5/5, sympy exact.
+
+    odd(log Vhat_D) = log q                     EXACTLY
+    odd(log Vhat_C) = z-dependent, NOT log q
+
+Under D the log frame DOES supply a bar-odd object — but it is `theta = log q`,
+carrying no `z`, no Markov data, nothing convention-specific. ALL of D's
+structure sits in the bar-EVEN part (the cosh-ratio `[2]_{q^2}/[2]_q`).
+
+Under C the position is reversed: `Vhat_C - 1 = 2 sinh(theta/2)` is a bar-ODD
+eigenvector AND carries the convention's data.
+
+### The consequence
+
+`cos(phase)` is bar-invariant only when the phase is bar-ODD.
+
+  * **C**: such a phase exists and carries structure — a cosine has something
+    to resum.
+  * **D**: every bar-odd object available from `Vhat` is structure-free. So NO
+    bar-odd phase can carry D's structure, and therefore no cos-type
+    resummation of a phase can express it, **whatever offset is chosen**.
+
+Stronger than Step 7 ("the offset must be q-dependent") and than Step 8 ("no
+fixed centre"): those say the additive repair is awkward. This says the bar-odd
+slot is EMPTY OF CONTENT, so there is nothing for a phase to be.
+
+### Honesty about what is new
+
+`odd(log Vhat) = log q` is EQUIVALENT to Step 7's `bar(Vhat) = Vhat/q^2` — take
+logs of both sides. A restatement in log coordinates, NOT an independent
+discovery; the probe asserts it as such. Only the consequence is new.
+
+### A discarded test, recorded so it is not repeated
+
+I first substituted a generic CONSTANT `zz` for `z` to find which `z` collapses
+the odd part to `log q`. That test is MEANINGLESS: it treats `z` as
+bar-invariant when `z` is a function of `q` and `bar` acts on it. Any conclusion
+from a constant-`z` substitution here is void. Dropped before it reached a claim.
+
+### Not claimed
+
+That no D-frame resummation exists — only that no cos-of-a-bar-odd-phase one
+does. The multiplicative/log route and the `u*Vhat` invariant are untouched by
+this negative. No `c_k`. Scope (a).
+
+### Where the arc stands — seven entries
 
   1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
   2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
@@ -3314,3 +3365,553 @@ series is the wrong instrument for an obstruction that is `h^2/2` and sits
 outside it. The next question is whether the multiplicative/log form (3) plus
 the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
 exists that reaches it.
+## Step 9 (2026-08-30) — Steps 6-8 are now LEAN-PROVED, sorry-free
+
+`content/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
+
+Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Convention C is carried in the square-root variable `u` (`q = u²`), which keeps it algebraic in the same generic setting.
+
+| theorem | content |
+|---|---|
+| `bridgePhase_eq_recentred_tracedVolume` | `α = (V̂ − 1 − h)/2` for EVERY z — no hypothesis; this is why the phase formula is convention-independent |
+| `hq_bar` | `h(q⁻¹) = −h(q)` |
+| `zD_bar` | `z_D(q⁻¹) = z_D(q)/q⁴` — weight −4 |
+| `tracedVolume_D` | `V̂_D = (q⁴+1)/(q²+1)` |
+| **`tracedVolume_D_bar`** | **`V̂(q⁻¹) = V̂(q)/q²`** — the D action is MULTIPLICATIVE |
+| **`tracedVolume_C_bar`** | **`V̂(u⁻¹) = 2 − V̂(u)`** — the C action is an AFFINE REFLECTION |
+| `tracedVolume_D_invariant` | `V̂/q` is bar-invariant |
+| `tracedVolume_D_invariant_closed_form` | `V̂_D/q = ([2]_q + h²z_D/q²)/2` |
+| `bridgePhase_C_bar_odd` | α IS bar-odd under C — the cos-resummation's stated hypothesis |
+| `bridgePhase_D_bar_defect` | defect `= (q−1)²(q+1)²/(2q²)` under D |
+| `bridgePhase_D_not_bar_odd` | that defect is NONZERO for q ≠ ±1 |
+
+**The hypotheses are genuine, not bookkeeping.** `q ≠ 0` and `q²+1 ≠ 0` are both needed — over a field where −1 is a square (ℂ at q = i) the denominators vanish — and `CharZero` is needed wherever the construction divides by 2, since in characteristic 2 neither the phase nor the closed form is well posed. Proving it forced those out into the open; the Python probes had them implicitly.
+
+**On the M_β spectrum question.** The spectrum claim `{e^{+iα}, e^{−iα}}` on V_(2,1) is the content block's (`q-beta-cos-resummation`), not mine, and I have not re-derived it. What Steps 6-9 establish is that the *phase* α is generic in z (so the spectrum formula carries to D unchanged) and that what fails under D is the *trace symmetrisation* `tr_M(M_β) = cos α` — because bar stops being an affine reflection. So the spectrum is not the open part; the resummation is.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — so no cos-type phase can work at all.
+
+Read together, (5)–(7) are a converging negative: the C ladder's instrument
+(a cosine of a bar-odd phase, corrected by a series in `u`) fails under D in
+BOTH of its parts — the series cannot reach the defect, and the phase slot has
+no content to carry. That is a much sharper statement of the obstruction than
+"the naive z-swap gives c_3 -> -974".
+
+**The surviving positive lead is (3)+(4)**: the multiplicative/log form, and the
+bar-invariant `u*Vhat`. Nothing in (5)–(7) touches either — they close the
+ADDITIVE/phase family specifically. Whether `u*Vhat` or `log(u*Vhat)` admits an
+expansion whose coefficients reproduce the rung structure is still open, and is
+now the only live route this arc has identified.
+
+
+
+## The PRODUCT FORM is weight-inhomogeneous under D — and the fix is forced (PR #6244)
+
+Applies the arc's surviving lead (the multiplicative form + the bar-invariant
+`u*Vhat`) to the ladder's product form. Probe:
+`computations/qbeta/qbeta_d_product_form_grading_probe.py`, 12/12, sympy exact.
+
+    bar(u^k)/u^k          = q^{2k}     weight 2k, verified k = 1,2,3
+    bar((u*Vhat)^k)/(..)  = 1          weight 0,  verified k = 1,2,3
+
+    1 + c*u^k          is NEVER a bar-eigenvector — bar(f)/f depends on q for
+                       EVERY c, so no coefficient repairs it
+    1 + c*(u*Vhat)^k   is EXACTLY bar-invariant for EVERY c
+
+Under D each ladder factor `(1 + c_k u^k)` mixes bar-weight 0 (the `1`) with
+bar-weight 2k (the `u^k`). That is the SAME weight-mismatch pathology Step 2
+found in the offset, now one level up — **in the product form itself**. It is
+the grading that fails, not the coefficients.
+
+The weight-homogeneous form is FORCED by the grading:
+
+        Pi ( 1 + c_k (u * Vhat)^k )
+
+because `u*Vhat` is the bar-invariant. Reached BY GRADING, not by search —
+which is what makes it a candidate rather than a fit.
+
+### The C control, without which this would be an overclaim
+
+`u` is convention-INDEPENDENT (`u = b*hbar_q^2`; neither factor involves `z`),
+so `1 + c*u^k` is weight-inhomogeneous under C as well. That is **not** a defect
+there: C's bar action is AFFINE and weights are not its grading. Confirmed —
+`u*Vhat_C` is NOT bar-invariant, so the D repair does not even typecheck under
+C. Two-case, like every other result in this arc.
+
+### Not claimed
+
+That `Pi(1 + c_k (u*Vhat)^k)` **is** the D ladder. Only that it is the
+weight-homogeneous form. No `c_k` proposed, extracted or wired; no series
+evaluated; nothing compared to experiment. A form reached by fitting
+coefficients to Q_beta would be exactly what this bean's Discipline section
+forbids, and none is attempted. Scope (a).
+
+### Where the arc stands — eight entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT FORM is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+
+(5)-(7) closed the phase family. (8) says the *other* half of the C instrument —
+the product in `u` — is also wrong under D, for the same grading reason. So both
+halves of `Q_A cos(alpha_eff) * Pi(1 + c_k u^k)` fail under D, and in each case
+the replacement is dictated by the multiplicative grading rather than chosen.
+
+**The next question is now concrete and non-fitting:** does
+`Pi(1 + c_k (u*Vhat)^k)` reproduce the known structural rung `c_2 = -1`? That is
+a derivation check against an already-proved value, not a fit to experiment — if
+it fails, the forced form is wrong and this route closes too.
+
+
+
+## The forced form, worked through: BLOCKED on the N=1 phase — not refuted (PR #6244)
+
+Probe: `computations/qbeta/qbeta_d_forced_form_derivation_probe.py`, 6/6. Two of
+the three findings are corrections to my own plan.
+
+### 1 — my proposed test does NOT discriminate
+
+The previous entry said the next check was whether the forced form reproduces
+the proved `c_2 = -1`, and called that falsifying. **It is not.** `c_2 = -1`
+comes from `N2_factor = 1 - b^2*hbar^4 = 1 - u^2`; its content is that the N=2
+factor has the SHAPE `1 - x^2`, and the `x^2` coefficient of `1 - x^2` is `-1`
+for ANY `x`. So `u -> u*Vhat` preserves it trivially. A consistency check, not
+evidence. Recorded because I claimed otherwise one entry ago.
+
+### 2 — convergence is not broken
+
+At the proton pin: `u = 0.0085172`, `Vhat_D = 1.1280887`,
+`u*Vhat = 0.0096082` — same order, 1.128x. The route does not die on numerics.
+
+### 3 — but it cannot be tested against Q_beta. This is the terminus.
+
+    Q_beta = Q_A * cos(alpha_eff) * Pi_{k>=2}(1 + c_k u^k)
+
+The forced form replaces only the PRODUCT. The N=1 factor is `cos(alpha_eff)`,
+and **entry 7 of this arc** showed that under D the bar-ODD slot is
+structure-free — so no cos-of-a-bar-odd-phase exists to play that role.
+Confirmed against the committed cache: its only DERIVED rung is `k = 2`
+(`k = 3` is tier `cal-anchored`, i.e. extracted from experiment).
+
+So the forced product refines a leading term that **does not exist** under D. No
+D-frame Q_beta is computable from it — not because the comparison would be a
+fit, but because there is nothing to compare.
+
+### Derivable anyway, and not nothing
+
+Rung `k` scales by `Vhat^k`, so the `k=2` rung — the ONLY one the corpus derives
+rather than extracts — is `Vhat^2 = 1.2726x` larger under the forced form.
+**+27.3%**, stated without any fit.
+
+### Status
+
+**NOT refuted. BLOCKED**, on the N=1 phase, by a blocker this arc established
+itself. Naming which of two open pieces gates the other is progress; claiming
+the form confirmed would not be.
+
+### The arc, closed out — nine entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT form is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+  9. That forced product is BLOCKED on (7) — it refines a leading term that
+     does not exist.
+
+**The single open item this arc leaves is sharp: what replaces `cos(alpha_eff)`
+as the N=1 factor under D?** Everything else is either settled or downstream of
+it. (7) says it is not a cosine of a bar-odd phase; (3) says the frame is
+multiplicative/log; (4) says `u*Vhat` is the available invariant. A candidate
+must be bar-invariant, must reduce to `cos(alpha_eff)` in the C limit, and must
+absorb the `h^2/2` defect of (6) — three conditions, all stated, none yet met.
+
+That is a better-posed question than the one this arc started with, and it is
+the honest end of what I can derive without either a new structural input or a
+fit.
+
+
+## Entry 10 — the N=1 factor IS a bar-midpoint. The single open item is answered.
+
+Probe: `computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py`, **8/8**.
+
+The arc closed with one open item and three conditions on any candidate. All
+three are met, by **re-applying the arc's own entry-2 rule one slot over**.
+
+### The move introduces no new freedom
+
+Entry 2 established `offset := the bar-midpoint of Vhat`, and showed that rule
+DERIVES convention C's offset of `1` rather than assuming it. It was applied to
+the **offset**. It had not been applied to the **N=1 factor**. Applying it:
+
+    N=1 factor := ( cos(alpha) + bar(cos alpha) ) / 2
+
+No fitted quantity, no new structure — the same rule, one slot over.
+
+### Why C could use a bare cosine, which is what makes the rest work
+
+Under C, `alpha_C` is bar-ODD and cosine is EVEN, so
+`bar(cos a_C) = cos(-a_C) = cos(a_C)`: **the C-frame N=1 factor is already its
+own bar-midpoint.** The rule is *vacuous* in C.
+
+That is a sharper statement of entry 7 than "the bar-odd slot is empty" — it
+says why the C form was available at all, and why its unavailability under D is
+structural rather than a gap in the search.
+
+Under D, `bar(a_D) = h^2/2 - a_D` — a **reflection about `h^2/4`**, not about 0.
+So `cos(a_D)` is not bar-invariant, which is the arc's blocker restated.
+
+### The result
+
+    M := (cos(a_D) + cos(h^2/2 - a_D))/2  =  cos(a_D - h^2/4) * cos(h^2/4)
+
+| condition (set by the arc) | verdict | how |
+|---|---|---|
+| (a) bar-invariant | **PASS** | exact symbolic identity, `bar(M) - M = 0` |
+| (b) reduces to `cos(alpha_eff)` in C | **PASS** | exact symbolic identity |
+| (c) absorbs the `h^2/2` defect | **PASS** | as a phase re-centring by `h^2/4` **times a u-independent constant** `cos(h^2/4)` |
+
+(c) lands in exactly the multiplicative/log frame **entry 3** requires, with the
+**u-independence entry 5** established for the defect. Size at the proton pin:
+phase shift `h^2/4 = 0.0109265521331`, constant `cos(h^2/4) = 0.99994030582315`.
+
+### 🛑 A CAS trap that nearly cost the result
+
+`sympy.simplify` does **not** reduce
+`(cos A + cos B)/2 - cos((A+B)/2)cos((A-B)/2)` to 0 for these arguments — it
+returns a non-zero residual of two uncombined cosines. **That is a
+non-simplification, not a refutation.** Re-checked numerically at 60 dps across
+five values of q including both pins: worst `|diff| = 7.779e-62`, i.e. mpmath's
+floor. Reading the CAS residual as a negative would have retired a correct
+identity, and I was one step from doing so.
+
+### Scope — what this does NOT claim
+
+- **NOT uniqueness.** Other bar-invariant functions exist. The argument is that
+  this one adds no freedom, being the arc's own rule re-applied.
+- **NOT a D-frame Q_beta.** Rungs above `k=2` are still `cal-anchored`
+  (extracted from experiment), so no D-frame number is computable and none is
+  quoted here. The arc's entry-9 blocker on *testing* against Q_beta stands.
+- **NOT wired.** Nothing downstream consumes it.
+
+Scope (a). What changes is that the arc's terminus — *"it refines a leading term
+that does not exist"* — no longer holds: the leading term now has a derived
+candidate form.
+
+
+## Entry 10b — uniqueness, tested by trying to break it: (a)+(b) FAIL, (c) saves it
+
+Entry 10 asked whether `M` is **the** N=1 factor or merely **a** candidate. The
+first two conditions do not pin it, and the third turns out to carry the content.
+
+### The rival
+
+`G := sqrt(cos(a_D) · bar(cos a_D))` — the **geometric** mean — is also
+bar-invariant (verified symbolically) and also reduces correctly under C, where
+`bar(a_C) = −a_C` gives `|cos a_C|`. So **(a) and (b) admit a second solution.**
+
+**And it is not a rounding difference:**
+
+    proton pin   M = 0.9986190619723252   G = 0.9986189041126984   rel 1.581e-7
+    muon pin     M = 0.9986190616623656   G = 0.9986189038026348   rel 1.581e-7
+
+**158 ppb**, against the Q_beta 100× target of 7.8 ppb — **~20× the target**.
+Had the arc stopped at (a)+(b), the framework would carry a 158 ppb ambiguity
+in its leading factor.
+
+### Condition (c) discriminates — structurally, not numerically
+
+Read as **entry 3** requires (the defect enters as a phase shift times a factor
+with no phase dependence: `log F = f(a − c(δ)) + g(δ)`):
+
+- `M = cos(a − δ/2)·cos(δ/2)` **separates exactly**. One singular set in `a`.
+- `G` **does not**. It inherits the poles of *both* `cos a` and `cos(a − δ)` —
+  two shifted singular sets — and a separated `f(a−c)·K` admits only one.
+  Counted symbolically: at `δ = 0` both have **2** pole families (they must
+  agree when there is no defect); at `δ = 1/3`, M has **2** and G has **3**.
+
+So (c) is not decoration on (a)+(b) — **it is the condition doing the work**,
+and the arc was right to state it separately.
+
+### Not claimed
+
+**Full uniqueness.** (c) is shown to exclude `G`; it is *not* shown that no
+other function satisfies all three. That needs a functional-equation argument
+this probe does not attempt, and entry 10's summary now says so rather than the
+blanket "NOT uniqueness" it carried before.
+
+Probe **12/12**.
+
+
+## Entry 10c — the functional equation SETTLES uniqueness, in the negative
+
+Entry 10b left full uniqueness open. It is now settled — as a **proof**, not a
+failure to find one.
+
+Under bar, `a -> delta - a`. Seek every `F(a, delta)` with (i) bar-invariance,
+(ii) the log-separable form **entry 3** requires (`F = phi(a - c(delta)) *
+K(delta)`), and (iii) the C limit `F(a, 0) = cos a`. Then (iii) gives
+`phi = cos`, `c(0) = 0`, `K(0) = 1`, and (i) demands
+`cos(a - c) = cos(delta - a - c)` for all `a`. The `+` branch gives `2a = delta`
+— not an identity in `a`. The `-` branch gives
+
+    c(delta) = delta / 2          ← THE PHASE SHIFT IS FORCED
+
+and **`K(delta)` is left FREE** apart from `K(0) = 1` — verified symbolically
+for an arbitrary `K`.
+
+**So uniqueness does not follow from the three conditions**, and the arc's
+choice of `K = cos(delta/2)` comes from the **entry-2 bar-midpoint rule**, not
+from the conditions.
+
+### That distinction is quantitative, not pedantic
+
+    |1 - K| at both pins = 5.96942e-5 = 59694 ppb
+    Q_beta 100x target   =                7.797 ppb
+    ratio                =              7656x
+
+The residual freedom the conditions leave open is **~7656× the accuracy
+target**. The rule is doing real work, and had the arc stopped at "three
+conditions met" the leading factor would carry that ambiguity.
+
+### The three results together
+
+| claim | status |
+|---|---|
+| phase re-centring by `delta/2` | **FORCED** by (i)+(ii)+(iii) |
+| the rival `G` (geometric mean) | **EXCLUDED** by (c), on pole structure |
+| the constant `K(delta)` | **FREE** — selected by the entry-2 rule alone |
+
+**Not claimed:** that the bar-midpoint rule is itself forced. It is the arc's
+own rule applied consistently — parsimony, not derivation. Probe **14/14**.
+---
+
+## Entry 11 — bar-parity prunes **every** D rung, and `u` is why C escaped it
+
+`computations/qbeta/qbeta_d_rung_bar_parity_prune_probe.py` — **6/6**.
+
+Entry 7 recorded that D's bar-odd slot is structure-free. This entry says the
+same thing from the algebra, and turns it into a **test a candidate rung can
+fail**.
+
+### The prune
+
+Under D the ladder variable is `X = u·V̂`, which entry 4 established is
+**bar-invariant**. Expand `∏_{k≥2}(1 + c_k X^k)` and apply `bar` coefficient by
+coefficient:
+
+    [X^2]   c2 - bar(c2) = 0
+    [X^3]   c3 - bar(c3) = 0
+    [X^4]   c4 - bar(c4) = 0
+
+Verified symbolically, not numerically. So **every D rung is forced bar-even** —
+`bar(c_k) = c_k` for all `k`, with no bar-odd freedom anywhere in the ladder.
+
+### Why the C ladder was never pinned this way
+
+Because the C variable is **not** bar-invariant. Measured exactly:
+
+    u = (q-1)^2 * sqrt(q^4 + q^2 + 1) / (q^4 + q^2)
+    bar(u) / u = q^2          (exact, symbolic)
+
+`u` is bar-**covariant** with weight `q²`. A `bar` applied to `∏(1 + c_k u^k)`
+therefore reshuffles the grading instead of matching coefficient to coefficient,
+so the C product imposes no parity condition on its own rungs. The conventions
+differ here structurally, not by a substitution.
+
+### What this buys, and what it does not
+
+**Buys:** a falsifying test. Any future D-frame `c_k` must be bar-even, and the
+extraction route — invert one rung against experimental `Q_β` — does not respect
+that constraint, so a candidate produced that way is checkable against something
+other than its own residual.
+
+**Does not buy:** a value. No `c_3` is produced, proposed or fitted; the k=3 rung
+stays underived and L2 is untouched. Scope **(a)**.
+
+**Three things it is explicitly not:**
+
+1. Not a claim the C-frame `c_3 = -2.0693…` *fails* the test. Bar-evenness needs
+   `c_3` at both `q` and `1/q`; every anchor in this corpus sits at `q ≈ 1.11`,
+   so the C value is not measurable against it (same accessibility obstruction as
+   the §"Defined residual ≠ derived decomposition" bar-split).
+2. Not applicable to the candidate `c_3 = -2 = J_Hopf(q=1)` — a constant is
+   trivially bar-even, so the test has nothing to say about it either way.
+3. Not a uniqueness result. It constrains the rungs; it does not select them.
+---
+
+## Entry 12 — bar-parity is SILENT on `K(δ)`, the freedom that dominates L2
+
+`computations/qbeta/qbeta_d_n1_constant_bar_silence_probe.py` — **6/6**.
+
+Entry 11 forces every D rung bar-even. The obvious next hope is that the same
+symmetry pins entry 10c's free constant `K(δ)`. **It does not, and the reason is
+structural rather than circumstantial.**
+
+    delta = h^2/2,  h = q - 1/q
+    bar: q -> 1/q  sends  h -> -h,  so  h^2 -> h^2
+
+`δ` is bar-**invariant**. Therefore `K(δ)` is bar-even for **every** `K`, and
+bar-parity imposes no condition at all. It is not a weak constraint on `K`; it is
+a vacuous one. (Verified symbolically, with the contrast: `bar(u)/u = q²` exactly
+— `u` is bar-covariant, a *graded* weight, which is precisely what makes entry 11
+bite on the rungs.)
+
+### Why this matters more than the k=3 rung
+
+The gap between the two `K` the arc admits — `K ≡ 1` and `K = cos(δ/2)`, the
+latter being what the midpoint factor `M` supplies — is
+
+    delta(q0)          = 0.021853104266260994701
+    |1 - cos(delta/2)| = 5.9694176850430203e-5   =  59694.18 ppb
+    vs target 7.797    = 7656.0x
+
+**That single residual is ~7656× the Q_β 100× target**, which is far larger than
+anything a derived k=3 rung could contribute. So `K` is the L2 blocker at N=1,
+and entry 11 — real as it is — does not reach it.
+
+### A rounding, not a discrepancy
+
+My first run reported **7653.1×** against entry 10c's recorded **7656×**. Same
+number: 59694.18 / 7.8 = 7653.1 and 59694.18 / 7.797 = 7656.0. AGENTS.md quotes
+the Q_β target as "7.8 ppb", which is `σ_exp/100 = 779.7/100 = 7.797` rounded.
+The probe now uses the unrounded target and says so in a comment, so the pair
+cannot be mistaken later for two measurements — the exact failure mode the `c₃`
+"3.47 % vs 3.35 %" note in AGENTS.md was written about.
+
+### Scope
+
+A **negative**, scope (a). No `c_k` is produced, proposed or fitted; Q_β stays at
+1279 ppb. It is **not** a claim that `K` is underivable — only that bar-parity is
+not the tool, and that no sharpening of entry 11 will become one, because the
+quantity it would have to constrain is invariant under the symmetry it is built
+from. Closing `K` needs a genuinely different input.
+
+
+---
+
+## Entry 13 — `K(δ)` is NOT free in this arc; it is fixed by entry 2's rule
+
+`computations/qbeta/qbeta_d_n1_constant_rule_determined_probe.py` — **6/6**.
+
+Entries 10c and 12 read together suggest a 7656× residual with nothing in the arc
+to close it. **That reading is wrong**, and this entry corrects it.
+
+Entry 10 did **not** obtain `M` by searching the space of functions satisfying
+(a)+(b)+(c). It obtained `M` by applying a rule the arc had already established
+one slot over:
+
+| | rule |
+|---|---|
+| entry 2 | `offset := bar-midpoint of V̂` |
+| entry 10 | `N=1 factor := bar-midpoint of cos(α)` |
+
+The arithmetic bar-midpoint of `cos(a_D)` is not *some* function meeting the three
+conditions — it is a single determinate object,
+
+    M = (cos(a_D) + cos(delta - a_D))/2 = cos(a_D - delta/2) * cos(delta/2)
+
+whose constant factor is `cos(δ/2)`, **not** 1. So `K ≡ 1` is not an alternative
+the arc admits: it is what you get by **discarding the rule** and keeping only the
+three weaker conditions the rule happens to satisfy. Verified symbolically that
+`K ≡ 1` does satisfy (a) — which is exactly the point, since it shows the
+conditions are strictly weaker than the rule.
+
+### Where the rule's authority comes from, and where it does not
+
+- **Offset slot — non-vacuous and independently checked.** The rule *re-derives*
+  convention C's known offset `1` (as `cosh(0)`) and C's known `α` exactly,
+  rather than assuming them (entry 2). That is a genuine two-point validation.
+- **N=1 slot — vacuous under C.** `α_C` is bar-odd and cosine is even, so the
+  C-frame N=1 factor is already its own bar-midpoint. Verified here. The C limit
+  therefore says only `K(0) = 1` and **cannot discriminate `K` at δ ≠ 0**.
+
+### Status, stated precisely because it decides whether L2 may use it
+
+`K = cos(δ/2)` is **rule-determined and slot-untested**: strictly stronger than
+"free", strictly weaker than "derived". It is **not a fit** — nothing was
+inverted against Q_β, and the rule was fixed before this slot was considered.
+
+### What would settle it
+
+A **third slot** where the bar-midpoint rule is non-vacuous under C, so the rule
+can be tested somewhere other than where it was built. This probe does not find
+one; it states the requirement, which is the next concrete thing to look for.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb. The
+7656× figure of entry 12 is unchanged as a *measurement of the condition-set
+freedom*; what changes is that the arc does not actually sit at that freedom.
+
+
+---
+
+## Entry 14 — the third slot exists, the rule FAILS it, and entry 13 is withdrawn
+
+`computations/qbeta/qbeta_d_bar_midpoint_rule_third_slot_probe.py` — **6/6**.
+
+Entry 13 named the test that would settle `K`: **a third slot where the
+bar-midpoint rule is non-vacuous under C.** This entry finds one and runs it.
+
+**The slot:** the N=2 ladder factor `1 − u²`, whose `u²` coefficient is the
+corpus's structural `c₂ = −1` (no fit, no CODATA, no q₀). Under C the ladder
+variable is bar-**covariant** (`bar(u)/u = q²`), so the rule is non-vacuous
+there — exactly the condition entry 13 required.
+
+**The result:** the rule does not reproduce `c₂`.
+
+    bar-midpoint of (1 - u^2)  has u^2 coefficient  -(q^4 + 1)/2
+    at the proton pin          -1.25897662490917    vs known -1
+    off by                     25.8977 %
+
+| slot | C-frame | verdict |
+|---|---|---|
+| offset | non-vacuous | **passes** (entry 2 — re-derives C's `1` and C's `α`) |
+| N=1 factor | vacuous | no evidence available |
+| N=2 factor | non-vacuous | **FAILS, 25.90 %** |
+
+### Entry 13's status claim is withdrawn
+
+It rested on an implicit **universality** of the rule. That universality is now
+measured false. `K = cos(δ/2)` is rule-**transported** from a slot where the rule
+works, to a slot where it cannot be tested, **past a slot where it demonstrably
+fails**. Entry 12's **7656×** freedom is reinstated as live.
+
+### The defence, and what it costs
+
+One can read the rule as *"re-express in bar-invariant form"* rather than *"apply
+everywhere"* — vacuous wherever that is already done. Under D the N=2 slot **is**
+vacuous (`X = u·V̂` is bar-invariant, verified here), so on that reading the
+C-frame N=2 test is outside the rule's remit. But **entry 2's validation is a
+C-frame check of exactly the same kind.** The dichotomy has no comfortable
+branch:
+
+- the C-frame check is legitimate ⇒ **the rule fails at N=2**;
+- it is not ⇒ **entry 2's validation goes too**, and the rule is validated nowhere.
+
+Either way `K` is not rule-determined in entry 13's strong sense.
+
+### Also fixed here: entry 11 asserted entry 4 rather than computing it
+
+Entry 11's sixth check was labelled *"stated structurally; entry 4 supplies
+`bar(u·V̂) = u·V̂`"*. Now computed: `V̂ = z·h + 1` gives
+`V̂_D = (q⁴+1)/(q²+1) = 1.12808874411` (matching the value the arc records),
+`bar(V̂_D)/V̂_D = q⁻²` against `bar(u)/u = q²`, hence `bar(X)/X = 1` **exactly**.
+**Entry 4 is confirmed.** My first pass guessed `V̂ = q²` from the offset
+`cosh(2 log q)` and got `bar(X)/X = q⁻²` — which looked like a refutation of
+entry 4 and was a wrong `V̂`, not a wrong entry. Recorded because the near-miss
+is the point: an assumed definition nearly produced a false retraction of a
+correct result.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb.

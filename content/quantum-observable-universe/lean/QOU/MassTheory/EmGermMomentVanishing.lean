@@ -67,20 +67,26 @@ variable {R : Type*} [Field R]
 
 /-- The bar-odd generator `h = q − q⁻¹`. Vanishes exactly on the bar-fixed
 locus `q² = 1`. -/
-def hbar (q : R) : R := q - q⁻¹
+-- NAMED `barOddGen`, NOT `hbar` (bean `qou-u87j`). Everywhere else in the
+-- corpus `hbar` / `hbar_q` / `hbarQ` is the quantum Planck constant
+-- ℏ_q = 1 - q⁻¹. This is the Hecke structure constant of AGENTS.md §7a,
+-- q - q⁻¹ — a different quantity, 2.11x larger at the substrate anchor
+-- (0.2090602988 against 0.0990817160 at q₀ = 1.1099785827513808). The
+-- docstring always said `h`; only the identifier read as ℏ.
+def barOddGen (q : R) : R := q - q⁻¹
 
 /-- The bar-even quantum integer `[2]_q = q + q⁻¹`. -/
 def qInt2 (q : R) : R := q + q⁻¹
 
 /-- The EM-singlet moment of the germ curvature, in the closed form the probe
 measured: `m_F = −h/[2]_q`. -/
-def emMoment (q : R) : R := -(hbar q / qInt2 q)
+def emMoment (q : R) : R := -(barOddGen q / qInt2 q)
 
 /-! ### The two spellings agree -/
 
 /-- `h = (q² − 1)/q`. -/
-theorem hbar_eq (q : R) (hq : q ≠ 0) : hbar q = (q ^ 2 - 1) / q := by
-  simp only [hbar]; field_simp
+theorem barOddGen_eq (q : R) (hq : q ≠ 0) : barOddGen q = (q ^ 2 - 1) / q := by
+  simp only [barOddGen]; field_simp
 
 /-- `[2]_q = (q² + 1)/q`. -/
 theorem qInt2_eq (q : R) (hq : q ≠ 0) : qInt2 q = (q ^ 2 + 1) / q := by
@@ -93,14 +99,14 @@ theorem emMoment_eq (q : R) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) :
   have hq2 : qInt2 q ≠ 0 := by
     rw [qInt2_eq q hq]; exact div_ne_zero h2 hq
   rw [emMoment, neg_inj, div_eq_div_iff hq2 h2]
-  simp only [hbar, qInt2]
+  simp only [barOddGen, qInt2]
   field_simp
 
 /-! ### Bar-oddness -/
 
 /-- `h` is bar-odd: `h(q⁻¹) = −h(q)`. -/
-theorem hbar_inv (q : R) : hbar q⁻¹ = -hbar q := by
-  simp [hbar]
+theorem barOddGen_inv (q : R) : barOddGen q⁻¹ = -barOddGen q := by
+  simp [barOddGen]
 
 /-- `[2]_q` is bar-even: `[2]_{q⁻¹} = [2]_q`. -/
 theorem qInt2_inv (q : R) : qInt2 q⁻¹ = qInt2 q := by
@@ -110,13 +116,13 @@ theorem qInt2_inv (q : R) : qInt2 q⁻¹ = qInt2 q := by
 bar-odd, so the moment reverses under `q ↦ q⁻¹` — the signature of a genuine
 `q`-motion rather than a static invariant. -/
 theorem emMoment_bar_odd (q : R) : emMoment q⁻¹ = -emMoment q := by
-  simp [emMoment, hbar_inv, qInt2_inv, neg_div]
+  simp [emMoment, barOddGen_inv, qInt2_inv, neg_div]
 
 /-! ### Locus 1 — sterility at the self-dual point -/
 
 /-- `h = 0` exactly on the bar-fixed locus. -/
-theorem hbar_eq_zero_iff (q : R) (hq : q ≠ 0) : hbar q = 0 ↔ q ^ 2 = 1 := by
-  rw [hbar_eq q hq, div_eq_zero_iff]
+theorem barOddGen_eq_zero_iff (q : R) (hq : q ≠ 0) : barOddGen q = 0 ↔ q ^ 2 = 1 := by
+  rw [barOddGen_eq q hq, div_eq_zero_iff]
   constructor
   · rintro (h | h)
     · linear_combination h
@@ -132,9 +138,9 @@ theorem emMoment_eq_zero_iff (q : R) (hq : q ≠ 0) (h2 : qInt2 q ≠ 0) :
   rw [emMoment, neg_eq_zero, div_eq_zero_iff]
   constructor
   · rintro (h | h)
-    · exact (hbar_eq_zero_iff q hq).mp h
+    · exact (barOddGen_eq_zero_iff q hq).mp h
     · exact absurd h h2
-  · intro h; left; exact (hbar_eq_zero_iff q hq).mpr h
+  · intro h; left; exact (barOddGen_eq_zero_iff q hq).mpr h
 
 /-- **Sterility and symmetric braiding are the same condition.** The moment
 vanishes iff `h = 0`, which is the very factor whose vanishing makes
@@ -143,8 +149,8 @@ EM germ is non-sterile *because* the braiding is non-symmetric — the two facts
 are one fact, and the deuteron's single-generator sterility is a genuinely
 different mechanism (abelian transport), not this one. -/
 theorem sterile_iff_bar_fixed (q : R) (hq : q ≠ 0) (h2 : qInt2 q ≠ 0) :
-    emMoment q = 0 ↔ hbar q = 0 := by
-  rw [emMoment_eq_zero_iff q hq h2, hbar_eq_zero_iff q hq]
+    emMoment q = 0 ↔ barOddGen q = 0 := by
+  rw [emMoment_eq_zero_iff q hq h2, barOddGen_eq_zero_iff q hq]
 
 /-! ### Locus 2 — the normalisation degenerates at `q² = −1` -/
 

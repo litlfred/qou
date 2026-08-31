@@ -1,0 +1,175 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T13:59:50.179724+00:00",
+  "commitSha": "4d88993485f023e9c4470ee36d93c12cd095cae6",
+  "assertions": [
+    {
+      "name": "no_target_quantity_reads_q0",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count of q0 occurrences in the target quantities computed below",
+      "source": "b2, b3, b4, w(1..3), the deficit fraction and B(4)/B(2) are all AME2020-only; q0 is read at the top of this probe solely so its absence downstream is visible in the output rather than asserted"
+    },
+    {
+      "name": "cumulant_signs_put_turnover_at_A_ge_4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "verdict (1 = w rises through z=3 and peaks there, both conventions)",
+      "source": "b3 > 0 and b4 > 0 give w1 < w2 < w3 -- proved sorry-free in QOU.Mass.CumulantTurnoverLowerBound.max_at_three. A LOWER bound on the peak location, meeting the SU(4) support UPPER bound C(4,n)=0 for n>=5 at A=4 from the opposite direction"
+    },
+    {
+      "name": "su4_support_vanishes_from_n5",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "dim[1^5] of Wigner SU(4)",
+      "source": "C(4,5) = 0; the corpus's UPPER bound on the turnover location"
+    },
+    {
+      "name": "channel_carries_at_least_the_whole_deficit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "verdict (1 = v(2) lower bound strictly positive, both conventions)",
+      "source": "QOU.Mass.CumulantTurnoverLowerBound.b3_le_three_mul_channel with channel_pos_of_b3_pos; the deficit is an ABSENCE at z=1, not a suppression of something the background already supplies"
+    },
+    {
+      "name": "only_f4_is_convention_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count of convention-independent fingerprint coordinates",
+      "source": "B(4)/B(2) never involves A=3; b3/b2, b4/b2 and the deficit fraction all do, so all three carry the isospin-average vs Coulomb-corrected band"
+    },
+    {
+      "name": "deficit_fraction_band_width",
+      "computed": "0.210676544963273163269218012069594833331200718168877222810764",
+      "expected": "0.21",
+      "passed": true,
+      "tolerance": "0.03",
+      "unit": "relative spread of the deficit fraction across the two conventions",
+      "source": "the width within which any candidate must be judged; a single near-match inside a band this wide carries no information"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "deuteron-deficit-off-gate",
+  "scriptFile": "deuteron_deficit_off_gate_probe.py",
+  "scriptHash": "220bc353bef4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/deuteron_deficit_off_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/deuteron_deficit_off_gate_probe.py"
+  },
+  "description": "Separates the three things called 'the q0 gate' and shows the deuteron deficit needs only the routine one (evaluate a derived function at the calibrated q0), not the forbidden one (derive q0). Measures that every target quantity is q-free; that b3>0 and b4>0 put the coordination-weight turnover at A>=4, meeting the SU(4) support bound from the opposite direction; that the absent channel carries at least the whole deficit; and that only B(4)/B(2) among the fingerprint coordinates is convention-independent, so the deficit target is known to ~21% at best. Derives no magnitude and proposes no functional.",
+  "data": {
+    "gate_separation": {
+      "G1_derive_q0_value": "forbidden (owner ruling 2026-08-02, bean qou-eic1)",
+      "G2_evaluate_derived_F_at_calibrated_q0": "routine -- what every framework prediction does (m_p/m_e, m_K/m_pi, Q_beta)",
+      "G3_explain_why_q0_is_near_1": "G1 in disguise; correctly gated",
+      "what_the_near_unitarity_route_needed": "G3",
+      "what_the_deficit_route_needs": "G2",
+      "conclusion": "the front terminates at an ordinary open derivation, not at the gate; #6197's 'terminates at the q0 gate' is correct for the route it tested and does not generalise to the front"
+    },
+    "cumulants_and_coordination_weight": {
+      "isospin_average": {
+        "b2": "2.22456620000000000000000000000000000000000000000000000000000",
+        "b3": "1.42622016000000000000000000000000000000000000000000000000000",
+        "b4": "9.24338456000000000000000000000000000000000000000000000000000",
+        "w1": "2.22456620000000000000000000000000000000000000000000000000000",
+        "w2": "2.69997292000000000000000000000000000000000000000000000000000",
+        "w3": "4.71594373333333333333333333333333333333333333333333333333333",
+        "w5": "2.13293248000000000000000000000000000000000000000000000000000",
+        "rises_through_z3": true,
+        "peak_at_z3_not_z5": true
+      },
+      "3H_Coulomb_corrected": {
+        "b2": "2.22456620000000000000000000000000000000000000000000000000000",
+        "b3": "1.80809760000000000000000000000000000000000000000000000000000",
+        "b4": "7.71587480000000000000000000000000000000000000000000000000000",
+        "w1": "2.22456620000000000000000000000000000000000000000000000000000",
+        "w2": "2.82726540000000000000000000000000000000000000000000000000000",
+        "w3": "4.71594373333333333333333333333333333333333333333333333333333",
+        "w5": "2.13293248000000000000000000000000000000000000000000000000000",
+        "rises_through_z3": true,
+        "peak_at_z3_not_z5": true
+      }
+    },
+    "absent_channel_lower_bound": {
+      "isospin_average": {
+        "v2_lower_bound_MeV_per_pair": "0.475406720000000000000000000000000000000000000000000000000000",
+        "as_fraction_of_w1": "0.213707607352840297582512941174778255643729550507420278164795"
+      },
+      "3H_Coulomb_corrected": {
+        "v2_lower_bound_MeV_per_pair": "0.602699200000000000000000000000000000000000000000000000000000",
+        "as_fraction_of_w1": "0.270928866940439893404835513548664004694488300685320131178834"
+      }
+    },
+    "fingerprint_convention_spread": {
+      "b3_over_b2": {
+        "isospin_average": "0.641122822058520892747538823524334766931188651522260834494384",
+        "coulomb_corrected": "0.812786600821319680214506540645992014083464902055960393536502",
+        "relative_spread": "0.267754902581099400530139750653924286135458918207971481766181",
+        "convention_independent": false
+      },
+      "b4_over_b2": {
+        "isospin_average": "4.15514025161400006886735939798060403866605543139152253594431",
+        "coulomb_corrected": "3.46848513656280491899948852949397505005695042925672429977584",
+        "relative_spread": "0.197969744143593413413084411374845014333306704250825842845454",
+        "convention_independent": false
+      },
+      "deficit_fraction": {
+        "isospin_average": "0.176078328963388269834943381580286368205500372203733065589413",
+        "coulomb_corrected": "0.213173902952301541977629691220357310636631424838998135795812",
+        "relative_spread": "0.210676544963273163269218012069594833331200718168877222810764",
+        "convention_independent": false
+      },
+      "f4_B4_over_B2": {
+        "isospin_average": "12.7196315398480836398575146920779431063908100374805658739218",
+        "coulomb_corrected": "12.7196315398480836398575146920779431063908100374805658739218",
+        "relative_spread": "0.0",
+        "convention_independent": true
+      }
+    },
+    "scope": {
+      "derives_a_magnitude": false,
+      "proposes_a_functional": false,
+      "what_is_established": [
+        "the gate separation G1/G2/G3: the deficit needs only G2, so the front is an ordinary open derivation and is NOT closed by the 2026-08-02 ruling",
+        "a LOWER bound on the coordination-weight turnover at A>=4 from the measured cumulant signs alone, meeting the SU(4) support UPPER bound",
+        "v(2) >= b3/3: the absent channel carries at least the whole deficit",
+        "only B(4)/B(2) is convention-independent, so the deficit target is known to ~21% and single-number near-matches cannot discriminate"
+      ],
+      "what_would_narrow_the_target": "settling the A=3 convention -- a Coulomb correction on 3He and its own shift on 4He -- which is what would let a candidate be discriminated at the few-percent level instead of the ~21% level",
+      "what_remains_open": "the magnitude. Nothing here proposes a mechanism, and the constraint list in qou-edt7 stands unchanged",
+      "corrections_to_prior_work": [
+        "#6197's 'the deuteron-deficit route terminates at the q0 gate' is correct for the near-unitarity route (which needs G3) and does not generalise to the front (which needs only G2)",
+        "an earlier framing of mine, that H2(q) commutativity gives a q-independent vanishing at A=2, is WITHDRAWN: the deuteron's mass/binding-frame braid word is the 3A-strand word (H6, non-abelian) per docs/audits/2026-08-21-deuteron-two-adjudications-reconciled.md; H2 commutativity is a knot-level fact about the 2-strand trefoil"
+      ]
+    }
+  }
+}

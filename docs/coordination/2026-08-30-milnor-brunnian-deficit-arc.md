@@ -33,6 +33,23 @@
    mention "deficit" mostly mean the *binding-energy* deficit (negative-debt confinement), a different
    object — not `D_A`. **No live sibling directly consumes `D_A` as a numerical input.**
 
+   **MEASURED, 2026-08-30 (`milnor_deficit_vs_binding_magnitude_probe.py`, mpmath dps=50, no
+   float64, scope-(a)) — the "structure not magnitude" claim is now quantified, not asserted.** At
+   the proton q₀ the deficit and the binding fraction have **opposite A-dependence**:
+   - `|D_A|` **falls geometrically** — `D_3=1.44e-3, D_4=1.28e-4, …, D_8=8.2e-9` — by exactly the
+     recursion factor `−h²(h²+2) = −0.0893226497` at *every* step (an independent reconfirmation of
+     the proved recursion at the physical anchor), with sign alternating `(−1)^{A−3}`.
+   - The empirical binding fraction `B/A/m_N` **rises** with A over the light range
+     (`0.767 → 0.954·ℏ_q²`, ⁴He → ⁵⁶Fe) via the coordination count `z=A−1` (`qou-brng`,
+     `binding=−log I`).
+
+   Opposite trends ⇒ `D_A` cannot be the binding magnitude; it is the rapidly-decaying, sign-carrying
+   Milnor order/parity marker. The magnitude lives in the `qou-brng` coordination free energy (proved:
+   type question #6125, coordination coefficient + `binding=−log I` via `ArchimedeanTraceBridge`),
+   whose only open pieces are two named modelling inputs (Markov-trace-as-amplitude; the
+   `m=m_e·Vol·lw/ℏ_q²` dressing) — **the exact ℏ_q² saturated fraction is confirmed numerology**
+   (`2026-08-30-brng-residuals-worked.md`), so it is not wired and not forced.
+
 ## Sibling coordination
 
 - **#6183** (`claude/he4-magnus-a4-sign-sparse-2026-08-30`, A=4 ⁴He Magnus Ω₂ sign) — same Thread-A

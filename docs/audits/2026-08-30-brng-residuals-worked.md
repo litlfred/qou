@@ -27,9 +27,20 @@ the MULTIPLICATIVE q-dimension Markov self-trace lw = (Σ_{λ⊢c+1} dim_q λ)/(
 the two is the archimedean functor τ = logarithm (the free energy of a partition-function-like
 amplitude):
 
-- `freeEnergy_connectedSum` — the Markov/Jones trace is multiplicative under connected sum
-  (J(K₁#K₂) = J(K₁)·J(K₂), Jones); its log-image E = log T is ADDITIVE. So the additive-energy model
-  `SelfMutualPartition` *assumed* is DERIVED from trace multiplicativity, and rest mass is extensive.
+- `freeEnergy_connectedSum` — a multiplicative amplitude has an ADDITIVE log-image E = log T. So the
+  additive-energy model `SelfMutualPartition` *assumed* follows from multiplicativity, and rest mass
+  is extensive.
+
+  🛑 **CORRECTED 2026-08-30 (bean `qou-bsfg`, red-team of this very result).** This bullet read "the
+  Markov/Jones trace is multiplicative under connected sum … so the additivity is DERIVED from trace
+  multiplicativity". Two multiplicative structures were conflated. For the normalised Jones
+  polynomial the CONNECTED SUM is exactly multiplicative, `J(K₁#K₂) = J(K₁)·J(K₂)`, but the DISJOINT
+  UNION carries the loop value, `J(K₁ ⊔ K₂) = δ·J(K₁)·J(K₂)` with `δ = [2]_q`. The matrix theorem
+  actually proved (`MarkovTraceMultiplicative`, a Kronecker product) models the DISJOINT UNION, so it
+  does not license the connected-sum reading. A genuinely independent assembly has `I = δ`, not
+  `I = 1`: `log δ ≈ 0.699` per juxtaposition at the proton pin, ≈ 2.10 for ⁴He. Quantified in
+  `QOU.Mass.ClosureNormalisationDefect` (`freeEnergy_closureNorm_additive_iff`: additivity iff
+  `δ = 1`, excluded for `q > 1`). The lemma itself is `Real.log_mul` and is untouched by this.
 - `freeEnergy_prod` — mass adds over the A constituents.
 - `binding_eq_bindingFreeEnergy` — for an assembly amplitude (∏Tᵢ)·I, the mass-deficit binding
   Σ Eᵢ − E_assembly = −log I, the connected/interaction free energy. This is
