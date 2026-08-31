@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T03:39:46Z
+updated_at: 2026-08-31T04:35:41Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -115,3 +115,58 @@ span. Whether any solution has a structural reading (e.g. coefficients that are
 Hecke-theoretic rather than arbitrary rationals) is unmeasured, and is the only
 part of this question left. Denominators 9, 36, 18, 3 are suggestive of nothing
 so far.
+
+
+---
+
+## RE-SCOPED 2026-08-31 — the open item was posed in the WRONG BASIS, and is now answered
+
+Probe: `computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, **13/13**,
+exact sympy over Q(q). Lean: `cone_eq_markov_hecke_polynomial`,
+`toffoliDiagonal_eq_markov`, both sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`; file now 34 theorems / 0 sorries.
+
+**MY OWN FRAMING WAS THE DEFECT.** The entry above left open "whether any member
+of the solution family has a Hecke-theoretic reading", over the ten RATIONAL
+coefficients (-4/9, 5/36, -20/3, ...) in the 8x8-amplitude basis. Those
+coefficients have no structural reading because THE BASIS has none. In the
+natural coordinates the answer is immediate:
+
+    z    = q^3/(q^2+1)     Markov parameter, convention D
+    hbar = q - 1/q         Hecke deformation, sigma^2 = hbar sigma + 1
+
+    (G t)_5  =  z^2 + 2 hbar z + 3 hbar^2 z^2 + hbar^3 z + hbar^4 z^2
+
+Integer coefficients **(1, 2, 3, 1, 1)**, no denominators, and **degree 6 is
+MINIMAL** (measured: no polynomial in (z, hbar) of total degree <= 5 equals it).
+
+**FORCED, NOT FITTED — and half of it is PRIOR ART, which the corpus-grep
+caught.** Every Markov trace of a Hecke word lies in Z[z, hbar] (Markov property
+removes the top generator; the quadratic relation reduces the rest), and the
+corpus ALREADY CARRIES that as a table: `QOU.Machinery.MarkovTraceH4.TRM` lists
+all 24 H_4 normal-form trace values in `z` and `h`, its entries 9 and 13 being
+`h*z^2 + z` = tr(sigma_0 sigma_1 sigma_0). The probe now READS that file and
+checks the six H_3 values against it rather than claiming the derivation. What
+is new is only the downstream assembly, which nothing in the corpus had written:
+t = (0, 0, 1, hbar, 0, 0), i.e. T_q = sigma_1 + hbar sigma_0 sigma_1, so
+(G t)_5 = tr(W sigma_1) + hbar tr(W sigma_0 sigma_1) is in Z[z, hbar] before any
+computation.
+
+**Two clean negatives**, by resultant (minimal polynomial over each subfield):
+
+    over Q(z)     degree 3   -> NOT a function of the Markov parameter alone
+    over Q(hbar)  degree 2   -> NOR of the Hecke deformation alone
+
+Q(z, hbar) = Q(q) since 3 and 2 are coprime (q exhibited explicitly), so the
+content is the SUBRING claim, not a field claim.
+
+**One structural exclusion, scope-(b).** N = q^10+q^6-q^4+q^2-1 is neither
+reciprocal nor anti-reciprocal -- q^10 N(1/q) has coefficients
+(-1,0,1,0,-1,0,1,0,0,0,1) against N's (1,0,0,0,1,0,-1,0,1,0,-1). Alexander
+polynomials of knots ARE reciprocal, so N is the Alexander polynomial of no
+knot. This rests on the reciprocity invariant, not on a numerical near-miss.
+
+**REMAINING, and now small.** Does the coefficient string (1, 2, 3, 1, 1) count
+something in the H_3 reduction tree? That is a well-posed question about five
+small integers. The predecessor's version -- ten rationals in a structureless
+basis -- is retired, not answered.

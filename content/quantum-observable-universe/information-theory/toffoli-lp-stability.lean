@@ -632,4 +632,65 @@ theorem cone_eq_quadratic_in_amplitudes {q : ℝ} (hq : 0 < q) :
   field_simp
   ring
 
+/-! ## The same constraint in the Markov and Hecke parameters
+
+The degree-2 expression above is in the *amplitude* basis, and its coefficients
+are rationals with no evident meaning.  That is a fact about the basis, not
+about the constraint: in the natural coordinates the expression is integral,
+low-degree, and **forced** rather than fitted.
+
+Write `z = q³/(q²+1)` for the Markov parameter (convention D) and note that
+`toffoliConeCoord q = q - 1/q` is exactly the Hecke deformation `ħ` of the
+quadratic relation `σ² = ħσ + 1` — the same object, already named for its other
+role in this file, so no second name is introduced for it.
+
+Every Markov trace of a Hecke word lies in `ℤ[z, ħ]`: the Markov property
+`tr(x·σ_last) = z·tr(x)` removes the highest generator and the quadratic
+relation reduces the rest.  The corpus already carries that as a table —
+`QOU.Machinery.MarkovTraceH4.TRM` lists all 24 `H₄` normal-form trace values as
+polynomials in `z` and `h`, its entries 9 and 13 being `h*z^2 + z`.  Since the
+`q`-Toffoli's normal-form coordinates are `t = (0, 0, 1, ħ, 0, 0)`, i.e.
+`T_q = σ₁ + ħ·σ₀σ₁`, the constraint `(G·t)₅ = tr(Wσ₁) + ħ·tr(Wσ₀σ₁)` is in
+`ℤ[z, ħ]` before any computation. -/
+
+/-- The Markov parameter, convention D (`z = q³/(q²+1)`).  The bare name
+    `markovZ` denotes convention D uniformly across the corpus. -/
+noncomputable def markovZ (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
+
+/-- **`tr(σ₀σ₁σ₀) = ħz² + z`.**  Not a finding of this arc — the value is
+    already tabulated at `QOU.Machinery.MarkovTraceH4.TRM` entries 9 and 13.
+    Recorded here in the form the constraint below consumes. -/
+theorem toffoliDiagonal_eq_markov {q : ℝ} (hq : 0 < q) :
+    toffoliDiagonal q = toffoliConeCoord q * markovZ q ^ 2 + markovZ q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold toffoliDiagonal toffoliConeCoord markovZ
+  field_simp
+  ring
+
+/-- **The cone constraint is a degree-6 integer polynomial in `(z, ħ)`.**
+
+    `(G·t)₅ = z² + 2ħz + 3ħ²z² + ħ³z + ħ⁴z²`
+
+    Coefficients `(1, 2, 3, 1, 1)`; no denominators.  Degree 6 is minimal — no
+    polynomial in `(z, ħ)` of total degree ≤ 5 equals it
+    (`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, 13/13).
+
+    Both parameters are needed: the minimal polynomial of the constraint over
+    `ℚ(z)` has degree 3 and over `ℚ(ħ)` degree 2, so it is a function of
+    neither alone.  `ℚ(z, ħ) = ℚ(q)` — those degrees are coprime — so the
+    content here is the *subring* statement, not a field statement. -/
+theorem cone_eq_markov_hecke_polynomial {q : ℝ} (hq : 0 < q) :
+    coneCoordRow5 q =
+      markovZ q ^ 2
+        + 2 * (toffoliConeCoord q * markovZ q)
+        + 3 * (toffoliConeCoord q ^ 2 * markovZ q ^ 2)
+        + toffoliConeCoord q ^ 3 * markovZ q
+        + toffoliConeCoord q ^ 4 * markovZ q ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold coneCoordRow5 coneRow5Numerator toffoliConeCoord markovZ
+  field_simp
+  ring
+
 end QOU.Information
