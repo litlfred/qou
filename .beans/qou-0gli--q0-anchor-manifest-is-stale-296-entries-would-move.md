@@ -1,11 +1,11 @@
 ---
 # qou-0gli
 title: 'q0_anchor_manifest is stale: 296 entries would move, 150 muon producers currently default to proton'
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-30T14:52:02Z
-updated_at: 2026-08-30T14:52:02Z
+updated_at: 2026-08-31T03:07:24Z
 ---
 
 Found by exploration 2026-08-30 while working `qou-mjcd`. **Measured, not
@@ -71,3 +71,61 @@ Do not attribute all 150 to the detector fix. It accounts for 18.
       if they hardcode, it only aligns declaration with reality.
 - [ ] The 34 `ambiguous` moves look like straightforward corrections and could
       be split out from the rest.
+
+## 2026-08-31 — APPLIED. And the generator was itself unrunnable.
+
+### Why it was stale: the generator could not run
+
+`gen_q0_anchor_manifest.py` died with `ModuleNotFoundError: qou_substrate` —
+it imports `qou_substrate.witness` for its provenance stamp with no path
+bootstrap, so it computed the entire manifest and then failed at the save. Same
+class as `qou-ya1e`. **That is almost certainly why the manifest drifted**: it
+could not be regenerated. Fixed with an upward-searching bootstrap.
+
+### The read-only measurement was an UNDERCOUNT — 398 move, not 296
+
+The prediction above missed an entire category: **102 entries becoming
+`absent`**. That matters precisely because this bean's own headline is that
+absence is not neutral.
+
+    149  absent          -> ideal_muon        <- the actual fix
+    106  absent          -> physical_proton   (explicit; default was already proton)
+     98  physical_proton -> absent            (harmless; default is proton)
+     34  physical_proton -> ambiguous         (two-anchor probes, correctly declared)
+      5  absent          -> ambiguous
+      3  ambiguous       -> physical_proton
+      2  ideal_muon      -> physical_proton   (witness now carries a proton-only signature)
+      1  ideal_muon      -> ambiguous
+
+### 🛑 A naive regeneration would have silently flipped 4 producers to proton
+
+The first (unguarded) run dropped 4 stems from `ideal_muon` to absent —
+`cross_check_trM_cw_seminormal_leg`, `frakV_askey_wilson_recurrence_tie_probe`,
+`he4_binding_k_stage2_probe`, `qbeta_physics` — because their witnesses no
+longer carry a q₀ signature. Absent resolves to the PROTON default, so that is a
+silent muon→proton redeclaration: exactly the mislabelling this manifest exists
+to prevent, introduced by the tool that maintains it.
+
+The generator now **carries a prior `ideal_muon`/`ambiguous` declaration
+forward** when a stem has no current signature, and reports each one. A witness
+can lose its q₀ signature for reasons that say nothing about its anchor (payload
+reshaped, values serialised differently), so inferring "no signature ⇒ proton" is
+wrong. `physical_proton → absent` is left alone: it is a no-op against the
+default.
+
+    ideal/muon 173 · physical/proton 694 · ambiguous 53 · carried forward 4
+    silent muon/ambiguous -> proton-default flips: 0
+    pytest -> 145 passed ; q0_anchor_ratchet --strict -> PASS
+
+### ⚠️ Consequence to be aware of
+
+149 producers now resolve to **muon** where they were being handed the proton
+default. This commit changes no computed number — but the next time any of those
+producers runs, it will compute at the muon pin, and its values will move. That
+is the correction working as intended (their own committed witnesses carry
+muon-only signatures), but it means the next regeneration sweep over those
+stems will show real numeric movement that is NOT drift.
+
+Also noted, not acted on: the 98 `physical_proton → absent` are behaviourally
+inert today only because the default IS proton. If that default ever changes
+they move silently. Making them explicit would cost nothing but manifest size.

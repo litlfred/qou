@@ -19,7 +19,27 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys as _sys
 from pathlib import Path
+
+# Path bootstrap for `qou_substrate` (bean `qou-0gli`, same class as `qou-ya1e`).
+#
+# `main()` imports `qou_substrate.witness` for its provenance stamp, and this
+# file had no bootstrap for it — so the generator computed the whole manifest
+# and then died at the save with `ModuleNotFoundError: qou_substrate`. That is
+# almost certainly WHY the manifest drifted 296 entries out of date: it could
+# not be regenerated. Searches upward so it works from any cwd.
+def _bootstrap_qou_substrate() -> None:
+    here = Path(__file__).resolve()
+    for parent in here.parents:
+        cand = parent / "tools" / "qou-substrate" / "python"
+        if cand.is_dir():
+            if str(cand) not in _sys.path:
+                _sys.path.insert(0, str(cand))
+            return
+
+
+_bootstrap_qou_substrate()
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -101,6 +121,37 @@ def main() -> int:
             ambiguous[prod] = w  # both signatures — manual ruling
         # neither: no q₀ field — omit (anchor-insensitive or non-derivation)
 
+    # NEVER SILENTLY DROP A NON-DEFAULTING DECLARATION (bean `qou-0gli`).
+    #
+    # "neither signature -> omit" above is safe ONLY for stems that would
+    # resolve to the default anyway. It is not safe in general, because
+    # ABSENCE IS NOT NEUTRAL: `resolve_q0_anchor` hands the runtime PROTON
+    # default to any stem missing from this manifest. So omitting a stem that
+    # was declared `ideal_muon` (or `ambiguous`) silently REDECLARES it as
+    # proton — the exact class of mislabelling this manifest exists to prevent.
+    #
+    # Measured on the first honest regeneration of this file: 98 stems moved
+    # `physical_proton -> absent`, which is harmless because the default is
+    # already proton, but 4 moved `ideal_muon -> absent`, which is a silent
+    # muon->proton flip:
+    #     cross_check_trM_cw_seminormal_leg, frakV_askey_wilson_recurrence_tie_probe,
+    #     he4_binding_k_stage2_probe, qbeta_physics
+    #
+    # A witness can lose its q₀ signature for reasons that say nothing about
+    # its anchor (a payload reshaped, values serialised differently), so the
+    # right response is to CARRY THE PRIOR DECLARATION FORWARD and say so,
+    # not to infer "no signature" means "proton".
+    _prior_path = HERE / "q0_anchor_manifest.json"
+    _carried: list[str] = []
+    if _prior_path.exists():
+        _prior = json.loads(_prior_path.read_text(encoding="utf-8"))
+        _seen = set(ideal) | set(physical) | set(ambiguous)
+        for _key, _bucket in (("ideal_muon", ideal), ("ambiguous", ambiguous)):
+            for _stem in _prior.get(_key, []):
+                if _stem not in _seen:
+                    _bucket[_stem] = "(carried: prior declaration, no current signature)"
+                    _carried.append(f"{_stem} [{_key}]")
+
     manifest = {
         "_schema": "q0-anchor-manifest/v1",
         "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). "
@@ -124,6 +175,12 @@ def main() -> int:
     print(f"ideal/muon:      {len(ideal)}")
     print(f"physical/proton: {len(physical)}")
     print(f"ambiguous:       {len(ambiguous)}")
+    if _carried:
+        print()
+        print(f"  CARRIED FORWARD ({len(_carried)}) — declared before, no q0 signature now.")
+        print("  Not dropped: absence would silently redeclare them PROTON.")
+        for _c in _carried:
+            print(f"    {_c}")
     return 0
 
 
