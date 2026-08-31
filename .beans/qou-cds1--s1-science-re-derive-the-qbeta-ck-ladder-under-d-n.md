@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T18:47:06Z
+updated_at: 2026-08-31T19:08:29Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4741,3 +4741,96 @@ residual behind the mass side, so the decay side is where new information can
 come from — and §5 says the first question there is *which of the two decay
 functionals is right*, since they cannot both be. That is answerable without
 re-deriving anything: it is a question about which object `Q_β` is a trace of.
+
+
+## Step 16 (2026-08-31) — the two decay functionals are ONE functional. Protium settles it.
+
+Step 15 asked which decay reading is right. **Neither — the question was
+malformed.** Probe `qbeta-decay-functional-unification-protium` (6/6), Lean
+`QOU/QBeta/DecayFunctionalUnification.lean` (5 theorems, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`), write-up
+`docs/audits/2026-08-31-qbeta-decay-functional-unification.md`. Commit `a949c94115`.
+
+### Protium is what makes it checkable
+
+β decay's daughter is the **neutral atom**, so `n → ¹H + ν̄` has
+`Q_β = m_n − m(¹H)` — an **atomic** difference, larger by exactly `m_e` than the
+nucleon difference `m_n − m_p` that the corpus's `Δ = NF(n) − NF(p)` notation
+suggests. Priced with the corpus's own derived scale `𝔈₀ = m_e/(q₀(q₀−1))`
+(CAL-1 + CAL-2 only, no fit):
+
+| | vs atomic `Q_β` | vs nuclear `m_n − m_p` |
+|---|---|---|
+| `𝔈₀·\|ε(Δ_S)\|` | **0.168 %** | −39.41 % |
+| `𝔈₀·\|net(Δ_L = n−p)\|` | 21.55 % | −26.48 % |
+| `𝔈₀·\|net(Δ_β = n−¹H)\|` | 5.60 % | −36.12 % |
+
+**235× discrimination, zero free parameters. `Δ_S` is already an ATOMIC object**
+— the emitted electron is inside it, and the `NF(n) − NF(p)` notation misleads
+about what the element is.
+
+**And the protium ELEMENT is refuted.** `Δ_β := NF(n) − NF(protium)`, the naively
+correct β-decay difference, **double-counts**: on the physical pairing its
+nearest required `z` is **0.4439** from the derived cap, *worse* than the
+corpus's **0.3858**. (One off-diagonal cell — atomic element vs the *nuclear*
+target — is nearer at 0.3386; unphysical pairing, still 55 % from `z_D`, rescues
+nothing.) 🛑 Recorded because my first draft asserted *"every protium z is
+further from the cap"* and the data refuted it.
+
+### The unification
+
+`ε(Δ_S) = h²/2 − h` is `tr_M^z(Δ_S)` at `z = 1`, and
+
+    𝔈₀ · (−ε(Δ_S))  ≡  Q_A        identically in q and m_e
+
+**This identity is NOT new** — it is `prop:neutron-qvalue-symbolic`, restated in
+`qbeta_delta_tr_vs_formA.py`. New is the consequence nobody had drawn: the
+ladder's leading term **is** the trace functional at `z = 1` with `K = 𝔈₀`, so
+the two readings share it *by construction*, and equating them forces
+
+    Π_k (1 + c_k u^k) = affine(z) / cos((z−1)h/2 − u/2),
+    affine(z) = (2qz − q² + 1)/(2q − q² + 1),   affine(1) = 1
+
+The trace side is **exact and affine in z**. So the `c_k` are the mismatch
+between an affine function of `z` and a cosine of one — a **reparametrisation
+residual**, the **third** instance of AGENTS.md's STRICT *"defined residual ≠
+derived decomposition"* class after `S_leak` and `S`. Consistent with what the
+corpus already recorded: *"α … a square-root branch point 0.062 % above q₀,
+manufactured by writing a smooth correction as a cosine."*
+
+### Why the routes reported different z
+
+Both invert **their own** correction function to the same measured
+`Q_β/Q_A = 0.998325`. At `z = 1` the affine slope is **1.116732**, the cosine's
+**4.4515e-4** — a factor **2508.65**. That is the entirety of "0.9985 vs
+0.4991"; it was never two physical claims.
+
+### 🛑 Two withdrawals, both Step 15's and both mine
+
+1. *"the two decay-side functionals disagree … reconcilable only by a scale `K`
+   off by 2.2656×, 20× outside Step 14's 6.31 % wall"* — **withdrawn**. No scale
+   gap: the leading terms are identical, and `F_REQUIRED_TRM = 1.75923699` is
+   exactly `(Q_β/Q_A)/affine(z_D)`, reproduced to **3.6e-9**.
+2. *"at most one of the two functionals is the right reading"* — **withdrawn**.
+
+Step 15's other findings stand unchanged: mass-vs-cap 9.49 σ, decay-vs-cap
+5.5e5 σ, `c₂ = −1` at 1.6 σ under C and 773 σ under D, three-facts-one-measurement.
+
+### What this does to the bean's primary item
+
+**"Re-derive the `c_k` ladder under D" has no hidden answer to find.** Given `z`
+the ladder is *defined* by the equation above; under D you substitute `z_D` and
+read off whatever comes out. That is *why* both routes were "blocked at the
+anchor" in Step 15 — there is no independent object for an anchor to pin.
+
+The live question is narrower and different in kind: **should the cosine
+parametrisation exist at all?** The trace side is exact, affine, and needs no
+series; the whole `c_k` tower exists because that affine correction was rewritten
+as `cos(affine)`. Removing the cosine removes the tower — and with it the
+`c₂ = −1`, `c₃ ≈ −2 = J_Hopf(1)` and `c_{k≥4}` program.
+
+**NOT claimed:** that the cosine is wrong, that the framework is wrong, or that
+`Q_β` is closed. The decay channel's **5.5e5 σ** tension with the derived cap is
+untouched by any of this and remains the open problem — this step says only that
+the tension has ONE form rather than two, and that the `c_k` are not where it
+lives.
