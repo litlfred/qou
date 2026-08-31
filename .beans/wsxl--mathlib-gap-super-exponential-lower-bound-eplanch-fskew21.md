@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-11T18:45:00Z
-updated_at: 2026-08-31T05:12:17Z
+updated_at: 2026-08-31T06:40:52Z
 ---
 
 ## What
@@ -136,3 +136,22 @@ c = 1/9 > 0, on that tail. Everything downstream (`no_linear_selection`,
   (a multi-session build)'. It did not: the square bound was already in the corpus, waiting on
   two SYT identities that turned out not to need RSK. Same mis-diagnosis class as `qou-jlam`
   and `qou-b21r` — that is now three.
+
+
+## 2026-08-31 (later) — threshold lowered 9 → 3, and my own stated remedy was wrong
+
+`wStd_geometric_from_three`: `(1/30)·(√2)^k ≤ w_std(k)` for **k ≥ 3**, sorry-free, axioms clean.
+That covers the whole range on which any bound is possible, since `w_std` vanishes below 3.
+
+**The correction is the point.** The note above said the threshold 9 was 'an artifact of the crude
+step 4^k ≤ k!' and could be lowered only by computing the six values w_std(3)…w_std(8) — 'a finite
+computation this file does not do'. Right about the artifact, **wrong about the remedy**. No value
+of w_std is needed. The threshold is set by the *constant*: weakening c from 1/9 to 1/30 moves the
+integer step from `4^k ≤ k!` (first true at k = 9; fails at k = 8, 65536 > 40320) to
+`9·4^k ≤ 100·k!` (first true at k = 3, and tight there — 576 ≤ 600). The optimum over k ≥ 3 of
+k!/(81·4^k) is at k = 3 and equals 1/864, so any c ≤ 1/√864 ≈ 0.0340 works; 1/30 is the round
+number under it.
+
+So the remaining work on this bean is **only the class edit** — adding a threshold k₀ to
+`TowerGeometricLowerBound`, which `not_towerGeometricLowerBound_wStd` shows is necessary and
+which is the author's call. The combinatorial side is done.
