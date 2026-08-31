@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "b0a41b44023b",
     "ts": "ba431e7d4ed9",
-    "lean": "ce84239c8e9d",
-    "lean_statement": "73b8721274b6"
+    "lean": "748ca0d60f60",
+    "lean_statement": "a5c66442ae8f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1310,6 +1310,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0a41b44023b",
+          "ts": "ba431e7d4ed9",
+          "lean": "748ca0d60f60"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:13:12.138Z",
+        "reviewed_sha": "73cc2236876b497019cf52ff22f4a8bb5c8f33fb",
+        "severity": "minor",
+        "evidence": "helicity-conservation.lean now derives md parts (1) and (2) but encodes NEITHER part (3) (Jones-polynomial refinement, J_L(q) = exp(sum_n tr(Rcheck^n)(q-q^-1)^n/n)) NOR part (4) (the q->1 classical Moffatt limit). Two of four md claims have no Lean at all. The two that are encoded are conditional on three unproved hypotheses: hdef (that H_q(t) is the same filament data at every t -- where the quantum Euler equation would enter), CWFHolds (Calugareanu-White-Fuller, cited not proved) and SelfHelicityIsLinking (Moffatt-Ricca, cited not proved).",
+        "notes": "Recorded warn after a repair that is a strict improvement. The previous encoding was HelicityContext, a class carrying Hq/writhe/twist/linking/Wr/Tw/Lk AND all three claims as its own fields, with helicity_conservation, helicity_decomposition and helicity_cwf_relation each returning one field. Hq := fun _ => 0 with every scalar 0 satisfies every field, so the [HelicityContext] binder assumed nothing and all three declarations asserted nothing (AGENTS.md 3b-cond item 5). It was recorded pass in that state. The replacement makes the data PARAMETERS and derives both conjuncts of helicity_conservation: the decomposition by summing CWF against the Moffatt-Ricca identity (selfSum_eq_writhe_add_twist, by induction), and time-independence as a CONSEQUENCE of H_q(t) equalling one time-independent expression rather than as a second assumption. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2453,6 +2471,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-31T11:13:12.138Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
