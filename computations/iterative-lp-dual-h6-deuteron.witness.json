@@ -1,12 +1,12 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:34:04.068378+00:00",
-  "commitSha": "d91724e767bda8595bc442e0596cf2d5da341b06",
+  "computedAt": "2026-08-31T03:13:06.570310+00:00",
+  "commitSha": "d6b2566ae4bef8be343b624adbec98412974f33f",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
-      "computed": "0.000000000000004289304865566752682517617740907028984890730116802781602977923655789343",
+      "computed": "0.000000000000004287396031155573891275855343732587465914371048805918164028768799396104",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-06"
@@ -25,11 +25,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
+  "durationMsBaseline": "builder-construction",
   "computation": "iterative-lp-dual-h6-deuteron",
   "scriptFile": "iterative_lp_dual_h6_deuteron.py",
   "scriptHash": "37583e246902",
-  "scriptCommitSha": "a744956372e5e83ca675f59e7d05a5c8135a368a",
+  "scriptCommitSha": "ac6310b31106536d59fea5bc407649b509985078",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,14 +68,14 @@
       "(6,)": 0.11532422490206616,
       "(5, 1)": 0.07895296247592667,
       "(4, 2)": 0.046032434692020424,
-      "(4, 1, 1)": 2.1882430220530458e-72,
+      "(4, 1, 1)": 0.0,
       "(3, 3)": 0.01512381009802332,
-      "(3, 2, 1)": 1.3703092182621319e-72,
-      "(3, 1, 1, 1)": -4.1916820947593566e-73,
-      "(2, 2, 2)": 1.0474412565153791e-73,
-      "(2, 2, 1, 1)": -1.8587797025702327e-73,
-      "(2, 1, 1, 1, 1)": 1.003578639230391e-73,
-      "(1, 1, 1, 1, 1, 1)": -1.9224019317553724e-74
+      "(3, 2, 1)": 0.0,
+      "(3, 1, 1, 1)": 0.0,
+      "(2, 2, 2)": 0.0,
+      "(2, 2, 1, 1)": 0.0,
+      "(2, 1, 1, 1, 1)": 0.0,
+      "(1, 1, 1, 1, 1, 1)": 0.0
     },
     "chi_lambda_beta_D_at_q0": {
       "(6,)": 1.5598701995641606,
@@ -193,7 +194,7 @@
     "u_levels_deuteron_MeV": {
       "0": 0.0003503798561305638,
       "1": 0.003145807570561602,
-      "2": 0.011766346754568367,
+      "2": 0.011766346754568365,
       "3": 0.023403381095492018,
       "4": 0.026041132066331144,
       "5": 0.015334262354798737,
@@ -201,7 +202,7 @@
     },
     "sum_u_levels_MeV": 0.08376690204170471,
     "tr_M_check_at_q0": 0.5751722439177743,
-    "tr_M_check_rel_err": 4.289304865566753e-15,
+    "tr_M_check_rel_err": 4.287396031155574e-15,
     "lean_uniqueness_ref": {
       "nucleus": "deuteron (²H)",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",

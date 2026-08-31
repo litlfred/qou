@@ -191,3 +191,38 @@ pipeline (`regenerate_y_lambda_mpfr.py --anchor proton`, then
 is the step that closes the float64 96→99. It deserves its own reviewed change
 rather than being tacked onto a diagnosis — especially since the last time I
 regenerated it I had to restore from a snapshot.
+
+## 2026-08-31 — BOTH RATCHETS GREEN. float64 half closed.
+
+With the zero-snap in both producers of that cache, the regeneration was run —
+correctly this time, via the two-step, with the destructive-overwrite guard
+firing exactly as designed and naming its own rebuild command:
+
+    !! THIS OVERWRITE DROPPED CLOSED-FORM TOWER DATA -- REBUILD IT NOW
+       dropped tables_by_n n = 13..18, dropped extension.closed_form_tower
+       Rebuild with: python3 computations/y_lambda_tower_infra.py 18
+
+Result against the committed table:
+
+    tables_by_n keys 17 -> 17, extension block preserved
+    223  >=3-row entries snapped to EXACT 0   (the r=2 identity, now honoured)
+     11  last-digit serialisation roundings   (e.g. ...3039 -> ...304, ~1e-53)
+      0  real value changes
+
+Compare the 1285 "moved" entries from my earlier botched attempt: that number
+was an artifact of comparing a dps=50 probe against a dps=70 table, plus running
+step 1 without step 2. The honest regeneration moves nothing real.
+
+### The float64 regression is gone, and then some
+
+    iterative-lp-dual-h6-deuteron.witness.json   99 -> 92   (baseline 96)
+
+Its 7 >=3-row `y_lambda_at_q0` entries are now exactly `0.0`, which is what
+removed the raw floats — they were roundoff all along. Net 4 BELOW baseline;
+the baseline was not widened.
+
+    witness_raw_float64_audit --strict   REGRESSED: 0   (158 files drained)
+    q0_anchor_ratchet --strict           PASS
+    pytest tools/qou-substrate/tests/ tests/   145 passed
+
+Both ratchets named at the top of this bean are now green.
