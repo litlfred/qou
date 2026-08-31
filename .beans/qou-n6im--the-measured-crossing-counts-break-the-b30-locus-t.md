@@ -1,11 +1,11 @@
 ---
 # qou-n6im
 title: The measured crossing counts break the b3=0 locus, then miss on sign by 8.11x
-status: completed
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-31T03:07:18Z
-updated_at: 2026-08-31T03:07:18Z
+updated_at: 2026-08-31T03:18:32Z
 ---
 
 Runs `qou-6vu3`'s acceptance test against the corpus's **measured** crossing
@@ -88,3 +88,60 @@ revised the verdict moves.
 
 `qou-brng` (parent), `qou-6vu3` (the acceptance test), `qou-vudb`/`qou-toul`
 (the crossing-count measurement), `qou-w6vh`.
+
+
+---
+**🛑 RETRACTED, same session, before merge — the identification was wrong.**
+
+This bean claimed `μ(A) = 5A − 1` from `QOU.MassTheory.CrossingCountAffine` is
+*"exactly the multiplicity `BrunnianBindingChannel.countChannel` carries"*, and
+built the `−13/9` result and the 8.11× intercept gap on it. **The identification
+is wrong and everything downstream of it is withdrawn.** The PR was still
+unmerged, so nothing reached `main`.
+
+**Two independent reasons, either fatal.**
+
+1. **Total vs inter-component.** `countChannel`'s `n₊, n₋` are *inter-component*
+   crossings — `minimal_brunnian_bond` fixes them from *"the pairwise crossing
+   pattern inside `L6a4`"*. The `5A − 1` count runs over **every** letter of the
+   `A`-nucleon word, self-crossings included. In the construction the
+   inter-nucleon letters are only the `A − 1` chain interfaces (`atom_braid_word_3A`
+   appends one per adjacent pair, gated by `include_inter`); everything else is
+   the per-nucleon words.
+2. **They are not crossing numbers at all.** `atom_braid_word_3A`'s own docstring:
+   *"this does NOT return a braid word … the returned object lies in `H_n(q)` and
+   is NOT in the image of `ρ : B_n → H_n(q)` … there is NO SINGLE LINK behind it …
+   **so NO TOPOLOGICAL quantity may be read off it — not a volume, not a crossing
+   number, not a genus**."* `n₊, n₋` count Hecke **letter types** by their `d`
+   coefficient; `tr_M` there is a weighted sum of `2^{2A+1}` link invariants (32
+   for `²H`), not one link's.
+
+**What survives.** The general affine result is untouched and stays: `b₃ =
+−(3α + 2β)` exactly, `b₃ > 0 ⟺ −2α < β < −³⁄₂α`, and the ratio depends only on
+`r = β/α`. The Lean keeps those and is **instantiated at nothing**. The
+non-vacuity witness `(5, −8)` is a bare example, not a carrier.
+
+**What does not survive:** `−13/9`, the `r = −0.2`, the 8.11× gap, "the first
+carrier in this arc to break the locus", and the whole probe — deleted, not
+re-scoped, because every number in it flowed from the bad identification.
+
+**`CrossingCountAffine` is NOT impugned.** It feeds these counts to the *linear*
+functional `E = n₊q − n₋q⁻¹`, which linearity transports legitimately. Reading a
+*link crossing number* off them is the forbidden step, and that step was mine.
+The counts themselves are sound: `n₊ + n₋ = 10A − 2` and `n₊ − n₋ = 4Z` check
+exactly against the docstring's `²H` figures (23 letters, 11 `σ`, 7 `σ⁻¹`, 5
+averaged `= 2A + 1`).
+
+**The lesson, which is the durable part.** Two objects named `n₊`/`n₋`, both with
+a `(n₊+n₋)/2` "count multiplicity", one a link crossing count and one a Hecke
+letter-type count. Same name, same formula, different object — the arity/identity
+conflation AGENTS.md's `da-arity-conflation` criterion names. I checked that the
+formula matched and not that the *object* did.
+
+**Consequence for `qou-brng`, and it is not small.** The natural move — read
+crossing numbers off the canonical atom word and feed them to the binding channel
+— is **blocked at the source**, not merely wrong-valued. Any derivation of carrier
+crossing numbers must come from an object that *has* a link behind it. The
+`A − 1` chain interfaces are the only inter-component structure the construction
+carries, and a chain is what `QOU.MassTheory.ChainBondOrderDependence` already
+flags as arrangement-dependent.
