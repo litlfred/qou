@@ -6686,3 +6686,60 @@ result would be *declared*, so it should be right before then.
 Convention note, so it is not misread: the C form sits 1.28e-6 from the
 requirement, the D form 6.02e-4, ~470× further. Consistent with the ladder having
 been **built** in C; **not** evidence for C, which is excised.
+## 2026-08-31, S1 — the gate inventory is EXHAUSTED. Do not run the sweep.
+
+Probe: `computations/qbeta/qbeta_d_gate_inventory_is_exhausted_probe.py`, **10/10**,
+exact sympy.
+
+PR #6282 named three gates on a candidate D-frame Habiro generator `rho` and
+retracted two of them in its own commits. This closes the third — the one I
+recorded as surviving.
+
+    gate                     verdict
+    -----------------------  ---------------------------------------------------
+    bar-parity               FILTER, not a selector: every symmetric q-integer is
+                             bar-invariant, so it admits the whole family (#6282)
+    Hankel c_2*c_4 = c_3^2   VACUOUS for rank-1: c_3 = rho*c_2, c_4 = rho^2*c_2,
+                             so it holds IDENTICALLY for every rho (#6282)
+    C-limit reduction        VACUOUS: see below (THIS ENTRY)
+
+### Why the C-limit gate is vacuous
+
+The gate asks that the D ladder reduce to the C ladder where the conventions
+agree, i.e. where `z_C = sqrt(q)/(q+1)` equals `z_D = q^3/(q^2+1)`. Solved
+exactly: **the only positive real solution is `q = 1`.** Away from it they
+diverge immediately (`q = 1.11`: `z_C = 0.499320` vs `z_D = 0.612710`).
+
+And `q = 1` is exactly where the ladder is degenerate:
+
+    hbar_q(1) = 0      u(1) = 0        h(1) = 0
+    Vhat_D(1) = 1      alpha_D(1) = 0  X(1) = u*Vhat_D = 0
+
+so every rung factor `1 + c_k X^k` is 1, the whole product is 1 **for symbolic
+`rho` and symbolic `c_2`**, and the sibling's derived N=1 factor
+`M = cos(a_D - h^2/4)cos(h^2/4)` is 1 as well. The ladder collapses to the bare
+`Q_A` for **every** candidate. The gate is satisfied by all of them.
+
+### Consequence for S1 — this is a prune, not a setback
+
+**All three named conditions admit every candidate.** They do not rank
+candidates; they are satisfied identically. So a wider sweep against these gates
+cannot select a generator no matter how many candidates it enumerates.
+
+This is the formalize-first discipline applied to my own proposed search: the
+structural argument says **do not run the scan**. That is the rule's whole
+purpose — "too much time is lost chasing numerical rainbows that a one-line
+structural argument would have eliminated up front" — and the rainbow here was
+mine, proposed at the end of #6282 ("search for a bar-INVARIANT single
+generator, test any candidate against the Hankel condition, check its weights").
+Two of those three gates I had already retracted; this closes the third, so that
+proposed next move is now fully withdrawn.
+
+Scope **(a)**: a scope-limited negative about the three gates identified so far,
+NOT a claim that no gate exists.
+
+### What S1 actually needs
+
+An **external structural input**, not more candidates. Not asserted here as
+available — naming routes is the next step, and each needs the corpus-grep
+before it is called open or novel.
