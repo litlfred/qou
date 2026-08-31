@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-11T18:45:00Z
-updated_at: 2026-07-11T18:45:00Z
+updated_at: 2026-08-31T05:03:08Z
 ---
 
 ## What
@@ -73,3 +73,23 @@ some concrete `r>1, c>0` at the substrate — OR a rigorous symbolic argument th
 the corpus accepts in lieu of full Mathlib SYT infra — at which point the GAP-A-3
 level-selection conditional theorems become unconditional. Advance only via
 genuine derivation; not a fit.
+
+
+## 2026-08-31 — the C8 bound is no longer conditional; whether that closes THIS bean is unchecked
+
+`QOU.BraidKnot.YoungTableauStandard.c8_superexp` gives
+
+    k! / (9 * I(k))  ≤  (Σ_{λ⊢k} (f^λ)² * f^{λ/(2,1)}) / k!
+
+and its right-hand side is exactly the Plancherel expectation `w_std(k)` this bean is about
+(weights `(f^λ)²/k!`). Until today that theorem carried an `[RSKIdentitiesContext]` hypothesis
+with **no instance anywhere in the corpus**, so it could not be applied at any concrete k.
+`QOU.Mathlib.SkewBranchingTwoOne.rskIdentitiesContextInstance` (bean `qou-b21r`, PR #6363)
+discharges that class, so `c8_superexp k hk` now applies for every k ≥ 3.
+
+**What I have NOT checked, and am not claiming:** whether `k!/(9·I(k))` is super-exponential in
+the sense `TowerGeometricLowerBound` demands, and whether the algebra from there to
+`level_geometric_bound` is already written. `I(k) ~ k^{k/2} e^{-k/2+√k}` grows slower than `k!`,
+so the ratio does grow super-exponentially — but that asymptotic is not in the corpus as far as I
+looked, and 'the input is unconditional' is not 'the bean is closed'. Bean stays `todo`; someone
+should check the remaining chain before closing it.
