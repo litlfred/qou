@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T19:43:10Z
+updated_at: 2026-08-31T20:02:25Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4956,3 +4956,76 @@ under D* has four independent blockers, none of them "the algebra is hard":
 2. **No derivation for the parametrisation** (Step 17 + `BraidImageEigenphaseExclusion`).
 3. **Under-determination** — one measured number, a series of coefficients.
 4. **Branch 3 needs an elliptic generator** (Step 18) — and nothing supplies one.
+
+
+## Step 19 (2026-08-31) — Im(q) refuted as the elliptic source; "no tower" quantified
+
+Probe `qbeta-imq-elliptic-generator-refutation` (8/8), Lean
+`QOU/QBeta/ImQCannotSupplyEllipticGenerator.lean` (4 theorems, sorry-free), audit
+`docs/audits/2026-08-31-qbeta-imq-elliptic-generator-refutation.md`. Commit
+`f65a953dd3`.
+
+### Part 1 — `conj:im-q-physical-role` cannot supply the elliptic generator
+
+**Route A, `Im(q)` as a phase coordinate.** Generator eigenvalues are `±ln q`,
+purely imaginary only if `|q| = 1` — impossible, since `Re q = 1.10998 > 1`
+forces `|q|² > 1` for **every** `Im q`. The only move left is a complex character
+with the real part kept, and it costs more than it buys:
+
+| | |
+|---|---|
+| threshold for `Re[character] < 1` at all | `\|Im q\| > 0.122819` (11.07 % of `Re q`) |
+| `Im q` to hit `Re[character] = 0.998399` | **±0.139956** (12.61 %) |
+| resulting `Im[character]` | **0.014069** = **8.40×** the deviation = **18074 σ** |
+
+`Q_β` is real, so that must vanish — and with `|q|² > 1` the factor `1 − 1/|q|²`
+is strictly positive, so it vanishes **only** at `Im q = 0`, returning the
+character to `≥ 1`, which the sign obstruction already excludes.
+
+**Route B, non-Hermitian deformation.** An elliptic generator forces
+unit-modulus braiding eigenvalues, but Kohno–Drinfeld fixes `ħ = 2 ln q` by
+matching the Hecke pair `{1.109979, −0.900918}`, neither of modulus 1. It fails
+not on the data but by **dissolving the scale-fixing the route depends on**.
+
+**This does NOT refute `conj:im-q-physical-role`** — its chirality role is
+untouched and `Im q` may be physical for other reasons. What is settled is that
+it cannot supply the elliptic generator.
+
+### Part 2 — "retire the tower", quantified
+
+The **tower** is the sequence `c₂, c₃, c₄, …` in powers of `u`. Retiring it does
+**not** drop the correction:
+
+| | value | σ |
+|---|---|---|
+| correction needed | 0.998325 | — |
+| `1 − θ²/2` (no cosine, no tower) | 0.998399 | — |
+| residual `δ` | **−7.3394e-5** | **94.29** |
+| `c₂ = −1` predicts `−u²` | −7.2543e-5 | **98.84 %** of `δ` |
+| left for `c₃` **and all above** | −8.5042e-7 | **1.09** |
+
+`δ` is real and large; `c₂ = −1` consumes almost all of it; what remains to
+determine `c₃` **and every coefficient above** is one marginal number. Absolute
+bar `σ/u³ = 1.2598`, reproducing Step 15's independent **1.2619**.
+
+**And `c₃`'s central value is an artefact, not merely imprecise:** `−2.069343`
+through `cos` (reproducing the committed proton `−2.06934258`, which validates
+the extraction) against `−1.376381` through `1 − θ²/2` — a **33.49 % shift** from
+a choice the data resolves at **0.549 σ**.
+
+So "no tower" means writing `Q_β = Q_A·(1 − θ²/2)·(1 + δ)` with `δ` measured,
+rather than asserting `δ = c₂u² + c₃u³ + …`. *One measurement determines one
+number; it cannot determine a series.*
+
+### The fork, both arms now priced
+
+| arm | status |
+|---|---|
+| take `conj:im-q-physical-role` as the elliptic source | **refuted** (Step 19) |
+| retire the cosine, state the correction as `1 − θ²/2` | **coherent**, costs only the tower, not the correction |
+
+Route 5 is not closed — an elliptic generator from some *other* source stays
+logically open — but the one place the corpus had named as a source of
+imaginarity is excluded. **This is an owner call now, not a measurement
+question**: Steps 15–19 have priced everything that can be priced without
+choosing.
