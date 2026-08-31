@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T18:04:33Z
+updated_at: 2026-08-31T18:32:18Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -693,3 +693,45 @@ GIT NOTE: the merge agent checked out its branch under this session's shell
 mid-command and my probe commit briefly landed on PR #6395's branch. Caught via
 reflog, moved to its own branch, agent's branch restored to origin. Nothing lost
 either way. Shared-worktree hazard when dispatching a merge agent while working.
+
+
+## The two obstructions are INDEPENDENT, and the KMS one costs the link invariant (PR #6399, 2026-08-31)
+
+Explores the convergence of #6395 (KMS: state must be non-tracial) and #6397
+(rank: pairing must be off z_D).
+
+1. NON-TRACIALITY DOES NOT RESTORE RANK. Rank of <x,y> = tr_M(h.xy) at z_D:
+     h = 1 (plain)                   5   14
+     h = T_1 (non-central, invert.)  5   14
+     h = T_1 + 2                     5   14
+   Identical. For invertible h, x -> hx is a BIJECTION, so
+   rad(tr_M(h x y)) = h^-1 . rad(tr_M(xy)) -- same dimension. A unit permutes
+   the algebra; it cannot shrink a radical, exactly as a change of basis cannot
+   change a rank. T_1's invertibility checked (T_1(T_1-h)=1) not asserted.
+   => the two requirements are ORTHOGONAL. Changing z fixes rank but the Markov
+   trace at ANY z is still a TRACE (nothing for KMS); a non-tracial weight fixes
+   KMS but with invertible h does nothing for rank. BOTH knobs must move.
+
+2. AND (2) IS NOT FREE: MARKOV MOVE I IS TRACIALITY. Markov's theorem needs
+   (I) conjugation invariance; for a linear functional phi(g b g^-1) = phi(b)
+   holds EXACTLY WHEN phi(ab) = phi(ba). Same condition, not three related ones.
+   Measured on H_3, all 36 ordered pairs:
+     h = 1    max |phi(ab)-phi(ba)| = 0.0 EXACTLY      move I holds
+     h = T_1  max |phi(ab)-phi(ba)| = 0.75270211       move I FAILS
+   witness a=(1,0,2), b=(1,2,0); the violation is order the Gram's own singular
+   values (0.7527 is its four-fold repeated SV).
+
+TRILEMMA:
+  (1) keep tr_M tracial -> KMS only at beta=0, alpha*ln(ratio) unlicensed;
+  (2) go non-tracial -> finite-temperature dynamics but MARKOV I FAILS, so it is
+      not a link invariant and not the framework's trace in any sense;
+  (3) either way the rank problem needs z off the isolated TL point.
+(2) is not a cost the framework can obviously pay -- the Jones polynomial, tr_M
+as a link invariant, and the braid-closure picture of nucleons all rest on
+conjugation invariance.
+
+NOT ESTABLISHED: the non-invertible h case (x -> hx not surjective, so it can
+only make the radical LARGER -- not measured); no candidate (h,z) pair proposed;
+no SDP run, no binding energy computed. And the trilemma's leg (2) is a
+DEFINITIONAL identity -- the measurement demonstrates it, the definition
+establishes it.
