@@ -221,6 +221,16 @@ Two authoring mistakes that block a NEW file but are trivial, correct fixes
   `Mathlib.LinearAlgebra.Matrix.Notation`. (`Mathlib.Data.Matrix.Notation`
   has neither olean nor source in the tree; the olean error is a red
   herring for "cache is partial" — the module is gone, not uncached.)
+- **`import Mathlib.Data.Matrix.Kronecker` ALSO does not exist in v4.24.0**
+  (confirmed 2026-08-31). The Kronecker content — `⊗ₖ` notation (`open scoped
+  Kronecker`), `Matrix.mul_kronecker_mul`, `Matrix.trace_kronecker`,
+  `Matrix.one_kronecker_one` — lives in `Mathlib.LinearAlgebra.Matrix.Kronecker`.
+  Decisive discriminator vs "uncached": the mathlib **source** tree is present
+  under `.lake/packages/mathlib/Mathlib/...`, and `Data/Matrix/Kronecker.lean`
+  is absent while `LinearAlgebra/Matrix/Kronecker.lean` exists and the
+  `Data/Matrix/` dir is otherwise full. So: `object file … does not exist` for a
+  `Data.Matrix.*` import in v4.24.0 → check the source tree; several `Data.Matrix`
+  modules moved to `LinearAlgebra.Matrix`.
 - Under a full `import Mathlib.Tactic`, `₊`/`₋` (U+208A/U+208B subscript
   plus/minus) are **notation tokens** (PosPart etc.), so a bound-variable
   name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
@@ -278,6 +288,15 @@ prune the log, never the TRAPs.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-31 (milnor-tl-brick2): verified new `QOU/MassTheory/QuantumTraceTower.lean`
+  (Mathlib-only; `qtr`/`muDiag`/`qtrDiag` defs + 5 theorems). One fix, NOT a
+  tactic/statement change: `import Mathlib.Data.Matrix.Kronecker` → `.LinearAlgebra.`
+  (v4.24.0 module move, see TRAP above). All tactic blocks compiled as authored.
+  lean-direct EXIT 0, zero diagnostics/sorries. `#print axioms` on qtr_kron,
+  qtr_kron_one, qtrDiag_one all = `[propext, Classical.choice, Quot.sound]`, no
+  sorryAx. Cache already restored (3407 mathlib oleans, RESTORED-NO-TRACES marker).
+  Confirmed cold-cache TRAP again: file real 1m16s but user only 5.7s. File is
+  untracked (new, uncommitted) — the import fix lives in the working tree.
 - 2026-08-30 (milnor-v7ro): verified new `QOU/MassTheory/DeficitRecursionReduction.lean`
   (Mathlib.Tactic-only, no QOU imports; `deficit` def + 2 field-algebra theorems).
   lean-direct EXIT 0, zero errors/sorries. `#print axioms` on BOTH theorems =
