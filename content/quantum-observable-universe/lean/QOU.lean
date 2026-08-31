@@ -772,6 +772,7 @@ import QOU.QBeta.HolonomySpectrumSignObstruction
 import QOU.QBeta.ImQCannotSupplyEllipticGenerator
 import QOU.QBeta.BringEllipticCurveJInvariant
 import QOU.QBeta.JetTowerBlindToDecay
+import QOU.QBeta.TraceRealSpectrumComplex
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
