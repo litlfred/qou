@@ -133,6 +133,68 @@ wraps). Each needs reading before it is scored, per the paragraph above: an
 existing instance may be unconditional, parameterised-degenerate, or itself
 hypothesis-laden, and those are three different verdicts.
 
+### All six read and scored — and NONE of them adds to the vacuity count
+
+This is the opposite of what counting them would have given, which is why they
+were not counted.
+
+| class | verdict | why |
+|---|---|---|
+| `BorromeanQuark` | **false positive — name collision** | not scored |
+| `Term7ShellCorrectionClass` | **unconditional** | already known provable; adds nothing new |
+| `HasStrongDuality` | parameterised-degenerate | `ι = Empty` only |
+| `QFactRatioBound` | parameterised-degenerate | `k = 0` and `k = 1` only, under real hypotheses |
+| `SkeinMultisetInvariant` | parameterised-degenerate | the reflexive diagonal only |
+| `RhoPrefactorStructural` | parameterised-degenerate **and self-satisfying** | deuterium only, via a placeholder |
+
+**`BorromeanQuark` is a ten-way name collision.** `class BorromeanQuark` is
+declared **ten times** across `content/`, in ten different files. The instance
+that matched is `observations/borromean-quark.lean:120`, inhabiting the class at
+`:87` whose field is `bare_mass : ℝ → ℝ`. The class the ledger flags is
+`brings-surface/orbital-fourier-decomposition.lean:180`, whose field is
+`orbitalDim : ℕ → ℕ`. **Different classes, same name** — so the match was an
+artifact of grepping a name, the very error AGENTS.md §"Grep the claim SHAPE"
+warns about, and the same shape as the `markovZ` overload.
+
+**`SkeinMultisetInvariant` is the sharpest of the four degenerates.** Its
+instance is `skeinMultisetInvariant_refl config config h h := ⟨rfl⟩` — the
+*reflexive diagonal*, where the claim `skeinPolynomialSym c₁ = skeinPolynomialSym
+c₂` is `rfl` by construction. The class's actual content is about **distinct**
+configurations sharing a nucleon multiset, and the corpus's witness sits exactly
+where that content is absent.
+
+**`RhoPrefactorStructural` carries the arc's own defect inside a corpus
+instance.** `instRhoPrefactorStructural_deuterium` satisfies
+`ρ = round([d_λ*]_q)` by supplying `q_int := q_int_placeholder q 1`, and
+`q_int_placeholder q rho := fun _ => (rho : ℝ)` — i.e. it *defines* the
+q-integer to be `ρ`, making the claim `|ρ − ρ| ≤ 1/2`. The file is candid about
+this (it is named a placeholder and justified at the classical limit `q = 1`),
+so this is disclosed rather than hidden; but the instance does not witness the
+class's claim at general `q`, it witnesses it by construction.
+
+**`QFactRatioBound` is the honest §3b-cond pattern** and worth naming as the
+positive example: two instances, `qFactRatioBound_zero` and
+`qFactRatioBound_one`, at `k = 0` and `k = 1`, each carrying the real hypotheses
+`q > 1` and `q < 2`. Small-instance coverage with the general case open, stated
+as such.
+
+### 🛑 The collision also threatens results of mine
+
+Five of the 79 bundle names are declared more than once: `BorromeanQuark` (×10),
+`RMatrixBraidingContext`, `DoubleMagicConjecture`, `HasFiniteLPDuality`,
+`MassVolumeFactorization` (×2 each). I inhabited two of them, so which
+declaration a witness targets matters:
+
+- **`RMatrixBraidingContext` — my witness covers only one of the two, and the
+  ledger flags both.** I inhabited the library copy
+  (`QOU/Braiding/r_matrix_braiding_structure.lean:30`). The content-block sibling
+  (`braids-and-knots/r-matrix-braiding-structure.lean:46`) is a **strict
+  superset** — it adds `Rcheck1`, `Rcheck2` and `claim_braid_relation` — and
+  carries two of its own ledger findings (`r_matrix_braiding_structure`,
+  `braid_rep_from_R_check`). Those are **not** covered by my witness.
+- `MassVolumeFactorization`: the prober compiled against a copy of the flagged
+  file itself, so its verdict targets the right declaration.
+
 ## A second, different finding: `Term7ShellCorrectionClass` is provable
 
 Not vacuous — **provable**. Its field is `∃ a, a < 0 ∧ a = alpha5_value`, and
