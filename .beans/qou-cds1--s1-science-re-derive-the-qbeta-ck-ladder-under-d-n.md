@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T18:24:56Z
+updated_at: 2026-08-31T18:47:06Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4635,3 +4635,109 @@ carry `−2.02020024` as "today's muon extraction", including
 registry's KC21 row and §9f window endpoints. Re-pinning
 `Q_MUON_50_DIGIT_STR` / migrating the 336 ancestor-bearing files is
 owner-authorised work sequenced behind PR #5500 and `qou-1c4y`.
+
+
+## Step 15 (2026-08-31) — the anchor question, answered: there is no D-frame anchor
+
+Finding A left this bean at *"both routes are blocked at the ANCHOR, not the
+extraction"*. Rather than hunt for a D-frame anchor, I asked whether one **can**
+exist. It cannot, and the reason is measurable. Probe
+`qbeta-d-frame-z-determinations-experimental-budget` (8/8), muon pin, 60 dps,
+commit `c6b88d78ea`.
+
+**Method.** Every CAL input shifted ±1σ of its CODATA-2022 published
+uncertainty, with **both ends of each gap recomputed together** — `q₀` is itself
+a function of `m_μ/m_e`, so the cap and the mass determination are correlated
+and a naive per-quantity bar is wrong in both directions.
+
+| gap | value | 1σ | significance |
+|---|---|---|---|
+| mass − cap | 1.246002e-4 | 1.3123e-5 | **9.49479 σ** |
+| decay − cap | 3.858123e-1 | 6.9705e-7 | **553 497 σ** |
+| ladder anchor − `z_C` | −2.107e-4 | 1.3161e-4 | **1.60089 σ** |
+| ladder anchor − cap | −1.1358e-1 | 1.3161e-4 | **862.989 σ** |
+| `c₂(z_C) + 1` | −1.7202e-2 | 1.0748e-2 | **1.60058 σ** |
+| `c₂(z_D) + 1` | −8.298441 | 1.0741e-2 | **772.583 σ** |
+
+### 1. 🛑 The mass channel does NOT confirm the cap — correcting my own entry above
+
+The 2026-08-31 section above says *"an independent, non-circular measurement puts
+`z` essentially where the derived cap puts it… the anomaly is localised to the
+decay channel, not the convention."* **The "0.0203 %" is 9.49 σ.** It is four and
+a half orders of magnitude closer than decay and it is still a decisive
+disagreement. Both channels disagree with the derived cap; decay disagrees
+5.8e4× harder. The localisation claim needs that qualification, and the leverage
+caveat I attached (`d ln tr_M/d ln z = 0.00119`) was the right instinct pointing
+at the wrong conclusion — leverage is *why* the σ is large, not a reason the
+percentage is reassuring.
+
+### 2. Three corpus facts are ONE measurement
+
+| fact | σ |
+|---|---|
+| μ–p substrate tension (11.614 ppb) | 9.49362 |
+| `c₃` cross-anchor swing | 9.49363 |
+| mass-vs-cap gap in `z` | 9.49479 |
+
+They agree to **0.0123 %** because all three **are** `(q_muon − q_proton)`
+divided by CODATA's bar on `m_μ/m_e`. The corpus carries them as three separate
+facts in three coordinates. Anything that explains one explains all three, and a
+proposal that moves one without the others is inconsistent.
+
+### 3. `c₂ = −1` is a 1.6 σ empirical statement — both standing readings are wrong
+
+`implied c₂(z_C) = −1.0172 ± 0.0107` (bar = `Q_β`'s 0.78 ppm ÷ `u² = 7.3e-5`).
+
+- The extraction's **"−1.0176 vs −1"** is **not** a 1.76 % miss — it is
+  **agreement at 1.6 σ**.
+- The red team's **"symbolic-exact"** overstates it the other way: the Lean is
+  the ring tautology `1 − (bℏ_q²)² = 1 − u²` and the N=2-factor identification is
+  asserted in a docstring, so what actually supports `c₂ = −1` is *this* 1.6 σ,
+  nothing stronger.
+
+Under D the same quantity is **−9.2984, i.e. 773 σ from −1**.
+
+### 4. The ladder's anchor is itself a measurement of `z`, and it selects C
+
+Solving `implied c₂ = −1` for `z` at fixed `q` gives a **fourth determination**:
+
+    z = 0.499110 ± 0.000132    →  1.60 σ from z_C,  863 σ from the derived cap
+
+(the other `cos` branch is `z = 1.599`; **neither** is decay's 0.9985). So the
+ladder is not merely *written* in convention C — its empirical anchor
+independently measures the Markov parameter and lands on `z_C`.
+
+### THE ANSWER FOR THIS BEAN
+
+**There is no D-frame anchor.** The object that would play `c₂ = −1`'s role
+under D is excluded, by the same data that supports it under C, at 773 σ. So
+*"re-derive the ladder under D"* **cannot proceed by finding a D-frame `c₂`** —
+the ladder's **functional form** has to change, not its parameter. That is the
+anchor-side statement of what `decayLadder_zC_threeRow_ne_zero` says
+structurally, and it converts this bean's open item from "find the D-frame `c_k`"
+into "derive the D-frame decay functional", which is a different and larger job.
+
+### 5. The two decay-side functionals disagree with each other
+
+The trace reduction wants `z = 0.9985`; the ladder wants `z = 0.4991`. Both claim
+to reproduce the same `Q_β`, so reconciling them needs a scale `K` off by
+**2.2656× (126.6 %)** — **20× outside** Step 14's 6.31 % parameter-free wall. So
+this is not a missing normalisation of the kind already enumerated, and at most
+one of the two functionals is the right reading of the decay channel. That is a
+sharper form of Step 14's terminus.
+
+**Control:** cap and mass reproduce the committed values to **1e-15** through the
+symbolic Borromean trace (imported from `qbeta_z_symbolic_borromean_crosscheck`,
+not re-spelled); decay to **1.49e-8**, asserted as a tolerance because `F` is
+reconstructed from the 2026-08-29 witness rather than re-derived.
+
+**Scope-(a).** Nothing derived, proposed, wired or readmitted; no convention
+adjudicated; no `c_k` value changed. A `z` near an inadmissible point is TENSION,
+not permission — `one_not_root` stands, as does the derived two-row cap.
+
+**Recommended next**, and it is a judgement not a fact: the three-facts-one-
+measurement identity (§2) says the μ–p tension is the single unexplained
+residual behind the mass side, so the decay side is where new information can
+come from — and §5 says the first question there is *which of the two decay
+functionals is right*, since they cannot both be. That is answerable without
+re-deriving anything: it is a question about which object `Q_β` is a trace of.
