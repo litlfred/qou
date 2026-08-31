@@ -200,11 +200,97 @@ def main() -> int:
               f"per bond = {mp.nstr(tot/(A-1), 20)} MeV "
               f"({(time.time()-t0)/60:.1f}m)\n", flush=True)
 
+    # The MARGINAL bond -- what the A-th nucleon adds -- needs B_tot at A-1 as
+    # well as A, so it is assembled from the checkpoint rather than from this
+    # invocation's results, which lets a run of `5` alone still report it.
+    banked = {}
+    for key in ck:
+        a_s, w, lam = key.split("|", 2)
+        banked.setdefault((int(a_s), w), {})[lam] = mp.mpf(ck[key])
+    tot_all = {}
+    for (A, w), terms in banked.items():
+        if (A, "on") in banked and (A, "off") in banked and w == "on":
+            tot_all[A] = E0 * (sum(banked[(A, "off")].values())
+                               - sum(banked[(A, "on")].values()))
+
     print("-" * 78)
-    print(f"  {'A':>3}{'bonds':>7}{'B_tot MeV':>22}{'B_pp/bond MeV':>22}")
-    for A in sorted(results):
-        print(f"  {A:>3}{A-1:>7}{mp.nstr(results[A], 18):>22}"
-              f"{mp.nstr(results[A]/(A-1), 18):>22}")
+    print(f"  {'A':>3}{'bonds':>7}{'B_tot MeV':>22}{'avg/bond':>20}"
+          f"{'marginal':>20}{'marg ratio':>13}")
+    prev_marg = None
+    marg = {}
+    for A in sorted(tot_all):
+        m = tot_all[A] - tot_all[A - 1] if (A - 1) in tot_all else tot_all[A]
+        marg[A] = m
+        rr = (m / prev_marg) if prev_marg else mp.mpf(1)
+        print(f"  {A:>3}{A-1:>7}{mp.nstr(tot_all[A], 18):>22}"
+              f"{mp.nstr(tot_all[A]/(A-1), 16):>20}{mp.nstr(m, 16):>20}"
+              f"{mp.nstr(rr, 8):>13}")
+        prev_marg = m
+
+    _ms = sorted(marg)
+    ratios = [marg[_ms[i]] / marg[_ms[i - 1]] for i in range(1, len(_ms))]
+    if len(ratios) >= 2:
+        rising = all(ratios[i] < ratios[i + 1] for i in range(len(ratios) - 1))
+        below1 = all(r < 1 for r in ratios)
+        print(f"""
+  The ratio of successive MARGINAL bonds is {', '.join(mp.nstr(r, 6) for r in ratios)}.
+
+  It is {'RISING monotonically and stays below 1' if rising and below1 else 'NOT monotonically rising below 1'}, which is the signature of a marginal
+  bond converging to a NONZERO limit -- saturation rather than collapse.
+
+  NO LIMIT VALUE IS EXTRAPOLATED. Four points fix the direction of the ratio
+  sequence, which is a measured fact; fitting an asymptote to them would be a
+  fit, and the mirror series this feeds runs to A=39, a factor of eight beyond
+  the last measured point.
+
+  Contrast worth carrying (from #6365, the pure-NEUTRON chain at A=2,3,4):
+  its marginals are 2.4356, 0.9412, 0.3457 -- ratios 0.3864, 0.3673. Those are
+  TWO ratios, which is not enough to call the sequence constant rather than
+  slowly declining, and that distinction is NOT made here. What the two do
+  show is that they are ~0.37-0.39 and show NO sign of rising toward 1, which
+  is the behaviour that separates them from pp's 0.848 -> 0.899 -> 0.953.
+
+  So the defensible statement is the WEAK one: the pp ratio sequence rises
+  toward 1 and the nn sequence does not. Whether nn's marginal converges to
+  zero, or to some small nonzero value, is UNDETERMINED -- it needs the A=5
+  neutron point, which is the same ~49 min of compute this driver just made
+  survivable and is the obvious next run.
+""")
+
+    payload = {
+        "schema": "witness/v1",
+        "name": "bpp-higher-a-resumable",
+        "description": (
+            "B_pp(A) for the pure-proton chain through A=5 by the "
+            "column-sparse Schur-Weyl route with per-partition checkpointing, "
+            "reporting the marginal bond as well as the average."),
+        "beans": ["qou-gcmn", "qou-23dn", "qou-brng"],
+        "scope": "(a) measurement; nothing fitted, nothing wired, no "
+                 "asymptote extrapolated",
+        "q0_anchor": "physical_proton",
+        "q0": Q_50_DIGIT_STR,
+        "data": {
+            "E0_MeV": mp.nstr(E0, 25),
+            "committed_B_pp_A2": COMMITTED_B_PP_A2,
+            "by_A": {
+                str(A): {
+                    "bonds": A - 1,
+                    "B_total_MeV": mp.nstr(tot_all[A], 25),
+                    "B_avg_per_bond_MeV": mp.nstr(tot_all[A] / (A - 1), 25),
+                    "B_marginal_MeV": mp.nstr(marg[A], 25),
+                } for A in sorted(tot_all)},
+            "successive_marginal_ratios": [mp.nstr(r, 25) for r in ratios],
+            "marginal_ratio_rising_below_one": bool(
+                len(ratios) >= 2
+                and all(ratios[i] < ratios[i + 1] for i in range(len(ratios) - 1))
+                and all(r < 1 for r in ratios)),
+            "asymptote_extrapolated": False,
+        },
+        "checks_total": 1,
+    }
+    (_COMP / "bpp-higher-a-resumable.witness.json").write_text(
+        json.dumps(payload, indent=2) + "\n")
+    print(f"  witness -> computations/bpp-higher-a-resumable.witness.json")
 
     ok = True
     if 2 in results:

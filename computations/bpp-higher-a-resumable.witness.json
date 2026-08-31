@@ -1,0 +1,51 @@
+{
+  "schema": "witness/v1",
+  "name": "bpp-higher-a-resumable",
+  "description": "B_pp(A) for the pure-proton chain through A=5 by the column-sparse Schur-Weyl route with per-partition checkpointing, reporting the marginal bond as well as the average.",
+  "beans": [
+    "qou-gcmn",
+    "qou-23dn",
+    "qou-brng"
+  ],
+  "scope": "(a) measurement; nothing fitted, nothing wired, no asymptote extrapolated",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "committed_B_pp_A2": "2.12836094575708",
+    "by_A": {
+      "2": {
+        "bonds": 1,
+        "B_total_MeV": "2.128360945757083002984978",
+        "B_avg_per_bond_MeV": "2.128360945757083002984978",
+        "B_marginal_MeV": "2.128360945757083002984978"
+      },
+      "3": {
+        "bonds": 2,
+        "B_total_MeV": "3.93268521506047772226639",
+        "B_avg_per_bond_MeV": "1.966342607530238861133195",
+        "B_marginal_MeV": "1.804324269303394719281411"
+      },
+      "4": {
+        "bonds": 3,
+        "B_total_MeV": "5.554756840629009638693526",
+        "B_avg_per_bond_MeV": "1.851585613543003212897842",
+        "B_marginal_MeV": "1.622071625568531916427136"
+      },
+      "5": {
+        "bonds": 4,
+        "B_total_MeV": "7.100698352987773509222603",
+        "B_avg_per_bond_MeV": "1.775174588246943377305651",
+        "B_marginal_MeV": "1.545941512358763870529078"
+      }
+    },
+    "successive_marginal_ratios": [
+      "0.847752949470502227481397",
+      "0.8989911919739204794245037",
+      "0.9530661211195993655379888"
+    ],
+    "marginal_ratio_rising_below_one": true,
+    "asymptote_extrapolated": false
+  },
+  "checks_total": 1
+}
