@@ -115,6 +115,21 @@ def _table_entries(n: int, q_val: mp.mpf) -> tuple[list[dict], mp.mpf, float]:
     t0 = time.monotonic()
     y = y_lambda_at_q0_mpmath(n, q_val)
     wall = time.monotonic() - t0
+    # Snap sub-precision residue to an EXACT zero, matching
+    # `regenerate_y_lambda_mpfr.evaluate_y_at_q0` (bean `qou-sal4`). Under
+    # convention D the Wenzl level is r = 2, so y_λ vanishes IDENTICALLY for
+    # partitions with three or more rows; the closed form reaches that zero by
+    # cancellation, which is not exact at every working precision and leaves
+    # roundoff that then gets serialised with 50 significant digits and reads
+    # as data. (Measured at the proton pin for λ=(4,1,1): 0 at dps 50, 2.19e-72
+    # at 70, -1.48e-92 at 90 — sign flipping, magnitude tracking 10^-dps.)
+    #
+    # This producer EXTENDS the same cache that `regenerate_y_lambda_mpfr`
+    # writes, so it has to use the same floor or the table would be internally
+    # inconsistent: exact zeros for n<=12 and roundoff for n=13..18.
+    _ZERO_FLOOR = mp.mpf(10) ** (-50)
+    y = {lam: (mp.mpf(0) if (v != 0 and mp.fabs(v) < _ZERO_FLOOR) else v)
+         for lam, v in y.items()}
     weights = [{"partition": list(lam), "y_lambda": mp.nstr(y[lam], 50)}
                for lam in partitions_of(n)]
     resid = abs(sum(y[lam] * _f_lambda(lam) for lam in y) - 1)
