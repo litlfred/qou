@@ -16,10 +16,10 @@ The six Gröbner--Shirshov normal-form words span $H_3(q)$:
 | Operator | Braid word | Permutation | $\mathrm{tr}_M$ at $q_0$ |
 |---|---|---|---|
 | $\gamma$ (identity) | $\varnothing$ | $e$ | $1.000$ |
-| $\sigma_0$ | $(0)$ | $(1\;2)$ | $0.499$ |
-| $\sigma_1$ | $(1)$ | $(2\;3)$ | $0.499$ |
-| $L_+$ | $(0,1)$ | $(1\;2\;3)$ | $0.249$ |
-| $L_-$ | $(1,0)$ | $(1\;3\;2)$ | $0.249$ |
-| $e^-$ | $(0,1,0)$ | $(1\;3)$ | $0.551$ |
+| $\sigma_0$ | $(0)$ | $(1\;2)$ | $0.613$ |
+| $\sigma_1$ | $(1)$ | $(2\;3)$ | $0.613$ |
+| $L_+$ | $(0,1)$ | $(1\;2\;3)$ | $0.375$ |
+| $L_-$ | $(1,0)$ | $(1\;3\;2)$ | $0.375$ |
+| $e^-$ | $(0,1,0)$ | $(1\;3)$ | $0.691$ |
 
-These basis operators are algebraically distinct from the topological knots sharing their names. Their Markov traces at the substrate parameter $q_0$ provide the exact weights used for mass and binding computations.
+These basis operators are algebraically distinct from the topological knots sharing their names. Their Markov traces at the substrate parameter $q_0$ provide the weights used for mass and binding computations. The column is evaluated in the canonical **convention D**, $z_D = q^3/(q^2+1)$ ([notation register](../notation/notation-register-table3-data.md)): $\mathrm{tr}_M(\sigma_i) = z$, $\mathrm{tr}_M(L_\pm) = z^2$, and $\mathrm{tr}_M(e^-) = z + (q - q^{-1})z^2$.
