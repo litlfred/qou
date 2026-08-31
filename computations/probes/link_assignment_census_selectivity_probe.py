@@ -1,117 +1,128 @@
 #!/usr/bin/env python3
-"""Gap #2 — the 3-body link-volume. The knot assignment carries no information.
+"""Gap #2 — the substrate DOES fix a knot invariant, and it kills all three picks.
 
-WHAT THIS IS ABOUT
-------------------
-`conj-canonical-knot-id-sdp.md` asserts:
+WHAT WAS ALREADY KNOWN, AND IS NOT RE-ARGUED HERE
+--------------------------------------------------
+`docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md` (bean `qou-8ms1`)
+established that the `6_2` / `8_11` / `L6a4` assignments in
+`conj-canonical-knot-id-sdp.md` are an **admitted fit** — `mass_table_ppb.py`
+says so verbatim, `jsj_verification.py` performs the search, and the criterion
+is proximity to `B_AME/(rho*m_e)` with `rho` the corpus's own "hand-pick rho".
+It measured the resulting census degeneracy (796 / 1,101 / 26,671 manifolds
+strictly closer over `OrientableCuspedCensus`) and showed the SDP is a
+feasibility check on a presupposed element, so uniqueness cannot be a property
+of it. **All of that is prior work.** This probe re-measures it as a guard
+(A5) and otherwise takes it as given.
 
-> the joint mass-tower confinement SDP **uniquely selects** the canonical knot
-> ... The unique global minimizers are `6_2` for ²H, `8_11` for ³H, and `L6a4`
-> for ³He.
+That audit named one next step as the highest-value thing to do:
 
-and in the same breath records the provenance:
+> **Derive a complexity bound on `K(²H)` from the substrate — braid index
+> and/or crossing number — with no reference to `B_AME`; then ask whether the
+> volume match is unique inside that class.** ... **check whether `n_braid: 3`,
+> `n_0: 6` is derived or also handed over.**
 
-> **Historical volume matching originally proposed these assignments.**
-> Finitude of the normal-form candidate set, rigorous SDP search bounds, and
-> structural identification of the binding operator `K` are open verification
-> requirements.
+**This probe does that**, with a different invariant than the two suggested —
+the closure's **component count**, which the substrate fixes outright — and
+carries it to `A = 3`, which the audit did not reach. The answer is negative
+and it is not close.
 
-That volume matching is `B ≈ ρ · m_e · Vol(K)`, with `ρ` an integer the corpus
-calls, in `_deprecated/rho_census_wedderburn_experiment.py`, the **"hand-pick
-ρ"**. So the identification has two free choices — a knot drawn from a census,
-and an integer — fitted against one number per atom.
+THE DERIVED INVARIANT
+----------------------
+The canonical word `atom_braid_word_3A(Z, N)` is a Hecke element, not a braid
+word: its letters are `c*sigma_g + d*1`, and the averaged ones resolve into
+`sigma_g` or `sigma_g^-1`. **Both project to the same transposition `(g, g+1)`**,
+so the underlying permutation — and therefore the number of components of the
+closure, which is its cycle count — is identical on every branch and under
+every crossing-sign convention. Nothing empirical enters.
 
-This probe measures how much the volume match constrains the knot. It does NOT
-re-run the literal per-body-order volume route: that is separately REFUTED at
-`n = 2` by `binding_wn_link_volume_probe.py` (`Vol(Hopf) = 0` against an
-extracted `w_2 = 4.3534`). The question here is prior to that one — whether the
-*assignment* the route starts from was ever determined.
+Measured on the canonical word, over `0 <= Z, N <= 5`, `2 <= A <= 6`, both
+`pn_convention`s and nine bond-multiplicity settings:
 
-THE MEASUREMENT, WITH NO TOLERANCE CHOSEN
-------------------------------------------
-Picking a tolerance would be picking the answer. So instead each knot's **own
-achieved accuracy** sets the window, and we count the census manifolds that do
-at least as well:
+    c_free = 2A                                   exact, 0 deviations
+    c_atom = 2A - #{bonds of ODD multiplicity}    exact, 414/414
 
-    N(K) = #{ M in census : |Vol(M) − Vol_target| ≤ |Vol(K) − Vol_target| }
-    Vol_target = B_AME / (ρ · m_e)
+A bond merges two components only when its crossing count is odd; an even
+multiplicity is a full twist and merges nothing. At the unit multiplicities the
+trace pipeline actually uses, all `A-1` chain bonds are odd, so
 
-Against SnapPy's `OrientableCuspedCensus` (212,641) + `HTLinkExteriors`
-(180,511) — the same two censuses `m_tau_census_sweep.py` searched, so the
-reach is already on the corpus record:
+    c_atom = 2A - (A - 1) = A + 1                 3, 4, 4, 5 for 2H, 3H, 3He, 4He
 
-    atom  knot   Vol       B_pred    err      manifolds at least as good
-    ------------------------------------------------------------------
-    ²H    6_2    4.40083   2.24882   +1.090 %              799
-    ³H    8_11   8.28632   8.46860   −0.156 %            1,102
-    ³He   L6a4   7.32772   7.48892   −2.969 %           26,843
+**This independently corroborates `QOU.MassTheory.ClassicalTraceFloor`.** That
+Lean file (bean `qou-zrx2`, sorry-free) derives `cAtom = A + 1` from
+`cFree = 2*A` together with `cFree = cAtom + (A - 1)` — a combinatorial merge
+argument. Here the same two counts fall out of the permutation of the actual
+canonical word, a genuinely different route, so this is corroboration and not a
+restatement (`qou-l81w`).
 
-**The chosen knot is one of between 800 and 27,000 equally good ones.** No
-tolerance was chosen; these are ranks. An assignment that is 1-of-26,846 is not
-an identification, and `≈ 10 to 15 bits` of unjustified choice is being spent
-per atom to make it.
+ALL THREE ASSIGNMENTS FAIL IT
+-------------------------------
+    atom   assigned link   components   required A+1   verdict
+    ------------------------------------------------------------
+    2H     6_2                  1            3         MISMATCH
+    2H     Hopf L2a1 (bind)     2            3         MISMATCH
+    3H     8_11                 1            4         MISMATCH   <- new
+    3He    L6a4 (Borromean)     3            4         MISMATCH   <- new
 
-TWO OF THE THREE PICKS MISS THE DOC'S OWN 0.5 %
-------------------------------------------------
-`6_2` lands at +1.09 % and `L6a4` at −2.97 %. Only `8_11` is inside 0.5 %.
-(The doc's 0.5 % is stated of the SDP Frobenius residual, not of the volume, so
-this is not a direct contradiction — it is the volume route failing at the
-tolerance the same document treats as the standard of a match.)
+The `2H` rows reproduce the audit's scope-(b) finding. **The `3H` and `3He`
+rows are new**: `8_11` is a knot where a 4-component link is required, and
+`L6a4` — the one assignment with a reason independent of its volume — is off by
+exactly one component. So the arity objection is not a deuteron peculiarity; it
+is uniform across the registry.
 
-AND THE ONE PICK WITH A STRUCTURAL REASON IS THE WORST NUMERICALLY
--------------------------------------------------------------------
-`L6a4` is the one assignment with an argument independent of its volume:
-`binding_link_volumes.py` shows `L6a4 = Borromean`, the same link that defines
-the per-nucleon braid `𝓑₃` — "an identification, not a fit", and correctly so.
-It is also the pick with the largest volume error (−2.97 %) and by far the
-weakest rank (1-of-26,846). Conversely `8_11`, the only pick inside 0.5 %, has
-no structural motivation on record at all. The two criteria are not just weak —
-they are **anti-correlated across the three atoms**.
+AND THE TWO CONSTRAINTS TOGETHER ARE EMPTY
+--------------------------------------------
+This is the audit's question answered. Intersect the derived arity with the
+volume window each pick's own accuracy defines (no tolerance chosen):
 
-WHY THE PSD SDP DOES NOT RESCUE IT
-------------------------------------
-`binding-link-psd-feasibility-probe.witness.json` records, at `H_3`:
+    atom   manifolds in the volume window   ... of which have A+1 cusps
+    ---------------------------------------------------------------------
+    2H                      799                          0
+    3H                    1,102                          0
+    3He                  26,843                         29
 
-    ²H whole-atom 6_2 .......... False      ← the census pick FAILS
-    ²H binding L_H (Hopf) ...... True
-    ³He whole-atom L6a4 ........ True
-    control: trivial (unknot) .. True       ← so does the UNKNOT
+**At `2H` and `3H` the candidate set is empty.** No census manifold has both
+the derived component count and a volume matching `B_AME/(rho*m_e)` as well as
+the named knot does. So the answer to "is the volume match unique inside the
+derived class?" is not "yes" and not "no" — the class contains **nothing**, the
+named knot included, because the named knot is not in it either.
 
-The unknot passing is the decisive entry. PSD-feasibility of `ρ_λ(K)` is a
-**necessary** condition that trivial objects satisfy, so as it stands the SDP is
-a filter with no demonstrated selective power — it cannot be what "uniquely
-selects" anything. And where it has been run on a census pick it *rejects* it:
-`6_2` fails at `H_3` with a standard-`(2,1)` eigenvalue of `−0.89` (PR #1698).
+At `3He`, 29 survive, and the best of them beats the incumbent by fivefold:
 
-WHAT WOULD CLOSE GAP #2
-------------------------
-The volume route cannot be repaired by a better tolerance — the failure is that
-the census is dense at these volumes, so no tolerance separates the candidates.
-Selection has to come from an **objective**, not a feasibility test, and the
-objective has to be independent of `B_AME` or the `qou-l81w` rule is violated
-exactly as it is now. The corpus already has the pieces:
+    L14n62525   Vol = 7.597116   B_pred = 7.76424 MeV   +0.598 %
+    L6a4        Vol = 7.327725   B_pred = 7.48892 MeV   -2.969 %   (3 cusps)
 
-  - the convolution `K_word = atom_word ++ cp_inv_word` (`binding_k_solver.py`),
-    which *determines* `K` from the atom word — so the open question is what
-    determines `K`, not what determines the knot;
-  - a substrate-only cost vector `t = TR_M` and Gram matrix `G` from
-    `pyhecke.gram`, with dual-emitting solvers (`solve_operator_selection_lp`,
-    `solve_frobenius_dual_lp`) that take no empirical input.
+`L14n62525` is not proposed as a replacement — it is a 14-crossing link with no
+structural motivation, and offering it would repeat exactly the census-fitting
+this probe is documenting. It is reported because it shows the incumbent is not
+even the best candidate in its own restricted class.
 
-What is missing is the **minimisation over Gröbner–Shirshov normal forms** the
-conjecture describes but no witness performs, together with the finitude bound
-that would make "unique global minimizer" checkable. Until then the three
-assignments should be recorded as hand-picked, not as SDP outputs.
+WHAT THIS DOES AND DOES NOT SHOW
+----------------------------------
+Component count is a **necessary** condition on the closure, so an empty
+intersection is a real refutation while a survivor is only a candidate. The
+restriction is to census manifolds with `A+1` cusps; a link exterior's cusp
+count is its component count, and the census is not exhausted by link
+exteriors, so the counts above are upper bounds on true link candidates and the
+emptiness at `2H`/`3H` only strengthens.
+
+It does **not** show that `6_2`, `8_11` and `L6a4` are the wrong objects for
+whatever `K` the conjecture intends — the registry carries `knot_name` and
+`binding_link_name` as separate fields, and the audit is careful that only the
+*identification with the closure of the canonical mass word* is excluded. What
+is new is that the exclusion now covers `A = 3`, and that the substrate's own
+derived invariant leaves nothing behind at `A = 2, 3`.
+
+Consistent with `docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md`:
+if the closure is non-hyperbolic it is in no cusped hyperbolic census at all,
+which is one reason the intersection is empty.
 
 DISCIPLINE
 ----------
-No fit; no tier change; nothing rewired. Volumes are taken from SnapPy 3.3.2 and
-cross-checked against the corpus's canonical `knot_volumes.py` registry, so the
-census counts and the corpus constants are the same numbers. The verdict is
-structural (the census density at these volumes), not scope-limited: enlarging
-the search space can only increase the counts.
+No fit; no wiring; no tier change; no knot proposed. Volumes come from SnapPy
+and are cross-checked against the canonical `knot_volumes.py` registry.
 
--- Ref: [manuscript] bean t7qv (Gap #2); conj-canonical-knot-id-sdp.md
+-- Ref: [manuscript] bean t7qv (Gap #2); prior: qou-8ms1,
+   docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md
 """
 from __future__ import annotations
 
@@ -142,6 +153,7 @@ from knot_volumes import (  # noqa: E402
     VOL_8_11_MPF,
     VOL_BORROMEAN_MPF,
 )
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -151,30 +163,78 @@ except Exception:  # pragma: no cover
 
 set_compute_dps()
 
-# (atom, B_AME, hand-picked ρ, knot name, canonical Vol from knot_volumes.py).
-# Every numeric is mpf: SnapPy's census slicing is the ONLY place a float
-# appears, and only because `census[lo:hi]` takes binary64 bounds.
+# (atom, B_AME, hand-picked ρ, knot, canonical Vol, components of that link, A).
+# Every numeric is mpf; SnapPy's census slicing is the only float boundary.
 PICKS = [
-    ("2H",  AME_B_DEUTERON_MEV_VALIDATION, 1, "6_2",  VOL_6_2_MPF),
-    ("3H",  AME_B_TRITIUM_MEV_VALIDATION,  2, "8_11", VOL_8_11_MPF),
-    ("3He", AME_B_HE3_MEV_VALIDATION,      2, "L6a4", VOL_BORROMEAN_MPF),
+    ("2H",  AME_B_DEUTERON_MEV_VALIDATION, 1, "6_2",  VOL_6_2_MPF,       1, 2),
+    ("3H",  AME_B_TRITIUM_MEV_VALIDATION,  2, "8_11", VOL_8_11_MPF,      1, 3),
+    ("3He", AME_B_HE3_MEV_VALIDATION,      2, "L6a4", VOL_BORROMEAN_MPF, 3, 3),
 ]
 
-# Recorded verbatim from binding-link-psd-feasibility-probe.witness.json.
-PSD_RECORDED = {
-    "2H whole-atom 6_2": False,
-    "2H binding L_H (Hopf)": True,
-    "3He whole-atom L6a4": True,
-    "control: trivial (unknot)": True,
-}
+# The ²H *binding* link, carried in a separate registry field from knot_name.
+HOPF_COMPONENTS = 2
+
+
+def cycle_count(word, n: int) -> int:
+    """Components of the closure = cycles of the underlying permutation.
+
+    Branch-independent: `sigma_g` and `sigma_g^-1` are the same transposition,
+    so no crossing-sign convention or superposition resolution can change this.
+    """
+    p = list(range(n))
+    for (_c, _d, g) in word:
+        p[g], p[g + 1] = p[g + 1], p[g]
+    seen = [False] * n
+    cycles = 0
+    for i in range(n):
+        if not seen[i]:
+            cycles += 1
+            j = i
+            while not seen[j]:
+                seen[j] = True
+                j = p[j]
+    return cycles
+
+
+def chain_bonds(Z: int, N: int) -> list[str]:
+    """Bond types along the chain, protons first then neutrons."""
+    seq = ["p"] * Z + ["n"] * N
+    return [seq[i] + seq[i + 1] for i in range(len(seq) - 1)]
+
+
+def sweep_cycle_laws() -> dict:
+    """Measure `c_free` and `c_atom` across (Z, N), conventions, multiplicities."""
+    mults = [(1, 1, 1), (2, 1, 1), (1, 2, 1), (1, 1, 2), (2, 3, 2),
+             (3, 3, 3), (2, 2, 2), (1, 3, 5), (4, 1, 1)]
+    free_tested = free_bad = atom_tested = atom_bad = 0
+    for Z in range(6):
+        for N in range(6):
+            A = Z + N
+            if not (2 <= A <= 6):
+                continue
+            free_tested += 1
+            if cycle_count(atom_braid_word_3A(Z, N, include_inter=False),
+                           3 * A) != 2 * A:
+                free_bad += 1
+            for conv in ("bring_color_weighted", "strict_averaged"):
+                for m_pp, m_pn, m_nn in mults:
+                    mm = {"pp": m_pp, "pn": m_pn, "np": m_pn, "nn": m_nn}
+                    w = atom_braid_word_3A(
+                        Z, N, include_inter=True, pn_convention=conv,
+                        m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
+                    odd = sum(1 for b in chain_bonds(Z, N) if mm[b] % 2 == 1)
+                    atom_tested += 1
+                    if cycle_count(w, 3 * A) != 2 * A - odd:
+                        atom_bad += 1
+    return {"free_tested": free_tested, "free_deviations": free_bad,
+            "atom_tested": atom_tested, "atom_deviations": atom_bad}
 
 
 def _censuses():
-    """SnapPy censuses, or None when SnapPy is absent.
+    """SnapPy censuses, or `None` when SnapPy is absent.
 
     `m_tau_census_sweep.py` imports SnapPy unguarded; this probe guards so the
-    structural half (PSD selectivity, the anti-correlation) still reports in a
-    sandbox without it, and says so rather than silently thinning.
+    derived-arity half — which needs no census — still reports without it.
     """
     try:
         import snappy  # noqa: PLC0415
@@ -186,122 +246,128 @@ def _censuses():
     ]
 
 
-def rank_against_census(censuses, vol_target, vol_pick) -> dict:
-    """Count census manifolds at least as close to `vol_target` as `vol_pick`.
+def window_counts(censuses, vol_target, vol_pick, want_cusps: int) -> dict:
+    """Census manifolds at least as close as the pick, and how many have
+    the derived component count.
 
-    The window is set by the pick's own error, so no tolerance is chosen. The
-    count includes the chosen manifold itself where the census contains it.
-
-    `vol_target` / `vol_pick` arrive as mpf and are widened by one ulp before
-    the float cast, so the binary64 bounds SnapPy requires can only ADD
-    manifolds at the edge — the reported count stays a lower bound on the
-    candidate set, which is the direction the verdict needs.
+    The window is the pick's own error, so no tolerance is chosen. Bounds are
+    widened one ulp before the float cast SnapPy requires, so the count can
+    only over-report — the direction that keeps an empty result honest.
     """
     d = abs(vol_pick - vol_target)
     lo = math.nextafter(float(vol_target - d), -math.inf)
     hi = math.nextafter(float(vol_target + d), math.inf)
-    out, total = {}, 0
-    for name, cen in censuses:
-        n = len(list(cen[lo:hi]))
-        out[name] = n
-        total += n
-    out["total"] = total
-    return out
+    total = right_arity = 0
+    for _name, cen in censuses:
+        for m in cen[lo:hi]:
+            total += 1
+            if m.num_cusps() == want_cusps:
+                right_arity += 1
+    return {"in_volume_window": total, "with_derived_arity": right_arity}
 
 
 def main() -> int:
     snappy, censuses = _censuses()
-    rows, assertions = [], []
+    assertions, rows = [], []
 
-    print("Gap #2 — does the volume match determine the knot?")
+    # ── A1/A2. The substrate fixes the closure's component count ──────
+    laws = sweep_cycle_laws()
+    print("Gap #2 — what does the substrate actually fix about the knot?")
     print()
-    print(f"  {'atom':5s} {'knot':6s} {'Vol':>9s} {'Vol_target':>10s} "
-          f"{'B_pred':>9s} {'err%':>8s}   manifolds at least as good")
-    print("  " + "-" * 78)
+    print("  the closure's component count, and it is branch-independent:")
+    print(f"    c_free = 2A ................................ "
+          f"{laws['free_tested'] - laws['free_deviations']}/{laws['free_tested']} exact")
+    print(f"    c_atom = 2A - #(odd-multiplicity bonds) ..... "
+          f"{laws['atom_tested'] - laws['atom_deviations']}/{laws['atom_tested']} exact")
+    print("    at unit multiplicity this is c_atom = A + 1 = 3, 4, 4, 5")
+    print("    for 2H, 3H, 3He, 4He — corroborating, by a different route,")
+    print("    QOU.MassTheory.ClassicalTraceFloor (bean qou-zrx2, sorry-free).")
 
-    abs_err = {}          # atom -> mpf, kept at compute precision for A3
-    for atom, B, rho, knot, vol in PICKS:
-        vol_target = B / (M_E_MEV * rho)
-        b_pred = rho * M_E_MEV * vol
-        err = (b_pred - B) / B * 100
-        abs_err[atom] = abs(err)
-        row = {
-            "atom": atom, "knot": knot, "rho_handpicked": rho,
-            "B_AME_MeV": fmt(B), "vol": fmt(vol),
-            "vol_target": fmt(vol_target), "B_pred_MeV": fmt(b_pred),
-            "err_pct": fmt(err),
-        }
-        cells = (f"  {atom:5s} {knot:6s} {mp.nstr(vol, 7):>9s} "
-                 f"{mp.nstr(vol_target, 7):>10s} {mp.nstr(b_pred, 7):>9s} "
-                 f"{mp.nstr(err, 4):>8s}")
-        if censuses is not None:
-            row["census_at_least_as_good"] = rank_against_census(
-                censuses, vol_target, vol)
-            n = row["census_at_least_as_good"]["total"]
-            print(f"{cells}   {n:,}")
-        else:
-            print(f"{cells}   (SnapPy unavailable)")
-        rows.append(row)
+    ok = laws["free_deviations"] == 0
+    print(f"\n  A1  c_free = 2A holds with no deviations ................. "
+          f"{'PASS' if ok else 'FAIL'}")
+    assertions.append(("c_free_equals_2A", ok,
+                       f"{laws['free_deviations']} deviations in "
+                       f"{laws['free_tested']} cases"))
 
-    # ── A1. The volume match does not determine the knot ──────────────
+    ok = laws["atom_deviations"] == 0
+    print(f"  A2  c_atom = 2A - #odd-bonds holds with no deviations .... "
+          f"{'PASS' if ok else 'FAIL'}")
+    assertions.append(("c_atom_equals_2A_minus_odd_bonds", ok,
+                       f"{laws['atom_deviations']} deviations in "
+                       f"{laws['atom_tested']} cases"))
+
+    # ── A3. Every assignment fails the derived arity ──────────────────
+    print()
+    print("  the assigned links against it:")
+    print(f"    {'atom':5s} {'link':16s} {'components':>10s} {'required':>9s}   verdict")
+    mismatches = []
+    checks = [(a, k, c, A) for a, _B, _r, k, _V, c, A in PICKS]
+    checks.insert(1, ("2H", "Hopf L2a1 (bind)", HOPF_COMPONENTS, 2))
+    for atom, link, comps, A in checks:
+        need = A + 1
+        bad = comps != need
+        mismatches.append(bad)
+        print(f"    {atom:5s} {link:16s} {comps:>10d} {need:>9d}   "
+              f"{'MISMATCH' if bad else 'match'}")
+    ok = all(mismatches)
+    print(f"\n  A3  every assigned link fails the derived arity .......... "
+          f"{'PASS' if ok else 'FAIL'}")
+    print("      (the 2H rows reproduce the 2026-08-25 audit; 3H and 3He are new)")
+    assertions.append(("all_assignments_fail_derived_arity", ok,
+                       "; ".join(f"{a}:{k} {c} vs {A + 1}"
+                                 for (a, k, c, A) in checks)))
+
+    # ── A4/A5. Arity ∧ volume ─────────────────────────────────────────
     if censuses is not None:
-        counts = {r["atom"]: r["census_at_least_as_good"]["total"] for r in rows}
-        worst = min(counts.values())
-        ok = worst >= 100
         print()
-        print(f"  A1  every pick is out-ranked by >= 100 census manifolds "
-              f"(min = {worst:,}) ......... {'PASS' if ok else 'FAIL'}")
-        print(f"      counts: " + ", ".join(f"{k} = {v:,}" for k, v in counts.items()))
-        print("      => the assignment is 1-of-many, not an identification.")
-        assertions.append(("volume_match_does_not_determine_knot", ok,
-                           f"min rank {worst}; counts {counts}"))
+        print("  intersecting the derived arity with the volume window:")
+        print(f"    {'atom':5s} {'knot':6s} {'err%':>8s} {'in window':>10s} "
+              f"{'+ arity':>8s}")
+        empties, degeneracy = [], {}
+        for atom, B, rho, knot, vol, _comps, A in PICKS:
+            vol_target = B / (M_E_MEV * rho)
+            b_pred = rho * M_E_MEV * vol
+            err = (b_pred - B) / B * 100
+            wc = window_counts(censuses, vol_target, vol, A + 1)
+            degeneracy[atom] = wc["in_volume_window"]
+            empties.append((atom, wc["with_derived_arity"]))
+            rows.append({
+                "atom": atom, "knot": knot, "rho_handpicked": rho,
+                "B_AME_MeV": fmt(B), "vol": fmt(vol),
+                "vol_target": fmt(vol_target), "B_pred_MeV": fmt(b_pred),
+                "err_pct": fmt(err), "derived_components": A + 1, **wc,
+            })
+            print(f"    {atom:5s} {knot:6s} {mp.nstr(err, 4):>8s} "
+                  f"{wc['in_volume_window']:>10,} {wc['with_derived_arity']:>8,}")
 
-    # ── A2. Two of three miss the doc's own 0.5 % ─────────────────────
-    half = mp.mpf(1) / 2
-    outside = [a for a, e in abs_err.items() if e > half]
-    ok = set(outside) == {"2H", "3He"}
-    print()
-    print(f"  A2  picks outside 0.5 %: {outside} ......................... "
-          f"{'PASS' if ok else 'FAIL'}")
-    print("      6_2 at +1.09 %, L6a4 at −2.97 %; only 8_11 is inside.")
-    assertions.append(("two_of_three_picks_miss_half_percent", ok,
-                       f"outside 0.5%: {outside}"))
+        ok = all(n == 0 for a, n in empties if a in ("2H", "3H"))
+        print(f"\n  A4  at 2H and 3H the derived class is EMPTY ............. "
+              f"{'PASS' if ok else 'FAIL'}")
+        print("      no census manifold has both the derived component count")
+        print("      and a volume matching as well as the named knot does —")
+        print("      the named knot included. This is the audit's question")
+        print("      answered: the class contains nothing.")
+        assertions.append(("arity_and_volume_intersection_empty_at_A2_A3", ok,
+                           f"survivors {dict(empties)}"))
 
-    # ── A3. Structural motivation and numerical accuracy anti-correlate ─
-    err = abs_err
-    ok = err["3He"] > err["2H"] > err["3H"]
-    print()
-    print(f"  A3  the one structurally-motivated pick (L6a4 = Borromean = 𝓑₃)")
-    print(f"      is the WORST numerically: |err| 3He {mp.nstr(err['3He'], 4)} % "
-          f"> 2H {mp.nstr(err['2H'], 4)} % > 3H {mp.nstr(err['3H'], 4)} % ...... "
-          f"{'PASS' if ok else 'FAIL'}")
-    print("      and 8_11, the only pick inside 0.5 %, has no structural")
-    print("      motivation on record. The two criteria disagree.")
-    assertions.append(("structure_and_accuracy_anticorrelate", ok,
-                       f"|err%| 3He={fmt(err['3He'])} 2H={fmt(err['2H'])} "
-                       f"3H={fmt(err['3H'])}"))
-
-    # ── A4. PSD feasibility has no selective power ────────────────────
-    ok = (PSD_RECORDED["control: trivial (unknot)"] is True
-          and PSD_RECORDED["2H whole-atom 6_2"] is False)
-    print()
-    print(f"  A4  PSD-feasibility selects nothing: the UNKNOT passes, while")
-    print(f"      the census pick 6_2 FAILS ............................ "
-          f"{'PASS' if ok else 'FAIL'}")
-    print("      (binding-link-psd-feasibility-probe.witness.json; the −0.89")
-    print("      standard-(2,1) eigenvalue for 6_2 is PR #1698.)")
-    print("      => a necessary condition trivial objects satisfy cannot be")
-    print("         what 'uniquely selects' the canonical knot.")
-    assertions.append(("psd_feasibility_has_no_selective_power", ok,
-                       f"recorded: {PSD_RECORDED}"))
+        # Guard: the degeneracy the prior audit measured is reproduced.
+        prior = {"2H": 796, "3H": 1101, "3He": 26671}
+        ok = all(abs(degeneracy[a] - prior[a]) <= max(5, prior[a] * 0.01)
+                 for a in prior)
+        print(f"\n  A5  reproduces the 2026-08-25 audit's census degeneracy .. "
+              f"{'PASS' if ok else 'FAIL'}")
+        print(f"      prior (strictly closer, OCC only): {prior}")
+        print(f"      here (at least as good, OCC+HTLink): {degeneracy}")
+        assertions.append(("reproduces_prior_census_degeneracy", ok,
+                           f"prior {prior}; here {degeneracy}"))
 
     print()
-    print("### VERDICT: the three knot assignments are HAND-PICKED, not derived.")
-    print("    The volume criterion is satisfied by 10^3–10^4 census manifolds")
-    print("    per atom; the PSD criterion is satisfied by the unknot. Neither")
-    print("    is a selection principle. Gap #2 needs an OBJECTIVE over GS")
-    print("    normal forms that takes no B_AME input (qou-l81w), plus the")
-    print("    finitude bound conj-canonical-knot-id-sdp.md lists as open.")
+    print("### VERDICT: the substrate fixes the closure arity at A+1, and all")
+    print("    three assignments violate it. Intersected with the volume")
+    print("    window the candidate set is EMPTY at 2H and 3H. The complexity")
+    print("    restriction the 2026-08-25 audit asked for exists, is derived,")
+    print("    takes no B_AME input — and leaves nothing standing.")
 
     all_ok = all(a[1] for a in assertions)
 
@@ -311,20 +377,27 @@ def main() -> int:
                                 engine="snappy" if snappy else "python",
                                 output_dir=COMP)
             wb.set_description(
-                "EXPLORATORY (Gap #2, bean t7qv): measures how much the volume "
-                "criterion B ~ rho*m_e*Vol constrains the 2H/3H/3He knot "
-                "assignment. With each knot's OWN achieved accuracy as the "
-                "window — no tolerance chosen — 799 / 1,102 / 26,843 SnapPy "
-                "census manifolds do at least as well, so the assignment is "
-                "1-of-many rather than an identification. Two of the three "
-                "picks (6_2 at +1.09%, L6a4 at -2.97%) miss the 0.5% the "
-                "conjecture doc treats as a match, and the one pick with an "
-                "independent structural reason (L6a4 = Borromean = the "
-                "per-nucleon braid) is the worst numerically. The PSD route "
-                "does not rescue it: the recorded H_3 run passes the UNKNOT "
-                "and fails 6_2. No fit; no wiring; no tier change.")
+                "Gap #2 (bean t7qv). The 2026-08-25 audit "
+                "(qou-8ms1, knot-id-is-an-admitted-fit) asked for a complexity "
+                "bound on K derived from the substrate with no B_AME input, "
+                "then whether the volume match is unique inside that class. "
+                "This supplies one — the closure's COMPONENT COUNT, fixed by "
+                "the permutation of the canonical word and identical on every "
+                "branch since sigma and sigma^-1 are the same transposition. "
+                "Measured exact: c_free = 2A (0 deviations) and c_atom = 2A - "
+                "#(odd-multiplicity bonds) (414/414), = A+1 at unit "
+                "multiplicity, corroborating QOU.MassTheory.ClassicalTraceFloor "
+                "by an independent route. All three assignments FAIL it: 6_2 "
+                "(1 vs 3), 8_11 (1 vs 4), L6a4 (3 vs 4) — the 3H and 3He rows "
+                "are new, the audit reached only 2H. Intersected with each "
+                "pick's own volume window the class is EMPTY at 2H (0 of 799) "
+                "and 3H (0 of 1,102), and 29 of 26,843 at 3He. No fit; no "
+                "wiring; no knot proposed.")
+            wb.add_data("cycle_count_laws", laws)
+            wb.add_data("assignment_arity", [
+                {"atom": a, "link": k, "components": c, "required_A_plus_1": A + 1}
+                for (a, k, c, A) in checks])
             wb.add_data("picks", rows)
-            wb.add_data("psd_recorded_at_h3", PSD_RECORDED)
             wb.add_data("snappy_version", snappy.version() if snappy else None)
             wb.add_data("census_sizes",
                         {n: len(c) for n, c in censuses} if censuses else None)
@@ -333,16 +406,26 @@ def main() -> int:
                     name=name, computed=str(int(bool(passed))), expected="1",
                     tolerance=0, source=detail)
             wb.add_caveat(
-                "The census counts are a LOWER bound on the candidate set: "
-                "OrientableCuspedCensus + HTLinkExteriors are the two censuses "
-                "m_tau_census_sweep.py already searched, and enlarging the "
-                "search space can only raise the counts. The verdict is "
-                "therefore structural, not scope-limited.")
+                "Component count is a NECESSARY condition on the closure, so an "
+                "empty intersection refutes while a survivor is only a "
+                "candidate. Cusp count equals component count for link "
+                "exteriors and the census is not exhausted by link exteriors, "
+                "so the arity-restricted counts are UPPER bounds on genuine "
+                "link candidates — the emptiness at 2H/3H only strengthens.")
             wb.add_caveat(
-                "The 0.5% in conj-canonical-knot-id-sdp.md is stated of the SDP "
-                "Frobenius residual, not of the volume. A2 is the VOLUME route "
-                "failing at that tolerance, not a direct contradiction of the "
-                "doc's own claim.")
+                "The census-degeneracy measurement (A5) is prior work, "
+                "docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md; it is "
+                "re-measured here as a guard, not claimed. The counts differ "
+                "slightly because that audit counted STRICTLY closer over "
+                "OrientableCuspedCensus alone and this counts AT LEAST AS GOOD "
+                "over OCC + HTLinkExteriors.")
+            wb.add_caveat(
+                "L14n62525 (Vol 7.597116, +0.598%) beats L6a4 (-2.969%) inside "
+                "3He's arity-restricted class. It is NOT proposed as a "
+                "replacement — a 14-crossing link with no structural motivation "
+                "would repeat the census-fitting this probe documents. It is "
+                "reported only to show the incumbent is not the best candidate "
+                "in its own class.")
             out = wb.save()
             print(f"\nWitness: {out}")
         except Exception as e:  # pragma: no cover
