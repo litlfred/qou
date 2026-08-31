@@ -59,3 +59,54 @@ Expect a large first result set, and expect it to overlap the q0/anchor
 migrations that have been re-running producers all week. The value is in the
 ones that are stale for NO tracked reason — like this one, which was collateral
 from a float64 drain of something it depends on.
+
+## 2026-08-31 — DETECTOR BUILT (`aa85401ac`). 248 stale consumers.
+
+`computations/audits/witness_upstream_staleness_audit.py [--strict] [--limit N]`
+
+    witnesses with a commit date : 3605
+    producers referencing one    : 1313
+    STALE consumers              : 248
+
+Ordering is by COMMIT DATE, not mtime — a fresh clone gives every file the same
+mtime, so an mtime comparison reports nothing in exactly the environment this
+runs in. This session started on such a clone.
+
+### Validated, not assumed
+
+Both directions against the known-true case: it reports **0** occurrences of
+`low-isotope-binding-model-comparison` now, and the commit dates confirm it
+would have fired before the fix (consumer 08-23 < upstream 08-29; now 08-31 >
+08-29). A reported hit was spot-checked too — `qbeta_singularity_type_probe`
+genuinely `json.load`s the upstream it is 27.7 days behind.
+
+### The backlog is CONCENTRATED — this is the actionable part
+
+248 stale consumers, but they hang off very few upstreams:
+
+    16 each  atom-chi-rust-t / -d / -4he / -3he .witness.json   = 64 consumers
+    14       y-lambda-at-q0.witness.json
+    12       qbeta-decay-sdp-extended-ck.witness.json
+     7       habiro-coefficients-atomic.witness.json
+     6       wenzl-y-lambda-h9.witness.json
+     4       q-pinning-50-digit.witness.json
+     4       joint-tower-sdp-rust.witness.json
+
+Re-running the consumers of the four `atom-chi-rust-*` witnesses alone clears
+**64 of 248 (26%)**.
+
+Two of these upstreams are already known-problematic elsewhere, which raises the
+stakes rather than lowering them:
+
+- `qbeta-decay-sdp-extended-ck` is the ALL-NULLS witness of `qou-s2no`. Its 12
+  consumers are publishing results derived from `c_k` values the upstream no
+  longer contains.
+- `y-lambda-at-q0.witness.json` is the cache
+  `_y_lambda_at_convention_C_HISTORICAL` reads — marked "DEAD — convention C,
+  excised 2026-08-09". 14 consumers sit behind a convention-C artifact.
+
+### Not gated yet
+
+No baseline: the backlog is 248 and the numbers shift with every commit, so a
+must-only-shrink file would churn. `--strict` exists for when it is drained
+enough to gate in CI.
