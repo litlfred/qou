@@ -1,11 +1,11 @@
 ---
 # qou-59j5
 title: 'GAP: the extensive term has no derived energy scale -- m_e vs E_0 moves it 8.19x'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-31T04:13:26Z
-updated_at: 2026-08-31T04:13:26Z
+updated_at: 2026-08-31T04:29:11Z
 ---
 
 
@@ -108,3 +108,106 @@ to test, in order of how much structure they would need:
 
 Do **not** report another "N× short" figure for the extensive term until (1) is
 settled either way.
+
+---
+
+## 2026-08-31 — ANSWERED: **NO.** And the problem is bigger than this bean said.
+
+Probe: `computations/probes/e0_convention_ladder_probe.py` (3 assertions, all
+passing).
+
+### 1. `E₀` is not derivable, and the corpus already established that
+
+`computations/derivation_chain.py` carries an `E_0_CONVENTIONS` registry.
+Convention A's own `derivation` field answers the question directly:
+
+> "Closed-form algebraic substitution from CAL-1 m_e + CAL-2 q_0. … the existing
+> direct LP-dual probe at H_3 reports y_0^* DIMENSIONLESS, far from 4.186 MeV —
+> **so the MeV scale of E_0 still comes from CAL-1 + CAL-2 outside the LP**, not
+> from the LP dual directly."
+
+The single attempt to derive it — convention **D**, the operator-selection LP
+dual, `derive_e_0_lp_dual_h3.py` — is a **recorded negative finding**. Read from
+its committed witness: `y₀* = 0.375387` (dimensionless) for all four targets, so
+`y₀*·m_e = 0.191822 MeV` against convention A's `4.185981` — **a factor of
+21.8**. Its own `negative_finding` field: *"The LP-dual does NOT derive E_0 in
+MeV; it gives a dimensionless action shadow price."*
+
+So this bean's item 1 ("is `E₀ = m_e/(q₀(q₀−1))` derivable?") closes **NO**, and
+it does not need another attempt — it has had one, and the failure is documented.
+
+### 2. It is not two scales in tension. It is a four-convention registry, 256× wide
+
+I framed this as `m_e` vs `E₀`. Wrong shape. The registry is indexed by
+(`ℏ_q` power, Hecke level, operator class):
+
+| convention | `E₀` | `ℏ_q` | level | operator class |
+|---|---|---|---|---|
+| `A_single_hecke_tick` | **4.18598 MeV** | ℏ_q¹ | H₃, 3 strands | `Δ_NF`, β-decay single wrap |
+| `B_q_value_absorbed` | **0.78233 MeV** | ℏ_q⁰ | H_{3A}, 3A strands | `\|tr_M(W_free)\| − \|tr_M(W_atom)\|` |
+| `C_proton_back_fit` | ~200 MeV | ? | H_{3A} | ⚠ DISCIPLINE VIOLATION, do not consume |
+| `D_lp_dual` | N/A — dimensionless | — | — | not an `E₀` derivation |
+
+and **`m_e = 0.511 MeV`, which my three probes used, is not in the registry at
+all** — no entry, no operator class, no ℏ_q index.
+
+**A and B are not two guesses at one number.** They are (scale) and
+(scale × operator): `A·|Δ(net)| = 0.7836458` against CODATA `Q_β = 0.7823334`,
+agreeing to **0.168 %**, with `Δ(net) = h(h−2)/2`, `h = q−1/q = ℏ_q(q+1)` so the
+operator is exactly ℏ_q¹ and both routes total ℏ_q². Which convention a quantity
+takes is decided by the ℏ_q power the quantity already carries — not by taste.
+
+### 3. The rungs are 102× apart, and my 8.19× slip was a small step on that ladder
+
+The registry warns that mixing convention A with a B-style operator "would miss
+the `1/ℏ_q²` factor (≈ **102×** error)". Measured, `1/ℏ_q² = 101.862` — so the
+stated 102 is exactly the ℏ_q bookkeeping, confirming the ladder's spacing
+independently of the prose. **The uncertainty in the extensive term's scale is an
+order of magnitude larger than the error I corrected earlier today.**
+
+### 4. Why it stays open: `log Z(3A)` matches no registered operator class
+
+* its **Hecke level** is H_{3A} → points at **B** (1.884 MeV/nucleon);
+* its **ℏ_q content is zero** — `log(1+q₀²) = 0.803` is O(1), not small → points
+  at **A** (10.083 MeV/nucleon);
+* its **operator class** is none of the registered ones. It is neither `Δ_NF` nor
+  a trace *difference* nor a mass assembly. It is the logarithm of a partition
+  function.
+
+The registry cannot adjudicate, and the two candidates differ by **5.35×**.
+
+    at convention A   10.083 MeV/nucleon   →  1.57× short of a_V
+    at convention B    1.884 MeV/nucleon   →  8.38× short of a_V
+    at m_e (mine)      1.231 MeV/nucleon   → 12.84× short of a_V
+
+### Verdict
+
+**"The extensive term is short by N" has no determinate N.** Stop quoting
+magnitude deficits for it. What survives is scale-free and should be what the
+lane reports:
+
+* the A-exponent of `log Z` is exactly 1, the SEMF volume exponent (`qou-imcd`);
+* the four counters are exactly linear — `bonds A−1`, `averaged 2A+1`,
+  `strands 3A`, `letters 12A−1` — and `letters = 4 × strands`;
+* the framing factor `(1+q²)/(q+1/q) = q` exactly (`qou-78pt` assertion 1);
+* `b_nn/b_pp = 1.78` in the `B_sym` chain.
+
+### Successor question (do NOT reopen as "derive E₀")
+
+The tractable question is not "what is `E₀`" but **"what ℏ_q power does `log Z`
+carry, and does the framework assign an operator class to a bare partition
+function at all?"** That is answerable from the Hecke side without any energy
+scale, and it would select between A and B rather than inventing a fifth
+convention. If the answer is "no operator class", then the extensive term is not
+an energy in this framework and the whole comparison to `a_V` is category error —
+which would itself be a result.
+
+### Also fixed here
+
+`derive_e_0_lp_dual_h3.py`'s docstring reported `y_0^* = 0.1245` and
+`x^* = (0,…,0,1)`; its committed witness records `0.3753866` and a cone `x^*`
+with two components at `0.49956`. The prose predates that file's own 2026-08-23
+`scipy.linprog → clarabel-MPFR` change. Corrected in place; the conclusion is
+unchanged (21.8× rather than 65×). The `negative_finding` **string emitted into
+the witness** still carries the stale `≈ 0.124` — flagged in the docstring for
+whoever next runs that script, since fixing it requires a clarabel-MPFR run.

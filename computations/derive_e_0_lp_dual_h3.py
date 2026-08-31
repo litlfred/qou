@@ -36,6 +36,27 @@ no fitting). The findings:
      y_0^* = 0.1245. So y_0^* · m_e ≈ 0.064 MeV, NOT the
      4.186 MeV of convention A.
 
+     ⚠ STALE FIGURES — corrected 2026-08-31, bean `qou-59j5`.
+     The committed witness records, for ALL FOUR targets,
+     y_0^* = 0.3753866308623884, and a cone x^* with two equal
+     components ≈ 0.49956 rather than (0,…,0,1). The prose above
+     predates the 2026-08-23 solver change noted at the top of
+     this file (scipy.linprog → clarabel-MPFR) and was not
+     updated with it. Corrected:
+
+         y_0^*        = 0.375387   (dimensionless)
+         y_0^* · m_e  = 0.191822 MeV
+         convention A = 4.185981 MeV
+         ratio        = 21.82×
+
+     **The negative finding is unchanged**, and the gap is 21.8×
+     rather than 65×, so nothing downstream moves. Note that the
+     `negative_finding` string emitted into the witness below
+     still carries the stale "≈ 0.124"; fixing it means re-running
+     this script under clarabel-MPFR, not done here because the
+     conclusion does not depend on it. Whoever next runs this
+     should correct that string in the same pass.
+
   2. With the unboundedness x_i ≥ -M, the LP slides to a
      signed-coefficient mixed solution with primal_obj ≈ 0
      and y_0^* ≈ 0 — the action is unbounded below.
