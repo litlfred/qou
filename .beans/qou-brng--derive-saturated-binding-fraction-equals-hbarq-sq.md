@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T04:28:55Z
+updated_at: 2026-08-31T10:33:59Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -448,3 +448,54 @@ carry the rest. The `A = 2` Hopf carrier is unaffected: it is **not** Brunnian
 (`lk = 1`, `n₊ = 2`, `n₋ = 0`), the boundary case where `lk = z = 1`.
 
 File is now 20 declarations; probe 11/11.
+
+
+## GS tower / jet order — the degree index is not body order past 3He (PR #6393, 2026-08-31)
+
+The 'full GS tower, not just degree 0' step. Two probes, one finding.
+
+**1. `gs_tower_jet_degree_body_order_probe`** — `lem:bond-order-eq-jet-degree`
+reads the jet degree index as BODY order ('the n-nucleon cluster sub-word at jet
+vertical degree n'). Measured on the filtration's own graded dimension
+[A]_q! = sum_l M(A,l) q^l, that reading is inconsistent from A=4. Two exact facts,
+run as gates on A=2..8: deg [A]_q! = C(A,2), and every coefficient on 0..C(A,2) is
+strictly positive. So there is a non-zero graded piece at every degree up to
+C(A,2) — read as body order, non-zero n-body clusters for n up to C(A,2) among
+only A nucleons. C(A,2) > A exactly when A > 3, so it holds at D and T/3He and
+breaks first at 4He — where this arc's closures wall and where mu_4 = -4.591 sits.
+Weight in the impossible degrees at the proton pin: 20.85 % at A=4, 49.49 % at
+A=5, 73.98 % at A=6, 96.12 % at A=8. Not a tail effect.
+
+The reading that survives is the block's own LaTeX LABEL — BOND order. C(A,2) is
+the complete-graph bond count. Not a rescue by relabelling: CoordinationSaturation
+caps rho_A <= C(A,2) from the coordination side with no reference to the jet
+filtration. Same number, reached twice.
+
+**2. `graded_reference_simplex_basis_span_probe`** — the coordination basis
+C(A,2), C(A,3), C(A,4) that #4316/#4320 decomposes in cannot span rho_grad.
+Expanding rho_grad ALONE (no AME, no rho_strong, so not a fit) and pinning on
+A=2,3,4: exact at those three by construction, then 0.5639 at A=5, 0.1901 at A=6,
+0.007037 at A=8 — a factor 142 short. Cross-check run as a gate: the solve returns
+g_4 = 8.371447988, reproducing the '+8.37' helium_four_body_cluster_probe quotes
+as the graded reference's own 4-body simplex coefficient. rho_grad grows
+factorially (ratios 3.34, 4.71, 6.23, 7.91, 9.78, 11.86) while the basis is
+polynomial of degree <= 4. The basis fails exactly where probe 1 shows the
+coefficient mass goes.
+
+**NOT claimed** (recorded so it is not written down later): bodyorder_eq_jet_total
+stays true — body_eq_graded is a hypothesis FIELD composed with total_eq, a
+legitimate 3b-cond conditional, not a self-assuming projection; what is measured
+is that its premise cannot be instantiated past 3He. NOT that #4316/#4320 is a fit
+— a 3-point solve for 3 coefficients has no freedom to fit with; the charge is
+against the basis's SPAN. NOT that the sign pattern is wrong — mu_2=0, mu_3>0,
+mu_4<0 is correct arithmetic at its three points; what is added is that the signs
+inherit the same restriction to A<=4 as the values, so mu_4<0 is about 4He and not
+about 4-body clusters generally. Nothing about rho_strong.
+
+**Corpus-grep note.** My working thesis entering this — 'every live binding
+producer computes only the n=2 graded piece, nothing evaluates the tower' — was
+WRONG and was caught before being written. 18 producers reference rho_grad and the
+deltalambda family already decomposes the residual into mu_2/mu_3/mu_4. Fifth
+near-miss of this arc; the four earlier ones landed.
+
+Scope (a) throughout. Nothing wired.
