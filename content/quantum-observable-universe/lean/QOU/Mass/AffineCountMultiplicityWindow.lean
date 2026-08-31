@@ -8,41 +8,37 @@ must break `μ_t = 3·μ_p`, where `μ = ½(n₊+n₋)` is the count multiplicit
 against the corpus's **measured** crossing counts and turns the result into a constraint on the
 whole affine family.
 
-## The measured model
+## 🛑 RETRACTED: the instantiation at `(5, −1)` — the two counts are different objects
 
-`QOU.MassTheory.CrossingCountAffine` records, from `level3_em_channel_parity_probe.py` across
-**12 nuclei to `A = 39`**,
+An earlier version of this file instantiated the window at `μ(A) = 5A − 1`, the count from
+`QOU.MassTheory.CrossingCountAffine`, calling it *"exactly the multiplicity
+`BrunnianBindingChannel.countChannel` carries"*. **That identification is wrong and is withdrawn.**
 
-    n₊ = 5A − 1 + 2Z,    n₋ = 5A − 1 − 2Z,
+Two independent reasons, either of which is fatal:
 
-so the count multiplicity is `μ(A) = ½(n₊+n₋) = 5A − 1` — charge-free, and *exactly* the
-multiplicity `QOU.Mass.BrunnianBindingChannel.countChannel` carries. It is not a guess; it is what
-the canonical atomic braids measure.
+1. **Total vs inter-component.** `countChannel`'s `n₊, n₋` are *inter-component* crossings —
+   `minimal_brunnian_bond` fixes them from "the pairwise crossing pattern inside `L6a4`". The
+   `5A − 1` count is over **every** letter of the `A`-nucleon word, self-crossings included. In the
+   construction the inter-nucleon letters are only the `A − 1` chain interfaces; the rest are the
+   per-nucleon words.
+2. **They are not crossing numbers at all.** `atom_braid_word_3A`'s own docstring: *"this does NOT
+   return a braid word … the returned object lies in `H_n(q)` and is NOT in the image of
+   `ρ : B_n → H_n(q)` … there is NO SINGLE LINK behind it … **so NO TOPOLOGICAL quantity may be read
+   off it — not a volume, not a crossing number, not a genus**."* `n₊, n₋` there count Hecke **letter
+   types** by their `d` coefficient, and `tr_M` of the object is a weighted sum of `2^{2A+1}` link
+   invariants (32 for `²H`), not one link's.
 
-**It passes the acceptance test and then fails on sign.** `μ(3) = 14` and `3·μ(2) = 27`, so the
-three-to-one relation is broken and the `b₃ = 0` locus is escaped — but
+The counts themselves are sound and the relations `n₊ + n₋ = 10A − 2`, `n₊ − n₋ = 4Z` hold exactly
+(checked against the docstring's own `²H` figures: 23 letters, 11 `σ`, 7 `σ⁻¹`, 5 averaged `= 2A+1`).
+**`CrossingCountAffine` is not impugned** — it feeds these counts to the *linear* functional
+`E = n₊q − n₋q⁻¹`, which linearity transports; reading a *link crossing number* off them is the
+forbidden step, and that step was mine.
 
-    b₃/b₂ = μ(3)/μ(2) − 3 = 14/9 − 3 = −13/9 = −1.444…
-
-against a measured `+0.6411239316`. Wrong sign (`measuredModel_b3_neg`).
-
-## The general constraint
-
-For any affine `μ(A) = α·A + β` the cumulant is exact and linear
-(`b3_affine_eq`): `b₃ = μ(3) − 3·μ(2) = −(3α + 2β)`. So with a positive two-body binding
-`b₂ = μ(2) = 2α + β > 0`,
-
-    b₃ > 0   ⟺   2β < −3α        (`b3_pos_iff_of_b2_pos`)
-
-and combining the two, the intercept is pinned to a window
-(`b3_pos_forces_intercept_window`):
-
-    −2α < β < −³⁄₂ α.
-
-**The measured model sits far outside it**: `β/α = −1/5 = −0.2`, where the window is
-`(−2, −1.5)` and the value reproducing the measured `b₃/b₂` is `−1.6214` — off by a factor
-**8.11**. The gap is not in the *form* of the derived model, which is affine and could work; it is
-in one ratio, and the required value is known to six figures.
+**So the window below is stated for a general affine multiplicity and is instantiated at nothing.**
+Whether the binding channel's inter-component counts are affine in `A` at all is open; the corpus's
+`A − 1` chain interfaces would give `μ = (A−1)/2`, i.e. `r = β/α = −1`, still outside the window —
+but that is an observation about the construction, not a measurement of a carrier, and it is not
+claimed here.
 
 ## Why this is worth stating as a window rather than a miss
 
@@ -87,22 +83,6 @@ theorem b3_affine_eq (α β : R) : b3 α β = -(3 * α + 2 * β) := by
 theorem b2_eq (α β : R) : b2 α β = 2 * α + β := by
   unfold b2 mu; ring
 
-/-- **The measured model's cumulant is `−13`.** With `μ(A) = 5A − 1`
-(`QOU.MassTheory.CrossingCountAffine`, 12 nuclei to `A = 39`), `b₃ = −(15 − 2) = −13`. -/
-theorem measuredModel_b3 : b3 (5 : R) (-1) = -13 := by
-  rw [b3_affine_eq]; ring
-
-/-- **And its two-body value is `9`**, so `b₃/b₂ = −13/9`, against a measured `+0.6411239316`. -/
-theorem measuredModel_b2 : b2 (5 : R) (-1) = 9 := by
-  rw [b2_eq]; ring
-
-/-- **The measured model breaks the degenerate locus** — `μ(3) = 14 ≠ 27 = 3·μ(2)` — so it passes
-`CountChannelCarrierLocus.carrier_must_break_three_to_one`. The failure below is a sign failure,
-not the pair-local degeneracy. -/
-theorem measuredModel_breaks_three_to_one :
-    mu (5 : ℚ) (-1) 3 ≠ 3 * mu (5 : ℚ) (-1) 2 := by
-  unfold mu; norm_num
-
 /-- **The ratio depends only on the intercept-to-slope ratio.** Writing `β = r·α` with `α ≠ 0`,
 `b₃/b₂ = −(3 + 2r)/(2 + r)` — the slope cancels. So the search for a carrier reproducing `b₃` is
 one-dimensional. -/
@@ -134,15 +114,6 @@ theorem b3_pos_forces_intercept_window {α β : R} (h2 : 0 < b2 α β)
   rw [b2_eq] at h2
   rw [b3_affine_eq] at h3
   exact ⟨by linarith, by linarith⟩
-
-/-- **The measured model is outside the window.** `α = 5`, `β = −1`: the two-body binding is
-positive but `2β = −2` is not below `−3α = −15`, so the three-body cumulant is negative. -/
-theorem measuredModel_outside_window : ¬ (2 * (-1 : ℚ) < -(3 * 5)) := by norm_num
-
-/-- **The measured model's cumulant is strictly negative**, so its `b₃` has the wrong sign against
-the measured `+1.4262225 MeV`. -/
-theorem measuredModel_b3_neg : b3 (5 : ℚ) (-1) < 0 := by
-  rw [measuredModel_b3]; norm_num
 
 /-- **Non-vacuity: the window is inhabited.** An affine multiplicity with a large negative
 intercept does give a positive three-body cumulant — here `α = 5`, `β = −8`, so `μ(2) = 2`,
