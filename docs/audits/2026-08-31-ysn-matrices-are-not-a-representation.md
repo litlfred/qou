@@ -195,3 +195,53 @@ convention-D excision arc (`qou-cds1`, `qou-t9r1`).
 **What this still does not settle.** Nothing has been re-run with the correct
 family. Which downstream numbers move, and by how much, is measured only by
 wiring it in — `qou-sv7h` step 2, still open, still gating `qou-i7ju`.
+
+---
+
+# What it moves — measured (qou-sv7h step 2, first half)
+
+The correct family swapped in and `unified_iterative_correction(1,1)` re-run.
+**Measurement only — no witness was regenerated and no producer source was
+changed.** The swap is a runtime substitution of `_build_ysn_matrices` by
+`pyhecke_native.seminormal_matrices_mpfr`, returned dense at 50 dps.
+
+| `k_exact` | current (braid-violating) | corrected (braid-exact) | relative change |
+|---|---|---|---|
+| 4 | `-0.03193786643543622` | `-0.08955968305895067` | **+180 %** |
+| 5 | `-0.22859263051477`   | `-0.7335499391634977` | **+221 %** |
+| 6 | `-0.7228588117317579` | `-1.36568481708788`   | **+89 %** |
+| 7 | `-1.178155656129151`  | `-2.020000814981466`  | +71 % |
+
+**This is a factor of 1.7–3.2, not a rounding correction.**
+
+**`k = 4, 5, 6` are path-clean and are the rows to quote.** Measured: those
+truncations carry **0 sparse partitions**, so both runs take the identical dense
+code path and the only variable is the matrices. `k = 7` carries 2 sparse and
+`k = 8` carries 12, so those rows mix a path difference with the matrix
+difference and are weaker evidence — they are shown for continuity, not relied on.
+
+## What this does NOT establish
+
+Stated explicitly, because the number above is alarming enough to be
+over-read:
+
+- **This is one of three terms.** `binding_energy = unified_iterative_correction
+  + sdp_cross_channel_contribution + binding_from_frobenius_pairing`. Only the
+  first is measured here. The other two are unmeasured, and
+  `sdp_cross_channel.py` consumes `_build_ysn_matrices` too, so it is very
+  likely also affected — by an amount nobody has measured.
+- **These are truncations, not the production value.** Production runs
+  `k_exact = K_PARTITION_MAX = 11`. The trend across `k` is not monotone
+  (+180, +221, +89, +71 %), so extrapolating to `k = 11` from these four points
+  is not supported.
+- **No published number has been re-derived.** No binding energy, no `B(K)`,
+  no mass, no witness. The claim here is strictly about the accumulator.
+
+## What it does establish
+
+The defect is **consequential, not cosmetic**. A correction of this size in a
+term feeding `binding_energy` means the corrected values must be computed and
+published rather than assumed close, and it retires any hope that the braid
+violation was a harmless normalisation. Whether the corrected numbers agree
+better or worse with AME2020 is **unknown and unmeasured** — and that question,
+not the speed, is what the remaining work is for.
