@@ -6338,3 +6338,45 @@ independent sides (trace weight, bar parity, anchors); the cos form is closed
 plus a structural one-scale/two-target refutation). **No route is known to be
 open** — stated as a fact about the search, not as an impossibility claim.
 Scope (a). L2 unchanged at 1279 ppb.
+
+### 🛑 Correction to entry 15's cross-reference — I repeated an inflated reading (2026-08-31)
+
+The cross-reference section I added when merging main says the counit entry
+closes the z direction partly because *"`z_required` forces a **negative**
+Wedderburn weight"*. **That phrasing over-states what the negative shows**, and
+PR #6361 is right to deflate it. Verified independently here before accepting it:
+
+    wtNumer(q,z) = (z − q)((q²+1)z − q³)
+
+is an **upward parabola in `z`** (leading coefficient `q²+1 > 0`) whose two real
+roots are *exactly* the two admissible Markov parameters, and
+`q − z_D = q/(q²+1) > 0` **identically**, so `z_D < q` for every `q > 0`.
+Therefore `y_(1³)(z) < 0` for **every** `z` in the open interval `(z_D, q)` —
+width **0.49729055** at the pin, about half the substrate parameter itself.
+
+    z_C   0.4993203342   wtNumer  +0.15452259   outside (left of both roots)
+    z_D   0.6126880371   wtNumer   0            ROOT
+    z*    0.9985003026   wtNumer  −0.095999879  inside
+    z=1   1.0            wtNumer  −0.095076553  inside
+    z=q   1.1099785827   wtNumer   0            ROOT
+
+So the negative at `z*` and the negative at `z = 1` are **one fact**, and it is
+`z ∈ (z_D, q)` — **not** a property of either point. My cross-reference presented
+it as a finding *about* `z_required`, which is the stronger-sounding and weaker
+claim. The z direction is still closed from three sides; that conclusion is
+unaffected. Only the weight of this particular piece of evidence shrinks.
+
+Recorded rather than silently edited because it is the same shape as the errors
+this bean already collects: a quantity that is true at a point, reported as
+though the point were what made it true.
+
+### Entry-numbering collision with PR #6342 — flagged, not unilaterally renumbered
+
+PR #6342 (open, `claude/convention-migration-validation-77exfa`) appends **its
+own** "Entry 15" and "Entry 16" to this bean, for different content — a pinning
+/ non-D sweep, and the `c_k^even` exact rungs against entry 9's `|c_4|`. Mine
+(block bar-defect; K two-anchor filter) landed first, in `7a11282fe58`.
+
+Whoever merges second should renumber rather than union into two Entry 15s and
+two Entry 16s. Flagged on #6342; **not** renumbered here unilaterally, since
+that branch is a sibling's live claim.
