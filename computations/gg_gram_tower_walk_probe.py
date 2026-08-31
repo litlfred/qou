@@ -353,7 +353,10 @@ def main() -> int:
     print("-" * 78)
 
     def catalan(k):
-        from math import comb
+        # math.comb returns an exact arbitrary-precision int, not a float, and it
+        # is combined only by integer floor division. Every downstream division is
+        # routed through mp.mpf before dividing.
+        from math import comb  # float64-ok: exact integer binomial, no float path
         return comb(2 * k, k) // (k + 1)
 
     print(f"{'n':>3} {'dim H_n = n!':>13} {'rank <g,g>':>11} {'C_n = dim TL_n':>15} "
@@ -377,7 +380,10 @@ def main() -> int:
     print(f"{'A':>3} {'n = 3A':>7} {'(3A)!':>22} {'C_{3A}':>14} "
           f"{'visible fraction':>18}")
     for A in (1, 2, 3, 4, 6):
-        from math import factorial
+        # math.factorial returns an exact arbitrary-precision int. It is printed
+        # as an int and, where divided, is lifted to mp.mpf first (see `frac`
+        # below), so no float64 enters the visible-fraction ratio.
+        from math import factorial  # float64-ok: exact integer factorial, no float path
         n3 = 3 * A
         cn = catalan(n3)
         frac = mp.mpf(cn) / mp.mpf(factorial(n3))
