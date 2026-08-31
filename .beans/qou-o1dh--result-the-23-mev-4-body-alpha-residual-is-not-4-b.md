@@ -134,3 +134,16 @@ and the `w₄/w₃` bound turns it into a target.
    counterpart. That is a modelling choice worth flagging wherever the chain's
    per-bond constants are quoted.
 3. The `w₄/w₃ < 0.528` bound is the first falsifiable handle on the `ρ·A` rule.
+
+## Write-up
+
+Full mathematical and physical exposition:
+[`docs/audits/2026-08-31-alpha-residual-gb-jet-bodyorder.md`](../docs/audits/2026-08-31-alpha-residual-gb-jet-bodyorder.md)
+
+Covers, with formulas: the two filtrations and their reduction rules; the
+grade / ℏ_q parity lock `b ≡ g + L (mod 2)` and its check on the corpus's own
+`σ₁³ ∈ H₂` certificate; the `q → 1` collapse to `ℂ[S_n]` identifying the derived
+floor as the top-grade associated graded; the unbound `¹S₀` diproton and
+dineutron with their scattering lengths; the Ursell–Mayer cluster expansion; the
+`w₄/w₃` bound; the structural argument for what neither filtration can express;
+and the SM / eightfold-way position including the SEMF evaluation at `A = 4`.
