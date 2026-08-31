@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T03:08:52Z
+updated_at: 2026-08-31T03:55:12Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -920,3 +920,50 @@ weaker, and precisely stated. Not free: it holds on everything measured,
 approaches equality, and has no pointwise proof.
 
 **STILL OPEN.** qou-k5r5 OPEN.
+
+
+---
+
+### 2026-08-31 (session cont.) — the `A_sigma` leg is settled as a ROUTE question
+
+**Lean.** 8 new sorry-free theorems in `QOU.BraidKnot.M1EdgeCalculus`, all on
+`[propext, Classical.choice, Quot.sound]`. The diagonal decomposition turns
+`sum_diagLen_le_card` from an inequality into an **equality**:
+`card_eq_sum_diagLen_add`, and the symmetric `sum_diagLen_add_transpose`
+(`sum D + sum D^T = n + D0`, double-counting the main diagonal). On that:
+`areaUpper` / `areaLower`, the exact split `A+ + A- + D0 = n`, the conjugation
+swap `areaUpper_transpose`, and `two_mul_areaUpper_le_card_iff` — `2A+ <= n` iff
+`A+ - A- <= D0`. Stated as an **iff on purpose**: `2A+ <= n` is FALSE pointwise
+(the one-row diagram has `A+ = n-1`), so `A_sigma <= n/2` can only ever hold in
+expectation, and the iff says what the average must control — the *imbalance*
+between halves, against the Durfee side.
+
+**Probe** `wlambda_covariance_epic_M1_area_fluctuation_scale.py`, 7/7,
+float64-guard clean.
+
+- **The margin is exactly one sigma.** `n/2 - E[A+] = E[D0]/2` and `sd(A+)` are
+  BOTH `(1/pi) sqrt(n)`; `gap/sd` measured 1.002, 1.001, 1.005, 0.992, 1.002,
+  1.038 over `n = 100..3200` (32x range), flat within noise.
+- **Derived, not just measured.** Kerov's CLT (Ivanov–Olshanski, eq. 3.20–3.21
+  of `library/arxiv-1909.06797v5`) gives `sd(A+ - A-) -> (2/pi) sqrt(n)` via
+  `sum_{m even} m/(m^2-1)^2 = 1/4`, controlled by quadrature on `c_m`.
+- **Consequence: concentration can NEVER close this.** It would have to cover
+  one standard deviation, and a 1-sigma event has probability ~0.16. Sharpening
+  the inequality does not help — the obstruction is the width of the
+  distribution.
+- **Pemantle–Peres Thm 3.5 is short by a growing `n^(1/4)`** (shortfall
+  90 -> 2836 over `n = 1e2..1e8`), because `A+` is a linear statistic with
+  UNBOUNDED coefficients. Not a weakness of the theorem: `D(c)` itself is a
+  particle count, hence Lipschitz-1, so the same theorem DOES concentrate the
+  per-diagonal profile the telescoping route uses, at scale `n^(1/4)`.
+
+**Retired:** "`A_sigma -> n/2` is a literature question" (the closing line of
+`..._M1_area_symmetry.py`). It is not.
+
+**What survives:** `E_omega[A_sigma]/(n/2)` converges to 1 **from below**, and a
+smaller `A` gives a TIGHTER `sqrt(a^2+2A)-a`, so the 7.54 % margin is
+conservative at every finite `n`. Making that rigorous needs a **one-sided
+finite-n inequality**, not concentration.
+
+**Library:** 27 PDFs ingested across two batches (strong-Rayleigh toolchain +
+Plancherel growth). Pushed `03fdcab23b`.
