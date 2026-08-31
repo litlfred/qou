@@ -13,9 +13,10 @@ i.e. "remove the largest entry of a skew standard Young tableau".  Its other two
 hand — `QOU.Mathlib.upSum_eq` is proved, and the transposition is the `Finset.sum_comm`
 manoeuvre `pairTerm` already performs there.
 
-This file supplies the **erase** direction's geometry, sorry-free — the corner extraction and
-the diagram-level consequences.  It does **not** close the branching rule: the bijection with
-`(λ ∖ c)/μ` tableaux, and the sum itself, are still to do.
+This file supplies **both directions' constructions**, sorry-free — the corner extraction
+(`exists_max_corner`), the diagram-level consequences, and the insertion (`skewInsertMax`).
+It does **not** close the branching rule: proving the two are mutually inverse, and the sum
+itself, are still to do.
 
 ## Why the skew case is not a transliteration of the straight one
 
@@ -193,5 +194,124 @@ theorem entry_lt_card_of_pos (hc : IsCornerCell outer c)
     by_cases hin : (i, j) ∈ eraseCorner outer c hc
     · rw [S.zeros (Or.inl (hm hin))]; exact hpos
     · rw [S.zeros (Or.inr hin)]; exact hpos
+
+/-! ### The insert direction
+
+`skewInsertMax` is the mirror of the erase step: put the new maximum at the corner and keep
+`S` elsewhere.  Together with `exists_max_corner` these are the two halves of the branching
+bijection — the bijection PROOF (that they are mutually inverse) and the resulting sum are
+still to do.
+
+The `content` field is where the skew case costs more than the straight one: it must show
+`image entry (skew outer inner) = range (N+1)` from `S.content : image = range N`, by splitting
+the skew region as `insert c (skew (outer ∖ c) inner)`.  `skewCellsOf` is an `abbrev`, so it
+unfolds in the goal and `rw` cannot see it — the split is stated in the raw
+`outer.cells \ inner.cells` form for that reason. -/
+
+theorem entry_lt_of_skew (p q : ℕ) (hc : IsCornerCell outer (p, q))
+    (S : SkewStandardYoungTableau (eraseCorner outer (p, q) hc) inner)
+    {i j : ℕ} (hij : (i, j) ∈ outer) (hni : (i, j) ∉ inner) (hne : (i, j) ≠ (p, q)) :
+    S.entry i j < (skewCellsOf (eraseCorner outer (p, q) hc) inner).card := by
+  have h := skew_mem_range S (c := (i, j)) (by
+    simp only [skewCellsOf, Finset.mem_sdiff, YoungDiagram.mem_cells]
+    exact ⟨mem_eraseCorner_of_ne hc hij hne, hni⟩)
+  simpa using h
+
+/-- `(p, q)` being a corner rules out any cell strictly to its right in `outer`. -/
+theorem not_mem_right_of_corner {p q j : ℕ} (hc : IsCornerCell outer (p, q))
+    (hj : q < j) : (p, j) ∉ outer := by
+  intro h
+  exact hc.2.2 (outer.up_left_mem (le_refl p) (by omega) h)
+
+/-- Likewise strictly below it. -/
+theorem not_mem_below_of_corner {p q i : ℕ} (hc : IsCornerCell outer (p, q))
+    (hi : p < i) : (i, q) ∉ outer := by
+  intro h
+  exact hc.2.1 (outer.up_left_mem (by omega) (le_refl q) h)
+
+/-- **Insert the maximal entry at a corner outside `inner`** — the mirror of the erase step. -/
+noncomputable def skewInsertMax (p q : ℕ) (hc : IsCornerCell outer (p, q))
+    (hcn : (p, q) ∉ inner)
+    (S : SkewStandardYoungTableau (eraseCorner outer (p, q) hc) inner) :
+    SkewStandardYoungTableau outer inner where
+  entry := fun i j =>
+    if i = p ∧ j = q then (skewCellsOf (eraseCorner outer (p, q) hc) inner).card
+    else S.entry i j
+  row_strict := by
+    intro i j₁ j₂ hlt hj₂ hj₁
+    have hj₁o : (i, j₁) ∈ outer := outer.up_left_mem (le_refl i) (le_of_lt hlt) hj₂
+    have hne1 : (i, j₁) ≠ (p, q) := by
+      rintro h
+      have hi : i = p := congrArg Prod.fst h
+      have hjq : j₁ = q := congrArg Prod.snd h
+      exact not_mem_right_of_corner hc (by omega) (hi ▸ hj₂)
+    by_cases h2 : i = p ∧ j₂ = q
+    · rw [if_pos h2, if_neg (by rintro ⟨-, h⟩; exact hne1 (by rw [h2.1, h]))]
+      exact entry_lt_of_skew p q hc S hj₁o hj₁ hne1
+    · have hne2 : (i, j₂) ≠ (p, q) := by
+        rintro h
+        exact h2 ⟨congrArg Prod.fst h, congrArg Prod.snd h⟩
+      rw [if_neg h2, if_neg (by rintro ⟨h, h'⟩; exact hne1 (by rw [h, h']))]
+      exact S.row_strict hlt (mem_eraseCorner_of_ne hc hj₂ hne2) hj₁
+  col_strict := by
+    intro i₁ i₂ j hlt hi₂ hi₁
+    have hi₁o : (i₁, j) ∈ outer := outer.up_left_mem (le_of_lt hlt) (le_refl j) hi₂
+    have hne1 : (i₁, j) ≠ (p, q) := by
+      rintro h
+      have hip : i₁ = p := congrArg Prod.fst h
+      have hjq : j = q := congrArg Prod.snd h
+      exact not_mem_below_of_corner hc (by omega) (hjq ▸ hi₂)
+    by_cases h2 : i₂ = p ∧ j = q
+    · rw [if_pos h2, if_neg (by rintro ⟨h, h'⟩; exact hne1 (by rw [h, h']))]
+      exact entry_lt_of_skew p q hc S hi₁o hi₁ hne1
+    · have hne2 : (i₂, j) ≠ (p, q) := by
+        rintro h
+        exact h2 ⟨congrArg Prod.fst h, congrArg Prod.snd h⟩
+      rw [if_neg h2, if_neg (by rintro ⟨h, h'⟩; exact hne1 (by rw [h, h']))]
+      exact S.col_strict hlt (mem_eraseCorner_of_ne hc hi₂ hne2) hi₁
+  zeros := by
+    intro i j h
+    have hne : ¬ (i = p ∧ j = q) := by
+      rintro ⟨rfl, rfl⟩
+      rcases h with h | h
+      · exact hcn h
+      · exact h hc.1
+    rw [if_neg hne]
+    refine S.zeros ?_
+    rcases h with h | h
+    · exact Or.inl h
+    · refine Or.inr (fun hm => h ?_)
+      exact ((mem_eraseCorner outer (p, q) hc (i, j)).mp hm).1
+  content := by
+    have hcmem : (p, q) ∈ skewCellsOf outer inner := by
+      simp only [skewCellsOf, Finset.mem_sdiff, YoungDiagram.mem_cells]
+      exact ⟨hc.1, hcn⟩
+    have hnotin : (p, q) ∉ skewCellsOf (eraseCorner outer (p, q) hc) inner := by
+      simp only [skewCellsOf, Finset.mem_sdiff, YoungDiagram.mem_cells, mem_eraseCorner,
+        not_and, not_not]
+      intro h
+      exact absurd rfl h.2
+    have hsplit : outer.cells \ inner.cells
+        = insert (p, q) (skewCellsOf (eraseCorner outer (p, q) hc) inner) := by
+      show skewCellsOf outer inner = _
+      rw [skewCellsOf_eraseCorner hc, Finset.insert_erase hcmem]
+    have hagree : Set.EqOn
+        (fun x : ℕ × ℕ =>
+          if x.1 = p ∧ x.2 = q then (skewCellsOf (eraseCorner outer (p, q) hc) inner).card
+          else S.entry x.1 x.2)
+        (fun x : ℕ × ℕ => S.entry x.1 x.2)
+        ↑(skewCellsOf (eraseCorner outer (p, q) hc) inner) := by
+      intro x hx
+      simp only [Finset.mem_coe] at hx
+      refine if_neg (fun hxe => hnotin ?_)
+      have hxpq : x = (p, q) := Prod.ext hxe.1 hxe.2
+      exact hxpq ▸ hx
+    rw [hsplit]
+    rw [Finset.image_insert]
+    rw [Finset.image_congr hagree]
+    rw [S.content]
+    rw [Finset.card_insert_of_notMem hnotin]
+    rw [Finset.range_add_one]
+    simp
 
 end QOU.BraidKnot.YoungTableauStandard
