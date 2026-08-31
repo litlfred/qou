@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T19:36:17Z
+updated_at: 2026-08-31T19:47:05Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -756,3 +756,33 @@ constraints, so its survival is weak evidence, not support. The defensible
 claim is the negative one.
 
 `computations/wide_isotope_window_test_probe.py`, PR #6405.
+
+
+**CORRECTION, same day — the corpus already had the 4-block shape (sixth
+near-miss on this arc)**
+
+`docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md` (`qou-0c19`,
+`qou-uclw`) identified the extensive term as the α-cluster SU(4) `[1⁴]` volume
+term on 2026-08-02, **with the shape written as `n_α = ⌊A/4⌋`**, backed by the
+sorry-free `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`
+(`Nat.choose 4 A = 0 ↔ 4 < A`). Block size four is structural: no `[1⁵]`.
+
+Cuts both ways. **For me:** `⌊A/4⌋` predates the test, so it is pre-registered,
+not post-hoc — my "close to circular" caveat was wrong and understated the
+result. **Against me:** the other seven shapes are still mine, chosen knowing
+which should survive, so the caveat relocates rather than vanishes.
+
+New, narrowly: 2026-08-02 was a scaling observation on α-conjugate nuclei only;
+this is an exclusion test including the non-α-conjugate ones (³H ³He ⁶Li ⁷Li
+⁹Be ¹⁰B ¹¹B ¹⁴N). The two small-A constraints independently rediscover the gate
+from the AME side.
+
+Not a conflict: audit's ~29.8 MeV is the TOTAL per α; `c ∈ [11.11, 17.24]` is
+the EXCESS over pairwise. ⁴He reconstructs to `B_AME = 28.2957`.
+
+**Follow-up WITHDRAWN.** "Derive the 4-block counting" is partly answered
+(gate proved) and partly forbidden: the bridge to `B = n_α·B_α` is reasoned-not-
+proved, and the dimensionful per-α scale is FOREVER-GATED — `8G·c·m_e`,
+`c = 7.956`, was tested there and refused as numerology. Do not re-propose it.
+
+PR #6405 commit `be3797f5e5`.
