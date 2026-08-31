@@ -108,3 +108,56 @@ Result: `partition_character_sigma1((3,1))` matches the exact 50-dps reference
 to **4.73e-50**, against ~2.7e-17 before — 33 orders recovered.
 
 Remaining: 289 sites / 268 files.
+
+## 2026-08-31 — 🛑 count corrected, and the campaign now has a RATCHET
+
+### The measurement in this bean's title was wrong
+
+I reported 290 sites / 269 files from grep. AST says **429 names / 286 files**.
+Both directions were wrong at once:
+
+- grep **misses** multi-line `from q_parameter import (...)` — it undercounted
+  the file set by 17;
+- grep **counts docstrings** — `computations/__init__.py` and
+  `_path_bridge.py` merely *describe* `from q_parameter import Q` in prose and
+  contain no such import. Both were false positives.
+
+Per constant: `Q`=281, `HA`=58, `Q_INV`=49, `HBAR_Q`=12, `E_CROSS`=9,
+`HBAR_Q_SQ`=6, `S_SKEIN`=5, `LN_Q`=4, `TWO_Q`=4, `TANH_LN_Q`=1.
+
+### `computations/audits/source_float64_import_audit.py` (commit `9a97a2a29`)
+
+The witness ratchet catches float64 that already reached a witness; this catches
+it where it ENTERS. Same contract as `raw-float64-baseline.json`: the backlog is
+tolerated, it must only SHRINK, and widening the baseline to silence a failure
+defeats the gate.
+
+    python3 computations/audits/source_float64_import_audit.py [--strict] [--update-baseline]
+
+Self-tested, not assumed: planting a file with `from q_parameter import Q` makes
+`--strict` report it NEW and exit **1**; removing it exits **0**. `hecke_core_legacy.py`
+is correctly absent, so the ratchet already records file 1's progress.
+
+### Why a ratchet before a sweep
+
+286 files is not a sweep this or any single session should attempt, and file 1
+showed why: the import swap was ~10% of the work, and a PARTIAL excision left
+the matrices mixed and *less precise than before*. A gate makes the campaign
+incremental and safe — each batch is a measurable drain, and nothing new leaks
+in meanwhile.
+
+### ⚠️ Not yet addressed: the code/witness gap
+
+Excising a producer changes what it COMPUTES (~17 → ~50 good digits) without
+touching its committed witness. Every excised file is therefore a producer whose
+code and witness disagree until it is regenerated. File 1 is in that state now.
+This is inherent to the campaign, not a defect in it, but the drain and the
+regeneration have to be planned together — and the regeneration is the expensive
+half.
+
+### 53 files alias the import `*_FLOAT` / `Q0_FLOAT`
+
+Checked two (`canonical_tr_m_via_rust`, `shadow_price_c_321_q0`): the alias is
+descriptive naming, not a deliberate float requirement — one even imports
+`Q_50_DIGIT_STR` alongside. They are genuine targets. The codebase named the
+variable after the defect.
