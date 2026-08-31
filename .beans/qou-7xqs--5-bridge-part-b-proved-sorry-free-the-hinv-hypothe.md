@@ -1,11 +1,11 @@
 ---
 # qou-7xqs
 title: '5₂ bridge: part (B) proved sorry-free; the hinv hypothesis it replaced was FALSE'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:03:48Z
-updated_at: 2026-08-31T03:04:12Z
+updated_at: 2026-08-31T03:14:38Z
 ---
 
 
