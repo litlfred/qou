@@ -1265,6 +1265,56 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
     return math.log(dim) + N_total * damping * per_cross_log
 
 
+def _msig_object_safe(sig_sparse, M_run, gen, coo_cache):
+    """``M_run @ sig_sparse``, correct when ``M_run`` has dtype ``object``.
+
+    Extracted from ``unified_iterative_correction`` (bean `qou-9ay6`), which
+    already carried this logic inline and documented WHY it must not be a
+    float coercion:
+
+        > Densify and multiply with object arithmetic rather than coercing
+        > c/d to float — that would silently discard the precision the mpf
+        > exists to carry (AGENTS.md: never compute in float).
+
+    ``_step_chain_generic`` yields mpmath ``mpf`` coefficients for the
+    intra-nucleon and pn/nn crossings, so ``c * Msig + d * M_run`` turns the
+    float64 accumulator into an OBJECT array. Handing that to a float64
+    ``csr_matrix.dot`` raises::
+
+        TypeError: no supported conversion for types:
+                   (dtype('float64'), dtype('O'))
+
+    Two other call sites had the bare ``sig_sparse.T.dot(M_run.T).T`` with no
+    object branch, so they simply died there — ``atom_character_raw`` and
+    ``_contrib_single_partition``, which is why
+    ``binding_from_frobenius_pairing`` could not run for A>=2 at all. The chain
+    only carries mpf coefficients once there is a previous nucleon to cross
+    with, so A=1 atoms looked healthy and hid it.
+
+    Extracted rather than copied a third time: the divergence between the site
+    that had the object branch and the two that did not is the entire defect.
+
+    Complexity is preserved, per the original's own note: accumulating over
+    σ's nonzeros is O(dim·nnz) — the same order the float64 branch gets from
+    sparse BLAS — whereas densifying σ and doing ``M_run @ sig_d`` is O(dim³)
+    in object arithmetic and does not finish (measured >10 min on the A=2 atom).
+    ``coo_cache`` makes the COO decomposition once per generator.
+    """
+    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+        coo = coo_cache.get(gen)
+        if coo is None:
+            m = sig_sparse.tocoo()
+            coo = (m.row, m.col, m.data)
+            coo_cache[gen] = coo
+        rows_i, cols_j, vals = coo
+        Msig = np.zeros_like(M_run)
+        for i, j, v in zip(rows_i, cols_j, vals):
+            Msig[:, j] += M_run[:, i] * v
+        return Msig
+    # dense @ sparse -> dense ndarray, as a sparse BLAS op in O(dim·nnz)
+    return sig_sparse.T.dot(M_run.T).T
+
+
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX):
@@ -1477,26 +1527,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     # precision the mpf exists to carry (AGENTS.md: never
                     # compute in float). The densified σ is cached per
                     # generator, so the COO decomposition is done once per generator.
-                    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
-                        # Keep the SPARSITY, lose only the BLAS. Densifying σ
-                        # and doing `M_run @ sig_d` is O(dim³) in object
-                        # arithmetic and does not finish — measured, >10 min on
-                        # the A=2 atom alone. Accumulating over σ's nonzeros is
-                        # O(dim·nnz), the same complexity the float64 branch
-                        # gets from sparse BLAS.
-                        coo = _sig_coo.get(gen)
-                        if coo is None:
-                            m = sig_sparse.tocoo()
-                            coo = (m.row, m.col, m.data)
-                            _sig_coo[gen] = coo
-                        rows_i, cols_j, vals = coo
-                        Msig = np.zeros_like(M_run)
-                        for i, j, v in zip(rows_i, cols_j, vals):
-                            Msig[:, j] += M_run[:, i] * v
-                    else:
-                        # scipy sparse: dense @ sparse returns dense ndarray,
-                        # computed as a sparse BLAS operation in O(dim·nnz).
-                        Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    Msig = _msig_object_safe(sig_sparse, M_run, gen, _sig_coo)
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:
@@ -1664,6 +1695,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     sparse_sigmas = _issparse(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = np.eye(dim) if sparse_sigmas else _identity(dim)
+    _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
     log_norm = 0.0
     for kkk in range(A):
         nuc = ordering[kkk]
@@ -1671,9 +1703,14 @@ def atom_character_raw(Z, N, entry, include_inter=True):
         chain = _step_chain_generic(nuc, prev_types, n_gens, include_inter=include_inter)
         if sparse_sigmas:
             M_run = M
+            # `_msig_object_safe`, not a bare `.dot` (bean `qou-9ay6`): the mpf
+            # coefficients in `chain` turn `M_run` into an object array, which a
+            # float64 `csr_matrix.dot` rejects outright. This site had no object
+            # branch while `unified_iterative_correction` did, which is why
+            # `binding_from_frobenius_pairing` died for every A>=2 atom.
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                Msig = _msig_object_safe(sig_sparse, M_run, gen, _sig_coo)
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -1730,6 +1767,7 @@ def _contrib_single_partition(Z, N, entry):
         M = np.eye(dim)
     else:
         M = _identity(dim)
+    _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
 
     log_norm = 0.0
     log_prev = math.log(dim)
@@ -1743,9 +1781,14 @@ def _contrib_single_partition(Z, N, entry):
         chain = _step_chain_generic(nuc, prev_types, n_gens)
         if sparse_sigmas:
             M_run = M
+            # `_msig_object_safe`, not a bare `.dot` (bean `qou-9ay6`): the mpf
+            # coefficients in `chain` turn `M_run` into an object array, which a
+            # float64 `csr_matrix.dot` rejects outright. This site had no object
+            # branch while `unified_iterative_correction` did, which is why
+            # `binding_from_frobenius_pairing` died for every A>=2 atom.
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                Msig = _msig_object_safe(sig_sparse, M_run, gen, _sig_coo)
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
