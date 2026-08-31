@@ -155,10 +155,14 @@ def main() -> int:
     print(f"\n  E0 = {mp.nstr(E0, 20)} MeV")
     print(f"  committed B_pp(A=2) = {COMMITTED_B_PP_A2} MeV\n")
 
+    # A-range configurable so the continuation (A = 5, 6 ...) is reproducible
+    # rather than a one-off. Default reproduces the committed witness exactly.
+    A_LIST = [int(x) for x in sys.argv[1:]] or [2, 3, 4]
+
     rows, per_bond = [], {}
     print(f"  {'A':>3}{'n':>5}{'cross':>7}{'parts':>7}{'maxdim':>8}"
           f"{'B_tot MeV':>16}{'B_pp/bond':>16}{'secs':>7}")
-    for A in (2, 3, 4):
+    for A in A_LIST:
         t0 = time.time()
         cr = atom_canonical_crossings(A, 0, include_inter=True)
         n = max(g for g, _ in cr) + 2
@@ -183,12 +187,15 @@ def main() -> int:
               f"{max(dims) if dims else 0:>8}{mp.nstr(tot, 12):>16}"
               f"{mp.nstr(pb, 12):>16}{el:>7.1f}")
 
+    _as = sorted(per_bond)
+
     # -------------------------------------------------- 1. method validation
     print("\n" + "-" * 78)
     print("  1. The sparse route reproduces the committed A=2 value")
     print("-" * 78)
-    got = mp.nstr(per_bond[2], 15)
-    agree = abs(per_bond[2] - mp.mpf(COMMITTED_B_PP_A2)) < mp.mpf("1e-10")
+    got = mp.nstr(per_bond[2], 15) if 2 in per_bond else "(A=2 not in run)"
+    agree = (2 not in per_bond) or \
+        abs(per_bond[2] - mp.mpf(COMMITTED_B_PP_A2)) < mp.mpf("1e-10")
     print(f"\n  committed : {COMMITTED_B_PP_A2}")
     print(f"  this probe: {got}")
     check("method validated against the committed number, by a DIFFERENT path",
@@ -203,12 +210,13 @@ def main() -> int:
     print("  2. B_pp DECLINES with A — the confound is real and signed")
     print("-" * 78)
     print(f"\n  {'A':>3}{'B_pp/bond':>18}{'vs A=2':>12}{'drop':>10}")
-    for A in (2, 3, 4):
-        r = per_bond[A] / per_bond[2]
+    for A in _as:
+        r = per_bond[A] / per_bond[_as[0]]
         print(f"  {A:>3}{mp.nstr(per_bond[A], 12):>18}{mp.nstr(r, 8):>12}"
               f"{mp.nstr(100*(1-r), 5):>9}%")
-    declining = per_bond[2] > per_bond[3] > per_bond[4]
-    drop4 = 1 - per_bond[4] / per_bond[2]
+    declining = all(per_bond[_as[i]] > per_bond[_as[i + 1]]
+                    for i in range(len(_as) - 1))
+    drop4 = 1 - per_bond[_as[-1]] / per_bond[_as[0]]
     check("B_pp is NOT A-independent — monotone decline on all three points",
           declining and drop4 > mp.mpf("0.05"),
           f"2.128 -> 1.966 -> 1.852 MeV, a {mp.nstr(100*drop4, 4)} % drop by "
@@ -220,8 +228,8 @@ def main() -> int:
     print("\n" + "-" * 78)
     print("  3. Direction of the kappa correction — NOT a corrected series")
     print("-" * 78)
-    corr3 = per_bond[2] / per_bond[3]
-    corr4 = per_bond[2] / per_bond[4]
+    corr3 = per_bond[_as[0]] / per_bond[_as[1]] if len(_as) > 1 else mp.mpf(1)
+    corr4 = per_bond[_as[0]] / per_bond[_as[-1]]
     print(f"""
   kappa(A) = dB_AME / [ (A-1)/2 * ratio * B_pp ] was computed holding B_pp at
   its A=2 value. Correcting multiplies by B_pp(2)/B_pp(A):
