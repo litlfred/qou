@@ -195,6 +195,29 @@ declaration a witness targets matters:
 - `MassVolumeFactorization`: the prober compiled against a copy of the flagged
   file itself, so its verdict targets the right declaration.
 
+**Gap closed, and the superset does constrain something.** The sibling is
+inhabited too, by a commutative model — but **not** by the same one. `V3 := ℕ`
+with `comp := (·*·)` and any values satisfies the Yang–Baxter claim, exactly as
+in the library copy; the *added* `claim_braid_relation`
+`Ř₁Ř₂Ř₁ = Ř₂Ř₁Ř₂` then reduces to `a²b = ab²`, which in ℕ forces `Ř₁ = Ř₂`
+(`7,11` gives `539 = 847`). So the sibling's extra field is not free: it is
+satisfiable, and it pins the two braid operators equal in any commutative model.
+That is a mild constraint rather than none, and it is the difference between the
+two declarations.
+
+Verified against a copy of the sibling file (siblings have no module, so this
+witness cannot live in the committed gate file — it is the same copy-and-compile
+route the prober uses):
+
+```sh
+{ echo "import Mathlib.Tactic"; cat content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean; \
+  echo 'open QOU.Braiding in'; echo 'example : RMatrixBraidingContext where'; \
+  echo '  V3 := ℕ'; echo '  comp := fun a b => a * b'; \
+  echo '  R12 := 2'; echo '  R13 := 3'; echo '  R23 := 5'; \
+  echo '  Rcheck1 := 7'; echo '  Rcheck2 := 7'; \
+  echo '  claim_yang_baxter := by ring'; echo '  claim_braid_relation := by ring'; } > /tmp/rm.lean
+LEAN_PATH=<mathlib libs>:<QOU build lib> lean /tmp/rm.lean   # exit 0
+
 ## A second, different finding: `Term7ShellCorrectionClass` is provable
 
 Not vacuous — **provable**. Its field is `∃ a, a < 0 ∧ a = alpha5_value`, and
