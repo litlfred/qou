@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T18:10:03Z
+updated_at: 2026-08-31T03:24:04Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -767,3 +767,42 @@ and with `lead_inj` no longer in front of it.
 **Note for whoever picks this up:** #6297 (the maximal-length element) is now **unused by this
 route**. It was built for the refuted `lead`. It is correct, sorry-free and plausibly
 Mathlib-upstreamable on its own, but do not assume the (C1) proof needs it.
+
+
+## 2026-08-31 — supp_le is UNREACHABLE, and the Triangular route is retired (session hecke-murphy-index-bridge)
+
+**Index bridge: DONE.** `murphyIndexEquivRSKCodomain` + `murphyIndexEquivPerm : MurphyIndex n ≃
+Equiv.Perm (Fin n)` + `lead` + `lead_injective`, all sorry-free. The composition was already
+inside `SchenstedRSKBurnside.card_pairs_eq_sum`'s proof, kept only as a shadow on `Nat.card`;
+lifting it to the `Equiv` was assembly. **`lead_inj` is discharged** — `Equiv.injective`.
+
+**supp_le: REFUTED, and not only for RSK.** `computations/hecke/murphy_supp_rsk_probe.py`
+(exact integer arithmetic, complete at n=3,4,5) establishes two things:
+
+1. RSK is not even a legal lead — `diag_unit` needs `lead x ∈ supp (m x)`, true for only
+   1/6, 3/24, 11/120 of indices (3/6, 9/24, 23/120 with the other (P,Q) orientation).
+   Hand-checkable witness: n=3, λ=(2,1), s=t=t^λ ⇒ d(s)=d(t)=1 ⇒ m = x_λ = T_1 + T_{s₁},
+   support {1, s₁}; RSK⁻¹(s,t) = s₂ is not in it.
+2. NO bijective lead works, for ANY linear order. The order-maximum M must lie in exactly one
+   support (else injectivity fails), so peeling M+its index is forced; a Triangular structure
+   exists iff the peel never stalls. At n=3 it stalls at once — all six permutations lie in
+   ≥2 of the six supports (multiplicities 4,2,4,2,2,2), because x_{(3)} = Σ_{w∈S₃} T_w already
+   has full support. Stalls after 1/24 at n=4, 5/120 at n=5.
+
+Scope-(b) structural exclusion of THIS LEVER on THIS PAIR OF BASES — cited invariant is the
+peeling argument, n=3 exhaustive not sampled. Says nothing against the Murphy basis (a theorem)
+or against `Triangular` (which the Specht standard basis still runs on).
+
+**Replacement route, from the corpus's own library.** `library/hecke-alg/` (Mathas, Thm 3.20)
+proves the Murphy basis by **spanning + rank**, no triangularity: M spans, H is free of rank n!,
+|M| = Σ_λ (f^λ)² = n! by RSK, done. Every ingredient but spanning is sorry-free here — and the
+RSK ingredient is the same bijection that gave lead_inj.
+
+**Landed sorry-free this session** (all `[propext, Classical.choice, Quot.sound]`):
+`murphyFamily` (the m_{st} indexed by MurphyIndex (n+1); the SYT-type bridge it needed,
+`NumSYTBridge.toBraidKnotSYT`, was already in the corpus — eighth such instance this arc),
+`instFintypeMurphyIndex`, `murphyIndex_fintypeCard`, `basisOfSpanning`,
+`murphyBasisOfSpanning`, `murphyFamily_linearIndependent`.
+
+**next**: Mathas Lemma 3.9 + 3.14 — spanning — is now the SINGLE open input to (C1).
+Audit: docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md
