@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T03:57:06Z
+updated_at: 2026-08-31T04:07:10Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -135,3 +135,63 @@ unaffected.
 
 Scope **(a)**: this labelling applied to this word. Does not refute the SLq(2)
 route -- it locates precisely what a generalisation must supply.
+
+
+## ROUTE 3 RESULT 2026-08-31 — the Milnor leg is partially available, and the COUNT is the problem
+
+Also needs no fetch. Measured on the canonical atom-word closure.
+
+### The closure is not Brunnian, and its linking graph is a PATH
+
+Nonzero linking pairs = `mu - 1 = A`, always the CONSECUTIVE pairs `(i, i+1)`,
+so the linking graph is `P_mu` -- **bounded degree 2**, never the complete
+graph. Same shape front A found for the inter-nucleon crossing set, now at the
+level of linking rather than crossings.
+
+Branch dependence, stated because it matters: an `averaged` letter is
+`sigma_g - (h/2)*1`, the MIDPOINT between the two crossing SIGNS. Both swap, so
+`mu` is branch-independent (the SLq(2) result above is unaffected); `lk` is not.
+Resolving all averaged letters to `sigma^-1` gives uniform `lk(i,i+1) = -2`;
+to `sigma` gives a `-1`/`-2` mix.
+
+### The Milnor indeterminacy, per triple
+
+`mubar(ijk)` is defined mod `Delta = gcd(lk ij, lk jk, lk ki)`.
+
+  * **mutually NON-ADJACENT triples have `Delta = 0`** -> `mubar` is a genuine
+    integer. A path admits these iff `mu >= 5`, i.e. **`A >= 4`**.
+  * triples touching a linked pair: `Delta = 2` (one bit survives) or
+    `Delta = 1` (no information).
+
+So the route is **NOT obstructed** -- partially available, starting exactly at
+`A = 4`. For `A <= 3` no genuine integer `mubar` exists at all, so the deuteron
+and the A=3 mirror pair are outside its reach.
+
+**The problem is the COUNT.** Non-adjacent triples on `P_mu` number
+`C(mu-2,3) = C(A-1,3) ~ A^3`. Summing a per-triple contribution over all of
+them reproduces exactly the supra-linear scaling **C4** already excludes
+arithmetically and `CoordinationSaturation` refutes structurally. A Milnor
+extensive term must be supported on a **bounded-degree subfamily**, and naming
+that subfamily without fitting it is the open problem -- not computing the
+invariants.
+
+### What survives with the right scaling
+
+`sum |lk| = 2A` in the uniform branch: **linear in A, bounded per-component
+degree** -- precisely what saturation demands. A derived, non-volume,
+correctly-scaling candidate, which the volume route is not. It supplies no
+magnitude on its own.
+
+### TWO errors, both caught by the probe rather than by review
+
+1. **Half-integer linking numbers.** A first pass resolved `averaged` to the
+   IDENTITY and produced `lk = -3/2`, totals `7/2`, `11/2`, `21/2`. Impossible
+   -- two closed curves cross an even number of times. Reading
+   `canonical_braid_crossings.py` settled it: `averaged` is a mixture of the two
+   crossing SIGNS, not of crossing and no-crossing. Every value integral after
+   the fix, which is the check that the fix was right rather than different.
+2. **"No triple has Delta = 0."** Asserted outright; the probe refuted it at
+   `A >= 4`. A path with `mu >= 5` has mutually non-adjacent triples whose three
+   linking numbers all vanish. The corrected statement is both weaker (the route
+   is available) and sharper (it is available exactly from A=4, and the count
+   is what kills a naive sum).
