@@ -81,3 +81,47 @@ the **saddle** cubic; Ohtsuki's `y₀` is a root of the **reciprocal** cubic.
 takes `[FiveTwoTriangulation (conj (1/y)) vol]`; `conj_inv_is_five_two_shape`
 proves that shape satisfies both of the class's side conditions, so the instance
 is asked only for the geometric content.
+
+## Priority 3 — putting the two new MathlibExt bricks to work
+
+**`ExponentialGrowthRate.tendsto_log_div_of_sandwich` — CONSUMED.**
+`QOU/Knot/WhiteheadLinkScaffold.tendsto_log_norm_whiteheadLinkKashaev_of_majorant`
+now calls it instead of hand-rolling the squeeze. The instantiation is
+`m = majorant/N^p`, `S = ‖J_N‖`, `c = N^p`: `m ≤ S` is exactly
+`VdVWhiteheadLemma4.phase_cost`, `S ≤ c·m` is exactly the sorry-free
+`norm_whiteheadLinkKashaev_le`. Statement unchanged; still sorry-free; all five
+downstream modules recompile. Note the direction: the lemma wants the *small*
+side's rate and here the *large* side's is what is known, so the known side is
+divided by `N^p` to land in the `m` slot — free, because `log(N^p)/N → 0` is
+the same sub-exponentiality the `c` slot wants.
+
+**`HalfPlaneNonCancellation.cos_mul_sum_norm_le_norm_sum` — NO CONSUMER; does
+not fit.** Reported rather than forced.
+
+* The only place in the corpus with `norm_sum_le` on a sum whose lower bound is
+  open is `WhiteheadLinkScaffold:115`. Its outer Fresnel phase is
+  `θ_n = −n(n+1−N)π/(2N)`, which sweeps `(N−1)²π/(8N) ≈ Nπ/8` radians —
+  **unbounded**. Measured arc covered mod 2π: 135.0° (N=8), 303.8° (N=32),
+  340.3° (N=128), 349.5° (N=256), i.e. → 360°. A half-plane hypothesis needs
+  `α ≳ 175°`, where `cos α < 0` and the conclusion is vacuous.
+* The *inner* sums, which the module's docstring claimed the lemma "settles
+  outright", are already sums of real positive terms in the corpus's own
+  transcription (`whiteheadTerm_pos`, `whiteheadLink_inner_pos`), so
+  `‖Σ‖ = Σ‖·‖` on the nose and a `cos α` factor buys nothing.
+* A conditional "phases half-plane-confined ⟹ VdVWhiteheadLemma4" was
+  deliberately **not** written: its hypothesis is measured false, so it would
+  be vacuous content dressed as progress.
+
+The measurement is recorded in the module header instead — it closes the
+elementary route, which is worth more than a bridge nobody can cross.
+
+## Two stale docstring claims corrected
+
+* `QOU/Knot/WhiteheadVolumeConjecture.lean` said (twice) that
+  `whitehead_volume_conjecture` is "state-and-queued (`sorry` + Ref)" / "the one
+  honest `sorry` here". **There is no `sorry` token in that file** — the proof
+  is `exact hi.limit` from a §3b class carrier. A corpus `sorry`-audit reads the
+  old wording as a hit and a reader hunting the gap looks in the wrong place.
+* `QOU/MathlibExt/HalfPlaneNonCancellation.lean` claimed the lemma "settles the
+  inner sums outright and isolates the outer one" — see above; neither half was
+  a gain.

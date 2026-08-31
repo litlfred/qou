@@ -33,13 +33,39 @@ If every term lies in the closed cone of half-angle `α < π/2` about some direc
 sum keeps at least `cos α` of its mass. No analysis, no asymptotics — one rotation and
 the triangle inequality in the other direction (`Re w ≤ ‖w‖`).
 
-This is not a toy case. Measured on the Whitehead-chain sums at `q = e^{2πi/N}`, the
-**inner** clasp sum is exactly phase-free (arc `0.00°`) and at the neighbouring root
-`e^{2πi/(N+½)}` it spans `≈ 90°` at the dominant index — comfortably inside a
-half-plane, giving a clean factor `1/√2`. What is *not* confined is the outer sum, which
-spans `347–351°`; so this lemma settles the inner sums outright and isolates the outer
-one as the real obstruction. Naming which half of the problem is elementary is worth as
-much as the lemma.
+Measured on the Whitehead-chain sums at `q = e^{2πi/N}`, the **inner** clasp sum is
+exactly phase-free (arc `0.00°`) and at the neighbouring root `e^{2πi/(N+½)}` it spans
+`≈ 90°` at the dominant index — comfortably inside a half-plane, giving a clean factor
+`1/√2`.
+
+## ⚠ What this lemma does NOT reach, and why — measured 2026-08-31
+
+An earlier revision of this header claimed the lemma "settles the inner sums outright
+and isolates the outer one as the real obstruction". **Neither half of that is a gain,
+and the file should not advertise one.**
+
+* The inner sums are *already* settled without it. In the corpus's own transcription
+  (`QOU/Knot/WhiteheadLinkScaffold.lean`) the inner sum `Σ_k S_{n,k}` is a sum of
+  **real positive** terms — `whiteheadTerm_pos`, `whiteheadLink_inner_pos` — so
+  `‖Σ‖ = Σ‖·‖` holds on the nose and there is nothing for a `cos α` factor to buy.
+* The outer sum is not merely "not confined"; it is confined *nowhere*, and the failure
+  gets worse with `N`. The Fresnel phase is
+  `θ_n = −n(n+1−N)π/(2N)` (`whiteheadLinkPhase`), whose total sweep over
+  `n ∈ [0, N)` is `(N−1)²π/(8N) ≈ Nπ/8` radians — **unbounded**. Measured arc covered
+  mod `2π`: `135.0°` at `N = 8`, `303.8°` at `N = 32`, `340.3°` at `N = 128`,
+  `349.5°` at `N = 256`, i.e. → `360°`. A half-plane hypothesis here would need
+  `α ≳ 175°`, and `cos α < 0` makes the conclusion vacuous.
+
+So the only sum in the corpus whose lower bound is open
+(`VdVWhiteheadLemma4` / `WhiteheadLinkLowerRate`) is exactly the one this lemma cannot
+touch, and a conditional theorem "phases half-plane-confined ⟹ Lemma 4" was
+deliberately **not** written: its hypothesis is measured false, so it would be vacuous
+content dressed as progress. What is recorded instead is the measurement, which closes
+the elementary route.
+
+The lemma remains correct, upstreamable, and the right tool wherever a genuinely
+localised (windowed) sum appears — but it has no consumer in this corpus today, and
+saying so is more useful than a forced one.
 
 ## Scope
 

@@ -58,6 +58,7 @@ Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
 -/
 
 import QOU.Knot.WhiteheadChainVolume
+import QOU.MathlibExt.ExponentialGrowthRate
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -141,9 +142,27 @@ class VdVWhiteheadLemma4 : Prop where
     axiomatised).**  Given the Lemma-4 class AND the majorant volume rate
     (the open 2D brick W6, bean qou-oiv6), the Whitehead-link Kashaev
     modulus obeys the volume conjecture:
-    `(2π/N)·log ‖J_N‖ → 4·Cl₂(π/2) = 4G = Vol(L5a1)`.  Proof: an
-    elementary log-squeeze between `log majorant − p·log N` (the class) and
-    `log majorant` (the sorry-free triangle bound). -/
+    `(2π/N)·log ‖J_N‖ → 4·Cl₂(π/2) = 4G = Vol(L5a1)`.
+
+    **The squeeze is no longer hand-rolled.**  It is
+    `QOU.MathlibExt.tendsto_log_div_of_sandwich` — *a sub-exponential sandwich
+    does not move an exponential growth rate* — instantiated at
+
+        m N = majorant N / N^p ,   S N = ‖J_N‖ ,   c N = N^p ,
+
+    for which `m ≤ S` is exactly `VdVWhiteheadLemma4.phase_cost` and
+    `S ≤ c·m` is exactly the sorry-free triangle bound
+    `norm_whiteheadLinkKashaev_le`.  That is the whole content of the
+    conditional: the class supplies one inequality, the triangle bound the
+    other, and the shared lemma does the analysis.
+
+    Note the direction.  The shared lemma is stated knowing the *small* side's
+    rate and concluding about the *large* one; here it is the large side
+    (`majorant`) whose rate is known.  Dividing the known side by `N^p` is what
+    puts it in the lemma's `m` slot — and it costs nothing precisely because
+    `log(N^p)/N → 0`, which is the same sub-exponentiality the lemma's `c`
+    slot wants.  Getting this backwards (trying `m = ‖J_N‖`) asks for the rate
+    that is open. -/
 theorem tendsto_log_norm_whiteheadLinkKashaev_of_majorant [VdVWhiteheadLemma4]
     (hMaj : Filter.Tendsto
       (fun N : ℕ => (2 * π / N) * Real.log (whiteheadLinkMajorant N))
@@ -152,70 +171,63 @@ theorem tendsto_log_norm_whiteheadLinkKashaev_of_majorant [VdVWhiteheadLemma4]
       (fun N : ℕ => (2 * π / N) * Real.log ‖whiteheadLinkKashaev N‖)
       Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) := by
   have hpi := Real.pi_pos
+  have h2pi : (0:ℝ) < 2 * π := by linarith
   obtain ⟨p, hp⟩ := VdVWhiteheadLemma4.phase_cost
-  -- p·(2π/N)·log N → 0
-  have hlogN : Filter.Tendsto
-      (fun N : ℕ => (p:ℝ) * ((2 * π / N) * Real.log N))
-      Filter.atTop (nhds 0) := by
-    have h1 : Filter.Tendsto (fun x : ℝ => Real.log x / x)
-        Filter.atTop (nhds 0) :=
-      Real.isLittleO_log_id_atTop.tendsto_div_nhds_zero
-    have h2 := Filter.Tendsto.const_mul ((p:ℝ) * (2 * π))
-      (h1.comp tendsto_natCast_atTop_atTop)
-    rw [mul_zero] at h2
-    refine h2.congr (fun N => ?_)
-    simp only [Function.comp_apply]
-    ring
-  -- lower envelope: (2π/N)·log majorant − p·(2π/N)·log N → target
-  have hlow : Filter.Tendsto
-      (fun N : ℕ => (2 * π / N) * Real.log (whiteheadLinkMajorant N)
-        - (p:ℝ) * ((2 * π / N) * Real.log N))
-      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) := by
-    have h := hMaj.sub hlogN
-    rwa [sub_zero] at h
-  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hlow hMaj ?_ ?_
-  · -- from the class: log ‖J‖ ≥ log majorant − p·log N
-    filter_upwards [hp, Filter.eventually_ge_atTop 2] with N hpN hN2
-    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
-    have h2πN : (0:ℝ) ≤ 2 * π / N := by positivity
-    have hMpos := whiteheadLinkMajorant_pos (N := N) (by omega)
-    have hJpos : 0 < ‖whiteheadLinkKashaev N‖ := by
-      by_contra h
-      push_neg at h
-      have hJ0 : ‖whiteheadLinkKashaev N‖ = 0 :=
-        le_antisymm h (norm_nonneg _)
-      rw [hJ0, mul_zero] at hpN
-      linarith
-    have hNp : (0:ℝ) < (N:ℝ) ^ p := by positivity
-    have hlogle : Real.log (whiteheadLinkMajorant N)
-        ≤ (p:ℝ) * Real.log N + Real.log ‖whiteheadLinkKashaev N‖ := by
-      calc Real.log (whiteheadLinkMajorant N)
-          ≤ Real.log ((N:ℝ) ^ p * ‖whiteheadLinkKashaev N‖) :=
-            Real.log_le_log hMpos hpN
-        _ = (p:ℝ) * Real.log N + Real.log ‖whiteheadLinkKashaev N‖ := by
-            rw [Real.log_mul hNp.ne' hJpos.ne', Real.log_pow]
-    have hmul := mul_le_mul_of_nonneg_left hlogle h2πN
-    calc (2 * π / N) * Real.log (whiteheadLinkMajorant N)
-          - (p:ℝ) * ((2 * π / N) * Real.log N)
-        ≤ ((2 * π / N) * ((p:ℝ) * Real.log N
-            + Real.log ‖whiteheadLinkKashaev N‖))
-          - (p:ℝ) * ((2 * π / N) * Real.log N) := by linarith [hmul]
-      _ = (2 * π / N) * Real.log ‖whiteheadLinkKashaev N‖ := by ring
-  · -- from the triangle bound: log ‖J‖ ≤ log majorant
-    filter_upwards [hp, Filter.eventually_ge_atTop 2] with N hpN hN2
-    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
-    have h2πN : (0:ℝ) ≤ 2 * π / N := by positivity
-    have hJpos : 0 < ‖whiteheadLinkKashaev N‖ := by
-      by_contra h
-      push_neg at h
-      have hJ0 : ‖whiteheadLinkKashaev N‖ = 0 :=
-        le_antisymm h (norm_nonneg _)
-      have hMpos := whiteheadLinkMajorant_pos (N := N) (by omega)
-      rw [hJ0, mul_zero] at hpN
-      linarith
-    have hlogle : Real.log ‖whiteheadLinkKashaev N‖
-        ≤ Real.log (whiteheadLinkMajorant N) :=
-      Real.log_le_log hJpos (norm_whiteheadLinkKashaev_le N)
-    exact mul_le_mul_of_nonneg_left hlogle h2πN
+  -- `log N / N → 0`, the one analytic fact, borrowed rather than re-proved
+  have hlogN := QOU.MathlibExt.tendsto_log_natCast_div_atTop
+  -- restate the hypothesis in the `log(·)/N` normalisation the lemma uses
+  have hMaj' : Filter.Tendsto
+      (fun N : ℕ => Real.log (whiteheadLinkMajorant N) / (N:ℝ))
+      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2 / (2 * π))) := by
+    refine (hMaj.div_const (2 * π)).congr (fun N => ?_)
+    rcases eq_or_ne ((N:ℝ)) 0 with h | h
+    · simp [h]
+    · field_simp
+  -- the sandwich, in `log(·)/N` form
+  have key : Filter.Tendsto
+      (fun N : ℕ => Real.log ‖whiteheadLinkKashaev N‖ / (N:ℝ))
+      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2 / (2 * π))) := by
+    refine QOU.MathlibExt.tendsto_log_div_of_sandwich
+      (m := fun N : ℕ => whiteheadLinkMajorant N / (N:ℝ) ^ p)
+      (c := fun N : ℕ => (N:ℝ) ^ p) ?_ ?_ ?_ ?_ ?_ ?_
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN
+      exact div_pos (whiteheadLinkMajorant_pos hN) (by positivity)
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN
+      positivity
+    · -- `majorant / N^p ≤ ‖J‖` is `phase_cost`, divided through
+      filter_upwards [hp, Filter.eventually_ge_atTop 1] with N hpN hN
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN
+      have hNp : (0:ℝ) < (N:ℝ) ^ p := by positivity
+      rw [div_le_iff₀ hNp]
+      linarith [hpN]
+    · -- `‖J‖ ≤ N^p · (majorant / N^p) = majorant` is the triangle bound
+      filter_upwards [Filter.eventually_ge_atTop 1] with N hN
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN
+      have hNp : (0:ℝ) < (N:ℝ) ^ p := by positivity
+      rw [mul_div_cancel₀ _ (ne_of_gt hNp)]
+      exact norm_whiteheadLinkKashaev_le N
+    · -- `log (N^p) / N = p · (log N / N) → 0`
+      have h := hlogN.const_mul (p:ℝ)
+      rw [mul_zero] at h
+      refine h.congr (fun N => ?_)
+      rw [Real.log_pow]
+      ring
+    · -- `log (majorant / N^p) / N = log majorant / N − p · (log N / N)`
+      have h := hMaj'.sub (hlogN.const_mul (p:ℝ))
+      rw [mul_zero, sub_zero] at h
+      refine h.congr' ?_
+      filter_upwards [Filter.eventually_ge_atTop 1] with N hN
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN
+      have hNp : (0:ℝ) < (N:ℝ) ^ p := by positivity
+      rw [Real.log_div (ne_of_gt (whiteheadLinkMajorant_pos hN)) (ne_of_gt hNp),
+        Real.log_pow]
+      ring
+  -- undo the `2π` normalisation
+  have hfin := key.const_mul (2 * π)
+  rw [show (2 * π) * (QOU.Archimedean.Vol_Borromean / 2 / (2 * π))
+      = QOU.Archimedean.Vol_Borromean / 2 by field_simp] at hfin
+  exact hfin.congr (fun N => by ring)
 
 end QOU.Knot.FigureEightVolume
