@@ -71,3 +71,40 @@ Producers whose witnesses are already q₀-anchored and cheap to regenerate
 first; the numpy/scipy-heavy ones last, since they need container work. Do NOT
 sweep all 269 in one change: the value movement is real and needs to land in
 reviewable batches.
+
+## 2026-08-31 — file 1 of 269 COMPLETE: `hecke_core_legacy.py`
+
+Audited float64-free, comments stripped: **0 `math.*` calls, 0 `float()` casts,
+0 `dtype=float`, 0 live `scipy.sparse` references.**
+
+Worth reading before starting file 2 — an import swap was about 10% of the work.
+What the other 90% was:
+
+1. **scipy.sparse had to be replaced, not adapted.** It refuses dtype object
+   outright, so mpf cannot live in a `csr_matrix` at any price. Replaced with
+   `_CooMPF`. Anything storing q₀-derived data in a scipy matrix needs the same.
+2. **`math` is float64-only.** 17 call sites, including `math.log(q0)` taking an
+   mpf argument directly. The module now imports `math` nowhere, so it cannot
+   creep back — worth copying that discipline.
+3. **Seeds and accumulators.** `0.0` / `1.0` / `np.eye` are exactly
+   representable, so they cost no precision — but they make arrays MIXED, which
+   forced mpmath to convert an operand on nearly every multiplication (measured
+   6,186,121 `from_float` calls before the excision).
+4. **Rescaling exponents are the sneaky ones.** `log_norm` was seeded `0.0` and
+   downcast on return. It reconstructs `chi * exp(log_norm)`, so a 1e-17
+   relative error in a log_norm of order 100 lands as ~1e-15 in the result —
+   *worse* than float64. Look for any log/scale bookkeeping.
+5. **Downcasts at the exits.** `_trace_dim` → `float(np.trace(M))`,
+   `atom_character_raw` → `float(chi), float(log_norm)`. The whole expensive mpf
+   pipeline was discarded at the last step. These are consumer-facing type
+   changes: check the callers, don't just edit.
+6. **Partial excision BREAKS things.** Two self-inflicted breakages here: making
+   the diagonals mpf while `math.sqrt` still produced float64 off-diagonals left
+   the matrices mixed and less precise than before; and swapping in `_CooMPF`
+   broke `_crossing_in_partition`, which called `.toarray()`. Finish a file or
+   revert it — do not leave one half-done.
+
+Result: `partition_character_sigma1((3,1))` matches the exact 50-dps reference
+to **4.73e-50**, against ~2.7e-17 before — 33 orders recovered.
+
+Remaining: 289 sites / 268 files.
