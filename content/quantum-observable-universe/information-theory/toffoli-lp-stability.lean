@@ -728,4 +728,83 @@ theorem markov_hecke_relation {q : ℝ} (hq : 0 < q) :
   field_simp
   ring
 
+/-! ## What the relation says: it is a statement about crossing loop values
+
+`markov_hecke_relation` looks like an obstruction — it is what makes the
+coefficient string above meaningless.  In the vocabulary of
+`prop:markov-z-reconciliation` it is not an obstruction at all.  That block
+defines the **negative-crossing loop value** `z₋ = z - (q - q⁻¹) = z - ħ`,
+forced by the Hecke quadratic relation from the one-sided stabilisation rule,
+and calls `a² = z/z₋` the Ocneanu **framing ratio**.  So `z - ħ`, met here as
+an algebraic accident, is a named object.
+
+Written in those terms the relation factors, via `ħ² + 4 = [2]_q²`, into
+`z₊ z₋ = 1/[2]_q²`: the two crossing loop values multiply to the inverse
+square of the quantum dimension.  Convention C satisfies neither this nor a
+monomial framing ratio
+(`computations/probes/markov_loop_value_product_and_framing_ratio.py`, 13/13). -/
+
+/-- The quantum dimension `[2]_q = q + q⁻¹`. -/
+noncomputable def qDimTwo (q : ℝ) : ℝ := q + 1 / q
+
+/-- The negative-crossing loop value `z₋ = z - ħ`, forced by the Hecke
+    quadratic relation (`prop:markov-z-reconciliation`). -/
+noncomputable def markovZNeg (q : ℝ) : ℝ := markovZ q - toffoliConeCoord q
+
+/-- `[2]_q² - ħ² = 4` — the quantum dimension and the Hecke deformation are a
+    hyperbolic pair. -/
+theorem qDimTwo_sq_sub_hbar_sq {q : ℝ} (hq : 0 < q) :
+    qDimTwo q ^ 2 - toffoliConeCoord q ^ 2 = 4 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  unfold qDimTwo toffoliConeCoord
+  field_simp
+  ring
+
+/-- `z₋ = 1/(q(q²+1))` in convention D — the negative-crossing loop value in
+    closed form. -/
+theorem markovZNeg_eq {q : ℝ} (hq : 0 < q) :
+    markovZNeg q = 1 / (q * (q ^ 2 + 1)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold markovZNeg markovZ toffoliConeCoord
+  field_simp
+  ring
+
+/-- **The two crossing loop values multiply to `1/[2]_q²`** (convention D).
+
+    Equivalently `[2]_q² · z₊ · z₋ = 1`, which is `markov_hecke_relation` in
+    closed form.  Convention C satisfies no such identity: there `z₊z₋` has
+    half-integer and integer powers of `q` mixed in one numerator and does not
+    factor. -/
+theorem markov_loop_value_product {q : ℝ} (hq : 0 < q) :
+    qDimTwo q ^ 2 * (markovZ q * markovZNeg q) = 1 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  rw [markovZNeg_eq hq]
+  unfold qDimTwo markovZ
+  field_simp
+
+/-- **The Ocneanu framing ratio is a monomial in convention D**: `a² = q⁴`,
+    so `a = q²`.  This is a *structural* reason for the convention-D ruling,
+    independent of the empirical one on record (195.8 ppm on `tr_M(β_Bor)`) —
+    no anchor and no measurement enters.  Convention C's framing ratio is
+    `-q^{3/2}/(-q^{3/2} + q³ + q² - q - 1)`, not a monomial. -/
+theorem markov_framing_ratio_eq {q : ℝ} (hq : 0 < q) :
+    markovZ q = q ^ 4 * markovZNeg q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  rw [markovZNeg_eq hq]
+  unfold markovZ
+  field_simp
+
+/-- **`z = q²/[2]_q` in convention D** — the exact analogue of the form
+    `z = 1/[2]_{√q}` that `prop:markov-z-reconciliation` already gives for
+    convention C, which makes the two conventions comparable at a glance. -/
+theorem markovZ_eq_qsq_div_qDimTwo {q : ℝ} (hq : 0 < q) :
+    markovZ q * qDimTwo q = q ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold markovZ qDimTwo
+  field_simp
+
 end QOU.Information

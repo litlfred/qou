@@ -52,4 +52,33 @@ with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocnea
 
 **Convention.** The parameter $z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2}) = \sqrt{q}/(1+q)$ is **convention C** of the [trace-convention registry](docs/coordination/trace-convention-registry.md), there named the full-Hecke Ocneanu/Wenzl $z$-trace. The **mass** and **binding** channels are registered as **convention D**, $z_{\mathrm{D}} = q^3/(q^2+1)$, in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The numerical values quoted above ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) and the weights evaluated at them are therefore **convention-C values**, and do not describe the parameter the mass tables use.
 
+**A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
+
+$$
+  z_{-} \;=\; \frac{1}{q(q^2+1)} , \qquad
+  z\,z_{-} \;=\; \frac{1}{[2]_q^{2}} , \qquad
+  a^2 \;=\; \frac{z}{z_{-}} \;=\; q^4 .
+$$
+
+So in convention D the two crossing loop values multiply to the inverse square of the quantum dimension, and the Ocneanu framing parameter is the **monomial** $a = q^2$. Note also $z\,z_{-} = w_{(2,1)}$: the product of the loop values is exactly the registered standard-block weight.
+
+Convention C satisfies neither. There
+
+$$
+  z_{-} \;=\; \frac{q^{3/2} - q^3 - q^2 + q + 1}{q(q+1)} , \qquad
+  a^2 \;=\; \frac{q^{3/2}}{q^{3/2} - q^3 - q^2 + q + 1} ,
+$$
+
+mixing half-integer and integer powers of $q$ in one numerator, with no factorisation and no monomial framing ratio. Both conventions are admissible — $\mathrm{tr}_M(1) = (z - z_{-})/(q - q^{-1}) = 1$ holds in each — so this is not convention C being invalid; it is convention C being structureless.
+
+Two further forms, recorded because they make the pair comparable at a glance. Convention D admits the exact analogue of the $z_{\mathrm{m}} = 1/[2]_{\sqrt q}$ above,
+
+$$
+  z_{\mathrm{D}} \;=\; \frac{q^2}{[2]_q} ,
+$$
+
+and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{m}}(q^2)$.
+
+All of the above is sorry-free in `QOU.Information.markovZNeg_eq`, `markov_loop_value_product`, `markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo` and `qDimTwo_sq_sub_hbar_sq`, with the symbolic cross-check in [`markov_loop_value_product_and_framing_ratio.py`](https://github.com/litlfred/qou/blob/main/computations/probes/markov_loop_value_product_and_framing_ratio.py) (13/13). It was found while chasing the algebraic relation between $z$ and $\hbar_\times$ out of the Toffoli LP arc, where it first appeared only as an obstruction.
+
 The weight formula itself is **frame-general** — it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights exactly, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.

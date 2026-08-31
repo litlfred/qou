@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T04:51:14Z
+updated_at: 2026-08-31T05:09:05Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -243,3 +243,65 @@ subject is not an artifact of a choice I made:
       fact about H_n(q) and its Markov trace, NOT about the Toffoli, so it
       should have consequences well outside this arc.
   (c) does the grevlex normal form mean anything, given that order?
+
+
+---
+
+## ITEM (b) ANSWERED 2026-08-31 — the relation is a statement about CROSSING LOOP VALUES, and it separates convention D from C
+
+Probe: `computations/probes/markov_loop_value_product_and_framing_ratio.py`,
+**13/13**. Lean: `markovZNeg_eq`, `markov_loop_value_product`,
+`markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo`,
+`qDimTwo_sq_sub_hbar_sq` -- all sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. File now 40 theorems / 0 sorries.
+
+**THE CORPUS ALREADY NAMES BOTH SIDES**, and the six-path grep found it:
+`prop:markov-z-reconciliation`
+(`content/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md`)
+defines the NEGATIVE-crossing loop value `z_- = z - (q - 1/q) = z - hbar`,
+forced by the Hecke quadratic relation from the one-sided stabilisation rule,
+and calls `a^2 = z/z_-` the Ocneanu FRAMING RATIO. So `z - hbar`, which the
+Toffoli work met as an algebraic accident, is a named object with a meaning.
+That block ALSO already states `z_C = 1/[2]_{sqrt q}` verbatim -- so that clean
+form is prior art, not a finding.
+
+**THE RELATION, RESTATED.** Using `hbar^2 + 4 = [2]_q^2`, the degree-4 relation
+factors:
+
+    R = hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1  =  [2]_q^2 . z . (z-hbar) - 1
+
+so in convention D
+
+    z_-      = 1/(q(q^2+1))
+    z_+ z_-  = 1/[2]_q^2        (= w_(2,1), the registered standard-block weight)
+    a^2      = z_+/z_-  =  q^4  ->  a = q^2, a MONOMIAL
+
+**CONVENTION C HAS NEITHER, and that is the point.**
+
+    z_-  = (q^{3/2} - q^3 - q^2 + q + 1)/(q(q+1))
+    a^2  = q^{3/2}/(q^{3/2} - q^3 - q^2 + q + 1)
+
+half-integer and integer powers of q mixed in one numerator, no factorisation,
+no monomial framing ratio. BOTH conventions satisfy
+`tr_M(1) = (z_+ - z_-)/hbar = 1`, so this is not C being INVALID -- it is C
+being STRUCTURELESS.
+
+**WHY THIS MATTERS BEYOND THE TOFFOLI ARC, which was item (b)'s whole point.**
+The owner's rulings of 2026-08-09 and 2026-08-15 make D canonical and excise C.
+The justification on record is EMPIRICAL: 195.8 ppm on `tr_M(beta_Bor)`, -197
+ppm on `m_p`. This is a STRUCTURAL reason pointing the same way, and it is
+independent of any anchor, any measurement and any ppm figure. Recorded in the
+reconciliation block itself, which is its natural home.
+
+**Two further forms**, recorded because they make the pair comparable at a
+glance and neither was in the corpus:
+
+    z_D      = q^2/[2]_q            (exact analogue of C's 1/[2]_{sqrt q})
+    z_D(q)   = q^2 . z_C(q^2)       (a direct C-to-D bridge)
+
+**STILL OPEN**, from the three-item list above: (a) does the minimal degree 6
+mean anything, and (c) does the grevlex normal form mean anything given that
+order. Both are weaker than (b) was and neither has a lead. A better successor,
+suggested by this result: the framing ratio `a = q^2` is a monomial in D -- does
+that have consequences for the Ocneanu weight formula the block quotes, e.g. do
+the D weights `w_lambda` have a closed form in `q` alone that C's do not?
