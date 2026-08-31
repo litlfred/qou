@@ -1151,3 +1151,67 @@ to test:
    them. Testable at small A by computing the Graver basis directly (4ti2 /
    `zsolve`), which is also exactly the missing integer half of the probe above
    — so points 1-3 and the probe's own gap close with the same piece of work.
+
+## 2026-08-31 — SETTLED: the substrate extremises the Markov trace; the zero is critical
+
+`computations/probes/which_functional_the_substrate_extremises_probe.py`, 6/6.
+
+**Axis 1 settled three ways over — Markov, not Plancherel.** Three properties
+the corpus already *demands* each reject the q-Plancherel weighting:
+
+1. **Not a Markov trace.** `tr(x.T_n)/tr(x)` is `h/2` on gamma but
+   `-2q^3/(q^6+2q^4-2q^2-1)` on `s0` — not even constant, so no Markov
+   parameter exists. Markov gives `z` on both. The Markov property is what
+   makes the trace a link invariant and what the whole closure/arity apparatus
+   rests on (`c_free = 2A`, `c_atom = A+1`, Lean `ClassicalTraceFloor`).
+2. **Does not annihilate the q-antisymmetriser.** `W_alt = q^2/D != 0` against
+   `y_alt = 0`. Convention D's defining fact is the singular Gram whose radical
+   IS the antisymmetriser; a Plancherel Gram is nonsingular, i.e. a different
+   cone from the one every SDP here is posed over.
+3. **Not multiplicative on disjoint strand blocks.** Re-running
+   `h3a_frobenius_gram_offdiagonal_probe`'s own H_6 test with Plancherel
+   weights: **36 of 36 pairs fail**, worst rel err 10.9. Not a normalisation —
+   `gamma(x)gamma`, `gamma(x)s0`, `s0(x)gamma` all miss by +4.0346 but `s0(x)s0`
+   misses by **-2.0556, sign flipped**. This is the property that gives
+   `t^(A) = t^(x)A`, i.e. the entire atom construction.
+
+**Consequence: the metallic ladder is retired as a physical mechanism.** The
+silver coincidence and the Lean `silver_lp_coincidence` it generalises stay true
+theorems — about a functional that is not a link invariant, has the wrong cone,
+and cannot build an atom. A re-scoping, not a refutation; if a legitimate role
+for Plancherel ever appears, the metallic results return with it.
+
+**Axis 2 was never a fork, and I withdraw last turn's "blocking from two
+directions".** Additive and multiplicative give *exactly* the same answer: zero.
+Verified at full `6^A` with no collapse — 36, 216, 216, 1296 variables for 2H,
+3H, 3He, 4He — max |gap| 2.2e-16. The tensor of the per-nucleon optima is
+already globally optimal for the coupled program.
+
+**The mechanism, and it is one fact.** At q_0 the dual optimum is **rank one and
+shared by both nucleons**: `y*_p = y*_n = 0.54312042 e_2`, a single active row
+(index 2, `sigma_1`). So `phi(v) = 0.54312042 (Gv)_2` is **exactly linear in v**
+— residual exactly 0.0 on `v_p`, `v_n`, `v_p+v_n`, `2v_p+2v_n`. A linear value
+function is exactly additive, so the gap vanishes identically for every (Z,N)
+and either cost convention. This subsumes the "nested supports" observation of
+the previous turn and is `t = G e_1` biting again: `y = e_1` is dual-feasible
+with all six dual constraints tight, a maximally degenerate vertex.
+
+**And the zero is CRITICAL, not structural.** The geometry is perfectly capable
+of binding: **86 of 300** random nonnegative costs open a strictly positive gap
+(worst 1.65%). What is special is the Markov cost. Along directions that do
+open a gap, `gap/eps` is **constant over six decades** (1e-1..1e-6; constants
+0.0309, 0.0289, 0.0174, each flat to < 5e-8), so the gap grows exactly linearly
+from zero: **the Markov cost lies ON the boundary of the no-gap region**, and
+since only 5 of 24 directions cross, the boundary is a face rather than a point.
+
+**Self-correction.** A first pass detected gap-opening with `abs(gap) > 1e-9`
+and reported a knife-edge radius of 3e-8. Those were *negative* gaps —
+structurally impossible, since aggregation is a relaxation — i.e. solver noise.
+Every measurement in the committed probe is sign-aware with a relative
+threshold, zero spurious negatives are observed, and the boundary claim rests
+on the linear scaling rather than on any radius.
+
+**What this does to 1PPQ.** The question is no longer "which functional". It is
+**why the substrate sits exactly on that critical face**, and whether physical
+binding is the linear response `C.eps` to whatever breaks the degeneracy — with
+`C ~ 0.017-0.031` already measured. That is the next thing to build.
