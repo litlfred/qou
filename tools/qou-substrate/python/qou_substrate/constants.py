@@ -155,7 +155,21 @@ HBAR_Q_SQ = HBAR_Q * HBAR_Q
 # q is pinned from m_p/m_e via the substrate identity; sensitivity
 # S = dln(m_p)/dln(q) ≈ 21, so σ(q)/q = (1/S)·σ(m_p)/m_p. Vol(4_1) is a
 # math constant (zero experimental error); only the mass ratio enters.
-#   ⇒ σ(q₀) ≈ 0.0029 ppb = 2853 ppQ (vs 1.22 ppb on the old muon anchor).
+#   ⇒ σ(q₀) ≈ 0.00083 ppb = 830 ppQ (vs 1.22 ppb on the old muon anchor).
+#
+# STALE FIGURE CORRECTED 2026-08-31. This read "σ(q₀) ≈ 0.0029 ppb = 2853 ppQ",
+# which is 3.6× the value the formula on the next line actually produces. It is
+# reproduced exactly by the PRE-2026-08-21 σ(m_p/m_e) of 0.06 ppb (0.06/21 =
+# 0.00286) — the figure AGENTS.md already records as corrected to 0.017. The
+# CODE was never wrong: Q_ERR reads MASS_RATIO_P_E_ERR live, so it has tracked
+# the correction all along; only this human-readable comment did not. Measured
+# in computations/substrate/mmu_l2_reachability_scoping_probe.py (5/5), which
+# also measures S_proton = 20.9970 against the 21.0 literal below (0.014 %).
+# The 0.00083 above is what Q_ERR actually evaluates to; the live relative
+# σ(m_p/m_e) is 0.0174 ppb rather than the 0.017 quoted in prose, and this
+# figure is quoted from the code rather than recomputed from the rounded input
+# — the failure mode being corrected here is precisely a figure that disagreed
+# with the formula beside it.
 _S_PROTON = 21.0
 Q_ERR  = (Q / _S_PROTON) * (MASS_RATIO_P_E_ERR / MASS_RATIO_P_E)  # ~9.2e-13
 
