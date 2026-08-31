@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:43:41Z
+updated_at: 2026-08-31T05:53:25Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1061,3 +1061,41 @@ Sagan's at all:**
 **next**: (1) and (2) above. (2) is the load-bearing one and is where I would start, since it
 is the piece with no q=1 antecedent and therefore the one most likely to reveal that the route
 needs rethinking.
+
+### 2026-08-31 — Lemma 3.13's length additivity PROBED, and it is stronger than Mathas states it
+
+`computations/hecke/murphy_garnir_length_additivity_probe.py` — exact integer arithmetic
+(tableaux as tuples, permutations as tuples, Coxeter length as inversion count; no float).
+
+Applied the session's own lesson: this is the one ingredient with NO q=1 antecedent (Sagan's
+Garnir straightening never tracks Coxeter lengths), so it is the piece most likely to reveal
+that the route needs rethinking — measure it before formalising.
+
+**Result: it holds, on every case, and the FIRST descent node always works.**
+
+  n     row-standard non-standard t     SOME node works     FIRST node works
+  3     6                               6/6                 6/6
+  4     37                              37/37               37/37
+  5     220                             220/220             220/220
+  6     1526                            1526/1526           1526/1526
+
+**Mathas states EXISTENCE of a descent node; the probe says the first one always suffices.**
+That is a constructive strengthening and it matters for the Lean: no search over nodes and no
+induction on the node choice — take the first descent, done. Mathas' own proof handles the
+non-Garnir case by induction ("otherwise there exists s in S such that t' = ts is row standard
+... by induction"); if the first-node form holds in general, that induction collapses.
+
+The probe also asserts `d(t) = w . d(g)` on every case (1789 of them), which confirms the
+composition convention rather than leaving it inferred — the exact class of error that cost
+this session a wrong-handed supp_le probe earlier.
+
+The Garnir-tableau construction is verified against Mathas' own three worked examples for
+lambda = (3,3) (`g_11`, `g_12`, `g_13`) BEFORE any measurement runs, and the script refuses to
+proceed if they mismatch. Same discipline as the rank guard: check the object before measuring
+a property of it.
+
+**n <= 6 is evidence, not proof** — the claim is over all n. But it de-risks the hardest
+remaining piece and tells the formaliser exactly what to prove.
+
+**next**: formalise `l(d(t)) = l(d(g)) + l(w)` at the first descent node. Then the Garnir
+tableau itself as a Lean definition, then 3.14's dominance induction.
