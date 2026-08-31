@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 47 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 48 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 21 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 22 more by hand** (see "the method is per-class hand construction" below).
 
 > **🛑 The running total was over by one for two turns, and the correction is
 > worth stating rather than silently applying.** I had been adding the machine
@@ -35,9 +35,12 @@ worth measuring before spending the week.
 > `ShellClosureMonotone` — a real finding, below — is **not one of the 79**: it
 > backs no projection in the 90 and surfaced only while adjudicating
 > `HasFrobeniusStability`, so it does not belong in this denominator either.
-> Net: 48 → **47**. This is the same class of error as the ones this audit
-> records against itself further down, and it arrived the same way — arithmetic
-> across two lists instead of a set operation on them.
+> Net: the total went 48 → **47** on that correction, and back to **48** when
+> `LpDualStabilityContext` was adjudicated afterwards (the LP pair, below). The
+> two 48s are not the same 48 — do not read the round trip as "nothing changed".
+> This is the same class of error as the ones this audit records against itself
+> further down, and it arrived the same way: arithmetic across two lists instead
+> of a set operation on them.
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -46,20 +49,20 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **47** (26 machine + 21 hand) |
-| scored NOT vacuous — genuine claim | 11 (`MatrixChainEqBuildChains` + the four §4 gates + 6 already inhabited in the corpus) |
+| **INHABITED with no hypotheses** | **48** (26 machine + 22 hand) |
+| scored NOT vacuous — genuine claim | 12 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality` + 6 already inhabited in the corpus) |
 | REFUTABLE — false at the corpus's own constants | 1 (`SkeinMassRelationHolds`) |
-| still undecided — INCONCLUSIVE, see method below | 20 |
+| still undecided — INCONCLUSIVE, see method below | 18 |
 | hand-verified before any tooling existed | 5 of 5 |
 
-The 20 that remain, so the next agent does not have to re-derive the list:
+The 18 that remain, so the next agent does not have to re-derive the list:
 `ConfinementPhaseStratificationContext`, `ConvergenceBound`,
 `DeltaTauMSurrogateTaylorCoeff2`, `DoubleMagicConjecture`,
 `DressedMassSubstrateSplit`, `FiberAdjointInvolutionContext`,
 `FourTermPairNucleonContext`, `H2SAngleS3HolonomyConjecture`,
-`HasDqSquaredNonvanishing`, `HasFiniteLPDuality`, `LpDualStabilityContext`,
-`MarkovIdentificationContext`, `NeutronPairSkeinApprox`,
-`ParityRegimeSelectionContext`, `ProtonPairSkeinApprox`, `QIntRatioBoundSmall`,
+`HasDqSquaredNonvanishing`, `MarkovIdentificationContext`,
+`NeutronPairSkeinApprox`, `ParityRegimeSelectionContext`,
+`ProtonPairSkeinApprox`, `QIntRatioBoundSmall`,
 `QuantumObservableUniverseExistsContext`, `RadiusOfConvergenceGateClass`,
 `SkeinMassFromLinkingContext`, `WhiteheadVolumeConjectureLimit`.
 
@@ -576,7 +579,7 @@ makes every other instance look like it costs something.
 `HasFrobeniusStability` itself is the `HasMarkovTrace` shape one more time: a
 single data field `sigma : R_q → R_q`, no Prop fields, inhabited at every `D`.
 
-**Floor: 46 → 47.**
+**Floor: 46 → 47.**  (`LpDualStabilityContext` takes it to 48; see the LP pair below.)
 
 ### And one scored NOT vacuous
 
@@ -651,6 +654,50 @@ file half-flags it: it states that the sympy probes implement the
 Lean gate is additive, and asserts the additive form "admits both variants as
 instances". True, and it is the direction that matters — the Lean gate is the
 weaker of the two, so clearing it is not evidence of clearing the probe's.
+
+### The LP pair scores oppositely, and the reason generalises
+
+Both classes are about linear-programming strong duality, both sit behind a
+ledger projection, and they land on opposite sides. What separates them is
+whether the quantities the claim constrains are **free data on the class** or
+**parameters supplied by the caller** — which is the same discriminator as the
+`NobleGasMultiOperator` / `HasBindingMultiplicity` pair, one layer up.
+
+**`LpDualStabilityContext` — VACUOUS.** Unparameterised, with fourteen data
+fields (`channels`, the Gram matrix `G`, `κ_G`, `y_star`, `t`, `x_star`,
+`x_partial`, `tr_M_x_star`, `y_0_star`, …) followed by four Prop fields that
+constrain only those. The instance chooses everything the claim is about, so
+`lp_dual_stability`'s four-part conclusion — primal stability, bounded dual
+prices, sub-braid instability, **and strong duality
+`tr_M(x*) = y₀* · n_target`** — is conditional on nothing. Floor 47 → 48.
+
+Worth recording *which* model works, because it is exactly the prober's blind
+spot: `channels := 0` **fails**, since `partial_unstable` at the empty sum is
+`0 < 0`. The witness needs one channel and a negative `x_partial` — a value the
+generator never tries, its defaults being zero and empty. That is the whole
+reason this class came back `unproven`, and it is a cleaner instance of the
+pass/fail asymmetry than any of the abstract statements of it above.
+
+**`HasFiniteLPDuality lp` — NOT vacuous.** Parametric over the LP, with two
+fields that constrain that `lp` rather than data of its own. Satisfiable at an
+LP with `primal_obj = dual_obj`, and **refutable** at one without — the second
+being the file's own `badLP`. Its header already records that two axioms
+manufacturing the class for every `lp` each made the library inconsistent, and
+that is the strongest possible evidence a class is not vacuous: something that
+can be refuted at a parameter assumes something at every parameter. Stated as
+`→ False` rather than `¬`, because the class is declared `: Type`, not `: Prop`,
+so its instances are data and are not proof-irrelevant.
+
+**Its same-named twin is a third thing, and stays undecided.**
+`QOU.BraidKnot.ConfinementNFPartial.HasFiniteLPDuality`, in the
+`confinement-nf-partial-proof.lean` content-block sibling, has the same name,
+the same two obligations and a *different* `OperatorSelectionLP` — one whose
+`primal_obj` and `dual_obj` are `opaque` rather than fields. That single choice
+removes both routes at once: no model can be chosen to make
+`|primal − dual| = 0` provable, and no `badLP` can be built to refute it, since
+nothing reduces. So it is neither witnessed nor refuted here and stays in the
+undecided column — recorded because "the LP duality class is settled" would be
+wrong, and the two are one grep apart.
 
 ## Adjacent observation, not a finding
 

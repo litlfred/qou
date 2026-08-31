@@ -61,6 +61,8 @@ import QOU.BraidKnot.ElectronShell
 import QOU.BraidKnot.LevelSufficiency
 import QOU.BraidKnot.ShellClosureStability
 import QOU.Archimedean.TMCorrespondence
+import QOU.ParticleInteractions.lp_dual_stability
+import QOU.BraidKnot.LpDualityHypothesisClass
 
 /-! ## Inhabited with no hypotheses
 
@@ -589,3 +591,87 @@ example : MatrixChainEqBuildChains [NucleonType.proton, NucleonType.proton] 0
       simp [T_pp, transferMatrix, Matrix.mul_apply, Matrix.ofNat_apply]
 
 end HandAdjudicated4
+
+/-! ### The LP pair — one vacuous, one genuinely conditional, and the contrast is the point
+
+Both classes are about linear-programming strong duality, both sit behind a
+projection in the ledger, and they score **oppositely**.  What separates them is
+whether the quantities the claim constrains are *free data on the class* or
+*parameters supplied by the caller*.
+
+`LpDualStabilityContext` is **unparameterised** and carries fourteen data fields
+— `channels`, the Gram matrix `G`, `κ_G`, `y_star`, `t`, `x_star`, `x_partial`,
+`tr_M_x_star`, `y_0_star`, … — followed by four Prop fields that constrain only
+those.  So the instance chooses everything the claim is about, and
+`lp_dual_stability`'s four-part conclusion, **strong duality included**, is
+conditional on nothing.
+
+Note WHICH model works, because it is exactly what the machine prober could not
+find.  `channels := 0` fails: `partial_unstable` at the empty sum is `0 < 0`.
+The witness needs one channel and a negative `x_partial` — a value the generator
+never tries, since its defaults are zero and empty.  That is the whole reason
+this class came back `unproven` rather than `inhabited`.
+
+`HasFiniteLPDuality lp` is **parametric over the LP**, and its two fields
+constrain that `lp` rather than data of its own.  It is satisfiable at an LP
+with `primal_obj = dual_obj` and **refutable** at one without — the second is
+the file's own `badLP`, and its header already records that two axioms
+manufacturing the class for every `lp` each made the library inconsistent.  A
+class that can be refuted at a parameter is not vacuous at any parameter, and
+this is the `HasStrongDuality` mould exactly. -/
+
+namespace HandAdjudicated5
+open QOU.ParticleInteractions QOU.BraidKnot
+
+/-- **Vacuous.**  One channel, a negative `x_partial`, everything else zero. -/
+noncomputable instance : LpDualStabilityContext where
+  q := 0
+  channels := 1
+  G := fun _ _ => 1
+  κ_G := 0
+  y_star := fun _ => 0
+  t := fun _ => 0
+  t_norm := 0
+  tr_M_x_star := 0
+  y_0_star := 0
+  n_target := 0
+  x_star := fun _ => 1
+  x_partial := fun _ => -1
+  σ_0_idx := 0
+  primal_stable := by intro i; simp
+  dual_price_bound := by intro i; simp
+  partial_unstable := by simp
+  strong_duality := by norm_num
+
+/-- An LP whose primal and dual optima agree. -/
+def emptyLP : OperatorSelectionLP where
+  Λ := Empty
+  finite := by infer_instance
+  primal_obj := 0
+  dual_obj := 0
+  active_set := ∅
+  tight := fun _ => True
+
+/-- **Satisfiable** at that LP. -/
+instance : HasFiniteLPDuality emptyLP where
+  dualityGapZero := by simp [OperatorSelectionLP.duality_gap, emptyLP]
+  complementarySlackness := by rintro ⟨⟩
+
+/-- And an LP whose optima do not. -/
+def badLP : OperatorSelectionLP where
+  Λ := Empty
+  finite := by infer_instance
+  primal_obj := 0
+  dual_obj := 1
+  active_set := ∅
+  tight := fun _ => True
+
+/-- **Refutable** at that one — so the class is not vacuous at any parameter.
+Stated as `→ False` rather than `¬`: `HasFiniteLPDuality` is declared `: Type`,
+not `: Prop`, so its instances are data and are not proof-irrelevant. -/
+theorem badLP_refutes : HasFiniteLPDuality badLP → False := by
+  intro h
+  have := h.dualityGapZero
+  simp [OperatorSelectionLP.duality_gap, badLP] at this
+
+end HandAdjudicated5
