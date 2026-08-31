@@ -786,3 +786,75 @@ Three things are open, in my order:
    selector sitting outside production; leaving it unwired indefinitely is how
    the corpus accumulated the routes this whole arc has been auditing.
 3. Audit consumers of `nf_channel_exact`, now known callable and wrong.
+
+---
+
+## All three follow-ups closed — 2026-08-31
+
+### (1) `q_c` is explained, and my "unexplained constant" label is WITHDRAWN
+
+Probe `qc_is_the_convexity_boundary_probe.py` (5 assertions, all exact/sympy).
+
+Exactly `D_PN = −h(2 − δ)/4` (residual identically 0), so for `q > 1` where
+`h > 0`, `D_PN < 0 ⟺ δ < 2` — and **the sextic in the `D_PN` numerator IS the
+equation `δ = 2` rearranged**, verified identical symbolically.
+
+`δ = 2` is where the colour-weighted `p`-`n` interface
+
+    σ − h(½ − δ/4)·1  =  (½ + δ/4)·σ + (½ − δ/4)·σ⁻¹     [weights sum to 1]
+
+has `σ⁻¹` weight **exactly zero** — it degenerates to a **pure `σ`**. Beyond
+`q_c` the weight is negative and it stops being a convex combination.
+
+| regime | `σ⁻¹` weight | `D_PN` |
+|---|---|---|
+| `1 < q < q_c` | > 0, convex average | < 0 |
+| `q = q_c` | 0, pure `σ` | 0 |
+| `q > q_c` | < 0, not a convex combination | > 0 |
+
+So the earlier result — `K(²H)` outside the positive sector exactly on
+`1 < q < q_c` — is a **tautology**: the binding operator carries inverse-crossing
+content exactly while the `p`-`n` interface contains an inverse crossing. Right
+outcome for something that looked mysterious.
+
+At `q₀`: `δ = 0.0013757`, weights `0.500344 / 0.499656` — within **0.07 %** of
+the symmetric average, three orders of magnitude below the boundary value 2.
+
+What genuinely survives, and it is small: the sextic is **irreducible over ℚ**,
+so `q_c` is algebraic of degree exactly 6; and nothing in the corpus records it.
+Note it is a property of `PN_CONVENTION = "bring_color_weighted"` — under
+`strict_averaged` the weights are ½/½ at every `q` and no boundary exists.
+
+### (3) `nf_channel_exact` — audited, **zero consumers**
+
+Every reference outside my own probes is namespace plumbing: import lists in
+`pyhecke/__init__.py`, `hecke_core.py`, `hecke_core_legacy.py`,
+`qou_mass/_internal/hecke_core.py`, plus `atom.py`'s own `__all__`. **No call
+site anywhere.** Consistent with it having been dead code behind the `NameError`.
+Nothing to repair beyond the flag already in `atom.py`; no downstream numbers are
+affected.
+
+### (2) The positive-sector LP — **probe only, deliberately**
+
+The hazard you named is the *ambiguity*, not the un-wiredness, so the disposition
+is now recorded in the probe itself rather than left floating.
+
+- **Not `K`** — it lies outside the positive sector on `1 < q < q_c`, so this LP
+  cannot return it. Complementary, not competing.
+- **Not production** — `nucleus_real_sdp` runs a different program (per-block on
+  the `H_{3A}` centre, diagonal Gram, net constraint retained). Neither is a
+  drop-in for the other.
+- **Not consumed** — no content block, derivation or witness reads its support
+  or objective.
+
+**Recommendation: do not wire, do not discard.** Wiring now adds a production
+dependency with no consumer — the same accumulation problem pointing the other
+way. It becomes right when something downstream actually needs a
+`(Z,N)`-sensitive selector. That condition is written into the probe so the
+decision is on the record.
+
+### State of `t7qv`
+
+The `K`-via-knot-convolution line is answered end to end and every follow-up it
+generated is closed. Remaining open items on this bean are the older ones
+(`A ≥ 5` geometric saturation; the octahedral arrangement), untouched by this arc.

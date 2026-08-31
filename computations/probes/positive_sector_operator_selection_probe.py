@@ -102,6 +102,35 @@ separates the two `A = 3` isotopes. Not shown: that the selected operator is
 anything physical. No comparison to `B_AME` is made anywhere here — the demand
 comes from LR branching of the nucleon words, and nothing empirical enters.
 
+DISPOSITION — PROBE ONLY, DELIBERATELY (2026-08-31)
+----------------------------------------------------
+Recorded explicitly because an unlabelled working selector sitting beside
+production is how this corpus accumulated the routes this whole arc has been
+auditing. The ambiguity is the hazard, not the un-wiredness.
+
+**What this is.** A `(Z, N)`-sensitive operator selector on the constituent
+subalgebra `(H_3)^{(x)A}`, whose `T`/`3He` separation is structural in `q`
+(`positive_sector_q_stability_probe.py`).
+
+**What it is NOT.**
+
+  - **Not `K`.** `k_versus_selected_operator_probe.py` shows the binding operator
+    lies outside the positive sector on `1 < q < q_c`, so this LP cannot return
+    it — the two are complementary, not competing.
+  - **Not production.** `nucleus_real_sdp.py` runs a *different* program: a
+    per-block LP on the `H_{3A}` centre with a diagonal Gram. This one runs on
+    the constituent subalgebra with a non-diagonal Gram and no net constraint.
+    They answer different questions and neither is a drop-in for the other.
+  - **Not consumed.** No content block, derivation or witness reads its support
+    or objective.
+
+**When wiring would become right:** when something downstream actually needs the
+selector — a claim that depends on the support or the objective value. Nothing
+does today, so wiring it now would add a production dependency with no consumer,
+which is the same accumulation problem pointing the other way. Until then this
+stays a probe, and this paragraph is the record of that being a decision rather
+than an omission.
+
 DISCIPLINE
 ----------
 No fit; nothing wired into production; no tier change. f64; conclusions are
@@ -370,6 +399,16 @@ def main() -> int:
                 "justification is prop:operator-selection-lp's own result that "
                 "y_0* = 0 identically, so the constraint carries no shadow "
                 "price — not that dropping it is convenient.")
+            wb.add_caveat(
+                "DISPOSITION: probe only, deliberately. This is NOT K (see "
+                "k_versus_selected_operator_probe: the binding operator lies "
+                "outside the positive sector on 1 < q < q_c, so this LP cannot "
+                "return it), NOT production (nucleus_real_sdp runs a different "
+                "program — per-block on the H_{3A} centre with a diagonal Gram) "
+                "and NOT consumed by any content block, derivation or witness. "
+                "Wiring becomes right when something downstream needs the "
+                "selector; until then wiring would add a production dependency "
+                "with no consumer.")
             wb.add_caveat(
                 "NOT SHOWN: that the selected operator is K; that the support "
                 "is stable under q; that the objective value is physically "
