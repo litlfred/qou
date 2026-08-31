@@ -65,7 +65,7 @@ The probe series surfaced 9 mathematical claims.  Status:
 
 -- Ref: [manuscript] conj:metallic-piecewise-LP-vertex
 -- Ref: [manuscript] conj:color-superconductivity-borromean
--- Ref: [audit] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+-- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 -/
 
 namespace QOU.AlgebraicSubstrate.MetallicLPIdentities
@@ -324,7 +324,7 @@ class GaloisPairCharacterSum where
       right-of / below counts being swapped under transpose. -/
   holds : Prop
   -- Ref: [manuscript] conj:galois-pair-character-sum
-  -- Ref: [probe] computations/metallic_q_symbolic_galois_proofs.py
+  -- Ref: [manuscript] computations/metallic_q_symbolic_galois_proofs.py
 
 /-- Conjectural witness: the n=2 LP active-set transition at δ_silver
     physically identifies the Color-Flavor-Locked transition density ρ_c.
@@ -336,7 +336,7 @@ class CSCSilverIsCFLTransition where
       conj:color-superconductivity-borromean. -/
   holds : Prop
   -- Ref: [manuscript] conj:color-superconductivity-borromean
-  -- Ref: [audit] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+  -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
 /-- Conjectural witness: the bar-image φ² of the deconfinement boundary
     `q_gold = 1/φ²` predicts a CFL → gCFL (gapless CFL) or CCS
@@ -347,7 +347,7 @@ class BarMirrorPhi2CFLgCFLTransition where
   /-- The CFL/gCFL boundary lies at q = φ² (the bar image of q_gold). -/
   holds : Prop
   -- Ref: [manuscript] conj:bar-mirror-cfl-gcfl-transition
-  -- Ref: [audit] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+  -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
 /-! ## SDP degeneracy at cost-coincidence points
 
@@ -393,7 +393,7 @@ class SDPDegeneracyDetectsMetallic where
       this set is S(n) ⊆ {δ_1, ..., δ_n}. -/
   holds : Prop
   -- Ref: [manuscript] conj:sdp-degeneracy-metallic-locus
-  -- Ref: [probe] computations/two_quark_active_set_mahler_sweep.py
+  -- Ref: [manuscript] computations/two_quark_active_set_mahler_sweep.py
   --        (empirically confirmed: AT δ_silver active set is empty;
   --         degenerate-vertex signature directly observed)
 

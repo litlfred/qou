@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-31T05:06:11Z
-updated_at: 2026-08-31T05:18:33Z
+updated_at: 2026-08-31T05:23:55Z
 ---
 
 `folio-assistant/content/pipeline/validate-references.ts` is the only checker
@@ -140,3 +140,51 @@ unmodified file fails identically, on
 this branch and on `main`; only its olean is absent from the restored cache,
 which was seeded before it landed. Environmental gap, nothing broken in the
 corpus.
+
+
+## 2026-08-31 (cont.) — the seven were NOT a decision. 13 -> 6.
+
+I flagged the seven non-citations as needing an owner convention call. **That
+was premature** — the measurement that collapses the question was one grep, and
+AGENTS.md §1 already answers it.
+
+**What the seven actually point at**, read verbatim rather than inferred:
+
+| key | target |
+|---|---|
+| `audit` | `docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md`, `docs/audits/2026-06-08-metallic-q-hierarchy-proof.md` |
+| `probe` | `computations/metallic_q_symbolic_galois_proofs.py`, `computations/two_quark_active_set_mahler_sweep.py` |
+| `probe-w` / `probe-j` / `probe-q` | `computations/metallic_q_{wenzl_sign_sweep,jones_sign_sweep,quark_bifurcation}.py` |
+| `bean` | `qou-k5r5, qou-t6hc` |
+| `metallichierarchy` | `QOU.AlgebraicSubstrate.MetallicHierarchy` — a Lean decl in this repo |
+
+**Every one is an in-repo artifact. None is a published work.** §1: *"If no
+published reference exists, use `[manuscript]` and cite chapter/section."*
+
+And the corpus is not ambiguous about the form either — **391 sites already
+write `-- Ref: [manuscript] <repo artifact>`**, e.g.
+`chi-std-pernucleon-closed-form.lean:243` → `docs/chi-std-pernucleon-theorem.md
+§Proof`, and `HabiroClassicalLimit.lean:18` →
+`docs/coordination/ck-dk-canonical-registry.md §3`. So the seven were outliers
+from an overwhelmingly established convention, not a fork in it.
+
+Rekeyed all **11 sites** across 3 files, **pointer text preserved verbatim** —
+only the key changed. `-- Ref: [probe-w] computations/…py` became
+`-- Ref: [manuscript] computations/…py`; nothing about what is being pointed at
+was altered, so no information is lost and the target stays greppable.
+
+**Result: 13 -> 6 errors.** All three files `lean`-direct **exit 0**.
+
+## The 6 that remain, and none is a judgement call
+
+`frenkel2020`, `koroteev-zeitlin2022`, `murakami1996`, `murakami2013`,
+`wielenberg1978`, `ggmw2020` — all real published works needing external
+lookup. `frenkel2020` (arXiv:2007.11786) and `koroteev-zeitlin2022`
+(arXiv:2108.01557) carry their identifiers inline and are **one fetch from
+settled**; **arxiv.org is blocked by this sandbox's egress proxy** and neither
+is in `library/`. That is the only thing keeping them open.
+
+Do not resolve `ggmw2020` from its initialism: the Lean comment expands it as
+"Gukov–Garoufalidis–Mariño–Wheeler (2020)", but GGMW is usually
+Garoufalidis–**Gu**–Mariño–Wheeler, so the comment's own expansion may be wrong.
+`library/` holds four candidate resurgence papers.
