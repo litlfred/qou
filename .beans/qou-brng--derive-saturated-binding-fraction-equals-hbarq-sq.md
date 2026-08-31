@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T15:05:29Z
+updated_at: 2026-08-31T17:23:12Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -593,3 +593,54 @@ I raised it as an open question on #6394 and then found the corpus had it):
 Probe 4's log-channel refutation does not conflict: it kills taking the log of a
 [A]_q!-shaped object at nuclear A (pre-asymptotic), not the log of a geometric
 one, whose log IS exactly linear.
+
+
+## The <g,g> tower walk (PR #6396, 2026-08-31) — rank is Catalan, pairing factors through Temperley-Lieb
+
+TWO probes, answering 'where does the binding error come in' from both ends.
+
+### 1. mirror_pair_em_isolation_probe — the error is NOT electromagnetic
+3H/3He are mirror nuclei; in B_sym = alpha[(Z-1)L_pp + L_pn + (N-1)L_nn] the L_pn
+terms cancel identically and so does the flavour split delta (it enters only
+d_pn), leaving Delta_model = alpha*ln(z(1-h)/(z-h)) -- q0 and the CAL-1 scale
+ONLY, no EM input.
+  Delta_exp (AME)  = 0.76375488 MeV
+  Delta_model      = 0.76532019 MeV     ratio 1.002049 -> 0.205 %
+Same fact from the other side: deficits 2.341727 (3H) vs 2.343293 (3He), equal to
+0.07 % -- the model's error is ISOSPIN-BLIND.
+Writhe normalisation is load-bearing (without it 2.287x) and Lean-proved unique
+up to sign, so it cannot have been tuned. It also DISCRIMINATES: B_qCLT_fac gives
+0.668x on the same pair.
+=> EM right to 0.205 %; the whole residual is STRONG. Weak is not probed by
+B(A,Z) at all.
+
+### 2. gg_gram_tower_walk_probe — where the strong channel goes missing
+The recorded scope-(a) negative (deuteron_real_sdp at H_6) used the WEDDERBURN
+BLOCK basis, where G_lm = tr_M(P_l P_m) = delta_lm tr_M(P_l) is DIAGONAL BY
+CONSTRUCTION (orthogonal central idempotents). Its degeneracy is a property of
+the basis, not of <g,g>; the one non-zero result was the AME value fed in as the
+constraint. NOT overturned -- re-scoped.
+
+On the GB normal-form basis, G_vw = tr_M(T_v T_w), calibrated to 4.94e-51
+against pyhecke.gram_matrix_mp at n=3:
+  n   dim   rank  corank   C_n
+  2     2      2       0     2
+  3     6      5       1     5
+  4    24     14      10    14
+  5   120     42      78    42
+RANK = CATALAN NUMBER = dim TL_n, gated. The Markov trace form's radical is
+ker(H_n -> TL_n): <g,g> FACTORS THROUGH TEMPERLEY-LIEB. The q-antisymmetriser
+(-1/q)^len(w) -- a JET-DEGREE-indexed vector -- lies in the radical at every
+level (projection norm 1.0).
+
+Atom at n = 3A, visible fraction C_{3A}/(3A)!: A=1 83.3 %, A=2 18.3 %,
+A=3 1.34 %, A=4 0.043 %. PREDICTION from the gated rank law, not measured past
+n=5.
+
+DOES NOT explain the deficit quantitatively: if it scaled with the invisible
+fraction, 4He would miss by ~2300x; it misses by 3.26. What IS established is
+structural -- an SDP on <g,g> cannot select among Hecke elements differing only
+in the radical, which is most of them.
+
+CONVERGENCE with qou-unqc / #6395: both say the licensing object cannot be the
+Markov trace itself -- there from KMS/traciality, here from the TL radical.
