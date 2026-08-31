@@ -32,16 +32,23 @@ Both are now theorems, so `wStd_sq_lower` states the bound with **no hypotheses 
 on containment.  `not_towerGeometricLowerBound_wStd` proves the refutation outright — it is a
 structural exclusion with an invariant, not a failed search.
 
-So the honest positive statement is a **threshold** bound, and `wStd_geometric_from_nine`
-supplies one: `(1/9)·(√2)^k ≤ w_std(k)` for `k ≥ 9`, which is the class's `lower_bound` field
-with `r = √2 > 1` and `c = 1/9 > 0` on that tail.  Everything downstream
-(`no_linear_selection`, `no_superlinear_selection`) already works on a tail — they pick an `A`
-from an `atTop` filter — so a threshold class would serve them unchanged.  Changing the class
-is left to the author; this file does not edit it.
+So the honest positive statement is a **threshold** bound, and `wStd_geometric_from_three`
+supplies one: `(1/30)·(√2)^k ≤ w_std(k)` for `k ≥ 3`, which is the class's `lower_bound` field
+with `r = √2 > 1` and `c = 1/30 > 0` on that tail.  `k ≥ 3` is not an artifact — it is exactly
+where `w_std` stops vanishing, so the bound covers the whole range on which any bound is
+possible.  Everything downstream (`no_linear_selection`, `no_superlinear_selection`) already
+works on a tail — they pick an `A` from an `atTop` filter — so a threshold class would serve
+them unchanged.  Changing the class is left to the author; this file does not edit it.
 
-**The threshold 9 is an artifact of the crude step `4^k ≤ k!`, not of the mathematics.**
-The true `w_std` is positive from `k = 3` on. Lowering the threshold needs the values
-`w_std(3) … w_std(8)`, which is a finite computation this file does not do.
+**A correction to my own first attempt, kept because the reasoning is the point.**  The first
+version of this file proved the bound only from `k ≥ 9`, and its header said the threshold was
+"an artifact of the crude step `4^k ≤ k!`" which could be lowered only by computing the six
+values `w_std(3) … w_std(8)` — "a finite computation this file does not do".  **That was wrong
+about the remedy.**  No value of `w_std` is needed: the threshold is set by the *constant*, and
+weakening `c` from `1/9` to `1/30` moves the integer step from `4^k ≤ k!` (first true at
+`k = 9`) to `9·4^k ≤ 100·k!` (first true at `k = 3`, and tight there: `576 ≤ 600`).  The
+optimum over `k ≥ 3` of `k!/(81·4^k)` is attained at `k = 3` and equals `1/864`, so any
+`c ≤ 1/√864 ≈ 0.0340` works; `1/30` is the round number under it.
 
 Base ring `ℝ` (archimedean: `√2`, real order) — the wall is crossed only in the last two
 results; everything above `wStd_sq_lower` is `ℕ`-combinatorial.
@@ -108,45 +115,56 @@ theorem wStd_sq_lower (k : ℕ) (hk : 3 ≤ k) :
 
 /-! ### A geometric tail bound -/
 
-/-- `4^k ≤ k!` for `k ≥ 9`.  (It is false at `k = 8`: `4^8 = 65536 > 40320 = 8!`.) -/
-theorem four_pow_le_factorial : ∀ k : ℕ, 4 ^ (k + 9) ≤ (k + 9).factorial := by
-  intro k
-  induction k with
+/-- `9·4^k ≤ 100·k!` for `k ≥ 3` — the integer step behind the geometric bound.
+
+Tight at the base: `9·4³ = 576` against `100·3! = 600`.  The weaker constant is what buys the
+low threshold; the sharper `4^k ≤ k!` is first true only at `k = 9` (it fails at `k = 8`,
+`65536 > 40320`), which is where an earlier version of this file had to start. -/
+theorem nine_four_pow_le_hundred_factorial :
+    ∀ d : ℕ, 9 * 4 ^ (d + 3) ≤ 100 * (d + 3).factorial := by
+  intro d
+  induction d with
   | zero => decide
   | succ n ih =>
-    calc 4 ^ (n + 1 + 9) = 4 * 4 ^ (n + 9) := by ring
-      _ ≤ 4 * (n + 9).factorial := Nat.mul_le_mul_left _ ih
-      _ ≤ (n + 9 + 1) * (n + 9).factorial := Nat.mul_le_mul_right _ (by omega)
-      _ = (n + 1 + 9).factorial := (Nat.factorial_succ (n + 9)).symm
+    calc 9 * 4 ^ (n + 1 + 3) = 4 * (9 * 4 ^ (n + 3)) := by ring
+      _ ≤ 4 * (100 * (n + 3).factorial) := Nat.mul_le_mul_left _ ih
+      _ ≤ (n + 3 + 1) * (100 * (n + 3).factorial) := Nat.mul_le_mul_right _ (by omega)
+      _ = 100 * ((n + 3) + 1).factorial := by rw [Nat.factorial_succ (n + 3)]; ring
+      _ = 100 * (n + 1 + 3).factorial := rfl
 
-/-- **`2^k/81 ≤ w_std(k)²` for `k ≥ 9`** — `wStd_sq_lower` with `k!` bounded below by `4^k`. -/
-theorem wStd_sq_ge_two_pow (k : ℕ) (hk : 9 ≤ k) : (2:ℝ) ^ k / 81 ≤ wStd k ^ 2 := by
-  obtain ⟨d, rfl⟩ : ∃ d, k = d + 9 := ⟨k - 9, by omega⟩
-  have hfac : (4:ℝ) ^ (d + 9) ≤ ((d + 9).factorial : ℝ) := by
-    exact_mod_cast four_pow_le_factorial d
-  have hlow := wStd_sq_lower (d + 9) (by omega)
+/-- **`2^k/900 ≤ w_std(k)²` for `k ≥ 3`** — `wStd_sq_lower` with `k!` bounded below via
+`nine_four_pow_le_hundred_factorial`. -/
+theorem wStd_sq_ge_two_pow (k : ℕ) (hk : 3 ≤ k) : (2:ℝ) ^ k / 900 ≤ wStd k ^ 2 := by
+  obtain ⟨d, rfl⟩ : ∃ d, k = d + 3 := ⟨k - 3, by omega⟩
+  have hfac : (9:ℝ) * 4 ^ (d + 3) ≤ 100 * ((d + 3).factorial : ℝ) := by
+    exact_mod_cast nine_four_pow_le_hundred_factorial d
+  have hlow := wStd_sq_lower (d + 3) (by omega)
   refine le_trans ?_ hlow
-  have hp : (0:ℝ) < 2 ^ (d + 9) := by positivity
-  have key : (2:ℝ) ^ (d + 9) / 81 = (4:ℝ) ^ (d + 9) / (81 * 2 ^ (d + 9)) := by
-    rw [show (4:ℝ) ^ (d + 9) = 2 ^ (d + 9) * 2 ^ (d + 9) by rw [← mul_pow]; norm_num]
-    field_simp
-  rw [key]
+  have hp : (0:ℝ) < 2 ^ (d + 3) := by positivity
+  have h4 : (4:ℝ) ^ (d + 3) = 2 ^ (d + 3) * 2 ^ (d + 3) := by rw [← mul_pow]; norm_num
+  have key1 : (2:ℝ) ^ (d + 3) / 900
+      = (9 * (4:ℝ) ^ (d + 3)) / (8100 * 2 ^ (d + 3)) := by
+    rw [h4]; field_simp; ring
+  have key2 : ((d + 3).factorial : ℝ) / (81 * 2 ^ (d + 3))
+      = (100 * ((d + 3).factorial : ℝ)) / (8100 * 2 ^ (d + 3)) := by
+    field_simp; ring
+  rw [key1, key2]
   gcongr
 
-/-- **The geometric tail bound: `(1/9)·(√2)^k ≤ w_std(k)` for `k ≥ 9`.**
+/-- **The geometric bound: `(1/30)·(√2)^k ≤ w_std(k)` for `k ≥ 3`.**
 
-This is exactly `TowerGeometricLowerBound.lower_bound` with `r = √2 > 1` and `c = 1/9 > 0`,
-restricted to the tail — which is all `no_linear_selection` and `no_superlinear_selection`
-consume, since both pick their `A` from an `atTop` filter. -/
-theorem wStd_geometric_from_nine (k : ℕ) (hk : 9 ≤ k) :
-    (1/9 : ℝ) * Real.sqrt 2 ^ k ≤ wStd k := by
-  have h2 : (0:ℝ) ≤ Real.sqrt 2 := Real.sqrt_nonneg 2
-  have hb : (0:ℝ) ≤ (1/9 : ℝ) * Real.sqrt 2 ^ k := by positivity
+This is exactly `TowerGeometricLowerBound.lower_bound` with `r = √2 > 1` and `c = 1/30 > 0`,
+restricted to `k ≥ 3` — which is all that is possible, since `w_std` vanishes below it, and all
+that `no_linear_selection` / `no_superlinear_selection` consume, since both pick their `A` from
+an `atTop` filter. -/
+theorem wStd_geometric_from_three (k : ℕ) (hk : 3 ≤ k) :
+    (1/30 : ℝ) * Real.sqrt 2 ^ k ≤ wStd k := by
+  have hb : (0:ℝ) ≤ (1/30 : ℝ) * Real.sqrt 2 ^ k := by positivity
   have hsqrt : (Real.sqrt 2) ^ 2 = 2 := Real.sq_sqrt (by norm_num)
-  have hbsq : ((1/9 : ℝ) * Real.sqrt 2 ^ k) ^ 2 = (2:ℝ) ^ k / 81 := by
+  have hbsq : ((1/30 : ℝ) * Real.sqrt 2 ^ k) ^ 2 = (2:ℝ) ^ k / 900 := by
     rw [mul_pow, ← pow_mul, mul_comm k 2, pow_mul, hsqrt]
     ring
-  have hle : ((1/9 : ℝ) * Real.sqrt 2 ^ k) ^ 2 ≤ wStd k ^ 2 := by
+  have hle : ((1/30 : ℝ) * Real.sqrt 2 ^ k) ^ 2 ≤ wStd k ^ 2 := by
     rw [hbsq]; exact wStd_sq_ge_two_pow k hk
   have := Real.sqrt_le_sqrt hle
   rwa [Real.sqrt_sq hb, Real.sqrt_sq (wStd_nonneg k)] at this
