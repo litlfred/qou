@@ -7,7 +7,12 @@ undercounts (a producer can read q0 through a helper).
 """
 import json, re, subprocess, pathlib, collections, sys
 
-ROOT = pathlib.Path("/home/user/qou")
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+# Repo-root-relative (bean qou-6inm) — was an absolute path into another checkout.
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 MU, PR = "1.109978595", "1.1099785827"
 Q0F = ("q_0_50dps", "q0", "q_0", "q0_50dps")
 

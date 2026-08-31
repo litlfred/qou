@@ -35,9 +35,14 @@ three factors, rather than fitting them.
 """
 import sys, time
 from pathlib import Path
-HERE = Path("/home/user/qou/computations").resolve()
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+HERE = (_QOU_ROOT / "computations").resolve()
 for p in (HERE, HERE/"substrate", HERE/"hecke", HERE/"markov",
-          Path("/home/user/qou/tools/pyhecke/python")):
+          _QOU_ROOT / "tools" / "pyhecke" / "python"):
     sys.path.insert(0, str(p))
 import sympy as sp
 from markov_peel import tr_M_atomic

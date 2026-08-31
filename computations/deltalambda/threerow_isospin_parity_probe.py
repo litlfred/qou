@@ -82,8 +82,14 @@ from __future__ import annotations
 import os, sys, math, time, warnings
 from pathlib import Path
 
-for _p in ("/home/user/qou/computations", "/home/user/qou/computations/substrate",
-           "/home/user/qou/computations/hecke", "/home/user/qou/computations/deltalambda"):
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+_COMP = _QOU_ROOT / "computations"
+for _p in (str(_COMP), str(_COMP / "substrate"),
+           str(_COMP / "hecke"), str(_COMP / "deltalambda")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 sys.path[:0] = [str(Path(__file__).resolve().parent.parent),

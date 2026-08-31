@@ -36,7 +36,15 @@ each failure.
 """
 import os, re, subprocess, sys, time
 
-LEAN_ROOT = "/home/user/qou/content/quantum-observable-universe/lean"
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+# Repo-root-relative (bean qou-6inm) — was an absolute path into another checkout,
+# so this script could not find the Lean tree in any other clone.
+from pathlib import Path as _Path
+_QOU_ROOT = _Path(__file__).resolve().parents[1]
+LEAN_ROOT = str(_QOU_ROOT / "content" / "quantum-observable-universe" / "lean")
 OUT = os.path.join(LEAN_ROOT, ".lake/build/lib/lean")
 IMPORT_RE = re.compile(r"^\s*import\s+(QOU(?:\.[A-Za-z0-9_']+)*)\s*$", re.M)
 

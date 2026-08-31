@@ -20,7 +20,12 @@ from pathlib import Path
 
 import mpmath as mp
 
-ROOT = Path("/home/user/qou")
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+ROOT = _QOU_ROOT
 sys.path.insert(0, str(ROOT / "computations" / "probes"))
 sys.path.insert(0, str(ROOT / "computations"))
 import _path_bridge as _bridge  # noqa: E402, F401
@@ -36,7 +41,7 @@ set_compute_dps()
 ORD_SEQ = 1600
 E_GF = 60
 MS = (-1, 0, 1, 2)                       # the probe's m values
-CACHE = Path("/home/user/qou/.a2_icache.json")   # survives container restarts
+CACHE = _QOU_ROOT / ".a2_icache.json"   # survives container restarts
 
 q0 = q_at(50)
 q = 1 / q0

@@ -2,8 +2,15 @@
 No ray, no bisection -- only the sign pattern on (1,q0] and just above, which is
 the only thing the Z=N/Z!=N claim depends on."""
 import sys,math,time
-sys.path[:0]=['/home/user/qou/computations','/home/user/qou/computations/substrate',
-              '/home/user/qou/computations/hecke','/home/user/qou/computations/deltalambda']
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+from pathlib import Path as _Path
+_QOU_ROOT = _Path(__file__).resolve().parents[2]
+_COMP = _QOU_ROOT / "computations"
+sys.path[:0] = [str(_COMP), str(_COMP / "substrate"),
+                str(_COMP / "hecke"), str(_COMP / "deltalambda")]
 # Path bridge: keeps flat-namespace imports working from this cluster
 # subdirectory. The bridge module puts every other cluster subdir on
 # sys.path so cross-cluster bare-name imports resolve. Idempotent.

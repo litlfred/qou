@@ -28,7 +28,12 @@ def log(msg):
     print(f"[{time.time()-T0:7.1f}s] {msg}", flush=True)
 
 HERE = Path(__file__).resolve().parent
-REPO = Path("/home/user/qou")
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+REPO = _QOU_ROOT
 
 z, h, q = sp.symbols("z h q")
 

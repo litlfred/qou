@@ -53,7 +53,14 @@ T0 = time.time()
 def log(msg):
     print(f"[{time.time()-T0:7.1f}s] {msg}", flush=True)
 
-DATA = "/home/user/qou/computations/h4_wedderburn/hecke-h4-wedderburn-seminormal.data.json"
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+from pathlib import Path as _Path
+_QOU_ROOT = _Path(__file__).resolve().parents[2]
+DATA = str(_QOU_ROOT / "computations" / "h4_wedderburn"
+           / "hecke-h4-wedderburn-seminormal.data.json")
 OUT = "/tmp/claude-0/-home-user-qou/4d3616f5-f4c0-5922-a632-19628cf5cbf8/scratchpad/h4_wedderburn_iso/cofactors.json"
 
 q = sp.Symbol('q')

@@ -17,7 +17,12 @@ import json, os, subprocess, sys, time
 from pathlib import Path
 from collections import Counter
 
-ROOT = Path("/home/user/qou"); COMP = ROOT / "computations"
+# Repo-root-relative (bean qou-6inm) — was an absolute path into another
+# checkout. NOTE this must stay consistent with
+# `witness_dependency_residue_targets.py`, which COLLECTS the absolute paths
+# that the worktree remap below rewrites; both now derive the same root.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+ROOT = _QOU_ROOT; COMP = ROOT / "computations"
 T = json.load(open("/tmp/residue_targets.json")); SHA = T["sha"]
 # targets were collected against /home/user/qou; remap onto the worktree so the
 # sweep can never touch the session's tree (the reason attempt 2 was stopped)
@@ -28,7 +33,13 @@ T = json.load(open("/tmp/residue_targets.json")); SHA = T["sha"]
 _WT = os.environ.get("RESIDUE_WORKTREE")
 if _WT:
     ROOT = Path(_WT); COMP = ROOT / "computations"
-    T["witnesses"] = [[w.replace("/home/user/qou", _WT), s] for w, s in T["witnesses"]]
+    # Remap against the root the targets were actually COLLECTED at, not a
+    # hardcoded literal: the collector is repo-root-relative now, so a fixed
+    # "/home/user/qou" here would silently match nothing and leave every path
+    # pointing at the session tree -- the exact hazard this remap exists to
+    # prevent (see the worktree warning above).
+    _collected_root = T.get("root", str(_QOU_ROOT))
+    T["witnesses"] = [[w.replace(_collected_root, _WT), s] for w, s in T["witnesses"]]
 SELFTEST = "atom_braid_active_partitions"   # verified IDENTICAL by hand
 VOL = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic","computedAt",
        "durationMs","elapsed_sec","invocation","environment","scriptCommitSha",

@@ -72,9 +72,13 @@ claim is made about the ratio as a function of q.
 Exact mpmath at 50 dps. NO fit, NO c_k, NO wiring.
 """
 import datetime, hashlib, json, os, subprocess, sys
-sys.path[:0] = ["/home/user/qou/computations",
-                "/home/user/qou/computations/hecke",
-                "/home/user/qou/computations/substrate"]
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+_COMP = _QOU_ROOT / "computations"
+sys.path[:0] = [str(_COMP), str(_COMP / "hecke"), str(_COMP / "substrate")]
 import mpmath as mp
 mp.mp.dps = 50
 from chi_monotone_transfer import chi_all_lambda

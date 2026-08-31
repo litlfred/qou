@@ -13,7 +13,12 @@ Discipline (all of it bought by earlier failures, see qou-wlaf/qou-9ohz):
 import ast, json, os, subprocess, sys, time
 from pathlib import Path
 
-ROOT = Path("/home/user/qou")
+# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
+# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
+# clone not at that exact path. A sys.path insert of a missing directory raises
+# NOTHING, so the failure was silent until an unrelated-looking import died.
+_QOU_ROOT = Path(__file__).resolve().parents[2]
+ROOT = _QOU_ROOT
 COMP = ROOT / "computations"
 SHA = subprocess.check_output(["git","rev-parse","origin/main"],cwd=ROOT,text=True).strip()
 TARGET = {"atom_braid_word_3A", "per_generator_V_hat_3A"}
@@ -66,7 +71,12 @@ if not known:
 # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
 import os as _os  # noqa: E402 -- provenance stamp
 from qou_substrate.witness import WitnessBuilder as _WB
-_prov_payload = {"sha":SHA,"witnesses":[[str(w),s] for w,s in hits]}
+# Record the root these absolute paths were collected against (bean qou-6inm).
+# `witness_dependency_residue_run.py` remaps them onto a git worktree and used
+# to do it against a hardcoded "/home/user/qou"; now that both files derive the
+# root from __file__, the remap must be told what the root actually WAS rather
+# than assume it.
+_prov_payload = {"sha":SHA,"root":str(ROOT),"witnesses":[[str(w),s] for w,s in hits]}
 _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
 _WB.stamp_staleness_metadata(
     _prov_payload, script_path=__file__, engine=None, q0_anchor=False)

@@ -1,10 +1,11 @@
 ---
 # qou-6inm
 title: 'Portability: 20 hardcoded /home/user/qou absolute paths across 12 files silently break every other checkout'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-30T18:39:51Z
-updated_at: 2026-08-30T18:39:51Z
+updated_at: 2026-08-31T02:46:25Z
 ---
 
 
@@ -71,3 +72,52 @@ Derive the root from `__file__` at the file's own depth (`parents[1]` for
 file still parses AND imports afterwards: several of these paths are currently
 dead, so repairing them makes code run that has not run in a while, and that
 can surface real failures underneath. Fix in small batches, not one sweep.
+
+## Summary of Changes (2026-08-31) — all 20 fixed, 0 remain
+
+Every remaining `/home/user/qou` literal replaced with a root derived from
+`__file__` at the file's own depth (`parents[2]` for `computations/<sub>/x.py`,
+`parents[1]` for `scripts/x.py`), across 12 files:
+
+    computations/deltalambda/threerow_isospin_parity_probe.py
+    computations/deltalambda/threerow_n12_isospin_control.py
+    computations/deltalambda/threerow_qcross_trend_probe.py
+    computations/markov/d_frame_closed_form_law_probe.py
+    computations/probes/qbeta_3bp8_a2_sample_point_delta_check.py
+    computations/h4_gram/hecke_h4_markov_gram_derive.py
+    computations/h4_wedderburn_iso/derive_wedderburn4_cofactors.py
+    computations/audits/no_q0_recorded_producer_split.py
+    computations/audits/witness_dependency_residue_targets.py
+    computations/audits/witness_dependency_residue_run.py
+    computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py
+    scripts/lean-build-cone.py
+
+### The one that needed more than a substitution
+
+`witness_dependency_residue_run.py` remaps collected absolute paths onto a git
+worktree, and did it against a hardcoded `"/home/user/qou"`. Once the COLLECTOR
+(`witness_dependency_residue_targets.py`) became repo-root-relative, a fixed
+literal there would have matched nothing — leaving every path pointing at the
+session tree, which is precisely the hazard that remap exists to prevent (its
+own comment records that an earlier attempt dirtied the session tree and had to
+be reverted). So the collector now records `root` in its payload and the runner
+remaps against that, falling back to its own derived root. The two cannot drift
+apart silently again.
+
+### Verified
+
+- 0 live `/home/user/qou` literals remain (comments excluded).
+- All 12 files parse.
+- Every derived root resolves to the repo root, and every directory each file
+  references exists — checked explicitly rather than assumed.
+- Import-tested where feasible: `threerow_isospin_parity_probe` and
+  `threerow_qcross_trend_probe` now import clean, and `threerow_n12_isospin_control`
+  proceeded into real computation (53 s of `[4He] q=...` output) where before its
+  `sys.path` entries pointed at nothing.
+- `pytest tools/qou-substrate/tests/ tests/` → 145 passed.
+
+Two import results are NOT regressions and are unrelated to path form:
+`witness_dependency_residue_run.py` needs `/tmp/residue_targets.json` (a runtime
+input produced by the collector), and `witness_dependency_residue_targets.py`
+wants `qou_substrate` on `sys.path`, which it gets when run as a script rather
+than exec'd standalone.
