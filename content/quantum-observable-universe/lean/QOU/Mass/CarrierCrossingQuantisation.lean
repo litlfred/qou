@@ -104,8 +104,10 @@ count*, given `c₂ = 2`: no integer carrier assignment reproduces `b₃`, and t
 approach is 16.98 % away. Scope **(a)** on every ingredient separately. It does **not**
 exclude the count channel, the Brunnian mechanism (`brunnian_binding_survives` is
 untouched), or `μ = c/2`; it says these four cannot hold *together* with the Hopf pair
-carrier. Releasing any one reopens it — the cheapest candidate being `μ = c/2` itself,
-since a multiplicity that is not half the crossing count is not lattice-valued.
+carrier. Releasing any one reopens it. **The cheapest-looking candidate, `μ = c/2`, is not
+in fact cheap** — §2b proves the constant is immaterial (`b₃/b₂` is invariant under
+`μ ↦ κμ`), so the hypothesis really in force is `μ ∝ c`, and breaking *that* means
+breaking the linearity of `pairEnergy_decomp`, i.e. going at `def:crossing-energy`.
 
 Ground ring: generic `[Field R]` for the identities (AGENTS.md §7c); the lattice results
 descend to `ℚ`, where the ordering and `Int.cast` are needed.
@@ -174,6 +176,36 @@ result; recorded so the coincidence is not rediscovered as one. -/
 theorem straddle_manufactures_the_sign :
     bRatio (muOfCrossings (2:ℚ)) (muOfCrossings 7) = 1/2 := by
   rw [bRatio_hopf_pair]; norm_num
+
+/-! ## 2b. The hypothesis is `μ ∝ c`, NOT `μ = c/2` -/
+
+omit [CharZero R] in
+/-- **Rescaling the multiplicity changes nothing.** `b₃/b₂` is invariant under
+`μ ↦ κμ` for any `κ ≠ 0`, so every result below holds for *any* multiplicity
+proportional to the crossing count — the `½` of `countChannel` is not load-bearing.
+
+This matters for how the obstruction can be escaped, and it corrects the obvious
+guess. The `½` looks like a free convention one could simply drop; it is not, and
+dropping it would not help anyway. It is the unique solution of
+`BrunnianBindingChannel.pairEnergy_decomp`, the `ring` identity splitting
+`n₊q − n₋q⁻¹` into its bar-even and bar-odd parts — and by this lemma any other
+constant gives the same `b₃/b₂`.
+
+So the hypothesis actually in force is **linearity**: `μ = κ·c`. Escaping the
+lattice needs a *nonlinear* `μ(c)`, and that contradicts `pairEnergy_decomp`
+being linear in `(n₊, n₋)`, which it is by construction. The escape route
+therefore runs through `def:crossing-energy` itself, not through a convention. -/
+theorem bRatio_scale_invariant (κ c₂ c₃ : R) (hκ : κ ≠ 0) :
+    bRatio (κ * c₂) (κ * c₃) = bRatio c₂ c₃ := by
+  unfold bRatio
+  rw [mul_div_mul_left _ _ hκ]
+
+/-- The `½` in particular is not load-bearing: reading `μ = c` rather than `μ = c/2`
+gives the identical ratio. -/
+theorem muOfCrossings_halving_immaterial (c₂ c₃ : R) :
+    bRatio (muOfCrossings c₂) (muOfCrossings c₃) = bRatio c₂ c₃ := by
+  unfold muOfCrossings
+  rw [div_eq_inv_mul, div_eq_inv_mul, bRatio_scale_invariant _ _ _ (by norm_num)]
 
 /-! ## 3. The lattice obstruction -/
 
