@@ -251,6 +251,36 @@ def main() -> int:
         engine="sympy Poly + cyclotomic divisibility",
         output_dir=HERE,
     )
+    # qou-srvu drain (slice C prepared this; qou-wc8f unblocked it). The
+    # witness reported `allPassed: true` over an EMPTY assertions list while
+    # this scan's whole purpose is a falsifiable universality claim, and
+    # main() returns 0 unconditionally -- so a run in which the universal
+    # boundary FAILED on every pair would still have read green.
+    #
+    # The claim asserted is the one the scan exists to test: PR #1625's
+    # universal M_first_Phi_8 = 7, extended from atomic-step pairs to mirror
+    # pairs. It is computed above and was being discarded.
+    #
+    # The second assertion is not decoration. `universal_match ==
+    # n_phi8_pairs` is VACUOUSLY true when n_phi8_pairs == 0 (an empty
+    # forall), which is exactly the state a convention change can produce --
+    # mirror_trace_diff_numerator's own docstring records that under
+    # convention D "every cyclotomic multiplicity collapses to 0". Guarding
+    # on non-emptiness is what stops this drain from re-introducing the
+    # qou-3e5m self-fulfilling defect it is meant to remove.
+    wb.add_assertion(
+        "universal_M_first_Phi_8_eq_7_holds_for_every_mirror_pair",
+        str(n_phi8_pairs - universal_match), "0",
+        source="PR #1625 Wenzl-annihilator universal boundary, extended to "
+               "mirror pairs; 0 = no pair with mult(Phi_8) > 0 misses M = 7",
+    )
+    wb.add_assertion(
+        "phi8_pair_set_non_empty",
+        str(int(n_phi8_pairs > 0)), "1",
+        source="guards the assertion above against passing vacuously on an "
+               "empty pair set -- the state convention D produces, where "
+               "every cyclotomic multiplicity collapses to 0",
+    )
     wb.save()
     print()
     print(f"  Elapsed: {elapsed:.1f} s")
