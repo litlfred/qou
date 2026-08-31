@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T04:29:41Z
+updated_at: 2026-08-31T04:42:26Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1060,3 +1060,50 @@ argument, only the symmetric part of the other contributes. That is what makes
 
 **File state:** 59 declarations, **0 sorries**. `ρ → 1` remains measured, not
 proved — that is the whole remaining gap for the sign.
+
+
+---
+
+### 2026-08-31 (cont.) — κ DERIVED = 128/(225π²), and a correction to my own claim
+
+**🛑 CORRECTION.** My `σ_h → √6/24` and `κ → √2/24` from earlier today are
+**wrong**. Fitted to n = 400..800 while `σ_h` was still drifting *down* through
+them; the z-check passed because its target sat inside the drift. Correct:
+
+> `σ_h = 0.09987155` (not √6/24 = 0.10206207) — matches the n=1600 measurement
+> 0.09982967 to 0.04%
+> **`κ = 128/(225π²) = 0.05764050`** (not √2/24 = 0.05892557)
+
+`128/(225π²)` is **exactly** the constant this bean's parent `qou-k5r5` already
+records as "DERIVED (not fitted) via the Ivanov–Olshanski field" — so the new
+derivation reproduces it independently, and the error was mine. Lesson: a
+monotone drift over a 4× range in n is not a limit. `..._M1_kappa_structure.py`
+FINDING 4 has been retargeted with the correction in its docstring.
+
+### The derivation (new, shorter route) — and the reduction that matters
+
+1. **Exact, Lean-proved** (`sum_hookLen_eq_diag`): a cell on diagonal `c` at
+   depth `k` is `(k, k+c)`, so `i+j+1 = 2k+c+1` and summing down the diagonal
+   gives `D(c)² + c·D(c)`. Hence
+   **`Σ□h = Σ_c D(c)² + Σ_c |c|·D(c)`**.
+2. **The `|u|` cancellation.** The two halves are `(n^{3/2}/4)∫(ν̂−|u|)²` and
+   `(n^{3/2}/2)∫|u|(ν̂−|u|)`; their first-order parts are `n∫(Ω−|u|)Δ` and
+   `n∫|u|Δ`, and the `|u|` **cancels**, leaving `Σh − E ≈ n∫Ω(u)Δ(u)du`. *That*
+   is why `Σh` fluctuates at order `n` — an explicit cancellation, not the
+   conjugation symmetry.
+3. `Σc²` is mode m=3 alone.
+4. So `κ = (8/3π²)·f₃` with **`f_m = 16/(m(m²−4)²)`** (odd m, 0 even; checked
+   against quadrature to 3.6e-36 over m=1..25). `f₃ = 16/75 > 0`.
+
+> **`κ > 0` is the sign of ONE Fourier coefficient.**
+
+**Refinement that falls out:** `σ_h·σ_c ≠ κ` — κ uses mode 3 alone, σ_h sums all
+odd modes. So "ρ → 1" sharpens to a *prediction* `ρ_∞ = 0.99964674 < 1`, against
+measured 0.9744…0.9975 over n=100..1600 (still rising, consistent).
+
+**k5r5's remaining claim (b), `κ_n ≥ κ` for n ≥ 13:** measured at 6 sizes,
+`κ_n` sits **above** κ at every one — z = 3.14, 1.48, 2.02, 1.26, 0.61, 0.17 for
+n = 50..1600, approaching from above, no significant violation.
+
+**Not proved:** steps 2–4 assume Kerov's CLT; Mathlib has no Plancherel measure.
+Lean file: 0 sorries.
