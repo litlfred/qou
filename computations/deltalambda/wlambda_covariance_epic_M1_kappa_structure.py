@@ -56,8 +56,23 @@ series, which starts at m = 2):
 Contrast the area probe, where the same machine kept only EVEN modes. Different
 conjugation parity, disjoint mode support.
 
-FINDING 4: kappa = sigma_h * sigma_c = sqrt(2)/24, and the excess is finite-n
------------------------------------------------------------------------------
+FINDING 4: kappa = sigma_h * sigma_c  [CONSTANTS CORRECTED 2026-08-31]
+-----------------------------------------------------------------------
+
+*** CORRECTION. This probe originally asserted sigma_h -> sqrt(6)/24 and hence
+kappa -> sqrt(2)/24. BOTH ARE WRONG. They were fitted to n = 400..800 data
+before the drift in sigma_h had resolved; the n = 1600 point and an actual
+derivation both say otherwise. The correct values, derived in
+..._M1_kappa_derivation.py, are
+
+    sigma_h = 0.09987155   (not sqrt(6)/24 = 0.10206207)
+    kappa   = 128/(225 pi^2) = 0.05764050   (not sqrt(2)/24 = 0.05892557)
+
+and 128/(225 pi^2) is the constant qou-k5r5 ALREADY records as derived via the
+Ivanov-Olshanski field -- so the derivation reproduces it independently, and the
+error was mine. The lesson is the one this file already records for sigma_c and
+then failed to apply to sigma_h: a monotone drift over a 4x range in n is not a
+limit. ***
 rho(sum h, sum c^2) -> 1, measured 0.974 -> 0.9975 over n = 100..1600 and
 rising monotonically. So kappa = rho * sigma_h * sigma_c -> sigma_h * sigma_c
 with sigma_h := lim sd(sum h)/n measured at sqrt(6)/24 = 0.1020621, and
@@ -233,7 +248,10 @@ def main():
     })
 
     # ---- FINDINGS 2, 4, 5: the measurements --------------------------------
-    sigma_h_t = mp.sqrt(6) / 24
+    # sigma_h from the derived Fourier coefficients f_m = 16/(m(m^2-4)^2), m odd,
+    # sigma_h^2 = (64/pi^4) sum_{m odd >= 3} f_m^2 / m.  See ..._kappa_derivation.py.
+    sigma_h_t = mp.sqrt((64 / mp.pi ** 4) * sum(
+        (mpf(16) / (m * (m * m - 4) ** 2)) ** 2 / m for m in range(3, 4002, 2)))
     sigma_c_t = 1 / mp.sqrt(3)
     plan = [(100, 40000), (200, 24000), (400, 12000), (800, 6000), (1600, 2600)]
     rows = []
@@ -284,19 +302,21 @@ def main():
             f"scaling exponent rather than as an algebraic obstruction."),
     })
     checks.append({
-        "name": "FINDING 4: sigma_h -> sqrt(6)/24, sigma_c -> 1/sqrt(3)",
+        "name": "FINDING 4: sigma_h -> 0.0998715 (DERIVED), sigma_c -> 1/sqrt(3)",
         "pass": max(zh) < 3 and max(zc) < 3,
         "detail": (
-            f"sigma_h = {[r['sigma_h'] for r in rows]} against sqrt(6)/24 = "
+            f"sigma_h = {[r['sigma_h'] for r in rows]} against the derived "
             f"{nstr(sigma_h_t, 8)}, z-scores from n = 400 on: "
             f"{[r['z_h'] for r in rows[2:]]} (the two smallest n are "
             f"{[r['z_h'] for r in rows[:2]]} -- still converging, from above). "
             f"sigma_c = {[r['sigma_c'] for r in rows]} against 1/sqrt(3), "
             f"z from n = 200 on: {[r['z_c'] for r in rows[1:]]}. Product "
-            f"sqrt(6)/24 * 1/sqrt(3) = sqrt(2)/24 = {nstr(mp.sqrt(2) / 24, 8)}; "
-            f"measured kappa = {[r['kappa'] for r in rows]}. The roadmap's "
-            f"'trends slightly above sqrt(2)/24' is finite-n excess in sigma_c "
-            f"outweighing rho < 1, not evidence against it."),
+            f"sigma_h * sigma_c = {nstr(sigma_h_t * sigma_c_t, 8)} = "
+            f"128/(225 pi^2) = {nstr(mpf(128) / (225 * mp.pi ** 2), 8)}; measured "
+            f"kappa = {[r['kappa'] for r in rows]}. CORRECTED: this check "
+            f"previously targeted sqrt(6)/24 and sqrt(2)/24, which it PASSED on "
+            f"n = 400..800 z-scores while sigma_h was still drifting down "
+            f"through them. Both were wrong."),
     })
     checks.append({
         "name": "FINDING 5: kappa > 0 reduces to rho > 0, and rho -> 1",
@@ -330,7 +350,7 @@ def main():
     print()
     print("RESULT: M_1 = Cov(sum_cells h, sum_cells h^2) exactly (hook-content identity).")
     print("RESULT: kappa = rho * sigma_h * sigma_c, sigma_c = 1/sqrt(3) DERIVED,")
-    print("RESULT:   sigma_h -> sqrt(6)/24 measured, product = sqrt(2)/24.")
+    print("RESULT:   sigma_h -> 0.0998715 DERIVED, product = 128/(225 pi^2).")
     print("RESULT: kappa > 0 <=> rho > 0, and rho -> 1. THAT is the target for k5r5.")
     print("RESULT: gap qou-k5r5 stays OPEN -- rho -> 1 is measured, not proved.")
     ok = all(c["pass"] for c in checks)

@@ -15,7 +15,7 @@
    "n": 100,
    "nsamp": 40000,
    "sigma_h": "0.1063204",
-   "z_h": "11.3",
+   "z_h": "17.2",
    "sigma_c": "0.5706729",
    "z_c": "-3.31",
    "rho": "0.9743504",
@@ -27,7 +27,7 @@
    "n": 200,
    "nsamp": 24000,
    "sigma_h": "0.1037113",
-   "z_h": "3.48",
+   "z_h": "8.11",
    "sigma_c": "0.5751144",
    "z_c": "-0.852",
    "rho": "0.9854201",
@@ -39,7 +39,7 @@
    "n": 400,
    "nsamp": 12000,
    "sigma_h": "0.1016632",
-   "z_h": "-0.608",
+   "z_h": "2.73",
    "sigma_c": "0.5760863",
    "z_c": "-0.34",
    "rho": "0.992301",
@@ -51,7 +51,7 @@
    "n": 800,
    "nsamp": 6000,
    "sigma_h": "0.1018484",
-   "z_h": "-0.23",
+   "z_h": "2.13",
    "sigma_c": "0.5815335",
    "z_c": "0.788",
    "rho": "0.9957322",
@@ -63,7 +63,7 @@
    "n": 1600,
    "nsamp": 2600,
    "sigma_h": "0.09982967",
-   "z_h": "-1.61",
+   "z_h": "-0.0302",
    "sigma_c": "0.5738433",
    "z_c": "-0.441",
    "rho": "0.9975028",
@@ -94,9 +94,9 @@
    "detail": "sd(sum lam_i^2)/n = ['0.712688', '0.715151', '0.705386', '0.727423', '0.706766'] -> 1/sqrt(2) = 0.707107: each half of sum h = (sum lam_i^2 + sum lam'_j^2)/2 fluctuates at order n, and their correlation is ['-0.95538', '-0.95795', '-0.95848', '-0.96067', '-0.96019'] -- strongly ANTI-correlated, which is what suppresses sum h relative to sum c^2 by a half power of n. This is the 'sum h is not in the Kerov-Olshanski algebra' wall, visible as a scaling exponent rather than as an algebraic obstruction."
   },
   {
-   "name": "FINDING 4: sigma_h -> sqrt(6)/24, sigma_c -> 1/sqrt(3)",
+   "name": "FINDING 4: sigma_h -> 0.0998715 (DERIVED), sigma_c -> 1/sqrt(3)",
    "pass": true,
-   "detail": "sigma_h = ['0.1063204', '0.1037113', '0.1016632', '0.1018484', '0.09982967'] against sqrt(6)/24 = 0.10206207, z-scores from n = 400 on: ['-0.608', '-0.23', '-1.61'] (the two smallest n are ['11.3', '3.48'] -- still converging, from above). sigma_c = ['0.5706729', '0.5751144', '0.5760863', '0.5815335', '0.5738433'] against 1/sqrt(3), z from n = 200 on: ['-0.852', '-0.34', '0.788', '-0.441']. Product sqrt(6)/24 * 1/sqrt(3) = sqrt(2)/24 = 0.058925565; measured kappa = ['0.05911789', '0.05877623', '0.05811586', '0.05897547', '0.05714353']. The roadmap's 'trends slightly above sqrt(2)/24' is finite-n excess in sigma_c outweighing rho < 1, not evidence against it."
+   "detail": "sigma_h = ['0.1063204', '0.1037113', '0.1016632', '0.1018484', '0.09982967'] against the derived 0.099871547, z-scores from n = 400 on: ['2.73', '2.13', '-0.0302'] (the two smallest n are ['17.2', '8.11'] -- still converging, from above). sigma_c = ['0.5706729', '0.5751144', '0.5760863', '0.5815335', '0.5738433'] against 1/sqrt(3), z from n = 200 on: ['-0.852', '-0.34', '0.788', '-0.441']. Product sigma_h * sigma_c = 0.057660865 = 128/(225 pi^2) = 0.057640496; measured kappa = ['0.05911789', '0.05877623', '0.05811586', '0.05897547', '0.05714353']. CORRECTED: this check previously targeted sqrt(6)/24 and sqrt(2)/24, which it PASSED on n = 400..800 z-scores while sigma_h was still drifting down through them. Both were wrong."
   },
   {
    "name": "FINDING 5: kappa > 0 reduces to rho > 0, and rho -> 1",
@@ -106,5 +106,5 @@
  ],
  "passed": 6,
  "total": 6,
- "ms": 32098
+ "ms": 32389
 }

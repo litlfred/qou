@@ -1,0 +1,98 @@
+{
+ "probe": "m1_kappa_derivation",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "kappa": "0.0576404955831966",
+ "kappa_closed_form": "128/(225 pi^2)",
+ "f3": "16/75",
+ "sigma_h": "0.0998715474351742",
+ "sigma_c": "0.577350269189626",
+ "corrected_from": {
+  "sigma_h": "sqrt(6)/24",
+  "kappa": "sqrt(2)/24"
+ },
+ "identity_partitions": 914,
+ "finite_n": [
+  {
+   "n": 50,
+   "nsamp": 40000,
+   "kappa_n": "0.05897836",
+   "se": "0.000426",
+   "z": "3.137",
+   "ratio": "1.02321",
+   "rho": "0.957235"
+  },
+  {
+   "n": 100,
+   "nsamp": 30000,
+   "kappa_n": "0.05835373",
+   "se": "0.000483",
+   "z": "1.477",
+   "ratio": "1.01237",
+   "rho": "0.973473"
+  },
+  {
+   "n": 200,
+   "nsamp": 20000,
+   "kappa_n": "0.05884005",
+   "se": "0.000593",
+   "z": "2.024",
+   "ratio": "1.02081",
+   "rho": "0.985784"
+  },
+  {
+   "n": 400,
+   "nsamp": 12000,
+   "kappa_n": "0.05859666",
+   "se": "0.00076",
+   "z": "1.259",
+   "ratio": "1.01659",
+   "rho": "0.992033"
+  },
+  {
+   "n": 800,
+   "nsamp": 7000,
+   "kappa_n": "0.05823813",
+   "se": "0.000986",
+   "z": "0.6058",
+   "ratio": "1.01037",
+   "rho": "0.995787"
+  },
+  {
+   "n": 1600,
+   "nsamp": 3500,
+   "kappa_n": "0.0578714",
+   "se": "0.00139",
+   "z": "0.1667",
+   "ratio": "1.00401",
+   "rho": "0.997671"
+  }
+ ],
+ "checks": [
+  {
+   "name": "STEP 1: sum_cells h = sum_c D(c)^2 + sum_c |c| D(c)",
+   "pass": true,
+   "detail": "Exact on all 914 partitions of n = 1..16, 0 violations. CONTROL: dropping the |c| term still matches for 1/914 partitions, and they are exactly [(1,)] -- the single cell, whose only diagonal is c = 0, so sum |c| D(c) is genuinely 0 there. Every other partition separates the two, so the check can fail. Lean: QOU.BraidKnot.M1EdgeCalculus.sum_hookLen_eq_diag, sorry-free on [propext, Classical.choice, Quot.sound]. This is the identity whose two halves produce the |u| cancellation in step 2."
+  },
+  {
+   "name": "STEP 4: f_m = 16/(m(m^2-4)^2) for m odd, 0 for m even",
+   "pass": true,
+   "detail": "Closed form vs direct quadrature over m = 1..25: max error 3.56e-36. CONTROL: the even-m coefficients vanish (largest 8.27e-37) -- that is the conjugation parity, and it is what breaks first if the substitution u = 2 cos t is wrong. f_3 = 16/75 = 0.21333333 > 0, so kappa = (8/(3 pi^2)) f_3 = 0.05764049558 = 128/(225 pi^2) = 0.05764049558. THE SIGN OF kappa IS THE SIGN OF ONE FOURIER COEFFICIENT."
+  },
+  {
+   "name": "CORRECTION: sigma_h = 0.0998715, NOT sqrt(6)/24; and rho_inf < 1",
+   "pass": true,
+   "detail": "sigma_h = sqrt((64/pi^4) sum_(m odd >= 3) f_m^2/m) = 0.09987154744, against the sqrt(6)/24 = 0.1020620726 this cluster previously asserted -- a 2.2 % error, fitted to n = 400..800 while sigma_h was still drifting down. The n = 1600 measurement is 0.09982967, matching the derived value to 0.04 %. And sigma_h * sigma_c = 0.0576608648 does NOT equal kappa = 0.0576404956: kappa uses mode 3 alone while sigma_h sums all odd modes, so they differ by exactly the mode-3 share. That REFINES 'rho -> 1' to a prediction, rho_inf = 0.99964674 < 1, against measured rho = 0.9744, 0.9851, 0.9920, 0.9955, 0.9975 over n = 100..1600 -- still rising, and consistent."
+  },
+  {
+   "name": "qou-k5r5 claim (b): kappa_n >= kappa, measured at 6 sizes",
+   "pass": true,
+   "detail": "kappa_n = ['0.05897836', '0.05835373', '0.05884005', '0.05859666', '0.05823813', '0.0578714'] against kappa = 0.0576404956 for n = [50, 100, 200, 400, 800, 1600]; z-scores ['3.137', '1.477', '2.024', '1.259', '0.6058', '0.1667'] using se = sqrt((1+rho^2)/ns)*sdA*sdB. kappa_n sits ABOVE kappa at every size measured, approaching it from above; no n shows a significant violation. This is the evidence for the gap's remaining finite-n claim, and it is MEASURED, NOT PROVED -- the largest n carries the fewest samples, which is where a violation would be hardest to see."
+  }
+ ],
+ "passed": 4,
+ "total": 4,
+ "ms": 31855
+}

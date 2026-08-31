@@ -1027,6 +1027,160 @@ theorem sum_hookLen_eq_sum_coords {C R : ℕ} (hC : μ.colLen 0 ≤ C) (hR : μ.
   rw [hsplit, hcard]
   omega
 
+/-! ## The diagonal form of the hook sum — where the `|u|` cancellation lives
+
+`sum_hookLen_eq_sum_coords` says `∑ h = ∑ (i + j + 1)`. Resolving that down each
+diagonal is what makes the Kerov computation of `κ` work, so it is worth having
+exactly rather than asymptotically.
+
+A cell on diagonal `c ≥ 0` at depth `k` is `(k, k + c)`, so `i + j + 1 = 2k + c + 1`,
+and summing over `k < D c` gives `D c ² + c · D c`. Hence
+
+    ∑_cells h  =  ∑_c D(c)²  +  ∑_c |c| · D(c)
+
+(both sums over all integer diagonals, the negative ones read off the transpose).
+
+Why it matters. In the continuum `D(c) = (√n/2)(ν̂(u) − |u|)` with `u = c/√n`,
+so the first sum is `(n^{3/2}/4) ∫ (ν̂ − |u|)²` and the second
+`(n^{3/2}/2) ∫ |u| (ν̂ − |u|)`. Under Kerov's `ν̂ = Ω + (2/√n) Δ` the
+FIRST-ORDER parts are `n ∫ (Ω − |u|) Δ` and `n ∫ |u| Δ`, and the `|u|` CANCELS:
+
+    ∑ h − E[∑ h]  ≈  n ∫ Ω(u) Δ(u) du.
+
+That cancellation is the whole reason `∑ h` fluctuates at order `n` rather than
+`n^{3/2}`, and it is what reduces `κ`'s sign to the single Fourier coefficient
+`f₃ = ∫₀^π (cos t (π/2 − t) + sin t) sin t sin 3t dt = 16/75 > 0`, giving
+`κ = (8/3π²)(16/75) = 128/(225π²)`. See
+`computations/deltalambda/wlambda_covariance_epic_M1_kappa_derivation.py`. -/
+
+/-- Summing over the cells on or above the main diagonal, grouped by diagonal.
+Cell `k` of diagonal `c` is `(k, k + c)`. -/
+theorem sum_cells_upper_eq_sum_diag {M : Type*} [AddCommMonoid M] (f : ℕ → ℕ → M)
+    {T : ℕ} (hT : μ.rowLen 0 ≤ T) :
+    ∑ p ∈ μ.cells.filter (fun p => p.1 ≤ p.2), f p.1 p.2
+      = ∑ c ∈ Finset.range T, ∑ k ∈ Finset.range (diagLen μ c), f k (k + c) := by
+  classical
+  rw [Finset.sum_sigma']
+  refine Finset.sum_nbij' (fun p => (⟨p.2 - p.1, p.1⟩ : Σ _ : ℕ, ℕ))
+    (fun q => (q.2, q.2 + q.1)) ?_ ?_ ?_ ?_ ?_
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells] at hq
+    obtain ⟨hmem, hle⟩ := hq
+    have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+    have hi : i < μ.colLen 0 :=
+      YoungDiagram.mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl i) (Nat.zero_le j) hmem)
+    have hrow : μ.rowLen i ≤ μ.rowLen 0 := μ.rowLen_anti 0 i (Nat.zero_le i)
+    simp only [Finset.mem_sigma, Finset.mem_range, ← diagIdx_eq_range, mem_diagIdx]
+    exact ⟨by omega, hi, by omega⟩
+  · rintro ⟨c, k⟩ hp
+    simp only [Finset.mem_sigma, Finset.mem_range, ← diagIdx_eq_range, mem_diagIdx] at hp
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
+    exact ⟨hp.2.2, Nat.le_add_right _ _⟩
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter] at hq
+    have hle := hq.2
+    simp only [Prod.mk.injEq]
+    exact ⟨trivial, by omega⟩
+  · rintro ⟨c, k⟩ _
+    simp
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter] at hq
+    have hle := hq.2
+    have he : i + (j - i) = j := by omega
+    show f i j = f i (i + (j - i))
+    rw [he]
+
+/-- `∑_{k < d} (2k + c + 1) = d² + c·d` — one diagonal's contribution to
+`∑ (i + j + 1)`. -/
+private theorem sum_diag_coord (d c : ℕ) :
+    ∑ k ∈ Finset.range d, (2 * k + c + 1) = d * d + c * d := by
+  have hs : ∑ k ∈ Finset.range d, (2 * k + c + 1)
+      = (∑ k ∈ Finset.range d, 2 * k) + ∑ k ∈ Finset.range d, (c + 1) := by
+    rw [← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl fun k _ => by ring
+  rw [hs, ← Finset.mul_sum, Finset.sum_const, Finset.card_range, smul_eq_mul]
+  have hg : (∑ k ∈ Finset.range d, k) * 2 = d * (d - 1) := Finset.sum_range_id_mul_two d
+  cases d with
+  | zero => simp
+  | succ k =>
+    simp only [Nat.succ_sub_one] at hg
+    have h1 : (k + 1) * (k + 1) = (k + 1) * k + (k + 1) := by ring
+    have h2 : (k + 1) * (c + 1) = c * (k + 1) + (k + 1) := by ring
+    omega
+
+/-- The mirror of `sum_cells_upper_eq_sum_diag` below the main diagonal: cell
+`k` of transpose-diagonal `r ≥ 1` is `(k + r, k)`. -/
+theorem sum_cells_lower_eq_sum_diag {M : Type*} [AddCommMonoid M] (f : ℕ → ℕ → M)
+    {T : ℕ} (hT : μ.colLen 0 ≤ T) :
+    ∑ p ∈ μ.cells.filter (fun p => ¬ p.1 ≤ p.2), f p.1 p.2
+      = ∑ r ∈ Finset.Ico 1 T, ∑ k ∈ Finset.range (diagLen μ.transpose r), f (k + r) k := by
+  classical
+  rw [Finset.sum_sigma']
+  refine Finset.sum_nbij' (fun p => (⟨p.1 - p.2, p.2⟩ : Σ _ : ℕ, ℕ))
+    (fun q => (q.2 + q.1, q.2)) ?_ ?_ ?_ ?_ ?_
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells, not_le] at hq
+    obtain ⟨hmem, hlt⟩ := hq
+    have hi : i < μ.colLen j := YoungDiagram.mem_iff_lt_colLen.mp hmem
+    have hj : j < μ.transpose.colLen 0 := by
+      rw [YoungDiagram.colLen_transpose]
+      exact YoungDiagram.mem_iff_lt_rowLen.mp (μ.up_left_mem (Nat.zero_le i) (le_refl j) hmem)
+    have hcol : μ.colLen j ≤ μ.colLen 0 := μ.colLen_anti 0 j (Nat.zero_le j)
+    simp only [Finset.mem_sigma, Finset.mem_Ico, ← diagIdx_eq_range, mem_diagIdx,
+      YoungDiagram.rowLen_transpose]
+    exact ⟨⟨by omega, by omega⟩, hj, by omega⟩
+  · rintro ⟨r, k⟩ hp
+    simp only [Finset.mem_sigma, Finset.mem_Ico, ← diagIdx_eq_range, mem_diagIdx,
+      YoungDiagram.rowLen_transpose] at hp
+    obtain ⟨⟨hr1, _⟩, h2⟩ := hp
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells,
+      YoungDiagram.mem_iff_lt_colLen, not_le]
+    exact ⟨h2.2, by omega⟩
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, not_le] at hq
+    have hlt := hq.2
+    simp only [Prod.mk.injEq]
+    exact ⟨by omega, trivial⟩
+  · rintro ⟨r, k⟩ _
+    simp
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, not_le] at hq
+    have hlt := hq.2
+    have he : j + (i - j) = i := by omega
+    show f i j = f (j + (i - j)) j
+    rw [he]
+
+/-- **The diagonal form of the hook sum.**
+
+    ∑_cells h  =  ∑_{c ≥ 0} (D c² + c · D c)  +  ∑_{r ≥ 1} (Dᵀ r² + r · Dᵀ r)
+
+i.e. `∑ h = ∑_c D(c)² + ∑_c |c| D(c)` over all integer diagonals. Combined with
+`sum_hookLen_eq_sum_coords`, this is the exact statement behind the `|u|`
+cancellation that makes `∑ h` fluctuate at order `n` rather than `n^{3/2}` —
+see the section header. -/
+theorem sum_hookLen_eq_diag {C R T T' : ℕ} (hC : μ.colLen 0 ≤ C) (hR : μ.rowLen 0 ≤ R)
+    (hT : μ.rowLen 0 ≤ T) (hT' : μ.colLen 0 ≤ T') :
+    ∑ p ∈ μ.cells, hookLen μ p.1 p.2
+      = (∑ c ∈ Finset.range T, (diagLen μ c * diagLen μ c + c * diagLen μ c))
+        + ∑ r ∈ Finset.Ico 1 T', (diagLen μ.transpose r * diagLen μ.transpose r
+            + r * diagLen μ.transpose r) := by
+  classical
+  have hup : ∑ p ∈ μ.cells.filter (fun p => p.1 ≤ p.2), (p.1 + p.2 + 1)
+      = ∑ c ∈ Finset.range T, (diagLen μ c * diagLen μ c + c * diagLen μ c) := by
+    rw [sum_cells_upper_eq_sum_diag μ (fun i j => i + j + 1) hT]
+    refine Finset.sum_congr rfl fun c _ => ?_
+    rw [← sum_diag_coord (diagLen μ c) c]
+    exact Finset.sum_congr rfl fun k _ => by omega
+  have hlo : ∑ p ∈ μ.cells.filter (fun p => ¬ p.1 ≤ p.2), (p.1 + p.2 + 1)
+      = ∑ r ∈ Finset.Ico 1 T', (diagLen μ.transpose r * diagLen μ.transpose r
+          + r * diagLen μ.transpose r) := by
+    rw [sum_cells_lower_eq_sum_diag μ (fun i j => i + j + 1) hT']
+    refine Finset.sum_congr rfl fun r _ => ?_
+    rw [← sum_diag_coord (diagLen μ.transpose r) r]
+    exact Finset.sum_congr rfl fun k _ => by omega
+  rw [sum_hookLen_eq_sum_coords μ hC hR, ← hup, ← hlo,
+    Finset.sum_filter_add_sum_filter_not]
+
 /-! ## The reduction skeleton: what a Lean proof of `M₁ > 0` would still need
 
 Asked directly: can the finite-`n` crossover be closed in Lean? On the current
