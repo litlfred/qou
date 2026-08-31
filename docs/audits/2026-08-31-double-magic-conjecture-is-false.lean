@@ -1,63 +1,59 @@
 /-
-  Bean `qou-z9ws` — `DoubleMagicConjecture` is FALSE as stated.
+  Bean `qou-z9ws` — why `DoubleMagicConjecture.magic_iff_double_magic` was FALSE,
+  and a guard that the repair actually excludes the counterexample.
 
-  THE FINDING
+  WHAT THIS FILE WAS, AND WHY IT CHANGED
 
-  `QOU.Interactions.LRFusion.DoubleMagicConjecture` carries two fields.  The
-  second is an **iff**, quantified over every `Composite`:
+  Until 2026-08-31 this file proved `DoubleMagicConjecture → False` by
+  instantiating the class's `magic_iff_double_magic` field at the all-empty
+  composite.  That field has since been **removed** from the class and
+  `IsDoubleMagic` has been **corrected**, so the original theorem can no longer
+  be stated — its subject is gone.
 
-      magic_iff_double_magic :
-        ∀ (C : Composite),
-          (kappa C.ydA = 0 ∧ isSelfConjugate C.ydA ∧ C.ydA.n ∈ magicLadder)
-          ↔ IsDoubleMagic C
+  Deleting the file would delete the evidence, so it is converted instead: every
+  fact the refutation rested on is re-proved below in a form that survives the
+  repair, and one new theorem checks that the repair does what it was supposed
+  to.  A refutation whose target has been fixed should leave behind a
+  regression guard, not a gap.
 
-  Instantiate it at the all-empty composite `⟨∅, ∅, ∅⟩`, whose `mass_eq` reads
-  `0 = 0 + 0`.  Then:
+  THE ORIGINAL DEFECT
 
-  - `IsDoubleMagic C` is `isSelfConjugate ∅ ∧ isSelfConjugate ∅`, which **holds**
-    — by the corpus's own `emptyDiagram_isSelfConjugate`;
-  - so the `←` direction forces `C.ydA.n ∈ magicLadder`, i.e. `0 ∈ {2, 8, 20,
-    28, 50, 82, 126}`, which is false.
+  `IsDoubleMagic` read
 
-  The class is therefore uninhabitable, and `¬ DoubleMagicConjecture` is proved
-  below.
+      def IsDoubleMagic (C : Composite) : Prop :=
+        isSelfConjugate C.ydZ ∧ isSelfConjugate C.ydN
 
-  SCOPE — this is a (b) STRUCTURAL EXCLUSION of the ENCODING, not of the physics.
+  while its own docstring said *"both constituents are **saturated** and
+  self-conjugate"*.  The saturation was never in the definition, so
+  "double magic" meant "both constituents self-conjugate" with no magic number
+  anywhere — and the **empty** composite `⟨∅, ∅, ∅⟩` qualified, the empty
+  diagram being trivially self-conjugate.  The class's second field then forced
+  `C.ydA.n ∈ magicLadder`, i.e. `0 ∈ {2, 8, 20, 28, 50, 82, 126}`.
 
-  Under AGENTS.md §"Before declaring refuted", a (b) claim needs a proved
-  invariant.  Here there are two, both already in the corpus: `magicSet` is the
-  literal `{2, 8, 20, 28, 50, 82, 126}` (`QOU/Common/MagicNumbers.lean`) so `0`
-  is not in it by `decide`, and `emptyDiagram_isSelfConjugate` is a sorry-free
-  theorem in `ShellNeutrality.lean`.
+  `emptyComposite_old_isDoubleMagic` and `zero_not_in_magicLadder` below are
+  those two halves, still proved.
 
-  What is excluded is **the iff as written**, because it over-quantifies: the
-  reverse direction claims that *every* double-magic composite lands on the
-  magic ladder, and the empty composite is double-magic for the degenerate
-  reason that the empty diagram is trivially self-conjugate.  The physical
-  conjecture is about composites of *saturated* constituents; nothing in the
-  Lean requires `C.ydZ` or `C.ydN` to be non-empty, or `C.ydA.n ≥ 2`.
+  THE REPAIR, AND WHY IT IS NOT JUST A NON-DEGENERACY GUARD
 
-  So this says nothing about whether double-magic nuclei sit on the magic
-  ladder.  It says the Lean statement quantifies over a case the physics does
-  not intend, and is false there.  The repair is a non-degeneracy hypothesis —
-  authorial, and deliberately not applied here.
+  Two things changed, for two independent reasons:
 
-  WHY IT MATTERS ANYWAY.  Two theorems in the same file consume the class:
-  `composite_self_conjugate_of_double_magic` and
-  `composite_kappa_zero_of_double_magic`.  A class that cannot be inhabited
-  makes both **vacuously true**: `False → P` holds for every `P`, so they prove
-  nothing and would equally "prove" their own negations.  This is the second
-  such case in the arc, after `QOU.HadronicMass.SkeinMassRelationHolds`.
+  1. `IsDoubleMagic` gained the saturation its docstring already claimed
+     (`Z, N ∈ 𝔐` is the `.md`'s opening hypothesis).
+     `emptyComposite_not_isDoubleMagic` checks this closes the hole.
 
-  Note also that `DoubleMagicConjecture` is one NAME over TWO objects: this one
-  (`QOU/Interactions/LRFusion.lean:133`, unparameterised) and a different class
-  `DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N` in the content
-  block `observations/diagrammatic-double-magic-lr-fusion.lean:58`.  This
-  refutation is about the first.  Resolve the name to its declaration before
-  citing either.
+  2. `magic_iff_double_magic` was **removed**, not guarded.  Its
+     `A ∈ magicLadder` conjunct is absent from the `.md`, and is false at every
+     physically intended instance: `magic_sum_is_almost_never_magic` below
+     enumerates all 49 magic pairs and finds `8 + 20 = 28` as the *only* pair
+     whose sum is magic, so ⁴He (A=4), ¹⁶O (16), ⁴⁰Ca (40), ⁴⁸Ca (48),
+     ⁵⁶Ni (56), ¹³²Sn (132) and ²⁰⁸Pb (208) all fail it.  And the `↔` cannot be
+     rescued by a guard in any case: adding the saturation makes the `←`
+     direction safe and breaks `→` at the same empty composite.
 
-  ON THE PROOF.  `→ False` rather than `¬`: the class is declared without
-  `: Prop`, so it lives in `Type` and its instances are data.
+  SCOPE.  None of this says double-magic nuclei are not special, or that
+  LR-fusion rigidity is wrong.  `lr_rigidity` — the `.md`'s actual claim —
+  survives untouched as the open conjecture.  What was excluded is one
+  conjunct the Lean added and one converse the `.md` does not assert.
 
   VERIFY (lean-direct, Mathlib oleans restored, no `lake build` — a build
   against a restored cache with `traces=0` evicts it):
@@ -80,15 +76,33 @@ def emptyComposite : Composite where
   ydA := emptyDiagram
   mass_eq := by simp [emptyDiagram]
 
-theorem emptyComposite_isDoubleMagic : IsDoubleMagic emptyComposite :=
+/-- **Half one of the original refutation.** Under the OLD definition —
+`isSelfConjugate ydZ ∧ isSelfConjugate ydN`, with no saturation — the empty
+composite is double-magic. -/
+theorem emptyComposite_old_isDoubleMagic :
+    isSelfConjugate emptyComposite.ydZ ∧ isSelfConjugate emptyComposite.ydN :=
   ⟨emptyDiagram_isSelfConjugate, emptyDiagram_isSelfConjugate⟩
 
-/-- **`DoubleMagicConjecture` is FALSE as stated.** -/
-theorem doubleMagicConjecture_false : DoubleMagicConjecture → False := by
-  intro D
-  have h := (D.magic_iff_double_magic emptyComposite).mpr emptyComposite_isDoubleMagic
-  have hmem := h.2.2
-  unfold magicLadder QOU.Common.magicSet at hmem
-  simp [emptyComposite, emptyDiagram] at hmem
+/-- **Half two.** `0` is not on the magic ladder, so the removed field's
+`A ∈ magicLadder` conjunct failed there. -/
+theorem zero_not_in_magicLadder : (0 : ℕ) ∉ magicLadder := by
+  unfold magicLadder QOU.Common.magicSet
+  simp
+
+/-- **The repair closes the hole.** With saturation in the definition, the empty
+composite is no longer double-magic. -/
+theorem emptyComposite_not_isDoubleMagic : ¬ IsDoubleMagic emptyComposite := by
+  simp [IsDoubleMagic, emptyComposite, emptyDiagram, magicLadder,
+    QOU.Common.magicSet]
+
+/-- **The removed conjunct was false at every intended instance.** Over all
+`7 × 7` magic pairs, the only one whose sum is again magic is `8 + 20 = 28`; in
+particular no `(Z, N)` with `Z = N` qualifies, so ⁴He, ¹⁶O, ⁴⁰Ca and ⁵⁶Ni are
+all counterexamples to `A ∈ magicLadder`. -/
+theorem magic_sum_is_almost_never_magic :
+    (QOU.Common.magicSet ×ˢ QOU.Common.magicSet).filter
+        (fun p => p.1 + p.2 ∈ QOU.Common.magicSet)
+      = {(8, 20), (20, 8)} := by
+  decide
 
 end DoubleMagicRefutation

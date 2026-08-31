@@ -614,50 +614,97 @@ These propositions correspond to the LaTeX `\begin{proposition}` environments
 in the Experimental Evidence chapter.  They bundle the key results above
 into self-contained statements suitable for cross-referencing. -/
 
-/-- **Proposition (q-Deformed Skein Relation).**
-    The mass functional `𝓜(H)` for a composite hadron obeys the
-    quantum Skein relation at every crossing in color-exchange space:
-    `q · 𝓜(L₊) − q⁻¹ · 𝓜(L₋) = (q^(1/2) − q^(-1/2)) · 𝓜(L₀)`.
+/-! ### The q-deformed Skein relation, and why (p, n, d) is NOT an instance of it
 
-    This proposition witnesses that the `SkeinMassRelation` structure
-    is inhabited at the derived substrate parameter `q = 1.1097`,
-    using the proton/neutron/deuteron mass data.
+**The relation itself is not in question.** `prop:skein-mass-relation` states, in
+[`observations/skein-mass-relation-proof.md`](../../observations/skein-mass-relation-proof.md),
+that the three resolutions of **one crossing** in a colour-exchange diagram
+satisfy
 
-    LaTeX: `\label{prop:skein-mass-relation}`
+  `q · 𝓜(L₊) − q⁻¹ · 𝓜(L₋) = (q^{1/2} − q^{-1/2}) · 𝓜(L₀)`
 
-    The Skein relation involves `q ^ (1/2 : ℝ)` (Real.rpow), which
-    Lean 4 / Mathlib's `norm_num` cannot evaluate for non-integer exponents.
+— the mass-functional form of the Hecke relation. That is the `SkeinMassRelation`
+structure above, and nothing here disputes it.
 
-    **Numerical verification** (SageMath / Python `mpmath`):
-    - LHS: `1.1097 × 938.27208943 − (1/1.1097) × 939.56542194 ≈ 192.83`
-    - RHS: `(1.1097^0.5 − 1.1097^(−0.5)) × 1875.61294500 ≈ 192.83`
-    - `|LHS − RHS| < 0.01` ✓
+**What was here until 2026-08-31** was a *particular instantiation* of it,
+substituting the proton for `L₊`, the neutron for `L₋` and the deuteron for `L₀`:
 
-    Pattern 4: per-instance witness for the q-rpow numerical
-    identity, since `norm_num` cannot evaluate `Real.rpow` at
-    non-integer exponents. The numerical witness is supplied by
-    SageMath / `mpmath` (see calculations.json).
-    Ref: [manuscript] §11-experimental-evidence -/
+```lean
 class SkeinMassRelationHolds : Prop where
-  /-- The Skein mass identity at the substrate `q`. -/
-  identity :
-    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
+  identity : substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV
+           = (substrate_q ^ (1/2:ℝ) - substrate_q ^ (-(1/2:ℝ))) * deuteron_mass_MeV
+```
 
-/-- Per-instance form. -/
-theorem skein_mass_relation_holds [hi : SkeinMassRelationHolds] :
-  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV :=
-  hi.identity
+plus a projection and a `def skein_mass_relation_proton_neutron
+[SkeinMassRelationHolds] : SkeinMassRelation` building the structure from it.
 
-noncomputable def skein_mass_relation_proton_neutron
-    [SkeinMassRelationHolds] : SkeinMassRelation where
-  q := substrate_q
-  q_gt_one := by unfold substrate_q; norm_num
-  m_plus := proton_mass_MeV
-  m_minus := neutron_mass_MeV
-  m_zero := deuteron_mass_MeV
-  skein := skein_mass_relation_holds
+**That instantiation is FALSE**, proved below. Three measurements, all at the
+constants this file defines (mpmath, 40 dps):
+
+| | |
+|---|---|
+| LHS `q·m_p − q⁻¹·m_n` | **194.516369** |
+| RHS `(√q − 1/√q)·m_d` | **195.320153** |
+| difference | **0.8038 MeV**, rel **0.41 %** |
+
+For scale: this file's own `row1_proton_matches_CODATA` treats `1e-3 MeV` as
+agreement, so the gap is ~800× that.
+
+**It is not a tolerance problem.** Two independent checks say the failure is
+structural, not a rounding artefact:
+
+- the `q` that would make it exact at these three masses is **1.17296190**, a
+  **5.7 %** shift from the substrate `1.1097` — and `q₀` is pinned to sub-ppb;
+- the `m_zero` that would make it exact at `q = 1.1097` is **1867.894 MeV**,
+  which is `m_d − 7.72 MeV` and matches no quantity in the framework.
+
+**And the `.md` never claimed this instantiation.** The source block states the
+relation for `L₊ / L₋ / L₀` — the three resolutions of a *single* crossing. The
+proton, neutron and deuteron are three different bound states; the deuteron is a
+bound state *of* a proton and a neutron, not the smoothing of a crossing between
+them. So the substitution was introduced in Lean, is not licensed by the
+narrative, and is what is false. Same shape as
+`QOU.Interactions.LRFusion.DoubleMagicConjecture`, where the Lean likewise
+invented a conjunct the `.md` does not assert.
+
+**The docstring's own "numerical verification" did not reproduce either.** It
+recorded `LHS ≈ 192.83`, `RHS ≈ 192.83`, `|LHS − RHS| < 0.01 ✓`. Both figures are
+wrong (the true values are above), and the conclusion inverts the actual result.
+Recorded because a wrong check that reports agreement is worse than no check.
+
+**What is NOT claimed here.** Nothing above says the Skein mass relation is
+wrong, or that no triple satisfies it. It says this triple does not, at these
+constants — a scope-(a) negative in the sense of AGENTS.md, sharpened by the two
+structural checks. Which triple *is* the `(L₊, L₋, L₀)` of a colour-exchange
+crossing is an open modelling question and is deliberately not answered here.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-skein-mass-relation-is-false.lean`. -/
+
+/-- **The proton/neutron/deuteron Skein instantiation is false at the substrate.**
+`q·m_p − q⁻¹·m_n = 194.516369` against `(√q − 1/√q)·m_d = 195.320153`.
+
+The two `rpow` terms are eliminated rather than evaluated: with `s = q^{1/2}`,
+only `s > 0` and `s·s = q` are needed. The `norm_num` before the rewrite is
+load-bearing — without it the base is the decimal literal `1.1097` while the
+lemma is stated for `11097/10000`, and the rewrite finds no occurrence. -/
+theorem skein_pnd_identity_false :
+    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV ≠
+      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV := by
+  intro h
+  rw [substrate_q, proton_mass_MeV, neutron_mass_MeV, deuteron_mass_MeV] at h
+  norm_num at h
+  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
+  have hxp : (0:ℝ) < 11097/10000 := by norm_num
+  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
+  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
+  have hs2 : s * s = 11097/10000 := by
+    rw [hsdef, ← Real.rpow_add hxp]; norm_num
+  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
+    rw [hsdef, ← Real.rpow_neg hx]
+  rw [hneg] at h
+  have hsne : s ≠ 0 := ne_of_gt hs0
+  field_simp at h
+  nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
 
 /-- **Proposition (Terminal Resolution of Hadronic Mass).**
     Using the derived substrate parameter `q = 1.1097`, all four rows
