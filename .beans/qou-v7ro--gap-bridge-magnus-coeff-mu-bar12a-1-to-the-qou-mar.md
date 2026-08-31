@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-31T02:46:44Z
+updated_at: 2026-08-31T03:18:43Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -174,3 +174,34 @@ BrunnianDeficitRecursion instance (no instance fabricated). Progress:
 REMAINING for the instance (brick 3+): the Brunnian word ρ(w_n) as a concrete operator ∀n, the
 e_{n-1} embedding qtr(e_{n-1})=[2]^{n-1}, and the composing induction. Mathlib has no knot theory,
 so ρ(w_n) must be built from the R-matrix on tensor powers. Large; multi-session.
+
+## 2026-08-31 — ROAST of brick 3 (feasibility red-team). Verdict: DEFER, banked bricks 1-2.
+
+Evidence-based assessment (docs/audits/2026-08-31-milnor-brick3-roast.md). The QOU tree has MORE
+relevant infra than 'Mathlib has no knot theory' suggested: abstract TemperleyLiebAlgebra (RingQuot,
+∀n, universal property, TL_{n+1}), IwahoriHeckeAlgebra, HeckeRep (.eval/.character), MarkovTrace
+(cyclic+conj lemmas), MarkovTraceMultiplicative (markovTrace_kronecker), OcneanuTrace, MarkovMoves,
+YBE. BUT none computes the convention-D spin-½ μ-weighted quantum-trace deficit the recursion is about.
+
+Five obstacles:
+- R1 WRONG TRACE: HeckeRep.character is the un-normalised SINGLE-IRREP PLAIN matrix trace over
+  ℤ[t,t⁻¹] (its own §Scope note) — not the y_λ-weighted, not normalised (tr_M(1)=1), not the
+  μ-weighted qtr the deficit uses.
+- R2 NO CONCRETE REP (the crux): r_matrix_braiding_structure is an ABSTRACT RMatrixBraidingContext
+  (YBE on opaque R12/R13/R23); no concrete R̆ on V^⊗n ∀n, no position-indexed e_i/R_i on tensor
+  powers satisfying TL relations ∀n. Brick 1 built e=q−R only at 2 strands. This is unbuilt and is
+  the single hardest piece.
+- R3 word tower: BraidWord n is fixed-n; the {w_n} family + strand embedding + ρ(w_{n-1})⊗1 must be
+  built (doable, not free).
+- R4 substance all new: (I), cap-cup reduction, coupled c/B recursions, pairing, T4 are
+  representation-specific and unformalised; abstract TL relations don't supply them.
+- R5 PARALLEL TRACK + self-correction: my bricks 1-2 (concrete Fin4/Fin n→Fin 2 μ-weighted) do NOT
+  connect to HeckeRep/MarkovTrace; brick2 qtr_kron OVERLAPS MarkovTraceMultiplicative.markovTrace_kronecker
+  (mine is the weighted generalization — I should have grepped BEFORE writing it). A design fork is
+  forced (my model vs HeckeRep).
+
+Verdict: brick 3 crux ≈ 'formalise the TL/Hecke Markov-trace REPRESENTATION on tensor powers' — a
+multi-session project buying assurance not new math (recursion already proved+certified #6217). DEFER.
+Bank bricks 1-2. If pursued: (3a) pick track + bridge qtr_kron↔markovTrace_kronecker; (3b) e_i on
+V^⊗n ∀n (R2 crux); (3c) w_n tower; (3d) (I)+cap-cup+induction, close via #6228 glue. Instance stays
+unfabricated (honest open state).
