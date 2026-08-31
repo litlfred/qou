@@ -672,9 +672,18 @@ theorem toffoliDiagonal_eq_markov {q : ℝ} (hq : 0 < q) :
 
     `(G·t)₅ = z² + 2ħz + 3ħ²z² + ħ³z + ħ⁴z²`
 
-    Coefficients `(1, 2, 3, 1, 1)`; no denominators.  Degree 6 is minimal — no
-    polynomial in `(z, ħ)` of total degree ≤ 5 equals it
-    (`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, 13/13).
+    Coefficients `(1, 2, 3, 1, 1)`; no denominators.  **Degree 6 is minimal** —
+    no polynomial in `(z, ħ)` of total degree ≤ 5 equals it — and minimal degree
+    is a genuine invariant of the class.
+
+    ⚠ **The coefficient string is NOT an invariant.**  `z` and `ħ` are
+    algebraically dependent (`markov_hecke_relation` below), so a representative
+    is unique only modulo that relation; the degree-6 representatives form a
+    six-parameter family, and `-1 + 4z² - 3ħz + 4z⁴ + ħ²z⁴` is an equally
+    integral one.  Do not read meaning into `(1, 2, 3, 1, 1)`.  A reproducible
+    choice is the grevlex normal form modulo the relation,
+    `ħ⁵z + 4ħ³z + ħ² - 2ħz + 5z² - 1`, and even that depends on the term order.
+    (`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, 18/18.)
 
     Both parameters are needed: the minimal polynomial of the constraint over
     `ℚ(z)` has degree 3 and over `ℚ(ħ)` degree 2, so it is a function of
@@ -690,6 +699,32 @@ theorem cone_eq_markov_hecke_polynomial {q : ℝ} (hq : 0 < q) :
   have hq0 : q ≠ 0 := ne_of_gt hq
   have hd : (q ^ 2 + 1) ≠ 0 := by positivity
   unfold coneCoordRow5 coneRow5Numerator toffoliConeCoord markovZ
+  field_simp
+  ring
+
+/-- **The Markov parameter and the Hecke deformation are algebraically
+    dependent**, satisfying the degree-4 irreducible relation
+
+    `ħ³z - ħ²z² + 4ħz - 4z² + 1 = 0`.
+
+    Consequence, and the reason it is stated here: `ℚ[z, ħ]` is *not* a
+    polynomial ring but the coordinate ring of an affine rational curve, so a
+    polynomial representative of any element is unique only modulo this
+    relation.  In particular the coefficient string of
+    `cone_eq_markov_hecke_polynomial` carries no information — the degree-6
+    representatives of that one constraint form a six-parameter family.  What
+    *is* invariant is the minimal degree.
+
+    This is a fact about `H_n(q)` and its Markov trace, not about the
+    `q`-Toffoli. -/
+theorem markov_hecke_relation {q : ℝ} (hq : 0 < q) :
+    toffoliConeCoord q ^ 3 * markovZ q
+        - toffoliConeCoord q ^ 2 * markovZ q ^ 2
+        + 4 * (toffoliConeCoord q * markovZ q)
+        - 4 * markovZ q ^ 2 + 1 = 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold toffoliConeCoord markovZ
   field_simp
   ring
 
