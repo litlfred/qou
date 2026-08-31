@@ -1,0 +1,33 @@
+{
+ "probe": "qbeta_d_ladder_attack_options",
+ "bean": [
+  "qou-cds1",
+  "t7qv"
+ ],
+ "y_lambda": {
+  "(3)": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+  "(2,1)": "q**2/(q**2 + 1)**2",
+  "(1^3)": "0"
+ },
+ "tr_M_trefoil_D": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+ "checks": [
+  {
+   "name": "CONTROL: the D weights are a genuine Markov trace (sum dim*y = 1)",
+   "pass": true,
+   "detail": "sum_lambda dim(lambda) y_lambda = 1*y_(3) + 2*y_(2,1) + 1*y_(1^3) = 1, exactly 1. So the bridge's weights normalise and the collapse below is a property of the trace, not a truncation artefact. y_(3) = (q**4 + 1)/(q**4 + 2*q**2 + 1), y_(2,1) = q**2/(q**2 + 1)**2, y_(1^3) = 0."
+  },
+  {
+   "name": "ASSET 2: at z_D the trefoil trace COLLAPSES to one closed-form term",
+   "pass": true,
+   "detail": "Two of three terms die for INDEPENDENT reasons: chi^(2,1) = 0 exactly (a character fact, convention-free, PR #1873), and y_(1^3) = 0 under D -- which is precisely the Lean characterisation cds1 already cites, markovWeights_eq_jones_of_threeRow_eq_zero (y_(1^3) = 0 iff z = z_D), here verified against the live bridge. What remains is tr_M(trefoil)|_D = q**3*(q**4 + 1)/(q**2 + 1)**2. Under C, decayLadder_zC_threeRow_ne_zero forces y_(1^3) != 0 for every s = sqrt(q) > 1, so the C trace carries TWO terms: the C->D move changes the trace's RANK, not a parameter value. That is cds1's 'not a z-swap', and it cuts the helpful way -- the object to be re-derived under D is SMALLER than the one under C."
+  },
+  {
+   "name": "OBSTRUCTION: the Habiro divisibility structure is C-specific",
+   "pass": true,
+   "detail": "qbeta_habiro_element_probe.py records its divisibility fact D(u) = 4u^19 (1+u^2) as the convention-C denominator, explicitly 'true under convention C, false under D' (found in file: True). So the Habiro BASIS transfers -- the mass table is D 25/25 live, and the y_lambda regenerators are convention-D -- but the integrality/divisibility LEMMAS proved in it do not, and must be re-derived against the collapsed D trace. That is the actual remaining work, and it is narrower than re-deriving the ladder from nothing."
+  }
+ ],
+ "passed": 3,
+ "total": 3,
+ "ms": 345
+}
