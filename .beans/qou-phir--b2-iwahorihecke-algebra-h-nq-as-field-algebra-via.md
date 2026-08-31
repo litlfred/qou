@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T04:56:02Z
+updated_at: 2026-08-31T04:59:28Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -909,3 +909,44 @@ A base case that is invariant under the bug is not evidence the definition is so
 **next**: spanning (Mathas Lemma 3.9 + 3.14) — now genuinely the single open input to (C1).
 The q=1 template is the corpus's own sorry-free `standardPolytabloid_straightening` on the
 `colWordNum` measure.
+
+
+### 2026-08-31 — CORRECTING my own scoping of "spanning"
+
+I have twice written that spanning is "Mathas Lemma 3.9 + 3.14". Having now read the actual
+statements rather than the sentence that cites them, that is imprecise in a way that matters
+for planning.
+
+**Lemma 3.9 is NOT the spanning lemma.** It says: for a COMPOSITION μ with λ the partition
+obtained by reordering μ's parts, and s,t row-standard μ-tableaux, `m_st` is an R-combination
+of `m_uv` with u,v row-standard λ-tableaux. It moves compositions to partitions. Useful, not
+the spanning step.
+
+**Lemma 3.14 is the straightening**: for s,t ROW-standard λ-tableaux, `m_st` is a combination
+of `m_uv` with u,v STANDARD ν-tableaux, where either ν ⊳ λ, or ν = λ and u ⊵ s, v ⊵ t. It runs
+through Lemma 3.13 (the Garnir decomposition t = g·w with ℓ(d(t)) = ℓ(d(g)) + ℓ(w)) and
+Lemma 3.12.
+
+**The actual spanning chain is three steps, and step 1 is already ours:**
+
+1. `{T_w}` spans H — the corpus HAS this (`QOU.Hecke.TwSpanning`, `basisTwOfField`).
+2. **Every `T_w` IS a Murphy element of the one-column shape.** For μ = (1^n) the Young
+   subgroup is trivial, so `x_μ = 1` and `m_st = T_{d(s)^-1} T_{d(t)}`; every filling of a
+   single column is row-standard, so there are n! of them and `d(t)` ranges over all of S_n.
+   Taking s = t^μ gives `m = T_{d(t)}`, i.e. every `T_w`. Hence the ROW-STANDARD Murphy family
+   spans, immediately, from step 1.
+3. Lemma 3.14 straightens row-standard to standard, moving up in dominance. (1^n) is the
+   dominance-minimum, so everything is reachable.
+
+**Structural consequence for the Lean, and it is not a detail.** Steps 2-3 are about the
+family indexed by ROW-STANDARD pairs — n! per shape, not (f^λ)². `MurphyIndex` and
+`murphyFamily` are over STANDARD pairs only. So spanning cannot even be STATED for
+`murphyFamily` directly: it needs a row-standard-indexed family first, which does not exist in
+the corpus. For the one-column shape the standard family has exactly ONE element while the
+row-standard family has n!, so the gap is the whole of the argument, not a technicality.
+
+**next**, in order: (a) a row-standard tableau type + the row-standard-indexed family;
+(b) step 2, `x_{(1^n)} = 1` and hence every `T_w` is a one-column Murphy element — small,
+self-contained, and it reduces spanning to straightening alone; (c) Lemma 3.13/3.14, the hard
+core, with the corpus's own sorry-free `standardPolytabloid_straightening` on the `colWordNum`
+measure as the q=1 template.
