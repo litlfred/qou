@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T04:56:32Z
+updated_at: 2026-08-31T06:48:46Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1153,3 +1153,41 @@ lines of work meet here.
 **So claim (b) is two regimes, not one:** n = 13..42 is a finite exact check
 (**done, to n = 42**), and n ≥ 43 needs an **effective error bound** on
 `κ_n − κ`. The remaining work is an error term, not a monotonicity.
+
+
+---
+
+### 2026-08-31 (cont.) — claim (b) is stronger than the goal needs
+
+`M₁(n) > 0` is **equivalent** to `κ_n > 0` (since `n^{5/2} > 0`), so the tail
+never needed `κ_n ≥ κ`. It needs only
+
+> **(b′)  `|κ_n − κ| < κ`**
+
+and the difference in what an effective error bound must deliver is large:
+
+| claim | what the tail must do | required relative accuracy |
+|---|---|---|
+| (b) `κ_n ≥ κ` | resolve the **sign** of a quantity 2.6% of κ | better than 2.6% |
+| **(b′)** | any crude bound | **100% — a ~38× slacker demand** |
+
+Measured over the exactly-computed range n = 32..46: `|κ_n − κ|/κ` runs
+0.0270 → 0.0255. At the binding n = 13 the (b) margin is 0.234%, but n=13 sits
+**inside** the exactly-verified range, so that tightness costs nothing.
+
+**Lean (both sorry-free):**
+- `pos_of_abs_sub_lt {x k : ℚ} (h : |x - k| < k) : 0 < x` — needs **no**
+  positivity hypothesis on `k`; `|x−k| < k` already forces both `0 < k` and
+  `0 < x`. I first stated it with `0 < k`; the linter flagged the hypothesis as
+  unused, and the weaker statement is the right one.
+- `pos_of_check_and_tail` — the exact logical shape: finite exact check up to
+  `N`, plus the **crude** tail bound past it. Stated over an arbitrary
+  `f : ℕ → ℚ` because the content is *which regime carries which burden*, not
+  the analysis.
+
+**Exact verification extended to n = 46** (from 42): `κ_n` still above κ, ratio
+1.0255, still decreasing from the n=32 peak.
+
+This does **not** close the gap. It replaces a demanding analytic requirement
+with an undemanding one. What remains: an effective Kerov error term for
+n ≥ 47 — and it may now be crude.
