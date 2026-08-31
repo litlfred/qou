@@ -312,3 +312,48 @@ transporting dilogarithm facts onto `BlochWigner_lob` is lifted, and the first
 consumer `FiveTwoVolumeConstant.lean` (`VOL_5_2_eq_dilog`) has landed. Only the
 frontmatter `status: todo` was stale. NOT this bean (untouched): the geometric
 factor `Vol = D` (`qou-m015`/`qou-krvm`).
+
+## 2026-08-31 — the half-plane restriction is now the last thing gating `hbw`. And a roast of my own report of it.
+
+`FiveTwoOhtsukiBridge.volume_conjecture_five_two_wired` (landed sorry-free today)
+carries `hbw : ∀ z, z.im ≠ 0 → BlochWigner_lob z = (Li₂ z).im + arg(1−z)·log‖z‖`.
+`KummerRadial.kummer` proves it only for `Im z > 0`; the bridge's proof needs it at
+`1/y₀`, `1/x₀`, `1/(x₀y₀)`, **all in the lower half-plane** (measured: `Im` =
+−1.307, −0.745, −0.745). So extending across the real axis is the last gate.
+
+### Roast of three claims I made when relaying this
+
+**1. "takes no free identity hypotheses at all — only … that `Li₂` is a
+dilogarithm." FALSE, and it understates what is assumed.** The signature carries
+three explicit hypotheses (`hbw`, `hone`, `hζ`), and `hbw` is not a definitional
+property of a dilogarithm — it is the **full Bloch–Wigner identity**, universally
+quantified over the punctured plane, tying the corpus's *Lobachevsky-built*
+`BlochWigner_lob` to `Im Li₂` with a specific `arg`–`log` normalisation. A function
+can satisfy Kummer and not satisfy that. The honest phrasing is "one substantive
+identity hypothesis, proved on half its domain".
+
+**2. "it would let the 5₂ bridge be instantiated at a real dilogarithm." OVERSTATED.**
+Discharging `hbw` removes a hypothesis; it does not instantiate anything. The theorem
+still requires instances of `OhtsukiAsymptotic` and `FiveTwoTriangulation`, and
+**neither has one** — deliberately, per §3b-tax. "Instantiated" implies applicable;
+it stays gated on two axioms either way.
+
+**3. "it looks short … conjugation commutes with all three Möbius maps, and
+`BlochWigner_lob_conj` already proves that on the Λ side." Right conclusion, wrong
+warrant — and my own objection to it was also wrong.** The Λ side has no branch cut,
+so citing it as evidence for the `Li₂` side was citing the easy case for the hard
+one. I then expected the hard case to bite, because `Li₂`'s cut `[1,∞)` lies **on**
+the axis one reflects across. Measured, it does not bite:
+
+    Li₂(z̄) = conj(Li₂(z))    exact (0.0 at 30 dps) at 1/y₀, 1/x₀, 1/(x₀y₀),
+                             and still exact 1e-7 from the cut at Re = 5.
+
+`Li₂` is discontinuous *across* the cut (jump 4.355 at `Re = 2`), but that never
+obstructs the reflection, because `hbw`'s domain `z.im ≠ 0` excludes the real axis
+entirely. So "short" survives — for a reason neither the original claim nor my
+objection had established.
+
+**Net:** the estimate stands, the justification for it did not, and the two
+surrounding claims were wrong in the direction of flattering the result. The three
+arguments also sit 1.15–2.02 away from the cut, so even a pointwise argument at
+those three values would do — the ∀-quantified form is stronger than the bridge needs.
