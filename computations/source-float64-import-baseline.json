@@ -543,9 +543,6 @@
     "computations/log_ratio_binding_prototype.py": [
       "Q"
     ],
-    "computations/low_isotope_binding_model_comparison.py": [
-      "Q"
-    ],
     "computations/lp-duality-check.py": [
       "HA",
       "Q",
@@ -1005,7 +1002,7 @@
       "Q"
     ]
   },
-  "files_count": 286,
-  "names_count": 429,
+  "files_count": 285,
+  "names_count": 428,
   "note": "Producers importing the FLOAT form of a q_parameter constant, by name. The backlog is tolerated; it must only SHRINK. Adding a file here to silence a failure defeats the gate \u2014 excise at the import instead."
 }
