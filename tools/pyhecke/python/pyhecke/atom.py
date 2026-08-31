@@ -173,47 +173,107 @@ def build_atom_nf_exact(Z, N):
 
 
 
+#: The standard-block character `χ^(2,1)` on the NF basis
+#: `[(), (0,), (1,), (0,1), (1,0), (0,1,0)]`.
+#:
+#: `[2, h, h, -1, -1, 0]` — exact, and only the two length-one entries carry
+#: `q`. The reason is structural, not numerical: in the seminormal basis
+#: `σ₀ = diag(q, -1/q)` (in `T₁ = [[1,2],[3]]` the entries 1,2 share a ROW, in
+#: `T₂ = [[1,3],[2]]` they share a COLUMN), so its trace is `h`; the 3-cycles
+#: `L±` have trace `-1` and determinant `+1`, hence eigenvalues the primitive
+#: cube roots of unity, and the longest element `e⁻` has trace `0` and
+#: determinant `-1`, hence eigenvalues `±1`. Both are therefore `q`-INDEPENDENT
+#: — verified identical at `q = 1.11` and `q = 3.0`.
+#:
+#: Added 2026-08-31 (bean `t7qv`) to replace an inversion; see
+#: `nf_channel_exact` below and
+#: `computations/probes/nf_channel_exact_repair_options_probe.py`.
+_STD_CHI_FRAC = [Fraction(2), _H_FRAC, _H_FRAC,
+                 Fraction(-1), Fraction(-1), Fraction(0)]
+
+
 def nf_channel_exact(nf_frac):
     """Exact per-channel characters from Fraction NF.
 
-    Returns (χ_sym, χ_std, χ_alt, tr_M) as Fractions.
+    Returns `(χ_sym, χ_std, χ_alt, tr_M)` as Fractions, with all three
+    characters **UNNORMALISED** — at the identity they are `(1, 2, 1)`, the
+    block dimensions `dim S^λ`, and `tr_M` is `1`.
+
+    ## Repaired 2026-08-31 (bean `t7qv`)
+
+    `χ_std` used to be obtained by inverting
+
+        χ_std = (tr_M − W_sym·χ_sym − W_alt·χ_alt) / W_std
+
+    which was wrong twice over, and matched the true standard-block character
+    on **none** of the six basis elements:
+
+        element          χ_std then   direct trace
+        identity           1.000000       2.000000
+        σ₀                 0.864044       0.209099
+        σ₀σ₁               0.055685      -1.000000
+
+    **(1)** `W_SYM/W_STD/W_ALT` are not the Markov-trace weights. Solving
+    `Σ_λ y_λ χ^λ = TR_M` on this basis gives, exactly,
+
+        y_sym = (q⁴+1)/(q²+1)²      y_std = q²/(q²+1)²      y_alt = 0
+
+    with `y_sym + 2·y_std + y_alt = 1`, and that disagrees with `W` in every
+    component. `W` is not wrong in itself — its numerators are `d_λ²` for
+    `d = (q, q²+1, q)`, summing to `D`, so it is the **q-Plancherel measure**
+    `d_λ²/Σd²`. It is simply the wrong weight for this identity, and it is left
+    untouched: `molecular.py`, `vertex_volume` and `qou-mass`'s `hecke_core`
+    consume it arithmetically.
+
+    **(2)** `y_alt = 0`, so `tr_M` carries **no** `χ_alt` information and the
+    three-term inversion was wrong in *shape*, not merely in coefficients. That
+    zero is the Gram radical this package already documents: `gram.RADICAL` is
+    `_ALT_EIG_FRAC`, and `G · RADICAL = 0`. Both say the convention-D Markov
+    trace annihilates the sign block — which is why `det G = 0`.
+
+    No inversion is needed at all: `χ_std` is a dot product with the fixed
+    vector `_STD_CHI_FRAC` above, exactly as `χ_sym` and `χ_alt` already are.
+    That asymmetry — two channels read directly, one derived — is what let the
+    error survive.
+
+    **Invariant.** With `χ_std` correct the two-term Markov identity
+
+        tr_M  ==  y_sym·χ_sym + y_std·χ_std          (y_alt = 0)
+
+    holds *exactly* in `Fraction` arithmetic; `_assert_markov_identity` below
+    checks it, and it is the regression test for any future change here.
+
+    ## Still open, deliberately
+
+    This exact path pins `q = _Q_FRAC = 111/100`, not `q₀`, which is why the
+    1-dimensional channels differ from a `q₀` computation in the 5th decimal
+    (`-1/1.11 = -0.9009009` against `-1/q₀ = -0.9009183`). That is a design
+    choice of the Fraction path, not part of the bug repaired here. A caller
+    needing characters at `q₀` wants a `q` parameter; adding one is now trivial,
+    since all three channel vectors are explicit functions of `q`.
     """
     chi_sym = sum(c * e for c, e in zip(nf_frac, _SYM_EIG_FRAC))
+    chi_std = sum(c * e for c, e in zip(nf_frac, _STD_CHI_FRAC))
     chi_alt = sum(c * e for c, e in zip(nf_frac, _ALT_EIG_FRAC))
     tr_M = sum(c * e for c, e in zip(nf_frac, _TR_M_FRAC))
-
-    # Wedderburn weights (exact)
-    q2 = _Q_FRAC ** 2
-    D = q2**2 + 4*q2 + 1
-    w_sym = q2 / D
-    w_std = (q2 + 1)**2 / D
-    w_alt = q2 / D
-
-    chi_std = (tr_M - w_sym * chi_sym - w_alt * chi_alt) / w_std
     return chi_sym, chi_std, chi_alt, tr_M
 
 
+def _assert_markov_identity(nf_frac):
+    """Regression check for `nf_channel_exact`: `tr_M == y_sym·χ_sym + y_std·χ_std`.
 
-    # ⚠ MEASURED WRONG 2026-08-31 (bean `t7qv`) — do not consume `chi_std`.
-    # Against direct seminormal traces at `H_3`, this `chi_std` matches the
-    # standard-block character under NO normalisation:
-    #
-    #     element          chi_std here   direct trace   trace/dim
-    #     identity            1.000000       2.000000     1.000000
-    #     sigma_0             0.864044       0.209060     0.104530
-    #     sigma_0 sigma_1     0.055685      -1.000000    -0.500000
-    #
-    # and `chi_sym` / `chi_alt` are evaluated at `q = 111/100` (`-1/1.11 =
-    # -0.9009009` against `-1/q_0 = -0.9009183`), not at `q_0`. The function
-    # raised `NameError` on every call until the `_TR_M_FRAC` import above was
-    # fixed in the same change, which is why this was never noticed: it was
-    # dead code, so nothing ever compared it to anything.
-    #
-    # NOT repaired here — the right `chi_std` depends on which Wedderburn
-    # weighting convention `W_STD` is meant to pair with, and that is a
-    # substrate decision, not a local one. Callers needing block characters
-    # should take direct seminormal traces; see
-    # `computations/probes/phase_b_lr_branching_constraint_probe.py`.
+    Exact in `Fraction` arithmetic, with `y_alt = 0` (the Gram radical). Raises
+    `AssertionError` if the channel decomposition and `_TR_M_FRAC` ever drift
+    apart. Not called on the hot path; it exists so the invariant is executable.
+    """
+    chi_sym, chi_std, _chi_alt, tr_M = nf_channel_exact(nf_frac)
+    q2 = _Q_FRAC ** 2
+    denom = (q2 + 1) ** 2
+    y_sym = (_Q_FRAC ** 4 + 1) / denom
+    y_std = q2 / denom
+    lhs, rhs = tr_M, y_sym * chi_sym + y_std * chi_std
+    assert lhs == rhs, f"Markov identity broken: {lhs} != {rhs}"
+    return True
 
 
 def check_frobenius(nf):

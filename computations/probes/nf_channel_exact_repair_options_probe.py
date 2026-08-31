@@ -1,14 +1,28 @@
 #!/usr/bin/env python3
-"""`nf_channel_exact`: what is actually wrong, and the four repair options.
+"""`nf_channel_exact`: what was wrong, the four options, and which was taken.
 
-WHY THIS IS AN OPTIONS PROBE AND NOT A FIX
---------------------------------------------
+STATUS: OPTION B APPLIED 2026-08-31
+------------------------------------
+This probe was written as a diagnosis-only options analysis. **Option B has
+since been implemented** in `pyhecke/atom.py`: `chi_std` now comes from its own
+character vector `_STD_CHI_FRAC = [2, h, h, -1, -1, 0]` rather than from an
+inversion, so all three channels are read directly and none is derived. The
+repair carries an executable invariant, `_assert_markov_identity`, checking
+`tr_M == y_sym*chi_sym + y_std*chi_std` exactly in `Fraction` arithmetic.
+`W_SYM/W_STD/W_ALT` were left untouched, so nothing else moved.
+
+Everything below remains the standing diagnosis — the facts it establishes are
+about the algebra, not about the function's state, so they are unaffected by
+the repair. The options section is kept as the record of why B was chosen.
+
+WHY THIS WAS AN OPTIONS PROBE AND NOT A FIX
+---------------------------------------------
 `phase_b_lr_branching_constraint_probe.py` found `pyhecke.atom.nf_channel_exact`
 callable-and-wrong and deliberately did not repair it, on the grounds that the
 right `chi_std` depends on which Wedderburn convention `W_STD` is meant to pair
-with — a substrate decision. This probe settles the *diagnosis* exactly, so the
-decision can be made on facts, and lays out the options with their blast radius.
-**No fix is applied.**
+with — a substrate decision. This probe settled the *diagnosis* exactly so the
+decision could be made on facts, and lays out the options with their blast
+radius. **B was then taken; see STATUS above.**
 
 THE DIAGNOSIS, EXACTLY
 ----------------------
@@ -70,7 +84,7 @@ THE OPTIONS
     `_TR_M_FRAC` remaining the convention-D trace. Fragile in the same way that
     let this survive.
 
-**B — compute `chi_std` directly. [RECOMMENDED]** Add
+**B — compute `chi_std` directly. [TAKEN 2026-08-31]** Add
 `_STD_CHI_FRAC = [2, h, h, -1, -1, 0]` and dot with it.
   + Removes the asymmetry that *caused* the bug — all three channels then come
     from fixed character vectors.
@@ -103,9 +117,10 @@ time.
 
 DISCIPLINE
 ----------
-Diagnosis only; **no repair applied**. The weight solve and the closed-form
-character are exact (sympy); the radical identity is checked numerically at
-`1.7e-16`. No fit; no `B_AME`; nothing wired.
+The weight solve and the closed-form character are exact (sympy); the radical
+identity is checked numerically at `1.7e-16`. The assertions below test the
+ALGEBRA, not the function's state, so they held before the repair and hold
+after it. No fit; no `B_AME`; nothing wired.
 
 -- Ref: [manuscript] bean t7qv; phase_b_lr_branching_constraint_probe.py;
    pyhecke.gram (RADICAL, det G = 0)
@@ -162,7 +177,7 @@ def main() -> int:
     q = sp.symbols("q", positive=True)
     h = q - 1 / q
     z = q ** 3 / (q ** 2 + 1)
-    print("t7qv — nf_channel_exact: diagnosis and repair options (NO FIX APPLIED)")
+    print("t7qv — nf_channel_exact: diagnosis and options (OPTION B NOW APPLIED)")
 
     # ── A1. chi^(2,1) in closed form ──────────────────────────────────
     print("\n  1. the standard character on the NF basis")
@@ -245,10 +260,10 @@ def main() -> int:
     assertions.append(("y_alt_zero_is_the_gram_radical", ok,
                        f"y_alt = {y['alt']}; |G.rad| = {annih:.2e}"))
 
-    print("\n### OPTIONS (no fix applied)")
+    print("\n### OPTIONS — B was taken and is now implemented")
     print("    A  fix the inversion:  chi_std = (tr_M - y_sym chi_sym)/y_std")
     print("       local, W_* untouched; still a division-derived quantity.")
-    print("    B  RECOMMENDED — compute chi_std directly from")
+    print("    B  TAKEN — compute chi_std directly from")
     print("       _STD_CHI_FRAC = [2, h, h, -1, -1, 0]. Removes the asymmetry")
     print("       that caused the bug; no weights, no division, no convention")
     print("       question; smallest diff; correct by construction.")
@@ -285,7 +300,7 @@ def main() -> int:
                 "since RADICAL is _ALT_EIG_FRAC and G.RADICAL = 0 to 1.7e-16. "
                 "The standard character needs no inversion at all: "
                 "chi^(2,1) = [2, h, h, -1, -1, 0] exactly, verified against "
-                "direct seminormal traces at five q. RECOMMENDED option B: add "
+                "direct seminormal traces at five q. Option B was TAKEN: add "
                 "_STD_CHI_FRAC and dot with it, which removes the asymmetry "
                 "that caused the bug. No fit; no B_AME; nothing wired.")
             wb.add_data("std_character_closed_form",
@@ -298,7 +313,7 @@ def main() -> int:
             wb.add_data("G_annihilates_radical", f"{annih:.3e}")
             wb.add_data("options", {
                 "A": "chi_std = (tr_M - y_sym chi_sym)/y_std; local, W_* untouched",
-                "B": "RECOMMENDED: _STD_CHI_FRAC = [2,h,h,-1,-1,0], direct dot",
+                "B": "TAKEN 2026-08-31: _STD_CHI_FRAC = [2,h,h,-1,-1,0], direct dot",
                 "C": "change W_* — NOT recommended, real consumers move",
                 "D": "leave flagged — zero call sites but exported from four modules",
             })
@@ -306,8 +321,10 @@ def main() -> int:
                 wb.add_assertion(name=name, computed=str(int(bool(passed))),
                                  expected="1", tolerance=0, source=str(detail))
             wb.add_caveat(
-                "DIAGNOSIS ONLY — no repair is applied. The choice among A-D is "
-                "a substrate decision; this probe supplies the facts, including "
+                "Written as diagnosis only; option B has since been APPLIED "
+                "(see the module docstring). The facts below are about the "
+                "algebra, not the function's state, so they are unaffected. "
+                "This probe supplies the facts behind the choice, including "
                 "the blast radius of option C (W_SYM/W_STD/W_ALT are consumed "
                 "arithmetically by pyhecke/molecular.py lines 121/124/125, "
                 "pyhecke/atom.py line 333 vertex_volume, and "
