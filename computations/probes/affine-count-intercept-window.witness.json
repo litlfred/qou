@@ -1,0 +1,59 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-31T03:06:14.742682+00:00",
+  "description": "The corpus's MEASURED crossing-count model mu(A) = 5A - 1 (CrossingCountAffine, 12 nuclei to A=39) breaks the b3=0 pair-local locus that the Hopf/Borromean carriers sat on, so it passes CountChannelCarrierLocus's acceptance test -- and then gives b3/b2 = -13/9, the wrong sign against a measured +0.6411239316. For any affine mu the ratio depends only on r = intercept/slope; the b3>0 window is r in (-2, -1.5), the measured model has r = -0.2, and the required value is -1.6214. The gap is one ratio, off by 8.11x, not the functional form.",
+  "q0_pin": "not applicable -- consumes no framework q-dependent quantity",
+  "free_parameters": 0,
+  "measured_model": {
+    "alpha": "5",
+    "beta": "-1",
+    "mu_2": "9",
+    "mu_3": "14",
+    "mu_4": "19",
+    "source": "QOU.MassTheory.CrossingCountAffine, from level3_em_channel_parity_probe.py"
+  },
+  "model_b3_over_b2": "-13/9",
+  "model_b4_over_b2": "17/9",
+  "measured_b3_over_b2": "0.641123931589",
+  "measured_b4_over_b2": "4.155141722026",
+  "intercept_ratio": {
+    "model": "-1/5",
+    "required": "-1.621373314580",
+    "b3_pos_window": "(-2, -3/2)",
+    "off_by_factor": "8.106867"
+  },
+  "assertions": [
+    {
+      "name": "the measured model BREAKS the b3=0 locus (mu_t != 3*mu_p), so it passes CountChannelCarrierLocus's acceptance test",
+      "passed": true
+    },
+    {
+      "name": "but its b3 has the WRONG SIGN against the measured b3/b2 > 0",
+      "passed": true
+    },
+    {
+      "name": "b3/b2 depends only on the intercept-to-slope ratio r = b/a (checked by rescaling the slope with r held fixed)",
+      "passed": true
+    },
+    {
+      "name": "the measured r = -0.2 lies OUTSIDE the b3>0 window (-2, -1.5)",
+      "passed": true
+    },
+    {
+      "name": "the required r is inside that window, so the affine family is not excluded -- only this intercept is",
+      "passed": true
+    }
+  ],
+  "scope": "(a) on the conjunction {affine count multiplicity, the measured (5, -1)}. It excludes neither the count channel nor affine models in general -- the required r sits inside the window, so an affine carrier CAN work. What is measured is that the corpus's own crossing counts miss the required intercept ratio by 8.11x.",
+  "caveats": [
+    "b4 is NOT reproduced either (model 17/9 = 1.889 vs measured 4.155), and fixing r to match b3 does not free a second parameter to match b4 -- an affine mu has only one ratio. So matching b3 alone would leave b4 as an independent test, which is the honest way to use this: r is determined by b3, then b4 is a prediction.",
+    "mu(A) = 5A - 1 is charge-free, so it cannot distinguish 3H from 3He. That is consistent with using the isospin-averaged Bbar(3) here, but it also means the model has nothing to say about the mirror splitting.",
+    "The 12-nucleus fit behind (5, -1) is the sibling's measurement, not re-derived here. If those counts are revised the verdict moves, and this probe should be re-run rather than quoted."
+  ],
+  "lean": "QOU/Mass/AffineCountMultiplicityWindow.lean (11 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/count-channel-carrier-locus.witness.json",
+    "probes/pair-locality-shortfall.witness.json"
+  ],
+  "source": "AME2020; crossing counts from QOU.MassTheory.CrossingCountAffine"
+}
