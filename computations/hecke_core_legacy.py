@@ -56,6 +56,7 @@ import os as _os
 import sys as _sys
 from pathlib import Path as _Path
 from fractions import Fraction
+from functools import lru_cache  # memoises _f_skew (bean qou-9ay6)
 import numpy as np
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
@@ -336,47 +337,65 @@ K_PARTITION_MAX = 11
 # q_hook, Wedderburn weight which are cheap to compute for any k).
 K_GAUSSIAN_MAX = 15
 
+@lru_cache(maxsize=None)
+def _f_skew(lam: tuple, mu: tuple) -> int:
+    """Number of standard Young tableaux of the SKEW shape ``lam/mu``.
+
+    Linear extensions counted by removing a removable corner of ``lam`` (a cell
+    strictly above ``mu`` whose row is longer than the one below it), memoised on
+    the shape pair. Polynomial in the number of subshapes; no tableau is ever
+    materialised.
+    """
+    lam = tuple(x for x in lam if x > 0)
+    mu = tuple(mu) + (0,) * (len(lam) - len(mu))
+    if all(lam[i] == mu[i] for i in range(len(lam))):
+        return 1
+    total = 0
+    for i in range(len(lam)):
+        if lam[i] > mu[i] and (i + 1 == len(lam) or lam[i] > lam[i + 1]):
+            nxt = list(lam)
+            nxt[i] -= 1
+            total += _f_skew(tuple(nxt), mu)
+    return total
+
+
 def _count_syts_by_12_relation(partition):
     """Count SYTs of shape λ by the position of the value 2 relative
     to 1: same row, same column, or neither (→ part of a 2×2 mixing
     block in YSN).  Returns (n_row, n_col, n_mix_pairs) where each
     mixing pair contributes 2 SYTs so n_row + n_col + 2·n_mix_pairs = d(λ).
+
+    CLOSED FORM, was BRUTE-FORCE ENUMERATION (bean `qou-9ay6`).
+
+    This used to build every standard Young tableau of shape λ by backtracking
+    and classify each one. The number of them is d(λ), which grows
+    factorially, so the cost was the irrep dimension itself. Profiling
+    `unified_iterative_correction(1, 1)` — the smallest input that reaches this
+    code — put **80.3 s of 90 s in the recursive `fill` helper, over 26,028,387
+    calls**, against under a second in all of mpmath combined. The slowness was
+    never the mpf/object arithmetic it was blamed on; it was enumerating tens of
+    millions of tableaux to compute two integers.
+
+    No enumeration is needed. In any SYT the value 1 sits at (0,0), so 2 can
+    only occupy (0,1) or (1,0) — the only two cells whose predecessors are
+    filled. Therefore:
+
+        n_row = # SYT with 2 at (0,1) = f^{λ/(2)}
+        n_col = # SYT with 2 at (1,0) = f^{λ/(1,1)}
+        n_mix = 0, ALWAYS — "neither" is unreachable
+
+    The `n_mix` return stays in the signature because
+    `partition_character_sigma1` multiplies it by `h`; it is now provably the
+    zero it always was. Verified against the previous implementation on all 137
+    partitions of n = 2..10: zero mismatches, and `n_mix == 0` in every case.
     """
-    n = sum(partition)
+    lam = tuple(x for x in partition if x > 0)
+    n = sum(lam)
     if n < 2:
         return (0, 0, 0)
-    shape = list(partition)
-    counts = [0, 0, 0]  # row, col, mix
-
-    def fill(tab, val, rem):
-        if val > n:
-            pos_1 = pos_2 = None
-            for r, row in enumerate(tab):
-                for c, v in enumerate(row):
-                    if v == 1: pos_1 = (r, c)
-                    if v == 2: pos_2 = (r, c)
-            if pos_1[0] == pos_2[0]:
-                counts[0] += 1
-            elif pos_1[1] == pos_2[1]:
-                counts[1] += 1
-            else:
-                counts[2] += 1
-            return
-        for r in range(len(shape)):
-            if rem[r] == 0:
-                continue
-            col = len(tab[r])
-            if r > 0 and col >= len(tab[r-1]):
-                continue
-            tab[r].append(val)
-            rem[r] -= 1
-            fill(tab, val + 1, rem)
-            tab[r].pop()
-            rem[r] += 1
-
-    fill([[] for _ in shape], 1, list(shape))
-    # Mixing tableaux come in pairs (T and its (1↔2)-swap)
-    return (counts[0], counts[1], counts[2] // 2)
+    n_row = _f_skew(lam, (2,)) if lam[0] >= 2 else 0
+    n_col = _f_skew(lam, (1, 1)) if len(lam) >= 2 else 0
+    return (n_row, n_col, 0)
 
 
 def partition_character_sigma1(partition):
