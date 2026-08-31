@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T03:17:16Z
+updated_at: 2026-08-31T03:19:43Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -689,3 +689,87 @@ put a PDF into `uploads/`, so the acquisition gap stands.
 
 New acquisition target, higher priority than the two originals because it is the
 one that actually bounds things: **`arXiv:1205.0825`** (Agol–Marques–Neves).
+
+
+## 2026-08-31 — Route (2) survives the `lk = 0` problem, and the literature's open route IS this front's construction
+
+Chased the load-bearing question from the previous entry: is the total energy
+bounded below for a **Brunnian** carrier, where AMN's `lk = ±1` does not reach?
+
+### 1. The qualitative fact route (2) needed — zero linking number does NOT force zero energy
+
+> the Möbius energy is constrained from below by the absolute Gauss linking
+> number, but **links such as the Whitehead link and Borromean rings have
+> nonzero Möbius energy despite zero linking number**
+
+So the worry raised in the previous entry — that the pairwise infimum is 0 for
+unlinked pairs and might drag the carrier's energy to nothing — **does not
+happen on the Borromean rings.** The `lk`-based bound is vacuous there, and the
+energy is nonzero anyway. Route (2)'s carrier is not degenerate.
+
+### 2. A candidate value, flagged as unverified
+
+The same source refers to **"the `20π²` Möbius energy of Borromean links"**,
+against `2π²` for the standard Hopf link. If that holds it is a value for the
+second of the three carriers.
+
+**Not verified.** It reaches me through a WebSearch summary of
+`arXiv:2507.20903` (*Geometric considerations for energy minimization of
+topological links and chainmail networks*), and **WebFetch is egress-blocked in
+this sandbox**, so I have not read the paper. Do not cite `20π²` in a content
+block on the strength of this entry — it is a lead with a named source, not a
+figure this corpus has checked.
+
+### 3. The Brunnian lower bound is OPEN, and my previous "not claimed" was right
+
+> Analogous lower bounds **could perhaps** be derived from **Milnor invariants**
+> and imply a minimum energy that depends on the degree of "Brunnian-ness" of
+> the link.
+
+*Could perhaps.* So there is **no proved positive lower bound on Möbius energy
+for Brunnian links** — it is an open suggestion in the literature. The previous
+entry declined to claim one; that restraint was correct and is now sourced
+rather than merely cautious.
+
+Note also a scope subtlety worth keeping straight: the FHW **conjecture** is
+stated over *all non-split links*, while what AMN **proved** is the `lk = ±1`
+case. Those are different statements and the search results use both phrasings.
+Do not upgrade the conjecture to a theorem for the Borromean carrier.
+
+### 4. 🟧 The convergence, and it is the substantive find
+
+The literature's own open route to a Brunnian lower bound is *"lower bounds
+derived from **Milnor invariants**"*. **`μ̄₁₂₃` is a Milnor invariant**, and the
+Borromean carrier's non-triviality is exactly `μ̄₁₂₃ = 1`
+(`mubar_borromean_eq_one`, by `decide`). So the open problem the energy
+literature names is the same object this front has been building on
+independently.
+
+**And this corpus already constrains its shape.**
+`exchange_symmetry_forces_agreement_on_pm_one` (proved here 2026-08-30, no
+axioms) says any *exchange-symmetric* functional satisfies `F(1) = F(−1)` — it
+sees at most `|μ̄₁₂₃|`. The Möbius energy is a sum over **unordered** pairs of a
+label-independent geometric quantity, so it is exchange-symmetric and the
+theorem applies to it.
+
+**Therefore: any Milnor-invariant lower bound on Möbius energy must depend on
+`|μ̄₁₂₃|`, never on `μ̄₁₂₃` itself.** That is a falsifiable prediction about an
+open question in the energy literature, derived from a sorry-free result in this
+corpus, and it costs nothing to state. Scope (b) on the sign-carrying form —
+invariant cited, `mubar_swap_eq_neg`.
+
+### Where the front stands
+
+| step | state |
+|---|---|
+| carrier is non-degenerate at `lk = 0` | **established** (literature) |
+| formalisation chain | **complete** (`LinkEmbedding`, mutual/self, positivity, inhabitant) |
+| `E(Hopf) = 2π²` | established (literature) |
+| `E(Borromean) = 20π²` | **lead only** — unread source, do not cite |
+| positive lower bound for Brunnian | **OPEN in the literature**, not just here |
+| shape of any such bound | **constrained to `|μ̄₁₂₃|`** by this corpus |
+
+The remaining blocker is unchanged and now correctly attributed: it is not a gap
+in this corpus's reasoning, it is **an open problem in the field**. That is a
+materially different thing to report, and it means the numerical minimisation —
+not a derivation — is the only route to `w_ij` currently available.
