@@ -1,0 +1,96 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-31T19:29:49.805348+00:00",
+  "commitSha": "34de2b8ea04a28d221578fa1446d084401e819a1",
+  "assertions": [
+    {
+      "name": "dpn_equals_minus_h_times_2_minus_delta_over_4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "residual 0"
+    },
+    {
+      "name": "sextic_is_delta_equals_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1"
+    },
+    {
+      "name": "sigma_inverse_weight_vanishes_at_qc",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "weights sum to 1: True; w-(q_c) = 0"
+    },
+    {
+      "name": "q0_is_deep_inside_the_convex_regime",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "delta(q_0) = 0.001375710807, w- = 0.4996560723"
+    },
+    {
+      "name": "qc_is_degree_six_algebraic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "irreducible True, degree 6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "qc-convexity-boundary",
+  "scriptFile": "qc_is_the_convexity_boundary_probe.py",
+  "scriptHash": "f3b887eb468b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qc_is_the_convexity_boundary_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qc_is_the_convexity_boundary_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv): explains q_c = 3.4580993..., which k_versus_selected_operator_probe derived as the sign boundary of D_PN and which I there flagged as 'an unexplained structural constant'. That label is WITHDRAWN. Exactly, D_PN = -h(2 - delta)/4, so for q > 1 D_PN < 0 iff delta < 2, and the sextic in the D_PN numerator IS the equation delta = 2 rearranged (verified identical symbolically). The colour-weighted p-n interface is a weighted average (1/2 + delta/4) sigma + (1/2 - delta/4) sigma^-1 whose weights sum to 1; at q_c the sigma^-1 weight is exactly ZERO, so the interface degenerates to a pure sigma, and beyond q_c the weight is negative and it is no longer a convex combination. The earlier result that K(2H) leaves the positive sector exactly on 1 < q < q_c is then a tautology. At q_0, delta = 0.0013757 and the weights are 0.50034/0.49966 — within 0.07% of the symmetric average, three orders of magnitude below the boundary. What genuinely remains: the sextic is irreducible over Q so q_c is algebraic of degree exactly 6, and a grep of computations/, content/ and docs/ finds nothing in the corpus recording it. All exact (sympy). No fit; no B_AME; no physical claim.",
+  "data": {
+    "delta": "(q - 1)**2*(q**4 - 1)/(3*q**4)",
+    "D_PN_factored": "(q - 1)*(q + 1)*(q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1)/(12*q**5)",
+    "identity_residual": "0",
+    "sextic": "q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1",
+    "sigma_inv_weight_at_qc": "0",
+    "q_c": "3.45809930003279719204206914057",
+    "q_c_minimal_polynomial": "q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1",
+    "q_c_degree": 6,
+    "at_q0": {
+      "delta": "0.00137571080702710",
+      "w_sigma": "0.500343927701757",
+      "w_sigma_inv": "0.499656072298243",
+      "q0_over_qc": "0.320979383888963"
+    }
+  },
+  "caveats": [
+    "RETRACTION: k_versus_selected_operator_probe called q_c 'an unexplained structural constant'. It is explained — the root of delta = 2, the convexity boundary of the colour-weighted p-n average. Only two narrower claims survive: q_c is algebraic of degree exactly 6, and the corpus does not record it.",
+    "This is a boundary of the PN_CONVENTION = 'bring_color_weighted' scheme specifically. Under 'strict_averaged' the offset is -h/2 with no delta, the weights are 1/2 and 1/2 at every q, and no such boundary exists. So q_c is a property of the colour weighting, not of the Hecke algebra.",
+    "No physical claim. Nothing here says q_c is meaningful beyond the algebra, and no physical quantity enters the computation."
+  ]
+}
