@@ -1,0 +1,1011 @@
+{
+  "bean": "qou-wsfl",
+  "enforced_rule": "AGENTS.md: NO-FLOAT64 \u2014 excise (owner, 2026-08-31).",
+  "excision_target": "import the _MP counterpart (Q -> Q_MP, HA -> HA_MP, ...)",
+  "files": {
+    "computations/a_operator/A_operator_extract_at_level.py": [
+      "Q"
+    ],
+    "computations/a_operator/A_operator_extract_general.py": [
+      "Q"
+    ],
+    "computations/a_operator/a_operator_categorical.py": [
+      "Q"
+    ],
+    "computations/a_operator/a_operator_recursive_a3_crosscheck.py": [
+      "Q"
+    ],
+    "computations/a_operator/a_operator_recursive_he4_crosscheck.py": [
+      "Q"
+    ],
+    "computations/a_operator/canonical_tr_m_combiner_crosscheck.py": [
+      "Q"
+    ],
+    "computations/active_set_pruning.py": [
+      "Q"
+    ],
+    "computations/all-elements-knot-table.py": [
+      "Q"
+    ],
+    "computations/alpha/alpha_blend_tower.py": [
+      "Q"
+    ],
+    "computations/alpha/alpha_k_jones_markov_h3.py": [
+      "Q"
+    ],
+    "computations/alpha/alpha_k_jones_markov_h4.py": [
+      "Q"
+    ],
+    "computations/atom_braid_active_partitions.py": [
+      "Q"
+    ],
+    "computations/atom_braid_words.py": [
+      "HA"
+    ],
+    "computations/atom_level_wedderburn_tower.py": [
+      "Q"
+    ],
+    "computations/atom_mass_derived.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/atom_mass_partition.py": [
+      "Q"
+    ],
+    "computations/atom_nf_symbolic_D.py": [
+      "Q"
+    ],
+    "computations/atomic_braid_alpha_shift_l6.py": [
+      "Q"
+    ],
+    "computations/atomic_chirality_residue.py": [
+      "Q"
+    ],
+    "computations/audits/braid_encoding_audit.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/audits/rho_k_proton_substrate_audit.py": [
+      "Q"
+    ],
+    "computations/audits/term5_aK_audit.py": [
+      "Q"
+    ],
+    "computations/aufbau_eigenvalue_channel.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/b_over_a_evaluator.py": [
+      "Q"
+    ],
+    "computations/benzene_assembly_spine.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/beta-decay-energy-scale.py": [
+      "E_CROSS",
+      "HA",
+      "HBAR_Q",
+      "LN_Q",
+      "Q",
+      "Q_INV",
+      "S_SKEIN"
+    ],
+    "computations/beta-decay-from-q.py": [
+      "E_CROSS",
+      "HBAR_Q",
+      "HBAR_Q_SQ",
+      "Q",
+      "Q_INV",
+      "S_SKEIN",
+      "TANH_LN_Q",
+      "TWO_Q"
+    ],
+    "computations/beta-decay-matrix.py": [
+      "HA",
+      "Q",
+      "Q_INV",
+      "S_SKEIN"
+    ],
+    "computations/binding_depth_stratified.py": [
+      "Q"
+    ],
+    "computations/binding_depth_stratified_knot_weighted.py": [
+      "Q"
+    ],
+    "computations/binding_depth_stratified_lr.py": [
+      "Q"
+    ],
+    "computations/binding_depth_stratified_rust.py": [
+      "Q"
+    ],
+    "computations/binding_depth_stratified_selfconj.py": [
+      "Q"
+    ],
+    "computations/binding_k_solver.py": [
+      "Q"
+    ],
+    "computations/binding_ladder_catalog.py": [
+      "Q"
+    ],
+    "computations/binding_link_psd_feasibility_probe.py": [
+      "Q"
+    ],
+    "computations/binding_single_pipeline_comparison.py": [
+      "Q"
+    ],
+    "computations/binding_sym_vs_lin_two_models.py": [
+      "Q"
+    ],
+    "computations/borromean-axial-coupling.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/branching-qvalue-chain.py": [
+      "HA",
+      "HBAR_Q",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/bw_chirality_isotopes.py": [
+      "Q"
+    ],
+    "computations/canonical_brane_tower.py": [
+      "Q"
+    ],
+    "computations/canonical_brane_tower_decomposition.py": [
+      "Q"
+    ],
+    "computations/canonical_isospin_pyhecke.py": [
+      "Q"
+    ],
+    "computations/canonical_mass_table_extended.py": [
+      "Q"
+    ],
+    "computations/canonical_plus_multibrane.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/canonical_tower.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/canonical_tr_m_via_branching.py": [
+      "Q"
+    ],
+    "computations/canonical_tr_m_via_chi_cache.py": [
+      "Q"
+    ],
+    "computations/canonical_tr_m_via_rust.py": [
+      "Q"
+    ],
+    "computations/casimir_jet_order_derivation.py": [
+      "Q"
+    ],
+    "computations/catalan_binding.py": [
+      "Q"
+    ],
+    "computations/categorical_bypass_volmatch_demo.py": [
+      "Q"
+    ],
+    "computations/ch-bond-writhe-lp.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/channel_binding.py": [
+      "Q"
+    ],
+    "computations/channel_product_mass.py": [
+      "HA",
+      "HBAR_Q",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/charm_frobenius_block_projection_probe.py": [
+      "Q"
+    ],
+    "computations/chi_at_q0_via_hoefsmit_mpfr.py": [
+      "Q"
+    ],
+    "computations/chirality_braid_average.py": [
+      "Q"
+    ],
+    "computations/closed_form_tau_M_verification_phase5q.py": [
+      "Q"
+    ],
+    "computations/co_bond_order_active_set.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/compute_atom_chi_rust.py": [
+      "Q"
+    ],
+    "computations/confined_knot_binding.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/confinement-operator-selection.py": [
+      "E_CROSS",
+      "HA",
+      "Q"
+    ],
+    "computations/conjugate_symmetry.py": [
+      "Q"
+    ],
+    "computations/constit_factor_varying_q_phase5k2.py": [
+      "Q"
+    ],
+    "computations/crt_markov.py": [
+      "Q"
+    ],
+    "computations/crystal_alpha_shift_pole_orders.py": [
+      "Q"
+    ],
+    "computations/crystal_keystone_selector.py": [
+      "Q"
+    ],
+    "computations/crystal_lattice_geometry.py": [
+      "Q"
+    ],
+    "computations/crystal_shift_nf_atomic.py": [
+      "HA"
+    ],
+    "computations/crystal_transport_h3_verification.py": [
+      "Q"
+    ],
+    "computations/d_density_derivation.py": [
+      "Q"
+    ],
+    "computations/defect_info_a_trend_probe.py": [
+      "Q"
+    ],
+    "computations/defect_weighted_zero_point_probe.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_alexander_phase4.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_categorical_verification.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_energy_scale_extensivity_probe.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_jsj_phase3.py": [
+      "HBAR_Q",
+      "Q"
+    ],
+    "computations/delta_lambda_k_star_search_phase5d_5.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_k_star_variance_phase5d_5b.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_shape_probe.py": [
+      "Q"
+    ],
+    "computations/delta_lambda_two_factor_phase2.py": [
+      "HBAR_Q",
+      "Q"
+    ],
+    "computations/delta_n2_lp_dual_extraction.py": [
+      "Q"
+    ],
+    "computations/delta_q_decoration.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/derivation_chain.py": [
+      "Q"
+    ],
+    "computations/derive-stable-n.py": [
+      "Q"
+    ],
+    "computations/derive_b2.py": [
+      "Q"
+    ],
+    "computations/derived_bond_graph_binding.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/det_pair_law.py": [
+      "Q"
+    ],
+    "computations/e_hartree_mechanism_b_probe.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/electron_shell_sdp_capacity.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/electron_sigma_f_chain.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/entanglement_orders.py": [
+      "Q"
+    ],
+    "computations/escape1_geometric_holonomy_section.py": [
+      "Q"
+    ],
+    "computations/first-20-elements.py": [
+      "Q"
+    ],
+    "computations/fr_pullback_k1_k2_test.py": [
+      "Q"
+    ],
+    "computations/fr_pullback_k3_test.py": [
+      "Q"
+    ],
+    "computations/free-neutron-decay.py": [
+      "E_CROSS",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/frobenius_partition_sum.py": [
+      "Q"
+    ],
+    "computations/gamma_gamma_pair_production_decomposition.py": [
+      "Q"
+    ],
+    "computations/gap_a1_binding_k_sdp_feasibility.py": [
+      "Q"
+    ],
+    "computations/garside-irrep-qvalues.py": [
+      "HA",
+      "LN_Q",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/gb_residue_tower.py": [
+      "Q"
+    ],
+    "computations/generate-appendix-table-v2.py": [
+      "Q"
+    ],
+    "computations/generate-appendix-table.py": [
+      "Q"
+    ],
+    "computations/gram-matrix-dual.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/gs_filtration_binding_components.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/h2-integer-lp.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/h2-molecular-binding.py": [
+      "E_CROSS",
+      "HA",
+      "Q",
+      "Q_INV",
+      "TWO_Q"
+    ],
+    "computations/h2o_angle_activeset_gb.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/h2o_angle_gb_truncation_inverse.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/h2o_angle_knot_correction.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/h2o_angle_q2_symmetric_block.py": [
+      "Q"
+    ],
+    "computations/h2o_bond_angle_magnitude_vsepr.py": [
+      "HA"
+    ],
+    "computations/h2o_bond_angle_shift_phi1.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/h2s_chirality_residue_s3_holonomy.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/h2s_lone_pair_asymmetry.py": [
+      "Q"
+    ],
+    "computations/h5_h3_functor_keystone.py": [
+      "Q"
+    ],
+    "computations/h_3a_vs_h_3_divergence.py": [
+      "Q"
+    ],
+    "computations/habiro/habiro_coefficients_atomic.py": [
+      "Q"
+    ],
+    "computations/habiro/habiro_coefficients_interpolate.py": [
+      "Q"
+    ],
+    "computations/habiro/habiro_residue_symbolic.py": [
+      "Q"
+    ],
+    "computations/hadron_knot_table.py": [
+      "HA",
+      "HBAR_Q_SQ",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hecke/hecke_3a_weights.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hecke/hecke_character_symbolic.py": [
+      "Q"
+    ],
+    "computations/hecke/hecke_characters.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hecke/hecke_symbolic.py": [
+      "Q"
+    ],
+    "computations/hecke/hecke_wedderburn.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hh-trefoil-corrected.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hh-vertex-volume.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/hoefsmit_symbolic.py": [
+      "Q"
+    ],
+    "computations/homflypt_reference_qa.py": [
+      "Q"
+    ],
+    "computations/hybridization_sp_gap_braid.py": [
+      "Q"
+    ],
+    "computations/intermediate_knot_detection.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/iterative_lp_dual_h6_deuteron.py": [
+      "Q"
+    ],
+    "computations/iterative_lp_dual_levels.py": [
+      "Q"
+    ],
+    "computations/jet_tower_delta_max.py": [
+      "HBAR_Q"
+    ],
+    "computations/joint_tower_sdp_solver_v2.py": [
+      "Q"
+    ],
+    "computations/kahler_lift.py": [
+      "Q"
+    ],
+    "computations/knot-operator-table.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/knot-particle-generation.py": [
+      "Q"
+    ],
+    "computations/laurent_q_trace.py": [
+      "Q"
+    ],
+    "computations/laurentq_a5_ceiling_measure.py": [
+      "Q"
+    ],
+    "computations/legacy_marshalled_frame.py": [
+      "Q"
+    ],
+    "computations/level1-qvalues.py": [
+      "HBAR_Q_SQ",
+      "Q"
+    ],
+    "computations/log_delta_categorical_derivation.py": [
+      "HBAR_Q",
+      "Q"
+    ],
+    "computations/log_delta_full_mass_subtract.py": [
+      "Q"
+    ],
+    "computations/log_delta_per_depth_binding.py": [
+      "Q"
+    ],
+    "computations/log_ratio_binding_prototype.py": [
+      "Q"
+    ],
+    "computations/low_isotope_binding_model_comparison.py": [
+      "Q"
+    ],
+    "computations/lp-duality-check.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/m_p_m_e_li2q.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/m_qclt_approx.py": [
+      "Q"
+    ],
+    "computations/madelung_sdp_filling_order.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/markov-free-energy-qvalues.py": [
+      "HA",
+      "LN_Q",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/markov/markov_peel_rust_bridge.py": [
+      "Q"
+    ],
+    "computations/markov/markov_trace_canonical.py": [
+      "Q"
+    ],
+    "computations/markov/markov_weights_symbolic.py": [
+      "HA"
+    ],
+    "computations/mass-from-q-symbolic.py": [
+      "E_CROSS",
+      "HA",
+      "HBAR_Q",
+      "HBAR_Q_SQ",
+      "Q",
+      "Q_INV",
+      "S_SKEIN",
+      "TWO_Q"
+    ],
+    "computations/mass_endomorphism.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/mass_formula_6term.py": [
+      "Q"
+    ],
+    "computations/mass_formula_6term_mpfr_50dps.py": [
+      "Q",
+      "Q"
+    ],
+    "computations/mass_tower_operator_valued.py": [
+      "Q"
+    ],
+    "computations/meson/binding_cut_entropy_derived_weightings_probe.py": [
+      "Q"
+    ],
+    "computations/meson/colour_derived_interface_probe.py": [
+      "Q"
+    ],
+    "computations/meson/cut_entropy_is_A_independent_probe.py": [
+      "Q"
+    ],
+    "computations/meson/determinacy_filter_calibration_probe.py": [
+      "Q"
+    ],
+    "computations/meson/growing_width_cut_shape_exclusion_probe.py": [
+      "Q"
+    ],
+    "computations/meson/interface_candidate_screen_probe.py": [
+      "Q"
+    ],
+    "computations/meson/satellite_cable_escapes_the_bound_probe.py": [
+      "Q"
+    ],
+    "computations/meson/two_remaining_fronts_probe.py": [
+      "Q"
+    ],
+    "computations/mirror_isospin_coulomb_split.py": [
+      "Q",
+      "Q"
+    ],
+    "computations/molecular-frobenius-lp.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/molecular-trefoil-scan.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/molecular_angle_derive_related.py": [
+      "Q"
+    ],
+    "computations/molecular_angle_master_table.py": [
+      "Q"
+    ],
+    "computations/molecular_angle_symmetric_block_general.py": [
+      "Q"
+    ],
+    "computations/molecular_braid_angle_table.py": [
+      "Q"
+    ],
+    "computations/native_5_strand_baryon.py": [
+      "Q"
+    ],
+    "computations/neutron_error_diagnostic.py": [
+      "Q"
+    ],
+    "computations/nf-qvalues.py": [
+      "HA",
+      "LN_Q",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/ocneanu_weights.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/option_b_proton_mass_full_chain.py": [
+      "Q"
+    ],
+    "computations/per_atom_rho_deviation.py": [
+      "Q"
+    ],
+    "computations/per_generator_V_hat_general.py": [
+      "Q"
+    ],
+    "computations/per_irrep_pole_atom.py": [
+      "Q"
+    ],
+    "computations/pn_alpha_lp_dual.py": [
+      "Q",
+      "Q_INV"
+    ],
+    "computations/prearchimedean_bond_factor.py": [
+      "Q"
+    ],
+    "computations/probe3qrv_ocneanu.py": [
+      "Q"
+    ],
+    "computations/probe3qrv_tl.py": [
+      "Q"
+    ],
+    "computations/probe3qrv_zpin.py": [
+      "Q"
+    ],
+    "computations/probe_4_li6_rectangular_python.py": [
+      "Q"
+    ],
+    "computations/probe_4_validate_lanczos_on_he4.py": [
+      "Q"
+    ],
+    "computations/probe_4b_li6_non_rectangular_scan.py": [
+      "Q"
+    ],
+    "computations/probe_4c_li6_large_d_scan.py": [
+      "Q"
+    ],
+    "computations/probe_4d_li6_aggressive_scan.py": [
+      "Q"
+    ],
+    "computations/probe_4f_h3_sigma_avg_asymmetry.py": [
+      "Q"
+    ],
+    "computations/probe_he4_canonical_tr_m_fingerprint.py": [
+      "Q"
+    ],
+    "computations/probes/ak_lp_dual_quotient_probe.py": [
+      "HA"
+    ],
+    "computations/probes/aoperator_a5_crosscheck.py": [
+      "Q"
+    ],
+    "computations/probes/binding_depth_stratified_derived_alpha_probe.py": [
+      "Q"
+    ],
+    "computations/probes/brane_tower_two_avenues_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_carlitz_q_bernoulli_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_grid_sweep_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_hoefsmit_additivity_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_macdonald_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_phi_q_markov_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_q_factorial_probe.py": [
+      "Q"
+    ],
+    "computations/probes/casimir_q_zeta_probe.py": [
+      "Q"
+    ],
+    "computations/probes/confinement_b3_enumeration_recheck_probe.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/probes/crystal_limit_transport_probe.py": [
+      "Q"
+    ],
+    "computations/probes/gg_production_bond_probe.py": [
+      "Q"
+    ],
+    "computations/probes/gram_norm_binding_probe.py": [
+      "Q"
+    ],
+    "computations/probes/gram_qtrace_hutchinson_probe.py": [
+      "Q"
+    ],
+    "computations/probes/homflypt_operator_valued_probe.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/probes/markov_reduction_h3_to_h4_verify.py": [
+      "Q"
+    ],
+    "computations/probes/path_b_defect_binding_probe.py": [
+      "Q"
+    ],
+    "computations/probes/path_b_habiro_mass_probe.py": [
+      "Q"
+    ],
+    "computations/probes/phi_q_regularization_probe.py": [
+      "Q"
+    ],
+    "computations/probes/probe_convention_d_vs_c_borromean.py": [
+      "Q"
+    ],
+    "computations/probes/probe_writhe0_trace_insensitivity.py": [
+      "Q"
+    ],
+    "computations/probes/rho_k_markov_multiplicativity_probe.py": [
+      "Q"
+    ],
+    "computations/probes/wedderburn_sdp_extreme_point.py": [
+      "Q"
+    ],
+    "computations/profile_transfer_scaling.py": [
+      "Q"
+    ],
+    "computations/proton_mu_mass_ratio_substrate_identity.py": [
+      "Q"
+    ],
+    "computations/proton_wedderburn_block_diagnostic.py": [
+      "Q"
+    ],
+    "computations/pyhecke_h3_vs_h3a_impact_comparison.py": [
+      "Q"
+    ],
+    "computations/q_beta_substrate_prediction.py": [
+      "Q"
+    ],
+    "computations/q_pochhammer_seed.py": [
+      "Q"
+    ],
+    "computations/qbeta/bsym_residual_shell_structure.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_d_frame_trace_baseline_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_decay_sdp_solver.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qlommel_b_ladder_slope_derivation.py": [
+      "Q"
+    ],
+    "computations/qbeta/qlommel_delta_lambda_two_seed_test.py": [
+      "Q"
+    ],
+    "computations/r5_full_canonical_knot_solver.py": [
+      "Q"
+    ],
+    "computations/reeb_rotation_pn_test.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/rho_constit_equals_tau_M_proton_phase5l.py": [
+      "Q"
+    ],
+    "computations/rho_k_full_via_wenzl_lr.py": [
+      "Q"
+    ],
+    "computations/rho_prefactor_structural_verifier.py": [
+      "Q"
+    ],
+    "computations/schur_weyl_mpmath.py": [
+      "Q"
+    ],
+    "computations/schur_weyl_symbolic.py": [
+      "Q"
+    ],
+    "computations/sdp_cross_channel.py": [
+      "HA"
+    ],
+    "computations/shadow_price_c_321_q0.py": [
+      "Q"
+    ],
+    "computations/snappy_cusp_seeding.py": [
+      "Q"
+    ],
+    "computations/staircase_ew_disjoint_spectrum.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/staircase_ew_residual_conjecture.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_A_operator_extract_h12_nn.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_A_operator_extract_h12_nn_streamed.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_A_operator_extract_h9.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_deuteron_branching.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_h12_he4_branching.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_h12_he4_phase25.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_h9_branching_basis.py": [
+      "Q"
+    ],
+    "computations/sublemma_2_1_h9_tritium_verify.py": [
+      "Q"
+    ],
+    "computations/substrate/char_fast.py": [
+      "Q"
+    ],
+    "computations/substrate/hecke_core.py": [
+      "E_CROSS",
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/sweeps/light_isotope_sweep.py": [
+      "Q"
+    ],
+    "computations/sweeps/low_isotope_binding_sweep.py": [
+      "HBAR_Q",
+      "HBAR_Q_SQ",
+      "Q"
+    ],
+    "computations/sweeps/paper_six_term_isotope_sweep.py": [
+      "Q"
+    ],
+    "computations/sweeps/paper_six_term_shadow_price_sweep.py": [
+      "Q"
+    ],
+    "computations/symmetrized_constituent_general.py": [
+      "Q"
+    ],
+    "computations/symmetrized_constituent_probe.py": [
+      "Q"
+    ],
+    "computations/t35-weak-vertex.py": [
+      "E_CROSS",
+      "HBAR_Q",
+      "Q",
+      "Q_INV",
+      "S_SKEIN",
+      "TWO_Q"
+    ],
+    "computations/tau-lepton-nf.py": [
+      "E_CROSS",
+      "HA",
+      "HBAR_Q",
+      "HBAR_Q_SQ",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/tau_M_proton_closed_form_phase5l1.py": [
+      "Q"
+    ],
+    "computations/term5_v2_chirality.py": [
+      "Q"
+    ],
+    "computations/term6_full_pole_sum.py": [
+      "Q"
+    ],
+    "computations/test_det_pair_law.py": [
+      "Q"
+    ],
+    "computations/test_nucleon_gen_chains_q_param.py": [
+      "Q"
+    ],
+    "computations/tower_isotope_absolute.py": [
+      "Q"
+    ],
+    "computations/tower_psd_marginality_vs_A.py": [
+      "Q"
+    ],
+    "computations/tr_m_algebraic_q.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/unified-mass-molecular.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/unified_lift.py": [
+      "Q"
+    ],
+    "computations/unified_low_isotope_predictor.py": [
+      "HA",
+      "Q"
+    ],
+    "computations/vhat_per_crossing_chain.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/wenzl_a3_combiner_end_to_end.py": [
+      "Q"
+    ],
+    "computations/wenzl_a3_cross_check.py": [
+      "Q"
+    ],
+    "computations/witness_polynomial.py": [
+      "Q"
+    ],
+    "computations/y_lambda_q_schur_lean_verify.py": [
+      "Q"
+    ],
+    "computations/y_lambda_wenzl_bridge.py": [
+      "Q"
+    ]
+  },
+  "files_count": 286,
+  "names_count": 429,
+  "note": "Producers importing the FLOAT form of a q_parameter constant, by name. The backlog is tolerated; it must only SHRINK. Adding a file here to silence a failure defeats the gate \u2014 excise at the import instead."
+}
