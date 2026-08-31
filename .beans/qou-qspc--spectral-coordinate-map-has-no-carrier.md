@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-31T06:10:08Z
+updated_at: 2026-08-31T07:25:13Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -428,3 +428,63 @@ sharper test than `∑ Re ρᵢ = 4` and should not be pursued as one.
 Nothing here says what `ξ_q` is. The arc now has a described structure the
 identification would have to satisfy — reflection symmetry, fixed points on the
 line, trace 4 — and still no candidate operator.
+
+
+## 2026-08-31 (cont.) — PERIODICITY pins the spectrum to two points
+
+I said the next move was to stop deriving necessary conditions from Weil and go
+after the operator. This is that step, and it uses the framework's **own** axiom
+rather than another Weil consequence.
+
+`QOU.AlgebraicSubstrate.CategoricalReebDerivation` carries
+
+    reeb_periodic : (reeb : End obj) ^ period = 1
+
+The Reeb derivation is **periodic**. That has never been set against the
+critical line, and the combination is severe.
+
+Four declarations, `lean`-direct exit 0, all `#print axioms`-clean:
+
+- `reeb_spectrum_pow_apply` — `op^n (modeᵢ) = specᵢ^n • modeᵢ`.
+- `reeb_spectrum_periodic_eigenvalue` — `op^Ω = id ⟹ specᵢ^Ω = 1`. This is
+  where `mode_ne_zero` earns its place in the structure: without it the zero
+  vector satisfies the eigenvalue equation for every scalar and nothing follows.
+- `reeb_spectrum_norm_one_of_periodic` — hence `‖specᵢ‖ = 1` for `Ω ≠ 0`.
+- **`reeb_spectrum_pinned_by_periodicity`** — with the identification and a Weil
+  datum: `Re ρᵢ = 1/2` **and** `(Im ρᵢ)² = 3/4`.
+
+### Why this is the sharpest thing in the arc
+
+The two constraints have **independent origins**: the real part comes from the
+Weil bound, the modulus from the framework's own `reeb_periodic`. Together they
+leave the eight eigenvalues only **two possible values**, `1/2 ± i√3/2` — the
+primitive sixth roots of unity.
+
+So the conjunction is **falsifiable by a computation nobody has run**: a genus-4
+curve whose Frobenius eigenvalues are not all `q^{1/2 ± i√3/2}` refutes it.
+Either `ξ_q` is not the operator whose spectrum these are, or it is not periodic.
+
+And a corollary in words: since `1/2 ± i√3/2` are primitive **sixth** roots,
+`specᵢ^Ω = 1` forces **`6 ∣ Ω`**. The framework's Reeb period cannot be an
+arbitrary natural number.
+
+**No contradiction with Hasse–Weil** — it entails it: `‖q^{ρᵢ}‖ = q^{Re ρᵢ}
+= √q` for either value.
+
+### Scope, stated precisely
+
+The periodicity is carried as an **explicit hypothesis on `R.op`**, not imported
+from `CategoricalReebDerivation`. That structure's `reeb` is an endomorphism of a
+monoidal-category object; identifying it with a `ℂ`-linear operator on an
+8-dimensional space is exactly this bean's open problem. What is proved is the
+*consequence* of periodicity, available to any candidate operator having it.
+
+**So this still does not close the bean** — but it changes its character. The
+open item is no longer "find any operator"; it is now "does the framework's `ξ_q`
+have a spectrum of primitive sixth roots of unity, and is `6 ∣ Ω_q`?" That is a
+question with a computable answer.
+
+### Next
+
+Determine `Ω_q` (`CategoricalReebDerivation.period`) as the corpus actually uses
+it. If a value is pinned anywhere, `6 ∣ Ω` is an immediate live test.
