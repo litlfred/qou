@@ -77,21 +77,21 @@ an input.
     T    s1(x)s1(x)L+  s1(x)L+(x)s1  s1(x)L+(x)L+  L+(x)s1(x)L+
          L+(x)L+(x)s1  L-(x)s1(x)s1
 
-⚠ A TENSION THIS DOES NOT RESOLVE
------------------------------------
+`x_free` AND THE POSITIVE SECTOR — SETTLED
+--------------------------------------------
 `x_free` itself is **not** in the positive sector: 108 of its 216 coordinates are
 negative at `A = 3` (the nucleon NF carries `sigma_1^{-1}` letters, so 2 of 6
-proton and 3 of 6 neutron coordinates are negative). So positivity is imposed on
-the *solution* while the *demand* `u = G x_free` is built from an object that
-violates it. Two readings, and this probe does not choose between them:
+proton and 3 of 6 neutron coordinates are negative). This was first flagged here
+as an unresolved tension — positivity imposed on the *solution* while the
+*demand* `u = G x_free` comes from an object violating it.
 
-  - the constituent product legitimately carries entanglement content, and the
-    program is asking for the cheapest forward-time operator that *covers* it;
-  - or the nucleon should itself be rebuilt in the positive sector, in which case
-    `u` changes and every number above moves.
-
-The second would be a substantive change to `build_atom_nf` and is not attempted
-here. Flagged because the result depends on it.
+**Owner ruling (2026-08-31): that is correct as it stands.** `x_free` is the
+tensor product of the individual nucleon NFs with **no inter-nucleon crossings**
+— the *free constituents* of the atom, not a bound configuration — and the
+constituents are not asked to be in a stable configuration. Positivity belongs to
+the solution only. The program is asking for the cheapest forward-time operator
+that **covers** an unbound, entanglement-carrying constituent product, which is
+the intended reading. No rebuild of the nucleon is needed and none is attempted.
 
 WHAT IS AND IS NOT SHOWN
 ------------------------
@@ -297,15 +297,14 @@ def main() -> int:
                        f"used {sorted(used)}; never {sorted(never)}"))
 
     # ── The tension, reported not resolved ────────────────────────────
-    print("\n  ⚠ TENSION NOT RESOLVED: x_free is itself NOT in the positive")
-    print("    sector —", res["T"]["x_free_negatives"], "of", res["T"]["dim"],
-          "coordinates negative at A=3.")
-    print("    So positivity is imposed on the SOLUTION while the DEMAND")
-    print("    u = G x_free comes from an object that violates it. Either the")
-    print("    constituent product legitimately carries entanglement content and")
-    print("    the program covers it, or the nucleon should be rebuilt in the")
-    print("    positive sector — which would move every number above. Not")
-    print("    chosen here; the result depends on it.")
+    print("\n  x_free has", res["T"]["x_free_negatives"], "of", res["T"]["dim"],
+          "negative coordinates at A=3 — and that is CORRECT.")
+    print("    Owner ruling: x_free is the FREE constituent product (no")
+    print("    inter-nucleon crossings), and the constituents are not asked to")
+    print("    be in a stable configuration. Positivity belongs to the solution")
+    print("    only; the program covers an unbound, entanglement-carrying")
+    print("    constituent product. Stability of the result in q is measured")
+    print("    separately in positive_sector_q_stability_probe.py.")
 
     print("\n### VERDICT: the owner's restriction works. Dropping the negative")
     print("    (inverse-crossing / entanglement) sector and the informationless")
@@ -357,12 +356,14 @@ def main() -> int:
                 wb.add_assertion(name=name, computed=str(int(bool(passed))),
                                  expected="1", tolerance=0, source=str(detail))
             wb.add_caveat(
-                "x_free is NOT in the positive sector — 108 of 216 coordinates "
-                "negative at A=3, because the nucleon NF carries sigma_1^{-1} "
-                "letters. Positivity is imposed on the solution while the "
-                "demand u = G x_free is built from an object that violates it. "
-                "Rebuilding the nucleon in the positive sector would change "
-                "every number here; not attempted.")
+                "x_free has 108 of 216 negative coordinates at A=3 (the nucleon "
+                "NF carries sigma_1^{-1} letters). OWNER RULING 2026-08-31: "
+                "this is correct as it stands — x_free is the FREE constituent "
+                "product, with no inter-nucleon crossings, and the constituents "
+                "are not asked to be in a stable configuration. Positivity "
+                "belongs to the solution only; the program covers an unbound, "
+                "entanglement-carrying constituent product. No nucleon rebuild "
+                "is needed.")
             wb.add_caveat(
                 "Dropping the net constraint is load-bearing: with it retained "
                 "the positive sector is infeasible at every A tested. The "

@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T18:52:44.382296+00:00",
-  "commitSha": "48ce43214382c67630ee470f0ddbe97bfb23d2a5",
+  "computedAt": "2026-08-31T18:59:04.402664+00:00",
+  "commitSha": "d154f6cd90fa0188f8174a5d95f42e5e590ba38f",
   "assertions": [
     {
       "name": "net_constraint_makes_positive_sector_infeasible",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 26,
   "computation": "positive-sector-operator-selection",
   "scriptFile": "positive_sector_operator_selection_probe.py",
-  "scriptHash": "831869a2ae49",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fd36de1dff20",
+  "scriptCommitSha": "51a69e9f371b71e58e799572f733325f9c420eae",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -178,7 +178,7 @@
     ]
   },
   "caveats": [
-    "x_free is NOT in the positive sector — 108 of 216 coordinates negative at A=3, because the nucleon NF carries sigma_1^{-1} letters. Positivity is imposed on the solution while the demand u = G x_free is built from an object that violates it. Rebuilding the nucleon in the positive sector would change every number here; not attempted.",
+    "x_free has 108 of 216 negative coordinates at A=3 (the nucleon NF carries sigma_1^{-1} letters). OWNER RULING 2026-08-31: this is correct as it stands — x_free is the FREE constituent product, with no inter-nucleon crossings, and the constituents are not asked to be in a stable configuration. Positivity belongs to the solution only; the program covers an unbound, entanglement-carrying constituent product. No nucleon rebuild is needed.",
     "Dropping the net constraint is load-bearing: with it retained the positive sector is infeasible at every A tested. The justification is prop:operator-selection-lp's own result that y_0* = 0 identically, so the constraint carries no shadow price — not that dropping it is convenient.",
     "NOT SHOWN: that the selected operator is K; that the support is stable under q; that the objective value is physically meaningful. The demand comes from LR branching of the nucleon words and nothing empirical enters, so this is a structural result only."
   ]
