@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T03:15:57Z
+updated_at: 2026-08-31T17:55:36Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4446,3 +4446,54 @@ is neither obviously that tension nor obviously experimental. Open.
 - Open with the owner: whether the **counit reading** now becomes the leading
   hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
   and mass independently confirms `z_D`.
+
+
+---
+
+### 2026-08-31 — attack options: the D-frame trace COLLAPSES, and the assets exist
+
+Question put: *we have a Habiro basis and D in terms of it — can we use that?*
+**Yes**, and the D side is structurally **simpler** than C — the opposite of
+what "blocked" suggests.
+
+**ASSET 1 — the D-frame Habiro machinery exists and is LIVE.**
+`habiro_mass_table_convention_attribution_probe.py`, run today: *"committed
+reproduced by convention D : **25/25** … uniformly convention D: True"*, exit 0.
+PR #5526 regenerated all 25 atoms into D (`cde2fbcd89`), probe kept as a
+regression check. Four regenerators sit beside it
+(`regenerate_y_lambda_{jones_markov,symbolic,orphans,sdp}_conventionD.py`) — the
+`y_λ` weights are **already** convention D.
+
+**ASSET 2 — at `z_D` the trefoil trace collapses to ONE closed-form term.**
+`tr_M = Σ_λ y_λ χ^λ` with `χ^(3)=q³`, `χ^(2,1)=0` exactly (PR #1873),
+`χ^(1³)=−q⁻³`. Two of three die for **independent** reasons: `χ^(2,1)=0` is a
+convention-free character fact, and `y_(1³)=0` under D — exactly the Lean
+characterisation this bean already cites
+(`markovWeights_eq_jones_of_threeRow_eq_zero`: `y_(1³)=0 ⟺ z=z_D`), verified
+against the live bridge. What remains:
+
+> **`tr_M(trefoil)|_D = q³(q⁴+1)/(q²+1)²`**
+
+Control: weights normalise exactly, `1·y_(3) + 2·y_(2,1) + 1·y_(1³) = 1`, so the
+collapse is a property of the trace, not a truncation artefact.
+
+**Why this reframes "not a z-swap", favourably.** Under C,
+`decayLadder_zC_threeRow_ne_zero` forces `y_(1³) ≠ 0` for every `s=√q>1`, so the
+C trace has **two** terms. The C→D move changes the trace's **rank**, not a
+parameter value — this bean's own point — and it cuts the helpful way: **the
+object to re-derive under D is smaller than the one under C.**
+
+**OBSTRUCTION, named.** `qbeta_habiro_element_probe.py` records its divisibility
+fact `D(u) = 4u¹⁹(1+u²)` as the convention-C denominator, explicitly *"true
+under convention C, false under D"*. So the Habiro **basis** transfers while the
+integrality/divisibility **lemmas** do not — they must be re-derived against the
+collapsed D trace. That is the real remaining work, and it is **narrower than
+re-deriving the ladder from nothing**.
+
+**Recommended order.** (1) re-run the operator route
+(`qbeta_ck_from_operator_markov_trace_probe.py`, the existing vehicle) with the D
+weights and the one-term trace; (2) re-derive divisibility against the D
+denominator — derive-anew, not port; (3) only then compare to the C-frame `c₃`,
+and **not** to the −974 sensitivity number.
+
+**Nothing here derives the ladder.** cds1 stays OPEN.
