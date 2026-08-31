@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T20:59:28Z
+updated_at: 2026-08-31T21:20:07Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -840,3 +840,31 @@ channels** — single-crossing (b), stacked-alone (a), projector∘stacking (b),
 T=0-as-deuteron (the `α·ln4 = 5.803` floor, AME 61.7 % below). Selection is
 derived; magnitude has no surviving carrier. Needs something outside the family;
 no candidate proposed.
+
+**2026-08-31 — owner selected all four routes; 2 and 3 worked**
+
+**Route 2 (Hoefsmit off-diagonal) — CLOSED, scope (b), #6408.** Solved the
+`V_(2,1)` block in closed form from the braid relation (residual 4.7e-51). Four
+exact identities: `a = −(z−h)`, `d = z`, `b·c = μ₊`, `z(z−h) = μ₋`. **So the
+projectors ARE the bond family's block** — one 2×2 object read two ways, never
+two independent attempts. `|b| = √(1 − z(z−h)) = 0.8676 < 1` ⇒ binds, and for
+every `q` since `h < z` is `h_lt_markov_z` (sorry-free). Unbinding needs `h > z`
+— the same wall, missed by 24 %.
+
+**Route 3 (re-scope ¹S₀) — SPLIT; only the smaller half survives.**
+- **Withdrawn:** the −0.066 MeV *energy* as a target. It is a virtual state
+  (second-sheet pole, `a_s ≈ −23.7 fm` vs ~1.4 fm range), not a bound-state
+  energy, and reaching it from `α = 4.186 MeV` needs a 1.6 % cancellation with
+  no small parameter. Pre-emptive: nothing currently scores it.
+- **🛑 RETAINED and FAILED:** "pp and nn are unbound". `B(pp) = +2.5416`,
+  `B(nn) = +3.3069`. **Boundness is a sign, not a magnitude.** Re-scoping the
+  energy does not retire the sign error, and a re-scope that took the whole row
+  would be using a real observation about one quantity to retire a failure about
+  another.
+
+L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
+
+**Remaining: routes 1 (non-separable `(S,L)` coupling, `qou-vbyi`) and 4
+(non-tracial functional).** Neither is an object already in the algebra — which
+is now the point: every excluded route is a *scalar read off one block*, and two
+of them were the same scalar.
