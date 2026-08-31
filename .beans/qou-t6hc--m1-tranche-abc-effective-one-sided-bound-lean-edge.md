@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T15:05:09Z
+updated_at: 2026-08-31T16:18:51Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1310,3 +1310,46 @@ this easier. The factorisation splits the target into two independently
 boundable pieces.
 
 **Caveat:** "stable" here is four points of exact enumeration, not an asymptotic.
+
+
+---
+
+### 2026-08-31 (cont.) — the pairwise route is a KENDALL statement, not circular
+
+**The outcome I set out to rule out.** For a centered bivariate normal with
+correlation ρ, two iid draws give exactly `q_Gauss = 1/2 − arcsin(ρ)/π`. If
+measured `q` tracked that, the pairwise route would merely **restate** `ρ > 0`
+and the 138× margin would be an illusion. Checked before treating it as
+progress — and it is ruled out.
+
+**FINDING 1 — `q` is ~2.2× rarer than Gaussian.** Exact, n = 15..18, with `ρ_n`
+from the same enumeration:
+
+| | n=15 | n=16 | n=17 | n=18 |
+|---|---|---|---|---|
+| ρ | 0.9127 | 0.9146 | 0.9163 | 0.9184 |
+| q measured | 0.0631 | 0.0607 | 0.0606 | 0.0601 |
+| q Gaussian | 0.1340 | 0.1325 | 0.1311 | 0.1295 |
+| **ratio** | 0.471 | 0.458 | 0.462 | **0.464** |
+
+Settles near 0.464 (spread 0.013). Discordance is ~2.2× rarer than a Gaussian
+with the **same** correlation, so the route carries structure beyond Pearson.
+
+**FINDING 2 — the target in its natural language.** `1 − 2q` is **Kendall's τ**,
+so `q < 1/2` is exactly `τ > 0`: a **rank** statement, invariant under monotone
+reparametrisation, neither implied by nor implying Pearson `ρ > 0`. At n = 18,
+`τ = 0.8799` against the Gaussian-implied `(2/π)arcsin(ρ) = 0.7411` — the rank
+dependence is **stronger** than the linear one.
+
+And `M₁ > 0` needs less than `τ > 0`. It needs `[q/(1−q)]·[mean ratio] < 1`, and
+the mean ratio is separately ≈ 0.111, so
+
+> **`q < 0.90` suffices, against a measured `q = 0.060` — a ~15× margin on `q`
+> alone.**
+
+Two sufficient routes: (`q < 1/2` and mean ratio ≤ 1), or (`q < 0.90` and mean
+ratio ≤ 0.111).
+
+**NOT CLOSED.** Both still need a statement about the joint law of
+`(Σh, Σc²)`. What changed is the target: a rank quantity with a 15× margin,
+instead of a Pearson sign with none.
