@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T03:30:40Z
+updated_at: 2026-08-31T04:26:40Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -854,3 +854,67 @@ committing the calibration. But a grep for `ohara` returns two files that are
 `Ding-I**ohara**-Miki` (`probes/pentagon_multipair_borromean_h4_probe.py`) and
 `Man**ohara**n` (`bk_alpha_geometry_selection.py`). Neither computes an energy.
 Search for `cross_energy` or `Möbius energy` instead.
+
+
+## 2026-08-31 — the Borromean carrier, measured — and a tidy answer REFUTED
+
+Producer: [`computations/mobius_cross_energy_borromean.py`](../computations/mobius_cross_energy_borromean.py)
+Witness: `mobius-cross-energy-borromean.witness.json` — 5 assertions, all passed.
+Uses the integrator calibrated against the proved `E(Hopf) = 2π²`.
+
+Classical realisation: three mutually orthogonal ellipses, semi-axes `a`, `b`,
+cyclic in the coordinates so `E_total = 3·E₁₂`. Unordered-pair convention — the
+one in which AMN state `2π²` and in which the calibration reproduces it.
+
+| quantity | value |
+|---|---|
+| `E_total` at the golden ratio `a/b = φ` | **`98.701819678652718428`** |
+| `10π²` | `98.696044010893586188` |
+| ratio | **`1.0000585197494`** |
+| quadrature converged to (N=96 vs 128) | **`2.792e-15`** |
+| family minimum over `a/b ∈ [1.5, 2.1]` | `97.583276794340978666` at `a/b = 1.817` |
+| equal circles `a = b`, min separation² | `1.67e-143` — **they touch** |
+
+### 🛑 It is NOT `10π²`, and this is the interesting part
+
+At N=64 and four decimals the ratio reads `1.0000`. It would have been written
+down as an identity. It is not one: converged, the discrepancy is **`5.85e-5`**
+against a quadrature error of **`2.79e-15`** — **ten orders of magnitude**
+apart. A genuine near-miss, refuted rather than reported.
+
+This also settles the `20π²` lead recorded above. `2 × 98.7018 = 197.4036`
+against `20π² = 197.3921` — the *same* `5.85e-5`. So that figure is the
+**ordered-pair** convention applied to the golden-ratio configuration, and it
+carries the same near-miss. The convention question I flagged as "reasoning from
+structure without the papers" is now answered from the arithmetic: **the source's
+`20π²` is `2 ×` this value, not a different quantity.**
+
+### The golden ratio is not the minimiser either
+
+The family minimum is `1.13 %` **below** the golden-ratio value. Same shape as
+the Hopf calibration, where the standard picture sat `7.3 %` above the minimum.
+The classical, prettiest configuration is not the energy-minimising one in
+either carrier.
+
+### 🛑 What I did NOT verify, recorded as a deliberate failing-shaped assertion
+
+`TOPOLOGY_NOT_VERIFIED_across_the_scan` is a **deliberate zero** in the witness.
+Nothing checks that the configuration stays *Borromean* as `a/b` varies — only
+that the components do not touch. That is the **identical trap** the Hopf
+calibration's assertion 4 records, where a scan guarded only against touching
+walked into a split link and "minimised" below a proved bound.
+
+Two reasons it is less likely here — the energy **rises on both sides** of the
+interior minimum (`142.6` at `a/b = 1.1`, `149.5` at `6.0`) rather than running
+away, and pairwise linking number is `0` by construction for a Brunnian carrier
+so there is no linking-number guard to write. **Less likely is not verified.**
+The family minimum must **not** be cited as the Borromean energy minimum until
+the topology is checked.
+
+### Where route (2) stands
+
+Two of three carriers now have numbers from a calibrated instrument. What is
+still missing for a `κ(A)` comparison is the third (8₁₁, a knot rather than a
+link, so its self-energy is the relevant object and the machinery differs), a
+topology guard for the Brunnian scan, and the per-pair decomposition at the
+minimiser rather than the total.
