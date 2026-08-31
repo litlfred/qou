@@ -124,4 +124,15 @@ theorem trace_rho_commutator_reframe' (ρ A B : Matrix n n R) :
   have hswap : A * B - B * A = -(B * A - A * B) := by abel
   rw [hswap, mul_neg, Matrix.trace_neg, trace_rho_commutator_reframe ρ B A]
 
+/-- **Leibniz rule for the ring commutator (the telescoping tool).**
+`⁅X·Y, Z⁆ = X·⁅Y,Z⁆ + ⁅X,Z⁆·Y`. Applied to the density `ρ = ∏_i σ_{g_i}` this telescopes:
+`⁅ρ, A_a⁆ = Σ_i (σ_{<i})·⁅σ_{g_i}, A_a⁆·(σ_{>i})`, and `⁅σ_g, A_a⁆ = 0` whenever
+`|g−a| ≥ 2` (the generators far from `a` commute with the germ `A_a`). So only the O(1)
+crossings *near position a* contribute to `⁅ρ,A_a⁆` — the structural handle that reduces the
+open Frobenius bound `‖⁅ρ_λ,A_a⁆‖_F = o(√dim)` to a bounded number of *local* commutators
+`⁅σ_g, A_a⁆` (3-strand objects) dressed by word-pieces. General `CommRing`. -/
+theorem commutator_mul_left (X Y Z : Matrix n n R) :
+    (X * Y) * Z - Z * (X * Y) = X * (Y * Z - Z * Y) + (X * Z - Z * X) * Y := by
+  noncomm_ring
+
 end QOU.MassTheory
