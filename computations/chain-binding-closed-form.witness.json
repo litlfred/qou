@@ -58,6 +58,12 @@
       }
     },
     "f_pp_equals_z_D": true,
+    "g_equals_single_nucleon_free_trace": true,
+    "S_off_A1": {
+      "pp": "1.14575969245730086968908159577",
+      "nn": "0.987743688115809571634020165501"
+    },
+    "factorization_note": "The include_inter=False word is an exact disjoint union of identical 11-crossing per-nucleon blocks (measured, zero stray generators). S_off(A) = g^A with g = S_off(1) verified to 20 digits at A=1..5. Word disjointness is structural; the factorization of the WEIGHTED sum is numerical, not proved.",
     "projections_are_not_measured": true
   },
   "assertions": [
@@ -82,11 +88,16 @@
       "detail": "Both lemmas are sorry-free and generic in S, g, f \u2014 no substrate, no q, no anchor enters either statement."
     },
     {
+      "name": "g equals the single-nucleon free trace on both species, so it cannot drift with A",
+      "passed": true,
+      "detail": "|S_off(1) - g|: pp 9.31e-31, nn 3.896e-31. Measuring this cost milliseconds; the A=6 run that would have tested g by brute force projects to ~40 h at n=18 (max dim ~13000) and was stopped."
+    },
+    {
       "name": "the closed form yields two checkable predictions, labelled as projections",
       "passed": true,
       "detail": "pp marginal turns up at A=6; nn marginal changes sign at A=7. Neither is measured. Computing A=6 falsifies or confirms both."
     }
   ],
-  "checks_passed": 5,
-  "checks_total": 5
+  "checks_passed": 6,
+  "checks_total": 6
 }

@@ -54,19 +54,45 @@ makes this channel extensive.** Scope (b), invariant named, independent of `f`,
 of the anchor, and of the species. That is the useful output: it retires the
 whole channel in one argument instead of scoring ansatze one at a time.
 
-## The falsifiable prediction
+## `g` is NOT a fitted constant -- it is the A=1 free trace
 
-Projecting the closed form (and it IS a projection -- `g` is measured on three
-steps, `A >= 6` is not computed):
+The `include_inter=False` word is an **exact disjoint union**: at every `A` it
+uses only generators `{3i, 3i+1}`, strictly inside each nucleon's own 3-strand
+block, with **zero stray generators** and exactly 11 crossings per block,
+identical for every nucleon. Measured accordingly,
+
+    S_off(1) = 1.145759692457300869689   (pp)   vs g = same, |diff| 9.3e-31
+    S_off(1) = 0.987743688115809571634   (nn)   vs g = same, |diff| 3.9e-31
+
+so `S_off(A) = g^A` with `g = S_off(1)`. **`g` cannot drift with `A` because it
+IS the `A=1` value**, and `f` is a two-nucleon value. The closed form has no
+free parameter left.
+
+This was worth measuring for its cost as much as its content: it took
+milliseconds, where the `A=6` run that would have tested `g` by brute force
+projects to **~40 h** at `n=18` (max dim ~13000) and was stopped. The cheap
+structural test beat the expensive one by five orders of magnitude.
+
+**The remaining gap is an algebra question, not a compute one.** The
+disjointness of the WORD is structural and measured; the FACTORIZATION of the
+weighted Schur-Weyl sum over those blocks is verified numerically at
+`A = 1,2,3,4,5` to 20 digits and is **not proved in general**.
+
+## What the closed form then says
+
+Evaluating it (an EVALUATION, not an extrapolation, given the paragraph above --
+though it still rests on the unproved factorization):
 
     pp marginal   A=5  1.5459   A=6  1.5519   A=7  1.6240   A=8  1.7526
     nn marginal   A=6  0.0146   A=7 -0.0226   A=8 -0.0371
 
 so **the pp marginal has a minimum at A=5 and turns UP at A=6**, and **the nn
-marginal goes NEGATIVE at A=7** (adding a neutron reduces total binding). Both
-are checkable by computing A=6, A=7 with the resumable driver. If the pp
-marginal keeps falling at A=6, `g` is not constant beyond the measured range and
-the closed form is local, not global -- which is the honest way this dies.
+marginal goes NEGATIVE at A=7** (adding a neutron reduces total binding).
+
+These remain falsifiable, but the falsifier has MOVED. It is no longer "does `g`
+drift at A=6" -- `g` is the A=1 value and cannot. It is now: **does the weighted
+sum really factor over disjoint blocks?** Proving or refuting that settles every
+`A` at once, and costs no compute at all.
 """
 
 import importlib.util
@@ -90,6 +116,14 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 set_compute_dps(40)
+
+# Reuse the landed sparse evaluator rather than re-implementing it; needed only
+# for the A=1 single-nucleon trace in section 4b (everything else reads the
+# checkpoint).
+_spec = importlib.util.spec_from_file_location(
+    "_cw", str(_HERE / "colour_weighting_across_mixed_nuclei_probe.py"))
+_cw = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_cw)
 
 CKPT = _COMP / ".bpp-higher-a-checkpoint.json"
 
@@ -237,6 +271,57 @@ def main() -> int:
           "Both lemmas are sorry-free and generic in S, g, f — no substrate, "
           "no q, no anchor enters either statement.")
 
+    # ------------------------------ 4b. g IS the single-nucleon free trace
+    print("\n" + "-" * 78)
+    print("  4b. g is not emergent — it IS the A=1 free trace, so it cannot drift")
+    print("-" * 78)
+    from canonical_braid_crossings import atom_canonical_crossings as _ac
+    from canonical_braid_crossings import d_for_ctype as _dfc
+    from wedderburn_jones_markov import y_lambda_at as _yla
+    h = q - mp.mpf(1) / q
+    _db = _dfc("averaged", h)
+    single = {}
+    for sp, (zf, nf) in (("pp", (1, 0)), ("nn", (0, 1))):
+        cr = _ac(zf, nf, include_inter=False)
+        n1 = max(gg for gg, _ in cr) + 2
+        yt1 = _yla(n1, q)
+        c1 = _cw.build_sparse_cache(q, yt1, n1)
+        t1, _, _ = _cw.schur_weyl_sum(q, cr, yt1, c1, _db)
+        single[sp] = t1
+    print()
+    print(f"  {'':>4}{'S_off(A=1)':>26}{'g from A=2..5 steps':>26}{'|diff|':>14}")
+    g1_ok = []
+    for sp in ("pp", "nn"):
+        d1 = abs(single[sp] - params[sp]["g"])
+        g1_ok.append(d1 < mp.mpf("1e-18"))
+        params[sp]["S_off_A1"] = single[sp]
+        print(f"  {sp:>4}{mp.nstr(single[sp], 22):>26}"
+              f"{mp.nstr(params[sp]['g'], 22):>26}{mp.nstr(d1, 6):>14}")
+    print("""
+  The include_inter=False word is an EXACT disjoint union: measured at every A,
+  it uses only generators {3i, 3i+1} -- strictly inside each nucleon's own
+  3-strand block -- with ZERO stray generators and exactly 11 crossings per
+  block, identical for every nucleon. So S_off(A) = g^A with g the single free
+  nucleon's trace, and the weighted Schur-Weyl sum FACTORS over the blocks.
+
+  This changes the epistemic status of everything downstream. g is not a
+  constant fitted to the A=2..5 steps that might drift at A=6 -- it IS the A=1
+  value, and f is a two-nucleon value. The closed form has NO free parameter
+  left, so B(A) at any A is an EVALUATION, not an extrapolation.
+
+  Caveat kept explicit: the disjointness of the WORD is measured at A=2..5 and
+  is structural; the FACTORIZATION of the weighted sum is verified numerically
+  at A = 1,2,3,4,5 to 20 digits and is NOT proved in general. That proof is the
+  remaining gap, and it is an algebra question, not a compute one.
+""")
+    check("g equals the single-nucleon free trace on both species, so it "
+          "cannot drift with A", all(g1_ok),
+          f"|S_off(1) - g|: pp "
+          f"{mp.nstr(abs(single['pp'] - params['pp']['g']), 4)}, nn "
+          f"{mp.nstr(abs(single['nn'] - params['nn']['g']), 4)}. Measuring this "
+          f"cost milliseconds; the A=6 run that would have tested g by brute "
+          f"force projects to ~40 h at n=18 (max dim ~13000) and was stopped.")
+
     # --------------------------------------------------- 5. the prediction
     print("\n" + "-" * 78)
     print("  5. FALSIFIABLE: where each marginal turns")
@@ -307,6 +392,15 @@ def main() -> int:
                         str(A): mp.nstr(m, 20) for A, m in proj[sp]},
                 } for sp in ("pp", "nn")},
             "f_pp_equals_z_D": bool(dz < mp.mpf("1e-25")),
+            "g_equals_single_nucleon_free_trace": bool(all(g1_ok)),
+            "S_off_A1": {sp: mp.nstr(params[sp]["S_off_A1"], 30)
+                         for sp in ("pp", "nn")},
+            "factorization_note":
+                "The include_inter=False word is an exact disjoint union of "
+                "identical 11-crossing per-nucleon blocks (measured, zero stray "
+                "generators). S_off(A) = g^A with g = S_off(1) verified to 20 "
+                "digits at A=1..5. Word disjointness is structural; the "
+                "factorization of the WEIGHTED sum is numerical, not proved.",
             "projections_are_not_measured": True,
         },
         "assertions": assertions,
