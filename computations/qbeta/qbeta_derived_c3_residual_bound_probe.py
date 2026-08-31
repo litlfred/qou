@@ -38,23 +38,74 @@ removes the `u^3` term; the leading survivor is `c_4 u^4`.  So
 
 ## The result, and it cuts both ways
 
-`u^4 = 5.2625e-9`, so the threshold is `|c_4| <= 1.4816`.
+`u^4 = 5.2625281e-9`, so the threshold is `|c_4| <= 1.4821774`.
 
 - **Favourable reading:** ONE derived rung closes the entire gap.  Entry 9's
   wall is not "the ladder is hopeless" — it is "`c_3` is the whole ballgame".
 - **Unfavourable reading, and it is the honest one to state:** the two known
-  coefficients are `|c_2| = 1` and `|c_3| = 2.0693`.  If the sequence keeps
-  growing at anything like that rate, `|c_4| ~ 3` and the target is MISSED by
-  ~2x even with a perfect `c_3`.
+  coefficients are `|c_2| = 1` and `|c_3| = 2.0693426`.  Continuing that ratio
+  puts `|c_4| ~ 4.28218`, which MISSES the threshold by ~2.889x even with a
+  perfect `c_3`.
 
 So this is a genuine conditional, not an encouragement.  It converts entry 9's
-qualitative wall into a **testable prediction about `c_4`** — and `c_4` is a
-quantity nobody has derived either.
+qualitative wall into a **testable prediction about `c_4`**.
+
+CORRECTED 2026-08-31.  This docstring read `1.4816`, `|c_4| ~ 3` and `~2x`
+against the `1.4821774`, `4.28218` and `2.889x` this same file computes and
+prints.  Every figure quoted in prose here is now the one the code derives; do
+not re-introduce a literal.  The `1.4816` traced to a draft `u^4 = 5.2646e-9`
+and was never the value any run produced.
+
+## Does `c_4` have to be unknown?  (open, and NOT what this probe assumed)
+
+The "growth trend" reading above is a *heuristic on two data points* and it is
+the weakest thing in this file.  The corpus holds an **exact closed form** for
+a `c_4`-family object — `qbeta-c4even-exact-sseries.witness.json`:
+
+    c_2^even = -887/144 - 3*sqrt(3)/4              = -7.45876032789888...
+    c_3^even = 733/72 + 15997*sqrt(3)/405          = 78.5944241201958...
+    c_4^even = -425625605/290304 - 2864831*sqrt(3)/25920
+                                                   = -1657.57403579524...
+
+**Whether that constrains `|c_4|` is UNRESOLVED and must not be assumed.**
+`c_2^even = -7.4588` against `c_2 = -1` proves the two are *different objects*,
+not two halves of one — AGENTS.md registers `c_2` / `c~_2` / `c_2^even` as three
+live meanings of one glyph, and warns that a quantity differing only by
+normalisation gets mistaken for a discrepancy.  The `^even` rungs are read at
+order `s^{2k}` in `s = q-1` by an exact Taylor extraction about `q = 1`; the
+bare `c_k` are read by greedy numerical extraction at `q_0`.  Relating them
+needs the normalisation established, not guessed.
+
+What IS worth recording: if the relation turns out to be close to identity,
+`|c_4^even| = 1657.6` against a threshold of `1.4822` would decide entry 9
+against the ladder outright, and the `^even` sequence 7.46 -> 78.6 -> 1657.6
+grows far faster than the 1 -> 2.07 this probe extrapolated from.  So the
+heuristic above may be optimistic by three orders of magnitude.  Establishing
+the `c_k^even` <-> `c_k` normalisation is the next measurement (bean qou-cds1,
+entry 16), and it is cheaper than deriving `c_3`.
 
 ## Scope
 
 Scope (a).  **No `c_k` is proposed, extracted, fitted or wired.**  Nothing here
 computes a D-frame Q_beta; the D producer's refusal stands and is untouched.
+
+**Convention scope — read this before quoting the threshold under D.**  The two
+halves of this probe scope differently and must not be quoted together:
+
+- `|c_4| <= target / u^4 = 1.4821774` is **convention-independent**.  `u =
+  b*hbar_q^2` is a function of `q_0` alone and contains no Markov parameter, so
+  neither `z_C` nor `z_D` enters it.  What it DOES assume is that the D-frame
+  ladder, once re-derived, still has the graded product form
+  `prod_{k>=2} (1 + c_k u^k)` in this same `u`.  qou-cds1 is explicit that the
+  D ladder must be RE-DERIVED rather than re-evaluated, so that form is an
+  assumption, not a given — if the re-derivation lands on a different expansion
+  parameter, the threshold is about a different `c_4`.
+- "One derived rung closes the entire gap" is **C-frame**.  It rests on the
+  1278.5825 ppb k=2 residual, which comes from the committed C-frame cache
+  (`c_2 = -1` folded against the N=1 cosine at `alpha_C`).  Under D the N=1
+  factor is a bar-midpoint rather than a bar-invariant cosine (entry 10), so
+  the k=2 residual is simply not known yet and this sentence does not transfer.
+
 The bound is arithmetic on the ladder's shape plus two committed numbers, and
 its conclusion is conditional on `|c_4|`, which remains unknown.
 
@@ -187,7 +238,7 @@ def main() -> int:
     chk("cached_c4_zero_is_a_greedy_artifact", c4_cached == 0,
         "c_4 = 0.0 is what greedy extraction leaves once c_3 has annihilated the "
         "residual (QOU.QBeta.greedy_later_rungs_vanish) — it must NOT be read as "
-        "evidence that |c_4| < 1.4816")
+        f"evidence that |c_4| < {mp.nstr(threshold, 8)}")
 
     npass = sum(1 for _, ok, _ in checks if ok)
     print(f"\n{'='*78}\nWhat a DERIVED c_3 would buy — and the |c_4| threshold\n{'='*78}")
@@ -210,10 +261,14 @@ def main() -> int:
         "Entry 9's cal-anchored wall, quantified from the other side. The corpus "
         "bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a "
         "DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is "
-        "met iff |c_4| <= 1.4816. Cuts both ways: one derived rung closes the whole "
-        "gap, BUT |c_2|=1 and |c_3|=2.069, and continuing that growth puts |c_4|~4.3, "
-        "missing by ~2.9x. Also shows the cached c_3 IS the greedy annihilating "
-        "value and the cached c_4=0 is a greedy artifact carrying no evidence.")
+        f"met iff |c_4| <= {mp.nstr(threshold, 8)}. Cuts both ways: one derived rung "
+        f"closes the whole gap, BUT |c_2|=1 and |c_3|={mp.nstr(c3, 10)}, and continuing "
+        f"that growth puts |c_4|~{mp.nstr(projected_c4, 6)}, missing by "
+        f"~{mp.nstr(projected_c4/threshold, 4)}x. Also shows the cached c_3 IS the "
+        "greedy annihilating value and the cached c_4=0 is a greedy artifact carrying "
+        "no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) "
+        "but assumes the re-derived D ladder keeps the same u-graded product form; the "
+        "'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual.")
     w.set_content_block("prop:q-beta-cos-resummation")
     w.add_parameter("q0_anchor", "proton (physical_proton pin)")
     w.add_data("assertions_passed", npass)
