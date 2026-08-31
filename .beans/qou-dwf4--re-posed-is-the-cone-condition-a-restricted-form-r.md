@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T04:35:41Z
+updated_at: 2026-08-31T04:51:14Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -170,3 +170,76 @@ knot. This rests on the reciprocity invariant, not on a numerical near-miss.
 something in the H_3 reduction tree? That is a well-posed question about five
 small integers. The predecessor's version -- ten rationals in a structureless
 basis -- is retired, not answered.
+
+
+---
+
+## CORRECTION 2026-08-31, ~1h after the entry above — the question I left open was ILL-POSED
+
+Probe (corrected in place, not superseded):
+`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, now **18/18**.
+Lean: `markov_hecke_relation`, sorry-free; file now 35 theorems / 0 sorries.
+
+**WHAT I ASSERTED.** That the constraint's expression in (z, hbar) has integer
+coefficients **(1, 2, 3, 1, 1)**, and that the surviving open item was "does
+(1, 2, 3, 1, 1) count something in the H_3 reduction tree? A well-posed question
+about five small integers."
+
+**WHAT IS ACTUALLY TRUE.** z and hbar are ALGEBRAICALLY DEPENDENT:
+
+    R(z, hbar) = hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1 = 0
+
+irreducible over Q, total degree 4. So Q[z, hbar] is NOT a polynomial ring but
+the coordinate ring Q[Z,H]/(R) of an affine rational curve, and a polynomial
+representative is unique only MODULO R. Measured: the degree-<=6 representatives
+form a coset of a **SIX-dimensional** space. A second, equally integral,
+equally degree-6 representative is
+
+    -1 + 4 z^2 - 3 hbar z + 4 z^4 + hbar^2 z^4
+
+differing from the first by exactly (hbar z + z^2 + 1) * R. Six free parameters
+is far too much room for five small integers to carry information. The question
+is WITHDRAWN, not answered.
+
+**HOW IT WAS CAUGHT.** Not by a gate — by expressing all six components of G.t
+in (z, hbar) as a sanity check before starting the H_4 generalisation. The
+solver returned a DIFFERENT degree-6 integer string for row 5 than the one I had
+just merged. Two integral representatives of one quantity is the signal; the
+relation was then one resultant away.
+
+**WHAT SURVIVES, and it is most of the result.**
+
+  * The IDENTITY is true and Lean-proved (`cone_eq_markov_hecke_polynomial`).
+    Nothing proved is affected -- the defect was in the interpretation offered
+    beside it.
+  * MINIMAL DEGREE 6 stands, and is a genuine invariant. That measurement was
+    made over the span of the EVALUATED monomials, so it already accounted for
+    the relation: no polynomial in (z, hbar) of total degree <= 5 equals the
+    constraint, R-multiples included.
+  * Integrality stands and is not a one-representative fluke: the grevlex
+    normal form modulo R is integral too.
+  * The (z, hbar) framing itself stands -- forced by the Markov trace, with
+    `QOU.Machinery.MarkovTraceH4.TRM` as the prior art.
+
+**CANONICAL-ISH REPRESENTATIVE.** Reducing modulo a Groebner basis of (R) under
+a STATED order (grevlex, Z > H) gives a well-defined element, and both
+representatives reduce to it:
+
+    hbar^5 z + 4 hbar^3 z + hbar^2 - 2 hbar z + 5 z^2 - 1
+
+Reproducible, not intrinsic -- another term order gives another normal form.
+
+**CONTAMINATION SWEPT.** The wrong framing reached four places, all corrected
+on branch claude/toffoli-zhbar-relation-2026-08-31: the probe docstring, the
+`cone_eq_markov_hecke_polynomial` Lean docstring, the
+`prop:toffoli-lp-stability` .md block, and this bean. PR #6341's body (merged)
+is edited too. Nothing else in the corpus quoted the string.
+
+**REMAINING, re-posed a THIRD time.** Ask (b) first -- it is the only one whose
+subject is not an artifact of a choice I made:
+
+  (a) does the minimal degree 6 mean anything? (a real invariant)
+  (b) does the curve R(z, hbar) = 0 appear elsewhere in the corpus? It is a
+      fact about H_n(q) and its Markov trace, NOT about the Toffoli, so it
+      should have consequences well outside this arc.
+  (c) does the grevlex normal form mean anything, given that order?

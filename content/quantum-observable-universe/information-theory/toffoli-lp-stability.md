@@ -107,7 +107,15 @@ $$
   (G\vec t)_5 \;=\; z^2 \;+\; 2\hbar_\times z \;+\; 3\hbar_\times^2 z^2 \;+\; \hbar_\times^3 z \;+\; \hbar_\times^4 z^2 ,
 $$
 
-with integer coefficients $(1,2,3,1,1)$ and no denominators. Degree $6$ is minimal — no polynomial in $(z,\hbar_\times)$ of total degree $\leq 5$ equals it. Sorry-free in `QOU.Information.cone_eq_markov_hecke_polynomial`.
+with integer coefficients $(1,2,3,1,1)$ and no denominators. **Degree $6$ is minimal** — no polynomial in $(z,\hbar_\times)$ of total degree $\leq 5$ equals it — and minimal degree is a genuine invariant of the class. Sorry-free in `QOU.Information.cone_eq_markov_hecke_polynomial`.
+
+**The coefficient string, however, is not an invariant.** The two parameters are algebraically dependent, satisfying the irreducible degree-$4$ relation
+
+$$
+  \hbar_\times^3 z - \hbar_\times^2 z^2 + 4\hbar_\times z - 4z^2 + 1 \;=\; 0 ,
+$$
+
+so $\mathbb{Q}[z,\hbar_\times]$ is not a polynomial ring but the coordinate ring of an affine rational curve, and a polynomial representative is unique only modulo that relation. The degree-$6$ representatives form a **six-parameter family**: $-1 + 4z^2 - 3\hbar_\times z + 4z^4 + \hbar_\times^2 z^4$ is an equally integral one, differing from the first by $(\hbar_\times z + z^2 + 1)$ times the relation. A reproducible choice is the grevlex normal form $\hbar_\times^5 z + 4\hbar_\times^3 z + \hbar_\times^2 - 2\hbar_\times z + 5z^2 - 1$, but even that depends on the term order. The relation is sorry-free in `QOU.Information.markov_hecke_relation`; it is a fact about $H_n(q)$ and its Markov trace, not about the $q$-Toffoli.
 
 This is **forced, not fitted**. Every Markov trace of a Hecke word lies in $\mathbb{Z}[z,\hbar_\times]$ — the Markov property $\mathrm{tr}(x\sigma_{\mathrm{last}}) = z\,\mathrm{tr}(x)$ removes the highest generator and the quadratic relation reduces the rest — and the corpus already carries that as a table, `QOU.Machinery.MarkovTraceH4.TRM`, whose entries 9 and 13 are $\hbar_\times z^2 + z = \mathrm{tr}(\sigma_0\sigma_1\sigma_0)$. Since the $q$-Toffoli's normal-form coordinates are $\vec t = (0,0,1,\hbar_\times,0,0)$, that is $T_q = \sigma_1 + \hbar_\times\sigma_0\sigma_1$, the constraint $(G\vec t)_5 = \mathrm{tr}(W\sigma_1) + \hbar_\times\mathrm{tr}(W\sigma_0\sigma_1)$ lies in $\mathbb{Z}[z,\hbar_\times]$ before any computation is done.
 
