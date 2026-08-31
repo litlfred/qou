@@ -947,6 +947,35 @@ the tree, and a content-block sibling cannot `import` the module that has it.
 `ZRecursionCoeffs.unique` is untouched. The block's `.qa.json` was refreshed
 with `qa-sweep` (exit 0) in the same commit.
 
+### 🛑 What happened to the three items this audit handed back (2026-08-31)
+
+All three were worked; two turned out to be decidable by measurement rather than
+authorial. Full record:
+[`2026-08-31-the-three-open-items-worked.md`](2026-08-31-the-three-open-items-worked.md).
+
+- **Both false classes are repaired**, and in each the Lean had *invented* what
+  was false. `SkeinMassRelationHolds` instantiated a per-crossing skein relation
+  at (proton, neutron, deuteron), a substitution the `.md` never makes;
+  `DoubleMagicConjecture` added an `A ∈ magicLadder` conjunct absent from its
+  `.md` and false at all seven observed double-magic nuclei. Neither needed a
+  physics decision — both needed reading the source block.
+- **The 52 are three populations, not one.** Split by whether the class is
+  *reachable* from the block it backs (AGENTS.md §0a resolves the sibling
+  first): **15** sit in library shells a substantive sibling shadows, with
+  **zero importers** — measured dead, and 14 are drained; **6** are in the
+  content-block sibling itself and **31** in reachable library modules, and
+  those 37 need re-encoding, not removal.
+- **The confinement question is settled**: the library model is canonical on
+  three independent criteria (`.md` fidelity, hypotheses-vs-conclusions, and 9
+  consumers against 2). I had said it "isn't mine to pick" — right before
+  measuring, wrong after.
+
+Corpus-wide context measured on the way: **137** content-block siblings shadow a
+library file at their own `lean.ref` path, **122** of them divergent — and the
+divergence usually runs the *other* way from what "shadowing" suggests, with the
+library holding the thin context-class shell and the sibling the real
+mathematics.
+
 ## Adjacent observation, not a finding
 
 `observations/terminal-resolution-proof.lean` defines
