@@ -1,0 +1,131 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-31T05:25:08.672182+00:00",
+  "commitSha": "cb86d1cbc6aeb7f3e16479c781da55cdde0ddf7c",
+  "assertions": [
+    {
+      "name": "separation_bounded_away_from_zero_across_the_range",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Worst pairwise separation over a/b in [1.5, 2.1] is 0.5 (at a/b = 1.5, pair 01) -- not a near miss. Since link type is an isotopy invariant and each component is an embedded ellipse, the type is CONSTANT across the range."
+    },
+    {
+      "name": "all_pairwise_linking_numbers_vanish",
+      "computed": "5.787784199e-71",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "0.000001",
+      "unit": "integer",
+      "source": "All three Gauss linking integrals evaluate to 0 at every sampled a/b (largest |lk| = 5.78778e-71). Necessary for Brunnian, and it rules out the pair-linked alternatives the isotopy argument alone would permit."
+    },
+    {
+      "name": "family_minimum_is_the_same_link_as_the_golden_ratio_point",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "a/b = 1.817 (the family minimum of mobius-cross-energy-borromean) and a/b = phi = 1.618034 are joined by a path inside the scanned range along which no two components meet. This is what the earlier probe could not assert, and it is the reason its family minimum may now be cited."
+    },
+    {
+      "name": "equal_circles_remain_the_degenerate_boundary",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "At a = b the components touch (min separation squared = 4.92538e-142), which is why the scanned range starts at 1.5 and the argument above does not extend to a/b = 1."
+    },
+    {
+      "name": "separation_minimum_sits_at_the_left_endpoint",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Separation over a/b in [1.1, 4.0] is monotone increasing: 1.1->0.1, 1.5->0.5, 1.8->0.74418, 2.0->0.81659, 2.5->0.90138, 3.0->0.93566, 4.0->0.96656. So the minimum over any sub-interval is at its left endpoint, which is where the grid scan independently found it. This is what weakens the grid-sampling caveat, NOT the closed form `a - b`, which holds only at the low end (see closed_form_check)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3495,
+  "computation": "mobius-borromean-topology-guard",
+  "scriptFile": "mobius_borromean_topology_guard.py",
+  "scriptHash": "2845938b46a1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mobius_borromean_topology_guard.py"
+    ],
+    "reproduce": "python3 -u computations/mobius_borromean_topology_guard.py"
+  },
+  "description": "Closes the TOPOLOGY_NOT_VERIFIED gap in mobius-cross-energy-borromean.witness.json. Link type is an isotopy invariant and each component is an embedded ellipse, so bounding the pairwise separation away from zero across the a/b range proves the link type is CONSTANT there -- the family minimum and the golden-ratio point are the same link. Also computes all three pairwise Gauss linking numbers, which are 0 throughout as Brunnian requires.",
+  "data": {
+    "scanned_range": {
+      "a_over_b_min": "1.5",
+      "a_over_b_max": "2.1",
+      "step": "0.01"
+    },
+    "worst_case_separation": {
+      "min_distance": "0.5",
+      "min_distance_squared": "0.25",
+      "at_a_over_b": "1.5",
+      "pair": "01"
+    },
+    "pairwise_gauss_linking_numbers": {
+      "1.5": {
+        "01": "-1.695946486e-71",
+        "12": "-2.343278164e-71",
+        "02": "-2.23110642e-71"
+      },
+      "phi": {
+        "01": "-8.551793226e-72",
+        "12": "8.2843869e-72",
+        "02": "-1.851181068e-71"
+      },
+      "1.817": {
+        "01": "-5.787784199e-71",
+        "12": "-4.34830469e-71",
+        "02": "3.691596426e-72"
+      },
+      "2.1": {
+        "01": "-7.472617695e-72",
+        "12": "-6.581842076e-72",
+        "02": "-1.92914564e-71"
+      }
+    },
+    "equal_circles_min_sep_squared": "4.9253799e-142",
+    "what_is_not_established": "That the type IS the Borromean rings. That rests on the classical three-mutually-orthogonal-golden-rectangles construction, taken here as the definition of the a/b = phi point. What this probe adds is that the REST of the family inherits it.",
+    "separation_profile_over_a_wider_range": {
+      "1.1": "0.1",
+      "1.5": "0.5",
+      "1.8": "0.74418096284867",
+      "2.0": "0.81659503505082",
+      "2.5": "0.901387818866",
+      "3.0": "0.93566675748542",
+      "4.0": "0.96656976509538"
+    },
+    "separation_is_monotone_increasing": true,
+    "closed_form_check": "The worst case sits at a/b = 1.5 with separation exactly 0.5 = a - b, and a - b also matches exactly at a/b = 1.1 (0.1). It does NOT hold generally: at a/b = 1.8 the separation is 0.74415 against a - b = 0.8, and by a/b = 4 it is 0.96657 against 3. So `min sep = a - b` is a low-end coincidence -- the minimising pair of points on the two ellipses changes -- and is recorded here because it is the obvious wrong generalisation to draw from the worst-case row.",
+    "residual_limitation": "a/b is sampled on a grid of step 0.01, so the separation could in principle dip between samples. What actually disposes of this is that the separation is monotone increasing across the sampled profile, so the minimum over any interval sits at its LEFT endpoint -- and the grid scan independently found exactly that. Monotonicity is itself read off seven sample points, not proved, so the honest claim is a strong one about the sampled profile rather than a theorem."
+  }
+}

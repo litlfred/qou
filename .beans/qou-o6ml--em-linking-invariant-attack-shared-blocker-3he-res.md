@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T04:26:40Z
+updated_at: 2026-08-31T05:25:50Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -918,3 +918,58 @@ still missing for a `κ(A)` comparison is the third (8₁₁, a knot rather than
 link, so its self-energy is the relevant object and the machinery differs), a
 topology guard for the Brunnian scan, and the per-pair decomposition at the
 minimiser rather than the total.
+
+
+## 2026-08-31 — the TOPOLOGY gap is closed, and the obvious closed form is a low-end coincidence
+
+Producer: [`computations/mobius_borromean_topology_guard.py`](../computations/mobius_borromean_topology_guard.py)
+Witness: `mobius-borromean-topology-guard.witness.json` — 5 assertions, all passed.
+
+The previous entry left `TOPOLOGY_NOT_VERIFIED_across_the_scan` as a deliberate
+zero: nothing checked the three-ellipse configuration stays *Borromean* as `a/b`
+varies, so its family minimum could not be cited.
+
+**The argument is cheaper than computing `μ̄₁₂₃` geometrically.** Link type is an
+isotopy invariant, and each component is an ellipse, hence embedded for any
+`a, b > 0` — no self-intersection to check. So if no two components meet
+anywhere along the path, the deformation is an ambient isotopy and the link type
+is **constant** across the range.
+
+| measurement | value |
+|---|---|
+| worst pairwise separation over `a/b ∈ [1.5, 2.1]` | **`0.5`** at `a/b = 1.5`, pair 01 |
+| max pairwise Gauss linking number, all 3 pairs, 4 sample ratios | **`5.79e-71`** |
+| `a = b` degenerate boundary, min separation² | `4.93e-142` |
+
+Half a unit of clearance, not a near miss. And all three Gauss linking integrals
+vanish to `1e-71`, which is necessary for Brunnian and rules out the pair-linked
+alternatives the isotopy argument alone would permit.
+
+**So `a/b = 1.817` (the family minimum) and `a/b = φ` are the same link**, and
+the earlier probe's minimum may now be cited.
+
+### 🛑 The tempting closed form is wrong past the low end
+
+The worst case is `0.5` at `a/b = 1.5`, which is exactly `a − b`. It also matches
+exactly at `a/b = 1.1` (`0.1`). **It does not hold generally**: at `a/b = 1.8`
+the separation is `0.74415` against `a − b = 0.8`, and by `a/b = 4` it is
+`0.96657` against `3` — the minimising pair of points on the two ellipses
+changes. Recorded in the witness as `closed_form_check` because it is the
+obvious wrong generalisation to draw from the worst-case row, and I drew it
+myself before testing it.
+
+### What actually disposes of the grid-sampling caveat
+
+Not the closed form — **monotonicity**. The separation increases across the
+sampled profile (`0.1, 0.5, 0.744, 0.817, 0.900, 0.937, 0.967` for
+`a/b = 1.1 … 4.0`), so the minimum over any interval sits at its **left
+endpoint**, which is independently where the step-0.01 grid scan found it.
+Monotonicity is read off seven points, not proved, so the honest claim is a
+strong statement about the sampled profile rather than a theorem.
+
+### Still not established
+
+That the type **is** the Borromean rings. That rests on the classical
+three-mutually-orthogonal-golden-rectangles construction, taken here as the
+definition of the `a/b = φ` point. What this probe adds is that the rest of the
+family **inherits** it.
