@@ -1,9 +1,8 @@
 # merge-coordinator — memory
 
 Entry types: **STABLE** · **TRAP** · **BASELINE** (re-measure, never quote).
-Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them.
-
----
+Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them. Detail
+lives in sibling files; keep this file under 200 lines so it all gets injected.
 
 ## TRAP — ALL THREE Phase-4 external gates are dead. Do not wait on any.
 
@@ -131,28 +130,14 @@ lines is a signal to break it up.
 
 ## STABLE — asking the author anything at all
 
-Naming a decision **is** asking a question, wherever it appears — an
-end-of-turn line, a `**next**` bean entry, a "suggested follow-up" in a PR
-body, or a chat sentence of the form "X is a judgement call for you". All of
-them owe the same frame:
-
-expand every identifier on first use · lead with the decision, not the
-investigation · one clearly-headed section per question, one sub-block per
-option, same order and labels as the structured call · every option gets
-**what it means / what it costs / what it risks / what it commits to** ·
-**state the default** (what happens if they say nothing) · name the blast
-radius in real file and physics terms · and give a **recommendation** marked
-as your judgement.
-
-Mirror the whole thing as chat prose **immediately above** the
-`AskUserQuestion` call — the structured UI is ephemeral and mangles math;
-the transcript is the durable record. Default `multiSelect: true` and prefix
-with 🟡.
-
-**Cheapest correct move when you do not want to spend the words: don't raise
-it.** A decision you are not prepared to frame belongs in a bean the author
-can read on their own schedule, not in front of them stripped of everything
-that would let them answer.
+Full six-part frame is in AGENTS.md §User accessibility, already in your system
+prompt — do not re-derive it here. The parts that bite *in this role*: naming a
+decision **is** asking a question even in an end-of-turn line, a `**next**` bean
+entry, or a "suggested follow-up" in a PR body, and each owes options with
+what-it-means / costs / risks / commits-to, **the default if they say nothing**,
+and a recommendation marked as judgement. Mirror any `AskUserQuestion` as chat
+prose above the call; default `multiSelect: true`, prefix 🟡. **Cheapest correct
+move when you won't spend the words: don't raise it** — put it in a bean.
 
 ## TRAP — `update_pull_request` is a PARTIAL write, and its rate-limit error lies
 
@@ -168,17 +153,47 @@ Discriminator: `merge_pull_request` is REST, so it returns a *real* error
 (`405 Pull Request is still a draft`), isolating the blocker to GraphQL.
 Detail: [`update-pull-request-partial-write.md`](update-pull-request-partial-write.md).
 
+## TRAP — API dead session-wide · shared worktree · float64-guard marker
+
+2026-08-31 (#6395/#6396). Recipes + incident detail:
+[`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md).
+
+1. **API dead session-wide, `git` fine.** All `mcp__github__*` → *"No such tool
+   available"*, no `gh`, REST **403 "GitHub access is not enabled for this
+   session"** — an Anthropic *session gate*, not repo permission, not rate
+   limiting, and it does **not** clear on retry. `git` over HTTPS is
+   unaffected, so fetch/rebase/push/**merge** work while PR comments, review
+   requests and `subscribe_pr_activity` do not (the post-push hook then cannot
+   be satisfied — environmental, not a lapse). Merge = push the branch, then
+   push that **same SHA** to `main` (so GitHub marks it merged); prove
+   `merge-base --is-ancestor` first and keep the `main` push non-force, which
+   makes it FF-only and self-guarding.
+2. **`/home/user/qou` is SHARED with concurrent siblings.** I checked out a
+   branch there mid-session; **their next commit landed on my branch** and would
+   have shipped inside #6395. Symptom: **`HEAD` is not what you set it to**
+   (`rev-parse` to verify, `reflog` to diagnose). Work in
+   `git worktree add --detach`. Never `git add -A` (sweeps sibling files + the
+   `qou-v0t8` audit witnesses); never `git checkout <ref> -- <path>` to peek —
+   it writes the index — use `git show <ref>:<path> >`.
+3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line
+   (a block above only shifts line numbers). `from math import comb`/`factorial`
+   flag but are exact `int` — a real false positive; verify, annotate, never
+   widen a baseline. Grepping `math\.(sqrt|exp|log)` misses `from math import`.
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
 |---|---|---|---|
-| Copilot reviews arriving | `request_copilot_review` then `get_check_runs` | 0/5; `total_count: 0` | bean `qou-gwe9` |
-| Gemini reviews arriving | — | ceased | 2026-08-01 |
+| Copilot reviews arriving | `request_copilot_review` then watch for a review wake | rationed; `get_check_runs` = 0 does not discriminate | `qou-gwe9`, 2026-08-30 |
 | workflows with auto-triggers | `grep -l 'on:' .github/workflows/*.yml` then read each | dispatch-only repo-wide | 2026-06-30 directive |
 
----
+## Session log — one entry per PR; prune this, never the TRAPs
 
-## Session log
-
-One line per PR: number, what was blocking, what unblocked it, any dead gate
-you confirmed. Keep under ~200 lines — prune the log, never the TRAPs.
+- **#6395** `337dd658c7` / **#6396** `34f2352431` (2026-08-31, FF pushes, API
+  403-gated so no PR comments). Both merged on agent verification alone: probes
+  exit 0, float64 guard clean, stdout byte-identical across comment-only edits.
+  Two defects caught that the hand-off said were absent — a **retraction that
+  reached the runtime block but not the module docstring** (#6395, so the file
+  asserted the retracted route where a reader looks first), and a **red
+  float64 guard** (#6396, adjudicated a false positive on exact-int
+  `math.comb`/`factorial`). *Re-run the gates; do not trust "already verified".*
