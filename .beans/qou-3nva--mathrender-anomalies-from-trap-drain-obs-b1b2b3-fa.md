@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-31T03:31:19Z
+updated_at: 2026-08-31T03:41:42Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4465,3 +4465,61 @@ Setting row (3) to the unbalanced `9.16` would make it agree with row (2) and le
 matching nothing. The block needs a convention decision (and, under the 2026-08-15 ruling, a
 statement of which convention it is in) rather than a numeric patch. **Left unedited
 deliberately.**
+
+
+---
+
+## 2026-08-31 — L-V13 RETRACTED (the ledger is wrong); L-V18 escalated with three errors, not one
+
+Worked the last two confirmed-live items from the sample. Neither is a fix.
+
+### L-V13 — NOT A DEFECT. Retract it.
+
+The entry reads: *"relative residual `1.45 × 10⁻³⁰ ppm` = 1.45e-36 relative — 20 orders below
+f64 and below the CODATA input uncertainty. **Physically impossible as a residual.** LIVE."*
+
+**The "below f64" premise is false, and the block is not claiming a physical residual.**
+
+- `computations/q-pinning-50-digit.witness.json` records `q₀` to **69 digits**. The residual is
+  a **round-trip at that precision**, not an f64 computation. 1e-36 is exactly what a 50-dps
+  solve reproduces.
+- The block's own section is headed **"Structural vanishing of the residual"** and says: *"This
+  is exactly the `q₀`-pinning equation read in the forward direction. The CAL-2 calibration
+  defines `q₀` as the unique real solution of `m_μ/m_e = Vol(4₁)/ℏ_q²`. Evaluating both sides at
+  that `q₀` yields **equality by construction**, up to the 50-dps numerical precision of the
+  pinning algorithm and the CODATA `m_μ/m_e` truncation."*
+
+That is the CAL-2 calibration tautology **stated as a tautology** — precisely what AGENTS.md
+§q₀-anchor requires, and the opposite of the failure mode the ledger suspected. Nothing to fix.
+Left unedited.
+
+### L-V18 — LIVE, and there are THREE errors where the ledger records one
+
+The entry catches that Riemann–Hurwitz forces `R = 0` at `d = 1`. Correct. Two more:
+
+1. **The displayed formula is not Riemann–Hurwitz at all.** The block writes
+   `R_tot = 2d + |χ(A)| = 2·1 + |2| = 4`. RH for `f : X → Y` of degree `d` is
+   `χ(X) = d·χ(Y) − R`, so for `CP¹ → CP¹`: **`R = 2d − 2`**. There is no reading on which
+   `2d + |χ|` is the ramification total.
+2. **The block contradicts itself even on its own data.** It states `B = 2` branch points each
+   with `e = 2`. Then `R = Σ(e_p − 1) = 2`, **not the 4** it just displayed.
+3. The ledger's point: `d = 1` gives `R = 2·1 − 2 = 0`, and a degree-1 holomorphic self-map of
+   `CP¹` is an isomorphism — unramified. So the branch points that §(5) *depends on* ("At each
+   branch point `p ∈ {0, ∞}`") cannot exist at `d = 1`.
+
+**The self-consistent reading is `d = 2`:** `R = 2d − 2 = 2`, two branch points at `0` and `∞`
+each with `e = 2` — the squaring map `z ↦ z²`, the double cover of `CP¹` branched at the two
+poles, which is exactly the "north and south poles of `CP¹ ≅ S²`" the block names.
+
+**ESCALATED, not patched.** Setting `d = 2` is a claim about the descent map's degree — content,
+not arithmetic — and fixing only the formula while leaving `d = 1` would give `R = 0` and turn
+an implicit contradiction into an explicit one two paragraphs later. Same shape as L-V14: the
+block needs a decision (is the descent map degree 1, or the double cover its branch structure
+implies?), and once that is made all three lines follow.
+
+### Running tally for this ledger
+
+Fixed by me: **11** (L-V4–L-V12, L-V16, L-V24). Already fixed before I arrived: **7**.
+Escalated as decisions: **2** (L-V14, L-V18). Retracted as not-a-defect: **1** (L-V13).
+Of 21 sampled entries, **three of the ledger's own prescriptions were wrong** — L-V11's
+replacement count, L-V12's proposed source value, and L-V13 entirely.
