@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T02:58:09Z
+updated_at: 2026-08-31T03:08:52Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -877,5 +877,46 @@ concave in `A`, so Jensen points the right way). Neither is done.
 VKLS". It is **concentration of one smooth functional of a Plancherel diagram
 around a mean fixed by an exact symmetry** — a far narrower literature question,
 and the one to actually ask.
+
+**STILL OPEN.** qou-k5r5 OPEN.
+
+
+---
+
+## Leg A, 2026-08-31 (thirteenth) — the Jensen route: viable, narrower, and not free
+
+**The reduction.** `A ↦ min(D0, L−a, √(a²+2A) − a)` is a min of concave
+functions, hence **concave in A**. So `E[bound(A_σ)|a,r] ≤ bound(E[A_σ|a,r])`,
+and `E_ω[A_σ | a,r] ≤ n/2` would give the 7.54% margin with **no concentration
+input at all** — one conditional-mean inequality in place of concentration of a
+functional.
+
+**MEASURED: the inequality holds everywhere.** Exact, grouping opposite-sign
+edges by the integer pair `(a,r)`: **0 groups over n/2** for n = 8..18. Sampled,
+binned in rescaled coordinates: **0 bins over** at n = 50/100/200.
+
+**But it is asymptotically tight.** Max ratio 0.935, 0.945, 0.958, 0.972 at
+n = 50/100/200/400 — rising toward 1 from below at about `n^{−0.4}`. Viable and
+uncomfortable at once.
+
+**TWO THINGS I GOT WRONG, both recorded rather than quietly fixed.**
+
+1. **I predicted failure at large `a`** — a near corner far out ought to mean that
+   side is long and holds more than half the area. It does not fail there. The
+   maximum sits at **small** `(a,r)` — (2,3), (3,4), (4,5) — near the diagonal, in
+   groups carrying under 0.4% of the weight.
+2. **The natural pointwise explanation is FALSE.** If the far corner sits further
+   out one expects the far side to hold more area, giving `A_near ≤ A_far` and
+   hence `A_near ≤ (n−D0)/2 < n/2` deterministically — no Jensen, no probability.
+   Measured: **2760 violations of 11656 (24%)**. Minimal counterexample
+   `λ = (4,2,1)` with corners at `c = 1, −2`: near is `c = 1`, and
+   `A_near = 3 > A_far = 2` because the diagram is **wide**. So the
+   conditional-mean inequality is a genuine **averaging** statement with no
+   elementary pointwise route behind it.
+
+**WHERE THIS LEAVES THE ROUTE.** Jensen does narrow the remaining analytic input
+— from *concentration of `A_σ`* to *one conditional-mean inequality*. Strictly
+weaker, and precisely stated. Not free: it holds on everything measured,
+approaches equality, and has no pointwise proof.
 
 **STILL OPEN.** qou-k5r5 OPEN.
