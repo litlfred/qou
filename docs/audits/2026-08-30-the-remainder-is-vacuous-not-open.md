@@ -50,18 +50,17 @@ most trivial model available and asking `lean` whether it type-checks:
 |---|---|
 | classes probed | 79 |
 | **INHABITED with no hypotheses** | **52** (26 machine + 26 hand) |
-| scored NOT vacuous — genuine claim | 14 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall` + 6 already inhabited in the corpus) |
-| REFUTABLE — false at the corpus's own constants | 1 (`SkeinMassRelationHolds`) |
+| scored NOT vacuous — genuine claim | 16 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall`, `H2SAngleS3HolonomyConjecture`, `DeltaTauMSurrogateTaylorCoeff2` + 6 already inhabited in the corpus) |
+| REFUTABLE — false as stated | 2 (`SkeinMassRelationHolds`, `DoubleMagicConjecture`) |
+| INERT — no direction can be invoked | 1 (`RadiusOfConvergenceGateClass`) |
 | **DRAINED — proved outright, class deleted** | 2 (`ProtonPairSkeinApprox`, `NeutronPairSkeinApprox`) |
-| still undecided — INCONCLUSIVE, see method below | 10 |
+| still undecided — INCONCLUSIVE, see method below | 6 |
 | hand-verified before any tooling existed | 5 of 5 |
 
-The 10 that remain, so the next agent does not have to re-derive the list:
-`ConfinementPhaseStratificationContext`, `DeltaTauMSurrogateTaylorCoeff2`,
-`DoubleMagicConjecture`, `DressedMassSubstrateSplit`,
-`FiberAdjointInvolutionContext`, `H2SAngleS3HolonomyConjecture`,
-`HasDqSquaredNonvanishing`, `QuantumObservableUniverseExistsContext`,
-`RadiusOfConvergenceGateClass`, `WhiteheadVolumeConjectureLimit`.
+The 6 that remain, so the next agent does not have to re-derive the list:
+`ConfinementPhaseStratificationContext`, `DressedMassSubstrateSplit`,
+`FiberAdjointInvolutionContext`, `HasDqSquaredNonvanishing`,
+`QuantumObservableUniverseExistsContext`, `WhiteheadVolumeConjectureLimit`.
 
 `HasDqSquaredNonvanishing` is worth a line of its own, because its ledger entry
 is arguably **already dispositioned**: on 2026-08-23 the circular instance
@@ -745,6 +744,69 @@ the flattering direction, which is why nobody caught them (mpmath, 50 dps):
 `S_uu = 312.3637` matches the stated `312.37`, so the arithmetic was right for
 one of the three pair masses and wrong for the other two. The agreements are 6×
 and 5× **better** than claimed.
+
+### A second FALSE class, and a gate that cannot fire at all
+
+**`DoubleMagicConjecture` (`QOU/Interactions/LRFusion.lean`) is FALSE as
+stated** — machine-refuted in
+[`2026-08-31-double-magic-conjecture-is-false.lean`](2026-08-31-double-magic-conjecture-is-false.lean).
+Its `magic_iff_double_magic` field is an iff over *every* `Composite`.
+At the all-empty composite `⟨∅, ∅, ∅⟩`: `IsDoubleMagic` holds (by the corpus's
+own `emptyDiagram_isSelfConjugate`), so the `←` direction forces
+`0 ∈ magicLadder = {2, 8, 20, 28, 50, 82, 126}`, which is false.
+
+**Scope — a (b) structural exclusion of the ENCODING, not the physics.** Both
+invariants are already proved in the corpus, which is what licenses the (b):
+`magicSet` is that literal `Finset` (`decide`), and `emptyDiagram_isSelfConjugate`
+is sorry-free. What is excluded is the iff *as written*, which over-quantifies —
+nothing requires `C.ydZ`/`C.ydN` non-empty or `C.ydA.n ≥ 2`, so the empty
+composite counts as double-magic for a degenerate reason. Whether double-magic
+nuclei sit on the magic ladder is untouched. The repair is a non-degeneracy
+hypothesis, and it is authorial.
+
+It matters because two theorems in the same file consume the class
+(`composite_self_conjugate_of_double_magic`,
+`composite_kappa_zero_of_double_magic`), and an uninhabitable class makes both
+**vacuously true** — `False → P` for every `P`. Second such case in the arc.
+
+Note the name is overloaded: this is the unparameterised class in
+`LRFusion.lean:133`; a *different* `DoubleMagicConjecture (Z N) extends
+LRFusionData Z N` lives in `observations/diagrammatic-double-magic-lr-fusion.lean:58`.
+Resolve before citing either.
+
+**`RadiusOfConvergenceGateClass` is INERT — a fourth reason a declaration can be
+unreachable.** The gate rests on `axiom qBetaCandidatePoleLocation : ℝ`, an
+opaque global with no defining property; measured, the identifier occurs in
+exactly four places corpus-wide, all in that one file. So the forward gate needs
+a proof of an equation about a constant nothing constrains (none exists), and
+the reject theorem takes the *same* unprovable shape as a hypothesis. Neither
+direction can ever fire. And it could not discriminate if it could: the pole is
+a single *global*, not a function of a candidate, so "a candidate failing to
+predict this location is REFUTED" has no argument by which candidates differ.
+
+That is now four distinct unreachability mechanisms in this arc — a false class
+field (`SkeinMassRelationHolds`), a false side condition
+(`pair_skein_denom_hypothesis_false`), an uninhabitable-because-false class
+(`DoubleMagicConjecture`), and an undecidable-because-opaque one here. The
+repair is to make the pole a function of the candidate; authorial, not
+attempted.
+
+**`H2SAngleS3HolonomyConjecture` — NOT vacuous**, witnessed and refuted in
+[`2026-08-31-h2s-and-the-inert-radius-gate.lean`](2026-08-31-h2s-and-the-inert-radius-gate.lean):
+satisfiable at `⟨0,0⟩`, refutable at `⟨1,0⟩`. Its thinness is a modelling gap
+rather than a §3b-cond defect — the class quantifies over an arbitrary pair of
+reals while the physics claim is about one specific measured pair, and nothing
+pins `d` to the H₂S angle or the holonomy phase.
+
+**`DeltaTauMSurrogateTaylorCoeff2` — NOT vacuous, and its claim is TRUE.** The
+field asserts `deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5/6` for the explicit
+rational function `P(q)/(4q⁵(q²+q+1))`. Checked in exact rational arithmetic
+(no floats): `N(1) = 0`, `N'(1) = −10`, `N''(1) = −100`, `D(1) = 12`,
+`D'(1) = 72`, `D''(1) = 368`, giving `f'(1) = −5/6` (matching the file's own
+first-derivative proof) and `f''(1)/2 = 2880/1728/2 = 5/6` ✓. So it is drainable
+by disposition 1 — prove the second derivative — which the file's docstring
+already calls "bulky but tractable". Not attempted here; it is the largest
+single remaining piece of Lean work in this arc.
 
 ## Adjacent observation, not a finding
 
