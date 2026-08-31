@@ -4623,3 +4623,94 @@ actively harmful, L-V55 pointing at the wrong files. That is 5 of 21 sampled
 ≈ **24 %**, on top of ~33 % simple staleness. **Every entry is a candidate.
 Re-derive before applying, and re-run the class grep rather than the site
 list.**
+
+---
+
+## Tranche 6 — the topology / simplicial band (L-V20…L-V36), 2026-08-31 · PR #6347
+
+Eight fixed, three already fixed, one escalated.
+
+**FIXED**
+
+- **L-V27** — resolved by computation, and *every* part of the original was
+  wrong. The block claimed deleting the 0-th strand gives `(σ₀⁻¹)³ ∈ B₂`
+  closing to the negative trefoil, "equivalent to `U₂` via two R2 and one R3".
+  Tracking strand positions through `(σ₀σ₁⁻¹)³` and dropping the crossings the
+  deleted strand participates in:
+
+  ```
+  delete strand 0: 2 crossings survive, exponent sum 0 -> [s+, s-]
+  delete strand 1: 2 crossings survive, exponent sum 0 -> [s-, s+]
+  delete strand 2: 2 crossings survive, exponent sum 0 -> [s+, s-]
+  ```
+
+  Two crossings not three; exponent sum 0 not −3; a **2-component link** not a
+  knot; **one R2 move** not two R2 + one R3. The ledger's own diagnosis (a knot
+  cannot be Reidemeister-equivalent to `U₂` — component count is invariant) was
+  right, and understated how much was wrong.
+
+- **L-V30** — Hopf complement is `T² × I` (Seifert-fibred), not a solid torus
+  (that is the *unknot* complement). **Two sites**, not the one named:
+  `meson-scale-independence-proof.md:3` **and**
+  `pion-mass-hyperbolic-threshold.md:1`.
+- **L-V31** — Thurston's trichotomy is torus / satellite / hyperbolic; torus
+  knots are their own class. Rewritten so `Vol = 0` *follows* rather than merely
+  accompanies.
+- **L-V32** — "non-abelian first homology" → "non-abelian fundamental group".
+- **L-V29** — uniqueness scoped to the building-block knot set (`6₃`, `8₃`,
+  `8₉`, `8₁₂`, `8₁₇`, `8₁₈` are amphichiral too).
+- **L-V35** — the coface *raises* the level; the descent is the codegeneracy
+  `σ⁰ = 𝔡_{n+1} : 𝔊_{n+1} → 𝔊_n`. Both directions now match, and `σ⁰`'s type is
+  stated.
+- **L-V36** — the two parenthetical glosses were swapped (coface inserts a
+  *face*, codegeneracy collapses a *degeneracy*).
+
+**ALREADY FIXED:** L-V20 (`rank 2`, 0 occurrences) · L-V21 (the displayed
+involution is gone; surviving text agrees with `braid-twist-flip.md:21`, whose
+`σ₁σ₂ : w ↦ (w₃,w₁,w₂,w₄)` *is* a 3-cycle) · L-V22 (the live text now states the
+opposite explicitly — "the commuting reading (which would give the Klein
+four-group `V₄`) violates the braid relation").
+
+**ESCALATED — L-V28, three errors where the ledger records one**
+
+`categorical-meson.md:11-14`:
+
+```
+T_01 = s0 s1 = L_+   "the positive Hopf link"
+T_10 = s1 s0 = L_-   "the negative Hopf link"
+L_H  = s0 s1         "the Hopf link binding the two constituents"
+```
+
+1. *(the ledger's finding)* both letters are **positive** generators, and
+   AGENTS.md §7a fixes `σᵢ = L₊`, `σᵢ⁻¹ = L₋`.
+2. *(new)* `σ₁σ₀ = σ₀⁻¹(σ₀σ₁)σ₀` — `T₁₀` is **conjugate** to `T₀₁` in `B₃`, so
+   by Markov they have the **same closure** and cannot denote different links
+   under *any* sign convention.
+3. *(new)* the closure of `σ₀σ₁` in `B₃` is **not** the Hopf link: its
+   permutation is a 3-cycle, so the closure has **one** component, and two
+   crossings on three strands give the **unknot**. The Hopf link is the closure
+   of `σ₀²` in `B₂`.
+
+Not patched: the 01/10 distinction is presumably crossing *order* (up-type vs
+down-type) inside the Hecke word rather than link type, but `L₊`/`L₋` are
+skein-convention symbols used corpus-wide, so renaming these three is an author
+call.
+
+**Sidecars.** 8 refreshed, **325/614 = 52.9 %** — consistent with tranche 5's
+55.7 %, and again nowhere near the "40/77" recorded in tranche 1.
+
+**RUNNING TALLY, six tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 25 |
+| already fixed on arrival | 16 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**A pattern worth naming.** Three separate entries now (L-V27, L-V28, L-V30)
+turned out to understate the defect once actually computed, while five others
+(L-V11, L-V12, L-V13, L-V50, L-V55) overstated or misdirected it. The ledger is
+a good *detector* and an unreliable *diagnosis*. Verify the finding, then
+re-derive the fix from scratch.
