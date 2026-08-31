@@ -1,11 +1,11 @@
 ---
 # qou-6inm
 title: 'Portability: 20 hardcoded /home/user/qou absolute paths across 12 files silently break every other checkout'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T18:39:51Z
-updated_at: 2026-08-31T02:46:25Z
+updated_at: 2026-08-31T02:51:33Z
 ---
 
 
