@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 48 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 52 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 22 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 26 more by hand** (see "the method is per-class hand construction" below).
 
 > **🛑 The running total was over by one for two turns, and the correction is
 > worth stating rather than silently applying.** I had been adding the machine
@@ -49,22 +49,27 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **48** (26 machine + 22 hand) |
-| scored NOT vacuous — genuine claim | 12 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality` + 6 already inhabited in the corpus) |
+| **INHABITED with no hypotheses** | **52** (26 machine + 26 hand) |
+| scored NOT vacuous — genuine claim | 14 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall` + 6 already inhabited in the corpus) |
 | REFUTABLE — false at the corpus's own constants | 1 (`SkeinMassRelationHolds`) |
-| still undecided — INCONCLUSIVE, see method below | 18 |
+| still undecided — INCONCLUSIVE, see method below | 12 |
 | hand-verified before any tooling existed | 5 of 5 |
 
-The 18 that remain, so the next agent does not have to re-derive the list:
-`ConfinementPhaseStratificationContext`, `ConvergenceBound`,
-`DeltaTauMSurrogateTaylorCoeff2`, `DoubleMagicConjecture`,
-`DressedMassSubstrateSplit`, `FiberAdjointInvolutionContext`,
-`FourTermPairNucleonContext`, `H2SAngleS3HolonomyConjecture`,
-`HasDqSquaredNonvanishing`, `MarkovIdentificationContext`,
-`NeutronPairSkeinApprox`, `ParityRegimeSelectionContext`,
-`ProtonPairSkeinApprox`, `QIntRatioBoundSmall`,
+The 12 that remain, so the next agent does not have to re-derive the list:
+`ConfinementPhaseStratificationContext`, `DeltaTauMSurrogateTaylorCoeff2`,
+`DoubleMagicConjecture`, `DressedMassSubstrateSplit`,
+`FiberAdjointInvolutionContext`, `H2SAngleS3HolonomyConjecture`,
+`HasDqSquaredNonvanishing`, `NeutronPairSkeinApprox`, `ProtonPairSkeinApprox`,
 `QuantumObservableUniverseExistsContext`, `RadiusOfConvergenceGateClass`,
-`SkeinMassFromLinkingContext`, `WhiteheadVolumeConjectureLimit`.
+`WhiteheadVolumeConjectureLimit`.
+
+`HasDqSquaredNonvanishing` is worth a line of its own, because its ledger entry
+is arguably **already dispositioned**: on 2026-08-23 the circular instance
+(`… [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] := ⟨hf.out⟩`) was removed, leaving what
+the file calls "an honest open carrier". Its field constrains a parameter, so it
+is not vacuous by shape; but whether the three hypotheses it binds
+(`hq`, `hd_sq`, `hcross`) force the conclusion is the open question the file
+exists to pose, so it is neither witnessed nor refuted here.
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
 `HoefsmitScatteringPipelineContext`, `NucleonOrderingFactorizationContext` — are
