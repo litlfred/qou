@@ -40,12 +40,35 @@
 
   **The volume.**  Route 71's G3 checks numerically that `Im V̂` at the *complex*
   critical point equals `Vol(5₂)`, matching the corpus's SnapPy HP 50-dps
-  constant to its full recorded precision (residual `4.9e-50`).  That is a
-  transcendental evaluation of a regulator and is **not** formalized here or
-  anywhere in the corpus.
+  constant to its full recorded precision (residual `4.9e-50`).  Nothing here
+  formalizes it.
+
+  ⚠ **Updated 2026-08-31 — that statement now splits, and only half of it is
+  still open.**  This paragraph used to end "**not** formalized here or anywhere
+  in the corpus", which is no longer true of the analytic half:
+
+  * `Im V̂(critical point) = 3·D(y₀)` **is** formalized and sorry-free —
+    `QOU.Archimedean.FiveTwoOhtsukiBridge.ohtsuki_sum_im_eq_three_blochWigner`,
+    with `ohtsukiSum` the same six-term `V̂`, instantiated at the corpus's own
+    dilogarithm `cLiTwoExt` (`isKummerAtOhtsukiArgs_cLiTwoExt`).  It is not a
+    transcendental evaluation at all: every argument is `±(1−y)^k` modulo the
+    cubic, so the `arg`/`log` corrections cancel by integer bookkeeping.
+  * `3·D(y₀) = Vol(5₂)` is **still** open, and is the class
+    `BlochWignerLobachevsky.FiveTwoTriangulation`.  It is open for a
+    *definitional* reason — Lean has no hyperbolic volume for it to refer to —
+    not an analytic one.  Bean `qou-b84o`.
 
   **The volume conjecture.**  The asymptotic `(2π/N)·log ⟨5₂⟩_N → Vol(5₂)` is
-  Ohtsuki's 67-page theorem.  None of it is in Lean.
+  Ohtsuki's 67-page theorem.
+
+  ⚠ **Also updated 2026-08-31: "none of it is in Lean" was already wrong when
+  written, and is more wrong now.**  This very file proves the critical point;
+  `QOU/MathlibExt/GaussianThetaSum.lean` proves the discrete-to-continuum
+  replacement with exponentially small error; and the bridge above derives the
+  volume conjecture for `5₂` from Ohtsuki's Theorem 1.1 *as a hypothesis class*
+  with every step between them proved.  What is genuinely absent is §3's
+  saddle-point toolkit (Props 3.1–3.5) and §§5.3–5.4's hypothesis verification —
+  28 % of the paper by extracted length.  Bean `qou-vlow` decomposes it.
 
   ⚠ And note G4: the *real* critical point gives `Im V̂ = 1.7668…`, **not** the
   volume.  The geometric solution is the complex one.  Nothing algebraic here
