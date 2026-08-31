@@ -1289,6 +1289,34 @@ class WitnessBuilder:
             start_time is not None and start_time > 1e8
         )
 
+        # Whether the duration baseline came from the CALLER or from this
+        # constructor (bean `qou-hqs5`).
+        #
+        # When no `start_time` is passed the baseline is "now" — the moment the
+        # builder is constructed. That is correct for a builder made BEFORE the
+        # work, and meaningless for one made AFTER it, where `durationMs` then
+        # measures how long it took to SERIALISE the witness. Measured over
+        # `computations/`: of 1641 producers constructing a named builder, 258
+        # pass `start_time`, 904 do not and construct it in the last third of
+        # the file, 479 do not but construct it earlier.
+        #
+        # Nothing in the witness distinguished those cases, and the schema
+        # described the field as "Script execution time in milliseconds" for all
+        # of them. `hadron-knot-table.witness.json` says `durationMs: 53`; that
+        # is `json.dumps`, and it was read (by an agent, in a commit message) as
+        # "19 atoms in 53 ms" and used to claim a six-orders-of-magnitude
+        # regression that did not exist.
+        #
+        # Fixed HERE rather than in 904 callers, by the same argument the
+        # `_start_is_epoch` discriminator above already settled for 14 of them:
+        # nothing at the call site distinguishes a right call from a wrong one,
+        # so this is a footgun, not 904 slips. `durationMs` is kept (dropping it
+        # would lose a real measurement for the 258 correct callers and change
+        # the field set of every witness); `durationMsBaseline` says which it
+        # is, so the suspect ones are mechanically findable instead of silently
+        # indistinguishable.
+        self._start_time_from_caller = start_time is not None
+
         # Resolve caller frame ONLY when script path not explicitly
         # provided (factory classmethods like ``wrap_legacy`` pass it
         # in directly so they don't capture witness_base.py itself).
@@ -1910,6 +1938,13 @@ class WitnessBuilder:
             "assertions": [a.to_dict() for a in self.assertions],
             "allPassed": all_passed,
             "durationMs": duration_ms,
+            # "caller" -> a real runtime; "builder-construction" -> the baseline
+            # is this builder's own construction, so this is only a runtime if
+            # the builder was constructed before the work. See `qou-hqs5`.
+            "durationMsBaseline": (
+                "caller" if self._start_time_from_caller
+                else "builder-construction"
+            ),
             # ── Extended fields for staleness tracking ──
             "computation": self.name,
             "scriptFile": self._script_path.name,

@@ -2,9 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/litlfred/qou/tools/witness-schema/schema/witness.schema.json",
   "title": "ComputationWitness",
-  "description": "JSON shape of a *.witness.json file emitted by qou-substrate's WitnessBuilder. Canonical reference for the QOU witness format — readable from any language.",
+  "description": "JSON shape of a *.witness.json file emitted by qou-substrate's WitnessBuilder. Canonical reference for the QOU witness format \u2014 readable from any language.",
   "type": "object",
-  "required": ["engine", "engineVersion", "computedAt", "assertions"],
+  "required": [
+    "engine",
+    "engineVersion",
+    "computedAt",
+    "assertions"
+  ],
   "additionalProperties": true,
   "properties": {
     "engine": {
@@ -22,7 +27,7 @@
         "python+mpmath",
         "python+numpy+cvxpy"
       ],
-      "description": "Computation engine that produced this witness. (`snappy` is the legacy name for `snappea` — both are accepted; new witnesses should prefer `snappea`.)"
+      "description": "Computation engine that produced this witness. (`snappy` is the legacy name for `snappea` \u2014 both are accepted; new witnesses should prefer `snappea`.)"
     },
     "engineVersion": {
       "type": "string",
@@ -58,15 +63,23 @@
     },
     "contentBlock": {
       "type": "string",
-      "description": "Optional content-block label this witness was authored for (e.g. 'prop:foo'). Self-claim; not authoritative — the block must reference the witness back."
+      "description": "Optional content-block label this witness was authored for (e.g. 'prop:foo'). Self-claim; not authoritative \u2014 the block must reference the witness back."
     },
     "auditOnly": {
       "type": "string",
-      "description": "Optional. Path (relative to repo root) of the audit-report doc this witness backs. Marks the witness as audit-only — not expected to wire to a content block."
+      "description": "Optional. Path (relative to repo root) of the audit-report doc this witness backs. Marks the witness as audit-only \u2014 not expected to wire to a content block."
     },
     "durationMs": {
       "type": "number",
-      "description": "Script execution time in milliseconds."
+      "description": "Milliseconds between the builder's duration baseline and build(). This is the script's execution time ONLY when durationMsBaseline is 'caller'; when it is 'builder-construction' the baseline is the moment WitnessBuilder was constructed, which for a builder constructed after the work measures witness serialisation, not computation. See bean qou-hqs5."
+    },
+    "durationMsBaseline": {
+      "type": "string",
+      "enum": [
+        "caller",
+        "builder-construction"
+      ],
+      "description": "Where durationMs's baseline came from. 'caller' means the producer passed start_time before doing the work, so durationMs is a real runtime. 'builder-construction' means the baseline is WitnessBuilder's own construction, so durationMs is a runtime only if the builder was constructed before the work -- and is serialisation time if it was constructed after. Absent on witnesses written before 2026-08-31, where the distinction was not recorded and durationMs must not be trusted as a runtime."
     },
     "assertions": {
       "type": "array",
@@ -91,14 +104,18 @@
       "properties": {
         "upstream_witness_hashes": {
           "type": "array",
-          "items": { "$ref": "#/$defs/UpstreamWitnessHash" },
+          "items": {
+            "$ref": "#/$defs/UpstreamWitnessHash"
+          },
           "description": "Per-upstream-witness hash records for stale-witness detection."
         }
       }
     },
     "caveats": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Free-text caveats / known limitations of the computation."
     },
     "precisionMetadata": {
@@ -109,7 +126,11 @@
   "$defs": {
     "ComputationAssertion": {
       "type": "object",
-      "required": ["name", "computed", "expected"],
+      "required": [
+        "name",
+        "computed",
+        "expected"
+      ],
       "properties": {
         "name": {
           "type": "string",
@@ -118,26 +139,38 @@
         "computed": {
           "description": "Computed value from the script. Numbers can be encoded as either JSON number or arbitrary-precision string.",
           "anyOf": [
-            { "type": "number" },
-            { "type": "string" }
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
           ]
         },
         "expected": {
           "description": "Expected value (from the paper / CODATA / OEIS / a previous computation).",
           "anyOf": [
-            { "type": "number" },
-            { "type": "string" }
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
           ]
         },
         "passed": {
           "type": "boolean",
-          "description": "Whether |computed - expected| ≤ tolerance (or equality for non-numeric)."
+          "description": "Whether |computed - expected| \u2264 tolerance (or equality for non-numeric)."
         },
         "tolerance": {
           "description": "Absolute error tolerance. Numbers can be encoded as either JSON number or arbitrary-precision string, exactly as `computed` and `expected` are. Widened from `number`-only 2026-08-28: 693 committed assertions across 136 witnesses already carry a string tolerance, because draining raw float64 at the producer (bean qou-t0rf) serialises the declared threshold as its literal. Those files were schema-invalid under the narrower type while doing the very thing the precision discipline asks for.",
           "anyOf": [
-            { "type": "number" },
-            { "type": "string" }
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
           ]
         },
         "unit": {
@@ -161,11 +194,11 @@
         },
         "output_dps": {
           "type": "integer",
-          "description": "Formatting precision for emitted assertion values (≤ compute_dps − guard_digits)."
+          "description": "Formatting precision for emitted assertion values (\u2264 compute_dps \u2212 guard_digits)."
         },
         "guard_digits": {
           "type": "integer",
-          "description": "compute_dps − output_dps; safety margin."
+          "description": "compute_dps \u2212 output_dps; safety margin."
         },
         "truncation_bound": {
           "type": "string",
@@ -175,7 +208,10 @@
     },
     "UpstreamWitnessHash": {
       "type": "object",
-      "required": ["path", "sha256"],
+      "required": [
+        "path",
+        "sha256"
+      ],
       "properties": {
         "path": {
           "type": "string",
@@ -186,16 +222,28 @@
           "description": "SHA-256 hex digest of the upstream witness file's raw bytes."
         },
         "size_bytes": {
-          "type": ["integer", "null"]
+          "type": [
+            "integer",
+            "null"
+          ]
         },
         "commitSha": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "scriptCommitSha": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "computedAt": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }
