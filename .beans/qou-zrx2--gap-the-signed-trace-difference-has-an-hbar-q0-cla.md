@@ -279,3 +279,92 @@ story is essentially untouched.
    points lie in different cycles. Mathlib has `Equiv.Perm.cycleType` but no
    direct orbit-count-under-swap lemma, so this needs the lemma built first. It
    would remove the last computational input other than Schur–Weyl.
+
+---
+
+## 2026-08-31 — follow-ups (2) and (3) done. Two binding derivation gaps closed.
+
+Probe: `computations/probes/binding_chain_floor_corrected_probe.py` (3
+assertions). Registry: `computations/derivation_chain.py`.
+
+### (3) The chain against `Δtr − c₀(A)`: pairwise additivity improves 2.4×
+
+`derive_binding_chain_cooperative` sums `(A−1)` **2-nucleon** bonds, so the chain
+accumulates `(A−1)·c₀(2) = (A−1)/8` of floor while the whole-atom trace carries
+only `c₀(A)`. Removing both:
+
+| | chain/atom raw | floors removed |
+|---|---|---|
+| D | 1.0000 | 1.0000 (D *is* the pn bond) |
+| T | 1.2812 | 1.1178 |
+| ³He | 1.1927 | **1.0198** |
+| ⁴He | 1.4706 | 1.1941 |
+
+Worst-case deviation **47.1 % → 19.4 %**, a factor of 2.4. And **60.8 % of the
+⁴He pairwise-vs-exact gap was floor bookkeeping**, not many-body physics.
+
+⚠ **The binding residual gets *larger*** — ⁴He 21.40 → 22.97 MeV under
+convention A — because the correction removes binding from the chain sum. Not in
+tension: the floor was inflating the pairwise sum, so removing it makes the
+pairwise picture more accurate *and* leaves more for the cooperative α term.
+
+### The leading-order discrepancy is an EXACT RATIONAL — gap closed, not narrowed
+
+`c₁ = lim (Δtr − c₀)/ℏ_q` is an exact dyadic rational in every case (≤ 1.3e-9):
+
+    pp 19/8    pn 37/16    nn 9/4    T 163/64    ³He 85/32    ⁴He 259/128
+
+so both orders of `Δtr` are dyadic — `c₀` derived, `c₁` measured — and the
+chain-vs-exact ratios follow with **no fitting**:
+
+    T    (37/16 + 9/4)/(163/64)        = 292/163 = 1.7914110429…
+    ³He  (19/8 + 37/16)/(85/32)        = 30/17   = 1.7647058824…
+    ⁴He  (19/8 + 37/16 + 9/4)/(259/128)= 888/259 = 24/7 = 3.4285714…
+
+matching the extrapolated ratios to 1e-8–1e-11. **The pairwise-vs-exact
+discrepancy at leading order is exactly known**, not a measured residual.
+
+### ⚠ And that says the q₀ agreement is a cancellation, not a structure
+
+At `q₀` the corrected ratios are 1.118 / 1.020 / 1.194; at **leading order** they
+are 1.791 / 1.765 / **3.429**. The chain over-counts by 3.4× at ⁴He as
+`ℏ_q → 0`, and the good agreement at `q₀` is higher-order terms partially
+cancelling that. **Pairwise additivity of the signed functor is not a controlled
+approximation** — its accuracy at `q₀` is a coincidence of the deformation size.
+
+Not a contradiction of `2026-06-16-b-sym-linear-chain-closed-form.md`, which
+reports exact additivity for the **log** functor `α·ln(tr_free/tr_atom)`. This is
+the **signed** functor, which is what `derive_binding_chain_cooperative` uses.
+Different objects — but the exactness claim must not be carried across, and they
+are easy to conflate.
+
+### (2) The registry entry, corrected — and the convention becomes *derived*
+
+`E_0_CONVENTIONS["B_q_value_absorbed"]` said its operator class "carries the
+ℏ_q² scaling". Corrected in place (original text kept, per the retraction
+discipline):
+
+* the operator is **ℏ_q⁰ + ℏ_q¹**, with the floor now named and derived;
+* **the "≈ 102×" warning cannot be recomputed as stated.** `1/ℏ_q² = 101.862` is
+  arithmetically right but its premise is false. The actual mismatch between
+  using A and B on the same trace difference is the scale ratio
+  `E₀^A/E₀^B = 5.35` — and two live producers differ by exactly that
+  (`binding_canonical` B → 0.4354 MeV; `derive_binding_chain_cooperative` A →
+  2.3297 MeV at the deuteron). The "MUST use B" rule rests on the wrong index
+  and cannot adjudicate them.
+
+**The gap this closes:** subtract the floor and `Δtr − c₀(A)` is a pure `ℏ_q¹`
+observable, which pairs with **A** to total `ℏ_q²` — the same bookkeeping as
+`Δ(net) × A`, which predicts `Q_β` to 0.168 %. So the atom-level scale is now
+**selected by ℏ_q bookkeeping** rather than by fiat or by proximity to AME.
+Before the subtraction no convention paired consistently at all.
+
+Recorded as a measured fact. **Re-designating the canonical convention is an
+owner decision and is not taken here** — that is the change that would move
+downstream numbers, and doing it because it lands closer to AME is the fit this
+lane has withdrawn three times.
+
+### (5) formalising the cycle count — attempted below / deferred
+
+See the next note. It is formal hygiene rather than a binding gap, so it was
+taken last per the owner's redirect to the binding primary goal.
