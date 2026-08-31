@@ -50,7 +50,8 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # now. All unconditional — function-call-time NameError if a function
 # is called without the import being available (caught by PR #1085
 # review).
-import math
+# `math` is NOT imported: it is float64-only, and this module is mpf end to
+# end under the NO-FLOAT64 directive (bean `qou-9ay6`). Use `_mp.*`.
 import json as _json
 import os as _os
 import sys as _sys
@@ -454,7 +455,7 @@ def partition_spectral_log_rate(partition):
         return 0.0
     chi = partition_character_sigma1(partition)
     ratio = abs(chi) / d
-    return math.log(ratio) if ratio > 0 else 0.0
+    return _mp.log(ratio) if ratio > 0 else 0.0
 
 
 # Canonical Reeb-time spectral parameter s_*.
@@ -485,7 +486,7 @@ def _partition_table() -> list[dict]:
             # Per-partition average log spectral rate (Perron-Frobenius proxy)
             _chi = partition_character_sigma1(_lam)
             _rho = abs(_chi) / _d if _d > 0 else 0.0
-            _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
+            _log_rho = _mp.log(_rho) if _rho > 1e-300 else -30.0
             # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
             # def:categorical-laplace-transform): categorical damping derived
             # from the q-heat spectrum rather than the Kerov Plancherel measure.
@@ -690,7 +691,7 @@ def _phi1_from_ordering(ordering):
             M00, M01, M10, M11 = n00, n01, n10, n11
         V = z * M10 + M11  # second row: [a,b]=[0,1]×M → (M₁₀, M₁₁)
         if abs(V) > 1e-300:
-            phi += math.log(abs(V))
+            phi += _mp.log(abs(V))
     return phi
 
 
@@ -1092,6 +1093,15 @@ class _CooMPF:
     def tocoo(self):
         return self
 
+    def toarray(self):
+        """Dense OBJECT ndarray of mpf. `_crossing_in_partition` calls this."""
+        dim = self.shape[0]
+        out = np.empty(self.shape, dtype=object)
+        out[:] = _MPF_ZERO
+        for i, j, v in zip(self.row, self.col, self.data):
+            out[i, j] = out[i, j] + v
+        return out
+
 
 def _is_coo_mpf(x) -> bool:
     """True for the mpf-capable sparse form built by `_build_ysn_matrices`."""
@@ -1101,7 +1111,10 @@ def _is_coo_mpf(x) -> bool:
 def _build_ysn_matrices(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
-    For dim ≥ sparse_threshold, returns scipy.sparse.csr_matrix objects
+    For dim ≥ sparse_threshold, returns `_CooMPF` objects — a COO form whose
+    values may be mpf. This was scipy.sparse.csr_matrix until the NO-FLOAT64
+    excision (bean `qou-9ay6`); scipy refuses dtype object, so it cannot hold
+    these entries at all
     (each σ_j has at most 2·dim nonzeros: a diagonal entry plus
     2×2 mixing blocks, so sparsity ≈ 2/dim).
     For smaller dim, returns dense tuples (faster for small cases).
@@ -1231,7 +1244,8 @@ def _trace_dim(M, dim):
 
 def _identity(dim):
     if dim >= 8:
-        return np.eye(dim)
+        # mpf object identity, not np.eye float64 (bean `qou-9ay6`).
+        return _mpf_eye(dim)
     return tuple(tuple(_MPF_ONE if i == j else _MPF_ZERO for j in range(dim))
                  for i in range(dim))
 
@@ -1252,8 +1266,10 @@ def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     if dim >= 8:
         # Work in numpy for large dims
         sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
-        return c * sig_np + d * np.eye(dim)
-    out = [[c * sig[i][j] + (d if i == j else 0.0) for j in range(dim)]
+        # `_mpf_eye`, not `np.eye` (bean `qou-9ay6`): a float64 identity here
+        # would reintroduce the float on the diagonal of every crossing matrix.
+        return c * sig_np + d * _mpf_eye(dim)
+    out = [[c * sig[i][j] + (d if i == j else _MPF_ZERO) for j in range(dim)]
            for i in range(dim)]
     return tuple(tuple(r) for r in out)
 
@@ -1372,10 +1388,10 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
     # Per-partition spectral log rate ρ_λ = |χ_λ(σ_1)| / d(λ)  —
     # computed from SYT counts without building the full YSN matrix.
     # See partition_spectral_log_rate for derivation.
-    per_cross_log = entry.get('spectral_log_rate', math.log(q0))
+    per_cross_log = entry.get('spectral_log_rate', _mp.log(q0))
     # Féray-Méliot damping relative to H₃(q) baseline
     damping = TWO_Q ** (-(k - 3)) if k > 3 else 1.0
-    return math.log(dim) + N_total * damping * per_cross_log
+    return _mp.log(dim) + N_total * damping * per_cross_log
 
 
 def _msig_object_safe(sig_sparse, M_run, gen, coo_cache):
@@ -1570,7 +1586,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             M = _mpf_eye(dim)
         else:
             M = _identity(dim)
-        L0 = math.log(dim)
+        L0 = _mp.log(dim)
         # Resolvent-damped scale (def:q-heat-equation,
         # def:categorical-laplace-transform):
         #   C_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*)
@@ -1582,7 +1598,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         # categorically-derived damping from the q-heat spectrum.
         scale = e['C_lambda_resolvent_MeV']
         state.append({
-            'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
+            'entry': e, 'dim': dim, 'M': M, 'log_norm': _MPF_ZERO,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
             'sparse': sparse_sigmas,
         })
@@ -1652,7 +1668,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
             if isinstance(s['M'], np.ndarray):
-                m_max = float(np.max(np.abs(s['M'])))
+                m_max = (np.max(np.abs(s['M'])))
             else:
                 m_max = 0.0
                 for i in range(dim):
@@ -1666,9 +1682,9 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
                                   for i in range(dim)]
                     s['M'] = tuple(tuple(r) for r in M_rescaled)
-                s['log_norm'] += math.log(m_max)
+                s['log_norm'] += _mp.log(m_max)
             tr_run = _trace_dim(s['M'], dim)
-            log_cur = (s['log_norm'] + math.log(abs(tr_run))
+            log_cur = (s['log_norm'] + _mp.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
             # LP complementary slackness is a FINAL-STATE condition:
@@ -1794,7 +1810,11 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     _issparse = _is_coo_mpf
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
-        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
+        # mpf, not float (bean `qou-9ay6`): keeps this early return the same
+        # TYPE as the computed one below, so a caller cannot silently get a
+        # float on one branch and an mpf on the other.
+        return (_MPF_ONE * entry.get('dim', 1), _MPF_ZERO,
+                int(entry.get('dim', 1)))
 
     ordering = []
     pc, nc = 0, 0
@@ -1810,7 +1830,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = _mpf_eye(dim) if sparse_sigmas else _identity(dim)
     _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
-    log_norm = 0.0
+    log_norm = _MPF_ZERO  # mpf, not 0.0 (bean qou-9ay6)
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
@@ -1834,7 +1854,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
                 M_step = _matmul_dim(M_step, M_cross, dim)
             M = _matmul_dim(M, M_step, dim)
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = (np.max(np.abs(M)))
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -1843,9 +1863,19 @@ def atom_character_raw(Z, N, entry, include_inter=True):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _mp.log(m_max)
     chi = _trace_dim(M, dim)
-    return (float(chi), float(log_norm), int(dim))
+    # No float() on chi or log_norm (bean `qou-9ay6`, NO-FLOAT64). These were
+    # downcast to ~17 digits at the very last step, after the entire mpf
+    # pipeline above had carried ~50. `log_norm` is the worse of the two: it
+    # is a rescaling EXPONENT, and the value it reconstructs is
+    # `chi * exp(log_norm)`, so a 1e-17 relative error in a log_norm of order
+    # 100 lands as ~1e-15 in the result — worse than float64 itself.
+    #
+    # This is a consumer-facing type change: both callers
+    # (`atom_markov_trace` here and `sdp_cross_channel`) do arithmetic on
+    # these and accept mpf. `dim` stays an int; it is a dimension.
+    return (chi, log_norm, int(dim))
 
 
 def _contrib_single_partition(Z, N, entry):
@@ -1882,10 +1912,10 @@ def _contrib_single_partition(Z, N, entry):
         M = _identity(dim)
     _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
 
-    log_norm = 0.0
-    log_prev = math.log(dim)
+    log_norm = _MPF_ZERO  # mpf, not 0.0 (bean qou-9ay6)
+    log_prev = _mp.log(dim)
     scale = entry['C_lambda_resolvent_MeV']
-    cumul = 0.0
+    cumul = _MPF_ZERO  # mpf, not 0.0 (bean qou-9ay6)
     tr_run = dim  # initial trace of identity
 
     for kkk in range(A):
@@ -1912,7 +1942,7 @@ def _contrib_single_partition(Z, N, entry):
             M = _matmul_dim(M, M_step, dim)
 
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = (np.max(np.abs(M)))
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -1921,11 +1951,11 @@ def _contrib_single_partition(Z, N, entry):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _mp.log(m_max)
 
         tr_run = _trace_dim(M, dim)
         if abs(tr_run) > 1e-300:
-            log_cur = log_norm + math.log(abs(tr_run))
+            log_cur = log_norm + _mp.log(abs(tr_run))
         else:
             log_cur = log_prev
         cumul += scale * (log_cur - log_prev)
@@ -1975,13 +2005,12 @@ def conjugate_pair_cross_term(Z, N, entry_lambda, entry_conj):
     tr_sign_l, cumul_l = _contrib_single_partition(Z, N, entry_lambda)
     tr_sign_c, cumul_c = _contrib_single_partition(Z, N, entry_conj)
     # Cross-scale: h × geometric mean of individual scales
-    import math as _math
     scale_l = entry_lambda['C_lambda_resolvent_MeV']
     scale_c = entry_conj['C_lambda_resolvent_MeV']
     # Effective scale uses h × geometric mean; retains sign via log
     sign_l = 1 if scale_l >= 0 else -1
     sign_c = 1 if scale_c >= 0 else -1
-    geom_mean = _math.sqrt(abs(scale_l * scale_c))
+    geom_mean = _mp.sqrt(abs(scale_l * scale_c))
     cross_scale_mev = hbar_like * geom_mean * sign_l * sign_c
     # Cross contribution: h × (cumul_l + cumul_c) / 2 weighted by mean scale.
     # Equivalent expression: h × average of per-partition corrections.
@@ -2210,7 +2239,6 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
     include_inter : bool (default True)
         If False, returns the FREE-NUCLEON Markov trace (intra only).
     """
-    import math as _math
     if k_cap is None:
         k_cap = K_PARTITION_MAX
     active = [e for e in _PARTITION_TABLE
@@ -2235,7 +2263,7 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
     max_ln = max(log_norms.values())
     trace = 0.0
     for lam, (chi_q, ln, entry) in chi_data.items():
-        chi_eff = chi_q * _math.exp(ln - max_ln)
+        chi_eff = chi_q * _mp.exp(ln - max_ln)
         d_l = entry['dim']
         w_l = entry['wedderburn_weight']
         # Linear Markov trace — NOT squared
@@ -2258,7 +2286,6 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
 
     Returns (norm_sq, per_partition_dict, log_norm_total).
     """
-    import math as _math
     if k_cap is None:
         k_cap = K_PARTITION_MAX
 
@@ -2284,7 +2311,7 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
     norm_sq = 0.0
     for lam, (chi_q, ln, entry) in chi_data.items():
         # Rescaled χ to the common exponent max_ln
-        chi_eff = chi_q * _math.exp(ln - max_ln)
+        chi_eff = chi_q * _mp.exp(ln - max_ln)
         d_l = entry['dim']
         w_l = entry['wedderburn_weight']
         contrib = w_l * (chi_eff / d_l) ** 2
