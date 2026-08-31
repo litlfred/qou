@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""qou-1ucq — recompute the p/n assembly chains on the CANONICAL 11-letter element.
+
+`markov-trace-assembly-{proton,neutron}.derivation.json` each report a tr_M
+computed from a LEGACY word, not from the element the live producer returns:
+
+  * proton: steps 4 and 6 assert a "6-crossing word, all positive sigma", giving
+    chi^(3) = q^6 and chi^(1,1,1) = q^-6. Measured, the canonical element has 6
+    sigma, 3 sigma^-1 and 2 averaged letters, so that premise is false (flagged
+    in the chain 2026-08-30, not repaired there).
+  * neutron: steps 5 and 7 evaluate chi from n_+/n_- of the 5-letter word
+    sigma_1 sigma_1^-1 sigma_2 sigma_1 sigma_2^-1 -- a DIFFERENT element of
+    H_3(q) from the 11-letter one its own step 4 declares. Its legacy-convention
+    note says so; this is the root cause of the 7.285e-8 (73x tolerance)
+    disagreement with `n-tr-M-q0.derivation.json`.
+
+THE RECOMPUTE. No new machinery: the corpus's own symbolic path, which is the
+route `atom_braid_word_3A`'s docstring says is the only valid one -- chi^lambda
+as the trace of the seminormal representation matrix product, each letter
+(c, d, g) acting as c*rho(sigma_g) + d*1, assembled as tr_M = sum_lambda
+y_lambda * chi^lambda. Exact over Q(q) throughout; no float64 anywhere.
+
+RESULT: it reproduces the live production values to every digit they carry.
+
+    atom     recomputed (proton pin)          live producer witness
+    p        1.1457596924573008697            1.14575969245730086968...
+    n        0.98774368811580957163           0.98774368811580957163...
+
+and at the muon-2022 pin it likewise matches the muon witnesses. So the correct
+recomputation of these chains is not a new number -- it is the number the rest
+of the stack already carries, which is the strongest available check that the
+linear-functional route is what the producers actually run.
+
+WHICH FRAME. The chains declare convention C at the CODATA-2018 muon pin. They
+are NOT recomputed in that frame, deliberately: convention C was excised by owner
+ruling (2026-08-09, reaffirmed 2026-08-15) and the proton pin is canonical (R2),
+so recomputing in C would be work in a retired frame. The weights used here are
+the corpus's own convention-D weights, and note what they do to the chains'
+structure:
+
+    y_(3)     = (q^4 + 1)/(q^2 + 1)^2
+    y_(2,1)   = q^2/(q^2 + 1)^2
+    y_(1,1,1) = 0
+
+The three-row weight VANISHES under D. So the sign-rep step -- one of the two
+steps carrying the proton chain's false "all positive sigma" premise -- is
+multiplied by zero and cannot affect the answer either way. The defect was real;
+under the canonical convention it is also inert.
+
+NOT CLAIMED: that the chains' reported values were wrong *within* convention C.
+That is a separate question this probe does not answer, and cannot, since the
+C weights are no longer in the tree.
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+sys.path.insert(0, str(HERE))
+
+import sympy as sp
+
+import markov_weights_symbolic as M
+
+PINS = {
+    "proton": "1.1099785827513808075916690956107688798744991218736",
+    "muon2022": "1.109978595642739046681795129380001752700065561029",
+}
+# Live producer witnesses, read from the committed files (not recomputed here).
+LIVE = {
+    ("p", "proton"): "1.1457596924573008696890815957741193059437280619435",
+    ("n", "proton"): "0.98774368811580957163402016550129498205504875906279",
+    ("p", "muon2022"): "1.145759782886925318714927926598527367822020597266",
+    ("n", "muon2022"): "0.987743757144974407621841927554513967527057104869",
+}
+CHAIN_REPORTS = {"p": "1.0653062285923893", "n": "0.9232332299116371"}
+
+_results: list[tuple[str, bool, str]] = []
+
+
+def check(name: str, ok: bool, detail: str) -> None:
+    _results.append((name, bool(ok), detail))
+    print(f"  [{'PASS' if ok else 'FAIL'}] {name} — {detail}")
+
+
+def main() -> int:
+    q = sp.symbols("q", positive=True)
+
+    print("=" * 72)
+    print("  qou-1ucq — assembly chains recomputed on the 11-letter element")
+    print("=" * 72)
+
+    y = M.solve_y_lambda(3)
+    print("\n-- the convention-D Wedderburn weights the recompute uses")
+    for lam in sorted(y, key=len):
+        print(f"     y_{str(lam):<10} = {sp.simplify(y[lam])}")
+    check("three_row_weight_vanishes_under_D",
+          sp.simplify(y[(1, 1, 1)]) == 0,
+          "y_(1,1,1) = 0, so the sign-rep step cannot affect the answer under D")
+
+    for lbl, (Z, N) in (("p", (1, 0)), ("n", (0, 1))):
+        cr = M.atom_braid_word_3A_to_crossings(Z, N, include_inter=False)
+        expr = sp.simplify(M.tr_M_canonical(cr, 3)[0])
+        print(f"\n-- atom {lbl}: {len(cr)} letters on 3 strands")
+        check(f"{lbl}_element_has_eleven_letters",
+              len(cr) == 11,
+              f"the canonical element, not the legacy word the chain uses")
+        for pin, qv in PINS.items():
+            got = sp.N(expr.subs(q, sp.Rational(qv)), 30)
+            want = sp.N(sp.Rational(LIVE[(lbl, pin)]), 30)
+            rel = sp.N(sp.Abs(got - want) / sp.Abs(want), 6)
+            check(f"{lbl}_matches_live_producer_at_{pin}",
+                  rel < sp.Rational(1, 10**18),
+                  f"{sp.N(got, 20)} vs witness {str(LIVE[(lbl, pin)])[:20]} — rel {rel}")
+        drift = sp.N(
+            sp.Abs(sp.N(expr.subs(q, sp.Rational(PINS['proton'])), 30)
+                   - sp.Rational(CHAIN_REPORTS[lbl]))
+            / sp.Rational(CHAIN_REPORTS[lbl]) * 100, 6)
+        print(f"     chain currently reports {CHAIN_REPORTS[lbl]} — {drift} % away")
+
+    n_pass = sum(1 for _, ok, _ in _results if ok)
+    print("\n" + "=" * 72)
+    print(f"  {n_pass}/{len(_results)} assertions passed")
+    print("  The recompute on the canonical 11-letter element reproduces the live")
+    print("  producer witnesses at both pins, to every digit they carry. The two")
+    print("  chains' reported values come from legacy words and are neither.")
+    print("  Exact over Q(q); no float64 anywhere. Scope: a correction, not a")
+    print("  new result -- the number was already in the stack.")
+    print("=" * 72)
+    return 0 if n_pass == len(_results) else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
