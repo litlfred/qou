@@ -1,11 +1,11 @@
 ---
 # qou-i68l
 title: three QOU modules do not compile on main, one broken today
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-30T16:04:02Z
-updated_at: 2026-08-30T16:04:02Z
+updated_at: 2026-08-31T03:03:19Z
 ---
 
 Found while rebuilding the whole qou package to reseed the lake cache (2026-08-30). `lake build`
@@ -48,3 +48,27 @@ the same way.
 
 SUGGESTED: whoever owns each module fixes it; separately, a cheap local gate that actually compiles
 the package (not the root no-op) would have caught all three at authoring time.
+
+## Summary of Changes
+
+FIXED. All three green with their `.olean`s deleted. TWO causes, and neither error message names
+the real one -- seven reported errors were two mistakes.
+
+1. `mem_addCell` is `(mu) (c) (x) (hc)` -- diagram first, four explicit args. Three call sites still
+   passed the old `(c, hc, x)` order:
+       TwoRowCorners:179        mem_addCell (2, 0) hs (2, 0)
+       BranchingGenericity:115  mem_addCell s hs _
+       BranchingGenericity:251  mem_addCell _ hs _
+   Lean says "argument (2, 0) has type ?m x ?m but is expected to have type YoungDiagram", which
+   reads as a problem with the CELL rather than with argument ORDER. At :251 the same slip surfaces
+   one position over, as `hs : IsAddableCell ...` "of sort Prop but expected ... N x N". The rcases
+   failure at :115:43 is downstream of the same line.
+
+2. `collatz_block_descent` declared no `universe u` while two theorems take `{Skein : Type u}`. The
+   workspace sets `autoImplicit = false` in the root lakefile, so `u` is not auto-bound and both
+   signatures fail. That strips the expected type from an anonymous constructor 10 lines later, and
+   the third error -- "Invalid <...> notation: expected type could not be determined" -- is PURE
+   CASCADE. Declaring the universe removes all three.
+
+The framing in this bean stands: one of the three was broken and merged the same day, and nothing
+said so, because workflows are dispatch-only AND a bare root `lake build` compiles nothing.

@@ -69,3 +69,24 @@ a defect in this test.
 
 The fix carries a byte-comparison assertion on the committed record, and I checked it is
 load-bearing: reverting the `--json` flag makes the new assertion fail.
+
+## Follow-up (2026-08-31): the stale record itself is now refreshed
+
+The earlier fix stopped the test from FABRICATING the record; it left the record STALE. Both are now
+closed. Regenerated from a full corpus scan on main:
+
+                       committed    fresh
+    scanned_files           3377     3449
+    files_flagged            153      134
+    total_defects            133      111
+    total_exempt              59       57
+    promoted_from_exempt      66       52
+    self-assuming-projection 112       90
+
+Verified before trusting it, because this file has a history of partial-scan clobbers (qou-c7jp):
+scanned_files went UP (3377 -> 3449), which is the OPPOSITE of the clobber signature; and of the 19
+files that lost entries, re-scanning Archimedean/BranchingConvergence.lean in isolation reports 0
+defects, so the entry went away because the defect was fixed on main, not because it went unscanned.
+
+The 295-line deletion looks exactly like the clobber and is not. That is why both checks are
+recorded rather than assumed.
