@@ -165,3 +165,53 @@ worth someone's time, none attempted here:
 **Do not "fix" this by lowering precision.** That is the one direction the
 corpus has already ruled out in writing, and a fourth agent rediscovering the
 float coercion is the likely failure mode here — I was the third.
+
+## 2026-08-31 (later) — (a) was NOT a design cost. It was a factorial enumeration.
+
+I called (a) "a design cost, not a bug" and said it was slow *because* object
+arithmetic replaces vectorised BLAS. **Profiling refutes that**, and it is the
+fourth wrong inference this pair of beans has produced from indirect evidence.
+
+Profile of `unified_iterative_correction(1,1)` — the smallest input reaching the
+code — over 90 s:
+
+    hecke_core_legacy.py:351(fill)   80.342 s tottime   26,028,387 calls
+    all of mpmath combined           < 1 s
+
+`_count_syts_by_12_relation` enumerated EVERY standard Young tableau of shape λ
+by backtracking, to classify each by where the value 2 sits. The count of those
+is d(λ), which grows factorially — so the cost was the irrep dimension itself:
+tens of millions of tableaux built to produce two integers.
+
+### The closed form
+
+In any SYT, 1 sits at (0,0), so 2 can only occupy (0,1) or (1,0) — the only
+cells whose predecessors are filled. Therefore
+
+    n_row = f^{λ/(2)}     n_col = f^{λ/(1,1)}     n_mix = 0, always
+
+Both are skew-SYT counts, computed by a memoised corner recursion (`_f_skew`)
+that never materialises a tableau. `n_mix` stays in the return signature because
+`partition_character_sigma1` multiplies it by `h`; it is provably the zero it
+always was.
+
+Verified against the old implementation on all 137 partitions of n = 2..10:
+**zero mismatches**, `n_mix == 0` everywhere. λ=(6,4,3,2,1), which has 1,153,152
+tableaux, now returns instantly. 145 tests pass. Landed in `2121201f1`.
+
+### What is left, and the next lead
+
+After the fix `fill` is gone from the profile entirely and the remaining cost is
+genuine mpf matrix multiplication — `_matmul_dim` at 72.8 s cumulative over 643
+calls. So the original "object arithmetic" story describes the REMAINDER, not
+what was dominating.
+
+Within that remainder there is a concrete, precision-free win still on the
+table: **6,186,121 `from_float` conversions**. `_build_ysn_matrices` seeds its
+dense matrices with `M = [[0.0] * dim ...]` — Python floats — and then writes
+`q0` / `-qi`, which are mpf. The matrices are therefore MIXED, and since YSN
+matrices are sparse most multiplications hit a `0.0` operand and convert it to
+mpf every time. Seeding with `mp.mpf(0)` instead is the same value with no
+conversions. `_matmul_dim` has the same shape in its accumulator (`s = 0.0`).
+
+Untested as of this note — do not assume the size of the win, measure it.
