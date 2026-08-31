@@ -1,11 +1,11 @@
 ---
 # qou-cite
-title: '13 citations point at bibliography entries that do not exist — the check had never run'
+title: 13 citations point at bibliography entries that do not exist — the check had never run
 status: todo
 type: bug
 priority: high
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-08-30T09:55:00Z
+updated_at: 2026-08-31T04:27:51Z
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`
@@ -88,3 +88,50 @@ the `if (strict)` and the check becomes permanent.
    check the citing claim, then either fix the year or add the work.
 3. The rest — genuinely absent works needing real metadata.
 4. Then un-gate.
+
+
+--------
+
+## VERIFIED 2026-08-31 — the gate fires; and the arithmetic that looked wrong is right
+
+The commit that landed this (`f5ecea6e36`) said in its own message that one
+thing was NOT confirmed: *that `--strict` under the GATED code actually fires
+the check*. It does. Measured, three runs, platform `21498cc`:
+
+| run | registry | verdict |
+|---|---|---|
+| default | not configured | `✓ Valid — 14` |
+| strict, registry forced OFF (`if (false)`) | not configured | `✓ Valid — 288` |
+| strict, as committed | configured | `✗ Invalid — 297` |
+
+The committed strict run prints the line the gate was written to print —
+`bibliography: 805 entries, parses; registry configured (cites-resolve ON)` —
+and carries all 10 `Unresolved citations` lines with the same 13 keys.
+
+### The 9-vs-10 discrepancy, resolved rather than waved past
+
+297 − 288 = **9**, but there are **10** citation lines. That is one short, and
+a one-off in a count is exactly the shape of a miscount, so it was chased
+rather than rounded.
+
+It is not a miscount. Configuring the registry *removes* an issue: the
+`ℹ [(bibliography)]: no reference registry configured — cites-resolve did not
+run` line, which is itself counted. Verified directly — the with-registry run
+contains **zero** `ℹ` lines. So 288 − 1 + 10 = 297 exactly.
+
+That self-announcement is the whole story of this bean in one line: the gate
+reported its own absence on every run for months, was counted as an issue
+every time, and nobody read it. It only stops being emitted at the moment it
+stops being true.
+
+### What the 288 is NOT
+
+`--strict` also turns on `term-mention-coverage` (AGENTS.md §4c), a separate
+pre-existing backlog of unwrapped glossary mentions. **288 of the 297 have
+nothing to do with citations.** Do not quote 297 as the citation debt, and do
+not read `Valid — 288` as an all-clear either: it is `Valid` only because
+those are warnings.
+
+**The citation debt is 13 keys across 10 blocks, unchanged.** Still not fixed
+here, for the reason in the body above: repointing a citation at a
+different paper is worse than a broken link.

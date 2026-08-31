@@ -100,6 +100,15 @@ try {
   // "Spherical Functions" vs the held `macdonald1995`), so the fix is per-citation
   // research, not a rename sweep — repointing a citation at a different paper is
   // worse than a broken link. Bean `qou-cite`.
+  //
+  // Measured under --strict (platform 21498cc): 288 issues with the registry
+  // forced off, 297 with it on. That is +9 for ten new citation lines, because
+  // configuring the registry also SILENCES the `ℹ no reference registry
+  // configured` line, which was itself being counted. 288 − 1 + 10 = 297.
+  //
+  // Do not read 297 as the citation debt: --strict also enables
+  // `term-mention-coverage`, and 288 of the 297 are unwrapped glossary mentions
+  // with no relation to citations.
   if (strict) {
     configureReferenceRegistry({
       references: bib.references,
