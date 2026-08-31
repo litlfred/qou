@@ -917,6 +917,124 @@ fn seminormal_matrices_mpfr(
         .collect()
 }
 
+/// **LP-dual accumulator step traces for one partition, at MPFR precision.**
+///
+/// Replaces the hot loop of `hecke_core_legacy.unified_iterative_correction`
+/// for a single partition. Python previously ran this in `mpmath` at ~2.3 us
+/// per scalar multiply-add, and -- because its sparse guard was unreachable
+/// (bean qou-sv7h) -- at O(dim^3) rather than O(dim*nnz), which is why the
+/// A=2 atom did not terminate.
+///
+/// `steps`: one chain per accumulation step; each chain is a list of
+/// `(c_str, d_str, gen)` applying `M <- c*(M @ sigma_gen) + d*M`, with `gen`
+/// 0-based into the seminormal generators. Coefficients arrive as decimal
+/// STRINGS so no f64 narrowing happens at the boundary.
+///
+/// Returns one `(trace, log_norm)` decimal-string pair per step, mirroring the
+/// Python loop exactly: the same `m_max > 1e80` rescale, the same accumulated
+/// `log_norm`, and the trace taken after the rescale.
+///
+/// One PyO3 crossing per partition per atom -- the O(dim*nnz) accumulation
+/// itself never leaves Rust.
+#[pyfunction]
+#[pyo3(signature = (shape, steps, q_str, dps=50))]
+fn lp_accumulator_step_traces_mpfr(
+    shape: Vec<usize>,
+    steps: Vec<Vec<(String, String, usize)>>,
+    q_str: String,
+    dps: u32,
+) -> PyResult<Vec<(String, String)>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps);
+    if sparse.is_empty() {
+        return Ok(Vec::new());
+    }
+    let dim = sparse[0].len();
+    let n_gens = sparse.len();
+
+    // M starts as the identity, in MPFR -- never np.eye float64.
+    let mut m: Vec<Vec<Float>> = (0..dim)
+        .map(|i| {
+            (0..dim)
+                .map(|j| Float::with_val(prec, if i == j { 1 } else { 0 }))
+                .collect()
+        })
+        .collect();
+
+    let mut log_norm = Float::with_val(prec, 0);
+    let threshold = Float::with_val(prec, 1e80);
+    let mut out: Vec<(String, String)> = Vec::with_capacity(steps.len());
+
+    for chain in &steps {
+        for (c_str, d_str, gen) in chain {
+            if *gen >= n_gens {
+                return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                    "generator index {} out of range (n_gens = {})",
+                    gen, n_gens
+                )));
+            }
+            let c = Float::with_val(prec, Float::parse(c_str).map_err(|e| {
+                pyo3::exceptions::PyValueError::new_err(format!("bad c coefficient: {e}"))
+            })?);
+            let d = Float::with_val(prec, Float::parse(d_str).map_err(|e| {
+                pyo3::exceptions::PyValueError::new_err(format!("bad d coefficient: {e}"))
+            })?);
+
+            // Msig = M @ sigma_gen, accumulated over sigma's nonzeros:
+            // O(dim*nnz), the same complexity scipy's sparse BLAS would give.
+            let mut msig: Vec<Vec<Float>> = (0..dim)
+                .map(|_| (0..dim).map(|_| Float::with_val(prec, 0)).collect())
+                .collect();
+            for (i, row) in sparse[*gen].iter().enumerate() {
+                for (j, v) in row.iter() {
+                    for a in 0..dim {
+                        let t = Float::with_val(prec, &m[a][i] * v);
+                        msig[a][*j] += t;
+                    }
+                }
+            }
+            // M <- c*Msig + d*M
+            for a in 0..dim {
+                for b in 0..dim {
+                    let lhs = Float::with_val(prec, &c * &msig[a][b]);
+                    let rhs = Float::with_val(prec, &d * &m[a][b]);
+                    m[a][b] = lhs + rhs;
+                }
+            }
+        }
+
+        // Rescale exactly as the Python loop does.
+        let mut m_max = Float::with_val(prec, 0);
+        for row in m.iter() {
+            for v in row.iter() {
+                let av = Float::with_val(prec, v.abs_ref());
+                if av > m_max {
+                    m_max = av;
+                }
+            }
+        }
+        if m_max > threshold {
+            for row in m.iter_mut() {
+                for v in row.iter_mut() {
+                    let q = Float::with_val(prec, &*v / &m_max);
+                    *v = q;
+                }
+            }
+            log_norm += Float::with_val(prec, m_max.ln_ref());
+        }
+
+        let mut tr = Float::with_val(prec, 0);
+        for i in 0..dim {
+            tr += &m[i][i];
+        }
+        out.push((
+            tr.to_string_radix(10, Some(dps as usize)),
+            log_norm.to_string_radix(10, Some(dps as usize)),
+        ));
+    }
+    Ok(out)
+}
+
 /// Dense transposition class-sum `C = Σ_{i<j∈[lo,hi]} ρ_λ(T_{(i,j)})` on V_λ at
 /// MPFR precision (private; shared by the class-sum and Lagrange-projector
 /// bindings). Returns `(C, dim)` or an error message on out-of-range strands.
@@ -1836,6 +1954,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(seminormal_matrices_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(lp_accumulator_step_traces_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(transposition_class_sum_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(lagrange_projectors_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mat_kron_mpfr, m)?)?;
