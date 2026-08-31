@@ -1,0 +1,85 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T14:42:30.609413+00:00",
+  "commitSha": "9cd039b8d435cb9bd094af28341098e5747b27b2",
+  "assertions": [
+    {
+      "name": "casimir_difference_is_exactly_2l_plus_1",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "symbolic over Fractions, l = 1..12"
+    },
+    {
+      "name": "scale_is_NOT_predicted_window_is_wide",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "46.7% of the scanned coupling range works"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "framing-spin-orbit-magic",
+  "scriptFile": "framing_spin_orbit_magic_probe.py",
+  "scriptHash": "5fbba4d542f2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/framing_spin_orbit_magic_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/framing_spin_orbit_magic_probe.py"
+  },
+  "description": "Framing spin-orbit route to the magic numbers. DERIVED, parameter-free: the ribbon twist acts by q^Casimir and l.s is a difference of Casimirs, so the twist ratio between j = l +/- 1/2 carries the exponent 2l+1 exactly -- the standard spin-orbit l-dependence, nothing chosen. NOT derived: the strength. ln(q0)=0.10434 lands inside the window that reproduces the ladder, but that window spans 46.7% of the scanned coupling range, so membership constrains almost nothing. Shape yes, scale no. Scope (a).",
+  "parameters": {
+    "n_top_gaps": 7,
+    "q0": "1.1099785827513808"
+  },
+  "data": {
+    "casimir_diff_equals_2l_plus_1": true,
+    "casimir_counterexamples": [],
+    "ln_q0": "0.10434072031951950548",
+    "window_lo": "0.060000",
+    "window_hi": "0.195000",
+    "window_fraction_of_scanned_range": "0.466667",
+    "ln_q0_inside_window": true,
+    "best_hits_anywhere": 6,
+    "best_false_positives": 1,
+    "hits_at_ln_q0": 6,
+    "false_positives_at_ln_q0": 1,
+    "closures_at_ln_q0": [
+      2,
+      8,
+      20,
+      40,
+      50,
+      82,
+      126
+    ]
+  },
+  "caveats": [
+    "Closures are the 7 largest energy gaps with false positives counted. That criterion tops out at 6 hits / 1 FP anywhere in the scan, including at couplings the literature reproduces all 7 with, so the 6/7 is a limit of the criterion and NOT a measured shortfall of the framework. Do not quote it as one.",
+    "Scope (a): a negative about the SCALE only. The 2l+1 shape result is positive and unaffected; it says the ribbon twist supplies the right l-dependence without a parameter."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

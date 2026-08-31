@@ -127,3 +127,31 @@ blast-radius check — an `abbrev` whose body names a missing constant elaborate
 fine until something unfolds it. Resolve the chain, or rebuild the cone. This is
 the same class as §1's instance-vs-binder miss: both are "the reference has a
 shape my grep did not model".
+
+## 8. TRAP — the FQN/name-surface guards: two ways they report a clean tree
+
+Both scripts live in `scripts/` (`lean-duplicate-fqn-audit.py`,
+`lean-name-surface-audit.py`, the second importing the first's parser).
+Measured 2026-08-30 on PR #6278, by running them rather than reading them:
+
+- **`--check-baseline` without `--verify` returns 0 having examined nothing.**
+  The propose-only branch `return 0`s before the baseline block, so the ratchet
+  prints an unverified candidate pair and exits clean. Same shape as the bare
+  root `lake build` (0 jobs, exit 0). **Fixed** — both baseline modes now imply
+  `--verify`, and a missing `LEAN_PATH` exits 2 rather than 0. If you ever see
+  `--check-baseline` exit 0 with no "COMPILER-CONFIRMED" line, that fix has
+  been reverted and the gate is not looking.
+- **`private` was invisible to both.** Lean mangles a private declaration's
+  environment name per module (`_private.<module>.0.<Ns>.<name>`), so two
+  modules can both declare one and be imported together. The surface audit was
+  putting such a pair in `L~L`, whose printed consequence reads *"hard import
+  error once anything imports both"* — false of the code it described. Live
+  instance: `QOU.BraidKnot.qIntBal`, private in `H3HeckeIdempotents`, public in
+  `ZeqNRhoCorrection`, both delegating to `QOU.QInteger.qIntBalCl`. **Fixed** —
+  the FQN audit skips private outright (sound: mangled names cannot collide);
+  the surface audit excludes them from `L~L` only and PRINTS the exclusion
+  count.
+
+**Baselines after the fix** (re-measure, do not quote): FQN propose **0** pairs,
+`--check-baseline` **0** confirmed collisions; surface audit `L~L` **0/0** with
+**1** private pair reported as excluded, `L~S` 76/48, `S~S` 38/25.

@@ -636,12 +636,46 @@ QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vo
 # FiveTwoVolumeBridge: the SAME truncation defect at the second knot --
 # MostowRigidity.knot5_2.volume := 2.82812208833078 is a 15-digit truncation of
 # VOL_5_2 = 3*BlochWigner_lob(fiveTwoShape) = 2.8281220883307831627... These are keyed
-# on the exact constant. NOTE there is deliberately NO positivity here: the 4_1 proof
-# went through Cl_2_pi_div_three_pos (its shape is on the unit circle), and the 5_2
-# shape is not -- the corpus has no 0 < BlochWigner_lob z for 0 < z.im.
+# on the exact constant. POSITIVITY: this block used to record that there was
+# deliberately none, because the 4_1 proof went through Cl_2_pi_div_three_pos (its shape
+# is on the unit circle) and the 5_2 shape is not. That reasoning still holds and the
+# corpus STILL has no STRICT 0 < BlochWigner_lob z for 0 < z.im (the NON-strict 0 <= D(z)
+# IS now proved, in QOU.Archimedean.BlochWignerNonneg) -- but VOL_5_2_pos below no
+# longer needs one: FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2 puts VOL_5_2 above VOL_4_1,
+# and Cl_2_pi_div_three_pos bounds VOL_4_1 (not VOL_5_2) below.
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_VOL_5_2_of_realises | clean
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_three_blochWigner_of_realises | clean
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_lt_iff_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_lt_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.VOL_5_2_pos | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_pos_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_ne_zero_of_realises | clean
+#
+# BlochWignerNonneg: 0 <= D(z) on the whole upper half plane, which the two bridge files
+# above both recorded as absent from the corpus. Six lines: Milnor's angle formula
+# (IdealTriangulation) + LobMonotonicity.lob_sum_nonneg. NON-STRICT only -- the strict
+# 0 < D(z) that ManifoldVolumeBridge declines to assume is still open, because
+# lob_sum_nonneg descends from subadditivity, which is not strict.
+QOU.Archimedean.BlochWignerNonneg | QOU.Archimedean.BlochWignerNonneg.volume_nonneg | clean
+QOU.Archimedean.BlochWignerNonneg | QOU.Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg | clean
+#
+# BlochWignerPositive: the STRICT 0 < D(z), which the comment above (and the headers of
+# both bridge files) called a further step needing angles bounded away from the corners
+# or a strict subadditivity. It needs NEITHER: Rivin strict concavity along a horizontal
+# chord whose two endpoints stay strictly interior, bounded below by the NON-strict
+# lob_sum_nonneg. The strictness comes from the concavity, not from the endpoints.
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.lob_sum_pos | clean
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.volume_pos | clean
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.blochWigner_lob_pos | clean
+#
+# ManifoldVolumePositive: 0 < vol m for a realised manifold -- the field
+# HyperbolicVolumeBridge deliberately does NOT carry. The class was right not to assume
+# it (it was derivable), so the consequence lives here rather than as a fourth field.
+# The 0 < n hypothesis is REAL: IdealTriangulation 0 is legitimate and its volume is the
+# empty sum 0.
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.triangulation_volume_pos | clean
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.vol_pos_of_realises | clean
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.vol_ne_zero_of_realises | clean
 #
 # FiveTwoShapeBounds: the first numeric handle on fiveTwoShape, which was
 # Classical.choose on an IVT statement and had NO bracket on re/im/modulus -- only
@@ -656,6 +690,71 @@ QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_re_bounds
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.radicand_bounds | clean
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im_bounds | clean
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_normSq_gt_one | clean
+
+# LobMonotonicity supplies the sign of Lambda' where Rivin concavity needs it.
+# qou-52ch's chord argument folds an obtuse angle with Lob_pi_sub, leaving
+# (Lob a - Lob (a+c)) + Lob c; the first bracket is positive because Lambda
+# DECREASES past pi/6, and no VALUE of Lambda is used -- which is the whole
+# point of that reduction and would be lost if it were done numerically.
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.one_lt_two_mul_sin | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.deriv_Lob_neg | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.strictAntiOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_sub_Lob_add_pos | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.concaveOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_nonneg_of_le_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_add_le | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.lob_sum_nonneg | clean
+
+# FiveTwoAngleSum translates VOL_5_2 (a Bloch-Wigner value) into the ANGLE
+# functional Rivin concavity is stated for. The corpus already had fiveTwoTet
+# and volume_eq_lob_sum; only the composition was missing.
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle_sum | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₁_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₂_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₃_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.VOL_5_2_eq_three_mul_lob_sum | clean
+
+# FiveTwoNinthPower proves the 5_2 smallest dihedral angle exceeds 2*pi/9 --
+# the angle condition qou-52ch's Rivin-concavity chord bound needs. Reached
+# WITHOUT any value of a transcendental function: z^3 = z - 1 makes z^9 a
+# quadratic in z, and Im(z^9) > 0 collapses to Re z < 2/3.
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.realRoot_gt_three_sevenths | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_upper | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_lower | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.ninth_power_im_pos_reduced | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_ne_zero | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_cubic | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_mul_realRoot | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_lt_two_thirds | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.disc_pos' | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_lt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.sqrt_three_mul_zz_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_arctan | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_lt_pi_div_four | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_six_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_arg_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₁ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.angle₁_lt_pi_div_two | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₂ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.all_angles_gt_two_pi_div_nine | clean
+
+# FiveTwoVolumeChord assembles the Rivin chord: VOL_4_1 < VOL_5_2. Only the
+# public theorem is pinned; the rest of the module is `private` scaffolding.
+QOU.Knot.FiveTwoVolumeChord | QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2 | clean
 
 """
 

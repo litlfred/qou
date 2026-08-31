@@ -389,11 +389,47 @@ def main() -> int:
         "tier": "structural-exact annihilation; convention-sorted L-free-factor match at q=1",
     }
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
+    builder = WitnessBuilder.wrap_legacy(
         "aj-trefoil-operator-construct-verify", payload,
         script_path=__file__, engine="sympy",
         engine_version=sp.__version__, start_time=t0,
-    ).save()
+    )
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    # Both checks below already existed and were already stored as
+    # data; neither is invented, and neither carries a tolerance —
+    # they are exact symbolic zero tests, so there is no threshold to
+    # fit.
+    builder.add_assertion(
+        "symbolic_annihilation_all_N",
+        computed=sum(1 for x in ver_ok.values() if x),
+        expected=N_VERIFY_SYMBOLIC,
+        tolerance=0,
+        source=(
+            "the order-%d inhomogeneous operator annihilates "
+            "J_N(T(2,3)) exactly for N=1..%d; residual is tested for "
+            "structural zero after cancel∘together, not numerically"
+            % (order, N_VERIFY_SYMBOLIC)
+        ),
+    )
+    # This one can genuinely fail in an emitted witness: the q->1 step
+    # does not early-return, so a construction that annihilated the
+    # coloured Jones tower but disagreed with the CLASSICAL trefoil
+    # A-polynomial would still reach `save()` and would now be red
+    # rather than silently green. The comparison is against known
+    # external mathematics, not against this script's own output.
+    builder.add_assertion(
+        "q_to_1_matches_classical_A_polynomial",
+        computed=1 if any_match else 0,
+        expected=1,
+        tolerance=0,
+        source=(
+            "at least one (m-convention, reference) pair matches the "
+            "classical trefoil A-polynomial up to an L-free factor in "
+            "M — the claim this witness's own `verdict` makes"
+        ),
+    )
+    out = builder.save()
     print(f"  Witness: {out}")
     return 0
 

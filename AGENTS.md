@@ -2343,24 +2343,37 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **twenty-two** rows, and they split three ways: **1-16** are
->   detector-blind *spellings* of convention C, **17-21** blind an *exemption*
->   or a guard rather than a detector, and **22** is a different arc entirely.
->   Several were found *by* detectors written to catch the previous blind spot.
->   Quote the split, not the total, because folding the last six into the C
->   figure inflates exactly the number this note exists to keep honest.
->   Rows 17-21 are the `qou-t9r1` family — a labelled two-arm comparison whose
->   D arm is a call, a sibling scope, a derived closed form, a Lean
->   declaration, or unreachable to an mpmath-only guard, so each is reported
->   as a leak forever. Row **22** is not about conventions at all — it comes from the
->   NO-FLOAT64 arc, where an assertion detector read its operands positionally
->   and so examined 13 % of a corpus that writes 87 % of its calls with
->   keywords, reporting `MEASURED: 0` against a true 56. That row is the first
->   evidence the pattern is not an artifact of the convention migration.
->   (This line has been stale four times — *thirteen* at 15 rows, *sixteen*
->   at 17, *eighteen* at 21 — and on the fourth fix I first wrote "twenty are
->   spellings", miscounting the very split I was adding. **Re-count the table;
->   do not trust this sentence, including this parenthesis.**) So: **treat
+>   catalogues **twenty-six** rows, and they split FOUR ways — only the first
+>   group is about conventions at all:
+>
+>   - **1-16** — detector-blind *spellings* of convention C.
+>   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
+>     rather than a detector: a labelled two-arm comparison whose D arm is a
+>     call, a sibling scope, a derived closed form, a Lean declaration, or
+>     unreachable to an mpmath-only guard, so each is reported as a leak
+>     forever.
+>   - **23-24** — `qou-4lbh`, the Lean statement-carrier arc: a defect that is
+>     an **absent** field rather than a wrong one, and a carrier written as
+>     `def … : Prop` instead of a `class`/`structure`.
+>   - **22, 25, 26** — the NO-FLOAT64 / witness arc, and the three of them are
+>     ONE root worth naming: *the interesting text is assumed to be a `str` in
+>     the AST, at the call.* 22 read a call's operands positionally and so
+>     examined 13 % of a corpus that writes 87 % of its calls with keywords
+>     (`MEASURED: 0` against a true 56). 26 could not see a witness key written
+>     as a keyword argument, because that key is an identifier. 25 could not see
+>     a literal reaching an assertion through a **list slot** two hundred lines
+>     up. Two different audits, two days apart, same assumption.
+>
+>   Several were found *by* detectors written to catch the previous blind spot —
+>   row 26 in the output of the audit that introduced it. Quote the split, not
+>   the total, because folding the last ten into the C figure inflates exactly
+>   the number this note exists to keep honest.
+>   (This line has been stale FIVE times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21, *twenty-two* at 26 — and on the fourth fix I first
+>   wrote "twenty are spellings", miscounting the very split I was adding. On
+>   the fifth, the agent adding rows 25-26 called them "the 17th and 18th"
+>   in a commit, a bean and a PR comment before re-counting. **Re-count the
+>   table; do not trust this sentence, including this parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
@@ -2623,6 +2636,35 @@ muon; muon-anchor → ~4000σ on proton).
    > > *"we want proton unless for an explicit reason (like comparison on
    > > proton vs muon results). otherwise pin proton"*
    > > *"fix all, even if not visible."*
+   >
+   > **🟧 REAFFIRMED AND SHARPENED 2026-08-30, for the `qou-p77d` tranche
+   > specifically.** The 32 q-dependent producers of `qou-p77d` had been held
+   > as "an owner decision, 32 times". They are not. The owner ruled, in these
+   > words:
+   >
+   > > *"it should be proton unless it is an explicit comparison / discussion
+   > > on CAL 123 math ideal or so."*
+   >
+   > This is the 2026-08-15 directive restated, with the exception set made
+   > explicit. **Proton is the default; there are exactly two exceptions**, and
+   > a producer qualifies only if it can be shown to be one of them:
+   >
+   > - **(E1) An explicit proton-vs-muon comparison** — the producer's PURPOSE
+   >   is to measure the difference between the two pins (the μ–p substrate
+   >   tension). `mu_substrate_tension_audit_100dps` is the type case. Such a
+   >   producer needs BOTH pins and belongs under `physical_proton` with a
+   >   per-process override, per constraint 3 below.
+   > - **(E2) The ideal CAL-1/2/3 mathematical layer** — the producer is
+   >   *about* the canonical calibration triple as mathematics (CAL-2 = 𝔇_β
+   >   with proxy `m_μ/m_e`), not about evaluating an observable. The muon pin
+   >   is what that layer MEANS, so pinning it to proton would not migrate the
+   >   producer, it would misstate the calibration. `q_pinning_50_digit` is the
+   >   type case and is anchor-DEFINING besides (constraint 1).
+   >
+   > **The burden is on the exception, not on the default.** A producer is
+   > proton unless someone can name which of E1/E2 it is and why. "It has
+   > always been muon", "its witness says muon", and "it is in the
+   > `ideal_muon` list" are NOT reasons — that list is what is being migrated.
    >
    > It is recorded **here** because the gate above asks for exactly that
    > and a chat transcript does not satisfy it. PR #5049 held the bulk

@@ -81,7 +81,7 @@ theorem ground_state_contribution (q : ℝ) (hq : q > 1) (β hbar : ℝ) :
     z_rot = Σ_{j=0}^{j_max} [2j+1]_q · exp(-β · [j]_q[j+1]_q · ℏ_q).
     Parameterised by the maximum angular momentum j_max. -/
 noncomputable def rotationalPartitionFunction {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (jMax : ℕ) : ℝ :=
+    (sp : ArchimedeanSubstrateField M) (p : M) (jMax : ℕ) : ℝ :=
   let q := sp.field p
   let beta := q / (q - 1)
   let hbar := quantumPlanckConstant sp p
@@ -92,7 +92,7 @@ noncomputable def rotationalPartitionFunction {M : Type*}
     the partition function with only j = 0 equals 1, which is positive.
     This shows the ground state is non-degenerate and Z > 0. -/
 theorem hydrogen_partition_ground_pos {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hq : sp.field p > 1) :
+    (sp : ArchimedeanSubstrateField M) (p : M) (hq : sp.field p > 1) :
     rotationalPartitionFunction sp p 0 > 0 := by
   unfold rotationalPartitionFunction
   simp only [zero_add, Finset.sum_range_one]
@@ -104,7 +104,7 @@ theorem hydrogen_partition_ground_pos {M : Type*}
 /-- The partition function is monotone in j_max: adding more angular
     momentum modes can only increase Z (all Boltzmann factors are positive). -/
 theorem partition_monotone {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hq : sp.field p > 1)
+    (sp : ArchimedeanSubstrateField M) (p : M) (hq : sp.field p > 1)
     (j : ℕ) :
     rotationalPartitionFunction sp p j ≤
     rotationalPartitionFunction sp p (j + 1) := by

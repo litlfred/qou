@@ -62,7 +62,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
@@ -211,7 +211,11 @@ def main() -> int:
     #      it failed, the solve itself would be wrong.
     wb.add_assertion(
         name="symmetric_template_forces_Q_eq_1",
-        computed=sym["Q"], expected="1", tolerance="1e-40",
+        # |Q - 1| against 0: Q vs "1" cancels in the float64 verdict
+        # (witness.py:830) at ~2.2e-16, putting the 1e-40 bound 2.2e24x below
+        # anything reachable. The residual form is reachable.
+        computed=fmt(abs(mp.mpf(str(sym["Q"])) - 1)), expected="0",
+        tolerance="1e-40",
         unit="dimensionless",
         source="QOU.MassTheory.second_parameter_is_one (Lean, sorry-free)")
 

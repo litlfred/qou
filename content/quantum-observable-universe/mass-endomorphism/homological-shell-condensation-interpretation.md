@@ -36,7 +36,7 @@ the substrate axioms.
 ## Relation to the Hoefsmit / matrix-evaluation programme
 
 Numerical verification at $k = 3, \dots, 10$
-([prop:magic-numbers-from-q](../observations/magic-numbers-from-q.md))
+([conj:magic-numbers-from-q](../observations/magic-numbers-from-q.md))
 empirically confirms $E_\infty^{p, >0}(n) = 0$ at $n = 2, 8, 20$ via
 direct computation of :refterm[descent]{#descent} residues from Hoefsmit matrices. The
 combinatorial blow-up at $k \geq 12$ blocks the matrix-evaluation

@@ -1,4 +1,4 @@
-The scale-independence proof attributes the missing pion scale to the meson's binding topology: the Hopf link complement is a solid torus, so $\mathrm{Vol} = 0$ and there is no geometric invariant to set $m_\pi$ from $(m_\mathfrak{e}, q_0)$. That is correct, but it reads as a fact about one link. It is a fact about where the pion sits in a ladder, and stating it that way explains the calibration structure rather than merely reporting it.
+The scale-independence proof attributes the missing pion scale to the meson's binding topology: the Hopf link complement is $T^2 \times I$, Seifert-fibred rather than hyperbolic, so $\mathrm{Vol} = 0$ and there is no geometric invariant to set $m_\pi$ from $(m_\mathfrak{e}, q_0)$. That is correct, but it reads as a fact about one link. It is a fact about where the pion sits in a ladder, and stating it that way explains the calibration structure rather than merely reporting it.
 
 **The ladder.** The [fundamental knot operator basis](#fundamental-knots-operator-basis) assigns the same braid word to three particles at successive powers:
 

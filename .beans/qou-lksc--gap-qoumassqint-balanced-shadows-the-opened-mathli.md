@@ -1,11 +1,11 @@
 ---
 # qou-lksc
 title: 'GAP: QOU.Mass.qInt (balanced) SHADOWS the opened MathlibExt.qInt (geometric) — two red modules on main'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T08:41:28Z
-updated_at: 2026-08-30T10:04:31Z
+updated_at: 2026-08-30T11:03:20Z
 ---
 
 ## The defect
@@ -135,3 +135,18 @@ The count is only meaningful against a whole-corpus `-k` run, which is exactly t
 input. A standalone script would have to reproduce the cone build, the env-gap distinction
 and the blocker attribution — all of which already exist here and are better than what I
 would have rebuilt.
+
+
+---
+
+## CLOSED 2026-08-30 — all three defects fixed and merged
+
+`QOU/Mass/ColorCurveQIntegerForm.lean` and
+`QOU/Mass/QDiffProlongationBaseOperator.lean` now fully qualify
+`QOU.MathlibExt.qInt` with a disambiguation note; `QOU/Archimedean/ParticleKnots.lean`
+dropped its duplicate `abbrev R_q` and imports `QOU.Archimedean.GroundRing`
+(PR #6140, `6e771d6f7ce`). `lean QOU.lean` exits 0; the corpus went from 180
+modules reading sorry-free while never type-checked, to 0.
+
+The generalisation — 26 further module pairs that can never both be imported —
+is measured and guarded in `qou-kfcl` / PR #6191, not here.

@@ -48,7 +48,13 @@ facts (positive coefficients, a numeric value `≠` a numeric target).
 -/
 import Mathlib.Tactic
 
-namespace QOU.MassTheory
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.MassTheory.BraneTowerLevelAmplitude
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.MassTheory.BorromeanMagnitudeLift
 
 /-! ### Brunnian-order-suppressed level deficit: `D_L(h) = h⁴ · κ_L(h)` -/
 
@@ -142,4 +148,4 @@ theorem borromean_H9_near_miss {E0 h κ : ℝ}
     0 < levelMagnitude E0 h κ ∧ ¬ MagnitudeCloses E0 h κ (0.4708 : ℝ) :=
   ⟨levelMagnitude_pos hE hh hκ, not_closed_at_H9 hv⟩
 
-end QOU.MassTheory
+end QOU.MassTheory.BorromeanMagnitudeLift

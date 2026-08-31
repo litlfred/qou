@@ -84,3 +84,48 @@ from the numbers:** factorisation and trace identities survive a convention
 change; every decimal does not. Evidence:
 `library-and-staleness-traps.md`.
 
+
+## TRAP — a ripgrep FILE CAP is not a result (measured on myself, 2026-08-30)
+
+A scoped SEMF sweep returned `Found 60 files limit: 60`. That line is
+**truncation**, not a count, and it was read as a count. The uncapped re-run
+returned **98**. Worse, the background job launched as the uncapped check was
+*itself* silently short — 62 hits, `content/` only, no `computations/` or
+`docs/` at all, exit 0 — while `computations/.../delta2phi_semf_pairing_probe.py`
+is literally named `semf`. So two independent measurements of one surface were
+both incomplete, in different ways, and both exited clean.
+
+**Read the cap line before the hit list, and when a second pass is meant to
+confirm a first, verify its SCOPE covers the trees the first one did.** An
+exit-0 grep over the wrong subtree is indistinguishable from an exhaustive one.
+
+In that instance the verdict survived — the seven recovered files were all
+pre-refutation and none bore on the question — but that was luck, not method.
+
+## RESOLVED TOPIC — `A^{1/3}` / nuclear radius: refuted four ways, do NOT re-open
+
+Asked again 2026-08-30 and it costs a full sweep each time. The answer:
+
+- **bean `qou-nf9l` (COMPLETED)** +
+  `docs/audits/2026-07-13-packing-exponent-combinatorics-derive-or-refute.md` —
+  all three corpus combinatorial classes refuted symbolically. *"The framework
+  has no combinatorial object producing a cube root of A; `A^{-1/3}` remains an
+  empirical import."* Its census: every `1/3` in the corpus is a **fixed index
+  3**, never an `A`-th root.
+- **The exponent the data wants is `1/4`, not `1/3`.** 8-pair mirror fit
+  `p* = 0.252 ± 0.020` — `1/4` at 0.1σ, `1/3` at **4.1σ**. Independently
+  reproduced on 5 pairs 2026-08-30 (`coulomb_from_crossing_counts_probe.py`).
+- **The hyperbolic route gives `ln A`, not `A^{1/3}`** —
+  `2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md:326-341`: in
+  `H³`, `V ∝ A` ⇒ `R ~ ½ln(2V/π)`. This is the strongest structural fact.
+- **There is no volume→length transport in the corpus, and it says so about
+  itself** — `pion_radius_and_cusp_volume_gap_probe.py:56-63`. Every corpus
+  length is a Compton inversion `ℏc/mass`.
+- **The radius formulation is IDENTICALLY the energy formulation** (40-digit
+  verified, `2026-07-13-pion-radius-and-vol-to-radius-gaps.md` GAP 2), so there
+  is no length object owed at all. Attack `E_pack ∝ m_π·A^{-1/3}` in pure MeV.
+
+**Not refuted, and often confused with the above:** the `Z(Z-1)` multiplicity.
+`CrossingCountAffine` excludes only the LINEAR class; the counts reach it
+quadratically (`16·Z(Z-1) = (n₊-n₋)(n₊-n₋-4)`, `CoulombFromCrossingCounts`).
+Keep the two halves of `Z(Z-1)/A^{1/3}` apart — one is open, one is closed.

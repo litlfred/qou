@@ -44,7 +44,18 @@ lives downstream.
 LaTeX label: `prop:hecke-1d-irrep-closed-form-character`
 -/
 
-namespace QOU.BraidKnot
+-- Declarations here are nested one namespace deeper than `QOU.BraidKnot` so
+-- this block's sibling and `QOU.BraidKnot.HoefsmitV21CosSymmetrization` can be
+-- imported together: both declared `heckeH`, and Lean rejects the second
+-- import with "environment already contains" (bean `qou-kfcl`).
+--
+-- They are the SAME quantity — the Hecke structure constant `q - q^-1` of
+-- AGENTS.md §7a — at two ground rings: `(q : R)` over ℝ there, and the
+-- generic `(q : Rˣ)` over a `CommRing` here. The generic one is the better
+-- long-term home per §7c, but it has no importers while the ℝ one has three,
+-- so the cheap move is to nest this side. Consolidating onto the generic
+-- version is left to `qou-u87j`.
+namespace QOU.BraidKnot.Hecke1dIrrep
 
 universe u
 
@@ -271,7 +282,7 @@ theorem hecke_1d_irrep_closed_form_character [CommRing R] [Invertible (2 : R)]
   · exact hecke_1d_trivial_character_closed_form q β
   · exact hecke_1d_sign_character_closed_form q β
 
-end QOU.BraidKnot
+end QOU.BraidKnot.Hecke1dIrrep
 
 
 /-! ## §3b-cond conditional-class hypothesis -/

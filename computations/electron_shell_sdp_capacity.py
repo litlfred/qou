@@ -67,7 +67,12 @@ def qintv(k):
 # NF basis [γ, σ₀, σ₁, L₊, L₋, e⁻] with Markov-trace weights (cost operator T).
 NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-TR_M = np.array([1.0, z, z, z * z, z * z, z ** 3])
+# tr_M(e^-) = z*tr_M(sigma_0^2) = z(hz+1) = h*z^2 + z, from the defining
+# Markov property tr(x T_n y) = z tr(xy) with T^2 = hT + 1.  z^3 is the
+# tr(T_w) = z^len(w) guess: true for len <= 2 in H_3, false at len 3.
+# Independent of convention -- both steps hold for any value of z.
+# Prior audit: docs/audits/2026-05-19-trm5-markov-bug.md (bean qou-isu5).
+TR_M = np.array([1.0, z, z, z * z, z * z, h * z * z + z])
 OPS = [("σ₀⁻¹", 0, 1.0, -h), ("σ₁⁻¹", 1, 1.0, -h)]  # electron crossings
 
 

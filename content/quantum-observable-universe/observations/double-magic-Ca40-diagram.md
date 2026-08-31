@@ -1,19 +1,19 @@
-$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test case. Both proton and neutron counts lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example illustrates the partition-level rigidity of the double-magic LR-fusion conjecture ([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion)). We analyze the regime where both blocks are saturated and the LR fusion collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
+$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test case. Both proton and neutron counts lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example illustrates the partition-level rigidity of the double-magic LR-fusion conjecture ([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion)). We analyze the regime where both blocks are saturated and the LR fusion collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
 
 ## Twin saturated blocks
 
 Both $Z = 20$ and $N = 20$ are magic. By [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md), the categorical mass at each level is supported on a single self-conjugate partition. We use the self-conjugate hook-staircase of size $20$ \cite{geckpfeiffer2000} as a representative diagrammatic illustration:
 
 $$
-  \lambda_{20} \;=\; \mu_{20} \;=\; (5, 4, 4, 4, 3) \;=\; (5,4,4,4,3)'
+  \lambda_{20} \;=\; \mu_{20} \;=\; (5, 5, 4, 4, 2) \;=\; (5,5,4,4,2)'
 $$
 
 ```text
   ■ ■ ■ ■ ■
+  ■ ■ ■ ■ ■
   ■ ■ ■ ■
   ■ ■ ■ ■
-  ■ ■ ■ ■
-  ■ ■ ■
+  ■ ■
 ```
 
 This diagram is symmetric under transposition. Arms equal legs, yielding $\sum c(x) = 0$. The full-twist eigenvalues at level $20$ are $q^0 = 1$ on both the $Z$-block and the $N$-block.

@@ -12,7 +12,7 @@ $$
   a_n \;=\; \prod_{k=1}^{n} \frac{1}{[k]_q} \;=\; \frac{1}{[n]_q!}.
 $$
 
-This verifies the claimed coefficient. Convergence on a neighbourhood of $0$ holds because $[n]_q! \to \infty$ faster than geometrically when $|q| < 1$ or $|q| > 1$. When $|q| = 1$ is irrational, convergence holds by Diophantine estimates. This series provides the archimedean realisation of the universal grouplike. Its existence over $\mathbb{C}$ forms a theorem about the $\mathbb{C}$-fibre of the moduli of grouplikes over $\mathbb{Z}[q, q^{-1}]$, not a redefinition of $\exp_q$. $\qed$
+This verifies the claimed coefficient. Convergence on a neighbourhood of $0$ holds because $[n]_q! \to \infty$ faster than geometrically when $|q| < 1$ or $|q| > 1$. When $|q| = 1$, write $q = e^{2\pi i\theta}$; for irrational $\theta$ convergence holds by Diophantine estimates on $\theta$. This series provides the archimedean realisation of the universal grouplike. Its existence over $\mathbb{C}$ forms a theorem about the $\mathbb{C}$-fibre of the moduli of grouplikes over $\mathbb{Z}[q, q^{-1}]$, not a redefinition of $\exp_q$. $\qed$
 
 **Special values.**
 

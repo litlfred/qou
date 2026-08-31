@@ -52,6 +52,10 @@ from pathlib import Path
 
 import sympy as sp
 
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from canonical_braid_crossings import CTYPES  # noqa: E402
 
 HERE = Path(__file__).parent

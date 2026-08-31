@@ -47,6 +47,7 @@ from datetime import datetime, timezone
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, re, zeta
 from mpmath import fabs as mpabs
+from mpmath import nstr  # noqa: E402 — assertion serialization (bean qou-srvu)
 
 from witness_base import WitnessBuilder
 
@@ -83,6 +84,10 @@ def main() -> None:
     LI_3_ORBIT = sum(polylog(3, z) for z in ZETA_5_K)
     PREDICTED_ORBIT = (mpf(5) ** (1 - 3) - 1) * ZETA_3
     ORBIT_RESIDUAL = mpabs(LI_3_ORBIT - PREDICTED_ORBIT)
+    # The threshold this script already states in its own prose, its
+    # print block and the field name `residual_below_1e_45`. Named here
+    # so the assertions below reuse it rather than re-spelling it.
+    ORBIT_TOL = mpf("1e-45")
 
     # Imaginary parts cancel under the sum (complex-conjugate pairs):
     LI_3_ORBIT_IM = im(LI_3_ORBIT)
@@ -105,9 +110,9 @@ def main() -> None:
     print(f"  sum_{{k=1}}^4 Li_3(zeta_5^k)    = {LI_3_ORBIT}")
     print(f"  predicted: (5^{{-2}} - 1) zeta(3) = {PREDICTED_ORBIT}")
     print(f"  residual                       = {ORBIT_RESIDUAL}")
-    print(f"  residual < 1e-45               = {float(ORBIT_RESIDUAL) < 1e-45}")
+    print(f"  residual < 1e-45               = {ORBIT_RESIDUAL < ORBIT_TOL}")
     print(f"  imag part of orbit sum         = {LI_3_ORBIT_IM}")
-    print(f"  imag part vanishes (mod eps)   = {abs(float(LI_3_ORBIT_IM)) < 1e-45}")
+    print(f"  imag part vanishes (mod eps)   = {mpabs(LI_3_ORBIT_IM) < ORBIT_TOL}")
 
     witness = {
         "computation": "bring-trilog-zeta5-depth-3",
@@ -156,10 +161,10 @@ def main() -> None:
             "computed_orbit_sum": str(LI_3_ORBIT),
             "predicted_orbit_sum": str(PREDICTED_ORBIT),
             "residual": str(ORBIT_RESIDUAL),
-            "residual_below_1e_45": float(ORBIT_RESIDUAL) < 1e-45,
+            "residual_below_1e_45": bool(ORBIT_RESIDUAL < ORBIT_TOL),
             "imag_part_of_orbit_should_vanish": str(LI_3_ORBIT_IM),
-            "imag_vanishes_below_1e_45": (
-                abs(float(LI_3_ORBIT_IM)) < 1e-45
+            "imag_vanishes_below_1e_45": bool(
+                mpabs(LI_3_ORBIT_IM) < ORBIT_TOL
             ),
         },
         "depth_correspondence": {
@@ -193,6 +198,40 @@ def main() -> None:
         script_path=__file__,
         engine="mpmath",
         start_time=start,
+    )
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    # Both checks below already existed — they were printed and stored
+    # as `residual_below_1e_45` / `imag_vanishes_below_1e_45`, and the
+    # second field is literally named `imag_part_of_orbit_should_vanish`
+    # — but no consumer could see them fail. Nothing is invented.
+    #
+    # The check is against the KNOWN functional equation
+    #   sum_{k=1}^{N-1} Li_n(zeta_N^k) = (N^{1-n} - 1)·zeta(n),
+    # i.e. external mathematics, not this script's own output. The
+    # threshold is the file's own 1e-45, quoted in its description and
+    # in both field names; it is not reverse-engineered from what was
+    # observed.
+    builder.add_assertion(
+        "bring_orbit_sum_matches_functional_equation",
+        computed=nstr(ORBIT_RESIDUAL, 8),
+        expected="0",
+        tolerance=nstr(ORBIT_TOL, 2),
+        source=(
+            "sum_{k=1}^4 Li_3(zeta_5^k) = (5^-2 - 1)·zeta(3); the "
+            "Bring-orbit cross-check this witness's description claims"
+        ),
+    )
+    builder.add_assertion(
+        "bring_orbit_sum_imaginary_part_vanishes",
+        computed=nstr(mpabs(LI_3_ORBIT_IM), 8),
+        expected="0",
+        tolerance=nstr(ORBIT_TOL, 2),
+        source=(
+            "the 4 primitive 5th roots pair as complex conjugates, so "
+            "the orbit sum is real — a nonzero Im would mean a wrong "
+            "root set or a wrong branch of Li_3"
+        ),
     )
     out = builder.save()
     print(f"\nwitness: {out}")

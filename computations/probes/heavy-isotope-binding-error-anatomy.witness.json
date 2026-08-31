@@ -1,0 +1,218 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T16:56:38.878756+00:00",
+  "commitSha": "95cfa4b14c7cd98986971a61e73880be95ac7e5d",
+  "assertions": [
+    {
+      "name": "error_is_non_monotonic_in_A",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "model_lacks_the_pshell_dip",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "model_BA_grows_with_A_not_bounded_degree",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "growth_is_linear_in_A_ie_B_quadratic",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 79,
+  "computation": "heavy-isotope-binding-error-anatomy",
+  "scriptFile": "heavy_isotope_binding_error_anatomy.py",
+  "scriptHash": "369bf8954ea1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/heavy_isotope_binding_error_anatomy.py"
+    ],
+    "reproduce": "python3 -u computations/probes/heavy_isotope_binding_error_anatomy.py"
+  },
+  "description": "Anatomy of the qou_mass binding over-prediction. The error is NON-MONOTONIC in A (peak +36.5% at 6Li, minimum ~+5% at 12C-16O, then rising again to +19.5% at 40Ca), which rules out a single mis-scaled coefficient. TWO independent components. (1) A=5..11: the model has NO p-shell dip -- experiment falls 1.74 MeV/A from 4He to 6Li, the model falls 0.21, and experimental B/A has 5.9x the variance of the model's over A=4..16. The +36% spike is the ABSENCE of the experimental dip, not an A-dependence error. (2) A>=12: the model's B/A is LINEAR in A (fit 7.0862 + 0.0781674*A, max residual 0.33 MeV/A over A=4..40), so B is QUADRATIC in A -- complete-graph C(A,2) pair counting with epsilon = 0.156335 MeV per pair-bond. That is exactly the z = A-1 law that QOU.Mass.CoordinationSaturation refutes structurally: complete graph gives unbounded B/A, bounded degree gives constant, and observed saturation forces bounded degree. The Lean proves what the model must satisfy; the live compute does not satisfy it. Does NOT localise the A^2 term in source, and does NOT claim fixing one component fixes the other -- they are independent.",
+  "data": {
+    "per_isotope": {
+      "D": {
+        "A": 2,
+        "B_pred": "2.24882079790130897938677662750706076622009277343749812433486",
+        "B_AME": "2.22456619913704998296604897091974380604051047097721122865202",
+        "BA_model": "1.12441039895065448969338831375353038311004638671874906216743",
+        "BA_exp": "1.11228309956852499148302448545987190302025523548860561432601",
+        "err_pct": "1.09030690000000000000000000000000000000000000000008683917743"
+      },
+      "T": {
+        "A": 3,
+        "B_pred": "8.46859839796813821730813259591741370968520641326900473921675",
+        "B_AME": "8.48179620008240944764480963438065452383411014616810408650196",
+        "BA_model": "2.82286613265604607243604419863913790322840213775633669491539",
+        "BA_exp": "2.82726540002746981588160321146021817461137004872270136216732",
+        "err_pct": "-0.155601500000000000000000000000000000000000000000172937541460"
+      },
+      "3He": {
+        "A": 3,
+        "B_pred": "7.48891931988322064952348334695094443048990486136409864665890",
+        "B_AME": "7.71804131616344872992653781844550436269165574618091712597269",
+        "BA_model": "2.49630643996107354984116111565031481016330162045469954888630",
+        "BA_exp": "2.57268043872114957664217927281516812089721858206030570865756",
+        "err_pct": "-2.96865470000000000000000000000000000000000000000001196563832"
+      },
+      "4He": {
+        "A": 4,
+        "B_pred": "29.9556772795328825980939333878037777219596194454563090581649",
+        "B_AME": "28.2956623885513868603857550670923753077643325931265211298105",
+        "BA_model": "7.48891931988322064952348334695094443048990486136407726454122",
+        "BA_exp": "7.07391559713784671509643876677309382694108314828163028245263",
+        "err_pct": "5.86667620000000000000000000000000000000000000000002472032810"
+      },
+      "6Li": {
+        "A": 6,
+        "B_pred": "43.6570057518814300000000000000000000000000000000000066532041",
+        "B_AME": "31.9939872094695819740507508657367186829454737299455538858326",
+        "BA_model": "7.27616762531357166666666666666666666666666666666666777553401",
+        "BA_exp": "5.33233120157826366234179181095611978049091228832425898097211",
+        "err_pct": "36.4537825999999999999999999999999999999999999999999069329814"
+      },
+      "7Li": {
+        "A": 7,
+        "B_pred": "51.3376716278221500000000000000000000000000000000000319656435",
+        "B_AME": "39.2450807095613693416812399685867026681008879187886980715789",
+        "BA_model": "7.33395308968887857142857142857142857142857142857143161065495",
+        "BA_exp": "5.60644010136590990595446285265524323830012684554123952706589",
+        "err_pct": "30.8130106999999999999999999999999999999999999999999501586600"
+      },
+      "9Be": {
+        "A": 9,
+        "B_pred": "67.3057507556442800000000000000000000000000000000000642040549",
+        "B_AME": "58.1640236758234931440205945479279621113103386617789652552124",
+        "BA_model": "7.47841675062714222222222222222222222222222222222222698021525",
+        "BA_exp": "6.46266929731372146044673272754755134570114874019766636982099",
+        "err_pct": "15.7171503999999999999999999999999999999999999999999534106577"
+      },
+      "10B": {
+        "A": 10,
+        "B_pred": "75.5931640075257100000000000000000000000000000000000587327430",
+        "B_AME": "64.7508350159179097662063590646946894169631968463505453330396",
+        "BA_model": "7.55931640075257100000000000000000000000000000000000373506253",
+        "BA_exp": "6.47508350159179097662063590646946894169631968463505453330396",
+        "err_pct": "16.7446937000000000000000000000000000000000000000000725615335"
+      },
+      "11B": {
+        "A": 11,
+        "B_pred": "83.8805772594071499999999999999999999999999999999999187700830",
+        "B_AME": "76.2050553339079313646685589132322492283682555283497948441949",
+        "BA_model": "7.62550702358246818181818181818181818181818181818181565685247",
+        "BA_exp": "6.92773230308253921496986899211202265712438686621361965693751",
+        "err_pct": "10.0721952000000000000000000000000000000000000000000395721760"
+      },
+      "12C": {
+        "A": 12,
+        "B_pred": "97.1480003597186840858081527968221197776998376600805756338970",
+        "B_AME": "92.1617352000973005909712845878546103093425380886613167012733",
+        "BA_model": "8.09566669664322367381734606640184331480831980500672176353065",
+        "BA_exp": "7.68014460000810838258094038232121752577854484072177639177278",
+        "err_pct": "5.41034209999999999999999999999999999999999999999995537835995"
+      },
+      "14N": {
+        "A": 14,
+        "B_pred": "109.956311766932860000000000000000000000000000000000011845586",
+        "B_AME": "104.658607150839175358075365310148472389479454543608116052940",
+        "BA_model": "7.85402226906663285714285714285714285714285714285714064866791",
+        "BA_exp": "7.47561479648851252557681180786774802781996103882915114663857",
+        "err_pct": "5.06189099999999999999999999999999999999999999999995758403657"
+      },
+      "16O": {
+        "A": 16,
+        "B_pred": "134.384646160371602975428438818036684111480436429248447622994",
+        "B_AME": "127.619315145907326366568588106783053083419248019477774394788",
+        "BA_model": "8.39904038502322518596427742612729275696752727682802797643710",
+        "BA_exp": "7.97620719661920789791053675667394081771370300121736089967424",
+        "err_pct": "5.30118109999999999999999999999999999999999999999993828019231"
+      },
+      "20Ne": {
+        "A": 20,
+        "B_pred": "174.048281468064533962224175717054843982534694972986940372283",
+        "B_AME": "160.644824028286400204360486584025406605464628565108023821841",
+        "BA_model": "8.70241407340322669811120878585274219912673474864935557146123",
+        "BA_exp": "8.03224120141432001021802432920127033027323142825540119109207",
+        "err_pct": "8.34353519999999999999999999999999999999999999999994440293605"
+      },
+      "24Mg": {
+        "A": 24,
+        "B_pred": "216.138906282797477046195363493876599390862613291296053881766",
+        "B_AME": "198.257047272277038771853405922487507886144260804963263368283",
+        "BA_model": "9.00578776178322821025814014557819164128594222047066178436769",
+        "BA_exp": "8.26071030301154328216055858010364616192267753354012884630591",
+        "err_pct": "9.01953260000000000000000000000000000000000000000008859545326"
+      },
+      "40Ca": {
+        "A": 40,
+        "B_pred": "408.771300612129370353834623379199576396910884310237689179979",
+        "B_AME": "342.052183945184593892997818006715709222785256735926250248644",
+        "BA_model": "10.2192825153032342588458655844799894099227721077559507823465",
+        "BA_exp": "8.55130459862961484732494545016789273056963141839815625621609",
+        "err_pct": "19.5055373999999999999999999999999999999999999999998886060776"
+      }
+    },
+    "declined_by_api": {},
+    "component_1_missing_pshell_dip": {
+      "4He_to_6Li_experiment_falls_MeV_per_A": "1.74158439555958305275464695581697404645017085995737130148052",
+      "4He_to_6Li_model_falls_MeV_per_A": "0.212751694569648982856816680284277763823238194697409489007202",
+      "variance_ratio_exp_over_model_A4_to_16": "5.92202219671715980393745292470254965619444760613477459809994",
+      "reading": "the model saturates at B/A ~ 7.3 immediately at A=4 and carries no shell or cluster structure; the +36% spike at 6Li is the absence of the experimental dip"
+    },
+    "component_2_complete_graph_term": {
+      "fit": "B/A = a + b*A",
+      "a_bounded_degree_constant_MeV_per_A": "7.08619607836867385090697999729540679694900410436068096004967",
+      "b_slope": "0.0781673882501944198254947578244638387007771494800557840516205",
+      "epsilon_MeV_per_pair_bond": "0.156334776500388839650989515648927677401554298960111568103241",
+      "max_abs_residual_MeV_per_A": "0.326517244804762871321049463980757681617027054224329306398580",
+      "fit_set": [
+        "4He",
+        "12C",
+        "14N",
+        "16O",
+        "20Ne",
+        "24Mg",
+        "40Ca"
+      ],
+      "implication": "B/A linear in A means B quadratic in A; a quadratic binding term is C(A,2) complete-graph pair counting",
+      "contradicts": "QOU.Mass.CoordinationSaturation (sorry-free): the complete graph M = C(A,2), the z = A-1 law, gives unbounded B/A with no plateau; bounded degree gives a constant; observed saturation FORCES bounded degree and refutes z = A-1 structurally"
+    },
+    "not_established": {
+      "which_source_line_introduces_the_A2": "not localised — measures output form only; deliberately not guessed",
+      "whether_fixing_2_fixes_1": "no — independent. Removing the A^2 would INCREASE the 6Li error: it adds only ~0.47 MeV/A there against a 1.94 shortfall",
+      "A_above_40": "40Ca is the heaviest the API answers; 28Si and 32S raise ValueError (coverage gap, not a measurement)"
+    },
+    "checks_failed": 0
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "qou_mass.predict evaluates at the canonical proton pin; this probe only reads its output."
+}

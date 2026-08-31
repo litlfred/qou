@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T19:16:41Z
-updated_at: 2026-08-29T16:12:13Z
+updated_at: 2026-08-31T04:21:15Z
 ---
 
 
@@ -57,3 +57,22 @@ So the only two points available are A=3 (proved) and A=4 (measured), and Milnor
 A cofactor-growth trend fitted through two points, one of which is itself only measured, IS the two-point pattern those three files refuse to launder. Reporting it as evidence for or against a growth law would be the same move under a different name.
 
 CONSEQUENCE FOR THIS BEAN. The scope-(a) -> scope-(b) upgrade is not gated on a measurement at all; it is gated on THIS bean — the leading-coefficient conjecture. Anyone who wants the upgrade needs mubar_A != 0 for general A (Route-A finite-type theory, cited in MilnorExactCoefficient.lean:66 as Mathlib-inaccessible), not more numerics at A=3,4. Do not re-derive the cofactor ratio expecting it to decide anything.
+
+## 2026-08-31 — SUPERSEDED at the math level by the recursion proof (qou-v7ro, #6217)
+
+The exact-order law this bean calls OPEN — order(D_A)=2(A−1) ∀A ⟺ leading μ̄ coefficient ≠ 0 ∀A —
+is now PROVED MATHEMATICALLY, by a DIFFERENT route than the leading-coefficient-tracking (Route B)
+described above. The convention-D deficit recursion D_{A+1}=−h²(h²+2)D_A is proved ∀A by TL
+structural induction (#6217, certified; probe milnor_recursion_forall_A_proof_probe.py all_verified;
+audit docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md). Its closed-form solution from the
+proved A=3 base is D_A=(−1)^{A−3}h^{2(A−1)}(h²+2)^{A−3}(h²+3)/(h²+4), whose leading coefficient is
+(3/4)(−2)^{A−3} ≠ 0 ∀A — exactly the nonvanishing this bean needed. Lean tight_slice_of_recursion
+(merged) proves [BrunnianDeficitRecursion D] ⇒ the ∀A tight slice, so the recursion closes the ∀A
+nonvanishing.
+
+So the MATH GAP is closed; do NOT re-attack it via Route B (leading-coefficient tracking) — that
+route hit the cyclic-trace-kills-commutator sub-wall and is superseded. The ONLY residual is the
+LEAN INSTANCE (formalize the TL Markov-trace representation on tensor powers to discharge
+BrunnianDeficitRecursion), which is DEFERRED with a documented feasibility roast: bricks 1-2 landed
+(#6268, #6326), brick 3 roasted #6334 (docs/audits/2026-08-31-milnor-brick3-roast.md) — the instance
+stays unfabricated (anti-laundering). Track the Lean side under qou-v7ro.

@@ -32,6 +32,10 @@ from __future__ import annotations
 
 import mpmath as mp
 
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from partition_utils import hook_lengths
 
 # Substrate parameter, 50 dps, RESOLVED THROUGH q_parameter.

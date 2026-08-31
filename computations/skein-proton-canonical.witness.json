@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T07:22:40.453202+00:00",
-  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "computedAt": "2026-08-31T03:05:48.724731+00:00",
+  "commitSha": "8a6a83139dd4f4edd7267a424e0c180fd2cce00e",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 357,
+  "durationMs": 709,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
-  "scriptHash": "9e91e7ad895b",
-  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "scriptHash": "5c356ce83ac5",
+  "scriptCommitSha": "5b3c271315ab3959d7dd258a9809b5d63dba8223",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,6 +42,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
@@ -50,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/skein_proton_canonical.py"
   },
-  "description": "Skein evaluator for the proton's canonical 11-crossing flavored braid. Computes three independent Skein values: (1) V(𝓑₃, t) closed-form Jones polynomial at t = q_0² / q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from markov_peel.tr_M_atomic (existing canonical infrastructure); (3) cross-check vs the canonical Layer-1 |tr_M| atlas value 1.0653062286. Closes the S(p) ≈ 0 assumed-zero gap in conj:borromean-baryon-mass-formula.",
+  "description": "Skein evaluator for the proton's canonical 11-crossing flavored braid. Computes three independent Skein values: (1) V(𝓑₃, t) closed-form Jones polynomial at t = q_0² / q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from markov_peel.tr_M_atomic (existing canonical infrastructure); (3) cross-check vs the canonical Layer-1 |tr_M| atlas value 1.1457596925 (convention D at the proton pin). Closes the S(p) ≈ 0 assumed-zero gap in conj:borromean-baryon-mass-formula. CONVENTION FIX 2026-08-31 (bean qou-46ab): this string said 1.0653062286, the convention-C value, while calling it the canonical atlas value — 7.55 % from the canonical D one. The description is emitted into the witness, so the stale literal was being published as canonical on every run.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "compute_dps": "60"

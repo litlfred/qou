@@ -1,16 +1,16 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:diagrammatic-double-magic-lr-fusion",
+export default conjecture({
+  label: "conj:diagrammatic-double-magic-lr-fusion",
   title:
-    "Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$",
+    "Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$",
   lean: {
     ref: "qou:QOU.LRFusion.DoubleMagicConjecture",
     validation: "not_checked",
   },
   uses: [
     "prop:homological-shell-condensation",
-    "prop:magic-numbers-from-q",
+    "conj:magic-numbers-from-q",
   ],
   computation: {
     engine: "python",

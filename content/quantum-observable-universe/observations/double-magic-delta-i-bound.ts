@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:diagrammatic-double-magic-lr-fusion",
+    "conj:diagrammatic-double-magic-lr-fusion",
     "prop:torus-knot-shell-binding",
   ],
   computation: {

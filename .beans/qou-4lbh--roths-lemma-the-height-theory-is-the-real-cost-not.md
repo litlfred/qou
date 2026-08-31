@@ -1,16 +1,22 @@
 ---
 # qou-4lbh
 title: 'Roth''s lemma: the height theory is the real cost, not the Wronskians'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:55Z
-updated_at: 2026-08-24T13:23:21Z
+updated_at: 2026-08-29T19:34:43Z
 ---
 
-The index and Wronskian machinery for Roth's lemma is done. What remains is the m=1 base case, which is blocked on height theory Mathlib has only partially. See body for the measured inventory.
+**Roth's Lemma is proved** — `MvPolynomial.index_le_rothBound`, every arity, no hypotheses
+beyond `Γ_m` itself, no `sorry`, standard axioms. Merged to main as PR #5737.
 
 Child of `qou-br3w`. Successor to `qou-sq3h`, which is complete.
+
+⚠ This summary read "what remains is the m=1 base case, blocked on height theory" until
+2026-08-29 — a stale claim the arc carried for five days while landing twenty-six corrections,
+three of which were *about* stale prose. The bean's own header was the last instance and the
+one nothing checked. See `## Summary of Changes` at the end.
 
 ## The headline
 
@@ -4544,3 +4550,81 @@ Twenty-six corrections. What the last six say about how the arc failed:
   artifact" was true about the restriction and false about the remedy.
 * The status paragraph in `RothVariableSplit` was wrong **three times in one session**, in three
   directions. Prose that names what is open is a claim about the whole file.
+
+## Summary of Changes
+
+**Roth's Lemma is proved and merged.** PR #5737 → `bf0b7f63ae`. Rebuilt against main
+(2065 jobs, no errors, no warnings, no `sorry`). Main has since touched one line in the arc —
+a correct path update, `uploads/roth_lemma.pdf` → `library/roth-lemma/roth_lemma.pdf`.
+
+Headline: `MvPolynomial.index_le_rothBound` (`QOU/Mathlib/RothRealLadder.lean`) — under `Γ_m`
+with `t = p/q`, every `A ∈ R(a;r)` has index at most `c_m·t^{2^{−(m−1)}}` at every `κ ∈ Q(H)`,
+`c_m = 2^{m+1} − 3`. Every arity, every `p, q, F`, no `sorry`, standard axioms. Non-vacuous at
+`m = 2` (`index_le_rothBound_witness`), where clause 3 forces `H ≥ 1024`.
+
+Twenty-six corrections. The last three were all found by **composing** green theorems, not by
+testing them: 24 (`2t` vs `t`), 25 (`w² = Ψ` demanded a rational square root), 26 (correction 21
+never propagated to its consumers).
+
+## Reassessment against main — 2026-08-29
+
+Main moved 1993 commits. Two things in it change how this arc should be read.
+
+### 1. The new detector suite reports the Roth corpus clean — and that is blindness
+
+Seventeen audit scripts landed, and `docs/audits/2026-08-15-detector-blindness-taxonomy.md`
+now carries a 17-row table of what each was blind to. Two of the new detectors are the exact
+two axes this arc's corrections fall on:
+
+* `limit-claim-encoding-audit.py` — *is the statement weaker than its prose* (corrections 17, 24)
+* `unbounded-quantifier-audit.py` — *is the statement stronger than the truth* (corrections 20, 22, 25)
+
+Run over the 18 Roth/Wronskian/Separated modules, both report **0 candidates**. So do
+`lean-vacuous-existential-audit.py` and `lean-self-assuming-audit.py` over all 169
+`QOU/Mathlib` files.
+
+⚠ **That clean is not evidence.** I reconstructed corrections 20 and 25 in their pre-fix form
+and re-ran all three: still **0**. The detectors cannot see this arc's defects, so their silence
+about the Roth corpus says nothing about it. Two rows for the taxonomy:
+
+* **The defect is an ABSENT field.** Both criteria scan `class|structure … where` and key on a
+  field that is *present and wrong*. `RothGammaFull` was defective (correction 20, and 16
+  before it) because it **lacked** `two_le` and `degPos`; every field it had was correct. A
+  missing clause is a *weaker hypothesis*, hence a *stronger theorem* — the direction this arc
+  got wrong four times — and no field-shaped matcher can see an absence.
+* **The carrier is a `def : Prop`.** `RothLemma4` and `RothLemmaTheta` are `def`s, which is how
+  this corpus states Mahler's Lemma 4 and Roth's Lemma. Every field-keyed scan begins at
+  `class|structure … where`, so a proposition-valued `def` is outside the tree the tools walk.
+  This is taxonomy row 14 one level down: not a language never scanned, a *declaration form*
+  never scanned.
+
+### 2. Roth's **Lemma** is not Roth's **Theorem** — the parent bean is not dischargeable
+
+`qou-br3w` wants `RothExponent : ∀ α, IsAlgebraic ℚ α → Irrational α → ∀ p > 2,
+¬ LiouvilleWith p α`, which discharges `roth_separates`. Roth's Lemma is one of five steps:
+
+| step | what | state |
+|---|---|---|
+| 1 | auxiliary polynomial, high index at `(α,…,α)`, bounded height | **not started** — engine exists: Mathlib `NumberTheory/SiegelsLemma.lean`, `NumberField/House.lean` |
+| 2 | index at the rational point is **large** (Taylor + good approximations) | partial — `RothHeightBound`'s `max_abs_pow_le_of_abs_coeff_le` is the one-variable case |
+| 3 | index at the rational point is **small** — Roth's Lemma | **DONE** (this bean) |
+| 4 | contradiction: parameter bookkeeping (`m`, `r_h`, `δ`) | not started |
+| 5 | `¬ LiouvilleWith p α` from "no `κ > 2` works" | not started |
+
+### 3. The highest-risk remaining item: `Γ_m` has never been produced
+
+`RothGammaFull` is *constructed* in exactly three places, and none of them is a production:
+`rename_equiv` (transport), `rothGammaFull_descend` (takes a `Γ_{n+1}`), and two hand-built
+structure literals at `m = 2`. So its seven clauses have **never been discharged from an actual
+Diophantine setup at any `m ≥ 3`**.
+
+That is correction 9's lesson at arc scale — *a hypothesis nobody has had to discharge is
+indistinguishable from a false one* — and this arc has now hit that failure four times
+(9, 10, 22, 25), each time in a hypothesis that looked settled. Step 1 above is what would
+discharge `Γ_m` for real, and it is therefore both the next piece of work **and** the real test
+of whether `Γ_m` is stated correctly. If `Γ_m` is wrong, everything in this bean is a true
+theorem about the wrong hypothesis — which is exactly what correction 18 was.
+
+**Recommendation: do step 1 next, and treat it as an audit of `Γ_m` rather than as construction
+work.** Not because it is the easiest remaining piece — it is not — but because it is the only
+one that can invalidate what is already done.

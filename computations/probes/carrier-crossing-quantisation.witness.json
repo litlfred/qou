@@ -1,0 +1,152 @@
+{
+  "computation": "carrier-crossing-quantisation",
+  "scriptFile": "probes/carrier_crossing_quantisation_probe.py",
+  "computedAt": "2026-08-31T04:28:03.130787+00:00",
+  "contentBlock": "qou-brng",
+  "description": "The count channel's multiplicity is half the carrier's crossing count, so with the owner-ruled Hopf pair carrier (c2 = 2) the ratio b3/b2 = c3/2 - 3 lives on a lattice. The measured 0.6411239316 falls in a gap: the nearest integer carrier assignment misses by 16.98%. All four carrier rules the corpus derives give b3/b2 <= 0. Exact rational arithmetic, no free parameters.",
+  "measured": {
+    "b2_MeV": "1112283/500000",
+    "b3_MeV": "570489/400000",
+    "b3_over_b2": "950815/1483044",
+    "required_mu_ratio": "5399947/1483044",
+    "required_c3_given_c2_2": "5399947/741522"
+  },
+  "rules": [
+    {
+      "rule": "min-length enumeration (sigma_g^2 for all three)",
+      "c2": 2,
+      "c3": 2,
+      "b3_over_b2": "-2",
+      "provenance": "computations/_deprecated/binding-k-enumerator.witness.json"
+    },
+    {
+      "rule": "chain / coordination z = A-1",
+      "c2": 2,
+      "c3": 4,
+      "b3_over_b2": "-1",
+      "provenance": "content/.../mass-theory/bk-coordination-multiplicity.md"
+    },
+    {
+      "rule": "canonical Brunnian (Hopf, Borromean L6a4)",
+      "c2": 2,
+      "c3": 6,
+      "b3_over_b2": "0",
+      "provenance": "QOU.Mass.CountChannelCarrierLocus.canonical_carriers_b3_eq_zero"
+    },
+    {
+      "rule": "census volume-match (6_2 ; avg of 8_11, L6a4)",
+      "c2": 6,
+      "c3": 7,
+      "b3_over_b2": "-11/6",
+      "provenance": "AME-INVERTED tier -- recursive-atom-knot-atlas-registry.md"
+    }
+  ],
+  "lattice": {
+    "unconstrained": {
+      "half_integer_nearest": {
+        "c3": 7,
+        "value": "1/2"
+      },
+      "quarter_integer_nearest": {
+        "c_3H_plus_c_3He": 15,
+        "value": "3/4"
+      },
+      "gap": "40367/370761",
+      "gap_relative_fraction_of_measured": "161468/950815",
+      "note": "BOTH nearest points are ODD and are EXCLUDED once the carrier is Brunnian -- see 'brunnian_parity'"
+    },
+    "brunnian_parity": {
+      "constraint": "n+ = n- => c = n+ + n- is EVEN",
+      "nearest": {
+        "c_3H_plus_c_3He": 14,
+        "value": "1/2"
+      },
+      "gap": "209293/1483044",
+      "gap_relative_fraction_of_measured": "209293/950815",
+      "single_carrier_nearest_positive": {
+        "c3": 8,
+        "value": "1"
+      }
+    }
+  },
+  "straddle_trap": {
+    "c2_from": "owner ruling A 2026-08-29, Hopf deuteron carrier",
+    "c3_from": "census volume-match tier (AME-inverted)",
+    "value": "1/2",
+    "verdict": "NOT a result -- two different carrier assignments"
+  },
+  "assertions": [
+    {
+      "name": "measured b3/b2 is the exact rational 950815/1483044",
+      "passed": true,
+      "detail": "r = 950815/1483044; matches the Lean constant rMeasured"
+    },
+    {
+      "name": "every consistently-read rule gives b3/b2 <= 0",
+      "passed": true,
+      "detail": "min-length -2, chain -1, canonical Brunnian 0, census -11/6; measured is +0.6411"
+    },
+    {
+      "name": "the canonical Brunnian carriers sit EXACTLY on the degenerate locus",
+      "passed": true,
+      "detail": "c3/c2 = 6/2 = 3 exactly; agrees with CountChannelCarrierLocus.canonical_carriers_b3_eq_zero"
+    },
+    {
+      "name": "the straddle (Hopf c2=2 with census c3=7) manufactures the sign",
+      "passed": true,
+      "detail": "straddled = 1/2 (+ sign, -22.01% off) but census read CONSISTENTLY = -11/6; the two crossing numbers come from different carrier assignments"
+    },
+    {
+      "name": "NO integer carrier assignment reproduces the measured b3",
+      "passed": true,
+      "detail": "scanned the half-integer grid n in [2,12] and the quarter-integer grid m in [8,20]; the Lean proves it for ALL integers (no_quarter_lattice_point_is_measured)"
+    },
+    {
+      "name": "the finest lattice still misses by 161468/1483044 (16.98%)",
+      "passed": true,
+      "detail": "gap = 40367/370761 = 0.108876 in b3/b2 units, 16.98% of the measured value; matches the Lean bound in quarter_lattice_gap"
+    },
+    {
+      "name": "the single-carrier grid misses by more (22.01%), as a sublattice must",
+      "passed": true,
+      "detail": "c3 = 7 gives 1/2, -22.01%; c3 = 8 gives 1, +55.98%"
+    },
+    {
+      "name": "escaping the gap needs c3 > 6, ABOVE the minimal Brunnian 3-braid",
+      "passed": true,
+      "detail": "QOU.Knots.KauffmanTL3 machine-checks that no braid word of length < 6 is both Brunnian and nontrivial, so 6 is minimal; with parity the next available value is c3 = 8, not 7"
+    },
+    {
+      "name": "the Brunnian parity constraint EXCLUDES both previously-nearest points",
+      "passed": true,
+      "detail": "the unconstrained nearest were c(3H)+c(3He) = 15 and c3 = 7, BOTH ODD, hence unreachable by carriers with n+ = n-; parity is not a refinement of the bound, it deletes the two points the bound was attained at"
+    },
+    {
+      "name": "under parity the gap WIDENS to 209293/1483044 (22.01%)",
+      "passed": true,
+      "detail": "gap = 209293/1483044 = 0.141124, 22.01% of measured -- up from the 16.98% that ignoring parity allows; matches the Lean bound in even_lattice_gap"
+    },
+    {
+      "name": "a SINGLE Brunnian A=3 carrier makes b3/b2 an integer, nearest +55.98%",
+      "passed": true,
+      "detail": "c3 even => b3/b2 = c3/2 - 3 is an integer; nearest positive is 1 at c3 = 8, +55.98%, and 0 at the Borromean c3 = 6 is the degenerate locus"
+    }
+  ],
+  "allPassed": true,
+  "scope": "(b) on the CONJUNCTION {count channel, mu = c/2, Hopf pair carrier c2 = 2, integer crossing counts}, with the invariant named: integrality of a crossing count. (a) on every ingredient separately -- it excludes neither the count channel, nor the Brunnian mechanism (brunnian_binding_survives untouched), nor mu = c/2. Releasing any one reopens it.",
+  "caveats": [
+    "CONDITIONAL ON OWNER RULING A (2026-08-29). The obstruction exists only because c2 is pinned. CountChannelCarrierLocus correctly records that with mu_pair FREE the count channel has ample freedom and no quantisation argument applies; that retraction is not reversed, its hypothesis is now supplied.",
+    "The cheapest escape is dropping mu = c/2: a multiplicity that is not half a crossing count is not lattice-valued, and the obstruction evaporates. This probe does not argue for mu = c/2 -- it takes it from CountChannelCarrierLocus.countChannel.",
+    "The census row is AME-INVERTED by the atlas registry's own admission and is NOT a derivation. It appears here only to show that even it gives the wrong sign when read consistently, so the circularity is not what rescues the sign -- the straddle is.",
+    "b3 uses the isospin-averaged Bbar(3). If 3H and 3He carry different links the grid refines from half- to quarter-integer, which is the case computed; it does not become dense.",
+    "Three body orders is three data points, and b4 is not tested here at all. Nothing about A > 4 follows.",
+    "The Brunnian parity constraint applies to the A >= 3 carriers only. The A = 2 Hopf carrier is NOT Brunnian (lk = 1, n+ = 2, n- = 0) -- it is the boundary case where lk = z = 1 -- so c2 = 2 is even for a different reason and nothing here depends on that.",
+    "The range where the answer could differ (word length >= 8) has NEVER been searched: the enumeration ran at L_K_max = 3-4, and L <= 8 over 4 inter-nucleon generators is ~87,000 words against the ~84 that were tried. This probe does not run that search; it establishes that the search is the open question."
+  ],
+  "lean": "QOU/Mass/CarrierCrossingQuantisation.lean (11 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/pair-locality-shortfall.witness.json",
+    "probes/count-channel-carrier-locus.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies; integer crossing counts"
+}

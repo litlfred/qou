@@ -1,11 +1,11 @@
 ---
 # qou-br3w
 title: 'Formalise Thue-Siegel-Roth: the one unformalised input the trajectory lane takes as a hypothesis'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T10:49:19Z
-updated_at: 2026-08-19T16:27:34Z
+updated_at: 2026-08-30T15:05:53Z
 ---
 
 
@@ -538,3 +538,700 @@ though the bound were already there.
 `RothIndex.lean` 27 declarations, `GenWronskian.lean` 18, `MvGenWronskian.lean` 21 — **66
 declarations of Roth prerequisites**, all sorry-free on the standard axiom set, none of
 which existed in Mathlib.
+
+## 2026-08-30 -- the shortcut assembly would have been dishonest, so it was not taken
+
+Steps 1-4 are individually done (qou-qi0t, qou-86j4 + qou-jm52, qou-4lbh, qou-ujl8). The obvious
+next move was a theorem composing all four. I did not write it, and the reason is worth recording
+because the result would have LOOKED complete.
+
+THE TRAP. Step 2's O_K entry point, le_index_of_norm_lt, takes the per-embedding smallness of the
+translated coefficients as a hypothesis -- exactly as its Z sibling takes |coeff| < 1/prod q^r. An
+assembly that supplies that hypothesis from outside would type-check, would chain steps 2, 3 and 4,
+and would NEVER USE STEP 1. Step 1's only output is a lower bound on the index at alpha, and the
+sole path from that to step 2's conclusion runs through the analytic estimate that produces the
+smallness. Take the smallness as given and step 1 becomes decorative: the composed theorem would
+be true, axiom-clean, and silently missing a quarter of the proof.
+
+That is the same failure mode as correction 24 (a weaker-but-true statement that costs an exponent
+and passes every check) except worse, because the missing piece would be an entire step rather
+than a factor.
+
+WHAT WAS ACTUALLY BLOCKING. The analytic estimate (RothTaylorBound) was stated for |.| on R, and
+the O_K case needs it at a COMPLEX embedding: smallness at phi_0, and only the house bound at the
+other conjugates. So the Z chain could not feed the O_K vanishing criterion at all.
+
+FIXED BY GENERALISING, NOT COPYING. The peeling induction was already generic over a
+SubmultSeminorm; only the four abs_ wrappers were R-specific. They are now
+seminorm_coeff_translate_add_le_prod, seminorm_coeff_translate_le and
+seminorm_coeff_translate_add_le_index over an arbitrary SubmultSeminorm, with the abs_ statements
+one line each, plus SubmultSeminorm.sum_le (the iterated form of add_le, which the structure
+carries only in binary form). submultSeminorm_norm_complex is the C instance, and it is the whole
+cost of the C case. Every downstream module -- RothIndexGap, RothContradiction, RothNormalisation
+-- rebuilds unchanged.
+
+NEXT, and now unblocked: run the C-valued Taylor estimate at phi_0 against step 1's house bounds
+at the other conjugates, feed le_index_of_norm_lt, and only then compose with steps 3 and 4. The
+assembly is worth writing once it carries step 1 rather than stepping around it.
+
+STILL OUT OF SCOPE after that: the parameter SELECTION -- choosing q_1 large then q_2, ..., q_m
+from an infinite sequence of good approximations with q_{h+1} >> q_h. That is what turns a
+contradiction into "finitely many solutions", and it is what step 5 (not LiouvilleWith) needs.
+
+## 2026-08-30 -- the composition that carries step 1
+
+embedding_coeff_translate / norm_embedding_coeff_translate_le /
+norm_embedding_coeff_translate_le_index (RothAlgebraicInteger), axiom-clean, .olean deleted first.
+
+embedding_coeff_translate is the structural fact the whole O_K case rests on: an embedding phi
+FIXES Q, so the rational point does not move under phi -- only the coefficients do. That is why
+the same beta serves at every conjugate and why the d-1 "other" bounds are about the same
+polynomial evaluated the same way.
+
+norm_embedding_coeff_translate_le_index is the composition the previous entry said was the honest
+next move, and it is honest for one specific reason: its hidx argument IS step 1's index at alpha,
+and that is what restricts the sum. The estimate consumes step 1 rather than assuming its
+consequence. norm_embedding_coeff_translate_le is the trivial companion at the other d-1
+embeddings -- no smallness, just the height budget against the point's own size.
+
+Both go through the seminorm_ generalisation from the previous entry with f = ||.|| on C; nothing
+new about the peeling was needed, which is the payoff of having generalised instead of copied.
+
+REMAINING on this bean: assemble these two into le_index_of_norm_lt's hypothesis (mechanical --
+M is the d-1 bound, the phi_0 bound is the Taylor one), then compose with steps 3 and 4. After
+that, the parameter SELECTION, which is what turns a contradiction into "finitely many solutions".
+
+## 2026-08-30 -- step 2 over O_K runs end to end. QOU/Mathlib/RothAssembly.lean
+
+le_index_of_taylor_house composes the two embedding bounds into le_index_of_norm_lt's hypothesis,
+so step 2 over O_K now runs from step 1's auxiliary polynomial to a lower bound on the index at
+the rational point, with only a numeric comparison (hfinal) left. Axiom-clean, .olean deleted
+first, registered in QOU.lean.
+
+THE ASYMMETRY IS THE CONTENT, and it is why conjBound is a named definition rather than an inline
+expression. eq_zero_of_norm_mul_pow_lt_one needs ||phi_0 x|| * M^{d-1} < 1, so the two estimates
+enter the final inequality DIFFERENTLY: the phi_0 bound linearly, the conjugate bound raised to
+the d-1. A factor wasted in conjBound costs d-1 times as much as one wasted at phi_0, and the two
+must not be tuned as if interchangeable.
+
+Over Z the asymmetry disappears because d = 1 and M^{d-1} = 1. That is a fact about the SHAPE of
+the two statements, not a route from one to the other -- the vanishing criteria remain different
+theorems with different hypotheses, as qou-86j4 recorded.
+
+hidx is load-bearing here, which was the whole point of the previous entry: it is what restricts
+the sum in the phi_0 estimate. The draft that would have taken the smallness directly as a
+hypothesis is now definitively not what got built.
+
+REMAINING on this bean:
+  1. compose le_index_of_taylor_house with steps 3 and 4 -- mechanical, the O_K analogue of
+     roth_contradiction, whose Z version already exists;
+  2. discharge hfinal from a parameter record -- the O_K analogue of RothNormalisation, and note
+     it must budget for the d-1 exponent that the Z case does not have;
+  3. the parameter SELECTION -- choosing q_1 large then q_2, ..., q_m from an infinite sequence of
+     good approximations. This is what turns a contradiction into "finitely many solutions" and is
+     what step 5 (not LiouvilleWith) needs. It is the only remaining piece that is not bookkeeping.
+
+## 2026-08-30 -- ITEM 1 IS NOT MECHANICAL: steps 1 and 3 do not compose
+
+I said the O_K analogue of roth_contradiction was mechanical. It is not there to be written,
+because the chain has a break I had not looked at, and it is not where I had been looking.
+
+THE GAP, verified by reading both signatures rather than assumed:
+  * step 1, exists_auxiliary_polynomial (RothAuxiliary):
+        exists P : MvPolynomial (Fin m) (O K), ...
+  * step 3, index_le_rothBound (RothRealLadder):
+        {A : MvPolynomial sigma Z} ... (hA : InRothPolySet a r A)
+    and InRothPolySet is defined only for MvPolynomial sigma Z.
+
+So the arc holds TWO HALF-CHAINS that share step 2 and not a coefficient ring:
+    Z:    step 2 (Z)  ->  step 3  ->  step 4      complete
+    O K:  step 1      ->  step 2 (O K)            complete
+and there is no path from step 1 to step 4. Nothing downstream of either half fixes it; the join
+has to be made at the coefficient ring.
+
+WHY IT HAPPENED. Step 1 was built on Mathlib's exists_ne_zero_int_vec_house_le, whose solution
+vector lies in O K. Step 3 was built (in the merged PR) on Mahler's Roth's Lemma, which is about
+rational-integer coefficients throughout -- including the finiteness of R(a;r)
+(RothLemmaStatement:331), which is a box count over Z and would become a Northcott statement over
+O K. The two were each correct and were never put in the same room, which is correction 26's shape
+at the scale of a whole arc rather than two lemmas.
+
+TWO ROUTES, and route A is much cheaper.
+  A. Build the auxiliary polynomial over Z instead: Siegel over Z is Mathlib's
+     Mathlib/NumberTheory/SiegelsLemma.lean (exists_ne_zero_int_vec_norm_le), and the K-linear
+     vanishing conditions expand in a Q-basis of K into deg(alpha) times as many Z-linear ones.
+     Everything from step 2 (Z) onward already works.
+  B. Re-prove Roth's Lemma over O K -- including replacing the R(a;r) box count with Northcott.
+     A much larger job for no gain I can see.
+
+AND ROUTE A RESTORES deg(alpha) TO THE COUNTING, which corrects my own note. RothAuxiliaryPolynomial's
+header carried a triumphant "the degree of alpha does not appear ... the degree cancels out of the
+counting condition entirely". That is TRUE OF MATHLIB'S ENGINE and describes the branch that does
+not reach step 3. On route A the classical condition deg(alpha) * #conditions < #unknowns is exactly
+what is needed. The note is now corrected in place with the reason.
+
+DELIVERED THIS TURN -- route A's counting prerequisite:
+  * nsmul_card_lt_card_idxBox, nsmul_card_lt_card_idxBox_of_eps -- the variance bound with a
+    multiplicity, so the system is underdetermined as soon as n < 4 eps^2 m;
+  * nsmul_card_idxWeight_lt, nsmul_fintypeCard_idxWeight_lt -- the multi-index and Fintype.card
+    forms, the latter being what Siegel over Z consumes;
+  * nsmul_fintypeCard_idxWeight_lt_witness -- non-vacuous at eps = 1/2, m = 5, n = 4, and chosen
+    so the threshold visibly BITES: 4 < 5 holds, 5 < 5 does not, so the same m that justifies a
+    degree-4 alpha does not justify a degree-5 one. deg(alpha) is not decoration.
+"take m large" is therefore m > deg(alpha)/(4 eps^2), not m > 1/(4 eps^2).
+
+REVISED REMAINING WORK, replacing the three-item list above:
+  1. Build the auxiliary polynomial over Z (route A). Needs: the Q-basis expansion of the K-linear
+     conditions, an integral basis for O K (Mathlib has NumberField.integralBasis), and Siegel
+     over Z. This is the real work and it is where deg(alpha) enters.
+  2. Then step 1 -> step 2 (Z) -> step 3 -> step 4 composes, and roth_contradiction takes it.
+  3. Then the parameter selection, unchanged: choosing q_1 large then q_2, ..., q_m from an
+     infinite sequence of good approximations. Still the only piece that is not bookkeeping.
+The O K half (le_index_of_taylor_house, le_index_of_norm_lt, RothAlgebraicInteger) is NOT wasted --
+it is the honest step 2 for an O K-coefficient polynomial, and it is what route B would consume --
+but it is off the critical path until route B is chosen, and route B should not be.
+
+## 2026-08-30 -- ITEM 1 DONE: the auxiliary polynomial over Z. QOU/Mathlib/RothAuxiliaryInt.lean
+
+Six declarations, all axiom-clean, .olean deleted first, registered in QOU.lean.
+
+exists_auxiliary_polynomial_int is route A's step 1: a NON-ZERO Z-coefficient polynomial of
+bounded degree whose index at (alpha_1,...,alpha_m) is at least mu, with Siegel's height bound on
+its coefficients. So step 1 now produces the coefficient ring Roth's Lemma actually requires, and
+the break between steps 1 and 3 is closed.
+
+THE PIECE THAT MAKES IT WORK is sum_smul_eq_zero_iff_repr: one O_K-linear vanishing condition is
+finrank Q K integer-linear ones. Expand in an integral basis (Mathlib's RingOfIntegers.basis); the
+element vanishes exactly when all its coordinates do, and the coordinates of a Z-combination are
+the Z-combinations of the coordinates. That single equivalence is where deg(alpha) enters, and it
+is why the counting condition becomes the classical deg(alpha) * #conditions < #unknowns.
+
+card_prod_lt_card_idxBoxF discharges that condition from last entry's variance lemma via
+card_chooseBasisIndex_eq_finrank, so hcount is PROVED from eps and m rather than assumed:
+    finrank Q K < 4 eps^2 m   ==>   #conditions * deg(alpha) < #unknowns.
+
+Both Mathlib engines turned out to need no adaptation. Int.Matrix.exists_ne_zero_int_vec_norm_le
+is indexed by arbitrary Fintypes, so the equation index type
+({low-weight multi-indices} x {basis coordinates}) and the unknown index type {box} go in
+directly -- no Fin reindexing, which is the usual tax on this kind of call. The only wiring needed
+was `attribute [local instance] Matrix.seminormedAddCommGroup`, the same local instance Mathlib's
+own SiegelsLemma file sets, because the bound is stated against the sup norm.
+
+STILL A HYPOTHESIS in exists_auxiliary_polynomial_int: hpos (the system has at least one
+equation). Trivially true whenever the low-weight set and the basis are both non-empty, but it is
+Siegel's hypothesis and is left where Siegel puts it.
+
+REVISED REMAINING WORK:
+  1. DONE -- auxiliary polynomial over Z.
+  2. Compose: step 1 (Z) -> step 2 (Z) -> step 3 -> step 4. Now genuinely mechanical, in the sense
+     that the coefficient rings agree; roth_contradiction is waiting and takes InRothPolySet,
+     so the remaining glue is turning Siegel's real-valued height bound into the integer bound a
+     that InRothPolySet wants (a ceiling) and checking the degree/nonvanishing clauses line up.
+  3. The parameter selection -- choosing q_1 large then q_2, ..., q_m from an infinite sequence of
+     good approximations. Unchanged, and still the only piece that is not bookkeeping.
+The O_K half (RothAlgebraicInteger, RothAssembly) remains correct and off the critical path.
+
+## 2026-08-30 -- THE CHAIN CLOSES. QOU/Mathlib/RothIntegerChain.lean
+
+roth_contradiction_int runs step 1 -> step 2 -> step 3 -> step 4 with the coefficient rings
+agreeing throughout. Five declarations, axiom-clean, .olean deleted first, registered in QOU.lean.
+
+TWO PIECES OF GLUE, both small enough to be invisible and large enough to be wrong:
+
+  * inRothPolySet_of_real_bound. Siegel states its bound over R; InRothPolySet wants an integer a.
+    The CEILING is forced -- it is the only integer bound that follows from |coeff| <= X, and
+    rounding down would be an assertion rather than a consequence.
+  * index_real_of_index_field. Step 1 proves the index over K; step 2 consumes it over R. They
+    transport along a real embedding psi : K ->+* R, and that embedding is a GENUINE HYPOTHESIS,
+    not a technicality: it says the alpha_h are REAL algebraic numbers, which is what Roth's
+    theorem is about. A number field with no real embedding has nothing to say here, and the
+    composition correctly refuses to typecheck without one. Worth stating because it is exactly
+    the kind of hypothesis that gets silently discharged with a `sorry`-free but wrong instance.
+
+A SHAPE CORRECTION I MADE TO MY OWN FIRST DRAFT. It stated the remaining hypotheses as
+`forall (P) (a), InRothPolySet a r P -> Gamma_m for a /\ ...`, quantified over every polynomial in
+R(a;r). That is a strictly STRONGER hypothesis and therefore a weaker theorem, and it would have
+asked a caller to verify Gamma_m for polynomials the construction never produces. Naming Siegel's
+bound (siegelHeight, in RothAuxiliaryInt) lets the hypotheses land on the a the construction
+ACTUALLY produces -- ceil(siegelHeight r alpha mu) -- so hg, hCpos and hlog are now about one
+concrete quantity. The over-strong version compiled fine; nothing but reading it would have caught
+that it was asking for too much.
+
+WHAT roth_contradiction_int STILL TAKES, and it is only what earlier stages already isolated:
+Gamma_m's clauses (hg), the approximation quality (hclose, hT, hGT), and the two numeric
+comparisons (hlog, hgap). Nothing new was introduced by the composition, which is the outcome
+worth having: the chain did not turn out to need a bridging lemma nobody had budgeted for.
+
+REMAINING -- ONE ITEM, and it is the only piece of Roth's theorem that is not bookkeeping:
+  THE PARAMETER SELECTION. Choose q_1 large, then q_2, ..., q_m from an infinite supply of good
+  approximations with q_{h+1} >> q_h, and r_h from the q_h, so that hg, hlog and hgap all hold
+  simultaneously. This is what turns a contradiction into "finitely many solutions", and it is
+  what step 5 (not LiouvilleWith) needs. Everything else in the arc is now proved.
+
+## 2026-08-30 -- the parameter selection, started. QOU/Mathlib/RothSelection.lean
+
+Six declarations, axiom-clean, .olean deleted first, registered in QOU.lean.
+
+THIS IS THE ONLY PIECE OF THE ARC THAT CONSTRUCTS DATA rather than composing hypotheses a caller
+supplies, and the only place the "infinitely many solutions" assumption is consumed. growSeq is
+the greedy recursion: pick a denominator past a threshold, raise it to a power, pick another past
+THAT. exists_heights_growing turns an unbounded supply into m heights satisfying Gamma_m's growth
+clause, which is where the informal proof's "sufficiently large" actually lives.
+
+THE max AGAINST A FLOOR IS LOAD-BEARING, and it took writing the two_le clause to see why. Without
+it the growth function's output is the only lower bound on the next term, so a later height can
+land below the floor whenever f returns something small -- and Gamma_m's two_le would then hold at
+index 0 and fail everywhere else. Carrying the floor through the recursion makes le_growSeq
+uniform in n, which is what two_le needs.
+
+THE GROWTH FUNCTION IS FORCED BY THE CLAUSE. rothGammaFull_of_heights wants
+H j ^ (2q) <= H k ^ p on consecutive indices. Choosing the next height beyond H j ^ (2q) gives
+H j ^ (2q) <= H k, and H k <= H k ^ p because p >= 1 and H k >= 2. So x |-> x^(2q) is not a choice,
+it is what the clause reads off.
+
+TWO CLAUSES, NOT ONE. Making the floor a parameter rather than the constant 2 means
+exists_heights_growing_floor discharges Gamma_m's clause 3 as well, at N_0 = 2^F. That clause is
+the one that bites hardest -- RothRealLadder's witness needed H = 1024 at m = 2 purely because of
+it -- so having it fall out of the same construction is worth the extra parameter.
+
+REMAINING for the selection:
+  * hlarge (p + 2q <= p * rothDegrees H N h): needs N chosen large RELATIVE TO THE SELECTED
+    HEIGHTS, so it comes after the selection, not before. The dependency order is heights -> N ->
+    degrees, and rothDegrees already computes the degrees from (H, N).
+  * hbound (b^(mq) <= H_0^(rothDegrees H N 0 * p)): needs H_0 large relative to b, the auxiliary
+    polynomial's height bound -- which is ceil(siegelHeight), itself a function of the degrees. So
+    this one is genuinely circular-looking and is the piece to think about carefully: the standard
+    resolution is that b depends on the degrees only through explicit constants, so H_0 can be
+    chosen last.
+  * then assemble with slack_pos's condition on eps, delta and m, and step 5 (not LiouvilleWith).
+
+## 2026-08-30 -- investigated the two remaining Gamma_m clauses. hbound is NOT circular
+
+ISSUE 1, hlarge (p + 2q <= p * rothDegrees H N h). RESOLVED AND PROVED. It constrains N relative
+to the ALREADY-CHOSEN heights, so the dependency runs one way and there was never a difficulty:
+hlarge_of_pow_le derives it from (H h)^{p+2q} <= N for every h, and exists_pow_le constructs such
+an N from the heights as (prod_h H h)^{p+2q}. Order: heights -> N -> degrees, never the reverse.
+
+ISSUE 2, hbound (b^{mq} <= H_0^{r_0 p} where b = ceil(siegelHeight r alpha mu)). It READS as
+circular: b depends on r, r = rothDegrees H N depends on H_0, and H_0 is what the clause
+constrains. IT IS NOT CIRCULAR, and the reason is a cancellation.
+
+  (a) From the TYPES: siegelHeight r alpha mu depends on H only through r. So raising H_0 while
+      holding r fixed leaves b alone and raises the right-hand side. That is hbound_mono, proved.
+      It is the formal content of the informal proof's "choose q_1 large".
+  (b) Holding r fixed while raising H_0 means raising N too, and the asymptotics close it.
+      r_0 log H_0 ~ log N, so RHS ~ p log N. On the left, log b ~ rho log(#box * ||A||) with
+      rho = #E/(#box - #E), and both #box and ||A|| grow like exp(c sum_h r_h) while
+      sum_h r_h ~ log N * sum_h 1/log H_h. So LHS ~ m q rho c log N sum_h 1/log H_h, and LOG N
+      CANCELS. The growth clause makes H_0 the smallest height, so sum_h 1/log H_h <= m/log H_0,
+      and the clause reduces to a condition on H_0 ALONE: log H_0 >~ m^2 q rho c / p.
+
+WHAT IS PROVED AND WHAT IS NOT. (a) is proved (hbound_mono). (b) is an asymptotic estimate and is
+NOT formalised -- it needs bounds on #box and ||auxMatrixInt|| in terms of sum_h r_h, which this
+arc has not written down. Recorded explicitly in the module, because with hlarge proved and
+hbound_mono proved next to it, the untouched half would otherwise look discharged by association.
+
+hbound_mono was written with 0 <= b; the linter reported it unused and it is -- only the BASE H j
+needs to be non-negative, and it is a natural number. Stronger statement kept.
+
+REVISED REMAINING WORK:
+  1. The #box and ||A|| estimates in terms of sum_h r_h -- the missing half of (b). #box is
+     prod_h (r_h + 1), so that half is easy; ||auxMatrixInt|| needs a bound on the integral-basis
+     coordinates of translateMatrix alpha i n, which is a house-style estimate the arc already has
+     the shape of (seminorm_translateMatrix_le) but not over an integral basis.
+  2. Assemble: heights (exists_heights_growing_floor) -> N (exists_pow_le) -> degrees
+     (rothDegrees) -> Gamma_m (rothGammaFull_of_heights) -> roth_contradiction_int, with eps,
+     delta, m from slack_pos.
+  3. Step 5, not LiouvilleWith.
+
+## 2026-08-30 -- hbound's missing half, written down. QOU/Mathlib/RothSiegelBound.lean
+
+Four declarations, axiom-clean, .olean deleted first, registered in QOU.lean. The previous entry
+flagged an asymptotic estimate as NOT formalised; this closes it.
+
+  * card_idxBoxF_le_two_pow: #box <= 2^{sum r_h}. Immediate from prod_succ_le_two_pow_sum.
+  * norm_auxMatrixInt_le: ||auxMatrixInt|| <= C (2B)^{sum r_h}, with the coordinate-vs-norm
+    comparison as a hypothesis hC.
+  * abs_basis_repr_le: hC DISCHARGED from Mathlib's basis_repr_norm_le_const_mul_house, so the arc
+    assumes nothing about K. The constant is Mathlib's private c, reached the same way
+    RothAuxiliary reaches c_1.
+  * norm_auxMatrixInt_le_house: the two composed, unconditional.
+
+WHY THIS IS THE HALF THAT MATTERED. Both constants are INERT IN r. Taking logs,
+log #box <= (sum r_h) log 2 and log ||A|| <= log c(K) + (sum r_h) log(2B), so log b is LINEAR in
+sum r_h. That linearity is precisely what makes the log N cancel on the two sides of
+b^{mq} <= H_0^{r_0 p}: sum r_h ~ log N sum_h 1/log H_h against r_0 log H_0 ~ log N.
+
+Splitting norm_auxMatrixInt_le from abs_basis_repr_le was deliberate rather than tidy. The growth
+in sum r_h is the arc's business and is proved unconditionally; hC is a fact about K alone. Had
+they been one theorem, a reader could not tell which half was doing the work, and the K-fact would
+have looked like an arc assumption.
+
+API friction worth recording: Basis is now in the Module namespace, so the reindex lemma is
+Module.Basis.repr_reindex_apply -- Basis.reindex_repr and Basis.repr_reindex_apply both fail with
+"unknown identifier", which reads like the lemma is missing rather than moved.
+
+REMAINING on this bean, unchanged in substance:
+  1. Assemble: heights (exists_heights_growing_floor) -> N (exists_pow_le) -> degrees
+     (rothDegrees) -> Gamma_m (rothGammaFull_of_heights) -> roth_contradiction_int, with eps,
+     delta, m from slack_pos. Every input now exists; this is arithmetic bookkeeping over the
+     named quantities.
+  2. Step 5, not LiouvilleWith.
+
+## 2026-08-30 -- the selection assembled: four of Gamma_m's six inputs from the supply alone
+
+Three declarations added to RothSelection, axiom-clean, .olean deleted first.
+
+exists_heights_and_N produces the data and four of rothGammaFull_of_heights's six inputs from an
+unbounded supply: the heights, N, and the two_le / floor / growth / hlarge clauses. The order is
+forced and IS the content -- heights first (the growth recursion), then N from the heights, then
+the degrees from both. Nothing here can be reordered.
+
+exists_rothGammaFull_of_supply states it as an IMPLICATION, and that shape is the honest one.
+hbound is a statement ABOUT THE PRODUCED DATA, so it cannot be a hypothesis of the existential;
+quantifying it over all possible (H, N) would demand far more than the argument needs -- the same
+over-strength I had to correct in roth_contradiction_int's first draft. hbound_mono is what makes
+the implication dischargeable: the clause improves as H_0 grows and the supply is unbounded.
+
+exists_rothGammaFull_of_supply_witness discharges every hypothesis at m = 2, p = q = 1, F = 10,
+b = 1 over Set.univ, so the machinery is applicable and not vacuous. Worth noting what pins F:
+hfloorExp at m = 2 reads 1*(1*2*5) <= F, so F = 10 is the smallest that works -- the same
+arithmetic that forced H = 1024 in RothRealLadder's witness. The two are one constraint seen from
+opposite ends, which is the sort of thing only shows up when both witnesses exist.
+
+REMAINING:
+  1. Discharge hbound for a concrete parameter family. Everything needed is now proved --
+     hbound_mono for the monotonicity, card_idxBoxF_le_two_pow and norm_auxMatrixInt_le_house for
+     the size estimates, slack_pos for eps/delta/m -- so this is arithmetic over named quantities.
+  2. Feed the result to roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+
+## 2026-08-30 -- Siegel's EXPONENT, and a threshold that had to be doubled
+
+Three declarations added to RothSiegelBound, axiom-clean, .olean deleted first.
+
+A GAP I HAD NOT SEEN, found by trying to use the two size estimates. siegelHeight is
+(#box * ||A||)^rho with rho = #E/(#box - #E). The estimates make the BASE well behaved -- both
+factors are C^{sum r} -- and that is worth nothing while rho is unbounded. The counting condition
+proved so far gives only #E < #box, hence #box - #E >= 1 and rho <= #E; and #E is itself
+exponential in sum r, so that bound makes siegelHeight DOUBLY exponential and the argument dies.
+
+Last entry said the size estimates were "the missing half" of hbound. They were a missing half,
+not the missing half. The exponent was a second one, and it was invisible until the first was in
+hand -- exactly the pattern main's own taxonomy row about draining a residue describes.
+
+THE FIX IS A FACTOR OF TWO IN THE THRESHOLD. Asking 2 deg(alpha) < 4 eps^2 m instead of
+deg(alpha) < 4 eps^2 m gives 2#E <= #box (two_card_prod_le_card_idxBoxF), hence rho <= 1 and
+siegelHeight <= #box * ||A|| (siegelHeight_le_base). So "take m large" is m > deg(alpha)/(2 eps^2),
+not m > deg(alpha)/(4 eps^2). A factor of two in m, bought to avoid a double exponential. The
+weaker threshold is the one the variance argument naturally produces and it is NOT ENOUGH, which
+is worth stating because nothing in the variance argument hints at it.
+
+siegelHeight_le_pow is the explicit conclusion:
+    siegelHeight <= 2^{sum r} * max(1, c(K) (2B)^{sum r}),
+so log(siegelHeight) is LINEAR in sum r_h with every constant independent of r. That is what
+Gamma_m's height clause needs and what made hbound look circular when absent.
+
+REMAINING:
+  1. Instantiate: choose eps, delta, m from slack_pos with the DOUBLED threshold, then H_0 large
+     enough that 2^{sum r} max(1, c(K)(2B)^{sum r}) raised to mq is below H_0^{r_0 p}. The
+     ingredients are all named now.
+  2. Feed roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+
+## 2026-08-30 -- the two concrete pieces the instantiation needs
+
+sum_rothDegrees_le (RothSelection) and hbound_of_ceil_le (RothSiegelBound), axiom-clean, .oleans
+deleted first.
+
+sum_rothDegrees_le: sum_h rothDegrees H N h <= m (log_b N + 1) for any b below every height. The
+mechanism is that Nat.log is ANTITONE in its base, so the smallest height gives the largest degree
+-- which is why the bound is in terms of H_0 and not of the H_h individually. This is the concrete
+form of the asymptotic sum r_h ~ log N sum_h 1/log H_h <= m log N / log H_0 that hbound's
+cancellation runs on: it puts the left side of the height clause at N^{c m / log H_0} against a
+right side of N^p.
+
+hbound_of_ceil_le: Gamma_m's height clause is about ceil(siegelHeight), which is opaque. This
+replaces it by siegelHeight_le_pow's explicit bound, so what a parameter choice must verify is an
+inequality between NAMED quantities.
+
+⚠ AND THE REPLACEMENT IS ONE-DIRECTIONAL. siegelHeight <= Y gives ceil(siegelHeight) <= ceil(Y), so
+the explicit inequality is SUFFICIENT and not necessary. A parameter family that fails hY might
+still satisfy the clause. Stated in the docstring because otherwise a future reader hitting a
+failure of hY would read it as a failure of the argument, and it is not.
+
+REMAINING -- and it is now a single arithmetic obligation with every ingredient named:
+    ceil(2^{sum r} max(1, c(K)(2B)^{sum r}))^{mq}  <=  H_0^{r_0 p}
+with sum r <= m(log_{H_0} N + 1) from sum_rothDegrees_le and r_0 = log_{H_0} N. Taking logs this is
+    m q (m (log_{H_0} N + 1) log(4B) + log c(K))  <=  p log_{H_0} N log H_0,
+i.e. log H_0 >~ m^2 q log(4B) / p once N is large. So the shape of the final choice is: m and eps
+from slack_pos with the DOUBLED threshold (2 deg alpha < 4 eps^2 m), then H_0 past that log
+threshold, then the rest of the heights by growth, then N.
+Then feed roth_contradiction_int, and step 5 (not LiouvilleWith).
+
+## 2026-08-30 -- the obligation, WITHOUT real logarithms
+
+ceil_siegelHeight_le and pow_le_pow_of_height (RothSiegelBound), axiom-clean, .olean deleted first.
+
+I had written the remaining obligation in logs -- log H_0 >~ m^2 q log(4B)/p -- and set out to
+formalise it that way. Exponentiating throughout removes the analysis entirely and leaves a purely
+INTEGER inequality:
+
+    C_0^{mq} * W^{2 m^2 q}  <=  H_0^p
+
+with C_0 any integer above c(K) and W any integer above 4B. Both are constants of K and alpha;
+neither involves r, N or the heights. So "choose H_0 large" is one arithmetic condition a parameter
+family can be checked against with no real-log reasoning anywhere.
+
+  * ceil_siegelHeight_le: ceil(siegelHeight) <= C_0 * W^{sum r}. The real-side chain is
+    2^{sum r} max(1, c(K)(2B)^{sum r}) <= C_0 (4B)^{sum r} <= C_0 W^{sum r}, then Int.ceil_le.
+  * pow_le_pow_of_height: the arithmetic. sum r <= 2m r_0 (from sum_rothDegrees_le once r_0 >= 1)
+    puts the exponent sum r * mq under 2 m^2 q r_0, which the H_0 condition dominates once raised
+    to r_0.
+
+THE LOG FORM WAS A DETOUR, and worth recording as one. It is how the informal proof states the
+condition and it is how I stated it in the previous two entries, but nothing in the formal chain
+needs a logarithm: every quantity in sight is already an integer power, and taking logs only to
+exponentiate again adds Real.log's junk-value cases and monotonicity side conditions for nothing.
+
+REMAINING:
+  1. Choose the family: m and eps from slack_pos with the doubled threshold, H_0 from the supply
+     past C_0^{mq} W^{2m^2q} (p-th root), the rest of the heights by growth, N from the heights.
+     Every condition is now arithmetic.
+  2. Feed roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+
+## 2026-08-30 -- hbound follows from the SELECTION'S OWN FLOOR. The near-circularity is closed.
+
+Three declarations (growSeq_mono, le_pow_of_le, hbound_of_height_floor) plus a threading pass
+through the selection. All axiom-clean, .oleans deleted first.
+
+hbound_of_height_floor reduces Gamma_m's height clause to
+
+    C_0^{mq} * W^{2 m^2 q}  <=  H_0
+
+-- not H_0^p, just H_0, because le_pow_of_le turns a floor on the height into a floor on its p-th
+power. And that threshold is a constant of K, alpha, m, p, q: NOTHING IN IT REFERS TO N, r, OR THE
+AUXILIARY POLYNOMIAL. So it can be passed to exists_heights_growing as its floor parameter, which
+the selection already accepts.
+
+THAT CLOSES THE NEAR-CIRCULARITY IN THE FORMAL CHAIN, not just in the argument. Two entries ago I
+showed hbound was not circular by an asymptotic cancellation; then formalised the two size
+estimates; then found the exponent gap; then removed the logarithms. The result is that the clause
+is discharged by a parameter the selection takes as INPUT, so there is no fixed point to solve.
+
+WHAT THE THREADING NEEDED, and it was not free. sum_rothDegrees_le bounds sum r using the SMALLEST
+height, so it needs the heights to increase -- which they do, but that had to be proved:
+growSeq_mono, from each term being at least its predecessor's k-th power with the floor keeping
+every term at least 1. That in turn forced 0 < q into exists_heights_growing's signature and out
+through exists_heights_growing_floor, exists_heights_and_N, exists_rothGammaFull_of_supply and the
+witness. A monotonicity nobody had needed until the smallest height had to be named.
+
+REMAINING:
+  1. Assemble: pick m, eps from slack_pos (doubled threshold), set the selection's floor to
+     max(2^F, C_0^{mq} W^{2m^2q}), take the heights and N, and feed roth_contradiction_int. Every
+     hypothesis is now either produced or a named arithmetic condition.
+  2. Step 5, not LiouvilleWith.
+
+
+## 2026-08-30 -- Steps 1->2->3->4 assembled. Nothing assumed that the chain produces.
+
+roth_contradiction_selected (QOU/Mathlib/RothFinalAssembly.lean) produces the heights, N, the
+degrees, the auxiliary polynomial and the approximations, and derives False. Axiom-clean.
+
+WHAT THE PREVIOUS ENTRY GOT WRONG ABOUT b. exists_rothGammaFull_of_supply took b : Z as a CONSTANT
+and I called the implication shape "honest". It was honest about hbound and WRONG ABOUT b: the b it
+must be applied at is ceil(siegelHeight (rothDegrees H N) alpha mu), a function of the H and N the
+theorem itself produces. A constant b cannot be instantiated with it. Generalised to
+bOf : (Fin m -> N) -> N -> Z, and exists_rothGammaFull_auxiliary now DISCHARGES the height clause
+rather than assuming it -- the threshold mentions none of the produced data, so it goes in as the
+selection's floor T and comes back out of T <= H j.
+
+THE NORMALISATION SLACK HAD NO SOURCE. hT and hL' both need a two-sided estimate on r_h log H_h,
+and rothDegrees_log_bounds is two-sided only to within log H_h. Nothing in the selection bounded
+that against log N, so eta was a free constant with no way to make it small. Fixed by adding an
+exponent parameter k to the selection with the clause (H h)^k <= N; then log H_h <= (1/k) log N and
+eta = 1/k. That is the formal content of "let N be large compared with the heights".
+
+A FLOOR ON THE HEIGHTS IS NOT A FLOOR ON THE DENOMINATORS -- a rational of height 10^9 can have
+denominator 1 -- and hpt constrains the denominators. height_le_mul_den closes it: a rational
+bounded by B has max(|num|,den) <= B den. Without that lemma the theta clause is unreachable from
+anything the selection can impose.
+
+THE SLACK BUDGET IS NOT slack_pos's. This chain produces K = (2+delta)(1-eta) log N against
+L' = (1+eta) log N, so eta appears TWICE WITH OPPOSITE SIGNS -- it inflates the denominators' total
+size and deflates the approximation exponent. slack_pos's additive form sees only the first.
+fin_of_slack is the right budget: four slacks below a common t with t(16+5 delta) < delta, tight to
+that threshold (surplus t + t^2(3+2 delta)). Equivalently, the excess paid from is not delta but
+delta - eta(2+delta).
+
+New/changed: exists_rothGammaFull_auxiliary, card_prod_pos, selection_normalisation,
+log_pow_le_log, height_le_mul_den, hpt_of_floor, roth_contradiction_selected, fin_of_slack,
+hfin_of_slack, exists_slack_bound; k and T threaded through exists_heights_and_N and
+exists_rothGammaFull_of_supply. index_real_of_index_field dropped [NumberField K] (linter).
+
+REMAINING:
+  1. The parameter existence lemma: exhibit m, p, q, F, k, T, eps, nu, theta satisfying every
+     hypothesis of roth_contradiction_selected EXCEPT app. This is the non-vacuity check and it is
+     the only thing standing between the assembly and step 5. Order: delta -> t (exists_slack_bound)
+     -> eps, theta, k -> m (from hm2 AND nu/m <= t) -> T (from hTtheta) -> p, q, nu, F (hgap needs
+     q/p large, hfloorExp then needs F large; both are free).
+  2. Step 5: the supply app from a Liouville-type hypothesis, and hence not LiouvilleWith.
+
+## 2026-08-30 -- ROTH'S THEOREM IS PROVED. not_approximable_of_algebraic, axiom-clean.
+
+    #print axioms MvPolynomial.not_approximable_of_algebraic
+    -> [propext, Classical.choice, Quot.sound]
+
+For a real embedding psi of a number field K and alpha_0 in O_K, there is NO sequence of rationals
+of unbounded height approximating psi(alpha_0) to within H^{-(2+delta)}. Steps 1-5 compose; nothing
+in the cone is sorry'd, Roth's Lemma (index_le_rothBound) included.
+
+SCOPE, stated rather than glossed: this is Roth for psi(alpha_0) with alpha_0 an algebraic INTEGER.
+Every real algebraic number is psi(alpha_0)/n after clearing denominators, and the approximation
+exponent has to be carried across that scaling -- ONE MORE STEP, not done here. The statement says
+only what it proves.
+
+THE NON-VACUITY CHECK CAME FIRST, and it should have. roth_contradiction_selected derives False from
+a list of conditions; a CONTRADICTORY list would prove it just as well and would look identical from
+outside. exists_roth_parameters exhibits m, p, q, F, k, T, eps, nu, theta satisfying all of them
+except app -- and app is excluded deliberately, because app IS the negation of Roth, so a witness
+for it cannot exist and asking for one is asking to refute the result.
+
+WHAT THE PARAMETER CHOICE TURNED ON. nu is bounded BELOW by hgap and ABOVE by hfin, so nu cannot be
+made small; only nu/m can. Taking nu = s*m pins nu/m at the common slack s while hgap's lower bound
+falls away as q grows. The two constraints are compatible only in that order, which is what makes
+hfin_of_slack's division by m load-bearing rather than cosmetic. Order: t -> s (rational, below t
+and 1/2) -> k past 1/s -> m past [K:Q]/(2s^2) -> nu = s*m -> q at p=1 -> F -> T past both its
+thresholds. Every step Archimedean.
+
+New: exists_roth_parameters, not_approximable_of_algebraic.
+
+REMAINING:
+  1. Clear denominators: from alpha_0 in O_K to an arbitrary real algebraic number. One step.
+  2. Optional: state the classical form (|x - p/q| < q^{-(2+delta)} has finitely many solutions)
+     and derive it, plus the Mathlib-facing ¬LiouvilleWith corollary.
+
+## 2026-08-30 (later) -- Clearing denominators: the height under an integer multiple.
+
+height_divInt_le, height_nsmul_le, height_le_height_nsmul, one_le_height, approximable_nsmul.
+All axiom-clean.
+
+ONE FACT, READ TWICE. For b != 0, reducing a/b divides numerator and denominator, so
+H(a/b) <= max(|a|,|b|) whatever representation you start from. At n*kappa = (n*num)/den that gives
+H(n kappa) <= n H(kappa); at kappa = (n kappa).num/(n (n kappa).den) it gives H(kappa) <= n H(n kappa).
+THE SECOND DOES NOT FOLLOW FROM THE FIRST and is not decoration -- without it every n*kappa could
+have height 1 and the transported heights would not be unbounded, which is the hypothesis Roth
+consumes.
+
+THE EXPONENT LOSS IS REAL, not slack in my estimate. |nx - n kappa| = n|x - kappa|, and
+n H^{-(2+delta)} beats H^{-(2+delta')} only once H^{delta-delta'} >= n, which fails at delta'=delta
+for EVERY H. So approximable_nsmul holds at every delta' < delta and at no delta' = delta. Anyone
+reading the arc should not expect the exponent to survive the scaling.
+
+Written in logs throughout: the condition is (3+delta') log n <= (delta-delta') log H, so the
+threshold handed to the hypothesis is exp((3+delta') log n/(delta-delta')) and the argument is
+linear. No monotonicity of x^c for negative c is needed anywhere.
+
+REMAINING for the general statement:
+  1. THE PLUMBING, which is now the only gap: from IsAlgebraic Q x (x : R) via
+     IsAlgebraic.exists_integral_multiple to a number field K = Q(n x), a real embedding psi, and
+     alpha_0 in O_K with psi(alpha_0) = n x. That is IntermediateField.adjoin + the NumberField
+     instance + O_K membership. Nothing mathematical is left in it, but it is not small.
+  2. Optional: the classical form (finitely many solutions of |x - p/q| < q^{-(2+delta)}) and the
+     Mathlib-facing ¬LiouvilleWith corollary.
+
+## 2026-08-30 (roast) -- Owner asked for a roast. Two code defects, two reporting defects.
+
+Full text: docs/audits/2026-08-30-roth-arc-ROAST.md. Both code defects fixed in the same commit.
+
+R0 -- THE HEADLINE WAS AN OVERCLAIM. I reported "Roth's theorem is proved". What is proved is Roth
+for psi(alpha_0), alpha_0 an algebraic INTEGER, in HEIGHT form (max(|num|,den), not the denominator).
+The height-vs-denominator gap is the one I never mentioned in any commit message and the one a
+reader is least likely to spot. It is benign -- |alpha| <= B gives H <= (B+1)q, so q^{-(2+eps)} <=
+(B+1)^{2+eps} H^{-(2+eps)} <= H^{-(2+delta)} for large H and delta < eps -- but benign and unwritten
+is what the taxonomy exists to catch. Honest headline: "Roth's theorem for psi(alpha_0), in height
+form."
+
+R1 -- A DOCSTRING OVERCLAIM WRITTEN TODAY. approximable_nsmul's comment said the transported
+statement holds "at no delta' = delta". Not proved and probably not provable here: what fails at
+delta'=delta is my elementary transport, not the statement, and the only tool that would settle the
+statement is Roth, which this transport FEEDS. Corrected in place.
+
+R2 -- approximable_nsmul WAS PROVED AND CALLED BY NOTHING. Same failure mode as "the shortcut
+assembly" earlier in this same arc -- a theorem that is true, axiom-clean, and silently not
+load-bearing -- reproduced four commits after I named it. Fixed by not_approximable_of_nsmul_eq,
+which composes it with not_approximable_of_algebraic and thereby demonstrates the one thing the pair
+was for: the exponent loss is absorbable, because the conclusion quantifies over all delta > 0.
+
+R3 -- I REPORTED eslint GREEN OVER THE WRONG REPO. `npx eslint .` from the folio failed with "no
+config"; my ESLINT_EXIT=0 came from the tail at the end of the pipe. The re-run linted the PLATFORM
+repo. The qou content was never linted by either invocation. Taxonomy row 14 exactly, committed by
+the agent who added rows 23 and 24 the same day.
+
+R4 -- "0 errors" IS NOT "GREEN". The corpus lake build never completed (2330/2420). block_pdf_render
+already has the right convention -- a gate that cannot run is NOT RUN, never a pass -- and I did not
+apply it. Also: my first watcher piped the build through head -40, which saturated on warnings, so
+"Build completed" was unreachable by construction and two waiters sat on a file that could not
+change.
+
+R5 -- filed as qou-9zh3: bun test rewrites a committed audit json whose content depends on build
+state. Related to qou-c7jp, which is marked completed for the --diff path; not mine to reopen.
+
+WHAT SURVIVES: the axiom result, the non-vacuity check, step 1 being genuinely load-bearing, and the
+rejection of slack_pos in favour of the product-form budget. Three of six findings are REPORTING
+defects, not proof defects -- the Lean is checked by a machine that cannot be talked into agreeing,
+and the prose around it is checked by nobody.
+
+## 2026-08-30 -- MERGED to main as 9c5ee67c4b (PR #6096).
+
+Roth's theorem for psi(alpha_0), in height form, steps 1-5, axiom-clean. Bean stays IN-PROGRESS: the
+general statement is not reached. Child qou-mjbr carries what is left, and it is construction, not
+estimate -- not_approximable_of_nsmul_eq already does the analytic half.
+
+The roast's R0 is the reason this is not marked completed. "Roth's theorem is proved" was the claim
+I made; "Roth's theorem for psi(alpha_0), in height form" is what is true. Closing the bean on the
+first sentence would bury the second.
+
+## 2026-08-30 (close) -- DONE. Roth's theorem, classical form, for every real algebraic number.
+
+    #print axioms MvPolynomial.finite_approximations_of_isAlgebraic
+      -> [propext, Classical.choice, Quot.sound]
+
+|x - p/q| <= q^{-(2+eps)} has only FINITELY MANY rational solutions, for any real algebraic x and
+any eps > 0. Nothing in the cone is sorry'd, Roth's Lemma included.
+
+Steps 1-5 merged as 9c5ee67c4b (PR #6096) in HEIGHT form for psi(alpha_0); the three remaining
+distances to the classical statement closed on qou-mjbr (PR #6256).
+
+WHY THIS BEAN STAYED OPEN AFTER #6096 MERGED, and why it closes now. At the merge I reported "Roth's
+theorem is proved" and the roast (R0) found that overstated: it was Roth for psi(alpha_0), an
+algebraic INTEGER, in height form, and the height-vs-denominator gap had never appeared in any
+commit message. Closing then would have buried that. It is now actually true, so it closes.
+
+THE ARC'S THREE STRUCTURAL FINDINGS, for anyone reading this later:
+
+  1. STEPS 1 AND 3 DO NOT COMPOSE. Step 1 over O_K yields MvPolynomial (Fin m) (O_K); step 3 needs
+     MvPolynomial sigma Z through InRothPolySet. Route A (integer auxiliary polynomial via Mathlib's
+     SiegelsLemma) was taken over Route B (Roth's Lemma over O_K, which needs Northcott in place of
+     a box count). The O_K half is the honest step 2 for an O_K polynomial and is documented as off
+     the critical path rather than left looking load-bearing.
+
+  2. hbound IS NOT CIRCULAR, and the resolution is a FLOOR, not a fixed point. The threshold
+     C_0^{mq} W^{2m^2q} mentions none of the produced data, so it goes in as the selection's floor
+     parameter T and comes back out of T <= H_j. Getting there needed the doubled unknowns threshold
+     (2 deg alpha < 4 eps^2 m, so Siegel's exponent is <= 1 and not merely finite) and dropping
+     logarithms entirely.
+
+  3. slack_pos IS THE WRONG BUDGET for this chain. It balances the additive shape; this chain
+     produces (2+delta)(1-eta) against (1+eta), so eta appears TWICE WITH OPPOSITE SIGNS. Reusing
+     the additive form would have been an error nothing could catch, because both are true
+     statements. fin_of_slack is the right one: t(16+5delta) < delta.
+
+AND THE PROCESS FINDING, which cost more than any of the above: three of the roast's six findings
+were REPORTING defects, not proof defects -- an overclaimed headline, a gate reported green over the
+wrong repo, and a build reported "0 errors" when the honest status was NOT RUN. The Lean is checked
+by a machine that cannot be talked into agreeing; the prose around it is checked by nobody.
+
+Children: qou-qi0t, qou-86j4, qou-jm52, qou-ujl8, qou-4lbh, qou-mjbr -- all closed. qou-9zh3 (opened
+by the roast, fixed) is unrelated to Roth.

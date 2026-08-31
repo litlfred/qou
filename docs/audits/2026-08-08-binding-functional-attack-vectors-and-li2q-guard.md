@@ -284,6 +284,15 @@ A map from a multiplicative trace to an additive energy must satisfy
 `f(xy) = f(x) + f(y)` — the Cauchy functional equation on `(ℝ₊, ×)` — whose only
 continuous solutions are `f(x) = c·ln x`. **The log form is forced.**
 
+> **Convention scope, added 2026-08-31.** The `1.4875` below is a
+> **convention-C** figure — this audit is dated one day before the 2026-08-09
+> convention-D excision. Re-measured at the proton pin with `μ_pp = z`,
+> `μ_nn = z − h`: **C gives 1.487498** (matching to 1.6e-6), **D gives 0.966887**.
+> The conclusion is unaffected in either convention, because the defect has the
+> closed form `−α(1−x)(1−y)`, which vanishes only at `x = 1` or `y = 1`
+> (`QOU.QBeta.InterfaceScalar.linearForm_extensivity_defect`, sorry-free — an
+> identity, so it needs no anchor). Only the quoted number needs the scope.
+
 Measured, on `x = μ_pp`, `y = μ_nn`:
 
 ```

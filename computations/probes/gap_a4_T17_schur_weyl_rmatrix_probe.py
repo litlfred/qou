@@ -298,8 +298,10 @@ def main():
     )
     w.add_assertion(
         "trace_at_q_one_equals_dim_8",
-        computed=fmt(mp.mpf(classical["tr_at_q1"])),
-        expected=8.0,
+        # |tr - 8| against 0: the trace carries roundoff, so comparing it to 8
+        # cancels in the float64 verdict at ~1.8e-15 and 1e-30 is unreachable.
+        computed=fmt(abs(mp.mpf(classical["tr_at_q1"]) - 8)),
+        expected="0",
         tolerance=1e-30,
         source=(
             "At q = 1, β_Bor → identity ∈ S_3, so tr_{V^⊗3}(β_Bor) = "

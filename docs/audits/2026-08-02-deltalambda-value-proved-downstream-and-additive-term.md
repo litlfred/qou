@@ -120,11 +120,47 @@ now proved via `aStat_eq_sumChoose2_conjugate`), `qou-dr7h`. Keep OPEN: `qou-7yg
   (`ρ_strong(4) ≈ 13 > 6`) exceed it robustly ⇒ the missing term is
   **super-pairwise** (irreducibly ≥3-body).
 
-**The framework already localizes it — the inter-nucleon channel.** The
-`conj:inter-nucleon-channel-color-tube` diagnostic: per-isotope error correlates
-with inter-nucleon **arc count** at `R² = 0.83` (vs signed-h weight `R² = 0.26`)
-— the extensive `∝ A` signature. The arc structure (A−1 inter-nucleon Hecke
-generators) is the extensive backbone; the color-tube weight `W_{c₁c₂}` (now
+**~~The framework already localizes it — the inter-nucleon channel.~~
+🛑 RETRACTED 2026-08-30 — the cited diagnostic does not say this.** The paragraph
+below stood here and should not be relied on; it is kept struck through because
+it was quoted onward into bean `qou-0c19`'s title and into
+`brings-surface/inter-nucleon-channel-color-tube.md:34`.
+
+> ~~The `conj:inter-nucleon-channel-color-tube` diagnostic: per-isotope error
+> correlates with inter-nucleon **arc count** at `R² = 0.83` (vs signed-h weight
+> `R² = 0.26`) — the extensive `∝ A` signature.~~
+
+**What the cited source actually records.**
+`computations/low-isotope-sign-flip-diagnostic.witness.json` contains no `0.83`
+anywhere. Its two fits are `err_pct ~ n_inter` at **`R² = 0.2653`** and
+`err_pct ~ signed_h` at **`R² = 0.0018`**, over **n = 5** nuclei of which the two
+`A = 1` rows are anchors with `|err_pct| < 10⁻³`. Its own recorded verdict is
+*"**WEAK** correlation between err_pct and inter-nucleon channel counts/weights.
+Sign-flips are **NOT** explained by simple linear channel models."* — the
+opposite of the conclusion drawn from it here. Note also that the `0.26`
+attributed above to *signed-h* is, to three digits, the witness's *arc-count*
+value.
+
+**And the claim as written was degenerate anyway.** Read as the "extensive `∝ A`
+signature" — i.e. on absolute error — it cannot discriminate, for two exact
+algebraic reasons: `R²` is invariant under scaling the response, so a model short
+by a constant *fraction* gives `R²(err ~ X) = R²(B ~ X)` for every `X`, and
+`R²(B_AME ~ arc) = 0.9943` on the 2449 AME2020 nuclei with `2 ≤ A ≤ 240` with no
+model at all; and `R²` is invariant under affine reparametrisation of the
+regressor, so `arc = A − 1` scores *exactly* what bare `A` scores. (That second
+argument applies to the absolute-error reading used in this audit and in the
+bean; the witness itself fits *relative* error, for which a constant fractional
+shortfall has zero variance — the two readings are kept separate in the probe.)
+
+This does **not** refute `conj:inter-nucleon-channel-color-tube`, which may hold
+on the categorical argument; it removes the empirical evidence cited for it here.
+The clone used is shallow, so an earlier version of the witness carrying `0.83`
+cannot be excluded — the statement is about the witness as committed today, which
+is what a reader following the citation finds. Probe:
+`computations/probes/arc_count_diagnostic_degeneracy_probe.py` (6/6).
+
+The arc structure (A−1 inter-nucleon Hecke generators) is still the extensive
+backbone as a *structural* statement; the color-tube weight `W_{c₁c₂}` (now
 **derived**, 8→0 free params, `2026-08-01-color-tube-weight-fully-determined.md`)
 fixes the *p/n asymmetry / sign*, **not** the extensive magnitude.
 

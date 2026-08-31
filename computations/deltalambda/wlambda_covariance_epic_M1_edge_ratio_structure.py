@@ -20,6 +20,13 @@ Reports per n: N/P (=E_omega[ratio]); omega-weight with ratio_e>=1; max ratio_e
 carrying weight; and the weight split by corner-distance |A-B| (adjacent vs
 distant single-box moves).
 
+NOTE (correction, bean qou-t6hc): this probe used to conclude "worst-case
+per-edge ratio <= 4". That is FALSE for n >= 28. The 1-Lipschitz lemma bounds
+the ratio by 4 only for SAME-sign contents; the extremal edges are all
+opposite-sign, and the true maximum, 2*floor((sqrt(8n+1)-3)/4) ~ sqrt(2n),
+diverges. Default nmax here is 16, so the claim never ran where it fails.
+See wlambda_covariance_epic_M1_edge_ratio_monotonicity.py.
+
 Exact Fraction throughout; NO float64 (mpmath.mpf only for display ratios).
 
 Honesty: exploratory structure probe for the OPEN uniform bound; scope-(a); no
@@ -136,6 +143,17 @@ def removable(Lam):
     return out
 
 
+def fs(x, d=6):
+    """Fraction -> decimal string at mpmath working precision.
+
+    The docstring above promises mpf-only display, but until bean qou-t6hc this
+    file printed through five float() calls, which the repo's float64 gate
+    flags. Display-only either way -- but the promise is the promise, and a
+    probe that contradicts its own header is exactly what nobody re-reads.
+    """
+    return mp.nstr(mp.mpf(x.numerator) / mp.mpf(x.denominator), d)
+
+
 def analyze(n):
     Yn = list(partitions(n))
     nfac = factorial(n)
@@ -226,11 +244,12 @@ def main():
         r = analyze(n)
         wd = r["w_by_dist"]; wtot = r["wtot"]
         def frac(k):
-            return float(wd.get(k, F(0)) / wtot) if wtot != 0 else 0.0
-        f_ge4 = float(sum((v for k, v in wd.items() if k >= 4), F(0)) / wtot) if wtot != 0 else 0.0
+            return (wd.get(k, F(0)) / wtot) if wtot != 0 else F(0)
+        f_ge4 = (sum((v for k, v in wd.items() if k >= 4), F(0)) / wtot) if wtot != 0 else F(0)
         assert r["N"] < r["P"], f"N<P must hold (n={n})"
-        print(f"  {n:>3} {float(r['NP']):>10.6f} {float(r['frac_omega_ratio_ge1']):>12.6f} "
-              f"{float(r['max_ratio']):>10.4f}   d1={frac(1):.4f} d2={frac(2):.4f} d3={frac(3):.4f} d>=4={f_ge4:.4f}")
+        print(f"  {n:>3} {fs(r['NP'], 8):>10} {fs(r['frac_omega_ratio_ge1'], 6):>12} "
+              f"{fs(r['max_ratio'], 5):>10}   d1={fs(frac(1), 4)} d2={fs(frac(2), 4)} "
+              f"d3={fs(frac(3), 4)} d>=4={fs(f_ge4, 4)}")
     # 1-Lipschitz lemma: |D(u+1)-D(u)| <= 1 for every Young diagram.
     lip_ok = True
     maxjump = 0
@@ -244,20 +263,41 @@ def main():
                     lip_ok = False
     print()
     print(f"# 1-Lipschitz lemma |D(u+1)-D(u)|<=1 (all partitions n<=min(nmax,14)): {lip_ok}  (max jump {maxjump})")
-    print("#   => d_a - d_r <= r - a (same-sign contents) => per-edge ratio_e =")
-    print("#      2(d_a-d_r+1)/(r-a) <= 2 + 2/(r-a) <= 4  (explains observed max ratio 4).")
+    print("#   => d_a - d_r <= r - a  ONLY FOR SAME-SIGN CONTENTS, where it gives")
+    print("#      ratio_e = 2(d_a-d_r+1)/(r-a) <= 2 + 2/(r-a) <= 4.")
+    print("#   That hypothesis is load-bearing, and this probe's range hides it: for")
+    print("#   OPPOSITE-sign contents |c_A - c_B| = r + a, not r - a, and the bound is")
+    print("#   lost. The true maximum is attained on Lam_m = ((2m+1)^(m+1), 1) -- two")
+    print("#   corners, at contents m and -(m+1), with D_Lam = m+1 and 1 -- giving")
+    print("#      max ratio_e = 2m = 2*floor((sqrt(8n+1)-3)/4) ~ sqrt(2n)   [UNBOUNDED]")
+    print("#   at n = 2m^2+3m+1 = 6, 15, 28, 45, ...  So 4 holds only for n <= 27, and")
+    print("#   this probe's default nmax is 16. Verified against a brute-force scan of")
+    print("#   every corner pair at every level n = 6..50 in")
+    print("#   wlambda_covariance_epic_M1_edge_ratio_monotonicity.py (bean qou-t6hc).")
     print("#")
     print("# FINDING (route refutation, scope-(a)): the weight-suppression hypothesis is FALSE.")
     print("#   omega-weight concentrates on DISTANT signed-content moves (d>=4 grows with n),")
     print("#   and ~15% of omega-weight sits on ratio_e>=1 (persistent, not ->0). N/P<1 is NOT")
-    print("#   worst-case: per-edge ratio can be 4. It is an AVERAGING phenomenon -- omega ~")
+    print("#   worst-case: the per-edge ratio is UNBOUNDED (~sqrt(2n), see above).")
+    print("#   It is an AVERAGING phenomenon -- omega ~")
     print("#   (r-a)^2(r+a) up-weights large-(r-a) edges, which have SMALL ratio_e, and the")
     print("#   bulk diagonal profile of a typical diagram is FLAT (d_a-d_r << r-a in the bulk).")
     print("#   Hence a uniform N/P<1 needs EFFECTIVE (error-controlled) limit-shape estimates")
     print("#   (Berry-Esseen grade), not an elementary per-edge/worst-case bound.")
+    print("#   SUPERSEDED as a statement of what is NEEDED: ..._edge_ratio_decomposition.py")
+    print("#   reduces M_1>0 to [N/P monotone for n>=9] + [N/P -> 0.6605] + [exact n<=9],")
+    print("#   and ..._edge_ratio_monotonicity.py verifies the monotonicity on n = 9..60.")
+    print("#   Still true that no per-edge/worst-case bound reaches it.")
     print("RESULT: N/P = E_omega[ratio_e] structure tabulated; N<P verified exactly on range.")
-    print(f"RESULT: 1-Lipschitz lemma verified (max jump {maxjump}); worst-case per-edge ratio<=4.")
-    print("RESULT: weight-suppression route REFUTED; uniform N/P<1 needs effective asymptotics.")
+    print(f"RESULT: 1-Lipschitz lemma verified (max jump {maxjump}); it bounds ratio_e<=4")
+    print("RESULT:   only for SAME-sign contents. Unconditionally the per-edge ratio is")
+    print("RESULT:   UNBOUNDED: max = 2*floor((sqrt(8n+1)-3)/4) ~ sqrt(2n), first exceeding")
+    print("RESULT:   4 at n = 28. (Corrected: the previous line asserted <=4 outright, and")
+    print("RESULT:   this probe's default nmax=16 never reached a counterexample.) That")
+    print("RESULT:   makes the averaging conclusion STRONGER, not weaker.")
+    print("RESULT: weight-suppression route REFUTED; no per-edge/worst-case bound reaches")
+    print("RESULT:   uniform N/P<1. What it NEEDS is weaker than this probe concluded --")
+    print("RESULT:   see the SUPERSEDED note above: monotonicity + the proved limit.")
     print("EXIT: 0")
     return 0
 

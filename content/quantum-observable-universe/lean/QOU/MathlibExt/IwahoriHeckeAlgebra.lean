@@ -271,6 +271,33 @@ noncomputable def indexRep (hM : ∀ i j, M i j = M j i) : HeckeAlgebra R q M �
     indexRep R q M hM (T R q M i) = q :=
   lift_T R q M _ _ _ i
 
+/-- **The sign representation** `T_i ↦ −1`.
+
+The other one-dimensional representation, and the second extreme cell module. Its
+quadratic check is even cheaper than `indexRep`'s: the *second* factor `(T_i + 1)`
+vanishes on the nose, so nothing about `q` is used. -/
+noncomputable def signRep (hM : ∀ i j, M i j = M j i) : HeckeAlgebra R q M →ₐ[R] R :=
+  lift R q M (fun _ => -1)
+    (fun i => by simp)
+    (fun i j => by rw [altProd_const, altProd_const, hM i j])
+
+@[simp] theorem signRep_T (hM : ∀ i j, M i j = M j i) (i : B) :
+    signRep R q M hM (T R q M i) = -1 :=
+  lift_T R q M _ _ _ i
+
+/-- **The two extreme cell modules are distinct** whenever `q ≠ −1` and there is at
+least one generator.
+
+`indexRep` and `signRep` are the `q`-analogues of the trivial and sign representations
+of `S_n`, i.e. the cell modules `S^{(n)}` and `S^{(1ⁿ)}`. At `q = −1` they coincide,
+which is the first place the semisimplicity of `H_n(q)` fails. -/
+theorem indexRep_ne_signRep [Nontrivial R] (hM : ∀ i j, M i j = M j i) (i : B)
+    (hq : q ≠ -1) : indexRep R q M hM ≠ signRep R q M hM := by
+  intro h
+  apply hq
+  have := congrArg (fun φ => φ (T R q M i)) h
+  simpa using this
+
 /-- **The Hecke algebra does not collapse.** Over a nontrivial base ring with a
 symmetric Coxeter matrix, `0 ≠ 1` in `HeckeAlgebra R q M`.
 

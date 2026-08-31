@@ -4,7 +4,7 @@ We place the quantum observable universe (QOU) within information-theoretic phys
 The causal boundary arises from the $q$-connection decomposition $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$. The boundary at $|Z| = c_q$ in the contact affine coordinate ([contact affine chart](#def:contact-affine-chart)) is the locus where horizontal spatial diffusion matches vertical Reeb advance. Outside this cone, the Lieb--Robinson bound enforces exponential suppression of correlations. Causality follows directly from the ratio of spatial to temporal information flow.
 
 **2. The speed of light varies with $q$.**
-The speed of light $c_q = 1/(q-1)$ depends on the substrate parameter. At the Big Bang ($q \to \infty$), $c \to 0$. As the universe classicalises ($q \to 1$), $c \to \infty$. At the present epoch $q = q_0$, $c \approx 9.12$ in Reeb units.
+The speed of light $c_q = 1/(q-1)$ depends on the substrate parameter. At the Big Bang ($q \to \infty$), $c \to 0$. As the universe classicalises ($q \to 1$), $c \to \infty$. At the present epoch $q = q_0$, $c \approx 9.093$ in Reeb units.
 
 **3. The Margolus--Levitin bound and $c_q$.**
 The Margolus--Levitin theorem bounds the operation rate by $2E/\pi\hbar$. We have the crossing energy $E = mc_q^2 = m/(q-1)^2$ and the operation count $n_R(q) = 1/\hbar_q$. The bound is:

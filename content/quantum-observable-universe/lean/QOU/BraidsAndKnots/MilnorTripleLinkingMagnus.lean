@@ -212,4 +212,56 @@ theorem linear_coefficient_must_vanish (c : ℤ)
   rw [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
   omega
 
+/-! ## What the prune leaves open — the positive half
+
+The two theorems above say what an `E_EM` may *not* be.  Route (2) of bean
+`qou-o6ml` (the Möbius / knot-energy class) needs the complementary statement:
+that an *even* functional is not merely un-excluded but compatible by
+construction, and can be nonzero.  Without it, "the map must be even" is only
+half an instruction. -/
+
+/-- An **even** functional satisfies the exchange-symmetry hypothesis
+automatically — it does not have to be imposed.
+
+So evenness is not a constraint the route must additionally satisfy; it is the
+condition under which the exchange symmetry is free. -/
+theorem even_functional_is_symmetric (F : ℤ → ℤ) (heven : ∀ m, F (-m) = F m) :
+    F (mubar123 borromeanLongitude) = F (mubar123 swappedLongitude) := by
+  rw [mubar_borromean_eq_one, mubar_swapped_eq_neg_one]
+  exact (heven 1).symm
+
+/-- **The prune is not vacuous in the even direction**: an even, exchange-
+symmetric functional can be nonzero at the Borromean configuration.  Witness
+`F m = m ^ 2`.
+
+Without this the pair of theorems above would be consistent with *every*
+admissible functional vanishing, which would kill route (2) rather than
+narrow it. -/
+theorem even_symmetric_functional_can_be_nonzero :
+    ∃ F : ℤ → ℤ, (∀ m, F (-m) = F m) ∧
+      F (mubar123 borromeanLongitude) = F (mubar123 swappedLongitude) ∧
+      F (mubar123 borromeanLongitude) ≠ 0 :=
+  ⟨fun m => m ^ 2, fun m => by ring, by decide, by decide⟩
+
+/-- **The sharper reading, and the one that constrains route (2).**  Exchange
+symmetry *alone* — with no parity assumption at all — forces any admissible
+functional to take the **same value** on the Borromean longitude and on its
+component-swapped partner.
+
+Since those two are separated by `μ̄₁₂₃ = 1` against `μ̄₁₂₃ = -1`
+(`mubar_separates_borromean_from_unlink` gives the analogous separation from
+the unlink), the consequence is that **the sign of `μ̄₁₂₃` is invisible to any
+exchange-symmetric `E_EM`**: on this pair such a functional sees at most
+`|μ̄₁₂₃|`.
+
+That is strictly stronger than "odd functionals vanish", which is the special
+case `F (-m) = - F m`.  For route (2) it says the triple-linking channel can
+supply a *magnitude* to the EM weight but never a *chirality*, so any
+construction whose EM content is carried by the sign of `μ̄₁₂₃` is excluded
+before it is built. -/
+theorem exchange_symmetry_forces_agreement_on_pm_one (F : ℤ → ℤ)
+    (hsym : F (mubar123 borromeanLongitude) = F (mubar123 swappedLongitude)) :
+    F 1 = F (-1) := by
+  rwa [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
+
 end QOU.BraidsAndKnots.MilnorTripleLinkingMagnus

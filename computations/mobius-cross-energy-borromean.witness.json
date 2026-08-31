@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-31T04:25:56.210371+00:00",
+  "commitSha": "e30894ddeff0e917e53621c726e9f52d5bad61d0",
+  "assertions": [
+    {
+      "name": "quadrature_converged",
+      "computed": "0.000000000000002792113771531651293988474919761645507737543892649590339025135410471745",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "0.000000000001",
+      "unit": "relative",
+      "source": "N=96 vs N=128 at a/b = phi agree to 2.792e-15 relative. Set at 1e-12 because the 10*pi^2 comparison below turns on a discrepancy of 5.9e-5, and that verdict is only meaningful if the quadrature error is orders below it."
+    },
+    {
+      "name": "golden_ratio_value_is_NOT_exactly_ten_pi_squared",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "E_total(phi) = 98.70181967865272 against 10*pi^2 = 98.69604401089359: ratio 1.00005851975, a discrepancy of 5.852e-5. The quadrature is converged to 2.792e-15, TEN ORDERS below that, so this is a genuine near-miss and not numerical error. At N=64 and four decimals it reads as 1.0000, which is how it would have been written down as an identity."
+    },
+    {
+      "name": "golden_ratio_is_not_the_family_minimum",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "The family minimum over a/b in [1.5, 2.1] is 97.583276794341 at a/b = 1.817, which is 1.133% BELOW the golden-ratio value. Same shape as the Hopf calibration, where the standard picture sat 7.3% above the minimum."
+    },
+    {
+      "name": "equal_circles_are_degenerate",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "At a = b the three orthogonal circles TOUCH: min separation squared = 1.66614e-143. Measured, not assumed -- it is why the family needs a != b at all."
+    },
+    {
+      "name": "TOPOLOGY_NOT_VERIFIED_across_the_scan",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "DELIBERATE ZERO, recording a known gap rather than a result. Nothing here checks that the configuration stays BORROMEAN as a/b varies -- only that the components do not touch. The Hopf calibration's assertion 4 records the identical trap: a scan guarded only against touching walked into a SPLIT link and 'minimised' below a proved bound. Two reasons this is less likely here -- the energy RISES on both sides of the interior minimum (142.6 at a/b=1.1, 149.5 at 6.0), rather than running away; and pairwise linking number is 0 by construction for the Borromean carrier, so there is no linking-number guard to write. But less likely is not verified. The family minimum above must NOT be cited as the Borromean energy minimum until the topology is checked."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "mobius-cross-energy-borromean",
+  "scriptFile": "mobius_cross_energy_borromean.py",
+  "scriptHash": "0b80721bd5f3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mobius_cross_energy_borromean.py"
+    ],
+    "reproduce": "python3 -u computations/mobius_cross_energy_borromean.py"
+  },
+  "description": "Borromean cross energy over the classical three-orthogonal-ellipse family, using the integrator calibrated against the proved E(Hopf) = 2*pi^2. Bean qou-o6ml route (2). Reports the golden-ratio value, its convergence, and the family minimum -- and REFUTES the tempting reading that the golden-ratio value is exactly 10*pi^2.",
+  "data": {
+    "golden_ratio_phi": "1.618033988749894848204587",
+    "ten_pi_squared": "98.69604401089358618834491",
+    "twenty_pi_squared": "197.3920880217871723766898",
+    "convergence_of_E_total_at_phi": {
+      "32": "98.70295753047968578085",
+      "64": "98.70181969547350745401",
+      "96": "98.7018196786529940145",
+      "128": "98.70181967865271842779"
+    },
+    "E_total_at_phi": "98.70181967865271842779",
+    "E_total_at_phi_over_10pi2": "1.00005851974937",
+    "family_minimum": {
+      "E_total": "97.5832767943409786664",
+      "aspect_ratio_a_over_b": "1.817",
+      "over_10pi2": "0.98872531085",
+      "caveat": "TOPOLOGY NOT VERIFIED across the scan -- see the assertion of the same name. This is NOT claimed to be the Borromean energy minimum."
+    },
+    "equal_circles_min_separation_squared": "1.6661407e-143",
+    "pair_convention": "E_total sums UNORDERED pairs, the convention in which Agol-Marques-Neves state E(Hopf) >= 2*pi^2 and in which the calibration reproduces it. Doubling gives the ordered-pair value."
+  }
+}

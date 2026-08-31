@@ -32,12 +32,20 @@ class Cl3Zeta5PslqIndependenceContext where
     10 ^ 10 ≤ pslq_norm_bound ∧
     no_integer_relation_found
 
-/-- **Proposition (`prop:cl3-zeta5-pslq-independence`).** -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/cl3-zeta5-pslq-independence.md
-def pslq_independence [ctx : Cl3Zeta5PslqIndependenceContext] :
-    1000 ≤ ctx.pslq_precision_dps ∧
-    10 ^ 10 ≤ ctx.pslq_norm_bound ∧
-    ctx.no_integer_relation_found :=
-  ctx.claim_pslq_independence
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `pslq_independence` — body was `ctx.claim_pslq_independence`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot.Cl3Zeta5PslqIndependence

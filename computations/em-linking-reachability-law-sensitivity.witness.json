@@ -1,0 +1,148 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:29:28.215893+00:00",
+  "commitSha": "0cb4a1dfda7eda0721992071b44e39acae54739c",
+  "assertions": [
+    {
+      "name": "reproduces_the_published_euclidean_figures",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "A^(1/3) requires A = 333.8025906 / 605.7699625 / 1764.298062 against the published 334 / 606 / 1764. A probe that did not reproduce them would be measuring its own method."
+    },
+    {
+      "name": "hyperbolic_law_strengthens_the_unreachability",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Under ln A the 10% regime needs A = 1370.469138, further out than the Euclidean 333.8025906. The conclusion survives the input finding 3 questions."
+    },
+    {
+      "name": "verdict_is_not_law_independent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Reachable under: A^(1/2). The bean states unreachability without qualification."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "em-linking-reachability-law-sensitivity",
+  "scriptFile": "em_linking_reachability_law_sensitivity_probe.py",
+  "scriptHash": "080552088775",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_reachability_law_sensitivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_reachability_law_sensitivity_probe.py"
+  },
+  "description": "Roast of qou-17mq finding 2 by qou-17mq finding 3: the 'saturation is unreachable' verdict is recomputed under each of the four separation laws finding 3 tabulates, anchoring the single scale at the committed alpha_max. Reproduces the published 334/606/1764 for the Euclidean law before departing from it. Nothing fitted, nothing scored; scope (a) on a conditionality the bean does not flag.",
+  "data": {
+    "alpha_thresholds": {
+      "10pct": "1.522261219",
+      "5pct": "1.856786033",
+      "1pct": "2.651652454"
+    },
+    "required_A_by_separation_law": {
+      "A^(1/3)": {
+        "scale_c": "0.2194451309",
+        "provenance": "Euclidean nuclear radius law, as used by finding 2",
+        "required_A": {
+          "10pct": {
+            "A": "333.8025906",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "5pct": {
+            "A": "605.7699625",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "1pct": {
+            "A": "1764.298062",
+            "reachable_in_the_nuclear_chart": false
+          }
+        }
+      },
+      "A^(1/4)": {
+        "scale_c": "0.3099352658",
+        "provenance": "finding 3's tabulated alternative",
+        "required_A": {
+          "10pct": {
+            "A": "581.9326896",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "5pct": {
+            "A": "1288.141177",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "1pct": {
+            "A": "5357.749769",
+            "reachable_in_the_nuclear_chart": false
+          }
+        }
+      },
+      "ln A": {
+        "scale_c": "0.2107546068",
+        "provenance": "hyperbolic self-consistent (V ~ A in H^3 => R ~ ln)",
+        "required_A": {
+          "10pct": {
+            "A": "1370.469138",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "5pct": {
+            "A": "6702.125923",
+            "reachable_in_the_nuclear_chart": false
+          },
+          "1pct": {
+            "A": "291182.5824",
+            "reachable_in_the_nuclear_chart": false
+          }
+        }
+      },
+      "A^(1/2)": {
+        "scale_c": "0.1100109354",
+        "provenance": "finding 3's tabulated alternative",
+        "required_A": {
+          "10pct": {
+            "A": "191.4726076",
+            "reachable_in_the_nuclear_chart": true
+          },
+          "5pct": {
+            "A": "284.8734704",
+            "reachable_in_the_nuclear_chart": true
+          },
+          "1pct": {
+            "A": "580.9804088",
+            "reachable_in_the_nuclear_chart": false
+          }
+        }
+      }
+    },
+    "heaviest_known_nuclide_A": 294,
+    "upstream_witness": "em-linking-kappa-regime-reachability.witness.json",
+    "verdict": "Finding 2's verdict is NOT law-independent, and the bean states it flatly. It holds under the law the data prefers (A^(1/3), required A = 333.8025906) and is STRENGTHENED under the law the hyperbolic geometry requires (ln A, required A = 1370.469138), but FAILS under A^(1/2) (required A = 191.4726076 <= 294.0), which is one of the four laws finding 3 itself tabulates. A^(1/2) scores worst on scatter (13.95% vs 3.505%), so this is not a live threat -- but that defence is a FIT argument, and finding 3's point is that the fit and the geometry disagree about which law is right. Scope (a): a conditionality the bean does not flag, not a refutation."
+  }
+}
