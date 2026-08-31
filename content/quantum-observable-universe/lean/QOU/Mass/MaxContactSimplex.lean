@@ -153,6 +153,47 @@ theorem not_five_equidistant [FiniteDimensional ℝ E] (hd : Module.finrank ℝ 
   rw [hd] at this
   omega
 
+/-- **No `A ≥ 5` equal spheres are all mutually tangent** — the general form of
+"A≥5 saturates below". Restricting to any five reduces it to
+`not_five_equidistant`. -/
+theorem no_complete_contact_of_five_le [FiniteDimensional ℝ E]
+    (hd : Module.finrank ℝ E = 3) {A : ℕ} (hA : 5 ≤ A) {c : ℝ} (hc : 0 < c)
+    (p : Fin A → E) :
+    ¬ (∀ i j, i ≠ j → ‖p i - p j‖ = c) := by
+  intro h
+  refine not_five_equidistant hd hc (fun i => p (Fin.castLE hA i)) ?_
+  intro i j hij
+  refine h _ _ fun hEq => hij ?_
+  exact Fin.ext (by simpa using congrArg Fin.val hEq)
+
+/-! ### Bridge to `QOU.Mass.CoordinationSaturation`
+
+`CoordinationSaturation.lean` refutes complete-graph coordination by its
+CONSEQUENCE: `complete_graph_no_saturation` shows `perNucleonComplete ε A` — the
+`C(A,2)`-bond model — exceeds every bound, so no `B/A` plateau exists. It then
+takes bounded degree as a modelling assumption (`perNucleonBounded`).
+
+`no_complete_contact_of_five_le` refutes the same model a second and independent
+way: in three dimensions the complete contact graph does not EXIST for `A ≥ 5`,
+whatever it would predict. So the `C(A,2)` bond count is not merely
+phenomenologically wrong for heavy `A`; it is geometrically unavailable, which
+is the t7qv frontier's "A≥5 saturates below" as a theorem rather than a premise.
+
+**What this does NOT supply, stated so nobody mistakes the bridge for the whole
+span.** `bounded_degree_saturates` needs a bound on the DEGREE, and that is the
+three-dimensional kissing number (12, Schütte–van der Waerden) — not proved here
+and not a modest formalisation.
+
+**And a trap, verified numerically, for whoever tries the easy route.** The
+standard spherical-code argument — `∑ᵢⱼ ⟪uᵢ,uⱼ⟫² ≥ m²/d` against
+`∑_{i≠j} ⟪uᵢ,uⱼ⟫² ≤ m(m-1)/4` — would give `m ≤ 9` in `d = 3`. That is FALSE:
+the icosahedral configuration realises `m = 12`. The argument needs
+`|⟪uᵢ,uⱼ⟫| ≤ 1/2`, whereas tangency bounds the inner product only from ABOVE.
+Measured on that configuration: the inner products run over `[-1, 0.4472]`, so
+`⟪uᵢ,uⱼ⟫ ≤ 1/2` holds while `|⟪uᵢ,uⱼ⟫| ≤ 1/2` fails at the antipodal pairs, and
+`∑ᵢⱼ ⟪uᵢ,uⱼ⟫² = 48` exactly — meeting the Frobenius bound `m²/d = 48` with
+equality, and exceeding the naive ceiling `m + m(m-1)/4 = 45`. -/
+
 /-- The `A ≤ 4` half is pure counting: the complete graph on `A` vertices has
 `C(A,2)` edges, and the body-order weights of `⁴He` are the binomials
 `C(4,2), C(4,3), C(4,4) = 6, 4, 1` — the `6 a_D² + 4 a_D³ + 1 a_D⁴` of the
