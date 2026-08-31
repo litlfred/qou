@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T04:00:54Z
+updated_at: 2026-08-31T04:21:42Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -381,3 +381,32 @@ coordination z = A−1` row above is the **complete** graph, which
 `CoordinationSaturation` already excludes by saturation. The chain row
 re-derives that excluded case from the crossing side (`−1`); it is not a second
 measurement of their `k`.
+
+
+### 🛑 Correcting my own recommendation: releasing `μ = c/2` is the MOST expensive escape, not the cheapest (2026-08-31)
+
+I recommended, above and in #6321, that *"the cheapest escape is releasing
+`μ = c/2`, which nothing derives — it is `countChannel`'s definition."*
+**Both halves are wrong.**
+
+**It IS a definition, and the constant is forced.** `countChannel`'s `½` is the
+unique solution of `BrunnianBindingChannel.pairEnergy_decomp` — the `ring`
+identity splitting `n₊q − n₋q⁻¹` into its bar-even and bar-odd parts,
+`½(n₊−n₋)(q+q⁻¹) + ½(n₊+n₋)(q−q⁻¹)`. Solving that 2×2 system in the basis
+`{q+q⁻¹, q−q⁻¹}` gives the `½`; it is not a convention anyone chose.
+
+**And dropping it would not help anyway.** `bRatio_scale_invariant` (new, proved):
+`b₃/b₂` is invariant under `μ ↦ κμ` for every `κ ≠ 0`. So `μ = c` gives the
+identical ratio to `μ = c/2` (`muOfCrossings_halving_immaterial`). The constant is
+not load-bearing in either direction.
+
+**What this does to the result — it STRENGTHENS it.** The hypothesis actually in
+force is not `μ = c/2` but the far weaker `μ ∝ c`. Escaping the lattice needs a
+**nonlinear** `μ(c)`, and `pairEnergy_decomp` is linear in `(n₊, n₋)` by
+construction. So the escape route runs through **`def:crossing-energy` itself**,
+upstream of the whole mass sector — not through a convention.
+
+**Revised next steps.** The `μ` route is closed harder than I said. What is left:
+(1) a selection principle that is not minimality — still unstarted, still the
+live one; (2) accept that the count channel does not carry `b₃` and look for the
+extensive term elsewhere, which is `qou-brng`'s original framing.
