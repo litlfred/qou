@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T04:21:48Z
+updated_at: 2026-08-31T04:33:38Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -837,3 +837,52 @@ consumer so far.
 `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` — then Lemma 3.14's dominance induction. This is the q-analogue
 of `standardPolytabloid_straightening`, which the corpus already proved sorry-free on the
 `colWordNum` measure for the q=1 side; that proof is the template. Multi-session.
+
+
+### 2026-08-31 — 🛑 TWO CORRECTIONS, one of them a defect in `murphyM` on main
+
+**(1) My own supp_le probe had the WRONG HANDEDNESS.** The first run computed
+`m_st = T_{d(s)^-1} x T_{d(t)}` — inverting on the LEFT only. That family is NOT a basis
+(rank 19/24 at n=4), so its supports were of the wrong object. A sweep of all 16
+combinations (reference tableau x d-direction x which side inverted) shows exactly 4 are
+full rank at n=4, and they are precisely those inverting the two d-factors on OPPOSITE
+sides. Which side carries it depends on d's own direction, so Murphy's
+`T_{d(s)}^* x_λ T_{d(t)}` is the same convention read with the other d; what is
+convention-independent is the opposite-side inversion.
+
+**The refutation SURVIVES and is stronger.** The n=3 support table — the hand-checkable
+witness — is byte-identical under both conventions (they first differ at n=4). Corrected
+numbers: peel stalls at 0/6, **0/24**, **0/120** (was 0, 1, 5); `diag_unit` for RSK
+1/6, **1/24**, **1/120** (was 1, 3, 11), and 3/6, 9/24, **29/120** for the other
+orientation. Only those figures were wrong.
+
+**(2) `murphyM` ON MAIN IS NOT MURPHY'S ELEMENT AND CANNOT SPAN.** It sums over
+`youngSubgroup n h t = Specht.rowStab t` — the SECOND TABLEAU's own row stabiliser, a
+different conjugate subgroup per t. Murphy's `x_λ` is one FIXED subgroup (the reference
+tableau's row stabiliser) for every pair of that shape. Exact rank at q=7:
+
+  n     fixed x_λ [Murphy]     rowStab t [corpus murphyM]
+  3     6/6  FULL              5/6
+  4     24/24 FULL             23/24 (row ref) / 21/24 (col ref)
+  5     120/120 FULL           117/120 (row ref) / 112/120 (col ref)
+
+Full rank in EVERY fixed-x cell, deficient in EVERY rowStab-t cell, under both reference
+tableaux and all handedness variants. Note the axis I suspected first — colSuperstandard
+(column-major) vs Murphy's row-superstandard t^λ — is a RED HERRING: both are full rank.
+The subgroup is the defect.
+
+**Consequence.** `basisOfSpanning` is stated for an ARBITRARY family and is unaffected —
+that genericity was deliberate and is what saves the work. `murphyFamily`,
+`murphyBasisOfSpanning`, `murphyFamily_linearIndependent` remain TRUE but their hypothesis
+is now measured UNSATISFIABLE (conditional-proved ≠ premise-established). Re-documented in
+place rather than deleted, so the shape the corrected family slots into survives.
+
+**Lesson, recorded because it generalises:** a probe measuring a rich structural property
+(supports, orders, peelings) says nothing if the object is wrong, and it will NOT announce
+that — it returns a well-formed table either way. A RANK TEST is seconds of exact
+arithmetic and caught both errors, the second AFTER the Lean built on it was written,
+verified sorry-free, committed and described in a PR body as Murphy's family. Sorry-free
+and wrong are entirely compatible. Guard is now `run_rank_guard` in the probe.
+
+**next**: fix `murphyM` to sum over the reference tableau's row stabiliser, then re-point
+`murphyFamily` at it and re-run the rank guard as the acceptance test. THEN spanning.

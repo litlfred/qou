@@ -415,10 +415,25 @@ derivation rather than an assumption dressed up: the hypothesis is Mathas' Lemma
 conclusion (`Module.Basis`) is derived from it together with the two counts. -/
 
 open QOU.BraidKnot.SpechtStandardBasis (sytToTableau) in
-/-- The **Murphy family** `m_{st}`, indexed by `MurphyIndex (n + 1)` — i.e. by a partition of
-`n + 1` together with an ordered pair of standard tableaux of that shape, which is exactly
-Murphy's index set. The two `StandardYoungTableau` types in the corpus are reconciled by
-`NumSYTBridge.toBraidKnotSYT`, and the filling by `SpechtStandardBasis.sytToTableau`. -/
+/-- The family `m_{st}` built from `murphyM`, indexed by `MurphyIndex (n + 1)` — a partition
+of `n + 1` with an ordered pair of standard tableaux of that shape, which is Murphy's index
+set. The two `StandardYoungTableau` types in the corpus are reconciled by
+`NumSYTBridge.toBraidKnotSYT`, and the filling by `SpechtStandardBasis.sytToTableau`.
+
+🛑 **This is NOT Murphy's family, and it cannot span.** `murphyM` sums over
+`youngSubgroup n h t = Specht.rowStab t` — the *second tableau's own* row stabiliser, a
+different conjugate subgroup for each `t`. Murphy's `x_λ` is the sum over **one fixed**
+subgroup, the row stabiliser of the reference tableau, for every pair of that shape.
+Measured exactly at `q = 7` by `computations/hecke/murphy_supp_rsk_probe.py`
+(`run_rank_guard`): the fixed-`x_λ` family is full rank `6/6`, `24/24`, `120/120`, while
+the `rowStab t` family is `5/6`, `23/24`, `117/120` — deficient under **both** reference
+tableaux and every handedness variant tested. The reference tableau itself is a red herring:
+`colSuperstandard` is as good as Murphy's row-superstandard `t^λ` on this axis.
+
+The fix belongs at `murphyM` — sum over the reference tableau's row stabiliser, not `t`'s —
+and is tracked in bean `qou-phir`. Until then, anything downstream carrying this family as a
+hypothesis has an **unsatisfiable** hypothesis; see `murphyBasisOfSpanning`. Audit:
+`docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md` §3-ter. -/
 noncomputable def murphyFamily (x : MurphyIndex (n + 1)) :
     QOU.Hecke.IwahoriHecke K q n := by
   classical
@@ -448,14 +463,23 @@ noncomputable def basisOfSpanning (m : MurphyIndex (n + 1) → QOU.Hecke.Iwahori
   refine basisOfTopLeSpanOfCardEqFinrank m hspan ?_
   rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
 
-/-- The Murphy basis itself, given Mathas' spanning lemma. -/
+/-- The basis this family would give, if it spanned.
+
+🛑 **The hypothesis is measured unsatisfiable** — `murphyFamily` sums over the wrong
+subgroup (see its docstring) and is rank-deficient, so it cannot span. The statement is
+true and stays as the shape the corrected family will slot into; it is **not** evidence of
+progress toward the Murphy basis. This is the "conditional-proved ≠ premise-established"
+distinction: proving `spans → basis` says nothing about whether anything spans. The lever
+that is genuinely useful is `basisOfSpanning`, which is stated for an arbitrary family and
+is unaffected by the defect. -/
 noncomputable def murphyBasisOfSpanning
     (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
     Module.Basis (MurphyIndex (n + 1)) K (QOU.Hecke.IwahoriHecke K q n) :=
   basisOfSpanning K q n (murphyFamily K q n) hspan
 
-/-- Linear independence of the Murphy family, given spanning — the (C1) half that the
-`Triangular` route was meant to supply. -/
+/-- Linear independence given spanning — the (C1) half the `Triangular` route was meant to
+supply. Same caveat as `murphyBasisOfSpanning`: with `murphyFamily` as it currently stands
+the hypothesis cannot be met. -/
 theorem murphyFamily_linearIndependent
     (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
     LinearIndependent K (murphyFamily K q n) := by
