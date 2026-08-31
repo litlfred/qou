@@ -137,3 +137,61 @@ imprecise — they are not a representation. The order is:
 
 Regenerating `hadron-knot-table.witness.json` (`qou-i7ju`) should **not** proceed
 until step 2. It would record numbers from a non-representation faster.
+
+---
+
+# SETTLED — the correct seminormal form, derived (qou-4m9u closed)
+
+Solved symbolically rather than argued. Fix `sigma_1 = diag(q, -1/q)` (both
+implementations agree on it exactly) and write `sigma_2 = [[a, b], [b, h-a]]`
+— the trace is forced to `h` by the quadratic relation. Impose the **braid
+relation together with `det = -1`** and solve for `(a, b)`.
+
+**The system has exactly three solutions:**
+
+| | `a` | `b` |
+|---|---|---|
+| degenerate | `q` | `0` |
+| **irrep, +** | **`-1/(q(q²+1))`** | **`+√(q⁴+q²+1)/(q²+1)`** |
+| **irrep, −** | **`-1/(q(q²+1))`** | **`-√(q⁴+q²+1)/(q²+1)`** |
+
+The first is reducible (`sigma_2 = sigma_1`, `b = 0`) and is not the 2-dimensional
+irrep. The other two are the same representation up to the sign of the
+off-diagonal (a basis choice).
+
+**Numerically at `q₀`:** `a = -0.4036277383`, `b = 0.8675840670`.
+
+- **Rust matches exactly.** `seminormal_matrices_mpfr` returns precisely this.
+- **Python matches none of the three.** Its `a = -0.1039637101 = -h/[2]_q`
+  is not a solution of the system at all. The ratio is
+  `a_correct / a_python = 1/(q(q-1)(q+1))`.
+
+So the earlier hypothesis — that this might be a convention-C-vs-D difference
+rather than a defect — is **REFUTED, and that matters**: a convention would give
+*some* valid representation. Python's value satisfies neither branch, so there is
+no convention under which it is a representation of `H_n(q)`. This is a defect in
+`_build_ysn_matrices`, not a convention mismatch.
+
+**Where it is.** `a_rho = h / q_int(rho)` — the diagonal entry is being computed
+as `h` over a q-integer of the axial distance. The correct entry is
+`-1/(q(q²+1))`, which is not of that shape. The companion `b` formula
+(`bsq = a_rho*a_neg + 1`, i.e. `b² = a(h-a)+1`) is **correct** — it is exactly
+the `det = -1` condition — so `b` is right *given* `a`, and `a` is the single
+error. That is consistent with the measured defect being constant at `0.7315`
+across every partition and dimension.
+
+**The structural bonus.** The second diagonal entry is
+
+```
+h - a  =  q³/(q² + 1)  =  z_D
+```
+
+exactly — the canonical convention-D Markov parameter of the 2026-08-15 owner
+ruling, arising here as a *forced consequence* of the braid relation rather than
+as a convention choice. That is independent corroboration that convention D is
+the one the algebra itself selects, and it is worth carrying back to the
+convention-D excision arc (`qou-cds1`, `qou-t9r1`).
+
+**What this still does not settle.** Nothing has been re-run with the correct
+family. Which downstream numbers move, and by how much, is measured only by
+wiring it in — `qou-sv7h` step 2, still open, still gating `qou-i7ju`.
