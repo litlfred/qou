@@ -1,0 +1,129 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-31T17:48:05.717082+00:00",
+  "commitSha": "8c32116ee0fe440491129e2ed64f1a421211397a",
+  "assertions": [
+    {
+      "name": "volume_match_does_not_determine_knot",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "min rank 799; counts {'2H': 799, '3H': 1102, '3He': 26843}"
+    },
+    {
+      "name": "two_of_three_picks_miss_half_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "outside 0.5%: ['2H', '3He']"
+    },
+    {
+      "name": "structure_and_accuracy_anticorrelate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|err%| 3He=2.96865474823318710188657882242402363181563193076964534567741 2H=1.09030686078522027184223477246422109997741176013787195504031 3H=0.155601499029917273958107498684821217713470746721128527591544"
+    },
+    {
+      "name": "psd_feasibility_has_no_selective_power",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "recorded: {'2H whole-atom 6_2': False, '2H binding L_H (Hopf)': True, '3He whole-atom L6a4': True, 'control: trivial (unknot)': True}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "link-assignment-census-selectivity",
+  "scriptFile": "link_assignment_census_selectivity_probe.py",
+  "scriptHash": "5ae5dde736e1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/link_assignment_census_selectivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/link_assignment_census_selectivity_probe.py"
+  },
+  "description": "EXPLORATORY (Gap #2, bean t7qv): measures how much the volume criterion B ~ rho*m_e*Vol constrains the 2H/3H/3He knot assignment. With each knot's OWN achieved accuracy as the window — no tolerance chosen — 799 / 1,102 / 26,843 SnapPy census manifolds do at least as well, so the assignment is 1-of-many rather than an identification. Two of the three picks (6_2 at +1.09%, L6a4 at -2.97%) miss the 0.5% the conjecture doc treats as a match, and the one pick with an independent structural reason (L6a4 = Borromean = the per-nucleon braid) is the worst numerically. The PSD route does not rescue it: the recorded H_3 run passes the UNKNOT and fails 6_2. No fit; no wiring; no tier change.",
+  "data": {
+    "picks": [
+      {
+        "atom": "2H",
+        "knot": "6_2",
+        "rho_handpicked": 1,
+        "B_AME_MeV": "2.22456619999999999999999999999999999999999999999999734095406",
+        "vol": "4.40083251612304610144120386564092803398348541851650000000000",
+        "vol_target": "4.35336745211741914154418671962928918631983580678455048232391",
+        "B_pred_MeV": "2.24882079790130906476295047207288596968336570965084948487340",
+        "err_pct": "1.09030686078522027184223477246422109997741176013787195504031",
+        "census_at_least_as_good": {
+          "OrientableCuspedCensus": 797,
+          "HTLinkExteriors": 2,
+          "total": 799
+        }
+      },
+      {
+        "atom": "3H",
+        "knot": "8_11",
+        "rho_handpicked": 2,
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
+        "vol": "8.28631681780659258812682479775116716294874424541110000000000",
+        "vol_target": "8.29923054494247184654624911828701039088624904275926253929746",
+        "B_pred_MeV": "8.46859839796813743979427764858463578397918511131650526624482",
+        "err_pct": "-0.155601499029917273958107498684821217713470746721128527591544",
+        "census_at_least_as_good": {
+          "OrientableCuspedCensus": 1099,
+          "HTLinkExteriors": 3,
+          "total": 1102
+        }
+      },
+      {
+        "atom": "3He",
+        "knot": "L6a4",
+        "rho_handpicked": 2,
+        "B_AME_MeV": "7.71804131999999999999999999999999999999999999999999571104141",
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "vol_target": "7.55191503776901816322592730841053618054739649743368357627820",
+        "B_pred_MeV": "7.48891931988322064952348334695094443048990486136408081656894",
+        "err_pct": "-2.96865474823318710188657882242402363181563193076964534567741",
+        "census_at_least_as_good": {
+          "OrientableCuspedCensus": 26671,
+          "HTLinkExteriors": 172,
+          "total": 26843
+        }
+      }
+    ],
+    "psd_recorded_at_h3": {
+      "2H whole-atom 6_2": false,
+      "2H binding L_H (Hopf)": true,
+      "3He whole-atom L6a4": true,
+      "control: trivial (unknot)": true
+    },
+    "snappy_version": "3.3.2",
+    "census_sizes": {
+      "OrientableCuspedCensus": 212641,
+      "HTLinkExteriors": 180511
+    }
+  },
+  "caveats": [
+    "The census counts are a LOWER bound on the candidate set: OrientableCuspedCensus + HTLinkExteriors are the two censuses m_tau_census_sweep.py already searched, and enlarging the search space can only raise the counts. The verdict is therefore structural, not scope-limited.",
+    "The 0.5% in conj-canonical-knot-id-sdp.md is stated of the SDP Frobenius residual, not of the volume. A2 is the VOLUME route failing at that tolerance, not a direct contradiction of the doc's own claim."
+  ]
+}
