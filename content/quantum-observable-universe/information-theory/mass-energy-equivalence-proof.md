@@ -7,7 +7,7 @@ conversion factor.
 In the rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$, the Frobenius--Hopf
 object $A$ carries a ribbon structure (braiding + twist).  For a
 composite $\mathfrak{H}$ represented by the braid word
-$\beta \in B_n$, the Reshetikhin--Turaev construction \[reshetikhin1991]
+$\beta \in B_n$, the Reshetikhin--Turaev construction \cite{reshetikhin1991}
 gives
 
 $$

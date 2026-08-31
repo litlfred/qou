@@ -1,15 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:06:45.663769+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:09:04.363896+00:00",
+  "commitSha": "6e9c05100a137786ea1b339b5c6851f6fc00dbab",
+  "assertions": [
+    {
+      "name": "partA_abs_error_within_2x_predicted_bound",
+      "computed": "0.166775472542",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "2",
+      "source": "conj:dilogarithm-archimedean-limit Part A (elementary Riemann-sum + tail bound)"
+    },
+    {
+      "name": "partA_error_monotone_decreasing_along_eps_sweep",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "conj:dilogarithm-archimedean-limit Part A"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 13725,
+  "durationMs": 10441,
   "computation": "dilog-archimedean-limit-partA",
   "scriptFile": "dilog_archimedean_partA_witness.py",
-  "scriptHash": "6c5ed053f6f8",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4b23fcf908a5",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -43,6 +59,7 @@
   },
   "result": {
     "all_within_bound_and_monotone": true,
+    "max_abs_error_over_predicted_bound": "0.166775472542",
     "rows": [
       {
         "x": "0.2",

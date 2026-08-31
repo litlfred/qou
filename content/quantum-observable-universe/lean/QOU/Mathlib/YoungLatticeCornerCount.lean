@@ -1,4 +1,5 @@
 import QOU.Mathlib.YoungLatticeExchange
+import QOU.Mathlib.YoungLatticeUpOperator
 import QOU.Mathlib.SchenstedPartitionShape
 import QOU.Mathlib.SYTBranchingRule
 
@@ -234,7 +235,7 @@ theorem sum_numSYT_succ_split (n : ℕ) :
           + ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
               numStandardYoungTableaux ν.1 * (cornerCells ν.1).card := Nat.add_comm _ _
 
-/-! ## The last step, reduced to a pointwise identity
+/-! ## The last step
 
 What remains between this file and `Σ_λ f^λ = I(n)` is
 
@@ -244,18 +245,38 @@ Reindexing it by `rankExchange` (weight = `#SYT` of the BIGGER diagram this time
 the exchange reconstructs as `addCell μ s`) turns it into a sum of *pointwise* statements.
 The pointwise statement is the classical **up-operator identity** of Young's lattice:
 
-    Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1) · #SYT(μ).
+    Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1) · #SYT(μ),
 
-Verified with zero counterexamples over every partition of `0..9` (97 shapes). It is
-carried here as an explicit hypothesis, NOT asserted: its own proof needs the
-differential-poset induction, which this file does not do. -/
+which `QOU.Mathlib.upSum_eq` proves, sorry-free, by strong induction on `|μ|`.  It is kept
+as a named `Prop` here because the two theorems below were written against it as a
+hypothesis; `upOperatorIdentity_holds` discharges it, so both are now unconditional. -/
 
-/-- **The up-operator identity of Young's lattice**, as a named hypothesis.
-`Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1)·#SYT(μ)`. Open in this corpus; see bean `qou-jlam`. -/
+/-- **The up-operator identity of Young's lattice**, as a named `Prop`.
+`Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1)·#SYT(μ)`.  Discharged by `upOperatorIdentity_holds`
+just below; it is a definition rather than a plain theorem statement only so that the
+consumers below can carry it as an explicit hypothesis. -/
 def UpOperatorIdentity : Prop :=
   ∀ (m : ℕ) (μ : YoungDiagram), μ.cells.card = m →
     ∑ s : {s : ℕ × ℕ // IsAddableCell μ s},
         numStandardYoungTableaux (addCell μ s.1 s.2) = (m + 1) * numStandardYoungTableaux μ
+
+/-- The subtype sum over addable cells is `upSum`, which sums over the `Finset`. -/
+theorem sum_subtype_addable_eq_upSum (μ : YoungDiagram) :
+    ∑ s : {s : ℕ × ℕ // IsAddableCell μ s},
+        numStandardYoungTableaux (addCell μ s.1 s.2) = upSum μ := by
+  classical
+  unfold upSum
+  rw [← Finset.sum_coe_sort (addableCells μ)]
+  refine Fintype.sum_equiv (Equiv.subtypeEquivRight (fun x => (mem_addableCells μ x).symm)) _ _ ?_
+  intro s
+  rw [show ((Equiv.subtypeEquivRight (fun x => (mem_addableCells μ x).symm) s : ℕ × ℕ))
+      = (s : ℕ × ℕ) from rfl, addCellOrSelf_of s.2]
+
+/-- **`UpOperatorIdentity` holds** — it is `QOU.Mathlib.upSum_eq` transported from the
+`Finset` sum to the subtype sum. -/
+theorem upOperatorIdentity_holds : UpOperatorIdentity := by
+  intro m μ hm
+  rw [sum_subtype_addable_eq_upSum μ, upSum_eq m μ hm]
 
 set_option maxHeartbeats 1000000 in
 /-- **The weighted corner sum, reduced.** Given the up-operator identity, the corner-weighted
@@ -313,9 +334,9 @@ With matching base cases `s(0) = s(1) = 1` it gives `Σ_{λ⊢n} f^λ = I(n)` �
 that licenses reading the involution numbers as the `q = 1` na-Stokes period in
 `QOU.Mass.SWPeriodSuperExponential`, and the open target of beans `qou-m3xr` / `qou-jlam`.
 
-**Everything here is proved except `UpOperatorIdentity`**, which is carried as an explicit
-hypothesis and is the single remaining obligation. It is not asserted anywhere in this
-file; §3b-cond, and "conditional-proved ≠ premise-established". -/
+`UpOperatorIdentity` is discharged by `upOperatorIdentity_holds` above, so this theorem is
+**unconditional** — the hypothesis is kept in the signature for the callers that already
+thread it, and `sum_numSYT_recurrence'` below is the hypothesis-free form. -/
 theorem sum_numSYT_recurrence (h : UpOperatorIdentity) (n : ℕ) :
     ∑ μ : {μ : YoungDiagram // μ.cells.card = n + 2}, numStandardYoungTableaux μ.1
       = (∑ μ : {μ : YoungDiagram // μ.cells.card = n + 1}, numStandardYoungTableaux μ.1)
@@ -325,5 +346,18 @@ theorem sum_numSYT_recurrence (h : UpOperatorIdentity) (n : ℕ) :
   congr 1
   refine Finset.sum_congr rfl fun ν _ => ?_
   rw [card_cornerCells_eq_card_subtype]
+
+/-- **The involution recurrence, unconditionally.**
+
+    s(n+2) = s(n+1) + (n+1)·s(n),      s(k) := Σ_{μ of size k} #SYT(μ),
+
+with no hypothesis: `upOperatorIdentity_holds` discharges the one that
+`sum_numSYT_recurrence` carries.  This is exactly the recurrence defining the involution
+numbers, `I(n+2) = I(n+1) + (n+1)·I(n)`. -/
+theorem sum_numSYT_recurrence' (n : ℕ) :
+    ∑ μ : {μ : YoungDiagram // μ.cells.card = n + 2}, numStandardYoungTableaux μ.1
+      = (∑ μ : {μ : YoungDiagram // μ.cells.card = n + 1}, numStandardYoungTableaux μ.1)
+        + (n + 1) * ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, numStandardYoungTableaux μ.1 :=
+  sum_numSYT_recurrence upOperatorIdentity_holds n
 
 end QOU.Mathlib

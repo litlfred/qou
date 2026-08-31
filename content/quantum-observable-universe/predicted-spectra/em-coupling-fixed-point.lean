@@ -79,7 +79,7 @@ noncomputable def habiroNorm (q : ℝ) : ℝ :=
   qIntReal 2 q / (8 * Real.pi)
 
 /-- The Habiro deformation parameter `h = (q−1)/q = ℏ_q` (PR #1511). -/
-noncomputable def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- **Self-consistency (fixed-point) relation** for the fine-structure
     constant at substrate parameter `q`:

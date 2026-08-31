@@ -59,9 +59,18 @@ Established evident forms (all verified here against the proved H₃ closed form
 
 Nothing wired; this is an exact-symbolic re-expression of already-proved relations.
 
-Run:  PYTHONPATH=computations:computations/hecke:computations/qbeta:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
-        python3 -u computations/probes/chi_content_eigenbasis_probe.py
+Run:  python3 -u computations/probes/chi_content_eigenbasis_probe.py
+
+      (No PYTHONPATH needed as of 2026-08-30. It used to be required, and
+      that is precisely what masked the defect: the deferred
+      `from hoefsmit_symbolic import ...` inside `main()` resolved only
+      because the documented invocation pre-set the path. A bare
+      `python3 <file>` raised ModuleNotFoundError at call time.)
 """
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 import sys
 import time
 

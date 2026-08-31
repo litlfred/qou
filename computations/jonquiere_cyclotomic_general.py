@@ -202,6 +202,30 @@ def main() -> None:
         engine="mpmath",
     )
     builder._start_time = start
+    # The two theorems this script exists to verify. Both residuals were
+    # already computed and already compared against 1e-45 — a threshold this
+    # file declares six times and states in its own description ("max residual
+    # below 1e-45 in both theorems"), not one chosen to match the observed
+    # value. Recording them only as payload flags (`all_below_1e_45`) left the
+    # witness claiming `allPassed: true` over an empty assertion list
+    # (bean `qou-srvu`). Residuals go in as STRINGS (drained convention,
+    # `qou-t0rf`).
+    builder.add_assertion(
+        "theorem_e_tate_rationality_jonquiere_inversion",
+        str(max_tate_residual), "0", tolerance="1e-45",
+        source=(
+            "max |Li_n(zeta_K) - (-1)^(n-1) Li_n(zeta_K^-1) "
+            f"+ (2 pi i)^n/n! B_n(1/K)| over n in {DEPTHS}, K in {KS}"
+        ),
+    )
+    builder.add_assertion(
+        "theorem_f_cl_n_orbit_sum",
+        str(max_orbit_residual), "0", tolerance="1e-45",
+        source=(
+            "max |sum_k Cl_n(2 pi k/N) - [(N^(1-n) - 1) zeta(n) if n odd "
+            f"else 0]| over n in {DEPTHS}, N in {KS}"
+        ),
+    )
     out = builder.save()
     print(f"\nwitness: {out}")
 

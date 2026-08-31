@@ -318,11 +318,12 @@ def check_boltzmann_chain():
     q = mpf(Q_50_DIGIT_STR)
     h = hecke_h(q)
     d = flavor_split_leading(q)
-    try:
-        from qou_substrate.constants import M_E_MEV as _ME
-        me = mpf(_ME)
-    except Exception:
-        me = mpf("0.51099895000")
+    # NO SILENT FALLBACK. A hardcoded m_e differs from the package's
+    # M_E_MEV = 0.51099895069 at the 10th digit, which silently shifts alpha and
+    # every energy below it by ~1.35e-9 relative -- invisible in a conclusion,
+    # wrong in every digit past the 9th that this probe prints. Fail loudly.
+    from qou_substrate.constants import M_E_MEV as _ME  # noqa: E402
+    me = mpf(_ME)
     alpha = me / (q * (q - 1))
     ame_d = AME["D"]
 

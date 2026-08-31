@@ -1,0 +1,133 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:22:48.405632+00:00",
+  "commitSha": "6b9463d82be9a0a6882c3220c2e2b7e13635acba",
+  "assertions": [
+    {
+      "name": "scan_non_empty",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "selftest_passes",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3243,
+  "computation": "witness-producer-resolution-audit",
+  "scriptFile": "witness_producer_resolution_audit.py",
+  "scriptHash": "f48586f7556e",
+  "scriptCommitSha": "2ec500b17e8ab593ca224aac5bca741acdcb9fc8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/witness_producer_resolution_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/witness_producer_resolution_audit.py"
+  },
+  "description": "Does a witness name a producer that EXISTS, under ANY spelling? Decides by VALUE (does a field hold a .py path that resolves in the tree) rather than by KEY NAME, because the fields are polymorphic: `computation` is present on ~91% of witnesses and holds the witness ID, not a script, on almost all of them; `source` usually holds a literature PDF but sometimes a .py. Three prior orphan counts each keyed on one field (qou-tekx scriptFile, qou-bake computation, qou-agvb producer) and each OVER-reported orphans by calling provenanced witnesses unprovenanced. Does NOT check that the named script actually writes the witness -- that is witness_provenance_audit.py, which needs a scriptFile to start from and cannot see the witnesses this audit finds.",
+  "data": {
+    "totals": {
+      "live_witnesses": 2949,
+      "RESOLVED": 2714,
+      "FOUND_BY_CONVENTION": 190,
+      "FOUND_BY_PRODUCER_CALL": 25,
+      "NAMED_BUT_MISSING": 0,
+      "PRODUCER_DEPRECATED_ONLY": 1,
+      "ORPHAN": 19
+    },
+    "verdict_meanings": {
+      "RESOLVED": "the witness CITES a .py path that exists",
+      "FOUND_BY_CONVENTION": "witness id snake_cased is a real script filename",
+      "FOUND_BY_PRODUCER_CALL": "a live script constructs this witness id (WitnessBuilder(\"<id>\") or writes <id>.witness.json)",
+      "NAMED_BUT_MISSING": "cites a .py that does NOT exist (dangling claim)",
+      "PRODUCER_DEPRECATED_ONLY": "only _deprecated/ scripts name it",
+      "ORPHAN": "nothing in the tree names it"
+    },
+    "per_key": {
+      "scriptFile": {
+        "carriers": 2649,
+        "names_a_real_py": 2642
+      },
+      "scriptPath": {
+        "carriers": 8,
+        "names_a_real_py": 8
+      },
+      "computation": {
+        "carriers": 2686,
+        "names_a_real_py": 46
+      },
+      "producer": {
+        "carriers": 64,
+        "names_a_real_py": 56
+      },
+      "source": {
+        "carriers": 53,
+        "names_a_real_py": 4
+      }
+    },
+    "named_but_missing": [],
+    "producer_deprecated_only": [
+      "computations/rho-k-leading-order-verification.witness.json"
+    ],
+    "orphan": [
+      "computations/4he-binding-full-pipeline.witness.json",
+      "computations/binding-lp-delta-audit.witness.json",
+      "computations/canonical-mass-table-242ppb.witness.json",
+      "computations/chi-deuteron-h6-at-q0-90dps-matrix-m.witness.json",
+      "computations/chi-helium-3-free-h9-at-qinv-50dps.witness.json",
+      "computations/chi-helium-4-free-h12-at-qinv-50dps.witness.json",
+      "computations/chi-helium-4-h12.witness.json",
+      "computations/chi-tritium-free-h9-at-q0-50dps.witness.json",
+      "computations/chi-tritium-free-h9-at-qinv-50dps.witness.json",
+      "computations/deltalambda/mu3-submodularity-vacuous-deuteron.witness.json",
+      "computations/forward-ref-classification.witness.json",
+      "computations/hecke-core-symbolic-migration.witness.json",
+      "computations/meson-spectral-analysis.witness.json",
+      "computations/substrate/bring-jacobian-isogeny-factors.witness.json",
+      "computations/substrate/lever1-bring-period-trB.witness.json",
+      "computations/tau-hat-n-proton-level-1-empty.witness.json",
+      "computations/tritium-interface-decomposition.witness.json",
+      "computations/weak-isospin-t3-grading.witness.json",
+      "computations/whitehead-volume-identification.witness.json"
+    ],
+    "method": {
+      "decides_by": "value (a .py path that resolves in the tree)",
+      "not_by": "key presence",
+      "candidate_keys": [
+        "scriptFile",
+        "script",
+        "scriptPath",
+        "scriptName",
+        "computation",
+        "producer",
+        "source",
+        "generated_by",
+        "source_script"
+      ],
+      "reads_nested": "witness.<key> as well as top-level",
+      "resolution": "exact repo-relative path OR bare basename match"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "a provenance audit; it never reads q0."
+}

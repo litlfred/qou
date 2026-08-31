@@ -30,6 +30,22 @@ import { spawnSync } from "node:child_process";
 const REPO_ROOT = resolve(import.meta.dir, "..", "..");
 const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
 const TMP = resolve(REPO_ROOT, "docs/audits/.ledger-foreign-selftest.json");
+/**
+ * Where this run's REPORT goes.  Naming it is not cosmetic — see `qou-9zh3`.
+ *
+ * This is a WHOLE-CORPUS scan, so `qou-c7jp`'s guard (which refuses to write the
+ * committed record from a *partial* scan) does not fire, and without `--json` the
+ * run overwrote `docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` with
+ * promotions computed against the two-entry fixture below: `total_defects` 114 ->
+ * 67, `total_promoted_from_exempt` 53 -> 0.  Not a stale snapshot — a fabricated
+ * one, written from a test fixture, every time `bun test` ran.
+ */
+const TMP_REPORT = resolve(REPO_ROOT, "docs/audits/.ledger-foreign-selftest-report.json");
+/** The committed corpus record this test must leave alone. */
+const CORPUS_RECORD = resolve(
+  REPO_ROOT,
+  "docs/audits/2026-06-17-lean-vacuity-axiom-audit.json",
+);
 
 /** A category no detector in this repo emits, carrying an agent verdict. */
 const FOREIGN_KEY =
@@ -67,12 +83,29 @@ test(
     },
   };
   writeFileSync(TMP, JSON.stringify(seeded, null, 2) + "\n");
+  // Snapshot the committed corpus record so the assertion below can prove this
+  // test did not touch it.
+  const recordBefore = existsSync(CORPUS_RECORD)
+    ? readFileSync(CORPUS_RECORD, "utf-8")
+    : undefined;
   try {
-    const r = spawnSync("bun", ["run", SCRIPT, "--quiet", "--review-ledger", TMP], {
-      cwd: REPO_ROOT,
-      encoding: "utf8",
-    });
+    const r = spawnSync(
+      "bun",
+      ["run", SCRIPT, "--quiet", "--review-ledger", TMP, "--json", TMP_REPORT],
+      {
+        cwd: REPO_ROOT,
+        encoding: "utf8",
+      },
+    );
     expect([0, 1]).toContain(r.status); // must still function, not crash
+
+    // `qou-9zh3`: the run must not have rewritten the committed corpus record.
+    // This is the assertion the defect would have failed, and it is deliberately
+    // a byte comparison — the damage was to *values* inside a file that still
+    // parsed and still looked like a report.
+    if (recordBefore !== undefined) {
+      expect(readFileSync(CORPUS_RECORD, "utf-8")).toBe(recordBefore);
+    }
 
     const after = JSON.parse(readFileSync(TMP, "utf-8"));
 
@@ -88,10 +121,12 @@ test(
     // to retire fixed findings.
     expect(after.entries[OWNED_STALE_KEY]).toBeUndefined();
     } finally {
-      if (existsSync(TMP)) {
-        try {
-          unlinkSync(TMP);
-        } catch {}
+      for (const f of [TMP, TMP_REPORT]) {
+        if (existsSync(f)) {
+          try {
+            unlinkSync(f);
+          } catch {}
+        }
       }
     }
   },

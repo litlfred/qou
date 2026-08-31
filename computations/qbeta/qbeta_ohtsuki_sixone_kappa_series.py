@@ -443,10 +443,15 @@ def main() -> int:
                           "constants need a Borel resummation this does not do",
         "branch_guide": "the printed sigma selects the 2*pi*m branch integer "
                         "only; it is not an input to the fitted value"})
-    wb.add_assertion("determinant_5_2", computed=mp.nstr(d52, 10),
-                     expected="7", tolerance="1e-20", source="|<5_2>_2| = det")
-    wb.add_assertion("determinant_6_1", computed=mp.nstr(d61, 10),
-                     expected="9", tolerance="1e-20", source="|<6_1>_2| = det")
+    # |det - N| against 0, and NOT at 1e-20. Two floors made that bound
+    # unreachable: mp.nstr(x, 10) caps the comparison at 10 significant
+    # digits, and the float64 verdict (witness.py:830) cancels two
+    # same-scale values at ~2.2e-16*|N| anyway. 1e-9 is what 10 digits on a
+    # value of order 10 actually supports.
+    wb.add_assertion("determinant_5_2", computed=mp.nstr(abs(d52 - 7), 10),
+                     expected="0", tolerance="1e-9", source="|<5_2>_2| = det = 7")
+    wb.add_assertion("determinant_6_1", computed=mp.nstr(abs(d61 - 9), 10),
+                     expected="0", tolerance="1e-9", source="|<6_1>_2| = det = 9")
     wb.add_assertion("validation_5_2_sigma", computed=mp.nstr(e_s52, 10),
                      expected="0", tolerance="1e-7",
                      source="fitted vs Ohtsuki's PUBLISHED sigma(5_2)")

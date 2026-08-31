@@ -342,6 +342,24 @@ def main():
             start_time=_START,
         )
         .set_audit_only("docs/audits/2026-06-01-flavor-dependent-cusp-shape.md")
+        # Two Bloch-Wigner facts computed on the color-tube roots and recorded
+        # only as the data booleans `D_real_is_zero` / `pair_cancels`, while
+        # the witness shipped `allPassed: true` over an EMPTY assertion list
+        # (bean qou-srvu). Both are theorems about D, so a failure would mean
+        # the roots or the dilog are wrong -- exactly what an assertion is
+        # for. The 1e-25 bar is this file's own (l.182-183).
+        .add_assertion(
+            "bloch_wigner_vanishes_on_the_real_color_root",
+            computed=mp.nstr(mp.fabs(D_real), 6), expected="0",
+            tolerance="1e-25",
+            source="D(x) = 0 for real x (Bloch-Wigner dilogarithm)",
+        )
+        .add_assertion(
+            "bloch_wigner_antisymmetric_on_the_conjugate_color_pair",
+            computed=mp.nstr(mp.fabs(D_plus + D_minus), 6), expected="0",
+            tolerance="1e-25",
+            source="D(conj z) = -D(z) (Bloch-Wigner dilogarithm)",
+        )
         .save()
     )
     print(f"Wrote {wpath}")

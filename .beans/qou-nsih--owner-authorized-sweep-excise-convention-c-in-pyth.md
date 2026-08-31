@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T08:18:46Z
+updated_at: 2026-08-30T10:08:24Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -153,3 +153,126 @@ qbeta decay channel where qou-cds1 forbids substitution outright (a z-swap is
 not a re-derivation). Expect the honest outcome for some of them to be "cannot
 migrate by substitution; needs the D-frame derivation first", i.e. blocked on
 qou-cds1 rather than on effort.
+
+
+## 2026-08-30 — TRANCHE 1 ATTEMPTED AND REVERTED: the migration is not mechanical
+
+First real migration target: `compound_shift_nf.py:256` (`tr_m_weights_mp`), a
+production module with a committed witness and a downstream audit doc
+(2026-05-16-compound-shift-nf-impl.md), using z_C as THE Markov parameter with
+no comparison framing.
+
+### Method
+
+Baseline first. The container was missing scipy and clarabel and had mpmath
+1.3.0 against the witness's 1.4.1 -- and the PRODUCER DETECTED THIS ITSELF:
+
+    environment: the environment block records LESS than the witness on disk --
+    dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is
+    simply missing a library, install it and re-run rather than committing the
+    weaker record; the numbers can be identical while the provenance silently
+    degrades.
+
+Installed all three; the clean baseline then reproduced the committed witness
+byte-identically on substantive fields, 19/19. That is what made the comparison
+below trustworthy -- without it I would have been diffing my container against
+the corpus.
+
+### Result: 19/19 STILL PASS, and 95 substantive fields MOVE
+
+    /data/atoms[0]/categorical_mass   0.2903  ->  0.4442     (+53 %)
+    /data/atoms[0]/y0_star           -0.7985  -> -2.8593     (3.6x)
+    /data/atoms[0]/x_star[1..2]      -0.0457  -> -0.3333     (7.30x)
+    /data/atoms[2]/x_star[1..2]                               (7.24x)
+    /data/atoms[5]/y_star[0]                                  (6.22x)
+
+**Assertions passing is NOT reassurance here.** They are structural (per-nucleon
+linearity, the alpha_EM chain) and hold under either convention, while every
+reported LP dual and shadow price moves by factors of 3-7. y0_star and y_star[i]
+are the binding-energy shadow prices AGENTS.md calls first-class infrastructure.
+
+### Why I reverted rather than committed
+
+I have NO independent check that the D numbers are RIGHT. The probe verifies
+internal consistency, not the correctness of the convention choice. Committing
+would rewrite 95 published numbers on the strength of "assertions still pass",
+which is exactly the reassurance that does not hold. Left uncommitted it risked
+being swept up by a later auto prepare-merge, so the code is reverted and this
+record stands in its place.
+
+### A separate possible defect, NOT conflated with the migration
+
+`tr_m_weights_mp` returns weights [1, z, z, z^2, z^2, z^3]. The Ocneanu value on
+H_3's longest element is z(h z + 1), not z^3. If that is wrong it is wrong under
+BOTH conventions, and migrating would carry it forward. Cheap to settle and it
+could invalidate the migration either way, so it should go first.
+
+### Consequence for the tranche
+
+The remaining ~20 are the same shape: each rewrites published numbers, and
+"assertions pass" will keep being true while they do. This needs either a
+per-file review of the movement, or the D-frame derivation (qou-cds1) to give an
+independent check. Raised with the author.
+
+
+## Re-triage on the post-trace-fix baseline (2026-08-30)
+
+50 blocking sites in convention-c-value-audit. Layered triage:
+
+  27  ANNOUNCE THEMSELVES as C-vs-D comparisons (filename `*_C_vs_D_*` /
+      `*convention_d*`, a scope literally named `z_C`, or co-bound with z_D).
+      These need LEDGER ROWS, not migration.
+   9  of the remaining 23 DECLARE convention C in a comment or docstring
+      within 25 lines of the binding (`qbeta_ck_cache` is reached only via an
+      explicit --historical-convention-C flag and refuses otherwise).
+  14  silent locally.
+
+Of the 14, spot-reading found several are NOT migration candidates at all.
+They are THEOREMS WHOSE SUBJECT IS z_C:
+
+  - qbeta_z_bar_parity_fmap_class_probe asserts "z = sqrt(q)/(1+q) is exactly
+    bar-even". For z_D, bar(z_D)/z_D = q^-4 != 1, so the claim is FALSE, not
+    merely different. Its Lean companion QOU/QBeta/ZBarParity.lean is C-frame.
+  - qbeta_prearchimedean_z_recursion proves the ODE (4+6w+2w^2)z' + wz = 0,
+    which z_C satisfies and z_D does not.
+  - qbeta_t3_carrier_q1_order_preflight asserts z - 1/2 vanishes at q=1 to
+    order exactly 2, a fact about z_C's expansion.
+
+Substituting z_D there does not fix a defect -- it deletes the statement. This
+is the same shape as the owner's challenge on the earlier tranche
+("migrating its z_C would delete the proof --> why?"), and it generalises: the
+excision sweep cannot reach any site where z_C is the SUBJECT rather than a
+parameter. Those belong to the convention-D re-derivation (qou-cds1).
+
+So the actionable migration surface is materially smaller than 50 and probably
+smaller than the ~20-25 estimated. Next step is to finish reading the 14 and
+split them into (i) parameter sites, migratable; (ii) subject sites, -> cds1;
+(iii) comparison sites, -> ledger.
+
+
+## CORRECTION 2026-08-30 (second) — the 46 was measured on a stale tree
+
+I reported "blocking 50 -> 46" and adjudicated 4 sites into the comparison
+ledger. Both are wrong in the same way: measured against a tree 177 commits
+behind main.
+
+After rebasing:
+
+  ledger entries        45 (my view)  ->  75 (main's)
+  BLOCKING              46            ->  16
+
+ALL FOUR of my adjudications were DUPLICATES. A sibling had adjudicated the same
+four sites on 2026-08-29 with the IDENTICAL source_hash values (8f68fcb6b016,
+6897fbb293a0, 8bb7d434c4a1, 81f975ad164b), so the union kept theirs and dropped
+mine, and my commit reduced to a 925/925-line pure REFORMAT with byte-identical
+content. Dropped.
+
+TRAP for the next agent: ledger adjudication is MECHANICAL work, which AGENTS.md
+says has one owner and must not be overlapped -- unlike open research, where
+parallel attack is explicitly sanctioned. I fetched main at session start (89
+behind) and never re-fetched before spending a tranche on the ledger, by which
+time main was 177 ahead and the sites were already done. Re-fetch before
+starting any mechanical drain, not merely before pushing.
+
+Live count is 16 blocking. The subject-vs-parameter finding above is unaffected
+-- it is about what the remaining sites ARE, not how many.

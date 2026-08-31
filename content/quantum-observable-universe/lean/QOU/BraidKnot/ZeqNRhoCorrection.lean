@@ -48,7 +48,11 @@ structure KnotAssignment (A : ℕ) where
 
 /-- q-integer `[n]_q = (q^n − q^(−n))/(q − q^(−1))`.  Specialises
     to `n` at `q = 1` (after applying l'Hôpital). -/
-noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ :=
+-- Named `qIntBal`, not bare `qInt` (bean `qou-qint`): the bare name was
+-- GEOMETRIC in one module of this namespace and BALANCED here, so reading a
+-- call site did not tell you which object you had. The convention now lives
+-- in the name.
+noncomputable abbrev qIntBal (q : ℝ) (n : ℕ) : ℝ :=
   QOU.QInteger.qIntBalCl q n
 
 /-- **Z=N ρ-correction conjecture (axiomatised).**
@@ -86,7 +90,7 @@ class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A) where
       plays the role of `sorry` for the conjecture. -/
   q_correction (q : ℝ) :
     bindingEnergy q
-      = m_e * K.vol_hyp * ((K.rho_struct : ℝ) + (A : ℝ) - qInt q A)
+      = m_e * K.vol_hyp * ((K.rho_struct : ℝ) + (A : ℝ) - qIntBal q A)
 
 /-- The conjectural binding energy for a Z=N atom at the substrate
     parameter `q`, lifted from the typeclass. -/
@@ -99,18 +103,18 @@ noncomputable def zeqNBindingEnergy (A : ℕ) (K : KnotAssignment A)
     `U_q(sl_2)`-representation `V^(A-1)` controls the magnitude of
     the substrate-q correction.  Vanishes at `q = 1`. -/
 noncomputable def dimensionalAnomaly (q : ℝ) (A : ℕ) : ℝ :=
-  (A : ℝ) - qInt q A
+  (A : ℝ) - qIntBal q A
 
-/-- `qInt 1 n = (n : ℝ)` by definition (the `if q = 1` branch). -/
-@[simp] theorem qInt_one (n : ℕ) : qInt 1 n = (n : ℝ) := by
-  simp only [qInt, QOU.QInteger.qIntBalCl]; simp
+/-- `qIntBal 1 n = (n : ℝ)` by definition (the `if q = 1` branch). -/
+@[simp] theorem qIntBal_one (n : ℕ) : qIntBal 1 n = (n : ℝ) := by
+  simp only [qIntBal, QOU.QInteger.qIntBalCl]; simp
 
 /-- At `q = 1`, the dimensional anomaly vanishes — the q-deformation
     correction has no effect, and the Kashaev law is exact. -/
 theorem dimensionalAnomaly_at_one (A : ℕ) :
     dimensionalAnomaly 1 A = 0 := by
   unfold dimensionalAnomaly
-  rw [qInt_one]
+  rw [qIntBal_one]
   ring
 
 /-- At `q = 1`, the conjectural binding energy reduces to the
@@ -130,18 +134,18 @@ theorem zeqN_finite_q_form (A : ℕ) (K : KnotAssignment A)
     [inst : ZeqNRhoCorrection A K] (q : ℝ) :
     zeqNBindingEnergy A K q
       = inst.m_e * K.vol_hyp
-        * ((K.rho_struct : ℝ) + (A : ℝ) - qInt q A) :=
+        * ((K.rho_struct : ℝ) + (A : ℝ) - qIntBal q A) :=
   inst.q_correction q
 
 /-- The finite-q form reduces to the integer Kashaev law at `q = 1`.
-    Combines `zeqN_finite_q_form` with `qInt_one` and a small
+    Combines `zeqN_finite_q_form` with `qIntBal_one` and a small
     algebraic rearrangement.  Independently of the `classical_limit`
     field, this confirms the two class fields are consistent. -/
 theorem zeqN_at_one_via_q_correction (A : ℕ) (K : KnotAssignment A)
     [inst : ZeqNRhoCorrection A K] :
     zeqNBindingEnergy A K 1
       = inst.m_e * K.vol_hyp * (K.rho_struct : ℝ) := by
-  rw [zeqN_finite_q_form, qInt_one]
+  rw [zeqN_finite_q_form, qIntBal_one]
   ring
 
 end QOU.BraidKnot

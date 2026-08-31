@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:13:23.300947+00:00",
-  "commitSha": "54299522a1121d5c865243068feadf6905cbbaf4",
+  "computedAt": "2026-08-30T07:42:55.359139+00:00",
+  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
   "assertions": [
     {
       "name": "binding_gap_analysis_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "rho-f-volume-binding-gap",
   "scriptFile": "rho_f_volume_binding_gap.py",
-  "scriptHash": "4d5b666d67cf",
-  "scriptCommitSha": "569f15dd726f4cb74fc16b8b2b33bca49d7b4ba3",
+  "scriptHash": "43d76cf866b8",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,9 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rho_f_volume_binding_gap.py"
+    ],
+    "reproduce": "python3 -u computations/rho_f_volume_binding_gap.py"
   },
   "description": "Inverts ρ_F · V_hyp = Δ_binding to report the required ρ_F (in units of m_e) that each atomic-link-primitive candidate (figure-eight, three-twist, Borromean) would need to reproduce the empirical binding energy of the light nuclei ²H–⁷Li (the AME binding-energy witness set).  QOU's prediction is ρ_F ∈ {m_e, 2 m_e} from prop:cpt-orbit-closure-density; deviations from these two values quantify the atom-to-link mapping gap.  Bridges AME2020 binding to the Frobenius packing density law in rem:frobenius-packing-density.",
   "auditOnly": "docs/audits/rho-f-volume-binding-gap.md",
@@ -42,11 +50,11 @@
         "A": 2,
         "Z": 1,
         "N": 1,
-        "delta_binding_MeV": 2.224566,
+        "delta_binding_MeV": "2.2245662",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 2.1446391788023718,
-          "three-twist (5_2)": 1.5393136967347003,
-          "Borromean (6^3_2)": 0.5940953315113328
+          "figure-eight (4_1)": "2.14463936872064",
+          "three-twist (5_2)": "1.53931383304844",
+          "Borromean (6^3_2)": "0.594095384121374"
         }
       },
       {
@@ -54,11 +62,11 @@
         "A": 3,
         "Z": 1,
         "N": 2,
-        "delta_binding_MeV": 8.481798,
+        "delta_binding_MeV": "8.4817962",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 8.177053995020872,
-          "three-twist (5_2)": 5.8690764105614255,
-          "Borromean (6^3_2)": 2.265159403956619
+          "figure-eight (4_1)": "8.17705224865194",
+          "three-twist (5_2)": "5.869075157106",
+          "Borromean (6^3_2)": "2.26515892018777"
         }
       },
       {
@@ -66,11 +74,11 @@
         "A": 3,
         "Z": 2,
         "N": 1,
-        "delta_binding_MeV": 7.718043,
+        "delta_binding_MeV": "7.71804132",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 7.440740082102034,
-          "three-twist (5_2)": 5.340587468246561,
-          "Borromean (6^3_2)": 2.061190054466229
+          "figure-eight (4_1)": "7.44073845241585",
+          "three-twist (5_2)": "5.34058629854011",
+          "Borromean (6^3_2)": "2.06118960302015"
         }
       },
       {
@@ -78,11 +86,11 @@
         "A": 4,
         "Z": 2,
         "N": 2,
-        "delta_binding_MeV": 28.295673,
+        "delta_binding_MeV": "28.2956624",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 27.279032811964424,
-          "three-twist (5_2)": 19.57951214179586,
-          "Borromean (6^3_2)": 7.556677226601175
+          "figure-eight (4_1)": "27.2790225559789",
+          "three-twist (5_2)": "19.5795047805674",
+          "Borromean (6^3_2)": "7.55667438554839"
         }
       },
       {
@@ -90,11 +98,11 @@
         "A": 5,
         "Z": 3,
         "N": 2,
-        "delta_binding_MeV": 26.328,
+        "delta_binding_MeV": "26.3306625",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 25.382056679599007,
-          "three-twist (5_2)": 18.21795847263295,
-          "Borromean (6^3_2)": 7.031188055571455
+          "figure-eight (4_1)": "25.3846234838937",
+          "three-twist (5_2)": "18.2198007951302",
+          "Borromean (6^3_2)": "7.03189909660039"
         }
       },
       {
@@ -102,11 +110,11 @@
         "A": 6,
         "Z": 3,
         "N": 3,
-        "delta_binding_MeV": 31.99405,
+        "delta_binding_MeV": "31.9939872",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 30.844530177374835,
-          "three-twist (5_2)": 22.138646090525004,
-          "Borromean (6^3_2)": 8.544370336119565
+          "figure-eight (4_1)": "30.8444695920778",
+          "three-twist (5_2)": "22.1386026054584",
+          "Borromean (6^3_2)": "8.54435355313693"
         }
       },
       {
@@ -114,11 +122,11 @@
         "A": 7,
         "Z": 3,
         "N": 4,
-        "delta_binding_MeV": 39.24397,
+        "delta_binding_MeV": "39.2450807",
         "required_rho_over_me_per_link": {
-          "figure-eight (4_1)": 37.833966532683185,
-          "three-twist (5_2)": 27.15531053483946,
-          "Borromean (6^3_2)": 10.48054288655441
+          "figure-eight (4_1)": "37.83503727506",
+          "three-twist (5_2)": "27.1560790596443",
+          "Borromean (6^3_2)": "10.48083949731"
         }
       }
     ],
@@ -126,23 +134,24 @@
       {
         "isotope": "2H",
         "link": "figure-eight (4_1)",
-        "rho_over_me": 2.1446391788023718,
+        "rho_over_me": "2.14463936872064",
         "target_rho_over_me": 2.0,
-        "deviation_pct": 7.231958940118588
+        "deviation_pct": "7.23196843603191"
       },
       {
         "isotope": "3He",
         "link": "Borromean (6^3_2)",
-        "rho_over_me": 2.061190054466229,
+        "rho_over_me": "2.06118960302015",
         "target_rho_over_me": 2.0,
-        "deviation_pct": 3.059502723311458
+        "deviation_pct": "3.05948015100732"
       }
     ],
+    "precision_ceiling_note": "delta_binding_MeV is EXACT (the AME2020 table's own decimal, carried verbatim from ame-2020-binding-energies.witness.json).  Every other number here is NOT: required_rho_over_me_per_link, matches_within_10pct[*].rho_over_me / deviation_pct and link_primitives_MeV_per_unit divide by a SnapPy volume that experimental_constants stores as a float64 literal quoted ±1e-12 (VOL_FIGURE_EIGHT_ERR, VOL_THREE_TWIST_ERR; VOL_BORROMEAN_ERR ±1e-15), so at most ~12 significant digits are real.  They are serialized as strings only because M_E_MEV is an mpf and this module deliberately does not call _precision.set_compute_dps() — the mpf arithmetic runs at mpmath's default dps=15, and raising it would print the volume's binary tail out to output_dps rather than add information.  Read these as float64-grade values in string form; do NOT quote them past ~12 digits, and do NOT read their string type as evidence of precision.  Closing this properly needs exact high-precision sources for Vol(4_1) and Vol(5_2), as VOL_BORROMEAN_50DPS_STR already is.",
     "qou_prediction": "ρ_F ∈ {m_e, 2 m_e} per prop:cpt-orbit-closure-density",
     "link_primitives_MeV_per_unit": {
-      "figure-eight (4_1)": 1.0372681903732923,
-      "three-twist (5_2)": 1.4451674176088374,
-      "Borromean (6^3_2)": 3.74445965488548
+      "figure-eight (4_1)": "1.03726819177391",
+      "three-twist (5_2)": "1.44516741956024",
+      "Borromean (6^3_2)": "3.74445965994161"
     }
   }
 }

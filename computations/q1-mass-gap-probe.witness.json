@@ -1,15 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:00:55.794336+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:15:22.634544+00:00",
+  "commitSha": "90273f1d1733b108016ef17e41db3371bd995b48",
+  "assertions": [
+    {
+      "name": "plancherel_sum_at_q1_is_one",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "at q = 1 the Plancherel weights are d_lambda^2/n! and sum to exactly 1 over partitions of 5 — this file's own assert, previously invisible to the witness"
+    },
+    {
+      "name": "gap_bound_normalisation_identity",
+      "computed": "1.9809298e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "gap_bound_categorical(q) / ((q-1)/q)^2 == gap_bound_physical_units(q), an exact simplification checked at three unrelated q (substrate, 1.01, 1.000001)"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "q1-mass-gap-probe",
   "scriptFile": "q1_mass_gap_probe.py",
-  "scriptHash": "731e45977248",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "6bb20b0baa66",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

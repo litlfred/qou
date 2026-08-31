@@ -17,7 +17,7 @@ export default proposition({
     "universal",
     "matrix",
   ],
-  lean: { ref: "qou:QOU.Archimedean.beta_decay_transfer_matrix",
+  lean: { ref: "qou:QOU.Archimedean.BetaDecayTransfer.beta_decay_transfer_matrix",
     validation: "not_checked",
   },
   uses: ["prop:skein-polynomial-transfer-matrix"],

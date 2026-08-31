@@ -158,7 +158,12 @@ NF_BASIS: list[tuple[int, ...]] = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES: list[str] = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 # TR_M weights — symbolic via z.  Word lengths 0,1,1,2,2,3.
-TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, z**3]
+# 6th weight is the Ocneanu value on the longest element:
+# tr(T_{s1s2s1}) = z*tr(T_{s1}^2) = z(h z + 1) = h z^2 + z, from the
+# defining Markov property tr(x T_n y) = z tr(xy) plus T^2 = h T + 1.
+# z^3 (the z^len(w) guess) is NOT a trace: it is non-cyclic, so the
+# Gram tr(b_i b_j) comes out asymmetric. Bean qou-isu5.
+TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, h * z**2 + z]
 
 INV_TREFOIL_G0_SYM = [(ONE, -h), (ONE, -h)]  # σ₀⁻¹σ₀⁻¹
 INV_TREFOIL_G1_SYM = [(ONE, -h)]              # σ₁⁻¹
@@ -352,9 +357,37 @@ def atom_V_full_sym(Z: int, N: int) -> tuple[sp.Expr, sp.Expr]:
 def build_atom_nf_sym(Z: int, N: int) -> list[sp.Expr]:
     """Symbolic mirror of ``hecke_core.build_atom_nf``.
 
-    Returns a 6-element NF vector with coefficients in
-    ``ℚ(q, √q)``.  Use ``evalf_at_q0`` per-component to obtain
-    f64/mpmath numerical values at the end.
+    Returns a 6-element NF vector.  Use ``evalf_at_q0`` per-component to
+    obtain f64/mpmath numerical values at the end.
+
+    **Coefficient ring — corrected 2026-08-30 (bean `qou-c0yc`).**  This
+    said ``ℚ(q, √q)``, which is wrong on both counts under convention D.
+    There is no ``√q``: the half-power branch was a convention-C artefact
+    of ``z``, and ``z`` does not enter :func:`hm_sym` in either convention
+    (see the module banner, which already records the deletion of
+    ``sqrt_q``).  And the coefficients are not general rational functions:
+    this routine only ever calls ``hm_sym`` with ``c = 1`` and
+    ``d ∈ {0, −h, −h/2}``, so every coefficient is a **Laurent polynomial
+    over the dyadic rationals**, ``ℤ[½][q, q^{±1}]``.  The ``½`` is real
+    and compounds — denominators reach ``2^32`` by A = 8 — so ``ℤ[q^{±1}]``
+    would be wrong too.
+
+    Measured properties (``computations/probes/atom_nf_q_degree_probe.py``,
+    exact over ``Fraction``, gated against this function):
+
+      * support is exactly symmetric, ``lo = −hi``, in every component;
+      * q-exponent parity + NF word length is constant per nucleus, so each
+        coefficient is a ``±1`` eigenvector of ``q ↦ q^{-1}``;
+      * degree is quadratic in A.  On the all-proton ray
+        ``deg(σ₀) = 12A + A(A−1)/2 − 1`` exactly for A = 1…30.
+
+    **Cost.** ``hm_sym`` does not canonicalise, so the expression tree
+    fans out at every one of the ``11A + A(A−1)/2 + Z`` calls and this
+    function is exponential: A = 1 takes ~0.1 s, A = 2 does not finish in
+    15 minutes.  Wrapping each ``hm_sym`` result in ``sp.expand`` is
+    value-preserving and brings A = 8 to ~8.5 s; for degree/structure work
+    the exact ``dict[int, Fraction]`` mirror in the probe above reaches
+    A = 30 in seconds.
     """
     A = Z + N
     if A == 0:
@@ -523,11 +556,16 @@ def evalf_vector_at_q0(vec: Sequence[sp.Expr], dps: int = 50) -> list[mp.mpf]:
 
 
 def as_polynomial_in_q(expr: sp.Expr) -> sp.Expr:
-    """Best-effort: rationalise (clear ``√q``, common denominators) and
-    return the resulting Laurent polynomial in q.
+    """Best-effort: clear common denominators and return the resulting
+    Laurent polynomial in q.
 
     Returns a sympy expression; downstream tooling can call
     ``sp.Poly(result, q)`` if a Poly object is needed.
+
+    The "clear ``√q``" clause this docstring used to carry is dead under
+    convention D — nothing in this module produces a half power any more
+    (module banner, 2026-08-15 ruling).  Corrected 2026-08-30, bean
+    `qou-c0yc`.
     """
     return sp.together(sp.expand(expr.rewrite(sp.Pow)))
 

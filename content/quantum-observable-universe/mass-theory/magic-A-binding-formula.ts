@@ -15,7 +15,7 @@ export default proposition({
     "conj:magic-numbers-bring",
     "prop:gravity-spectral-prefactor",
     "prop:binding-alpha-shift-extension",
-    "prop:diagrammatic-double-magic-lr-fusion",
+    "conj:diagrammatic-double-magic-lr-fusion",
     "rem:strutinsky-from-graded-trace",
   ],
   defines: [],

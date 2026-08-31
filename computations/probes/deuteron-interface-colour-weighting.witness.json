@@ -1,0 +1,102 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T02:44:00.600411+00:00",
+  "commitSha": "96c43b34e0ce0a61e734b393be9cf0f477f4cf12",
+  "assertions": [
+    {
+      "name": "the colour weighting closes under 0.1% of the deuteron binding gap",
+      "computed": "0.000972197931901307538477446425567",
+      "expected": "0.000972198",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "|B(weighted) - B(blind)| / |B(blind) - B_AME|"
+    },
+    {
+      "name": "the weighting is the same order as the slack in qou-19jc's quoted target",
+      "computed": "1.51663914119566300670927095044",
+      "expected": "1.5166391",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "both ABSOLUTE in mu: 7.190e-5 shift vs 4.741e-5 quoted-vs-inverted"
+    },
+    {
+      "name": "and it is ~1e-3 of the gap in mu it would have to explain",
+      "computed": "0.000903234759571865187517465021667",
+      "expected": "0.00090327",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "|d_w - d_blind| / (mu_required - mu_blind)"
+    },
+    {
+      "name": "qou-19jc's 'derived' row is the COLOUR-BLIND interface",
+      "computed": "6.11959324261893822390357035609e-18",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "that bean's (sigma+sigma^-1)/2 row, reproduced from mu = z_D - h/2"
+    },
+    {
+      "name": "the whole qou-19jc table follows from mu = a*z_D + b",
+      "computed": "2.14406848345000753950716517181e-16",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "five rows of that bean's table, recomputed from the #6319 identity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "deuteron-interface-colour-weighting",
+  "scriptFile": "deuteron_interface_colour_weighting_probe.py",
+  "scriptHash": "0e675e640664",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/deuteron_interface_colour_weighting_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/deuteron_interface_colour_weighting_probe.py"
+  },
+  "parameters": {
+    "nucleus": "deuteron (Z=1, N=1)",
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "B_AME_MeV": "2.224566"
+  },
+  "data": {
+    "z_D": "0.61268803714646525159582986394589924802630839154509",
+    "alpha_MeV": "4.18598136329447589694506215876",
+    "mu_colour_blind": "0.5081578877486455938804067573810617760964",
+    "mu_colour_weighted": "0.5082297893767389625779957976558936038983",
+    "mu_required_self_consistent": "0.5877624726380160955353706916754548760321",
+    "mu_required_quoted_in_qou_19jc": "0.58771506411074",
+    "B_colour_blind_MeV": "2.83375482411947010855370314674",
+    "B_colour_weighted_MeV": "2.83316257200452377033781580149",
+    "shortfall_MeV": "0.609188824119470108553703146742",
+    "colour_weighting_shift_MeV": "-0.000592252114946338215887345249627",
+    "fraction_of_gap_closed": "0.000972197931901307538477446425567"
+  },
+  "caveats": [
+    "Scope-(a) for the numbers: one nucleus, one pin, and the functional form B = -alpha ln mu, which qou-19jc's own redirect places under suspicion (qou-kj4v: flavour-only mu cannot split 3S1 from 1S0). If that form is wrong, these MeV figures move; the mu figures and the identity do not.",
+    "The structural note -- every admissible interface element is a*sigma + b*I, so mu = a*z_D + b sweeps all of R and cannot select an element -- excludes a SEARCH STRATEGY, not any ingredient. A space-indexed derived element (qou-vbyi) would arrive with its own (a, b) and is untouched by it.",
+    "No claim that qou-19jc's quoted required mu is wrong for its purpose: it agrees to 4 significant figures and its 13.5 % conclusion is unaffected. The point is only that an effect of 7.2e-5 cannot be assessed against a value carrying 8.1e-5 of slack."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,16 +1,16 @@
 ---
 # qou-f8lit
-title: 'MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)'
+title: MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)
 status: todo
 type: task
 priority: high
-parent: qou-8mtd
 tags:
     - hyperbolic-volume
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-29T19:10:00Z
+updated_at: 2026-08-30T15:06:04Z
+parent: qou-8mtd
 ---
 
 ## The defect
@@ -635,3 +635,147 @@ confirming `EXIT 1` at the right line, then restoring. Same discipline
 Both items I listed as "next" are **closed as non-issues**, and the second one
 *strengthens* `qou-qint`: `scratch.lean` is a live consumer of `qIntBalZ`, so
 the ℤ-index migration is not merely unblocked but partly already done.
+
+
+---
+
+## 2026-08-30 — the ⚠ section's CONCLUSION is now stale; its REASONING is not.
+
+`QOU/Encounter/FiveTwoVolumeBridge.lean` now carries `VOL_5_2_pos`,
+`vol_pos_of_realises` and `vol_ne_zero_of_realises`, all `lean`-direct exit 0 and
+axiom-clean (`propext, Classical.choice, Quot.sound`; no `sorryAx`), plus
+`vol_lt_of_realises` — the inequality itself rather than its transport.
+
+**Separate the two claims in that section, because only one moved.**
+
+*Still true, unchanged:* the corpus has **no** `0 < BlochWigner_lob z` for `0 < z.im`.
+The 4₁ route through `Cl_2_pi_div_three_pos` really does depend on the 4₁ shape sitting
+on the unit circle, and the 5₂ shape really is not on it. Item 3 of "Still open" —
+general `0 < D(z)` on the upper half plane — is untouched. Anyone reaching for
+positivity at a *third* knot gets nothing from this.
+
+*Now false:* "the 5₂ analogue does not exist, and that is the honest outcome."
+It exists, by a route that says nothing about `BlochWigner_lob` at all:
+`QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` (bean `qou-52ch`, merged in #6141)
+puts `VOL_5_2` strictly above `VOL_4_1`, and `Cl_2_pi_div_three_pos` bounds `VOL_4_1`
+from below. Positivity at 5₂ is a *comparison* result, not a special-value result.
+
+**Item 2 of "Still open" is closed, and NOT the way this bean predicted.** It was
+recorded as blocked on "rigorous 16-digit bounds", then re-scoped to "blocked by the
+method". Both were about the *digit* route. What closed it was Rivin's strict concavity
+of the ideal-tetrahedron volume applied along the chord from the regular shape to the
+5₂ shape — the constants are never approximated at any point, so no digit bound was
+ever needed. The obstacle was real for the route being attempted and irrelevant to the
+route that worked; recording that distinction because "blocked by the method" reads as
+"blocked", and it was not.
+
+Item 1 (exactify both `MostowRigidity` instances) is unchanged.
+
+
+---
+
+## 2026-08-30 (later) — item 3 is HALF closed, and my own "still open" was the wrong claim
+
+Two hours after writing "*Item 3 of Still open — general `0 < D(z)` on the upper half
+plane — is untouched*" in the note above, and while drafting a PR body that repeated it,
+I checked instead of asserting. **The non-strict half was six lines away.**
+
+`QOU/Archimedean/BlochWignerNonneg.lean` (#6234), both `lean`-direct exit 0 and
+axiom-clean:
+
+    volume_nonneg          : 0 ≤ T.volume            (T : IdealTetrahedron)
+    blochWigner_lob_nonneg : 0 ≤ BlochWigner_lob z   (0 < z.im)
+
+**Nothing new was needed in the geometry.** `MathlibExt/IdealTriangulation.lean` already
+carried Milnor's angle formula as `rfl` (`volume_eq_lob_sum`), the angle sum `= π`, and
+each angle strictly in `(0, π)`; and every `z` with `Im z > 0` *is* an `IdealTetrahedron`
+shape by construction. The single missing piece was the Λ-sum lemma — and
+`LobMonotonicity.lob_sum_nonneg` landed in #6141 as a step toward the 5₂ chord, for an
+entirely different purpose. The gap closed sideways, from a lemma written for another
+target.
+
+**Strict `0 < D(z)` is still open, and the distinction is the whole point.** Strict is
+what `ManifoldVolumeBridge` declines to assume, and what `vol_ne_zero_of_realises` needs.
+`lob_sum_nonneg` descends from subadditivity of `Λ` on `[0, π/2]`, which is not strict,
+and the Λ-sum genuinely tends to `0` as the tetrahedron degenerates. Ruling that out needs
+the angles bounded away from the corners, or a strict subadditivity. So item 3 should now
+read **"strict `0 < D(z)`"**, not "positivity".
+
+**Three sites carried the unqualified absence claim** and are sharpened rather than
+deleted — the design decisions they justify are unchanged, because each needs the strict
+half: `MathlibExt/ManifoldVolumeBridge.lean`, `Encounter/FiveTwoVolumeBridge.lean`, and
+the `lean-axiom-guard.py` registry comment.
+
+**The lesson is the one this repo already writes down.** *"I found no `0 < D(z)`"* and
+*"there is no `0 < D(z)`"* are different claims, and I had only measured the first — for
+the strict statement, at that. AGENTS.md §"Terse ≠ compressed" names this exact failure,
+and the corpus-grep checklist exists to catch it. I had walked path 2 (`content/`) and
+not path 2 into `MathlibExt/`, where the answer was sitting in a `rfl`.
+
+
+---
+
+## 2026-08-30 (later still) — item 3 is FULLY CLOSED
+
+Strict `0 < D(z)` landed in #6263 as `Archimedean.BlochWignerPositive.blochWigner_lob_pos`,
+by Rivin strict concavity along a chord whose endpoints stay strictly interior. Bean
+`qou-0ag0` carries the argument and the correction to what it cost.
+
+**The note two entries up says "item 3 should now read *strict* `0 < D(z)`, not
+positivity". Both halves are now proved; item 3 is done.** So this bean's "Still open" list
+is:
+
+1. Exactify both `MostowRigidity` instances (`figureEight`, `knot5_2`) — **still open**,
+   and #6234 recorded why the 5₂ half is not unblocked by the chord: the bound it gives is
+   `VOL_4_1 < VOL_5_2`, and `VOL_4_1` is the quantity already on the left of the comparison
+   that would use it. Exactifying the literal needs separation from the *next* spectrum
+   value up, which is a different bound.
+2. The inequalities as Lean facts — **closed** (#6141).
+3. General `0 < D(z)` — **closed**, non-strict #6234, strict #6263.
+
+Downstream, `MathlibExt/ManifoldVolumePositive.vol_pos_of_realises` now gives
+`0 < vol m` for any realised manifold with a nonempty triangulation, which is what item 3
+was wanted for.
+
+
+---
+
+## 2026-08-30 — item 1 is HALF closed: `knot5_2` exactified (#6263)
+
+`MostowRigidity.knot5_2.volume := 2.82812208833078` → `VOL_5_2`. Both instances are now
+keyed on exact constants, `figureEight` having been done in an earlier arc. Confirmed by
+`rfl`: `volumeInvariant Knot5_2 = VOL_5_2` and `volumeInvariant FigureEight = VOL_4_1` both
+hold definitionally, so no decimal survives on either side, and
+`figureEight_volume_lt_knot5_2_volume` is now the corpus's proved inequality directly
+rather than `nlinarith` against a certified bracket and a decimal.
+
+**#6234's prediction about what would unblock this was wrong, and worth reading before
+trusting the same reasoning elsewhere.** It said the chord does not unblock the 5₂ literal
+because it bounds `VOL_5_2` below by `VOL_4_1`, the quantity already on the left of the
+comparison. *That part is correct.* What it missed is that the field does not need a
+comparison at all — `volume_nonneg` needs `0 ≤ VOL_5_2` standing alone, which
+`BlochWignerPositive.blochWigner_lob_pos` (bean `qou-0ag0`) gives at `fiveTwoShape_im_pos`.
+The general lemma applies to the 5₂ shape **precisely because it does not route through a
+Clausen special value** — the very property the bridge header cites as the reason the 4₁
+argument fails there. The stated obstruction was what made the general route available.
+
+**Also fixed, found while there and unrelated to volumes:** `knot5_2.mostow_gap` was `0.5`,
+and the field is documented as a *lower bound* on the distance to the next distinct
+spectrum value. The next value above `Vol(5_2)` is `Vol(6_1) ≈ 3.16396`, i.e. a gap of
+`0.33584`, so `0.5` is not a lower bound — and the instance's own docstring called `0.5`
+"well under the nearest-neighbour gaps … `Vol(6_1) − Vol(5_2) ≈ 0.336`" while quoting that
+figure. Corrected to `0.3`. `figureEight`'s `0.5` is sound (its neighbour up is `Vol(5_2)`,
+gap `0.798`).
+
+Nothing in Lean broke, which is why it survived: the class carries only `mostow_gap_pos`
+and defers discreteness to Mathlib. **A field whose documented meaning exceeds its stated
+obligation is not checked by anything** — an agent trusting the doc would conclude no
+hyperbolic volume lies within `0.5` of `Vol(5_2)`, and one does.
+
+**What remains of item 1:** `computations/hyperbolic-volumes.witness.json`'s `description`
+still names `knot5_2.volume` as a consumer of the `:leanval[vol_5_2]` tag; nothing consumes
+it now. A witness description cannot be corrected without re-running its producer.
+
+Two further `:leanval[Vol_4_1]` sites were assessed and are **not** this defect class —
+decimal constant tables with nothing exact to be unsatisfiable against. One carries a
+separate `=`-should-be-`≈` defect: bean `qou-2u39`.

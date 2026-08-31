@@ -30,12 +30,20 @@ class KnotIndexedConvolutionGridContext where
     bar_class k₁ = bar_class k₂ → depth k₁ = depth k₂ →
       (bar_class k₁, depth k₁) = (bar_class k₂, depth k₂)
 
-/-- **Proposition (`prop:knot-indexed-convolution-grid`).** -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-indexed-convolution-grid.md
-def grid_placement [ctx : KnotIndexedConvolutionGridContext] :
-    ∀ k₁ k₂ : ctx.KnotConvolution,
-      ctx.bar_class k₁ = ctx.bar_class k₂ → ctx.depth k₁ = ctx.depth k₂ →
-        (ctx.bar_class k₁, ctx.depth k₁) = (ctx.bar_class k₂, ctx.depth k₂) :=
-  ctx.claim_placement_well_defined
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `grid_placement` — body was `ctx.claim_placement_well_defined`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot.KnotIndexedConvolutionGrid

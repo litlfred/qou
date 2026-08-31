@@ -1,10 +1,8 @@
-| $q$ regime | $P_{7,7}(q)$ | $\Phi(q)$ | Physical? |
+| $q$ regime | $P_{7,7}(q)$ | $P_{7,6}(q)$ | Sign pattern |
 |:--:|:--:|:--:|:--:|
-| $q < q_\star$ | negative | positive | **No** (diagonal wrong sign) |
-| $q = q_\star \approx 0.382$ | $0$ | positive | **Degenerate** (diagonal zero) |
-| $q_\star < q < q_\Phi$ | positive | positive | No (sub-physical) |
-| $q = q_\Phi \approx 0.466$ | positive | $0$ | **Degenerate** (q-AND zero) |
-| $q_\Phi < q < 1$ | positive | negative | No (q-AND wrong sign) |
-| $q = 1$ | $1/2$ | $0$ | Classical (trivial) |
-| $q > 1$ | positive | positive | **Yes (physical)** |
-| $q = q_0 \approx 1.110$ | $\approx 0.5514$ | $\approx 0.0495$ | **Yes (substrate)** |
+| $0 < q < 1$ | positive | positive | both positive |
+| $q = 1$ | $1/2$ | $0$ | classical limit — the off-diagonals trivialise |
+| $q > 1$ | positive | **negative** | mixed |
+| $q = q_0 \approx 1.110$ | $\approx 0.6912$ | $\approx -0.1438$ | mixed (substrate) |
+
+Convention $D$ throughout. The sign pattern above is the inverse, on $q > 1$, of the one this table carried while it quoted the retired $\Phi$. Whether the mixed pattern is compatible with LP feasibility is **open** — see item 4 of the parent proposition; no physicality verdict is asserted per regime.

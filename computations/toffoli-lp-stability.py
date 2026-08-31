@@ -68,14 +68,70 @@ def repo_sha():
         return "unknown"
 
 
+# ── Toffoli amplitudes ─────────────────────────────────────────────────────
+#
+# 🛑 BOTH FORMS BELOW WERE CONVENTION C, IN A FILE WHOSE GRAM IS CONVENTION D
+# (see `gram_matrix`, "z = q**3 / (q**2 + 1)").  A half-integer power of q
+# cannot arise from a rational function of q, so `mp.sqrt(q)` was the C
+# fingerprint: z_C = sqrt(q)/(q+1) is irrational in q, z_D = q^3/(q^2+1) is not.
+# Convention C was excised by the 2026-08-09 owner ruling; migrated 2026-08-30,
+# bean `qou-3j5m`.
+#
+# The diagonal is a straight frame change.  The q-AND is NOT: the published
+# Phi is not an object of the Toffoli construction at all -- exhaustive
+# exact-rational search over 32 traced volumes and parent-daughter differences
+# and all 528 pairwise products finds no match, and Phi's z-coefficient carries
+# a (q+1) denominator that `chain_reduce` cannot produce.  It is replaced by the
+# DERIVED target-flip amplitude P_76.  Derivation and assertions:
+# `computations/probes/toffoli_trio_rederivation.py` (6/6).
+
+
 def toffoli_diagonal(q):
-    """P_{7,7}(q) = (q + q^{1/2} - 1) / (q + 1)."""
+    """P_{7,7}(q) = q^3 (q^4 + 1) / (q^2 + 1)^2  -- convention D (canonical).
+
+    Frame change only: the diagonal is V_0 V_1 = z + h z^2 with h = q - 1/q,
+    which at z_C gives the previously-coded (q + sqrt q - 1)/(q + 1) and at
+    z_D gives this.  Strictly positive for every q > 0; the golden-ratio zero
+    at q = 1/phi^2 belonged to the C frame and does not survive.
+    """
+    q = mp.mpf(q)
+    return q ** 3 * (q ** 4 + 1) / (q ** 2 + 1) ** 2
+
+
+def toffoli_diagonal_convention_C_HISTORICAL(q):
+    """P_{7,7} in the EXCISED convention C: (q + q^{1/2} - 1)/(q + 1).
+
+    Retained as the record of what this file computed before 2026-08-30, and
+    because the golden-ratio threshold q_star = 1/phi^2 is its root.  Not wired.
+    """
     q = mp.mpf(q)
     return (q + mp.sqrt(q) - 1) / (q + 1)
 
 
 def q_and_amplitude(q):
-    """Φ(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / (2(q+1)^2)."""
+    """P_{7,6}(q) = -(q-1)(q+1)(q^6 + q^4 + 2q^2 + 1) / (2q (q^2+1)^2).
+
+    The DERIVED target-flip amplitude in convention D, replacing the published
+    Phi, which this file used to compute and which is not in the construction's
+    image.  Note the SIGN: this is negative for every q > 1, so it is negative
+    at the substrate anchor.  That is not a frame effect -- the convention-C
+    derived form -(q-1)(q^2+3q+1)/(2q(q+1)) is negative at q_0 too.  See the
+    `physical_q0_stable` note below.
+    """
+    q = mp.mpf(q)
+    return -(q - 1) * (q + 1) * (q ** 6 + q ** 4 + 2 * q ** 2 + 1) / \
+        (2 * q * (q ** 2 + 1) ** 2)
+
+
+def q_and_amplitude_published_PHI_HISTORICAL(q):
+    """The published Phi: (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1) / (2(q+1)^2).
+
+    Retained as the record of what this file computed before 2026-08-30.  NOT a
+    quantity the Toffoli construction produces -- see the banner above.  Its
+    root q_Phi is the "q-AND sign reversal" threshold the content block quotes;
+    the derived P_76 has no such root (its sextic has no positive real zero),
+    so its only sign change on q > 0 is at q = 1.  Not wired.
+    """
     q = mp.mpf(q)
     s = mp.sqrt(q)
     return (q - 1) * (q * s + s - 1) * (q * s + q + 1) / (2 * (q + 1) ** 2)
@@ -194,13 +250,13 @@ def main():
         row = {
             "q": q,
             "P_77": toffoli_diagonal(q),
-            "Phi_qAND": q_and_amplitude(q),
+            "q_AND_P76": q_and_amplitude(q),
             "gram_eigenvalues": evals,
             "gram_lambda_min": evals[0],
             "gram_lambda_max": evals[-1],
             "gram_condition": (evals[-1] / abs(evals[0])) if evals[0] != 0 else "inf",
             "P_77_sign": "+" if toffoli_diagonal(q) > 0 else ("0" if toffoli_diagonal(q) == 0 else "-"),
-            "Phi_sign": "+" if q_and_amplitude(q) > 0 else ("0" if q_and_amplitude(q) == 0 else "-"),
+            "q_AND_P76_sign": "+" if q_and_amplitude(q) > 0 else ("0" if q_and_amplitude(q) == 0 else "-"),
         }
         scan.append(row)
 
@@ -230,15 +286,60 @@ def main():
         "gram_matrix_at_q0": gram_matrix(Q0).tolist(),
         "scan": scan,
         "conclusions": {
-            # LP threshold: q > q⋆ ensures P_{7,7}(q) > 0 (Toffoli
-            # diagonal positive). Full physical stability additionally
-            # requires Φ(q) > 0 — Φ has a zero at q_Φ ≈ 0.4656 and
-            # becomes negative on (q_Φ, 1), so the joint-positivity
-            # regime splits as (q⋆, q_Φ) ∪ (1, ∞).
-            "stable_regime_lp": f"q > q⋆ ≈ {mp.nstr(Q_STAR, 7)}  (P_77 > 0)",
-            "stable_regime_physical": "q ∈ (q⋆, q_Φ) ∪ (1, ∞)  (P_77 > 0 and Φ > 0)",
-            "stable_regime": f"q > q⋆ ≈ {mp.nstr(Q_STAR, 7)}",  # back-compat alias
+            # 🛑 BOTH THRESHOLDS THESE REGIMES WERE BUILT ON ARE GONE.
+            #
+            # They read: LP-stable for q > q⋆ (where the C-frame diagonal
+            # vanishes), and physically stable on (q⋆, q_Φ) ∪ (1, ∞), where q_Φ
+            # ≈ 0.4656 is the zero of the published Φ.  Under the derived,
+            # convention-D amplitudes NEITHER threshold exists:
+            #
+            #   P_77^D = q^3(q^4+1)/(q^2+1)^2 is STRICTLY POSITIVE for all
+            #   q > 0 -- its numerator vanishes only at q = 0, so there is no
+            #   q⋆ to be above.  (q⋆ = 1/phi^2 survives as a threshold of the
+            #   Descartes-curve Weierstrass coefficient, which carries no z;
+            #   what does not survive is the COINCIDENCE that the diagonal
+            #   vanished there too.)
+            #
+            #   The derived q-AND P_76^D has sextic q^6+q^4+2q^2+1, which has NO
+            #   positive real root, so its only sign change on q > 0 is at
+            #   q = 1, from the (q-1) factor.  There is no q_Φ.
+            #
+            # So the diagonal condition is vacuous and the q-AND condition is
+            # exactly "q < 1".  Reported as measured, not as the old intervals.
+            "stable_regime_lp": "all q > 0  (P_77^D > 0 identically; no q⋆ threshold)",
+            "stable_regime_physical": "q ∈ (0, 1)  (P_77^D > 0 everywhere; "
+                                      "derived q-AND > 0 only below q = 1)",
+            "stable_regime": "all q > 0  (P_77^D > 0 identically)",
+            "stable_regime_note": (
+                "The former q⋆ and q_Φ thresholds belonged to the excised "
+                "convention-C diagonal and to the published Phi respectively. "
+                "Neither survives the migration + derivation; bean qou-3j5m."
+            ),
+            # 🛑 THIS NOW REPORTS False, AND THAT IS THE HONEST ANSWER.
+            #
+            # The block's claim is a SIGN claim: "P_77(q_0) ~ 0.5514,
+            # Phi(q_0) ~ 0.0495.  Both are strictly positive.  The q-Toffoli is
+            # LP-stable at the physical substrate value."  With the derived
+            # q-AND in place of Phi:
+            #
+            #     P_77 C (published)   +0.5514      P_77 D (derived)   +0.6912
+            #     Phi   C (published)  +0.0495
+            #     P_76  C (derived)    -0.1306      P_76  D (derived)  -0.1438
+            #
+            # The q-AND is NEGATIVE at q_0 in BOTH conventions, so the
+            # positivity half of the claim fails, and it fails because Phi was
+            # replaced by the amplitude the construction actually produces --
+            # not because of the frame change.
+            #
+            # NOT "fixed" by weakening the test to != 0.  Whether LP-feasibility
+            # genuinely requires the target-flip amplitude to be POSITIVE, or
+            # only non-zero, is a modelling question this producer cannot
+            # settle; it is recorded for the owner in bean `qou-3j5m`.  Until
+            # then the gate reports what the stated criterion actually yields.
             "physical_q0_stable": toffoli_diagonal(Q0) > 0 and q_and_amplitude(Q0) > 0,
+            "physical_q0_stable_criterion": "P_77(q0) > 0 AND q_AND(q0) > 0",
+            "physical_q0_diagonal_positive": toffoli_diagonal(Q0) > 0,
+            "physical_q0_qand_positive": q_and_amplitude(Q0) > 0,
             "classical_limit_q_equals_1": {
                 "P_77": toffoli_diagonal(1.0),
                 "Phi": q_and_amplitude(1.0),
@@ -261,10 +362,12 @@ def main():
 
     print(f"wrote {out_path}")
     print(f"q⋆ = {mp.nstr(Q_STAR, 11)}")
-    print(f"P_{{7,7}}(q⋆) = {mp.nstr(p77_at_star, 4)}  (should ≈ 0)")
-    print(f"Φ(q⋆)       = {mp.nstr(phi_at_star, 4)}  (non-zero: Φ zero is at q_Φ ≈ 0.4656, not q⋆)")
+    print(f"P_{{7,7}}(q⋆) = {mp.nstr(p77_at_star, 4)}  "
+          f"(NOT zero: the q⋆ zero was the convention-C diagonal's)")
+    print(f"q-AND(q⋆)   = {mp.nstr(phi_at_star, 4)}  "
+          f"(the derived q-AND has no positive real root)")
     print(f"P_{{7,7}}(q₀) = {mp.nstr(toffoli_diagonal(Q0), 7)}")
-    print(f"Φ(q₀)       = {mp.nstr(q_and_amplitude(Q0), 7)}")
+    print(f"q-AND(q₀)   = {mp.nstr(q_and_amplitude(Q0), 7)}   (DERIVED P_76; negative)")
 
 
 if __name__ == "__main__":

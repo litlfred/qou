@@ -610,11 +610,46 @@ MASKED_PY
     echo
   fi
   if [ -n "$content_moved" ]; then
-    echo "STALE COMMITTED AUDIT WITNESSES — a substantive field moved:"
+    # These are TREE-MEASURING audit witnesses: they count things across the
+    # whole working tree, so main regenerates them on its own cadence. That
+    # makes them CONTENDED files, and the instruction this banner used to print
+    # ("commit the regenerated one") is wrong from a feature branch for two
+    # independent reasons, both measured — see bean qou-v0t8:
+    #
+    #   1. A branch BEHIND main measures a tree missing main's newer commits,
+    #      so the regenerated count is right for the branch and wrong for main.
+    #      Committing it walks a drain-only ratchet BACKWARDS while reporting
+    #      green (measured: drained_files 913 -> 888, 25 files recorded as
+    #      re-dirtied when nothing was).
+    #   2. Even from a CURRENT tree with the movement correctly attributed to
+    #      main, committing one acquires a conflict with main — and it recurs
+    #      on every subsequent main landing until the branch merges (measured:
+    #      PR #5805 went mergeable_state dirty within twenty minutes, on
+    #      exactly that file).
+    #
+    # So reason 1's "is your tree behind?" test is INSUFFICIENT: reason 2 bites
+    # a tree that is 0 behind. The branch check below is the discriminator that
+    # covers both, which is why it is not conditioned on the behind-count.
+    _branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo HEAD)
+    _behind=$(git rev-list --count "HEAD..origin/main" 2>/dev/null || echo "?")
+    echo "TREE-MEASURING AUDIT WITNESSES MOVED — a substantive field changed:"
     printf '%s' "$content_moved"
-    echo "  The committed copy was stale. Commit the regenerated one AND say"
-    echo "  which count changed — and check whether the movement is yours or"
-    echo "  main's before claiming it (git log the newly-listed entries)."
+    if [ "$_branch" = "main" ]; then
+      echo "  On main: the committed copy was stale. Commit the regenerated one"
+      echo "  AND say which count changed — and check whether the movement is"
+      echo "  yours or an earlier landing's (git log the newly-listed entries)."
+    else
+      echo "  On branch '$_branch' ($_behind behind origin/main)."
+      echo "  DO NOT COMMIT THESE. Revert them:  git checkout -- computations/"
+      echo "  They are contended files that main regenerates on its own cadence,"
+      echo "  so committing one from a feature branch either walks a drain-only"
+      echo "  ratchet backwards (if this tree is behind main) or acquires a"
+      echo "  conflict that recurs until the branch merges (even at 0 behind)."
+      echo "  Both failure modes are measured; see bean qou-v0t8."
+      echo "  The diff is still worth READING — if the movement is your own"
+      echo "  producer's, that is a real finding about your change. It is the"
+      echo "  COMMIT that is wrong here, not the measurement."
+    fi
     echo
   fi
 fi

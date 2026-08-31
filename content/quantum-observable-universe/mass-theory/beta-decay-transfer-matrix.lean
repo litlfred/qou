@@ -22,7 +22,21 @@ LaTeX label: `prop:beta-decay-transfer-matrix`
 - [manuscript] §6/beta-decay-transfer-matrix
 -/
 
-namespace QOU.Archimedean
+-- Declarations here are nested one namespace deeper than `QOU.Archimedean`
+-- so this module and `QOU.Archimedean.TransferMatrix` can be imported
+-- together. Both declared `T_pp`, `T_nn` and `T_mix` at the same
+-- fully-qualified names, and Lean rejects the second import with
+-- "environment already contains" (bean `qou-kfcl`).
+--
+-- They are NOT rival definitions. `TransferMatrix.transferMatrix c d`
+-- is `!![c * HA_t + d, c; c, d]` over `ℤ[t, t⁻¹]` with `HA_t = q - q⁻¹`;
+-- `betaTransfer q c d` here is `!![c * (q - q⁻¹) + d, c; c, d]` over `ℝ`.
+-- One formula, two ground rings — the symbolic one and its archimedean
+-- specialisation, which is exactly the §7c layering. Consolidating them
+-- onto a single generic `transferMatrix (q c d : R)` over `[CommRing R]`
+-- is the right end state and is NOT done here; it changes the signature
+-- of a declaration seven modules consume. Measured and left to `qou-u87j`.
+namespace QOU.Archimedean.BetaDecayTransfer
 
 /-- A 2×2 transfer matrix (entries are polynomials in q). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -192,4 +206,4 @@ theorem daughter_volumes_smaller :
   unfold V_par_sigma0 V_dau_sigma0 V_par_sigma1 V_dau_sigma1
   constructor <;> norm_num
 
-end QOU.Archimedean
+end QOU.Archimedean.BetaDecayTransfer

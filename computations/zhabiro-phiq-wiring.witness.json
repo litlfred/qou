@@ -1,15 +1,32 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T20:29:13.292059+00:00",
-  "commitSha": "099933d2c4b0311aa90bcb2380a9e5023fac6c58",
-  "assertions": [],
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:59:48.986229+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "eulerCoeff_closed_form_matches_recurrence",
+      "computed": "5.09789e-57",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff_succ"
+    },
+    {
+      "name": "eulerTrunc_eq_cyclotomic_partial_sum",
+      "computed": "1.31059e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 99,
+  "durationMs": 143,
   "computation": "zhabiro-phiq-wiring",
   "scriptFile": "zhabiro_phiq_wiring.py",
-  "scriptHash": "8d85d138d12f",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "4d8901b82c71",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/zhabiro_phiq_wiring.py"
+    ],
+    "reproduce": "python3 -u computations/probes/zhabiro_phiq_wiring.py"
   },
   "kind": "exploratory-probe",
   "content_block": "conj:brane-tower-z-habiro",

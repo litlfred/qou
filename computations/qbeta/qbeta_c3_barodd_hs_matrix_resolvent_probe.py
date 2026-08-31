@@ -1,8 +1,46 @@
 #!/usr/bin/env python3
 """qbeta_c3_barodd_hs_matrix_resolvent_probe.py
 
-🛑 THIS PROBE IS RED AS OF 2026-08-30 AND ITS RECORDED CONCLUSION DOES NOT HOLD
-AS DERIVED. Do not cite it until the re-analysis in bean qou-dbau lands.
+🛑 RED AS OF 2026-08-30. RE-ANALYSED THE SAME DAY (qou-dbau) — READ THE VERDICT
+NOTE BELOW BEFORE CITING. The scope-(a) negative SURVIVES, but NOT for the
+reason the RESULT line gives.
+
+RE-ANALYSIS RESULT (qou-dbau, measured on the corrected weight):
+
+  [1] sign flip        SURVIVES. No flip at any geometric mu; HS ratio at mu=0
+                       is 1.0000001 against a target S(p)/S(m) = -3.93692. The
+                       route still cannot supply the bar-odd flip. THIS is the
+                       evidence the scope-(a) negative actually rests on.
+
+  [2] bar-parity       REFUTED. The parity is now mu-DEPENDENT:
+                         mu=0: |HS(q)-HS(1/q)|=18.38 vs |HS(q)+HS(1/q)|=6.856  BAR-ODD
+                         mu=1: 13.45 vs 33.53                                   BAR-EVEN
+                       The closure argument needed bar-even at EVERY geometric
+                       mu, so that a real bar-even resolvent could never carry a
+                       bar-odd S. At mu=0 the resolvent now has the SAME parity
+                       as S, so the parity obstruction does not hold there.
+
+  [3] no eigen-crossing REFUTED, and for a reason worth its own look: the
+                       corrected Gram matrix has an eigenvalue at 2.717e-71 —
+                       singular to working precision. The non-crossing premise
+                       compared the between-anchor shift (6.043e-8) against that,
+                       so it cannot hold.
+
+WHAT THIS DOES AND DOES NOT ESTABLISH. It does NOT open the route: finding 1 is
+untouched and is a real negative. It does NOT show the route works. What it
+shows is that the MECHANISM named in the RESULT line is wrong — the route is not
+closed BY BAR-PARITY, it is closed by the absence of a sign flip. Two of the
+three legs the verdict was built on do not survive the weight correction.
+
+ACTION FOR THE NEXT AGENT: the RESULT line and the witness verdict string should
+be re-scoped to cite finding 1 rather than bar-parity. That is a content change
+to a recorded conclusion and is left to the owner or a dedicated pass, not done
+inline here. The near-singular Gram eigenvalue (2.7e-71) may also be worth
+relating to the convention-D Gram singularity tracked as qou-cds2.
+
+Original note follows.
+──────────────────────────────────────────────────────────────────────────────
+Do not cite the RESULT line as-is until the re-scoping above lands.
 
 It carried the 2026-05-19 TR_M[5] Markov bug: TR_M[5] was z**3 where
 NF_BASIS[5] = (0,1,0) = sigma_0 sigma_1 sigma_0 has Markov weight h*z**2 + z.
@@ -47,6 +85,44 @@ geometric pole `μ(q)` producing the sign flip the scalar version lacks.
 
 NO FIT: every `μ` is a geometric/canonical value (0 = Frobenius dual; 1;
 `z = 1/(√q+1/√q)`; a Gram eigenvalue). Nothing is tuned to Q_β.
+
+🛑 WITHDRAWN 2026-08-30 (bean qou-isu5) — THE FINDINGS BELOW WERE COMPUTED
+WITH A WEIGHT VECTOR THAT IS NOT A TRACE.
+
+`make_engine` built `TR_M = [1, z, z, z^2, z^2, z*z*z]`. The sixth weight is
+wrong under EITHER Markov convention: from the defining property
+`tr(x T_n y) = z tr(xy)` and `T^2 = hT + 1`,
+
+    tr_M(e^-) = tr_M(T_{s1 s2 s1}) = z * tr_M(T_{s1}^2) = z(hz + 1) = h z^2 + z
+
+`z^3` is the `tr(T_w) = z^len(w)` guess -- true for len <= 2 in H_3, false at
+len 3. A vector that is not a trace is not cyclic, so the Gram it builds is not
+symmetric, and NONE of the three findings below is about a Markov trace.
+Prior audit of the same defect: docs/audits/2026-05-19-trm5-markov-bug.md.
+
+What the corrected weight does to each finding, measured (same anchors, same mu):
+
+  1. SURVIVES. Still no sign flip at any geometric mu; HS(p)/HS(m) ~ +1.0000
+     against a target ratio of -3.94.
+  2. FALSIFIED at mu = 0. |HS(q)-HS(1/q)| = 18.38 vs |HS(q)+HS(1/q)| = 6.86
+     -> BAR-ODD, where the wrong weight gave 2.97 vs 14.09 -> BAR-EVEN.
+     (mu = 1 stays bar-even.)
+  3. TEST GOES DEGENERATE, which is not the same as being refuted. The correct
+     trace makes the Gram SINGULAR -- rank 5, the trace-form radical -- so
+     `min|lambda|` collapses to ~1e-71 and the criterion
+     `max_shift < min_gap/10` is vacuous. It reports no evidence either way.
+
+The CONCLUSION below rests on finding 2, so THE SCOPE-(a) NEGATIVE IS WITHDRAWN:
+this construction is no longer shown to be excluded by bar-parity.
+
+It is equally NOT a positive result, for two reasons that must be cleared first:
+  (i)  `z` here is still convention C (`1/(sqrt(q)+1/sqrt(q))`), excised by the
+       2026-08-15 owner ruling; the re-run belongs to the convention-D
+       re-derivation (bean qou-cds1), not to this file's C frame.
+  (ii) the resolvent is inverted in float64 near a now-SINGULAR Gram, so the
+       large-|mu| rows carry no significant digits at all.
+
+The historical findings are kept below as the record of what was published.
 
 FINDINGS (scope-(a); no fit; nothing wired; no tier change):
 
@@ -113,13 +189,18 @@ def make_engine(q):
     HA = q - 1 / q
     sq = mp.sqrt(q)
     z = 1 / (sq + 1 / sq)
-    # TR_M[5] is the Markov weight of NF_BASIS[5] = (0,1,0) = σ₀σ₁σ₀, which the
-    # Markov recursion gives as h·z² + z, NOT z³. This file carried the
-    # 2026-05-19 bug (docs/audits/2026-05-19-trm5-markov-bug.md) — the same
-    # defect fixed in pyhecke/gram.py then, and in compound_shift_nf on #6058
-    # (qou-looi). Third instance found; corrected 2026-08-30 (qou-t9r1).
-    # The correction is convention-INDEPENDENT: the recursion gives h·z² + z
-    # for any z.
+    # tr_M(e^-) = z*tr_M(sigma_0^2) = z(hz+1) = HA*z^2 + z, from the defining
+    # Markov property tr(x T_n y) = z tr(xy) with T^2 = hT + 1. TR_M[5] is the
+    # Markov weight of NF_BASIS[5] = (0,1,0) = sigma_0 sigma_1 sigma_0, and
+    # z*z*z is the tr(T_w) = z^len(w) guess -- true for len <= 2 in H_3, false
+    # at len 3, and wrong under EITHER convention since both steps hold for any
+    # z. The correction is therefore convention-INDEPENDENT.
+    #
+    # Prior audit: docs/audits/2026-05-19-trm5-markov-bug.md (bean qou-isu5),
+    # the same defect fixed in pyhecke/gram.py then and in compound_shift_nf on
+    # #6058 (qou-looi). This file was the third instance; it was found and
+    # corrected independently on two branches (qou-isu5 here, qou-t9r1 on main)
+    # with byte-identical code, so this comment carries both sets of references.
     TR_M = [mp.mpf(1), z, z, z * z, z * z, HA * z * z + z]
 
     def hecke_mul(t1, t2):
@@ -290,9 +371,18 @@ def main() -> int:
           f"min gap/|λ-to-0| = {mp.nstr(min_gap,4)}  => no crossing = {no_crossing}")
 
     verdict = (not any_flip) and bar_even_all
+    # Report what was MEASURED. This line used to assert "BAR-EVEN, no flip"
+    # unconditionally and append PASS/CHECK, so a run that measured bar-ODD
+    # still printed the published conclusion (bean qou-isu5).
+    parity_word = "BAR-EVEN" if bar_even_all else "BAR-ODD at some mu"
+    flip_word = "no flip" if not any_flip else "SIGN FLIP present"
     print("\n" + "=" * 74)
-    print(f" VERDICT: real matrix Gram-resolvent is BAR-EVEN, no flip — scope-(a) "
-          f"negative  [{'PASS' if verdict else 'CHECK'}]")
+    print(f" MEASURED: real matrix Gram-resolvent is {parity_word}, {flip_word}")
+    if verdict:
+        print(" => reproduces the published scope-(a) negative  [PASS]")
+    else:
+        print(" => does NOT reproduce the published scope-(a) negative, which is")
+        print("    WITHDRAWN -- see the module docstring banner  [CHECK]")
     print("=" * 74)
 
     wb = WitnessBuilder("qbeta-c3-barodd-hs-matrix-resolvent", engine="mpmath")
@@ -355,8 +445,16 @@ def main() -> int:
                      source="max |dlambda| ~3e-8 << min eigen gap O(0.1); no level/zero crossing "
                             "=> no geometric pole enters the anchor window without a ~1e-8 fit")
     wb.save()
-    print("\n  RESULT: real matrix Gram-resolvent route CLOSED by bar-parity (scope-a); "
-          "only the complex fibre-level pole->cusp phase phi(q0) survives.")
+    if verdict:
+        print("\n  RESULT: real matrix Gram-resolvent route CLOSED by bar-parity "
+              "(scope-a); only the complex fibre-level pole->cusp phase phi(q0) "
+              "survives.")
+    else:
+        print("\n  RESULT: the published scope-(a) closure is WITHDRAWN. It rested on "
+              "finding 2 (the pairing is bar-even), which the corrected Markov weight "
+              "falsifies at mu = 0. This is NOT a positive result either -- z here is "
+              "still convention C, and the resolvent is inverted in float64 against a "
+              "now-singular Gram. Re-run belongs to bean qou-cds1.")
     return 0 if verdict else 1
 
 

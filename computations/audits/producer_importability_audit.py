@@ -60,6 +60,26 @@ everything except this audit's own witness:
 The `heavy-at-import` class this reports IS that population, so a nonzero
 count there is advance warning that the run dirtied the tree.
 
+🛑 DO NOT DATE ANYTHING IN THIS REPO WITH `git log` (added 2026-08-30).
+
+Agent clones here are SHALLOW. `git rev-parse --is-shallow-repository` returns
+true, and every change predating the graft is attributed by `git log -- <file>`
+and `git log -L` to the boundary commit `cdb64587b8`, which has NO PARENTS
+(`git rev-list --count cdb64587b8` -> 1) and reports "41473 files changed,
+14448426 insertions" — the graft, not a diff.
+
+Cost of not knowing that, on this very audit: the 2026-08-30 re-run found this
+witness's largest class (`pyhecke`, 35) drained, asked git when, was told
+2026-08-24 by `git log -L` on `computations/_path_bridge.py`, and published
+"drained five days after this audit as a side effect of a float64 commit" in a
+commit message and a PR comment. All of that was the graft answering. The DRAIN
+is real and measured by execution; the DATE and the CAUSAL STORY were not
+measured at all and are withdrawn.
+
+The general rule: in this clone, `git log` can tell you a file changed within
+the fetched window, and nothing whatever about anything older. Measure by
+running; attribute only what you ran.
+
 SCOPE. This is a DETECTOR. It fixes nothing and does not claim the 90 are all
 defects — the optional-dep class in particular is a fact about the environment.
 Draining the in-repo-wiring class is separate work.
@@ -101,11 +121,36 @@ IN_REPO = {"pyhecke", "qou_substrate", "_precision", "witness_base",
 # proton silently`, because the committed `q-pinning-50-digit.witness.json`
 # holds the PROTON value (bean qou-m9xp). The detector was answering a
 # question no real invocation asks.
+# `sys.modules[name] = m` BEFORE exec_module is not optional — it is the
+# documented sequence (CPython docs, "Importing a source file directly"), and
+# omitting it made this audit report NINE producers broken that run fine.
+#
+# Measured 2026-08-30. All nine failed with the same error:
+#
+#   AttributeError: 'NoneType' object has no attribute '__dict__'
+#     File "dataclasses.py", line 712, in _is_type
+#       ns = sys.modules.get(cls.__module__).__dict__
+#
+# `@dataclass` resolves its annotations through `sys.modules.get(module)`, so
+# a module executed but never registered gets `None.__dict__`. Any producer
+# defining a dataclass therefore failed the check by construction, and the
+# error names `dataclasses.py` rather than anything in the producer — so it
+# reads like a corpus defect. All nine exit 0 when run as ordinary scripts:
+# binding_alpha_shift_witness, compound_shift_nf, crystal_basis,
+# derivation_chain_validator, embeddable_knot_operator,
+# gb_filtration_jet_order_reader, gb_filtration_jet_tracker,
+# kashaev_link_statesum, qbeta_c_k_recursion_scaffold.
+#
+# Same lesson as the `-c` argv note above and the hyphenated-filename note in
+# the docstring: this detector's failures have twice been its own harness. When
+# a whole class shares one identical error, suspect the loader first.
 _LOADER = (
     "import importlib.util,sys;"
     "sys.argv=[sys.argv[1]];"
     "spec=importlib.util.spec_from_file_location('_m',sys.argv[0]);"
-    "m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)"
+    "m=importlib.util.module_from_spec(spec);"
+    "sys.modules['_m']=m;"
+    "spec.loader.exec_module(m)"
 )
 
 
@@ -142,7 +187,16 @@ def _classify(err: str) -> tuple[str, str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--timeout", type=int, default=45)
+    # 45 -> 20 (2026-08-30). The sys.modules fix above makes far more producers
+    # ACTUALLY IMPORT, so the ones that used to fail in milliseconds now run
+    # their module body and sit out the full timeout. Measured: the 45 s
+    # default stalled a full sweep past 800/2378 in ~25 min, where the
+    # pre-fix run finished 2378 in ~17. An import that is going to resolve
+    # resolves well inside 20 s, and a timeout is already read as "not
+    # broken" -- the safe direction -- so the shorter budget costs
+    # classification detail (more land in `heavy-at-import`), never a missed
+    # defect.
+    ap.add_argument("--timeout", type=int, default=20)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any in-repo-wiring failure is found")

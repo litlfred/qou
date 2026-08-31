@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:23:00.298969+00:00",
+  "commitSha": "29836bc864da14c1fe76da64f2803ed5e14315b3",
+  "assertions": [
+    {
+      "name": "sign_pattern_is_pure_parity",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sign(d2Phi) > 0 iff Z even, over Z = 3..31"
+    },
+    {
+      "name": "semf_sqrtA_scaling_refuted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "e(Z)*sqrt(Z) must be constant under SEMF; measured spread 11.04x"
+    },
+    {
+      "name": "e_non_monotone_as_semf_forbids",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "SEMF pairing decreases monotonically in A; e(Z) instead peaks at Z = 12"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "delta2phi-semf-pairing",
+  "scriptFile": "delta2phi_semf_pairing_probe.py",
+  "scriptHash": "b552385b677d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta2phi_semf_pairing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta2phi_semf_pairing_probe.py"
+  },
+  "description": "Tests whether delta^2 Phi (K=10, q_0, N=Z line) is the SEMF pairing term, as proposed in qou-mgq3 after PR #6197. REFUTED on magnitude: e(Z)*sqrt(Z) spreads 11x where SEMF requires constant, and e(Z) is non-monotone (peaks near Z=12-15) where SEMF decreases monotonically. The sign agreement is structurally forced on the N=Z line (Z parity fixes the even-even/odd-odd class) and is therefore not evidence.",
+  "parameters": {
+    "K": 10,
+    "line": "N = Z (so A = 2Z)"
+  },
+  "data": {
+    "sign_mismatches": [],
+    "sign_agreement_is_structurally_forced": true,
+    "smooth_over_alternating_ratio": "0.0341525157821",
+    "e_times_sqrtZ_spread": "11.0399957479",
+    "e_monotone_decreasing": false,
+    "e_peak_Z": 12,
+    "e_by_Z": {
+      "3": "8.665025",
+      "4": "8.4596625",
+      "5": "8.2530625",
+      "6": "8.199975",
+      "7": "8.2667625",
+      "8": "8.4171125",
+      "9": "8.6501",
+      "10": "8.9972625",
+      "11": "9.4599875",
+      "12": "9.6520625",
+      "13": "9.57615",
+      "14": "9.570975",
+      "15": "9.6403875",
+      "16": "9.1044125",
+      "17": "7.9679625",
+      "18": "6.817325",
+      "19": "5.658175",
+      "20": "4.680125",
+      "21": "3.888925",
+      "22": "3.2228",
+      "23": "2.6867875",
+      "24": "2.223025",
+      "25": "1.83505",
+      "26": "1.4999875",
+      "27": "1.2193",
+      "28": "0.9803",
+      "29": "0.7825125",
+      "30": "0.6174625"
+    }
+  }
+}

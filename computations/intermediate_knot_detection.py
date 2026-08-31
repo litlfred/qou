@@ -28,7 +28,12 @@ from q_parameter import Q, Q_INV, HA
 from witness_base import WitnessBuilder
 
 h_val = h
-tr_basis = np.array([1, z, z, z**2, z**2, z**3])
+# 6th weight is the Ocneanu value on the longest element:
+# tr(T_{s1s2s1}) = z*tr(T_{s1}^2) = z(h z + 1) = h z^2 + z, from the
+# defining Markov property tr(x T_n y) = z tr(xy) plus T^2 = h T + 1.
+# z^3 (the z^len(w) guess) is NOT a trace: it is non-cyclic, so the
+# Gram tr(b_i b_j) comes out asymmetric. Bean qou-isu5.
+tr_basis = np.array([1, z, z, z**2, z**2, HA * z**2 + z])
 
 
 def ref_knot_nf(name):

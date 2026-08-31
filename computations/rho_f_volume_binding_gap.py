@@ -120,9 +120,22 @@ def main() -> None:
             "ame-2020-binding-energies.witness.json is missing required "
             f"keys {_missing}; the analysis needs all of _AME_ISOTOPES."
         )
+    # `delta_binding_MeV` is READ, not computed.  `_ame[key]` is already the
+    # AME2020 table's own decimal text: `ame_2020_binding_energies.py` carries
+    # it through `Decimal` end to end precisely so it never acquires a binary
+    # tail, and emits `str(Decimal)`.  `float()` here threw that away and put a
+    # raw float64 into this witness — and the round trip is lossy in the
+    # VISIBLE digits, not only the tail (that producer records 6Li's exact
+    # `31.9939872` coming back as `31.99398719999999600...`).
+    #
+    # Carry the STRING verbatim.  Do NOT "upgrade" it by re-serializing through
+    # `_precision.fmt`: that pads a 9-significant-figure measurement out to
+    # OUTPUT_DPS (`28.2956624000…0`), which is the sibling float64-padding
+    # defect.  `str()` is a no-op on a string and is only defensive against an
+    # older AME witness that stored a float.
     rows_in = [
         {"isotope": iso, "Z": Z, "N": N, "A": Z + N,
-         "delta_binding_MeV": float(_ame[key])}
+         "delta_binding_MeV": str(_ame[key])}
         for key, Z, N, iso in _AME_ISOTOPES
     ]
 
@@ -138,12 +151,32 @@ def main() -> None:
     for row in rows_in:
         if row["A"] < 2:
             continue  # ¹H has zero nuclear binding (only 13.6 eV atomic).
-        delta = row["delta_binding_MeV"]
+        delta = row["delta_binding_MeV"]     # exact AME decimal, as text
+        # DELIBERATE narrowing, and the one place in this file where a float is
+        # the honest type.  `required_rho` divides by a SnapPy volume that
+        # `experimental_constants` carries as a *float64 literal* quoted ±1e-12
+        # (`VOL_FIGURE_EIGHT_ERR`, `VOL_THREE_TWIST_ERR`), so the quotient holds
+        # ~12 significant digits of real information no matter how wide the
+        # numerator is.  Widening the numerator here would not add precision; it
+        # would only let the divisor's *binary* tail print, which is the
+        # float64-padding defect the comment above refuses for `delta` itself.
+        #
+        # Related, and deliberately NOT fixed here: `M_E_MEV` is an `mpf` while
+        # this module never calls `_precision.set_compute_dps()`, so the mpf
+        # divisions below run at mpmath's default dps=15 and the serialized
+        # `required_rho_over_me_per_link` strings carry 15 significant digits —
+        # float64-grade, in string clothing the raw-float64 ratchet cannot see.
+        # Calling `set_compute_dps()` would make that WORSE, not better: at
+        # dps=70 the same quotient prints the volume's binary tail out to 60
+        # places.  The real fix is an exact high-precision source for the three
+        # volumes (`VOL_BORROMEAN_50DPS_STR` exists; 4_1 and 5_2 do not), which
+        # is a separate change with its own numeric blast radius.
+        delta_f = float(delta)
         ratios = {
-            name: required_rho(delta, vol) / M_E_MEV
+            name: required_rho(delta_f, vol) / M_E_MEV
             for name, vol in LINK_PRIMITIVES.items()
         }
-        print(f"{row['isotope']:>8}  {row['A']:>3}  {delta:>12.3f}  "
+        print(f"{row['isotope']:>8}  {row['A']:>3}  {delta_f:>12.3f}  "
               + "  ".join(f"{r:>18.3f}" for r in ratios.values()))
         rows_out.append({
             "isotope": row["isotope"],
@@ -191,6 +224,33 @@ def main() -> None:
     )
     builder.add_data("rows", rows_out)
     builder.add_data("matches_within_10pct", matches)
+    # RECORD THE CEILING RATHER THAN LET THE SERIALIZATION IMPLY ONE.
+    # `required_rho_over_me_per_link`, `matches_within_10pct[*].rho_over_me`
+    # and `link_primitives_MeV_per_unit` serialize as decimal STRINGS — not
+    # because they are high-precision, but because `experimental_constants`
+    # now carries `M_E_MEV` as an `mpf`, so the quotient is an mpf and the
+    # witness writer renders mpf as text.  Without this note the change reads
+    # as a drain: the raw-float64 ratchet counts JSON floats, so 21 fields
+    # leave its view while the information in them is unchanged.
+    builder.add_data(
+        "precision_ceiling_note",
+        "delta_binding_MeV is EXACT (the AME2020 table's own decimal, carried "
+        "verbatim from ame-2020-binding-energies.witness.json).  Every other "
+        "number here is NOT: required_rho_over_me_per_link, "
+        "matches_within_10pct[*].rho_over_me / deviation_pct and "
+        "link_primitives_MeV_per_unit divide by a SnapPy volume that "
+        "experimental_constants stores as a float64 literal quoted ±1e-12 "
+        "(VOL_FIGURE_EIGHT_ERR, VOL_THREE_TWIST_ERR; VOL_BORROMEAN_ERR ±1e-15), "
+        "so at most ~12 significant digits are real.  They are serialized as "
+        "strings only because M_E_MEV is an mpf and this module deliberately "
+        "does not call _precision.set_compute_dps() — the mpf arithmetic runs "
+        "at mpmath's default dps=15, and raising it would print the volume's "
+        "binary tail out to output_dps rather than add information.  Read "
+        "these as float64-grade values in string form; do NOT quote them past "
+        "~12 digits, and do NOT read their string type as evidence of "
+        "precision.  Closing this properly needs exact high-precision sources "
+        "for Vol(4_1) and Vol(5_2), as VOL_BORROMEAN_50DPS_STR already is.",
+    )
     builder.add_data(
         "qou_prediction",
         "ρ_F ∈ {m_e, 2 m_e} per prop:cpt-orbit-closure-density",

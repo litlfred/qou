@@ -73,52 +73,6 @@ structure JetGradedChannelSeparation (C : Type u)
   /-- Adjoint vanishing at the base level. -/
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
-/-- **Adjoint vanishing at the base level, restated.**
-
-    ⚠ **This does NOT prove propagation, and the name overstates it.** The
-    conclusion below mentions `jgcs.adjointObj` — the *base* object — so the
-    `(k : ℕ)` binder is unused decoration and the statement carries no
-    `k`-dependence at all. The proof is `jgcs.adjoint_vanishing`: the
-    hypothesis returned verbatim, a `P → P`.
-
-    The reason it cannot say more is structural, not a proof gap:
-    `JetGradedChannelSeparation` carries exactly ONE `GradedFrobeniusHopf`
-    (`base`, level 0) and one `adjointObj`, despite its own docstring
-    promising "a graded Frobenius–Hopf object at each jet level". There is no
-    `Ad(J^k(A))` in the data to state a conclusion about. Stating genuine
-    propagation requires a jet-indexed family first.
-
-    Recorded rather than quietly renamed — the over-claim is in the name and
-    the docstring, and both are load-bearing for a reader skimming for what is
-    proved. Bean `qou-fav8`.
-
-    **Proof outline:**
-    1. The jet prolongation `J^1(A)` fits into the exact sequence
-       `0 → A ⊗ Ω¹(A) → J^1(A) → A → 0`
-    2. Applying `Ad(−)` preserves the exact sequence
-    3. `Hom(𝟙, −)` is left-exact, so
-       `0 → Hom(𝟙, Ad(A ⊗ Ω¹(A))) → Hom(𝟙, Ad(J^1(A))) → Hom(𝟙, Ad(A))`
-    4. Since `Hom(𝟙, Ad(A)) = 0`, we need `Hom(𝟙, Ad(A ⊗ Ω¹(A))) = 0`
-    5. In `Rep(SU_q(2))`: `Ad(A ⊗ Ω¹(A))` decomposes into non-trivial
-       irreps (since `Ad(A) ≅ V₂` and tensoring with `Ω¹(A)` shifts
-       degrees upward, so no trivial summand appears)
-    6. By induction on `k`.
-
-    LaTeX: connects to `\label{prop:categorical-jet-prolongation}` -/
--- Ref: [kock2004]
-theorem adjoint_vanishing_propagation
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (jgcs : JetGradedChannelSeparation C)
-    -- At jet level k, the adjoint still vanishes
-    (k : ℕ) :
-    -- The adjoint vanishing at level 0 implies at all levels
-    Subsingleton ((𝟙_ C) ⟶ jgcs.adjointObj) :=
-  -- The adjoint object is the same at all jet levels in the
-  -- abstract categorical formulation (the prolonged connection
-  -- preserves the adjoint vanishing by `categorical_jet_prolongation`).
-  jgcs.adjoint_vanishing
-
 /-! ## §2  Jet filtration preserves channel separation -/
 
 /-- The **jet filtration** on the graded Frobenius--Hopf object.
@@ -235,5 +189,27 @@ def channelSeparates (n : ℕ) : Bool := decide (n ≥ 2)
 theorem channelSeparates_iff_multi (n : ℕ) :
     channelSeparates n = true ↔ n ≥ 2 := by
   simp [channelSeparates]
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `adjoint_vanishing_propagation` — body was `jgcs.adjoint_vanishing`: the conclusion was the
+  projected field verbatim, so the declaration restated its own hypothesis.
+
+  Additional finding, recorded because it outlives the removal: the
+  declaration bound `(k : ℕ)` — the jet level whose *propagation* it is named
+  for — and its conclusion `Subsingleton ((𝟙_ C) ⟶ jgcs.adjointObj)` never
+  mentions `k`. The statement was level-independent, so "the adjoint
+  vanishing at level 0 implies at all levels" was carried entirely in a
+  comment and in the name. Encoding it needs the level-indexed adjoint object
+  the abstract formulation does not provide.
+
+**Why removal.** The content stays in the class field each declaration
+projected, asserting the same proposition under the same hypotheses; only the
+restatement goes. That is the vacuity ledger's recorded disposition for this
+category — *"drop the pseudo-theorem and project the field at use sites"* — and
+there were no use sites: each had **zero references anywhere in the corpus**.
+Bean `qou-z9ws`.
+-/
 
 end QOU

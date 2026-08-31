@@ -87,9 +87,27 @@
 
   The second thing not proved here, for the same class of reason: **positivity**.
   `0 < vol m` for a realised manifold would follow from `0 < D(z)` on the upper half
-  plane, and that is not in the corpus -- only `Λ'' > 0` on `(π/2, π)` and the vanishing
-  on the reals are.  So it is left open rather than assumed as a further class field,
-  which would have been the easy and dishonest move.
+  plane.  It is left open rather than assumed as a further class field, which would have
+  been the easy and dishonest move.
+
+  **BOTH HALVES ARE NOW PROVED, and the decision above still stands.**  This paragraph
+  originally said `0 < D(z)` "*is not in the corpus*"; then, sharpened the same day, that
+  only the strict half was open.  Both are now closed --
+  `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` (`0 ≤ D(z)`) and
+  `Archimedean.BlochWignerPositive.blochWigner_lob_pos` (`0 < D(z)`, by Rivin strict
+  concavity along an interior chord).
+
+  **This is a vindication of the class design, not a reason to change it.**  Declining to
+  assume positivity was right: it was derivable, so assuming it would have been assuming a
+  theorem.  The class keeps its three fields, and the consequence lives outside it, in
+  `MathlibExt/ManifoldVolumePositive.lean`:
+
+      vol_pos_of_realises : 0 < n → Realises T m → 0 < vol m
+
+  Note the `0 < n`.  It is not decoration -- `IdealTriangulation 0` is legitimate and its
+  volume is the empty sum `0`, so a bridge whose `Realises` holds only of the empty
+  triangulation genuinely has a zero-volume manifold.  That is the `realisable` field's
+  degenerate model one level down.
 
   -- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)

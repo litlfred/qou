@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T12:37:24Z
+updated_at: 2026-08-30T19:49:32Z
 ---
 
 ## The ruling
@@ -231,3 +231,94 @@ hand-transcribed. Full evidence and the fix in bean `qou-bake`.
 
 Re-check the other 6 of that bucket against `computation` before treating them
 as unattributable — the same read error may cover them.
+
+
+## THE 11 "MERELY STALE" PRODUCERS — COST-CHECKED AND RE-RUN, 2026-08-30
+
+Measured, 600 s budget each. **Not one of the six non-zero exits is a producer
+defect**, which is the whole reason for reading logs rather than trusting exit
+codes (the AGENTS.md "14 crashed → actually 2" trap).
+
+| producer | exit | wall | verdict |
+|---|---|---|---|
+| `qbeta_habiro_integrality_kill_test` | 0 | 3 s | **re-ran; 3 assertions FLIP to FAIL** → `qou-l4q3` |
+| `probe_mup_dressing_attribution` | 0 | 1 s | **re-ran; witness byte-identical — NOT stale** |
+| `probe_trace_convention_production_impact` | 0 | 1 s | **re-ran; witness byte-identical — NOT stale** |
+| `ksel2id_sw_identification_probe` | 124 | **>600 s** | long compute; needs a real budget |
+| `ksel2id_u1_promotion_probe` | 124 | **>600 s** | long compute; needs a real budget |
+| `per_irrep_pole_atom` | 2 | 2 s | **not broken** — requires positional `atoms` |
+| `d_from_scratch` | 1 | 2 s | **path bug, FIXED** → now exit 0; `qou-3bq6` |
+| `build_six_term_substrate_model_b` | 1 | 2 s | **refuses by design**; input's producer does not exist (`qou-imkb`) |
+| `compound_binding_via_differences` | 1 | 0 s | blocked: `atomic-braid-mass-table.witness.json` **not in repo, no producer** |
+| `neutron_error_diagnostic` | 1 | 0 s | same missing input |
+| `lambda_scale_homflypt_skein_recursion_probe` | 1 | 0 s | blocked: module `lambda_scale_alt_g_skein_polynomial_direct` **not in repo** |
+
+### What this settles about the bucket
+
+**"Reads a declared pin ⇒ merely stale ⇒ just re-run it" was wrong for 9 of 11.**
+
+- **2 were not stale at all** — they reproduce byte-identically as committed.
+- **1 re-runs to a FAILING witness** and must not be refreshed (`qou-l4q3`).
+- **2 are long computes**, not idle-pass work.
+- **4 cannot run** for want of an upstream artifact or module that **is not in
+  the repo at all** — a dependency-chain problem, not a pin problem.
+- **1 needed a one-line path fix** (`qou-3bq6`), after which it runs but would
+  emit 3 raw float64 fields.
+
+**Nothing was committed from these runs except the `d_from_scratch` path fix.**
+Every regenerated witness was reverted: the kill-test's because it fails, and
+`d-from-scratch`'s because it would grow the raw-float64 population and downgrade
+the environment record.
+
+### Two artifacts referenced by live producers that do not exist
+
+`atomic-braid-mass-table.witness.json` (needed by 2 producers) — **no witness,
+no producer** anywhere in the tree. `lambda_scale_alt_g_skein_polynomial_direct.py`
+— absent. Same class as `qou-imkb`. These are worth their own triage: a live
+producer importing a module that was never committed is a stronger defect than a
+stale pin.
+
+
+## STEP 1 MEASURED (2026-08-30, PR #6317) — the plan above is over-scoped, and its premise is stale
+
+**The scoping premise is wrong.** This bean says *"Only the anchor-defining
+witness is frozen at A: computations/q-pinning-50-digit.witness.json."* It is
+not frozen: `fca08de7d29` (2026-08-28) migrated it, it holds **C** on the
+current tree, and `witness._q0_value_for_anchor("muon")` returns C. So **step 3
+is moot** — the circle it describes (an anchor witness whose own producer
+hard-fails on an inconsistent anchor) was already broken, by derivation rather
+than by re-pinning.
+
+**Step 1, answered by measurement** over all 3546 tracked witnesses
+(`computations/audits/muon_pin_A_residual_surface_audit.py`, 4/4):
+
+    carrying the A literal at all   40
+      COMPUTED at A (own q0Value)    4
+        live (not _deprecated)       1   <- hadron-knot-table.witness.json
+        deprecated mirror            3
+      quoting A, computed elsewhere 36
+
+The 36 is why a literal grep over-counts the surface ~10x: audits ABOUT the pin,
+cross-anchor swing probes, and proton-pinned witnesses quoting A as their
+comparison arm. All correct as recorded. Agrees with the corpus's own
+`Q0_FLIP = 1`, reached independently by classifying on `q0Value`.
+
+**Step 4 (consumer migration) is one producer re-run with NO edit.**
+`hadron_knot_table` is listed `ideal_muon` in `q0_anchor_manifest.json`, so a
+re-run resolves the muon anchor to C and writes C.
+
+**But it cannot be done, and the reason belongs to a different bean.** Per
+AGENTS.md's own measurement, that producer clears the three A=1 atoms in seconds
+and then ran **50 minutes on deuterium — the first bound atom of nineteen —
+before being killed by its own timeout** (exit 124, zero tracebacks). It does
+not crash; it does not finish. The last A-pinned witness in the corpus is blocked
+on a **long-compute** problem, not on the anchor migration.
+
+**Recommendation (my judgement, not a finding):** re-scope this bean to closed on
+the migration and open a separate one for `hadron_knot_table`'s cost. Keeping a
+long-compute blocker inside a migration plan is what made this look like
+four-stage work when it is one re-run.
+
+**Unchanged and still binding:** do NOT turn this into a sweep. Re-pinning the
+anchor witness inside a bulk pass took main red on 2026-08-19 (262 flips,
+Q0_OK 654 -> 392); `q0_repin_sweep.py`'s ANCHOR_DEFINING exclusion stays.

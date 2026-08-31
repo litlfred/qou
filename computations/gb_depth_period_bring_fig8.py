@@ -222,6 +222,30 @@ def main() -> None:
         engine="mpmath",
         start_time=start,
     )
+    # The one falsifiable check this script performs: two INDEPENDENT routes
+    # to 2 Cl_2(pi/3) — mpmath.polylog and a 2,000,000-term direct partial
+    # sum — must agree. It was computed and compared against 1e-12, a bound
+    # the file declares and justifies in place ("sanity check at SnapPy
+    # precision range only"), but recorded only as a payload flag, so the
+    # witness claimed `allPassed: true` over an empty assertion list
+    # (bean `qou-srvu`).
+    #
+    # `depth_correspondence_verified` is deliberately NOT asserted.
+    # `DEPTH_MATCH = ITERATED_INTEGRAL_DEPTH == GONCHAROV_PERIOD_DEPTH` with
+    # both sides hardcoded to 2, so it is `2 == 2` — tautologically true and
+    # unable to fail. Asserting it would re-introduce exactly the defect this
+    # change exists to remove (cf. `self_fulfilling_assertion_audit.py`).
+    # Same for `modulus_is_one`, a literal `True`.
+    builder.add_assertion(
+        "clausen_partial_sum_agrees_with_polylog",
+        str(CROSS_RESIDUAL), "0", tolerance="1e-12",
+        source=(
+            "|2*Im Li_2(e^(i pi/3)) via mpmath.polylog  -  "
+            "2*Cl_2(pi/3) via 2e6-term direct partial sum|; the 1e-12 bar is "
+            "the partial sum's own ~13-digit convergence, not the 50-dps "
+            "polylog value's accuracy"
+        ),
+    )
     out = builder.save()
     print(f"\nwitness: {out}")
 

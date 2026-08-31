@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T07:46:23Z
+updated_at: 2026-08-30T13:57:29Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -1058,3 +1058,46 @@ originally about — is now measurable at **5 s** (see qou-mtx9: it was the
 wrong compute engine, not a defect). Its 2026-06-22 witness moves on
 every substantive field, including a **20 % move on its headline
 binding signal**. The refreshed witness is deliberately not committed.
+
+
+## 2026-08-30 — the class now has a DETECTOR, and a calibration this bean's own case supplied
+
+This bean generalised the class correctly and found its instances by hand. What
+it did not have is an automated sweep. Added:
+[`computations/witness_assertion_replay_audit.py`](../computations/witness_assertion_replay_audit.py)
+— re-runs a producer and compares the **recorded assertions** to the fresh
+ones, classifying `REPRODUCES / NOW_FAILS / VALUE_DRIFT / ASSERTIONS_RENAMED /
+ASSERTIONS_VANISHED`, with the non-decidable outcomes (`TIMEOUT`,
+`ENV_MISSING`, `REFUSED`, `NO_PRODUCER`) reported separately so the sample size
+is never overstated.
+
+**Two of this bean's own warnings are built in.** Provenance is read from the
+**top-level** `scriptFile`, not a nested one — the pitfall recorded above that
+made a first attempt read clean. And the whole `computations/` tree is restored
+from git after **every** run, because producers write sibling witnesses;
+`witness_producer_executes_audit` restores only the file under test, which is a
+live gap in that auditor.
+
+**Coverage ceiling, measured rather than assumed.** Of 2948 live committed
+witnesses: 2647 carry a top-level `scriptFile`, 2213 are green, 1986 have
+assertions — **1779 have all three and are replayable in principle.** 1169 are
+invisible to this method, and the audit says so rather than implying coverage.
+
+**`gram-norm-binding-probe` REPRODUCES today.** This bean's headline instance
+was fixed on its own branch ("Witness regenerated ... Both assertions pass"),
+and the detector agrees — 6.19e-15 and 4.12e-16, both passing. Recorded because
+a detector that reported a finding here would have been *wrong*, and I checked
+that before trusting it rather than after.
+
+**A calibration the first sweep earned.** 40 replayed, 36 decidable, one flagged
+`ASSERTIONS_VANISHED`: `active-set-lr-scaling-profile`. Verified by hand — it is
+a **false positive**. The producer now profiles to A=7 instead of A=6, so its
+assertion is *name-indexed by its own reach* and renamed
+`max_block_dim_eq_2_pow_A_at_A6` → `..._at_A7`; both pass, nothing is stale.
+Reclassified as `ASSERTIONS_RENAMED` (advisory) whenever the fresh set is
+non-empty and all-passing; the finding is reserved for a name that vanished with
+nothing passing in its place.
+
+**Result on that sample: 0 genuine findings in 36 decidable.** The class is
+real — three hand-found instances across 15 days — but this slice is clean, and
+that is worth saying plainly rather than leaving the impression of a fire.

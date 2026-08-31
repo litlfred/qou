@@ -154,7 +154,9 @@ def main() -> None:
             "beta_3_closed_form_str": str(beta3_closed),
             "beta_3_series_approx_str": str(beta3_series),
             "series_residual_str": str(beta3_residual),
-            "below_1e_40": float(residual_beta3) < 1e-40,
+            # Was `float(residual_beta3) < 1e-40` -- a float64 coercion of a
+            # computed mpf. Compared in mpmath (AGENTS.md NO-FLOAT64).
+            "below_1e_40": bool(residual_beta3 < mp.mpf("1e-40")),
             "interpretation": (
                 "Catalan-like depth-3 L-value derived from "
                 "Jonquière inversion (Theorem A) — classical "
@@ -180,6 +182,16 @@ def main() -> None:
         script_path=__file__,
         engine="mpmath",
         start_time=start,
+    )
+    # The `claim` field above states "beta(3) = Im Li_3(i) = pi^3/32" and
+    # `residual_beta3` measures it, with this file's own 1e-40 bar recorded as
+    # `below_1e_40` -- yet the witness shipped `allPassed: true` over an EMPTY
+    # assertion list (bean qou-srvu). Promote the claim to an assertion; the
+    # tolerance is the file's own, not fitted to the observed residual.
+    builder.add_assertion(
+        "beta_3_eq_im_li3_i_eq_pi_cubed_over_32",
+        computed=str(residual_beta3), expected="0", tolerance="1e-40",
+        source="prop:jonquiere-cyclotomic-tate-rationality (Theorem A) at (n,K)=(3,4)",
     )
     out = builder.save()
     print(f"\nwitness: {out}")

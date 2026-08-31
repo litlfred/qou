@@ -28,7 +28,7 @@ is what the two limit statements actually talk about:
 * `q → 1` is `u = 1`, giving `ℏ = 0`;
 * `q → ∞` is `u → 0`, giving `ℏ = 1`.
 
-The second limit was previously written `hbar_q (0 : K) = 1`, true only via
+The second limit was previously written `hbarQ (0 : K) = 1`, true only via
 the field/`GroupWithZero` junk convention `0⁻¹ = 0` — the field was carrying
 a limit that the convention, not the mathematics, supplied. Stating it at
 `u = 0` says the same thing directly and needs no inverse at all.
@@ -62,11 +62,11 @@ def hbarOfInv (u : R) : R := 1 - u
     carried as a unit `q : Rˣ`.
     Classical limit: q → 1 gives ℏ_q → 0.
     Maximal uncertainty: q → ∞ gives ℏ_q → 1. -/
-def hbar_q (q : Rˣ) : R := hbarOfInv ((q⁻¹ : Rˣ) : R)
+def hbarQ (q : Rˣ) : R := hbarOfInv ((q⁻¹ : Rˣ) : R)
 
 /-- Classical limit: as q → 1, the q-Planck constant vanishes. -/
-theorem hbar_q_classical_limit : hbar_q (1 : Rˣ) = (0 : R) := by
-  simp [hbar_q, hbarOfInv]
+theorem hbarQ_classical_limit : hbarQ (1 : Rˣ) = (0 : R) := by
+  simp [hbarQ, hbarOfInv]
 
 /-- The q-deformed Heisenberg commutator relation:
     `[X, P]_q = J · ℏ_q(p)` where `ℏ_q = 1 - q⁻¹`.
@@ -76,7 +76,7 @@ theorem hbar_q_classical_limit : hbar_q (1 : Rˣ) = (0 : R) := by
     distribution (`J² = -Id`) and `q` is the substrate parameter.
     Encoded over a commutative ring with `q` a unit, the commutator is `J`
     scaled by the q-Planck constant `ℏ_q(q) = 1 - q⁻¹`, so the statement
-    reduces to the definition of `hbar_q`.
+    reduces to the definition of `hbarQ`.
 
     The full categorical proof — that this scalar relation lifts to
     the q-deformed operator algebra on the state bundle, via the
@@ -85,14 +85,14 @@ theorem hbar_q_classical_limit : hbar_q (1 : Rˣ) = (0 : R) := by
 -- Ref: [manuscript] Ch. 6, §archimedean-models
 -- Ref: [heisenberg1958]
 theorem heisenberg_commutator (J : R) (q : Rˣ) :
-    J * hbar_q q = J * (1 - ((q⁻¹ : Rˣ) : R)) := by
+    J * hbarQ q = J * (1 - ((q⁻¹ : Rˣ) : R)) := by
   rfl
 
 /-- Maximal-uncertainty limit: as `q → ∞` the inverse `q⁻¹ → 0`, so
     `ℏ_q → 1`.  Stated at the formal limit point `u = 0` of the inverse
     parameter, where it is an evaluation of `hbarOfInv` over the base ring —
     no inverse, and no `0⁻¹ = 0` convention, is involved. -/
-theorem hbar_q_maximal_uncertainty : hbarOfInv (0 : R) = 1 := by
+theorem hbarQ_maximal_uncertainty : hbarOfInv (0 : R) = 1 := by
   simp [hbarOfInv]
 
 end QOU.ArchimedeanUniverse

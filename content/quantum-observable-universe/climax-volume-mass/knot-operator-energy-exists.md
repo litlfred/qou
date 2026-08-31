@@ -4,6 +4,6 @@
 
 - *$R = \mathbb{R}$: archimedean $|\cdot|_\infty$, image $\mathbb{R}_{\geq 0}$;*
 - *$R = \mathbb{Q}_p$: $p$-adic $|\cdot|_p$, image $\{p^{-n}\} \cup \{0\}$;*
-- *$R = \mathbb{F}_p$: no archimedean absolute value, $|R| = \emptyset$. The energy filtration is undefined and confinement falls back to ILP feasibility ([stable atom](#def:stable-atom)).*
+- *$R = \mathbb{F}_p$: the only absolute value is the trivial one, so there is no archimedean place. The energy filtration is undefined and confinement falls back to ILP feasibility ([stable atom](#def:stable-atom)).*
 
 *In each archimedean or non-archimedean case, $E(\lambda, q)$ exists and is uniquely determined by $\lambda$ and $q$.*

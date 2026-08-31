@@ -57,6 +57,8 @@ Bean qou-edt7. Companion Lean: QOU/Mass/UniformBondSimpleGraphExclusion.lean.
 """
 from __future__ import annotations
 
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401, E402
 import sys  # noqa: E402
 from math import comb  # noqa: E402

@@ -1,0 +1,114 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T15:05:39.879548+00:00",
+  "commitSha": "f8d16f249ae7581b8ab6e428884bb66b630777b7",
+  "assertions": [
+    {
+      "name": "framework_volume_alone_does_not_isolate_the_light_term",
+      "computed": "7.28133776980905219753313899648",
+      "expected": "7.281",
+      "passed": true,
+      "tolerance": "0.01",
+      "unit": "worst |residual| as a fraction of B",
+      "source": "A=2 residual is -728% against light-nucleus anomalies of ~20%; the saturated fraction is still climbing over this range so the residual is the unsaturated approach, not the term"
+    },
+    {
+      "name": "saturated_fraction_is_not_monotonic_at_the_light_end",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "decreasing steps in the N=Z chain",
+      "source": "4He 0.7680 -> 6Li 0.5789 is a 24.6% dip; 8Be 0.7667 is still below 4He"
+    },
+    {
+      "name": "two_nuclides_sit_below_the_4He_fraction",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "N=Z nuclides with A>4 below the 4He saturated fraction",
+      "source": "6Li 0.5789 and 8Be 0.7667 against 4He 0.7680"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "saturated-fraction-is-not-monotonic",
+  "scriptFile": "saturated_fraction_is_not_monotonic_probe.py",
+  "scriptHash": "beabe3df95d3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/saturated_fraction_is_not_monotonic_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/saturated_fraction_is_not_monotonic_probe.py"
+  },
+  "description": "Two negatives. (1) Subtracting the framework's zero-parameter volume background A*m_N*hbar_q^2 from the N=Z chain does NOT isolate the light-nucleus term -- residuals run -15% to -728% against anomalies of ~20%, because the saturated fraction is still climbing; this withdraws a recommendation I made one turn earlier. (2) qou-brng's 'the fraction rises monotonically toward hbar_q^2' is FALSE at the light end: it peaks at 4He (0.768), DIPS to 0.579 at 6Li and is still below 4He at 8Be (0.767). The bean's four-point sequence is monotonic only because it skips A=6 and A=8. Scope-(a).",
+  "data": {
+    "volume_background_test": {
+      "2": {
+        "B_AME": "2.2245662",
+        "B_vol": "18.4223840935005979726679443915",
+        "resid_fraction": "-7.28133776980905219753313899648",
+        "saturated_fraction": "0.120753437161524882889339431715"
+      },
+      "4": {
+        "B_AME": "28.2956624",
+        "B_vol": "36.8447681870011959453358887829",
+        "resid_fraction": "-0.302134852549032248325661702231",
+        "saturated_fraction": "0.767969613932397776122887491234"
+      },
+      "6": {
+        "B_AME": "31.9939872",
+        "B_vol": "55.2671522805017939180038331744",
+        "resid_fraction": "-0.727423091564586045655598473653",
+        "saturated_fraction": "0.578896973696389500665047234038"
+      },
+      "8": {
+        "B_AME": "56.4994848",
+        "B_vol": "73.6895363740023918906717775659",
+        "resid_fraction": "-0.304251474767472426415325075068",
+        "saturated_fraction": "0.766723304014882796658064536829"
+      },
+      "12": {
+        "B_AME": "92.1617352",
+        "B_vol": "110.534304561003587836007666349",
+        "resid_fraction": "-0.199351382882856005905666437027",
+        "saturated_fraction": "0.833784005481630222636838260016"
+      },
+      "16": {
+        "B_AME": "127.6193152",
+        "B_vol": "147.379072748004783781343555132",
+        "resid_fraction": "-0.154833596442968405626921551854",
+        "saturated_fraction": "0.86592562173470255358649787854"
+      }
+    },
+    "monotonicity": {
+      "sequence": {
+        "2": "0.120753437161524882889339431715",
+        "4": "0.767969613932397776122887491234",
+        "6": "0.578896973696389500665047234038",
+        "8": "0.766723304014882796658064536829",
+        "12": "0.833784005481630222636838260016",
+        "16": "0.86592562173470255358649787854"
+      },
+      "decreasing_steps": "[(4, 6)]",
+      "bean_claim": "qou-brng: 'rises monotonically toward hbar_q^2 with A (2H 0.12 -> 4He 0.77 -> 40Ca 0.93 -> 56Fe 0.95)' -- monotonic only because it skips A=6 and A=8"
+    }
+  }
+}

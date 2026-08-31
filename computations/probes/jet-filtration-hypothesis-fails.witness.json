@@ -1,0 +1,79 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T18:17:39.717845+00:00",
+  "commitSha": "e41208b68bb8da1bd5b4882066c72a97c7680be6",
+  "assertions": [
+    {
+      "name": "sign_pattern_is_convention_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "distinct sign patterns over 27 mirror conventions",
+      "source": "all 27 give (+,+,+,-,+,-); the alternation is not a convention artifact"
+    },
+    {
+      "name": "two_body_orders_are_negative",
+      "computed": "[5, 7]",
+      "expected": "[5, 7]",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "body orders with negative coefficient",
+      "source": "mu_5 = -55.77912, mu_7 = -373.24295; the jet-filtration extensivity hypothesis requires every term >= 0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "jet-filtration-hypothesis-fails",
+  "scriptFile": "jet_filtration_hypothesis_fails_probe.py",
+  "scriptHash": "b63b7abf8118",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/jet_filtration_hypothesis_fails_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/jet_filtration_hypothesis_fails_probe.py"
+  },
+  "description": "jet-filtration-binding-extensive proves extensivity GIVEN a_D^(n) >= 0 and w_n >= 0. Measured exactly: the binomial-basis body-order coefficients alternate, mu_5 = -55.779 and mu_7 = -373.243, with the sign pattern (+,+,+,-,+,-) identical across all 27 mirror conventions. w_n = M_n(A)*Vol_n(K) is a count times a volume, so w_n >= 0 is STRUCTURAL and cannot be the failing half; the alternation is carried by a_D alone. CONDITIONAL on identifying mu_n with a_D^(n)*w_n, which the corpus does not state and this probe does not establish: the hypothesis is false at n=5,7 and the proposition is vacuous for the physical case. Scope-(a).",
+  "data": {
+    "body_order_coefficients_exact": {
+      "2": "11122831/5000000",
+      "3": "2228469/1562500",
+      "4": "115542307/12500000",
+      "5": "-557791239/10000000",
+      "6": "83062533/500000",
+      "7": "-3732429547/10000000"
+    },
+    "sign_patterns": {
+      "('+', '+', '+', '-', '+', '-')": 27
+    },
+    "which_half_fails": {
+      "w_n": "STRUCTURAL non-negative: bk-coordination-multiplicity defines w_n(K) = M_n(A) * Vol_n(K), a coordination multiplicity times a hyperbolic volume. Cannot be the failing half.",
+      "a_D": "carries the whole alternation, by QOU.Mass.JetFiltrationSignObstruction.aD_neg_of_term_neg"
+    },
+    "the_unestablished_identification": {
+      "assumption": "mu_n == a_D^(n) * w_n",
+      "why_natural": "the binomial basis is the standard many-body/cluster decomposition; B_n(K) = C(A,n)*(n-body energy) makes w_n's multiplicity M_n(A) the C(A,n)",
+      "searched_for_it": "grep for binom{A}{n} / C(A,n) / n-subsets across content/.../mass-theory/: NO HIT. The corpus does not state the identification",
+      "consequence": "everything here is conditional on it; establishing or refuting it is the cheap, well-posed next step and the only thing between this and a refutation"
+    },
+    "corroboration_not_proof": {
+      "MayerThreeBodySign": "already found the connected 3-body Ursell cumulant wrong-signed against AME2020, threshold-forced, independent of the bond set"
+    }
+  }
+}
