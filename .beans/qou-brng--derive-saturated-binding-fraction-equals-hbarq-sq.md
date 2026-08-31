@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T04:21:42Z
+updated_at: 2026-08-31T04:28:55Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -410,3 +410,41 @@ upstream of the whole mass sector — not through a convention.
 (1) a selection principle that is not minimality — still unstarted, still the
 live one; (2) accept that the count channel does not carry `b₃` and look for the
 extensive term elsewhere, which is `qou-brng`'s original framing.
+
+
+### Two further corrections, both mine, before #6321 merges (2026-08-31)
+
+**(1) The selection principle is NOT minimality — I asserted it was.** Read
+`binding_k_enumerator.py`'s sort key, not the Lean instances' proxy field:
+`(0 if PSD_feasible else 1, markov_residual_to_target, L_K)`. **Length is the
+THIRD key, a tiebreak.** The criterion is **Frobenius-residual minimisation**,
+which depends on `tr_M` at `H_{3A}(q₀)` and is therefore `A`-dependent.
+
+The Lean instances carry `bindingKMinimalLength := length ≤ 4`, a decidable
+*proxy* field, and reading that as the criterion is exactly what makes minimality
+look load-bearing. So the reason all three nuclei returned `σ_g²` is
+**truncation, not principle**: the run used `L_K_max = 4 / 3 / 3`.
+
+**The range that matters has never been searched.** `c₃ ≥ 8` means word length
+`≥ 8`; over the 4 inter-nucleon generators that is ~87,000 words against the ~84
+actually tried. **This is a compute question with a definite answer, not a
+structural impasse** — and it is the live next step.
+
+**(2) Brunnian parity EXCLUDES both points the published gap was attained at.**
+`n₊ = n₋` (the condition emptying the signed channel) forces `c = n₊ + n₋`
+**even**. The two nearest approaches I published — `c(³H)+c(³He) = 15` and
+`c₃ = 7` — are **both odd**, hence unreachable.
+
+| | published | corrected under parity |
+|---|---|---|
+| distinct ³H/³He carriers | `15` → `3/4`, **+16.98 %** | `14` → `1/2`, **−22.01 %** |
+| single A=3 carrier | `7` → `1/2`, −22.01 % | `8` → `1`, **+55.98 %** |
+
+So the gap **widens**, and for a single Brunnian carrier `b₃/b₂` is an outright
+integer. This is not a refinement of the bound — parity deletes the points the
+bound was attained at. `even_lattice_gap` proves `≥ 209293/1483044` for every
+integer; `brunnian_crossings_even` and `single_brunnian_carrier_integer_valued`
+carry the rest. The `A = 2` Hopf carrier is unaffected: it is **not** Brunnian
+(`lk = 1`, `n₊ = 2`, `n₋ = 0`), the boundary case where `lk = z = 1`.
+
+File is now 20 declarations; probe 11/11.

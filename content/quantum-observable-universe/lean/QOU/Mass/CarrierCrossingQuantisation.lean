@@ -65,22 +65,49 @@ and `³He` carry different links the isospin-averaged `μ_triple` puts it on the
 both:
 
 * half-integer grid — `c₃ = 7` gives `0.5` (22.01 % low), `c₃ = 8` gives `1.0` (55.98 % high);
-* quarter-integer grid — `c(³H)+c(³He) = 15` gives `0.75`, **16.98 % high**, the nearest
-  approach of any integer carrier assignment.
+* quarter-integer grid — `c(³H)+c(³He) = 15` gives `0.75`, 16.98 % high.
 
 `no_quarter_lattice_point_is_measured` and `quarter_lattice_gap` prove the finer of the
 two: every integer `m` keeps `m/4 - 3` at least `161468/1483044 ≈ 0.10887` from the
-measured ratio. The coarser half-integer statement follows since that grid is a subset.
+measured ratio.
 
-## And the selection principle points the wrong way
+**But a Brunnian carrier cannot land on the odd points, and both of those nearest
+approaches are odd.** `n₊ = n₋` forces `c = n₊ + n₋` **even**
+(`brunnian_crossings_even`), so `c₃ = 7` and `c(³H)+c(³He) = 15` are unreachable. The
+live grid is the half-integers, and `even_lattice_gap` puts every point at least
+`209293/1483044 ≈ 0.14112` away — **22.01 %**, not 16.98 %. For a *single* Brunnian
+`A = 3` carrier `b₃/b₂` is an outright integer
+(`single_brunnian_carrier_integer_valued`) and the nearest positive value is `1`, high by
+**55.98 %**.
 
-Escaping the gap needs `c₃ ≥ 8` — strictly more than the Borromean's `6`. But `6` is
-**minimal**: `QOU.Knots.KauffmanTL3` machine-checks that no braid word of length `< 6` is
-both Brunnian and nontrivial. So a carrier that could reach `b₃` must be a
-**non-minimal** Brunnian representative, while the only selection principle the corpus
-derives — shortest PSD-feasible word — returns the minimum by construction. The
-principle and the requirement are in direct opposition; that, not the arithmetic, is the
-substantive obstacle `qou-brng` now faces.
+## What has never been searched — and it is not what it looks like
+
+Escaping the gap needs `c₃ ≥ 8`, strictly more than the Borromean's `6`, which
+`QOU.Knots.KauffmanTL3` machine-checks is the minimum over nontrivial Brunnian 3-braids.
+
+**It is tempting to conclude that the selection principle itself points the wrong way —
+that the corpus selects by minimality and minimality is exactly what excludes the
+carrier. That is false, and the temptation is worth recording.** Read
+`binding_k_enumerator.py`'s sort key rather than the Lean instances' proxy field:
+
+    candidates.sort(key = (0 if PSD_feasible else 1,
+                           markov_residual_to_target,      # <- the criterion
+                           L_K))                           # <- a TIEBREAK, third
+
+The principle is **Frobenius-residual minimisation**, which depends on `tr_M` at
+`H_{3A}(q₀)` and is therefore `A`-dependent. Length enters only to break ties. The Lean
+instances carry `bindingKMinimalLength := length ≤ 4`, a decidable *proxy* field, and
+reading that as the criterion is what makes minimality look load-bearing.
+
+So the reason all three nuclei returned `σ_g²` is **truncation, not principle**: the
+enumeration ran at `L_K_max = 4` (deuteron) and `3` (³H, ³He), and at that length
+essentially nothing survives PSD-feasibility except the shortest even word. The range
+where the answer could differ — word length `≥ 8` — **has never been searched**, and it
+is roughly a thousand times the size of the search that was run (`4` inter-nucleon
+generators, so `~87,000` words to `L = 8` against `84` to `L = 3`).
+
+That is the live next step for `qou-brng`, and it is a compute question with a definite
+answer rather than a structural impasse.
 
 ## Sibling result, landed on `main` the same hour
 
@@ -117,6 +144,8 @@ Beans `qou-brng`, `qou-w6vh`, `qou-n6im`.
 import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU.Mass.CarrierCrossingQuantisation
@@ -250,11 +279,52 @@ theorem quarter_lattice_gap (m : ℤ) :
     unfold rMeasured at hhi ⊢
     linarith
 
+/-! ## 3b. A Brunnian carrier has an EVEN crossing count, which widens the gap -/
+
+/-- **Brunnian ⇒ even.** `BrunnianBindingChannel.brunnian_signedChannel_zero` empties the
+signed channel exactly when `n₊ = n₋`; then `c = n₊ + n₋ = 2n₊` is even. The `A = 2` Hopf
+carrier is *not* Brunnian (`lk = 1`, `n₊ = 2`, `n₋ = 0`) — it is the boundary case where
+`lk = z = 1` — so this constrains the `A ≥ 3` carriers only, which is where `b₃` lives. -/
+theorem brunnian_crossings_even (np nn : ℕ) (h : np = nn) : Even (np + nn) := by
+  subst h; exact ⟨np, rfl⟩
+
+/-- **Under parity the grid coarsens to the half-integers, and the gap widens.** With
+`c(³H)` and `c(³He)` both even their sum is even, so `μ_triple = (c_H + c_He)/4` is a
+*half*-integer, not a quarter-integer: the lattice is `k/2 - 3`. Every point stays at
+least `209293/1483044 ≈ 0.14112` from the measured ratio — **22.01 %** of it, up from the
+16.98 % that ignoring parity allows.
+
+This is what excludes the two nearest points of `quarter_lattice_gap`: `c₃ = 7` and
+`c(³H)+c(³He) = 15` are both **odd**, hence unreachable by Brunnian carriers. -/
+theorem even_lattice_gap (k : ℤ) :
+    209293 / 1483044 ≤ |(k : ℚ) / 2 - 3 - rMeasured| := by
+  obtain ⟨hlo, hhi⟩ := rMeasured_mem_gap
+  have hr1 : rMeasured < 1 := by unfold rMeasured; norm_num
+  rcases le_or_gt k 7 with h | h
+  · have hk : (k : ℚ) ≤ 7 := by exact_mod_cast h
+    rw [abs_of_nonpos (by linarith)]
+    unfold rMeasured at hlo ⊢
+    linarith
+  · have hk : (8 : ℚ) ≤ (k : ℚ) := by exact_mod_cast h
+    rw [abs_of_nonneg (by linarith)]
+    unfold rMeasured at hr1 ⊢
+    linarith
+
+/-- **A single Brunnian `A = 3` carrier does worse still.** Then `μ_triple = c₃/2` with `c₃`
+even, so `b₃/b₂` is an *integer*: the nearest positive value is `1` at `c₃ = 8`, **55.98 %**
+high, and `0` at the Borromean `c₃ = 6` is the degenerate locus. -/
+theorem single_brunnian_carrier_integer_valued (n : ℤ) :
+    bRatio (muOfCrossings (2:ℚ)) (muOfCrossings (2 * (n:ℚ))) = (n:ℚ) - 3 := by
+  rw [bRatio_hopf_pair]
+  ring
+
 /-- **The escape requires a non-minimal Brunnian carrier.** Any `c₃` reaching a positive
 `b₃/b₂` at all needs `c₃ > 6` — strictly more than the Borromean's crossing number,
 which `QOU.Knots.KauffmanTL3` machine-checks is the *minimum* over nontrivial Brunnian
-3-braids. So the carrier cannot be a minimal one, while the corpus's only derived
-selection principle (shortest PSD-feasible word) returns exactly the minimum. -/
+3-braids. With parity (§3b) the next available value is `c₃ = 8`, not `7`.
+
+**The corpus's selection principle is NOT minimality** — see the header's §"What has
+never been searched". It is Frobenius-residual minimisation; length is only a tiebreak. -/
 theorem positive_b3_forces_above_borromean {c₃ : ℚ}
     (h : 0 < bRatio (muOfCrossings 2) (muOfCrossings c₃)) : 6 < c₃ := by
   rw [bRatio_hopf_pair] at h

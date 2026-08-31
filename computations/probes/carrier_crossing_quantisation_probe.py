@@ -28,8 +28,12 @@ artifact, not invented here:
                            deuterium, tritium AND helium-3 alike.  The labels
                            "6_2"/"8_11"/"L6a4" on the Lean instances are
                            retained CENSUS NAMES, not what was enumerated.
-                           Criterion is shortest-PSD-feasible-even-word at
-                           L <= 3, which cannot see A, so mu is constant.
+                           NOTE the criterion is NOT minimality: the sort key
+                           is (PSD_feasible, markov_residual_to_target, L_K) --
+                           Frobenius-residual minimisation, with length only a
+                           TIEBREAK.  All three returned the same word because
+                           the search was TRUNCATED at L_K_max = 3-4, not
+                           because the principle is A-blind.
   chain / coordination     one clasp per interface, z = A-1  (the corpus's
                            coordination carrier, bk-coordination-multiplicity).
   canonical Brunnian       Hopf pair, Borromean L6a4 triple.
@@ -187,9 +191,38 @@ def main():
     check("escaping the gap needs c3 > 6, ABOVE the minimal Brunnian 3-braid",
           all(b_ratio(2, c) <= 0 for c in range(0, 7)) and b_ratio(2, 7) > 0,
           "QOU.Knots.KauffmanTL3 machine-checks that no braid word of length "
-          "< 6 is both Brunnian and nontrivial, so 6 is minimal -- while the "
-          "only derived selection principle (shortest PSD-feasible word) "
-          "returns the minimum by construction")
+          "< 6 is both Brunnian and nontrivial, so 6 is minimal; with parity "
+          "the next available value is c3 = 8, not 7")
+
+    # --- PARITY: a Brunnian carrier has n+ = n-, so c = n+ + n- is EVEN ---
+    quarter_even = [(m, F(m, 4) - 3) for m in range(8, 21, 2)]
+    best_qe = min(quarter_even, key=lambda t: abs(t[1] - r))
+    gap_qe = abs(best_qe[1] - r)
+
+    print(f"\n  PARITY: a Brunnian A=3 carrier has n+ = n-, so c3 is EVEN.")
+    print(f"  nearest EVEN quarter point: c(3H)+c(3He) = {best_qe[0]}, "
+          f"b3/b2 = {best_qe[1]}  ({float((best_qe[1] - r) / r) * 100:+.2f}%)")
+
+    check("the Brunnian parity constraint EXCLUDES both previously-nearest points",
+          best_q[0] % 2 == 1 and best_h[0] % 2 == 1,
+          f"the unconstrained nearest were c(3H)+c(3He) = {best_q[0]} and "
+          f"c3 = {best_h[0]}, BOTH ODD, hence unreachable by carriers with "
+          "n+ = n-; parity is not a refinement of the bound, it deletes the "
+          "two points the bound was attained at")
+
+    check("under parity the gap WIDENS to 209293/1483044 (22.01%)",
+          gap_qe == F(209293, 1483044) and best_qe[0] == 14,
+          f"gap = {gap_qe} = {float(gap_qe):.6f}, "
+          f"{float(gap_qe / r) * 100:.2f}% of measured -- up from the "
+          f"{float(gap_q / r) * 100:.2f}% that ignoring parity allows; "
+          "matches the Lean bound in even_lattice_gap")
+
+    check("a SINGLE Brunnian A=3 carrier makes b3/b2 an integer, nearest +55.98%",
+          all((F(c, 2) - 3).denominator == 1 for c in range(2, 13, 2))
+          and b_ratio(2, 8) == 1,
+          "c3 even => b3/b2 = c3/2 - 3 is an integer; nearest positive is 1 "
+          f"at c3 = 8, {float((F(1) - r) / r) * 100:+.2f}%, and 0 at the "
+          "Borromean c3 = 6 is the degenerate locus")
 
     witness = {
         "computation": "carrier-crossing-quantisation",
@@ -212,11 +245,24 @@ def main():
         },
         "rules": rows,
         "lattice": {
-            "half_integer_nearest": {"c3": best_h[0], "value": str(best_h[1])},
-            "quarter_integer_nearest": {"c_3H_plus_c_3He": best_q[0],
-                                        "value": str(best_q[1])},
-            "gap": str(gap_q),
-            "gap_relative_fraction_of_measured": str(gap_q / r),
+            "unconstrained": {
+                "half_integer_nearest": {"c3": best_h[0],
+                                         "value": str(best_h[1])},
+                "quarter_integer_nearest": {"c_3H_plus_c_3He": best_q[0],
+                                            "value": str(best_q[1])},
+                "gap": str(gap_q),
+                "gap_relative_fraction_of_measured": str(gap_q / r),
+                "note": ("BOTH nearest points are ODD and are EXCLUDED once "
+                         "the carrier is Brunnian -- see 'brunnian_parity'"),
+            },
+            "brunnian_parity": {
+                "constraint": "n+ = n- => c = n+ + n- is EVEN",
+                "nearest": {"c_3H_plus_c_3He": best_qe[0],
+                            "value": str(best_qe[1])},
+                "gap": str(gap_qe),
+                "gap_relative_fraction_of_measured": str(gap_qe / r),
+                "single_carrier_nearest_positive": {"c3": 8, "value": "1"},
+            },
         },
         "straddle_trap": {
             "c2_from": "owner ruling A 2026-08-29, Hopf deuteron carrier",
@@ -252,6 +298,15 @@ def main():
             "which is the case computed; it does not become dense.",
             "Three body orders is three data points, and b4 is not tested "
             "here at all. Nothing about A > 4 follows.",
+            "The Brunnian parity constraint applies to the A >= 3 carriers "
+            "only. The A = 2 Hopf carrier is NOT Brunnian (lk = 1, n+ = 2, "
+            "n- = 0) -- it is the boundary case where lk = z = 1 -- so c2 = 2 "
+            "is even for a different reason and nothing here depends on that.",
+            "The range where the answer could differ (word length >= 8) has "
+            "NEVER been searched: the enumeration ran at L_K_max = 3-4, and "
+            "L <= 8 over 4 inter-nucleon generators is ~87,000 words against "
+            "the ~84 that were tried. This probe does not run that search; it "
+            "establishes that the search is the open question.",
         ],
         "lean": ("QOU/Mass/CarrierCrossingQuantisation.lean "
                  "(11 declarations, sorry-free, lean-direct exit 0)"),
