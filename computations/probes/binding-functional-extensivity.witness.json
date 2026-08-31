@@ -1,0 +1,115 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T03:38:52.984817+00:00",
+  "commitSha": "9b00d47036abc109f0d4c7dc54c1ff31289fd3d8",
+  "assertions": [
+    {
+      "name": "the log form is extensive (defect exactly zero, convention D)",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "-alpha ln(xy) vs -alpha ln x + -alpha ln y at mu_pp, mu_nn"
+    },
+    {
+      "name": "the linear form's defect equals the closed form -alpha(1-x)(1-y)",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Lean linearForm_extensivity_defect, checked numerically"
+    },
+    {
+      "name": "10a's quoted 1.4875 is the CONVENTION-C value, not convention D",
+      "computed": "0.00000160890040532695239985068",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-4",
+      "source": "convention D gives -0.966886812, |D - quoted| = 0.520613"
+    },
+    {
+      "name": "three of the four AME atoms exceed the linear form's ceiling",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ceiling alpha = 4.185981363 MeV with t_free ~ 1; exceeded by 3H, 4He, 7Li"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "binding-functional-extensivity",
+  "scriptFile": "binding_functional_extensivity_probe.py",
+  "scriptHash": "37f493556318",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_functional_extensivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_functional_extensivity_probe.py"
+  },
+  "parameters": {
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "alpha_MeV": "4.18598136329447589694506215876",
+    "lean_declarations": [
+      "QOU.QBeta.InterfaceScalar.logForm_extensive",
+      "QOU.QBeta.InterfaceScalar.linearForm_extensivity_defect",
+      "QOU.QBeta.InterfaceScalar.linearForm_not_extensive",
+      "QOU.QBeta.InterfaceScalar.linearForm_ceiling"
+    ],
+    "by_convention": {
+      "C": {
+        "z": "0.4993203341836944524134426802576663037519",
+        "mu_pp": "0.4993203341836944524134426802576663037519",
+        "mu_nn": "0.2902600353880551369825964671279913598922",
+        "log_form_defect": "1.4489086526122739788e-70",
+        "linear_form_defect": "-1.48749839109959467304760014932",
+        "closed_form": "-1.48749839109959467304760014932"
+      },
+      "D": {
+        "z": "0.6126880371464652515958298639458992480263",
+        "mu_pp": "0.6126880371464652515958298639458992480263",
+        "mu_nn": "0.4036277383508259361649836508162243041666",
+        "log_form_defect": "0.0",
+        "linear_form_defect": "-0.96688681295002320124555686208",
+        "closed_form": "-0.96688681295002320124555686208"
+      }
+    },
+    "audit_10a_quoted_linear_defect": "1.4875",
+    "audit_10a_figure_is_convention": "C",
+    "atoms_exceeding_linear_ceiling": [
+      "3H",
+      "4He",
+      "7Li"
+    ],
+    "derivation_location": "docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md 10a",
+    "audit_that_missed_it": "docs/audits/2026-08-25-deuteron-attack-c-convergence.md"
+  },
+  "caveats": [
+    "The uniqueness step of 10a -- that the only continuous solutions of Cauchy's equation f(xy) = f(x) + f(y) are c*log x -- is classical and is NOT formalised in this corpus. 'The log form is forced' still rests on it. What is proved in Lean is the comparison the corpus actually runs: log extensive, linear not, with the defect in closed form and a convention-independent ceiling.",
+    "The ceiling row uses t_free ~ 1, which 10a establishes separately (tr_M(nucleon) ~ 1 at every A). It is quoted here, not re-derived.",
+    "Corpus-state finding, not a physics result: the 2026-08-25 audit and bean qou-d5e8 both record the functional as posited with no derivation anywhere. The derivation is in docs/audits/, the first path that audit's own grep table lists. Both should be corrected rather than the finding being left to a third reader to rediscover."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

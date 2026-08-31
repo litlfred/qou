@@ -91,6 +91,40 @@ all three lines indict, and it is a modelling choice with no derivation in the c
 
 ## The functional form has no derivation and a DEAD citation (NEW)
 
+> ### 🛑 CORRECTED 2026-08-31 — the "no derivation" half of this section is WRONG
+>
+> The grep below concludes `B = −α·ln|tr_M|` is **posited**, and its table records,
+> for the first path it searched, *"`docs/audits/` — files that **use** the form;
+> none derives it."*
+>
+> [`2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`](2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md)
+> **§10a** is headed, literally, *"The functional is DERIVED, not chosen — and it
+> is the log form"*. It is dated **seventeen days before this audit**, it sits in
+> `docs/audits/`, and it argues from trace multiplicativity over bonds
+> (`tr_atom = tr_free · ∏ μ_k`, measured there to 1.2e-31) plus energy extensivity
+> that the trace-to-energy map obeys Cauchy's `f(xy) = f(x) + f(y)` on `(ℝ₊, ×)`,
+> so the log form is forced.
+>
+> `ursell_alternation_sign_identity_probe.py` had already cited §10a as a
+> derivation, so the corpus disagreed with itself in three places (here, bean
+> `qou-d5e8`, and that probe).
+>
+> **What survives unchanged:** the dead-citation finding — `mass_binding_dashboard.py`
+> does cite `standard-part-functor.md`, and that block does not define the binding
+> forms. And the **Lean: nothing** row was correct; it is now addressed, see below.
+>
+> **What is retracted:** "So `B = −α·ln|tr_M|` is posited", and the `docs/audits/`
+> row of the table.
+>
+> §10a's *uniqueness* step (only continuous solutions of Cauchy's equation are
+> `c·ln x`) is classical and remains unformalised, so "forced" still rests on it.
+> The **comparison** §10a runs is now in Lean, sorry-free —
+> `QOU.QBeta.InterfaceScalar.{logForm_extensive, linearForm_extensivity_defect,
+> linearForm_not_extensive, linearForm_ceiling}` — together with a closed form for
+> the linear rival's failure, `−α(1−x)(1−y)`, which §10a gives only as a number.
+> Guard: `computations/probes/binding_functional_extensivity_probe.py` (4/4).
+
+
 `mass_binding_dashboard.py` cites the binding forms twice (lines 9 and 1116) as
 *"Defn: standard-part-functor.md"*. **That block does not define them.** Read in full
 (2500 bytes): it defines the standard-part map `st : No_fin → ℝ`, the induced iso
