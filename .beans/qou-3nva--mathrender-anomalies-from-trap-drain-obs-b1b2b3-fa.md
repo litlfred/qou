@@ -4830,3 +4830,87 @@ L-V12, L-V13, L-V50 and L-V55.
 
 **Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49, L-V63 (the ≥9-site
 skein-convention cluster, which deserves its own tranche).
+
+---
+
+## Tranche 9 — L-V63 dissected: **one** defect, not nine, and the ledger has it backwards
+
+The entry flags "≥ 9 sites" using the HOMFLY form *"against the AGENTS.md §7a
+canonical"*. Solved the operator-level question before touching anything, and
+that framing inverts which sites are wrong.
+
+### §7a is FORCED, and only at the Hecke level
+
+Ask which `(a, z)` make `a·L₊ − a⁻¹·L₋ = z·L₀` hold as an **operator identity**
+with `L₊ = σ`, `L₋ = σ⁻¹`, `L₀ = 1`, `σ² = (q−q⁻¹)σ + 1`. Evaluating on both
+eigenvectors (`σ` has eigenvalues `q`, `−q⁻¹`) gives two equations with the
+unique solution
+
+```
+a = 1,   z = q - 1/q
+```
+
+So §7a is not one convention among several — it is forced. **But it is forced
+at the level of the Hecke generator.** Any `a ≠ 1` form is a statement about the
+**normalised invariant**, a different object, and is not a §7a violation.
+
+The ~9 sites writing `qL₊ − q⁻¹L₋ = (q^{1/2}−q^{-1/2})L₀` are the standard
+Jones/HOMFLY relation for that invariant, and they agree with each other —
+`strangelet-double-beta.md` and `skein-turing-machine.md` write the same thing
+as `sL₀` with `s = q^{1/2}−q^{-1/2}` defined on the next line. **Two levels,
+both correct.**
+
+### The real defect: two sites mix the levels
+
+Both write `qL₊ − q⁻¹L₋ = (q−q⁻¹)L₀` — Jones-level LHS, Hecke-level RHS,
+i.e. `(a,z) = (q, q−q⁻¹)`, which is neither. At the proton `q₀` the two
+right-hand sides differ by a factor **2.0027**, so it is not a renormalisation.
+
+**FIXED — `glossary/glossary-q-bit-skein.md:8`.** The block states the relation
+and uses it for nothing else, and its own next sentence says the resolution is
+*"weighted by the Hecke eigenvalues"* — the operator level. Set to the §7a form.
+
+### 🟡 ESCALATED — `appendix-surreals/q-collatz-conjecture.md:39`
+
+**This is a defect in the argument, not the transcription. Do not "fix" it by
+substituting `q^{1/2}−q^{-1/2}`.**
+
+Running the HOMFLY skein chain `unknot → U₂ → Hopf → trefoil` at
+`(a,z) = (q, q−q⁻¹)`:
+
+```
+P(U_2) = 1     P(Hopf) = 1     P(trefoil) = 1
+```
+
+— every link. That is the **`sl(1)` specialisation** `a = q^N` at `N = 1`, and
+the invariant is **identically trivial**. (Contrast the `sl(2)`/Jones point
+`(q², q−q⁻¹)`, which gives `P(trefoil) = (q⁶+q²−1)/q⁸`.)
+
+**And the block's own conclusion needs exactly that point.** Dividing by `a`
+gives `L₊ = a⁻²L₋ + (z/a)L₀`, and the block asserts
+`J(L₊) = q⁻²J(L₋) + (1−q⁻²)J(L₀)` is a convex combination. Coefficient sums at
+`q₀`:
+
+| `(a, z)` | coeff sum |
+|---|---|
+| `(q, q−q⁻¹)` — as written | **1.0000000** |
+| `(q, q^{1/2}−q^{-1/2})` | 0.9056978 |
+| `(q², q−q⁻¹)` — Jones | 0.8284647 |
+
+So the convexity is **real** and holds **only** at the specialisation that makes
+the invariant trivial. Substituting the corpus-majority RHS breaks the convexity
+the Collatz contraction argument rests on; keeping it leaves the argument
+"non-expansive" on a quantity that is 1 for every link. **Neither branch is a
+transcription fix** — this needs the author.
+
+**RUNNING TALLY, nine tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 32 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 4 (L-V14, L-V18, L-V28, L-V63/q-collatz) |
+| retracted / partly retracted | 4 (L-V13, L-V50, L-V19 legs, L-V63's 9-site framing) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49.
