@@ -19,6 +19,15 @@ IT DOES NOT, and the reason is structural rather than circumstantial:
     bar: q -> 1/q   sends   h -> -h   so   h^2 -> h^2
 
 so delta is bar-INVARIANT, and therefore K(delta) is bar-even for EVERY K.
+
+🛑 SYMBOL COLLISION — this `K(delta)` is NOT the `K` of Step 14's terminus
+decomposition `Q_beta = K * g * chi`, where `K` is the trace -> MeV scale
+OUTSIDE the Hecke trace and is verdict NEGATIVE (enumerated 2026-08-29,
+nothing parameter-free within 6.31 %). This one is the N=1 factor's
+multiplicative constant, is ~1, and is verdict FREE / filtered-but-undetermined.
+Do not carry either verdict across. Same class as the `alpha_eff` overload this
+arc already flags.
+
 Bar-parity is not a weak constraint on K; it is a vacuous one.
 
 WHAT THIS IS. A scope-(a) NEGATIVE, recorded to stop a wrong inference: entry

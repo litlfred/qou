@@ -24,6 +24,24 @@ THE DECOMPOSITION. Q_beta = K * g * chi, exactly three factors:
         a_(2,1)/a_(3) = 1.5516573513.
   K     the trace -> MeV scale, outside the Hecke trace entirely.
 
+🛑 SYMBOL COLLISION — this `K` is NOT the `K(delta)` of entries 10c/12/16.
+Two different objects carry the letter in this arc, and their verdicts differ:
+
+  * THIS `K` — the trace -> MeV scale, OUTSIDE the Hecke trace entirely.
+    Verdict NEGATIVE (enumerated 2026-08-29, nothing parameter-free within
+    6.31 %).
+  * `K(delta)` — the multiplicative constant in the N=1 factor
+    `F = cos(a - delta/2) * K(delta)`, subject to `K(0) = 1`. Verdict FREE
+    (entry 12: bar-parity is vacuous on it), then filtered but not determined
+    (entry 16). Numerically it is ~1; this one is a MeV-scale factor.
+
+A reader who takes "K is closed, enumerated negative" from here and applies it
+to `K(delta)` closes a question that is open; one who takes "K is free" from
+entry 12 and applies it here re-opens a question that is enumerated. Same class
+as the `alpha_eff` overload this arc already flags, and as the `markovZ` /
+`markovZC` / `markovZc` overload in AGENTS.md.
+
+
 ALL THREE ARE NEGATIVE.
 
   g   closed by construction: the cap is derived and z_D is forced, so there is

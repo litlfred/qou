@@ -1,0 +1,77 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T15:01:15.516270+00:00",
+  "commitSha": "e641d6231f5b241f306251640fef720c77681d32",
+  "assertions": [
+    {
+      "name": "anchors_share_experimental_input",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "both anchors must use the same Q_codata or the slope is a confound, not a q-derivative"
+    },
+    {
+      "name": "no_candidate_passes_both_rows",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "z_C passes value and fails slope by ~4 orders with wrong sign; z_D and z=q fail both"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-ladder-alpha-form-filter",
+  "scriptFile": "qbeta_ladder_alpha_form_filter_probe.py",
+  "scriptHash": "9f5ce4b4e2f1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_alpha_form_filter_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_alpha_form_filter_probe.py"
+  },
+  "description": "Two-constraint filter (value + q-slope) that any candidate z must satisfy to carry the Q_beta ladder phase in the alpha=(z-1)h/2 form. Recomputed from the required-phase witness rather than recorded, so it tracks the anchor.",
+  "data": {
+    "required": {
+      "z_at_q0": "0.49910448018478499419",
+      "zprime_at_q0": "400.28967882133375965",
+      "alpha_required": "-0.052358683518982961268",
+      "dalpha_dq": "41.388615305090154178",
+      "anchors_share_Q_codata": true
+    },
+    "candidates": {
+      "z_C  sqrt(q)/(q+1)": {
+        "z": "0.49932033418369445241",
+        "zprime": "-0.011723700887570230039",
+        "passes_value_row": true
+      },
+      "z_D  q^3/(q^2+1)": {
+        "z": "0.6126880371464652516",
+        "zprime": "1.0465776285222742697",
+        "passes_value_row": false
+      },
+      "z=q  2nd admissible root": {
+        "z": "1.1099785827513808076",
+        "zprime": "1.0",
+        "passes_value_row": false
+      }
+    }
+  }
+}

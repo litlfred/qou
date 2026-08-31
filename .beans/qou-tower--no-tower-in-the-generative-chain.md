@@ -568,3 +568,62 @@ lockstep after every factor* rather than comparing final vectors. Mine
 compares at the end, which is weaker precisely here — cancellation is what the
 Z=0 line is made of, so a transcription error can be masked by a later
 cancellation. Adopt lockstep if this walk is rebuilt.
+
+---
+
+## The grading identification is FALSE, and two of my own claims about it were wrong
+
+The open question after the jet-shape probe was whether the GS word-length
+filtration I measured (Coxeter length of the H₃ normal form, values 0..3) is
+the bond-product / Mayer grading the corpus proves things about (values
+0..|s|, |s| = C(A,2) bonds). Measured on the canonical builder, with a control
+that the sweep IS the canonical builder:
+
+**No — and not for the reason I gave.** Two retractions first:
+
+1. I wrote that `QOU.Mass.BodyOrderJetGrading.body_eq_graded` is "an assumed
+   hypothesis field … the premise is assumed rather than established". It is a
+   field of that structure, but it is **discharged** for the bond-product
+   model by `body_eq_graded_of_bond_product`
+   (`QOU/Knot/BodyOrderExpansion.lean:138`, proof `esymm_eq_compl_sum s d hn`,
+   sorry-free). Nothing is left assumed there.
+2. I wrote that the two models "index in opposite directions". They do not.
+   `prod_bonds_graded` **defines** `gradedTerm n` as the coefficient at bond
+   grade `|s| − n`; `esymm_eq_compl_sum` is precisely the complement bijection
+   that absorbs the reversal. There was never a direction mismatch.
+
+What actually blocks the identification is measured, not assumed:
+
+- **Cardinality.** Bond-product grading: `C(A,2)+1` values — 7 at A=4, 191 at
+  A=20. GS word-length grading: **4**, at every A. No bijection exists.
+- **The ceiling is reached, not stipulated.** Starting from the empty word the
+  support grows `{0} → {0,1} → {0,1,2} → {0,1,2,3}` over the first three
+  crossings and then **never grows again**, at any bond count.
+- **The folding is lossy on bond count.** At Z=2, N=2 the seven bond counts
+  m = 0..6 give only **6** distinct normalised shapes (m=5 ≡ m=3). Over the
+  222 configurations (Z, N ≤ 4; every m ≤ C(A,2)) there are **115 collisions**
+  and only **107** distinct shapes. The H₃ normal form does not determine even
+  the *number* of inter-nucleon bonds.
+
+**Third retraction, mine, same session.** A scratch sweep that appended extra
+mixed bonds *past* C(A,2) gave 13 distinct shapes for 13 bond counts, and I
+was about to report "bond count is recoverable from the H₃ shape". On the
+canonical construction it is the opposite. The toy laid every bond as
+`MINUS_H_HALF` at the end of the word; the canonical builder interleaves
+type-dependent bonds (pp→`ZERO_D`, nn→`MINUS_H`, pn→`MINUS_H_HALF`) after each
+nucleon block. Monotone appending gives monotone term growth, hence spurious
+injectivity. **Control: keep-all reproduces `build_atom_nf_lau` exactly on all
+24 configurations** — added to the probe as an assertion so a lookalike
+construction cannot pass again.
+
+**Collision offsets are even** (m=5≡3, m=6≡4, m=8≡4, m=10≡4). Parity, an
+eighth time on this arc.
+
+**Consequence.** The ceiling fact stands and is unconditional, but it does not
+license a body-order reading — the identification it would need is false, not
+merely unproved. It is also *stronger* than the identification would have
+been: the ceiling is not "191 grades folded faithfully into 4", it is lossy
+folding. Any surviving many-body information lives in the **weights** on four
+grades, never in the grade index. This probe does not exclude that.
+
+PR #6333.

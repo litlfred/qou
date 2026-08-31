@@ -156,7 +156,7 @@ established) and Hecke $\leftrightarrow$ nimber correspondence (open).
 **Layer 1: nimber field existence (cited)**:
 
 1. $\mathbf{On}_2$ is constructed by Conway–Lenstra
- [@conway1976] as the union of $\mathbb{F}_{2^{2^k}}$;
+ \cite{conway1976} as the union of $\mathbb{F}_{2^{2^k}}$;
  algebraically closed, characteristic 2.
 
 2. $\mathbf{On}_p$ for odd $p$: similar construction via
