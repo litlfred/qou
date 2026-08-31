@@ -522,6 +522,44 @@ def main() -> int:
         print(f"  {label:>9}: {'all match' if not bad else f'MISMATCH {bad}'}")
     print()
 
+    # ── (d) Reconciliation with QOU.Mass.AffineCountIsNotASurfaceTerm (landed on
+    #        main 2026-08-30, commit 6e12848654).  That result excludes "crossing
+    #        count times a constant" as the surface term, via a monotonicity
+    #        theorem on count / A^(2/3).  Its premise sentence is that the count is
+    #        "EXTENSIVE BY CONSTRUCTION" and that "the framework supplies one per
+    #        nucleus".  The framework supplies TWO, in different growth classes.
+    #        The question this section answers is whether that moves the verdict.
+    print("Reconciliation: is the surface-term exclusion premise-dependent?")
+    print("  main's count (atom_braid_word_3A, chain)  : 12A - 1        affine")
+    print("  this probe's (build_atom_nf_sym, complete): A^2/2 + 11A    quadratic (N=Z)")
+    print("  A surface term needs count/A^(2/3) CONSTANT across A.  In m = A^(1/3):")
+    print("      chain     (12m^3 - 1)/m^2      = 12m - 1/m^2      d/dm = 12 + 2/m^3 > 0")
+    print("      complete  (m^6/2 + 11m^3)/m^2  = m^4/2 + 11m      d/dm = 2m^3 + 11 > 0")
+    print("  Both strictly increasing on m > 0, hence injective, hence equal at no")
+    print("  two distinct A.  Measured, as exact algebraic numbers in A^(1/3):")
+    print(f"{'A':>4} {'chain count':>12} {'complete count':>15} "
+          f"{'chain/A^(2/3)':>18} {'complete/A^(2/3)':>20}")
+    prev_c = prev_k = None
+    mono_chain = mono_complete = True
+    for A in (2, 4, 6, 8, 12, 16, 20, 24):
+        n_chain = 11 * A + (A - 1)            # atom_braid_word_3A, include_inter=True
+        n_compl = 11 * A + A * (A - 1) // 2 + A // 2
+        rc = sp.Rational(n_chain) / sp.Integer(A) ** sp.Rational(2, 3)
+        rk = sp.Rational(n_compl) / sp.Integer(A) ** sp.Rational(2, 3)
+        if prev_c is not None:
+            mono_chain &= bool(sp.simplify(rc - prev_c) > 0)
+            mono_complete &= bool(sp.simplify(rk - prev_k) > 0)
+        prev_c, prev_k = rc, rk
+        print(f"{A:>4} {n_chain:>12} {n_compl:>15} "
+              f"{str(sp.N(rc, 10)):>18} {str(sp.N(rk, 10)):>20}")
+    print(f"  chain    ratio strictly increasing over the sample (exact): {mono_chain}")
+    print(f"  complete ratio strictly increasing over the sample (exact): {mono_complete}")
+    print("  => the exclusion SURVIVES the premise correction.  main's verdict does")
+    print("     not move; only its scope sentence does -- 'the framework supplies")
+    print("     one crossing count per nucleus' is false, and 'extensive by")
+    print("     construction' holds for the chain word only.")
+    print()
+
     print("Reading")
     print("-" * 78)
     print("  * The six NF coefficients are LAURENT POLYNOMIALS in q, not general")
