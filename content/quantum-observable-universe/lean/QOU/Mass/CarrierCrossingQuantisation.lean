@@ -82,6 +82,21 @@ derives — shortest PSD-feasible word — returns the minimum by construction. 
 principle and the requirement are in direct opposition; that, not the arithmetic, is the
 substantive obstacle `qou-brng` now faces.
 
+## Sibling result, landed on `main` the same hour
+
+`be017ea57b` (`qou-brng`, another session) guards the *other* direction on the same
+multiplicity: **inverting** the `CoordinationSaturation` plateau for a coordination
+number `k` is generic — 27 of 30 (`eps`, target) combinations land inside the plausible
+window, so a `k` near 6 or 12 is not the framework predicting a lattice. Taken together
+the two close both routes to a multiplicity: **inverting** an anchor for it is a fit,
+and **deriving** it from the carrier gives the wrong sign.
+
+They are about different graphs and should not be conflated. Their `k` is a *bounded*
+degree; the `chain / coordination z = A-1` row above is the **complete** graph, which
+`CoordinationSaturation` already excludes by saturation (it gives `B/A = eps(A-1)/2`,
+unbounded, hence no plateau). So this file's chain row re-derives the excluded case
+from the crossing side and finds it at `-1`; it is not a second measurement of their `k`.
+
 ## Scope
 
 Scope **(b)** on the conjunction, with the invariant named — *integrality of a crossing

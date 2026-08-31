@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T03:50:45Z
+updated_at: 2026-08-31T04:00:54Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -364,3 +364,20 @@ multiplicity that is not half a crossing count is not lattice-valued, and this
 whole obstruction evaporates. Nothing derives `μ = c/2`; it is
 `countChannel`'s definition. (2) Find a selection principle that is not
 minimality. (3) Neither is started.
+
+
+### Sibling `be017ea57b` closes the other route (2026-08-31, same hour)
+
+Another session landed a numerology guard on this bean from the opposite
+direction: **inverting** the `CoordinationSaturation` plateau for a coordination
+number `k` is generic — 27 of 30 (`ε`, target) combinations land inside the
+plausible window — so `k ≈ 6` or `≈ 12` is not the framework predicting a
+lattice. Together with the result above, **both routes to a multiplicity are
+closed**: inverting an anchor for it is a fit, and deriving it from the carrier
+gives the wrong sign.
+
+Do not conflate the two `k`s. Theirs is a *bounded* degree; the `chain /
+coordination z = A−1` row above is the **complete** graph, which
+`CoordinationSaturation` already excludes by saturation. The chain row
+re-derives that excluded case from the crossing side (`−1`); it is not a second
+measurement of their `k`.
