@@ -519,3 +519,76 @@ the Gram first, then re-run Phase B against it — the branching constraint is
 already built and validated, so that step is a re-run, not new construction.
 Secondary, and cheap: audit consumers of `nf_channel_exact` now that it is
 callable and known wrong.
+
+---
+
+## The `H_{3A}` Frobenius Gram with off-diagonals — built 2026-08-31. It changes nothing, and now I know why.
+
+Probe `computations/probes/h3a_frobenius_gram_offdiagonal_probe.py` (6 assertions).
+
+**Two corrections, the second withdrawing my own previous diagnosis.**
+
+**1. In the block basis, diagonality is a THEOREM.** `cost_gram_from_arrays`
+builds `diag(tr_M(P_λ))` over the *central* primitive idempotents, and
+`P_λ P_μ = δ P_λ`, so `tr_M(P_λ P_μ) = δ·tr_M(P_λ)` identically. Nothing was
+omitted and nothing can be added there, at any `A` or `q`. Off-diagonals exist
+only away from the centre — in the NF (word) basis, where the `H_3` Gram is
+already richly non-diagonal (max `|off| = 1.2726`, rank 5 of 6).
+
+**2. So the object worth building** is the Gram on the constituent subalgebra
+`(H_3)^{⊗A} ⊂ H_{3A}`, dim `6^A`, whose elements are not central — and which is
+where the branching lives. Markov multiplicativity on disjoint strand blocks
+verified (36 pairs at `H_6`, max rel err `1.1e-8` = the f64 `y_λ` precision),
+giving `G^{(A)} = G^{⊗A}`, `t^{(A)} = TR_M^{⊗A}`:
+
+| A | dim `6^A` | rank | `5^A` | radical | max off-diag |
+|---|---|---|---|---|---|
+| 1 | 6 | 5 | 5 | 1 | 1.272584 |
+| 2 | 36 | 25 | 25 | 11 | 1.832269 |
+| 3 | 216 | 125 | 125 | 91 | 2.638104 |
+| 4 | 1296 | 625 | 625 | 671 | 3.798347 |
+
+Rank `5^A` **exactly** — the documented 1-dim `H_3` radical tensors up, so the
+radical is `6^A − 5^A` (91 of 216 at `A=3`).
+
+### And it changes nothing — the real reason
+
+The NF basis begins with the empty word, so `b₁ = 1` and `G_{1j} = t_j`:
+
+    t = G e₁          the cost vector IS the first row of its own constraint matrix
+
+So row 1 of `Gx ≥ u` reads `t·x ≥ u₁` — the objective bounded by one of its own
+constraints. That row is always binding, the optimum is always `u₁`, the dual is
+always `e₁`. Measured invariant under: equality **and** inequality forms;
+realisable, non-realisable, and kernel-direction demands; identity kept **and**
+dropped; and `T` vs `³He` (identical active sets *and* duals, only the objective
+differing — and that difference is just `tr_M` of the free product).
+
+Second, independent reason for the equality form: `u = Gx ∈ range(G) = ker(G)^⊥`
+(`G` symmetric), and the dual feasible set is affine with direction `ker(G)`, so
+`u·y` is **constant** on it. Verified to `1.2e-15`.
+
+### What this unifies
+
+    b₁ = 1  ⟹  t = G e₁  ⟹  row 1 of the constraint IS the objective
+
+  (i) optimal value ≡ 0 — documented, the `u = 0` case
+  (ii) `y₀* = 0` — documented
+  (iii) demand cannot select under a **diagonal** Gram — my previous turn
+  (iv) demand cannot select under **any** Gram — here
+
+**(iii) was a special case. "The blocker is the diagonal Gram" is WITHDRAWN.**
+Building the off-diagonals was worth doing to settle it, but they are not what
+stands between Phase B and a selection; one line of linear algebra is.
+
+### Next
+
+**The demand has to enter the OBJECTIVE, not the constraints.** Minimising
+`‖x − x_free‖²_G` over the feasible set is a QP whose solution genuinely depends
+on `x_free` — the demand selects by projection rather than by pricing, and `G`'s
+`5^A`-dimensional range is exactly where such a projection lands. That is the
+closest thing to what Phase B was meant to do, and `G^{(A)}` is already built for
+it. My judgement: try that before anything else, because it reuses everything and
+is the only route measured here that is not already excluded. Dropping `tr_M` as
+the objective is the fallback; note that dropping the *identity* is not enough —
+measured, the LP then goes unbounded rather than selective.
