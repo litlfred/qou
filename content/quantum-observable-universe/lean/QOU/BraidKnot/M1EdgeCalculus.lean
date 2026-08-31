@@ -364,6 +364,45 @@ theorem diagLen_area_bound (a : ℕ) :
     rw [← hsplit, Finset.range_eq_Ico]
   omega
 
+/-- The diagonals are disjoint and sit inside the diagram, so any initial run of
+them accounts for at most all `n` cells. This is what turns
+`diagLen_area_bound`'s partial sum into the area constraint `... ≤ n`. -/
+theorem sum_diagLen_le_card (T : ℕ) :
+    ∑ c ∈ Finset.range T, diagLen μ c ≤ μ.card := by
+  classical
+  have hcard : ∑ c ∈ Finset.range T, diagLen μ c
+      = ((Finset.range T).sigma fun c => diagIdx μ c).card := (Finset.card_sigma _ _).symm
+  rw [hcard]
+  refine Finset.card_le_card_of_injOn (fun p => (p.2, p.2 + p.1)) ?_ ?_
+  · rintro ⟨c, i⟩ hp
+    simp only [Finset.mem_coe, Finset.mem_sigma] at hp
+    simp only [Finset.mem_coe, YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
+    have h2 := hp.2
+    rw [mem_diagIdx] at h2
+    exact h2.2
+  · rintro ⟨c₁, i₁⟩ _ ⟨c₂, i₂⟩ _ h
+    simp only [Prod.mk.injEq] at h
+    obtain ⟨rfl, h2⟩ := h
+    have : c₁ = c₂ := by omega
+    subst this
+    rfl
+
+/-- **The area constraint, against `n`.** Chaining the two:
+
+    2 a · D a + D a (D a + 1)  ≤  2 n.
+
+Solving that quadratic for `D a` is exactly the bound the quadrature uses,
+`D a ≤ √(a² + 2n) - a`, stated here without `Real.sqrt`. In the rescaled
+variables of `wlambda_covariance_epic_M1_limit_closed_form.py` this is the
+`A = 1` line — the fully deterministic one, needing no limit-shape input at all,
+which on its own already takes the budget from failing to a 0.094 % margin. The
+7.54 % figure quoted there uses `A_σ → n/2` instead, and that is a limit-shape
+input, not this theorem. -/
+theorem diagLen_area_bound_card (a : ℕ) :
+    2 * (a * diagLen μ a) + diagLen μ a * (diagLen μ a + 1) ≤ 2 * μ.card :=
+  le_trans (diagLen_area_bound μ a)
+    (Nat.mul_le_mul_left 2 (sum_diagLen_le_card μ _))
+
 /-! ## Refining the opposite-sign bound
 
 `abs_diagLen_sub_transpose_le` bounds the opposite-sign slope by `D 0 / g`, and
