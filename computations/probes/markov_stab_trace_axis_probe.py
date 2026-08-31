@@ -7,9 +7,9 @@ Executes the §3 plan of
 Formalize-first (PR #1826): the structural invariant is the Markov
 stabilization parameter
 
-    z = 1 / (q^½ + q^{-½})        ([`hecke_symbolic.py:46`])
+    z = q³ / (q² + 1)              (convention D; `hecke_symbolic.py:46`)
 
-which at the substrate q₀ is z ≈ 0.4993 < 1, whereas the production
+which at the substrate q₀ is z ≈ 0.6127 < 1, whereas the production
 `linking_weight ≈ 2.53 > 1`.  A single stabilization β ↦ β·σ₃ scales
 the trace by z < 1, so it CANNOT be a >1 multiplier — the naive
 reading is dead before any scan.  The probe records that obstruction
@@ -18,6 +18,21 @@ and tests the two surviving candidates exactly:
   M1 — linking_weight ?= tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ  (identity
        trace; f^λ = ordinary/hook dimension, χ^λ(1) = f^λ).
   M2 — (1/4)·Σ_{λ⊢4} dim_q ?= z^{±k}·(clean H₃ quantity), k ∈ {1,2}.
+
+CONVENTION LABEL CORRECTED 2026-08-31 (bean qou-t9r1).  The computation
+moved to convention D on 2026-08-30 (`z_markov` at ~line 153), but this
+docstring and the `direction_obstruction_note` field written into the
+witness both still stated `z = 1/(q^½ + q^{-½}) ≈ 0.4993`, which is z_C.
+The committed witness therefore carried TWO DISAGREEING FIELDS: a correct
+`z_markov_at_q0 = 0.61268803714646525159582986394589924802630839154509`
+(z_D) beside prose quoting 0.4993 (z_C), 0.1134 apart.  Only the labels
+were wrong; the numbers were already D.
+
+The CONCLUSION is unchanged by the correction, and that is worth stating
+rather than assuming: the obstruction needs only `z < 1 < linking_weight`,
+and z_D(q₀) = 0.6127 < 1 exactly as z_C(q₀) = 0.4993 did.  A convention
+crossing that moves a quantity by 22.7 % happens not to cross this
+threshold, so the probe's negative result survives its own re-labelling.
 
 EXPLORATORY — no production code, content, or production witnesses
 changed.  Emits `markov-stab-trace-axis-probe.witness.json`.
@@ -202,16 +217,19 @@ def main() -> int:
     w.add_data("direction_obstruction", bool(obstruction))
     w.add_data(
         "direction_obstruction_note",
-        "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. "
+        "z = q³/(q²+1) ≈ 0.6127 < 1 at q₀; linking_weight ≈ 2.53 > 1. "
         "A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it "
         "cannot produce the >1 linking_weight multiplier. The naive "
         "stabilization reading is structurally dead.",
     )
+    # NO-FLOAT64 (AGENTS.md, probes are not exempt): these were bare Python
+    # floats and the raw-float64 ratchet flagged them as they entered the
+    # witness.  The quantity is an exact 0/1 indicator, so mpf costs nothing.
     w.add_assertion(
         "z_markov_below_one_linking_weight_above_one",
-        computed=1.0 if obstruction else 0.0,
-        expected=1.0,
-        tolerance=0.5,
+        computed=mp.mpf(1) if obstruction else mp.mpf(0),
+        expected=mp.mpf(1),
+        tolerance=mp.mpf("0.5"),
     )
 
     # ── M1: identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ ──
