@@ -48,6 +48,18 @@ FINDINGS
    `float(qclt_binding(...))` cast at `canonical_isotope_witness.py:347`, a
    NO-FLOAT64 violation reported here, not adopted.
 
+6. It GENERALISES.  `--generalize` samples L4 rows from the stale shards and
+   checks the pre-excision sources against each committed value.  On a seeded
+   sample of 8 drawn from 3152 available rows, all 8 reproduce at the float64
+   floor.  One row (Z=71, N=80) shows 1.27e-15 relative against the residual,
+   which looks like a miss until the bar is put in the right place: its
+   residual is 5.7% of the pre-Coulomb term, so cancellation amplifies the
+   float64 floor by qclt/L4 = 17.4x.  The predicted bound is
+   eps*qclt/L4 = 1.93e-15 and the measured 1.27e-15 is UNDER it; against the
+   pre-cancellation quantity the error is 7.3e-17.  This is the same
+   amplification that produced the 2.19 story, showing up independently in the
+   error rather than in the value.
+
 PRECISION.  All arithmetic in this probe is carried as `mpmath.mpf`; `float()`
 is never used in a computation.
 """
@@ -145,6 +157,17 @@ def _measure(overlay_dir: Path | None = None) -> dict[str, mp.mpf]:
     return {"qclt": b, "coulomb": c, "l4": b - c}
 
 
+
+def _measure_at(overlay_dir: Path, z: int, n: int) -> dict[str, mp.mpf]:
+    """`_measure` for an arbitrary (Z, N)."""
+    global Z, N, A
+    Z, N, A = z, n, z + n
+    try:
+        return _measure(overlay_dir)
+    finally:
+        Z, N, A = 26, 19, 45
+
+
 def _overlay(names: list[str]) -> Path:
     """Materialise the named modules at their PRE-excision revision."""
     d = Path("/tmp/85o2-overlay-" + "+".join(sorted(names)))
@@ -156,6 +179,52 @@ def _overlay(names: list[str]) -> Path:
         ).stdout
         (d / f"{n}.py").write_text(blob)
     return d
+
+
+
+def generalize(n_sample: int = 8, seed: int = 85002) -> int:
+    """Check pre-excision sources against committed values across stale shards.
+
+    A row reproduces when its absolute error sits at the float64 floor.  The
+    floor must be measured against the PRE-Coulomb magnitude, not the residual:
+    the residual is a small difference of two large numbers, so cancellation
+    amplifies the floor by `qclt/L4`.  Judging a small residual against its own
+    magnitude manufactures a false miss.
+    """
+    import random
+
+    rng = random.Random(seed)
+    cands: list[tuple[int, int, str]] = []
+    for f in sorted(ROOT.glob("computations/canonical-isotope-witness-Z*.json")):
+        d = json.load(open(f))
+        if not d["computedAt"].startswith("2026-08-23"):
+            continue  # only the stale (pre-excision) shards
+        for r in d["data"]["rows"]:
+            if (r.get("layer") == "L4-qclt-colour-weighted"
+                    and r.get("prediction_MeV_50dps")):
+                cands.append((r["Z"], r["N"], r["prediction_MeV_50dps"]))
+    print(f"L4 rows in stale shards: {len(cands)}")
+    sample = rng.sample(cands, min(n_sample, len(cands)))
+
+    ov = _overlay(list(TOUCHED))
+    print(f"\n{'Z':>3} {'N':>3} {'recorded':>22} {'pre-excision':>22} "
+          f"{'err/L4':>10} {'err/qclt':>10} {'bound':>10} ok")
+    n_ok = 0
+    for z, n, recstr in sample:
+        m = _measure_at(ov, z, n)
+        rec = mp.mpf(recstr)
+        err = abs(m["l4"] - rec)
+        rel_l4 = err / abs(rec)
+        rel_q = err / m["qclt"]
+        bound = mp.mpf(2) ** -53 * m["qclt"] / abs(m["l4"])
+        ok = rel_l4 <= bound
+        n_ok += bool(ok)
+        print(f"{z:>3} {n:>3} {mp.nstr(rec, 16):>22} {mp.nstr(m['l4'], 16):>22} "
+              f"{mp.nstr(rel_l4, 4):>10} {mp.nstr(rel_q, 4):>10} "
+              f"{mp.nstr(bound, 4):>10} {'YES' if ok else 'NO'}")
+    print(f"\nreproduced within the cancellation-adjusted float64 bound: "
+          f"{n_ok}/{len(sample)}")
+    return 0 if n_ok == len(sample) else 1
 
 
 def main() -> int:
@@ -241,4 +310,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
+    if "--generalize" in sys.argv:
+        raise SystemExit(generalize())
     raise SystemExit(main())
