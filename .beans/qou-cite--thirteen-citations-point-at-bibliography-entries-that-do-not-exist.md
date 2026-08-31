@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-08-31T04:57:23Z
+updated_at: 2026-08-31T05:07:16Z
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`
@@ -198,3 +198,50 @@ Class B is a **decision, not research**, and is framed for the owner rather
 than actioned unilaterally: an alias entry would make the documented
 convention work at all 4436 sites with a one-entry change, but would put the
 same work in the bibliography twice.
+
+
+## CORRECTED AGAIN 2026-08-31 — Class B was overstated; the Lean layer is FINE
+
+The Class B analysis above says `manuscript` is *"a convention that instructs
+4436 sites to use a key the same paragraph requires to resolve"*, and I put a
+decision to the owner on that basis, recommending an alias entry. **Both were
+wrong, and the evidence was one grep away.**
+
+`validate-references.ts`, the Lean cross-checker, lines 171-172:
+
+    // Skip cross-paper refs (paper-dir:label format) and manuscript self-refs
+    if (!referenceMap.has(key) && key !== "manuscript" && !key.includes(":")) {
+
+**`manuscript` is explicitly exempted, deliberately, with a comment saying so.**
+Confirmed by running the checker: `manuscript` errors = **0** of 19. The 4436
+Lean sites are working exactly as designed. AGENTS.md §1 is not in tension with
+itself in practice — the checker implements the carve-out §1 implies.
+
+### What the real defect is — much smaller, and obviously fixable
+
+`cites-resolve` (`folio-assistant/schemas/constraints.ts:986-990`) does the
+same job for `.ts` `cites[]` and has **neither** carve-out:
+
+    const missing = (block.cites as string[]).filter((c) => !ctx.allRefIds!.has(c));
+
+No `manuscript`, no `key.includes(":")`. So two checkers over the same key
+conventions disagree, and only the newer one flags the sanctioned key.
+
+**The fix is one condition in `cites-resolve`, matching the precedent already
+in the sibling checker** — not an alias entry (which would duplicate the work
+in the bibliography), and certainly not a 4436-site sweep. It also picks up the
+cross-paper `:` carve-out, which `cites-resolve` is likewise missing; nothing
+exercises that today, but a qualified `paper-dir:label` in a `cites[]` would
+false-positive the same way.
+
+That change is in **folio-assistant**, not this repo.
+
+### The residue
+
+With Class B correctly scoped, `qou-cite` is: **10 orphaned `cites[]` keys
+supporting no prose** (Class A, unchanged) plus **2 false positives from a
+missing carve-out**. Neither is a broken citation in the paper.
+
+The genuinely load-bearing citation defect found while checking this is a
+different bean: `qou-e4eu`, 19 dead Lean `-- Ref:` keys, 7 of which are not
+citations at all.
