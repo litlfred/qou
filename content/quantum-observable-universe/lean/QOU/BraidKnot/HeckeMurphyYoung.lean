@@ -4,6 +4,9 @@ import QOU.BraidKnot.ColSuperstandardTableau
 import QOU.BraidKnot.HeckeCellular
 import QOU.BraidKnot.HeckeTypeAPresentationEquiv
 import QOU.Mathlib.SchenstedRSKBurnside
+import QOU.BraidKnot.NumSYTBridge
+import QOU.BraidKnot.SpechtStandardBasisCore
+import Mathlib.LinearAlgebra.Dimension.DivisionRing
 
 /-!
 # QOU.BraidKnot.HeckeMurphyYoung — Murphy's `x_λ` over the *actual* Young subgroup
@@ -358,5 +361,107 @@ No combinatorial content: `lead` is an `Equiv`, so injectivity is `Equiv.injecti
 in identifying the right map, not in proving this. -/
 theorem lead_injective (n : ℕ) : Function.Injective (lead n) :=
   (murphyIndexEquivPerm n).injective
+
+/-! ## 8. The Murphy family, and the route to (C1) that Mathas actually takes
+
+### Why `Triangular` is NOT the route — a measured refutation
+
+The obvious plan was to feed `m_{st}` to the corpus's linear-independence lever
+`QOU.BraidKnot.SpechtStandardBasis.Triangular` against the `T_w` basis, with the RSK
+bijection `lead` of §7 as the leading map. `lead_inj` is then free (`lead_injective`).
+**That plan is dead, and not merely for RSK.** An exact enumeration of the `T_w`-supports
+of every `m_{st}` — `computations/hecke/murphy_supp_rsk_probe.py`, integer arithmetic
+throughout, complete at `n = 3, 4, 5` — establishes both halves:
+
+* **RSK is not even a legal leading map.** `diag_unit` forces `lead x ∈ supp (m x)`, and
+  `RSK⁻¹(s,t)` lies in that support for only `1/6`, `3/24`, `11/120` of the indices
+  (`11/120` with the other `(P,Q)` orientation: `3/6`, `9/24`, `23/120`). The smallest
+  witness is hand-checkable: at `n = 3`, `λ = (2,1)`, `s = t = tλ`, we have
+  `d(s) = d(t) = 1`, so `m_{st} = x_λ = T_1 + T_{s₁}` with support `{1, s₁}`, while
+  `RSK⁻¹(s,t) = s₂`, which is not in it.
+* **No leading map works at all.** If `(≤, lead)` satisfied `Triangular`, the order's
+  maximum `M` would satisfy: `M ∈ supp (m x) → lead x = M`, so by injectivity `M` lies in
+  **exactly one** support; deleting that index and `M` leaves the same problem one size
+  down. So a `Triangular` structure exists iff this peeling never stalls. At `n = 3` it
+  stalls immediately — each of the six permutations lies in **at least two** of the six
+  supports (multiplicities `4, 2, 4, 2, 2, 2`), because `x_{(3)} = Σ_{w ∈ S₃} T_w` alone
+  already has full support. It stalls after 1 of 24 indices at `n = 4` and 5 of 120 at
+  `n = 5`.
+
+This is a **scope-(b) structural exclusion** in the sense of AGENTS.md: the invariant cited
+is the peeling argument above (the order-maximum must lie in exactly one support), and the
+`n = 3` check is exhaustive rather than sampled. It excludes *this lever applied to this
+pair of bases* — it says nothing against the Murphy basis itself, which is a theorem.
+
+### The route that does work
+
+Mathas takes the other road, and it needs no triangularity ([mathas1999], Thm 3.20):
+
+> *"Lemma 3.9 and Lemma 3.14 show that `M` spans `H`. By Theorem 1.11 we know that `H` is a
+> free `R`-module of rank `n!`. However `|M| = Σ_λ |Std(λ)|²` and it is well-known that this
+> sum is equal to `n!` (for example, use the Robinson–Schensted correspondence). Thus `M` is
+> a basis of `H`."*
+
+Every ingredient but spanning is already sorry-free in this corpus:
+
+| Mathas' ingredient | here |
+|---|---|
+| `H` free of rank `n!` | `QOU.Hecke.TwBasis.finrank_eq_factorial` |
+| `Σ_λ (f^λ)² = n!` via RSK | `murphyIndex_card`, `murphyIndexEquivPerm` |
+| spanning | **open** — the one remaining input |
+
+So `basisOfSpanning` below is the whole of (C1) *given* spanning, and it is a genuine
+derivation rather than an assumption dressed up: the hypothesis is Mathas' Lemma 3.14, the
+conclusion (`Module.Basis`) is derived from it together with the two counts. -/
+
+open QOU.BraidKnot.SpechtStandardBasis (sytToTableau) in
+/-- The **Murphy family** `m_{st}`, indexed by `MurphyIndex (n + 1)` — i.e. by a partition of
+`n + 1` together with an ordered pair of standard tableaux of that shape, which is exactly
+Murphy's index set. The two `StandardYoungTableau` types in the corpus are reconciled by
+`NumSYTBridge.toBraidKnotSYT`, and the filling by `SpechtStandardBasis.sytToTableau`. -/
+noncomputable def murphyFamily (x : MurphyIndex (n + 1)) :
+    QOU.Hecke.IwahoriHecke K q n := by
+  classical
+  exact murphyM K q n (QOU.Mathlib.partitionShape_card x.1)
+    (sytToTableau (toBraidKnotSYT x.2.1)) (sytToTableau (toBraidKnotSYT x.2.2))
+
+noncomputable instance instFintypeMurphyIndex (n : ℕ) : Fintype (MurphyIndex n) :=
+  Fintype.ofEquiv _ (murphyIndexEquivPerm n).symm
+
+/-- `#MurphyIndex n = n!` as a `Fintype.card` — the `Nat.card` form is `murphyIndex_card`.
+This is Mathas' `|M| = Σ_λ |Std(λ)|² = n!`, transported along RSK. -/
+theorem murphyIndex_fintypeCard (n : ℕ) : Fintype.card (MurphyIndex n) = n.factorial := by
+  classical
+  rw [Fintype.card_congr (murphyIndexEquivPerm n), Fintype.card_perm, Fintype.card_fin]
+
+/-- **(C1) modulo spanning** — Murphy's basis theorem, reduced to its one open input.
+
+A family indexed by `MurphyIndex (n + 1)` that spans `H_n(q)` **is** a basis, because the
+index set has exactly `finrank` elements. Stated for an arbitrary family `m` so that the
+reduction is visibly independent of what `m` is; `murphyBasisOfSpanning` specialises it to
+`murphyFamily`. Nothing here assumes the conclusion: spanning goes in, a `Basis` comes out,
+and the bridge between them is `murphyIndex_fintypeCard` + `finrank_eq_factorial`. -/
+noncomputable def basisOfSpanning (m : MurphyIndex (n + 1) → QOU.Hecke.IwahoriHecke K q n)
+    (hspan : ⊤ ≤ Submodule.span K (Set.range m)) :
+    Module.Basis (MurphyIndex (n + 1)) K (QOU.Hecke.IwahoriHecke K q n) := by
+  classical
+  refine basisOfTopLeSpanOfCardEqFinrank m hspan ?_
+  rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
+
+/-- The Murphy basis itself, given Mathas' spanning lemma. -/
+noncomputable def murphyBasisOfSpanning
+    (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
+    Module.Basis (MurphyIndex (n + 1)) K (QOU.Hecke.IwahoriHecke K q n) :=
+  basisOfSpanning K q n (murphyFamily K q n) hspan
+
+/-- Linear independence of the Murphy family, given spanning — the (C1) half that the
+`Triangular` route was meant to supply. -/
+theorem murphyFamily_linearIndependent
+    (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
+    LinearIndependent K (murphyFamily K q n) := by
+  classical
+  refine linearIndependent_of_top_le_span_of_card_eq_finrank hspan ?_
+  rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
+
 
 end QOU.BraidKnot.HeckeMurphyYoung
