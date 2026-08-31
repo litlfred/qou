@@ -5,15 +5,15 @@ $^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test c
 Both $Z = 20$ and $N = 20$ are magic. By [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md), the categorical mass at each level is supported on a single self-conjugate partition. We use the self-conjugate hook-staircase of size $20$ \cite{geckpfeiffer2000} as a representative diagrammatic illustration:
 
 $$
-  \lambda_{20} \;=\; \mu_{20} \;=\; (5, 4, 4, 4, 3) \;=\; (5,4,4,4,3)'
+  \lambda_{20} \;=\; \mu_{20} \;=\; (5, 5, 4, 4, 2) \;=\; (5,5,4,4,2)'
 $$
 
 ```text
   ■ ■ ■ ■ ■
+  ■ ■ ■ ■ ■
   ■ ■ ■ ■
   ■ ■ ■ ■
-  ■ ■ ■ ■
-  ■ ■ ■
+  ■ ■
 ```
 
 This diagram is symmetric under transposition. Arms equal legs, yielding $\sum c(x) = 0$. The full-twist eigenvalues at level $20$ are $q^0 = 1$ on both the $Z$-block and the $N$-block.
