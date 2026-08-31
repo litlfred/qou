@@ -8,7 +8,7 @@ tags:
     - lean
     - needs:combinatorics
 created_at: 2026-08-30T14:46:08Z
-updated_at: 2026-08-31T03:12:59Z
+updated_at: 2026-08-31T03:21:55Z
 ---
 
 `RSKIdentitiesContext.branching_two_one` is the class's one remaining open field
@@ -128,3 +128,46 @@ direction and the bijection are the bulk and are untouched.
 
 The 0-based vs 1-based trap the note flagged is real and is recorded in the file header:
 skew entries are `range n`, straight entries are `Icc 1 n`.
+
+
+## 2026-08-31, second tranche — erase side COMPLETE, insert side ATTEMPTED AND NOT LANDED
+
+`QOU/Mathlib/SkewSYTMaxCorner.lean` is now 12 declarations, zero sorries, axiom-clean. Added:
+
+    le_eraseCorner_of_notMem      inner <= outer \ c  (what makes the smaller shape well-formed)
+    skewCellsOf_eraseCorner       skew(outer \ c, inner) = skew(outer, inner).erase c
+    card_skewCellsOf_eraseCorner  |skew(outer \ c, inner)| + 1 = |skew(outer, inner)|
+    mem_eraseCorner_of_ne         a non-corner cell of outer survives deletion
+    entry_lt_card_of_pos          S.entry i j < |skew| EVERYWHERE, not only on the skew region
+
+`skewCellsOf_eraseCorner` was written with a `c not in inner` hypothesis; the unused-variable
+linter showed it does no work and it is dropped. Carrying it would have implied the identity
+depends on the corner being outside inner, and whoever assembles the bijection would have
+threaded a hypothesis for nothing.
+
+## skewInsertMax: attempted, NOT landed
+
+The definition writes down easily -- put `|skew(outer \ c, inner)|` at `c`, keep `S`
+elsewhere -- and its `zeros` field goes through. `row_strict`, `col_strict` and `content` did
+not. Nothing was committed with a sorry.
+
+TWO CONCRETE OBSTACLES, so the next attempt does not rediscover them:
+
+1. **Do not `subst` the corner equality.** `subst h : (i,j2) = c` ELIMINATES `c`, and every
+   later reference to `c` in that branch then fails to elaborate. Destructure the corner as
+   explicit coordinates `(p, q)` in the theorem statement and case on `i = p`/`j = q` instead.
+2. **`rw [mem_eraseCorner]` does not fire** on a goal `x in eraseCorner outer c hc` -- the
+   lemma's LHS is diagram membership and does not match syntactically. Apply the iff as a TERM:
+   `(mem_eraseCorner outer c hc x).mpr <hx, hne>`. `mem_eraseCorner_of_ne` now packages this,
+   so callers should use it rather than re-deriving.
+
+The `content` field is the largest remaining obligation: it must show
+`image entry (skew(outer,inner)) = range (N+1)` from `S.content : image = range N` plus the new
+value `N` at `c`. `card_skewCellsOf_eraseCorner` supplies the cardinality half.
+
+## Honest state of the whole route
+
+DONE: the erase geometry, and the diagram-level facts around it.
+NOT DONE: skewInsertMax, the erase/insert bijection, the branching sum itself, and G(mu,k).
+The remaining work is still the bulk. Do not read 12 sorry-free declarations as the branching
+rule being close -- the hard direction has not started.
