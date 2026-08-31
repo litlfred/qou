@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:32:55Z
+updated_at: 2026-08-31T05:38:04Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1002,3 +1002,26 @@ column 1" IS "every row has length ≤ 1", and the row-standard condition is the
 then (c) 3.14's dominance induction. Also still open and cheap-ish: `IsRowStandard` for the
 image of a standard tableau under `sytToTableau` (the forgetful direction), which the
 straightening's target side will want.
+
+
+### 2026-08-31 — the forgetful map Std -> RowStd, and the lemma it needed
+
+`entry_lt_entry_of_lt` and `isRowStandard_sytToTableau`, both sorry-free.
+
+**It was not immediate, and the reason is worth recording.**
+`StandardYoungTableau.row_strict` compares only ADJACENT cells (`entry i j < entry i (j+1)`),
+while row-standardness compares arbitrary pairs within a row. The corpus had no transitive form
+and Mathlib has none for this type, so `entry_lt_entry_of_lt` proves it by induction on the
+right-hand column, using the diagram's up-left closure to know the intermediate cells exist.
+That transitive step IS the content; the bridging lemma on top of it is bookkeeping
+(`sytToTableau` is the inverse of `cellLabel`, and `cellLabel` is literally `T.entry`).
+
+`entry_lt_entry_of_lt` is about `StandardYoungTableau` alone and BELONGS UPSTREAM in
+`QOU.BraidKnot.StandardYoungTableau`; kept in RowStandardTableau.lean to hold the change to one
+file, same call as the `Tw_mul_σ_*` lemmas in HeckeMurphyYoung. Both are flagged in their
+docstrings as misplaced-on-purpose so a later tidy-up knows where they go.
+
+**next**: Mathas Lemma 3.13 — the Garnir decomposition `t = g·w` with
+`ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` for a row-standard non-standard `t` — then 3.14's dominance
+induction. Both index sets and the map between them now exist, so 3.14 is finally STATABLE,
+which it was not before this session.
