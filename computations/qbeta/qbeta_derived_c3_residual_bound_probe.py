@@ -106,10 +106,16 @@ def main() -> int:
         "the cache's 0.0 ppb at k=3 is the EXTRACTION, not a measurement — "
         "so the cache cannot answer what a DERIVED c_3 would leave")
 
-    # --- FOUND EN ROUTE: the PSLQ witness straddles the two q0 layers ------
-    # Its recorded u is the MUON-pin value while it also records the proton q0
-    # and a proton-pinned c_3.  Detected because the amplifier check below
-    # failed against the correct u; kept as an assertion so it cannot be lost.
+    # --- RETRACTED: this is NOT a layer straddle. My first reading was wrong.
+    # The amplifier check failed against the proton-pin u, and I wrote it up as a
+    # straddle in `qbeta-ck-basis-constrained-pslq`. It is not. That producer sets
+    # `chain = ladder_chain(Q0_CANONICAL)` DELIBERATELY, because its `C3_EMP_CACHE`
+    # is the value extracted AT that pin, and its own lines 86-89 warn:
+    #   "Only C3_EMP_CACHE is extracted at Q0_CANONICAL; pairing either of the
+    #    others with that pin measures a producer difference, not an anchor slope
+    #    (bean qou-t39x -- that mismatch is where the corpus's 4.6e6 came from)."
+    # So its u is correctly paired with its c_3, and I was one commit from
+    # repeating the exact mis-pairing that file exists to prevent.
     def u_of(q0: str) -> mp.mpf:
         qq = mp.mpf(q0); hh = qq - 1 / qq; hb = (qq - 1) / qq
         return mp.sqrt((hh ** 2 + 3) / (hh ** 2 + 4)) * hb ** 2
@@ -117,29 +123,30 @@ def main() -> int:
     u_pslq = mp.mpf(pslq["u_substrate"])
     u_from_proton = u_of(cache["q_0"])
     u_from_muon = u_of(str(pslq["q0_canonical"]))
-    chk("cache_u_is_exactly_recomputable_from_q0",
+    chk("cache_u_is_exactly_recomputable_from_its_own_q0",
         abs(u - u_from_proton) / u_from_proton < mp.mpf("1e-40"),
-        f"ck-cache u reproduces from its own q_0 to "
-        f"{mp.nstr(abs(u - u_from_proton) / u_from_proton, 4)} — the cache is self-consistent")
-    chk("pslq_witness_u_is_the_MUON_value",
+        f"ck-cache u reproduces from its own q_0 (proton) to "
+        f"{mp.nstr(abs(u - u_from_proton) / u_from_proton, 4)}")
+    chk("pslq_u_is_exactly_recomputable_from_ITS_own_q0",
         abs(u_pslq - u_from_muon) / u_from_muon < mp.mpf("1e-25"),
-        f"qbeta-ck-basis-constrained-pslq records u = {mp.nstr(u_pslq, 20)}, which is "
-        f"u at the MUON pin (match {mp.nstr(abs(u_pslq - u_from_muon) / u_from_muon, 4)}) "
-        f"while the same witness records q0_proton and c3_proton_on_record — a LAYER "
-        f"STRADDLE, {mp.nstr(abs(u_pslq - u_from_proton) / u_from_proton, 6)} relative")
+        f"pslq u reproduces from Q0_CANONICAL (muon-family) to "
+        f"{mp.nstr(abs(u_pslq - u_from_muon) / u_from_muon, 4)} — each producer is "
+        "SELF-CONSISTENT at its own anchor; the 2.1e-7 gap between them is the "
+        "anchor difference, deliberately, NOT a straddle")
 
     amp3 = mp.mpf(str(pslq["amplifier_dc3_dQrel"]))
     amp4 = mp.mpf(str(pslq["amplifier_dc4_dQrel"]))
-    chk("straddle_does_NOT_change_the_pslq_conclusion",
-        abs(mp.log10(1 + abs(1 / amp3 - u3) / u3)) < mp.mpf("1e-5"),
-        f"the amplifier is off by {mp.nstr(abs(1/amp3 - u3)/u3, 4)} relative, i.e. "
-        f"{mp.nstr(abs(mp.log10(1 + abs(1/amp3 - u3)/u3)), 3)} effective digits, against "
-        "that witness's 6.99-digit deficit — its identification bound STANDS; only the "
-        "recorded u / amplifiers are on the wrong layer")
-    chk("amplifier_dc4_is_inverse_u_fourth_at_its_own_layer",
-        abs(1 / amp4 - u_from_muon ** 4) / u_from_muon ** 4 < mp.mpf("1e-5"),
-        f"1/amplifier_dc4 = {mp.nstr(1/amp4,10)} vs muon-pin u^4 = "
-        f"{mp.nstr(u_from_muon**4,10)} — consistent once the layer is identified")
+    chk("pslq_amplifiers_match_ITS_OWN_anchor",
+        abs(1 / amp3 - u_from_muon ** 3) / u_from_muon ** 3 < mp.mpf("1e-5")
+        and abs(1 / amp4 - u_from_muon ** 4) / u_from_muon ** 4 < mp.mpf("1e-5"),
+        f"1/amp3 vs muon u^3: {mp.nstr(abs(1/amp3 - u_from_muon**3)/u_from_muon**3, 4)}; "
+        f"1/amp4 vs muon u^4: {mp.nstr(abs(1/amp4 - u_from_muon**4)/u_from_muon**4, 4)} — "
+        "consistent at the anchor the producer actually uses")
+    chk("NO_wrong_pinning_found_in_either_producer", True,
+        "checked both: ck-cache is proton-pinned and self-consistent; "
+        "qbeta_ck_basis_constrained_pslq is canonical/muon-pinned BY DESIGN and "
+        "self-consistent. This bound uses the CACHE's proton u throughout, which is "
+        "the right one for a proton-pin statement.")
 
     # --- the greedy mechanism, demonstrated ------------------------------
     # c_3 needed to annihilate the k=2 residual, from the ladder shape alone

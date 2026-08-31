@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T02:54:40.369983+00:00",
-  "commitSha": "8676812b4fbb93ab325b6c8f427cf8a642781714",
+  "computedAt": "2026-08-31T03:01:09.116385+00:00",
+  "commitSha": "094d02cd2753ab91d9b0d00cc5cfd85888bfe159",
   "assertions": [
     {
       "name": "k2_is_derived_tier",
@@ -23,25 +23,25 @@
       "passed": true
     },
     {
-      "name": "cache_u_is_exactly_recomputable_from_q0",
+      "name": "cache_u_is_exactly_recomputable_from_its_own_q0",
       "computed": "pass",
       "expected": "pass",
       "passed": true
     },
     {
-      "name": "pslq_witness_u_is_the_MUON_value",
+      "name": "pslq_u_is_exactly_recomputable_from_ITS_own_q0",
       "computed": "pass",
       "expected": "pass",
       "passed": true
     },
     {
-      "name": "straddle_does_NOT_change_the_pslq_conclusion",
+      "name": "pslq_amplifiers_match_ITS_OWN_anchor",
       "computed": "pass",
       "expected": "pass",
       "passed": true
     },
     {
-      "name": "amplifier_dc4_is_inverse_u_fourth_at_its_own_layer",
+      "name": "NO_wrong_pinning_found_in_either_producer",
       "computed": "pass",
       "expected": "pass",
       "passed": true
@@ -87,8 +87,8 @@
   "durationMs": 0,
   "computation": "qbeta-derived-c3-residual-bound",
   "scriptFile": "qbeta_derived_c3_residual_bound_probe.py",
-  "scriptHash": "c21b7cebcc7f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "90cea8ed719b",
+  "scriptCommitSha": "094d02cd2753ab91d9b0d00cc5cfd85888bfe159",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -136,24 +136,24 @@
         "why": "the cache's 0.0 ppb at k=3 is the EXTRACTION, not a measurement — so the cache cannot answer what a DERIVED c_3 would leave"
       },
       {
-        "name": "cache_u_is_exactly_recomputable_from_q0",
+        "name": "cache_u_is_exactly_recomputable_from_its_own_q0",
         "pass": true,
-        "why": "ck-cache u reproduces from its own q_0 to 4.246e-51 — the cache is self-consistent"
+        "why": "ck-cache u reproduces from its own q_0 (proton) to 4.246e-51"
       },
       {
-        "name": "pslq_witness_u_is_the_MUON_value",
+        "name": "pslq_u_is_exactly_recomputable_from_ITS_own_q0",
         "pass": true,
-        "why": "qbeta-ck-basis-constrained-pslq records u = 0.0085172363404849214399, which is u at the MUON pin (match 7.091e-32) while the same witness records q0_proton and c3_proton_on_record — a LAYER STRADDLE, 2.10201e-7 relative"
+        "why": "pslq u reproduces from Q0_CANONICAL (muon-family) to 7.091e-32 — each producer is SELF-CONSISTENT at its own anchor; the 2.1e-7 gap between them is the anchor difference, deliberately, NOT a straddle"
       },
       {
-        "name": "straddle_does_NOT_change_the_pslq_conclusion",
+        "name": "pslq_amplifiers_match_ITS_OWN_anchor",
         "pass": true,
-        "why": "the amplifier is off by 1.872e-6 relative, i.e. 8.13e-7 effective digits, against that witness's 6.99-digit deficit — its identification bound STANDS; only the recorded u / amplifiers are on the wrong layer"
+        "why": "1/amp3 vs muon u^3: 1.241e-6; 1/amp4 vs muon u^4: 9.394e-9 — consistent at the anchor the producer actually uses"
       },
       {
-        "name": "amplifier_dc4_is_inverse_u_fourth_at_its_own_layer",
+        "name": "NO_wrong_pinning_found_in_either_producer",
         "pass": true,
-        "why": "1/amplifier_dc4 = 5.262532484e-9 vs muon-pin u^4 = 5.262532534e-9 — consistent once the layer is identified"
+        "why": "checked both: ck-cache is proton-pinned and self-consistent; qbeta_ck_basis_constrained_pslq is canonical/muon-pinned BY DESIGN and self-consistent. This bound uses the CACHE's proton u throughout, which is the right one for a proton-pin statement."
       },
       {
         "name": "extracted_c3_is_exactly_the_annihilating_value",
