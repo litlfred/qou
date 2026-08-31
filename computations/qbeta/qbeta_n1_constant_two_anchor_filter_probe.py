@@ -13,6 +13,15 @@ only to `K(0) = 1`:
 
     F(a, delta) = cos(a - delta/2) * K(delta)
 
+🛑 SYMBOL COLLISION — this `K(delta)` is NOT the `K` of Step 14's terminus
+decomposition `Q_beta = K * g * chi`, where `K` is the trace -> MeV scale
+OUTSIDE the Hecke trace and is verdict NEGATIVE (enumerated 2026-08-29,
+nothing parameter-free within 6.31 %). This one is the N=1 factor's
+multiplicative constant, is ~1, and is verdict FREE / filtered-but-undetermined.
+Do not carry either verdict across. Same class as the `alpha_eff` overload this
+arc already flags.
+
+
 Entry 12 showed bar-parity is VACUOUS on `K` (`delta = h^2/2` is bar-invariant),
 entry 14 withdrew the bar-midpoint rule that had selected `K = cos(delta/2)`, and
 entry 15 showed neither block resolution nor Kohno-Drinfeld conjugation reaches

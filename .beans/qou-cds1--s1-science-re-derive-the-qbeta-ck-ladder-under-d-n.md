@@ -4731,3 +4731,32 @@ itself REFUTED scope-(a) structurally by a one-scale/two-target gate
 fencing targets the **`c_k` rungs**, so it does not literally reach `K` — but
 the route I was pointing at is not open ground, and I should have grepped before
 recommending it rather than after.
+
+### Entry 16b — `K` is OVERLOADED in this arc, and the two verdicts are opposite
+
+Found while reading Step 14 against entry 16. Two different objects carry the
+letter `K` in this bean, and a reader who transfers a verdict between them gets
+the wrong answer in **both** directions:
+
+| | what it is | verdict |
+|---|---|---|
+| Step 14's `K` | the trace → MeV scale, **outside the Hecke trace entirely**; a MeV-scale factor | **NEGATIVE** — enumerated 2026-08-29, nothing parameter-free within 6.31 % |
+| entries 10c/12/16's `K(δ)` | the multiplicative constant in the N=1 factor `F = cos(a − δ/2)·K(δ)`, `K(0) = 1`; numerically ≈ 1 | **FREE** (entry 12), then filtered but **not determined** (entry 16) |
+
+Take "K is closed, enumerated negative" from Step 14 and you close a question
+that is open; take "K is free" from entry 12 and you re-open one that is
+enumerated. Same class as the `alpha_eff` overload this arc **already flags**
+(`qbeta_multi_block_eigenphase_probe` uses it for a dimension-weighted block
+average), and as the `markovZ` / `markovZC` / `markovZc` family in AGENTS.md —
+which is why the omission is worth recording rather than just fixing: the arc
+has the habit and this one still slipped through.
+
+Disambiguating notes added at all three sites so a reader arriving at any one of
+them sees the collision: `qbeta_d_frame_terminus_probe.py`,
+`qbeta_d_n1_constant_bar_silence_probe.py`,
+`qbeta_n1_constant_two_anchor_filter_probe.py`. All three re-run exit 0.
+
+**Not renamed.** Renaming either would churn a witness key and the arc's own
+prose across a dozen entries; the notes are the cheaper fix and they put the
+warning where the reader is. If a future tranche does rename, Step 14's is the
+one to change — it is the later coinage and the less used.
