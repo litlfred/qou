@@ -1276,3 +1276,76 @@ something must separate the proton and neutron objectives far more than the
 present flavour split does, or the binding constraint is not in
 `{Gx >= Gv, x >= 0}` at all. Both are well-posed; neither is a search over cost
 functionals, and that search is now closed.
+
+## 2026-08-31 — what sets the transitions: crossing-branch content, and q_0 IS reachable
+
+`computations/probes/nucleon_chain_sets_the_transition_probe.py`, 6/6.
+
+**The chains decode exactly.** `_hm_mp(nf,c,d,g,h)` right-multiplies by
+`(c*sigma_g + d)`, and `T^2 = hT+1` gives `T^-1 = T - h` (verified:
+`(sigma_0-h)sigma_0 = 1`). Writing `sigma_g(beta) := sigma_g - beta*h`, so that
+`beta = 0` is a forward crossing, `1/2` the unoriented average
+`(sigma+sigma^-1)/2`, and `1` an inverse crossing, both nucleons are
+
+    prefix (shared)   (sigma_0 sigma_1^-1)^3
+    MIDDLE            sigma_0(b0) sigma_0(b1) sigma_1(b2)
+    suffix (shared)   sigma_0^2
+
+    proton   b = (0,   1/2, 1/2)
+    neutron  b = (1/2, 1/2, 1  )
+
+reproducing `v_p`, `v_n` to maxdiff **exactly 0.0**. So the entire flavour split
+is `b += (1/2, 0, 1/2)` — **two half-steps toward inverse content**, one on the
+first `sigma_0` letter and one on the `sigma_1` letter. Nothing else differs.
+That matches the corpus's own reading of inverse crossings as the entanglement /
+"backwards in computational time" content: the neutron carries a full
+`sigma_1^-1` where the proton carries the unoriented average.
+
+**What moves the transition.** Sensitivities `d h*/d b`:
+
+    proton    [-0.0525, -0.0497, +0.4241]
+    neutron   [-0.0818, -0.0818, +0.1543]
+
+`b2` (the `sigma_1` letter) is the **only positive** sensitivity and the largest
+in magnitude at both — 8.1x the others at the proton, 1.9x at the neutron.
+Inverse content there pushes the transition up; the two `sigma_0` letters push
+weakly down. And `b0, b1` enter **symmetrically** — they multiply the same
+generator so `(sigma_0-b0 h)(sigma_0-b1 h)` is symmetric; confirmed exactly
+(`(0.2,1.0)` and `(1.0,0.2)` both give `0.046510103635`). Not sum-only: equal
+sums with different products differ, as the elementary symmetric functions
+require.
+
+**A third independent route to the same two numbers.** Margin-root bisection
+gives `0.477184636796` and `0.569840290998`, against `0.47718474189158` and
+`0.56984029056366` from the dual-support bisection (agreement 1.1e-7, 4.3e-10),
+which itself matched the primal gap window. Primal gap, dual support, margin
+root — three computations, two numbers.
+
+**AND THE OUTLOOK CHANGES: q_0 is INSIDE the reachable range.** Over the
+*physical* box `beta in [0,1]^3` (forward through inverse, nothing exotic) the
+transition spans `h* in [0.046495, 0.643594]`, and
+
+    h(q_0) = 0.209060299   lies strictly inside
+    15 of 195 box points fall BELOW it, 180 above
+
+So a proton/neutron pair whose transitions **straddle q_0 is not forbidden by
+anything structural** — the reachable set comfortably contains it. What fails is
+the specific assignment: the corpus's chains put both nucleons at 0.477 and
+0.570, on the same side. Along the `b0=b1=1/2` line the transition falls to
+`0.220405` at `b2 = 0.1` — within 5% of `h(q_0)` — then vanishes at `b2 = 0`;
+the points actually below q_0 have `b2 = 0` with the `sigma_0` letters carrying
+the inverse content instead.
+
+**No beta values are proposed, and none should be read out of this.** Which
+crossing branches the nucleons carry is a physical question the chains already
+answer; choosing betas to place a transition at q_0 would be exactly the
+census-fitting this probe series documents elsewhere. What is established is
+narrower and more useful: **the framework can put binding at q_0; the present
+crossing-branch assignment is what does not.**
+
+**Self-correction.** My first pass located transitions with a single-root
+bisection over `h in [0.02, 3]`, which returns garbage where the margin has zero
+or two roots — it reported `h* = 2.0009` for a chain with no root in range at
+all. The committed probe scans for sign changes on a geometric grid first and
+bisects only inside a bracketed one. The proton and neutron each have a single
+crossing, so their values were never affected.
