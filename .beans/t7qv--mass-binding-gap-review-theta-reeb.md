@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T16:30:47Z
+updated_at: 2026-08-31T17:09:49Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -164,3 +164,44 @@ the identity on 967/1000 random vectors).
 
 **Not touched:** the routes this bean marks refuted (Part 4 Frobenius-dual
 kernel, Part 5 amplifying-weight tower).
+
+
+---
+
+### 2026-08-31 — Gap #2: corpus-grep first, then the one piece that was closable
+
+**What the grep found — Gap #2 has moved past this bean's July frontier, and the
+direct route is blocked for a reason not recorded here.**
+`2026-08-08-volume-binding-four-point-is-unrunnable.md`: the whole-A link-volume
+four-point test is **data-blocked, not effort-blocked** — only 2 of the 4 targets
+are usable (D has `Vol = 0`, the Hopf link not being hyperbolic; ⁴He has no
+Reading-2 link). Not re-probed, per this bean's own warning. Two audits from
+2026-08-30 (`coordination-saturation-formalized`,
+`bonded-pair-linking-is-derived-and-not-uniform`) advanced adjacent pieces.
+
+**What is closed.** `CoordinationSaturation.lean` refutes complete-graph
+coordination by its **consequence** (`complete_graph_no_saturation`: the
+`C(A,2)` model drives `B/A` past every bound), then takes bounded degree as a
+modelling **assumption**. `MaxContactSimplex` proves the complete contact graph
+is geometrically impossible for A ≥ 5. **The two had never been connected.**
+
+> `no_complete_contact_of_five_le` — in 3D, no `A ≥ 5` equal spheres are all
+> mutually tangent. Sorry-free.
+
+So `C(A,2)` is not merely wrong by its predictions for heavy A; it is
+geometrically **unavailable**. That is this bean's "A≥5 saturates below" as a
+theorem rather than a premise, and an independent second refutation.
+
+**What it does not supply.** `bounded_degree_saturates` needs a **degree** bound
+— the 3D kissing number (12, Schütte–van der Waerden). Not proved here, and not
+a modest formalisation.
+
+**🪤 A trap, verified, recorded in the file.** The standard spherical-code
+argument (`Σ⟪uᵢ,uⱼ⟫² ≥ m²/d` vs `Σ_{i≠j} ≤ m(m−1)/4`) gives `m ≤ 9` in d=3.
+**False** — the icosahedral configuration realises 12. It needs
+`|⟪uᵢ,uⱼ⟫| ≤ ½`, but tangency bounds the inner product only from **above**.
+Measured there: inner products span `[−1, 0.4472]`, so `⟪⟫ ≤ ½` holds while
+`|⟪⟫| ≤ ½` fails at the antipodal pairs; `Σ⟪⟫² = 48` exactly, meeting the
+Frobenius bound `m²/d = 48` with equality and exceeding the naive ceiling 45.
+
+**Gap #2 stays OPEN** — the link-volume half is data-blocked.
