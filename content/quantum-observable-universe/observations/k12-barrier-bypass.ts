@@ -4,8 +4,8 @@ export default remark({
   label: "rem:k12-barrier-bypass",
   title:
     "Homological framework analytically bypasses the $k \\geq 12$ matrix-evaluation barrier",
-  interprets: "prop:magic-numbers-from-q",
-  uses: ["prop:diagrammatic-double-magic-lr-fusion"],
+  interprets: "conj:magic-numbers-from-q",
+  uses: ["conj:diagrammatic-double-magic-lr-fusion"],
   tags: [
     "magic-numbers",
     "shell-closure",

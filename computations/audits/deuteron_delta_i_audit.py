@@ -155,7 +155,37 @@ def main() -> int:
     # predictions live in `atomic-mass-via-rho-k.witness.json`.
     # This script remains a legacy-witness consumer by design.
     here = Path(__file__).parent
+    # NOTE (latent, secondary): this builds the path as `here / name` with no
+    # search, and `here` is `computations/audits/` while the witness lived in
+    # `computations/`. So even if the file were restored it would not be found
+    # from here -- unlike the sibling audits, which go through
+    # `_path_bridge.witness_path`. Moot while the file is deleted; recorded so
+    # it is not rediscovered as a fresh bug. Primary reason it cannot run:
     s3_path = here / "atomic-braid-mass-table.witness.json"
+    if not s3_path.exists():
+        raise FileNotFoundError(
+            "atomic-braid-mass-table.witness.json is missing.\n\n"
+            + """THE INPUT WAS DELIBERATELY REMOVED, AND "Run its producer first" IS
+IMPOSSIBLE ADVICE HERE.
+
+`atomic-braid-mass-table.witness.json` was deleted on 2026-05-19 by commit
+7f30a57924d on an explicit repo-owner directive -- "get rid of/fix what led you
+astray. it should be removed." It was one of 11 legacy mass-compute artifacts
+removed together because they MISLED: it carried the six-term formula at 24-54%
+error and an off-main commitSha, and agents were citing its values as canonical.
+`atomic_braid_mass_table.py`, its producer, was deleted in the SAME commit -- so
+the generic upstream-loader message telling you to run the producer names a file
+that does not exist.
+
+REPOINTING IS NOT AVAILABLE. This audit needs the six-term decomposition fields
+(`term1_atomic_total` and siblings). Measured: `term1_atomic_total`, `term1` and
+`six_term` are all absent from `canonical-mass-table-extended.witness.json`,
+whose rows carry a different schema entirely. The resolved formula
+`M(K) = rho_K * m_e * |tr_M(K)|` has no additive six-term structure, so those
+fields are legacy-only by construction.
+
+This audit is therefore dead by construction. Disposition (deprecate to
+computations/_deprecated/, or delete) is an owner decision; bean `qou-s1yn`.""")
     s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 

@@ -204,7 +204,7 @@ structure CategoricalMobiusEnergy (M : Type*) where
   classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst
 
 /-- The quantum Planck constant at a given substrate parameter value. -/
-noncomputable def hbar_q (q : ℝ) : ℝ := 1 - q⁻¹
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The quantum integer `[2]_q = q + q⁻¹`. -/
 noncomputable def quantumTwo (q : ℝ) : ℝ := q + q⁻¹
@@ -257,10 +257,10 @@ theorem MobiusEnergy_nonneg {M : Type*} (cme : CategoricalMobiusEnergy M)
 /-- **q-Deformed repulsion kernel**.
 
     At `q ≠ 1`, the classical `1/r²` kernel is replaced by
-    $$\frac{[2]_q}{r^2 - \hbar_q^2}$$
+    $$\frac{[2]_q}{r^2 - \hbarQ^2}$$
     which has a hard singularity at `r = ℏ_q`, creating an energy barrier. -/
 noncomputable def qRepulsionKernel (q r : ℝ) : ℝ :=
-  quantumTwo q / (r ^ 2 - hbar_q q ^ 2)
+  quantumTwo q / (r ^ 2 - hbarQ q ^ 2)
 
 /-- At the pole itself the kernel evaluates to `0` — **Lean's `x / 0 = 0`
     junk value, not a statement about the singularity.**
@@ -274,14 +274,14 @@ noncomputable def qRepulsionKernel (q r : ℝ) : ℝ :=
     that lemma — not this one — that the non-self-intersection corollary
     needs. -/
 theorem qRepulsionKernel_junk_value_at_pole (q r : ℝ)
-    (hr : r ^ 2 - hbar_q q ^ 2 = 0) :
+    (hr : r ^ 2 - hbarQ q ^ 2 = 0) :
     qRepulsionKernel q r = 0 := by
   unfold qRepulsionKernel
   rw [hr, div_zero]
 
 /-- The quantum Planck constant is positive when `q > 1`. -/
-theorem hbar_q_pos (q : ℝ) (hq : q > 1) : 0 < hbar_q q := by
-  unfold hbar_q
+theorem hbarQ_pos (q : ℝ) (hq : q > 1) : 0 < hbarQ q := by
+  unfold hbarQ
   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
@@ -296,8 +296,8 @@ theorem quantumTwo_pos (q : ℝ) (hq : q > 0) : 0 < quantumTwo q := by
     as `r ↘ ℏ_q`.  This is the energy barrier the non-self-intersection
     corollary rests on; `qRepulsionKernel_junk_value_at_pole` above is not. -/
 theorem qRepulsionKernel_unbounded_near_pole (q : ℝ) (hq : q > 1) (B : ℝ) :
-    ∃ r : ℝ, hbar_q q < r ∧ B < qRepulsionKernel q r := by
-  have hh : 0 < hbar_q q := hbar_q_pos q hq
+    ∃ r : ℝ, hbarQ q < r ∧ B < qRepulsionKernel q r := by
+  have hh : 0 < hbarQ q := hbarQ_pos q hq
   have hc : 0 < quantumTwo q := quantumTwo_pos q (by linarith)
   set M : ℝ := max B 1 + 1 with hM
   have hM1 : 1 < M := by
@@ -309,14 +309,14 @@ theorem qRepulsionKernel_unbounded_near_pole (q : ℝ) (hq : q > 1) (B : ℝ) :
     simp only [hM]; linarith
   set d : ℝ := quantumTwo q / M with hd
   have hdpos : 0 < d := div_pos hc hMpos
-  refine ⟨Real.sqrt (hbar_q q ^ 2 + d), ?_, ?_⟩
-  · have h1 : hbar_q q ^ 2 < hbar_q q ^ 2 + d := by linarith
-    have h2 : Real.sqrt (hbar_q q ^ 2) < Real.sqrt (hbar_q q ^ 2 + d) :=
+  refine ⟨Real.sqrt (hbarQ q ^ 2 + d), ?_, ?_⟩
+  · have h1 : hbarQ q ^ 2 < hbarQ q ^ 2 + d := by linarith
+    have h2 : Real.sqrt (hbarQ q ^ 2) < Real.sqrt (hbarQ q ^ 2 + d) :=
       Real.sqrt_lt_sqrt (sq_nonneg _) h1
     rwa [Real.sqrt_sq hh.le] at h2
-  · have hsq : Real.sqrt (hbar_q q ^ 2 + d) ^ 2 = hbar_q q ^ 2 + d :=
+  · have hsq : Real.sqrt (hbarQ q ^ 2 + d) ^ 2 = hbarQ q ^ 2 + d :=
       Real.sq_sqrt (by positivity)
-    have hden : Real.sqrt (hbar_q q ^ 2 + d) ^ 2 - hbar_q q ^ 2 = d := by
+    have hden : Real.sqrt (hbarQ q ^ 2 + d) ^ 2 - hbarQ q ^ 2 = d := by
       rw [hsq]; ring
     have hcancel : quantumTwo q / d = M := by
       rw [hd]; field_simp
@@ -371,48 +371,48 @@ structure NonSelfIntersection (M : Type*) where
       vacuous.  The docstring's own quantifier order (`∀ ε, ∃ E₀`) was the
       reverse of the code's, and the proximity antecedent it describes was
       never written as a hypothesis at all. -/
-  energyBarrier : ∀ s t : ℝ, separation s t < hbar_q cme.q →
+  energyBarrier : ∀ s t : ℝ, separation s t < hbarQ cme.q →
     ∀ E₀ : ℝ, cme.energy > E₀
 
 /-- The exclusion radius: `ℏ_q = 1 − q⁻¹`, derived from the categorical
-    Möbius energy data. Not a free parameter — it is always `hbar_q cme.q`. -/
+    Möbius energy data. Not a free parameter — it is always `hbarQ cme.q`. -/
 noncomputable def NonSelfIntersection.exclusionRadius {M : Type*}
-    (nsi : NonSelfIntersection M) : ℝ := hbar_q nsi.cme.q
+    (nsi : NonSelfIntersection M) : ℝ := hbarQ nsi.cme.q
 
 /-- The exclusion radius is exactly `ℏ_q`. -/
 theorem exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
-    nsi.exclusionRadius = hbar_q nsi.cme.q := rfl
+    nsi.exclusionRadius = hbarQ nsi.cme.q := rfl
 
 /-- The exclusion radius is positive — **derived** from `cme.q_gt_one`
-    through `hbar_q_pos`, not carried.  It was a structure field
+    through `hbarQ_pos`, not carried.  It was a structure field
     (`exclusionRadius_pos`) until 2026-08-30; a hypothesis that follows from
     another field is an assumption wearing a theorem's name.  Matches the
     repair already made to the content-block sibling
     `climax-volume-mass/non-self-intersection-proof.lean`. -/
 theorem exclusionRadius_pos {M : Type*} (nsi : NonSelfIntersection M) :
     0 < nsi.exclusionRadius :=
-  hbar_q_pos nsi.cme.q nsi.cme.q_gt_one
+  hbarQ_pos nsi.cme.q nsi.cme.q_gt_one
 
 /-- **The exclusion, derived rather than assumed.**  No two strand points of
     an inhabitant come within the exclusion radius: if one pair did, the
     barrier field would make the energy exceed itself. -/
 theorem separation_ge_exclusionRadius {M : Type*}
     (nsi : NonSelfIntersection M) (s t : ℝ) :
-    hbar_q nsi.cme.q ≤ nsi.separation s t := by
+    hbarQ nsi.cme.q ≤ nsi.separation s t := by
   by_contra h
   push_neg at h
   exact absurd (nsi.energyBarrier s t h nsi.cme.energy) (lt_irrefl _)
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
-theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
-  unfold hbar_q
+theorem hbarQ_classical_limit : hbarQ 1 = 0 := by
+  unfold hbarQ
   simp [inv_one]
 
 /-- At `q > 1`, the exclusion zone has positive radius, providing
     a genuine obstruction to self-intersection. -/
 theorem exclusionZone_positive (q : ℝ) (hq : q > 1) :
-    0 < hbar_q q :=
-  hbar_q_pos q hq
+    0 < hbarQ q :=
+  hbarQ_pos q hq
 
 end QOU

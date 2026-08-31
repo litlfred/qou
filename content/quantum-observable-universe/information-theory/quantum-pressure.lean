@@ -30,12 +30,12 @@ abbrev R_q := ℝ
     P_boundary = ℏ_q² · ⟨d_q K, d_q K⟩ / V_q.
     This is parameterised by the boundary pairing norm (a non-negative real).
     Label: def:quantum-pressure -/
-noncomputable def boundaryPressure {M : Type*} (sp : SubstrateParameter M)
+noncomputable def boundaryPressure {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (V_q : R_q) (boundaryNorm : R_q) : R_q :=
   (quantumPlanckConstant sp p) ^ 2 * boundaryNorm / V_q
 
 /-- The boundary pressure vanishes at classicality (q = 1). -/
-theorem boundaryPressure_classical {M : Type*} (sp : SubstrateParameter M)
+theorem boundaryPressure_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (V_q : R_q) (bN : R_q) (hq : sp.field p = 1) :
     boundaryPressure sp p V_q bN = 0 := by
   unfold boundaryPressure quantumPlanckConstant
@@ -43,7 +43,7 @@ theorem boundaryPressure_classical {M : Type*} (sp : SubstrateParameter M)
 
 /-- The boundary pressure is non-negative when inputs are non-negative
     and volume is positive. -/
-theorem boundaryPressure_nonneg {M : Type*} (sp : SubstrateParameter M)
+theorem boundaryPressure_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q) (hbN : 0 ≤ bN) :
     0 ≤ boundaryPressure sp p V_q bN := by
   unfold boundaryPressure
@@ -55,7 +55,7 @@ theorem boundaryPressure_nonneg {M : Type*} (sp : SubstrateParameter M)
 
 /-- The boundary pressure scales as ℏ_q²: it is a second-order quantum
     correction that vanishes faster than ℏ_q as q → 1. -/
-theorem boundaryPressure_order {M : Type*} (sp : SubstrateParameter M)
+theorem boundaryPressure_order {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (V_q : R_q) (bN : R_q) (hV : 0 < V_q)
     (hbN_le : bN ≤ 1) :
     boundaryPressure sp p V_q bN ≤

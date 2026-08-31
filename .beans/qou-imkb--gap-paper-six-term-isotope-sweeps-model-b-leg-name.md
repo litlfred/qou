@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:14:04Z
-updated_at: 2026-08-30T12:42:54Z
+updated_at: 2026-08-30T14:28:05Z
 ---
 
 ## What is wrong
@@ -169,3 +169,38 @@ should smuggle into a registry comment.
 **Default if nothing is done:** unchanged and safe. Both consumers refuse
 loudly, the sweep prints `ERR` rather than fabricating, and nothing downstream
 reads a Model B number — because there is no Model B number to read.
+
+
+## 2026-08-30 (second pass) — the retired assignment has THREE live sites, not one
+
+Found while scoping the `qou-46ab` residue. My earlier note named one site; the
+`6_2` deuteron assignment the 2026-08-29 ruling retired is live in **three**
+places, in **two** files:
+
+| # | site | kind |
+|---|---|---|
+| 1 | `build_six_term_substrate_model_b.py::MODEL_B_BRAID_REGISTRY[(1,1)]` | `"knot": "6_2"` |
+| 2 | `derivation_chain.py:188::MODEL_B_BRAID_META["D"]` | `"knot": "6_2"` |
+| 3 | `derivation_chain.py:178::TR_M_CANONICAL_B_AT_Q0["D"] = 0.288326` | a **value** derived from the retired knot |
+
+Site 2 is an **AST-verified live string constant**, not a comment — checked
+specifically, because four of the five `6_2` matches in that file *are*
+comments and a grep-level reading would have called the whole file clean.
+
+Site 3 is the one that would actually propagate: it is a number, not a label,
+and it already carries a `#1422-recompute pending` marker — so it was known to
+be stale for a *different* reason before the knot ruling made it stale for this
+one too.
+
+All three are now **flagged in place, not changed**, for the same reason: at
+A=2 the canonical braid closure is the object Model A already uses, so adopting
+it may collapse Model B's deuteron entry into Model A's, and whether that is
+correct is the modelling decision this bean is waiting on.
+
+**This does not change the decision, it changes its cost.** The one registry
+row I described is three edits across two files, one of which is a recomputed
+number rather than a relabel — so "resolve the row" is not a one-line follow-up
+once you rule.
+
+**And it sharpens why nothing is urgent:** every one of the three sits behind
+the missing Model B T1 producer. The path raises before reaching any of them.

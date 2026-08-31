@@ -1,0 +1,111 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:28:37.059709+00:00",
+  "commitSha": "6b533653629200bc0f829118c8ed7c638699de37",
+  "assertions": [
+    {
+      "name": "electron block carries zero SU(2) Markov weight but nonzero keystone W",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_(3,1,1)=0 (>2 rows, SU(2) Schur-Weyl); W_(3,1,1)!=0"
+    },
+    {
+      "name": "W-weighted shift is bar-EVEN (refutes the 'bar-mixed' leg of #2584)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "delta(q)-delta(1/q) = 4.00915e-50 at dps=50"
+    },
+    {
+      "name": "W-weighted shift is still orders too large for 210 ppb (leg (a) survives)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "|delta/T_mu|/210ppb = 3.3544e+6x"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 180,
+  "computation": "keystone-wlambda-vs-ylambda-projected-shift",
+  "scriptFile": "keystone_wlambda_vs_ylambda_projected_shift.py",
+  "scriptHash": "0778f8e0333f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_wlambda_vs_ylambda_projected_shift.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_wlambda_vs_ylambda_projected_shift.py"
+  },
+  "description": "Re-derives the keystone muon(3,2)/electron(3,1,1) projected Markov shift using the keystone block weight W_lambda = d_q^2/[n]_q! instead of the SU(2) Jones-Markov weight y_lambda, which is EXACTLY ZERO on the electron block (>2 rows, by the Schur-Weyl row-count rule) and therefore made the original comparison vacuous on one side. Under W_lambda both sides are nonzero. Of the two legs of the PR #2584 refutation, the magnitude leg survives (3.35e6x too large -- a scope-(a) negative) and the bar-parity leg fails (the shift is exactly bar-EVEN). The ledger's stronger claim that the Markov-trace surface is 'exhausted' was a scope-(b) structural exclusion resting on the refuted leg. No fit; nothing wired.",
+  "data": {
+    "block_weights": {
+      "(5,)": {
+        "rows": 1,
+        "y_lambda": "0.19427718737799284509808870128240153003884179718535",
+        "W_lambda": "0.007615387310278697502289916906063884359597017540542"
+      },
+      "(4, 1)": {
+        "rows": 2,
+        "y_lambda": "0.12498539716794710592423978517879254302439813333461",
+        "W_lambda": "0.12862000417524688333385081509220279241180740968726"
+      },
+      "(3, 2)": {
+        "rows": 2,
+        "y_lambda": "0.061156244790043746240990431600485659572713133895244",
+        "W_lambda": "0.20754220450585499746560289857570245568882724078671"
+      },
+      "(3, 1, 1)": {
+        "rows": 3,
+        "y_lambda": "0.0",
+        "W_lambda": "0.29466895630049289684912831508988915301041857900401"
+      },
+      "(2, 2, 1)": {
+        "rows": 3,
+        "y_lambda": "0.0",
+        "W_lambda": "0.20754220450585499746560289857570245568882724078671"
+      },
+      "(2, 1, 1, 1)": {
+        "rows": 4,
+        "y_lambda": "0.0",
+        "W_lambda": "0.12862000417524688333385081509220279241180740968726"
+      },
+      "(1, 1, 1, 1, 1)": {
+        "rows": 5,
+        "y_lambda": "0.0",
+        "W_lambda": "0.007615387310278697502289916906063884359597017540542"
+      }
+    },
+    "T_muon": "1.035297644146179825008280168103757601011978287725",
+    "T_electron": "1.7645872169610976700012074327452273836899123253036",
+    "delta": "-0.72928957281491784499292726464146978267793403757867",
+    "delta_over_T_mu": "-0.70442502881996814198156487593234187523620870845576",
+    "delta_over_T_e": "-0.4132918825462600311886788934435871735562420715743",
+    "over_210ppb_factor": "3354404.8991427054380074517901540089296962319450274",
+    "delta_bar_image": "-0.72928957281491784499292726464146978267793403757871",
+    "bar_even_residual": "4.0091470651382934692108047007272228182227953201576e-50",
+    "bar_odd_residual": "-1.4585791456298356899858545292829395653558680751574",
+    "bar_parity": "even",
+    "tier": "structural"
+  }
+}

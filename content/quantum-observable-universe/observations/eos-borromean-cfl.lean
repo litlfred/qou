@@ -32,11 +32,11 @@ def V_B' : ℝ := 7.32772
 
 /-- The q-deformed Planck constant. -/
 -- Ref: [manuscript] Ch. 2
-def hbar_q (q : ℝ) : ℝ := (q - 1) / q
+def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- Baryon mass in the Borromean phase (topological mass formula). -/
 -- Ref: [manuscript] Ch. 4
-def M_B (q : ℝ) : ℝ := V_B' / (hbar_q q) ^ 2
+def M_B (q : ℝ) : ℝ := V_B' / (hbarQ q) ^ 2
 
 /-- Effective quark mass in the CFL phase (crossing energy per quark).
     Three quarks per baryon, each with crossing energy from the
@@ -49,10 +49,10 @@ def M_D (q : ℝ) : ℝ := (q + q⁻¹) / 3
     We factor out n_B^{5/3} and define the pressure coefficient. -/
 -- Ref: [manuscript] Ch. 7
 def pressure_coeff_borromean (q : ℝ) : ℝ :=
-  (hbar_q q) ^ 2 / (5 * M_B q)
+  (hbarQ q) ^ 2 / (5 * M_B q)
 
 def pressure_coeff_cfl (q : ℝ) : ℝ :=
-  (hbar_q q) ^ 2 / (5 * M_D q) * 3 ^ (2/3 : ℝ)
+  (hbarQ q) ^ 2 / (5 * M_D q) * 3 ^ (2/3 : ℝ)
 
 /-- The stiffness ratio P_D/P_B at equal baryon density.
     Dominated by M_B/M_D × 3^{2/3}. -/
@@ -63,7 +63,7 @@ def stiffness_ratio (q : ℝ) : ℝ :=
 /-- At q = 1.1097, M_B is large. -/
 -- Ref: [manuscript] Ch. 7
 theorem M_B_large : M_B 1.1097 > 700 := by
-  unfold M_B V_B' hbar_q
+  unfold M_B V_B' hbarQ
   norm_num
 
 /-- At q = 1.1097, M_D is small. -/
@@ -76,7 +76,7 @@ theorem M_D_small : M_D 1.1097 < 1 := by
 -- Ref: [manuscript] Ch. 7
 theorem mass_ratio_gt_1000 :
     M_B 1.1097 / M_D 1.1097 > 1000 := by
-  unfold M_B M_D V_B' hbar_q
+  unfold M_B M_D V_B' hbarQ
   norm_num
 
 /-- The conformal speed of sound squared. -/
@@ -96,8 +96,8 @@ theorem cs_borromean_nonrelativistic (q : ℝ) (E_F : ℝ)
     (hq : q = 1.1097) (hEF : E_F > 0) (hsmall : E_F < M_B q / 100) :
     cs_squared_borromean q E_F < 1 / 100 := by
   subst hq
-  unfold cs_squared_borromean M_B V_B' hbar_q at *
-  set C : ℝ := 7.32772 / ((1.1097 - 1) / 1.1097) ^ 2 with hC_def
+  unfold cs_squared_borromean M_B V_B' hbarQ at *
+  set C : ℝ := 7.32772 / (1 - (1.1097 : ℝ)⁻¹) ^ 2 with hC_def
   -- C > 0
   have hC_pos : (0 : ℝ) < C := by rw [hC_def]; norm_num
   -- C + E_F > 0

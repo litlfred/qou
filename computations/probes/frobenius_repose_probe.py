@@ -69,6 +69,7 @@ for _p in ("tools/pyhecke/python", "tools/qou-substrate/python",
     sys.path.insert(0, str(_ROOT / _p))
 
 from pyhecke import atom, gram  # noqa: E402
+from convolution_provenance import CONVOLUTION  # noqa: E402
 from pyhecke.lp_dual_solver import (  # noqa: E402
     gram_pseudo_inverse_solve,
     solve_frobenius_dual_lp,
@@ -459,6 +460,7 @@ def main() -> int:
             "way. Honest negative: re-posing does not recover ν_SDP."
         )
         w.add_data("gram_rank", rank)
+        w.add_data("convolution", CONVOLUTION)
         # `rank` is numpy's f64 estimate; the real answer is the MPFR kernel
         # dimension, which is 1. Record both rather than the f64 verdict alone.
         w.add_data("gram_invertible", False)

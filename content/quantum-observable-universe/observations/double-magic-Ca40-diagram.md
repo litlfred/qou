@@ -1,4 +1,4 @@
-$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test case. Both proton and neutron counts lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example illustrates the partition-level rigidity of the double-magic LR-fusion conjecture ([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion)). We analyze the regime where both blocks are saturated and the LR fusion collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
+$^{40}\mathrm{Ca}$ ($Z = N = 20$, $A = 40$) is the canonical double-magic test case. Both proton and neutron counts lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. This example illustrates the partition-level rigidity of the double-magic LR-fusion conjecture ([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion)). We analyze the regime where both blocks are saturated and the LR fusion collapses to a single self-conjugate $\nu_{ZN} \vdash 40$.
 
 ## Twin saturated blocks
 

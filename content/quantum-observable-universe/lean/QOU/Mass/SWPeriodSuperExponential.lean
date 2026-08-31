@@ -65,12 +65,14 @@ open identification, and it is now open in one more way than it looked.
   applying it needs `dim_q λ` presented in bar-symmetric non-negative form — the
   `StandardYoungTableau` infrastructure Mathlib lacks (the same gap
   `KeystoneC8SuperExpBound` names for its inputs (A)/(C)).
-* **`Σ_{λ⊢n} f^λ = I(n)`** (the Robinson–Schensted corollary) is *not* proved here;
-  it is the identity that licenses reading `I` as the `q=1` period, and it is carried
-  by `prop:sw-classical-jet-exactness`, not by this file. It is open in the corpus —
-  beans `qou-m3xr` (`YoungTableauStandard.sum_dimSYT_eq_involution`, todo) and
-  `qou-jlam` (RSK for involutions, todo), both blocked on the same missing Mathlib
-  `StandardYoungTableau` layer as `KeystoneC8SuperExpBound`'s inputs (A)/(C).
+* **`Σ_{λ⊢n} f^λ = I(n)`** (the Robinson–Schensted corollary) is not proved *here*, but it
+  is **no longer open in the corpus**: `QOU.Mass.sum_numSYT_eq_involutionNumber`
+  (`QOU/Mass/SumSYTEqInvolution.lean`) proves it, sorry-free, for every `n`.  This entry
+  previously said it was open and blocked on a missing Mathlib `StandardYoungTableau`
+  layer; **both halves of that were wrong.**  It was not blocked on RSK at all — Young's
+  lattice is `1`-differential, and that route reaches the same recurrence with finite
+  combinatorics on `YoungDiagram` (`QOU.Mathlib.upSum_eq`), no insertion and no
+  permutation↔tableau-pair bijection.  Corrected 2026-08-30; bean `qou-jlam`.
 * **Input (2)**, the na-Stokes identity `a_D^(n) = lw(n−1)` itself, and **input (3)**,
   the residue weight `w_n(K)`, are untouched.
 

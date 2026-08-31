@@ -1,8 +1,46 @@
 #!/usr/bin/env python3
 """qbeta_c3_barodd_hs_matrix_resolvent_probe.py
 
-🛑 THIS PROBE IS RED AS OF 2026-08-30 AND ITS RECORDED CONCLUSION DOES NOT HOLD
-AS DERIVED. Do not cite it until the re-analysis in bean qou-dbau lands.
+🛑 RED AS OF 2026-08-30. RE-ANALYSED THE SAME DAY (qou-dbau) — READ THE VERDICT
+NOTE BELOW BEFORE CITING. The scope-(a) negative SURVIVES, but NOT for the
+reason the RESULT line gives.
+
+RE-ANALYSIS RESULT (qou-dbau, measured on the corrected weight):
+
+  [1] sign flip        SURVIVES. No flip at any geometric mu; HS ratio at mu=0
+                       is 1.0000001 against a target S(p)/S(m) = -3.93692. The
+                       route still cannot supply the bar-odd flip. THIS is the
+                       evidence the scope-(a) negative actually rests on.
+
+  [2] bar-parity       REFUTED. The parity is now mu-DEPENDENT:
+                         mu=0: |HS(q)-HS(1/q)|=18.38 vs |HS(q)+HS(1/q)|=6.856  BAR-ODD
+                         mu=1: 13.45 vs 33.53                                   BAR-EVEN
+                       The closure argument needed bar-even at EVERY geometric
+                       mu, so that a real bar-even resolvent could never carry a
+                       bar-odd S. At mu=0 the resolvent now has the SAME parity
+                       as S, so the parity obstruction does not hold there.
+
+  [3] no eigen-crossing REFUTED, and for a reason worth its own look: the
+                       corrected Gram matrix has an eigenvalue at 2.717e-71 —
+                       singular to working precision. The non-crossing premise
+                       compared the between-anchor shift (6.043e-8) against that,
+                       so it cannot hold.
+
+WHAT THIS DOES AND DOES NOT ESTABLISH. It does NOT open the route: finding 1 is
+untouched and is a real negative. It does NOT show the route works. What it
+shows is that the MECHANISM named in the RESULT line is wrong — the route is not
+closed BY BAR-PARITY, it is closed by the absence of a sign flip. Two of the
+three legs the verdict was built on do not survive the weight correction.
+
+ACTION FOR THE NEXT AGENT: the RESULT line and the witness verdict string should
+be re-scoped to cite finding 1 rather than bar-parity. That is a content change
+to a recorded conclusion and is left to the owner or a dedicated pass, not done
+inline here. The near-singular Gram eigenvalue (2.7e-71) may also be worth
+relating to the convention-D Gram singularity tracked as qou-cds2.
+
+Original note follows.
+──────────────────────────────────────────────────────────────────────────────
+Do not cite the RESULT line as-is until the re-scoping above lands.
 
 It carried the 2026-05-19 TR_M[5] Markov bug: TR_M[5] was z**3 where
 NF_BASIS[5] = (0,1,0) = sigma_0 sigma_1 sigma_0 has Markov weight h*z**2 + z.

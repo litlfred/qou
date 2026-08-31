@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T14:50:37Z
+updated_at: 2026-08-31T02:51:17Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -569,6 +569,41 @@ Recorded because the alternative was leaving it in a chat transcript, which is
 this corpus's documented way of losing a measurement — and because this bean
 already tells future agents to write exactly this observation down.
 
+### 2026-08-30 12:26Z — a FIFTH zero, and this one is the discriminating shape you asked for
+
+The closure above says *"what would settle it is a request on a fresh PR after a
+known-long quiet period, watching explicitly for the quota message"*, and stops
+because a fifth zero at 120 min would not discriminate. This row is not just a
+fifth zero — it has the shape the closure names.
+
+| PR | pushed | requested | checked | window | quota message |
+|---|---|---|---|---|---|
+| **#6180** | 10:42Z (opened) | **11:25Z** | 12:26Z | **≥ 61 min** | **none** |
+
+Two properties the four closed rows do not have:
+
+1. **The request came ~3.5 h after the 07:56Z presumed exhaustion**, and ~76 min
+   after the last request in the table (#6162 at ~10:09Z). If the quota recharge
+   interval is anything under ~3 h, this request was made with quota available —
+   and still produced nothing at 61 min.
+2. **`request_copilot_review` returned no output at all** — no quota-limit
+   message, no error. The same undetermined signature row 3 hit, now at a much
+   later wall-clock time.
+
+**Reading, scoped.** This weakens "quota exhausted at 07:56Z with a short
+recharge" as a complete explanation, because a request 3.5 h later behaves
+identically. It does **not** establish the trigger hypothesis either: an
+exhaustion with a recharge longer than ~3.5 h, a day-scoped quota, or a
+non-quota mechanism all fit this row equally. **Still not scored**, consistent
+with the closure's discipline.
+
+**What would now discriminate**, sharpened by this row: a request on a fresh PR
+after a **multi-hour** quiet window spanning a UTC day boundary. If a day-scoped
+quota is the mechanism, that is the only window where a review can appear.
+
+Recorded, not acted on. I am not re-requesting on #6180 — AGENTS.md's own
+corrected row says reviews are rationed and not to re-request after every push,
+and the closure above is right that another same-day zero buys nothing.
 
 ## THE REQUESTED DATAPOINT, 2026-08-30 14:45Z — recharge > 5 h 40 m, with one honesty caveat
 
@@ -661,3 +696,54 @@ armed; result to be appended here.
 **every** call site that fires it should record the body. An agent that reports
 "requested a review" without it has produced an observation that cannot be used
 for anything.
+
+
+## 2026-08-31 02:46Z — THE DAY-BOUNDARY ROW. This is the discriminator the 12:26Z entry asked for, and it comes back zero
+
+The 12:26Z entry above closes by naming what would discriminate:
+
+> a request on a fresh PR after a **multi-hour** quiet window spanning a UTC day
+> boundary. If a day-scoped quota is the mechanism, that is the only window
+> where a review can appear.
+
+That window has now been observed.
+
+| | |
+|---|---|
+| PR | [`qou#6254`](https://github.com/litlfred/qou/pull/6254) |
+| request fired | **2026-08-30 ~14:50Z** |
+| response body | **empty** — recorded verbatim (see the entry above), no quota message |
+| `get_reviews` at **2026-08-31 02:46Z** | **`[]`** |
+| elapsed | **≥ 11 h 56 m** |
+| elapsed since presumed exhaustion (08-30 07:56:40Z) | **18 h 49 m** |
+| spans 00:00Z day boundary | **yes** — 9 h 10 m before it, 2 h 46 m after |
+
+**Two things this settles, and one it does not.**
+
+**1. It is absence, not latency.** AGENTS.md's corrected row records the two
+measured *positive* latencies: `qou#6122` at **~3 min** and
+`folio-assistant#153` at **~4 min**. Eleven hours fifty-six is ~**200×** that.
+Nothing about this row is consistent with a review that is merely slow.
+
+**2. Day-scoped quota is now the *worst*-supported of the three candidates.**
+Under the working inference that an empty response body means accepted (a
+refusal returns text — established one entry above), the request was live and
+unserved when 00:00Z passed. A day-scoped ration that reset at the boundary had
+**2 h 46 m** to serve it and did not.
+
+**3. What it does NOT settle**, and the assumption is worth naming: I do not
+know that an accepted request *persists* across a day boundary. If acceptance
+merely acknowledges receipt and the work is dropped when unserved, the boundary
+is irrelevant and this row reduces to a very long censored negative. That
+alternative is not excluded by anything measured here. So the honest form is:
+**either day-scoped quota is refuted, or acceptance does not imply enqueueing** —
+and the second is itself a finding, because it would mean the empty response
+body carries less information than the entry above credits it with.
+
+Both readings agree the recharge bound is now **> 18 h 49 m** from the presumed
+exhaustion, which supersedes the `> 5 h 40 m` two entries up and the `> ~2 h 13 m`
+before that.
+
+**Not re-requesting**, per the standing discipline in this bean. The next free
+datapoint is whatever a fresh session's first PR produces; nothing here needs to
+be bought.

@@ -675,7 +675,7 @@ noncomputable def h_q_substrate (q : ℝ) : ℝ := q - q⁻¹
 noncomputable def bracket_2_q (q : ℝ) : ℝ := q + q⁻¹
 
 /-- The substrate Planck constant `ℏ_q = (q - 1)/q`. -/
-noncomputable def hbar_q (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The substrate-pure formula for `Δm / M_N`, in closed polynomial form. -/
 noncomputable def delta_m_over_M_N_substrate (q : ℝ) : ℝ :=
@@ -683,7 +683,7 @@ noncomputable def delta_m_over_M_N_substrate (q : ℝ) : ℝ :=
 
 /-- The substrate-pure formula for `Δm / μ_avg`, in factored Hecke-atom form. -/
 noncomputable def delta_m_over_mu_avg_factored (q : ℝ) : ℝ :=
-  hbar_q q ^ 2 * h_q_substrate q * bracket_2_q q
+  hbarQ q ^ 2 * h_q_substrate q * bracket_2_q q
 
 /-- **Algebraic identity**: the factored Hecke-atom form for `Δm / μ_avg`
     coincides with `(q - 1)² · (q⁴ - 1) / q⁴` (the closed polynomial form).
@@ -691,7 +691,7 @@ noncomputable def delta_m_over_mu_avg_factored (q : ℝ) : ℝ :=
     Proven by `field_simp` + `ring` after clearing the inverse. -/
 theorem delta_m_factored_eq_closed (q : ℝ) (hq : q ≠ 0) :
     delta_m_over_mu_avg_factored q = (q - 1)^2 * (q^4 - 1) / q^4 := by
-  unfold delta_m_over_mu_avg_factored hbar_q h_q_substrate bracket_2_q
+  unfold delta_m_over_mu_avg_factored hbarQ h_q_substrate bracket_2_q
   field_simp
   ring
 

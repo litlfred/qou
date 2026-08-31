@@ -1,0 +1,52 @@
+{
+ "computation": "milnor-deficit-vs-binding-magnitude",
+ "scriptFile": "milnor_deficit_vs_binding_magnitude_probe.py",
+ "engine": "python-mpmath-exact",
+ "free_parameters": 0,
+ "q0_anchor": "physical_proton",
+ "description": "Measures the proved Milnor deficit D_A at the proton q\u2080 (A=3..8) against the empirical binding fraction trend, to test whether D_A is the binding magnitude. Finds OPPOSITE A-dependence (|D_A| falls geometrically + sign alternates; B/A rises via coordination), so D_A is the Milnor order/parity structure, not the magnitude \u2014 substantiating the milnor-brunnian-deficit coordination-ledger claim. No fit, no wiring; scope-(a). mpmath dps=50, zero float64.",
+ "results": {
+  "q0_pin": "proton (owner default)",
+  "q0": "1.1099785827513808076",
+  "h": "0.20906029879563931543",
+  "h2": "0.043706208532521989402",
+  "hbarq2": "0.0098171864542750738106",
+  "deficit_D_A_at_q0": {
+   "3": "0.00143783616321",
+   "4": "-0.000128431335975",
+   "5": "1.14718272375e-5",
+   "6": "-1.02469400609e-6",
+   "7": "9.15283837862e-8",
+   "8": "-8.17555776522e-9"
+  },
+  "abs_deficit": {
+   "3": "0.00143783616321",
+   "4": "0.000128431335975",
+   "5": "1.14718272375e-5",
+   "6": "1.02469400609e-6",
+   "7": "9.15283837862e-8",
+   "8": "8.17555776522e-9"
+  },
+  "deficit_ratio_A_to_Ap1": {
+   "3->4": "-0.0893226497293",
+   "4->5": "-0.0893226497293",
+   "5->6": "-0.0893226497293",
+   "6->7": "-0.0893226497293",
+   "7->8": "-0.0893226497293"
+  },
+  "deficit_recursion_factor_-h2(h2+2)": "-0.0893226497293",
+  "empirical_binding_frac_over_hbarq2": {
+   "4": "0.767",
+   "40": "0.928",
+   "56": "0.954",
+   "62": "0.954",
+   "120": "0.923",
+   "238": "0.821"
+  },
+  "deficit_magnitude_FALLS_with_A": true,
+  "binding_fraction_RISES_with_A_light": true,
+  "deficit_sign_alternates": true,
+  "opposite_trends": true,
+  "verdict": "MEASURED: D_A is the Milnor STRUCTURE, not the binding magnitude. At the proton q\u2080, |D_A| falls geometrically (ratio per step = \u2212h\u00b2(h\u00b2+2) = -0.08932265, |\u00b7|<1) and its sign alternates as (\u22121)^{A\u22123} \u2014 the deficit is a rapidly-decaying, sign-carrying order marker. The empirical binding fraction B/A/m_N RISES with A over the light range (0.767\u21920.954\u00b7\u210f_q\u00b2, \u2074He\u2192\u2075\u2076Fe) via the coordination count z=A\u22121 (qou-brng, binding=\u2212log I). The two objects have OPPOSITE A-dependence, so D_A cannot be the binding magnitude; it carries the Milnor order/parity. This substantiates with numbers the coordination-ledger claim that a MeV binding number from D_A would be a fit (the magnitude lives in the qou-brng coordination free energy, not in D_A)."
+ }
+}
