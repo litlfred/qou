@@ -160,3 +160,83 @@ different questions, and only the first one follows from the cap.
 Dropped before it reached a claim. It is the same shape as the arity conflation
 `da-arity-conflation` warns about: a property of one object read off as a
 property of a different object derived from it.
+
+---
+
+# Addendum — the two-anchor filter on `K(δ)`, and a reframing of entry 12
+
+Probe: [`computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py`](../../computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py)
+— 9/9, mpmath at 60 dps, standalone with `PYTHONPATH` stripped.
+
+Entry 12 named `K(δ)` the arc's largest single L2 blocker and asked for a
+"genuinely different input". Block resolution and Kohno–Drinfeld conjugation
+both failed to supply one (above). This applies instead the technique the z-form
+filter already uses — the **two-anchor filter** — to `K`.
+
+Requiring the ladder to reproduce Q_β gives, at each anchor,
+`K_required = Q_codata / (Q_A·(1 − u²)·cos(α − δ/2))`. Both anchors carry the
+**same** `Q_codata_MeV` (asserted, not assumed), so the difference is a genuine
+q-derivative rather than a confound between two experimental values.
+
+## 1 — Neither admitted candidate reaches the **value**
+
+| | miss vs `K_required` | × the 7.797 ppb target |
+|---|---|---|
+| `K ≡ 1` | **281380 ppb** | 36088× |
+| `K = cos(δ/2)` | **221686 ppb** | 28432× |
+| *gap between the two candidates* | *59694 ppb* | *7656×* ← what entry 12 measured |
+
+**The choice between the candidates is not the blocker.** The N=1 factor is
+~2.8e-4 short whichever is chosen. Entry 12 is not wrong about the gap — it is
+measuring the smaller of two quantities, and the larger one was never computed.
+
+## 2 — The **slope** misses by three orders, with the wrong sign
+
+```
+required   dK/dδ  =  +6.2399501753   (D)      +6.2934180689   (C)
+K = cos(δ/2)      =  -0.0054631674           ratio  -1142.19
+K ≡ 1             =   0
+```
+
+## 3 — A candidate-free self-consistency test
+
+`K(0) = 1` plus the required value fixes `K`'s **mean** slope over `[0, δ₀]`;
+the filter fixes its **local** slope at `δ₀`:
+
+```
+mean slope   -0.0128759899
+local slope  +6.2399501753
+ratio          -484.62
+```
+
+Any `K` meeting `K(0) = 1`, the value and the slope must have local derivative
+~485× its own mean slope, of opposite sign — strongly non-monotonic on the scale
+of `δ`, with nothing in the arc motivating it.
+
+## Convention-independent, which is what makes it a statement about the form
+
+C and D require slopes agreeing to **0.85 %** (6.2934 vs 6.2400). The
+obstruction is a property of `F = cos(a − δ/2)·K(δ)`, not of the convention.
+
+## The slope is red-teamed — unlike the z-filter's
+
+The z-filter's slope was a 2-point secant over `dq = 1.29e-8` and carried an
+explicit caveat. This one is a central difference **stable to 12 significant
+figures across twelve orders of magnitude of step size** (rel `1e-8` → `1e-20`,
+max spread 3e-15), and the independent two-anchor secant reproduces it to 8. It
+is a derivative, not an artifact.
+
+## Scope — read the attribution carefully
+
+Scope (a). `K_required` is computed holding `α` at the value **the form** gives
+(`α = (z−1)h/2` at `z_D` or `z_C`), and this arc's standing position is that `α`
+is **not** derived. A wrong `α` is therefore absorbed into `K_required`, so this
+does **not** show that `K` itself must equal 0.99972. It shows that the **pair**
+`(α, K)` drawn from this form cannot reproduce both anchors — a form-level
+negative, consistent with and sharper than the arc's existing conclusion that
+the form must change.
+
+Not claimed: that no `K` exists (an oscillating one exists mathematically); any
+`c_k`; any movement on L2, which stays at 1279 ppb. Nothing is chosen to match
+data — the required values are reported and the candidates measured against
+them, so this is a filter, not a fit.
