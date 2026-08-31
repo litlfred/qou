@@ -1,11 +1,11 @@
 ---
 # qou-78pt
 title: 'A1: volume term = unnormalized Ocneanu/Markov trace'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-07T08:37:45Z
-updated_at: 2026-08-31T04:14:31Z
+updated_at: 2026-08-31T06:48:56Z
 parent: qou-kemt
 ---
 
@@ -98,3 +98,23 @@ Full accounting and what would close it: bean `qou-59j5`. Probe:
 `computations/probes/extensive_term_energy_scale_reconciliation_probe.py`.
 The probe docstring, its witness verdict and its plateau assertion are all
 annotated in place, with the original text kept.
+
+---
+
+## 2026-08-31 (later) — CLOSED, for a structural reason rather than a numerical one.
+
+`qou-ssz6` settles it. `Z(n) = (1+Q)ⁿ` is a grand partition function with
+`Q = q₀²` a fugacity conjugate to the strand-state count `k`, and its
+coefficients are the **bare binomials** — no Boltzmann weight, so the spectrum is
+linear in `k` and only the product `βμ = 2η₀` is fixed. `β` never appears alone.
+
+What A1 proposes to keep is `log Z = S + βμ⟨k⟩`: a Shannon entropy plus a
+dimensionless field term, both pure numbers **by construction**. No member of the
+normalisation family and no choice among the four `E₀` conventions can make it an
+energy, because the framework contains no `1/β`.
+
+So A1 is dead — **not** because "no family member reaches the target" (my
+withdrawn numerical claim, which turned out to be an `m_e`-vs-`E₀` artifact) but
+because **no family member is an energy**. That is the disposal the ROAST asked
+for, and it does not depend on pinning the convention it said was "the actual
+work" — the convention question is moot once the quantity is not an energy.

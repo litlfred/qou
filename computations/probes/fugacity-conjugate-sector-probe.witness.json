@@ -1,0 +1,107 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T06:48:05.722632+00:00",
+  "commitSha": "9b94a10e04bb21ab08d3bf3db21392c79f42cd9d",
+  "assertions": [
+    {
+      "name": "mean_occupancy_from_the_moment_equals_one_plus_tanh_eta_over_two",
+      "computed": "0.5519818550262050728383264",
+      "expected": "0.5519818550262050728383264",
+      "passed": true,
+      "tolerance": "1e-35",
+      "source": "explicit first moment <k>/n over the rebuilt Z(12) coefficients at Q = q_0^2, vs the free two-level closed form (1 + tanh eta_0)/2 with eta_0 = log q_0. Agreement is what makes Q a fugacity conjugate to k rather than a formal variable."
+    },
+    {
+      "name": "polarization_is_the_corpus_coulomb_strong_ratio",
+      "computed": "0.1039637100524101456766529",
+      "expected": "0.1039637100524101456766529",
+      "passed": true,
+      "tolerance": "1e-35",
+      "source": "2<k>/n - 1 from the moment above, vs tanh(ln q_0) -- the 'derived Coulomb/strong ratio' of def:coulomb-charge, used by charge_coulomb_tn3he_derived.py, em_linking_invariant_probe.py and six others. The corpus reaches it as the antisymmetric/symmetric ratio (q-1/q)/(q+1/q) of E_cross at n_- = 0; multiplying through by q gives (Q-1)/(Q+1). NOT a new constant -- a second reading of one."
+    },
+    {
+      "name": "legendre_transform_of_log_Z_is_the_binary_shannon_entropy",
+      "computed": "0.6877331765002157297686575",
+      "expected": "0.6877331765002157297686575",
+      "passed": true,
+      "tolerance": "1e-35",
+      "source": "S/n = log Z/n - (<k>/n)*log Q, the Legendre transform of the grand potential in the field log Q, vs the binary Shannon entropy H(p) of the occupancy p measured above. Two different constructions; agreement is what makes S an entropy rather than a leftover."
+    },
+    {
+      "name": "coefficients_are_bare_multiplicities_so_there_is_no_boltzmann_weight",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "every coefficient of Q^k in the rebuilt Z(12) is a q-INDEPENDENT integer equal to C(12,k). A Hamiltonian would put Omega_k * exp(-beta E_k) there. So the spectrum is linear in k, the only q is the fugacity, and nothing in Z fixes beta or mu separately -- only the product beta*mu = log Q = 2*eta_0."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 270,
+  "computation": "fugacity-conjugate-sector-probe",
+  "scriptFile": "fugacity_conjugate_sector_probe.py",
+  "scriptHash": "023154aac7b9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/fugacity_conjugate_sector_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/fugacity_conjugate_sector_probe.py"
+  },
+  "description": "The framework's normaliser Z(n) = (1+q^2)^n IS a grand partition function: q^2 is a fugacity conjugate to the strand-state count k, the Legendre transform is a Shannon entropy, and the polarization is the corpus's own Coulomb/strong ratio. But the coefficients are the bare binomials -- no Boltzmann weight -- so only the product beta*mu = 2*eta_0 is fixed and the temperature is STRUCTURALLY absent, not merely unfound. A1 dies on structural grounds.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "Q_fugacity": "1.23205245416676393126980451354",
+    "eta0": "0.104340720319519512315906279973",
+    "n_sites": 12
+  },
+  "data": {
+    "the_conjugate_pair": {
+      "partition_function": "Z(n) = (1+Q)^n = sum_k C(n,k) Q^k",
+      "fugacity_Q": "1.2320524541667639313",
+      "field_log_Q_is_beta_mu": "0.20868144063903902463",
+      "field_in_terms_of_eta0": "log Q = 2 eta_0 exactly",
+      "conjugate_variable": "k, the number of strands in the second state",
+      "mean_occupancy_per_site": "0.55198185502620507284",
+      "polarization": "0.10396371005241014568",
+      "entropy_per_site": "0.68773317650021572977",
+      "susceptibility_Var_k_per_site": "0.24729788674803459841"
+    },
+    "entropy_expansion": {
+      "S/n": "0.68773317650021572977",
+      "log 2": "0.69314718055994530942",
+      "log 2 - eta0^2/2": "0.6877036876015472134",
+      "residual": "2.9488899e-5",
+      "eta0^4": "0.00011852646",
+      "reading": "S/n = log 2 - eta_0^2/2 + O(eta_0^4); the entropy deficit from maximal is eta_0^2/2 = 0.005443493 nats per strand."
+    },
+    "why_there_is_no_temperature": {
+      "what_is_fixed": "the product beta*mu = log Q = 2 eta_0 = 0.208681440639",
+      "what_is_not": "beta alone. It appears nowhere in the construction.",
+      "the_reason": "the spectrum is LINEAR in k and the multiplicities are the bare binomials, so Z is a free two-level system with a single dimensionless field. Rescaling beta and mu inversely leaves Z unchanged -- there is no intrinsic energy scale to extract.",
+      "upgrade_over_qou-ap3d": "that bean recorded an EMPIRICAL negative (the corpus's Landauer probe found no candidate kT within 5%, off by 41.9x-4266x). This is the REASON: the construction cannot contain one."
+    },
+    "A1_verdict": "A1 ('the extensive term is the Markov normalisation; stop dividing it out') is DEAD ON STRUCTURAL GROUNDS. What it retains is log Z = S + beta*mu*<k>, a Shannon entropy plus a dimensionless field term, both pure numbers BY CONSTRUCTION. No member of the normalisation family and no choice among the four E_0 conventions can make it an energy, because the framework contains no 1/beta. qou-78pt was reopened when its numerical refutation was withdrawn; it can now close for the right reason -- not 'no member reaches the target' but 'no member is an energy'.",
+    "the_coulomb_ratio_is_not_a_new_constant": {
+      "value": "0.10396371005241014568",
+      "corpus_route": "def:coulomb-charge -- antisymmetric/symmetric channel ratio of E_cross = n_+ q - n_- q^{-1} at n_- = 0, i.e. (q-1/q)/(q+1/q)",
+      "this_route": "polarization 2<k>/n - 1 = (Q-1)/(Q+1) of the fugacity two-level system",
+      "why_identical": "multiply (q-1/q)/(q+1/q) top and bottom by q to get (q^2-1)/(q^2+1) = (Q-1)/(Q+1). One line of algebra; not a coincidence and not a new derivation.",
+      "what_is_new": "the READING. The same ratio is simultaneously an energy ratio and a thermal polarization. Being a ratio it is scale-free either way, which is exactly why it survives where the extensive magnitude does not. The framework's derived quantities are ratios and polarizations; its one absolute magnitude is the one with no scale."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
