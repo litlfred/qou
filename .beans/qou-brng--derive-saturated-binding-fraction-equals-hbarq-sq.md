@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T20:43:20Z
+updated_at: 2026-08-31T20:59:28Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -808,3 +808,35 @@ a **SIGN** error, not a precision one — the framework binds the diproton
 `QOU.QBeta.single_crossing_binds` proves sorry-free that no single crossing can
 unbind while `q³ < q²+1`. **No amount of magnitude work reaches L2 while a
 predicted observable has the wrong sign.** Signs before digits.
+
+
+**2026-08-31 — the even-negative stacked branch is CLOSED (two exclusions), and
+#6407's framing retracted**
+
+Worked the branch named in `SingleCrossingAlwaysBinds` as the one survivor
+("a repair *direction*, not a repair"). **It is not a direction.**
+
+**Scope (a) — 6.13× is a MINIMUM.** `m = −60..60`: 30 unbinding powers, all
+even-negative, `|B|` monotone in `|m|`. `σ^-2` at −0.6127 MeV is the global
+minimum; every other member is worse. Exact mechanism: `mu_eff(-2k) ~
+A·(q²/(1−h))^k`, `q²/(1−h) = 1.5577`, measured ratios 1.203→1.255→1.310→1.364.
+Nature needs `mu_eff = 1.0242`; smallest available excess over 1 is 0.1576 vs a
+needed 0.0242.
+
+**Scope (b) — projector ∘ stacking excluded, invariant named.** At `m = 2` it
+looks promising (`B(T=1) = −0.0375`, within 2× not 6×) then dies for every `m`
+on `mu₊ + mu₋ = 1` — the partition of unity holds for any substituted scalar, so
+`mu₊ > 1 ⟺ mu₋ < 0` and `B` is undefined. **Unbinding T=1 destroys the T=0
+channel that must hold the deuteron.**
+
+**RETRACTED my own #6407 framing** (arithmetic stands). It said "one leg of
+three"; there are **four** channels, and pn ³S₁ / pn ¹S₀ share content with
+opposite boundness ⇒ a content-keyed word is refuted in Lean
+(`content_keyed_interface_refuted`). The −2.89 % survives only if keyed on
+isospin `T`.
+
+**Sector status: every mechanism in the algebra is now excluded for the unbound
+channels** — single-crossing (b), stacked-alone (a), projector∘stacking (b), and
+T=0-as-deuteron (the `α·ln4 = 5.803` floor, AME 61.7 % below). Selection is
+derived; magnitude has no surviving carrier. Needs something outside the family;
+no candidate proposed.
