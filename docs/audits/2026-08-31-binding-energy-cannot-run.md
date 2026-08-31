@@ -211,3 +211,54 @@ correct family, so the gap is the missing gate, not the mathematics.
 4. Then, and only then, regenerate and report what moved against AME2020.
 
 Point 3 is the subtle one and is why this stops here rather than pressing on.
+
+---
+
+# Blocker 4 resolved: the kernel is verified
+
+I earlier framed the gate's reference as a decision for the author. **It is not
+— it is work, and this is it.** The right reference is the same recurrence in
+pure mpmath over the *corrected* matrices, and building it is unambiguous.
+
+[`computations/audits/lp_accumulator_kernel_gate.py`](../../computations/audits/lp_accumulator_kernel_gate.py),
+re-runnable, exit 0 today:
+
+```
+partitions: 43  (k <= 7)   ordering: ['p', 'n']
+  checked 86 (partition, step) traces
+  1 cancelled to numerically zero on BOTH sides (excluded from the ratio)
+  worst relative deviation = 7.092e-48
+VERDICT: kernel agrees with the pure-mpmath reference to ~50 dps.
+```
+
+Two design points the script documents, because both are easy to get wrong and
+I got each wrong once:
+
+- **Both sides must use the SAME (Rust) matrices.** My first attempt compared
+  the kernel against mpmath-over-the-*Python* matrices and mismatched — but that
+  mismatch was the braid defect, not a kernel error. Comparing against `main` is
+  likewise invalid: the corrected matrices deliberately change the answer, so
+  equality with `main` would mean the correction had not been applied.
+- **The tolerance must be mixed absolute/relative.** One step trace cancels to
+  ~1e-51 — numerically zero at 50 dps — and a relative test there compares noise
+  to noise and reported a 1.58 "deviation" that meant nothing. That was my gate
+  failing, not the kernel. Production guards the same quantity the same way
+  (`abs(tr_run) > 1e-300`).
+
+## Where the arc stands
+
+| # | blocker | status |
+|---|---|---|
+| 1 | seminormal family is not a representation | settled; fixed *by* the kernel, which builds the correct family |
+| 2 | term 3 object-dtype crash | fixed |
+| 3 | performance wall | solved — full `k = 11` deuterium in 278 s |
+| 4 | the equality gate | **built and passing (7.09e-48)** |
+
+**What remains is one change and it moves published numbers:** wire the kernel
+into `unified_iterative_correction` and `atom_character_raw` **preserving Pass 2**
+(the complementary-slackness gate — the part a reimplementation drops), then
+regenerate and report the movement against AME2020.
+
+That is a deliberate stopping point, not an unfinished one. Everything up to it
+is verified; the step itself changes what the paper reports, and its result —
+better or worse agreement with experiment — is still completely unmeasured.
