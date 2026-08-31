@@ -209,4 +209,167 @@ theorem σ_mul_murphySum_subgroup (i : Fin n)
   simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hw ⊢
   exact H.mul_mem hw hi
 
+/-! ## 4. The mirror: right multiplication, for Murphy's `T_{d(t)}` factor
+
+Everything above multiplies on the **left** by `σ_i`, and the corpus's structure-constant
+table (`QOU.Hecke.TwBasis.σ_mul_Tw`) only goes that way. Note the handedness: left
+multiplication by `σ_i` in the algebra is *right* multiplication by `s_i` on the
+permutation, which is why `σ_mul_murphySum` asks for `S` closed under `w ↦ w * s_i`.
+
+Murphy's `m_{st} = T_{d(s)}^* · x_λ · T_{d(t)}` needs the other side, and there is no
+`Tw_mul_σ` in the corpus. It does not need one to be built from scratch: `Tw_mul_Tw`
+already gives the length-additive case in one line once `T_{s_i} = σ_i` (`Tw_swap`), and
+the descending case follows from it by the quadratic relation. The result is the exact
+mirror of `σ_mul_Tw_of_lt` / `σ_mul_Tw_of_not_lt`, with left multiplication on the
+permutation side.
+
+These belong upstream in `QOU.Hecke.TwMul` beside their left-handed twins; they are here
+because that file sits deep in the Hecke cluster and this is the only consumer so far. -/
+
+open QOU.Hecke.SymmetricCoxeter (permCoxeterSystem)
+
+/-- `T_{s_i} = σ_i`. Reproved here rather than imported: the corpus's copy lives in
+`QOU.Hecke.TwGramRankOne`, whose Gram machinery this file has no other use for, and the
+proof is two lines from the ascending case of the left-handed table. -/
+theorem Tw_sw (i : Fin n) : Tw K q n (sw i) = σ K q n i := by
+  have h := σ_mul_Tw_of_lt K q n i 1 (by simp)
+  simpa using h.symm
+
+/-- **Right multiplication, ascending case.** When the lengths add, no coefficients —
+the mirror of `σ_mul_Tw_of_lt`. One line from `Tw_mul_Tw`, whose convention already
+reverses the order (`T_v · T_w = T_{w v}`). -/
+theorem Tw_mul_σ_of_length_add (i : Fin n) (v : Equiv.Perm (Fin (n + 1)))
+    (h : (permCoxeterSystem n).length (sw i * v)
+        = (permCoxeterSystem n).length (sw i) + (permCoxeterSystem n).length v) :
+    Tw K q n v * σ K q n i = Tw K q n (sw i * v) := by
+  rw [← Tw_sw K q n i]
+  exact Tw_mul_Tw K q n v (sw i) h
+
+/-- **Right multiplication, descending case.** The mirror of `σ_mul_Tw_of_not_lt`: the
+quadratic relation's coefficients appear. The hypothesis is the ascending condition for
+`s_i · v`, which is what "`s_i` lowers `v`" means. -/
+theorem Tw_mul_σ_of_length_sub (i : Fin n) (v : Equiv.Perm (Fin (n + 1)))
+    (h : (permCoxeterSystem n).length v
+        = (permCoxeterSystem n).length (sw i) + (permCoxeterSystem n).length (sw i * v)) :
+    Tw K q n v * σ K q n i
+      = (q - 1) • Tw K q n v + q • Tw K q n (sw i * v) := by
+  have hss : sw i * (sw i * v) = v := by
+    rw [← mul_assoc, Equiv.swap_mul_self, one_mul]
+  -- the ascending case, applied to `s_i · v`
+  have hup : Tw K q n (sw i * v) * σ K q n i = Tw K q n v := by
+    have := Tw_mul_σ_of_length_add K q n i (sw i * v) (by rw [hss]; exact h)
+    rwa [hss] at this
+  calc Tw K q n v * σ K q n i
+      = Tw K q n (sw i * v) * (σ K q n i * σ K q n i) := by rw [← mul_assoc, hup]
+    _ = Tw K q n (sw i * v) * ((q - 1) • σ K q n i + q • 1) := by
+          rw [QOU.Hecke.IwahoriHecke.σ_quadratic]
+    _ = (q - 1) • (Tw K q n (sw i * v) * σ K q n i) + q • Tw K q n (sw i * v) := by
+          rw [mul_add, mul_smul_comm, mul_smul_comm, mul_one]
+    _ = (q - 1) • Tw K q n v + q • Tw K q n (sw i * v) := by rw [hup]
+
+/-- **The right-handed eigenvector pair** — the mirror of `σ_mul_Tw_pair`. Whichever of
+`v`, `s_i · v` is the longer, the two-term sum is a `q`-eigenvector for right
+multiplication by `σ_i`. The dichotomy is supplied by the caller as `h`, which says the
+two lengths differ by `ℓ(s_i)` one way or the other. -/
+theorem Tw_mul_σ_pair (i : Fin n) (v : Equiv.Perm (Fin (n + 1)))
+    (h : (permCoxeterSystem n).length (sw i * v)
+          = (permCoxeterSystem n).length (sw i) + (permCoxeterSystem n).length v
+        ∨ (permCoxeterSystem n).length v
+          = (permCoxeterSystem n).length (sw i)
+            + (permCoxeterSystem n).length (sw i * v)) :
+    (Tw K q n v + Tw K q n (sw i * v)) * σ K q n i
+      = q • (Tw K q n v + Tw K q n (sw i * v)) := by
+  have hss : sw i * (sw i * v) = v := by
+    rw [← mul_assoc, Equiv.swap_mul_self, one_mul]
+  rcases h with hup | hdown
+  · -- `v` is the shorter: `T_v σ = T_{s v}` and `T_{s v} σ` descends back
+    have h1 : Tw K q n v * σ K q n i = Tw K q n (sw i * v) :=
+      Tw_mul_σ_of_length_add K q n i v hup
+    have h2 : Tw K q n (sw i * v) * σ K q n i
+        = (q - 1) • Tw K q n (sw i * v) + q • Tw K q n v := by
+      have := Tw_mul_σ_of_length_sub K q n i (sw i * v) (by rw [hss]; exact hup)
+      rwa [hss] at this
+    rw [add_mul, h1, h2, smul_add]
+    module
+  · -- `s_i · v` is the shorter: the same two identities with the roles swapped
+    have h1 : Tw K q n v * σ K q n i
+        = (q - 1) • Tw K q n v + q • Tw K q n (sw i * v) :=
+      Tw_mul_σ_of_length_sub K q n i v hdown
+    have h2 : Tw K q n (sw i * v) * σ K q n i = Tw K q n v := by
+      have := Tw_mul_σ_of_length_add K q n i (sw i * v) (by rw [hss]; exact hdown)
+      rwa [hss] at this
+    rw [add_mul, h1, h2, smul_add]
+    module
+
+
+/-- `s_i` **is** the `i`-th Coxeter simple reflection of `S_{n+1}`. `permCoxeterSystem` is
+built from `toPerm`'s inverse, so this is `toPerm_simple` read through that. -/
+theorem simple_eq_sw (i : Fin n) :
+    (permCoxeterSystem n).simple i = sw i := by
+  show (permCoxeterSystem n).mulEquiv.symm (CoxeterMatrix.simple _ i) = sw i
+  exact QOU.Hecke.SymmetricCoxeter.toPerm_simple n i
+
+/-- The **length dichotomy** for a simple reflection: `ℓ(s_i v)` is `ℓ(v) ± 1`, so exactly
+one of the two hypotheses of `Tw_mul_σ_pair` holds. This is what makes the right-handed
+pair lemma unconditional, matching its left-handed twin `σ_mul_Tw_pair` (whose dichotomy
+came for free from the concrete descent test). -/
+theorem sw_length_dichotomy (i : Fin n) (v : Equiv.Perm (Fin (n + 1))) :
+    (permCoxeterSystem n).length (sw i * v)
+        = (permCoxeterSystem n).length (sw i) + (permCoxeterSystem n).length v
+      ∨ (permCoxeterSystem n).length v
+        = (permCoxeterSystem n).length (sw i)
+          + (permCoxeterSystem n).length (sw i * v) := by
+  have hs : (permCoxeterSystem n).length (sw i) = 1 := by
+    rw [← simple_eq_sw]; exact (permCoxeterSystem n).length_simple i
+  have h := (permCoxeterSystem n).length_simple_mul v i
+  rw [simple_eq_sw] at h
+  rcases h with h | h
+  · exact Or.inl (by omega)
+  · exact Or.inr (by omega)
+
+/-- **The right-handed eigenvector, unconditional.** -/
+theorem Tw_mul_σ_pair' (i : Fin n) (v : Equiv.Perm (Fin (n + 1))) :
+    (Tw K q n v + Tw K q n (sw i * v)) * σ K q n i
+      = q • (Tw K q n v + Tw K q n (sw i * v)) :=
+  Tw_mul_σ_pair K q n i v (sw_length_dichotomy (n := n) i v)
+
+/-- **`x_S · σ_i = q · x_S`** for any finite `S` closed under **left** multiplication by
+`s_i` — the mirror of `σ_mul_murphySum`, and the factor Murphy's `T_{d(t)}` sits against.
+Note the handedness swap: the left-handed statement asks for closure under `w ↦ w · s_i`,
+this one for closure under `w ↦ s_i · w`. A subgroup has both. -/
+theorem murphySum_mul_σ (i : Fin n) (S : Finset (Equiv.Perm (Fin (n + 1))))
+    (hS : ∀ w ∈ S, sw i * w ∈ S) :
+    murphySum K q n S * σ K q n i = q • murphySum K q n S := by
+  have key : ∑ w ∈ S, (Tw K q n w * σ K q n i - q • Tw K q n w) = 0 := by
+    refine Finset.sum_involution (fun w _ => sw i * w) ?_ ?_ (fun w hw => hS w hw) ?_
+    · intro w _
+      have := Tw_mul_σ_pair' K q n i w
+      rw [add_mul] at this
+      rw [smul_add] at this
+      linear_combination (norm := module) this
+    · intro w _ _ hcon
+      exact sw_ne_one i (mul_right_cancel (b := w) (by rw [one_mul]; exact hcon))
+    · intro w _
+      show sw i * (sw i * w) = w
+      rw [← mul_assoc, Equiv.swap_mul_self, one_mul]
+  have hsplit : ∑ w ∈ S, (Tw K q n w * σ K q n i - q • Tw K q n w)
+      = murphySum K q n S * σ K q n i - q • murphySum K q n S := by
+    rw [Finset.sum_sub_distrib, murphySum, Finset.sum_mul, Finset.smul_sum]
+  rw [hsplit] at key
+  exact sub_eq_zero.mp key
+
+/-- **Murphy's `x_λ`, from the right.** Together with `σ_mul_murphySum_subgroup` this says
+`x_λ` is a two-sided `q`-eigenvector for every generator of its Young subgroup — which is
+what Mathas uses throughout Lemma 3.9 and Lemma 3.12, and what makes `m_{st} =
+T_{d(s)}^* x_λ T_{d(t)}` behave under multiplication on either side. -/
+theorem murphySum_mul_σ_subgroup (i : Fin n)
+    (H : Subgroup (Equiv.Perm (Fin (n + 1)))) [DecidablePred (· ∈ H)] (hi : sw i ∈ H) :
+    murphySum K q n {w | w ∈ H} * σ K q n i
+      = q • murphySum K q n {w | w ∈ H} := by
+  refine murphySum_mul_σ K q n i _ ?_
+  intro w hw
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hw ⊢
+  exact H.mul_mem hi hw
+
+
 end QOU.BraidKnot.HeckeMurphy
