@@ -215,3 +215,57 @@ mpf every time. Seeding with `mp.mpf(0)` instead is the same value with no
 conversions. `_matmul_dim` has the same shape in its accumulator (`s = 0.0`).
 
 Untested as of this note — do not assume the size of the win, measure it.
+
+### The `from_float` lead is DEAD — and my premise for it was wrong
+
+I proposed seeding the YSN matrices with `mp.mpf(0)` because their nonzero
+entries `q0` / `-qi` "ARE mpf". **They are not.** Measured:
+
+    q0 : float = 1.1099785827513808
+    qi : float = 0.9009182839557415
+    h  : float = 0.20906029879563937
+
+All three come from `q_parameter` as Python floats, so the YSN matrices are
+uniformly float and my change would have MIXED them rather than unmixed them.
+Reverted before commit. (Fifth wrong inference in this bean pair; the fix was
+written and thrown away in the same turn.)
+
+The only mpf in the whole pipeline is `_PROTON_G1` / `_NEUTRON_G1`, built in
+`pyhecke.atom.nucleon_gen_chains`, and it is deliberate — its own comment cites
+the owner directive:
+
+    > NO FLOAT64 (owner directive). `pyhecke.gram.h` is a Python float —
+    > 2.61e-16 relative against the 50-dps closed form — and using it here put
+    > every INTRA-nucleon crossing into the braid word at ~17 good digits.
+    > [...] Built at >= 60 dps whatever the caller's ambient precision.
+    > Consumers that genuinely need f64 (the numpy paths) cast at their own
+    > boundary, where the loss is visible rather than baked in here.
+
+So converting it is the exact move the corpus forbids, and the sanctioned
+escape already exists: `nucleon_gen_chains(..., allow_float64=True)`.
+
+### ⚖️ For the owner: precision is not accuracy here
+
+Worth a ruling, because it decides whether (a) is worth engineering at all.
+
+`hecke_core_legacy` is **float64 at both ends**. Its `q0`, `qi` and `h` are
+Python floats, and `_build_ysn_matrices` fills its matrices with `q0` / `-qi`,
+so the matrices are float64. The ONLY high-precision quantity entering is the
+chain coefficient `d` from `_PROTON_G1` / `_NEUTRON_G1` at ≥60 dps.
+
+That single mpf coefficient promotes the accumulator to dtype `object`, which
+forces every subsequent matrix multiplication out of vectorised BLAS and into
+per-element Python arithmetic — the entire remaining cost of (a). But it is
+carrying 60 digits through a computation whose `q0` is already only good to
+~17: `nucleon_gen_chains`'s own comment measures `pyhecke.gram.h` at 2.61e-16
+relative. The extra digits are precision, not accuracy — they cannot survive
+contact with a float64 `q0`.
+
+If that reading is right, `unified_iterative_correction` is exactly the
+"consumer that genuinely needs f64" the comment describes, and the correct fix
+is the sanctioned one: cast at ITS boundary via `allow_float64=True`, visibly,
+rather than paying object arithmetic to carry digits the inputs never had.
+
+**Not doing this unilaterally.** It is a NO-FLOAT64 boundary decision and the
+directive is the owner's. Recorded with the evidence so the ruling can be made
+on measurements rather than on my say-so.
