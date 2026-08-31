@@ -9,6 +9,22 @@ and should be confirmed on first use.
 
 ---
 
+## TRAP — the LEAN_PATH answer is in this file, under the CACHE heading
+
+If `lean` reports `unknown module prefix 'Mathlib'` **while listing the
+directory you pointed at**, the path is one level too shallow: oleans live in
+`.lake/packages/*/.lake/build/lib/lean`, not `.../build/lib`. The olean COUNT
+does not discriminate — 6990 were present at the moment the import failed.
+
+This is recorded below under the cache-restore section ("Build LEAN_PATH from
+the ROOT `.lake` package `build/lib/lean` dirs"), which is where an agent
+looking for a *path* problem does not look. Re-derived from scratch on
+2026-08-31 for exactly that reason; duplicated here as a findable heading
+rather than moved, since the cache section needs it in place too.
+
+Also: `#print axioms` needs no olean. Append the lines to a COPY of the source
+and run `lean` on the copy — works on a restored tree with no traces.
+
 ## STABLE — workspace shape
 
 - Single **root** Lake workspace: `/lakefile.toml`, `/lean-toolchain`.
