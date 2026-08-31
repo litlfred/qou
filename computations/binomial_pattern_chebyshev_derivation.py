@@ -223,10 +223,41 @@ def main():
     import os as _os, sys as _sys  # noqa: E402
     _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    out_path = WitnessBuilder.wrap_legacy(
-        "binomial-pattern-chebyshev-derivation", witness,
-        script_path=__file__, engine="sympy", start_time=_T0,
-    ).save()
+    # Assertions (bean qou-srvu). This witness previously carried none, so it
+    # reported `allPassed: true` over an empty list -- vacuously green while
+    # making no falsifiable claim, even though the script's whole purpose is to
+    # verify step 6 of its own derivation chain, which the chain itself labels
+    # "LOAD-BEARING IDENTITY". The check already existed as
+    # `difference = sp.simplify(lhs - rhs_expanded)` per m; it was recorded as
+    # data and never asserted. Nothing new is claimed here -- the existing claim
+    # is made testable.
+    #
+    # The count, not a bool-vs-True: if the identity failed at any m the count
+    # falls below 7 and the assertion fails. `expected` is the loop bound
+    # `range(7)`, not a number chosen to match what was observed.
+    n_match = sum(1 for r in results if r["match"])
+    out_path = (
+        WitnessBuilder.wrap_legacy(
+            "binomial-pattern-chebyshev-derivation", witness,
+            script_path=__file__, engine="sympy", start_time=_T0,
+        )
+        .add_assertion(
+            "chebyshev_load_bearing_identity_verified_count",
+            computed=str(n_match),
+            expected=str(len(results)),
+            source="step 6 of this script's derivation chain: "
+                   "T_{2m+1}(x)/x = sum_j C(m+j,2j)(4(x^2-1))^j",
+        )
+        .add_assertion(
+            "chebyshev_identity_residual_is_exactly_zero_at_max_m",
+            computed=str(results[-1]["difference"]),
+            expected="0",
+            source="exact sympy symbolic residual sp.simplify(lhs - rhs) at the "
+                   "largest verified m; symbolic, so the bar is exact zero and "
+                   "no tolerance is involved",
+        )
+        .save()
+    )
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 

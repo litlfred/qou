@@ -1,15 +1,30 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T08:56:08.272118+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
-  "assertions": [],
+  "computedAt": "2026-08-30T13:57:41.758257+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "chebyshev_load_bearing_identity_verified_count",
+      "computed": "7",
+      "expected": "7",
+      "passed": true,
+      "source": "step 6 of this script's derivation chain: T_{2m+1}(x)/x = sum_j C(m+j,2j)(4(x^2-1))^j"
+    },
+    {
+      "name": "chebyshev_identity_residual_is_exactly_zero_at_max_m",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "exact sympy symbolic residual sp.simplify(lhs - rhs) at the largest verified m; symbolic, so the bar is exact zero and no tolerance is involved"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 471,
+  "durationMs": 356,
   "computation": "binomial-pattern-chebyshev-derivation",
   "scriptFile": "binomial_pattern_chebyshev_derivation.py",
-  "scriptHash": "cabd56918f81",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "bc2ac30f677d",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
