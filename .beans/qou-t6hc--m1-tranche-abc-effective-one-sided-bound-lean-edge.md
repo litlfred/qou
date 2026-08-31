@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T06:48:46Z
+updated_at: 2026-08-31T10:15:04Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1191,3 +1191,44 @@ Measured over the exactly-computed range n = 32..46: `|κ_n − κ|/κ` runs
 This does **not** close the gap. It replaces a demanding analytic requirement
 with an undemanding one. What remains: an effective Kerov error term for
 n ≥ 47 — and it may now be crude.
+
+
+---
+
+### 2026-08-31 (cont.) — weighted Chebyshev proved; the route it does NOT open
+
+**A genuine Mathlib gap, filled.** Mathlib has Chebyshev's sum inequality only
+unweighted (`MonovaryOn.sum_mul_sum_le_card_mul_sum`: `(Σf)(Σg) ≤ card·Σfg`),
+i.e. `Cov ≥ 0` for the **uniform** measure. Every measure here — Plancherel, the
+ω-weighted edge measure — is non-uniform, so that form never applies. New file
+`QOU/MathlibExt/WeightedChebyshev.lean`, 4 theorems, sorry-free:
+
+> `weighted_chebyshev : (Σ w f)(Σ w g) ≤ (Σ w)(Σ w f g)` for `w ≥ 0`, `f,g` monovarying
+
+via the exact symmetrisation
+`Σᵢ Σⱼ wᵢwⱼ(fᵢ−fⱼ)(gᵢ−gⱼ) = 2[(Σw)(Σwfg) − (Σwf)(Σwg)]`. Setting `w ≡ 1`
+recovers Mathlib's statement, so it is a **strict generalisation** and an
+upstream candidate.
+
+**🛑 My briefed expectation, FALSIFIED.** I claimed `Σ|c|` and `Σc²` monovary,
+so the positive term of the M₁ split "is exactly this inequality". True **per
+growth step** (there `c²` is literally a function of `|c|`); **false** for the
+sums over a partition, which is what the covariance is over. Exhaustive:
+`(Σ|c|, Σc²)` first violates at **n = 7**, `(Σh, Σc²)` at **n = 6**, counts
+growing to 120 and 464 by n = 14. **Route as briefed is CLOSED** — recorded so
+nobody retries it.
+
+**What survives, and it is the useful part.** The inequality needs only the
+*weighted sum* of pair products nonneg, not every pair. Over n = 6..16:
+
+| | by count | by weighted mass |
+|---|---|---|
+| violating pairs | 0.5–1.8% | **0.05–0.12%** |
+
+neg/pos ≈ 5e-4 — a **~2000× margin**, with `Cov(Σ|c|,Σc²) > 0` at every n. So
+proving the positive term needs a **bound on the violating mass**, not a
+monovary hypothesis, with three orders of magnitude of room. Same shape as the
+(b′) weakening: a crude bound replaces a sharp one.
+
+**Does NOT settle `M₁ > 0`** — the negative term is ~65% of the positive one and
+that difference remains the open part.
