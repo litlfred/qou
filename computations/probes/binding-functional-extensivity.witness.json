@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:38:52.984817+00:00",
-  "commitSha": "9b00d47036abc109f0d4c7dc54c1ff31289fd3d8",
+  "computedAt": "2026-08-31T03:50:07.452870+00:00",
+  "commitSha": "44ff80ea99ae8d8c2d3dba941a6331c1ff1ed937",
   "assertions": [
     {
       "name": "the log form is extensive (defect exactly zero, convention D)",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "binding-functional-extensivity",
   "scriptFile": "binding_functional_extensivity_probe.py",
-  "scriptHash": "37f493556318",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4d6e7ff4c625",
+  "scriptCommitSha": "44ff80ea99ae8d8c2d3dba941a6331c1ff1ed937",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,7 +108,7 @@
   "caveats": [
     "The uniqueness step of 10a -- that the only continuous solutions of Cauchy's equation f(xy) = f(x) + f(y) are c*log x -- is classical and is NOT formalised in this corpus. 'The log form is forced' still rests on it. What is proved in Lean is the comparison the corpus actually runs: log extensive, linear not, with the defect in closed form and a convention-independent ceiling.",
     "The ceiling row uses t_free ~ 1, which 10a establishes separately (tr_M(nucleon) ~ 1 at every A). It is quoted here, not re-derived.",
-    "Corpus-state finding, not a physics result: the 2026-08-25 audit and bean qou-d5e8 both record the functional as posited with no derivation anywhere. The derivation is in docs/audits/, the first path that audit's own grep table lists. Both should be corrected rather than the finding being left to a third reader to rediscover."
+    "The 2026-08-25 audit RETRACTS its own 'posited' verdict later in the same document, via the Vol_alg/tau_arch chain. That retraction stands. What is added here is a SECOND derivation (10a) which that retraction does not cite, and which -- unlike the Vol chain -- needs neither the Kashaev volume conjecture nor an asymptotic regime."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
