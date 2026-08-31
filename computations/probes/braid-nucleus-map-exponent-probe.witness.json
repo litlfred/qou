@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:02:34.117022+00:00",
-  "commitSha": "f4e81f704436384f98c6217956b9aabb5b1dabf4",
+  "computedAt": "2026-08-31T04:11:53.940456+00:00",
+  "commitSha": "4f83a2c2dd29788823227451fc2712ce81d1b00b",
   "assertions": [
     {
       "name": "normaliser_equals_two_Q_pow_n",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 718,
+  "durationMs": 693,
   "computation": "braid-nucleus-map-exponent-probe",
   "scriptFile": "braid_nucleus_map_exponent_probe.py",
-  "scriptHash": "1c11d8f2b5b5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d0d3b48c87ce",
+  "scriptCommitSha": "7a55263f007fd5fbc55684d1ca65c0bc5969a5c9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -105,7 +105,16 @@
       },
       "note": "Measured 1.674 on A=2..64 and rising to 1.995 on A=1024..4096 -- asymptotically 2, approached slowly because of the linear term. Either way it is NOT 1, so the exponent test does discriminate between the corpus's actual normaliser and a plausible alternative, and would also detect an affine strand rule n = 3A + c, c != 0. The test is therefore not vacuous."
     },
-    "verdict": "EXPONENT TEST PASSES. The 3-strands-per-nucleon map yields a normaliser whose logarithm is exactly linear in A -- the SEMF volume term's exponent -- with the coefficient constant to all computed digits. This is a NEGATIVE for the ROAST's R2 hypothesis that the braid->nucleus map is the defective step: the map's A-scaling is right. The residual is a pure multiplicative constant, not a shape error. Deliberately not matched to any structural candidate (see module docstring)."
+    "SCALE_CORRECTION_2026_08_31": {
+      "what_is_wrong": "Every MeV figure in this witness uses m_e = 0.511 MeV as the energy scale, with no justification given. The corpus's binding machinery uses E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV.",
+      "scale_ratio_E0_over_me": "8.1917611721945038989",
+      "corrected_extensive_coefficient_MeV_per_nucleon": "10.0830438734",
+      "corrected_vs_plateau": "0.84299941x (i.e. it OVERSHOOTS 8.5)",
+      "corrected_vs_a_V": "1.5669871x short",
+      "what_is_UNAFFECTED": "The exponent test itself. A constant multiplier cannot change a log-log slope, so log_normaliser_A_exponent = 1 and the (1+q^2)^n closed form stand, and so does the verdict that the braid->nucleus map is not the defective step.",
+      "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py"
+    },
+    "verdict": "EXPONENT TEST PASSES (unaffected by the scale correction above; a log-log slope is scale-free). The 3-strands-per-nucleon map yields a normaliser whose logarithm is exactly linear in A -- the SEMF volume term's exponent -- with the coefficient constant to all computed digits. This is a NEGATIVE for the ROAST's R2 hypothesis that the braid->nucleus map is the defective step: the map's A-scaling is right. The residual is a pure multiplicative constant, not a shape error. Deliberately not matched to any structural candidate (see module docstring)."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

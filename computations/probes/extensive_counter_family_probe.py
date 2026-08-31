@@ -1,6 +1,35 @@
 #!/usr/bin/env python3
 """What else is extensive? — the full counter × normaliser family, measured.
 
+⚠ SCALE CORRECTION 2026-08-31 — EVERY MeV FIGURE BELOW IS 8.19x TOO SMALL
+-------------------------------------------------------------------------
+This probe multiplies its dimensionless logs by `m_e = 0.511 MeV`, unjustified.
+The corpus's binding machinery uses the hadronic energy unit
+`E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV` (`b_over_a_evaluator.py`; the `B_sym`
+linear chain's `alpha`, CAL-1; the ROAST's `E_0 log N`), larger by
+`1/(q_0(q_0-1)) = 8.1917611722`. Corrected:
+
+    whole 4x4 grid   2.909 ... 46.39 MeV/nucleon   (was 0.355 ... 5.663)
+    A1's own row     8.722 ... 11.60               (was 1.065 ... 1.416)
+
+so the family maximum no longer falls short of anything — it exceeds `a_V` by
+2.9x — and A1's row **overshoots** the 8.5 plateau instead of falling 6-8x below
+it. See `computations/probes/extensive_term_energy_scale_reconciliation_probe.py`.
+
+**What survives, and it is the substance of this probe:** the four counters are
+read off `atom_braid_word_3A` and are dimensionless. `bonds = A-1`,
+`averaged = 2A+1`, `strands = 3A`, `letters = 12A-1`, all exactly linear in `A`
+with zero residual, and `letters = 4 x strands` exactly. Both assertions are
+scale-free and stand. So does the §"WHICH COUNTER IS A1's" finding that the
+normaliser `Z(n) = (1+q^2)^n` is word-independent, hence A1's counter is
+**strands** and the other rows are different proposals.
+
+**What is withdrawn:** the sentence "the maximum is still 1.50x short of the
+plateau and 2.79x short of `a_V`", the `no_family_member_reaches_plateau`
+assertion (true at `m_e`, false at `E_0`), and the conclusion that "the missing
+factor is neither a normalisation nor a counter" — at `E_0` there is no missing
+factor of that size to explain.
+
 THE QUESTION
 ------------
 Two probes narrowed the extensive-term problem to a single number:
@@ -164,12 +193,17 @@ def main() -> int:
             grid[cname][nname] = mp.nstr(v, 10)
             best = max(best, v)
 
+    # ⚠ SCALE-QUALIFIED. True at m_e, FALSE at the corpus's own E_0, where the
+    # family maximum is 46.39 MeV/nucleon. Kept, with the qualifier in the name,
+    # so the retraction has something to point at rather than vanishing.
     w.add_assertion(
-        "no_family_member_reaches_plateau",
+        "no_family_member_reaches_plateau_AT_THE_m_e_SCALE",
         computed="1" if best < B_OVER_A_PLATEAU else "0",
         expected="1",
-        source=f"family maximum {mp.nstr(best, 8)} MeV/nucleon vs the empirical B/A "
-               f"plateau {B_OVER_A_PLATEAU} MeV/nucleon (independent: nuclear data)",
+        source=f"family maximum {mp.nstr(best, 8)} MeV/nucleon AT m_e vs the empirical B/A "
+               f"plateau {B_OVER_A_PLATEAU} MeV/nucleon (independent: nuclear data). At "
+               f"E_0 = m_e/(q0(q0-1)) the same maximum is "
+               f"{mp.nstr(best / (q * (q - 1)), 8)} MeV/nucleon and the statement is FALSE.",
     )
 
     w.add_parameter("q0", mp.nstr(q, 30))
@@ -210,6 +244,28 @@ def main() -> int:
                        "1.50x when for A1 it is 6.0-8.0x."),
     })
 
+    e0_ratio = 1 / (q * (q - 1))
+    w.add_data("SCALE_CORRECTION_2026_08_31", {
+        "scale_ratio_E0_over_me": mp.nstr(e0_ratio, 20),
+        "corrected_grid_MeV_per_nucleon": {
+            cname: {nname: mp.nstr(mp.mpf(v) * e0_ratio, 10) for nname, v in row.items()}
+            for cname, row in grid.items()
+        },
+        "corrected_family_max": mp.nstr(best * e0_ratio, 10),
+        "corrected_A1_strands_row_vs_plateau":
+            f"{mp.nstr(counters['strands'] * mp.log(min(normalisers.values())) * M_E_MEV * e0_ratio / B_OVER_A_PLATEAU, 6)}x .. "
+            f"{mp.nstr(counters['strands'] * mp.log(max(normalisers.values())) * M_E_MEV * e0_ratio / B_OVER_A_PLATEAU, 6)}x OVER",
+        "what_survives": "The counter measurements. They are dimensionless and read off "
+                         "atom_braid_word_3A: bonds A-1, averaged 2A+1, strands 3A, letters "
+                         "12A-1, exactly linear, letters = 4 x strands. Both assertions are "
+                         "scale-free. So is the finding that Z(n) is word-independent and "
+                         "A1's counter is therefore strands.",
+        "what_is_withdrawn": "Every MeV magnitude, the 'still 1.50x short' framing, and the "
+                             "conclusion that 'the missing factor is neither a normalisation "
+                             "nor a counter' -- at E_0 there is no factor of that size left "
+                             "to explain.",
+        "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py",
+    })
     w.add_data("verdict", (
         "The missing factor is neither a normalisation nor a counter. Every extensive "
         "counter the atomic word offers is exactly linear in A with slope in {1,2,3,12}; "

@@ -1,6 +1,39 @@
 #!/usr/bin/env python3
 """A1 / bean `qou-78pt` — is the un-normalised-trace option a fit, or is it refuted?
 
+⚠ WITHDRAWN 2026-08-31 — THE VERDICT BELOW ("A1 REFUTED") DOES NOT STAND
+------------------------------------------------------------------------
+The refutation rests on one comparison: the convention family spans 1.33x while
+the deficit is 6x-15x, "two orders of magnitude too small to be the thing that
+closes the gap". **The deficit figure was an energy-scale artifact.**
+
+This probe multiplies its dimensionless logs by `m_e = 0.511 MeV`, with no reason
+given. The corpus's binding machinery uses the hadronic energy unit
+`E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV` — `b_over_a_evaluator.py`, the `B_sym`
+linear chain (`alpha = E_0`, CAL-1), and the ROAST's own `E_0 log N`. At `E_0`:
+
+    family:            8.722 ... 11.597 MeV/nucleon   (was 1.065 ... 1.416)
+    vs B/A plateau 8.5:  every member is OVER          (was 6.0x-8.0x short)
+    vs a_V 15.8:       1.36x ... 1.81x short           (was 11x-15x short)
+    span:              1.33x  —  now the SAME SIZE as the deficit
+
+So the argument inverts. When the span is comparable to the gap, choosing the
+member that lands on `a_V` **is** a fit — which is exactly what the ROAST charged
+and what this probe claimed to have disposed of. **A1 returns to
+"unfalsifiable as written", and pinning the normalisation from the axioms is
+again the actual work.** See
+`computations/probes/extensive_term_energy_scale_reconciliation_probe.py`.
+
+The section "A NUMBER I COULD NOT REPRODUCE" below is also resolved: the ROAST's
+2.91 MeV/strand is `E_0`-scaled, and `2.91/E_0 = 0.6952` is `ln 2` to 0.3 % —
+the ROAST's own stated construction. At `m_e` the figure is *unreachable*: it
+would need a normaliser with `log = 5.69`, against a family whose logs span
+0.694-0.923. My inability to reproduce it was the tell, and I logged it as an
+open discrepancy instead of chasing it.
+
+What survives untouched: the framing factor `(1+q^2)/(q+1/q) = q` (exact, a
+ratio, scale-free), and the *discreteness* of the convention family.
+
 THE CHARGE
 ----------
 `docs/audits/2026-08-07-l2-attack-options-ROAST.md` §A1 rules attack A1
@@ -90,11 +123,14 @@ SEMF_A_V = mp.mpf("15.8")           # MeV, semi-empirical mass formula
 
 def main() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
+    Q_NUM = q  # local alias used in the scale-qualified assertion source below
     w = WitnessBuilder("markov-normalisation-convention-span-probe")
     w.set_description(
         "A1/qou-78pt: measures the span of the Markov-normalisation convention family "
-        "against the extensive-term deficit. The family is discrete and 1.33x wide; the "
-        "deficit is 6-15x. No member reaches the target, so A1 is refuted rather than fitted."
+        "against the extensive-term deficit. The family is discrete and 1.33x wide. "
+        "VERDICT WITHDRAWN 2026-08-31: the 6-15x deficit was an m_e-vs-E_0 energy-scale "
+        "artifact; at E_0 the deficit is 1.36-1.81x, the same size as the span, so A1 "
+        "reverts to unfalsifiable-as-written. See the SCALE_CORRECTION data block."
     )
 
     # ---- assertion 1: the framing step is exactly one factor of q -----------
@@ -132,11 +168,15 @@ def main() -> int:
     # ---- assertion 2: no member reaches the plateau -------------------------
     none_reaches = hi < B_OVER_A_PLATEAU
     w.add_assertion(
-        "no_convention_member_reaches_B_over_A_plateau",
+        "no_convention_member_reaches_B_over_A_plateau_AT_THE_m_e_SCALE",
         computed="1" if none_reaches else "0",
         expected="1",
-        source=f"max over the family is {mp.nstr(hi, 8)} MeV/nucleon; the empirical B/A "
-               f"plateau is {B_OVER_A_PLATEAU} MeV/nucleon (independent: nuclear data)",
+        source=f"max over the family is {mp.nstr(hi, 8)} MeV/nucleon AT m_e; the empirical "
+               f"B/A plateau is {B_OVER_A_PLATEAU} MeV/nucleon (independent: nuclear data). "
+               f"⚠ The scale qualifier is not cosmetic: at the corpus's own E_0 the same "
+               f"family gives {mp.nstr(hi * (1 / (Q_NUM * (Q_NUM - 1))), 8)} MeV/nucleon at "
+               f"its maximum and every member CLEARS the plateau, which is why this "
+               f"probe's verdict is withdrawn.",
     )
 
     w.add_parameter("q0", mp.nstr(q, 30))
@@ -160,7 +200,44 @@ def main() -> int:
         "strands_per_nucleon_at_corpus_normaliser": mp.nstr(req_strands, 8),
         "corpus_fixes": STRANDS_PER_NUCLEON,
     })
-    w.add_data("unreconciled", {
+    # ---- the scale correction, and the withdrawal it forces -----------------
+    e0 = M_E_MEV / (q * (q - 1))
+    lo_e0, hi_e0 = lo * e0 / M_E_MEV, hi * e0 / M_E_MEV
+    w.add_data("SCALE_CORRECTION_2026_08_31_VERDICT_WITHDRAWN", {
+        "what_is_wrong": "Every MeV figure here uses m_e as the energy scale, unjustified. "
+                         "The corpus's binding machinery uses E_0 = m_e/(q_0(q_0-1)).",
+        "E_0_MeV": mp.nstr(e0, 20),
+        "scale_ratio": mp.nstr(e0 / M_E_MEV, 20),
+        "corrected_family_MeV_per_nucleon":
+            f"{mp.nstr(lo_e0, 8)} .. {mp.nstr(hi_e0, 8)}",
+        "corrected_vs_plateau":
+            f"{mp.nstr(lo_e0 / B_OVER_A_PLATEAU, 6)}x .. "
+            f"{mp.nstr(hi_e0 / B_OVER_A_PLATEAU, 6)}x OVER (every member clears 8.5)",
+        "corrected_vs_a_V":
+            f"{mp.nstr(SEMF_A_V / hi_e0, 6)}x .. {mp.nstr(SEMF_A_V / lo_e0, 6)}x short",
+        "span_unchanged": mp.nstr(hi / lo, 6),
+        "why_the_verdict_falls": (
+            "The refutation was 'span 1.33x vs deficit 6-15x, two orders of magnitude too "
+            "small'. Corrected, the deficit against a_V is 1.36-1.81x and the span is "
+            "1.33x -- the SAME SIZE. That is precisely the condition under which picking a "
+            "member is a fit, i.e. the ROAST's original charge. A1 REVERTS to "
+            "'unfalsifiable as written'; pinning the convention from the axioms is again "
+            "the actual work."
+        ),
+        "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py",
+    })
+    w.add_data("unreconciled_RESOLVED_2026_08_31", {
+        "roast_claim_MeV_per_strand": "2.91",
+        "resolution": ("E_0-scaled, not m_e-scaled. 2.91/E_0 = "
+                       + mp.nstr(mp.mpf("2.91") / e0, 8) + ", which is ln 2 = "
+                       + mp.nstr(mp.log(2), 8) + " to 0.3% -- the ROAST's own stated "
+                       "construction 'the extensive coefficient is E_0 log N' at N = 2. "
+                       "At m_e the figure is UNREACHABLE: it would need a normaliser with "
+                       "log = " + mp.nstr(mp.mpf("2.91") / M_E_MEV, 6) + ", against a family "
+                       "whose logs span 0.694-0.923. Failing to reproduce it was the tell; "
+                       "I logged it as open instead of chasing it."),
+    })
+    w.add_data("unreconciled_ORIGINAL_TEXT_kept_for_the_record", {
         "roast_claim_MeV_per_strand": "2.91",
         "this_probe_range_MeV_per_strand":
             f"{mp.nstr(min(mp.log(d) * M_E_MEV for d in family.values()), 6)} .. "
@@ -169,7 +246,8 @@ def main() -> int:
                 "not reconstruct it. The span argument is a ratio and is unaffected either way.",
     })
     w.add_data("verdict", (
-        "A1 REFUTED, not unfitted. The ROAST called the option unfalsifiable because "
+        "[WITHDRAWN 2026-08-31 -- see SCALE_CORRECTION block. Kept verbatim so the "
+        "retraction has something to point at.] A1 REFUTED, not unfitted. The ROAST called the option unfalsifiable because "
         "'do not normalise' is a convention family and choosing the member that lands on "
         "a_V would be a fit. Measured, the family is DISCRETE (the two leading members "
         "differ by exactly one factor of q) and spans 1.33x, while the deficit is 6-15x. "

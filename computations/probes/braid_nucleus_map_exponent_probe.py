@@ -1,6 +1,30 @@
 #!/usr/bin/env python3
 """ROAST-M2 / bean `qou-imcd` — exponent-only test of the atomic-braid → nucleus map.
 
+⚠ CORRECTION 2026-08-31 — THE SHORTFALL FIGURES BELOW ARE AT THE WRONG SCALE
+----------------------------------------------------------------------------
+This probe multiplies its dimensionless log by `m_e = 0.511 MeV` and reports
+"shortfall vs B/A plateau 6.906x". It gave no reason for choosing `m_e`, and the
+corpus's own binding machinery does not: `computations/b_over_a_evaluator.py`
+uses the hadronic energy unit `E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV`, as does the
+`B_sym` linear-chain derivation (`alpha = E_0`, CAL-1) and the ROAST itself.
+
+    E_0 / m_e = 1 / (q_0 (q_0 - 1)) = 8.1917611722
+
+and that ratio is the WHOLE of the reported shortfall — verified against this
+file's own committed witness in
+`extensive_term_energy_scale_reconciliation_probe`. At `E_0` the extensive
+coefficient is 10.086 MeV/nucleon, i.e. **1.19x OVER** the 8.5 plateau and 1.57x
+short of `a_V`, not 6.9x short of anything.
+
+**What survives, and it is the whole point of this probe:** the exponent test is
+*scale-free* — a constant multiplier cannot change a log–log slope — so
+`log_normaliser_A_exponent = 1` and the `(1+q^2)^n` closed form are untouched, as
+is the verdict that the braid→nucleus map is not the defective step. Only the
+MeV magnitudes and the "residual" framing are withdrawn. Every MeV figure in the
+`extensive_coefficient_MeV_per_nucleon`, `light_isotope_comparison` and
+`plateau_shortfall` blocks below is at `m_e` and must be scaled by 8.1917611722.
+
 THE QUESTION
 ------------
 Six Δ_λ magnitude ansätze have failed, all in the same way. The ROAST
@@ -226,8 +250,26 @@ def main() -> int:
                  "and would also detect an affine strand rule n = 3A + c, c != 0. "
                  "The test is therefore not vacuous."),
     })
+    w.add_data("SCALE_CORRECTION_2026_08_31", {
+        "what_is_wrong": "Every MeV figure in this witness uses m_e = 0.511 MeV as the "
+                         "energy scale, with no justification given. The corpus's binding "
+                         "machinery uses E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV.",
+        "scale_ratio_E0_over_me": mp.nstr(1 / (q0 * (q0 - 1)), 20),
+        "corrected_extensive_coefficient_MeV_per_nucleon":
+            mp.nstr(per_nucleon / (q0 * (q0 - 1)), 12),
+        "corrected_vs_plateau": mp.nstr(
+            mp.mpf("8.5") * q0 * (q0 - 1) / per_nucleon, 8) + "x (i.e. it OVERSHOOTS 8.5)",
+        "corrected_vs_a_V": mp.nstr(
+            mp.mpf("15.8") * q0 * (q0 - 1) / per_nucleon, 8) + "x short",
+        "what_is_UNAFFECTED": "The exponent test itself. A constant multiplier cannot "
+                              "change a log-log slope, so log_normaliser_A_exponent = 1 and "
+                              "the (1+q^2)^n closed form stand, and so does the verdict that "
+                              "the braid->nucleus map is not the defective step.",
+        "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py",
+    })
     w.add_data("verdict", (
-        "EXPONENT TEST PASSES. The 3-strands-per-nucleon map yields a normaliser whose "
+        "EXPONENT TEST PASSES (unaffected by the scale correction above; a log-log slope "
+        "is scale-free). The 3-strands-per-nucleon map yields a normaliser whose "
         "logarithm is exactly linear in A -- the SEMF volume term's exponent -- with the "
         "coefficient constant to all computed digits. This is a NEGATIVE for the ROAST's "
         "R2 hypothesis that the braid->nucleus map is the defective step: the map's "

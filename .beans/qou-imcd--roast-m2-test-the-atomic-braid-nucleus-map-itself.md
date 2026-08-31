@@ -59,3 +59,21 @@ across widening windows instead of a predicted one.
 the map hypothesis, so A1–A7 are *not* moot on those grounds and item 5 (`qou-78pt`,
 pin the Markov normalisation from the axioms) is promoted: it is now the live one, with
 a concrete target.
+
+---
+
+## 2026-08-31 — the exponent test STANDS; only the 6.906× residual is withdrawn.
+
+The probe's MeV figures use `m_e` as the energy scale, unjustified; the corpus's
+binding machinery uses `E₀ = m_e/(q₀(q₀−1))`, 8.1917611722× larger. Corrected,
+the extensive coefficient is **10.086 MeV/nucleon** — 1.19× **over** the 8.5
+plateau and 1.57× short of `a_V`, not 6.906× short of anything.
+
+**None of that touches this bean's result.** A log–log slope is scale-free: a
+constant multiplier cannot change it. So `log Z(3A)` is still exactly linear in
+`A`, the closed form `Z(n) = (1+q²)ⁿ` still holds, the `[n]_q!` control still
+gives exponent → 2 and not 1, and the conclusion stands — **the braid→nucleus
+map is not the defective step**, its `A`-scaling is right.
+
+What is withdrawn is the framing that a large multiplicative residual remained
+to be explained. At `E₀` there is no residual of that size. Bean `qou-59j5`.

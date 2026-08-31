@@ -1,11 +1,11 @@
 ---
 # qou-78pt
 title: 'A1: volume term = unnormalized Ocneanu/Markov trace'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:37:45Z
-updated_at: 2026-08-31T03:09:11Z
+updated_at: 2026-08-31T04:14:31Z
 parent: qou-kemt
 ---
 
@@ -63,3 +63,38 @@ multiplicative constant. This one finds the constant cannot be supplied by
 convention choice. Together: the extensive term has the right *shape* and the
 wrong *size*, and the size is not hiding in the normalisation. Whatever supplies
 ~7× is a different object.
+
+---
+
+## 2026-08-31 — VERDICT WITHDRAWN. A1 is not refuted; the ROAST was right.
+
+I closed this bean with "A1 REFUTED, not unfitted", on one argument: the
+convention family spans 1.33× while the deficit is 6–15×, "two orders of
+magnitude too small to be the thing that closes the gap".
+
+**The deficit figure was an energy-scale artifact.** My probe multiplied its
+dimensionless logs by `m_e = 0.511 MeV` with no reason given; the corpus's
+binding machinery uses `E₀ = m_e/(q₀(q₀−1)) = 4.18598 MeV` — 8.1917611722×
+larger. At `E₀`:
+
+    family:              8.722 … 11.597 MeV/nucleon
+    vs a_V 15.8:         1.36× … 1.81× short
+    span:                1.33×   —  the SAME SIZE as the deficit
+
+When the span is comparable to the gap, choosing the member that lands on `a_V`
+**is** a fit. That is verbatim the ROAST's charge, and my refutation only worked
+because I had shrunk the family by 8.19×. **A1 reverts to "unfalsifiable as
+written"; pinning the normalisation from the axioms is again the actual work.**
+
+The "number I could not reproduce" was the tell and I filed it as open instead
+of chasing it: the ROAST's 2.91 MeV/strand divided by `E₀` is `ln 2` to 0.3 %,
+its own stated `E₀ log N` construction — while at `m_e` it is *unreachable*,
+needing a normaliser with `log = 5.695` against a family spanning 0.694–0.923.
+
+Survives untouched: the framing factor `(1+q²)/(q+1/q) = q` (a ratio, exact,
+scale-free) and the discreteness of the family.
+
+Full accounting and what would close it: bean `qou-59j5`. Probe:
+`computations/probes/extensive_term_energy_scale_reconciliation_probe.py`.
+The probe docstring, its witness verdict and its plateau assertion are all
+annotated in place, with the original text kept.
