@@ -217,6 +217,69 @@ def main() -> int:
     print("  and a z OFF the isolated TL point.  This probe exists so that nobody")
     print("  spends a tranche discovering that.")
     print()
+    # ---- the third leg: traciality IS Markov move I ------------------------
+    print("AND THE KMS ROUTE COSTS THE LINK INVARIANT — a trilemma, not a pair")
+    print("-" * 78)
+    print("  Markov's theorem: two braids have the same closure iff related by")
+    print("  (I) conjugation and (II) stabilisation.  A linear functional is")
+    print("  conjugation-invariant, phi(g b g^-1) = phi(b), EXACTLY WHEN")
+    print("  phi(ab) = phi(ba) -- set a = g b, b = g^-1.  So")
+    print()
+    print("      conjugation invariance  =  Markov move I  =  TRACIALITY,")
+    print()
+    print("  and these are the same condition, not three related ones.  A")
+    print("  non-tracial weight therefore does not descend to link closures at")
+    print("  all.  Measured on H_3 over all 36 ordered pairs of basis elements:")
+    print()
+    n = 3
+    memo2 = {}
+    B = sorted(permutations(range(n)), key=lambda w: (m.inv_count(w), w))
+
+    def phi(x, he):
+        return m.tr_M(elt_mul(he, x, n), n, hq, zD, memo2)
+
+    print(f"{'weight':>28} {'max |phi(ab) - phi(ba)|':>26} {'Markov I':>10}")
+    results = {}
+    for label, he in (("h = 1  (tr_M itself)", {tuple(range(n)): mp.mpf(1)}),
+                      ("h = T_1  (non-central)",
+                       dict(m.t_word(m.s_i(n, 1), n, hq)))):
+        worst, wit = mp.mpf(0), None
+        for a in B:
+            ta = m.t_word(a, n, hq)
+            for b in B:
+                tb = m.t_word(b, n, hq)
+                d = abs(phi(m.mul(ta, b, n, hq), he)
+                        - phi(m.mul(tb, a, n, hq), he))
+                if d > worst:
+                    worst, wit = d, (a, b)
+        ok = worst < mp.mpf(10) ** -40
+        results[label] = (worst, ok, wit)
+        print(f"{label:>28} {fmt(worst, 10):>26} {str(ok):>10}")
+    print()
+    tr_worst, tr_ok, _ = results["h = 1  (tr_M itself)"]
+    nt_worst, nt_ok, nt_wit = results["h = T_1  (non-central)"]
+    assert tr_ok, "the Markov trace must be conjugation-invariant"
+    assert not nt_ok, "a non-central twist must break conjugation invariance"
+    print(f"  tr_M itself: violation EXACTLY {fmt(tr_worst, 4)} -- move I holds.")
+    print(f"  The T_1 twist: violation {fmt(nt_worst, 8)}, witness a = {nt_wit[0]},")
+    print(f"  b = {nt_wit[1]}.  Not marginal -- it is order the Gram's own")
+    print("  singular values.")
+    print()
+    print("  SO THE PICTURE IS A TRILEMMA, and the third leg is the expensive one:")
+    print("    (1) keep tr_M tracial  -> KMS only at beta = 0, so E_0 is not a")
+    print("        temperature and alpha*ln(ratio) stays unlicensed (#6395);")
+    print("    (2) go non-tracial     -> finite-temperature modular dynamics, but")
+    print("        MARKOV MOVE I FAILS, so the object is not a link invariant --")
+    print("        it is no longer the framework's trace in any sense;")
+    print("    (3) either way the RANK problem is untouched and needs z off the")
+    print("        isolated TL point (#6397).")
+    print()
+    print("  (2) is not a cost the framework can obviously pay: the Jones")
+    print("  polynomial, tr_M as a link invariant, and the braid-closure picture")
+    print("  of nucleons all rest on conjugation invariance.  Scope (b), with the")
+    print("  invariant named: MARKOV MOVE I IS TRACIALITY.")
+    print()
+
     print("WHAT IS NOT ESTABLISHED")
     print("-" * 78)
     print("  * The NON-INVERTIBLE case.  An h that is not a unit (a projector,")
