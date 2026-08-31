@@ -154,6 +154,20 @@ it.** A decision you are not prepared to frame belongs in a bean the author
 can read on their own schedule, not in front of them stripped of everything
 that would let them answer.
 
+## TRAP — `update_pull_request` is a PARTIAL write, and its rate-limit error lies
+
+It is split across two APIs with **separate rate-limit budgets**: REST for
+title/body, GraphQL for the `draft` toggle. Measured on `qou#6264` 2026-08-31 —
+one call returned *"API rate limit already exceeded"* while the **title and body
+landed** and only `draft` did not. So: **re-READ the PR before re-sending or
+reporting a failure** (I re-sent four times against a limit that was never
+blocking it), do not generalise "rate limited" across the whole API, and know
+there is **no REST path to un-draft** — a GraphQL outage blocks the merge
+outright, so wait and re-arm rather than close-and-reopen or open a fresh PR.
+Discriminator: `merge_pull_request` is REST, so it returns a *real* error
+(`405 Pull Request is still a draft`), isolating the blocker to GraphQL.
+Detail: [`update-pull-request-partial-write.md`](update-pull-request-partial-write.md).
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
