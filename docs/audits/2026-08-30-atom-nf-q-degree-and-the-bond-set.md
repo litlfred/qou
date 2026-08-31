@@ -1,7 +1,6 @@
 # atom_nf_q_degree_probe — full output (2026-08-30)
 
-Verbatim run of `computations/substrate/atom_nf_q_degree_probe.py` on `main` +
-this branch. Regenerate with:
+Verbatim run of `computations/substrate/atom_nf_q_degree_probe.py`. Regenerate with:
 
     python3 -u computations/substrate/atom_nf_q_degree_probe.py
 
@@ -182,6 +181,30 @@ Closed forms on the N=Z chain, checked against every measured point
        none: all match
    complete: all match
 
+Reconciliation: is the surface-term exclusion premise-dependent?
+  main's count (atom_braid_word_3A, chain)  : 12A - 1        affine
+  this probe's (build_atom_nf_sym, complete): A^2/2 + 11A    quadratic (N=Z)
+  A surface term needs count/A^(2/3) CONSTANT across A.  In m = A^(1/3):
+      chain     (12m^3 - 1)/m^2      = 12m - 1/m^2      d/dm = 12 + 2/m^3 > 0
+      complete  (m^6/2 + 11m^3)/m^2  = m^4/2 + 11m      d/dm = 2m^3 + 11 > 0
+  Both strictly increasing on m > 0, hence injective, hence equal at no
+  two distinct A.  Measured, as exact rationals in A^(1/3):
+   A  chain count  complete count      chain/A^(2/3)     complete/A^(2/3)
+   2           23              24        14.48909207          15.11905260
+   4           47              52        18.65196236          20.63621368
+   6           71              84        21.50259368          25.43968830
+   8           95             120        23.75000000          30.00000000
+  12          143             204        27.28235611          38.92028425
+  16          191             304        30.08061507          47.87699990
+  20          239             420        32.43729052          57.00276995
+  24          287             552        34.49380222          66.34348023
+  chain    ratio strictly increasing over the sample: True
+  complete ratio strictly increasing over the sample: True
+  => the exclusion SURVIVES the premise correction.  main's verdict does
+     not move; only its scope sentence does -- 'the framework supplies
+     one crossing count per nucleus' is false, and 'extensive by
+     construction' holds for the chain word only.
+
 Reading
 ------------------------------------------------------------------------------
   * The six NF coefficients are LAURENT POLYNOMIALS in q, not general
@@ -196,14 +219,17 @@ Reading
     DENSE in that sublattice (gaps=0): the coefficient is q^-D * P(q^2)
     with P of full degree D.  So the degree is not carried by a sparse
     leading term that could cancel downstream.
-  * The q-degree is QUADRATIC in A, and the ablation shows the quadratic
-    is ENTIRELY the inter-nucleon loop: with that loop off the span is
-    exactly linear (23A - 2 on the N=Z chain, second difference 0), and
-    the pair crossings alone contribute a term with leading coefficient
-    exactly 1 in A^2.  That is a control, not a fit.
-  * Consequence for the bk-crossing arc: the braid word this producer
-    builds encodes the COMPLETE GRAPH on the nucleons -- the bond set
+  * The q-degree is QUADRATIC in A, and swapping ONLY the bond set shows
+    the quadratic is entirely the inter-nucleon loop: complete graph is
+    quadratic (leading coefficient exactly 1), the adjacent-pair chain is
+    linear (25/nucleon), and no pair bonds at all is linear (23/nucleon).
+    Exact integer finite differences, no fit and no tolerance.
+  * So the q-degree is a DIAGNOSTIC: it separates the bond sets by growth
+    class, needing no q0, no anchor and no AME.  Measured, the word
+    build_atom_nf_sym writes encodes the COMPLETE GRAPH -- the bond set
     QOU.Mass.CoordinationSaturation proves gives B/A = eps*(A-1)/2,
-    unbounded, with no plateau.  The q-degree is an algebraic readout of
-    which bond set a producer uses, needing no q0, no anchor and no AME.
+    unbounded, with no plateau.
+  * The chain and the complete graph are BOTH live in the corpus, on
+    different producers.  That is a scope-(a) statement about which word
+    a given producer writes; it does not decide what the physics needs.
 ```
