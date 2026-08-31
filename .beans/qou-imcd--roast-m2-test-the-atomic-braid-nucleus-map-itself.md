@@ -77,3 +77,21 @@ map is not the defective step**, its `A`-scaling is right.
 
 What is withdrawn is the framing that a large multiplicative residual remained
 to be explained. At `E₀` there is no residual of that size. Bean `qou-59j5`.
+
+## 2026-08-31 (later) — WHY this bean's test passed while every magnitude ansatz failed
+
+`qou-ap3d` supplies the explanation, and it is structural rather than numerical.
+`log Z(3A)` is a **graded log-dimension**: `Z(n) = Σ_k C(n,k)q^{2k}` is exactly
+the weight generating function of `(ℂ²)^{⊗n}` and `Z(n)|_{q=1} = 2^n`. So the
+quantity whose A-exponent this bean measured is an **entropy**, not an energy.
+
+An extensive entropy and an extensive energy have the **same A-scaling by
+construction**, so the exponent test cannot distinguish them — which is why it
+passed to all computed digits while six magnitude ansätze failed "all in the
+same way". They were each fitting a conversion between two different *kinds* of
+quantity.
+
+This bean's result is unaffected and is if anything sharper: the map's A-scaling
+is right, and the reason no magnitude followed is that there was never a
+magnitude to find on that route without a temperature — which the framework does
+not have (`qou-ap3d` §3).
