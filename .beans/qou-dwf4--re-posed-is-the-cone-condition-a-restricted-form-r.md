@@ -1,11 +1,11 @@
 ---
 # qou-dwf4
 title: 'Re-posed: is the cone condition a RESTRICTED-form relation in the 8x8 entries?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T03:18:55Z
+updated_at: 2026-08-31T03:39:46Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -56,3 +56,62 @@ it asks the constructive follow-up -- whether the ordering-indexed data can
 express the cone condition in ANY disciplined way. A negative answer would say
 the 8x8 and the NF cone are genuinely different objects; a positive one would
 supply the map the proposition always lacked.
+
+
+---
+
+## ANSWERED 2026-08-31 — item (iii) is POSITIVE, and the codimension is what makes it a result
+
+Probe: `computations/probes/toffoli_cone_in_entry_subring.py`, **8/8**, exact
+sympy over Q(q); the one numeric step is an mpmath-60dps agreement check of the
+symbolic Gram against `pyhecke.gram.gram_matrix_mp` (max |diff| 2.77e-54 over
+q = 0.7, the proton q0, 1.7). No float64.
+
+**THE MEASUREMENT.** Over the common denominator D = q^6 (q^2+1)^4 every element
+is a numerator polynomial of degree <= 20, so the ambient space is 21-dimensional.
+
+    {1} u {8 distinct entries} u {36 pairwise products}   45 generators, rank 15
+    the cone coordinate appended                          rank 15  -> IN SPAN
+
+**Rank 15 of 21 is a PROPER subspace, codimension 6.** That is the whole content:
+a generic rational function with this denominator is NOT in the span, so
+membership is a real coincidence rather than the forced answer question (b) got.
+
+**Two sharpenings.**
+
+  * **Squares alone are NOT enough.** {1} u entries u squares spans rank 14, and
+    the cone coordinate raises it to 15 -- OUTSIDE. The cross terms M_ij M_kl are
+    load-bearing; this is not "any quadratic will do".
+  * **Four entries suffice.** {M00, M33, M44, M77} at degree 2 spans rank 14
+    (codim 7, strictly inside the rank-15 span) and still contains the target.
+    Explicit 10-term witness, verified symbolically to exact zero:
+
+        1*(-4/9) + M00^2*(5/36) + M00*M33*(-20/3) + M00*M44*(-10/9)
+        + M00*M77*(5/18) + M33^2*(-28/9) + M33*M44*(20/3) + M33*M77*(38/9)
+        + M44^2*(20/9) + M77^2*(5/36)   =   (G t)_5
+
+**The cone coordinate, exactly** (also re-derived here from the symbolic Gram):
+
+        (G t)_5 = (q^10 + q^6 - q^4 + q^2 - 1) / (q^2 + 1)^2
+
+**WHAT THIS DOES NOT DO — it does not revive `prop:toffoli-lp-stability`.** That
+block reduces the cone condition to "P_77 . W_std with the sign of P_76", a
+MONOMIAL times a sign, and the zero-set refutation of that stands untouched (the
+probe re-checks the divisibility fact: no entry's numerator is divisible by the
+cone numerator). A degree-2 polynomial is a strictly larger class than a
+monomial. So the result **explains why** the published reduction had to fail:
+the relation exists but needs cancellation BETWEEN products, which is exactly
+how the cone acquires its extra root at q_c ~ 0.8945, and which no single
+product can supply.
+
+**Items (i) and (ii) of the list above are now subsumed or answered:** (i)
+Z-linear in the entries alone is refuted a fortiori by the squares-alone
+measurement (rank 14 without the target); (ii) is what was measured.
+
+**Remaining, and genuinely open:** the 10-term witness is A solution, not THE
+solution -- the solution space has dimension |generators| - rank = 15 - 14 = 1
+free parameter for the four-entry span, and 45 - 15 = 30 for the eight-entry
+span. Whether any solution has a structural reading (e.g. coefficients that are
+Hecke-theoretic rather than arbitrary rationals) is unmeasured, and is the only
+part of this question left. Denominators 9, 36, 18, 3 are suggestive of nothing
+so far.
