@@ -774,6 +774,7 @@ import QOU.QBeta.BringEllipticCurveJInvariant
 import QOU.QBeta.JetTowerBlindToDecay
 import QOU.QBeta.TraceRealSpectrumComplex
 import QOU.QBeta.TracelessDifferenceEllipticity
+import QOU.QBeta.DiscriminantCurveInQ
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing

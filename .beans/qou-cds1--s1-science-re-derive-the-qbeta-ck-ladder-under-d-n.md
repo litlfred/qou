@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T21:08:30Z
+updated_at: 2026-08-31T21:41:12Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5386,3 +5386,102 @@ factor bridges the gap · real nuclear decays hyperbolic · no species differenc
 small enough.
 
 **What is left is not a reading but a construction the corpus does not have.**
+
+---
+
+## Step 26 — the discriminant curve in `q`: the tower is not elliptic, and the phase is excluded at `3·10¹¹ σ`
+
+**Artifacts.**
+[`qbeta_discriminant_curve_in_q_probe.py`](../computations/qbeta/qbeta_discriminant_curve_in_q_probe.py)
+(8/8) ·
+[`QOU/QBeta/DiscriminantCurveInQ.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/DiscriminantCurveInQ.lean)
+(15 theorems, sorry-free) ·
+[audit](../docs/audits/2026-08-31-qbeta-discriminant-curve-in-q.md).
+
+### 🛑 A method error running through Steps 21–25, mine
+
+Every one of those steps evaluated its spectra at the **single point** `q = q₀`.
+That cannot distinguish a discriminant that is a perfect square from one that is
+an irreducible degree-18 polynomial, so **nothing in Steps 21–25 could have
+settled a question about the tower** — and each of them asserted tower-level
+conclusions anyway. "Collapsing to order zero" is the right description.
+
+### 🛑 And a factual claim, also mine
+
+Step 25 said `Δ_L` "cannot be asked this question" because `build_nucleon_nf`
+takes no `q`. **Wrong.** `hecke_core_symbolic.hm_sym` is the symbolic-`q` twin of
+`hm`; mirroring `build_nucleon_nf`'s 11-crossing braid-order word through it
+gives the nucleon NF as an exact element of `ℚ(q)`, matching the canonical
+numeric builder to `9·10⁻¹⁷` in all twelve coordinates. There was no gap.
+
+⚠️ `shift_from_nf_basis.build_nucleon_nf_sym_atomic` is **not** that mirror: it
+matches the crossing counts and the 7/4 split but applies the **monotone**
+re-sort of `B₃` where the canonical builder alternates — an **82 %** difference on
+`tr_M` by `nucleon_braid_word`'s own measurement, visible as `L₊ = e⁻ = 0`.
+
+### 1. No twisting exists to be missed
+
+`tr(1/q) = −tr(q)` · `det(1/q) = det(q)` · `disc(1/q) = disc(q)`, as **exact
+identities in `ℚ(q)`**. The bar involution acts trivially, so `disc` is a
+polynomial in `x = q + 1/q`. Consequence on the unit circle: `tr` is purely
+imaginary and `det` real (checked to 40 digits), so every root of unity carries a
+real discriminant.
+
+### 2. The curves: genus 0 and genus 8, never genus 1
+
+| model | `disc(x)` | curve |
+|---|---|---|
+| short `Δ_S` | `x² − 4` (`= h²`, a perfect square in `q`) | conic, **genus 0** |
+| long `Δ_L` | `(x−2)(x+2)G₋G₊/16`, deg 18, squarefree | hyperelliptic, **genus 8** (genus 4 on `w = x²`) |
+
+`G∓(x) = 2x⁸ − 21x⁶ + 77x⁴ − 115x² ∓ 2x + 58`. **Neither is genus 1** — no
+elliptic curve, hence no tower of them.
+
+**New, and only visible symbolically:** `x = q + 1/q ≥ 2` for every real `q > 0`,
+so `disc_S ≥ 0` **identically**. The short model is hyperbolic at *every* real
+`q`, not merely at `q₀`. Closed for good.
+
+### 3. The Hecke tower adds no eigenvalue
+
+Branching: `Res S^λ = ⊕ S^μ`. Verified on all five `H₄` shapes at three `q`.
+Every corpus object is `H₃`-valued (Step 25), so no new discriminant at any level.
+
+### 4. The classical limit is exactly `2π/3`, and the trefoil is second-order
+
+Every NF coordinate of `Δ_L` carries `(q−1)(q+1)`, so `Δ_L → 0` at `q = 1`.
+Orders: `γ:1 σ₀:2 σ₁:2 L₊:3 L₋:1 e⁻:2` → leading direction `−(1 + T₁T₀)`, and
+`T₁T₀` is the `S₃` 3-cycle: eigenvalues the primitive cube roots of unity,
+`tr = −1`, `det = 1`, `disc = −3`, eigenphase **exactly `2π/3`**.
+
+**The electron word `e⁻ = T₀T₁T₀` enters only at second order.** The thing that
+does the decay is `1 + L₋` first; the trefoil is its correction.
+
+### 5. The window, and the closure by measurement
+
+`Δ_L` is elliptic **exactly for `q ∈ (1, 1.379732661603278)`**; `q₀` sits 29.0 %
+up. `θ(q₀) = 2.02044502` — reproducing Step 22's `2.0204` from an independent
+construction. `θ` sweeps to 0 at the wall, so the required phase **is** attained:
+
+| conv | `θ_req @ q₀` | `q*` | `(q*−q₀)/σ_q₀` | dist. to wall |
+|---|---|---|---|---|
+| `z_C` | `0.0565947` | `1.37812464914` | **`2.91·10¹¹`** | `0.0016` |
+| `z_D` | `0.0447444` | `1.37956231361` | **`2.93·10¹¹`** | `0.00017` |
+
+Both hard against the degeneracy wall: **the phase is only small where `Δ_L` is
+about to stop being elliptic.** Excluded by the CODATA proton pin
+(`σ_q₀ = 9.2116·10⁻¹³`) at three hundred billion σ. Curve derived first, crossing
+located after — a falsification test, not a search. `q*` is a fact **about the
+curve**, never a candidate `q`.
+
+### 6. The cyclotomic tower `q = ζ_N` is real, and also too big
+
+`φ₃ = φ₆ = 2π/3` exactly (`disc = 9/16`), `φ₈ = π`, `N=4` singular, `N=5`
+degenerate, `φ_N → 2π/3`. Minimum over every non-degenerate `N ≤ 120`:
+**`φ₇ = 1.4042`** — still **24.8×** the required phase.
+
+### Where the arc stands after Step 26
+
+The short model is closed **for all `q`**. The long model's phase is excluded
+**by the calibration**, not by inspection. Neither tower — Hecke or cyclotomic —
+carries an elliptic curve or a small enough phase. What remains is unchanged from
+Step 25: not a reading, but a construction the corpus does not have.
