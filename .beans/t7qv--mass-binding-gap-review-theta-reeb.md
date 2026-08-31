@@ -667,3 +667,51 @@ My judgement, in order:
 3. Only then ask whether the selected operator *is* `K`. Nothing so far shows it
    is — no `B_AME` enters anywhere in this route, which is the point, but it also
    means nothing yet ties the selection to binding.
+
+---
+
+## `x_free` settled, and the separation is structural in `q` — 2026-08-31
+
+**Owner ruling on `x_free`.** Its 108-of-216 negative coordinates at `A = 3` are
+**correct, not a defect**: `x_free` is the tensor product of the individual
+nucleon NFs with **no inter-nucleon crossings** — the *free constituents* of the
+atom, not a bound configuration — and the constituents are not asked to be in a
+stable configuration. Positivity belongs to the **solution** only; the program
+asks for the cheapest forward-time operator that *covers* an unbound,
+entanglement-carrying constituent product. The tension flagged in the entry above
+is resolved in favour of the construction as it stands. **No nucleon rebuild
+needed** — this removes item 1 from that entry's next-list.
+
+**`q`-stability** (probe `positive_sector_q_stability_probe.py`, 4 assertions).
+`gram_matrix_mp`'s `q` override exists for exactly this test. Swept
+`q = 1.02 … 1.50` at `A = 3`, rebuilding *everything* per `q` — Gram, Markov cost
+`TR_M(q) = [1, z, z, z², z², hz²+z]`, and both nucleon NFs via `_hm_mp`. Nothing
+carried from `q₀`.
+
+| claim | strength |
+|---|---|
+| **`T` ≠ `³He` separation** | **fully robust** — different supports at all 13 `q` values, 1.02–1.50 |
+| **sub-alphabet `{σ₁, L₊, L₋}`** | stable on `q ∈ [1.02, 1.26]`; breaks at 1.28 (`γ`, `σ₀`, `e⁻` enter). `q₀ = 1.10998` well inside |
+| **degeneracy-breaking `obj > u₁`** | holds to ≈ 1.30, fails by 1.35 |
+| **support SIZE** | **NOT robust** |
+
+**A correction to my own previous entry.** The "6 and 9" support sizes are
+**vertex counts that move with `q`**, not structural facts: `|supp T|` takes
+`{4,5,6,7,8,9,12}` and `|supp He3|` takes `{5,7,8,9,10,11,12,13}` across the
+sweep, with no monotone pattern. Do not quote them as invariants. What is
+invariant is **that** the two differ, and **which letters** the support uses —
+not how many words.
+
+### Next
+
+With `x_free` settled and stability measured, the remaining item from the
+previous entry is the substantive one, and it is now the only one:
+
+**Does the selected operator have anything to do with `K`?** Nothing so far ties
+it to binding — no `B_AME` enters this route anywhere, which is what makes it
+clean, but it also means the selection is currently a structural fact about the
+Hecke data and not yet a physical claim. My judgement on how to attack it: the
+sub-alphabet `{σ₁, L₊, L₋}` is the sharpest handle, because it is a *derived*
+restriction on which operators can appear and it is `q`-stable. Ask what
+`{σ₁, L₊, L₋}` means as a binding operator — `L₊`/`L₋` are the Hopf-link
+elements of the NF basis — before asking whether the numbers match anything.
