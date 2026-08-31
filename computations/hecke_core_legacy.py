@@ -59,7 +59,37 @@ from fractions import Fraction
 from functools import lru_cache  # memoises _f_skew (bean qou-9ay6)
 import numpy as np
 
-from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
+# NO FLOAT64 — owner directive, excised 2026-08-31 (bean `qou-9ay6`).
+#
+# This imported the FLOAT variants: `Q`, `Q_INV`, `HA` and `E_CROSS` are Python
+# floats, so every q₀-derived quantity in this module — including the entries
+# `_build_ysn_matrices` writes into every YSN matrix — carried ~17 good digits.
+# Measured against the 50-dps closed form:
+#
+#     Q      (float)   2.725e-17 relative
+#     Q_MP   (mpf)     2.015e-50 relative
+#
+# The float error is the same one `pyhecke.atom.nucleon_gen_chains` already
+# measured at 2.61e-16 for `pyhecke.gram.h` and refused to propagate. This
+# module was the other side of that boundary: it took a ≥60-dps chain
+# coefficient and multiplied it against float64 matrices, so the precision
+# could not survive contact. Excising the float64 here is what makes the
+# high-precision coefficient mean something.
+#
+# Cost is accepted, not overlooked: mpf operands keep the matrix pipeline in
+# per-element Python arithmetic rather than vectorised BLAS. Under NO-FLOAT64
+# that is the price of a correct number, and the alternative — casting the
+# chain coefficient down — is the move the directive forbids.
+from q_parameter import (Q_MP as q0, Q_INV_MP as qi, HA_MP as h,
+                         q_int, E_CROSS_MP as E_CROSS)
+
+# Exact mpf 0 and 1, for seeding matrices whose entries are now mpf.
+# `0.0` and `1.0` are exactly representable so this costs no precision — it
+# stops the matrices being MIXED float/mpf, which forced mpmath to convert an
+# operand on nearly every multiplication (profiled at 6,186,121 `from_float`
+# calls). Bean `qou-9ay6`.
+_MPF_ZERO = q0 * 0
+_MPF_ONE = q0 / q0
 
 # pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
 # are already imported above unconditionally; this block only fixes
@@ -1014,6 +1044,57 @@ def _swap_tab(tab, a, b):
     return new
 
 
+def _mpf_eye(dim):
+    """Identity as an OBJECT ndarray of mpf (bean `qou-9ay6`).
+
+    Was `np.eye(dim)` — float64. Since the YSN generators and every q0-derived
+    scalar are mpf now, a float64 accumulator would be the one remaining place
+    the excised float re-entered, and it would force a dtype promotion on the
+    first multiply anyway.
+    """
+    I = np.empty((dim, dim), dtype=object)
+    I[:] = _MPF_ZERO
+    for i in range(dim):
+        I[i, i] = _MPF_ONE
+    return I
+
+
+class _CooMPF:
+    """Sparse matrix in COO form whose values may be mpmath ``mpf``.
+
+    Replaces ``scipy.sparse.csr_matrix`` here under the NO-FLOAT64 owner
+    directive (bean `qou-9ay6`). scipy refuses object dtype outright —
+
+        ValueError: scipy.sparse does not support dtype object
+
+    — so once ``q0``/``qi`` became mpf, the YSN generators could not be stored
+    in a scipy matrix at all. Storing them as float64 would have put the float
+    back exactly where the excision removed it.
+
+    The cost is small because the scipy BLAS path was already barely used: the
+    ≥60-dps chain coefficient promotes the accumulator to dtype ``object`` on
+    its first inter-nucleon crossing, after which `_msig_object_safe` was
+    already accumulating over the COO nonzeros in Python. This makes the COO
+    representation the primary one instead of a fallback reached by conversion.
+    """
+
+    __slots__ = ("row", "col", "data", "shape")
+
+    def __init__(self, rows, cols, vals, dim):
+        self.row = rows
+        self.col = cols
+        self.data = vals
+        self.shape = (dim, dim)
+
+    def tocoo(self):
+        return self
+
+
+def _is_coo_mpf(x) -> bool:
+    """True for the mpf-capable sparse form built by `_build_ysn_matrices`."""
+    return isinstance(x, _CooMPF)
+
+
 def _build_ysn_matrices(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
@@ -1034,15 +1115,13 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
     tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
 
     use_sparse = dim >= sparse_threshold
-    if use_sparse:
-        from scipy.sparse import csr_matrix
 
     matrices = []
     for k in range(1, n):
         if use_sparse:
             rows, cols, vals = [], [], []
         else:
-            M = [[0.0] * dim for _ in range(dim)]
+            M = [[_MPF_ZERO] * dim for _ in range(dim)]
         processed = set()
         for i, T in enumerate(tabs):
             if i in processed:
@@ -1108,7 +1187,7 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 processed.add(i)
                 processed.add(j)
         if use_sparse:
-            matrices.append(csr_matrix((vals, (rows, cols)), shape=(dim, dim)))
+            matrices.append(_CooMPF(rows, cols, vals, dim))
         else:
             matrices.append(tuple(tuple(row) for row in M))
     return matrices
@@ -1119,11 +1198,13 @@ def _matmul_dim(A, B, dim):
     speedup for higher Hecke levels)."""
     if dim >= 8:
         return np.asarray(A) @ np.asarray(B)
-    out = [[0.0] * dim for _ in range(dim)]
+    out = [[_MPF_ZERO] * dim for _ in range(dim)]
     for i in range(dim):
         for j in range(dim):
-            s = 0.0
-            for kk in range(dim):
+            # Seed from the first product, so the accumulator takes the
+            # operands' own type and mpmath never converts a float into the sum.
+            s = A[i][0] * B[0][j]
+            for kk in range(1, dim):
                 s += A[i][kk] * B[kk][j]
             out[i][j] = s
     return tuple(tuple(r) for r in out)
@@ -1138,7 +1219,7 @@ def _trace_dim(M, dim):
 def _identity(dim):
     if dim >= 8:
         return np.eye(dim)
-    return tuple(tuple(1.0 if i == j else 0.0 for j in range(dim))
+    return tuple(tuple(_MPF_ONE if i == j else _MPF_ZERO for j in range(dim))
                  for i in range(dim))
 
 
@@ -1319,19 +1400,23 @@ def _msig_object_safe(sig_sparse, M_run, gen, coo_cache):
     in object arithmetic and does not finish (measured >10 min on the A=2 atom).
     ``coo_cache`` makes the COO decomposition once per generator.
     """
-    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
-        coo = coo_cache.get(gen)
-        if coo is None:
-            m = sig_sparse.tocoo()
-            coo = (m.row, m.col, m.data)
-            coo_cache[gen] = coo
-        rows_i, cols_j, vals = coo
-        Msig = np.zeros_like(M_run)
-        for i, j, v in zip(rows_i, cols_j, vals):
-            Msig[:, j] += M_run[:, i] * v
-        return Msig
-    # dense @ sparse -> dense ndarray, as a sparse BLAS op in O(dim·nnz)
-    return sig_sparse.T.dot(M_run.T).T
+    # The COO accumulation is now the ONLY path (bean `qou-9ay6`). The float64
+    # `sig_sparse.T.dot(...)` fallback that used to sit here required a scipy
+    # matrix, and scipy refuses dtype object — so under NO-FLOAT64 there is no
+    # scipy matrix to call it on. Losing it costs almost nothing: the >=60-dps
+    # chain coefficient promoted the accumulator to object on its first
+    # inter-nucleon crossing, so that branch was already abandoned after a step
+    # or two of any real chain.
+    coo = coo_cache.get(gen)
+    if coo is None:
+        m = sig_sparse.tocoo()
+        coo = (m.row, m.col, m.data)
+        coo_cache[gen] = coo
+    rows_i, cols_j, vals = coo
+    Msig = np.zeros_like(M_run)
+    for i, j, v in zip(rows_i, cols_j, vals):
+        Msig[:, j] += M_run[:, i] * v
+    return Msig
 
 
 def unified_iterative_correction(Z, N, return_per_step=False,
@@ -1458,11 +1543,9 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # Kerov-damped scale (same as before):
     #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
 
-    # Detect sparse YSN matrices and import scipy lazily.
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:  # pragma: no cover
-        _issparse = lambda x: False  # noqa: E731
+    # The YSN generators are `_CooMPF`, not scipy — scipy cannot hold mpf
+    # (bean `qou-9ay6`). Detect our own form.
+    _issparse = _is_coo_mpf
 
     state = []
     for e in active:
@@ -1471,7 +1554,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         dim = first.shape[0] if sparse_sigmas else len(first)
         if sparse_sigmas:
             # Running M is dense for fast sparse-× -dense multiplication
-            M = np.eye(dim)
+            M = _mpf_eye(dim)
         else:
             M = _identity(dim)
         L0 = math.log(dim)
@@ -1693,10 +1776,9 @@ def atom_character_raw(Z, N, entry, include_inter=True):
         The resulting braid is the disconnected product of
         intra-nucleon blocks, corresponding to H_3(q)^⊗A ↪ H_{3A}(q).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
+    # The YSN generators are `_CooMPF`, not scipy — scipy cannot hold mpf
+    # (bean `qou-9ay6`). Detect our own form.
+    _issparse = _is_coo_mpf
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
         return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
@@ -1713,7 +1795,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     first = sigmas[0]
     sparse_sigmas = _issparse(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
-    M = np.eye(dim) if sparse_sigmas else _identity(dim)
+    M = _mpf_eye(dim) if sparse_sigmas else _identity(dim)
     _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
     log_norm = 0.0
     for kkk in range(A):
@@ -1759,10 +1841,9 @@ def _contrib_single_partition(Z, N, entry):
     Separate from the multi-partition accumulator so we can process
     partitions one at a time (needed for the jet-incremental loop).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
+    # The YSN generators are `_CooMPF`, not scipy — scipy cannot hold mpf
+    # (bean `qou-9ay6`). Detect our own form.
+    _issparse = _is_coo_mpf
 
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
@@ -1783,7 +1864,7 @@ def _contrib_single_partition(Z, N, entry):
     dim = first.shape[0] if sparse_sigmas else len(first)
 
     if sparse_sigmas:
-        M = np.eye(dim)
+        M = _mpf_eye(dim)
     else:
         M = _identity(dim)
     _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
