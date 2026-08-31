@@ -244,8 +244,23 @@ def main() -> int:
                   "cancelling; D z-free and summing to h^2)",
          "source": "entry 15", "verified_here": True},
         {"claim": "the two-row cap is DERIVED (2-dim mass fibre => Lambda^3_q V = 0)",
-         "source": "Step 13, FibreDimensionForcesTL.lean", "verified_here": False,
-         "why_not": "a Lean result; verify with lean-direct, not here"},
+         "source": "Step 13, QOU/BraidsAndKnots/FibreDimensionForcesTL.lean "
+                   "(NOTE the path: BraidsAndKnots, not QBeta)",
+         "verified_here": False,
+         "why_not": "a Lean result; this probe is Python and cannot check it",
+         "verified_separately": {
+             "when": "2026-08-31", "how": "lean-direct + #print axioms",
+             "result": "exit 0; all five theorems depend on "
+                       "[propext, Classical.choice, Quot.sound] only — NO sorryAx. "
+                       "Zero sorry / axiom / native_decide in the file.",
+             "declarations": ["qNumber_shift_identity",
+                              "ocneanu_param_eq_of_fibre_qdim",
+                              "ocneanu_param_of_two_dim_fibre",
+                              "threeRow_eq_zero_of_jones_ocneanu",
+                              "twoDimFibre_pins_h3_weights"],
+             "caveat": "verified by an agent this session, NOT by this probe — "
+                       "re-verify with lean-direct if the file changes",
+         }},
     ])
     w.add_data("withdrawn", [
         {"claim": "the (1^3) block cap is a RULING", "withdrawn_by": "Step 13",
