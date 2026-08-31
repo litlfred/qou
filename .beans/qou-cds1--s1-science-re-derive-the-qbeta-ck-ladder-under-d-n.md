@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T03:28:31Z
+updated_at: 2026-08-31T04:24:20Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4513,3 +4513,83 @@ no stray pin to clean up first; what remains is the derivation — rungs above
 k=2 are extracted from experiment, so nothing D-frame is testable against Q_β
 until a c_3 is *derived*. Entry 9's `|c_4| <= 1.4822` is the threshold that
 turns on when one is.
+
+
+---
+
+## Entry 16 (2026-08-31) — the `c_k^even` exact rungs are NOT a constraint on entry 9's `|c_4|`, and two gates were rejecting their own producers
+
+I went looking for a sharper handle on `|c_4|` than entry 9's two-point growth
+heuristic, found exact ℚ(√3) closed forms, and was wrong about what they mean.
+Recording both halves.
+
+### What I found first (and how it looked)
+
+`qbeta-c4even-exact-sseries.witness.json` carries exact rungs:
+
+    c_2^even = -887/144 - 3*sqrt(3)/4              = -7.45876032789888
+    c_3^even = 733/72 + 15997*sqrt(3)/405          =  78.5944241201959
+    c_4^even = -425625605/290304 - 2864831*sqrt(3)/25920
+                                                   = -1657.57403579524
+
+Against entry 9's threshold of `|c_4| <= 1.4822`, `|c_4^even| = 1657.6` looked
+like it might decide entry 9 outright — and the `^even` growth (7.46 → 78.6 →
+1657.6) is nothing like the 1 → 2.07 entry 9 extrapolated from.
+
+### Why that is wrong — the corpus already refuted it
+
+1. **Structural.** `u = b·ℏ_q²` is **quadratic** in `t = q−1` near `q = 1`, so
+   the `u`-reversion is singular and `R(q)` is **not analytic in `u`** — the
+   `c_k` are not scalar-`q` Taylor coefficients at all.
+   `docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md`: *"exact
+   operator-level `c_4..c_8` as constants do not exist"*. This is why
+   `qbeta_ck_sseries_operator_match_probe`'s `c2_gate` is red **on purpose**
+   and `binding-qbeta-complex-volume.ts` pins that computation `"failed"`.
+2. **Measured.** `σ(c_k) = σ_R/u^k` — the extraction *amplifies* input error:
+   `1/u² ≈ 1.4e4`, `1/u³ ≈ 1.6e6`, `1/u⁴ ≈ 1.9e8`. Recorded instance: a
+   **9.8e-8** relative change in `free-neutron-decay.witness.json` (regenerated
+   in `52c68267f2`) moved `c_2^even` by **6.8 %** from a **byte-identical**
+   producer. Import-cone drift, invisible to a file-local diff.
+
+The clincher: the superseded `c_2^even = -8.006410058709255` had its **own**
+exact form, `-1049/144 - 5√3/12`, matching to **fifteen digits** — and that
+block records catching it one commit before writing it down as an
+identification. *A 15-digit coincidence is what this estimator's noise looks
+like.* The same caution now applies to `-7.45876`.
+
+**So entry 9's growth heuristic stands as the honest statement about `|c_4|`.**
+Two data points, labelled as such; the `^even` rungs are not a sharper
+substitute.
+
+### What was actually broken, and is now fixed
+
+Both exact-rational producers gated `c_2^even` against a **float literal**
+`-8.006 ± 0.05` while emitting `-7.45876` — 0.547 outside tolerance. They
+**rejected the value they themselves computed** and shipped `allPassed: false`
+with nothing wrong in the arithmetic.
+
+    qbeta_c3even_exact_sseries_probe   allPassed false -> TRUE   (356 s)
+    qbeta_c4even_exact_sseries_probe   allPassed false -> TRUE   (1359 s)
+
+Values **byte-identical** across the regeneration. Both now gate against the
+symbolic form rebuilt from sympy — a float literal is exactly what went stale
+and cannot follow a re-derivation. AGENTS.md records `-8.006` as drained by
+PR #6054; that drained the *sibling* `qbeta_c4even_ladder_reconstruction_probe`
+and did not reach these two.
+
+The **canonical registry** was stale in both its `c_2^even` rows, against its
+own cited producer. Fixed, and `§9j` added so the number is not re-installed as
+an identified constant.
+
+### Residual, deliberately not swept
+
+`-8.00641` occurs in **17 files** besides the registry: 7 dated audit docs
+(left, per `qou-3nva`), 8 in `computations/qbeta` (7 H₄-route probes/witnesses
+needing producer re-runs; the 8th quotes it deliberately), 1 content block
+(which *recorded* the trap), and `1ppq-qbeta.md` (historical — note its
+`c_3 = +86.66116` has moved to `78.594` too, consistent with the whole
+extraction tracking the input cone). Roughly half are correct quotations, not
+staleness. Re-measure the file you are editing.
+
+*I got that residual count wrong on the first pass — 15/5 against a true 17/8,
+and one of the eight was a file I had written an hour earlier.*
