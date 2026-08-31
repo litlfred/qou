@@ -42,13 +42,18 @@ CHANNEL 1 — free energy:  -log(prod f) / A  =  sum_bonds (-log f) / A
   NOT NEW: derived_bond_graph_binding.py:170-171 already computes
      B = E0 * sum_bonds log(1/f_bond) for both bond sets.  This is an
      independent re-derivation of that comparison, cited not claimed.
-     Two defects noticed in it while checking, neither fixed here:
-       * its docstring declares z = 1/(q^1/2+q^-1/2) (convention C) while
-         its body line 78 computes q0**3/(q0**2+1) (convention D) -- the
-         body is right, the docstring is stale.
-       * line 77 downcasts q0, h, me with float() and it computes in
-         math.log, i.e. float64, and it emits a witness.  That is a
-         NO-FLOAT64 violation in a live witness-emitting producer.
+     Two defects were noticed in it while checking, and BOTH ARE NOW
+     FIXED on main by PR #6338 (bean qou-vsqh) -- recorded because a
+     reader comparing Channel 1 below against that producer should know
+     which version they are looking at:
+       * it downcast q0, h, me with float() and accumulated through
+         math.log -- float64 end to end in a witness-emitting producer.
+         Fixed: 108 -> 0 raw-float64 fields, and its own f_bond
+         derivation residual moved 5.6e-16 -> 3.66e-31.  No physics
+         number moved; only the evidence behind the EXACT claim did.
+       * its docstring declared z = 1/(q^1/2+q^-1/2) (convention C) over
+         a body computing q0**3/(q0**2+1) (convention D).  Body was
+         right; docstring corrected.
 
 CHANNEL 2 — observe-early, the form binding_canonical actually computes:
   B = Q_b * |tr_free| * (1 - prod f),   tr_free = tr_p^Z * tr_n^N
