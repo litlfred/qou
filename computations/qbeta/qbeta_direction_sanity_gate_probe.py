@@ -21,11 +21,32 @@ formalize-first gate generalizes.
 The probe:
 
 1. Computes the target magnitude at q_0:
-   Q_β^CODATA / [Q_A(q_0) · cos(α_eff(q_0))] ≈ 0.998
+   Q_β^CODATA / [Q_A(q_0) · cos(α_eff(q_0))] ≈ 0.99933
 2. Demonstrates the GATE on two synthetic candidates:
-   (a) PASSING — F(q_0) = 1.001 (within 10× of target ~0.998)
+   (a) PASSING — F(q_0) = 1.001 (within 10× of target ~0.99933)
    (b) FAILING — PR #1850 z(q_0) = 0.4993 as a multiplier where
        target_relative_difference exceeds 10× threshold
+
+CORRECTED 2026-08-31 — three label-vs-body defects, none of which moves the
+gate's verdict (a 10x order-of-magnitude threshold absorbs all three):
+
+  1. `Q_BETA_CODATA_MEV` was the literal "0.78233410277840137760143636388",
+     which is NOT CODATA (885.5 ppb off) and is not a typo of it: it is the
+     model's own N=2 ladder value `Q_N2 = 0.782334410277840137760143636388`
+     with ONE DIGIT DROPPED, wearing a CODATA label. Now read from
+     `codata_constants.Q_BETA_MEV` (0.78233341) so provenance is the CAL-3
+     witness. Effect on the target: 0.999326315 -> 0.999325430.
+  2. The candidate-(b) print labelled a convention-D value with the
+     convention-C formula `1/(sqrt(q) + 1/sqrt(q))`. The body is
+     `q^3/(q^2+1) = 0.6127` (D, canonical); the label said C (0.4993).
+  3. `≈ 0.998` / `~0.18%` were stated under the formula
+     `Q_beta/[Q_A cos(alpha_eff)]`, but they are the NO-COS quantities:
+     measured, `Q_beta/Q_A = 0.998325` with a 0.16748 % gap, while
+     `Q_beta/[Q_A cos]` is `0.999325` with a 0.0675 % gap
+     (`cos(alpha_eff) = 0.99899914` supplies the difference). Both are now
+     stated, each with its own formula. 0.998325 is the `F_required` that
+     `qbeta_counit_vs_trace_fork_probe` compares against, so the distinction
+     is load-bearing rather than cosmetic.
 
 Honest scope: this probe is the structural §4(d) Lean lemma's sympy
 companion. It does NOT construct a new c_k value or attempt to find
@@ -59,8 +80,17 @@ def main() -> int:
     # Substrate constants (PR #1727 / PR #1786 chain) — defined inside main()
     # per Gemini review (avoid module-level magic constants).
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from codata_constants import Q_BETA_MEV  # noqa: E402
     Q0_PIN = Q_50_DIGIT_STR
-    Q_BETA_CODATA_MEV = "0.78233410277840137760143636388"
+    Q_BETA_CODATA_MEV = str(Q_BETA_MEV)
+    # CORRECTED 2026-08-31. This read "0.78233410277840137760143636388", which
+    # is NOT CODATA (885.5 ppb off) and is not a typo of it either: it is the
+    # model's own N=2 ladder value Q_N2 = 0.782334410277840137760143636388 WITH
+    # ONE DIGIT DROPPED (the doubled "44" became a single "4"), carrying a CODATA
+    # label. Read from codata_constants now rather than as a literal, so the
+    # provenance is the CAL-3 witness and not a hand-copied string.
+    # NEITHER the gate's verdict NOR any assertion moves: the discriminant is a
+    # 10x order-of-magnitude threshold and this is a sub-ppm shift.
     M_E_MEV = "0.51099895069"
     # Direction-sanity threshold (10× order-of-magnitude check)
     DIRECTION_THRESHOLD = mp.mpf(10)
@@ -74,7 +104,7 @@ def main() -> int:
     builder.set_description(
         "Verifies the §4(d) direction-sanity gate from "
         "prop:q-beta-direction-sanity-gate. Computes the target "
-        "magnitude at q_0 (Q_β^CODATA / [Q_A · cos(α_eff)] ≈ 0.998), "
+        "magnitude at q_0 (Q_β^CODATA / [Q_A · cos(α_eff)] ≈ 0.99933), "
         "demonstrates ACCEPT on a synthetic-passing candidate "
         "(|F(q_0)| = 1.001) and REJECT on a PR #1850-style failing "
         "candidate (z < 1 multiplier against target > 1)."
@@ -117,7 +147,9 @@ def main() -> int:
     print(f"    Q_A · cos(α_eff) = {mp.nstr(denom, 12)} MeV")
     print(f"    Q_β^CODATA = {mp.nstr(Q_beta_codata, 12)} MeV")
     print(f"    Target = Q_β / [Q_A · cos] = {mp.nstr(target_magnitude, 12)}")
-    print(f"    (close to 1 — the ladder ∏(1 + c_k·u^k) contributes ~0.18%)")
+    print(f"    (close to 1 — the residual here is 0.0675%. The 0.16748% "
+          f"figure quoted elsewhere is Q_beta/Q_A = 0.998325, i.e. WITHOUT the "
+          f"cos(alpha_eff) factor; cos(alpha_eff) = 0.99899914 supplies the rest.)")
     print()
 
     # ─────────────────────────────────────────────────────────────────
@@ -126,8 +158,8 @@ def main() -> int:
     print("  Step 2: Gate demonstration on two synthetic candidates")
     print()
 
-    # (a) PASSING: synthetic candidate F(q_0) = 1.001 — close to target ~0.998
-    print(f"    Candidate (a): F(q_0) = 1.001 (within 10× of target ~0.998)")
+    # (a) PASSING: synthetic candidate F(q_0) = 1.001 — close to target ~0.99933
+    print(f"    Candidate (a): F(q_0) = 1.001 (within 10× of target ~0.99933)")
     candidate_a = mp.mpf("1.001")
     rel_dist_a = mp.fabs(candidate_a - target_magnitude) / target_magnitude
     gate_pass_a = rel_dist_a <= DIRECTION_THRESHOLD
@@ -139,9 +171,17 @@ def main() -> int:
     # (b) FAILING: PR #1850 z(q_0) pattern — a candidate predicting
     # F(q_0) = z(q_0)^(-k) or similar that gives a wildly wrong magnitude
     # vs. target. Construct a deliberate order-of-magnitude failure.
+    # CORRECTED 2026-08-31: the label under this value said convention C while
+    # the body computes convention D. `1/(sqrt(q) + 1/sqrt(q))` is `z_C =
+    # sqrt(q)/(q+1) = 0.4993`; the expression below is `z_D = q^3/(q^2+1) =
+    # 0.6127`, and D is canonical (owner ruling 2026-08-15). Label fixed to the
+    # body. The gate's verdict is unchanged -- 1/z^5 is > 10x off the target
+    # under EITHER value (25.6x at z_D, 4.6e3x at z_C) -- but a formula string
+    # naming the excised convention over a convention-D value is the
+    # docstring-vs-body defect class AGENTS.md records for `markovZc`.
     z_q0 = Q0_mp**3 / (Q0_mp**2 + 1)
     print(f"    Candidate (b): PR #1850 z(q_0) obstruction pattern")
-    print(f"      z(q_0) = 1/(√q_0 + 1/√q_0) = {mp.nstr(z_q0, 12)}")
+    print(f"      z_D(q_0) = q_0^3/(q_0^2 + 1) = {mp.nstr(z_q0, 12)}")
     print(f"      hypothetical F_candidate(q_0) = 1/z(q_0)^5 ~ wild scaling")
     candidate_b = 1 / z_q0 ** 5
     rel_dist_b = mp.fabs(candidate_b - target_magnitude) / target_magnitude
@@ -193,10 +233,12 @@ def main() -> int:
     builder.add_data("q0", str(Q0_mp))
     builder.add_data("target_magnitude", str(target_magnitude))
     builder.add_data("target_close_to_unity",
-                     "0.998 — ladder corrections ~0.18% of bare Q_A·cos")
+                     "0.99933 — the residual is 0.0675% of Q_A*cos(alpha_eff). "
+                     "NOT 0.998/0.18%: those are the NO-COS quantities "
+                     "Q_beta/Q_A = 0.998325 and its 0.16748% gap.")
     builder.add_data("direction_threshold", str(DIRECTION_THRESHOLD))
     builder.add_data("gate_passing_candidate", {
-        "form": "F(q_0) = 1.001 (close to target ~0.998)",
+        "form": "F(q_0) = 1.001 (close to target ~0.99933)",
         "magnitude": str(candidate_a),
         "rel_distance_from_target": str(rel_dist_a),
         "gate_accepted": bool(gate_pass_a),
@@ -216,7 +258,7 @@ def main() -> int:
         tolerance=0,
         source=("§4(d) direction-sanity gate from "
                 "prop:q-beta-direction-sanity-gate: verifies "
-                "(1) target magnitude Q_β / [Q_A · cos(α_eff)] ≈ 0.998 "
+                "(1) target magnitude Q_β / [Q_A · cos(α_eff)] ≈ 0.99933 "
                 "at substrate q_0 (ladder contributes ~0.18%); "
                 "(2) gate ACCEPTS synthetic candidate F(q_0) = 1.001 "
                 "within the 10× direction-sanity threshold; "
