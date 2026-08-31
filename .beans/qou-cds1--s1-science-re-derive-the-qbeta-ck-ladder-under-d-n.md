@@ -4873,3 +4873,18 @@ no instance). The parity is now derived (bar-invariant, not bar-odd). What is
 NOT available is a way to select the generator without either a new structural
 input or a fit — the surviving gates test a candidate once you have one; they do
 not produce one. That is the honest boundary of this arc.
+
+### Scope against entries 10–10d, which landed on main while this was in flight
+
+Entries 10/10b/10c/10d (sibling, now on `main`) answer the **N=1 slot** — the
+leading `cos(alpha_eff)` factor — deriving `M = cos(a_D - h^2/4)*cos(h^2/4)` as
+its bar-midpoint and Lean-proving it. That is a **different slot** from the one
+above. The "honest boundary" I state is about the **product generator** (the
+`rho` in `c_{k+1} = rho*c_k`), and is unaffected by their result: N=1 has a
+derived candidate form, the generator does not.
+
+The two results are consistent and complementary. Their entry 10 shows why C
+could use a bare cosine (the midpoint rule is *vacuous* in C, since `alpha_C` is
+bar-odd and cosine is even); my Result 1 shows the *generator's* forced parity is
+bar-INVARIANT rather than bar-odd. Both are the same underlying fact — D's action
+is multiplicative, C's is affine — read at two different slots of the ladder.
