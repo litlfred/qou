@@ -126,3 +126,42 @@ replaces vectorised BLAS — which the corpus accepts deliberately, to keep the
 mpf precision. So (a) is not a bug to fix but a design cost to engineer around:
 making it fast means finding a formulation that keeps precision without
 per-element Python arithmetic, not switching to float64.
+
+## 2026-08-31 — (b) CONFIRMED FIXED by measurement
+
+    binding_from_frobenius_pairing(1,1):
+      before   TypeError in well under a second
+      after    >600s with NO TypeError — it now computes
+
+The dtype crash is gone. The function is slow for reason (a), which is a
+different problem in a different function.
+
+## (a) remains open — and it is a DESIGN COST, not a bug
+
+`unified_iterative_correction` is slow *because* it does object arithmetic to
+keep mpf precision, which the corpus chose deliberately and documented in
+place:
+
+    > Densify and multiply with object arithmetic rather than coercing c/d to
+    > float — that would silently discard the precision the mpf exists to carry
+    > (AGENTS.md: never compute in float).
+
+So there is nothing here to "fix" in the sense of correcting a mistake. The
+existing code already avoids the two obvious wrong answers: coercing to float64
+(loses 50-dps precision, violates NO-FLOAT64) and densifying σ (O(dim³) in
+object arithmetic, measured >10 min on the A=2 atom alone). It already reduced
+the inner product to O(dim·nnz), the same order sparse BLAS achieves.
+
+Making it fast therefore means a different formulation, not a patch. Options
+worth someone's time, none attempted here:
+
+- carry the mpf part as a SCALAR alongside a float64 matrix where the chain
+  allows it, so BLAS does the matrix work and mpf only tracks scale;
+- move the accumulation into the Rust `hecke-engine` with a high-precision
+  scalar type, alongside the existing float64 path;
+- exploit that `c` is `int` at every crossing measured and only `d` is mpf —
+  the update `M_run = c·Msig + d·M_run` may factor.
+
+**Do not "fix" this by lowering precision.** That is the one direction the
+corpus has already ruled out in writing, and a fourth agent rediscovering the
+float coercion is the likely failure mode here — I was the third.
