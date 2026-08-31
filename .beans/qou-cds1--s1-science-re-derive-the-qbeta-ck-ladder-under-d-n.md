@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T20:43:54Z
+updated_at: 2026-08-31T20:57:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5209,3 +5209,68 @@ No search was run.
 *structural* or an artefact of the 11-crossing word choice — i.e. does every
 long-model nucleon-difference land elliptic, or just this one? That is a
 constrained, derivable question, unlike hunting for a phase.
+
+
+## Step 23 (2026-08-31) — `Δ_L`'s ellipticity is STRUCTURAL: the nucleons are nearly parallel in sl₂
+
+Probe `qbeta-nucleon-difference-ellipticity-structural` (6/6), Lean
+`QOU/QBeta/TracelessDifferenceEllipticity.lean` (sorry-free). Commit `f1e6062e04`.
+
+### The mechanism
+
+For traceless 2×2 matrices,
+
+    det(A₀ − B₀) = det A₀ + det B₀ + tr(A₀B₀)
+
+(Lean `det_sub_traceless`, by `ring`; checked against the direct `det` to 1e-20).
+Traceless real 2×2 is **hyperbolic** at `det < 0`, **elliptic** at `det > 0`, so
+the difference of two hyperbolic directions is elliptic exactly when their
+Killing pairing clears `−(det A₀ + det B₀)` — i.e. when they are **aligned**.
+
+| | value |
+|---|---|
+| `det A₀` (proton) | −1.041656 — hyperbolic |
+| `det B₀` (neutron) | −1.056560 — hyperbolic |
+| `tr(A₀B₀)` | 2.107175 |
+| **sum** | **+0.0089591 > 0 ⇒ ELLIPTIC** |
+| exact-parallel threshold `2√(dA·dB)` | 2.098163 |
+| **alignment excess** | **0.43 %** |
+
+**The neutron and proton traceless parts are the same sl₂ direction to within
+0.43 %.** That is the near-degeneracy of the nucleons (`m_n − m_p = 1.29` MeV out
+of 939) — not a property of any word.
+
+### Supporting, in decreasing weight
+
+- **Robust in `q`:** discriminant negative at all 31 samples over `q ∈ [1.01,
+  1.61]`, **zero** sign changes, smooth from −0.03376 to −0.04484. No fine-tuning
+  at `q₀`. *(A first reading of the 0.43 % as a "thin margin" was wrong — the
+  alignment margin is small, the discriminant margin is not, and the discriminant
+  decides.)*
+- **Random control:** NF vectors resampled at matched scale are elliptic **8.9 %**
+  of the time (357/4000). The right null is this one, not the textbook
+  `1 − 1/√2 = 29 %` for a generic real 2×2 — the NF→matrix map isn't that ensemble.
+- **Word orderings:** 8 of 9 elliptic — **with its caveat**: the 9 collapse to only
+  **3 distinct** (tr, det) pairs, 2 of them elliptic, so the raw 8/9 overstates it.
+  Recorded because quoting 8/9 alone would mislead.
+
+### Observation, not claimed
+
+`det ρ(NF(p))` and `det ρ(NF(n))` agree to **1.4e-16** relative. Looks exact —
+both words have 11 crossings — but it is **not proved** here and is used in no
+argument above. Someone should settle it.
+
+### What it does not settle
+
+That `Δ_L` is the **right** generator. Its eigenphase stays 2.020445 against a
+required 0.056595 — a factor 35.7 (Step 22). This explains why an elliptic
+generator **exists**, and that its existence is a fact about the nucleons.
+Nothing more.
+
+**Next, my judgement:** the gap is now a single clean question — the required
+phase is 0.0566 and the available one is 2.0204, a factor 35.7. Two things could
+close it and both are checkable rather than speculative: whether `Δ_L`'s phase in
+a **higher tower block** differs (Step 22 only measured `(2,1)` at `k = 3`), and
+whether the ladder phase is a *fraction* of an eigenphase rather than an
+eigenphase itself. Neither is a search over forms; both are readings of an
+existing operator.
