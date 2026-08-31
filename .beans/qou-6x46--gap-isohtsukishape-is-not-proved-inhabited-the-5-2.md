@@ -1,11 +1,11 @@
 ---
 # qou-6x46
 title: 'GAP: IsOhtsukiShape is not proved inhabited -- the 5_2 chain has no shape witness'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:07Z
-updated_at: 2026-08-31T03:46:07Z
+updated_at: 2026-08-31T03:51:34Z
 ---
 
 
@@ -73,3 +73,30 @@ Worth stating plainly in `BlochWignerLobachevsky.lean` where the class is
 declared — the current docstring says `vol_eq_three_D` "is the geometric input,
 and it is the whole content", which is right, but a reader can miss that the
 class is satisfiable and conclude the gate is stronger than it is.
+
+---
+
+## 2026-08-31 — CLOSED. `exists_isOhtsukiShape` landed, sorry-free.
+
+`QOU/Archimedean/FiveTwoOhtsukiBridge.exists_isOhtsukiShape : ∃ y : ℂ,
+IsOhtsukiShape y`, axioms `[propext, Classical.choice, Quot.sound]`.
+
+Constructed exactly as the attack above sketched, with one correction: **the
+bracket `[2, 3]` does not work.** `3t² − 6t − 1` is `−1` at `t = 2`, so the
+coarse IVT bracket leaves the cofactor's discriminant sign undecided; the proof
+uses `[2.3, 2.4]` (`p(2.3) = −0.103 < 0 < 0.344 = p(2.4)`), where
+`3t² − 6t − 1 ≥ 1.07`. That is the only place a numeric choice enters, and it is
+discharged by `norm_num` + one `nlinarith` hint.
+
+No root-counting, no discriminant of the cubic, no `Polynomial.roots` multiset:
+divide out `(y − t)`, observe the cofactor `y² + (t−3)y + (t²−3t+2)` has negative
+discriminant, and write its `+√d` root down. The division is legitimate only
+modulo the cubic — the cofactor's constant term is `1/t`, and `t² − 3t + 2 = 1/t`
+*is* `p(t) = 0` rearranged — so the whole factorisation is one
+`linear_combination` against `ht`.
+
+The `FiveTwoTriangulation` finding recorded above is now written where a reader
+will hit it: a ⚠ paragraph on the class declaration in
+`QOU/Archimedean/BlochWignerLobachevsky.lean`, saying that it is satisfiable at
+a derived `vol` and that its instance-free status is a refusal to launder the
+name `vol`, not an unsatisfiability. Still deliberately **not** an instance.

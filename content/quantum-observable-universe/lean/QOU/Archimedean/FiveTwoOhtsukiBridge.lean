@@ -33,7 +33,11 @@ volume conjecture for `5₂` from (A), (D) and the statement that `Li₂` is a
 dilogarithm, and nothing else — (B) and the identification of `ζ` are theorems
 here, not hypotheses. Its two class arguments are the honest residue:
 `OhtsukiAsymptotic` is Ohtsuki's published analysis, `FiveTwoTriangulation` is
-Thurston/SnapPea, and neither has an instance.
+Thurston/SnapPea, and neither has an instance. **They are not instance-free for
+the same reason** — see the ⚠ on `FiveTwoTriangulation`'s own declaration, which
+is satisfiable at a derived `vol`, where `OhtsukiAsymptotic` is not satisfiable
+at all. `exists_isOhtsukiShape` below shows the shape hypothesis both of them
+carry is at least met.
 
 The dilogarithm hypothesis is stated at the **five points** the proof applies it
 to (`IsKummerAtOhtsukiArgs`), not on a half plane. Two are in the upper half
@@ -200,6 +204,66 @@ theorem IsOhtsukiShape.ne_one {y : ℂ} (h : IsOhtsukiShape y) : y ≠ 1 :=
 theorem IsOhtsukiShape.two_mul_add_one_ne_zero {y : ℂ} (h : IsOhtsukiShape y) :
     2 * y + 1 ≠ 0 :=
   cubic_two_mul_add_one_ne_zero h.1
+
+/-- **`IsOhtsukiShape` is inhabited.** Bean `qou-6x46`.
+
+Every theorem in this file takes `IsOhtsukiShape y` as a hypothesis, directly or
+as the `shape` field of `OhtsukiAsymptotic`, and until this lemma **nothing in
+the corpus showed that hypothesis was satisfiable** — `exact?` could not close
+`∃ y, IsOhtsukiShape y` on 2026-08-31. A conditional theorem whose condition is
+not known to be met is a different and weaker object than one conditional on a
+published result, and the corpus's vacuity audits exist to keep the two apart.
+
+**Constructed, not counted.** No root-multiset or discriminant machinery:
+
+1. the intermediate value theorem gives the real root `t ∈ [2.3, 2.4]`, since
+   `p(2.3) = −0.103 < 0 < 0.344 = p(2.4)`;
+2. dividing out `(y − t)` leaves `y² + (t−3)y + (t²−3t+2)`, whose discriminant is
+   `−(3t² − 6t − 1)` — and `3t² − 6t − 1 > 0` for `t ≥ 2.3`, which is exactly why
+   the bracket is taken there rather than at the obvious `[2,3]`: at `t = 2`
+   the quantity is `−1`, so the coarse bracket does not decide the sign;
+3. its two roots are then written down, and the one with `+√d` has `Im > 0`.
+
+The division in step 2 is legitimate only modulo the cubic — the cofactor's
+constant term is `1/t`, and `t² − 3t + 2 = 1/t` *is* `p(t) = 0` rearranged, so
+the whole identity is one `linear_combination` against `ht`. -/
+theorem exists_isOhtsukiShape : ∃ y : ℂ, IsOhtsukiShape y := by
+  -- (1) the real root, by IVT on a bracket tight enough for step (2)
+  obtain ⟨t, htmem, ht⟩ : ∃ t ∈ Set.Icc (2.3 : ℝ) 2.4,
+      t ^ 3 - 3 * t ^ 2 + 2 * t - 1 = 0 := by
+    have hcont : ContinuousOn (fun u : ℝ => u ^ 3 - 3 * u ^ 2 + 2 * u - 1)
+        (Set.Icc (2.3 : ℝ) 2.4) := by fun_prop
+    have hsub := intermediate_value_Icc (by norm_num : (2.3 : ℝ) ≤ 2.4) hcont
+    have h0 : (0 : ℝ) ∈ Set.Icc ((2.3 : ℝ) ^ 3 - 3 * (2.3 : ℝ) ^ 2 + 2 * (2.3 : ℝ) - 1)
+        ((2.4 : ℝ) ^ 3 - 3 * (2.4 : ℝ) ^ 2 + 2 * (2.4 : ℝ) - 1) := by norm_num
+    obtain ⟨t, htmem, hteq⟩ := hsub h0
+    exact ⟨t, htmem, hteq⟩
+  obtain ⟨ht23, ht24⟩ := htmem
+  -- (2) the cofactor's discriminant is strictly negative on this bracket
+  have hd : 0 < 3 * t ^ 2 - 6 * t - 1 := by
+    nlinarith [mul_nonneg (by linarith : (0 : ℝ) ≤ t) (by linarith : (0 : ℝ) ≤ t - 2.3)]
+  set s : ℝ := Real.sqrt (3 * t ^ 2 - 6 * t - 1) with hsdef
+  have hspos : 0 < s := Real.sqrt_pos.mpr hd
+  have hs2 : s ^ 2 = 3 * t ^ 2 - 6 * t - 1 := Real.sq_sqrt hd.le
+  have hs2c : ((s : ℝ) : ℂ) ^ 2 = 3 * ((t : ℝ) : ℂ) ^ 2 - 6 * ((t : ℝ) : ℂ) - 1 := by
+    exact_mod_cast congrArg (fun r : ℝ => ((r : ℝ) : ℂ)) hs2
+  have htc : ((t : ℝ) : ℂ) ^ 3 - 3 * ((t : ℝ) : ℂ) ^ 2 + 2 * ((t : ℝ) : ℂ) - 1 = 0 := by
+    exact_mod_cast congrArg (fun r : ℝ => ((r : ℝ) : ℂ)) ht
+  -- (3) the root with positive imaginary part
+  set y : ℂ := ((3 - t : ℝ) : ℂ) / 2 + ((s : ℝ) : ℂ) / 2 * Complex.I with hydef
+  have hq : y ^ 2 + (((t : ℝ) : ℂ) - 3) * y + (((t : ℝ) : ℂ) ^ 2 - 3 * ((t : ℝ) : ℂ) + 2)
+      = 0 := by
+    rw [hydef]
+    push_cast
+    linear_combination (((s : ℝ) : ℂ) ^ 2 / 4) * Complex.I_sq - (1 / 4 : ℂ) * hs2c
+  refine ⟨y, ?_, ?_⟩
+  · linear_combination (y - ((t : ℝ) : ℂ)) * hq + htc
+  · rw [hydef]
+    simp only [Complex.add_im, Complex.div_im, Complex.mul_im, Complex.ofReal_re,
+      Complex.ofReal_im, Complex.I_re, Complex.I_im, Complex.mul_re, Complex.div_re,
+      Complex.normSq_ofNat]
+    norm_num
+    linarith
 
 /-- Ohtsuki's cubic is the reciprocal of the corpus's `fiveTwoSaddleCubic`.
 If `y ≠ 0` satisfies `y³ − 3y² + 2y − 1 = 0` then `w = 1/y` satisfies
