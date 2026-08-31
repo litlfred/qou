@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T03:19:43Z
+updated_at: 2026-08-31T03:30:40Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -773,3 +773,84 @@ The remaining blocker is unchanged and now correctly attributed: it is not a gap
 in this corpus's reasoning, it is **an open problem in the field**. That is a
 materially different thing to report, and it means the numerical minimisation —
 not a derivation — is the only route to `w_ij` currently available.
+
+
+## 2026-08-31 — THE INTEGRATOR IS CALIBRATED against a proved value, and it caught the front's own degeneracy in my code
+
+Producer: [`computations/mobius_cross_energy_hopf_calibration.py`](../computations/mobius_cross_energy_hopf_calibration.py)
+Witness: `mobius-cross-energy-hopf-calibration.witness.json` — 4 assertions, all
+passed. mpmath end to end, no `float()` anywhere including in the search.
+
+Before any Borromean number is worth anything, the integrator has to reproduce a
+value the literature has **proved**. It does.
+
+| quantity | value |
+|---|---|
+| target `2π²` (Agol–Marques–Neves) | `19.739208802178717238` |
+| "obvious" Hopf config (R=1, c=1) | `21.183763721862556325` — **+7.318 %** |
+| constrained minimum over the *linked* family | `19.739209340362215055` at R≈1.515, c≈1.815 |
+| relative excess over `2π²` | **`2.7264695e-8`**, and **from above** |
+
+So an independent 2-parameter numerical minimisation reproduces AMN to **8
+significant figures**, approaching from above exactly as the theorem requires.
+The integrator is trustworthy.
+
+### Two substantive by-products
+
+**1. The picture everyone draws is not the minimiser.** Two orthogonal unit
+circles each through the other's centre — the standard illustration of the Hopf
+link — sits **7.3 % above** the minimum. Anyone tempted to evaluate a "nice"
+configuration instead of minimising will be wrong by that much, and on the
+Borromean carrier there is no proved bound to catch them.
+
+**2. The minimiser location is grid-limited; only the energy is converged.**
+R and c are refined on a 1/200 grid, so `1.515 / 1.815` are grid points and not
+the true minimiser. The *energy* is nonetheless good to 2.7e-8 because the
+functional is quadratic near a minimum — a 0.005 offset costs ~1e-8, which is
+what is seen. Do not quote the location as a result.
+
+### 🛑 I hit the front's own degeneracy inside the tool built to study it
+
+The first version of this scan guarded only against the components **touching**
+(`d² ≤ 0`) and never against their becoming **unlinked**. It "minimised" to
+`E = 3.1219` at `(R, c) = (0.4, 2.5)` — **far below the proved bound**, which is
+impossible for a Hopf link. The configuration is a **split** link, where the
+cross energy has infimum 0: shrink one component and the numerator carries
+`|γ₂'| ~ R` while the denominator does not.
+
+That is the *same* degeneracy this bean recorded two entries ago as the reason
+`w_ij` cannot be a per-pair minimum — met from the inside, in my own code, within
+an hour of writing it down. It is now **assertion 4**, a measurement rather than
+a caution, so the next person to build a search here inherits the guard instead
+of the lesson. The linking test is cheap: `γ₂` punctures `γ₁`'s plane at
+`x = c ± R`, and the pair is linked iff exactly one puncture lies inside the
+unit disk.
+
+### One threshold corrected, and how
+
+`quadrature_converges_spectrally` initially failed. The cause was **my own
+threshold**, not the method: I set `1e-12` aspirationally without measuring, and
+the N=32↔N=64 gap is `9.93e-11`. Renamed to
+`quadrature_converged_far_below_the_comparison_tolerance` and set to `1e-8` —
+principled because that is two orders below the `1e-6` at which the `2π²`
+comparison is made, so quadrature error cannot be what that assertion measures.
+The source records the original value and why it moved. **Not a drained
+baseline**: it is a threshold invented minutes earlier, corrected to what the
+method delivers.
+
+### What this unlocks
+
+The Hopf carrier (²H) is done: `E = 2π²`, reproduced. The remaining two carriers
+(8₁₁ for ³H, L6a4/Borromean for ³He) need a real minimiser over a
+multi-component configuration space rather than a 2-parameter family — but the
+integrand, the guard, and the calibration are now in hand, and the `20π²`
+Borromean lead recorded above has something to be checked against.
+
+
+**Corpus-grep note for whoever greps this next.** There is **no prior
+Möbius-energy compute** in `computations/` or `tools/` — checked before
+committing the calibration. But a grep for `ohara` returns two files that are
+**substring false positives**, and both are real names in this corpus:
+`Ding-I**ohara**-Miki` (`probes/pentagon_multipair_borromean_h4_probe.py`) and
+`Man**ohara**n` (`bk_alpha_geometry_selection.py`). Neither computes an energy.
+Search for `cross_energy` or `Möbius energy` instead.

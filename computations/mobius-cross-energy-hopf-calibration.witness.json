@@ -1,0 +1,101 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-31T03:28:07.230212+00:00",
+  "commitSha": "10d8610198f688105deda8244393f8c195519873",
+  "assertions": [
+    {
+      "name": "quadrature_converged_far_below_the_comparison_tolerance",
+      "computed": "0.00000000009930328112817572867256911844236227602725712034127675526807294306037152",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "0.00000001",
+      "unit": "relative",
+      "source": "N=32 vs N=64 on the fixed configuration agree to 9.93e-11 relative. Periodic and smooth off the singularity, so the trapezoid rule converges rapidly. The threshold is 1e-8 because that is two orders below the 1e-6 at which the 2*pi^2 comparison below is made, so quadrature error cannot be what that assertion is measuring. It is NOT a drained baseline: an earlier version of this probe set 1e-12 aspirationally, without measuring, and the assertion failed at 9.93e-11. The threshold now states what the method delivers and why that suffices, rather than what was hoped for."
+    },
+    {
+      "name": "obvious_configuration_respects_the_AMN_bound",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "E(R=1,c=1) = 21.18376372186256 >= 2*pi^2 = 19.73920880217872, exceeding it by 7.318%. A correct integrator must land ABOVE the proved minimum on a non-minimal configuration."
+    },
+    {
+      "name": "constrained_minimum_reproduces_2pi_squared",
+      "computed": "0.00000002726469450782114474844656702240475593381519217816824889492303799619771",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "0.000001",
+      "unit": "relative",
+      "source": "Minimising over the LINKED family gives 19.73920934036222 at R=1.515, c=1.815, a relative excess of 2.72647e-8 over 2*pi^2 -- and from ABOVE, as the theorem requires. An independent numerical confirmation of Agol-Marques-Neves to 8 significant figures."
+    },
+    {
+      "name": "split_configuration_falls_below_the_bound",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "At R=0.4, c=2.5 the pair is UNLINKED and E = 3.121860154 < 2*pi^2. Recorded so the degeneracy is a measurement: a search without a linking guard leaves the Hopf class and 'minimises' to nonsense."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "mobius-cross-energy-hopf-calibration",
+  "scriptFile": "mobius_cross_energy_hopf_calibration.py",
+  "scriptHash": "64235e4a05b5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mobius_cross_energy_hopf_calibration.py"
+    ],
+    "reproduce": "python3 -u computations/mobius_cross_energy_hopf_calibration.py"
+  },
+  "description": "Calibration of a Mobius cross-energy integrator against the PROVED E(Hopf) = 2*pi^2 (Agol-Marques-Neves, arXiv:1205.0825). Bean qou-o6ml route (2): the integrator must reproduce a proved value before any Borromean number means anything. Also records, as a measurement, the split-link degeneracy that a guardless search falls into -- the same degeneracy the front is about.",
+  "data": {
+    "target_2pi_squared": "19.73920880217871723766898",
+    "quadrature_convergence_at_R1_c1": {
+      "16": "21.183957482469971277",
+      "32": "21.183763723966173569",
+      "64": "21.183763721862556325"
+    },
+    "obvious_configuration": {
+      "R": "1",
+      "c": "1",
+      "energy": "21.183763721862556325",
+      "relative_excess_over_2pi2": "0.07318200715",
+      "note": "Two orthogonal unit circles each through the other's centre -- the usual picture of the Hopf link. It is NOT the energy minimiser."
+    },
+    "constrained_minimum": {
+      "R": "1.515",
+      "c": "1.815",
+      "energy": "19.739209340362215055",
+      "relative_excess_over_2pi2": "2.726469451e-8"
+    },
+    "split_link_trap": {
+      "R": "0.4",
+      "c": "2.5",
+      "linked": false,
+      "energy": "3.1218601538587306884",
+      "note": "Below 2*pi^2 because the pair is SPLIT, not because the integrator is wrong. Cross energy has infimum 0 on unlinked pairs."
+    }
+  }
+}
