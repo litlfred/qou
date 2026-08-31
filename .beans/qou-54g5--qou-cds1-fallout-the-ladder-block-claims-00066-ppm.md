@@ -195,3 +195,78 @@ belongs in its own commit with the witness refreshed.
 Every number here is C-frame. The D-frame ladder does not exist — and per PR
 #6282 plus its correction, all three legs of the C instrument fail to transport,
 so this resolves the C-frame block on its own terms only.
+
+## 2026-08-31, same session — RETRACTING "RESOLVED". I had the count backwards.
+
+The entry above says "three sites agree on `3c_3^2+b`; the two that disagree
+carry an expression their own prose retires", and calls it an index slip. **Both
+halves are wrong.** They rest on a grep that only searched the two files I had
+already opened.
+
+### The full count
+
+    -(b^2 + 1/2)                              3c_3^2 + b
+    -----------------------------------       -------------------------------
+    boxed formula (.md)                       context, "mixing pattern" line
+    ck-extraction-from-algebraic-rules.md     table-3, N=5 row
+    conj-qbeta-c-k-closed-forms.md
+      (+ the Lean class it formalizes)
+    ladder() in convention_fee probe
+    ladder() in headline_residual probe
+                                    6 sites                           2 sites
+
+### And it was not a displacement
+
+`q-beta-gamma-gamma-canonical-derivation.md:48` gives `b^2+1/2` at **c_4** with
+the categorical reading "Kashiwara + half-Hopf mixed".
+`conj-qbeta-c-k-closed-forms.md` gives it at **c_5** with **the same reading**
+and a recorded **2.4 % empirical residual**, inside a coherent family
+(`c_4 = c_3 b^4`, `c_5 = -(b^2+1/2)`, `c_6 = c_3^2 b^2`, `c_7 = c_3^3`) that
+already carries the updated c_4.
+
+So when c_4 was superseded, `b^2+1/2` was **deliberately reassigned to c_5**,
+carrying its interpretation with it, and was empirically checked there. That is
+an intentional claim. My "the supersession displaced it and nobody noticed"
+story required the carriers to be stale on c_4 — they are not; they carry the
+new c_4 and the old expression at the new slot, on purpose.
+
+### What actually survives, and it is worse than a slip
+
+The measurement stands and is unaffected:
+
+    block headline         -0.0066 ppm = -6.6 ppb (2 s.f.)
+    context c_5, muon pin  +6.6133 ppb    0.202 % apart
+    boxed   c_5, muon pin  +7.1339 ppb    8.1 % apart
+
+**The published headline was computed with a c_5 that only two sites in the
+corpus carry, while six sites — including a conjecture block and the Lean class
+it formalizes — claim a different one.** Those cannot both be right. That is a
+substantive inconsistency about what the framework claims, not a typo.
+
+Separately, `q-beta-gamma-gamma-canonical-derivation.md` is stale at the other
+end: its table still publishes the retired `b^2+1/2` at **c_4**. Third defect.
+
+### NO FIX APPLIED, and the previous entry's proposed fix is withdrawn
+
+That entry proposed correcting "both carriers" to `3c_3^2+b`. With the count the
+other way, that means rewriting **six** sites to match **two**, on one
+2-significant-figure number. That is a change of claim, not a documentation fix.
+
+What would settle it, in order:
+
+1. Read the conj block's 2.4 % empirical residual for `-(b^2+1/2)` at c_5
+   against the context's derivation of `3c_3^2+b`. Same slot, different
+   provenance; one is wrong.
+2. Find what produced table 3's column. If it used `3c_3^2+b`, the two-site form
+   is the computed one and the six-site family is stale.
+3. Only then edit, in whichever direction the math gives.
+
+Bean stays **open**. The status is: cause identified and localized, direction
+undetermined.
+
+### Note on how this was caught
+
+By running the grep I should have run before writing "RESOLVED" — the corpus-grep
+discipline exists for exactly this, and I skipped it because the context line
+read like a complete answer. A line that explains a finding is not the same as
+having measured its extent.

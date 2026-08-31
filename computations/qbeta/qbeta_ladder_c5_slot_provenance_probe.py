@@ -12,18 +12,36 @@ in its own words.  `q-beta-categorical-precision-ladder-context.md:29`:
     "The earlier c_4 = b^2 + 1/2 form is superseded: it is 9.5% off the
      empirical value, while c_3 * b^4 matches to 0.9%."
 
-`b^2 + 1/2` is the retired **c_4**.  The boxed formula carries it at **rung 5**.
-Site-by-site:
+  *** An earlier version of this docstring called that a DISPLACED leftover  ***
+  *** and counted two carriers against three.  Both were wrong -- see below. ***
 
-    site                                     c_4            c_5
-    boxed formula (the .md)                  c_3*b^4  OK    b^2+1/2   <- retired c_4
-    ladder() in qbeta_ladder_convention_fee  c_3*b^4  OK    b^2+1/2   <- retired c_4
-    context, "mixing pattern across rungs"   c_3*b^4  OK    3c_3^2+b
-    table-3 N=5 row                          --             3c_3^2+b
+The reassignment was DELIBERATE, and the corpus majority is on the other side.
+`q-beta-gamma-gamma-canonical-derivation.md:48` gives `b^2+1/2` at **c_4** with
+the reading "Kashiwara + half-Hopf mixed"; `conj-qbeta-c-k-closed-forms.md`
+gives it at **c_5** with THE SAME reading and a recorded **2.4 % empirical
+residual**.  So when c_4 was superseded to `c_3*b^4`, the expression was moved
+to the c_5 slot carrying its categorical interpretation -- an intentional,
+empirically-checked assignment, not a slip.
 
-So the supersession updated rung 4 in the box and DISPLACED the retired
-expression into the rung-5 slot rather than deleting it.  Two sites carry an
-expression their own prose calls superseded; three sites agree on the other.
+Site by site, c_5 only:
+
+    -(b^2 + 1/2)                              3c_3^2 + b
+    -----------------------------------       -------------------------------
+    boxed formula (.md)                       context, "mixing pattern"
+    ck-extraction-from-algebraic-rules.md     table-3, N=5 row
+    conj-qbeta-c-k-closed-forms.md
+      (+ the Lean class it formalizes)
+    ladder() in qbeta_ladder_convention_fee
+    ladder() in qbeta_ladder_headline_...
+                                    6 sites                           2 sites
+
+Separately, `q-beta-gamma-gamma-canonical-derivation.md` is stale on the OTHER
+end: its table still publishes the retired `b^2+1/2` at **c_4**, where the
+supersession replaced it.  That is a third defect, not part of the c_5 question.
+
+The measurement below is unchanged by any of this and is what makes the
+inconsistency matter: the published headline is reproduced by the TWO-site form
+and missed by the SIX-site form.
 
 This file measures what that costs.  Everything here is CONVENTION C, the frame
 the block was written in; the D-frame ladder does not exist (qou-cds1).
@@ -203,10 +221,11 @@ def main() -> int:
     print("""
 FINDINGS
 
-1. The bean's remaining item is NOT a math question.  `b^2 + 1/2` is the
-   SUPERSEDED c_4, named as such by the block's own context.  The boxed formula
-   and `ladder()` carry it in the c_5 slot; the context's mixing pattern and
-   table 3 both give `3c_3^2 + b`.  Documentation defect, two sites.
+1. The corpus is INTERNALLY INCONSISTENT about c_5, 6 sites to 2 -- and the
+   published headline agrees with the 2.  It is not a documentation slip in two
+   places, which is what an earlier pass of this file claimed on an incomplete
+   grep.  The six-site form carries a categorical reading and a recorded 2.4 %
+   empirical residual, so it is a deliberate claim, not a leftover.
 
 2. CORRECTION to the bean: the two candidates are NOT "opposite sign".  Both are
    negative coefficients of u^5.  The recorded opposition came from comparing
@@ -221,10 +240,14 @@ FINDINGS
        boxed   c_5, muon pin  +7.1339 ppb                    8.1 % apart
 
    The headline IS the N=5 muon-pin residual computed with the CONTEXT c_5.
-   The bean could not see this because the live code carries the retired c_4 in
-   the c_5 slot, so its N=5 lands at +7.13 and the nearest match to the headline
-   looked like N=3 (+6.02, 8.8 % off).  Comparing to the wrong rung is what made
-   the sign hypothesis look "necessary but not sufficient".
+   The bean could not see this because the live code uses the OTHER c_5, so its
+   N=5 lands at +7.13 and the nearest match to the headline looked like N=3
+   (+6.02, 8.8 % off).  Comparing to the wrong rung is what made the sign
+   hypothesis look "necessary but not sufficient".
+
+   This does NOT establish which c_5 is correct.  It establishes that the
+   headline was computed with the minority one, while the framework's formalized
+   coefficient family claims the majority one.  Those cannot both be right.
 
    The SIGN still differs and is NOT resolved here -- hypothesis (4) stands, now
    as a pure sign convention with no residual magnitude gap to explain.
@@ -236,17 +259,27 @@ FINDINGS
    colour-blind w and today's constants.  What IS established is that the c_5
    slot is not the cause of THAT gap either.
 
-FIX: correct the c_5 slot in both carriers -- the boxed formula in
-`q-beta-categorical-precision-ladder.md` and `ladder()` in
-`qbeta_ladder_convention_fee_probe.py` -- from `(b^2 + 1/2)` to `(3c_3^2 + b)`.
-That is a documentation/implementation correction to match the block's own
-prose, not a change of claim.  Deliberately NOT done in this probe: it moves a
-published number (37.707 -> 37.187 ppb at the canonical pin) and belongs in its
-own commit with the witness refreshed.
+NO FIX IS APPLIED, and none should be until the direction is settled.  An
+earlier pass of this file proposed "correct the two carriers to 3c_3^2+b".  With
+the count the other way round that would mean rewriting six sites -- including a
+conjecture block and the Lean class it formalizes -- to match two, on the
+strength of one 2-significant-figure number.  That is not a documentation fix;
+it is a change of claim, and it needs the math, not a grep.
 
-NOT DONE, and not to be done by fitting: the sign, and table 3's column.  Do not
-tune w, the pin, or CODATA until they come out -- that would manufacture
-provenance for numbers whose origin is the actual open question.
+What would settle it, in order:
+  1. Read `conj-qbeta-c-k-closed-forms`'s 2.4 % empirical residual for
+     -(b^2+1/2) at c_5 against the context's derivation of 3c_3^2+b.  They are
+     claims about the same slot with different provenance; one is wrong.
+  2. Find what produced table 3's column.  If it used 3c_3^2+b, the two-site
+     form is the computed one and the six-site family is the stale one.
+  3. Only then edit, in the direction the math gives.
+
+Also open, unchanged: the SIGN (hypothesis 4), and
+`q-beta-gamma-gamma-canonical-derivation.md`'s stale retired c_4 at rung 4.
+
+Not to be closed by fitting: do not tune w, the pin, or CODATA to make a column
+come out -- that would manufacture provenance for numbers whose origin is the
+actual open question.
 """)
     return 0 if ok else 1
 
