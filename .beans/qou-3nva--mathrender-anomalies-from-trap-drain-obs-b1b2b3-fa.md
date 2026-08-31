@@ -4914,3 +4914,97 @@ transcription fix** — this needs the author.
 | new entries opened | 1 (L-V64) |
 
 **Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49.
+
+---
+
+## Tranche 10 — L-V38…L-V49, 2026-08-31
+
+Nine fixed, one retracted, three escalated.
+
+### 🛑 L-V38 RETRACTED — applying it would break the definition it flags
+
+The entry calls the leading `0` in `𝓜 = {0, 2, 8, 20, 28, 50, 82, 126}` "magic-
+number set drift". It is not drift; the two sets are different objects.
+
+`𝓜` is labelled **"closed-shell counts"** and exists to feed
+`m_≤(X) = largest magic ≤ X`, `n_out(X) = X − m_≤(X)`. Without `0 ∈ 𝓜`, `m_≤`
+is **undefined for any nucleon count below 2** — and
+`tm-heavy-atom-examples-table8-data.md` covers **hydrogen**. The leading `0` is
+what makes `m_≤` total on ℕ.
+
+`shell-transition-knot.md:2` uses `{2, 8, 20, 28, 50, 82, 126}` for *stability
+pairs* — the physics magic numbers, where `0` would be wrong. Two sets, two
+purposes, both correct. (The entry names 3 sites; there is a 4th,
+`predicted-spectra/shell-construction-rules.md:34`, correct in the same way.)
+
+### Fixed
+
+| entry | what |
+|---|---|
+| **L-V42** | `"When $\|q\|=1$ is irrational"` — a modulus condition, not a number with an irrationality property. Now `q = e^{2πiθ}`, θ irrational. |
+| **L-V41** | `\|R\| = ∅` for `R = 𝔽_p`. `\|R\|` is the value set; the trivial absolute value exists, so it is `{0,1}`, never empty. Restated as "no archimedean place". |
+| **L-V40** | Editing residue — the excision is stated on **both** sides of the same display. Dropped the second. |
+| **L-V45**a | `σᵢ ↔ σᵢ` is the identity map. The bar-involution is `σᵢ ↔ σᵢ⁻¹`, confirmed by the block's own next sentence. |
+| **L-V46**a | `Plucker → Plücker`, `Mobius → Möbius` ×2. (The `AUDIT-REPORT.md` hits are Lean **filenames** — left alone.) |
+| **L-V47** | bare `$SU_q(1,1)$` → `\mathrm{SU}_q(1,1)`, 3 sites (§7aa). |
+| **L-V48** | "accordingly isomorphic" → "correspondingly". |
+| **L-V49** | "transverses" → "traverses". |
+| **L-V43** | `> **Superseded.**` banner → `authorNotes {kind: "deprecated"}` per §4d. |
+
+**L-V43 note:** safe *here* only because the block is a `definition()`, which
+extends `BlockBaseSchema`. On a `prose`/`table`/`equation`/`diagram` block the
+field is **silently dropped** (§4d correction). Verified the `.ts` loads with 2
+`authorNotes`.
+
+### 🟡 Escalated — three, and one is a near-miss of my own
+
+**L-V46b — I nearly fabricated a citation.** The dangling *"See Seiberg–Witten
+for the explicit symplectic form"* has no `\cite{}`. I first "fixed" it with
+`\cite{seibergwitten1994}` — **a key that does not exist**. The real ids are
+`seiberg1994` and `seiberg-witten1994b`, both N=2 SUSY Yang–Mills papers on
+monopole condensation and duality, neither about a symplectic form on `Λ²V` for
+`SL(2)`. So the pointer is probably **internal** — but neither
+`sw-period-residue-sum.md` nor `sw-classical-jet-exactness.md` mentions a
+symplectic form either. Reverted; left dangling and flagged rather than
+fabricated. **Check the key exists before writing a `\cite{}`.**
+
+**L-V39 — two readings, and it is load-bearing under both.**
+`shell-transition-knot.md:2,36` and `-interpretation.md:3` say `𝓑₃` has
+"3 internal crossings" / "crossing number 3". The Borromean rings have crossing
+number **6**, and `(σ₀σ₁⁻¹)³` has 6 letters — verified independently in tranche
+6 (deleting a strand removes 4 of the 6). *But* 3 may be the intended quantity
+under the wrong name: the interpretation block says *"the number of resonant
+coupling channels equals the Borromean crossing number"*, and `𝓑₃` has exactly
+**3 pairs** of components (6 = 3 pairs × 2). Under that reading the number is
+right and only the name is wrong.
+
+Load-bearing either way: the whole `N ≥ 3` threshold rests on it, and
+`QOU.Braiding.stability_pairs_correct` is attached. Changing 3 → 6 moves the
+threshold to `N = 6` and breaks the shell closures.
+
+**L-V44 / L-V45b — the degree description is wrong, but the naming is a
+convention.** `brings-surface-qou-intro.md:1` calls Bring's surface "the
+`S₅`-symmetric **quartic-and-quadric** in `ℙ⁴`"; the curve is cut by
+`p₁ = p₂ = p₃ = 0`, i.e. a quadric and a **cubic**. And
+`c-from-color-flavor-swap.md:69` says "Bring's **quintic** surface". But the
+corpus deliberately calls the genus-4 **curve** "Bring's surface" —
+`chi-minus-six-chain.md:19`: *"The unique maximally symmetric genus-4 curve is
+Bring's surface `Σ₄`"* — across **303** occurrences. Correcting the degree
+without settling the curve/surface convention would make one block disagree
+with its own chapter.
+
+**RUNNING TALLY, ten tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 41 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 7 |
+| retracted / partly retracted | 5 |
+| new entries opened | 1 (L-V64) |
+
+**L-V38 is the third entry that would have caused damage if applied literally**,
+after L-V50 (a documented build break) and L-V63 (replacing the standard Jones
+relation with an operator identity that fails for the normalised invariant).
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17.
