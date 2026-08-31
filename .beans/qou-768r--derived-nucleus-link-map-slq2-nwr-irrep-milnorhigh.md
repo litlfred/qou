@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T04:25:11Z
+updated_at: 2026-08-31T04:29:46Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -301,3 +301,43 @@ It named `{i, i+2, i+4}` as a canonical bounded-degree family with the right
 scaling. The family is still canonical and still correctly scaling -- and its
 invariants are all zero. Recorded rather than deleted: the counting was right
 and the conclusion it was heading toward was not.
+
+
+## The path is a CONVENTION, not a derived fact (2026-08-31)
+
+Every route closed today died on the same structure -- the linking/interaction
+graph of the atom word is a **path**. Read at the construction rather than
+inferred: `mass_at_3A_proper.atom_braid_word_3A`'s own docstring says
+
+  > for each nucleon k, apply intra g0, intra g1, then (if include_inter) the
+  > appropriate pp/nn/pn crossing at **gen 3k+2**
+
+matching "the **chain-walk convention** of
+`hecke_core.atom_per_generator_volumes`". So the atom is emitted as a LINEAR
+CHAIN of nucleon triples with exactly one interface per consecutive pair. The
+path is the emission loop's shape, named as a convention. It is not derived
+from anything, and C6 of the A>=5 constraint table already flagged the sibling
+ordering choice the same way.
+
+**Consequence.** Route 1 fails on parity (`mu = A+1` odd only for even A) and
+route 3 fails because a path cannot be Brunnian. Both failures trace to the
+chain walk, so the open question is no longer "which invariant" but **"is the
+chain walk load-bearing, or a free choice?"** -- a much smaller question than
+the one this bean opened with.
+
+## A PRECISION FIX to my own route-3 output, before it was merged
+
+`atom_braid_word_3A` is emphatic that it returns a **Hecke element**, not a
+braid word; that there is **no single link behind it** (a weighted sum over
+`2^(2A+1)` branches); and that **no topological quantity may be read off it**.
+
+My probe and Lean said "the closure" throughout, implying an object the corpus
+says does not exist. **The results survive at full strength** -- what is
+measured is which strand pairs each letter acts on, and an `averaged` letter
+`sigma_g - (h/2)*1` and both its resolutions project to the SAME transposition,
+so the component partition, the non-interaction, and the strand blocks are
+identical in every branch. The conclusion is therefore about **every one of the
+`2^(2A+1)` branch closures separately**. Phrasing corrected in the probe, the
+Lean docstring and the PR body rather than left to be quoted as a single-link
+claim. Linking NUMBERS are genuinely branch-dependent (-1 vs -2 per bond) and
+are not load-bearing for the vanishing result.

@@ -21,8 +21,8 @@ cheaper measurement than the Magnus expansion it would have taken to settle.
 
 ## The measurement
 
-Between NON-ADJACENT components the closure has **zero crossings** -- not
-merely a zero signed sum. Only the `mu - 1` consecutive pairs carry any
+Between NON-ADJACENT components EVERY BRANCH CLOSURE has **zero crossings** --
+not merely a zero signed sum. Only the `mu - 1` consecutive pairs carry any
 crossing at all. Stronger, and checked here rather than argued
 diagrammatically:
 
@@ -43,17 +43,41 @@ A split link has all Milnor invariants zero. Therefore:
     Delta(ijk) = 0   =>   the triple is split   =>   mubar(ijk) = 0.
 
 Combined with the indeterminacy result, **no non-trivial, well-defined Milnor
-triple invariant exists anywhere in this closure, at any A.** Definedness and
+triple invariant exists in ANY branch closure, at any A.** Definedness and
 triviality coincide, and they coincide *because* the linking graph is a path:
 on a path, "not linked" and "never interacts" are the same condition.
 
 **The Magnus expansion is not worth running.** It would return zero on exactly
 the triples where it is meaningful.
 
+## Why this may be read off the word at all
+
+`atom_braid_word_3A`'s own docstring is emphatic: the object is a HECKE
+ELEMENT, **not** a braid word, there is **no single link behind it** (it is a
+weighted sum over `2^(2A+1)` branches), and **no topological quantity may be
+read off it** -- not a volume, not a crossing number, not a genus.
+
+Nothing here reads one. What is measured is **which strand pairs each letter
+acts on**, which is well defined letter-by-letter and identical in every
+branch, because an `averaged` letter `sigma_g - (h/2)*1` and both of its
+resolutions `sigma_g`, `sigma_g^-1` project to the *same* transposition
+`(g, g+1)`. Hence:
+
+  * the component partition is the same in every branch;
+  * "no letter acts on two members of the triple" holds in every branch;
+  * the strand blocks are the same in every branch.
+
+So the splitness -- and therefore the vanishing -- is a statement about
+**every one of the `2^(2A+1)` branch closures separately**, not about a single
+link that does not exist. Read every "closure" below that way. Linking
+NUMBERS, by contrast, ARE branch-dependent (`-1` vs `-2` per bond), which is
+why they are reported per branch in the sibling probe and are not load-bearing
+for this result.
+
 ## Scope
 
-**(b) for this closure**, invariant named: a split link has vanishing Milnor
-invariants, and splitness is established here structurally rather than
+**(b) for every branch closure of this word**, invariant named: a split link
+has vanishing Milnor invariants, and splitness is established here structurally rather than
 numerically. **(a) for the route**: a different nucleus->link assignment whose
 closure is genuinely Brunnian -- pairwise unlinked while still interacting,
 which is what `L6a4` is and this word is not -- would restore it. That is now
@@ -158,7 +182,8 @@ def main() -> int:
     print("Definedness and triviality coincide, BECAUSE the linking graph is a")
     print("path: on a path, 'not linked' and 'never interacts' are one")
     print("condition.  No non-trivial well-defined Milnor triple invariant")
-    print("exists in this closure at any A.  The Magnus expansion would return")
+    print("exists in ANY branch closure at any A.  The Magnus expansion would")
+    print("return")
     print("zero on exactly the triples where it is meaningful.")
     print("=" * 76)
 

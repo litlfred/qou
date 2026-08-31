@@ -24,8 +24,17 @@ linked" and "never interacts" are one condition. A genuinely Brunnian closure
 (pairwise unlinked while still interacting, which `L6a4` is and this word is not)
 would separate them, and that is the sharp requirement on any future assignment.
 
-**Scope (b)** for this closure, invariant named — a split link has vanishing
-Milnor invariants. **Scope (a)** for the route.
+**Note on "the closure".** `atom_braid_word_3A` returns a *Hecke element*, not
+a braid word: there is no single link behind it, only `2^(2A+1)` branch
+closures, and its docstring forbids reading a topological quantity off the
+element itself. Nothing here does. The measured facts concern which strand
+pairs each letter acts on — identical in every branch, since an `averaged`
+letter and both of its resolutions project to the same transposition — so
+`PathLinkingStructure` is instantiated by **every branch closure separately**,
+and the conclusion holds for each.
+
+**Scope (b)** for every branch closure of this word, invariant named — a split
+link has vanishing Milnor invariants. **Scope (a)** for the route.
 
 No `sorry`. The two measured facts and the classical vanishing fact are carried
 as hypotheses of `PathLinkingStructure`; the theorems derive the collapse.
