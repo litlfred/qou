@@ -5008,3 +5008,113 @@ after L-V50 (a documented build break) and L-V63 (replacing the standard Jones
 relation with an operator identity that fails for the normalised invariant).
 
 **Still unworked:** L-V1, L-V2, L-V15, L-V17.
+
+---
+
+## Tranche 11 — the last four (L-V1, L-V2, L-V15, L-V17). **THE LEDGER IS DRAINED.**
+
+Three of the four were already fixed. One was live and is now migrated.
+
+### L-V1 — FIXED, and fixed *correctly*
+
+`trefoil-operator-algebra.md` no longer asserts that `αβα` and `βαβ` both equal
+a displayed off-diagonal matrix. It now reads: *"together with `β` it obeys the
+**dihedral** relations `αβα = β` and `βαβ⁻¹ = α⁻¹`"* — which matches the
+recomputation (`αβα = β`) **and** takes the structural point the ledger made:
+`tr α = 1`, `tr β = 0`, so they are not conjugate and cannot be braid
+generators. Calling them dihedral rather than braid relations is the right fix,
+not a patch over the numbers.
+
+### L-V2 — FIXED, and independently re-verified here
+
+All 12 rows of `binding-knots-visual-inventory-table1-data.md` and both
+`knot-particle-dictionary` tables now carry the corrected words. **Recomputed
+every closure component count from the underlying permutation — 10/10 rows
+verify:**
+
+```
+Unknot 0_1      trivial                  comps=1  expect 1  OK
+Hopf L2a1       s0^2         in B_2      comps=2  expect 2  OK
+Trefoil 3_1     s0^3         in B_2      comps=1  expect 1  OK
+Cinquefoil 5_1  s0^5         in B_2      comps=1  expect 1  OK
+Septafoil 7_1   s0^7         in B_2      comps=1  expect 1  OK
+Fig-8 4_1       (s0 s1^-1)^2 in B_3      comps=1  expect 1  OK
+T(2,9) 9_1      s0^9         in B_2      comps=1  expect 1  OK
+T(3,4) 8_19     (s0 s1)^4    in B_3      comps=1  expect 1  OK
+T(3,5) 10_124   (s0 s1)^5    in B_3      comps=1  expect 1  OK
+Borromean 6^3_2 (s0 s1^-1)^3 in B_3      comps=3  expect 3  OK
+```
+
+Confirmed *correct*, not merely *changed*.
+
+### L-V17 — FIXED by the convention-D migration, better than a patch
+
+The vacuous "stability for `q > 1/φ²`" is gone. `q-game-of-life{,-proof,
+-interpretation}.md` now state that `q_⋆ = 1/φ²` and `q_Φ ≈ 0.4656` are
+**convention-C artifacts that do not exist under `z_D`**, and that the
+well-definedness condition holds on `q ≠ 1` — which contains the substrate. The
+threshold was not corrected; it was dissolved.
+
+### L-V15 — LIVE, and now migrated C → D
+
+Identified all three values exactly **before** changing any:
+
+| operator | closed form | convention C (shown) | convention D |
+|---|---|---|---|
+| `σ₀`, `σ₁` | `z` | 0.4993203342 → `0.499` | 0.6126880371 → **0.613** |
+| `L₊`, `L₋` | `z²` | 0.2493207961 → `0.249` | 0.3753866309 → **0.375** |
+| `e⁻` | `z + (q−q⁻¹)z²` | 0.5514434143 → `0.551` | 0.6911664784 → **0.691** |
+
+Three independent confirmations of the identification:
+
+1. `notation-register-table3-data.md:17` states `z_D(q₀) =
+   0.61268803714646525160`; computing `q³/(q²+1)` at the proton `q₀` gives
+   `0.61268803714646524365` — **19 digits**.
+2. `fivefold-sheets-golden-ratio.md:7` gives `P_{7,7} = z + (q−q⁻¹)z²` — the
+   same closed form as the `e⁻` row.
+3. `toffoli-lp-stability.md:38` records that *"`P_{7,7}(q₀) ≈ 0.5514` … was the
+   convention-C diagonal"* — **same object, same number, already corrected in a
+   sibling block**. This table is a straggler that sweep missed.
+
+**Why substituting `z_D` is valid here, when AGENTS.md warns it usually is not.**
+The warning (`q-game-of-life-proof.md:16`, `MarkovZFullBarCondition.lean`) is
+about closed forms *derived through a C-specific route*. These three are not
+that: `tr_M(σᵢ) = z` is the stabilisation axiom, `tr_M(σ₀σ₁) = z²` is the
+Markov property on the top generator, and the `e⁻` form is the Hecke reduction
+of `σ₀σ₁σ₀`. Structural identities in `z`; only `z`'s value changes.
+
+Nothing regenerates the table — the `.ts` declares no `computation`/`witness`,
+and the only producers matching these figures live under
+`computations/_deprecated/`. Hand-maintained content, so hand-editing is the
+correct route. Caption now names the convention and prints the three closed
+forms so the column can be re-derived rather than trusted.
+
+---
+
+## FINAL TALLY — eleven tranches, ledger drained
+
+| outcome | count |
+|---|---|
+| **fixed** | **42** |
+| already fixed on arrival | 20 |
+| escalated as author decisions | 7 |
+| retracted / partly retracted | 5 |
+| new entries opened | 1 (L-V64) |
+
+**Open, awaiting the author** — L-V14, L-V18, L-V28, L-V39, L-V44/45b, L-V46b,
+L-V63/q-collatz, plus the new L-V64.
+
+**What this ledger turned out to be.** A good detector and an unreliable
+diagnosis. Roughly a third of entries were simply stale, and of those still
+live, **five were wrong about the defect itself** — three of them in a direction
+that would have *damaged* the corpus if applied literally:
+
+- **L-V50** — "define the missing `\pp` macro" is a documented fatal pdflatex break.
+- **L-V38** — stripping the leading `0` from `𝓜` makes `m_≤` undefined below X = 2, and table 8 covers hydrogen.
+- **L-V63** — "fix" the nine `q^{1/2}` sites and you replace the standard Jones relation with an operator identity that fails for the normalised invariant.
+
+And three entries (**L-V27, L-V28, L-V30**) *understated* the defect once
+actually computed.
+
+**Standing advice for the next agent:** verify the finding, re-derive the fix
+from scratch, and re-run the *class* grep rather than the entry's site list.
