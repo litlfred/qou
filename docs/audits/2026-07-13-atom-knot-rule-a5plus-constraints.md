@@ -36,7 +36,7 @@ Any A ≥ 5 rule must clear this record.
 | # | constraint | source | epistemic tier |
 |---|---|---|---|
 | C1 | Tower form `B = m_e·Σ (n−1)·Vol(c)` over consecutive sub-chains of the `p^Z n^N` nucleon chain; `M_n = (n−1)` and `Σ_{n}(A−n+1)(n−1) = C(A+1,3)` | `QOU/Mass/LinearChainBondCount.lean`; [`2026-07-04-theta-mn-bondcount-derived-linearchain.md`](2026-07-04-theta-mn-bondcount-derived-linearchain.md) | proved-lean (combinatorics only; the `Vol`-as-scale identity is conditional per the [volume ledger](../coordination/binding-scale-is-hyperbolic-volume.md)) |
-| C2 | Isospin carriers exist only for **mixed** 3-chains (`ppn`, `pnn`); the IDs are deprecated volume-search matches that the Markov-trace test does not confirm (`tr_M(²H) ≈ 0.388` vs `J_{6₂}(q₀) ≈ 1.027`) | r5full-gate audit | empirical / deprecated |
+| C2 | Isospin carriers exist only for **mixed** 3-chains (`ppn`, `pnn`); the IDs are deprecated volume-search matches that the Markov-trace test does not confirm (`tr_M(²H) ≈ 0.388` **convention C**, `0.5751722439177719` under canonical convention D, vs `J_{6₂}(q₀) ≈ 1.027`; **62.19 %** and **43.99 %** low respectively — the non-confirmation is robust to the substitution, see §5-bis) | r5full-gate audit | empirical / deprecated |
 | C3 | **Vol₄ census gap:** implied 8.0484 lies in a gap of the ≤14-crossing 4-component spectrum; the linear-chain closure family's *minimum* (L8a21, 8 crossings) is 10.149, +26% — so either the n=4 carrier has ≥15 crossings (outside the whole HT census) or the n≥4 term is **not a single volume** | Vol₄ test audit | executed negative, scope-(a) |
 | C4 | **Supra-linearity:** cluster measure `C(A+1,3) ~ A³` vs `B_AME ~ 8·A` forces the AME-required *average* per-cluster volume to collapse: 5.54 (A=4) → 1.79 (⁶Li) → 1.37 (⁷Li) → 0.63 (¹²C) → 0.37 (¹⁶O), against 7.3–8.3 corpus 3-carriers. An untruncated tower with O(8) volumes at every level over-predicts B by ~4× already at A=6 | this probe §[2] | symbolic-exact |
 | C5 | **Brunnian non-extension:** the Borromean A=3 pattern (L6a4, Brunnian, pairwise linking 0) does not extend as a volume carrier — the 4-component Brunnian analogue L8n8 is **non-hyperbolic** (`Vol ~ 0`). Consistent with n≥4 truncation, but a pure n≤3 truncation fails at ⁴He (n≤3 = 15.96 MeV = 56% of AME) | Vol₄ test probe | executed |
@@ -118,7 +118,8 @@ at A ≥ 5: H₁₅ (A=5) / H₁₈ (A=6) symbolic reduction — **feasible** (a
 canonical ⁶Li χ witness at H₁₈ with 385 Wedderburn blocks already exists) —
 plus handling the `2^k` interface superposition (k = 9 at A=4, ~2 more per
 nucleon). The blocking issue is not scale but **validity**: the method does
-not confirm its own A≤3 anchors (`tr_M(²H) ≈ 0.388` vs `J_{6₂}(q₀) ≈ 1.027`),
+not confirm its own A≤3 anchors (`tr_M(²H) ≈ 0.388` convention C, `0.5751722439177719` under canonical convention D, vs `J_{6₂}(q₀) ≈ 1.027` —
+**62.19 %** / **43.99 %** low; the non-confirmation survives either, §5-bis),
 so running it at H₁₈ before resolving the A≤3 non-confirmation would produce
 IDs with no more standing than the deprecated volume matches.
 
@@ -156,3 +157,27 @@ only. Queue item `research-atom-to-knot-rule-A5plus` advances from "no
 constraint set" to "constraint table + executed interim test + gated
 principled route"; it stays **open** (the assignment itself is not made —
 making one today would be a fit).
+
+## 5-bis. Convention scoping of the A≤3 anchor figure (added 2026-08-31)
+
+The `tr_M(²H) ≈ 0.388` this document cites in **C2** and in §4 item 1 is the
+**convention-C** value. Convention D is canonical (owner ruling 2026-08-15) and
+PR #6318 regenerated the `tr_M` table from its producers at the proton pin:
+
+| atom | convention C | convention D, proton pin | change |
+|---|---:|---:|---:|
+| deuteron | 0.3882864240747888 | **0.5751722439177719** | **+48.13 %** |
+
+Re-verified here by running `binding_canonical(1, 1)` live: `tr_M_atom =
+0.575172243917772`.
+
+**The verdict does not move.** Against `J_{6₂}(q₀) ≈ 1.027` the atom trace is
+**62.19 %** low under C and **43.99 %** low under D — neither a match, so the
+r5full route still fails to confirm its own A≤3 anchors and C9 stands as
+written.
+
+**One thing this does not establish.** `tr_M` depends on the Markov parameter
+`z`, and whether `J_{6₂}(q₀) ≈ 1.027` was computed in the same frame has **not**
+been checked. Until it is, the pair is a scope-(a) non-match rather than a
+quantified gap; quoting "62 %" or "44 %" as *the size of the discrepancy* would
+be a convention straddle inside one comparison.

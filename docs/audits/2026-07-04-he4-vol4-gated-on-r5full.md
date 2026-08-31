@@ -29,12 +29,36 @@ Jones-polynomial identification route surfaced four facts, in order:
    `(Z,N)`, so the method *is* extensible to ⁴He.
 
 3. **But the method does not confirm the binding-link IDs even at A=2.** For ²H,
-   the 3A-strand atom braid gives `tr_M(q₀) ≈ 0.388`
+   the 3A-strand atom braid gives `tr_M(q₀) ≈ 0.388` (convention C;
+   the canonical convention-D value is `0.5751722439177719` — see the note
+   below, which leaves this section's conclusion intact)
    ([`atom-nf-symbolic-D.witness.json`](../../computations/atom-nf-symbolic-D.witness.json)),
    while `J_{6_2}(q₀) ≈ 1.027`. They do not match. Per
    [`2h-markov-trace-zero-audit.md`](2h-markov-trace-zero-audit.md), the trace
    function itself is verified correct (canonical `tr_M` identities pass), so the
    mismatch is structural, not a bug.
+
+> **🛑 The `0.388` in this comparison is the CONVENTION-C value, superseded
+> 2026-08-31.** Convention D is canonical (owner ruling 2026-08-15), and
+> PR #6318 regenerated the `tr_M` table from its producers at the proton pin:
+> the deuteron moved `0.3882864240747888 → 0.5751722439177719` (**+48.13 %**),
+> sourced from `computations/markov/markov-peel-atomic-tr-m.witness.json` and
+> `computations/canonical-tr-m-via-chi-cache.witness.json`, both
+> `q0Anchor: proton`, agreeing at the 50-dps serialization floor. Verified
+> independently here by running `binding_canonical(1,1)` live: `tr_M_atom =
+> 0.575172243917772`.
+>
+> **The VERDICT is unchanged — it is robust to the substitution.** Against
+> `J_{6₂}(q₀) ≈ 1.027` the atom trace is **62.19 %** low under C and **43.99 %**
+> low under D. Neither is a match, so the anchor non-confirmation stands and
+> this gate is still live.
+>
+> **What is NOT established: that the comparison itself is convention-clean.**
+> `tr_M` depends on the Markov parameter `z`; whether `J_{6₂}(q₀) ≈ 1.027`
+> was computed in the same frame has **not** been checked. Until it is, read
+> the two sides as a scope-(a) non-match, not as a quantified gap — a
+> convention straddle inside one comparison is the defect class AGENTS.md
+> §"Never straddle the two layers inside one quantity" names.
 
 4. **The A≤3 IDs are deprecated volume-search matches.** `2h-markov-trace-zero-audit.md`
    records that 6_2 (²H), 8_11 (³H), and L6a4 (³He) were assigned by *volume
