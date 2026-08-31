@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T05:29:09Z
+updated_at: 2026-08-31T05:31:39Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1047,3 +1047,65 @@ to consume it.
 would be a genuine, if single, comparison — and the machinery is built and
 verified, so it costs nothing further to use if a carrier route appears. Scope
 (a) on the reachability, not on the route.
+
+
+## 2026-08-31 — 🛑 ANSWERED, by a sibling three hours before I asked: the carriers are an ADMITTED FIT, so route (2) cannot meet this bean's own GATE
+
+I closed the previous entry asking *"is there any route to a binding-link
+carrier at A ≥ 4 that is not the refuted Markov closure?"* — and framed it as
+needing an owner steer. **It did not: `qou-5vhf` answers it, created
+2026-08-31T03:00Z and completed 03:22Z, roughly three hours before I asked.**
+PR #6327. That is the corpus-grep discipline catching me one step late, on a
+bean younger than the session.
+
+### The answer, and it is worse than my scoping stop
+
+> The obvious form of "extend the nucleus→link map past A=4" is a fit. The
+> A≤4 assignments are an admitted AME-driven census search
+> (`jsj_verification.py` keeps volumes near `B_AME/(ρ·m_e)`), and the
+> 2026-07-13 C1–C9 table already excludes the constructed alternatives at A≥5
+> from the other side.
+
+and on whether the substrate supplies a selector instead:
+
+> **`n_0 = 3A` IS derived** … the canonical atom word's max generator index is
+> exactly `3A−2` on all eight isotopes tested.
+> **`n_braid` is NOT derived.** It equals `1 + max|generator|` of the **assigned**
+> knot's own SnapPy braid word — `6₂ → 3`, `8₁₁ → 5`, `L6a4 → 3`, all three
+> exact. It is a **readout**, not a selector.
+
+Supporting audit: `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`.
+
+### What that does to route (2), stated carefully
+
+Two things, and only the second is fatal.
+
+1. **Not strict circularity.** The carriers were selected to match **total**
+   binding `B_AME`, whereas route (2) computes the **EM** weight — a small
+   correction, not the quantity the selection targeted. So an A = 3 number
+   would not be trivially circular.
+
+2. **But it fails this bean's own GATE.** The GATE in this bean's title reads
+   *"no tuned constant (CAL-4)"*. A carrier chosen by census search against AME
+   data **is** a hidden fit — a much larger one than a tuned constant, since it
+   selects the geometry the whole computation runs on. So a `κ(A)` reproduction
+   built on these carriers could not be reported as parameter-free, whatever the
+   energy machinery does.
+
+**Combined with the previous entry** — carriers exist at A = 3 only, and the
+closure derivation is refuted at A = 3 — route (2) reaches **one κ point, on a
+fitted carrier**. That is not a front that more energy machinery improves.
+
+### What this branch's work is still worth
+
+The machinery is sound and independently useful, and none of it depended on the
+carrier question: `LinkEmbedding` with mutual positivity discharged from
+disjointness; the integrator calibrated against the **proved** `E(Hopf) = 2π²` to
+8 significant figures; the Borromean value with `10π²` **refuted** at ten orders
+of confidence; the topology guard closing the isotopy question. Those stand as
+results about Möbius energy in this corpus regardless of what 4-B does with
+them.
+
+**Scope (a)** on route (2)'s reachability — a negative about the available
+carriers, not about knot energy as an EM mechanism. If a *derived* carrier
+assignment ever appears, every piece above is waiting for it.
