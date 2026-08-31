@@ -1,15 +1,44 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:25:10.316833+00:00",
-  "commitSha": "9e3cac17311daf33842df4c0dfb0b02bea19be0c",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:25:33.693019+00:00",
+  "commitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
+  "assertions": [
+    {
+      "name": "p1_no_diagonal_gauge_survives",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "P1: consistency condition fails identically: |C_m| = O(1..10^2) at every m <= 15, every q -- diagonal gauge over-determined"
+    },
+    {
+      "name": "p2_obstructed_at_every_m_and_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "P2: obstructed at every m for every q"
+    },
+    {
+      "name": "p3_no_constant_c_or_shift_rescues",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "P3: S_m non-constant in m at every q (spread >> 0); no constant c(q), no shift s in [-2,2] zeroes the residual"
+    },
+    {
+      "name": "pruned",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the conjunction of P1-P3 against TOL_KILL = 1e-40, the pre-stated kill criterion"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 22,
   "computation": "qlift_ggm_diagonal_gauge_prune_probe",
   "scriptFile": "qlift_ggm_diagonal_gauge_prune_probe.py",
-  "scriptHash": "1a3d36f3d64a",
-  "scriptCommitSha": "b2ce0c2c947b57e87e009280c470f5543df4e7f7",
+  "scriptHash": "73ff5ed66893",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +53,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -34,7 +63,7 @@
   },
   "description": "Diagonal-gauge prune: b_m = g_m*y_m from C1 kernel [m+1]_q b_{m+1} = b_m + c b_{m-1} into GGM eq-49 y_{m+1} - (2-q^m) y_m + y_{m-1} = 0 -- consistency condition derived symbolically, verified numerically",
   "computation_method": "mpmath dps=50; P1 residual of derived consistency identity; P2 direct (A)-gauge construction + eq-49 residual on the proved C1 solution b_n = I_q(n)/[n]_q!; P3 constant-c(q) and index-shift non-rescue",
-  "generated": "2026-08-23T19:25:10+00:00",
+  "generated": "2026-08-30T14:25:33+00:00",
   "parameters": {
     "dps": 70,
     "tol_kill": "1e-40",

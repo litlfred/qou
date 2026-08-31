@@ -130,9 +130,42 @@ def main():
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
-        "knot-factor-skein-verification", witness, script_path=__file__, engine="sympy",
-    ).save()
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. The checks already existed as exact sympy identities
+    # and were recorded under `result.checks` without ever being asserted.
+    #
+    # DELIBERATELY NOT `all_ok`. The fourth entry of `checks` is a documentary
+    # row carrying a HARDCODED `"equals_target": True` -- it records a reading
+    # ("a_K is the h-content reduction, not V(4_1)"), not a computation. Folding
+    # it into an assertion would launder a literal into a passing check, which
+    # is the very defect this drain exists to remove. Only the rows whose
+    # verdict came from `sp.simplify(...) == 0` are asserted, and the expected
+    # count is the number of such rows the script constructs (3 skein products
+    # from `table` + the 1 clean identity), not a number matched to the result.
+    _symbolic = [c for c in checks if "a_K_in_q" not in c]
+    _symbolic_ok = [c for c in _symbolic if c.get("equals_target") is True]
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "knot-factor-skein-verification", witness, script_path=__file__,
+            engine="sympy",
+        )
+        .add_assertion(
+            "exact_symbolic_identities_verified_count",
+            computed=str(len(_symbolic_ok)),
+            expected=str(len(table) + 1),
+            source="3 Skein products prod(1+sign(c)h) vs the canonical a_K "
+                   "column of nuclear-knot-classification, plus the identity "
+                   "1 - h^2 == 4 - [3]_q; each verdict is sp.simplify(...) == 0",
+        )
+        .add_assertion(
+            "clean_identity_1_minus_h2_eq_4_minus_br3_residual",
+            computed=str(sp.simplify((1 - h**2) - (4 - br3))),
+            expected="0",
+            source="exact symbolic residual; sympy, so the bar is exact zero "
+                   "and no tolerance is involved",
+        )
+        .save()
+    )
     print(f"all_ok = {all_ok}")
     for c in checks:
         print(f"  [{c.get('equals_target')}] {c['check']}")

@@ -1,15 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T19:03:52.564561+00:00",
-  "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:11:10.092560+00:00",
+  "commitSha": "35d29b109bfb86703fdee23b013665576bf01373",
+  "assertions": [
+    {
+      "name": "cached_y_lambda_agrees_with_independent_reference_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "per-atom |cached - ref|/|ref| against the L1 1 ppQ target 1e-15; expected is the number of atoms with a reference, not a number matched to the result"
+    },
+    {
+      "name": "cached_y_lambda_worst_relative_error",
+      "computed": "5.04317205403701883458782793878338193561934654350645507425572e-50",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "largest per-atom relative error across `sanity_check`; computed at mp.dps = 50, so the 1e-15 bar is well above the arithmetic floor rather than at it"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 354,
+  "durationMs": 237,
   "computation": "y-lambda-at-q0",
   "scriptFile": "y_lambda_at_q0_cache.py",
-  "scriptHash": "b88ffe51a43d",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "3f1bf04589e5",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,12 +36,19 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
-  "description": "Numeric cache of y_\u03bb(q_0) at 50 dps for n \u2208 {2, ..., 12}, evaluated from y-lambda-wenzl-bridge-symbolic-witness.json in parallel via multiprocessing.Pool. Pre-computes the expensive symbolic-to-numeric step so downstream consumers (delta_lambda_empirical_tabulation.py and other \u03c1_K Wedderburn-weighted formulas) can load instantly. Output strings trimmed to exactly 50 dps via mp.nstr.",
+  "invocation": {
+    "argv": [
+      "computations/y_lambda_at_q0_cache.py"
+    ],
+    "reproduce": "python3 -u computations/y_lambda_at_q0_cache.py"
+  },
+  "description": "Numeric cache of y_λ(q_0) at 50 dps for n ∈ {2, ..., 12}, evaluated from y-lambda-wenzl-bridge-symbolic-witness.json in parallel via multiprocessing.Pool. Pre-computes the expensive symbolic-to-numeric step so downstream consumers (delta_lambda_empirical_tabulation.py and other ρ_K Wedderburn-weighted formulas) can load instantly. Output strings trimmed to exactly 50 dps via mp.nstr.",
   "contentBlock": "prop:y-lambda-closed-form-wenzl-bridge",
   "parameters": {
     "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
@@ -52,14 +75,14 @@
           "partition": [
             2
           ],
-          "y_at_q0_50dps": "0.75270211325196540159377935162023613783017559887490"
+          "y_at_q0_50dps": "0.75270211325196540159377935162023613783017559887491"
         },
         {
           "partition": [
             1,
             1
           ],
-          "y_at_q0_50dps": "0.24729788674803459840622064837976386216982440112510"
+          "y_at_q0_50dps": "0.24729788674803459840622064837976386216982440112509"
         }
       ],
       "3": [
@@ -74,7 +97,7 @@
             2,
             1
           ],
-          "y_at_q0_50dps": "0.24729788674803459840622064837976386216982440112510"
+          "y_at_q0_50dps": "0.24729788674803459840622064837976386216982440112509"
         },
         {
           "partition": [
@@ -200,7 +223,7 @@
             4,
             2
           ],
-          "y_at_q0_50dps": "0.046032434692020426936520153786581544499316813480771"
+          "y_at_q0_50dps": "0.046032434692020426936520153786581544499316813480772"
         },
         {
           "partition": [
@@ -307,7 +330,7 @@
             4,
             3
           ],
-          "y_at_q0_50dps": "0.015123810098023319304470277813904115073396320414472"
+          "y_at_q0_50dps": "0.015123810098023319304470277813904115073396320414473"
         },
         {
           "partition": [
@@ -409,7 +432,7 @@
           "partition": [
             8
           ],
-          "y_at_q0_50dps": "0.038760449911000564582354465457644413420307876664474"
+          "y_at_q0_50dps": "0.038760449911000564582354465457644413420307876664475"
         },
         {
           "partition": [
@@ -636,7 +659,7 @@
             6,
             3
           ],
-          "y_at_q0_50dps": "0.0076436375443838135929796613184087035687065599020588"
+          "y_at_q0_50dps": "0.0076436375443838135929796613184087035687065599020587"
         },
         {
           "partition": [
@@ -894,7 +917,7 @@
             9,
             1
           ],
-          "y_at_q0_50dps": "0.0095853773523934853492424704098080562713175733954272"
+          "y_at_q0_50dps": "0.0095853773523934853492424704098080562713175733954271"
         },
         {
           "partition": [
@@ -1291,14 +1314,14 @@
           "partition": [
             11
           ],
-          "y_at_q0_50dps": "0.0070661065655372517920767338982295249433710394424846"
+          "y_at_q0_50dps": "0.0070661065655372517920767338982295249433710394424847"
         },
         {
           "partition": [
             10,
             1
           ],
-          "y_at_q0_50dps": "0.0054707921123435248590356572247065997474899829530333"
+          "y_at_q0_50dps": "0.0054707921123435248590356572247065997474899829530334"
         },
         {
           "partition": [
@@ -1386,7 +1409,7 @@
             6,
             5
           ],
-          "y_at_q0_50dps": "0.00092491543251284962035375850235914253298910588202097"
+          "y_at_q0_50dps": "0.00092491543251284962035375850235914253298910588202098"
         },
         {
           "partition": [
@@ -2643,6 +2666,6 @@
     }
   },
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

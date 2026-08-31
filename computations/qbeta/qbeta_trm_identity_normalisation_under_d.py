@@ -256,10 +256,49 @@ def main() -> int:
         "q0Value": str(q0),
     }
 
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. Every claim below is EXACT -- Fraction arithmetic for the
+    # sampled rows, sympy over Q(q) for the symbolic ones -- and each was
+    # computed, printed and left in `data`, so `save()` emitted
+    # `allPassed: true` over an EMPTY assertions list. Nothing here is
+    # tolerance-based, so no threshold is introduced and no float64 floor is
+    # involved: `all_one` is `== 1` over exact rationals, not an approximate
+    # comparison, and `radical_is_identically_zero` is an identity in q.
+    #
+    # NOTE ON SCOPE, kept deliberately: the payload's own `is_it_derived` says
+    # "NO -- imposed, then reproduced". These assertions therefore certify
+    # CONSISTENCY between the imposed normalisation and the D-frame weights;
+    # they do not assert that tr_M(1) must be 1 under D. The source strings
+    # below say so, so the scope travels with the assertion.
+    _b = WitnessBuilder.wrap_legacy(
         "qbeta-trm-identity-normalisation-under-d", payload,
         script_path=__file__, engine="python+sympy+exact rationals",
-    ).save()
+    )
+    _b.add_assertion(
+        "sum_y_lambda_f_lambda_equals_one_exactly",
+        computed=bool(all_one), expected=True,
+        source=("sum_lambda y_lambda * f^lambda == 1 EXACTLY (Fraction "
+                "arithmetic, not a tolerance) on every sampled row, even "
+                "though every ell(lambda) >= 3 block vanishes under D. "
+                "CONSISTENCY of an imposed normalisation with the D-frame "
+                "weights -- not a derivation of it"))
+    _b.add_assertion(
+        "radical_is_identically_zero",
+        computed=bool(sym["radical_is_identically_zero"]), expected=True,
+        source=("y_(1^3) == 0 as an IDENTITY in q under convention D -- "
+                "sympy over Q(q) with z free, then specialised at "
+                "z_D = q^3/(q^2+1)"))
+    _b.add_assertion(
+        "sum_equals_one_for_all_q",
+        computed=bool(sym["sum_equals_one_for_all_q"]), expected=True,
+        source=("the symbolic upgrade of the sampled measurement: the sum is "
+                "1 for ALL q, not merely at the sampled points"))
+    _b.add_assertion(
+        "carrier_nonzero_for_q_positive",
+        computed=bool(sym["carrier_nonzero_for_q_positive"]), expected=True,
+        source=("every real root of the y_(2,1) carrier numerator is <= 0, so "
+                "the ladder's carrier block survives convention D for q > 0 "
+                "rather than falling into the radical"))
+    out = _b.save()
 
     print("=== What replaces tr_M(1) = 1 under convention D? NOTHING ===")
     print(f"  sum_lambda y_lambda f^lambda == 1 exactly, all rows : {all_one}")

@@ -1,15 +1,44 @@
 {
   "engine": "python+sympy+exact rationals",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:17:15.814017+00:00",
-  "commitSha": "9473383780fd197cc00e5a5ee04f4214aef450b4",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:28:37.149014+00:00",
+  "commitSha": "1a894b61e91c9369142ba9396c0f1cdafebbde05",
+  "assertions": [
+    {
+      "name": "sum_y_lambda_f_lambda_equals_one_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sum_lambda y_lambda * f^lambda == 1 EXACTLY (Fraction arithmetic, not a tolerance) on every sampled row, even though every ell(lambda) >= 3 block vanishes under D. CONSISTENCY of an imposed normalisation with the D-frame weights -- not a derivation of it"
+    },
+    {
+      "name": "radical_is_identically_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "y_(1^3) == 0 as an IDENTITY in q under convention D -- sympy over Q(q) with z free, then specialised at z_D = q^3/(q^2+1)"
+    },
+    {
+      "name": "sum_equals_one_for_all_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the symbolic upgrade of the sampled measurement: the sum is 1 for ALL q, not merely at the sampled points"
+    },
+    {
+      "name": "carrier_nonzero_for_q_positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every real root of the y_(2,1) carrier numerator is <= 0, so the ladder's carrier block survives convention D for q > 0 rather than falling into the radical"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-trm-identity-normalisation-under-d",
   "scriptFile": "qbeta_trm_identity_normalisation_under_d.py",
-  "scriptHash": "0dc1ef1c94fc",
-  "scriptCommitSha": "8abe1f2adaf7d82b8fec0554c6459d77d3963c6f",
+  "scriptHash": "c8df1351c5a4",
+  "scriptCommitSha": "224800183f1a72a20811c1207fd9644fa9a88ef4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

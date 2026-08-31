@@ -325,13 +325,40 @@ def main():
                           "CONSISTENT/DISTINCT vocabulary only; anti-fit",
         },
     }
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. T1/T2/T3 each already compute a `pass` and T1 additionally
+    # guards with a bare `assert`, but none of the three reached
+    # `assertions[]`, so `save()` emitted `allPassed: true` over an EMPTY list:
+    # green while asserting nothing. Every threshold below is the module's own
+    # declared constant (TOL_EXACT = 1e-45 at line 65, "T1 assertion
+    # tolerance"; TOL_GAUGE = 1e-30 at line 66); none is chosen here, and none
+    # is fitted to an observed value. All comparisons are mpmath at dps=50, so
+    # no float64 floor is being mistaken for exactness.
+    _bldr = WitnessBuilder.wrap_legacy(
         "qlift_kernel_candidate_crosscheck_probe",
         witness,
         script_path=__file__,
         engine="python+mpmath",
         start_time=_T0,
-    ).save()
+    )
+    _bldr.add_assertion(
+        "t1_c1_exactness", computed=bool(t1["pass"]), expected=True,
+        source=("[n+2]_q b_{n+2} = b_{n+1} + b_n holds with max relative "
+                "residual < TOL_EXACT (1e-45) at every tested q, including "
+                "q = 1.10998 and the q = 1 classical limit"))
+    _bldr.add_assertion(
+        "t2_kernels_are_distinct", computed=bool(t2["pass"]), expected=True,
+        source=("no scalar gauge b_m -> lam^m b_m maps the C1 kernel to the "
+                "C2 (GGM eq-49) kernel: both quadratic roots incl. complex "
+                "lam leave a residual above TOL_GAUGE (1e-30)"))
+    _bldr.add_assertion(
+        "t3_c1_coeff_covariance",
+        computed=bool(t3["c1_coeff_covariance"]["pass"]), expected=True,
+        source="C1 coefficient bar-covariance under q -> 1/q, to TOL_EXACT")
+    _bldr.add_assertion(
+        "t3_c2_kernel_bar",
+        computed=bool(t3["c2_kernel_bar"]["pass"]), expected=True,
+        source="C2 kernel bar-symmetry under q -> 1/q, to TOL_EXACT")
+    out = _bldr.save()
     print(f"witness written: {out}")
 
 

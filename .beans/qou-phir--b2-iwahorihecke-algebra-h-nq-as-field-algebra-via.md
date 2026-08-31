@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:25:41Z
+updated_at: 2026-08-31T05:53:25Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -974,3 +974,128 @@ have to wait for the indexing.
 (c) Lemma 3.14's dominance induction. The q=1 template is the corpus's own sorry-free
     `standardPolytabloid_straightening` on the `colWordNum` measure — same argument, and it
     already carries the hard measure-descent work.
+
+
+### 2026-08-31 — the row-standard index set exists (step (a) of the spanning blocker)
+
+`QOU/BraidKnot/RowStandardTableau.lean`, sorry-free:
+`IsRowStandard`, `RowStandardTab` (subtype), `Decidable`/`Fintype` instances,
+`isRowStandard_of_no_second_column`, `equivTableauOfNoSecondColumn`,
+`card_eq_factorial_of_no_second_column`.
+
+**Design note worth keeping.** It is a PREDICATE on `Specht.Tableau μ`, not a new structure.
+`Tableau μ = Fin (nOf μ) ≃ μ.cells` is already the arbitrary bijective filling and is what
+`dOf`/`dAt`/`murphyM` consume, so row-standardness is a condition on it and a row-standard
+tableau is a subtype — nothing downstream needs re-plumbing. (`BraidKnot.StandardYoungTableau`
+is a separate `entry`-based structure carrying both `row_strict` and `col_strict`; row-standard
+is that minus the column half, but expressed on the type the Hecke side already speaks.)
+
+`card_eq_factorial_of_no_second_column` makes the gap quantitative and Lean-checked: on a
+one-column shape there are `n!` row-standard tableaux against exactly ONE standard tableau.
+That is why Lemma 3.14 cannot be stated against `MurphyIndex`, and why
+`span_murphySum_one_conjugates_eq_top` had to be phrased over conjugating permutations.
+
+Note the hypothesis is `(0,1) ∉ μ` — YoungDiagram is closed under up-left, so "no cell in
+column 1" IS "every row has length ≤ 1", and the row-standard condition is then vacuous.
+
+**next**: (b) Lemma 3.13, the Garnir decomposition `t = g·w` with `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`;
+then (c) 3.14's dominance induction. Also still open and cheap-ish: `IsRowStandard` for the
+image of a standard tableau under `sytToTableau` (the forgetful direction), which the
+straightening's target side will want.
+
+
+### 2026-08-31 — the forgetful map Std -> RowStd, and the lemma it needed
+
+`entry_lt_entry_of_lt` and `isRowStandard_sytToTableau`, both sorry-free.
+
+**It was not immediate, and the reason is worth recording.**
+`StandardYoungTableau.row_strict` compares only ADJACENT cells (`entry i j < entry i (j+1)`),
+while row-standardness compares arbitrary pairs within a row. The corpus had no transitive form
+and Mathlib has none for this type, so `entry_lt_entry_of_lt` proves it by induction on the
+right-hand column, using the diagram's up-left closure to know the intermediate cells exist.
+That transitive step IS the content; the bridging lemma on top of it is bookkeeping
+(`sytToTableau` is the inverse of `cellLabel`, and `cellLabel` is literally `T.entry`).
+
+`entry_lt_entry_of_lt` is about `StandardYoungTableau` alone and BELONGS UPSTREAM in
+`QOU.BraidKnot.StandardYoungTableau`; kept in RowStandardTableau.lean to hold the change to one
+file, same call as the `Tw_mul_σ_*` lemmas in HeckeMurphyYoung. Both are flagged in their
+docstrings as misplaced-on-purpose so a later tidy-up knows where they go.
+
+**next**: Mathas Lemma 3.13 — the Garnir decomposition `t = g·w` with
+`ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` for a row-standard non-standard `t` — then 3.14's dominance
+induction. Both index sets and the map between them now exist, so 3.14 is finally STATABLE,
+which it was not before this session.
+
+
+### 2026-08-31 — IsStandard on the filling type; and a RECONNAISSANCE of the q=1 Garnir apparatus
+
+Landed sorry-free: `IsColStandard`, `IsStandard`, `entry_lt_entry_of_lt_row`,
+`isColStandard_sytToTableau`, `isStandard_sytToTableau`, `IsStandard.isRowStandard`, plus
+Decidable instances. All three of Lemma 3.14's index sets — row-standard source, standard
+target, and the map between them — are now on ONE type, `Specht.Tableau μ`. **3.14 has nothing
+missing from its statement any more.**
+
+**Reconnaissance of what the q=1 side already provides (ninth reuse find this arc), and — more
+usefully — what it does NOT.**
+
+Already built, all on `Specht.Tableau μ`, the same type: `colWordNum` / `cmajSig` (the validated
+straightening measure), `garnirA` / `garnirB` (the label sets), `garnirG` / `garnirH` (the
+permutation sets), `garnirGSub` / `garnirHSub` (as subgroups), `garnir_full_annihilation`,
+`colStandard_of_colWordMin`, `exists_row_descent_of_colWordMin`, `exists_descent_of_not_mem_range`.
+
+**But the reuse is LESS DIRECT than the names suggest, and this is the part worth recording.**
+The descent lemmas are phrased against POLYTABLOID MEMBERSHIP
+(`Specht.polytabloid t ∉ Set.range standardPolytabloid`), not against tableau standardness, so
+they are Specht-module statements rather than combinatorial ones. `IsStandard` above is what
+lets that be restated combinatorially, but the restatement is work, not a rename.
+
+**Three genuinely new pieces remain for Mathas 3.13, and #2 is why his proof differs from
+Sagan's at all:**
+1. the Garnir TABLEAU `g` (the corpus has Garnir SETS and SUBGROUPS, not the tableau) and the
+   factorisation `t = g·w`;
+2. **the length additivity `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`** — a Coxeter-length statement, and the
+   q=1 side never tracks lengths at all, so there is nothing to transport;
+3. the q-analogue of Garnir annihilation: at q=1 the relation is `sign`-weighted
+   (`garnir_full_annihilation`), in `H_n(q)` it is weighted by the Hecke relation.
+
+**next**: (1) and (2) above. (2) is the load-bearing one and is where I would start, since it
+is the piece with no q=1 antecedent and therefore the one most likely to reveal that the route
+needs rethinking.
+
+### 2026-08-31 — Lemma 3.13's length additivity PROBED, and it is stronger than Mathas states it
+
+`computations/hecke/murphy_garnir_length_additivity_probe.py` — exact integer arithmetic
+(tableaux as tuples, permutations as tuples, Coxeter length as inversion count; no float).
+
+Applied the session's own lesson: this is the one ingredient with NO q=1 antecedent (Sagan's
+Garnir straightening never tracks Coxeter lengths), so it is the piece most likely to reveal
+that the route needs rethinking — measure it before formalising.
+
+**Result: it holds, on every case, and the FIRST descent node always works.**
+
+  n     row-standard non-standard t     SOME node works     FIRST node works
+  3     6                               6/6                 6/6
+  4     37                              37/37               37/37
+  5     220                             220/220             220/220
+  6     1526                            1526/1526           1526/1526
+
+**Mathas states EXISTENCE of a descent node; the probe says the first one always suffices.**
+That is a constructive strengthening and it matters for the Lean: no search over nodes and no
+induction on the node choice — take the first descent, done. Mathas' own proof handles the
+non-Garnir case by induction ("otherwise there exists s in S such that t' = ts is row standard
+... by induction"); if the first-node form holds in general, that induction collapses.
+
+The probe also asserts `d(t) = w . d(g)` on every case (1789 of them), which confirms the
+composition convention rather than leaving it inferred — the exact class of error that cost
+this session a wrong-handed supp_le probe earlier.
+
+The Garnir-tableau construction is verified against Mathas' own three worked examples for
+lambda = (3,3) (`g_11`, `g_12`, `g_13`) BEFORE any measurement runs, and the script refuses to
+proceed if they mismatch. Same discipline as the rank guard: check the object before measuring
+a property of it.
+
+**n <= 6 is evidence, not proof** — the claim is over all n. But it de-risks the hardest
+remaining piece and tells the formaliser exactly what to prove.
+
+**next**: formalise `l(d(t)) = l(d(g)) + l(w)` at the first descent node. Then the Garnir
+tableau itself as a Lean definition, then 3.14's dominance induction.

@@ -1,15 +1,37 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T19:23:04.999089+00:00",
-  "commitSha": "79e2a903449ef29602f9de9eebfeda5264688c93",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:11:31.928913+00:00",
+  "commitSha": "c2fc9de586132912bf4f05c5e76813b97800e746",
+  "assertions": [
+    {
+      "name": "the_two_runs_really_used_DIFFERENT_mpmath_versions",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "each run prints the version it imported: {'1.3.0': '1.3.0', '1.4.1': '1.4.1'}. This check exists because the first attempt at this measurement compared the CONTAINER's installed mpmath -- which is 1.4.1, not 1.3.0 -- against a 1.4.1 wheel, and reported zero differences that meant nothing. Without this assertion the probe's headline result is indistinguishable from that failure"
+    },
+    {
+      "name": "mpmath_1_3_0_and_1_4_1_AGREE_on_every_load_bearing_primitive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 10 primitives are byte-identical at 55 significant digits, including Vol(4_1) = 2*Cl2(pi/3), the q_0 root-solve against the muon ratio, polylog, hyp2f1, besselj, zeta and gamma. So the 1160/829 split in the witness corpus is NOT a staleness axis for the constants the framework rests on, and 'which mpmath' does not belong on the staleness checklist beside scriptHash and import-cone drift"
+    },
+    {
+      "name": "the_scope_is_the_PRIMITIVES_not_the_whole_corpus",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "scope-(a): this measures 10 primitives, not 1991 witnesses. A producer relying on a changed default, iteration count or error estimate could still be version-sensitive and is not excluded here. The claim is that the framework's CONSTANTS are stable, hence the split is not a reason to re-run anything -- not that no producer anywhere differs"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 1721,
+  "durationMs": 3011,
   "computation": "mpmath-version-staleness",
   "scriptFile": "mpmath_version_staleness_probe.py",
-  "scriptHash": "20dc3c5e46a1",
-  "scriptCommitSha": "7dc7c65c876a852718f11bcd6b78ec2779dde71f",
+  "scriptHash": "70c5dee60459",
+  "scriptCommitSha": "116e63ee17ca9663988cac126502f04d42392831",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

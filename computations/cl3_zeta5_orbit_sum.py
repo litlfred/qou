@@ -114,7 +114,14 @@ def main() -> None:
             "actual_str": str(ACTUAL_ORBIT_SUM),
             "predicted_str": str(PREDICTED_ORBIT_SUM),
             "residual_str": str(ORBIT_SUM_RESIDUAL),
-            "residual_below_1e_40": float(ORBIT_SUM_RESIDUAL) < 1e-40,
+            # Compared in mpmath, not float64. `float(ORBIT_SUM_RESIDUAL)` was
+            # a round-trip through binary64 of a value the script deliberately
+            # computes at mp.dps = 50 (bean qou-srvu, riding on the assertion
+            # drain per AGENTS.md "small fixes for related bugs ride on the
+            # active PR"). The emitted boolean is unchanged -- 1.34e-51 is
+            # below 1e-40 either way -- but the comparison no longer narrows to
+            # the arithmetic the rest of this file exists to avoid.
+            "residual_below_1e_40": bool(ORBIT_SUM_RESIDUAL < mpf("1e-40")),
         },
         "zeta_3_str": str(ZETA_3),
         "antisymmetric_generator": {
@@ -150,6 +157,30 @@ def main() -> None:
         script_path=__file__,
         engine="mpmath",
         start_time=start,
+    )
+    # Assertion (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. The residual and its bar already existed at
+    # `orbit_sum_identity.residual_below_1e_40`; it was recorded as data and
+    # never asserted. The script's own `description` states the claim being
+    # tested: "Verification at 50 decimal digits of the orbit-sum identity
+    # Cl_3(2pi/5) + Cl_3(4pi/5) = -(12/25) zeta(3)".
+    #
+    # THRESHOLD PROVENANCE: 1e-40 is this file's own declared bar (the
+    # `residual_below_1e_40` key names it). It is not fitted to the
+    # observation -- the measured margin is ~11 orders of magnitude
+    # (1.34e-51 against a 1e-40 bar) at mp.dps = 50.
+    #
+    # NOT asserted: `borel_rank_2_decomposition.matches_borel_rank`, which is a
+    # HARDCODED True recording a reading rather than a computation this script
+    # performs.
+    builder.add_assertion(
+        "orbit_sum_identity_residual",
+        computed=str(ORBIT_SUM_RESIDUAL),
+        expected="0",
+        tolerance="1e-40",
+        source="Cl_3(2pi/5) + Cl_3(4pi/5) = -(12/25) zeta(3), from the "
+               "multiplication formula sum_k Li_3(zeta_5^k) = -(24/25) zeta(3) "
+               "restricted to real parts; bar is this file's own 1e-40",
     )
     out = builder.save()
     print(f"\nwitness: {out}")
