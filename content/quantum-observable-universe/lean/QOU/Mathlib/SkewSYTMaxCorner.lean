@@ -171,4 +171,27 @@ theorem card_skewCellsOf_eraseCorner (hc : IsCornerCell outer c)
   have : 0 < (skewCellsOf outer inner).card := Finset.card_pos.mpr ⟨c, hmem⟩
   omega
 
+/-! ### Toward the insert direction
+
+Two facts the mirror construction needs.  The insert step itself (`skewInsertMax`) is NOT
+here — see the file header and bean `qou-b21r` for what remains. -/
+
+/-- A cell of `outer` other than the deleted corner survives the deletion. -/
+theorem mem_eraseCorner_of_ne (hc : IsCornerCell outer c) {x : ℕ × ℕ}
+    (hx : x ∈ outer) (hne : x ≠ c) : x ∈ eraseCorner outer c hc := by
+  exact (mem_eraseCorner outer c hc x).mpr ⟨hx, hne⟩
+
+/-- Off the skew region every entry is `0`, so a positive bound holds there too.  Needed
+because the insert step must bound `S.entry` at cells it knows nothing about. -/
+theorem entry_lt_card_of_pos (hc : IsCornerCell outer c)
+    (S : SkewStandardYoungTableau (eraseCorner outer c hc) inner)
+    (hpos : 0 < (skewCellsOf (eraseCorner outer c hc) inner).card) (i j : ℕ) :
+    S.entry i j < (skewCellsOf (eraseCorner outer c hc) inner).card := by
+  by_cases hm : (i, j) ∈ skewCellsOf (eraseCorner outer c hc) inner
+  · exact skew_mem_range S hm
+  · simp only [skewCellsOf, Finset.mem_sdiff, YoungDiagram.mem_cells, not_and, not_not] at hm
+    by_cases hin : (i, j) ∈ eraseCorner outer c hc
+    · rw [S.zeros (Or.inl (hm hin))]; exact hpos
+    · rw [S.zeros (Or.inr hin)]; exact hpos
+
 end QOU.BraidKnot.YoungTableauStandard
