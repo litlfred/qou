@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 45 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 46 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 19 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 20 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **45** (26 machine + 19 hand) |
-| still undecided — INCONCLUSIVE, see method below | 34 |
+| **INHABITED with no hypotheses** | **46** (26 machine + 20 hand) |
+| still undecided — INCONCLUSIVE, see method below | 33 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -109,6 +109,27 @@ split again:
   assumes nothing anywhere — it is a "hand me a value" carrier, not a hypothesis.
   The parameterised/vacuous distinction turns on **whether the class has claims**,
   not on whether it has parameters.
+
+  A sharper case is `NobleGasMultiOperator`, which *does* carry a claim —
+  `bindingMultiplicity S q ≥ 2` at noble-gas `Z` — but the claim constrains the
+  `[HasBindingMultiplicity S]` instance, and that instance is free data.
+  Choosing `mu := fun _ => 2` satisfies it. **The pair is jointly vacuous while
+  neither half looks it**: the claim is real, and the thing it is a claim about
+  is unconstrained. A checker reading either declaration alone passes both.
+
+### A hypothesis binder that cannot fail
+
+`LevelSufficient` takes a side condition `(_h_cover : kMax P q ≤ P.coarseStrands)`,
+which reads as a genuine covering requirement. But `kMax P _q :=
+P.markovClass.strandCount` and `P.coarseStrands := P.markovClass.strandCount`
+are **the same expression**, so the inequality is `le_refl` — for every `P` and
+every `q`. That is not a witness at one parameter; it is a theorem about the
+class, and it is in the gate file as `cover_always`.
+
+This is worth separating from vacuity. The class's *field* (`trace_eq`) is a
+real claim about two Markov-trace carriers; what is empty is the **side
+condition the signature advertises**, and a reader scanning the binder list has
+no way to see that.
 - **Degenerate-parameter witness** (NOT vacuous at general parameters):
   `HasArgumentPrinciple (f ω₁ ω₂ S)`, satisfied by taking the pole set `S := ∅`;
   `SharedDenominatorCuspHolonomy (q x n)`, satisfied at `n := 0` where the `∀`

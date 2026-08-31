@@ -469,3 +469,36 @@ noncomputable example : NobleGasMultiOperator probeShell 0 (by decide) where
   multi := by decide
 
 end HandAdjudicated
+
+/-! ### `LevelSufficient` — and a hypothesis that cannot fail
+
+This one yields more than a witness.  `LevelSufficient` takes a side condition
+
+    (_h_cover : kMax P q ≤ P.coarseStrands)
+
+which reads as a real covering requirement — "the particle's maximal level is
+within its coarse strand count".  But `kMax P _q := P.markovClass.strandCount`
+and `P.coarseStrands := P.markovClass.strandCount` are **the same expression**,
+so the inequality is `le_refl` for *every* `P` and *every* `q`.  That is a
+theorem about the class, general in both, not a witness at one value. -/
+
+namespace HandAdjudicated2
+open QOU.BraidKnot QOU.Archimedean
+
+def probeParticle2 : ConfinedParticle := ⟨"probe", 0, ⟨0, []⟩⟩
+
+noncomputable instance probeTrace : HasMarkovTrace probeParticle2 0 where
+  value := 0
+
+/-- **The covering hypothesis is a tautology.**  Both sides unfold to
+`P.markovClass.strandCount`. -/
+theorem cover_always (P : ConfinedParticle) (q : R_q) :
+    kMax P q ≤ P.coarseStrands := le_refl _
+
+/-- With the hypothesis discharged for free and one Markov-trace carrier serving
+both slots, `trace_eq` is `rfl`. -/
+noncomputable example (m : ConfMorphism probeParticle2 probeParticle2) :
+    LevelSufficient probeParticle2 probeParticle2 0 m (cover_always probeParticle2 0) where
+  trace_eq := rfl
+
+end HandAdjudicated2
