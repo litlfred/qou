@@ -57,23 +57,34 @@ Hecke quadratic relation is inhomogeneous in Coxeter length.** This is the same
 fact that makes the GS/jet structure a FILTRATION rather than a grading, which is
 why it is not a small technicality to route around.
 
-## What survives, and it is the constructive half
+## The second obstruction — RETRACTING this probe's own constructive half
 
-The obstruction is on `H_n(q)` itself, not on its associated graded. `gr H_n(q)`
-IS length-graded by construction, so on `gr` the length scaling *is* an
-automorphism group. The open question therefore sharpens from
+An earlier version of this docstring offered a constructive half: the
+obstruction above is on `H_n(q)` and not on its associated graded, `gr H_n(q)`
+IS length-graded by construction, so "does the Markov trace descend to
+`gr H_n(q)`, and is the descended state KMS at beta = ln q there?" looked like a
+bounded yes/no worth asking next. **That is RETRACTED. The question is already
+answered NO**, and the body of this probe runs the argument as a gate.
 
-    "name the dynamics"                        (unbounded search)
+For a state `phi` and a dynamics acting by a character of a grading,
+`sigma_t(y) = q^{i t l(y)}` on homogeneous `y`, the KMS_beta condition
+`phi(x sigma_{i beta}(y)) = phi(y x)` reads `q^{-beta l(y)} phi(xy) = phi(yx)`.
+If `phi` is TRACIAL then `phi(xy) = phi(yx)`, so `q^{-beta l(y)} = 1` whenever
+`phi(xy) != 0`; taking `y = sigma_i` (l = 1) and `x = sigma_i^-1` gives
+`phi(1) != 0`, hence `beta ln q = 0` and `beta = 0`.
 
-to
+This holds for ANY grading and ANY algebra, on `H_n(q)` or on `gr` alike, so
+the descent question is moot: a descended trace is still KMS only at beta = 0.
+The problem was never the grading -- it is **traciality**, which is exactly what
+Tomita-Takesaki says (trivial modular group <=> tracial).
 
-    "does the Markov trace descend to gr H_n(q), and is the descended state KMS
-     at beta = ln q for the length scaling there?"
-
-That is a bounded question with a yes/no answer, and it is the one worth asking
-next. This probe does NOT answer it and does not claim the descended state
-exists -- a trace need not descend to the associated graded, and whether this one
-does is exactly what would have to be established.
+The result is SHARPER than the retracted version, not weaker: no
+character-of-a-grading flow gives finite beta against a tracial state, so the
+finite-temperature state **cannot be `tr_M` itself; it must be a NON-TRACIAL
+weight**. The live route is `phi(x) = tr_M(h x)` for positive `h`, with modular
+flow `sigma_t(x) = h^{it} x h^{-it}` -- not attempted here, and note that the
+`y_lambda` weighting does NOT supply that `h`: a positive combination of
+characters is again a trace, so `h` must come from outside the centre.
 
 ## What is NOT claimed
 
