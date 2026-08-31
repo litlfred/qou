@@ -1,0 +1,92 @@
+{
+  "schema": "witness/v1",
+  "name": "chain-binding-closed-form",
+  "description": "Exact two-constant closed form for the pure-chain binding, B(A) = E0*S_off(A0)*g^(A-A0)*(1-f^(A-1)), with f the corpus bond factor and g the free-trace growth per nucleon; plus the parameter-independent exclusion of the channel from extensivity.",
+  "beans": [
+    "qou-23dn",
+    "qou-gcmn",
+    "qou-brng"
+  ],
+  "scope": "(b) for the extensivity exclusion (invariant: the closed form is geometric x (1 - geometric), never linear); (a) for the projections, which are NOT measured",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "lean": [
+    "QOU.MassTheory.MarginalRatio.chain_bounded_of_growth_le_one",
+    "QOU.MassTheory.MarginalRatio.chain_step_ge_growth"
+  ],
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "z_D": "0.612688037146465251595829863946",
+    "species": {
+      "pp": {
+        "g_free_trace_growth": "1.14575969245730086968908159577",
+        "f_bond_factor": "0.612688037146465251595829863946",
+        "g_spread_across_steps": "1.249661244e-30",
+        "closed_form_worst_rel_error": "1.457352297e-30",
+        "branch": "unbounded",
+        "projected_marginals_MeV": {
+          "3": "1.8043242693033947193",
+          "4": "1.6220716255685319164",
+          "5": "1.5459415123587638705",
+          "6": "1.5518605116673754135",
+          "7": "1.6240299961272838231",
+          "8": "1.752620630548203668",
+          "9": "1.9321773139474604431",
+          "10": "2.1605262548121687019",
+          "11": "2.4380384461642208353",
+          "12": "2.7671478058317601522"
+        }
+      },
+      "nn": {
+        "g_free_trace_growth": "0.987743688115809571634020165502",
+        "f_bond_factor": "0.403627738350825936164983650816",
+        "g_spread_across_steps": "1.800815753e-30",
+        "closed_form_worst_rel_error": "8.326728566e-31",
+        "branch": "bounded",
+        "projected_marginals_MeV": {
+          "3": "0.94116948374551525024",
+          "4": "0.34574073645837572419",
+          "5": "0.10871613888398561644",
+          "6": "0.014575947627678375243",
+          "7": "-0.022603356156013146228",
+          "8": "-0.037077771860239103468",
+          "9": "-0.04250445408271745823",
+          "10": "-0.04432819515949331675",
+          "11": "-0.044719677314607423754",
+          "12": "-0.044544258727423208329"
+        }
+      }
+    },
+    "f_pp_equals_z_D": true,
+    "projections_are_not_measured": true
+  },
+  "assertions": [
+    {
+      "name": "the measured bond factor IS convention-D z, not merely near it",
+      "passed": true,
+      "detail": "atomic_tr_m_helium4_canonical.py defines f_pp = z_d, so this is the corpus's own constant appearing where it should \u2014 a consistency check on the construction, NOT a new identification."
+    },
+    {
+      "name": "closed form reproduces every measured point to <1e-25 relative",
+      "passed": true,
+      "detail": "worst relative error: pp 1.457e-30, nn 8.327e-31. A 2-parameter form matching 4 points at 1e-30 has no freedom left to fit with."
+    },
+    {
+      "name": "the two species sit on opposite sides of g = 1",
+      "passed": true,
+      "detail": "This is why my own 'both collapse' correction was wrong: it assumed the bounded-total hypothesis, which fails for pp. The Lean lemma was right and the premise I fed it was false."
+    },
+    {
+      "name": "the exclusion is stated with its Lean witnesses and is parameter-independent",
+      "passed": true,
+      "detail": "Both lemmas are sorry-free and generic in S, g, f \u2014 no substrate, no q, no anchor enters either statement."
+    },
+    {
+      "name": "the closed form yields two checkable predictions, labelled as projections",
+      "passed": true,
+      "detail": "pp marginal turns up at A=6; nn marginal changes sign at A=7. Neither is measured. Computing A=6 falsifies or confirms both."
+    }
+  ],
+  "checks_passed": 5,
+  "checks_total": 5
+}

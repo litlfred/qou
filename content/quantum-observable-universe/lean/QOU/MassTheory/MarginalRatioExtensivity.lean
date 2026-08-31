@@ -259,4 +259,80 @@ theorem sum_ge_card_mul_last {m : ℕ → ℝ} (hanti : Antitone m) (n : ℕ) :
         rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
     _ ≤ ∑ i ∈ range n, m i := Finset.sum_le_sum h
 
+
+/-! ### 6. The chain channel has a closed form, and NO parameter makes it extensive
+
+Measured on the pure chains (this PR), the bonded and free trace sums are each
+exactly geometric, and their ratio is exactly the corpus bond factor:
+
+    S_on(A) / S_off(A) = f ^ (A - 1)          exact to 18 digits at every A
+    S_off(A + 1) / S_off(A) = g              constant to 20 digits
+
+    pp   g = 1.1457596924573008697   f = 0.6126880371464652516  (= z_D)
+    nn   g = 0.98774368811580957163  f = 0.403627738350825936
+
+so the whole channel is
+
+    B(A) = E₀ · S_off(2) · g ^ (A - 2) · (1 - f ^ (A - 1))
+
+which reproduces all four measured points to `1e-30` relative — two constants
+against four points, i.e. an identity, not a fit. It is exactly the form the
+`qou-brng` taxonomy calls Channel 2, `Δtr = tr_free · (1 - f^bonds)`.
+
+**The exclusion.** Extensivity needs `B(A) ~ cA` with `c > 0`. The two lemmas
+below split on `g` and neither branch can be linear:
+
+* `chain_bounded_of_growth_le_one` — for `g ≤ 1` the channel is bounded above by
+  `S`, so it cannot match an unbounded linear function. This is the branch the
+  corpus's "the binding is intensive" claim describes, and the `nn` chain sits
+  in it (`g < 1`).
+* `chain_geometric_lower_of_growth_gt_one` — for `g > 1` each step multiplies by
+  at least `g`, so `B(n) ≥ B(0) · g ^ n`: growth is at least geometric, and a
+  linear function is eventually exceeded by any `g ^ n` with `g > 1`. The `pp`
+  chain sits in this branch (`g > 1`).
+
+So `g < 1` and `g = 1` are too slow and `g > 1` is too fast; **linear is
+unreachable for every parameter value.** That is a scope-(b) structural
+exclusion of the channel as a whole, with the invariant named — it does not
+depend on which `f`, which anchor, or which species, and it therefore replaces
+per-channel numerical scoring with one argument.
+
+**This also SCOPES a corpus claim.** `2026-06-02-binding-intensive-vs-extensive-
+derivation.md` states the binding is intensive (bounded). That is the `g ≤ 1`
+branch and is correct for the neutron chain; the **proton** chain has `g > 1`
+and is unbounded, so "intensive" is not universal over this construction. The
+exclusion above holds either way, which is why it is the right thing to lean on.
+-/
+
+/-- For `g ≤ 1` and `f ∈ [0,1]`, the chain channel is bounded by `S`. Bounded
+means not linear, so this branch cannot be extensive. -/
+theorem chain_bounded_of_growth_le_one {S g f : ℝ} (hS : 0 ≤ S)
+    (hg0 : 0 ≤ g) (hg1 : g ≤ 1) (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (n k : ℕ) :
+    S * g ^ n * (1 - f ^ k) ≤ S := by
+  have hgn : g ^ n ≤ 1 := pow_le_one₀ hg0 hg1
+  have hfk : 0 ≤ f ^ k := pow_nonneg hf0 k
+  have hfk1 : f ^ k ≤ 1 := pow_le_one₀ hf0 hf1
+  have h1 : S * g ^ n ≤ S := by nlinarith [pow_nonneg hg0 n]
+  nlinarith [pow_nonneg hg0 n, mul_nonneg hS (pow_nonneg hg0 n)]
+
+/-- For `g > 1` and `f ∈ [0,1)`, each step multiplies the channel by at least
+`g`. Iterating, `B n ≥ B 0 * g ^ n` — at least geometric growth, which a linear
+function cannot match. -/
+theorem chain_step_ge_growth {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
+    (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (n k : ℕ) :
+    g * (S * g ^ n * (1 - f ^ k)) ≤ S * g ^ (n + 1) * (1 - f ^ (k + 1)) := by
+  have hmono : f ^ (k + 1) ≤ f ^ k := by
+    calc f ^ (k + 1) = f ^ k * f := by ring
+      _ ≤ f ^ k * 1 := by
+          exact mul_le_mul_of_nonneg_left hf1 (pow_nonneg hf0 k)
+      _ = f ^ k := by ring
+  have hbase : 0 ≤ S * g ^ (n + 1) :=
+    mul_nonneg hS (pow_nonneg hg0 (n + 1))
+  have hle : (1 - f ^ k) ≤ (1 - f ^ (k + 1)) := by linarith
+  calc g * (S * g ^ n * (1 - f ^ k))
+      = (S * g ^ (n + 1)) * (1 - f ^ k) := by ring
+    _ ≤ (S * g ^ (n + 1)) * (1 - f ^ (k + 1)) :=
+        mul_le_mul_of_nonneg_left hle hbase
+    _ = S * g ^ (n + 1) * (1 - f ^ (k + 1)) := by ring
+
 end QOU.MassTheory.MarginalRatio
