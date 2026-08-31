@@ -136,6 +136,37 @@ theorem bar_even_kernel_implies_direction_sanity
       ≤ directionThreshold * directionTarget :=
   hK.direction_match
 
+
+/-- **The bundle IS the conjunction of its gates** — the `.md`'s
+    *"instantiating `BarEvenKernel` is equivalent to clearing all four gates
+    simultaneously"*, stated.
+
+    Added 2026-08-31 (bean `qou-z9ws`). The three lifting lemmas above are the
+    **forward** half of this equivalence and nothing more: each returns the
+    class field its type restates, which is the accessor idiom
+    (`Group.mul_assoc`), not a derivation. The `.md` claims an *equivalence*,
+    and the converse — that the four facts suffice to build the bundle — was
+    never stated, so the block's actual claim had no Lean. It does now, and the
+    lifting lemmas are one direction of it rather than free-standing
+    projections.
+
+    Note that §4(b), the bar-even invariant, is deliberately **not** a field of
+    `BarEvenKernel` (it is automatic for substrate-derived candidates, per the
+    module docstring), so "all four gates" here is three class fields plus the
+    two `q = 1` shadows. -/
+-- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+theorem barEvenKernel_iff
+    (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ) :
+    BarEvenKernel pole c2 c3 magnitude ↔
+      (|pole - uSubstrate| ≤ radiusTolerance ∧
+        c2 1 = -1 ∧
+        c3 1 = jonesHopfAtQOne ∧
+        |magnitude - directionTarget|
+          ≤ directionThreshold * directionTarget) :=
+  ⟨fun h => ⟨h.pole_at_u_substrate, h.c2_shadow, h.c3_shadow,
+             h.direction_match⟩,
+   fun h => ⟨h.1, h.2.1, h.2.2.1, h.2.2.2⟩⟩
+
 /-- **Rejection: if any of the four invariants fail, the bundle is
     unsatisfiable.**
 
