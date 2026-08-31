@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-22T21:43:41Z
+updated_at: 2026-08-31T03:06:36Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4298,3 +4298,59 @@ The root cause — `def:braid-twist-flip`'s V4 definition + its proved
 (real formalization work; a proved theorem becomes false). Until qou-htv4 lands,
 `def:braid-twist-flip` still says V4 while its blocks say S3: a KNOWN, filed
 transient inconsistency.
+
+
+---
+
+## 2026-08-31 — TRANCHE 1 LANDED (PR #6329): L-V4 – L-V10 fixed, and this bean's headline framing is wrong
+
+First items moved off "LIVE" since the ledger was opened. Thirteen content blocks, every
+value re-derived at `mp.dps = 40` before editing. **All the recorded figures reproduced** —
+the ledger's arithmetic is sound. Two things it got wrong are about *framing* and *extent*.
+
+### 1. The title's lead — "q₀ muon/proton pin straddle" — describes 1 of these 7 findings
+
+Measured against four candidate pins (`1.1097`, `1.10998`, proton `1.1099785827513808`,
+CODATA-2022 muon `1.109978595642739`):
+
+| cause | findings |
+|---|---|
+| stale-q₀ artifact | **L-V9 only** (`9.1158` is the 1.1097 value) |
+| premature rounding | L-V6 |
+| unexplained | L-V8's `0.05049` |
+| pin-independent error | L-V4, L-V5, L-V7, L-V10 |
+
+So a reader triaging this bean by its title will look for pin drift and find, in this cluster,
+one instance. Worth restating when the title is next touched.
+
+### 2. Three findings understate their defect
+
+- **L-V4 is not a labelling error.** The block concludes *"Arms equal legs, yielding
+  `Σ c(x) = 0`"* — and `(5,4,4,4,3)` has `Σ c(x) = **−5**`. The conclusion was false of the
+  exhibited partition. Replaced with `(5,5,4,4,2)` (self-conjugate, `Σ c(x) = 0` verified,
+  hooks `9,7,3,1`, same 5 rows / max part 5), diagram redrawn.
+- **L-V8's two tables carry two MORE wrong rows**, unflagged: `[2]_q = 2.01099` (true
+  `2.01090`, a last-two-digit transposition) and `𝔈_× = 0.10450` (true `0.10453`).
+- **L-V6's provenance is identifiable and is not a pin.** `borromean-hopf-energy-crossover`
+  shows its working: it rounds `ℏ_q` to `0.0989` then **squares it**, `0.009781` instead of
+  `0.0098172`.
+
+### 3. `0.05049` is UNEXPLAINED — recorded rather than guessed
+
+Not a stale-pin value at any of the four; and none of `(√q−1/√q)/2`, `(q−1)/2`, `ln q/2`,
+`ℏ_q/2`, `√q−1`, `1−q^{-1/2}` lands on it. The nearest, `1−q^{-1/2} = 0.050833`, is 0.7 %
+off — not convincing. If a later agent identifies it, that may point at a whole family.
+
+### Sidecar note, correcting an assumption I nearly made
+
+I expected these to be the `qou-zjfs` 86 %-false-positive class and checked instead: **12 of
+the 13 were fully fresh on main** (top-level, per-criterion and content hashes all agreeing).
+So the staleness is caused by this branch and was mine to fix, not a pre-existing tooling gap
+to point at. Refreshed via the per-directory sweep (258 + 177 + 60 + 15 blocks) with 127
+collateral sidecars reverted. `double-magic-Ca40-diagram` was the single one already stale.
+
+### Remaining
+
+**183 findings.** L-V1/L-V2/L-V3 (trefoil matrices, braid-word tables) are the natural next
+tranche but need representation-theoretic re-derivation, not arithmetic — a different kind of
+work from this one.
