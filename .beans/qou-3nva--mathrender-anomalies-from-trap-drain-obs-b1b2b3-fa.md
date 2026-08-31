@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-31T03:23:06Z
+updated_at: 2026-08-31T03:31:19Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4409,3 +4409,59 @@ not even single-valued.
 blocks" there having run `--only wall-side-correct` — i.e. **1 criterion of 77 per block**,
 not a refresh. The PR body needs that corrected. Recording it here because the overstatement
 is the same species this ledger exists to catch.
+
+
+---
+
+## 2026-08-31 — tranche 3 (on #6335): L-V11, L-V12, L-V16 fixed; **L-V14 ESCALATED, do not "fix" it**
+
+### L-V11 — the real count is 24, and the ledger's 26 is also wrong
+
+This entry records "claims 34 twice, enumerates 11+4+9+2 = 26". Counted the tables:
+
+    table1  J-1a J-1b J-1c J-2a J-2b J-3a J-3b J-3c J-4a J-5 J-6   = 11
+    table2  D-1 D-2 D-3 D-4                                        =  4
+    table3  JC-1 … JC-9                                            =  9
+
+**J-3c and J-4a — the prose's "plus the 2 inter-level relations" — are already inside the
+structural eleven.** So the "+2" is a double-count and the true total is **24**, not 26 and
+not 34. Both numbers in the prose were wrong and so was the ledger's replacement. Corrected at
+both sites (L9 and L403), with the inter-level pair now described as two *of* the eleven.
+
+### L-V12 — fixed for self-consistency only; the cross-chapter identification is NOT verified
+
+`3.4767` vs tritium `3.4764` is `0.0086 %`, not the stated `0.014 %` — confirmed. This entry
+proposes that the value should read `3.4769` because `frobenius-gram-matrix.md:42` carries
+`+3.47694980`. **I did not take that route.** That number is a **Gram eigenvalue under
+convention C** (also in `markov-gram-bilinear-vs-star.md:56` and `markov-gram-star-positive.md:57`,
+both saying "under convention C"), in a different chapter, and nothing establishes it is the
+same quantity as this `A = 3` ratio. Importing a convention-C eigenvalue as the value of a
+mass-tower ratio, under the 2026-08-15 convention-D ruling, needs an argument this ledger does
+not supply.
+
+So I made the block **self-consistent with its own displayed value**: `0.014 %` → `0.0086 %`.
+If the intended value really is `3.47695`, the percentage is `0.0158 %` — note that is *not*
+`0.014 %` either, so the ledger's "the percentage is right and the number is the rounding
+error" does not hold at 5 dp. Whoever establishes the identification should set both.
+
+### L-V16 — `[2]_{q_0}` 2.012 → **2.011**, `[3]_{q_0}` 3.041 → **3.044**
+
+Recomputed at the proton pin: `2.0108969` and `3.0437062`. Both digits were wrong.
+
+### ⚠ L-V14 — ESCALATED. The table has no determinable convention; do not substitute a number.
+
+This entry says row (3) `[1]_q[2]_q + [2]_q[3]_q ≈ 8.84` is "a mix" of balanced (8.13148) and
+unbalanced (9.1613). True — but the table cannot simply be moved to one convention, because
+**its rows do not agree with each other**:
+
+| row | printed | balanced | unbalanced |
+|---|---|---|---|
+| (2) `[1][2]` | 2.11 | 2.0109 | **2.1100** ✓ |
+| (3) `[1][2]+[2][3]` | 8.84 | 8.1315 | 9.1616 |
+| (1³) `[-1][0]+[-2][-1]` | 2.82 | 2.0109 | 1.5429 |
+
+Row (2) is unbalanced. Row (1³) matches **neither** — a finding this ledger does not record.
+Setting row (3) to the unbalanced `9.16` would make it agree with row (2) and leave row (1³)
+matching nothing. The block needs a convention decision (and, under the 2026-08-15 ruling, a
+statement of which convention it is in) rather than a numeric patch. **Left unedited
+deliberately.**
