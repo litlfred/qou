@@ -64,6 +64,26 @@ RE_C_PLAIN = re.compile(
     r"/\s*\(\s*" + _SQ + r"\s*\+\s*(?:1\s*/\s*)?" + _SQ + r"\s*(?:⁻¹)?\s*\)"
 )
 RE_C_SQRTVAR = re.compile(r"(\w+)\s*/\s*\(\s*\1\s*\^\s*2\s*\+\s*1\s*\)")
+# `√q / (1 + q)` and `√q / (q + 1)` -- convention C written the MOST DIRECT way
+# there is, and the one spelling this file was blind to until 2026-08-31.
+#
+# The blindness is not subtle and that is the point: the module docstring above
+# names `sqrt(q)/(q+1)` as the reference form C-sqrtvar is measured against, and
+# no pattern matched it. `RE_C_PLAIN` needs a square root in the DENOMINATOR;
+# here the denominator is `1 + q` and the root is in the numerator.
+# `RE_C_SQRTVAR` needs the same identifier top and bottom (`\1`); here they are
+# `Real.sqrt q` and `q`. So each pattern misses it for a different reason, and
+# `actionable 0` was reported over a surface that did not include it.
+#
+# Measured on 2026-08-31: 6 sites, 6 files. Three are deliberate (`zC` twice,
+# `markovZC`), one is a numeric separation claim, and TWO are actionable and
+# neutrally named -- `markov_parameter := Real.sqrt q / (1 + q)` in
+# `QBetaPerBlockChiClosedForms.lean` and its content-block twin
+# `qbeta-per-block-chi-closed-forms.lean`. Under the 2026-08-15 ruling that
+# convention D is canonical, a bare `markov_parameter` valued at C is the
+# `markovZ` overload problem under a different name. Taxonomy entry #23.
+RE_C_RATIONAL = re.compile(
+    r"Real\.sqrt\s+(\w+)\s*/\s*\(\s*(?:1\s*\+\s*\1|\1\s*\+\s*1)\s*\)")
 # corroboration that the free variable really is a square root of q
 RE_BINDS_SQRT = re.compile(r"Real\.sqrt|=\s*s\s*\^\s*2|q\s*=\s*s²|u²\s*=\s*q|u\^2\s*=\s*q|q\s*=\s*s\^2|√q")
 
@@ -91,14 +111,27 @@ KNOWN_C = [
     ("BraidGroupNStrand", "markovZN", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN_legacy", "C-plain"),
     ("BraidImageEigenphaseExclusion", "zC", "C-sqrtvar"),
-    ("EigenphaseCarrierVacuity", "markovZ", "C-plain"),
+    # Renamed 2026-08-29 (markovZ -> markovZC, cosKernel) so that bare `markovZ`
+    # means convention D uniformly. The renaming commits did NOT update this list,
+    # so the selftest was red on `main` for two days with three stale names --
+    # the very failure mode the comment above warns about, in the guard itself.
+    # Corrected 2026-08-31; the sites are unchanged, only their names.
+    ("EigenphaseCarrierVacuity", "markovZC", "C-plain"),
     ("GramMatrixH3Symbolic", "gramEntry", "C-sqrtvar"),
-    ("HoefsmitV21CosSymmetrization", "markovZ", "C-sqrtvar"),
+    ("HoefsmitV21CosSymmetrization", "cosKernel", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ_legacy", "C-plain"),
     ("MarkovAxiomsPrimitive", "markovZax", "C-sqrtvar"),
     ("MarkovAxiomsPrimitive", "markovZax_legacy", "C-plain"),
     ("MarkovZClassicalCoincidence", "zCsub", "C-sqrtvar"),
-    ("q-beta-cos-resummation", "markovZ", "C-plain"),
+    ("q-beta-cos-resummation", "markovZC", "C-plain"),
+    # Added 2026-08-31 with `RE_C_RATIONAL`. The first two are the actionable
+    # pair: a neutrally-named `markov_parameter` valued at convention C, in the
+    # library file and in its content-block twin.
+    ("QBetaPerBlockChiClosedForms", "markov_parameter", "C-plain"),
+    ("qbeta-per-block-chi-closed-forms", "markov_parameter", "C-plain"),
+    ("GroundStateOrderingRefutation", "zC", "C-plain"),
+    ("MarkovConventionSeparation", "markovZC", "C-plain"),
+    ("DecayLadderConventionDPositivity", "zC", "C-plain"),
 ]
 
 
@@ -191,7 +224,7 @@ def classify(path: pathlib.Path):
         # this properly needs an expression parser, not a wider window.
         if RE_D.search(line):
             yield i, decl, "D", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
-        elif RE_C_PLAIN.search(line):
+        elif RE_C_PLAIN.search(line) or RE_C_RATIONAL.search(line):
             yield i, decl, "C-plain", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
         elif RE_C_SQRTVAR.search(line):
             v = "C-sqrtvar" if file_binds_sqrt else "C-shape-unbound"

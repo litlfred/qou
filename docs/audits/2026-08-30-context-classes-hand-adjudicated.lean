@@ -63,6 +63,12 @@ import QOU.BraidKnot.ShellClosureStability
 import QOU.Archimedean.TMCorrespondence
 import QOU.ParticleInteractions.lp_dual_stability
 import QOU.BraidKnot.LpDualityHypothesisClass
+import QOU.ParticleInteractions.parity_regime_selection
+import QOU.ParticleInteractions.four_term_pair_nucleon
+import QOU.BraidsKnots.skein_mass_from_linking
+import QOU.FeynmanPathIntegrals.markov_identification
+import QOU.Archimedean.SkewSYT
+import QOU.Archimedean.QHookBound
 
 /-! ## Inhabited with no hypotheses
 
@@ -675,3 +681,114 @@ theorem badLP_refutes : HasFiniteLPDuality badLP → False := by
   simp [OperatorSelectionLP.duality_gap, badLP] at this
 
 end HandAdjudicated5
+
+/-! ### Four more unparameterised carriers — and two that are NOT vacuous
+
+`ParityRegimeSelectionContext`, `FourTermPairNucleonContext`,
+`SkeinMassFromLinkingContext` and `MarkovIdentificationContext` are all
+unparameterised with free data fields, so each is inhabited here and each
+backing theorem is conditional on nothing.
+
+Two of the four — `ParityRegimeSelectionContext` and
+`SkeinMassFromLinkingContext` — carry an in-source note saying the identity
+fields were *"added 2026-08-23 to repair the refutable encoding"*.  That repair
+is its own finding and is written up separately in
+[`2026-08-31-a-fix-reverted-and-a-detector-blind-to-its-own-reference-form.md`](2026-08-31-a-fix-reverted-and-a-detector-blind-to-its-own-reference-form.md):
+in short, a checkably FALSE statement was turned into an uncheckable EMPTY one,
+and the audit category it was in was driven to zero by relabelling. -/
+
+namespace HandAdjudicated6
+open QOU.ParticleInteractions QOU.BraidsKnots QOU.FeynmanPathIntegrals
+
+/-- `A = 1` puts the odd-`A ≥ 3` and even-`A` regimes out of scope by their own
+hypotheses, and `m_e := 0` discharges the neutron regime. -/
+noncomputable instance : ParityRegimeSelectionContext where
+  q := 2
+  q_gt_one := by norm_num
+  Z := 0
+  N := 1
+  A := 1
+  A_eq := by norm_num
+  a := 0
+  b := 0
+  sign_val := 1
+  m_e := 0
+  Q_value := 0
+  S_Delta := 0
+  Sigma_FP := 0
+  sign_identity := by norm_num
+  odd_regime := by intro _ h; omega
+  even_regime := by intro h; exact absurd h (by decide)
+  neutron_regime := by intro _; norm_num
+
+/-- The two flavour assignments and the NF map are all class data, so a lookup
+table keyed on one bit satisfies both "net coefficient matches target" claims
+for every photon polarisation. -/
+noncomputable instance : FourTermPairNucleonContext where
+  confinedNet := fun _ _ _ f => if f 0 then protonNetTarget else neutronNetTarget
+  protonFlavours := fun _ => true
+  neutronFlavours := fun _ => false
+  proton_net_match := by intro _ _ _; simp
+  neutron_net_match := by intro _ _ _; simp
+
+/-- Zero constituents, zero Skein polynomial, zero mass — the identity is
+`0 = 0 + Σ_∅`.  `hbar_q_def` is the one field that relates two others, and it
+is satisfied by computing it. -/
+noncomputable instance : SkeinMassFromLinkingContext where
+  q := 2
+  Q := 0
+  mass_Hopf := 0
+  n := 0
+  Vol_K := fun _ => 0
+  hbar_q := 1 - (2 : ℝ)⁻¹
+  hbar_q_def := by norm_num
+  mass := 0
+  mass_identity := by simp
+
+/-- The Wenzl-bridge branching identity over the empty partition range. -/
+noncomputable instance : MarkovIdentificationContext where
+  nPartitions := 0
+  markovWeight := fun _ => 0
+  spechtPartialTrace := fun _ => 0
+  markovTrace := 0
+  markovTrace_branching := by simp
+
+end HandAdjudicated6
+
+/-! ### `ConvergenceBound` and `QIntRatioBoundSmall` — NOT vacuous
+
+Both are parametric real bounds, both already carry corpus instances, and one is
+partly PROVED.  They are scored here rather than counted.
+
+`ConvergenceBound k hk C_q hC f_k f_inf` is the Kerov–Vershik `O(1/(k−3))`
+bound.  The corpus ships `convergenceBound_refl` at `f_k = f_inf`, which is an
+honest degenerate witness — and the class is **refutable**, below, at a
+parameter where the bound simply fails.  A class refutable at one parameter
+assumes something at every parameter.
+
+`QIntRatioBoundSmall q hq hq2 m hm hm4` is stronger still: the corpus **proves**
+it at `m = 1` and `m = 2` from `qInt_ratio_bound_m1` / `_m2`, and its docstring
+records that the bound is *false* on the wider `q` interval — which is why the
+class is restricted to `q < 3/2`.  Neither the restriction nor the proofs would
+mean anything if the class were vacuous. -/
+
+namespace HandAdjudicated7
+open QOU.Archimedean.SkewSYT QOU.Archimedean.QHookBound
+
+example (k : ℕ) (hk : k ≥ 4) (C : ℝ) (hC : C > 0) (f : ℝ) :
+    ConvergenceBound k hk C hC f f := inferInstance
+
+/-- **Refutable**: at `k = 4`, `C_q = 1`, the bound reads `|f_k − f_∞| ≤ 1`,
+which `f_k = 100`, `f_∞ = 0` violates. -/
+theorem convergenceBound_refutable :
+    ¬ ConvergenceBound 4 (by norm_num) 1 (by norm_num) 100 0 := by
+  rintro ⟨h⟩
+  norm_num at h
+
+example (q : ℝ) (hq : q > 1) (hq2 : q < 3/2) :
+    QIntRatioBoundSmall q hq hq2 1 (by norm_num) (by norm_num) := inferInstance
+
+example (q : ℝ) (hq : q > 1) (hq2 : q < 3/2) :
+    QIntRatioBoundSmall q hq hq2 2 (by norm_num) (by norm_num) := inferInstance
+
+end HandAdjudicated7
