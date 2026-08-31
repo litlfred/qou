@@ -59,15 +59,54 @@ What survives is therefore not "a slowly growing function" but specifically **a
 step function counting COMPLETE 4-blocks**: zero below 4, one at 4 through 7,
 incrementing at 8.
 
-## The honest caveat, and it is large
+## 🛑 The corpus already had this, and it CORRECTS the caveat I wrote
 
-`floor(A/4)` is *built* to satisfy exactly those two constraints. Testing a
-family chosen after seeing them and reporting the one that fits is close to
-circular, so its survival is **weak evidence**, not support. The defensible
-statement is the negative one: **everything else tested is excluded, and the
-surviving family is narrow** -- any shape counting complete 4-blocks is
-indistinguishable from `floor(A/4)` on this data, and the test cannot choose
-among them.
+Corpus-grep, run after the measurement and not before -- the sixth near-miss on
+this arc. `docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md`
+(beans `qou-0c19`, `qou-uclw`) identified the extensive term as the alpha-cluster
+(Wigner SU(4) `[1^4]`) volume term on 2026-08-02, **with the shape written as
+`n_alpha = floor(A/4)`**, and it is backed by a Lean gate that is sorry-free:
+
+    QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff (A : Nat) :
+        Nat.choose 4 A = 0 <-> 4 < A
+
+`dim [1^A] = C(4, A)` is present for `A <= 4` and vanishes for `A > 4` -- there
+is no `[1^5]`. That is the structural reason the block size is four.
+
+**This corrects the caveat this file originally carried, in my favour and then
+against me, and both halves matter:**
+
+  * **The survivor was NOT chosen by me post-hoc.** `floor(A/4)` was derived
+    from the SU(4) gate three weeks before this test existed, so relative to
+    this measurement it is a **pre-registered** shape, not a curve-fit family.
+    My "close to circular" caveat was wrong about that.
+  * **But the caveat relocates rather than vanishes.** The *other seven* shapes
+    are mine, and I chose them already knowing which one the corpus expected to
+    survive. A test whose alternative set is picked by someone who knows the
+    answer is still weak, just weak somewhere else.
+
+## What IS new here, stated narrowly
+
+The 2026-08-02 identification was a **scaling observation on alpha-conjugate
+nuclei only** (`B/n_alpha` constant to CV 0.053 across 4He, 8Be, 12C, 16O). This
+probe is an **exclusion test** over twelve isotopes **including the
+non-alpha-conjugate ones** (3H, 3He, 6Li, 7Li, 9Be, 10B, 11B, 14N), which the
+scaling observation never touched, and it excludes seven alternative shapes
+against a parameter-free bracket.
+
+And the two constraints above are an **independent, AME-side rediscovery** of
+what the gate says structurally: "must vanish at A=3" is `[1^A]` not yet filled
+below four; "must not increment before A=8" is one filled `[1^4]` until a second
+can form. Reaching the same 4-block structure from the bracket without using the
+gate is corroboration from a different direction. It is not a new result.
+
+## Two numbers that look like a conflict and are not
+
+The audit's per-alpha binding is `~29.8 MeV`; the window here is
+`c in [11.11, 17.24] MeV`. **Different quantities.** `B_alpha` is the TOTAL
+binding per alpha; `c` here is only the part a pairwise bond set cannot supply,
+i.e. the excess over the bracket. At 4He: `T in [11.11, 19.61]` plus a pairwise
+contribution in `[8.68, 17.18]` sums to `B_AME = 28.30`. Consistent, not rival.
 
 ## Scope
 
@@ -232,24 +271,64 @@ def main() -> int:
     print("  4, one at 4 through 7, incrementing at 8.")
     print()
 
-    print("THE HONEST CAVEAT, AND IT IS LARGE")
+    print("THE CORPUS ALREADY HAD THIS — and it CORRECTS my caveat")
     print("-" * 78)
-    print("  floor(A/4) is BUILT to satisfy exactly those two constraints.")
-    print("  Testing a family chosen after seeing them, and reporting the one")
-    print("  that fits, is close to circular -- so its survival is WEAK EVIDENCE,")
-    print("  not support.")
+    print("  docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md (beans")
+    print("  qou-0c19, qou-uclw) identified the extensive term as the")
+    print("  alpha-cluster SU(4) [1^4] volume term on 2026-08-02, WITH THE SHAPE")
+    print("  WRITTEN AS n_alpha = floor(A/4), backed by a sorry-free Lean gate:")
     print()
-    print("  The defensible statement is the negative one: everything else")
-    print("  tested is excluded, and the surviving family is NARROW.  Any shape")
-    print("  counting complete 4-blocks is indistinguishable from floor(A/4) on")
-    print("  this data, and the test cannot choose among them.")
+    print("    QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff (A : Nat) :")
+    print("        Nat.choose 4 A = 0 <-> 4 < A")
     print()
+    print("  dim [1^A] = C(4,A) is present for A <= 4 and vanishes above it --")
+    print("  there is no [1^5].  That is the structural reason for block size 4.")
+    print()
+    print("  This CORRECTS the caveat this probe first carried, both ways:")
+    print("   + the survivor was NOT chosen by me post-hoc.  floor(A/4) predates")
+    print("     this test by three weeks, so it is PRE-REGISTERED relative to it.")
+    print("     'Close to circular' was wrong about that.")
+    print("   - but the caveat RELOCATES: the other seven shapes are mine, chosen")
+    print("     already knowing which one the corpus expected to survive.  Still")
+    print("     weak, just weak somewhere else.")
+    print()
+
+    print("WHAT IS NEW HERE, NARROWLY")
+    print("-" * 78)
+    print("  The 2026-08-02 result was a SCALING observation on alpha-conjugate")
+    print("  nuclei only (B/n_alpha, CV 0.053 over 4He/8Be/12C/16O).  This is an")
+    print("  EXCLUSION test over twelve isotopes INCLUDING the")
+    print("  non-alpha-conjugate ones (3H, 3He, 6Li, 7Li, 9Be, 10B, 11B, 14N),")
+    print("  which that observation never touched, and it excludes seven")
+    print("  alternative shapes against a parameter-free bracket.")
+    print()
+    print("  The two constraints above are an independent AME-side rediscovery of")
+    print("  what the gate says structurally.  Corroboration from another")
+    print("  direction -- NOT a new result.")
+    print()
+
+    print("TWO NUMBERS THAT LOOK LIKE A CONFLICT AND ARE NOT")
+    print("-" * 78)
+    lo4b, hi4b, _ = Wn["4He"]
+    ame4 = lo4b + al * (comb(2, 2) * Lpp + 2 * 2 * Lpn + comb(2, 2) * Lnn)
+    print("  audit's per-alpha binding  ~29.8 MeV   (TOTAL per alpha)")
+    print(f"  window here                c in [{fmt(rw[0], 6)}, {fmt(rw[1], 6)}]"
+          f"   (EXCESS over pairwise)")
+    print(f"  at 4He: T in [{fmt(lo4b, 6)}, {fmt(hi4b, 6)}] plus a pairwise part")
+    print(f"          sums to B_AME = {fmt(ame4, 6)}.  Consistent, not rival.")
+    print()
+
     print("WHAT IS NOT CLAIMED")
     print("-" * 78)
     print("  * No term is proposed, derived or fitted.  c in [11.11, 17.24] is a")
     print("    CONSTRAINT; picking a value inside it against AME would be a fit.")
     print("  * NOT that a per-alpha term is right -- only that this test cannot")
     print("    exclude it, having excluded seven alternatives.")
+    print("  * NOT that the binding LAW is derived.  The 2026-08-02 audit is")
+    print("    explicit that the bridge from the proved gate to B = n_alpha*B_alpha")
+    print("    is REASONED, NOT PROVED, and that the dimensionful per-alpha SCALE")
+    print("    is FOREVER-GATED and must not be back-derived.  Nothing here")
+    print("    changes either, and the scale is not a route to re-propose.")
     print("  * Admissibility stays necessary, not sufficient: it says a pairwise")
     print("    bond set EXISTS, not that the framework derives it.")
     return 0
