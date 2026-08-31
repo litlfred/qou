@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T03:15:57Z
+updated_at: 2026-08-31T04:26:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4446,3 +4446,133 @@ is neither obviously that tension nor obviously experimental. Open.
 - Open with the owner: whether the **counit reading** now becomes the leading
   hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
   and mass independently confirms `z_D`.
+
+
+## CORRECTION (2026-08-31): #6340's headline was already on \`main\` — I did not corpus-grep for it
+
+**The claim.** The commit message of \`9e1a2f7d71\` presents as its headline that
+\`z = 1\` (the counit point) sits **0.168 %** from the Q_β target while being
+**proved inadmissible**, and calls that "a far sharper statement of the anomaly".
+
+**That finding was already recorded, on \`main\`, since 2026-08-29.**
+\`computations/qbeta/qbeta-d-frame-admissible-base-correction-search.witness.json\`
+(commit \`d5c779878d\`) carries, in its own \`data\` block:
+
+    trace_ratio_z_q_to_1              0.890617381157420966
+    base_ratio_net_over_aug           0.89061738114589774
+    aug_near_match_is_forbidden_z1_return   true
+    verdict  "... the augmentation near-match sqrt(1-h) (0.025%) is the
+              FORBIDDEN z=1 return in disguise (F_required = the trace's
+              z=q->z=1 ratio to 0.17%) ..."
+
+That is the same number (0.8906 / 0.17 %), the same object (the \`z=q → z=1\`
+ratio of the affine decay trace), and the same diagnosis (\`z = 1\` is forbidden by
+\`ConventionDAdmissibleRoots.one_not_root\`). The 2026-08-29 probe went *further*
+in one direction I did not: it also identified \`sqrt(1-h)\` at **0.025 %**, i.e.
+a closer near-match than the 0.168 % I reported as the headline, and pruned it.
+
+**Why I missed it.** I ran no corpus-grep on the figure before building. The
+AGENTS.md checklist path that would have caught it is path 3 (\`grep -rln
+<topic> computations/\`) on \`0.8906\` or \`trace_ratio\`; path 6 (\`.beans/\`) would
+also have hit, since this bean already cites #5337's closure.
+
+**What in #6340 IS new** — stated narrowly, because the headline is not:
+
+1. **The Lean identity cross-check.** The \`y_(1³)\` numerator, derived
+   independently by a 3×3 Markov character solve with \`z\` symbolic, equals the
+   committed \`QOU.QBeta.AdmissibleRoots.wtNumer\` — symbolic difference exactly
+   \`0\`. The 2026-08-29 probe *cited* the Lean; it did not re-derive and compare.
+   Two independent routes now agree on the polynomial.
+2. **The negative weight.** \`y_(1³)(z_required) = -0.014131\`,
+   \`wtNumer = -0.09600\`. \`grep -rn y_1cubed_at_z_required computations/\`
+   returns this probe alone. A negative Wedderburn weight is a sign violation
+   rather than a small perturbation — a different *kind* of exclusion from
+   "0.168 % away from a forbidden point", and the one that would upgrade the
+   scope-(a) to scope-(b) if a positivity invariant on the decay pairing were
+   proved. That invariant is still absent.
+
+**What does NOT change.** Nothing was wired; the scope-(a) label stands; the
+declared straddle (muon q₀ against a proton-pinned \`g_required\`) stands and is
+still un-redone. The merge is not being reverted — the two new items are worth
+their file. Only the framing of what was novel is corrected.
+
+
+### CORRECTION TO THE CORRECTION (same day) — both of #6340's claimed novelties were also already on `main`
+
+The block immediately above conceded the headline and then claimed two things
+were new. **Both were already on `main`, one day earlier**, in
+`computations/qbeta/qbeta-admissibility-is-a-magnitude.witness.json`
+(commit `6247033e5a`, 2026-08-30, an ancestor of the #6340 merge):
+
+1. **The Lean cross-check.** That witness's own first assertion is
+   *"y_(1³) numerator is proportional to Lean wtNumer"*, passed, with
+   `wtNumer_agreement: "q**2"`. My claim that the predecessor probe "cited the
+   Lean but did not re-derive and compare" was true of the **2026-08-29** probe
+   and false of the **2026-08-30** one, which is the immediate predecessor and
+   the one I should have checked.
+2. **The negative weight.** That witness records
+   `y_111 at z=1 = -0.0139947872229`. #6340's `-0.014130696` is the same
+   quantity at a `z*` 0.15 % away — a 1 % perturbation of a recorded number,
+   not a new fact.
+
+**Same root cause both times, and it is worth naming.** I grepped for
+`y_1cubed_at_z_required` — a field name **I had invented** — found it nowhere
+else, and read that as novelty. Grepping your own coinage is guaranteed to
+return a unique hit. The quantity, not the label, is what has to be grepped.
+This is the `qou-cds1` instance of AGENTS.md §"Grep the claim SHAPE, not only
+the topic".
+
+**Net: #6340 contributed nothing that was not on `main` the previous day.** It
+is not being reverted — the file is harmless and its `z*` value is correct — but
+its commit message overstates it and this bean is the record.
+
+### What IS new, established this turn and Lean-proved sorry-free
+
+**The negative weight is an INTERVAL fact, not a point fact.**
+`wtNumer(q,z) = (z−q)((q²+1)z − q³)` is an upward parabola in `z` whose two real
+roots are exactly the two admissible Markov parameters, and `z_D < q` for every
+`q > 0`. So `y_(1³)(z) < 0` for **every** `z ∈ (z_D, q)` — an interval of width
+`q/(q²+1) = 0.4973` at the pin. `z = 1` (the ladder's base) and `z*` both lie in
+it. **Neither negative value is about the point it was measured at**; each says
+only `z ∈ (z_D, q)`. That deflates the 2026-08-30 reading and mine at once.
+
+New in `QOU.QBeta.AdmissibleRoots`, `lean`-direct exit 0, `#print axioms` clean
+on all five (`propext, Classical.choice, Quot.sound`):
+
+- `zD_lt_self`, `sub_zD_eq` — the roots are ordered, gap exactly `q/(q²+1)`
+- `wtNumer_neg_of_between`, `wtNumer_pos_of_lt_zD` — the sign, both sides
+- `one_not_root_of_interval` — **`one_not_root` restated as a corollary**
+- `zC_lt_zD`, `zC_not_root` — **convention C's `z_C = √q/(q+1)` is inadmissible
+  for every `q > 1`**, not merely at the pin. Sympy independently: the only
+  roots of `wtNumer(q, z_C)` are `q = 1` and the real root of `x³+2x²+x−1`
+  (≈ 0.4656), neither on the substrate window. The corpus carried only the
+  point measurement (3.16 % three-row share at the pin, sign discarded).
+
+**Consequence for this bean's framing.** `z_C` sits *left* of `z_D` (weight
+**positive**, +0.0227) while the counit `z = 1` sits *between* the roots (weight
+**negative**, −0.0140). They are on **opposite sides of the admissible set**, so
+the ladder's base has never descended to the two-row quotient under **either**
+convention. "Re-derive the ladder under D" is therefore not a change of frame
+that repairs admissibility — admissibility was never a property the base had.
+
+This does **not** exclude the decay base. `QOU.QBeta.DecayFibreBarParity`
+already records that the two-row cap is the **mass** channel's forcing and that
+transporting it to the decay channel rests on the 2026-08-15 owner ruling rather
+than a theorem. Scope-(a); nothing wired; `free_parameters = 0`.
+
+### A denominator defect in `ConventionDAdmissibleRoots`, fixed here
+
+Its module docstring stated `y_(1³) = q²·N/(q⁴+q²+1)`. The true denominator is
+`(q²+1)(q⁴+q²+1) = q⁶+2q⁴+2q²+1` — the stated one is short by `(q²+1)`, i.e.
+`2.232×` at the pin. **No theorem in that file changes**: every result there is
+about `wtNumer`, the *numerator*, and both candidate denominators are strictly
+positive over `ℝ`, so the root set, the completeness `iff` and `one_not_root`
+are untouched. Only a consumer computing from the stated formula is wrong — and
+that is exactly how it was caught: the new probe read the docstring and got
+`y_(1³)(1) = −0.03124` against the committed `−0.0139948`.
+
+Three corpus sources already had it right (`schurweyl/ocneanu_weight_general_n.py`
+`PROVED3`, the `y_111_symbolic` above, and the symbolic-`z` Borromean solve).
+Consensus is not a derivation, so the probe pins it by the **defining
+normalisation** `Σ_λ dim(λ)·W_λ = 1` at `n = 3`, which holds for
+`(q²+1)(q⁴+q²+1)` and **fails** for `q⁴+q²+1`.

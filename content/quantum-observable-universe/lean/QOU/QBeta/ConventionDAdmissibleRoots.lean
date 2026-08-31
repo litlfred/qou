@@ -28,11 +28,26 @@ here `z` is a **variable** and both roots are exhibited.
 The `(1³)`-block Ocneanu weight at `n = 3`, as a function of the Markov
 parameter `z`, is
 ```
-  y_(1³)(z) = q² · N(q, z) / (q⁴ + q² + 1),   N(q, z) = (q²+1)z² − (2q³+q)z + q⁴,
+  y_(1³)(z) = q² · N(q, z) / ((q²+1)(q⁴ + q² + 1)),
+  N(q, z) = (q²+1)z² − (2q³+q)z + q⁴,
 ```
-with denominator `q⁴+q²+1 > 0` over `ℝ` (never vanishing). The **roots** are the
-roots of the numerator `N`, and this file proves `N` factors — over **any**
-commutative ring — as
+with denominator `(q²+1)(q⁴+q²+1) = q⁶+2q⁴+2q²+1 > 0` over `ℝ` (never
+vanishing). The **roots** are the roots of the numerator `N`, and this file
+proves `N` factors — over **any** commutative ring — as
+
+> **Denominator corrected 2026-08-31.** This read `q⁴+q²+1`, i.e. it was
+> short by a factor `(q²+1)` (`= 2.232` at the substrate pin). **No theorem
+> in this file changes** — every result here is about `wtNumer`, the
+> *numerator*, and both candidate denominators are strictly positive over
+> `ℝ`, so the root set and the `z=1` exclusion are untouched. What changes is
+> the value a consumer computes if it reads this formula: `y_(1³)` comes out
+> **2.232× too large** at the pin. Caught by a probe that did exactly that and
+> then disagreed with two independent corpus derivations which agree with each
+> other — the `y_111_symbolic` of
+> `computations/qbeta/qbeta-admissibility-is-a-magnitude.witness.json` and the
+> symbolic-`z` Borromean Markov solve in
+> `computations/qbeta/qbeta_z_symbolic_borromean_crosscheck.py`, whose
+> `q⁶+2q⁴+2q²+1` is `(q²+1)(q⁴+q²+1)` factored.
 ```
   N(q, z) = (z − q) · ((q²+1)·z − q³),
 ```
@@ -131,4 +146,105 @@ theorem conventionD_base_completeness {q : ℝ} (h1 : 1 < q)
   ⟨fun z => admissible_markov_param_iff q z (q_sq_add_one_ne_zero q),
    one_not_root h1 hplastic⟩
 
+
+/-! ### The SIGN of the weight is an interval fact, not a point fact
+
+`one_not_root` above is stated at the single point `z = 1`, and the corpus has
+read its negative value there — and the negative value at the `z*` the Q_β
+inversion demands — as two findings about those points. They are one fact about
+an interval, and it is visible directly in `wtNumer_factor`: the numerator is an
+upward parabola in `z` whose two real roots are exactly the two admissible
+parameters, so it is negative on the whole open interval between them and
+positive outside. Every negative `y_(1³)` the corpus has measured says only
+`z ∈ (z_D, q)`; none of them is evidence about a particular `z`.
+-/
+
+/-- The two admissible roots are **ordered and distinct** for every positive `q`:
+`z_D < q`. -/
+theorem zD_lt_self {q : ℝ} (hq : 0 < q) : zD q < q := by
+  rw [zD, div_lt_iff₀ (by positivity)]
+  nlinarith
+
+/-- The gap between the two admissible parameters is exactly `q/(q²+1)`. -/
+theorem sub_zD_eq {q : ℝ} (hq : 0 < q) : q - zD q = q / (q ^ 2 + 1) := by
+  rw [zD]
+  field_simp
+  ring
+
+/-- **(INTERVAL) The weight numerator is negative on the whole open interval
+between the two admissible roots**, and only there. For `z_D < z < q` the
+`(1³)`-block Ocneanu weight is strictly negative — a sign violation at *every*
+such `z`, not at any distinguished one. -/
+theorem wtNumer_neg_of_between {q z : ℝ} (hq : 0 < q)
+    (hlo : zD q < z) (hhi : z < q) : wtNumer q z < 0 := by
+  rw [zD, div_lt_iff₀ (by positivity : (0:ℝ) < q ^ 2 + 1)] at hlo
+  rw [wtNumer_factor]
+  exact mul_neg_of_neg_of_pos (by linarith) (by linarith)
+
+/-- **The weight numerator is positive strictly left of the smaller root.**
+For `0 < q` and `z < z_D` (and `z < q`, automatic there since `z_D < q`) both
+linear factors are negative, so the product is positive. -/
+theorem wtNumer_pos_of_lt_zD {q z : ℝ} (hq : 0 < q) (hlo : z < zD q) :
+    0 < wtNumer q z := by
+  have hzq : zD q < q := zD_lt_self hq
+  rw [zD, lt_div_iff₀ (by positivity : (0:ℝ) < q ^ 2 + 1)] at hlo
+  rw [wtNumer_factor]
+  refine mul_pos_of_neg_of_neg (by nlinarith) (by linarith)
+
+/-- **`one_not_root` is the `z = 1` instance of the interval lemma.** Restated as
+a corollary to make the dependency explicit: the value at `z = 1` is negative
+because `1` lies between the two admissible parameters on the substrate window,
+for no reason particular to `1`. -/
+theorem one_not_root_of_interval {q : ℝ} (h1 : 1 < q)
+    (hplastic : q ^ 3 - q ^ 2 - 1 < 0) : wtNumer q 1 < 0 := by
+  refine wtNumer_neg_of_between (by linarith) ?_ h1
+  rw [zD, div_lt_one (by positivity)]
+  linarith
+
+/-! ### Convention C's Markov parameter is inadmissible for EVERY `q > 1` -/
+
+/-- The **convention-C** Markov parameter `z_C = √q/(q+1)` (excised as a
+convention by the 2026-08-15 owner ruling; kept here to state the fact about
+it). -/
+noncomputable def zC (q : ℝ) : ℝ := Real.sqrt q / (q + 1)
+
+private theorem zC_lt_zD_aux {s : ℝ} (hs : 1 < s) :
+    s * ((s ^ 2) ^ 2 + 1) < (s ^ 2) ^ 3 * (s ^ 2 + 1) := by
+  have hs0 : (0:ℝ) < s := by linarith
+  have h7 : (1:ℝ) < s ^ 7 := by
+    calc (1:ℝ) = 1 ^ 7 := by norm_num
+    _ < s ^ 7 := by gcongr
+  have h5 : (0:ℝ) < s ^ 5 := by positivity
+  nlinarith [mul_pos hs0 (by linarith : (0:ℝ) < s ^ 7 - 1),
+             mul_pos h5 (by linarith : (0:ℝ) < s - 1)]
+
+/-- **`z_C < z_D` for every `q > 1`** — convention C's Markov parameter lies
+strictly left of the smaller admissible root, on the whole substrate window. -/
+theorem zC_lt_zD {q : ℝ} (h1 : 1 < q) : zC q < zD q := by
+  have hq : (0:ℝ) < q := by linarith
+  have hs1 : (1:ℝ) < Real.sqrt q := by
+    have := Real.sqrt_lt_sqrt (by norm_num : (0:ℝ) ≤ 1) h1
+    rwa [Real.sqrt_one] at this
+  have hsq : Real.sqrt q ^ 2 = q := Real.sq_sqrt hq.le
+  rw [zC, zD, div_lt_div_iff₀ (by linarith) (by positivity)]
+  have := zC_lt_zD_aux hs1
+  rw [hsq] at this
+  linarith
+
+/-- **(CONVENTION C IS NOT A ROOT, FOR EVERY `q > 1`.)** `wtNumer q (z_C q) > 0`,
+so convention C's Markov parameter never annihilates the `(1³)` ideal and the
+convention-C functional never descended to the two-row (Temperley–Lieb) quotient
+either. This is the all-`q` statement; the corpus carries only the point
+measurement at the substrate pin. Note the **sign**: `z_C` is positive here while
+the counit point `z = 1` is negative, so the two sit on **opposite sides** of the
+admissible set. -/
+theorem zC_not_root {q : ℝ} (h1 : 1 < q) : 0 < wtNumer q (zC q) :=
+  wtNumer_pos_of_lt_zD (by linarith) (zC_lt_zD h1)
+
 end QOU.QBeta.AdmissibleRoots
+
+#print axioms QOU.QBeta.AdmissibleRoots.wtNumer_neg_of_between
+#print axioms QOU.QBeta.AdmissibleRoots.wtNumer_pos_of_lt_zD
+#print axioms QOU.QBeta.AdmissibleRoots.one_not_root_of_interval
+#print axioms QOU.QBeta.AdmissibleRoots.zC_lt_zD
+#print axioms QOU.QBeta.AdmissibleRoots.zC_not_root
