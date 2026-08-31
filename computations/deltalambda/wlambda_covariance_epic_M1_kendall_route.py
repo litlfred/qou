@@ -19,7 +19,8 @@ If the measured q tracked that, the pairwise route would be equivalent to
 rho > 0 and would buy nothing -- the 138x margin would be an illusion. That was
 the outcome to rule out, and it IS ruled out.
 
-FINDING 1 (HYPOTHESIS FALSIFIED, FAVOURABLY): q is ~2.2x rarer than Gaussian
+FINDING 1 [PARTLY RETRACTED 2026-08-31 -- SEE FINDING 3]: q is ~2.2x rarer
+than Gaussian AT SMALL n
 -----------------------------------------------------------------------------
 Exact, n = 8..18, with rho_n computed exactly from the same enumeration:
 
@@ -52,9 +53,33 @@ it suffices that
 on q ALONE. Two clean sufficient routes therefore exist: (q < 1/2 and mean ratio
 <= 1), or (q < 0.90 and mean ratio <= 0.111).
 
+FINDING 3 (CORRECTION to FINDING 1): the non-Gaussian advantage ERODES
+-----------------------------------------------------------------------
+FINDING 1 was measured on exact enumeration at n <= 18, where rho is only ~0.918
+-- far from the derived rho_inf = 0.99965. The obvious risk, flagged when
+FINDING 1 was written, is that the non-Gaussian factor is a small-n effect. It
+is. Sampled at larger n (RSK, seeds fixed):
+
+    n        50      100      200      400      800
+    rho     0.9547  0.9759   0.9846   0.9915   0.9951
+    q meas  0.0564  0.0482   0.0412   0.0320   0.0249
+    ratio   0.586   0.688    0.738    0.768    0.792
+
+against 0.46 at n = 15..18. The ratio RISES steadily toward 1: at n = 800
+discordance is only 1.26x rarer than Gaussian, not 2.2x. Extrapolating the
+trend, the pairwise route looks ASYMPTOTICALLY equivalent to the Gaussian
+picture, i.e. to rho > 0 -- which is what FINDING 1 set out to rule out and
+rules out only at small n.
+
+What survives, and it is not nothing: q itself DECREASES with n (0.060 at
+n = 18 down to 0.0249 at n = 800), so the margin in "q < 0.90 suffices" gets
+BETTER, not worse -- 36x at n = 800. The reformulation still buys a target with
+a margin; what it does not buy is independence from the correlation question.
+
 NOT CLOSED. Both routes still require proving something about the joint law of
-(sum h, sum c^2). What changed is the TARGET: a rank-based quantity with a 15x
-margin, rather than the sign of a Pearson correlation with none.
+(sum h, sum c^2). What changed is the TARGET: a rank-based quantity with a
+margin, rather than the sign of a Pearson correlation with none -- but that
+target is asymptotically tied to the same correlation.
 """
 import json
 import time
@@ -127,7 +152,7 @@ def main():
     tail = rows[-4:]
     rats = [mpf(r["ratio"]) for r in tail]
     checks.append({
-        "name": "FINDING 1 (HYPOTHESIS FALSIFIED, favourably): q is ~2.2x rarer than Gaussian",
+        "name": "FINDING 1 [partly retracted, see FINDING 3]: q ~2.2x rarer than Gaussian at SMALL n",
         "pass": max(rats) < mpf(6) / 10 and max(rats) - min(rats) < mpf(5) / 100,
         "detail": (
             f"For a centered bivariate normal with correlation rho, two iid "
@@ -140,8 +165,11 @@ def main():
             f"{[r['ratio'] for r in tail]} -- settling near "
             f"{nstr(sum(rats) / len(rats), 4)}, spread "
             f"{nstr(max(rats) - min(rats), 3)}. Discordance is ~2.2x rarer than "
-            f"a Gaussian with the SAME correlation, so the route carries "
-            f"structure beyond the Pearson correlation."),
+            f"a Gaussian with the SAME correlation. PARTLY RETRACTED: sampled "
+            f"at n = 50..800 the ratio RISES to 0.586, 0.688, 0.738, 0.768, "
+            f"0.792 -- the non-Gaussian advantage is a SMALL-n effect and "
+            f"erodes toward 1, so the route is asymptotically tied to the same "
+            f"correlation after all. See the docstring's FINDING 3."),
     })
     t18 = rows[-1]
     checks.append({

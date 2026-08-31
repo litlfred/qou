@@ -107,9 +107,9 @@
  ],
  "checks": [
   {
-   "name": "FINDING 1 (HYPOTHESIS FALSIFIED, favourably): q is ~2.2x rarer than Gaussian",
+   "name": "FINDING 1 [partly retracted, see FINDING 3]: q ~2.2x rarer than Gaussian at SMALL n",
    "pass": true,
-   "detail": "For a centered bivariate normal with correlation rho, two iid draws give q_Gauss = 1/2 - arcsin(rho)/pi exactly. If measured q tracked it, the pairwise route would merely RESTATE rho > 0 and the 138x margin would be an illusion -- that was the outcome to rule out. Exact over n = 15..18: rho = ['0.91273961', '0.9146104', '0.91632008', '0.918422'], q measured = ['0.0631138', '0.0606892', '0.0605907', '0.0600657'], q Gaussian = ['0.133963', '0.132497', '0.131145', '0.129464'], ratio = ['0.47113', '0.45804', '0.46201', '0.46396'] -- settling near 0.4638, spread 0.0131. Discordance is ~2.2x rarer than a Gaussian with the SAME correlation, so the route carries structure beyond the Pearson correlation."
+   "detail": "For a centered bivariate normal with correlation rho, two iid draws give q_Gauss = 1/2 - arcsin(rho)/pi exactly. If measured q tracked it, the pairwise route would merely RESTATE rho > 0 and the 138x margin would be an illusion -- that was the outcome to rule out. Exact over n = 15..18: rho = ['0.91273961', '0.9146104', '0.91632008', '0.918422'], q measured = ['0.0631138', '0.0606892', '0.0605907', '0.0600657'], q Gaussian = ['0.133963', '0.132497', '0.131145', '0.129464'], ratio = ['0.47113', '0.45804', '0.46201', '0.46396'] -- settling near 0.4638, spread 0.0131. Discordance is ~2.2x rarer than a Gaussian with the SAME correlation. PARTLY RETRACTED: sampled at n = 50..800 the ratio RISES to 0.586, 0.688, 0.738, 0.768, 0.792 -- the non-Gaussian advantage is a SMALL-n effect and erodes toward 1, so the route is asymptotically tied to the same correlation after all. See the docstring's FINDING 3."
   },
   {
    "name": "FINDING 2: the target is Kendall's tau, with a ~15x margin on q alone",
@@ -119,5 +119,5 @@
  ],
  "passed": 2,
  "total": 2,
- "ms": 146
+ "ms": 160
 }
