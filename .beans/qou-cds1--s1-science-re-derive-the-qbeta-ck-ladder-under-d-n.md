@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T20:26:21Z
+updated_at: 2026-08-31T20:43:54Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5135,3 +5135,77 @@ braid image **excluded** · arbitrary M **circular** · constant-residue holonom
 side of 1** · `Im(q)` **cannot supply ellipticity** · Bring's E **non-CM** · τ₀
 **non-CM** · jet tower **blind**. What remains is unnamed — and naming it is
 research, not measurement.
+
+
+## 🛑 Step 22 (2026-08-31) — Step 21 OVER-REACHED. `Δ_L` is ELLIPTIC.
+
+**Owner correction, and it is right.** Step 21 concluded "no phase can hide in
+the jet tower" from the fact that every tower quantity it examined is **real** at
+real `q`. True, and beside the point: the ladder needs an elliptic **generator**
+— a complex-conjugate *spectrum* — and **a real trace says nothing about a real
+spectrum.** Step 21 ranged over traces and drew a conclusion about spectra.
+
+Probe `qbeta-decay-operator-elliptic-spectrum` (6/6), Lean
+`QOU/QBeta/TraceRealSpectrumComplex.lean` (sorry-free). Commit `1540977a43`.
+
+### The owner's framing was the right one, and the corpus already had both pieces
+
+> *"you're not really looking for the beta decay itself, but the thing that does
+> beta decay"* — and *"you should be able to see the trefoil"*.
+
+- The H₃ normal-form basis is `[γ, σ₀, σ₁, L₊, L₋, e⁻]` = `[1, T₀, T₁, T₀T₁,
+  T₁T₀, T₀T₁T₀]`. **Its sixth element, named `e⁻` — the electron — IS the longest
+  element, which IS the trefoil `σ₀σ₁σ₀`.** The electron was in the basis all along.
+- `qbeta_hoefsmit_tbeta_matrix_build` already builds `T_β` **operator-valued** per
+  Wedderburn block, on the stated ground that PR #1840 ruled out the scalar route
+  because *"the `c_k` are irreducibly operator-valued"*.
+
+### The finding — (2,1) block, proton pin
+
+| operator | `tr²−4det` | `det(traceless)` | spectrum |
+|---|---|---|---|
+| `Δ_S` (short; **the ladder's closed forms**) | +0.043706 | −0.010927 | real — hyperbolic |
+| `Δ_L = NF(n)−NF(p)` (long; **production runs on this**) | **−0.035837** | **+0.008959** | **ELLIPTIC** |
+
+eigenvalues `−0.045681 ± 0.094653 i`, `|λ| = 0.105100`, `cos θ = −0.434649`,
+**eigenphase θ = 2.020445 rad**.
+
+**Step 18's exclusions never touched it**, for three reasons: it is a *difference*
+of normal forms — an **algebra** element, not a braid-group element — so
+`BraidImageEigenphaseExclusion` does not apply; it lives in the `(2,1)` block that
+`χ^(2,1)(Δ_S) = 0` hides; and its **trace is real**, so a trace-level scan cannot
+see it.
+
+**The asymmetry is the point:** the model the ladder's closed forms come from is
+hyperbolic; the model production runs on is elliptic. This bean already records
+`Δ_S` vs `Δ_L` as a live fork with mixed pricing — they differ in **kind**.
+
+### But it is the wrong phase
+
+**θ = 2.020445 rad against the required 0.056595 — a factor 35.7.** `Δ_L`
+supplies an elliptic generator, **not** the ladder phase.
+
+### 🛑 Withdrawn / unaffected
+
+- **WITHDRAWN:** Step 20/21's *"branch 3 is out of NAMED candidates"*. The corpus
+  contains an elliptic generator; the arc missed it by looking at the wrong kind
+  of object.
+- **UNAFFECTED:** the vanishing Step 21 proved — a bar-odd operator has zero
+  Plancherel trace, since `W_{λ'} = W_λ` and `χ^{λ'} = −χ^λ` — stands exactly as
+  stated. Only the inference *trace-real ⟹ spectrum-real* is withdrawn.
+
+### ⚠ Flagged coincidence, NOT pursued
+
+`θ = 2.0204450` sits **0.012 %** from `|c₃(muon)| = 2.02020024` — at the
+**superseded** CODATA-2018 anchor (Step 16). No mechanism connects a radian
+eigenphase to a dimensionless Taylor coefficient, and this corpus has a
+documented precedent for exactly this trap (stale `−2.00973976` vs
+`J_Hopf − ℏ_q²` `−2.00981719`, agreeing to four decimals while being different
+objects, which misled an earlier pass). Recorded per the standing owner ruling as
+a target to check a derivation **against**, never a criterion to search **on**.
+No search was run.
+
+**Next, my judgement:** the live question is now whether `Δ_L`'s ellipticity is
+*structural* or an artefact of the 11-crossing word choice — i.e. does every
+long-model nucleon-difference land elliptic, or just this one? That is a
+constrained, derivable question, unlike hunting for a phase.
