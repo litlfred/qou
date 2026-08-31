@@ -197,7 +197,17 @@ def parse_class(text: str, off: int):
     if wi == -1:
         raise Unsupported("no `where`")
     sig, body = blk[:wi], blk[wi + len(" where"):]
-    name = re.match(rf"\s*class\s+({IDENT})", sig).group(1)
+    nm = re.match(rf"\s*class\s+({IDENT})", sig)
+    if nm is None:
+        # The first ` where` in the block did not belong to this class header
+        # (e.g. it sits inside a field type, or the declaration is not a plain
+        # `class <ident>`). Skip rather than crash: an unparsed signature used
+        # to raise AttributeError out of the worker thread and ABORT THE WHOLE
+        # SWEEP, so a full-tree run stopped partway and the operator learned
+        # about it only from a traceback in the log. Measured 2026-08-31: the
+        # run died after 76 INHABITED verdicts with no summary.
+        raise Unsupported(f"unparsed class signature: {sig.strip()[:80]!r}")
+    name = nm.group(1)
     body = re.sub(r"/--.*?-/", "", body, flags=re.S)
     body = re.sub(r"--[^\n]*", "", body)
     fields = []
@@ -254,6 +264,13 @@ def probe(name: str, path: Path, off: int) -> dict:
         cname, sig, fields = parse_class(text, off)
     except Unsupported as e:
         return {"class": name, "status": "skipped", "reason": str(e)}
+    except Exception as e:  # noqa: BLE001 - one bad class must not kill the sweep
+        # Belt and braces for the same failure mode as the `nm is None` guard
+        # in `parse_class`: any unanticipated parser error is reported as a
+        # skip for THIS class, never as an abort of the run. A partial sweep
+        # that looks complete is worse than a sweep that names what it missed.
+        return {"class": name, "status": "skipped",
+                "reason": f"parser error: {type(e).__name__}: {e}"[:200]}
     last = None
     for zero in ("0", "1"):
         try:
