@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:40:15.051146+00:00",
-  "commitSha": "7a11282fe58c7db07566cb38351cad47030773fb",
+  "computedAt": "2026-08-31T04:57:35.110178+00:00",
+  "commitSha": "5d0d13f50c2dac8b817a53b2858df80884490a6d",
   "assertions": [
     {
       "name": "the_3x3_Markov_solve_is_unique",
@@ -97,11 +97,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2495,
+  "durationMs": 2571,
   "computation": "qbeta-cds1-terminus-status",
   "scriptFile": "qbeta_cds1_terminus_status_probe.py",
-  "scriptHash": "565f8284f792",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0bbd73f9fba5",
+  "scriptCommitSha": "5d0d13f50c2dac8b817a53b2858df80884490a6d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -162,9 +162,22 @@
       },
       {
         "claim": "the two-row cap is DERIVED (2-dim mass fibre => Lambda^3_q V = 0)",
-        "source": "Step 13, FibreDimensionForcesTL.lean",
+        "source": "Step 13, QOU/BraidsAndKnots/FibreDimensionForcesTL.lean (NOTE the path: BraidsAndKnots, not QBeta)",
         "verified_here": false,
-        "why_not": "a Lean result; verify with lean-direct, not here"
+        "why_not": "a Lean result; this probe is Python and cannot check it",
+        "verified_separately": {
+          "when": "2026-08-31",
+          "how": "lean-direct + #print axioms",
+          "result": "exit 0; all five theorems depend on [propext, Classical.choice, Quot.sound] only — NO sorryAx. Zero sorry / axiom / native_decide in the file.",
+          "declarations": [
+            "qNumber_shift_identity",
+            "ocneanu_param_eq_of_fibre_qdim",
+            "ocneanu_param_of_two_dim_fibre",
+            "threeRow_eq_zero_of_jones_ocneanu",
+            "twoDimFibre_pins_h3_weights"
+          ],
+          "caveat": "verified by an agent this session, NOT by this probe — re-verify with lean-direct if the file changes"
+        }
       }
     ],
     "withdrawn": [
@@ -187,7 +200,12 @@
     "open": [
       {
         "item": "a derivation of the ladder phase alpha",
-        "note": "the z direction is closed from three independent sides (trace weight, bar parity, anchors); the cos form is closed (Steps 7-8, entry 15); the amplitude route is fenced (qou-i2ir C16/C17/C18 + a structural one-scale/two-target refutation). No route is known to be open."
+        "note": "the z direction is closed from three independent sides (trace weight, bar parity, anchors); the cos form is closed (Steps 7-8, entry 15); the amplitude route is fenced (qou-i2ir C16/C17/C18 + a structural one-scale/two-target refutation)."
+      },
+      {
+        "item": "selecting the product generator rho in c_{k+1} = rho*c_k",
+        "note": "PR #6282 states the boundary more sharply than 'no route is open', and its form is adopted here: the place IS named (QBetaSingleHabiroGenerator, open with no instance) and the parity IS derived (bar-INVARIANT, not bar-odd). What is missing is a SELECTOR. Of the three gates that PR first proposed, it then corrected two of its own: parity is a class FILTER admitting the entire symmetric q-integer family at once, and the Hankel condition c_2*c_4 = c_3^2 is VACUOUS for rank-1 candidates. The survivors -- the C-limit reduction and the numerical value of c_3 = rho*c_2 -- TEST a candidate once you have one; they do not PRODUCE one. So the gap is a source, not a test.",
+        "distinct_from": "the N=1 slot, which entries 10-10d DO answer (M = cos(a_D - h^2/4)*cos(h^2/4), Lean-proved). Different slot; do not read one as the other."
       },
       {
         "item": "K(delta)",
