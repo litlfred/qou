@@ -83,3 +83,59 @@ The `qou-sv7h` list is now:
 - No corrected binding value has been produced for any atom, so **no comparison
   against AME2020 exists**. Whether the corrected framework agrees better or
   worse with experiment remains unmeasured, and nothing here bears on it.
+
+---
+
+# The term-3 crash is FIXED — and it exposes a third blocker
+
+`atom_character_raw` (reached via `atom_markov_trace` ← `binding_from_frobenius_pairing`)
+carried the **unguarded** sparse branch:
+
+```python
+if sparse_sigmas:
+    M_run = M
+    for c, d, gen in chain:
+        Msig = sig_sparse.T.dot(M_run.T).T   # raises once M_run is dtype object
+        M_run = c * Msig + d * M_run
+```
+
+That is term 1's **pre-fix** code. The COO object-dtype fallback added to
+`unified_iterative_correction` in `da645cf0f32` was never ported here. Two
+occurrences of the identical block existed; **both are now fixed.**
+
+The fix is the same one: accumulate over `sigma`'s nonzeros — `O(dim·nnz)`, the
+same complexity the float64 branch gets from sparse BLAS — with the densified
+COO cached per generator, and no coercion of `c`/`d` to float.
+
+## What the fix reveals
+
+**Term 3 no longer raises. It now does not terminate.**
+
+Deuterium ran **> 12 minutes** without completing, where before it raised in
+0.52 s. py-spy: 3/3 samples inside the new COO accumulation
+(`hecke_core_legacy.py:1716` and `:1719`), in `mpmath.__add__` / `__mul__`.
+
+So term 3 has the **identical performance wall as term 1** — Python-level
+`mpmath` scalar arithmetic over partitions up to `dim 2310` — and it was hidden
+behind the crash exactly as the crash was hidden behind term 1's hang.
+
+## Blockers: three, not two
+
+| # | blocker | status |
+|---|---|---|
+| 1 | seminormal family is not a representation | settled (`qou-4m9u`); moves term 1 by 71–221 % |
+| 2 | term 3 object-dtype crash | **fixed here** |
+| 3 | Python-mpmath performance wall in **both** term 1 and term 3 | term 1 partly (5.8× guard fix); term 3 untouched |
+
+The Rust kernel `lp_accumulator_step_traces_mpfr` was written for term 1's loop.
+Term 3's loop has the same shape — identity start, per-crossing
+`M ← c(M·σ) + dM`, rescale, trace — so the same kernel should serve it, but that
+is **asserted from the shape, not measured**; nothing has been wired.
+
+## Honest status of the original task
+
+`qou-i7ju` asked for a witness regeneration. Four sessions of work later the
+accurate statement is: **the producer cannot run, for three independent
+reasons, and one of them means the numbers it used to produce were computed
+from matrices that do not represent the algebra.** The regeneration is not
+close, and making it fast would not make it right.

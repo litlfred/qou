@@ -1684,10 +1684,38 @@ def atom_character_raw(Z, N, entry, include_inter=True):
         prev_types = ordering[:kkk]
         chain = _step_chain_generic(nuc, prev_types, n_gens, include_inter=include_inter)
         if sparse_sigmas:
+            # Object-dtype fallback (qou-w2vy, 2026-08-31). scipy's sparse
+            # kernels are float64-only, so `sig_sparse.dot(M)` raises
+            #   TypeError: no supported conversion for types:
+            #              (dtype('float64'), dtype('O'))
+            # the moment an mpf coefficient promotes M_run to dtype object --
+            # which every physical chain does, since _PROTON_G1/_NEUTRON_G1
+            # carry d = -h as an mpf. scipy is RIGHT to refuse: the only way to
+            # satisfy it is to discard the exact coefficients.
+            #
+            # This is the SAME fix da645cf0f32 applied to
+            # unified_iterative_correction; this loop was left behind, and the
+            # crash went unnoticed because binding_energy calls that function
+            # FIRST and it never returns for A >= 2, so control never reached
+            # here. Accumulating over sigma's nonzeros is O(dim*nnz) -- the same
+            # complexity the float64 branch gets from sparse BLAS -- and the
+            # densified COO is cached per generator.
             M_run = M
+            _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        _m = sig_sparse.tocoo()
+                        coo = (_m.row, _m.col, _m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    Msig = np.zeros_like(M_run)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
+                else:
+                    Msig = sig_sparse.T.dot(M_run.T).T
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -1756,10 +1784,38 @@ def _contrib_single_partition(Z, N, entry):
         prev_types = ordering[:kkk]
         chain = _step_chain_generic(nuc, prev_types, n_gens)
         if sparse_sigmas:
+            # Object-dtype fallback (qou-w2vy, 2026-08-31). scipy's sparse
+            # kernels are float64-only, so `sig_sparse.dot(M)` raises
+            #   TypeError: no supported conversion for types:
+            #              (dtype('float64'), dtype('O'))
+            # the moment an mpf coefficient promotes M_run to dtype object --
+            # which every physical chain does, since _PROTON_G1/_NEUTRON_G1
+            # carry d = -h as an mpf. scipy is RIGHT to refuse: the only way to
+            # satisfy it is to discard the exact coefficients.
+            #
+            # This is the SAME fix da645cf0f32 applied to
+            # unified_iterative_correction; this loop was left behind, and the
+            # crash went unnoticed because binding_energy calls that function
+            # FIRST and it never returns for A >= 2, so control never reached
+            # here. Accumulating over sigma's nonzeros is O(dim*nnz) -- the same
+            # complexity the float64 branch gets from sparse BLAS -- and the
+            # densified COO is cached per generator.
             M_run = M
+            _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        _m = sig_sparse.tocoo()
+                        coo = (_m.row, _m.col, _m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    Msig = np.zeros_like(M_run)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
+                else:
+                    Msig = sig_sparse.T.dot(M_run.T).T
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
