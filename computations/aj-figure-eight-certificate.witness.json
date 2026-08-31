@@ -1,15 +1,30 @@
 {
   "engine": "sympy",
   "engineVersion": "1.14.0",
-  "computedAt": "2026-07-03T15:04:47.847970+00:00",
-  "commitSha": "d94131acded9750ba61ba5fc765011a6c14180fc",
-  "assertions": [],
+  "computedAt": "2026-08-30T13:55:37.882584+00:00",
+  "commitSha": "fa4b8ac961977172b9c59c56fc365fc51d2ff929",
+  "assertions": [
+    {
+      "name": "star_identity_a2r2_a1r1_a0_eq_telescoped_cert",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact: sp.simplify(sp.together(lhs - rhs)) == 0"
+    },
+    {
+      "name": "boundary_b_eq_neg_cert_at_y_1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact: sp.simplify(sp.together(b + cert.subs(y, 1))) == 0"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 1093,
+  "durationMs": 1261,
   "computation": "aj-figure-eight-certificate",
   "scriptFile": "aj_figure_eight_certificate.py",
-  "scriptHash": "f7c5fda8d43e",
-  "scriptCommitSha": "332cd2013141398fb3e4fd09e4bfad3bcc98646e",
+  "scriptHash": "549a4af07037",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +33,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/aj_figure_eight_certificate.py"
+    ],
+    "reproduce": "python3 -u computations/aj_figure_eight_certificate.py"
   },
   "description": "Creative-telescoping (qZeilberger) certificate for the verified 4_1 annihilator: Cert(q,x,y) with a2*r2 + a1*r1 + a0 = Cert(x,qy)*s - Cert(x,y) and b = -Cert(x,1), all exact.",
   "audit_only": true,

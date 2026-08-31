@@ -1,15 +1,37 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-18T08:29:36.174470+00:00",
-  "commitSha": "f6f3ce0e1b10adb9b7ddb1041e819878df1713df",
-  "assertions": [],
+  "computedAt": "2026-08-30T13:56:40.775477+00:00",
+  "commitSha": "fa4b8ac961977172b9c59c56fc365fc51d2ff929",
+  "assertions": [
+    {
+      "name": "jones_anchor_J2_eq_V_4_1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact: sp.simplify(J[2] - (q^-2-q^-1+1-q+q^2)) == 0"
+    },
+    {
+      "name": "self_duality_bar_symmetry_all_N",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact: J_N(q) == J_N(1/q) for N=1..8 (4_1 amphichiral)"
+    },
+    {
+      "name": "q_holonomic_top_degree_law",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "exact: deg_q(J_N * q^(N(N-1))) == 2N(N-1) for N=2..8"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 4622,
+  "durationMs": 2400,
   "computation": "figure-eight-aj-operator",
   "scriptFile": "figure_eight_aj_operator.py",
-  "scriptHash": "2502f22ebd18",
-  "scriptCommitSha": "0d1038a43aa7bda26e40894b8719976d61a6afc7",
+  "scriptHash": "db964f2c397a",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +40,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/figure_eight_aj_operator.py"
+    ],
+    "reproduce": "python3 -u computations/figure_eight_aj_operator.py"
   },
   "description": "Figure-eight (Higgs) AJ operator: exact colored Jones (Habiro-Le) + empirically constructed q-difference recurrence verified to annihilate J_N",
   "audit_only": true,
@@ -49,5 +81,5 @@
   "self_duality_implication": "J_N(q)=J_N(q^-1) (amphichiral) => CS(4_1)=0 => Im V(4_1)=0 (keystone correction)",
   "q_holonomic_degree_law_ok": true,
   "explicit_operator": "proved strong-AJ operator [nguyen-tran-2021]; coefficients = qZeilberger, not re-derived here",
-  "timestamp": "2026-07-18T08:29:35+00:00"
+  "timestamp": "2026-08-30T13:56:40+00:00"
 }
