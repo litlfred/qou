@@ -58,6 +58,12 @@ valuations.
 
 namespace QOU.AppendixSurreals.CollatzBlockDescent
 
+-- The two `{Skein : Type u}` theorems below never declared `u`.  The workspace sets
+-- `autoImplicit = false` (root `lakefile.toml`), so it is not auto-bound and both
+-- signatures fail to elaborate -- which in turn strips the expected type from the
+-- anonymous constructor further down, producing a third, misleading error.
+universe u
+
 /-! ## The reduction -/
 
 /-- **Block descent suffices for convergence.** If from every non-target point of
