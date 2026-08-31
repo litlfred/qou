@@ -235,3 +235,70 @@ session. Recorded because the number is attractive enough to be dangerous:
 `derive_binding_chain_cooperative`'s `pp`/`nn` per-bond constants (2.38/2.49/2.53
 signed, 2.91/3.89/5.18 log) have no empirical counterpart. That is a modelling
 choice and deserves a note wherever those constants are quoted.
+
+---
+
+## Gap #2 (3-body link-volume) — worked 2026-08-31. The substrate fixes the arity, and it refutes the assignment.
+
+Probe `computations/probes/link_assignment_census_selectivity_probe.py`
+(5 assertions). Prior work first, because I initially presented part of this as
+new and it is not: `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`
+(`qou-8ms1`) already established that `6_2`/`8_11`/`L6a4` are an **admitted
+fit** and measured the census degeneracy. Re-measured here only as a guard.
+
+**What is new** answers that audit's own named next step — *derive a complexity
+bound on `K` from the substrate with no reference to `B_AME`, then ask whether
+the volume match is unique inside that class*.
+
+The invariant is the closure's **component count**. The canonical word's letters
+are `c·σ_g + d·1`, and `σ_g`, `σ_g⁻¹` project to the *same* transposition, so
+the permutation — hence the cycle count — is identical on every branch and under
+every sign convention. Measured exact over `0 ≤ Z,N ≤ 5`, both `pn_convention`s,
+nine bond multiplicities:
+
+    c_free = 2A                                  23/23 exact
+    c_atom = 2A − #(odd-multiplicity bonds)     414/414 exact   ⇒ A+1 at unit mult.
+
+A bond merges only when its crossing count is odd. This **corroborates
+`QOU.MassTheory.ClassicalTraceFloor` (`qou-zrx2`, sorry-free) by an independent
+route** — that file derives `cAtom = A+1` combinatorially; here both counts fall
+out of the actual word's permutation.
+
+**All four registry entries fail it:** `6_2` 1 vs 3, Hopf 2 vs 3, `8_11` 1 vs 4,
+`L6a4` 3 vs 4. The `2H` rows reproduce the audit's scope-(b) finding; **`3H` and
+`3He` are new** — the audit reached only `A = 2`. The objection is uniform, not a
+deuteron peculiarity.
+
+**Intersected with the volume window the class is EMPTY:**
+
+| atom | in volume window | with `A+1` cusps |
+|---|---|---|
+| ²H | 799 | **0** |
+| ³H | 1,102 | **0** |
+| ³He | 26,843 | 29 |
+
+So the derived restriction exists and leaves nothing standing at `A = 2, 3`. At
+³He the best survivor `L14n62525` (+0.598 %) beats `L6a4` (−2.969 %) fivefold —
+**not proposed as a replacement**, only evidence the incumbent is not best in its
+own class.
+
+Component count is *necessary*, so emptiness refutes while a survivor is only a
+candidate; and the arity counts are upper bounds (the census is not exhausted by
+link exteriors), so the emptiness strengthens.
+
+### What this means for Gap #2 as a target
+
+The 3-body link-volume route needs a **4-component** link for both ³H and ³He,
+not `8_11` (a knot) and not `L6a4` (3 components). And since the two isotopes
+have the same derived arity, no volume assignment distinguishable at the
+`A + 1` level can supply the ³H–³He split — which
+`binding_color_vs_charge_tn3he.py` independently shows is Coulomb, not strong.
+
+### Next
+
+Not a better census pick. The open item is what the owner named: **`K` should be
+an SDP solution via knot convolution**, i.e. an *objective* over Gröbner–Shirshov
+normal forms, taking no `B_AME` input, with the `A+1` arity as a hard constraint.
+The convolution `K_word = atom_word ++ cp_inv_word` is already in
+`binding_k_solver.py`; what is missing is the minimisation and the finitude bound
+`conj-canonical-knot-id-sdp.md` lists as open.
