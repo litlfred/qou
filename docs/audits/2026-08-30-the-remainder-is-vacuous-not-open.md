@@ -35,8 +35,8 @@ most trivial model available and asking `lean` whether it type-checks:
 |---|---|
 | classes probed | 79 |
 | **INHABITED with no hypotheses** | **48** (26 machine + 22 hand) |
-| scored NOT vacuous on inspection | 1 (`MatrixChainEqBuildChains`) |
-| still undecided — INCONCLUSIVE, see method below | 30 |
+| scored NOT vacuous on inspection | 5 (`MatrixChainEqBuildChains` + the four §4 gates) |
+| still undecided — INCONCLUSIVE, see method below | 26 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -578,6 +578,55 @@ the witness shows is that the honest route is open in both directions: for a
 and the *general* statement (all transfer matrices commute, so `foldl` and
 `foldr` agree) is a real lemma someone can prove. The class stands in for work,
 not for nothing — which is the distinction the rest of this audit is about.
+
+### The four §4 gate classes are the good case — and two of them are much weaker than they read
+
+`MassAnchorStableGateClass`, `MassDirectionSanityGateClass`,
+`DirectionSanityGateClass` and `BarEvenKernel` all score **NOT vacuous**. Each
+takes real-valued parameters, each field is a genuine constraint on them, and
+each file carries a `_reject` theorem showing the class is refutable at a bad
+parameter — the property a gate is supposed to have and which no vacuous class
+in this audit possesses. `BarEvenKernel` is inhabited at its *intended* point
+(`pole := uSubstrate`, `c2 := -1`, `c3 := J_Hopf(1) = -2`), a real instance
+rather than a degenerate one, and three of its four fields are an exact equality
+or a 1e-6 relative tolerance.
+
+They also needed a route the prober does not have: they are **content-block
+siblings**, not modules, so nothing can `import` them. The witnesses are in
+[`2026-08-30-gate-classes-admit-zero.lean`](2026-08-30-gate-classes-admit-zero.lean)
+and compile via
+[`scripts/lean-sibling-witness-check.sh`](../../scripts/lean-sibling-witness-check.sh),
+which concatenates siblings ahead of a witness fragment and runs `lean`-direct.
+
+**The measurement that came out of scoring them.** Both direction gates are
+stated additively, `|m − target| ≤ threshold · target` with `threshold = 10`.
+That is not "within 10× of the target" — it is a band of width `20 · target`
+*centred* on the target, reaching well below zero on one side:
+
+| gate | target | pass band |
+|---|---|---|
+| `MassDirectionSanityGateClass` | 2.46 | `[−22.14, 27.06]` |
+| `DirectionSanityGateClass` | 0.99824 | `[−8.98, 10.98]` |
+
+Two consequences are **proved**, not asserted:
+
+- **Zero clears both.** A candidate predicting magnitude `0` — no signal at all
+  — instantiates each class.
+- **The whole `z < 1` region clears `DirectionSanityGateClass`**
+  (`admits_everything_below_one`, for every `m ∈ [0,1]`). The threshold's own
+  docstring states its purpose as catching *"order-of-magnitude direction errors
+  (like PR #1850's z < 1 vs target > 1)"*. `[0,1]` sits strictly inside the pass
+  band, so **no candidate can ever be rejected on the ground the docstring
+  names.** The same file's target constant is `0.99824`, itself below 1, so the
+  "target > 1" in that sentence does not describe this file either.
+
+This is not the vacuity defect — an additive band still rejects a candidate off
+by 30×. It is a **weaker claim than the prose around it**, and the mass-side
+file half-flags it: it states that the sympy probes implement the
+*multiplicative* variant `max(|m|/target, target/|m|) ≤ threshold` while the
+Lean gate is additive, and asserts the additive form "admits both variants as
+instances". True, and it is the direction that matters — the Lean gate is the
+weaker of the two, so clearing it is not evidence of clearing the probe's.
 
 ## Adjacent observation, not a finding
 
