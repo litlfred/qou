@@ -258,11 +258,33 @@ def main() -> int:
         # printed only there. On a neutron run it would be self-referential --
         # quoting nn's own numbers back as a "contrast" to themselves.
         contrast = "" if neutron else CONTRAST_FROM_PP
+        falling = all(ratios[i] > ratios[i + 1] for i in range(len(ratios) - 1))
+        # Each verdict carries its OWN explanation. An earlier version put the
+        # rising-case gloss ("which is the signature of a nonzero limit --
+        # saturation rather than collapse") AFTER the conditional, so it was
+        # printed verbatim under the falling verdict too, asserting saturation
+        # over a sequence that collapses. The clause has to live inside the
+        # branch it describes.
+        if rising and below1:
+            verdict = ("RISING monotonically and stays below 1. That is the\n"
+                       "  signature of a marginal bond converging to a NONZERO limit"
+                       " -- saturation\n  rather than collapse.")
+        elif falling:
+            verdict = ("FALLING monotonically. The marginal is shrinking by a\n"
+                       "  LARGER factor at each step, i.e. faster than "
+                       "geometrically, which is\n  collapse rather than "
+                       "saturation. Note this is the opposite reading from a\n"
+                       "  rising sequence -- the direction of the RATIOS, not "
+                       "of the marginals\n  themselves, is what separates the "
+                       "two.")
+        else:
+            verdict = ("neither monotonically rising nor monotonically "
+                       "falling, so it\n  distinguishes neither saturation nor "
+                       "collapse. No verdict is drawn.")
         print(f"""
   The ratio of successive MARGINAL bonds is {', '.join(mp.nstr(r, 6) for r in ratios)}.
 
-  It is {'RISING monotonically and stays below 1' if rising and below1 else 'NOT monotonically rising below 1'}, which is the signature of a marginal
-  bond converging to a NONZERO limit -- saturation rather than collapse.
+  It is {verdict}
 
   NO LIMIT VALUE IS EXTRAPOLATED. Four points fix the direction of the ratio
   sequence, which is a measured fact; fitting an asymptote to them would be a
@@ -295,10 +317,15 @@ def main() -> int:
                     "B_marginal_MeV": mp.nstr(marg[A], 25),
                 } for A in sorted(tot_all)},
             "successive_marginal_ratios": [mp.nstr(r, 25) for r in ratios],
+            "species": label,
             "marginal_ratio_rising_below_one": bool(
                 len(ratios) >= 2
                 and all(ratios[i] < ratios[i + 1] for i in range(len(ratios) - 1))
                 and all(r < 1 for r in ratios)),
+            "marginal_ratio_falling": bool(
+                len(ratios) >= 2
+                and all(ratios[i] > ratios[i + 1]
+                        for i in range(len(ratios) - 1))),
             "asymptote_extrapolated": False,
         },
         "checks_total": 1,

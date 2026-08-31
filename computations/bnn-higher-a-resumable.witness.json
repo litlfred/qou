@@ -31,13 +31,22 @@
         "B_total_MeV": "3.722495003950136568863714",
         "B_avg_per_bond_MeV": "1.240831667983378856287905",
         "B_marginal_MeV": "0.3457407364583757241910312"
+      },
+      "5": {
+        "bonds": 4,
+        "B_total_MeV": "3.831211142834122185303359",
+        "B_avg_per_bond_MeV": "0.9578027857085305463258398",
+        "B_marginal_MeV": "0.1087161388839856164396454"
       }
     },
     "successive_marginal_ratios": [
       "0.3864244390202973751456912",
-      "0.3673522595340131873978111"
+      "0.3673522595340131873978111",
+      "0.3144441120755063957792621"
     ],
+    "species": "nn",
     "marginal_ratio_rising_below_one": false,
+    "marginal_ratio_falling": true,
     "asymptote_extrapolated": false
   },
   "checks_total": 1

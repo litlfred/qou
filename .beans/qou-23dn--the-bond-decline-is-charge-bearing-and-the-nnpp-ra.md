@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T04:36:07Z
-updated_at: 2026-08-31T04:36:33Z
+updated_at: 2026-08-31T07:38:36Z
 ---
 
 ## Measured 2026-08-31 — `computations/probes/bond_marginal_and_neutron_chain_probe.py` (6/6)
@@ -59,3 +59,51 @@ measured. `B_nn` has no committed twin so its absolute value is unanchored --
 only the pp leg is validated (reproduces `B_pp_strong_MeV` exactly at A=2).
 Three points; no asymptotic law claimed and no extrapolation to the A=39 end of
 the mirror series. Whether the nn marginal changes SIGN is not determined.
+
+
+## A=5 NEUTRON lands 2026-08-31 — the third ratio settles it, against my own hedge
+
+`bpp_higher_a_resumable_driver.py --neutron`, exit 0, A=2 anchor reproduces the
+merged 2.4355847837462 to 4.6e-14.
+
+    A  bonds       B_tot MeV      avg/bond      marginal   marg ratio
+    2      1     2.435584784   2.435584784   2.435584784        --
+    3      2     3.376754267   1.688377134   0.941169484   0.386424
+    4      3     3.722495004   1.240831668   0.345740736   0.367352
+    5      4     3.831211143   0.957802786   0.108716139   0.314444
+
+**The nn marginal ratios are FALLING** — 0.386, 0.367, 0.314 — not constant.
+So the nn marginal collapses FASTER than geometrically.
+
+I had written that two ratios "cannot distinguish constant from slowly
+declining" and declined to call it. The third ratio makes the call, and it is
+the stronger of the two readings I allowed for.
+
+### The species now differ in the strongest possible way
+
+    pp ratios  0.848 -> 0.899 -> 0.953   RISING toward 1   -> saturates
+    nn ratios  0.386 -> 0.367 -> 0.314   FALLING           -> collapses
+
+Not a difference of degree in a shared trend: the two ratio sequences move in
+OPPOSITE directions, on three ratios each. That is what makes #6365's
+charge-bearing finding a difference in KIND, and it is now measured rather than
+asserted.
+
+### The nn total is approaching a ceiling
+
+2.436, 3.377, 3.722, 3.831 — increments 0.941, 0.346, 0.109. A pure-neutron
+chain's TOTAL binding is flattening, so B/A falls (2.436 -> 0.958 already).
+
+DO NOT read this as "the model predicts no bound multi-neutron systems". A
+bounded-but-increasing total is not an unbound one, four points do not
+establish that the ceiling is reached, and the pure-PROTON chain is equally
+unphysical (this B carries no Coulomb repulsion at all). What is measured is
+the qualitative asymmetry and its direction.
+
+### A text defect this exposed
+
+The driver's verdict line put the rising-case gloss AFTER the conditional, so
+it printed "NOT monotonically rising below 1, which is the signature of a
+marginal bond converging to a NONZERO limit -- saturation rather than collapse"
+over a sequence that collapses. Each verdict now carries its own explanation
+inside its own branch, and both branches are verified to print correctly.
