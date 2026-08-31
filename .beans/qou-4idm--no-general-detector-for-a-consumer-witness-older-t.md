@@ -198,3 +198,31 @@ that IS a real value change. Those consumers were not false positives.
 The count went UP, not down. The original 248 was wrong in both directions at
 once: it counted mirror churn as upstream change AND dropped real pairs as
 ambiguous. 251 is the honest figure.
+
+### The duplicate-basename hazard is NOT a new finding — `qou-kcii` owns it
+
+Before filing "194 duplicated basenames" as a discovery: the corpus already has
+`computations/audits/duplicate_witness_stem_audit.py` (bean `qou-kcii`), and it
+is a better analysis than mine. It reports TWO numbers because raw duplication
+over-reports — 25 duplicated stems, of which **7 are consumer-splitting** — and
+it names the mechanism I had not identified:
+
+    `_path_bridge.witness_path()` searches `prefer_dir` first, typically the
+    CALLING SCRIPT'S OWN directory, then `computations/`, then each cluster
+    subdir. So when one stem exists at two paths, WHICH FILE A CONSUMER GETS
+    DEPENDS ON WHERE THE CONSUMER LIVES — two scripts can read "the same
+    witness" and receive different numbers.
+
+My 194 is that same phenomenon counted coarsely, inflated by the `qou-mass`
+vendor mirror, which is the "corner nothing reads" that audit deliberately
+discounts. So:
+
+- the exclusion in THIS audit is still required (ambiguous basenames were
+  silently dropping real pairs);
+- but there is no new corpus-wide defect to file, and I am not filing one.
+
+I also measured that 76 of 81 witness-globbing audits do not exclude
+`qou-mass/`, 44 of them scanning from a root-like base. That is a heuristic
+count from a regex, NOT a verified defect list — and given `qou-kcii`'s framing
+(a mirror nothing reads is untidy, not dangerous) it is probably mostly
+harmless. Recorded as an observation, not a claim.
