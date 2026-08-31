@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 42 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 45 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 16 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 19 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **42** (26 machine + 16 hand) |
-| still undecided — INCONCLUSIVE, see method below | 37 |
+| **INHABITED with no hypotheses** | **45** (26 machine + 19 hand) |
+| still undecided — INCONCLUSIVE, see method below | 34 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -102,6 +102,13 @@ split again:
 - **Parameter inert** (still vacuous): `SchurWeylMassContext (Z N)` — no claim
   mentions `Z` or `N`, as documented above; `KnotFactorSpectralContext (n)` and
   `MassVolumeFactorization (K n)`, where `n` only indexes a context field.
+- **Data-only** (vacuous *despite* being parameterised): a class with **no Prop
+  fields at all** is inhabited at every parameter by supplying the data.
+  `HasMarkovTrace P q` is one field, `value : R_q`; `HasBindingMultiplicity S`
+  is one field, `mu : R_q → ℕ`. Neither states anything, so `[HasMarkovTrace P q]`
+  assumes nothing anywhere — it is a "hand me a value" carrier, not a hypothesis.
+  The parameterised/vacuous distinction turns on **whether the class has claims**,
+  not on whether it has parameters.
 - **Degenerate-parameter witness** (NOT vacuous at general parameters):
   `HasArgumentPrinciple (f ω₁ ω₂ S)`, satisfied by taking the pole set `S := ∅`;
   `SharedDenominatorCuspHolonomy (q x n)`, satisfied at `n := 0` where the `∀`

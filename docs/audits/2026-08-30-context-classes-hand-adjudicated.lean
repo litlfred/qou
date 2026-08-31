@@ -57,6 +57,8 @@ import QOU.Shared.OperatorSelectionLP
 import QOU.BraidsAndKnots.demazure_fiber_markov_trace
 import QOU.Shared.ArchimedeanEval
 import QOU.Information.toffoli_transfer_matrix
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.LevelSufficiency
 
 /-! ## Inhabited with no hypotheses
 
@@ -422,3 +424,48 @@ noncomputable example : QOU.Information.ToffoliTransferMatrixContext :=
     P_7_7 := 1/2
     claim_vi_diagonal_formula := by
       rw [degenerateArchimedeanEval_q_real, Real.sqrt_one]; norm_num }
+
+/-! ### The structure-valued bucket, and a distinction it forces
+
+The prober skipped 17 classes because it could not synthesise a value of a repo
+structure.  Those structures are plain records: `ConfinedParticle` is a name, a
+level and a `MarkovClass`; `MarkovClass` is a strand count and a
+`BraidWord n = List (Fin (n-1) × Bool)`, so `[]` serves at every `n`.
+
+**A data-only class is vacuous even though it is parameterised.**  My earlier
+correction says inhabiting `C x₀` for one `x₀` shows satisfiability, not vacuity.
+That is right when `C` has Prop fields.  `HasMarkovTrace P q` has exactly one
+field, `value : R_q`, and no claim at all — so it is inhabited at *every* `P`
+and `q` by supplying a value, and `[HasMarkovTrace P q]` assumes nothing
+anywhere.  It is a "hand me a value" carrier, not a hypothesis.  Same for
+`HasBindingMultiplicity S` (`mu : R_q → ℕ`). -/
+
+namespace HandAdjudicated
+open QOU.BraidKnot QOU.Archimedean
+
+/-- A confined particle: a name, a level, and a Markov class. -/
+def probeParticle : ConfinedParticle := ⟨"probe", 0, ⟨0, []⟩⟩
+
+/-- An electron shell at the noble-gas count `Z = 2`. -/
+def probeShell : ElectronShell :=
+  { nucleus := probeParticle, nElectrons := 2, nStrandsTotal := 2,
+    cabling := rfl, bindingWord := [] }
+
+/-- No Prop fields: inhabited at every `(P, q)`. -/
+noncomputable example : HasMarkovTrace probeParticle 0 where
+  value := 0
+
+/-- Likewise no Prop fields. -/
+instance probeShellMult : HasBindingMultiplicity probeShell where
+  mu := fun _ => 2
+
+/-- **The pair is jointly vacuous, which neither is alone.**
+`NobleGasMultiOperator` does carry a claim — `bindingMultiplicity S q ≥ 2` at
+noble-gas `Z` — but it constrains the `[HasBindingMultiplicity S]` instance,
+and that instance is unconstrained data.  Choosing `mu := fun _ => 2` above
+satisfies it, so the two together assert nothing: the claim is real, and the
+thing it is a claim *about* is free. -/
+noncomputable example : NobleGasMultiOperator probeShell 0 (by decide) where
+  multi := by decide
+
+end HandAdjudicated
