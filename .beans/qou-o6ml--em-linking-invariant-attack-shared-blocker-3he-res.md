@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T05:25:50Z
+updated_at: 2026-08-31T05:29:09Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -973,3 +973,77 @@ That the type **is** the Borromean rings. That rests on the classical
 three-mutually-orthogonal-golden-rectangles construction, taken here as the
 definition of the `a/b = φ` point. What this probe adds is that the rest of the
 family **inherits** it.
+
+
+## 2026-08-31 — 🛑 SCOPING STOP: route (2) can reach ONE κ point, and the blocker is upstream of everything I have built
+
+Before building the per-pair decomposition I checked what carriers exist to
+decompose. The answer changes what "next" means on this front.
+
+### The corpus names binding-link carriers for TWO isotopes, both at A = 3
+
+From `he4-link-volume-braid-closure.witness.json`:
+
+| isotope | binding link | components | Vol |
+|---|---|---|---|
+| ³H | `8₁₁` | 1 | 8.286316817806593 |
+| ³He | `L6a4` = Borromean | 3 | 7.327724753417752 |
+
+Plus ²H → Hopf (`Vol = 0`) from `binding-link-volumes.witness.json` — and Owner
+Ruling A says the deuteron binding is **not** a hyperbolic-volume term, so that
+row is not a carrier for this purpose.
+
+**⁴He has no identified carrier at all.** Its `he4_vol4.bondcount_backout =
+8.046` is described in the witness's own text as *"an unverified bond-count
+back-out gated on the SDP/canonical-knot-ID (conj #604) at A=4"*, and it
+disagrees with the alternative `doubly_magic_provisional = 14.655` by a factor
+**1.82**.
+
+### 🛑 And the route to DERIVE carriers fails where the answer is known
+
+The same witness records a Markov-closure attempt to produce carriers from the
+canonical operator-valued atomic braid word:
+
+| | components | geometric | Vol | vs the known carrier |
+|---|---|---|---|---|
+| proton | 2 | no | 0 | — |
+| neutron | 2 | no | 0 | — |
+| ³H | 4 | no | 0 | **8₁₁ has 1** |
+| ³He | 4 | no | 0 | **Borromean has 3** |
+| ⁴He | 5 | no | 0 | (none to compare) |
+
+This is not "the derivation has not been extended past A = 3". It is **refuted
+at the two isotopes where the answer is checkable** — wrong component count,
+non-geometric, zero volume, at both.
+
+### What that means for route (2)
+
+`κ(A)` spans **A = 3…63** (31 points, from the mirror series). Route (2) can
+supply an EM weight for exactly the **A = 3 mirror pair** (³H / ³He), because
+that is the only A where the corpus names carriers for both members. **One
+point.**
+
+I said "two points (A = 3, 4)" would be reachable in the previous turn's
+hand-off. That was wrong — ⁴He has no carrier, only a gated back-out. And one
+point is worse than two against a standard this corpus set for itself last week:
+`qou-ebs6` records *"one parameter, two points, zero out-of-sample support"* as
+the reason `b_αα` **is not closable**. Route (2) as it stands is a weaker
+instance of the same shape.
+
+### The honest consequence — stop building energy machinery
+
+The formalisation is complete (`LinkEmbedding`, mutual/self, positivity), the
+integrator is calibrated against a proved value to 8 figures, and the topology
+guard is closed. **None of that is the blocker.** The gate is **carrier
+identification**, it sits upstream of every piece of it, and the corpus's own
+derivation route for carriers is refuted at A = 3.
+
+So the next question on this front is not "compute more energies". It is: **is
+there any route to a binding-link carrier at A ≥ 4 that is not the refuted
+Markov closure?** Until that has an answer, more energy machinery has nothing
+to consume it.
+
+**Not claimed:** that route (2) is dead. Its A = 3 number is computable and
+would be a genuine, if single, comparison — and the machinery is built and
+verified, so it costs nothing further to use if a carrier route appears. Scope
+(a) on the reachability, not on the route.
