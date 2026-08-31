@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T10:36:56Z
+updated_at: 2026-08-31T15:05:09Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1273,3 +1273,40 @@ Recorded so it is not retried.
 **Plainly: `M₁ > 0` is not closed.** The reformulation buys ~48× of room and
 removes the CLT from the *statement*, but not from the *proof* — the bound must
 come from the bulk, which is where the Kerov machinery lives anyway.
+
+
+---
+
+### 2026-08-31 (cont.) — the discordant mass factorises; the margin is a CONSTANT
+
+**🛑 My briefed hypothesis, falsified in its strong form.** I expected discordant
+pairs to be **close** in `(Σh, Σc²)` — `|Δh·Δc²|` one power of `n` below the
+typical `n^{5/2}` — which would have given `discordant/concordant` a free
+`n^{-1/2}` decay. It does not hold: `max|Δh·Δc²|` over discordant pairs, divided
+by `n^{5/2}`, runs **0.088 → 0.419** over n = 8..18 — *growing*, so that max
+itself grows like ~`n^{4.4}`, well **above** the typical `n^{5/2}`. No `n²`
+bound, no free decay.
+
+**What is true, and it is the usable part.** The ratio factorises exactly:
+
+> `discordant/concordant = [q/(1−q)] · [mean|d| over discordant / mean|d| over concordant]`
+
+with `q` the **probability** mass of discordant pairs. Both sides are accumulated
+independently and agree **exactly** (both rationals; worst relative disagreement
+0). Over n = 15..18:
+
+| | n=15 | n=16 | n=17 | n=18 | spread |
+|---|---|---|---|---|---|
+| `q` | 0.0631 | 0.0607 | 0.0606 | 0.0601 | 0.0031 |
+| mean ratio | 0.1110 | 0.1101 | 0.1109 | 0.1124 | 0.0023 |
+| product | 0.00748 | 0.00711 | 0.00715 | 0.00718 | — |
+
+So discordant pairs are **~6% of the mass** and each contributes **~9× less**
+than a typical pair. The ~138× margin is a **constant**.
+
+That cuts both ways, and both are worth saying: it is exactly what a
+*uniform-in-n* bound needs, **and** it is a warning that large `n` will not make
+this easier. The factorisation splits the target into two independently
+boundable pieces.
+
+**Caveat:** "stable" here is four points of exact enumeration, not an asymptotic.
