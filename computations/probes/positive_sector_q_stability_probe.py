@@ -30,47 +30,67 @@ is asking for the cheapest forward-time operator that *covers* an unbound,
 entanglement-carrying constituent product. The tension is resolved in favour of
 the construction as it stands; no rebuild of the nucleon is needed.
 
-RESULT
-------
-Swept `q` from 1.02 to 1.50 at `A = 3` (`T = pnn`, `3He = ppn`), `q_0 = 1.10998`:
+RESULT — AND A CORRECTION TO MY OWN CLAIM
+-------------------------------------------
+The owner's constraint on the substrate is `1 < q_0 < phi`. That is exactly a
+statement about the Hecke scalar: since `1/phi = phi - 1`,
 
-    q       |supp T|  |supp He3|   T != He3   obj > u_1   sub-alphabet
-    1.02        8        11          yes        yes       {s1, L+, L-}
-    1.05        7        10          yes        yes       {s1, L+, L-}
-    1.08        7        10          yes        yes       {s1, L+, L-}
-    q_0         6         9          yes        yes       {s1, L+, L-}
-    1.15        6        10          yes        yes       {s1, L+, L-}
-    1.20        6         7          yes        yes       {s1, L+, L-}
-    1.26        -         -          yes        yes       {s1, L+, L-}
-    1.28        -         -          yes        yes       + gamma, s0, e-
-    1.30        -         -          yes        yes       + s0, e-
-    1.35        -         -          yes        NO        + gamma, s0, e-
-    1.50        5         5          yes        NO        + gamma, s0
+    h(phi)  =  phi - 1/phi  =  1        exactly,
 
-Three claims, with different strengths:
+and `h` is strictly increasing (`dh/dq = 1 + 1/q^2 > 0`), so
 
-**(1) The `T` / `3He` separation is fully robust.** Different supports at every
-`q` tested, 1.02 through 1.50 — the whole range, including where everything else
-has broken down. This is the claim Gap #2 needs and it does not depend on `q_0`.
+    1 < q < phi     <=>     0 < h < 1.
 
-**(2) The sub-alphabet `{sigma_1, L+, L-}` is robust on `q` in [1.02, 1.26]**,
-breaking at 1.28 when `gamma`, `sigma_0` and `e-` enter. `q_0 = 1.10998` sits
-well inside that window, at roughly 37 % of its width — not near an edge.
+`phi` is `delta_1` of the corpus's own **metallic ladder**
+`delta_n = (n + sqrt(n^2+4))/2`, the values where `h` crosses the integer `n`
+(`computations/metallic_q_illustration.py`). So the constraint reads: **`q_0`
+lies below the first metallic rung.** At `q_0`, `h = 0.20906`.
 
-**(3) The degeneracy-breaking `obj > u_1` holds for `q <~ 1.30`** and fails by
-1.35, where the optimum falls back onto the row-1 bound and the program returns
-to the degenerate behaviour the unrestricted version always had.
+Swept `q` from 1.02 to `phi` at `A = 3` (`T = pnn`, `3He = ppn`), rebuilding
+everything per `q`. Stated in `h`, because that is the variable the constraint
+is about:
+
+    boundary                         holds for            at q          margin to h=1
+    ------------------------------------------------------------------------------
+    sub-alphabet {s1, L+, L-}        h <~ 0.47            q <~ 1.27     ~2x
+    obj > u_1 (degeneracy broken)    h <~ 0.6, then       q <~ 1.33     non-monotone
+                                     FLICKERS
+    T != He3 separation              h <= 0.88, then      q <= 1.53     ~1.1x
+                                     FLICKERS
+
+**CORRECTION.** An earlier version of this probe swept only to `q = 1.50`, found
+every point separated, and reported *"the T/3He separation is fully robust …
+different supports at every q tested"*. That is **false**. Extending past 1.50
+finds failures at `q = 1.54, 1.55, 1.58, 1.60` (`h ~ 0.89-0.98`) — and all of
+them lie **inside** the allowed range `1 < q < phi`. The honest claim is a
+window, not universality, and the golden bound does not rescue it.
+
+`obj > u_1` is likewise not a simple threshold: it is True at `h = 0.53, 0.58`,
+False at `0.61`, True again at `0.66`, then False through `0.90`, True at `h = 1`
+exactly. Flickering of this kind is the signature of LP vertex degeneracy, not of
+a boundary.
+
+WHAT THE GOLDEN BOUND ACTUALLY SECURES
+----------------------------------------
+Exactly one result, and with a large margin: `D_PN < 0`, i.e. **the binding
+operator always carries inverse-crossing (entanglement) content**. Its sign
+boundary is `q_c = 3.4580993` (`qc_is_the_convexity_boundary_probe`), where
+`h(q_c) = 3.16892`. Against `h < 1` that is more than a factor of three, and
+`q_c` sits between the bronze rung `delta_3` and `delta_4`, far outside the
+allowed patch. So in our local patch `K` is never in the positive sector — not
+as a measurement at `q_0` but as a consequence of the bound.
+
+It secures **none** of the positive-sector LP results. Each of those has its own
+window strictly inside `(1, phi)`, the tightest at `h ~ 0.47`, less than half way
+to the golden rung.
 
 WHAT IS **NOT** ROBUST
 -----------------------
 **The support size.** It drifts from 8/11 at `q = 1.02` to 6/9 at `q_0` to 6/7
 at 1.20 to 5/5 at 1.50, with no monotone pattern. So `|support| = 6` and `9` are
 **not** invariants and must not be quoted as structural facts about `T` and
-`3He`. What is invariant is that the two differ, and which letters the support is
-built from — not how many words it uses.
-
-That distinction matters: a reader who takes "T selects 6 operators, 3He selects
-9" as a structural statement will be quoting a vertex count that moves with `q`.
+`3He`. What is invariant, within its window, is that the two differ and which
+letters the support is built from — not how many words it uses.
 
 DISCIPLINE
 ----------
@@ -115,8 +135,26 @@ except Exception:  # pragma: no cover
 mp.mp.dps = 40
 CORE = {"σ₁", "L₊", "L₋"}
 Q0_STR = mp.nstr(mp.mpf(str(Q0)), 20)
+#: The metallic ladder `delta_n = (n + sqrt(n^2+4))/2` is exactly where the
+#: Hecke scalar `h = q - 1/q` crosses the integer `n`
+#: (`computations/metallic_q_illustration.py`). `delta_1` is the golden ratio,
+#: so the owner's constraint `1 < q_0 < phi` is precisely `0 < h < 1` — below
+#: the first metallic rung.
+PHI_STR = mp.nstr((1 + mp.sqrt(5)) / 2, 20)
+
+
+def h_of(qs) -> float:
+    q = mp.mpf(qs)
+    return float(q - 1 / q)
+
+
 Q_SWEEP = ["1.02", "1.05", "1.08", Q0_STR, "1.15", "1.20", "1.24", "1.26",
-           "1.28", "1.30", "1.35", "1.40", "1.50"]
+           "1.28", "1.30", "1.35", "1.40", "1.50",
+           # The region where the separation FLICKERS — added 2026-08-31 after
+           # the owner's `1 < q_0 < phi` note prompted a sweep past 1.50. The
+           # original sample stopped at 1.50 and so reported the separation as
+           # holding everywhere, which is false.
+           "1.53", "1.54", "1.55", "1.56", "1.58", "1.60", PHI_STR]
 
 
 def substrate_at(q_str: str):
@@ -208,20 +246,36 @@ def main() -> int:
         if obj_ok:
             obj_ok_qs.append(qs)
         tag = "  <- q_0" if qs == Q0_STR else ""
-        rows.append({"q": qs, "supp_T": rT["size"], "supp_He3": rH["size"],
-                     "separates": sep, "obj_gt_u1": obj_ok,
-                     "alphabet": sorted(alpha), "core": is_core})
+        rows.append({"q": qs, "h": f"{h_of(qs):.6f}", "supp_T": rT["size"],
+                     "supp_He3": rH["size"], "separates": sep,
+                     "obj_gt_u1": obj_ok, "alphabet": sorted(alpha),
+                     "core": is_core})
         print(f"  {qs:>20s} {rT['size']:>9d} {rH['size']:>11d} "
               f"{str(sep):>7s} {str(obj_ok):>7s}  {sorted(alpha)}{tag}")
 
-    # ── A1. The separation is fully robust ────────────────────────────
-    ok = bool(sep_all) and all(sep_all)
-    print(f"\n  A1  T != He3 at EVERY q tested ........................... "
+    # ── A1. The separation holds on a window, then FLICKERS ───────────
+    # CORRECTED 2026-08-31. The original sample stopped at q = 1.50 and every
+    # point separated, which I reported as "robust at every q". Extending past
+    # 1.50 finds failures at h ~ 0.89-0.98 (q = 1.54, 1.55, 1.58, 1.60), all of
+    # them INSIDE the allowed range 1 < q < phi. The honest claim is a window,
+    # not universality.
+    low = [r for r in rows if h_of(r["q"]) <= 0.88]
+    high = [r for r in rows if h_of(r["q"]) > 0.88]
+    low_ok = all(r["separates"] for r in low)
+    flickers = any(not r["separates"] for r in high)
+    ok = low_ok and flickers
+    print(f"\n  A1  separation holds for h <= 0.88, then FLICKERS ........ "
           f"{'PASS' if ok else 'FAIL'}")
-    print(f"      {len(sep_all)} values from {Q_SWEEP[0]} to {Q_SWEEP[-1]} —")
-    print("      the claim Gap #2 needs, and it does not depend on q_0.")
-    assertions.append(("separation_robust_across_q", ok,
-                       f"{sum(sep_all)}/{len(sep_all)} q values separate"))
+    print(f"      h <= 0.88: {sum(r['separates'] for r in low)}/{len(low)} separate")
+    print(f"      h >  0.88: {sum(r['separates'] for r in high)}/{len(high)} separate"
+          f"  <- failures here")
+    print("      CORRECTED: I previously reported this as robust at every q.")
+    print("      The original sample simply stopped at q = 1.50. The failures")
+    print("      sit INSIDE 1 < q < phi, so the golden bound does not protect")
+    print("      the separation either.")
+    assertions.append(("separation_holds_below_h_088_then_flickers", ok,
+                       f"low {sum(r['separates'] for r in low)}/{len(low)}; "
+                       f"high {sum(r['separates'] for r in high)}/{len(high)}"))
 
     # ── A2. The sub-alphabet is robust in a window containing q_0 ─────
     ok = (Q0_STR in core_qs) and len(core_qs) >= 6 and len(break_qs) > 0
