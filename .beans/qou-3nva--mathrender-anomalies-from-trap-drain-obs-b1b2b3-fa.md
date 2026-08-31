@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-31T03:06:36Z
+updated_at: 2026-08-31T03:23:06Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4354,3 +4354,58 @@ collateral sidecars reverted. `double-magic-Ca40-diagram` was the single one alr
 **183 findings.** L-V1/L-V2/L-V3 (trefoil matrices, braid-word tables) are the natural next
 tranche but need representation-theoretic re-derivation, not arithmetic — a different kind of
 work from this one.
+## 2026-08-31 — MEASURED: this ledger is ~33 % STALE. Re-check before draining.
+
+I scoped a second tranche (L-V1 trefoil matrices, L-V2 braid words) from the "LIVE —
+re-verified" list, then checked each against `main` before editing. **Both were already
+fixed.** That prompted a sample.
+
+### The sample: 21 findings checked against `main` this session
+
+| verdict | n | findings |
+|---|---|---|
+| **already FIXED** (listed LIVE) | **7** | L-V1, L-V2, L-V17, L-V20, L-V21, L-V22, L-V23 |
+| still LIVE (confirmed) | 14 | L-V4–L-V10 (fixed in PR #6329), L-V11, L-V12, L-V13, L-V14, L-V16, L-V18, L-V24 |
+
+**≈ 33 % of the sample was already repaired.** The "LIVE — re-verified" tag is dated
+2026-08-19; `main` has advanced roughly a thousand commits since. So the headline **190 live**
+is probably nearer **~127**, and an agent draining this ledger top-to-bottom will spend about
+a third of its effort re-checking work already done — or, worse, "fix" something already
+correct.
+
+The repairs are real and good, not cosmetic. `trefoil-operator-algebra` (L-V1) now uses
+`s₁ = β`, `s₂ = α²β` — both trace 0, conjugate via α, and I verified at 25 dps that the braid
+relation `s₁s₂s₁ = s₂s₁s₂` **holds**, that the displayed common value is right, that
+`s₂ = α s₁ α⁻¹`, `s₁² = −I`, and `αβα = β`. That is exactly the structural repair this ledger
+prescribed. All three braid-word tables (L-V2) now carry the corrected words, and I re-derived
+all twelve closure component counts: every one matches its table's own Components column.
+
+### Two method warnings for whoever drains this
+
+1. **Grep-absence is NOT evidence of a fix.** My first pass marked L-V24 "gone → FIXED" — the
+   text is verbatim at `hydrogen-partition-function.md:30`; only LaTeX spacing (`$j = 0$`)
+   defeated the search string. Read the site.
+2. **This ledger's file paths omit chapter directories** (`vertex-algebra-jet-relations.md` is
+   in `climax-volume-mass/`, `vacuum-state-su2.md` in `lifting-and-descent/`,
+   `holonomy-trefoil.md` and `rho-s3-holonomy-exposition.md` in `braids-and-knots/`). My first
+   check reported five as FILE-GONE; all five exist. `find . -name` before concluding.
+
+### L-V24 fixed here
+
+`hydrogen-partition-function.md:30` had the heat-capacity limits exactly inverted. Corrected,
+and "recovers the classical **monatomic** result" → "classical **equipartition** result for
+three rotational degrees of freedom" — the block is about rotational modes, and `(3/2)Nk_B`
+there is equipartition over three rotational DOF, not the monatomic translational result.
+
+### Sidecar refresh has a CEILING, and it is 40/77
+
+Measured on this block. `--only <crit>` refreshes exactly that one criterion. A **full**
+directory sweep (no `--only`) refreshes **40 of 77** criteria: **17** never carry a hash at all
+(the `da-*`, `expo-*`, `milnor-*` agent-adjudicated ones, seeded `needs-agent` only) and **20**
+remain stale. Three distinct stale hashes coexist in one sidecar, so "the sidecar is fresh" is
+not even single-valued.
+
+**Correcting my own claim in PR #6329:** I wrote "sidecars refreshed for exactly these 13
+blocks" there having run `--only wall-side-correct` — i.e. **1 criterion of 77 per block**,
+not a refresh. The PR body needs that corrected. Recording it here because the overstatement
+is the same species this ledger exists to catch.
