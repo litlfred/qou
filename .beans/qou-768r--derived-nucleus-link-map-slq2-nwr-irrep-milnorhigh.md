@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T03:47:14Z
+updated_at: 2026-08-31T03:57:06Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -66,3 +66,72 @@ forces **bounded degree**. So an energy-from-linking bound growing
 superlinearly in A is ALREADY EXCLUDED -- as is the `C(A,3)` triple-count
 scaling, by C4 of the A>=5 constraint table. Filter fetched results on this
 before spending time on them.
+
+
+## RESULT 2026-08-31 — the SLq(2) label admits the atom word at EVEN A only
+
+Route 1 does not need the fetch to reach its first hard result, and the result
+is a structural exclusion of half the periodic table.
+
+### `r` needed no fetch
+
+For a coherently-oriented closed braid on `n` strands the rotation number is
+`n`. Finkelstein's own trefoil values confirm it: the trefoil is the closure of
+`sigma_1^3` in `B_2`, and he records `r = +-2`. So `r = 3A`, the framework's own
+strand count. The "r is computed nowhere" gap in the survey above is closed --
+it is not a new computation, it is the strand count already in hand.
+
+### The label is not free
+
+`D^j_{mm'}` needs `j-m` and `j-m'` integral. `j-m = (N-w)/2` is automatic
+(`w = N mod 2`). `j-m' = (N-r-1)/2` is the binding one, and Seifert on a closed
+braid (`chi = n - c = 2 - 2g - mu`) turns it into
+
+    label consistent  <=>  mu ODD.
+
+For a knot (`mu = 1`) automatic -- which is why the dictionary is stated for
+knots.
+
+### Measured: mu = A + 1
+
+Exactly, over eleven isotopes including asymmetric ones. Branch-INDEPENDENT: a
+superposition letter and its `sigma` branch project to the same permutation, so
+`mu` is the one quantity here not depending on which of the `2^(2A+1)` branches
+is taken. Cross-check: the deuteron's `mu = 3` reproduces the 3 components the
+2026-08-25 audit measured independently in SnapPy across all 32 branches.
+
+Hence `mu` odd <=> **A even**:
+
+    label consistent : 2H, 4He, 6Li, 8Be, 12C, 16O
+    NO label at all  : 3H, 3He, 5Li, 7Be, 7Li   (every branch)
+
+The excluded half is not incidental -- it contains the A=3 mirror pair this
+arc's convention systematic lives on.
+
+### Lean (sorry-free, lean-direct exit 0, axiom-clean on all four)
+
+`QOU/Mass/SLq2LabelParity.lean` -- `seifert_label_parity` (label <=> mu odd),
+`knot_label_consistent` (knots automatic), `components_odd_iff_even_A`,
+`label_admits_even_A`.
+
+### RETRACTED first attempt, recorded because the error is instructive
+
+My first pass fed `N = 10A - 2` (genuine braid letters) into the parity test as
+though it were THE crossing number and concluded the label was valid at `A = 3`
+ONLY -- the exact opposite of the corrected answer. The test was ill-posed: the
+word carries `2A+1` superposition letters, so its crossing count is a RANGE over
+`2^(2A+1)` branches and `10A-2` is only the minimum. **A quantity that varies
+across branches cannot decide a question about the closure.** The corrected test
+routes through `mu`, which does not.
+
+### What this does to the fetch list
+
+It ANSWERS item 2 from the framework side, negatively: the dictionary as stated
+is knot-flavoured, because the parity condition IS the knot condition. So the
+fetch should be re-aimed at whether a **link** generalisation of the SLq(2)
+labelling exists (multi-component, `mu > 1`), not at whether the knot version
+extends to general N. Items 1 and 3 are unaffected; route 3's items 4-7 are
+unaffected.
+
+Scope **(a)**: this labelling applied to this word. Does not refute the SLq(2)
+route -- it locates precisely what a generalisation must supply.
