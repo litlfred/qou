@@ -1,0 +1,117 @@
+{
+  "computation": "brunnian-triple-exhaustion",
+  "scriptFile": "probes/brunnian_triple_exhaustion_probe.py",
+  "computedAt": "2026-08-31T07:26:09.444165+00:00",
+  "contentBlock": "qou-brng",
+  "description": "The A=3 count-channel carrier space collapses to a single integer M = m1+m2+m3, and is exhausted: b3/b2 = M - 3 is a non-negative integer while the measured ratio is 950815/1483044, strictly between 0 and 1. Every carrier misses by at least 532229/1483044 (55.98%), attained at M=4, and the gap grows monotonically beyond -- so the exclusion is complete over every crossing number. This closes the 'search the 20 triples' step by proving there is nothing to search.",
+  "measured_b3_over_b2": "950815/1483044",
+  "collapse": {
+    "step_1": "countChannel depends only on n+ + n-, so 382,637,520 band words -> 20 triples at c <= 12",
+    "step_2": "b3/b2 = M - 3 depends only on the SUM, so 20 triples -> 4 values of M",
+    "n_triples_c_le_12": 20,
+    "n_distinct_M": 4
+  },
+  "enumeration": [
+    {
+      "M": 3,
+      "c3": 6,
+      "b3_over_b2": "0",
+      "rel_err_fraction": "-1",
+      "n_triples": 1,
+      "example": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 4,
+      "c3": 8,
+      "b3_over_b2": "1",
+      "rel_err_fraction": "532229/950815",
+      "n_triples": 3,
+      "example": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "M": 5,
+      "c3": 10,
+      "b3_over_b2": "2",
+      "rel_err_fraction": "2015273/950815",
+      "n_triples": 6,
+      "example": [
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "M": 6,
+      "c3": 12,
+      "b3_over_b2": "3",
+      "rel_err_fraction": "3498317/950815",
+      "n_triples": 10,
+      "example": [
+        1,
+        1,
+        4
+      ]
+    }
+  ],
+  "exhaustion": {
+    "min_gap": "532229/1483044",
+    "min_gap_at_M": 4,
+    "min_gap_relative_fraction": "532229/950815",
+    "complete_over_all_c": true,
+    "reason": "b3/b2 = M - 3 increases with M, so nothing above M=4 can do better; c <= 12 was never a restriction"
+  },
+  "assertions": [
+    {
+      "name": "the measured ratio is the exact rational the Lean carries",
+      "passed": true,
+      "detail": "matches QOU.Mass.CarrierCrossingQuantisation.rMeasured, imported by the Lean rather than restated"
+    },
+    {
+      "name": "b3 sees only the SUM -- the 20 triples collapse to 4 values of M",
+      "passed": true,
+      "detail": "20 triples at c <= 12, 4 distinct M; every triple with the same sum gives the identical b3/b2 (Lean bRatio_depends_only_on_sum)"
+    },
+    {
+      "name": "M = 3 is FORCED to be (1,1,1) -- the Borromean -- and gives exactly 0",
+      "passed": true,
+      "detail": "one clasp per pair is the only triple summing to 3; it lands exactly on the degenerate locus, agreeing with CountChannelCarrierLocus.canonical_carriers_b3_eq_zero -- reached here by exhaustion rather than by assignment"
+    },
+    {
+      "name": "no integer M reproduces the measured b3",
+      "passed": true,
+      "detail": "b3/b2 = M - 3 is an integer; the measured value lies strictly between 0 and 1. The Lean proves it for EVERY integer, and does not even need the Brunnian hypothesis (no_carrier_reproduces_b3)"
+    },
+    {
+      "name": "and every carrier misses by >= 532229/1483044 (55.98%), attained at M=4",
+      "passed": true,
+      "detail": "min gap 532229/1483044 = 0.358876, 55.98% of measured, at M = 4; matches the Lean bound carrier_gap_bounded_below"
+    },
+    {
+      "name": "c <= 12 was NEVER a restriction -- the gap grows monotonically past M=4",
+      "passed": true,
+      "detail": "b3/b2 = M - 3 increases with M, so no larger carrier can do better (Lean gap_increases_beyond_four). The enumeration is complete over EVERY crossing number, not merely c <= 12 -- there is no larger search to run"
+    }
+  ],
+  "allPassed": true,
+  "scope": "(b) on the conjunction {b3 carried by the count channel, mu \u221d c, Hopf pair carrier c2 = 2, Brunnian A=3 carrier}, invariant named: M is an integer >= 3, so b3/b2 is a non-negative integer while the measured ratio is not one. (a) on each ingredient separately -- it does NOT say the count channel is wrong nor that the carrier is not Brunnian; brunnian_binding_survives is untouched.",
+  "caveats": [
+    "The live ingredient is the FIRST one -- that b3 is carried by the count channel at all. Owner ruling A fixes the pair carrier; dropping Brunnian-ness hits brunnian_not_pairLocal (a pair-local carrier forces b3 = 0, refuted by AME); and bRatio_scale_invariant shows mu \u221d c is not a convention one can relax. So the exclusion points back to qou-brng's original framing: the extensive term is somewhere the crossing count does not reach.",
+    "This is A=3 only. b4 and the A=4 carrier (6 pairs, not 3) are not touched, and nothing here follows for them.",
+    "b3 uses the isospin-averaged Bbar(3). A carrier assigning DIFFERENT triples to 3H and 3He would put b3/b2 on the half-integer grid rather than the integers -- that case is the one already covered by CarrierCrossingQuantisation.even_lattice_gap (22.01%), not by this file, and it is still excluded.",
+    "The Lean imports rMeasured from CarrierCrossingQuantisation rather than restating it, so the two cannot drift apart."
+  ],
+  "lean": "QOU/Mass/BrunnianTripleExhaustion.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/carrier-crossing-quantisation.witness.json",
+    "probes/enumerator-selection-criterion-audit.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies; integer crossing counts"
+}

@@ -11,6 +11,7 @@ updated_at: 2026-08-31T04:40:24Z
 updated_at: 2026-08-31T04:44:50Z
 updated_at: 2026-08-31T04:50:43Z
 updated_at: 2026-08-31T05:58:46Z
+updated_at: 2026-08-31T07:27:11Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1062,3 +1063,43 @@ matrices, so defect 2's root cause is in the producer.
 **Revised next step.** Search the **20 binding-relevant triples**, not band
 words — and select on something that is not the Markov trace, since the trace
 provably cannot separate binding-equivalent carriers.
+
+
+### The A=3 count-channel carrier route is EXHAUSTED — there was nothing to search (2026-08-31)
+
+The authorised next step was *"search the 20 binding-relevant triples and select
+on something that is not the Markov trace."* **There is nothing to search.** The
+space collapses once more, to a single integer, and enumerating it is a proof.
+
+**Second collapse.** With `c₂ = 2` (owner-ruled Hopf pair) and `c₃ = 2(m₁+m₂+m₃)`,
+`bRatio_hopf_pair` gives `b₃/b₂ = M − 3` with `M := m₁+m₂+m₃`. **`b₃` cannot see
+the triple either — only its sum.** So 20 triples → 4 values of `M`.
+
+| `M` | `c₃` | `b₃/b₂` | vs measured | triples |
+|---|---|---|---|---|
+| 3 | 6 | `0` | −100 % | 1 — forced `(1,1,1)`, the Borromean |
+| 4 | 8 | `1` | **+55.98 %** | 3 |
+| 5 | 10 | `2` | +211.95 % | 6 |
+| 6 | 12 | `3` | +367.93 % | 10 |
+
+`M ≥ 3`, so `b₃/b₂` is a **non-negative integer** while measured is
+`950815/1483044 ≈ 0.6411`, strictly between 0 and 1. Nothing hits it; every `M`
+misses by `≥ 532229/1483044 ≈ 0.35888` = **55.98 %**, attained at `M = 4`.
+
+**`c ≤ 12` was never a restriction.** `b₃/b₂ = M − 3` *increases* with `M`, so
+nothing above `M = 4` does better. **The exclusion is complete over every
+crossing number** — there is no larger search that could exist.
+
+**Scope (b)** on the conjunction {`b₃` carried by the count channel, `μ ∝ c`,
+Hopf pair carrier, Brunnian A=3 carrier}, invariant named: `M` is an integer.
+**(a)** on each ingredient; `brunnian_binding_survives` untouched.
+
+**The live ingredient is the FIRST one** — that `b₃` is carried by the count
+channel at all. Owner ruling A fixes the pair carrier; dropping Brunnian-ness
+hits `brunnian_not_pairLocal`; `bRatio_scale_invariant` shows `μ ∝ c` is not a
+relaxable convention. So this returns `qou-brng` to its original framing: **the
+extensive term is somewhere the crossing count does not reach.**
+
+Lean `QOU/Mass/BrunnianTripleExhaustion.lean` (8 decls, sorry-free, imports
+`rMeasured` from `CarrierCrossingQuantisation` rather than restating it, so the
+two cannot drift); probe 6/6.
