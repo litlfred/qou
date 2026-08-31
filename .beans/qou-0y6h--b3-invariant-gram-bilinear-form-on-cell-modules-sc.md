@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T09:31:37Z
+updated_at: 2026-08-31T07:35:56Z
 ---
 
 ## 2026-08-29 — this is closer than the standing plan implies (from qou-0ubf)
@@ -120,3 +120,67 @@ SchurElementCriterion still has NO instance. Both obligations §3b separates —
 that the combinatorial schurElement equals the algebra-theoretic one, and GP
 7.2.6 proper — are untouched. Nothing here bears on the P!=NP wall;
 semisimplicity is a magnitude-axis fact.
+
+
+## 2026-08-30/31 — det(twGram) MEASURED at ranks 1-3, and the route is bounded
+
+Probe: computations/hecke/tw_gram_determinant_probe.py.
+Audit: docs/audits/2026-08-30-tw-gram-determinant-measured.md. PR #6165.
+
+  n=1  det = [2]_q^2
+  n=2  det = - 2^4 . q^2 . [2]_q^2 . [3]_q^6
+  n=3  det = - 2^4.3^18 . q^22 . [2]_q^28 . [3]_q^6 . [4]_q^20
+
+The integer constant is exactly prod_lambda d_lambda^(d_lambda^2) over the
+partitions of n+1: 1 / 16 / 6198727824 for S_2 / S_3 / S_4.
+
+Firmness, strongest first. n=1 reproduces twGram_det_rank_one, proved sorry-free
+in Lean, so the arithmetic is validated against a result the probe did not
+produce. n=2 is symbolic over Q(q) with NO fitting -- the 16 falls out of the
+determinant directly, which is what makes the identification of the constant a
+prediction rather than a curve fit. n=3 is a POLYNOMIAL IDENTITY, not a sample:
+row-degree bound 216, candidate degree 122, agreement at 298 integer points.
+
+### The finding is a NEGATIVE and it bounds this whole bean
+
+The constant is > 1 for n >= 2, so in a characteristic dividing it det = 0 EVEN
+WHERE H_n(q) IS SEMISIMPLE -- the regular trace form of M_d(K) is degenerate
+exactly when char K | d, and the constant is the product of those obstructions
+across the Wedderburn blocks. So
+
+    det(twGram) != 0  ==>  H_n(q) semisimple
+
+is all this route can ever give. The CONVERSE IS FALSE. Explicit counterexample:
+char 2, q of multiplicative order > 3, n = 2 -- q, [2]_q and [3]_q are all
+nonzero while 2^4 = 0, and Dipper-James still gives semisimplicity there.
+
+Consequences:
+* Any general Lean theorem along this route MUST carry a characteristic
+  hypothesis. QGeneric q n (q^k != 1) does not supply one and is an incorrect
+  hypothesis set on its own.
+* Do not attempt the converse (semisimple => det != 0) as a clean criterion --
+  it is false, counterexample above.
+* Costs nothing for the substrate case K = R, q > 1, which is the shape
+  isSemisimpleRing_rank_one_of_pos is already in.
+
+Scope-(b) structural exclusion with the invariant cited, per AGENTS.md.
+
+### Shape confirms this bean's target, with the derivation labelled as a reading
+
+'det(Gram) = prod Schur' is the right target. The structural reading -- NOT
+proved -- is that the regular trace is the symmetrizing trace twisted by the
+central element z = sum_lambda d_lambda s_lambda e_lambda, giving
+det(regGram) = det(tauGram) . det(L_z) = +- q^(sum_w l(w)) . prod (d s)^(d^2).
+That reading predicts the integer constant and the prediction holds. It does NOT
+predict the q-exponents as written (sum_w l(w) is 9 and 72 against the measured
+2 and 22, because the s_lambda carry q-powers), and the factorisation into
+[k]_q is not canonical since [4]_q = [2]_q(1+q^2). Read the table as a value,
+not as a normal form.
+
+### Still open
+
+det(twGram) in LEAN at rank >= 2. Knowing the value does not supply the proof:
+the general diagonal structure constant [T_u T_w : T_w] still has no closed form
+in the corpus, and the proved generator case does not imply it -- at q=1 the
+trace is delta_{u,1}(n+1)!, at generic q the u = s_i case is (q-1)(n+1)!/2, so
+it is not concentrated at u=1.
