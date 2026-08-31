@@ -1,0 +1,230 @@
+{
+  "computation": "enumerator-selection-criterion-audit",
+  "scriptFile": "probes/enumerator_selection_criterion_audit.py",
+  "computedAt": "2026-08-31T04:39:33.632412+00:00",
+  "contentBlock": "qou-brng",
+  "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
+  "source_witness": "_deprecated/binding-k-enumerator.witness.json",
+  "generator_classification": {
+    "extended_set_A3": [
+      3,
+      -3,
+      4,
+      -4,
+      5,
+      -5,
+      6,
+      -6,
+      7,
+      -7,
+      8,
+      -8
+    ],
+    "interface": [
+      3,
+      6
+    ],
+    "intra_nucleon": [
+      4,
+      5,
+      7,
+      8
+    ],
+    "rule": "sigma_i is inter-component iff 3 | i, for offsets [0,3,6]"
+  },
+  "residual_ranking": {
+    "tritium": [
+      {
+        "word": [
+          -8,
+          -8
+        ],
+        "residual": "0.9321237012643592",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -5,
+          -5
+        ],
+        "residual": "0.9321237012643594",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -3,
+          -3
+        ],
+        "residual": "0.9339216957602768",
+        "kind": "interface"
+      },
+      {
+        "word": [
+          -6,
+          -6
+        ],
+        "residual": "0.9339216957602768",
+        "kind": "interface"
+      },
+      {
+        "word": [
+          -4,
+          -4
+        ],
+        "residual": "0.9354509488709238",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -7,
+          -7
+        ],
+        "residual": "0.935450948870924",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          7,
+          7
+        ],
+        "residual": "1.0966548016261708",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          4,
+          4
+        ],
+        "residual": "1.096654801626171",
+        "kind": "self-crossing"
+      }
+    ],
+    "he3": [
+      {
+        "word": [
+          -8,
+          -8
+        ],
+        "residual": "0.9174522082313529",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -5,
+          -5
+        ],
+        "residual": "0.9174522082313531",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -3,
+          -3
+        ],
+        "residual": "0.9192502027272705",
+        "kind": "interface"
+      },
+      {
+        "word": [
+          -6,
+          -6
+        ],
+        "residual": "0.9192502027272705",
+        "kind": "interface"
+      },
+      {
+        "word": [
+          -4,
+          -4
+        ],
+        "residual": "0.9207794558379175",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          -7,
+          -7
+        ],
+        "residual": "0.9207794558379176",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          7,
+          7
+        ],
+        "residual": "1.0819833085931645",
+        "kind": "self-crossing"
+      },
+      {
+        "word": [
+          4,
+          4
+        ],
+        "residual": "1.0819833085931647",
+        "kind": "self-crossing"
+      }
+    ]
+  },
+  "ulp_analysis": {
+    "tritium": {
+      "rank1": "0.9321237012643592",
+      "rank2": "0.9321237012643594",
+      "gap_in_ulp": "2"
+    },
+    "he3": {
+      "rank1": "0.9174522082313529",
+      "rank2": "0.9174522082313531",
+      "gap_in_ulp": "2"
+    }
+  },
+  "assertions": [
+    {
+      "name": "the '..._extended' field is 2/3 INTRA-nucleon despite its name",
+      "passed": true,
+      "detail": "8 of 12 signed entries are intra-nucleon; only sigma_3 (interface 1|2) and sigma_6 (interface 2|3) join different nucleons"
+    },
+    {
+      "name": "DEFECT 1 -- the residual's rank-1 pick is a SELF-CROSSING, both nuclei",
+      "passed": true,
+      "detail": "rank-1 is [-8,-8] = sigma_8^-2 for both 3H and 3He; sigma_8 joins strands 8,9, both inside nucleon 3, so the carrier has zero inter-component crossings and countChannel = 0 -- it binds nothing (Lean selfCrossing_countChannel_eq_zero)"
+    },
+    {
+      "name": "rank-2 is also a self-crossing",
+      "passed": true,
+      "detail": "rank-2 is [-5,-5] = sigma_5^-2, inside nucleon 2; the first genuine interface candidate appears only at rank 3"
+    },
+    {
+      "name": "DEFECT 2 -- the rank-1/rank-2 gap is 2 ULP, i.e. float64 rounding",
+      "passed": true,
+      "detail": "gaps measure 2.0 and 2.0 ULP; sigma_5 and sigma_8 are the SAME generator of two different nucleon blocks, so block symmetry makes the true residuals EQUAL -- the rank-1 slot is decided by rounding, not by mathematics"
+    },
+    {
+      "name": "DEFECT 3 -- the two genuine interfaces are EXACTLY degenerate",
+      "passed": true,
+      "detail": "[-3,-3] and [-6,-6] record the identical residual to every digit in both nuclei, so the criterion cannot distinguish the 1|2 interface from the 2|3 one; it is not selecting, it is tying"
+    },
+    {
+      "name": "the corpus's recorded carrier [3,3] is the MIN-LENGTH pick, not the residual winner",
+      "passed": true,
+      "detail": "min_length list heads with [3,3] for all three atoms; the residual-ranked head is [-8, -8]. My earlier claim that 'the principle is not minimality' is right about the code's sort key and wrong about what produced the corpus's carrier"
+    },
+    {
+      "name": "extending L_K_max is FUTILE without repairing the criterion",
+      "passed": true,
+      "detail": "a longer search re-ranks by a comparator that prefers non-carriers (defect 1), breaks ties in rounding error (defect 2) and is degenerate on the interfaces (defect 3); more candidates do not fix a broken comparator"
+    }
+  ],
+  "allPassed": true,
+  "scope": "(b) on the enumerator's selection criterion AS IMPLEMENTED, with the invariants named: the block arithmetic of constituent_offsets (defects 1 and 3) and float64 ULP spacing (defect 2). (a) on the IDEA of residual-based selection, which is untested -- no repaired criterion has been run, and nothing here says one would fail.",
+  "caveats": [
+    "This audits RECORDED output and re-runs nothing. If the witness is regenerated with a different generator set or in exact arithmetic, every number here changes and the audit must be re-done rather than quoted.",
+    "The float64 values are read as float64 ON PURPOSE -- they are the subject. The ULP arithmetic is about the recorded data, not a computation of the framework's own quantities. They are SERIALIZED AS repr() STRINGS, which round-trip losslessly, so the witness carries no raw float64 and the ULP ratio is stored as an exact Fraction -- the audited values survive intact without tripping the raw-float64 ratchet.",
+    "Defect 3 is a symmetry, not a bug: the 1|2 and 2|3 interfaces ARE equivalent under the construction, so any criterion built from the trace alone will tie them. Breaking that tie needs information the trace does not carry, which is a design question rather than a fix.",
+    "The corpus's canonical A=3 carrier (Borromean L6a4) is not reachable from the MINIMAL set at all: sigma_3 and sigma_6 are distant hence commute, so that subgroup is free abelian and Brunnian forces the trivial carrier. The recorded run used the EXTENDED set, where Brunnian carriers do exist."
+  ],
+  "lean": "QOU/Mass/EnumeratorSelectionDegeneracy.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/carrier-crossing-quantisation.witness.json"
+  ]
+}
