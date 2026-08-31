@@ -4635,3 +4635,99 @@ filter (needs 0.499104480185 / +400.29; `h/2` gives **0.104530149398** /
 
 No `c_k`, no `K`, no Q_β movement — L2 stays 1279 ppb. Not a claim that no
 D-frame resummation exists. Scope (a).
+
+### Entry 15 read against the counit-hypothesis entry (merged from main, 2026-08-31)
+
+The two landed in parallel and are **complementary, not overlapping** — recorded
+so a later reader does not take them for one result stated twice.
+
+  * The counit entry attacks the **trace** side: which `z` reproduces the
+    required weight. Answer: neither admissible point (`z = q` 12.470 % off,
+    `z_D` 43.157 % off), the point that fits (`z = 1`, counit) is proved
+    excluded, and `z_required` forces a **negative** Wedderburn weight.
+  * Entry 15 attacks the **bar-defect** side: the defect is z-FREE within the
+    full-bar class, so no `z` in that class changes it.
+
+They converge on the same conclusion from opposite directions — *the `z`
+direction is closed* — and neither is evidence for the other. Together with the
+anchor filter (`qbeta_ladder_alpha_form_filter_probe`) that is **three**
+independent closures: trace weight, bar parity, and the anchors.
+
+One cross-check worth stating because it is easy to conflate: entry 15's
+distinguished `z = h/2` and the counit entry's `z = 1` are **different points**
+excluded for **different reasons** — `h/2` by the two-row cap (it is the unique
+bar-ODD member of the full-bar class), `z = 1` by `one_not_root`. Neither
+exclusion implies the other.
+
+---
+
+## Entry 16 — the two-anchor filter on `K(δ)`: entry 12 measured the SMALLER of two quantities (2026-08-31)
+
+`computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py` — **9/9**,
+mpmath 60 dps, **runs standalone with `PYTHONPATH` stripped**.
+Audit: `docs/audits/2026-08-31-cds1-block-bar-defect-and-conjugation.md` (addendum).
+
+Entry 12 asked for a "genuinely different input" on `K`. Entry 15 established
+that neither block resolution nor Kohno–Drinfeld supplies one. This applies the
+technique the **z-form filter** already uses — two anchors sharing `Q_codata`
+exactly (asserted, not assumed) — to `K` instead of to `z`:
+
+    K_required = Q_codata / ( Q_A * (1 - u^2) * cos(alpha - delta/2) )
+
+### 1 — Neither admitted candidate reaches the VALUE, and that reframes entry 12
+
+| | miss vs `K_required` | × the 7.797 ppb target |
+|---|---|---|
+| `K ≡ 1` | **281380 ppb** | 36088× |
+| `K = cos(δ/2)` | **221686 ppb** | 28432× |
+| *gap between the candidates* | *59694 ppb* | *7656×* ← **what entry 12 measured** |
+
+**The choice between the two is not the blocker.** The N=1 factor is ~2.8e-4
+short whichever is chosen. Entry 12 is not wrong about the gap — it is measuring
+the smaller of two quantities, and the larger was never computed.
+
+### 2 — The SLOPE misses by three orders, wrong sign
+
+    required  dK/ddelta = +6.2399501753 (D)   +6.2934180689 (C)
+    cos(delta/2)        = -0.0054631674        ratio -1142.19
+    K == 1              =  0
+
+### 3 — Candidate-free self-consistency
+
+`K(0) = 1` + the value fix the MEAN slope over `[0, δ₀]` = **−0.0128759899**;
+the filter fixes the LOCAL slope = **+6.2399501753**. Ratio **−484.62**. Any `K`
+meeting all three is strongly non-monotonic on the scale of `δ`, with nothing in
+the arc motivating it.
+
+### Convention-INDEPENDENT — which is what makes it a statement about the FORM
+
+C and D require slopes agreeing to **0.85 %**. The obstruction belongs to
+`F = cos(a − δ/2)·K(δ)`, not to a convention choice.
+
+### The slope is RED-TEAMED, unlike the z filter's
+
+That one was a 2-point secant over `dq = 1.29e-8` and carried an explicit
+caveat. This is a central difference **stable to 12 significant figures across
+twelve orders of step size** (rel `1e-8`→`1e-20`, max spread 3e-15), with the
+independent two-anchor secant reproducing it to 8.
+
+### Scope — read the attribution
+
+Scope (a). `K_required` holds `α` at the value **the form** gives, and `α` is
+not derived — so a wrong `α` is absorbed into `K_required`. This does **not**
+show `K` must equal 0.99972; it shows the **pair** `(α, K)` from this form
+cannot reproduce both anchors. Form-level negative, consistent with and sharper
+than the arc's standing conclusion that the form must change. No `c_k`, no fit,
+L2 unchanged at 1279 ppb.
+
+### Also: my own "next" recommendation was wrong twice, and the corpus said so
+
+I twice recommended the **Habiro-element route** as the untried source for `K`.
+Corpus-grep on `qou-i2ir` (in-progress, Route C f-map) shows the amplitude leg
+is **already fenced**: C16 (not a formal Habiro element), C17 (qZeilberger,
+O(1) residuals), C18 (PSLQ, entropy-blocked), and the Route-C amplitude route
+itself REFUTED scope-(a) structurally by a one-scale/two-target gate
+(`4λ₂³ + λ₃² = 6.088 ≠ 0`, a sum of positives) plus a √3-parity mismatch. That
+fencing targets the **`c_k` rungs**, so it does not literally reach `K` — but
+the route I was pointing at is not open ground, and I should have grepped before
+recommending it rather than after.
