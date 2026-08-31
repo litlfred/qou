@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:09:04Z
-updated_at: 2026-08-31T03:09:43Z
+updated_at: 2026-08-31T03:19:49Z
 ---
 
 ## The finding (branch `claude/binding-channel-arity-2026-08-31`)
@@ -75,3 +75,51 @@ z = A−1", which is true of the additive ansatz and not of `binding_canonical`.
 Measured on the corpus's own closed-form factorisation, not on the direct Hecke
 trace `binding_canonical` evaluates; if those disagree, the channel-2 rows move.
 Scope (a) throughout.
+
+
+## 🛑 CORRECTION to my own entry above (same session, before merge)
+
+Three claims in the entry above were wrong. Corrected in the probe, the PR body
+and here. The substantive channel finding survives; the framing did not.
+
+**1. `B_late` is NOT a log channel.** I wrote that `binding_canonical` "computes
+the log-like form and labels it REFUTED". Read at `binding_canonical.py:522-539`:
+`B_late = Q_β·Σ_λ y_λ(θ_free[λ] − θ_atom[λ])` with `θ = acos(χ/dim)` or
+`acosh(|χ|/dim)` — an ANGLE per Wedderburn block, summed over partitions, not
+over bonds. Its `# refuted: small/neg/shrinks` note says nothing about the
+free-energy channel.
+
+**2. The free-energy channel is LIVE, and my Channel 1 duplicates it.**
+`computations/derived_bond_graph_binding.py:170-171` computes
+`B_chain = E0*sum(log(1/f[b]) for b in cb)` and `B_complete` over `C(A,2)` — the
+same three factors, the same comparison, against AME. I first grepped `mp.log`
+and concluded the channel existed "only in `_deprecated/`"; that producer uses
+`math.log`, so my grep could not see it. **My Channel 1 is an independent
+re-derivation and is now cited as such, not offered as new.** This is a
+corpus-grep miss on my part: path 3 (`computations/`) would have caught it with
+a less specific pattern.
+
+**3. `binding_canonical` uses the CHAIN, not the complete graph.** It calls
+`atom_braid_word_3A(Z, N, include_inter=True)`, which I had myself measured to be
+`A−1` bonds. So it is not the producer the complete-graph exclusion is about —
+`build_atom_nf` / `build_atom_nf_sym` is. The PR title said "the channel
+binding_canonical uses", which conflated channel with bond set.
+
+### What survives, unchanged
+
+* The arity gap itself: `complete_graph_no_saturation` is about additive `ε·M`;
+  the trace-difference channel enters through `1 − ∏f`, bounded by 1. Two live
+  channels, and the exclusion is a statement about one of them.
+* Channel 2's measurements: the bond sets agree to 10 significant figures from
+  A=12; `A* = 2/ln c = 16.163` against measured argmin 16; and the bound showing
+  no bond set can plateau there.
+
+### Two defects found in `derived_bond_graph_binding` while checking (not fixed)
+
+* **Stale docstring convention.** Line 18 declares `z = 1/(q^½+q^{-½})`
+  (convention C); line 78 computes `q0**3/(q0**2+1)` (convention D). The body is
+  right. Same defect class as the `markovZc` docstring (bean `qou-961o`).
+* **NO-FLOAT64 violation in a live witness-emitting producer.** Line 77 is
+  `q0, h, me = float(q0), float(h), float(me)` and the binding is accumulated
+  with `math.log` — float64 end to end, and it writes
+  `derived-bond-graph-binding.witness.json`. Worth its own bean.
