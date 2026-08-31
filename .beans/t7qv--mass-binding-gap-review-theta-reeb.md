@@ -858,3 +858,88 @@ decision is on the record.
 The `K`-via-knot-convolution line is answered end to end and every follow-up it
 generated is closed. Remaining open items on this bean are the older ones
 (`A ≥ 5` geometric saturation; the octahedral arrangement), untouched by this arc.
+
+---
+
+## `A ≥ 5` saturation and the octahedral arrangement — 2026-08-31
+
+Probe `computations/probes/geometric_saturation_and_labelling_probe.py`
+(4 assertions). The two linked items split into questions with **different**
+answers. `_deltahedron` in `gap2_irreducible_triple_bracket_probe` is hardcoded
+as a *"3-D packing fact"* — asserted, not derived. Now derived.
+
+### Derived
+
+**1. The saturation law is Euler's formula.** All-triangular faces ⟹ `2E = 3F`,
+so `V − E + F = 2` gives `E = 3V − 6`, no packing input. Every hardcoded count
+**is** `3A − 6`:
+
+| A | \|E\| hardcoded | `3A−6` | `C(A,2)` | saturates |
+|---|---|---|---|---|
+| 4 | 6 | 6 | 6 | no (complete) |
+| 5 | 9 | 9 | 10 | yes |
+| 6 | 12 | 12 | 15 | yes |
+| 7 | 15 | 15 | 21 | yes |
+
+**2. The `A ≤ 4` / `A ≥ 5` crossover is a quadratic root.**
+
+    3A − 6 = A(A−1)/2  ⟺  A² − 7A + 12 = 0  ⟺  (A−3)(A−4) = 0
+
+Simplex and deltahedron agree **exactly at `A = 3, 4`**, strictly apart for
+`A ≥ 5`. The boundary stated as a modelling choice is a root pair.
+
+**3. The octahedron is forced at `A = 6`.** `E = 12` on 6 vertices forces degree
+sum 24, i.e. 4-regularity — and there are **15 labelled but exactly one
+isomorphism class** of 4-regular graph on 6 vertices, which is the corpus's.
+(Complement of a 4-regular graph on 6 vertices is a perfect matching; all such
+are isomorphic.) **"Deriving the octahedral arrangement" is done.**
+
+### Not derived — and worse than this bean recorded
+
+The arrangement fixes the *graph*, not which vertices are protons. `⁶Li`'s 20
+labellings fall into two classes:
+
+| class | count | B | vs AME |
+|---|---|---|---|
+| `(8,8,0)` | 12 (60 %) | 41.590 | **+29.99 %** |
+| `(6,6,0)` | 8 (40 %) | 31.193 | **−2.50 %** |
+
+reproducing this bean's two figures exactly. **The obvious extremal principle —
+a bound state maximises its binding contacts — selects `(8,8,0)`, the +29.99 %
+one.** So the favourable −2.50 % is the *minimum*-mixed class: a pick **against**
+the only principle available, not merely a member-pick. That is stronger than
+what this bean said, and it **closes "derive the arrangement" as a route to
+rescuing −2.50 %**.
+
+Geometrically the min-mixed class is protons on one face, neutrons on the
+opposite — maximal *like*-clustering. Whether that is motivated is a modelling
+question; it is certainly not a binding-maximisation.
+
+Scale elsewhere: `⁷Li` spans `M₂ = 7…10` across its 35 labellings — a 43 %
+spread in the leading term with nothing choosing.
+
+### Scope
+
+§§1–3 are conditional on the **convex-deltahedron** hypothesis — the corpus's
+modelling choice, not derived. Two cited consequences (Freudenthal–van der
+Waerden): convex deltahedra exist only for `A ∈ {4,5,6,7,8,9,10,12}`, so there is
+**no `A = 11` member** and the model has a hole no labelling argument can fill;
+and max-contact packings and convex deltahedra are not the same family above
+`A = 9`, so the terms should not be used interchangeably there. Within
+`4 ≤ A ≤ 7`, where the corpus uses it, they agree.
+
+### Next
+
+The honest state of this bean's `A ≥ 5` line: the geometry is settled, and the
+remaining freedom is entirely in the **labelling**, where the only available
+principle points away from the favourable number. My judgement on what is worth
+doing, and it is short:
+
+1. **Retire the `−2.50 %` figure** wherever it is quoted, or re-label it as
+   min-mixed-selected. It now has a specific defect — chosen against the only
+   extremal principle — rather than a vague one.
+2. If the labelling is to be derived, it needs a principle *other* than contact
+   maximisation. Isospin/Pauli like-clustering is the obvious candidate and would
+   select the favourable class, but nothing in the corpus currently supplies it,
+   and inventing it to reach a known number is the failure mode this arc has been
+   auditing throughout.
