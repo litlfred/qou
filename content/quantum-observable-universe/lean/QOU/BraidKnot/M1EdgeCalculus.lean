@@ -263,6 +263,107 @@ theorem abs_diagLen_sub_transpose_le (u v : ℕ) :
   rw [abs_le]
   omega
 
+/-! ## The area constraint
+
+Every bound above uses only `D 0`, `λ₁` and 1-Lipschitz. The global constraint
+`∑_c D c = n` was unused, and it is worth more than all of them: computed over
+the limiting edge measure
+(`wlambda_covariance_epic_M1_limit_closed_form.py`), adding it takes the
+budget's margin from **0.047 %** to **7.54 %** — about 160× more room. The reason
+is that `min (D 0) (λ₁ - a)` is nearly vacuous away from the origin: it permits
+`D a = 0.637 √n` at `a = √n` where the truth is `0.218 √n`.
+
+Two elementary facts do it, and each is one step from something already proved:
+
+* **monotonicity** — `a * D a ≤ ∑_{c < a} D c`, since `D` is antitone;
+* **1-Lipschitz tail** — `D a * (D a + 1) / 2 ≤ ∑_{c ∈ [a, a + D a)} D c`, since
+  `D (a + k) ≥ D a - k`, which is `diagLen_le_add_sub`.
+
+The two ranges are disjoint and abut, so together they give
+`diagLen_area_bound` below. Solving that quadratic for `D a` gives the form the
+quadrature uses, `D a ≤ √(a² + 2A) - a`; it is stated here in the equivalent
+division-free way, which is both stronger as a Lean statement and free of
+`Real.sqrt`.
+
+**What is NOT proved here.** The bound is against the PARTIAL sum
+`∑_{c < a + D a} D c`, which is what the argument needs and is stronger than
+bounding by the full area. Identifying that sum with a count of boxes — hence
+with `n`, and with `A_σ → n/2` in the limit — is a separate step, and the
+`A_σ → n/2` half is a limit-shape input rather than a theorem. The 7.54 % figure
+depends on it; with only `A_σ ≤ n` the margin is 0.094 %. -/
+
+/-- Gauss, in the doubled form that stays inside `ℕ` (no division, no truncated
+subtraction escaping). -/
+private theorem two_mul_sum_range_sub (d : ℕ) :
+    2 * ∑ i ∈ Finset.range d, (d - i) = d * (d + 1) := by
+  -- Reflect `d - i` into `i + 1`, then use Gauss. Induction was the obvious
+  -- route and fails: `omega` sees `∑ i ∈ range m, (m - i)` and its eta-reduced
+  -- form as DIFFERENT atoms, so the inductive hypothesis never connects.
+  have h1 : ∑ i ∈ Finset.range d, (d - i) = ∑ i ∈ Finset.range d, (i + 1) := by
+    rw [← Finset.sum_range_reflect (fun j => j + 1) d]
+    refine Finset.sum_congr rfl fun i hi => ?_
+    have := Finset.mem_range.mp hi
+    omega
+  have h2 := Finset.sum_range_id_mul_two d
+  -- omega is linear: `d * (d + 1)` and `d * (d - 1)` are unrelated atoms to it,
+  -- so hand it the bridge. The `d = 0` case needs care -- truncated subtraction
+  -- makes `d * (d - 1) = 0` there, which is still correct.
+  have h3 : d * (d + 1) = d * (d - 1) + 2 * d := by
+    cases d with
+    | zero => rfl
+    | succ m => simp only [Nat.add_sub_cancel]; ring
+  rw [h1, Finset.sum_add_distrib, Finset.sum_const, Finset.card_range, smul_eq_mul]
+  omega
+
+/-- **Monotonicity piece.** The first `a` diagonals are each at least as long as
+the `a`-th, so they sum to at least `a * D a`. -/
+theorem mul_diagLen_le_sum (a : ℕ) :
+    a * diagLen μ a ≤ ∑ c ∈ Finset.range a, diagLen μ c := by
+  calc a * diagLen μ a = ∑ _c ∈ Finset.range a, diagLen μ a := by
+        rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    _ ≤ ∑ c ∈ Finset.range a, diagLen μ c :=
+        Finset.sum_le_sum fun c hc =>
+          diagLen_antitone μ (le_of_lt (Finset.mem_range.mp hc))
+
+/-- **1-Lipschitz tail piece.** Past `a` the profile falls by at most one per
+step, so the next `D a` diagonals sum to at least the triangle `D a (D a + 1)/2`
+— stated doubled to stay in `ℕ`. -/
+theorem triangle_le_sum_Ico (a : ℕ) :
+    diagLen μ a * (diagLen μ a + 1)
+      ≤ 2 * ∑ c ∈ Finset.Ico a (a + diagLen μ a), diagLen μ c := by
+  set d := diagLen μ a with hd
+  have hstep : ∀ i ∈ Finset.range d, d - i ≤ diagLen μ (a + i) := by
+    intro i _
+    have := diagLen_le_add_sub μ (Nat.le_add_right a i)
+    simp only [Nat.add_sub_cancel_left] at this
+    omega
+  calc d * (d + 1) = 2 * ∑ i ∈ Finset.range d, (d - i) := (two_mul_sum_range_sub d).symm
+    _ ≤ 2 * ∑ i ∈ Finset.range d, diagLen μ (a + i) := by
+        exact Nat.mul_le_mul_left 2 (Finset.sum_le_sum hstep)
+    _ = 2 * ∑ c ∈ Finset.Ico a (a + d), diagLen μ c := by
+        rw [Finset.sum_Ico_eq_sum_range]
+        simp
+
+/-- **The area bound.** Combining the two, the diagonals up to `a + D a` already
+account for `a * D a + D a (D a + 1)/2` cells. Since that sum is at most the
+number of cells on that side of the diagonal — at most `n` — solving for `D a`
+gives `D a ≤ √(a² + 2A) - a`, the form used in the quadrature. -/
+theorem diagLen_area_bound (a : ℕ) :
+    2 * (a * diagLen μ a) + diagLen μ a * (diagLen μ a + 1)
+      ≤ 2 * ∑ c ∈ Finset.range (a + diagLen μ a), diagLen μ c := by
+  have hsplit :
+      (∑ c ∈ Finset.Ico 0 a, diagLen μ c) + (∑ c ∈ Finset.Ico a (a + diagLen μ a), diagLen μ c)
+        = ∑ c ∈ Finset.Ico 0 (a + diagLen μ a), diagLen μ c :=
+    Finset.sum_Ico_consecutive _ (Nat.zero_le a) (Nat.le_add_right a _)
+  rw [← Finset.range_eq_Ico] at hsplit
+  have h1 := mul_diagLen_le_sum μ a
+  have h2 := triangle_le_sum_Ico μ a
+  have h3 : ∑ c ∈ Finset.range (a + diagLen μ a), diagLen μ c
+      = (∑ c ∈ Finset.range a, diagLen μ c)
+        + ∑ c ∈ Finset.Ico a (a + diagLen μ a), diagLen μ c := by
+    rw [← hsplit, Finset.range_eq_Ico]
+  omega
+
 /-! ## Refining the opposite-sign bound
 
 `abs_diagLen_sub_transpose_le` bounds the opposite-sign slope by `D 0 / g`, and
