@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-08-31T03:44:17Z
+updated_at: 2026-08-31T03:50:53Z
 parent: qou-9ot5
 ---
 
@@ -83,3 +83,42 @@ exit 0). **Compute:** `binding_functional_extensivity_probe.py` (4/4).
 Cauchy's equation are c*ln x -- is classical and is NOT formalised, so "forced"
 still rests on it. And this bean's own redirect stands: the three lines still
 converge on the BRAID WORD, which none of this touches.
+
+
+## 2026-08-31, SAME DAY — I correct my own entry above
+
+The entry immediately above says the 2026-08-25 audit's "posited" verdict "is
+WRONG" and that "the corpus disagreed with itself in three places". **Both are
+wrong, and the error is the one this corpus documents most often: I read the
+section and not the document.**
+
+That audit **retracts its own verdict**, later in the same file, under
+"RETRACTION + the real gap -- B = -alpha*ln|tr_M| IS derived, conditionally".
+It derives the form by a different route (Vol_alg := tr_M -> tau_arch =
+ln|Vol_alg| -> vol_through_tau -> evaluate at q_0) and says explicitly *"My
+'posited' verdict is withdrawn."* So the corpus does NOT disagree with itself,
+and no third reader had to rediscover anything.
+
+**What survives, and it inverts to something better.** 10a IS a second
+derivation, and the audit's retraction never cites it (verified: the only 10a
+mentions in that file are the ones I inserted). The two routes are not
+equivalent in strength:
+
+  Vol chain   conditional on the Kashaev volume conjecture (gap a), and
+              regime-mismatched -- KVC needs N -> infinity and q a root of
+              unity; the framework has a fixed finite braid and real q_0 > 1
+              (gap b)
+  10a         needs only multiplicativity + extensivity, both of which hold at
+              fixed finite n and real q. No conjecture, no asymptotics.
+
+So gap (a) as stated -- *"every binding number is therefore KVC-conditional"* --
+is **too strong for the FORM**. What is KVC-conditional is the identification of
+ln|tr_M| with a hyperbolic VOLUME. The log form itself has a KVC-free derivation.
+Gaps (b) and (c) stand untouched.
+
+That is a better finding than the one I claimed, and it is the one the Lean now
+formalises: the KVC-free route, sorry-free.
+
+Everything else in the entry above is unaffected -- the four Lean theorems, the
+closed form -a(1-x)(1-y), the convention-C scoping of 10a's 1.4875, and the
+paper/compute wiring.

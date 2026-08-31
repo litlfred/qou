@@ -1,33 +1,35 @@
-#!/usr/bin/env python3
-"""binding_functional_extensivity_probe.py — the binding functional IS derived,
-the 2026-08-25 audit's grep missed it, and its figure is convention-C frame.
+"""binding_functional_extensivity_probe.py — a SECOND derivation of the binding
+functional, one that does NOT need the volume conjecture.
 
-THE CORPUS-STATE CORRECTION.  `docs/audits/2026-08-25-deuteron-attack-c-convergence.md`
-runs a five-path corpus-grep for a derivation of `B = -alpha*ln|tr_M|` and concludes:
+WHAT THE CORPUS ALREADY HAS.  `docs/audits/2026-08-25-deuteron-attack-c-convergence.md`
+first records `B = -alpha*ln|tr_M|` as "posited" on a five-path grep, and then
+**retracts that itself**, later in the same document, deriving the form via
 
-    "So B = -alpha*ln|tr_M| is posited.  Scope (a) -- it is not derived *in this
-     corpus*."
+    Vol_alg(W) := tr_M(W)  ->  tau_arch = ln|Vol_alg|  ->  vol_through_tau
+                           ->  evaluate at q_0
 
-its table recording, for the first path searched:
+That retraction stands and nothing here disturbs it.  It also names the real
+gaps: (a) the chain is **conditional on the Kashaev volume conjecture**, and
+(b) the regime KVC licenses (`N -> infinity`, `q` a root of unity) is not the
+regime the framework uses (fixed finite braid, real `q_0 > 1`).
 
-    | docs/audits/ | files that **use** the form; none derives it |
+WHAT THIS ADDS.  `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+**10a** -- headed "The functional is DERIVED, not chosen -- and it is the log
+form" -- is a **second, independent** derivation that the retraction does not
+cite.  Its route: `tr_M` is multiplicative over independent subsystems
+(`tr_atom = tr_free * PROD mu_k`, measured there to 1.2e-31) and energy is
+extensive, so the trace-to-energy map obeys Cauchy's `f(xy) = f(x) + f(y)` on
+`(R_+, x)` and the log form is forced.
 
-**That is wrong.**  `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
-carries a section whose heading is literally
+**Why two routes matter here.**  10a's invokes neither the volume conjecture nor
+any asymptotic regime -- only multiplicativity and extensivity, both of which hold
+at fixed finite `n` and real `q`.  So gap (a) as the audit states it, *"every
+binding number is therefore KVC-conditional"*, is **too strong for the FORM**:
+what is KVC-conditional is the identification of `ln|tr_M|` with a hyperbolic
+VOLUME.  The log form has a KVC-free derivation.  Gaps (b) and (c) are untouched,
+and this says nothing about whether the trace ratio entering the formula is right.
 
-    ## 10a. The functional is DERIVED, not chosen -- and it is the log form
-
-dated **seventeen days earlier**, in `docs/audits/` -- the very path the table
-reports as containing no derivation.  Its argument: `tr_M` is multiplicative over
-independent subsystems (`tr_atom = tr_free * PROD mu_k`, measured there to
-1.2e-31), energy is extensive, so the trace-to-energy map obeys Cauchy's
-`f(xy) = f(x) + f(y)` on `(R_+, x)` and the log form is forced.
-
-The `qou-d5e8` bean repeats the "posited" verdict, and
-`ursell_alternation_sign_identity_probe.py` had already cited 10a as a derivation
--- so the corpus disagreed with itself in three places.
-
-WHAT THIS PROBE ESTABLISHES, and it is deliberately narrow:
+WHAT THIS PROBE ESTABLISHES, and it is deliberately narrow:WHAT THIS PROBE ESTABLISHES, and it is deliberately narrow:
 
  1. **10a's extensivity comparison, exactly.**  The log form is extensive; the
     linear rival is not; and the defect has a CLOSED FORM,
@@ -205,11 +207,11 @@ def main() -> int:
         "(tr_M(nucleon) ~ 1 at every A). It is quoted here, not re-derived."
     )
     w.add_caveat(
-        "Corpus-state finding, not a physics result: the 2026-08-25 audit and "
-        "bean qou-d5e8 both record the functional as posited with no derivation "
-        "anywhere. The derivation is in docs/audits/, the first path that audit's "
-        "own grep table lists. Both should be corrected rather than the finding "
-        "being left to a third reader to rediscover."
+        "The 2026-08-25 audit RETRACTS its own 'posited' verdict later in the same "
+        "document, via the Vol_alg/tau_arch chain. That retraction stands. What is "
+        "added here is a SECOND derivation (10a) which that retraction does not "
+        "cite, and which -- unlike the Vol chain -- needs neither the Kashaev "
+        "volume conjecture nor an asymptotic regime."
     )
 
     out = w.save()
