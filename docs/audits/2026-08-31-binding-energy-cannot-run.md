@@ -139,3 +139,75 @@ accurate statement is: **the producer cannot run, for three independent
 reasons, and one of them means the numbers it used to produce were computed
 from matrices that do not represent the algebra.** The regeneration is not
 close, and making it fast would not make it right.
+
+---
+
+# Blocker 3 is solved: full `k = 11` deuterium in 278 s
+
+`lp_accumulator_step_traces_mpfr` (merged #6337) driving the per-partition
+accumulation, deuterium, increasing truncation:
+
+```
+  k_exact= 4     28.37s   (first call — includes materialising the partition table)
+  k_exact= 5      0.00s
+  k_exact= 6      0.01s
+  k_exact= 7      0.04s
+  k_exact= 8      0.21s
+  k_exact= 9      1.83s
+  k_exact=10     21.33s
+  k_exact=11    278.44s   <-- the PRODUCTION truncation
+```
+
+**Python could not complete `k = 11` at all** — measured > 50 min and projected
+~40 days pre-guard-fix. The Rust kernel does it in **4 minutes 38 seconds**.
+
+The kernel builds its seminormal matrices internally via
+`seminormal_matrices_mpfr`, so wiring it in addresses **blocker 1 and blocker 3
+together**: the correct representation and the tractability arrive in the same
+change.
+
+## 🛑 The VALUES above are NOT `unified_iterative_correction`
+
+Stated prominently because the numbers are seductive and wrong to quote.
+
+The driver used here is a **reimplementation** of the accumulation, and it
+**omits Pass 2 — the final-state complementary-slackness gate**, under which a
+partition whose Frobenius constraint is slack "contributes 0". It also does not
+reproduce the free-nucleon baseline subtraction. So `-17.69` is **not**
+`unified_iterative_correction(1,1)` and must not be reported as a binding
+number.
+
+Independent evidence that the reimplementation is unfaithful, not merely
+imprecise: at `k_exact = 4` it gives `-0.4122`, where the *real* function driven
+by the *same* corrected matrices gave `-0.0896` — a factor of 4.6. Both use the
+correct family, so the gap is the missing gate, not the mathematics.
+
+## What is and is not established
+
+**Established:**
+- The Rust kernel completes the full `k = 11` per-partition accumulation for
+  deuterium in 278 s. Blocker 3 is tractable.
+- It carries the correct seminormal family by construction.
+
+**Not established:**
+- **No binding value.** Nothing here is `unified_iterative_correction`,
+  `binding_energy`, or a `B(K)`.
+- **No AME2020 comparison.** Whether the corrected framework agrees better or
+  worse with experiment remains completely unmeasured.
+- Whether the same kernel serves term 3's loop — asserted from its shape, still
+  not measured.
+
+## The remaining work, precisely
+
+1. Wire `lp_accumulator_step_traces_mpfr` into `unified_iterative_correction`
+   **preserving Pass 2** — the gate is the part a reimplementation drops, and it
+   is what makes the result an LP dual rather than a log-trace sum.
+2. Wire it into `atom_character_raw` (term 3) likewise.
+3. Gate both with a value-equality check at small `k`, the way the sparse-guard
+   fix was gated — noting that exact equality against the *current* code is
+   impossible by construction, since the corrected matrices deliberately change
+   the answer. The gate has to be against a *reference implementation on the
+   corrected family*, not against `main`.
+4. Then, and only then, regenerate and report what moved against AME2020.
+
+Point 3 is the subtle one and is why this stops here rather than pressing on.
