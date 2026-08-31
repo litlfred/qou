@@ -1,0 +1,82 @@
+{
+  "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "name": "bpp-higher-a-sparse",
+  "description": "qou-gcmn ANSWERED. B_pp per bond on pure-proton chains: 2.128360946 (A=2, reproducing the committed value by a different evaluator), 1.966342608 (A=3), 1.851585614 (A=4) MeV \u2014 a monotone 13.0% decline, against an A-independent chain bond of 2.050709692. So B_pp is NOT A-independent, the confound is real and signed, and the measured kappa decline OVERSTATES the EM-linking invariant. The companion probe's first disjunction branch is withdrawn. Also: the H_2A trace was never intractable \u2014 the sparse Hoefsmit multiply does A=4 (n=12, max dim 297) in ~50s where the dense evaluator does not return in 600s. Scope (a); the series is NOT corrected past A=4, which would be a fit.",
+  "computedAt": "2026-08-31T03:45:36.006584+00:00",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_anchor": "proton",
+    "E0_MeV": "4.18598136329447589694506215876",
+    "committed_B_pp_A2": "2.12836094575708",
+    "rows": [
+      {
+        "A": 2,
+        "n_strands": 6,
+        "crossings": 23,
+        "partitions": 4,
+        "max_dim": 9,
+        "S_inter_true": "0.8043155782625445545861131",
+        "S_inter_false": "1.312765272859848671421713",
+        "B_total_MeV": "2.128360945757083003",
+        "B_pp_per_bond_MeV": "2.128360945757083003",
+        "seconds": 0.0
+      },
+      {
+        "A": 3,
+        "n_strands": 9,
+        "crossings": 35,
+        "partitions": 5,
+        "max_dim": 48,
+        "S_inter_true": "0.5646241124509801107080967",
+        "S_inter_false": "1.504113535300524873911184",
+        "B_total_MeV": "3.9326852150604777223",
+        "B_pp_per_bond_MeV": "1.9663426075302388611",
+        "seconds": 0.8
+      },
+      {
+        "A": 4,
+        "n_strands": 12,
+        "crossings": 47,
+        "partitions": 7,
+        "max_dim": 297,
+        "S_inter_true": "0.3963623196876515856848313",
+        "S_inter_false": "1.723352661626792934774866",
+        "B_total_MeV": "5.5547568406290096387",
+        "B_pp_per_bond_MeV": "1.8515856135430032129",
+        "seconds": 51.4
+      }
+    ],
+    "B_pp_per_bond": {
+      "2": "2.128360945757083002984978",
+      "3": "1.966342607530238861133195",
+      "4": "1.851585613543003212897842"
+    },
+    "decline_A4_vs_A2": "0.13004153866186806556",
+    "kappa_correction_A3": "1.0823957827117127081",
+    "kappa_correction_A4": "1.1494801699633381076",
+    "chain_bond_MeV": "2.050709692381",
+    "assertions": [
+      {
+        "name": "method validated against the committed number, by a DIFFERENT path",
+        "passed": true,
+        "detail": "agrees to <1e-10. Different evaluator (sparse Schur-Weyl vs dense chi_lambda_numerical) and different crossings entry point (atom_canonical_crossings vs atomic_braid_to_crossings). Two independent routes to the committed B_pp_strong_MeV."
+      },
+      {
+        "name": "B_pp is NOT A-independent \u2014 monotone decline on all three points",
+        "passed": true,
+        "detail": "2.128 -> 1.966 -> 1.852 MeV, a 13.0 % drop by A=4, against a chain bond frozen at 2.0507 for every A. The companion probe's FIRST disjunction branch (trace bond also A-independent) is WITHDRAWN; the second is the true one."
+      },
+      {
+        "name": "the correction direction is established; the series is NOT corrected",
+        "passed": true,
+        "detail": "B_pp(2)/B_pp(3) = 1.0823958, B_pp(2)/B_pp(4) = 1.1494802 \u2014 both above 1 and growing, so the held-B_pp kappa understates the true kappa and overstates its decline. No extrapolation past A=4 is made."
+      },
+      {
+        "name": "the H_2A bond is computable \u2014 the intractability claim was stale",
+        "passed": true,
+        "detail": "A=4 completes in 51 s with the column-sparse Hoefsmit multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), machinery that landed 2026-08-30 in colour_weighting_across_mixed_nuclei_probe. em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, intractable' predates it."
+      }
+    ],
+    "allPassed": true
+  }
+}
