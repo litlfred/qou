@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T20:10:44Z
+updated_at: 2026-08-31T20:26:21Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5079,3 +5079,59 @@ places. Only legible, independently checkable parts are used. The paper's own
 **not** reconstructed — only the SL(2,ℤ) representative with `j = −25/2`.
 Recovering `j(5τ₀)` from a clean copy is the obvious next step if anyone wants to
 push this.
+
+
+## Step 21 (2026-08-31) — τ₀ is not CM; the jet tower is blind to decay
+
+Probe `qbeta-bring-tau0-and-jet-tower-closure` (6/6), Lean
+`BringEllipticCurveJInvariant.lean` (extended) + `JetTowerBlindToDecay.lean`
+(both sorry-free, axioms clean).
+
+### Theorem 2, decoded by DERIVATION
+
+No clean scan was needed. Given `j(τ₀) = −25/2`, the possible `j(5τ₀)` are exactly
+the six roots of `Φ₅(−25/2, Y)`. Computed independently, one is **−3810.78125 =
+−5·29³/2⁵ = −121945/32** — decoding the OCR's `- 293x5` whose `2⁵` exponent had
+been rendered onto its own line.
+
+> **THEOREM 2:  `j(τ₀) = −5²/2`,  `j(5τ₀) = −5·29³/2⁵`**
+
+**And the answer is NO.** Both are **non-integral** rationals: `v₂ = −1` and
+`−5`. A CM j-invariant is an algebraic integer; negative 2-adic valuation is
+potentially *multiplicative* reduction at 2 (Tate curves), exactly what CM
+forbids. **τ₀ is not a CM point** — no closed form, no derived phase. The
+hypothesis is refuted.
+
+### The Gröbner–Shirshov jet tower is blind to decay
+
+The q-Plancherel weight `W_λ = [k]_q!/(∏_cells [h(c)]_q)²` depends on λ **only
+through its hook multiset**, which transposition permutes; and transposition
+swaps the trivial and sign branchings. `λ ↦ λ'` is an involution, so
+
+    w_sym(k) = w_alt(k)   EXACTLY, every k, every q.
+
+Verified: **zero** counterexamples to hook-multiset transpose invariance over
+every partition of every `k ≤ 9`; `|w_sym − w_alt| ≤ 7.3e-40` at 40 dps for
+k=3..9 (exactly 0 for k=3,4,5).
+
+Mass sees `y₃ + y₍₁³₎`; decay sees `y₃ − y₍₁³₎`. **So the tower's decay
+contribution is identically zero at every level — no phase can hide there,
+because the tower contributes nothing at all to the channel that needs one.** The
+mass sector is untouched: `w_sym + w_alt = 2w_sym` is exactly what the tower's
+unbounded ~2.5×/level growth feeds.
+
+### Lean vs numeric, stated so nobody over-reads it
+
+**Lean:** both j-values as rational identities, their non-integrality, and the
+involution reindexing (stated abstractly, so it carries the argument without
+formalising Young diagrams). **Numeric only:** that −3810.78125 is among the six
+`Φ₅` roots; hook-multiset transpose invariance (standard, checked exhaustively
+k≤9); `w_sym = w_alt` at 40 dps.
+
+### Branch 3 is out of NAMED candidates
+
+braid image **excluded** · arbitrary M **circular** · constant-residue holonomies
+**fail the doubling identity** · every real-spectrum generator **on the wrong
+side of 1** · `Im(q)` **cannot supply ellipticity** · Bring's E **non-CM** · τ₀
+**non-CM** · jet tower **blind**. What remains is unnamed — and naming it is
+research, not measurement.
