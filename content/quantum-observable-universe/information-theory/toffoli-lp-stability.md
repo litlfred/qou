@@ -101,5 +101,17 @@ Sorry-free in `QOU.Information.cone_eq_quadratic_in_amplitudes`, with `coneCoord
 
 This sharpens the refutation rather than softening it. A monomial vanishes exactly where a factor does; a degree-$2$ polynomial can vanish where none of its terms does, and that is precisely the mechanism producing the root at $q_c$. So the published reduction was the right kind of relation in the wrong class: it needed cancellation *between* products, which a single product cannot supply. Whether any member of the (one-parameter) solution family has a Hecke-theoretic reading is open. Measurement: [`toffoli_cone_in_entry_subring.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_cone_in_entry_subring.py), 8/8.
 
+**The natural coordinates are the Markov and Hecke parameters, and there the expression is forced.** The rational coefficients above are a fact about the amplitude basis, not about the constraint. Writing $z = q^3/(q^2+1)$ for the Markov parameter and $\hbar_\times = q - 1/q$ for the Hecke deformation of $\sigma^2 = \hbar_\times\sigma + 1$,
+
+$$
+  (G\vec t)_5 \;=\; z^2 \;+\; 2\hbar_\times z \;+\; 3\hbar_\times^2 z^2 \;+\; \hbar_\times^3 z \;+\; \hbar_\times^4 z^2 ,
+$$
+
+with integer coefficients $(1,2,3,1,1)$ and no denominators. Degree $6$ is minimal — no polynomial in $(z,\hbar_\times)$ of total degree $\leq 5$ equals it. Sorry-free in `QOU.Information.cone_eq_markov_hecke_polynomial`.
+
+This is **forced, not fitted**. Every Markov trace of a Hecke word lies in $\mathbb{Z}[z,\hbar_\times]$ — the Markov property $\mathrm{tr}(x\sigma_{\mathrm{last}}) = z\,\mathrm{tr}(x)$ removes the highest generator and the quadratic relation reduces the rest — and the corpus already carries that as a table, `QOU.Machinery.MarkovTraceH4.TRM`, whose entries 9 and 13 are $\hbar_\times z^2 + z = \mathrm{tr}(\sigma_0\sigma_1\sigma_0)$. Since the $q$-Toffoli's normal-form coordinates are $\vec t = (0,0,1,\hbar_\times,0,0)$, that is $T_q = \sigma_1 + \hbar_\times\sigma_0\sigma_1$, the constraint $(G\vec t)_5 = \mathrm{tr}(W\sigma_1) + \hbar_\times\mathrm{tr}(W\sigma_0\sigma_1)$ lies in $\mathbb{Z}[z,\hbar_\times]$ before any computation is done.
+
+Both parameters are needed: the constraint's minimal polynomial over $\mathbb{Q}(z)$ has degree $3$ and over $\mathbb{Q}(\hbar_\times)$ degree $2$, so it is a function of neither alone. Since those degrees are coprime, $\mathbb{Q}(z,\hbar_\times) = \mathbb{Q}(q)$ and the content is the subring statement, not a field one. Separately, the numerator is neither reciprocal nor anti-reciprocal, so it is the Alexander polynomial of no knot — a scope-(b) exclusion resting on the reciprocity invariant. Measurement: [`toffoli_cone_in_markov_hecke_parameters.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_cone_in_markov_hecke_parameters.py), 13/13.
+
 **Substrate stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).
