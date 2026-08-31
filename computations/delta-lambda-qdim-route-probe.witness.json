@@ -1,11 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:00:18.133206+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-31T04:52:53.696547+00:00",
+  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 266,
+  "durationMs": 237,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-qdim-route-probe",
   "scriptFile": "delta_lambda_qdim_route_probe.py",
   "scriptHash": "a5c3eea06313",
@@ -24,7 +25,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -50,10 +51,10 @@
         "B_AME_MeV": 2.224566,
         "target_units_m_e": 4.353367060727183,
         "ceiling_over_target": {
-          "classic": 0.5661375028190097,
-          "balanced": 0.597464284460285,
-          "unbalanced": 0.7296312928436759,
-          "fake_degree": 0.8589882665421585
+          "classic": 0.5661373967670411,
+          "balanced": 0.5974641717896726,
+          "unbalanced": 0.7296311517944529,
+          "fake_degree": 0.8589880980841675
         }
       },
       {
@@ -61,10 +62,10 @@
         "B_AME_MeV": 8.481798,
         "target_units_m_e": 16.59846461239707,
         "ceiling_over_target": {
-          "classic": 0.3604123816658089,
-          "balanced": 0.4586840705400347,
-          "unbalanced": 0.7971969392822685,
-          "fake_degree": 1.077199276839094
+          "classic": 0.36041232870047135,
+          "balanced": 0.45868400333423576,
+          "unbalanced": 0.7971968232885392,
+          "fake_degree": 1.0771991206367726
         }
       },
       {
@@ -72,10 +73,10 @@
         "B_AME_MeV": 7.718043,
         "target_units_m_e": 15.10383336321602,
         "ceiling_over_target": {
-          "classic": 0.6924903128282978,
-          "balanced": 0.8781239513609734,
-          "unbalanced": 1.516525991510155,
-          "fake_degree": 2.037612216775865
+          "classic": 0.6924902080994402,
+          "balanced": 0.8781238184966701,
+          "unbalanced": 1.516525762231911,
+          "fake_degree": 2.03761190833948
         }
       },
       {
@@ -83,16 +84,16 @@
         "B_AME_MeV": 28.295673,
         "target_units_m_e": 55.37325069218333,
         "ceiling_over_target": {
-          "classic": 0.43347413162271514,
-          "balanced": 0.7861735529184121,
-          "unbalanced": 2.045958057068908,
-          "fake_degree": 3.103356425483748
+          "classic": 0.43347406787629905,
+          "balanced": 0.7861734368901055,
+          "unbalanced": 2.0459577538083287,
+          "fake_degree": 3.103355963882696
         }
       }
     ],
     "ceiling_span_across_conventions": [
-      0.3604123816658089,
-      3.103356425483748
+      0.36041232870047135,
+      3.103355963882696
     ],
     "some_convention_overshoots_target": true
   },

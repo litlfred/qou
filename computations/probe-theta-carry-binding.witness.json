@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:18:24.450996+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-31T04:52:57.252476+00:00",
+  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
   "assertions": [
     {
       "name": "theta_carry_does_not_close_all_four_zero_or_one_param",
@@ -14,7 +14,8 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
+  "durationMsBaseline": "builder-construction",
   "computation": "probe-theta-carry-binding",
   "scriptFile": "probe_theta_carry_binding.py",
   "scriptHash": "5701c6b1cdfb",
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -44,31 +45,31 @@
   "description": "EXPLORATORY: per-block q-Reeb phase CARRY (preserve info until observation). B(K) = E·Σ_λ y_λ |Δθ_λ| over rotation channels (|χ/d|≤1), collapsed via the y_λ-weighted observation instead of the scalar tr_M. Tested with derived μ₀ (0 fit) + one global scale (1 param) on D/T/³He/⁴He. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {
     "mu0_derived_MeV": 1.6295105722568328,
-    "global_scale_MeV_per_rad": 1695.5660726003478
+    "global_scale_MeV_per_rad": 1695.5655833697856
   },
   "data": {
     "per_atom": {
       "D": {
         "n_rotation": 8,
         "n_growth": 3,
-        "sum_y_absDtheta": "0.00250765",
-        "scalar_dtr_M": "-0.55654458",
-        "B_mu0_MeV": 0.004086242238376574,
-        "err_mu0": -0.9981631285064133
+        "sum_y_absDtheta": "0.0025076519",
+        "scalar_dtr_M": "-0.55654466",
+        "B_mu0_MeV": 0.004086245264478712,
+        "err_mu0": -0.9981631271461021
       },
       "T": {
         "n_rotation": 26,
         "n_growth": 4,
-        "sum_y_absDtheta": "0.0043060386",
-        "scalar_dtr_M": "-0.8885361",
-        "B_mu0_MeV": 0.007016735396944871,
-        "err_mu0": -0.999172730017146
+        "sum_y_absDtheta": "0.0043060387",
+        "scalar_dtr_M": "-0.88853613",
+        "B_mu0_MeV": 0.00701673552656288,
+        "err_mu0": -0.9991727300018641
       },
       "3He": {
         "n_rotation": 25,
         "n_growth": 5,
         "sum_y_absDtheta": "0.0",
-        "scalar_dtr_M": "-0.89290852",
+        "scalar_dtr_M": "-0.89290858",
         "B_mu0_MeV": 0.0,
         "err_mu0": -1.0
       },
@@ -84,9 +85,9 @@
     "worst_err_mu0": 1.0,
     "worst_err_global_scale": 1.0,
     "t_he3_difference": {
-      "pred_MeV": 7.301172930100189,
+      "pred_MeV": 7.301170958326811,
       "ame_MeV": 0.76375488,
-      "rel_err": 8.55957614319949,
+      "rel_err": 8.55957356151598,
       "note": "SAME global scale, no isotope-specific fit — the signed phase-carry difference, NOT the fitted (1+q)/2."
     }
   }

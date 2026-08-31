@@ -1,15 +1,16 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:48:07.791155+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-31T04:52:53.321545+00:00",
+  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 88,
+  "durationMs": 133,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-magnitude-deficit-profile",
   "scriptFile": "delta_lambda_magnitude_deficit_profile.py",
   "scriptHash": "3df0aa2cf849",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +22,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_magnitude_deficit_profile.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_magnitude_deficit_profile.py"
   },
   "description": "Per-block magnitude-deficit profile for the Δ_λ binding closure. Companion to the ℓ¹-ceiling prune: gives the magnitude-side levers (z2bn/w5tg/thb7/PROBE-2) the ℓ¹ concentration (which blocks carry the mass) and the irreducible magnitude shortfall S=|target|−‖c‖₁ they must supply. Per-λ deficit ATTRIBUTION is non-unique (1 eq, n unknowns) and is deliberately NOT reported. Pure arithmetic on canonical witnesses — env-skew-immune.",
   "parameters": {
@@ -34,18 +43,18 @@
       "A": 2,
       "B_AME_MeV": 2.224566,
       "target_units_m_e": -4.353367060727183,
-      "l1_ceiling": 2.464604356614619,
-      "net_sum": -0.7174453364014862,
-      "irreducible_shortfall_units_m_e": 1.8887627041125636,
-      "irreducible_shortfall_frac_of_target": 0.43386249718099035,
+      "l1_ceiling": 2.464603894931472,
+      "net_sum": -0.717445421638373,
+      "irreducible_shortfall_units_m_e": 1.888763165795711,
+      "irreducible_shortfall_frac_of_target": 0.43386260323295905,
       "dominant_blocks": [
         {
           "partition": [
             5,
             1
           ],
-          "abs_contrib": 1.2696890759185817,
-          "cum_l1_frac": 0.5151695331994895,
+          "abs_contrib": 1.2696889121611086,
+          "cum_l1_frac": 0.5151695632601491,
           "sign": -1
         },
         {
@@ -53,8 +62,8 @@
             4,
             2
           ],
-          "abs_contrib": 0.6936886758816911,
-          "cum_l1_frac": 0.7966299931795823,
+          "abs_contrib": 0.6936884149339826,
+          "cum_l1_frac": 0.7966299700868089,
           "sign": 1
         }
       ],
@@ -64,18 +73,18 @@
       "A": 3,
       "B_AME_MeV": 8.481798,
       "target_units_m_e": -16.59846461239707,
-      "l1_ceiling": 5.982292162949675,
-      "net_sum": -2.475140379723055,
-      "irreducible_shortfall_units_m_e": 10.616172449447394,
-      "irreducible_shortfall_frac_of_target": 0.6395876183341911,
+      "l1_ceiling": 5.982291283806395,
+      "net_sum": -2.475140298348442,
+      "irreducible_shortfall_units_m_e": 10.616173328590675,
+      "irreducible_shortfall_frac_of_target": 0.6395876712995286,
       "dominant_blocks": [
         {
           "partition": [
             6,
             3
           ],
-          "abs_contrib": 3.730802665373976,
-          "cum_l1_frac": 0.6236409997626123,
+          "abs_contrib": 3.7308022454633836,
+          "cum_l1_frac": 0.6236410212191406,
           "sign": -1
         },
         {
@@ -83,8 +92,8 @@
             7,
             2
           ],
-          "abs_contrib": 1.023603618995085,
-          "cum_l1_frac": 0.7947465879073377,
+          "abs_contrib": 1.02360336207211,
+          "cum_l1_frac": 0.7947465915618829,
           "sign": 1
         }
       ],
@@ -94,18 +103,18 @@
       "A": 3,
       "B_AME_MeV": 7.718043,
       "target_units_m_e": -15.103833363216019,
-      "l1_ceiling": 10.459258290599942,
-      "net_sum": -3.0789913352714784,
-      "irreducible_shortfall_units_m_e": 4.644575072616076,
-      "irreducible_shortfall_frac_of_target": 0.3075096871717022,
+      "l1_ceiling": 10.45925670879273,
+      "net_sum": -3.078991223188681,
+      "irreducible_shortfall_units_m_e": 4.64457665442329,
+      "irreducible_shortfall_frac_of_target": 0.30750979190055977,
       "dominant_blocks": [
         {
           "partition": [
             6,
             3
           ],
-          "abs_contrib": 5.894830780514764,
-          "cum_l1_frac": 0.5635993123730991,
+          "abs_contrib": 5.894830033416926,
+          "cum_l1_frac": 0.56359932617978,
           "sign": -1
         },
         {
@@ -113,8 +122,8 @@
             7,
             2
           ],
-          "abs_contrib": 2.428131894093487,
-          "cum_l1_frac": 0.7957507543425286,
+          "abs_contrib": 2.4281314082952816,
+          "cum_l1_frac": 0.7957507568119431,
           "sign": 1
         }
       ],
@@ -124,18 +133,18 @@
       "A": 4,
       "B_AME_MeV": 28.295673,
       "target_units_m_e": -55.37325069218333,
-      "l1_ceiling": 24.002871758921078,
-      "net_sum": -0.19093766565789583,
-      "irreducible_shortfall_units_m_e": 31.370378933262256,
-      "irreducible_shortfall_frac_of_target": 0.5665258683772849,
+      "l1_ceiling": 24.002868229074803,
+      "net_sum": -0.1909377696151161,
+      "irreducible_shortfall_units_m_e": 31.37038246310853,
+      "irreducible_shortfall_frac_of_target": 0.566525932123701,
       "dominant_blocks": [
         {
           "partition": [
             8,
             4
           ],
-          "abs_contrib": 9.93894733399947,
-          "cum_l1_frac": 0.4140732589760011,
+          "abs_contrib": 9.938945819671938,
+          "cum_l1_frac": 0.414073256779906,
           "sign": 1
         },
         {
@@ -143,8 +152,8 @@
             9,
             3
           ],
-          "abs_contrib": 7.342069407995873,
-          "cum_l1_frac": 0.719956216721133,
+          "abs_contrib": 7.34206846243697,
+          "cum_l1_frac": 0.7199562201144079,
           "sign": -1
         }
       ],

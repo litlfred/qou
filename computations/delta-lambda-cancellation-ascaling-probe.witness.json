@@ -1,11 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:58:55.571010+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-31T04:52:51.453937+00:00",
+  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 272,
+  "durationMs": 248,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-cancellation-ascaling-probe",
   "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
   "scriptHash": "8b58449aa557",
@@ -24,7 +25,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -45,10 +46,10 @@
         "A": 2,
         "B_AME_MeV": 2.224566,
         "net_over_target": {
-          "classic": 0.16480239924488357,
-          "balanced": 0.17243813463966984,
-          "unbalanced": 0.20320531519296492,
-          "fake_degree": 0.22958169852861388
+          "classic": 0.16480241882441485,
+          "balanced": 0.17243815651251515,
+          "unbalanced": 0.20320534683118782,
+          "fake_degree": 0.22958174149669905
         }
       },
       {
@@ -56,10 +57,10 @@
         "A": 3,
         "B_AME_MeV": 8.481798,
         "net_over_target": {
-          "classic": 0.14911863461602473,
-          "balanced": 0.19139152129221523,
-          "unbalanced": 0.34222714117992686,
-          "fake_degree": 0.4581158113282718
+          "classic": 0.14911862971348616,
+          "balanced": 0.19139151475016883,
+          "unbalanced": 0.34222712815953393,
+          "fake_degree": 0.45811579387340606
         }
       },
       {
@@ -67,10 +68,10 @@
         "A": 3,
         "B_AME_MeV": 7.718043,
         "net_over_target": {
-          "classic": 0.2038549592827259,
-          "balanced": 0.2636336595779366,
-          "unbalanced": 0.4791583495592399,
-          "fake_degree": 0.6473876423113994
+          "classic": 0.20385495186190802,
+          "balanced": 0.2636336493610882,
+          "unbalanced": 0.47915832805990916,
+          "fake_degree": 0.6473876128444525
         }
       },
       {
@@ -78,33 +79,33 @@
         "A": 4,
         "B_AME_MeV": 28.295673,
         "net_over_target": {
-          "classic": 0.0034481931848160422,
-          "balanced": -0.00242064233585484,
-          "unbalanced": -0.03788316852734373,
-          "fake_degree": -0.06600830353520608
+          "classic": 0.0034481950622066134,
+          "balanced": -0.002420638595522221,
+          "unbalanced": -0.037883156611687036,
+          "fake_degree": -0.06600828843152698
         }
       }
     ],
     "per_convention_isotope_spread": {
       "classic": {
-        "min": 0.0034481931848160422,
-        "max": 0.2038549592827259,
-        "ratio": 59.11935566150751
+        "min": 0.0034481950622066134,
+        "max": 0.20385495186190802,
+        "ratio": 59.11932132153061
       },
       "balanced": {
-        "min": -0.00242064233585484,
-        "max": 0.2636336595779366,
-        "ratio": -108.9106208186826
+        "min": -0.002420638595522221,
+        "max": 0.2636336493610882,
+        "ratio": -108.9107848849335
       },
       "unbalanced": {
-        "min": -0.03788316852734373,
-        "max": 0.4791583495592399,
-        "ratio": -12.648317661533188
+        "min": -0.037883156611687036,
+        "max": 0.47915832805990916,
+        "ratio": -12.64832107238096
       },
       "fake_degree": {
-        "min": -0.06600830353520608,
-        "max": 0.6473876423113994,
-        "ratio": -9.807669757276974
+        "min": -0.06600828843152698,
+        "max": 0.6473876128444525,
+        "ratio": -9.807671555004996
       }
     },
     "any_convention_closes_all_four": false
