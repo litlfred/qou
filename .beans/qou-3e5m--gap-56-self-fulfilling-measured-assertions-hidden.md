@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T09:11:26Z
+updated_at: 2026-08-31T07:33:00Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -320,3 +320,73 @@ are therefore a second independent derivation, not one agent's taxonomy.
 work under two names. This is mechanical drain, not open research, so per
 AGENTS.md it has ONE owner — and neither of us posted intent. Check `.beans/`
 for an existing bean on the same population before opening one.
+
+
+---
+
+## REGRESSION 2026-08-31: MEASURED 2 -> 9, and this gate has been RED the whole time
+
+Measured on `main` `e8f5a64a81`:
+
+    MEASURED (cannot report a regression):   9
+    LITERAL  (documentary flag):           119
+    exit code:                               1
+
+This bean drove MEASURED 56 -> 2 (its own campaign plus sibling `qou-26f2`).
+It is now **9**, and none of the seven new ones came from the `qou-srvu` drain
+that landed today — checked, not assumed: none of the five drain merges
+(`500a4df1a291`, `4a58860b7308`, `7e9b622eb00f`, `d27cfd2c782d`,
+`2ea086408b20`) touches any flagged file.
+
+| file | hits | note |
+|---|---:|---|
+| `probes/gs_filtration_jet_shape_magic_probe.py` | 5 | |
+| `probes/symbolic_nf_q_degree_magic_probe.py` | 1 | |
+| `probes/tower_walk_magic_replication_probe.py` | 1 | |
+| `fr_pullback_borromean_h3a_test.py` | 1 | `float(best_bor)` |
+| `lambda_scale_all_c_i_family_a.py` | 1 | `str(value)` |
+
+## The new sub-shape: a string-formatted RATIO as an assertion value
+
+Five of the nine — and every hit in the three `*_magic_probe.py` files — have
+this form:
+
+    f"{v['n_magic']}/{v['n_non_magic']}"
+    f"{len(sweep_seen)}/{len(sweep_rows)}"
+    f"{MAX_GRADE + 1} vs {comb(4, 2) + 1}"
+
+That is a **rendered string**, not a number, being handed to `add_assertion`
+as the computed value. It is worse than the positional-argument blindness this
+bean was opened for, because the defect is not that the detector misses it —
+the detector caught it — but that the assertion *cannot fail informatively*
+even when it fires: comparing `"3/7"` to `"3/7"` tells a reader nothing about
+which side moved, and comparing it to a literal freezes a formatting choice
+as if it were a result. Two of the three probes assert the identical
+`n_magic/n_non_magic` shape, so this is a copied idiom spreading, not three
+independent slips.
+
+## THE PART THAT IS MY FAULT, and it is the reason this went unnoticed
+
+`self_fulfilling_assertion_audit.py:228` is `return 1 if measured else 0` —
+**no `--strict` needed, any nonzero MEASURED is a non-zero exit.** So this
+gate has been RED continuously for this entire session, at MEASURED 2, before
+any of today's regressions.
+
+I ran it five times while verifying the `qou-srvu` slices and reported
+*"MEASURED 2, unchanged"* each time, treating **unchanged** as **clean**. It
+was neither. A count that is stable at 2 on a gate whose pass condition is 0
+is a red gate holding still, and I read the stability instead of the
+threshold. That is the same class of error as reading `all([]) == True` as a
+pass — which is the entire subject of the sibling bean `qou-srvu` I was
+verifying at the time.
+
+## Disposition
+
+The five `*_magic_probe` hits want one owner and one fix (assert the two counts
+separately as numbers, drop the rendered ratio). `fr_pullback_borromean_h3a_test`
+and `lambda_scale_all_c_i_family_a` are separate and unrelated.
+
+Do NOT read the 2 -> 9 as this bean's campaign regressing. The campaign held;
+new probes arrived carrying a new spelling of the same defect. That is the
+`qou-mnrd` revolving-door shape in a second gate, and it is the third time
+today a "known, stable" audit number turned out to be masking a substitution.
