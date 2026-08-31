@@ -41,6 +41,18 @@ other.
 
 ## Limits
 
+**It counts syntax, not verdicts — a `PROJECTION` is not automatically a
+defect.** The four gate accessors in `q-beta-bar-even-kernel-typeclass.lean`
+and `mass-side-kernel-formalize-first-gates.lean` are counted here and are
+**not** the AGENTS.md §3b-cond item-5 failure: their classes are parameterised
+(`BarEvenKernel pole c2 c3 magnitude`, `MassAnchorStableGateClass swing`), so
+a binder constrains caller data, and each lemma is the accessor idiom
+(`Group.mul_assoc := Group.mul_assoc`) — class (a) in
+`scripts/vacuity-carrier-shape-triage.py`'s taxonomy, adjudicated 2026-08-31.
+What those two blocks lacked was the *converse*: both `.md`s claim an
+equivalence and only the forward half had Lean. So read the number as a work
+*queue*, not as a defect count.
+
 The body parser is regex-based. It recognises the three spellings above and
 nothing else, so a projection wrapped in `⟨…⟩`, `Iff.intro`, or a `by`-block
 that does more than `exact` reads as `not-a-bare-projection`. That direction
