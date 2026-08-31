@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T18:33:31Z
+updated_at: 2026-08-31T02:51:29Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -780,3 +780,54 @@ instead of 0.047%, ordinary effective limit-shape bounds become plausibly usable
 — they were hopeless before.**
 
 **STILL OPEN.** qou-k5r5 OPEN.
+
+
+---
+
+## Leg A, 2026-08-31 (eleventh) — the area bound is Lean, and connected to n
+
+**`D(a) ≤ √(a²+2A) − a` is the *solved* form of a quadratic.** The underlying
+fact is division-free and far better suited to Lean, so that is what is stated:
+
+    2·(a · D a) + D a · (D a + 1)  ≤  2 · ∑_{c < a + D a} D c        [diagLen_area_bound]
+    ∑_{c < T} D c  ≤  μ.card                                          [sum_diagLen_le_card]
+    2·(a · D a) + D a · (D a + 1)  ≤  2 · μ.card                      [diagLen_area_bound_card]
+
+Two pieces, each one step from something already proved: `mul_diagLen_le_sum` is
+monotonicity (`D` antitone), `triangle_le_sum_Ico` is the 1-Lipschitz tail
+(`D(a+k) ≥ D a − k` is `diagLen_le_add_sub`). The ranges are disjoint and abut,
+so `sum_Ico_consecutive` glues them. `sum_diagLen_le_card` injects the sigma-type
+`(c,i) ↦ (i, i+c)` into `μ.cells`; the diagonals are disjoint because
+`(i,i+c₁) = (j,j+c₂)` forces `c₁ = c₂`.
+
+**What this is and is NOT.** In the rescaled variables this is the **A = 1** line
+— fully deterministic, no limit-shape input — which alone takes the budget from
+failing (1.0057) to a **0.094%** margin. The **7.54%** figure uses `A_σ → n/2`,
+which is a limit-shape input, *not* this theorem. Both are in the docstring;
+conflating them would overstate what is formalized.
+
+**Three `omega` obstacles, all about linearity, worth recording:**
+1. The obvious induction for Gauss **fails** — omega sees
+   `∑ i ∈ range m, (m − i)` and its eta-reduced form as *different atoms*, so the
+   inductive hypothesis never connects. Reflecting `d−i → i+1` plus
+   `sum_range_id_mul_two` works instead.
+2. Even then, `d(d+1)` and `d(d−1)` are unrelated atoms; omega needs the explicit
+   bridge `d(d+1) = d(d−1) + 2d`, with the `d = 0` truncated-subtraction case.
+3. `2 * a * D a` parses as `(2*a) * D`, a *different* atom from the `a * D` in the
+   hypothesis. Parenthesising as `2 * (a * D a)` fixes it. **Nonlinear terms only
+   work as literal atoms.**
+
+**Two API frictions:** `Finset.card_le_card_of_injOn` states hypotheses over the
+**Set** coercion, so memberships need `Finset.mem_coe` before `mem_sigma`; and
+`mem_diagIdx` takes `μ` explicitly (section variable), so `mem_diagIdx.mp` does
+not resolve — rewrite with it.
+
+**Verified:** 40,780 instances over all partitions n ≤ 22 and a ∈ [0, λ₁+1],
+**0 violations, min slack 0** — the bound is exactly attained, not slack. Controls
+fire in both forms (partial-sum −2, and 2n−2).
+
+`M1EdgeCalculus.lean`: **31 theorems**, sorry-free, up from 8 at the start of this
+arc.
+
+**STILL OPEN.** qou-k5r5 OPEN. Next is the literature step: effective versions of
+`λ₁/√n → 2`, `D(0)/√n → 2/π`, `A_σ/n → 1/2`, now needing only ~7% accuracy.
