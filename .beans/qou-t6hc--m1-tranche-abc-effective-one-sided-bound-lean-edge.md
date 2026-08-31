@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T04:16:24Z
+updated_at: 2026-08-31T04:29:41Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1016,3 +1016,47 @@ weaker than pinning κ, and weaker than Sniady's genus expansion. Measured
 
 **14 sorry-free Lean theorems added today**, all on
 `[propext, Classical.choice, Quot.sound]`. Pushed.
+
+
+---
+
+### 2026-08-31 (cont.) — κ leg: a falsified prediction, and where the sign now stands
+
+**Briefed prediction, FALSIFIED.** From `Σc²` being a single Kerov mode (m=3), I
+predicted each half of the `[+]/[−]` split would be single-mode too — which
+would have turned the −0.62 cancellation into a comparison of two constants.
+It is false: `ρ(Σ|cₖ|, Σc²)` is **flat at 0.979** across n = 100..1600 (spread
+0.0016 over 16×), and `ρ(ΣDₖ, Σc²) ≈ −0.95`, while their combination `Σh`
+reaches **0.9975**.
+
+**What that buys instead.** The off-mode components of `Σ|cₖ|` and `2ΣDₖ`
+**cancel each other**: `Σh` is nearly a pure m=3 statistic while *neither of its
+parts is*. That is a sharper account of why `Σh` is the special combination than
+"it is conjugation-symmetric", and it explains why the cancellation resists
+reduction to two constants.
+
+**The "need ratio > −1 uniformly" worry is not live.** Ratio = −0.648, −0.653,
+−0.656, −0.655, −0.658 over n = 100..1600 — drifting by 0.010 per 16× in n, so
+−1 is unreachable at that rate. And κ itself is **flat** (spread 0.0025 around
+√2/24) while the ratio drifts, because `Cov(Σ|c|,Σc²)` drifts to compensate. A
+cancellation heading for −1 would show as κ **decaying**; it does not. Weakest
+point: n = 1600 uses only 1400 samples.
+
+**New exact identity, Lean-proved.** Adding a box at `(r,s)` raises `Σ□h` by
+exactly `1+r+s`, so along a standard Young tableau
+`Σ□h = Σ|cₖ| + 2ΣDₖ − n` (verified on all 42400 sampled diagrams). A path sum
+equal to a function of the final shape must be path-independent — and it is,
+because it collapses to
+
+> **`Σ□ h = Σ□ (i + j + 1)`**  — `sum_hookLen_eq_sum_coords`
+
+exact on all 914 partitions of n ≤ 16 with a firing control. It implies
+`two_mul_sum_hookLen`.
+
+Also Lean-proved, closing a step previously only asserted: `cov_involution` /
+`cov_eq_cov_symmetrised` — under a weight-preserving involution fixing one
+argument, only the symmetric part of the other contributes. That is what makes
+`Cov(Σλᵢ²,Σc²) = Cov(Σh,Σc²)`.
+
+**File state:** 59 declarations, **0 sorries**. `ρ → 1` remains measured, not
+proved — that is the whole remaining gap for the sign.
