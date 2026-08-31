@@ -21,6 +21,22 @@ permission problem, **not** the `update_pull_request` partial-write trap, and
 **not** rate limiting — so it does **not** clear on retry. Do not spend the
 window polling.
 
+**STANDING CONDITION, not an incident (2/2 sessions, 2026-08-31).** Measured
+identically on two separate dispatches the same day — #6395/#6396, then
+#6400/#6401. Both times all four `mcp__github__*` tools reported *"No such tool
+available"* and REST returned the 403 above. **Assume the API is unavailable
+when dispatched as a sub-agent here** and plan the merge git-natively from the
+start rather than discovering it midway.
+
+The practical consequence is narrow and worth stating so it is not
+over-read: **`git` over HTTPS works fine**, so merges, pushes and rebases all
+succeed. What is lost is exactly the GitHub-object writes — **PR comments,
+review requests, and reading PR state**. Report the missing comment as an
+unfulfilled instruction rather than skipping it silently; the *parent* session
+generally does have API access and can post it, so hand it the verification text
+in the final report. That is what happened both times, and both times the
+comments were posted afterwards from the parent.
+
 **Discriminator.** `curl -i -H "Authorization: Bearer $GITHUB_TOKEN" \
 https://api.github.com/repos/litlfred/qou/pulls/<n>`. A 403 carrying that exact
 body is the session gate. (Rate limiting says *"API rate limit already
@@ -81,6 +97,27 @@ immediately after checkout showed the expected SHA; minutes later
 `git rev-parse HEAD` returned a different commit. The giveaway I actually
 noticed first was subtler: a file reported by `git ls-files` as tracked and
 present in `HEAD`, but absent from all three origin refs.
+
+**The isolation works — verified 2026-08-31 on the very next dispatch.** With
+`git worktree --detach` taken as the FIRST action, #6400/#6401 merged while a
+sibling session worked concurrently in `/home/user/qou`, and neither touched the
+other. This is a solved problem *provided the worktree is created before any
+checkout*. Remove it when done: it costs ~1.2 G and this container has run to
+92 K free.
+
+**RESIDUAL, and it will look alarming to the sibling.** Isolation stops commits
+crossing over, but a **rebase + force-push still moves `origin/<branch>` under a
+sibling whose local ref points at the pre-rebase commit**. Their HEAD follows
+`origin` on the next fetch; their *local branch ref* does not. So their
+stop-hook / `git status` reports **"N unpushed commits"** on a branch where
+nothing is unpushed — and if they act on that report by pushing, they force the
+branch *backwards* over the rebase.
+
+Say so explicitly in the hand-off report: name the pre-rebase SHA, the
+post-rebase SHA, and that the fix is `git branch -f <branch> <new-sha>` — and do
+**not** run it yourself, because writing to the shared tree is what caused the
+incident above. Verified harmless both times: the rebased blob SHA was identical
+and the old commit stayed in the sibling's reflog.
 
 **Diagnosis.** `git reflog` — interleaved `checkout:` entries you did not make.
 It names both sessions' movements in order.
