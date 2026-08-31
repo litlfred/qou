@@ -1,8 +1,9 @@
 The formula $C_q = FE + (qK + q^{-1}K^{-1} - (q + q^{-1}))/(q - q^{-1})^2$
 is a well-defined element of $\mathcal{U}_q(\mathfrak{su}(2))$
 whenever $(q - q^{-1})$ is invertible in the ground ring $R$.
-Centrality is verified directly using the Hecke relation
-$[E, F] = (K - K^{-1})/(q - q^{-1})$ and the Serre relations
+Centrality is verified directly using the defining relations of
+$\mathcal{U}_q(\mathfrak{su}(2))$: the commutator
+$[E, F] = (K - K^{-1})/(q - q^{-1})$ and the $K$-relations
 $KEK^{-1} = q^2 E$, $KFK^{-1} = q^{-2} F$; the computation is
 standard (Kassel VI.4).
 
