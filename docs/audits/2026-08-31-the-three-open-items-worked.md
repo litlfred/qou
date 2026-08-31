@@ -210,3 +210,103 @@ so an audit file importing a module you just edited keeps seeing the **old**
 definition — and its proof fails in a way that looks like your repair is broken.
 Rebuilt the one affected olean with `lean … -o <path>.olean` (single importer),
 never `lake build`, which would evict the restore.
+
+---
+
+## Second tranche: bucket B drained, bucket A completed, and a measurable work list
+
+Worked after the three items above, same bean, same PR.
+
+### Bucket B — all six re-encoded
+
+Each moved the objects the claim is about from **class fields** to
+**parameters**, so a `[C …]` binder constrains what the caller brought. Four
+of the six also gained a genuine derivation where there had been a
+projection.
+
+| block | what the class let the instance choose | what is now derived |
+|---|---|---|
+| `prop:r-matrix-braiding-structure` | `V3`, `comp`, `R12`, `R13`, `R23`, `Rcheck1`, `Rcheck2` — measured: `V3 := ℕ`, `comp := (·*·)`, `2, 3, 5` discharges YBE by `ring` | nothing; the two claims are **named** and not asserted (§1a disposition 3) |
+| `prop:helicity-conservation` | `Hq`, all seven scalars, all three claims | the writhe/twist split **and** conservation, which follows from it |
+| `prop:core-levi-form` | seven scalars plus md conclusions (b), (d) | (b) exactly, `1 ≤ cond`, and the aspect bound from md (d) |
+| `conj:cpt-d6-d7-d8-closure` | `ClosedBraid`, `markovTrace`, `cptComposite` | closure **from its three components** |
+| `prop:crystal-basis-…-open-problems` | one `Prop` field and its own proof | that discharging the three computations settles three problems |
+| `conj:shared-denominator-cusp-holonomy` | the cusp shape, existentially | the matched shape is non-real, so the bare seed is not the cusp shape |
+
+Two of these were **false claims about epistemic status**, not merely thin:
+
+- The CPT file said the conjecture was *"axiomatised as a Lean class with no
+  instance"*. `ClosedBraid := Unit`, `markovTrace := fun _ => 0`,
+  `cptComposite := id` inhabits it.
+- The cusp-holonomy file **and its `.md`** said the class *"deliberately has
+  no instance"* and that requiring `Im z > 0` made *"any real-constant
+  witness impossible"*. The field concluded `∃ z : ℂ, GeometricShape z`,
+  unlinked to the root index, which is provable at `z = i` — verified by
+  compiling the instance, `lean`-direct exit 0. Excluding real constants
+  excluded the wrong constant.
+
+Two more findings worth keeping:
+
+- **`core_levi_cond_aspect_bound` was redundant, and its docstring said the
+  opposite** — described as *"carrying the `O(ℏ_q²)` correction as an
+  explicit bound"*, when the class already asserted `cond = max λ/min λ` and
+  `(a⊥/a∥)² = λ∥/λ⊥` **exactly**, forcing equality. The "bound" was
+  `0 ≤ C₀ℏ_q²` wearing an absolute value.
+- **`newton_seed_completeness` was statement-identical to the theorem above
+  it** — same binders, same conclusion, character for character — while its
+  docstring claimed *"the algebraic denominator zeros are valid
+  Newton–Raphson seed values"*. No seed, no iteration and no convergence
+  appears in that type. Removed.
+
+### Bucket A completed at 15/15
+
+`DecayChannelContext` was held back because its sibling declared the library
+path canonical. Both halves of that were wrong: §0a resolution sends the ref
+to the **sibling**, which declared `decay_channel_unique` and **no**
+`decay_channel`; and the library class carried ten data fields plus all three
+sub-claims, with `on_boundary := fun _ => True` and `q_1 := 1, q_2 := 0`
+making two of them vacuous. The sibling now declares `decay_channel`, and
+**sub-claim (iii) is the intermediate value theorem** — *"stable at `q₁`,
+unstable at `q₂` implies `∃ q* ∈ [q₁, q₂]` with `E(λ*, q*) = 0"* is exactly
+what the manuscript's own paragraph argues — proved rather than assumed.
+
+### The remaining work is 46 projections, measured
+
+[`scripts/sap-projection-liveness.py`](../../scripts/sap-projection-liveness.py)
+parses each ledger-flagged declaration's body and asks whether it is still
+`:= ctx.field`. On this branch:
+
+| | |
+|---|---|
+| genuine `proof-no-self-assuming-projection` entries | 90 |
+| still bare projections | **46** — 31 library, 15 sibling |
+| no longer a bare projection | 23 |
+| declaration removed | 21 |
+
+**The obvious liveness check is wrong, and this is why the script exists.**
+Asking *"does the declaration name still occur in the file?"* reports **81 of
+81 files still live** on this very tree — because a repaired file keeps the
+name the ref points at, and a *gutted* file mentions the name in the
+docstring explaining what was removed. That check answers "is the string
+present", which is a different question. It was run and believed before being
+caught.
+
+**Quote the unit.** The ledger counts declarations; the bucket table above
+counts classes. `bucket C = 31` agrees with the library figure by
+coincidence of size, but `bucket B = 6` was six vacuous *classes* in
+siblings against fifteen sibling *projections* here. Neither number
+corrects the other.
+
+**And a clean run would not prove the surface is clear.** The body parser
+recognises `:= ctx.field`, `:= inst.field args` and `:= by exact ctx.field`,
+and nothing else — a projection wrapped in `⟨…⟩`, `Iff.intro`, or a longer
+`by`-block reads as repaired. It under-reports, which is the safe direction
+for a drain and the wrong direction for an all-clear.
+
+### Tool fix
+
+`scripts/lean-context-class-inhabitation-probe.py` crashed with an
+`AttributeError` out of a worker thread whenever a class signature failed to
+parse, **aborting the entire sweep**. A full-tree run stopped after 76
+verdicts and the only sign was a traceback at the end of the log. Unparsed
+signatures now raise `Unsupported` and are reported as per-class skips.
