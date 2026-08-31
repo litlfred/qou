@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T17:23:12Z
+updated_at: 2026-08-31T18:04:33Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -644,3 +644,52 @@ in the radical, which is most of them.
 
 CONVERGENCE with qou-unqc / #6395: both say the licensing object cannot be the
 Markov trace itself -- there from KMS/traciality, here from the TL radical.
+
+
+## Convention D IS the Temperley-Lieb specialisation (PR #6397, 2026-08-31)
+
+Follows the tower walk (#6396: rank <g,g> = C_n = dim TL_n at the canonical z).
+Two proposed routes out, both measured.
+
+BASIS CANNOT BE THE CAUSE, by pure algebra: rank of a bilinear form is
+basis-independent, and a surjection from a larger algebra induces the identical
+form on the quotient. So 'do the GB in an algebra projecting onto H_n' cannot
+move the rank. Demonstrated: rank(P^T G P) = rank(G) = 14 at n=4.
+
+z_D = q^3/(q^2+1) = q^2 * [1/(q + 1/q)] (identity checked to 1.3e-51). Sweeping
+z = q^a/(q+1/q) at n=3,4:
+  a     -2  -1   0  0.5   1  1.5   2  2.5   3
+  n=3    6   6   6    6   6    6   5    6   6
+  n=4   24  24  24   24  24   24  14   24  24
+ONLY a=2 degenerates -- an ISOLATED point flanked by full rank at 1.5 and 2.5.
+
+STRUCTURAL IN q: z=q^3/(q^2+1) gives rank (5,14)=(C_3,C_4) at q = 0.8, 1.01,
+1.10998, 1.5, 2.0, 3.0 -- every value tested.
+
+=> z_D is not NEAR a TL point, it IS the TL specialisation, exactly, for all q.
+Choosing convention D is mathematically the same act as choosing to make the
+Frobenius pairing factor through Temperley-Lieb and discard n! - C_n of the
+algebra.
+
+ANSWERS. Q1 (pairing not factoring through TL): YES, every z but this one point.
+Q2 (fix = v=sqrt(q) with GB upstairs): NO on both halves -- GB by
+basis-independence, and sqrt(q) does no work either since half-integer exponents
+AND every integer but 2 are full rank. z_C is fine because it is not a=2, not
+because it has a sqrt(q). I reported the misleading 'sqrt(q) is the
+non-degenerate one' form before running the sweep; corrected in the probe.
+
+TENSION FOR THE OWNER: convention D canonical (ruling 2026-08-15) and convention
+D = the TL specialisation were decided on different grounds and never weighed
+together. Not a claim the ruling is wrong; a claim that an <g,g>/SDP binding
+derivation under D is asking a pairing to distinguish what it provably cannot see.
+
+NOT ESTABLISHED: the symbolic det G(z,q) factorisation TIMED OUT at 600 s, so the
+q-independence is EMPIRICAL over six q values, not proved. Which lambda-blocks
+die was not computed (rank=C_n implies the >=3-row level-2 Wenzl reading but the
+weights were not checked). And NOT that a full-rank pairing would source the
+binding.
+
+GIT NOTE: the merge agent checked out its branch under this session's shell
+mid-command and my probe commit briefly landed on PR #6395's branch. Caught via
+reflog, moved to its own branch, agent's branch restored to origin. Nothing lost
+either way. Shared-worktree hazard when dispatching a merge agent while working.
