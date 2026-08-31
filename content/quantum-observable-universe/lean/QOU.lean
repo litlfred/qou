@@ -337,6 +337,7 @@ import QOU.Mathlib.YoungLatticeUpOperator
 import QOU.Mathlib.SkewSYTMaxCorner
 import QOU.Mathlib.SkewSYTBranchingBijection
 import QOU.Mathlib.SkewBranchingSum
+import QOU.Mathlib.SkewBranchingTwoOne
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
