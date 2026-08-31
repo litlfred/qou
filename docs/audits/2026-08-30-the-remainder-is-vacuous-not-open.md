@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 46 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 48 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 20 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 22 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,9 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **46** (26 machine + 20 hand) |
-| still undecided — INCONCLUSIVE, see method below | 33 |
+| **INHABITED with no hypotheses** | **48** (26 machine + 22 hand) |
+| scored NOT vacuous on inspection | 1 (`MatrixChainEqBuildChains`) |
+| still undecided — INCONCLUSIVE, see method below | 30 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -510,6 +511,73 @@ This is the fourteenth-or-so entry in the same family as
 [`2026-08-15-detector-blindness-taxonomy.md`](2026-08-15-detector-blindness-taxonomy.md),
 and it arrived the same way as the others: a detector reporting a clean result
 about a question it had not asked.
+
+### A fourth shape: the ORDER is trivial, so the inequality cannot be false
+
+Everything above is vacuous because a *witness exists* — the class is inhabited
+at some value, so the binder assumes nothing. `ShellClosureMonotone` does not
+need a value.
+[`QOU/BraidKnot/ShellClosureStability.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean)
+declares, at file scope,
+
+```lean
+local instance : LE R_q := ⟨fun _ _ => True⟩
+```
+
+so `≤` on `R_q` **is** `fun _ _ => True` for every declaration in that file. The
+class field
+
+```lean
+monotone : frobeniusStability D_prev q ≤ frobeniusStability D q
+```
+
+therefore elaborates to `True`, and `⟨trivial⟩` inhabits the class at **every**
+`(D_prev, D, q, h)`. The gate file carries that as a theorem general in all
+four arguments (`shellClosureMonotone_always`), not as a witness at one tuple.
+
+**What this costs.** `shell_closure_monotone` is claim (1) of the shell-closure
+proposition — "the Frobenius stability index does not decrease under a one-step
+dressing". It is not merely unproved: **it cannot be false**, and neither can
+the first conjunct of `shell_closure_terminality`, which is assembled from it.
+The second conjunct routes through `NobleGasMultiOperator`, already scored above
+as jointly vacuous with its free `HasBindingMultiplicity` data. So all three
+claims of the proposition are empty in Lean, by three different mechanisms.
+
+The file half-knows this. Its own `shellClosureMonotone_refl` carries the
+comment *"`≤` on `R_q` is the trivial (`fun _ _ => True`) order (local instance
+above), so `x ≤ x` is `True`"* — which reads as an observation about the
+reflexive case. It is the general fact, and stating it only for `D_prev = D`
+makes every other instance look like it costs something.
+
+`HasFrobeniusStability` itself is the `HasMarkovTrace` shape one more time: a
+single data field `sigma : R_q → R_q`, no Prop fields, inhabited at every `D`.
+
+**Floor: 46 → 48.**
+
+### And one scored NOT vacuous
+
+`MatrixChainEqBuildChains (config j hj)` goes the other way, recorded because a
+drain that only reports vacuity is not a measurement. Its field
+
+```lean
+eq : matrixChain (chainCrossings config j) = (buildChains config).get! j
+```
+
+relates a right fold over the crossing sequence to the left fold in
+`buildChains`, and nothing about it is trivial. The gate file proves it at
+`config = [proton, proton]`, `j = 0`, where both sides evaluate to `2 • T_pp` —
+an entry-by-entry computation, not a projection. **So the class is satisfiable
+and non-trivial and does not join the vacuity count.**
+
+Its projection still carries a defect, a different one.
+`matrixChain_eq_buildChains` states exactly the class field and discharges it
+with `exact matrixChain_eq_buildChains_axiom config j hj` — §3b-cond item 5, a
+theorem proved by projecting a hypothesis identical to its own conclusion. What
+the witness shows is that the honest route is open in both directions: for a
+*concrete* config the claim is decidable by unfolding and needs no class at all,
+and the *general* statement (all transfer matrices commute, so `foldl` and
+`foldr` agree) is a real lemma someone can prove. The class stands in for work,
+not for nothing — which is the distinction the rest of this audit is about.
 
 ## Adjacent observation, not a finding
 
