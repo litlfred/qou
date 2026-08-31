@@ -1215,3 +1215,64 @@ on the linear scaling rather than on any radius.
 **why the substrate sits exactly on that critical face**, and whether physical
 binding is the linear response `C.eps` to whatever breaks the degeneracy — with
 `C ~ 0.017-0.031` already measured. That is the next thing to build.
+
+## 2026-08-31 — the question dissolves: binding is a p/n dual-vertex hysteresis
+
+`computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py`, 6/6.
+
+**I withdraw my own framing.** I asked "why does the substrate sit exactly on
+that critical face". That conflated two boundaries, and separated they answer
+themselves.
+
+**Cost space: the face is occupied at EVERY q, by an identity.** The dual vertex
+`lam e_2` has `lam = min_i t_i/G[i,2]`, and that argmin is **3-fold tied** on
+`{s1, L+, L-}`. The `2<->3` leg is the identity
+
+    G[3,2] = z * G[2,2]        residual 1.2e-31 at 40 dps, four values of q
+
+which is just the Markov property `tr(x T_n) = z tr(x)` written in the Gram; the
+`3<->4` leg is the `L+/L-` symmetry. Sweeping h from 0.05 to 2.5 the argmin set
+is `{2,3,4}` at every point, inside the binding window and out. **So there is no
+fine-tuning of q_0 in it at all** — the substrate lies on that face for the same
+reason the trace is a link invariant.
+
+**q space: what actually controls binding is a hysteresis.** Two competing dual
+vertices: `e_0` (all six dual rows tight — this is what `t = G e_1` supplies)
+and `lam e_2` (three tight rows, the Markov tie). Each nucleon switches from
+`lam e_2` to `e_0` at its **own** h:
+
+    proton  at h = 0.47718474189158
+    neutron at h = 0.56984033
+
+and the binding window is **exactly** the interval between — matching to 4e-15
+and 4.4e-8 the window edges bisected independently *from the gap itself* in
+`nfold_ip_coupling_duality_gap_probe`. Two different computations (dual support
+here, primal gap there) landing on the same two numbers. Verified at 7 sampled
+h: **the gap is nonzero exactly when the two nucleons do not share a vertex.**
+
+**One sentence: binding is the split between the proton's and the neutron's
+dual-vertex transition points.**
+
+**q_0 is nowhere near it.** `h(q_0) = 0.20906` against the first transition at
+`0.47718` — factor **2.283**. Margins by which each nucleon prefers `lam e_2`:
+proton `+0.0647 (+9.33%)`, neutron `+0.1442 (+23.29%)`. Both comfortably
+positive, proton nearer (which is why it switches first). The zero is robust,
+not marginal.
+
+**Correction carried into the earlier probes.** `t = G e_1` is **neither
+necessary nor sufficient** for the no-gap property, so my reading of it as the
+blanket obstruction was too strong. Rows 1, 3, 5 of G used as costs open gaps
+(9.5e-3, 2.1e-2, 5.2e-3), and **150 of 150** random costs `G w`, `w >= 0`, open
+gaps. Its real role is narrower: it supplies `e_0` as the second, maximally
+degenerate dual vertex. `which_functional_the_substrate_extremises_probe.py` has
+been amended with a pointer.
+
+**Where this leaves 1PPQ.** The zero at q_0 is now fully explained and robust:
+not fine-tuning, not a cost artefact, not repairable by nudging q. Binding needs
+the two nucleons to straddle a transition, and at q_0 they sit on the same side
+by 9% and 23%. Since the transition points are properties of `v_p` and `v_n` —
+of the **nucleon chains**, not of q — the problem relocates cleanly: either
+something must separate the proton and neutron objectives far more than the
+present flavour split does, or the binding constraint is not in
+`{Gx >= Gv, x >= 0}` at all. Both are well-posed; neither is a search over cost
+functionals, and that search is now closed.

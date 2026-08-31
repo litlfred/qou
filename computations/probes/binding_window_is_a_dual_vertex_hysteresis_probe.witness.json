@@ -1,0 +1,123 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T21:23:26.796970+00:00",
+  "commitSha": "d8116264a976fc6b8d84b7607f0dada407fa1373",
+  "assertions": [
+    {
+      "name": "A1_three_fold_tie_is_an_identity_in_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "argmin = (2,3,4) at 12 values of h; G[3,2]=z G[2,2] residual 1.8e-30"
+    },
+    {
+      "name": "A2_two_competing_degenerate_vertices",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "e_0 has all 6 dual rows tight; lam e_2 has [2, 3, 4]"
+    },
+    {
+      "name": "A3_row_of_gram_neither_necessary_nor_sufficient",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "rows [1, 3, 5] open gaps; 150/150 random Gw open gaps"
+    },
+    {
+      "name": "A4_transitions_equal_the_window_edges",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "proton 0.477184741892 vs 0.477184741892 (4.1e-15); neutron 0.569840334438 vs 0.569840290564 (4.4e-08)"
+    },
+    {
+      "name": "A5_gap_iff_vertices_differ",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "share-vertex <=> zero gap holds at all 7 sampled h"
+    },
+    {
+      "name": "A6_q0_deep_inside_shared_vertex_region",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "margins +9.33% and +23.29%; transition is 2.28x h(q_0)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "binding_window_is_a_dual_vertex_hysteresis_probe",
+  "scriptFile": "binding_window_is_a_dual_vertex_hysteresis_probe.py",
+  "scriptHash": "b3a02b120ff5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py"
+  },
+  "description": "Dissolves the question of why the substrate sits on the critical face of the binding LP. Two boundaries were conflated. In cost space the Markov cost lies on the boundary at EVERY q, because the argmin of t_i/G[i,2] is 3-fold tied on {s1, L+, L-} by the identity G[3,2] = z G[2,2] (residual 1.2e-31 at 40 dps) — the Markov property written in the Gram — so there is no fine-tuning of q_0. In q, what turns binding on is that the proton and neutron each switch dual vertex from lam e_2 to e_0 at their own h (0.47718474189158 and 0.56984033), and the binding window is exactly the interval between, matching to 4e-15 and 4.4e-8 the edges bisected independently from the gap in nfold_ip_coupling_duality_gap_probe. Binding is the split between the two nucleons' transitions. q_0 sits a factor 2.28 below the first one with margins of +9.33% and +23.29%, so the zero is robust. Also corrects an earlier over-reading: t = G e_1 is neither necessary nor sufficient for the zero — rows 1, 3, 5 of G open gaps and 150/150 random costs Gw do too; its actual role is to make e_0 a dual vertex with all six rows tight.",
+  "data": {
+    "ratio_vector_at_q0": {
+      "gamma": "1.632151991505",
+      "s0": "1.632151991505",
+      "s1": "0.543120424118",
+      "L+": "0.543120424118",
+      "L-": "0.543120424118",
+      "e-": "1.329467732337"
+    },
+    "argmin_set": [
+      2,
+      3,
+      4
+    ],
+    "tie_identity_residual": "1.809e-30",
+    "transitions": {
+      "proton_h": "0.47718474189158",
+      "neutron_h": "0.56984033443779"
+    },
+    "window_edges_from_gap": {
+      "lo": "0.47718474189158",
+      "hi": "0.56984029056366"
+    },
+    "margins_at_q0": {
+      "proton": "+0.064728052 (+9.33%)",
+      "neutron": "+0.144249088 (+23.29%)"
+    },
+    "h_q0": "0.209060298796",
+    "transition_over_h_q0": "2.2825",
+    "gram_rows_that_open_a_gap": [
+      1,
+      3,
+      5
+    ]
+  },
+  "caveats": [
+    "WITHDRAWAL OF MY OWN FRAMING. The previous probe asked 'why does the substrate sit exactly on that critical face', treating it as a coincidence needing explanation. It is not one: the face is occupied at every q by an identity. The genuinely contingent quantities are the two nucleon transition points, and they are properties of the nucleon chains v_p, v_n rather than of q.",
+    "CORRECTION to the earlier reading of t = G e_1 as the blanket obstruction (h3a_frobenius_gram_offdiagonal_probe, carried forward in later probes). It is neither necessary nor sufficient for the no-gap property: rows 1, 3 and 5 of G open gaps of 9.5e-3, 2.1e-2 and 5.2e-3, and 150 of 150 random costs of the form Gw with w >= 0 open gaps. Its real role is to make e_0 dual-feasible with all six rows tight, i.e. to supply the second competing degenerate vertex.",
+    "The neutron transition agrees with the independently bisected window edge to 4.4e-8, which is the bisection tolerance of the two runs rather than an exact match; the proton agrees to 4e-15. Both are cross-checks between a dual-support computation here and a primal-gap computation in the earlier probe, so the agreement is meaningful, but the neutron figure should be quoted to about seven digits, not fourteen."
+  ]
+}

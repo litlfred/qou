@@ -85,6 +85,14 @@ Note this is `t = G e_1` biting again (`h3a_frobenius_gram_offdiagonal_probe`).
 degenerate vertex — though it is not the optimum (`phi(v_p) = 0.694056` against
 `t.v_p = 0.629328`).
 
+**QUALIFIED (2026-08-31)** by `binding_window_is_a_dual_vertex_hysteresis_probe`:
+`t = G e_1` is neither necessary nor sufficient for the zero. Rows 1, 3 and 5 of
+`G`, used as costs, open gaps of 9.5e-3, 2.1e-2 and 5.2e-3, and 150 of 150
+random costs `G w` with `w >= 0` open gaps. Its actual role is narrower — it
+supplies `e_0` as a second, maximally degenerate dual vertex, and the binding
+window is where the proton and neutron disagree about which of the two vertices
+is optimal.
+
 AND IT IS A CRITICAL CONFIGURATION, NOT A ROBUST ONE
 -------------------------------------------------------
 The obstruction is **not** geometric — the feasible set is perfectly capable of
