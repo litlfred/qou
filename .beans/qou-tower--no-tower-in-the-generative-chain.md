@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T17:20:00Z
+updated_at: 2026-08-30T22:25:00Z
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -470,3 +470,101 @@ symbolic NF is 6 coefficients for ANY nucleus at ANY A: the state does not
 grow with A, only the polynomial degree does.
 
 Tracked in bean `qou-tower` (REOPENED).
+
+## 🛑 THE GRADING CARRIES NO MAGIC SIGNAL EITHER — and that closes the arc
+
+Follows the owner correction that reopened this bean. The retraction was
+right: the GS reduction *digests* entanglement into the coefficients rather
+than destroying it, and the q-degree is the surviving grading. So the grading
+was measured directly —
+[`symbolic_nf_q_degree_magic_probe.py`](../computations/probes/symbolic_nf_q_degree_magic_probe.py),
+exact over `ℚ`, never evaluating at any numerical `q`.
+
+**Gate first:** 18/18 exact coefficient checks against the corpus's own
+`hecke_core_symbolic.build_atom_nf_sym`, 5303 s, *all coefficients agree
+exactly*. The numbers below are reportable because of that, not despite it.
+
+**Result: `interleaved` at every level, every observable.**
+
+    A = 2 .. 20   (reaches Z = 2, 8 and 20 — three magic numbers)
+    max_degree / degree_span / n_terms / support_size
+        interleaved at EVERY level
+    ANY graded observable replicating across levels:  False
+    levels where degree_span separates magic cleanly:  0 / 19
+
+**Both directions of the correction are now confirmed.** The order structure
+**is** real — it survives the reduction, and it separates the proton from the
+neutron, which is kernel-checked as
+`QOU.BraidKnot.LaurentWalk.proton_ne_neutron_degrees` and is a distinction the
+numeric NF at `q₀` cannot express at all. It simply carries no *magic* signal.
+
+### The artifact that would have faked a positive is PARITY — sixth instance
+
+I first hypothesised `degree_span` was monotone in `Z` at fixed `A`. **Wrong**
+— only 6 of 19 levels are monotone. What is actually there is an even/odd
+zigzag concentrated at low `Z`. At `A = 20`:
+
+    Z     4    3    2    1    0
+    span  562  596  458  560  420      odd Z sit ABOVE their even neighbours
+
+Local minima favour **even** `Z` on **13 of 17** levels. Every magic number is
+even, so *"magic Z has low degree span"* would have been measuring parity, not
+shell structure — the same artifact that killed the δ²Φ result, the ⁴He NF
+collapse and the A=3 participation split. The per-level control reported
+`interleaved` and refused it.
+
+### Where this leaves the search
+
+Three independent places have now been measured with exhaustive fixed-A
+controls and all are negative: the **numeric NF at q₀** (6-vector, every
+nucleus), the **full H_{3A} tower** (A = 2,3,4 exhaustively), and the
+**q-degree grading** (A = 2..20, reaching Z = 2, 8, 20). A shell degree of
+freedom is not in the state, not in the tower, and not in the grading. It
+would have to enter the *construction* — before or outside the GS reduction —
+rather than be recovered from any of them.
+
+## 🛑 A seventh control failure, caught by a sibling before it cost anything
+
+A parallel session (#6304, `claude/nf-q-degree-2026-08-30`) built the same
+Laurent walk independently and caught a confound in an observation I made
+while the scan was still running.
+
+**What I claimed:** *"the degree span is non-monotone in A — it peaks at A=5
+(94) and then falls (86, 76, 72 at A=6,7,8) … whether that has anything to do
+with shell structure is exactly what the exhaustive scan is for."*
+
+**What is true:** those four numbers are the **Z = 0 column** and nothing else.
+Verified against my own witness after the fact:
+
+    my Z=0 column:  A=4→76  A=5→94  A=6→86  A=7→76  A=8→72
+    max over Z:     22, 48, 76, 106, 138, 172, 208, 246
+    second diffs:    2,  2,  2,  2,  2,  2      exactly quadratic, lead coeff 1
+
+So the span is **strictly increasing and quadratic in A**; the "falling" series
+is pure-neutron matter. Holding `Z = 0` while varying `A` varies the
+**composition** at the same time as the mass number — the classic
+one-variable-at-its-boundary confound, and the same family as the six already
+recorded here.
+
+It cost nothing because it never reached a durable artifact — the shipped
+analysis is fixed-A throughout, and the probe docstring, the Lean and the PR
+body all describe that. But it was on its way to being the *motivating signal*
+for a scan explicitly hunting Z=8 and Z=20, which is exactly how a fitted
+reading gets born.
+
+**The sibling also confirmed the real finding from the other side.** They
+flagged `Z=1 → Z=2` at A=8 (164 → 158) as *"the axis a shell signal would live
+on"* and correctly declined to call one dip a pattern. It is a pattern, and it
+is parity: counting local minima in Z at fixed A over A = 8..20 gives **24 at
+even Z and 0 at odd Z**. Their dip is its first member. Every magic number is
+even, so a shell reading of that axis fits parity.
+
+And the two implementations agree **exactly at A=8 across all nine
+configurations** (72, 164, 158, 200, 210, 228, 238, 244, 246), not just at
+A=1 — two sessions, two independent programs, one answer.
+
+**Technique note worth keeping:** their gate compares the two builds *in
+lockstep after every factor* rather than comparing final vectors. Mine
+compares at the end, which is weaker precisely here — cancellation is what the
+Z=0 line is made of, so a transcription error can be masked by a later
+cancellation. Adopt lockstep if this walk is rebuilt.

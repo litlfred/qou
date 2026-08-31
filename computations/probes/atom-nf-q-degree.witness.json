@@ -1,0 +1,1449 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T19:02:05.458563+00:00",
+  "commitSha": "0ad9adc87e660acfe1fd55a5e22114e8abd2ef8c",
+  "assertions": [
+    {
+      "name": "coefficients_are_laurent_over_Z_half",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "support_symmetric_lo_eq_minus_hi",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "parity_plus_wordlength_is_constant",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "bar_involution_eigenvectors",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "all_proton_closed_form_A_1_to_30",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "triangular_law_breaks_at_A_27",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tropical_is_an_upper_bound",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tropical_bound_is_not_tight",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "denominator_is_2_to_the_averaged_crossing_count",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "averaged_pn_crossing_never_opens_a_gap",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tight_implies_at_most_one_nn_pair",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "at_most_one_nn_pair_is_NOT_sufficient",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 356869,
+  "computation": "atom-nf-q-degree",
+  "scriptFile": "atom_nf_q_degree_probe.py",
+  "scriptHash": "d8a33c63ee17",
+  "scriptCommitSha": "0ad9adc87e660acfe1fd55a5e22114e8abd2ef8c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/atom_nf_q_degree_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/atom_nf_q_degree_probe.py"
+  },
+  "description": "q-degree of the six NF coefficients of hecke_core_symbolic.build_atom_nf_sym(Z, N), measured exactly for every nucleus to A=30 via a Fraction-exact Laurent mirror gated against the real function. FINDINGS. (a) The coefficients are Laurent polynomials in Z[1/2][q,q^-1] -- NOT the 'Q(q, sqrt q)' the docstring claims; the sqrt q was a convention-C artefact and z never enters hm_sym. (b) Support is exactly symmetric, lo = -hi, in every component of every nucleus tested. (c) A Z/2 grading: exponent parity + NF word length is constant per nucleus, so each coefficient is a +-1 eigenvector of the bar involution q -> 1/q with the sign fixed by word length. (d) Degree is QUADRATIC in A, from the A(A-1)/2 pair steps. On the all-proton ray deg(sigma0) = 12A + A(A-1)/2 - 1 exactly for A=1..30, one less than the number of hm_sym calls: pp pairs carry d=0 and nothing cancels. On the pure-neutron ray deg(gamma) = A(A+1)/2 on 7<=A<=26 and BREAKS at A=27 -- scoped observation, not a law; a sweep stopping at A=16 would have called it exact. (e) The max-plus bound on the effective step matrix is a genuine upper bound but is attained in under a third of components; the gap is always even, zero on the proton-rich side, and reaches 104 in degree at A=12 (the largest in this sweep, and still growing there -- a floor, not a max), so neutron-rich coefficients cancel at leading order in a way no degree-only model sees. NOT ESTABLISHED: no mechanism for that cancellation or for the A=27 break. shift_NF = 18Z+21N+1 is a DIFFERENT quantity (deuteron 40 vs deg(sigma0) 23) and is not reconciled here.",
+  "data": {
+    "cross_check": {
+      "stock_cases": [
+        {
+          "Z": 1,
+          "N": 0,
+          "identical": true,
+          "ms": 113
+        },
+        {
+          "Z": 0,
+          "N": 1,
+          "identical": true,
+          "ms": 236
+        }
+      ],
+      "normalised_cases": [
+        {
+          "Z": 1,
+          "N": 1,
+          "identical": true,
+          "ms": 414
+        },
+        {
+          "Z": 2,
+          "N": 1,
+          "identical": true,
+          "ms": 1060
+        },
+        {
+          "Z": 2,
+          "N": 2,
+          "identical": true,
+          "ms": 2036
+        },
+        {
+          "Z": 3,
+          "N": 2,
+          "identical": true,
+          "ms": 3329
+        },
+        {
+          "Z": 2,
+          "N": 3,
+          "identical": true,
+          "ms": 2406
+        },
+        {
+          "Z": 3,
+          "N": 3,
+          "identical": true,
+          "ms": 4189
+        },
+        {
+          "Z": 0,
+          "N": 4,
+          "identical": true,
+          "ms": 2161
+        },
+        {
+          "Z": 4,
+          "N": 0,
+          "identical": true,
+          "ms": 3137
+        },
+        {
+          "Z": 0,
+          "N": 5,
+          "identical": true,
+          "ms": 1823
+        },
+        {
+          "Z": 5,
+          "N": 0,
+          "identical": true,
+          "ms": 3400
+        }
+      ],
+      "expand_is_value_preserving": true,
+      "timing_note": "`ms` is integer wall-clock, indicative only -- no result depends on it. Recorded as int because time.time() is float64 and a raw float must not enter a witness."
+    },
+    "ring": {
+      "non_dyadic_denominators": [],
+      "non_integer_coefficients": 16951,
+      "deepest_denominator_power_of_two": 32,
+      "ring": "Z[1/2][q, q^-1]  (dyadic, not merely halves)",
+      "docstring_says": "Q(q, sqrt q)  [stale: convention C]"
+    },
+    "structure": {
+      "support_asymmetric_components": 0,
+      "mixed_parity_components": 0,
+      "nuclei_with_parity_plus_wordlength_constant": 90,
+      "bar_involution_exceptions": 0,
+      "nf_word_lengths": {
+        "gamma": 0,
+        "sigma0": 1,
+        "sigma1": 1,
+        "L+": 2,
+        "L-": 2,
+        "e-": 3
+      }
+    },
+    "all_proton_ray": [
+      {
+        "A": 1,
+        "calls": 12,
+        "deg_sigma0": 11,
+        "closed_form": 11
+      },
+      {
+        "A": 2,
+        "calls": 25,
+        "deg_sigma0": 24,
+        "closed_form": 24
+      },
+      {
+        "A": 3,
+        "calls": 39,
+        "deg_sigma0": 38,
+        "closed_form": 38
+      },
+      {
+        "A": 4,
+        "calls": 54,
+        "deg_sigma0": 53,
+        "closed_form": 53
+      },
+      {
+        "A": 5,
+        "calls": 70,
+        "deg_sigma0": 69,
+        "closed_form": 69
+      },
+      {
+        "A": 6,
+        "calls": 87,
+        "deg_sigma0": 86,
+        "closed_form": 86
+      },
+      {
+        "A": 7,
+        "calls": 105,
+        "deg_sigma0": 104,
+        "closed_form": 104
+      },
+      {
+        "A": 8,
+        "calls": 124,
+        "deg_sigma0": 123,
+        "closed_form": 123
+      },
+      {
+        "A": 9,
+        "calls": 144,
+        "deg_sigma0": 143,
+        "closed_form": 143
+      },
+      {
+        "A": 10,
+        "calls": 165,
+        "deg_sigma0": 164,
+        "closed_form": 164
+      },
+      {
+        "A": 11,
+        "calls": 187,
+        "deg_sigma0": 186,
+        "closed_form": 186
+      },
+      {
+        "A": 12,
+        "calls": 210,
+        "deg_sigma0": 209,
+        "closed_form": 209
+      },
+      {
+        "A": 13,
+        "calls": 234,
+        "deg_sigma0": 233,
+        "closed_form": 233
+      },
+      {
+        "A": 14,
+        "calls": 259,
+        "deg_sigma0": 258,
+        "closed_form": 258
+      },
+      {
+        "A": 15,
+        "calls": 285,
+        "deg_sigma0": 284,
+        "closed_form": 284
+      },
+      {
+        "A": 16,
+        "calls": 312,
+        "deg_sigma0": 311,
+        "closed_form": 311
+      },
+      {
+        "A": 17,
+        "calls": 340,
+        "deg_sigma0": 339,
+        "closed_form": 339
+      },
+      {
+        "A": 18,
+        "calls": 369,
+        "deg_sigma0": 368,
+        "closed_form": 368
+      },
+      {
+        "A": 19,
+        "calls": 399,
+        "deg_sigma0": 398,
+        "closed_form": 398
+      },
+      {
+        "A": 20,
+        "calls": 430,
+        "deg_sigma0": 429,
+        "closed_form": 429
+      },
+      {
+        "A": 21,
+        "calls": 462,
+        "deg_sigma0": 461,
+        "closed_form": 461
+      },
+      {
+        "A": 22,
+        "calls": 495,
+        "deg_sigma0": 494,
+        "closed_form": 494
+      },
+      {
+        "A": 23,
+        "calls": 529,
+        "deg_sigma0": 528,
+        "closed_form": 528
+      },
+      {
+        "A": 24,
+        "calls": 564,
+        "deg_sigma0": 563,
+        "closed_form": 563
+      },
+      {
+        "A": 25,
+        "calls": 600,
+        "deg_sigma0": 599,
+        "closed_form": 599
+      },
+      {
+        "A": 26,
+        "calls": 637,
+        "deg_sigma0": 636,
+        "closed_form": 636
+      },
+      {
+        "A": 27,
+        "calls": 675,
+        "deg_sigma0": 674,
+        "closed_form": 674
+      },
+      {
+        "A": 28,
+        "calls": 714,
+        "deg_sigma0": 713,
+        "closed_form": 713
+      },
+      {
+        "A": 29,
+        "calls": 754,
+        "deg_sigma0": 753,
+        "closed_form": 753
+      },
+      {
+        "A": 30,
+        "calls": 795,
+        "deg_sigma0": 794,
+        "closed_form": 794
+      }
+    ],
+    "pure_neutron_ray": [
+      {
+        "A": 1,
+        "calls": 11,
+        "deg_gamma": 9,
+        "triangular": 1,
+        "deg_sigma0": 10
+      },
+      {
+        "A": 2,
+        "calls": 23,
+        "deg_gamma": 19,
+        "triangular": 3,
+        "deg_sigma0": 20
+      },
+      {
+        "A": 3,
+        "calls": 36,
+        "deg_gamma": 28,
+        "triangular": 6,
+        "deg_sigma0": 29
+      },
+      {
+        "A": 4,
+        "calls": 50,
+        "deg_gamma": 36,
+        "triangular": 10,
+        "deg_sigma0": 37
+      },
+      {
+        "A": 5,
+        "calls": 65,
+        "deg_gamma": 33,
+        "triangular": 15,
+        "deg_sigma0": 44
+      },
+      {
+        "A": 6,
+        "calls": 81,
+        "deg_gamma": 29,
+        "triangular": 21,
+        "deg_sigma0": 40
+      },
+      {
+        "A": 7,
+        "calls": 98,
+        "deg_gamma": 28,
+        "triangular": 28,
+        "deg_sigma0": 35
+      },
+      {
+        "A": 8,
+        "calls": 116,
+        "deg_gamma": 36,
+        "triangular": 36,
+        "deg_sigma0": 35
+      },
+      {
+        "A": 9,
+        "calls": 135,
+        "deg_gamma": 45,
+        "triangular": 45,
+        "deg_sigma0": 44
+      },
+      {
+        "A": 10,
+        "calls": 155,
+        "deg_gamma": 55,
+        "triangular": 55,
+        "deg_sigma0": 54
+      },
+      {
+        "A": 11,
+        "calls": 176,
+        "deg_gamma": 66,
+        "triangular": 66,
+        "deg_sigma0": 65
+      },
+      {
+        "A": 12,
+        "calls": 198,
+        "deg_gamma": 78,
+        "triangular": 78,
+        "deg_sigma0": 77
+      },
+      {
+        "A": 13,
+        "calls": 221,
+        "deg_gamma": 91,
+        "triangular": 91,
+        "deg_sigma0": 90
+      },
+      {
+        "A": 14,
+        "calls": 245,
+        "deg_gamma": 105,
+        "triangular": 105,
+        "deg_sigma0": 104
+      },
+      {
+        "A": 15,
+        "calls": 270,
+        "deg_gamma": 120,
+        "triangular": 120,
+        "deg_sigma0": 119
+      },
+      {
+        "A": 16,
+        "calls": 296,
+        "deg_gamma": 136,
+        "triangular": 136,
+        "deg_sigma0": 135
+      },
+      {
+        "A": 17,
+        "calls": 323,
+        "deg_gamma": 153,
+        "triangular": 153,
+        "deg_sigma0": 152
+      },
+      {
+        "A": 18,
+        "calls": 351,
+        "deg_gamma": 171,
+        "triangular": 171,
+        "deg_sigma0": 170
+      },
+      {
+        "A": 19,
+        "calls": 380,
+        "deg_gamma": 190,
+        "triangular": 190,
+        "deg_sigma0": 189
+      },
+      {
+        "A": 20,
+        "calls": 410,
+        "deg_gamma": 210,
+        "triangular": 210,
+        "deg_sigma0": 209
+      },
+      {
+        "A": 21,
+        "calls": 441,
+        "deg_gamma": 231,
+        "triangular": 231,
+        "deg_sigma0": 230
+      },
+      {
+        "A": 22,
+        "calls": 473,
+        "deg_gamma": 253,
+        "triangular": 253,
+        "deg_sigma0": 252
+      },
+      {
+        "A": 23,
+        "calls": 506,
+        "deg_gamma": 276,
+        "triangular": 276,
+        "deg_sigma0": 275
+      },
+      {
+        "A": 24,
+        "calls": 540,
+        "deg_gamma": 300,
+        "triangular": 300,
+        "deg_sigma0": 299
+      },
+      {
+        "A": 25,
+        "calls": 575,
+        "deg_gamma": 325,
+        "triangular": 325,
+        "deg_sigma0": 324
+      },
+      {
+        "A": 26,
+        "calls": 611,
+        "deg_gamma": 351,
+        "triangular": 351,
+        "deg_sigma0": 350
+      },
+      {
+        "A": 27,
+        "calls": 648,
+        "deg_gamma": 380,
+        "triangular": 378,
+        "deg_sigma0": 379
+      },
+      {
+        "A": 28,
+        "calls": 686,
+        "deg_gamma": 410,
+        "triangular": 406,
+        "deg_sigma0": 409
+      },
+      {
+        "A": 29,
+        "calls": 725,
+        "deg_gamma": 441,
+        "triangular": 435,
+        "deg_sigma0": 440
+      },
+      {
+        "A": 30,
+        "calls": 765,
+        "deg_gamma": 473,
+        "triangular": 465,
+        "deg_sigma0": 472
+      }
+    ],
+    "triangular_law_window": {
+      "holds_from": 7,
+      "holds_to": 26,
+      "breaks_at": 27,
+      "caution": "a sweep stopping at A=16 reports this as exact"
+    },
+    "tropical_gap_histogram": {
+      "0": 197,
+      "2": 62,
+      "4": 16,
+      "6": 33,
+      "8": 15,
+      "10": 21,
+      "12": 25,
+      "14": 2,
+      "16": 13,
+      "18": 7,
+      "20": 4,
+      "22": 9,
+      "24": 7,
+      "26": 8,
+      "28": 12,
+      "30": 9,
+      "32": 4,
+      "34": 5,
+      "36": 3,
+      "38": 4,
+      "40": 1,
+      "42": 2,
+      "44": 4,
+      "46": 5,
+      "48": 4,
+      "50": 11,
+      "52": 2,
+      "54": 4,
+      "56": 2,
+      "58": 1,
+      "64": 2,
+      "66": 4,
+      "70": 3,
+      "72": 5,
+      "74": 4,
+      "80": 2,
+      "82": 4,
+      "88": 2,
+      "90": 4,
+      "96": 6,
+      "98": 6,
+      "100": 3,
+      "102": 2,
+      "104": 1
+    },
+    "not_established": {
+      "neutron_rich_cancellation_mechanism": "measured, not derived",
+      "A27_break_in_triangular_law": "measured, not derived",
+      "shift_NF": "18Z + 21N + 1 is a D(u) exponent shift from the crystal pole order, not an NF-coefficient q-degree; it matches nothing here and is not a discrepancy",
+      "A_above_30": "not measured"
+    },
+    "denominator_is_two_to_the_averaged_crossing_count": {
+      "rule": "denominator = 2^(number of d=-h/2 averaged crossings)",
+      "published_as": "content/quantum-observable-universe/appendix-nf-witnesses/witness-computation-method.md states poly / 2^{p_n} for the RUST hecke-engine; this reproduces it from the independent Python hecke_core_symbolic",
+      "holds_on_all_65_nuclei_A_le_10": true,
+      "rows": [
+        {
+          "A": 1,
+          "Z": 0,
+          "N": 1,
+          "averaged_crossings": 2,
+          "denominator_exp": 2
+        },
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "averaged_crossings": 2,
+          "denominator_exp": 2
+        },
+        {
+          "A": 2,
+          "Z": 0,
+          "N": 2,
+          "averaged_crossings": 4,
+          "denominator_exp": 4
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "averaged_crossings": 5,
+          "denominator_exp": 5
+        },
+        {
+          "A": 2,
+          "Z": 2,
+          "N": 0,
+          "averaged_crossings": 4,
+          "denominator_exp": 4
+        },
+        {
+          "A": 3,
+          "Z": 0,
+          "N": 3,
+          "averaged_crossings": 6,
+          "denominator_exp": 6
+        },
+        {
+          "A": 3,
+          "Z": 1,
+          "N": 2,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 3,
+          "Z": 3,
+          "N": 0,
+          "averaged_crossings": 6,
+          "denominator_exp": 6
+        },
+        {
+          "A": 4,
+          "Z": 0,
+          "N": 4,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 4,
+          "Z": 1,
+          "N": 3,
+          "averaged_crossings": 11,
+          "denominator_exp": 11
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 4,
+          "Z": 3,
+          "N": 1,
+          "averaged_crossings": 11,
+          "denominator_exp": 11
+        },
+        {
+          "A": 4,
+          "Z": 4,
+          "N": 0,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 5,
+          "Z": 0,
+          "N": 5,
+          "averaged_crossings": 10,
+          "denominator_exp": 10
+        },
+        {
+          "A": 5,
+          "Z": 1,
+          "N": 4,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 5,
+          "Z": 2,
+          "N": 3,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 5,
+          "Z": 4,
+          "N": 1,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 5,
+          "Z": 5,
+          "N": 0,
+          "averaged_crossings": 10,
+          "denominator_exp": 10
+        },
+        {
+          "A": 6,
+          "Z": 0,
+          "N": 6,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 6,
+          "Z": 1,
+          "N": 5,
+          "averaged_crossings": 17,
+          "denominator_exp": 17
+        },
+        {
+          "A": 6,
+          "Z": 2,
+          "N": 4,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "averaged_crossings": 21,
+          "denominator_exp": 21
+        },
+        {
+          "A": 6,
+          "Z": 4,
+          "N": 2,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 6,
+          "Z": 5,
+          "N": 1,
+          "averaged_crossings": 17,
+          "denominator_exp": 17
+        },
+        {
+          "A": 6,
+          "Z": 6,
+          "N": 0,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 7,
+          "Z": 0,
+          "N": 7,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 7,
+          "Z": 1,
+          "N": 6,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 7,
+          "Z": 2,
+          "N": 5,
+          "averaged_crossings": 24,
+          "denominator_exp": 24
+        },
+        {
+          "A": 7,
+          "Z": 3,
+          "N": 4,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 7,
+          "Z": 5,
+          "N": 2,
+          "averaged_crossings": 24,
+          "denominator_exp": 24
+        },
+        {
+          "A": 7,
+          "Z": 6,
+          "N": 1,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 7,
+          "Z": 7,
+          "N": 0,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 8,
+          "Z": 0,
+          "N": 8,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 8,
+          "Z": 1,
+          "N": 7,
+          "averaged_crossings": 23,
+          "denominator_exp": 23
+        },
+        {
+          "A": 8,
+          "Z": 2,
+          "N": 6,
+          "averaged_crossings": 28,
+          "denominator_exp": 28
+        },
+        {
+          "A": 8,
+          "Z": 3,
+          "N": 5,
+          "averaged_crossings": 31,
+          "denominator_exp": 31
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 8,
+          "Z": 5,
+          "N": 3,
+          "averaged_crossings": 31,
+          "denominator_exp": 31
+        },
+        {
+          "A": 8,
+          "Z": 6,
+          "N": 2,
+          "averaged_crossings": 28,
+          "denominator_exp": 28
+        },
+        {
+          "A": 8,
+          "Z": 7,
+          "N": 1,
+          "averaged_crossings": 23,
+          "denominator_exp": 23
+        },
+        {
+          "A": 8,
+          "Z": 8,
+          "N": 0,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 9,
+          "Z": 0,
+          "N": 9,
+          "averaged_crossings": 18,
+          "denominator_exp": 18
+        },
+        {
+          "A": 9,
+          "Z": 1,
+          "N": 8,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 9,
+          "Z": 2,
+          "N": 7,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 9,
+          "Z": 3,
+          "N": 6,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 9,
+          "Z": 4,
+          "N": 5,
+          "averaged_crossings": 38,
+          "denominator_exp": 38
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "averaged_crossings": 38,
+          "denominator_exp": 38
+        },
+        {
+          "A": 9,
+          "Z": 6,
+          "N": 3,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 9,
+          "Z": 7,
+          "N": 2,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 9,
+          "Z": 8,
+          "N": 1,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 9,
+          "Z": 9,
+          "N": 0,
+          "averaged_crossings": 18,
+          "denominator_exp": 18
+        },
+        {
+          "A": 10,
+          "Z": 0,
+          "N": 10,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 10,
+          "Z": 1,
+          "N": 9,
+          "averaged_crossings": 29,
+          "denominator_exp": 29
+        },
+        {
+          "A": 10,
+          "Z": 2,
+          "N": 8,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 10,
+          "Z": 3,
+          "N": 7,
+          "averaged_crossings": 41,
+          "denominator_exp": 41
+        },
+        {
+          "A": 10,
+          "Z": 4,
+          "N": 6,
+          "averaged_crossings": 44,
+          "denominator_exp": 44
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "averaged_crossings": 45,
+          "denominator_exp": 45
+        },
+        {
+          "A": 10,
+          "Z": 6,
+          "N": 4,
+          "averaged_crossings": 44,
+          "denominator_exp": 44
+        },
+        {
+          "A": 10,
+          "Z": 7,
+          "N": 3,
+          "averaged_crossings": 41,
+          "denominator_exp": 41
+        },
+        {
+          "A": 10,
+          "Z": 8,
+          "N": 2,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 10,
+          "Z": 9,
+          "N": 1,
+          "averaged_crossings": 29,
+          "denominator_exp": 29
+        },
+        {
+          "A": 10,
+          "Z": 10,
+          "N": 0,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        }
+      ]
+    },
+    "gap_attribution_by_step_kind": {
+      "crossing_dictionary": {
+        "gen0 d=0": "sigma (positive crossing) -- pp pair, uu quark",
+        "gen0 d=-h": "sigma^-1 (negative crossing) -- nn pair, dd quark",
+        "gen0 d=-h/2": "(sigma + sigma^-1)/2 averaged -- pn pair, ud quark"
+      },
+      "published_convention": "the three-row table is already in appendix-nf-witnesses/witness-computation-method.md; this probe re-derived it and adds only the DEGREE consequence below",
+      "steps_run": {
+        "gen0 d=0": 2915,
+        "gen1 d=-h": 1760,
+        "gen0 d=-h/2": 1155,
+        "gen1 d=-h/2": 220,
+        "gen0 d=-h": 495
+      },
+      "gap_units_opened": {
+        "gen0 d=-h": 531,
+        "gen1 d=-h": 169,
+        "gen0 d=0": 135
+      },
+      "averaged_crossing_opens_zero_gap": {
+        "units": 0,
+        "occurrences": 1375
+      },
+      "tropical_tight_nuclei": [
+        {
+          "Z": 0,
+          "N": 1
+        },
+        {
+          "Z": 1,
+          "N": 0
+        },
+        {
+          "Z": 1,
+          "N": 1
+        },
+        {
+          "Z": 2,
+          "N": 0
+        },
+        {
+          "Z": 2,
+          "N": 1
+        },
+        {
+          "Z": 3,
+          "N": 0
+        },
+        {
+          "Z": 3,
+          "N": 1
+        },
+        {
+          "Z": 4,
+          "N": 0
+        },
+        {
+          "Z": 3,
+          "N": 2
+        },
+        {
+          "Z": 4,
+          "N": 1
+        },
+        {
+          "Z": 5,
+          "N": 0
+        },
+        {
+          "Z": 4,
+          "N": 2
+        },
+        {
+          "Z": 5,
+          "N": 1
+        },
+        {
+          "Z": 6,
+          "N": 0
+        },
+        {
+          "Z": 5,
+          "N": 2
+        },
+        {
+          "Z": 6,
+          "N": 1
+        },
+        {
+          "Z": 7,
+          "N": 0
+        },
+        {
+          "Z": 6,
+          "N": 2
+        },
+        {
+          "Z": 7,
+          "N": 1
+        },
+        {
+          "Z": 8,
+          "N": 0
+        },
+        {
+          "Z": 7,
+          "N": 2
+        },
+        {
+          "Z": 8,
+          "N": 1
+        },
+        {
+          "Z": 9,
+          "N": 0
+        },
+        {
+          "Z": 8,
+          "N": 2
+        },
+        {
+          "Z": 9,
+          "N": 1
+        },
+        {
+          "Z": 10,
+          "N": 0
+        }
+      ],
+      "criterion": "N <= 2 (at most one nn pair) is NECESSARY for the max-plus bound to be tight, and NOT sufficient",
+      "n_le_2_but_not_tight": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "steps_after_last_nn_step": [
+        {
+          "Z": 0,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 0,
+          "N": 2,
+          "steps_after_last_nn": 0,
+          "tight": false
+        },
+        {
+          "Z": 1,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 1,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 1,
+          "N": 2,
+          "steps_after_last_nn": 1,
+          "tight": false
+        },
+        {
+          "Z": 2,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 2,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 2,
+          "N": 2,
+          "steps_after_last_nn": 3,
+          "tight": false
+        },
+        {
+          "Z": 3,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 3,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 3,
+          "N": 2,
+          "steps_after_last_nn": 19,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 2,
+          "steps_after_last_nn": 36,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 2,
+          "steps_after_last_nn": 54,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 2,
+          "steps_after_last_nn": 73,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 2,
+          "steps_after_last_nn": 93,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 2,
+          "steps_after_last_nn": 114,
+          "tight": true
+        },
+        {
+          "Z": 9,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 9,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 10,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        }
+      ]
+    },
+    "checks_failed": []
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q is a sympy Symbol / a formal Laurent variable from start to finish; no q0 is substituted anywhere, so neither pin can affect any number in this witness."
+}

@@ -474,11 +474,33 @@ def main() -> int:
         "degree_1_d_count": len(degree1s),
         "rejected_a_gt_2_count": len([r for r in results if r.get("verdict") == "REJECTED_a_gt_2"]),
     })
+    # WAS: `computed=float(target_c[2]), expected=-1.0` under the name
+    # `c_2_target_is_minus_one_taylor_exact`. That asserted an INPUT against
+    # itself -- `target_c[2] = sp.Integer(-1)` is a literal assigned 211 lines
+    # above -- so it verified nothing and could not fail. Neither the
+    # tolerance-floor audit nor `assertion_on_literal_audit` could see it: the
+    # literal reaches the assertion through a LIST SLOT, which no pattern over
+    # the call shape traces.
+    #
+    # What IS worth pinning is that the search's target vector was BUILT
+    # correctly -- a mis-built prefix would silently invalidate the negative
+    # result this whole probe reports. So the assertion now checks the forced
+    # prefix (c_0 = c_1 = 0, c_2 = -1) as a construction check, and says so.
+    prefix_ok = (sp.simplify(target_c[0]) == 0 and sp.simplify(target_c[1]) == 0
+                 and sp.simplify(target_c[2] + 1) == 0)
     wb.add_assertion(
-        "c_2_target_is_minus_one_taylor_exact",
-        computed=float(target_c[2]), expected=-1.0, tolerance=1e-30,
-        source="c_2 = -1 is Lean-proved Taylor-exact (Kashiwara f̃₁², "
-        "qou:QOU.BraidKnot.N2_factor); independent of any Wenzl ansatz.",
+        "search_target_prefix_built_as_specified",
+        computed=1 if prefix_ok else 0, expected=1, tolerance=0,
+        source="Construction check on the search input, NOT a verification of "
+        "c_2. The target vector is forced to c_0 = c_1 = 0, c_2 = -1 before the "
+        "Wenzl scan runs; a mis-built prefix would invalidate the negative "
+        "result. On c_2 = -1 itself: the defensible word is STRUCTURAL (no fit, "
+        "no CODATA, no q_0), not 'Lean-proved Taylor-exact'. "
+        "qou:QOU.BraidKnot.N2_factor is a bare `def` with no theorem deriving "
+        "it, and the Lean identity 1 - b^2 h^4 = 1 - (b h^2)^2 is a one-line "
+        "`ring` re-reading of the N=2 factor in ansatz form. 'Taylor' also needs "
+        "a named series: c_2 = -1 is the u^2 coefficient of the explicit-factor "
+        "product, while the full normalised model gives -9/8.",
     )
     wb.save()
     print(f"  Witness: qbeta-wenzl-habiro-ansatz-probe.witness.json")

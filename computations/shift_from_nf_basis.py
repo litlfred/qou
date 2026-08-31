@@ -11,7 +11,14 @@ extensions thereof, but morally Habiro-ring elements).  The Markov
 trace decomposes as
 
     tr_M(β) = Σ_b c_b(q) · TR_M_SYM[b],
-    TR_M_SYM = [1, z, z, z², z², z³],   z = u/(1+u²)
+    TR_M_SYM = [1, z, z, z², z², h z² + z],   h = q - 1/q
+
+(This read `z³` until 2026-08-30. `z³` is the tr(T_w) = z^len(w) guess --
+true for len ≤ 2 in H₃, false at len 3, where the defining Markov property
+gives tr_M(e⁻) = z·tr_M(σ₀²) = z(hz+1). See
+docs/audits/2026-05-19-trm5-markov-bug.md; bean qou-isu5. The value in
+substrate/hecke_core_symbolic.TR_M_SYM, which this module imports, was
+corrected in the same commit.)
 
 so the u-shift exponent of D(u) for β is determined by the maximum
 u-pole of c_b(q²) · TR_M_SYM[b] over the 6 basis elements.

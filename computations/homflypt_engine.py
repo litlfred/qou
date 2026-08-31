@@ -448,6 +448,52 @@ def hopf_link_braid() -> tuple[list[int], int]:
 #   from homflypt_engine import homflypt_at_su_n, homflypt_gram_entry
 #   val = homflypt_at_su_n([1, 1, 1], 2, N=3, q=q_0)  # SU(3) trefoil
 
+def homflypt_borromean_at_az(a, z):
+    """HOMFLY-PT of the Borromean rings evaluated at (a, z), exactly.
+
+    RESTORES A MISSING DEPENDENCY (2026-08-30, beans qou-s7g0 / qou-cds2).
+    `probes/lambda_scale_homflypt_skein_recursion_probe.py` imported this from
+    `lambda_scale_alt_g_skein_polynomial_direct`, a module that exists NOWHERE
+    in the tree -- the only mentions of the name are three docstring lines in
+    the failing probe itself, calling it the "Strategy G predecessor". Same
+    class as `qou-ti1n`: a dependency deleted or never committed, leaving its
+    consumer unrunnable and its witness undrainable.
+
+    Rebuilt from in-repo compute rather than transcribed from a table, so it is
+    derived here and not asserted.
+
+    ROUTE. `homflypt_from_braid` refuses n_strands >= 3 by design and names the
+    replacement in its own message; this delegates there:
+
+        homfly_skein_braid.homfly([1, -2, 1, -2, 1, -2], 3)
+
+    giving the exact integer Laurent polynomial
+
+        P = v^-2 z^-2 - v^-2 z^2 - 2 z^-2 + 2 z^2 + z^4 + v^2 z^-2 - v^2 z^2
+
+    VARIABLE CONVENTION, MEASURED not assumed. The engine works in (v, z) and
+    the caller asks for (a, z); `a = 1/v` is the other live convention in the
+    literature, so the map was calibrated against the probe's OWN inline
+    trefoil, `P(3_1; a,z) = 2a^2 - a^4 + a^2 z^2`. The skein route returns
+    {(2,0): 2, (2,2): 1, (4,0): -1} -- term-for-term identical under **a = v**,
+    and numerically 2 * (-2.218075) vs 0.6146987 at (1.7, 0.35) distinguishes
+    the two decisively. So the map is the identity.
+
+    INDEPENDENT CHECK, not a restatement of the construction: the Borromean
+    rings are AMPHICHIRAL, so their HOMFLY-PT must satisfy P(v,z) = P(1/v,z).
+    The returned polynomial does, exactly -- coeff(i,j) == coeff(-i,j) for
+    every term -- and numerically to 18 digits. A wrong braid word or a wrong
+    variable map would not be symmetric.
+
+    Exact in the coefficients; the evaluation is in whatever type `a` and `z`
+    carry, so pass `mpf` to stay off float64.
+    """
+    import homfly_skein_braid as _skein
+    word, n = borromean_braid()
+    return sum(c * a ** i * z ** j
+               for (i, j), c in _skein.homfly(word, n).t.items())
+
+
 def _homflypt_2strand_numerical(k: int, v, z):
     """Numerical HOMFLYPT of T(2, k) at specific (v, z) via Hecke recurrence.
 

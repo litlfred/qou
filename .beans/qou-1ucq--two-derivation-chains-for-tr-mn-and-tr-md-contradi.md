@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T16:49:44Z
-updated_at: 2026-08-30T16:51:50Z
+updated_at: 2026-08-30T17:55:24Z
 ---
 
 Found 2026-08-30 while scoping the six documents of `qou-rm57`. This is a
@@ -93,3 +93,197 @@ not exercise (the n/D braid words, or the 3A-strand handling those two share).
 pins, values from one of two contradicting chains, and error bars understating
 the real spread by ~1e8. That is worse than the convention issue the existing
 banner describes, and the banner does not mention it.
+
+
+## ROOT CAUSE IDENTIFIED 2026-08-30 — the two chains trace DIFFERENT WORDS, and both narratives are invalid for the object the producer returns
+
+The bean asked which of the pair is right. The answer is that the question was
+malformed: they are not two computations of one object.
+
+### 1. Different braid words
+
+| chain | what its step says |
+|---|---|
+| `n-tr-M-q0` step 4 | *"Z=0, N=1, include_inter=False; produces a word with **5 crossings** on 3 strands"* |
+| `markov-trace-assembly-neutron` step 3 | *"the canonical neutron σ-word is **11 crossings**, {σ: 5, σ⁻¹: 4, averaged: 2}"* |
+
+Proton, for contrast: 6 crossings vs a 6-crossing word — **agreeing**, which is
+exactly why the proton pair agrees to 0.0 and n/D do not. The lever named in
+this bean pointed at the right place.
+
+### 2. `markov-trace-assembly-neutron` contradicts ITSELF
+
+Step 3 declares an **11**-crossing word. Steps 4 and 6 then compute the
+characters from `σ₁σ₁⁻¹σ₂σ₁σ₂⁻¹` — **n₊ = 3, n₋ = 2, five letters**:
+
+    chi^(3)     = q^{n_+ - n_-} = q^{3-2} = q
+    chi^(1,1,1) = (-q^{-1})^{n_+} · (-q)^{n_-}
+
+So the document announces one word and computes with another, one step apart.
+(That 5-letter word also contains `σ₁σ₁⁻¹`, which is the identity in B₃.)
+
+### 3. 🛑 Both narratives read a crossing number off an object that has none
+
+`atom_braid_word_3A` is the live producer, and its own docstring (PR #5765,
+2026-08-25) says:
+
+> **⚠ NAME IS A MISNOMER — this does NOT return a braid word.** Each triple
+> `(c, d, g)` denotes the HECKE ELEMENT `c·σ_g + d·1`, not a braid generator.
+> … there is **NO SINGLE LINK** behind it … So **NO TOPOLOGICAL quantity may be
+> read off it — not a volume, not a crossing number, not a genus.**
+
+Both chains derive every character from a crossing count. Measured, the live
+producer returns **11 typed triples for BOTH proton and neutron**, and
+`include_inter` changes nothing at A=1 (expected — one nucleon has no
+interfaces, so that parameter is not a defect).
+
+The live path does **not** use crossing counts: it runs
+`chi_lambda_of_word(sigmas, dim, word, n_gens)`, a matrix product in the
+seminormal representation — a linear functional on H_n, which is exactly what
+the docstring says is the only valid route.
+
+**So the defect is not that one chain has the wrong number. Both chains
+document a derivation the corpus explicitly forbids for this object**, and
+their disagreement is a downstream symptom of that.
+
+### What is NOT established, and what I am not claiming
+
+- **Which target is right.** Neither, on this evidence — both narratives are
+  invalid, so neither number is *derived* by the route its document gives.
+  Whether either coincides with a correct value is a separate question.
+- **That the live producer is wrong.** It is not implicated. Its method is the
+  valid one.
+
+### Two adjacent facts, recorded so the next reader is not surprised
+
+- `markov_trace_3A(q=Q0_PROTON)` returns **0.70225067735** for the proton
+  against canon **1.14575969246** — **39 %** apart. It is a *different
+  normalisation* (`w = dim_q²/[n]_q!`, then `w·χ/dim`), not a competing value
+  for the same functional. Do not read it as a fifth candidate.
+- That function only **half-honours its `q` argument**: the weight table uses
+  the caller's `q` while `_cached_seminormal` is built at `Q0_PROTON`. Passing
+  the muon pin moves the result by only 2.3e-9. **This is already documented in
+  the source** — *"pre-existing and is left alone here"* (line ~915) — so it is
+  not a new finding, but it does mean the `q` parameter promises more than it
+  delivers.
+
+### The work now
+
+Not "re-derive one of the pair". Either **rewrite both narratives** to describe
+the linear-functional route the producer actually takes, or **retire them** —
+a derivation chain whose every step reads a crossing number off a
+non-braid-word documents a computation nobody performs.
+
+
+## REPAIRED 2026-08-30 (PR #6318) — the table is regenerated; the invalid narratives are still open
+
+The half of this bean that reaches the paper is fixed. The half about the
+derivation-chain documents is not, and is what remains.
+
+### Fixed
+
+`markov-trace-frobenius-selection.md` now carries the live proton-pin values,
+read from the two producers' committed witnesses rather than hand-computed:
+
+| atom | was (C) | now (D, proton pin) | change |
+|---|---|---|---|
+| proton | 1.0653061442544499 | 1.1457596924573009 | +7.55 % |
+| neutron | 0.9232332299116371 | 0.9877436881158096 | +6.99 % |
+| deuteron | 0.3882864240747888 | 0.5751722439177719 | **+48.13 %** |
+
+**The deuteron was wrong by half.** This bean opened on a 1.2e-7 disagreement
+between two chains and treated the tabulated value as approximately settled;
+the actual defect in the paper was five orders of magnitude larger and had a
+banner over it saying so since 2026-08-09.
+
+### Three prose claims were wrong too, and the banner covered none of them
+
+1. **"four independent paths agree to ≤ 2e-15"** — false. Hoefsmit and Habiro
+   are **colour-blind** and diverge by up to **3.24e-9**; the producer flags
+   this as `(cb≠)`. Certification rests on **two** paths.
+2. **"at the proton-pinned q₀"** — the named producer is **muon-canonical**
+   and refuses to run off the ideal pin, so it certifies 11.6 ppb away from
+   where the table is evaluated.
+3. **The error column** measured agreement among same-convention paths. Never
+   a bound on the quantity.
+
+Also: the block cited an **invented** registry id `markov-z-convention-d`. The
+registry uses single-letter ids; it is **D**.
+
+### Correction to this bean's own framing
+
+The section above headed *"the quoted uncertainty is off by ~1e8"* overstated
+by mis-reading the column. It is labelled *"error vs 4-way"* and honestly
+reports what it measures — spread among four paths of one chain family. The
+defect is that four-path spread is not independence, not that the label lied.
+The bean's ratio column (3.6e8×, 1.5e8×) compares two things the table never
+equated; do not quote it.
+
+### Still open — this is the remaining work
+
+Both narratives derive characters from a crossing number read off
+`atom_braid_word_3A`, which the corpus forbids for that object. The live path
+does not, so the numbers are safe and the **documents** are not. Corroborated
+independently while repairing: the peel witness records `word_length: 11` for
+**both** proton and neutron, against `n-tr-M-q0` step 4's *"5 crossings"* —
+the same contradiction reached from the witness rather than from the source.
+
+Either rewrite both to describe the seminormal linear-functional route, or
+retire them.
+
+
+## The six chains are corrected (PR #6318, second commit) — and three of my own claims here were wrong
+
+Measured against the live producer, twice by independent routes (reading `h`
+off the returned `d`-values; and `canonical_braid_crossings.classify_crossing`):
+
+| atom | letters | σ | σ⁻¹ | averaged | non-braid | chain claimed |
+|---|---|---|---|---|---|---|
+| proton | 11 | 6 | 3 | 2 | 2 = 2A | "6 crossings" |
+| neutron | 11 | 5 | 4 | 2 | 2 = 2A | "5 crossings" |
+| deuteron | 23 | 11 | 7 | 5 | 5 = 2A+1 | "12 crossings" |
+
+The claimed figures do not share one convention: p's 6 and n's 5 are the σ
+(`d = 0`) counts alone; D's 12 is the complement. Also `h` read off the word is
+`0.20906029879563932` = h(q) at the **proton** pin to float64, in three chains
+whose targets declare the CODATA-2018 **muon** pin.
+
+### Corrections to THIS bean
+
+1. **"Both narratives are invalid" was too broad.** The three `*-tr-M-q0` chains
+   have a **sound method** — their character step is `χ^λ := tr(ρ^λ(T_w))`, the
+   seminormal matrix product, which never consults a crossing count. Only their
+   word-*description* was wrong.
+2. **`markov-trace-assembly-deuteron` is sound too**, and better than this bean
+   said: its step 3 already carries the correct decomposition {σ:11, σ⁻¹:7,
+   averaged:5} — matching my measurement exactly — and step 4 gives the averaged
+   letter its correct action `ρ^λ(I_avg) = ρ^λ(σ_i) − (q−q⁻¹)/2·1`.
+3. **The neutron chain does NOT contradict itself silently.** This bean said it
+   "announces one word and computes with another, one step apart". The
+   legacy-convention NOTE was already there, in that very step. What is true is
+   that the note is **load-bearing**: it is the root cause of the 7.285e-8 (73×)
+   disagreement, because steps 5/7 evaluate χ on a genuinely different element
+   of H₃(q).
+
+### The one genuinely wrong, unflagged chain — and it is the one I called "agreeing"
+
+`markov-trace-assembly-proton` asserts the word is 6 crossings **"all positive
+σ"**. False: 6 σ, 3 σ⁻¹, 2 averaged. Verified symbolically:
+
+    chi^(3)     = q(q^2+1)^2/4         not q^6     ratio  (q^2+1)^2/(4q^5)
+    chi^(1,1,1) = -(q^2+1)^2/(4q^5)    not q^-6    ratio  -q(q^2+1)^2/4
+
+Note the **sign** on (1,1,1): the canonical character is negative where the
+chain reports positive. So the proton pair "agreeing to 0.0" was agreement of
+*values*, not of *method* — and value-agreement is what this bean originally
+used as its lever.
+
+Flagged to the standard the neutron chain already met. **Not re-derived** —
+correcting it moves the value, which is a compute change, not a documentation
+one.
+
+### Remaining work (compute, not documentation)
+
+Recompute `markov-trace-assembly-{proton,neutron}` steps on the canonical
+11-letter element. Both currently report tr_M of a legacy element under a
+canonical label. The deuteron chain shows what the corrected form looks like.

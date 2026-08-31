@@ -349,9 +349,9 @@ def main() -> int:
     # Sanity assertion: P4 (control) at p must give 1.0 exactly
     w.add_assertion(
         "P4_control_proton_ratio_is_one",
-        computed=float(A_p / A_p),
-        expected=1.0,
-        tolerance=1e-40,
+        computed=A_p / A_p,
+        expected=1,
+        tolerance=0,
         source=(
             "P4 control: A_Phase4(p) / A_Phase4(p) = 1 by construction; "
             "any deviation signals an arithmetic bug."
