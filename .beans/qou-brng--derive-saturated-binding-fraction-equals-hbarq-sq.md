@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T15:02:18Z
+updated_at: 2026-08-31T15:05:29Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -563,3 +563,33 @@ STRUCTURE, not magnitudes.
 No replacement basis. After four probes the constructive question — what basis
 carries a factorially-growing graded reference — is OPEN, and the two obvious
 candidates (polynomial-in-A, and its log) are both measured to fail.
+
+
+### Cross-PR synthesis with #6394 (2026-08-31)
+
+Sibling #6394 (`qou-23dn`/`qou-gcmn`/`qou-brng`) proves a scope-(b) exclusion:
+the chain binding has the exact closed form B(A) = E0*S_off(A0)*g^(A-A0)*(1-f^(A-1))
+(four points at 1e-30, two constants), and NO value of g makes it extensive —
+bounded if g<=1, at least geometric if g>1. Its f_pp reproduces z_D to 2.8e-31.
+
+That and PR #6393's probe 2 are the same shape-mismatch from opposite ends:
+framework objects are MULTIPLICATIVE (geometric g^A; factorial [A]_q!) while the
+targets are ADDITIVE (extensive cA; the polynomial coordination basis C(A,k)).
+
+SCOPE, settled from binding_channel_taxonomy_probe (already on main, same bean —
+I raised it as an open question on #6394 and then found the corpus had it):
+
+  * #6394's exclusion scopes to the MULTIPLICATIVE trace-difference channel
+    (taxonomy channel 1, what binding_canonical ships) — neither extensive nor
+    additive over bonds, for any bond set.
+  * The LOG / per-bond-energy channels (3, 4, 5) ARE extensive and additive over
+    bonds by measurement. They are NOT covered by that exclusion. Their failure
+    is separate: a 2-3x magnitude shortfall against AME (at 4He, 24 % pairwise
+    share and a 21.4 MeV many-body residual).
+  * So: trace-difference family excluded on EXTENSIVITY; log family excluded on
+    MAGNITUDE; neither exclusion reaches the other's channel. Recorded on #6394
+    so a later reader does not take the (b) wider than its invariant supports.
+
+Probe 4's log-channel refutation does not conflict: it kills taking the log of a
+[A]_q!-shaped object at nuclear A (pre-asymptotic), not the log of a geometric
+one, whose log IS exactly linear.
