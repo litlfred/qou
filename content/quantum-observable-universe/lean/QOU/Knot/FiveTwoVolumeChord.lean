@@ -47,7 +47,7 @@
   `MostowRigidity` used to carry — which proved nothing about the exact
   constants at all (bean `qou-f8lit`, PR #6084).
 
-  -- Ref: [neumann1985] Volumes of hyperbolic three-manifolds
+  -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds
   -- Ref: [manuscript] bean qou-52ch
 -/
 

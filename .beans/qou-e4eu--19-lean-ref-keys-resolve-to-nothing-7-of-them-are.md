@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-31T05:06:11Z
-updated_at: 2026-08-31T05:06:46Z
+updated_at: 2026-08-31T05:18:33Z
 ---
 
 `folio-assistant/content/pipeline/validate-references.ts` is the only checker
@@ -66,3 +66,77 @@ kind of thing that could never be a warrant.
   per §1, or a non-`Ref:` comment form pointing at the audit/probe/bean.
 - Wire `scripts/run-validate-references.ts` into the preflight so this cannot
   silently regrow.
+
+
+## PARTIAL 2026-08-31 — 19 -> 13, and four "missing works" were never missing
+
+Re-run after the fix: **13 errors** (was 19), 173 warnings, 411 info.
+
+### The correction that saved six wrong entries
+
+My plan was "add the twelve to `references.ts` — ordinary bibliography work".
+That would have been wrong for a third of them. **Four of the twelve are already
+held under a different id** — checked by matching TITLES against the module, not
+by trusting the key:
+
+| cited key | actually held as | title / author / year |
+|---|---|---|
+| `schrijver1986` | `schrijver1986theory` | *Theory of Linear and Integer Programming*, Schrijver, 1986 |
+| `stanley1999ec2` | `stanley1999` | *Enumerative Combinatorics, Volume 2*, Stanley, 1999 |
+| `neumann1985` | `neumann-zagier1985` | *Volumes of hyperbolic three-manifolds*, Neumann + Zagier, 1985 |
+| `ratcliffe2006` | `ratcliffe` | *Foundations of Hyperbolic Manifolds*, Ratcliffe |
+
+These are **key drift, not missing works**, so the fix is to repoint the Lean
+`-- Ref:` to the held id. That is the *safe* kind of repointing — same title,
+same author, same year — and it is the opposite of the `qou-cite` hazard, where
+the near-misses are genuinely different papers.
+
+**One caveat, stated because it is a real imprecision:** the held `ratcliffe`
+entry is the **3rd edition (2019)**; the citation said 2006 (2nd ed), and cites
+"§8 (fundamental domains and the volume of a quotient)". Same book, same author,
+but section numbering could differ between editions. Repointed anyway on the
+judgement that a live citation to the wrong edition of the right book beats a
+key resolving to nothing — but it wants an eye on the §8 reference.
+
+`neumann-zagier1985` was confirmed from the **held PDF itself**
+(`library/1-s20-0040938385900047-main/`, whose doc-id is the Elsevier PII
+`0040-9383(85)90004-7`): "WALTER D. NEUMANN and DON ZAGIER", p. 329 visible.
+
+### Two genuinely absent, now added
+
+- **`rockafellar1970`** — *Convex Analysis*, Princeton UP, Princeton Math.
+  Series 28. Named in the citing comment ("Convex Analysis, Cor. 17.1.2").
+  **No DOI asserted**: the Princeton reissue has one, but it was not verifiable
+  from this sandbox and a guessed DOI is worse than none.
+- **`bjorner-brenti2005`** — *Combinatorics of Coxeter Groups*, GTM 231,
+  Springer. **DOI `10.1007/3-540-27596-7` taken from the citing Lean comment,
+  which carries it inline** — the citing author's own record, not my recall.
+
+Bibliography: 810 -> 812 entries.
+
+### The 13 that remain
+
+**Seven are not citations** (unchanged): `audit`, `probe`, `probe-w`, `probe-j`,
+`probe-q`, `bean`, `metallichierarchy`. Needs a convention call.
+
+**Six need external lookup**: `frenkel2020` (arXiv:2007.11786),
+`koroteev-zeitlin2022` (arXiv:2108.01557), `murakami1996`, `murakami2013`,
+`wielenberg1978`, `ggmw2020`. The first two carry arXiv IDs in the Lean, so they
+are one fetch from settled — **but arxiv.org is blocked by this sandbox's egress
+proxy**, and neither is in `library/`. That is why they are open, not because
+they are hard.
+
+`ggmw2020`'s Lean comment expands it as "Gukov–Garoufalidis–Mariño–Wheeler
+(2020), eq (161)". `library/` holds four candidate resurgence papers; note the
+expansion may itself be wrong (GGMW is usually Garoufalidis–**Gu**–Mariño–
+Wheeler), so do not resolve it from the initialism alone.
+
+### Lean verification
+
+Five files edited (comment-only). Four `lean`-direct **exit 0**. The fifth,
+`FiveTwoVolumeChord.lean`, exits 1 — **and it is not this change**: the
+unmodified file fails identically, on
+`FiveTwoNinthPower.olean ... does not exist`. That module's **source exists** on
+this branch and on `main`; only its olean is absent from the restored cache,
+which was seeded before it landed. Environmental gap, nothing broken in the
+corpus.

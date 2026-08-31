@@ -19,7 +19,7 @@
 
   Archimedean (ℝ): `arg`, `Λ` — §7c.
 
-  -- Ref: [neumann1985] Volumes of hyperbolic three-manifolds
+  -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds
   -- Ref: [manuscript] bean qou-52ch
 -/
 
