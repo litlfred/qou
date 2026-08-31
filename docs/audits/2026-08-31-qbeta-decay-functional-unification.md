@@ -13,6 +13,22 @@ proposed, wired or readmitted; no convention adjudicated.
 
 ---
 
+> ## 🛑 CORRECTED the same day — see [the cosine-justification audit](./2026-08-31-qbeta-cosine-parametrisation-justification.md)
+>
+> **"They are the same functional in two coordinates" is OVERSTATED**, as is
+> "the `c_k` are the affine-vs-cosine reparametrisation residual". The identity
+> `Π = affine(z)/cos(θ(z))` needs both sides at the **same `z`**; the corpus's
+> ladder **fixes** `z = z_conv` and lets the `c_k` absorb, while the trace route
+> **frees** `z`. At `z_C` the affine correction is `0.4409` — 55.84 % from the
+> data — while the ladder's product is `0.999926`. The two routes are two
+> **allocations** of one residual, with different free parameters, not one
+> functional.
+>
+> **Unaffected below:** the bridge `𝔈₀·(−ε(Δ_S)) ≡ Q_A`, agreement at `z = 1`
+> (hence that leading-order agreement is automatic and uninformative), every
+> protium finding, and `F_REQUIRED_TRM = (Q_β/Q_A)/affine(z_D)` to 3.6e-9.
+
+
 ## The question, and why it was malformed
 
 `qou-cds1` Step 15 left the bean asking which of two readings of the decay
