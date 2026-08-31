@@ -110,3 +110,52 @@ stakes rather than lowering them:
 No baseline: the backlog is 248 and the numbers shift with every commit, so a
 must-only-shrink file would churn. `--strict` exists for when it is drained
 enough to gate in CI.
+
+## 2026-08-31 — TWO limits on the detector, and on regeneration generally
+
+### 🛑 The detector OVER-REPORTS: commit date ≠ value change
+
+It flags an upstream as newer by the commit that last TOUCHED it. Some of those
+commits change no values at all. Proven on the largest cluster:
+
+    y-lambda-at-q0.witness.json, last touched by
+    09340b94f "vendor: re-sync qou-mass mirror after the merge"
+        non-ephemeral content identical?  TRUE
+        changed non-ephemeral keys:       []
+
+So its 7 flagged consumers are **false positives** — the upstream's values never
+moved. The fix is to walk each upstream's history back to the last commit that
+changed non-ephemeral content and compare against THAT, not the last touch.
+Until then, treat the 208 as an upper bound.
+
+### 🛑 Regeneration is not free: the corpus spans HETEROGENEOUS environments
+
+This container is NEWER than some witnesses (mpmath 1.3.0 → 1.4.1) and **OLDER
+than others**. Regenerating one of the latter silently downgrades its provenance
+record. I did exactly that, in `e3ccfc9a4`:
+
+    binding-reeb-phase-decomposition
+        python 3.13.12 -> 3.11.15;  numpy 2.5.0 -> 2.4.6;  scipy 1.18.0 -> 1.17.1
+
+Reverted in `6fe9c71fc`. The other 9 of that batch are fine (mpmath UP, or the
+pyhecke_native_build hash from the wheel rebuild).
+
+The witness tooling already warns about this and was right to:
+
+    "the environment block records LESS than the witness on disk ... install it
+     and re-run rather than committing the weaker record; the numbers can be
+     identical while the provenance silently degrades."
+
+**Check the environment delta before committing any regeneration**, not just the
+values. A staleness drain performed in the wrong container trades a stale number
+for a degraded record.
+
+### Bycatch: `habiro_pochhammer_bridge` could not run at all
+
+Its eval namespace bound the substrate value to `check_q` while the upstream's
+`a_m` expressions are polynomials in `u` (`-172*u - 172`), so everything past
+m=0 raised `NameError`. `check_q` appears nowhere else — a rename leftover, and
+NOT a contract that moved: the upstream uses `u` on both sides of its last
+regeneration. Fixed; it now runs. Its witness is not committed (this container
+would downgrade it, and it reports a real assertion failure at 81596 ppm that
+deserves its own look).
