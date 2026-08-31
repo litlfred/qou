@@ -295,4 +295,68 @@ theorem repr_murphySum_one_of_subgroup
   rw [repr_murphySum]
   simp
 
+/-! ## The index bridge, and `lead`
+
+`murphyIndex_card` above matches **cardinalities**. To get `lead` we need the **bijection**, and
+every piece of it already exists — this is assembly, not construction.
+
+* `Equiv.subtypeSigmaEquiv` (Mathlib) turns a subtype of a `Σ` into a `Σ` over a subtype;
+* `partitionShapeEquiv` (`SchenstedPartitionShape`) re-indexes Young diagrams with `n` cells by
+  `Nat.Partition n`, and its `_apply` lemma is `rfl`, so the fibres match definitionally;
+* `Schensted.rskEquiv` (`SchenstedRSKEquiv`) is the Robinson–Schensted correspondence itself.
+
+The first two are exactly the composition inside `card_pairs_eq_sum`'s proof, used there only for
+its effect on cardinalities. Lifting it to the `Equiv` costs nothing.
+
+## Why this is the answer to `lead_inj`
+
+`Triangular`'s `α` is forced to be the **basis index type** — its field is `v : ι → (α →₀ R)`, so
+`α` is whatever indexes the coordinate vectors, here `Equiv.Perm (Fin (n+1))`. `lead` therefore
+cannot carry `λ` alongside; it must land in permutations. Since
+`|MurphyIndex m| = m! = |S_m|`, **injective ⟺ bijective**, and the canonical bijection between
+permutations and same-shape tableau pairs is RSK.
+
+So `lead := murphyIndexEquivPerm` is injective **because it is an `Equiv`** — `lead_inj` is
+discharged by `Equiv.injective`, with no combinatorial argument at all.
+
+This is what refutes the earlier candidate `d(s)⁻¹ w_λ d(t)`: that map could never have been a
+bijection, because `λ ↦ w_λ` already collapses distinct partitions
+(`computations/hecke/murphy_lead_injectivity_probe.py`).
+-/
+
+/-- **The index bridge**: RSK's codomain is `MurphyIndex n`, re-indexed.
+
+`{X : Σ μ, SYT μ × SYT μ // X.1.cells.card = n} ≃ MurphyIndex n`, by `subtypeSigmaEquiv` then
+`partitionShapeEquiv`. Both steps are already used, for their cardinality shadow only, inside
+`QOU.Mathlib.card_pairs_eq_sum`. -/
+noncomputable def murphyIndexEquivRSKCodomain (n : ℕ) :
+    {X : (Σ μ : YoungDiagram,
+        QOU.Mathlib.StandardYoungTableau μ × QOU.Mathlib.StandardYoungTableau μ) //
+      X.1.cells.card = n} ≃ MurphyIndex n :=
+  (Equiv.subtypeSigmaEquiv
+      (fun μ : YoungDiagram =>
+        QOU.Mathlib.StandardYoungTableau μ × QOU.Mathlib.StandardYoungTableau μ)
+      (fun μ : YoungDiagram => μ.cells.card = n)).trans
+    (Equiv.sigmaCongrLeft' (QOU.Mathlib.partitionShapeEquiv n).symm)
+
+/-- **`MurphyIndex n ≃ S_n`** — the Robinson–Schensted correspondence, stated on the index type
+the Murphy family actually uses. -/
+noncomputable def murphyIndexEquivPerm (n : ℕ) :
+    MurphyIndex n ≃ Equiv.Perm (Fin n) :=
+  (murphyIndexEquivRSKCodomain n).symm.trans (QOU.Mathlib.Schensted.rskEquiv n).symm
+
+/-- **`lead`** — the leading permutation of a Murphy basis element, taken to be its RSK image.
+
+Landing in `Equiv.Perm (Fin n)` is forced: it is the index type of the `T_w` basis, hence of the
+coordinate vectors `Triangular` quantifies over. -/
+noncomputable def lead (n : ℕ) : MurphyIndex n → Equiv.Perm (Fin n) :=
+  murphyIndexEquivPerm n
+
+/-- **`lead_inj`** — cellular axiom (C1)'s first `Triangular` field, discharged.
+
+No combinatorial content: `lead` is an `Equiv`, so injectivity is `Equiv.injective`. The work was
+in identifying the right map, not in proving this. -/
+theorem lead_injective (n : ℕ) : Function.Injective (lead n) :=
+  (murphyIndexEquivPerm n).injective
+
 end QOU.BraidKnot.HeckeMurphyYoung
