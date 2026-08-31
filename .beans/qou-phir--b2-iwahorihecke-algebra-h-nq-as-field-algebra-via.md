@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:38:04Z
+updated_at: 2026-08-31T05:43:41Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1025,3 +1025,39 @@ docstrings as misplaced-on-purpose so a later tidy-up knows where they go.
 `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` for a row-standard non-standard `t` — then 3.14's dominance
 induction. Both index sets and the map between them now exist, so 3.14 is finally STATABLE,
 which it was not before this session.
+
+
+### 2026-08-31 — IsStandard on the filling type; and a RECONNAISSANCE of the q=1 Garnir apparatus
+
+Landed sorry-free: `IsColStandard`, `IsStandard`, `entry_lt_entry_of_lt_row`,
+`isColStandard_sytToTableau`, `isStandard_sytToTableau`, `IsStandard.isRowStandard`, plus
+Decidable instances. All three of Lemma 3.14's index sets — row-standard source, standard
+target, and the map between them — are now on ONE type, `Specht.Tableau μ`. **3.14 has nothing
+missing from its statement any more.**
+
+**Reconnaissance of what the q=1 side already provides (ninth reuse find this arc), and — more
+usefully — what it does NOT.**
+
+Already built, all on `Specht.Tableau μ`, the same type: `colWordNum` / `cmajSig` (the validated
+straightening measure), `garnirA` / `garnirB` (the label sets), `garnirG` / `garnirH` (the
+permutation sets), `garnirGSub` / `garnirHSub` (as subgroups), `garnir_full_annihilation`,
+`colStandard_of_colWordMin`, `exists_row_descent_of_colWordMin`, `exists_descent_of_not_mem_range`.
+
+**But the reuse is LESS DIRECT than the names suggest, and this is the part worth recording.**
+The descent lemmas are phrased against POLYTABLOID MEMBERSHIP
+(`Specht.polytabloid t ∉ Set.range standardPolytabloid`), not against tableau standardness, so
+they are Specht-module statements rather than combinatorial ones. `IsStandard` above is what
+lets that be restated combinatorially, but the restatement is work, not a rename.
+
+**Three genuinely new pieces remain for Mathas 3.13, and #2 is why his proof differs from
+Sagan's at all:**
+1. the Garnir TABLEAU `g` (the corpus has Garnir SETS and SUBGROUPS, not the tableau) and the
+   factorisation `t = g·w`;
+2. **the length additivity `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`** — a Coxeter-length statement, and the
+   q=1 side never tracks lengths at all, so there is nothing to transport;
+3. the q-analogue of Garnir annihilation: at q=1 the relation is `sign`-weighted
+   (`garnir_full_annihilation`), in `H_n(q)` it is weighted by the Hecke relation.
+
+**next**: (1) and (2) above. (2) is the load-bearing one and is where I would start, since it
+is the piece with no q=1 antecedent and therefore the one most likely to reveal that the route
+needs rethinking.

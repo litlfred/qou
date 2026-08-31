@@ -170,4 +170,77 @@ theorem isRowStandard_sytToTableau (T : QOU.BraidKnot.StandardYoungTableau μ) :
   rw [← hl, ← hl']
   exact Fin.lt_def.mpr key
 
+
+/-! ## Column-standard, and standard, on the same filling type
+
+Lemma 3.14's **target** side is a standard pair, so "standard" is needed as a predicate on
+`Specht.Tableau μ` too — the same type the row-standard predicate and the whole `q = 1` Garnir
+apparatus (`colWordNum`, `garnirA`/`garnirB`/`garnirG`) already live on. With `IsStandard` here,
+all three index sets of Mathas' Lemma 3.14 — row-standard source, standard target, and the map
+between them — are expressed on one type, and the statement of 3.14 no longer has anything
+missing.
+
+Everything below mirrors the row case exactly, `col_strict` for `row_strict` throughout. -/
+
+/-- **Column-standard**: within any one column, label order agrees with row order. -/
+def IsColStandard (t : Tableau μ) : Prop :=
+  ∀ l l' : Fin (nOf μ), colPattern t l = colPattern t l' →
+    rowPattern t l < rowPattern t l' → l < l'
+
+/-- **Standard**: row-standard and column-standard. -/
+def IsStandard (t : Tableau μ) : Prop := IsRowStandard t ∧ IsColStandard t
+
+instance instDecidableIsColStandard (t : Tableau μ) : Decidable (IsColStandard t) := by
+  unfold IsColStandard; infer_instance
+
+instance instDecidableIsStandard (t : Tableau μ) : Decidable (IsStandard t) := by
+  unfold IsStandard; infer_instance
+
+open QOU.BraidKnot.SpechtStandardBasis in
+/-- **Column entries increase down a whole column, not just between neighbours** — the column
+twin of `entry_lt_entry_of_lt`, and, like it, belonging upstream in
+`QOU.BraidKnot.StandardYoungTableau`. -/
+theorem entry_lt_entry_of_lt_row (T : QOU.BraidKnot.StandardYoungTableau μ) {j : ℕ} :
+    ∀ {i i' : ℕ}, i < i' → (i', j) ∈ μ → T.entry i j < T.entry i' j := by
+  intro i i'
+  induction i' with
+  | zero => intro h _; omega
+  | succ k ih =>
+    intro hlt hmem
+    rcases Nat.lt_succ_iff_lt_or_eq.mp hlt with h | h
+    · exact lt_trans (ih h (μ.up_left_mem (Nat.le_succ k) (le_refl j) hmem))
+        (T.col_strict k j hmem)
+    · subst h; exact T.col_strict i j hmem
+
+open QOU.BraidKnot.SpechtStandardBasis in
+/-- A standard tableau, read as a filling, is column-standard. -/
+theorem isColStandard_sytToTableau (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    IsColStandard (sytToTableau T) := by
+  intro l l' hcol hrow
+  have hl : cellLabel T (sytToTableau T l) = l :=
+    (Equiv.ofBijective (cellLabel T) (cellLabel_bijective T)).apply_symm_apply l
+  have hl' : cellLabel T (sytToTableau T l') = l' :=
+    (Equiv.ofBijective (cellLabel T) (cellLabel_bijective T)).apply_symm_apply l'
+  simp only [rowPattern, colPattern] at hcol hrow
+  have hmem : ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ).1,
+      (((sytToTableau T) l' : μ.cells) : ℕ × ℕ).2) ∈ μ := by simp
+  have key : T.entry ((((sytToTableau T) l : μ.cells) : ℕ × ℕ)).1
+        ((((sytToTableau T) l : μ.cells) : ℕ × ℕ)).2
+      < T.entry ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ)).1
+        ((((sytToTableau T) l' : μ.cells) : ℕ × ℕ)).2 := by
+    rw [hcol]
+    exact entry_lt_entry_of_lt_row T hrow hmem
+  rw [← hl, ← hl']
+  exact Fin.lt_def.mpr key
+
+open QOU.BraidKnot.SpechtStandardBasis in
+/-- **A standard tableau, read as a filling, is standard** — both halves together. This is the
+map `Std(μ) → {t : Tableau μ // IsStandard t}` that Lemma 3.14's target side quantifies over. -/
+theorem isStandard_sytToTableau (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    IsStandard (sytToTableau T) :=
+  ⟨isRowStandard_sytToTableau T, isColStandard_sytToTableau T⟩
+
+/-- Standard implies row-standard — the inclusion of index sets Lemma 3.14 moves along. -/
+theorem IsStandard.isRowStandard {t : Tableau μ} (h : IsStandard t) : IsRowStandard t := h.1
+
 end QOU.BraidKnot.RowStandardTableau
