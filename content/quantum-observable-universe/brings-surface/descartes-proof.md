@@ -13,4 +13,4 @@ $\mathcal{O}_q(\mathrm{SU}(2))$.
 
 *Uniqueness.*
 By Tannaka--Krein rigidity, any two fibre-preserving monoidal functors
-between Tannakian categories are accordingly isomorphic.
+between Tannakian categories are correspondingly isomorphic.
