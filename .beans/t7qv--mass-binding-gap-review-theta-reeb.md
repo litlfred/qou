@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T17:39:10Z
+updated_at: 2026-08-31T17:50:00Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -361,3 +361,46 @@ already assumes, i.e. the 3D kissing number.
 
 **The remaining leverage is the kissing-number bound, not the truncation Part
 5's redirect names.** Closure stays OPEN.
+
+
+---
+
+### 2026-08-31 — toward the binding goal: C-frame excision taken over; it was nearly done
+
+**Critical path, from the corpus (not re-derived).** This bean's review: 3/7 L2
+pass; `m_n` and `Δ_pn` ride on `Q_β`, so **Q_β is 3 of the 4 failures**.
+`qbeta-ck-truncation-canonical.ts` names the root cause outright — the `c_k` are
+*"cached for downstream reuse but NOT credited as predictions … the single
+shared root cause of the L2 100× misses on Q_β (164×), m_n (185×), Δ_pn (163×) —
+**only c₂ is derived**"*. The 2026-08-29 adversarial audit: all five gaps
+converge on **`qou-cds1`**, the ladder re-derivation under D.
+
+**C-frame excision: already complete at the z level.** Owner ruling 2026-08-09;
+production uses `z_D = q³/(q²+1)`. Of 110 production files mentioning `z_C`:
+
+| class | n | disposition |
+|---|---|---|
+| comments documenting the excision | 54 | **keep** — prevents recurrence |
+| probe-named | 42 | exempt by repo convention |
+| C↔D comparison machinery | 13 | **keep** — `z_C` is the object of comparison; `cds1` needs these |
+| apparent production consumer | 1 | **AST-verified docstring-only** |
+
+**Zero live-code production consumers of `z_C` remain.** (A naive line-based
+classifier calls that last file live code — its triple-quote toggle desyncs on
+nested docstrings. Recorded, since grep alone will repeat the mistake.)
+
+**What was actually left, and is now done.** `cds1`'s C-conditional register
+(§9g) lives in the **bean**, so a reader of an affected **file** cannot see the
+scoping. Three Lean files cited C-frame `c₃` with no marker —
+`SLeakZeroCrossing`, `FaddeevModularDouble`, `ThetaLipschitzObstruction`. Each
+now carries a scope banner; all three still compile.
+
+**And the reassuring half: no theorem depends on it.** Every C-frame occurrence
+in the formal layer is docstring-only (AST-verified). The convention-D
+re-derivation **cannot invalidate a proved result**.
+
+**What is NOT excisable.** The `c_k` **ladder values** have no D replacement —
+`cds1` says the ladder "must be re-derived, not re-evaluated", and the
+`c₃ ≈ −974` from feeding `z_D` to the current extractor is "a sensitivity
+measurement, not a proposed value". Excising them would delete results with
+nothing in their place. **That is the re-derivation, not an excision.**
