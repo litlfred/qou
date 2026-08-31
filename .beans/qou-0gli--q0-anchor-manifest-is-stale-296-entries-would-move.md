@@ -1,11 +1,11 @@
 ---
 # qou-0gli
 title: 'q0_anchor_manifest is stale: 296 entries would move, 150 muon producers currently default to proton'
-status: in-progress
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-30T14:52:02Z
-updated_at: 2026-08-31T03:07:24Z
+updated_at: 2026-08-31T03:10:44Z
 ---
 
 Found by exploration 2026-08-30 while working `qou-mjcd`. **Measured, not
