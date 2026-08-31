@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:00:48Z
-updated_at: 2026-08-31T03:11:11Z
+updated_at: 2026-08-31T03:22:30Z
 ---
 
 Answers the open question `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`
@@ -115,3 +115,50 @@ Scoped in both audits that carry it (`2026-07-04-he4-vol4-gated-on-r5full`,
 Both were caught by opening the artifact the audit cites instead of trusting
 a summary of it — including AGENTS.md's own summary, which is accurate about
 `binding_canonical` and says nothing about the GS route.
+
+
+## CORRECTION 2026-08-31 (supersedes the follow-on above) — the gate's quoted number was never the evidence
+
+I scoped `tr_M(2H) ~ 0.388` as convention-C and reported the gap against
+`J_{6_2}(q0) ~ 1.027` as 62.19 % / 43.99 % low. **Both figures are withdrawn.**
+I corrected an input to a comparison that is not evidential at all.
+
+`markov_trace_to_jones` in `atom_nf_symbolic_D.py` -- the producer both audits
+cite -- **is the identity function**. Its docstring names the normalisation
+factor `((-1/sqrt q)^{n-1} * (q/(1-q^2))^{n-1})` and then says *"for ease, we
+return `tr` as-is"*. `main()` calls it and compares the result straight against
+a normalised `J(6_2)`. So the pair is an **unnormalised** 6-strand Markov trace
+against a **normalised** Jones polynomial: they must differ, and the size of the
+gap carries no information about the identification. Verified by AST inspection
+of the producer rather than by grep.
+
+**The gate stands anyway, on evidence neither audit cites.** `main()` knows the
+normalisation is missing and computes the convention-independent discriminator
+-- *"even if they differ by a writhe/normalization factor, the ratio should be a
+pure power of `-q^{1/2}`"* -- recorded as `symbolic_ratio`. Measured: a rational
+function with **83 terms over 11**, half-integer powers past `q^{2713/2}`. Not a
+monomial. **The ratio test fails, so the A<=3 anchor non-confirmation is real and
+C9 stands as written.**
+
+The convention C-vs-D scoping is still correct *about the `tr_M` value*
+(`0.388` is C, `0.5751722439177719` is canonical D per #6318, re-verified live)
+and is retained in both audits as such -- it just does not bear on this
+comparison.
+
+**For whoever attacks `conj:canonical-knot-id-sdp`:** aim at the ratio being a
+pure power of `-q^{1/2}`. Do not read the raw gap as "how far off" the
+identification is; at n=6 strands that distance is dominated by the omitted
+normalisation factor.
+
+Probe: `computations/probes/r5full_anchor_gate_evidence_probe.py`, 3/3, exit 0,
+writes no witness, performs no q0 evaluation for any conclusion.
+Scope **(a)**: about the evidence for the gate, not about the knot.
+
+## The pattern across all three corrections in this bean
+
+Each was caught by opening the artifact a summary describes, not the summary:
+AGENTS.md's note (accurate about `binding_canonical`, silent about the GS
+route); the sibling's merged PR (which had already settled what I read as a
+live disagreement); and now the producer's own source (which documents the
+step it does not perform). **A summary that is accurate can still be the wrong
+object.**
