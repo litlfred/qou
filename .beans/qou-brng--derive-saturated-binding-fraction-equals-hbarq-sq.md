@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T10:33:59Z
+updated_at: 2026-08-31T10:40:36Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -499,3 +499,33 @@ deltalambda family already decomposes the residual into mu_2/mu_3/mu_4. Fifth
 near-miss of this arc; the four earlier ones landed.
 
 Scope (a) throughout. Nothing wired.
+
+
+### Third probe (same PR #6393): 'a PURE >=3-body residual' is 1 - 1 = 0
+
+`mu2_vanishing_is_a_normalisation_identity_probe`.
+deltalambda_kappa_interface_residual_simplex_probe sets mu2 = M(2) and
+residual_pure_ge3body = abs(mu2) < 1e-40, emitting 'Residual is a PURE >=3-body
+object: NO edge/2-body component' into its witness. Both A=2 inputs are
+self-ratios: rho_grad(2) = [2]_q!/[2]_q! is an empty product returning 1 for ANY
+q, and rho_strong(2) = B(2H)/B(2H) = 1 is a literal whose own comment says it is
+'the deuteron self-reference ... NOT an independent AME datum'. So mu2 = 1-1 = 0
+identically and the flag is True unconditionally.
+
+Demonstrated over 30 combinations (six moduli q = 0.5..2.0, five rho_strong
+scalings 0.25x..4x): mu2 exactly 0 at every point, while mu3 ranges
+-6.0468..13.5012 and mu4 ranges -85.8784..3.16385.
+
+THE DISTINCTION, and it is the whole point: the kappa refutation next to it is
+SOUND -- the #4316 model predicts M(2) = s with s > 0 (fit gives 0.4708), and a
+model that CONTRADICTS an identity is refuted by it, so kappa = t/s is ill-posed.
+What is NOT supported is reading the same identity as 'a PURE >=3-body residual',
+a structural claim about where binding lives. Refuting a model that contradicts
+an identity uses the identity correctly; concluding a physical ABSENCE from an
+identity does not.
+
+NOT said: not that mu2 is non-zero or that the residual HAS a 2-body component
+(the measurement is silent, and an uninformative statistic is not evidence for
+the opposite conclusion either); not that #4316/#4320 is a fit; nothing about
+mu3 = +0.4708 or mu4 = -4.591, which the transcription reproduces and which is
+what validates it.
