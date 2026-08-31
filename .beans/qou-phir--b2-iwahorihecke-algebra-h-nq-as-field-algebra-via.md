@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:25:41Z
+updated_at: 2026-08-31T05:32:55Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -974,3 +974,31 @@ have to wait for the indexing.
 (c) Lemma 3.14's dominance induction. The q=1 template is the corpus's own sorry-free
     `standardPolytabloid_straightening` on the `colWordNum` measure — same argument, and it
     already carries the hard measure-descent work.
+
+
+### 2026-08-31 — the row-standard index set exists (step (a) of the spanning blocker)
+
+`QOU/BraidKnot/RowStandardTableau.lean`, sorry-free:
+`IsRowStandard`, `RowStandardTab` (subtype), `Decidable`/`Fintype` instances,
+`isRowStandard_of_no_second_column`, `equivTableauOfNoSecondColumn`,
+`card_eq_factorial_of_no_second_column`.
+
+**Design note worth keeping.** It is a PREDICATE on `Specht.Tableau μ`, not a new structure.
+`Tableau μ = Fin (nOf μ) ≃ μ.cells` is already the arbitrary bijective filling and is what
+`dOf`/`dAt`/`murphyM` consume, so row-standardness is a condition on it and a row-standard
+tableau is a subtype — nothing downstream needs re-plumbing. (`BraidKnot.StandardYoungTableau`
+is a separate `entry`-based structure carrying both `row_strict` and `col_strict`; row-standard
+is that minus the column half, but expressed on the type the Hecke side already speaks.)
+
+`card_eq_factorial_of_no_second_column` makes the gap quantitative and Lean-checked: on a
+one-column shape there are `n!` row-standard tableaux against exactly ONE standard tableau.
+That is why Lemma 3.14 cannot be stated against `MurphyIndex`, and why
+`span_murphySum_one_conjugates_eq_top` had to be phrased over conjugating permutations.
+
+Note the hypothesis is `(0,1) ∉ μ` — YoungDiagram is closed under up-left, so "no cell in
+column 1" IS "every row has length ≤ 1", and the row-standard condition is then vacuous.
+
+**next**: (b) Lemma 3.13, the Garnir decomposition `t = g·w` with `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`;
+then (c) 3.14's dominance induction. Also still open and cheap-ish: `IsRowStandard` for the
+image of a standard tableau under `sytToTableau` (the forgetful direction), which the
+straightening's target side will want.
