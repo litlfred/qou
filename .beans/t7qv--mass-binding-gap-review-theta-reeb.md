@@ -1038,3 +1038,116 @@ isotypic components; and van der Hulst, *Folding Mixed-Integer LPs and
 Reflection Symmetries* (`2603.12136`). Also `2203.06568` (SDP bounds via a
 split Terwilliger algebra) as a method template for block-diagonalising an SDP
 by a centraliser algebra's Wedderburn decomposition.
+
+## 2026-08-31 — the atom LP as an n-fold IP: binding is the aggregation gap, and it is ZERO at q_0
+
+`computations/probes/nfold_ip_coupling_duality_gap_probe.py`, 6/6.
+
+**The reformulation, and it is clean.** Take the corpus's own positive-sector
+LP unchanged, `phi(v) = min{t.x : Gx >= Gv, x >= 0}`. Then
+
+    free(Z,N) = Z phi(v_p) + N phi(v_n)     -- n separate local blocks
+    atom(Z,N) = min{sum_k t.x_k : sum_k G x_k >= sum_k G v_k, x >= 0}
+                                            -- the SAME constraints aggregated
+    E_bind    = free - atom
+
+Aggregation is a relaxation, so `E_bind >= 0` **structurally** — `x_p + x_n` is
+aggregate-feasible with cost exactly `free`, which is the whole proof of the
+sign. Mass defect out of a relaxation, nothing fitted.
+
+**Two wins.** (1) The `6^A` blowup collapses: substituting `X = sum_k x_k` the
+atom program is a single **6-variable** LP, `atom = phi(Z v_p + N v_n)`, with
+all `A`-dependence in the RHS. Checked against the explicit `6A`-variable block
+LP at A = 2,3,4, agreeing to 1e-12. (2) Binding becomes the **cone-crossing
+defect** of the LP value function: `phi` is positively homogeneous and convex
+hence subadditive, so `E_bind` is exactly its failure to be additive — zero iff
+`v_p` and `v_n` lie in one linearity cone. "What binds a nucleus" becomes a
+finite decidable question.
+
+**The answer at q_0 is zero.** Supports are `(2,3,4)` for p and `(2,3)` for n —
+**nested**, so one cone, `phi` linear along the ray. `E_bind = 0` to machine
+epsilon for 2H, 3H, 3He, 4He, 6Li, 12C, 16O and pure-species systems; largest
+residual 5.3e-15 on values of order 10. An exact algebraic zero, not a small
+binding. **This route does not repair the 4He L2 miss (`qou-1nvh`).**
+
+**But the mechanism is real and windowed.** Sweeping h from 0.05 to 4.2 the gap
+is zero everywhere except `h in (0.47718474189158, 0.56984029056366)`, i.e.
+`q in (1.26666, 1.32472)`, peak 0.0687 at h = 0.534. q_0 has h = 0.20906,
+**56.2% below the lower edge**. Verified not to be a solver artefact: three LP
+methods agree to 0, both separate problems carry valid dual certificates
+(`y >= 0`, `G^T y <= t`, strong duality), and an explicit cheaper feasible
+aggregate point is exhibited (2.1021 vs 2.1717).
+
+**Inside the window the law is exact:** `E_bind = min(Z,N) * kappa` over
+`0 <= Z,N <= 4`, with kappa = 0.069590 (Z >= N) or 0.070191 (Z < N), a 0.86%
+split; and `E_bind = 0` identically whenever Z = 0 or N = 0. So **no binding
+without both species** — no dineutron, no diproton — structurally, not fitted.
+Since `min(Z,N) = (A - |N-Z|)/2` this is a volume term and an asymmetry term
+locked at coefficient ratio 1. It is **not** the SEMF, whose asymmetry term
+goes as `(N-Z)^2/A` with an independent coefficient; the agreement is
+qualitative only.
+
+**What it leaves open, and it is the same thing twice now.** The n-fold form
+requires an ADDITIVE cost `sum_k t.x_k` where the corpus's atom construction
+uses the multiplicative `t^(x)A . x`. Different functionals, not two spellings
+— the trace *is* multiplicative on disjoint blocks, but `log(t.x)` is not
+linear in x, so no change of variables converts one program into the other.
+Together with the previous turn's finding that the metallic structure lives in
+the Plancherel weighting and not the Markov one, **"which functional is the
+physics supposed to extremise" is now blocking from two independent
+directions.** That is the next thing to settle.
+
+**Boundary of what was built:** this is the LP relaxation. `scipy.linprog`
+throughout, continuous. The n-fold *aggregation* is fully exercised, but
+Theorem 1.1's actual content — poly-time solvability of the INTEGER program via
+Graver-basis stabilisation — is not built. The relaxation collapsing to 6
+variables makes it trivially tractable, so the whole complexity question lives
+in the integrality that is missing.
+
+## 2026-08-31 — LEAD: n-fold IP and the q-P != NP work
+
+Requested connection between the above and
+`content/quantum-observable-universe/appendix-surreals/p-vs-np-surreal-bound.md`
+(+ `p-vs-np-conjecture.ts`). Recorded as a lead; nothing built.
+
+That bound argues: a q-substrate computation accesses the Reeb-period budget
+`Omega_q ~ eps^-1`, a classical step the mass-gap budget `Delta_q ~ eps^3`;
+classical simulation of a q-algorithm needs `2^n delta_n^2 Omega_q` against a
+budget `2^n Delta_q`, so `ordw = 1 > -3` and the simulation exceeds budget by a
+full omega-order; `P != NP` then follows under the standard-part map,
+**conditional** on non-compressibility of `BQP_q -> P` as `eps -> 0`.
+
+Three points of contact, in increasing order of how much they'd actually cost
+to test:
+
+1. **N-fold IP is a rare variable-dimension IP that is in P.** General IP is
+   NP-hard; IP in *fixed* dimension is in P (Lenstra). N-fold IP is neither —
+   dimension `nq` is variable — yet poly-time, and the tractability comes from
+   the **block structure**, not from small dimension. So if the atom program is
+   genuinely n-fold, computing nuclear binding is in **P in the nucleon count**.
+
+2. **Which is a scope statement about the squeeze, either way.** The surreal
+   bound is about problems where a q-substrate buys a `2^n` Reeb speed-up that
+   the standard part destroys. If binding is an n-fold IP it needs no
+   exponential budget at all, so it is *not* an instance where the squeeze
+   applies — the substrate's own dynamics would not exhibit the hardness the
+   conjecture trades on. Either that scope limit should be stated in
+   `p-vs-np-conjecture.ts`, or the atom program is NOT genuinely n-fold, and
+   then the exponential is real and "binding is NP-hard to compute" becomes a
+   positive, falsifiable prediction. Both branches are worth having written
+   down; right now neither is.
+
+3. **The sharpest technical link: Graver stabilisation <-> tower stabilisation.**
+   De Loera et al. prove the Graver basis of `A^(n)` stabilises in `n` (their
+   Section 4, citing [13,19]) — the augmentation directions become
+   `n`-independent past a threshold. The corpus's Hecke tower has its own
+   stabilisation: `h3a_frobenius_gram_offdiagonal_probe` verified the Markov
+   trace is multiplicative on disjoint strand blocks, so `G^(A) = G^(x)A` and
+   `t^(A) = t^(x)A` exactly. **Conjecture worth opening:** the Graver basis of
+   the atom program stabilises *because* the trace factorises on blocks — i.e.
+   the augmentation directions are the tower-stable objects the corpus already
+   has. If that holds, the substrate's algebraic structure is precisely what
+   puts its own dynamics in P, and the `eps^-1` Reeb budget is not needed for
+   them. Testable at small A by computing the Graver basis directly (4ti2 /
+   `zsolve`), which is also exactly the missing integer half of the probe above
+   — so points 1-3 and the probe's own gap close with the same piece of work.
