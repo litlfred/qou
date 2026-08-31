@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-31T19:49:11Z
+updated_at: 2026-08-31T21:31:32Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -782,3 +782,43 @@ at "rationed, arrival intermittent, `get_check_runs` does not discriminate".
 **What would settle it:** request on a PR and then *do not push*, checking at
 5 / 15 / 60 min. Every observation so far, including mine, has confounded the
 request with subsequent activity.
+
+
+---
+
+## 2026-08-31 — TRIAL 2 on qou#6407: the first UNCONTAMINATED observation
+
+Every prior observation on this question (n=5 zeros 2026-08-23, four arrivals
+2026-08-30, my two at 19:37) allowed a push between request and read and none
+recorded whether one happened. This one did not.
+
+**Protocol run as specified.** Requested once at **21:01:08Z**, after all pushes
+to `claude/deuteron-trefoil-writhe-interface-2026-08-31` were finished. No push
+since. **Verified rather than remembered:** head at read time was
+`b572920a3a9f87f580b53b9a3d650508898c6cc5`, identical to the head at request,
+and `updated_at` = 20:59:34Z, *before* the request.
+
+    21:30:49Z   T+29m41s   get_reviews = []   head UNCHANGED
+
+**This is a clean negative at ~30 min** — the first observation on this question
+that measures what it claims to. It does **not** settle it: one clean trial
+against four recorded arrivals is not a verdict, and 30 min is not 60. But it is
+the first data point that is not confounded.
+
+**Trial 1 (qou#6406) — TRUNCATED, still not a negative.** Requested 20:25:30Z,
+`[]` at T+5m39s on a verified-clean head, then **merged by litlfred at
+T+7m03s** — not by me. Post-merge read at 21:30:49Z (~58 min after the merge,
+~65 min after the request): still `[]`. Worth having, because this corpus
+records reviews arriving *after* a merge (qou#6104/#6116), but the run was cut
+short at 7 minutes and must not be quoted as a 60-minute zero.
+
+**A third protocol condition, learned from trial 1:** *do not merge the subject
+PR either.* The protocol in `copilot-review-arrival.md` says request-once and
+do-not-push; trial 1 died on a third way to end a run that the protocol did not
+name. Add it when that file is next touched (it is on `main` as of #6406, so it
+needs its own branch — do not reopen #6406).
+
+**Still NOT changing the `merge-coordinator/MEMORY.md` TRAP row.** One clean
+30-minute zero plus one truncated run does not overturn a row corrected on
+2026-08-30 from four arrivals. The stable wording holds: rationed, intermittent,
+`get_check_runs` = 0 does not discriminate.
