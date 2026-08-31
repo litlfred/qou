@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:02:18.062486+00:00",
-  "commitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
+  "computedAt": "2026-08-31T04:27:24.867520+00:00",
+  "commitSha": "d0a346a5b8c06ff6d32ddc2216ff5bcdcd9a81fe",
   "assertions": [
     {
       "name": "k2_is_derived_tier",
@@ -87,8 +87,8 @@
   "durationMs": 0,
   "computation": "qbeta-derived-c3-residual-bound",
   "scriptFile": "qbeta_derived_c3_residual_bound_probe.py",
-  "scriptHash": "4ca89c9f06ca",
-  "scriptCommitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
+  "scriptHash": "d2a454abe519",
+  "scriptCommitSha": "4d5fd9291c053ce6e71a6531132d2dbca0f25aeb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -111,7 +111,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_derived_c3_residual_bound_probe.py"
   },
-  "description": "Entry 9's cal-anchored wall, quantified from the other side. The corpus bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is met iff |c_4| <= 1.4821774. Cuts both ways: one derived rung closes the whole gap, BUT |c_2|=1 and |c_3|=2.069342577, and continuing that growth puts |c_4|~4.28218, missing by ~2.889x. Also shows the cached c_3 IS the greedy annihilating value and the cached c_4=0 is a greedy artifact carrying no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) but assumes the re-derived D ladder keeps the same u-graded product form; the 'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual. The c_k^even exact rungs do NOT sharpen the |c_4| question: the c_k are not scalar-q Taylor coefficients (u is quadratic in q-1, so the u-reversion is singular) and the extraction amplifies input error by sigma_R/u^k, measured at ~7e5 for k=2 -- a 15-digit 'exact' match there was noise.",
+  "description": "Entry 9's cal-anchored wall, quantified from the other side. The corpus bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is met iff |c_4| <= 1.4816073. Cuts both ways: one derived rung closes the whole gap, BUT |c_2|=1 and |c_3|=2.069342577, and continuing that growth puts |c_4|~4.28218, missing by ~2.89x. Also shows the cached c_3 IS the greedy annihilating value and the cached c_4=0 is a greedy artifact carrying no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) but assumes the re-derived D ladder keeps the same u-graded product form; the 'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual. The c_k^even exact rungs do NOT sharpen the |c_4| question: the c_k are not scalar-q Taylor coefficients (u is quadratic in q-1, so the u-reversion is singular) and the extraction amplifies input error by sigma_R/u^k, measured at ~7e5 for k=2 -- a 15-digit 'exact' match there was noise.",
   "contentBlock": "prop:q-beta-cos-resummation",
   "parameters": {
     "q0_anchor": "proton (physical_proton pin)"
@@ -163,33 +163,33 @@
       {
         "name": "threshold_is_order_unity",
         "pass": true,
-        "why": "|c_4| <= target/u^4 = 1.4821774"
+        "why": "|c_4| <= target/u^4 = 1.4816073"
       },
       {
         "name": "unit_c4_would_meet_target",
         "pass": true,
-        "why": "|c_4| = 1 leaves 5.26253 ppb < target 7.8 ppb"
+        "why": "|c_4| = 1 leaves 5.26253 ppb < target 7.797 ppb"
       },
       {
         "name": "growth_trend_would_MISS_the_target",
         "pass": true,
-        "why": "|c_2|=1, |c_3|=2.0693426; continuing that ratio gives |c_4|~4.28218 > 1.48218 — a perfect c_3 would then STILL miss, by ~2.889x"
+        "why": "|c_2|=1, |c_3|=2.0693426; continuing that ratio gives |c_4|~4.28218 > 1.48161 — a perfect c_3 would then STILL miss, by ~2.89x"
       },
       {
         "name": "k5_is_below_target_regardless",
         "pass": true,
-        "why": "u^5 = 0.0448222 ppb, 174.021x below target — so the question is entirely about c_3 and c_4"
+        "why": "u^5 = 0.0448222 ppb, 173.954x below target — so the question is entirely about c_3 and c_4"
       },
       {
         "name": "cached_c4_zero_is_a_greedy_artifact",
         "pass": true,
-        "why": "c_4 = 0.0 is what greedy extraction leaves once c_3 has annihilated the residual (QOU.QBeta.greedy_later_rungs_vanish) — it must NOT be read as evidence that |c_4| < 1.4821774"
+        "why": "c_4 = 0.0 is what greedy extraction leaves once c_3 has annihilated the residual (QOU.QBeta.greedy_later_rungs_vanish) — it must NOT be read as evidence that |c_4| < 1.4816073"
       }
     ],
     "u_substrate": "0.00851723455015614218925557360331",
     "derived_tier_err_ppb": "1278.58254211304",
-    "l2_target_ppb": "7.8",
-    "c4_threshold_for_target": "1.4821773563",
+    "l2_target_ppb": "7.797",
+    "c4_threshold_for_target": "1.48160728808",
     "residual_per_unit_c4_ppb": "5.26252810898",
     "growth_projected_c4": "4.282178701",
     "scope": "Scope (a). No c_k proposed, extracted, fitted or wired. No D-frame Q_beta computed — the producer's convention-D refusal stands untouched. The conclusion is CONDITIONAL on |c_4|, which is underived; the cached 0.0 is a greedy artifact and is not evidence."

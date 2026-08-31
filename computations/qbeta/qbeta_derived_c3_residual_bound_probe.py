@@ -38,7 +38,8 @@ removes the `u^3` term; the leading survivor is `c_4 u^4`.  So
 
 ## The result, and it cuts both ways
 
-`u^4 = 5.2625281e-9`, so the threshold is `|c_4| <= 1.4821774`.
+`u^4 = 5.2625281e-9` and the L2 target is `7.797` ppb (`sigma_exp/100`, from
+the canonical dashboard row), so the threshold is `|c_4| <= 1.4816`.
 
 - **Favourable reading:** ONE derived rung closes the entire gap.  Entry 9's
   wall is not "the ladder is hopeless" — it is "`c_3` is the whole ballgame".
@@ -50,11 +51,35 @@ removes the `u^3` term; the leading survivor is `c_4 u^4`.  So
 So this is a genuine conditional, not an encouragement.  It converts entry 9's
 qualitative wall into a **testable prediction about `c_4`**.
 
-CORRECTED 2026-08-31.  This docstring read `1.4816`, `|c_4| ~ 3` and `~2x`
-against the `1.4821774`, `4.28218` and `2.889x` this same file computes and
-prints.  Every figure quoted in prose here is now the one the code derives; do
-not re-introduce a literal.  The `1.4816` traced to a draft `u^4 = 5.2646e-9`
-and was never the value any run produced.
+CORRECTED TWICE 2026-08-31, and the second correction RETRACTS half the first.
+
+Pass 1.  The docstring read `|c_4| ~ 3` and `~2x` against the `4.28218` and
+`2.889x` this file computes.  Those two were genuinely stale and are fixed.
+
+Pass 2 — RETRACTION.  Pass 1 also "fixed" `1.4816` to `1.4822` and asserted the
+`1.4816` "traced to a draft `u^4 = 5.2646e-9` and was never the value any run
+produced".  **Both halves of that were wrong.**  `1.4816` is what you get from
+the CORRECT target and `1.4822` from a rounded one:
+
+    u^4 in ppb = 5.2625281        (identical u in both)
+      target 7.797  ->  |c_4| <= 1.4816     <- sigma_exp/100, the canonical L2 row
+      target 7.80   ->  |c_4| <= 1.4822     <- rounded
+      0.038 % apart
+
+The original figure was right and I overwrote it with a rounded one, inventing
+a provenance for it that I had not checked.  Caught by a sibling session that
+derived the same bound independently (PR #6353) and asked which denominator
+each of us used.
+
+Root cause, now fixed at the source: this probe read `sigma_Q_rel_actual` =
+`7.8e-7` out of a PSLQ probe's witness — a rounded convenience value — instead
+of the authoritative L2 dashboard, whose Q_beta row carries
+`sigma_exp_ppb = 779.7` and `target_100x_ppb = 7.797`.  It now reads the
+dashboard and REFUSES to run if that row is absent, rather than falling back to
+a literal.  Every figure in this prose is interpolated from the computed value.
+
+Nothing in the verdicts moves: the growth projection misses by ~2.9x under
+either denominator.
 
 ## Does `c_4` have to be unknown?  (open, and NOT what this probe assumed)
 
@@ -158,8 +183,41 @@ def main() -> int:
     rows = {int(r["k"]): r for r in cache["rows"]}
     err_after_k2 = mp.mpf(str(rows[2]["err_ppb_after_this_rung"]))
     c3_extracted = mp.mpf(rows[3]["c_k"])
-    sigma_rel = mp.mpf(str(pslq["sigma_Q_rel_actual"]))          # 7.8e-7
-    target_ppb = sigma_rel / 100 * mp.mpf(10) ** 9                # /100, into ppb
+    # L2 target from the AUTHORITATIVE dashboard, not from a rounded literal.
+    #
+    # This read `pslq["sigma_Q_rel_actual"]` = 7.8e-7 -> 7.8 ppb. That is a
+    # ROUNDED convenience value carried in a PSLQ probe's witness. The canonical
+    # source is the L2 dashboard, which records for Q_beta
+    #     sigma_exp_ppb = 779.7   ->   target_100x_ppb = 7.797
+    # so the target is 7.797 ppb and the threshold is 1.4816, not 1.4822.
+    # 0.038 % apart -- immaterial to every verdict here, and worth sourcing
+    # correctly anyway, because two spellings of one target is precisely the
+    # shape AGENTS.md warns about (the c_3 "3.47 % vs 3.35 %" trap is one gap
+    # under two normalisations, and qou-cds1 entry 12 hit this same 7.8-vs-7.797
+    # split). Caught by the sibling on PR #6353; see the docstring note.
+    dash = json.loads((ROOT / "computations/per-observable-100x-status.witness.json")
+                      .read_text())
+    _rows = json.loads(json.dumps(dash))          # tolerate data/ vs top-level
+    def _find_qbeta(o):
+        if isinstance(o, dict):
+            if o.get("obs") == "Q_beta" and "target_100x_ppb" in o:
+                return o
+            for v in o.values():
+                r = _find_qbeta(v)
+                if r:
+                    return r
+        elif isinstance(o, list):
+            for v in o:
+                r = _find_qbeta(v)
+                if r:
+                    return r
+        return None
+    _qb = _find_qbeta(_rows)
+    if _qb is None:
+        raise SystemExit("REFUSING: no Q_beta row in per-observable-100x-status "
+                         "witness; the L2 target must not be guessed or hardcoded")
+    target_ppb = mp.mpf(str(_qb["target_100x_ppb"]))
+    sigma_rel = mp.mpf(str(pslq["sigma_Q_rel_actual"]))   # the rounded 7.8e-7
 
     u3, u4, u5 = u ** 3, u ** 4, u ** 5
     checks: list[tuple[str, bool, str]] = []
