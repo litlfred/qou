@@ -3957,3 +3957,16 @@ no `c_k` proposed or wired; no D-frame Q_beta computable while rungs above
 Mathlib note: `Real.pi_gt_three` is in `Mathlib.Analysis.Real.Pi.Bounds`, whose
 olean is absent from the restored cache. The π-free control is the better
 statement regardless — general in δ rather than one sample point.
+
+### Read against entries 11-14, which landed while this was in review
+
+Entries 12/13/14 oscillated on whether `K(δ)` is free: 12 measured the 7656×
+condition-set freedom, 13 argued `K` is rule-determined, 14 **withdrew 13** (the
+bar-midpoint rule fails the N=2 slot by 25.90 %) and reinstated 12's freedom as
+live. `const_free` is the theorem on the condition-set side of that question: for
+ARBITRARY `K`, `cos(a − δ/2)·K` is bar-invariant. So the freedom entry 14
+reinstates is not an unfound constraint — it is proved that (i)+(ii)+(iii) cannot
+supply one, and any closure must come from outside them, as entry 14 concludes.
+
+Nothing here bears on entry 14's separate finding that the RULE fails at N=2;
+that is about the rule's authority, not about what the conditions force.
