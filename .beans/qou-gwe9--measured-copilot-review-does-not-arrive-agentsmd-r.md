@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-31T02:51:17Z
+updated_at: 2026-08-31T19:49:11Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -747,3 +747,38 @@ before that.
 **Not re-requesting**, per the standing discipline in this bean. The next free
 datapoint is whatever a fresh session's first PR produces; nothing here needs to
 be bought.
+
+
+---
+
+## Data point 2026-08-31 ~19:47 UTC — TWO zeros, with a confound I am naming
+
+Requested `request_copilot_review` on **qou#6404** and **qou#6405** at ~19:37-19:38
+UTC. Both calls returned with **no output and no quota error** — so neither was
+refused for quota, unlike the five-in-30-minutes run of 2026-08-30. Checked
+`pull_request_read get_reviews` on both at ~19:43 and again at ~19:47:
+**`[]` on both, four checks total.** That is ~10 minutes, well past the 3-4 min
+arrival measured on qou#6122 and folio-assistant#153.
+
+**The confound, stated because it may be the whole answer.** I pushed twice to
+#6405 after requesting (`be3797f5e5`, `133346a904`). If a review request is
+bound to the head SHA it was made against, those pushes could have superseded it
+— which would make #6405's zero uninformative. **#6404 has no such confound**:
+one commit, `c031248eb9`, unchanged since 19:24, requested at 19:38, zero at
+19:47. So the clean observation is n=1, not n=2.
+
+**What this does and does not support.** It is consistent with the historical
+zero pattern and inconsistent with the 2026-08-30 correction, but one clean
+observation does not overturn that correction, which rested on four arrivals
+including two that landed minutes after a merge. Both facts can hold if arrival
+is intermittent rather than binary — which is what "mechanism UNSETTLED" already
+says.
+
+**Not recorded in `merge-coordinator/MEMORY.md`**, deliberately: a single
+observation is not enough to rewrite a TRAP that was corrected yesterday on
+stronger evidence, and flipping that row back and forth is worse than leaving it
+at "rationed, arrival intermittent, `get_check_runs` does not discriminate".
+
+**What would settle it:** request on a PR and then *do not push*, checking at
+5 / 15 / 60 min. Every observation so far, including mine, has confounded the
+request with subsequent activity.
