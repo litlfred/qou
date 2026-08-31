@@ -214,6 +214,31 @@ def main() -> int:
         script_path=__file__,
         engine="sympy.div over ZZ[u]",
     )
+    # bean qou-srvu. This script is a VALIDATOR -- it certifies the Lean axiom
+    # QOU.BraidKnot.HabiroCompletion.tail_in_ideal against the atomic Habiro
+    # witnesses, prints PASS/FAIL, and exits `0 if overall_pass else 2`. The
+    # verdict never reached `assertions[]`, so `save()` emitted
+    # `allPassed: true` over an EMPTY list: a certification claiming green
+    # while certifying nothing on the record, and contradicting its own exit
+    # code. No claim is invented and no threshold is chosen -- divisibility in
+    # ZZ[u] is exact (`remainder.is_zero`), so there is nothing to tolerance.
+    for r in per_atom_results:
+        builder.add_assertion(
+            f"exact_divisibility_{r['atom']}",
+            computed=bool(r["all_pass"]), expected=True,
+            source=(f"every truncation order N: the residual p(u) - "
+                    f"sum_{{m<N}} a_m(u)*(u;u)_m is EXACTLY divisible by "
+                    f"(u;u)_N in ZZ[u] ({len(r['checks'])} orders checked)"))
+        builder.add_assertion(
+            f"exact_reconstruction_{r['atom']}",
+            computed=bool(r["exact_reconstruction"]), expected=True,
+            source="the full residual is identically zero in ZZ[u]")
+    builder.add_assertion(
+        "overall_pass", computed=bool(overall_pass), expected=True,
+        source=("every atom passes every divisibility and reconstruction "
+                "check. This is the quantity the exit code already uses: "
+                "`return 0 if overall_pass else 2`"))
+
     builder.save()
 
     # Console summary

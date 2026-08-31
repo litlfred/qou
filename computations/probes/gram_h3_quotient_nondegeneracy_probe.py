@@ -168,10 +168,31 @@ def main() -> int:
         "q0Value": str(q0),
     }
 
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. Both facts below are exact over Q(q) and were computed,
+    # printed and left in `data`, so `save()` emitted `allPassed: true` over an
+    # EMPTY assertions list. No threshold is introduced -- `annihilated` is a
+    # symbolic zero and the nondegeneracy is a root COUNT, not a tolerance.
+    #
+    # `radical_is_q_antisymmetriser` is deliberately NOT asserted: it is a
+    # source LITERAL True, and asserting a literal back to itself is the
+    # self-fulfilling defect this bean exists to remove.
+    _b = WitnessBuilder.wrap_legacy(
         "gram-h3-quotient-nondegeneracy-probe", payload,
         script_path=__file__, engine="python+sympy (exact over Q(q,z))",
-    ).save()
+    )
+    _b.add_assertion(
+        "radical_annihilated_by_G", computed=bool(annihilated), expected=True,
+        source=("G * v = 0 for the radical vector at z_D = q^3/(q^2+1), as an "
+                "identity in q -- exact sympy, not a numerical zero"))
+    _b.add_assertion(
+        "quotient_nondegenerate_for_all_real_q",
+        computed=bool(len(real_roots) == 0), expected=True,
+        source=("the quotient determinant's numerator has NO real root, so "
+                "the form on the e_0..e_4 complement is nondegenerate for "
+                "every real q. A root count over Q(q), not a tolerance. The "
+                "VALUE is basis-dependent; the NONVANISHING asserted here is "
+                "basis-independent and is what replaces the theorem"))
+    out = _b.save()
 
     print("=== What replaces gramMatrix_det_ne_zero under convention D ===")
     print(f"  rank G_D                          : {rank}/6")
