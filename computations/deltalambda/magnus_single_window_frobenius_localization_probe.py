@@ -151,6 +151,53 @@ def analyze(A=3, cap=200):
     print("  and ‖[ρ,A_a]‖_F/√dim → 0, then the o(dim) is EXACTLY 'ρ nearly commutes with the")
     print("  germ' — the concrete provable target is a Frobenius bound ‖[ρ_λ,A_a]‖_F = o(√dim).")
 
+    # CS SLACK — localize the LAST piece of the o(dim): commutator norm vs trace cancellation.
+    # slack = ‖[ρ,A_a]‖_F·‖A_{a+1}‖_F / |t|  (≥1 by Cauchy–Schwarz). If slack ≈ const, the
+    # decay is entirely inside ‖[ρ,A_a]‖_F (the CS step is tight — no extra trace cancellation);
+    # if slack GROWS with b, the trace |t| decays FASTER than the CS bound — extra sign
+    # cancellation lives in the trace itself, on top of the commutator-norm decay.
+    print("\nCS SLACK  ‖[ρ,A_a]‖_F·‖A_{a+1}‖_F / |t|  (≥1; const ⇒ decay all in the commutator,")
+    print("           growing ⇒ extra cancellation in the TRACE step):")
+    print("  window :  b :   slack   (dim)")
+    for (a, b2) in pairs:
+        cells = []
+        for b in b_levels:
+            recs = byb.get((a, b2, b))
+            if not recs:
+                continue
+            fc, fa, dim, tabs, cs = max(recs, key=lambda r: r[2])
+            slack = (cs / tabs) if tabs > 0 else mp.mpf("inf")
+            cells.append((b, slack, dim))
+        if cells:
+            span = f"{mp.nstr(cells[0][1],4)} → {mp.nstr(cells[-1][1],4)}"
+            print(f"  ({a},{b2}): " + "  ".join(f"b{b}={mp.nstr(s,4)}" for b, s, _d in cells))
+    # verdict from a representative window (the largest-multiplicity interior one)
+    print("\n  Per-window slack across b (b1 → last); GROWS ⇒ trace cancellation is present:")
+    any_grow = False
+    for (a, b2) in pairs:
+        seq = []
+        for b in b_levels:
+            recs = byb.get((a, b2, b))
+            if not recs:
+                continue
+            fc, fa, dim, tabs, cs = max(recs, key=lambda r: r[2])
+            if tabs > 0:
+                seq.append(cs / tabs)
+        if len(seq) >= 2:
+            grows = seq[-1] > seq[0] * mp.mpf("1.5")
+            any_grow = any_grow or grows
+            print(f"  ({a},{b2}): {mp.nstr(seq[0],4)} → {mp.nstr(seq[-1],4)}  "
+                  f"({'GROWS ⇒ trace cancellation' if grows else '≈flat ⇒ decay in commutator'})")
+    print()
+    if any_grow:
+        print("  VERDICT: the CS slack GROWS with b ⇒ the trace |t| decays faster than the")
+        print("  commutator-norm CS bound. So the o(dim) is NOT wholly in ‖[ρ,A_a]‖_F — there is")
+        print("  ADDITIONAL sign cancellation in the trace tr([ρ,A_a]·A_{a+1}) itself. The proof")
+        print("  must control BOTH the commutator-norm decay AND this trace-level cancellation.")
+    else:
+        print("  VERDICT: the CS slack is ≈flat ⇒ the o(dim) is essentially all in ‖[ρ,A_a]‖_F;")
+        print("  the trace step adds no further decay. The target reduces to ‖[ρ_λ,A_a]‖_F=o(√dim).")
+
 
 def main():
     ap = argparse.ArgumentParser()
