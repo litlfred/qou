@@ -1,11 +1,11 @@
 ---
 # qou-sal4
 title: 'GAP: both q0/float64 ratchets are RED on this branch — 3 unstamped + iterative-lp-dual 96->99'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T18:10:19Z
-updated_at: 2026-08-30T18:22:35Z
+updated_at: 2026-08-31T03:13:59Z
 ---
 
 
