@@ -39,6 +39,25 @@ list:
      Wedderburn block at H_{3·A}.  The remaining "binding-K
      uniqueness" sub-assertion is the open core of deliverable 3.
 
+     ⚠ MEASURED CONTRA 2026-08-31 (bean `t7qv`).  The trefoil is NOT
+     PSD-feasible at H_3 in either presentation — σ₁³ has worst
+     symmetric-part eigenvalue −0.731234 and (σ₁σ₂)² has −0.604530 —
+     and neither is this repo's own nucleon word from
+     `atom_braid_word_3A` (proton −0.739224, neutron −0.910762; PSD in
+     1 of 3 blocks).  The H_3 element that IS PSD-feasible is the FULL
+     TWIST (σ₁σ₂)³, at +0.534703.  Reason: ρ_λ(σ) has eigenvalues
+     {q₀, −1/q₀} in every block of dim ≥ 2, so ρ_λ(σ^k) is PSD iff k
+     is EVEN — PSD-feasibility here is a crossing-parity condition,
+     which is also why the unknot control passes in
+     `binding-link-psd-feasibility-probe.witness.json`.
+     SCOPE: this contradicts a plain reading of the sentence above.  It
+     does not settle the narrower claim if "canonical element" means a
+     restricted R5-minimal class — that class is not defined here, so
+     the tension is flagged rather than resolved.  The measuring
+     convention (PSD on the symmetric part) reproduces all four results
+     recorded in that witness, 6_2's standard-(2,1) failure included.
+     Probe: `computations/probes/binding_k_convolution_sdp_probe.py`.
+
   4. **Per-particle ρ rule evaluation at the atomic strand count** —
      identifies dominant λ*(K) ⊢ 3·A and tests the five candidate
      ρ rules from `rho_prefactor_structural_verifier.py` against the

@@ -302,3 +302,75 @@ normal forms, taking no `B_AME` input, with the `A+1` arity as a hard constraint
 The convolution `K_word = atom_word ++ cp_inv_word` is already in
 `binding_k_solver.py`; what is missing is the minimisation and the finitude bound
 `conj-canonical-knot-id-sdp.md` lists as open.
+
+---
+
+## `K` as an SDP solution via knot convolution — worked 2026-08-31. There is no SDP to solve.
+
+Owner steer: *"knots should be SDP solutions via knot convolution."* Followed to
+the end. Probe `computations/probes/binding_k_convolution_sdp_probe.py`
+(6 assertions). The answer is negative in a specific and useful way.
+
+**1. The convolution leaves nothing to optimise.** `binding_k_solver.py` defines
+`T_w(atom) = K · ⊗ᵢ T_w(nucleonᵢ)`, `K_word = atom_word ++ cp_inv_word`. Given
+the canonical word and its `include_inter=False` restriction (which *is* the
+constituent product), `K` is **determined** — every averaged letter `σ − h/2`
+has eigenvalues `±(q+1/q)/2 ≠ 0`, so the constituent product is invertible and
+`K = ρ(atom)·ρ(free)⁻¹` exists in every block. No free variable. The only
+askable question is whether that `K` meets the constraints. It does not.
+
+**2. Derived binding arity `c(K) = 2A+1`** (46/46 exact). No registry
+`binding_link_name` has it — Hopf 2 vs 5, `8_11` 1 vs 7, `L6a4` 3 vs 7. The
+separate heuristic `K_word` field: `[3,6]` (³He) matches at 7; `[3,3]` (²H)
+gives 6 vs 5; `[3,4,6,7]` (³H) gives 5 vs 7. The ²H row is structural — `σ₃²` is
+a **full twist**, two crossings, where the canonical `pn` bond has one, and an
+even multiplicity merges nothing. Different bonds, not a near-miss.
+
+**3. PSD-feasibility is a crossing-parity condition.** `ρ_λ(σ)` has eigenvalues
+`{q₀, −1/q₀}` in every block of dim ≥ 2, so `ρ_λ(σ^k)` is PSD **iff `k` is
+even**. At `H_3`: unknot +1.000 PSD, `σ` −0.901, `σ²` (Hopf) +0.812 PSD, `σ³`
+(trefoil) −0.731, `σ⁴` +0.659 PSD. This explains every recorded outcome at once
+and means the program **cannot select**.
+
+**4. It rejects the corpus's own constituent.** `binding_k_solver.py` states the
+nucleon trefoil is "the unique PSD-feasible canonical element" at `H_3`. It is
+not PSD in either presentation, and neither is this repo's own nucleon word
+(proton −0.739, neutron −0.911, PSD in 1/3 blocks). The `H_3` element that *is*
+PSD-feasible is the full twist. Flagged in that file's docstring, scoped: it
+contradicts a plain reading, and does not settle a narrower "R5-minimal class"
+reading, which is undefined there.
+
+**5. The determined `K` is infeasible.**
+
+| atom | blocks | atom PSD | K PSD | worst atom | worst K |
+|---|---|---|---|---|---|
+| ²H | 11 | 1/11 | 1/11 | −4.210318 | −1.595181 |
+| ³H | 30 | 1/30 | 2/30 | −9.531563 | −4.265691 |
+| ³He | 30 | 1/30 | 2/30 | −10.040628 | −3.646531 |
+
+**Every** surviving block is 1-dimensional — `(n)`, and `(1ⁿ)` for `K` at `A=3`.
+No block of dim ≥ 2 survives, for either object, at any `A`. Exactly the parity
+prediction.
+
+### Status of `conj-canonical-knot-id-sdp`
+
+Not merely unsupported (the 2026-08-25 finding) — **its constraint set excludes
+the object the substrate produces.** Three routes now agree from different
+directions: volume matching (10³–10⁴ census manifolds fit equally well), closure
+arity (`c_atom = A+1`, `c(K) = 2A+1` refute every named link), PSD feasibility
+(a parity filter rejecting `K`, the nucleon and the trefoil while accepting the
+unknot).
+
+Machinery validated 4/4 against `binding-link-psd-feasibility-probe.witness.json`.
+
+### Next — and what NOT to do
+
+**No objective is proposed, deliberately.** Inventing one that happens to admit
+`6_2`/`8_11`/`L6a4` would be the same fit in a new coordinate system. A
+well-posed replacement needs *both*: a constraint set the canonical word
+satisfies (PSD as stated is the wrong cone — it is a parity filter), and an
+objective taking no `B_AME` input. My judgement on priority: the **constraint**
+half first, since a wrong cone makes any objective meaningless, and because
+`ρ_λ(σ) = {q₀, −1/q₀}` suggests the natural positivity notion here is on
+`σ + σ⁻¹` or on even-length subwords, not on `σ` itself. That is a guess and
+should be treated as one.
