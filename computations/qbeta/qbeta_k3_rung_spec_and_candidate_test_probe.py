@@ -34,7 +34,16 @@ WHAT IS NOT CIRCULAR, and is the point of this probe:
   3. THE NEXT RUNG HAS ROOM, BUT NOT MUCH. Given a correct c_3, the residual is
      |c_4| * u^4 = |c_4| * 5.2625281 ppb, so Q_beta lands inside target iff
 
-         |c_4| <= 1.4816
+         |c_4| <= 1.4816        [denominator: target = 7.797 ppb = sigma_exp/100]
+
+     NAME THE DENOMINATOR WHEN QUOTING THIS. A sibling (PR #6342, qou-cds1
+     entry 9) reached the same bound independently and FIRST, reporting
+     |c_4| <= 1.4822 -- the identical quantity computed against the ROUNDED
+     target 7.80 rather than 7.797. The two differ by 0.038 % and are one
+     number, not two measurements. Flagged because this corpus keeps being
+     bitten by exactly this shape: AGENTS.md's c_3 note records "3.47 % vs
+     3.35 %" as one gap under two normalisations, and qou-cds1 entry 12 hit
+     the same 7.8-vs-7.797 split (7653x vs 7656x).
 
      A c_4 of order unity suffices; a c_4 of order 10 does not.
 
