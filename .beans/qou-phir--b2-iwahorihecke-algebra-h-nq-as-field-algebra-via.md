@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T04:59:28Z
+updated_at: 2026-08-31T05:25:41Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -950,3 +950,27 @@ row-standard family has n!, so the gap is the whole of the argument, not a techn
 self-contained, and it reduces spanning to straightening alone; (c) Lemma 3.13/3.14, the hard
 core, with the corpus's own sorry-free `standardPolytabloid_straightening` on the `colWordNum`
 measure as the q=1 template.
+
+
+### 2026-08-31 — step 2 landed; spanning now reduces to straightening alone
+
+`murphySum_singleton_one` (`x_{(1^n)} = 1`) and `span_murphySum_one_conjugates_eq_top` (the
+two-sided conjugates of that 1 span H). Both sorry-free, lean-direct exit 0,
+`[propext, Classical.choice, Quot.sound]`.
+
+**It is a CHEAP result and I want that on record rather than dressed up**: it is `x = 1` plus
+the fact that the `T_w` are a basis. What it buys is not difficulty but a pin — with step 1
+(`basisTwOfField`) and step 2 both in hand, the ENTIRE spanning input to `basisOfSpanning` is
+Mathas Lemma 3.14's straightening. Nothing else is outstanding on that leg.
+
+Stated over the conjugating PAIR rather than over tableaux, deliberately: the row-standard
+tableau type does not exist in the corpus, and this is the algebraic content, which does not
+have to wait for the indexing.
+
+**next** (the honest remaining cost, in order):
+(a) a row-standard tableau type + a row-standard-indexed Murphy family — without it Lemma 3.14
+    cannot be STATED, since it quantifies over n! pairs per shape and MurphyIndex has (f^λ)²;
+(b) Lemma 3.13, the Garnir decomposition `t = g·w` with `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`;
+(c) Lemma 3.14's dominance induction. The q=1 template is the corpus's own sorry-free
+    `standardPolytabloid_straightening` on the `colWordNum` measure — same argument, and it
+    already carries the hard measure-descent work.
