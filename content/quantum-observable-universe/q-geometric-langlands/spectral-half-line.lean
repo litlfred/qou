@@ -581,7 +581,26 @@ theorem reeb_spectrum_norm_one_of_periodic
     A corollary worth stating in words rather than Lean: since
     `1/2 ± i√3/2` are primitive **sixth** roots of unity, `specᵢ^Ω = 1` forces
     `6 ∣ Ω`. So the framework's Reeb period cannot be any natural number — the
-    identification requires it to be a multiple of six. -/
+    identification requires it to be a multiple of six.
+
+    **WHICH `Ω`, because the glyph is overloaded three ways (bean `qou-9iwt`).**
+    The `Ω` here is the natural number in `op ^ Ω = id` — reading (1) below. It
+    is *not*:
+
+    * the **topological space** `Ω_q` of `q-plancherel-asymptotic-skeleton`,
+      target of the pushforwards `ι_n : {λ ⊢ n} → Ω_q`; nor
+    * the **infinite surreal** `Ω_q ≍ ε⁻¹` of the `appendix-surreals` blocks,
+      with `ε = 1/ω` the Reeb infinitesimal.
+
+    A space and an infinite surreal are not natural numbers, so `6 ∣ Ω` says
+    nothing whatever about either. Carrying this corollary to them is the
+    category error AGENTS.md warns of — *"attributes do not transfer across
+    overloaded symbols"*.
+
+    **And the test is not runnable today.** `CategoricalReebDerivation` has
+    **no instance** and no `period :=` anywhere in the tree, so reading (1) has
+    no value in the corpus and there is nothing for `6` to divide. Inhabiting
+    that structure is the prerequisite. -/
 theorem reeb_spectrum_pinned_by_periodicity
     (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
     {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)

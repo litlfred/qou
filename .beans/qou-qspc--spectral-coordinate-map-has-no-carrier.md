@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-31T07:25:13Z
+updated_at: 2026-08-31T07:31:14Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -488,3 +488,42 @@ question with a computable answer.
 
 Determine `Ω_q` (`CategoricalReebDerivation.period`) as the corpus actually uses
 it. If a value is pinned anywhere, `6 ∣ Ω` is an immediate live test.
+
+
+## RETRACTION 2026-08-31 — the `6 ∣ Ω` test is NOT runnable, and I said it was
+
+Last entry closed with *"the open item is now a question with a computable
+answer"*, and named determining `Ω_q` as the next step. **I tried it. It cannot
+be computed, and the reason is not a difficulty — the quantity has no value.**
+
+Measured: `CategoricalReebDerivation` has **zero instances** in the tree, and
+there is **no `period :=` assignment anywhere**. Its five `.lean` occurrences are
+three in its own defining file and two in a docstring I wrote this session. So
+the natural number the corollary constrains is not pinned by anything, and there
+is nothing for `6` to divide.
+
+The theorems are unaffected — `reeb_spectrum_pinned_by_periodicity` is proved and
+its hypothesis is explicit. What was wrong was my characterisation of what
+remained: *"a question with a computable answer"* is false while
+`CategoricalReebDerivation` is uninhabited. **Inhabiting it is the prerequisite,
+and that is separate work.**
+
+### And the attempt turned up something worse — bean `qou-9iwt`
+
+`Ω_q` denotes **at least three genuinely distinct objects** in the corpus:
+
+1. the smallest positive **integer** with `ξ_q^{Ω_q} = id_A` (the Lean
+   `period : ℕ`);
+2. a **topological space**, in `q-plancherel-asymptotic-skeleton.md` — *"We
+   define a topological space `Ω_q`"*, target of `ι_n : {λ ⊢ n} → Ω_q`;
+3. an **infinite surreal** `Ω_q ≍ ε⁻¹` (`ε = 1/ω`), across five
+   `appendix-surreals` blocks.
+
+A space is not a natural number and neither is an infinite surreal, so **`6 ∣ Ω`
+says nothing whatever about (2) or (3)**. My own corollary is the thing most at
+risk of being carried across that boundary, so its docstring now scopes itself
+explicitly to (1) and names the other two.
+
+That is the exact failure AGENTS.md flags — *"attributes do not transfer across
+overloaded symbols … distinct objects sharing a glyph is a recurring root
+cause"*.
