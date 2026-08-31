@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T10:40:36Z
+updated_at: 2026-08-31T15:02:18Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -529,3 +529,37 @@ NOT said: not that mu2 is non-zero or that the residual HAS a 2-body component
 the opposite conclusion either); not that #4316/#4320 is a fit; nothing about
 mu3 = +0.4708 or mu4 = -4.591, which the transcription reproduces and which is
 what validates it.
+
+
+### Fourth probe (same PR #6393): the log channel does NOT rescue the basis — my own conjecture, refuted
+
+`log_channel_does_not_rescue_simplex_basis_probe`. Conjecture: rho_grad is a
+product, so its additive object is the log, and log[k]_q ~ k log q would give
+log rho_grad ~ C(A,2) log q — the bond count a THIRD time, aligned with the log
+channel the binding producers already use.
+
+REFUTED (i): at the proton pin log q0 = 0.10434, so k*log q does not reach 1
+until k = 9.58, and that is optimistic. Measured, log[k]_q is nearer the NAIVE
+log k all the way to k = 20; k*log q takes over only between 20 and 50. So
+log rho_grad/(C(A,2) log q) is 4.40 at A=4 and DECLINES to 3.34 at A=12.
+
+REFUTED (ii): in the simplex basis, log pred/true goes 0.3741 (A=5), -1.0401
+(A=6), -6.78 (A=8), -33.05 (A=12) — sign inversion — against linear's collapse
+to 4.53e-7. Neither spans it.
+
+BY-PRODUCT: the log solve also returns g2 = 0 EXACTLY (log rho_grad(2) = log 1 =
+0), so the mu_2 = 0 normalisation identity is CHANNEL-INDEPENDENT — it survives
+any monotone reparametrisation fixing 1 -> 0. Independent confirmation of the
+third probe.
+
+WHAT rho_grad IS at nuclear A: rho/(A!/2) runs 1.31 (A=4) to 39.5 (A=12) while
+rho/q^C(A,2) runs 8.42 to 9.67e6. Far nearer the plain factorial (permutation
+count, q->1 limit) than the asymptotic. At nuclear A the q-deformation is
+SUBLEADING and the leading content is the bare permutation count. This does not
+disturb the tower probe (height and positivity are exact combinatorial facts
+independent of q) but it does mean the C(A,2) coincidence is about DEGREE
+STRUCTURE, not magnitudes.
+
+No replacement basis. After four probes the constructive question — what basis
+carries a factorially-growing graded reference — is OPEN, and the two obvious
+candidates (polynomial-in-A, and its log) are both measured to fail.
