@@ -141,3 +141,89 @@ resolving it would silently migrate a number two audit docs cite."
 
 `M_first_Φ_8 = 7` is unchanged on every row in both runs, so the probe's headline
 universality claim and both audit docs' surviving claims are untouched either way.
+
+---
+
+# SETTLED, same session — the fresh column is correct and §§3, 7–9 above are superseded
+
+Everything from §1–§6 stands. What follows replaces the parts of this document that
+hedged, and it **reverses the disposition**. Three measurements did it, all on today's
+tree, all reproducible in seconds.
+
+## A. Today's helper on today's data reproduces the FRESH column exactly
+
+| pair | old a_m-subtraction | current helper | committed | fresh |
+|---|---:|---:|---:|---:|
+| ³He−³H  | **0** | **4** | 2 | 4 |
+| ⁵Li−⁵He | **0** | **8** | 4 | 8 |
+| ⁶He−⁶Be | **0** | **9** | 4 | 9 |
+| ⁷Be−⁷Li | **0** | **12** | 6 | 12 |
+
+## B. The `qou-0ndb` helper fix is NOT the cause — my own leading hypothesis, refuted
+
+Bean `qou-0ndb` was last updated 2026-08-18T22:10:15Z, **six minutes after** the topic2
+witness was computed (22:04:20Z). That near-coincidence made the helper fix — which
+replaced "subtract a_m coefficients" with "difference the traces over a common
+denominator" — the obvious candidate.
+
+It is wrong. Reconstructing the **old** a_m-subtraction shortcut against today's data
+gives `mult(Φ_8) = 0` on every pair, not the committed 2/4/4/6. The helper change cannot
+produce the committed column from this data, so it is not what separates the two columns.
+
+That zero is itself informative: `mirror_trace_diff_numerator`'s docstring records that
+under convention **C** the shortcut is accidentally valid, while under **D** *"every
+cyclotomic multiplicity collapses to 0"*. Measuring exactly 0 says **today's a_m are
+D-frame**.
+
+## C. Therefore the committed column is a stale CONVENTION-C artifact
+
+Neither method reproduces 2/4/4/6 from today's a_m. Combined with §1 (all 18 upstream
+a_m witnesses regenerated 2026-08-25, seven days after the topic2 witness) and §2 (that
+regeneration cites owner ruling R3 / `bring_color_weighted`), the committed column can
+only have come from the **pre-R3, C-frame** a_m data it was computed against.
+
+The convention hypothesis of §3 was right — but it was **unsupported when written**, and
+is only now supported, by B rather than by the reasoning §3 actually gave.
+
+## D. The decisive test: the fresh output IS a genuine mirror difference
+
+The docstring supplies a necessity criterion the corpus itself states — Φ_1 **must**
+divide a true mirror difference, because the two halves coincide at q = 1. Applied to
+today's helper output:
+
+| pair | v(Φ_1) | value at u = 1 |
+|---|---:|---:|
+| ³He−³H | 1 | 0 |
+| ⁵Li−⁵He | 1 | 0 |
+| ⁶He−⁶Be | 1 | 0 |
+| ⁷Be−⁷Li | 1 | 0 |
+| ⁹B−⁹Be | 1 | 0 |
+
+5 of 5. Today's object passes the corpus's own correctness test.
+
+## E. Disposition REVERSED
+
+§9 above said keep the witness. **That is now wrong.**
+
+- The **fresh** column is the canonical, post-R3, convention-D result, and it satisfies
+  the Φ_1 necessity test.
+- The **committed** column is a pre-R3 convention-C artifact, stale against inputs
+  replaced on 2026-08-25.
+- Bean `qou-wc8f`'s conclusion — *"the refreshed numbers are probably wrong"* — is
+  **refuted**. The refreshed numbers are the correct ones.
+- The 2026-06-01 scaling law (`mult(Φ_8) = A−1` odd, `A−2` even) is **C-frame** and does
+  not survive the migration. Its D-frame replacement is visible in the data and exact on
+  all 9 rows: **`2A−2` for odd A, `2A−3` for even** (§4). Re-deriving it is `qou-cds1`
+  work, exactly as AGENTS.md prescribes for every C-frame result.
+- The parity objection dissolves: odd multiplicities at even A are not a defect, they are
+  what `2A−3` gives.
+
+**Actions:** refresh `topic2-mirror-pair-phi8-boundary-scan.witness.json`; land slice C's
+prepared assertion, which is unaffected; drop the baseline entry; and re-scope the two
+audit docs' `mult(Φ_8)` columns as C-frame. `M_first_Φ_8 = 7` is unchanged on every row
+in both runs, so both docs' headline universality claims stand untouched either way.
+
+**One caution carried forward.** That the fresh column is *self-consistent and passes
+Φ_1* does not by itself prove the R3 migration was physically right — it shows the
+computation is faithful to the canonical convention the owner ruled for. Those are
+different claims, and only the second is established here.
