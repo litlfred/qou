@@ -88,6 +88,51 @@ All 90 findings are of the second kind by construction — that is what the
 criterion detects. So the inhabitation result is decisive **for them**, and must
 not be generalised into "context classes are bad".
 
+### 🛑 A second narrowing, and it corrects my own count
+
+**"Inhabited" means VACUOUS only for an *unparameterised* class.** For a class
+`C x`, a downstream `theorem foo [C x] : P x` quantifies over `x`; exhibiting
+`C x₀` for one `x₀` shows the hypothesis is **satisfiable**, not that it assumes
+nothing. I was not distinguishing these, and the headline count was loose.
+
+Measured over the 42: **36 are unparameterised** — for those, inhabited ⇒
+vacuous, and the strong reading holds. **Five take a value parameter**, and they
+split again:
+
+- **Parameter inert** (still vacuous): `SchurWeylMassContext (Z N)` — no claim
+  mentions `Z` or `N`, as documented above; `KnotFactorSpectralContext (n)` and
+  `MassVolumeFactorization (K n)`, where `n` only indexes a context field.
+- **Degenerate-parameter witness** (NOT vacuous at general parameters):
+  `HasArgumentPrinciple (f ω₁ ω₂ S)`, satisfied by taking the pole set `S := ∅`;
+  `SharedDenominatorCuspHolonomy (q x n)`, satisfied at `n := 0` where the `∀`
+  over `Fin n` is empty. For these two the honest claim is that the class is
+  satisfiable and that its content is concentrated away from the degenerate
+  value — not that a `[C]` binder assumes nothing.
+
+So: **~40 vacuous, 2 satisfiable-at-a-degenerate-parameter.** The corrected
+reading does not disturb the main finding — all three classes the sizing audit
+named are unparameterised and vacuous — but the two must not be counted as
+vacuous, and they were.
+
+**The same distinction rehabilitates a class I had called contentful.**
+`HasStrongDuality (sdp) (_h)` already has a corpus instance,
+`instHasStrongDualityEmpty`, at the **empty-constraint** SDP. That is an honest
+degenerate witness in exactly the `BorromeanQuark` mould: it establishes
+satisfiability at `ι = Empty` and says nothing about a general `sdp`. It does
+*not* make the class vacuous, and I would have mis-scored it in either
+direction without looking.
+
+### And the prober cannot see existing instances at all
+
+It always generates a fresh model and never asks `inferInstance`. Measured over
+the 38 undecided, **at least 6 are already inhabited somewhere in the corpus** —
+`BorromeanQuark`, `HasStrongDuality`, `QFactRatioBound`, `RhoPrefactorStructural`,
+`Term7ShellCorrectionClass`, and `SkeinMultisetInvariant` (whose
+`skeinMultisetInvariant_refl` a single-line grep misses because the signature
+wraps). Each needs reading before it is scored, per the paragraph above: an
+existing instance may be unconditional, parameterised-degenerate, or itself
+hypothesis-laden, and those are three different verdicts.
+
 ## A second, different finding: `Term7ShellCorrectionClass` is provable
 
 Not vacuous — **provable**. Its field is `∃ a, a < 0 ∧ a = alpha5_value`, and
