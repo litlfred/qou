@@ -351,6 +351,7 @@ import QOU.Mass.LevelSelectionLogarithmic
 -- ℝ³ only for A ≤ 4. Replaces the EMPIRICAL premise ("saturation is observed")
 -- that CoordinationSaturation's complete-graph exclusion rested on.
 import QOU.Mass.EquidistantCoordinationCap
+import QOU.Mass.StrandLayoutForcesChain
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
