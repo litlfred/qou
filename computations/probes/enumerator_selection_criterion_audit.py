@@ -250,6 +250,45 @@ def main():
           "and a substring false positive. Four library documents cover the "
           "band presentation, so this is a citation rather than a derivation")
 
+    # ---- RETRACTION: the band route is NOT cheaper ---------------------------
+    from math import factorial
+    naive_band = 54 ** 6
+    struct_band = (9 ** 2) ** 3 * factorial(6)
+    length_ext = 87380
+    triples = sum(1 for m1 in range(1, 7) for m2 in range(1, 7)
+                  for m3 in range(1, 7) if 2 * (m1 + m2 + m3) <= 12)
+
+    print(f"\n  RETRACTION -- 'the band route is cheaper' was wrong:")
+    print(f"    naive 54 signed band letters, L=6 : {naive_band:,}")
+    print(f"    structured (one +/- per pair)     : {struct_band:,}")
+    print(f"    the length-extension it replaces  : {length_ext:,}")
+    print(f"    => {struct_band // length_ext:,}x LARGER")
+
+    check("RETRACTED -- the band route is ~4400x LARGER, not cheaper",
+          struct_band > 4000 * length_ext,
+          f"a Brunnian carrier needs n+ = n- >= 1 on each of 3 pairs, so >= 6 "
+          f"band letters; structured that is {struct_band:,} candidates against "
+          f"{length_ext:,}. I asserted 'cheaper' without computing it. The band "
+          "set is still the only one that can REACH a Brunnian carrier -- it is "
+          "necessary, not cheap")
+
+    check("BUT the binding cannot see WHICH band -- the space collapses",
+          triples == 20,
+          f"countChannel depends only on n+ + n- (Lean "
+          "countChannel_depends_only_on_total), and SelfMutualPartition makes "
+          "binding a sum over inter-component crossings, so all 9 bands of a "
+          f"nucleon-pair are binding-equivalent. The binding-relevant space is "
+          f"the triple (m1,m2,m3): {triples} triples at c <= 12, against "
+          f"{struct_band:,} band words -- a collapse of "
+          f"{struct_band // triples:,}x")
+
+    check("and that SUBSUMES defect 3 rather than sitting beside it",
+          True,
+          "the residual is being asked to make a distinction the binding does "
+          "not use; the exact 1|2 vs 2|3 tie is the two-generator shadow of the "
+          "same fact. So no repair of the ARITHMETIC (mpf instead of float64) "
+          "can make a trace criterion select among binding-equivalent carriers")
+
     # ---- what this closes ---------------------------------------------------
     check("extending L_K_max is FUTILE without repairing the criterion",
           True,
@@ -338,6 +377,26 @@ def main():
                         "layout: adjacent transpositions are a proper subset "
                         "of the bands, and the subset excludes every generator "
                         "that links nucleons 1 and 3"),
+            "cost_RETRACTED": {
+                "claim": "the band route is cheaper than the length-extension",
+                "verdict": "WRONG -- it is ~4400x larger",
+                "structured_band_candidates": struct_band,
+                "length_extension_words": length_ext,
+                "note": ("asserted without computing. The band set remains the "
+                         "only one that can REACH a Brunnian carrier, so it is "
+                         "necessary, not cheap"),
+            },
+            "binding_equivalence_collapse": {
+                "reason": ("countChannel depends only on n+ + n-, so all 9 "
+                           "bands of a nucleon-pair are binding-equivalent"),
+                "binding_relevant_triples_c_le_12": triples,
+                "collapse_factor": struct_band // triples,
+                "consequence": ("the carrier is underdetermined BY THE BINDING "
+                                "ITSELF; a trace criterion is asked to make a "
+                                "distinction the binding does not use, which "
+                                "subsumes defect 3 and is not repairable by "
+                                "switching float64 to mpf"),
+            },
             "corpus_status": ("absent from content/, computations/ and docs/; "
                               "present in 4 library documents, so a citation "
                               "rather than a derivation"),

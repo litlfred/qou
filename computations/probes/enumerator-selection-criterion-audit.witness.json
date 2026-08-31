@@ -1,7 +1,7 @@
 {
   "computation": "enumerator-selection-criterion-audit",
   "scriptFile": "probes/enumerator_selection_criterion_audit.py",
-  "computedAt": "2026-08-31T04:49:59.581934+00:00",
+  "computedAt": "2026-08-31T05:57:53.510040+00:00",
   "contentBlock": "qou-brng",
   "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
   "source_witness": "_deprecated/binding-k-enumerator.witness.json",
@@ -235,6 +235,21 @@
       "detail": "grep over content/, computations/, docs/ finds no band or Birman-Ko-Lee generator; the only 'BKL' hit is BKLR (Bischoff-Kawahigashi-Longo-Rehren), a Frobenius-algebra theory and a substring false positive. Four library documents cover the band presentation, so this is a citation rather than a derivation"
     },
     {
+      "name": "RETRACTED -- the band route is ~4400x LARGER, not cheaper",
+      "passed": true,
+      "detail": "a Brunnian carrier needs n+ = n- >= 1 on each of 3 pairs, so >= 6 band letters; structured that is 382,637,520 candidates against 87,380. I asserted 'cheaper' without computing it. The band set is still the only one that can REACH a Brunnian carrier -- it is necessary, not cheap"
+    },
+    {
+      "name": "BUT the binding cannot see WHICH band -- the space collapses",
+      "passed": true,
+      "detail": "countChannel depends only on n+ + n- (Lean countChannel_depends_only_on_total), and SelfMutualPartition makes binding a sum over inter-component crossings, so all 9 bands of a nucleon-pair are binding-equivalent. The binding-relevant space is the triple (m1,m2,m3): 20 triples at c <= 12, against 382,637,520 band words -- a collapse of 19,131,876x"
+    },
+    {
+      "name": "and that SUBSUMES defect 3 rather than sitting beside it",
+      "passed": true,
+      "detail": "the residual is being asked to make a distinction the binding does not use; the exact 1|2 vs 2|3 tie is the two-generator shadow of the same fact. So no repair of the ARITHMETIC (mpf instead of float64) can make a trace criterion select among binding-equivalent carriers"
+    },
+    {
       "name": "extending L_K_max is FUTILE without repairing the criterion",
       "passed": true,
       "detail": "a longer search re-ranks by a comparator that prefers non-carriers (defect 1), breaks ties in rounding error (defect 2) and is degenerate on the interfaces (defect 3); more candidates do not fix a broken comparator"
@@ -256,6 +271,19 @@
     "bands_reaching_pair_1_3": 9,
     "searched_reaching_pair_1_3": 0,
     "verdict": "the obstruction is the GENERATOR SET, not the strand layout: adjacent transpositions are a proper subset of the bands, and the subset excludes every generator that links nucleons 1 and 3",
+    "cost_RETRACTED": {
+      "claim": "the band route is cheaper than the length-extension",
+      "verdict": "WRONG -- it is ~4400x larger",
+      "structured_band_candidates": 382637520,
+      "length_extension_words": 87380,
+      "note": "asserted without computing. The band set remains the only one that can REACH a Brunnian carrier, so it is necessary, not cheap"
+    },
+    "binding_equivalence_collapse": {
+      "reason": "countChannel depends only on n+ + n-, so all 9 bands of a nucleon-pair are binding-equivalent",
+      "binding_relevant_triples_c_le_12": 20,
+      "collapse_factor": 19131876,
+      "consequence": "the carrier is underdetermined BY THE BINDING ITSELF; a trace criterion is asked to make a distinction the binding does not use, which subsumes defect 3 and is not repairable by switching float64 to mpf"
+    },
     "corpus_status": "absent from content/, computations/ and docs/; present in 4 library documents, so a citation rather than a derivation"
   },
   "minimal_set_collapse": {
