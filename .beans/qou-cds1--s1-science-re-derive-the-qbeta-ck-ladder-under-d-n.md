@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T21:02:22Z
+updated_at: 2026-08-31T21:08:30Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5328,3 +5328,61 @@ that is the *only* place in the tower a different phase could come from.
 
 *No new Lean here: the Check-A argument is textbook representation theory, and
 manufacturing a proof file for it would overstate what this step established.*
+
+
+## Step 25 (2026-08-31) — level-k avenue UNINSTANTIATED; real decays hyperbolic; Step 23 corrected
+
+Probe `qbeta-level-k-operator-and-real-decays` (5/5).
+
+### 1. The corpus never leaves H₃
+
+`build_atom_nf` returns a **six-vector in the H₃ normal-form basis for every mass
+number**, tritium (A=3) included. The atom words are laid out on `3A` strands but
+the normal form is H₃-valued throughout. **So Step 24's one remaining avenue
+exists logically but is NOT INSTANTIATED** — building a level-`k` operator is new
+*construction*, not a reading, and belongs to the `T_β` Stage B branch queued
+since PR #1840.
+
+### 2. Real beta decays are hyperbolic
+
+| decay | disc | kind |
+|---|---|---|
+| free n → p (Q=782 keV) | **−0.03584** | ELLIPTIC |
+| n → protium (atomic) | +6.52244 | real |
+| tritium → ³He (Q=18.6 keV) | +4.46143 | real |
+| ¹⁴C → ¹⁴N (Q=156 keV) | +12.94889 | real |
+
+Only the **bare nucleon pair** is elliptic. The alignment diagnostic says why —
+for the nuclear cases parent and daughter are nowhere near parallel in sl₂ (sums
+−1.63, −1.12, −3.24 against the nucleons' +0.00896). **Ellipticity is a property
+of the near-degenerate n/p pair, not of beta decay.**
+
+### 3. No species difference supplies the phase
+
+All 105 pairs from 15 species: **21 elliptic**, eigenphases spanning **0.24950**
+(he4−li6) to **2.96861** (he3−he4). The required **0.0565947 is below all
+twenty-one** — the smallest available is **4.41×** too large.
+
+### 🛑 Correction to Step 23, mine
+
+Step 23 called the ellipticity "structural" on a random control of 8.9 %. That
+control was against **random** vectors; against the corpus's **own** species it is
+**21/105 = 20 %**. So ellipticity is *not rare*, and "structural" should not have
+been read as "special".
+
+What **stands, and is now independently confirmed**: the **mechanism**. `n−p` has
+the **smallest |disc| of all 21** elliptic pairs — marginal ellipticity is exactly
+what a 0.43 % alignment excess predicts. **Near-parallelism is the special thing;
+ellipticity is its consequence.**
+
+### Where the arc stands
+
+Every named avenue closed or uninstantiated: braid image excluded · arbitrary M
+circular · constant-residue holonomies fail the doubling identity · all
+real-spectrum generators on the wrong side of 1 · `Im(q)` cannot supply
+ellipticity · Bring's E and `τ₀` both non-CM · bar-odd operators have zero
+Plancherel trace · the tower carries one eigenphase per H₃ element · no rational
+factor bridges the gap · real nuclear decays hyperbolic · no species difference
+small enough.
+
+**What is left is not a reading but a construction the corpus does not have.**
