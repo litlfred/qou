@@ -35,19 +35,21 @@ commutator `‖⁅σ_g,A_a⁆‖_F = o(√dim)`, the whole `o(dim)` follows with
 `max_{a, g∈{a−1,a,a+1}} ‖⁅σ_g,A_a⁆‖_F / √dim`, at the max-dim partition of each `b`
 (exact mpf, all partitions — no `ρ`, so cheap):
 
-| b | A=2 (dim) | A=3 (dim) |
-|---|---|---|
-| 1 | 1.16 (5) | 0.97 (8) |
-| 2 | 1.42 (10) | 1.27 (28) |
-| 3 | 1.53 (16) | 1.40 (105) |
-| 4 | 1.45 (9) | 1.48 (189) |
-| 5 | — | 1.50 (216) |
-| 6 | — | 1.51 (168) |
-| 7 | — | 1.37 (48) |
+| b | A=2 (dim) | A=3 (dim) | A=4 (dim) |
+|---|---|---|---|
+| 1 | 1.16 (5) | 0.97 (8) | 0.87 (11) |
+| 2 | 1.42 (10) | 1.27 (28) | 1.17 (55) |
+| 3 | 1.53 (16) | 1.40 (105) | 1.31 (320) |
+| 4 | 1.45 (9) | 1.48 (189) | 1.43 (945) |
+| 5 | — | 1.50 (216) | 1.47 (2376) |
+| 6 | — | 1.51 (168) | 1.49 (5632) |
+| 7 | — | 1.37 (48) | **1.51 (7700)** |
+| 8 | — | — | 1.49 (5775) |
 
 **It does not decay — it rises and plateaus at ≈1.5.** So `‖⁅σ_g,A_a⁆‖_F = Θ(√dim)` with a
-stable constant ≈1.5 (across A=2, A=3; A=4 extends the range to dim≈7700). The local
-commutator is **genuinely `√dim`-sized**, *not* `o(√dim)`.
+stable constant ≈1.5, now confirmed across A=2, A=3, A=4 and over **three orders of magnitude
+in dim (11 → 7700)** — the plateau is 1.51 at the largest computed partition (dim 7700). The
+local commutator is **genuinely `√dim`-sized**, *not* `o(√dim)`.
 
 ## Consequence: the operator-norm route cannot reach o(dim)
 
