@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T03:15:57Z
+updated_at: 2026-08-31T03:28:31Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4446,3 +4446,59 @@ is neither obviously that tension nor obviously experimental. Open.
 - Open with the owner: whether the **counit reading** now becomes the leading
   hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
   and mass independently confirms `z_D`.
+## Entry 15 (2026-08-31) — the pinning + non-D sweep the author asked for: CLEAN, and my one "finding" was false
+
+Ran on the whole `computations/` tree, not just the entry-9 frontier.
+
+**Wrong pinning: none measurable.**
+`computations/audits/pin_straddle_unguarded_audit.py` Stage 2 (MEASURED pin
+mismatch — producer anchor vs artifact stamp) reports **0 modules, 0
+artifacts**. Its Stage 1 shape screen lists 130 high-recall candidates, which
+is the standing backlog and not a finding.
+
+**And I nearly landed a false accusation.** I reported
+`qbeta-ck-basis-constrained-pslq.witness.json` as a LAYER STRADDLE — muon-pin
+`u_substrate` beside a proton `q_0`. It is not. Measured:
+
+    ck-cache      u = 0.008517234550156142189256  <- reproduces from ITS q_0
+                                                     (proton) to 4.246e-51
+    pslq witness  u = 0.008517236340484921439933  <- reproduces from ITS q_0
+                                                     (Q0_CANONICAL) to 7.09e-32
+
+Two producers, each self-consistent at its own anchor, 2.1e-7 apart — which
+IS the anchor difference. `qbeta_ck_basis_constrained_pslq.py:139` sets
+`chain = ladder_chain(Q0_CANONICAL)` deliberately because its `C3_EMP_CACHE`
+is extracted at that pin, and lines 86-89 of that same file warn against the
+exact mis-pairing I was making, citing bean `qou-t39x` as what it cost the
+corpus last time. Retracted in `bba5262870`. The discriminator is whether each
+`u` is paired with the `c_3` extracted at its OWN pin; both are.
+
+**Non-D usage: none outside the wall this bean IS.**
+- Value audit (`scripts/convention-c-value-audit.py`, which EVALUATES rather
+  than shape-matches): 107 confirmed C bindings, **107 adjudicated, 0
+  blocking**, against 395 D bindings. The single blocking site was mine —
+  `qbeta_d_n1_factor_bar_midpoint_probe.py:138` — a deliberate control arm
+  (the probe's result IS that the bar rule is *vacuous* under C). Ledgered in
+  `e49b29b321`.
+- Shape audit (`scripts/convention-c-producer-audit.py`): 9 actionable sites.
+  **6 are `computations/qbeta`, registry-marked BLOCKED on this bean's
+  re-derivation** — i.e. they are the entry-9 wall itself, not separate
+  defects. I hand-checked the other 3 and all are labelled-deliberate arms the
+  `deliberate` heuristic missed:
+  - `qbeta_ck_cache.py:140` — inside the `--historical-convention-C` branch,
+    reachable only by explicit flag, kept so the committed witness stays
+    byte-reproducible for its 10 consumers.
+  - `qbeta_ladder_headline_residual_provenance_probe.py:87` — carries
+    `# convention C -- see docstring`; the probe's subject is the provenance
+    of the *published C-frame* numbers.
+  - `probes/nucleon-lp-convention-probe.py:87` — variable is named `z_old`
+    inside a three-arm OLD/HALF/D comparison. Its float64 is also fine:
+    documented, `# float64-ok:`-marked, and measuring a float64 noise floor
+    deliberately (exact arithmetic would return an exact zero and answer a
+    different question).
+
+**So the wall is exactly where entry 9 put it.** There is no stray C site and
+no stray pin to clean up first; what remains is the derivation — rungs above
+k=2 are extracted from experiment, so nothing D-frame is testable against Q_β
+until a c_3 is *derived*. Entry 9's `|c_4| <= 1.4822` is the threshold that
+turns on when one is.
