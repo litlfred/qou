@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-31T04:23:31.451686+00:00",
-  "commitSha": "35ed2a8cda67fcf9574ae3505d5ddd2dec518397",
+  "computedAt": "2026-08-31T04:29:10.597925+00:00",
+  "commitSha": "6855a21deeac1683607b91a41650fd2066b75240",
   "assertions": [
     {
       "name": "the_two_anchors_share_Q_codata_EXACTLY",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "qbeta-n1-constant-two-anchor-filter",
   "scriptFile": "qbeta_n1_constant_two_anchor_filter_probe.py",
-  "scriptHash": "41d44b642bcc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "64dd32673826",
+  "scriptCommitSha": "274c0e9823425e788a2e38058ea8ffcb78c70c55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -176,5 +176,7 @@
       "is_a_fit": false,
       "attribution_caveat": "alpha is held at the value THE FORM gives and is not itself derived, so a wrong alpha is absorbed into K_required. This is a form-level negative on the PAIR (alpha, K), not a determination of K."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
