@@ -4780,3 +4780,53 @@ unchanged; only the claim about them is.**
 inconsistency), L-V38–L-V49, L-V63 (the ≥ 9-site skein-convention cluster).
 L-V19 and L-V63 are both *clusters* rather than single sites and should be
 scoped as their own tranches.
+
+---
+
+## Tranche 8 — L-V19 dissected: **one** wrong leg, not a three-way inconsistency
+
+The entry records four legs in conflict. Checked each independently.
+
+| leg | claim | verdict |
+|---|---|---|
+| 1 | `χ(A) = tr(id_A) = χ(CP¹) = 2`, `qu-to-qou-su2.md:13` | **CORRECT** |
+| 2 | `χ(M) = 3`, `q-harmonic-basis-brane.md:13` | **WRONG — fixed** |
+| 3 | `χ(A) = −6`, Bring's surface | **CORRECT** (genus 4: `2 − 2·4 = −6`) |
+| 4 | `χ(A_n)` constant vs `dim A_n = 3ⁿ dim A_0` | **NOT A DEFECT** |
+
+**Leg 2 fixed.** Two problems, and the block already contained its own
+correction: `χ = 3` is impossible for a closed orientable surface (`χ = 2−2g`
+is even), and it is the *wrong invariant* — line 11 of the same block says the
+index runs over `1 ≤ i ≤ b₁(𝒮_n)`, so the count of basis vectors is a Betti
+number. Rewritten to `b₁(𝒮_0) = 3`, which the stated index range gives and
+which is consistent for a brane (`𝒮_n` is not a surface).
+
+**Leg 3 is a notation collision, not an arithmetic conflict.** The letter `A`
+denotes `CP¹` in one chapter and Bring's surface in another; both values are
+right for their own object. Worth a notation-register entry, not a fix.
+
+**Leg 4 is not a defect at all.** `euler-char-stability-proof.md` defines
+`χ(A_n) = tr(id_{A_n}) = ev_n ∘ coev_n` — the **rigidity trace**. In a rigid
+monoidal category that is a categorical/quantum dimension and need not equal the
+underlying vector-space dimension, so it can be constant while `dim` grows as
+`3ⁿ`. The claim carries a proof block, an independent archimedean check
+(`euler-char-stability-C.md`, Leray–Serre) and three further restatements.
+
+**Leg 1 is an input to L-V18, which stays escalated.** Do not edit
+`qu-to-qou-su2.md:20-25` while that decision is open.
+
+So L-V19 overstates by three legs out of four — the same pattern as L-V11,
+L-V12, L-V13, L-V50 and L-V55.
+
+**RUNNING TALLY, eight tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 31 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / partly retracted | 3 (L-V13, L-V50, L-V19 legs 1/3/4) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49, L-V63 (the ≥9-site
+skein-convention cluster, which deserves its own tranche).
