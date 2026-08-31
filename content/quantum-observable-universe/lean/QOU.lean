@@ -230,6 +230,7 @@ import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+import QOU.MassTheory.MarginalRatioExtensivity
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
