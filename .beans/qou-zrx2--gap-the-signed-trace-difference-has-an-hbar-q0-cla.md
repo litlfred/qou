@@ -170,3 +170,112 @@ was the floor.
    states, so a dyadic rational with denominator `2^{3A}` is exactly the
    expected shape — this should be a finite combinatorial argument, not an
    analytic one, and it would make the subtraction exact rather than measured.
+
+---
+
+## 2026-08-31 (later still) — the floor is DERIVED, and the arithmetic core is in Lean
+
+Follow-up (4) is done, and it subsumes (1): the closed form no longer rests on
+the Richardson extrapolation it was read off.
+
+Probe: `computations/probes/classical_floor_derivation_probe.py` (5 assertions).
+Lean: `QOU/MassTheory/ClassicalTraceFloor.lean` (sorry-free; axioms
+`[propext, Classical.choice, Quot.sound]`, and `cAtom_eq_of_free_and_merges`
+needs only `[propext, Quot.sound]`).
+
+### Step 1 — Schur–Weyl at `q = 1`: `tr_M(β) = 2^{c(σ_β) − n}`
+
+The Markov weights are `y_λ = s_λ(1,Q)/(1+Q)^n` (`qou-ssz6`); at `Q = 1`,
+`s_λ(1,1) = dim V_λ^{GL(2)}` — zero for `ℓ(λ) > 2`, the corpus's row cap — and
+`Σ_λ dim V_λ · χ^λ(σ)` is the character of `σ` permuting the factors of
+`(ℂ²)^{⊗n}`, which is `2^{c(σ)}` because `σ` fixes exactly the basis vectors
+constant on each cycle.
+
+**Verified against the transfer kernel**, which is an entirely separate
+computation: each trace limit is an exact power of two with an integer exponent
+matching the independently-counted cycles, worst relative error `1.05e-8`
+(extrapolation error, growing with `A`).
+
+| | A | n | c_atom | c_free | tr_atom → | tr_free → |
+|---|---|---|---|---|---|---|
+| D | 2 | 6 | 3 | 4 | `2⁻³` | `2⁻²` |
+| T | 3 | 9 | 4 | 6 | `2⁻⁵` | `2⁻³` |
+| ³He | 3 | 9 | 4 | 6 | `2⁻⁵` | `2⁻³` |
+| ⁴He | 4 | 12 | 5 | 8 | `2⁻⁷` | `2⁻⁴` |
+| ⁵Li | 5 | 15 | 6 | 10 | `2⁻⁹` | `2⁻⁵` |
+
+### Step 2 — the cycle counts, straight off the braid words
+
+Every letter `(c, d, g)` of `atom_braid_word_3A` carries `d ∈ {0, −h, −h/2}` with
+`h = q − 1/q`, so **every `d` vanishes at `q = 1`** and each letter degenerates
+to the transposition `s_g`. The permutation is therefore `q`-independent and the
+count is a product of transpositions:
+
+    c(σ_free) = 2A        c(σ_atom) = A + 1        c_free − c_atom = A − 1
+
+verified for **A = 2 … 20** (18 isotopes) with no trace evaluation at all — so it
+holds far past `A = 5`, where the Markov trace stops being computable. ⁶Li
+(`n = 18`) and ⁸Be (`n = 24`) are included.
+
+**`c_free − c_atom = A − 1` is the finding inside the finding.** Each of the
+`A−1` inter-nucleon interfaces merges exactly one pair of cycles — the same
+`(A−1)`-bond chain adjacency `derive_binding_chain_cooperative` sums over,
+arrived at from the permutation rather than from the interface list. **The
+floor's A-dependence *is* the chain structure.**
+
+### Step 3 — therefore
+
+    c₀(A) = 2^{2A − 3A} − 2^{(A+1) − 3A} = 2^{−A} − 2^{1−2A}
+
+exactly, for every `A`. Not fitted, not extrapolated.
+
+### What is formal and what is not
+
+`ClassicalTraceFloor.lean` proves step 3 and the decay bounds. Steps 1 and 2
+enter `classical_floor_of_cycle_counts` as **explicit hypotheses in the
+statement**, not as a class with no instance — deliberately, because step 1 is a
+published theorem Mathlib lacks (no Schur–Weyl development) and step 2 is an
+18-point computation on a concrete word. A reader sees exactly what is assumed.
+
+`hmerge` is stated as `c_free = c_atom + (A − 1)` rather than as two tabulated
+counts, so the chain adjacency is visible in the hypothesis rather than buried in
+a table.
+
+Also proved: `classicalTraceFloor_pos` (`0 < c₀(A)` for `A ≥ 2`) and
+`classicalTraceFloor_lt` (`c₀(A) < 2^{−A}`) — the formal content of the measured
+decay. Note the hypothesis is `A ≥ 2`, **not** `A ≥ 1`: at `A = 1` the two
+exponents coincide and the floor is exactly `0`. Every nucleus has `A ≥ 2` so
+nothing is lost, but the boundary case is real and Lean caught it — my first
+draft asserted `A ≥ 1` and `omega` rejected it.
+
+### The contamination, measured, dies as predicted
+
+| | A | c₀(A) | classical share of `Δtr(q₀)` |
+|---|---|---|---|
+| D | 2 | `1/8` | **22.46 %** |
+| T | 3 | `3/32` | 10.55 % |
+| ³He | 3 | `3/32` | 10.50 % |
+| ⁴He | 4 | `7/128` | 4.88 % |
+| ⁵Li | 5 | `15/512` | 2.16 % |
+
+Halving per nucleon, as `c₀ ~ 2^{−A}` requires. **The floor is a light-nucleus
+contaminant.** So the deuteron's apparent agreement under convention A was
+floor-driven and does not survive subtraction, while the ⁴He 4-body α-residual
+story is essentially untouched.
+
+### Follow-ups, revised
+
+1. ~~Is the floor derivable?~~ **DONE.**
+2. **Fix `E_0_CONVENTIONS["B_q_value_absorbed"]`** — still open. Its operator
+   class should record `ℏ_q⁰ + ℏ_q¹` with the floor named `2^{−A} − 2^{1−2A}`,
+   not `ℏ_q²`, and the "≈ 102×" warning recomputed.
+3. **Re-run the binding chain against `Δtr − c₀(A)`** — still open, and now
+   cheap, since `c₀` is exact for every `A` and needs no trace.
+4. ~~Prove the floor from the `q → 1` limit.~~ **DONE** (steps 1–3 above; the
+   arithmetic in Lean, steps 1–2 as stated hypotheses).
+5. **NEW — formalise step 2.** "The ordered product of these transpositions has
+   `A+1` cycles" is Lean-sized in principle: composing with a transposition
+   changes the orbit count by exactly ±1, and decreases it exactly when the two
+   points lie in different cycles. Mathlib has `Equiv.Perm.cycleType` but no
+   direct orbit-count-under-swap lemma, so this needs the lemma built first. It
+   would remove the last computational input other than Schur–Weyl.
