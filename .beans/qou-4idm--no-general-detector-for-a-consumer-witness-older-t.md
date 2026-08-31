@@ -159,3 +159,42 @@ NOT a contract that moved: the upstream uses `u` on both sides of its last
 regeneration. Fixed; it now runs. Its witness is not committed (this container
 would downgrade it, and it reports a real assertion failure at 81596 ppm that
 deserves its own look).
+
+## 2026-08-31 (later) — 🛑 I MUST CORRECT THE PREVIOUS ENTRY
+
+The section above claims `y-lambda-at-q0`'s 7 consumers are false positives,
+"proven" by showing that `09340b94f vendor: re-sync qou-mass mirror` changed no
+non-ephemeral content. **That proof used the wrong file.**
+
+I checked with the glob `'*y-lambda-at-q0.witness.json'`, which matched a
+VENDORED copy under `qou-mass/`. The copy in `computations/` was last changed on
+2026-08-22 by `410190979 q0: label 229 witnesses from their own payload`, and
+that IS a real value change. Those consumers were not false positives.
+
+    ./computations/y-lambda-at-q0.witness.json                       <- the real one
+    ./qou-mass/src/qou_mass/y-lambda-at-q0.witness.json              <- mirror
+    ./qou-mass/src/qou_mass/data/_deprecated/y-lambda-at-q0.witness.json
+
+**194 witness basenames are duplicated** across 3462 files, almost all via the
+`qou-mass` mirror. A glob over basenames is unsafe anywhere in this repo.
+
+### Both fixes are still right, for the reasons found afterwards
+
+1. **Value-change comparison** — still correct as a principle, and it does
+   suppress **8** pairs whose upstream was touched without its values moving. It
+   just does not suppress the y-lambda ones.
+
+2. **Vendored-copy exclusion** — needed for a reason I had not seen: with
+   duplicates present, `_resolve` finds two basename matches, returns None, and
+   silently DROPS the pair. Excluding `qou-mass/` and `_deprecated/` made real
+   pairs resolve that were being skipped.
+
+### Corrected numbers
+
+    witnesses with a commit date   3605 -> 3095   (510 vendored/deprecated dropped)
+    suppressed (values unchanged)                 8
+    STALE consumers                248 -> 251
+
+The count went UP, not down. The original 248 was wrong in both directions at
+once: it counted mirror churn as upstream change AND dropped real pairs as
+ambiguous. 251 is the honest figure.

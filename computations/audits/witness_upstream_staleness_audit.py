@@ -62,9 +62,73 @@ def _witness_commit_times() -> dict[str, int]:
     for line in out.split("\n"):
         if line.startswith("C|"):
             ts = int(line.rsplit("|", 1)[1])
-        elif line.strip() and line not in times:
-            times[line.strip()] = ts
+        elif line.strip() and line.strip() not in times:
+            path = line.strip()
+            # Skip VENDORED and deprecated copies. `qou-mass/` mirrors many
+            # witnesses -- 194 basenames are duplicated across the tree -- and a
+            # mirror re-sync commit touches the copy without any producer having
+            # re-run. Including them makes basename resolution ambiguous (so real
+            # pairs get silently dropped) and makes a `vendor: re-sync` commit
+            # look like an upstream change. Bean `qou-4idm`.
+            if path.startswith("qou-mass/") or "/_deprecated/" in path:
+                continue
+            times[path] = ts
     return times
+
+
+# Fields that carry no computed value. A commit that changes ONLY these has not
+# actually moved the witness, so a consumer behind it is not stale.
+_EPHEMERAL = frozenset({
+    "computedAt", "commitSha", "scriptCommitSha", "scriptHash", "durationMs",
+    "durationMsBaseline", "generatedAt", "environment", "invocation",
+    "engineVersion",
+})
+
+
+def _strip(payload: dict) -> str:
+    """Canonical form of a witness with its ephemeral fields removed."""
+    return json.dumps(
+        {k: v for k, v in payload.items() if k not in _EPHEMERAL},
+        sort_keys=True)
+
+
+def _last_value_change(path: str, cache: dict) -> int | None:
+    """Unix time of the newest commit that changed `path`'s VALUES.
+
+    The audit originally compared against the commit that last TOUCHED a
+    witness, which over-reports: `y-lambda-at-q0.witness.json` was last touched
+    by `09340b94f vendor: re-sync qou-mass mirror after the merge`, whose
+    non-ephemeral content is byte-identical to its parent. Every consumer
+    "behind" that commit was a false positive.
+
+    Walks the file's history newest-first and returns the first commit whose
+    stripped payload differs from its parent's.
+    """
+    if path in cache:
+        return cache[path]
+    log = subprocess.run(
+        ["git", "log", "--format=%H|%ct", "--", path],
+        cwd=_ROOT, capture_output=True, text=True).stdout.strip().split("\n")
+    prev_stripped = None
+    result = None
+    for line in log:
+        if "|" not in line:
+            continue
+        sha, ts = line.split("|")
+        blob = subprocess.run(["git", "show", f"{sha}:{path}"], cwd=_ROOT,
+                              capture_output=True, text=True).stdout
+        try:
+            cur = _strip(json.loads(blob))
+        except (ValueError, TypeError):
+            cur = blob
+        if prev_stripped is not None and cur != prev_stripped:
+            result = int(prev_ts)
+            break
+        prev_stripped, prev_ts = cur, ts
+    else:
+        result = int(prev_ts) if log and prev_stripped is not None else None
+    cache[path] = result
+    return result
 
 
 def _index_producers() -> dict[str, dict]:
@@ -126,7 +190,7 @@ def main() -> int:
     print(f"  witnesses with a commit date : {len(times)}")
     print(f"  producers referencing one    : {len(producers)}")
 
-    stale = []
+    stale, suppressed, vc_cache = [], [], {}
     for prod, info in producers.items():
         own = info["own"]
         if not own:
@@ -139,11 +203,19 @@ def main() -> int:
             up = _resolve(ref, info["dir"], times)
             if up is None or up == own_p:
                 continue
-            if times[up] > own_t:
-                stale.append((times[up] - own_t, prod, own_p, up))
+            if times[up] <= own_t:
+                continue
+            # Compare against the upstream's last VALUE change, not its last
+            # touch: a provenance-only commit does not make a consumer stale.
+            up_t = _last_value_change(up, vc_cache)
+            if up_t is None or up_t <= own_t:
+                suppressed.append((prod, up))
+                continue
+            stale.append((up_t - own_t, prod, own_p, up))
 
     stale.sort(reverse=True)
-    print(f"\n  STALE consumers (own witness older than an upstream): {len(stale)}")
+    print(f"\n  suppressed (upstream touched but VALUES unchanged): {len(suppressed)}")
+    print(f"  STALE consumers (own witness older than an upstream): {len(stale)}")
     print(f"  {'behind':>10}  consumer witness  <-  upstream")
     for delta, prod, own_p, up in stale[:limit]:
         days = delta / 86400.0
