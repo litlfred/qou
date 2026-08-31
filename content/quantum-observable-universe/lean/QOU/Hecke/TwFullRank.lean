@@ -25,11 +25,23 @@ Index convention: `IwahoriHecke K q n` has `n` generators, so it models
 
 It fixes the **dimension** of `IwahoriHecke K q n`, which is what the degenerate
 models fail — `InstanceH2.rankOneModel` is one-dimensional at every rank. It is
-*not* a `HeckeAlgebra` instance, and this file deliberately does not provide
-one: `HeckeAlgebra`'s quadratic field is `σ² = (q - q⁻¹)σ + 1`, a different
-normalisation from `IwahoriHecke`'s `σ² = (q-1)σ + q`, so the two are related by
-a rescaling of `q` rather than by an instance. Reconciling the corpus's Hecke
-presentations is bean `qou-img9` and is not attempted here.
+*not* an instance of the class `QOU.Hecke.HeckeAlgebra`, and this file
+deliberately does not provide one: **that class's** quadratic field is
+`σ² = (q - q⁻¹)σ + 1`, whereas `IwahoriHecke`'s is `σ² = (q-1)σ + q`, so the two
+are related by a rescaling of `q` rather than by an instance.
+
+**Name the class, and do not read `(q-1)σ + q` as the odd one out.** As of
+`QOU/MathlibExt/IwahoriHeckeAlgebra.lean` the corpus carries several distinct
+declarations spelled `HeckeAlgebra` (measured on `main` 2026-08-31: seven
+declaration sites), across **two incompatible quadratic conventions** — and
+`(q-1)σ + q` is the one shared by `QOU.Hecke.IwahoriHecke` *and* by
+`QOU.MathlibExt.IwahoriHecke.HeckeAlgebra`, which `algEquiv` proves are the same
+algebra at the **same** `q`, with no rescaling. The odd one out is the class
+`QOU.Hecke.HeckeAlgebra`. The fully-qualified names are all distinct, so nothing
+is ambiguous to the compiler — but the bare name resolves differently depending
+on the namespace in scope, which is the `markovZ` pattern AGENTS.md documents at
+length. Bean `qou-csgy` tracks the rename; reconciling the presentations
+themselves is `qou-img9`. Neither is attempted here.
 -/
 
 namespace QOU.Hecke

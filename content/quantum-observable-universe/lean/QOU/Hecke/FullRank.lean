@@ -44,10 +44,15 @@ degenerate models fail.
 >
 > Two scope notes. The basis is a **field** statement — everything upstream of
 > `QOU/Hecke/TwBasisField.lean` holds over an arbitrary commutative ring, but
-> the dimension squeeze does not. And it does **not** supply a `HeckeAlgebra`
-> instance for `IwahoriHecke`: this class's quadratic field is
-> `σ² = (q - q⁻¹)σ + 1` while `IwahoriHecke`'s is `σ² = (q-1)σ + q`, so the two
-> are related by a rescaling of `q`, not by an instance (bean `qou-img9`).
+> the dimension squeeze does not. And it does **not** supply an instance of
+> *this* class, `QOU.Hecke.HeckeAlgebra`, for `IwahoriHecke`: this class's
+> quadratic field is `σ² = (q - q⁻¹)σ + 1` while `IwahoriHecke`'s is
+> `σ² = (q-1)σ + q`, so the two are related by a rescaling of `q`, not by an
+> instance (bean `qou-img9`). Name the class when you say that: the corpus
+> carries several distinct declarations spelled `HeckeAlgebra` across two
+> quadratic conventions, and `(q-1)σ + q` is the *shared* one — it is what
+> `QOU.MathlibExt.IwahoriHecke.HeckeAlgebra` uses too, at the same `q`. This
+> class is the odd one out (bean `qou-csgy`).
 
 ## The inductive route
 
