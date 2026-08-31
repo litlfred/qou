@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:10:09.849197+00:00",
-  "commitSha": "0107f6578102a324a49ffa48b7626ec2b81a7fa4",
+  "computedAt": "2026-08-31T03:20:47.941841+00:00",
+  "commitSha": "6bc0f6047ccb22cf734cba71445ee35ab9465570",
   "assertions": [
     {
       "name": "master_identity_reproduces_two_alpha_CONTROL",
@@ -104,11 +104,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2725,
+  "durationMs": 2319,
   "computation": "qbeta-block-bar-defect-conjugation",
   "scriptFile": "qbeta_block_bar_defect_conjugation_probe.py",
-  "scriptHash": "9424d9483dd9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "514a3c8075c9",
+  "scriptCommitSha": "86f0652100b6a2c4420993784193466f9e9218b0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -181,6 +181,13 @@
       "slope_at_q0": "0.905826877182879029066107419104440921629417383007789260839566",
       "excluded_by": "two-row cap (qou-06wh: admissible set exactly {q, z_D}) and the anchor filter (needs 0.4991 / +400.29)"
     },
+    "q0_anchor": {
+      "pin": "physical_proton",
+      "source": "q_parameter.Q_50_DIGIT_STR",
+      "registered_in": "computations/q0_anchor_manifest.json (physical_proton)",
+      "load_bearing": false,
+      "note": "All 14 assertions are symbolic and anchor-free; q0 enters only the reported numerics. Registered explicitly rather than left to the unlisted-stem default, per the 2026-08-30 owner ruling: proton unless the producer is an explicit proton-vs-muon comparison (E1) or the ideal CAL layer (E2). It is neither."
+    },
     "scope": {
       "tier": "scope-(a)",
       "c_k_produced": false,
@@ -189,5 +196,7 @@
       "hypothesis_A_block_resolution_restores_parity_handle": "REFUTED",
       "hypothesis_B_bar_is_conjugate_partition_equivariance": "REFUTED (holds on characters, fails on weights unless z is bar-odd)"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

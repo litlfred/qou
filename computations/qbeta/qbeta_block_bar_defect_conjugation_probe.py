@@ -318,6 +318,17 @@ def main() -> int:
         "excluded_by": "two-row cap (qou-06wh: admissible set exactly {q, z_D}) "
                        "and the anchor filter (needs 0.4991 / +400.29)",
     })
+    w.add_data("q0_anchor", {
+        "pin": "physical_proton",
+        "source": "q_parameter.Q_50_DIGIT_STR",
+        "registered_in": "computations/q0_anchor_manifest.json (physical_proton)",
+        "load_bearing": False,
+        "note": "All 14 assertions are symbolic and anchor-free; q0 enters only "
+                "the reported numerics. Registered explicitly rather than left "
+                "to the unlisted-stem default, per the 2026-08-30 owner ruling: "
+                "proton unless the producer is an explicit proton-vs-muon "
+                "comparison (E1) or the ideal CAL layer (E2). It is neither.",
+    })
     w.add_data("scope", {
         "tier": "scope-(a)",
         "c_k_produced": False, "K_determined": False, "q_beta_ppb": 1279,
