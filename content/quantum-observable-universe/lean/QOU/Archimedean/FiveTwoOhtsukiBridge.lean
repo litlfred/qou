@@ -18,7 +18,7 @@ shows that only **one** of them is Ohtsuki's hard analysis:
 | part | content | status |
 |---|---|---|
 | (A) | `⟨5₂⟩_N = e^{Nζ}·N^{3/2}·ω·(1 + O(1/N))` | **axiom** — Ohtsuki Thm 1.1, the 52-page part |
-| (B) | `2π·Re ζ = 3·D(y₀)` | a dilogarithm identity — half proved, no geometry |
+| (B) | `2π·Re ζ = 3·D(y₀)` | **PROVED**, sorry-free — no geometry |
 | (C) | (A) ⟹ `(2π/N)·log‖⟨5₂⟩_N‖ → 2π·Re ζ` | **PROVED**, sorry-free |
 | (D) | `Vol(5₂) = 3·D(y₊)` | already axiomatised as `FiveTwoTriangulation` |
 
@@ -27,12 +27,22 @@ geometry, and it does not: it is an identity among dilogarithms at the root of
 a cubic. **Nothing in (B) or (C) needs the method of steepest descent** — that
 is required only to prove (A) itself, which we do not attempt.
 
-**`volume_conjecture_five_two` is now sorry-free.** Its content is exactly (A)
-plus the two identities (B) and (D), both taken as explicit hypotheses, and
-nothing else: no `sorry` sits between Ohtsuki's Theorem 1.1 and the volume
-conjecture for `5₂`. The remaining `sorry` in this file belongs to
-`ohtsuki_sum_im_eq_three_blochWigner`, which *proves* (B) rather than assuming
-it, and which the bridge does not call.
+**This file has no `sorry`.** `volume_conjecture_five_two_wired` derives the
+volume conjecture for `5₂` from (A), (D) and the statement that `Li₂` is a
+dilogarithm, and nothing else — (B) and the identification of `ζ` are theorems
+here, not hypotheses. Its two class arguments are the honest residue:
+`OhtsukiAsymptotic` is Ohtsuki's published analysis, `FiveTwoTriangulation` is
+Thurston/SnapPea, and neither has an instance.
+
+⚠ **(D) is stated at the conjugate-inverse shape, and that is not cosmetic.**
+`FiveTwoTriangulation` lives at `y₊`, the upper-half-plane root of the *saddle*
+cubic `y³ − 2y² + 3y − 1`; Ohtsuki's `y₀` is a root of the *reciprocal* cubic
+`y³ − 3y² + 2y − 1`. They are different numbers —
+`y₀ = 0.3376… + 0.5623…i` against `y₊ = 0.7849… + 1.3071…i` — related by
+`y₊ = conj (1/y₀)` (checked to 40 digits, difference exactly `0`). Writing the
+instance at `y₀` would be wrong. `conj_inv_is_five_two_shape` proves the shape
+supplied is admissible, and `BlochWigner_lob_conj_inv` proves the two `D` values
+agree, so the reconciliation is derived rather than asserted.
 
 ## Ohtsuki's Theorem 1.1, verbatim
 
@@ -105,8 +115,13 @@ root of the cubic (residual `1.9e-121`) before this file was written:
   either form would have moved the answer by a whole unit;
 * `2√−1·ω² = −2(y₀−1)/(2y₀+1) = 0.2344867660… − √−1·0.8286683659…`.
 
-A numerical check is not a proof, which is why (B) still carries a `sorry`.
-(C), by contrast, no longer does — see below.
+A numerical check is not a proof. It was, however, the thing that caught the
+error: the `hinv` hypothesis (B) used to carry was refuted by exactly this kind
+of check before any Lean was written — see the ⚠ block on
+`ohtsuki_sum_im_eq_three_blochWigner`. Numbers are not evidence *for* a
+theorem; they are excellent evidence *against* a wrong one.
+
+Both (B) and (C) are now proved.
 
 ## The tier boundary lives in the type
 
@@ -257,40 +272,389 @@ term is `π²/6`; it is real, so it drops out of the imaginary part. -/
 noncomputable def ohtsukiSum (Li₂ : ℂ → ℂ) (y : ℂ) : ℂ :=
   Li₂ (xOf y * y) + Li₂ (1 / (xOf y * y)) + Li₂ y - Li₂ (1 / y) - Li₂ (1 / xOf y) - Li₂ 1
 
-/-- **(B).**
+/-! ### Everything is a power of `w = 1 − y`
 
-**Proof strategy** (for whoever lands this):
+Ohtsuki's five arguments `x₀y₀`, `1/(x₀y₀)`, `y₀`, `1/y₀`, `1/x₀` look like five
+unrelated points. They are not. Put `w = 1 − y`. The cubic `(y−1)³ = y` says
+exactly `w³ = w − 1`, and then
 
-1. `Im Li₂(z) = D(z) − arg(1−z)·log|z|` by definition of `BlochWigner_lob`;
-   apply termwise to reduce the goal to a `D`-identity plus a sum of
-   `arg · log` correction terms.
-2. Kill the inversion terms with `D(1/z) = −D(z)`, which pairs
-   `Li₂(x₀y₀)` with `Li₂(1/(x₀y₀))` and `Li₂(y₀)` with `−Li₂(1/y₀)`.
-3. The remaining correction terms are `arg`–`log` products at `y₀`, `x₀` and
-   `x₀y₀`; they cancel using `x₀ = 1 − 1/y₀` together with the cubic.
-4. What survives is `3·D(y₀)`, using `D(x₀) = D(y₀)` and
-   `D(x₀y₀) = D(y₀)/2`.
+```
+x₀y₀ = −w        y₀ = −w³        x₀ = 1/w²        1 − 1/x₀ = 1/w
+```
 
-**Step 4's first half is proved**, and cheaply. `x₀ = 1 − 1/y₀` is exactly the
-order-3 Möbius rotation of the ideal tetrahedron, under which the three
-dihedral angles are *permuted*; so `D(x₀) = D(y₀)` is a reordering of a sum, not
-a computation. See `QOU.Archimedean.BlochWigner_lob_mobius_cycle` in
-`BlochWignerSymmetry.lean` — no dilogarithm, no analysis, nothing Mathlib lacks.
+so **every** argument is `±w^k` for `k ∈ {−2, −1, 1, 3}`. That is what makes the
+correction terms collapse: each `log‖·‖` is an integer multiple of `log‖w‖` and
+each `arg` is an integer multiple of `arg w`, and the integers cancel.
 
-What remains is therefore narrower than it looked: the `arg`–`log` correction
-terms must cancel (measured: their sum is `2.9e-42`), and `D(x₀y₀) = D(y₀)/2`
-must come from the cubic. Neither needs steepest descent. The `Li₂` parameter
-still carries its own hypotheses because Mathlib has no polylogarithm — but the
-*volume-carrying* half of the argument turned out not to need one. -/
+These are all pure field identities modulo the cubic — `linear_combination`
+certificates, no analysis. -/
+
+/-- The cubic recentred at `w = 1 − y`: `w³ − w + 1 = 0`, i.e. `w³ = w − 1`.
+
+Note this is the *plastic-number* cubic with a sign: `u³ = u + 1` for `u = y−1`.
+The `5₂` shape field is ℚ(`u`), the complex cubic field of discriminant `−23` —
+the smallest `|disc|` there is, which is why `Vol(5₂)` is the smallest volume in
+the Zagier tables. -/
+theorem cubic_one_sub {y : ℂ} (h : y ^ 3 - 3 * y ^ 2 + 2 * y - 1 = 0) :
+    (1 - y) ^ 3 - (1 - y) + 1 = 0 := by linear_combination -h
+
+/-- `y = −w³`. The volume-carrying consequence: `‖y‖ = ‖w‖³`, so `log‖y‖` is
+*three* times `log‖w‖` — the `3` in `3·D(y₀)` and the `3` in the coefficient
+bookkeeping are the same `3`. -/
+theorem eq_neg_one_sub_cube {y : ℂ} (h : y ^ 3 - 3 * y ^ 2 + 2 * y - 1 = 0) :
+    y = -(1 - y) ^ 3 := by linear_combination -h
+
+/-- `x₀·y₀ = y₀ − 1 = −w`. No cubic needed — this is just `(1 − 1/y)·y`.
+
+Worth stating on its own: Ohtsuki writes `Li₂(x₀y₀)`, and the product is a
+*translate* of `y₀`, not a new transcendental. -/
+theorem xOf_mul_self (y : ℂ) (hy : y ≠ 0) : xOf y * y = y - 1 := by
+  unfold xOf; field_simp
+
+/-- `x₀ = 1/w²`. This is the cubic doing real work: `x₀ = (y−1)/y` and `y =
+(y−1)³`, so the `(y−1)` cancels down to `(y−1)^{-2}`.
+
+The `linear_combination` certificate is `+h`, not `−h`: `field_simp` normalises
+the cleared equation with the *opposite* orientation to the one this file's
+other certificates use, and the typechecker rejects the sign immediately. Worth
+recording only because the same wrong guess costs a compile every time. -/
+theorem xOf_eq_one_div_sq {y : ℂ} (hy : y ≠ 0) (hy1 : y ≠ 1)
+    (h : y ^ 3 - 3 * y ^ 2 + 2 * y - 1 = 0) : xOf y = 1 / (1 - y) ^ 2 := by
+  have hw : (1 : ℂ) - y ≠ 0 := sub_ne_zero.mpr (Ne.symm hy1)
+  unfold xOf
+  field_simp
+  linear_combination h
+
+/-- `1 − 1/x₀ = 1/w`, and — a small surprise — **the cubic is not needed**.
+
+`x₀ = 1 − 1/y` is the order-3 Möbius map, so `1 − 1/x₀` is that map applied
+twice, which the 3-cycle already evaluates: it is `one_sub_inv_mobius` in
+`BlochWignerSymmetry.lean`, proved there for every `y ∉ {0,1}`. An earlier draft
+routed this through `w³ = w − 1` and needed the root; that was strictly more
+than the fact costs. -/
+theorem one_sub_one_div_xOf {y : ℂ} (hy : y ≠ 0) (hy1 : y ≠ 1) :
+    1 - 1 / xOf y = 1 / (1 - y) :=
+  one_sub_inv_mobius y hy hy1
+
+/-! ### `Re(1 − y₀) > 0` — the one place a *root* is analysed, not the cubic
+
+Everything above holds at all three roots. The `arg` bookkeeping does not: it
+needs to know which quadrant `w = 1 − y` sits in, and that is a fact about the
+complex roots specifically.
+
+The elimination is elementary. Writing `w = s + it` and separating `w³ − w + 1 =
+0` into real and imaginary parts gives, when `t ≠ 0`,
+
+```
+t² = 3s² − 1          (imaginary part, after dividing by t)
+8s³ − 2s − 1 = 0      (real part, after substituting)
+```
+
+and the second has no root with `s ≤ 0`, because for `r = −s ≥ 0`
+
+```
+8r³ − 2r + 1 = 2r(2r−1)² + 8(r − 1/4)² + 1/2 > 0.
+```
+
+That decomposition is the whole proof, and it is what `nlinarith` is fed. -/
+
+/-- **`Re(1 − y) > 0` at every non-real root of Ohtsuki's cubic.**
+
+Equivalently `Re y < 1` — measured, `Re y₀ = 0.3376…`. This pins `w = 1 − y` to
+the fourth quadrant (together with `Im w = −Im y < 0`), hence
+`arg w ∈ (−π/2, 0)`, which is what every `arg` computation below rests on.
+
+The hypothesis is `y.im ≠ 0`, not `0 < y.im`: the statement is about the
+conjugate *pair*, and using less than is available keeps the reason visible —
+the real root `y = 2.3247…` genuinely has `Re y > 1`, so some hypothesis
+excluding it is unavoidable. -/
+theorem one_sub_re_pos {y : ℂ} (him : y.im ≠ 0)
+    (h : y ^ 3 - 3 * y ^ 2 + 2 * y - 1 = 0) : 0 < ((1 : ℂ) - y).re := by
+  have hw : ((1 : ℂ) - y) ^ 3 - (1 - y) + 1 = 0 := cubic_one_sub h
+  set w : ℂ := 1 - y with hwdef
+  have hwim : w.im ≠ 0 := by simpa [hwdef] using him
+  have hre : (w ^ 3 - w + 1).re = 0 := by rw [hw]; simp
+  have him' : (w ^ 3 - w + 1).im = 0 := by rw [hw]; simp
+  simp only [Complex.sub_re, Complex.add_re, Complex.one_re, Complex.sub_im, Complex.add_im,
+    Complex.one_im, pow_succ, pow_zero, one_mul, Complex.mul_re, Complex.mul_im] at hre him'
+  set s := w.re
+  set t := w.im
+  -- imaginary part, divided by `t ≠ 0`
+  have ht2 : t ^ 2 = 3 * s ^ 2 - 1 := by
+    have hfac : t * (3 * s ^ 2 - t ^ 2 - 1) = 0 := by linear_combination him'
+    rcases mul_eq_zero.mp hfac with h0 | h0
+    · exact absurd h0 hwim
+    · linarith
+  -- real part, with `t²` eliminated
+  have hs : 8 * s ^ 3 - 2 * s - 1 = 0 := by linear_combination -hre - 3 * s * ht2
+  by_contra hcon
+  push_neg at hcon
+  nlinarith [mul_nonneg (neg_nonneg.mpr hcon) (sq_nonneg (2 * s + 1)), sq_nonneg (4 * s + 1),
+    sq_nonneg s, sq_nonneg (2 * s + 1)]
+
+/-- **(B) — PROVED.**
+
+`Im` of Ohtsuki's five-term dilogarithm sum is `3·D(y₀)`, with no geometry and
+no asymptotics.
+
+## What the hypotheses are, and why they are not the theorem in disguise
+
+Mathlib has no polylogarithm, so `Li₂` is a parameter. It is constrained by
+exactly two facts, both of which the corpus proves for its **own** dilogarithm
+`QOU.MathlibExt.cLiTwoExt`:
+
+* `hbw` is **Kummer's identity**, `D(z) = Im Li₂(z) + arg(1−z)·log‖z‖` — the
+  statement that the Λ-built `BlochWigner_lob` and the `Li₂`-built Bloch–Wigner
+  function are the same function. `QOU.Knot.KummerRadial.kummer` proves it,
+  sorry-free, for `Im z > 0`; it is stated here for `z.im ≠ 0`, since the
+  argument list contains `1/y₀`, `1/x₀` and `1/(x₀y₀)`, all in the *lower* half
+  plane. (Extending `kummer` across the real axis by Schwarz reflection is a
+  separate, small, unlanded job — recorded here rather than papered over.)
+* `hone` is `Im Li₂(1) = 0`, i.e. `Li₂(1) = π²/6` is real. It is stated
+  separately because `hbw` is deliberately *not* assumed at `z = 1`, where
+  `arg(1 − z) = arg 0` and the identity holds only through Lean's `arg 0 = 0`
+  convention.
+
+Neither hypothesis mentions `5₂`, the cubic, or a volume.
+
+## ⚠ The hypothesis this replaces was FALSE
+
+Until this proof was written the statement also carried
+
+```
+hinv : ∀ z ≠ 0, Im Li₂(z) + Im Li₂(1/z) = −2·arg(1−z)·log‖z‖
+```
+
+advertised as "the inversion formula". **It is not the inversion formula and it
+is not true.** Euler's inversion `Li₂(z) + Li₂(1/z) = −π²/6 − ½log(−z)²` has
+imaginary part `−log‖z‖·arg(−z)`, and `arg(−z) ≠ 2·arg(1−z)`. Measured against
+`mpmath` at 40 digits, the discharged form is off by `−2.97e-1` at `y₀`,
+`−9.17e-2` at `x₀` and `−7.25e-3` at `x₀y₀` — not a branch ambiguity, a wrong
+identity. Worse, it is inconsistent with `hbw`, which already determines
+`Im Li₂` completely; so the old statement was a `sorry` guarding a hypothesis
+set no dilogarithm satisfies. It is gone, and nothing replaced it: the correct
+inversion is *derivable* here from `hbw` plus `D(1/z) = −D(z)`, so the theorem
+now needs one identity where it claimed to need two.
+
+## The proof, in one line per term
+
+Apply `hbw` at each of the five non-unit arguments, then use
+`BlochWigner_lob_inv` (`D(1/z) = −D(z)`) and `blochWigner_xOf_eq`
+(`D(x₀) = D(y₀)`). The `D` terms give
+
+```
+D(−w) − D(−w) + D(y) + D(y) + D(x₀) = 3·D(y)
+```
+
+— note `D(x₀y₀)` cancels against itself between the first two terms, so the
+`D(x₀y₀) = D(y₀)/2` that an earlier version of this docstring listed as
+required is **not needed**. (It is true — measured to 50 digits — but it is not
+on the path.)
+
+The correction terms are all of the form `(integer · arg w) · (integer · log‖w‖)`
+because of the `w`-power identities above, and the integers cancel:
+
+```
+arg:   1 − 1/(x₀y₀) contributes +1 ,  1 − y contributes −3 ,
+       1 − 1/y = x₀ contributes +6 ,  1 − 1/x₀     contributes −2      →  0
+```
+
+The `arg(2 − y₀)` terms — the only ones that are *not* multiples of `arg w` —
+cancel in pairs between `Li₂(x₀y₀)` and `Li₂(1/(x₀y₀))` before any of that.
+
+## Errors the typechecker caught, recorded for the next reader
+
+* `Complex.arg_mul` needs `arg a + arg b ∈ Ioc (−π) π`, and for `(2−y)/(1−y)`
+  the sum is `arg(2−y) + (−arg w)`, in `(−π/2, π)` — it is *not* symmetric about
+  `0`, so the two bounds have genuinely different proofs.
+* `arg((1−y)²) = 2·arg(1−y)` is only true because `2·arg w ∈ (−π, 0)`; the naive
+  `arg_pow` is a `Real.Angle` statement and does not give it. -/
 theorem ohtsuki_sum_im_eq_three_blochWigner
-    (Li₂ : ℂ → ℂ) (y : ℂ) (_hy : IsOhtsukiShape y)
-    (_hinv : ∀ z : ℂ, z ≠ 0 → (Li₂ z).im + (Li₂ (1 / z)).im
-      = -(2 * (Complex.arg (1 - z)) * Real.log ‖z‖))
-    (_hbw : ∀ z : ℂ, BlochWigner_lob z
+    (Li₂ : ℂ → ℂ) (y : ℂ) (hy : IsOhtsukiShape y)
+    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
       = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
-    (_hone : (Li₂ 1).im = 0) :
+    (hone : (Li₂ 1).im = 0) :
     (ohtsukiSum Li₂ y).im = 3 * BlochWigner_lob y := by
-  sorry
+  obtain ⟨hcubic, hyim⟩ := hy
+  have hyim' : y.im ≠ 0 := ne_of_gt hyim
+  have hy0 : y ≠ 0 := cubic_ne_zero hcubic
+  have hy1 : y ≠ 1 := cubic_ne_one hcubic
+  have hw0 : (1 : ℂ) - y ≠ 0 := sub_ne_zero.mpr (Ne.symm hy1)
+  have hwim : ((1 : ℂ) - y).im < 0 := by simpa using hyim
+  have hwre : 0 < ((1 : ℂ) - y).re := one_sub_re_pos hyim' hcubic
+  have hwim' : ((1 : ℂ) - y).im ≠ 0 := ne_of_lt hwim
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  -- `ψ = arg w` lies in `(−π/2, 0)`: `w` is in the fourth quadrant.
+  have hψneg : ((1 : ℂ) - y).arg < 0 := Complex.arg_neg_iff.mpr hwim
+  have hψlow : -(Real.pi / 2) < ((1 : ℂ) - y).arg := by
+    have habs : |((1 : ℂ) - y).arg| < Real.pi / 2 :=
+      Complex.abs_arg_lt_pi_div_two_iff.mpr (Or.inl hwre)
+    linarith [(abs_lt.mp habs).1]
+  ---------------------------------------------------------------- algebra
+  have hxy : xOf y * y = -(1 - y) := by rw [xOf_mul_self y hy0]; ring
+  have hxe : xOf y = 1 / (1 - y) ^ 2 := xOf_eq_one_div_sq hy0 hy1 hcubic
+  have hycube : y = -(1 - y) ^ 3 := eq_neg_one_sub_cube hcubic
+  have hx0 : xOf y ≠ 0 := by rw [hxe]; exact one_div_ne_zero (pow_ne_zero 2 hw0)
+  have hxim : (xOf y).im ≠ 0 := by
+    have hx : (xOf y).im = -(1 / y).im := by unfold xOf; simp
+    rw [hx]
+    exact neg_ne_zero.mpr (one_div_im_ne_zero hyim')
+  have hxyim : (xOf y * y).im ≠ 0 := by rw [hxy]; simpa using hwim'
+  ---------------------------------------------------------------- norms
+  have hloginv : ∀ v : ℂ, Real.log ‖1 / v‖ = -Real.log ‖v‖ := by
+    intro v; rw [norm_div, norm_one, one_div, Real.log_inv]
+  have hnormy : ‖y‖ = ‖(1 : ℂ) - y‖ ^ 3 := by
+    have h : ‖y‖ = ‖-((1 : ℂ) - y) ^ 3‖ := by rw [← hycube]
+    rw [h, norm_neg, norm_pow]
+  have hnormxy : ‖xOf y * y‖ = ‖(1 : ℂ) - y‖ := by rw [hxy, norm_neg]
+  have hnormx : ‖xOf y‖ = 1 / ‖(1 : ℂ) - y‖ ^ 2 := by
+    rw [hxe, norm_div, norm_one, norm_pow]
+  have hlogy : Real.log ‖y‖ = 3 * Real.log ‖(1 : ℂ) - y‖ := by
+    rw [hnormy, Real.log_pow]; push_cast; ring
+  have hlogx : Real.log ‖xOf y‖ = -(2 * Real.log ‖(1 : ℂ) - y‖) := by
+    rw [hnormx, one_div, Real.log_inv, Real.log_pow]; push_cast; ring
+  ---------------------------------------------------------------- args
+  -- `arg (w²) = 2ψ` — legitimate only because `2ψ ∈ (−π, 0)`.
+  have hargsq : (((1 : ℂ) - y) ^ 2).arg = 2 * ((1 : ℂ) - y).arg := by
+    rw [sq, Complex.arg_mul hw0 hw0 (Set.mem_Ioc.mpr ⟨by linarith, by linarith⟩)]
+    ring
+  have hargsqne : (((1 : ℂ) - y) ^ 2).arg ≠ Real.pi := by
+    rw [hargsq]; intro hc; linarith
+  -- `1 − 1/y = x₀ = 1/w²`, so `arg x₀ = −2ψ`.
+  have hargx : (xOf y).arg = -(2 * ((1 : ℂ) - y).arg) := by
+    rw [hxe, one_div, Complex.arg_inv, if_neg hargsqne, hargsq]
+  have harg1y : ((1 : ℂ) - 1 / y).arg = -(2 * ((1 : ℂ) - y).arg) := hargx
+  -- `1 − 1/x₀ = 1/w`, so `arg (1 − 1/x₀) = −ψ`.
+  have hargx' : ((1 : ℂ) - 1 / xOf y).arg = -((1 : ℂ) - y).arg := by
+    rw [one_sub_one_div_xOf hy0 hy1, arg_one_div_of_im_ne_zero hwim']
+  -- `1 − x₀y₀ = 2 − y = 1 + w`; only `Re (1 + w) > 0` is needed.
+  have h2y : (1 : ℂ) - xOf y * y = 1 + (1 - y) := by rw [hxy]; ring
+  have h2yre : 0 < ((1 : ℂ) + (1 - y)).re := by
+    simp only [Complex.add_re, Complex.one_re]; linarith
+  have h2y0 : (1 : ℂ) + (1 - y) ≠ 0 := by
+    intro hc; rw [hc] at h2yre; simp at h2yre
+  have hqabs : |((1 : ℂ) + (1 - y)).arg| < Real.pi / 2 :=
+    Complex.abs_arg_lt_pi_div_two_iff.mpr (Or.inl h2yre)
+  -- `1 − 1/(x₀y₀) = (2 − y)·(1/(1 − y))`, and its arg is `arg (2 − y) − ψ`.
+  have hquot : (1 : ℂ) - 1 / (xOf y * y) = (1 + (1 - y)) * (1 / (1 - y)) := by
+    rw [hxy]; field_simp; ring
+  have hargquot : ((1 : ℂ) - 1 / (xOf y * y)).arg
+      = ((1 : ℂ) + (1 - y)).arg - ((1 : ℂ) - y).arg := by
+    have hmem : ((1 : ℂ) + (1 - y)).arg + ((1 : ℂ) / (1 - y)).arg ∈
+        Set.Ioc (-Real.pi) Real.pi := by
+      rw [arg_one_div_of_im_ne_zero hwim']
+      exact Set.mem_Ioc.mpr
+        ⟨by linarith [(abs_lt.mp hqabs).1], by linarith [(abs_lt.mp hqabs).2]⟩
+    rw [hquot, Complex.arg_mul h2y0 (one_div_ne_zero hw0) hmem,
+      arg_one_div_of_im_ne_zero hwim']
+    ring
+  ---------------------------------------------------------------- the five terms
+  have e1 := hbw (xOf y * y) hxyim
+  have e2 := hbw (1 / (xOf y * y)) (one_div_im_ne_zero hxyim)
+  have e3 := hbw y hyim'
+  have e4 := hbw (1 / y) (one_div_im_ne_zero hyim')
+  have e5 := hbw (1 / xOf y) (one_div_im_ne_zero hxim)
+  have hDx : BlochWigner_lob (xOf y) = BlochWigner_lob y := blochWigner_xOf_eq y hy0 hy1
+  rw [h2y, hnormxy] at e1
+  rw [BlochWigner_lob_inv hxyim, hargquot, hloginv, hnormxy] at e2
+  rw [hlogy] at e3
+  rw [BlochWigner_lob_inv hyim', harg1y, hloginv, hlogy] at e4
+  rw [BlochWigner_lob_inv hxim, hDx, hargx', hloginv, hlogx] at e5
+  ---------------------------------------------------------------- assemble
+  simp only [ohtsukiSum, Complex.add_im, Complex.sub_im]
+  rw [hone]
+  linear_combination -e1 - e2 - e3 + e4 + e5
+
+/-! ### From (B) to `2π·Re ζ = 3·D(y₀)`
+
+(B) is about `Im` of the sum. Ohtsuki's `ζ` is that sum divided by `2π√−1`, and
+dividing by `i` is exactly what turns an imaginary part into a real one. So the
+hypothesis `hzeta` that the bridge used to take for granted is a one-line
+consequence of (B) *plus Ohtsuki's own definition of `ζ`* — which is a
+transcription, not an assumption. -/
+
+/-- `2π·Re (S/(2π√−1)) = Im S`. Pure arithmetic; isolated because it is the only
+place the `√−1` in Ohtsuki's normalisation is used, and getting its sign wrong
+would flip `Vol` against the Chern–Simons invariant without any other symptom.
+
+Proof shape: clear the denominator to `ζ·2π√−1 = S` and read off imaginary
+parts, rather than expanding `Complex.div_re`. -/
+theorem two_pi_mul_re_of_div_two_pi_I {S ζ : ℂ}
+    (hζ : ζ = S / (2 * (Real.pi : ℂ) * Complex.I)) :
+    2 * Real.pi * ζ.re = S.im := by
+  have hne : (2 * (Real.pi : ℂ) * Complex.I) ≠ 0 := by
+    simp [Complex.I_ne_zero, Real.pi_ne_zero]
+  have h : ζ * (2 * (Real.pi : ℂ) * Complex.I) = S := by
+    rw [hζ]; field_simp
+  have him := congrArg Complex.im h
+  simp [Complex.mul_im, Complex.mul_re] at him
+  linarith [him]
+
+/-- **(B), in the form the bridge consumes.** `2π·Re ζ = 3·D(y₀)` when `ζ` is
+Ohtsuki's `ζ` — i.e. the `hzeta` hypothesis of `volume_conjecture_five_two`,
+discharged.
+
+`hζ` is not an extra assumption about the world: it is the *definition* of `ζ`
+in Ohtsuki's Theorem 1.1, transcribed. What used to be an unproved identity
+between two independently-named quantities is now a substitution. -/
+theorem two_pi_re_zeta_eq_three_blochWigner
+    (Li₂ : ℂ → ℂ) (y ζ : ℂ) (hy : IsOhtsukiShape y)
+    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
+      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
+    (hone : (Li₂ 1).im = 0)
+    (hζ : ζ = ohtsukiSum Li₂ y / (2 * (Real.pi : ℂ) * Complex.I)) :
+    2 * Real.pi * ζ.re = 3 * BlochWigner_lob y := by
+  rw [two_pi_mul_re_of_div_two_pi_I hζ]
+  exact ohtsuki_sum_im_eq_three_blochWigner Li₂ y hy hbw hone
+
+/-! ### (D) — the corpus already has the geometric input, at the *conjugate*
+shape
+
+`BlochWignerLobachevsky.FiveTwoTriangulation` states `Vol(5₂) = 3·D(y₊)` where
+`y₊` is the upper-half-plane root of the **saddle** cubic `y³ − 2y² + 3y − 1`.
+Ohtsuki's `y₀` is a root of the **reciprocal** cubic `y³ − 3y² + 2y − 1`. These
+are not the same number and the file must not pretend they are:
+
+```
+y₀ = 0.3376410213… + 0.5622795120…i        y₊ = 0.7849201454… + 1.3071412786…i
+y₊ = conj (1/y₀)
+```
+
+`inv_root_of_ohtsuki_cubic` is the algebraic half of that reconciliation and was
+already here; the conjugation half is `BlochWigner_lob_conj` in
+`BlochWignerSymmetry.lean`. Composed, `D(y₊) = D(y₀)` — so the corpus's own
+geometric axiom discharges `hvol` with no numerical input. -/
+
+/-- `conj (1/y₀)` is a root of the corpus's `5₂` **saddle** cubic. The
+conjugation is free because that cubic has real (indeed integer) coefficients;
+the inversion is `inv_root_of_ohtsuki_cubic`. -/
+theorem saddle_root_conj_inv {y : ℂ} (hy : y ≠ 0)
+    (h : y ^ 3 - 3 * y ^ 2 + 2 * y - 1 = 0) :
+    fiveTwoSaddleCubic ((starRingEnd ℂ) (1 / y)) = 0 := by
+  have hinv : (1 / y) ^ 3 - 2 * (1 / y) ^ 2 + 3 * (1 / y) - 1 = 0 :=
+    inv_root_of_ohtsuki_cubic y hy h
+  unfold fiveTwoSaddleCubic
+  have hc := congrArg (starRingEnd ℂ) hinv
+  simpa [Complex.conj_ofNat] using hc
+
+/-- …and it is in the **upper** half plane, which the bare inversion is not:
+`Im (1/y) = −Im y/|y|² < 0`, and conjugating flips it back. This is exactly why
+the corpus's `y₊` is the conjugate rather than the reciprocal. -/
+theorem conj_inv_im_pos {y : ℂ} (hy : 0 < y.im) : 0 < ((starRingEnd ℂ) (1 / y)).im := by
+  have hy0 : y ≠ 0 := by intro h; rw [h] at hy; simp at hy
+  have hn : 0 < Complex.normSq y := Complex.normSq_pos.mpr hy0
+  rw [Complex.conj_im, one_div, Complex.inv_im]
+  have : -y.im / Complex.normSq y < 0 := div_neg_of_neg_of_pos (by linarith) hn
+  linarith
+
+/-- **The `5₂` shape the corpus triangulates is admissible for Ohtsuki's root.**
+Both `FiveTwoTriangulation` side conditions hold at `conj (1/y₀)`, so asking for
+that instance asks only for the *geometric* content (`vol = 3·D`), never for an
+unchecked algebraic claim. -/
+theorem conj_inv_is_five_two_shape {y : ℂ} (hy : IsOhtsukiShape y) :
+    fiveTwoSaddleCubic ((starRingEnd ℂ) (1 / y)) = 0
+      ∧ 0 < ((starRingEnd ℂ) (1 / y)).im :=
+  ⟨saddle_root_conj_inv hy.ne_zero hy.1, conj_inv_im_pos hy.2⟩
 
 /-! ## (A) — the one assumed input, and (C) — what it gives
 
@@ -372,14 +736,13 @@ theorem growth_rate_eq_two_pi_re_zeta
   refine this.congr fun N => ?_
   ring
 
-/-- **The bridge.** Combining (A), (B) and the corpus's `FiveTwoTriangulation`
-(D), the volume conjecture holds for `5₂`.
+/-- **The bridge, in its raw form.** Combining (A) with the two identities (B)
+and (D) *as hypotheses*, the volume conjecture holds for `5₂`.
 
-Unlike the previous version this is **derived, not assumed**: the proof is a
-rewrite of (C) along the two identities. Every hypothesis is either published
-(Ohtsuki), geometric and already axiomatised (`FiveTwoTriangulation`), or the
-dilogarithm identity (B). The blanket assumption "VC holds for `5₂`" appears
-nowhere. -/
+This is the lemma; `volume_conjecture_five_two_wired` below is the theorem. Both
+are kept: this one is the reusable shape (any knot with an Ohtsuki-type
+expansion and a `vol = 3·D` triangulation), the wired one is `5₂` with both
+identities discharged. -/
 theorem volume_conjecture_five_two
     (kashaev : ℕ → ℂ) (y ζ ω : ℂ) (vol : ℝ)
     [OhtsukiAsymptotic kashaev y ζ ω]
@@ -390,5 +753,39 @@ theorem volume_conjecture_five_two
       Filter.atTop (nhds vol) := by
   have h := growth_rate_eq_two_pi_re_zeta kashaev y ζ ω
   rwa [hvol, ← hzeta]
+
+/-- **The bridge, wired.** No free identity hypotheses remain.
+
+What is assumed, and only this:
+
+* `[OhtsukiAsymptotic …]` — (A), Ohtsuki's Theorem 1.1 at `d = 0`;
+* `[FiveTwoTriangulation (conj (1/y)) vol]` — (D), the corpus's own geometric
+  axiom, at the shape `conj_inv_is_five_two_shape` certifies is admissible;
+* `hbw`, `hone` — that `Li₂` is a dilogarithm (Kummer plus `Li₂(1) ∈ ℝ`),
+  unavoidable while Mathlib has no polylogarithm;
+* `hζ` — Ohtsuki's own **definition** of `ζ`, transcribed.
+
+`hzeta` and `hvol`, which the raw bridge took on faith, are now theorems: the
+first is (B) via `two_pi_re_zeta_eq_three_blochWigner`, the second is
+`BlochWigner_lob_conj_inv` applied to the triangulation's `vol_eq_three_D`.
+
+The residue is exactly the two things this corpus has not proved and does not
+claim to — Ohtsuki's asymptotic expansion, and the hyperbolic geometry of the
+`5₂` complement's triangulation — plus the statement that a dilogarithm is a
+dilogarithm. Everything between them is derived. -/
+theorem volume_conjecture_five_two_wired
+    (Li₂ : ℂ → ℂ) (kashaev : ℕ → ℂ) (y ζ ω : ℂ) (vol : ℝ)
+    [h : OhtsukiAsymptotic kashaev y ζ ω]
+    [ht : FiveTwoTriangulation ((starRingEnd ℂ) (1 / y)) vol]
+    (hbw : ∀ z : ℂ, z.im ≠ 0 → BlochWigner_lob z
+      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
+    (hone : (Li₂ 1).im = 0)
+    (hζ : ζ = ohtsukiSum Li₂ y / (2 * (Real.pi : ℂ) * Complex.I)) :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖kashaev N‖)
+      Filter.atTop (nhds vol) := by
+  refine volume_conjecture_five_two kashaev y ζ ω vol
+    (two_pi_re_zeta_eq_three_blochWigner Li₂ y ζ h.shape hbw hone hζ) ?_
+  rw [ht.vol_eq_three_D, BlochWigner_lob_conj_inv (ne_of_gt h.shape.2)]
 
 end QOU.Archimedean.FiveTwoOhtsukiBridge
