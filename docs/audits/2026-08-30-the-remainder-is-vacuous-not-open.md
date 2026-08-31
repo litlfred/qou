@@ -23,9 +23,21 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 48 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 47 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 22 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 21 more by hand** (see "the method is per-class hand construction" below).
+
+> **🛑 The running total was over by one for two turns, and the correction is
+> worth stating rather than silently applying.** I had been adding the machine
+> figure to the hand figure as though the two sets were disjoint. They are not:
+> `CPTClosure` is in the 26 *because* it was converted out of the undecided list
+> by the sibling-import tool fix, so it was being counted twice. And
+> `ShellClosureMonotone` — a real finding, below — is **not one of the 79**: it
+> backs no projection in the 90 and surfaced only while adjudicating
+> `HasFrobeniusStability`, so it does not belong in this denominator either.
+> Net: 48 → **47**. This is the same class of error as the ones this audit
+> records against itself further down, and it arrived the same way — arithmetic
+> across two lists instead of a set operation on them.
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,10 +46,22 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **48** (26 machine + 22 hand) |
-| scored NOT vacuous on inspection | 5 (`MatrixChainEqBuildChains` + the four §4 gates) |
-| still undecided — INCONCLUSIVE, see method below | 26 |
+| **INHABITED with no hypotheses** | **47** (26 machine + 21 hand) |
+| scored NOT vacuous — genuine claim | 11 (`MatrixChainEqBuildChains` + the four §4 gates + 6 already inhabited in the corpus) |
+| REFUTABLE — false at the corpus's own constants | 1 (`SkeinMassRelationHolds`) |
+| still undecided — INCONCLUSIVE, see method below | 20 |
 | hand-verified before any tooling existed | 5 of 5 |
+
+The 20 that remain, so the next agent does not have to re-derive the list:
+`ConfinementPhaseStratificationContext`, `ConvergenceBound`,
+`DeltaTauMSurrogateTaylorCoeff2`, `DoubleMagicConjecture`,
+`DressedMassSubstrateSplit`, `FiberAdjointInvolutionContext`,
+`FourTermPairNucleonContext`, `H2SAngleS3HolonomyConjecture`,
+`HasDqSquaredNonvanishing`, `HasFiniteLPDuality`, `LpDualStabilityContext`,
+`MarkovIdentificationContext`, `NeutronPairSkeinApprox`,
+`ParityRegimeSelectionContext`, `ProtonPairSkeinApprox`, `QIntRatioBoundSmall`,
+`QuantumObservableUniverseExistsContext`, `RadiusOfConvergenceGateClass`,
+`SkeinMassFromLinkingContext`, `WhiteheadVolumeConjectureLimit`.
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
 `HoefsmitScatteringPipelineContext`, `NucleonOrderingFactorizationContext` — are
@@ -552,7 +576,7 @@ makes every other instance look like it costs something.
 `HasFrobeniusStability` itself is the `HasMarkovTrace` shape one more time: a
 single data field `sigma : R_q → R_q`, no Prop fields, inhabited at every `D`.
 
-**Floor: 46 → 48.**
+**Floor: 46 → 47.**
 
 ### And one scored NOT vacuous
 
