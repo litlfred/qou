@@ -715,3 +715,74 @@ sub-alphabet `{σ₁, L₊, L₋}` is the sharpest handle, because it is a *deri
 restriction on which operators can appear and it is `q`-stable. Ask what
 `{σ₁, L₊, L₋}` means as a binding operator — `L₊`/`L₋` are the Hopf-link
 elements of the NF basis — before asking whether the numbers match anything.
+
+---
+
+## Does the selected operator relate to `K`? No — structurally. 2026-08-31
+
+Probe `computations/probes/k_versus_selected_operator_probe.py` (4 assertions).
+Answered formally, with **no physical input anywhere**.
+
+**`K` is exactly computable.** In the `H_3`-local model, with `P` the product of
+the `A` nucleon NFs (no inter-nucleon crossings), `atom` the same with them, and
+`M_P` left-multiplication by `P`: `K = M_P⁻¹ · atom`, and `M_P` is invertible at
+every `A` tested. Electrons excluded (EM channel). **It validates itself at
+`A = 2`**: `build_atom_nf` applies exactly one inter-nucleon letter after both
+nucleon blocks, so `K` must be that letter — and the solve returns
+`K(²H) = σ₀ + D_PN·1` to `1e-12`.
+
+**`K` is never in the positive sector, and the interval is exact.** `K(²H)`'s
+only negative coefficient is `γ`, and it **is** `D_PN`. So positivity of `K`
+reduces to the sign of `D_PN`, settled in closed form — numerator factors as
+
+    (q − 1)(q + 1)(q⁶ − 2q⁵ − 5q⁴ − q² + 2q − 1)
+
+and the sextic has **exactly one real root above 1**,
+`q_c = 3.458099300032797192042069`. So `D_PN < 0` **precisely on `1 < q < q_c`**,
+which contains `q₀` by a factor of ~3.12 (`q₀/q_c = 0.32098`) and covers the
+entire range swept in the stability probe.
+
+> **Correction to my own first draft:** I wrote *"`D_PN < 0` for all `q > 1`"*.
+> **False** — `q_c` is why. The correct statement is the interval.
+
+At `A ≥ 3`, `K` has 3–4 negative components at `q₀` (D 1, T 3, ³He 3, ⁴He 3,
+⁶Li 4).
+
+**So the answer is no.** The LP's feasible set is `{x ≥ 0}`; `K` is not in it —
+not "does not happen to be", **cannot be**. Nor is `x*` a rescaling: at `A = 2`
+their shared support is `{γ, σ₀}` with ratios `−9.640158` and `0.290774`.
+
+### The structural reading
+
+`K` and `x*` are **complementary, not competing**, and the corpus's own
+vocabulary says why. Negatives enter only via `T_i⁻¹ = T_i − A`
+(`jet_history_retention_probe` §Q3) — the inverse-crossing sector. `K` is
+*defined* as the free-to-bound map and on `1 < q < q_c` necessarily carries that
+content; `x*` is *defined* by excluding it. The LP was never going to return `K`.
+They answer different questions: `x*` is the cheapest forward-time operator whose
+Frobenius profile covers the free constituent product; `K` is the actual map and
+lives partly in the reverse-time sector.
+
+**The `T`/`³He` separation `x*` produces stands as a structural fact about the
+Hecke data — it is simply not a fact about `K`.**
+
+### ⚠ Interpretation, explicitly not derived
+
+The entire negative content of `K(²H)` is `D_PN`, the `p`-`n` interface offset —
+and the deuteron is the `p`-`n` bound system. Nothing derives that
+correspondence and no physical quantity enters the computation. Recorded so a
+later reader finds it labelled rather than rediscovering it as a lead.
+
+### Next
+
+The `t7qv` line as posed is now answered end to end, so the choice is the owner's.
+Three things are open, in my order:
+
+1. **`q_c = 3.4580993…` is an unexplained structural constant.** It is the sign
+   boundary of the entanglement content of the deuteron binding operator, it
+   comes out of a sextic with small integer coefficients, and nothing in the
+   corpus references it. Cheapest to look at and most likely to be real.
+2. **Wire or discard the positive-sector LP.** It is a working `(Z,N)`-sensitive
+   selector sitting outside production; leaving it unwired indefinitely is how
+   the corpus accumulated the routes this whole arc has been auditing.
+3. Audit consumers of `nf_channel_exact`, now known callable and wrong.
