@@ -67,22 +67,42 @@ a `c_4`-family object — `qbeta-c4even-exact-sseries.witness.json`:
     c_4^even = -425625605/290304 - 2864831*sqrt(3)/25920
                                                    = -1657.57403579524...
 
-**Whether that constrains `|c_4|` is UNRESOLVED and must not be assumed.**
-`c_2^even = -7.4588` against `c_2 = -1` proves the two are *different objects*,
-not two halves of one — AGENTS.md registers `c_2` / `c~_2` / `c_2^even` as three
-live meanings of one glyph, and warns that a quantity differing only by
-normalisation gets mistaken for a discrepancy.  The `^even` rungs are read at
-order `s^{2k}` in `s = q-1` by an exact Taylor extraction about `q = 1`; the
-bare `c_k` are read by greedy numerical extraction at `q_0`.  Relating them
-needs the normalisation established, not guessed.
+**ANSWERED, and the answer is NO — it constrains nothing.  Do not chase it.**
+This section first proposed measuring the `c_k^even` <-> `c_k` normalisation and
+suggested `|c_4^even| = 1657.6` might decide entry 9 outright.  The corpus had
+already refuted that route and I had not read it.  Two independent reasons,
+both on record before I looked:
 
-What IS worth recording: if the relation turns out to be close to identity,
-`|c_4^even| = 1657.6` against a threshold of `1.4822` would decide entry 9
-against the ladder outright, and the `^even` sequence 7.46 -> 78.6 -> 1657.6
-grows far faster than the 1 -> 2.07 this probe extrapolated from.  So the
-heuristic above may be optimistic by three orders of magnitude.  Establishing
-the `c_k^even` <-> `c_k` normalisation is the next measurement (bean qou-cds1,
-entry 16), and it is cheaper than deriving `c_3`.
+1. **Structural.**  `u = b*hbar_q^2` is QUADRATIC in `t = q-1` near `q = 1`, so
+   the `u`-reversion is singular and `R(q)` is **not analytic in `u`** — the
+   `c_k` are not scalar-`q` Taylor coefficients at all.  The verdict of
+   `docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md` is that "exact
+   operator-level `c_4..c_8` as constants do not exist".  That is why
+   `qbeta_ck_sseries_operator_match_probe`'s `c2_gate` is red ON PURPOSE and
+   its content block's `status` is pinned `"failed"`: the red assertion IS the
+   finding, and relaxing it would delete a recorded refutation.
+
+2. **Numerical, and measured rather than argued.**  The extraction obeys
+   `sigma(c_k) = sigma_R / u^k`, so it AMPLIFIES input error: `1/u^2 ~ 1.4e4`
+   at `k = 2` and `1/u^4 ~ 1.9e8` at `k = 4`.  Measured instance recorded in
+   `content/.../mass-endomorphism/binding-qbeta-complex-volume.ts`: a **9.8e-8**
+   relative change in `free-neutron-decay.witness.json` (regenerated in
+   52c68267f2) moved `c_2^even` by **6.8 %** — ~7e5 amplification — with a
+   BYTE-IDENTICAL producer.  Import-cone drift, invisible to a file-local diff.
+
+So the exact ℚ(√3) form is not evidence of an identified constant.  The
+previous value `c_2^even = -8.006410058709255` had its OWN exact form,
+`-1049/144 - 5*sqrt(3)/12`, matching to **fifteen digits** — and that block
+records it as the noise of a 7e5-amplifying extraction, caught one commit
+before being written down as an identification.  A 15-digit coincidence is
+exactly what this estimator's noise looks like.
+
+**Therefore the growth heuristic above stands as the honest statement**: `|c_4|`
+is unknown, the `1 -> 2.07 -> ?` extrapolation is two data points and is
+labelled as such, and the `^even` sequence is NOT a sharper substitute for it.
+Recorded so the next reader does not re-walk this — I found an exact-looking
+closed form, assumed it was informative, and had to be corrected by a content
+block written for exactly that purpose (bean qou-cds1, entry 16).
 
 ## Scope
 
@@ -268,7 +288,11 @@ def main() -> int:
         "greedy annihilating value and the cached c_4=0 is a greedy artifact carrying "
         "no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) "
         "but assumes the re-derived D ladder keeps the same u-graded product form; the "
-        "'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual.")
+        "'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual. "
+        "The c_k^even exact rungs do NOT sharpen the |c_4| question: the c_k are not "
+        "scalar-q Taylor coefficients (u is quadratic in q-1, so the u-reversion is "
+        "singular) and the extraction amplifies input error by sigma_R/u^k, measured "
+        "at ~7e5 for k=2 -- a 15-digit 'exact' match there was noise.")
     w.set_content_block("prop:q-beta-cos-resummation")
     w.add_parameter("q0_anchor", "proton (physical_proton pin)")
     w.add_data("assertions_passed", npass)

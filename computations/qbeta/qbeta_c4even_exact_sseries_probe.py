@@ -12,8 +12,10 @@ s^8 scale estimate.
   ladder:  log R(s) = sum_{k>=2} log(1 + c_k u(s)^k),  s = q-1
   c_k^even read at s^{2k} after subtracting the exact folds of c_2..c_{k-1}.
 
-Gates: reproduce c_2^even (~-8.006) and c_3^even (the 9fnm value) exactly
-before claiming c_4^even. Stability: after folding c_4, the s^10 residual over
+Gates: reproduce c_2^even (exactly -887/144 - 3*sqrt(3)/4 = -7.45876...) and
+c_3^even (the 9fnm value) before claiming c_4^even. The c_2^even gate formerly
+read "~-8.006", a superseded value this producer's own `exact` block already
+contradicted, so it rejected the correct rung and shipped allPassed=false. Stability: after folding c_4, the s^10 residual over
 u^5 gives the c_5 scale — reported as a conditioning check ("does the triangle
 stay stable", per bean 9fnm), NOT a c_5 rung claim.
 
@@ -159,8 +161,24 @@ def main() -> int:
     c3n = mp.mpf(str(sp.N(c[3], 40)))
     c4n = mp.mpf(str(sp.N(c[4], 40)))
 
-    # gates against the established rungs
-    gate_c2 = abs(c2n - mp.mpf("-8.006")) < mp.mpf("0.05")
+    # Gates against the established rungs.
+    #
+    # c_2^even is gated against its own EXACT closed form, not a float literal.
+    # The literal that used to stand here was -8.006 +/- 0.05, which is the
+    # SUPERSEDED value: the true rung is -887/144 - 3*sqrt(3)/4 = -7.45876...,
+    # which this very producer emits in its `exact` block. So the gate rejected
+    # the correct answer and the witness shipped allPassed=false with nothing
+    # actually wrong in the computation. PR #6054 drained -8.006 from the
+    # sibling qbeta_c4even_ladder_reconstruction_probe and did not reach this
+    # one (bean qou-cds1, entry 16).
+    #
+    # Gating on the symbolic form is the durable fix: a float literal is exactly
+    # what went stale, and cannot follow a re-derivation. `c2_exact_ref` is
+    # rebuilt from sympy here, so if the underlying object ever moves, this
+    # comparison fails loudly at the value rather than silently at a constant.
+    c2_exact_ref = -sp.Rational(887, 144) - sp.Rational(3, 4) * sp.sqrt(3)
+    c2_ref = mp.mpf(str(sp.N(c2_exact_ref, 40)))
+    gate_c2 = abs(c2n - c2_ref) < mp.mpf("1e-6")
     # c3^even from the 9fnm witness, if present
     c3_ref = None
     c3wit = HERE / "qbeta-c3even-exact-sseries.witness.json"
@@ -170,7 +188,8 @@ def main() -> int:
         except Exception:
             c3_ref = None
     gate_c3 = (c3_ref is None) or (abs(c3n - c3_ref) < mp.mpf("1e-6"))
-    print(f"\n  GATE c_2^even ~= -8.006: {'PASS' if gate_c2 else 'FAIL'} (got {mp.nstr(c2n,10)})")
+    print(f"\n  GATE c_2^even vs exact -887/144 - 3*sqrt(3)/4 ({mp.nstr(c2_ref,12)}): "
+          f"{'PASS' if gate_c2 else 'FAIL'} (got {mp.nstr(c2n,12)})")
     print(f"  GATE c_3^even vs 9fnm witness ({mp.nstr(c3_ref,10) if c3_ref else 'n/a'}): "
           f"{'PASS' if gate_c3 else 'FAIL'} (got {mp.nstr(c3n,10)})")
     print(f"\n  c_4^even (VALIDATED RUNG) = {mp.nstr(c4n, 16)}")
@@ -215,7 +234,8 @@ def main() -> int:
         "assertions": [
             {"label": "Delta(net) reconstruction matches witness at q0 (<1e-6)", "passed": True},
             {"label": "R(q=1) == 1 exactly (ladder normalisation)", "passed": bool(R1 == 1)},
-            {"label": "c_2^even gate (-8.006 +/- 0.05)", "passed": bool(gate_c2)},
+            {"label": "c_2^even gate vs exact -887/144 - 3*sqrt(3)/4 (<1e-6)",
+             "passed": bool(gate_c2)},
             {"label": "c_3^even matches 9fnm witness (<1e-6)", "passed": bool(gate_c3)},
         ],
     }

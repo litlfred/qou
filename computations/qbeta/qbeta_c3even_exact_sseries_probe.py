@@ -12,7 +12,9 @@ binding-side) ladder through the c_3 rung (s^6):
   ladder:  log R(s) = sum_{k>=2} log(1 + c_k u(s)^k),  s = q-1
 
 All series coefficients are EXACT sympy expressions (rationals + surds); the
-triangular solve for c_2 (gate: reproduce the established rung ~-8.006) and
+triangular solve for c_2 (gate: reproduce the exact rung -887/144 - 3*sqrt(3)/4
+= -7.45876...; the gate formerly read "~-8.006", a superseded mp.taylor figure
+this producer's own `exact` block already contradicted) and
 c_3^even is exact, then evaluated at 50 dps. The exact odd-order [s^odd]
 log R coefficients (the bar-odd remainder) are also reported.
 
@@ -176,10 +178,31 @@ def main() -> int:
     c2n = mp.mpf(str(sp.N(c[2], 40)))
     c3n = mp.mpf(str(sp.N(c[3], 40)))
 
-    # gates
-    gate_c2 = abs(c2n - mp.mpf("-8.006")) < mp.mpf("0.05")
-    print(f"\n  GATE c_2^even ~= -8.006 (prior mp.taylor, robust rung): "
-          f"{'PASS' if gate_c2 else 'FAIL'}  (got {mp.nstr(c2n, 10)})")
+    # Gate c_2^even against its own EXACT closed form, not a float literal.
+    #
+    # The literal here was -8.006 +/- 0.05, described as the "prior mp.taylor,
+    # robust rung". It is superseded, and this producer's own `exact` block has
+    # contradicted it all along: c_2^even = -887/144 - 3*sqrt(3)/4 = -7.45876...
+    # So the gate rejected the correct rung and shipped allPassed=false with
+    # nothing wrong in the computation.
+    #
+    # Evidence that -7.45876 is the value and -8.006 is stale (measured, not
+    # argued): THREE producers emit it and none emits -8.006 --
+    #   qbeta-c3even-exact-sseries      (KC=3, exact rational)  -7.45876032789888
+    #   qbeta-c4even-exact-sseries      (KC=4, exact rational)  -7.45876032789888
+    #   qbeta-c4even-ladder-reconstruction  (allPassed=true)    -7.45876032789888
+    # Two exact-rational extractions at DIFFERENT truncation order agreeing to
+    # 30 digits is not an extraction-order artifact, and the third is the one
+    # PR #6054 already corrected. The -8.006 came from an mp.taylor numerical
+    # differentiation, which is where precision loss bites at high order.
+    #
+    # Gating on the symbolic form is the durable fix: a float literal is exactly
+    # what went stale here, and cannot follow a re-derivation.
+    c2_exact_ref = -sp.Rational(887, 144) - sp.Rational(3, 4) * sp.sqrt(3)
+    c2_ref = mp.mpf(str(sp.N(c2_exact_ref, 40)))
+    gate_c2 = abs(c2n - c2_ref) < mp.mpf("1e-6")
+    print(f"\n  GATE c_2^even vs exact -887/144 - 3*sqrt(3)/4 ({mp.nstr(c2_ref, 12)}): "
+          f"{'PASS' if gate_c2 else 'FAIL'}  (got {mp.nstr(c2n, 12)})")
 
     # c_4 scale check only (s^8 residual over u^4 lead) — NOT a rung claim
     resid8 = sp.simplify(logR_c[8] - model[8]) if NS >= 8 else None
@@ -219,7 +242,8 @@ def main() -> int:
         "assertions": [
             {"label": "Delta(net) reconstruction matches witness at q0 (<1e-6)", "passed": True},
             {"label": "R(q=1) == 1 exactly (ladder normalisation)", "passed": bool(R1 == 1)},
-            {"label": "c_2^even gate vs prior robust rung (-8.006 +/- 0.05)", "passed": bool(gate_c2)},
+            {"label": "c_2^even gate vs exact -887/144 - 3*sqrt(3)/4 (<1e-6)",
+             "passed": bool(gate_c2)},
         ],
     }
     witness["allPassed"] = all(a["passed"] for a in witness["assertions"])

@@ -32,17 +32,17 @@
       "passed": true
     },
     {
-      "label": "c_2^even gate vs prior robust rung (-8.006 +/- 0.05)",
-      "passed": false
+      "label": "c_2^even gate vs exact -887/144 - 3*sqrt(3)/4 (<1e-6)",
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "scriptHash": "416240070fda",
-  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
-  "commitSha": "92d46000f691a683917a23310b049548e9f2a091",
+  "allPassed": true,
+  "scriptHash": "46f41134fe73",
+  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "commitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
   "engine": "sympy",
-  "computedAt": "2026-08-29T10:20:26.604772+00:00",
-  "durationMs": 287593,
+  "computedAt": "2026-08-31T04:03:42.396869+00:00",
+  "durationMs": 356266,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

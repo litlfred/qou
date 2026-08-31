@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:54:53.804598+00:00",
-  "commitSha": "ebc415bbfcdb5314a3e7d591acc7cf7647fee371",
+  "computedAt": "2026-08-31T04:02:18.062486+00:00",
+  "commitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
   "assertions": [
     {
       "name": "k2_is_derived_tier",
@@ -87,8 +87,8 @@
   "durationMs": 0,
   "computation": "qbeta-derived-c3-residual-bound",
   "scriptFile": "qbeta_derived_c3_residual_bound_probe.py",
-  "scriptHash": "af4335b95733",
-  "scriptCommitSha": "83f78a3dcfb2dccdc92242281e81c8598a0a1419",
+  "scriptHash": "4ca89c9f06ca",
+  "scriptCommitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -111,7 +111,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_derived_c3_residual_bound_probe.py"
   },
-  "description": "Entry 9's cal-anchored wall, quantified from the other side. The corpus bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is met iff |c_4| <= 1.4821774. Cuts both ways: one derived rung closes the whole gap, BUT |c_2|=1 and |c_3|=2.069342577, and continuing that growth puts |c_4|~4.28218, missing by ~2.889x. Also shows the cached c_3 IS the greedy annihilating value and the cached c_4=0 is a greedy artifact carrying no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) but assumes the re-derived D ladder keeps the same u-graded product form; the 'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual.",
+  "description": "Entry 9's cal-anchored wall, quantified from the other side. The corpus bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is met iff |c_4| <= 1.4821774. Cuts both ways: one derived rung closes the whole gap, BUT |c_2|=1 and |c_3|=2.069342577, and continuing that growth puts |c_4|~4.28218, missing by ~2.889x. Also shows the cached c_3 IS the greedy annihilating value and the cached c_4=0 is a greedy artifact carrying no evidence. THRESHOLD IS CONVENTION-INDEPENDENT (u has no Markov parameter) but assumes the re-derived D ladder keeps the same u-graded product form; the 'one rung closes it' reading is C-frame, resting on the C-cache k=2 residual. The c_k^even exact rungs do NOT sharpen the |c_4| question: the c_k are not scalar-q Taylor coefficients (u is quadratic in q-1, so the u-reversion is singular) and the extraction amplifies input error by sigma_R/u^k, measured at ~7e5 for k=2 -- a 15-digit 'exact' match there was noise.",
   "contentBlock": "prop:q-beta-cos-resummation",
   "parameters": {
     "q0_anchor": "proton (physical_proton pin)"

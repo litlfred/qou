@@ -28,21 +28,21 @@
       "passed": true
     },
     {
-      "label": "c_2^even gate (-8.006 +/- 0.05)",
-      "passed": false
+      "label": "c_2^even gate vs exact -887/144 - 3*sqrt(3)/4 (<1e-6)",
+      "passed": true
     },
     {
       "label": "c_3^even matches 9fnm witness (<1e-6)",
       "passed": true
     }
   ],
-  "allPassed": false,
-  "scriptHash": "89ec8e17a80c",
-  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
-  "commitSha": "51c1f21d6e4999838a0fe9bdea2e3d042bfd187f",
+  "allPassed": true,
+  "scriptHash": "396b4991602b",
+  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "commitSha": "06419215bab1de231f526b50b8f843b6b57fdeed",
   "engine": "sympy",
-  "computedAt": "2026-08-29T10:44:47.502149+00:00",
-  "durationMs": 1147917,
+  "computedAt": "2026-08-31T04:15:57.891636+00:00",
+  "durationMs": 1359159,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
