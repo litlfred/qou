@@ -502,4 +502,100 @@ theorem eigenvalue_sq_eq_q_of_fixed
   field_simp at h
   linear_combination h
 
+/-! ## Periodicity — the framework's OWN Reeb axiom, against the critical line
+
+Everything above constrains the spectrum using Weil inputs only. The framework
+carries an independent constraint on `ξ_q` that has never been set against them:
+`QOU.AlgebraicSubstrate.CategoricalReebDerivation` has a field
+
+    reeb_periodic : (reeb : End obj) ^ period = 1
+
+so the Reeb derivation is **periodic**. Combining that with the critical line
+pins the spectrum to two points, and the pinning is sharply falsifiable.
+
+The periodicity is carried below as an explicit hypothesis on `R.op` rather than
+imported from `CategoricalReebDerivation`: that structure's `reeb` is an
+endomorphism of a monoidal-category object, and identifying it with a `ℂ`-linear
+operator on an 8-dimensional space is precisely `qou-qspc`'s open problem. What
+is proved here is the *consequence* of periodicity, available to any candidate
+operator that has it. -/
+
+/-- An eigenvector stays one under iteration: `op^n (modeᵢ) = specᵢ^n • modeᵢ`. -/
+theorem reeb_spectrum_pow_apply
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H) (i : Fin 8) :
+    ∀ n : ℕ, (R.op ^ n) (R.mode i) = (R.spec i) ^ n • R.mode i := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ k ih =>
+    -- `(f * g) v = f (g v)` is definitional for linear maps, so no lemma here.
+    have hstep : (R.op ^ (k + 1)) (R.mode i) = (R.op ^ k) (R.op (R.mode i)) := by
+      rw [pow_succ]; rfl
+    rw [hstep, R.is_eigen i, map_smul, ih, smul_smul]
+    congr 1
+    ring
+
+/-- **A periodic Reeb operator has root-of-unity eigenvalues.** If
+    `op^Ω = id` then `specᵢ^Ω = 1`.
+
+    This is where `mode_ne_zero` earns its place in the structure: without it the
+    zero vector would satisfy the eigenvalue equation for every scalar and
+    nothing could be concluded. -/
+theorem reeb_spectrum_periodic_eigenvalue
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    (Ω : ℕ) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    (R.spec i) ^ Ω = 1 := by
+  have h := reeb_spectrum_pow_apply R i Ω
+  rw [hper] at h
+  simp only [LinearMap.id_coe, id_eq] at h
+  -- h : R.mode i = specᵢ^Ω • R.mode i
+  have hz : ((R.spec i) ^ Ω - 1) • R.mode i = 0 := by
+    rw [sub_smul, one_smul, ← h]; simp
+  rcases smul_eq_zero.mp hz with hc | hm
+  · linear_combination hc
+  · exact absurd hm (R.mode_ne_zero i)
+
+/-- Root-of-unity eigenvalues have modulus one (for a positive period). -/
+theorem reeb_spectrum_norm_one_of_periodic
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    (Ω : ℕ) (hΩ : Ω ≠ 0) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    ‖R.spec i‖ = 1 :=
+  Complex.norm_eq_one_of_pow_eq_one (reeb_spectrum_periodic_eigenvalue R Ω hper i) hΩ
+
+/-- **The pinning.** A periodic Reeb operator whose spectrum realises the
+    Frobenius exponents of a Weil datum has
+    `Re ρᵢ = 1/2` *and* `(Im ρᵢ)² = 3/4` — that is, every `ρᵢ` is one of the two
+    primitive sixth roots of unity `1/2 ± i√3/2`.
+
+    **This is a sharply falsifiable consequence, and it is the point.** The two
+    constraints are independent in origin — the real part comes from the Weil
+    bound, the modulus from the framework's own `reeb_periodic` field — and
+    together they leave the eight eigenvalues only **two** possible values. A
+    genus-4 curve whose Frobenius eigenvalues are not all
+    `q^{1/2 ± i√3/2}` therefore **refutes the conjunction**: either `ξ_q` is not
+    the operator whose spectrum these are, or it is not periodic.
+
+    Note this does not contradict Hasse–Weil, which it entails:
+    `‖q^{ρᵢ}‖ = q^{Re ρᵢ} = √q` for either value.
+
+    A corollary worth stating in words rather than Lean: since
+    `1/2 ± i√3/2` are primitive **sixth** roots of unity, `specᵢ^Ω = 1` forces
+    `6 ∣ Ω`. So the framework's Reeb period cannot be any natural number — the
+    identification requires it to be a multiple of six. -/
+theorem reeb_spectrum_pinned_by_periodicity
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (Ω : ℕ) (hΩ : Ω ≠ 0) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    (R.spec i).re = 1 / 2 ∧ (R.spec i).im ^ 2 = 3 / 4 := by
+  have hre : (R.spec i).re = 1 / 2 := reeb_spectrum_on_critical_line Z hq R i
+  refine ⟨hre, ?_⟩
+  have hn : ‖R.spec i‖ = 1 := reeb_spectrum_norm_one_of_periodic R Ω hΩ hper i
+  have hsq : (R.spec i).re ^ 2 + (R.spec i).im ^ 2 = 1 := by
+    have h1 : Complex.normSq (R.spec i) = 1 := by
+      rw [← Complex.sq_norm, hn]; norm_num
+    simpa [Complex.normSq_apply, sq] using h1
+  rw [hre] at hsq
+  linarith
+
 end QOU.AlgebraicSubstrate
