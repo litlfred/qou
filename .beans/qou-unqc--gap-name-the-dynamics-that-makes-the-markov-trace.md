@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-08-31T16:35:49Z
+updated_at: 2026-08-31T16:40:23Z
 ---
 
 Opened from the literature check on qou-y0mc.
@@ -69,3 +69,30 @@ is NOT claimed to exist -- a trace need not descend to the associated graded.
 
 Still untouched: a Connes cocycle against a non-tracial weight; the
 Radon-Nikodym derivative of the y_lambda reweighting.
+
+
+### CORRECTION to the entry above (same session, PR #6395)
+
+The 'what survives' line above -- descend to gr H_n(q) and ask whether the
+descended state is KMS there -- is RETRACTED. It is answered NO.
+
+For a state phi and a dynamics acting by a character of a grading,
+sigma_t(y) = q^{i t l(y)} y, KMS_beta reads q^{-beta l(y)} phi(xy) = phi(yx). If
+phi is TRACIAL the phi factors cancel, so q^{-beta l(y)} = 1 whenever
+phi(xy) != 0; take y = sigma_i, x = sigma_i^-1 (so phi(1) != 0) and beta = 0.
+Solved over beta > 0 as a gate: solution set EMPTY.
+
+Holds for ANY grading, ANY algebra, on H_n(q) or gr alike. The problem was never
+the grading -- it is TRACIALITY, exactly what Tomita-Takesaki says.
+
+NET, and it is sharper than what it replaces: no character-of-a-grading flow
+gives finite beta against a tracial state, so BOTH obvious escapes (a different
+grading; passing to gr) are closed. The requirement is structural --
+THE FINITE-TEMPERATURE STATE CANNOT BE tr_M ITSELF; IT MUST BE NON-TRACIAL.
+So no amount of grading-hunting will license B_sym.
+
+LIVE ROUTE, not attempted: phi(x) = tr_M(h x) for positive h, modular flow
+sigma_t(x) = h^{it} x h^{-it}. TRAP for whoever takes it: the y_lambda weighting
+does NOT supply h. A positive combination of characters is again a trace, so
+tr_M = sum y_lambda chi^lambda is tracial and reweighting blocks cannot escape
+the argument. The h must come from OUTSIDE THE CENTRE.
