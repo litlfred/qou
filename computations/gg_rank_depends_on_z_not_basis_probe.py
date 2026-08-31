@@ -77,7 +77,13 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 import importlib.util as _ilu  # noqa: E402
-from math import comb, factorial  # noqa: E402
+# `comb`/`factorial` return exact arbitrary-precision `int`, never float
+# (verified: type() is int; catalan cross-checked against an integer recurrence
+# for k=1..14; factorial(170) is exact where f64 overflows). All four uses here
+# are integer comparison or formatting -- `r == factorial(n)`, the C_n column --
+# and no result of either ever enters float arithmetic. Same false positive the
+# guard raised on gg_gram_tower_walk_probe.py.
+from math import comb, factorial  # noqa: E402  # float64-ok: exact int, never float
 
 import mpmath as mp  # noqa: E402
 
