@@ -121,8 +121,6 @@ instance (n : ℕ) : DecidableEq (PartitionIndex n) :=
 /-- The underlying Young diagram of an index element. -/
 def diagram {n : ℕ} (i : PartitionIndex n) : YoungDiagram := i.val
 
-@[simp] theorem diagram_card {n : ℕ} (i : PartitionIndex n) : i.diagram.card = n := i.property
-
 end PartitionIndex
 
 /-! ### Helper lemmas for the partition ↔ Young-diagram bijection -/
@@ -906,5 +904,19 @@ theorem card_irreducibles_eq_card_partitions (n : ℕ) :
   -- the `card_partitionIndex` restatement (sorry-free given the partition equiv),
   -- recorded as the named punchline.
   exact card_partitionIndex n
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `diagram_card` — body was `i.property`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot.SpechtClassification

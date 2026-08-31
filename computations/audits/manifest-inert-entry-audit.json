@@ -1,0 +1,30 @@
+{
+  "deprecated_only": [
+    {
+      "class": "ideal_muon",
+      "source": "computations/_deprecated/alpha_high_precision.py",
+      "stem": "alpha_high_precision"
+    },
+    {
+      "class": "physical_proton",
+      "source": "computations/_deprecated/binding_k_enumerator.py",
+      "stem": "binding_k_enumerator"
+    }
+  ],
+  "detector_shapes_that_overflag": {
+    "no_WitnessBuilder_construction": 176,
+    "scriptFile_module_without_main": 90,
+    "shared_scriptFile_basename": 37
+  },
+  "manifest_entries": 754,
+  "missing_entirely": [],
+  "note": "The general 'inert manifest entry' detector does not survive measurement: q_parameter steers via sys.argv[0] (the entry point) while WitnessBuilder stamps via inspect.stack()[1] (the caller frame). Only the deprecated/missing classes are decidable statically.",
+  "witnesses_still_naming_them": {
+    "alpha_high_precision": [
+      "alpha-high-precision.witness.json"
+    ],
+    "binding_k_enumerator": [
+      "binding-k-enumerator.witness.json"
+    ]
+  }
+}

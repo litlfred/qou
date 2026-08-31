@@ -1,0 +1,601 @@
+{
+  "engine": "python+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T17:36:21.448349+00:00",
+  "commitSha": "73cbafb453ac96acef16729a3371b49f1d2fc6c1",
+  "assertions": [
+    {
+      "name": "control_exhaustive_at_A2",
+      "computed": "3",
+      "expected": "3",
+      "passed": true
+    },
+    {
+      "name": "control_exhaustive_at_A3",
+      "computed": "4",
+      "expected": "4",
+      "passed": true
+    },
+    {
+      "name": "control_exhaustive_at_A4",
+      "computed": "5",
+      "expected": "5",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A2",
+      "computed": "2/1",
+      "expected": "2/1",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A3",
+      "computed": "2/2",
+      "expected": "2/2",
+      "passed": true
+    },
+    {
+      "name": "both_groups_non_empty_at_A4",
+      "computed": "1/4",
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "selftest_reproduces_A3_reference_figures",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2403677,
+  "computation": "tower-walk-magic-replication",
+  "scriptFile": "tower_walk_magic_replication_probe.py",
+  "scriptHash": "804df91767a5",
+  "scriptCommitSha": "9770962539a9580c90477fa090755a852dc68c20",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/tower_walk_magic_replication_probe.py",
+      "--levels",
+      "2,3,4"
+    ],
+    "reproduce": "python3 -u computations/probes/tower_walk_magic_replication_probe.py --levels 2,3,4"
+  },
+  "probe": "tower_walk_magic_replication",
+  "question": "does the H_{3A} tower, carried WITHOUT the per-step Groebner-Shirshov reduction, distinguish magic from non-magic nucleon configurations?",
+  "control": "exhaustive at each level: every Z in 0..A, so the contrast is at fixed algebra, fixed partitions and fixed strand count with only nucleon composition varying",
+  "levels": [
+    2,
+    3,
+    4
+  ],
+  "configurations": {
+    "2": [
+      {
+        "Z": 2,
+        "N": 0,
+        "A": 2,
+        "magic_Z": true,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 11,
+        "top_share": "0.199606982202767985201674605377775151282548904418945312500000",
+        "participation": "7.62425355471421717368230019928887486457824707031250000000000",
+        "argmax_partition": [
+          6
+        ],
+        "argmax_dim": 1,
+        "rank_deficient": [],
+        "n_rank_checked": 11,
+        "wall_seconds": 0,
+        "tag": "Z magic",
+        "any_magic": true
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 11,
+        "top_share": "0.196023382425606906842574517213506624102592468261718750000000",
+        "participation": "7.80139090412254621043075530906207859516143798828125000000000",
+        "argmax_partition": [
+          3,
+          3
+        ],
+        "argmax_dim": 5,
+        "rank_deficient": [],
+        "n_rank_checked": 11,
+        "wall_seconds": 0,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 0,
+        "N": 2,
+        "A": 2,
+        "magic_Z": false,
+        "magic_N": true,
+        "doubly_magic": false,
+        "n_partitions": 11,
+        "top_share": "0.190875256486908839725913367146858945488929748535156250000000",
+        "participation": "7.56003196062251880960047856206074357032775878906250000000000",
+        "argmax_partition": [
+          2,
+          2,
+          2
+        ],
+        "argmax_dim": 5,
+        "rank_deficient": [],
+        "n_rank_checked": 11,
+        "wall_seconds": 0,
+        "tag": "N magic",
+        "any_magic": true
+      }
+    ],
+    "3": [
+      {
+        "Z": 3,
+        "N": 0,
+        "A": 3,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 30,
+        "top_share": "0.0907049419354867964004895952712104190140962600708007812500000",
+        "participation": "18.8953174159189742908893094863742589950561523437500000000000",
+        "argmax_partition": [
+          6,
+          3
+        ],
+        "argmax_dim": 48,
+        "rank_deficient": [],
+        "n_rank_checked": 30,
+        "wall_seconds": 0,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "magic_Z": true,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 30,
+        "top_share": "0.0802235785588943928203775612928438931703567504882812500000000",
+        "participation": "20.2557109694898862528589233988896012306213378906250000000000",
+        "argmax_partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 120,
+        "rank_deficient": [],
+        "n_rank_checked": 30,
+        "wall_seconds": 0,
+        "tag": "Z magic",
+        "any_magic": true
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "magic_Z": false,
+        "magic_N": true,
+        "doubly_magic": false,
+        "n_partitions": 30,
+        "top_share": "0.0961008616506989071792688150708272587507963180541992187500000",
+        "participation": "20.5904773868754062959851580671966075897216796875000000000000",
+        "argmax_partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 120,
+        "rank_deficient": [],
+        "n_rank_checked": 30,
+        "wall_seconds": 0,
+        "tag": "N magic",
+        "any_magic": true
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "A": 3,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 30,
+        "top_share": "0.0968045112247200717492390253937628585845232009887695312500000",
+        "participation": "19.8185441795522834240728116128593683242797851562500000000000",
+        "argmax_partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 120,
+        "rank_deficient": [],
+        "n_rank_checked": 30,
+        "wall_seconds": 0,
+        "tag": "neither",
+        "any_magic": false
+      }
+    ],
+    "4": [
+      {
+        "Z": 4,
+        "N": 0,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0530284669146108139647921575487998779863119125366210937500000",
+        "participation": "42.1688734495197650176123715937137603759765625000000000000000",
+        "argmax_partition": [
+          9,
+          3
+        ],
+        "argmax_dim": 154,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 488,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0435659540872939052280621297086327103897929191589355468750000",
+        "participation": "44.3999826823949987897321989294141530990600585937500000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 483,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "magic_Z": true,
+        "magic_N": true,
+        "doubly_magic": true,
+        "n_partitions": 77,
+        "top_share": "0.0503538081099217660341338387297582812607288360595703125000000",
+        "participation": "45.4866170466504797786910785362124443054199218750000000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 469,
+        "tag": "DOUBLY MAGIC",
+        "any_magic": true
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0480683126806936283914595264832314569503068923950195312500000",
+        "participation": "44.8256767764511678819872031453996896743774414062500000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 486,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0566908310614428270768350159869441995397210121154785156250000",
+        "participation": "43.8182322342940153703239047899842262268066406250000000000000",
+        "argmax_partition": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 1650,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 476,
+        "tag": "neither",
+        "any_magic": false
+      }
+    ]
+  },
+  "per_level_verdict": {
+    "2": {
+      "A": 2,
+      "n_configurations": 3,
+      "n_magic": 2,
+      "n_non_magic": 1,
+      "comparable": true,
+      "top_share": {
+        "magic": [
+          "0.199606982202767985201674605377775151282548904418945312500000",
+          "0.190875256486908839725913367146858945488929748535156250000000"
+        ],
+        "non_magic": [
+          "0.196023382425606906842574517213506624102592468261718750000000"
+        ],
+        "magic_all_above": false,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "-0.000782263080768508256568338765646331012248992919921875000000000"
+      },
+      "participation": {
+        "magic": [
+          "7.62425355471421717368230019928887486457824707031250000000000",
+          "7.56003196062251880960047856206074357032775878906250000000000"
+        ],
+        "non_magic": [
+          "7.80139090412254621043075530906207859516143798828125000000000"
+        ],
+        "magic_all_above": false,
+        "magic_all_below": true,
+        "magic_mean_minus_non_magic_mean": "-0.209248146454178218789365928387269377708435058593750000000000"
+      },
+      "magic_rank_deficient": false,
+      "non_magic_rank_deficient": false,
+      "argmax_magic": [
+        [
+          6
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "argmax_non_magic": [
+        [
+          3,
+          3
+        ]
+      ],
+      "argmax_shared_across_groups": false,
+      "non_magic_argmax_agree": true,
+      "magic_argmax_agree": false,
+      "argmax_criterion_informative": false,
+      "argmax_criterion_vacuity_reason": "non-magic group has one member",
+      "qualitative_separation": false
+    },
+    "3": {
+      "A": 3,
+      "n_configurations": 4,
+      "n_magic": 2,
+      "n_non_magic": 2,
+      "comparable": true,
+      "top_share": {
+        "magic": [
+          "0.0802235785588943928203775612928438931703567504882812500000000",
+          "0.0961008616506989071792688150708272587507963180541992187500000"
+        ],
+        "non_magic": [
+          "0.0907049419354867964004895952712104190140962600708007812500000",
+          "0.0968045112247200717492390253937628585845232009887695312500000"
+        ],
+        "magic_all_above": false,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "-0.00559250647530677713614721824342268519103527069091796875000000"
+      },
+      "participation": {
+        "magic": [
+          "20.2557109694898862528589233988896012306213378906250000000000",
+          "20.5904773868754062959851580671966075897216796875000000000000"
+        ],
+        "non_magic": [
+          "18.8953174159189742908893094863742589950561523437500000000000",
+          "19.8185441795522834240728116128593683242797851562500000000000"
+        ],
+        "magic_all_above": true,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "1.06616338044701564058414078317582607269287109375000000000000"
+      },
+      "magic_rank_deficient": false,
+      "non_magic_rank_deficient": false,
+      "argmax_magic": [
+        [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_non_magic": [
+        [
+          6,
+          3
+        ],
+        [
+          3,
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_shared_across_groups": true,
+      "non_magic_argmax_agree": false,
+      "magic_argmax_agree": true,
+      "argmax_criterion_informative": false,
+      "argmax_criterion_vacuity_reason": "non-magic argmaxes disagree with each other",
+      "qualitative_separation": false
+    },
+    "4": {
+      "A": 4,
+      "n_configurations": 5,
+      "n_magic": 1,
+      "n_non_magic": 4,
+      "comparable": true,
+      "top_share": {
+        "magic": [
+          "0.0503538081099217660341338387297582812607288360595703125000000"
+        ],
+        "non_magic": [
+          "0.0530284669146108139647921575487998779863119125366210937500000",
+          "0.0435659540872939052280621297086327103897929191589355468750000",
+          "0.0480683126806936283914595264832314569503068923950195312500000",
+          "0.0566908310614428270768350159869441995397210121154785156250000"
+        ],
+        "magic_all_above": false,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "0.0000154169239114723688466312978562200441956520080566406250000000"
+      },
+      "participation": {
+        "magic": [
+          "45.4866170466504797786910785362124443054199218750000000000000"
+        ],
+        "non_magic": [
+          "42.1688734495197650176123715937137603759765625000000000000000",
+          "44.3999826823949987897321989294141530990600585937500000000000",
+          "44.8256767764511678819872031453996896743774414062500000000000",
+          "43.8182322342940153703239047899842262268066406250000000000000"
+        ],
+        "magic_all_above": true,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "1.68342576098549301377715892158448696136474609375000000000000"
+      },
+      "magic_rank_deficient": false,
+      "non_magic_rank_deficient": false,
+      "argmax_magic": [
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_non_magic": [
+        [
+          9,
+          3
+        ],
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_shared_across_groups": true,
+      "non_magic_argmax_agree": false,
+      "magic_argmax_agree": true,
+      "argmax_criterion_informative": false,
+      "argmax_criterion_vacuity_reason": "magic group has one member",
+      "qualitative_separation": false
+    }
+  },
+  "cross_level_replication": {
+    "top_share": {
+      "per_level_direction": {
+        "2": "interleaved",
+        "3": "interleaved",
+        "4": "interleaved"
+      },
+      "consistent_across_levels": false,
+      "contradictory": false
+    },
+    "participation": {
+      "per_level_direction": {
+        "2": "magic_below",
+        "3": "magic_above",
+        "4": "magic_above"
+      },
+      "consistent_across_levels": false,
+      "contradictory": true
+    }
+  },
+  "any_qualitative_separation": false,
+  "any_observable_replicates": false,
+  "precision_note": "block values inherit float64 from level_k_binding q0/qi/HA; the question is structural and the compared quantities differ at O(0.1); no digit-level agreement is claimed",
+  "auditOnly": true
+}

@@ -1,7 +1,13 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Complex
 
-namespace QOU.HyperellipticQuintic
+-- Scratch module: its declarations are nested one namespace deeper than the
+-- canonical module (QOU.HyperellipticQuintic.zeta5_residue_monodromy) so the two can be
+-- imported together. Before this, both declared the same fully-qualified
+-- names and Lean rejected the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module; the nesting
+-- costs no consumer.
+namespace QOU.HyperellipticQuintic.ScratchZeta5
 
 noncomputable def zeta5 : ℂ := Complex.exp (2 * Real.pi * Complex.I / 5)
 
@@ -91,4 +97,4 @@ theorem zeta5_residue_monodromy_phase [ctx : Zeta5MonodromyContext] :
 #print axioms gauss_sum_5_abs
 #print axioms zeta5_residue_monodromy_phase
 
-end QOU.HyperellipticQuintic
+end QOU.HyperellipticQuintic.ScratchZeta5

@@ -41,7 +41,7 @@ open Polynomial
 
 /-- The Laurent ground ring `R = ℤ[q^{±1}]` (the localisation at
     `(q − q⁻¹)` is taken externally where needed). -/
-abbrev R_q : Type := LaurentPolynomial ℤ
+abbrev R_q := LaurentPolynomial ℤ
 
 /-- **Conjecture class.** An instance asserts the categorical
     Hartree-energy identity

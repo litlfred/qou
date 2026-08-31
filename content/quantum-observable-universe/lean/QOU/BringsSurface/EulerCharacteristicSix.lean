@@ -43,7 +43,13 @@ holding, not a theorem about why. If a mechanism is found, this is the statement
 it has to reproduce.
 -/
 
-namespace QOU.BringsSurface
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.BringsSurface
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.BringsSurface.EulerCharacteristicSix
 
 open QOU.Mathlib.HeckeAlgebra
 
@@ -132,4 +138,4 @@ theorem finrank_H3_eq_abs_eulerChar (R : Type*) [Field R] :
     Module.finrank R (H3Carrier R) = (eulerChar 4).natAbs :=
   (abs_eulerChar_eq_finrank_H3 R constraints_satisfiable.1 constraints_satisfiable.2).symm
 
-end QOU.BringsSurface
+end QOU.BringsSurface.EulerCharacteristicSix

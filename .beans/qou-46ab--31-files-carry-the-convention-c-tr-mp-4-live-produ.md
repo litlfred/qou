@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-08-30T12:15:51Z
+updated_at: 2026-08-30T14:28:05Z
 ---
 
 Generalised from qou-5ll9, where `atomic-tr-m-helium4.witness.json` was shown
@@ -232,3 +232,46 @@ it stops the next agent from trying.
 - The **Model B** leg of the six-term sweep, which turned out to be worse than
   a missing witness: the producer it names has never existed. Split to
   `qou-imkb` with the measurement.
+
+
+## 2026-08-30 (second pass) — the "no producer" residue is SCOPED, and I was wrong about why
+
+`markov-peel-atomic-tr-m.derivation.json` was listed here as unfixable — "no
+producer recorded anywhere in the artifact; cannot be regenerated."
+
+**True but misleading, and it is the fourth blocker I have understated this
+session.** It is not a producer output at all. It is a **hand-authored
+derivation-chain document** (PR #516) with a `steps` array of prose. There is
+nothing to regenerate; the numbers are typed into a record. So the fix was
+never a compute — it was an edit.
+
+**Both of its numeric steps are convention C**, and it is worse than the one
+value this bean was grepping for:
+
+- **step 3** `tr_M_at_q0_both_pins` — proton `1.06530614425444998…`, muon
+  `1.06530622861317006…`. Note the value this bean tracks is the **muon** one;
+  the proton-pin C value differs at the 8th digit (the μ–p tension, 7.9e-8).
+- **step 4** `peel_vs_bridge` — deuteron peel `0.38835714…` vs bridge
+  `0.38835712…`, agreeing to 1.86e-8. **Both sides are C**, so the agreement is
+  real *within C* and says nothing about D. The live D-frame bridge deuteron is
+  `0.5751722439…` — **48 %** away.
+
+**It also directly contradicts a file I migrated earlier today.**
+`derivation_chain.py::TR_M_AT_Q0["p"]` is `1.1457596924573009` (D); this
+document says `1.0653…` (C) for the same quantity. Two artifacts describing one
+derivation, disagreeing by 7.55 %, and `derivation_chain_validator.py` passes
+both — it validates structure, not convention.
+
+**Fixed by scoping, not correction**, per the c_k-banner precedent: the values
+are correct for C and are the historical record. Added a convention-C banner to
+`target`, a scoping block to `description` carrying the live D values and their
+source, and per-step notes on 3 and 4. Step 3's note warns specifically against
+confusing its 7.9e-8 pin difference with the ~7.55 % convention gap — a factor
+of a million apart, and the exact normalisation-vs-discrepancy confusion this
+corpus keeps making.
+
+Steps 0–2 (Hecke relation, GS normal form, Markov ascent) are
+convention-independent and are marked as such.
+
+**Residues after this pass:** one — the `qou-mass/.../data/_deprecated/`
+mirror, correctly left alone.

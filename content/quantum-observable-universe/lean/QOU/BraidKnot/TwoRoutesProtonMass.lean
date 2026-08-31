@@ -32,7 +32,7 @@ noncomputable section
 def h : ℝ := q - 1/q
 
 /-- The substrate Planck constant ℏ = (q−1)/q. -/
-def hbar : ℝ := (q - 1) / q
+def hbarQ : ℝ := (q - 1) / q
 
 /-- Route 1: F_Bor = |tr_M(B₃)| × [3]_q!/q³.
     The substrate identity gives m_p/m_e = 2(m_μ/m_e)F_Bor − 12. -/
@@ -47,7 +47,7 @@ def borromeanChar : ℝ := 2 - 3 * (h q) ^ 4 - (h q) ^ 6
     spectral angle θ = arccos(χ/2) and χ = borromeanChar is the
     exact Borromean character on V_{(2,1)}. -/
 def spectralCorr : ℝ :=
-  Real.arccos (borromeanChar q / 2) / (8 * (hbar q) ^ 2)
+  Real.arccos (borromeanChar q / 2) / (8 * (hbarQ q) ^ 2)
 
 /-- The Family-A linking weight lw_A = 5/2 + 3h²/4 (PROVED, Family A). -/
 def lwA : ℝ := 5/2 + 3 * (h q) ^ 2 / 4
@@ -56,7 +56,7 @@ def lwA : ℝ := 5/2 + 3 * (h q) ^ 2 / 4
 def lwSpectral : ℝ := lwA q * spectralCorr q
 
 /-- Geometric scale Vol(B₃)/ℏ² = 8G/ℏ² (G = Catalan, archimedean). -/
-def geomScale (G : ℝ) : ℝ := 8 * G / (hbar q) ^ 2
+def geomScale (G : ℝ) : ℝ := 8 * G / (hbarQ q) ^ 2
 
 /-- Route 2 decomposition of the proton mass ratio:
     m_p/m_e = (Vol(B₃)/ℏ²) · lw_A · spectralCorr = geomScale · lwSpectral.
@@ -96,8 +96,8 @@ def lwProduction : ℝ := 0 -- m_p_N0 / (8G/ℏ²)
 
 /-- KEY IDENTITY: h = (q+1)·ℏ.
     This connects the two routes through the substrate structure. -/
-theorem h_eq_qp1_hbar : h q = (q + 1) * hbar q := by
-  unfold h hbar
+theorem h_eq_qp1_hbar : h q = (q + 1) * hbarQ q := by
+  unfold h hbarQ
   field_simp
   ring
 

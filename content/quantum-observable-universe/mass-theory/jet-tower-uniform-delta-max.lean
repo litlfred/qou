@@ -46,7 +46,7 @@ class JetTowerUniformDeltaMax (ρ : Type*) where
   uniform_bound : ∀ n : ℕ, 1 ≤ n → |delta n| ≤ delta_max
 
 /-- The substrate Planck constant squared, instantiated abstractly. -/
-noncomputable def hbarSq (q : ℝ) : ℝ := ((q - 1) / q) ^ 2
+noncomputable def hbarQSq (q : ℝ) : ℝ := (1 - q⁻¹) ^ 2
 
 /-- Conditional theorem: under the uniform-bound conjecture, the
     geometric-tail bound holds.
@@ -63,15 +63,15 @@ noncomputable def hbarSq (q : ℝ) : ℝ := ((q - 1) / q) ^ 2
 -- Ref: [manuscript] prop:jet-tower-convergence
 theorem geometric_tail_bound_abstract
     {ρ : Type*} [c : JetTowerUniformDeltaMax ρ]
-    (hbarSq_val : ℝ) (hbarSq_pos : 0 < hbarSq_val)
-    (hbarSq_lt_one : hbarSq_val < 1) (N : ℕ) :
+    (hbarQSq_val : ℝ) (hbarQSq_pos : 0 < hbarQSq_val)
+    (hbarQSq_lt_one : hbarQSq_val < 1) (N : ℕ) :
     ∃ tail_bound : ℝ,
-      tail_bound = c.delta_max * hbarSq_val ^ (N + 1) / (1 - hbarSq_val) ∧
+      tail_bound = c.delta_max * hbarQSq_val ^ (N + 1) / (1 - hbarQSq_val) ∧
       0 ≤ tail_bound := by
-  refine ⟨c.delta_max * hbarSq_val ^ (N + 1) / (1 - hbarSq_val), rfl, ?_⟩
+  refine ⟨c.delta_max * hbarQSq_val ^ (N + 1) / (1 - hbarQSq_val), rfl, ?_⟩
   apply div_nonneg
   · apply mul_nonneg c.delta_max_nonneg
-    exact pow_nonneg (le_of_lt hbarSq_pos) _
+    exact pow_nonneg (le_of_lt hbarQSq_pos) _
   · linarith
 
 /-- **Trivial-delta skeleton instance.**  Sets `delta ≡ 0` and

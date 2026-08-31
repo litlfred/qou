@@ -1,0 +1,421 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T13:45:42.276325+00:00",
+  "description": "The level-3 EM term already exists and cannot do the job. Post-qou-toul the antisymmetric/Coulomb channel has multiplicity (n+ + n-)/2 = 5A - 1, which is MIRROR-INVARIANT, while the symmetric/strong channel carries (n+ - n-)/2 = 2Z, all of the charge dependence -- the reverse of physics. So the existing EM term contributes exactly zero to every mirror splitting. Further, n+ and n- are each affine in (A,Z), so no linear functional of the crossing counts can supply the Z(Z-1) proton-pair multiplicity Coulomb needs.",
+  "q0_pin": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "crossing_statistics": [
+    {
+      "nucleus": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_plus": 11,
+      "n_minus": 7,
+      "n_averaged": 5,
+      "count_n_plus_n_minus": 18,
+      "predicted_10A_minus_2": 18,
+      "writhe_n_plus_minus_n_minus": 4,
+      "predicted_4Z": 4,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 9,
+      "strong_channel_multiplicity": 2,
+      "lean_model": [
+        11,
+        7,
+        5
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_plus": 16,
+      "n_minus": 12,
+      "n_averaged": 7,
+      "count_n_plus_n_minus": 28,
+      "predicted_10A_minus_2": 28,
+      "writhe_n_plus_minus_n_minus": 4,
+      "predicted_4Z": 4,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 14,
+      "strong_channel_multiplicity": 2,
+      "lean_model": [
+        16,
+        12,
+        7
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_plus": 18,
+      "n_minus": 10,
+      "n_averaged": 7,
+      "count_n_plus_n_minus": 28,
+      "predicted_10A_minus_2": 28,
+      "writhe_n_plus_minus_n_minus": 8,
+      "predicted_4Z": 8,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 14,
+      "strong_channel_multiplicity": 4,
+      "lean_model": [
+        18,
+        10,
+        7
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_plus": 23,
+      "n_minus": 15,
+      "n_averaged": 9,
+      "count_n_plus_n_minus": 38,
+      "predicted_10A_minus_2": 38,
+      "writhe_n_plus_minus_n_minus": 8,
+      "predicted_4Z": 8,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 19,
+      "strong_channel_multiplicity": 4,
+      "lean_model": [
+        23,
+        15,
+        9
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_plus": 40,
+      "n_minus": 28,
+      "n_averaged": 15,
+      "count_n_plus_n_minus": 68,
+      "predicted_10A_minus_2": 68,
+      "writhe_n_plus_minus_n_minus": 12,
+      "predicted_4Z": 12,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 34,
+      "strong_channel_multiplicity": 6,
+      "lean_model": [
+        40,
+        28,
+        15
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "7Be",
+      "Z": 4,
+      "N": 3,
+      "A": 7,
+      "n_plus": 42,
+      "n_minus": 26,
+      "n_averaged": 15,
+      "count_n_plus_n_minus": 68,
+      "predicted_10A_minus_2": 68,
+      "writhe_n_plus_minus_n_minus": 16,
+      "predicted_4Z": 16,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 34,
+      "strong_channel_multiplicity": 8,
+      "lean_model": [
+        42,
+        26,
+        15
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "11B",
+      "Z": 5,
+      "N": 6,
+      "A": 11,
+      "n_plus": 64,
+      "n_minus": 44,
+      "n_averaged": 23,
+      "count_n_plus_n_minus": 108,
+      "predicted_10A_minus_2": 108,
+      "writhe_n_plus_minus_n_minus": 20,
+      "predicted_4Z": 20,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 54,
+      "strong_channel_multiplicity": 10,
+      "lean_model": [
+        64,
+        44,
+        23
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "11C",
+      "Z": 6,
+      "N": 5,
+      "A": 11,
+      "n_plus": 66,
+      "n_minus": 42,
+      "n_averaged": 23,
+      "count_n_plus_n_minus": 108,
+      "predicted_10A_minus_2": 108,
+      "writhe_n_plus_minus_n_minus": 24,
+      "predicted_4Z": 24,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 54,
+      "strong_channel_multiplicity": 12,
+      "lean_model": [
+        66,
+        42,
+        23
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "15N",
+      "Z": 7,
+      "N": 8,
+      "A": 15,
+      "n_plus": 88,
+      "n_minus": 60,
+      "n_averaged": 31,
+      "count_n_plus_n_minus": 148,
+      "predicted_10A_minus_2": 148,
+      "writhe_n_plus_minus_n_minus": 28,
+      "predicted_4Z": 28,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 74,
+      "strong_channel_multiplicity": 14,
+      "lean_model": [
+        88,
+        60,
+        31
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "15O",
+      "Z": 8,
+      "N": 7,
+      "A": 15,
+      "n_plus": 90,
+      "n_minus": 58,
+      "n_averaged": 31,
+      "count_n_plus_n_minus": 148,
+      "predicted_10A_minus_2": 148,
+      "writhe_n_plus_minus_n_minus": 32,
+      "predicted_4Z": 32,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 74,
+      "strong_channel_multiplicity": 16,
+      "lean_model": [
+        90,
+        58,
+        31
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "39K",
+      "Z": 19,
+      "N": 20,
+      "A": 39,
+      "n_plus": 232,
+      "n_minus": 156,
+      "n_averaged": 79,
+      "count_n_plus_n_minus": 388,
+      "predicted_10A_minus_2": 388,
+      "writhe_n_plus_minus_n_minus": 76,
+      "predicted_4Z": 76,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 194,
+      "strong_channel_multiplicity": 38,
+      "lean_model": [
+        232,
+        156,
+        79
+      ],
+      "matches_lean_model": true
+    },
+    {
+      "nucleus": "39Ca",
+      "Z": 20,
+      "N": 19,
+      "A": 39,
+      "n_plus": 234,
+      "n_minus": 154,
+      "n_averaged": 79,
+      "count_n_plus_n_minus": 388,
+      "predicted_10A_minus_2": 388,
+      "writhe_n_plus_minus_n_minus": 80,
+      "predicted_4Z": 80,
+      "averaged_matches_2A_plus_1": true,
+      "coulomb_channel_multiplicity": 194,
+      "strong_channel_multiplicity": 40,
+      "lean_model": [
+        234,
+        154,
+        79
+      ],
+      "matches_lean_model": true
+    }
+  ],
+  "statistics_match_sidecar": true,
+  "matches_lean_model": true,
+  "lean_model": {
+    "per_proton": "(6 pos, 3 neg, 2 avg)",
+    "per_neutron": "(5 pos, 4 neg, 2 avg)",
+    "chain_interfaces": "Z-1 pp (pos), N-1 nn (neg), exactly 1 pn (avg)",
+    "closed_forms": "n+ = 7Z + 5N - 1 ; n- = 3Z + 5N - 1 ; avg = 2A + 1",
+    "lean": "QOU/MassTheory/BondArcTheorems.lean section 5"
+  },
+  "mirror_checks": [
+    {
+      "pair": "3He/3H",
+      "coulomb_mult": [
+        14,
+        14
+      ],
+      "coulomb_equal": true,
+      "strong_mult": [
+        4,
+        2
+      ],
+      "strong_differs": true
+    },
+    {
+      "pair": "7Be/7Li",
+      "coulomb_mult": [
+        34,
+        34
+      ],
+      "coulomb_equal": true,
+      "strong_mult": [
+        8,
+        6
+      ],
+      "strong_differs": true
+    },
+    {
+      "pair": "11C/11B",
+      "coulomb_mult": [
+        54,
+        54
+      ],
+      "coulomb_equal": true,
+      "strong_mult": [
+        12,
+        10
+      ],
+      "strong_differs": true
+    },
+    {
+      "pair": "15O/15N",
+      "coulomb_mult": [
+        74,
+        74
+      ],
+      "coulomb_equal": true,
+      "strong_mult": [
+        16,
+        14
+      ],
+      "strong_differs": true
+    },
+    {
+      "pair": "39Ca/39K",
+      "coulomb_mult": [
+        194,
+        194
+      ],
+      "coulomb_equal": true,
+      "strong_mult": [
+        40,
+        38
+      ],
+      "strong_differs": true
+    }
+  ],
+  "degree_argument": {
+    "n_plus_formula": "5A - 1 + 2Z",
+    "n_minus_formula": "5A - 1 - 2Z",
+    "coulomb_channel": "(n+ + n-)/2 = 5A - 1  (mirror-invariant)",
+    "strong_channel": "(n+ - n-)/2 = 2Z       (mirror-odd)",
+    "coulomb_needs": "Z(Z-1), the number of proton pairs -- quadratic in Z",
+    "second_difference_of_Z_times_Z_minus_1": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "second_difference_of_strong_channel": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "assertions": [
+    {
+      "name": "the Lean model's per-nucleon and per-interface counts reproduce the implementation exactly -- this is what lets Lean PROVE the two statistics rather than sample them",
+      "passed": true
+    },
+    {
+      "name": "n+ + n- = 10A - 2 on every nucleus tested (12, up to A=39)",
+      "passed": true
+    },
+    {
+      "name": "n+ - n- = 4Z on every nucleus tested",
+      "passed": true
+    },
+    {
+      "name": "the averaged (non-braid) letters number 2A+1, as the docstring states",
+      "passed": true
+    },
+    {
+      "name": "the braids are NOT positive \u2014 n- is nonzero everywhere, so the two channels are genuinely distinct objects",
+      "passed": true
+    },
+    {
+      "name": "the COULOMB channel multiplicity is equal across every mirror pair",
+      "passed": true
+    },
+    {
+      "name": "the STRONG channel multiplicity differs across every mirror pair \u2014 the charge dependence is in the wrong channel",
+      "passed": true
+    },
+    {
+      "name": "Z(Z-1) has constant nonzero second difference in Z while the crossing-count channels have zero \u2014 degree excludes the fit",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(b) for the degree exclusion, invariant named: an affine function of (A,Z) cannot equal a quadratic one, so it holds for every coefficient and every anchor. UPGRADED from (a) to (b) for the crossing statistics too: QOU/MassTheory/BondArcTheorems section 5 PROVES n+ + n- = 10A - 2 and n+ - n- = 4Z from the chain model, and this probe verifies the model reproduces atom_braid_word_3A exactly, so the Coulomb channel's mirror-invariance now holds for all (Z,N) rather than for the 12 tested. What remains unproved is that the per-nucleon counts (6,3,2)/(5,4,2) follow from the quark content -- they are read off the implementation. Nothing refuted; qou-toul's correction stands and this builds on it. Nothing wired.",
+  "lean": "QOU/MassTheory/CrossingCountAffine.lean",
+  "beans": [
+    "qou-toul",
+    "qou-vudb",
+    "qou-1pig"
+  ],
+  "allPassed": true,
+  "scriptHash": "6c5aded49b65",
+  "scriptCommitSha": "ff21b475e78dd43635812f9afb0c277a3f202353",
+  "commitSha": "06cc8ec091607e88abe8293ce00a0ce272790566",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "level3_em_channel_parity_probe.py"
+}

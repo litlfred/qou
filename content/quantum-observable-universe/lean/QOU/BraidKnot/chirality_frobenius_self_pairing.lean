@@ -31,7 +31,18 @@ below.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md
 -/
 
-namespace QOU.BraidKnot
+-- Declarations here are nested one namespace deeper than `QOU.BraidKnot` so
+-- this module and `QOU.BraidKnot.HoefsmitV21CosSymmetrization` can be
+-- imported together: both declared `heckeH`, and Lean rejects the second
+-- import with "environment already contains" (bean `qou-kfcl`).
+--
+-- They are the SAME quantity — the Hecke structure constant `q - q^-1` of
+-- AGENTS.md §7a — at two ground rings: `(q : R)` over ℝ there, and the
+-- generic `(q : Rˣ)` over a `CommRing` here. The generic one is the better
+-- long-term home per §7c, but it has no importers while the ℝ one has three,
+-- so the cheap move is to nest this side. Consolidating onto the generic
+-- version is left to `qou-u87j`.
+namespace QOU.BraidKnot.ChiralityFrobenius
 
 variable {R : Type*} [CommRing R]
 
@@ -85,4 +96,4 @@ theorem chirality_amphichiral_via_qInt3 (q : Rˣ) :
   unfold qInt3 heckeH
   linear_combination (2 : R) * q.mul_inv
 
-end QOU.BraidKnot
+end QOU.BraidKnot.ChiralityFrobenius

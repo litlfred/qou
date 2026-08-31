@@ -92,10 +92,27 @@ from mpmath import mpf, pslq  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# Reuse Strategy G's Borromean HOMFLYPT closed form
-from lambda_scale_alt_g_skein_polynomial_direct import (  # noqa: E402
-    homflypt_borromean_at_az,
-)
+# Reuse Strategy G's Borromean HOMFLYPT closed form.
+#
+# `lambda_scale_alt_g_skein_polynomial_direct` is NOT in this repository, and it
+# is not an import-path problem: the module was DELETED, not moved --
+# `git ls-tree -r origin/main` returns no file of that name, and
+# `homflypt_borromean_at_az` was defined in no file on main. This probe was
+# therefore unrunnable (not slow, not env-dependent -- unrunnable), failing at
+# import before a line of its own body ran.
+#
+# It is now runnable: the function was REBUILT from in-repo compute in
+# `homflypt_engine`, with its (a,z)-vs-(v,z) convention calibrated against this
+# file's own `homflypt_trefoil` and independently checked against the Borromean
+# rings' amphichirality. See that docstring.
+#
+# Two branches found this independently and stopped at different points:
+# `qou-s1yn` established the forensics above and left disposition to the owner;
+# `qou-s7g0` rebuilt the function. The rebuild supersedes the open question, so
+# `qou-s1yn` is answered rather than still pending -- recorded here because the
+# raise-with-explanation that stood in this spot is what a reader of `qou-s1yn`
+# would expect to find.
+from homflypt_engine import homflypt_borromean_at_az  # noqa: E402
 
 
 def homflypt_trefoil(a: mpf, z: mpf) -> mpf:
@@ -264,9 +281,14 @@ def main() -> int:
     w.add_assertion(
         "Multi-knot HOMFLYPT PSLQ — no closure relation expected "
         "for either target",
-        computed=float(not any_relation),
-        expected=1.0,
-        tolerance=0.5,
+        # mpf, not float: this is a boolean carried through the witness, and
+        # `float(...)` here is the raw-float64 idiom the ratchet exists to
+        # catch. It was invisible until 2026-08-30 only because the probe could
+        # not run at all (bean qou-s7g0) -- an unrunnable producer hides its
+        # precision defects along with everything else.
+        computed=mpf(1) if not any_relation else mpf(0),
+        expected=mpf(1),
+        tolerance=mpf("0.5"),
         unit="boolean",
         source=(
             "mpmath.pslq at max_coef=10^5, tol=1e-12 on a 12-element "

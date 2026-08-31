@@ -49,7 +49,13 @@ projection are the content. No `sorry`.
 -- Ref: [manuscript] conj:im-q-physical-role
 -/
 
-namespace QOU.QBeta
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.QBeta.LadderPhaseMirrorCovariance
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.QBeta.LadderParityReflection
 
 /-- A map is **reflective** when complex conjugation commutes with it:
     `f(conj z) = conj (f z)`. Every function built from real constants by the
@@ -194,4 +200,4 @@ theorem alphaPhase_zD_im_odd (q0 eps : ℝ) :
 
 end MarkovParameter
 
-end QOU.QBeta
+end QOU.QBeta.LadderParityReflection

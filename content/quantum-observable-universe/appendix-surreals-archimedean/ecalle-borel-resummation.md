@@ -1,6 +1,6 @@
 A divergent Gevrey-1 asymptotic series acquires a canonical analytic
 meaning through the Borel transform and its Laplace–Borel sums
-[@ecalle1981].
+\cite{ecalle1981}.
 
 ## Definition
 
@@ -54,6 +54,6 @@ canonical average of the two lateral sums across a Stokes ray — in
 the simplest one-singularity case
 $\tfrac{1}{2}\bigl(\mathcal{L}^{\theta^+} + \mathcal{L}^{\theta^-}\bigr)$,
 and in general the composition of a lateral sum with the half-power
-of the Stokes automorphism [@ecalle1981]. For a series with real
+of the Stokes automorphism \cite{ecalle1981}. For a series with real
 coefficients whose Stokes ray is the positive real axis, the median
 sum is the unique **real and single-valued** resummation.

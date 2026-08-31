@@ -60,6 +60,7 @@ if str(HERE) not in sys.path:
 
 from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from convolution_provenance import CONVOLUTION  # noqa: E402
 from hecke_core_symbolic import _ground_state_ordering  # noqa: E402
 from alpha_em_shift_chain import q_integer as q_int_mp  # noqa: E402
 
@@ -810,6 +811,7 @@ def main(dps: int = 50) -> int:
             "docs/audits/2026-05-16-compound-shift-nf-impl.md"
         )
         .add_data("nf_basis_names", NF_NAMES)
+        .add_data("convolution", CONVOLUTION)
         .add_data("dps", dps)
         .add_data("per_nucleon_shift_p_h3", SHIFT_NF_PROTON_H3)
         .add_data("per_nucleon_shift_n_h3", SHIFT_NF_NEUTRON_H3)

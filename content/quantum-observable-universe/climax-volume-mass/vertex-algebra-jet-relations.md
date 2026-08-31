@@ -6,7 +6,7 @@ $$
   \mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}.
 $$
 
-The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the level-$(n{+}1)$ relations into **descended** (inherited from level $n$) and **transient** (genuinely new at level $n{+}1$). The presentation on $J^n(A)$ comprises 34 relations — 11 structural (level-$n$ lifts of QU/QUO), 4 :refterm[descent]{#descent}, and 9 cohomological, plus the 2 inter-level relations J-3c and J-4a — catalogued in [Table 1](#tbl:vertex-algebra-jet-relations-table1-data), [Table 2](#tbl:vertex-algebra-jet-relations-table2-data), and [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
+The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the level-$(n{+}1)$ relations into **descended** (inherited from level $n$) and **transient** (genuinely new at level $n{+}1$). The presentation on $J^n(A)$ comprises 24 relations — 11 structural (level-$n$ lifts of QU/QUO), 4 :refterm[descent]{#descent}, and 9 cohomological, two of the structural eleven (J-3c and J-4a) being the inter-level relations that bind adjacent brane levels — catalogued in [Table 1](#tbl:vertex-algebra-jet-relations-table1-data), [Table 2](#tbl:vertex-algebra-jet-relations-table2-data), and [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
 
 ## Proof
 
@@ -400,4 +400,4 @@ See [Table 2](#tbl:vertex-algebra-jet-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
 
-The total presentation on $J^n(A)$ comprises **34 relations**: 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological, plus the 2 inter-level relations J-3c and J-4a that bind adjacent brane levels. Each is expressed entirely in the level-$n$ Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace $\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution $\hat{\tau}_n$.
+The total presentation on $J^n(A)$ comprises **24 relations**: 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, and 9 cohomological. J-3c and J-4a, the two inter-level relations that bind adjacent brane levels, are among the structural eleven rather than additional to them. Each is expressed entirely in the level-$n$ Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace $\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution $\hat{\tau}_n$.

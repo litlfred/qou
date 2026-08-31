@@ -70,6 +70,7 @@ import time
 from pathlib import Path
 
 import mpmath as mp
+from decimal import Decimal as _Decimal, ROUND_HALF_EVEN as _ROUND_HALF_EVEN
 
 _ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_ROOT / "tools" / "pyhecke" / "python"))
@@ -78,6 +79,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from convolution_provenance import CONVOLUTION  # noqa: E402
 
 # Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
 # 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
@@ -294,8 +296,29 @@ def _dp(x, places: int = 4):
     decimals on a log10 is ~1e-4 absolute, twelve orders above binary64's
     floor, so the mpf that now reaches it cannot change a printed digit.
     That is a checkable prediction and it is checked in the PR.
+
+    MEASURED 2026-08-30, and the prediction needs one qualifier. The mpf and
+    float paths agree on ordinary values but diverge on an EXACT DECIMAL TIE:
+    `1.00005` prints `1.0000` from the mpf path and `1.0001` from the float
+    one. Neither is a bug -- the mpf path rounds half-even on the true decimal
+    value, the float path rounds on that value's binary64 approximation, which
+    is not exactly 1.00005. The mpf answer is the more faithful of the two.
+    Ties on a log10 are vanishingly rare, so this does not move any row here;
+    it is recorded because "cannot change a printed digit" is not literally
+    true and the next reader should not have to rediscover why.
     """
-    return None if x is None else f"{x:.{places}f}"
+    if x is None:
+        return None
+    if isinstance(x, float):
+        return f"{x:.{places}f}"
+    # mpf: `f"{mpf:.4f}"` raises TypeError (mpf has no __format__ for the
+    # float presentation types), so the mpf this helper was written to accept
+    # crashed it instead of being served. Quantize through Decimal from a
+    # 40-significant-digit mpmath string -- never through float(), which would
+    # reintroduce the binary64 hop the helper exists to avoid.
+    d = _Decimal(mp.nstr(x, 40, strip_zeros=False))
+    return str(d.quantize(_Decimal(1).scaleb(-places),
+                          rounding=_ROUND_HALF_EVEN))
 
 
 def _sig(x) -> str:
@@ -317,6 +340,7 @@ def main() -> int:
     w = WitnessBuilder("all-nuclides-wedderburn-spectral-v2",
                        engine="mpmath", start_time=t0)
     w.add_data("q0_source", _Q0_SOURCE)
+    w.add_data("convolution", CONVOLUTION)
 
     # ── validation battery ─────────────────────────────────────────
     tol = mp.mpf(10) ** (-(DPS - 5))

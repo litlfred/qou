@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-08-25T17:58:01Z
+updated_at: 2026-08-30T13:26:26Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -162,3 +162,83 @@ one: the ROUTE is identified, the KERNEL is not, and the SEPARATION LAW is
 imported. None refutes the metric Coulomb pairing. What is removed is the
 impression that (1) a contest selected a kernel, (2) more data would settle
 it, (3) the hyperbolic reading was load-bearing for the fit.
+
+
+## ROAST 2026-08-30 — two corrections to this bean's own three findings
+
+Both are about **scope and attribution, not about the results**. Every number
+below reproduces this bean's published figures before departing from them.
+
+### R1 — finding 2's "A = 334" is conditional on the separation law finding 3 questions, and the bean does not say so
+
+Finding 2 concludes *"SATURATION BEGINS PAST THE END OF THE NUCLEAR CHART"*
+flatly. It computes that from `α = c·A^(1/3)` — the **same Euclidean import**
+that finding 3, three sections later in this same bean, calls *"an unexamined
+Euclidean import"* and *"two geometries in one quantity"*. Finding 3 is
+**upstream** of finding 2; the bean's "NET OF ALL THREE" presents them as
+independent and cumulative.
+
+Re-measured at `mp.dps = 50`, anchoring `α = 0.8732` at `A = 63` (this bean's
+own top-of-span), thresholds `α = arccoth(1.10 / 1.05 / 1.01)`:
+
+| separation law | 10 % | 5 % | 1 % |
+|---|---|---|---|
+| `A^(1/3)` — Euclidean, as used | **333.8** | 605.7 | 1764.2 |
+| `A^(1/4)` | 581.9 | 1288.1 | 5357.4 |
+| `ln A` — hyperbolic self-consistent | **1370.3** | 6701.1 | 291119 |
+| `A^(1/2)` | **191.5** | 284.9 | 581.0 |
+
+The first row reproduces the bean's `334 / 606 / 1764` exactly, so the method
+is the bean's own.
+
+**The conclusion survives where it matters and fails at one member of this
+bean's own scanned set.** Under `ln A` — the law finding 3 says the hyperbolic
+geometry actually requires — saturation is reached at `A = 1370`, i.e. **the
+unreachability is strengthened, not weakened**. But under `A^(1/2)`, one of the
+four laws finding 3 itself tabulates, the 10 % regime lands at `A = 191` and
+the 5 % regime at `A = 285`, **both inside the chart** (heaviest nuclide
+`A = 294`).
+
+So the honest statement is: *unreachable under the law the data prefers and
+under the law the geometry demands; reachable under the worst-scoring member
+of the bean's own set.* `A^(1/2)` scores 13.95 % against `A^(1/3)`'s 3.505 %,
+so this is not a live threat — but that defence is a **fit** argument, and
+finding 3's whole point is that the fit and the geometry disagree about which
+law is right. A claim that "more data cannot settle it" should not rest
+silently on the input the same bean flags as unexamined.
+
+### R2 — finding 1's scope-(b) warrant should be attributed to the decay argument, not to O2
+
+Finding 1 is labelled scope-(b) citing the invariant `∫Δu = 0`. That is a
+**closed-manifold** statement. The carriers named throughout this front — `4₁`
+and `L6a4` — are **cusped**, i.e. finite-volume *non-compact*, where the
+divergence theorem needs a vanishing boundary term that a non-decaying `coth`
+does not obviously supply. The bean asserts *"Finite volume suffices ... so
+this does not rest on the compactness premise"* without establishing the
+boundary term.
+
+It does not need to. This bean's **own second route** already carries the
+warrant with no topological premise at all: the radial Laplacian on `H³` is
+`u'' + 2coth(r)u'`, harmonic solutions off the origin are `−C coth(r) + D`,
+and decay at infinity forces `D = C`, giving `G(r) = −(coth r − 1)/4π`. That
+argument needs neither compactness nor finite volume, and it delivers the same
+subtraction.
+
+**Re-attributing makes the (b) label stronger, not weaker** — it moves the
+exclusion off a premise the carriers may not satisfy and onto one they
+certainly do. Note the two routes do not agree on the *family*: O2 gives
+`c₀ ≥ 1` strictly, the decay argument gives `c₀ = 1` exactly (the boundary
+member). The exclusion of `c₀ = 0` holds either way, since this bean's own
+scan puts `c₀ = 1` at 11.15 % against `c₀ = 0`'s 3.505 %.
+
+### What is NOT being corrected
+
+The scatter figures, the `r = −0.904`, the zero-crossing count, the
+`0.97 %` coth-vs-expansion deviation and the three SCOPE labels' *direction*
+all stand. Nothing here reopens `H_coth`; the kernel stays outside the
+admissible family and the ROUTE stays identified-but-underived.
+
+Cross-reference: `qou-o6ml` ROAST 2026-08-30 records that this bean's O2
+requirement is **structurally satisfied** by route (2)'s Möbius/O'Hara energy,
+whose regularising subtraction is intrinsic — so O2 discriminates *between*
+o6ml's routes rather than only damaging the front.

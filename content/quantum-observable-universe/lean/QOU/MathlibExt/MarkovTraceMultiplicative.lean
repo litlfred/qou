@@ -1,6 +1,13 @@
 /-
-QOU.MathlibExt.MarkovTraceMultiplicative — the Markov trace is MULTIPLICATIVE under juxtaposition
-(disjoint-strand product), hence under connected sum: `tr(K₁ # K₂) = tr(K₁)·tr(K₂)`.
+QOU.MathlibExt.MarkovTraceMultiplicative — the MATRIX trace is multiplicative under the Kronecker
+product, which models the disjoint-strand juxtaposition: `tr(A ⊗ₖ B) = tr(A)·tr(B)`.
+
+🛑 NOT "hence under connected sum" (corrected, bean `qou-bsfg`). Connected sum and disjoint union
+are different operations with different formulas: for the normalised Jones polynomial
+`V(K₁ # K₂) = V(K₁)·V(K₂)` exactly, while `V(K₁ ⊔ K₂) = δ·V(K₁)·V(K₂)` carries the loop value. The
+Kronecker product is the disjoint union, so the connected-sum reading is the one to drop — and the
+closure normaliser `δ^{n−1}` makes the missing factor explicit in
+`QOU.Mass.ClosureNormalisationDefect`, which proves the free energy is additive only up to `log δ`.
 
 Bean `qou-301d` (discharge the `ArchimedeanTraceBridge` multiplicativity hypothesis) via the
 **algebraic Ocneanu-trace route** of bean `qou-dyij` (route B: skip link diagrams entirely; work with
@@ -80,9 +87,14 @@ theorem markovTrace_juxtapose {A : Matrix m m R} {B : Matrix n n R}
     C.trace = A.trace * B.trace := by
   rw [h]; exact trace_kron A B
 
-/-- **The unknotted/trivial component is the unit of juxtaposition at the trace level.** If one
-block is the `1×1` identity (a single unlinked strand, trace `1`), the composite trace is the other
-block's trace: adding a trivial component changes nothing. -/
+/-- **A `1×1` identity block is the unit of the Kronecker product at the trace level.** Its trace is
+`1` because `Fintype.card Unit = 1`.
+
+🛑 This is a statement about the INDEX TYPE, not about strands (bean `qou-bsfg`). Adding an unlinked
+component to a braid closure multiplies the amplitude by the **loop value** `δ = [2]_q`, not by `1`:
+at `q₀` that is `δ = 2.01089686671`, i.e. `log δ = 0.6985808249` of free energy per component. See
+`QOU.Mass.ClosureNormalisationDefect.freeEnergy_closureNorm_juxtapose`. The lemma below is true and
+useful for matrices; do not read it as "a trivial component is free". -/
 theorem markovTrace_juxtapose_one {A : Matrix m m R}
     {C : Matrix (m × Unit) (m × Unit) R}
     (h : IsJuxtaposition A (1 : Matrix Unit Unit R) C) :
@@ -90,10 +102,16 @@ theorem markovTrace_juxtapose_one {A : Matrix m m R}
   rw [markovTrace_juxtapose h, Matrix.trace_one]
   simp
 
-/-! ## Extensivity: `n` disjoint components multiply -/
+/-! ## The two-fold case
 
-/-- **A self-juxtaposed block multiplies its trace.** The `k`-fold disjoint union of one component
-has trace `(tr A)^k` — stated for the two-fold case plus induction below. -/
+(Retitled, bean `qou-bsfg`: this section read *"Extensivity: `n` disjoint components multiply"* and
+its lemma cited an induction that was never written. The `n`-fold statement now lives in
+`QOU.Mass.ClosureNormalisationDefect.closureNorm_assemble` / `freeEnergy_closureNorm_assemble`,
+where it also carries the closure-normalisation deficit `δ^{A−1}` that the bare matrix identity
+does not see.) -/
+
+/-- **A self-juxtaposed block squares its trace.** Two-fold only; for `A` components see
+`QOU.Mass.ClosureNormalisationDefect.closureNorm_assemble`. -/
 theorem trace_kron_self (A : Matrix m m R) :
     (A ⊗ₖ A).trace = A.trace ^ 2 := by
   rw [trace_kron]; ring
