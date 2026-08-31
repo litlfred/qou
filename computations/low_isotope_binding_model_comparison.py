@@ -41,8 +41,13 @@ def _load(name):
 
 def main() -> int:
     t0 = time.monotonic()
-    from q_parameter import Q
-    q0 = mp.mpf(str(Q() if callable(Q) else Q))
+    # NO FLOAT64 (owner directive, bean `qou-wsfl`). This imported `Q`, the
+    # FLOAT export, and wrapped it via `str()` into an mpf — which produces an
+    # mpf carrying only float64 accuracy, padded to look like more. Measured:
+    # `Q` is 2.725e-17 relative against the 50-dps closed form, so every digit
+    # past the 17th here was decoration. The 50-dps string has no such gap.
+    from q_parameter import Q_50_DIGIT_STR
+    q0 = mp.mpf(Q_50_DIGIT_STR)
 
     sweep = {r["atom"]: r for r in _load("low-isotopes-binding-sweep.witness.json")["rows"]}
     depth = _load("binding-depth-stratified.witness.json").get("per_atom", {})  # dict by atom

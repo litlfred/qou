@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:14:14.856666+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-31T04:12:52.124996+00:00",
+  "commitSha": "6f6e608c5e53d70598fb4768cf86d79d7af480f9",
   "assertions": [
     {
       "name": "B_depth_beats_B_lin_on_DT3He",
@@ -13,10 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40,
+  "durationMs": 44,
+  "durationMsBaseline": "caller",
   "computation": "low-isotope-binding-model-comparison",
   "scriptFile": "low_isotope_binding_model_comparison.py",
-  "scriptHash": "316fb4f37d9a",
+  "scriptHash": "d4531f940b56",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -32,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -54,8 +55,8 @@
         "B_AME_MeV": "2.22457",
         "B_lin_MeV": "0.435404",
         "err_lin_pct": "-80.427",
-        "B_depth_MeV": "0.606879",
-        "err_depth_pct": "-72.7",
+        "B_depth_MeV": "0.709993",
+        "err_depth_pct": "-68.1",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
         "B_lin_x_q0_10A5_MeV": "2.08262",
@@ -69,8 +70,8 @@
         "B_AME_MeV": "8.4818",
         "B_lin_MeV": "0.695132",
         "err_lin_pct": "-91.804",
-        "B_depth_MeV": "2.80777",
-        "err_depth_pct": "-66.9",
+        "B_depth_MeV": "2.90483",
+        "err_depth_pct": "-65.8",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
         "B_lin_x_q0_10A5_MeV": "9.43913",
@@ -84,8 +85,8 @@
         "B_AME_MeV": "7.71804",
         "B_lin_MeV": "0.698552",
         "err_lin_pct": "-90.949",
-        "B_depth_MeV": "2.65298",
-        "err_depth_pct": "-65.6",
+        "B_depth_MeV": "2.74379",
+        "err_depth_pct": "-64.4",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
         "B_lin_x_q0_10A5_MeV": "9.48558",
