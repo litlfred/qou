@@ -4714,3 +4714,69 @@ turned out to understate the defect once actually computed, while five others
 (L-V11, L-V12, L-V13, L-V50, L-V55) overstated or misdirected it. The ledger is
 a good *detector* and an unreliable *diagnosis*. Verify the finding, then
 re-derive the fix from scratch.
+
+---
+
+## Tranche 7 — L-V23…L-V37 remainder, 2026-08-31 · PR #6347
+
+Five fixed, one already fixed. Two were settled symbolically rather than by
+reading.
+
+**L-V34 — solved, and the ledger's fix was one-sided.** Eigenproblem for the
+standard R-matrix on `span{e₁⊗e₂, e₂⊗e₁}` (`R u = v`, `R v = u + (q−q⁻¹)v`):
+
+| eigenvalue | eigenvector | normalised |
+|---|---|---|
+| `q` | `e₁⊗e₂ + q e₂⊗e₁` | `q^{-1/2}u + q^{1/2}v` |
+| `−q⁻¹` | `e₁⊗e₂ − q⁻¹e₂⊗e₁` | `q^{1/2}u − q^{-1/2}v` |
+
+So the **antisymmetric vector in the block is correct**; only the **symmetric**
+one has its powers swapped. The block's symmetric vector fails `R·x = q·x` with
+residue `((1−q²)/√q, (q²−1)/q^{3/2})`.
+
+**And a quadratic-relation check cannot catch this.** The `M` that the block's
+two vectors would force *does* satisfy `(M−q)(M+q⁻¹) = 0`. What breaks is the
+normalisation: its off-diagonals are `(q²+1)/2` and `(q²+1)/(2q²)`, so `R` would
+send `e₁⊗e₂` to a multiple of `e₂⊗e₁` other than 1. Worth remembering — the
+obvious sanity check passes on the wrong answer.
+
+**L-V25 — the block contradicted itself twice over.** The recursion
+`q_{n+1} = q_n − ℏ_{q_n} = (q²−q+1)/q` decreases `q` toward the superattracting
+fixed point `q = 1` (`q_{n+1} − q_n = −(q−1)/q < 0` for `q > 1`), and line 13
+says exactly that. Line 20 then claimed the opposite direction — immediately
+before asserting that `d_H` increases as `q` decreases, which only holds in the
+direction line 13 gives. Rewritten to run forward in time from the Big Bang
+(`q` large) to `q = 1`.
+
+**L-V33** — `[E,F] = (K−K⁻¹)/(q−q⁻¹)` is the **defining commutator of
+`U_q(su(2))`**, not "the Hecke relation" (`(σ−q)(σ+q⁻¹) = 0`, a different
+algebra); and `KEK⁻¹ = q²E` are the **K-relations**, not Serre relations (the
+cubic ones, which do not exist at rank 1). Two misnomers in one sentence.
+
+**L-V37** — extracted the nuclei the sibling tables actually work:
+`¹⁴C → ¹⁴N` (t2, t3), `⁶⁰Co → ⁶⁰Ni` (t5), `²¹⁰Bi → ²¹⁰Po` (t6, t7). That **is**
+an increasing-mass ladder (A = 14, 60, 210) — just not the promised
+Iron/silver/uranium. Intro rewritten to the three that exist.
+
+**L-V26** — a 10⁴ mismatch written as agreement: `|M_q|²` "spans 10 orders of
+magnitude. This is the correct order of magnitude for" an observed spread of
+`~10⁶`. Rewritten to state the over-span and to label the claim a
+consistency-of-scale remark rather than a quantitative match. **The numbers are
+unchanged; only the claim about them is.**
+
+**L-V23 already fixed** — no "period equals the sum of its residues" anywhere.
+
+**RUNNING TALLY, seven tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 30 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V19 (the χ three-way
+inconsistency), L-V38–L-V49, L-V63 (the ≥ 9-site skein-convention cluster).
+L-V19 and L-V63 are both *clusters* rather than single sites and should be
+scoped as their own tranches.
