@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T04:07:10Z
+updated_at: 2026-08-31T04:11:30Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -195,3 +195,50 @@ magnitude on its own.
    linking numbers all vanish. The corrected statement is both weaker (the route
    is available) and sharper (it is available exactly from A=4, and the count
    is what kills a naive sum).
+
+
+## A canonical bounded-degree subfamily exists — counting only, no invariant computed
+
+`qou-brng`'s open item, as sharpened by the route-3 result, was: name a
+bounded-degree subfamily of the Milnor-defined triples **without fitting it**.
+There is a canonical candidate, and it is the obvious one once the linking
+graph is known to be a path.
+
+**Minimal-span non-adjacent triples `{i, i+2, i+4}`.** All three of their pairs
+are non-adjacent on `P_mu`, so all three linking numbers vanish and
+`Delta = 0` -- these are genuinely Milnor-defined. Counted:
+
+| A | mu | ALL non-adjacent `C(A-1,3)` | min-span `A-3` | max triples per component |
+|--:|--:|--:|--:|--:|
+| 4 | 5 | 1 | 1 | 1 |
+| 8 | 9 | 35 | 5 | 3 |
+| 16 | 17 | 455 | 13 | 3 |
+| 40 | 41 | 9139 | 37 | **3** |
+
+**Linear in A, per-component multiplicity capped at 3 independent of A.** That
+is exactly what `QOU.Mass.CoordinationSaturation` demands and what the full
+family (`~A^3`, excluded by C4) violates.
+
+### What this is and is not
+
+**Is:** a family named by a topological minimality criterion -- the tightest
+triple that is Milnor-defined -- with **no reference to AME**. That is the
+property the anti-fit discipline cares about.
+
+**Is NOT** a derivation from the substrate, and **not** a result about binding.
+"Canonical" here means *unique minimal span*, which is stronger than arbitrary
+and weaker than derived. **No `mubar` value has been computed** -- this is
+combinatorics of which triples are defined, not of what they equal. Computing
+one needs the Magnus expansion of a longitude in the free group, which is real
+work and is not done.
+
+### Two consequences worth carrying
+
+1. **It vanishes below A=4** (`A - 3` is 0 at A=3, negative below), so it
+   cannot contribute to the deuteron or the A=3 mirror pair at all -- the same
+   boundary the route-3 availability result found, arrived at independently.
+2. **It switches on at exactly one triple at ⁴He**, which is where the arc's
+   only exact coordinate sits (`QOU.Mass.PairCountMeetsDegreeBoundAtFour`).
+   Suggestive, and precisely the kind of coincidence this corpus has repeatedly
+   found to be generic -- do NOT read it as evidence without a genericity check
+   of the kind `qou-22vu` ran.
