@@ -955,6 +955,78 @@ theorem two_mul_sum_hookLen {C R : ℕ} (hC : μ.colLen 0 ≤ C) (hR : μ.rowLen
   rw [hsplit, Nat.mul_add, harm, hleg]
   omega
 
+/-- `2 ∑_cells j + n = ∑_i (rowLen i)²` — the column coordinate, summed. -/
+private theorem two_mul_sum_snd {C : ℕ} (hC : μ.colLen 0 ≤ C) :
+    2 * ∑ p ∈ μ.cells, p.2 + ∑ i ∈ Finset.range C, μ.rowLen i
+      = ∑ i ∈ Finset.range C, μ.rowLen i * μ.rowLen i := by
+  classical
+  have h := sum_cells_eq_sum_rows μ (fun _ j => j) hC
+  rw [h, Finset.mul_sum, ← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl fun i _ => ?_
+  show 2 * ∑ j ∈ Finset.range (μ.rowLen i), j + μ.rowLen i
+      = μ.rowLen i * μ.rowLen i
+  have hg : (∑ j ∈ Finset.range (μ.rowLen i), j) * 2
+      = μ.rowLen i * (μ.rowLen i - 1) := Finset.sum_range_id_mul_two _
+  cases hL : μ.rowLen i with
+  | zero => simp
+  | succ k =>
+    rw [hL] at hg
+    simp only [Nat.succ_sub_one] at hg
+    have hr : (k + 1) * (k + 1) = (k + 1) * k + (k + 1) := by ring
+    omega
+
+/-- **`∑_cells h = ∑_cells (i + j + 1)`.**
+
+The hook sum equals the sum of the "anti-diagonal" coordinate. This is the
+single-diagram form of the growth-chain step used in
+`wlambda_covariance_epic_M1_kappa_structure.py`: adding a box at `(r, s)` raises
+`∑ h` by exactly `1 + r + s`, because the new cell has hook `1` and every cell
+left of it in its row and above it in its column gains exactly one. Summing that
+over a standard Young tableau gives a path sum that must be path-INDEPENDENT —
+and this is why: it is just `∑_cells (i + j + 1)` of the final shape.
+
+It implies `two_mul_sum_hookLen`, since `∑ i = n(λ)` and `∑ j = n(λ')`. -/
+theorem sum_hookLen_eq_sum_coords {C R : ℕ} (hC : μ.colLen 0 ≤ C) (hR : μ.rowLen 0 ≤ R) :
+    ∑ p ∈ μ.cells, hookLen μ p.1 p.2 = ∑ p ∈ μ.cells, (p.1 + p.2 + 1) := by
+  classical
+  have hn : ∑ i ∈ Finset.range C, μ.rowLen i = μ.card := by
+    have h := sum_cells_eq_sum_rows μ (fun _ _ => (1 : ℕ)) hC
+    simp only [Finset.sum_const, Finset.card_range, smul_eq_mul, mul_one] at h
+    rw [← h, YoungDiagram.card, Finset.card_eq_sum_ones]
+  have hn' : ∑ j ∈ Finset.range R, μ.colLen j = μ.card := by
+    have h1 := sum_cells_transpose μ (fun _ _ => (1 : ℕ))
+    have h2 := sum_cells_eq_sum_rows μ.transpose (fun _ _ => (1 : ℕ))
+      (le_of_eq (μ.colLen_transpose 0))
+    simp only [YoungDiagram.rowLen_transpose, Finset.sum_const, Finset.card_range,
+      smul_eq_mul, mul_one] at h1 h2
+    have hw : ∑ j ∈ Finset.range (μ.rowLen 0), μ.colLen j
+        = ∑ j ∈ Finset.range R, μ.colLen j := by
+      refine Finset.sum_subset
+        (fun x hx => Finset.mem_range.mpr (lt_of_lt_of_le (Finset.mem_range.mp hx) hR)) ?_
+      intro x _ hnx
+      simp only [Finset.mem_range] at hnx
+      exact colLen_eq_zero_of_le μ (by omega)
+    rw [← hw, ← h2, h1]
+  -- the two coordinate sums
+  have hsnd := two_mul_sum_snd μ hC
+  have hfst : 2 * ∑ p ∈ μ.cells, p.1 + ∑ j ∈ Finset.range R, μ.colLen j
+      = ∑ j ∈ Finset.range R, μ.colLen j * μ.colLen j := by
+    have hsw := sum_cells_transpose μ (fun _ b => b)
+    have ht := two_mul_sum_snd μ.transpose (C := R) (by rwa [YoungDiagram.colLen_transpose])
+    simp only [YoungDiagram.rowLen_transpose] at ht
+    rw [← hsw]
+    exact ht
+  have hcard : ∑ p ∈ μ.cells, (1 : ℕ) = μ.card := by
+    rw [YoungDiagram.card, Finset.card_eq_sum_ones]
+  have hsplit : ∑ p ∈ μ.cells, (p.1 + p.2 + 1)
+      = (∑ p ∈ μ.cells, p.1) + (∑ p ∈ μ.cells, p.2) + ∑ p ∈ μ.cells, (1 : ℕ) := by
+    rw [← Finset.sum_add_distrib, ← Finset.sum_add_distrib]
+  have hhook := two_mul_sum_hookLen μ hC hR
+  rw [hn] at hsnd
+  rw [hn'] at hfst
+  rw [hsplit, hcard]
+  omega
+
 /-! ## The reduction skeleton: what a Lean proof of `M₁ > 0` would still need
 
 Asked directly: can the finite-`n` crossover be closed in Lean? On the current
@@ -1096,6 +1168,46 @@ theorem cov_pos_iff_corr_pos {c sx sy : ℚ} (hx : 0 < sx) (hy : 0 < sy) :
     exact mul_pos h hd
   · intro h
     exact div_pos h hd
+
+/-- **Only the `T`-symmetric part of `X` contributes.** If an involution `T`
+preserves the weight and fixes `Y`, then `X` may be replaced by `X ∘ T`.
+
+This is the step asserted in `wlambda_covariance_epic_M1_kappa_structure.py`:
+Plancherel is conjugation-invariant and `∑ c²` is conjugation-fixed, so
+`Cov(∑ λᵢ², ∑ c²) = Cov(∑ (λ'ⱼ)², ∑ c²)` and hence, by
+`two_mul_sum_hookLen`, both equal `Cov(∑ h, ∑ c²)`. The antisymmetric part of
+`∑ λᵢ²` — which is `∑ c`, by the companion identity — contributes nothing. -/
+theorem cov_involution [DecidableEq ι] (E : Finset ι) (T : ι → ι) (w X Y : ι → ℚ)
+    (hT : ∀ i ∈ E, T i ∈ E) (hTT : ∀ i ∈ E, T (T i) = i)
+    (hw : ∀ i ∈ E, w (T i) = w i) (hY : ∀ i ∈ E, Y (T i) = Y i) :
+    cov E w X Y = cov E w (fun i => X (T i)) Y := by
+  have reindex : ∀ f : ι → ℚ, ∑ i ∈ E, f (T i) = ∑ i ∈ E, f i := fun f =>
+    Finset.sum_nbij' T T hT hT hTT hTT (fun _ _ => rfl)
+  have e1 : ∑ i ∈ E, w i * X (T i) * Y i = ∑ i ∈ E, w i * X i * Y i := by
+    rw [← reindex (fun i => w i * X i * Y i)]
+    exact Finset.sum_congr rfl fun i hi => by rw [hw i hi, hY i hi]
+  have e2 : ∑ i ∈ E, w i * X (T i) = ∑ i ∈ E, w i * X i := by
+    rw [← reindex (fun i => w i * X i)]
+    exact Finset.sum_congr rfl fun i hi => by rw [hw i hi]
+  simp only [cov, e1, e2]
+
+/-- The symmetric-part form: averaging `X` with `X ∘ T` changes nothing. -/
+theorem cov_eq_cov_symmetrised [DecidableEq ι] (E : Finset ι) (T : ι → ι)
+    (w X Y : ι → ℚ) (hT : ∀ i ∈ E, T i ∈ E) (hTT : ∀ i ∈ E, T (T i) = i)
+    (hw : ∀ i ∈ E, w (T i) = w i) (hY : ∀ i ∈ E, Y (T i) = Y i) :
+    cov E w X Y = cov E w (fun i => (X i + X (T i)) / 2) Y := by
+  have h := cov_involution E T w X Y hT hTT hw hY
+  simp only [cov] at h ⊢
+  have s1 : ∑ i ∈ E, w i * ((X i + X (T i)) / 2) * Y i
+      = ((∑ i ∈ E, w i * X i * Y i) + ∑ i ∈ E, w i * X (T i) * Y i) / 2 := by
+    rw [← Finset.sum_add_distrib, Finset.sum_div]
+    exact Finset.sum_congr rfl fun i _ => by ring
+  have s2 : ∑ i ∈ E, w i * ((X i + X (T i)) / 2)
+      = ((∑ i ∈ E, w i * X i) + ∑ i ∈ E, w i * X (T i)) / 2 := by
+    rw [← Finset.sum_add_distrib, Finset.sum_div]
+    exact Finset.sum_congr rfl fun i _ => by ring
+  rw [s1, s2]
+  linarith [h]
 
 end Covariance
 
