@@ -592,3 +592,78 @@ it. My judgement: try that before anything else, because it reuses everything an
 is the only route measured here that is not already excluded. Dropping `tr_M` as
 the objective is the fallback; note that dropping the *identity* is not enough —
 measured, the LP then goes unbounded rather than selective.
+
+---
+
+## The positive sector breaks the degeneracy — 2026-08-31. The demand finally selects.
+
+**Owner steer:** *"we can restrict away from negative because that is backwards
+in computational time. We only want positive. negative is for entanglement (on
+the full tower)."* Corpus framing, `jet_history_retention_probe.py` §Q3:
+negatives enter only via `T_i⁻¹ = T_i − A`, so *"'negative = entanglement' is a
+statement about NEGATIVE CROSSINGS (chirality)"*.
+
+Probe `computations/probes/positive_sector_operator_selection_probe.py`
+(5 assertions). **This resolves the obstruction the entry above established.**
+
+There, `b₁ = 1` ⟹ `t = G e₁` ⟹ row 1 of `Gx ≥ u` *is* the objective, always
+binding, dual always `e₁`, no demand could select. **Positivity breaks exactly
+that** — with `x ≥ 0` the optimum can no longer reach the row-1 bound:
+
+| nucleus | objective | row-1 bound `u₁` | `obj > u₁` |
+|---|---|---|---|
+| D | 0.429886 | 0.299015 | yes |
+| T | 0.266264 | 0.142072 | yes |
+| ³He | 0.298365 | 0.188179 | yes |
+| ⁴He | 0.184802 | 0.089410 | yes |
+
+so row 1 stops being binding and the program becomes a genuine **covering LP** —
+`t = TR_M^{⊗A}` and `G` are both entrywise positive.
+
+**The net constraint has to go, and the corpus already says why.** With
+`1ᵀx = n_target` retained the positive sector is **infeasible** at every `A`.
+Dropping it is justified, not convenient: `prop:operator-selection-lp` proves
+`y₀* = 0` identically, so it carries no shadow price. It is exactly the
+informationless constraint that blocks the positive sector.
+
+    min t·x   s.t.   G x ≥ u_demand,   x ≥ 0
+
+### It selects
+
+| nucleus | A | dim | objective | \|support\| |
+|---|---|---|---|---|
+| D | 2 | 36 | 0.429886496 | 6 |
+| T | 3 | 216 | 0.266264217 | 6 |
+| ³He | 3 | 216 | 0.298365497 | 9 |
+| ⁴He | 4 | 1296 | 0.184802398 | 24 |
+
+**`T` and `³He` get different supports** — the separation Gap #2 needs, and the
+first route in this line of work to produce it. All four objectives distinct.
+
+**The optimal support lands on a sub-alphabet**, uniformly across all four:
+only `σ₁`, `L₊`, `L₋` appear as tensor factors; `γ`, `σ₀`, `e⁻` never do. An
+output of the program, not an input.
+
+### ⚠ Tension flagged, not resolved
+
+`x_free` is itself **not** in the positive sector — 108 of 216 coordinates
+negative at `A = 3`, because the nucleon NF carries `σ₁⁻¹` letters. So positivity
+is imposed on the *solution* while the *demand* `u = G x_free` comes from an
+object that violates it. Either the constituent product legitimately carries
+entanglement content and the program covers it, or **the nucleon should be
+rebuilt in the positive sector** — which would move every number above. The
+result depends on which.
+
+### Next
+
+My judgement, in order:
+
+1. **Resolve the tension** — decide whether `build_atom_nf`'s nucleon belongs in
+   the positive sector. This is the load-bearing question: every number above
+   moves if it does, and it is a modelling decision rather than a computation.
+2. **Test stability of the support under `q`.** The selection is only meaningful
+   if the support is a structural feature and not a vertex that flips near `q₀`.
+   Cheap, and it is the obvious way this result could be an artifact.
+3. Only then ask whether the selected operator *is* `K`. Nothing so far shows it
+   is — no `B_AME` enters anywhere in this route, which is the point, but it also
+   means nothing yet ties the selection to binding.
