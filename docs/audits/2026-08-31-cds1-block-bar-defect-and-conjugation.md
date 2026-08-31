@@ -138,3 +138,25 @@ identified as missing, and that the *z*-direction is closed.
 `TR[5] = z(hz+1)`, not `z³` — the σ₀σ₁σ₀ Markov weight
 ([`2026-05-19-trm5-markov-bug.md`](2026-05-19-trm5-markov-bug.md)); noted
 because three live files were found carrying the `z³` form earlier in this arc.
+
+## A discarded test, recorded so it is not repeated
+
+Results 1 and 3 together suggest a **scope-(b) structural exclusion**, and it
+does not survive contact with Result 3 itself. The tempting argument:
+
+> Under D the two-row cap gives `y_(1³)(z_D) = 0`, so any correction built as a
+> Markov trace is blind to the `(1³)` block. But the phase's bar-defect has
+> `(1³)` component `(h²/2)/r ≈ 0.1679·h² ≠ 0` — carried by the *counit* side
+> `a_(1³)·χ^(1³)(Δ)`, which the cap does not kill. Hence **no** trace-built
+> correction can cancel the D-frame defect.
+
+**It is wrong**, and Result 3 is why. The bar involution acts on the block
+characters as partition conjugation, `bar(χ^(3)) = χ^(1³)`. So for a trace-built
+`T = Σ_λ y_λ χ_λ`, the bar-defect of the `(3)` term is
+`bar(y_(3))·χ^(1³) + y_(3)·χ^(3)` — it **does** have a `(1³)` component even
+when `y_(1³) = 0`. The blindness of `T` and the blindness of `Δbar(T)` are
+different questions, and only the first one follows from the cap.
+
+Dropped before it reached a claim. It is the same shape as the arity conflation
+`da-arity-conflation` warns about: a property of one object read off as a
+property of a different object derived from it.
