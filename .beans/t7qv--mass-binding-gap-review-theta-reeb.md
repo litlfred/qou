@@ -374,3 +374,71 @@ half first, since a wrong cone makes any objective meaningless, and because
 `ρ_λ(σ) = {q₀, −1/q₀}` suggests the natural positivity notion here is on
 `σ + σ⁻¹` or on even-length subwords, not on `σ` itself. That is a guess and
 should be treated as one.
+
+---
+
+## CORRECTION + the real mechanism — 2026-08-31. It is the LP active set at `H_{3A}`, not PSD.
+
+**Owner correction:** *"why PSD constraints??? we have SDP constraints on the
+integer LP and THAT is supposed to determine which K is active for the knot
+convolution... maybe a typo somewhere got us down the wrong rabbit hole?"* —
+correct, and I withdraw the previous entry's conclusion.
+
+**The naming collision is real.** `binding_k_solver.py` and
+`binding_link_psd_feasibility_probe.py` route the reader to an `H_3` **PSD
+feasibility check**; the corpus's actual selection machinery is the
+**operator-selection LP with duals** (`nucleus_sdp_assembly.py`,
+`nucleus_real_sdp.py`) at `H_{3A}`, where the deliverable is the **active set**.
+Two programs, one word. Worth renaming.
+
+Probe `computations/probes/operator_selection_active_set_probe.py` (5 assertions).
+
+**At `H_3` the constraint has no bite.** Frobenius positivity holds for 100 % of
+alphabet words to length 6, 99.4 % at nucleon length 11. So every bound atom
+`A = 1..16` is stable with the **empty word**, every row strictly slack
+(`min (Gx)ᵢ = 0.40..4.44`), `y* = 0`, **active set empty** — `nuclear_ilp.py`'s
+search branch is dead code. *Not* literally vacuous though (I corrected my own
+first draft): the **free** product violates, first at `O16`
+(`min (Gx) = −0.618`), but is slack through `A = 12`. So the emptiness is not an
+artifact of `build_atom_nf` pre-applying the inter-nucleon crossings, and where
+the constraint does bite it is the free product that fails and the bound atom
+that passes — right sign, far too high in `A`.
+
+**At `H_{3A}` the same program works.** Non-empty active sets, `y₀* ≠ 0`, strong
+duality:
+
+| atom | `y₀*` | active blocks |
+|---|---|---|
+| D | −0.014434 | 7 (plus 3 negative-norm blocks) |
+| T | +0.016550 | (6,3) (7,2) (8,1) (9) |
+| ³He | +0.028787 | (6,3) (7,2) (8,1) (9) |
+| ⁴He | +0.003966 | 6 |
+
+### The blocker, and it is specific
+
+**`T` and `³He` get IDENTICAL active blocks**, differing only in the scalar
+`y₀*`. So the program cannot assign them different `K` — exactly Gap #2's need,
+and exactly where the census route failed too. Cause, from the witnesses' own
+`note`: **Phase B color-flavor constraints (LR branching
+`H_{3A} ⊃ (H_3)^Z × (H_3)^N`) are not implemented**, and
+`binding_cut_entropy_derived_weightings_probe.py` records that the **LR branching
+data exists only for the deuteron**. Without it the solver sees `A = 3` and
+nothing else.
+
+Same gap at the base of the γγ chain: `sdp_gamma_gamma_to_qqbar.py` lays out the
+recursion (`γγ→e⁺e⁻` `H_2`, `γγ→qq̄` `H_3`, inner Borromean, quark pairs, gluon
+self-coupling, *"each level adds an LR-embedding step"*) and stops at the same
+step — and says of its own base rung that *"11 is uniquely close to AME but other
+budgets are PSD-feasible too — so the SDP is not strict enough"*. The proton's
+crossing budget is picked by closeness to AME, one level below the knots.
+
+### Next
+
+**Withdrawn:** my previous "no objective exists". Wrong program.
+**Correct statement:** the objective and duals exist and work at `H_{3A}`; what
+is missing is the **LR branching constraint** that makes the program depend on
+`(Z, N)` at all. That is a specific, buildable object — cross-level LR
+consistency, data currently only at `A = 2` — and it is the single highest-value
+next step for `K` via knot convolution. My judgement: build it at `A = 3` first,
+where `T`/`³He` give an immediate falsifiable test (the active sets must
+separate), rather than at the γγ base where there is no such discriminator.
