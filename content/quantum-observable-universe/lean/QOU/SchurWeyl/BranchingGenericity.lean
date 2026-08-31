@@ -112,7 +112,7 @@ theorem colLen_zero_addCell_le {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdda
   push_neg at hcon
   have hmem : ((max (μ.colLen 0) (s.1 + 1), 0) : ℕ × ℕ) ∈ addCell μ s hs :=
     mem_iff_lt_colLen.mpr hcon
-  rcases (mem_addCell s hs _).mp hmem with heq | hmemμ
+  rcases (mem_addCell μ s _ hs).mp hmem with heq | hmemμ
   · have hfst : max (μ.colLen 0) (s.1 + 1) = s.1 := congrArg Prod.fst heq
     omega
   · have := mem_iff_lt_colLen.mp hmemμ
@@ -248,7 +248,7 @@ theorem wenzlWeight_addCell_beyond_eq_zero {Q : F} {r a : ℕ} {μ : YoungDiagra
     wenzlWeight r Q (addCell μ (a, μ.rowLen a) hs) = 0 := by
   refine (wenzlWeight_eq_zero_iff hQ0 hgen hbr _).mpr ?_
   · have hmem : ((a, μ.rowLen a) : ℕ × ℕ) ∈ addCell μ (a, μ.rowLen a) hs :=
-      (mem_addCell _ hs _).mpr (Or.inl rfl)
+      (mem_addCell μ _ _ hs).mpr (Or.inl rfl)
     have hcol : a < (addCell μ (a, μ.rowLen a) hs).colLen 0 :=
       mem_iff_lt_colLen.mp
         ((addCell μ (a, μ.rowLen a) hs).up_left_mem (le_refl a) (Nat.zero_le _) hmem)
