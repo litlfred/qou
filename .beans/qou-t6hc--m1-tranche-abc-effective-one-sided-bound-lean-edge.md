@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T02:51:29Z
+updated_at: 2026-08-31T02:58:09Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -831,3 +831,51 @@ arc.
 
 **STILL OPEN.** qou-k5r5 OPEN. Next is the literature step: effective versions of
 `λ₁/√n → 2`, `D(0)/√n → 2/π`, `A_σ/n → 1/2`, now needing only ~7% accuracy.
+
+
+---
+
+## Leg A, 2026-08-31 (twelfth) — `A_σ → n/2` is a SYMMETRY, not a limit-shape fact
+
+The 7.54% margin rests entirely on `A_σ → n/2` (with only `A_σ ≤ n` it is
+0.094%), so it matters a great deal *which kind* of input that is.
+
+**FINDING 1 — under Plancherel it is exact, at every n.** Plancherel is
+conjugation-invariant (`dim λ = dim λᵀ`) and conjugation maps `c ↦ −c`, so with
+`A₊ = #{content > 0}`, `A₋ = #{content < 0}`, `A₀ = D(0)`:
+
+> **`E[A₊] = E[A₋] = (n − E[D(0)])/2` EXACTLY**, verified as exact rationals for
+> n = 2..13.
+
+Since `E[D(0)] ~ (2/π)√n`, that is `n/2` with a *relative* correction of order
+`n^{−1/2}` — **a symmetry, not an asymptotic statement**.
+
+**The c = 0 bookkeeping is the whole difficulty, and it beat me first.** Counting
+`A₊ = #{content ≥ 0}` puts the main diagonal on the positive side and breaks the
+symmetry: `E[A₊] = (n + E[D0])/2` then, off by the same amount the other way. My
+first run reported "DIFFERS" at every n for exactly this reason. **The c = 0
+diagonal has now caused three separate errors in this cluster** — the negative
+side's area sum, this, and the earlier `A_- + D(0)` control.
+
+**FINDING 2 — it does NOT transfer to the ω-measure.** `A_σ` is the area on the
+side where the *near* corner sits, and which corner is near is selected by the
+edge geometry, which correlates with the shape. Measured
+`E_ω[A_σ]/(n/2)`, exact for n = 6..18: **0.303 → 0.712**. Far from 1. That was
+the stated risk and it is what happened.
+
+**But it converges to 1 FROM BELOW** — sampled 0.731, 0.859, 0.912, 0.942, 0.963
+at n = 20/50/100/200/400, at roughly the `n^{−1/2}` rate the `O(√n)` diagonal
+correction predicts. *From below is the favourable direction*: a smaller `A`
+gives a **tighter** bound `√(a²+2A) − a`, so the 7.54% computed at `A = n/2` is
+conservative at finite n.
+
+**Not a proof.** Rigour needs either concentration of `A_σ` about its mean, or
+Jensen against the **conditional** mean given the edge geometry (the bound is
+concave in `A`, so Jensen points the right way). Neither is done.
+
+**WHAT THIS CHANGES.** The remaining analytic input is no longer "effective
+VKLS". It is **concentration of one smooth functional of a Plancherel diagram
+around a mean fixed by an exact symmetry** — a far narrower literature question,
+and the one to actually ask.
+
+**STILL OPEN.** qou-k5r5 OPEN.
