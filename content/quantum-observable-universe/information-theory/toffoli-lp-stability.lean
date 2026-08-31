@@ -551,4 +551,85 @@ theorem cone_sign_change_unexplained_by_factors :
 
 end
 
+/-! ## The cone condition inside the degree-2 subring of the amplitudes
+
+The 8×8 strand-type amplitudes generate the whole field `ℚ(q)` — four of them
+reconstruct `q` itself — so "is the cone condition a rational expression in
+them?" has no content.  The question with content restricts the **form**: is it
+in the *subring*, reachable by additions and multiplications alone?
+
+It is, at degree 2, and the identity below is the witness.  Measured alongside
+it (`computations/probes/toffoli_cone_in_entry_subring.py`): over the common
+denominator `q⁶(q²+1)⁴` the ambient space of numerators is 21-dimensional and
+the degree-2 span of the eight amplitudes has rank 15 — a proper subspace of
+**codimension 6** — so membership is a genuine coincidence rather than the
+forced answer.  Squares alone span only rank 14 and do *not* contain it, so the
+cross terms are load-bearing.
+
+**This does not revive `prop:toffoli-lp-stability`.**  That reduction is a
+*monomial* times a sign, excluded by `toffoliDiagonal_pos` /
+`toffoliFlip_eq_zero_iff` together with the sign change proved in
+`cone_sign_change_unexplained_by_factors`.  A degree-2 polynomial is a strictly
+larger class: it can vanish where no factor does, which is exactly how the cone
+acquires its extra root.  The identity therefore *explains* the refutation
+rather than weakening it. -/
+
+/-- The convention-D diagonal `M₀₀ = (q⁴+1)/(q³(q²+1)²)`. -/
+noncomputable def toffoliM00 (q : ℝ) : ℝ := (q ^ 4 + 1) / (q ^ 3 * (q ^ 2 + 1) ^ 2)
+
+/-- The convention-D diagonal `M₃₃ = q(q²+1)/4`. -/
+noncomputable def toffoliM33 (q : ℝ) : ℝ := q * (q ^ 2 + 1) / 4
+
+/-- The convention-D diagonal `M₄₄ = (q²+1)/(4q³)`. -/
+noncomputable def toffoliM44 (q : ℝ) : ℝ := (q ^ 2 + 1) / (4 * q ^ 3)
+
+/-- The LP cone coordinate itself — row 5 of `G·t`, indexed by the longest
+    Hecke normal-form word `σ₀σ₁σ₀`.  This is the single constraint of the six
+    that changes sign; `coneRow5Numerator` is its numerator. -/
+noncomputable def coneCoordRow5 (q : ℝ) : ℝ :=
+  coneRow5Numerator q / (q ^ 2 + 1) ^ 2
+
+/-- **The cone coordinate's sign is its numerator's.**  The denominator
+    `(q²+1)²` is strictly positive, so every threshold statement proved about
+    `coneRow5Numerator` transfers verbatim to the constraint itself. -/
+theorem coneCoordRow5_pos_iff (q : ℝ) :
+    0 < coneCoordRow5 q ↔ 0 < coneRow5Numerator q := by
+  have hd : (0:ℝ) < (q ^ 2 + 1) ^ 2 := by positivity
+  unfold coneCoordRow5
+  exact div_pos_iff_of_pos_right hd
+
+/-- **The cone condition is a degree-2 polynomial in four of the amplitudes.**
+
+    An exact identity over `ℚ(q)`, valid for every `q > 0`:
+
+    `(G·t)₅ = -4/9 + 5/36·M₀₀² - 20/3·M₀₀M₃₃ - 10/9·M₀₀M₄₄ + 5/18·M₀₀P₇₇`
+    `        - 28/9·M₃₃² + 20/3·M₃₃M₄₄ + 38/9·M₃₃P₇₇ + 20/9·M₄₄² + 5/36·P₇₇²`
+
+    Only `+` and `×` appear on the right: no division by an amplitude, hence no
+    reconstruction of `q`.  Note the *cross* terms — the identity is false
+    without them (the span of `{1}` together with the amplitudes and their
+    squares alone does not contain the cone coordinate).
+
+    This is *a* solution, not *the* solution: the solution space carries one
+    free parameter over this four-amplitude span.  Whether any member has a
+    Hecke-theoretic reading is open. -/
+theorem cone_eq_quadratic_in_amplitudes {q : ℝ} (hq : 0 < q) :
+    coneCoordRow5 q =
+      -4/9
+        + (5/36) * toffoliM00 q ^ 2
+        - (20/3) * (toffoliM00 q * toffoliM33 q)
+        - (10/9) * (toffoliM00 q * toffoliM44 q)
+        + (5/18) * (toffoliM00 q * toffoliDiagonal q)
+        - (28/9) * toffoliM33 q ^ 2
+        + (20/3) * (toffoliM33 q * toffoliM44 q)
+        + (38/9) * (toffoliM33 q * toffoliDiagonal q)
+        + (20/9) * toffoliM44 q ^ 2
+        + (5/36) * toffoliDiagonal q ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold coneCoordRow5 coneRow5Numerator toffoliM00 toffoliM33 toffoliM44
+    toffoliDiagonal
+  field_simp
+  ring
+
 end QOU.Information

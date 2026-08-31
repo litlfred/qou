@@ -89,5 +89,17 @@ $$
 
 Since $q_c \neq 1$, the cone's zero is accounted for by neither factor, so no reduction of the stated form holds. The numerator is irreducible over $\mathbb{Q}$ and has exactly one positive real root, matching the bisected threshold to $1.14\times10^{-46}$. Proved without the intermediate value theorem and without $q_c$'s value in `cone_sign_change_unexplained_by_factors`: across $[1/2, 9/10]$ the cone constraint changes sign while both claimed factors stay strictly positive at each endpoint.
 
+**Why the reduction had to fail: the relation exists, but at degree 2.** The eight amplitudes generate the whole field $\mathbb{Q}(q)$ — four of them reconstruct $q$ itself, via $M_{33}/M_{44} = q^4$ and $P_{7,7}/M_{00} = q^6$ — so asking whether the cone condition is *some* rational expression in them has no content. Restricting the form does. Over the common denominator $q^6(q^2+1)^4$ the ambient space of numerators is $21$-dimensional, and the degree-$2$ span of the amplitudes has rank $15$: a proper subspace of **codimension $6$**, which a generic rational function does not meet. The cone constraint is in it, and four amplitudes already suffice:
+
+$$
+  (G\vec t)_5 \;=\; -\tfrac{4}{9}
+  \;+\; \tfrac{5}{36}M_{00}^2 \;-\; \tfrac{20}{3}M_{00}M_{33} \;-\; \tfrac{10}{9}M_{00}M_{44} \;+\; \tfrac{5}{18}M_{00}P_{7,7}
+  \;-\; \tfrac{28}{9}M_{33}^2 \;+\; \tfrac{20}{3}M_{33}M_{44} \;+\; \tfrac{38}{9}M_{33}P_{7,7} \;+\; \tfrac{20}{9}M_{44}^2 \;+\; \tfrac{5}{36}P_{7,7}^2
+$$
+
+Sorry-free in `QOU.Information.cone_eq_quadratic_in_amplitudes`, with `coneCoordRow5_pos_iff` carrying the sign from the numerator to the constraint. Only $+$ and $\times$ appear: no division by an amplitude, hence no reconstruction of $q$. The *cross* terms are load-bearing — the span of the amplitudes and their squares alone has rank $14$ and does **not** contain the constraint.
+
+This sharpens the refutation rather than softening it. A monomial vanishes exactly where a factor does; a degree-$2$ polynomial can vanish where none of its terms does, and that is precisely the mechanism producing the root at $q_c$. So the published reduction was the right kind of relation in the wrong class: it needed cancellation *between* products, which a single product cannot supply. Whether any member of the (one-parameter) solution family has a Hecke-theoretic reading is open. Measurement: [`toffoli_cone_in_entry_subring.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_cone_in_entry_subring.py), 8/8.
+
 **Substrate stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).
