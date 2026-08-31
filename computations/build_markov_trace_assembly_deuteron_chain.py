@@ -239,7 +239,7 @@ def build() -> DerivationChain:
         name="Evaluate tr_M(D, q_0) at q_0",
         operation=(
             "Substitute q := q_0 = 1.10997... into the symbolic "
-            "assembly; mpmath at 50 dps gives 0.17743692421543206... "
+            "assembly; mpmath at 50 dps gives " + f"{DEUTERON_TR_M_Q0:.17f}" + "... "
             "matching the upstream atom-tr-M-q0 chain leaf "
             "(D-tr-M-q0.derivation.json target_value) and the "
             "habiro-coefficients-atomic.witness.json D entry "
@@ -272,7 +272,9 @@ def build() -> DerivationChain:
             "atomic-braid recipe for β_D (23 crossings) + the per-"
             "irrep characters χ^λ_q(β_D) via the Hoefsmit recipe "
             "(cached in chi-deuteron-h6.witness.json) via the "
-            "finite-Jones axiom into tr_M(D, q_0) ≈ 0.17744.  Trust "
+            "finite-Jones axiom into tr_M(D, q_0) ≈ " + f"{DEUTERON_TR_M_Q0:.5f}" + ".  "
+            "STALE-NUMBER FIX 2026-08-31 (bean qou-1ucq): this description carried the stale 0.17744, a value from an era before canon moved to convention D at the proton pin. It is regenerated from TR_M_AT_Q0 rather than restated, so it cannot drift from the leaf again. "
+            "Trust "
             "profile is {axiom: 1, mathlib-cited: 0, derived: 3, "
             "script-cited: 1, computational: 1} — closes the per-λ "
             "Wedderburn-weight frontier for n=6 (all 11 weights now "
