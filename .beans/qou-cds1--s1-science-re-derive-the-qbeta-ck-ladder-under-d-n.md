@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T19:08:29Z
+updated_at: 2026-08-31T19:28:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4834,3 +4834,89 @@ as `cos(affine)`. Removing the cosine removes the tower — and with it the
 untouched by any of this and remains the open problem — this step says only that
 the tension has ONE form rather than two, and that the `c_k` are not where it
 lives.
+
+
+## Step 17 (2026-08-31) — the cosine is unfalsifiable. Phase yes, cosine no.
+
+Probe `qbeta-cosine-parametrisation-justification` (7/7), Lean
+`QOU/QBeta/CosineParametrisationUnfalsifiable.lean` (3 theorems, sorry-free,
+axioms `[propext, Classical.choice, Quot.sound]`), write-up
+`docs/audits/2026-08-31-qbeta-cosine-parametrisation-justification.md`. Commit
+`b19a6ede64`.
+
+### What was already closed, and I nearly re-derived it
+
+`QOU/QBeta/BraidImageEigenphaseExclusion.lean` (this bean, already landed) leaves
+three ways a transfer matrix with spectrum `{e^{±iα}}` could earn the cosine and
+closes two: `EigenphaseCarrier` is **vacuous**, the braid-image branch is
+**excluded in every convention**, and "M arbitrary" is **circular**. Only a
+**KZ/Kohno–Drinfeld holonomy** survives, and nothing supplies one. Read it before
+re-opening this.
+
+### The quantitative half (proton pin, convention C, 50 dps)
+
+| quantity | value | in σ of `Q_β/Q_A` |
+|---|---|---|
+| 1σ on measured `Q_β/Q_A` | 7.784e-7 | 1 |
+| `cos(θ)` explains, of the 0.167 % deviation | **95.599 %** | — |
+| …without the `−u/2` offset | 81.756 % | — |
+| `\|cos θ − (1 − θ²/2)\|` — the cosine's **own signature** | 4.274e-7 | **0.549** |
+| residual the `c_k` tower absorbs | 7.382e-5 | **94.836** |
+| **ratio** residual / signature | | **172.7×** (D: **4039×**) |
+
+**The phase does real work** — 95.6 % of the deviation, zero free parameters, and
+the `−u/2` offset is part of it. **The cosine does none the data can see**: its
+entire content beyond a parabola is *half a standard deviation*, against a
+*ninety-five sigma* residual it fails to explain. Any function agreeing to second
+order fits identically and leaves the same tower. Under D the cosine explains only
+59.8 %.
+
+**And it discards information.** `cos` is even, so `z = 0.4993` and `z' = 1.5822`
+share `cos = 0.998399` while their exact corrections are **0.4409** and
+**1.6501**. The exact correction is affine in `z` hence injective — the algebraic
+form of the "square-root branch point 0.062 % above q₀".
+
+### Warranted vs not
+
+**Warranted:** the correction is `1 − θ²/2` within the experimental resolution.
+**Not warranted by anything measured:** that it is a *cosine*; that `θ` is an
+*angle*; that a rotation or unitary is behind it; or that the residual should be
+expanded **in powers of `u`** at all. The anchor constrains exactly **one**
+number (7.382e-5) — so `c₂ = −1` is an assumption and `c₃` is what is left after
+it. **One measurement cannot determine a series.**
+
+### 🛑 Correction to Step 16 — mine
+
+*"The two decay functionals are one functional in two coordinates"* and *"the
+`c_k` are the affine-vs-cosine reparametrisation residual"* are **overstated**.
+The identity `Π = affine(z)/cos(θ(z))` needs both sides at the **same `z`**; the
+corpus's ladder **fixes** `z = z_conv` and lets the `c_k` absorb, while the trace
+route **frees** `z`. At `z_C`:
+
+    affine(z_C)           = 0.4409      <- 55.84 % from the data
+    corpus ladder product = 0.999926
+    Step 16 printed         0.441582    <- affine/cos, which the ladder is not
+
+They are two **allocations** of one residual with different free parameters, not
+one functional. **Surviving Step 16 unchanged:** the bridge `𝔈₀·(−ε(Δ_S)) ≡ Q_A`;
+both corrections `= 1` at `z = 1` (so leading-order agreement is automatic and
+uninformative); every protium finding (`Δ_S` atomic, 235×; protium element
+refuted); and `F_REQUIRED_TRM = (Q_β/Q_A)/affine(z_D)` to 3.6e-9 — hence Step 15's
+withdrawal of "K off by 2.2656×" stands too. Banner added to the Step-16 audit.
+
+### Where the bean's primary item now stands
+
+*Re-derive the `c_k` ladder under D* has **three** independent problems, none of
+them "the algebra is hard":
+
+1. **No anchor** (Step 15) — `c₂ = −1` is 1.6 σ under C, excluded at 773 σ under D.
+2. **No derivation for the parametrisation** (`BraidImageEigenphaseExclusion` +
+   Step 17) — two of three branches closed, and the survivor is empirically
+   indistinguishable from a parabola.
+3. **Under-determination** — one measured number, a series of coefficients.
+
+**Recommended next, and it is judgement:** the productive direction is **branch
+3** — supply a KZ/Kohno–Drinfeld connection whose holonomy *is* the phase. That
+would justify the cosine independently of the anchor and give the tower a reason
+to exist. The alternative is to state the correction as what the data supports,
+`1 − θ²/2`, and retire the tower. Both are owner calls; neither is done here.
