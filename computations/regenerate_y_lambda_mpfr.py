@@ -98,6 +98,11 @@ def q0_for(anchor: str) -> str:
     raise SystemExit(f"unknown anchor {anchor!r}: expected 'proton' or 'ideal'")
 
 
+# Serialisation precision of these tables (the `dps` field each n-table
+# records). Used as the zero-snap floor in `evaluate_y_at_q0`.
+_OUTPUT_DPS = 50
+
+
 def evaluate_y_at_q0(partition, q0_str_50dps: str) -> str:
     """Evaluate y_λ at q_0 to 50 dps, from the LIVE formula.
 
@@ -123,6 +128,35 @@ def evaluate_y_at_q0(partition, q0_str_50dps: str) -> str:
         val = y_lambda_wenzl_bridge_numeric(
             list(partition), mp.mpf(q0_str_50dps), dps=mp.mp.dps
         )
+    # Snap sub-precision residue to an EXACT zero (bean `qou-sal4`).
+    #
+    # Under convention D the Wenzl level is r = 2, so y_λ vanishes IDENTICALLY
+    # for every partition with three or more rows, at every q. The closed form
+    # reaches that zero by cancellation, and at some working precisions the
+    # cancellation is not exact — it leaves roundoff at the precision floor,
+    # which then gets serialised with 50 significant digits and reads as data.
+    #
+    # Measured for λ = (4,1,1) at the proton pin:
+    #
+    #     dps= 50   exactly 0
+    #     dps= 70   2.188e-72        <- what the committed table records
+    #     dps= 90  -1.483e-92        <- SIGN FLIPS
+    #     dps=110   exactly 0
+    #     dps=130   exactly 0
+    #
+    # Magnitude tracking 10^-dps with an unstable sign is roundoff, not a
+    # value. (The muon pin cancels exactly at the same precisions, which is why
+    # the two anchors' tables disagreed on entries that are both mathematically
+    # zero — and why `iterative-lp-dual-h6-deuteron` gained 3 raw float64 when
+    # a producer switched from the muon table to the proton one.)
+    #
+    # The floor is the OUTPUT precision, not a tuned epsilon: every real entry
+    # in these tables is O(1), so anything below 10^-output_dps cannot be
+    # represented against its neighbours anyway. A genuinely small value above
+    # that floor is untouched.
+    _floor = mp.mpf(10) ** (-_OUTPUT_DPS)
+    if val != 0 and mp.fabs(val) < _floor:
+        val = mp.mpf(0)
     return mp.nstr(val, mp.mp.dps, strip_zeros=False)
 
 

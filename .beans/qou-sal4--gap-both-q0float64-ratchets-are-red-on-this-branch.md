@@ -134,3 +134,60 @@ regenerated was committed.
 
 Do not widen `raw-float64-baseline.json` to clear (2) — the count is a true
 report of a stale table.
+
+## 2026-08-31 — 🛑 CORRECTION: the proton table is NOT stale. It is roundoff.
+
+Two things I asserted above are wrong and are withdrawn.
+
+**(1) "The proton table is stale."** It is not; it reproduces exactly. My
+spot-check ran `y_lambda_wenzl_bridge_numeric` at **dps=50** while the table is
+built at the script's compute precision, **dps=70**. At 70 the live closed form
+returns `2.188243022053045885…e-72` — the committed value, to every digit. I
+compared two different precisions and called the difference staleness.
+
+**(2) "The two-step regeneration does not reproduce the committed table (1285
+entries move)."** Same error underneath: the comparison was against values I
+believed should be exact zeros because a dps=50 probe said so.
+
+### What the ≥3-row entries actually are
+
+Under convention D the Wenzl level is r = 2, so y_λ vanishes IDENTICALLY for
+≥3 rows, at every q. The closed form reaches that zero by cancellation, and the
+cancellation is not exact at every working precision. For λ = (4,1,1) at the
+proton pin:
+
+    dps= 50   exactly 0
+    dps= 70   2.188e-72      <- what the committed table records
+    dps= 90  -1.483e-92      <- SIGN FLIPS
+    dps=110   exactly 0
+    dps=130   exactly 0
+
+Magnitude tracking 10^-dps with an unstable sign is **roundoff**, not a value.
+The muon pin happens to cancel exactly at these precisions, which is the whole
+reason the two anchors' tables disagreed on entries that are both
+mathematically zero — and why `iterative-lp-dual-h6-deuteron` gained 3 raw
+float64 when `ac6310b31` correctly switched it from the muon table to the
+proton one. Nothing was stale; one anchor's arithmetic was luckier.
+
+### Fixed at the producer
+
+`regenerate_y_lambda_mpfr.evaluate_y_at_q0` now snaps residue below the OUTPUT
+precision to an exact zero. The floor is `10^-_OUTPUT_DPS` (1e-50), not a tuned
+epsilon: every real entry in these tables is O(1), so anything below the
+serialisation floor cannot be represented against its neighbours anyway, while a
+genuinely small value above it is untouched. Verified:
+
+    [4,1,1] proton  ->  0.0          [4,1,1] muon  ->  0.0     (identity honoured)
+    [5,1]   proton  ->  0.0789529624759266789877…  (real, full precision, pin-specific)
+    [6]     proton  ->  0.1153242249020661661103…  (real, full precision, pin-specific)
+
+    pytest tools/qou-substrate/tests/ tests/  ->  145 passed
+
+### Still open — deliberately
+
+The committed proton table is NOT regenerated here. Doing so is the two-step
+pipeline (`regenerate_y_lambda_mpfr.py --anchor proton`, then
+`y_lambda_tower_infra.py 18`), it rewrites a table with four consumers, and it
+is the step that closes the float64 96→99. It deserves its own reviewed change
+rather than being tacked onto a diagnosis — especially since the last time I
+regenerated it I had to restore from a snapshot.
