@@ -1,0 +1,180 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-31T04:23:31.451686+00:00",
+  "commitSha": "35ed2a8cda67fcf9574ae3505d5ddd2dec518397",
+  "assertions": [
+    {
+      "name": "the_two_anchors_share_Q_codata_EXACTLY",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "slope_is_STABLE_across_12_orders_of_step_size_frame_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "slope_is_STABLE_across_12_orders_of_step_size_frame_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "independent_two_anchor_secant_reproduces_it_frame_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "independent_two_anchor_secant_reproduces_it_frame_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_conventions_require_the_SAME_slope_to_within_one_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "BOTH_admitted_candidates_miss_the_required_value_by_MORE_than_the_gap_between_them",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_required_slope_misses_cos_delta_over_2_by_three_orders_WITH_THE_WRONG_SIGN",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "local_slope_is_hundreds_of_times_the_mean_slope_and_OPPOSITE_IN_SIGN",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-n1-constant-two-anchor-filter",
+  "scriptFile": "qbeta_n1_constant_two_anchor_filter_probe.py",
+  "scriptHash": "41d44b642bcc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py"
+  },
+  "description": "Two-anchor filter on the N=1 factor's free constant K(delta): neither admitted candidate reaches the required VALUE (281380 / 221686 ppb, both far exceeding the 59694 ppb gap BETWEEN them), the required slope +6.2400 misses cos(delta/2)'s by -1142x, and K(0)=1 plus the value force a mean slope -485x the local one. Convention-independent.",
+  "data": {
+    "precondition": {
+      "anchors_share_Q_codata": true,
+      "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
+      "why": "otherwise the slope is a confound between two experimental values rather than a q-derivative"
+    },
+    "delta_0": "0.0218531042662609947010096678386941548841069803567530545179738",
+    "value_row": {
+      "K_required_D": "0.999718619651102367988998100403677474262427066435467162723006",
+      "K_required_C": "1.00039888220937269101490244659021095654371718501623812428743",
+      "candidate_K_eq_1": {
+        "value": "1",
+        "miss_ppb": "281380.348897632011001899596322525737572933564532837276993941",
+        "x_target": "36088.2838139838413494805176763531791167030350818054735146775"
+      },
+      "candidate_K_eq_cos_half_delta": {
+        "value": "0.999940305823149569797364925176386271848418676532980430572210",
+        "miss_ppb": "221686.172047201808366824772708797585991610097513267849203682",
+        "x_target": "28432.2395853792238510741019249451822485071306288659547522998"
+      },
+      "gap_between_candidates_ppb": "59694.1768504302026350748236137281515813234670195694277902590",
+      "gap_x_target": "7656.04422860461749840641575140799686819590445293951876237770",
+      "note": "entry 12 measured the gap; the residual after choosing either candidate is larger than the gap."
+    },
+    "slope_row": {
+      "required_D": "6.23995017529285949849358859780230254152292595357842921318455",
+      "required_C": "6.29341806888667714528536583711131447127950877319098749868501",
+      "candidate_K_eq_1": "0",
+      "candidate_K_eq_cos_half_delta": "-0.00546316735754339112011257969457363309815654131619044593036438",
+      "ratio_required_over_cos": "-1142.18543326828676475664886079312068875621590955580778446601",
+      "convention_spread_rel": "0.00856864110959159042542366127172582287141683757778252781962247",
+      "step_size_sweep": {
+        "rel_steps": [
+          "1e-8",
+          "1e-9",
+          "1e-10",
+          "1e-12",
+          "1e-14",
+          "1e-16",
+          "1e-20"
+        ],
+        "D": [
+          "6.23995017529286247012241353587623246158458634270499521428794",
+          "6.23995017529285952820987684424111410098802088508859128837492",
+          "6.23995017529285949879075147732477811890563893122737616215869",
+          "6.23995017529285949849361831111892312702211277068291580716078",
+          "6.23995017529285949849358859780230254152292595357842921318455",
+          "6.23995017529285949849358859483097087946437603671567196572548",
+          "6.23995017529285949849358859483067371658487002976574348546181"
+        ],
+        "C": [
+          "6.29341806888668045362267035869009833210625695654020065703984",
+          "6.29341806888667717836873887905183126982915487179114066555933",
+          "6.29341806888667714561619956425546570607451079659756132556139",
+          "6.29341806888667714528539891717602241560855364094079120171398",
+          "6.29341806888667714528536583711131447127950877319098749868501",
+          "6.29341806888667714528536583380330800048507586969176248755763",
+          "6.29341806888667714528536583380297716675793430087053215206637"
+        ]
+      }
+    },
+    "candidate_free_consistency": {
+      "mean_slope_forced_by_K0_eq_1": "-0.0128759898579743245471006655393177433956097481069719094828481",
+      "local_slope": "6.23995017529285949849358859780230254152292595357842921318455",
+      "ratio_local_over_mean": "-484.619065727855461665105298957895680371245458020345489934896"
+    },
+    "q0_anchor": {
+      "pin": "physical_proton",
+      "second_anchor": "ideal_muon, used ONLY as the second point of the q-derivative; both share Q_codata exactly, so no experimental value is straddled",
+      "registered_in": "computations/q0_anchor_manifest.json (physical_proton)"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "c_k_produced": false,
+      "K_determined": false,
+      "q_beta_ppb": 1279,
+      "is_a_fit": false,
+      "attribution_caveat": "alpha is held at the value THE FORM gives and is not itself derived, so a wrong alpha is absorbed into K_required. This is a form-level negative on the PAIR (alpha, K), not a determination of K."
+    }
+  }
+}
