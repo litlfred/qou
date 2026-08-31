@@ -12,7 +12,7 @@ lateral sums $\mathcal{L}^{\theta^\pm}\tilde f$ disagree by exponentially
 small terms; the median sum $\mathcal{L}^{\mathrm{med}}\tilde f$ is the
 unique real single-valued average. On the surreal side, the same
 $\tilde f$ is a transseries in the sense of Berarducci–Mantova
-[@berarducci-mantova2018], hence evaluates at a positive infinitesimal
+\cite{berarducci-mantova2018}, hence evaluates at a positive infinitesimal
 (or, for asymptotic-in-$n$ series, at $n = \omega$) to a finite element
 of $\mathbf{No}$, and $\mathrm{st}$ projects that element to
 $\mathbb{R}$. Selecting the real single-valued representative is

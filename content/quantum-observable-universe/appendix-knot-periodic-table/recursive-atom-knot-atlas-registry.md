@@ -54,7 +54,7 @@ Word: $(\sigma_1 \sigma_2^{-1})^3$. Closure: three pairwise-unlinked circles tha
 
 ### $\widehat{(\sigma_1 \sigma_2^{-1})^2}$ in $B_3$ — **figure-eight $4_1$**
 
-Word: $(\sigma_1 \sigma_2^{-1})^2$. Closure: the amphichiral **figure-eight knot**. Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \cdot \pi$ (smallest hyperbolic volume). Used for: the **Higgs field** (mass mechanism).
+Word: $(\sigma_1 \sigma_2^{-1})^2$. Closure: the amphichiral **figure-eight knot**. Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6}$ (smallest hyperbolic volume). Used for: the **Higgs field** (mass mechanism).
 
 ### $\widehat{\sigma_1^2}$ in $B_2$ — **Hopf link $L_H$**
 
