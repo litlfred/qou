@@ -872,6 +872,55 @@ done here because it also retires the block's `.qa.json` criteria keyed on
 `source_hashes.lean`, which wants its own validate-and-sweep cycle rather than
 riding on a Lean-only verification.
 
+### 🛑 The closing finding, and it is one defect wearing three faces
+
+Three of the last findings are **the same structural problem**: a content-block
+sibling `.lean` carrying a stale class while its **library twin already has the
+honest version** — and per AGENTS.md §0a the sibling *shadows* the library
+declaration that the block's own `.ts` `lean.ref` names, because resolution
+checks the sibling first.
+
+| finding | the sibling has | the library twin has |
+|---|---|---|
+| `ConfinementPhaseStratificationContext` | `opaque confined`/`mu`, class fields = the conclusions, projected | `HasRealAxisData` + `HasSDPRegularity` carrying *hypotheses*, and `phase_locus_open` **derives** |
+| `DeltaTauMSurrogateTaylorCoeff2` | the class + `[ctx]`-projection, docstring saying "future work" | `delta_tau_M_surrogate_taylor_coeff_2` **PROVED sorry-free** |
+| `markov_parameter` (convention C) | the same convention-C def | the same convention-C def — here the twins agree, and both are actionable |
+
+**Measured, not read:** `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean` compiles
+lean-direct **exit 0, 0 errors, 0 `sorry`**, and line 468 is
+
+```lean
+theorem delta_tau_M_surrogate_taylor_coeff_2 :
+    deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 := by
+  have h_deriv2_eq : deriv (deriv delta_tau_M_surrogate) 1 = 5 / 3 := by
+    have h_deriv2 : HasDerivAt (deriv delta_tau_M_surrogate) (5 / 3) 1 :=
+      delta_tau_M_surrogate_deriv_hasDerivAt_one.congr_of_eventuallyEq
+        delta_tau_M_surrogate_deriv_eventuallyEq
+    exact h_deriv2.deriv
+  linarith
+```
+
+**🛑 And I rebuilt it before checking.** Having established the claim true in
+exact rational arithmetic, I went straight to Lean and reproduced the whole
+chain — polynomial `HasDerivAt`, the `EventuallyEq` step, the quotient rule
+twice — arriving independently at `deriv (deriv f) 1 / 2 = 5/6`. It is a
+faithful independent confirmation of the corpus's proof and it was **entirely
+redundant**, because I skipped the corpus-grep checklist that exists for exactly
+this. What misled me is worth naming: the **sibling's** docstring says *"We state
+this as an axiom for now … and propose the second-derivative proof as future
+work."* That sentence is stale. The library twin's docstring is current. Reading
+the file the ledger entry points at is not the same as grepping the corpus, and
+this arc has now produced two instances of that (the other being a sibling bean
+treated as a primary source).
+
+**So the systematic drain step is: before adjudicating a content-block sibling,
+look for its library twin.** Three of the final findings dissolve on that step
+alone, and the fix is not Lean work at all — it is deleting siblings so the refs
+resolve to the library declarations they already name. That is a content-pipeline
+change (each block's `.qa.json` carries criteria keyed on `source_hashes.lean`)
+and wants its own validate-and-sweep cycle, so it is recorded here rather than
+done inside a Lean-only verification pass.
+
 ## Adjacent observation, not a finding
 
 `observations/terminal-resolution-proof.lean` defines
