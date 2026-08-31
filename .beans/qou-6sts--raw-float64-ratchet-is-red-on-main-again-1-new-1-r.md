@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-31T03:49:09Z
-updated_at: 2026-08-31T03:49:09Z
+updated_at: 2026-08-31T07:32:06Z
 ---
 
 MEASURED on `main` `83f5e6482e`, 2026-08-31T03:5xZ, by running
@@ -61,3 +61,59 @@ red one line further down under a DIFFERENT phrase (`NEW witnesses carrying raw
 float64`). I misread it that way for one turn. The gate to read is the `RED:`
 summary line, or the per-audit witness's `new_not_baselined` / `regressed`
 fields -- never a phrase match on one ratchet's wording.
+
+
+---
+
+## UPDATE 2026-08-31T07:3xZ — a THIRD offender, and it landed after this bean was written
+
+Re-measured on current `main` (`e8f5a64a81`), same command:
+
+    new_not_baselined       2      (this bean recorded 1)
+    regressed               1
+
+The two NEW are `probes/arc-count-diagnostic-degeneracy` (4 fields, already
+named here) and:
+
+    computations/probes/bpp-higher-a-sparse.witness.json     (2 fields)
+    computedAt 2026-08-31T03:45:36Z
+    landed in 241985c108 "research(qou-gcmn) ANSWERED: B_pp DECLINES with A"
+    -> owning arc is qou-gcmn
+
+This bean's measurement was taken at `83f5e6482e` at 03:49Z, four minutes
+after that witness was written, so the two do not conflict — it simply was
+not on the tip yet. Which is this bean's own "re-measure on the tip" trap
+firing on the bean itself, four minutes wide.
+
+**The disposition stands unchanged**: hand it to `qou-gcmn`, fix at the
+producer, do not baseline it. Close this bean when all three drain.
+
+## A THIRD TRAP, and it is worse than the two recorded above
+
+Both traps in this bean are about **misreading the output**. There is a
+third, one level down: **the bare invocation cannot fail at all.**
+
+    computations/witness_raw_float64_audit.py:1027
+        return 1 if (args.strict and (new_files or grew)) else 0
+
+Measured just now on the same tree, same offenders:
+
+| invocation | exit |
+|---|---|
+| `python3 computations/witness_raw_float64_audit.py` | **0** |
+| `python3 computations/witness_raw_float64_audit.py --strict` | **1** |
+
+So `$?` is not a signal without the flag. The documented paths are fine —
+`scripts/precision-gates.sh` passes `--strict`, and so does
+`witness-staleness.yml` — but a hand-run of the bare form exits 0 over an
+arbitrarily red corpus.
+
+**I did exactly that, on six PRs.** Every `qou-srvu` slice verification I ran
+this session (#6241, #6245, #6250, #6255, #6259) plus the `qou-wc8f`
+follow-through (#6385) used the bare form and reported the gate as passed.
+The *counts* I quoted were read correctly off stdout and the conclusions
+happen to hold — `NEW dirty 0` really was 0 on those branches — but I was
+reading a number and calling it a gate, which is precisely the distinction
+this bean's second trap is about. Recorded here rather than in a bean of its
+own because it belongs to the same family: three ways to believe this ratchet
+is green when it is not, and only one of them involves the corpus at all.
