@@ -1,0 +1,305 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1909.06797v5",
+ "source": {
+  "file": "1909.06797v5.pdf",
+  "sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+  "bytes": 452314,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1909.06797",
+   "version": "5",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Apr 2021"
+  },
+  "doi": null,
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "authors_raw": "Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc",
+  "title_lines": [
+   "Quantum Mechanics of Plancherel Growth"
+  ],
+  "abstract": "Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also o \ufb00ers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to di\ufb00erent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space. Gaussian \ufb02uctuations of large N Young diagrams are also mapped to quantum (large N) \ufb02uctuations of the coherent states.",
+  "docinfo": {
+   "Author": "Arghya Chattopadhyay; Suvankar Dutta; Debangshu Mukherjee; Neetu; ",
+   "CreationDate": "D:20210415010752Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": "Quantum Mechanics of Plancherel Growth"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Review 1 : Droplet description of unitary matrix models",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The large N droplets",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "Review 2 : Plancherel Growth of Young diagrams",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Universal Diagram and Automodel",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Fluctuations of automodel diagrams",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Partition Function for Young lattice",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Large N solutions and automodel diagrams",
+   "page": 16,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "A connection with automodel",
+   "page": 18,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "The Hilbert space for Plancherel growth",
+   "page": 19,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Droplet quantisation",
+   "page": 19,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 25,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix  A Analysing Unitary Matrix Models",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  A.1 Eigenvalue analysis",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  A.2 Young diagram analysis",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  A.3 Finding the connection between two pictures",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  B Spectral curve",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  C Asymmetric solutions",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 10416,
+   "n_words": 1876
+  },
+  {
+   "id": "sec-001-2-review-1-droplet-description-of-unitary-matrix",
+   "number": "2",
+   "title": "Review 1 : Droplet description of unitary matrix models",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3221,
+   "n_words": 576
+  },
+  {
+   "id": "sec-002-21-the-large-n-droplets",
+   "number": "2.1",
+   "title": "The large N droplets",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6717,
+   "n_words": 1207
+  },
+  {
+   "id": "sec-003-31-the-universal-diagram-and-automodel",
+   "number": "3.1",
+   "title": "The Universal Diagram and Automodel",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3409,
+   "n_words": 640
+  },
+  {
+   "id": "sec-004-32-fluctuations-of-automodel-diagrams",
+   "number": "3.2",
+   "title": "Fluctuations of automodel diagrams",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2981,
+   "n_words": 520
+  },
+  {
+   "id": "sec-005-41-a-connection-between-young-lattice-and-gross",
+   "number": "4.1",
+   "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 2346,
+   "n_words": 429
+  },
+  {
+   "id": "sec-006-5-large-n-analysis-of-partition-function-an-alte",
+   "number": "5",
+   "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2472,
+   "n_words": 508
+  },
+  {
+   "id": "sec-007-51-large-n-solutions-and-automodel-diagrams",
+   "number": "5.1",
+   "title": "Large N solutions and automodel diagrams",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3558,
+   "n_words": 669
+  },
+  {
+   "id": "sec-008-52-a-connection-with-automodel",
+   "number": "5.2",
+   "title": "A connection with automodel",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1611,
+   "n_words": 312
+  },
+  {
+   "id": "sec-009-6-the-hilbert-space-for-plancherel-growth",
+   "number": "6",
+   "title": "The Hilbert space for Plancherel growth",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 386,
+   "n_words": 69
+  },
+  {
+   "id": "sec-010-61-droplet-quantisation",
+   "number": "6.1",
+   "title": "Droplet quantisation",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 25,
+   "n_chars": 10006,
+   "n_words": 1861
+  },
+  {
+   "id": "sec-011-7-conclusion",
+   "number": "7",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 34,
+   "n_chars": 22095,
+   "n_words": 3818
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 12,
+  "chars_total": 69218
+ }
+}

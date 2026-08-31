@@ -1,0 +1,189 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1804.03926v3",
+ "source": {
+  "file": "1804.03926v3.pdf",
+  "sha256": "8ad8e2d5a8881a5bcc890a08f8ec95627c0be9ef5d82e9731f9f57a1dcba0746",
+  "bytes": 405672,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1804.03926",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "23 Nov 2018"
+  },
+  "doi": null,
+  "title": "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one",
+  "authors_raw": "Adrien Saumard",
+  "title_lines": [
+   "Weighted Poincar\u00e9 inequalities, concentration inequalities and tail",
+   "bounds related to Stein kernels in dimension one"
+  ],
+  "abstract": "We investigate links between the so-called Stein\u2019s density approach indimension one and some functional and concentration inequalities. We show that measures having a \ufb01nite \ufb01rst moment and a density with connected support satisfy a weighted Poincar\u00b4 einequality with the weight being the Stein kernel, that indeed exists and is unique in this case. Furthe rmore, we prove weighted log-Sobolev and asymmetric Brascamp-Lieb type inequalities related to Stein kernels. We also show that existence of a uniformly bounded Stein kernel is su\ufb03cient to ensure a positive Cheeger isoperimetric constant. Then we derive new concentration inequalit ies. In particular, we prove generalized Mills\u2019 type inequalities when a Stein kernel is uniformly boun ded and sub-gamma concentration for Lipschitz functions of a variable with a sub-linear Stein kernel. When some exponential moments are \ufb01nite, a general concentration inequalit y is then expressed in terms of Legendre-Fenchel transform of the Laplace transform of the Stein kernel. Along the way, we prove a general lemma for bounding the Laplace transform of a random variable, that should be useful in many other contexts when deriving concentration inequalities. Finally, we provide density and tail formulas as well as tail bounds, generalizing previous results that w here obtained in the context of Malliavin calculus.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181125210852-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "On covariance identities and the Stein kernel",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Some weighted functional inequalities",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Weighted Poincar\u00e9-type inequality",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Links with Muckenhoupt-type criteria",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Asymmetric Brascamp-Lieb-type inequalities",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Isoperimetric constant",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Concentration inequalities",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Tail bounds",
+   "page": 28,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7679,
+   "n_words": 1284
+  },
+  {
+   "id": "sec-001-2-on-covariance-identities-and-the-stein-kernel",
+   "number": "2",
+   "title": "On covariance identities and the Stein kernel",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 12450,
+   "n_words": 2613
+  },
+  {
+   "id": "sec-002-3-some-weighted-functional-inequalities",
+   "number": "3",
+   "title": "Some weighted functional inequalities",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 18029,
+   "n_words": 3441
+  },
+  {
+   "id": "sec-003-32-links-with-muckenhoupt-type-criteria",
+   "number": "3.2",
+   "title": "Links with Muckenhoupt-type criteria",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 10944,
+   "n_words": 2467
+  },
+  {
+   "id": "sec-004-33-asymmetric-brascamp-lieb-type-inequalities",
+   "number": "3.3",
+   "title": "Asymmetric Brascamp-Lieb-type inequalities",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2199,
+   "n_words": 487
+  },
+  {
+   "id": "sec-005-34-isoperimetric-constant",
+   "number": "3.4",
+   "title": "Isoperimetric constant",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 4045,
+   "n_words": 816
+  },
+  {
+   "id": "sec-006-4-concentration-inequalities",
+   "number": "4",
+   "title": "Concentration inequalities",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 28,
+   "n_chars": 14308,
+   "n_words": 3108
+  },
+  {
+   "id": "sec-007-5-tail-bounds",
+   "number": "5",
+   "title": "Tail bounds",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 34,
+   "n_chars": 15461,
+   "n_words": 2696
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 8,
+  "chars_total": 85115
+ }
+}
