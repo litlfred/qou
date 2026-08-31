@@ -531,10 +531,34 @@ proved should not stay prose.
 
 ## On the mass/binding magnitude gaps — this machinery does not close them
 
-Asked directly, so recorded directly. The dominant budget (+2.89 % → +3.86 % across
-`m_p`, `m_n`, ⁴He, ¹²C, ⁵⁶Fe) is the per-knot `VolDensity(K, q₀)` wire-up — 64 of 65
-atom-touching scripts call `vol_density_borromean(q)` uniformly. That is compute
-wiring, not analysis, and none of the convexity, growth-rate or non-cancellation work
-touches it. The binding scale rides on the VC for **8₁₁**, which stays open (see
+Asked directly, so recorded directly. None of the convexity, growth-rate or
+non-cancellation work touches the mass/binding magnitudes.
+
+**But my stated reason was wrong, and I checked it only after being asked to scope the
+work (2026-08-31).** I wrote that the dominant budget (+2.89 % → +3.86 %) *is* the
+per-knot `VolDensity(K, q₀)` wire-up, "64 of 65 atom-touching scripts". That is a
+2026-06-02 audit figure, superseded three times over:
+
+* **Absolute mass is EXCISED** — owner ruling 2026-08-11, "NO ABSOLUTE MASS — excise
+  the notion". There is no absolute-mass magnitude for a wire-up to move.
+* **The swap makes it worse.** `computations/canonical_mass.py` records `per_block`
+  → **406 MeV (−57 %)** against λ_A's 966 (+2.96 %, itself a fit), because both apply
+  `1/ℏ_q²` to the wrong (Borromean) volume. `per_block` is binding-ratios-only by the
+  2026-06-24 ruling; absolute mass routes through the `canonical_mass` facade.
+* **The budget is the λ_A fit artifact**, refuted 2026-06-24 — not a wire-up signature.
+
+And the count is not live: measured 2026-08-31, `vol_density_borromean` appears in
+**8** files, of which two are probes, two are `_li_2_q_util` plus its vendored mirror,
+and the `mass_table_comprehensive.py` hit is a *reporting field*, not a mass
+computation. Bean `0voz` (the migration) is completed; milestone `4f2d` closed and
+re-verified in PR #4822.
+
+**How I got it wrong is the reusable part.** `docs/canonical-derivation-cheat-sheet.md`
+is the PRIMARY coordination document and it **contradicts itself**: its §5 backlog row 1
+and manager view still present the +2.89 % budget as a live gap to close, while its
+step-9a row already says the same figure is a refuted fit artifact and its item 1 of the
+queue already says "binding-side only". I read the stale half. Both halves are now
+banner-marked — the doc had the correction in it and the correction was not where a
+reader looking for open work would land. The binding scale rides on the VC for **8₁₁**, which stays open (see
 `qou-b5h9`); `5₂` is not in that chain. So: conditionality stated more sharply, numbers
 unmoved.
