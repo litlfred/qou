@@ -1,11 +1,11 @@
 ---
 # qou-zqfj
 title: lake-cache.sh seed --push cannot complete for the qou package
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-30T18:55:29Z
-updated_at: 2026-08-30T18:55:29Z
+updated_at: 2026-08-31T03:03:20Z
 ---
 
 Measured 2026-08-30 while reseeding `lake-cache/qou-v4-24-0`. The service script works for small
@@ -46,3 +46,32 @@ default path, since the three-copy approach has no advantage.
 LEFTOVER: `lake-cache/staging-test` still exists on origin -- ref deletes were also hitting
 disconnects. Harmless (it is the parent of the published commit, hence reachable anyway) but it
 shows up in `lake-cache.sh list` and should be pruned.
+
+## Summary of Changes -- and a CORRECTION to this bean's own claim
+
+PARTLY FIXED, and this bean was PARTLY WRONG.
+
+WRONG: item 2 said `seed --push` sends the whole 2.34 GB in one push. That has been FALSE ON MAIN
+since 428ca5c (2026-08-23), "batch seed push under GitHub's 2 GiB pack limit", which added
+LAKE_CACHE_SEED_BATCH (15 parts ~ 1.35 GiB per push). I hit the single-push failure only because
+this session's folio-assistant checkout was pinned at b987547374, which PREDATES that fix. I
+rediscovered a solved problem and filed it as current. Checked with `git log -S` before writing
+this, which is what I should have done before filing.
+
+RIGHT, and now fixed: the DISK triple-copy. The --push loop `cp`s each part from $tmp into the
+worktree, so the tarball is on disk twice for the whole loop, plus the worktree checkout, plus the
+objects. Measured: 2.34 + 1.3 + 2.34 + 2.34 ~= 8.2 GB peak against 7.3 GB free. Changed to `mv`
+(folio-assistant PR #159): peak ~6.0 GB, which fits. Dry path untouched.
+
+NOT TAKEN: streaming via `split --filter='git hash-object -w --stdin'` (~2.3 GB peak, verified
+end-to-end against this cache). Larger change to a CI-critical path I cannot exercise from here;
+recorded in the comment and pointing at scripts/lake-cache-stage-push.sh.
+
+SEPARATE DEFECT I INTRODUCED AND FIXED: I published the cache with subject
+"(6172 oleans, 2443 own, 99% traced)". `branch_counts` parses `(<n> oleans, <m> own)` with `own)`
+closing the paren, so the trailing text made it return EMPTY -- and `would_shrink` treats an
+unparseable subject as "no recorded counts", i.e. IT SILENTLY DISABLES THE ANTI-SHRINK GUARD. Any
+later partial seed could then have replaced a complete cache unchallenged. Corrected on
+lake-cache/qou-v4-24-0 (now a2bf415e7a); the guard reads 6172/2443 off the live branch again.
+
+The commit subject is a PARSED INTERFACE and nothing at the point of writing says so.

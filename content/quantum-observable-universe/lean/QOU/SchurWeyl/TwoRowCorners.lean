@@ -176,6 +176,6 @@ theorem addCell_twoRow_row1 (h : k ≤ m) (hkm : k < m)
 theorem rowLen_two_addCell_row2 (h : k ≤ m) (hs : IsAddableCell (twoRow m k h) (2, 0)) :
     0 < (addCell (twoRow m k h) (2, 0) hs).rowLen 2 := by
   rw [← YoungDiagram.mem_iff_lt_rowLen]
-  exact (mem_addCell (2, 0) hs (2, 0)).mpr (Or.inl rfl)
+  exact (mem_addCell (twoRow m k h) (2, 0) (2, 0) hs).mpr (Or.inl rfl)
 
 end QOU.SchurWeyl
