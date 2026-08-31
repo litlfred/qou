@@ -97,7 +97,21 @@ _spec = importlib.util.spec_from_file_location(
 _cw = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_cw)
 
-COMMITTED_B_PP_A2 = "2.12836094575708"
+COMMITTED_B_PP_A2 = "2.12836094575708"     # #6336, pure-proton chain
+COMMITTED_B_NN_A2 = "2.4355847837462"      # #6365, pure-neutron chain
+
+CONTRAST_FROM_PP = """  Contrast worth carrying (from #6365, the pure-NEUTRON chain at A=2,3,4):
+  its marginals are 2.4356, 0.9412, 0.3457 -- ratios 0.3864, 0.3673. Those are
+  TWO ratios, which is not enough to call the sequence constant rather than
+  slowly declining, and that distinction is NOT made here. What the two do
+  show is that they are ~0.37-0.39 and show NO sign of rising toward 1, which
+  is the behaviour that separates them from pp's 0.848 -> 0.899 -> 0.953.
+
+  So the defensible statement is the WEAK one: the pp ratio sequence rises
+  toward 1 and the nn sequence does not. Whether nn's marginal converges to
+  zero, or to some small nonzero value, is UNDETERMINED -- it needs the A=5
+  neutron point, which is the same ~49 min of compute this driver just made
+  survivable and is the obvious next run."""
 CKPT = _COMP / ".bpp-higher-a-checkpoint.json"
 
 
@@ -134,8 +148,13 @@ def chi_for(q, crossings, cols_by_gen, dim, d_weighted):
 
 
 def main() -> int:
-    args = [a for a in sys.argv[1:] if a != "--fresh"]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
     fresh = "--fresh" in sys.argv
+    # --neutron runs the pure-NEUTRON chain (0, A) instead of (A, 0). Its
+    # checkpoint keys carry an "n" prefix so the two species never collide and
+    # existing proton banks stay valid.
+    neutron = "--neutron" in sys.argv
+    pfx, label = ("n", "nn") if neutron else ("", "pp")
     A_LIST = [int(x) for x in args] or [5]
 
     q = mp.mpf(Q_50_DIGIT_STR)
@@ -145,7 +164,7 @@ def main() -> int:
     ck = load_ckpt(fresh)
 
     print("=" * 78)
-    print("  Resumable B_pp driver — per-partition checkpointing")
+    print(f"  Resumable B_{label} driver — per-partition checkpointing")
     print("=" * 78)
     print(f"\n  E0 = {mp.nstr(E0, 20)} MeV")
     print(f"  checkpoint: {CKPT.relative_to(_COMP.parent)} "
@@ -153,8 +172,9 @@ def main() -> int:
 
     results = {}
     for A in A_LIST:
-        words = {"on": atom_canonical_crossings(A, 0, include_inter=True),
-                 "off": atom_canonical_crossings(A, 0, include_inter=False)}
+        zf, nf = (0, A) if neutron else (A, 0)
+        words = {"on": atom_canonical_crossings(zf, nf, include_inter=True),
+                 "off": atom_canonical_crossings(zf, nf, include_inter=False)}
         n = max(g for g, _ in words["on"]) + 2
         print(f"  A={A}: n={n} strands, "
               f"{len(words['on'])}/{len(words['off'])} crossings (on/off)")
@@ -170,11 +190,11 @@ def main() -> int:
         todo = [(w, lam) for w in ("on", "off") for lam in sorted(cache)]
         total_units = sum(units[lam] for _, lam in todo)
         done_units = sum(units[lam] for w, lam in todo
-                         if f"{A}|{w}|{lam}" in ck)
+                         if f"{pfx}{A}|{w}|{lam}" in ck)
         t0 = time.time()
 
         for w, lam in todo:
-            key = f"{A}|{w}|{lam}"
+            key = f"{pfx}{A}|{w}|{lam}"
             if key in ck:
                 continue
             cols_by_gen, dim = cache[lam]
@@ -192,7 +212,7 @@ def main() -> int:
                   f"{el:7.1f}s   elapsed {wall/60:5.1f}m  eta {eta/60:5.1f}m",
                   flush=True)
 
-        s = {w: sum(mp.mpf(ck[f"{A}|{w}|{lam}"]) for lam in sorted(cache))
+        s = {w: sum(mp.mpf(ck[f"{pfx}{A}|{w}|{lam}"]) for lam in sorted(cache))
              for w in ("on", "off")}
         tot = E0 * (s["off"] - s["on"])
         results[A] = tot
@@ -206,7 +226,9 @@ def main() -> int:
     banked = {}
     for key in ck:
         a_s, w, lam = key.split("|", 2)
-        banked.setdefault((int(a_s), w), {})[lam] = mp.mpf(ck[key])
+        if bool(a_s.startswith("n")) != neutron:
+            continue          # other species' bank -- never mix the two
+        banked.setdefault((int(a_s.lstrip("n")), w), {})[lam] = mp.mpf(ck[key])
     tot_all = {}
     for (A, w), terms in banked.items():
         if (A, "on") in banked and (A, "off") in banked and w == "on":
@@ -232,6 +254,10 @@ def main() -> int:
     if len(ratios) >= 2:
         rising = all(ratios[i] < ratios[i + 1] for i in range(len(ratios) - 1))
         below1 = all(r < 1 for r in ratios)
+        # The cross-species contrast is written from the PROTON side, so it is
+        # printed only there. On a neutron run it would be self-referential --
+        # quoting nn's own numbers back as a "contrast" to themselves.
+        contrast = "" if neutron else CONTRAST_FROM_PP
         print(f"""
   The ratio of successive MARGINAL bonds is {', '.join(mp.nstr(r, 6) for r in ratios)}.
 
@@ -243,23 +269,12 @@ def main() -> int:
   fit, and the mirror series this feeds runs to A=39, a factor of eight beyond
   the last measured point.
 
-  Contrast worth carrying (from #6365, the pure-NEUTRON chain at A=2,3,4):
-  its marginals are 2.4356, 0.9412, 0.3457 -- ratios 0.3864, 0.3673. Those are
-  TWO ratios, which is not enough to call the sequence constant rather than
-  slowly declining, and that distinction is NOT made here. What the two do
-  show is that they are ~0.37-0.39 and show NO sign of rising toward 1, which
-  is the behaviour that separates them from pp's 0.848 -> 0.899 -> 0.953.
-
-  So the defensible statement is the WEAK one: the pp ratio sequence rises
-  toward 1 and the nn sequence does not. Whether nn's marginal converges to
-  zero, or to some small nonzero value, is UNDETERMINED -- it needs the A=5
-  neutron point, which is the same ~49 min of compute this driver just made
-  survivable and is the obvious next run.
+{contrast}
 """)
 
     payload = {
         "schema": "witness/v1",
-        "name": "bpp-higher-a-resumable",
+        "name": f"b{label}-higher-a-resumable",
         "description": (
             "B_pp(A) for the pure-proton chain through A=5 by the "
             "column-sparse Schur-Weyl route with per-partition checkpointing, "
@@ -288,15 +303,16 @@ def main() -> int:
         },
         "checks_total": 1,
     }
-    (_COMP / "bpp-higher-a-resumable.witness.json").write_text(
+    (_COMP / f"b{label}-higher-a-resumable.witness.json").write_text(
         json.dumps(payload, indent=2) + "\n")
-    print(f"  witness -> computations/bpp-higher-a-resumable.witness.json")
+    print(f"  witness -> computations/b{label}-higher-a-resumable.witness.json")
 
     ok = True
+    anchor = COMMITTED_B_NN_A2 if neutron else COMMITTED_B_PP_A2
     if 2 in results:
-        drift = abs(results[2] - mp.mpf(COMMITTED_B_PP_A2))
+        drift = abs(results[2] - mp.mpf(anchor))
         ok = drift < mp.mpf("1e-10")
-        print(f"\n  A=2 vs committed {COMMITTED_B_PP_A2}: "
+        print(f"\n  A=2 vs committed {anchor} ({label}): "
               f"drift {mp.nstr(drift, 6)} — {'OK' if ok else 'DRIFTED'}")
     else:
         print("\n  (A=2 not in this run — no anchor check performed; run with "
