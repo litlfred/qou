@@ -29,36 +29,43 @@ Jones-polynomial identification route surfaced four facts, in order:
    `(Z,N)`, so the method *is* extensible to ⁴He.
 
 3. **But the method does not confirm the binding-link IDs even at A=2.** For ²H,
-   the 3A-strand atom braid gives `tr_M(q₀) ≈ 0.388` (convention C;
-   the canonical convention-D value is `0.5751722439177719` — see the note
-   below, which leaves this section's conclusion intact)
+   the 3A-strand atom braid gives `tr_M(q₀) ≈ 0.388` (convention C; the
+   canonical convention-D value is `0.5751722439177719` — but see the note
+   below: **neither value belongs in this comparison**, and the gate's real
+   evidence is the ratio test, which it passes as a refutation)
    ([`atom-nf-symbolic-D.witness.json`](../../computations/atom-nf-symbolic-D.witness.json)),
    while `J_{6_2}(q₀) ≈ 1.027`. They do not match. Per
    [`2h-markov-trace-zero-audit.md`](2h-markov-trace-zero-audit.md), the trace
    function itself is verified correct (canonical `tr_M` identities pass), so the
    mismatch is structural, not a bug.
 
-> **🛑 The `0.388` in this comparison is the CONVENTION-C value, superseded
-> 2026-08-31.** Convention D is canonical (owner ruling 2026-08-15), and
-> PR #6318 regenerated the `tr_M` table from its producers at the proton pin:
-> the deuteron moved `0.3882864240747888 → 0.5751722439177719` (**+48.13 %**),
-> sourced from `computations/markov/markov-peel-atomic-tr-m.witness.json` and
-> `computations/canonical-tr-m-via-chi-cache.witness.json`, both
-> `q0Anchor: proton`, agreeing at the 50-dps serialization floor. Verified
-> independently here by running `binding_canonical(1,1)` live: `tr_M_atom =
-> 0.575172243917772`.
+> **🛑 The raw-value comparison in this section is NOT the evidence for the
+> gate — corrected 2026-08-31, twice.** The producer cited here,
+> `atom_nf_symbolic_D.py`, converts its Markov trace to a Jones polynomial via
+> `markov_trace_to_jones`, which **is the identity function**: its own
+> docstring names the normalisation factor
+> `((-1/√q)^{n-1} · (q/(1−q²))^{n-1})` and then says *"for ease, we return
+> `tr` as-is"*. So `tr_M(²H) ≈ 0.388` is an **unnormalised** 6-strand Markov
+> trace and `J_{6₂}(q₀) ≈ 1.027` is a **normalised** Jones polynomial. They are
+> expected to differ, and the size of the gap carries no information about the
+> identification. **Do not quote the pair, or any percentage derived from it.**
 >
-> **The VERDICT is unchanged — it is robust to the substitution.** Against
-> `J_{6₂}(q₀) ≈ 1.027` the atom trace is **62.19 %** low under C and **43.99 %**
-> low under D. Neither is a match, so the anchor non-confirmation stands and
-> this gate is still live.
+> **The gate is nevertheless SOUND, on evidence this section does not cite.**
+> The producer knows the normalisation is missing and computes the
+> convention-independent discriminator instead — *"even if they differ by a
+> writhe/normalization factor, the ratio should be a pure power of
+> `−q^{1/2}`"* — recorded as `symbolic_ratio` in the witness. Measured: a
+> rational function with **83 terms over 11**, in half-integer powers running
+> past `q^{2713/2}`. **Not a monomial, so the ratio test fails and the anchor
+> non-confirmation is real.**
 >
-> **What is NOT established: that the comparison itself is convention-clean.**
-> `tr_M` depends on the Markov parameter `z`; whether `J_{6₂}(q₀) ≈ 1.027`
-> was computed in the same frame has **not** been checked. Until it is, read
-> the two sides as a scope-(a) non-match, not as a quantified gap — a
-> convention straddle inside one comparison is the defect class AGENTS.md
-> §"Never straddle the two layers inside one quantity" names.
+> An earlier version of this note scoped `0.388` as convention-C against the
+> canonical convention-D `0.5751722439177719` and reported the gap as
+> "62.19 % / 43.99 % low". **That scoping is correct about the `tr_M` value and
+> irrelevant here:** correcting an input to a comparison that was never
+> evidential does not make it evidential. A future attempt on
+> `conj:canonical-knot-id-sdp` should aim at the **ratio**, not the gap.
+> Measured by `computations/probes/r5full_anchor_gate_evidence_probe.py` (3/3).
 
 4. **The A≤3 IDs are deprecated volume-search matches.** `2h-markov-trace-zero-audit.md`
    records that 6_2 (²H), 8_11 (³H), and L6a4 (³He) were assigned by *volume
