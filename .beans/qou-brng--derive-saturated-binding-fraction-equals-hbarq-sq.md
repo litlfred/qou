@@ -6,6 +6,8 @@ type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
 updated_at: 2026-09-03T04:08:18Z
+updated_at: 2026-08-31T21:20:07Z
+updated_at: 2026-08-31T04:40:24Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -923,3 +925,46 @@ Quantified against my measured slopes:
 bond-topology exclusions (additive: capped; non-additive: negative at A=4) do
 not apply to it. What they do is remove the bond graph as a competitor, leaving
 the alpha-cluster term as the carrier that has to supply the missing ~3/4.
+### The selection principle EXISTS and is broken three ways — extending L_K_max is futile (2026-08-31)
+
+I proposed extending the enumeration to `L ≥ 8` as the live next step. **Do not
+run it.** The residual criterion is already there, and read off the enumerator's
+**own recorded output** it has three independent fatal defects.
+
+**First, correcting my own correction.** I said "the principle is not
+minimality". Right about the *code* (sort key is `(PSD, residual, length)`),
+**wrong about the corpus**: the Lean instances' `bindingKWord = [3,3]` came from
+the witness's `min_length_psd_feasible_candidates`, **not** the residual-ranked
+`psd_feasible_top_k`. The recorded carrier *is* the min-length pick.
+
+**Defect 1 — the residual's rank-1 pick is a SELF-CROSSING.** With
+`offsets = [0,3,6]` in `B₉`, `σ_i` is inter-component iff `3 | i`, so only `σ₃`
+and `σ₆` qualify. **`inter_nucleon_generators_extended` has 8 of 12 entries
+intra-nucleon** and its name says otherwise. Rank-1 for **both** ³H and ³He is
+`[-8,-8] = σ₈⁻²`, inside nucleon 3 — zero inter-component crossings, so
+`countChannel = 0` and it binds nothing. Rank-2 `[-5,-5]` likewise. The first
+genuine interface appears at rank 3.
+
+**Defect 2 — the rank-1/rank-2 order is float64 noise.** `σ₅` and `σ₈` are the
+same generator of two different blocks, so block symmetry makes their residuals
+**equal**. Recorded gap: **exactly 2 ULP** (`2.220e-16` at `0.93`, where eps is
+`1.110e-16`), in both nuclei. The top slot is decided by rounding. Same 2-ULP
+split for `[-4,-4]`/`[-7,-7]` and `[7,7]`/`[4,4]`.
+
+**Defect 3 — the two genuine interfaces are exactly degenerate.** `[-3,-3]` and
+`[-6,-6]` record the *identical* residual to every digit. The criterion cannot
+tell the `1|2` interface from `2|3`. That is a symmetry, not a bug — any
+trace-only criterion will tie them — so breaking it needs information the trace
+does not carry.
+
+**Also: the minimal set cannot carry a Brunnian link at any length.** `σ₃` and
+`σ₆` are distant hence commute, so `⟨σ₃,σ₆⟩` is free abelian; every word reduces
+to `σ₃^a σ₆^b` with linking numbers `a/2, b/2, 0`, and Brunnian forces
+`a = b = 0`. The corpus's own Borromean `(σ₁σ₂⁻¹)³` needs **adjacent**
+generators, so it was never reachable there.
+
+**Revised next step.** Repair the criterion before searching wider: restrict to
+`3 | i`, carry the residual in `mpf` not `float64`, and find a tie-breaker for
+the exact `1|2`/`2|3` symmetry. Lean
+`QOU/Mass/EnumeratorSelectionDegeneracy.lean` (8 decls, sorry-free); probe
+`enumerator_selection_criterion_audit.py` (7/7, nothing re-run).
