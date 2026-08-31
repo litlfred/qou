@@ -1,0 +1,168 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:40:45.213148+00:00",
+  "commitSha": "129820f94bac2807b8a379e9d98723f22f789c9c",
+  "assertions": [
+    {
+      "name": "control_C_phase_is_bar_odd",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "control_D_defect_is_h_sq_over_2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "D_frame_N1_DIFFERS_from_the_hybrid_the_bean_measured",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "C_frame_rung_HELPS",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "D_frame_rung_gain_MEASURED",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "centring_does_NOT_rescue_C_like_convergence",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "c3_under_D_is_NOT_order_unity",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "the_two_D_numbers_are_NOT_the_same_measurement",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "entry9_threshold_is_unchanged_by_the_N1_framing",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-d-frame-n1-ladder-residual",
+  "scriptFile": "qbeta_d_frame_n1_ladder_residual_probe.py",
+  "scriptHash": "5b3a86df7287",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_n1_ladder_residual_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_n1_ladder_residual_probe.py"
+  },
+  "description": "The D-frame k=2 ladder residual computed with the D-frame N=1 factor. The convention-sensitivity probe's D column varies only z and keeps the C-frame cosine cos(a - b*hbar^2/2), so the c_3 ~ -974 recorded in qou-cds1's table is a HYBRID (D-frame z, C-frame N=1). Entry 10 forces the D-frame N=1 to be cos(a_D - h^2/4)*cos(h^2/4), since bar(a_D) + a_D = h^2/2 makes bar a reflection about h^2/4 (QOU.QBeta.N1FactorUniqueness, sorry-free). Measured with the correct N=1, the C-frame rung structure still does not transfer, confirming qou-cds1's 're-derive, do not re-evaluate' from the N=1 side as well as the z side. Scope (a): no c_k proposed, adopted or wired; the convention-D refusal in qbeta_ck_cache is untouched. The entry-9 threshold |c_4| <= target/u^4 is unaffected by the N=1 framing.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "l2_target_ppb": "7.797",
+    "bar_midpoint_centre_h2_over_4": "0.0109265521331304973505048339193",
+    "u_substrate": "0.00851723455015614218925557360331",
+    "C_N1_factor": "0.998398945253084499336489635207",
+    "C_n1_res_ppb": "-73821.77253725694393",
+    "C_n2_res_ppb": "-1278.5809073418093015",
+    "C_rung_gain": "57.737271152228935644",
+    "C_c3_extractor_would_return_NOT_ADOPTED": "-2.0693425771151678379",
+    "HYBRID_N1_factor": "0.998999136574409781000164313151",
+    "HYBRID_n1_res_ppb": "-674570.0536578967364",
+    "HYBRID_n2_res_ppb": "-602070.44544306523317",
+    "HYBRID_rung_gain": "1.1204171517860818592",
+    "HYBRID_c3_extractor_would_return_NOT_ADOPTED": "-974.43188774674842298",
+    "D_N1_factor": "0.998619061972325202965589470336",
+    "D_n1_res_ppb": "-294226.60779006514008",
+    "D_n2_res_ppb": "-221699.40621076378906",
+    "D_rung_gain": "1.3271420651003081615",
+    "D_c3_extractor_would_return_NOT_ADOPTED": "-358.81344540556213119",
+    "assertions_passed": 9,
+    "assertions_total": 9,
+    "checks": [
+      {
+        "name": "control_C_phase_is_bar_odd",
+        "pass": true,
+        "why": "bar(a_C) + a_C = 0 — cos is even, so the bar rule is VACUOUS under C; this is why the C-frame N=1 factor needs no centring"
+      },
+      {
+        "name": "control_D_defect_is_h_sq_over_2",
+        "pass": true,
+        "why": "bar(a_D) + a_D = h^2/2 — so bar reflects about h^2/4 and the D-frame N=1 factor must be centred there (QOU.QBeta.N1FactorUniqueness)"
+      },
+      {
+        "name": "D_frame_N1_DIFFERS_from_the_hybrid_the_bean_measured",
+        "pass": true,
+        "why": "HYBRID N1 = 0.9989991365744098 vs D-frame N1 = 0.9986190619723252, rel 0.0003806 — the sensitivity probe's D column varies only z and keeps the C-frame cosine, so it is NOT the D-frame ladder"
+      },
+      {
+        "name": "C_frame_rung_HELPS",
+        "pass": true,
+        "why": "C: N1 -73821.773 ppb -> N2 -1278.5809 ppb, gain 57.7373x — the ladder is C-built"
+      },
+      {
+        "name": "D_frame_rung_gain_MEASURED",
+        "pass": true,
+        "why": "D-frame (entry-10 centred): N1 -294226.61 ppb -> N2 -221699.41 ppb, gain 1.32714x   [HYBRID for comparison: 1.12042x]"
+      },
+      {
+        "name": "centring_does_NOT_rescue_C_like_convergence",
+        "pass": true,
+        "why": "D-frame gain 1.32714x vs C-frame 57.7373x — the entry-10 centring is the RIGHT N=1 factor and still does not make the C-frame rung structure work under D. The ladder needs re-derivation, which is what qou-cds1 says; this measures it with the correct N=1 for the first time"
+      },
+      {
+        "name": "c3_under_D_is_NOT_order_unity",
+        "pass": true,
+        "why": "an extractor fed the D-frame N=1 would return c_3 = -358.8134454 (HYBRID gives -974.4318877). NOT a proposed value and NOT wired — both are far outside the order-unity range the C-frame c_3 = -2.069 sits in, so 'one derived rung closes the gap' is a C-frame statement, as entry 9 scoped it"
+      },
+      {
+        "name": "the_two_D_numbers_are_NOT_the_same_measurement",
+        "pass": true,
+        "why": "the bean's recorded D column is the HYBRID -974.4318877; with the entry-10 N=1 factor it is -358.8134454, differing by 63.1772 %. Do not quote one for the other"
+      },
+      {
+        "name": "entry9_threshold_is_unchanged_by_the_N1_framing",
+        "pass": true,
+        "why": "|c_4| <= target/u^4 = 1.4816073 regardless of which N=1 factor is used — u = b*hbar^2 carries no Markov parameter and no phase. Only the 'can one rung close it' reading is frame-dependent"
+      }
+    ],
+    "scope": "Scope (a). No c_k proposed, adopted, extracted into a cache or wired; both c_3 figures are what an extractor WOULD return and are labelled as such. qbeta_ck_cache's convention-D refusal is untouched and is not called. c_2 = -1 is used as the structural rung it is."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
