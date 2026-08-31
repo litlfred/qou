@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T19:47:05Z
+updated_at: 2026-08-31T20:43:20Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -786,3 +786,25 @@ proved, and the dimensionful per-α scale is FOREVER-GATED — `8G·c·m_e`,
 `c = 7.956`, was tested there and refused as numerology. Do not re-propose it.
 
 PR #6405 commit `be3797f5e5`.
+
+
+**2026-08-31 — #6407: the ruled trefoil beats production 9.45× on the deuteron**
+
+Joined Owner Ruling A (deuteron knot = trefoil `T(2,3)`, a **volume** ruling) to
+the already-tabulated writhe-normalised stacked scalar. `T(2,3)` = closure of
+`σ³` in `B₂` ⇒ the ruling fixes `m = 3`, and that row was already in the table:
+**2.1601931 MeV, −2.89 %** against production's **+27.36 %**.
+
+Hopf (`σ²`) lands at −78.5 %, so the ruling's *own* canonical/linear-chain
+distinction picks out the working one — a fit would have taken either.
+
+**Suggestive, not a result.** Look-elsewhere `p ≈ 0.121` (computed: 11 positive
+candidates over 0.48–12.2 MeV); `mu_eff` is a braid-WORD property not a link
+invariant; and it leaves the sector's real defect untouched.
+
+**Strategic finding (the important half):** the two-nucleon sector's failure is
+a **SIGN** error, not a precision one — the framework binds the diproton
+(+2.5416) and dineutron (+3.3069) where nature has none, and
+`QOU.QBeta.single_crossing_binds` proves sorry-free that no single crossing can
+unbind while `q³ < q²+1`. **No amount of magnitude work reaches L2 while a
+predicted observable has the wrong sign.** Signs before digits.
