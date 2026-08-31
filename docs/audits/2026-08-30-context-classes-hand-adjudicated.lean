@@ -53,6 +53,8 @@ import QOU.Shared.MarkovTraceClaim
 import QOU.BraidsAndKnots.explicit_alpha_k_h4
 import QOU.BraidsAndKnots.qmn_recursive_memoized
 import QOU.BraidsAndKnots.wedderburn_bratteli_recursion
+import QOU.Shared.OperatorSelectionLP
+import QOU.BraidsAndKnots.demazure_fiber_markov_trace
 
 /-! ## Inhabited with no hypotheses
 
@@ -342,3 +344,38 @@ noncomputable example : QOU.BraidsAndKnots.WedderburnBratteliRecursionContext :=
     diagonal_ratio_n := fun _ => 0
     claim_iii_trivial_rep_limit := by
       intro ε hε; exact ⟨0, fun n _ => by simpa using hε⟩ }
+
+/-! ### A second parent: `OperatorSelectionLPContext`
+
+Same story one class over.  Note its `strong_duality` is a **field** — as in
+`ConfinementFrobeniusReciprocityContext` and `HasFiniteLPDuality` — so LP strong
+duality is assumed in a third independent place. -/
+
+noncomputable instance degenerateLPContext : QOU.Shared.OperatorSelectionLPContext where
+  n := 0
+  d := 0
+  n_target := 0
+  t := fun _ => 0
+  G := fun _ _ => 0
+  x_star := fun _ => 0
+  y_0_star := 0
+  y_star := fun _ => 0
+  A_star := ∅
+  strong_duality := by simp
+
+/-- Demazure-fibre Markov trace.  `T^Dem(λ; w_0) = y_λ` holds at the constant
+`1`; Plancherel completeness `Σ f_λ T^Dem(λ;w_0) = 1` holds over one partition
+with `f_λ = 1`.  The Bruhat-order sub-claim is an opaque `Prop` carrying its own
+witness, so it is `True`/`trivial` — the same shape as
+`SpectralSequenceH3ExplicitContext`. -/
+noncomputable example : QOU.BraidsAndKnots.DemazureFiberMarkovTraceContext :=
+  { degenerateLPContext with
+    T_Dem := fun _ _ => 1
+    y_lambda := fun _ => 1
+    w_0 := 0
+    claim_i_standard_jones_markov := fun _ => rfl
+    claim_ii_bruhat_order_structural := True
+    claim_ii_bruhat_order_structural_holds := trivial
+    f_lambda := fun _ => 1
+    n_partitions := 1
+    claim_iii_plancherel_completeness := by simp }
