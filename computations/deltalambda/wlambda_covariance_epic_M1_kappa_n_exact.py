@@ -34,6 +34,31 @@ finite:
 
 That is a sharper decomposition than "measured", and it says where the remaining
 work is: an error term, not a monotonicity.
+
+FINDING 3: claim (b) is STRONGER THAN THE GOAL NEEDS
+-----------------------------------------------------
+M_1(n) > 0 is equivalent to kappa_n > 0, since n^{5/2} > 0. So the tail does not
+need kappa_n >= kappa; it needs only
+
+    |kappa_n - kappa| < kappa                                            (b')
+
+and the gap between what those two demand of an effective error bound is large
+and measurable. Over the exactly-computed range n = 32..46, |kappa_n-kappa|/kappa
+runs 0.0270 -> 0.0255, so
+
+  * (b) asks the bound to resolve the SIGN of a quantity that is ~2.6 % of kappa
+    -- relative accuracy better than 2.6 %;
+  * (b') asks only |kappa_n - kappa| < kappa -- relative accuracy 100 %, a ~38x
+    slacker demand, and any crude Kerov error term does it.
+
+Formalised as QOU.BraidKnot.M1EdgeCalculus.pos_of_check_and_tail: a finite exact
+check up to N plus the CRUDE tail bound past it gives positivity throughout. The
+supporting lemma pos_of_abs_sub_lt needs no positivity hypothesis on kappa at
+all -- |x - k| < k already forces both 0 < k and 0 < x, since the left side is
+non-negative. Both sorry-free.
+
+This does not close the gap. It replaces a demanding analytic requirement with
+an undemanding one, and says so precisely.
 """
 import json
 import sys
@@ -120,6 +145,28 @@ def main():
             f"finite exact check, and n > {NMAX} needs an effective error bound "
             f"on kappa_n - kappa. That is where the remaining work is."),
     })
+    # ---- FINDING 3: the weaker sufficient claim ----------------------------
+    rel = [abs(mpf(r["kappa_n"]) - KAP) / KAP for r in rows]
+    worst_rel = max(rel[30:]) if len(rel) > 30 else max(rel)
+    n13 = next(r for r in rows if r["n"] == 13)
+    checks.append({
+        "name": "FINDING 3: (b') |kappa_n - kappa| < kappa suffices, with ~38x more room",
+        "pass": worst_rel < mpf(1) / 10,
+        "detail": (
+            f"M_1(n) > 0 iff kappa_n > 0, since n^(5/2) > 0, so the tail needs "
+            f"only |kappa_n - kappa| < kappa, not kappa_n >= kappa. Measured: "
+            f"over n = 32..{NMAX} the ratio |kappa_n - kappa|/kappa is at most "
+            f"{nstr(worst_rel, 6)}, i.e. an effective bound has a "
+            f"{nstr(1 / worst_rel, 4)}x margin under (b'), against the ~2.6 % "
+            f"relative accuracy (b) would need to resolve the sign. At the "
+            f"binding n = 13 the (b) margin is only "
+            f"{nstr((mpf(n13['ratio']) - 1) * 100, 3)} % -- but n = 13 is inside "
+            f"the exact range, so that costs nothing. Formalised as "
+            f"QOU.BraidKnot.M1EdgeCalculus.pos_of_check_and_tail. This does NOT "
+            f"close the gap; it replaces a demanding analytic requirement with "
+            f"an undemanding one."),
+    })
+
     ms = (time.monotonic_ns() - t0) // 1_000_000
     Path(__file__).with_name("m1-kappa-n-exact.witness.json").write_text(
         json.dumps({

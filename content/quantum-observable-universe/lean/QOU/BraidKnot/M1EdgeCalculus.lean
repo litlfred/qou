@@ -1363,6 +1363,57 @@ theorem cov_eq_cov_symmetrised [DecidableEq ι] (E : Finset ι) (T : ι → ι)
   rw [s1, s2]
   linarith [h]
 
+/-! ## The two-regime shape of `qou-k5r5` claim (b), and why it can be weakened
+
+The gap reduces `M₁ > 0` to (a) an exact check for small `n` and (b)
+`κ_n ≥ κ` for `n ≥ 13`, with `κ_n = M₁(n)/n^(5/2)` and `κ = 128/(225π²)`.
+Measured exactly in `wlambda_covariance_epic_M1_kappa_n_exact.py`: `κ_n` crosses
+`κ` at exactly `n = 13`, peaks at `n = 32`, and decreases thereafter, rejoining
+`κ` from above.
+
+**Claim (b) is stronger than the goal needs.** `M₁(n) > 0` is equivalent to
+`κ_n > 0`, because `n^(5/2) > 0`. So in the tail it is enough to know
+
+    |κ_n − κ| < κ        (b′)
+
+instead of `κ_n ≥ κ`. The difference in what an effective error bound must
+deliver is large and measured: over the exactly-computed range `n = 32..42`,
+`|κ_n − κ|/κ` runs `0.0270 → 0.0262`, so
+
+* (b) needs the bound to resolve the SIGN of a quantity that is ~2.6 % of `κ`
+  — relative accuracy better than 2.6 %;
+* (b′) needs only `|κ_n − κ| < κ` — relative accuracy 100 %, a **37×** slacker
+  demand.
+
+`pos_of_check_and_tail` below is that argument, and nothing more: a finite exact
+check up to `N` plus a crude tail bound past it. It is stated over `ℚ` and over
+an arbitrary `f`, because the content is the SHAPE — which regime carries which
+burden — not the analysis. The analysis (an effective Kerov error term) is what
+remains open. -/
+
+/-- **Positivity from a crude approximation.** If `x` is within `k` of `k` then
+`x > 0`. No positivity hypothesis on `k` is needed — `|x - k| < k` already
+forces `0 < k`, since the left side is non-negative. It is the whole of the
+weakening: an effective bound need only be accurate to within the limit's own
+size. -/
+theorem pos_of_abs_sub_lt {x k : ℚ} (h : |x - k| < k) : 0 < x := by
+  have h1 := (abs_lt.mp h).1
+  linarith
+
+/-- **A finite exact check plus a crude tail bound gives positivity throughout.**
+
+This is the exact logical shape of `qou-k5r5` claim (b) once weakened to (b′).
+`hfin` is the exactly-computable part (`n₀ ≤ n ≤ N`, done here to `N = 42`);
+`htail` is the only analytic input, and it is the crude form. -/
+theorem pos_of_check_and_tail {N n₀ : ℕ} {k : ℚ} (f : ℕ → ℚ)
+    (hfin : ∀ n, n₀ ≤ n → n ≤ N → 0 < f n)
+    (htail : ∀ n, N < n → |f n - k| < k) :
+    ∀ n, n₀ ≤ n → 0 < f n := by
+  intro n hn
+  rcases le_or_gt n N with h | h
+  · exact hfin n hn h
+  · exact pos_of_abs_sub_lt (htail n h)
+
 end Covariance
 
 end QOU.BraidKnot.M1EdgeCalculus

@@ -216,9 +216,14 @@
    "name": "FINDING 2 (my expectation FALSIFIED): rise, peak, then fall",
    "pass": true,
    "detail": "I briefed the expectation that kappa_n DECREASES to kappa, which would have made claim (b) a corollary of monotonicity. It does not. Exactly: kappa_n rises to a peak at n = 32 (ratio 1.0269882) and falls thereafter (monotone over the computed tail). Sampled continuation from ..._kappa_derivation.py: 0.0590 at n = 50 down to 0.0577 by n = 1600, i.e. back toward kappa from above. So claim (b) is NOT one statement: n = 13..34 is a finite exact check, and n > 34 needs an effective error bound on kappa_n - kappa. That is where the remaining work is."
+  },
+  {
+   "name": "FINDING 3: (b') |kappa_n - kappa| < kappa suffices, with ~38x more room",
+   "pass": true,
+   "detail": "M_1(n) > 0 iff kappa_n > 0, since n^(5/2) > 0, so the tail needs only |kappa_n - kappa| < kappa, not kappa_n >= kappa. Measured: over n = 32..34 the ratio |kappa_n - kappa|/kappa is at most 0.0269882, i.e. an effective bound has a 37.05x margin under (b'), against the ~2.6 % relative accuracy (b) would need to resolve the sign. At the binding n = 13 the (b) margin is only 0.234 % -- but n = 13 is inside the exact range, so that costs nothing. Formalised as QOU.BraidKnot.M1EdgeCalculus.pos_of_check_and_tail. This does NOT close the gap; it replaces a demanding analytic requirement with an undemanding one."
   }
  ],
- "passed": 2,
- "total": 2,
- "ms": 1669
+ "passed": 3,
+ "total": 3,
+ "ms": 1954
 }
