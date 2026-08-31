@@ -385,11 +385,20 @@ item). An earlier header here claimed "ALL 5 ITEMS CLOSED" — stale.
 
 The forward work has shifted from §5 mechanics to scientific closure:
 
-1. **Per-knot `VolDensity(K, q₀)` wire-up — binding-side only (post
+1. ~~**Per-knot `VolDensity(K, q₀)` wire-up — binding-side only (post
    2026-06-24 ruling; see the 🛑 note above).** 64 of 65 atom-touching
    scripts still use uniform `vol_density_borromean(q)`
    ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md));
-   consumer-lane migration is running on PR #3199 (bean `4f2d`).
+   consumer-lane migration is running on PR #3199 (bean `4f2d`).~~
+   **⚠️ STALE ON ITS OWN TERMS (2026-08-31).** Bean `4f2d` is **closed**, so the
+   migration this points at is not running. And the binding side does not go
+   through `vol_density` at all: measured across `computations/`, **no binding
+   script references `vol_density`** — binding is `B = m_e·Σ_n (n−1)·Vol_n(K)`
+   (step 9b), which uses `Vol` directly. `vol_density_per_block` has **four**
+   references in the whole repo — its definition, its vendored mirror, one
+   demonstration script and one audit — so there is no consumer lane left to
+   migrate. See the SUPERSEDED banner on row 1 of the §5 table for the
+   absolute-mass half.
    **Single narrative source: §9** (frontier detail, flip gate,
    many-body series) — the long per-knot narrative that lived here
    drifted against §0/§9 and was consolidated 2026-07-02 (PR #3200);
