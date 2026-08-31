@@ -60,6 +60,35 @@ theorem bring_serre_nonsingular :
     (4 : ℚ) * (-675) ^ 3 + 27 * (-79650) ^ 2 ≠ 0 := by
   norm_num
 
+/-- **Theorem 2's second invariant, decoded and derived.** Riera–Rodríguez pin
+`τ₀` modulo `Γ₀(5)` by the pair `j(τ₀)`, `j(5τ₀)`. The library scan garbles the
+second as `- 293x5` with a stray `25` on the following line; computing the six
+roots of `Φ₅(−25/2, Y)` independently gives `−3810.78125` among them, which is
+exactly `−5·29³/2⁵` — the fragment being `−29³·5` over `2⁵`, the exponent having
+been OCR'd onto its own line. So the derivation supplies the value and the scan
+only selects it. -/
+theorem bring_j_five_tau_zero : (-5 : ℚ) * 29 ^ 3 / 2 ^ 5 = -121945 / 32 := by
+  norm_num
+
+/-- Its decimal form, which is what a numerical root-finder returns. -/
+theorem bring_j_five_tau_zero_decimal : (-121945 : ℚ) / 32 = -3810.78125 := by
+  norm_num
+
+/-- **Neither invariant is an integer, so `τ₀` is not a CM point.** Both have
+strictly negative 2-adic valuation — `v₂(j(τ₀)) = −1`, `v₂(j(5τ₀)) = −5` — which
+is potentially *multiplicative* reduction at 2 (Tate curves), the exact opposite
+of what CM forces (integral `j`, hence potentially good reduction everywhere).
+
+This settles the question the arc reached branch 3 with: `τ₀` was the one
+remaining hope for a canonical phase, on the grounds that a period-matrix
+parameter might be a CM point where Serre's isogeny factor is not. It is not. -/
+theorem bring_j_five_tau_zero_not_integral : ¬ ∃ n : ℤ, ((-121945 : ℚ) / 32) = (n : ℚ) := by
+  rintro ⟨n, hn⟩
+  have h : (-121945 : ℚ) = 32 * (n : ℚ) := by linarith [hn]
+  have h3 : (-121945 : ℤ) = 32 * n := by exact_mod_cast h
+  have : (32 : ℤ) ∣ 121945 := ⟨-n, by linarith⟩
+  norm_num at this
+
 /-- **`−25/2` is not an integer**, hence not a CM `j`-invariant: every
 complex-multiplication `j` is a rational integer. So Serre's `E` has no CM, its
 modular parameter has no closed form, and it supplies no *derived* phase. -/
