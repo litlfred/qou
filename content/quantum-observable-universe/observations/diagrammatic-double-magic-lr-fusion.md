@@ -1,4 +1,4 @@
-**Proposition (Conjecture — diagrammatic double-magic LR-fusion rigidity).**
+**Conjecture (diagrammatic double-magic LR-fusion rigidity).**
 *Let $Z, N \in \mathfrak{M}$. By [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md), the categorical mass at level $Z$ is supported on a single self-conjugate partition $\lambda_Z \vdash Z$, and $\Phi_N$ is similarly supported on $\mu_N \vdash N$ with $\mu_N = \mu_N'$. The LR-fusion at level $A = Z + N$ is **rigid**:*
 
 $$

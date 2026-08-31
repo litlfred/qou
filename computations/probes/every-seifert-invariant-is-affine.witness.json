@@ -1,0 +1,160 @@
+{
+  "engine": "python-int",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T17:03:29.439273+00:00",
+  "commitSha": "4153053248cacfdab84469292b0752021294a6d3",
+  "assertions": [
+    {
+      "name": "every_seifert_invariant_is_exactly_affine_in_A",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "mismatches against the affine forms over 5 invariants x 6 nuclei",
+      "source": "n=3A, crossings=12A-1, chi=-9A+1, mu=A+1, 2g=8A; all exact, all integral, all six N=Z nuclei"
+    },
+    {
+      "name": "seifert_genus_is_exactly_four_A",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "genus = 4A on all six",
+      "source": "the spanning surface named as the next step: built, and it is linear in A like everything else in the construction"
+    },
+    {
+      "name": "exactly_one_averaged_weighted_crossing_at_every_A",
+      "computed": "[1]",
+      "expected": "[1]",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "distinct counts of averaged_weighted across the chain",
+      "source": "the only non-extensive feature in the construction: O(1), not O(A). O(1) is not A^(2/3) either, but it is the one place a non-extensive quantity exists here"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 114,
+  "computation": "every-seifert-invariant-is-affine",
+  "scriptFile": "every_seifert_invariant_is_affine_probe.py",
+  "scriptHash": "d93cd12b951e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/every_seifert_invariant_is_affine_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/every_seifert_invariant_is_affine_probe.py"
+  },
+  "description": "EVERY Seifert invariant of the canonical braid closure is exactly affine in A on the six N=Z nuclei: n=3A, crossings=12A-1, chi=-9A+1, components=A+1, GENUS=4A. So the previous scope-(b) exclusion of the crossing count as a surface term extends to the whole Seifert package -- no invariant of this construction scales as A^(2/3), because the construction is affine in every coordinate. The gap is UPSTREAM: the framework's nuclear encoding has no surface to measure. The single `averaged_weighted` crossing (exactly 1 at every A) is the only non-extensive feature anywhere in it.",
+  "data": {
+    "seifert_chain": {
+      "2": {
+        "n_strands": 6,
+        "crossings": 23,
+        "euler_char": -17,
+        "components": 3,
+        "genus": 8,
+        "types": {
+          "sigma": 11,
+          "averaged": 4,
+          "sigma_inv": 7,
+          "averaged_weighted": 1
+        }
+      },
+      "4": {
+        "n_strands": 12,
+        "crossings": 47,
+        "euler_char": -35,
+        "components": 5,
+        "genus": 16,
+        "types": {
+          "sigma": 23,
+          "averaged": 8,
+          "sigma_inv": 15,
+          "averaged_weighted": 1
+        }
+      },
+      "6": {
+        "n_strands": 18,
+        "crossings": 71,
+        "euler_char": -53,
+        "components": 7,
+        "genus": 24,
+        "types": {
+          "sigma": 35,
+          "averaged": 12,
+          "sigma_inv": 23,
+          "averaged_weighted": 1
+        }
+      },
+      "8": {
+        "n_strands": 24,
+        "crossings": 95,
+        "euler_char": -71,
+        "components": 9,
+        "genus": 32,
+        "types": {
+          "sigma": 47,
+          "averaged": 16,
+          "sigma_inv": 31,
+          "averaged_weighted": 1
+        }
+      },
+      "12": {
+        "n_strands": 36,
+        "crossings": 143,
+        "euler_char": -107,
+        "components": 13,
+        "genus": 48,
+        "types": {
+          "sigma": 71,
+          "averaged": 24,
+          "sigma_inv": 47,
+          "averaged_weighted": 1
+        }
+      },
+      "16": {
+        "n_strands": 48,
+        "crossings": 191,
+        "euler_char": -143,
+        "components": 17,
+        "genus": 64,
+        "types": {
+          "sigma": 95,
+          "averaged": 32,
+          "sigma_inv": 63,
+          "averaged_weighted": 1
+        }
+      }
+    },
+    "affine_forms": {
+      "n_strands": "3A",
+      "crossings": "12A - 1",
+      "euler_char": "-9A + 1",
+      "components": "A + 1",
+      "genus": "4A",
+      "sigma": "6A - 1",
+      "sigma_inv": "4A - 1",
+      "averaged": "2A",
+      "averaged_weighted": "1 (the ONLY non-extensive feature)"
+    },
+    "consequence": {
+      "scope": "(b) for any Seifert invariant of THIS construction as a surface term, via QOU.Mass.AffineCountIsNotASurfaceTerm's strictly-monotone ratio, which applies verbatim to each affine invariant",
+      "where_the_gap_actually_is": "upstream of the surface term: the encoding is a word of length linear in A on a strand count linear in A, so every derived invariant inherits that. A surface term needs geometry the encoding does not carry",
+      "indexing_bug_recorded": "a first pass assumed 1-based generators, got half-integral genus and 'components = 2', which reads as a SPLIT canonical closure. That was my bug -- generators are 0-based, 0..n-2, all present. Caught by the script printing 'gens used = 5/5' beside 'missing = [5]'"
+    }
+  }
+}

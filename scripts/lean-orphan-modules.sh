@@ -1,27 +1,41 @@
 #!/usr/bin/env bash
-# lean-orphan-modules.sh — list library modules no build ever elaborates.
+# lean-orphan-modules.sh — list library modules that nothing imports.
 #
-# A module under lean/<Lib>/ that nothing imports is NOT built. The lakefile
-# declares `[[lean_lib]] name = "QOU"` with no `globs` key, and Lake's default
-# is then `globs = #[.one "QOU"]` — only the root module and its transitive
-# imports. Verified by experiment (throwaway package, toolchain v4.24.0):
-# without `globs` an unimported module is not built; with `globs = ["Lib",
-# "Lib.+"]` it is.
+# A module under lean/<Lib>/ that no other module imports is unreachable from
+# the library root. It is still COMPILED: the lakefile sets
+# `globs = ["QOU", "QOU.+"]` (bean qou-rc7b), and `QOU.+` is
+# `Glob.andSubmodules`, so `lake build` covers the whole tree.
 #
-# So an orphan can be syntactically broken, carry an uncited `sorry`, or fail
-# to typecheck, and nothing will say so. Combined with two standing gaps —
-# a library .lean with no .ts/.md sibling has no .qa.json sidecar, and CI
-# auto-triggers are disabled repo-wide — these modules have NO automated check.
+# What an orphan costs is VISIBILITY, not compilation. It is invisible to
+# everything that walks imports — blueprint, doc-gen, dependency analysis, an
+# import cone rooted at the library root. A theorem no tooling can reach is a
+# theorem nobody finds. That is the only thing this script is evidence for:
+# do NOT quote it as evidence about what gets built.
 #
-# Read-only: reports, never edits a lakefile. Wiring orphans up is owner-scoped
-# (bean qou-kljb) because turning on hundreds of unbuilt modules at once could
-# be very red.
+# Wiring an orphan up is ordinary work, not owner-scoped. Read-only: this
+# script reports, and never edits a lakefile.
 #
 # Usage:
 #   scripts/lean-orphan-modules.sh                 # QOU, summary only
 #   scripts/lean-orphan-modules.sh --list          # + every orphan module
 #   scripts/lean-orphan-modules.sh --root content/unital-groebner-bases/lean --lib UGB
-
+#
+# ⚠ CORRECTION 2026-08-30 (bean qou-si7d), kept because the superseded text was
+# acted on. This header used to open "list library modules no build ever
+# elaborates", describe the lakefile as having "no `globs` key", and state that
+# wiring orphans up "is owner-scoped (bean qou-kljb) because turning on hundreds
+# of unbuilt modules at once could be very red".
+#
+# All three were true when written and none is true now. qou-rc7b added the
+# globs; qou-kljb then CLOSED on exactly that finding — widening the build
+# exposed one real breakage, not hundreds, and it was fixed. But the header was
+# never updated, and an agent read the owner-scoped line as a live gate and
+# reported wiring work as blocked on it several times.
+# `.github/workflows/lean-orphan-gate.yml` had carried the correction since
+# 2026-08-15; this file was simply missed.
+#
+# The measured orphan count is still large and still worth reducing — for
+# reachability, which is a different claim from coverage.
 set -euo pipefail
 
 ROOT="content/quantum-observable-universe/lean"
@@ -32,7 +46,7 @@ while [ "$#" -gt 0 ]; do
     --root) ROOT="$2"; shift 2 ;;
     --lib)  LIB="$2";  shift 2 ;;
     --list) LIST=1;    shift ;;
-    -h|--help) sed -n '2,22p' "$0" | sed 's/^# \?//'; exit 0 ;;
+    -h|--help) sed -n '2,21p' "$0" | sed 's/^# \?//'; exit 0 ;;
     *) echo "unknown arg: $1" >&2; exit 2 ;;
   esac
 done
@@ -66,7 +80,9 @@ for d, _, files in os.walk(os.path.join(root, lib)):
 orphans = sorted(allmods - seen)
 reach = len(allmods & seen)
 print(f"{lib}: {len(allmods)} modules, {reach} reachable from {lib}.lean, "
-      f"{len(orphans)} NOT BUILT ({100*len(orphans)//max(len(allmods),1)}%)")
+      f"{len(orphans)} UNREACHABLE ({100*len(orphans)//max(len(allmods),1)}%)")
+print("  (unreachable = imported by nothing, so invisible to blueprint/doc-gen/"
+      "dependency analysis. They ARE compiled -- globs covers the tree.)")
 if show:
     for m in orphans: print(f"  {m}")
 elif orphans:

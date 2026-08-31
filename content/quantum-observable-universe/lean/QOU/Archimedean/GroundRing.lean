@@ -109,7 +109,7 @@ noncomputable def HA : R_q := q - q_inv
 
 /-- The quantum Planck constant `ℏ_q = (q − 1)/q = 1 − q⁻¹`.
     This is the action quantum per exceptional divisor step. -/
-noncomputable def hbar_q : R_q := 1 - q_inv
+noncomputable def hbarQ : R_q := 1 - q_inv
 
 /-- The crossing energy `E_cross = ½(q − q⁻¹)`.
 

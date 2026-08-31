@@ -55,7 +55,20 @@ from witness_base import WitnessBuilder  # noqa: E402
 # only if the caller's working precision is lower; it never lowers
 # the caller's precision.
 
-REPO_ROOT = HERE.parent.parent
+# OFF BY ONE. `HERE` is `Path(__file__).parent` = <repo>/computations, so
+# `HERE.parent.parent` is the directory ABOVE the repository, and every
+# BIN_CANDIDATES path below pointed at /home/user/tools/... instead of
+# <repo>/tools/...  The effect was silent and total: `find_binary()` always
+# returned None, `compute_tr_m` always short-circuited to
+# `tr_M_q0_unavail_reason = "hecke-canonical-chi binary not built"`, and the
+# canonical Markov trace -- the one computed on the canonical word WITH its
+# averaged crossings -- was never produced, even on a tree where the binary
+# had been built. That is why no recorded value in the corpus matches it.
+#
+# Measured after the fix, with the binary built from tools/hecke-engine:
+#   tr_M(p, q_0) = 1.14575969245730086935241774516176649113
+#   tr_M(n, q_0) = 0.98774368811580957144294046174148798302
+REPO_ROOT = HERE.parent
 BIN_CANDIDATES = [
     REPO_ROOT / "tools" / "hecke-engine" / "target" / "release"
     / "hecke-canonical-chi",

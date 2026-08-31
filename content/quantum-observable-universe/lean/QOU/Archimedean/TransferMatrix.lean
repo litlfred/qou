@@ -110,14 +110,53 @@ noncomputable def w_zero_t (v : VertexType) : R_t :=
 /-- A 2×2 transfer matrix over `ℤ[t, t⁻¹]`. -/
 abbrev TMatrix := Matrix (Fin 2) (Fin 2) R_t
 
-/-- The transfer matrix `T(𝔴⁺, 𝔴⁰)` at a single crossing.
+/-- The transfer matrix `T(𝔴⁺, 𝔴⁰)` at a single crossing, over **any**
+    commutative ring, given the Hecke amplitude `h` as data.
 
-    T(c, d) = ⎡ c·HA + d,  c ⎤
-              ⎣ c,          d ⎦
+    T(h; c, d) = ⎡ c·h + d,  c ⎤
+                 ⎣ c,        d ⎦
 
-    where `c = 𝔴⁺` and `d = 𝔴⁰`. -/
+    **The amplitude is the parameter, not `q`** (bean `qou-u87j`). The obvious
+    generalisation — take `q` and form `q - q⁻¹` inside — does not typecheck
+    over a `CommRing`: the symbolic ground ring here is
+    `R_t = LaurentPolynomial ℤ`, which has no `Inv`, which is precisely why
+    this file carries `t_inv` as a separate element rather than writing `t⁻¹`.
+    Passing `h` covers both users: `HA_t` over `ℤ[t,t⁻¹]` below, and
+    `q - q⁻¹` over `ℝ` in `QOU.Archimedean.BetaDecayTransfer`. -/
+def transferMatrixOf {R : Type*} [CommRing R] (h c d : R) :
+    Matrix (Fin 2) (Fin 2) R :=
+  !![c * h + d, c; c, d]
+
+/-- The transfer matrix at the symbolic Hecke amplitude `HA_t = q − q⁻¹`.
+
+    **Body left as the literal on purpose.** Defining this as
+    `transferMatrixOf HA_t c d` typechecks, but seven downstream proofs
+    `unfold transferMatrix` and then reduce the `Matrix.cons` normal form
+    entry by entry; the extra indirection stops them, and adding
+    `transferMatrixOf` to each `unfold` fixed some and not others. The
+    relationship is instead recorded as the `rfl` lemma below, which costs
+    no consumer anything and is just as strong. -/
 noncomputable def transferMatrix (c d : R_t) : TMatrix :=
   !![c * HA_t + d, c; c, d]
+
+/-- The symbolic transfer matrix **is** the generic one at the amplitude
+    `HA_t` — definitionally, hence `rfl`. This is what makes
+    `QOU.Archimedean.BetaDecayTransfer.betaTransfer` a second instantiation
+    rather than a second definition. -/
+theorem transferMatrix_eq_of (c d : R_t) :
+    transferMatrix c d = transferMatrixOf HA_t c d := rfl
+
+/-- `transferMatrixOf` unfolds to the matrix literal. Marked `simp` because
+    downstream proofs reduce these matrices entry by entry; without it they
+    stop at `transferMatrixOf h a b 0 0` and `ring`/`simp` cannot finish. -/
+@[simp] theorem transferMatrixOf_eq {R : Type*} [CommRing R] (h c d : R) :
+    transferMatrixOf h c d = !![c * h + d, c; c, d] := rfl
+
+/-- `transferMatrix` unfolds to the matrix literal it always was. Kept as a
+    `simp` lemma so proofs that used to `unfold transferMatrix` and land on
+    `!![...]` still do. -/
+@[simp] theorem transferMatrix_eq (c d : R_t) :
+    transferMatrix c d = !![c * HA_t + d, c; c, d] := rfl
 
 /-- Transfer matrix for a proton–proton crossing: `T(1, 0)`. -/
 noncomputable def T_pp : TMatrix := transferMatrix 1 0

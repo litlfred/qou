@@ -71,6 +71,10 @@ mp.dps = 60
 # "the substrate pin and its inverse" -- the muon naming was incidental, not a
 # proton-vs-muon comparison -- so it resolves the PROTON pin per the owner
 # directive of 2026-08-15 (bean qou-1c4y).
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
 
 Q_SUBSTRATE = _Q0_RESOLVED

@@ -247,7 +247,7 @@ export default chapter({
         // Relocated from quantum-observable-universes/
         // sec:algebraic-substrate-reeb (2026-07-07): the conjectured
         // full-seven-magic-numbers ↔ S₅-stable Bring period-lattice
-        // ranks, sibling to prop:magic-numbers-from-q's {2,8,20,28}
+        // ranks, sibling to conj:magic-numbers-from-q's {2,8,20,28}
         // derivation.
         "magic-numbers-bring",
         "k12-barrier-bypass",

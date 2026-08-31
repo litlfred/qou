@@ -182,8 +182,13 @@ def main():
     wb.add_assertion("ratio_convergence", computed=mp.nstr(ratio_residual, 12), expected="0",
                      tolerance=1e-4,
                      source="ITERATED seq ratio tail − λ₊ (tautological; seq built by iterating x²−τx+1)")
-    wb.add_assertion("det_one", computed=mp.nstr(lam_p * lam_m, 12), expected="1",
-                     tolerance=1e-30)
+    # |lam_p*lam_m - 1| against 0. The old form was unreachable twice over:
+    # mp.nstr(x, 12) caps the comparison at 12 significant digits, and the
+    # float64 verdict cancels two order-1 values at ~2.2e-16. 1e-11 is what
+    # 12 digits on a value of order 1 supports.
+    wb.add_assertion("det_one", computed=mp.nstr(abs(lam_p * lam_m - 1), 12),
+                     expected="0", tolerance=1e-11,
+                     source="lam_+ * lam_- = det = 1 for the recurrence matrix")
     # extensive-growth flag as a checkable boolean (1.0 ⟺ λ₊>1).
     wb.add_assertion("dominant_root_extensive", computed=("1" if lam_p > 1 else "0"),
                      expected="1", tolerance=0.0, source="λ₊ > 1 ⟺ τ > 2 (τ=2.6424)")

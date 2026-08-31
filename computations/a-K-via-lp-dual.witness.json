@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T09:19:53.276738+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "computedAt": "2026-08-30T20:32:27.834815+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "a_K_R_finite[deuteron]",
@@ -54,8 +54,8 @@
     },
     {
       "name": "a_K_R_proton_equals_1",
-      "computed": "1.0",
-      "expected": "1.000000000000000000000000000000",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "W_atom = W_free for free nucleon (R trivially 1)"
@@ -65,8 +65,8 @@
   "durationMs": 16,
   "computation": "a-K-via-lp-dual",
   "scriptFile": "aK_via_lp_dual.py",
-  "scriptHash": "6a6f74d86bae",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "8202fdd1cc3e",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:22:17.595368+00:00",
-  "commitSha": "89f632a8cba989331178e9234ed9bba813cbd4c3",
+  "computedAt": "2026-08-31T02:59:22.674835+00:00",
+  "commitSha": "a9173247cc5fcaf665865a6da42370a2531bc6a7",
   "assertions": [
     {
       "name": "regression_guard_all_five_fixed",
@@ -30,8 +30,8 @@
   "durationMs": 0,
   "computation": "trm5-zcubed-live-producer-audit",
   "scriptFile": "trm5_zcubed_live_producer_audit.py",
-  "scriptHash": "e97f492a518d",
-  "scriptCommitSha": "8a505f2b5a8913970c0d815642f8b49ace6e9335",
+  "scriptHash": "37aa3a1813c2",
+  "scriptCommitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -118,6 +118,184 @@
       }
     ]
   },
+  "corpus_scan": {
+    "note": "Shape-keyed scan of the whole tree, not a file list. Added after the five-name guard printed all-clear while seven other files on the same basis still carried the bug -- two of them in spellings (`z ** 3` inside np.array, `z * z * z`) that no pattern in the guard could match.",
+    "six_vectors_found": 34,
+    "still_cubed": 0,
+    "bug_sites": [],
+    "clean_sites": [
+      {
+        "file": "computations/atom_mass_derived.py",
+        "line": 107,
+        "sixth_entry": "h_trm * z**2 + z"
+      },
+      {
+        "file": "computations/basis_knot_tables.py",
+        "line": 59,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "computations/ch-bond-writhe-lp.py",
+        "line": 35,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "computations/compound_shift_nf.py",
+        "line": 323,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/electron_shell_sdp_capacity.py",
+        "line": 75,
+        "sixth_entry": "h * z * z + z"
+      },
+      {
+        "file": "computations/electron_sigma_f_chain.py",
+        "line": 114,
+        "sixth_entry": "_h * z * z + z"
+      },
+      {
+        "file": "computations/h3_gram/hecke_h3_markov_gram_derive.py",
+        "line": 19,
+        "sixth_entry": "h*z**2+z"
+      },
+      {
+        "file": "computations/hh-trefoil-corrected.py",
+        "line": 56,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "computations/intermediate_knot_detection.py",
+        "line": 36,
+        "sixth_entry": "HA * z**2 + z"
+      },
+      {
+        "file": "computations/jet_knot_invariants.py",
+        "line": 67,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "computations/meson/operator_selection_lattice_symbolic.py",
+        "line": 232,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/molecular-frobenius-lp.py",
+        "line": 60,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "computations/operator_selection_lp_symbolic_qq.py",
+        "line": 277,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/photon_operator_table.py",
+        "line": 65,
+        "sixth_entry": "HA * z**2 + z"
+      },
+      {
+        "file": "computations/probes/gram_h3_convention_frame_probe.py",
+        "line": 118,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/probes/h3_gram_degeneracy_block_identification_probe.py",
+        "line": 62,
+        "sixth_entry": "h*z**2 + z"
+      },
+      {
+        "file": "computations/probes/hecke_h4_nf_table_preflight.py",
+        "line": 150,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/qbeta/h3_markov_trace_cyclicity_preflight.py",
+        "line": 34,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/qbeta/molien_jones_markov_n3_identification_probe.py",
+        "line": 84,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py",
+        "line": 92,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
+        "line": 204,
+        "sixth_entry": "HA * z * z + z"
+      },
+      {
+        "file": "computations/qbeta/qbeta_d1_eleven_crossing_exclusion_probe.py",
+        "line": 223,
+        "sixth_entry": "z * (h * z + ONE)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py",
+        "line": 185,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_d_frame_two_block_forced_weights_probe.py",
+        "line": 119,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_ladder_convention_dependence_is_one_phase_probe.py",
+        "line": 110,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_mu_closed_form_and_delta_alignment_probe.py",
+        "line": 122,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_mu_is_block_invariants_probe.py",
+        "line": 126,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_mu_normalisation_is_derived_probe.py",
+        "line": 106,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_riesz_element_is_structurally_forced_probe.py",
+        "line": 136,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_trace_invisible_is_pairing_representable_probe.py",
+        "line": 124,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/tl3_gram_nonsingular_probe.py",
+        "line": 99,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "computations/substrate/hecke_core_symbolic.py",
+        "line": 166,
+        "sixth_entry": "h * z**2 + z"
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/gram.py",
+        "line": 220,
+        "sixth_entry": "h * z ** 2 + z"
+      },
+      {
+        "file": "tools/sage-examples/scripts/hecke_surface.py",
+        "line": 85,
+        "sixth_entry": "h * z * z + z"
+      }
+    ]
+  },
   "check1_markov_derivation": {
     "derived_symbolic": "q*z**2 + z - z**2/q",
     "equals_z_cubed": false,
@@ -175,7 +353,7 @@
       "qou-pmkh",
       "qou-cds2"
     ],
-    "scope": "(a) scope-limited -- five named files on one basis; not a claim about every z**3 in the corpus"
+    "scope": "Two claims, different scopes. The REGRESSION GUARD is scope-limited to five named files. The CORPUS SCAN is tree-wide but shape-limited: it sees six-element vectors [1,z,z,z^2,z^2,*] on the H_3 NF basis, so a trace built elementwise, in a loop, or on another basis is still invisible to it. It is NOT a claim about every z**3."
   },
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669095610768879874499121873578736072814195318705"

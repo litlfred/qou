@@ -89,3 +89,48 @@ serialize with `_precision.fmt`.
 Redo the bar-parity argument on the corrected Gram matrix and determine whether
 the scope-(a) closure survives. Then either restore the conclusion with correct
 evidence, or re-scope it.
+
+## RE-ANALYSIS 2026-08-30 — the negative survives, the stated mechanism does not
+
+Measured on the corrected weight. All three legs of the recorded verdict:
+
+| leg | status | evidence |
+|---|---|---|
+| **[1] sign flip** | **SURVIVES** | no flip at any geometric μ; HS ratio at μ=0 is `1.0000001` against target `S(p)/S(m) = -3.93692` |
+| **[2] bar-parity** | **REFUTED** | μ=0: `18.38` vs `6.856` → **BAR-ODD**; μ=1: `13.45` vs `33.53` → BAR-EVEN |
+| **[3] no eigen-crossing** | **REFUTED** | corrected Gram has an eigenvalue at **2.717e-71** — singular to working precision — against a between-anchor shift of `6.043e-8` |
+
+### The answer to this bean's question
+
+**The scope-(a) negative holds. The mechanism named in the RESULT line does not.**
+
+The closure argument was *"HS is bar-even, S is bar-odd, so a real bar-even
+resolvent cannot carry it"*. It required bar-even at **every** geometric μ. Under
+the corrected weight the parity is **μ-dependent**, and at μ=0 the resolvent has
+the **same** parity as S — so the obstruction is simply absent there.
+
+What still closes the route is finding 1: it does not produce the flip. That is a
+real negative and is untouched by the weight correction.
+
+### Scope — read before citing
+
+- This does **not** open the route. Finding 1 stands.
+- This does **not** show the route works.
+- It shows **two of the three legs** the verdict was built on do not survive, and
+  that the surviving leg is not the one the RESULT line cites.
+
+### Left undone deliberately
+
+Re-scoping the RESULT string and the witness verdict to cite finding 1 rather
+than bar-parity is a change to a **recorded conclusion**. That belongs to the
+owner or a dedicated pass, not to an inline edit in a drain PR — so the probe
+header now carries the full re-analysis and says what the next agent should
+change.
+
+### Worth relating to another open item
+
+The near-singular Gram eigenvalue (**2.717e-71**) may be the same phenomenon as
+the convention-D Gram singularity tracked in `qou-cds2`. Not asserted — the
+frames differ and I have not checked whether the mechanism is shared. Flagged
+because two independent near-singular Gram reports in the same corpus should not
+sit unconnected.

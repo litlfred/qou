@@ -568,3 +568,39 @@ its first substantive PR will produce the datapoint for free.
 Recorded because the alternative was leaving it in a chat transcript, which is
 this corpus's documented way of losing a measurement — and because this bean
 already tells future agents to write exactly this observation down.
+
+### 2026-08-30 12:26Z — a FIFTH zero, and this one is the discriminating shape you asked for
+
+The closure above says *"what would settle it is a request on a fresh PR after a
+known-long quiet period, watching explicitly for the quota message"*, and stops
+because a fifth zero at 120 min would not discriminate. This row is not just a
+fifth zero — it has the shape the closure names.
+
+| PR | pushed | requested | checked | window | quota message |
+|---|---|---|---|---|---|
+| **#6180** | 10:42Z (opened) | **11:25Z** | 12:26Z | **≥ 61 min** | **none** |
+
+Two properties the four closed rows do not have:
+
+1. **The request came ~3.5 h after the 07:56Z presumed exhaustion**, and ~76 min
+   after the last request in the table (#6162 at ~10:09Z). If the quota recharge
+   interval is anything under ~3 h, this request was made with quota available —
+   and still produced nothing at 61 min.
+2. **`request_copilot_review` returned no output at all** — no quota-limit
+   message, no error. The same undetermined signature row 3 hit, now at a much
+   later wall-clock time.
+
+**Reading, scoped.** This weakens "quota exhausted at 07:56Z with a short
+recharge" as a complete explanation, because a request 3.5 h later behaves
+identically. It does **not** establish the trigger hypothesis either: an
+exhaustion with a recharge longer than ~3.5 h, a day-scoped quota, or a
+non-quota mechanism all fit this row equally. **Still not scored**, consistent
+with the closure's discipline.
+
+**What would now discriminate**, sharpened by this row: a request on a fresh PR
+after a **multi-hour** quiet window spanning a UTC day boundary. If a day-scoped
+quota is the mechanism, that is the only window where a review can appear.
+
+Recorded, not acted on. I am not re-requesting on #6180 — AGENTS.md's own
+corrected row says reviews are rationed and not to re-request after every push,
+and the closure above is right that another same-day zero buys nothing.

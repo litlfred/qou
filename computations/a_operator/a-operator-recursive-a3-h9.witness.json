@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-28T17:11:53.258961+00:00",
-  "commitSha": "406489450c9b6a222e2034985e303503194efb9b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T15:10:35.639250+00:00",
+  "commitSha": "698a912565ad0635aa7169aa41a90daa03aae86c",
   "assertions": [
     {
       "name": "combiner_exact_vs_seminormal_1_2",
@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "max|χ_comb−χ_young|=5.9119161e-48 < 1e-25 (³H (triton))"
+      "source": "max|χ_comb−χ_young|=2.619456e-48 < 1e-25 (³H (triton))"
     },
     {
       "name": "trM_reproduces_transfer_1_2",
@@ -18,7 +18,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "tr_M combiner vs transfer rel=1.9515091e-16, max|χ_comb−χ_transfer|=1.5407722e-15 < 1e-12 float64 word-constant floor (³H (triton))"
+      "source": "tr_M combiner vs transfer rel=1.0198718e-50, max|χ_comb−χ_transfer|=6.6599317e-49 < 1e-12 float64 word-constant floor (³H (triton))"
     },
     {
       "name": "combiner_exact_vs_seminormal_2_1",
@@ -26,7 +26,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "max|χ_comb−χ_young|=9.955116e-48 < 1e-25 (³He)"
+      "source": "max|χ_comb−χ_young|=4.4474805e-48 < 1e-25 (³He)"
     },
     {
       "name": "trM_reproduces_transfer_2_1",
@@ -34,15 +34,15 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "tr_M combiner vs transfer rel=1.0737755e-16, max|χ_comb−χ_transfer|=1.78281e-15 < 1e-12 float64 word-constant floor (³He)"
+      "source": "tr_M combiner vs transfer rel=3.1442964e-50, max|χ_comb−χ_transfer|=7.6975624e-49 < 1e-12 float64 word-constant floor (³He)"
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 24,
   "computation": "a-operator-recursive-a3-h9",
   "scriptFile": "a_operator_recursive_a3_crosscheck.py",
   "scriptHash": "8db718c4294d",
-  "scriptCommitSha": "406489450c9b6a222e2034985e303503194efb9b",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/a_operator/a_operator_recursive_a3_crosscheck.py"
+    ],
+    "reproduce": "python3 -u computations/a_operator/a_operator_recursive_a3_crosscheck.py"
   },
   "description": "Closure-b STEP 3 (H_9 universality, A=3): the categorical interface-operator recursion A^λ_{ξν}(I)=Π_{ξν}ρ_λ(I)Π_{ξν} reconstructs tr_M(³H), tr_M(³He) at H_9. (a) per-λ combiner χ^λ vs direct young_seminormal.chi_young is exact (≪1e-25, sanity subset d_λ≤20); (b) tr_M=Σ_λ y_λ χ^λ matches the canonical fine-Bratteli transfer reference to the float64 atom-word constant floor (~1e-16). Correctness validation of the operator-valued combiner — reproduces (not changes) tr_M; the A=3 case the fitted least-squares extract misses by 21-42%. Structural invariant proved in Lean as QOU.BraidKnot.InterfaceOperator.trace_block_diagonal.",
   "auditOnly": "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md",
@@ -70,21 +79,21 @@
       "label": "³H (triton)",
       "Z": 1,
       "N": 2,
-      "max_chi_comb_vs_young": "5.9119161e-48",
-      "max_chi_comb_vs_transfer": "1.5407722e-15",
-      "trM_combiner": "0.104071087735434324",
-      "trM_transfer": "0.104071087735434304",
-      "rel_trM": "1.9515091e-16"
+      "max_chi_comb_vs_young": "2.619456e-48",
+      "max_chi_comb_vs_transfer": "6.6599317e-49",
+      "trM_combiner": "0.229310102104556507",
+      "trM_transfer": "0.229310102104556507",
+      "rel_trM": "1.0198718e-50"
     },
     "reconstruct_³He": {
       "label": "³He",
       "Z": 2,
       "N": 1,
-      "max_chi_comb_vs_young": "9.955116e-48",
-      "max_chi_comb_vs_transfer": "1.78281e-15",
-      "trM_combiner": "0.206578511677137038",
-      "trM_transfer": "0.206578511677137016",
-      "rel_trM": "1.0737755e-16"
+      "max_chi_comb_vs_young": "4.4474805e-48",
+      "max_chi_comb_vs_transfer": "7.6975624e-49",
+      "trM_combiner": "0.403767036851428169",
+      "trM_transfer": "0.403767036851428169",
+      "rel_trM": "3.1442964e-50"
     }
   }
 }

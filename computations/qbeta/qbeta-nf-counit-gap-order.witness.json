@@ -1,0 +1,288 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T11:53:25.687926+00:00",
+  "commitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
+  "assertions": [
+    {
+      "name": "gap_closed_form",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_vanishes_to_order_three",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_leading_coefficient_is_minus_quarter",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "the_two_eps_differ",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "counit_gap_has_no_t1_term",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "counit_gap_has_no_t2_term",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "counit_gap_first_appears_at_t3",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "typed_eps_matches_recorded_vector",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "single_wrap_eps_matches_recorded_vector",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "trM_gap_reaches_t1_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_gap_reaches_t1_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "trM_gap_reaches_t1_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_gap_reaches_t1_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_bean_entry6_singlewrap_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_bean_entry6_singlewrap_D_t2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "typed_C_destroys_the_t2_match",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_audit_ratio_1_00579",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "all_four_cells_undercorrect",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "canonical_choices_are_the_worst_cell",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-nf-counit-gap-order",
+  "scriptFile": "qbeta_nf_counit_gap_order_probe.py",
+  "scriptHash": "e7bb4ed393a7",
+  "scriptCommitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nf_counit_gap_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nf_counit_gap_order_probe.py"
+  },
+  "description": "RETRACTION-CARRYING. The single-wrap vs typed nucleon-NF COUNIT gap is h^3(h^4+2h^3+2h^2+2h-1)/4, leading -h^3/4, so the two NFs agree through O(h^2). BUT alpha = (eps - tr_M)/2 and the tr_M half is NOT insensitive: the tr_M gap is O(t) and the ALPHA gap is O(t) with coefficient 1/8 in BOTH conventions, so the NF choice moves the phase at FIRST order and the qou-pdix gate STANDS. This probe's first conclusion (that the gap could not move the entry-6 test) is RETRACTED. The sensitivity lives in the crossing-number grading: eps sets z^k -> 1 and the L/e differences cancel; tr_M weights by z^#cr and they survive. Separately: because the Frobenius counit is a canonical (basis-independent) map, two expansions of ONE element cannot give different eps, so the 1.00579 factor is NOT a 'basis-change' as labelled in the 2026-05-11 audit - the two NFs expand DIFFERENT ELEMENTS. That audit's own section 2 proves the net IS the counit, which is what makes the section 1 label a category error against it.",
+  "contentBlock": "prop:q-beta-spectral-bridge",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)"
+  },
+  "data": {
+    "assertions_passed": 19,
+    "assertions_total": 19,
+    "checks": [
+      {
+        "name": "gap_closed_form",
+        "pass": true,
+        "why": "eps_typed - eps_sw = h^3 (h^4+2h^3+2h^2+2h-1)/4"
+      },
+      {
+        "name": "gap_vanishes_to_order_three",
+        "pass": true,
+        "why": "lowest surviving power of h is 3: the two NFs agree through O(h^2)"
+      },
+      {
+        "name": "gap_leading_coefficient_is_minus_quarter",
+        "pass": true,
+        "why": "leading term is -h^3/4"
+      },
+      {
+        "name": "the_two_eps_differ",
+        "pass": true,
+        "why": "different polynomials => (eps canonical) => DIFFERENT ELEMENTS, not two bases for one element"
+      },
+      {
+        "name": "counit_gap_has_no_t1_term",
+        "pass": true,
+        "why": "the COUNIT gap contributes nothing at order t^1"
+      },
+      {
+        "name": "counit_gap_has_no_t2_term",
+        "pass": true,
+        "why": "the COUNIT gap contributes nothing at order t^2"
+      },
+      {
+        "name": "counit_gap_first_appears_at_t3",
+        "pass": true,
+        "why": "counit gap first nonzero order in t is 3"
+      },
+      {
+        "name": "typed_eps_matches_recorded_vector",
+        "pass": true,
+        "why": "the typed 6-term vector sums to the recorded eps_typed"
+      },
+      {
+        "name": "single_wrap_eps_matches_recorded_vector",
+        "pass": true,
+        "why": "the single-wrap vector sums to the recorded eps_sw"
+      },
+      {
+        "name": "trM_gap_reaches_t1_C",
+        "pass": true,
+        "why": "the tr_M half of the gap is O(t), coeff -1/4 — NOT O(t^3)"
+      },
+      {
+        "name": "alpha_gap_reaches_t1_C",
+        "pass": true,
+        "why": "ALPHA moves at FIRST order, coeff 1/8 — the bean's gate stands; this probe's first conclusion was wrong"
+      },
+      {
+        "name": "trM_gap_reaches_t1_D",
+        "pass": true,
+        "why": "the tr_M half of the gap is O(t), coeff -1/4 — NOT O(t^3)"
+      },
+      {
+        "name": "alpha_gap_reaches_t1_D",
+        "pass": true,
+        "why": "ALPHA moves at FIRST order, coeff 1/8 — the bean's gate stands; this probe's first conclusion was wrong"
+      },
+      {
+        "name": "reproduces_bean_entry6_singlewrap_C",
+        "pass": true,
+        "why": "single-wrap C alpha = [-1/2, 1/4, -5/16], matching bean entry (6) computed independently"
+      },
+      {
+        "name": "reproduces_bean_entry6_singlewrap_D_t2",
+        "pass": true,
+        "why": "single-wrap D alpha t^2 = 5/4, matching bean entry (6)"
+      },
+      {
+        "name": "typed_C_destroys_the_t2_match",
+        "pass": true,
+        "why": "typed C alpha t^2 = 11/16 against c*ln q prediction 3/16: the typed NF is WORSE, not better"
+      },
+      {
+        "name": "reproduces_audit_ratio_1_00579",
+        "pass": true,
+        "why": "matches docs/audits/2026-05-11-q-beta-residual-decomposition.md §1"
+      },
+      {
+        "name": "all_four_cells_undercorrect",
+        "pass": true,
+        "why": "every (NF, convention) cell leaves part of the required 0.160% correction unexplained — none overshoots"
+      },
+      {
+        "name": "canonical_choices_are_the_worst_cell",
+        "pass": true,
+        "why": "typed NF (what the live mass compute uses) + convention D (the 2026-08-15 owner ruling) is the WORST of the four cells"
+      }
+    ],
+    "numeric_at_proton_pin": {
+      "q0_proton_pin": "1.10997858275138080759166909561",
+      "h_at_q0": "0.20906029879563931543084621313",
+      "eps_single_wrap": "-0.18720719452937832073",
+      "eps_typed": "-0.18829060147138277044",
+      "ratio_typed_over_single_wrap": "1.0057872078299556552",
+      "relative_gap": "0.0057872078299556551719",
+      "gap_closed_form": "h**3*(h**4 + 2*h**3 + 2*h**2 + 2*h - 1)/4"
+    },
+    "nf_convention_cells_vs_required_N1": {
+      "single_wrap_C": {
+        "alpha": "-0.0523361202682",
+        "cos_alpha": "0.998630777833",
+        "unexplained_fraction_of_required_correction": "0.14548054"
+      },
+      "single_wrap_D": {
+        "alpha": "-0.0404857773406",
+        "cos_alpha": "0.999180562854",
+        "unexplained_fraction_of_required_correction": "0.48859652"
+      },
+      "typed_C": {
+        "alpha": "-0.0354101077057",
+        "cos_alpha": "0.999373127642",
+        "unexplained_fraction_of_required_correction": "0.6087745"
+      },
+      "typed_D": {
+        "alpha": "-0.0298326307505",
+        "cos_alpha": "0.999555040073",
+        "unexplained_fraction_of_required_correction": "0.72230444"
+      }
+    },
+    "verdict": "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 and tr_M weights by z^#cr where eps sets z^k -> 1. The bean was right and this probe's first conclusion was wrong. Surviving: the exact closed form; that the 1.00579 is NOT a basis change (eps is canonical, so different eps => different ELEMENTS); and that the typed NF is worse, destroying single-wrap C's t^2 match rather than repairing t^3."
+  }
+}

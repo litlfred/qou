@@ -1,41 +1,265 @@
 {
-  "schema": "witness/v1",
-  "id": "a4-interface-magnitude-one-scalar-gate",
-  "description": "A=4 (4He) >=4-body magnitude via the interface operator: the derived -ln det(I+G) form (exchange spectrum {+-sqrt5,+-1}, #3924/merged) is SURJECTIVE onto (0,inf) in its single free per-pair bond scalar m in (0,1/sqrt5). Consolidates the s5-so3 normalized-reweight bracket (#4526 WALL) and the interface-operator det form into ONE under-determined scalar. Every positive AME target (b4~9.243, |mu4|~4.591, B(4He)~28.296) is reachable => NOT scope-(b) excluded; each reaching m is a function of the target (anchor-inversion = FIT) => NOT closed. Separately the naive uniform per-pair magnitude z=0.499320334 has 5z^2>1 => det(I+G)<0, structurally EXCLUDED (scope-(b), cited invariant = the exchange spectrum). Formalize-first; 0-fit; nothing wired; free_parameters=0.",
-  "verdict": "WALL(scope-(a)) magnitude open + scope-(b) exclusion of naive-uniform-z; surviving mechanism = a categorical principle fixing m in (0,1/sqrt5) strictly below the naive z (equiv. a normalized W strictly below d_q^2/D^2)",
-  "free_parameters": 0,
-  "targets_never_inverted_into_production": true,
-  "inputs": {
-    "exchange_spectrum": "{+sqrt5,-sqrt5,+1,-1}  (derived, b4-slater-antisymmetrizer-exchange-sign, #3924 merged)",
-    "det_form": "det(I+G) = (1+m*sqrt5)(1-m*sqrt5)(1+m)(1-m) = (1-5m^2)(1-m^2)",
-    "b4_form": "b4(m) = -ln det(I+G)  (attractive branch)",
-    "writhe_ceiling": "m < 1/sqrt5 ~ 0.4472136  (det>0)",
-    "naive_z_bond_factor": "0.499320334  (b4-1four-complete-graph-writhe-signs)",
-    "documented_targets_MeV": {"b4_1four_connected_cumulant": 9.243, "mu4_simplex_residual_abs": 4.591048, "B_4He_AME": 28.29566}
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T12:47:58.921373+00:00",
+  "commitSha": "68a1bee19c336728cddda5cf5a61819f001f0f8a",
+  "assertions": [
+    {
+      "name": "det_three_forms_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "b4_strictly_increasing",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "surjective_all_targets_reachable",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "naive_z_excluded_under_both_conventions",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exclusion_stronger_under_canonical_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "all_cited_lean_declarations_exist",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "saturation_threshold_tracks_dps",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "roundtrip_digits_track_the_law",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "magnitude_closed_by_this_probe",
+      "computed": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "a4-interface-magnitude-one-scalar-gate",
+  "scriptFile": "a4_interface_magnitude_one_scalar_gate.py",
+  "scriptHash": "3b896ebc3ea1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  "results": {
-    "surjective_onto_positive_reals": true,
-    "closed_form_inverse": "m*(t) = sqrt( (6 - sqrt(16 + 20*exp(-t))) / 10 )  -- root of 5u^2-6u+(1-exp(-t))=0, u=m^2 in (0,1/5)",
-    "strictly_monotone_increasing_on_(0,1/sqrt5)": true,
-    "naive_z_det_sign": "det(I+G)(0.4993...) < 0  (unphysical; 5z^2 = 1.2466 > 1)",
-    "not_scope_b_excluded": "target reachable in principle (surjective); matching is a fit, not a derivation",
-    "not_closed": "no identified categorical driver fixes m; the reaching m depends on the target",
-    "sharpening_vs_4526": "obstruction is not the reweight-bracket width but that the single scalar m is free; both framings collapse to the same one-scalar gate"
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
-  "lean": {
-    "file": "content/quantum-observable-universe/lean/QOU/MassTheory/A4InterfaceMagnitude.lean",
-    "package_ref": "qou:QOU.MassTheory.A4InterfaceMagnitude",
-    "sorry_free": true,
-    "key_theorems": [
-      "detG_eq_spectral_product",
-      "detG_neg_of_above_ceiling",
-      "naive_z_unphysical",
-      "b4_strictMono_on",
-      "magnitude_form_surjective",
-      "documented_targets_all_reachable",
-      "a4_magnitude_one_scalar_gate"
-    ]
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py"
   },
-  "references": ["wenzl1988", "manuscript"],
-  "audit": "docs/audits/2026-08-02-a4-interface-magnitude-one-scalar-gate.md"
+  "description": "A=4 (4He) >=4-body magnitude via the interface operator: the derived -ln det(I+G) form (exchange spectrum {+-sqrt5, +-1}, #3924) is SURJECTIVE onto (0,inf) in its single free per-pair bond scalar m in (0, 1/sqrt5), so every documented target is reachable and each reaching m is a function of the target -- the magnitude cannot be closed by computation, only by a principle that FIXES m. REGENERATED 2026-08-30 by its first producer (bean qou-rv6z): the committed witness was hand-written with NO provenance (engine, scriptFile, scriptHash, commitSha, computedAt, q0Anchor, precisionMetadata, environment all absent) and no script wrote it, so its numbers were unreproducible. It was also STALE against its own cited Lean, which carries zD/zD_sq/zD_sq_mem/zD_unphysical (the convention-D replacement for the excised convention-C naive_z) while the witness cited only z_C = 0.499320334. Both conventions are now reported: the exclusion holds under each and STRENGTHENS under canonical D. Verdict unchanged -- WALL(scope-(a)) magnitude open, plus the scope-(b) exclusion of the naive uniform z.",
+  "data": {
+    "provenance_note": {
+      "regenerated_by": "computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py",
+      "previously": "hand-written, no producer, no provenance fields",
+      "bean": "qou-rv6z",
+      "fields_previously_absent": [
+        "engine",
+        "scriptFile",
+        "scriptHash",
+        "commitSha",
+        "computedAt",
+        "q0Anchor",
+        "precisionMetadata",
+        "environment"
+      ]
+    },
+    "inputs": {
+      "exchange_spectrum": "{+sqrt5, -sqrt5, +1, -1} (derived, b4-slater-antisymmetrizer-exchange-sign, #3924)",
+      "det_form": "det(I+G) = (1+m sqrt5)(1-m sqrt5)(1+m)(1-m) = (1-5m^2)(1-m^2)",
+      "b4_form": "b4(m) = -ln det(I+G)  (attractive branch)",
+      "writhe_ceiling": "0.447213595499957939281834733746255247088123671922304733722148",
+      "documented_targets_MeV": {
+        "b4_1four_connected_cumulant": "9.24299999999999999999999999999999999999999999999999196032375",
+        "mu4_simplex_residual_abs": "4.59104799999999999999999999999999999999999999999999736709156",
+        "B_4He_AME": "28.2956600000000000000000000000000000000000000000000193910149"
+      }
+    },
+    "results": {
+      "det_three_forms_max_disagreement": "4.00914706513829346921080470072722281822279532015757304694291e-51",
+      "det_in_open_unit_interval_on_physical_region": true,
+      "det_negative_above_ceiling": true,
+      "b4_strictly_increasing": true,
+      "surjective_onto_positive_reals": true,
+      "closed_form_inverse": "m*(t) = sqrt((6 - sqrt(16 + 20 exp(-t)))/10) -- root of 5u^2-6u+(1-exp(-t))=0, u=m^2 in (0,1/5)",
+      "max_roundtrip_rel_residual_used_range_t_le_10": "2.15626646987364993446227071873473471307033816294058353018638e-46",
+      "roundtrip_digit_budget": {
+        "1.0e-12": {
+          "rel_residual": "1.79415564855449158450299563806212031896488683573264508774500e-40",
+          "digits_surviving": "39.7461398832673396066926632127756344696333188571882432783276",
+          "two_sided_floor": "37.9999999999995657055180967481723488710810833949176753971284",
+          "loss_large_t_term": "0.000000000000434294481903251827651128918916605082294397005803666537269226",
+          "loss_small_t_term": "12.0000000000000000000000000000000000000000000000000000000000"
+        },
+        "1.0e-6": {
+          "rel_residual": "5.74048366889823323695478647010026201179476250999887482898720e-47",
+          "digits_surviving": "46.2410515142424166827549167315824905704208216450582197283438",
+          "two_sided_floor": "43.9999995657055180967481723488710810833949177056029618304007",
+          "loss_large_t_term": "0.000000434294481903251827651128918916605082294397005803666021536835",
+          "loss_small_t_term": "6.00000000000000000000000000000000000000000000000000000000000"
+        },
+        "1.0": {
+          "rel_residual": "0.0",
+          "digits_surviving": "50.0000000000000000000000000000000000000000000000000000000000",
+          "two_sided_floor": "49.5657055180967481723488710810833949177056029941963411683699",
+          "loss_large_t_term": "0.434294481903251827651128918916605082294397005803666181733060",
+          "loss_small_t_term": "0.0"
+        },
+        "10.0": {
+          "rel_residual": "1.96287840309170848252560998147604829180188058874914703227132e-48",
+          "digits_surviving": "47.7071066033556547746279251307231734323751865887886762882111",
+          "two_sided_floor": "45.6570551809674817234887108108339491770560299419633261552282",
+          "loss_large_t_term": "4.34294481903251827651128918916605082294397005803666315371296",
+          "loss_small_t_term": "0.0"
+        },
+        "30.0": {
+          "rel_residual": "7.38725169548945923609030669052897634506369855511803578274816e-41",
+          "digits_surviving": "40.1315171036187874759357336207145110154144742730508478373119",
+          "two_sided_floor": "36.9711655429024451704661324325018475311680898258900639941553",
+          "loss_large_t_term": "13.0288344570975548295338675674981524688319101741099787700800",
+          "loss_small_t_term": "0.0"
+        },
+        "50.0": {
+          "rel_residual": "1.84477026469914780447534173827312441996965238520960637966313e-32",
+          "digits_surviving": "31.7340577102559865324809083641479092440386807220110637355248",
+          "two_sided_floor": "28.2852759048374086174435540541697458852801497098166735403764",
+          "loss_large_t_term": "21.7147240951625913825564459458302541147198502901833264596236",
+          "loss_small_t_term": "0.0"
+        },
+        "100.0": {
+          "rel_residual": "0.000000000468925213014563875099757110165687674768682290469789016264325",
+          "digits_surviving": "9.32889641563240806724338713120843384777939475366660481924356",
+          "two_sided_floor": "6.57055180967481723488710810833949177056029941963334708075277",
+          "loss_large_t_term": "43.4294481903251827651128918916605082294397005803666529192472",
+          "loss_small_t_term": "0.0"
+        }
+      },
+      "digit_loss_law": "TWO-SIDED. Large t: 1-5m^2 cancels as m* -> the ceiling, costing ~t*log10(e) digits. Small t: det -> 1 so -ln(det) is a log near 1, costing ~log10(1/t). Essentially exact at t ~ 1. Checked as a LAW rather than against a fixed tolerance, which would hide the degradation -- and a one-sided version of this law was itself wrong at small t.",
+      "closed_form_saturation": {
+        "t_threshold_at_this_dps": "116.266404777276857355883278379819148803486633234608565121230",
+        "dps": 50,
+        "dps_times_ln10": "115.129254649702284200899572734218210380055074431438751926789",
+        "meaning": "above this t, exp(-t) underflows, m* lands exactly ON the ceiling, det = 0 and b4 = -ln 0 = +inf. The form is surjective onto (0,inf) MATHEMATICALLY; it is numerically usable to t ~ dps*ln(10). A PRECISION limit, not a limit of the mathematics -- and the same effect the (C2) digit-count result describes from the other side: B(4He) at t = 28.3 already sits 1.44e-13 below the ceiling."
+      },
+      "documented_targets_all_reachable": {
+        "b4_1four_connected_cumulant": {
+          "target": "9.24299999999999999999999999999999999999999999999999196032375",
+          "m_star": "0.447186542768607556673412455957271229086112833245389041719818",
+          "ceiling_minus_m_star": "0.0000270527313503826084222777889840180020108386769156920023303942",
+          "roundtrip_rel_residual": "3.20858998411587178292495863242592696390061934238295216204494e-48",
+          "m_star_in_open_interval": true
+        },
+        "mu4_simplex_residual_abs": {
+          "target": "4.59104799999999999999999999999999999999999999999999736709156",
+          "m_star": "0.444378700913875691306446565368186561659966434052118836288747",
+          "ceiling_minus_m_star": "0.00283489458608224797538816837806868542815723787018589743340121",
+          "roundtrip_rel_residual": "3.72588004843121921951141294749466440438376162320069699974523e-50",
+          "m_star_in_open_interval": true
+        },
+        "B_4He_AME": {
+          "target": "28.2956600000000000000000000000000000000000000000000193910149",
+          "m_star": "0.447213595499814143543405240754598230113687695919310554134177",
+          "ceiling_minus_m_star": "0.000000000000143795738429492991657016974435976002994179587970937163527292",
+          "roundtrip_rel_residual": "7.86639838766395928570493065893920712688253308530461091898145e-41",
+          "m_star_in_open_interval": true
+        }
+      },
+      "not_closed": "no identified categorical driver fixes m; the reaching m depends on the target, so matching it is a FIT"
+    },
+    "naive_z_exclusion_both_conventions": {
+      "z_C": {
+        "z": "0.499320334183694452058888570316831932640732912745994623923123",
+        "five_z_squared": "1.24660398064658153172863054457990662083184100096643604754509",
+        "detG": "-0.185120479863117313651780271332227922849963236154188704411105",
+        "above_ceiling": true,
+        "excluded": true,
+        "note": "convention C, owner-excised 2026-08-09 / R1"
+      },
+      "z_D": {
+        "z": "0.612688037146465283246961458246500068463860439636113494563450",
+        "five_z_squared": "1.87693315431194211391955841666011913470149555419305030013531",
+        "detG": "-0.547744172023255195186222890997172988060308782797944682260978",
+        "above_ceiling": true,
+        "excluded": true,
+        "note": "convention D, canonical per owner ruling R1"
+      }
+    },
+    "lean": {
+      "file": "content/quantum-observable-universe/lean/QOU/MassTheory/A4InterfaceMagnitude.lean",
+      "package_ref": "qou:QOU.MassTheory.A4InterfaceMagnitude",
+      "sorry_free": true,
+      "declarations_in_file": 21,
+      "cited_and_verified_present": [
+        "detG_eq_spectral_product",
+        "detG_expand",
+        "detG_mem_Ioo",
+        "detG_neg_of_above_ceiling",
+        "naive_z_unphysical",
+        "zD",
+        "zD_sq",
+        "zD_sq_mem",
+        "zD_unphysical",
+        "b4_strictMono_on",
+        "detG_strictAnti",
+        "magnitude_form_surjective",
+        "documented_targets_all_reachable",
+        "a4_magnitude_one_scalar_gate"
+      ],
+      "omitted_by_previous_witness": [
+        "zD",
+        "zD_sq",
+        "zD_sq_mem",
+        "zD_unphysical"
+      ]
+    },
+    "scope": {
+      "magnitude": "(a) -- open; the form reaches every target so computation cannot close it",
+      "naive_uniform_z": "(b) -- structurally excluded under BOTH Markov conventions; invariant cited = the exchange spectrum {+-sqrt5, +-1} fixing det = (1-5m^2)(1-m^2)",
+      "free_parameters": 0,
+      "targets_never_inverted_into_production": true
+    },
+    "checks_failed": 0
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "the canonical convention-D naive bond factor z_D = q0^3/(q0^2+1) is evaluated at the proton pin (the standing default, owner directive 2026-08-07); z_C is reported at the same pin purely as a named historical delta. The gate itself -- the spectrum, det form, ceiling, monotonicity and surjectivity -- is q0-independent."
 }

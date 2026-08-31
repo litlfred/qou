@@ -46,6 +46,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
+from fractions import Fraction
 from pathlib import Path
 
 import mpmath as mp
@@ -275,6 +276,28 @@ def main() -> None:
 
     # ── Layer 3: structural identities ─────────────────────────────
     cr = sources.get("codata_reconciliation") or {}
+    # LEFT AS A RAW float64, DELIBERATELY — do not "drain" this one.
+    #
+    # It is `max(delta_ppb)` over `codata-reconciliation`'s non-anchor rows,
+    # and the maximiser is the row `α_2 − z² (Markov axiom)`, whose value is
+    # `|alpha_2_eq_z_squared_check| · 1e9` read from
+    # `alpha/alpha-k-jones-markov-h3.witness.json`.  That residual is produced
+    # by `alpha/alpha_k_jones_markov_h3.py` entirely in **numpy float64** — the
+    # χ_λ table is `float(np.trace(M))`, the Jones–Markov weights come out of
+    # `np.linalg.solve`, and α_2 is a difference of two such numbers.  The
+    # committed value 2.7755575615628914e-08 is 2⁻⁵⁵·1e9 and the current
+    # upstream is 2⁻⁵⁴·1e9: a LAPACK cancellation residue sitting exactly on
+    # the arithmetic floor, i.e. the size of the rounding rather than a
+    # measurement of the Markov axiom.
+    #
+    # There is no exact source to carry, so there is nothing to serialize with
+    # `_precision.fmt`.  Rendering it as a 50-dps string would invent ~35
+    # digits nothing computed — the float64-padding defect — and would also
+    # make a float64 noise floor read as a high-precision structural result,
+    # which is the stronger of the two harms.  Draining it honestly means
+    # porting the H_3 α_k pipeline off numpy, which moves α_1/α_2/α_3 and the
+    # y_λ weights and is a separate change.  Until then this stays a float and
+    # stays counted by the raw-float64 ratchet.
     structural_max_ppb = (cr.get("data", {}) or {}).get(
         "max_non_anchor_delta_ppb", None
     )
@@ -298,13 +321,39 @@ def main() -> None:
     # was purged 2026-06-09).
     rfb = sources.get("rho_f_volume_binding_gap") or {}
     _brows = (rfb.get("data", {}) or {}).get("rows", []) or []
-    # rho_f rows always carry float delta_binding_MeV + A ≥ 2 (trust the
-    # schema — no per-row validation).  The only boundary case is an
-    # absent witness ⇒ _brows == [], handled by the empty-guards below.
-    binding_max = max((r["delta_binding_MeV"] for r in _brows), default=None)
-    binding_avg = (
-        sum(r["delta_binding_MeV"] / r["A"] for r in _brows) / len(_brows)
+    # `delta_binding_MeV` now arrives as the AME2020 table's EXACT decimal
+    # TEXT (`rho_f_volume_binding_gap.py` carries the vendored decimal
+    # verbatim, following `ame_2020_binding_energies.py`).  `Fraction` and
+    # `mpf` both accept it, and `str()` keeps this working against an older
+    # witness that still stores a float.  rho_f rows always carry A ≥ 2.
+    _bstr = [str(r["delta_binding_MeV"]) for r in _brows]
+
+    # The maximum IS one of the AME inputs, so emit that input's own digits
+    # verbatim.  Two things this must not do: `max()` over the strings
+    # directly (lexical order puts "8.48…" above "39.24…"), and re-serializing
+    # the winner through `fmt` (that pads a 9-significant-figure measurement
+    # out to OUTPUT_DPS).  Compare as mpf, emit the source string.
+    binding_max = (
+        max(zip((mp.mpf(s) for s in _bstr), _bstr), key=lambda t: t[0])[1]
         if _brows else None
+    )
+
+    # Σ(B_i/A_i)/N is COMPUTED, not read — and it is an exact rational, since
+    # every B_i is an exact decimal and every A_i an exact integer.  So its
+    # digits past float64 width are genuinely determined by the inputs rather
+    # than invented, which is what separates this from the padding defect.
+    # Compute it in `Fraction` (exactly), then render at OUTPUT_DPS from the
+    # exact numerator/denominator so no binary rounding enters at all.  The
+    # exact rational is emitted alongside so a reader can check the digits
+    # instead of taking them on trust.
+    _avg_exact = (
+        sum((Fraction(s) / int(r["A"]) for s, r in zip(_bstr, _brows)),
+            Fraction(0)) / len(_brows)
+        if _brows else None
+    )
+    binding_avg = (
+        fmt(mp.mpf(_avg_exact.numerator) / mp.mpf(_avg_exact.denominator))
+        if _avg_exact is not None else None
     )
 
     summary = {
@@ -325,6 +374,18 @@ def main() -> None:
         "ame_empirical_data_informational": {
             "max_delta_binding_MeV": binding_max,
             "avg_binding_per_nucleon_MeV": binding_avg,
+            "avg_binding_per_nucleon_MeV_exact_rational": (
+                f"{_avg_exact.numerator}/{_avg_exact.denominator}"
+                if _avg_exact is not None else None
+            ),
+            "precision_note": (
+                "max_delta_binding_MeV is one of the AME2020 table's own "
+                "decimals, emitted verbatim — it carries exactly the digits "
+                "AME quotes and is not padded.  "
+                "avg_binding_per_nucleon_MeV is the exact rational above "
+                "rendered at output_dps; every digit is determined by the "
+                "exact AME decimals and the integer A, none is invented."
+            ),
             "note": (
                 "Empirical AME column for sanity-check only.  QOU "
                 "predictions come from the LP dual + GB NF layers "
@@ -390,8 +451,11 @@ def main() -> None:
           f"{len(plancherel_residuals)} entries (each ~10⁻⁵¹)")
     print()
     print("Layer 4 — Empirical AME data (informational, not asserted):")
-    print(f"  max Δ_binding (²⁰Ne): {binding_max} MeV")
-    print(f"  avg per nucleon (A ≥ 4): {binding_avg} MeV/A "
+    # Labels corrected: the rho_f rows are ²H–⁷Li (`_AME_ISOTOPES` in
+    # rho_f_volume_binding_gap.py), so the maximiser is ⁷Li and the average
+    # runs over A ≥ 2, not ²⁰Ne and A ≥ 4.
+    print(f"  max Δ_binding (⁷Li, over ²H–⁷Li): {binding_max} MeV")
+    print(f"  avg per nucleon (A ≥ 2): {binding_avg} MeV/A "
           "(SEMF reference: ~7.5 MeV/A)")
     print()
     print(f"Witnesses present: "

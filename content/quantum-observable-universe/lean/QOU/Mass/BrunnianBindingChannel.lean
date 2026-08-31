@@ -123,6 +123,62 @@ theorem brunnian_channels_strict_mono (m : ℕ) (q : ℝ) (hq : 1 < q) :
       < ((m : ℝ) + 1) * (q - q⁻¹) := by nlinarith
     _ = (((m + 1 : ℕ) : ℝ)) * (q - q⁻¹) := by push_cast; ring
 
+/-! ## When do the two mutual invariants agree? — the all-positive criterion
+
+The channel lemmas above compare the two channels' *values*. The sharper question is when their
+**multiplicities** — the writhe `n₊ − n₋ = 2·lk` and the crossing count `n₊ + n₋` — agree, since it
+is the multiplicity that plays the role of the binding multiplier. They agree **exactly on
+all-positive braids** (`n₋ = 0`), and are maximally separated on Brunnian pairs (`n₊ = n₋`, signed
+multiplicity `0`). The deuteron's positive Hopf carrier is the all-positive case, which is why the
+linking number and the coordination count give the same answer there and diverge from `A ≥ 3`. -/
+
+/-- The signed (writhe / linking-number) multiplicity `n₊ − n₋ = 2·lk`. -/
+def signedMultiplicity (np nn : ℕ) : ℝ := (np : ℝ) - (nn : ℝ)
+
+/-- The unsigned (crossing / coordination) multiplicity `n₊ + n₋`. -/
+def countMultiplicity (np nn : ℕ) : ℝ := (np : ℝ) + (nn : ℝ)
+
+/-- **The two multiplicities agree exactly on all-positive braids.** The linking number and the
+coordination count coincide iff there are no negative inter-component crossings. -/
+theorem multiplicities_agree_iff (np nn : ℕ) :
+    signedMultiplicity np nn = countMultiplicity np nn ↔ nn = 0 := by
+  unfold signedMultiplicity countMultiplicity
+  constructor
+  · intro h
+    have hz : (nn : ℝ) = 0 := by linarith
+    exact_mod_cast hz
+  · intro h; subst h; simp
+
+/-- **Brunnian pairs separate the two multiplicities maximally.** The signed multiplicity collapses
+to `0` while the unsigned one is the full crossing count `2m` — the quantitative form of "only the
+coordination count survives". -/
+theorem brunnian_multiplicities (m : ℕ) :
+    signedMultiplicity m m = 0 ∧ countMultiplicity m m = 2 * m := by
+  unfold signedMultiplicity countMultiplicity
+  exact ⟨by ring, by ring⟩
+
+/-- **Maximal separation happens exactly on Brunnian pairs.** The signed (linking-number)
+multiplicity vanishes iff `n₊ = n₋`. Together with `multiplicities_agree_iff` this brackets the whole
+range: the two invariants coincide exactly on all-positive carriers, and the signed one dies exactly
+on Brunnian ones. -/
+theorem signedMultiplicity_eq_zero_iff (np nn : ℕ) :
+    signedMultiplicity np nn = 0 ↔ np = nn := by
+  unfold signedMultiplicity
+  constructor
+  · intro h
+    have hc : (np : ℝ) = (nn : ℝ) := by linarith
+    exact_mod_cast hc
+  · intro h; subst h; ring
+
+/-- **The deuteron (Hopf) boundary case.** The positive Hopf carrier has `n₊ = 2`, `n₋ = 0`, so both
+multiplicities equal `2`: the linking number (`|lk| = 1`) and the coordination count (`z = 1`) give
+the same multiplier. By `multiplicities_agree_iff` this is exactly because the carrier is
+all-positive — and it is why the two invariants agree for a Hopf-bonded pair and diverge only at
+`A ≥ 3`, where the Brunnian carriers collapse the signed one. -/
+theorem hopf_multiplicities : signedMultiplicity 2 0 = 2 ∧ countMultiplicity 2 0 = 2 := by
+  unfold signedMultiplicity countMultiplicity
+  norm_num
+
 /-! ## Sub-question 1 — the crossing count → coordination count map (bean `qou-brng` (1))
 
 Each pair inside the Borromean carrier `L6a4` is a *minimal Brunnian bond*: two inter-component

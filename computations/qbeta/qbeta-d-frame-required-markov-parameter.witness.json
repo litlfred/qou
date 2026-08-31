@@ -1,0 +1,143 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T13:09:28.820137+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
+  "assertions": [
+    {
+      "name": "g(z) = (2qz - q^2 + 1)/(q^2+1)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "g(z) * chi^(3)(Delta_S) = h^2/2 - h z, exactly, for all z",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "g is AFFINE in z (so the inversion is unique, not a fit)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "g(z_D) = (q^4+1)/(q^2+1)^2",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "z_required is NOT an admissible root (one_not_root territory)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 41,
+  "computation": "qbeta-d-frame-required-markov-parameter",
+  "scriptFile": "qbeta_d_frame_required_markov_parameter_probe.py",
+  "scriptHash": "c645e686b3a9",
+  "scriptCommitSha": "3b19babdaa2b654fc8a5e08d4a320d54725b980b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_required_markov_parameter_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_required_markov_parameter_probe.py"
+  },
+  "description": "Step 9 proved tr(Delta_S)(z) = (y_3 - y_(1^3))(z) * chi^(3)(Delta_S) with chi^(3) fixed, so the whole z-dependence is one AFFINE scalar g(z) = (2qz - q^2 + 1)/(q^2+1). That makes 'what Markov parameter does the CODATA Q-value require' an exact, unique question rather than a fit. This computes it and locates it against the admissible set {q, z_D} and the proved-inadmissible z=1. Derives nothing; readmits nothing.",
+  "data": {
+    "g_symbolic": "(-q**2 + 2*q*z + 1)/(q**2 + 1)",
+    "z_of_g_symbolic": "(G*q**2 + G + q**2 - 1)/(2*q)",
+    "chi3_deltaS_symbolic": "-(q - 1)*(q + 1)*(q**2 + 1)/(2*q**2)",
+    "required": {
+      "tr_M base": {
+        "g_base": "0.5054042265039308",
+        "F": "1.759236990546106",
+        "g_required": "0.8891258104440578",
+        "z_required": "0.998500302563013"
+      },
+      "augmentation base": {
+        "g_base": "1",
+        "F": "0.8891258103602118",
+        "g_required": "0.8891258103602118",
+        "z_required": "0.9985003024787101"
+      }
+    },
+    "distances": {
+      "tr_M base": {
+        "to_z_eq_1": "0.0014996974",
+        "to_z_D": "0.38581227",
+        "to_z_eq_q": "0.11147828",
+        "to_z_C": "0.49917997",
+        "rel_to_z_eq_1_pct": "0.14997",
+        "closer_to_1_than_zD_by": "257.26"
+      },
+      "augmentation base": {
+        "to_z_eq_1": "0.0014996975",
+        "to_z_D": "0.38581227",
+        "to_z_eq_q": "0.11147828",
+        "to_z_C": "0.49917997",
+        "rel_to_z_eq_1_pct": "0.14997",
+        "closer_to_1_than_zD_by": "257.26"
+      }
+    },
+    "reference_points": {
+      "z_eq_1": "1",
+      "z_D": "0.6126880371464652516",
+      "z_eq_q": "1.1099785827513808076",
+      "z_C_excised": "0.49932033418369445241"
+    },
+    "free_parameters": 0,
+    "verdict": "SCOPE-(a) TENSION, stated in the coordinate the Lean constraint is about. The decay trace is one affine scalar g(z), so the required Markov parameter is EXACT and unique: z_required = 0.998500302563. That is 0.15 % from z = 1 -- the coordinate-sum point that QOU.QBeta.AdmissibleRoots.one_not_root PROVES inadmissible -- and 257.3x nearer to it than the admissible z_D is. The data wants a z the theory forbids, and the gap is now a single number rather than a chain of corrections. This does NOT readmit z=1: the leak there is 7.6x too small to be the correction (measured separately), so 'nearly z=1' is a description of the tension, not a mechanism.",
+    "scope": "(a) measured tension; one_not_root stands exactly as proved",
+    "what_is_unconditional_vs_ruling_conditional": {
+      "UNCONDITIONAL (any z, any convention)": [
+        "chi^(2,1)(Delta_S) = 0 exactly (Lean: DecayBlockCarrier.chi21_deltaS)",
+        "tr(Delta_S)(z) = g(z) * chi^(3)(Delta_S) with g affine",
+        "the decay channel's entire z-content is ONE affine scalar",
+        "z_required = 0.998500302563, exact and unique given base ~ tr_M(Delta_S)"
+      ],
+      "CONDITIONAL ON THE RULING (that the decay channel is convention D)": [
+        "'under D the carrier is a single block'",
+        "'block re-weighting cannot source the correction' (Step 9)",
+        "the inadmissibility of z_required",
+        "the four closed correction routes"
+      ],
+      "why": "AdmissibleRoots proves admissible <=> y_(1^3) = 0 <=> z in {q, z_D}. That is a theorem ABOUT the condition. That the DECAY channel must satisfy it is settled by the 2026-08-15 owner ruling (convention D), and the trace-convention registry explicitly preserves the prior analysis: 'superseded AS A STATUS, NOT AS ANALYSIS: its finding that neither convention was DERIVED for this channel stands'. MarkovZFullBarCondition's own docstring says the same -- 'Which horn is the decay channel's is NOT decided here: no corpus block derives the decay fibre'. So the block is a RULING, not a proved impossibility.",
+      "consequence_for_the_open_problem": "The D re-derivation is not blocked by an impossibility. The decay trace is one affine scalar; the data fixes it exactly at z = 0.99850; the ruling fixes it at z_D = 0.61269. Closing the gap means DERIVING THE DECAY FIBRE -- which the registry names as the open item -- not finding another correction. The thing missing is not a form."
+    },
+    "q0Anchor": "proton",
+    "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

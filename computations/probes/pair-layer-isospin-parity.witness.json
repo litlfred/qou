@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T10:27:52.724274+00:00",
+  "computedAt": "2026-08-30T12:37:31.394097+00:00",
   "description": "The pair layer's isospin parity is inverted and bring_color_weighted cannot repair it. The charge-antisymmetric (isovector) part of the like-pair channel is h/2, forced exactly by the Hecke skein relation sigma - sigma^-1 = q - 1/q under p |-> positive crossing, n |-> negative crossing. The charge-symmetric T=0/T=1 splitting is h*delta/4 under bring_color_weighted and exactly zero under strict_averaged. The isovector term is 1454x the isoscalar one; nuclear physics wants the reverse. bring_color_weighted modifies only the p-n factor, which is self-conjugate and therefore already charge-even, so it does not touch the term that is wrong.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -72,9 +72,9 @@
     "qou-9v7t"
   ],
   "allPassed": true,
-  "scriptHash": "7bcb90856b9e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "d2897baaa5d7951dc086a6e5f8ab9aeb46a78432",
+  "scriptHash": "85924402f407",
+  "scriptCommitSha": "cf99e789ef3249962e6c6931d3f4b11a5014c0d4",
+  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

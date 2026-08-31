@@ -528,7 +528,7 @@ noncomputable def q_substrate : ℝ := 1.10997
 
 /-- ℏ_q² = Vol(4₁)/(m_μ/m_e) ≈ 0.009816. -/
 -- Ref: [manuscript] §6/hadron-half-life-verification
-noncomputable def hbar_q_sq : ℝ := 0.009816
+noncomputable def hbarQSq : ℝ := (1 - q_substrate⁻¹) ^ 2
 
 /-- Crossing energy E_× = ½(q - q⁻¹) ≈ 0.10452. -/
 -- Ref: [manuscript] §6/hadron-half-life-verification

@@ -134,8 +134,13 @@ def saturate(Z, N, q):
     # AGENTS.md: a float64/residue-level agreement is the floor of the
     # arithmetic, not evidence about the mathematics. Threshold it, and record
     # BOTH numbers so a reader can see the separation rather than trust a cut.
-    _ZERO_TOL = 1e-30            # ~28 orders below the smallest real |y|,
-                                 # ~22 orders above the largest residue
+    # Carried as TEXT and parsed for the comparison, not the other way round.
+    # The threshold is a chosen literal, not a computed quantity, so serializing
+    # `float(1e-30)` into the witness put a raw float64 in six places for a
+    # number that has an exact decimal spelling. Comparing against float64
+    # residues is the one thing it legitimately has to be a float for.
+    _ZERO_TOL_STR = "1e-30"      # ~28 orders below the smallest real |y|,
+    _ZERO_TOL = float(_ZERO_TOL_STR)   # ~22 orders above the largest residue
     n_neg = int((frob < -_ZERO_TOL).sum())
     n_zero = int((np.abs(frob) <= _ZERO_TOL).sum())
     nt = float(t.sum())
@@ -144,11 +149,11 @@ def saturate(Z, N, q):
                   bounds=[(-1e6, 1e6)] * len(P), method="highs")
     if not res.success:
         return {"n": n, "neg_norm_blocks": n_neg, "blocks_indistinguishable_from_zero": n_zero,
-                "zero_tolerance": _ZERO_TOL, "feasible": False, "bounded_support": []}
+                "zero_tolerance": _ZERO_TOL_STR, "feasible": False, "bounded_support": []}
     bs = [(list(P[i]), float(res.x[i])) for i in range(len(P))
           if 1e-6 < abs(res.x[i]) < RAIL]
     return {"n": n, "neg_norm_blocks": n_neg, "blocks_indistinguishable_from_zero": n_zero,
-            "zero_tolerance": _ZERO_TOL, "feasible": True, "bounded_support": bs}
+            "zero_tolerance": _ZERO_TOL_STR, "feasible": True, "bounded_support": bs}
 
 
 def main() -> int:

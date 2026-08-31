@@ -562,6 +562,68 @@ def main() -> int:
     w.add_data("gamma_gamma_per_particle", gg)
     w.add_data("tr_M_cross_check", xc)
     w.add_data("structural_finding", STRUCTURAL_FINDING)
+
+    # ── ROUTE 1: give this audit assertions it can actually FAIL ───────────
+    #
+    # Until now this script emitted ZERO assertions and `allPassed: true`, so
+    # it could not fail. That state was deliberate and half-right: bean
+    # `qou-26f2` removed three `add_assertion(computed=True, expected=True)`
+    # checks *because* they passed by construction, and recorded them as
+    # findings instead. Correct as far as it went -- but it left the audit with
+    # nothing checkable, while `tr_M_cross_check` above was already computing a
+    # genuine three-way comparison of the SAME quantity, tr_M(p, q_0), and
+    # asserting nothing about it. These assert on that.
+    #
+    # They are NOT tuned to pass. Assertion 2 FAILS on the current corpus, and
+    # that failure is the point: two independent routes to tr_M(p, q_0)
+    # disagree far outside either one's stated tolerance, and the disagreement
+    # has been sitting in this witness unremarked.
+    _p = xc.get("proton", {})
+    _ob = _p.get("phase_1_6_closed_form")
+    _ax = _p.get("axiomatic_content_block")
+    _ch = _p.get("markov_trace_assembly_chain")
+
+    # (1) The hardcoded content-block value must track the live upstream.
+    #     This is the check whose ABSENCE let the block sit at the
+    #     convention-C/muon value (1.63315, 15% off) until someone noticed by
+    #     eye -- see the comment on `axiomatic_content_block` above. Tolerance
+    #     is 1e-5 relative: the block carries 6 significant figures, so it
+    #     cannot track the upstream more tightly than that.
+    if _ob is not None and isinstance(_ax, (int, float)):
+        w.add_assertion(
+            "axiomatic content block tracks the phase-1.6 closed form",
+            computed=abs(_ax - _ob) / abs(_ob), expected=0.0, tolerance=1e-5,
+            source=f"axiomatic_content_block={_ax}, phase_1_6_closed_form={_ob}; "
+                   "the content block quotes 6 sig figs")
+
+    # (2) The two INDEPENDENT derivations of tr_M(p, q_0) must agree.
+    #     `markov-trace-assembly-proton.derivation.json` declares
+    #     `target = "tr_M(p, q_0) [canonical Wenzl-bridge]"` with
+    #     `target_tolerance = 1e-09`; the option-b chain computes the same
+    #     quantity. They differ by 43.46% (normalised by the option-b value;
+    #     76.88% the other way round -- ONE gap under two normalisations, not
+    #     two findings). Asserted at 1e-3, four orders looser than the
+    #     derivation's own claimed tolerance, so this is not a tight-tolerance
+    #     artifact.
+    if _ob is not None and _ch is not None:
+        w.add_assertion(
+            "the two independent tr_M(p,q0) derivations agree",
+            computed=abs(_ch - _ob) / abs(_ob), expected=0.0, tolerance=1e-3,
+            source=f"markov_trace_assembly_chain={_ch} (Wenzl-bridge, its own "
+                   f"target_tolerance=1e-9) vs phase_1_6_closed_form={_ob} "
+                   "(option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6")
+
+    # (3) Records the deleted Strategy-3 upstream as absent, and FAILS if it
+    #     ever silently returns. It was removed 2026-05-19 (commit
+    #     7f30a57924d, owner directive) for carrying 24-54% errors, so its
+    #     reappearance is a regression, not a repair.
+    w.add_assertion(
+        "the retired Strategy-3 mass table has not returned",
+        computed=1 if _p.get("strategy_3_tr_M_missing") else 0,
+        expected=1, tolerance=0,
+        source="atomic-braid-mass-table.witness.json was deleted by owner "
+               "directive (7f30a57924d); this audit must not start consuming "
+               "it again")
     # These three were `add_assertion(computed=True, expected=True)` — they
     # passed by construction and contributed to `allPassed` without checking
     # anything (bean `qou-26f2`). Each *documents* a finding this audit made by

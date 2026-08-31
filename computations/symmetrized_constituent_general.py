@@ -213,11 +213,18 @@ def main() -> int:
         "replaces": "naive distinguishable τ_p^Z·τ_n^N (closed_form_tau_M.py:302)",
     })
     # Cross-check against the Z=2 scalar probe: h₂=(p₁²+p₂)/2, e₂=(p₁²−p₂)/2.
+    # The three residues below are SYMBOLIC (sympy), and `float()` collapsed
+    # each to ~1e-16 before a 1e-30 tolerance looked at it. Measured: at Z=2
+    # `h2 - h2_direct` simplifies to sympy `Zero` -- Newton's identity is in
+    # the formula, not the data, so the residue is exact for any `pp`.
+    # Dropping the cast lets the tolerance mean something; it is left at
+    # 1e-30 rather than tightened to 0, since a numeric `pp` would give a
+    # tiny Float rather than Zero. Bean qou-58zw.
     h2 = frobenius(pp, 2, fermionic=False)
     h2_direct = (pp[1] ** 2 + pp[2]) / 2
     w.add_assertion(
         name="frobenius_Z2_matches_newton_h2",
-        computed=float(abs(h2 - h2_direct)), expected=0.0, tolerance=1e-30,
+        computed=abs(h2 - h2_direct), expected=0, tolerance=1e-30,
         source="Frobenius h₂ == Newton (p₁²+p₂)/2 — the general formula reproduces "
                "the hand-derived Z=2 case (symmetrized_constituent_probe.py).",
     )
@@ -225,14 +232,14 @@ def main() -> int:
     e2_direct = (pp[1] ** 2 - pp[2]) / 2
     w.add_assertion(
         name="frobenius_Z2_matches_newton_e2",
-        computed=float(abs(e2 - e2_direct)), expected=0.0, tolerance=1e-30,
+        computed=abs(e2 - e2_direct), expected=0, tolerance=1e-30,
         source="Frobenius e₂ == Newton (p₁²−p₂)/2.",
     )
     # h_Z + e_Z sanity: at Z=1 both = p_1 = τ (single particle, no symmetrization).
     w.add_assertion(
         name="Z1_no_symmetrization",
-        computed=float(abs(frobenius(pp, 1) - pp[1])
-                        + abs(frobenius(pp, 1, fermionic=True) - pp[1])),
+        computed=(abs(frobenius(pp, 1) - pp[1])
+                  + abs(frobenius(pp, 1, fermionic=True) - pp[1])),
         expected=0.0, tolerance=1e-30,
         source="h_1 = e_1 = p_1 = τ_p (one proton carries no exchange symmetry).",
     )
