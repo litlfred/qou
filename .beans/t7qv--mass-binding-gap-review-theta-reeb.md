@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-07-11T22:05:00Z
+updated_at: 2026-08-31T16:30:47Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -126,3 +126,41 @@ honest terminus and **independently corroborates the geometric redirect above**:
 
 Net: the Askey/Whipple algebraic direction for the binding weight is **exhausted**;
 t7qv's geometric M_n(K) frontier (Milnor linking + per-bond a_D) is the live route.
+
+
+---
+
+### 2026-08-31 — max-contact simplex bound Lean-proved (`w_n(K)` geometric piece)
+
+This bean's frontier update records the `w_n(K)` closure's missing piece as
+**geometric**, with the edge set a max-contact sphere packing:
+
+> "Edge set = max-contact sphere packing (Part 13; A≤4 simplex = C(A,2),
+>  A≥5 saturates below)"
+
+and notes the tempting fit-free light-nucleus match — ⁴He weighted
+`6·a_D² + 4·a_D³ + 1·a_D⁴` — is exactly that A≤4 simplex bond count, i.e.
+`C(4,2), C(4,3), C(4,4)`. That was **prose, and load-bearing**. It is a theorem,
+so it is now proved.
+
+**`QOU/Mass/MaxContactSimplex.lean`**, 5 theorems, sorry-free on
+`[propext, Classical.choice, Quot.sound]` (`he4_body_order` needs **no axioms**):
+
+| theorem | statement |
+|---|---|
+| `inner_spokes` | the Gram entry is `c²/2` |
+| `linearIndependent_spokes` | the spokes `pᵢ − p₀` are independent |
+| `card_le_finrank_succ_of_equidistant` | at most `finrank + 1` pairwise-equidistant points |
+| `not_five_equidistant` | **no five equal spheres are mutually tangent in 3D** |
+| `he4_body_order` | `C(4,2), C(4,3), C(4,4) = 6, 4, 1` |
+
+Equal spheres are mutually tangent iff centres are pairwise equidistant, so the
+A≥5 "saturates below" is exactly the impossibility of a complete contact graph.
+Proof: with `vᵢ = pᵢ − p₀` the Gram is `c²` diagonal, `c²/2` off, so
+`‖Σaᵢvᵢ‖² = (c²/2)[(Σaᵢ)² + Σaᵢ²]`, vanishing only at `a = 0`.
+
+Verified numerically first, with a firing control (a wrong off-diagonal breaks
+the identity on 967/1000 random vectors).
+
+**Not touched:** the routes this bean marks refuted (Part 4 Frobenius-dual
+kernel, Part 5 amplifying-weight tower).

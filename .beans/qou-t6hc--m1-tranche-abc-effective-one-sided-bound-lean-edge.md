@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T16:18:51Z
+updated_at: 2026-08-31T16:30:47Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1353,3 +1353,30 @@ ratio ≤ 0.111).
 **NOT CLOSED.** Both still need a statement about the joint law of
 `(Σh, Σc²)`. What changed is the target: a rank quantity with a 15× margin,
 instead of a Pearson sign with none.
+
+
+---
+
+### 2026-08-31 (cont.) — 🛑 RETRACTION: the non-Gaussian advantage erodes
+
+The previous entry concluded, from exact n ≤ 18, that the pairwise route is
+**not** a restatement of `ρ > 0` — measured `q` was ~2.2× rarer than the
+Gaussian quadrant value. I flagged the risk that this was a small-n artefact
+(ρ₁₈ = 0.918 vs the derived ρ_∞ = 0.99965). **It is.**
+
+| n | 15–18 (exact) | 50 | 100 | 200 | 400 | 800 |
+|---|---|---|---|---|---|---|
+| ρ | 0.918 | 0.9547 | 0.9759 | 0.9846 | 0.9915 | 0.9951 |
+| q measured | 0.060 | 0.0564 | 0.0482 | 0.0412 | 0.0320 | 0.0249 |
+| **q/q_Gauss** | 0.46 | 0.586 | 0.688 | 0.738 | 0.768 | **0.792** |
+
+Rising steadily toward 1. At n = 800 discordance is only **1.26×** rarer than
+Gaussian, not 2.2×. So the pairwise route looks **asymptotically equivalent** to
+the Gaussian picture — i.e. to `ρ > 0` — which is exactly what that finding
+claimed to rule out. `..._M1_kendall_route.py` FINDING 1 retitled and amended in
+place with a FINDING 3 carrying the data.
+
+**What survives:** `q` itself *decreases* with n (0.060 → 0.0249), so the margin
+in "`q < 0.90` suffices" improves to **~36×** at n = 800. The reformulation
+still gives a target with a margin; it does not give independence from the
+correlation question.
