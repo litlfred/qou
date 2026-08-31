@@ -802,6 +802,159 @@ theorem two_mul_areaUpper_le_card_iff :
   · intro hle; omega
   · intro hle; push_cast at hle; omega
 
+/-! ## Hook lengths, and where `Sum h` loses a half power of `n`
+
+Measured in `computations/deltalambda/wlambda_covariance_epic_M1_kappa_structure.py`:
+`sd(Sum_cells c^2) ~ n^(3/2)` but `sd(Sum_cells h) ~ n^1`. The leading
+fluctuation term of the hook sum VANISHES — that is the "`Sum h` is not in the
+Kerov–Olshanski algebra" wall of gap `qou-k5r5`, showing up as a scaling
+exponent rather than as an algebraic obstruction.
+
+This section proves *where it goes*, exactly and at every `n`:
+
+    2 * Sum_cells h  =  Sum_i (rowLen i)^2  +  Sum_j (colLen j)^2
+
+so `Sum h` is the conjugation-SYMMETRIC combination of two statistics that each
+fluctuate at order `n` and are ~96 % ANTI-correlated (measured). The
+symmetrisation is what costs the half power. Nothing here is asymptotic; this
+identity is what the asymptotic statement is about. -/
+
+/-- Summing over the diagram, grouped by rows. Any `C` past the last nonempty
+row works. -/
+theorem sum_cells_eq_sum_rows {M : Type*} [AddCommMonoid M] (f : ℕ → ℕ → M)
+    {C : ℕ} (hC : μ.colLen 0 ≤ C) :
+    ∑ p ∈ μ.cells, f p.1 p.2
+      = ∑ i ∈ Finset.range C, ∑ j ∈ Finset.range (μ.rowLen i), f i j := by
+  classical
+  rw [Finset.sum_sigma']
+  refine Finset.sum_nbij' (fun p => (⟨p.1, p.2⟩ : Σ _ : ℕ, ℕ))
+    (fun q => (q.1, q.2)) ?_ ?_ (fun _ _ => rfl) (fun _ _ => rfl) (fun _ _ => rfl)
+  · rintro ⟨i, j⟩ hp
+    simp only [YoungDiagram.mem_cells] at hp
+    have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp hp
+    have hi : i < μ.colLen 0 :=
+      YoungDiagram.mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl i) (Nat.zero_le j) hp)
+    simp only [Finset.mem_sigma, Finset.mem_range]
+    exact ⟨by omega, hj⟩
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_sigma, Finset.mem_range] at hq
+    simp only [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
+    exact hq.2
+
+/-- Transposing swaps the coordinates of every cell. -/
+theorem sum_cells_transpose {M : Type*} [AddCommMonoid M] (f : ℕ → ℕ → M) :
+    ∑ p ∈ μ.transpose.cells, f p.1 p.2 = ∑ p ∈ μ.cells, f p.2 p.1 := by
+  classical
+  refine Finset.sum_nbij' (fun p => (p.2, p.1)) (fun q => (q.2, q.1)) ?_ ?_
+    (fun _ _ => rfl) (fun _ _ => rfl) (fun _ _ => rfl)
+  · rintro ⟨i, j⟩ hp
+    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose] using hp
+  · rintro ⟨i, j⟩ hq
+    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose] using hq
+
+/-- Columns past `λ₁` are empty. -/
+theorem colLen_eq_zero_of_le {j : ℕ} (h : μ.rowLen 0 ≤ j) : μ.colLen j = 0 := by
+  by_contra hne
+  have hpos : 0 < μ.colLen j := Nat.pos_of_ne_zero hne
+  have : (0, j) ∈ μ := YoungDiagram.mem_iff_lt_colLen.mpr hpos
+  have := YoungDiagram.mem_iff_lt_rowLen.mp this
+  omega
+
+/-- The hook length of a cell: arm + leg + 1, written so both `ℕ` subtractions
+are valid on the diagram (`j < rowLen i` and `i < colLen j` there). -/
+def hookLen (i j : ℕ) : ℕ := (μ.rowLen i - j) + (μ.colLen j - i - 1)
+
+/-- `2 ∑_{j<L} (L - j) = L(L+1)` — the arm part of a row. -/
+private theorem two_mul_row_arm (L : ℕ) :
+    2 * ∑ j ∈ Finset.range L, (L - j) = L * L + L := by
+  rw [two_mul_sum_range_sub L]; ring
+
+/-- `2 ∑_{i<L} (L - i - 1) + L = L²` — the leg part of a column, stated without
+a subtraction on the right so the aggregate step stays linear. -/
+private theorem two_mul_col_leg (L : ℕ) :
+    2 * ∑ i ∈ Finset.range L, (L - i - 1) + L = L * L := by
+  have h : ∑ i ∈ Finset.range L, (L - i - 1) = ∑ i ∈ Finset.range L, i := by
+    refine Finset.sum_nbij' (fun i => L - i - 1) (fun i => L - i - 1) ?_ ?_ ?_ ?_
+      (fun _ _ => rfl) <;>
+      · intro a ha
+        simp only [Finset.mem_range] at ha ⊢
+        omega
+  rw [h, mul_comm, Finset.sum_range_id_mul_two L]
+  cases L with
+  | zero => simp
+  | succ k => simp only [Nat.succ_sub_one]; ring
+
+/-- **The hook sum is the conjugation-symmetric combination.**
+
+    2 * Sum_cells h = Sum_i (rowLen i)² + Sum_j (colLen j)²
+
+Row `i` contributes `rowLen i (rowLen i + 1)/2` of arm, column `j` contributes
+`colLen j (colLen j - 1)/2` of leg; the two linear terms are each `n` and cancel.
+Equivalently `Sum h = (Sum λᵢ² + Sum λ'ⱼ²)/2`, which is the statement measured
+as ~96 % anti-correlated in the probe. -/
+theorem two_mul_sum_hookLen {C R : ℕ} (hC : μ.colLen 0 ≤ C) (hR : μ.rowLen 0 ≤ R) :
+    2 * ∑ p ∈ μ.cells, hookLen μ p.1 p.2
+      = (∑ i ∈ Finset.range C, μ.rowLen i * μ.rowLen i)
+        + ∑ j ∈ Finset.range R, μ.colLen j * μ.colLen j := by
+  classical
+  -- arm and leg totals, grouped by rows and by columns respectively
+  have harm : ∑ p ∈ μ.cells, (μ.rowLen p.1 - p.2)
+      = ∑ i ∈ Finset.range C, ∑ j ∈ Finset.range (μ.rowLen i), (μ.rowLen i - j) :=
+    sum_cells_eq_sum_rows μ (fun i j => μ.rowLen i - j) hC
+  have hlegR : ∑ p ∈ μ.cells, (μ.colLen p.2 - p.1 - 1)
+      = ∑ j ∈ Finset.range (μ.rowLen 0),
+          ∑ i ∈ Finset.range (μ.colLen j), (μ.colLen j - i - 1) := by
+    have h1 := sum_cells_transpose μ (fun a b => μ.colLen a - b - 1)
+    have h2 := sum_cells_eq_sum_rows μ.transpose (fun a b => μ.colLen a - b - 1)
+      (le_of_eq (μ.colLen_transpose 0))
+    simp only [YoungDiagram.rowLen_transpose] at h2
+    rw [← h1, h2]
+  -- widen the column range from λ₁ to R: those columns are empty
+  have hwiden : ∀ (g : ℕ → ℕ), (∀ j, μ.rowLen 0 ≤ j → g j = 0) →
+      ∑ j ∈ Finset.range (μ.rowLen 0), g j = ∑ j ∈ Finset.range R, g j := by
+    intro g hg
+    refine Finset.sum_subset
+      (fun x hx => Finset.mem_range.mpr (lt_of_lt_of_le (Finset.mem_range.mp hx) hR)) ?_
+    intro x hx hnx
+    simp only [Finset.mem_range] at hx hnx
+    exact hg x (by omega)
+  have hleg : ∑ p ∈ μ.cells, (μ.colLen p.2 - p.1 - 1)
+      = ∑ j ∈ Finset.range R, ∑ i ∈ Finset.range (μ.colLen j), (μ.colLen j - i - 1) := by
+    rw [hlegR]
+    exact hwiden _ (fun j hj => by simp [colLen_eq_zero_of_le μ hj])
+  have hcol : ∑ j ∈ Finset.range (μ.rowLen 0), μ.colLen j
+      = ∑ j ∈ Finset.range R, μ.colLen j :=
+    hwiden _ (fun j hj => colLen_eq_zero_of_le μ hj)
+  -- the two "n"s that cancel
+  have hn : ∑ i ∈ Finset.range C, μ.rowLen i = μ.card := by
+    have h := sum_cells_eq_sum_rows μ (fun _ _ => (1 : ℕ)) hC
+    simp only [Finset.sum_const, Finset.card_range, smul_eq_mul, mul_one] at h
+    rw [← h, YoungDiagram.card, Finset.card_eq_sum_ones]
+  have hn' : ∑ j ∈ Finset.range R, μ.colLen j = μ.card := by
+    have h1 := sum_cells_transpose μ (fun _ _ => (1 : ℕ))
+    have h2 := sum_cells_eq_sum_rows μ.transpose (fun _ _ => (1 : ℕ))
+      (le_of_eq (μ.colLen_transpose 0))
+    simp only [YoungDiagram.rowLen_transpose, Finset.sum_const, Finset.card_range,
+      smul_eq_mul, mul_one] at h1 h2
+    rw [← hcol, ← h2, h1]
+  -- per-row / per-column closed forms
+  have e1 : ∑ i ∈ Finset.range C, (2 * ∑ j ∈ Finset.range (μ.rowLen i), (μ.rowLen i - j))
+      = (∑ i ∈ Finset.range C, μ.rowLen i * μ.rowLen i) + μ.card := by
+    simp only [two_mul_row_arm]
+    rw [Finset.sum_add_distrib, hn]
+  have e2 : ∑ j ∈ Finset.range R, (2 * ∑ i ∈ Finset.range (μ.colLen j), (μ.colLen j - i - 1))
+        + μ.card
+      = ∑ j ∈ Finset.range R, μ.colLen j * μ.colLen j := by
+    rw [← hn', ← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl fun j _ => two_mul_col_leg (μ.colLen j)
+  have hsplit : ∑ p ∈ μ.cells, hookLen μ p.1 p.2
+      = (∑ p ∈ μ.cells, (μ.rowLen p.1 - p.2))
+        + ∑ p ∈ μ.cells, (μ.colLen p.2 - p.1 - 1) := by
+    rw [← Finset.sum_add_distrib]; rfl
+  rw [← Finset.mul_sum] at e1 e2
+  rw [hsplit, Nat.mul_add, harm, hleg]
+  omega
+
 /-! ## The reduction skeleton: what a Lean proof of `M₁ > 0` would still need
 
 Asked directly: can the finite-`n` crossover be closed in Lean? On the current
@@ -874,5 +1027,76 @@ theorem sum_lt_of_split_bound [DecidableEq ι] (E S : Finset ι) (w r bs bo : ι
       mul_le_mul_of_nonneg_left (hopp e he) (hw e (Finset.mem_sdiff.mp he).1))
 
 end Reduction
+
+/-! ## Covariance: the two steps the `kappa` argument actually needs
+
+`computations/deltalambda/wlambda_covariance_epic_M1_kappa_structure.py` makes
+two claims that are *logical*, not analytic, and so belong here rather than in a
+probe. Neither is deep; both are load-bearing, and writing them down is what
+separates them from the measured claims they sit next to.
+
+FINDING 1 there uses the classical hook-content identity
+`Sum_cells h^2 = Sum_cells c^2 + n^2` (verified on all 914 partitions of
+`n <= 16`, with a control) to conclude
+
+    M_1 = Cov(Sum h, Sum c^2) = Cov(Sum h, Sum h^2)   at every n.
+
+The step from the identity to that conclusion is `cov_add_const`: `n^2` is
+deterministic, so shifting one argument by a constant leaves the covariance
+alone.
+
+FINDING 5 concludes that `kappa > 0` is equivalent to a CORRELATION sign,
+because `kappa = rho * sigma_h * sigma_c` and the two sigmas are standard
+deviations, hence positive. That is `cov_pos_iff_corr_pos`. It is trivial
+mathematically — and it is the whole reduction: what `qou-k5r5` needs for the
+sign is not the value of `kappa`, and not Sniady's genus expansion, but that two
+hook statistics are positively correlated. The measurement says the correlation
+is asymptotically 1, not merely positive.
+
+What is NOT here, and cannot be: `sigma_c = 1/sqrt(3)` needs Kerov's CLT, and
+Mathlib has no Plancherel measure — its entire Young theory is two files. -/
+
+section Covariance
+
+variable {ι : Type*}
+
+/-- Covariance of two observables under a finite weight. Stated for a weight
+that sums to `1`, which is how the edge measure is normalised. -/
+def cov (E : Finset ι) (w X Y : ι → ℚ) : ℚ :=
+  (∑ i ∈ E, w i * X i * Y i) - (∑ i ∈ E, w i * X i) * (∑ i ∈ E, w i * Y i)
+
+/-- **Covariance ignores a deterministic shift.** With `Sum h^2 = Sum c^2 + n^2`
+and `n` deterministic, this is exactly the step
+`Cov(Sum h, Sum c^2) = Cov(Sum h, Sum h^2)`. -/
+theorem cov_add_const (E : Finset ι) (w X Y : ι → ℚ) (hw : ∑ i ∈ E, w i = 1) (k : ℚ) :
+    cov E w X (fun i => Y i + k) = cov E w X Y := by
+  have h1 : ∑ i ∈ E, w i * X i * (Y i + k)
+      = (∑ i ∈ E, w i * X i * Y i) + k * ∑ i ∈ E, w i * X i := by
+    rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl fun i _ => by ring
+  have h2 : ∑ i ∈ E, w i * (Y i + k) = (∑ i ∈ E, w i * Y i) + k := by
+    have h : ∑ i ∈ E, w i * (Y i + k)
+        = (∑ i ∈ E, w i * Y i) + k * ∑ i ∈ E, w i := by
+      rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+      exact Finset.sum_congr rfl fun i _ => by ring
+    rw [h, hw]; ring
+  simp only [cov, h1, h2]
+  ring
+
+/-- **The sign of a covariance is the sign of the correlation.** Trivial, and
+it is the whole of the `kappa > 0` reduction: the two normalising factors are
+standard deviations, so they cannot change the sign. -/
+theorem cov_pos_iff_corr_pos {c sx sy : ℚ} (hx : 0 < sx) (hy : 0 < sy) :
+    0 < c / (sx * sy) ↔ 0 < c := by
+  have hd : 0 < sx * sy := mul_pos hx hy
+  constructor
+  · intro h
+    have hc : c = c / (sx * sy) * (sx * sy) := (div_mul_cancel₀ c (ne_of_gt hd)).symm
+    rw [hc]
+    exact mul_pos h hd
+  · intro h
+    exact div_pos h hd
+
+end Covariance
 
 end QOU.BraidKnot.M1EdgeCalculus
