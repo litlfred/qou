@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-31T04:41:40Z
+updated_at: 2026-08-31T06:10:08Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -377,3 +377,54 @@ Nothing here says what `ξ_q` is. The gap remains exactly where the bean put
 it: the identification of the framework's Reeb derivation with an operator
 whose spectrum is the Frobenius exponents. This adds a test that a candidate
 must pass, not a candidate.
+
+
+## 2026-08-31 (cont.) — the fixed locus, from the functional equation alone
+
+Three more declarations, `lean`-direct exit 0, all `#print axioms`-clean.
+**Still does not close this bean** — no instance of `HasReebSpectralCoords`.
+
+The reflection theorem had a sharper consequence I did not take at the time.
+
+**`eigenvalue_functional_equation_involutive`** — applying the Weil pairing
+twice returns the eigenvalue: `α_{σ²i} = αᵢ`.
+
+Stated on the **eigenvalues**, not on the permutation, and the distinction is
+the honest part: `σ² = id` as a permutation needs the `αᵢ` to be *distinct* — a
+repeated eigenvalue lets `σ` permute its indices without moving any value —
+whereas `α_{σ²i} = αᵢ` holds unconditionally. The weaker form is what is true
+and is all the rest uses.
+
+**`reeb_spectrum_fixed_point_on_critical_line`** — if `σ i = i` then
+`Re ρᵢ = 1/2` exactly, **with no Castelnuovo–Severi**.
+
+`reeb_spectrum_on_critical_line` reaches the same conclusion for *every* index,
+but pays the deep Weil bound. This gets it for the fixed indices free.
+
+**Why it is not a restatement of `critical_line_iff_fixed`.** That lemma says
+`Re ρ = 1/2 ↔ Re ρ = 1 − Re ρ`, which is an identity about real numbers — true
+of any `ρ` whatsoever, and it says nothing about this spectrum. Here the
+fixed-ness is supplied *by the Weil pairing itself*. So the critical line stops
+being a value the spectrum is observed to have and becomes **the fixed locus of
+a symmetry the functional equation forces on it**. That is the difference
+between a coincidence and a mechanism.
+
+**`eigenvalue_sq_eq_q_of_fixed`** — the eigenvalue-level form: a fixed index has
+`αᵢ² = q`, the supersingular shape `αᵢ = ±√q`. Needs no Reeb spectrum and no
+identification; it is a statement about `Z` alone. `weilZetaExample` is exactly
+this case at every index, which is why its permutation is `Equiv.refl`.
+
+### The structure is now complete, and it adds nothing to the trace test
+
+Fixed points sit on the line; non-fixed indices pair `(i, σi)` with
+`Re ρᵢ + Re ρ_{σi} = 1`. So with `f` fixed points the sum is
+`f·(1/2) + ((8−f)/2)·1 = 4` for **every** `f`. The trace identity is recovered
+independently of the fixed-point count — consistent, and worth recording as a
+negative: **counting fixed points yields no new constraint**, so it is not a
+sharper test than `∑ Re ρᵢ = 4` and should not be pursued as one.
+
+### Still open, unchanged
+
+Nothing here says what `ξ_q` is. The arc now has a described structure the
+identification would have to satisfy — reflection symmetry, fixed points on the
+line, trace 4 — and still no candidate operator.
