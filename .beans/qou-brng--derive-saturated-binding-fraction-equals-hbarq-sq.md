@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T02:47:52Z
+updated_at: 2026-08-31T03:50:45Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -293,3 +293,74 @@ structure, with a one-line acceptance test (`carrier_must_break_three_to_one`: a
 break `μ_t = 3·μ_p`). The channel is not obstructed — small half-integer multiplicities reach the
 measured ratio to 0.27 % — so the burden is on **deriving** the crossing numbers; two free integers
 against one ratio is a fit.
+
+
+## Carrier crossing numbers ARE derivable — and every derivation gives b₃ ≤ 0 (2026-08-31)
+
+**The question is answered, and the answer is a quantisation obstruction with a
+width: 16.98 %.** Lean `QOU/Mass/CarrierCrossingQuantisation.lean` (11 decls,
+sorry-free, standard three axioms); probe
+`computations/probes/carrier_crossing_quantisation_probe.py` (8/8, exact
+`Fraction`, no free parameters).
+
+**The identity.** `CountChannelCarrierLocus` already fixes `μ = (n₊+n₋)/2` =
+half the carrier's crossing count, and the scale cancels, so
+`b₃/b₂ = c₃/c₂ − 3`. Both `c` are crossing counts of braid words, hence
+**integers**.
+
+**Why the retracted quantisation argument is now live.** That file records the
+half-integer argument as WRONG *because it assumed `μ_pair = 1` while `μ_pair`
+was free*. That retraction stands. **Owner ruling A of 2026-08-29 supplies the
+hypothesis** — the deuteron carrier is the canonical braid closure, Hopf,
+`σ_g²`, `c₂ = 2`. With `c₂` pinned the freedom collapses to one integer.
+
+**Four rules the corpus derives, all consistent, all `b₃/b₂ ≤ 0`:**
+
+| rule | `c₂` | `c₃` | `b₃/b₂` |
+|---|---|---|---|
+| min-length enumeration (`binding-k-enumerator`) | 2 | 2 | −2 |
+| chain / coordination `z = A−1` | 2 | 4 | −1 |
+| canonical Brunnian (Hopf, Borromean) | 2 | 6 | **0** |
+| census volume-match (AME-inverted) | 6 | 7 | −11/6 |
+
+Measured `+0.6411239316`.
+
+**Two findings inside that table.** (1) The `binding-k-enumerator` returns
+`bindingKWord = [3,3] = σ₃²` for deuterium, tritium **and** helium-3 alike — the
+`6₂`/`8₁₁`/`L6a4` on those Lean instances are retained *census names*, not what
+was enumerated. Its criterion (shortest PSD-feasible even word at `L ≤ 3`)
+cannot see `A`, so it can only ever give constant `μ`. (2) The census tier is
+flagged **AME-inverted by the atlas registry itself** — circular, not a
+derivation.
+
+**🛑 TRAP — the straddle manufactures the right sign.** `c₂ = 2` (owner-ruled
+Hopf) with `c₃ = 7` (census A=3 average) gives `+1/2` — right sign, 22 % low,
+and meaningless: two different carrier assignments. Read the census
+consistently and it is `−11/6`. I made exactly this error before catching it;
+`straddle_manufactures_the_sign` records the arithmetic so it is not
+rediscovered as a result.
+
+**The obstruction.** With `c₂ = 2`, `b₃/b₂` lands on the half-integer lattice
+(single A=3 carrier) or the quarter-integer lattice (distinct ³H/³He carriers).
+Measured value sits in a gap of both: nearest is `c(³H)+c(³He) = 15` →
+`3/4`, **+16.98 %**; single-carrier nearest is `c₃ = 7` → `1/2`, −22.01 %
+(`c₃ = 8` → `1`, +55.98 %). `quarter_lattice_gap` proves `≥ 161468/1483044` for
+**every** integer.
+
+**The selection principle points the wrong way — this is the substantive
+obstacle.** Escaping needs `c₃ > 6`, above the Borromean. But `6` is *minimal*:
+`QOU.Knots.KauffmanTL3` machine-checks no braid word of length `< 6` is both
+Brunnian and nontrivial. So a working carrier must be a **non-minimal** Brunnian
+representative, while the only selection principle the corpus derives —
+shortest PSD-feasible word — returns the minimum by construction.
+
+**Scope (b)** on the conjunction {count channel, `μ = c/2`, Hopf pair carrier,
+integer crossing counts}, invariant named: integrality of a crossing count.
+**(a)** on each ingredient; `brunnian_binding_survives` untouched. Conditional
+on owner ruling A.
+
+**Next, in priority order.** (1) `μ = c/2` is the cheapest thing to release — a
+multiplicity that is not half a crossing count is not lattice-valued, and this
+whole obstruction evaporates. Nothing derives `μ = c/2`; it is
+`countChannel`'s definition. (2) Find a selection principle that is not
+minimality. (3) Neither is started.
