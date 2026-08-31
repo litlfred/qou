@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-08-19T17:32:16Z
+updated_at: 2026-08-31T16:35:49Z
 ---
 
 Opened from the literature check on qou-y0mc.
@@ -36,3 +36,36 @@ to whichever functional won.
 
 Not a refutation. The free-energy FORM may still be the right organising idea --
 but as of now it is an analogy with a parameter match, not a derivation.
+
+
+## Candidate tested and EXCLUDED: the Coxeter-length scaling (PR #6395, 2026-08-31)
+
+This bean had run all five corpus-grep paths and the library full-text search
+but had not TESTED a candidate dynamics. One is now tested.
+
+CANDIDATE: sigma_t(T_w) = q^{i t l(w)}, l = Coxeter length (= the GS/jet-prefix
+filtration degree). Obvious because the block's own scale match is beta ~ ln q,
+so q^l is exactly the Gibbs weight this grading produces, and because it is the
+same filtration the binding-residual work uses as its reference.
+
+EXCLUDED. sigma_t is an algebra map only if it respects
+sigma_i^2 = (q - q^-1) sigma_i + 1, whose LHS has length 2 while the RHS is a
+length-1 plus a length-0 term. Rewrite-then-scale vs scale-then-rewrite gives two
+conditions, both solved symbolically and both independently forcing t = 0:
+  length 0:  q^(2it) = 1      => t in [0]
+  length 1:  q^(2it) = q^(it) => t in [0]
+Not marginal: phase gap at the proton pin is t*ln q0 = 0.1043*t rad.
+
+Scope (b), invariant named: THE HECKE QUADRATIC RELATION IS INHOMOGENEOUS IN
+COXETER LENGTH -- the same fact that makes the GS/jet structure a FILTRATION
+rather than a grading (#6393 measured it from the other side).
+
+WHAT SURVIVES: the obstruction is on H_n(q), NOT on gr H_n(q), which is
+length-graded by construction and on which the scaling IS an automorphism group.
+So this bean's question sharpens from 'name the dynamics' (unbounded) to
+'does the Markov trace DESCEND to gr H_n(q), and is the descended state KMS at
+beta = ln q there?' (bounded, yes/no). NOT answered here, and the descended state
+is NOT claimed to exist -- a trace need not descend to the associated graded.
+
+Still untouched: a Connes cocycle against a non-tracial weight; the
+Radon-Nikodym derivative of the y_lambda reweighting.
