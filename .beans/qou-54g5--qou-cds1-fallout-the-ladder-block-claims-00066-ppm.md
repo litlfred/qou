@@ -106,3 +106,92 @@ inside a PR about a different defect. Left as its own item.
 
 Every number above is C-frame; the D-frame ladder is unknown pending the
 qou-cds1 re-derivation.
+
+## 2026-08-31 — RESOLVED. It was an index slip, and the headline is correct.
+
+Probe: `computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py`, **12/12**,
+mpmath 50 dps.
+
+### The remaining item was not a math question
+
+This bean recorded the open item as "which fifth-rung coefficient is right,
+boxed `-(b^2+1/2) = -1.2527` vs context/table-3 `3c_3^2+b = +12.8676`, opposite
+sign and an order of magnitude apart. Math question." It is neither a math
+question nor a dispute. The block's own context says so in one line
+(`q-beta-categorical-precision-ladder-context.md:29`):
+
+    "The earlier c_4 = b^2 + 1/2 form is superseded: it is 9.5% off the
+     empirical value, while c_3 * b^4 matches to 0.9%."
+
+`b^2 + 1/2` is the **retired c_4**. Site by site:
+
+    site                                    c_4          c_5
+    boxed formula (.md)                     c_3*b^4  OK  b^2+1/2   <- retired c_4
+    ladder() in qbeta_ladder_convention_fee c_3*b^4  OK  b^2+1/2   <- retired c_4
+    context, "mixing pattern across rungs"  c_3*b^4  OK  3c_3^2+b
+    table-3, N=5 row                        --           3c_3^2+b
+
+The supersession updated rung 4 in the box and **displaced the retired
+expression into the rung-5 slot** instead of deleting it. Three sites agree on
+`3c_3^2+b`; the two that disagree carry an expression their own prose retires.
+
+### CORRECTION to this bean: they are not opposite in sign
+
+Both are negative coefficients of `u^5` (`-1.2527` and `-12.8676`). The recorded
+opposition came from comparing the box's `-(b^2+1/2)` against a bare
+`+(3c_3^2+b)` — one with the leading minus folded in, one without. They differ
+by **10.27x in magnitude only**.
+
+### The slip is what hid the headline
+
+    block headline         -0.0066 ppm  =  -6.6 ppb  (2 s.f.)
+    context c_5, muon pin  +6.6133 ppb  ->  0.0066133 ppm     0.202 % apart
+    boxed   c_5, muon pin  +7.1339 ppb                        8.1 % apart
+
+**The headline IS the N=5 muon-pin residual computed with the context c_5**, and
+it rounds to `0.0066 ppm` exactly at the two significant figures it is quoted to.
+
+The earlier pass could not see this because the live code carries the retired
+`c_4` in the `c_5` slot, pushing its N=5 to `+7.13`; the nearest thing to the
+headline then looked like N=3 (`+6.02`, 8.8 % off), which is what made the sign
+hypothesis read "necessary but not sufficient". **It was sufficient.** The
+residual 8.8 % was an artefact of comparing against the wrong rung.
+
+So of the four hypotheses this bean opened with: (1) CODATA, (2) pin and
+(3) faithfulness are all not needed. **(4), a sign convention, is the whole
+answer** — and it is now a pure sign with no magnitude gap left to explain.
+
+The sign itself is NOT resolved here. What is resolved is that nothing but the
+sign is wrong.
+
+### Reconstruction faithfulness, because the first attempt was not
+
+The probe reproduces the live implementation **exactly** — `+37.70749` ppb
+(proton) and `+7.133937` ppb (muon), both matching the values recorded above.
+A first draft guessed `w_blind = 0` rather than reading it, and produced an
+11.7 % residual, ~70x worse than the block's own "Form A bare" row. A wrong
+baseline makes every downstream comparison measure the baseline; the guess is
+recorded in the probe so the next reader does not repeat it.
+
+### The fix, deliberately not applied in the probe
+
+Correct the `c_5` slot in both carriers — the boxed formula in
+`q-beta-categorical-precision-ladder.md` and `ladder()` in
+`qbeta_ladder_convention_fee_probe.py` — from `(b^2 + 1/2)` to `(3c_3^2 + b)`.
+That is a correction to match the block's own prose, not a change of claim. It
+moves a published number (`37.707 -> 37.187` ppb at the canonical pin), so it
+belongs in its own commit with the witness refreshed.
+
+### Still open, and still not to be closed by fitting
+
+- The **sign** convention (hypothesis 4).
+- **Table 3's column**: neither `c_5` reproduces its `+0.04` ppb at N=5. Scope
+  (a) — a scope-limited negative about this reconstruction, NOT a claim that
+  table 3 is wrong. What is established is that the `c_5` slot is not the cause
+  of that gap either.
+- The **stale witness** `qbeta-ladder-convention-fee.witness.json` (holds
+  7.336484; live gives 7.133937), unchanged from the previous entry.
+
+Every number here is C-frame. The D-frame ladder does not exist — and per PR
+#6282 plus its correction, all three legs of the C instrument fail to transport,
+so this resolves the C-frame block on its own terms only.
