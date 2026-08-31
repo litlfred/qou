@@ -49,7 +49,7 @@ cross-referenced so they are never conflated again.
 |---|---|---|---|
 | **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | [`q-beta-c-k-recursion-from-habiro-q-difference.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md), [`appendix-mass-binding-algorithms/`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) |
 | **`c̃_k`** | **normalised-series** coefficients of the *same* ladder model: the `u^k` Taylor coefficients of `Φ(u)/Φ(0)`, i.e. of `cos(α−u/2)·∏(1+c_j u^j)` divided by its own value at `u = 0`. Distinct from `c_k` because the cosine factor contributes at every order. `c̃₂ = c₂ − 1/8` **exactly and independently of `α`** (Lean, sorry-free: `QOU.QBeta.normalisedQuadCoeff_eq`) ⇒ at the committed `c₂ = −1`, `c̃₂ = −9/8`. **Both numbers are right**; they are one model read at two normalisations, not a discrepancy — see §9i | **YES** (§9i) | [`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean); `qbeta_alpha_eff_ladder_reconciliation_probe.py` (which measured `−9/8`) |
-| **`c₂^even`** | the **bar-even part** of the ladder's quadratic data, exact in `ℚ(√3)`, ≈ `−8.00641` | no — a third object; do **not** read it as either `c₂` or `c̃₂` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
+| **`c₂^even`** | the **bar-even part** of the ladder's quadratic data, exact in `ℚ(√3)`. **`−887/144 − 3√3/4 = −7.45876032789888`** (re-measured 2026-08-31; this row read `≈ −8.00641` until then, which its own cited producer had stopped emitting — see §9j) | no — a third object; do **not** read it as either `c₂` or `c̃₂`, and do **not** read the exact form as an *identified constant* (§9j) | `qbeta_c3even_exact_sseries_probe.py` + `qbeta_c4even_exact_sseries_probe.py` (both `allPassed` true), bean `8we6` |
 | `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | [`braids-and-knots/`](../../content/quantum-observable-universe/braids-and-knots/) |
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
 | **`cl_k`** (was `c_k`) | **cluster / Ursell** coefficients of the many-body expansion, MeV-valued. `cl_3 = −E₀·Δ²g` is the μ₃-door three-body coefficient (`μ₃ > 0 ⟺ Δ²g < 0`); the Borromean H₉ magnitude lift is the same family. **Renamed off `c_k` 2026-08-07** — it sat within ~12 % of the ladder `c_3 = −2` with no signal they were unrelated objects | no — different object | [`2026-08-07-mu3-door-status-consolidated.md`](../audits/2026-08-07-mu3-door-status-consolidated.md), `computations/deltalambda/` |
@@ -1007,7 +1007,7 @@ The tilde device is fine; the precedent is not available.)
 |---|---|---|---|
 | **`c₂`** | `−1` | coefficient of the **explicit factor** `(1 + c₂u²)` | **hardcoded** at [`qbeta_utils.py`](../../computations/qbeta/qbeta_utils.py) `c3_target_at` — definitional, not extracted |
 | **`c̃₂`** | `−9/8` | `u²` coefficient of the **normalised series** `Φ(u)/Φ(0)` | measured by `qbeta_alpha_eff_ladder_reconciliation_probe.py` |
-| **`c₂^even`** | ≈ `−8.00641` | the **bar-even part**, exact in `ℚ(√3)` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
+| **`c₂^even`** | `−887/144 − 3√3/4` = `−7.45876032789888` | the **bar-even part**, exact in `ℚ(√3)` — but an *input-cone-determined output of an amplifying extraction*, **not** an identified constant (§9j) | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
 
 **The relation is proved, not measured.**
 [`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean)
@@ -1056,3 +1056,75 @@ as `3.47 %` is `|−2 − c₃|/2`, while the ladder witness reports `3.3509 %` 
 the same gap normalised by the extracted `c₃`. Neither is stale; neither should
 be "fixed" into the other. That this normalisation trap sits in the same banner
 as the `c₂`/`c̃₂` one is the whole lesson.
+
+### 9j. `c_k^even` — an amplifying extraction's output, NOT an identified constant (added 2026-08-31, `qou-cds1` entry 16)
+
+**Read this before quoting any `c_k^even` value, and before using one as a
+constraint on `c_k`.** The `^even` rungs are exact in `ℚ(√3)` and are *still*
+not identifications. Two independent reasons, both already on record when this
+section was written:
+
+**1 — Structural: the `c_k` are not scalar-`q` Taylor coefficients at all.**
+`u = b·ℏ_q²` is **quadratic** in `t = q − 1` near `q = 1`, so the `u`-reversion
+is singular and `R(q)` is not analytic in `u`. The verdict of
+[`2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](../audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md)
+is that **"exact operator-level `c_4..c_8` as constants do not exist"**. This is
+why `qbeta_ck_sseries_operator_match_probe`'s `c2_gate` is red *on purpose* and
+[`binding-qbeta-complex-volume.ts`](../../content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts)
+pins that computation's `status` to `"failed"`: the red assertion **is** the
+finding, and relaxing it would delete a recorded refutation.
+
+**2 — Numerical: the extraction amplifies input error by orders of magnitude.**
+It obeys `σ(c_k) = σ_R / u^k`, so at the substrate pin
+
+| `k` | `1/u^k` |
+|---|---|
+| 2 | ≈ 1.4 × 10⁴ |
+| 3 | ≈ 1.6 × 10⁶ |
+| 4 | ≈ 1.9 × 10⁸ |
+
+Measured instance, recorded in the same content block: a **9.8 × 10⁻⁸** relative
+change in `free-neutron-decay.witness.json` (regenerated in `52c68267f2`) moved
+`c₂^even` by **6.8 %** — ~7 × 10⁵ amplification — from a **byte-identical**
+producer. Import-cone drift, invisible to a file-local diff.
+
+**The fifteen-digit trap.** The superseded value `c₂^even = −8.006410058709255`
+had its *own* exact closed form, `−1049/144 − 5√3/12`, matching to **fifteen
+digits**. That block records catching it one commit before it was written down
+as an identification. *A 15-digit coincidence is what this estimator's noise
+looks like* — and the same caution applies to the current
+`−887/144 − 3√3/4`: it is what the producers emit at the current input cone,
+and that is all it is.
+
+**What was fixed here, and what was not.** Both exact-rational producers gated
+`c₂^even` against a float literal `−8.006 ± 0.05` and therefore **rejected the
+value they themselves computed**, shipping `allPassed: false` with nothing
+wrong in the arithmetic. Both now gate against the symbolic form and pass
+(`qbeta_c3even_exact_sseries_probe` 356 s, `qbeta_c4even_exact_sseries_probe`
+1359 s; values byte-identical across the regeneration). A float literal is
+exactly what went stale and cannot follow a re-derivation. **Nothing about the
+epistemic status changed** — a passing gate here means "this producer agrees
+with its siblings at this input cone", never "this constant is identified".
+
+**Consequence for `qou-cds1` entry 9.** `|c_4^even| = 1657.57` is **not** a
+constraint on the `|c_4| ≤ 1.4822` threshold. The entry-9 growth heuristic
+(`|c_2| = 1`, `|c_3| = 2.0693` ⇒ `|c_4| ~ 4.28`) remains the honest statement,
+two data points and labelled as such.
+
+**Residual staleness, deliberately not swept.** Measured 2026-08-31, `−8.00641`
+occurs in **17 files** besides this registry:
+
+| where | files | disposition |
+|---|---|---|
+| `docs/audits/` | 7 | dated records of the H₄-route arc — **left**, per the `qou-3nva` precedent |
+| `computations/qbeta/` | 8 | 7 are H₄-route probes/witnesses whose producers would need re-running; the 8th is `qbeta_derived_c3_residual_bound_probe.py`, which **quotes it deliberately** as the trap |
+| `content/` | 1 | `binding-qbeta-complex-volume.ts` — quotes it deliberately, and is the block that *recorded* the trap |
+| `docs/coordination/1ppq-qbeta.md` | 1 | historical: reports the H₃ ladder giving `c₂ = −8.00641, c₃ = +86.66116`. Note `c₃` has moved too (now `78.594`), consistent with the whole extraction tracking the input cone |
+
+So roughly half the occurrences are *correct quotations of the superseded
+value*, not staleness. Re-measure the specific file you are editing; do not
+sweep on this count.
+
+*(I first wrote "15 further files ... 5 `computations/qbeta`" here. Both were
+wrong — 17 and 8 — and one of the eight is a file I had written an hour
+earlier. Left visible because this section is about exactly that.)*
