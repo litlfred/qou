@@ -226,6 +226,15 @@ Two authoring mistakes that block a NEW file but are trivial, correct fixes
   name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
   the binder (`ρ₊`→`ρp`) — pure alpha-renaming, the proposition is
   identical. Fine in comments/docstrings, not in identifiers.
+- `import Mathlib.Algebra.BigOperators.Ring` **is not a module** in v4.24.0.
+  It is a *directory* `Ring/` (`Finset.lean`, `List.lean`, `Multiset.lean`,
+  `Nat.lean`) with no `Ring.lean` aggregator; zero mathlib files import the
+  bare path. `Finset.mul_sum` lives in `Mathlib.Algebra.BigOperators.Ring.Finset`
+  — the correct import. Symptom is identical to a cache miss (`object file
+  …/BigOperators/Ring.olean … does not exist`), so distinguish source-bug
+  from cache-gap by checking the mathlib *source* tree for a `.lean` and
+  grepping whether any mathlib file imports the exact path. Seen 2026-08-31
+  on `QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`.
 
 ## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
 
@@ -275,6 +284,16 @@ prune the log, never the TRAPs.
   `[propext, Classical.choice, Quot.sound]`, no sorryAx. Cache already restored
   (3407 mathlib oleans, RESTORED-NO-TRACES marker present). Confirmed cold-cache
   TRAP again: wall 3m31s but `user` only 10s — page faulting, not a rebuild.
+- 2026-08-31: verified NEW `QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`
+  (Mathlib-only, 4 decls). As-written FAILS: line 41/42 `import
+  Mathlib.Algebra.BigOperators.Ring` is a non-existent module in v4.24.0 (it's a
+  dir, no `Ring.lean`) — a SOURCE bug, not a cache gap. With that one import
+  fixed to `...Ring.Finset` (verified on a temp copy; source left unedited),
+  lean-direct EXIT 0, all 4 axiom-clean {propext, Quot.sound[, Classical.choice]},
+  no sorryAx. 3 harmless `unusedSectionVars [DecidableEq n]` linter warnings only.
+  New TRAP added (BigOperators.Ring). Restore note: QOU-cone seed is a PARTIAL
+  mathlib (3469 oleans, not 6990) — it lacks mathlib modules QOU never imports;
+  full extract ran the 38G quota out mid-QOU-lib (didn't matter, mathlib is first).
 - 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
   after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
   Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT

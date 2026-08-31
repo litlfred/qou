@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-08-30T18:49:45Z
+updated_at: 2026-08-31T03:05:07Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -15,3 +15,5 @@ RESEARCH (2026-08-30): Kerov-Olshanski route tested empirically on A=3 (28 parti
 REFINEMENT (2026-08-30): the theorem statement 'raw |tr| decays with b' is FALSE as written -- measured |tr(10,2)|=12634 > |tr(11,1)|=12211 at A=4 (bump at b=2). The bump tracks dim (peaks mid-sector). The quantity that DECAYS is |tr|/dim (A=4 2-row: 1110,234,71,28,19,22 by b) or equivalently the y-weighted contribution c_lambda=y_lambda*tr. Also: the 2-row sector gives NO clean closed-form decay law (tr non-monotonic, inter-j ratios drift 0.51-1.03, sign-flip at (5,4)/A=3), so the closed-form-2-row proof route is not clean either. Correct theorem: |tr(rho_lambda Omega2)|/dim_lambda decays with b(lambda). Proof still open (cluster/cumulant route).
 
 PROGRESS (2026-08-30, PR #6311): FIRST POSITIVE result. The tr-decay is PER-WINDOW LOCAL, not an inter-window cancellation. Ω₂ decomposes exactly (far-commutativity) into a period-3 lattice sum of 3-strand-local commutators [A_a,A_{a+1}] (multiplicities (28,4,7) per nucleon), self-checked 2·tr(ρΩ₂)=Σmult·t to 4.3e-57 (A=3)/4.5e-58 (A=2). Each per-window |tr(ρ_λ[A_a,A_{a+1}])|/dim_λ PEAKS at b=1 for EVERY window at A=2 and A=3 ⇒ decay already present per-window ⇒ RULES OUT the Penrose/Ursell inter-window-cancellation sub-route. REDUCES the theorem to a single fixed 3-strand-local operator's normalised-trace decay (ρ still global). Honest limits: not monotone; suppression modest at A=2 (~1.5x), sharpens to 5.6-12.8x A=3; single-window estimate STILL OPEN. Probe: computations/deltalambda/magnus_tr_decay_perpair_cluster_probe.py; audit docs/audits/2026-08-30-magnus-tr-decay-perpair-cluster-local.md
+
+MERGED (2026-08-31, PR #6311, rebase 18dfda15c4): per-window-local result + verified Lean skeleton on main. Lean QOU/MassTheory/MagnusOmega2LocalDecomposition.lean sorry-free (commutator_eq_zero_of_commute, omega2_reduces_to_adjacent, trace_rho_localSum, trace_rho_weightedLocalSum), axioms={propext,Classical.choice,Quot.sound}. The empirical peak-at-b=1 decay is NOT formalized (measured/open). REMAINING OPEN: the reduced single-window estimate |tr(ρ_λ[A_a,A_{a+1}])|/dim_λ decays with b (with a rate), for a FIXED 3-strand-local operator.
