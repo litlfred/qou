@@ -50,15 +50,15 @@ most trivial model available and asking `lean` whether it type-checks:
 |---|---|
 | classes probed | 79 |
 | **INHABITED with no hypotheses** | **52** (26 machine + 26 hand) |
-| scored NOT vacuous — genuine claim | 21 — `MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall`, `H2SAngleS3HolonomyConjecture`, `DeltaTauMSurrogateTaylorCoeff2`, `FiberAdjointInvolutionContext`, `QuantumObservableUniverseExistsContext`, `DressedMassSubstrateSplit`, `WhiteheadVolumeConjectureLimit`, `HasDqSquaredNonvanishing`, + 6 already inhabited in the corpus |
+| scored NOT vacuous — genuine claim | 20 — `MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall`, `H2SAngleS3HolonomyConjecture`, `FiberAdjointInvolutionContext`, `QuantumObservableUniverseExistsContext`, `DressedMassSubstrateSplit`, `WhiteheadVolumeConjectureLimit`, `HasDqSquaredNonvanishing`, + 6 already inhabited in the corpus |
 | REFUTABLE — false as stated | 2 (`SkeinMassRelationHolds`, `DoubleMagicConjecture`) |
 | INERT — no direction can be invoked | 2 (`RadiusOfConvergenceGateClass`, `ConfinementPhaseStratificationContext`) |
-| **DRAINED — proved outright, class deleted** | 2 (`ProtonPairSkeinApprox`, `NeutronPairSkeinApprox`) |
+| **DRAINED — class removed, claim proved** | 3 (`ProtonPairSkeinApprox`, `NeutronPairSkeinApprox` — proved here; `DeltaTauMSurrogateTaylorCoeff2` — already proved in the library twin) |
 | still undecided | **0** |
 | hand-verified before any tooling existed | 5 of 5 |
 
-**The list is empty.** All 79 are adjudicated: 52 vacuous, 21 genuine, 2 false
-as stated, 2 inert, 2 drained by proof. See the final tranche below for the last
+**The list is empty.** All 79 are adjudicated: 52 vacuous, 20 genuine, 2 false
+as stated, 2 inert, 3 drained (52+20+2+2+3 = 79). See the final tranche below for the last
 six, which are the most encouraging six in the set.
 
 `HasDqSquaredNonvanishing` is worth a line of its own, because its ledger entry
