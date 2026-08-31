@@ -116,8 +116,14 @@ def main() -> int:
         "q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from "
         "markov_peel.tr_M_atomic (existing canonical infrastructure); "
         "(3) cross-check vs the canonical Layer-1 |tr_M| atlas "
-        "value 1.0653062286. Closes the S(p) ≈ 0 assumed-zero gap "
-        "in conj:borromean-baryon-mass-formula."
+        "value 1.1457596925 (convention D at the proton pin). "
+        "Closes the S(p) ≈ 0 assumed-zero gap "
+        "in conj:borromean-baryon-mass-formula. "
+        "CONVENTION FIX 2026-08-31 (bean qou-46ab): this string said "
+        "1.0653062286, the convention-C value, while calling it the "
+        "canonical atlas value — 7.55 % from the canonical D one. The "
+        "description is emitted into the witness, so the stale literal "
+        "was being published as canonical on every run."
     )
     w.add_parameter("compute_dps", "60")
 
