@@ -1,0 +1,197 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T02:54:40.369983+00:00",
+  "commitSha": "8676812b4fbb93ab325b6c8f427cf8a642781714",
+  "assertions": [
+    {
+      "name": "k2_is_derived_tier",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "k3_is_cal_anchored",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "k3_residual_is_exactly_zero",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "cache_u_is_exactly_recomputable_from_q0",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "pslq_witness_u_is_the_MUON_value",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "straddle_does_NOT_change_the_pslq_conclusion",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "amplifier_dc4_is_inverse_u_fourth_at_its_own_layer",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "extracted_c3_is_exactly_the_annihilating_value",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "threshold_is_order_unity",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "unit_c4_would_meet_target",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "growth_trend_would_MISS_the_target",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "k5_is_below_target_regardless",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "cached_c4_zero_is_a_greedy_artifact",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-derived-c3-residual-bound",
+  "scriptFile": "qbeta_derived_c3_residual_bound_probe.py",
+  "scriptHash": "c21b7cebcc7f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_derived_c3_residual_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_derived_c3_residual_bound_probe.py"
+  },
+  "description": "Entry 9's cal-anchored wall, quantified from the other side. The corpus bounds IDENTIFYING c_3 from data (6.99-digit deficit); this bounds what a DERIVED c_3 would buy. An exact c_3 leaves |c_4|*u^4, so the L2 target is met iff |c_4| <= 1.4816. Cuts both ways: one derived rung closes the whole gap, BUT |c_2|=1 and |c_3|=2.069, and continuing that growth puts |c_4|~4.3, missing by ~2.9x. Also shows the cached c_3 IS the greedy annihilating value and the cached c_4=0 is a greedy artifact carrying no evidence.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)"
+  },
+  "data": {
+    "assertions_passed": 13,
+    "assertions_total": 13,
+    "checks": [
+      {
+        "name": "k2_is_derived_tier",
+        "pass": true,
+        "why": "k=2 tier='derived', c_2=-1.0"
+      },
+      {
+        "name": "k3_is_cal_anchored",
+        "pass": true,
+        "why": "k=3 tier='cal-anchored' — extracted from CAL-3 Q_codata"
+      },
+      {
+        "name": "k3_residual_is_exactly_zero",
+        "pass": true,
+        "why": "the cache's 0.0 ppb at k=3 is the EXTRACTION, not a measurement — so the cache cannot answer what a DERIVED c_3 would leave"
+      },
+      {
+        "name": "cache_u_is_exactly_recomputable_from_q0",
+        "pass": true,
+        "why": "ck-cache u reproduces from its own q_0 to 4.246e-51 — the cache is self-consistent"
+      },
+      {
+        "name": "pslq_witness_u_is_the_MUON_value",
+        "pass": true,
+        "why": "qbeta-ck-basis-constrained-pslq records u = 0.0085172363404849214399, which is u at the MUON pin (match 7.091e-32) while the same witness records q0_proton and c3_proton_on_record — a LAYER STRADDLE, 2.10201e-7 relative"
+      },
+      {
+        "name": "straddle_does_NOT_change_the_pslq_conclusion",
+        "pass": true,
+        "why": "the amplifier is off by 1.872e-6 relative, i.e. 8.13e-7 effective digits, against that witness's 6.99-digit deficit — its identification bound STANDS; only the recorded u / amplifiers are on the wrong layer"
+      },
+      {
+        "name": "amplifier_dc4_is_inverse_u_fourth_at_its_own_layer",
+        "pass": true,
+        "why": "1/amplifier_dc4 = 5.262532484e-9 vs muon-pin u^4 = 5.262532534e-9 — consistent once the layer is identified"
+      },
+      {
+        "name": "extracted_c3_is_exactly_the_annihilating_value",
+        "pass": true,
+        "why": "c_3 required to zero the k=2 residual = -2.06934522294; cache value = -2.06934257712; rel 1.279e-6 — confirms the cached c_3 IS the greedy extraction, not an independent value"
+      },
+      {
+        "name": "threshold_is_order_unity",
+        "pass": true,
+        "why": "|c_4| <= target/u^4 = 1.4821774"
+      },
+      {
+        "name": "unit_c4_would_meet_target",
+        "pass": true,
+        "why": "|c_4| = 1 leaves 5.26253 ppb < target 7.8 ppb"
+      },
+      {
+        "name": "growth_trend_would_MISS_the_target",
+        "pass": true,
+        "why": "|c_2|=1, |c_3|=2.0693426; continuing that ratio gives |c_4|~4.28218 > 1.48218 — a perfect c_3 would then STILL miss, by ~2.889x"
+      },
+      {
+        "name": "k5_is_below_target_regardless",
+        "pass": true,
+        "why": "u^5 = 0.0448222 ppb, 174.021x below target — so the question is entirely about c_3 and c_4"
+      },
+      {
+        "name": "cached_c4_zero_is_a_greedy_artifact",
+        "pass": true,
+        "why": "c_4 = 0.0 is what greedy extraction leaves once c_3 has annihilated the residual (QOU.QBeta.greedy_later_rungs_vanish) — it must NOT be read as evidence that |c_4| < 1.4816"
+      }
+    ],
+    "u_substrate": "0.00851723455015614218925557360331",
+    "derived_tier_err_ppb": "1278.58254211304",
+    "l2_target_ppb": "7.8",
+    "c4_threshold_for_target": "1.4821773563",
+    "residual_per_unit_c4_ppb": "5.26252810898",
+    "growth_projected_c4": "4.282178701",
+    "scope": "Scope (a). No c_k proposed, extracted, fitted or wired. No D-frame Q_beta computed — the producer's convention-D refusal stands untouched. The conclusion is CONDITIONAL on |c_4|, which is underived; the cached 0.0 is a greedy artifact and is not evidence."
+  }
+}
