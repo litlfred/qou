@@ -74,7 +74,16 @@ def main():
     coeffs_raw = proton['habiro_coefficients']
 
     def eval_a_m(expr_str, u_val):
-        ns = {"check_q": u_val, "__builtins__": {}}
+        # The upstream's `a_m` expressions are polynomials in `u` -- e.g.
+        # `-172*u - 172` in habiro-coefficients-atomic.witness.json -- but this
+        # namespace bound the value to `check_q`, a name those expressions never
+        # use. So every a_m past m=0 raised `NameError: name 'u' is not defined`
+        # and this producer could not run at all; only the m=0 constant (8)
+        # evaluated. `check_q` appears nowhere else in the file: it is a leftover
+        # from a rename. The upstream has used `u` on both sides of its last
+        # regeneration, so this is not a contract that changed under the
+        # consumer -- the consumer was simply wrong. Bean `qou-4idm`.
+        ns = {"u": u_val, "__builtins__": {}}
         return mp.mpf(eval(expr_str, ns))
 
     # Convention A: (q;q)_m = Π_{k=1}^{m} (1 - q^k) [the 136.07 convention]
