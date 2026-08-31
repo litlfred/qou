@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T19:28:44Z
+updated_at: 2026-08-31T19:43:10Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4920,3 +4920,39 @@ them "the algebra is hard":
 would justify the cosine independently of the anchor and give the tower a reason
 to exist. The alternative is to state the correction as what the data supports,
 `1 − θ²/2`, and retire the tower. Both are owner calls; neither is done here.
+
+
+## Step 18 (2026-08-31) — branch 3 narrows to one requirement: an ELLIPTIC generator
+
+Attacked branch 3 (= `qou-pdix` route 5). Read that bean first — it is further
+along than this one records: routes 1–4 closed, route 5's constant-residue horn
+closed by `PhaseFailsLogFunctionalEquation`, and the old acceptance test retired
+for a two-tier D1–D6 replacement.
+
+**What I added** (probe `qbeta-holonomy-spectrum-sign-obstruction` 6/6, Lean
+`QOU/QBeta/HolonomySpectrumSignObstruction.lean` 6 theorems sorry-free, audit
+`docs/audits/2026-08-31-qbeta-holonomy-spectrum-sign-obstruction.md`, commit
+`4471ee72ce`): route 5's **three remaining survivors close at once**.
+
+The correction the holonomy must produce is **strictly below 1** (`Q_β/Q_A =
+0.998325`; ladder cosine `0.998399` C / `0.998999` D). A **real-spectrum**
+generator gives `cosh a ≥ 1` for *every* real `a` — quantified over all `a`, so
+**residue-independent**, which is why it reaches the q-dependent, non-flat and
+q-dependent-parameter cases the doubling identity could not. Kohno–Drinfeld's own
+scale-fixing `ħ = 2 ln q` is **real** at real `q₀ > 1`, giving character
+`(q+1/q)/2 = 1.005448` with excess `(q−1)²/(2q)` — a square, so never negative.
+**Wrong side of 1.**
+
+**Branch 3 is therefore not closed but narrowed to one requirement**: an elliptic
+generator (`det A > 0`, spectrum `±iθ`, `θ = 0.0565947`) at real `q`, against
+Kohno–Drinfeld's `det A = −(ln q₀)² < 0`. The imaginarity must come from
+somewhere, and `conj:im-q-physical-role` is the corpus's name for that place.
+Added as **tier-0 (D0)** to `qou-pdix`'s acceptance test.
+
+**Where the primary item stands after Steps 15–18.** *Re-derive the `c_k` ladder
+under D* has four independent blockers, none of them "the algebra is hard":
+
+1. **No anchor** (Step 15) — `c₂ = −1` is 1.6 σ under C, excluded at 773 σ under D.
+2. **No derivation for the parametrisation** (Step 17 + `BraidImageEigenphaseExclusion`).
+3. **Under-determination** — one measured number, a series of coefficients.
+4. **Branch 3 needs an elliptic generator** (Step 18) — and nothing supplies one.
