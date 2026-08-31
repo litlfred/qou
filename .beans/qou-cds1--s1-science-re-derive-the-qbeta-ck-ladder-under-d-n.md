@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T20:57:44Z
+updated_at: 2026-08-31T21:02:22Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5274,3 +5274,57 @@ a **higher tower block** differs (Step 22 only measured `(2,1)` at `k = 3`), and
 whether the ladder phase is a *fraction* of an eigenphase rather than an
 eigenphase itself. Neither is a search over forms; both are readings of an
 existing operator.
+
+
+## Step 24 (2026-08-31) — both readings CLOSED; the gap is not bridged
+
+Probe `qbeta-eigenphase-tower-and-fraction-readings` (5/5). Commit `be0d3f2`(see log).
+
+### Check A — a higher tower block? **No, structurally.**
+
+Across `k = 3,4,5,6` and every partition, the **only** distinct `|arg|` of a
+complex eigenvalue of `ρ_λ(Δ_L)` anywhere in the tower is **2.02044502**, in
+blocks of dimension 1–16, zero eig failures. Blocks without complex eigenvalues
+are entirely real.
+
+**The reason is standard rep theory** (cited, not proved): `Δ_L ∈ H₃` acts
+block-diagonally on the H₃-isotypic decomposition of `λ↓H₃`, so
+`spec ρ_λ(x) = ⋃_μ spec ρ_μ(x)` with multiplicity. **The tower repeats the H₃
+spectrum and cannot add to it** — closing this reading for *every* H₃-induced
+operator, not just `Δ_L`.
+
+### Check B — a fraction of the eigenphase? **No, and not close.**
+
+`θ_eig/θ_req = 35.700`, not an integer. Seven pre-declared candidates (list fixed
+before computing; all reported, misses included; 11 and 22 because both nucleon
+words are 11-crossing):
+
+| | ratio | | ratio |
+|---|---|---|---|
+| `θ/2` | 17.850 | `2π−θ` | 75.320 |
+| `θ/11` | 3.2455 | `π−θ` | 19.810 |
+| **`θ/22`** | **1.6227** ← closest, still **62 % off** | `θ−2` | 0.36125 |
+| `2θ` | 71.400 | | |
+
+**And the non-numerological version settles it.** `θ_req` isn't intrinsic — it's
+`(z−1)h/2 − u/2`, a *function of z*. So the real question is what `z` the
+eigenphase corresponds to:
+
+    +θ_eig → z =  20.3696          admissible z_D = 0.6127
+    −θ_eig → z = −18.2881                     z_C = 0.4993
+
+Off by ~33× and outside any admissible range both ways. The two phases aren't
+related by a rational factor — they're different magnitudes in different ranges.
+
+### Where this leaves it
+
+`Δ_L` supplies a genuine elliptic generator whose ellipticity is a fact about the
+nucleons — **but its phase is not the ladder's**, and neither tower level nor a
+rational factor bridges the gap.
+
+**What remains** is the single thing Step 22's correction opened and nothing since
+has touched: **a genuinely level-`k` operator, not induced from H₃.** By Check A
+that is the *only* place in the tower a different phase could come from.
+
+*No new Lean here: the Check-A argument is textbook representation theory, and
+manufacturing a proof file for it would overstate what this step established.*
