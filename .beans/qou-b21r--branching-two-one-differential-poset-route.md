@@ -8,7 +8,7 @@ tags:
     - lean
     - needs:combinatorics
 created_at: 2026-08-30T14:46:08Z
-updated_at: 2026-08-30T14:46:08Z
+updated_at: 2026-08-31T03:12:59Z
 ---
 
 `RSKIdentitiesContext.branching_two_one` is the class's one remaining open field
@@ -92,3 +92,39 @@ the summand meaningful). Then G(mu,k) is a straightforward induction on top of u
 
 Estimate: 300-500 lines of new Lean. Budget it as its own tranche; do NOT open it alongside
 other work and do NOT land it with sorries (AGENTS.md zero-sorry default).
+
+
+## PROGRESS 2026-08-31 — the erase-max step is PROVED
+
+`QOU/Mathlib/SkewSYTMaxCorner.lean`, six lemmas, sorry-free, axioms
+[propext, Classical.choice, Quot.sound]:
+
+    skew_injOn          entry is injective on the skew region
+    skew_mem_range      every skew entry is < |skew|
+    skew_exists_of_lt   every value < |skew| is attained
+    skew_right_mem      a skew cell's right neighbour, if in outer, is also skew
+    skew_down_mem       likewise downward
+    exists_max_corner   THE STEP: the maximal entry sits on a corner of outer OUTSIDE inner
+
+## The scope note's "harder than a transliteration" reason is now a ONE-OFF cost, not per-site
+
+The note said: StandardYoungTableau gives Set.BijOn (both halves directly usable), while
+SkewStandardYoungTableau gives a Finset IMAGE EQUALITY from which both must be re-derived at
+every site citing bijOn. The first three lemmas do that derivation ONCE. The remaining
+development can cite them the way the straight case cites bijOn, so the multiplier the note
+worried about does not apply.
+
+## What is still open — do not read this as the branching rule
+
+Proved here: the GEOMETRY of the erase direction. Not proved:
+* the bijection between skew SYT of outer/inner with max at c, and skew SYT of (outer - c)/inner;
+* `inner <= outer - c` as a YoungDiagram fact (exists_max_corner supplies its content --
+  c is a corner and c is outside inner -- but the diagram-level statement is not assembled);
+* the sum itself, f^{lam/mu} = sum over such c of f^{(lam-c)/mu};
+* and then G(mu,k), which is the easy induction on top of upSum_eq.
+
+Revised estimate for the remainder: the erase geometry was ~90 lines of the ~440. The insert
+direction and the bijection are the bulk and are untouched.
+
+The 0-based vs 1-based trap the note flagged is real and is recorded in the file header:
+skew entries are `range n`, straight entries are `Icc 1 n`.
