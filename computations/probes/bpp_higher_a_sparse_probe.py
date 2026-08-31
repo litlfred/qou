@@ -1,0 +1,322 @@
+#!/usr/bin/env python3
+"""`qou-gcmn` ANSWERED: `B_pp` is NOT A-independent — it declines. And the
+`H_2A` trace was never intractable; the sparse route does A=4 in ~50 s.
+
+Owner, 2026-08-31: *"not intractable... use sparse matrices. recent compute
+does that"*. Correct on both counts, and it changes the answer.
+
+## What this supersedes
+
+The companion probe `bpp_a_dependence_bound_probe.py` (same PR) proved the
+CHAIN bond `-alpha*ln z` is A-independent by construction, measured it against
+the `H_6` trace bond at `A = 2` (3.65 % apart), and — because `A = 2` is the
+only point at which both were then computable — stated a **disjunction**:
+
+  EITHER the trace bond is A-independent too (confound zero),
+  OR it diverges with `A` and that divergence is the unmeasured quantity.
+
+It also said, correctly, that one shared point cannot decide between them and
+that a **second point** would. This probe computes the second and third points.
+**The second branch is the true one.** The first branch is withdrawn.
+
+## Why it was thought intractable, and why it is not
+
+`charge_coulomb_tn3he_derived._per_block` evaluates
+`chi_lambda_numerical(lam, q0, cr)` over `partitions_of(6)` with DENSE
+characters, and `em_linking_invariant_scoping` records the A>3 bonds as living
+"at `H_2A`, intractable". Measured here: dense `chi_lambda_numerical` does not
+return within 600 s even at the sizes involved.
+
+The sparse route does. `colour_weighting_across_mixed_nuclei_probe` (landed
+2026-08-30) carries `build_sparse_cache` + `schur_weyl_sum`: Hoefsmit matrices
+have at most two nonzeros per row, so the column-sparse multiply costs
+`O(dim^2 * nnz_per_col)` instead of `O(dim^3)`. Timings here, on the pure-proton
+chains:
+
+    Z=2  n=6   23 crossings   4 partitions   max dim   9     <1 s
+    Z=3  n=9   35 crossings   5 partitions   max dim  48      1 s
+    Z=4  n=12  47 crossings   7 partitions   max dim 297     51 s
+
+So "intractable" was an artifact of the dense evaluator, not of the object.
+
+## The construction, unchanged from the committed one
+
+`charge_coulomb_tn3he_derived` defines the `A=2` bond as
+
+    B_pp = E0 * [ S(Z=2, N=0, inter=False) - S(Z=2, N=0, inter=True) ]
+
+with `S = Sum_lambda y_lambda |Re chi^lambda|` over the atomic braid. A pure
+proton chain `(Z, N=0)` has only `pp` bonds, `Z - 1` of them, so the same
+construction at higher `Z` gives the per-bond `pp` energy directly:
+
+    B_pp(A) = E0 * [ S(A, 0, False) - S(A, 0, True) ] / (A - 1)
+
+**Method validated**: at `A = 2` this reproduces the committed
+`B_pp_strong_MeV = 2.12836094575708` to every recorded digit, via a different
+evaluator (sparse Schur-Weyl vs dense `chi_lambda_numerical`) and a different
+crossings entry point (`atom_canonical_crossings` vs
+`atomic_braid_to_crossings`). Two independent paths to the committed number.
+
+## The result
+
+    A    bonds   B_pp per bond (MeV)   vs A=2
+    2      1         2.128360946       1.0000
+    3      2         1.966342608       0.9239
+    4      3         1.851585614       0.8700
+
+`B_pp` **declines** — 7.6 % by `A = 3`, 13.0 % by `A = 4` — against a chain bond
+frozen at `2.050709692` for every `A`. So the `qou-gcmn` confound is **real,
+signed, and now measured** on three points.
+
+## What it does to kappa — direction, not a corrected series
+
+`kappa(A) = dB_AME / [ (A-1)/2 * ratio * B_pp ]` was computed holding `B_pp` at
+its `A = 2` value. Correcting it multiplies by `B_pp(2)/B_pp(A) > 1`, so the
+true `kappa` is **larger** than the held one and increasingly so with `A`. The
+measured `kappa` decline (3.45 -> 1.74 over `A = 3..39`) therefore **overstates**
+the invariant's decline: part of it is the bond shrinking, exactly the confound
+the bean names.
+
+**This probe does NOT correct the series**, and the reason is the honest one:
+the mirror pairs run to `A = 39`, and `B_pp` is measured here only to `A = 4`.
+Extrapolating a three-point decline across a factor of ten in `A` would be a fit.
+What is established is the SIGN and the SCALE at the low end; `A = 5, 6` are
+reachable by the same route at higher cost and are the obvious continuation.
+
+## Scope
+
+**(a)** for every number. Nothing wired. `B_pp(A)` is measured, not fitted; no
+coefficient is introduced anywhere. The pure-proton chain isolates the `pp` bond
+by construction — it is the same object the committed `A=2` value is, at larger
+`A` — but note it is **not** a physical nucleus, and whether the `pp` bond inside
+a MIXED nucleus declines identically is not tested here.
+
+`-- Ref:` [ame2020]. Beans `qou-gcmn`, `qou-o6ml`, `qou-brng`.
+"""
+from __future__ import annotations
+
+import datetime
+import importlib.util
+import json
+import sys
+import time
+from pathlib import Path
+
+_HERE = Path(__file__).resolve().parent
+_COMP = _HERE.parent
+for _p in (str(_COMP), str(_COMP / "hecke"), str(_COMP / "habiro"),
+           str(_COMP / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+import _path_bridge as _bridge  # noqa: E402, F401
+import mpmath as mp  # noqa: E402
+
+from _precision import set_compute_dps  # noqa: E402
+from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402
+
+set_compute_dps(30)
+
+# reuse the landed sparse machinery rather than re-implementing it
+_spec = importlib.util.spec_from_file_location(
+    "_cw", str(_HERE / "colour_weighting_across_mixed_nuclei_probe.py"))
+_cw = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_cw)
+
+COMMITTED_B_PP_A2 = "2.12836094575708"   # charge-coulomb-tn3he-derived.witness.json
+
+
+def S_of(Z, q, y_table, cache, d_blind, inter):
+    cr = atom_canonical_crossings(Z, 0, include_inter=inter)
+    tot, _, _ = _cw.schur_weyl_sum(q, cr, y_table, cache, d_blind)
+    return tot
+
+
+def main() -> int:
+    checks, assertions = [], []
+
+    def check(name, ok, detail):
+        assertions.append({"name": name, "passed": bool(ok), "detail": detail})
+        checks.append(bool(ok))
+        print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
+        print(f"         {detail}")
+
+    q = mp.mpf(Q_50_DIGIT_STR)
+    h = q - mp.mpf(1) / q
+    E0 = mp.mpf(str(M_E_MEV)) / (q * (q - 1))
+    d_blind = _cw.d_for_ctype("averaged", h)
+
+    print("=" * 78)
+    print("  qou-gcmn ANSWERED: B_pp declines with A (sparse route, A = 2,3,4)")
+    print("=" * 78)
+    print(f"\n  E0 = {mp.nstr(E0, 20)} MeV")
+    print(f"  committed B_pp(A=2) = {COMMITTED_B_PP_A2} MeV\n")
+
+    rows, per_bond = [], {}
+    print(f"  {'A':>3}{'n':>5}{'cross':>7}{'parts':>7}{'maxdim':>8}"
+          f"{'B_tot MeV':>16}{'B_pp/bond':>16}{'secs':>7}")
+    for A in (2, 3, 4):
+        t0 = time.time()
+        cr = atom_canonical_crossings(A, 0, include_inter=True)
+        n = max(g for g, _ in cr) + 2
+        yt = y_lambda_at(n, q)
+        cache = _cw.build_sparse_cache(q, yt, n)
+        dims = [d for _, d in cache.values()]
+        s_on = S_of(A, q, yt, cache, d_blind, True)
+        s_off = S_of(A, q, yt, cache, d_blind, False)
+        tot = E0 * (s_off - s_on)
+        pb = tot / (A - 1)
+        per_bond[A] = pb
+        el = time.time() - t0
+        rows.append({"A": A, "n_strands": n, "crossings": len(cr),
+                     "partitions": len(cache),
+                     "max_dim": max(dims) if dims else 0,
+                     "S_inter_true": mp.nstr(s_on, 25),
+                     "S_inter_false": mp.nstr(s_off, 25),
+                     "B_total_MeV": mp.nstr(tot, 20),
+                     "B_pp_per_bond_MeV": mp.nstr(pb, 20),
+                     "seconds": round(el, 1)})
+        print(f"  {A:>3}{n:>5}{len(cr):>7}{len(cache):>7}"
+              f"{max(dims) if dims else 0:>8}{mp.nstr(tot, 12):>16}"
+              f"{mp.nstr(pb, 12):>16}{el:>7.1f}")
+
+    # -------------------------------------------------- 1. method validation
+    print("\n" + "-" * 78)
+    print("  1. The sparse route reproduces the committed A=2 value")
+    print("-" * 78)
+    got = mp.nstr(per_bond[2], 15)
+    agree = abs(per_bond[2] - mp.mpf(COMMITTED_B_PP_A2)) < mp.mpf("1e-10")
+    print(f"\n  committed : {COMMITTED_B_PP_A2}")
+    print(f"  this probe: {got}")
+    check("method validated against the committed number, by a DIFFERENT path",
+          agree,
+          f"agrees to <1e-10. Different evaluator (sparse Schur-Weyl vs dense "
+          f"chi_lambda_numerical) and different crossings entry point "
+          f"(atom_canonical_crossings vs atomic_braid_to_crossings). Two "
+          f"independent routes to the committed B_pp_strong_MeV.")
+
+    # -------------------------------------------------- 2. the decline
+    print("\n" + "-" * 78)
+    print("  2. B_pp DECLINES with A — the confound is real and signed")
+    print("-" * 78)
+    print(f"\n  {'A':>3}{'B_pp/bond':>18}{'vs A=2':>12}{'drop':>10}")
+    for A in (2, 3, 4):
+        r = per_bond[A] / per_bond[2]
+        print(f"  {A:>3}{mp.nstr(per_bond[A], 12):>18}{mp.nstr(r, 8):>12}"
+              f"{mp.nstr(100*(1-r), 5):>9}%")
+    declining = per_bond[2] > per_bond[3] > per_bond[4]
+    drop4 = 1 - per_bond[4] / per_bond[2]
+    check("B_pp is NOT A-independent — monotone decline on all three points",
+          declining and drop4 > mp.mpf("0.05"),
+          f"2.128 -> 1.966 -> 1.852 MeV, a {mp.nstr(100*drop4, 4)} % drop by "
+          f"A=4, against a chain bond frozen at 2.0507 for every A. The "
+          f"companion probe's FIRST disjunction branch (trace bond also "
+          f"A-independent) is WITHDRAWN; the second is the true one.")
+
+    # -------------------------------------------------- 3. what it does to kappa
+    print("\n" + "-" * 78)
+    print("  3. Direction of the kappa correction — NOT a corrected series")
+    print("-" * 78)
+    corr3 = per_bond[2] / per_bond[3]
+    corr4 = per_bond[2] / per_bond[4]
+    print(f"""
+  kappa(A) = dB_AME / [ (A-1)/2 * ratio * B_pp ] was computed holding B_pp at
+  its A=2 value. Correcting multiplies by B_pp(2)/B_pp(A):
+
+      A=3  x {mp.nstr(corr3, 8)}        A=4  x {mp.nstr(corr4, 8)}
+
+  Both > 1, so the TRUE kappa is LARGER than the held one, increasingly with A.
+  The measured kappa decline (3.45 -> 1.74 over A = 3..39) therefore OVERSTATES
+  the invariant's decline: part of it is the bond shrinking — exactly the
+  confound qou-gcmn names.
+
+  NOT corrected here. The mirror pairs run to A = 39; B_pp is measured to A = 4.
+  Extrapolating a three-point decline across a factor of ten in A would be a
+  fit. The SIGN and the low-A SCALE are established; A = 5,6 are the obvious
+  continuation by the same route.
+""")
+    check("the correction direction is established; the series is NOT corrected",
+          corr3 > 1 and corr4 > corr3,
+          f"B_pp(2)/B_pp(3) = {mp.nstr(corr3, 8)}, B_pp(2)/B_pp(4) = "
+          f"{mp.nstr(corr4, 8)} — both above 1 and growing, so the held-B_pp "
+          f"kappa understates the true kappa and overstates its decline. No "
+          f"extrapolation past A=4 is made.")
+
+    # -------------------------------------------------- 4. tractability
+    print("\n" + "-" * 78)
+    print("  4. 'Intractable' was the dense evaluator, not the object")
+    print("-" * 78)
+    slowest = max(r["seconds"] for r in rows)
+    print(f"\n  Largest case here: A=4, n=12, max dim 297 — {slowest:.0f} s.")
+    print("  Dense chi_lambda_numerical did not return within 600 s.")
+    check("the H_2A bond is computable — the intractability claim was stale",
+          slowest < 300,
+          f"A=4 completes in {slowest:.0f} s with the column-sparse Hoefsmit "
+          f"multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), "
+          f"machinery that landed 2026-08-30 in "
+          f"colour_weighting_across_mixed_nuclei_probe. "
+          f"em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, "
+          f"intractable' predates it.")
+
+    ok = all(checks)
+    print("\n" + "=" * 78)
+    print(f"  {sum(checks)}/{len(checks)} checks passed")
+    print("=" * 78)
+    print(f"""
+  VERDICT. qou-gcmn asked to compute B_pp at higher A or bound its
+  A-dependence. Both are now done, and they disagree with the companion probe's
+  preferred branch:
+
+  - the CHAIN bond is A-independent by construction (companion probe);
+  - the TRACE bond is NOT: 2.128 -> 1.966 -> 1.852 MeV over A = 2,3,4,
+    a {mp.nstr(100*drop4, 4)} % decline;
+  - so the confound is real, and the measured kappa decline overstates the
+    EM-linking invariant by the amount the bond shrinks.
+
+  The blocker qou-gcmn names is therefore not "unmeasurable" — it is measured
+  at the low end and computable further by the same route.
+""")
+
+    wit = {
+        "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+        "name": "bpp-higher-a-sparse",
+        "description": (
+            "qou-gcmn ANSWERED. B_pp per bond on pure-proton chains: 2.128360946 "
+            "(A=2, reproducing the committed value by a different evaluator), "
+            "1.966342608 (A=3), 1.851585614 (A=4) MeV — a monotone 13.0% decline, "
+            "against an A-independent chain bond of 2.050709692. So B_pp is NOT "
+            "A-independent, the confound is real and signed, and the measured "
+            "kappa decline OVERSTATES the EM-linking invariant. The companion "
+            "probe's first disjunction branch is withdrawn. Also: the H_2A trace "
+            "was never intractable — the sparse Hoefsmit multiply does A=4 (n=12, "
+            "max dim 297) in ~50s where the dense evaluator does not return in "
+            "600s. Scope (a); the series is NOT corrected past A=4, which would "
+            "be a fit."),
+        "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "data": {
+            "q0": Q_50_DIGIT_STR,
+            "q0_anchor": "proton",
+            "E0_MeV": mp.nstr(E0, 30),
+            "committed_B_pp_A2": COMMITTED_B_PP_A2,
+            "rows": rows,
+            "B_pp_per_bond": {str(A): mp.nstr(per_bond[A], 25)
+                              for A in sorted(per_bond)},
+            "decline_A4_vs_A2": mp.nstr(drop4, 20),
+            "kappa_correction_A3": mp.nstr(corr3, 20),
+            "kappa_correction_A4": mp.nstr(corr4, 20),
+            "chain_bond_MeV": "2.050709692381",
+            "assertions": assertions,
+            "allPassed": ok,
+        },
+    }
+    out = _HERE / "bpp-higher-a-sparse.witness.json"
+    out.write_text(json.dumps(wit, indent=2) + "\n", encoding="utf-8")
+    print(f"  witness: {out}")
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
