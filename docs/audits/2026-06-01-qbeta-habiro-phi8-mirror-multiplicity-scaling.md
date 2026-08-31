@@ -25,6 +25,30 @@
 > superseded is the five-point table it was fit on and the `Φ₁/Φ₂/Φ₄`
 > secondary findings, not the law itself.
 
+> **🛑 RE-SCOPED 2026-08-31 — the `mult(Φ_8)` column here is CONVENTION-C
+> and no longer reproduces (bean `qou-wc8f`).** The 2026-08-18 supersession
+> above corrected the *object* (difference the traces, not the a_m). What it
+> could not anticipate is that the **inputs** changed afterwards: all 18
+> upstream `habiro-coefficients-<slug>` witnesses were regenerated on
+> **2026-08-25 21:49–21:57** — one 8-minute batch, seven days after this
+> analysis and after the topic2 witness — to apply **owner ruling R3
+> (2026-08-15)**, the canonical `bring_color_weighted` p/n convention.
+>
+> Re-running the same scan against the regenerated a_m gives a **different
+> exact law**: `mult(Φ_8) = 2A − 2` for odd A and `2A − 3` for even, i.e.
+> twice this document's `2⌊(A−1)/2⌋` plus one at even A. So the law recorded
+> here is C-frame; its D-frame replacement is the doubled form. Neither is a
+> defect in the other — they are the same computation under the two
+> conventions.
+>
+> **What is unaffected, and it is the headline:** `M_first_Φ_8 = 7` on every
+> pair, and `M_first_Φ_8² = 15` on every pair, in BOTH runs. The universal
+> Wenzl-annihilator boundary claim is untouched by the migration; only the
+> multiplicity column moved. Evidence, including the Φ_1 necessity test the
+> D-frame output passes 5 of 5:
+> [`2026-08-31-topic2-phi8-drift-is-import-cone-staleness.md`](2026-08-31-topic2-phi8-drift-is-import-cone-staleness.md).
+
+
 
 ## TL;DR
 

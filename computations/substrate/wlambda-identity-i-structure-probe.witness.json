@@ -1,15 +1,51 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-02T14:19:08.676345+00:00",
-  "commitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
-  "assertions": [],
-  "allPassed": true,
+  "computedAt": "2026-08-30T14:31:14.723323+00:00",
+  "commitSha": "9c7a49544167299aed10f052dd4a37690d50d22c",
+  "assertions": [
+    {
+      "name": "identity_I_holds_n2_14",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Identity I: M(n) = n(3n-1)/2 for every n = 2..14"
+    },
+    {
+      "name": "E_content2_eq_binom_n_2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E[sum content^2] = C(n,2), exactly"
+    },
+    {
+      "name": "E_h2_minus_E_content2_eq_n_squared",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E[sum h^2] - E[sum content^2] = n^2, exactly"
+    },
+    {
+      "name": "sum_h_elementary_decomposition_ok",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the hook-length sum admits the stated elementary decomposition"
+    },
+    {
+      "name": "qplancherel_sum_dq2_eq_qfact",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "q-Plancherel normalisation sum_lambda d_q(lambda)^2 = [n]_q! for n = 1..6, verified as a symbolic identity in q (so sum_lambda W_lambda = 1)"
+    }
+  ],
+  "allPassed": false,
   "durationMs": 0,
   "computation": "wlambda-identity-i-structure-probe",
   "scriptFile": "wlambda_identity_i_structure_probe.py",
-  "scriptHash": "990899d03569",
-  "scriptCommitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
+  "scriptHash": "72b03e456d6b",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +55,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/wlambda_identity_i_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/wlambda_identity_i_structure_probe.py"
   },
   "description": "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to RSK + content-moment + elementary hook identities (no hook-length FORMULA). Also verifies the q-Plancherel normalization Σ_λ d_q²=[n]_q! (W_λ=d_q²/[n]_q!) and extracts the W_λ cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge.",
   "auditOnly": "docs/coordination/s5-so3-keystone.md",

@@ -191,6 +191,53 @@ def main() -> int:
     w.add_data("n_overflow", n_overflow)
     w.add_data("n_build_fail", n_fail)
     w.add_data("rows", rows)
+
+    # qou-srvu drain. Every quantity below is already computed above and was
+    # being discarded: the witness reported `allPassed: true` over an empty
+    # `assertions` list, and `main()` returns 0 unconditionally, so a chart on
+    # which every single row failed to build would still have read green.
+    #
+    # No threshold is invented here. Three of the four expect exactly 0, which
+    # is this producer's stated reason to exist -- it supersedes an f64
+    # producer whose `build_atom_nf` overflowed on 37.6% of the chart -- and
+    # each can genuinely fail: a precision regression, a missing native build,
+    # or an LP backend change moves them off 0.
+    n_lp_error = sum(1 for r in rows if "lp_error" in r)
+    n_mpfr_dual = sum(1 for r in rows if r.get("y0_star_str") is not None)
+    w.add_assertion("nf_overflow_count", str(n_overflow), "0",
+                    source="mp.isfinite(net) on every built NF; the f64 "
+                           "producer this supersedes overflowed for A>=163")
+    w.add_assertion("nf_build_fail_count", str(n_fail), "0",
+                    source="build_atom_nf_mp raised on no row")
+    w.add_assertion("lp_error_count", str(n_lp_error), "0",
+                    source="solve_operator_selection_lp raised on no row")
+    # The NO-FLOAT64 guard, and the one most likely to catch a real
+    # regression. `y0_star_str` is the MPFR decimal dual; when the solver
+    # falls back to f64 it is absent and the row instead carries
+    # `precision_note`. Requiring it on EVERY row is what makes a silent
+    # f64 fallback -- the defect this producer exists to remove -- loud.
+    w.add_assertion("rows_carrying_mpfr_dual", str(n_mpfr_dual), str(len(rows)),
+                    source="every row carries y0_star_str, i.e. no row's dual "
+                           "silently degraded to f64")
+    # Z=82 specifically: the description claims the f64 producer made it
+    # unreachable. Assert BOTH that its shell is fully solved and that it is
+    # NON-EMPTY -- `solved == nuclides` alone is vacuously true on an empty
+    # shell, and Z=126 is exactly that (0 of 0, since it exceeds zmax=92).
+    # Asserting the emptiness away would be a self-fulfilling pass, the
+    # qou-3e5m defect this drain's sibling bean exists to remove.
+    z82 = analysis.get("magic_Z_reachability", {}).get("Z=82", {})
+    w.add_assertion("z82_nuclides_solved", str(z82.get("solved", -1)),
+                    str(z82.get("nuclides", -2)),
+                    source="Z=82 shell fully solved; guarded non-empty below")
+    w.add_assertion("z82_shell_non_empty",
+                    str(int(z82.get("nuclides", 0) > 0)), "1",
+                    source="Z=82 is reached AT ALL -- the f64 producer could "
+                           "not reach it. Asserted as a positivity flag, not "
+                           "as the observed count: pinning the count would "
+                           "fail on any legitimate change of scan range. It "
+                           "is what stops the solved==nuclides check above "
+                           "from passing vacuously on an empty shell, which "
+                           "is exactly Z=126's state here (0 of 0)")
     w.save()
     print(f"\nrows={len(rows)}  overflow={n_overflow}  fail={n_fail}  "
           f"{time.time()-t0:.1f}s")

@@ -207,9 +207,33 @@ witness = {
     "leanInfraRouteVerdict": route,
 }
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-out = WitnessBuilder.wrap_legacy(
+# bean qou-srvu. Every flag below is an EXACT sympy identity
+# (`sp.simplify(lhs - rhs) == 0`), computed and printed and left in `data`, so
+# `save()` emitted `allPassed: true` over an EMPTY assertions list -- green
+# while asserting nothing. No threshold is introduced: these are symbolic
+# zeros over Q(q) and exact combinatorial equalities, not tolerances, so
+# nothing here is a float64 comparison.
+_b = WitnessBuilder.wrap_legacy(
     "wlambda-identity-i-structure-probe", witness, script_path=__file__, engine="sympy",
-).save()
+)
+_b.add_assertion("identity_I_holds_n2_14",
+                 computed=bool(identity_I_holds), expected=True,
+                 source="Identity I: M(n) = n(3n-1)/2 for every n = 2..14")
+_b.add_assertion("E_content2_eq_binom_n_2",
+                 computed=bool(content2_eq_binom), expected=True,
+                 source="E[sum content^2] = C(n,2), exactly")
+_b.add_assertion("E_h2_minus_E_content2_eq_n_squared",
+                 computed=bool(diff_is_n2), expected=True,
+                 source="E[sum h^2] - E[sum content^2] = n^2, exactly")
+_b.add_assertion("sum_h_elementary_decomposition_ok",
+                 computed=bool(sum_h_elementary_ok), expected=True,
+                 source="the hook-length sum admits the stated elementary decomposition")
+_b.add_assertion("qplancherel_sum_dq2_eq_qfact",
+                 computed=bool(qplanch_ok), expected=True,
+                 source=("q-Plancherel normalisation sum_lambda d_q(lambda)^2 "
+                         "= [n]_q! for n = 1..6, verified as a symbolic "
+                         "identity in q (so sum_lambda W_lambda = 1)"))
+out = _b.save()
 
 print(f"(A) Identity I  M(n)=n(3n−1)/2  for n=2..14: {identity_I_holds}")
 print(f"(B) E[Σ content²] = C(n,2): {content2_eq_binom}")

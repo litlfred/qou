@@ -1,15 +1,44 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:25:10.576894+00:00",
-  "commitSha": "9e3cac17311daf33842df4c0dfb0b02bea19be0c",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:21:32.720335+00:00",
+  "commitSha": "89f632a8cba989331178e9234ed9bba813cbd4c3",
+  "assertions": [
+    {
+      "name": "t1_c1_exactness",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "[n+2]_q b_{n+2} = b_{n+1} + b_n holds with max relative residual < TOL_EXACT (1e-45) at every tested q, including q = 1.10998 and the q = 1 classical limit"
+    },
+    {
+      "name": "t2_kernels_are_distinct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "no scalar gauge b_m -> lam^m b_m maps the C1 kernel to the C2 (GGM eq-49) kernel: both quadratic roots incl. complex lam leave a residual above TOL_GAUGE (1e-30)"
+    },
+    {
+      "name": "t3_c1_coeff_covariance",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C1 coefficient bar-covariance under q -> 1/q, to TOL_EXACT"
+    },
+    {
+      "name": "t3_c2_kernel_bar",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C2 kernel bar-symmetry under q -> 1/q, to TOL_EXACT"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 47,
   "computation": "qlift_kernel_candidate_crosscheck_probe",
   "scriptFile": "qlift_kernel_candidate_crosscheck_probe.py",
-  "scriptHash": "fbeebe1f851a",
-  "scriptCommitSha": "b2ce0c2c947b57e87e009280c470f5543df4e7f7",
+  "scriptHash": "aa1e7c87ee96",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +53,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -34,7 +63,7 @@
   },
   "description": "C1 q-Hermite/q-involution vs C2 GGM eq-49: candidate q-lifts of the proved classical kernel (n+2) b_{n+2} = b_{n+1} + b_n -- structural cross-check, workplan step 2",
   "computation_method": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-gauge quadratic solve + residual scan vs GGM eq-49; T3 bar (q->1/q) covariance checks",
-  "generated": "2026-08-23T19:25:10+00:00",
+  "generated": "2026-08-30T14:21:32+00:00",
   "parameters": {
     "dps": 70,
     "tol_exact": "1e-45",

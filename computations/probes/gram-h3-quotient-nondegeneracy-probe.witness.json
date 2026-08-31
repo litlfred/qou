@@ -1,15 +1,30 @@
 {
   "engine": "python+sympy (exact over Q(q,z))",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:54:37.134462+00:00",
-  "commitSha": "ef82641f82807096eac10310e43bd16cc82d64ec",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:29:23.934897+00:00",
+  "commitSha": "1a894b61e91c9369142ba9396c0f1cdafebbde05",
+  "assertions": [
+    {
+      "name": "radical_annihilated_by_G",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "G * v = 0 for the radical vector at z_D = q^3/(q^2+1), as an identity in q -- exact sympy, not a numerical zero"
+    },
+    {
+      "name": "quotient_nondegenerate_for_all_real_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the quotient determinant's numerator has NO real root, so the form on the e_0..e_4 complement is nondegenerate for every real q. A root count over Q(q), not a tolerance. The VALUE is basis-dependent; the NONVANISHING asserted here is basis-independent and is what replaces the theorem"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gram-h3-quotient-nondegeneracy-probe",
   "scriptFile": "gram_h3_quotient_nondegeneracy_probe.py",
-  "scriptHash": "f8dd06ed5990",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f14f9bce4212",
+  "scriptCommitSha": "512667b9bd3640aec023431c8e6a4ae5077451e1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

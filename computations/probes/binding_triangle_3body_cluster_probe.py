@@ -156,16 +156,37 @@ def main():
         "scriptFile": "computations/probes/binding_triangle_3body_cluster_probe.py",
         "parameters": {"q_0": str(Q0), "E0_MeV": str(E0), "tau_p": str(TAU_P),
                        "tau_n": str(TAU_N), "free_parameters": 0},
-        "data": {"rows": rows, "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
+        "data": {"rows": rows,
+                 # Worst case = the LEAST negative beyond-pairwise sum across
+                 # every atom and every pn convention; the margin the sign
+                 # claim below actually has (bean qou-srvu).
+                 "max_beyond_pairwise_MeV": mp.nstr(
+                     max(mp.mpf(r["beyond_pairwise_MeV"]) for r in rows), 10),
+                 "n_rows_sharing_sign_with_empirical_b3": sum(
+                     1 for r in rows if r["same_sign_as_b3"]),
+                 "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
     }
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _sys.path.insert(0, str(COMP / "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    out = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "binding-triangle-3body-cluster", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(COMP),
-    ).save()
+    )
+    # "The SIGN, which is this probe's entire claim and is Lean-proved for any
+    # product model" (docstring). It was recorded per row as `same_sign_as_b3`
+    # while the witness shipped `allPassed: true` over an EMPTY assertion list
+    # (bean qou-srvu). The bar is 0 rows -- the claim's own logic, not a
+    # fitted threshold; the worst row sits at -2.127 MeV, so the margin is the
+    # whole distance to zero.
+    _n_same = sum(1 for r in rows if r["same_sign_as_b3"])
+    _wb.add_assertion(
+        "beyond_pairwise_3body_never_shares_sign_with_empirical_b3",
+        computed=str(_n_same), expected="0", tolerance="0",
+        source="Lean ursell2_nonpos / ursell3_nonneg / productModel_3body_nonpos",
+    )
+    out = _wb.save()
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

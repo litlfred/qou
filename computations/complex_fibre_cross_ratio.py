@@ -425,6 +425,26 @@ def main():
         "needs, not a free resolution."
     )
 
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. The check already existed: each discriminant root of
+    # the universal color-tube cubic is tested for a non-vanishing imaginary
+    # part against a declared 1e-30 bar, and the tally stored as
+    # `num_complex_roots`. It was recorded as data and never asserted.
+    #
+    # This is the load-bearing claim of the file's own VERDICT -- "the
+    # framework HAS a derived complex cross-ratio (color-tube ...)" -- and it
+    # is falsifiable: a real discriminant root would break it.
+    #
+    # THRESHOLD PROVENANCE: 1e-30 is this file's own declared bar, written at
+    # the `is_complex` key above and predating this change. `expected` is the
+    # number of roots the cubic has, not a number matched to the outcome.
+    #
+    # NOT asserted: `sum_D_is_real` and the per-particle `vhat_is_real`, both
+    # HARDCODED True. They record readings ("D(z-bar) = -D(z), so the sum is
+    # real"), not computations this script performs; asserting them would
+    # launder a literal into a passing check, which is the defect this drain
+    # exists to remove.
+    _ctc = out["color_tube_cubic"]
     wpath = (
         WitnessBuilder.wrap_legacy(
             "complex-fibre-cross-ratio",
@@ -434,6 +454,14 @@ def main():
             start_time=_START,
         )
         .set_audit_only("docs/audits/2026-06-01-complex-fibre-cross-ratio.md")
+        .add_assertion(
+            "color_tube_cubic_complex_discriminant_root_count",
+            computed=str(_ctc["num_complex_roots"]),
+            expected=str(len(_ctc["discriminant_roots"])),
+            source="|Im z_c| > 1e-30 per discriminant root of the universal "
+                   "cubic F(c,z); bar is this file's own 1e-30, expected is "
+                   "the number of roots",
+        )
         .save()
     )
 

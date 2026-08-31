@@ -349,10 +349,42 @@ def main() -> int:
         "q0Value": str(q0),
     }
 
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. Checks 4, 5 and 6 are exact statements over Q(q,z) that
+    # this probe computes and prints, and none reached `assertions[]`, so
+    # `save()` emitted `allPassed: true` over an EMPTY list.
+    #
+    # Deliberately NOT asserted: check 3. The probe's own text says the two
+    # sides "agree only to the float64 rounding of that reference entry
+    # (~1e-16)", so asserting it would dress a float64 floor as a result --
+    # exactly what AGENTS.md forbids. `gramMatrix_det_ne_zero_under_D` is a
+    # source LITERAL, so asserting it would be self-fulfilling. Only the
+    # genuinely computed, exact-arithmetic facts are asserted here.
+    _b = WitnessBuilder.wrap_legacy(
         "gram-h3-convention-frame-probe", payload,
         script_path=__file__, engine="python+sympy(exact over Q(q,z))",
-    ).save()
+    )
+    _b.add_assertion("det_at_z_D_is_identically_zero",
+                     computed=bool(det_D == 0), expected=True,
+                     source=("z_D = q^3/(q^2+1) is a ROOT of the H_3 Gram "
+                             "determinant, as an identity in q -- exact "
+                             "sympy over Q(q,z), not a numerical zero"))
+    _b.add_assertion("antisymmetriser_annihilated",
+                     computed=bool(antisym_annihilated), expected=True,
+                     source=("the q-antisymmetriser spans the radical at "
+                             "z_D; confirms gram_radical_exact_probe.py and "
+                             "qou-u2jg from the determinant side"))
+    _b.add_assertion("agrees_with_lean_factorization",
+                     computed=bool(lean_det_agrees), expected=True,
+                     source=("cross-validation against the sorry-free Lean "
+                             "QOU.Interactions.GramMatrixH3Symbolic."
+                             "gram_det_eq"))
+    _b.add_assertion("gramMatrix_isSymm_holds_for_every_z",
+                     computed=bool(symm_all_z), expected=True,
+                     source="survives the frame change: symmetry is z-free")
+    _b.add_assertion("gramMatrix_top_left_holds_for_every_z",
+                     computed=bool(top_left_all_z), expected=True,
+                     source="survives the frame change: top-left entry is z-free")
+    out = _b.save()
 
     print("=== H_3 Gram: which convention is each side in? ===")
     print(f"  det G(q,z) = {det_qz}")

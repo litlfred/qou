@@ -149,10 +149,10 @@ and remains open; so does (C3). What has changed is that both can now be *writte
 every ingredient is a named object rather than something to be built first. -/
 noncomputable def murphyM {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
     (s t : QOU.BraidKnot.Specht.Tableau μ)
-    [DecidablePred (· ∈ youngSubgroup n h t)] :
+    [DecidablePred (· ∈ youngSubgroup n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ))] :
     QOU.Hecke.IwahoriHecke K q n :=
   (antiAutTw K q n (Tw K q n (dAt n h s))).unop
-    * murphySum K q n {w | w ∈ youngSubgroup n h t}
+    * murphySum K q n {w | w ∈ youngSubgroup n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)}
     * Tw K q n (dAt n h t)
 
 /-! ## Toward (C1): the Murphy family has exactly the right size
@@ -241,9 +241,10 @@ Cheap, but load-bearing twice over: it anchors the induction, and it is the firs
 /-- **`m_{t^λ, t}` drops its left factor.** `d(t^λ) = 1`, so `T_{d(t^λ)}^* = 1`. -/
 theorem murphyM_colSuperstandard_left {μ : YoungDiagram}
     (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
-    (t : QOU.BraidKnot.Specht.Tableau μ) [DecidablePred (· ∈ youngSubgroup n h t)] :
+    (t : QOU.BraidKnot.Specht.Tableau μ)
+    [DecidablePred (· ∈ youngSubgroup n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ))] :
     murphyM K q n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ) t
-      = murphySum K q n {w | w ∈ youngSubgroup n h t} * Tw K q n (dAt n h t) := by
+      = murphySum K q n {w | w ∈ youngSubgroup n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)} * Tw K q n (dAt n h t) := by
   simp [murphyM]
 
 /-- **The anchor: `m_{t^λ t^λ} = x_λ`.** Both conjugating factors are `1`, so the reference pair
@@ -420,20 +421,21 @@ of `n + 1` with an ordered pair of standard tableaux of that shape, which is Mur
 set. The two `StandardYoungTableau` types in the corpus are reconciled by
 `NumSYTBridge.toBraidKnotSYT`, and the filling by `SpechtStandardBasis.sytToTableau`.
 
-🛑 **This is NOT Murphy's family, and it cannot span.** `murphyM` sums over
-`youngSubgroup n h t = Specht.rowStab t` — the *second tableau's own* row stabiliser, a
-different conjugate subgroup for each `t`. Murphy's `x_λ` is the sum over **one fixed**
-subgroup, the row stabiliser of the reference tableau, for every pair of that shape.
-Measured exactly at `q = 7` by `computations/hecke/murphy_supp_rsk_probe.py`
-(`run_rank_guard`): the fixed-`x_λ` family is full rank `6/6`, `24/24`, `120/120`, while
-the `rowStab t` family is `5/6`, `23/24`, `117/120` — deficient under **both** reference
-tableaux and every handedness variant tested. The reference tableau itself is a red herring:
-`colSuperstandard` is as good as Murphy's row-superstandard `t^λ` on this axis.
+**Corrected 2026-08-31.** `murphyM` previously summed over `youngSubgroup n h t` —
+the *second tableau's own* row stabiliser, a different conjugate subgroup for each `t`,
+where Murphy's `x_λ` is **one fixed** subgroup for every pair of the shape. That family was
+rank-deficient at every `n` tested (`5/6`, `23/24`, `117/120`), so it could not span and was
+not Murphy's family. It now sums over the reference tableau's row stabiliser.
 
-The fix belongs at `murphyM` — sum over the reference tableau's row stabiliser, not `t`'s —
-and is tracked in bean `qou-phir`. Until then, anything downstream carrying this family as a
-hypothesis has an **unsatisfiable** hypothesis; see `murphyBasisOfSpanning`. Audit:
-`docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md` §3-ter. -/
+The guard that caught it is `run_rank_guard` in
+`computations/hecke/murphy_supp_rsk_probe.py` (exact arithmetic at `q = 7`): the fixed-`x_λ`
+family is full rank `6/6`, `24/24`, `120/120`. **That is evidence, not proof** — it says the
+spanning hypothesis below is no longer measured *unsatisfiable*, not that it holds for all
+`n`, which is Mathas' Lemma 3.14 and still open.
+
+Note the reference tableau itself is a red herring: `colSuperstandard` (column-major) is as
+good as Murphy's row-superstandard `t^λ` — both are full rank. The subgroup was the defect.
+Audit: `docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md` §3-ter. -/
 noncomputable def murphyFamily (x : MurphyIndex (n + 1)) :
     QOU.Hecke.IwahoriHecke K q n := by
   classical
@@ -463,29 +465,90 @@ noncomputable def basisOfSpanning (m : MurphyIndex (n + 1) → QOU.Hecke.Iwahori
   refine basisOfTopLeSpanOfCardEqFinrank m hspan ?_
   rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
 
-/-- The basis this family would give, if it spanned.
+/-- **The Murphy basis, given Mathas' spanning lemma (Thm 3.20).**
 
-🛑 **The hypothesis is measured unsatisfiable** — `murphyFamily` sums over the wrong
-subgroup (see its docstring) and is rank-deficient, so it cannot span. The statement is
-true and stays as the shape the corrected family will slot into; it is **not** evidence of
-progress toward the Murphy basis. This is the "conditional-proved ≠ premise-established"
-distinction: proving `spans → basis` says nothing about whether anything spans. The lever
-that is genuinely useful is `basisOfSpanning`, which is stated for an arbitrary family and
-is unaffected by the defect. -/
+Spanning goes in as an explicit hypothesis and the `Module.Basis` comes out, derived from it
+together with `murphyIndex_fintypeCard` and `finrank_eq_factorial`. The conclusion is not
+among the hypotheses, so this is a derivation, not an assumption dressed as infrastructure.
+
+What it does **not** claim: that anything spans. `murphyFamily` is now measured full rank at
+`n = 3, 4, 5` (see its docstring), so the hypothesis is at least satisfiable-looking, but
+Lemma 3.14 is the open input and this lemma is silent about it —
+"conditional-proved ≠ premise-established". `basisOfSpanning` above is the same statement for
+an arbitrary family, and is the form to reach for when the family is not yet fixed. -/
 noncomputable def murphyBasisOfSpanning
     (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
     Module.Basis (MurphyIndex (n + 1)) K (QOU.Hecke.IwahoriHecke K q n) :=
   basisOfSpanning K q n (murphyFamily K q n) hspan
 
 /-- Linear independence given spanning — the (C1) half the `Triangular` route was meant to
-supply. Same caveat as `murphyBasisOfSpanning`: with `murphyFamily` as it currently stands
-the hypothesis cannot be met. -/
+supply. Same standing caveat as `murphyBasisOfSpanning`: it proves `spans → independent`, and
+says nothing about whether the family spans. -/
 theorem murphyFamily_linearIndependent
     (hspan : ⊤ ≤ Submodule.span K (Set.range (murphyFamily K q n))) :
     LinearIndependent K (murphyFamily K q n) := by
   classical
   refine linearIndependent_of_top_le_span_of_card_eq_finrank hspan ?_
   rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
+
+
+/-! ## 9. Step 2 of spanning: the one-column shape already gives every `T_w`
+
+Mathas' spanning argument (the input `basisOfSpanning` is missing) is three steps, and the
+first is already in the corpus. Reading the statements rather than the sentence that cites
+them:
+
+1. **`{T_w}` spans `H_n(q)`** — `QOU.Hecke.TwBasis.basisTwOfField`.
+2. **Every `T_w` *is* a Murphy element of the one-column shape** — this section.
+3. **Lemma 3.14** straightens row-standard pairs to standard ones, moving up in dominance.
+   Since `(1ⁿ)` is the dominance-minimum, everything is reachable from step 2.
+
+Step 2 is where the one-column shape earns its place. Its Young subgroup is **trivial** — every
+row has length one, so the row stabiliser is `{1}` — hence `x_{(1ⁿ)} = T_1 = 1` and
+`m_{st} = T_{d(s)}^* · 1 · T_{d(t)}`. Every filling of a single column is row-standard, so
+`d(t)` ranges over the whole symmetric group; taking `s` to be the reference tableau gives
+`m = T_{d(t)}`, i.e. every basis element. So the **row-standard** Murphy family spans
+immediately, and spanning reduces to straightening alone.
+
+> **The index set is the catch, and it is not a technicality.** Steps 2 and 3 concern the family
+> indexed by **row-standard** pairs — `n!` per shape — whereas `MurphyIndex` and `murphyFamily`
+> are over **standard** pairs, `(f^λ)²` per shape. At the one-column shape the standard family
+> has exactly **one** element where the row-standard family has `n!`. So spanning cannot even be
+> *stated* for `murphyFamily` directly; a row-standard-indexed family has to exist first, and the
+> corpus has no row-standard tableau type. That gap is the whole of step 3, not an indexing
+> detail. Bean `qou-phir`.
+
+What is proved here is the algebraic core of step 2, which needs no such type: the trivial
+Young subgroup contributes `1`, and the two-sided conjugates of that `1` already span. -/
+
+/-- **The trivial Young subgroup contributes `1`.** `x_{(1ⁿ)} = Σ_{w ∈ {1}} T_w = T_1 = 1`.
+
+The one-column shape `(1ⁿ)` has every row of length one, so its row stabiliser is trivial and
+its Murphy element is the identity — which is what makes step 2 of the spanning argument free. -/
+@[simp] theorem murphySum_singleton_one :
+    murphySum K q n {1} = 1 := by
+  rw [murphySum, Finset.sum_singleton, Tw_one]
+
+/-- **Step 2: the one-column Murphy elements already span `H_n(q)`.**
+
+`{T_u · x_{(1ⁿ)} · T_v}` spans, because `x_{(1ⁿ)} = 1` and the `T_w` are a basis: take `u = 1`
+and the family already contains every `T_v`. So the row-standard Murphy family spans as soon as
+the `T_w` do, and **the whole of the spanning input to `basisOfSpanning` is Lemma 3.14's
+straightening** — moving a row-standard pair to standard pairs of dominating shape.
+
+Stated over the conjugating pair rather than over tableaux precisely because the row-standard
+tableau type does not exist yet (see the section note): this is the algebraic content, and it
+does not have to wait for the indexing. -/
+theorem span_murphySum_one_conjugates_eq_top :
+    Submodule.span K (Set.range (fun p : Equiv.Perm (Fin (n + 1)) × Equiv.Perm (Fin (n + 1)) =>
+        Tw K q n p.1 * murphySum K q n {1} * Tw K q n p.2)) = ⊤ := by
+  classical
+  refine top_le_iff.mp ?_
+  rw [← (QOU.Hecke.TwBasis.basisTwOfField K q n).span_eq]
+  refine Submodule.span_le.mpr ?_
+  rintro x ⟨v, rfl⟩
+  refine Submodule.subset_span ⟨(1, v), ?_⟩
+  simp
 
 
 end QOU.BraidKnot.HeckeMurphyYoung

@@ -1,15 +1,31 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T10:35:01.645768+00:00",
-  "commitSha": "83bb5560a8ba67fd60639da2ae9dfad0fb9191c1",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:06:53.051444+00:00",
+  "commitSha": "c1595d67b641e9e4890a27516e361dc582e043d6",
+  "assertions": [
+    {
+      "name": "lagrange_identity_matches_direct_evaluation",
+      "computed": "8.635441113598717391846552242572656762894917502932663777556454915848384e-49",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "max |x(w)x(w+4) - x(w+2)^2 - c d g^w h^w (g^2-h^2)^2| over the 6 declared cases"
+    },
+    {
+      "name": "additive_two_mode_exclusion_all_checks",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "lagrange_identity.verified AND sweep_respects_bound AND never_above_one AND has_interior_minimum AND sign_indefinite_escape.can_exceed_observed_bend AND observed lepton bend > 1"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lepton-tower-additive-screening",
   "scriptFile": "lepton_tower_additive_screening.py",
-  "scriptHash": "18338626a158",
-  "scriptCommitSha": "83bb5560a8ba67fd60639da2ae9dfad0fb9191c1",
+  "scriptHash": "624f8aca7f5a",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

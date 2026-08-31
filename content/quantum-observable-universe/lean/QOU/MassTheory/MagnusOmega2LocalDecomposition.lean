@@ -135,4 +135,21 @@ theorem commutator_mul_left (X Y Z : Matrix n n R) :
     (X * Y) * Z - Z * (X * Y) = X * (Y * Z - Z * Y) + (X * Z - Z * X) * Y := by
   noncomm_ring
 
+/-- **The decay endpoint is an EXACT zero (the commutative/1-dim rep).** If the germs pairwise
+commute — `Commute (A k) (B k)` for every adjacent pair `k`, which holds in *any* 1-dimensional
+(hence commutative) seminormal rep — then the Magnus `Ω₂ = Σ_k ⁅A_k,B_k⁆` is `0`, so the
+single-window sum trace `tr(ρ·Ω₂) = 0` identically, for every word `ρ`. In particular the
+maximal-`b` endpoint of the `tr(ρ_λ Ω₂)` decay, the **sign rep** `λ=(1ⁿ)` (dim 1), and the
+`b=0` **trivial rep** `λ=(n)` (dim 1) both give an exact zero — the decay terminates at a
+provable zero, not an asymptote (measured in `magnus_extreme_rep_endpoint_probe.py`). General
+`CommRing`. -/
+theorem trace_rho_commutatorSum_eq_zero_of_commute {ι : Type*} (s : Finset ι)
+    (ρ : Matrix n n R) (A B : ι → Matrix n n R) (h : ∀ k ∈ s, Commute (A k) (B k)) :
+    (ρ * ∑ k ∈ s, (A k * B k - B k * A k)).trace = 0 := by
+  have hz : (∑ k ∈ s, (A k * B k - B k * A k)) = 0 := by
+    refine Finset.sum_eq_zero ?_
+    intro k hk
+    rw [(h k hk).eq, sub_self]
+  rw [hz, mul_zero, Matrix.trace_zero]
+
 end QOU.MassTheory

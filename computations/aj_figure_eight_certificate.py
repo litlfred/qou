@@ -154,11 +154,30 @@ def main() -> int:
         "tier": "structural-exact (symbolic identities; no fit)",
     }
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
-        "aj-figure-eight-certificate", payload,
-        script_path=__file__, engine="sympy",
-        engine_version=sp.__version__, start_time=t0,
-    ).save()
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "aj-figure-eight-certificate", payload,
+            script_path=__file__, engine="sympy",
+            engine_version=sp.__version__, start_time=t0,
+        )
+        # The two symbolic identities this script exists to check. Both were
+        # already computed above and already gate the exit code
+        # (`return 0 if (ok_star and ok_b) else 1`); recording them only as
+        # payload keys left the witness claiming `allPassed: true` over an
+        # empty assertion list (bean `qou-srvu`). Each is exact — sympy
+        # `simplify(...) == 0` — so there is no tolerance to choose.
+        .add_assertion(
+            "star_identity_a2r2_a1r1_a0_eq_telescoped_cert",
+            ok_star, True,
+            source="exact: sp.simplify(sp.together(lhs - rhs)) == 0",
+        )
+        .add_assertion(
+            "boundary_b_eq_neg_cert_at_y_1",
+            ok_b, True,
+            source="exact: sp.simplify(sp.together(b + cert.subs(y, 1))) == 0",
+        )
+        .save()
+    )
     print(f"  Witness: {out}")
     return 0 if (ok_star and ok_b) else 1
 

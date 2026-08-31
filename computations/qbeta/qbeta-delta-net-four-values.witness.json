@@ -1,15 +1,149 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:44:11.517474+00:00",
-  "commitSha": "47fb5a9ef801fdbd32680f752416bebd8042489f",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:05:50.096156+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "B3_net_is_not_the_stated_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the block's formula B_3 = (sigma_0(sigma_1-h))^3 gives 0.9996006462, not the +1.0000 it states -- a 0.000399 gap at the four decimals quoted"
+    },
+    {
+      "name": "the_stated_neutron_net_is_the_ELEVEN_crossing_value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "k=1 (11 crossings) gives 0.7975664389 = the stated 0.7976; k=2 (13 crossings) gives 1.235858559, which appears NOWHERE in the corpus. The '13 crossings' sentence contradicts the number in its own block -- the count is 11"
+    },
+    {
+      "name": "the_neutron_match_is_not_a_single_tuned_assignment",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "2 of the 8 generator assignments reproduce the stated neutron net, so the match is a property of the construction, not a selected fit"
+    },
+    {
+      "name": "hecke_core_nets_do_not_match_the_content_blocks",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "hecke_core gives net(p)=1.3464352 vs the stated 1.0065 and net(n)=1.1132375 vs the stated 0.7976 -- off by 0.34 and 0.316, not a rounding difference"
+    },
+    {
+      "name": "no_two_of_the_four_delta_values_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all six pairwise gaps exceed 1e-3; total spread 0.0459905 on a quantity of size ~0.2, i.e. ~24.6 % of the value the ladder consumes. Delta is not determined by a two-way choice"
+    },
+    {
+      "name": "net_p_alone_takes_three_values",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "net(p): 1 - h/2 = 0.89546985 (short block), 1.0065 (properties block), 1.3464352 (hecke_core)"
+    },
+    {
+      "name": "hecke_core_words_contain_NO_hopf_link",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "a Hopf link is L_- = sigma_1 sigma_0 (or L_+ = sigma_0 sigma_1); either way it needs a sigma_1 crossing at shift d = 0. NEITHER hecke_core nucleon word contains one -- proton has 0, neutron 0. So the words Delta_L is built from lack the gluon the blocks call 'strictly required by the LP dual' and 'the minimum additional structure capable of restoring stability'. That is why they sit 0.34 from the stated nets -- not ordering, not convention: a missing factor"
+    },
+    {
+      "name": "the_derivable_delta_is_the_CONSTRUCTED_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the blocks' own recipe -- which DOES contain the Hopf link -- reproduces the stated neutron net exactly at 11 crossings, while hecke_core's word, which does not contain it, misses by 0.32. Of the four values, the constructed one is the one with a derivation behind it. Stated as a finding, NOT as an adjudication"
+    },
+    {
+      "name": "the_missing_hopf_link_is_NOT_a_one_crossing_slip",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "moving any single pure sigma_0 crossing onto sigma_1 -- the minimal repair that would give the word a Hopf link -- reproduces NEITHER stated net, at any position. So hecke_core's word is not one crossing away from the blocks' construction; the divergence is structural. A tempting route, closed"
+    },
+    {
+      "name": "the_stated_proton_net_is_unreachable_by_the_blocks_own_recipe",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "96 variants -- 8 quark-generator assignments x 2 Hopf orientations x 6 compositions -- and the closest is 0.000324 away, against a NEUTRON match exact to ~1e-30. The asymmetry is structural, not numerical"
+    },
+    {
+      "name": "the_required_correction_is_NOT_a_corpus_quantity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "solving for the uu shift that would make net(p) match gives -0.004756809789; the nearest of 18 corpus-shaped candidates is -h^3/2, 3.96 % away. So the stated 1.0065 is not one recognised correction from the recipe. Given the same block family already carries a demonstrated error (its '13 crossings' sentence), the weight of evidence is that the stated PROTON net is wrong -- which would make the derivable Delta the constructed -0.2137638306. NOT proved: an incomplete reading of the recipe remains open"
+    },
+    {
+      "name": "the_construction_reproduces_half_the_NF_vector_hecke_core_none",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "against the corpus's own six-component target the stated construction matches 3/6 to the quoted precision -- including sigma_1, L_plus = -0.2206 and e_minus = 1.0109 -- while hecke_core matches 0/6 with max|err| 1.35. The construction is close and imperfect; hecke_core is a different object"
+    },
+    {
+      "name": "hecke_core_has_ZERO_weight_in_the_dominant_trefoil_channel",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the corpus puts e_minus (the trefoil channel) at +1.0109 and says it 'dominates both nucleons'; hecke_core's neutron has e_minus = 0.0 EXACTLY. It also has L_minus = 0.0 against the corpus's +0.0189. So the gluon IS visible in the corpus -- as the L_pm normal-form terms the definition calls 'the intrinsic gluon field' -- and is absent from the word hecke_core traces, along with the whole trefoil channel"
+    },
+    {
+      "name": "the_residual_is_real_but_its_shape_is_rounding_limited",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the residual is 376.7x the table's rounding, so a term IS missing. But the two ratios that would identify it sit 0.428 and 0.888 sigma from c*(1 + h*sigma_0 - L_minus) = c*(sigma_0 - sigma_1)*sigma_0 (using sigma_0^2 = h sigma_0 + 1). Consistent with that shape and NOT distinguishable from it -- the table's 4 dp is the limit"
+    },
+    {
+      "name": "the_residual_sits_in_the_two_LOOSEST_quoted_components",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "gamma is quoted to 2 significant figures (0.52 % relative) and L_minus to 3 (0.27 %), while the components the construction matches -- e_minus (6 s.f., 0.005 %) and L_plus (4 s.f., 0.023 %) -- are the tightest. So the disagreement is concentrated exactly where the corpus records least precision"
+    },
+    {
+      "name": "the_10_digit_anchor_EXCLUDES_hecke_core_at_EVERY_z",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the gamma-gamma anchor is +0.04458602833308... , agreed to 49 digits by four witnesses (the .md renders only 10). hecke_core's Delta tr_M is a downward parabola in z whose maximum over all real z is -0.1034124211 -- BELOW both +T and -T. So no Markov parameter whatsoever makes hecke_core's element produce that number. This is an exact bound, not a scan, and it is a far stronger exclusion than any net comparison: not 'disagrees under convention D', but 'impossible under every convention'"
+    },
+    {
+      "name": "the_constructed_model_reaches_the_anchor_near_z_C",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the constructed model attains the anchor's magnitude at z = 0.4983656271, within 0.191 % of z_C -- consistent with the gamma-gamma derivation being a convention-C-frame calculation, as AGENTS.md records the whole c_k ladder to be. So the 10-digit anchor is reachable by the construction and unreachable by hecke_core"
+    },
+    {
+      "name": "the_exclusion_is_a_THEOREM_in_q_not_a_number_at_q0",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max = -(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q*(q**4 + 1)), whose numerator factors as -(q-1)(q+1)(q^2+1)^2 -- strictly NEGATIVE for every q > 1. So hecke_core's Delta tr_M(n-p) < 0 for ALL real z AND ALL q > 1, while the gamma-gamma anchor is POSITIVE. The exclusion holds for the whole substrate range, not just at q_0"
+    },
+    {
+      "name": "the_cause_is_the_VANISHING_L_minus_and_e_minus_not_integrality",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "L_minus and e_minus vanish IDENTICALLY in hecke_core's (n-p). With them gone the z(hz+1) term disappears and the z^2 term is L_plus alone; every surviving coefficient is -(positive) for q > 1, so the quadratic is negative-definite. The corpus's 'integer LP dual' selects among gluon CONFIGURATIONS, not among z -- and the vertex z* = -q(q^2-1)/(q^4+1) is negative, nowhere near any admissible parameter (z_C 0.499, z_D 0.613, q 1.110). So integrality is NOT the cause; the vanishing coordinates are"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 317055,
+  "durationMs": 265415,
   "computation": "qbeta-delta-net-four-values",
   "scriptFile": "qbeta_delta_net_four_values_probe.py",
-  "scriptHash": "5ed69baef69d",
-  "scriptCommitSha": "d160c7c53b6e9363dfee4745c0dbe0e3490126cb",
+  "scriptHash": "952fc0a08cbf",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +158,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

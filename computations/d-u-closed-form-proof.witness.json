@@ -1,15 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T17:02:07.500330+00:00",
-  "commitSha": "92f516f0ea3013bced8152290830ea411e02b14b",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:23:18.101149+00:00",
+  "commitSha": "cf755205bcfae8e8a4151c0cbd83f84130d1a5ba",
+  "assertions": [
+    {
+      "name": "structural_exponent_predictions_matching_empirical_count",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "source": "2^(2A+1) from averaged-crossing count and (1+u^2)^(3A-1) from the Markov-trace z^(n-1) factor, each compared against the independent EMPIRICAL_D_U table; expected is the number of atoms that table covers, not a number chosen to match"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 177,
+  "durationMs": 217,
   "computation": "d-u-closed-form-proof",
   "scriptFile": "d_u_closed_form_proof.py",
-  "scriptHash": "35a9e797b0dd",
-  "scriptCommitSha": "60db563d0b6227d14a38fd319fbd55c610055f1b",
+  "scriptHash": "b09aedc79fe7",
+  "scriptCommitSha": "eb66ed49217560dd71f8e57137ad161529ace705",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +31,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/d_u_closed_form_proof.py"
+    ],
+    "reproduce": "python3 -u computations/d_u_closed_form_proof.py"
   },
   "description": "Structural proof of D(u) = 2^(2A+1) · u^shift · (1+u²)^(3A−1) for atomic-braid Markov trace at q = u² in the canonical pppnnn ordering used by `atomic_braid_to_crossings`.  The 2^(2A+1) factor is proved by counting averaged crossings (each averaged crossing = (σ + σ⁻¹)/2, contributing a factor of 1/2): each nucleon has 2 averaged ud-pair couplings → 2A factors; canonical pppnnn ordering has exactly one mixed (p,n) inter-nucleon interface → +1 more, total 2A+1.  The (1+u²)^(3A−1) factor follows from the Markov/Ocneanu trace formula z^(n−1) at q = u²: with z = u/(1+u²) and n = 3A, clearing the denominator yields (1+u²)^(3A−1) in D(u).  The u^shift residual is left as an open structural question (depends on the Hecke-NF reduction; varies by 3 between T and ³He at A=3).",
   "reference_blocks": [
