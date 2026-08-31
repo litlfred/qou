@@ -58,6 +58,7 @@ from pathlib import Path as _Path
 from fractions import Fraction
 from functools import lru_cache  # memoises _f_skew (bean qou-9ay6)
 import numpy as np
+import mpmath as _mp  # mpf-safe sqrt/exp (bean qou-9ay6, NO-FLOAT64)
 
 # NO FLOAT64 — owner directive, excised 2026-08-31 (bean `qou-9ay6`).
 #
@@ -900,12 +901,14 @@ def magic_proximity(x, sigma=None):
 # All entries are q-rational (computed from q₀ via q_int).
 _M22_S1 = ((q0,    0.0    ),
            (0.0,   -qi    ))
-_M22_S3 = ((q0,    0.0    ),
-           (0.0,   -qi    ))
+_M22_S3 = ((q0,          _MPF_ZERO),
+           (_MPF_ZERO,   -qi      ))
 _diag_T1 = h / q_int(-2)                          # = -h/[2]_q
 _diag_T2 = h - _diag_T1                            # h([2]_q+1)/[2]_q
 _bc_22 = _diag_T1 * _diag_T2 + 1.0
-_off_22 = math.sqrt(abs(_bc_22)) * (1.0 if _bc_22 > 0 else -1.0)
+# `_mp.sqrt`, not `math.sqrt` — same NO-FLOAT64 reason as the per-generator
+# off-diagonal below (bean `qou-9ay6`).
+_off_22 = _mp.sqrt(abs(_bc_22)) * (1 if _bc_22 > 0 else -1)
 _M22_S2 = ((_diag_T1, _off_22),
            (_off_22,  _diag_T2))
 
@@ -1174,7 +1177,13 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 a_rho = h / q_int(rho)
                 a_neg = h - a_rho
                 bsq = a_rho * a_neg + 1.0
-                off = math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
+                # `_mp.sqrt`, not `math.sqrt` (bean `qou-9ay6`, NO-FLOAT64).
+                # `a_rho`, `a_neg` and `bsq` are mpf, and `math.sqrt` downcast
+                # the result to float — so the OFF-DIAGONAL entries of every YSN
+                # generator, which outnumber the diagonal ones, were float64
+                # while the diagonal was mpf. That both lost the precision and
+                # re-mixed the matrix the excision had just made uniform.
+                off = _mp.sqrt(abs(bsq)) * (1 if bsq > 0 else -1)
                 if use_sparse:
                     rows.extend([i, j, i, j])
                     cols.extend([i, j, j, i])
@@ -1211,8 +1220,12 @@ def _matmul_dim(A, B, dim):
 
 
 def _trace_dim(M, dim):
+    # No float() (bean `qou-9ay6`, NO-FLOAT64). `M` is an OBJECT array of mpf
+    # now, so `np.trace` already returns an mpf; wrapping it in `float()`
+    # discarded ~33 digits at the very last step, after the whole expensive
+    # mpf pipeline had preserved them.
     if isinstance(M, np.ndarray):
-        return float(np.trace(M))
+        return np.trace(M)
     return sum(M[i][i] for i in range(dim))
 
 
@@ -1958,7 +1971,7 @@ def conjugate_pair_cross_term(Z, N, entry_lambda, entry_conj):
                  where ρ uses the AVERAGE μ.
       - Final contribution: cross_scale · (log|Tr_λ| + log|Tr_{λ'}| - ln d_λ - ln d_{λ'})
     """
-    hbar_like = float(h)  # h = q − q⁻¹
+    hbar_like = h  # h = q − q⁻¹ — mpf, NOT float() (bean qou-9ay6)
     tr_sign_l, cumul_l = _contrib_single_partition(Z, N, entry_lambda)
     tr_sign_c, cumul_c = _contrib_single_partition(Z, N, entry_conj)
     # Cross-scale: h × geometric mean of individual scales
@@ -2082,7 +2095,7 @@ def unified_iterative_correction_jet(Z, N, jet_max,
         pair_records = []
         total_at_j_cross = 0.0
         seen_pairs = set()
-        hbar_like = float(h)
+        hbar_like = h  # mpf, NOT float() (bean qou-9ay6)
         for entry in active_at_j:
             lam = tuple(entry['partition'])
             conj = partition_conjugate(lam)
@@ -2404,7 +2417,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     pair_couplings = []
     self_conj_indices = []
     seen = set()
-    h_val = float(h)
+    h_val = h  # mpf, NOT float() (bean qou-9ay6)
     name_to_idx = {tuple(e['partition']): i for i, e in enumerate(active)}
     for i, e in enumerate(active):
         lam = tuple(e['partition'])
