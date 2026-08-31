@@ -1452,9 +1452,23 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # becomes object after the first crossing multiplies it by an mpf
             # coefficient, so a per-iteration dtype test would take the sparse
             # path once and then crash on the second crossing.
-            exact_chain = any(not isinstance(c, float) or not isinstance(d, float)
-                              for c, d, _g in chain)
-            if s['sparse'] and not exact_chain:
+            # NOTE (2026-08-31, qou-sv7h): the guard used to be
+            #     if s['sparse'] and not exact_chain:
+            # and `exact_chain` is True for EVERY physical chain -- measured over
+            # every (nucleon, prev_types, n_gens) combination. The coefficient
+            # histogram is ('int','int') 132, ('int','mpf') 132, ('float','float')
+            # 48: the mpf are genuine 50-dps values AND `c` is the Python int 1,
+            # which is not a float. So `not exact_chain` was never true, and BOTH
+            # branches below were dead -- including the COO object accumulator
+            # written specifically for the exact case. Every partition, up to
+            # dim 2310, fell through to the O(dim^3) dense path.
+            #
+            # The dtype test below already dispatches correctly per iteration
+            # (float64 -> scipy sparse BLAS; object -> COO over sigma's nonzeros,
+            # both O(dim*nnz)), so the outer exactness test was not only wrong,
+            # it was redundant. Value-equality verified against the pre-fix
+            # result at k_exact = 4..8 (k=8 carries 12 sparse partitions).
+            if s['sparse']:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
