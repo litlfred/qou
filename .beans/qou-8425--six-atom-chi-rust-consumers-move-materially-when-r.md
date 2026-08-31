@@ -57,3 +57,42 @@ knows what `rho_d0_strong` should be.
 
 Until then these six stay stale — which is a known, recorded staleness rather
 than an unexamined 30x change in a committed witness.
+
+## 2026-08-31 — the six SPLIT 4/2 on convention-C exposure
+
+They are not one group. Four of the six also read
+`y-lambda-at-q0.witness.json`, which `schur_principal_mpmath.py:194` says in
+so many words **"still holds convention-C weights"**:
+
+    reads y-lambda-at-q0      derive_binding_bond_sum            0.32
+                              derive_binding_per_block_archimedean 0.61
+                              binding_heat_kernel_weight_probe   1.00
+                              probe_content_energy_signed_phase  2.26
+
+    does NOT read it          frobenius_gram_delta_lambda_probe  0.69
+                              binding_rotation_phase_lead        27.8  + 11 nulls
+
+So for the first four there is a second candidate cause besides the chi-backend
+fix: they consume convention-C weights, which the owner ruling excised. Those
+should be looked at as part of the excision, not just as a staleness refresh.
+
+**The correlation does NOT explain the worst two.** `binding_rotation_phase_lead`
+— the 27.8x with ³He going null — does not touch that cache at all, and neither
+does `frobenius_gram_delta_lambda`. Whatever moved those is something else, and
+the convention-C story must not be stretched to cover them.
+
+That is the useful split: four to route into the convention-C work, two that
+need their own diagnosis.
+
+### Also worth recording for the excision campaign
+
+`y-lambda-at-q0.witness.json` has **7 live producers reading it** while it holds
+convention-C weights:
+
+    binding_heat_kernel_weight_probe      chi_4he_binding_lossless
+    derive_binding_bond_sum               derive_binding_per_block_archimedean
+    probe_1_project_4he_on_dominant       probe_content_energy_signed_phase
+    rho_k_full_via_wenzl_lr
+
+`qou-cds1` scopes the convention-C excision to the DECAY channel. This is the
+BINDING channel, and it is a separate surface with its own consumers.
