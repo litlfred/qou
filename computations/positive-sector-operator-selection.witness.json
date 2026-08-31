@@ -1,0 +1,185 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T18:52:44.382296+00:00",
+  "commitSha": "48ce43214382c67630ee470f0ddbe97bfb23d2a5",
+  "assertions": [
+    {
+      "name": "net_constraint_makes_positive_sector_infeasible",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "infeasible at all 4 nuclei"
+    },
+    {
+      "name": "positivity_lifts_optimum_off_the_row1_bound",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "{'D': 'obj 0.429886495 > u1 0.299015017', 'T': 'obj 0.266264217 > u1 0.142072057', 'He3': 'obj 0.298365497 > u1 0.188178643', 'He4': 'obj 0.184802398 > u1 0.089409981'}"
+    },
+    {
+      "name": "T_and_He3_separate_in_the_positive_sector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|T|=6 |He3|=9"
+    },
+    {
+      "name": "all_four_objectives_distinct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[0.184802398, 0.266264217, 0.298365497, 0.429886495]"
+    },
+    {
+      "name": "optimum_uses_a_subalphabet",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "used ['L₊', 'L₋', 'σ₁']; never ['e⁻', 'γ', 'σ₀']"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "positive-sector-operator-selection",
+  "scriptFile": "positive_sector_operator_selection_probe.py",
+  "scriptHash": "831869a2ae49",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/positive_sector_operator_selection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/positive_sector_operator_selection_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv): acts on the owner's steer that negative NF coefficients are backwards in computational time — the inverse-crossing / entanglement sector, per jet_history_retention_probe §Q3 — and restricts the operator-selection program to x >= 0. This BREAKS the obstruction h3a_frobenius_gram_offdiagonal identified: because b_1 = 1, t = G e_1 and row 1 of Gx >= u is the objective itself, so it was always the binding row and no demand could select. With x >= 0 the optimum can no longer reach that bound (obj > u_1 at every nucleus), and the program becomes a genuine covering LP (t and G both entrywise positive). The net constraint must be dropped — it makes the positive sector infeasible, and prop:operator-selection-lp proves y_0* = 0 identically so it carries no information. RESULT: all four objectives distinct and T vs He3 get DIFFERENT supports (6 vs 9) — the separation Gap #2 needs, which no previous route produced. The optimal support uses only sigma_1, L+, L- as tensor factors; gamma, sigma_0 and e- never appear. TENSION flagged: x_free itself has 108 of 216 negative coordinates, so positivity is imposed on the solution while the demand comes from an object violating it. No fit; no B_AME anywhere; nothing wired.",
+  "data": {
+    "results": {
+      "D": {
+        "A": 2,
+        "dim": 36,
+        "feasible": true,
+        "obj": "0.429886495",
+        "u1": "0.299015017",
+        "support_size": 6,
+        "x_free_negatives": 18
+      },
+      "T": {
+        "A": 3,
+        "dim": 216,
+        "feasible": true,
+        "obj": "0.266264217",
+        "u1": "0.142072057",
+        "support_size": 6,
+        "x_free_negatives": 108
+      },
+      "He3": {
+        "A": 3,
+        "dim": 216,
+        "feasible": true,
+        "obj": "0.298365497",
+        "u1": "0.188178643",
+        "support_size": 9,
+        "x_free_negatives": 108
+      },
+      "He4": {
+        "A": 4,
+        "dim": 1296,
+        "feasible": true,
+        "obj": "0.184802398",
+        "u1": "0.089409981",
+        "support_size": 24,
+        "x_free_negatives": 648
+      }
+    },
+    "supports": {
+      "D": [
+        "σ₁(x)σ₁",
+        "σ₁(x)L₊",
+        "L₊(x)σ₁",
+        "L₊(x)L₊",
+        "L₋(x)L₊",
+        "L₋(x)L₋"
+      ],
+      "T": [
+        "σ₁(x)σ₁(x)L₊",
+        "σ₁(x)L₊(x)σ₁",
+        "σ₁(x)L₊(x)L₊",
+        "L₊(x)σ₁(x)L₊",
+        "L₊(x)L₊(x)σ₁",
+        "L₋(x)σ₁(x)σ₁"
+      ],
+      "He3": [
+        "σ₁(x)σ₁(x)L₊",
+        "σ₁(x)L₊(x)σ₁",
+        "σ₁(x)L₊(x)L₊",
+        "σ₁(x)L₋(x)σ₁",
+        "σ₁(x)L₋(x)L₊",
+        "L₊(x)σ₁(x)L₊",
+        "L₊(x)L₊(x)σ₁",
+        "L₊(x)L₋(x)σ₁",
+        "L₋(x)σ₁(x)σ₁"
+      ],
+      "He4": [
+        "σ₁(x)σ₁(x)σ₁(x)σ₁",
+        "σ₁(x)σ₁(x)σ₁(x)L₊",
+        "σ₁(x)σ₁(x)L₊(x)σ₁",
+        "σ₁(x)σ₁(x)L₊(x)L₊",
+        "σ₁(x)L₊(x)σ₁(x)L₋",
+        "σ₁(x)L₊(x)L₊(x)σ₁",
+        "σ₁(x)L₊(x)L₊(x)L₊",
+        "σ₁(x)L₋(x)σ₁(x)σ₁",
+        "σ₁(x)L₋(x)σ₁(x)L₊",
+        "σ₁(x)L₋(x)L₊(x)σ₁",
+        "L₊(x)σ₁(x)σ₁(x)σ₁",
+        "L₊(x)σ₁(x)L₊(x)L₊",
+        "L₊(x)L₊(x)σ₁(x)σ₁",
+        "L₊(x)L₊(x)L₊(x)σ₁",
+        "L₊(x)L₋(x)σ₁(x)σ₁",
+        "L₊(x)L₋(x)σ₁(x)L₊",
+        "L₊(x)L₋(x)L₊(x)L₊",
+        "L₋(x)σ₁(x)σ₁(x)σ₁",
+        "L₋(x)σ₁(x)σ₁(x)L₊",
+        "L₋(x)σ₁(x)L₊(x)L₊",
+        "L₋(x)L₊(x)σ₁(x)σ₁",
+        "L₋(x)L₊(x)L₊(x)σ₁",
+        "L₋(x)L₋(x)σ₁(x)L₊",
+        "L₋(x)L₋(x)L₊(x)σ₁"
+      ]
+    },
+    "subalphabet_used": [
+      "L₊",
+      "L₋",
+      "σ₁"
+    ],
+    "subalphabet_never_used": [
+      "e⁻",
+      "γ",
+      "σ₀"
+    ]
+  },
+  "caveats": [
+    "x_free is NOT in the positive sector — 108 of 216 coordinates negative at A=3, because the nucleon NF carries sigma_1^{-1} letters. Positivity is imposed on the solution while the demand u = G x_free is built from an object that violates it. Rebuilding the nucleon in the positive sector would change every number here; not attempted.",
+    "Dropping the net constraint is load-bearing: with it retained the positive sector is infeasible at every A tested. The justification is prop:operator-selection-lp's own result that y_0* = 0 identically, so the constraint carries no shadow price — not that dropping it is convenient.",
+    "NOT SHOWN: that the selected operator is K; that the support is stable under q; that the objective value is physically meaningful. The demand comes from LR branching of the nucleon words and nothing empirical enters, so this is a structural result only."
+  ]
+}
