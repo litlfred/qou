@@ -580,4 +580,105 @@ theorem multiset_keyed_energy_well_defined
 
 end ConjugationInvariance
 
+section MarkovRepeat
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- **Markov stabilisation on a REPEATED generator forces `z² = h·z + 1`.**
+
+`interface_scalar` above takes `tr (W * σ) = z * tr W` as a hypothesis — its own
+docstring flags this as an axiom standing in for Jones (1987), not a theorem. The
+question this answers is *when that hypothesis may be assumed*, which the corpus
+had not pinned down.
+
+Take the word `W = σ` itself, i.e. the interface generator already occurring once
+in the word it is being appended to. The Hecke quadratic then evaluates the
+left-hand side outright, and stabilisation becomes an equation on `z` alone.
+
+So stabilisation is not free: on a repeated generator it *forces* the Markov
+parameter to be a root of `x² - h·x - 1`. Whether that root condition holds is a
+property of the convention, settled for convention D below. -/
+theorem markov_repeat_forces_quadratic
+    (tr : A → R) (σ : A) (z h : R)
+    (hadd : ∀ x y : A, tr (x + y) = tr x + tr y)
+    (hsmul : ∀ (c : R) (x : A), tr (c • x) = c * tr x)
+    (hq : σ * σ = h • σ + 1)
+    (hone : tr (1 : A) = 1)
+    (hσ : tr σ = z)
+    (hrepeat : tr (σ * σ) = z * tr σ) :
+    z * z = h * z + 1 := by
+  have hlhs : tr (σ * σ) = h * tr σ + tr (1 : A) := by
+    rw [hq, hadd, hsmul]
+  rw [hrepeat, hσ, hone] at hlhs
+  exact hlhs
+
+end MarkovRepeat
+
+section MarkovRepeatConventionD
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- The convention-D defect `z² - h·z - 1` in closed form, with
+`z = q³/(q²+1)` and `h = q - q⁻¹`.
+
+Both quadratic factors are positive-definite over any linear ordered field
+(`q² ± q + 1 = (q ± 1/2)² + 3/4`), so the defect is a *strictly negative* rational
+function of `q` — it has no zero to be found by tuning the pin. -/
+theorem conventionD_markov_defect (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1)) * (q ^ 3 / (q ^ 2 + 1))
+        - (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) - 1
+      = -((q ^ 2 - q + 1) * (q ^ 2 + q + 1)) / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The convention-D Markov parameter is never a root of `x² - h·x - 1`.**
+The defect is strictly negative for every `q > 0`, so the equation
+`markov_repeat_forces_quadratic` extracts can never be satisfied. -/
+theorem conventionD_markov_defect_neg (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1)) * (q ^ 3 / (q ^ 2 + 1))
+        - (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) - 1 < 0 := by
+  rw [conventionD_markov_defect q hq]
+  apply div_neg_of_neg_of_pos
+  · have h1 : 0 < q ^ 2 - q + 1 := by nlinarith [sq_nonneg (2 * q - 1)]
+    have h2 : 0 < q ^ 2 + q + 1 := by positivity
+    nlinarith [mul_pos h1 h2]
+  · positivity
+
+/-- **The once-only-occurrence condition is NECESSARY, for every `q`.**
+
+Combining the two: if the interface generator already occurs in the word, Markov
+stabilisation would force `z² = h·z + 1`, and convention D's `z` misses that by a
+strictly negative amount at every `q > 0`. So `interface_scalar`'s hypothesis
+**cannot** be assumed on a repeated generator — the collapse of the interface to
+the single scalar `μ = a·z + b` is available only when the generator occurs once.
+
+This is a scope-(b) structural exclusion and the invariant is cited: the defect's
+closed form `-(q²-q+1)(q²+q+1)/(q²+1)²`, whose factors are positive-definite. It
+is not a numerical near-miss at one pin.
+
+Measured counterpart: `computations/probes/colour_weighting_markov_universality_probe.py`
+(PR #6319) fits `k` in `tr_M ∝ (d + k)` from the traces alone and finds `k = z_D` to
+`1e-48` on four canonical nuclear words — each of which uses its interface generator
+exactly once — and finds the identity **breaks** (`k - z_D = 1.2285`) on the same
+deuteron word with one extra `σ` on that generator. The Lean says why the control
+had to come out that way. -/
+theorem markov_stabilisation_fails_on_repeat
+    {A : Type*} [Ring A] [Algebra R A]
+    (tr : A → R) (σ : A) (q : R) (hq : 0 < q)
+    (hadd : ∀ x y : A, tr (x + y) = tr x + tr y)
+    (hsmul : ∀ (c : R) (x : A), tr (c • x) = c * tr x)
+    (hhecke : σ * σ = (q - q⁻¹) • σ + 1)
+    (hone : tr (1 : A) = 1)
+    (hσ : tr σ = q ^ 3 / (q ^ 2 + 1)) :
+    tr (σ * σ) ≠ (q ^ 3 / (q ^ 2 + 1)) * tr σ := by
+  intro hrepeat
+  have hquad := markov_repeat_forces_quadratic tr σ (q ^ 3 / (q ^ 2 + 1))
+    (q - q⁻¹) hadd hsmul hhecke hone hσ hrepeat
+  have hneg := conventionD_markov_defect_neg q hq
+  linarith [hquad, hneg]
+
+end MarkovRepeatConventionD
+
 end QOU.QBeta.InterfaceScalar
