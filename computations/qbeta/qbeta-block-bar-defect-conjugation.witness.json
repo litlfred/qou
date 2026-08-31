@@ -1,0 +1,193 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T03:10:09.849197+00:00",
+  "commitSha": "0107f6578102a324a49ffa48b7626ec2b81a7fa4",
+  "assertions": [
+    {
+      "name": "master_identity_reproduces_two_alpha_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_even_C_the_block_defects_ARE_z_dependent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_even_C_they_sum_to_zero_for_EVERY_bar_even_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "full_bar_D_every_block_defect_is_z_FREE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "full_bar_D_they_sum_to_h_squared_for_EVERY_full_bar_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_2_1_block_never_contributes_in_either_condition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_D_defects_are_reciprocal_multiples_of_h_squared_over_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "every_D_block_defect_is_itself_bar_INVARIANT",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_acts_as_partition_CONJUGATION_on_the_block_characters",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "it_does_NOT_act_so_on_the_counit_coefficients",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "every_weight_residual_carries_the_SAME_factor_z_plus_zbar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_UNIQUE_bar_action_making_the_weights_equivariant_is_zbar_eq_minus_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "z_eq_h_over_2_is_the_bar_ODD_member_of_the_full_bar_class",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "z_eq_h_over_2_is_EXCLUDED_by_the_two_row_cap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2725,
+  "computation": "qbeta-block-bar-defect-conjugation",
+  "scriptFile": "qbeta_block_bar_defect_conjugation_probe.py",
+  "scriptHash": "9424d9483dd9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_block_bar_defect_conjugation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_block_bar_defect_conjugation_probe.py"
+  },
+  "description": "The ladder phase's bar-defect resolved per Wedderburn block: z-dependent and cancelling under the bar-even (C) condition, z-FREE and non-cancelling under the full-bar (D) condition; and bar = partition conjugation on the block characters but not on the Markov weights, the residual being (z+zbar).",
+  "data": {
+    "bar_conditions": {
+      "bar_even_C": "zbar = z",
+      "full_bar_D": "zbar = z - h",
+      "C_blocks_z_dependent_sum_zero": true,
+      "D_blocks_z_free_sum_h_squared": true,
+      "r": "(q**2 + q + 1)/(q**2 - q + 1)"
+    },
+    "blocks": [
+      {
+        "block": "(3)",
+        "defect_D": "(q - 1)**2*(q + 1)**2*(q**2 + q + 1)/(2*q**2*(q**2 - q + 1))",
+        "defect_D_over_h2": "1.48922059503199613033368169076360261947298081023728693146310",
+        "defect_C_is_z_dependent": true,
+        "chi_of_delta": "(1 - q**4)/(2*q**2)"
+      },
+      {
+        "block": "(2,1)",
+        "defect_D": "0",
+        "defect_D_over_h2": "0.0",
+        "defect_C_is_z_dependent": false,
+        "chi_of_delta": "0"
+      },
+      {
+        "block": "(1,1,1)",
+        "defect_D": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)/(2*q**2*(q**2 + q + 1))",
+        "defect_D_over_h2": "0.167873047709650236260645902760080108009094455629559871707997",
+        "defect_C_is_z_dependent": true,
+        "chi_of_delta": "(q**4 - 1)/(2*q**2)"
+      }
+    ],
+    "floor": {
+      "expr": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
+      "defect_D": "2*(-q**4 + 2*q**2 - 1)/(q**4 + q**2 + 1)",
+      "defect_D_over_h2": "-0.657093642741646366594327593523682727482075265866832771156366"
+    },
+    "conjugation": {
+      "characters_equivariant": true,
+      "counit_coefficients_equivariant": false,
+      "weights_equivariant_iff": "zbar = -z  (z bar-ODD)",
+      "weight_residual_common_factor": "z + zbar"
+    },
+    "z_eq_h_over_2": {
+      "in_full_bar_class": true,
+      "bar_odd": true,
+      "value_at_q0": "0.104530149397819657715423106564837471929878747631530905510685",
+      "slope_at_q0": "0.905826877182879029066107419104440921629417383007789260839566",
+      "excluded_by": "two-row cap (qou-06wh: admissible set exactly {q, z_D}) and the anchor filter (needs 0.4991 / +400.29)"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "c_k_produced": false,
+      "K_determined": false,
+      "q_beta_ppb": 1279,
+      "hypothesis_A_block_resolution_restores_parity_handle": "REFUTED",
+      "hypothesis_B_bar_is_conjugate_partition_equivariance": "REFUTED (holds on characters, fails on weights unless z is bar-odd)"
+    }
+  }
+}

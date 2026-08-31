@@ -4552,3 +4552,86 @@ functional form must change.** The problem is not that the wrong `z` was picked.
 frames (`q-beta-cos-resummation.ts:48`). The filter above is now the
 pre-registered test any candidate must pass — which is what the Discipline
 section asks for before a search begins.
+
+---
+
+## Entry 15 — the defect at BLOCK resolution: C's bar-oddness is a CANCELLATION, D's defect is z-FREE. Two hypotheses of mine refuted. (2026-08-31)
+
+`computations/qbeta/qbeta_block_bar_defect_conjugation_probe.py` — **14/14**,
+sympy exact, **runs standalone with `PYTHONPATH` stripped**.
+Audit: `docs/audits/2026-08-31-cds1-block-bar-defect-and-conjugation.md`.
+
+Built on entry 8's master identity (`qbeta_phase_block_resolution_probe`,
+a sibling's) — **not re-derived**. `bar` acts on `(q, z)` jointly; `zbar` is an
+independent symbol specialised only at the end, by the two conditions
+`MarkovZFullBarCondition.lean` proves. The constant-`z` substitution this bean
+already discarded as meaningless is not done here.
+
+### What was tested, and why
+
+Entry 12 closed with *"Closing `K` needs a genuinely different input."* Entry 14
+then withdrew entry 13, so `K` is free again at **7656×** the target — the
+arc's largest single L2 blocker. Two structural candidates:
+
+  * **(A)** does resolving the defect PER BLOCK restore a parity handle?
+  * **(B)** is `bar` the Kohno–Drinfeld conjugation `λ ↔ λ'`, making C's
+    cancellation a theorem rather than a coincidence?
+
+**Both refuted.** They were my hypotheses; recorded as negatives because each is
+plausible enough to cost someone else a session.
+
+### The positive that came out of the attempt
+
+| | `(3)` | `(2,1)` | `(1³)` | floor | sum |
+|---|---|---|---|---|---|
+| bar-even (C) | **z-dep** | 0 | **z-dep** | z-free | **0**, every bar-even z |
+| full-bar (D) | `(h²/2)·r` | 0 | `(h²/2)/r` | `−2q²h²/(q⁴+q²+1)` | **h²**, every full-bar z |
+
+`r = (q²+q+1)/(q²−q+1)`; the two D defects are exact **reciprocal** multiples of
+`h²/2`. At q₀ in units of h²: `(3)` 1.48922059503199, `(1³)` 0.16787304770965,
+floor −0.6570936427416, `r(q₀)` 2.97844119006. `χ^(2,1)(Δ) = 0` identically, so
+the phase is blind to the 2-dim block in both conventions.
+
+**C's bar-oddness — what the whole C ladder's bare cosine rests on — is a
+CANCELLATION between the symmetric and antisymmetric blocks, not a property any
+block has.** Under D the cancellation dies and the per-block defects become
+CONSTANTS: the z-dependence cancels *inside* each block, not *between* blocks.
+
+**Consequence.** No z within the full-bar class changes the D defect, at block
+resolution or in aggregate. The "choose a better z" direction is now closed from
+**two independent directions** — the anchors (`qbeta_ladder_alpha_form_filter_probe`:
+no constant z meets both the value and slope rows) and parity (this: the defect
+does not depend on z at all).
+
+### (A) refuted
+
+Every `d_λ` is itself bar-INVARIANT — as a bar-defect always is
+(`bar(bar X + X) = X + bar X`). Entry 12's silence survives block resolution
+verbatim. Block resolution is **not** the different input entry 12 asked for.
+
+### (B) refuted, and the failing half is ONE scalar
+
+```
+bar(chi^λ(Δ)) = chi^{λ'}(Δ)   EXACT, all three blocks, convention-free
+bar(a_λ)     != a_{λ'}
+bar(y_λ)     != y_{λ'}
+```
+
+The block CHARACTERS do carry Kohno–Drinfeld. The weights do not — but all three
+residuals carry the **same factor `(z + zbar)`**, and solving them simultaneously
+gives the unique action `zbar = −z`. So `y_λ` is conjugation-equivariant **iff z
+is bar-ODD**, which is neither C (`zbar = z`) nor D (`zbar = z−h`). C's
+bar-oddness is therefore **not** conjugate-partition equivariance.
+
+### A distinguished fourth value, excluded twice
+
+`z = h/2` is the unique bar-ODD member of the full-bar class (`bar(z) = z−h` AND
+`bar(z) = −z`), so there the weights ARE conjugation-equivariant. Excluded by the
+two-row cap (`qou-06wh`: admissible set exactly `{q, z_D}`) and by the anchor
+filter (needs 0.499104480185 / +400.29; `h/2` gives **0.104530149398** /
+**0.905826877183**). Recorded, not pursued.
+
+### Not claimed
+
+No `c_k`, no `K`, no Q_β movement — L2 stays 1279 ppb. Not a claim that no
+D-frame resummation exists. Scope (a).
