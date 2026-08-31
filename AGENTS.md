@@ -1868,7 +1868,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone); it passes under either the derived or the measured α_em (51.48 vs 51.43 ppb, both ~5.1× inside target), so the older "0/5 unconditional" reading is RETRACTED — see the correction below. The residual objection is DOF: α_em is a fourth input outside the 3-CAL triple** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1911,16 +1911,45 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
   legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
   observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
-  own; the sub-100× result is manufactured by an EM correction
-  `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the untruncated
-  series** (chosen against the data — the same fit signature the `c_k` red-team
-  caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
-  (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
-  arithmetic metric; the count of **unconditional, parameter-free** sub-100×
-  predictions is **0**. State it as "1/5 scoreable — and that 1 is
-  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
-  analysis:
+  own; the sub-100× result is manufactured by an EM correction whose `α_em`
+  input sits outside the 3-CAL triple. Full analysis:
   [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
+
+  > **🛑 BOTH LEGS OF THE "0/5 UNCONDITIONAL" HEADLINE ARE WRONG — measured
+  > 2026-08-31, probe
+  > [`mkmpi_l2_conditionality_ablation_probe.py`](computations/alpha/mkmpi_l2_conditionality_ablation_probe.py),
+  > 5/5.** This text read: *"the sub-100× result is manufactured by an EM
+  > correction `(α_em/π)·(3q²−1)/(2q²)` whose **truncation order beats the
+  > untruncated series** … and whose `α_em` input is **conditional on an open
+  > Lean `sorry`** … the count of unconditional, parameter-free sub-100×
+  > predictions is **0**."*
+  >
+  > **(i) "Truncation-fitted" is STALE.** That truncation has been RETIRED. The
+  > live dashboard row reports **51.48 ppb** and its own `source_witness` field
+  > says *"EM factor is the FULL series"*; the probe reproduces 51.4754 ppb for
+  > `1+log(1+ℏ_q)` against 23.4497 ppb for the retired `(3q²−1)/(2q²)`. The
+  > shipped formula is the untruncated one, so the fit signature the red team
+  > caught is no longer present.
+  >
+  > **(ii) "`sorry`-conditional" conflates the DERIVATION with the VERDICT.** It
+  > is true that α_em *as a framework-derived quantity* rests on the open
+  > Witten-κ `sorry`. It does **not** follow that the L2 pass does. Substituting
+  > the independently measured CODATA α_em moves the result **51.4754 → 51.428
+  > ppb (0.09 %)**, and both pass the 263.6 ppb target — by **5.121×** and
+  > **5.126×**. **The pass survives the `sorry` being unprovable.**
+  >
+  > **What SURVIVES, and it is the criticism worth keeping.** α_em's *presence*
+  > is entirely load-bearing even though its *value* is not: `α_em := 0` gives
+  > **101553 ppb = 385.3×** the target, so the strong core alone does not clear
+  > it. Using CODATA α_em therefore makes this a **four-input** prediction
+  > rather than a three-calibration one. That DOF objection is real, is
+  > untouched by the above, and is the honest residual reason to qualify this
+  > row.
+  >
+  > **So state it as: 1/5 scoreable, and that 1 passes under EITHER α_em — with
+  > the residual objection being that α_em is a fourth input, not that the row
+  > is fitted or `sorry`-gated.** Do NOT quote "0/5 unconditional"; both legs it
+  > rested on are gone.
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
