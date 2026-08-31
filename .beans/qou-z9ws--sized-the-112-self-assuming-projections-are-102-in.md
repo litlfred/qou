@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T18:24:16Z
+updated_at: 2026-08-31T12:15:10Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -308,3 +308,36 @@ holds over the EMPTY partition set (so its `Z`/`N` parameters are inert), and
 missing BETWEEN fields rather than within one — invisible to a syntactic check.
 
 PR #6276.
+
+
+## 2026-08-31 second tranche — items 1 and 3 closed, item 2 at A 15/15 + B 6/6
+
+All three handed-back items worked. Two were decidable by measurement.
+
+- **Both false classes repaired.** Same defect in each: the .md states one
+  thing, the Lean asserts something stronger the .md never claims, and the
+  invention is what is false. Neither needed a physics decision.
+- **Confinement settled: the library model is canonical** on three criteria
+  (.md's SDP-feasibility link; fields are hypotheses not conclusions; 9 vs 2
+  consumers). Corrects my own "not mine to pick".
+- **Bucket A 15/15, bucket B 6/6.** Four of the six B re-encodings gained a
+  real derivation, not just a demotion. Two files claimed "no instance" and
+  had one (CPT at Unit/0/id; cusp-holonomy at z = i, verified by compiling).
+  `newton_seed_completeness` was statement-identical to its neighbour under a
+  docstring claiming a seeding property its type never mentioned.
+  `core_levi_cond_aspect_bound` was redundant with its docstring saying the
+  opposite. DecayChannel sub-claim (iii) turned out to be the IVT.
+
+**REMAINING: 46 bare projections (31 library, 15 sibling)**, measured by the
+new `scripts/sap-projection-liveness.py`. It is a QUEUE, not a defect count --
+the four gate accessors in it are the `Group.mul_assoc` idiom over
+parameterised classes and were adjudicated legitimate; what those blocks
+lacked was the converse of the equivalence their .md claims, now added.
+
+**Two errors of mine, corrected in-branch.** (1) The obvious liveness check
+("does the name still occur?") reports 81/81 still live on a tree where nine
+were just repaired -- a repaired file keeps the name and a gutted file names
+it in the docstring. (2) `7e9230d39a9` converted 82 decls across 69 files
+theorem->def; I inferred that hid one from the detector and MEASURED IT FALSE
+-- the audit flags it as a def, and it is absent from the ledger because it is
+exempt. The 82 stands; the inference did not.
