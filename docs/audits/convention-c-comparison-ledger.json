@@ -1202,6 +1202,30 @@
       "rationale": "The probe's result IS the C-vs-D contrast: it establishes that the bar-invariance rule which forces the N=1 phase under D is VACUOUS under C, because a_C is bar-odd and cosine is even, so cos(bar(a_C)) = cos(a_C) identically. Two of its assertions are named controls -- control_C_phase_is_bar_odd and C_cosine_is_ALREADY_bar_invariant -- and neither can be stated without evaluating the C arm. Removing z_C would delete the demonstration that D is the frame where the rule has content.",
       "adjudicated_by": "claude (session 791c0e50, branch claude/convention-migration-validation-77exfa)",
       "date": "2026-08-31"
+    },
+    {
+      "path": "computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py",
+      "target": "zc",
+      "source_hash": "40c0334103db",
+      "line_when_adjudicated": 168,
+      "scope": "main",
+      "source": "zc = mp.sqrt(q0) / (q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "A sampled reference point in the probe's z-scan, and the probe LABELS it as one in its own printed output: \"z=z_C (excised)\". The scan asks whether z=1 is special by ranking the three-row share at z=1 against six non-admissible z, and the excised convention is one of the six. It is data for a ranking, never a value the probe adopts.",
+      "adjudicated_by": "claude (session 791c0e50, branch claude/convention-migration-validation-77exfa)",
+      "date": "2026-08-31"
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_required_markov_parameter_probe.py",
+      "target": "zC_n",
+      "source_hash": "6177b4c72462",
+      "line_when_adjudicated": 104,
+      "scope": "main",
+      "source": "zC_n = mp.sqrt(q0) / (q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "A reference point in the probe's distance table, labelled in its own output as \"z_C (excised convention)\" alongside z=1 (EXCLUDED), z_D (admissible) and z=q (admissible). The probe's subject is how far the CODATA-required z sits from each candidate; excluding the excised one would remove a row from the comparison the probe exists to make.",
+      "adjudicated_by": "claude (session 791c0e50, branch claude/convention-migration-validation-77exfa)",
+      "date": "2026-08-31"
     }
   ]
 }

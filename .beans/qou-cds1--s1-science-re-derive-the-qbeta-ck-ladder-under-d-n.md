@@ -4475,8 +4475,19 @@ corpus last time. Retracted in `bba5262870`. The discriminator is whether each
 
 **Non-D usage: none outside the wall this bean IS.**
 - Value audit (`scripts/convention-c-value-audit.py`, which EVALUATES rather
-  than shape-matches): 107 confirmed C bindings, **107 adjudicated, 0
-  blocking**, against 395 D bindings. The single blocking site was mine —
+  than shape-matches): **109 confirmed C bindings, 109 adjudicated, 0
+  blocking**, against 405 D bindings. *(Re-measured after rebasing onto
+  `4013b56f05`. I first wrote 107/107/0 vs 395 — correct when measured, stale
+  by the time it was committed: a sibling's two probes landed on `main` in
+  between and each carries a labelled `z_C` reference row. Both are genuine
+  comparisons and I adjudicated them too —
+  `qbeta_admissibility_is_a_magnitude_probe.py:168` prints its site as
+  `"z=z_C (excised)"` inside a seven-point z-scan, and
+  `qbeta_d_frame_required_markov_parameter_probe.py:104` prints its as
+  `"z_C (excised convention)"` in a distance table beside `z=1 (EXCLUDED)`,
+  `z_D` and `z=q`. Worth recording that the number moved under me within one
+  rebase: this count is a live measurement, not a fact to quote.)* The single
+  blocking site at first measurement was mine —
   `qbeta_d_n1_factor_bar_midpoint_probe.py:138` — a deliberate control arm
   (the probe's result IS that the bar rule is *vacuous* under C). Ledgered in
   `e49b29b321`.
