@@ -109,6 +109,21 @@ try {
   // Do not read 297 as the citation debt: --strict also enables
   // `term-mention-coverage`, and 288 of the 297 are unwrapped glossary mentions
   // with no relation to citations.
+  //
+  // And do not read the 13 as one defect. Measured by importing this module
+  // (810 entries) rather than grepping for a spelling, they split two ways:
+  //
+  //   * TEN keys appear ONLY in `.ts` cites[] arrays -- zero in any .md prose,
+  //     zero in any Lean `-- Ref:`. They support no written claim, so nothing a
+  //     reader sees is broken; they are metadata whose key was never added.
+  //   * `manuscript` is a different thing entirely: AGENTS.md §1 instructs
+  //     authors to use `[manuscript]` when no published reference exists, and
+  //     4436 Lean `-- Ref:` sites do exactly that -- against a key that is not
+  //     among the 810. The work it means IS held, as `leitner2026`.
+  //
+  // So the second class is a convention with no backing, not a typo, and its
+  // fix is a decision (alias entry vs. re-key the convention) rather than
+  // research. Both are recorded in bean `qou-cite`.
   if (strict) {
     configureReferenceRegistry({
       references: bib.references,

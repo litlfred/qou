@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-08-31T04:27:51Z
+updated_at: 2026-08-31T04:57:23Z
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`
@@ -135,3 +135,66 @@ those are warnings.
 **The citation debt is 13 keys across 10 blocks, unchanged.** Still not fixed
 here, for the reason in the body above: repointing a citation at a
 different paper is worse than a broken link.
+
+
+## CORRECTED 2026-08-31 — "13 dead citations" is ONE number over TWO unrelated defects
+
+I filed this bean, and the framing was wrong. Measured against the
+bibliography module itself (`bun -e` importing `content/schema/references.ts`,
+**810 entries**) rather than by grepping for a spelling:
+
+### Class A — 10 orphaned `cites[]` keys, cited in NO prose
+
+`faddeev1996`, `champanerkar-kofman-mullen2008`, `bokut1978`,
+`feigin-hashizume2009`, `dimofte-gaiotto-gukov2014`,
+`terashima-yamazaki2011`, `kashaev-tirkkonen2014`, `macdonald1971`,
+`lusztig1989`, `frenkel-reshetikhin2002`.
+
+**Every one appears ONLY in a `.ts` `cites[]` array. Zero appear in any `.md`
+prose, and zero in any Lean `-- Ref:`.** Measured both ways: a bare grep for
+the key across `--include=*.md`, and a grep for `\cite{...}` containing it,
+both corpus-wide. So none of the ten supports a written claim — they are
+`cites[]` metadata that no sentence draws on.
+
+That materially changes the fix. It is **not** "the paper cites a work that
+does not exist"; it is "a block's metadata lists further reading whose key was
+never added". Nothing a reader sees is broken today.
+
+### Class B — `manuscript`, a DOCUMENTED CONVENTION with no backing
+
+Different defect entirely, and much larger. `AGENTS.md` §1 says: *"The `[key]`
+must match an entry in `content/schema/references.ts` exactly. **If no
+published reference exists, use `[manuscript]`**"*. Those two sentences are in
+tension, and the corpus resolves it the wrong way:
+
+- **`manuscript` is NOT an entry.** Absent from all 810.
+- **4436 Lean `-- Ref: [manuscript]` sites use it**, exactly as §1 instructs.
+- The work it means **is** held — `leitner2026`, `type: "manuscript"`,
+  `note: "This manuscript"`.
+
+So the two `cites[]` hits this bean counted are the visible tip of a
+convention that instructs 4436 sites to use a key the same paragraph requires
+to resolve.
+
+### Why the count was one number
+
+Class A is 10 keys across 8 blocks; class B is `manuscript` in 2 blocks, and
+`faddeev1996` is cited by two blocks — giving 13 **citations** across 10
+blocks. The arithmetic was right. The **framing** was wrong: one of those
+"citations" is a corpus-wide convention failure and the other twelve are
+dormant metadata.
+
+### What I did NOT do
+
+Research the ten. Still the right call, and the reason is now confirmed
+against the held set rather than asserted: the near-misses are mostly
+**distinct works**. `macdonald1971` *Spherical Functions on a Group of p-adic
+Type* vs held `macdonald1995` *Symmetric Functions*; `dimofte-gaiotto-gukov2013`
+(held) and a 2014 companion are separate papers, as are
+`terashima-yamazaki2013` (held) and a 2011 one. Repointing any of these at its
+near-miss would silently attribute a claim to the wrong paper.
+
+Class B is a **decision, not research**, and is framed for the owner rather
+than actioned unilaterally: an alias entry would make the documented
+convention work at all 4436 sites with a one-entry change, but would put the
+same work in the bibliography twice.
