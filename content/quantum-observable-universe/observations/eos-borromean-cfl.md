@@ -67,8 +67,8 @@ $$
   = 
   \frac{V_B / \hbar_q^2}{\frac{1}{3}(q + q^{-1})}
   = 
-  \frac{749.2}{0.670}
-   \approx  1118.
+  \frac{746.4}{0.670}
+   \approx  1114.
 $$
 *Including the $3^{5/3} \approx 6.24$ factor gives:*
 $$

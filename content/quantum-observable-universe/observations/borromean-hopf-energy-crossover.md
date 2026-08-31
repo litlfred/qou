@@ -54,12 +54,12 @@ $$
 $$
   \frac{V_B}{\hbar_q^2}
   = 
-  \frac{7.32772}{(0.0989)^2}
+  \frac{7.32772}{(0.09908)^2}
   = 
-  \frac{7.32772}{0.009781}
-  =  749.2.
+  \frac{7.32772}{0.0098172}
+  =  746.4.
 $$
-*At $q = q_0$, the inequality $3.016 \ll 749.2$ demonstrates that the Borromean binding vastly exceeds the Hopf-diquark binding. The Borromean phase dominates energetically by a factor of roughly $250$.*
+*At $q = q_0$, the inequality $3.016 \ll 746.4$ demonstrates that the Borromean binding vastly exceeds the Hopf-diquark binding. The Borromean phase dominates energetically by a factor of roughly $250$.*
 
 *4. Compression energy.*
 *At baryon density $\rho$, the compression energy (kinetic plus Pauli exclusion) per baryon scales as*
