@@ -1,4 +1,5 @@
 import QOU.BraidKnot.YoungTableauStandard
+import QOU.Mathlib.YoungDiagramCorner
 
 /-!
 # `QOU.Mathlib.SkewSYTMaxCorner` — the erase-max step of the skew branching rule
@@ -12,8 +13,9 @@ i.e. "remove the largest entry of a skew standard Young tableau".  Its other two
 hand — `QOU.Mathlib.upSum_eq` is proved, and the transposition is the `Finset.sum_comm`
 manoeuvre `pairTerm` already performs there.
 
-This file supplies the **erase** direction's geometry, sorry-free.  It does not close the
-branching rule: the bijection with `(λ ∖ c)/μ` tableaux, and the sum, are still to do.
+This file supplies the **erase** direction's geometry, sorry-free — the corner extraction and
+the diagram-level consequences.  It does **not** close the branching rule: the bijection with
+`(λ ∖ c)/μ` tableaux, and the sum itself, are still to do.
 
 ## Why the skew case is not a transliteration of the straight one
 
@@ -45,7 +47,7 @@ Pure combinatorics; nothing archimedean (§7c).
 -/
 
 namespace QOU.BraidKnot.YoungTableauStandard
-open Finset
+open Finset QOU.Mathlib
 
 variable {outer inner : YoungDiagram} {c : ℕ × ℕ}
 
@@ -131,5 +133,42 @@ theorem exists_max_corner (T : SkewStandardYoungTableau outer inner) (n : ℕ)
     have hle := skew_mem_range T hskew
     simp only at hle
     omega
+
+/-! ### The erased diagram
+
+`exists_max_corner` gives a corner outside `inner`; these turn that into the diagram-level
+facts the bijection will need. -/
+
+/-- Deleting a corner that lies outside `inner` keeps `inner` inside the diagram. -/
+theorem le_eraseCorner_of_notMem (hle : inner ≤ outer) (hc : IsCornerCell outer c)
+    (hcn : c ∉ inner) : inner ≤ eraseCorner outer c hc := by
+  intro x hx
+  rw [YoungDiagram.mem_cells] at hx ⊢
+  rw [mem_eraseCorner]
+  exact ⟨hle hx, fun h => hcn (h ▸ hx)⟩
+
+/-- Deleting that corner removes exactly it from the skew region.
+
+Note this needs **no** hypothesis that `c ∉ inner` — set-difference-minus-a-cell is
+`erase` on the difference either way.  (The unused binder was there until the linter
+pointed out it does no work; carrying it would have implied the identity depends on the
+corner being outside `inner`, which it does not.) -/
+theorem skewCellsOf_eraseCorner (hc : IsCornerCell outer c) :
+    skewCellsOf (eraseCorner outer c hc) inner = (skewCellsOf outer inner).erase c := by
+  ext x
+  simp only [skewCellsOf, Finset.mem_sdiff, Finset.mem_erase, YoungDiagram.mem_cells,
+    mem_eraseCorner]
+  constructor
+  · rintro ⟨⟨hxo, hxc⟩, hxi⟩; exact ⟨hxc, hxo, hxi⟩
+  · rintro ⟨hxc, hxo, hxi⟩; exact ⟨⟨hxo, hxc⟩, hxi⟩
+
+/-- So the skew size drops by exactly one. -/
+theorem card_skewCellsOf_eraseCorner (hc : IsCornerCell outer c)
+    (hmem : c ∈ skewCellsOf outer inner) :
+    (skewCellsOf (eraseCorner outer c hc) inner).card + 1
+      = (skewCellsOf outer inner).card := by
+  rw [skewCellsOf_eraseCorner hc, Finset.card_erase_of_mem hmem]
+  have : 0 < (skewCellsOf outer inner).card := Finset.card_pos.mpr ⟨c, hmem⟩
+  omega
 
 end QOU.BraidKnot.YoungTableauStandard
