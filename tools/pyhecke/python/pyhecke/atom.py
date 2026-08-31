@@ -194,6 +194,28 @@ def nf_channel_exact(nf_frac):
 
 
 
+    # ⚠ MEASURED WRONG 2026-08-31 (bean `t7qv`) — do not consume `chi_std`.
+    # Against direct seminormal traces at `H_3`, this `chi_std` matches the
+    # standard-block character under NO normalisation:
+    #
+    #     element          chi_std here   direct trace   trace/dim
+    #     identity            1.000000       2.000000     1.000000
+    #     sigma_0             0.864044       0.209060     0.104530
+    #     sigma_0 sigma_1     0.055685      -1.000000    -0.500000
+    #
+    # and `chi_sym` / `chi_alt` are evaluated at `q = 111/100` (`-1/1.11 =
+    # -0.9009009` against `-1/q_0 = -0.9009183`), not at `q_0`. The function
+    # raised `NameError` on every call until the `_TR_M_FRAC` import above was
+    # fixed in the same change, which is why this was never noticed: it was
+    # dead code, so nothing ever compared it to anything.
+    #
+    # NOT repaired here — the right `chi_std` depends on which Wedderburn
+    # weighting convention `W_STD` is meant to pair with, and that is a
+    # substrate decision, not a local one. Callers needing block characters
+    # should take direct seminormal traces; see
+    # `computations/probes/phase_b_lr_branching_constraint_probe.py`.
+
+
 def check_frobenius(nf):
     """Check Frobenius positivity G·x ≥ 0. Returns (stable, Gx, violations)."""
     x = np.array(nf)

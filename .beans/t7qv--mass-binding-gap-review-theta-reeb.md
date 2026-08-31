@@ -442,3 +442,80 @@ consistency, data currently only at `A = 2` — and it is the single highest-val
 next step for `K` via knot convolution. My judgement: build it at `A = 3` first,
 where `T`/`³He` give an immediate falsifiable test (the active sets must
 separate), rather than at the γγ base where there is no such discriminator.
+
+---
+
+## Phase B LR branching — built 2026-08-31, `A`-generic. Next blocker: the diagonal Gram.
+
+Probe `computations/probes/phase_b_lr_branching_constraint_probe.py` (7 assertions).
+
+**Built.** Restriction along `H_{3A} ⊃ (H_3)^{⊗A}` gives
+`χ^λ(x) = Σ_{μ₁..μ_A} c^λ_{μ₁..μ_A} Π χ^{μᵢ}(xᵢ)`. Each nucleon's `H_3` block
+character is LR-convolved into an `H_{3A}` profile — one
+`get_lr_table(3(m−1), 3)` per rung — and becomes the LP demand
+`u_demand = y_λ·χ^λ_free` against the cost `t_λ = y_λ·χ^λ_atom`. Cost carries the
+bound atom, demand the free constituent product, so the program would price
+exactly the gap: **the knot convolution read block by block.**
+
+Validated two independent ways, exact at `A = 2,3,4` over all 11/30/77 blocks —
+the induction identity, and the restriction identity
+`dim S^λ = Σ c Π dim S^μ` (which validates the *character* formula, not just the
+coefficients).
+
+### Two defects found on the way
+
+1. **`pyhecke.atom.nf_channel_exact` raised `NameError` on every call** —
+   `_TR_M_FRAC` used in the body, defined and exported by `gram`, missing only
+   from `atom.py`'s import line. **Fixed.**
+2. **With that fixed it is still wrong**, so it is not used. Its `χ_std` matches
+   the standard-block character under *no* normalisation (`σ₀`: 0.864044 here vs
+   0.209060 direct vs 0.104530 direct/dim), and its 1-dim blocks sit at
+   `q = 111/100`. Defect 1 is *why* defect 2 survived — dead code is never
+   compared to anything. Flagged in place, **not repaired** (the right `χ_std`
+   depends on which Wedderburn convention `W_STD` pairs with — a substrate
+   decision). Profiles here use direct seminormal traces. **`χ^(2,1)` is
+   negative for both nucleons where that function reports +0.78/+0.66, so
+   anything downstream of it needs re-checking.**
+
+### Result, and a correction to my own first reading
+
+The demand **is** genuinely `(Z,N)`-dependent — that part works. But the LP's
+duals do not see it. `nucleus_sdp_assembly` builds a **diagonal** Gram, and the
+dual constraint `y₀·1 + Gᵀy = t` never mentions `u_demand`, so with `G` diagonal
+and `y₀* = 0` it forces
+
+    y*_λ = t_λ/G_λλ = χ^λ_atom / dim S^λ
+
+exactly — measured, and **invariant under scaling `u_demand` by 7.3×**.
+
+I first read the differing `y*` as Phase B separating the isotopes. **Withdrawn.**
+Those prices belong to the cost vector, already `(Z,N)`-dependent through
+`χ_atom`. Phase B dropped into this LP adds a determined primal `x = G⁻¹u` and a
+derived `n_target`, and nothing else.
+
+### General principle for `A > 3` (as asked)
+
+- **One new table per rung**, `get_lr_table(3(A−1), 3)`: 35 / 203 / 806 / 2659 /
+  7646 entries for `A = 2..6`, 0.54 s at `A = 6`. Tractable well past where cost
+  data exists; the bottleneck will be `χ^λ_atom`, not the branching.
+- **The demand is a function of `(Z,N)` alone, not nucleon ordering** — verified
+  to `8.9e-15` over every permutation of `ppn`, `ppnn`, `pppn`, as it must be
+  (Schur multiplication commutes). Real contrast with `build_atom_nf`, which
+  fixes an interleaved ordering: any surviving ordering-dependence is a property
+  of the **atom word**, not of the branching.
+- **`A` enters only as recursion depth.** Nothing is special to `A = 3`.
+- **Caveat:** convention D's two-row cap zeroes `y_λ` outside two-row `λ`, so the
+  demand (all 30 blocks at `A=3`) is projected onto a 5-block subspace before the
+  LP sees it. Second place `(Z,N)` signal is lost, after the diagonal Gram.
+
+### Next
+
+**Build the `H_{3A}` Frobenius Gram with its off-diagonal entries.** Against a
+diagonal Gram no demand can do work — `Gx = u` has a unique solution, leaving
+nothing to optimise, and the dual is pinned by `t` alone. This is well-posed: the
+`H_3` Gram already exists in full in `pyhecke.gram` (6×6, with its documented
+radical); what is missing is the `H_{3A}` analogue. My judgement on ordering:
+the Gram first, then re-run Phase B against it — the branching constraint is
+already built and validated, so that step is a re-run, not new construction.
+Secondary, and cheap: audit consumers of `nf_channel_exact` now that it is
+callable and known wrong.
