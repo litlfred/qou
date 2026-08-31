@@ -97,6 +97,16 @@ corrected above were wrong.
 
 ## 3-ter. 🛑 A SEPARATE DEFECT, in `murphyM` on `main` — it cannot be Murphy's element
 
+> **FIXED 2026-08-31**, in the follow-up branch `claude/hecke-murphy-fixed-x-lambda-2026-08-31`.
+> `murphyM` now sums over the reference tableau's row stabiliser. The section below is kept as
+> the record of what was wrong and how it was found; the acceptance test is `run_rank_guard`,
+> which now reports `6/6`, `24/24`, `120/120`. **That is evidence, not proof** — it says the
+> spanning hypothesis is no longer measured unsatisfiable, not that Lemma 3.14 holds.
+> One lemma is worth flagging so nobody "fixes" it: `murphyM_colSuperstandard_diag`
+> (`m_{t^λ t^λ} = x_λ`) is stated at `t = colSuperstandard μ`, which is exactly the case where
+> the defective and correct definitions **coincide** — it was correct throughout, and it is
+> precisely the case that could not detect the bug.
+
 The rank guard also measures an axis that has nothing to do with handedness, and here the
 corpus is wrong. Murphy's `x_λ` is the sum over **one fixed** subgroup — the row stabiliser
 of the reference tableau — for every pair `(s,t)` of that shape. `HeckeMurphyYoung.murphyM`
@@ -145,7 +155,7 @@ bijection that gave `lead_inj`:
 |---|---|---|
 | `H` free of rank `n!` | `QOU.Hecke.TwBasis.finrank_eq_factorial` | sorry-free |
 | `Σ_λ (f^λ)² = n!` via RSK | `HeckeMurphyYoung.murphyIndex_fintypeCard` | sorry-free (new) |
-| the family `m_{st}` itself | `HeckeMurphyYoung.murphyFamily` | sorry-free, but **wrong family** — see §3-ter |
+| the family `m_{st}` itself | `HeckeMurphyYoung.murphyFamily` | sorry-free; corrected — see §3-ter |
 | spanning (Mathas Lemma 3.14) | — | **open — the one remaining input** |
 | ⇒ basis | `HeckeMurphyYoung.murphyBasisOfSpanning` | sorry-free (new) |
 

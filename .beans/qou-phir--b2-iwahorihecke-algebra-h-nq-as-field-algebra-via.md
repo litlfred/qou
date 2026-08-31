@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T04:33:38Z
+updated_at: 2026-08-31T04:56:02Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -886,3 +886,26 @@ and wrong are entirely compatible. Guard is now `run_rank_guard` in the probe.
 
 **next**: fix `murphyM` to sum over the reference tableau's row stabiliser, then re-point
 `murphyFamily` at it and re-run the rank guard as the acceptance test. THEN spanning.
+
+
+### 2026-08-31 — murphyM FIXED; and the anchor lemma is the one that couldn't see the bug
+
+`murphyM` now sums over the reference tableau's row stabiliser
+(`youngSubgroup n h (colSuperstandard μ)`) instead of `rowStab t`. Contained change: that
+file was the only consumer in the whole Lean tree. lean-direct exit 0; all seven touched
+declarations `[propext, Classical.choice, Quot.sound]`. Acceptance test is `run_rank_guard`:
+6/6, 24/24, 120/120 (was 5/6, 23/24, 117/120).
+
+**That is evidence, not proof.** Full rank at n=3,4,5 says the spanning hypothesis is no
+longer measured UNSATISFIABLE; it does not say Mathas Lemma 3.14 holds. `murphyBasisOfSpanning`
+and `murphyFamily_linearIndependent` still prove only `spans -> basis` / `spans -> independent`.
+
+**Worth flagging so nobody "fixes" a correct lemma:** `murphyM_colSuperstandard_diag`
+(`m_{t^λ t^λ} = x_λ`, the sibling's anchor from claude/hecke-c1-triangular-2026-08-30) is
+stated at `t = colSuperstandard μ` — exactly where the defective and correct definitions
+COINCIDE. It was right throughout, and it is precisely the case that cannot detect the defect.
+A base case that is invariant under the bug is not evidence the definition is sound.
+
+**next**: spanning (Mathas Lemma 3.9 + 3.14) — now genuinely the single open input to (C1).
+The q=1 template is the corpus's own sorry-free `standardPolytabloid_straightening` on the
+`colWordNum` measure.
