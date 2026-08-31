@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T10:15:04Z
+updated_at: 2026-08-31T10:36:56Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -1232,3 +1232,44 @@ monovary hypothesis, with three orders of magnitude of room. Same shape as the
 
 **Does NOT settle `M₁ > 0`** — the negative term is ~65% of the positive one and
 that difference remains the open part.
+
+
+---
+
+### 2026-08-31 (cont.) — `M₁ > 0` as a pairwise statement: ~48× more room, and a route closed
+
+**The reformulation.** The symmetrisation identity (Lean:
+`WeightedChebyshev.two_mul_weighted_cov_eq`) applies to `M₁` **directly**, with
+no growth-chain split:
+
+> `2M₁ = Σ_{λ,μ} P(λ)P(μ)·(Σh(λ)−Σh(μ))·(Σc²(λ)−Σc²(μ))`
+>
+> so **`M₁ > 0` ⟺ concordant pair mass > discordant pair mass**
+
+Finite, pairwise — **no asymptotics and no CLT in the statement**.
+
+**FINDING 1 — ~48× more room than the recorded route.** This bean's parent
+records `M₁ = Cov(Σ|c|,Σc²)[+] + 2Cov(ΣD,Σc²)[−]` with the negative term ~65% of
+the positive ("need ratio > −1 uniformly") — a margin of ~2.9×. Measured
+exactly over n = 6..18, the pairwise ratio discordant/concordant settles at
+
+> **0.007235 over the last five n → a ~138× margin**
+
+with `2M₁ > 0` at every n. Roughly **48× more room** for the same conclusion.
+
+**FINDING 2 — ROUTE CLOSED (measured).** The obvious next step is to call
+discordant pairs atypical and apply a classical Plancherel large-deviation bound
+on `λ₁`. **It does not work.** Fraction of discordant product-mass from pairs
+where either diagram exceeds `t·√n` in row-length or depth:
+
+| t = 2.0 | t = 2.5 | t = 3.0 |
+|---|---|---|
+| 0.05–1.4% | < 1e-4 % | < 1e-10 % |
+
+So ~100% of the discordant mass sits **inside** the VKLS window — the discordant
+pairs are **typical** diagrams, and no `λ₁` tail estimate can isolate them.
+Recorded so it is not retried.
+
+**Plainly: `M₁ > 0` is not closed.** The reformulation buys ~48× of room and
+removes the CLT from the *statement*, but not from the *proof* — the bound must
+come from the bulk, which is where the Kerov machinery lives anyway.
