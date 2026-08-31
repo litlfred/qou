@@ -1,7 +1,7 @@
 {
   "computation": "enumerator-selection-criterion-audit",
   "scriptFile": "probes/enumerator_selection_criterion_audit.py",
-  "computedAt": "2026-08-31T04:39:33.632412+00:00",
+  "computedAt": "2026-08-31T04:44:09.633616+00:00",
   "contentBlock": "qou-brng",
   "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
   "source_witness": "_deprecated/binding-k-enumerator.witness.json",
@@ -210,6 +210,16 @@
       "detail": "min_length list heads with [3,3] for all three atoms; the residual-ranked head is [-8, -8]. My earlier claim that 'the principle is not minimality' is right about the code's sort key and wrong about what produced the corpus's carrier"
     },
     {
+      "name": "the minimal-set search is 99.8% redundant at L <= 8",
+      "passed": true,
+      "detail": "87,380 words collapse to 145 elements because sigma_3 and sigma_6 commute; the enumerator re-evaluates the same group element hundreds of times"
+    },
+    {
+      "name": "and the minimal-set answer is ANALYTIC -- no search needed at any L",
+      "passed": true,
+      "detail": "Brunnian needs lk(1,2) = lk(2,3) = lk(1,3) = 0; those are a/2, b/2 and 0, so a = b = 0, the TRIVIAL carrier, at every length. lk(1,3) = 0 is FORCED: sigma_3 transposes positions 3,4 and sigma_6 transposes 6,7, so a block-1 strand and a block-3 strand never meet. The Borromean needs all three pairs linked, so it is unreachable in this layout"
+    },
+    {
       "name": "extending L_K_max is FUTILE without repairing the criterion",
       "passed": true,
       "detail": "a longer search re-ranks by a comparator that prefers non-carriers (defect 1), breaks ties in rounding error (defect 2) and is degenerate on the interfaces (defect 3); more candidates do not fix a broken comparator"
@@ -224,6 +234,52 @@
     "The corpus's canonical A=3 carrier (Borromean L6a4) is not reachable from the MINIMAL set at all: sigma_3 and sigma_6 are distant hence commute, so that subgroup is free abelian and Brunnian forces the trivial carrier. The recorded run used the EXTENDED set, where Brunnian carriers do exist."
   ],
   "lean": "QOU/Mass/EnumeratorSelectionDegeneracy.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "minimal_set_collapse": {
+    "reason": "sigma_3 and sigma_6 are distant (|3-6| >= 2) hence commute; <sigma_3, sigma_6> is free abelian of rank 2",
+    "by_length_bound": [
+      {
+        "L_max": 1,
+        "words": 4,
+        "elements": 5
+      },
+      {
+        "L_max": 2,
+        "words": 20,
+        "elements": 13
+      },
+      {
+        "L_max": 3,
+        "words": 84,
+        "elements": 25
+      },
+      {
+        "L_max": 4,
+        "words": 340,
+        "elements": 41
+      },
+      {
+        "L_max": 5,
+        "words": 1364,
+        "elements": 61
+      },
+      {
+        "L_max": 6,
+        "words": 5460,
+        "elements": 85
+      },
+      {
+        "L_max": 7,
+        "words": 21844,
+        "elements": 113
+      },
+      {
+        "L_max": 8,
+        "words": 87380,
+        "elements": 145
+      }
+    ],
+    "verdict": "the minimal-set search is unnecessary at any L: Brunnian forces the trivial carrier, and lk(1,3) = 0 is forced by reachability (blocks 1 and 3 never cross), so the Borromean is unreachable in this layout"
+  },
   "related": [
     "probes/carrier-crossing-quantisation.witness.json"
   ]

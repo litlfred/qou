@@ -8,6 +8,7 @@ created_at: 2026-08-21T15:05:00Z
 updated_at: 2026-09-03T04:08:18Z
 updated_at: 2026-08-31T21:20:07Z
 updated_at: 2026-08-31T04:40:24Z
+updated_at: 2026-08-31T04:44:50Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -968,3 +969,16 @@ generators, so it was never reachable there.
 the exact `1|2`/`2|3` symmetry. Lean
 `QOU/Mass/EnumeratorSelectionDegeneracy.lean` (8 decls, sorry-free); probe
 `enumerator_selection_criterion_audit.py` (7/7, nothing re-run).
+
+
+**Follow-up measurement — the minimal-set search is both redundant and
+unnecessary.** Because `σ₃` and `σ₆` commute, at `L ≤ 8` the enumerator would
+walk **87,380 words for 145 distinct group elements — 99.83 % redundant.** And
+the answer needs no search at all: Brunnian forces `a = b = 0`. `lk(1,3) = 0` is
+forced by *reachability* — `σ₃` transposes positions 3,4 and `σ₆` positions 6,7,
+so a block-1 strand and a block-3 strand never meet — hence the Borromean, which
+needs all three pairs linked, is **unreachable in this layout**.
+
+That is the real open question now: **what braid presentation of three nucleons
+admits a Brunnian carrier at all?** It is a design question about the
+construction, not a search.
