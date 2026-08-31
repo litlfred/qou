@@ -50,17 +50,16 @@ most trivial model available and asking `lean` whether it type-checks:
 |---|---|
 | classes probed | 79 |
 | **INHABITED with no hypotheses** | **52** (26 machine + 26 hand) |
-| scored NOT vacuous — genuine claim | 16 (`MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall`, `H2SAngleS3HolonomyConjecture`, `DeltaTauMSurrogateTaylorCoeff2` + 6 already inhabited in the corpus) |
+| scored NOT vacuous — genuine claim | 21 — `MatrixChainEqBuildChains`, the four §4 gates, `HasFiniteLPDuality`, `ConvergenceBound`, `QIntRatioBoundSmall`, `H2SAngleS3HolonomyConjecture`, `DeltaTauMSurrogateTaylorCoeff2`, `FiberAdjointInvolutionContext`, `QuantumObservableUniverseExistsContext`, `DressedMassSubstrateSplit`, `WhiteheadVolumeConjectureLimit`, `HasDqSquaredNonvanishing`, + 6 already inhabited in the corpus |
 | REFUTABLE — false as stated | 2 (`SkeinMassRelationHolds`, `DoubleMagicConjecture`) |
-| INERT — no direction can be invoked | 1 (`RadiusOfConvergenceGateClass`) |
+| INERT — no direction can be invoked | 2 (`RadiusOfConvergenceGateClass`, `ConfinementPhaseStratificationContext`) |
 | **DRAINED — proved outright, class deleted** | 2 (`ProtonPairSkeinApprox`, `NeutronPairSkeinApprox`) |
-| still undecided — INCONCLUSIVE, see method below | 6 |
+| still undecided | **0** |
 | hand-verified before any tooling existed | 5 of 5 |
 
-The 6 that remain, so the next agent does not have to re-derive the list:
-`ConfinementPhaseStratificationContext`, `DressedMassSubstrateSplit`,
-`FiberAdjointInvolutionContext`, `HasDqSquaredNonvanishing`,
-`QuantumObservableUniverseExistsContext`, `WhiteheadVolumeConjectureLimit`.
+**The list is empty.** All 79 are adjudicated: 52 vacuous, 21 genuine, 2 false
+as stated, 2 inert, 2 drained by proof. See the final tranche below for the last
+six, which are the most encouraging six in the set.
 
 `HasDqSquaredNonvanishing` is worth a line of its own, because its ledger entry
 is arguably **already dispositioned**: on 2026-08-23 the circular instance
@@ -807,6 +806,71 @@ first-derivative proof) and `f''(1)/2 = 2880/1728/2 = 5/6` ✓. So it is drainab
 by disposition 1 — prove the second derivative — which the file's docstring
 already calls "bulky but tractable". Not attempted here; it is the largest
 single remaining piece of Lean work in this arc.
+
+### The final six — and the tail is not where the hard cases are
+
+The last six resolve **1 inert, 5 genuine**, and the interesting thing is *why*
+the five are genuine: **three of them carry an in-source record of having
+already been hardened against exactly this defect.** The tail of the ledger is
+not the hardest cases; it is largely cases that were already fixed and whose
+ledger entries are stale.
+
+- **`FiberAdjointInvolutionContext`** — its own docstring says a bare
+  `Nonempty (FiberAdjointInvolution C fh)` *"is provable for every category and
+  datum, and asserts nothing … that degenerate witness was what this declaration
+  shipped until 2026-08-09"*, citing
+  [`2026-08-09-inhabitation-is-a-weak-discriminator.md`](2026-08-09-inhabitation-is-a-weak-discriminator.md).
+  The conjunct `inv.adjointObj = fh.obj` was added to close it.
+- **`QuantumObservableUniverseExistsContext`** — the structure it asserts
+  `Nonempty` of records that `adjointObj` *"was previously a free field … That
+  made `adjoint_vanishing` satisfiable by taking `adjointObj := 0`"*, fixed under
+  bean `qou-fav8`.
+- **`DressedMassSubstrateSplit`** — its docstring records a prior axiom that made
+  the library **inconsistent**, and that *"the tautology fix over-corrected into
+  unsoundness — the statement stopped being empty by starting to be false."* The
+  class is the second repair, deliberately with no instance.
+- **`WhiteheadVolumeConjectureLimit`** — a genuine open conjecture (van der Veen,
+  arXiv:math/0611181), STATE-AND-QUEUED, with bean `qou-1gkf` tracking the port
+  of the already-sorry-free downstream `⌊N/2⌋` result to this exact form.
+- **`HasDqSquaredNonvanishing`** — the circular `Fact`-based instance was removed
+  2026-08-23, leaving what the file calls "an honest open carrier".
+
+**`ConfinementPhaseStratificationContext` is INERT, and its repair already
+exists one file over.** The content-block sibling
+`knots-particles-confinement/confinement-phase-stratification.lean` declares
+`opaque confined` and `opaque mu` with nothing constraining either, so its class
+fields — `IsOpen (confinementLocus P)` and μ-constancy — are neither provable nor
+refutable, the same mechanism as the radius gate.
+
+But the library module `QOU/BraidKnot/ConfinementPhaseStratification.lean` is the
+model repair, and says so:
+
+> *"Rather than `opaque`-stubbing them, we package them as a typeclass
+> `HasRealAxisData`… We therefore package the genuine analytic inputs — **not
+> the conclusions** — as a typeclass, and **derive** the trio from them. This
+> keeps the class honest: its fields are the hypotheses of the stratification
+> theorem, and each theorem below performs a real inference … rather than
+> projecting an assumed conclusion."*
+
+And it does derive: `phase_locus_open` is
+`rw [confinementLocus_eq_feasible P]; exact h.feasible_isOpen` — it uses
+`confined_iff_feasible` to rewrite, then applies openness of a *different* set.
+That is §3b-cond item 5 satisfied.
+
+**This is the §0a shadowing-stub defect exactly.** The content block's
+`lean.ref` is already `qou:QOU.BraidKnot.ConfinementPhaseStratification`, and
+the library file has a `theorem ConfinementPhaseStratification` at line 165 —
+the very declaration named. Per §0a, sibling resolution wins over the library
+path, so the opaque-stub sibling **intercepts** the honest declaration its own
+manifest points at.
+
+Prescribed fix, in AGENTS.md's own words: *"If the decl lives at
+`<lakeRoot>/<Decl/Path>.lean` (candidate 2), **do not** add a sibling `.lean` —
+let the ref resolve to the library decl."* Deleting the sibling is therefore a
+stub removal, not an authorial substitution — the ref does not change. It is not
+done here because it also retires the block's `.qa.json` criteria keyed on
+`source_hashes.lean`, which wants its own validate-and-sweep cycle rather than
+riding on a Lean-only verification.
 
 ## Adjacent observation, not a finding
 
