@@ -1,21 +1,21 @@
 A first pass at a surreal lift of QOU would catalogue the
 general-purpose obstructions — Lebesgue measure, Hilbert-space
 completion, hyperbolic geometry — that surreal numbers famously
-lack [@alling1987]. An honest audit of the **actual** QOU
+lack \cite{alling1987}. An honest audit of the **actual** QOU
 content, however, finds that most of these obstructions are
 *not triggered* by the main paper. This remark records which
 obstructions genuinely bite and which are only apparent.
 
 ## 0. An audit, not an axiomatisation
 
-The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015] prove a two-sided result on integration over the surreals:
+The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman \cite{costin-ehrlich-friedman2015} prove a two-sided result on integration over the surreals:
 
 - **Positive direction.** A robust algebraic integral exists for
   the class of semi-algebraic, analytic, and
   [Écalle–Borel transserial functions](#def:ecalle-borel-resummation),
   obtained by routing through Hardy-
   field germs and the surreal–transseries correspondence
-  [@berarducci-mantova2018]. On this class the integral satisfies
+  \cite{berarducci-mantova2018}. On this class the integral satisfies
   the standard properties (linearity, FTC, translation
   invariance).
 - **Negative direction.** Set-theoretic obstructions rule out

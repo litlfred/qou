@@ -18,7 +18,7 @@ At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$ carries crossing ene
 We work out the concrete electron consistency check ([electron consistency check](#rem:mass-energy-electron-check)) and the pair-creation reinterpretation ([pair creation reinterpreted](#rem:mass-energy-pair-creation)) separately.
 
 **Archimedean realisation.**
-Over $\mathbb{C}$, Yekutieli's nonabelian multiplicative integral \[yekutieli2015] realises the categorical mass ([mass over $\mathbb{C}$](#cor:mass-identity-C)). The relation $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes:
+Over $\mathbb{C}$, Yekutieli's nonabelian multiplicative integral \cite{yekutieli2015} realises the categorical mass ([mass over $\mathbb{C}$](#cor:mass-identity-C)). The relation $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes:
 
 $$
   \sum_{\text{crossings}} \epsilon_i
