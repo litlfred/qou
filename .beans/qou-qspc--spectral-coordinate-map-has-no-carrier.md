@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-30T04:20:00Z
+updated_at: 2026-08-31T04:41:40Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -310,3 +310,70 @@ audit blocks in isolation, and neither file is wrong by itself. Worth a detector
 — hypotheses of a content-block theorem that match, up to renaming, the
 *conclusion* of a theorem in a sibling block of the same chapter. Filed as
 `qou-sibdup`.
+
+
+--------
+
+## 2026-08-31 — what the FUNCTIONAL EQUATION alone forces. Bean stays OPEN.
+
+Four new declarations in `spectral-half-line.lean`, all `lean`-direct exit 0
+and all `#print axioms`-clean (`[propext, Classical.choice, Quot.sound]`).
+
+**This does not close the bean, and is not offered as closing it.** The
+identification `HasReebSpectralCoords` still has no instance. What changed is
+that the open item now has a *cheap falsification test* attached to it.
+
+### The observation
+
+`reeb_spectrum_on_critical_line` consumes BOTH Weil inputs — the functional
+equation and Castelnuovo–Severi, the latter through `hasse_weil_bound`.
+Castelnuovo–Severi is the deep one. Nobody had asked what the shallow half
+forces on its own.
+
+It forces a reflection. The pairing `α_{σi} = q/αᵢ` transports through
+`αᵢ = q^{ρᵢ}` to `Re ρ_{σi} = 1 − Re ρᵢ`: the eight real parts are a multiset
+**symmetric about 1/2** without yet lying on it. Summing that over the
+bijection gives `S = 8 − S`, hence
+
+    ∑ᵢ Re ρᵢ = 4 = g,   the genus of Bring's curve
+
+with `8 = 2g` eigenvalues pairing into `g` reflected pairs of total 1 each.
+
+### Why the weaker statement is the useful one
+
+It is genuinely weaker — real parts `{0.3, 0.7}` satisfy it and violate the
+critical line, so passing is evidence and not proof (scope-(a)). But it is
+weaker in a useful direction:
+
+- it is **one real number**, the trace of `ξ_q` on the eight fundamental modes;
+- it needs **no Castelnuovo–Severi**, so it can be checked before any of the
+  hard machinery is in place;
+- it is **necessary**: a `ξ_q` whose eight modes have `∑ Re ρᵢ ≠ 4` cannot
+  satisfy `HasReebSpectralCoords` for ANY `IsWeilZeta` datum. The
+  identification would be refuted outright.
+
+The hypothesis-honesty is in the types, not just the prose: the two primitive
+theorems take the permutation `σ` as an **explicit argument** rather than
+reaching for `[IsWeilZeta Z]`, so which half of the Weil input is doing the
+work is visible in the signature. The `[IsWeilZeta]` form is a convenience
+wrapper over them.
+
+### The declarations
+
+- `reeb_spectrum_reflected_by_functional_equation` — the reflection.
+- `reeb_spectrum_sum_re` — the trace identity, explicit `σ`.
+- `reeb_spectrum_sum_re_of_isWeilZeta` — convenience wrapper.
+- `reeb_spectrum_sum_re_witness` — **joint** satisfiability on
+  `weilZetaExample` (`q = 4`, all `αᵢ = 2`; supersingular, so every
+  `ρᵢ = log 2/log 4 = 1/2` and the eight sum to 4). Each of the three
+  hypotheses was separately known inhabited, which is NOT the same as their
+  being jointly inhabited — a theorem conditional on an unsatisfiable
+  conjunction proves nothing, and that is the exact defect the `False`-proving
+  axioms removed from `hasse-weil-bound.lean` had.
+
+### What is still open — unchanged
+
+Nothing here says what `ξ_q` is. The gap remains exactly where the bean put
+it: the identification of the framework's Reeb derivation with an operator
+whose spectrum is the Frobenius exponents. This adds a test that a candidate
+must pass, not a candidate.

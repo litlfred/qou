@@ -325,4 +325,117 @@ theorem hasReebSpectralCoords_satisfiable (Z : LocalQZetaFunction) (hq : Z.q > 1
     · subst hji; simp [diagOp]
     · simp [diagOp, Pi.single_eq_of_ne hji]
 
+/-! ## What the functional equation ALONE forces on the Reeb spectrum
+
+`reeb_spectrum_on_critical_line` is the arc's target, and it consumes both Weil
+inputs: the functional equation *and* Castelnuovo–Severi, the latter through
+`hasse_weil_bound`. Castelnuovo–Severi is the deep one.
+
+The two results below use **only the functional equation**, and say so in their
+types — they take the permutation as an explicit argument rather than reaching
+for `[IsWeilZeta Z]`, so a reader can see at a glance which half of the Weil
+input is doing the work. That matters for a reason beyond tidiness: it isolates
+a *cheap necessary condition* on the identification.
+
+The identification `HasReebSpectralCoords` is open (`qou-qspc`). Anyone
+proposing that the framework's `ξ_q` satisfies it now has something to check
+that does not require establishing the Hasse–Weil bound first, and
+`reeb_spectrum_sum_re` reduces that check to **one real number**. -/
+
+/-- **The functional equation reflects the Reeb spectrum in the critical line.**
+
+    Given the Weil pairing `α_{σ i} = q / αᵢ` as a permutation `σ`, the
+    identification transports it to `Re ρ_{σ i} = 1 − Re ρᵢ`. So the multiset of
+    real parts is symmetric about `1/2`.
+
+    This is strictly weaker than `reeb_spectrum_on_critical_line`, and
+    deliberately so: symmetry about the line is not the same as lying on it. A
+    spectrum with real parts `{0.3, 0.7}` satisfies this and violates the
+    critical line. Castelnuovo–Severi is what collapses the symmetry onto the
+    fixed locus; `critical_line_iff_fixed` names that locus. -/
+theorem reeb_spectrum_reflected_by_functional_equation
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i) :
+    ∀ i, (R.spec (σ i)).re = 1 - (R.spec i).re := by
+  intro i
+  refine partner_re_eq_one_sub Z.q hq (R.spec i) (R.spec (σ i)) ?_
+  rw [← HasReebSpectralCoords.coords (Z := Z) (R := R) (σ i),
+      ← HasReebSpectralCoords.coords (Z := Z) (R := R) i]
+  exact hσ i
+
+/-- **The Reeb spectrum has trace equal to the genus.** `∑ᵢ Re ρᵢ = 4`.
+
+    Bring's curve has genus `g = 4`, and `LocalQZetaFunction` carries `2g = 8`
+    eigenvalues — the `Fin 8` throughout this file. So the statement is
+    `∑ Re ρᵢ = g`, and it is forced by the functional equation alone.
+
+    **Why this is the useful form.** It follows from
+    `reeb_spectrum_on_critical_line` too (eight halves make four), but that route
+    needs Castelnuovo–Severi. Here the hypothesis is only the pairing, and the
+    conclusion is a *single real number* computable from any candidate operator
+    without diagonalising it in the complex plane: the trace of the Reeb
+    derivation on the eight fundamental modes, real part, must be `4`.
+
+    So it is a falsification test for `qou-qspc`'s open identification. If the
+    framework's `ξ_q` has `∑ᵢ Re ρᵢ ≠ 4` on its eight modes, then no `IsWeilZeta`
+    datum can satisfy `HasReebSpectralCoords` with that operator, and the
+    identification is refuted — without ever touching the deep Weil input.
+
+    It is of course only necessary, not sufficient: `{0.3, 0.7}` sums correctly
+    and sits off the line. Scope-(a): passing this test is evidence, not a
+    proof. -/
+theorem reeb_spectrum_sum_re
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i) :
+    ∑ i, (R.spec i).re = 4 := by
+  have hrefl := reeb_spectrum_reflected_by_functional_equation Z hq R σ hσ
+  have hperm : ∑ i, (R.spec (σ i)).re = ∑ i, (R.spec i).re :=
+    Equiv.sum_comp σ (fun i => (R.spec i).re)
+  have key : ∑ i, (R.spec i).re = ∑ i : Fin 8, (1 - (R.spec i).re) := by
+    rw [← hperm]
+    exact Finset.sum_congr rfl (fun i _ => hrefl i)
+  rw [Finset.sum_sub_distrib] at key
+  simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul,
+    Nat.cast_ofNat, mul_one] at key
+  linarith
+
+/-- The same two facts packaged for a datum that carries `[IsWeilZeta Z]`, which
+    supplies the permutation. Convenience only — the content is above, and the
+    explicit-`σ` forms are the ones that record which hypothesis was used. -/
+theorem reeb_spectrum_sum_re_of_isWeilZeta
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R] :
+    ∑ i, (R.spec i).re = 4 := by
+  obtain ⟨σ, hσ⟩ := IsWeilZeta.functional_equation (Z := Z)
+  exact reeb_spectrum_sum_re Z hq R σ hσ
+
+/-- **The whole chain is jointly satisfiable, and the trace really is 4.**
+
+    `reeb_spectrum_sum_re` is conditional on three things at once — a Weil datum,
+    a Reeb spectrum, and the identification between them. Each is separately
+    known to be inhabited, which is *not* the same as their being jointly
+    inhabited, and a theorem conditional on an unsatisfiable conjunction proves
+    nothing.
+
+    Here they are met together, on `weilZetaExample` (`q = 4`, every `αᵢ = 2`).
+    That datum is supersingular: `|αᵢ| = 2 = √q`, so every spectral exponent is
+    `log 2 / log 4 = 1/2` and the eight of them sum to `4`. The conclusion is
+    therefore exhibited on a concrete case, not merely derived. -/
+theorem reeb_spectrum_sum_re_witness :
+    ∃ R : ReebSpectrum (Fin 8 → ℂ),
+      ∃ _ : HasReebSpectralCoords weilZetaExample R,
+        ∑ i, (R.spec i).re = 4 := by
+  have hq : weilZetaExample.q > 1 := by norm_num [weilZetaExample]
+  obtain ⟨R, hR⟩ := hasReebSpectralCoords_satisfiable weilZetaExample hq
+  refine ⟨R, hR, ?_⟩
+  haveI := hR
+  exact reeb_spectrum_sum_re_of_isWeilZeta weilZetaExample hq R
+
 end QOU.AlgebraicSubstrate
