@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T17:09:49Z
+updated_at: 2026-08-31T17:16:52Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -205,3 +205,53 @@ Measured there: inner products span `[−1, 0.4472]`, so `⟪⟫ ≤ ½` holds w
 Frobenius bound `m²/d = 48` with equality and exceeding the naive ceiling 45.
 
 **Gap #2 stays OPEN** — the link-volume half is data-blocked.
+
+
+---
+
+### 2026-08-31 — Gap #3: the quoted "best structural 2.52 %" is a MENU MINIMUM
+
+**This bean records "Gap #3: A=3 mirror magnitude (³H/³He; best structural
+2.52%)". The corpus already contains its own verdict on that number, and this
+bean's phrasing does not carry it.**
+`docs/audits/2026-05-31-option-e-kashiwara-refresh-assessment.md`:
+
+> 9 scales × 9 inputs (**81 candidates**) + explicit back-solve …
+> **FITTED + BACK-SOLVED.** This is the PR #1578 `(1+q)/2` antipattern verbatim …
+> **The 81-candidate menu min (+2.52 %) is also a fit.**
+
+So the headline is a menu minimum and the published 0.11 % beside it is an
+explicit back-solve. **Neither is parameter-free.**
+
+**The parameter-free number.** Both A=3 targets *are* usable in the four-point
+table (unlike D and ⁴He), so the ratio test runs with zero free parameters:
+
+| | |
+|---|---|
+| `B(³H)/B(³He)` | 1.09895709 |
+| `Vol(8₁₁)/Vol(L6a4)` | 1.13081715 |
+| **discrepancy** | **2.899 %** |
+
+The menu min of 2.52 % is a **13.1 % reduction** on that — what 81 degrees of
+selection freedom bought.
+
+**And it is expected.** With N candidates each inside tolerance with probability
+`p`, `P(best one is) ≥ 1 − exp(−Np)` — **`QOU.MathlibExt.SelectionBound.menu_min_prob_ge`**,
+sorry-free. For N = 81 with candidate errors uniform on [0,R]:
+
+| R | 0.25 | 0.5 | 1.0 | 2.0 |
+|---|---|---|---|---|
+| P | 0.9998 | 0.985 | **0.873** | 0.642 |
+
+Even granting errors spread over a full 100 %, a menu min ≤ 2.52 % arrives by
+chance **seven times in eight**.
+
+**What the splitting actually is.** `ΔB = 0.76375 MeV` against naive Coulomb
+0.82–1.02 MeV (R = 1.7–2.1 fm), i.e. `ΔB/E_C = 0.75–0.93`. Coulomb alone
+accounts for three-quarters to all of it. A charge-**blind** topological ratio
+has almost nothing left to explain; the only charge dependence here enters via
+the link assignment (8₁₁ vs L6a4) from the braid word.
+
+**Consequence: Gap #3 is WIDER than recorded, not narrower.** The honest
+parameter-free figure is **2.899 %**, and 2.52 % should not sit beside it as a
+structural result.
