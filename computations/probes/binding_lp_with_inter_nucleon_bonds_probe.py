@@ -73,6 +73,12 @@ all-bonds value to `4.4e-16`:
     3He   p-n, n-p       L = 1.353643185  =  0.676821592 x 2
     3H    p-n, n-n       L = 1.584083858  =  0.676821592 + 0.907262272
 
+**NARROWED (2026-09-01)** by `all_pairs_bonds_and_saturation_probe.py`: this
+additivity holds over the ADJACENT chain only, because those bonds sit at
+generators `3k+2`, three apart, and commute. Once a long-range band generator is
+included the residual is `2.4e-1`, not `4.4e-16`. The per-bond constants below
+stand; the additive law does not extend to all pairs.
+
 so the whole thing is carried by two per-bond-type constants:
 
     L_pn = 0.676821592386        L_nn = 0.907262271178

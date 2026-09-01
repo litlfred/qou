@@ -1492,3 +1492,68 @@ corpus's mass normalisation, deliberately not applied.
 **Scope**: A=4 not computed — H_12 has 77 partitions with Specht dims to 2673,
 intractable by the dense seminormal route. Three nuclei fix both constants and
 test additivity, but not the law beyond two bonds.
+
+## 2026-09-01 — all pairs: supported. Falloff: real, but SATURATION not distance decay.
+
+`computations/probes/all_pairs_bonds_and_saturation_probe.py`, 6/6.
+Owner: *"I think we want it between all pairs. it might be highly concentrated
+on adjacent pairs but then falls away quickly (rate depending on the type of
+bond)."* Plus the method note — only degree 0 is observable through the trace,
+so binding is reached by subtracting constituents from the atom. That is exactly
+what `L := log(tr_M(free)/tr_M(atom))` is: a difference of two degree-0
+observables.
+
+**The long-range bond, built honestly.** The braid **band generator**
+`a = (T5 T4 T3)(T2 + d)(T3 T4 T5)^-1`, verified by its permutation to be the
+`(2,6)` swap — last strand of block 0 to first of block 2. Same crossing carried
+across the middle block; **no free parameter**.
+
+**RESULT 1 — there is NO intrinsic distance decay.** A far bond *in isolation*
+contributes *exactly* what an adjacent one does: pn `0.676821592` vs
+`0.676821592`, pp `0.489899384` vs `0.489899384`, ratio 1 to 1e-8. The band is a
+conjugate of `T_2` and the Markov trace cannot see how far it reaches. **A decay
+in the bond itself would have to be put in by hand — the braid does not give
+one.**
+
+**RESULT 2 — but the falloff IS real, as saturation.** It appears only in
+combination. With the adjacent bonds present, the far bond's *marginal*
+contribution drops:
+
+    3H   adjacent 1.584083858 -> all pairs 2.017810479
+         marginal 0.433726621 / 0.676821592 alone = 0.640829
+    3He  adjacent 1.353643185 -> all pairs 1.676935518
+         marginal 0.323292333 / 0.489899384 alone = 0.659916
+
+**Suppression ~0.65, nearly type-independent (2.9% apart), measured not fitted.**
+Cause: adjacent bonds sit at gens `3k+2`, three apart, so they **commute**; the
+band spans gens 3,4,5 and overlaps both the middle nucleon and the second
+adjacent bond. **Saturation, not distance.** The owner's picture is right in
+outcome, wrong in mechanism — and the two are separable at A>=4, where a nucleon
+has several far neighbours at several distances.
+
+**RESULT 3 — which narrows my own last claim.** I reported `L` exactly additive
+over bonds at 4.4e-16. That holds over the **adjacent chain only**. With the
+band included the residual is `2.4e-1` (3H) and `1.7e-1` (3He) — nine orders
+worse. Narrowed to "additive over ADJACENT bonds"; the per-bond constants stand.
+`binding_lp_with_inter_nucleon_bonds_probe.py` amended with a pointer.
+
+**RESULT 4 — all pairs is the better topology.** Measured all-pairs values, AME
+read-only:
+
+    model              2H/3He             3H/3He
+    chain (adjacent)   0.50000 (+73.5%)   1.17024 ( +6.5%)
+    all pairs          0.40361 (+40.0%)   1.20327 ( +9.5%)
+    EXPERIMENT         0.28823            1.09896
+
+**All pairs nearly halves the A-scaling error and costs three points on the
+mirror. Net, the owner's call is supported** — and it is what `atom_gen_chains`
+already does, against `atom_braid_word_3A`'s chain. So that builder
+inconsistency is not cosmetic: it is a choice with a measurable consequence, and
+the evidence favours all-pairs.
+
+**RESULT 5 — and neither is right.** Solving each ratio for a single distance-2
+weight: `f = +2.030134` from A-scaling, `f = -0.696951` from the mirror. Wildly
+inconsistent, one negative. **A one-parameter falloff is refuted outright.**
+Per-type rates would be 2 unknowns against 2 ratios — exactly determined, i.e. a
+fit with zero predictive content at this size. Separating them needs A=4, which
+is out of reach: H_12 has 77 partitions with Specht dims to 2673.
