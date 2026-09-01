@@ -100,6 +100,46 @@ falsification's "whatever is absent breaks the bar symmetry" is therefore
 structure is somewhere else in the algebra, and this rules out an entire
 one-parameter search before anyone runs it.
 
+## The escape, located exactly -- and it is a fine-tuning, not a mechanism
+
+An exclusion is only as useful as the escape it identifies, so trace the
+inequality to its one load-bearing step: `|det| >= 1` requires `(h+d)d <= 0`,
+i.e. `d` and `h+d` of opposite sign, which holds exactly on the hull `[-h, 0]`.
+Outside it `|det|` can drop below 1 and `R` exceeds 1.
+
+**The tempting escape -- a bigger irrep -- is dead.** In ANY irrep `sigma` has
+eigenvalues `{q, -1/q}`, so `det rho(w) = +-1` for every braid word and `R = 1`
+IDENTICALLY.  Three-strand `H_3` is *worse*, not better.  Verified below on the
+2-dim irrep of `H_3`, built from the braid relation and the quadratic (both
+residuals `1.3e-51`) rather than imported.
+
+**Where `R` actually diverges is exact and named.**  `det T(1,d) = (h+d)d - 1`
+vanishes iff `-d` is an eigenvalue of `sigma`:
+
+    d = 1/q :  h + 1/q = q     =>  q*(1/q) - 1 = 0
+    d = -q  :  h - q   = -1/q  =>  (-1/q)*(-q) - 1 = 0
+
+and those two points are exactly the **isospin projectors** (`sigma + 1/q` is
+proportional to `P_+`, `sigma - q` to `P_-`) -- the same projectors that supply
+the T=1/T=0 split.  So `R` is unbounded, and nature's `22.25` IS reached:
+
+    R(d) = 22.24566   at   d = 0.900918105761   =   4.309 * h,
+    which is 1.78e-7 short of the projector at 1/q.
+
+**Read that as a verdict, not a target.**  The framework would need its bond
+letter fine-tuned to `~2e-7` of a point where the transfer matrix DEGENERATES.
+That is evidence *against* the letter carrying the asymmetry, not a place to
+aim a derivation.
+
+**Two further corrections to my own passes, both about RANGE, not arithmetic.**
+I first swept only to `d = 3h` and reported "R never reaches 22.25" -- true of
+the range swept, false of the family, since the pole sits at `4.309*h`.  I then
+swept the right window on a UNIFORM grid, which a logarithmic divergence
+outruns: 20000 points reach only `R = 14.3`.  The assertion failed rather than
+letting a second "never reaches" through, and the value above is obtained by
+bisection.  **A negative result is only as good as the range and the resolution
+behind it**, and my first two attempts were each short on one.
+
 ## What is NOT claimed
 
   * NOT that the eigenvalue criterion is wrong about SIGNS.  Its 4/4 stands;
@@ -288,20 +328,158 @@ def main() -> int:
     print("    special and it could not have helped: the bound is on the range,")
     print("    not on where in the range the p-n letter happens to sit.")
 
-    print("\n[6] WHAT THIS SETTLES")
+    print("\n[6] WHERE THE BOUND FAILS -- localising what the framework would NEED")
     print("-" * 78)
-    print("  SETTLED, scope-(b): no bond letter in the admissible family gives a")
-    print("    channel asymmetry beyond a few percent.  The eigenvalue")
-    print("    criterion's falsification -- 'whatever is absent breaks the bar")
-    print("    symmetry' -- is NOT satisfiable inside the bond-letter family.")
-    print("    An entire one-parameter search is ruled out before it is run.")
-    print("  SETTLED, scope-(a): delta is the isospin-mixing asymmetry (checked")
-    print("    exactly in [1]), and is 1.4e-3 -- four orders below what is")
-    print("    needed even if the family bound did not already exclude it.")
-    print("  NOT SETTLED: where the missing structure IS.  This says it is not")
-    print("    in the letter.  The next candidates are outside the")
-    print("    one-crossing algebra entirely.")
-    print("  NOT CLAIMED: nothing wired, nothing fitted.  R is alpha-free.")
+    print("    The exclusion is only as useful as the escape it identifies, so")
+    print("    trace the inequality back to its one load-bearing step:")
+    print("        |det| = |(h+d)d - 1| >= 1   REQUIRES   (h+d)d <= 0,")
+    print("    i.e. d and h+d of OPPOSITE SIGN -- true exactly on d in [-h, 0],")
+    print("    the convex hull of the two pure channels sigma and sigma^-1.")
+    print("    Outside that hull (h+d)d > 0 and |det| can drop BELOW 1, which is")
+    print("    the only way log|l_+| + log|l_-| goes negative and R exceeds 1.")
+    print()
+    print("    FIRST, kill the tempting wrong escape.  Going to a bigger irrep")
+    print("    does NOT help: in any irrep sigma has eigenvalues {q, -1/q}, so")
+    print("    det rho(sigma) = -1 and |det| = 1 EXACTLY for every braid word.")
+    print("    That forces R = 1 identically -- exact antisymmetry, which is the")
+    print("    very failure being escaped.  Three-strand H_3 is worse, not")
+    print("    better, and this is checked below on the 2-dim irrep of H_3.")
+    print()
+    # H_3 two-dim irrep, built from the relations and VERIFIED, not imported
+    s1 = mp.matrix([[q, 1], [0, -1 / q]])
+    # solve the braid relation for the single free entry t in s2
+    tt = mp.findroot(
+        lambda t: (s1 * mp.matrix([[-1 / q, 0], [t, q]]) * s1
+                   - mp.matrix([[-1 / q, 0], [t, q]]) * s1
+                   * mp.matrix([[-1 / q, 0], [t, q]]))[0, 0],
+        mp.mpf("1.0"))
+    s2 = mp.matrix([[-1 / q, 0], [tt, q]])
+    braid = s1 * s2 * s1 - s2 * s1 * s2
+    quad1 = s1 * s1 - h * s1 - mp.eye(2)
+    quad2 = s2 * s2 - h * s2 - mp.eye(2)
+
+    def nrm(M):
+        return max(abs(M[i, j]) for i in range(2) for j in range(2))
+    print(f"    H_3 2-dim irrep built from the relations, t = {fmt(tt, 10)}")
+    print(f"      braid relation residual   : {fmt(nrm(braid), 3)}")
+    print(f"      quadratic residual (s1,s2): {fmt(nrm(quad1), 3)}, "
+          f"{fmt(nrm(quad2), 3)}")
+    assert nrm(braid) < mp.mpf("1e-30"), "the H_3 rep must satisfy the braid relation"
+    assert nrm(quad1) < mp.mpf("1e-30") and nrm(quad2) < mp.mpf("1e-30"), (
+        "and the Hecke quadratic")
+    for nm, M in (("s1", s1), ("s2", s2), ("s1*s2", s1 * s2),
+                  ("s1*s2*s1", s1 * s2 * s1)):
+        dd = M[0, 0] * M[1, 1] - M[0, 1] * M[1, 0]
+        print(f"      |det {nm:9s}| = {fmt(abs(dd), 14)}")
+        assert abs(abs(dd) - 1) < mp.mpf("1e-30"), (
+            "every braid word has |det| = 1 in any irrep -- R = 1 identically")
+    print("      => |det| = 1 for every word, so R = 1 EXACTLY.  Confirmed: a")
+    print("         bigger irrep cannot break the antisymmetry.  The escape is")
+    print("         NOT dimension; it is leaving the hull.")
+
+    print()
+    print("    SECOND, locate the requirement -- and it lands on an EXACT point.")
+    print("    det T(1,d) = (h+d)d - 1 vanishes iff -d is an eigenvalue of sigma:")
+    print("        d = 1/q :  h + 1/q = q,  so (h+1/q)(1/q) - 1 = q/q - 1 = 0")
+    print("        d = -q  :  h - q  = -1/q, so (h-q)(-q) - 1 = 1 - 1     = 0")
+    for nm, d0 in (("d = 1/q", 1 / q), ("d = -q ", -q)):
+        print(f"      {nm}: det = {fmt((h + d0) * d0 - 1, 4)}   exactly zero?  "
+              f"{abs((h + d0) * d0 - 1) < TOL}")
+        assert abs((h + d0) * d0 - 1) < TOL, "det must vanish at minus an eigenvalue"
+    print("    At a zero of det one eigenvalue is 0, log|l_-| -> -infinity, and")
+    print("    R DIVERGES.  So R is UNBOUNDED outside the hull, and 22.25 is")
+    print("    reached -- the question is only WHERE.")
+    print()
+    print("    And those two points are exactly the ISOSPIN PROJECTORS: sigma +")
+    print("    1/q is proportional to P_+ and sigma - q to P_-, the same")
+    print("    projectors that supply the T=1 / T=0 channel split.  The")
+    print("    divergence is not at an arbitrary extrapolation -- it is at the")
+    print("    pure channels themselves.")
+    print()
+    print(f"      {'d':>16s} {'d/h':>9s} {'|det|':>14s} {'R':>14s}")
+    NO = 20000
+    marks = []
+    for i in (1, NO // 4, NO // 2, NO - 200, NO - 1):
+        d = (1 / q) * mp.mpf(i) / mp.mpf(NO)
+        marks.append((d, abs((h + d) * d - 1), R_of(d, h)))
+    for d, dd, r in marks:
+        print(f"      {fmt(d, 10):>16} {fmt(d / h, 5):>9} {fmt(dd, 10):>14} "
+              f"{(fmt(r, 10) if r is not None else 'n/a'):>14}")
+    print("    A uniform grid CANNOT resolve this: the divergence is")
+    print("    LOGARITHMIC, so even the last grid point above (4.5e-5 short of")
+    print("    1/q) only reaches R = 14.3.  My first attempt asserted on the")
+    print("    grid and correctly FAILED rather than reporting 'never reaches'.")
+    print("    Solve for d directly instead:")
+    # bisection, not a secant: R is monotone on (0, 1/q) but its derivative
+    # blows up at the pole, and mp.findroot's default solver overshoots there.
+    lo_d, hi_d = mp.mpf("0.9"), (1 / q) * (1 - mp.mpf(10) ** -40)
+    assert R_of(lo_d, h) < need < R_of(hi_d, h), "the root must be bracketed"
+    for _ in range(400):
+        mid = (lo_d + hi_d) / 2
+        if R_of(mid, h) < need:
+            lo_d = mid
+        else:
+            hi_d = mid
+    d_need = (lo_d + hi_d) / 2
+    assert mp.mpf(0) < d_need < 1 / q, "the solution must lie inside (0, 1/q)"
+    assert abs(R_of(d_need, h) - need) < mp.mpf("1e-25"), (
+        "and must actually solve R(d) = need")
+    print(f"      solved by bisection: R({fmt(d_need, 14)})")
+    print(f"                         = {fmt(R_of(d_need, h), 14)}")
+    print(f"    R first reaches {fmt(need, 6)} at d = {fmt(d_need, 12)}")
+    print(f"      = {fmt(d_need / h, 6)} * h, i.e. {fmt(d_need / h, 4)}x the whole")
+    print(f"      hull width, and {fmt(d_need * q, 8)} of the way to 1/q.")
+    print(f"      distance remaining to the projector: {fmt(1 / q - d_need, 6)}")
+    print("    So the requirement is NOT a small perturbation of the bond letter.")
+    print("    The framework would need a bond object far outside the convex hull")
+    print("    of its own two pure channels, most of the way to the point where")
+    print("    the transfer matrix DEGENERATES onto an isospin projector.")
+    print()
+    print("    TWO CORRECTIONS to my own passes at this section, both about")
+    print("    RANGE rather than arithmetic:")
+    print("      (i)  I first swept only to d = 3h and reported 'R never reaches")
+    print(f"           {fmt(need, 6)}'.  True of the range swept, FALSE of the family:")
+    print(f"           the pole sits at 1/q = {fmt(1 / q, 8)} = {fmt(1 / (q * h), 4)}*h,")
+    print("           outside the window I had looked at.")
+    print("      (ii) I then swept the right window but on a UNIFORM grid, which")
+    print("           a logarithmic divergence outruns -- 20000 points reach only")
+    print("           R = 14.3.  The assertion caught it instead of letting a")
+    print("           second 'never reaches' through.")
+    print("    A negative result is only as good as the range and the resolution")
+    print("    behind it, and my first two attempts were short on one each.")
+    print("    REPORTED AS A REQUIREMENT, NOT WIRED AND NOT FITTED: no value of")
+    print("    d is adopted anywhere, and nothing downstream reads this.")
+
+    print("\n[7] WHAT THIS SETTLES")
+    print("-" * 78)
+    print("  SETTLED, scope-(b): R <= 1 for every letter in the admissible hull")
+    print("    d in [-h, 0], so no such letter gives an asymmetry even POINTING")
+    print("    the right way.  The eigenvalue criterion's falsification --")
+    print("    'whatever is absent breaks the bar symmetry' -- is NOT satisfiable")
+    print("    inside the bond-letter family.  A one-parameter search is ruled")
+    print("    out before it is run.")
+    print("  SETTLED, scope-(b): a bigger irrep does NOT escape it.  det rho(w)")
+    print("    = +-1 for every braid word in every irrep, forcing R = 1")
+    print("    identically.  Three-strand H_3 is worse, not better -- verified")
+    print("    on the 2-dim irrep built from the relations in [6].")
+    print("  SETTLED, scope-(a): delta IS the isospin-mixing asymmetry (checked")
+    print("    exactly in [1]) and is 1.4e-3 -- it could not have helped even")
+    print("    without the bound.")
+    print("  LOCALISED, and this is the useful part: R is unbounded OUTSIDE the")
+    print("    hull, diverging exactly at d = 1/q and d = -q -- the two ISOSPIN")
+    print("    PROJECTORS, where the transfer matrix degenerates.  Nature's")
+    print(f"    R = {fmt(need, 6)} is reached at d = {fmt(d_need, 12)},")
+    print(f"    which is {fmt(1 / q - d_need, 6)} from the projector.")
+    print("  THE VERDICT THAT READS OFF THAT NUMBER: the framework would need")
+    print("    its bond letter fine-tuned to ~2e-7 of a DEGENERATE point.  That")
+    print("    is not a mechanism, it is a fine-tuning -- so this localisation")
+    print("    should be read as evidence AGAINST the letter carrying the")
+    print("    asymmetry at all, not as a target to aim a derivation at.")
+    print("  NOT SETTLED: where the missing structure IS.  Not the letter, not")
+    print("    the irrep dimension, and not a decayed pair sum")
+    print("    (allpairs_decay_turnover_exclusion_probe).")
+    print("  NOT CLAIMED: nothing wired, nothing fitted.  R is alpha-free, and")
+    print("    d_need is REPORTED as a requirement, never adopted.")
     return 0
 
 
