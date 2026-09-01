@@ -107,11 +107,37 @@ inequality to its one load-bearing step: `|det| >= 1` requires `(h+d)d <= 0`,
 i.e. `d` and `h+d` of opposite sign, which holds exactly on the hull `[-h, 0]`.
 Outside it `|det|` can drop below 1 and `R` exceeds 1.
 
-**The tempting escape -- a bigger irrep -- is dead.** In ANY irrep `sigma` has
-eigenvalues `{q, -1/q}`, so `det rho(w) = +-1` for every braid word and `R = 1`
-IDENTICALLY.  Three-strand `H_3` is *worse*, not better.  Verified below on the
-2-dim irrep of `H_3`, built from the braid relation and the quadratic (both
-residuals `1.3e-51`) rather than imported.
+**🛑 RETRACTED, same day, by `irrep_determinant_escape_probe`.  What follows is
+FALSE AS A GENERAL CLAIM and is kept only because the retraction is the
+finding.**  This section asserted:
+
+    "The tempting escape -- a bigger irrep -- is dead. In ANY irrep sigma has
+     eigenvalues {q, -1/q}, so det rho(w) = +-1 for every braid word and R = 1
+     IDENTICALLY. Three-strand H_3 is worse, not better."
+
+It was verified on **one** irrep, the 2-dim of `H_3`, and generalised from that
+single case -- and in that block the two eigenvalue multiplicities happen to be
+EQUAL, which is the only reason `|det| = 1` there.  I checked a general claim
+against the one example that could not distinguish it from its negation.
+
+**Counterexample in any `H_n`:** the sign representation `sigma -> -1/q`
+satisfies the Hecke quadratic exactly and has `|det| = 1/q = 0.90092 < 1` --
+precisely the escape condition this probe's own bound identifies.
+
+**The correct statement is a formula, not a constant:** with `m_plus` /
+`m_minus` the number of SYT placing `i, i+1` in the same row / column,
+
+    |det rho_lambda(sigma_i)| = q^(m_plus - m_minus)
+
+so `|det| = 1` iff `m_plus = m_minus`, and the escape is open exactly on
+**column-heavy** partitions.  The `H_3` check below is retained and still
+passes -- it is correct arithmetic about `lambda = (2,1)`; only the
+generalisation drawn from it was wrong.
+
+**The `R <= 1` bound itself is UNAFFECTED.**  It concerns the bond-letter family
+`d in [-h, 0]` in the REGULAR representation, where `|det| = 1 + s(h-s) >= 1` is
+computed directly and never goes through the irrep argument.  Only this rider
+is retracted.
 
 **Where `R` actually diverges is exact and named.**  `det T(1,d) = (h+d)d - 1`
 vanishes iff `-d` is an eigenvalue of `sigma`:
@@ -338,12 +364,23 @@ def main() -> int:
     print("    Outside that hull (h+d)d > 0 and |det| can drop BELOW 1, which is")
     print("    the only way log|l_+| + log|l_-| goes negative and R exceeds 1.")
     print()
-    print("    FIRST, kill the tempting wrong escape.  Going to a bigger irrep")
-    print("    does NOT help: in any irrep sigma has eigenvalues {q, -1/q}, so")
-    print("    det rho(sigma) = -1 and |det| = 1 EXACTLY for every braid word.")
-    print("    That forces R = 1 identically -- exact antisymmetry, which is the")
-    print("    very failure being escaped.  Three-strand H_3 is worse, not")
-    print("    better, and this is checked below on the 2-dim irrep of H_3.")
+    print("    FIRST — 🛑 RETRACTED.  This section claimed 'a bigger irrep does")
+    print("    NOT help: in ANY irrep det rho(w) = +-1, forcing R = 1")
+    print("    identically'.  That is FALSE as a general claim.  It was verified")
+    print("    on ONE irrep (H_3's 2-dim, below), where the two eigenvalue")
+    print("    multiplicities happen to be EQUAL -- the single example that")
+    print("    could not distinguish the claim from its negation.")
+    print("    COUNTEREXAMPLE in any H_n: the sign rep sigma -> -1/q satisfies")
+    print("    the Hecke quadratic exactly and has |det| = 1/q = 0.90092 < 1,")
+    print("    which is precisely this probe's own escape condition.")
+    print("    CORRECT STATEMENT: |det rho_lambda(sigma_i)| = q^(m+ - m-) with")
+    print("    m+/m- the SYT counts placing i,i+1 in a row/column, so |det| = 1")
+    print("    iff m+ = m-, and the escape is open on COLUMN-HEAVY partitions.")
+    print("    Retraction + measurement: irrep_determinant_escape_probe.")
+    print("    The R <= 1 bound itself is UNAFFECTED -- it is computed directly")
+    print("    in the REGULAR rep and never uses the irrep argument.")
+    print("    The H_3 check below is retained and still passes: it is correct")
+    print("    arithmetic about lambda = (2,1); only my generalisation was wrong.")
     print()
     # H_3 two-dim irrep, built from the relations and VERIFIED, not imported
     s1 = mp.matrix([[q, 1], [0, -1 / q]])
@@ -372,10 +409,14 @@ def main() -> int:
         dd = M[0, 0] * M[1, 1] - M[0, 1] * M[1, 0]
         print(f"      |det {nm:9s}| = {fmt(abs(dd), 14)}")
         assert abs(abs(dd) - 1) < mp.mpf("1e-30"), (
-            "every braid word has |det| = 1 in any irrep -- R = 1 identically")
-    print("      => |det| = 1 for every word, so R = 1 EXACTLY.  Confirmed: a")
-    print("         bigger irrep cannot break the antisymmetry.  The escape is")
-    print("         NOT dimension; it is leaving the hull.")
+            "|det| = 1 in THIS block (lambda = (2,1), m+ = m- = 1) -- "
+            "NOT a general fact about irreps; see irrep_determinant_escape_probe")
+    print("      => |det| = 1 for every word IN THIS BLOCK, so R = 1 here.")
+    print("         That is a fact about lambda = (2,1), where m+ = m- = 1.")
+    print("         🛑 It does NOT generalise: the sign rep of any H_n has")
+    print("         |det| = 1/q < 1.  The escape is open on column-heavy")
+    print("         partitions, and leaving the hull is a SECOND escape, not")
+    print("         the only one.")
 
     print()
     print("    SECOND, locate the requirement -- and it lands on an EXACT point.")
@@ -458,10 +499,12 @@ def main() -> int:
     print("    'whatever is absent breaks the bar symmetry' -- is NOT satisfiable")
     print("    inside the bond-letter family.  A one-parameter search is ruled")
     print("    out before it is run.")
-    print("  SETTLED, scope-(b): a bigger irrep does NOT escape it.  det rho(w)")
-    print("    = +-1 for every braid word in every irrep, forcing R = 1")
-    print("    identically.  Three-strand H_3 is worse, not better -- verified")
-    print("    on the 2-dim irrep built from the relations in [6].")
+    print("  🛑 RETRACTED (was: 'a bigger irrep does NOT escape it'): FALSE as a")
+    print("    general claim.  |det rho_lambda(sigma_i)| = q^(m+ - m-), so the")
+    print("    escape IS open on column-heavy partitions -- the sign rep of any")
+    print("    H_n has |det| = 1/q < 1.  Verified on one block and generalised;")
+    print("    see irrep_determinant_escape_probe.  The R <= 1 bound is")
+    print("    unaffected (regular rep, computed directly).")
     print("  SETTLED, scope-(a): delta IS the isospin-mixing asymmetry (checked")
     print("    exactly in [1]) and is 1.4e-3 -- it could not have helped even")
     print("    without the bound.")
