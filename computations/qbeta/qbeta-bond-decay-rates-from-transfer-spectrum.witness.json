@@ -5,29 +5,24 @@
   "contentBlock": "prop:three-calibration-inputs",
   "assertions": [
     {
-      "name": "bond_decay_rates_are_closed_forms_in_q",
+      "name": "bond_rates_are_closed_forms_and_like_nucleon_bonds_coincide",
       "passed": true,
-      "detail": "the transfer step's spectrum is E_1 = Prod(q + d_j), E_2 = Prod(-1/q + d_j) (`chi_monotone_transfer._alpha_beta`), so the per-bond falloff is E_2/E_1: -1/q^2 for p-p (d=0), -q^2 for n-n (d=-h), and EXACTLY -1 for the averaged p-n (d=-h/2). Three closed forms in q with no free parameter \u2014 the rate Step 27 declined to invent was already determined by the transfer matrix"
+      "detail": "the transfer step's spectrum is E_1 = Prod(q + d_j), E_2 = Prod(-1/q + d_j) (`chi_monotone_transfer._alpha_beta`), so the per-bond falloff is the SPECTRAL GAP |lambda_2/lambda_1|: exactly 1/q^2 for BOTH p-p and n-n (sigma^-1 carries sigma's spectrum up to sign) and exactly 1 for the averaged p-n, which is therefore LONG-RANGE. Closed forms in q with no free parameter, which removes Step 27's three-free-parameter objection. CORRECTS this probe's first version (E_2/E_1 in fixed order gave q^2 for n-n); bean qou-brng derived the same object correctly on main"
     },
     {
-      "name": "the_three_rates_carry_one_degree_of_freedom",
+      "name": "the_one_dof_and_sector_claims_are_withdrawn",
       "passed": true,
-      "detail": "r_pp . r_nn = 1 = r_pn^2 is an exact relation among the three, and r_nn / r_pp = q^4. So the bond rates have ONE degree of freedom (q^2), not three: an all-pairs coupling built on them adds no parameter to the framework. They are not independent"
-    },
-    {
-      "name": "bar_parity_reproduces_the_interaction_sector_taxonomy",
-      "passed": true,
-      "detail": "under q -> 1/q the p-p and n-n rates EXCHANGE and the p-n rate is FIXED. Their product (=1) is bar-even \u2014 the taxonomy's STRONG cosh channel; their ratio (=q^4) is bar-odd \u2014 its WEAK sinh channel. The sector classification `interaction-sector-taxonomy.md` states by parity is recovered from the bond rates alone"
+      "detail": "r_pp . r_nn = 0.658781817 rather than 1, so the 'one exact relation, one degree of freedom' claim is false; and p-p = n-n exactly, so they do not exchange under the bar and the strong/weak sector assignment built on that exchange is vacuous. Both are withdrawn and neither is restated. The exchange was partly circular in any case: d = 0 and d = -h are sigma and sigma^-1, bar-images of each other by definition"
     },
     {
       "name": "pn_departure_is_the_electromagnetic_ratio_times_the_flavour_split",
       "passed": true,
-      "detail": "1 - |r_pn| = 2.delta.(q^2-1)/(delta.(q^2-1) + 2q^2 + 2), whose leading coefficient is (q^2-1)/(q^2+1) = tanh(ln q). At the pin tanh(ln q_0) = 0.103963710052 \u2014 exactly the odd-to-even ratio the taxonomy derives for the ELECTROMAGNETIC coupling, the cell it proves admits no pure parity. Predicted 0.0001430239995 against measured 0.0001430137723, agreeing to 7.151e-5 relative \u2014 the second order in delta. So the p-n bond sits at the intertwiner point, which is where the taxonomy independently puts the EM sector"
+      "detail": "1 - |r_pn| = 2.delta.(q^2-1)/(delta.(q^2-1) + 2q^2 + 2), whose leading coefficient is (q^2-1)/(q^2+1) = tanh(ln q). At the pin tanh(ln q_0) = 0.103963710052 \u2014 the odd-to-even ratio the taxonomy derives for the ELECTROMAGNETIC coupling. Predicted 0.0001430239995 against measured 0.0001430137723, agreeing to 7.151e-5 relative \u2014 the second order in delta. SELF-RAISED CAVEAT (bean qou-i9gk): tanh(ln q) is just 'odd part over even part', which any bar decomposition produces, so this may be two instances of one triviality rather than a link. Unlike the withdrawn sector claim it is at least a numerical coincidence that has to be explained away rather than a restated definition"
     },
     {
       "name": "flavour_split_sits_at_CAL3_h_order",
       "passed": true,
-      "detail": "delta = flavor_split_leading(q) vanishes to order 2.9999902 in (q-1) \u2014 h^3, the order the math-ideal CAL ladder assigns to CAL-3 (D_pi, the pion decay width). tanh(ln q) is O(h), so 1 - |r_pn| is O(h^4) while r_pp and r_nn are O(h^0). The canonical triple is (m_e, D_beta, D_pi) at h^0/h^2/h^3, so two of the three calibration points are decay rates by definition"
+      "detail": "delta = flavor_split_leading(q) vanishes to order 2.9999902 in (q-1) \u2014 h^3, the order the math-ideal CAL ladder assigns to CAL-3 (D_pi, the pion decay width). tanh(ln q) is O(h), so 1 - |r_pn| is O(h^4) while both like-nucleon rates are the q-independent-in-order 1/q^2. The canonical triple is (m_e, D_beta, D_pi) at h^0/h^2/h^3, so two of the three calibration points are decay rates by definition"
     }
   ],
   "allPassed": true,
@@ -40,14 +35,16 @@
   "data": {
     "q0": "1.1099785827513808076",
     "h0": "0.209060298795639315",
-    "rate_pp": "-1/q**2",
-    "rate_nn": "-q**2",
-    "rate_pn": "-1",
-    "product_pp_nn": "1",
-    "ratio_nn_pp": "q**4",
-    "bar_pp": "-q**2",
-    "bar_nn": "-1/q**2",
-    "bar_pn": "-1",
+    "gap_pp": "0.81165375436575805813",
+    "gap_nn": "0.81165375436575805813",
+    "gap_pn": "1.0",
+    "inv_q_squared": "0.81165375436575805813",
+    "like_nucleon_rates_coincide": true,
+    "withdrawn": [
+      "r_pp . r_nn = r_pn^2 (one degree of freedom)",
+      "bar exchange -> strong/weak sector split"
+    ],
+    "reference_implementation": "computations/probes/spectral_gap_bond_decay_probe.py (bean qou-brng, main)",
     "pn_departure_exact": "(2*delta*q**2 - 2*delta)/(delta*q**2 - delta + 2*q**2 + 2)",
     "pn_departure_leading_coeff": "(q**2 - 1)/(q**2 + 1)",
     "tanh_ln_q_closed_form": "(q**2 - 1)/(q**2 + 1)",
@@ -77,13 +74,13 @@
     "does_not_close": "The coupling WORD. A non-adjacent nucleon pair has no single generator to sit on, so building the all-pairs braid remains a construction.",
     "scope": "Scope-(a). Nothing wired, proposed or readmitted."
   },
-  "gitCommit": "699f98c3cf6740d8df9a4b63823e2a884f65aa3f",
+  "gitCommit": "2b9194c1b554d157baa465f5a0a2a576f34a68bb",
   "durationMs": 0,
   "scriptFile": "qbeta_bond_decay_rates_from_transfer_spectrum_probe.py",
-  "scriptHash": "03099a71e0f0",
+  "scriptHash": "005434a48861",
   "scriptCommitSha": "905533270e169146f2381abd12e1ce2730688506",
-  "commitSha": "699f98c3cf6740d8df9a4b63823e2a884f65aa3f",
-  "computedAt": "2026-09-01T04:16:59.681514+00:00",
+  "commitSha": "2b9194c1b554d157baa465f5a0a2a576f34a68bb",
+  "computedAt": "2026-09-01T04:22:58.347460+00:00",
   "q0Anchor": "proton (experimental pin)",
   "q0Value": "1.10997858275138080759166909561"
 }

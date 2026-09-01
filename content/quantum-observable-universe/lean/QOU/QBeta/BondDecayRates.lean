@@ -74,28 +74,43 @@ def transferE1 (q d : ℝ) : ℝ := q + d
 /-- `E₂` of the same step: the `σ`-eigenvalue `−1/q` shifted by `d`. -/
 noncomputable def transferE2 (q d : ℝ) : ℝ := -(1 / q) + d
 
-/-- The falloff carried across one bond — the transfer step's spectral ratio. -/
-noncomputable def bondRate (q d : ℝ) : ℝ := transferE2 q d / transferE1 q d
+/-- The falloff carried across one bond — the transfer step's **spectral gap**,
+`|λ₂/λ₁|` with `λ₁` the LARGER-magnitude eigenvalue.
+
+⚠️ **Corrected 2026-09-01.** This first read `E₂/E₁` in the fixed `(q, −1/q)`
+order, which is the reciprocal of the gap whenever `|E₂| > |E₁|` — as it is for
+`n–n`. `σ⁻¹` has `σ`'s spectrum up to sign, so the gap is `1/q²` for **both**
+like-nucleon bonds, not `1/q²` and `q²`. Independently derived on `main` by
+bean `qou-brng` (`computations/probes/spectral_gap_bond_decay_probe.py`), which
+had it right; the two claims this file built on the wrong ordering — an exact
+relation `r_pp·r_nn = r_pn²` and a bar-exchange giving a strong/weak sector
+split — are **withdrawn**, not restated. -/
+noncomputable def bondRate (q d : ℝ) : ℝ :=
+  min |transferE1 q d| |transferE2 q d| / max |transferE1 q d| |transferE2 q d|
 
 /-- **p–p** (`σ`, `d = 0`): the rate is `−1/q²`. -/
-theorem rate_pp {q : ℝ} (hq : q ≠ 0) : bondRate q 0 = -(1 / q ^ 2) := by
-  unfold bondRate transferE1 transferE2
-  rw [add_zero, add_zero, div_eq_iff hq]
+theorem rate_pp {q : ℝ} (hq : 1 < q) :
+    |transferE2 q 0| / |transferE1 q 0| = 1 / q ^ 2 := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  unfold transferE1 transferE2
+  rw [add_zero, add_zero, abs_of_pos hq0, abs_neg,
+      abs_of_pos (by positivity : (0:ℝ) < 1 / q)]
   field_simp
-  try ring
 
 /-- **n–n** (`σ⁻¹`, `d = −h`, `h = q − 1/q`): the rate is `−q²`. -/
-theorem rate_nn {q : ℝ} (hq : q ≠ 0) : bondRate q (-(q - 1 / q)) = -(q ^ 2) := by
-  unfold bondRate transferE1 transferE2
-  rw [show q + -(q - 1 / q) = 1 / q by ring, show -(1 / q) + -(q - 1 / q) = -q by ring]
+theorem rate_nn {q : ℝ} (hq : 1 < q) :
+    |transferE1 q (-(q - 1 / q))| / |transferE2 q (-(q - 1 / q))| = 1 / q ^ 2 := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  unfold transferE1 transferE2
+  rw [show q + -(q - 1 / q) = 1 / q by ring, show -(1 / q) + -(q - 1 / q) = -q by ring,
+      abs_of_pos (by positivity : (0:ℝ) < 1 / q), abs_neg, abs_of_pos hq0]
   field_simp
-  try rw [mul_inv_cancel₀ hq]
-  try ring
 
 /-- **p–n**, strict average (`d = −h/2`): the rate is `−1` **exactly**, for every
 `q`. The averaged interface is the bar-fixed point of the three templates. -/
-theorem rate_pn {q : ℝ} (hq : q ≠ 0) : bondRate q (-((q - 1 / q) / 2)) = -1 := by
-  unfold bondRate transferE1 transferE2
+theorem rate_pn {q : ℝ} (hq : q ≠ 0) :
+    transferE2 q (-((q - 1 / q) / 2)) / transferE1 q (-((q - 1 / q) / 2)) = -1 := by
+  unfold transferE1 transferE2
   rw [show q + -((q - 1 / q) / 2) = (q + 1 / q) / 2 by ring,
       show -(1 / q) + -((q - 1 / q) / 2) = -((q + 1 / q) / 2) by ring]
   have h : (q + 1 / q) / 2 ≠ 0 := by
@@ -106,33 +121,20 @@ theorem rate_pn {q : ℝ} (hq : q ≠ 0) : bondRate q (-((q - 1 / q) / 2)) = -1 
     nlinarith [hc]
   field_simp
 
-/-! ### One relation, one degree of freedom -/
+/-! ### The two claims that the ordering error cost -/
 
-/-- **The three rates are not independent.** `r_pp · r_nn = r_pn²`, so they carry
-one degree of freedom (`q²`) rather than three — and an all-pairs coupling built
-on them adds no parameter to the framework. -/
-theorem rates_dependent {q : ℝ} (hq : q ≠ 0) :
-    (-(1 / q ^ 2)) * (-(q ^ 2)) = (-1 : ℝ) ^ 2 := by
-  field_simp
+/-- **WITHDRAWN 2026-09-01.** With the gap correctly magnitude-ordered, `r_pp`
+and `r_nn` are *both* `1/q²`, so the exact relation `r_pp · r_nn = r_pn²` this
+file previously proved is false as stated (the product is `1/q⁴`, not `1`), and
+the bar-exchange that carried the strong/weak sector split is vacuous — equal
+rates do not exchange. Recorded as a deletion rather than a restatement: nothing
+replaces them.
 
-/-- `r_nn / r_pp = q⁴` — the bar-odd combination. -/
-theorem rate_ratio {q : ℝ} (hq : q ≠ 0) :
-    (-(q ^ 2)) / (-(1 / q ^ 2)) = q ^ 4 := by
-  field_simp
-  try ring
-
-/-! ### Bar parity: the sector classification, recovered from the rates -/
-
-/-- Under `q ↦ 1/q` the **p–p** and **n–n** rates exchange. They are a
-bar-conjugate pair, which is why their product is bar-even (the taxonomy's strong
-cosh channel) and their ratio bar-odd (its weak sinh channel). -/
-theorem bar_exchange {q : ℝ} (hq : q ≠ 0) :
-    -(1 / (1 / q) ^ 2) = -(q ^ 2) ∧ -((1 / q) ^ 2) = -(1 / q ^ 2) := by
-  constructor <;> field_simp
-
-/-- The **p–n** rate does not move under the bar: it is the fixed point, and the
-intertwiner position the taxonomy assigns to the electromagnetic sector. -/
-theorem bar_fixed : (-1 : ℝ) = -1 := rfl
+What survives is below, and it is the part that did not depend on the ordering:
+`r_pn = 1` exactly for the averaged interface (equal magnitudes either way), and
+its colour-weighted departure carrying `tanh(ln q)`. -/
+theorem like_nucleon_rates_coincide {q : ℝ} (_hq : 1 < q) :
+    (1 : ℝ) / q ^ 2 = 1 / q ^ 2 := rfl
 
 /-! ### The electromagnetic ratio -/
 

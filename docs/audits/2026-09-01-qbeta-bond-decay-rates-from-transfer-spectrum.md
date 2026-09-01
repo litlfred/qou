@@ -2,6 +2,50 @@
 
 **Date:** 2026-09-01 · **Bean:** `qou-cds1` (Step 28) · **Scope:** (a).
 
+
+> ## 🛑 CORRECTED 2026-09-01 — the n–n rate was wrong, and two claims are withdrawn
+>
+> This audit first read the per-bond rate as `E₂/E₁` in the **fixed** `(q, −1/q)`
+> eigenvalue order. That is the *reciprocal* of the spectral gap whenever
+> `|E₂| > |E₁|`, which is exactly the n–n case. A transfer matrix's correlation
+> decay is `|λ₂/λ₁|` with `λ₁` the **larger-magnitude** eigenvalue, and `σ⁻¹`
+> carries `σ`'s spectrum up to sign — so **both** like-nucleon bonds are `1/q²`.
+>
+> | bond | as first published | correct |
+> |---|---|---|
+> | p–p | `−1/q²` | `1/q²` |
+> | **n–n** | **`−q²`** | **`1/q²`** |
+> | p–n | `−1` | `1` (long-range) |
+>
+> Bean **`qou-brng`** derived the same object correctly and independently on
+> `main` (`computations/probes/spectral_gap_bond_decay_probe.py`, merged the same
+> day, asserting both rates to 45 digits). That probe is the reference; this one
+> is the duplicate, and it was the one with the error.
+>
+> **Two claims below are withdrawn, not restated:**
+>
+> - *"`r_pp · r_nn = 1 = r_pn²`, so the three rates carry one degree of freedom."*
+>   **False.** Both like-nucleon rates are `1/q²`, so the product is `1/q⁴`.
+> - *"Bar parity reproduces the interaction-sector taxonomy — p–p and n–n exchange,
+>   product bar-even = strong, ratio bar-odd = weak."* **Vacuous.** Equal rates do
+>   not exchange. And it was partly circular before that: `d = 0` and `d = −h`
+>   *are* `σ` and `σ⁻¹`, bar-images of each other by definition, so their exchange
+>   restated the templates rather than discovering anything about sectors.
+>
+> **What survives, and it never depended on the ordering:** the rates are derived
+> closed forms with no free parameter (which was the point, and which removes
+> Step 27's three-free-parameter objection); the averaged p–n interface has rate
+> exactly `1`, so the p–n bond is **long-range** while both like-nucleon bonds are
+> short-range — the asymmetry `qou-brng` leads with; and the colour-weighted p–n
+> departure is `tanh(ln q)·δ + O(δ²)` with `tanh(ln q₀) = 0.103963710` matching
+> the taxonomy's EM ratio to `7.2·10⁻⁵`. **Self-raised caveat on that last one**
+> (bean `qou-i9gk`): `tanh(ln q)` is just "odd part over even part", which any bar
+> decomposition produces, so it may be two instances of one triviality.
+>
+> Sections below are left as written so the error is legible; read them through
+> this banner.
+
+
 **Artifacts.**
 [`QOU/QBeta/BondDecayRates.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/BondDecayRates.lean)
 (10 theorems, sorry-free) ·

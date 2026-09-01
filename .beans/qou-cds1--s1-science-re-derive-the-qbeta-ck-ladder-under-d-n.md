@@ -6151,3 +6151,46 @@ The **coupling word**, not the rate. `σ_g` couples strands `g`, `g+1` only, so 
 non-adjacent nucleon pair has no generator to sit on and the all-pairs braid
 remains a construction. Step 27's caveat stands; only the three-free-parameter
 objection is removed.
+
+---
+
+## 🛑 Step 28 CORRECTED, and duplicated — `main` had it right (2026-09-01)
+
+Integrated `main` (271 commits, then 3 more mid-session) and it landed
+**`qou-brng`**: *"the decay rate per bond type IS the transfer matrix spectral
+gap — pp/nn exactly 1/q^2, pn long-range"*, with
+`computations/probes/spectral_gap_bond_decay_probe.py`.
+
+**Same object as Step 28, derived independently, and correctly.** Step 28 read
+the rate as `E₂/E₁` in the **fixed** `(q, −1/q)` order; the correlation decay is
+`|λ₂/λ₁|` with `λ₁` the **larger-magnitude** eigenvalue. `σ⁻¹` carries `σ`'s
+spectrum up to sign, so:
+
+| bond | Step 28 as published | correct |
+|---|---|---|
+| p–p | `−1/q²` | `1/q²` |
+| **n–n** | **`−q²`** | **`1/q²`** |
+| p–n | `−1` | `1` — **long-range** |
+
+**Withdrawn, not restated:**
+- `r_pp · r_nn = 1 = r_pn²` → the product is `1/q⁴`. No "one degree of freedom".
+- bar exchange → strong/weak sector split. Equal rates do not exchange; and the
+  claim was partly circular anyway, since `d = 0` and `d = −h` *are* `σ` and
+  `σ⁻¹`, bar-images by definition.
+
+**Surviving:** the rates are derived closed forms with no free parameter (Step
+27's three-free-parameter objection is still removed); **p–n is long-range while
+both like-nucleon bonds are short-range**; and the colour-weighted p–n departure
+is `tanh(ln q)·δ`, `tanh(ln q₀) = 0.103963710` matching the taxonomy's EM ratio
+to `7.2e-5` — with a self-raised triviality caveat in `qou-i9gk`.
+
+**And the recommended next was already done.** `qou-brng` also carries
+`allpairs_distance_decay_probe.py`, which tests the owner's all-pairs proposal
+directly and returns a **negative**: the strand-routing cost is exactly `z²` per
+unit separation but cannot be the binding's distance decay (read as interaction
+it makes distant pairs bind *more*; read as kinematics it divides out), and the
+decay AME wants is not constant and not fast — `r*` runs `0.709..0.827`, falling
+monotonically with `A`.
+
+So this session's recommended next was duplicated work twice over. Roast and the
+two surviving self-checks: **`qou-i9gk`**.

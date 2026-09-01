@@ -1,15 +1,57 @@
 #!/usr/bin/env python3
 """qou-cds1 Step 28: the all-pairs decay rates are DERIVED — they are the
-transfer matrix's spectral ratio per bond, they are sector-indexed by bar
-parity, and they are not independent.
+transfer matrix's spectral gap per bond.
 
-Step 27 stopped because an all-pairs coupling needs a falloff rate per bond type
-and three fitted rates would be three free parameters. The owner's steer: the
-rates are already in how CAL 1/2/3 are defined, and the link is the spectral
-decomposition of the transfer matrix operating on the tower. Both halves check
-out, and nothing below is fitted.
+*** 🛑 CORRECTED 2026-09-01, AND DUPLICATED BY A SIBLING WHO HAD IT RIGHT ***
+
+This probe first read the per-bond rate as `E_2/E_1` in the FIXED (q, -1/q)
+eigenvalue order. That is the reciprocal of the spectral gap whenever
+|E_2| > |E_1|, which is exactly the n-n case. The correlation decay of a
+transfer matrix is |lambda_2 / lambda_1| with lambda_1 the LARGER-magnitude
+eigenvalue, and `sigma^-1` carries `sigma`'s spectrum up to sign, so:
+
+    p-p   rate = 1/q^2          (unchanged — |E_1| > |E_2| there)
+    n-n   rate = 1/q^2          (was reported as q^2; WRONG)
+    p-n   rate = 1  exactly     (unchanged — equal magnitudes either way)
+
+Bean `qou-brng` derived the same object correctly and independently on `main`
+(`computations/probes/spectral_gap_bond_decay_probe.py`, merged 2026-09-01),
+asserting pp and nn are both exactly 1/q^2 to 45 digits. That probe is the
+reference; this one is the duplicate, and it was the one with the error.
+
+TWO CLAIMS ARE WITHDRAWN, not restated:
+
+  * "the three rates satisfy r_pp . r_nn = 1 = r_pn^2, so they carry ONE degree
+    of freedom" — FALSE once corrected. Both like-nucleon rates are 1/q^2, so
+    the product is 1/q^4, not 1.
+  * "bar parity reproduces the interaction-sector taxonomy: p-p and n-n exchange
+    under q -> 1/q, product bar-even = STRONG, ratio bar-odd = WEAK" — VACUOUS
+    once corrected. Equal rates do not exchange. And the claim was partly
+    circular even before that: `d = 0` and `d = -h` ARE `sigma` and `sigma^-1`,
+    bar-images of each other by definition, so their exchange was a restatement
+    of the templates rather than a discovery about sectors.
+
+WHAT SURVIVES, and it is the part that never depended on the ordering:
+
+  * the rates are DERIVED closed forms in q with no free parameter — which was
+    the point, and which removes Step 27's three-free-parameter objection;
+  * the averaged p-n interface has rate EXACTLY 1: the p-n bond is LONG-RANGE
+    while both like-nucleon bonds are short-range at 1/q^2. That asymmetry is
+    real and is what `qou-brng` leads with;
+  * the colour-weighted p-n bond's departure from 1 is tanh(ln q).delta +
+    O(delta^2), because tanh(ln q) = (q^2-1)/(q^2+1); at the pin
+    tanh(ln q_0) = 0.103963710 is the odd-to-even ratio
+    `interaction-sector-taxonomy.md` derives for the ELECTROMAGNETIC coupling.
+    Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5
+    relative — the second order in delta. (Caveat, self-raised: tanh(ln q) is
+    just "odd part over even part", which ANY bar decomposition produces, so
+    this may be two instances of one triviality rather than a link. Open in
+    bean `qou-i9gk`.)
+  * delta = flavor_split_leading(q) vanishes to order h^3 — CAL-3's order, the
+    pion decay width's.
 
 *** WHERE THE RATES WERE ***
+
 
 The canonical MATH-IDEAL calibration triple is not three masses. It is
 (m_e, D_beta, D_pi) — CAL-2 is the neutron beta-decay WIDTH at order h^2 and
@@ -131,9 +173,16 @@ def transfer_spectrum(d):
     return sp.cancel(QS + d), sp.cancel(-1 / QS + d)
 
 
-def bond_rate(d):
+def bond_rate(d, q_val=None):
+    """The transfer step's SPECTRAL GAP |lambda_2/lambda_1|, lambda_1 the
+    larger-magnitude eigenvalue. Corrected 2026-09-01 — see the banner."""
     e1, e2 = transfer_spectrum(d)
-    return sp.cancel(e2 / e1)
+    if q_val is None:
+        q_val = Q0
+    a1 = mp.fabs(mp.mpf(str(sp.N(e1.subs(QS, sp.Rational(str(q_val))), 40))))
+    a2 = mp.fabs(mp.mpf(str(sp.N(e2.subs(QS, sp.Rational(str(q_val))), 40))))
+    lo, hi = (e2, e1) if a2 <= a1 else (e1, e2)
+    return sp.cancel(lo / hi), min(a1, a2) / max(a1, a2)
 
 
 def _head_sha() -> str:
@@ -155,47 +204,39 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     bonds = [("p-p", "sigma", sp.Integer(0)),
              ("n-n", "sigma^-1", -HS),
              ("p-n", "average", -HS / 2)]
-    rates = {}
-    print(f"\n[1] the transfer step's spectrum per bond, and its ratio")
+    rates, gaps = {}, {}
+    print(f"\n[1] the transfer step's spectrum per bond, and its SPECTRAL GAP")
     print(f"    {'bond':6s}{'template':12s}{'offset d':>14s}{'E_1':>18s}"
-          f"{'E_2':>18s}{'E_2/E_1':>12s}")
+          f"{'E_2':>18s}{'|l2/l1|':>14s}")
     for name, tmpl, d in bonds:
         e1, e2 = transfer_spectrum(d)
-        r = bond_rate(d)
-        rates[name] = r
+        r, g = bond_rate(d)
+        rates[name], gaps[name] = r, g
         print(f"    {name:6s}{tmpl:12s}{str(sp.factor(d)):>14s}"
               f"{str(sp.factor(e1)):>18s}{str(sp.factor(e2)):>18s}"
-              f"{str(sp.factor(r)):>12s}")
+              f"{mp.nstr(g, 12):>14s}")
     r_pp, r_nn, r_pn = rates["p-p"], rates["n-n"], rates["p-n"]
-    print(f"    -> |E_2/E_1| = q^-2 (p-p), q^+2 (n-n), 1 (p-n) — EXACT, closed")
-    print(f"       forms in q. This is the falloff rate Step 27 declined to invent.")
+    inv_q2 = 1 / Q0 ** 2
+    print(f"\n    1/q_0^2 = {mp.nstr(inv_q2, 14)}")
+    print(f"    -> p-p and n-n are BOTH exactly 1/q^2 (sigma^-1 carries sigma's")
+    print(f"       spectrum up to sign), and p-n is exactly 1: the p-n bond is")
+    print(f"       LONG-RANGE while both like-nucleon bonds are short-range.")
+    print(f"    -> CORRECTS this probe's first version, which read E_2/E_1 in the")
+    print(f"       fixed (q, -1/q) order and reported q^2 for n-n. Bean qou-brng")
+    print(f"       had it right independently on main.")
 
-    # [2] one relation, one degree of freedom --------------------------------
-    prod = sp.simplify(r_pp * r_nn)
-    pn_sq = sp.simplify(r_pn ** 2)
-    ratio = sp.simplify(r_nn / r_pp)
-    not_indep = bool(sp.simplify(prod - pn_sq) == 0 and prod == 1)
-    print(f"\n[2] the three rates are NOT independent")
-    print(f"    r_pp . r_nn = {prod}      r_pn^2 = {pn_sq}      "
-          f"=> r_pp . r_nn = r_pn^2 : {not_indep}")
-    print(f"    r_nn / r_pp = {ratio}")
-    print(f"    ONE relation among three rates -> ONE degree of freedom (q^2).")
-    print(f"    An all-pairs coupling on these adds NO parameter to the framework.")
-
-    # [3] bar parity reproduces the sector taxonomy ---------------------------
-    bar_pp = sp.simplify(r_pp.subs(QS, 1 / QS))
-    bar_nn = sp.simplify(r_nn.subs(QS, 1 / QS))
-    bar_pn = sp.simplify(r_pn.subs(QS, 1 / QS))
-    exch = bool(sp.simplify(bar_pp - r_nn) == 0 and sp.simplify(bar_nn - r_pp) == 0)
-    fixed = bool(sp.simplify(bar_pn - r_pn) == 0)
-    prod_even = bool(sp.simplify(prod.subs(QS, 1 / QS) - prod) == 0)
-    ratio_odd = bool(sp.simplify(ratio.subs(QS, 1 / QS) * ratio - 1) == 0)
-    print(f"\n[3] bar parity (q -> 1/q) reproduces the interaction-sector taxonomy")
-    print(f"    r_pp(1/q) = {bar_pp}   r_nn(1/q) = {bar_nn}   r_pn(1/q) = {bar_pn}")
-    print(f"    p-p and n-n EXCHANGE under the bar : {exch}   "
-          f"p-n is bar-FIXED : {fixed}")
-    print(f"    product r_pp.r_nn = 1   bar-EVEN : {prod_even}  -> STRONG (cosh)")
-    print(f"    ratio r_nn/r_pp = q^4   bar-ODD  : {ratio_odd}  -> WEAK   (sinh)")
+    # [2] the two claims the ordering error cost -------------------------
+    prod_wrong = bool(mp.fabs(gaps["p-p"] * gaps["n-n"] - 1) > mp.mpf("0.1"))
+    like_coincide = bool(mp.fabs(gaps["p-p"] - gaps["n-n"]) < mp.mpf("1e-30"))
+    print(f"\n[2] WITHDRAWN: the 'one degree of freedom' and 'sector' claims")
+    print(f"    r_pp . r_nn = {mp.nstr(gaps['p-p'] * gaps['n-n'], 12)}, NOT 1 — so the")
+    print(f"    exact relation r_pp.r_nn = r_pn^2 this probe first asserted is false.")
+    print(f"    And p-p = n-n = {mp.nstr(gaps['p-p'], 12)} exactly, so they do not")
+    print(f"    EXCHANGE under the bar and the strong/weak sector split built on that")
+    print(f"    exchange is vacuous. Both withdrawn, neither restated.")
+    print(f"    The exchange claim was partly circular anyway: d = 0 and d = -h ARE")
+    print(f"    sigma and sigma^-1, bar-images by definition, so their swapping")
+    print(f"    restated the templates rather than discovering anything about sectors.")
 
     # [4] the electromagnetic link -------------------------------------------
     x = (QS + 1 / QS) / 2
@@ -251,56 +292,58 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     p_t = mp.log(t_ord[-2][1] / t_ord[-1][1]) / mp.log(t_ord[-2][0] / t_ord[-1][0])
     print(f"    order of tanh(ln q)  : {mp.nstr(p_t, 10)}")
     print(f"    -> delta is O(h^3), CAL-3's order (the pion decay width). tanh is")
-    print(f"       O(h). So 1 - |r_pn| = O(h^4), while r_pp and r_nn are O(h^0)")
-    print(f"       with a bar-odd ratio q^4.")
+    print(f"       O(h). So 1 - |r_pn| = O(h^4), while both like-nucleon rates")
+    print(f"       are exactly 1/q^2.")
 
     # ------------------------------------------------------------- assertions
     a = [
-        {"name": "bond_decay_rates_are_closed_forms_in_q",
-         "passed": bool(sp.simplify(r_pp + 1 / QS ** 2) == 0
-                        and sp.simplify(r_nn + QS ** 2) == 0
-                        and r_pn == -1),
-         "detail": "the transfer step's spectrum is E_1 = Prod(q + d_j), E_2 = "
-                   "Prod(-1/q + d_j) (`chi_monotone_transfer._alpha_beta`), so the "
-                   "per-bond falloff is E_2/E_1: -1/q^2 for p-p (d=0), -q^2 for n-n "
-                   "(d=-h), and EXACTLY -1 for the averaged p-n (d=-h/2). Three closed "
-                   "forms in q with no free parameter — the rate Step 27 declined to "
-                   "invent was already determined by the transfer matrix"},
-        {"name": "the_three_rates_carry_one_degree_of_freedom",
-         "passed": bool(not_indep and sp.simplify(ratio - QS ** 4) == 0),
-         "detail": "r_pp . r_nn = 1 = r_pn^2 is an exact relation among the three, and "
-                   "r_nn / r_pp = q^4. So the bond rates have ONE degree of freedom "
-                   "(q^2), not three: an all-pairs coupling built on them adds no "
-                   "parameter to the framework. They are not independent"},
-        {"name": "bar_parity_reproduces_the_interaction_sector_taxonomy",
-         "passed": bool(exch and fixed and prod_even and ratio_odd),
-         "detail": "under q -> 1/q the p-p and n-n rates EXCHANGE and the p-n rate is "
-                   "FIXED. Their product (=1) is bar-even — the taxonomy's STRONG cosh "
-                   "channel; their ratio (=q^4) is bar-odd — its WEAK sinh channel. The "
-                   "sector classification `interaction-sector-taxonomy.md` states by "
-                   "parity is recovered from the bond rates alone"},
+        {"name": "bond_rates_are_closed_forms_and_like_nucleon_bonds_coincide",
+         "passed": bool(like_coincide
+                        and mp.fabs(gaps["p-p"] - inv_q2) < mp.mpf("1e-30")
+                        and mp.fabs(gaps["p-n"] - 1) < mp.mpf("1e-30")),
+         "detail": f"the transfer step's spectrum is E_1 = Prod(q + d_j), "
+                   f"E_2 = Prod(-1/q + d_j) (`chi_monotone_transfer._alpha_beta`), so the "
+                   f"per-bond falloff is the SPECTRAL GAP |lambda_2/lambda_1|: exactly "
+                   f"1/q^2 for BOTH p-p and n-n (sigma^-1 carries sigma's spectrum up to "
+                   f"sign) and exactly 1 for the averaged p-n, which is therefore "
+                   f"LONG-RANGE. Closed forms in q with no free parameter, which removes "
+                   f"Step 27's three-free-parameter objection. CORRECTS this probe's "
+                   f"first version (E_2/E_1 in fixed order gave q^2 for n-n); bean "
+                   f"qou-brng derived the same object correctly on main"},
+        {"name": "the_one_dof_and_sector_claims_are_withdrawn",
+         "passed": bool(prod_wrong and like_coincide),
+         "detail": f"r_pp . r_nn = {mp.nstr(gaps['p-p'] * gaps['n-n'], 10)} rather than 1, "
+                   f"so the 'one exact relation, one degree of freedom' claim is false; "
+                   f"and p-p = n-n exactly, so they do not exchange under the bar and the "
+                   f"strong/weak sector assignment built on that exchange is vacuous. "
+                   f"Both are withdrawn and neither is restated. The exchange was partly "
+                   f"circular in any case: d = 0 and d = -h are sigma and sigma^-1, "
+                   f"bar-images of each other by definition"},
         {"name": "pn_departure_is_the_electromagnetic_ratio_times_the_flavour_split",
          "passed": bool(tanh_is_lead
                         and all(v[3] < mp.mpf("1e-3") for v in dep_rows.values())),
          "detail": f"1 - |r_pn| = 2.delta.(q^2-1)/(delta.(q^2-1) + 2q^2 + 2), whose "
                    f"leading coefficient is (q^2-1)/(q^2+1) = tanh(ln q). At the pin "
-                   f"tanh(ln q_0) = {mp.nstr(tanh0, 12)} — exactly the odd-to-even ratio "
-                   f"the taxonomy derives for the ELECTROMAGNETIC coupling, the cell it "
-                   f"proves admits no pure parity. Predicted "
+                   f"tanh(ln q_0) = {mp.nstr(tanh0, 12)} — the odd-to-even ratio the "
+                   f"taxonomy derives for the ELECTROMAGNETIC coupling. Predicted "
                    f"{mp.nstr(dep_rows['leading'][2], 10)} against measured "
                    f"{mp.nstr(1 - dep_rows['leading'][1], 10)}, agreeing to "
-                   f"{mp.nstr(dep_rows['leading'][3], 4)} relative — the second order "
-                   f"in delta. So the p-n bond sits at the intertwiner point, which is "
-                   f"where the taxonomy independently puts the EM sector"},
+                   f"{mp.nstr(dep_rows['leading'][3], 4)} relative — the second order in "
+                   f"delta. SELF-RAISED CAVEAT (bean qou-i9gk): tanh(ln q) is just 'odd "
+                   f"part over even part', which any bar decomposition produces, so this "
+                   f"may be two instances of one triviality rather than a link. Unlike "
+                   f"the withdrawn sector claim it is at least a numerical coincidence "
+                   f"that has to be explained away rather than a restated definition"},
         {"name": "flavour_split_sits_at_CAL3_h_order",
          "passed": bool(mp.fabs(ords["delta"] - 3) < mp.mpf("1e-3")
                         and mp.fabs(p_t - 1) < mp.mpf("1e-3")),
          "detail": f"delta = flavor_split_leading(q) vanishes to order "
                    f"{mp.nstr(ords['delta'], 8)} in (q-1) — h^3, the order the math-ideal "
                    f"CAL ladder assigns to CAL-3 (D_pi, the pion decay width). tanh(ln q) "
-                   f"is O(h), so 1 - |r_pn| is O(h^4) while r_pp and r_nn are O(h^0). "
-                   f"The canonical triple is (m_e, D_beta, D_pi) at h^0/h^2/h^3, so two "
-                   f"of the three calibration points are decay rates by definition"},
+                   f"is O(h), so 1 - |r_pn| is O(h^4) while both like-nucleon rates are "
+                   f"the q-independent-in-order 1/q^2. The canonical triple is "
+                   f"(m_e, D_beta, D_pi) at h^0/h^2/h^3, so two of the three calibration "
+                   f"points are decay rates by definition"},
     ]
     ok = all(v["passed"] for v in a)
     print("\n  assertions:")
@@ -342,10 +385,13 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                        "transfer": "chi_monotone_transfer._alpha_beta (fine-Bratteli)"},
         "data": {
             "q0": mp.nstr(Q0, 20), "h0": mp.nstr(H0, 18),
-            "rate_pp": str(sp.factor(r_pp)), "rate_nn": str(sp.factor(r_nn)),
-            "rate_pn": str(r_pn),
-            "product_pp_nn": str(prod), "ratio_nn_pp": str(ratio),
-            "bar_pp": str(bar_pp), "bar_nn": str(bar_nn), "bar_pn": str(bar_pn),
+            "gap_pp": mp.nstr(gaps["p-p"], 20), "gap_nn": mp.nstr(gaps["n-n"], 20),
+            "gap_pn": mp.nstr(gaps["p-n"], 20),
+            "inv_q_squared": mp.nstr(inv_q2, 20),
+            "like_nucleon_rates_coincide": bool(like_coincide),
+            "withdrawn": ["r_pp . r_nn = r_pn^2 (one degree of freedom)",
+                          "bar exchange -> strong/weak sector split"],
+            "reference_implementation": "computations/probes/spectral_gap_bond_decay_probe.py (bean qou-brng, main)",
             "pn_departure_exact": str(dep),
             "pn_departure_leading_coeff": str(lead),
             "tanh_ln_q_closed_form": str(tanh_closed),
