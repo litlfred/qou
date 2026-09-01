@@ -1707,3 +1707,61 @@ something this probe can settle — flagged for the owner.
 strong bond constants, whereas physical atomic EM binding is ~13.6 eV against
 nuclear MeV. If the term carries electron REST MASS (0.511 MeV) that is roughly
 right, but the dimensionless traces carry no normalisation to check it.
+
+## 2026-09-01 — the weak channel: a flavour flip, not a crossing; and a DIRECTIONAL zero
+
+`computations/probes/weak_channel_is_a_flavour_flip_probe.py`, 6/6.
+Owner: is there a low-mass isotope where the weak channel is simplest, what does
+the physics suggest, can we see it formally in the tower?
+
+**THE PHYSICS, AND WE ALREADY HAVE BOTH ENDPOINTS.** The simplest weak systems
+at low mass are the **free neutron** (A=1, `n -> p e- nu-bar`, tau ~ 879 s — a
+free neutron decays, a free proton does not) and **tritium** (A=3,
+`3H -> 3He e- nu-bar`, **Q = 18.59 keV, the lowest-Q beta decay in nature**, the
+system neutrino-mass experiments use). And 3H/3He is **exactly the mirror pair
+this series has been computing all along**, so both endpoints are in hand.
+
+**FORMALLY, BETA DECAY IS NOT A CROSSING.** `n = udd -> p = uud` is `d -> u`,
+which under the flavour rule changes the beta ASSIGNMENT:
+
+    neutron udd  beta = (1/2, 1/2, 1)  ->  proton uud  beta = (0, 1/2, 1/2)
+
+**No generator is involved.** It is a move between two words of the same
+algebra. **That explains the previous probe's finding that no generator slot is
+free for the weak force — it does not need one.** The three per-nucleon slots
+(3k intra, 3k+1 EM, 3k+2 strong) are all crossings; weak is not.
+
+**THE TRANSITION OPERATOR.** Right multiplication by `v_n` is invertible
+(det 1.067), so there is a **unique** `W` with `v_n . W = v_p`, verified to
+**1.15e-41**. It is nothing like a crossing: distance to all six templates >=
+0.99, identity coefficient 0.9892, so `W = 1 + small` — as expected when the
+states differ by one quark flavour.
+
+**THE DIRECTIONAL STRUCTURAL ZERO — the formal tower answer.** In NF coords:
+
+    W(n -> p)[sigma_0] = 0 EXACTLY   1.2e-32 (30 dps), -5.2e-53 (50), 1.3e-82 (80)
+    W(p -> n)[sigma_0] = -0.00225962  STABLE at every precision
+
+`sigma_0` is the **STRONG-channel generator**. So the weak transition operator
+**avoids the strong generator in the `n -> p` direction and not in `p -> n`** —
+and `n -> p` is precisely the direction that happens spontaneously in nature.
+Reported as an observation; **nothing here derives the decay from it**, predicts
+a rate, or shows the zero is what makes one direction preferred.
+
+**WHAT THE 0TH-ORDER TRACE CANNOT SEE.** Convention D has `y_alt = 0` exactly,
+so the alt block is annihilated. `W` carries **20.0%** of its block weight
+there — a fifth of the weak operator is invisible to the 0th-order observable,
+which is the owner's tower picture. But this is **NOT** "weak lives in the
+radical": the nucleons carry MORE alt weight (30.8% p, 37.9% n) than W does.
+
+**BOTH ORDERINGS RIGHT, BOTH MAGNITUDES WRONG.** Taking `-log(tr_M)` as the
+mass-like quantity: A=1 gives the **neutron heavier** than the proton (0.744159
+vs 0.463102) — correct; A=3 gives **3H heavier** than 3He (3.535505 vs
+3.024007) — correct, and 3H is the one that decays. Model n/p = 1.60690 against
+1.00138; model 3H-3He splitting 14.5% of scale against a physical Q/M of 6.6e-6.
+Orders off, as everywhere — dimensionless traces, no mass normalisation.
+
+**Flagged**: `W` is the algebraic connector, defined purely by `v_n . W = v_p`;
+calling it the weak operator is an interpretation. It carries **no lepton
+content** — the electron and antineutrino appear nowhere, and the construction
+has no strand or generator for a neutrino at all.

@@ -1,0 +1,136 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T04:12:08.509579+00:00",
+  "commitSha": "0cf42cc41600efcf1ab3b65b5236e932b70332d4",
+  "assertions": [
+    {
+      "name": "A1_weak_is_a_beta_reassignment",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "udd -> ('0.5', '0.5', '1.0') against uud -> ('0.0', '0.5', '0.5'), no generator involved"
+    },
+    {
+      "name": "A2_transition_operator_unique_and_verified",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "det 1.0673765, residual 1.7e-52"
+    },
+    {
+      "name": "A3_W_is_not_a_crossing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "nearest template at distance 0.989192; identity coefficient 0.98919155"
+    },
+    {
+      "name": "A4_directional_structural_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "W(n->p)[s0] shrinks 1.22e-32 -> 1.258e-82; W(p->n)[s0] stable at -0.0022596184"
+    },
+    {
+      "name": "A5_fraction_invisible_to_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|alt|/total: W 0.2002, p 0.3077, n 0.3787"
+    },
+    {
+      "name": "A6_orderings_right_magnitudes_not",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n heavier than p and 3H heavier than 3He; model n/p 1.6069 against 1.00137841917"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "weak_channel_is_a_flavour_flip_probe",
+  "scriptFile": "weak_channel_is_a_flavour_flip_probe.py",
+  "scriptHash": "cf7df7a7973c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/weak_channel_is_a_flavour_flip_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/weak_channel_is_a_flavour_flip_probe.py"
+  },
+  "description": "Locates the weak channel. The simplest low-mass systems are the free neutron (A=1) and tritium 3H -> 3He (A=3, Q = 18.59 keV, the lowest-Q beta decay in nature), whose endpoints are the mirror pair this series already computes. Formally beta decay is d -> u, which under the flavour rule changes the beta ASSIGNMENT — neutron udd (1/2,1/2,1) to proton uud (0,1/2,1/2) — and involves no generator at all, which is why none of the three per-nucleon slots (3k intra, 3k+1 EM, 3k+2 strong) is free for weak: it does not need one. The unique W with v_n . W = v_p exists (det 1.067, residual 1.15e-41), is not a crossing (nearest template at distance 0.99, identity coefficient 0.9892), and has a STRUCTURAL ZERO in its sigma_0 coefficient — the strong-channel generator — in the n -> p direction only (1.2e-32, -5.2e-53, 1.3e-82 at 30, 50, 80 dps), while p -> n holds a stable -0.00225962 there. n -> p is the direction that happens spontaneously. 20.0% of W's block weight sits in the alt block that convention D annihilates, so a fifth of it is invisible to the 0th-order trace — but less than the nucleons themselves carry (30.8% and 37.9%), so this is not 'weak lives in the radical'. Both mass orderings come out right (neutron heavier than proton, 3H heavier than 3He) and both magnitudes wrong by orders.",
+  "data": {
+    "systems": {
+      "A=1": "free neutron, tau ~ 879 s",
+      "A=3": "3H -> 3He, Q = 18.592 keV"
+    },
+    "beta_assignment": {
+      "neutron_udd": [
+        "0.5",
+        "0.5",
+        "1.0"
+      ],
+      "proton_uud": [
+        "0.0",
+        "0.5",
+        "0.5"
+      ]
+    },
+    "W_nf_coords": [
+      "0.989191546992138",
+      "-5.15998857563969e-53",
+      "0.101041962421142",
+      "0.000472396501075564",
+      "-0.0117738926699988",
+      "0.105758717959156"
+    ],
+    "W_determinant": "1.06737646099",
+    "W_residual": "1.67e-52",
+    "sigma0_forward": {
+      "30": "1.21992e-32",
+      "50": "-5.15999e-53",
+      "80": "1.25798e-82"
+    },
+    "sigma0_reverse": {
+      "30": "-0.00225961842",
+      "50": "-0.00225961842",
+      "80": "-0.00225961842"
+    },
+    "alt_fraction": {
+      "proton": "0.307713",
+      "neutron": "0.378723",
+      "W": "0.200185"
+    },
+    "orderings": {
+      "minus_log_tr_p": "0.463102056458",
+      "minus_log_tr_n": "0.744159425697",
+      "minus_log_tr_3H": "3.53550476577",
+      "minus_log_tr_3He": "3.02400672339"
+    }
+  },
+  "caveats": [
+    "THE DIRECTIONAL ZERO IS AN OBSERVATION, NOT A MECHANISM. That W(n->p) has no sigma_0 component while W(p->n) does, and that n -> p is the spontaneous direction, is a genuine structural asymmetry — but nothing here derives beta decay from it, predicts a rate or a lifetime, or shows the zero is what makes one direction preferred. Establishing any of that would need a dynamical principle the construction does not currently have.",
+    "'W' IS THE ALGEBRAIC CONNECTOR, NOT A WEAK INTERACTION OPERATOR. It is defined purely by v_n . W = v_p, i.e. as whatever element carries one nucleon word to the other. Calling it the weak transition operator is an interpretation. In particular it carries no lepton content: the emitted electron and antineutrino appear nowhere, and the construction has no strand or generator for a neutrino at all.",
+    "The magnitudes are wrong by orders, as everywhere in this series. The model's n/p mass ratio is 1.607 against a physical 1.00138, and its 3H-3He splitting is 14.5% of the scale against a physical Q/M of 6.6e-6. Only the two ORDERINGS are being claimed, and they are claimed as signs rather than scales precisely because no mass normalisation has been applied."
+  ]
+}
