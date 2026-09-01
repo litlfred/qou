@@ -164,7 +164,9 @@ def main() -> int:
               f"{fmt(B, 10):>15} {fmt((B / AME_DEUTERON - 1) * 100, 5) + ' %':>12}")
 
     dlt = flavor_split_leading(q0)
-    B_prod = al * (-mp.log(z - h * (mp.mpf(1) / 2 - dlt / 4)))
+    e_pn = 2 * (mp.mpf(1) / 2 - dlt / 4) - 1   # production de['pn'] = -delta/2
+    B_prod = al * (-mp.log(z - h * (mp.mpf(1) / 2 - dlt / 4))
+                   - e_pn / 2 * mp.log(1 - h))
     e_prod = (B_prod / AME_DEUTERON - 1) * 100
     e_tref = (rows[3] / AME_DEUTERON - 1) * 100
     print(f"{'production':>14} {'--':>3} {'--':>15} {fmt(B_prod, 10):>15} "
