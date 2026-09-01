@@ -196,10 +196,31 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "deligne-stable-range-binding-period-probe", witness,
         script_path=__file__, engine="sympy+mpmath",
-    ).save()
+    )
+    # The interpolation restriction property is verified EXACTLY -- each (mu, n)
+    # pair cross-multiplies the together()-normalised fractions and requires the
+    # expanded polynomial difference to be identically 0 -- and was recorded
+    # only as `restriction_property.holds` while the witness shipped
+    # `allPassed: true` over an EMPTY assertion list (bean qou-srvu). No
+    # tolerance to fit: the bar is symbolic zero.
+    #
+    # The other two verdict booleans are deliberately NOT asserted, on this
+    # file's own distinction ("formula derived then machine-verified; capture
+    # is a measurement, no fit"). `stable_truncation_captures_T_at_q0` is a
+    # measurement against a chosen 0.5 bar and currently reads False;
+    # `capture_decreasing_in_n` is an empirical monotonicity over a chosen
+    # n-range. Asserting either would encode an outcome as a requirement.
+    if formula_checks > 0:
+        _wb.add_assertion(
+            "padded_family_stable_closed_form_exact_on_every_mu_n_pair",
+            computed=str(len(formula_failures)), expected="0", tolerance="0",
+            source="interpolation restriction property: rational in q, q^n per shape family",
+        )
+        _wb.add_parameter("restriction_property_pairs_checked", formula_checks)
+    out = _wb.save()
     print(f"\n  Witness: {out}")
     return 0
 

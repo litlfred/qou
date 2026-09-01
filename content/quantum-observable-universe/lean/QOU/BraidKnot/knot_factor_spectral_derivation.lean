@@ -57,14 +57,6 @@ class KnotFactorSpectralContext (n : ℕ) where
       fun lam => plancherelWeight lam * chi_beta lam * chi_beta_mirror lam
                / (chi_one lam) ^ 2
 
-/-- **Plancherel weights sum to 1** ([`prop:knot-factor-spectral-derivation`]
-    sub-claim from the manuscript). -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-factor-spectral-derivation.md
-def plancherelWeight_sum_eq_one
-    {n : ℕ} [ctx : KnotFactorSpectralContext n] :
-    (ctx.partitions.sum fun lam => ctx.plancherelWeight lam) = 1 :=
-  ctx.claim_plancherel_sum_one
-
 /-- **Knot-factor spectral formula** ([`prop:knot-factor-spectral-derivation`]).
 
     `a_𝒦 = Σ_λ w_λ · χ_λ(β_𝒦) · χ_λ(β_𝒦*) / χ_λ(𝟙)²`. -/
@@ -77,5 +69,19 @@ def knot_factor_spectral_derivation
                    * ctx.chi_beta lam * ctx.chi_beta_mirror lam
                    / (ctx.chi_one lam) ^ 2 :=
   ctx.claim_knot_factor_spectral
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `plancherelWeight_sum_eq_one` — body was `ctx.claim_plancherel_sum_one`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot

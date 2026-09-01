@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-22T21:43:41Z
+updated_at: 2026-08-31T03:41:42Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4298,3 +4298,823 @@ The root cause — `def:braid-twist-flip`'s V4 definition + its proved
 (real formalization work; a proved theorem becomes false). Until qou-htv4 lands,
 `def:braid-twist-flip` still says V4 while its blocks say S3: a KNOWN, filed
 transient inconsistency.
+
+
+---
+
+## 2026-08-31 — TRANCHE 1 LANDED (PR #6329): L-V4 – L-V10 fixed, and this bean's headline framing is wrong
+
+First items moved off "LIVE" since the ledger was opened. Thirteen content blocks, every
+value re-derived at `mp.dps = 40` before editing. **All the recorded figures reproduced** —
+the ledger's arithmetic is sound. Two things it got wrong are about *framing* and *extent*.
+
+### 1. The title's lead — "q₀ muon/proton pin straddle" — describes 1 of these 7 findings
+
+Measured against four candidate pins (`1.1097`, `1.10998`, proton `1.1099785827513808`,
+CODATA-2022 muon `1.109978595642739`):
+
+| cause | findings |
+|---|---|
+| stale-q₀ artifact | **L-V9 only** (`9.1158` is the 1.1097 value) |
+| premature rounding | L-V6 |
+| unexplained | L-V8's `0.05049` |
+| pin-independent error | L-V4, L-V5, L-V7, L-V10 |
+
+So a reader triaging this bean by its title will look for pin drift and find, in this cluster,
+one instance. Worth restating when the title is next touched.
+
+### 2. Three findings understate their defect
+
+- **L-V4 is not a labelling error.** The block concludes *"Arms equal legs, yielding
+  `Σ c(x) = 0`"* — and `(5,4,4,4,3)` has `Σ c(x) = **−5**`. The conclusion was false of the
+  exhibited partition. Replaced with `(5,5,4,4,2)` (self-conjugate, `Σ c(x) = 0` verified,
+  hooks `9,7,3,1`, same 5 rows / max part 5), diagram redrawn.
+- **L-V8's two tables carry two MORE wrong rows**, unflagged: `[2]_q = 2.01099` (true
+  `2.01090`, a last-two-digit transposition) and `𝔈_× = 0.10450` (true `0.10453`).
+- **L-V6's provenance is identifiable and is not a pin.** `borromean-hopf-energy-crossover`
+  shows its working: it rounds `ℏ_q` to `0.0989` then **squares it**, `0.009781` instead of
+  `0.0098172`.
+
+### 3. `0.05049` is UNEXPLAINED — recorded rather than guessed
+
+Not a stale-pin value at any of the four; and none of `(√q−1/√q)/2`, `(q−1)/2`, `ln q/2`,
+`ℏ_q/2`, `√q−1`, `1−q^{-1/2}` lands on it. The nearest, `1−q^{-1/2} = 0.050833`, is 0.7 %
+off — not convincing. If a later agent identifies it, that may point at a whole family.
+
+### Sidecar note, correcting an assumption I nearly made
+
+I expected these to be the `qou-zjfs` 86 %-false-positive class and checked instead: **12 of
+the 13 were fully fresh on main** (top-level, per-criterion and content hashes all agreeing).
+So the staleness is caused by this branch and was mine to fix, not a pre-existing tooling gap
+to point at. Refreshed via the per-directory sweep (258 + 177 + 60 + 15 blocks) with 127
+collateral sidecars reverted. `double-magic-Ca40-diagram` was the single one already stale.
+
+### Remaining
+
+**183 findings.** L-V1/L-V2/L-V3 (trefoil matrices, braid-word tables) are the natural next
+tranche but need representation-theoretic re-derivation, not arithmetic — a different kind of
+work from this one.
+## 2026-08-31 — MEASURED: this ledger is ~33 % STALE. Re-check before draining.
+
+I scoped a second tranche (L-V1 trefoil matrices, L-V2 braid words) from the "LIVE —
+re-verified" list, then checked each against `main` before editing. **Both were already
+fixed.** That prompted a sample.
+
+### The sample: 21 findings checked against `main` this session
+
+| verdict | n | findings |
+|---|---|---|
+| **already FIXED** (listed LIVE) | **7** | L-V1, L-V2, L-V17, L-V20, L-V21, L-V22, L-V23 |
+| still LIVE (confirmed) | 14 | L-V4–L-V10 (fixed in PR #6329), L-V11, L-V12, L-V13, L-V14, L-V16, L-V18, L-V24 |
+
+**≈ 33 % of the sample was already repaired.** The "LIVE — re-verified" tag is dated
+2026-08-19; `main` has advanced roughly a thousand commits since. So the headline **190 live**
+is probably nearer **~127**, and an agent draining this ledger top-to-bottom will spend about
+a third of its effort re-checking work already done — or, worse, "fix" something already
+correct.
+
+The repairs are real and good, not cosmetic. `trefoil-operator-algebra` (L-V1) now uses
+`s₁ = β`, `s₂ = α²β` — both trace 0, conjugate via α, and I verified at 25 dps that the braid
+relation `s₁s₂s₁ = s₂s₁s₂` **holds**, that the displayed common value is right, that
+`s₂ = α s₁ α⁻¹`, `s₁² = −I`, and `αβα = β`. That is exactly the structural repair this ledger
+prescribed. All three braid-word tables (L-V2) now carry the corrected words, and I re-derived
+all twelve closure component counts: every one matches its table's own Components column.
+
+### Two method warnings for whoever drains this
+
+1. **Grep-absence is NOT evidence of a fix.** My first pass marked L-V24 "gone → FIXED" — the
+   text is verbatim at `hydrogen-partition-function.md:30`; only LaTeX spacing (`$j = 0$`)
+   defeated the search string. Read the site.
+2. **This ledger's file paths omit chapter directories** (`vertex-algebra-jet-relations.md` is
+   in `climax-volume-mass/`, `vacuum-state-su2.md` in `lifting-and-descent/`,
+   `holonomy-trefoil.md` and `rho-s3-holonomy-exposition.md` in `braids-and-knots/`). My first
+   check reported five as FILE-GONE; all five exist. `find . -name` before concluding.
+
+### L-V24 fixed here
+
+`hydrogen-partition-function.md:30` had the heat-capacity limits exactly inverted. Corrected,
+and "recovers the classical **monatomic** result" → "classical **equipartition** result for
+three rotational degrees of freedom" — the block is about rotational modes, and `(3/2)Nk_B`
+there is equipartition over three rotational DOF, not the monatomic translational result.
+
+### Sidecar refresh has a CEILING, and it is 40/77
+
+Measured on this block. `--only <crit>` refreshes exactly that one criterion. A **full**
+directory sweep (no `--only`) refreshes **40 of 77** criteria: **17** never carry a hash at all
+(the `da-*`, `expo-*`, `milnor-*` agent-adjudicated ones, seeded `needs-agent` only) and **20**
+remain stale. Three distinct stale hashes coexist in one sidecar, so "the sidecar is fresh" is
+not even single-valued.
+
+**Correcting my own claim in PR #6329:** I wrote "sidecars refreshed for exactly these 13
+blocks" there having run `--only wall-side-correct` — i.e. **1 criterion of 77 per block**,
+not a refresh. The PR body needs that corrected. Recording it here because the overstatement
+is the same species this ledger exists to catch.
+
+
+---
+
+## 2026-08-31 — tranche 3 (on #6335): L-V11, L-V12, L-V16 fixed; **L-V14 ESCALATED, do not "fix" it**
+
+### L-V11 — the real count is 24, and the ledger's 26 is also wrong
+
+This entry records "claims 34 twice, enumerates 11+4+9+2 = 26". Counted the tables:
+
+    table1  J-1a J-1b J-1c J-2a J-2b J-3a J-3b J-3c J-4a J-5 J-6   = 11
+    table2  D-1 D-2 D-3 D-4                                        =  4
+    table3  JC-1 … JC-9                                            =  9
+
+**J-3c and J-4a — the prose's "plus the 2 inter-level relations" — are already inside the
+structural eleven.** So the "+2" is a double-count and the true total is **24**, not 26 and
+not 34. Both numbers in the prose were wrong and so was the ledger's replacement. Corrected at
+both sites (L9 and L403), with the inter-level pair now described as two *of* the eleven.
+
+### L-V12 — fixed for self-consistency only; the cross-chapter identification is NOT verified
+
+`3.4767` vs tritium `3.4764` is `0.0086 %`, not the stated `0.014 %` — confirmed. This entry
+proposes that the value should read `3.4769` because `frobenius-gram-matrix.md:42` carries
+`+3.47694980`. **I did not take that route.** That number is a **Gram eigenvalue under
+convention C** (also in `markov-gram-bilinear-vs-star.md:56` and `markov-gram-star-positive.md:57`,
+both saying "under convention C"), in a different chapter, and nothing establishes it is the
+same quantity as this `A = 3` ratio. Importing a convention-C eigenvalue as the value of a
+mass-tower ratio, under the 2026-08-15 convention-D ruling, needs an argument this ledger does
+not supply.
+
+So I made the block **self-consistent with its own displayed value**: `0.014 %` → `0.0086 %`.
+If the intended value really is `3.47695`, the percentage is `0.0158 %` — note that is *not*
+`0.014 %` either, so the ledger's "the percentage is right and the number is the rounding
+error" does not hold at 5 dp. Whoever establishes the identification should set both.
+
+### L-V16 — `[2]_{q_0}` 2.012 → **2.011**, `[3]_{q_0}` 3.041 → **3.044**
+
+Recomputed at the proton pin: `2.0108969` and `3.0437062`. Both digits were wrong.
+
+### ⚠ L-V14 — ESCALATED. The table has no determinable convention; do not substitute a number.
+
+This entry says row (3) `[1]_q[2]_q + [2]_q[3]_q ≈ 8.84` is "a mix" of balanced (8.13148) and
+unbalanced (9.1613). True — but the table cannot simply be moved to one convention, because
+**its rows do not agree with each other**:
+
+| row | printed | balanced | unbalanced |
+|---|---|---|---|
+| (2) `[1][2]` | 2.11 | 2.0109 | **2.1100** ✓ |
+| (3) `[1][2]+[2][3]` | 8.84 | 8.1315 | 9.1616 |
+| (1³) `[-1][0]+[-2][-1]` | 2.82 | 2.0109 | 1.5429 |
+
+Row (2) is unbalanced. Row (1³) matches **neither** — a finding this ledger does not record.
+Setting row (3) to the unbalanced `9.16` would make it agree with row (2) and leave row (1³)
+matching nothing. The block needs a convention decision (and, under the 2026-08-15 ruling, a
+statement of which convention it is in) rather than a numeric patch. **Left unedited
+deliberately.**
+
+
+---
+
+## 2026-08-31 — L-V13 RETRACTED (the ledger is wrong); L-V18 escalated with three errors, not one
+
+Worked the last two confirmed-live items from the sample. Neither is a fix.
+
+### L-V13 — NOT A DEFECT. Retract it.
+
+The entry reads: *"relative residual `1.45 × 10⁻³⁰ ppm` = 1.45e-36 relative — 20 orders below
+f64 and below the CODATA input uncertainty. **Physically impossible as a residual.** LIVE."*
+
+**The "below f64" premise is false, and the block is not claiming a physical residual.**
+
+- `computations/q-pinning-50-digit.witness.json` records `q₀` to **69 digits**. The residual is
+  a **round-trip at that precision**, not an f64 computation. 1e-36 is exactly what a 50-dps
+  solve reproduces.
+- The block's own section is headed **"Structural vanishing of the residual"** and says: *"This
+  is exactly the `q₀`-pinning equation read in the forward direction. The CAL-2 calibration
+  defines `q₀` as the unique real solution of `m_μ/m_e = Vol(4₁)/ℏ_q²`. Evaluating both sides at
+  that `q₀` yields **equality by construction**, up to the 50-dps numerical precision of the
+  pinning algorithm and the CODATA `m_μ/m_e` truncation."*
+
+That is the CAL-2 calibration tautology **stated as a tautology** — precisely what AGENTS.md
+§q₀-anchor requires, and the opposite of the failure mode the ledger suspected. Nothing to fix.
+Left unedited.
+
+### L-V18 — LIVE, and there are THREE errors where the ledger records one
+
+The entry catches that Riemann–Hurwitz forces `R = 0` at `d = 1`. Correct. Two more:
+
+1. **The displayed formula is not Riemann–Hurwitz at all.** The block writes
+   `R_tot = 2d + |χ(A)| = 2·1 + |2| = 4`. RH for `f : X → Y` of degree `d` is
+   `χ(X) = d·χ(Y) − R`, so for `CP¹ → CP¹`: **`R = 2d − 2`**. There is no reading on which
+   `2d + |χ|` is the ramification total.
+2. **The block contradicts itself even on its own data.** It states `B = 2` branch points each
+   with `e = 2`. Then `R = Σ(e_p − 1) = 2`, **not the 4** it just displayed.
+3. The ledger's point: `d = 1` gives `R = 2·1 − 2 = 0`, and a degree-1 holomorphic self-map of
+   `CP¹` is an isomorphism — unramified. So the branch points that §(5) *depends on* ("At each
+   branch point `p ∈ {0, ∞}`") cannot exist at `d = 1`.
+
+**The self-consistent reading is `d = 2`:** `R = 2d − 2 = 2`, two branch points at `0` and `∞`
+each with `e = 2` — the squaring map `z ↦ z²`, the double cover of `CP¹` branched at the two
+poles, which is exactly the "north and south poles of `CP¹ ≅ S²`" the block names.
+
+**ESCALATED, not patched.** Setting `d = 2` is a claim about the descent map's degree — content,
+not arithmetic — and fixing only the formula while leaving `d = 1` would give `R = 0` and turn
+an implicit contradiction into an explicit one two paragraphs later. Same shape as L-V14: the
+block needs a decision (is the descent map degree 1, or the double cover its branch structure
+implies?), and once that is made all three lines follow.
+
+### Running tally for this ledger
+
+Fixed by me: **11** (L-V4–L-V12, L-V16, L-V24). Already fixed before I arrived: **7**.
+Escalated as decisions: **2** (L-V14, L-V18). Retracted as not-a-defect: **1** (L-V13).
+Of 21 sampled entries, **three of the ledger's own prescriptions were wrong** — L-V11's
+replacement count, L-V12's proposed source value, and L-V13 entirely.
+---
+
+## Tranche 5 — the render-class band (L-V50…L-V62), 2026-08-31 · PR #6347
+
+Six fixed, six already fixed, **one false positive whose obvious "fix" is
+documented to break the build**, and one new finding recorded rather than
+patched.
+
+**FIXED**
+
+| entry | class | actual sites | this ledger said |
+|---|---|---|---|
+| L-V56 | pandoc `[@key]` → `\cite{key}` | 26 sites / 12 files | 3 / 2 — **8× undercount** |
+| L-V57 | escaped `\[key]` → `\cite{key}` | 9 / 6 | 1 file |
+| L-V55 | `\operatorname` → `\mathrm` | 6 / 3 | **wrong files entirely** |
+| L-V61 | `Q_β` mislabelled CAL-3 | 3 | ✓ |
+| L-V62 | spurious `\cdot \pi` on `Vol(4₁)` | 1 | ✓ |
+| L-V53 | `\frac{X}{1}` | 1 | ✓ |
+
+All 26 pandoc keys and all 6 escaped keys were resolved against
+`content/schema/references.ts` **before** converting. Canonical `\cite{}`
+usage in the corpus is 244 sites, so the two odd spellings are outliers, not
+a competing convention.
+
+**L-V55 is stale AND an undercount at the same time.** The named sites
+(`mobius-surreal-renormalization`, `hyperreal-limit-transfer`,
+`jones-mobius-diagonal`) are all clean; the live ones are
+`index-of-definitions/definition-index.md:1086` and
+`mass-theory/piece-a-specht-character-trace{,-proof}.md`. A prior drain fixed
+the named sites and left the class alive elsewhere — precisely what a *class*
+entry exists to prevent. **When an entry names sites, re-run the class grep,
+not the site list.**
+
+**L-V61 is not a label swap.** CAL-3→CAL-2 would make line 69 read *"predicts
+from CAL-1, CAL-2 … CAL-2 enters only as a cross-check"*. The block's real
+argument is the CAL-2 **overdetermination**: q₀ pinned through the mass proxy
+`m_μ/m_e`, so the empirical decay-width proxy `Q_β` is a cross-check on the
+same calibration. Rewritten to say that.
+
+**🛑 L-V50 IS A FALSE POSITIVE — and acting on it is worse than ignoring it**
+
+`\pp` is not undefined. `main.tex:237` has
+`\newcommand{\pp}{p}  % prime p — used in p-adic content`, and all 8 live
+sites use it correctly. `quantum-observable-universe.ts:29-35` further records
+that re-emitting `\newcommand{\pp}{...}` in the KaTeX macros block *"triggered
+a fatal `Command \pp already defined` in the pdflatex compile"*. So the entry's
+natural reading — *define the missing macro* — is a documented build break.
+**Entry retracted.**
+
+**ALREADY FIXED (0 occurrences each):** L-V51 `\xiZ` · L-V52
+`\pid`/`\pia`/`\lambdaL` · L-V54 `\unicode{9737}` · L-V58 bare `Cech` (`.md`
+and `.ts`) · L-V59 `## Corollarys` → now `## Corollaries` · L-V60 the q₀ digit
+transposition.
+
+**NEW — L-V64. Stale muon anchor quoted in prose. NOT patched.**
+
+Two blocks quote the **CODATA-2018** muon pin as canonical:
+
+- `appendix-qvalues/proton-mass-substrate-identity-derivation.md:7` — `1.10997859555…`
+- `knots-particles-confinement/delta-skein-substrate-identity.md:40` — `1.109978595554181`
+
+Canonical since `fca08de7d29` (2026-08-28) is CODATA 2022,
+`1.109978595642739`. The three muon values (retired frozen A, CODATA-2018 B,
+CODATA-2022 C) diverge at the **13th significant digit**, so both quotes are
+wrong at the 12+ dps precision they themselves claim.
+
+**Deliberately not patched.** The tables directly beneath both quotes were
+computed at B. Changing the quoted anchor without re-running the producers
+converts a stale-but-consistent block into an internally inconsistent one.
+Belongs with `qou-tekx`, not with a prose sweep.
+
+**Sidecars.** 22 refreshed; **917 of 1645 criteria = 55.7%**. Per block the
+ratio runs 35 %–89 %, so the "40/77 ceiling" recorded in tranche 1 is
+block-dependent, not a constant — do not quote it as one. The 728 residual are
+`needs-agent` classes (twelve of them, on 20 blocks each) that no script
+invocation can discharge.
+
+**Method warning (mine).** My first measurement of that sweep said **0 of
+1645**, and I nearly committed it. Per-criterion freshness is
+`criteria.<c>[-1].field_hash.md`, **not** the top-level `source_hashes.md` — the
+top-level block updates regardless, so a script keying on it returns a
+plausible number that measures nothing. Read the raw `git diff` of one sidecar
+before trusting any aggregate over them.
+
+**RUNNING TALLY, five tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 17 |
+| already fixed on arrival | 13 |
+| escalated as author decisions | 2 (L-V14, L-V18) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**Five of this ledger's own prescriptions have now proven wrong**: L-V11's
+replacement count, L-V12's proposed source value, L-V13 entirely, L-V50
+actively harmful, L-V55 pointing at the wrong files. That is 5 of 21 sampled
+≈ **24 %**, on top of ~33 % simple staleness. **Every entry is a candidate.
+Re-derive before applying, and re-run the class grep rather than the site
+list.**
+
+---
+
+## Tranche 6 — the topology / simplicial band (L-V20…L-V36), 2026-08-31 · PR #6347
+
+Eight fixed, three already fixed, one escalated.
+
+**FIXED**
+
+- **L-V27** — resolved by computation, and *every* part of the original was
+  wrong. The block claimed deleting the 0-th strand gives `(σ₀⁻¹)³ ∈ B₂`
+  closing to the negative trefoil, "equivalent to `U₂` via two R2 and one R3".
+  Tracking strand positions through `(σ₀σ₁⁻¹)³` and dropping the crossings the
+  deleted strand participates in:
+
+  ```
+  delete strand 0: 2 crossings survive, exponent sum 0 -> [s+, s-]
+  delete strand 1: 2 crossings survive, exponent sum 0 -> [s-, s+]
+  delete strand 2: 2 crossings survive, exponent sum 0 -> [s+, s-]
+  ```
+
+  Two crossings not three; exponent sum 0 not −3; a **2-component link** not a
+  knot; **one R2 move** not two R2 + one R3. The ledger's own diagnosis (a knot
+  cannot be Reidemeister-equivalent to `U₂` — component count is invariant) was
+  right, and understated how much was wrong.
+
+- **L-V30** — Hopf complement is `T² × I` (Seifert-fibred), not a solid torus
+  (that is the *unknot* complement). **Two sites**, not the one named:
+  `meson-scale-independence-proof.md:3` **and**
+  `pion-mass-hyperbolic-threshold.md:1`.
+- **L-V31** — Thurston's trichotomy is torus / satellite / hyperbolic; torus
+  knots are their own class. Rewritten so `Vol = 0` *follows* rather than merely
+  accompanies.
+- **L-V32** — "non-abelian first homology" → "non-abelian fundamental group".
+- **L-V29** — uniqueness scoped to the building-block knot set (`6₃`, `8₃`,
+  `8₉`, `8₁₂`, `8₁₇`, `8₁₈` are amphichiral too).
+- **L-V35** — the coface *raises* the level; the descent is the codegeneracy
+  `σ⁰ = 𝔡_{n+1} : 𝔊_{n+1} → 𝔊_n`. Both directions now match, and `σ⁰`'s type is
+  stated.
+- **L-V36** — the two parenthetical glosses were swapped (coface inserts a
+  *face*, codegeneracy collapses a *degeneracy*).
+
+**ALREADY FIXED:** L-V20 (`rank 2`, 0 occurrences) · L-V21 (the displayed
+involution is gone; surviving text agrees with `braid-twist-flip.md:21`, whose
+`σ₁σ₂ : w ↦ (w₃,w₁,w₂,w₄)` *is* a 3-cycle) · L-V22 (the live text now states the
+opposite explicitly — "the commuting reading (which would give the Klein
+four-group `V₄`) violates the braid relation").
+
+**ESCALATED — L-V28, three errors where the ledger records one**
+
+`categorical-meson.md:11-14`:
+
+```
+T_01 = s0 s1 = L_+   "the positive Hopf link"
+T_10 = s1 s0 = L_-   "the negative Hopf link"
+L_H  = s0 s1         "the Hopf link binding the two constituents"
+```
+
+1. *(the ledger's finding)* both letters are **positive** generators, and
+   AGENTS.md §7a fixes `σᵢ = L₊`, `σᵢ⁻¹ = L₋`.
+2. *(new)* `σ₁σ₀ = σ₀⁻¹(σ₀σ₁)σ₀` — `T₁₀` is **conjugate** to `T₀₁` in `B₃`, so
+   by Markov they have the **same closure** and cannot denote different links
+   under *any* sign convention.
+3. *(new)* the closure of `σ₀σ₁` in `B₃` is **not** the Hopf link: its
+   permutation is a 3-cycle, so the closure has **one** component, and two
+   crossings on three strands give the **unknot**. The Hopf link is the closure
+   of `σ₀²` in `B₂`.
+
+Not patched: the 01/10 distinction is presumably crossing *order* (up-type vs
+down-type) inside the Hecke word rather than link type, but `L₊`/`L₋` are
+skein-convention symbols used corpus-wide, so renaming these three is an author
+call.
+
+**Sidecars.** 8 refreshed, **325/614 = 52.9 %** — consistent with tranche 5's
+55.7 %, and again nowhere near the "40/77" recorded in tranche 1.
+
+**RUNNING TALLY, six tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 25 |
+| already fixed on arrival | 16 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**A pattern worth naming.** Three separate entries now (L-V27, L-V28, L-V30)
+turned out to understate the defect once actually computed, while five others
+(L-V11, L-V12, L-V13, L-V50, L-V55) overstated or misdirected it. The ledger is
+a good *detector* and an unreliable *diagnosis*. Verify the finding, then
+re-derive the fix from scratch.
+
+---
+
+## Tranche 7 — L-V23…L-V37 remainder, 2026-08-31 · PR #6347
+
+Five fixed, one already fixed. Two were settled symbolically rather than by
+reading.
+
+**L-V34 — solved, and the ledger's fix was one-sided.** Eigenproblem for the
+standard R-matrix on `span{e₁⊗e₂, e₂⊗e₁}` (`R u = v`, `R v = u + (q−q⁻¹)v`):
+
+| eigenvalue | eigenvector | normalised |
+|---|---|---|
+| `q` | `e₁⊗e₂ + q e₂⊗e₁` | `q^{-1/2}u + q^{1/2}v` |
+| `−q⁻¹` | `e₁⊗e₂ − q⁻¹e₂⊗e₁` | `q^{1/2}u − q^{-1/2}v` |
+
+So the **antisymmetric vector in the block is correct**; only the **symmetric**
+one has its powers swapped. The block's symmetric vector fails `R·x = q·x` with
+residue `((1−q²)/√q, (q²−1)/q^{3/2})`.
+
+**And a quadratic-relation check cannot catch this.** The `M` that the block's
+two vectors would force *does* satisfy `(M−q)(M+q⁻¹) = 0`. What breaks is the
+normalisation: its off-diagonals are `(q²+1)/2` and `(q²+1)/(2q²)`, so `R` would
+send `e₁⊗e₂` to a multiple of `e₂⊗e₁` other than 1. Worth remembering — the
+obvious sanity check passes on the wrong answer.
+
+**L-V25 — the block contradicted itself twice over.** The recursion
+`q_{n+1} = q_n − ℏ_{q_n} = (q²−q+1)/q` decreases `q` toward the superattracting
+fixed point `q = 1` (`q_{n+1} − q_n = −(q−1)/q < 0` for `q > 1`), and line 13
+says exactly that. Line 20 then claimed the opposite direction — immediately
+before asserting that `d_H` increases as `q` decreases, which only holds in the
+direction line 13 gives. Rewritten to run forward in time from the Big Bang
+(`q` large) to `q = 1`.
+
+**L-V33** — `[E,F] = (K−K⁻¹)/(q−q⁻¹)` is the **defining commutator of
+`U_q(su(2))`**, not "the Hecke relation" (`(σ−q)(σ+q⁻¹) = 0`, a different
+algebra); and `KEK⁻¹ = q²E` are the **K-relations**, not Serre relations (the
+cubic ones, which do not exist at rank 1). Two misnomers in one sentence.
+
+**L-V37** — extracted the nuclei the sibling tables actually work:
+`¹⁴C → ¹⁴N` (t2, t3), `⁶⁰Co → ⁶⁰Ni` (t5), `²¹⁰Bi → ²¹⁰Po` (t6, t7). That **is**
+an increasing-mass ladder (A = 14, 60, 210) — just not the promised
+Iron/silver/uranium. Intro rewritten to the three that exist.
+
+**L-V26** — a 10⁴ mismatch written as agreement: `|M_q|²` "spans 10 orders of
+magnitude. This is the correct order of magnitude for" an observed spread of
+`~10⁶`. Rewritten to state the over-span and to label the claim a
+consistency-of-scale remark rather than a quantitative match. **The numbers are
+unchanged; only the claim about them is.**
+
+**L-V23 already fixed** — no "period equals the sum of its residues" anywhere.
+
+**RUNNING TALLY, seven tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 30 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V19 (the χ three-way
+inconsistency), L-V38–L-V49, L-V63 (the ≥ 9-site skein-convention cluster).
+L-V19 and L-V63 are both *clusters* rather than single sites and should be
+scoped as their own tranches.
+
+---
+
+## Tranche 8 — L-V19 dissected: **one** wrong leg, not a three-way inconsistency
+
+The entry records four legs in conflict. Checked each independently.
+
+| leg | claim | verdict |
+|---|---|---|
+| 1 | `χ(A) = tr(id_A) = χ(CP¹) = 2`, `qu-to-qou-su2.md:13` | **CORRECT** |
+| 2 | `χ(M) = 3`, `q-harmonic-basis-brane.md:13` | **WRONG — fixed** |
+| 3 | `χ(A) = −6`, Bring's surface | **CORRECT** (genus 4: `2 − 2·4 = −6`) |
+| 4 | `χ(A_n)` constant vs `dim A_n = 3ⁿ dim A_0` | **NOT A DEFECT** |
+
+**Leg 2 fixed.** Two problems, and the block already contained its own
+correction: `χ = 3` is impossible for a closed orientable surface (`χ = 2−2g`
+is even), and it is the *wrong invariant* — line 11 of the same block says the
+index runs over `1 ≤ i ≤ b₁(𝒮_n)`, so the count of basis vectors is a Betti
+number. Rewritten to `b₁(𝒮_0) = 3`, which the stated index range gives and
+which is consistent for a brane (`𝒮_n` is not a surface).
+
+**Leg 3 is a notation collision, not an arithmetic conflict.** The letter `A`
+denotes `CP¹` in one chapter and Bring's surface in another; both values are
+right for their own object. Worth a notation-register entry, not a fix.
+
+**Leg 4 is not a defect at all.** `euler-char-stability-proof.md` defines
+`χ(A_n) = tr(id_{A_n}) = ev_n ∘ coev_n` — the **rigidity trace**. In a rigid
+monoidal category that is a categorical/quantum dimension and need not equal the
+underlying vector-space dimension, so it can be constant while `dim` grows as
+`3ⁿ`. The claim carries a proof block, an independent archimedean check
+(`euler-char-stability-C.md`, Leray–Serre) and three further restatements.
+
+**Leg 1 is an input to L-V18, which stays escalated.** Do not edit
+`qu-to-qou-su2.md:20-25` while that decision is open.
+
+So L-V19 overstates by three legs out of four — the same pattern as L-V11,
+L-V12, L-V13, L-V50 and L-V55.
+
+**RUNNING TALLY, eight tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 31 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 3 (L-V14, L-V18, L-V28) |
+| retracted / partly retracted | 3 (L-V13, L-V50, L-V19 legs 1/3/4) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49, L-V63 (the ≥9-site
+skein-convention cluster, which deserves its own tranche).
+
+---
+
+## Tranche 9 — L-V63 dissected: **one** defect, not nine, and the ledger has it backwards
+
+The entry flags "≥ 9 sites" using the HOMFLY form *"against the AGENTS.md §7a
+canonical"*. Solved the operator-level question before touching anything, and
+that framing inverts which sites are wrong.
+
+### §7a is FORCED, and only at the Hecke level
+
+Ask which `(a, z)` make `a·L₊ − a⁻¹·L₋ = z·L₀` hold as an **operator identity**
+with `L₊ = σ`, `L₋ = σ⁻¹`, `L₀ = 1`, `σ² = (q−q⁻¹)σ + 1`. Evaluating on both
+eigenvectors (`σ` has eigenvalues `q`, `−q⁻¹`) gives two equations with the
+unique solution
+
+```
+a = 1,   z = q - 1/q
+```
+
+So §7a is not one convention among several — it is forced. **But it is forced
+at the level of the Hecke generator.** Any `a ≠ 1` form is a statement about the
+**normalised invariant**, a different object, and is not a §7a violation.
+
+The ~9 sites writing `qL₊ − q⁻¹L₋ = (q^{1/2}−q^{-1/2})L₀` are the standard
+Jones/HOMFLY relation for that invariant, and they agree with each other —
+`strangelet-double-beta.md` and `skein-turing-machine.md` write the same thing
+as `sL₀` with `s = q^{1/2}−q^{-1/2}` defined on the next line. **Two levels,
+both correct.**
+
+### The real defect: two sites mix the levels
+
+Both write `qL₊ − q⁻¹L₋ = (q−q⁻¹)L₀` — Jones-level LHS, Hecke-level RHS,
+i.e. `(a,z) = (q, q−q⁻¹)`, which is neither. At the proton `q₀` the two
+right-hand sides differ by a factor **2.0027**, so it is not a renormalisation.
+
+**FIXED — `glossary/glossary-q-bit-skein.md:8`.** The block states the relation
+and uses it for nothing else, and its own next sentence says the resolution is
+*"weighted by the Hecke eigenvalues"* — the operator level. Set to the §7a form.
+
+### 🟡 ESCALATED — `appendix-surreals/q-collatz-conjecture.md:39`
+
+**This is a defect in the argument, not the transcription. Do not "fix" it by
+substituting `q^{1/2}−q^{-1/2}`.**
+
+Running the HOMFLY skein chain `unknot → U₂ → Hopf → trefoil` at
+`(a,z) = (q, q−q⁻¹)`:
+
+```
+P(U_2) = 1     P(Hopf) = 1     P(trefoil) = 1
+```
+
+— every link. That is the **`sl(1)` specialisation** `a = q^N` at `N = 1`, and
+the invariant is **identically trivial**. (Contrast the `sl(2)`/Jones point
+`(q², q−q⁻¹)`, which gives `P(trefoil) = (q⁶+q²−1)/q⁸`.)
+
+**And the block's own conclusion needs exactly that point.** Dividing by `a`
+gives `L₊ = a⁻²L₋ + (z/a)L₀`, and the block asserts
+`J(L₊) = q⁻²J(L₋) + (1−q⁻²)J(L₀)` is a convex combination. Coefficient sums at
+`q₀`:
+
+| `(a, z)` | coeff sum |
+|---|---|
+| `(q, q−q⁻¹)` — as written | **1.0000000** |
+| `(q, q^{1/2}−q^{-1/2})` | 0.9056978 |
+| `(q², q−q⁻¹)` — Jones | 0.8284647 |
+
+So the convexity is **real** and holds **only** at the specialisation that makes
+the invariant trivial. Substituting the corpus-majority RHS breaks the convexity
+the Collatz contraction argument rests on; keeping it leaves the argument
+"non-expansive" on a quantity that is 1 for every link. **Neither branch is a
+transcription fix** — this needs the author.
+
+**RUNNING TALLY, nine tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 32 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 4 (L-V14, L-V18, L-V28, L-V63/q-collatz) |
+| retracted / partly retracted | 4 (L-V13, L-V50, L-V19 legs, L-V63's 9-site framing) |
+| new entries opened | 1 (L-V64) |
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17, L-V38–L-V49.
+
+---
+
+## Tranche 10 — L-V38…L-V49, 2026-08-31
+
+Nine fixed, one retracted, three escalated.
+
+### 🛑 L-V38 RETRACTED — applying it would break the definition it flags
+
+The entry calls the leading `0` in `𝓜 = {0, 2, 8, 20, 28, 50, 82, 126}` "magic-
+number set drift". It is not drift; the two sets are different objects.
+
+`𝓜` is labelled **"closed-shell counts"** and exists to feed
+`m_≤(X) = largest magic ≤ X`, `n_out(X) = X − m_≤(X)`. Without `0 ∈ 𝓜`, `m_≤`
+is **undefined for any nucleon count below 2** — and
+`tm-heavy-atom-examples-table8-data.md` covers **hydrogen**. The leading `0` is
+what makes `m_≤` total on ℕ.
+
+`shell-transition-knot.md:2` uses `{2, 8, 20, 28, 50, 82, 126}` for *stability
+pairs* — the physics magic numbers, where `0` would be wrong. Two sets, two
+purposes, both correct. (The entry names 3 sites; there is a 4th,
+`predicted-spectra/shell-construction-rules.md:34`, correct in the same way.)
+
+### Fixed
+
+| entry | what |
+|---|---|
+| **L-V42** | `"When $\|q\|=1$ is irrational"` — a modulus condition, not a number with an irrationality property. Now `q = e^{2πiθ}`, θ irrational. |
+| **L-V41** | `\|R\| = ∅` for `R = 𝔽_p`. `\|R\|` is the value set; the trivial absolute value exists, so it is `{0,1}`, never empty. Restated as "no archimedean place". |
+| **L-V40** | Editing residue — the excision is stated on **both** sides of the same display. Dropped the second. |
+| **L-V45**a | `σᵢ ↔ σᵢ` is the identity map. The bar-involution is `σᵢ ↔ σᵢ⁻¹`, confirmed by the block's own next sentence. |
+| **L-V46**a | `Plucker → Plücker`, `Mobius → Möbius` ×2. (The `AUDIT-REPORT.md` hits are Lean **filenames** — left alone.) |
+| **L-V47** | bare `$SU_q(1,1)$` → `\mathrm{SU}_q(1,1)`, 3 sites (§7aa). |
+| **L-V48** | "accordingly isomorphic" → "correspondingly". |
+| **L-V49** | "transverses" → "traverses". |
+| **L-V43** | `> **Superseded.**` banner → `authorNotes {kind: "deprecated"}` per §4d. |
+
+**L-V43 note:** safe *here* only because the block is a `definition()`, which
+extends `BlockBaseSchema`. On a `prose`/`table`/`equation`/`diagram` block the
+field is **silently dropped** (§4d correction). Verified the `.ts` loads with 2
+`authorNotes`.
+
+### 🟡 Escalated — three, and one is a near-miss of my own
+
+**L-V46b — I nearly fabricated a citation.** The dangling *"See Seiberg–Witten
+for the explicit symplectic form"* has no `\cite{}`. I first "fixed" it with
+`\cite{seibergwitten1994}` — **a key that does not exist**. The real ids are
+`seiberg1994` and `seiberg-witten1994b`, both N=2 SUSY Yang–Mills papers on
+monopole condensation and duality, neither about a symplectic form on `Λ²V` for
+`SL(2)`. So the pointer is probably **internal** — but neither
+`sw-period-residue-sum.md` nor `sw-classical-jet-exactness.md` mentions a
+symplectic form either. Reverted; left dangling and flagged rather than
+fabricated. **Check the key exists before writing a `\cite{}`.**
+
+**L-V39 — two readings, and it is load-bearing under both.**
+`shell-transition-knot.md:2,36` and `-interpretation.md:3` say `𝓑₃` has
+"3 internal crossings" / "crossing number 3". The Borromean rings have crossing
+number **6**, and `(σ₀σ₁⁻¹)³` has 6 letters — verified independently in tranche
+6 (deleting a strand removes 4 of the 6). *But* 3 may be the intended quantity
+under the wrong name: the interpretation block says *"the number of resonant
+coupling channels equals the Borromean crossing number"*, and `𝓑₃` has exactly
+**3 pairs** of components (6 = 3 pairs × 2). Under that reading the number is
+right and only the name is wrong.
+
+Load-bearing either way: the whole `N ≥ 3` threshold rests on it, and
+`QOU.Braiding.stability_pairs_correct` is attached. Changing 3 → 6 moves the
+threshold to `N = 6` and breaks the shell closures.
+
+**L-V44 / L-V45b — the degree description is wrong, but the naming is a
+convention.** `brings-surface-qou-intro.md:1` calls Bring's surface "the
+`S₅`-symmetric **quartic-and-quadric** in `ℙ⁴`"; the curve is cut by
+`p₁ = p₂ = p₃ = 0`, i.e. a quadric and a **cubic**. And
+`c-from-color-flavor-swap.md:69` says "Bring's **quintic** surface". But the
+corpus deliberately calls the genus-4 **curve** "Bring's surface" —
+`chi-minus-six-chain.md:19`: *"The unique maximally symmetric genus-4 curve is
+Bring's surface `Σ₄`"* — across **303** occurrences. Correcting the degree
+without settling the curve/surface convention would make one block disagree
+with its own chapter.
+
+**RUNNING TALLY, ten tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 41 |
+| already fixed on arrival | 17 |
+| escalated as author decisions | 7 |
+| retracted / partly retracted | 5 |
+| new entries opened | 1 (L-V64) |
+
+**L-V38 is the third entry that would have caused damage if applied literally**,
+after L-V50 (a documented build break) and L-V63 (replacing the standard Jones
+relation with an operator identity that fails for the normalised invariant).
+
+**Still unworked:** L-V1, L-V2, L-V15, L-V17.
+
+---
+
+## Tranche 11 — the last four (L-V1, L-V2, L-V15, L-V17). **THE LEDGER IS DRAINED.**
+
+Three of the four were already fixed. One was live and is now migrated.
+
+### L-V1 — FIXED, and fixed *correctly*
+
+`trefoil-operator-algebra.md` no longer asserts that `αβα` and `βαβ` both equal
+a displayed off-diagonal matrix. It now reads: *"together with `β` it obeys the
+**dihedral** relations `αβα = β` and `βαβ⁻¹ = α⁻¹`"* — which matches the
+recomputation (`αβα = β`) **and** takes the structural point the ledger made:
+`tr α = 1`, `tr β = 0`, so they are not conjugate and cannot be braid
+generators. Calling them dihedral rather than braid relations is the right fix,
+not a patch over the numbers.
+
+### L-V2 — FIXED, and independently re-verified here
+
+All 12 rows of `binding-knots-visual-inventory-table1-data.md` and both
+`knot-particle-dictionary` tables now carry the corrected words. **Recomputed
+every closure component count from the underlying permutation — 10/10 rows
+verify:**
+
+```
+Unknot 0_1      trivial                  comps=1  expect 1  OK
+Hopf L2a1       s0^2         in B_2      comps=2  expect 2  OK
+Trefoil 3_1     s0^3         in B_2      comps=1  expect 1  OK
+Cinquefoil 5_1  s0^5         in B_2      comps=1  expect 1  OK
+Septafoil 7_1   s0^7         in B_2      comps=1  expect 1  OK
+Fig-8 4_1       (s0 s1^-1)^2 in B_3      comps=1  expect 1  OK
+T(2,9) 9_1      s0^9         in B_2      comps=1  expect 1  OK
+T(3,4) 8_19     (s0 s1)^4    in B_3      comps=1  expect 1  OK
+T(3,5) 10_124   (s0 s1)^5    in B_3      comps=1  expect 1  OK
+Borromean 6^3_2 (s0 s1^-1)^3 in B_3      comps=3  expect 3  OK
+```
+
+Confirmed *correct*, not merely *changed*.
+
+### L-V17 — FIXED by the convention-D migration, better than a patch
+
+The vacuous "stability for `q > 1/φ²`" is gone. `q-game-of-life{,-proof,
+-interpretation}.md` now state that `q_⋆ = 1/φ²` and `q_Φ ≈ 0.4656` are
+**convention-C artifacts that do not exist under `z_D`**, and that the
+well-definedness condition holds on `q ≠ 1` — which contains the substrate. The
+threshold was not corrected; it was dissolved.
+
+### L-V15 — LIVE, and now migrated C → D
+
+Identified all three values exactly **before** changing any:
+
+| operator | closed form | convention C (shown) | convention D |
+|---|---|---|---|
+| `σ₀`, `σ₁` | `z` | 0.4993203342 → `0.499` | 0.6126880371 → **0.613** |
+| `L₊`, `L₋` | `z²` | 0.2493207961 → `0.249` | 0.3753866309 → **0.375** |
+| `e⁻` | `z + (q−q⁻¹)z²` | 0.5514434143 → `0.551` | 0.6911664784 → **0.691** |
+
+Three independent confirmations of the identification:
+
+1. `notation-register-table3-data.md:17` states `z_D(q₀) =
+   0.61268803714646525160`; computing `q³/(q²+1)` at the proton `q₀` gives
+   `0.61268803714646524365` — **19 digits**.
+2. `fivefold-sheets-golden-ratio.md:7` gives `P_{7,7} = z + (q−q⁻¹)z²` — the
+   same closed form as the `e⁻` row.
+3. `toffoli-lp-stability.md:38` records that *"`P_{7,7}(q₀) ≈ 0.5514` … was the
+   convention-C diagonal"* — **same object, same number, already corrected in a
+   sibling block**. This table is a straggler that sweep missed.
+
+**Why substituting `z_D` is valid here, when AGENTS.md warns it usually is not.**
+The warning (`q-game-of-life-proof.md:16`, `MarkovZFullBarCondition.lean`) is
+about closed forms *derived through a C-specific route*. These three are not
+that: `tr_M(σᵢ) = z` is the stabilisation axiom, `tr_M(σ₀σ₁) = z²` is the
+Markov property on the top generator, and the `e⁻` form is the Hecke reduction
+of `σ₀σ₁σ₀`. Structural identities in `z`; only `z`'s value changes.
+
+Nothing regenerates the table — the `.ts` declares no `computation`/`witness`,
+and the only producers matching these figures live under
+`computations/_deprecated/`. Hand-maintained content, so hand-editing is the
+correct route. Caption now names the convention and prints the three closed
+forms so the column can be re-derived rather than trusted.
+
+---
+
+## FINAL TALLY — eleven tranches, ledger drained
+
+| outcome | count |
+|---|---|
+| **fixed** | **42** |
+| already fixed on arrival | 20 |
+| escalated as author decisions | 7 |
+| retracted / partly retracted | 5 |
+| new entries opened | 1 (L-V64) |
+
+**Open, awaiting the author** — L-V14, L-V18, L-V28, L-V39, L-V44/45b, L-V46b,
+L-V63/q-collatz, plus the new L-V64.
+
+**What this ledger turned out to be.** A good detector and an unreliable
+diagnosis. Roughly a third of entries were simply stale, and of those still
+live, **five were wrong about the defect itself** — three of them in a direction
+that would have *damaged* the corpus if applied literally:
+
+- **L-V50** — "define the missing `\pp` macro" is a documented fatal pdflatex break.
+- **L-V38** — stripping the leading `0` from `𝓜` makes `m_≤` undefined below X = 2, and table 8 covers hydrogen.
+- **L-V63** — "fix" the nine `q^{1/2}` sites and you replace the standard Jones relation with an operator identity that fails for the normalised invariant.
+
+And three entries (**L-V27, L-V28, L-V30**) *understated* the defect once
+actually computed.
+
+**Standing advice for the next agent:** verify the finding, re-derive the fix
+from scratch, and re-run the *class* grep rather than the entry's site list.

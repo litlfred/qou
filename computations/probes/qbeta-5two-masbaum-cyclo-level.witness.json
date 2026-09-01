@@ -1,8 +1,8 @@
 {
   "engine": "exact-fraction-series",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:24:47.756408+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-08-30T09:19:20.287929+00:00",
+  "commitSha": "a60c27098ce56d427af720786743c8f987d5b46b",
   "assertions": [
     {
       "name": "printed_tables_regated",
@@ -22,19 +22,19 @@
     },
     {
       "name": "scan_completed",
-      "computed": 165.0,
-      "expected": 165.0,
+      "computed": 165,
+      "expected": 165,
       "passed": true,
-      "tolerance": "0.5",
-      "source": "all 165 pre-registered (sign,j,λ)×shift combinations decided and recorded: |LAM_GRID| 11 × |J_RANGE| 3 × |SHIFTS| 5"
+      "tolerance": 0,
+      "source": "all pre-registered (sign,j,λ)×shift combinations decided and recorded; expected = Σ|LAM_GRID| × 3 (j) × |SHIFTS|"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-masbaum-cyclo-level",
   "scriptFile": "qbeta_5two_masbaum_cyclo_level_probe.py",
-  "scriptHash": "edb70e18b4ac",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "d7aed0f77c89",
+  "scriptCommitSha": "59a85d2071f0440f38dec5b8003c0bef3b5bd279",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [
@@ -104,8 +103,6 @@
     },
     "scan": {
       "n_combinations": 165,
-      "n_recorded": 165,
-      "n_pre_registered": 165,
       "n_leads": 0,
       "combos_with_any_match": [
         {

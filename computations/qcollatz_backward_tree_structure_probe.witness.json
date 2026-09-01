@@ -1,0 +1,111 @@
+{
+  "schema": "qou-probe/v0",
+  "description": "Backward-tree structure of the q-Collatz map at a primitive cube root of unity: order of w+1, the closed form for the coupled (P(w), P'(w)) recursion, and the norm 1+6k+12k^2 of the odd-preimage branches. Supplies the arithmetic inputs to the unit obstruction proved in collatz_block_descent.lean. Exact Z and Z[w] arithmetic. Exploratory research probe (NOT canonical production).",
+  "result": {
+    "A_order_of_w_plus_1": 6,
+    "A_odd_preimage_positions_on_main_chain": [
+      0,
+      6,
+      12,
+      18,
+      24
+    ],
+    "A_all_positions_divisible_by_6": true,
+    "B_closed_form_matches_chain": true,
+    "B_observed_v_at_those_positions": [
+      [
+        0,
+        -1
+      ],
+      [
+        -6,
+        -7
+      ],
+      [
+        -12,
+        -13
+      ],
+      [
+        -18,
+        -19
+      ],
+      [
+        -24,
+        -25
+      ]
+    ],
+    "C_branch_norms": [
+      {
+        "k": 0,
+        "norm": 1,
+        "predicted": 1,
+        "matches": true
+      },
+      {
+        "k": 1,
+        "norm": 19,
+        "predicted": 19,
+        "matches": true
+      },
+      {
+        "k": 2,
+        "norm": 61,
+        "predicted": 61,
+        "matches": true
+      },
+      {
+        "k": 3,
+        "norm": 127,
+        "predicted": 127,
+        "matches": true
+      },
+      {
+        "k": 4,
+        "norm": 217,
+        "predicted": 217,
+        "matches": true
+      },
+      {
+        "k": 5,
+        "norm": 331,
+        "predicted": 331,
+        "matches": true
+      },
+      {
+        "k": 6,
+        "norm": 469,
+        "predicted": 469,
+        "matches": true
+      },
+      {
+        "k": 7,
+        "norm": 631,
+        "predicted": 631,
+        "matches": true
+      },
+      {
+        "k": 8,
+        "norm": 817,
+        "predicted": 817,
+        "matches": true
+      },
+      {
+        "k": 9,
+        "norm": 1027,
+        "predicted": 1027,
+        "matches": true
+      },
+      {
+        "k": 10,
+        "norm": 1261,
+        "predicted": 1261,
+        "matches": true
+      }
+    ],
+    "C_norm_formula_holds": true,
+    "C_norm_one_only_at": [
+      0
+    ],
+    "C_k_ge_1_branches_never_admit_a_further_odd_preimage": true
+  }
+}

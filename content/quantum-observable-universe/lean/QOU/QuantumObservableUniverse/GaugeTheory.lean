@@ -58,13 +58,6 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
   orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
     f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
-theorem fiber_adjoint_involution_sq {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C)
-    (fai : FiberAdjointInvolution C fh) :
-    fai.involution ≫ fai.involution = 𝟙 fai.adjointObj :=
-  fai.involution_sq
-
 /-- **Categorical connection** on a Frobenius–Hopf object.
     LaTeX: `\label{def:categorical-connection}` -/
 structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
@@ -258,5 +251,19 @@ structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
   obs_gauge_invariant : ∀ s₁ s₂, gaugeEquiv s₁ s₂ → obs s₁ = obs s₂
   /-- All sections are gauge-equivalent (from observability). -/
   obs_well_defined : ∀ s₁ s₂, gaugeEquiv s₁ s₂
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `fiber_adjoint_involution_sq` — body was `fai.involution_sq`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU

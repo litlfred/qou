@@ -5,7 +5,6 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
-import QOU.AlgebraicSubstrate.ConditionalClasses
 
 /-!
 # QOU.AlgebraicSubstrate.SurrealRateCalculus — rate table
@@ -143,26 +142,28 @@ def surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
     cancellation in an ordered field is possible because the cost is
     transfinite and the dissipation infinitesimal.
 
-    The five §3b-cond conjecture-class hypotheses
-    (`[QAubinLions]`, …, `[RegularityBreakdown]`) record the
-    conditional dependency of the rate *table* on the q-NS conjecture
-    cone (`conj:q-aubin-lions`, …, `conj:regularity-breakdown`), per
-    the `.md` banner; the inequalities themselves are unconditional
-    given the rate data and the infinitesimality of `ε`. -/
+    **The nine conjecture-cone binders were removed 2026-08-30.**  They were
+    `{α : ℝ} {K ω : ℝ → ℝ} {Sbrk : Set ℝ}` together with `[QAubinLions K] …
+    [RegularityBreakdown Sbrk]`, and the paragraph they replaced said plainly
+    what they did: they *"record the conditional dependency of the rate table
+    on the q-NS conjecture cone … the inequalities themselves are
+    unconditional given the rate data and the infinitesimality of `ε`."*
+
+    That is an honest description of a dishonest signature.  A binder the
+    proof never consumes does not record a dependency — it reads as one to
+    anyone scanning the statement, while discharging nothing.  The proof below
+    uses `S`, `hε_pos` and `hε_inf` and nothing else; four of the nine binders
+    existed only to supply parameters to the other five.
+
+    The dependency of the rate table on the cone is a manuscript-level claim
+    (`conj:q-aubin-lions`, …, `conj:regularity-breakdown`) and belongs in the
+    `.md` banner, which states it.  What is proved here is what the proof
+    actually uses: the rate equations and the archimedean smallness of `ε`. -/
 -- Ref: [conway1976] On Numbers and Games §III
 -- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
 theorem surreal_rate_calculus_conditional
     {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     [S : SurrealRateCalculus F]
-    -- `α` is the q-NS critical exponent the dependency record refers to. It is
-    -- universally quantified rather than fixed at `4/3`: `[CriticalExponent
-    -- (4/3)]` would be dischargeable by `⟨rfl⟩` at any call site, which would
-    -- make the dependency record satisfy itself and record nothing.
-    -- NB `S` is already the SurrealRateCalculus instance above; the breakdown
-    -- locus is `Sbrk` to avoid shadowing it.
-    {α : ℝ} {K ω : ℝ → ℝ} {Sbrk : Set ℝ}
-    [QAubinLions K] [NSCounterexample ω] [CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown Sbrk]
     (hε_pos : 0 < S.epsilon)
     (hε_inf : ∀ (n : ℕ) (lam : F), 0 < lam → S.epsilon ^ (n + 1) < lam) :
     (0 < S.massGap ∧ 0 < S.reebPeriod)

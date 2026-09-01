@@ -17,7 +17,7 @@ export default proposition({
   // Items 1 (chiral, `a_K = 1 + w(K)·h + O(h²)`) and 3 (Borromean product over
   // amphichiral sublinks) are NOT formalised.
   lean: {
-    ref: "qou:QOU.BraidKnot.chirality_frobenius_self_pairing.chirality_amphichiral_via_qInt3",
+    ref: "qou:QOU.BraidKnot.ChiralityFrobenius.chirality_frobenius_self_pairing.chirality_amphichiral_via_qInt3",
     validation: "not_checked",
   },
   uses: [

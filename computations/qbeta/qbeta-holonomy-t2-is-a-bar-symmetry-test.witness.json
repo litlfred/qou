@@ -1,0 +1,190 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T12:38:03.430282+00:00",
+  "commitSha": "6bd3f6ddf1dc5cbacef89896653edca58d80e0dc",
+  "assertions": [
+    {
+      "name": "alpha_t2_coeff_is_quarter_plus_zprime_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "c_pinned_to_minus_half_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_t2_coeff_is_quarter_plus_zprime_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "c_pinned_to_minus_half_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zC_is_bar_even",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_is_NOT_bar_even",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "bar_even_forces_zprime_zero",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "not_bar_even_zD_has_nonzero_zprime",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "t2_test_passes_exactly_for_the_bar_even_convention",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "C_is_not_a_logarithm_either",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_is_algebraic_so_exact_agreement_is_impossible",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-holonomy-t2-is-a-bar-symmetry-test",
+  "scriptFile": "qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py",
+  "scriptHash": "f65d468a3a8f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py"
+  },
+  "description": "The branch-3 holonomy t^2 acceptance test is a BAR-SYMMETRY test in disguise. alpha's t^2 coefficient is exactly 1/4 + z'(1); the c*ln q prediction is 1/4; so alpha is second-order logarithmic iff z'(1) = 0 — and bar-evenness FORCES z'(1) = 0 (differentiate z(1/q) = z(q) at the bar fixed point q=1). z_C is bar-even, z_D is not. So convention D failing the t^2 test is NOT independent evidence against the 2026-08-15 ruling; it restates the already-known fact that z_D is not bar-even. Corollary: acceptance-test part 1 has no discriminating power for route 5, since it tests the Markov parameter rather than the holonomy hypothesis. Neither convention is a logarithm: alpha is ALGEBRAIC (rational in sqrt q under C, in q under D) while c*ln q is transcendental, and alpha_C already deviates at t^3.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)",
+    "q0_value": "1.10997858275138"
+  },
+  "data": {
+    "assertions_passed": 11,
+    "assertions_total": 11,
+    "checks": [
+      {
+        "name": "alpha_t2_coeff_is_quarter_plus_zprime_C",
+        "pass": true,
+        "why": "C: t^2 = 1/4 = 1/4 + z'(1) = 1/4 + 0"
+      },
+      {
+        "name": "c_pinned_to_minus_half_C",
+        "pass": true,
+        "why": "C: z(1) = 1/2 so the t^1 coefficient pins c = -1/2"
+      },
+      {
+        "name": "alpha_t2_coeff_is_quarter_plus_zprime_D",
+        "pass": true,
+        "why": "D: t^2 = 5/4 = 1/4 + z'(1) = 1/4 + 1"
+      },
+      {
+        "name": "c_pinned_to_minus_half_D",
+        "pass": true,
+        "why": "D: z(1) = 1/2 so the t^1 coefficient pins c = -1/2"
+      },
+      {
+        "name": "zC_is_bar_even",
+        "pass": true,
+        "why": "z_C(1/q) - z_C(q) == 0 identically"
+      },
+      {
+        "name": "zD_is_NOT_bar_even",
+        "pass": true,
+        "why": "z_D(1/q) != z_D(q)"
+      },
+      {
+        "name": "bar_even_forces_zprime_zero",
+        "pass": true,
+        "why": "differentiating z(1/q) = z(q) at q=1 gives -z'(1) = z'(1)"
+      },
+      {
+        "name": "not_bar_even_zD_has_nonzero_zprime",
+        "pass": true,
+        "why": "z_D'(1) = 1, so nothing forces the t^2 match"
+      },
+      {
+        "name": "t2_test_passes_exactly_for_the_bar_even_convention",
+        "pass": true,
+        "why": "C passes the holonomy t^2 test, D fails it — and the discriminator is bar-evenness, not the holonomy hypothesis"
+      },
+      {
+        "name": "C_is_not_a_logarithm_either",
+        "pass": true,
+        "why": "alpha_C - c*ln q first deviates at t^3, so the agreement is second-order, not exact"
+      },
+      {
+        "name": "alpha_is_algebraic_so_exact_agreement_is_impossible",
+        "pass": true,
+        "why": "alpha_C is a rational function of sqrt(q), alpha_D of q; c*ln q is transcendental, so no exact agreement is possible in either"
+      }
+    ],
+    "per_convention": {
+      "C": {
+        "z_at_1": "1/2",
+        "z_prime_at_1": "0",
+        "alpha_t1": "-1/2",
+        "alpha_t2": "1/4",
+        "bar_even": true,
+        "first_deviation_order_from_c_lnq": 3,
+        "alpha_closed_form": "-(q - 1)*(-sqrt(q) + q + 1)/(2*q)"
+      },
+      "D": {
+        "z_at_1": "1/2",
+        "z_prime_at_1": "1",
+        "alpha_t1": "-1/2",
+        "alpha_t2": "5/4",
+        "bar_even": false,
+        "first_deviation_order_from_c_lnq": 2,
+        "alpha_closed_form": "(q - 1)*(q + 1)*(q**3 - q**2 - 1)/(2*q*(q**2 + 1))"
+      }
+    },
+    "verdict": "DEFLATION. The t^2 tension recorded in qou-pdix entry (6) is not an independent objection to convention D — it is bar-evenness restated. Acceptance-test part 1 is therefore not a test of route 5; parts 2 and 3 (the -1/4 of Re(log-gap) with the discarded i*pi, and a value below 1) remain the real test."
+  }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T09:48:20.929610+00:00",
-  "commitSha": "738f2c10d0cc0f91df3a9bb4f6dafeb2570146f6",
+  "computedAt": "2026-08-30T08:01:17.084758+00:00",
+  "commitSha": "18888e2a2dd770d99566230fa93a35471223f3b8",
   "assertions": [
     {
       "name": "column-identity-symbolic",
@@ -17,8 +17,8 @@
   "durationMs": 14,
   "computation": "qbeta-markov-trace-steps-4-5",
   "scriptFile": "qbeta_markov_trace_steps_4_5.py",
-  "scriptHash": "cf961605ee06",
-  "scriptCommitSha": "e846a227ef38f9ff7cdeee98f876b498ee6c3b24",
+  "scriptHash": "9f06d7781362",
+  "scriptCommitSha": "afec126f876eed955f98d5b8183f1c044873b34e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [
@@ -65,28 +65,7 @@
     },
     "step_4_pointer": {
       "S_at_q0": "0.1868936677215122",
-      "S_at_q0_source": "qbeta-decay-sdp-knot-operator.witness.json data.tau_M_at_q0, loaded verbatim",
-      "S_at_q0_precision": "binary64 from the upstream witness (~17 significant digits); not widened, since no higher-precision form is recorded upstream",
-      "has_independent_expected_value": false,
       "structural_note": "Under Markov collapse T_β = S · I, the c_k Taylor coefficients of Q_β(q)/E_0(q) are the w-Taylor coefficients of S(q), not of a 6-channel L2 projection. Re-extracting c_k from S(q) directly is the runnable next-probe; this script does NOT propose c_k values (forbidden ansatz pattern per AGENTS.md)."
-    },
-    "upstream_witness_hashes": [
-      {
-        "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
-      },
-      {
-        "path": "qbeta-decay-sdp-knot-operator.witness.json",
-        "sha256": "9f128f5a8b2249bf49d907b05e34e313844a3c5a3f82459ec28f41d6be5023db",
-        "size_bytes": 2759,
-        "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
-        "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
-        "computedAt": "2026-08-23T21:12:16.304069+00:00"
-      }
-    ]
+    }
   }
 }

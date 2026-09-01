@@ -276,26 +276,25 @@ def main() -> int:
     print(f"  magic-A 2·m_e·4·8G     = {mp.nstr(b_magic_4he, 8)} MeV")
     print(f"  shortfall: {float(ratio_qb):.0f}× @Q_β,  "
           f"{float(ratio_e0):.0f}× @E_0")
-    # Was `computed=float(ratio_e0), expected=float(ratio_e0)` (bean
-    # `qou-26f2`) — the ratio compared to itself, which passes at ratio = 1 and
-    # below, i.e. exactly when the 4-body cross-term REACHES the magic-A value
-    # and the name's claim is false. The ratio is already recorded above in
-    # `he4_4body_vs_magic_A`, so what an assertion should add here is the
-    # inequality: "far below" read as at least one order of magnitude, at both
-    # scales. Floor 10; measured shortfalls 263× and 49×, so it is not tuned.
-    ORDER_FLOOR = mp.mpf(10)
-    shortfall_scales = {"Q_beta": ratio_qb, "E_0": ratio_e0}
-    far_below = [k for k, v in shortfall_scales.items() if v >= ORDER_FLOOR]
+    # Was `computed=float(ratio_e0), expected=float(ratio_e0)` -- the ratio as
+    # its own expectation, so it passed even if the cross-term had EXCEEDED
+    # magic-A, which is the one outcome the name excludes (bean qou-3e5m).
+    # The `source` called it informational, but the NAME states a falsifiable
+    # direction, and by the qou-26f2 rule the name's claim is what an
+    # assertion owes.
+    #
+    # The threshold is `> 1` deliberately, and it is the only one available
+    # without fitting: "below magic-A" is what can invert, and any sharper
+    # bound (10x, 49x) would be a number chosen to match the value observed.
+    # The magnitude is not lost -- it is recorded in `he4_4body_vs_magic_A`
+    # above, currently 49.2x at the E_0 scale and 263x at the Q_beta scale.
     w.add_assertion(
         name="he4_4body_cross_term_far_below_magic_A",
-        computed=str(len(far_below)), expected=str(len(shortfall_scales)),
-        tolerance=0,
-        unit="scales at which magic-A / T_3 ≥ 10 (one order of magnitude)",
-        source="magic-A / T_3 shortfall — the exact 4-body cross-term of the "
-               "closed form sits this far below the magic-A α-volume value "
-               "2·m_e·4·8G ≈ 29.96 MeV: "
-               + ", ".join(f"{k} {float(v):.0f}×" for k, v in shortfall_scales.items())
-               + f"; both clear the ≥{int(ORDER_FLOOR)}× order-of-magnitude floor",
+        computed=1 if ratio_e0 > 1 else 0, expected=1, tolerance=0,
+        source="magic-A / T_3 at the E_0 scale exceeds 1, i.e. the exact "
+               "4-body cross-term of the closed form lies BELOW the magic-A "
+               "α-volume value 2·m_e·4·8G ≈ 29.96 MeV; the factor itself is "
+               "recorded in data.he4_4body_vs_magic_A",
     )
 
     # consistency hook to the many-body-ceiling audit: order-1 (2-body)

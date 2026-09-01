@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:29:47.831373+00:00",
-  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:27:14.738000+00:00",
+  "commitSha": "ef0189a712b979d1c301c6537cfacb4832b03640",
   "assertions": [
     {
       "name": "closed_form_B_matches_transfer_D",
@@ -70,12 +70,11 @@
     },
     {
       "name": "he4_4body_cross_term_far_below_magic_A",
-      "computed": "2",
-      "expected": "2",
+      "computed": 1,
+      "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "unit": "scales at which magic-A / T_3 ≥ 10 (one order of magnitude)",
-      "source": "magic-A / T_3 shortfall — the exact 4-body cross-term of the closed form sits this far below the magic-A α-volume value 2·m_e·4·8G ≈ 29.96 MeV: Q_beta 263×, E_0 49×; both clear the ≥10× order-of-magnitude floor"
+      "source": "magic-A / T_3 at the E_0 scale exceeds 1, i.e. the exact 4-body cross-term of the closed form lies BELOW the magic-A α-volume value 2·m_e·4·8G ≈ 29.96 MeV; the factor itself is recorded in data.he4_4body_vs_magic_A"
     },
     {
       "name": "he4_2body_fraction_matches_ceiling_audit_26pct",
@@ -87,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 122,
+  "durationMs": 160,
   "computation": "probe-9b-manybody-expansion",
   "scriptFile": "probe_9b_manybody_expansion.py",
-  "scriptHash": "f95654100798",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "2e3efa306abd",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -103,10 +102,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

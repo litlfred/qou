@@ -64,14 +64,18 @@ class HabiroFlowSolution where
 
 -- Ref: [manuscript] content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md
 
-/-- The synthesis class instances exist when the three individual
-    flow-solution propositions are supplied.  Trivial consumer of
-    the class data; downstream theorems can chain through. -/
-theorem habiro_flow_solutions_realise_synthesis
-    [inst : HabiroFlowSolution] :
-    inst.expQ_solves_base_reeb ∧
-    inst.fourier_diagonalises_qheat ∧
-    inst.liTwoQ_volumetric :=
-  inst.all_hold
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `habiro_flow_solutions_realise_synthesis` — body was `inst.all_hold`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.Habiro

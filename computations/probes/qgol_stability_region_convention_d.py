@@ -24,13 +24,21 @@ golden-ratio threshold does not survive the convention change; and Phi^D is
 positive exactly on 0 < q < 1, so the region where BOTH are strictly positive
 is 0 < q < 1 — not q > 1.  The substrate q_0 ~ 1.11 sits where Phi^D < 0.
 
-SCOPE — (a), scope-limited, and the boundary matters.  What is measured is
-that the stability condition AS WRITTEN (both amplitudes strictly positive)
-excludes the substrate under D.  Whether strict positivity is the right
-condition is NOT settled here and is not the probe's to settle: the
-universality argument in `toffoli-q-and.md` turns on Phi != 0, not Phi > 0,
-and those give opposite verdicts at q_0.  That choice changes the
-proposition and is the author's.  Bean qou-nmqd.
+SETTLED 2026-08-30 (owner ruling, bean qou-nmqd): the criterion is
+NON-VANISHING, `Phi != 0`, not strict positivity.  The blocks now state the
+well-definedness region as `q != 1`, which contains the substrate.
+
+That does not make this probe obsolete -- it makes it the record of why.  The
+signs below are what forced the question: under D, strict positivity would put
+the region at 0 < q < 1 and exclude the substrate, while non-vanishing -- the
+condition `toffoli-q-and.md`'s universality argument already used, and the one
+invertibility of the tick requires -- holds for every q != 1.  The two give
+opposite verdicts at q_0 and could not both be the criterion.
+
+Read the table below as two facts that stand whichever criterion is adopted:
+the golden-ratio threshold does not survive the convention change (P_77^D has
+no positive root at all), and Phi^D's single zero on q > 0 sits at q = 1, the
+classical limit, where the q-deformation contributes nothing.
 """
 
 # Bootstrap sys.path BEFORE importing _path_bridge: the bridge lives in
@@ -112,9 +120,11 @@ def main() -> int:
     print(f"  Phi^D(q_0)                                  = {mp.nstr(phi_D(q0), 12)}")
     print("    -> Phi^D > 0 exactly on 0 < q < 1; the substrate is where it is NEGATIVE")
     print()
-    print("  STABILITY REGION as the proposition states it (both > 0): 0 < q < 1.")
-    print("  The proposition asserts q > 1 and places q_0 inside it. Under D that")
-    print("  is the region where the q-AND is negative.")
+    print("  Strict positivity would give the region 0 < q < 1, excluding q_0.")
+    print("  NON-VANISHING (Phi != 0) is the criterion -- owner ruling 2026-08-30,")
+    print("  bean qou-nmqd -- so the region is q != 1 and DOES contain q_0. The")
+    print("  two facts above hold either way: no golden threshold under D, and")
+    print("  Phi^D's only zero on q > 0 is the classical limit q = 1.")
 
     w = WitnessBuilder("qgol-stability-region-convention-d", engine="mpmath")
     w.add_parameter("convention", "D (z = q^3/(q^2+1))")
@@ -133,15 +143,15 @@ def main() -> int:
     w.add_data("stability_region_both_strictly_positive", "0 < q < 1")
     w.add_data("region_asserted_by_proposition", "q > 1")
     w.set_description(
-        "Measures the sign of the two convention-D Toffoli amplitudes over the "
-        "stability region asserted by prop:q-game-of-life. P_77^D has no "
-        "positive root, so the golden-ratio threshold the q-GoL proof cites is "
-        "a convention-C artifact; Phi^D is positive exactly on 0 < q < 1, so "
-        "the region where both are strictly positive is 0 < q < 1 and the "
-        "substrate q_0 sits where the q-AND is negative. Scope (a): what is "
-        "excluded is the condition AS WRITTEN. Whether strict positivity or "
-        "non-vanishing is the right condition is the author's call and is not "
-        "settled here."
+        "Measures the sign of the two convention-D Toffoli amplitudes across the "
+        "region prop:q-game-of-life asserts. P_77^D has no positive root, so the "
+        "golden-ratio threshold the q-GoL proof once cited is a convention-C "
+        "artifact; Phi^D has a single zero on q > 0, at q = 1. SETTLED "
+        "2026-08-30 (owner ruling, bean qou-nmqd): the criterion is NON-VANISHING "
+        "(Phi != 0), not strict positivity, so the well-definedness region is "
+        "q != 1 and contains the substrate. Strict positivity would have given "
+        "0 < q < 1 and excluded it; these signs are the record of why the "
+        "question had to be asked."
     )
     w.save({"q0Anchor": "proton", "q0Value": str(Q_50_DIGIT_STR)})
     return 0

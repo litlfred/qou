@@ -1,0 +1,188 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T19:45:11.350862+00:00",
+  "commitSha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
+  "assertions": [
+    {
+      "name": "D: the fitted proportionality constant IS the Markov z_D",
+      "computed": "2.26489499088086277389315848742e-48",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "k fitted from the two trace arms; z_D computed from q alone"
+    },
+    {
+      "name": "D: the weighted generator occurs exactly once in the word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "generator 2 of 23 crossings on H_6"
+    },
+    {
+      "name": "T: the fitted proportionality constant IS the Markov z_D",
+      "computed": "2.33894222225294422658391557725e-48",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "k fitted from the two trace arms; z_D computed from q alone"
+    },
+    {
+      "name": "T: the weighted generator occurs exactly once in the word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "generator 2 of 35 crossings on H_9"
+    },
+    {
+      "name": "3He: the fitted proportionality constant IS the Markov z_D",
+      "computed": "8.62206585383515011823842447453e-48",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "k fitted from the two trace arms; z_D computed from q alone"
+    },
+    {
+      "name": "3He: the weighted generator occurs exactly once in the word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "generator 5 of 35 crossings on H_9"
+    },
+    {
+      "name": "4He: the fitted proportionality constant IS the Markov z_D",
+      "computed": "4.77917640256711885151022537176e-48",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "k fitted from the two trace arms; z_D computed from q alone"
+    },
+    {
+      "name": "4He: the weighted generator occurs exactly once in the word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "generator 5 of 47 crossings on H_12"
+    },
+    {
+      "name": "the price is nucleus-INDEPENDENT (this is what #6309's caveat denied)",
+      "computed": "1.34012422564022689697486498463e-47",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "max(k) - min(k) over D, T, 3He, 4He on H_6, H_9, H_12"
+    },
+    {
+      "name": "the identity SURVIVES lengthening the word at another generator",
+      "computed": "1.07001404159e-47",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "beta_D + one plain sigma on a generator the weighted crossing does not use"
+    },
+    {
+      "name": "the identity DIES when the weighted generator is used twice",
+      "computed": "1.22852425315",
+      "expected": "1.228521",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "beta_D + one plain sigma on the SAME generator — the discriminating control"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 53289,
+  "computation": "colour-weighting-markov-universality",
+  "scriptFile": "colour_weighting_markov_universality_probe.py",
+  "scriptHash": "2e74dab43206",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_weighting_markov_universality_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_weighting_markov_universality_probe.py"
+  },
+  "parameters": {
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "z_D": "0.61268803714646525159582986394589924802630839154509",
+    "d_averaged": "-0.10453014939781965771542310656483747192987874763153",
+    "d_averaged_weighted": "-0.10445824776972628901783406629000564412800000062852",
+    "predicted_delta_relative": "0.00014149466106277189992092859095736159477922874299609",
+    "D": {
+      "n_strands": 6,
+      "weighted_generator": 2,
+      "occurrences_of_that_generator": 1,
+      "delta_relative": "0.0001414946610627718999209285909573615947792",
+      "implied_k": "0.6126880371464652515958298639458992480263",
+      "k_minus_zD": "2.26489499088e-48"
+    },
+    "T": {
+      "n_strands": 9,
+      "weighted_generator": 2,
+      "occurrences_of_that_generator": 1,
+      "delta_relative": "0.0001414946610627718999209285909573615947792",
+      "implied_k": "0.6126880371464652515958298639458992480263",
+      "k_minus_zD": "-2.33894222225e-48"
+    },
+    "3He": {
+      "n_strands": 9,
+      "weighted_generator": 5,
+      "occurrences_of_that_generator": 1,
+      "delta_relative": "0.0001414946610627718999209285909573615947792",
+      "implied_k": "0.6126880371464652515958298639458992480263",
+      "k_minus_zD": "8.62206585384e-48"
+    },
+    "4He": {
+      "n_strands": 12,
+      "weighted_generator": 5,
+      "occurrences_of_that_generator": 1,
+      "delta_relative": "0.0001414946610627718999209285909573615947792",
+      "implied_k": "0.6126880371464652515958298639458992480263",
+      "k_minus_zD": "-4.77917640257e-48"
+    },
+    "k_spread_across_nuclei": "1.340124225640226897e-47",
+    "control_deuteron_perturbations": {
+      "canonical beta_D": {
+        "occurrences": 1,
+        "k_minus_zD": "2.26489499088e-48"
+      },
+      "+1 sigma on the SAME generator": {
+        "occurrences": 2,
+        "k_minus_zD": "1.22852425315"
+      },
+      "+1 sigma on ANOTHER generator": {
+        "occurrences": 1,
+        "k_minus_zD": "1.07001404159e-47"
+      }
+    }
+  },
+  "caveats": [
+    "Scope: this establishes the price is nucleus-independent for words in which the interface generator occurs once — which is every canonical nucleus, measured. The control shows it does NOT hold when that generator repeats; no claim is made for such words.",
+    "This prices the design choice in bean qou-fv0s; it does not settle it. Whether the p-n interface carries the flavour weighting is a physical modelling question.",
+    "Supersedes the scope-(a) caveat in colour_weighting_trace_magnitude_probe.py and PR #6309, which said the 1.41e-4 figure must not be quoted for T / 3He / 4He. The coefficient is word-specific; the RATIO is not."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

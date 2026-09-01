@@ -162,8 +162,11 @@ def main() -> int:
 
     builder.add_assertion(
         "jones_4_1_leading_h2_coefficient_is_three_quarters",
-        computed=mp.nstr(leading_coeff_exact, 12),
-        expected="0.75",
+        # |coeff - 3/4| against 0. Two same-scale values cancel in the float64
+        # verdict at ~2.2e-16; and mp.nstr(x, 12) caps the comparison at 12
+        # significant digits anyway, so 1e-30 was unreachable twice over.
+        computed=mp.nstr(abs(leading_coeff_exact - mp.mpf(3) / 4), 12),
+        expected="0",
         tolerance=1e-30,
         source="dJ_{4_1}/d(h²)|_0 = 1 − 1/(2√4) = 3/4",
     )

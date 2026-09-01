@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T11:08:30.058720+00:00",
+  "commitSha": "6ae41e00659ec19600fefd4d8975d2335c472dcb",
+  "assertions": [
+    {
+      "name": "gap_is_not_single_factor_on_mu4",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "cited_naive_z_is_convention_C",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "scope_b_exclusion_survives_under_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "mu4-magnitude-gap-anatomy",
+  "scriptFile": "mu4_magnitude_gap_anatomy_probe.py",
+  "scriptHash": "62d7b896ce37",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu4_magnitude_gap_anatomy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu4_magnitude_gap_anatomy_probe.py"
+  },
+  "description": "Anatomy of the 9.56x A=4 magnitude gap: it is a PRODUCT of two opposite misses (mu3 too large, mu4 too small), not one factor on mu4; the geometric per-order reading is underdetermined on two points; the gap is a known scope-(a) WALL whose mechanism is surjective onto every target, hence not chaseable by computation; and the live scope-(b) naive-z exclusion cites a convention-C value, with the verdict unaffected and strengthened under D.",
+  "data": {
+    "anatomy": {
+      "mu3_measured": "0.858162803864291200000000000000000000000000000000000209858965",
+      "mu3_target": "0.470799999999999999999999999999999999999999999999999853532494",
+      "mu4_measured": "-0.875833221139805800000000000000000000000000000000000210664975",
+      "mu4_target": "-4.59099999999999999999999999999999999999999999999999760520282",
+      "k3_target_over_measured": "0.548613850285745695505183193004219051310421236097382115336327",
+      "k4_target_over_measured": "5.24186556205905415364905904477648305715248493069931605806579",
+      "mu3_too_large_by": "1.82277570914250467289719626168224299065420560747663540568634",
+      "mu4_too_small_by": "5.24186556205905415364905904477648305715248493069931605806579",
+      "ratio_of_ratios": "9.55547653671581173420041337284142376229907712827128141211539",
+      "single_factor_on_mu4_suffices": false,
+      "geometric_per_order_law": "UNDERDETERMINED — 2 parameters on 2 points; needs a mu2 target from the same simplex to become a test. r deliberately not quoted."
+    },
+    "wall": {
+      "source": "computations/deltalambda/a4-interface-magnitude-one-scalar-gate.witness.json",
+      "verdict_quoted": "WALL(scope-(a)) magnitude open + scope-(b) exclusion of naive-uniform-z; surviving mechanism = a categorical principle fixing m in (0,1/sqrt5) strictly below the naive z (equiv. a normalized W strictly below d_q^2/D^2)",
+      "mechanism_surjective_onto_all_targets": true,
+      "reading": "The magnitude gap is NOT chaseable by computation: a one-scalar family already reaches every target, so any probe that 'closes' it has inverted the anchor. Closing requires a categorical principle FIXING m."
+    },
+    "convention_residue": {
+      "cited_naive_z": "0.499320334000000000000000000000000000000000000000000287215552",
+      "z_C_excised": "0.499320334183694452413442680257666303751948164041532416785170",
+      "z_D_canonical": "0.612688037146465251595829863945899248026308391545085404591497",
+      "cited_is_convention_C": true,
+      "ceiling_one_over_sqrt5": "0.447213595499957939281834733746255247088123671922304733722148",
+      "det_IG_at_zC": "-0.185120479863117314893437679735634057743402994317986878732612",
+      "det_IG_at_zD": "-0.547744172023255108070962285180973937495466382429270845604515",
+      "exclusion_survives_under_D": true,
+      "exclusion_stronger_under_D": true,
+      "action": "Recorded, not silently corrected: the witness is not this branch's to regenerate and the exclusion it supports is live and unaffected."
+    }
+  }
+}

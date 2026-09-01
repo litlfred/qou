@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-08-29T12:21:33Z
+updated_at: 2026-08-29T18:57:43Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -214,3 +214,44 @@ re-reading, three of four by measuring against something external, and NONE of
 them moved the conclusion. That is not luck: the verdict rests on a symmetric
 sum over the two L slots plus a degree argument in h, and no error of this
 class can reach either.
+
+
+## 2026-08-29 — the last two candidates are priced; the fork IS binary
+
+`computations/qbeta/qbeta_d1_categorical_candidates_probe.py` (5/5). This bean
+listed six candidates with (D1) measured for four. The two `categorical-*` ones
+are now done, and the two are not the same kind of object:
+
+* **"as STATED" (-0.2089) is not an element.** It is the difference of two
+  QUOTED NUMBERS — net(p) = 1.0065 and net(n) = 0.7976, at 5 and 4 significant
+  figures. There is no word, so no NF vector, so no tr_M. **(D1) is not
+  ill-behaved for it; it is NOT WELL-POSED.** A stated net is a target the
+  content blocks assert, not something one can trace. It should be struck from
+  the candidate list as a category error rather than carried as a sixth option.
+
+* **"as CONSTRUCTED (k=1)" (-0.2137638) is an element, and is EXCLUDED:**
+
+      [z^2] tr_M = -(q-1)^3 (q+1)^3 (3q^8 - 5q^6 + 5q^4 - 5q^2 + 3) / (4 q^7)
+
+  The octic has **no real root** (exact Sturm count 0), so the only real roots
+  are q = ±1, both h = 0, against a substrate h ~ 0.209. Scope-(b), invariant
+  cited — the same degree argument that excludes the three pyhecke models.
+
+**Consequence for the decision.** Five of six are priced and the sixth is a
+category error, so the candidate set collapses: **Delta_S is the only element
+carrying (D1)**. The fork is binary after all — Delta_S, or no (D1) at all and
+branch 3 (KZ / Kohno-Drinfeld holonomy) as the only remaining home for a
+derivation of alpha. Nothing here selects between those two; that is still the
+owner call this bean exists for. What is gone is the possibility that a third
+route was hiding in the unmeasured candidates.
+
+Method note: exact symbolic in h/q, no float64, and **no q0 substitution** —
+the verdict is a statement about a polynomial, not about a pin. That is what
+makes it immune to all four correction classes in this bean's history (a
+9-crossing element called eleven; the wrong invariant; decimals silently at
+q = 111/100; swapped basis labels).
+
+Caught in this probe before it shipped: the root check first read
+`solve(c1, h)` while the coefficient comes back in **q**, so it returned `[]`
+and **passed vacuously**. Now solves in q and maps through h = q - 1/q, with an
+exact Sturm count on the octic where a nonzero-h root could have hidden.

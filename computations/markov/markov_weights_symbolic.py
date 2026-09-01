@@ -33,9 +33,21 @@ The 3×3 symbolic solve produces closed-form rational functions of q
 for y_{(3)}, y_{(2,1)}, y_{(1,1,1)}, which then assemble the
 canonical tr_M(β) for any braid word β in B_3.
 
-Cross-validation: at q_0 ≈ 1.1097, this reproduces the
-markov_peel / Hoefsmit-Wenzl bridge value
-tr_M(proton) ≈ 1.0653062286 to all printed digits.
+Cross-validation: at the proton-pinned q_0 ≈ 1.1099785828, this
+reproduces the markov_peel / Hoefsmit-Wenzl bridge value
+tr_M(proton) ≈ 1.1457596925 to all printed digits.
+
+CONVENTION FIX (2026-08-31, bean qou-46ab). This read
+``tr_M(proton) ≈ 1.0653062286`` — the CONVENTION C value, 7.55 % from the
+canonical D one — inside a docstring whose opening paragraph states that
+this module uses z = q^3/(q^2 + 1), convention D, and that C was excised.
+The same literal was corrected in this file's own witness-emitting block on
+2026-08-30 under the same bean; that pass drained the field and missed its
+twin 300 lines above it, in the module's own header. Verified against the
+live path before replacing: ``tr_M_canonical(atom_braid_word_3A_to_crossings(1, 0),
+3)`` evaluates to 1.1457596924573008697 at the proton pin, matching
+markov-peel-atomic-tr-m.witness.json to every digit it carries. The stated
+q_0 was also imprecise (1.1097 for 1.1099785828).
 
 For higher n the same construction works with n class-basis elements.
 For n = 6 (deuteron) the basis is {1, σ_1, σ_1σ_2, σ_1σ_2σ_3,

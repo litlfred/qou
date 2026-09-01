@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-30T03:12:26Z
+updated_at: 2026-08-30T13:01:34Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -823,3 +823,155 @@ was reverted): `sdp_gamma_gamma_to_qqbar.py` evaluates at
 canonical muon pin — it is the **CODATA-2022 lepton-tower muon** value
 (`…5956427390…`), the third of the three values AGENTS.md warns are all called
 "the muon q₀". The parity rule is anchor-free, so nothing here depends on it.
+
+
+## 2026-08-30 — the 9-crossing model is RETIRED, and the measurement's answer was not the one I predicted
+
+Owner authorised "measure first, then retire the 9-crossing". Both done. Three
+corrections to my own framing along the way, all recorded because each was a
+counting or category error of the same kind.
+
+### The fix is ONE function, not a reader migration
+
+`build_nucleon_nf` now applies the σ₀² gluon self-coupling — two `hm(nf, 1, 0,
+0)` at generator 0, the same term `build_atom_nf` already applied. Every
+consumer picks it up automatically, including `computations/substrate/
+hecke_core.py` and the **generated** `qou-mass/_internal/hecke_core.py`, both of
+which *import* from `pyhecke.atom` rather than defining their own copy — so the
+vendor mirror needs no hand-edit (which AGENTS.md forbids anyway).
+
+Framing it as "re-point 13 readers" was wrong. The model was defective; making
+it correct is a one-site change.
+
+### A third independent argument, and it is structural
+
+`shift_from_nf_basis.build_nucleon_nf_sym_atomic` documents
+`atomic_braid_to_crossings`'s convention as **"7 at gen_idx 0 + 4 at gen_idx 1
+= 11 generators"**, explicitly contrasted against "the 9-generator
+hecke_core.build_nucleon_nf". With the gluon term:
+
+    B₃ = (σ₀σ₁⁻¹)³      3 at gen 0, 3 at gen 1
+    quark pairs         2 at gen 0, 1 at gen 1
+    gluon σ₀²           2 at gen 0
+    ------------------------------------------
+                        7 at gen 0, 4 at gen 1  = 11
+
+**Exact match.** The gluon term is precisely what the 9-generator form was
+missing, and this was not fitted for — the term was added on the γγ SDP
+decomposition and `vertex_psd_iff_even`. The two conventions in this corpus
+now agree, and that docstring's stated contrast is retired.
+
+Δ_L(n−p) goes **−0.18829060147138277044 → −0.22715971176556957097** at 50 dps,
+against `build_atom_nf_exact`'s recorded −0.2272041 — agreement to four
+digits, a second cross-check.
+
+### The measurement result: ZERO published numbers move
+
+I predicted ~21 % movement across five publishers. Measured, re-running every
+publisher I could:
+
+| producer | result |
+|---|---|
+| `compound_shift_nf` | byte-identical |
+| `shift_from_nf_basis` | environment metadata only (`sympy 1.14.0 → 1.12`) |
+| `integer_lp_gluon_convention_d` | byte-identical |
+| `atom_mass_derived` | `scriptCommitSha` only; **10/10 assertions still pass** |
+| `hadron_knot_table` | NOT RUN — >50 min, does not finish (AGENTS.md) |
+
+**No number moved anywhere**, despite `PROTON_NF` net moving 20.9 % and Δ_L
+20.6 %. `pyhecke` suite: **222 passed / 13 skipped**, identical to before.
+
+That is the useful finding, and it explains the defect's longevity: **the
+9-crossing model was wrong with no published consequence**, so nothing ever
+flagged it. It also means the change is safe to land — the one genuine unknown
+is `hadron_knot_table`, which cannot be run to completion here.
+
+Worth noting on its own: a 21 % change to a module constant passes 222 tests.
+Nothing asserts on `PROTON_NF`.
+
+### Three counting errors of mine, for the record
+
+1. **Reader counts from the bean, quoted without re-measuring**: 18/6 stated,
+   13/30 actual.
+2. **grep counted docstrings and comments as consumers.** By AST the real
+   figure is **7 consumers, 6 text-only mentions** — `shift_from_nf_basis`
+   does not import the builder, it *reimplements* it.
+3. **A category error in the options I put to the owner**: `build_atom_nf(Z,
+   N)` is the ATOM-level builder and `nucleon_gen_chains(quarks)` is
+   per-nucleon. "Retire #2 in favour of #3" was not a coherent operation and
+   was **not executed**; the authorisation was given for something I had
+   described wrongly. Recorded in
+   `docs/audits/2026-08-30-nucleon-construction-reader-measurement.md`.
+
+### Also fixed
+
+`build_atom_nf`'s docstring still read *"No separate gluon dressing — B₃ IS
+the gluon structure"* — the same unsourced claim, sitting directly above the
+code that applies the gluon term. Corrected. Both builders now say the same
+true thing.
+
+
+## CORRECTION (same day) — "zero published numbers move" was FALSE
+
+A **fourth** counting error, same class as the other three, and this one
+inverted the conclusion.
+
+**What went wrong.** The AST scan that produced "7 real consumers" matched
+`ast.Name` nodes carrying the target identifiers — which matches **assignment
+targets** as well as uses. `computations/atom_mass_derived.py` was counted as a
+consumer when it in fact **defines its own**:
+
+```python
+PROTON_NF  = build_nucleon(['u', 'u', 'd'])   # line 271, its OWN build_nucleon
+NEUTRON_NF = build_nucleon(['u', 'd', 'd'])
+```
+
+It never imports `pyhecke.atom`. Its witness not moving was *expected* and said
+nothing about the change — and I had reported it as the primary evidence that
+the change was inert.
+
+**Corrected consumer set**, resolving by import rather than by name: **6 true
+consumers**, 1 defining its own, 6 text-only. Layer-2 via `hecke_core` adds
+nothing new. **Of the six, exactly one publishes a witness —
+`hadron_knot_table` — and it is the one that could not be run.** So the "five
+publishers, zero movement" measurement covered five producers of which **none
+consumed the changed function**.
+
+**The actual blast radius, measured directly** against the committed witness.
+`hadron_knot_table` calls `build_nucleon_nf` only for the rows passing
+`quarks` — `("proton", 1, 0, "uud")` and `("neutron", 0, 1, "udd")`; every
+other row goes through the untouched `build_atom_nf`:
+
+| assertion | committed (9×) | new (11×) | change | Frobenius |
+|---|---|---|---|---|
+| `tr_M(proton)` | 0.419562177934 | **0.629328402203** | **+50.00 %** | stable |
+| `tr_M(neutron)` | 0.301675079767 | **0.475133517156** | **+57.50 %** | stable |
+
+21 of 23 assertions unaffected.
+
+**And a third exact cross-check falls out of it.** The new `tr_M(proton) =
+0.629328402203` matches the braid-order value recorded further up this bean —
+`tr_M braid-order = 0.62932840220292191817` — to every printed digit. The
+11-crossing `build_nucleon_nf` reproduces the braid-order nucleon exactly.
+That is what it *should* do, and it is a check the change was not tuned
+against.
+
+### Consequence — PR #6214 must not merge yet
+
+Landing the code makes `computations/hadron-knot-table.witness.json` stale by
+50 % on two assertions, and **the witness cannot be regenerated in this
+container** (the producer does not finish; deuterium alone >50 min). Hand-
+editing the two numbers is forbidden; truncating the ATOMS list would produce a
+*different* witness rather than a regenerated one.
+
+Correct sequencing: regenerate that witness in an environment that can run the
+producer to completion, **in the same change as the code**.
+
+### The pattern, since this is now four for four
+
+Every one of my four errors on this bean was a **proxy mistaken for the
+thing**: a bean's recorded count for a live count; a grep hit for a call site;
+an atom-level builder for a per-nucleon one; and an assignment target for a
+use. The corrective in each case was to resolve to the actual object —
+re-measure, parse, read the signature, follow the import. Worth keeping as the
+method rather than as four separate embarrassments.

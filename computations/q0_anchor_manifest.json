@@ -536,6 +536,8 @@
     "qbeta_admissible_functionals_bracket_probe",
     "qbeta_alpha_commutator_floor_probe",
     "qbeta_alpha_eff_hoefsmit_symbolic_probe",
+    "qbeta_bar_parity_of_the_decay_trace_probe",
+    "qbeta_block_bar_defect_conjugation_probe",
     "qbeta_c3_bar_partner_extractor_breakdown",
     "qbeta_c3_complex_habiro_cross_anchor_probe",
     "qbeta_c3_complex_singularity_probe",
@@ -549,6 +551,7 @@
     "qbeta_c3_v9_style_probe",
     "qbeta_c4even_ladder_reconstruction_probe",
     "qbeta_c6_c10_crossanchor_falsification",
+    "qbeta_cap_is_jointly_determined_probe",
     "qbeta_chain4_demazure_fund_weights",
     "qbeta_chain4_kashiwara_step2_n4",
     "qbeta_chain4_kashiwara_step3_cross_anchor",
@@ -568,8 +571,12 @@
     "qbeta_cosh_q_sinh_q_candidate_scan",
     "qbeta_counit_substrate_consistency",
     "qbeta_d_frame_eigenphase_window_probe",
+    "qbeta_d_frame_required_markov_parameter_probe",
     "qbeta_d_frame_rung_one_rederivation_probe",
+    "qbeta_d_frame_terminus_probe",
     "qbeta_d_frame_tl_quotient_phase_probe",
+    "qbeta_d_frame_two_block_forced_weights_probe",
+    "qbeta_decay_fibre_bar_parity_derivation_probe",
     "qbeta_delta_bar_parity_probe",
     "qbeta_delta_element_fork_pricing_probe",
     "qbeta_delta_net_four_values_probe",
@@ -602,6 +609,7 @@
     "qbeta_mu_normalisation_is_derived_probe",
     "qbeta_multi_block_eigenphase_full_eps_probe",
     "qbeta_multi_block_eigenphase_probe",
+    "qbeta_n1_constant_two_anchor_filter_probe",
     "qbeta_net_as_trace_plus_longest_probe",
     "qbeta_net_is_tau_against_all_ones_probe",
     "qbeta_net_trace_invariance_probe",
@@ -759,5 +767,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

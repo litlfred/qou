@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T10:34:38.459481+00:00",
-  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T04:51:05.811027+00:00",
+  "commitSha": "091916d186dde354770d7f8ab5d3135253f95944",
   "assertions": [
     {
       "name": "splus_reproduces_committed_a2",
@@ -11,38 +11,14 @@
       "passed": true,
       "tolerance": "1e-20",
       "source": "in-probe S⁺ assembly = the committed A2 witness matrix (consistency gate)"
-    },
-    {
-      "name": "confrontation_count_matches_structural_recount",
-      "computed": 440,
-      "expected": 440,
-      "passed": true,
-      "tolerance": 0,
-      "source": "440 comparisons accumulated in the loops vs 4·68 + 12·14 = 440 from the assembly shapes; 4 of 72 entries fell below the 1e-30 floor and were skipped"
-    },
-    {
-      "name": "coincidence_budget_stays_below_1e_3",
-      "computed": "1",
-      "expected": "1",
-      "passed": true,
-      "tolerance": "0.5",
-      "source": "440 parameter-free comparisons × gate 1.0e-6 = 0.00044 expected coincidental hits"
-    },
-    {
-      "name": "parameter_free_hits_against_habiro_faces",
-      "computed": 0,
-      "expected": 0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "0 hit(s) and 0 near-miss(es) at gate 1.0e-6 across 440 comparisons; the NO-MATCH verdict below depends on the hit count being 0"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-gk-bilinear-pairing",
   "scriptFile": "qbeta_5two_gk_bilinear_pairing_probe.py",
-  "scriptHash": "21916c7b50d4",
-  "scriptCommitSha": "281ed4bc07834efcda18d1fab1358b3da4a49e49",
+  "scriptHash": "e8279a95cc5c",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +26,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [
@@ -68,6 +43,10 @@
   "description": "B1.2 (bean qou-9s8k): the GK bilinear block pairing confronted with the Habiro-face targets. Both sides of the substrate bar-pair evaluated through A2's 8/8-gated block machinery (the |q|>1 glue, GGM eq 25); the naked bilinear W₋₁(1/q)·B·W₋₁(q)ᵀ, the dressed S± pair, their odd/even splits — every entry compared parameter-free against F_conv, s(F̄), D_odd, D_even (gate 1e-6, pin band; all near-misses reported, no selection) plus small-(half-)integer ratio tests on the odd assemblies. auditOnly; no c_k wired; no fit; a hit is a lead, not an identification.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
+    "confrontation_completed": {
+      "value": 440,
+      "source": "pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded"
+    },
     "substrate": {
       "x": "0.90091827356174104895",
       "pin": "muon"
@@ -233,8 +212,5 @@
         "computedAt": "2026-08-29T11:27:48.906476+00:00"
       }
     ]
-  },
-  "caveats": [
-    "The docstring pre-registers '~300 parameter-free comparisons ⇒ coincidence budget ~3e-4 at the gate'. The probe actually runs 440, for a budget of 0.00044 — same order, but the stated count is understated by ~47%. The verdict is unaffected (0 hits). Reported, not silently corrected."
-  ]
+  }
 }

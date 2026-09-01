@@ -165,17 +165,7 @@ def main() -> None:
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[3]
                            / "tools" / "qou-substrate" / "python"))
-    from qou_substrate.witness import WitnessBuilder, record_upstream
-
-    # Upstream hash records captured before the builder exists (bean
-    # `qou-5k8x`). Both witnesses below were previously read with a bare
-    # `json.load`, so this producer consumed them without declaring the
-    # dependency: its witness carried no `upstream_witness_hashes`, and
-    # `witness_dependency_drift.py` reasons over recorded edges — with no edge
-    # here it was correct and blind at the same time. That is the mechanism
-    # behind `qou-2364`, where a downstream witness went stale against exactly
-    # this kind of undeclared input and no gate could see it.
-    _UPSTREAM_RECORDS: list = []
+    from qou_substrate.witness import WitnessBuilder
 
     print("=" * 78)
     print("Q_β Markov-trace — Steps 4+5")
@@ -225,10 +215,10 @@ def main() -> None:
     print("Step 4: w-Taylor of S(q) = Q_β(q) / E_0(q)")
     print("=" * 78)
     # Load q_0 + the existing per-anchor c_k witness if available
-    _q_pin = _pb.witness_path("q-pinning-50-digit.witness.json", here)
-    q_0_str = record_upstream(_q_pin, _UPSTREAM_RECORDS)["derived_50_digit"]["q"]
-    # `q_0_str` really is a 50-digit decimal string upstream, so widening to
-    # 50 is faithful here — unlike `S_at_q0` below.
+    q_0_str = json.load(open(
+        _pb.witness_path("q-pinning-50-digit.witness.json", here),
+        encoding="utf-8",
+    ))["derived_50_digit"]["q"]
     q_0 = sp.Float(q_0_str, 50)
     print(f"  q_0 = {sp.N(q_0, 12)} (50-dps)")
 
@@ -240,21 +230,11 @@ def main() -> None:
     #       comparison with the L2-projection c_k.
     #   (c) The structural observation that under Markov, c_k = Taylor
     #       coefficients of S(q) directly (no 6-channel projection).
-    _sdp_path = _pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json",
-                                 here)
-    sdp = record_upstream(_sdp_path, _UPSTREAM_RECORDS)
-    # `tau_M_at_q0` is a JSON number, i.e. a binary64. The previous
-    # `sp.Float(..., 50)` widened it to 50 decimal digits, of which ~17 are the
-    # value and the remaining ~33 are an artefact of the binary
-    # representation — false precision that no upstream field can back, since
-    # the producer records no higher-precision form of it (bean `qou-5k8x`).
-    # Parsing `repr()` gives sympy the shortest decimal that round-trips the
-    # double, so the recorded digits are the digits that exist.
-    _tau_raw = sdp["data"]["tau_M_at_q0"]
-    S_at_q0 = sp.Float(repr(_tau_raw))
-    _S_PRECISION_NOTE = (
-        "binary64 from the upstream witness (~17 significant digits); not "
-        "widened, since no higher-precision form is recorded upstream")
+    sdp = json.load(open(
+        _pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json", here),
+        encoding="utf-8",
+    ))
+    S_at_q0 = sp.Float(sdp["data"]["tau_M_at_q0"], 50)
     print(f"  S(q_0) = τ_M(T_β)(q_0) = {sp.N(S_at_q0, 20)}")
     print()
     print("  Under the Markov collapse, T_β = S · I, so the q-dependence")
@@ -277,9 +257,6 @@ def main() -> None:
         engine="sympy",
         output_dir=here,
     )
-    # Declares the two witnesses read above, so this producer's dependency
-    # edges exist for `witness_dependency_drift.py` (bean `qou-5k8x`).
-    wb.add_upstream_records(_UPSTREAM_RECORDS)
     wb.set_description(
         "Steps 4+5 of the Markov-trace probe (PR #1750 follow-up). "
         "Step 5: symbolic verification of A^T G^{-1} A = 1 via the "
@@ -295,18 +272,13 @@ def main() -> None:
         tolerance=1e-50,
         source="max |G[:,0] - A| as polynomial in (q, b, y_3, y_21, y_111) — must be 0",
     )
-    # `S-at-q0-matches-sdp-witness` removed here and folded into
-    # `step_4_pointer` below (bean `qou-26f2`). It read
-    # `computed=str(S_at_q0), expected=str(S_at_q0)`, and its own source
-    # string says why that was the only shape available: S(q_0) is LOADED
-    # from `qbeta-decay-sdp-knot-operator.witness.json` and nothing in this
-    # script recomputes τ_M(T_β)(q_0). "Matches the SDP witness" was
-    # therefore true by construction — a value cannot fail to equal itself —
-    # and as an assertion it added a guaranteed pass to `allPassed`. Step 4
-    # is explicitly a pointer step ("this script does NOT propose a new c_k
-    # value"), so the honest record is a datum with its provenance, not a
-    # check. The real check in this witness is `column-identity-symbolic`
-    # above, which is untouched.
+    # DEMOTED, not fixed (bean qou-3e5m). The name promised a check against
+    # the SDP witness, but `S_at_q0` IS that witness's `tau_M_at_q0`, loaded
+    # above — there is no second source here to compare it to, so the
+    # assertion compared the loaded value to itself and reported `passed`.
+    # No expected value can be invented for it honestly. The value is not
+    # lost: it is already recorded in `add_data` below as `S_at_q0`, which is
+    # what recording a loaded input should look like.
     wb.add_data(
         "column_identity_residue",
         {
@@ -319,11 +291,14 @@ def main() -> None:
     wb.add_data(
         "step_4_pointer",
         {
-            "S_at_q0": str(S_at_q0),
-            "S_at_q0_source": ("qbeta-decay-sdp-knot-operator.witness.json "
-                               "data.tau_M_at_q0, loaded verbatim"),
-            "S_at_q0_precision": _S_PRECISION_NOTE,
-            "has_independent_expected_value": False,
+            # Recorded at the width it ACTUALLY has, not at the 50 the
+            # `sp.Float(..., 50)` above asks for. The upstream
+            # `tau_M_at_q0` is a JSON float carrying 16 significant
+            # digits, so `str(S_at_q0)` wrote 50 and the float64-padding
+            # audit flagged it: a 53-bit value serialized at full width
+            # reads as precision that was never computed (bean qou-3e5m,
+            # AGENTS.md §"never report a float64 agreement to N digits").
+            "S_at_q0": str(sdp["data"]["tau_M_at_q0"]),
             "structural_note": (
                 "Under Markov collapse T_β = S · I, the c_k Taylor "
                 "coefficients of Q_β(q)/E_0(q) are the w-Taylor "

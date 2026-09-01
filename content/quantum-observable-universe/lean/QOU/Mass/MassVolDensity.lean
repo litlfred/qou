@@ -3,6 +3,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.Mass.SaddleQShiftOffset
 
 /-!
 # QOU.Mass.MassVolDensity — Mass = Vol × Density (algebraic core)
@@ -46,11 +47,15 @@ separate files once these algebraic identities are CI-verified.
 
 namespace QOU.Mass
 
-/-! ## §1  The density (Hecke linking weight) and its two algebraic forms -/
+/-! `hbarQ` (ℏ_q = 1 - q⁻¹) is NOT re-declared here. It comes from
+`QOU.Mass.SaddleQShiftOffset`, where it is stated generically over
+`{K : Type*} [Field K]`; this file uses it at `K = ℝ`. Consolidated
+2026-08-30 (bean `qou-6bla`) — the two were the same function under
+one namespace, so once both were named `hbarQ` they could no longer
+be imported together. -/
 
-/-- The substrate Planck quantum `ℏ_q = (q − 1)/q`. Local copy of
-    `QOU.hbar_q` to keep this algebraic-core file import-light. -/
-noncomputable def hbar_q (q : ℝ) : ℝ := (q - 1) / q
+
+/-! ## §1  The density (Hecke linking weight) and its two algebraic forms -/
 
 /-- The Hecke crossing scale `h = q − q⁻¹`. -/
 noncomputable def h_crossing (q : ℝ) : ℝ := q - q⁻¹
@@ -114,7 +119,7 @@ theorem delta_leading_eq_closed (q : ℝ) (hq : q ≠ 0) :
     surface-ordered (non-abelian Stokes) holonomy expansion — see the P3/P4
     follow-up. Still purely algebraic in `q`. -/
 noncomputable def delta_subleading (q : ℝ) : ℝ :=
-  delta_leading q * (1 + hbar_q q ^ 3)
+  delta_leading q * (1 + hbarQ q ^ 3)
 
 /-- The p-n interface crossing coefficient `d(q) = −h·(½ − δ/4)` of the
     color-weighted averaged crossing `σ + d·𝟙` (here δ = `delta_subleading`).

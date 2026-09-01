@@ -198,11 +198,6 @@ def main() -> int:
         "verdict": verdict,
         "maxcoeff": 50,
         "maxsteps": 2000,
-        # Whether PSLQ returns a relation is the measurement, not a target —
-        # a derive-or-refute has no independent expected outcome, which is
-        # why the old `pslq_executed_at_maxcoeff_50` assertion could only be
-        # tautological (bean qou-26f2).
-        "has_independent_expected_value": False,
     })
 
     # ── verification: if a relation was found, evaluate residual ──
@@ -226,42 +221,13 @@ def main() -> int:
         print("Pin this integer relation in prop:em-coupling-bring-zero-mode")
         print("as the explicit B_3 class identification for the α/(4π) term.")
 
-    # The old assertion here read `computed=int(relation is not None),
-    # expected=int(relation is not None)` under the author's own comment
-    # "tautological; the asset is the verdict" — true, and the consequence
-    # was that the witness could not tell you the one thing a REFUTED verdict
-    # depends on: that the basis PSLQ was handed is right. A wrong Li_3 makes
-    # the refutation worthless and the old assertion would still have passed.
-    # Both halves of the basis have an independent closed form, so check
-    # those (bean qou-26f2):
-    #     S_3(θ) = Σ sin(nθ)/n³ = π²θ/6 − πθ²/4 + θ³/12   (0 ≤ θ ≤ 2π)
-    #     Cl_3(π/3) = ζ(3)/3                               (classical)
-    # 1e-60 is the working precision (70 dps) with ten digits of headroom,
-    # not a fitted band — both residuals land near 1e-71.
-    BASIS_TOL = mpf("1e-60")
-    s3_closed_form_ok = sum(
-        1 for (_, theta), (_, value) in zip(angles, s3_values)
-        if abs(value - (pi ** 2 * theta / 6 - pi * theta ** 2 / 4
-                        + theta ** 3 / 12)) < BASIS_TOL
-    )
-    builder.add_assertion(
-        "s3_basis_matches_bernoulli_closed_form",
-        computed=s3_closed_form_ok,
-        expected=len(s3_values),
-        tolerance=0,
-        source="Every S_3(θ) = Im Li_3(e^{iθ}) basis element reproduces the "
-               "Bernoulli closed form π²θ/6 − πθ²/4 + θ³/12 to < 1e-60 — an "
-               "independent route to the numbers PSLQ searched over.",
-    )
-    builder.add_assertion(
-        "cl3_basis_reproduces_zeta3_over_3_at_pi_third",
-        computed=mp.nstr(abs(cl3(pi / 3) - ZETA_3 / 3), 12),
-        expected="0",
-        tolerance="1e-60",
-        source="Cl_3(π/3) = ζ(3)/3, the one classical closed form available "
-               "on the Re Li_3 half of the basis (the other angles have "
-               "none); checks the Cl_3 evaluation the same way.",
-    )
+    # DEMOTED (bean qou-3e5m): this compared 'pslq_executed_at_maxcoeff_50' to itself and
+    # reported `passed` unconditionally. A count of what a run found is
+    # DATA, not a check, and `add_assertion` has no way to say
+    # "is nonzero" -- which is plausibly why it was written this way.
+    # The assertion's `source` prose is kept alongside the value.
+    builder.add_data('pslq_executed_at_maxcoeff_50', {'value': int(relation is not None), 'source': 'PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50.'})
+
     builder.save()
     return 0
 

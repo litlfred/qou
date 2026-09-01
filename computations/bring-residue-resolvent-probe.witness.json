@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:25:17.818790+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:34:40.489206+00:00",
+  "commitSha": "458f17211f5d1442dc573b3c24685bdcfb3e4f66",
   "assertions": [
     {
       "name": "denominator_nonzero_n3",
@@ -10,13 +10,12 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "unit": "boolean",
-      "source": "|1 − h_q·q^3| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_3 is defined"
+      "source": "|1 − h_q·q^3| > 0 at q₀; magnitude in data.denominator_magnitude_n3"
     },
     {
       "name": "roundtrip_identity_n3",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-49",
       "source": "F_3·(1−h_q·q^3) = 1 at 50 dps"
@@ -27,13 +26,12 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "unit": "boolean",
-      "source": "|1 − h_q·q^4| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_4 is defined"
+      "source": "|1 − h_q·q^4| > 0 at q₀; magnitude in data.denominator_magnitude_n4"
     },
     {
       "name": "roundtrip_identity_n4",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-49",
       "source": "F_4·(1−h_q·q^4) = 1 at 50 dps"
@@ -44,13 +42,12 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "unit": "boolean",
-      "source": "|1 − h_q·q^9| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_9 is defined"
+      "source": "|1 − h_q·q^9| > 0 at q₀; magnitude in data.denominator_magnitude_n9"
     },
     {
       "name": "roundtrip_identity_n9",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-49",
       "source": "F_9·(1−h_q·q^9) = 1 at 50 dps"
@@ -61,13 +58,12 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "unit": "boolean",
-      "source": "|1 − h_q·q^10| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_10 is defined"
+      "source": "|1 − h_q·q^10| > 0 at q₀; magnitude in data.denominator_magnitude_n10"
     },
     {
       "name": "roundtrip_identity_n10",
-      "computed": 9.055679078826712e-72,
-      "expected": 0.0,
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-49",
       "source": "F_10·(1−h_q·q^10) = 1 at 50 dps"
@@ -82,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "bring-residue-resolvent-probe",
   "scriptFile": "probe_bring_residue_resolvent.py",
-  "scriptHash": "16f3a70639e0",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "cb2a3f96b649",
+  "scriptCommitSha": "6587e6f9ca324b65a84407b000d3c4288d78bfdb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,14 +90,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [
@@ -121,11 +116,9 @@
     "q_0_digits_used": 50
   },
   "data": {
-    "denominator_magnitudes_at_q0": {
-      "n3": "0.71409920434841799372",
-      "n4": "0.68265624003516486789",
-      "n9": "0.46530889612641136971",
-      "n10": "0.40650432631262275146"
-    }
+    "denominator_magnitude_n3": "0.714099204348417993722694330759362545228900913403775475279459",
+    "denominator_magnitude_n4": "0.682656240035164867887814710574824451949658477669282794873324",
+    "denominator_magnitude_n9": "0.465308896126411369708075014326579975334804177839375657287131",
+    "denominator_magnitude_n10": "0.406504326312622751456628805477065818734119111660027315722580"
   }
 }

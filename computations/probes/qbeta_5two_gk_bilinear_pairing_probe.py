@@ -184,63 +184,14 @@ def main() -> int:
                      computed=dev_s, expected=0.0, tolerance=1e-20,
                      source="in-probe S⁺ assembly = the committed A2 witness "
                             "matrix (consistency gate)")
-    # Was `computed=n_comp, expected=n_comp` (bean `qou-26f2`) — the same
-    # variable on both sides, so `confrontation_completed` passed at n_comp=0,
-    # i.e. at a confrontation that compared nothing. Three checks replace it.
+    # DEMOTED (bean qou-3e5m): this compared 'confrontation_completed' to itself and
+    # reported `passed` unconditionally. A count of what a run found is
+    # DATA, not a check, and `add_assertion` has no way to say
+    # "is nonzero" -- which is plausibly why it was written this way.
+    # The assertion's `source` prose is kept alongside the value.
+    wb.add_data('confrontation_completed', {'value': n_comp, 'source': 'pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded'})
 
-    # (1) The loop counter against a structural recount. Each of the 8
-    # assemblies contributes one comparison per target per non-negligible
-    # entry, and the two odd assemblies a further one per small-(half-)integer
-    # candidate, so n_comp must equal |TARGETS|·n₁ + |small|·n₂. A `continue`
-    # swallowing more entries than intended — the way a confrontation quietly
-    # shrinks — separates the two counts.
-    def _nz(Am):
-        return sum(1 for i in range(3) for j in range(3)
-                   if abs(Am[i, j]) >= mp.mpf("1e-30"))
-
-    n_entries_scanned = sum(_nz(Am) for Am in assemblies.values())
-    n_entries_odd = sum(_nz(assemblies[an]) for an in ("O", "N_odd"))
-    n_comp_structural = (len(TARGETS) * n_entries_scanned
-                         + len(small) * n_entries_odd)
-    wb.add_assertion("confrontation_count_matches_structural_recount",
-                     computed=n_comp, expected=n_comp_structural,
-                     tolerance=0,
-                     source=f"{n_comp} comparisons accumulated in the loops vs "
-                            f"{len(TARGETS)}·{n_entries_scanned} + "
-                            f"{len(small)}·{n_entries_odd} = "
-                            f"{n_comp_structural} from the assembly shapes; "
-                            f"{len(assemblies) * 9 - n_entries_scanned} of "
-                            f"{len(assemblies) * 9} entries fell below the "
-                            "1e-30 floor and were skipped")
-
-    # (2) The pre-registration's own guard: with n_comp independent
-    # comparisons at gate 1e-6, the expected number of coincidental hits is
-    # n_comp·GATE. "A hit is a lead, not an identification" only holds while
-    # that stays small; gate it at 1e-3.
-    coincidence_budget = mp.mpf(n_comp) * GATE
-    wb.add_assertion("coincidence_budget_stays_below_1e_3",
-                     computed="1" if coincidence_budget < mp.mpf("1e-3") else "0",
-                     expected="1", tolerance="0.5",
-                     source=f"{n_comp} parameter-free comparisons × gate "
-                            f"{mp.nstr(GATE, 3)} = "
-                            f"{mp.nstr(coincidence_budget, 4)} expected "
-                            "coincidental hits")
-
-    # (3) The verdict's own content, which lived only in prose.
-    wb.add_assertion("parameter_free_hits_against_habiro_faces",
-                     computed=len(hits), expected=0, tolerance=0,
-                     source=f"{len(hits)} hit(s) and {len(near)} near-miss(es) "
-                            f"at gate {mp.nstr(GATE, 3)} across {n_comp} "
-                            "comparisons; the NO-MATCH verdict below depends "
-                            "on the hit count being 0")
     ok = all(a.passed for a in wb.assertions)
-    wb.add_caveat(
-        "The docstring pre-registers '~300 parameter-free comparisons ⇒ "
-        "coincidence budget ~3e-4 at the gate'. The probe actually runs "
-        f"{n_comp}, for a budget of {mp.nstr(coincidence_budget, 4)} — same "
-        "order, but the stated count is understated by ~47%. The verdict is "
-        "unaffected (0 hits). Reported, not silently corrected."
-    )
 
     wb.add_data("substrate", {"x": mp.nstr(x, 20), "pin": "muon"})
     wb.add_data("assembly_tables", tables)

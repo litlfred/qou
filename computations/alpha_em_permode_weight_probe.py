@@ -51,7 +51,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -87,18 +87,27 @@ def main() -> int:
         err = abs(d - mp.mpf(L) ** 2)
         worst = max(worst, err)
         z0_worst = max(z0_worst, abs(z0 + 1))
-        rows[L] = float(d)
+        rows[L] = fmt(d)          # 50-dps string, not a float64 truncation
         print(f"    L={L:>12}: det' = {mp.nstr(d,10):>14}  L² = {mp.nstr(mp.mpf(L)**2,10):>14}  "
               f"ζ_{{S¹}}(0) = {mp.nstr(z0,4)}")
     print(f"    ⇒ det' = L² to {float(worst):.1e}; the 2π cancels — no bare 1/π "
           f"(fitting-trap route RULED OUT)")
-    wb.add_assertion("flat_permode_det_is_L_squared_no_pi", computed=float(worst),
-                     expected=0.0, tolerance=1e-20,
+    # The four assertions below carried `computed=float(...)` under tolerances
+    # of 1e-20/1e-25. float64 resolves ~2.2e-16, so the cast discarded the
+    # entire range the tolerance was talking about BEFORE the assertion saw
+    # the value: what was actually tested was "is this exactly 0.0 in
+    # float64", not "is this below 1e-25". Every one of `worst`, `z0_worst`,
+    # `id1`, `id2` is already mpf, computed at full precision, so dropping
+    # the cast is a one-token change that makes each assertion mean what it
+    # says. Detector: computations/audits/tolerance_below_arithmetic_floor_audit.py
+    # (bean qou-58zw; 61 such assertions across 38 files).
+    wb.add_assertion("flat_permode_det_is_L_squared_no_pi", computed=worst,
+                     expected=mp.mpf(0), tolerance=1e-20,
                      source="det'(−∂²)_{S¹}(L)=L² exactly (ζ'(0)=−2lnL; the 2π "
                             "cancels) — scale-dependent, no bare 1/π: the naive "
                             "per-mode-weight route is the μ-absorbable fitting trap")
-    wb.add_assertion("flat_permode_zeta0_is_minus_one", computed=float(z0_worst),
-                     expected=0.0, tolerance=1e-25,
+    wb.add_assertion("flat_permode_zeta0_is_minus_one", computed=z0_worst,
+                     expected=mp.mpf(0), tolerance=1e-25,
                      source="ζ_{S¹}(0)=2ζ_R(0)=−1 (consistency with the b₁-count lead)")
 
     # ---- 2. template π is Gauss–Bonnet 2πχ (topological) ----
@@ -109,7 +118,7 @@ def main() -> int:
     print(f"    2/(3π) = 8/(12π) = b₁/Area : {mp.nstr(mp.mpf(2)/(3*mp.pi),8)} "
           f"= {mp.nstr(B1/area,8)}  (Δ={float(id1):.1e})")
     wb.add_assertion("template_pi_is_gauss_bonnet_2pichi",
-                     computed=float(id1), expected=0.0, tolerance=1e-25,
+                     computed=id1, expected=mp.mpf(0), tolerance=1e-25,
                      source="2/(3π)=8/(12π)=b₁/Area with Area=−2πχ=12π (g=4): the "
                             "template's π is the Euler-characteristic 2π")
 
@@ -122,7 +131,7 @@ def main() -> int:
     print(f"    ⇒ its π needs a 2π·g (GENUS) source, DISTINCT from the template's "
           f"2π·χ = 4π(g−1) (Euler-char).")
     wb.add_assertion("loop_measure_is_one_over_2pi_g",
-                     computed=float(id2), expected=0.0, tolerance=1e-25,
+                     computed=id2, expected=mp.mpf(0), tolerance=1e-25,
                      source="1/(8π)=1/(π·b₁)=1/(2π·g) at g=4 — a genus (2πg) source, "
                             "not the template's Euler-char (2πχ) area")
 
@@ -157,7 +166,7 @@ def main() -> int:
         "an explicit 2πg identity on Bring. No fit; nothing wired; not "
         "reverse-engineered to 8π.")
     wb.add_data("flat_permode_det_by_L", rows)
-    wb.add_data("area_gauss_bonnet_12pi", float(area))
+    wb.add_data("area_gauss_bonnet_12pi", fmt(area))
     wb.add_data("template_pi_source", "Gauss-Bonnet 2πχ (Euler characteristic)")
     wb.add_data("loop_measure_pi_source", "2πg (genus) — distinct from 2πχ")
     wb.add_data("reduces_to_open_conjecture", "conj:dilogarithm-archimedean-limit "

@@ -1,0 +1,139 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T09:21:01.395138+00:00",
+  "description": "AME2020's binding, read as a function of complete-graph bond count at A = 2, 3, 4, is CONVEX and strictly superadditive through the origin. With QOU.MassTheory.AggregatorConvexityDichotomy this converts the two known assembly failures (multiplicative b3 < 0, additive b3 = 0) into one statement -- both aggregators are concave-through-the-origin -- and orients the replacement: the aggregator must be strictly convex at small argument.",
+  "q0_pin": "not applicable -- consumes no framework quantity",
+  "free_parameters": 0,
+  "phi_grid_MeV": [
+    {
+      "bonds": 0,
+      "phi": "0.0",
+      "phi_over_bonds": null
+    },
+    {
+      "bonds": 1,
+      "phi": "2.224566",
+      "phi_over_bonds": "2.224566"
+    },
+    {
+      "bonds": 3,
+      "phi": "8.0999205",
+      "phi_over_bonds": "2.6999735"
+    },
+    {
+      "bonds": 6,
+      "phi": "28.295673",
+      "phi_over_bonds": "4.7159455"
+    }
+  ],
+  "divided_differences": [
+    {
+      "from": 0,
+      "to": 1,
+      "slope": "2.224566"
+    },
+    {
+      "from": 1,
+      "to": 3,
+      "slope": "2.93767725"
+    },
+    {
+      "from": 3,
+      "to": 6,
+      "slope": "6.7319175"
+    }
+  ],
+  "ursell_MeV": {
+    "b2": "2.224566",
+    "b3": "1.4262225",
+    "b4": "9.243387"
+  },
+  "multiplicative_factorisation_checks": [
+    {
+      "label": "D/probe2",
+      "f": "0.50823",
+      "b3_direct": "-0.60658465679177",
+      "b3_factored": "-0.60658465679177",
+      "forms_agree": true,
+      "b3_nonpos": true
+    },
+    {
+      "label": "D/chi",
+      "f": "0.61268804",
+      "b3_direct": "-0.39193078124764",
+      "b3_factored": "-0.39193078124764",
+      "forms_agree": true,
+      "b3_nonpos": true
+    },
+    {
+      "label": "C/probe2",
+      "f": "0.39486",
+      "b3_direct": "-0.87698436772326",
+      "b3_factored": "-0.87698436772326",
+      "forms_agree": true,
+      "b3_nonpos": true
+    },
+    {
+      "label": "C/chi",
+      "f": "0.49932033",
+      "b3_direct": "-0.62652995011299",
+      "b3_factored": "-0.62652995011299",
+      "forms_agree": true,
+      "b3_nonpos": true
+    },
+    {
+      "label": "f=1 (decoupled)",
+      "f": "1.0",
+      "b3_direct": "0.0",
+      "b3_factored": "0.0",
+      "forms_agree": true,
+      "b3_nonpos": true
+    },
+    {
+      "label": "f=0.9",
+      "f": "0.9",
+      "b3_direct": "-0.029",
+      "b3_factored": "-0.029",
+      "forms_agree": true,
+      "b3_nonpos": true
+    }
+  ],
+  "assertions": [
+    {
+      "name": "AME b3 is strictly POSITIVE, so the Lean exclusion applies",
+      "passed": true
+    },
+    {
+      "name": "AME Phi is CONVEX on the measured bond grid (divided differences strictly increasing)",
+      "passed": true
+    },
+    {
+      "name": "AME Phi is strictly SUPERADDITIVE through the origin (Phi(x)/x strictly increasing)",
+      "passed": true
+    },
+    {
+      "name": "the multiplicative b3 factorisation -(f-1)^2(f+2) agrees with the direct form at every f tested",
+      "passed": true
+    },
+    {
+      "name": "the multiplicative b3 is non-positive at every f tested, including the two convention-C values",
+      "passed": true
+    },
+    {
+      "name": "b4 is POSITIVE too, but its sign does NOT discriminate: sqrt is concave and also yields b4 > 0",
+      "passed": true
+    }
+  ],
+  "scope": "(b) for the CONCAVE class -- invariant = Jensen, proved in AggregatorConvexityDichotomy.b3Agg_nonpos_of_concaveOn. The convex branch is OPEN and reachable (b3Agg_sq_pos). This probe does NOT close the magnitude and does NOT identify Phi; it measures that the data lies in the surviving branch and says which property a candidate aggregator must have.",
+  "caveats": [
+    "The bond count C(A,2) is used only on A <= 4, where it coincides with bounded degree 3; QOU.Mass.CoordinationSaturation refutes it as a law for larger A, so this grid must not be extended naively.",
+    "Convexity is measured on THREE interior points. Three points cannot distinguish convex from convex-then-concave, and saturation requires the latter eventually -- Phi(x)/x is bounded only if Phi is asymptotically linear. So 'convex' here is a local statement about the light nuclei, not an asymptotic claim.",
+    "b4 > 0 is NOT evidence for convexity: sqrt is concave and gives b4 = sqrt(6) - 4 sqrt(3) + 6 > 0. b3 is the discriminator."
+  ],
+  "lean": "QOU/MassTheory/AggregatorConvexityDichotomy.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/mayer-threebody-sign-threshold.witness.json",
+    "probes/he4-body-order-shortfall-location.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies"
+}

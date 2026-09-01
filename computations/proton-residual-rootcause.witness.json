@@ -1,15 +1,37 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:00:46.396438+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:19:50.365770+00:00",
+  "commitSha": "e5efb391a2f9dd8b0f5e62c07e8ce507bce1383d",
+  "assertions": [
+    {
+      "name": "phi_V0_product_expansion_converged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "phi_V0: inside radius, |coef*z| < 1e-16 reached in 354 of at most 2000 iterations"
+    },
+    {
+      "name": "phi_V1_product_expansion_converged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "phi_V1: inside radius, |coef*z| < 1e-16 reached in 353 of at most 2000 iterations"
+    },
+    {
+      "name": "phi_V0V1_product_expansion_converged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "phi_V0V1: inside radius, |coef*z| < 1e-16 reached in 354 of at most 2000 iterations"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "proton-residual-rootcause",
   "scriptFile": "proton_residual_rootcause.py",
-  "scriptHash": "cf6474542b36",
-  "scriptCommitSha": "423fdf4cfd3deb677d995790565e64c1192738b4",
+  "scriptHash": "9a0da6e98b7b",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +43,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/proton_residual_rootcause.py"
+    ],
+    "reproduce": "python3 -u computations/proton_residual_rootcause.py"
   },
   "description": "Phase 1 diagnostic on the proton 544k ppb defect (target 1 ppb).  Computes m_p via the mass-endomorphism-tower formula using four independent Phi_q implementations: legacy-product f64, legacy-product MPFR50, Euler-series MPFR50, and per-block aggregate.  Reports pairwise diffs + Branch-A truncation depth to localise the defect in (1) f64 mantissa, (2) product-vs-series truncation bias, (3) per-block aliasing, or (4) upstream V_hat / formula structure.  See docs/audits/2026-05-09-mass-table-1ppb-audit.md for the audit.",
   "contentBlock": "prop:mass-endomorphism-tower",
@@ -33,7 +63,7 @@
     "V_e": 0.6730159107881489,
     "V_proton_g0": 1.080215192517655,
     "V_proton_g1": 0.9469372320656944,
-    "M_P_CODATA_MeV": 938.27208816,
+    "M_P_CODATA_MeV": 938.27208943,
     "M_E_CODATA_MeV": 0.51099895069,
     "m_e_Hecke_legacy_f64": 1893.1908635298025
   },
@@ -45,8 +75,8 @@
       "T4_z2_phi_V0V1": "656993.57566651828799700865363465310028314697866055",
       "phi_V0V1": "1750178.4071456800779408634980159882913302370339509",
       "m_Hecke": "17626227.580720273078943462699295423008276933621604",
-      "m_p_MeV": "4757.5677507644011675933028739492922564906522058831",
-      "ppb_vs_codata": "4070563017.7001613239206824322269438100970194615343"
+      "m_p_MeV": "4757.5677507644010846215675737843637902917255854347",
+      "ppb_vs_codata": "4070563010.8368906089901866535417995677677584324845"
     },
     "branch_b_legacy_mpfr": {
       "T1_abs_prod": 1.0228959844379795,
@@ -56,8 +86,8 @@
       "phi_V0V1": "1750178.4071456894053628209834577891761861507442972",
       "m_Hecke": "17626227.58072038463947669197969141842928939361477",
       "m_Hecke_mpf_str": "17626227.5807203846394766919797",
-      "m_p_MeV": "4757.5677507644312793567371695183383246175517986802",
-      "ppb_vs_codata": "4070563017.7001934167046565844294978450262919616769"
+      "m_p_MeV": "4757.5677507644311963850018693528847108230517607542",
+      "ppb_vs_codata": "4070563010.8369227017741173664924122486940080915226"
     },
     "branch_c_euler_mpfr": {
       "T1_abs_prod": "1.0228959844379794128097393751225958918135088565756",
@@ -72,8 +102,8 @@
         false,
         true
       ],
-      "m_p_MeV": "5860.5077761784002269819049820124235326993102469685",
-      "ppb_vs_codata": "5246064281.4933979319451621680737852484787430739271"
+      "m_p_MeV": "5860.507776178400124774952731777979654723560868833",
+      "ppb_vs_codata": "5246064273.0390251301274420898000084878465965100865"
     },
     "branch_d_per_block": {
       "m_sym": 216479815.2004587,
@@ -94,8 +124,8 @@
           1.375002851992555
         ]
       },
-      "m_p_MeV_via_m_e_ratio": 159364.2985854406,
-      "ppb_vs_codata": 168848704439.2019
+      "m_p_MeV_via_m_e_ratio": "159364.29858544059731281054788269102573394775390625",
+      "ppb_vs_codata": "168848704209.30282463385770957333913682837039509341"
     },
     "pairwise_diffs_hecke": {
       "B_minus_A": "0.00000011156053322928039599542101245999316618318241121463",

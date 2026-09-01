@@ -10,7 +10,7 @@ tags:
     - infra-blocked
     - cite-bertsimas1997
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-08-01T23:31:07Z
+updated_at: 2026-08-31T02:53:38Z
 parent: qou-k1mq
 ---
 
@@ -24,3 +24,23 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
 - **Tractability:** LP optimality of x_star (feasible + objective-minimising); LP optimality certificate, Mathlib lacks the duality library.
 - **Next step:** Infra-blocked: needs Mathlib theory that does not exist. Track upstream; do not launder via axiom/class.
+
+
+## RE-TRIAGED 2026-08-31 — NOT INFRA-BLOCKED — the class carries the conclusion
+
+The `Next step` line above ("Infra-blocked: needs Mathlib theory that does not exist. Track
+upstream") is one verdict that was stamped on fourteen beans in six seconds, and is wrong here.
+Full audit: `docs/audits/2026-08-31-individuating-the-fourteen-infra-blocked-verdicts.md`.
+
+`operator_selection_lp` is `refine <ctx.x_star_feasible, ?_, ctx.zero_gap>` with the middle
+conjunct discharged by `exact ctx.dual_bound_le_objective x hx`. All three conjuncts come from
+class fields. The file docstring says the duality "is now **proved, sorry-free**"; that is true
+of `#print axioms` and false of the mathematics.
+
+Belongs to the qou-z9ws drain. Missed by BOTH scanners -- by the term-mode tool because the
+proof is a tactic block (documented exclusion), and by
+scripts/lean-self-assuming-tactic-mode-audit.py because `intro x hx` / `have hgap` introduce
+locals, which that scanner's rule disqualifies.
+
+The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
+only the Next-step verdict is being corrected.

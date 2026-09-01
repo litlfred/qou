@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T03:17:59Z
+updated_at: 2026-08-30T14:46:15Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -562,3 +562,229 @@ The content edits: `toffoli-transfer-matrix.md` items 1-4, and
 `toffoli-q-and.md`, whose entire factor-anatomy section describes Φ's factors
 `(q^{3/2}+q^{1/2}-1)` and `(q^{3/2}+q+1)` — including the q ≈ 0.466 sign-reversal
 threshold, which belongs to a polynomial the construction does not produce.
+
+
+## REOPENED 2026-08-30 — the straddle this bean OPENED on is now fixed, and it flips a headline claim
+
+The bean's original scope — `computations/toffoli-lp-stability.py` computing its
+Gram in convention **D** while `toffoli_diagonal()` and `q_and_amplitude()` were
+hard-coded convention-**C** closed forms, both feeding `physical_q0_stable` —
+was never fixed by the derivation tranche. Fixed now, and the result is not
+cosmetic.
+
+**Migrated:**
+* `toffoli_diagonal` → `P₇₇^D = q³(q⁴+1)/(q²+1)²`. A straight frame change.
+* `q_and_amplitude` → the **derived** `P₇₆^D = −(q−1)(q+1)(q⁶+q⁴+2q²+1)/(2q(q²+1)²)`.
+  NOT a frame change: the published Φ is not in the construction's image.
+* Both C forms retained as `*_HISTORICAL`, unwired, with the reason.
+
+**`physical_q0_stable` now reports False, and that is the honest answer.**
+
+    P_77 C (published)   +0.5514        P_77 D (derived)   +0.6912
+    Phi  C (published)   +0.0495
+    P_76 C (derived)     -0.1306        P_76 D (derived)   -0.1438
+
+The block claims: *"P₇₇(q₀) ≈ 0.5514, Φ(q₀) ≈ 0.0495. **Both are strictly
+positive.** The q-Toffoli is LP-stable at the physical substrate value."* The
+positivity half fails.
+
+**And it is NOT a convention artefact.** The derived q-AND is negative at q₀ in
+convention **C** as well as D. The failure follows from replacing Φ with the
+amplitude the construction actually produces, not from the frame change. A
+migration alone would have left the claim standing.
+
+**Both stability thresholds also vanish.** `stable_regime_lp` was "q > q⋆" and
+`stable_regime_physical` was "(q⋆, q_Φ) ∪ (1, ∞)". Under the derived forms
+`P₇₇^D` is strictly positive for **all** q > 0 (no q⋆ to be above), and the
+derived q-AND's sextic `q⁶+q⁴+2q²+1` has **no positive real root** (no q_Φ) — so
+its only sign change on q > 0 is at q = 1. Conclusions rewritten to what is
+measured.
+
+## THE DECISION, and it is the owner's
+
+**Is positivity the right LP-stability criterion for the target-flip
+amplitude, or is non-vanishing?**
+
+* **What it means.** The gate tests `P₇₇(q₀) > 0 AND q_AND(q₀) > 0`. The
+  diagonal passes. The q-AND is a *transition* amplitude; whether its sign
+  carries physical meaning, or only its magnitude, is a modelling question the
+  producer cannot settle. If non-vanishing is the criterion, the q-Toffoli is
+  stable at q₀ after all (|P₇₆| = 0.1438 ≠ 0) and only the *wording* of the
+  claim needs correcting.
+* **What it costs.** Positivity: rewrite item 4 of `prop:toffoli-lp-stability`
+  to its negation, and revisit item 1's "all Hecke amplitudes carry the correct
+  sign". Non-vanishing: a one-line criterion change plus a corrected sentence.
+* **What it risks.** Choosing non-vanishing *because it keeps the claim green*
+  is exactly the move the anti-fit discipline forbids; it needs an independent
+  reason. Choosing positivity retires a published stability result.
+* **What it commits to.** Either way the block's quoted numbers (0.5514,
+  0.0495) go — the first is C-frame, the second is not an object of the
+  construction.
+* **Default if nothing is done.** The witness reports `physical_q0_stable:
+  False` with the criterion recorded beside it, and the content block still
+  claims stability. That inconsistency is live and visible, which is better
+  than a silently-weakened gate, but it should not stand for long.
+
+**My judgement, not a finding:** I would NOT weaken the criterion. The block
+states positivity as the LP-feasibility condition in item 1 as well as item 4,
+so positivity is what the framework claims, and the honest correction is to
+retire the claim rather than re-tune the test to survive it.
+
+**Content block deliberately NOT edited** pending that call.
+
+
+## 2026-08-30 — I ANSWERED MY OWN BLOCKING QUESTION FROM THE CORPUS, and nearly claimed something false on the way
+
+I asked the owner: positivity or non-vanishing? Before asking again I ran the
+corpus-grep I should have run first. It settles the question, and it caught a
+wrong claim I was one step from making.
+
+### The near-miss, recorded because it is the point
+
+Reading `operator-selection-lp.md` I found the LP's feasibility conditions are
+the net constraint, **Frobenius positivity `Σ_j G_ij x_j ≥ 0`** on the
+Gram-weighted selection vector, and boundedness — none of which mentions a
+transfer-matrix entry. And `toffoli-lp-stability.py` **solves no LP at all**: no
+`linprog`, no selection vector, no net constraint, no dual. I was about to
+conclude *"the stability gate is unconnected to the LP it is named for"*.
+
+**That would have been wrong.** `toffoli-lp-stability-proof.md` states the link
+explicitly:
+
+> *"Positivity of `G·t(q)` therefore reduces to the positivity of the product
+> `P_{7,7}(q)·W_std(q)` with the appropriate sign from `Φ(q)`."*
+
+So there IS a stated reduction from LP feasibility to amplitude positivity. The
+producer not solving an LP is by design — the reduction is what licenses the
+sign test. **Checking the proof block before generalising from the producer is
+what saved this.**
+
+### The question is ANSWERED: positivity
+
+The proof block makes amplitude positivity the LP-feasibility condition and
+says so twice ("all amplitudes of the correct sign"; "The proof stands on the
+two amplitude positivities"). So positivity is what the framework claims, not a
+choice I get to make — my recommendation was right, but it is now settled by
+the corpus rather than by my judgement. **The owner does not need to rule on
+this.**
+
+### But the proof block carries three claims the derivation retires — all measured
+
+**Claim 1: "For q > 1: both P₇₇(q) > 0 and Φ(q) > 0."**
+
+    q            1.1          1.5          2            5
+    P_77 D    +0.6715      +1.9371      +5.4400     +115.75
+    P_76 D    -0.1301      -0.8660      -2.6700      -57.873
+    P_76 C    -0.1193      -0.5167      -0.9167       -2.7333
+
+The derived q-AND is negative for **every** q > 1, in both conventions. FAILS.
+
+**Claim 2: the two positivities "are convention-independent".** `P₇₇` has a
+positive zero in C (`q⋆ = 1/φ² = 0.38197`) and its convention-D numerator
+`q³(q⁴+1)` has **no** positive real root. FAILS.
+
+**Claim 3: the thresholds.** `q⋆` comes from `x²+x−1`, the numerator of the
+convention-C diagonal; `q_Φ ≈ 0.4656` from `x³+x−1`, a factor of Φ, which is
+not in the construction's image. Both derive from retired objects.
+
+### The residual gap — a finding, not a question
+
+The reduction itself is asserted, not derived, and the unspecified part is
+precisely the one that matters here: *"with the appropriate sign from `Φ(q)`"*.
+Nothing in the source says what the appropriate sign IS or why. So even with
+positivity established as the criterion, whether a **negative** target-flip
+amplitude actually breaks `G·t ≥ 0` is not established by the corpus — it is
+the missing step in a reduction the proof block states in one clause.
+
+That is the honest residue, and it belongs in the proof block as an open note
+rather than as a question to the owner.
+
+
+## RESOLVED 2026-08-30 — PR #6095, four commits
+
+The blocking question this bean carried — *is the LP-stability criterion
+POSITIVITY or NON-VANISHING?* — was raised as an owner decision and **did
+not need one.** `toffoli-lp-stability-proof.md` states the criterion twice
+and both times it is positivity ("Positivity of G·t(q) therefore reduces to
+the positivity of the product P_77·W_std"; "the proof stands on the two
+amplitude positivities"), and `prop:operator-selection-lp` agrees at the LP
+level — its Frobenius constraint is `Sum_j G_ij x_j >= 0`, an inequality.
+So the recommendation I gave was right and is now settled by the source
+rather than by my judgement. Question withdrawn from the PR.
+
+WHAT THAT COSTS, narrowly. The proof reduces `G·t >= 0` to positivity of
+`P_77 · W_std` "with the appropriate sign from Phi(q)". First half survives
+untouched (`P_77·W_std = +0.4624` at q0, positive for all q > 0). Second
+half is the retired one, and the qualifying clause now carrying the weight
+is asserted in that one sub-clause and derived NOWHERE. So: the argument
+for stability does not close. NOT that the gate is LP-unstable — no block
+claims that, in either direction.
+
+NINE BLOCKS corrected, not one. The retired objects (Phi, the golden-ratio
+threshold q*, the antisymmetry P_67 = -P_76) had reached eight blocks
+downstream of the one #6033 fixed:
+toffoli-lp-stability{,-proof,-table1-data,-table2-data},
+toffoli-transfer-matrix-{interpretation,proof},
+tm-interactions{,-table2-data}, q-game-of-life{,-proof,-interpretation}.
+Derived at q0 under D: P_77 +0.6912, P_66 +0.5407, P_67 +0.1572,
+P_76 -0.1438.
+
+TWO LEAN DEFECTS, both PRE-EXISTING and both found only because the
+verification was actually run:
+
+  1. toffoli-lp-stability.lean DID NOT COMPILE ON MAIN. `q_param` is
+     unresolvable there — it lives in namespace QOU.GroundRing and the file
+     imports only QOU.QuantumObservableUniverse. Confirmed by lean-direct
+     against `git show origin/main:...`, same error, line 38. A content-block
+     Lean sibling is covered by NO CI, so nothing would ever have caught it.
+  2. `toffoli_shadow_bounded : exists k, 0 < k and k < 10 := <303/100,...>`
+     removed. Vacuous (mentions no Toffoli, no Gram, no q) AND its constant
+     is a number the content block retired on 2026-08-09. Zero consumers.
+
+`toffoli_lp_stable` kept, proof untouched — `q > q* <-> q + sqrt q - 1 > 0`
+is a true fact about a real function; only the docstring identifying that
+function with a live amplitude is withdrawn.
+
+VERIFIED: lean-direct exit 0 against the real 15-module import cone;
+#print axioms clean on all six theorems, no sorryAx; render preflight clean
+on all nine .md; qa-sweep re-run on 11 sidecars; re-verified after rebasing
+onto main (124 commits), branch-only diff byte-identical across the rebase.
+
+
+## CORRECTION 2026-08-30 — my "the corpus settles it" was an over-claim
+
+The prepare-merge rebase surfaced sibling bean qou-nmqd, which reached the same
+convention-D derivation independently and landed first. Its body states, of
+positivity vs non-vanishing: "They are not the same condition and cannot both
+be the criterion."
+
+I had written that the corpus settles the question outright, in the PR body and
+in the entry above. That is too strong and is corrected. What the corpus settles
+is narrower, per-property:
+
+  LP FEASIBILITY -> positivity.  prop:operator-selection-lp's Frobenius
+                    constraint is the INEQUALITY sum_j G_ij x_j >= 0, and the
+                    LP proof states the amplitude condition as positivity twice.
+  UNIVERSALITY   -> non-vanishing.  rem:toffoli-q-and needs the flip channel to
+                    FIRE, and says P_76(q) != 0 for every q != 1.  A NEGATIVE
+                    amplitude fires; universality is untouched at q0.
+
+So the two are not rivals -- each is right for its own property, which is where
+I disagree with the sibling. But the sibling is right that something is still
+open, and it is not what either of us first said it was: what is open is WHICH
+OF THE TWO PROPERTIES the phrase "the evolution is well-defined" is asserting.
+prop:q-game-of-life has historically meant both at once and they have now come
+apart at the substrate.
+
+Both readings are now stated in q-game-of-life.md with the open item named in
+those terms, so the corpus is honest under either.
+
+A SECOND GAP, upstream of the choice and surfaced by neither branch: the LP
+proof reduces feasibility to positivity of P_77 * W_std "with the appropriate
+sign from" the off-diagonal amplitude, and that clause is derived NOWHERE. The
+first factor survives (P_77 * W_std = +0.4624 at q0, positive for all q > 0).
+Deciding the property above does not close this; it is prior to it.
+
+FILED SEPARATELY while running prepare-merge: qou-cr3v, two scratch_*.lean
+files on main duplicating real modules (6 un-importable FQN collisions, gate at
+63 vs baseline 57). Not this arc's, not this branch's regression.

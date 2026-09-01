@@ -1,9 +1,9 @@
 {
-  "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+  "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]  [CONVENTION-C, CODATA-2018 MUON PIN — scoped 2026-08-30, qou-rm57]",
   "target_value": 1.0653062285923893,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Step-by-step derivation of p (proton, A=1)'s archimedean Markov trace value tr_M(p, q_0) ≈ 2.12258250945273 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.",
+  "description": "Step-by-step derivation of p (proton, A=1)'s archimedean Markov trace value tr_M(p, q_0) ≈ 2.12258250945273 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.\n\nCONVENTION AND PIN SCOPING (2026-08-30, bean `qou-rm57`). This document is\nDOUBLY off canon, and neither departure was declared:\n\n  1. CONVENTION C. Its numbers use the Markov parameter z = sqrt(q)/(q+1).\n     The owner ruling of 2026-08-15 makes convention D (z = q^3/(q^2+1))\n     canonical. Live D value for this atom, at the canonical proton pin:\n         tr_M(p) = 1.14575969245730086968908159577411930594372806194352738498820\n     (source: computations/atomic-tr-m-mpfr-50dps-proton.witness.json, and\n     derivation_chain.py::TR_M_AT_Q0, which therefore DISAGREES with the\n     target_value above.)\n\n  2. THE MUON PIN USED IS NEITHER LIVE ANCHOR. Step 7 evaluates at\n     q_0 = 1.1099785955541805 — the CODATA-2018 lepton-tower derivation, not\n     the frozen canonical muon pin (1.1099785955573347...) and not the proton\n     pin the 2026-08-15 ruling makes default for compute.\n\n     Established rather than assumed: the target differs from the exact\n     convention-C proton trace at the FROZEN muon pin by rel 1.9504e-11,\n     while dq/q between the two muon pins is 2.8417e-12 — an elasticity of\n     6.86, which is exactly the scale a Laurent polynomial spanning q^-6..q^6\n     gives (the proton braid word has 6 crossings; chi^(3) = q^6,\n     chi^(111) = q^-6). Float64 truncation is REFUTED as the explanation: it\n     would agree to ~1e-16, not diverge at the 11th digit.\n\nThe DERIVATION is not in question — the Hecke presentation, Wedderburn\ndecomposition, Schur-Weyl weights and Frobenius pairing are all\nconvention-independent. Only the evaluation carries the frame.\n\nKept as recorded, not corrected: the values are right for their own frame and\npin, and re-deriving under D at the proton pin is a compute, not an edit.",
   "steps": [
     {
       "name": "Hecke algebra H_3(q) presentation",
@@ -66,18 +66,18 @@
       "notes": "script: computations/hecke/hecke_character_symbolic.py Hoefsmit-matrix evaluation of σ_i.  SCRIPT_CITED."
     },
     {
-      "name": "Atomic p braid word T_w(Z=1, N=0)",
-      "operation": "Atomic braid recipe: Z=1 up-strands, N=0 down-strands, include_inter=False; produces a word with 6 crossings on 3 strands.",
+      "name": "Atomic p Hecke element T_w(Z=1, N=0) -- NOT a braid word",
+      "operation": "Atomic recipe: Z=1 up-strands, N=0 down-strands, include_inter=False. `atom_braid_word_3A` returns 11 triples (c, d, g) on 3 strands, each denoting the HECKE ELEMENT c*sigma_g + d*1 -- not a braid generator. Measured composition: 6 sigma (d = 0), 3 sigma^-1 (d = -h), and 2 weight-1 averages over crossing sign (2 colour-blind (-h/2)), the latter being 2A = 2 letters that lie OUTSIDE rho(B_3). So T_w is in H_3(q) but NOT in the image of rho, and it has no crossing number, no volume and no genus.",
       "inputs": [
         "H_3_q"
       ],
       "output_name": "T_w_atom",
-      "output_value": "σ-word with 6 crossings (Z=1, N=0, include_inter=False)",
+      "output_value": "T_w in H_3(q): 11 Hecke letters (6 sigma, 3 sigma^-1, 2 averaged) on 3 strands (Z=1, N=0, include_inter=False)",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "manuscript:§Atomic-braid recipe",
-      "notes": "script: computations/hecke/hecke_character_symbolic.py function `atomic_braid_to_crossings`.  SCRIPT_CITED — the atomic-braid recipe itself awaits formalisation."
+      "notes": "producer: computations/mass_at_3A_proper.py function `atom_braid_word_3A`; letter classification: computations/canonical_braid_crossings.py `classify_crossing`, reached via markov/markov_weights_symbolic.py `atom_braid_word_3A_to_crossings`. CORRECTED 2026-08-30 (bean qou-1ucq). This step previously read \"produces a word with 6 crossings on 3 strands\", which was wrong twice over. (i) There is no crossing number to report: `atom_braid_word_3A`'s own docstring (PR #5765) states that the object is a list of Hecke elements, that it is not in the image of rho, and that NO topological quantity -- volume, crossing number or genus -- may be read off it, because tr_M of it is by linearity a weighted sum of 2^(2A+1) link invariants rather than the invariant of one link. (ii) Even as a letter count the figure was wrong: the object has 11 letters, not 6. Measured across the three chains, the discarded figures did not even use one convention -- p's 6 and n's 5 are the sigma (d = 0) counts alone, while D's 12 is the complement (sigma^-1 plus averaged); no single rule yields all three. The value this chain reports is unaffected, because the character step below evaluates chi^lambda as a trace of the seminormal representation matrix and never consults a crossing count. SCRIPT_CITED -- the atomic recipe itself awaits formalisation."
     },
     {
       "name": "Frobenius pairing — characters χ^λ_q(T_w)",

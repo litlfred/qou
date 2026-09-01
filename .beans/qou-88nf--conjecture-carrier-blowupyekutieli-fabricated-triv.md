@@ -1,11 +1,11 @@
 ---
 # qou-88nf
 title: 'Conjecture carrier: BlowupYekutieli — fabricated trivial-zero instance, asserts nothing'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T19:46:36Z
-updated_at: 2026-08-30T07:35:59Z
+updated_at: 2026-08-30T13:07:33Z
 parent: qou-rq9n
 ---
 
@@ -99,3 +99,92 @@ this says the rate is not HERE, not that none exists.
 substantial Yekutieli *lifting* material and none about blow-up, so the name most
 likely drifted from the obstruction framework onto a blow-up claim it never
 described. But renaming a conjecture carrier is an authoring decision.
+
+## 🛑 CORRECTION 2026-08-30 (bean `qou-4670`) — the block is NOT deleted, and this changes the disposition
+
+`docs/audits/2026-08-30-blowup-yekutieli-has-no-source.md` asserted that the
+`p3-blowup-yekutieli` block "did once exist ... none of which is on disk now".
+**Wrong.** It moved. It is live at
+`content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.{ts,md,lean,qa.json}`.
+
+How the error happened: I grepped for `conj:blowup-yekutieli` and for the old
+chapter directories, found nothing, and stopped. The live block's label is
+**`prop:blowup-yekutieli`** — a proposition, not a conjecture — and ten other
+blocks `interprets`/`uses` it. So "0 .ts blocks declare `conj:blowup-yekutieli`"
+was literally true and the inference from it ("the citation resolves to
+nothing", "there was no upstream statement to transcribe") was false.
+
+**What the live upstream carrier holds** (`QOU.FluidDynamics.BlowupYekutieli`,
+`lifting-and-descent/p3-blowup-yekutieli.lean:49`):
+
+    class BlowupYekutieli where
+      obstruction : ℕ → ℕ
+      smooth : Prop
+      smooth_iff_all_obstructions_vanish : smooth ↔ ∀ n : ℕ, obstruction n = 0
+
+with a derived, sorry-free `theorem blowup_yekutieli` getting the blow-up
+direction by contraposition + `not_forall`. A §3b-cond non-degenerate carrier.
+
+The local `QOU.AlgebraicSubstrate.BlowupYekutieli` is `∃ r, 0 ≤ r ∧ r ≤ 1 + T`.
+These are not weakening and strengthening of one proposition; they are two
+different propositions sharing a name.
+
+**What survives:** the six-path grep and the headline finding are unaffected —
+there is no Yekutieli blow-up RATE anywhere in the corpus, so no bound can be
+transcribed. The borrowed-name observation (`qou-0avp`) stands.
+
+**Recommended disposition — my judgement, not a finding.** Option 2, and it is
+no longer speculative: re-encode the local class against the upstream
+obstruction statement, and correct its `-- Ref:` from the non-existent
+`conj:blowup-yekutieli` to the live `prop:blowup-yekutieli`. That needs no new
+mathematics, no rate, and no number chosen by an agent — the statement exists,
+is proved-from upstream, and is refutable.
+
+Whether the NAME should survive is separate, is the borrowed-name question, and
+is genuinely authorial. Transcribing the content does not settle it and can be
+done under either name.
+
+Not done on this branch: it is a distinct encoding change with its own consumer
+updates (`blowup_yekutieli_r_exists`, `qNS_combined`, the fourth conjunct of
+`qNS_cone_full_composition`), and the branch it would ride on is already
+carrying the CriticalExponent de-boxing.
+
+## CLOSED 2026-08-30 — REPLACED, not re-encoded
+
+The carrier now states the upstream `prop:blowup-yekutieli` claim:
+
+    class BlowupYekutieli (obstruction : ℕ → ℕ) (smooth : Prop) : Prop where
+      smooth_iff_all_obstructions_vanish : smooth ↔ ∀ n : ℕ, obstruction n = 0
+
+Transcribed verbatim from `QOU.FluidDynamics.BlowupYekutieli`; both parameters
+are class parameters because `Prop` classes cannot carry data.
+
+**This is a REPLACEMENT and the distinction matters for anyone reading old
+code.** The previous field was about a blow-up *rate*
+(`∀ T ≥ 0, ∃ r, 0 ≤ r ∧ r ≤ 1 + T`, satisfied by `r = 0` — by *no blow-up*).
+The new one is about obstruction-class *vanishing*. Two different propositions
+that shared a name, so a `[BlowupYekutieli …]` binder written before today does
+not mean what one written after it means.
+
+**What unblocked it.** The audit finding that "the rate is not in the corpus"
+stands and no bound was invented. What was wrong was the companion claim that
+"its conjecture block does not exist" — true of the `conj:` label, false of the
+corpus. The block is live in `lifting-and-descent/` under `prop:`, with ten
+blocks interpreting or using it; it had moved chapters. Once found, the
+transcription needed no rate at all.
+
+**Refutable and satisfiable**, in
+`docs/audits/2026-08-30-qns-carriers-are-refutable.lean`:
+`¬ BlowupYekutieli (fun _ => 0) False`; satisfiable trivially by
+`(fun _ => 0, True)` and *substantively* by an obstruction nonzero at level 3
+against `smooth = False` — the actual blow-up case.
+
+Consumers updated: `blowup_yekutieli_r_exists` → `blowup_yekutieli_iff_obstruction`
+(derives the blow-up characterisation by `not_forall`, mirroring upstream),
+plus `qNS_combined` and `qNS_cone_full_composition`, whose fourth conjunct was
+the last leg in the file still satisfied by zero. The `-- Ref:` is corrected
+from the non-existent `conj:blowup-yekutieli` to `prop:blowup-yekutieli`.
+
+**All five carriers under `qou-rq9n` are now done.**
+
+Verified lean-direct, exit 0 / 0 errors on all four affected files.

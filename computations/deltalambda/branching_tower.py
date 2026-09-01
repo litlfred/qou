@@ -1,0 +1,335 @@
+#!/usr/bin/env python3
+"""branching_tower.py — step 1 of the Magnus-sign branching tower for A ≥ 5.
+
+Implements and VALIDATES the seminormal branching restriction H_n ↓ H_{n-1} in
+the standard-Young-tableau (SYT) basis. This is the foundation of the
+representation-level transfer-matrix tower planned in
+`docs/workplans/2026-08-30-magnus-sign-branching-tower-for-high-A.md`: the SYT
+basis IS the iterated branching basis, so restricting to the H_{n-1} subalgebra
+block-decomposes ρ_λ by the position of the entry n.
+
+BRANCHING RULE (Young). For λ ⊢ n, the H_{n-1} = ⟨σ_1,…,σ_{n-2}⟩ sub-action on
+the seminormal rep ρ_λ decomposes as ⊕_μ ρ_μ, μ ranging over the shapes obtained
+by removing one (corner) box from λ. In the SYT basis this is *automatic*: an SYT
+t of λ, restricted to entries 1..n-1, is an SYT of μ(t) = λ with the box of n
+removed. So:
+  • the SYT of λ partition into μ-blocks (grouped by where n sits), and
+  • σ_k for k ≤ n-2 preserves those blocks and acts on each as ρ_μ.
+
+VALIDATION (--validate). For λ ⊢ n (n ∈ {4,6,9,12}) this checks, against the
+flat dense seminormal builder, both halves of the branching statement:
+  (a) BLOCK-DIAGONAL: σ_k (k ≤ n-2) has zero coupling between distinct μ-blocks.
+  (b) SUB-REP MATCH: the μ-block of σ_k equals the standalone H_{n-1} seminormal
+      ρ_μ(σ_k), matched SYT-by-SYT (via the sub-tableau ↦ μ-index map).
+Both must hold to <1e-55. This is the gate that the SYT branching is faithful;
+the transfer-matrix contraction (step 3-4) is built on top of it.
+
+scope-(a) infrastructure; no physics claim, nothing wired. NO-FLOAT64: mpmath.
+"""
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "hecke"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "substrate"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
+mp.mp.dps = 80
+
+from hecke_characters import (  # noqa: E402
+    build_seminormal_matrices_mp,
+    standard_young_tableaux,
+)
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0 = mp.mpf(_Q0_RESOLVED)
+
+
+def partitions(n, maxpart=None):
+    if maxpart is None:
+        maxpart = n
+    if n == 0:
+        yield ()
+        return
+    for k in range(min(n, maxpart), 0, -1):
+        for rest in partitions(n - k, k):
+            yield (k,) + rest
+
+
+def _remove_box(shape, row):
+    """λ with one box removed from `row` (must stay a partition)."""
+    lam = list(shape)
+    lam[row] -= 1
+    return tuple(x for x in lam if x > 0)
+
+
+def branching_blocks(shape):
+    """Block-decompose the SYT of λ⊢n by the position of the entry n.
+
+    Returns (blocks, syts, cells) where blocks maps μ ⊢ (n-1) → list of SYT
+    indices (into `syts`, in λ's own ordering) whose n-box removal gives μ."""
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    blocks: dict[tuple, list[int]] = {}
+    for i, t in enumerate(syts):
+        r, _c = cells[t[n]]                     # (row,col) of the entry n
+        mu = _remove_box(shape, r)
+        blocks.setdefault(mu, []).append(i)
+    return blocks, syts, cells
+
+
+def _sub_syt_index_map(shape, block_indices, syts, cells, mu):
+    """For each λ-SYT in the μ-block, the index of its (1..n-1)-restriction in
+    the standalone standard_young_tableaux(μ) ordering."""
+    n = sum(shape)
+    mu_syts, mu_cells, _ = standard_young_tableaux(mu)
+    mu_pos_to_idx = {pos: k for k, pos in enumerate(mu_cells)}   # (r,c) → μ cell index
+    mu_syt_key = {tuple(sorted(d.items())): k for k, d in enumerate(mu_syts)}
+    out = []
+    for i in block_indices:
+        t = syts[i]
+        sub = {}
+        for entry in range(1, n):               # entries 1..n-1 live in μ's diagram
+            pos = cells[t[entry]]                # (r,c) in λ == (r,c) in μ (μ ⊆ λ)
+            sub[entry] = mu_pos_to_idx[pos]
+        out.append(mu_syt_key[tuple(sorted(sub.items()))])
+    return out, mu_syts
+
+
+def validate_branching(shape, tol=mp.mpf(10) ** -55):
+    """Check H_n ↓ H_{n-1} branching of ρ_shape against standalone ρ_μ.
+
+    Returns (worst_offdiag, worst_match, n_mu_blocks)."""
+    n = sum(shape)
+    sig, dim, _ = build_seminormal_matrices_mp(shape, Q0)     # H_n, generators σ_1..σ_{n-1}
+    blocks, syts, cells = branching_blocks(shape)
+    index_of = {idx: b for b, idxs in blocks.items() for idx in idxs}  # syt idx → μ
+
+    worst_off = mp.mpf(0)
+    worst_match = mp.mpf(0)
+
+    # (a) block-diagonal: σ_k, k ≤ n-2 (list indices 0..n-3), no cross-μ coupling
+    for k in range(0, n - 2):                     # σ_1 .. σ_{n-2}
+        M = sig[k]
+        for a in range(dim):
+            for b in range(dim):
+                if index_of[a] != index_of[b]:
+                    worst_off = max(worst_off, abs(M[a, b]))
+
+    # (b) each μ-block equals the standalone H_{n-1} seminormal ρ_μ
+    for mu, block_idx in blocks.items():
+        if sum(mu) == 0:
+            continue
+        muidx, _mu_syts = _sub_syt_index_map(shape, block_idx, syts, cells, mu)
+        rho_mu, dmu, _ = build_seminormal_matrices_mp(mu, Q0)  # H_{n-1}
+        for k in range(0, n - 2):                 # σ_1..σ_{n-2} act on H_{n-1}
+            for a in range(len(block_idx)):
+                for b in range(len(block_idx)):
+                    lhs = sig[k][block_idx[a], block_idx[b]]
+                    rhs = rho_mu[k][muidx[a], muidx[b]]
+                    worst_match = max(worst_match, abs(lhs - rhs))
+    return worst_off, worst_match, len(blocks)
+
+
+def run_validate(shapes=None):
+    if shapes is None:
+        shapes = []
+        for nn in (4, 6, 9):
+            shapes += list(partitions(nn))
+    print(f"[branching] validating H_n ↓ H_{{n-1}} on {len(shapes)} shapes "
+          f"(n ∈ {sorted(set(sum(s) for s in shapes))}) at q0={mp.nstr(Q0,12)}", flush=True)
+    worst_off = mp.mpf(0)
+    worst_match = mp.mpf(0)
+    for shape in shapes:
+        if sum(shape) < 2:
+            continue
+        wo, wm, nb = validate_branching(shape)
+        worst_off = max(worst_off, wo)
+        worst_match = max(worst_match, wm)
+        print(f"  {str(tuple(shape)):>22} n={sum(shape):>2} μ-blocks={nb:>2}  "
+              f"offdiag={mp.nstr(wo,3):>10}  match={mp.nstr(wm,3):>10}", flush=True)
+    print(f"[branching] worst off-diagonal (cross-μ coupling, must be 0) = {mp.nstr(worst_off,3)}")
+    print(f"[branching] worst sub-rep mismatch (block vs ρ_μ, must be 0)  = {mp.nstr(worst_match,3)}")
+    ok = worst_off < mp.mpf(10) ** -55 and worst_match < mp.mpf(10) ** -55
+    assert worst_off < mp.mpf(10) ** -55, "BRANCHING FAIL: σ_k couples distinct μ-blocks"
+    assert worst_match < mp.mpf(10) ** -55, "BRANCHING FAIL: μ-block ≠ standalone ρ_μ"
+    print("[branching] PASS — SYT branching H_n ↓ H_{n-1} is faithful (both halves).")
+    return ok
+
+
+def syt_path(t, cells, n):
+    """Bratteli path of an SYT: the tuple of level-j shapes (cells of entries 1..j),
+    j = 1..n. Level j shape = partition of the row-multiset of entries 1..j."""
+    path = []
+    rowcount = {}
+    for j in range(1, n + 1):
+        r, _c = cells[t[j]]
+        rowcount[r] = rowcount.get(r, 0) + 1
+        path.append(tuple(sorted((v for v in rowcount.values()), reverse=True)))
+    return tuple(path)
+
+
+def verify_path_locality(shape, eps=mp.mpf(10) ** -50):
+    """Step 3 prerequisite: both σ_g and the germ A_g = q·∂_qσ_g·σ_g⁻¹ are
+    SINGLE-LEVEL-LOCAL in the Bratteli-path basis — a nonzero matrix element
+    ⟨P|σ_g|P'⟩ (or ⟨P|A_g|P'⟩) requires the paths P, P' to agree at every level
+    except level g+1 (generator index g swaps entries g+1,g+2, changing only the
+    shape after placing entry g+1). This is exactly the statement that makes ρ
+    and Ω₂ matrix-product operators over the Bratteli levels. Returns
+    (sigma_violations, germ_violations, max_level_span)."""
+    n = sum(shape)
+    sig, dim, _ = build_seminormal_matrices_mp(shape, Q0)
+    syts, cells, contents = standard_young_tableaux(shape)
+    paths = [syt_path(t, cells, n) for t in syts]
+
+    def _levels_differing(pi, pj):
+        return [lev for lev in range(n) if paths[pi][lev] != paths[pj][lev]]
+
+    sig_viol = 0
+    germ_viol = 0
+    max_span = 0
+    # germ via central finite difference (dense; small n)
+    if dim > 1:
+        sig_p, _, _ = build_seminormal_matrices_mp(shape, Q0 + eps)
+        sig_m, _, _ = build_seminormal_matrices_mp(shape, Q0 - eps)
+    for g in range(len(sig)):
+        allowed = {g + 1}                              # generator g changes only level g+1 (1-indexed level index g+1 → path index g+1)
+        A = None
+        if dim > 1:
+            dsig = (sig_p[g] - sig_m[g]) / (2 * eps)
+            A = Q0 * dsig * mp.inverse(sig[g])
+        for i in range(dim):
+            for j in range(dim):
+                if i == j:
+                    continue
+                diff = None
+                if abs(sig[g][i, j]) > mp.mpf(10) ** -40:
+                    diff = _levels_differing(i, j)
+                    if any((lev + 1) not in allowed for lev in diff):
+                        sig_viol += 1
+                    max_span = max(max_span, len(diff))
+                if A is not None and abs(A[i, j]) > mp.mpf(10) ** -40:
+                    d2 = _levels_differing(i, j)
+                    if any((lev + 1) not in allowed for lev in d2):
+                        germ_viol += 1
+                    max_span = max(max_span, len(d2))
+    return sig_viol, germ_viol, max_span
+
+
+def run_verify_locality(ns=(4, 5, 6)):
+    print("[step3] Bratteli-path LOCALITY of σ_g and germ A_g (MPO-tensor existence)\n")
+    tot_sig = 0
+    tot_germ = 0
+    worst_span = 0
+    for nn in ns:
+        for shape in partitions(nn):
+            if sum(shape) < 2:
+                continue
+            sv, gv, span = verify_path_locality(shape)
+            tot_sig += sv
+            tot_germ += gv
+            worst_span = max(worst_span, span)
+            flag = "" if (sv == 0 and gv == 0) else "  <-- VIOLATION"
+            print(f"  {str(tuple(shape)):>22} n={sum(shape):>2}  σ-violations={sv:>3}  "
+                  f"germ-violations={gv:>3}  max-level-span={span}{flag}", flush=True)
+    print(f"\n[step3] total σ_g non-local elements  = {tot_sig}")
+    print(f"[step3] total A_g (germ) non-local     = {tot_germ}")
+    print(f"[step3] max levels any element spans   = {worst_span}  (must be 1)")
+    assert tot_sig == 0, "σ_g is not single-level-local in the path basis"
+    assert tot_germ == 0, "germ A_g is not single-level-local in the path basis"
+    assert worst_span <= 1, "an operator spans more than one Bratteli level"
+    print("[step3] PASS — σ_g AND the germ A_g are single-level-local ⇒ ρ and Ω₂ are")
+    print("        Bratteli-level MPOs. Step 4 (transfer-matrix contraction) is unblocked.")
+    return True
+
+
+def _npart(m):
+    """p(m) — number of partitions of m (the branching-bond upper bound)."""
+    return sum(1 for _ in partitions(m)) if m > 0 else 1
+
+
+def measure_tower_bond(As=(2, 3, 4, 5, 6, 8)):
+    """Step 2 — the poly-vs-blowup decision. For each A measures, at every
+    nucleon cut of the ⁴He-style word atom_braid_word_3A(Z,N):
+
+      • BRANCHING BOND: distinct intermediate shapes μ⊢3k that can appear across
+        the cut, bounded by p(3k) — the transfer-matrix bond dimension.
+      • GERM LOCALITY: how many Ω₂ commutator terms [A_a,A_{a+1}] straddle the
+        cut. Each germ term is supported on 3 consecutive strands {a,a+1,a+2},
+        so it straddles the cut after strand 3k iff a ∈ {3k-2, 3k-1} — AT MOST
+        2 terms, INDEPENDENT of A. This is the germ MPO's local bond.
+
+    Poly(A) feasibility holds iff both stay bounded: bond ≤ p(3k) (sub-exponential)
+    and germ terms/cut = O(1). Reproduces no physics — a structural feasibility
+    measurement (scope-(a))."""
+    from mass_at_3A_proper import atom_braid_word_3A
+    print("[step2] nucleon-chain transfer-matrix feasibility (bond + germ locality)\n")
+    print(f"  {'A':>2} {'n=3A':>5} {'#cuts':>6} {'max bond p(3k)':>15} "
+          f"{'max germ terms/cut':>20} {'flat cost (3A)!':>18}")
+    import math
+    all_poly = True
+    for A in As:
+        Z, N = A // 2, A - A // 2
+        gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
+        n = 3 * A
+        present = set(gens)
+        # Ω₂ term (a,a+1) present iff both generators occur as crossings
+        germ_terms = [a for a in range(n - 2) if a in present and (a + 1) in present]
+        cuts = [3 * k for k in range(1, A)]        # 0-indexed strand boundary; left = 0..3k-1
+        max_bond = 0
+        max_germ = 0
+        for c in cuts:
+            max_bond = max(max_bond, _npart(c))
+            straddle = sum(1 for a in germ_terms if a in (c - 2, c - 1))
+            max_germ = max(max_germ, straddle)
+        flat = math.factorial(n)
+        poly = max_germ <= 2
+        all_poly = all_poly and poly
+        print(f"  {A:>2} {n:>5} {len(cuts):>6} {max_bond:>15} {max_germ:>20} {flat:>18.3g}")
+    print()
+    print("  BRANCHING BOND is p(3(A-1)) at the widest cut: A=4→30, 8→792, 12→p(33)=10143,")
+    print("    16→p(45)=89134. This is SUB-EXPONENTIAL — p(m) ~ exp(π√(2m/3)) ~ exp(c√A) —")
+    print("    NOT polynomial (p(m) is not a polynomial), but vastly below the flat (3A)!.")
+    print("  GERM LOCALITY: ≤ 2 straddling Ω₂ terms per cut for every A (each term spans 3")
+    print("    consecutive strands, so only a ∈ {3k-2,3k-1} cross the cut) — O(1), A-independent.")
+    print("  LINK/ρ LOCALITY: a seminormal generator σ_g is a ⊕ of 1×1/2×2 blocks (step 1), so")
+    print("    a single straddling crossing couples the two sides at operator-Schmidt rank ≤ 2;")
+    print("    ρ has A-1 links ⇒ its MPO bond across any nucleon cut is O(1) too.")
+    print()
+    if all_poly:
+        print("  VERDICT: bond = p(3(A-1)) SUB-EXPONENTIAL (exp(c√A)) AND germ+link locality O(1)")
+        print("  ⇒ the nucleon-chain contraction costs ~ A · p(3(A-1))^c ~ exp(c'√A), vs the flat")
+        print("  (3A)! ~ exp(3A·ln 3A). A≫4 is feasible: e.g. A=16 → bond ~9e4 vs flat 48! ~ 1e61.")
+        print("  Build steps 3-4 (local tensors + contraction), gated against flat-sparse A=3/A=4.")
+    else:
+        print("  VERDICT: a germ term count exceeded 2 — re-examine locality before building.")
+    return all_poly
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--validate", action="store_true", help="validate the branching restriction")
+    ap.add_argument("--measure-bond", action="store_true",
+                    help="step 2: nucleon-cut bond dimension + germ locality (poly-vs-blowup)")
+    ap.add_argument("--verify-locality", action="store_true",
+                    help="step 3: σ_g and germ A_g are single-level-local (MPO-tensor existence)")
+    ap.add_argument("--n", type=int, default=None, help="validate only shapes of this n")
+    args = ap.parse_args()
+    if args.measure_bond:
+        measure_tower_bond()
+    elif args.verify_locality:
+        run_verify_locality()
+    elif args.n:
+        run_validate(list(partitions(args.n)))
+    else:
+        run_validate()
+
+
+if __name__ == "__main__":
+    main()

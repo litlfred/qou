@@ -11,7 +11,14 @@ extensions thereof, but morally Habiro-ring elements).  The Markov
 trace decomposes as
 
     tr_M(β) = Σ_b c_b(q) · TR_M_SYM[b],
-    TR_M_SYM = [1, z, z, z², z², z³],   z = u/(1+u²)
+    TR_M_SYM = [1, z, z, z², z², h z² + z],   h = q - 1/q
+
+(This read `z³` until 2026-08-30. `z³` is the tr(T_w) = z^len(w) guess --
+true for len ≤ 2 in H₃, false at len 3, where the defining Markov property
+gives tr_M(e⁻) = z·tr_M(σ₀²) = z(hz+1). See
+docs/audits/2026-05-19-trm5-markov-bug.md; bean qou-isu5. The value in
+substrate/hecke_core_symbolic.TR_M_SYM, which this module imports, was
+corrected in the same commit.)
 
 so the u-shift exponent of D(u) for β is determined by the maximum
 u-pole of c_b(q²) · TR_M_SYM[b] over the 6 basis elements.
@@ -53,12 +60,24 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def build_nucleon_nf_sym_atomic(quarks):
     """Symbolic NF for a nucleon using `atomic_braid_to_crossings`'s
-    11-generator-per-nucleon convention (NOT the 9-generator
-    hecke_core.build_nucleon_nf).
+    11-generator-per-nucleon convention.
 
-    The two conventions differ:
-    - hecke_core: B₃ + 3 quark pairs = 9 generators
-    - atomic_braid: 7 at gen_idx 0 + 4 at gen_idx 1 = 11 generators
+    THE TWO CONVENTIONS NOW AGREE (2026-08-30, bean qou-1qsw). This docstring
+    read "NOT the 9-generator hecke_core.build_nucleon_nf", and that contrast
+    is gone: `build_nucleon_nf` now carries the σ₀² gluon self-coupling and is
+    11 generators, distributed **7 at gen 0 and 4 at gen 1** — exactly this
+    convention:
+
+    - B₃ = (σ₀σ₁⁻¹)³        3 at gen 0, 3 at gen 1
+    - quark pairs           2 at gen 0, 1 at gen 1
+    - gluon σ₀²             2 at gen 0
+    -----------------------------------------------
+                            7 at gen 0, 4 at gen 1  = 11
+
+    The gluon term is precisely what the 9-generator form was missing, and the
+    per-generator split matching this convention exactly is a structural
+    cross-check on it — the term was added on the γγ SDP decomposition and the
+    PSD parity rule, not fitted to reproduce these counts.
 
     The atomic-braid convention is what produces empirical shift = 20
     (proton standalone) / 40 (deuteron).  This function mirrors that.
@@ -103,10 +122,16 @@ def build_nucleon_nf_sym_atomic(quarks):
 
 
 def build_nucleon_nf_sym(quarks):
-    """Symbolic NF mirroring `hecke_core.build_nucleon_nf` (9 generators).
+    """Symbolic NF for the **retired 9-generator** nucleon: B₃ + 3 quark
+    pairs, with no gluon term.
 
-    Kept for legacy comparison; the atomic-braid-to-crossings
-    convention uses build_nucleon_nf_sym_atomic instead.
+    ⚠️  This no longer mirrors `hecke_core.build_nucleon_nf`. It did when both
+    were 9 generators; as of 2026-08-30 the canonical builder carries the σ₀²
+    gluon self-coupling and is 11 (bean qou-1qsw). Kept deliberately, as the
+    9-generator object this file's other builder is contrasted against and as
+    the comparison point for what the gluon term changes — NOT as a mirror of
+    anything current. Do not read a value from here expecting it to match the
+    canonical nucleon; use `build_nucleon_nf_sym_atomic`, which does.
     """
     nf = [sp.Integer(1)] + [sp.Integer(0)] * 5
     for _ in range(3):

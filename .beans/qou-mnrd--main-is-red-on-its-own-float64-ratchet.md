@@ -1,7 +1,7 @@
 ---
 # qou-mnrd
 title: 'raw-float64 ratchet: main was RED, now GREEN (5 -> 0, drained 2026-08-25) — the revolving door is the finding'
-status: completed
+status: todo
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-25T18:09:29Z
+updated_at: 2026-08-31T03:05:45Z
 ---
 
 ## The finding
@@ -1875,3 +1875,49 @@ Related: `8b2e57980` records a sibling finding that main's committed audit
 witness *understated* the ratchet — same family as the staleness measured in
 `qou-82ur`, and a reason not to trust a committed audit witness's counts
 without re-running.
+
+
+---
+
+## RECURRENCE, measured 2026-08-31 — the revolving door turned again
+
+This bean is `completed` because the five offenders of 2026-08-25 were drained.
+**Main is red again, with two entirely different files**, which is this bean's
+own title ("the revolving door is the finding") confirmed a further time rather
+than a new discovery. Status reopened: `completed` was accurate about the five
+and is not accurate about the ratchet's current state.
+
+Measured on `origin/main` @ `321db77338` via
+`python3 computations/witness_raw_float64_audit.py` (exit 1):
+
+| class | file | count |
+|---|---|---|
+| **NEW dirty** | `computations/probes/arc-count-diagnostic-degeneracy.witness.json` | 4 |
+| **REGRESSED** | `computations/audits/braid-encoding-audit.witness.json` | 89 -> 91 |
+
+**Attribution is airtight and needed no main checkout.** It was found on the
+slice-E drain branch (`qou-srvu`, PR #6259) after merging main. All THREE
+relevant inputs -- both offending witnesses *and*
+`computations/audits/raw-float64-baseline.json` that they are judged against --
+are byte-identical to `origin/main`, and `git log origin/main..HEAD
+--name-only` never names them. The audit's verdict on those two files is
+therefore a pure function of main's content: a main checkout would report the
+same. Establishing this without spending ~1 GB of a constrained disk allowance
+on another worktree is worth recording as a method.
+
+**Two notes for whoever drains these.**
+
+`braid-encoding-audit` is on the DO-NOT-TOUCH list two independent drain slices
+observed this session -- slice E lists it beside `casimir_q_factorial_probe` as
+"protected, untouched". Its +2 wants reading before it is treated as an
+ordinary drain.
+
+And the standing REGRESSED entry has itself CHANGED. Through 2026-08-30 the
+single REGRESSED line on every branch measured this session was
+`he-nu-sdp-saturation-obstruction` (5 -> 11, from `fcc65c1380`); five slices
+independently confirmed it as not-theirs. Today it is `braid-encoding-audit`
+instead. So a REGRESSED line that "everyone already knows about" is not a
+stable landmark -- re-read the filename each time rather than assuming it is
+the same one. That is the same masking hazard bean `qou-dqhd` was opened for:
+a permanently non-zero REGRESSED count hides the next real one, and here it
+hid a substitution.

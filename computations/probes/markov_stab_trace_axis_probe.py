@@ -42,6 +42,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — proton pin, see below
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -51,8 +52,23 @@ _UPSTREAM_RECORDS: list = []
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-# Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# Canonical 50-dps q₀ anchor — the PROTON pin, read from q_parameter rather
+# than hardcoded.
+#
+# RE-PINNED muon -> proton 2026-08-30 (bean qou-t9r1). This line previously
+# carried the frozen muon literal 1.1099785955573347… while `_load_y_lambda_n`
+# below reads `y-lambda-at-q0.witness.json`, whose header records
+# `q0Anchor: proton` / `q0Value: 1.10997858275138080759…`. Those two met in
+# ONE computed quantity — `contrib = y_lam * f_lam` — with y_λ from the proton
+# layer and f_λ evaluated at the muon literal. That is the layer straddle
+# AGENTS.md forbids ("Never straddle the two layers inside one quantity"),
+# the same shape as the μ₃ Fréchet incident, and it was live before this
+# change rather than introduced by it.
+#
+# Re-pinning z to proton REMOVES the straddle; leaving it would have kept a
+# muon z against a proton y_λ. AGENTS.md's standing directive for touched
+# code ("New / touched code: use proton") points the same way.
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 # ── Young-diagram combinatorics (shared with the Option B probe) ──
@@ -124,10 +140,17 @@ def linking_weight_family_a_sym(q: sp.Expr) -> sp.Expr:
 
 
 def z_markov_sym(q: sp.Expr) -> sp.Expr:
-    """z = 1 / (q^½ + q^{-½}) — Markov stabilization parameter
-    (`hecke_symbolic.py:46`)."""
-    qh = sp.sqrt(q)
-    return 1 / (qh + 1 / qh)
+    """z = q³ / (q² + 1) — Markov stabilization parameter, convention D.
+
+    MIGRATED C -> D 2026-08-30 (bean qou-t9r1). The docstring previously read
+    `z = 1 / (q^½ + q^{-½})` and cited `hecke_symbolic.py:46` as its authority.
+    That citation had gone stale in the strongest possible way: the cited module
+    is `computations/hecke/hecke_symbolic.py`, and its line 56 now reads
+    `z_markov = q**3 / (q**2 + 1)  # convention D`, migrated on 2026-08-09 with
+    the note that convention C "which this line carried until then" was excised.
+    So this site's own stated source had already moved; only the copy here had
+    not."""
+    return q ** 3 / (q ** 2 + 1)
 
 
 def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:

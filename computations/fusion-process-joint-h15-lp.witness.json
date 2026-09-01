@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:10:59.430597+00:00",
-  "commitSha": "671dcf91d3f0b65e22014a621207ac1b6d554c3f",
+  "computedAt": "2026-08-30T08:01:39.157081+00:00",
+  "commitSha": "735a7a141c70d667d169309bcf29766723b5b6df",
   "assertions": [
     {
       "name": "both_sides_strong_duality",
@@ -19,6 +19,14 @@
       "passed": true,
       "tolerance": "0",
       "source": "both sides branched into p(15)=176 blocks"
+    },
+    {
+      "name": "initial_split_multiplicativity",
+      "computed": "4.24682e-10",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "tr15(D x T branched) equals tr(2H)*tr(3H) from the regenerated witnesses, f64 accumulation floor"
     },
     {
       "name": "final_split_multiplicativity",
@@ -38,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 20,
   "computation": "fusion-process-joint-h15-lp",
   "scriptFile": "fusion_process_joint_h15_lp.py",
-  "scriptHash": "10b835ccd38f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7108d4756aa9",
+  "scriptCommitSha": "d290a9292f0bb6c4dc08721518fe454231ca63af",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -253,7 +261,7 @@
     "delta_y0_star_same_frame": "-0.0009216768080341594"
   },
   "caveats": [
-    "Deuteron chi source (iterative-lp-dual-h6-deuteron.witness.json) implies tr_H6 = 0.5752, while nucleus-real-sdp-deuteron.witness.json records tr_M = 0.38836 — the known tr_m_atom_via_transfer import-cone drift pair (AGENTS.md binding_canonical note). The two committed witnesses disagree; this producer uses the former (the per-block table). Which is canonical is a staleness question tracked outside this witness; the final side shows exact split multiplicativity (tr15 = tr(4He) x tr(n)) under the same branching."
+    "ADJUDICATED 2026-08-30 (bean qou-lzgv): the deuteron witness disagreement this caveat used to record is resolved — the live trace gives tr_H6 = 0.57517 (matching the chi table this producer uses), and nucleus-real-sdp-deuteron.witness.json was regenerated to it. Both sides of the process are split-multiplicative under the branching (asserted below)."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

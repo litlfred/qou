@@ -78,4 +78,35 @@ theorem rightDualIso_hom_trans {A B₁ B₂ B₃ : C}
   refine rightDualIso_hom_unique p₁ p₃ _ ?_
   rw [comp_whiskerRight, Category.assoc, rightDualIso_hom_evaluation,
       rightDualIso_hom_evaluation]
+
+/-- **The coevaluation identity that characterises `rightDualIso`** — the mirror of
+`rightDualIso_hom_evaluation`.
+
+Where the evaluation form says the comparison of two right duals commutes with the two evaluations,
+this says it carries one coevaluation to the other.  Proved by transporting both sides through
+`tensorLeftHomEquiv` *for the pairing `p₁`* — the choice matters: the `p₂` equivalence leaves a
+mixed `η_{p₂}` against `ε_{p₁}` that is no snake, while the `p₁` one reduces each side to
+`(ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom` after one use of the evaluation form. -/
+theorem coev_comp_rightDualIso {A B₁ B₂ : C}
+    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
+    @ExactPairing.coevaluation _ _ _ A B₁ p₁ ≫ A ◁ (rightDualIso p₁ p₂).hom
+      = @ExactPairing.coevaluation _ _ _ A B₂ p₂ := by
+  apply (tensorLeftHomEquiv (𝟙_ C) A B₁ B₂).symm.injective
+  simp only [tensorLeftHomEquiv, Equiv.coe_fn_symm_mk]
+  have hL : B₁ ◁ (@ExactPairing.coevaluation _ _ _ A B₁ p₁ ≫ A ◁ (rightDualIso p₁ p₂).hom)
+        ≫ (α_ B₁ A B₂).inv ≫ ε_ A B₁ ▷ B₂ ≫ (λ_ B₂).hom
+      = (ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom := by
+    rw [MonoidalCategory.whiskerLeft_comp, Category.assoc,
+      MonoidalCategory.associator_inv_naturality_right_assoc, whisker_exchange_assoc,
+      ExactPairing.coevaluation_evaluation_assoc]
+    simp
+  have hR : B₁ ◁ (@ExactPairing.coevaluation _ _ _ A B₂ p₂)
+        ≫ (α_ B₁ A B₂).inv ≫ ε_ A B₁ ▷ B₂ ≫ (λ_ B₂).hom
+      = (ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom := by
+    rw [← rightDualIso_hom_evaluation p₁ p₂, comp_whiskerRight, Category.assoc,
+      ← MonoidalCategory.associator_inv_naturality_left_assoc, whisker_exchange_assoc,
+      ExactPairing.coevaluation_evaluation_assoc]
+    simp
+  rw [hL, hR]
+
 end QOU.MathlibExt

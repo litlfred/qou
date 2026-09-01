@@ -36,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402, F401  # TODO parent: witness
-from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -156,7 +156,10 @@ def main() -> int:
     # in QOU.QBeta.MonodromyDatumRigidity.qpRatio_solution_independent). Score
     # its cross-anchor ratio against the pre-named list. qp_ratio ≈ 1 (real).
     qp_ratio_re = mp.re(qp0_ratio)
-    dists = [(nm, float(mp.fabs(qp_ratio_re - v))) for nm, v in named_candidates]
+    # mpf kept end to end: the `float(...)` that used to sit here cut each
+    # distance to 17 digits before `min` chose one, so the asserted best was
+    # a double however high the producer's dps (bean qou-p77d).
+    dists = [(nm, mp.fabs(qp_ratio_re - v)) for nm, v in named_candidates]
     best_nm, best_d = min(dists, key=lambda t: t[1])
 
     print("\n" + "=" * 78)
@@ -164,8 +167,9 @@ def main() -> int:
     print("=" * 78)
     print(f"    qpRatio_p/qpRatio_m (z0=0), Re = {mp.nstr(qp_ratio_re, 15)}")
     for nm, d in dists:
-        print(f"      dist to {nm:42s} = {d:.4f}")
-    print(f"    best: {best_nm}  (dist {best_d:.4f})")
+        print(f"      dist to {nm:42s} = {mp.nstr(d, 4)}")
+    # `f"{mpf:.4f}"` raises TypeError; mp.nstr is the mpf-safe spelling.
+    print(f"    best: {best_nm}  (dist {mp.nstr(best_d, 4)})")
     print(f"    consumed (cited, not recomputed) #3826 I_Δ(0,0)(e^-t) = "
           f"{mp.nstr(consumed_3826_I_Delta_0_0, 12)}")
 
@@ -199,7 +203,10 @@ def main() -> int:
                          "sibling-owned (#3805/#3826); NOT touched here"})
 
     # assertion 1: the local readout is anchor-blind (the core finding)
-    ab = float(mp.fabs(mp.fabs(qp0_ratio) - 1))
+    # Serialized from the mpf at output precision. `float(...)` here cut a
+    # 60-dps value to 17 digits before it reached the witness, against a
+    # 1e-6 tolerance (AGENTS.md §PROBES ARE NOT EXEMPT; bean qou-p77d).
+    ab = fmt(mp.fabs(mp.fabs(qp0_ratio) - 1))
     wb.add_assertion("local_qpRatio_anchor_blind",
                      computed=ab, expected=0.0, tolerance=1e-6,
                      source="|qpRatio_p/qpRatio_m| - 1: the local scale-invariant "
@@ -209,7 +216,7 @@ def main() -> int:
                             "A_ω swing carrier")
     # assertion 2: the local readout matches NO pre-named count (clean negative)
     wb.add_assertion("local_readout_matches_no_named_count",
-                     computed=best_d, expected=3.0, tolerance=2.0,
+                     computed=fmt(best_d), expected="3", tolerance="2",
                      source="min distance from the anchor-blind qpRatio ratio (~1) to "
                             "every pre-named integer/count ratio (all near -3..-4) is "
                             "O(4) >> any entropy bar: the local monodromy is NOT a "

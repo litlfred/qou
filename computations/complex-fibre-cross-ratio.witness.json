@@ -1,15 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:38:51.381545+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:24:44.986207+00:00",
+  "commitSha": "5e3e5a415ea9f81cf6218fad25160e62e3c0a518",
+  "assertions": [
+    {
+      "name": "color_tube_cubic_complex_discriminant_root_count",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "source": "|Im z_c| > 1e-30 per discriminant root of the universal cubic F(c,z); bar is this file's own 1e-30, expected is the number of roots"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 58,
+  "durationMs": 74,
   "computation": "complex-fibre-cross-ratio",
   "scriptFile": "complex_fibre_cross_ratio.py",
-  "scriptHash": "0f93efc27696",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "c1b0d2319040",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

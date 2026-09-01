@@ -4,20 +4,22 @@
   Each theorem in this module takes one or more of the
   `[QAubinLions]`, `[NSCounterexample]`, `[CriticalExponent]`,
   `[BlowupYekutieli]`, `[RegularityBreakdown]` instance hypotheses
-  and proves a conditional consequence.  The classes' existential
-  fields are used directly in the proof, demonstrating that the
+  and proves a conditional consequence, demonstrating that the
   §3b-cond pattern composes — multiple class hypotheses can be
   combined without circularity.
 
-  Round 11 deliverable: extends the conditional-result coverage
-  beyond the per-conjecture wrappers added in R6.  Updated post
-  Gemini review to use the existential class fields.
+  **"The classes' existential fields" is history.** That was the Round 11
+  design, and every one of those existentials was satisfiable by zero, which is
+  why all five carriers were re-encoded or replaced on 2026-08-30 (bean
+  `qou-rq9n`). The fields are now refutable statements about caller-supplied
+  parameters, and each theorem below records what its own conclusion used to
+  be.
 
   Ref: [manuscript]
     - conj:q-aubin-lions
     - conj:ns-counterexample
     - conj:critical-exponent
-    - conj:blowup-yekutieli
+    - prop:blowup-yekutieli  (no `conj:` label exists; see ConditionalClasses)
     - conj:regularity-breakdown
 -/
 
@@ -58,35 +60,49 @@ theorem ns_counterexample_unbounded (ω : ℝ → ℝ) [h : NSCounterexample ω]
   obtain ⟨t, _, _, hM⟩ := hdiv M (T - 1) (by linarith)
   exact ⟨t, hM⟩
 
-/-- **Critical-exponent identity**, in cleared form: under `[CriticalExponent
-    α]`, the exponent satisfies `3 · α = 4`.
+/-- **The enstrophy is unbounded near `q = 1`** — a consequence of the
+    critical-exponent conjecture.
 
-    Two changes on 2026-08-30 (bean `qou-93hu`), and the second is a
-    consequence of the first.
+    Three states on one day, and the middle one is the instructive failure.
 
-    It used to conclude `(3 * 4 : ℕ) = 12` — true by `rfl` with or without the
-    hypothesis, so the `[CriticalExponent]` binder was decorative.
+    1. It concluded `(3 * 4 : ℕ) = 12` — true by `rfl` with or without the
+       hypothesis, so the `[CriticalExponent]` binder was decorative
+       (`qou-93hu`).
+    2. It concluded `3 * α = 4`, from a class field typed `α = 4/3`. That
+       cleared the *shape* defect and inherited a worse one from the class:
+       **`4/3` is not a result the corpus holds.** `p2-critical-exponent.md`
+       offers it as one of two heuristic values under two named turbulence
+       closures and says the true exponent is open. So this theorem derived an
+       arithmetic identity from a fabricated premise — the derivation was
+       sound and the premise was not (`qou-4670`).
+    3. Now: the class asserts divergence, and what follows from it is
+       unboundedness. `M` is arbitrary, so this is not satisfiable by any
+       bounded enstrophy, and it uses the hypothesis at `ε = 1`.
 
-    Restating the conclusion as `α = 4/3` fixed that and immediately created a
-    different defect: the class field is *typed* `α = 4/3`, so a theorem
-    concluding it and proving it by `h.alpha_eq` is a §3b-cond item 5
-    self-assuming projection — correctly flagged by
-    `proof-no-self-assuming-projection`, which had nothing to flag while the
-    conclusion was a closed numeral.
+    Note the conclusion drops the neighbourhood. That is deliberate: the
+    localisation is what makes the *hypothesis* strong, and a consequence is
+    free to be weaker. The `1 < q` conjunct is kept so the statement stays in
+    the q-NS regime. -/
+theorem critical_exponent_enstrophy_unbounded (enstrophy : ℝ → ℝ) (α : ℝ)
+    [h : CriticalExponent enstrophy α] :
+    ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ M < enstrophy q := by
+  intro M
+  obtain ⟨q, hq1, _, hM⟩ := h.enstrophy_diverges M 1 one_pos
+  exact ⟨q, hq1, hM⟩
 
-    The cleared form is the honest exit, and it is what this declaration's own
-    original docstring promised (*"the scaling-exponent identity `3 · α_num =
-    4`"*): the conclusion is **not** the field's type, and the proof does
-    arithmetic rather than returning the hypothesis. -/
-theorem critical_exponent_identity (α : ℝ) [h : CriticalExponent α] :
-    3 * α = 4 := by
-  rw [h.alpha_eq]; norm_num
+/-- **Blow-up is a finite obstruction level** — the contrapositive half of
+    smoothness-as-lifting.
 
-/-- **Blow-up rate existence** — direct consequence of
-    `[BlowupYekutieli]`. -/
-theorem blowup_yekutieli_r_exists [BlowupYekutieli] :
-    ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + (0 : ℝ) :=
-  BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
+    Until 2026-08-30 this concluded `∃ r, 0 ≤ r ∧ r ≤ 1 + 0`, satisfied by
+    `r = 0` with or without the hypothesis. The class now states
+    `smooth ↔ ∀ n, obstruction n = 0`, so what follows from it is the blow-up
+    characterisation: failing to lift means some finite level obstructs. The
+    proof is `not_forall` after rewriting, mirroring upstream
+    `QOU.FluidDynamics.blowup_yekutieli`. Bean `qou-88nf`. -/
+theorem blowup_yekutieli_iff_obstruction (obstruction : ℕ → ℕ) (smooth : Prop)
+    [h : BlowupYekutieli obstruction smooth] :
+    ¬ smooth ↔ ∃ n : ℕ, obstruction n ≠ 0 := by
+  rw [h.smooth_iff_all_obstructions_vanish, not_forall]
 
 /-- **Every subset of the breakdown locus is null** — monotonicity of measure.
 
@@ -99,26 +115,32 @@ theorem regularity_breakdown_subset_null (S : Set ℝ) [h : RegularityBreakdown 
   MeasureTheory.measure_mono_null hA h.breakdown_measure_zero
 
 /-- **Two-class composition** (Aubin-Lions + blow-up): the compactness constant
-    is pinned at zero energy *and* the blow-up rate exists.
+    is pinned at zero energy *and* blow-up is a finite obstruction level.
 
     The composition is the point — two class hypotheses used together without
-    circularity — but note the asymmetry it now exposes: the Aubin-Lions half
-    derives a determined value, while the Yekutieli half can still only produce
-    an existential, because that carrier has not been re-encoded (bean
-    `qou-88nf`). -/
-theorem qNS_combined (K : ℝ → ℝ) [QAubinLions K] [BlowupYekutieli] :
-    K 0 = 0 ∧ (∃ r : ℝ, 0 ≤ r) := by
-  refine ⟨qAubinLions_zero_energy K, ?_⟩
-  obtain ⟨r, hr, _⟩ := BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
-  exact ⟨r, hr⟩
+    circularity. **The asymmetry this docstring used to record is gone**: the
+    Yekutieli half produced an existential satisfied by zero until its carrier
+    was replaced on 2026-08-30 (`qou-88nf`), and now both halves derive
+    something the hypothesis is needed for. -/
+theorem qNS_combined (K : ℝ → ℝ) (obstruction : ℕ → ℕ) (smooth : Prop)
+    [QAubinLions K] [BlowupYekutieli obstruction smooth] :
+    K 0 = 0 ∧ (¬ smooth ↔ ∃ n : ℕ, obstruction n ≠ 0) :=
+  ⟨qAubinLions_zero_energy K,
+   blowup_yekutieli_iff_obstruction obstruction smooth⟩
 
 /-- **Three-class composition** (Aubin-Lions + critical + blow-up):
-    the critical-exponent identity holds even when combined with the
-    Aubin-Lions and blow-up class hypotheses. -/
-theorem qNS_critical_exponent_with_compactness (α : ℝ) (K : ℝ → ℝ)
-    [QAubinLions K] [h : CriticalExponent α] [BlowupYekutieli] :
-    3 * α = 4 := by
-  rw [h.alpha_eq]; norm_num
+    the enstrophy divergence survives combination with the Aubin-Lions and
+    blow-up class hypotheses.
+
+    The conclusion changed with the class on 2026-08-30 (`qou-4670`); it used
+    to be `3 * α = 4`, which the class no longer supports and which the
+    corpus does not assert. -/
+theorem qNS_critical_exponent_with_compactness (α : ℝ) (K enstrophy : ℝ → ℝ)
+    (obstruction : ℕ → ℕ) (smooth : Prop)
+    [QAubinLions K] [CriticalExponent enstrophy α]
+    [BlowupYekutieli obstruction smooth] :
+    ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ M < enstrophy q :=
+  critical_exponent_enstrophy_unbounded enstrophy α
 
 /-- **Full q-NS-cone composition** (all 5 classes).
 
@@ -129,21 +151,32 @@ theorem qNS_critical_exponent_with_compactness (α : ℝ) (K : ℝ → ℝ)
     a determined zero-energy compactness, an unbounded vorticity, the exponent's
     value, a null breakdown locus.
 
-    **The fourth conjunct is the exception and is left visible rather than
-    dressed up.** `BlowupYekutieli` has not been re-encoded (bean `qou-88nf`),
-    so its leg is still an existential satisfied by zero — the one place this
-    composition is as weak as the whole thing used to be. -/
-theorem qNS_cone_full_composition (α : ℝ) (K ω : ℝ → ℝ) (S : Set ℝ)
-    [QAubinLions K] [NSCounterexample ω] [h : CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown S] :
+    **The fourth conjunct WAS the exception and no longer is.** It read
+    `∃ r, 0 ≤ r` — satisfied by zero, the one place this composition stayed as
+    weak as the whole thing used to be — because `BlowupYekutieli` had not been
+    re-encoded. On 2026-08-30 that carrier was **replaced** by the upstream
+    obstruction statement (`qou-88nf`), so all five conjuncts now need their
+    class. Note the replacement is not a strengthening of the old leg: a
+    blow-up *rate* and obstruction-class *vanishing* are different
+    propositions that shared a name.
+
+    The third conjunct read `α = 4/3` until 2026-08-30. That was a projection
+    of a class field asserting a value the corpus calls open; both the field
+    and this conjunct are gone (`qou-4670`). What replaces it is the
+    divergence consequence, which is derived rather than returned. -/
+theorem qNS_cone_full_composition (α : ℝ) (K ω enstrophy : ℝ → ℝ) (S : Set ℝ)
+    (obstruction : ℕ → ℕ) (smooth : Prop)
+    [QAubinLions K] [NSCounterexample ω] [CriticalExponent enstrophy α]
+    [BlowupYekutieli obstruction smooth] [RegularityBreakdown S] :
     K 0 = 0 ∧
     (∀ M : ℝ, ∃ t : ℝ, M < ω t) ∧
-    (α = 4 / 3) ∧
-    (∃ r : ℝ, 0 ≤ r) ∧
-    MeasureTheory.volume S = 0 := by
-  obtain ⟨r, hr, _⟩ := BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
-  exact ⟨qAubinLions_zero_energy K, ns_counterexample_unbounded ω, h.alpha_eq,
-         ⟨r, hr⟩, RegularityBreakdown.breakdown_measure_zero⟩
+    (∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ M < enstrophy q) ∧
+    (¬ smooth ↔ ∃ n : ℕ, obstruction n ≠ 0) ∧
+    MeasureTheory.volume S = 0 :=
+  ⟨qAubinLions_zero_energy K, ns_counterexample_unbounded ω,
+   critical_exponent_enstrophy_unbounded enstrophy α,
+   blowup_yekutieli_iff_obstruction obstruction smooth,
+   RegularityBreakdown.breakdown_measure_zero⟩
 
 /-- **Reeb-period bound**: `Ω · ε ≥ 0` for non-negative `Ω` and `ε`.
 

@@ -204,7 +204,18 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
             w0_sym = sp.eye(1)
             for k in word_w0_1based:
                 w0_sym = w0_sym * matrices_sym[k - 1]
-            w0_at_q0 = [[complex(w0_sym[0, 0].evalf(subs={q_sym: q_val}))]]
+            # NOT `complex(... .evalf(...))`. That is the exact float64 round
+            # trip `evaluate_matrix_numerical`'s docstring says it removed —
+            # left behind here because this branch builds its 1x1 by hand
+            # rather than calling that helper. It is why every w0_det the
+            # float64-padding ratchet flags is a ONE-DIMENSIONAL block:
+            # (3) and (1,1,1) at H_3, (6) and (1,1,1,1,1,1) at H_6, all dim 1
+            # and all four claiming 50 digits over a binary64 (e.g. h6.(6)
+            # `4.78320490856174895810681846342049539089202880859375...`, whose
+            # tail is the exact binary64 expansion). The qou-k6b3 fix corrected
+            # `_real_det` to run `mp.det` on mpmath matrices, which is right and
+            # is not enough: the MATRIX reaching it was already float64 here.
+            w0_at_q0 = evaluate_matrix_numerical(w0_sym, q_sym, q_val)
             chi_direct = _ev(w0_sym[0, 0], q_sym, q_val)
         else:
             w0_sym = sp.eye(dim)

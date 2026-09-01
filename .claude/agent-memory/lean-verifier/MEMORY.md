@@ -148,7 +148,16 @@ and the working recipe are in the sibling file; the shapes:
    a complete `cp -al` mirror, `rm -f`-ing each olean before rebuilding it.
 3. **A disk-full `lake build` writes truncated oleans that segfault.** Signature
    **exit 139, zero errors, 0–1 s**; 10 of 11 "failing" modules were this. Never
-   call a module broken from exit 139 alone.
+   call a module broken from exit 139 alone. **Do NOT use olean size as the
+   test** — 2026-08-30, three segfaulters measured 50–226 KB inside a normal
+   33 KB–6.7 MB range, so size flagged nothing.
+4. **Most cone failures are the harness, not the code.** Measured 8, of which
+   **1** was a real defect. `object file … does not exist` usually means a
+   *non-cone* dependency has no olean at all — `ls` it. Decisive test for every
+   one: re-run against **main's own oleans**, your changes off `LEAN_PATH`.
+5. **A dead constant hides behind `abbrev` hops.** A consumer can fail on a
+   deleted constant whose name does not appear in it (three hops, measured), so
+   grepping consumers is not a blast-radius check. Same class as 1.
 
 ## STABLE — the honest dispositions when a proof will not close
 
@@ -212,11 +221,30 @@ Two authoring mistakes that block a NEW file but are trivial, correct fixes
   `Mathlib.LinearAlgebra.Matrix.Notation`. (`Mathlib.Data.Matrix.Notation`
   has neither olean nor source in the tree; the olean error is a red
   herring for "cache is partial" — the module is gone, not uncached.)
+- **`import Mathlib.Data.Matrix.Kronecker` ALSO does not exist in v4.24.0**
+  (confirmed 2026-08-31). The Kronecker content — `⊗ₖ` notation (`open scoped
+  Kronecker`), `Matrix.mul_kronecker_mul`, `Matrix.trace_kronecker`,
+  `Matrix.one_kronecker_one` — lives in `Mathlib.LinearAlgebra.Matrix.Kronecker`.
+  Decisive discriminator vs "uncached": the mathlib **source** tree is present
+  under `.lake/packages/mathlib/Mathlib/...`, and `Data/Matrix/Kronecker.lean`
+  is absent while `LinearAlgebra/Matrix/Kronecker.lean` exists and the
+  `Data/Matrix/` dir is otherwise full. So: `object file … does not exist` for a
+  `Data.Matrix.*` import in v4.24.0 → check the source tree; several `Data.Matrix`
+  modules moved to `LinearAlgebra.Matrix`.
 - Under a full `import Mathlib.Tactic`, `₊`/`₋` (U+208A/U+208B subscript
   plus/minus) are **notation tokens** (PosPart etc.), so a bound-variable
   name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
   the binder (`ρ₊`→`ρp`) — pure alpha-renaming, the proposition is
   identical. Fine in comments/docstrings, not in identifiers.
+- `import Mathlib.Algebra.BigOperators.Ring` **is not a module** in v4.24.0.
+  It is a *directory* `Ring/` (`Finset.lean`, `List.lean`, `Multiset.lean`,
+  `Nat.lean`) with no `Ring.lean` aggregator; zero mathlib files import the
+  bare path. `Finset.mul_sum` lives in `Mathlib.Algebra.BigOperators.Ring.Finset`
+  — the correct import. Symptom is identical to a cache miss (`object file
+  …/BigOperators/Ring.olean … does not exist`), so distinguish source-bug
+  from cache-gap by checking the mathlib *source* tree for a `.lean` and
+  grepping whether any mathlib file imports the exact path. Seen 2026-08-31
+  on `QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`.
 
 ## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
 
@@ -238,6 +266,14 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
+  (sign-isotype exclusion, statement-B). lean-direct EXIT 0, `#print axioms` =
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`. TRAP: cache tarball is
+  now **2.3G** (was 1.6G) and restore ran out at ~2.2G free — extraction cut off
+  in the QOU library files, but mathlib extracted 3407 oleans, ENOUGH for a
+  Mathlib-only import cone. Lesson: a Mathlib-only file needs no complete restore
+  — probe the import cone with a minimal `example` first. Gotcha: `omit [inst] in`
+  must precede the docstring, not sit between docstring and `theorem`.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
@@ -252,6 +288,31 @@ prune the log, never the TRAPs.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-31 (milnor-tl-brick2): verified new `QOU/MassTheory/QuantumTraceTower.lean`
+  (Mathlib-only; `qtr`/`muDiag`/`qtrDiag` defs + 5 theorems). One fix, NOT a
+  tactic/statement change: `import Mathlib.Data.Matrix.Kronecker` → `.LinearAlgebra.`
+  (v4.24.0 module move, see TRAP above). All tactic blocks compiled as authored.
+  lean-direct EXIT 0, zero diagnostics/sorries. `#print axioms` on qtr_kron,
+  qtr_kron_one, qtrDiag_one all = `[propext, Classical.choice, Quot.sound]`, no
+  sorryAx. Cache already restored (3407 mathlib oleans, RESTORED-NO-TRACES marker).
+  Confirmed cold-cache TRAP again: file real 1m16s but user only 5.7s. File is
+  untracked (new, uncommitted) — the import fix lives in the working tree.
+- 2026-08-30 (milnor-v7ro): verified new `QOU/MassTheory/DeficitRecursionReduction.lean`
+  (Mathlib.Tactic-only, no QOU imports; `deficit` def + 2 field-algebra theorems).
+  lean-direct EXIT 0, zero errors/sorries. `#print axioms` on BOTH theorems =
+  `[propext, Classical.choice, Quot.sound]`, no sorryAx. Cache already restored
+  (3407 mathlib oleans, RESTORED-NO-TRACES marker present). Confirmed cold-cache
+  TRAP again: wall 3m31s but `user` only 10s — page faulting, not a rebuild.
+- 2026-08-31: verified NEW `QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`
+  (Mathlib-only, 4 decls). As-written FAILS: line 41/42 `import
+  Mathlib.Algebra.BigOperators.Ring` is a non-existent module in v4.24.0 (it's a
+  dir, no `Ring.lean`) — a SOURCE bug, not a cache gap. With that one import
+  fixed to `...Ring.Finset` (verified on a temp copy; source left unedited),
+  lean-direct EXIT 0, all 4 axiom-clean {propext, Quot.sound[, Classical.choice]},
+  no sorryAx. 3 harmless `unusedSectionVars [DecidableEq n]` linter warnings only.
+  New TRAP added (BigOperators.Ring). Restore note: QOU-cone seed is a PARTIAL
+  mathlib (3469 oleans, not 6990) — it lacks mathlib modules QOU never imports;
+  full extract ran the 38G quota out mid-QOU-lib (didn't matter, mathlib is first).
 - 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
   after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
   Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT

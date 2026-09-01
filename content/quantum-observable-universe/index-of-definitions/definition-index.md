@@ -285,7 +285,6 @@
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 | `qou:QOU.categorical_reeb_exists` |
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `qou:QOU.WeightDecomposition.ofMaximalTorus` |
-| [thm:explicit-formula](#thm:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 22 | `qou:QOU.AlgebraicSubstrate.explicit_formula` |
 | [thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal) | Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\{T(2,4),T(2,6),T(2,8)\}$ | Ch 8 | `qou:QOU.ParticleInteractions.electroweak_triplet_far_commuting_minimal` |
 | [thm:frobenius-antipode-unifies-chirality-and-tower](#thm:frobenius-antipode-unifies-chirality-and-tower) | Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure | Ch 12 | `qou:QOU.BraidKnot.frobenius_antipode_unifies` |
 | [thm:gauge-conformal-invariance](#thm:gauge-conformal-invariance) | Gauge conformal invariance | Ch 14 | `qou:QOU.Archimedean.gauge_conformal_invariance` |
@@ -310,7 +309,7 @@
 | [thm:rivin-concavity-one-tetrahedron](#thm:rivin-concavity-one-tetrahedron) | Rivin concavity for one ideal tetrahedron: $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ is strictly concave along every line in the angle simplex | Ch 12 | `qou:QOU.Knot.Rivin.strictConcaveOn_tetVolLine` |
 | [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 | `qou:QOU.AlgebraicSubstrate.substrate_self_duality` |
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 12 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
-| [thm:tannaka-krein-isomorphism](#thm:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism` |
+| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 12 | `qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le` |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 | `qou:QOU.AppendixSurreals.liouvilleWith_separates` |
 | [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
@@ -741,7 +740,7 @@
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 12 | `qou:QOU.BraidKnot.QRogersAnalyticContinuation` |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 12 | `qou:QOU.BraidKnot.habiro_integral` |
 | [prop:chain-ring-comparison](#prop:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
-| [prop:diagrammatic-double-magic-lr-fusion](#prop:diagrammatic-double-magic-lr-fusion) | Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 | `qou:QOU.LRFusion.DoubleMagicConjecture` |
+| [conj:diagrammatic-double-magic-lr-fusion](#conj:diagrammatic-double-magic-lr-fusion) | Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 | `qou:QOU.LRFusion.DoubleMagicConjecture` |
 | [prop:homological-shell-condensation](#prop:homological-shell-condensation) | Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
 | [prop:partition-sum-proton-residual](#prop:partition-sum-proton-residual) | Proton tower residual = $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 12 | `qou:QOU.MassEndomorphism.mass_endomorphism_positive` |
@@ -945,7 +944,7 @@
 | [prop:vorticity-lower-bound](#prop:vorticity-lower-bound) | Vorticity lower bound for anti-parallel filament collision as $q \to 1$ | Ch 18 | `qou:QOU.FluidDynamics.vorticity_lower_bound_conditional` |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 4 | `qou:QOU.Torsion.weak_equiv_invariance` |
 | [prop:weak-symmetric-normalization](#prop:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.weak_symmetric_normalization` |
-| [prop:magic-numbers-from-q](#prop:magic-numbers-from-q) | Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers | Ch 15 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
+| [conj:magic-numbers-from-q](#conj:magic-numbers-from-q) | Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers | Ch 15 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
 | [prop:wedderburn-bratteli-recursion](#prop:wedderburn-bratteli-recursion) | Wedderburn--Bratteli recursion for Jones--Markov weights $y_\lambda$ at $H_n(R, q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.wedderburn_bratteli_recursion` |
 | [prop:wenzl-qmn-synergy](#prop:wenzl-qmn-synergy) | Wenzl-bridge + q-Murnaghan-Nakayama synergy: $\mathrm{tr}_M$ on canonical braids in $O(p(n)(\max\text{hooks} + n^2))$ | Ch 12 | `qou:QOU.BraidsAndKnots.wenzl_qmn_synergy` |
 | [prop:wigner-coefficient-derivation](#prop:wigner-coefficient-derivation) | Wigner coefficient $[5]_q! \cdot m_e$ from Frobenius reciprocity | Ch 12 | `qou:QOU.BraidKnot.wigner_coefficient` |
@@ -1084,7 +1083,7 @@
 | [conj:tetraplectic-sw-localisation-bridge](#conj:tetraplectic-sw-localisation-bridge) | Combinatorial evaluation of tetraplectic matrix elements by $S_5$ localization | Ch 6 | — |
 | [conj:archimedean-realisation-volume-compatibility](#conj:archimedean-realisation-volume-compatibility) | Compatibility of the local archimedean realisation $\tau_\infty$ with the global realization $\mathcal{R}_{\mathrm{top}}$ on QOU volume classes | Ch 2 | `qou:QOU.Archimedean.RealisationVolumeCompatibility.realisation_volume_compatibility` |
 | [conj:complex-mass-constituent-functional](#conj:complex-mass-constituent-functional) | Complex-mass constituent functional | Ch 12 | `qou:QOU.MassTheory.ComplexMassConstituent` |
-| [conj:binding-qbeta-complex-volume](#conj:binding-qbeta-complex-volume) | Complex-volume unification: binding $\mathfrak{E}_{\mathrm{bind}}$ and $\beta$-decay $\mathfrak{Q}_\beta$ are $\operatorname{Re}$/$\operatorname{Im}$ of one $\mathfrak{V}=E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$ | Ch 7 | `qou:QOU.MassEndomorphism.ComplexVolumeMatch` |
+| [conj:binding-qbeta-complex-volume](#conj:binding-qbeta-complex-volume) | Complex-volume unification: binding $\mathfrak{E}_{\mathrm{bind}}$ and $\beta$-decay $\mathfrak{Q}_\beta$ are $\mathrm{Re}$/$\mathrm{Im}$ of one $\mathfrak{V}=E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$ | Ch 7 | `qou:QOU.MassEndomorphism.ComplexVolumeMatch` |
 | [conj:schwinger-measure-computational-time](#conj:schwinger-measure-computational-time) | Computational-time identification: the binding Borel variable is the loop proper time | Ch 14 | `qou:QOU.Archimedean.SchwingerMeasureComputationalTime.BorelProperTimeIdentification` |
 | [conj:confinement-nf-structure-forcing](#conj:confinement-nf-structure-forcing) | Confinement → NF-structure forcing: $\mathrm{shift}_{\mathrm{NF}}(\beta_1 \star I \star \beta_2) = \alpha_{\mathrm{shift}}(I) + \Delta$ with $|\Delta|$ bounded by the LP duality gap | Ch 12 | `qou:QOU.BraidKnot.ConfinementNfStructureForcing` |
 | [conj:confinement-grading-correspondence](#conj:confinement-grading-correspondence) | Confinement levels coincide with KLR $\mathbb{Z}$-grading shifts | Ch 8 | `qou:QOU.BraidKnot.ConfinementGradingCorrespondence` |
@@ -1101,6 +1100,7 @@
 | [conj:hydrogen-shell-writhe](#conj:hydrogen-shell-writhe) | Electron shell number equals writhe level of the trefoil embedding | Ch 14 | `qou:QOU.BringsSurface.hydrogen_shell_writhe` |
 | [conj:gs-residue-at-root-existence](#conj:gs-residue-at-root-existence) | Existence of the cyclotomic residue at each filtration level | Ch 12 | `qou:QOU.BraidKnot.ResidueAtRoot` |
 | [conj:gs-graded-markov-trace-existence](#conj:gs-graded-markov-trace-existence) | Existence of the graded Markov trace on the GS filtration (categorical existence) | Ch 12 | `qou:QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence` |
+| [conj:explicit-formula](#conj:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 22 | `qou:QOU.AlgebraicSubstrate.explicit_formula` |
 | [conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay) | Exponential decay of the archimedean brane-tower truncation remainder | Ch 10 | `qou:QOU.Interactions.ArchimedeanRemainderExponentialDecay` |
 | [conj:q-gl-fiber-functor](#conj:q-gl-fiber-functor) | Fibre-functor mediation of the $q$-Langlands correspondence | Ch 22 | `qou:QOU.QGeometricLanglands.q_gl_fiber_functor` |
 | [conj:gs-spectral-sum-finite](#conj:gs-spectral-sum-finite) | Finiteness of the GS residue spectral sum | Ch 12 | `qou:QOU.BraidKnot.spectral_sum_finite` |

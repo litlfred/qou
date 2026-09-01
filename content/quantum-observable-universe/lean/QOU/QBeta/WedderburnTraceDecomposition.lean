@@ -24,9 +24,10 @@ import Mathlib.Algebra.Group.Hom.Defs
 > a block representation `ρ_λ : A →ₐ[R] M_{f^λ}(R)` with
 > `χ^λ := Matrix.trace ∘ ρ_λ`, and because an algebra map has `ρ_λ 1 = 1`,
 > `block_scaling` at `x = 1` forces `tr_M(π_λ) = y_λ · f^λ`
-> (`QOU.Hecke.WedderburnDecomp.yLambda_determined`). The freedom left is the
-> untied `blockDim`, giving the one-parameter family `y_λ = 1/d`
-> (`QOU.Hecke.RankOneDegeneracy.yLambda_residual_freedom`).
+> (`QOU.Hecke.WedderburnDecomp.yLambda_determined`). A second tranche the same
+> day closed the remainder: `blockDim` is no longer a field either but
+> `QOU.Hecke.blockDim λ = dimHLF λ.parts`, so `y_λ` is determined outright
+> (`QOU.Hecke.RankOneDegeneracy.yLambda_forced_one`).
 >
 > The three theorems in this file are untouched by all of it — they were always
 > stated over a generic `tr`, `pi`, `y`, `chi` with the block scaling as an

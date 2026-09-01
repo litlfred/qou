@@ -1,5 +1,5 @@
 The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
-[@kashaev1997] (open in full generality; provenance and the Lean
+\cite{kashaev1997} (open in full generality; provenance and the Lean
 axiomatisation live in that block) states:
 
 $$
@@ -28,7 +28,7 @@ and the gap between them sharpens.
 Set $n = \omega \in \mathbf{No}$ (the first infinite ordinal as a
 surreal). Then $\zeta_\omega = e^{2 \pi i / \omega}$ is a
 specific element of $\mathbf{No}[i]$ (interpreting the exponential
-via Berarducci--Mantova's transseries [@berarducci-mantova2018]).
+via Berarducci--Mantova's transseries \cite{berarducci-mantova2018}).
 The coloured Jones polynomial $J_K(q, n)$ is rational in $q$ and
 *polynomial in $n$* for fixed $K$, so $J_K(\zeta_\omega, \omega)$
 is well-defined as an element of $\mathbf{No}[i]$.
@@ -85,7 +85,7 @@ row is where hyperbolic geometry enters — and it enters *only* on
 the LHS.
 
 The second row admits a precise name from resurgence theory
-[@ecalle1981]. The Berarducci--Mantova transseries invoked there
+\cite{ecalle1981}. The Berarducci--Mantova transseries invoked there
 are transseries in Écalle's sense, and the evaluation sits on a
 Stokes ray of the Kashaev asymptotic series, where the two lateral
 Borel sums of a divergent transseries disagree. The standard-part
@@ -121,7 +121,7 @@ just relocate the difficulty rather than dissolve it.
 conjecture is a reformulation, not a proof. Its value is in
 *separating* the algebraic content (which is computable) from the
 geometric content (which is the actual Kashaev). For $K = 4_1$ the
-classical limit statement is a theorem [@murakami-murakami2001], so
+classical limit statement is a theorem \cite{murakami-murakami2001}, so
 the surreal form holds with $=$ in place of $\stackrel{?}{=}$ for
 $4_1$ — see the next section.
 
@@ -130,7 +130,7 @@ $4_1$ — see the next section.
 For the figure-eight knot the two question marks collapse:
 
 1. **Leading order ($=$, not $\stackrel{?}{=}$).** The classical
-   Kashaev limit for $4_1$ is proved [@murakami-murakami2001].
+   Kashaev limit for $4_1$ is proved \cite{murakami-murakami2001}.
    Combined with the formulation equivalence (proof-strategy items
    1--3 below, provable by transfer), the surreal statement is a
    theorem for $4_1$:
@@ -147,7 +147,7 @@ For the figure-eight knot the two question marks collapse:
    conjecture.
 
 2. **All orders (quantum modularity).** Garoufalidis--Zagier
-   [@garoufalidis-zagier-2024] refine the leading asymptotic to a
+   \cite{garoufalidis-zagier-2024} refine the leading asymptotic to a
    matrix-valued $\mathrm{SL}_2(\mathbb{Z})$-cocycle $W_\gamma$,
    holomorphic on cut planes, whose functional equation holds
    *exactly* — the factorially divergent perturbative series
@@ -161,10 +161,10 @@ For the figure-eight knot the two question marks collapse:
 
 3. **Stokes data as integer counts.** The resurgent structure of the
    $4_1$ Kashaev series is completely described in
-   [@garoufalidis-gu-marino2021]: Borel singularities sit on the
+   \cite{garoufalidis-gu-marino2021}: Borel singularities sit on the
    complex-volume lattice and the Stokes constants are organised as
    integer $q$-series identified with 3d-index data. Under the
-   modular-resurgence template [@fantini-rella2024] these Stokes
+   modular-resurgence template \cite{fantini-rella2024} these Stokes
    constants are coefficients of an L-function, tying the alien
    calculus of the series to a quantum modular form.
 
@@ -222,7 +222,7 @@ geometry.
 **Verification on known cases (provable now)**:
 
 4. The figure-eight knot $4_1$ (Murakami–Murakami 2001
- [@murakami-murakami2001]) and the trefoil $3_1$ have the volume
+ \cite{murakami-murakami2001}) and the trefoil $3_1$ have the volume
  conjecture proved. Compute $J_K(\zeta_\omega, \omega)$
  directly, take $\mathrm{st}$, and verify equality with the
  known volume.

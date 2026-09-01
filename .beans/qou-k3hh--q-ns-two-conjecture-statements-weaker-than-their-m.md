@@ -1,11 +1,11 @@
 ---
 # qou-k3hh
 title: 'q-NS: two conjecture statements weaker than their .md (critical-exponent, ns-counterexample)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:40:02Z
-updated_at: 2026-08-29T18:12:33Z
+updated_at: 2026-08-30T09:05:51Z
 ---
 
 **Verified** by `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`
@@ -61,3 +61,9 @@ Two of my own measurements were wrong before correction, both recorded in the
 audit: '53 classes / 2 zero-field carriers' (an enumerator that did not strip
 block comments matched docstring PROSE -- real: 51 / 345 / 0), and '0 candidates
 over 2000 files' (scope artifact; the corpus is 11,277).
+
+COMPLETED. The two weaker-than-.md conjecture statements were strengthened in
+PR #6041 (merged, 5999bdbdae): p2-critical-exponent's enstrophy_diverges became
+one-sided, and p5-counterexample's ns_counterexample_holds gained the
+singularityTime - eps < t conjunct that puts the blow-up AT the singularity
+time rather than merely somewhere.

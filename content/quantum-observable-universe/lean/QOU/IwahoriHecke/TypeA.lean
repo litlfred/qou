@@ -1,4 +1,6 @@
 import QOU.IwahoriHecke.Quotient
+import QOU.MathlibExt.IwahoriHeckeAlgebra
+import Mathlib.GroupTheory.Coxeter.Matrix
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -67,17 +69,60 @@ variable (R : Type v) [CommRing R] (q : R) (n : ℕ)
 def adjacentTranspositionIndex : Set (Fin (n - 1)) :=
   Set.univ
 
-/-- **The Type-A Iwahori-Hecke algebra** as a specialisation of
-    the generic `IwahoriHeckeQuot` construction. The index set
-    `Fin (n - 1)` enumerates the simple reflections `s_i = (i, i+1)`. -/
-noncomputable def IwahoriHeckeOfSn : Type max 0 v :=
-  QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot R q (adjacentTranspositionIndex n)
+/-- **The type-A Coxeter matrix on the strand indices**, i.e. Mathlib's `CoxeterMatrix.Aₙ`
+on `Fin (n - 1)`: adjacent strands braid (`m = 3`), distant ones commute (`m = 2`). -/
+def strandMatrix : Fin (n - 1) → Fin (n - 1) → ℕ :=
+  fun i j => CoxeterMatrix.Aₙ (n - 1) i j
 
-/-- **The strand-σ generator** `σ_i ∈ IwahoriHeckeOfSn n q`,
-    parameterised by strand index `i : Fin (n - 1)`. -/
+/-- **The type-A Iwahori–Hecke algebra** `H_n(q)`.
+
+**Rebuilt 2026-08-30.**  This read
+
+```
+noncomputable def IwahoriHeckeOfSn : Type max 0 v :=
+  Quotient.IwahoriHeckeQuot R q (adjacentTranspositionIndex n)
+```
+
+The *indexing* was right — `adjacentTranspositionIndex n` really is the simple
+reflections, unlike the generic `IwahoriHecke` which passed all of `W`.  What was
+missing is the other half: `IwahoriHeckeQuot` imposes the **quadratic relation only**,
+so the object was the free product of `n − 1` copies of `R[x]/((x−q)(x+1))` and no braid
+relation held in it.
+
+Now built on `QOU.MathlibExt.IwahoriHecke.HeckeAlgebra` at the type-A Coxeter matrix, so
+both families hold. -/
+noncomputable def IwahoriHeckeOfSn : Type max 0 v :=
+  QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (strandMatrix n)
+
+noncomputable instance : Ring (IwahoriHeckeOfSn R q n) :=
+  inferInstanceAs (Ring (QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (strandMatrix n)))
+
+noncomputable instance : Algebra R (IwahoriHeckeOfSn R q n) :=
+  inferInstanceAs (Algebra R (QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (strandMatrix n)))
+
+/-- **The strand-σ generator** `σ_i ∈ IwahoriHeckeOfSn R q n`. -/
 noncomputable def σ (i : Fin (n - 1)) : IwahoriHeckeOfSn R q n :=
-  QOU.IwahoriHecke.Quotient.T R q (adjacentTranspositionIndex n)
-    ⟨i, Set.mem_univ i⟩
+  QOU.MathlibExt.IwahoriHecke.T R q (strandMatrix n) i
+
+variable {R q n}
+
+/-- **The Hecke quadratic relation** holds for every strand generator. -/
+theorem sigma_quadratic (i : Fin (n - 1)) :
+    (σ R q n i - algebraMap R (IwahoriHeckeOfSn R q n) q) * (σ R q n i + 1) = 0 :=
+  QOU.MathlibExt.IwahoriHecke.T_quadratic i
+
+/-- **The braid relation** holds — the half the old construction did not impose. -/
+theorem sigma_braid (i j : Fin (n - 1)) :
+    QOU.MathlibExt.IwahoriHecke.altProd (σ R q n i) (σ R q n j) (strandMatrix n i j)
+      = QOU.MathlibExt.IwahoriHecke.altProd (σ R q n j) (σ R q n i) (strandMatrix n j i) :=
+  QOU.MathlibExt.IwahoriHecke.T_braid i j
+
+/-- Each strand generator is invertible whenever `q` is, so `σ_i⁻¹` denotes an actual
+element and the skein dictionary of §7a applies. -/
+theorem isUnit_sigma (hq : IsUnit q) (i : Fin (n - 1)) : IsUnit (σ R q n i) :=
+  QOU.MathlibExt.IwahoriHecke.isUnit_T hq i
+
+variable (R q n)
 
 /-! ## Closure of `conj:reverse-limit-q-to-infinity`
 

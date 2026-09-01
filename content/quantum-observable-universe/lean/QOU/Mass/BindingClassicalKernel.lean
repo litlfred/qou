@@ -26,10 +26,15 @@ super-exponential growth the fixed-`τ` (constant-coefficient) model cannot. `τ
 is the n≤4 constant-coefficient *shadow* of this exact kernel.
 
 This is a `q = 1` (classical-limit) statement: exact, sorry-free, and derived from the
-telephone recurrence — a proved fact — modulo the `Σ f^λ = I(n)` identification, which is
-the keystone Identity I (`YoungTableauStandard.sum_dimSYT_eq_involution`, the RSK sorry the
-P1–P5 program discharges). So the classical binding kernel and the keystone share **one**
-open input; everything else here is proved. The full `q`-deformation is
+telephone recurrence — a proved fact — and, since 2026-08-30, so is the `Σ f^λ = I(n)`
+identification it rests on: `QOU.Mass.sum_numSYT_eq_involutionNumber`
+(`QOU/Mass/SumSYTEqInvolution.lean`), sorry-free for every `n`, via the differential-poset
+structure of Young's lattice rather than RSK.  This paragraph previously called that
+identification "the RSK sorry the P1–P5 program discharges" and described it as the one open
+input shared with the keystone; that is no longer the case, and it was never a `sorry`
+(`RSKIdentitiesContext.sum_dimSYT_eq_involution` was a class field — see
+`QOU.Mass.sum_dimSYT_eq_involution_keystone`, which discharges that field's exact statement).
+Everything here is proved. The full `q`-deformation is
 `S(n) = S(n−1) + [n−1]_q·S(n−2) + D(n)` with a cyclotomic Habiro tail `D(n)`
 (`c_3 = [2]_q` exact); this file pins the classical leading term.
 

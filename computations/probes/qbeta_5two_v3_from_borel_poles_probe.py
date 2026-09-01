@@ -380,19 +380,19 @@ def main() -> int:
                     computed=ref["im_dev"], expected=0.0,
                     tolerance=0.10,
                     source="a Pade pole sits on the line Im zeta = Vol")
-    # `expected=d_ggm` made this pass for any measurement at all, so the one
-    # preference the probe exists to establish went untested. The tolerance
-    # was already the right quantity — with `expected=0` the check reads
-    # |d_ggm| <= d_leg, which IS the source string's claim, and it matches
-    # the shape of the two assertions above. Nothing is loosened: d_leg is
-    # the rival deviation rather than a chosen threshold, and the margin is
-    # currently 272x (d_ggm 0.0066 vs d_leg 1.81) (bean qou-26f2).
+    # Was `expected=d_ggm` -- the measured value as its own expectation, so it
+    # passed however far V3_measured sat from BOTH candidates (bean qou-3e5m).
+    # The claim the `source` line makes is an INEQUALITY, and the tolerance was
+    # already the right bound for it: with `expected=0`, this passes exactly
+    # when d_ggm <= d_leg, i.e. when V3_measured really is closer to the
+    # published GGM value than to the legacy literal. Both deviations are
+    # abs()/abs() and so non-negative, which is what makes the one-sided
+    # reading sound. It now fails if the ordering flips.
     w.add_assertion("favours_published_V3",
-                    computed=d_ggm, expected="0",
+                    computed=d_ggm, expected=0.0,
                     tolerance=float(d_leg),
                     source="V3_measured is closer to the published GGM value "
-                           "than to the legacy literal: |rel dev vs GGM| <= "
-                           "|rel dev vs legacy|")
+                           "than to the legacy literal")
     w.add_data("measurement", {
         "V3_measured": mp.nstr(v3m, 15),
         "V3_ggm": mp.nstr(V3_GGM, 15),

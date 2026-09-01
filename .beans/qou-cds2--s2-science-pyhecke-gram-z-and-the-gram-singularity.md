@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-28T15:42:06Z
+updated_at: 2026-08-30T14:14:06Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -737,3 +737,92 @@ Scope upgrade landed since: **PR #5894** gives `det G_TL(n)` in closed form at
 n = 3, 4, 5 with every irreducible factor root-free on `(0,∞)` by exact Sturm
 counting — so the quotient form is non-singular for **every real q > 0** at those
 n, not merely non-singular over ℚ(q).
+
+## 2026-08-30 (PR #6110) — the positive half is DONE
+
+`computations/probes/gram_h3_quotient_nondegeneracy_probe.py`. What replaces `gramMatrix_det_ne_zero` under D:
+
+    det( G_D | H_3/rad ) = -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4 / (q^2+1)^10
+
+in the complement basis e_0..e_4. Every factor is real-rootless, so the degree-20 numerator has **zero real roots** (sympy.real_roots, not sampling): the induced form is **nondegenerate for every real q**, strictly stronger than the q > 1 the substrate needs. So the D successor is the same strength as the C theorem, about the quotient instead of the whole algebra.
+
+Determinant is NEGATIVE throughout (−0.16223009063 at proton), so the quotient form is nondegenerate and **INDEFINITE** — a D successor to the positive-definiteness reading must say `nondegenerate`, never `positive`.
+
+Basis note: the VALUE is basis-dependent (changes by the square of a change-of-basis determinant); the NONVANISHING is not, and that is what replaces the theorem.
+
+Remaining: Lean. Ready to formalise, but `GramMatrixH3Symbolic.lean` also carries the C entries, so it is the wider file migration (qou-zf9n), not a one-theorem edit.
+
+
+## 2026-08-30 — the detector-class follow-on: re-measured, drained, and the class RECURS
+
+The last open cds2 item was *"worth checking whether other committed witnesses
+have crashing producers — that is a detector class the campaign does not
+currently have."* The detector **does** exist (`producer_importability_audit`,
+written for this bean 2026-08-19, "Reported, not fixed"). What was missing was
+the drain — and a re-measurement, because the audit's own witness was stale.
+
+### Re-measured on 2378 producers
+
+|  | committed 2026-08-19 | now |
+|---|---|---|
+| UNIMPORTABLE | 113 | **36** |
+| in-repo-wiring | 72 | 14 |
+| other | 32 | 14 |
+| optional-dep | 9 | 8 |
+| | drained **93** | persistent **20**, NEW **16** |
+
+**The drain was a side effect.** The largest class, `pyhecke` = 35, went away
+because `_path_bridge` gained `tools/pyhecke/python` on **2026-08-24** — five
+days after the audit — inside `cdb64587b8`, a commit about float64 in
+`averaged_block_swap_binding`. Only one of the 93 (`qou-ti1n`, 10) was drained
+by work aimed at this bean.
+
+**Cuts both ways.** The unrefreshable population is a third of what was
+recorded; but 93 producers became refreshable and *nothing has re-run them*.
+They left the class this detector watches for the one `scriptHash` drift covers
+— which only fires once someone runs them.
+
+### The bootstrap-order defect RECURRED (13 instances)
+
+`qou-0e1t` is correctly `completed` — its six are still fixed. A **disjoint
+six** landed on **2026-08-30**, all in `computations/probes/`, all from the
+coordination-weight / SU(4)-Casimir / body-order cluster. `path_bridge_
+bootstrap_audit.py` detects all six and is correct; **nothing runs it**, so six
+more landed within days of the last drain. A guard nobody invokes is
+documentation — the same finding AGENTS.md records for `precision-gates.sh`
+before it got a commit hook.
+
+Seven more are the same defect under a different module name (`q_parameter` 3,
+`substrate.*` 2, `_precision` 1, `canonical_braid_crossings` 1), which that
+guard's pattern (`import _path_bridge`) structurally cannot see; three have the
+bootstrap present but *later* in the file. All 13 fixed and verified standalone
+under `env -u PYTHONPATH`.
+
+### Two real payloads from re-running the frozen producers
+
+**1. A layer straddle inside one witness (`deuteron_trefoil_qinvariant_closed_form`).**
+Committed: `q0Anchor: proton`, `q0Value` = the proton pin, and
+`inputs.z_markov = 0.612688050548890157…` — which is `z_D` at the **muon** pin
+to 16 digits (proton gives `0.612688037146465252…`). **21.87 ppb**, exactly the
+21.9 ppb this probe's own header predicts. The `qou-1c4y` migration
+(2026-08-29) switched q0 to resolve proton and left four strings describing the
+muon literal it deleted — *and the same edit made the producer unrunnable*, so
+nothing ever exposed the contradiction it had just created. Verdict unaffected
+(it turns on a 0.6904 % miss).
+
+**2. A standing gate that was 100 % false-positive
+(`gswz_program_convention_immunity`).** Committed witness GREEN; fresh run RED
+at 4/7. **53 hits, 53 false, 0 real** — every one is prose *asserting* the
+compliance being checked: a `q0AnchorReason` saying *"no pyhecke/Gram/Markov
+import exists in the cone"*, twelve docstrings saying *"no z_C/z_D"*, and 39 of
+39 probes flagged for `from qou_substrate.witness import WitnessBuilder` plus
+`q0_anchor=False` — the latter a **declaration of anchor-freedom counted as
+evidence against it**. The more carefully a probe documents its immunity, the
+more certainly this gate flagged it. Its control was a substring test against a
+literal and never touched the file scan. Fixed by blanking comments and string
+literals before scanning (positions preserved, so spacing-sensitive tokens still
+match), and the control now plants must-fire and must-stay-quiet text through
+the real scan. 7/7; planting `import pyhecke` takes it to 5/7 exit 1.
+
+Same defect and same fix as this PR's `trm5_zcubed` corpus scan flagging its own
+fixtures. **Two instances in one PR: it is a class, not an accident.**

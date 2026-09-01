@@ -21,6 +21,31 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-08-30",
+      body:
+        "**The trichotomy carrier now ties $\\beta$ to $\\mathcal{C}_L$.** The " +
+        "2026-07-18 note below records that `levi_growth_trichotomy.lean` was " +
+        "added to hold the growth-rate structure the `LeviDegeneracy` class " +
+        "does not. That structure carried `condNumber : ℕ → ℝ` and `beta : ℝ` " +
+        "with **no field relating them**, and `leviNonDegenerate : Prop` as a " +
+        "free field the instance chose for itself. Measured against the old " +
+        "definition, two instances type-check: `condNumber ≡ 0` with " +
+        "`beta = 1/2` (both branch fields vacuous), and `condNumber ≡ 1` — so " +
+        "$\\mathcal{C}_L = O(1)$, true exponent $0$ — with `beta = 1`, the " +
+        "*opposite* branch. `beta` is now pinned by a two-sided `limsup` " +
+        "characterisation written without `Filter`, `leviNonDegenerate` is a " +
+        "parameter, and the elementary trichotomy facts are restated on a bare " +
+        "real where their unconditional character is visible (they used only " +
+        "`beta_mem`, so they were facts about $[0,1]$ dressed as facts about a " +
+        "Levi trichotomy). The tie earns a new theorem: " +
+        "`bounded_condNumber_forces_beta_zero` **derives** the `.md`'s " +
+        "branch-(A) identification of $\\beta = 0$ with $\\mathcal{C}_L = O(1)$, " +
+        "which the second measurement above is a counterexample to under the old " +
+        "definition. Sorry-free, `lean`-direct exit 0; the value of $\\beta$ " +
+        "remains the open content of the conjecture and is untouched.",
+    },
+    {
+      kind: "note",
       date: "2026-08-14",
       body:
         "**Two lock-side facts landed since the per-channel reading.** (1) The " +

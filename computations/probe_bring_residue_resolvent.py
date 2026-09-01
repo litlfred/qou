@@ -19,7 +19,7 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -47,46 +47,47 @@ def main() -> int:
     w.add_parameter("pole_orders", POLE_ORDERS)
     w.add_parameter("q_0_digits_used", 50)
 
-    denominator_magnitudes = {}
     for n in POLE_ORDERS:
         F_n = canonical_resolvent(q, n)
         denom = 1 - h_q * q**n
         roundtrip = F_n * denom
 
-        # `computed=denom_abs, expected=denom_abs` passed for every possible
-        # denominator, including one collapsed onto the pole — the single
-        # failure this check exists to catch, F_n being 1/denom. The source
-        # states a magnitude comparison, so make it one, at the probe's own
-        # 50-dps floor: below 1e-49 the denominator is not distinguishable
-        # from zero here, and 1e-49 is already the tolerance the round-trip
-        # assertion just below uses (bean qou-26f2). The magnitude itself is
-        # kept as data — all four are O(0.4–0.7), nowhere near the floor.
-        denominator_magnitudes[f"n{n}"] = mp.nstr(abs(denom), 20)
+        # Serialized from the mpf at output precision. `float(...)` here
+        # truncated a 70-dps magnitude to a double before it reached the
+        # witness (AGENTS.md §PROBES ARE NOT EXEMPT; bean qou-p77d).
+        denom_abs = fmt(abs(denom))
+        # Was `computed=denom_abs, expected=denom_abs` -- the magnitude as its
+        # own expectation, so it passed even at an exact pole, which is the one
+        # outcome the name excludes (bean qou-3e5m). The claim in `source` is
+        # already an inequality; assert it. The magnitude is not lost -- it is
+        # recorded beside the flag.
+        w.add_data(f"denominator_magnitude_n{n}", denom_abs)
         w.add_assertion(
             name=f"denominator_nonzero_n{n}",
-            computed=int(abs(denom) > mp.mpf("1e-49")),
+            computed=1 if abs(denom) > 0 else 0,
             expected=1,
             tolerance=0,
-            unit="boolean",
-            source=f"|1 − h_q·q^{n}| > 1e-49 at q₀ — non-zero to the probe's "
-                   f"own 50-dps floor, so F_{n} is defined",
+            source=f"|1 − h_q·q^{n}| > 0 at q₀; magnitude in "
+                   f"data.denominator_magnitude_n{n}",
         )
 
-        err = float(abs(roundtrip - 1))
+        # The residual is ~1e-72 against a 1e-49 tolerance; the cast
+        # reported 17 of its digits (bean qou-p77d).
+        err = fmt(abs(roundtrip - 1))
         w.add_assertion(
             name=f"roundtrip_identity_n{n}",
             computed=err,
-            expected=0.0,
+            expected="0",
             tolerance=1e-49,
             source=f"F_{n}·(1−h_q·q^{n}) = 1 at 50 dps",
         )
-
-    w.add_data("denominator_magnitudes_at_q0", denominator_magnitudes)
 
     vals = [float(canonical_resolvent(q, n)) for n in POLE_ORDERS]
     distinct_count = len(set(round(v, 20) for v in vals))
     w.add_assertion(
         name="resolvent_values_distinct",
+        # NOT stringified: this is a count, already serialized as a JSON int,
+        # and the integer-field audit requires declared counts stay ints.
         computed=distinct_count,
         expected=len(POLE_ORDERS),
         tolerance=0,

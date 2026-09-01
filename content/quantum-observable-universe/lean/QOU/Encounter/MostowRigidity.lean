@@ -1,6 +1,8 @@
 import Mathlib.Tactic
 import QOU.Knot.Clausen
 import QOU.Knot.ClausenValueBounds
+import QOU.Knot.FiveTwoVolumeChord
+import QOU.Archimedean.BlochWignerPositive
 
 /-!
 # QOU.Encounter.MostowRigidity
@@ -280,21 +282,51 @@ theorem unknot_volume_lt_figureEight_volume :
     15-dps anchor `2.82812208833410` carried a digit-13–15
     transcription error.)
 
-    The Mostow gap is bounded below by `0.5` — well under the
-    nearest-neighbour gaps `Vol(5_2) - Vol(4_1) ≈ 0.798` and
-    `Vol(6_1) - Vol(5_2) ≈ 0.336`.  A tighter gap requires
-    knowing the next-distinct value above `Vol(5_2)` in the
-    spectrum, which is `Vol(6_1) ≈ 3.16396`.
+    The Mostow gap is bounded below by `0.3`.
+
+    **This was `0.5`, and `0.5` is not a lower bound.**  The field is documented as a
+    *lower bound* on the distance to the next distinct spectrum value, and the next value
+    above `Vol(5_2)` is `Vol(6_1) ≈ 3.16396`, i.e. a gap of `0.33584`.  The old docstring
+    called `0.5` "well under the nearest-neighbour gaps ... `Vol(6_1) - Vol(5_2) ≈ 0.336`"
+    while quoting that very figure — `0.5 > 0.336`, so the value contradicted the sentence
+    that justified it.  `figureEight`'s `0.5` is sound by contrast: its neighbour up is
+    `Vol(5_2)`, a gap of `0.798`.
+
+    Nothing in Lean broke, because the class carries only `mostow_gap_pos` and explicitly
+    defers the discreteness claim to Mathlib's geometric-topology layer (see the class
+    docstring).  That is exactly why it went unnoticed: the field's *documented* meaning is
+    not enforced by its *stated* obligation, so an agent trusting the doc would conclude no
+    hyperbolic volume lies within `0.5` of `Vol(5_2)`, and `Vol(6_1)` does.
 
     Ref: Adams, Hildebrand, Weeks, *Hyperbolic invariants of
     knots and links*, Trans. AMS 326 (1991) 1–56. -/
-instance knot5_2 : MostowRigidity Knot5_2 where
-  -- Both numeric literals below are kept in sync with the
-  -- canonical witness `hyperbolic-volumes.witness.json` by
-  -- `content/pipeline/codemod-leanval.ts`.
-  volume := 2.82812208833078  -- :leanval[vol_5_2]
-  volume_nonneg := by norm_num
-  mostow_gap := 0.5
+noncomputable instance knot5_2 : MostowRigidity Knot5_2 where
+  -- EXACTIFIED 2026-08-30 (bean `qou-f8lit`, item 1), matching `figureEight` above.  This
+  -- field used to be the decimal literal `2.82812208833078`, a 15-significant-digit
+  -- TRUNCATION of the corpus's own exact `VOL_5_2 = 3·D(fiveTwoShape) =
+  -- 2.8281220883307831627638988092766349…`.  The two differ at the 16th digit, so
+  -- `volumeInvariant Knot5_2 ≠ VOL_5_2` -- while `fiveTwoTriangulation_volume :
+  -- fiveTwoTriangulation.volume = VOL_5_2` is proved sorry-free.  Any bridge statement
+  -- keyed on the literal was therefore UNSATISFIABLE at the corpus's own 5₂
+  -- triangulation.  There is now no decimal here to be unequal to, so the
+  -- `:leanval[vol_5_2]` sync has nothing to sync and is gone.
+  --
+  -- What unblocked it was NOT the chord inequality.  `VOL_4_1_lt_VOL_5_2` bounds `VOL_5_2`
+  -- below by `VOL_4_1`, which is the quantity on the left of the comparison below, so it
+  -- proves that comparison and supplies nothing for this field.  The field needs
+  -- `0 ≤ VOL_5_2` on its own, and that is `Archimedean.BlochWignerPositive` (bean
+  -- `qou-0ag0`) applied at `fiveTwoShape_im_pos` -- general upper-half-plane positivity,
+  -- which the 5₂ shape gets for free precisely because it does NOT go through a Clausen
+  -- special value.
+  volume := QOU.Knot.FiveTwoVolume.VOL_5_2
+  volume_nonneg := by
+    show (0 : ℝ) ≤ 3 * QOU.Archimedean.BlochWigner_lob QOU.Knot.FiveTwoVolume.fiveTwoShape
+    have := QOU.Archimedean.BlochWignerPositive.blochWigner_lob_pos
+      QOU.Knot.FiveTwoVolume.fiveTwoShape_im_pos
+    linarith
+  -- CORRECTED from `0.5`, which was not a lower bound on the true gap `0.33584` to
+  -- `Vol(6_1)`.  See the docstring above.
+  mostow_gap := 0.3
   mostow_gap_pos := by norm_num
 
 /-- **Volume comparison: figure-eight < 5_2**.
@@ -311,23 +343,13 @@ instance knot5_2 : MostowRigidity Knot5_2 where
     bookkeeping rather than a single anchored comparison. -/
 theorem figureEight_volume_lt_knot5_2_volume :
     volumeInvariant FigureEight < volumeInvariant Knot5_2 := by
-  -- The 4₁ side is now exact, so this is no longer `norm_num` on two decimals -- it is
-  -- a real inequality discharged from the certified Clausen bracket
-  -- `|Cl₂(π/3) − c·√3| ≤ 1/24` (`QOU.Knot.abs_Cl_2_pi_div_three_sub_le`).  The gap to
-  -- the 5₂ value is ≈ 0.72, an order of magnitude wider than the 1/12 uncertainty the
-  -- bracket leaves on `VOL_4_1`, so the existing coarse bound is comfortably enough.
-  --
-  -- The 5₂ side is STILL a truncated literal and still carries the same defect; making
-  -- it exact needs a LOWER bound on `VOL_5_2`, which the corpus does not have (bean
-  -- `qou-f8lit`).  Exactifying one side is what makes this provable at all.
-  have hb := QOU.Knot.abs_Cl_2_pi_div_three_sub_le
-  have hs := QOU.Knot.sqrt_three_lt
-  have hs0 := Real.sqrt_nonneg 3
-  rw [abs_le] at hb
-  have h52 : volumeInvariant Knot5_2 = 2.82812208833078 := rfl  -- :leanval[vol_5_2]{precision=15}
-  rw [h52]
-  show 2 * QOU.Archimedean.Cl_2 (Real.pi / 3) < 2.82812208833078
-  nlinarith [hb.2, hs, hs0]
+  -- BOTH sides are now exact constants, so this is no longer a `nlinarith` against a
+  -- certified Clausen bracket and a decimal -- it IS the corpus's proved inequality,
+  -- `QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` (bean `qou-52ch`), by Rivin strict
+  -- concavity along the chord from the regular ideal shape.  Nothing here is approximated
+  -- at any point.
+  show QOU.Knot.FigureEightVolume.VOL_4_1 < QOU.Knot.FiveTwoVolume.VOL_5_2
+  exact QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2
 
 /-- **Downstream consumer: mass eigenvalue is isolated**.
 

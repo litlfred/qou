@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-25T01:03:24Z
+updated_at: 2026-08-30T08:00:39Z
 ---
 
 ## What happens
@@ -311,3 +311,35 @@ rather than either frame. Local z bindings were the whole subject of the
 convention-C drain, so the two lists overlap.
 
 Local z migrated in PR #5739 (probe/derived-tower drain group).
+
+
+## The producer this GAP is about was EXCISED the day after this bean was last updated (2026-08-30)
+
+Found while auditing `computations/q0_anchor_manifest.json` for stems with no live
+producer (bean `qou-aj91`). Not a resolution of the GAP — a note that its subject is
+no longer on the live surface.
+
+`computations/alpha/alpha_high_precision.py` was moved to
+`computations/_deprecated/alpha_high_precision.py` in **f62425070e** (2026-08-25,
+on `main`), whose message is *"B2: EXCISE alpha* — it is a fit, and only CAL-1/2/3
+are admissible"*. This bean's last update is 2026-08-25T01:03:24Z, so the two
+crossed by hours.
+
+**What that does and does not settle.** The bisection-bracket failure recorded
+here was real and is not retracted; the diagnosis reached in this bean — that it
+is convention-C→D drift in `z`, with two `z` definitions 22.7 % apart inside one
+functional — stands as measured. What has changed is only that the file carrying
+it is no longer a live producer, so nothing on the live surface runs the broken
+bisection any more. If the C→D `z` diagnosis is a *general* one that applies to
+other producers, the excision does not touch it and the bean should stay open on
+that ground; if the bean's whole scope was this one file, it is moot.
+
+**I am deliberately NOT closing it** — I did not write it, and which of those two
+readings applies is a judgement about the bean's scope rather than a measurement.
+
+**A live leftover the excision missed.** `alpha_high_precision` is still listed
+under `ideal_muon` in `computations/q0_anchor_manifest.json`. That entry is not
+inert: `q_parameter` selects the anchor by `Path(sys.argv[0]).stem`, so running
+the deprecated file directly still rebinds the constants to the **muon** pin.
+Removing the entry would silently flip that file to proton, which is why I have
+left it alone and recorded it instead.

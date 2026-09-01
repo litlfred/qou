@@ -1,15 +1,79 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-27T05:31:35.353605+00:00",
-  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:15:34.460791+00:00",
+  "commitSha": "65ead20c4bf19cbee462489a9ff5ed9342f2df61",
+  "assertions": [
+    {
+      "name": "C1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C1: the k-strand Markov measure sums to 1 for k = 1..20 - S is the entropy of a genuine state, not of an unnormalised weight"
+    },
+    {
+      "name": "C2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C2: reproduces Addendum 23's balanced-cut table (E0*S(floor(1.5A)) at A = 2, 4, 6, 12) to the four decimals it publishes - same object, so the verdict below is about theirs"
+    },
+    {
+      "name": "A1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1: S(3A) > 0 at EVERY A - Addendum 23's \"at w = 3 the cut is the entire system and the entropy is identically zero\" is FALSE. S is a TRACE-state entropy: S(6) = 2.84368687, S(12) = 6.664991078"
+    },
+    {
+      "name": "A2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A2: S is NOT symmetric under k <-> n-k (S(1) = 0 vs S(5) = 2.2124 at n = 6) - so it is not a pure-state bipartition entropy, no Schmidt argument applies, and there is no \"balanced cut is the maximiser\" justification available for w = 3/2 either"
+    },
+    {
+      "name": "A3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A3: S(k)/k is STRICTLY INCREASING over k = 1..64 - the entropy density rises with the cut width"
+    },
+    {
+      "name": "A4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A4: and it approaches ln[2]_q = 0.6985808249 strictly from BELOW, and SLOWLY - at k = 64 the density is still 6.57242 % short (S(64)/64 = 0.6526671341). So the asymptotic `E0*w*ln[2]_q per nucleon` OVERSTATES the model in the light-nucleus range, where k is single- or double-digit"
+    },
+    {
+      "name": "A5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A5: g_w(4) <= g_w(6) for ALL 581 values of w on a 0.005 grid over [0.10, 3.00] - the model's per-nucleon prediction never decreases from 4He to 6Li. (A grid used to FALSIFY a universal claim, not to select a w)"
+    },
+    {
+      "name": "A6",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A6: but the DATA decreases there - B/A is 7.0739156 at 4He and 5.3323312 at 6Li. This is the 4He peak, a fact about AME, not about this framework"
+    },
+    {
+      "name": "A7",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A7: THE EXCLUSION - for every w and every positive overall scale c, c*g_w(4) <= c*g_w(6) while B/A decreases across those two isotopes, so no member of the family matches both. The failure is in the SHAPE, not the normalisation"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 469,
+  "durationMs": 431,
   "computation": "growing-width-cut-shape-exclusion",
   "scriptFile": "growing_width_cut_shape_exclusion_probe.py",
-  "scriptHash": "7d8e74f22509",
-  "scriptCommitSha": "f0b403cd2cff62943bf765649c56e9eebe18f2ff",
+  "scriptHash": "990ed763e657",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +85,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

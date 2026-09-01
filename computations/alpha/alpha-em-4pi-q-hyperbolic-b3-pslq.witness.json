@@ -1,32 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:04:11.485850+00:00",
-  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
-  "assertions": [
-    {
-      "name": "s3_basis_matches_bernoulli_closed_form",
-      "computed": 22,
-      "expected": 22,
-      "passed": true,
-      "tolerance": 0,
-      "source": "Every S_3(θ) = Im Li_3(e^{iθ}) basis element reproduces the Bernoulli closed form π²θ/6 − πθ²/4 + θ³/12 to < 1e-60 — an independent route to the numbers PSLQ searched over."
-    },
-    {
-      "name": "cl3_basis_reproduces_zeta3_over_3_at_pi_third",
-      "computed": "4.52783953941e-72",
-      "expected": "0",
-      "passed": true,
-      "tolerance": "1e-60",
-      "source": "Cl_3(π/3) = ζ(3)/3, the one classical closed form available on the Re Li_3 half of the basis (the other angles have none); checks the Cl_3 evaluation the same way."
-    }
-  ],
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T05:02:41.280109+00:00",
+  "commitSha": "7ca5e2beca4ae776137bcfeaa2b6506285e13b86",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 221,
+  "durationMs": 422,
   "computation": "alpha-em-4pi-q-hyperbolic-b3-pslq",
   "scriptFile": "alpha_em_4pi_q_hyperbolic_b3_pslq.py",
-  "scriptHash": "bc718d5568cc",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "ceb178d9ecda",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +17,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [
@@ -289,9 +271,12 @@
       "human_form": null,
       "verdict": "PARTIAL — basis-internal relation found (c_target = 0); target not in B_3 lattice at maxcoeff ≤ 50",
       "maxcoeff": 50,
-      "maxsteps": 2000,
-      "has_independent_expected_value": false
+      "maxsteps": 2000
     },
-    "relation_residual_abs": "9.05567907882671236750911929089e-72"
+    "relation_residual_abs": "9.05567907882671236750911929089e-72",
+    "pslq_executed_at_maxcoeff_50": {
+      "value": 1,
+      "source": "PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50."
+    }
   }
 }

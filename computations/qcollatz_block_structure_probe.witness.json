@@ -1,0 +1,40 @@
+{
+  "schema": "qou-probe/v0",
+  "description": "Block structure of q-Collatz orbits on the domain-stable cone D_inf, and which N-valued heights descend per BLOCK (the weaker requirement of reaches_cycle_of_block_descent_domainStable) versus per STEP. Exact integer Laurent arithmetic. Exploratory research probe (NOT canonical production).",
+  "result": {
+    "depth": 22,
+    "nodes": 52,
+    "block_v_histogram": {
+      "6": 16,
+      "12": 10,
+      "18": 4
+    },
+    "blocks_with_v_zero": 0,
+    "consecutive_odd_examples": [],
+    "per_step": {
+      "L1": {
+        "down": 712,
+        "up": 30
+      },
+      "span": {
+        "down": 712,
+        "up": 30
+      },
+      "L1+span": {
+        "down": 712,
+        "up": 30
+      }
+    },
+    "per_block": {
+      "L1": {
+        "down": 30
+      },
+      "span": {
+        "down": 30
+      },
+      "L1+span": {
+        "down": 30
+      }
+    }
+  }
+}

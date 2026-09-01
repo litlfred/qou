@@ -41,7 +41,7 @@ namespace QOU.Experimental
 noncomputable def substrate_q : ℝ := 1.1097
 
 /-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
-noncomputable def hbar_q : ℝ := 1 - substrate_q⁻¹
+noncomputable def hbarQ : ℝ := 1 - substrate_q⁻¹
 
 /-- Hyperbolic volume of the figure-eight knot 4₁. -/
 noncomputable def vol_figure_eight : ℝ := 2.02988
@@ -184,8 +184,8 @@ theorem substrate_q_gt_one : 1 < substrate_q := by
   unfold substrate_q; norm_num
 
 /-- The quantum Planck constant is positive at substrate_q. -/
-theorem hbar_q_pos : 0 < hbar_q := by
-  unfold hbar_q
+theorem hbarQ_pos : 0 < hbarQ := by
+  unfold hbarQ
   have := (mass_scale_from_q substrate_q substrate_q_gt_one).1
   exact this
 

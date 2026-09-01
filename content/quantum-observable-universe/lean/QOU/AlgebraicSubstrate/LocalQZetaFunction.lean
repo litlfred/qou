@@ -95,6 +95,50 @@ structure LocalQZetaFunction where
   charPoly_roots :
     charPoly = ∏ i : Fin 8, (X - C (eigenvalues i))
 
+
+/-! ## Weil numbers: the functional-equation partner is the conjugate
+
+Shared by `hasse-weil-bound.lean` and `spectral-half-line.lean`. It lives here
+rather than in either sibling because content-block `.lean` siblings sit outside
+the package globs and **cannot import one another** (§0a) — and both need it.
+-/
+
+/-- **The functional-equation partner is the complex conjugate.** For a nonzero
+    `α` with `‖α‖² = q`, the partner `q/α` supplied by the functional equation
+    equals `conj α`.
+
+    This is what makes `|α| = √q` a *symmetry* statement rather than a bare
+    magnitude bound: the eigenvalue multiset is closed under conjugation. -/
+theorem weil_partner_eq_conj (q : ℝ) (α : ℂ) (hα : α ≠ 0)
+    (h : ‖α‖ ^ 2 = q) :
+    (q : ℂ) / α = (starRingEnd ℂ) α := by
+  have hns : (Complex.normSq α : ℂ) = (q : ℂ) := by
+    rw [Complex.normSq_eq_norm_sq, h]
+  rw [div_eq_iff hα, ← hns, ← Complex.mul_conj]
+  ring
+
+/-! ### Non-vacuity of the conjugate-partner theorem
+
+`weil_partner_eq_conj` is only worth stating if it fires. Two witnesses at
+`q = 4`: the supersingular real eigenvalue `α = 2`, where the statement is
+`4/2 = 2` and the conjugation is invisible; and the genuinely complex `α = 2i`,
+where it says `4/(2i) = -2i` — the partner and the conjugate coincide only
+because `|α|² = q`. The second is the case the arc actually needs, since
+Frobenius eigenvalues of a curve come in conjugate pairs off the real axis. -/
+
+/-- The real (supersingular) witness: `q = 4`, `α = 2`. -/
+theorem weil_partner_real_witness :
+    ((4 : ℝ) : ℂ) / (2 : ℂ) = (starRingEnd ℂ) (2 : ℂ) :=
+  weil_partner_eq_conj 4 2 (by norm_num) (by norm_num)
+
+/-- The complex witness: `q = 4`, `α = 2i`, partner `= −2i = conj α`. -/
+theorem weil_partner_complex_witness :
+    ((4 : ℝ) : ℂ) / (2 * Complex.I) = (starRingEnd ℂ) (2 * Complex.I) := by
+  refine weil_partner_eq_conj 4 _ (by simp [Complex.ext_iff]) ?_
+  rw [← Complex.normSq_eq_norm_sq]
+  simp [Complex.normSq_mul]
+  norm_num
+
 end
 
 end QOU.AlgebraicSubstrate

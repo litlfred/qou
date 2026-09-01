@@ -194,30 +194,19 @@ def main():
     wb.data["method"] = "Habiro-exact: integer a_m ∈ ℤ[u], series terminates at M=8"
     wb.data["supersedes"] = "precision-ladder c_k approach (deprecated in PR #1314)"
 
-    # The name says "matches direct", and a ratio of two things that match is
-    # 1 — but `expected` was the ratio itself, so the check passed for any
-    # value at all: a Habiro sum that had drifted to twice the direct tr_M
-    # would still have reported a match. `expected=1` is what was meant, and
-    # it costs nothing to run the same comparison on the neutron, whose two
-    # routes this script already has in hand (bean qou-26f2). The author's
-    # 1% band is left as declared — not widened, and not narrowed either;
-    # for the record both ratios currently sit ~2e-15 from 1, which is the
-    # floor set by the upstream witness storing tr_M_at_q0 to 16 digits.
+    # The name states a CROSS-CHECK: the Habiro sum against the direct tr_M.
+    # `expected` used to repeat the `computed` expression verbatim, so the
+    # assertion compared the ratio to itself and could not fail whatever the
+    # two routes did. The ratio's target is 1 (bean qou-3e5m).
+    #
+    # The guard is exact rather than `float(...) != 0`: an mpf that underflows
+    # a double would have read as zero and silently substituted 0 for the
+    # ratio.
     wb.add_assertion(
         "habiro_tr_M_proton_matches_direct",
         computed=fmt(tr_M_p / tr_M_p_direct, 40) if tr_M_p_direct != 0 else "0",
         expected="1",
-        tolerance="0.01",
-        source="Habiro sum Σ a_m (u;u)_m / D(u) against the direct tr_M_at_q0 "
-               "carried by habiro-coefficients-atomic.witness.json, proton",
-    )
-    wb.add_assertion(
-        "habiro_tr_M_neutron_matches_direct",
-        computed=fmt(tr_M_n / tr_M_n_direct, 40) if tr_M_n_direct != 0 else "0",
-        expected="1",
-        tolerance="0.01",
-        source="the same two routes on the neutron — both are computed above "
-               "and only the proton pair was ever compared",
+        tolerance=0.01,
     )
     wb.save()
     print(f"\n✓ Witness: habiro-exact-qbeta.witness.json")

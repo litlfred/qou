@@ -1,5 +1,45 @@
 # First structural crack at the q-deformed keystone (muon) shift
 
+> **🛑 CORRECTED 2026-08-30 — `y_(3,1,1)^{H5}` is EXACTLY ZERO, not 0.0167666.**
+> The figure below came from `ph.trace_weights_n(5, float(q))`, whose `float(q)`
+> downgraded the 50-dps pin to 53 bits; the routine is float64 internally, so the
+> result was then dressed as 50 dps by `mpf(str(w))`. Recomputed in exact
+> arithmetic (`y_lambda_wenzl_bridge_numeric`), **four of the seven `y_λ` are
+> exactly 0** — (3,1,1), (2,2,1), (2,1,1,1), (1⁵) — while the three nonzero ones
+> agree to 14 digits. The zeros are structural: `y_λ = 0` iff λ has **more than
+> two rows**, the SU(2)/N=2 truncation.
+>
+> Consequence for what is below: the "electron home-block" (3,1,1) carries **no
+> Markov weight at all**, so `T_electron = 0` exactly and `δ = T_μ` trivially.
+> Any (3,2)-vs-(3,1,1) shift computed here is `T_μ` under another name. The
+> producer is fixed; the numbers in this document are left as the historical
+> record. Beans `qou-j3u0` (the finding) and `qou-bake` (the witness has no
+> producer and cannot self-refresh).
+>
+> **Re-derived under `W_λ` (2026-08-30, `computations/probes/keystone_wlambda_vs_ylambda_projected_shift.py`).**
+> The keystone's own block weight `W_λ = d_q(λ)²/[n]_q!` is nonzero on all seven
+> blocks and conjugation-symmetric (the Lean-proved C2), and it is what the
+> C1/C2/C6 obligations are stated over. With it the muon/electron comparison is
+> well-posed on both sides:
+>
+> | | `W_λ` | `χ^λ(β_Bor)` | `T = W·χ` |
+> |---|---|---|---|
+> | muon (3,2) | 0.207542204506 | 4.9883716259599 | 1.0352976441462 |
+> | electron (3,1,1) | 0.294668956300 | 5.9883716259599 | 1.7645872169611 |
+>
+> `δ = T_μ − T_e = −0.72928957281492`, `δ/T_μ = −0.7044250288`, and
+> `|δ/T_μ| / 210 ppb = 3.3544e6×`.
+>
+> **Of the two legs of the #2584 refutation, one survives and one does not.**
+> The magnitude leg **survives** (3.35e6×, ~6.5 orders). The bar-parity leg
+> **fails**: `δ(q) − δ(1/q) = 4.0091471e-50` at dps = 50, i.e. the shift is
+> **exactly bar-EVEN**, not bar-mixed. The "bar-mixed" reading came from this
+> document's `y_λ`-derived numbers, which are the float64-corrupted ones
+> (`qou-j3u0`).
+
+
+
+
 **Date:** 2026-06-20
 **Branch:** `claude/keystone-branching-shift-probe-2026-06-20`
 **Status:** Negative / sharpening result — naive Res functor mechanism refuted for the h⁴ channel

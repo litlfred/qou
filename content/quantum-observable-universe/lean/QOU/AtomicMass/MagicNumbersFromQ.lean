@@ -19,7 +19,7 @@ has positive forward second difference `δ² Φ(Z)` precisely at
 magic-number list is used — positions emerge from `q₀` via the
 Hoefsmit matrices.
 
-LaTeX: `\label{prop:magic-numbers-from-q}`
+LaTeX: `\label{conj:magic-numbers-from-q}`
 
 This file encodes:
 
@@ -235,5 +235,67 @@ theorem magic_numbers_from_q :
   · subst h; exact hoefsmit_witness_8
   · subst h; exact hoefsmit_witness_20
   · subst h; exact hoefsmit_witness_28
+
+/-! ## 🛑 SCOPE OF THE ABOVE — machine-checked, not merely asserted
+
+The declarations in this file are honest about being a tabulation of
+manuscript Table 1 (see the `Phi_signal` docstring above), and the
+shape it uses (axiom replaced by a tabulation plus `unfold; simp` lemmas)
+is the corpus's own recommendation (`docs/audits/2026-05-08-lean-completeness-audit.md`, QS9).
+What the names `hoefsmit_witness_*` and `magic_numbers_from_q` do NOT
+convey is how little the positivity results constrain, so this section
+proves the two limitations rather than leaving them to a reader's
+inference:
+
+1. **Nothing here depends on `q`.** `Phi_signal` branches only on `K`
+   and `Z`, so every result above holds at EVERY real `q` — including
+   `q = 0` and `q = 1`, where the Hecke algebra degenerates. Pinning
+   `q_zero` in the statements is presentational; it carries no content.
+2. **The positivity at `Z ∈ {8, 20, 28}` is forced by the tabulation's
+   own support.** Only those three `Z` are given a non-zero value at
+   `K = 10`, so `δ² Φ(Z) = Φ(Z) − 2Φ(Z−1) + Φ(Z−2)` reduces to `Φ(Z)`
+   there and is positive because the tabulated numbers are positive.
+   The magic set is an INPUT to the definition, recovered as an output.
+
+Both are stated as theorems below so that a future reader — or a future
+edit that makes `Phi_signal` genuinely `q`-dependent — meets a
+compile-time signal rather than a docstring. A real derivation would
+break `Phi_signal_q_independent`, which is the point of stating it. -/
+
+/-- `Phi_signal` is independent of `q`: the tabulation branches only on
+    `K` and `Z`. -/
+theorem Phi_signal_q_independent (K Z : ℕ) (q q' : ℝ) :
+    Phi_signal K Z q = Phi_signal K Z q' := by
+  unfold Phi_signal; split_ifs <;> rfl
+
+/-- `delta2_Phi` inherits the `q`-independence of `Phi_signal`. -/
+theorem delta2_Phi_q_independent (K Z : ℕ) (q q' : ℝ) :
+    delta2_Phi K Z q = delta2_Phi K Z q' := by
+  unfold delta2_Phi
+  rw [Phi_signal_q_independent K Z q q',
+      Phi_signal_q_independent K (Z - 1) q q',
+      Phi_signal_q_independent K (Z - 2) q q']
+
+/-- **The headline theorem holds at every `q`, not only at `q₀`.**
+    Pinning the substrate value in `magic_numbers_from_q` is
+    presentational: the same statement is provable at `q = 0`. -/
+theorem magic_numbers_from_q_holds_at_every_q (q : ℝ) :
+    ∀ Z, Z ∈ [8, 20, 28] → delta2_Phi 10 Z q > 0 := by
+  intro Z hZ
+  rw [delta2_Phi_q_independent 10 Z q q_zero]
+  exact magic_numbers_from_q Z hZ
+
+/-- **The tabulation's support is exactly the magic set it recovers.**
+    At `K = 10` only `Z ∈ {8, 20, 28}` is given a non-zero value, so the
+    positivity of the second difference at those `Z` is a property of
+    which entries were tabulated, not of the Hecke computation. -/
+theorem Phi_signal_support (Z : ℕ) (q : ℝ) (h : Phi_signal 10 Z q ≠ 0) :
+    Z = 8 ∨ Z = 20 ∨ Z = 28 := by
+  unfold Phi_signal at h
+  split_ifs at h with h1 h2 h3
+  · exact Or.inl h1.2
+  · exact Or.inr (Or.inl h2.2)
+  · exact Or.inr (Or.inr h3.2)
+  · exact absurd rfl h
 
 end QOU.AtomicMass

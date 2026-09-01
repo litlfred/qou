@@ -182,6 +182,29 @@ TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
 
 # Per-isotope Model B canonical-braid metadata (knot, strand count,
 # topological prefactor ρ).
+#
+# 🛑 THE DEUTERON ROW CARRIES A RETIRED ASSIGNMENT (flagged 2026-08-30, bean
+# `qou-imkb`). `"D": {"knot": "6_2", ...}` below is the option the owner
+# REJECTED on 2026-08-29: the ruling
+# (docs/audits/2026-08-29-deuteron-knot-owner-decision.md, bean `qou-e5jf`) is
+# that the deuteron knot is the CANONICAL BRAID CLOSURE (trefoil / Hopf,
+# Vol = 0), and that "the 6_2 census assignment is retired as a bare lookup".
+# Option B put to the owner was literally "the deuteron knot is 6_2
+# (Vol = 4.40)" — so this is a ruling about the KNOT IDENTITY, not only about
+# whether the binding is a volume term.
+#
+# This is the SECOND live site for that retired assignment; the first is
+# `build_six_term_substrate_model_b.py::MODEL_B_BRAID_REGISTRY[(1,1)]`, and the
+# `TR_M_CANONICAL_B_AT_Q0["D"] = 0.288326` entry above is a THIRD (a value
+# derived from the retired knot, already marked "#1422-recompute pending").
+#
+# Flagged rather than changed, for the same reason as the other two: choosing
+# the replacement is a modelling decision. At A=2 the canonical braid closure is
+# the object Model A already uses, so adopting it may collapse Model B's
+# deuteron entry into Model A's — and whether that is correct, or whether Model
+# B keeps a distinct A=2 object, is not something a comment can settle. Nothing
+# recomputes from these rows today: the Model B T1 witness has no producer
+# (`qou-imkb`), so the whole Model B path raises before reaching them.
 MODEL_B_BRAID_META: dict[str, dict] = {
     "p":   {"knot": "11-crossing typed B_3 (uud)", "n_canon": 3, "rho": 1},
     "n":   {"knot": "11-crossing typed B_3 (udd)", "n_canon": 3, "rho": 1},

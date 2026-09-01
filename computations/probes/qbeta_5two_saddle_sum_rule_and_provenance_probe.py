@@ -239,10 +239,8 @@ def main() -> int:
          f"   (worst rel {mp.nstr(max(d1, d3), 4)})")
 
     incons = abs(LEGACY_V3 + 2 * LEGACY_IM_V1)
-    INCONS_FLOOR = mp.mpf("1e-5")   # the G5 threshold, reused by the witness
-    incons_violates = bool(incons > INCONS_FLOOR)
     gate("G5", "legacy pair VIOLATES the exact relation "
-               "=> computed independently", incons_violates,
+               "=> computed independently", incons > mp.mpf("1e-5"),
          f"   violation {mp.nstr(incons, 5)}")
 
     # ---- refutations of two candidate error sources ----------------------
@@ -337,19 +335,20 @@ def main() -> int:
                     tolerance=float(CONV_TOL),
                     source="both legacy literals match the extraction "
                            "convention to ~4 digits")
-    # Was `computed=incons, expected=incons` (bean `qou-26f2`). Every other
-    # assertion here gates a residual against 0; this one gates a residual that
-    # must be BIG, and the equal pair let it pass at incons = 0 — the value
-    # meaning the pair is CONSISTENT, which refutes "computed independently" and
-    # the provenance verdict built on it. G5 already applies the right test a
-    # hundred lines up, so carry G5's own verdict rather than the raw number.
+    # Was `computed=incons, expected=incons` -- so it passed even at incons = 0,
+    # i.e. even if the pair SATISFIED the relation, which is the outcome the
+    # name excludes (bean qou-3e5m). "Violates the exact relation" is an
+    # inequality against this file's own identity gate, EXACT_TOL = 1e-35, the
+    # same bar its four sibling assertions use; nothing new is chosen here.
+    # Measured margin: incons = 7.30e-5 against 1e-35, thirty orders clear.
+    w.add_data("legacy_pair_inconsistency", mp.nstr(incons, 30))
     w.add_assertion("legacy_pair_internally_inconsistent",
-                    computed=str(incons_violates), expected="True",
-                    unit=f"|V3_legacy + 2·ImV1_legacy| > {mp.nstr(INCONS_FLOOR, 3)}",
-                    source="the pair violates the exact relation => the two "
-                           "were computed independently; violation "
-                           f"{mp.nstr(incons, 5)} vs the G5 floor "
-                           f"{mp.nstr(INCONS_FLOOR, 3)}")
+                    computed=1 if incons > EXACT_TOL else 0,
+                    expected=1, tolerance=0,
+                    source="the pair violates the exact relation (residual "
+                           "exceeds EXACT_TOL) => the two were computed "
+                           "independently; residual in "
+                           "data.legacy_pair_inconsistency")
     w.add_data("identities", {
         "sum_Re_V": mp.nstr(S, 30),
         "minus_3_pi2_over_2": mp.nstr(-3 * mp.pi ** 2 / 2, 30),

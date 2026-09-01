@@ -1,0 +1,149 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T12:37:31.255387+00:00",
+  "description": "The corpus's 3-body cumulant is exactly minus the classical third Ursell function under the Boltzmann identification g = f - 1. The classical Ursell functions ALTERNATE in the repulsive class, (-1)^(n-1) phi^T_n >= 0, while the corpus carries a uniform minus at n=2 and n=3. The uniform minus is correct at n=2 and inverts the physical sign at n=3, so MayerThreeBodySign's b3 < 0 is a missing (-1)^(n-1) rather than a physical obstruction. The identity is low-order: it does not extend to n=4 under either sign.",
+  "q0_pin": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "convention": "D (z = q^3/(q^2+1)), canonical per owner ruling R1 2026-08-15",
+  "identity": {
+    "n3_trials": 400,
+    "n3_mismatches_vs_minus_phi": 0,
+    "n3_identity_holds": true,
+    "n4_trials": 200,
+    "n4_mismatches_vs_minus_phi": 200,
+    "n4_mismatches_vs_plus_phi": 200,
+    "n4_identity_holds_either_sign": false,
+    "arithmetic": "exact (fractions.Fraction); no tolerance, no float"
+  },
+  "alternation": [
+    {
+      "n": 2,
+      "trials": 60,
+      "holds_minus_one_to_n_minus_1": 60,
+      "holds_minus_one_to_n_as_ocrd": 0
+    },
+    {
+      "n": 3,
+      "trials": 60,
+      "holds_minus_one_to_n_minus_1": 60,
+      "holds_minus_one_to_n_as_ocrd": 0
+    },
+    {
+      "n": 4,
+      "trials": 60,
+      "holds_minus_one_to_n_minus_1": 60,
+      "holds_minus_one_to_n_as_ocrd": 0
+    },
+    {
+      "n": 5,
+      "trials": 20,
+      "holds_minus_one_to_n_minus_1": 20,
+      "holds_minus_one_to_n_as_ocrd": 0
+    }
+  ],
+  "boltzmann_chain": {
+    "alpha_MeV": "4.1859813632944759699",
+    "rows": [
+      {
+        "convention": "D_canonical",
+        "z": "0.6126880371464652516",
+        "mu_pn": "0.50822978937673896258",
+        "mu_in_unit_interval": true,
+        "B_2H_MeV": "2.833162572",
+        "B_2H_over_AME": "1.273579913",
+        "v_eq_B_over_alpha": "0.67682159238634338966",
+        "v_positive": true,
+        "exp_minus_v_equals_mu": true
+      },
+      {
+        "convention": "C_as_used_by_the_2026_08_08_audit",
+        "z": "0.49932033418369445241",
+        "mu_pn": "0.3948620864139681634",
+        "mu_in_unit_interval": true,
+        "B_2H_MeV": "3.88969225844",
+        "B_2H_over_AME": "1.748517355",
+        "v_eq_B_over_alpha": "0.92921872336654878368",
+        "v_positive": true,
+        "exp_minus_v_equals_mu": true
+      }
+    ]
+  },
+  "framework_evaluation": {
+    "chi_typing_f_pn_eq_z_D": {
+      "f_pn": "0.6126880371464652516",
+      "b2_W_units": "0.3873119628535347484",
+      "phi_T_2": "-0.3873119628535347484",
+      "b2_equals_minus_phi2": true,
+      "phi_T_3": "0.39193078659470569867",
+      "b3_corpus_W_units": "-0.39193078659470569867",
+      "b3_corpus_equals_minus_phi3": true,
+      "b3_alternating_W_units": "0.39193078659470569867",
+      "MeV_per_W_unit": "5.7436026081157689443",
+      "b3_alternating_MeV": "2.2510946880862165033",
+      "ame_b3_isospin_avg_MeV": "1.4262225",
+      "ame_b3_triton_MeV": "1.8081",
+      "ratio_to_isospin_avg": "1.57836150256",
+      "ratio_to_triton": "1.24500563469"
+    },
+    "probe2_typing_f_pn": {
+      "f_pn": "0.50822978937673896258",
+      "b2_W_units": "0.49177021062326103742",
+      "phi_T_2": "-0.49177021062326103742",
+      "b2_equals_minus_phi2": true,
+      "phi_T_3": "0.60658512545108528488",
+      "b3_corpus_W_units": "-0.60658512545108528488",
+      "b3_corpus_equals_minus_phi3": true,
+      "b3_alternating_W_units": "0.60658512545108528488",
+      "MeV_per_W_unit": "4.5235883588406537",
+      "b3_alternating_MeV": "2.7439414121364269233",
+      "ame_b3_isospin_avg_MeV": "1.4262225",
+      "ame_b3_triton_MeV": "1.8081",
+      "ratio_to_isospin_avg": "1.9239223979",
+      "ratio_to_triton": "1.51758277315"
+    }
+  },
+  "assertions": [
+    {
+      "name": "corpus b3 == -phi^T_3 exactly, on every random non-uniform triple",
+      "passed": true
+    },
+    {
+      "name": "mu is the Boltzmann factor of the Sec.10a bond energy: mu in (0,1), v = B/alpha > 0, and e^-v == mu, in BOTH conventions",
+      "passed": true
+    },
+    {
+      "name": "the identity does NOT extend to n=4 under either sign",
+      "passed": true
+    },
+    {
+      "name": "(-1)^(n-1) phi^T_n >= 0 holds for every n and trial in the repulsive class",
+      "passed": true
+    },
+    {
+      "name": "the OCR'd (-1)^n law FAILS at n=2, which is how the exponent is settled",
+      "passed": true
+    },
+    {
+      "name": "at both typings the corpus b3 is negative and phi^T_3 is positive",
+      "passed": true
+    },
+    {
+      "name": "restoring the alternation gives b3 > 0, the sign AME has",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(a). Does NOT refute MayerThreeBodySign -- every statement there remains true of the object it is about. What is established is that that object differs from the classical one by a sign the classical theory does not carry. The Boltzmann identification f = e^{-v} IS derived, by the corpus's own Sec.10a log form read backwards (see boltzmann_chain). What is NOT fixed here is the normalisation of the cluster expansion's n-body term: the sign is settled, the magnitude is reported under two scale conventions differing by ~10%.",
+  "source": "Jansen & Kolesnikov, J. Stat. Phys. 189:33 (2022), library/s10955-022-02992-6/ -- definitions on p.5, sign property in section 3.1. The OCR of Eq. (3.1) reads (-1)^n and is inconsistent with the paper's own Corollary 3.3; settled here by computation from the definitions, not from the scanned superscript.",
+  "lean": "QOU/MassTheory/MayerThreeBodySign.lean, QOU/Mass/PairwiseCumulantVanishing.lean",
+  "bean": "qou-rwhv",
+  "allPassed": true,
+  "scriptHash": "c3084895f017",
+  "scriptCommitSha": "d2897baaa5d7951dc086a6e5f8ab9aeb46a78432",
+  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "ursell_alternation_sign_identity_probe.py"
+}

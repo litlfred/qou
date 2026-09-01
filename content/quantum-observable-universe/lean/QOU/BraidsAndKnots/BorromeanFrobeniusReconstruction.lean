@@ -40,7 +40,13 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 import QOU.BraidsAndKnots.BorromeanMarkovTrace
 
-namespace QOU.BraidsAndKnots
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.BraidsAndKnots.BorromeanChiPerRep
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.BraidsAndKnots.BorromeanFrobeniusReconstruction
 
 /-- Jones–Frobenius weight of the standard (2,1) irrep: `1/[2]_q² = 1/(h²+4)`. -/
 noncomputable def yJones_21 (h : ℚ) : ℚ := 1 / (h ^ 2 + 4)
@@ -76,4 +82,4 @@ theorem borromean_frobenius_reconstruction (h : ℚ) :
   field_simp [hne]
   ring
 
-end QOU.BraidsAndKnots
+end QOU.BraidsAndKnots.BorromeanFrobeniusReconstruction

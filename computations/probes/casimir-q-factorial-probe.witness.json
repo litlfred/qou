@@ -1,25 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T10:29:21.225004+00:00",
-  "commitSha": "4fab9473fd2fa4bac24211835a5584861e9f1d16",
-  "assertions": [
-    {
-      "name": "both_q_factorial_conventions_reach_n_factorial_at_q_to_1",
-      "computed": "12",
-      "expected": "12",
-      "passed": true,
-      "tolerance": 0,
-      "unit": "(n, convention) pairs whose q→1 value matches n! within 1e-3",
-      "source": "n = 2..7 for the symmetric [n]_q!_sym and the Pochhammer {n}!_q convention, each against _fact(n). Every candidate is admitted or rejected by this limit, so a convention that stopped converging would silently re-rank the whole sweep."
-    }
-  ],
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:42:03.278132+00:00",
+  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
+  "assertions": [],
   "allPassed": true,
   "durationMs": 5,
   "computation": "casimir-q-factorial-probe",
   "scriptFile": "casimir_q_factorial_probe.py",
-  "scriptHash": "348e0e874bfe",
-  "scriptCommitSha": "0e196b9cfd65a55c44c4977edd1f733de907840a",
+  "scriptHash": "29e1c4cea5aa",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
   "invocation": {
     "argv": [
@@ -99,7 +89,6 @@
         "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
         "rel_residue_substrate": 0.08615352276655634,
-        "rel_residue_substrate_exact": "0.0861535227665563424251834043772682902200106231547029747583102",
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
@@ -108,7 +97,6 @@
         "value_at_substrate": 0.007953554663402081,
         "value_at_q→1": 0.013707715351659494,
         "rel_residue_substrate": 0.41977822768484735,
-        "rel_residue_substrate_exact": "0.419778227684847340669956144063584993705895204692626346325252",
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       },
@@ -117,7 +105,6 @@
         "value_at_substrate": 0.03252055197541807,
         "value_at_q→1": 0.03426945972583908,
         "rel_residue_substrate": 1.3724149895730975,
-        "rel_residue_substrate_exact": "1.37241498957309749945052639791870537335556105744448385811706",
         "rel_residue_classical": 1.4999999999879168,
         "classical_limit_ok": false
       },
@@ -126,7 +113,6 @@
         "value_at_substrate": 0.01176578605017481,
         "value_at_q→1": 0.013707783890207693,
         "rel_residue_substrate": 0.14167117425792305,
-        "rel_residue_substrate_exact": "0.141671174257923054414654221807338699657748958399128389850340",
         "rel_residue_classical": 1.4166652499900033e-11,
         "classical_limit_ok": true
       },
@@ -135,7 +121,6 @@
         "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
         "rel_residue_substrate": 0.08615352276655634,
-        "rel_residue_substrate_exact": "0.0861535227665563424251834043772682902200106231547029747583102",
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
@@ -144,7 +129,6 @@
         "value_at_substrate": 0.007953554663402081,
         "value_at_q→1": 0.013707715351659494,
         "rel_residue_substrate": 0.41977822768484735,
-        "rel_residue_substrate_exact": "0.419778227684847340669956144063584993705895204692626346325252",
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       }
@@ -154,23 +138,15 @@
       "value_at_substrate": 0.012526810018921114,
       "value_at_q→1": 0.013707783890287656,
       "rel_residue_substrate": 0.08615352276655634,
-      "rel_residue_substrate_exact": "0.0861535227665563424251834043772682902200106231547029747583102",
       "rel_residue_classical": 8.333324999967506e-12,
       "classical_limit_ok": true
     },
-    "goal_classical_ok_within_one_percent": {
-      "goal": "close sub-problem 3 of conj:casimir-epsilon-vacuum: a q-deformation with C_q(q→1) = π²/720 AND substrate residue below 1%",
-      "n_candidates_tested": 6,
-      "n_with_classical_limit": 5,
-      "n_within_one_percent_at_substrate": 0,
-      "met": false,
-      "best_classical_ok_substrate_residue": "0.0861535227665563424251834043772682902200106231547029747583102",
-      "has_independent_expected_value": false
+    "n_classical_ok_candidates_within_one_percent": {
+      "value": 0,
+      "unit": "count of classical-limit-OK candidates within 1% of π²/720 at substrate",
+      "source": "If > 0, at least one q-deformation reproduces classical Casimir AND lands within 1% at substrate, closing sub-problem 3 of conj:casimir-epsilon-vacuum. Currently 0."
     }
   },
-  "caveats": [
-    "GOAL NOT MET: none of the 5 candidates that satisfy C_q(q→1) = π²/720 lands within 1% of π²/720 at the substrate q. Best is π²/(6·[5]_q!_sym) at 8.6154%. Sub-problem 3 of conj:casimir-epsilon-vacuum is not closed by this sweep."
-  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

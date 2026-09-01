@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:55:52.831499+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T13:02:17.456650+00:00",
+  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
   "assertions": [
     {
       "name": "operator-selection LP strong duality (gap ~ 0)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 6,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
-  "scriptHash": "1d4117f59182",
-  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+  "scriptHash": "6bc0d58c878a",
+  "scriptCommitSha": "cd816982242e2d18d7818fddea30a2fa465625c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,9 +64,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -78,7 +79,7 @@
   "contentBlock": "def:molecular-braid",
   "parameters": {
     "q": 1.1099785827513808,
-    "E_mol_eV": 6.729338426152079,
+    "E_mol_eV": 6.72932460783094,
     "gram_eigenvalues": [
       -0.7527021132519656,
       3.074194609852911e-17,
@@ -137,68 +138,97 @@
       "dual_obj_str": "-2.6995660382469014437498133483489973960059190944449e-46",
       "duality_gap_str": "3.6003067444107525452930085708727761087247271427296e-44"
     },
+    "convolution": {
+      "operator": "q-convolution = mate of the comultiplication Delta_q on H_q",
+      "corpus_refs": [
+        "prop:categorical-fourier-transform-exists",
+        "def:categorical-laplace-transform",
+        "def:q-resolvent",
+        "conj:diagrammatic-double-magic-lr-fusion"
+      ],
+      "character_level_realisation": "tensor product of Specht modules, i.e. Littlewood-Richardson fusion; F and L intertwine it with the pointwise product on irreducibles",
+      "braid_level_realisation": {
+        "per_nucleon_B3": "3 x (sigma_0, sigma_1^-1)  [confinement]",
+        "quark_proton": "uu -> sigma_0 ; ud -> sigma_0 mixed (-h/2) ; ud -> sigma_1 mixed (-h/2)",
+        "quark_neutron": "ud -> sigma_0 mixed (-h/2) ; ud -> sigma_0 mixed (-h/2) ; dd -> sigma_1^-1 (-h)",
+        "gluon": "2 x sigma_0 per nucleon",
+        "inter_nucleon_pp": "sigma_0        (c=1, d=0)     EM repulsion",
+        "inter_nucleon_nn": "sigma_0^-1     (c=1, d=-h)    nuclear attraction",
+        "inter_nucleon_pn": "colour-weighted (c=1, d=D_PN)  mixed nuclear",
+        "electron_pe": "sigma_1^-1 per electron (EM channel)",
+        "which_part_is_the_convolution": "the inter-nucleon double loop over all previously placed nucleons; the per-nucleon block builds the factor being convolved"
+      },
+      "knot_operator_identification": "UNRESOLVED",
+      "knot_operator_candidates": [
+        "connected sum",
+        "satellite",
+        "cabling"
+      ],
+      "knot_operator_status": "No content block identifies which knot operation realises this convolution. The Fourier / Laplace / resolvent blocks name the algebraic operator (the Delta_q-mate) but not its knot-diagram counterpart. OPEN, not absent: the search surface was a keyword grep over content/ and computations/ plus a read of the hits.",
+      "bean": "qou-mgq3"
+    },
     "operator_selection_active_channels": [
       "gamma"
     ],
     "bond_H-H": {
       "ops": "s1i,s1i,s1i,s1i",
       "n_crossings": 4,
-      "E_eV": 8.80231729647516,
+      "E_eV": 8.802299221407528,
       "tr_M": 0.11842011996177898,
       "frobenius_passes": true
     },
     "bond_C-H": {
       "ops": "s1i,s1i,s1i,s1i",
       "n_crossings": 4,
-      "E_eV": 3.8339888014546117,
+      "E_eV": 3.833980928572443,
       "tr_M": 29.569099920596468,
       "frobenius_passes": true
     },
     "bond_C-O": {
       "ops": "s1i,s1i,s1i,s0i",
       "n_crossings": 4,
-      "E_eV": 3.3641929750731836,
+      "E_eV": 3.3641860668905426,
       "tr_M": 11746.356996557231,
       "frobenius_passes": true
     },
     "bond_C-C": {
       "ops": "s1i,s1i,s1i,s0i",
       "n_crossings": 4,
-      "E_eV": 3.617007170305933,
+      "E_eV": 3.616999742983442,
       "tr_M": 2540.1335718243918,
       "frobenius_passes": true
     },
     "bond_O-H": {
       "ops": "s1i,s1i,s1i,s1i",
       "n_crossings": 4,
-      "E_eV": 3.5533403024123356,
+      "E_eV": 3.553333005826207,
       "tr_M": 141.68208113675678,
       "frobenius_passes": true
     },
     "molecules": [
       {
         "name": "H2",
-        "predicted_eV": "8.80231729647516",
+        "predicted_eV": "8.80229922140753",
         "observed_eV": 4.478
       },
       {
         "name": "CO",
-        "predicted_eV": "10.0925789252196",
+        "predicted_eV": "10.0925582006716",
         "observed_eV": 11.09
       },
       {
         "name": "CO2",
-        "predicted_eV": "13.4567719002927",
+        "predicted_eV": "13.4567442675622",
         "observed_eV": 16.56
       },
       {
         "name": "CH4",
-        "predicted_eV": "15.3359552058184",
+        "predicted_eV": "15.3359237142898",
         "observed_eV": 17.9
       },
       {
         "name": "C6H6",
-        "predicted_eV": "55.5569973414811",
+        "predicted_eV": "55.5568832582856",
         "observed_eV": 57.4
       }
     ]

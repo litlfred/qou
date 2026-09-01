@@ -42,7 +42,7 @@ abbrev R_q := ℝ
     to ∂(S³_q) ≅ S².  This is the energy cost of threading a knot
     through the fibre boundary.
     Label: prop:phase-transition-boundary -/
-noncomputable def s3BoundaryAction {M : Type*} (sp : SubstrateParameter M)
+noncomputable def s3BoundaryAction {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : R_q :=
   let eta := operationalEntropy sp p
   let hbar := quantumPlanckConstant sp p
@@ -51,19 +51,19 @@ noncomputable def s3BoundaryAction {M : Type*} (sp : SubstrateParameter M)
 
 /-- **Gas-liquid critical temperature**.
     T_q^{g→l} = S_q^{∂} / [2]_q. -/
-noncomputable def gasLiquidCriticalTemp {M : Type*} (sp : SubstrateParameter M)
+noncomputable def gasLiquidCriticalTemp {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : R_q :=
   s3BoundaryAction sp p / (sp.field p + (sp.field p)⁻¹)
 
 /-- **Liquid-solid critical temperature**.
     T_q^{l→s} = S_q^{∂} / ([2]_q · [n_K]_q).
     Parameterised by the crossing number n_K and [n_K]_q. -/
-noncomputable def liquidSolidCriticalTemp {M : Type*} (sp : SubstrateParameter M)
+noncomputable def liquidSolidCriticalTemp {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (qIntegerNK : R_q) : R_q :=
   s3BoundaryAction sp p / ((sp.field p + (sp.field p)⁻¹) * qIntegerNK)
 
 /-- The gas-liquid critical temperature is positive when q > 1. -/
-theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
+theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     0 < gasLiquidCriticalTemp sp p := by
   unfold gasLiquidCriticalTemp s3BoundaryAction
@@ -86,7 +86,7 @@ theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- The liquid-solid critical temperature is below the gas-liquid
     critical temperature when [n_K]_q > 1. -/
-theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
+theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (qIntNK : R_q) (hq : sp.field p > 1) (hnk : 1 < qIntNK) :
     liquidSolidCriticalTemp sp p qIntNK <
     gasLiquidCriticalTemp sp p := by
@@ -114,7 +114,7 @@ theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
     condition *is*, so the structure survives the withdrawal unchanged in
     content — only in name and documentation. -/
 structure SublimationCondition (M : Type*) where
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   point : M
   /-- Crossing number of the composite atom. -/
   crossingNumber : ℕ

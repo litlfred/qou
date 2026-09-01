@@ -75,7 +75,23 @@ TWO_Q            = Q0 + QI0  # [2]_q
 
 def load_habiro_tr_M(label: str) -> mp.mpf:
     """Load tr_M(label, q_0) from habiro-coefficients-atomic witness."""
-    path = Path(__file__).parent / "habiro-coefficients-atomic.witness.json"
+    # The witness moved into `computations/habiro/` (it is written there by
+    # `habiro/habiro_coefficients_atomic.py`); this looked only in
+    # `computations/` and so died with FileNotFoundError on a clean tree, which
+    # reads as "the input is missing" when in fact it is one directory over.
+    # Try the real location first, keep the old one as a fallback so a tree that
+    # still has it beside this file keeps working.
+    _here = Path(__file__).parent
+    for _cand in (_here / "habiro" / "habiro-coefficients-atomic.witness.json",
+                  _here / "habiro-coefficients-atomic.witness.json"):
+        if _cand.exists():
+            path = _cand
+            break
+    else:
+        raise FileNotFoundError(
+            "habiro-coefficients-atomic.witness.json not found in "
+            f"{_here/'habiro'} or {_here}. It is produced by "
+            "computations/habiro/habiro_coefficients_atomic.py.")
     with open(path) as f:
         d = json.load(f)
     for key, r in d.get("results", {}).items():

@@ -66,13 +66,6 @@ N_MAX = 8                   # Masbaum levels 0..N_MAX
 SHIFTS = range(-2, 3)
 MIN_CMP = 6                 # comparable orders required per cross-check
 LAM_GRID = {+1: range(-2, 4), -1: range(-1, 4)}
-J_RANGE = range(3)          # GGM block index j ∈ 0..2 (was inline `range(3)`)
-# Size of the pre-registered grid, from the grid constants alone: 11 λ-rows ×
-# 3 j × 5 shifts = 165, the "33 rows" of the docstring times |SHIFTS|. This is
-# the number the scan is supposed to visit, computed WITHOUT running it, so
-# `scan_completed` has something to compare its loop counter against.
-N_PRE_REGISTERED = (sum(len(lams) for lams in LAM_GRID.values())
-                    * len(J_RANGE) * len(SHIFTS))
 T0 = time.monotonic()
 
 
@@ -186,7 +179,7 @@ def main() -> int:
     n_scan = 0
     for sgn, lams in LAM_GRID.items():
         for lam in lams:
-            for j in J_RANGE:
+            for j in range(3):
                 Th = {}
                 for k in SHIFTS:
                     for n_ in range(N_MAX + 2):
@@ -241,29 +234,27 @@ def main() -> int:
                      tolerance=0.5,
                      source="per-level terms re-sum to a u-even total, "
                             "consistent with the B1.3 parity finding")
-    # Was `computed=float(n_scan), expected=float(n_scan)` — the loop counter
-    # against itself, so it read 165/165 whether the scan visited 165
-    # combinations or 3. "Pre-registered" is the operative word in its own
-    # source string: the grid is declared up front in LAM_GRID × J_RANGE ×
-    # SHIFTS, so the count it should be measured against exists before the
-    # scan runs. `combos` rather than `n_scan` on the computed side, because
-    # what the sentence claims is "decided AND RECORDED" and `combos` is the
-    # recorded list; a combination counted but not appended is exactly the
-    # kind of drop this is supposed to notice.
+    # Read `computed=float(n_scan), expected=float(n_scan)` -- a self-comparison
+    # that also carried the count as float64. I first demoted it to `add_data`;
+    # that was the weaker of the two available dispositions. The grid here is
+    # PRE-REGISTERED, so the count IS knowable in advance and the assertion can
+    # be made to fail: derive it from the three factors the loops iterate, the
+    # way `qbeta_5two_stokes_population_bridge_probe` does (bean `qou-26f2`).
+    # Decoupling a loop bound from its grid, or dropping a sign branch, now
+    # fails here instead of being recorded as a passing "scan completed".
+    _n_expected = sum(len(_l) for _l in LAM_GRID.values()) * 3 * len(SHIFTS)
     wb.add_assertion("scan_completed",
-                     computed=float(len(combos)),
-                     expected=float(N_PRE_REGISTERED),
-                     tolerance=0.5,
-                     source=f"all {N_PRE_REGISTERED} pre-registered "
-                            f"(sign,j,λ)×shift combinations decided and "
-                            f"recorded: |LAM_GRID| {sum(len(l) for l in LAM_GRID.values())} "
-                            f"× |J_RANGE| {len(J_RANGE)} × |SHIFTS| {len(SHIFTS)}")
+                     computed=n_scan,
+                     expected=_n_expected,
+                     tolerance=0,
+                     source="all pre-registered (sign,j,λ)×shift combinations "
+                            "decided and recorded; expected = "
+                            "Σ|LAM_GRID| × 3 (j) × |SHIFTS|")
+
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("level_parity", {str(k): v for k, v in level_parity.items()})
     wb.add_data("scan", {"n_combinations": n_scan,
-                         "n_recorded": len(combos),
-                         "n_pre_registered": N_PRE_REGISTERED,
                          "n_leads": len(leads),
                          "combos_with_any_match":
                              [c for c in combos

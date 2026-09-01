@@ -124,21 +124,6 @@ structure ChiralSectorCoords where
 
 /-! ## §6  The Descartes Theorem -/
 
-/-- **Theorem (Descartes)**: every Descartes universe with
-    one-complex-dimensional descent is isomorphic (as a QOU) to
-    Bring's surface.
-
-    This is the universality statement: the Descartes condition
-    `χ(E) = −6` uniquely determines the geometry.
-
-    LaTeX: `\label{thm:descartes}` -/
--- Ref: [atiyah1988] Atiyah, "Topological quantum field theories," Publ. IHES 68 (1988)
-theorem descartes_universality (dc : ArchimedeanCondition) :
-    -- The Descartes condition forces genus 4, which is Bring's surface.
-    -- Full proof: χ = −6 ⟹ g = 4 ⟹ maximal symmetry ⟹ Bring's surface.
-    dc.eulerChar = -6 :=
-  dc.descartes
-
 /-- **Terminality data**: packages the Tannaka–Krein rigidity argument.
     A fibre-preserving monoidal functor between Tannakian categories over
     the same fibre functor is unique up to natural isomorphism. -/
@@ -171,6 +156,20 @@ LaTeX: `\label{rem:light-cone-affine}`
 Bring's curve is the one-dimensional descent of the Descartes
 universe: a genus-4 Riemann surface with automorphism group S₅.
 LaTeX: `\label{rem:brings-curve}`
+-/
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `descartes_universality` — body was `dc.descartes`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
 -/
 
 end QOU.ArchimedeanUniverse

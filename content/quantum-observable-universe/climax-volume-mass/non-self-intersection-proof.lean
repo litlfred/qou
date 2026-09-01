@@ -38,7 +38,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- The quantum Planck constant at a given (archimedean) substrate
     parameter value. -/
-def hbar_q (q : ℝ) : ℝ := 1 - q⁻¹
+def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The quantum integer `[2]_q = q + q⁻¹`. -/
 def quantumTwo (q : ℝ) : ℝ := q + q⁻¹
@@ -49,11 +49,11 @@ def quantumTwo (q : ℝ) : ℝ := q + q⁻¹
     `[2]_q / (r² − ℏ_q²)` which has a hard singularity at `r = ℏ_q`.
     Ref: [freedman1994] https://doi.org/10.2307/2946567 -/
 def qRepulsionKernel (q r : ℝ) : ℝ :=
-  quantumTwo q / (r ^ 2 - hbar_q q ^ 2)
+  quantumTwo q / (r ^ 2 - hbarQ q ^ 2)
 
 /-- The quantum Planck constant is positive when `q > 1`. -/
-theorem hbar_q_pos (q : ℝ) (hq : q > 1) : 0 < hbar_q q := by
-  unfold hbar_q; linarith [inv_lt_one_of_one_lt₀ hq]
+theorem hbarQ_pos (q : ℝ) (hq : q > 1) : 0 < hbarQ q := by
+  unfold hbarQ; linarith [inv_lt_one_of_one_lt₀ hq]
 
 /-- The quantum integer `[2]_q` is positive when `q > 0`. -/
 theorem quantumTwo_pos (q : ℝ) (hq : q > 0) : 0 < quantumTwo q := by
@@ -77,7 +77,7 @@ structure NonSelfIntersection where
 
     **Derived, not carried.** The structure above used to have a free
     field `exclusionRadius : ℝ` alongside a field
-    `exclusionRadius_def : exclusionRadius = hbar_q q` asserting what it
+    `exclusionRadius_def : exclusionRadius = hbarQ q` asserting what it
     equals, and `exclusionRadius_eq` returned that second field — the
     §3b-cond item-5 degenerate shape, and this file's
     `proof-no-self-assuming-projection` ledger entry. A free field
@@ -87,33 +87,33 @@ structure NonSelfIntersection where
     Here the radius is a definition of `q`, matching the library encoding
     in `QOU/MobiusEnergy.lean`, so it is not a free parameter at all. -/
 def NonSelfIntersection.exclusionRadius (nsi : NonSelfIntersection) : ℝ :=
-  hbar_q nsi.q
+  hbarQ nsi.q
 
 /-- The exclusion radius is exactly `ℏ_q` — now an unfolding lemma of the
     definition above rather than a projection of an assumed equation. -/
 theorem NonSelfIntersection.exclusionRadius_eq
     (nsi : NonSelfIntersection) :
-    nsi.exclusionRadius = hbar_q nsi.q :=
+    nsi.exclusionRadius = hbarQ nsi.q :=
   rfl
 
 /-- **The exclusion zone is nonempty**: the radius is strictly positive.
 
     This is what the free-field encoding could not give. Positivity is
-    derived from the structure's own `q_gt_one`, through `hbar_q_pos`;
+    derived from the structure's own `q_gt_one`, through `hbarQ_pos`;
     no field of `NonSelfIntersection` asserts it. -/
 theorem NonSelfIntersection.exclusionRadius_pos
     (nsi : NonSelfIntersection) :
     0 < nsi.exclusionRadius :=
-  hbar_q_pos nsi.q nsi.q_gt_one
+  hbarQ_pos nsi.q nsi.q_gt_one
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
-theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
-  simp [hbar_q]
+theorem hbarQ_classical_limit : hbarQ 1 = 0 := by
+  simp [hbarQ]
 
 /-- At `q > 1`, the exclusion zone has positive radius. -/
 theorem exclusionZone_positive (q : ℝ) (hq : q > 1) :
-    0 < hbar_q q :=
-  hbar_q_pos q hq
+    0 < hbarQ q :=
+  hbarQ_pos q hq
 
 end
 

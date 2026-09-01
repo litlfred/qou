@@ -33,9 +33,14 @@ coordination unit, so a fully coordinated cluster carries $\binom{A}{2}$ units a
 $z = A - 1$; which pairs bond is the coordination-graph question, saturation-limited for heavy $A$
 (the complete graph is excluded there, `QOU.Mass.CoordinationSaturation`).
 
-The deuteron sits at the boundary: its Hopf carrier has $\mathrm{lk} = 1 \neq 0$ and coordination
-$z = 1$, so signed and unsigned channels coincide there. The two invariants agree for a Hopf-bonded
-pair and diverge only at $A \geq 3$, where the unsigned count is the non-vanishing one.
+The deuteron sits at the boundary. What coincides there is the two *multiplicities* — the writhe
+$n_+ - n_- = 2\,\mathrm{lk}$ and the crossing count $n_+ + n_-$, which are what play the role of the
+binding multiplier — not the channel values, whose $\cosh$ and $\sinh$ weights differ at every $q$.
+The two multiplicities agree **exactly** on all-positive carriers, $n_- = 0$, and the positive Hopf
+link is such a carrier ($n_+ = 2$, $n_- = 0$, giving $|\mathrm{lk}| = 1$ and coordination $z = 1$,
+both multiplicities equal to $2$). On a Brunnian carrier $n_+ = n_-$ instead, collapsing the signed
+multiplicity to $0$ while the unsigned one is the full crossing count. So the two invariants agree
+for a Hopf-bonded pair and diverge from $A \geq 3$, where only the unsigned count is non-vanishing.
 
 ## Why the assignment is forced — bar-parity
 
@@ -51,8 +56,36 @@ coordination count is therefore a parity fact, not a modelling choice.
 ## Scope
 
 The channel structure, the Brunnian reduction, the coordination-unit map for minimal bonds, and the
-bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`, sorry-free). Not settled
-here: the exact crossing-count-to-coordination map beyond the minimal-bond model, and the
-Hamiltonian-level claim that rest mass *is* the closed self-trace and binding *is* the open mutual
-pairing. This is the discrete counterpart of the unsigned-invariant resolution reached
-independently on the electromagnetic-linking side.
+bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`, sorry-free). The two further
+residuals are now also settled. The mass $\leftrightarrow$ self, binding $\leftrightarrow$ mutual
+assignment is a theorem of the crossing partition plus the mass-deficit definition of binding
+($B = \sum_i m_i^{\text{isolated}} - m^{\text{assembly}} = -(\text{mutual energy})$; the self
+energies cancel), so binding is exactly the inter-component pairing
+(`QOU.Mass.SelfMutualPartition`, sorry-free); and the crossing-count $\to$ coordination coefficient
+is $\tfrac{1}{2}\lvert\text{inter-crossings}\rvert$ in general, giving $\binom{A}{2}$ units and
+per-nucleon $z = A-1$ for a complete graph of minimal single clasps. This is the discrete
+counterpart of the unsigned-invariant resolution reached independently on the electromagnetic-linking
+side. The additive partition lifts to the mass observable — whose self carrier is the multiplicative
+q-dimension Markov self-trace $\mathrm{lw}$ — through the archimedean functor
+$\tau = \log$: a multiplicative amplitude has an additive free energy $E = \log T$, so the
+mass-deficit binding equals the connected (interaction) free energy $-\log I$, which is positive
+exactly when the assembly amplitude is suppressed (`QOU.Mass.ArchimedeanTraceBridge`, sorry-free).
+
+**Two multiplicative structures must be kept apart here, and an earlier version of this paragraph
+conflated them.** For the normalised Jones polynomial the *connected sum* is exactly multiplicative,
+$J(K_1 \# K_2) = J(K_1)\,J(K_2)$, whereas the *disjoint union* carries the loop value,
+$J(K_1 \sqcup K_2) = \delta\,J(K_1)\,J(K_2)$ with $\delta = [2]_q = q + q^{-1}$. The matrix result
+that is actually proved — the Kronecker-product multiplicativity of the trace
+(`QOU.MathlibExt.MarkovTraceMultiplicative`) — models the **disjoint union**, not the connected sum.
+Consequently a genuinely independent assembly has $I = \delta$, not $I = 1$: adding an unlinked
+component costs $\log \delta \approx 0.699$ of free energy at the proton pin, and a Markov closure of
+an $n$-strand braid is normalised by $\delta^{\,n-1}$. The additivity therefore holds only up to that
+loop factor, which is exactly what `QOU.Mass.ClosureNormalisationDefect` makes precise
+(`freeEnergy_closureNorm_additive_iff`: additivity holds iff $\delta = 1$, excluded for $q > 1$). Two modelling inputs remain named rather than
+derived: that the substrate assembly amplitude is the Markov trace (a citable Jones theorem, carried
+as a hypothesis), and the dimensional dressing
+$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (CAL-1 scale, geometric volume,
+CAL-2 cusp) — calibration and geometry, not a fit. The exact saturated fraction
+$B/A/\mathfrak{m}_N \approx \hbar_q^2$ is a numerical coincidence, not a prediction: the empirical
+$B/A$ peaks at $0.954\,\hbar_q^2$ near $A \approx 60$ and falls, and the fundamental volume
+coefficient is $a_V/\mathfrak{m}_N \approx 1.71\,\hbar_q^2$.

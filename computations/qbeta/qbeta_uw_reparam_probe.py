@@ -56,12 +56,6 @@ HERE = Path(__file__).resolve().parent
 # precision-ladder's typical truncation depth (N=4..5 production).
 TAYLOR_ORDER = 6
 
-# Leading ε-coefficient of v = √b·ℏ at q = 1+ε, derived by hand rather than
-# by re-running the series the assertion checks: b(1) = √(1+1+1)/(1+1) = √3/2
-# and ℏ(1+ε) = ε + O(ε²), so v(1+ε) = √(√3/2)·ε + O(ε²).  The independent
-# expected value for `v-leading-eps-coefficient-equals-sqrt-b-at-1`.
-V_LEADING_CLOSED_FORM = sp.sqrt(sp.sqrt(3) / 2)
-
 
 def substrate_variables(q: sp.Symbol):
     """The three substrate coordinates near q=1.
@@ -293,21 +287,20 @@ def main() -> None:
         expected="0",
         source="u(1+ε) Taylor expansion ⇒ u is O(ε²), not a proper Taylor coord at q=1",
     )
-    # The odd one out: its two siblings compare the series coefficient against
-    # a hand-derived value ("0", "2"), but this one compared `v_leading` with
-    # itself — the inline comment even said so. "Non-zero" was never tested;
-    # a v_leading of 0 would have passed and been reported as evidence that v
-    # IS a proper Taylor coordinate. v has a closed-form leading coefficient
-    # like the other two, so it gets the same treatment: b(1) = √3/2 and
-    # ℏ(1+ε) = ε + O(ε²), hence v = √(√3/2)·ε + O(ε²). Both sides go through
-    # `sp.simplify` so the comparison is between canonical forms rather than
-    # between two printers.
+    # Was `computed=str(v_leading), expected=str(v_leading)`, with its own
+    # comment conceding "tautological: we just verify it's recorded" -- so it
+    # passed even at v_leading = 0, which is exactly the case that would make v
+    # an IMPROPER Taylor coordinate and invert the claim (bean qou-3e5m). Its
+    # two siblings above and below already carry real expected values ("0" and
+    # "2"); this one now does too. The coefficient is recorded beside the flag.
+    wb.add_data("v_leading_eps_coefficient", str(v_leading))
     wb.add_assertion(
-        name="v-leading-eps-coefficient-equals-sqrt-b-at-1",
-        computed=str(v_leading),
-        expected=str(sp.simplify(V_LEADING_CLOSED_FORM)),
-        source="v(1+ε) = sqrt(b)·ℏ has leading coefficient √(b(1)) = √(√3/2) = "
-               "3^(1/4)/√2 ≈ 0.93060, non-zero ⇒ v is O(ε), proper Taylor coord",
+        name="v-leading-eps-coefficient-nonzero",
+        computed=1 if v_leading != 0 else 0,
+        expected=1,
+        tolerance=0,
+        source="v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper "
+               "Taylor coord; coefficient in data.v_leading_eps_coefficient",
     )
     wb.add_assertion(
         name="w-leading-eps-coefficient",

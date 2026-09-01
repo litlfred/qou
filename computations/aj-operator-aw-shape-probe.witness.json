@@ -1,15 +1,30 @@
 {
   "engine": "sympy",
   "engineVersion": "1.14.0",
-  "computedAt": "2026-07-03T08:16:46.543821+00:00",
-  "commitSha": "a36c8f3f72f6674a4c385156b8d7be59d5f2740c",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:22:13.588831+00:00",
+  "commitSha": "cf755205bcfae8e8a4151c0cbd83f84130d1a5ba",
+  "assertions": [
+    {
+      "name": "exact_structural_checks_holding_count",
+      "computed": "7",
+      "expected": "7",
+      "passed": true,
+      "source": "the named scalar checks of `checks` (Jones anchor, termination stability, bar symmetry, multiplier bar-parity, B_k == 0, Casoratian == 0, q-Hermite C_n != 0); expected is how many this script constructs"
+    },
+    {
+      "name": "lambda_newton_form_verified_N_count",
+      "computed": "9",
+      "expected": "9",
+      "passed": true,
+      "source": "J_N(4_1;q) = sum_k prod_j (Lambda_N - lam_j) verified per N; expected is the number of N values probed"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 32162,
+  "durationMs": 36618,
   "computation": "aj-operator-aw-shape-probe",
   "scriptFile": "aj_operator_aw_shape_probe.py",
-  "scriptHash": "f8cf3c8f02ae",
-  "scriptCommitSha": "afd93f486d9094a8674570a25a45413d9110ab9d",
+  "scriptHash": "8f32b8f35d38",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,6 +35,12 @@
     "python": "3.11.15",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/aj_operator_aw_shape_probe.py"
+    ],
+    "reproduce": "python3 -u computations/aj_operator_aw_shape_probe.py"
   },
   "description": "4_1 AJ machinery vs Askey-Wilson three-term channel shape (bean cp4i): exact Lambda-Newton (Habiro cyclotomic) form of J_N(4_1), ladder multiplier bar-parity, B_k == 0 degeneracy, Casoratian consequence, q-Hermite-bottom contrast. Structural shape test only, no fit.",
   "audit_only": true,

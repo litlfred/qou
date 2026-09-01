@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:09:08.099540+00:00",
-  "commitSha": "fba34039f235e8e16db2bd8e7af9363967fae193",
+  "computedAt": "2026-08-30T07:42:55.575105+00:00",
+  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
   "assertions": [
     {
       "name": "lp_max_duality_gap",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
-  "scriptHash": "b139214e7997",
-  "scriptCommitSha": "42b27cacdd167f2c16bae13f9ca402f59593018c",
+  "scriptHash": "568ff9e3df67",
+  "scriptCommitSha": "bf08fd156f9415996f30561aed317edf8561f22b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
@@ -385,8 +387,10 @@
       },
       "macdonald_telescope_plancherel_residuals": [],
       "ame_empirical_data_informational": {
-        "max_delta_binding_MeV": 39.24397,
-        "avg_binding_per_nucleon_MeV": 4.2557673350340135,
+        "max_delta_binding_MeV": "39.2450807",
+        "avg_binding_per_nucleon_MeV": "4.25586404857142857142857142857142857142857142857142857142857",
+        "avg_binding_per_nucleon_MeV_exact_rational": "1489552417/350000000",
+        "precision_note": "max_delta_binding_MeV is one of the AME2020 table's own decimals, emitted verbatim — it carries exactly the digits AME quotes and is not padded.  avg_binding_per_nucleon_MeV is the exact rational above rendered at output_dps; every digit is determined by the exact AME decimals and the integer A, none is invented.",
         "note": "Empirical AME column for sanity-check only.  QOU predictions come from the LP dual + GB NF layers above, not from fitting against this column."
       },
       "witness_inventory": [

@@ -1,11 +1,11 @@
 ---
 # qou-0avp
 title: 'TOOL: borrowed-name audit — decl named after an external theory whose statement is all local defs'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-30T05:14:31Z
+updated_at: 2026-08-30T07:14:17Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -363,3 +363,39 @@ BOTH the projection AND the structure in `getUsedConstants`, so
 `all isFieldProjection` is false exactly when the structure is local. A detector
 returning zero on its own designed-for population is a bug until proved
 otherwise.
+
+
+---
+
+## CLOSED 2026-08-30 — merged as 1f6538d38 (PR #6093)
+
+Both borrowed-name tiers drained: **27 CRITICAL + 150 major = 177 of 177
+adjudicated**. Verdicts 104 legit / 41 advisory / 37 genuine. Ledger 368 entries
+(mine ∪ 22 that landed on main mid-verification), 0 stale, and
+`lean-vacuity-axiom-audit.ts --check-ledger` exits 0 on the merged state.
+
+The durable result is not the drain, it is what the drain revealed about the
+detector: **`defeqCollapse` is structurally blind to
+`proof-no-self-assuming-projection`**, which is 111 of 168 genuine verdicts. It
+asks about the STATEMENT; that family's statement is two opaque class-field
+applications with nothing to reduce, and the defect is entirely in the VALUE.
+Measured 0 collapses on 7 such verdicts. Fixed by `valueOnlyProjects`
+(21/117 vs defeq's 1/117 on the same theorems; 6/6 recall on targets; correctly
+does NOT fire on `q_ns_wellposedness` post-remediation, so it separates the
+§3b-cond forbidden pattern from the sanctioned one). `isAuthoredClaim` also now
+analyses Prop-typed `def`s, so the §1a def-disguise is visible for the first
+time.
+
+Two corrections published rather than buried: the "17 collapse / 2 not" figure
+was wrong twice over (bare-decl-name join across files — the arity conflation
+AGENTS.md warns about, committed inside the tooling that measures the audit that
+exists to catch it; correct split is 12/18 on the def-arm family, 0/7 on the
+projection family), and I first reported 4 stale ledger entries when the true
+figure was 15.
+
+**Successors:** `qou-qcy6` (third detector — class-field-graph shape, raised by
+a sibling on #6097 and verified here). Still open and unclaimed: the
+`valueOnlyProjects` Mathlib false-positive class — it reads only own-module
+constants, so a proof doing real work through Mathlib alone is indistinguishable
+from a pure projection; the fix is a non-local non-packaging constant count and
+it needs its own recall measurement.

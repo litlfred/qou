@@ -257,3 +257,10 @@ scripts/lean/*.ilean
 # Per-machine subagent memory (`memory: local` scope). The committed
 # `project` scope lives at .claude/agent-memory/ and is tracked.
 .claude/agent-memory-local/
+computations/borromean-reconstruct-ckpt.json
+.leanscratch/
+*.checkpoint.jsonl
+
+# resumable-driver scratch checkpoint (not a witness — no provenance)
+computations/.bpp-higher-a-checkpoint.json
+computations/.bpp-higher-a-checkpoint.json.tmp

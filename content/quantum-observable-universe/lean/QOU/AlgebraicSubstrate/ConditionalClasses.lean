@@ -10,17 +10,24 @@
   hypotheses without depending on the cross-chapter sibling-style
   modules.
 
-  **Round 11 sharpening** (post Gemini review): each class field was
-  upgraded to a non-tautological *existential* predicate that
-  quantifies over an actual NS-evolution parameter (energy bound,
-  initial-data norm, scaling exponent, etc).  The canonical instance
-  discharges each existential with a concrete witness of the form
-  `⟨0, …⟩`, but the SHAPE captures content (the conjecture asserts
-  something about how a quantity scales / depends on parameters,
-  not a vacuous `True`).
+  **🛑 Round 11's claim was WRONG, and this file was the corpus's exemplar for
+  it. Read this before the paragraph it corrects (2026-08-30).**
 
-  **🛑 That last claim was wrong, and this file was the corpus's exemplar for
-  it (2026-08-30).** AGENTS.md §3b-tax cited these classes as the model of a
+  Round 11 (post Gemini review) upgraded each class field to a non-tautological
+  *existential* predicate quantifying over an NS-evolution parameter, and
+  argued — in this header, as settled fact — that *"the canonical instance
+  discharges each existential with a concrete witness of the form `⟨0, …⟩`, but
+  the SHAPE captures content (the conjecture asserts something about how a
+  quantity scales / depends on parameters, not a vacuous `True`)."*
+
+  **It does not.** The retraction is below, and the original wording is quoted
+  above rather than restated as the file's own voice, because a reader skimming
+  a header takes away whatever it asserts first — and the assertion here was the
+  reverted one. (Flagged in review on PR #6122; the corpus documents this exact
+  failure mode elsewhere as *"that heading is the line a skimming agent
+  reads"*.)
+
+  **The retraction.** AGENTS.md §3b-tax cited these classes as the model of a
   carrier stating "a parameter-quantified inequality in the *shape* of the
   claim". The shape was right and the content was absent: every field was an
   **existential** satisfied by choosing zero, so the conjectures were
@@ -40,9 +47,9 @@
   |---|---|---|
   | `QAubinLions` | re-encoded `qou-3ytx` | a non-linear `K` |
   | `NSCounterexample` | re-encoded `qou-5nj1` | a bounded vorticity |
-  | `CriticalExponent` | re-encoded `qou-93hu` | any `α ≠ 4/3` |
+  | `CriticalExponent` | re-encoded `qou-93hu`, then **de-boxed** `qou-4670` | a non-positive `α`, or a bounded enstrophy |
   | `RegularityBreakdown` | re-encoded `qou-m7a2` | a positive-measure set |
-  | `BlowupYekutieli` | **still vacuous**, `qou-88nf` | — its docstring names a bound it never gives |
+  | `BlowupYekutieli` | **replaced** `qou-88nf` — a rate existential became the upstream obstruction statement | every obstruction vanishing while `smooth` is `False` |
 
   The trivial-zero instance bundle that discharged all five is removed; see the
   note at the foot of this file.
@@ -51,7 +58,9 @@
     - conj:q-aubin-lions
     - conj:ns-counterexample
     - conj:critical-exponent
-    - conj:blowup-yekutieli
+    - prop:blowup-yekutieli   (NOT `conj:` — no such label is declared by any
+                               content block; the live one is a proposition in
+                               `lifting-and-descent/`. Bean `qou-88nf`.)
     - conj:regularity-breakdown
 -/
 
@@ -136,68 +145,125 @@ class NSCounterexample (vorticitySup : ℝ → ℝ) : Prop where
 
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`.
 
-    The critical exponent of the q-NS scaling regime is exactly
-    `α = 4/3`.  The exponent is carried as the class **parameter**, and the
-    field pins its value.
+    Enstrophy diverges as `q → 1⁺` with a positive exponent `α`. Both the
+    enstrophy function and the exponent are class **parameters** (`Prop`
+    classes cannot carry data); the fields are transcribed from the upstream
+    carrier `QOU.FluidDynamics.CriticalExponent` in
+    [`fluid-dynamics/p2-critical-exponent.lean`].
 
-    **What this encodes, and what it does not** (bean `qou-93hu`). The field
-    constrains the `α` it is applied to: `CriticalExponent α` is false for
-    every `α ≠ 4/3`, so a downstream `[CriticalExponent α]` hypothesis is a
-    real assumption about `α`. What is *not* encoded is the link between `α`
-    and the q-NS scaling regime — nothing here says this `α` is that
-    exponent, because saying so needs the scaling definition, which is open.
-    So this is the conjecture's **value** claim, stated conditionally on
-    naming the exponent; it is not the whole conjecture.
+    **🛑 `α = 4/3` was REMOVED on 2026-08-30 and must not be put back.** It
+    was here for one day, and it is the more interesting of this carrier's two
+    defects.
+
+    From 2026-08-30 the single field read `alpha_eq : α = 4/3`, which I wrote
+    while draining the vacuity of the numeral identity below. That fixed the
+    shape and introduced a worse problem: `4/3` is **not a result the corpus
+    holds**. [`p2-critical-exponent.md`] gives it as one of *two* heuristic
+    values under *two* named turbulence closures — `α = 1` under the
+    dissipation closure `ε = ν_q·Ω`, `α = 4/3` under the Kolmogorov cascade —
+    and says in terms: *"Neither closure is rigorous; the true `α` is fixed by
+    the actual q-Navier–Stokes enstrophy spectrum (the turbulence-closure
+    problem) and is open. The two values bracket it under their respective
+    hypotheses."* Even under its own closure it carries a logarithmic
+    correction, so it is not a clean power law.
+
+    So the field asserted as settled a value its own source calls open, and
+    picked the larger of the two bracketing candidates. The corpus had already
+    decided against exactly this: bean `qou-15gb` (completed 2026-07-18)
+    reconciled the inconsistency by making the exponent **closure-dependent,
+    not a single boxed value**, and the established way to carry a value here
+    is to name its closure — `QOU.FluidDynamics.enstrophy_alpha_one_of_dissipation_closure`
+    in [`q_ns_classical_bridge.lean`] is the pattern. A closure-free `α = 4/3`
+    in a hypothesis class re-boxed the value one namespace over.
+
+    **What this encodes now.** `0 < α` and the divergence statement — which is
+    what the `.md` asserts without hedging (*"diverges as `Ω_max(q) ~
+    (q-1)^{-α}` for some `α > 0`"*), and what the upstream carrier encodes.
+    The one-sided neighbourhood `1 < q ∧ q - 1 < ε` is load-bearing and is
+    upstream's, not mine: without it the field says only that enstrophy is
+    unbounded *somewhere*, which `enstrophy q = max q 0` satisfies while being
+    the identity near `q = 1` — regular exactly where the conjecture asserts
+    blow-up (bean `qou-k3hh`, witness in
+    `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`).
+
+    **What this still does NOT encode.** That `α` is the *rate* of the
+    divergence. The asymptotic `Ω_max(q) ~ (q-1)^{-α}` relating the two
+    parameters is absent here exactly as it is absent upstream, which says so
+    itself: *"the divergence rate is not encoded, and `criticalExponent` is
+    accordingly unconstrained by any field of this class."* Encoding it needs
+    the asymptotic, and pinning `α` needs a closure that is not rigorous. That
+    gap is the honest open state; it is not closed by choosing a number.
 
     **History.** Until 2026-08-30 the single field read
     `alpha_three_eq_four : (3 * 4 : ℕ) = 12` — a closed numeral identity with
     the values already substituted in, containing **no exponent variable at
     all**. `rfl` proved it whatever the physics, so the class constrained
     nothing and every `[CriticalExponent]`-conditional theorem was vacuous in
-    its critical-exponent leg. Unlike the four sibling carriers in this file,
-    that field was not even the right *shape*: no quantifier, no free
-    variable. Note `Prop` classes cannot carry data, which is why `α` is a
-    parameter rather than a field. -/
+    its critical-exponent leg. Beans `qou-93hu` (the vacuity) and `qou-4670`
+    (the boxed value). -/
 -- Ref: [manuscript] conj:critical-exponent
-class CriticalExponent (α : ℝ) : Prop where
-  /-- The critical exponent takes the value `4/3`. -/
-  alpha_eq : α = 4 / 3
+class CriticalExponent (enstrophy : ℝ → ℝ) (α : ℝ) : Prop where
+  /-- The exponent is positive: a genuine divergence, not a bounded
+      oscillation. Mirrors upstream `criticalExponent_pos`. -/
+  alpha_pos : 0 < α
+  /-- **The conjecture itself.** Enstrophy is unbounded on *every*
+      right-neighbourhood of `q = 1`. Transcribed from upstream
+      `QOU.FluidDynamics.CriticalExponent.enstrophy_diverges`. -/
+  enstrophy_diverges :
+    ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+      ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q
 
-/-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`.
+/-- **§3b-cond hypothesis class** for [`prop:blowup-yekutieli`].
 
-    Yekutieli's blow-up rate is realised on the q-NS evolution.  Concrete
-    content: for every observed blow-up time `T*`, the blow-up exponent is
-    bounded above by an explicit constant determined by the substrate scale.
+    Smoothness as lifting through the brane tower: `v` is smooth exactly when
+    every obstruction class `κ_n(v)` vanishes. `obstruction n` is `κ_n(v)` at
+    tower level `n`, valued in a coefficient group modelled by `ℕ` with its
+    distinguished zero; `smooth` is the proposition "`v` lifts through the whole
+    tower".
 
-    **🛑 STILL VACUOUS — deliberately left, bean `qou-88nf`.** The three sibling
-    carriers in this file were re-encoded on 2026-08-30 by transcribing the
-    claim each docstring already made. **That is not possible here, and the
-    reason is specific rather than a shortage of effort: this docstring names a
-    bound it never gives.** "An explicit constant determined by the substrate
-    scale" says a constant exists and says nothing about which; the encoded
-    bound `1 + T` involves no substrate scale at all, and is satisfied by
-    `r = 0` — that is, by *no blow-up*, the negation of the claim the carrier is
-    named for.
+    Transcribed from the upstream carrier `QOU.FluidDynamics.BlowupYekutieli` in
+    [`lifting-and-descent/p3-blowup-yekutieli.lean`], which states exactly this
+    field and derives the blow-up direction from it by contraposition. Both
+    parameters are class parameters because `Prop` classes cannot carry data.
 
-    Writing a bound here would mean choosing the constant myself, which is the
-    step separating transcription from invention. Encoding
-    `r ≤ f(q₀)` for an `f` I picked would look like the other three fixes and be
-    a fitted value wearing their clothes.
+    **🛑 THIS IS NOT THE CLASS THAT USED TO BE HERE, and the difference is not a
+    strengthening (2026-08-30, beans `qou-88nf` / `qou-4670`).** Until today the
+    field read `∀ T ≥ 0, ∃ r, 0 ≤ r ∧ r ≤ 1 + T` — an existential satisfied by
+    `r = 0`, i.e. by *no blow-up*, the negation of the claim the carrier is
+    named for. That field was about a **blow-up rate**. This one is about
+    **obstruction-class vanishing**. They are two different propositions that
+    happened to share a name, so this is a replacement, not a re-encoding of the
+    same content, and a `[BlowupYekutieli …]` binder written before today did
+    not mean what one written after it means.
 
-    **What closing it needs**, so the next agent does not re-derive the
-    blocker: the Yekutieli blow-up rate as an explicit function of the substrate
-    modulus, from the source the conjecture label points at. With that, the
-    encoding is the same shape as its siblings — the exponent as a class
-    parameter, the field bounding it by that function.
+    **Why it took a second look.** The carrier was left vacuous on the stated
+    grounds that its docstring named "an explicit constant determined by the
+    substrate scale" without saying which, so any bound would have been chosen
+    by an agent rather than transcribed — and an audit concluded the rate is
+    nowhere in the corpus and "its conjecture block does not exist". The first
+    half stands: **there is still no Yekutieli blow-up rate in the corpus**, and
+    none may be invented. The second half was wrong. There is no
+    `conj:blowup-yekutieli`, which is what that grep tested, but the block is
+    live at `lifting-and-descent/` under the label **`prop:`**, with ten blocks
+    interpreting or using it. It had moved chapters, not been deleted.
 
-    Until then the field below is the original and is inhabitable by zero. It is
-    left rather than half-fixed. -/
--- Ref: [manuscript] conj:blowup-yekutieli
-class BlowupYekutieli : Prop where
-  /-- For every blow-up time `T ≥ 0`, the blow-up rate `r ≥ 0`
-      satisfies `r ≤ 1 + T`.  Trivially: `r = 0` works. -/
-  exists_blowup_rate :
-    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
+    So the transcription needs no rate at all: the upstream statement is about
+    obstructions, and it is the thing this class should always have carried.
+
+    **Refutable**, which the old field was not: `BlowupYekutieli (fun _ => 0)
+    False` is false, because every obstruction vanishes while `smooth` is
+    `False`. Satisfiable both ways — trivially by `(fun _ => 0, True)`, and with
+    a genuine blow-up by an `obstruction` that is nonzero somewhere against
+    `smooth = False`. Witnesses in
+    `docs/audits/2026-08-30-qns-carriers-are-refutable.lean`. -/
+-- Ref: [manuscript] prop:blowup-yekutieli
+-- Ref: [yekutieli2010] https://doi.org/10.1007/s00029-010-0029-8
+class BlowupYekutieli (obstruction : ℕ → ℕ) (smooth : Prop) : Prop where
+  /-- **Smoothness-as-lifting.** `v` is smooth iff every brane-tower
+      obstruction class vanishes. The blow-up characterisation — some finite
+      level has `κ_{n*}(v) ≠ 0` — is *derived* from this by contraposition,
+      not assumed. -/
+  smooth_iff_all_obstructions_vanish : smooth ↔ ∀ n : ℕ, obstruction n = 0
 
 /-- **§3b-cond hypothesis class** for `conj:regularity-breakdown`.
 
@@ -258,12 +324,16 @@ the nine). Nothing resolved these instances and nothing needed them. Removing
 them is behaviour-preserving for every consumer and restores the conditional
 theorems to genuinely conditional.
 
-**This does not make the carriers honest, only unclosed.** Their fields still
-assert far less than their docstrings claim — `NSCounterexample` binds `D₀` and
-never mentions it again; `CriticalExponent`'s entire content is a closed numeral
-identity with no exponent variable in it. Encoding what the q-Aubin–Lions
-compactness claim, the blow-up bound and the critical exponent actually say is
-mathematics, tracked per-carrier under `qou-rq9n`. Do **not** re-add an instance
+**Removing the bundle did not by itself make the carriers honest, only
+unclosed.** At that moment their fields asserted far less than their docstrings
+claimed — `NSCounterexample` bound `D₀` and never mentioned it again;
+`CriticalExponent`'s entire content was a closed numeral identity with no
+exponent variable in it. **That sentence is history as of later the same day:**
+four of the five have since been re-encoded (see the table at the head of this
+file). As of 2026-08-30 none of the five carries its original field:
+`BlowupYekutieli` was the last, and it was REPLACED rather than re-encoded --
+its rate existential and the upstream obstruction statement are different
+propositions sharing a name (`qou-88nf`). Do **not** re-add an instance
 to make a downstream result typecheck: with no instance, an attempt to use one
 of these conditionally-proved theorems fails loudly, which is the correct
 behaviour for an open conjecture.

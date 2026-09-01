@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:06:40.784251+00:00",
-  "commitSha": "766a531446726071965fd29785f076e1780bc036",
+  "computedAt": "2026-08-30T20:31:07.983200+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "chi_21_recovers_dim_at_q1",
-      "computed": "2.0",
-      "expected": 2.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "β_Bor projects to id ∈ S_3 under π : B_3 → S_3, so χ^{(2,1)}(β_Bor)|_q=1 = χ^{(2,1)}(id) = d_(2,1) = 2."
     },
     {
       "name": "bratteli_ratio_5_over_4",
-      "computed": "1.25",
-      "expected": 1.25,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "2·(y_(3,2)+y_(2,2,1)) / y_(2,1) at q=1 = 2·(5/24+5/24)/(2/3) = (5/6)/(2/3) = 5/4. Same for the constant-term ratio (y_(3,2)+y_(2,2,1))/(y_(3)+y_(1^3)) = (5/12)/(1/3) = 5/4."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "gap-a4-T7-bratteli-stabilization-probe",
   "scriptFile": "gap_a4_T7_bratteli_stabilization_probe.py",
-  "scriptHash": "5bc4d82d5d61",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "cc093e8c5e64",
+  "scriptCommitSha": "826c1f66c2114472bca52eda12177e71f7d04af2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

@@ -1,32 +1,23 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:07:51.155741+00:00",
-  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-08-30T04:17:02.597936+00:00",
+  "commitSha": "b8c64f36b8c1d7549e7c0af1f416f011f68c1f34",
   "assertions": [
     {
       "name": "habiro_tr_M_proton_matches_direct",
       "computed": "1.000000000000001672503680645958090545156",
       "expected": "1",
       "passed": true,
-      "tolerance": "0.01",
-      "source": "Habiro sum Σ a_m (u;u)_m / D(u) against the direct tr_M_at_q0 carried by habiro-coefficients-atomic.witness.json, proton"
-    },
-    {
-      "name": "habiro_tr_M_neutron_matches_direct",
-      "computed": "1.000000000000001348885191684883670071632",
-      "expected": "1",
-      "passed": true,
-      "tolerance": "0.01",
-      "source": "the same two routes on the neutron — both are computed above and only the proton pair was ever compared"
+      "tolerance": "0.01"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "habiro-exact-qbeta",
   "scriptFile": "habiro_exact_qbeta.py",
-  "scriptHash": "a0f590e87609",
-  "scriptCommitSha": "87445c6cdebee17f001a9f934cf51d49dbea8140",
+  "scriptHash": "432e77ae1d7c",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +25,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [

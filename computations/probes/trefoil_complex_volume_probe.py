@@ -78,6 +78,10 @@ getcontext().prec = 60
 # Found by adding the `stamp_q0` call below: the stamp resolved "proton"
 # directly against the payload, one line from a comment asserting muon. That
 # is the stamp doing its job — see bean `1j39`.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 Q0 = Decimal(Q_50_DIGIT_STR)

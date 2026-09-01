@@ -61,8 +61,12 @@ DM_CODATA = mp.mpf("1.293334")
 
 
 def substrate_hbar_q():
-    from qou_substrate.constants import Q
-    q = mp.mpf(str(Q))
+    # `constants.Q` is `_solve_q_proton_f64` -- a float64 Newton solve -- so
+    # `mp.mpf(str(Q))` would inflate a double's ~1e-16 error to this file's
+    # 40 dps and read as exact.  `q_at` runs the same proton identity at the
+    # requested precision.  Same pin, same anchor; only the arithmetic changes.
+    from qou_substrate.constants import q_at
+    q = q_at(mp.dps)
     return q, (q - 1) / q
 
 

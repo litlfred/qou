@@ -134,6 +134,16 @@ def check(name, ok, detail, w=None):
     print(f"         {detail}")
     if w is not None:
         w.add_data(name, bool(ok))
+        # bean qou-srvu. Without this the witness carried ZERO assertions and
+        # `save()` still emitted `allPassed: true` -- green while claiming
+        # nothing, indistinguishable to a consumer from a run that checked
+        # something and passed. The verdict was already computed (it prints
+        # [PASS]/[FAIL] above, is tallied into _FAILURES, and drives this
+        # script's exit code); it just never reached `assertions[]`. No
+        # threshold is chosen here and no claim is invented: `ok` is the
+        # producer's own boolean and `True` is what the exit code already
+        # compares it against.
+        w.add_assertion(name, computed=bool(ok), expected=True, source=detail)
     if not ok:
         _FAILURES.append(name)
     return ok

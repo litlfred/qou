@@ -9,7 +9,7 @@ export default definition({
   title:
     "Categorical Mordell--Weil group, $q$-Tate--Shafarevich group, and $q$-deformed $L$-function",
   uses: [
-    "thm:tannaka-krein-isomorphism",
+    "conj:tannaka-krein-isomorphism",
     "prop:descartes-elliptic-curve",
     "def:local-q-zeta-function",
   ],

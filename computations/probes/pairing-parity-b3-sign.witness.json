@@ -1,0 +1,129 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T13:12:02.322392+00:00",
+  "commitSha": "f17e4467ea8c0897bf0f4330f2dcd6111fff08ad",
+  "assertions": [
+    {
+      "name": "pairing_forces_positive_b3_for_every_delta",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "delta values giving a positive b3 contribution",
+      "source": "p(3) - 3p(2) = 3delta; the sign comes from the parities, not the coefficient. Lean: PairingParityForcesPositiveB3"
+    },
+    {
+      "name": "magnitude_does_not_survive_the_coulomb_correction",
+      "computed": "0.0809262993422177083934606541191786558284279564035479840185871",
+      "expected": "0.0809",
+      "passed": true,
+      "tolerance": "0.02",
+      "unit": "relative b2 error on the Coulomb-corrected dataset",
+      "source": "1.28% on raw isospin-averaged vs 8.09% Coulomb-corrected; the good number is the best of nine trials on the one dataset that flatters it -- convention luck, not a result"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "pairing-parity-b3-sign",
+  "scriptFile": "pairing_parity_b3_sign_probe.py",
+  "scriptHash": "de13a7b995b2",
+  "scriptCommitSha": "22da53a5874453f60dc33803708db4e07f1a8914",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pairing_parity_b3_sign_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pairing_parity_b3_sign_probe.py"
+  },
+  "description": "The odd-even pairing term DERIVES the b3 sign: 2H is odd-odd so pairing enters as -delta, A=3 is odd-A so it vanishes, giving a contribution +3delta > 0 for EVERY delta -- the first mechanism in the arc with the right sign for a principled reason. The MAGNITUDE is not derived: the 1.28% b2 prediction does not survive the physically required Coulomb correction (8.09%), so it is convention luck, not a result.",
+  "data": {
+    "sign_independent_of_delta": [
+      {
+        "delta": "0.0100000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0300000000000000000000000000000000000000000000000000000000000",
+        "positive": true
+      },
+      {
+        "delta": "0.100000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.300000000000000000000000000000000000000000000000000000000000",
+        "positive": true
+      },
+      {
+        "delta": "1.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "3.00000000000000000000000000000000000000000000000000000000000",
+        "positive": true
+      },
+      {
+        "delta": "10.0000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "30.0000000000000000000000000000000000000000000000000000000000",
+        "positive": true
+      },
+      {
+        "delta": "1000.00000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "3000.00000000000000000000000000000000000000000000000000000000",
+        "positive": true
+      }
+    ],
+    "magnitude_by_dataset": {
+      "raw_isospin_average|q_factorial": {
+        "b2_pred": "1.41070952065892699767458887336982769922131195750511019960543",
+        "err": "0.365849611192093542698532022391679016240868913001955077980852"
+      },
+      "raw_isospin_average|n_factorial": {
+        "b2_pred": "1.51255048370552881110837288471510345184487041676044984803836",
+        "err": "0.320069466260195443449436171099289626964182762122138757642562"
+      },
+      "raw_isospin_average|central_binomial": {
+        "b2_pred": "2.19619295434453612066293350965938990351072446692376885457551",
+        "err": "0.0127545072182899656288342825403937614844977564957298845161327"
+      },
+      "raw_3H|q_factorial": {
+        "b2_pred": "1.15552909678006586300946364490410952491088756750897558762331",
+        "err": "0.480559806770387025115519760704756943213967933384506342124899"
+      },
+      "raw_3H|n_factorial": {
+        "b2_pred": "1.25046474238869106302346921863624143065852173401865890407729",
+        "err": "0.437883780492263586930580344771829478188366912156330117720351"
+      },
+      "raw_3H|central_binomial": {
+        "b2_pred": "1.88775289613377076026300501125760323281242113008081297407874",
+        "err": "0.151406284904548688970009069068116186961565301998738911847741"
+      },
+      "coulomb_corrected|q_factorial": {
+        "b2_pred": "1.26621905244579984523118834912358067296619833894502666454781",
+        "err": "0.430801810957210513568358474059535439778686586650005441713618"
+      },
+      "coulomb_corrected|n_factorial": {
+        "b2_pred": "1.36713140905535772969013588530290809732518840068532557074395",
+        "err": "0.385439098618257469842823339982910781740193481009769198712112"
+      },
+      "coulomb_corrected|central_binomial": {
+        "b2_pred": "2.04454028979222025286645112781658439048264616904959359467411",
+        "err": "0.0809262993422177083934606541191786558284279564035479840185871"
+      }
+    },
+    "verdict": {
+      "sign_derived": true,
+      "sign_why": "p(3) - 3p(2) = 3delta > 0 from the parities alone; 2H is odd-odd (penalised, the textbook reason it is weakly bound) and A=3 is odd-A",
+      "first_mechanism_with_a_derived_sign": true,
+      "magnitude_derived": false,
+      "magnitude_why_not": "the 1.28% b2 prediction is dataset-dependent and degrades to 8.09% under the physically required Coulomb correction",
+      "pairing_route_refuted": false,
+      "status": "strongest candidate the arc has produced; sign derived, size open"
+    }
+  }
+}

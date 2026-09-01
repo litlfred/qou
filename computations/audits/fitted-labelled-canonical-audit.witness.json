@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T19:08:42.070196+00:00",
-  "commitSha": "4a910ab33cdea137d512a390b002c11d01f83842",
+  "computedAt": "2026-08-30T12:58:45.389955+00:00",
+  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 13,
+      "computed": 14,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 30,
+  "durationMs": 5,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -43,9 +43,9 @@
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 13,
-    "flagged_script_count": 10,
-    "scripts_scanned": 3169,
+    "total_issues": 14,
+    "flagged_script_count": 11,
+    "scripts_scanned": 3460,
     "rows": [
       {
         "path": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
@@ -164,6 +164,18 @@
             "var": "S_MUON",
             "literal": "0.00968298",
             "context_snippet": ", but the curve is not, so\n      both are reported.\n\nScope (STRICT). This derives nothing about the VALUE of A_ω and wires nothing.\nIt states, in falsifiable form, what an independent route has to reproduce. The\nmeasured"
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_delta_net_four_values_probe.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 549,
+            "var": "T_CONSENSUS_49",
+            "literal": "0.0445860283330804029291040528152801211016800484547",
+            "context_snippet": "every z ----------\n    # PRECISION PROVENANCE.  The .md block RENDERS 10 digits\n    # (+0.0445860283), but that is the rendering, not the record.  Four\n    # independent witnesses agree on this quantity to 49 digits:\n   "
           }
         ]
       },

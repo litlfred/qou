@@ -1,0 +1,165 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T09:41:13.849031+00:00",
+  "description": "Two zero-fit consistency tests from QOU.MassTheory.AggregatorFamilyExclusions, run against the AME2020 light-nucleus grid. Result: the volume-minus-surface two-parameter family -- the canonical member of the convex class that survived AggregatorConvexityDichotomy -- is EXCLUDED, as is every other correction shape tried, and no pure power law fits either. The surviving aggregator must be convex with an accelerating local exponent, which neither route supplies.",
+  "q0_pin": "not applicable -- consumes no framework quantity",
+  "free_parameters": 0,
+  "phi_MeV": [
+    "2.224566",
+    "8.0999205",
+    "28.295673"
+  ],
+  "test1_determinants": [
+    {
+      "grid": "bond_count",
+      "psi": "x^(2/3)  [surface]",
+      "det3": "-9.9031097655378",
+      "normalised": "0.01227950661",
+      "family_excluded": true
+    },
+    {
+      "grid": "bond_count",
+      "psi": "x^(1/2)",
+      "det3": "-13.889838135063",
+      "normalised": "0.02194111574",
+      "family_excluded": true
+    },
+    {
+      "grid": "bond_count",
+      "psi": "x^(1/3)",
+      "det3": "-17.319968194624",
+      "normalised": "0.03424757592",
+      "family_excluded": true
+    },
+    {
+      "grid": "bond_count",
+      "psi": "log(1+x)",
+      "det3": "-7.2051642659832",
+      "normalised": "0.01446775298",
+      "family_excluded": true
+    },
+    {
+      "grid": "bond_count",
+      "psi": "x^2",
+      "det3": "46.902987",
+      "normalised": "0.006311570189",
+      "family_excluded": true
+    },
+    {
+      "grid": "bond_count",
+      "psi": "x  [degenerate]",
+      "det3": "0.0",
+      "normalised": "0.0",
+      "family_excluded": false
+    },
+    {
+      "grid": "mass_number",
+      "psi": "x^(2/3)  [surface]",
+      "det3": "-8.1172218091388",
+      "normalised": "0.01405803083",
+      "family_excluded": true
+    },
+    {
+      "grid": "mass_number",
+      "psi": "x^(1/2)",
+      "det3": "-10.673748644698",
+      "normalised": "0.02238397217",
+      "family_excluded": true
+    },
+    {
+      "grid": "mass_number",
+      "psi": "x^(1/3)",
+      "det3": "-12.46638313749",
+      "normalised": "0.0315304651",
+      "family_excluded": true
+    },
+    {
+      "grid": "mass_number",
+      "psi": "log(1+x)",
+      "det3": "-6.8783184901045",
+      "normalised": "0.01809513058",
+      "family_excluded": true
+    },
+    {
+      "grid": "mass_number",
+      "psi": "x^2",
+      "det3": "66.870102",
+      "normalised": "0.02239164878",
+      "family_excluded": true
+    },
+    {
+      "grid": "mass_number",
+      "psi": "x  [degenerate]",
+      "det3": "0.0",
+      "normalised": "0.0",
+      "family_excluded": false
+    }
+  ],
+  "test2_local_exponents": [
+    {
+      "grid": "bond_count",
+      "interval": "1->3",
+      "p": "1.1762952405799"
+    },
+    {
+      "grid": "bond_count",
+      "interval": "3->6",
+      "p": "1.804601798433"
+    },
+    {
+      "grid": "bond_count",
+      "interval": "spread",
+      "p": "0.6283065578531"
+    },
+    {
+      "grid": "mass_number",
+      "interval": "2->3",
+      "p": "3.1871852363143"
+    },
+    {
+      "grid": "mass_number",
+      "interval": "3->4",
+      "p": "4.3480451804202"
+    },
+    {
+      "grid": "mass_number",
+      "interval": "spread",
+      "p": "1.1608599441059"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "the volume-minus-surface family c*x - a*x^(2/3) is EXCLUDED on both grid readings -- every (c,a), nothing fitted",
+      "passed": true
+    },
+    {
+      "name": "every candidate correction shape tried is excluded on both grids (the two-parameter route is empty here)",
+      "passed": true
+    },
+    {
+      "name": "CONTROL: the degenerate shape psi = x gives det3 = 0, so the test detects genuine degeneracy rather than always firing",
+      "passed": true
+    },
+    {
+      "name": "no pure power law: the two extracted exponents differ on both grids by more than 0.1",
+      "passed": true
+    },
+    {
+      "name": "the extracted exponent INCREASES along the grid, i.e. the convexity accelerates rather than settling",
+      "passed": true
+    }
+  ],
+  "scope": "(b) for each family as stated -- the invariant is the determinant identity det3_eq_zero_of_realizable and the log-ratio identity powerLaw_log_ratio, both proved in the Lean, not cited. It excludes NOTHING outside those families.",
+  "caveats": [
+    "Test 1 excludes a TWO-parameter family. The full semi-empirical formula also carries Coulomb, asymmetry and pairing terms; on Z = N light nuclei the asymmetry term vanishes, but three points cannot test a three-or-more parameter form at all -- it is UNDERDETERMINED, hence untestable here, NOT excluded here. Do not report these determinants as excluding 'the SEMF'.",
+    "The semi-empirical formula is calibrated for A >~ 20 and is known to fail on the light nuclei independently of anything in this framework; 4He is doubly magic. So this exclusion is unsurprising as physics. Its value is that it is now EXACT and zero-fit rather than a remembered fact, and that it removes the obvious candidate before anyone spends a tranche on it.",
+    "det3 magnitudes are not comparable across shapes -- only the normalised column is. The psi = x row is a deliberate control: it is column-degenerate with x, so its det3 must vanish, and it does.",
+    "A vanishing det3 would mean CONSISTENT WITH, never derived: two parameters on three points leaves one residual, and passing one residual is weak evidence."
+  ],
+  "lean": "QOU/MassTheory/AggregatorFamilyExclusions.lean (6 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/aggregator-convexity-divided-difference.witness.json",
+    "probes/mayer-threebody-sign-threshold.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies"
+}

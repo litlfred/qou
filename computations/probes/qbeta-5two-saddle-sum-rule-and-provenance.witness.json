@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:31:15.516970+00:00",
-  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:42:02.952575+00:00",
+  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
   "assertions": [
     {
       "name": "sum_rule_exact",
@@ -38,19 +38,19 @@
     },
     {
       "name": "legacy_pair_internally_inconsistent",
-      "computed": "True",
-      "expected": "True",
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "unit": "|V3_legacy + 2·ImV1_legacy| > 1.0e-5",
-      "source": "the pair violates the exact relation => the two were computed independently; violation 7.3031e-5 vs the G5 floor 1.0e-5"
+      "tolerance": 0,
+      "source": "the pair violates the exact relation (residual exceeds EXACT_TOL) => the two were computed independently; residual in data.legacy_pair_inconsistency"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
   "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
-  "scriptHash": "52954f198418",
-  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
+  "scriptHash": "02c0b4ecd9a5",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -75,6 +75,7 @@
   },
   "description": "Exact 5_2 saddle sum rule sum_j Re V_j = -3 pi^2/2 (hence V3 = -2 Re V1 - 3 pi^2/2, and sum_j V_j^ext = 0), plus the provenance verdict on the two long-unexplained corpus literals. auditOnly; comparison to published mathematics; no fit; nothing wired.",
   "data": {
+    "legacy_pair_inconsistency": "0.0000730306",
     "identities": {
       "sum_Re_V": "-14.8044066016340379282517364998",
       "minus_3_pi2_over_2": "-14.8044066016340379282517364998",
