@@ -1055,6 +1055,33 @@ tolerance was tighter than the instrument. **When a claim is algebraic, test it
 algebraically.** Three root-finding artefacts have misled this session:
 `mp.eig` non-convergence, a 7.75e9 ratio from a repeated root, and this.
 
+## 2026-09-01 (fifth pass) — the pairwise route is CLOSED FROM BOTH ENDS
+
+Completes the minimal-polynomial argument from adjacent crossings to **arbitrary
+separation**. A pair at separation `s > 1` exchanges via the **band generator**
+`a_ij = (s_{j-1}...s_{i+1}) s_i (s_{i+1}^-1...s_{j-1}^-1)`, a **conjugate of
+`s_i` by construction**. Conjugation preserves spectrum ⇒ spectrum `{q, -1/q}`
+⇒ **`R = 1` for that pair too**.
+
+Verified two ways, not asserted: `a_ij` really is the `(i,j)` transposition
+(checked in `S_4` at separations 1, 2, 3), and the H_3 instance
+`a_02 = s2 s1 s2^-1` satisfies the Hecke quadratic to `5.584e-42`.
+
+**⇒ THE ENTIRE PAIRWISE-EXCHANGE PICTURE HAS R = 1** — every pair, every
+separation, every representation. The channel asymmetry cannot come from any
+single exchange.
+
+**How it composes:** `allpairs_decay_turnover_exclusion_probe` ruled out
+*summing* pairwise contributions with distance decay; this rules out the
+pairwise contributions *themselves* carrying the asymmetry. **Closed from both
+ends, by two independent arguments sharing no machinery.**
+
+**Surviving space:** only genuinely NON-CONJUGATE multi-crossing objects — a
+product `sigma_i sigma_j`, or `Delta_bind` — and those are not exchanges of a
+pair. Obstacle is definitional, not a bound: which operator are the two isospin
+channels the spectral projectors OF, once the object is not a pair exchange?
+**That is the gate.**
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
