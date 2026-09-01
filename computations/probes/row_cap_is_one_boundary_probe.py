@@ -86,6 +86,56 @@ far-commuting product.  Nature needs `22.25`.
 same side of the same cap.**  That is a structural statement about where to
 look, reached from two directions that share no machinery.
 
+## 🛑 SHARPER THAN "THE TRACE CANNOT SEE IT" — THE CONVENTION IS *DEFINED* BY IT
+
+My first framing above says the trace *happens to be* blind above two rows.
+That understates it, and the corpus proves the stronger statement.
+
+Bean `qou-3qrv` (2026-08-08), with `MarkovTraceTLUniqueness.lean` sorry-free
+(`lean`-direct exit 0, `#print axioms` clean):
+
+    A normalised Markov trace on H_3(q) is fixed by (tr 1, tr s0, tr s0 s1) =
+    (1, z, z^2), so the weights are a 3x3 solve in the Ocneanu parameter z. The
+    Temperley-Lieb condition y_(1^3)(z) = 0 has exactly TWO roots: z = q,
+    degenerate (weights (1,0,0) -- it kills the 2-row block too, so it is not
+    faithful on TL_3), and z = q^3/(q^2+1), whose weight vector is exactly
+    ([4]_q/[2]_q^3, 1/[2]_q^2, 0) = CONVENTION D.  So D is the UNIQUE Markov
+    trace factoring through TL_3 and faithful on it.
+
+`z = q^3/(q^2+1)` **is convention D**, which the owner ruled canonical on
+2026-08-15.  So the canonical observable is not incidentally blind above two
+rows -- **`y_(1^3) = 0` is the condition that SELECTS it, uniquely.**
+
+Measured, exactly, by `computations/probe3qrv_tl.py` on the Borromean baryon:
+
+    lambda = (3,)      y = 0.50540422650393080248   chi = 1.0   y*chi = 0.5054...
+    lambda = (2,1)     y = 0.24729788674803459876   chi = 1.994 y*chi = 0.4932...
+    lambda = (1,1,1)   y = 0                        chi = 1.0   y*chi = 0
+
+    D - C = 0,  D - TL = 0   (exact, as rational functions of t = sqrt(q))
+
+**The blind block's character is NONZERO (chi = 1.0); its WEIGHT is exactly
+zero.**  So the structure is present and the observable annihilates it -- not
+approximately, identically, and by the defining property of the canonical
+convention.
+
+That is precisely the tower reading: the higher sector exists, contributes
+nothing to any trace, and is reachable only by *subtraction* -- which is what
+mass-minus-constituents already is.
+
+`qou-3qrv` also poses the resulting question in as many words, and it is the
+same question the eightfold chapter poses from the flavour side:
+
+    does the mass fibre functor land in Rep(SU_q(2)) ~ TL (no 3-row image) or
+    in the full H_3(q)?
+
+    eightfold:  dim V = 2 supplied, N = 3 needed, "no q raises the row cap"
+
+**Three chapters, one question.**  `qou-3qrv` asks it about the fibre functor,
+the eightfold asks it as the `N = 3` blocker, Step 27 measures it as
+trace-blindness at `n = 6`.  Convention C is the full-Hecke Ocneanu trace and
+does **not** kill the 3-row block; D does; D is canonical.
+
 ## THE CONVERGENCE THE CORPUS ALREADY HALF-CONTAINS
 
 The corpus-grep turned up work that must be cited before any of the above is
@@ -292,6 +342,41 @@ def main() -> int:
     print("  => the SM's missing N = 3 and binding's missing channel asymmetry")
     print("     are on the SAME SIDE of the SAME CAP, reached from two")
     print("     directions that share no machinery.")
+
+    print("\n[4a] 🛑 SHARPER THAN 'THE TRACE CANNOT SEE IT'")
+    print("-" * 78)
+    print("  Section [1] says the trace HAPPENS to be blind above two rows.")
+    print("  That understates it, and the corpus proves the stronger statement.")
+    print()
+    print("  qou-3qrv + MarkovTraceTLUniqueness.lean (sorry-free):")
+    print("    'A normalised Markov trace on H_3(q) is fixed by (1, z, z^2), so")
+    print("     the weights are a 3x3 solve in the Ocneanu parameter z.  The")
+    print("     Temperley-Lieb condition y_(1^3)(z) = 0 has exactly TWO roots:")
+    print("     z = q, degenerate, and z = q^3/(q^2+1), whose weight vector is")
+    print("     ([4]_q/[2]_q^3, 1/[2]_q^2, 0) = CONVENTION D.  So D is the")
+    print("     UNIQUE Markov trace factoring through TL_3 and faithful on it.'")
+    print()
+    print("  z = q^3/(q^2+1) IS convention D, ruled canonical 2026-08-15.")
+    print("  => the canonical observable is NOT incidentally blind above two")
+    print("     rows.  y_(1^3) = 0 is the condition that SELECTS it, uniquely.")
+    print()
+    print("  Measured exactly by computations/probe3qrv_tl.py on the Borromean")
+    print("  baryon: y_(1,1,1) = 0 while chi_(1,1,1) = 1.0, so the blind block's")
+    print("  CHARACTER is nonzero and its WEIGHT is identically zero; D - TL = 0")
+    print("  as rational functions.")
+    print()
+    print("  That is precisely the tower reading: the higher sector exists,")
+    print("  contributes nothing to any trace, and is reachable only by")
+    print("  SUBTRACTION -- which is what mass-minus-constituents already is.")
+    print()
+    print("  THREE CHAPTERS, ONE QUESTION:")
+    print("    qou-3qrv : does the mass fibre functor land in Rep(SU_q(2)) ~ TL")
+    print("               (no 3-row image) or in the full H_3(q)?")
+    print("    eightfold: dim V = 2 supplied, N = 3 needed, 'no q raises the")
+    print("               row cap'")
+    print("    Step 27  : 588 of 720 invisible at n = 6")
+    print("  Convention C is the full-Hecke Ocneanu trace and does NOT kill the")
+    print("  3-row block; D does; D is canonical.")
 
     print("\n[5] THE CONVERGENCE THE CORPUS ALREADY HALF-CONTAINS")
     print("-" * 78)
