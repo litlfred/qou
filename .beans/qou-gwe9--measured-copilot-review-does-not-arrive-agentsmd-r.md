@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-01T03:23:39Z
+updated_at: 2026-09-01T04:34:29Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -875,3 +875,47 @@ look like a rate; one does not.
 
 **Trial 1 (`qou#6406`) final state:** still `[]` at 03:22:41Z, ~6h50m after its
 merge. Remains labelled TRUNCATED and must never be quoted as a timed negative.
+
+
+---
+
+## 🛑 2026-09-01 — A REVIEW ARRIVED, AND I NEVER REQUESTED IT
+
+`qou#6411`, review `5074008688` by `copilot-pull-request-reviewer[bot]`,
+submitted **2026-09-01T04:26:48Z** on commit `128d7e486c`, state `COMMENTED`,
+"🟡 Changes recommended", 2 comments, effort level "Lite".
+
+**I did not call `request_copilot_review` on #6411.** Not once. The review
+arrived unprompted, minutes after the branch was pushed.
+
+**This changes the shape of the question.** Every trial recorded above assumed
+arrival requires a request and measured the request→arrival interval. If
+reviews also fire on push, then:
+
+- the trial-2 negative (`[]` at T+6h21m on `qou#6407`) is **still a clean
+  negative**, but it is a negative about *that PR*, not about the mechanism —
+  #6407 got neither a requested nor an unrequested review;
+- the "quota" reading is weakened: a request that returns silently may simply
+  be redundant with an automatic trigger that did or did not fire for other
+  reasons;
+- **the protocol in `copilot-review-arrival.md` is measuring the wrong
+  variable.** It controls for pushes after the request. It does not control
+  for the push that *creates* the PR, which may be the actual trigger.
+
+**Do NOT conclude "reviews are automatic".** One unrequested arrival against
+one clean unrequested-and-unarrived case (#6407) is n=1 each way. What is now
+established is narrower and more useful: **arrival is not gated on an explicit
+request**, so any future trial must record whether a request was made *and*
+treat the PR-creating push as a candidate trigger.
+
+**The findings were real**, which matters for the merge-gate question
+separately from the timing one: three findings, all correct, all mine — two
+overclaims ("four decades" for a x1024 sweep = 3.0 decades; "constant to 6
+digits" for 4 sig figs / 7.14e-5 relative) and an unused `tr`/`dt` pair. Fixed
+in `4dafadc2b9`. So when a review does arrive here it is worth having, and the
+"merge without waiting" posture has a real cost.
+
+**Still NOT flipping the `merge-coordinator/MEMORY.md` TRAP row.** Its current
+wording — rationed, intermittent, `get_check_runs` = 0 does not discriminate —
+survives this observation unchanged. What needs updating is
+`copilot-review-arrival.md`'s protocol, which controls for the wrong thing.
