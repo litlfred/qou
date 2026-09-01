@@ -221,3 +221,15 @@ under 200 lines — prune the log or split a section out, never the TRAPs.
   `3k+1` EM, `3k` intra) and the rate follows the generator, not `beta`: the
   same `sigma^-1` gives `+0.907` strong and `-0.600` EM, opposite signs. Scope
   trap: AME binding is NUCLEAR, so compare the strong channel ALONE.
+  **The chain/all-pairs choice has a measured cost, not just a convention.** The
+  chain attachment functional is exactly rank one (spread `<1e-12`); all-pairs is
+  not (`0.196..0.696`), and the gap is the model's entire many-body content —
+  produced by the band generator routing a non-adjacent bond *through* the
+  intervening nucleon. That term is **negative** at all eight `A=3` orderings
+  (`-9%` to `-15%`), so a naive all-pairs sum **overestimates** binding; and it
+  privileges the middle nucleon (`pnp` vs `ppn` `4.17%`, `npn` vs `nnp` `5.05%`
+  on identical bond multisets) while reversal is exact — a labelling artifact,
+  since a nucleus has no middle. Before spending more on bond topology, know the
+  ceiling: `B(4He)/B(2H) <= 6.0643` against AME `12.7196`, short `2.0975x` with
+  `alpha` cancelling, and every many-body term measured has the sign that makes
+  it worse.

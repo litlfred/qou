@@ -104,3 +104,47 @@ electron content, so the quantity to compare against them is the **strong channe
 alone**. Including the EM term moves `L(3H)/L(3He)` from `1.20` to `2.97` against
 an experimental `1.10`. And `atom_braid_word_3A` has **no electrons at all** —
 the EM channel exists only in the collapsed `H_3` formalisms.
+
+## WHAT THE ALL-PAIRS CHOICE ACTUALLY BUYS — and what it costs
+
+The section above says "do not silently pick one" and leaves it there. Measured
+since (`three_body_term_has_the_wrong_sign_probe`), the difference between the
+two topologies has a name and a mechanism:
+
+* The **chain** attachment functional `P -> tr(P.A)/tr(P)` is **exactly rank
+  one** — one constant over 20 random prefix words, spread `< 1e-12`. That is
+  why the chain telescopes and why `A = 4` is reachable without `H_12`.
+* The **all-pairs** attachment is **not** — `0.196 .. 0.696` on the same
+  prefixes. The gap between them is the entire many-body content of the model.
+
+The mechanism is the band generator `(T5 T4 T3)(T2+d)(T3 T4 T5)^-1`: it routes a
+non-adjacent bond **through the intervening nucleon's strands**, so it does not
+commute past the prefix. Two consequences you need before quoting either
+topology:
+
+1. **The three-body term is NEGATIVE at every A=3 flavour ordering**, `-9.04 %`
+   to `-15.04 %` of the naive pairwise sum. All-pairs therefore *reduces*
+   binding relative to summing bond constants — so **a naive all-pairs sum is an
+   overestimate**, and quoting it as a prediction overstates binding by ~10 %.
+2. **It privileges the MIDDLE nucleon.** Reversal is exact (`pnn` = `nnp` to
+   `0.0`), but permutation is not: `pnp` vs `ppn` differ by `4.1686 %` and `npn`
+   vs `nnp` by `5.0477 %` on *identical bond multisets*. The only difference is
+   which nucleon the routing passes through. A physical nucleus has no middle,
+   so this is a labelling artifact of embedding the bond graph in a line — the
+   `~4 %` ordering sensitivity measured earlier, now with a cause.
+
+**And the ceiling this implies, which is the number to know before spending more
+time on bond topology at all:** `B(2H)` is exact (one bond admits no many-body
+term) and the naive `B(4He)` contains no many-body term, so
+`B(4He)/B(2H) <= 6.0643` against an AME `12.7196` — **short by `2.0975x`, with
+`alpha` cancelling**. No normalisation fixes a ratio. Closing it needs large
+*positive* many-body terms; all eight measured are negative.
+
+## TRAP — comparing a far bond against the wrong adjacent one
+
+In ordering `ppn` the far bond spans nucleons 1 and 3, which are `p` and `n`, so
+it must be compared against the adjacent **p-n** bond at generator 5 — not the
+`p-p` bond at generator 2. Against the wrong one it reads as a `0.187`
+discrepancy and looks exactly like distance decay; against the right one it
+agrees to `1.11e-15`. An assertion caught this mid-probe. If you think you have
+found distance decay in the trace, check the bond *types* first.
