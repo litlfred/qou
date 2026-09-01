@@ -59,6 +59,28 @@ where the `1/(1-r)` shortcut gives `6992.33`.
 And `delta` is `flavor_split_LEADING` -- itself a leading term, not exact --
 so every figure here inherits that truncation too. Flagged, not fixed.
 
+**That constant is `tanh(ln q_0)`, and it is EXACT -- identified by a sibling,
+confirmed here.** `main` landed `qou-cds1` Step 28
+(`qbeta_bond_decay_rates_from_transfer_spectrum_probe`), reaching the same
+object independently and giving the closed form `tanh(ln q_0) = 0.103963710`
+where this probe had only the number. The two agree because my expansion
+coefficient IS that function, by an exact identity I had not noticed:
+
+    (q + 1/q)^2  =  q^2 + 2 + 1/q^2  =  4 + h^2        (since h = q - 1/q)
+    =>  2*sqrt(1 + h^2/4)  =  sqrt(4 + h^2)  =  q + 1/q
+    =>  h / (2*sqrt(1 + h^2/4))  =  h/(q + 1/q)  =  tanh(ln q).
+
+Verified at 50 dps: all three forms give `0.10396371005241014568`, pairwise
+agreement `1.67e-52`.  So the law is
+
+    1 - r_pn  =  tanh(ln q_0) * delta  +  O(delta^2)
+
+with a named closed form, not an empirical constant.  **Do NOT carry the
+sibling's EM reading of it**: they downgraded that themselves (`qou-i9gk`,
+`main` `85c2bb0468`) -- `tanh(ln q)` is "odd part over even part", which any
+bar decomposition produces, so the match to the taxonomy's EM ratio is formal.
+The closed form stands; the interpretation does not.
+
 `(1-r)/delta` is constant across a x1024 sweep of `delta` (3.0 decades):
 `0.1039562759 -> 0.1039637028`, agreeing to **4 significant figures** with a
 **relative variation of 7.14e-5**, against the probe's `1e-4` assertion. That
@@ -200,6 +222,13 @@ def main() -> int:
     root = mp.sqrt(t * t - 4 * Dt)
     exact = 2 * t / (root + t)              # EXACT, no expansion
     approx = h * dx / (2 * mp.sqrt(1 + h**2 / 4))   # small-t expansion
+    # the coefficient is EXACTLY tanh(ln q): (q+1/q)^2 = 4 + h^2, so
+    # 2*sqrt(1+h^2/4) = q + 1/q, hence h/(2*sqrt(1+h^2/4)) = tanh(ln q).
+    # Identified by the sibling qou-cds1 Step 28; asserted here.
+    _tanh = mp.tanh(mp.log(q))
+    assert abs(h / (2 * mp.sqrt(1 + h**2 / 4)) - _tanh) < mp.mpf(10)**-45
+    assert abs(h / (q + 1 / q) - _tanh) < mp.mpf(10)**-45
+    print(f"  expansion coeff = tanh(ln q_0) = {fmt(_tanh, 20)}  (EXACT)")
     meas = 1 - ratio(d_pn)
     print("  EXACT closed form (no expansion):")
     print("    1 - r = 2t / (sqrt(t^2 - 4D) + t),   t = h*delta/2, D = det < 0")
