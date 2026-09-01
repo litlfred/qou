@@ -5485,3 +5485,95 @@ The short model is closed **for all `q`**. The long model's phase is excluded
 **by the calibration**, not by inspection. Neither tower — Hecke or cyclotomic —
 carries an elliptic curve or a small enough phase. What remains is unchanged from
 Step 25: not a reading, but a construction the corpus does not have.
+
+---
+
+## Step 27 — the level-`k` operator IS binding, and the trace is blind to 588 of the 720 dimensions it lives in
+
+**Artifacts.**
+[`qbeta_level_k_binding_operator_probe.py`](../computations/qbeta/qbeta_level_k_binding_operator_probe.py)
+(8/8) ·
+[`QOU/QBeta/TraceBlindSector.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/TraceBlindSector.lean)
+(8 theorems, sorry-free) ·
+[audit](../docs/audits/2026-09-01-qbeta-level-k-binding-operator.md).
+
+### 🛑 Correction to Step 25, mine
+
+Step 25 said "the corpus is H₃-valued at every `A`, so the level-`k` avenue is not
+instantiated", from `build_atom_nf` returning a 6-vector at every `A`. **That reads
+the evidence backwards**, and `qou-tower` had already named the cause:
+`build_atom_nf_mp` applies the H₃ Gröbner–Shirshov reduction **after every
+crossing**. A 6-vector at every `A` is not evidence the atom *lives* in H₃ — it is
+evidence H₃ is where the chain can **observe** it. `atom_braid_word_3A` is the
+faithful object and its `include_inter` switch is composite-vs-constituents.
+
+### 1. The construction — binding, done on the operators
+
+`Δ_bind = β_atom − β_free ∈ H_{3A}(q)`. `tr_M` is linear, so `tr_M(Δ_bind)` is the
+binding number the corpus already computes — but `Δ_bind` is an **operator**, and
+an operator has a spectrum no linear functional determines.
+
+Deuteron (`3A = 6`), exact in all 11 blocks:
+`β_atom = P·I·N`, `β_free = P·N` ⟹ **`Δ_bind = P·(I−1)·N`**.
+`β_free` uses only gens `{0,1,3,4}` and IS `H₃ ⊗ H₃`; `I−1 = σ₂ + (d−1)·1` is not.
+**So `Δ_bind` is genuinely `H₆`-valued and Step 24's branching argument does not
+reach it.** Validated against the corpus's `chi_lambda_of_word` to `5.4e-15`.
+
+### 2. THE FINDING — the blind spot is structural, not accidental
+
+Convention D is the SU(2)/Temperley–Lieb trace, so `ω_λ = 0` on every partition
+with **> 2 rows** — measured `< 2e-16` on seven of eleven, and confirmed by
+arithmetic: `Σd² = 720 = 6!` total, `132 = C₆ = dim TL₆` visible.
+
+> **588 of 720 dimensions (81.7 %) are invisible**, and the binding character is
+> **largest in an invisible block**: `χ_(3,2,1) = −9.598` vs `+0.009` in the
+> visible 1-dim block.
+
+### 3. The blind sector holds the first small phases in the arc
+
+| λ | dim | vis | eigenphase |
+|---|---|---|---|
+| `(3,2,1)` | 16 | **no** | `0.0252506` |
+| `(2,2,1,1)` | 9 | **no** | `0.0195531` |
+
+Required: `0.0447444`. Every prior candidate was **above** it (Step 25: `4.41×`;
+Step 26 cyclotomic: `24.8×`). **These are the first below.**
+
+### 4. 🎯 TARGET, NOT A RESULT — the 0.13 % sum
+
+`0.0252506 + 0.0195531 = 0.0448038` vs required `0.0447444`. **Wall artefact:**
+`θ₂ → 0` at the `(2,2,1,1)` wall `q_w = 1.1121238`, so the sum sweeps down through
+everything and a crossing is guaranteed. It is at `q* = 1.109988469` =
+**`1.07e7 σ_q₀`**. `q*` is `0.19200 %` below the wall, `q₀` is `0.19289 %` — both
+hard against the **same** degeneracy, exactly Step 26 §5's structure. And "sum of
+two block eigenphases" has **no derivation**. Recorded to check a future
+derivation AGAINST; never a criterion.
+
+### 5. How far it reaches — blindness deepens super-exponentially
+
+Visible share is `C_n/n!`, `n = 3A`: **83.3 %** (A=1) → **18.3 %** (A=2) →
+**1.34 %** (A=3) → **7.5e-6 %** (A=6).
+
+### 6. ⚠️ The corpus's word is a nearest-neighbour CHAIN, not all pairs
+
+`ordering = ['p']*Z + ['n']*N`, interface at `gen 3k+2` for `k < A−1`: `A−1`
+couplings where all pairs would be `A(A−1)/2`. Deficit `(A−1)(A−2)/2` — **zero at
+A=2**, so §1–§4 are exact for the deuteron. From A=3 it bites: permuting the
+arbitrary ordering (`ppn`/`pnp`/`npp`) moves the binding character by **22.54 %**,
+and all-pairs coupling would show none by symmetry. **A first-order modelling
+choice at A≥3 that every heavy-nucleus number inherits.**
+
+**NOT proposed here:** an all-pairs word with distance decay. A decay rate per
+bond type is three free parameters with no derivation, and a non-adjacent nucleon
+pair has **no single generator to sit on** (`σ_g` couples `g`,`g+1` only), so the
+coupling is a modelling choice, not a letter to insert.
+
+### Where the arc stands after Step 27
+
+The level-`k` operator exists, is validated, and is **binding**. The observable is
+blind to 81.7 % of it at A=2 and 98.7 % at A=3, structurally. The only small
+eigenphases in the corpus are in that blind sector. Two open items, in order:
+**(a)** the all-pairs coupling word for A≥3 — a construction, needing an owner
+call on the decay convention; **(b)** whether anything derives a *combination* of
+block eigenphases, which is what the 0.13 % target would need before it could be
+anything but a coincidence.

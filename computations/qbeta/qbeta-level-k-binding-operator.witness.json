@@ -1,0 +1,356 @@
+{
+  "computation": "qbeta-level-k-binding-operator",
+  "engine": "mpmath",
+  "description": "qou-cds1 Step 27. CORRECTS Step 25's 'the level-k avenue is not instantiated'. `build_atom_nf` returning a 6-vector at every A is not evidence that the atom lives in H_3 \u2014 it is evidence that the production chain reduces to H_3 after every crossing (bean qou-tower), i.e. that H_3 is where the atom can be OBSERVED. The faithful object is `atom_braid_word_3A`, whose `include_inter` switch is exactly composite-vs-constituents. Binding is a DIFFERENCE of observations, so the level-k operator is the same difference taken on the OPERATORS: Delta_bind = beta_atom - beta_free. For the deuteron it factors exactly as P.(I-1).N (2.1e-40 in all 11 blocks of H_6), and since I - 1 carries sigma_2 while beta_free lives in H_3 (x) H_3, Delta_bind is genuinely H_6-valued and Step 24's branching argument does not reach it. Validated against the corpus's own `chi_lambda_of_word` to 5.4e-15. THE FINDING: convention D is the SU(2)/Temperley-Lieb trace, so omega_lambda vanishes on every partition with more than two rows \u2014 measured < 2e-16 on seven of eleven shapes, and confirmed by dimension arithmetic (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). 588 of 720 dimensions are invisible to the observable, and the binding character is LARGEST in an invisible block (chi_(3,2,1) = -9.598). The only small eigenphases in the corpus live there: 0.0252506 in (3,2,1) and 0.0195531 in (2,2,1,1), the first values in this arc BELOW the required 0.0447444. They sum to it within 0.13 %, but that is a wall artefact: theta_2 collapses at the (2,2,1,1) ellipticity wall q_w = 1.1121238, the crossing is at q* = 1.109988469 = 1.07e7 sigma_q0 from the pin, and 'sum of two block eigenphases' has no derivation behind it.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "level_k_operator_exists_and_is_genuinely_H6_valued",
+      "passed": true,
+      "detail": "Delta_bind = beta_atom - beta_free factors exactly as P.(I-1).N to 2.37e-30 in all 11 blocks; beta_free uses only gens {0,1,3,4} and is H_3 (x) H_3, while I - 1 carries sigma_2 with coefficient 1. So Delta_bind is genuinely H_6-valued and Step 24's branching argument does not reach it. CORRECTS Step 25's 'the level-k avenue is not instantiated'"
+    },
+    {
+      "name": "construction_validates_against_the_corpus_character_routine",
+      "passed": true,
+      "detail": "my rho_lambda reproduces `chi_lambda_of_word` to 5.39e-15 in all 11 blocks \u2014 at the float64 floor of the corpus's own path, so the operator is the corpus's object and not a re-derivation of it"
+    },
+    {
+      "name": "trace_is_blind_to_every_partition_with_more_than_two_rows",
+      "passed": true,
+      "detail": "convention D is the SU(2)/Temperley-Lieb trace, so it factors through TL_6: measured omega is ~1e-1 on the four <=2-row shapes and < 2e-16 on the other seven, and the dimension arithmetic confirms it independently \u2014 sum d^2 over all 11 is 720 = 6!, over the visible 4 is 132 = Catalan(6) = dim TL_6"
+    },
+    {
+      "name": "binding_character_is_largest_in_an_invisible_block",
+      "passed": true,
+      "detail": "the largest binding character of any block is (3, 2, 1) at -9.597856, against 0.0085637314 in the one-dimensional visible block \u2014 and it contributes nothing to the observable. 588 of 720 dimensions are invisible"
+    },
+    {
+      "name": "the_only_small_eigenphases_are_in_blind_blocks",
+      "passed": true,
+      "detail": "small eigenphases appear only in ['(2, 2, 1, 1)', '(3, 2, 1)'], both trace-invisible, at 0.025250633 and 0.01955313 against a required 0.044744395. These are the first phases in this arc BELOW the required one \u2014 Step 25's smallest species-pair phase was 4.41x too large and Step 26's cyclotomic minimum 24.8x"
+    },
+    {
+      "name": "the_sum_coincidence_is_a_degeneracy_wall_artefact",
+      "passed": true,
+      "detail": "the two small phases sum to 0.04480376303 against the required 0.04474439462 \u2014 0.13 %. But theta_2 collapses to zero at the (2,2,1,1) wall q_w = 1.11212376285, so the sum sweeps through every value below it and a crossing must exist; it is at q* = 1.1099884692266, 1.07326e+7 sigma_q0 from the pin. Both q* and q_0 sit ~0.192 % below the same wall. Recorded as a target, never as a criterion: 'sum of two block eigenphases' has no derivation behind it"
+    },
+    {
+      "name": "observable_share_collapses_super_exponentially_with_A",
+      "passed": true,
+      "detail": "the trace sees C_n of n! dimensions, n = 3A: 83.3 % at A=1, 18.3 % at A=2, 1.34 % at A=3 (4862 of 362880), 7.5e-6 % at A=6. C_n/n! ~ 4^n/n!, so the heavier the nucleus the smaller the fraction of it any corpus measurement can reach"
+    },
+    {
+      "name": "corpus_word_is_a_nearest_neighbour_chain_exact_only_at_A_2",
+      "passed": true,
+      "detail": "`atom_braid_word_3A` places an interface at gen 3k+2 for k < A-1 in a fixed ['p']*Z + ['n']*N order \u2014 A-1 couplings where all pairs would be A(A-1)/2, a deficit of (A-1)(A-2)/2. It is ZERO at A=2, so this probe's deuteron result is exact. From A=3 it bites: permuting the arbitrary ordering (ppn / pnp / npp) moves the binding character by 22.54 %, and an all-pairs coupling would have no such dependence by symmetry"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 30,
+    "nucleus": "2H (Z=N=1)",
+    "strands": 6,
+    "trace_convention": "D (SU(2)/Temperley-Lieb)",
+    "word": "atom_braid_word_3A, pn_convention=bring_color_weighted"
+  },
+  "data": {
+    "q0": "1.1099785827513808076",
+    "sigma_q0": "9.21163016616e-13",
+    "z_D_at_q0": "0.612688037146465252",
+    "letters_atom": 23,
+    "letters_free": 22,
+    "factorisation_max_err": "2.36658e-30",
+    "chi_validation_max_rel_err": "5.38974e-15",
+    "dim_H6": 720,
+    "dim_TL6_visible": 132,
+    "invisible_dimensions": 588,
+    "blocks": [
+      {
+        "partition": [
+          6
+        ],
+        "rows": 1,
+        "dim": 1,
+        "omega_abs": "0.11532422",
+        "visible": true,
+        "chi_binding": "0.00856373136367",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "rows": 2,
+        "dim": 5,
+        "omega_abs": "0.39476481",
+        "visible": true,
+        "chi_binding": "-2.71489414608",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "rows": 2,
+        "dim": 9,
+        "omega_abs": "0.41429191",
+        "visible": true,
+        "chi_binding": "-7.33151777072",
+        "eigenphases": [
+          "3.12203952333"
+        ]
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "rows": 3,
+        "dim": 10,
+        "omega_abs": "5.6329819e-17",
+        "visible": false,
+        "chi_binding": "-5.83580092039",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "rows": 2,
+        "dim": 5,
+        "omega_abs": "0.07561905",
+        "visible": true,
+        "chi_binding": "-0.376605989725",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "rows": 3,
+        "dim": 16,
+        "omega_abs": "1.8678421e-16",
+        "visible": false,
+        "chi_binding": "-9.59785596062",
+        "eigenphases": [
+          "0.0252506327621",
+          "3.11634202083"
+        ]
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "rows": 4,
+        "dim": 10,
+        "omega_abs": "8.6955631e-17",
+        "visible": false,
+        "chi_binding": "1.42750892832",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "rows": 3,
+        "dim": 5,
+        "omega_abs": "5.8167812e-17",
+        "visible": false,
+        "chi_binding": "-7.24525284733",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "rows": 4,
+        "dim": 9,
+        "omega_abs": "6.0593502e-17",
+        "visible": false,
+        "chi_binding": "-1.66388879478",
+        "eigenphases": [
+          "0.0195531302631"
+        ]
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "rows": 5,
+        "dim": 5,
+        "omega_abs": "1.2203009e-17",
+        "visible": false,
+        "chi_binding": "4.38572303561",
+        "eigenphases": []
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "rows": 6,
+        "dim": 1,
+        "omega_abs": "5.7063666e-18",
+        "visible": false,
+        "chi_binding": "-1.3501335798",
+        "eigenphases": []
+      }
+    ],
+    "theta_required_z_D": "0.044744394615721",
+    "small_phases": {
+      "(3, 2, 1)": "0.0252506327621",
+      "(2, 2, 1, 1)": "0.0195531302631"
+    },
+    "sum_over_required": "1.00132683457",
+    "wall_2211": "1.112123762848787",
+    "crossing_q_star": "1.10998846922663506",
+    "crossing_sigma_from_q0": "10732601.15",
+    "q_star_pct_below_wall": "0.19200144",
+    "q0_pct_below_wall": "0.19289041",
+    "observable_share": [
+      {
+        "A": 1,
+        "n": 3,
+        "dim_Hn": 6,
+        "dim_TLn": 5,
+        "visible_pct": "83.333333"
+      },
+      {
+        "A": 2,
+        "n": 6,
+        "dim_Hn": 720,
+        "dim_TLn": 132,
+        "visible_pct": "18.333333"
+      },
+      {
+        "A": 3,
+        "n": 9,
+        "dim_Hn": 362880,
+        "dim_TLn": 4862,
+        "visible_pct": "1.3398369"
+      },
+      {
+        "A": 4,
+        "n": 12,
+        "dim_Hn": 479001600,
+        "dim_TLn": 208012,
+        "visible_pct": "0.04342616"
+      },
+      {
+        "A": 5,
+        "n": 15,
+        "dim_Hn": 1307674368000,
+        "dim_TLn": 9694845,
+        "visible_pct": "0.00074138067"
+      },
+      {
+        "A": 6,
+        "n": 18,
+        "dim_Hn": 6402373705728000,
+        "dim_TLn": 477638700,
+        "visible_pct": "7.4603377e-6"
+      }
+    ],
+    "interface_deficit": [
+      {
+        "A": 1,
+        "interfaces": 0,
+        "all_pairs": 0,
+        "missing": 0
+      },
+      {
+        "A": 2,
+        "interfaces": 1,
+        "all_pairs": 1,
+        "missing": 0
+      },
+      {
+        "A": 3,
+        "interfaces": 2,
+        "all_pairs": 3,
+        "missing": 1
+      },
+      {
+        "A": 4,
+        "interfaces": 3,
+        "all_pairs": 6,
+        "missing": 3
+      },
+      {
+        "A": 8,
+        "interfaces": 7,
+        "all_pairs": 28,
+        "missing": 21
+      },
+      {
+        "A": 12,
+        "interfaces": 11,
+        "all_pairs": 66,
+        "missing": 55
+      }
+    ],
+    "ordering_chi_visible": {
+      "ppn": [
+        "0.248838270491",
+        "-6.58117861649",
+        "-28.7537648262",
+        "-40.1277528266",
+        "-37.5977225507"
+      ],
+      "pnp": [
+        "0.0234338770086",
+        "-8.03142698105",
+        "-30.4384373878",
+        "-42.3818139203",
+        "-38.2702671532"
+      ],
+      "npp": [
+        "0.248838270491",
+        "-7.17347882646",
+        "-28.1902887091",
+        "-39.724567767",
+        "-37.576817858"
+      ]
+    },
+    "ordering_max_relative_spread": "0.2254043935"
+  },
+  "context": {
+    "axis": "qou-cds1: construct the genuinely level-k operator the corpus does not have, and ask whether the ladder phase lives where the trace cannot see.",
+    "answer": "The operator exists and is BINDING \u2014 composite minus constituents, taken on the operators rather than the numbers. The trace is blind to 588 of the 720 dimensions it lives in, structurally, because convention D factors through Temperley-Lieb. The first small eigenphases in this entire arc are in that blind sector. Their sum matches the required phase to 0.13 % at q_0, but the crossing is a degeneracy-wall artefact 1.07e7 sigma from the pin and the combination is unmotivated, so it is recorded as a target rather than a result.",
+    "corrects": "Step 25's 'the corpus is H_3-valued at every A, so the level-k avenue is not instantiated'. The 6-vector is the observation, not the object.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* and the 0.13 % ratio are facts about the operator, never criteria."
+  },
+  "gitCommit": "72841c7a3584c8829dd1094196b5d1a42fa5dc88",
+  "durationMs": 0,
+  "scriptFile": "qbeta_level_k_binding_operator_probe.py",
+  "scriptHash": "5cb7bf34650a",
+  "scriptCommitSha": "unknown",
+  "commitSha": "72841c7a3584c8829dd1094196b5d1a42fa5dc88",
+  "computedAt": "2026-09-01T03:45:46.722632+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}
