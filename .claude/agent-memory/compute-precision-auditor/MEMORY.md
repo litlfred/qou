@@ -198,3 +198,21 @@ one bound atom of nineteen. Do not expect the table to finish.
 One line per audit: what you gated, what the gates returned, any entry above
 you confirmed or corrected. Keep under ~200 lines — prune the log, never the
 TRAPs.
+- 2026-09-01 — bean `t7qv`: split `measurement-hygiene-traps.md` out. Six traps,
+  each one a claim I had to withdraw. **`abs(x) > tol` on a sign-proven
+  quantity** caught structurally-impossible negative gaps (solver noise) and
+  produced a knife-edge that did not exist — assert the sign, and treat any
+  sign violation as your noise floor announcing itself. **Single-root bisection**
+  on a margin with no root in range returned a meaningless `2.0009`; scan for
+  brackets first. **An unverified linear solve** gave a plausible weak-transition
+  operator with residual `1.3e-1` (transposed matrix); print the residual beside
+  every solve. **Assertion thresholds written from prose** rather than from the
+  printed value failed three probes whose measurements were fine. **A container
+  reset silently moved the checkout to another branch** — same probe, different
+  `pyhecke`, `0.477` became `0.679`, and I nearly filed two fabricated defects;
+  the tell is `ModuleNotFoundError: mpmath`, so run `git branch --show-current`
+  first. **`--depth=1` poisons `merge-base`**, which then returns empty and makes
+  `git log -1 $(...)` silently report HEAD; ancestry counts read `7`/`33685`
+  against a true `119`/`1343`. Also: the stored f64 `y_lambda` tables set a
+  `~1e-8` agreement floor on anything routed through `load_cost` — quote seven
+  digits there, not fourteen, while single-route quantities reach `1e-13`/`1e-16`.
