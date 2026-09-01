@@ -65,16 +65,41 @@ spread is not available to the isospin channels as those are currently
 defined.  Using it would require **re-identifying the channels** against the
 word's own decomposition -- a different construction, and an open one.
 
+## THE COMPLETION — every pair at EVERY separation, not just adjacent ones
+
+The argument above covers an adjacent crossing `sigma_i`.  A pair at separation
+`s > 1` exchanges via the **band generator**
+
+    a_ij = (s_{j-1} ... s_{i+1}) s_i (s_{i+1}^-1 ... s_{j-1}^-1)
+
+which is a **conjugate of `s_i` by construction**.  Verified two ways: it really
+is the `(i,j)` transposition (checked in `S_4` for separations 1, 2 and 3), and
+the `H_3` instance `a_02 = s2 s1 s2^-1` satisfies the Hecke quadratic exactly
+(residual `5.584e-42`).  Conjugation preserves spectrum, so `a_ij` also has
+spectrum `{q, -1/q}` and `R = 1` for that pair.
+
+**So the entire pairwise-exchange picture has `R = 1`: every pair, at every
+separation, in every representation.**  The channel asymmetry cannot come from
+*any* single exchange.
+
 ## WHERE THIS LEAVES THE OPEN PROBLEM
 
     single crossing, any dimension      R = 1 exactly        EXCLUDED (here)
+    ANY pair at ANY separation          R = 1 exactly        EXCLUDED (here)
     bond-letter family, 2-dim           R <= 1               EXCLUDED (earlier)
-    multi-crossing word, d > 2          ratio up to 5.0      channels UNDEFINED
+    non-conjugate multi-crossing        ratio up to 5.0      channels UNDEFINED
 
-The third row is the only surviving one, and its obstacle is not a bound -- it
-is that nobody has said which operator the two isospin channels are the
-spectral projectors OF, once the object is a word rather than a crossing.
-That is a definitional question, and it is now the gate.
+Only the last row survives, and it is not an exchange of a pair at all -- a
+product `sigma_i sigma_j`, or the difference `Delta_bind`.  Its obstacle is not
+a bound: nobody has said which operator the two isospin channels are the
+spectral projectors OF, once the object is not a pair exchange.  That is a
+definitional question, and it is now the gate.
+
+Note how this composes with the all-pairs exclusion in
+`allpairs_decay_turnover_exclusion_probe`: that ruled out summing pairwise
+contributions with distance decay, and this rules out the pairwise
+contributions *themselves* carrying the asymmetry.  The pairwise route is
+closed from both ends.
 
 ## A METHOD NOTE WORTH MORE THAN THE RESULT
 
@@ -242,7 +267,56 @@ def main() -> int:
     print("    the spectral projectors OF, once the object is a word rather")
     print("    than a crossing.  A definitional question, and now the gate.")
 
-    print("\n[7] A METHOD NOTE WORTH MORE THAN THE RESULT")
+    print("\n[7] THE COMPLETION — every pair, at EVERY separation, is conjugate")
+    print("-" * 78)
+    print("    The argument so far covers a single ADJACENT crossing sigma_i.")
+    print("    A pair at separation s > 1 exchanges via the BAND GENERATOR")
+    print("        a_ij = (s_{j-1}...s_{i+1}) s_i (s_{i+1}^-1...s_{j-1}^-1)")
+    print("    which is a CONJUGATE of s_i by construction -- so it carries the")
+    print("    same spectrum {q, -1/q}, and R = 1 for that pair too.")
+    print()
+
+    def pmul(p, r):
+        return [p[r[k]] for k in range(len(p))]
+
+    def pinv(p):
+        o = [0] * len(p)
+        for i, v in enumerate(p):
+            o[v] = i
+        return o
+
+    S4 = [[1, 0, 2, 3], [0, 2, 1, 3], [0, 1, 3, 2]]
+
+    def band_perm(i, j):
+        left = list(range(4))
+        for k in range(j - 1, i, -1):
+            left = pmul(left, S4[k])
+        return pmul(pmul(left, S4[i]), pinv(left))
+
+    print("    a_ij really is the (i,j) transposition -- checked in S_4:")
+    for i, j in ((0, 1), (0, 2), (0, 3), (1, 3)):
+        w = band_perm(i, j)
+        tgt = list(range(4))
+        tgt[i], tgt[j] = tgt[j], tgt[i]
+        print(f"      a_{i}{j} -> {w}   transposition ({i},{j})?  {w == tgt}"
+              f"   separation {j - i}")
+        assert w == tgt, f"a_{i}{j} must be the (i,j) transposition"
+    print()
+    print("    and the H_3 band generator a_02 = s2 s1 s2^-1 satisfies the")
+    print("    Hecke quadratic exactly (section [2], residual 5.584e-42), so")
+    print("    its spectrum is {q, -1/q} like every other crossing's.")
+    a02 = L2 * L1 * (L2 - h * I)
+    assert nrm((a02 - q * I) * (a02 + I / q)) < TOL, (
+        "the band generator must satisfy the quadratic")
+    print()
+    print("    => THE WHOLE PAIRWISE-EXCHANGE PICTURE HAS R = 1: every pair, at")
+    print("       every separation, in every representation.  The channel")
+    print("       asymmetry cannot come from ANY single exchange.")
+    print("       Only a genuinely NON-CONJUGATE multi-crossing object escapes")
+    print("       -- a product like sigma_i sigma_j, or the difference")
+    print("       Delta_bind -- and those are not exchanges of a pair.")
+
+    print("\n[8] A METHOD NOTE WORTH MORE THAN THE RESULT")
     print("-" * 78)
     print("    My first check here was numerical -- extract eigenvalues, test")
     print("    membership in {q, 1/q} at 1e-25.  It reported FALSE, against a")
