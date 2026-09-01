@@ -68,8 +68,30 @@ mp.mp.dps = 65
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+def u_subst_from_canonical_q0() -> mp.mpf:
+    """u = b·ℏ_q² rebuilt from the canonical q₀ PINNING, closed form only.
+
+    The second route to the `U_SUBST` literal below. Nothing here reads that
+    literal and nothing there reads the pinning: b = √((h²+3)/(h²+4)) with
+    h = q − q⁻¹, and ℏ_q² = (1 − q⁻¹)², both at
+    `q_parameter.Q_50_DIGIT_STR`. U_SUBST IS the bias correction
+    (c_k_corr = c_k − c_{k+1}·u), so a drift in it moves every kernel fit.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — local: 2nd route only
+    q = mp.mpf(Q_50_DIGIT_STR)
+    h = q - 1 / q
+    return mp.sqrt((h ** 2 + 3) / (h ** 2 + 4)) * (1 - 1 / q) ** 2
+
+
 def main() -> int:
     U_SUBST = mp.mpf("0.00852")
+    # Half a unit in the last place of the 3-significant-figure literal above:
+    # the coarsest tolerance at which "0.00852 is the correct rounding of
+    # b·ℏ_q²" is still a claim that can fail. Fixed by the literal's own
+    # precision, not fitted to the current gap.
+    U_SUBST_LITERAL_HALF_ULP = "5e-6"
+    u_closed = u_subst_from_canonical_q0()
+    u_literal_dev = abs(U_SUBST - u_closed)
 
     t0 = time.monotonic()
     builder = WitnessBuilder(
@@ -92,10 +114,32 @@ def main() -> int:
     print("=" * 78)
     print()
 
+    print(f"  U_SUBST literal            = {mp.nstr(U_SUBST, 12)}")
+    print(f"  b·ℏ_q² at the canonical q₀ = {mp.nstr(u_closed, 20)}"
+          f"   |Δ| = {mp.nstr(u_literal_dev, 6)}")
+    print()
+
     witness_path = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     with open(witness_path, encoding="utf-8") as f:
         w = json.load(f)
     ck_raw_str = w["data"]["c_k_extracted_50dps"]
+
+    # Every rung may be `null`. The SDP extractor nulls a rung it could not
+    # resolve; its `why_unresolved_rungs_are_null` note says that once
+    # R_k − 1 stops dropping it IS the model's accuracy floor, and
+    # c_k := (R_k−1)/u^k then manufactures a geometric blow-up of ratio
+    # exactly 1/u. Fail with that in hand rather than `cannot create mpf
+    # from None` — a recurrence fitted to manufactured numbers would not
+    # look broken, it would look refuted.
+    missing = sorted((k for k, v in ck_raw_str.items() if v is None),
+                     key=lambda k: int(k.replace("c_", "")))
+    if missing:
+        raise SystemExit(
+            f"BLOCKED: {witness_path.name} has no extracted value for "
+            f"{', '.join(missing)} — those rungs are recorded unresolved. "
+            f"Probe 6.c's bias correction and depth-2 fit both need them; "
+            f"re-derive the c_k before re-running."
+        )
 
     ck = {}
     for k_str, v in ck_raw_str.items():
@@ -222,16 +266,55 @@ def main() -> int:
         "constant_kernel_holds_on_corrected": constant_kernel_holds,
     })
 
+    # `probe_6c_decisively_resolved` (computed=1, expected=1) was a tautology:
+    # it recorded that the fit loop finished and could not fail either way —
+    # its own source text says "either way", which is exactly the property an
+    # assertion must not have. Demoted to data alongside the verdict it was
+    # standing in for.
+    builder.add_data("probe_6c_resolved", {
+        "resolved": True,
+        "constant_kernel_holds_on_corrected": constant_kernel_holds,
+        "meaning": "the sliding-window depth-2 fit ran and returned a "
+                   "verdict; the verdict itself is in kernel_stability",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    builder.add_data("u_subst_literal_cross_check", {
+        "literal_in_source": mp.nstr(U_SUBST, 12),
+        "b_times_hbar_q_sq_at_canonical_q0": mp.nstr(u_closed, 30),
+        "abs_deviation": mp.nstr(u_literal_dev, 8),
+        "rel_deviation": mp.nstr(u_literal_dev / u_closed, 8),
+    })
     builder.add_assertion(
-        "probe_6c_decisively_resolved",
-        computed=1,
-        expected=1,
-        tolerance=0,
-        source=("Probe 6.c sliding-window depth-2 recurrence fit on "
-                "bias-corrected c_k. Reports kernel coefficient "
-                "spreads across windows. Verdict: constant kernel "
-                "PASSES (spread < 1%) or FAILS otherwise. Either "
-                "way decisively resolves probe 6.c."),
+        "u_subst_literal_is_correct_rounding_of_b_hbar_q_sq",
+        computed=mp.nstr(U_SUBST, 30),
+        expected=mp.nstr(u_closed, 30),
+        tolerance=U_SUBST_LITERAL_HALF_ULP,
+        source="The hardcoded U_SUBST = 0.00852 vs b·ℏ_q² rebuilt from "
+               "q_parameter.Q_50_DIGIT_STR by closed form — the literal a "
+               "reader types and the substrate value it is supposed to "
+               "stand for, computed without reference to each other. "
+               "Tolerance is half an ulp of the literal's last significant "
+               "digit, so a repin that moves u past 0.008515 / 0.008525 "
+               "trips it.",
+    )
+    builder.add_caveat(
+        "PRECISION (recorded, not repaired): U_SUBST is a 3-significant-figure "
+        f"literal, {mp.nstr(u_literal_dev / u_closed, 4)} relative from the "
+        "50-digit b·ℏ_q². The bias correction c_k − c_{k+1}·u is a NEAR "
+        "CANCELLATION at these c_k (c_{k+1}/c_k ≈ 1/u), so that relative error "
+        "does not stay at 1e-4 in c_k_corr. Fixing it changes the numbers and "
+        "so belongs to a re-run of probe 6.a/6.c together, not to this drain."
+    )
+    builder.add_caveat(
+        "PREMISE UNDER DOUBT (recorded, not repaired): the upstream "
+        "qbeta-decay-sdp-extended-ck.witness.json now records all nine c_k as "
+        "unresolved (null) — dividing a fixed accuracy floor by u^k "
+        "manufactures c_k with ratio exactly 1/u. Both PR #1786's refutation "
+        "on raw c_k and this probe's refutation on corrected c_k were "
+        "computed from those numbers, so the committed verdict is provisional "
+        "until they are re-derived. This producer now refuses to run against "
+        "nulls rather than crashing inside mpmath."
     )
 
     builder.save()

@@ -1,25 +1,48 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-06T18:15:13.401531+00:00",
-  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:21:48.840603+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
-      "name": "framework documented + prerequisite witnesses checked",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "prerequisite_extracts_present_and_passing",
+      "computed": 4,
+      "expected": 4,
       "passed": true,
-      "tolerance": "0.5",
-      "unit": "boolean",
-      "source": "This is a deferred-compute framework, not a production extraction. The H_{12} extract itself is queued as a follow-on PR per docs/coordination/2026-05-20-lambda-p-followons-ledger.md §Next-direction recommendations."
+      "tolerance": 0,
+      "source": "sublemma-2-1-A-operator-extract.witness.json: present=True, all_lambda_consistent=True; sublemma-2-1-A-operator-extract-h9-nn.witness.json: present=True, allPassed=True; sublemma-2-1-h9-tritium-verify.witness.json: present=True, allPassed=True; sublemma-2-1-h9-tritium-branching-verify.witness.json: present=True, allPassed=True. A = 4 cannot be attempted on a red A = 3 baseline, which is why this is the framework's real gate"
+    },
+    {
+      "name": "h12_partition_count_matches_plan",
+      "computed": 77,
+      "expected": 77,
+      "passed": true,
+      "tolerance": 0,
+      "source": "p(12) = 77 enumerated, sympy.npartitions(12) = 77; the plan's 'all 77 partitions of 12' sets the per-λ loop count behind its 30-60 min estimate"
+    },
+    {
+      "name": "h12_dimension_of_444_block_matches_plan",
+      "computed": 462,
+      "expected": 462,
+      "passed": true,
+      "tolerance": 0,
+      "source": "f^[4,4,4] = 462 by the hook-length formula; the plan names this block's dimension as 462 and it is correct (its conjugate [3,3,3,3] has the same dimension)"
+    },
+    {
+      "name": "h12_largest_block_dimension",
+      "computed": 7700,
+      "expected": 7700,
+      "passed": true,
+      "tolerance": 0,
+      "source": "max_λ f^λ over all 77 partitions of 12 = 7700, attained at λ = [5, 3, 2, 1, 1] — NOT at [4,4,4]. See the caveat: the plan's cost estimate is pinned to the wrong block"
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 190,
   "computation": "sublemma-2-1-h12-helium-4-framework",
   "scriptFile": "sublemma_2_1_h12_helium_4_framework.py",
-  "scriptHash": "e78764d36968",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "87b73bed4bb1",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,12 +50,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/sublemma_2_1_h12_helium_4_framework.py"
+    ],
+    "reproduce": "python3 -u computations/sublemma_2_1_h12_helium_4_framework.py"
   },
   "description": "Framework / next-step scaffold for the H_{12} ⁴He A-operator extract — extending prop:mass-tower-operator-valued from A = 3 (PROVED, this branch) to A = 4 (OPEN). Documents the iterated 3-interface formula, verifies prerequisite H_6 + H_9 witnesses, and records the deferred H_{12} extraction plan.",
   "auditOnly": "docs/coordination/2026-05-20-lambda-p-followons-ledger.md",
@@ -89,11 +120,25 @@
         "Alternative closure (not requiring full A-operator extraction): use markov_peel.tr_M_atomic(2, 2) directly to get |tr_M(β_⁴He, q_0)| (already in canonical-mass-table-extended.witness.json at 0.0553483459). The operator-valued formula's VALUE-ADD over direct markov_peel is structural transparency (per-(μ_1,...,μ_A)-block decomposition), not numerical precision."
       ]
     },
+    "h12_block_sizing": {
+      "n_partitions_of_12": 77,
+      "max_block_dimension": 7700,
+      "argmax_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
     "lean_uniqueness_ref": {
       "nucleus": "helium-4",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
-  }
+  },
+  "caveats": [
+    "The deferred plan states 'Max dim 462 at λ = [4,4,4]' and 'λ = [4,4,4] at dim 462 dominates' the dim_λ² × #crossings cost. f^[4,4,4] = 462 is correct, but [4,4,4] is not the largest block of H_12: the maximum over all 77 partitions is 7700 at λ = [5, 3, 2, 1, 1], and even restricted to at most three rows the maximum is 2673 at [6,4,2]. Since the cost goes as dim_λ², the dominating block is understated by a factor of (7700/462)² ≈ 278, so the '30-60 min via numpy-Hoefsmit' budget for the queued follow-on PR is optimistic by roughly that factor unless the extraction is restricted to a subset of λ the plan does not name. Reported, not silently corrected."
+  ]
 }

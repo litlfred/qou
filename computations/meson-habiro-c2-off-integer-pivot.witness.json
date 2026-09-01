@@ -1,24 +1,48 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:37.437251+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T14:00:22.850901+00:00",
+  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
   "assertions": [
     {
-      "name": "c2_pivot_search_completed",
-      "computed": true,
-      "expected": true,
+      "name": "c2_pivot_matches_c4_truncation_reexam_witness",
+      "computed": "3.993910010105138550271017",
+      "expected": "3.993910010105138550271017",
+      "passed": true,
+      "tolerance": "1e-22",
+      "source": "Route A: C/u² recomputed here at 60 dps from M_K_PM/M_PI_PM, q₀, χ₅ = q⁵−q⁻⁵ and (9/5)². Route B: the `C_over_u_squared` field of the committed meson-habiro-c4-truncation-reexam witness, produced by a different script on a different run."
+    },
+    {
+      "name": "b_squared_skein_and_hoefsmit_routes_agree",
+      "computed": "0.75270211325196540159377935162",
+      "expected": "0.75270211325196540159377935162",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Route A: the skein form (h²+3)/(h²+4) with h = q − 1/q, as used to build u = b·ℏ_q². Route B: the Hoefsmit seminormal 2-dim block, 1 + d₁d₂ with d₁ = q³/(q²+1) and d₂ = −1/(q(q²+1)) — a representation-matrix route that never forms h."
+    },
+    {
+      "name": "q_bracket_five_matches_su2q_fusion_recursion",
+      "computed": "5.22044127532689824496043325299",
+      "expected": "5.22044127532689824496043325299",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Route A: [5]_q = (q⁵ − q⁻⁵)/(q − q⁻¹), the closed form the 24-element substrate basis is built from. Route B: the SU(2)_q fusion recursion [k+1] = [2]_q[k] − [k−1] from [0]=0, [1]=1, iterated to k=5 — no division anywhere."
+    },
+    {
+      "name": "candidate_scan_finds_no_epsilon_within_half_percent",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "c_2 pivot PSLQ + hand-scan completed at 60 dps."
+      "source": "The NULL verdict's own claim, asserted: of the 15 hand-curated ε candidates scanned at 60 dps, the number landing within 0.5% of the measured ε. Route A: the measured ε = (C/u²/4 − 1)/h² from CODATA meson masses. Route B: 15 substrate quantities built from G, π, q₀, h, ℏ_q, b and q-brackets, none of which sees a meson mass."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "meson-habiro-c2-off-integer-pivot",
   "scriptFile": "meson_habiro_c2_off_integer_pivot.py",
-  "scriptHash": "5912be1283d7",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "72c5b4513458",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +54,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_habiro_c2_off_integer_pivot.py"
+    ],
+    "reproduce": "python3 -u computations/meson_habiro_c2_off_integer_pivot.py"
   },
   "description": "Task 2 of PR #1617: tests whether meson Habiro c_2 is exactly 4 or slightly off-integer with a structural h² correction (c_2 = 4·(1 + ε·h²)). Pairwise PSLQ across 24 substrate basis elements + 15 hand-curated ε candidates.",
   "parameters": {
@@ -42,8 +74,32 @@
     "c_2_pivot_value": "3.993910010105138550271017",
     "pslq_matches_count": 0,
     "within_05pct_count": 0,
-    "verdict": "NULL — neither PSLQ over 24 substrate basis elements nor hand-curated candidate scan over 15 plausible ε values finds a clean match. ε = -0.03483481008 appears to NOT be a natural substrate quantity. The c_2-off-integer pivot does NOT rescue the meson Habiro c=4 reopening — both framings (c_2=4+c_3 at step 1, c_2=4·(1+ε·h²) here) fail PSLQ at the substrate basis."
+    "verdict": "NULL — neither PSLQ over 24 substrate basis elements nor hand-curated candidate scan over 15 plausible ε values finds a clean match. ε = -0.03483481008 appears to NOT be a natural substrate quantity. The c_2-off-integer pivot does NOT rescue the meson Habiro c=4 reopening — both framings (c_2=4+c_3 at step 1, c_2=4·(1+ε·h²) here) fail PSLQ at the substrate basis.",
+    "b_squared_two_routes": {
+      "skein_h2_plus_3_over_h2_plus_4": "0.7527021132519654015937794",
+      "hoefsmit_one_plus_d1_d2": "0.7527021132519654015937794",
+      "difference": "0.0"
+    },
+    "q_bracket_two_routes_gap": {
+      "[2]_q": "-3.1115076e-61",
+      "[3]_q": "-3.1115076e-61",
+      "[4]_q": "-6.2230153e-61",
+      "[5]_q": "-1.8669046e-60"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "meson-habiro-c4-truncation-reexam.witness.json",
+        "sha256": "d71c20ccba594e8485d5dd70f1dfd532f1512fde58f08f6b010488cc73fc875e",
+        "size_bytes": 4027,
+        "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+        "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+        "computedAt": "2026-08-30T13:57:59.388314+00:00"
+      }
+    ]
   },
+  "caveats": [
+    "This module's docstring says 'The meson Habiro re-exam found C/u² = 4.00606 (0.15% off integer 4)'. The measured value — here and in the c4-truncation-reexam witness alike — is 3.99391001011, i.e. 0.152% BELOW 4, not above it. Only the magnitude of the docstring figure is right; its sign is inverted. Nothing downstream depends on the docstring, so the numbers in this witness are unaffected, but a reader taking c_2 > 4 from the prose would read ε's sign backwards."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

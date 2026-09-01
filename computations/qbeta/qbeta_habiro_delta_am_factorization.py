@@ -86,6 +86,31 @@ def load_atom(hab: dict, key: str) -> dict[int, sp.Poly]:
     return out
 
 
+def am_reconstruction_deviation(hab: dict, key: str):
+    """|Σ_m a_m(u)·(u;u)_m − p_in_u| for one atom, as a sympy expression.
+
+    The SECOND route to the a_m this script differences. `load_atom` takes the
+    per-m `a_m` strings at face value; this rebuilds the polynomial they claim
+    to expand and compares it against the atom's OWN `p_in_u` field — the
+    denominator-cleared trace numerator, produced upstream straight from
+    `tr_M_in_q` by a different code path that never sees a Habiro coefficient.
+    Zero iff the recorded expansion really is an expansion of that numerator.
+
+    This is not hypothetical: `reconstruct`'s docstring records that this
+    check read FALSE for every atom in the corpus (beans qou-s41x / qou-0ndb)
+    because the a_m strings were rendered against a symbol that printed as
+    `u` but carried no assumptions, so nothing ever cancelled. A Δa_m built
+    on top of that would have factored and printed perfectly well.
+    """
+    from habiro_coefficients_atomic import reconstruct, U_CANONICAL
+
+    entry = hab["results"][key]
+    rebuilt = reconstruct(entry["habiro_coefficients"], U_CANONICAL)
+    recorded = sp.sympify(entry["p_in_u"],
+                          locals={"u": U_CANONICAL, "check_q": U_CANONICAL})
+    return sp.expand(rebuilt - recorded)
+
+
 def poly_to_str(p: sp.Poly | sp.Expr) -> str:
     if isinstance(p, sp.Poly):
         return str(sp.expand(p.as_expr()))
@@ -457,6 +482,37 @@ def main() -> int:
     # Parse atoms into Poly objects
     p_a = load_atom(hab, "p (proton, A=1)")
     n_a = load_atom(hab, "n (neutron, A=1)")
+
+    # Cross-route check on the INPUTS, before anything is differenced: for
+    # each atom, does Σ a_m·(u;u)_m actually reproduce the recorded p_in_u?
+    # Recorded here (not only asserted) so the numbers survive even when the
+    # preflight below stops the run.
+    recon_dev = {atom: am_reconstruction_deviation(hab, atom)
+                 for atom in ("p (proton, A=1)", "n (neutron, A=1)",
+                              "D (deuteron, A=2)")}
+    n_recon_mismatch = sum(1 for d in recon_dev.values() if d != 0)
+    print("\n  Habiro reconstruction check (Σ a_m·(u;u)_m vs recorded p_in_u):")
+    for atom, dev in recon_dev.items():
+        print(f"    {atom:<22} {'MATCH' if dev == 0 else 'MISMATCH'}")
+    builder.add_data("am_reconstruction_check", {
+        "atoms_checked": list(recon_dev),
+        "n_mismatching": n_recon_mismatch,
+        "per_atom_match": {a: (d == 0) for a, d in recon_dev.items()},
+    })
+    builder.add_assertion(
+        "habiro_am_reconstruct_to_recorded_p_in_u",
+        computed=str(n_recon_mismatch),
+        expected="0",
+        tolerance=0,
+        source="Per atom, Σ_m a_m(u)·(u;u)_m rebuilt from the recorded "
+               "Habiro coefficients vs the atom's recorded p_in_u — the "
+               "denominator-cleared trace numerator, produced upstream from "
+               "tr_M_in_q by a path that never sees an a_m. Read FALSE for "
+               "every atom in the corpus under beans qou-s41x / qou-0ndb, "
+               "when the a_m strings named a symbol that printed as `u` but "
+               "carried no assumptions.",
+    )
+
     _qou_lnog_preflight(hab["results"]["n (neutron, A=1)"]["tr_M_in_q"],
                         hab["results"]["p (proton, A=1)"]["tr_M_in_q"], "n - p")
     d_a = load_atom(hab, "D (deuteron, A=2)")
@@ -536,12 +592,38 @@ def main() -> int:
           .get(outcome, 0):],
     })
 
-    builder.add_assertion(
-        "delta_n_minus_p_factorization_completed",
-        computed=1,
-        expected=1,
-        tolerance=0,
-        source="sympy.factor over ℤ[u] for each Δa_m, m=0..8.",
+    # `delta_n_minus_p_factorization_completed` (computed=1, expected=1) was a
+    # tautology: it recorded that sympy.factor had been called, and passed
+    # whether the factorization was FACTORS-IDENTIFIED, PARTIAL or NEGATIVE.
+    # Demoted to data next to the outcome it was standing in for; the
+    # falsifiable check on this computation is the reconstruction cross-route
+    # asserted above, on the a_m these Δa_m are built from.
+    builder.add_data("delta_n_minus_p_factorization_completed", {
+        "completed": True,
+        "outcome": outcome,
+        "meaning": "sympy.factor over ℤ[u] was run for each Δa_m, m = 0..8",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    builder.add_caveat(
+        "INTERPRETATION STRING IS MALFORMED (recorded, not repaired): "
+        "`verdict.interpretation` slices one three-sentence string by "
+        "{FACTORS-IDENTIFIED: 0, PARTIAL: 1, NEGATIVE: 2}[outcome], which "
+        "drops that many CHARACTERS rather than selecting a sentence — the "
+        "committed witness reads \"ACTORS-IDENTIFIED: …\" and then goes on to "
+        "give all three readings anyway. The narration therefore cannot "
+        "disagree with the outcome, whatever the outcome is."
+    )
+    builder.add_caveat(
+        "CONVENTION D (recorded, not repaired): as of the current "
+        "habiro-coefficients-atomic witness the two atoms' denominators "
+        "differ — d_p = 4u^18(u^4+1)^2, d_n = 4u^18 — so the qou-lnog "
+        "preflight raises and this producer cannot run. Its committed witness "
+        "is from the convention-C era and its Δa_m (Δa_0 = 0, "
+        "Δa_1 = 10u + 10, …) are the C6 figures; differencing today's a_m "
+        "instead gives Δa_0 = −6, Δa_1 = 138u + 138. Porting to convention D "
+        "means expanding trace_diff_numerator(tr_n, tr_p, u) rather than "
+        "differencing two expansions, which is a restructure, not a drain."
     )
 
     builder.save()

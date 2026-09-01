@@ -107,6 +107,24 @@ def writhe_S(word):
     return S
 
 
+def ss_eigenvalues(S):
+    """Spectrum of the species-signed writhe matrix.
+
+    ``mp.eigsy`` (symmetric solver), not ``mp.eig``: _WSGN is symmetric in
+    its pair -- ("p","n") and ("n","p") both map to +1 -- so every S built
+    by ``writhe_S`` is a real symmetric matrix and eigsy is the correct
+    routine for it. The general nonsymmetric ``mp.eig`` that stood here
+    raised `RuntimeError: qr: failed to converge after 281 steps` on the
+    6x6 6Li word at exactly compute_dps=70 (the current default) under BOTH
+    mpmath 1.3.0 and 1.4.1, which made the whole probe unrunnable; it
+    converges at 15/30/50/60/80/100 dps, so the failure is a precision-
+    specific fragility of the nonsymmetric QR iteration, not a version
+    regression. eigsy returns the same values at every precision tried and
+    reproduces every lambda_ss in the committed witness exactly (1, 2, 2,
+    sqrt5, 3.3722813, sqrt13). Returns real eigenvalues."""
+    return list(mp.eigsy(S, eigvals_only=True))
+
+
 def c4A(A: int) -> int:
     """[1^A] antisymmetrizer rank = C(4,A) (He4-locality; 0 for A>4)."""
     from math import comb
@@ -122,14 +140,15 @@ def main() -> int:
 
     rows = []
     raw_vals = {}                                        # name -> (crit, det) at full mpf precision
+    raw_S = {}                                           # name -> (S, spectrum) for the assertion routes
     prev_crit = mp.mpf(0)
     monotone = True
     for name, w in _ISOTOPES:
         A = len(w)
         S = writhe_S(w)
-        E, _V = mp.eig(S)
-        eigs = sorted(mp.re(x) for x in E)
+        eigs = sorted(ss_eigenvalues(S))
         lam_max = max(abs(x) for x in eigs)
+        raw_S[name] = (S, eigs)
         crit = g_reeb * lam_max                          # g * lambda_ss
         det = mp.det(mp.eye(A) + g_reeb * S)
         in_domain = A <= 4
@@ -220,13 +239,78 @@ def main() -> int:
     )
     wb.set_description(payload["description"])
     wb.set_content_block("rem:ohtsuki-tower-bar-parity")
-    wb.add_assertion("g_reeb_fixed_no_fit", computed="True", expected="True")
+
+    # ── Was `g_reeb_fixed_no_fit`, computed="True" / expected="True" ──────
+    # Two string literals: nothing the run could do would make it fail, so it
+    # recorded the author's intention rather than any property of g_reeb.
+    # Replaced by the two facts the name was standing in for, each with an
+    # expected value that comes from somewhere the computed value does not.
+
+    # (1) The A=4 ss eigenvalue. Route A: the largest-|.| eigenvalue of the
+    #     K4(ppnn) species-signed writhe matrix, from mpmath's symmetric
+    #     eigensolver. Route B: sqrt(5) in closed form -- the +-sqrt5
+    #     species-symmetric writhe modes of PR #4084 FACT 1, i.e. sqrt(1+2^2)
+    #     at the UNDEFORMED pn-degree 2. The spectrum is {-sqrt5,-1,+1,+sqrt5};
+    #     a sign error in _WSGN, a wrong nucleon word, or an eigensolver that
+    #     silently returned the wrong branch all move Route A off Route B.
+    _S4, _eigs4 = raw_S["4He"]
+    lam_ss_classical_A4 = max(abs(x) for x in _eigs4)
+    wb.add_assertion(
+        "K4_ppnn_lambda_ss_equals_sqrt5",
+        computed=mp.nstr(lam_ss_classical_A4, 30),
+        expected=mp.nstr(mp.sqrt(5), 30),
+        tolerance="1e-25",
+        unit="ss-sector eigenvalue of the K4(ppnn) writhe matrix",
+        source=("Route A: mp.eigsy spectrum of S_4(ppnn) = {-sqrt5,-1,+1,+sqrt5}. "
+                "Route B: sqrt(5) = sqrt(1+2^2), the +-sqrt5 species-symmetric "
+                "writhe modes recorded in PR #4084 FACT 1 at undeformed "
+                "pn-degree 2."),
+    )
+
+    # (2) The probe calls A=4 "AT_POLE" from |det(I + g_reeb S)| < 0.02 while
+    #     reading criticality off g*lambda_ss. That both readings describe the
+    #     SAME pole is assumed everywhere and checked nowhere. Route A: the
+    #     smallest positive g with det(I + g S_4) = 0, found by bisection on
+    #     the determinant alone -- no eigenvalue enters. Route B: 1/lambda_ss
+    #     from the spectrum -- no determinant enters. They agree to ~1e-70.
+    def _det4(g):
+        return mp.det(mp.eye(4) + g * _S4)
+
+    _lo, _hi = mp.mpf("0.3"), mp.mpf("0.6")           # det > 0 at lo, < 0 at hi
+    _f_lo = _det4(_lo)
+    for _ in range(240):
+        _mid = (_lo + _hi) / 2
+        if _det4(_mid) * _f_lo > 0:
+            _lo = _mid
+        else:
+            _hi = _mid
+    g_pole_from_det = (_lo + _hi) / 2
+    wb.add_assertion(
+        "ss_pole_from_determinant_equals_inverse_lambda_ss",
+        computed=mp.nstr(g_pole_from_det, 30),
+        expected=mp.nstr(1 / lam_ss_classical_A4, 30),
+        tolerance="1e-25",
+        unit="per-bond magnitude g at the A=4 ss-sector pole",
+        source=("Route A: bisection for the smallest positive root of "
+                "det(I + g*S_4) = 0 -- determinant only. Route B: 1/lambda_ss "
+                "from the mp.eigsy spectrum -- eigenvalue only. The probe's "
+                "det-based AT_POLE classifier and its g*lambda_ss criticality "
+                "column are only the same statement if these coincide."),
+    )
     wb.add_assertion("deformed_A4_exactly_on_pole",
                      computed=str(result["deformed_A4_exactly_on_pole"]), expected="True")
     wb.add_assertion("He4_uniquely_at_pole", computed=str(bool(he4_at_pole)), expected="True")
     wb.add_assertion("monotone_approach_over_He4_domain", computed=str(bool(monotone)), expected="True")
     wb.add_assertion("A_le_3_subcritical", computed=str(bool(subcritical_below)), expected="True")
     wb.add_assertion("A_ge_5_C4A_zero_past_pole", computed=str(bool(offdomain_pastpole)), expected="True")
+    wb.add_caveat(
+        "Eigensolver changed from mp.eig to mp.eigsy in this run (2026-08-30). "
+        "S is real symmetric by construction, so eigsy is the correct routine; "
+        "mp.eig raised 'qr: failed to converge after 281 steps' on the 6x6 6Li "
+        "word at compute_dps=70 under mpmath 1.3.0 AND 1.4.1, which made the "
+        "probe unrunnable. Value-identical: every lambda_ss here reproduces the "
+        "2026-07-19 witness exactly."
+    )
     out = wb.save(extra={"auditOnly": True})
 
     print("=== alpha-magic as criticality: g_reeb*lambda_ss(A) approach to the ss-pole ===")

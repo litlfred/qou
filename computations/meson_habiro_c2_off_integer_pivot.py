@@ -79,6 +79,17 @@ def main() -> int:
     h2 = h * h
     b_sq = (h2 + 3) / (h2 + 4)
     b = mp.sqrt(b_sq)
+    # SECOND ROUTE to b² — the Hoefsmit seminormal 2-dimensional block.
+    # `b_sq` above is the Hecke SKEIN form (h²+3)/(h²+4) in the skein
+    # variable h = q − 1/q. The Hoefsmit route never mentions h: it is
+    # 1 + d₁d₂ built from the two diagonal entries of the (2,1) block's
+    # σ generator, d₁ = q³/(q²+1) and d₂ = −1/(q(q²+1)). The identity
+    # (h²+3)/(h²+4) = (q⁴+q²+1)/(q²+1)² = 1 + d₁d₂ is what makes the
+    # ladder variable u = b·ℏ_q² the same object in both conventions,
+    # and nothing in this producer had checked it.
+    d1_hoefsmit = q ** 3 / (q ** 2 + 1)
+    d2_hoefsmit = -1 / (q * (q ** 2 + 1))
+    b_sq_hoefsmit = 1 + d1_hoefsmit * d2_hoefsmit
     hbar_q = 1 - 1 / q
     hbar_q_sq = hbar_q ** 2
     u = b * hbar_q_sq
@@ -234,13 +245,118 @@ def main() -> int:
     w.add_data("within_05pct_count", len(within_05pct))
     w.add_data("verdict", verdict)
 
+    # ── Assertions ────────────────────────────────────────────────────
+
+    # (1) The quantity the whole probe pivots on, against a SECOND
+    #     PRODUCER's committed value.
+    #   Route A: this probe recomputes C/u² at 60 dps from the CODATA
+    #            meson masses, q₀, χ₅ and the Seifert ratio.
+    #   Route B: `meson_habiro_c4_truncation_reexam.py` recorded
+    #            `C_over_u_squared` in its own witness on an earlier
+    #            run, from its own substrate construction.
+    # ε is defined as (C/u²/4 − 1)/h², so if Route A drifts from Route B
+    # this probe's ε — and therefore its whole PSLQ NULL — is about a
+    # different number than the one the re-exam reported.
+    upstream = w.add_upstream(HERE / "meson-habiro-c4-truncation-reexam.witness.json")
+    c2_upstream = upstream["data"]["C_over_u_squared"]
     w.add_assertion(
-        name="c2_pivot_search_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source=f"c_2 pivot PSLQ + hand-scan completed at 60 dps.",
+        name="c2_pivot_matches_c4_truncation_reexam_witness",
+        computed=mp.nstr(c_2_pivot, 25),
+        expected=c2_upstream,
+        tolerance="1e-22",
+        source=(
+            "Route A: C/u² recomputed here at 60 dps from "
+            "M_K_PM/M_PI_PM, q₀, χ₅ = q⁵−q⁻⁵ and (9/5)². Route B: the "
+            "`C_over_u_squared` field of the committed "
+            "meson-habiro-c4-truncation-reexam witness, produced by a "
+            "different script on a different run."
+        ),
     )
+
+    # (2) The ladder variable's two conventions.
+    #   Route A: b² = (h²+3)/(h²+4), the Hecke skein form.
+    #   Route B: b² = 1 + d₁d₂ from the Hoefsmit seminormal block
+    #            entries d₁ = q³/(q²+1), d₂ = −1/(q(q²+1)) — no h.
+    w.add_data("b_squared_two_routes", {
+        "skein_h2_plus_3_over_h2_plus_4": mp.nstr(b_sq, 25),
+        "hoefsmit_one_plus_d1_d2": mp.nstr(b_sq_hoefsmit, 25),
+        "difference": mp.nstr(b_sq - b_sq_hoefsmit, 8),
+    })
+    w.add_assertion(
+        name="b_squared_skein_and_hoefsmit_routes_agree",
+        computed=mp.nstr(b_sq, 30),
+        expected=mp.nstr(b_sq_hoefsmit, 30),
+        tolerance="1e-50",
+        source=(
+            "Route A: the skein form (h²+3)/(h²+4) with h = q − 1/q, as "
+            "used to build u = b·ℏ_q². Route B: the Hoefsmit "
+            "seminormal 2-dim block, 1 + d₁d₂ with d₁ = q³/(q²+1) and "
+            "d₂ = −1/(q(q²+1)) — a representation-matrix route that "
+            "never forms h."
+        ),
+    )
+
+    # (3) The q-brackets the substrate basis is built from.
+    #   Route A: the closed q-power form (q^k − q^-k)/(q − q^-1), i.e.
+    #            `qint`, which the basis dict uses.
+    #   Route B: the SU(2)_q fusion recursion [k+1] = [2]_q·[k] − [k−1]
+    #            with [0] = 0, [1] = 1 — the categorical definition, a
+    #            three-term recursion that never divides by q − q^-1.
+    rec = [mp.mpf(0), mp.mpf(1)]
+    for _k in range(1, 6):
+        rec.append((q + 1 / q) * rec[_k] - rec[_k - 1])
+    bracket_route_gaps = {
+        f"[{k}]_q": mp.nstr(qint(k, q) - rec[k], 8) for k in (2, 3, 4, 5)
+    }
+    w.add_data("q_bracket_two_routes_gap", bracket_route_gaps)
+    w.add_assertion(
+        name="q_bracket_five_matches_su2q_fusion_recursion",
+        computed=mp.nstr(qint(5, q), 30),
+        expected=mp.nstr(rec[5], 30),
+        tolerance="1e-50",
+        source=(
+            "Route A: [5]_q = (q⁵ − q⁻⁵)/(q − q⁻¹), the closed form the "
+            "24-element substrate basis is built from. Route B: the "
+            "SU(2)_q fusion recursion [k+1] = [2]_q[k] − [k−1] from "
+            "[0]=0, [1]=1, iterated to k=5 — no division anywhere."
+        ),
+    )
+
+    # (4) The verdict itself, made falsifiable. NULL is a claim about
+    #     the scan, so state it as one: expected = 0 candidates inside
+    #     the 0.5% band. If a candidate ever lands there this assertion
+    #     FAILS and the verdict text flips with it, instead of the
+    #     narration quietly changing under a passing assertion.
+    w.add_assertion(
+        name="candidate_scan_finds_no_epsilon_within_half_percent",
+        computed=len(within_05pct),
+        expected=0,
+        tolerance=0,
+        source=(
+            "The NULL verdict's own claim, asserted: of the 15 "
+            "hand-curated ε candidates scanned at 60 dps, the number "
+            "landing within 0.5% of the measured ε. Route A: the "
+            "measured ε = (C/u²/4 − 1)/h² from CODATA meson masses. "
+            "Route B: 15 substrate quantities built from G, π, q₀, h, "
+            "ℏ_q, b and q-brackets, none of which sees a meson mass."
+        ),
+    )
+
+    # A real defect, recorded rather than repaired: this module's
+    # docstring states the wrong SIGN for the re-exam's finding.
+    if abs(c_2_pivot - mp.mpf("4.00606")) > mp.mpf("1e-3"):
+        w.add_caveat(
+            f"This module's docstring says 'The meson Habiro re-exam "
+            f"found C/u² = 4.00606 (0.15% off integer 4)'. The measured "
+            f"value — here and in the c4-truncation-reexam witness "
+            f"alike — is {mp.nstr(c_2_pivot, 12)}, i.e. 0.152% BELOW 4, "
+            f"not above it. Only the magnitude of the docstring figure "
+            f"is right; its sign is inverted. Nothing downstream depends "
+            f"on the docstring, so the numbers in this witness are "
+            f"unaffected, but a reader taking c_2 > 4 from the prose "
+            f"would read ε's sign backwards."
+        )
+
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0

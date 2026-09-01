@@ -4,7 +4,7 @@ title: 266 witness assertions compare an expression to itself and pass by constr
 status: in-progress
 type: task
 created_at: 2026-08-24T23:58:15Z
-updated_at: 2026-08-24T23:58:15Z
+updated_at: 2026-08-30T16:00:00Z
 ---
 
 
@@ -457,3 +457,41 @@ assertions by name (every `.assertions` hit is inside `witness.py` itself), so
 converting an assertion to data breaks no reader. That was checked, not assumed.
 
 Still zero blocks claim `verified` on any of them.
+
+## 2026-08-30 — DRAIN COMPLETE, and a git hazard worth not repeating
+
+`scripts/tautological-assertion-census.py`: **TAUTOLOGICAL 0 of 3939, across 0
+files** (3 remain in test fixtures, where the shape is deliberate). Verified by
+re-running the census independently of the agents that reported it. Down from
+263 at the start of this arc.
+
+### The hazard: `git commit` with no pathspec on a SHARED index
+
+Three sessions were working one branch in one checkout. Agents were briefed
+"stage ONLY your files, NEVER `git add -A` or `git add <dir>`" — and all three
+complied. The dispatcher (me) then did:
+
+    git add <4 bean paths>
+    git commit -F - <<'EOF' ...
+
+No `git add -A` anywhere. But a sibling had already **staged** 14 files in the
+shared index, and `git commit` without a pathspec commits *the whole index*.
+So commit `1717c95e6cd`, whose message describes four beans, actually carries
+four beans plus a sibling's entire seven-producer drain — 18 files, 2469
+insertions.
+
+Content was unharmed (the sibling re-ran every producer and confirmed payloads
+byte-identical); the **record** was wrong, which on a corpus that treats
+provenance as load-bearing is the part that matters. The sibling repaired it
+forward, titling their next commit "the drain record for 7 producers swept
+into 1717c95e6cd" rather than rewriting shared history.
+
+**The rule that actually holds:** on a shared checkout, use
+`git commit -- <explicit paths>`. `git add <paths>` constrains only what *you*
+add, not what is already staged. One sibling agent used the `commit --` form
+unprompted and was immune; the briefing that said "never `git add -A`" was
+necessary and not sufficient.
+
+Better still: don't share a checkout. This arc also lost an edit and stranded
+agent work when another session switched branches under `/workspace/qou`; the
+isolated worktree `/workspace/qou-mt7r` fixed that and should be the default.

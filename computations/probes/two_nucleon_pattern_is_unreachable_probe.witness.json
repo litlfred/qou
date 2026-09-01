@@ -1,0 +1,168 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-01T08:02:07.005854+00:00",
+  "commitSha": "afaef64ffb226da49edde573d3441266e477d531",
+  "assertions": [
+    {
+      "name": "A1_model_binds_all_three_dineutron_most",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "L_pp 0.489899, L_pn 0.676822, L_nn 0.907262; all > 0, nn largest"
+    },
+    {
+      "name": "A2_binding_is_structural_not_parametric",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "z = 0.612688037 < 1 with d <= 0; threshold q* = 1.465571231877, q0 is 24.3% below"
+    },
+    {
+      "name": "A3_mu_is_exactly_z_plus_d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "slope 1 to 5.3e-15; |mu-(z+d)| <= 8.9e-16 with exact weights (3.1e-09 via load_cost, its f64 floor); flavour-independent"
+    },
+    {
+      "name": "A4_physical_pattern_needs_a_non_monotone_mu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "affine mu has half-line superlevel sets; the pattern needs both endpoints above 1 and an interior point below"
+    },
+    {
+      "name": "A5_unbinding_exists_but_wrongly_patterned",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "2 block/flavour pairs unbind, 3 have negative ratio; trivial block = q + d"
+    },
+    {
+      "name": "A6_nature_grades_by_T_and_S_not_flavour",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "all three 1S0 (T=1) states unbound; only the T=0 3S1 np state is bound"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 100,
+  "computation": "two_nucleon_pattern_is_unreachable_probe",
+  "scriptFile": "two_nucleon_pattern_is_unreachable_probe.py",
+  "scriptHash": "b12ca899f480",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_nucleon_pattern_is_unreachable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_nucleon_pattern_is_unreachable_probe.py"
+  },
+  "description": "Establishes that the two-nucleon sector is unreachable rather than mis-fitted. Measured with the arc's standard seminormal machinery, the model binds all three two-nucleon systems (L_pp 0.4899, L_pn 0.6768, L_nn 0.9073, all > 0) where nature binds only the deuteron, and it makes the DINEUTRON the most bound. This is structural: a bond is (1, d) with d = -beta h and beta in [0,1], so d <= 0 and mu = z + d <= z = 0.6127 < 1 always; unbinding needs q^3 > q^2 + 1, threshold at the supergolden ratio 1.4655712318767680 with q0 24.3% below. THE IMPOSSIBILITY: mu(d) = z + d exactly — slope 1 to 4.4e-15, independent of flavour, affine because the bond crossing occurs once — while the physical pattern needs {d : mu(d) > 1} to contain both endpoints of [-h, 0] and exclude an interior point. An affine function's superlevel set is a half-line, so no offset assignment in any Wedderburn block or weighted combination reproduces it, and every convention (framing, writhe, colour weighting) only moves d. The affineness is not incidental: the constant is the Markov parameter, so the property making the trace a link invariant is the same one forbidding the pattern. Unbinding does exist per block — the trivial block gives mu = q + d exactly and unbinds pp and pn — but binds nn, the wrong pattern, and the (5,1) block has negative ratios so per-block binding is not well defined. Nature grades by (T,S): all three T=1 (1S0) states are unbound including np, and the single bound state is the T=0 spin-triplet that only np can form.",
+  "data": {
+    "two_body_bonds": {
+      "pp": {
+        "d": "0.000000000000",
+        "mu": "0.612688037146",
+        "L": "0.489899384255",
+        "model": "BOUND",
+        "nature": "UNBOUND"
+      },
+      "pn": {
+        "d": "-0.104458247770",
+        "mu": "0.508229789377",
+        "L": "0.676821592386",
+        "model": "BOUND",
+        "nature": "bound"
+      },
+      "nn": {
+        "d": "-0.209060298796",
+        "mu": "0.403627738351",
+        "L": "0.907262265533",
+        "model": "BOUND",
+        "nature": "UNBOUND"
+      }
+    },
+    "structural_bound": {
+      "z": "0.612688037146",
+      "h": "0.209060298796",
+      "supergolden_threshold": "1.4655712318767680",
+      "q0": "1.1099785827513808",
+      "pct_below_threshold": "24.26"
+    },
+    "affineness": {
+      "slope_spread": "5.329e-15",
+      "max_dev_from_z_plus_d": "8.882e-16",
+      "max_dev_via_load_cost_f64_floor": "3.141e-09",
+      "mean_slope": "1.000000000000"
+    },
+    "per_block": {
+      "(3, 3)": {
+        "pp": "0.370565830",
+        "pn": "0.431210943",
+        "nn": "0.457699789"
+      },
+      "(4, 2)": {
+        "pp": "0.208465533",
+        "pn": "0.398117185",
+        "nn": "0.035035137"
+      },
+      "(5, 1)": {
+        "pp": "-0.276707309",
+        "pn": "-0.944701052",
+        "nn": "-1.500687443"
+      },
+      "(6,)": {
+        "pp": "1.109978583",
+        "pn": "1.005520335",
+        "nn": "0.900918284"
+      }
+    },
+    "scattering_lengths_fm": {
+      "a_pp(1S0)": {
+        "a_fm": "-17.300",
+        "state": "unbound"
+      },
+      "a_nn(1S0)": {
+        "a_fm": "-18.900",
+        "state": "unbound"
+      },
+      "a_np(1S0)": {
+        "a_fm": "-23.740",
+        "state": "unbound"
+      },
+      "a_np(3S1)": {
+        "a_fm": "+5.419",
+        "state": "BOUND"
+      }
+    }
+  },
+  "caveats": [
+    "THE IMPOSSIBILITY IS SCOPED TO A SINGLE-CROSSING BOND WITH A REAL OFFSET. That is what the current construction uses, so the conclusion applies to it as built and to every convention variant of it. It does NOT say the substrate cannot describe the two-nucleon sector at all: escape (a), more than one crossing per bond, makes mu polynomial in d of degree equal to the crossing count and removes the obstruction immediately. Neither escape is attempted here.",
+    "'BOUND' IS READ AS mu < 1, i.e. L > 0, which is the arc's own convention for binding throughout. It is a sign convention on a dimensionless trace ratio, not a physical energy, and the arc has repeatedly found the magnitudes to be orders off. The claim here is about SIGN and ORDERING, which is where the convention is meaningful, and no magnitude is asserted.",
+    "The scattering lengths are an external comparison target quoted from CD-Bonn / experiment (Machleidt nucl-th/0006014 Tbl. XI). Nothing here is fitted or tuned to them; they are used only to establish WHICH quantum numbers nature's bound/unbound split follows. As of this probe the corpus's reference set contains no NN partial-wave data at all, so this is an import, not a citation of existing corpus material.",
+    "Per-block ratios are reported for structure, not as physical channel binding energies. The (5,1) block's ratio is negative, so -log of it is undefined; only the y-weighted total is a Markov trace and only it carries the link-invariance that the rest of the arc relies on."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

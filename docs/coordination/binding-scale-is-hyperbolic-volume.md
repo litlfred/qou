@@ -44,6 +44,65 @@ volume → more binding.
 > van-der-Veen-closable link (as L6a4 did) or *derive* 8₁₁, replacing the
 > historical guess. Not a refutation of either leg; both are scope-(a) open.
 
+> **The 5- and 6-crossing instances are proven — and were already proven when
+> this ledger was written** (2026-08-30, bean `qou-ckbv`). VC for $5_2$ is
+> Ohtsuki, *On the asymptotic expansion of the Kashaev invariant of the $5_2$
+> knot* (library `104171-qt-83`, preprint `ki52`); for $6_1$, $6_2$, $6_3$ it is
+> Ohtsuki–Yokota, *…knots with 6 crossings* (library `ki6c`, §§3–5, each headed
+> "Proof of Theorem 1.1 for the $6_x$ knot"; the abstract states "we show the
+> volume conjecture for these knots"). **$6_2$ is the canonical $^2$H closure**
+> in `computations/substrate/knot_volumes.py`, so a load-bearing instance moves
+> from open to proven.
+>
+> Both papers were in `library/` the whole time, and `ki6c` was already cited by
+> `QOU/QBeta/GZThirdKnotRankGrading.lean` — for its saddle-point data, without
+> anyone noticing it also discharges the conjecture. Meanwhile
+> `b1-hyperbolic-rows-theorem-table2-data` recorded $6_2$ and $6_3$ as **open**
+> and $5_2$ as "numerical, not full proof", the opposite of what the papers say.
+> So this was not a literature gap but a reading gap: the corpus-grep discipline
+> that catches a *missing* citation does not catch one that is present, filed,
+> and unread.
+>
+> **Not upgraded:** the seven-crossing sequel (*Internat. J. Math.* **28**(13),
+> 2017) is real — web-verified — but is not in `library/`, so $7_*$ stays open
+> pending a filed copy. **Its authorship is no longer unsettled** (2026-08-30):
+> `library/ki52` ref **[26]** reads "Ohtsuki, T., *On the asymptotic expansion
+> of the Kashaev invariant of the knots with 7 crossings*, in preparation" —
+> **sole author**, from a primary source already filed. (Same reference list
+> settles the neighbouring attribution: ref [28] is "Ohtsuki, T., **Takata,
+> T.**", so the two-bridge torsion paper is a two-author work.) The blocker is
+> now only the filed copy, not the byline. **8₁₁ is unaffected** and remains the
+> load-bearing open instance: an 8-crossing knot, outside every family above.
+
+> **⚠️ Do not close 8₁₁ off a two-bridge or a "42,000 knots" headline**
+> (2026-08-30, bean `qou-b5h9`). Two results now in `library/` reach 8₁₁ and
+> neither gives it the volume conjecture:
+>
+> * **8₁₁ = b(27,10) is two-bridge** (isometry-verified in-sandbox against the
+>   SnapPy `8_11` exterior), so Ohtsuki–Takata, *Geom. Topol.* **19** (2015)
+>   853–952 (`library/download-1/`) covers it, as does Garoufalidis–Yoon
+>   (`library/arxiv-2411.03801v2/`). But both prove `ω²(D) = ±τ(K)/(2√−1)` — a
+>   statement about the **1-loop / torsion** coefficient, defined from the
+>   diagram with no reference to asymptotics. The bridge to the actual Kashaev
+>   prefactor is Ohtsuki–Takata Prop. 4.9, gated on their **Assumption 4.8**
+>   (Poisson summation + saddle point), which the literature verifies only up to
+>   7 crossings. Ohtsuki–Takata never claims the volume conjecture for anything;
+>   "volume conjecture" occurs twice in its 100 pages, both in the historical
+>   survey. Same for 10₄₃ = b(73,27).
+> * *FAMED by computer: proving the Andersen–Kashaev volume conjecture for
+>   42,000 knots* (arXiv:2512.17437) proves its conjecture for all knots with
+>   ≤ 12 crossings, nominally including 8₁₁. It is the **Andersen–Kashaev** VC
+>   for the **Teichmüller TQFT**, not the coloured Jones at $e^{2\pi i/N}$.
+>   `references.bib` already carries this scope warning for a neighbouring
+>   Chen–Yang result; it is repeated *here*, at the 8₁₁ row, because that is
+>   where a reader will otherwise act on the headline.
+>
+> What the two-bridge results *do* give: the **modulus** half of the corpus's
+> $c_\sigma$ law, unconditionally for every hyperbolic two-bridge knot, since
+> $\tau_{DG}$ and $\tau_{OT}$ are reciprocals and $|\omega|^2 = |\tau_{OT}|/2$.
+> For 8₁₁ that predicts $|\omega_{\text{Hessian}}| = 0.238296403552$. Whether
+> that number is the Kashaev asymptotic prefactor there is the open part.
+
 **Bottom line for Lean:** the *combinatorics* of the scale (the bond count) is
 proved; the *identity* that makes `Vol` the scale is the open volume conjecture.
 So "binding = m_e·Vol" is a **rigorous conditional result** modulo one named,

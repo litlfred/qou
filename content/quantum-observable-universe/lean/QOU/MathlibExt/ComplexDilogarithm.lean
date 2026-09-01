@@ -548,4 +548,83 @@ theorem intervalIntegrable_log_one_sub_div {y : ℂ}
   intervalIntegrable_log_one_sub_div_of_slitPlane
     (fun z h0 h1 => mem_slitPlane_iff.2 (Or.inl (hre z h0 h1)))
 
+/-! ### Conjugation symmetry — Schwarz reflection, for free
+
+`cLiTwoExt` is an integral over a **real** interval of `log(1 − yz)/z`, and every
+piece of that integrand commutes with conjugation: `z̄ = z` on the reals,
+`conj(1 − yz) = 1 − ȳz`, and `Complex.log` commutes with `conj` off the cut. So
+`Li₂(ȳ) = conj (Li₂ y)` needs no analytic continuation at all — it is the
+integral definition read twice.
+
+**The hypothesis `y.im ≠ 0` cannot be dropped**, and this is not a technicality
+of the proof: on the cut the statement is *false*. At `y = 5`, `conj y = y`, so
+it would assert `Li₂(5) ∈ ℝ`, and `mpmath` gives
+`Li₂(5) = 1.78371916127 − 5.05619832211i`. Measured off the axis it holds
+exactly — residual `0.0` at 40 dps at the five `5₂` arguments, and still `0.0`
+at `1e−7` from the cut on either side of `Re = 5`.
+
+This is what `QOU.Archimedean.FiveTwoOhtsukiBridge.IsKummerAtOhtsukiArgs.of_upper_half_plane`
+consumes to reach the three lower-half-plane arguments of Ohtsuki's sum from
+`QOU.Knot.KummerRadial.kummer`, which is proved only for `Im z > 0`. -/
+
+/-- Conjugation passes through an interval integral, with **no integrability
+hypothesis**: `conj` is a linear isometry, so where `f` fails to be integrable
+so does `conj ∘ f`, and both sides are Bochner's junk value `0`. -/
+theorem intervalIntegral_conj {a b : ℝ} {f : ℝ → ℂ} :
+    (∫ z in a..b, (starRingEnd ℂ) (f z)) = (starRingEnd ℂ) (∫ z in a..b, f z) := by
+  simp only [intervalIntegral, _root_.integral_conj, map_sub]
+
+/-- **`Li₂(ȳ) = conj (Li₂ y)` off the real axis.** See the section docstring for
+why `y.im ≠ 0` is required rather than merely convenient. -/
+theorem cLiTwoExt_conj {y : ℂ} (hy : y.im ≠ 0) :
+    cLiTwoExt ((starRingEnd ℂ) y) = (starRingEnd ℂ) (cLiTwoExt y) := by
+  have hpt : ∀ z : ℝ,
+      Complex.log (1 - (starRingEnd ℂ) y * (z : ℂ)) / (z : ℂ)
+        = (starRingEnd ℂ) (Complex.log (1 - y * (z : ℂ)) / (z : ℂ)) := by
+    intro z
+    -- `Im (1 − yz) = −(Im y · z)`, so `1 − yz` is on the negative real axis only
+    -- if `z = 0` — and there it is `1`.
+    have him : (1 - y * (z : ℂ)).im = -(y.im * z) := by simp
+    have harg : (1 - y * (z : ℂ)).arg ≠ Real.pi := by
+      intro hc
+      obtain ⟨hre, h0⟩ := Complex.arg_eq_pi_iff.mp hc
+      rw [him, neg_eq_zero] at h0
+      rcases mul_eq_zero.mp h0 with h | h
+      · exact hy h
+      · rw [show ((z : ℂ)) = 0 by exact_mod_cast h] at hre
+        norm_num at hre
+    have hconj : (starRingEnd ℂ) (1 - y * (z : ℂ)) = 1 - (starRingEnd ℂ) y * (z : ℂ) := by
+      simp
+    rw [map_div₀, ← Complex.log_conj _ harg, hconj, Complex.conj_ofReal]
+  unfold cLiTwoExt
+  rw [map_neg]
+  refine neg_inj.mpr ?_
+  rw [intervalIntegral.integral_congr (g := fun z : ℝ =>
+    (starRingEnd ℂ) (Complex.log (1 - y * (z : ℂ)) / (z : ℂ))) fun z _ => hpt z]
+  exact intervalIntegral_conj
+
+/-- **`Li₂(1)` is real.** `cLiTwoExt_conj` cannot reach `y = 1` — it is on the
+axis, where the conjugation identity is exactly what fails in general — so this
+is proved the same way but from the *stronger* local fact: on `[0,1]` the
+integrand `log(1 − z)/z` is real-valued outright, because `1 − z ≥ 0` there.
+
+Stated as `.im = 0` rather than `= π²/6`: that is all the `5₂` bridge's `hone`
+hypothesis needs, and it avoids importing an evaluation this file does not
+prove. -/
+theorem cLiTwoExt_one_im : (cLiTwoExt 1).im = 0 := by
+  have hpt : ∀ z : ℝ, z ∈ Set.uIcc (0 : ℝ) 1 →
+      (starRingEnd ℂ) (Complex.log (1 - (1 : ℂ) * (z : ℂ)) / (z : ℂ))
+        = Complex.log (1 - (1 : ℂ) * (z : ℂ)) / (z : ℂ) := by
+    intro z hz
+    rw [Set.uIcc_of_le (by norm_num : (0 : ℝ) ≤ 1)] at hz
+    have h1 : (1 : ℂ) - (1 : ℂ) * (z : ℂ) = ((1 - z : ℝ) : ℂ) := by push_cast; ring
+    have h2 : (0 : ℝ) ≤ 1 - z := by linarith [hz.2]
+    rw [h1, ← Complex.ofReal_log h2, ← Complex.ofReal_div, Complex.conj_ofReal]
+  refine Complex.conj_eq_iff_im.mp ?_
+  unfold cLiTwoExt
+  rw [map_neg]
+  refine neg_inj.mpr ?_
+  rw [← intervalIntegral_conj]
+  exact intervalIntegral.integral_congr hpt
+
 end QOU.MathlibExt

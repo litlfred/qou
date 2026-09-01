@@ -15,19 +15,21 @@ hyperbolic + amphichiral 2-bridge knot). Per this hint:
   - amphichirality is the natural "1st-gen-like" symmetry for muon
   - candidate tau: next amphichiral hyperbolic knot after 4_1
 
-Amphichiral hyperbolic knots with known volumes (SnapPy census):
+Amphichiral hyperbolic knots (volumes from `knot_volumes.vol_at`, SnapPy
+3.3.2). Ten of the twelve figures previously listed here were wrong — see
+the note at `amphichiral_knots` below (bean qou-ckbv, 2026-08-30):
   4_1   (Vol = 2.02988...)  — MUON canonical
   6_3   (Vol = 5.69302...)  — next amphichiral, 6-crossing
-  8_3   (Vol = 6.55175...)  — 8-crossing amphichiral
+  8_3   (Vol = 5.23868...)  — 8-crossing amphichiral   (was 6.55175)
   8_9   (Vol = 7.58818...)
-  8_12  (Vol = 8.93582...)
-  8_17  (Vol = 10.7853...)
+  8_12  (Vol = 8.93586...)
+  8_17  (Vol = 10.9859...)                             (was 10.7853)
   8_18  (Vol = 12.3509...)
-  10_17 (Vol = 10.4575...)
-  10_33 (Vol = 8.93582...)  — same vol as 8_12 (commensurable)
-  10_37 (Vol = 11.3322...)
-  10_43 (Vol = 13.8330...)
-  10_45 (Vol = 14.5582...)
+  10_17 (Vol = 8.53676...)                             (was 10.4575)
+  10_33 (Vol = 11.5357...)  — NOT commensurable with 8_12 (was 8.93582)
+  10_37 (Vol = 10.9658...)                             (was 11.3322)
+  10_43 (Vol = 12.6026...)                             (was 13.8330)
+  10_45 (Vol = 13.7161...)                             (was 14.5582)
 
 For each candidate, test multiple formulas:
   (a) Vol(K) / ℏ_q^k  for k = 2, 3, 4
@@ -71,6 +73,7 @@ from experimental_constants import MU_OVER_E, TAU_OVER_E
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
 
 def main() -> int:
@@ -93,20 +96,34 @@ def main() -> int:
     # file in the convention-C site list for no reason. Verified: witness
     # diff 0 fields, stdout identical apart from a provenance line.
 
-    # Amphichiral hyperbolic knots (SnapPy census; cross-checked w/ knot-volumes.py)
+    # Amphichiral hyperbolic knots — read from the canonical registry.
+    #
+    # EXCISED 2026-08-30 (bean qou-ckbv). This list was headed "SnapPy census;
+    # cross-checked w/ knot-volumes.py" and was neither. Measured against
+    # SnapPy, ten of its twelve entries were wrong inside the digits they
+    # printed, most of them at the FIRST or second significant figure:
+    #
+    #     8_3    6.55174581471284  ->   5.23868410079844   (25 % out)
+    #     8_17  10.78528041739327  ->  10.98590760628482
+    #     10_17 10.45758935320168  ->   8.53675559919323
+    #     10_33  8.93581640816072  ->  11.53567393228233
+    #     10_37 11.33222803236     ->  10.96581053242464
+    #     10_43 13.83304617        ->  12.60259611426208
+    #     10_45 14.55822           ->  13.71607598475273
+    #
+    # The "10_33" row carried 8_12's value under the comment "commensurable
+    # w/ 8_12". They are not: 11.5357 against 8.9359. As with the 9_46 entry
+    # in m_tau_knot_prediction, a stated reason is what made a wrong number
+    # look deliberate — and a claim of commensurability is exactly the kind a
+    # reader would take on trust rather than re-derive.
+    #
+    # Only 4_1 and 6_3 survived. `knot_volumes` stocked none of the others,
+    # which is why they were hand-typed here; it now does.
     amphichiral_knots = [
-        ("4_1",  mp.mpf("2.02988321281931")),  # muon (calibration)
-        ("6_3",  mp.mpf("5.69302109207851")),
-        ("8_3",  mp.mpf("6.55174581471284")),
-        ("8_9",  mp.mpf("7.58817874042570")),
-        ("8_12", mp.mpf("8.93581640816072")),
-        ("8_17", mp.mpf("10.78528041739327")),
-        ("8_18", mp.mpf("12.35090746472085")),
-        ("10_17",mp.mpf("10.45758935320168")),
-        ("10_33",mp.mpf("8.93581640816072")),  # commensurable w/ 8_12
-        ("10_37",mp.mpf("11.33222803236")),
-        ("10_43",mp.mpf("13.83304617")),
-        ("10_45",mp.mpf("14.55822")),
+        (name, vol_at(name, mp.mp.dps))
+        for name in ("4_1",                      # muon (calibration)
+                     "6_3", "8_3", "8_9", "8_12", "8_17", "8_18",
+                     "10_17", "10_33", "10_37", "10_43", "10_45")
     ]
 
     print(f"=== Substrate ===")

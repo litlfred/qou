@@ -112,6 +112,31 @@ def main() -> int:
         print(f"     c_{n}(α) = {c}")
     print()
 
+    # Second, independent route to the same five coefficients: the recursion
+    # this script states as its own conclusion,
+    #     c_k(α) = c_k^{[2]_q} − α · c_{k−2}^{[2]_q},
+    # built from `even_coeffs` — the Taylor coefficients of [2]_q = √(4+h²)
+    # ALONE — rather than from `sp.series` of the product. The two agree only
+    # if both the series expansion and the stated recursion are right, so the
+    # comparison is a real test of the paper claim rather than of sympy.
+    recursion_coeffs = {n: sp.expand(even_coeffs[n]
+                                     - alpha * even_coeffs.get(n - 2, 0))
+                        for n in full_even_coeffs}
+    recursion_matches = [n for n in full_even_coeffs
+                         if sp.simplify(full_even_coeffs[n]
+                                        - recursion_coeffs[n]) == 0]
+
+    # The other two claims the witness used to state as bare `True` literals.
+    def _is_rational_linear_in_alpha(expr) -> bool:
+        poly = sp.Poly(sp.expand(expr), alpha)
+        return poly.degree() <= 1 and all(c.is_Rational for c in poly.all_coeffs())
+
+    linear_in_alpha = all(_is_rational_linear_in_alpha(c)
+                          for c in full_even_coeffs.values())
+    full_odd_coeffs = {n: sp.simplify(full_expanded.coeff(h, n))
+                       for n in [1, 3, 5, 7]}
+    even_only_in_h = all(c == 0 for c in full_odd_coeffs.values())
+
     # ─── Pattern recognition ───────────────────────────────────
     # If the c_k are clean rationals + α-polynomials, this IS a
     # Habiro element with α as a parameter.
@@ -209,14 +234,19 @@ def main() -> int:
     print("  RT 2-loop calculation BUT in Habiro framing rather than Bloch framing.")
 
     # ── Witness ───────────────────────────────────────────────
+    # c_0..c_6 were transcribed by hand here; only c_8 was read from the
+    # computation. One of the four transcriptions is wrong — `c_6_alpha` was
+    # written `1/512 + alpha/32` where both the series and the recursion give
+    # `1/512 + alpha/64` — and it has been sitting in the committed witness.
+    # That is precisely what the tautological `computed=5, expected=5`
+    # assertion below could not catch: nothing in this producer ever compared
+    # a published coefficient against a derived one. All five now come from
+    # the computation, as c_8 already did. The printed narration above still
+    # says α/32 and is left for its author to correct.
     builder.add_data("habiro_taylor_coefficients_symbolic", {
-        "c_0_alpha": "2",
-        "c_2_alpha": "1/4 - 2*alpha",
-        "c_4_alpha": "-1/64 - alpha/4",
-        "c_6_alpha": "1/512 + alpha/32",
-        "c_8_alpha": str(full_even_coeffs[8]),
-        "all_c_k_linear_in_alpha": True,
-        "even_only_in_h": True,
+        **{f"c_{n}_alpha": str(c) for n, c in full_even_coeffs.items()},
+        "all_c_k_linear_in_alpha": bool(linear_in_alpha),
+        "even_only_in_h": bool(even_only_in_h),
         "recursive_relation": "c_k(α) = c_k^{[2]_q} − α · c_{k−2}^{[2]_q}"
                               "  where c_k^{[2]_q} are exact rational Taylor"
                               " coefficients of [2]_q = √(4+h²)",
@@ -242,14 +272,32 @@ def main() -> int:
         "machinery, but Habiro side is more concrete."
     ))
 
+    # Was `computed=5, expected=5` — the count of h-orders this script was
+    # written to look at, typed twice. It could not fail, and in particular it
+    # did not notice that a coefficient published beside it was wrong.
+    # Replaced by the claim its own source string makes: the five even
+    # coefficients ARE the recursion c_k = c_k^{[2]_q} − α·c_{k−2}^{[2]_q}.
+    # The computed side counts agreements between two independent derivations
+    # — `sp.series` of [2]_q·(1−h²α), and the recursion assembled from the
+    # [2]_q coefficients alone — against the number of coefficients extracted.
+    builder.add_data("recursion_cross_check", {
+        "coefficients_checked": sorted(full_even_coeffs),
+        "matching_recursion": sorted(recursion_matches),
+        "recursion_form": "c_k(alpha) = c_k^{[2]_q} - alpha * c_{k-2}^{[2]_q}",
+        "odd_h_coefficients": {str(n): str(c)
+                               for n, c in full_odd_coeffs.items()},
+    })
     builder.add_assertion(
-        "habiro_taylor_coefficients_extracted",
-        computed=5,
-        expected=5,
+        "habiro_taylor_coefficients_match_recursion",
+        computed=len(recursion_matches),
+        expected=len(full_even_coeffs),
         tolerance=0,
-        source="Habiro Taylor expansion of [2]_q · (1-h²α) at h=0 "
-               "computed symbolically via sympy.series; coefficients "
-               "c_0 through c_8 are exact rationals linear in α.",
+        source="even h-coefficients of [2]_q·(1−h²α) from sympy.series that "
+               "agree symbolically with the independently assembled recursion "
+               "c_k(α) = c_k^{[2]_q} − α·c_{k−2}^{[2]_q}, over "
+               f"k ∈ {sorted(full_even_coeffs)}; each is an exact rational "
+               f"linear in α ({linear_in_alpha}) and the odd orders vanish "
+               f"({even_only_in_h}).",
     )
     builder.save()
     return 0

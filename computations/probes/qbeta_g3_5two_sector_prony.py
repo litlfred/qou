@@ -100,7 +100,10 @@ def run_direction(name, invtau0, direction, delta, nsamp=8):
     hold3 = max(abs(preds3[j] - zs[j]) / abs(zs[j]) for j in range(6, nsamp))
     Es = [mp.log(r) * 2 * mp.pi * mp.mpc(0, 1) / (delta * direction)
           for r in roots3]
-    return zs, roots3, Es, (hold2, hold3)
+    # The rank-3 characteristic coefficients travel with the roots so the
+    # caller can certify that the exponents it records really are the roots of
+    # the recurrence they were solved from (see `exponents_solve_...` below).
+    return zs, roots3, Es, (hold2, hold3), (a3, b3, c3)
 
 
 def lattice_match(E, Vs, vs):
@@ -134,7 +137,7 @@ def main() -> int:
 
     # P1: generic direction (the S2 failure direction)
     direction = mp.e ** (-mp.mpc(0, 1) * mp.pi / 3)   # 1/τ direction
-    zs, rhos, Es, (hold2, hold3) = run_direction(
+    zs, rhos, Es, (hold2, hold3), (a3, b3, c3) = run_direction(
         "generic", mp.mpf(30), direction, mp.mpf(4), nsamp=9)
     print(f"\n[P1] generic direction e^(iπ/3) (τ ≈ 1/30..1/62):")
     print(f"    held-out rel: rank-2 = {mp.nstr(hold2, 4)}, rank-3 = "
@@ -205,10 +208,51 @@ def main() -> int:
                      tolerance=0.5,
                      source="rank-3 Prony beats rank-2 on held-out exact "
                             "samples within the c1-tau drift floor")
-    wb.add_assertion("exponents_recorded",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source="E+/E- recorded with lattice-match table "
-                            "(identification honest per residuals)")
+    # Was `computed=1.0, expected=1.0, tolerance=0.5` (bean `qou-26f2`) — the
+    # same literal on both sides, so it recorded `passed:true` no matter what
+    # `polyroots` returned. Split into the two things the old name gestured at.
+    #
+    # (a) COVERAGE. `PRONY_RANK` is the degree of the characteristic polynomial
+    #     `prony3` builds, not `len(Es)`, so a short root list fails instead of
+    #     shrinking both sides together; `Es[:3]` above would otherwise truncate
+    #     silently, and the lattice table is built from that slice.
+    PRONY_RANK = 3
+    n_recorded = sum(1 for E in Es
+                     if mp.isfinite(E.real) and mp.isfinite(E.imag))
+    wb.add_assertion(
+        "every_prony_exponent_recorded",
+        computed=str(min(n_recorded, len(matches))),
+        expected=str(PRONY_RANK),
+        tolerance=0,
+        unit="finite exponents carrying a lattice-match row",
+        source=("rank-3 Prony has three characteristic roots; each must reach "
+                "data.prony.exponents finite and carry a row in "
+                "data.lattice_matches. Expected count is the model order, not "
+                "len(Es)."),
+    )
+    # (b) THE EXPONENTS ARE THE ROOTS THEY CLAIM TO BE — an independent route
+    #     to the same numbers: substitute each recorded ρ back into the cubic
+    #     z³ − a z² − b z − c whose coefficients `prony3` solved for. `polyroots`
+    #     is iterative and reports no failure on a bad root, so this is the only
+    #     thing standing between a non-converged root and a published exponent.
+    #     Floor is 10^-(dps−10), i.e. all but the last ten working digits;
+    #     measured max residual is ~1e-71 at dps 70, sixty orders under it.
+    char_resid = max(abs(((r - a3) * r - b3) * r - c3) / (1 + abs(r) ** 3)
+                     for r in rhos)
+    floor = mp.mpf(10) ** -(mp.mp.dps - 10)
+    print(f"    characteristic residual at the recorded roots: "
+          f"{mp.nstr(char_resid, 4)} (floor {mp.nstr(floor, 3)})")
+    wb.add_data("prony_characteristic_residual", mp.nstr(char_resid, 8))
+    wb.add_assertion(
+        "exponents_solve_their_own_recurrence",
+        computed=mp.nstr(char_resid, 8),
+        expected="0",
+        tolerance=mp.nstr(floor, 3),
+        unit="max |p(ρ)|/(1+|ρ|³) over the recorded roots",
+        source=("p(z) = z³ − a z² − b z − c with (a,b,c) the rank-3 Prony "
+                "coefficients solved from the first six samples; ρ the roots "
+                "the recorded exponents were built from. Floor = 10^-(dps-10)."),
+    )
     wb.save()
     return 0 if ok else 1
 

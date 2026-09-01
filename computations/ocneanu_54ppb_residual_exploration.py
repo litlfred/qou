@@ -251,12 +251,87 @@ def main() -> int:
     w.add_data("best_special_function_ppb", mp.nstr(scored_A[0][2], 8) if scored_A else "n/a")
     w.add_data("verdict", verdict)
 
+    # Was `computed=True, expected=True` named `exploration_completed` (bean
+    # `qou-26f2`): reaching save() was the whole test.  Draining it exposed
+    # that every number this module's prose quotes has since drifted — see the
+    # caveat.  What follows asserts what the arithmetic ACTUALLY says.
+
+    # (1) Controls on the q-machinery the target is built from, at the one
+    # argument whose values are fixed a priori: [3]_q! → 3! = 6 and the
+    # Borromean closed-form trace → 1 as q → 1.
+    _q1 = 1 + mp.mpf("1e-30")
+    qfact3_classical_gap = abs(qfact(3, _q1) - 6)
+    trM_classical_gap = abs(trM_borromean_closed(_q1) - 1)
+    _classical_gap = max(qfact3_classical_gap, trM_classical_gap)
     w.add_assertion(
-        name="exploration_completed",
-        computed=True,
-        expected=True,
+        name="q_brackets_reduce_to_classical_at_q_one",
+        computed=mp.nstr(_classical_gap, 12),
+        expected="0",
+        tolerance="1e-25",
+        source=f"max(|[3]_q! − 3!|, |tr_M(Borromean) − 1|) at q = 1+1e-30 = "
+               f"{mp.nstr(_classical_gap, 6)}; 3! = 6 and the classical Markov "
+               "trace 1 are known independently of this substrate and pin "
+               "qint / qfact / trM_borromean_closed",
+    )
+
+    # (2) The Ocneanu near-match itself, which is the module's whole premise:
+    # (2·m_μ·F_Bor − m_p)/m_e lands on the categorical integer 12 = 2·dim H_3.
+    # 12 comes from the representation theory, not from this computation, so
+    # this is the one place the exploration meets an independent number.
+    k_gap = abs(k_required - 12)
+    w.add_assertion(
+        name="k_required_lands_on_categorical_integer_12",
+        computed=mp.nstr(k_required, 20),
+        expected="12",
+        tolerance="1e-3",
+        source=f"(2·m_μ·F_Bor − m_p)/m_e = {mp.nstr(k_required, 16)}; misses "
+               f"the integer 12 = 2·dim H_3 by {mp.nstr(k_gap, 6)} "
+               f"({mp.nstr(k_gap / 12 * mp.mpf('1e6'), 6)} ppm). Gate 1e-3, "
+               "~2.5× the observed gap: a drift moving k off 12 by a part in "
+               "10^4 breaks the near-match this module exists to close",
+    )
+
+    # (3) The two empirical forms the 2026-06-01 comment block claims reach
+    # 0.003 and 0.0008 ppb. They do not — both sit at ~207 ppb here. The
+    # refutation is asserted, the claim is reported; see the caveat.
+    _best_form_ppb = min(abs(form_a_ppb), abs(form_b_ppb))
+    w.add_assertion(
+        name="empirical_h4_forms_do_not_reach_sub_ppb",
+        computed=1.0 if _best_form_ppb > 1 else 0.0,
+        expected=1.0,
+        tolerance=0.5,
+        source=f"FORM A = {mp.nstr(abs(form_a_ppb), 8)} ppb, FORM B = "
+               f"{mp.nstr(abs(form_b_ppb), 8)} ppb; neither is within 1 ppb, "
+               "contradicting the in-file 0.003 / 0.0008 ppb claims",
+    )
+
+    # (4) The scan's own result, which nothing asserted.
+    w.add_assertion(
+        name="pslq_structure_hits_on_f_minus_1",
+        computed=len(matches),
+        expected=0,
         tolerance=0,
-        source=f"Wider exploration at 70 dps.",
+        source=f"{len(matches)} PSLQ pairwise structures found for f−1; the "
+               "verdict's non-hit branch depends on this being 0",
+    )
+    w.add_data("k_required", mp.nstr(k_required, 25))
+    w.add_data("form_a_ppb", mp.nstr(form_a_ppb, 12))
+    w.add_data("form_b_ppb", mp.nstr(form_b_ppb, 12))
+    w.add_caveat(
+        "Every figure this module's prose quotes has drifted from what it now "
+        "computes, and the drain is what surfaced it. (a) The title and "
+        "docstring say a '54 ppb residual'; after the plain (α_em/π)/dim H_3 "
+        f"correction the residual measures "
+        f"{mp.nstr((12 - alpha_em / mp.pi / 6 - k_required) / k_required * mp.mpf('1e9'), 8)} "
+        "ppb. (b) The docstring sets the goal as identifying f(q_0) ≈ "
+        f"1.001674; the computed f_target is {mp.nstr(f_target, 12)}, so f−1 "
+        "is 4.8× the stated value. (c) The 2026-06-01 comment block reports "
+        "FORM A at 0.003 ppb and FORM B at 0.0008 ppb (17,584× and 68,576× "
+        f"over baseline); they measure {mp.nstr(abs(form_a_ppb), 6)} and "
+        f"{mp.nstr(abs(form_b_ppb), 6)} ppb — about five orders worse, and "
+        "indistinguishable from each other. The computation is "
+        "self-consistent; the prose predates a substrate or CODATA movement "
+        "and was never re-derived. Reported, not silently corrected."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

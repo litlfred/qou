@@ -168,10 +168,31 @@ def main() -> None:
     w.add_data("second_row_max_abs_miss_deg",
                max(abs(rows[m]["miss_deg"]) for m in second_row))
     w.add_data("h2s_pure_p_miss_deg", rows["H2S"]["miss_deg"])
-    w.add_assertion(
-        "lone/bond ratio is q² for every molecule (universal braid weight)",
-        computed=True, expected=True,
-        source="all share the local e⁻=σ₀σ₁σ₀ (ℓ=3) / σ (ℓ=1) braid; q³/q=q²",
+    # DEMOTED from an assertion (bean qou-26f2).  It was
+    # computed=True/expected=True — passes by construction — and there is no
+    # independent route to it here or in the sibling
+    # molecular_angle_symmetric_block_general.py, which derives the same ratio
+    # the same way ("DERIVED ratio (trivial-rep q³/q)").  The ratio is the
+    # algebraic identity q³/q = q², and its "universality" is an INPUT, not a
+    # result: `bond_len`/`lone_len` are literals in the row builder above,
+    # identical for all four molecules by construction rather than derived per
+    # central atom.  Nothing in this script can make it false, so it belongs in
+    # data — flagged — rather than inflating allPassed.  Re-promote it only
+    # alongside a per-atom derivation of the local braid word, which is what
+    # would turn the row-2 (C,N,O) vs row-3 (S) span into a real test.
+    w.add_data(
+        "lone_bond_ratio_is_q2_universal",
+        {
+            "claim": "lone/bond ratio is q² for every molecule "
+                     "(universal braid weight)",
+            "derivation": "all share the local e⁻=σ₀σ₁σ₀ (ℓ=3) / σ (ℓ=1) braid "
+                          "on the symmetric Wedderburn block, where each "
+                          "generator ↦ q; q³/q = q².",
+            "has_independent_expected_value": False,
+            "why_not": "algebraic identity over a DECLARED (not derived) braid "
+                       "word; no second route exists in this module or in "
+                       "molecular_angle_symmetric_block_general.py.",
+        },
     )
     w.add_assertion(
         "H₂S resolved by the pure-p base within ~2° (not a weight anomaly)",

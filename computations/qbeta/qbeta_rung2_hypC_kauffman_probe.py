@@ -112,6 +112,17 @@ def main() -> int:
         "Unknot (sanity)": sp.Integer(1),
     }
 
+    # Component counts, for the classical V(L)(1) = (−2)^(c−1) check below.
+    # Every entry above is a one-component knot except the Hopf link.
+    knot_components = {
+        "Hopf link H+": 2,
+        "Trefoil 3_1 (right-handed)": 1,
+        "Trefoil 3_1 (left-handed)": 1,
+        "Figure-eight 4_1": 1,
+        "Cinquefoil T(2,5)": 1,
+        "Unknot (sanity)": 1,
+    }
+
     print(f"  {'Knot':<32} {'V(K) at q=1':>13} {'(q-1)³ coef':>15} Hyp-C?")
     print(f"  {'-'*32} {'-'*13} {'-'*15} {'-'*7}")
 
@@ -126,9 +137,18 @@ def main() -> int:
         confirmed = (sp.simplify(c3 - cubic_coeff_required) == 0)
         verdict = "✓ MATCH" if confirmed else f"✗ ≠ {cubic_coeff_required}"
         print(f"  {name:<32} {str(V_at_q1):>13} {str(c3):>15} {verdict}")
+        # Classical constraint on the value at q = 1: for a link with c
+        # components V(L)(1) = (−2)^(c−1). Independent of everything this
+        # probe computes, and the only thing standing between a mistyped
+        # Laurent polynomial and a published refutation.
+        v1_expected = sp.Integer(-2) ** (knot_components[name] - 1)
         results.append({
             "knot": name,
+            "components": knot_components[name],
             "V_at_q1": str(V_at_q1),
+            "V_at_q1_classical": str(v1_expected),
+            "V_at_q1_matches_classical": bool(
+                sp.simplify(V_at_q1 - v1_expected) == 0),
             "cubic_taylor_coefficient": str(c3),
             "hyp_c_confirmed": confirmed,
         })
@@ -189,16 +209,65 @@ def main() -> int:
             "group constructions)."
         ))
 
+    # Was `computed=1, expected=1` (bean `qou-26f2`) — one literal against
+    # itself standing in for the whole probe, so `passed:true` was recorded no
+    # matter what the six Jones polynomials evaluated to. This probe's output
+    # is a REFUTATION of Hyp-C, and a refutation is only as good as its inputs;
+    # both of the things it rests on are checkable and neither was checked.
+
+    # (1) THE JONES POLYNOMIALS ARE THE RIGHT ONES. They are hand-typed Laurent
+    #     polynomials, and a transcription slip in any of them would move a
+    #     cubic coefficient and change a verdict silently. The classical value
+    #     at q = 1, V(L)(1) = (−2)^(c−1), is an independent constraint on each:
+    #     1 for the five knots, −2 for the two-component Hopf link. It is not
+    #     a proof of correctness, but no plausible typo survives it unchanged.
+    v1_ok = sum(1 for r in results if r["V_at_q1_matches_classical"])
     builder.add_assertion(
-        "hyp_C_decisively_resolved_for_natural_knots",
-        computed=1,
-        expected=1,
+        "jones_polynomials_take_the_classical_value_at_q_1",
+        computed=str(v1_ok),
+        expected=str(len(results)),
         tolerance=0,
-        source=("Probe computes V(K) Taylor at q=1 for Hopf, trefoil "
-                "3_1, figure-eight 4_1, and cinquefoil T(2,5), reads "
-                "off cubic coefficient, compares to required value. "
-                "Reports CONFIRMED or REFUTED for each."),
+        unit="knots whose V(K)(1) equals (−2)^(components−1)",
+        source=("classical evaluation of the Jones polynomial at q = 1; "
+                "independent of the Taylor extraction the verdict uses. "
+                + "; ".join(f"{r['knot']}: {r['V_at_q1']} vs "
+                            f"{r['V_at_q1_classical']}" for r in results)),
     )
+
+    # (2) THE TARGET COEFFICIENT IS 1. The module docstring derives it by hand
+    #     — ℏ_q³ = (q−1)³/q³, so at q = 1 + h the h³ coefficient of h³(1 − 3h +
+    #     …) is 1 — while the code re-derives it through sympy's series. Two
+    #     routes to the number every verdict in the table is measured against,
+    #     and they were never compared.
+    builder.add_assertion(
+        "required_cubic_coefficient_matches_the_hand_derivation",
+        computed=str(cubic_coeff_required),
+        expected="1",
+        tolerance=0,
+        unit="h³ coefficient of ℏ_q³ at q = 1 + h",
+        source=("docstring derivation: ℏ_q³ = (q−1)³/q³ = h³·(1 − 3h + …), so "
+                "the h³ coefficient is 1. Code route: sympy.series of "
+                "((q−1)/q)³ under q → 1 + h. Every ✓/✗ in the table is a "
+                "comparison against this number."),
+    )
+
+    # (3) THE VERDICT ITSELF. Refuted, on every candidate including the unknot
+    #     control — there is no independent expected value for "how many knots
+    #     confirm Hyp-C", so it is recorded rather than asserted.
+    builder.add_data("hyp_c_outcome", {
+        "n_candidates": len(results),
+        "n_confirming_excluding_unknot": len(matching),
+        "required_cubic_coefficient": str(cubic_coeff_required),
+        "has_independent_expected_value": False,
+    })
+    if not matching:
+        builder.add_caveat(
+            "Hyp-C is REFUTED by this probe, not confirmed: none of the "
+            f"{len(results) - 1} non-unknot candidates has cubic Taylor "
+            f"coefficient {cubic_coeff_required}. The prose says 'all 4 "
+            "natural-knot candidates' while the table carries 5 non-unknot "
+            "rows (both trefoil chiralities); the refutation covers all of "
+            "them.")
 
     builder.save()
     print(f"  Witness: qbeta-rung2-hyp-c-kauffman-probe.witness.json")

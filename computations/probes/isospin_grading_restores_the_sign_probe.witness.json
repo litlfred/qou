@@ -1,0 +1,156 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T08:12:42.371561+00:00",
+  "commitSha": "e5806bc2197043c70dd3b614c90cbab6a615dd9d",
+  "assertions": [
+    {
+      "name": "A1_two_blocks_match_the_two_isospin_channels",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "blocks [(1, 1), (2,)] with dims [1, 1]"
+    },
+    {
+      "name": "A2_block_eigenvalues_are_q_and_minus_inverse_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sym matches +q to 2.2e-16, antisym matches -1/q to 3.3e-16"
+    },
+    {
+      "name": "A3_ungraded_crossing_gives_the_physical_pattern",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "beta=0: T=1 |mu| = 1.109979 > 1 unbound, T=0 |mu| = 0.900918 < 1 bound"
+    },
+    {
+      "name": "A4_window_is_beta_below_one_over_q_plus_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "window [0, 0.473938459933); thresholds sum to 1.000000; beta_pn misses by 0.025718"
+    },
+    {
+      "name": "A5_channel_asymmetry_is_capped_at_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max ratio 1.000000000 at beta=0 where both channels are log q to 5.7e-42"
+    },
+    {
+      "name": "A6_nature_is_asymmetric_beyond_the_models_cap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "experimental ratio 33.7055 vs model cap 1; robust 67.4..16.9"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "isospin_grading_restores_the_sign_probe",
+  "scriptFile": "isospin_grading_restores_the_sign_probe.py",
+  "scriptHash": "892d0358204e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/isospin_grading_restores_the_sign_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/isospin_grading_restores_the_sign_probe.py"
+  },
+  "description": "Runs escape (b) named by qou-v3u2: grade the two-nucleon bond by (T,S) rather than flavour. The identification is forced by Pauli — 1S0 needs symmetric isospin (T=1), 3S1 needs antisymmetric (T=0) — and the two-strand Hecke algebra has exactly two one-dimensional Wedderburn blocks, symmetric (2) and antisymmetric (1,1), with eigenvalues +q and -1/q verified against build_seminormal_matrices. RESULT: at beta = 0, a pure sigma crossing carrying NO flavour information, |mu| = q = 1.10998 > 1 in the T=1 block (unbound: pp, nn and the np singlet) and |mu| = 1/q = 0.90092 < 1 in the T=0 block (bound: the deuteron). That is exactly the physical pattern, which qou-v3u2 proved a flavour-assigned offset cannot produce at all. The window is beta in [0, 1/(q+1)) = [0, 0.473938459933) in closed form, with complementary thresholds q/(q+1) + 1/(q+1) = 1 exactly; 1/(q+1) < 1/2 for every q > 1 so the unoriented average is always outside, and production's beta_pn = 0.499656 misses by 0.025718. THE LIMIT: the achievable asymmetry between the bound and unbound channels, |L(T=0)|/|L(T=1)|, is capped at exactly 1 and attained only at beta = 0, where both channels equal log q precisely — the one point with both signs right is the point of exact mirror symmetry. Nature's ratio is 2.224566/0.066 = 33.7, robust to the virtual-state energy (17 to 67 at half/double). So escape (b) is necessary and not sufficient: it removes an impossibility and replaces it with a forced degeneracy.",
+  "data": {
+    "blocks": {
+      "(2,)": {
+        "dim": 1,
+        "eigenvalue": "+1.10997858275138",
+        "isospin": "T=1 (1S0)"
+      },
+      "(1, 1)": {
+        "dim": 1,
+        "eigenvalue": "-0.90091828395574",
+        "isospin": "T=0 (3S1)"
+      }
+    },
+    "channels_by_beta": {
+      "0 (sigma)": {
+        "beta": "0.0",
+        "abs_mu_sym": "1.10997858275",
+        "T1": "UNBOUND",
+        "abs_mu_anti": "0.900918283956",
+        "T0": "BOUND"
+      },
+      "1/2 (avg)": {
+        "beta": "0.5",
+        "abs_mu_sym": "1.00544843335",
+        "T1": "UNBOUND",
+        "abs_mu_anti": "1.00544843335",
+        "T0": "unbound"
+      },
+      "pn prod": {
+        "beta": "0.499656072298",
+        "abs_mu_sym": "1.00552033498",
+        "T1": "UNBOUND",
+        "abs_mu_anti": "1.00537653173",
+        "T0": "unbound"
+      },
+      "1 (inv)": {
+        "beta": "1.0",
+        "abs_mu_sym": "0.900918283956",
+        "T1": "bound",
+        "abs_mu_anti": "1.10997858275",
+        "T0": "unbound"
+      }
+    },
+    "window": {
+      "T1_threshold_q_over_q_plus_1": "0.526061540067381",
+      "T0_threshold_1_over_q_plus_1": "0.473938459932619",
+      "thresholds_sum": "1.0",
+      "beta_pn_production": "0.499656072298243",
+      "beta_pn_miss": "0.0257176123656"
+    },
+    "asymmetry_cap": {
+      "max_ratio": "1.000000000000",
+      "attained_at_beta": "0",
+      "both_channels_equal_log_q": "0.10434072031952",
+      "experimental_ratio": "33.705545",
+      "robustness_half_double": [
+        "67.4111",
+        "16.8528"
+      ]
+    },
+    "magnitudes": {
+      "alpha_log_q_MeV": "0.4367683107",
+      "deuteron_MeV": "2.224566",
+      "factor_low_vs_deuteron": "5.09324",
+      "virtual_state_MeV": "0.066",
+      "factor_high_vs_1S0": "6.6177"
+    }
+  },
+  "caveats": [
+    "'BOUND' IS READ AS |mu| < 1. The antisymmetric block's eigenvalue is NEGATIVE (-1/q), so the ratio there is negative and -log(mu) is undefined; the magnitude is used instead. That is defensible because the sign is fixed by WHICH Hecke eigenvalue the block carries (+q vs -1/q) and is not an energy sign — but it IS a convention, it is doing real work in this result, and it should be stated wherever the result is quoted. Under a convention that treats a negative ratio as unphysical rather than as a magnitude, the T=0 channel has no binding reading at all and this escape does not run.",
+    "THIS IS AT THE n=2 INTERFACE, NOT THE FULL CONSTRUCTION. It treats each nucleon as one strand, where the corpus's atom words give each nucleon three. The survey position is that the n=2 interface version stands (mu+/mu- ARE the n=2 Wedderburn weights) while the H_6-level conjugation argument does not. Lifting the (T,S) grading into the 3-strands-per-nucleon construction is NOT done here and is where this would have to be tested next.",
+    "NECESSARY, NOT SUFFICIENT — do not read this as the nuclear sector being fixed. It removes the impossibility proved in qou-v3u2 and replaces it with a forced degeneracy: the model cannot make the bound channel more than equally strong to the unbound one, where nature is 33.7x asymmetric. No magnitude is claimed; alpha log q = 0.4368 MeV is 5.09x low against the deuteron and 6.62x high against the 1S0 virtual state, being the same number for both.",
+    "The np 1S0 virtual-state energy ~66 keV is the least certain input here and is quoted approximately. The conclusion is shown robust to it: at half or double that value the experimental ratio is 17 or 67, both far outside the model's achievable [0, 1]."
+  ]
+}

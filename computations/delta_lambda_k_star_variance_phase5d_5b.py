@@ -329,19 +329,52 @@ def main() -> int:
                   f"B_AME = {float(d['B_AME']):.4f} MeV, "
                   f"ratio = {float(d['ratio']):.4f}")
         builder.add_data("lepton_generation_assignment", lepton_assignment)
+        # Rank the hypothesis under test against the sweep it sits in. The
+        # docstring's hypothesis is that the lepton-generation assignment
+        # CLOSES the 1.82× residual, which would make it the minimiser; it
+        # is not, so record where it actually lands.
+        builder.add_data(
+            "lepton_generation_assignment_rank_by_variance",
+            results.index(lepton_assignment) + 1)
+        builder.add_data("pairs_beating_lepton_generation_assignment",
+                         results.index(lepton_assignment))
 
+    # COVERAGE, not a constant. `variance_test_completed` used to be
+    # computed=1.0/expected=1.0 — true by construction, and blind to the two
+    # ways this sweep silently under-runs:
+    #   * a missing `atom-chi-rust-<atom>.witness.json` is WARN + `continue`,
+    #     so the variance can be taken over 3 atoms instead of 4;
+    #   * a pair whose ratios degenerate yields variance = inf.
+    # Both left the old assertion green. The expected value is independent of
+    # the sweep: |K_candidates|², read off the declared candidate list.
+    n_atoms_expected = len(ATOMS)
+    fully_covered = sum(
+        1 for r in results
+        if r["variance_max_min"] != float("inf")
+        and len(r["per_atom"]) == n_atoms_expected
+    )
+    builder.add_data("pairs_fully_covered", fully_covered)
+    builder.add_data("atoms_loaded", sorted(chi_data))
     builder.add_assertion(
         "variance_test_completed",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        unit="boolean",
+        computed=fully_covered,
+        expected=len(K_candidates) ** 2,
+        tolerance=0,
+        unit="pairs",
         source=(
-            f"Variance test for {len(K_candidates)}² = {len(K_candidates)**2} "
-            f"(K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed). "
-            f"Best variance: {results[0]['variance_max_min']:.4f} achieved by "
+            f"COVERAGE: every one of the {len(K_candidates)}² = "
+            f"{len(K_candidates)**2} (K_1*, K_2*) candidate pairs (K_3* = 6_1 "
+            f"fixed) produced a finite max/min variance over all "
+            f"{n_atoms_expected} atoms {[a[0] for a in ATOMS]}. Expected value "
+            f"is |K_candidates|² from the declared candidate list, independent "
+            f"of the sweep's own output. Goes red if an atom χ-witness is "
+            f"missing (WARN + continue above) or a pair degenerates to inf. "
+            f"Best variance: {results[0]['variance_max_min']:.4f} at "
             f"K_1* = {results[0]['K_1_star']}, K_2* = {results[0]['K_2_star']}. "
-            f"Baseline (uniform Plancherel): 1.82."
+            f"Baseline (uniform Plancherel): 1.82. NOTE the hypothesis under "
+            f"test is NOT confirmed — the lepton-generation assignment "
+            f"(3_1, 5_1) does not minimise the variance; see "
+            f"`lepton_generation_assignment_rank_by_variance` in data."
         ),
     )
 

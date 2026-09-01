@@ -17,9 +17,18 @@
 
   This file establishes the foundational sorry-free brick — the positivity of
   the van der Veen kernel `whiteheadS` (the analogue of `kashaevProd_pos`) — on
-  the summation range `k + n ≤ N − 1` where every `(k+j)π/N ∈ (0, π)`.  The full
-  limit theorem is state-and-queued (`sorry` + Ref); the reusable Clausen bricks
-  + a `whiteheadS` max-term saddle-location lemma are the remaining work.
+  the summation range `k + n ≤ N − 1` where every `(k+j)π/N ∈ (0, π)`.  The
+  reusable Clausen bricks + a `whiteheadS` max-term saddle-location lemma are
+  the remaining work.
+
+  ⚠ **Stale-claim correction (2026-08-31).**  This paragraph used to say the
+  full limit theorem is "state-and-queued (`sorry` + Ref)".  There is **no
+  `sorry` token anywhere in this file** — `whitehead_volume_conjecture` is
+  proved by `exact hi.limit` from the §3b conjecture carrier
+  `WhiteheadVolumeConjectureLimit`.  That is the class-carrier pattern, not a
+  `sorry`, and the difference is not cosmetic: a corpus `sorry`-audit reads the
+  old wording as a hit, and a reader hunting the gap looks in the wrong place.
+  The gap is the *class*, and it sits in the theorem's type where §3b wants it.
 
   Archimedean (ℝ).  Mathlib-only imports (verifiable standalone).
 
@@ -317,8 +326,14 @@ class WhiteheadVolumeConjectureLimit (kashaev : ℕ → ℝ) (hk : ∀ N, kashae
     `QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half` (sorry-free,
     downstream — it imports the `QOU.Knot.Clausen` machinery that this
     Mathlib-only base file cannot).  This abstract `kashaev`-linked form with
-    the `(N-1)/2` placeholder index remains the one honest `sorry` here; bean
-    qou-1gkf tracks porting the downstream ⌊N/2⌋ result to this exact form. -/
+    the `(N-1)/2` placeholder index is carried by the class above; bean
+    qou-1gkf tracks porting the downstream ⌊N/2⌋ result to this exact form.
+
+    ⚠ The previous wording called this "the one honest `sorry` here".  It is
+    not a `sorry` — there is no such token in the file.  It is a §3b class
+    argument, which is the *stronger* discipline: the assumption is in the
+    type, so every caller inherits it, whereas a `sorry` would let a caller
+    forget it. -/
 theorem whitehead_volume_conjecture
     (kashaev : ℕ → ℝ)
     (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2))
@@ -326,9 +341,10 @@ theorem whitehead_volume_conjecture
     Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
       Filter.atTop (nhds (4 * catalanG)) := by
   -- Ref: [vanderveen2008] arXiv:math/0611181 — VC for the Whitehead link.
-  -- Honest sorry: this base file is Mathlib-only and cannot import
-  -- QOU.Knot.Clausen; the genuine unconditional proof (⌊N/2⌋ inner sum) is
-  -- QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half (sorry-free).
+  -- No `sorry`: the open input is the class `WhiteheadVolumeConjectureLimit`,
+  -- taken as an instance argument.  This base file is Mathlib-only and cannot
+  -- import QOU.Knot.Clausen; the genuine unconditional proof (⌊N/2⌋ inner sum)
+  -- is QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half (sorry-free).
   exact hi.limit
 
 end QOU.Knot.WhiteheadVC

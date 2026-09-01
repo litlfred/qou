@@ -1,0 +1,237 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-08-31T18:07:36.429257+00:00",
+  "commitSha": "d5c902bbe5222bb71707a3763783e6f9f915496f",
+  "assertions": [
+    {
+      "name": "psd_machinery_validated_against_recorded_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "unknot/L_H/6_2/L6a4 at H_3"
+    },
+    {
+      "name": "k_closure_arity_is_2A_plus_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 deviations in 46"
+    },
+    {
+      "name": "no_registry_binding_link_matches_derived_arity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "2H:2 vs 5; 3H:1 vs 7; 3He:3 vs 7"
+    },
+    {
+      "name": "psd_feasibility_is_a_parity_condition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[(0, True), (1, False), (2, True), (3, False), (4, True)]"
+    },
+    {
+      "name": "trefoil_and_nucleon_are_not_psd_feasible",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "trefoil [('sigma_1^3 (B_2 form)', False), ('(s1 s2)^2 (B_3 form)', False), ('(s1 s2)^3 (full twist)', True)]; nucleons [('proton', '1/3'), ('neutron', '1/3')]"
+    },
+    {
+      "name": "determined_K_is_not_psd_feasible",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "2H: K PSD in 1/11; 3H: K PSD in 2/30; 3He: K PSD in 2/30"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "binding-k-convolution-sdp",
+  "scriptFile": "binding_k_convolution_sdp_probe.py",
+  "scriptHash": "2b641b53ae48",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_k_convolution_sdp_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_k_convolution_sdp_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv): takes the owner's steer that K should be an SDP solution via knot convolution, and follows it to the end. (1) The convolution K = rho(atom).rho(free)^-1 DETERMINES K from the canonical substrate word — no free variable, so nothing to optimise. (2) Its derived closure arity is c(K) = 2A+1 (46/46 exact); no registry binding_link_name has it (Hopf 2 vs 5, 8_11 1 vs 7, L6a4 3 vs 7). (3) PSD-feasibility in the seminormal rep is a PARITY condition — rho(sigma) has eigenvalues {q0, -1/q0}, so sigma^k is PSD iff k is even — which passes the unknot and every full twist and cannot select. (4) It rejects the trefoil (-0.731) that binding_k_solver.py names as the unique PSD-feasible constituent, and both nucleon words. (5) The determined K is PSD in 1/11, 2/30, 2/30 blocks, every survivor being 1-DIMENSIONAL — no block of dim >= 2 survives for either object at any A. So K is infeasible for the program said to select it. Machinery validated 4/4 against binding-link-psd-feasibility-probe. No fit; no objective proposed; no knot proposed.",
+  "data": {
+    "k_arity_law": {
+      "tested": 46,
+      "deviations": 0
+    },
+    "registry_binding_links": [
+      {
+        "atom": "2H",
+        "link": "Hopf L2a1",
+        "components": 2,
+        "derived_2A_plus_1": 5
+      },
+      {
+        "atom": "3H",
+        "link": "8_11-class",
+        "components": 1,
+        "derived_2A_plus_1": 7
+      },
+      {
+        "atom": "3He",
+        "link": "L6a4 (3-comp)",
+        "components": 3,
+        "derived_2A_plus_1": 7
+      }
+    ],
+    "registry_heuristic_K_words": [
+      {
+        "atom": "2H",
+        "K_word": [
+          3,
+          3
+        ],
+        "closure_components": 6,
+        "derived_2A_plus_1": 5
+      },
+      {
+        "atom": "3He",
+        "K_word": [
+          3,
+          6
+        ],
+        "closure_components": 7,
+        "derived_2A_plus_1": 7
+      },
+      {
+        "atom": "3H",
+        "K_word": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "closure_components": 5,
+        "derived_2A_plus_1": 7
+      }
+    ],
+    "psd_parity": [
+      {
+        "k": 0,
+        "psd": true,
+        "worst_min_eig": "1.000000"
+      },
+      {
+        "k": 1,
+        "psd": false,
+        "worst_min_eig": "-0.900918"
+      },
+      {
+        "k": 2,
+        "psd": true,
+        "worst_min_eig": "0.811654"
+      },
+      {
+        "k": 3,
+        "psd": false,
+        "worst_min_eig": "-0.731234"
+      },
+      {
+        "k": 4,
+        "psd": true,
+        "worst_min_eig": "0.658782"
+      }
+    ],
+    "trefoil_and_nucleons": {
+      "trefoil": [
+        {
+          "form": "sigma_1^3 (B_2 form)",
+          "psd": false,
+          "worst_min_eig": "-0.731234"
+        },
+        {
+          "form": "(s1 s2)^2 (B_3 form)",
+          "psd": false,
+          "worst_min_eig": "-0.604530"
+        },
+        {
+          "form": "(s1 s2)^3 (full twist)",
+          "psd": true,
+          "worst_min_eig": "0.534703"
+        }
+      ],
+      "nucleons": [
+        {
+          "name": "proton",
+          "psd_blocks": 1,
+          "blocks": 3,
+          "worst_min_eig": "-0.739224"
+        },
+        {
+          "name": "neutron",
+          "psd_blocks": 1,
+          "blocks": 3,
+          "worst_min_eig": "-0.910762"
+        }
+      ]
+    },
+    "determined_K": [
+      {
+        "atom": "2H",
+        "n": 6,
+        "blocks": 11,
+        "atom_psd_blocks": 1,
+        "K_psd_blocks": 1,
+        "worst_atom_min_eig": "-4.210318",
+        "worst_K_min_eig": "-1.595181",
+        "derived_K_components": 5
+      },
+      {
+        "atom": "3H",
+        "n": 9,
+        "blocks": 30,
+        "atom_psd_blocks": 1,
+        "K_psd_blocks": 2,
+        "worst_atom_min_eig": "-9.531563",
+        "worst_K_min_eig": "-4.265691",
+        "derived_K_components": 7
+      },
+      {
+        "atom": "3He",
+        "n": 9,
+        "blocks": 30,
+        "atom_psd_blocks": 1,
+        "K_psd_blocks": 2,
+        "worst_atom_min_eig": "-10.040628",
+        "worst_K_min_eig": "-3.646531",
+        "derived_K_components": 7
+      }
+    ]
+  },
+  "caveats": [
+    "Wedderburn evaluation is at f64, as in binding_k_solver.py. The eigenvalue magnitudes are O(1) and every conclusion is a SIGN conclusion, so f64 is adequate; declared, not laundered.",
+    "PSD is tested on the symmetric part, i.e. on the quadratic form x'Mx — rho_lambda(K) is not symmetric in general. The validation run reproduces all four recorded H_3 results under this convention, including locating 6_2's failure in the standard (2,1) block; the magnitude there is -0.8334 here against -0.89 recorded, a q-pin/normalisation difference. The argument uses the sign and the block, which agree.",
+    "include_inter=False is taken as the constituent product: the generator layout is identical to the full word minus the inter-nucleon crossings, which is what the factorisation T_w(atom) = K . (x)_i T_w(nucleon_i) means. binding_k_solver.py builds K from the HISTORICAL knot braid words instead; this probe uses the canonical substrate word, which is the point."
+  ]
+}

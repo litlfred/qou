@@ -1,0 +1,125 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T04:29:44.047907+00:00",
+  "commitSha": "c02a72d83f8175edf1a3cc915a952c48b64904d7",
+  "assertions": [
+    {
+      "name": "A1_bond_constants_agree_two_routes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |measured - closed form| = 3.43e-13"
+    },
+    {
+      "name": "A2_allpairs_is_subadditive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "saturation factors ['0.659916', '0.650555', '0.640829', '0.625186'], all < 1"
+    },
+    {
+      "name": "A3_A3_isotopes_exceed_measured_ceiling",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "AME/allpairs = 1.00418 (3H), 1.0995 (3He), both > 1"
+    },
+    {
+      "name": "A4_three_regime_reading_is_affected",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "both A=3 isotopes move from inside to above once the ceiling is corrected for sub-additivity"
+    },
+    {
+      "name": "A5_not_a_pattern",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "deviations 0.42%, 9.95%, 21.48% — spread 51x"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "pairwise_ceiling_is_overstated_probe",
+  "scriptFile": "pairwise_ceiling_is_overstated_probe.py",
+  "scriptHash": "184604bfb500",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pairwise_ceiling_is_overstated_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pairwise_ceiling_is_overstated_probe.py"
+  },
+  "description": "Reconciles this session's bond measurements with the active qou-brng arc's he4_exceeds_pairwise_maximum_probe. The bond constants agree to 1.3e-13 by two independent routes — Markov-trace ratios in H_6/H_9 here, the closed form -log(z+d) there — which validates both. But that probe's B_allpairs sums the bond multiset, and all-pairs is sub-additive: a non-adjacent bond built as the braid band generator delivers only ~0.65 of its isolated value once the adjacent bonds are present (0.659916, 0.650555, 0.640829, 0.625186 measured). So B_allpairs overstates the ceiling. Against the MEASURED A=3 all-pairs traces — no extrapolation — and the sibling's own alpha = 4.18598136 MeV, 3H gives AME/allpairs = 1.00418 and 3He 1.09950, i.e. both ABOVE the ceiling, where the naive-additive version put them inside at 0.945 and 0.940. That affects the three-regime conclusion: if the correction holds, a many-body term is needed at A=3 as well as A=4. The 3H agreement at 0.42% is explicitly NOT claimed as predictive — it is one number out of three, with 3He at 9.95% and 2H at 21.48%.",
+  "data": {
+    "bond_constants": {
+      "pp": {
+        "measured": "0.489899384255",
+        "closed_form": "0.4898993842551",
+        "diff": "1.35e-13"
+      },
+      "pn": {
+        "measured": "0.676821592386",
+        "closed_form": "0.6768215923863",
+        "diff": "3.43e-13"
+      },
+      "nn": {
+        "measured": "0.907262265533",
+        "closed_form": "0.9072622655332",
+        "diff": "2.13e-13"
+      }
+    },
+    "saturation": {
+      "far p-p": "0.659916",
+      "far p-n (ppn)": "0.650555",
+      "far p-n (pnn)": "0.640829",
+      "far n-n": "0.625186"
+    },
+    "alpha_MeV": "4.18598136329",
+    "measured_vs_ame": {
+      "2H": {
+        "alpha_L_chain": "2.833162548",
+        "alpha_L_allpairs": "2.833162548",
+        "B_AME": "2.2245662",
+        "ratio": "0.78518834"
+      },
+      "3H": {
+        "alpha_L_chain": "6.630945507",
+        "alpha_L_allpairs": "8.446517058",
+        "B_AME": "8.4817962",
+        "ratio": "1.0041768"
+      },
+      "3He": {
+        "alpha_L_chain": "5.666325144",
+        "alpha_L_allpairs": "7.019620826",
+        "B_AME": "7.71804132",
+        "ratio": "1.0994955"
+      }
+    }
+  },
+  "caveats": [
+    "TWO CONVENTIONS ARE MIXED HERE AND THAT IS NOT YET RESOLVED. alpha is the sibling probe's normalisation taken as-is, while the L values are this arc's Markov traces WITHOUT their -(e/2) log(1-h) charge term. The -log(z+d) cores agree to 1e-13, but the charge term is not cross-checked and is the one real convention difference between the two arcs. No number here is quotable as a prediction until that is reconciled; what survives the caveat is the DIRECTION of the correction, since lowering a ceiling can only move isotopes from inside it to above it.",
+    "THE SATURATION FACTOR IS MEASURED AT A = 3 ONLY, for a single far-bond configuration per nucleus. The A=3 numbers in A3 use the directly measured all-pairs traces and so do not depend on it, but any extension to A >= 4 would be extrapolating a factor from two data points. The 4He and 6Li figures are deliberately not carried here for that reason.",
+    "This CHANGES a sibling's published conclusion rather than confirming it, on a branch that arc has not seen. It is offered as a flag for qou-brng to check, not as a settled overturn — the convention mixing above is exactly the kind of thing that could account for a 5-10% shift, which is the size of the effect that moves 3H and 3He across the line."
+  ]
+}

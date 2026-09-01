@@ -222,12 +222,21 @@ def main() -> int:  # noqa: PLR0915
         assert _ok[-1], sp.factor(mpol, extension=sp.sqrt(5))
 
     # ── E4: ζ₅-branch invariance (GK Remarks 1.4/1.5), exact ────────────────
+    # The per-θ verdicts are kept in their own list, and the bare `assert` is
+    # dropped for this check only. That assert aborted before `wb.save()`, so
+    # a broken branch invariance left NO witness at all — which is how the
+    # assertion reporting it got away with `computed="True", expected="True"`
+    # for as long as the identity happened to hold. Recorded here, a failure
+    # now lands in the witness as a FAILING assertion instead of as a missing
+    # file (bean qou-26f2). Values still go into `_ok`, so the `all(_ok)`
+    # assertion further down is unchanged.
+    branch_invariance_ok = []
     for th, P_, G_ in ((th_p, P5p, Gp), (th_m, P5m, Gm)):
         th_shift = red(t**6 * th)
         lhs = red(red(G5plus(th_shift) ** 5) * red(P_**2))
         rhs = red(red(G_**5) * red(slashD5_pow5(th_shift) ** 2))
-        _ok.append(bool(sp.expand(lhs - rhs) == 0))
-        assert _ok[-1], 'branch invariance must hold exactly'
+        branch_invariance_ok.append(bool(sp.expand(lhs - rhs) == 0))
+        _ok.append(branch_invariance_ok[-1])
 
     # ── E5: Cor 1.3 (N = 1) machinery, exact + 40-digit Rogers branches ─────
     zp = sp.exp(sp.I * sp.pi / 3)
@@ -456,11 +465,12 @@ def main() -> int:  # noqa: PLR0915
     )
     wb.add_assertion(
         "zeta5_branch_invariance_exact",
-        computed="True",
-        expected="True",
+        computed=sum(branch_invariance_ok),
+        expected=len(branch_invariance_ok),
         tolerance=0,
         source="G₅⁺(ζ₅θ)⁵·(/D₅(θ)⁵)² = G₅⁺(θ)⁵·(/D₅(ζ₅θ)⁵)² exactly for both "
-               "θ's — GK Remarks 1.4/1.5 verified at N=5.",
+               "θ's — GK Remarks 1.4/1.5 verified at N=5; counts the θ's for "
+               "which sympy reduces the difference to exactly 0.",
     )
     wb.add_assertion(
         "quadrature_validated_at_N1",

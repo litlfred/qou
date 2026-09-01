@@ -246,12 +246,52 @@ def main() -> int:
                                        "Q_β's analog is yet to be "
                                        "identified",
     })
+    # Was `computed=1.0, expected=1.0` named `symbolic_delta_tr_loaded` (bean
+    # `qou-26f2`): a literal on both sides. Its source names two properties —
+    # "Δtr_M(q) is symbolic-rational" and "Taylor coefficients extracted as
+    # exact rationals" — and tested neither, so it read PASS for a Δtr_M that
+    # had decayed to floats, precisely the failure that would make the
+    # recorded coefficients useless to the future session they exist for.
+
+    # (1) The first half of the claim.
     builder.add_assertion(
-        "symbolic_delta_tr_loaded",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        source="Δtr_M(q) is symbolic-rational; Taylor coefficients extracted as exact rationals",
+        "delta_tr_is_a_rational_function_of_q",
+        computed=str(bool(delta_tr.is_rational_function(q))),
+        expected="True",
+        source="sympy `is_rational_function(q)` on tr_M(β_n) − tr_M(β_p) as "
+               "loaded from habiro-coefficients-atomic.witness.json",
+    )
+
+    # (2) The second half: every extracted coefficient is an EXACT rational,
+    # not a Float. A single sp.Float here means the Habiro expansion has
+    # silently gone numerical.
+    _exact = sum(1 for n in range(10) if delta_tr_coeffs[n].is_Rational)
+    builder.add_assertion(
+        "taylor_coefficients_are_exact_rationals",
+        computed=_exact,
+        expected=10,
+        tolerance=0,
+        source=f"{_exact} of 10 ε-coefficients are sympy Rational: "
+               + ", ".join(f"ε^{n}={delta_tr_coeffs[n]}" for n in range(8)),
+    )
+
+    # (3) The two routes to Δtr_M(q₀) meet: the ε-series just recorded,
+    # summed at ε₀ = q₀ − 1, against direct substitution into the rational
+    # function. Independent arithmetic, and the check that the "records the
+    # Taylor expansion for a future session" purpose actually depends on.
+    _eps0 = sp.Float(str(q0_num), 50) - 1
+    _series_at_q0 = float(sum(delta_tr_coeffs[n] * _eps0 ** n
+                              for n in range(10)))
+    _series_gap = abs(_series_at_q0 - delta_tr_num)
+    builder.add_assertion(
+        "taylor_series_reproduces_delta_tr_at_q0",
+        computed=mp.nstr(mp.mpf(_series_gap), 12),
+        expected="0",
+        tolerance="1e-9",
+        source=f"Σ_{{n<10}} c_n·ε₀ⁿ = {_series_at_q0:.15f} vs direct "
+               f"Δtr_M(q₀) = {delta_tr_num:.15f} at ε₀ = "
+               f"{float(_eps0):.10f}; gate 1e-9 is the O(ε₀¹⁰) ≈ 2.6e-10 "
+               "truncation the series is cut at, not a chosen band",
     )
     builder.save()
     print(f"\n  Witness: qbeta-habiro-taylor-investigation.witness.json")

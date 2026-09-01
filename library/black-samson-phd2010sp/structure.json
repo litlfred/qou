@@ -1,0 +1,361 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "black-samson-phd2010sp",
+ "source": {
+  "file": "Black_Samson_phd2010sp.pdf",
+  "sha256": "c16799b0bd54ff292132f4ce777fae56d016b42a2673c5dd237277b15e301d9d",
+  "bytes": 881554,
+  "pages": 58,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "REPRESENTATIONS OF HECKE",
+  "authors_raw": "ALGEBRAS AND THE",
+  "title_lines": [
+   "REPRESENTATIONS OF HECKE"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "CreationDate": "D:20101123150833-08'00'",
+   "Creator": "Canon DR-7080C TWAIN",
+   "Producer": "Adobe Acrobat 8.13 Paper Capture Plug-in"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 5,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "INTRODUCTION 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA 21",
+   "page": 7,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "COMBINATORIAL PROOF",
+   "page": 7,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 2,
+   "title": "The Conway skein relation: '\\7(L+) - '\\7(L_) = z '\\7(Lo)",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "The five Temperley-Lieb diagrams on 3 strands. .,",
+   "page": 8,
+   "source": "inferred",
+   "number": "11.4"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Historical Background",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Summary of Thesis",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The Temperley-Lieb Algebra",
+   "page": 22,
+   "source": "inferred",
+   "number": "11.3"
+  },
+  {
+   "level": 1,
+   "title": "As a (G L( n), Sd) -bimodule, tensor space decomposes into simples",
+   "page": 30,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The standard basis for Hd consists of the elements H w , where w E Sd. In terms of the",
+   "page": 31,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Multiplication in this basis is",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Hd is semi-simple. Hence, we have the isomorphisms of algebras",
+   "page": 31,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(F) = F 129 1 + K 129 F,",
+   "page": 33,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(i) = (6129 Id\u00aei-l) 06 (i-I). Then, Pd = p\u00aed 06 (d-l), producing the formulae:",
+   "page": 33,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "As a (U, (-{d)-bimodule, tensor space decomposes into simples",
+   "page": 34,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "As a (U, 'Hd)-bimodule, tensor space decomposes into simples",
+   "page": 38,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 56,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 813,
+   "n_words": 145
+  },
+  {
+   "id": "sec-001-i-introduction-1",
+   "number": "I",
+   "title": "INTRODUCTION 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 350,
+   "n_words": 86
+  },
+  {
+   "id": "sec-002-iii-schur-weyl-duality-and-quotients-of-the-heck",
+   "number": "III",
+   "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA 21",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 403,
+   "n_words": 64
+  },
+  {
+   "id": "sec-003-v-combinatorial-proof",
+   "number": "V",
+   "title": "COMBINATORIAL PROOF",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 95,
+   "n_words": 17
+  },
+  {
+   "id": "sec-004-11-the-conway-skein-relation-7l---7l-z-7lo",
+   "number": "1.1",
+   "title": "The Conway skein relation: '\\7(L+) - '\\7(L_) = z '\\7(Lo)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 191,
+   "n_words": 37
+  },
+  {
+   "id": "sec-005-114-the-five-temperley-lieb-diagrams-on-3-strand",
+   "number": "11.4",
+   "title": "The five Temperley-Lieb diagrams on 3 strands. .,",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 625,
+   "n_words": 120
+  },
+  {
+   "id": "sec-006-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-11-historical-background",
+   "number": "1.1",
+   "title": "Historical Background",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3991,
+   "n_words": 664
+  },
+  {
+   "id": "sec-008-12-summary-of-thesis",
+   "number": "1.2",
+   "title": "Summary of Thesis",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 22,
+   "n_chars": 17274,
+   "n_words": 3077
+  },
+  {
+   "id": "sec-009-113-the-temperley-lieb-algebra",
+   "number": "11.3",
+   "title": "The Temperley-Lieb Algebra",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 30,
+   "n_chars": 10697,
+   "n_words": 2036
+  },
+  {
+   "id": "sec-010-2-as-a-g-l-n-sd--bimodule-tensor-space-decompose",
+   "number": "2",
+   "title": "As a (G L( n), Sd) -bimodule, tensor space decomposes into simples",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1592,
+   "n_words": 271
+  },
+  {
+   "id": "sec-011-1-the-standard-basis-for-hd-consists-of-the-elem",
+   "number": "1",
+   "title": "The standard basis for Hd consists of the elements H w , where w E Sd. In terms of the",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 153,
+   "n_words": 27
+  },
+  {
+   "id": "sec-012-2-multiplication-in-this-basis-is",
+   "number": "2",
+   "title": "Multiplication in this basis is",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 322,
+   "n_words": 49
+  },
+  {
+   "id": "sec-013-4-hd-is-semi-simple-hence-we-have-the-isomorphis",
+   "number": "4",
+   "title": "Hd is semi-simple. Hence, we have the isomorphisms of algebras",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 2444,
+   "n_words": 443
+  },
+  {
+   "id": "sec-014-6-f-f-129-1-k-129-f",
+   "number": "6",
+   "title": "(F) = F 129 1 + K 129 F,",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 355,
+   "n_words": 74
+  },
+  {
+   "id": "sec-015-6-i-6129-idi-l-06-i-i-then-pd-pd-06-d-l-producin",
+   "number": "6",
+   "title": "(i) = (6129 Id\u00aei-l) 06 (i-I). Then, Pd = p\u00aed 06 (d-l), producing the formulae:",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 526,
+   "n_words": 108
+  },
+  {
+   "id": "sec-016-2-as-a-u--d-bimodule-tensor-space-decomposes-int",
+   "number": "2",
+   "title": "As a (U, (-{d)-bimodule, tensor space decomposes into simples",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 5418,
+   "n_words": 1121
+  },
+  {
+   "id": "sec-017-2-as-a-u-hd-bimodule-tensor-space-decomposes-int",
+   "number": "2",
+   "title": "As a (U, 'Hd)-bimodule, tensor space decomposes into simples",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 56,
+   "n_chars": 19633,
+   "n_words": 3814
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 5747,
+   "n_words": 891
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "sections": 19,
+  "chars_total": 70629
+ }
+}

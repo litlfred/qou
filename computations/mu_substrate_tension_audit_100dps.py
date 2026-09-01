@@ -308,12 +308,107 @@ def main() -> int:
         "for the proton."
     )
 
+    # Was `computed=True, expected=True` named `audit_completed` (bean
+    # `qou-26f2`): reaching save() was the whole test, so the audit read PASS
+    # for a Vol(4_1) off by a factor of 3, an H1 that failed, and a
+    # tension/residual ratio below 1 — the last being the state its own
+    # step-2b note calls "measuring nothing".
+
+    # (1) Vol(4_1) by a second special function. 2·Cl₂(π/3) is what the module
+    # uses; 2·Im[Li₂(e^{iπ/3})] is the same volume through the dilogarithm,
+    # sharing no code path with clsin. A wrong Lobachevsky/Clausen convention
+    # — the factor-3 error vol_4_1_mathlib's docstring warns about — separates
+    # the two immediately.
+    vol_route2 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
+    vol_route_gap = abs(vol - vol_route2)
     w.add_assertion(
-        name="audit_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="m_μ substrate-tension audit completed at 100 dps.",
+        name="vol_4_1_agrees_across_clausen_and_dilog",
+        computed=mp.nstr(vol_route_gap, 12),
+        expected="0",
+        tolerance="1e-40",
+        source="2·Cl₂(π/3) vs 2·Im[Li₂(e^{iπ/3})] for the figure-eight "
+               "volume; guards the 2·Λ(π/3) confusion (that form is "
+               "Vol(4_1)/3 = 0.6766…) that this file's header still carries",
+    )
+    w.add_assertion(
+        name="vol_4_1_matches_known_value",
+        computed=mp.nstr(vol, 45),
+        expected="2.02988321281930725004240510854904057188337861506",
+        tolerance="1e-40",
+        source="the figure-eight knot's hyperbolic volume to 45 places, a "
+               "known constant independent of this substrate",
+    )
+
+    # (2) The propagation coefficient, analytically and numerically. Step 3
+    # writes ∂ln(m_μ)/∂q = −2/(ℏ_q·q²) by hand; differentiating the prediction
+    # itself must reproduce it, or H1 compares a measured residual against a
+    # mis-derived slope.
+    _sens_numeric = mp.diff(
+        lambda z: mp.log(m_e * vol / (1 - 1 / z) ** 2), q_canonical
+    )
+    sensitivity_gap = abs(sensitivity - _sens_numeric)
+    w.add_assertion(
+        name="m_mu_q_sensitivity_analytic_matches_numeric",
+        computed=mp.nstr(sensitivity_gap, 12),
+        expected="0",
+        tolerance="1e-25",
+        source=f"hand-derived −2/(ℏ_q·q²) = {mp.nstr(sensitivity, 12)} vs "
+               "mp.diff of ln(m_e·Vol/ℏ_q²) at q_0",
+    )
+
+    # (3) H1 itself, at the precision it actually holds to. The module's gate
+    # is 10% of the residual (≈21 ppb); the agreement is ~4e-8 relative, so
+    # record that — a residual explained to 1 part in 10⁷ by the q_0 shift is
+    # a far stronger statement than "within 10%".
+    h1_rel_gap = abs(residual_ppb - propagated_ppb) / abs(residual_ppb)
+    w.add_assertion(
+        name="h1_propagated_shift_reproduces_observed_residual",
+        computed=mp.nstr(h1_rel_gap, 12),
+        expected="0",
+        tolerance="1e-6",
+        source=f"|observed − propagated| / observed = {mp.nstr(h1_rel_gap, 6)} "
+               f"({mp.nstr(residual_ppb, 10)} ppb vs "
+               f"{mp.nstr(propagated_ppb, 10)} ppb); the linear Δq_0 "
+               "propagation accounts for the m_μ miss, leaving no room for a "
+               "missing categorical correction",
+    )
+
+    # (4) The guard step 2b states in prose and never enforced: if the
+    # proton-vs-muon tension does not dominate the same-pin inversion
+    # residual, q_canonical has been re-anchored to the muon and the audit is
+    # differencing muon against muon. Gate at 100× — two orders, far below the
+    # measured ratio and far above the 1× where the audit stops meaning
+    # anything.
+    if inversion_residual_ppb is not None:
+        _tension_ratio = abs(delta_q0_ppb / inversion_residual_ppb)
+        w.add_assertion(
+            name="substrate_tension_dominates_inversion_residual",
+            computed=1.0 if _tension_ratio > 100 else 0.0,
+            expected=1.0,
+            tolerance=0.5,
+            source=f"tension/residual = {mp.nstr(_tension_ratio, 8)}× "
+                   f"({mp.nstr(delta_q0_ppb, 8)} ppb physical vs "
+                   f"{mp.nstr(inversion_residual_ppb, 8)} ppb precision "
+                   "floor), gate 100×. Below 1× would mean q_canonical is "
+                   "muon-anchored and this audit measures nothing",
+        )
+    else:
+        w.add_data("substrate_tension_dominance_check", {
+            "ran": False,
+            "has_independent_expected_value": False,
+            "why": "step 2b's inversion raised; the ratio is unavailable",
+        })
+
+    w.add_data("vol_4_1_precision_floor_50_vs_100_dps", mp.nstr(abs(vol_diff), 12))
+    w.add_caveat(
+        "This file's header says 'Vol(4_1) = 2·Λ(π/3)'. That is wrong by a "
+        "factor of 3 — 2·Λ(π/3) = Cl₂(2π/3) = 0.6766… = Vol(4_1)/3 — as "
+        "vol_4_1_mathlib's own docstring already records. The computation "
+        "uses the correct 2·Cl₂(π/3); only the header is stale. Separately, "
+        "that helper quotes the SnapPy value as "
+        "2.02988321281930725004240510854658…, which is wrong from the 33rd "
+        "digit; the correct continuation is …5490405718833786150…, as the "
+        "vol_4_1_matches_known_value assertion records."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

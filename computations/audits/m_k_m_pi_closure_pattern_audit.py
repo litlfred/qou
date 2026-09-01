@@ -142,6 +142,27 @@ def main() -> int:
     print(f"  (m_K/m_π)²_PDG = {mp.nstr(ratio_pdg_sq, 18)}")
     print(f"  residual ppm   = {mp.nstr((pred_sq - ratio_pdg_sq) / ratio_pdg_sq * mp.mpf('1e6'), 8)}")
 
+    # The dashboard scores the RATIO, not its square, so carry both.  The
+    # header comment above states, from the separate calculation that decided
+    # the owner's 2026-08-09 full-series directive, that the full series "sits
+    # at 51.4 ppb on the ratio and still MEETS L2 with 5.13× margin (was
+    # 11.27×)".  Those are the two numbers the audit's whole premise rests on,
+    # so recompute them here and let the assertions below confront them.
+    ratio_pdg = m_k_pdg / m_pi_pdg
+    residual_ratio_ppb = (mp.sqrt(pred_sq) - ratio_pdg) / ratio_pdg * mp.mpf("1e9")
+    # σ_exp on the ratio, propagated from the two PDG uncertainties recorded
+    # beside the values in substrate/codata_constants.py (m_K 493.677 ± 0.013,
+    # m_π 139.57039 ± 0.00018 MeV).  L2 = "meets within 100× σ_exp".
+    sigma_ratio_ppb = mp.sqrt(
+        (mp.mpf("0.013") / m_k_pdg) ** 2 + (mp.mpf("0.00018") / m_pi_pdg) ** 2
+    ) * mp.mpf("1e9")
+    l2_target_ppb = sigma_ratio_ppb / 100
+    l2_margin = l2_target_ppb / abs(residual_ratio_ppb)
+    print(f"  residual (ratio) = {mp.nstr(residual_ratio_ppb, 8)} ppb")
+    print(f"  σ_exp (ratio)    = {mp.nstr(sigma_ratio_ppb, 8)} ppb"
+          f"  →  L2 target {mp.nstr(l2_target_ppb, 6)} ppb")
+    print(f"  L2 margin        = {mp.nstr(l2_margin, 6)}×")
+
     # ── The pattern catalog ──
     print("\n" + "=" * 78)
     print("Closure-blocker catalog for the 4 missing observables")
@@ -273,12 +294,72 @@ For m_n: meta-lesson points at the flavor-split formula refinement (open).
         "need flavor-split refinement (gated separately)."
     )
 
+    w.add_data("m_K_m_pi_residual_ratio_ppb_full_series",
+               mp.nstr(residual_ratio_ppb, 12))
+    w.add_data("m_K_m_pi_sigma_exp_ratio_ppb", mp.nstr(sigma_ratio_ppb, 12))
+    w.add_data("m_K_m_pi_l2_margin", mp.nstr(l2_margin, 12))
+
+    # Was `computed=True, expected=True` named `audit_completed` (bean
+    # `qou-26f2`): it passed by construction — reaching the `save()` call was
+    # the whole test — so the audit read PASS no matter what q, α_em or the
+    # PDG masses did.  Three checks replace it, each with a route to its
+    # expected value that does not run through the computed one.
+
+    # (1) Coverage, which is what a `_completed` name should mean here: the
+    # catalog must carry one well-formed row per dashboard observable.  The
+    # expected 5 is fixed by the description — m_K/m_π (MET) plus the four
+    # named missing ones — not read off the list being checked.
+    _row_keys = {"obs", "status", "residual_ppb", "blocker_type",
+                 "fix_form", "fix_origin", "fix_pattern"}
+    n_wellformed = sum(1 for o in observables if _row_keys <= set(o))
+    covered = {o["obs"] for o in observables if _row_keys <= set(o)}
+    expected_obs = {"m_K/m_π", "m_μ", "Q_β", "m_n", "Δm_pn"}
     w.add_assertion(
-        name="audit_completed",
-        computed=True,
-        expected=True,
+        name="closure_catalog_covers_five_dashboard_observables",
+        computed=n_wellformed if covered == expected_obs else -1,
+        expected=5,
         tolerance=0,
-        source="Closure pattern audit completed at 50 dps.",
+        source=f"well-formed rows (all 7 keys) = {n_wellformed}; obs set "
+               f"{'matches' if covered == expected_obs else 'DIFFERS from'} "
+               "the five the description names (m_K/m_π MET + 4 missing)",
+    )
+
+    # (2) The full-series residual the owner's 2026-08-09 directive turned on.
+    # Expected 51.4 ppb is the header comment's figure, computed separately
+    # when that directive was taken; the value asserted here is rebuilt from
+    # q_0, [3]_q·[4]_q, α_em and the PDG masses.  Reverting the series to the
+    # 2-term `(3q²−1)/(2q²)` form drives this to 23.4 and the assertion red.
+    w.add_assertion(
+        name="m_k_m_pi_full_series_residual_ratio_ppb",
+        computed=mp.nstr(residual_ratio_ppb, 12),
+        expected="51.4",
+        tolerance="0.1",
+        unit="ppb",
+        source="(√(base+EM) − m_K/m_π|PDG)/(m_K/m_π|PDG) with EM = "
+               "(α_em/π)(1+log(1+ℏ_q)); header comment states the full series "
+               "'sits at 51.4 ppb on the ratio' (2-term form gives 23.4)",
+    )
+
+    # (3) …and that it still MEETS L2.  σ_exp is propagated from the two PDG
+    # uncertainties, so the target is derived rather than restated: a residual
+    # that stopped clearing 100×σ_exp would refute the row marked MET, on
+    # which the whole "does the pattern transfer?" question is posed.
+    w.add_assertion(
+        name="m_k_m_pi_still_meets_l2_on_full_series",
+        computed=mp.nstr(l2_margin, 12),
+        expected="5.13",
+        tolerance="0.05",
+        source=f"L2 target = σ_exp/100 = {mp.nstr(l2_target_ppb, 8)} ppb from "
+               "m_K 493.677±0.013, m_π 139.57039±0.00018 MeV; header comment "
+               "states 5.13× margin on the full series (was 11.27× at 2 terms)",
+    )
+    w.add_caveat(
+        "closure_pattern_catalog's m_K/m_π row still reads residual_ppb "
+        "'23.4', the 2-term (3q²−1)/(2q²) figure. This module computes the "
+        "full series the owner directed on 2026-08-09, which lands at 51.4 "
+        "ppb — see assertion m_k_m_pi_full_series_residual_ratio_ppb. The "
+        "row is stale, not the computation; status MET is unaffected "
+        "(5.13× margin). Left as-is rather than silently corrected."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

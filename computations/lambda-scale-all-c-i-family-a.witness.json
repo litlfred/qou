@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T20:42:18.258258+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-30T09:08:50.462702+00:00",
+  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
   "assertions": [
     {
       "name": "lambda_A_h_form_equals_lambda_A_q_form",
@@ -15,43 +15,51 @@
       "computed": "5/2",
       "expected": "5/2",
       "passed": true,
-      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h"
+      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — coefficient read off the sympy series in h at q = (h + √(h²+4))/2"
     },
     {
       "name": "family_A_c_2",
       "computed": "3/4",
       "expected": "3/4",
       "passed": true,
-      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h"
+      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — coefficient read off the sympy series in h at q = (h + √(h²+4))/2"
     },
     {
       "name": "family_A_c_4",
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h"
+      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — coefficient read off the sympy series in h at q = (h + √(h²+4))/2"
     },
     {
       "name": "family_A_c_6",
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h"
+      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — coefficient read off the sympy series in h at q = (h + √(h²+4))/2"
     },
     {
       "name": "family_A_c_8",
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h"
+      "source": "closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — coefficient read off the sympy series in h at q = (h + √(h²+4))/2"
+    },
+    {
+      "name": "family_A_odd_h_coefficients_vanish",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "λ_A is symmetric under q ↔ q⁻¹, so every odd power of h must vanish — checked on the h-series through h⁹"
     }
   ],
   "allPassed": true,
-  "durationMs": 282,
+  "durationMs": 334,
   "computation": "lambda-scale-all-c-i-family-a",
   "scriptFile": "lambda_scale_all_c_i_family_a.py",
-  "scriptHash": "e7d9d6df6ad8",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "f22cd458795b",
+  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +73,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lambda_scale_all_c_i_family_a.py"
+    ],
+    "reproduce": "python3 -u computations/lambda_scale_all_c_i_family_a.py"
   },
   "description": "Closed-form proof of ALL h-expansion coefficients c_i for the natural categorical Family A: λ_A(q) = (1/4) Σ_λ dim_q V_λ at H_4. Proved by direct algebraic manipulation: λ_A = 5/2 + (3/4)·h², series TERMINATES (c_4 = c_6 = ... = 0). Per PR #895 this IS the framework-derived substrate λ_scale (replacing the CAL-4-fitted literal 2.4599527869 in m_p_borromean_verification_50dps.py). Framework m_p prediction is now 966 MeV (~3 % off CODATA's 938.27 MeV); the 3 % gap is the framework's honest accuracy, not an error. See docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md §Alternatives to Strategy D for the search for substrate-pure refinements (V_3, V_4 Wedderburn sums; q-dilog tower; Yekutieli curvature) that could close the 3 % residual.",
   "data": {
@@ -85,9 +100,16 @@
       "c_6": "0",
       "c_8": "0"
     },
+    "c_i_from_h_series_family_A": {
+      "c_0": "5/2",
+      "c_2": "3/4",
+      "c_4": "0",
+      "c_6": "0",
+      "c_8": "0"
+    },
     "lambda_A_at_q0_from_q_expr": 2.5327796563993914,
     "lambda_A_at_q0_from_h_expr": 2.5327796563993914,
-    "lambda_B_target_at_q0": 2.459952268374117,
-    "family_A_vs_B_rel_diff": 0.029605203711293524
+    "lambda_B_target_at_q0": 2.4599522717037905,
+    "family_A_vs_B_rel_diff": 0.029605202317669294
   }
 }

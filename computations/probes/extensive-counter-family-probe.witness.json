@@ -1,0 +1,211 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:13:13.365552+00:00",
+  "commitSha": "4f83a2c2dd29788823227451fc2712ce81d1b00b",
+  "assertions": [
+    {
+      "name": "all_counters_exactly_linear_in_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "max residual from a straight line, over A=2..56, for each of the four counters read off atom_braid_word_3A"
+    },
+    {
+      "name": "averaged_letter_slope_matches_module_docstring",
+      "computed": "2.0",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "measured slope vs mass_at_3A_proper's documented '2A + 1 such non-braid letters'"
+    },
+    {
+      "name": "no_family_member_reaches_plateau_AT_THE_m_e_SCALE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "family maximum 5.6625615 MeV/nucleon AT m_e vs the empirical B/A plateau 8.5 MeV/nucleon (independent: nuclear data). At E_0 = m_e/(q0(q0-1)) the same maximum is 46.386351 MeV/nucleon and the statement is FALSE."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "extensive-counter-family-probe",
+  "scriptFile": "extensive_counter_family_probe.py",
+  "scriptHash": "62b3cf14a3e7",
+  "scriptCommitSha": "696f77937b54ec68812dca139b231922ae6b58d6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/extensive_counter_family_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/extensive_counter_family_probe.py"
+  },
+  "description": "Enumerates every extensive counter the canonical atomic word offers, crossed with every normaliser convention, and measures whether any combination reaches the empirical extensive coefficient. None does.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561"
+  },
+  "data": {
+    "counter_measurements": [
+      {
+        "A": 2,
+        "strands": 6,
+        "letters": 23,
+        "averaged_letters": 5,
+        "bonds": 1
+      },
+      {
+        "A": 3,
+        "strands": 9,
+        "letters": 35,
+        "averaged_letters": 7,
+        "bonds": 2
+      },
+      {
+        "A": 4,
+        "strands": 12,
+        "letters": 47,
+        "averaged_letters": 9,
+        "bonds": 3
+      },
+      {
+        "A": 6,
+        "strands": 18,
+        "letters": 71,
+        "averaged_letters": 13,
+        "bonds": 5
+      },
+      {
+        "A": 12,
+        "strands": 36,
+        "letters": 143,
+        "averaged_letters": 25,
+        "bonds": 11
+      },
+      {
+        "A": 16,
+        "strands": 48,
+        "letters": 191,
+        "averaged_letters": 33,
+        "bonds": 15
+      },
+      {
+        "A": 40,
+        "strands": 120,
+        "letters": 479,
+        "averaged_letters": 81,
+        "bonds": 39
+      },
+      {
+        "A": 56,
+        "strands": 168,
+        "letters": 671,
+        "averaged_letters": 113,
+        "bonds": 55
+      }
+    ],
+    "counter_slopes_per_nucleon": {
+      "bonds": "1.0",
+      "averaged_letters": "2.0",
+      "strands": "3.0",
+      "letters": "12.0"
+    },
+    "counter_forms": {
+      "bonds": "A - 1",
+      "averaged_letters": "2A + 1",
+      "strands": "3A",
+      "letters": "12A - 1",
+      "note": "all exactly linear, zero residual over A=2..56; letters is exactly 4x strands"
+    },
+    "coefficient_grid_MeV_per_nucleon": {
+      "bonds": {
+        "[2]_q = q + 1/q": "0.3569740685",
+        "[2]_Q = 1 + q^2": "0.4102920671",
+        "kauffman q^(1/2)+q^(-1/2)": "0.3548925715",
+        "1 + q^4": "0.4718801256"
+      },
+      "averaged_letters": {
+        "[2]_q = q + 1/q": "0.713948137",
+        "[2]_Q = 1 + q^2": "0.8205841342",
+        "kauffman q^(1/2)+q^(-1/2)": "0.709785143",
+        "1 + q^4": "0.9437602512"
+      },
+      "strands": {
+        "[2]_q = q + 1/q": "1.070922205",
+        "[2]_Q = 1 + q^2": "1.230876201",
+        "kauffman q^(1/2)+q^(-1/2)": "1.064677715",
+        "1 + q^4": "1.415640377"
+      },
+      "letters": {
+        "[2]_q = q + 1/q": "4.283688822",
+        "[2]_Q = 1 + q^2": "4.923504805",
+        "kauffman q^(1/2)+q^(-1/2)": "4.258710858",
+        "1 + q^4": "5.662561507"
+      }
+    },
+    "family_extremes": {
+      "max_MeV_per_nucleon": "5.662561507",
+      "shortfall_vs_plateau": "1.5010874",
+      "shortfall_vs_a_V": "2.7902567"
+    },
+    "which_counter_is_the_A1_object": {
+      "answer": "strands",
+      "why": "y_lambda_symbolic takes only n; tr_M = sum_lambda y_lambda * chi^lambda, so the word enters through chi and never through the normaliser. Z(n) is word-independent.",
+      "A1_coefficient_MeV_per_nucleon": {
+        "[2]_q = q + 1/q": "1.070922205",
+        "[2]_Q = 1 + q^2": "1.230876201",
+        "kauffman q^(1/2)+q^(-1/2)": "1.064677715",
+        "1 + q^4": "1.415640377"
+      },
+      "A1_deficit_vs_plateau": "6.00435x .. 7.98364x",
+      "correction": "An earlier reading of this grid treated all sixteen cells as conventions of one object. They are not. Only the STRANDS row is A1; the other rows are different physical proposals (a per-letter or per-bond energy) with no axiom source. Presenting them together overstated the available freedom and made A1's deficit look like 1.50x when for A1 it is 6.0-8.0x."
+    },
+    "SCALE_CORRECTION_2026_08_31": {
+      "scale_ratio_E0_over_me": "8.1917611721945038989",
+      "corrected_grid_MeV_per_nucleon": {
+        "bonds": {
+          "[2]_q = q + 1/q": "2.924246314",
+          "[2]_Q = 1 + q^2": "3.361014625",
+          "kauffman q^(1/2)+q^(-1/2)": "2.907195188",
+          "1 + q^4": "3.865529291"
+        },
+        "averaged_letters": {
+          "[2]_q = q + 1/q": "5.848492628",
+          "[2]_Q = 1 + q^2": "6.722029249",
+          "kauffman q^(1/2)+q^(-1/2)": "5.814390375",
+          "1 + q^4": "7.731058582"
+        },
+        "strands": {
+          "[2]_q = q + 1/q": "8.772738937",
+          "[2]_Q = 1 + q^2": "10.08304387",
+          "kauffman q^(1/2)+q^(-1/2)": "8.721585567",
+          "1 + q^4": "11.59658787"
+        },
+        "letters": {
+          "[2]_q = q + 1/q": "35.09095577",
+          "[2]_Q = 1 + q^2": "40.33217549",
+          "kauffman q^(1/2)+q^(-1/2)": "34.88634225",
+          "1 + q^4": "46.38635149"
+        }
+      },
+      "corrected_family_max": "46.38635149",
+      "corrected_A1_strands_row_vs_plateau": "1.02607x .. 1.3643x OVER",
+      "what_survives": "The counter measurements. They are dimensionless and read off atom_braid_word_3A: bonds A-1, averaged 2A+1, strands 3A, letters 12A-1, exactly linear, letters = 4 x strands. Both assertions are scale-free. So is the finding that Z(n) is word-independent and A1's counter is therefore strands.",
+      "what_is_withdrawn": "Every MeV magnitude, the 'still 1.50x short' framing, and the conclusion that 'the missing factor is neither a normalisation nor a counter' -- at E_0 there is no factor of that size left to explain.",
+      "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py"
+    },
+    "verdict": "The missing factor is neither a normalisation nor a counter. Every extensive counter the atomic word offers is exactly linear in A with slope in {1,2,3,12}; crossed with every normaliser convention the coefficient spans 0.355..5.663 MeV/nucleon, and the maximum is still 1.50x short of the B/A plateau and 2.79x short of a_V. Both obvious places to look are now enumerated and both come up short. AND the counter is not free for A1: the normaliser Z(n) is word-independent, so the object A1 proposes to stop discarding counts STRANDS, giving 6.0-8.0x. The letter counter (which would give 1.50x) belongs to a DIFFERENT proposal with no axiom source -- crossing the two in one grid, as an earlier reading of this probe did, overstates the freedom and flatters A1."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -233,7 +233,13 @@ def main() -> int:
         "categorical prediction."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
-    w.add_data("hypotheses", [
+    # Hoisted out of the `add_data` call so the witness assertion below can
+    # count it. Previously the list was written straight into `add_data` and
+    # the assertion re-typed its length as `computed=4, expected=4`, so the
+    # two could drift apart silently: add a fifth hypothesis, or flip one of
+    # these `supports_additive` flags, and the witness would still report
+    # "supported by all 4".
+    hypotheses = [
         {
             "label": "H1 — H_4 Wedderburn direct sum",
             "claim": "5 partition blocks; Bring lives in (3,1)+(2,1,1), Faddeev in (2,2)",
@@ -258,22 +264,45 @@ def main() -> int:
             "supports_additive": True,
             "load_bearing_step": "Show H_4 crystal admits no tensor-product structure (i.e. cannot be multiplicative)",
         },
-    ])
+    ]
+    w.add_data("hypotheses", hypotheses)
+    supporting = [h for h in hypotheses if h["supports_additive"]]
     w.add_data("conclusion",
                "All 4 hypotheses converge on additive composition. The remaining "
                "load-bearing step (research-grade) is the specific partition-channel "
                "assignment proof: WHICH 4 of the 5 H_4 partition blocks Bring color-tube "
                "occupies, vs WHICH 1 contains the compact-q-dilog h⁴ correction.")
 
+    # What this assertion can and cannot be. The probe computes nothing — its
+    # own docstring says it "doesn't PROVE the additive composition, it
+    # ASSEMBLES the structural arguments" — so there is no independent number
+    # to compare a verdict against, and `computed=4, expected=4` was an
+    # attempt to have one anyway. What IS checkable is coverage: that every
+    # hypothesis this witness publishes carries a supporting verdict, and that
+    # the count in the prose is the count in the data. Both sides are now read
+    # off `hypotheses`, so adding a dissenting fifth entry (computed 4 vs
+    # expected 5) or flipping an existing flag (3 vs 4) turns the witness red
+    # instead of leaving "all 4" standing over a list that no longer says it.
     w.add_assertion(
-        "additive_composition_supported_by_all_4_hypotheses",
-        computed=4,
-        expected=4,
+        "every_recorded_hypothesis_supports_additive",
+        computed=len(supporting),
+        expected=len(hypotheses),
         tolerance=0,
-        source="All 4 categorical hypotheses (H_4 Wedderburn, S_4↓S_3, "
-               "Frobenius reciprocity, KLR positivity) independently support "
-               "additive composition over multiplicative.",
+        source="count of data.hypotheses entries with supports_additive true, "
+               "against the number of entries recorded (H_4 Wedderburn, "
+               "S_4↓S_3, Frobenius reciprocity, KLR positivity). Coverage of "
+               "the assembled argument, not a numerical test of it.",
     )
+    # The verdict itself, kept out of `assertions` on purpose: "additive is
+    # the canonical composition" is the conclusion of the printed argument,
+    # and nothing in this file derives a number it could be checked against.
+    w.add_data("composition_verdict", {
+        "verdict": "additive",
+        "basis": "convergence of the four assembled categorical arguments; "
+                 "the 108 ppm vs 1243 ppm m_p match is consistent with it, "
+                 "not a derivation of it",
+        "has_independent_expected_value": False,
+    })
 
     out = w.save()
     print(f"Witness emitted: {out.name}")

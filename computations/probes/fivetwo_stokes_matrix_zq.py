@@ -98,6 +98,7 @@ S_M_TARGET = _sw.S_M_TARGET   # [[1,0,3],[-4,1,-3],[0,0,1]]
 # the anchor) disagree with the arithmetic (run at A): a layer straddle inside
 # one witness. Bean qou-3f7a.
 from q_parameter import q_at  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 Q0 = mp.mpf(str(q_at(mp.mp.dps)))
 
 
@@ -237,7 +238,9 @@ def main() -> int:
 
     # ---- V4: prefactor identification + leading one-instanton contribution
     # GGM eq (21): V(σ1) = ReV + i ImV = Vol(5₂) + i·CS(5₂).
-    ReV = mp.mpf("2.82812208833455")    # hyperbolic volume of 5₂ complement
+    # EXCISED (bean qou-ckbv): was mp.mpf("2.82812208833455"), 15 printed /
+    # 11 correct. Read from the canonical registry instead.
+    ReV = vol_at("5_2", mp.mp.dps)      # hyperbolic volume of 5₂ complement
     ImV = mp.mpf("1.37919181633454")    # Chern–Simons action
     # substrate ray τ = iβ, β = ln q₀/(2π); the leading Borel singularity of
     # Φ_{σ1} sits at the action ζ = V(σ1)/(2π); the one-instanton weight that

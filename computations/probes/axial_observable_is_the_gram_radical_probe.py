@@ -138,12 +138,28 @@ def main() -> int:
     )
     w.add_data("by_observable", rows)
     w.add_data("radical", [fmt(x) for x in rad])
+    # `computed=1, expected=1` asserted nothing: the |cos| the source string
+    # cites was computed into `rows`, printed, and never compared, so a
+    # radical that had drifted off the sign direction — the whole point of
+    # this probe — would still have read "confirmed". Both overlaps the
+    # description states are measured here, so both are asserted, against the
+    # same 10^-(dps//2) floor the `dualisable` flag above already uses rather
+    # than a threshold picked to fit (bean qou-26f2).
+    cos_by_obs = {r["observable"]: r["abs_cos_to_radical"] for r in rows}
+    radical_floor = mp.nstr(mp.mpf(10) ** (-(dps // 2)), 8)
     w.add_assertion(
         name="sign_character_is_the_radical_direction",
-        computed=1, expected=1, tolerance=0,
+        computed=cos_by_obs["sign"], expected="1", tolerance=radical_floor,
         source="radical_is_sign_representation is true, so the sign character "
                "and the radical coincide by construction; |cos| = 1 confirms "
                "it numerically",
+    )
+    w.add_assertion(
+        name="trivial_character_orthogonal_to_radical",
+        computed=cos_by_obs["trivial"], expected="0", tolerance=radical_floor,
+        source="the other half of the same measurement: the trivial channel "
+               "is orthogonal to the radical down to the 50-dps floor, which "
+               "is what makes its dual pairing well-defined",
     )
     print(f"Witness: {w.save()}")
     return 0

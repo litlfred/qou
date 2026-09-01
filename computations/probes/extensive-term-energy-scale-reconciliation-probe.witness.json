@@ -1,0 +1,137 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:15:09.433809+00:00",
+  "commitSha": "dcc2e65caebec9249d70aefeb8363c663c2d0ef0",
+  "assertions": [
+    {
+      "name": "roast_figure_divided_by_E0_is_ln2",
+      "computed": "0.69517749",
+      "expected": "0.69314718",
+      "passed": true,
+      "tolerance": "3e-3",
+      "source": "the '~2.91 MeV/strand' published in docs/audits/2026-08-07-l2-attack-options-ROAST.md line 85, divided by E_0 = m_e/(q_0(q_0-1)), vs ln 2 — the ROAST's own preceding sentence gives the construction 'the extensive coefficient is E_0 log N', at N = 2"
+    },
+    {
+      "name": "roast_figure_is_unreachable_at_the_m_e_scale",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "2.91/m_e = 5.6947279 against the full range of normaliser logarithms the framework offers, [0.69450744, 0.92344637] — no member comes within a factor of six"
+    },
+    {
+      "name": "prior_published_shortfall_is_accounted_for_by_the_scale_ratio_alone",
+      "computed": "8.19176116558",
+      "expected": "8.19176117219",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "the '6.9056498' recorded in computations/probes/braid-nucleus-map-exponent-probe.witness.json — produced by a different script and read from disk here, not recomputed — divided by the same shortfall recomputed at E_0, vs E_0/m_e = 1/(q_0(q_0-1)). Equality means the scale choice is the WHOLE of the discrepancy and nothing else went wrong."
+    },
+    {
+      "name": "at_E0_every_family_member_exceeds_B_over_A_plateau",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "family minimum at E_0 is 8.7215856 MeV/nucleon vs the empirical B/A plateau 8.5 MeV/nucleon (independent: nuclear data). At m_e the same minimum was 1.0646777."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "extensive-term-energy-scale-reconciliation-probe",
+  "scriptFile": "extensive_term_energy_scale_reconciliation_probe.py",
+  "scriptHash": "1e7a708f142d",
+  "scriptCommitSha": "5f7e9aa1e789446840794d0c0e20f44a0cbcba36",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/extensive_term_energy_scale_reconciliation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/extensive_term_energy_scale_reconciliation_probe.py"
+  },
+  "description": "The ~7x uniform shortfall three of my probes reported for the extensive term is the ratio E_0/m_e = 1/(q_0(q_0-1)) = 8.19, not a physical deficit. Reconstructs the ROAST's previously-unreconciled 2.91 MeV/strand as E_0 ln 2, and withdraws qou-78pt's refutation of A1.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "m_e_MeV": "0.51099895069",
+    "E_0_MeV": "4.185981363294475896945062",
+    "strands_per_nucleon": 3
+  },
+  "data": {
+    "scale_ratio": {
+      "E_0_over_m_e": "8.1917611721945038989",
+      "closed_form": "1 / (q_0 (q_0 - 1))",
+      "E_0_rebuilt_here_40dps": "4.185981363294475896945062",
+      "E_0_as_imported_from_b_over_a_evaluator": "4.185981363294474455472027",
+      "name_collision_WARNING": "`E0_MEV` in computations/atom_mass_derived.py is a DIFFERENT constant: m_p / tr_M(proton) = 1662.7295... MeV, larger by a factor 397.21. Two unrelated quantities share the name E_0 in this corpus. The one relevant here is b_over_a_evaluator's hadronic energy unit; atom_mass_derived's belongs to the absolute-mass chain excised on 2026-08-11 (bean qou-exam).",
+      "where_E_0_is_used": [
+        "computations/b_over_a_evaluator.py — 'Hadronic energy unit', the scale of every B/A prediction in that module",
+        "docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md — 'alpha = E_0 = m_e/(q_0(q_0-1)) (CAL-1)', the B_sym linear-chain per-bond constants",
+        "docs/audits/2026-08-07-l2-attack-options-ROAST.md §A1 — 'E_0 log N'"
+      ],
+      "where_m_e_was_used": [
+        "computations/probes/braid_nucleus_map_exponent_probe.py",
+        "computations/probes/markov_normalisation_convention_span_probe.py",
+        "computations/probes/extensive_counter_family_probe.py"
+      ],
+      "note": "All three m_e users are mine, written this session, and none of them gave a reason for the choice. E_0 is the corpus's; m_e is the outlier."
+    },
+    "two_E0_scaled_candidates_for_the_ROAST_figure": {
+      "E_0 * ln 2": "2.90150118",
+      "b_pp from the B_sym linear chain": "2.91 (docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md, 'b_pp = 2.91, b_pn = 3.89, b_nn = 5.18', with the SAME alpha = E_0)",
+      "residual_of_the_first": "0.00849882 MeV (0.29 %)",
+      "which_one_the_ROAST_used": "NOT DETERMINED. Its own sentence gives 'E_0 log N', which is the first; but the first evaluates to 2.9015 and the ROAST wrote 2.91, which is the second to all three figures. The documents do not distinguish them and this probe does not guess. It does not matter for the finding: both are E_0-scaled, and the energy scale is the entire discrepancy.",
+      "per_bond_vs_per_strand": "Worth flagging either way: b_pp is a PER-BOND constant in a chain with (A-1) bonds, and the ROAST labels its figure 'MeV/strand' and multiplies by 3 strands/nucleon. If the ROAST did take b_pp, the label is wrong and the multiplication is too."
+    },
+    "family_at_both_scales": [
+      {
+        "normaliser": "[2]_q = q + 1/q",
+        "log_loop_value": "0.698580824894",
+        "MeV_per_nucleon_at_m_e": "1.070922205",
+        "MeV_per_nucleon_at_E_0": "8.772738941"
+      },
+      {
+        "normaliser": "[2]_Q = 1 + q^2",
+        "log_loop_value": "0.802921545214",
+        "MeV_per_nucleon_at_m_e": "1.230876201",
+        "MeV_per_nucleon_at_E_0": "10.08304387"
+      },
+      {
+        "normaliser": "kauffman q^(1/2)+q^(-1/2)",
+        "log_loop_value": "0.694507436922",
+        "MeV_per_nucleon_at_m_e": "1.064677715",
+        "MeV_per_nucleon_at_E_0": "8.721585563"
+      },
+      {
+        "normaliser": "1 + q^4",
+        "log_loop_value": "0.923446369055",
+        "MeV_per_nucleon_at_m_e": "1.415640377",
+        "MeV_per_nucleon_at_E_0": "11.59658787"
+      }
+    ],
+    "corrected_deficits": {
+      "family_range_at_E_0_MeV_per_nucleon": "8.7215856 .. 11.596588",
+      "vs_B_over_A_plateau": "1.02607x .. 1.3643x OVER",
+      "vs_a_V": "1.36247x .. 1.8116x short",
+      "previously_reported_at_m_e": "6.0x .. 15.0x short",
+      "span_of_the_convention_family": "1.32964"
+    },
+    "withdrawn": {
+      "qou-78pt verdict": "WITHDRAWN. 'A1 REFUTED, not unfitted' rested on the family span (1.33x) being two orders of magnitude smaller than the deficit (6-15x). At E_0 the deficit against a_V is 1.36-1.81x and the span is 1.33x -- the same size. That is precisely the condition under which picking a member is a fit, which is what the ROAST charged in the first place. A1 returns to UNFALSIFIABLE AS WRITTEN.",
+      "qou-imcd shortfall figure": "The exponent test itself is unaffected -- it is scale-free, since a constant multiplier cannot change a log-log slope, and log Z(3A) is still exactly linear in A. Only the reported '6.906x' residual is withdrawn.",
+      "extensive_counter_family_probe": "Its counter measurements (bonds A-1, averaged 2A+1, strands 3A, letters 12A-1, all exactly linear) stand. Every MeV figure in it is at m_e and must be multiplied by 8.1917611722."
+    },
+    "what_is_NOT_claimed": "That E_0 is the correct scale for this quantity. The Markov normaliser is a dimensionless partition function and nothing in the framework derives which energy converts its logarithm to MeV; E_0 itself is CAL-1, a calibration. The finding is that the shortfall moves by 8.19x between two scales both in current corpus use, so no 'Nx short' claim about the extensive term is meaningful until the scale is pinned from the axioms -- the same demand the ROAST made of the normalisation convention, one level up."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

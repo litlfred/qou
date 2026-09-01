@@ -252,9 +252,43 @@ def main():
                     computed=1 if rd["duality_gap"] < 1e-6 else 0,
                     expected=1, tolerance=0,
                     source="LP strong duality gap < 1e-6")
-    w.add_assertion("shadow_price_verdict_recorded",
-                    computed=1, expected=1, tolerance=0,
-                    source=f"verdict={verdict}, {n_active}/{p_n} active")
+    # Was `computed=1, expected=1` named `shadow_price_verdict_recorded` (bean
+    # `qou-26f2`): a literal on both sides, so it read PASS for an empty dual
+    # vector, a NaN shadow price, or a y*[λ] that DID equal 1/30 — the last
+    # being the exact outcome this module exists to rule out.  Three checks
+    # replace it: the block count, what was actually recorded, and the scan
+    # whose result the module computed and then discarded.
+
+    # (1) H₉'s Wedderburn blocks are indexed by partitions of 9. Expected is
+    # re-derived with sympy's partition function, not the literal 30 the
+    # header prints, so a mis-enumerated partition list cannot agree with it.
+    import sympy as _sp  # noqa: E402 — only needed for the independent p(9)
+    _p9 = int(_sp.npartitions(9))
+    w.add_assertion("wedderburn_block_count_is_p9",
+                    computed=len(partitions), expected=_p9, tolerance=0,
+                    source=f"H₉ has one Wedderburn block per partition of 9; "
+                           f"sympy.npartitions(9) = {_p9}")
+
+    # (2) The "recorded" the old name claimed: one finite shadow price per
+    # block, none dropped and none NaN.
+    _finite_y = sum(1 for _y in y_star if mp.isfinite(mp.mpf(str(_y))))
+    w.add_assertion("shadow_price_recorded_and_finite_per_block",
+                    computed=_finite_y, expected=len(partitions), tolerance=0,
+                    source=f"{_finite_y} finite y*[λ] recorded for "
+                           f"{len(partitions)} blocks; y0* = {float(y0_star):.10f}, "
+                           f"active set {n_active}/{p_n}, verdict={verdict}")
+
+    # (3) The decisive negative. `matches` was already built above (a 1% scan
+    # of every nonzero y*[λ] against 1/30, 1/1260, ℏ² and 1/p(n)²) and only
+    # printed. It is the evidence for "the 1/30 and 1/1260 are NUMERICAL FITS,
+    # not LP/SDP shadow prices" — a single matching dual would refute it.
+    w.add_assertion("no_shadow_price_matches_correction_coefficient",
+                    computed=len(matches), expected=0, tolerance=0,
+                    source="shadow prices within 1% of 1/30, 1/1260, ℏ² or "
+                           f"1/p(n)²: {len(matches)} of {len(y_star)} scanned. "
+                           "Algebraic duals cannot equal S's coefficients, "
+                           "which inherit the transcendental Vol(4₁)")
+    w.add_data("n_shadow_price_matches", len(matches))
 
     print(f"  Witness: {w.save()}")
 

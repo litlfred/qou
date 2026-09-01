@@ -1,0 +1,268 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T18:19:28.072641+00:00",
+  "commitSha": "9540cd5f9cd0a230601b366ac72a4e200be2b352",
+  "assertions": [
+    {
+      "name": "h3_frobenius_constraint_is_near_vacuous",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[(1, '100.00'), (2, '100.00'), (3, '100.00'), (4, '100.00'), (6, '100.00'), (8, '99.75'), (11, '99.40')]"
+    },
+    {
+      "name": "h3_bound_atoms_all_have_empty_active_set",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[('H', 0), ('D', 0), ('T', 0), ('He3', 0), ('He4', 0), ('Li6', 0), ('Li7', 0), ('Be9', 0), ('C12', 0), ('O16', 0)]"
+    },
+    {
+      "name": "free_product_binds_only_above_A12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "free violations: [('O16', '-0.618277')]"
+    },
+    {
+      "name": "h3A_active_set_is_nonempty",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "{'D': 7, 'T': 4, 'He3': 4, 'He4': 6}"
+    },
+    {
+      "name": "T_and_He3_share_an_active_set",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "T ['(6, 3)', '(7, 2)', '(8, 1)', '(9,)'] vs He3 ['(6, 3)', '(7, 2)', '(8, 1)', '(9,)']"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "operator-selection-active-set",
+  "scriptFile": "operator_selection_active_set_probe.py",
+  "scriptHash": "1371346cbac6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/operator_selection_active_set_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/operator_selection_active_set_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv). Corrects my prior turn, which tested PSD-feasibility of rho_lambda(K) — the wrong program; the corpus's selection machinery is the operator-selection LP with duals, where the deliverable is the ACTIVE SET. Measured: at H_3 the Frobenius constraint is near-vacuous (100% of alphabet words up to length 6 are stable, 99.4% at nucleon length 11), so every nucleus is stable with the EMPTY word, every row is strictly slack (min (Gx)_i 0.40..4.44) and the active set is EMPTY — for the bound atom AND the free constituent product alike, so it is not an artifact of build_atom_nf pre-applying the inter-nucleon crossings. At H_{3A} the same program DOES select: non-empty active sets, y0* != 0, strong duality. But T and He3 get IDENTICAL active blocks {(6,3),(7,2),(8,1),(9)}, differing only in the scalar y0*, so it cannot assign them different K — which is what Gap #2 needs. Cause is recorded in the witnesses themselves: Phase B color-flavor constraints (LR branching H_{3A} > (H_3)^Z x (H_3)^N) are not implemented and the LR data exists only for the deuteron. No fit; no objective invented; no knot proposed.",
+  "data": {
+    "h3_frobenius_bite": [
+      {
+        "length": 1,
+        "sampled": 6,
+        "stable": 6,
+        "exhaustive": true,
+        "pct": "100.00"
+      },
+      {
+        "length": 2,
+        "sampled": 36,
+        "stable": 36,
+        "exhaustive": true,
+        "pct": "100.00"
+      },
+      {
+        "length": 3,
+        "sampled": 216,
+        "stable": 216,
+        "exhaustive": true,
+        "pct": "100.00"
+      },
+      {
+        "length": 4,
+        "sampled": 1296,
+        "stable": 1296,
+        "exhaustive": true,
+        "pct": "100.00"
+      },
+      {
+        "length": 6,
+        "sampled": 2000,
+        "stable": 2000,
+        "exhaustive": false,
+        "pct": "100.00"
+      },
+      {
+        "length": 8,
+        "sampled": 2000,
+        "stable": 1995,
+        "exhaustive": false,
+        "pct": "99.75"
+      },
+      {
+        "length": 11,
+        "sampled": 2000,
+        "stable": 1988,
+        "exhaustive": false,
+        "pct": "99.40"
+      }
+    ],
+    "h3_per_atom": [
+      {
+        "atom": "H",
+        "A": 1,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "0.472902",
+        "min_Gx_free": "0.472902",
+        "active_channels": []
+      },
+      {
+        "atom": "D",
+        "A": 2,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "0.404396",
+        "min_Gx_free": "0.479869",
+        "active_channels": []
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "0.532137",
+        "min_Gx_free": "0.610232",
+        "active_channels": []
+      },
+      {
+        "atom": "He3",
+        "A": 3,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "0.687186",
+        "min_Gx_free": "0.511767",
+        "active_channels": []
+      },
+      {
+        "atom": "He4",
+        "A": 4,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "0.939523",
+        "min_Gx_free": "0.660707",
+        "active_channels": []
+      },
+      {
+        "atom": "Li6",
+        "A": 6,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "1.104802",
+        "min_Gx_free": "0.475319",
+        "active_channels": []
+      },
+      {
+        "atom": "Li7",
+        "A": 7,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "1.026392",
+        "min_Gx_free": "0.737260",
+        "active_channels": []
+      },
+      {
+        "atom": "Be9",
+        "A": 9,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "1.441772",
+        "min_Gx_free": "0.364543",
+        "active_channels": []
+      },
+      {
+        "atom": "C12",
+        "A": 12,
+        "min_K_bound": 0,
+        "min_K_free": 0,
+        "min_Gx_bound": "4.439562",
+        "min_Gx_free": "0.705140",
+        "active_channels": []
+      },
+      {
+        "atom": "O16",
+        "A": 16,
+        "min_K_bound": 0,
+        "min_K_free": 1,
+        "min_Gx_bound": "3.421556",
+        "min_Gx_free": "-0.618277",
+        "active_channels": []
+      }
+    ],
+    "h3A_from_committed_witnesses": {
+      "D": {
+        "y0_star": "-0.014433988",
+        "active_blocks": [
+          "(2, 1, 1, 1, 1)",
+          "(2, 2, 2)",
+          "(3, 3)",
+          "(4, 1, 1)",
+          "(4, 2)",
+          "(5, 1)",
+          "(6,)"
+        ]
+      },
+      "T": {
+        "y0_star": "0.016549695",
+        "active_blocks": [
+          "(6, 3)",
+          "(7, 2)",
+          "(8, 1)",
+          "(9,)"
+        ]
+      },
+      "He3": {
+        "y0_star": "0.028786849",
+        "active_blocks": [
+          "(6, 3)",
+          "(7, 2)",
+          "(8, 1)",
+          "(9,)"
+        ]
+      },
+      "He4": {
+        "y0_star": "0.003965758",
+        "active_blocks": [
+          "(6, 6)",
+          "(7, 5)",
+          "(8, 4)",
+          "(9, 3)",
+          "(10, 2)",
+          "(11, 1)"
+        ]
+      }
+    }
+  },
+  "caveats": [
+    "Section 2 (H_{3A}) is READ from committed nucleus-real-sdp-*.witness.json, not re-solved here. Those runs are the bar-fold symmetry-reduced bounded baseline by their own note, not the full real SDP.",
+    "The H_3 measurements are f64. Every conclusion is a sign or a count on O(1) quantities, so f64 is adequate; declared, not laundered.",
+    "The continuous H_3 LP's degeneracy (optimal value identically 0, y0* = 0, minimisers a positive-dimensional face) is PRIOR work, recorded in prop:operator-selection-lp. What is measured here is the distinct INTEGER program of nuclear_ilp.py, whose discrete feasible set escapes that argument but is vacuous for the separate reason above."
+  ]
+}

@@ -43,8 +43,14 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
-VOL_4_1_STR = "2.0298832128193072500115970029"
+# Vol(4_1) is EXCISED, not corrected (bean qou-ckbv, 2026-08-30).
+# This file carried VOL_4_1_STR = "2.0298832128193072500115970029" -- 29
+# digits printed, 19 correct, the same 20-digit carrier bean qou-f8lit
+# tracks. Vol(4_1) has a closed form, 2*Cl_2(pi/3); a literal for it can
+# only ever be a truncation of something the machine can compute exactly,
+# so the fix is deletion rather than re-transcription.
 
 
 def quantum_int(n: int, q: mpf) -> mpf:
@@ -96,7 +102,7 @@ def r7(q: mpf) -> mpf:
 
 def r8(q: mpf) -> mpf:
     hbar = (q - 1) / q
-    return hbar ** 6 / mpf(VOL_4_1_STR)
+    return hbar ** 6 / vol_at("4_1")
 
 
 def r9(q: mpf) -> mpf:

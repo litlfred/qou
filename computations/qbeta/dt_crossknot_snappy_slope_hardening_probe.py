@@ -51,17 +51,18 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
 set_compute_dps()
 
 # Corpus volumes (50-digit corpus constants truncated to float64-safe
 # comparison width; the SnapPy side is float64, so 1e-9 is the honest
 # comparison tolerance — this is a cross-check, not a precision claim).
-VOL_CORPUS = {
-    "4_1": mp.mpf("2.029883212819307250042405108549040391679005894"),
-    "5_2": mp.mpf("2.828122088330783162763898809276634942770981317"),
-    "6_1": mp.mpf("3.163963228883143983991757529167384812325703962"),
-}
+# EXCISED (bean qou-ckbv). The comment above called these "50-digit corpus
+# constants truncated to float64-safe comparison width". They printed 46
+# digits and were good to 34, 50 and 21 — so the 4_1 and 6_1 rows were not
+# truncations of the corpus constants at all, but different numbers.
+VOL_CORPUS = {k: vol_at(k, mp.mp.dps) for k in ("4_1", "5_2", "6_1")}
 # Literature-recalled slope data being hardened (magnitude sets).
 LIT_ABS = {"4_1": {4}, "5_2": {0, 4, 10}, "6_1": None}  # 6_1: new data
 

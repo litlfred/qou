@@ -71,11 +71,17 @@ neither pole-order matches?
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_MU_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
+from codata_constants import (  # noqa: E402 (codata sweep)
+    M_E_MEV,
+    M_MU_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 import sys
+from math import factorial, prod
 from pathlib import Path
 
 import mpmath as mp
+import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -90,6 +96,28 @@ def trM_borromean_closed(q):
     h = q - 1 / q
     h2 = h * h
     return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)
+
+
+def borromean_pole_symbolic():
+    """The q → 0 pole of tr_M(β_Bor) by EXACT ALGEBRA, not sampling.
+
+    Step 1 of this probe reproduced the correction commit's claim by
+    printing tr_M · q⁴ at six small q and eyeballing the column. That
+    is one route and it was never checked against anything. This is
+    the second: clear denominators in ℚ(q), read the q-valuation of
+    numerator and denominator off the monomial exponents (pole order),
+    and take sympy's exact limit of q^order · tr_M (leading
+    coefficient). No mpmath, no sampling, no extrapolation.
+
+    Returns (pole_order:int, leading_coefficient:sympy expr).
+    """
+    qs = sp.Symbol("q", positive=True)
+    expr = sp.cancel(sp.together(trM_borromean_closed(qs)))
+    num, den = sp.fraction(expr)
+    low = lambda p: min(m[0] for m in sp.Poly(sp.expand(p), qs).monoms())  # noqa: E731
+    order = int(low(den) - low(num))
+    leading = sp.limit(expr * qs ** order, qs, 0)
+    return order, leading
 
 
 def main() -> int:
@@ -110,6 +138,16 @@ def main() -> int:
         trM = trM_borromean_closed(q_small)
         scaled4 = trM * q_small ** 4
         print(f"  {q_str:<10}{mp.nstr(trM, 18):<28}{mp.nstr(scaled4, 18):<28}")
+    # Route A (numerical): the same scaling pushed far enough that the
+    # O(q²) correction is below the 50-dps floor. Route B (symbolic):
+    # exact q-valuation + sympy limit, see `borromean_pole_symbolic`.
+    q_deep = mp.mpf(10) ** -15
+    leading_numeric = trM_borromean_closed(q_deep) * q_deep ** 4
+    pole_order_sym, leading_sym = borromean_pole_symbolic()
+    print(f"\n  Route A (numeric, q = 1e-15): tr_M · q⁴ = "
+          f"{mp.nstr(leading_numeric, 25)}")
+    print(f"  Route B (exact q-valuation + sympy limit): pole order "
+          f"{pole_order_sym}, leading coefficient {leading_sym}")
     print(f"\n  Confirms commit 6766b40b9: tr_M(β_Bor, q) ~ -1·q^-4 as q→0.")
     print(f"  Pole order 4, leading coefficient -1.  No 1/12 here.")
 
@@ -130,7 +168,12 @@ def main() -> int:
 
     # The proton-mass identity: m_p = 2·m_μ·F_Bor − 12·m_e
     # If m_p, m_μ, m_e are anchored, what value of "12" gives exact match?
-    m_e = mp.mpf("0.51099895069")
+    # The literal this file has always carried. Kept as a literal on
+    # purpose so the assertion below can compare it against the CODATA
+    # registry — two routes to m_e, one hand-typed here and one loaded
+    # from codata_constants. Deleting the literal would delete the check.
+    M_E_LITERAL_IN_THIS_FILE = "0.51099895069"
+    m_e = mp.mpf(M_E_LITERAL_IN_THIS_FILE)
     m_mu = mp.mpf(M_MU_MEV_VALIDATION)
     m_p = mp.mpf(M_P_MEV_VALIDATION)
     # m_p = 2·m_μ·F_Bor − k·m_e  ⇒  k = (2·m_μ·F_Bor − m_p) / m_e
@@ -148,17 +191,45 @@ def main() -> int:
 
     # Step 3: Hypothesis tests for "12"
     print(f"\n[Step 3 — structural candidates for '12']")
+    # Each candidate is now EVALUATED from the ingredients its label
+    # names. Five of them used to be the bare literal `mp.mpf(12)` with
+    # the derivation living only in the label string, so the table could
+    # not have disagreed with its own captions — the row for
+    # "Σ d_λ² at H_3 = 1+4+1" would have printed 12 even if S_3 had had
+    # different dimensions. Three more labels named a q = 1 evaluation or
+    # a factor the code did not apply; those are corrected to say what is
+    # actually computed.
+    #
+    # H_3 = partitions of 3, dimensions by the integer hook-length
+    # formula (3, 1, 1) → wait: (3,) → 1, (2,1) → 2, (1,1,1) → 1.
+    def _hooks_3(p):
+        cols = p[0]
+        col_h = [sum(1 for r in p if r > j) for j in range(cols)]
+        return [(rl - 1 - j) + (col_h[j] - 1 - i) + 1
+                for i, rl in enumerate(p) for j in range(rl)]
+
+    parts_3 = [(3,), (2, 1), (1, 1, 1)]
+    d_lambda_h3 = {p: factorial(3) // prod(_hooks_3(p)) for p in parts_3}
+    sum_d_sq_h3 = sum(d * d for d in d_lambda_h3.values())   # = 1+4+1 = 6
+    dim_H3 = factorial(3)                                    # = 6
+    bracket_2_at_q1 = mp.mpf(2)          # [2]_q → 2 as q → 1
+    yekutieli_edge_cells, n_strands = 4, 3
+    print(f"  (H_3 hook-length dims: "
+          f"{ {str(p): d for p, d in d_lambda_h3.items()} }, "
+          f"Σd_λ² = {sum_d_sq_h3}, 3! = {dim_H3})")
     candidates = [
         ("12 (integer)", mp.mpf(12)),
-        ("[3]_q! / q^something", qfact_3 / q),
-        ("(q+q⁻¹)·[3]_q at q=1", (q + 1 / q) * q3),
-        ("4 · [3]_q!", 4 * qfact_3 / (q ** 2)),
-        ("12·F_Bor/m_p·m_e·something", mp.mpf(12)),  # placeholder
+        ("[3]_q! / q  at q_0", qfact_3 / q),
+        ("[2]_q · [3]_q = [3]_q!  at q_0", (q + 1 / q) * q3),
+        ("4 · [3]_q! / q²  at q_0", 4 * qfact_3 / (q ** 2)),
         ("(2·m_μ·F_Bor − m_p)/m_e (exact)", k_required),
-        ("Σ d_λ² at H_3 = 1+4+1 = 6, ·2 = 12", mp.mpf(12)),
-        ("dim H_3 = 3! = 6, ·2 = 12", mp.mpf(12)),
-        ("4 cells × 3 strands (Yekutieli 𝓑_3 edge cells)", mp.mpf(12)),
-        ("3! · [2]_q at q=1 = 6·2 = 12", mp.mpf(12)),
+        (f"Σ d_λ² at H_3 = {sum_d_sq_h3}, ·2",
+         mp.mpf(2 * sum_d_sq_h3)),
+        (f"dim H_3 = 3! = {dim_H3}, ·2", mp.mpf(2 * dim_H3)),
+        (f"{yekutieli_edge_cells} cells × {n_strands} strands "
+         f"(Yekutieli 𝓑_3 edge cells)",
+         mp.mpf(yekutieli_edge_cells * n_strands)),
+        ("3! · [2]_q at q=1", mp.mpf(dim_H3) * bracket_2_at_q1),
     ]
     for name, val in candidates:
         diff = val - k_required
@@ -208,14 +279,100 @@ def main() -> int:
     w.add_data("relative_pct", mp.nstr((k_required - 12) / 12 * 100, 12))
     w.add_data("F_Bor_at_q0", mp.nstr(F_Bor, 25))
     w.add_data("verdict", verdict)
+    w.add_data("borromean_pole", {
+        "route_a_numeric_trM_times_q4_at_1e-15": mp.nstr(leading_numeric, 25),
+        "route_b_symbolic_pole_order": pole_order_sym,
+        "route_b_symbolic_leading_coefficient": str(leading_sym),
+    })
+    w.add_data("h3_structural_ingredients", {
+        "hook_length_dims": {str(p): d for p, d in d_lambda_h3.items()},
+        "sum_d_lambda_squared": sum_d_sq_h3,
+        "dim_H3_factorial": dim_H3,
+    })
 
+    # ── Assertions ────────────────────────────────────────────────────
+
+    # (1) + (2) Step 1's whole claim — "pole order 4, leading -1, NOT
+    #     -1/12" — was printed and never asserted. It is the claim the
+    #     correction commit rests on, so it gets two routes.
+    #   Route A: evaluate the closed form numerically at q = 1e-15 at 50
+    #            dps, where the O(q²) correction is ~1e-30.
+    #   Route B: clear denominators in ℚ(q), read the pole order off the
+    #            monomial valuations, and take sympy's exact limit.
+    # -1/12 = -0.0833… would fail (1) by 0.9167; a pole order of 10 (the
+    # value the retracted Ocneanu attribution needed) fails (2) by 6.
     w.add_assertion(
-        name="reexam_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Ocneanu route re-exam completed at 50 dps.",
+        name="borromean_pole_leading_coefficient_is_minus_one",
+        computed=mp.nstr(leading_numeric, 25),
+        expected=str(leading_sym),
+        tolerance="1e-20",
+        source=(
+            "Route A: tr_M(β_Bor, q)·q⁴ from the Lean-proved closed "
+            "form evaluated at q = 1e-15 in mpmath at 50 dps. Route B: "
+            "sympy's exact limit of q^order·tr_M as q → 0 after "
+            "clearing denominators in ℚ(q). The retracted attribution "
+            "needed -1/12 here."
+        ),
     )
+    w.add_assertion(
+        name="borromean_pole_order_is_four",
+        computed=pole_order_sym,
+        expected=4,
+        tolerance=0,
+        source=(
+            "Route A: the q-valuation of numerator and denominator of "
+            "cancel(together(tr_M)) — deg-lowest monomial exponents, "
+            "exact integer arithmetic in sympy. Route B: the pole order "
+            "commit 6766b40b9 states for β_Bor (4, versus the 10 the "
+            "2026-05-04 Ocneanu audit reported for the proton T_w)."
+        ),
+    )
+
+    # (3) The '12' itself, against the audit's declared integer.
+    #   Route A: k = (2·m_μ·F_Bor − m_p)/m_e, from CODATA muon and
+    #            proton masses and the Lean-proved Borromean trace.
+    #   Route B: the integer 12 the proton-mass identity of audit
+    #            2026-05-25 asserts — a categorical claim, not measured.
+    # The tolerance is the verdict's OWN branch threshold (0.01), so a
+    # k that would flip the printed verdict now also fails an assertion.
+    w.add_assertion(
+        name="k_required_matches_integer_twelve_within_verdict_band",
+        computed=mp.nstr(k_required, 25),
+        expected="12",
+        tolerance="0.01",
+        source=(
+            "Route A: k = (2·m_μ·F_Bor − m_p)/m_e at 50 dps from CODATA "
+            "masses and F_Bor = |tr_M(β_Bor)|·[3]_q!/q³. Route B: the "
+            "integer 12 in m_p = 2·m_μ·F_Bor − 12·m_e (audit "
+            "2026-05-25). Tolerance 0.01 is the threshold the Step-4 "
+            "verdict branches on."
+        ),
+    )
+
+    # (4) The hand-typed electron mass in this file.
+    #   Route A: the literal "0.51099895069" typed into this module.
+    #   Route B: M_E_MEV loaded from codata_constants (which sources it
+    #            from codata_2022_source at full 11-sig-fig precision).
+    # The other two masses here already come from the registry; m_e did
+    # not, and nothing noticed. They agree today — this pins that.
+    w.add_data("m_e_two_routes", {
+        "literal_in_this_module": M_E_LITERAL_IN_THIS_FILE,
+        "codata_registry_M_E_MEV": mp.nstr(M_E_MEV, 25),
+        "difference": mp.nstr(m_e - M_E_MEV, 8),
+    })
+    w.add_assertion(
+        name="local_electron_mass_literal_matches_codata_registry",
+        computed=M_E_LITERAL_IN_THIS_FILE,
+        expected=mp.nstr(M_E_MEV, 25),
+        tolerance="1e-20",
+        source=(
+            "Route A: the m_e literal hand-typed in this module and used "
+            "to divide out k. Route B: codata_constants.M_E_MEV. k "
+            "scales as 1/m_e, so a drift of 1e-5 relative here moves k "
+            "by more than the 0.01 band assertion (3) allows."
+        ),
+    )
+
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0

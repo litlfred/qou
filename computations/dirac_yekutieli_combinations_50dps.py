@@ -35,6 +35,8 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
+from fractions import Fraction
+from math import factorial, prod
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -60,6 +62,16 @@ def hooks(p):
 
 def content_sum(p):
     return sum(j - i for i, row in enumerate(p) for j in range(row))
+
+
+def classical_dim(p):
+    """d_λ by the INTEGER hook-length formula, d_λ = n! / Π hooks.
+
+    The second route for everything `dim_q` computes here. It shares
+    `hooks()` but nothing else: no q, no bracket, no mpmath — exact
+    integer arithmetic, and the q → 1 limit of `dim_q` must land on it.
+    """
+    return factorial(sum(p)) // prod(hooks(p))
 
 
 def dim_q(p, q):
@@ -338,13 +350,148 @@ def main():
         "remains unidentified; categorical proof still open."
     ))
 
+    # ── Assertions ────────────────────────────────────────────────────
+    # Every combination reported above is read off `fit_h`, so what has
+    # to be falsifiable is the fit itself and the two functions fed to
+    # it. Each assertion below names two routes to the same number.
+
+    # (1) + (2) — Family A's h-expansion against the CLASSICAL route.
+    #   Route A: `fit_h` solves a 3×3 Vandermonde on Family A sampled at
+    #            q ∈ {1.05, 1.08, 1.11}, i.e. q-deformed dimensions well
+    #            away from q = 1, and reads off a_0 and a_2.
+    #   Route B: the q → 1 limit, where [k]_q → k and dim_q V_λ → d_λ =
+    #            n!/Π hooks — pure INTEGER hook-length combinatorics for
+    #            S_4, no q and no mpmath. Family A(0) = (Σ d_λ)/4 =
+    #            (1+3+2+3+1)/4 = 5/2; and the h² coefficient is the 3/4
+    #            this repo's Reading B is *stated* in terms of ("5/2 +
+    #            (3/4 − G)·h²", docstring above and the 2026-05-23 audit).
+    # Both hold to ~1e-48: Family A is exactly 5/2 + (3/4)h², which no
+    # assertion in this producer had ever checked. A wrong hook, a wrong
+    # bracket or a transposed Vandermonde row breaks Route A alone.
+    d_lambda = {p: classical_dim(p) for p in parts}
+    sum_d_lambda = sum(d_lambda.values())
+    w.add_data("classical_hook_length_dims", {
+        str(p): d for p, d in d_lambda.items()
+    })
     w.add_assertion(
-        name="probe_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Dirac × Yekutieli combinations completed.",
+        name="family_a_h0_matches_classical_dimension_mean",
+        computed=mp.nstr(fA_coefs[0], 30),
+        expected=mp.nstr(mp.mpf(sum_d_lambda) / 4, 30),
+        tolerance="1e-40",
+        source=(
+            "Route A: h⁰ coefficient of the 3-point Vandermonde fit of "
+            "(1/4)Σ dim_q V_λ at q ∈ {1.05, 1.08, 1.11}. Route B: the "
+            f"q→1 limit (Σ d_λ)/4 = {sum_d_lambda}/4 from the integer "
+            "hook-length formula d_λ = 4!/Π hooks."
+        ),
     )
+    w.add_assertion(
+        name="family_a_h2_matches_declared_three_quarters",
+        computed=mp.nstr(fA_coefs[2], 30),
+        expected="0.75",
+        tolerance="1e-40",
+        source=(
+            "Route A: h² coefficient of the same Vandermonde fit. "
+            "Route B: the 3/4 the repo's Reading B is written in terms "
+            "of — '5/2 + (3/4 − G)·h²' (module docstring; audit "
+            "2026-05-23). Reading B's reported a_2 is only meaningful "
+            "if Family A really carries that 3/4."
+        ),
+    )
+
+    # (3) — the Dirac form's h⁰ coefficient against its classical value.
+    #   Route A: `fit_h` on (Σ(1+D_q²)dim_q)/(Σ(1+D_q²)) sampled at
+    #            q ∈ {1.05, 1.08, 1.11}.
+    #   Route B: exact RATIONAL arithmetic at q = 1, where [c_λ]_q → c_λ
+    #            and dim_q → d_λ:  Σ(1+c_λ²)d_λ / Σ(1+c_λ²) = 106/85.
+    #            Computed with `Fraction` from the contents and the
+    #            hook-length dims — no floats, no q, no fit.
+    # Unlike Family A this one is NOT an even quartic in h, so the fit
+    # extrapolates rather than interpolates; the ~3e-6 gap is the
+    # extrapolation error and the tolerance is set to see it, not hide
+    # it. A wrong content_sum (say a sign) moves Route B by ~0.3.
+    dirac_classical = (
+        sum(Fraction(1 + content_sum(p) ** 2) * d_lambda[p] for p in parts)
+        / sum(Fraction(1 + content_sum(p) ** 2) for p in parts)
+    )
+    dirac_classical_mpf = (mp.mpf(dirac_classical.numerator)
+                           / mp.mpf(dirac_classical.denominator))
+    w.add_data("dirac_form_classical_q1_value", {
+        "exact_rational": f"{dirac_classical.numerator}/{dirac_classical.denominator}",
+        "decimal": mp.nstr(dirac_classical_mpf, 25),
+        "fit_minus_classical": mp.nstr(dirac_coefs[0] - dirac_classical_mpf, 12),
+    })
+    w.add_assertion(
+        name="dirac_form_h0_matches_content_weighted_classical_mean",
+        computed=mp.nstr(dirac_coefs[0], 30),
+        expected=mp.nstr(dirac_classical_mpf, 30),
+        tolerance="1e-4",
+        source=(
+            "Route A: h⁰ coefficient of the Vandermonde fit of "
+            "(Σ(1+D_q²)dim_q)/(Σ(1+D_q²)). Route B: exact Fraction "
+            f"arithmetic at q=1, Σ(1+c_λ²)d_λ / Σ(1+c_λ²) = "
+            f"{dirac_classical.numerator}/{dirac_classical.denominator}. "
+            "Tolerance 1e-4 is the fit's extrapolation error for a "
+            "non-quartic integrand (measured gap ≈ 3.2e-6), not a "
+            "precision claim."
+        ),
+    )
+
+    # (4) — the linear solve, re-derived in FUNCTION space.
+    #   Route A: `mp.lu_solve` on the two already-fitted coefficient
+    #            pairs, giving (a, b) so that a·FA + b·Dirac has h² = -G.
+    #   Route B: build the combined function g(q) = a·family_a(q) +
+    #            b·dirac_form(q), sample it AFRESH on the same q grid,
+    #            re-fit, and read its h² coefficient — then compare to
+    #            Catalan's constant, a known constant that never entered
+    #            either fit.
+    # Route B never touches fA_coefs/dirac_coefs, so it fails if the
+    # solve, the fit, or the linearity assumed between them is wrong.
+    def combined(q):
+        return a_lin * family_a(q) + b_lin * dirac_form(q)
+
+    combined_coefs = fit_h([combined(mp.mpf(qs)) for qs in sample_q_strs], h_vals)
+    w.add_data("linear_combination_refit", {
+        "a_0": mp.nstr(combined_coefs[0], 25),
+        "a_2": mp.nstr(combined_coefs[2], 25),
+        "route": ("re-sampled a·FamilyA + b·Dirac on the same q grid and "
+                  "re-fitted, rather than combining the fitted coefficients"),
+    })
+    w.add_assertion(
+        name="linear_combination_refit_h2_recovers_minus_catalan",
+        computed=mp.nstr(combined_coefs[2], 30),
+        expected=mp.nstr(-G, 30),
+        tolerance="1e-40",
+        source=(
+            "Route A: the 2×2 lu_solve in coefficient space that defines "
+            "(a, b). Route B: re-sample a·FamilyA + b·Dirac at "
+            "q ∈ {1.05, 1.08, 1.11} and re-fit. Expected value is "
+            "-Catalan (mp.catalan), a known constant, not a value this "
+            "producer computed."
+        ),
+    )
+
+    # A real defect, recorded rather than repaired (it is not a
+    # tautology and fixing it would move Combination 5's numbers).
+    cell_total = sum(cell_count.values())
+    w.add_data("per_cell_yekutieli_cell_count", {
+        "per_partition": {str(p): c for p, c in cell_count.items()},
+        "total_cells_assigned": cell_total,
+        "denominator_used": 8,
+        "comment_in_source_claims": "2+4+2 = 8 cells",
+    })
+    if cell_total != 8:
+        w.add_caveat(
+            f"Combination 5 divides each partition's Yekutieli share by 8 "
+            f"per the 2026-05-22 audit's '2+4+2 = 8 cells', but the "
+            f"per-partition cell_count in this file sums to {cell_total}, "
+            f"not 8. The scheme therefore assigns {cell_total}/8 = "
+            f"{cell_total/8:g} of -G in total, so it CANNOT reach -G·h² "
+            f"even in principle, and the reported Δ = 0.979 is partly "
+            f"that shortfall rather than a statement about the structure. "
+            f"Left as-is: repairing it changes Combination 5's reported "
+            f"numbers, which is a content decision, not a tautology drain."
+        )
 
     out = w.save()
     print(f"\n  Witness emitted: {out.name}")

@@ -232,17 +232,54 @@ def main() -> int:
     w.add_data("h", h)
     w.add_data("tr_M_borromean", tr_M_proper)
     w.add_data("weighted_c2", weighted_c2)
-    w.add_data("c2_by_partition", {str(k): v for k, v in cbh_h2_by_partition.items()})
-    w.add_data("y_weights", {str(k): v for k, v in y_weights.items()})
+    c2_serialised = {str(k): v for k, v in cbh_h2_by_partition.items()}
+    y_serialised = {str(k): v for k, v in y_weights.items()}
+    w.add_data("c2_by_partition", c2_serialised)
+    w.add_data("y_weights", y_serialised)
     w.add_data("catalan_G", G_catalan)
     w.add_data("three_sixteenths", 3.0 / 16)
 
+    # κ matches none of the three tabulated candidates — the script's own
+    # printed verdict, which until now lived only in stdout. Recorded, not
+    # asserted: there is no independent expected value for κ to test against.
+    _cands = {"minus_catalan_G": -G_catalan, "three_quarters": 0.75,
+              "three_quarters_minus_G": 0.75 - G_catalan,
+              "three_sixteenths": 3.0 / 16}
+    w.add_data("kappa_identification", {
+        "kappa": f"{weighted_c2:.17g}",
+        "candidates": {k: f"{v:.17g}" for k, v in _cands.items()},
+        "nearest_candidate_gap":
+            f"{min(abs(weighted_c2 - v) for v in _cands.values()):.17g}",
+        "verdict": "NEW VALUE — needs structural identification",
+        "has_independent_expected_value": False,
+    })
+
+    # Was `computed=1, expected=1` (bean `qou-26f2`). "Computed" is a coverage
+    # claim and the constant carried none of it: a run in which a partition
+    # took the `c₂ = 0.0` early-out, or in which the two tables came out on
+    # different key sets, produced the same 1. Count the partitions that
+    # actually contributed to the weighted sum, against the list the run walked.
+    covered = [k for k in c2_serialised if k in y_serialised]
     w.add_assertion(
         "h2_coefficient_computed",
-        computed=1,
-        expected=1,
-        tolerance=None,
+        computed=str(len(covered)),
+        expected=str(len(partitions_3)),
+        tolerance=0,
+        unit="partitions of 3 carrying both a y-weight and a CBH c₂",
         source="CBH expansion of Borromean Markov trace at H_3",
+    )
+    # And the recorded tables must reproduce the recorded κ — the one
+    # independent expected value available here: Σ y_λ·c₂(λ) recomputed from
+    # what the witness actually serializes, against the κ it reports.
+    kappa_from_recorded = sum(y_serialised[k] * c2_serialised[k] for k in covered)
+    w.add_assertion(
+        "kappa_reproducible_from_recorded_tables",
+        computed=f"{abs(kappa_from_recorded - weighted_c2):.17g}",
+        expected="0",
+        tolerance="1e-12",
+        source="Σ_λ y_λ·c₂(λ) recomputed from the serialized y_weights and "
+               "c2_by_partition tables must return the reported κ, so a reader "
+               "can redo the sum from the witness alone",
     )
 
     out = w.save()

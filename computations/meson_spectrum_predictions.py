@@ -43,6 +43,28 @@ def meson_braid_word(n_extra):
     return base + [(1,0,1)] * n_extra
 
 
+def shape_character(word, q_val, shape):
+    """χ^λ(word) for a single Wedderburn block.
+
+    The per-shape piece of `full_markov_trace`, exposed so the q^{±n}
+    scaling law stated in this module's docstring can be checked rather
+    than assumed — see the assertion in main().
+    """
+    q_f = float(q_val)
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape), q=q_f)
+    if dim == 0:
+        return 0.0
+    sigmas_d = [s.toarray() if hasattr(s, 'toarray') else np.asarray(s)
+                for s in sigmas]
+    prod = np.eye(dim)
+    I = np.eye(dim)
+    for (c, d, g) in word:
+        h_val = q_f - 1.0 / q_f
+        d = d * h_val if d != 0 else 0
+        prod = prod @ (c * sigmas_d[g] + d * I)
+    return float(np.trace(prod))
+
+
 def full_markov_trace(word, q_val):
     """Full Markov trace Σ_λ y_λ · χ^λ(word)."""
     q_f = float(q_val)
@@ -144,8 +166,46 @@ def main():
     )
     w.set_audit_only("docs/audits/2026-05-27-meson-spectrum-predictions.md")
     w.add_data("results", results)
-    w.add_assertion("kaon_predicted", computed=1, expected=1, tolerance=0,
-                     source="Kaon mass ratio computed from character structure")
+
+    # `kaon_predicted` read `computed=1, expected=1` — it recorded that a
+    # number had been produced, which reaching this line already implies, and
+    # said nothing about whether the character structure it came from is
+    # right. The predictions all miss PDG by 56-79%, so there is no external
+    # value to check them against; what IS checkable is the scaling law this
+    # module's own docstring states and every prediction depends on. For n
+    # extra σ₁ crossings the one-dimensional blocks must scale exactly:
+    # χ_(3) by q^n (σ_i eigenvalue q) and χ_(1,1,1) by (-q⁻¹)^n. 1e-9
+    # relative is a float64 floor with six decades of headroom — the
+    # observed residuals are ~1e-15 — not a band chosen to pass (qou-26f2).
+    chi3_base = shape_character(meson_braid_word(0), q, (3,))
+    chi111_base = shape_character(meson_braid_word(0), q, (1, 1, 1))
+    q_f = float(q)
+    scaling_ok = 0
+    scaling_checked = 0
+    for _name, n_extra, _n_cross, _key in mesons:
+        word_n = meson_braid_word(n_extra)
+        for shape, base, factor in (
+                ((3,), chi3_base, q_f ** n_extra),
+                ((1, 1, 1), chi111_base, (-1.0 / q_f) ** n_extra)):
+            scaling_checked += 1
+            want = factor * base
+            scaling_ok += int(
+                abs(shape_character(word_n, q, shape) - want)
+                <= 1e-9 * abs(want))
+    w.add_assertion("one_dim_block_characters_scale_as_q_pow_n",
+                    computed=scaling_ok, expected=scaling_checked, tolerance=0,
+                    source="For each meson row, χ_(3) scales by q^n and "
+                           "χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings "
+                           "— the Hoefsmit eigenvalue structure the mass "
+                           "ratios are read off, checked to 1e-9 relative.")
+    w.add_data("kaon_prediction", {
+        "m_pred_MeV": next(r["m_pred_MeV"] for r in results
+                           if r["m_PDG_MeV"] == pdg["K±"]),
+        "m_PDG_MeV": pdg["K±"],
+        "note": "structural ratio from character growth, not a fit; there is "
+                "no independent expected value for the prediction itself",
+        "has_independent_expected_value": False,
+    })
     print(f"\n  Witness: {w.save()}")
 
 

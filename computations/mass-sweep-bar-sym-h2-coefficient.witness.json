@@ -1,12 +1,12 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T12:25:04.622085+00:00",
-  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
+  "computedAt": "2026-08-30T12:52:27.052221+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "single_coefficient_hypothesis",
-      "computed": "1.945354724749158283726328796249840091016516635219054084334394371919308",
+      "computed": "1.945354724730503380776173526026792523117581965289321376247241958965221",
       "expected": 0.0,
       "passed": false,
       "tolerance": "0.05",
@@ -18,8 +18,8 @@
   "durationMs": 4,
   "computation": "mass-sweep-bar-sym-h2-coefficient",
   "scriptFile": "mass_sweep_bar_sym_h2_coefficient_hunt.py",
-  "scriptHash": "af4d46f727ff",
-  "scriptCommitSha": "52ce4583dde51262d737e5654bdbab2732e78097",
+  "scriptHash": "fd0c3d5bd47f",
+  "scriptCommitSha": "a744956372e5e83ca675f59e7d05a5c8135a368a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,10 +31,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "mpmath": "1.3.0"
   },
   "invocation": {
     "argv": [
@@ -50,7 +47,7 @@
     "verdict": "VARYING — α-cluster recursion is structurally wrong; each atom needs different bar-symmetric h² correction",
     "c_4He": 1.267913699028538,
     "nu_canonical_4He": 1.8891685989380347,
-    "max_deviation_from_c_4He": 1.9453547247491583
+    "max_deviation_from_c_4He": 1.9453547247305034
   },
   "data": {
     "per_atom_c_values": [
@@ -69,60 +66,60 @@
         "A": 8,
         "rule": "alpha",
         "B_AME_MeV": 56.49951,
-        "B_prod_MeV": 62.33834398194176,
-        "diff_MeV": 5.838833981941764,
-        "c_h2_coefficient": 2.143027442113639,
-        "c_times_h2_fraction": 0.0936636042759359
+        "B_prod_MeV": 62.33834398193054,
+        "diff_MeV": 5.838833981930541,
+        "c_h2_coefficient": 2.1430274421099056,
+        "c_times_h2_fraction": 0.09366360427577274
       },
       {
         "atom": "12C",
         "A": 12,
         "rule": "alpha",
         "B_AME_MeV": 92.16175,
-        "B_prod_MeV": 97.14800022857376,
-        "diff_MeV": 4.986250228573764,
-        "c_h2_coefficient": 1.1743486977463622,
-        "c_times_h2_fraction": 0.05132632907359814
+        "B_prod_MeV": 97.1480002285401,
+        "diff_MeV": 4.986250228540097,
+        "c_h2_coefficient": 1.17434869773884,
+        "c_times_h2_fraction": 0.051326329073269374
       },
       {
         "atom": "16O",
         "A": 16,
         "rule": "alpha",
         "B_AME_MeV": 127.61929,
-        "B_prod_MeV": 134.38464597897985,
-        "diff_MeV": 6.765355978979844,
-        "c_h2_coefficient": 1.151855149266834,
-        "c_times_h2_fraction": 0.050343221353115496
+        "B_prod_MeV": 134.38464597891252,
+        "diff_MeV": 6.765355978912511,
+        "c_h2_coefficient": 1.1518551492559472,
+        "c_times_h2_fraction": 0.05034322135263967
       },
       {
         "atom": "20Ne",
         "A": 20,
         "rule": "alpha",
         "B_AME_MeV": 160.64486,
-        "B_prod_MeV": 174.04828123316,
-        "diff_MeV": 13.403421233160003,
-        "c_h2_coefficient": 1.7619873823211518,
-        "c_times_h2_fraction": 0.07700978796340081
+        "B_prod_MeV": 174.0482812330478,
+        "diff_MeV": 13.403421233047782,
+        "c_h2_coefficient": 1.7619873823075352,
+        "c_times_h2_fraction": 0.07700978796280568
       },
       {
         "atom": "24Mg",
         "A": 24,
         "rule": "alpha",
         "B_AME_MeV": 198.2569,
-        "B_prod_MeV": 216.13890599111426,
-        "diff_MeV": 17.882005991114244,
-        "c_h2_coefficient": 1.8929544059865715,
-        "c_times_h2_fraction": 0.08273386001060538
+        "B_prod_MeV": 216.13890599094591,
+        "diff_MeV": 17.88200599094591,
+        "c_h2_coefficient": 1.8929544059702261,
+        "c_times_h2_fraction": 0.082733860009891
       },
       {
         "atom": "40Ca",
         "A": 40,
         "rule": "alpha",
         "B_AME_MeV": 342.0521,
-        "B_prod_MeV": 408.771300060672,
-        "diff_MeV": 66.719200060672,
-        "c_h2_coefficient": 3.7344556040078865,
-        "c_times_h2_fraction": 0.16321889538421405
+        "B_prod_MeV": 408.771300060167,
+        "diff_MeV": 66.71920006016698,
+        "c_h2_coefficient": 3.734455603984234,
+        "c_times_h2_fraction": 0.16321889538318027
       }
     ],
     "ratios_to_4He": [
@@ -132,27 +129,27 @@
       },
       {
         "atom": "8Be",
-        "c_atom_over_c_4He": 1.690199769712721
+        "c_atom_over_c_4He": 1.6901997697097766
       },
       {
         "atom": "12C",
-        "c_atom_over_c_4He": 0.926205544309629
+        "c_atom_over_c_4He": 0.9262055443036963
       },
       {
         "atom": "16O",
-        "c_atom_over_c_4He": 0.9084649453266207
+        "c_atom_over_c_4He": 0.9084649453180341
       },
       {
         "atom": "20Ne",
-        "c_atom_over_c_4He": 1.3896745367379244
+        "c_atom_over_c_4He": 1.3896745367271852
       },
       {
         "atom": "24Mg",
-        "c_atom_over_c_4He": 1.4929678632204486
+        "c_atom_over_c_4He": 1.4929678632075571
       },
       {
         "atom": "40Ca",
-        "c_atom_over_c_4He": 2.9453547247491585
+        "c_atom_over_c_4He": 2.945354724730503
       }
     ],
     "closed_form_candidates_for_c_4He": [

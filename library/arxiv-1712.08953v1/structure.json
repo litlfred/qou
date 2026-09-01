@@ -1,0 +1,656 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1712.08953v1",
+ "source": {
+  "file": "1712.08953v1.pdf",
+  "sha256": "005e0b1ad63c173eedaa20cab23a961e0fe6fbd649bef0be66ebfd35eda99f8a",
+  "bytes": 679867,
+  "pages": 57,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1712.08953",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "24 Dec 2017"
+  },
+  "doi": null,
+  "title": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY",
+  "authors_raw": "JONATHAN BRUNDAN",
+  "title_lines": [
+   "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY"
+  ],
+  "abstract": "The oriented skein category OS(z, t ) is a ribbon category which un- derpins the de\ufb01nition of the HOMFLY-PT invariant of an orien ted link, in the same way that the Temperley-Lieb category underpins the Jon es polynomial. In this article, we develop its representation theory using a h ighest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then w e construct a graded lift of OS(z, t ) by realizing it as a 2-representation of a Kac-Moody 2-cate gory. W e also discuss the degenerate analog of OS(z, t ), which is the oriented Brauer category OB(\u03b4).",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20171226203314-05'00'",
+   "Creator": "dvips(k) 5.996 Copyright 2016 Radical Eye Software",
+   "Title": "arXiv:1712.08953v1  [math.RT]  24 Dec 2017"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "We begin by recalling brie\ufb02y the de\ufb01nition of the category FOT of framed oriented",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Let us state some foundational results about OS (z,t ). The \ufb01rst one gives an",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The next theorem gives bases for morphism spaces. Again, this is du e to Turaev",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Let Hr be the Iwahori-Hecke algebra of the symmetric group Sr with quadratic",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "There is a homomorphism",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "We are interested here instead in the decategori\ufb01cation of OS (z,t ). There are",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "For the remainder of the introduction , we assume that k is a \ufb01eld and z =q\u2212q\u22121",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.7"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Suppose either that q is not a root of unity and e = 0, or q2 is a primitive eth",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.8"
+  },
+  {
+   "level": 2,
+   "title": "There is a parallel story in the degenerate case z = 0. In this case, relation (S)",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.9"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "The remainder of the article is organized as follows. Sections 2 and 3 a re",
+   "page": 12,
+   "source": "inferred",
+   "number": "1.10"
+  },
+  {
+   "level": 1,
+   "title": "Generators and relations",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "The relations (i) and (S) follow from (1). Relations (ii), (iii), (iv), (vi) and (vii)",
+   "page": 15,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Connection to RepUq(gln)",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Due to the relation (D) in OS(z,t ), the morphism \u2208 Hom\u02c6OS(z,t)(\u2205, \u2205 ) maps to",
+   "page": 21,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "The affine oriented skein category",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Shortest word theory",
+   "page": 25,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "J. BRUNDAN",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "Branching rules and characters",
+   "page": 36,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Categorical action",
+   "page": 46,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Modifications in the degenerate case",
+   "page": 54,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 56,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-we-begin-by-recalling-brie\ufb02y-the-de\ufb01nition-of",
+   "number": "1.1",
+   "title": "We begin by recalling brie\ufb02y the de\ufb01nition of the category FOT of framed oriented",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1802,
+   "n_words": 330
+  },
+  {
+   "id": "sec-002-2-j-brundan",
+   "number": "2",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 877,
+   "n_words": 173
+  },
+  {
+   "id": "sec-003-12-let-us-state-some-foundational-results-about",
+   "number": "1.2",
+   "title": "Let us state some foundational results about OS (z,t ). The \ufb01rst one gives an",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 967,
+   "n_words": 179
+  },
+  {
+   "id": "sec-004-13-the-next-theorem-gives-bases-for-morphism-spa",
+   "number": "1.3",
+   "title": "The next theorem gives bases for morphism spaces. Again, this is du e to Turaev",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2434,
+   "n_words": 471
+  },
+  {
+   "id": "sec-005-4-j-brundan",
+   "number": "4",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-14-let-hr-be-the-iwahori-hecke-algebra-of-the-sy",
+   "number": "1.4",
+   "title": "Let Hr be the Iwahori-Hecke algebra of the symmetric group Sr with quadratic",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 81,
+   "n_words": 14
+  },
+  {
+   "id": "sec-007-0-there-is-a-homomorphism",
+   "number": "0",
+   "title": "There is a homomorphism",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3024,
+   "n_words": 531
+  },
+  {
+   "id": "sec-008-15-we-are-interested-here-instead-in-the-decateg",
+   "number": "1.5",
+   "title": "We are interested here instead in the decategori\ufb01cation of OS (z,t ). There are",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2520,
+   "n_words": 456
+  },
+  {
+   "id": "sec-009-6-j-brundan",
+   "number": "6",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1086,
+   "n_words": 192
+  },
+  {
+   "id": "sec-010-17-for-the-remainder-of-the-introduction-we-assu",
+   "number": "1.7",
+   "title": "For the remainder of the introduction , we assume that k is a \ufb01eld and z =q\u2212q\u22121",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5335,
+   "n_words": 963
+  },
+  {
+   "id": "sec-011-8-j-brundan",
+   "number": "8",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1500,
+   "n_words": 300
+  },
+  {
+   "id": "sec-012-18-suppose-either-that-q-is-not-a-root-of-unity",
+   "number": "1.8",
+   "title": "Suppose either that q is not a root of unity and e = 0, or q2 is a primitive eth",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3457,
+   "n_words": 631
+  },
+  {
+   "id": "sec-013-19-there-is-a-parallel-story-in-the-degenerate-c",
+   "number": "1.9",
+   "title": "There is a parallel story in the degenerate case z = 0. In this case, relation (S)",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 911,
+   "n_words": 169
+  },
+  {
+   "id": "sec-014-10-j-brundan",
+   "number": "10",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 6003,
+   "n_words": 1091
+  },
+  {
+   "id": "sec-015-12-j-brundan",
+   "number": "12",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1489,
+   "n_words": 264
+  },
+  {
+   "id": "sec-016-110-the-remainder-of-the-article-is-organized-as",
+   "number": "1.10",
+   "title": "The remainder of the article is organized as follows. Sections 2 and 3 a re",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2160,
+   "n_words": 359
+  },
+  {
+   "id": "sec-017-2-generators-and-relations",
+   "number": "2",
+   "title": "Generators and relations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2259,
+   "n_words": 408
+  },
+  {
+   "id": "sec-018-14-j-brundan",
+   "number": "14",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2626,
+   "n_words": 527
+  },
+  {
+   "id": "sec-019-c-the-relations-i-and-s-follow-from-1-relations",
+   "number": "C",
+   "title": "The relations (i) and (S) follow from (1). Relations (ii), (iii), (iv), (vi) and (vii)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2048,
+   "n_words": 358
+  },
+  {
+   "id": "sec-020-16-j-brundan",
+   "number": "16",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-3-connection-to-repuqgln",
+   "number": "3",
+   "title": "Connection to RepUq(gln)",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5706,
+   "n_words": 1182
+  },
+  {
+   "id": "sec-022-18-j-brundan",
+   "number": "18",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5799,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-023-20-j-brundan",
+   "number": "20",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 4152,
+   "n_words": 805
+  },
+  {
+   "id": "sec-024-c-due-to-the-relation-d-in-oszt-the-morphism-hom",
+   "number": "C",
+   "title": "Due to the relation (D) in OS(z,t ), the morphism \u2208 Hom\u02c6OS(z,t)(\u2205, \u2205 ) maps to",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1238,
+   "n_words": 216
+  },
+  {
+   "id": "sec-025-4-the-affine-oriented-skein-category",
+   "number": "4",
+   "title": "The affine oriented skein category",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 958,
+   "n_words": 182
+  },
+  {
+   "id": "sec-026-22-j-brundan",
+   "number": "22",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3762,
+   "n_words": 794
+  },
+  {
+   "id": "sec-027-24-j-brundan",
+   "number": "24",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1544,
+   "n_words": 355
+  },
+  {
+   "id": "sec-028-5-shortest-word-theory",
+   "number": "5",
+   "title": "Shortest word theory",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3140,
+   "n_words": 547
+  },
+  {
+   "id": "sec-029-26-j-brundan",
+   "number": "26",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 6434,
+   "n_words": 1154
+  },
+  {
+   "id": "sec-030-28-j-brundan",
+   "number": "28",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 5611,
+   "n_words": 1096
+  },
+  {
+   "id": "sec-031-30-j-brundan",
+   "number": "30",
+   "title": "J. BRUNDAN",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 36,
+   "n_chars": 16954,
+   "n_words": 3287
+  },
+  {
+   "id": "sec-032-6-branching-rules-and-characters",
+   "number": "6",
+   "title": "Branching rules and characters",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 46,
+   "n_chars": 26767,
+   "n_words": 5076
+  },
+  {
+   "id": "sec-033-7-categorical-action",
+   "number": "7",
+   "title": "Categorical action",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 54,
+   "n_chars": 23455,
+   "n_words": 4495
+  },
+  {
+   "id": "sec-034-8-modifications-in-the-degenerate-case",
+   "number": "8",
+   "title": "Modifications in the degenerate case",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 4370,
+   "n_words": 819
+  },
+  {
+   "id": "sec-035-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 7245,
+   "n_words": 1144
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "sections": 36,
+  "chars_total": 157714
+ }
+}

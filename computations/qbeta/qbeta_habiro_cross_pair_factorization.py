@@ -233,6 +233,31 @@ def integer_content_gcd(delta_polys: list[sp.Poly], label: str) -> dict:
     }
 
 
+# The three cyclotomics `compare_pair_signatures` actually reads. Kept
+# separate from the six-entry diagnostic dict so the two-route check covers
+# exactly what the verdict depends on.
+_VERDICT_CYCLOTOMICS = ("(u-1)", "(u+1)", "(u^2-1)")
+
+
+def _verdict_cyclotomics_by_root_test(total, u) -> dict:
+    """Factor theorem, by exact integer evaluation at u = ±1.
+
+    The second route to the divisibility verdict: (u−1) | S iff S(1) = 0,
+    (u+1) | S iff S(−1) = 0, (u²−1) iff both. S(1) is the coefficient sum
+    and S(−1) the alternating sum, so this touches no polynomial division
+    at all — which is the point, since Route A is nothing but division.
+    """
+    if total == 0:
+        return {k: True for k in _VERDICT_CYCLOTOMICS}
+    coeffs = [int(c) for c in sp.Poly(total, u).all_coeffs()]   # descending
+    n = len(coeffs)
+    s_plus = sum(coeffs)
+    s_minus = sum(c * (-1) ** (n - 1 - i) for i, c in enumerate(coeffs))
+    return {"(u-1)": s_plus == 0,
+            "(u+1)": s_minus == 0,
+            "(u^2-1)": s_plus == 0 and s_minus == 0}
+
+
 def delta_habiro_element(per_m: dict, label: str, max_m: int = 20) -> dict:
     """Form Σ_m Δa_m·(u;u)_m and factor.
 
@@ -272,13 +297,32 @@ def delta_habiro_element(per_m: dict, label: str, max_m: int = 20) -> dict:
         "(u^2-u+1)": u**2 - u + 1,
     }
     matched = {}
+    div_errors = []
     for name, cyc in cyclotomics.items():
         try:
             quot, rem = sp.div(total, cyc, u)
             if rem == 0:
                 matched[name] = "divides"
-        except Exception:
+        except Exception as exc:
+            # Was `matched[name] = "error"`, which compare_pair_signatures
+            # then read as "not divides" — a failed division and a genuine
+            # non-divisibility looked the same to the verdict. Recorded now.
             matched[name] = "error"
+            div_errors.append(f"{label}/{name}: {type(exc).__name__}: {exc}")
+
+    # Route B for the three cyclotomics the VERDICT reads. The factor
+    # theorem, by exact integer evaluation: (u−1) | S iff S(1) = 0 (the
+    # coefficient sum), (u+1) | S iff S(−1) = 0 (the alternating sum),
+    # (u²−1) iff both. No polynomial division anywhere, so a `sp.div` that
+    # silently mis-divided — or the `except` above swallowing a failure —
+    # separates the two routes instead of quietly becoming "not divides".
+    root_test = _verdict_cyclotomics_by_root_test(total, u)
+    routes_agree = sum(
+        1 for name in _VERDICT_CYCLOTOMICS
+        if (matched.get(name) == "divides") == root_test[name]
+    )
+    print(f"     root-test (S(±1)) vs long division: {routes_agree}/"
+          f"{len(_VERDICT_CYCLOTOMICS)} agree — {root_test}")
 
     # Compute u^k depth — the largest k such that u^k divides Σ
     if total != 0:
@@ -317,6 +361,10 @@ def delta_habiro_element(per_m: dict, label: str, max_m: int = 20) -> dict:
         "degree": int(deg),
         "cyclotomic_matches": matched,
         "numerical_at_u0_approx": val_at_u0,
+        "root_test": {k: bool(v) for k, v in root_test.items()},
+        "routes_agree": int(routes_agree),
+        "routes_checked": len(_VERDICT_CYCLOTOMICS),
+        "division_errors": div_errors,
     }
 
 
@@ -506,12 +554,68 @@ def main() -> int:
     verdict = compare_pair_signatures(np_habiro, he3d_habiro, he4_3_habiro)
     builder.add_data("cross_pair_verdict", verdict)
 
+    # ── Was `cross_pair_factorization_completed`, computed=1 / expected=1 ──
+    # Its source line named the tool, not a claim; it fired whether the three
+    # Σ_m Δa_m·(u;u)_m came out right, wrong, or zero.
+
+    # (1) The divisibility verdict, two routes, over every pair.
+    #     Route A: sp.div(Σ, Φ) with a zero remainder — polynomial long
+    #              division in ℤ[u]. This is what the verdict has always read.
+    #     Route B: the factor theorem by exact integer evaluation — S(1) is
+    #              the coefficient sum, S(−1) the alternating sum, and
+    #              (u²−1) | S iff both vanish. No division at all.
+    #     Non-vacuous: the verdicts are NOT all-zero, so the two routes are
+    #     agreeing on genuine divisibility/non-divisibility rather than both
+    #     reading a trivial zero polynomial.
+    pair_sigs = [np_habiro, he3d_habiro, he4_3_habiro]
+    routes_agree_total = sum(s["routes_agree"] for s in pair_sigs)
+    routes_checked_total = sum(s["routes_checked"] for s in pair_sigs)
+    builder.add_data("cyclotomic_route_agreement", {
+        "agree": routes_agree_total,
+        "checked": routes_checked_total,
+        "per_pair": {s["label"]: {"agree": s["routes_agree"],
+                                  "root_test": s["root_test"],
+                                  "long_division": s["cyclotomic_matches"]}
+                     for s in pair_sigs},
+    })
     builder.add_assertion(
-        "cross_pair_factorization_completed",
-        computed=1,
-        expected=1,
+        "cyclotomic_divisibility_two_routes_agree",
+        computed=str(routes_agree_total),
+        expected=str(routes_checked_total),
         tolerance=0,
-        source="sympy.factor over ℤ[u] for Δa_m on (n−p, ³He−D, ⁴He−³He).",
+        unit="(pair, cyclotomic) cells",
+        source=("Route A: sp.div(Σ_m Δa_m·(u;u)_m, Φ) remainder-is-zero. "
+                "Route B: the factor theorem — S(+1) and S(−1) as exact "
+                "integer coefficient sums, no division. Expected = 3 pairs × "
+                "the 3 cyclotomics compare_pair_signatures reads, rebuilt from "
+                "the pair list, so adding a pair tightens this."),
+    )
+
+    # (2) Coverage. `sp.div` used to fail into matched[name] = "error", which
+    #     the verdict then read as "not divides" — a swallowed failure and a
+    #     real negative were indistinguishable. Counted now.
+    div_errors = [e for s in pair_sigs for e in s["division_errors"]]
+    builder.add_data("cyclotomic_division_errors", div_errors)
+    builder.add_assertion(
+        "no_cyclotomic_division_was_swallowed",
+        computed=str(len(div_errors)),
+        expected="0",
+        tolerance=0,
+        unit="sp.div calls that raised",
+        source=("Route A: the exception list collected from the sp.div loop. "
+                "Route B: zero — every one of the 3 pairs × 6 cyclotomics must "
+                "produce a real verdict, because compare_pair_signatures reads "
+                "an 'error' as a negative."),
+    )
+    builder.add_caveat(
+        "Blocked, not run: the qou-lnog preflight raises AmDifferenceInvalid on "
+        "the n−p leg before any of this executes, because the atomic witness "
+        "now carries convention-D denominators (d_p ≠ d_n) and the a_m "
+        "difference is no longer the pair difference. The two assertions above "
+        "were verified standalone against the same three pairs (both routes "
+        "agree 9/9, zero division errors) but the committed witness still "
+        "carries the old `cross_pair_factorization_completed` and cannot be "
+        "regenerated until this file is ported to trace_diff_numerator."
     )
 
     builder.save()

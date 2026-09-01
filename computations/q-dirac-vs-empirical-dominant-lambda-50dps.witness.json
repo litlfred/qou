@@ -1,24 +1,48 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:12:06.823329+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-08-30T10:34:40.960348+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
   "assertions": [
     {
-      "name": "probe_completed",
-      "computed": true,
-      "expected": true,
+      "name": "partition_enumeration_matches_known_counts",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "Cross-check of D_q² ranking vs empirical Δ_λ dominance."
+      "source": "p(6): 11 enumerated vs 11 from sympy; p(9): 30 enumerated vs 30 from sympy; p(12): 77 enumerated vs 77 from sympy"
+    },
+    {
+      "name": "every_empirical_dominant_located",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "5 of 5 empirical λ* found in their own partition list; an unfound λ* leaves dom_c and dom_dq2 holding the previous atom's values rather than raising"
+    },
+    {
+      "name": "d_q2_cannot_separate_a_partition_from_its_transpose",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "max over the 77 partitions of 12 of |D_q²(λ) − D_q²(λᵀ)| = 0.0, with max |c_λ + c_λᵀ| = 0. D_q² = [c_λ]_q² and c is antisymmetric under transpose, so every transpose pair is degenerate — a selection mechanism built on D_q² alone can never pick λ* over λ*ᵀ"
+    },
+    {
+      "name": "atoms_whose_dominant_ranks_first_by_d_q2",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 of 5 atoms have their empirical Δ_λ dominant at rank 1 by D_q²; 1 of 5 in the top 5. Ranks: D 4/11, T 10/30, 3He 10/30, 4He_91229 9/77, 4He_1288 61/77. Any atom reaching rank 1 would refute the NEGATIVE verdict"
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 166,
   "computation": "q-dirac-vs-empirical-dominant-lambda-50dps",
   "scriptFile": "q_dirac_vs_empirical_dominant_lambda.py",
-  "scriptHash": "6e8022e09093",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "f991468b299c",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -221,5 +245,7 @@
     "n_atoms_tested": 5,
     "verdict": "NEGATIVE: D_q² rank does NOT predict empirical Δ_λ dominance. Only 1/5 are in top-5 by D_q². The Δ_λ-dominance criterion is structurally distinct from Dirac eigenvalue magnitude. Option E's ρ_w(K) needs a different selection mechanism.",
     "implication_for_option_E": "If D_q² rank does NOT match empirical dominant λ*(K), Option E's ρ_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (AGENTS.md §7b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both λ* and λ*^T (e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

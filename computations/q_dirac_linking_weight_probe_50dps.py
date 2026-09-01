@@ -45,6 +45,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
+from math import factorial, prod
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -73,6 +74,27 @@ def hooks(partition):
 def content_sum(partition):
     """c_λ = Σ_{(i,j) ∈ λ} (j - i)."""
     return sum(j - i for i, row in enumerate(partition) for j in range(row))
+
+
+def classical_dim(partition):
+    """d_λ = n! / Π hooks, in exact INTEGER arithmetic.
+
+    The classical (q = 1) dimension, reached without any q-bracket.
+    Every scheme below is a weighted sum of `dim_q`, so this is the
+    independent route that says whether `hooks` and `dim_q` agree with
+    the representation theory they claim to deform. The printed
+    'classical d_λ' column used to be a hand-written conditional on the
+    partition shape; it is this now.
+    """
+    return factorial(sum(partition)) // prod(hooks(partition))
+
+
+def conjugate(partition):
+    """λ' — the transpose partition. c_{λ'} = -c_λ and the hook
+    multiset is preserved, which is the 'bar-symmetry' scheme 8's
+    docstring invokes to predict Σ c_λ·dim_q V_λ = 0."""
+    cols = partition[0] if partition else 0
+    return tuple(sum(1 for r in partition if r > j) for j in range(cols))
 
 
 def dim_q(partition, q):
@@ -152,8 +174,7 @@ def main():
     print(f"  {'λ':<14}{'c_λ':<6}{'D_q²(λ)':<20}{'classical d_λ':<14}")
     for lam in parts_4:
         c = content_sum(lam)
-        d_class = 1 if lam == (4,) or lam == (1, 1, 1, 1) else (
-                  3 if lam == (3, 1) or lam == (2, 1, 1) else 2)
+        d_class = classical_dim(lam)
         print(f"  {str(lam):<14}{c:<6}[{c}]_q²              {d_class:<14}")
     print(f"  Chirality kernel (c_λ = 0): {{(2,2)}}")
 
@@ -289,12 +310,123 @@ def main():
                 "weighted-sum combinations.")
     ))
 
+    # ── Assertions ────────────────────────────────────────────────────
+    # All 11 schemes are weighted sums of dim_q V_λ with weights built
+    # from c_λ, so the falsifiable content is (a) that dim_q really is
+    # the q-deformation of d_λ it claims to be, and (b) the one exact
+    # prediction the module docstring makes about a scheme's value.
+
+    d_lambda = {lam: classical_dim(lam) for lam in parts_4}
+    w.add_data("classical_hook_length_dims",
+               {str(lam): d for lam, d in d_lambda.items()})
+
+    # (1) dim_q against the classical dimension.
+    #   Route A: the q-bracket product Π[k]_q / Π[h]_q, evaluated at
+    #            q = 1 + 1e-25 in mpmath at 50 dps (the q → 1 limit; the
+    #            remaining error is O(1e-50)).
+    #   Route B: n!/Π hooks in exact integer arithmetic — no q, no
+    #            bracket, no mpmath.
+    # A wrong arm/leg in `hooks` shifts Route A and Route B in step for
+    # the hook product but NOT for the [n]_q! numerator, so this does
+    # catch it; a wrong bracket at k = 1 (the special case in `dim_q`)
+    # breaks Route A alone.
+    q_near_1 = 1 + mp.mpf(10) ** -25
+    dim_q_limit = {lam: dim_q(lam, q_near_1) for lam in parts_4}
+    sum_dim_q_limit = sum(dim_q_limit.values())
+    sum_d_lambda = sum(d_lambda.values())
+    w.add_data("dim_q_q_to_one_vs_hook_length", {
+        str(lam): {
+            "dim_q_at_q_to_1": mp.nstr(dim_q_limit[lam], 20),
+            "hook_length_integer": d_lambda[lam],
+        }
+        for lam in parts_4
+    })
     w.add_assertion(
-        name="prescreen_completed",
-        computed=True,
-        expected=True,
+        name="dim_q_at_q_to_one_matches_integer_hook_length_formula",
+        computed=mp.nstr(sum_dim_q_limit, 30),
+        expected=str(sum_d_lambda),
+        tolerance="1e-20",
+        source=(
+            "Route A: Σ_λ dim_q V_λ from the q-bracket hook product at "
+            "q = 1 + 1e-25, 50 dps. Route B: Σ_λ 4!/Π hooks(λ) = "
+            f"{sum_d_lambda}, exact integer arithmetic."
+        ),
+    )
+
+    # (2) The Wedderburn/Burnside identity for the group algebra of S_4.
+    #   Route A: Σ d_λ² over the five partitions, from the hook-length
+    #            dimensions computed above.
+    #   Route B: 4! = |S_4| — the order of the group, not a dimension.
+    # This is what says the partition list `parts_4` is COMPLETE. Drop
+    # (2,2) and Route A gives 20 while Route B still gives 24.
+    sum_d_squared = sum(d * d for d in d_lambda.values())
+    w.add_assertion(
+        name="sum_of_squared_dimensions_equals_order_of_S4",
+        computed=sum_d_squared,
+        expected=factorial(4),
         tolerance=0,
-        source="Sanity: q-Dirac prescreen completed without error.",
+        source=(
+            "Route A: Σ_λ d_λ² over the five partitions in `parts_4`, "
+            "each d_λ from the hook-length formula. Route B: |S_4| = "
+            "4! = 24. Wedderburn: the two agree iff `parts_4` "
+            "enumerates every irreducible."
+        ),
+    )
+
+    # (3) dim_q under conjugation.
+    #   Route A: hooks((3,1)) → dim_q of the partition itself.
+    #   Route B: hooks((2,1,1)) → dim_q of its transpose, enumerated
+    #            independently by `hooks` on a different shape.
+    # [k]_q is invariant under q → 1/q and λ' has the same hook
+    # multiset, so these must coincide exactly. This is the half of
+    # 'bar-symmetry' that assertion (4) needs.
+    q_mid = mp.mpf(sample_q_strs[2])
+    lam_a, lam_b = (3, 1), conjugate((3, 1))
+    w.add_data("conjugation_pairs",
+               {str(lam): str(conjugate(lam)) for lam in parts_4})
+    w.add_assertion(
+        name="dim_q_is_invariant_under_partition_conjugation",
+        computed=mp.nstr(dim_q(lam_a, q_mid), 30),
+        expected=mp.nstr(dim_q(lam_b, q_mid), 30),
+        tolerance="1e-45",
+        source=(
+            f"Route A: dim_q V_{lam_a} at q = {sample_q_strs[2]} from "
+            f"hooks({lam_a}). Route B: dim_q V_{lam_b} from "
+            f"hooks({lam_b}) — a separately enumerated hook multiset "
+            "for the transpose partition."
+        ),
+    )
+
+    # (4) The module docstring's one exact prediction, asserted.
+    #   Scheme 8 is annotated '(zero by bar-symmetry)' and the table
+    #   above prints its a_0/a_2 without ever testing that.
+    #   Route A: Σ_λ c_λ·dim_q V_λ / 4, summed over all five partitions
+    #            at q = 1.11.
+    #   Route B: 0, from the conjugation argument — parts_4 is closed
+    #            under λ ↦ λ', c_{λ'} = -c_λ, and dim_q V_{λ'} =
+    #            dim_q V_λ by (3); the sum pairs off.
+    # Falsifiable both ways: a sign error in content_sum, or a parts_4
+    # that is not conjugation-closed, leaves Route A nonzero.
+    signed_content_sum = sum(
+        content_sum(lam) * dim_q(lam, q_mid) for lam in parts_4) / 4
+    conj_closed = all(conjugate(lam) in parts_4 for lam in parts_4)
+    w.add_data("bar_symmetry_check", {
+        "signed_content_weighted_sum_at_q_mid": mp.nstr(signed_content_sum, 12),
+        "parts_4_closed_under_conjugation": conj_closed,
+        "contents": {str(lam): content_sum(lam) for lam in parts_4},
+    })
+    w.add_assertion(
+        name="signed_content_weighted_sum_vanishes_by_bar_symmetry",
+        computed=mp.nstr(signed_content_sum, 30),
+        expected="0",
+        tolerance="1e-45",
+        source=(
+            f"Route A: scheme 8, Σ c_λ·dim_q V_λ / 4 at q = "
+            f"{sample_q_strs[2]}, evaluated term by term. Route B: 0, "
+            "predicted by the module docstring's bar-symmetry — parts_4 "
+            "is closed under λ ↦ λ' (verified here), c_{λ'} = -c_λ, and "
+            "dim_q V_{λ'} = dim_q V_λ by the preceding assertion."
+        ),
     )
 
     out = w.save()

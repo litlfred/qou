@@ -1,15 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T08:14:48.074797+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T10:14:51.778599+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "self_checks_passed",
-      "computed": true,
-      "expected": true,
+      "name": "syt_squares_sum_to_n_factorial",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "source": "Σ_λ(f^λ)²=n! for n∈{3,4,5}; qdim(λ)→f^λ as q→1."
+      "tolerance": "0",
+      "source": "max over n ∈ {3,4,5} of |Σ_{λ⊢n}(f^λ)² − n!| = n=3: 6 vs 6.0, n=4: 24 vs 24.0, n=5: 120 vs 120.0. The class equation for S_n; 6, 24 and 120 are known independently of this module and pin num_syt / hook_lengths / partitions_of together"
+    },
+    {
+      "name": "qdim_reduces_to_syt_count_at_q_one",
+      "computed": "9.0e-30",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "max over the 5 partitions of 4 of |qdim(λ, q=1+1e-30) − f^λ| = 9.0e-30; the graded q-dimension must degenerate to the SYT count at q→1, which is what makes the closed-form hook specialisation a stand-in for the unbuilt native hecke-engine"
+    },
+    {
+      "name": "self_check_coverage",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "source": "3 class-equation identities (n = 3,4,5) + one q→1 limit per partition of 4 (p(4) = 5) = 8 checks actually performed; guards against a silently shortened check list"
     },
     {
       "name": "genuine_mixed_chain_id_found",
@@ -21,10 +38,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara",
   "scriptFile": "qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
-  "scriptHash": "2cf897d9d7cb",
+  "scriptHash": "da618bcb09a2",
   "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -40,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -144,7 +161,73 @@
     "kashaev_truncation": "400",
     "note_native_engine": "hecke-engine not built in sandbox; Wenzl values via closed-form hook specialisation, cross-checked Σ(f^λ)²=n! and qdim→f^λ at q→1.",
     "note_cross_anchor_vacuous": "The proton/muon q₀ anchors differ by ~1e-7, so cross-anchor swing is near-zero for ANY closed-form candidate (unlike the c_3 FITTED-coefficient swing test). Discriminators here: proximity tier + Wenzl-factor q-dependence (genuine mixed vs Kashaev×integer).",
-    "note_best_near_match_is_kashaev_x_integer": "The proton best (f·Li2q_hbar, ratio≈0.9918, NEAR-1PCT) is 2·Li_2^q(ℏ_q): Wenzl factor f^λ=2 is a q-INDEPENDENT integer block-dimension, so all q-structure is the single-chain Kashaev Rogers-dilog. It is NOT a genuine mixed q-product, and at 0.82% off it is a NEAR-1PCT artifact (cf. the 1+q q-binomial artifact of PR #1787), not a closure."
+    "note_best_near_match_is_kashaev_x_integer": "The proton best (f·Li2q_hbar, ratio≈0.9918, NEAR-1PCT) is 2·Li_2^q(ℏ_q): Wenzl factor f^λ=2 is a q-INDEPENDENT integer block-dimension, so all q-structure is the single-chain Kashaev Rogers-dilog. It is NOT a genuine mixed q-product, and at 0.82% off it is a NEAR-1PCT artifact (cf. the 1+q q-binomial artifact of PR #1787), not a closure.",
+    "self_checks": {
+      "syt": [
+        {
+          "n": 3,
+          "sum": "6",
+          "n_factorial": "6.0",
+          "n_partitions": 3
+        },
+        {
+          "n": 4,
+          "sum": "24",
+          "n_factorial": "24.0",
+          "n_partitions": 5
+        },
+        {
+          "n": 5,
+          "sum": "120",
+          "n_factorial": "120.0",
+          "n_partitions": 7
+        }
+      ],
+      "qdim": [
+        {
+          "lam": [
+            4
+          ],
+          "f_lambda": "1",
+          "gap": "0.0"
+        },
+        {
+          "lam": [
+            3,
+            1
+          ],
+          "f_lambda": "3",
+          "gap": "3.0e-30"
+        },
+        {
+          "lam": [
+            2,
+            2
+          ],
+          "f_lambda": "2",
+          "gap": "4.0e-30"
+        },
+        {
+          "lam": [
+            2,
+            1,
+            1
+          ],
+          "f_lambda": "3",
+          "gap": "9.0e-30"
+        },
+        {
+          "lam": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f_lambda": "1",
+          "gap": "6.0e-30"
+        }
+      ]
+    }
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

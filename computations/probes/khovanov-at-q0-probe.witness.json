@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T09:30:59.227155+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "computedAt": "2026-08-30T09:23:58.830533+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "c_3_match_at_q1",
-      "computed": -2,
-      "expected": -2,
+      "name": "kh_hopf_at_q1_reproduces_abs_c_3",
+      "computed": "4.0",
+      "expected": "4.0",
       "passed": true,
-      "tolerance": 0,
-      "source": "J_Hopf(q=1) = -2 ≡ c_3 exactly"
+      "tolerance": "1e-30",
+      "source": "unreduced Kh(Hopf+)(q=1, t=−1) = (q+q⁻¹)·Kh^red, and Kh^red(Hopf+)(1,−1) = |c_3| = 2; the (q+q⁻¹) factor is this run's Kh(unknot)(1,−1). Bracket normalisation is sign-free, so the empirical c_3 = −2 is matched in magnitude only."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "khovanov-at-q0-probe",
   "scriptFile": "khovanov_at_q0_probe.py",
-  "scriptHash": "c8dec9e34f72",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "03ce14a50e1c",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

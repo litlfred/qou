@@ -211,7 +211,28 @@ def y_lambda_symbolic(n: int) -> dict[tuple, sp.Expr]:
 
     with Q = q², z_W = q · z, and Q^r = z_W / (1 - Q + z_W).
 
-    Works for any n.  At q = 1 reduces to f^λ / n! (Plancherel).
+    Works for any n.
+
+    At q = 1 this does **not** reduce to the symmetric-group Plancherel
+    measure f^λ / n!.  That is the r → ∞ statement, and this function is
+    pinned at r = 2 (Q^r = q⁴ = Q², convention D; Lean:
+    `wenzlLevel_conventionD`).  What it reduces to is the **SU(2)**
+    Plancherel measure, cut off by Wenzl's row cap:
+
+        y_λ(1) = (λ₁ − λ₂ + 1) / 2ⁿ   if ℓ(λ) ≤ 2
+        y_λ(1) = 0                    if ℓ(λ) > 2
+
+    Verified over all 43 shapes with n = 2…7.  The two disagree at *every*
+    shape, not just in the tail: at n = 3 this gives (1/2, 1/4, 0) against
+    Plancherel's (1/6, 1/3, 1/6).
+
+    The old docstring asserted the Plancherel form.  It was wrong, and it
+    contradicted `WenzlWeightVanishing.lean` — which is right about the row
+    cap — so the docstring of the function that produces the production
+    weights disagreed with the Lean that certifies them.  Orellana, *Crelle*
+    508 (1999) 157–178, p. 5 states the cap itself: "s_{α,r}(q) = 0 whenever
+    l(α) > r"; `WenzlWeightVanishing.lean` currently cites p. 17 for the
+    type-A restatement, and p. 5 is the sharper citation.
     """
     shapes = [tuple(s) for s in partitions_of(n)]
     s_vals = {sh: schur_principal_symbolic(list(sh)) for sh in shapes}

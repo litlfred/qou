@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T17:08:33.340944+00:00",
-  "commitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
+  "computedAt": "2026-08-30T12:52:20.156440+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "wn_link_volume_refuted_or_closes",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "binding-wn-link-volume-probe",
   "scriptFile": "binding_wn_link_volume_probe.py",
-  "scriptHash": "7529a2b00607",
-  "scriptCommitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
+  "scriptHash": "6f09f11ed4a2",
+  "scriptCommitSha": "934db778ba8dcc0d76519bf9ef862abfa46d326c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,16 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_wn_link_volume_probe.py"
+    ],
+    "reproduce": "python3 -u computations/binding_wn_link_volume_probe.py"
   },
   "description": "EXPLORATORY: tests option #1 — is the jet-filtration residue weight w_n the hyperbolic volume of the n-body inter-nucleon sub-link? Structurally REFUTED at n=2 (the 2-body Borromean sub-link is the unlink / the deuteron bond is Hopf, Vol=0, but w_2>0); the Whitehead:Borromean 1:2 Catalan ratio is a 7.2% near-miss that conflicts with the SDP Hopf assignment. No fit; no wiring.",
   "data": {
@@ -37,7 +45,7 @@
       "2-unlink": "0.0",
       "Whitehead L5a1": "3.663862376708876060218414059729536443096597497126688537065992478487052",
       "Borromean L6a4": "7.327724753417752120436828119459072886193194994253377074131984956974104",
-      "8_11": "8.286316155818656",
+      "8_11": "8.2863168178065925881268247977511671629487442454111",
       "fig-8 4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195"
     },
     "w_universal": {
