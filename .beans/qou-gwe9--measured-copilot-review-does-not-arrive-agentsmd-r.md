@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-31T21:31:32Z
+updated_at: 2026-09-01T03:23:39Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -822,3 +822,38 @@ needs its own branch — do not reopen #6406).
 30-minute zero plus one truncated run does not overturn a row corrected on
 2026-08-30 from four arrivals. The stable wording holds: rationed, intermittent,
 `get_check_runs` = 0 does not discriminate.
+
+
+### Trial 2 COMPLETE — clean negative at T+6h21m
+
+Final reading **2026-09-01T03:22:41Z**, elapsed **6h 21m 33s** from the
+21:01:08Z request. Head still `b572920a3a9f87f580b53b9a3d650508898c6cc5`,
+`updated_at` still 20:59:34Z (pre-request). `get_reviews = []`.
+
+    21:30:49Z   T+29m41s   []   head verified unchanged
+    03:22:41Z   T+6h21m    []   head verified unchanged   <- trial complete
+
+**So trial 2 is the first end-to-end uncontaminated run this question has had,
+and it is a NEGATIVE at six hours** — two orders of magnitude past the 3-4 min
+arrival measured on 2026-08-30, and past the 60 min the protocol asked for.
+
+**What it licenses:** the protocol works and has now been run once, cleanly,
+start to finish. A silent request that produces no review is real and is not
+explained by a subsequent push — which was the live alternative hypothesis and
+is now ruled out for at least this instance.
+
+**What it does NOT license.** One clean negative against four recorded arrivals
+(`qou#6122`, `fa#153`, `qou#6104`, `qou#6116`, all ~3-4 min, all with
+substantive findings) is not a verdict — it is consistent with arrival being
+**intermittent**, which is what the TRAP row already says. **The
+`merge-coordinator/MEMORY.md` row stays as it is.** It was corrected on
+2026-08-30 from stronger evidence than this, and flipping it back on n=1 would
+repeat the original error with the sign reversed.
+
+**Next, if anyone wants to settle it:** a second clean trial. The protocol now
+has all three conditions — request once, do not push, **do not merge** (trial 1
+died on the merge). Two clean negatives against four arrivals would start to
+look like a rate; one does not.
+
+**Trial 1 (`qou#6406`) final state:** still `[]` at 03:22:41Z, ~6h50m after its
+merge. Remains labelled TRUNCATED and must never be quoted as a timed negative.
