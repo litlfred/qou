@@ -86,8 +86,19 @@ sums them).  On the determinant they are not symmetric:
 
 All `sigma_i` are conjugate, so a braid word `w` of writhe `e` has
 `|det rho_lambda(w)| = |det rho_lambda(sigma)|^e`.  In `(3,2,1)` that is `1` for
-**every** braid word at **every** writhe, so the `R <= 1` argument closes that
-block outright; in `(2,2,1,1)` it is `q^(-3e)`, free to leave 1.
+**every** braid word at **every** writhe; in `(2,2,1,1)` it is `q^(-3e)`, free
+to leave 1.
+
+**🛑 RETRACTED: the clause "so the `R <= 1` argument closes that block
+outright".**  The det-lock is real; the closure does not follow.  `R <= 1` was
+derived for a 2x2, where `sum_i log|l_i| = log|det|` is one equation on TWO
+unknowns and therefore pins their ratio.  In dimension `d` it is one equation
+on `d` unknowns, leaving `d - 2` free directions -- and `dim (3,2,1) = 16`.
+Demonstrated in the 6-dimensional regular representation of `H_3`: the word
+`s1^2 s2^2` has `|det| = 1` and log-modulus ratio **exactly 2** (moduli
+`q^4, q^2, q^2, q^-2, q^-2, q^-4`).  See `regular_rep_modulus_spread_probe`.
+So `(3,2,1)` is **not** closed, and the det-lock separates the two blocks on a
+weaker footing than stated here.
 
 **🛑 Scope, and it is this argument's limit.**  Step 27's object is
 `Delta_bind = beta_atom - beta_free`, a **difference** of braid words.  A
@@ -336,8 +347,20 @@ def main() -> int:
     print("    determinant in a block, and for a BRAID WORD w of writhe e")
     print("        |det rho_lambda(w)| = |det rho_lambda(sigma)|^e.")
     print("    Hence in (3,2,1) EVERY braid word has |det| = 1 regardless of")
-    print("    writhe -- the R <= 1 argument closes that block outright -- while")
-    print(f"    in (2,2,1,1) |det| = q^(-3e), free to leave 1.")
+    print("    writhe, while in (2,2,1,1) |det| = q^(-3e), free to leave 1.")
+    print()
+    print("    🛑 RETRACTED, the clause that used to follow: 'so the R <= 1")
+    print("    argument closes (3,2,1) outright'.  The det-lock is real; the")
+    print("    CLOSURE does not follow.  R <= 1 was derived for a 2x2, where")
+    print("        sum_i log|l_i| = log|det|")
+    print("    is ONE equation on TWO unknowns and so pins their ratio.  In")
+    print("    dimension d it is one equation on d unknowns, leaving d-2 free")
+    print("    directions -- and dim (3,2,1) = 16.  Demonstrated in the 6-dim")
+    print("    regular rep of H_3: the word s1^2 s2^2 has |det| = 1 and")
+    print("    log-modulus ratio EXACTLY 2 (moduli q^4, q^2, q^2, q^-2, q^-2,")
+    print("    q^-4).  See regular_rep_modulus_spread_probe.")
+    print("    So (3,2,1) is NOT closed, and the det-lock discriminates the two")
+    print("    blocks on a WEAKER footing than this section first claimed.")
     print()
     print("    🛑 SCOPE, and it is the limit of this argument.  Step 27's object")
     print("    is Delta_bind = beta_atom - beta_free, a DIFFERENCE of braid")
