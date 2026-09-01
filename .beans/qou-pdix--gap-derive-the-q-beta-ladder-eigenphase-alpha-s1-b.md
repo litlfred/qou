@@ -1229,3 +1229,72 @@ shape of `α` as a function of `q`, not a generator's spectrum.
 
 **Scope-(b).** Does not show no connection exists, does not derive `α`, does not
 adjudicate a convention, wires nothing.
+
+---
+
+## 2026-09-01 (13) — what the two carrier fields force at the CLASSICAL POINT, and the exclusion of the only D0-satisfying operator
+
+[`qbeta_eigenphase_carrier_classical_limit_probe.py`](../computations/qbeta/qbeta_eigenphase_carrier_classical_limit_probe.py)
+(5/5) ·
+[`QOU/QBeta/EigenphaseCarrierClassicalLimit.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierClassicalLimit.lean)
+(sorry-free).
+
+Entry 6 expands `α` and tests it against a holonomy ansatz. **Nobody had asked
+what the two `TransferMatrixSpectrum` fields force about `M` itself.** They force
+three things, all cheap enough to disqualify a candidate before any construction.
+
+**Falsifier checked first:** `χ^{(2,1)}` on `S₃` is `+2` on `e`, `0` on the three
+transpositions, `−1` on the two 3-cycles — **trace 2 identifies the identity
+class uniquely.** Had it not, everything below collapses to `tr M(1) = 2` alone.
+
+### The three conditions
+
+`α(1) = 0` (its `t¹` coefficient is `z(1) − 1 = −1/2` under **both** conventions),
+so with `det M = 1`:
+
+1. `tr M(1) = 2` and `det M(1) = 1` ⟹ charpoly `(x−1)²` ⟹ **`M(1)` is UNIPOTENT.**
+   *Not* `M(1) = I`: at `q = 1` the algebra is `ℂ[S₃]` whose `(2,1)` block is all
+   of `M₂(ℂ)`, so a nontrivial Jordan block is permitted.
+2. `tr M` has **no `t¹` term** — stationary at the classical point.
+3. its **`t²` coefficient is `−1/4`**, i.e. `d²/dt²(tr M)|₀ = −1/2`.
+
+**1′ — a second, simpler reason route 1 is closed.** If `M` normalises a single
+braid word's image, `M(1)` lies in the `S₃` image — finite group in char 0,
+semisimple by Maschke, hence diagonalisable. Unipotent **and** diagonalisable
+⟹ `M(1) = I`, so the word must degenerate to the **identity permutation**. Needs
+only the classical point; no eigenphase computation.
+
+### ⚠️ The acceptance test's part 1 is CONVENTION-BLIND on the trace
+
+`tr M = 2 − t²/4 + O(t³)` **identically** for `z_C` and `z_D`, because the `t²`
+coefficient of the trace depends only on `α`'s `t¹` coefficient, which is
+`z(1) − 1 = −1/2` for both. They first differ at **`t³`** — `1/4` vs `5/4`.
+
+So "reproduce `α` through `t²`", read on the trace, shows **nothing** about which
+convention a construction belongs to. Discrimination lives at `t³`. (The `α`
+expansions here reproduce entry 6's recorded coefficients — C: `1/4`, `−5/16`;
+D: `5/4` — independently.)
+
+### The exclusion — `Δ_L` fails at ORDER ZERO
+
+Merged today (PR #6413, `qou-cds1` Step 26): `Δ_L = NF(n) − NF(p)` is the
+corpus's **only elliptic** operator, i.e. the only one clearing this bean's
+TIER-0 condition **`D0`** (`det A > 0`, spectrum `±iθ`). Its classical eigenphase
+is **exactly `2π/3`**, because every NF coordinate carries `(q−1)(q+1)` and the
+leading direction is `−(1 + T₁T₀)` with `T₁T₀` the `S₃` three-cycle.
+
+| | |
+|---|---|
+| carrier requires | `tr M(1) = +2` |
+| `Δ_L` gives | `2cos(2π/3) = −1` |
+| gap | exactly `3` — the identity-to-3-cycle character distance |
+
+**Structural, not a near-miss.** `Δ_S` is excluded more simply still: hyperbolic
+at every real `q` (Step 26), so no eigenphase at all.
+
+### Scope
+
+Does **not** derive `α`, does not construct a carrier, does not adjudicate a
+convention. It supplies a three-condition classical-point filter, shows it is
+convention-blind through `t²`, and disqualifies both operators the `qou-cds1`
+arc produced — including the only one that clears `D0`.
