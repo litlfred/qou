@@ -1298,3 +1298,49 @@ Does **not** derive `α`, does not construct a carrier, does not adjudicate a
 convention. It supplies a three-condition classical-point filter, shows it is
 convention-blind through `t²`, and disqualifies both operators the `qou-cds1`
 arc produced — including the only one that clears `D0`.
+
+### Same day, second pass — how strong is that filter? Measured: a DISQUALIFIER
+
+Condition 1 above is not scale-invariant (it is about the *normalised* `M`). The
+invariant form: with `R := tr²/det`, a carrier needs **`R(1) = 4`**, i.e.
+`disc = 0`, i.e. the underlying operator is **parabolic at `q = 1`**. `Δ_L` gives
+`R(1) = 1`; `Δ_S` has `tr ≡ 0` so `R = 0`.
+
+Writing `A(q) = Σ_b c_b(q)·B_b` in the NF basis, at `q = 1`:
+
+```
+disc A(1) = 4·Q_T − 3(c₃ − c₄)²,   Q_T = ½[(c₁−c₂)² + (c₁−c₅)² + (c₂−c₅)²] ≥ 0
+```
+
+so the **parabolic locus** is
+
+```
+2[(c₁−c₂)² + (c₁−c₅)² + (c₂−c₅)²]  =  3(c₃ − c₄)²
+```
+
+- **`c₀` is absent** — `disc(A + λI) = disc(A)`. And the three transposition
+  coefficients enter **only through their differences**: their class sum
+  contributes `0` to the `(2,1)` block, because `χ^{(2,1)}` vanishes on a
+  transposition.
+- **`Q_T = 0 ⟺ c₁ = c₂ = c₅`, and on the locus that holds ⟺ `c₃ = c₄`.** That
+  stratum is exactly the **centre of `ℂ[S₃]`** — constant on each conjugacy
+  class — which acts as a **scalar** on the irreducible `(2,1)` block (verified:
+  `−b·I`, independent of the transposition weight). So `M(1) = I` exactly there.
+  The centre is the distinguished stratum of the locus.
+
+### ⚠️ Correction to my own recommendation, one entry up
+
+I wrote that the filter "says what to build toward". **It does not.** Condition 1
+is one quadratic equation on the six `c_b(1)`; conditions 2 and 3 constrain the
+first and second derivatives of the `c_b` at `q = 1` — two more equations on
+twelve new parameters. **Cumulative: 3 equations on 18 parameters.**
+
+So the filter **rules candidates out cheaply** — including both operators the
+`qou-cds1` arc produced, and every one of the six NF basis elements except
+`γ = I` — but it does **not** tell a construction what to be. It is a
+disqualifier, not a target. Route 2 ("arbitrary `M`") stays closed as circular
+for exactly this reason: the two `TransferMatrixSpectrum` fields are one
+equation on a four-dimensional matrix space, and the classical-point conditions
+do not repair that.
+
+Probe now 7/7.

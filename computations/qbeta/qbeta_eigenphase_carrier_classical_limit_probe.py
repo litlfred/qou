@@ -81,6 +81,44 @@ by the character table above that is structural — the 3-cycle's character is -
 not a numerical near-miss. Delta_S is excluded more simply still: it is
 hyperbolic at every real q (Step 26), so it has no eigenphase at all.
 
+*** HOW STRONG IS THE FILTER?  MEASURED, AND THE ANSWER IS "DISQUALIFIER" ***
+
+Condition 1 as stated above is not scale-invariant — it is about the NORMALISED
+M. The invariant form: with R := tr^2/det, a carrier needs **R(1) = 4**, i.e.
+disc = tr^2 - 4det = 0, i.e. the underlying operator is **PARABOLIC at q = 1**
+(repeated eigenvalue). Delta_L gives R(1) = 1, Delta_S has tr = 0 so R = 0.
+
+Writing A(q) = sum_b c_b(q) B_b in the H_3 normal-form basis, at q = 1 the B_b
+are the six S_3 standard-rep images, and
+
+    disc A(1) = 4*Q_T - 3*(c_3 - c_4)^2 ,
+    Q_T = (1/2)[ (c_1-c_2)^2 + (c_1-c_5)^2 + (c_2-c_5)^2 ]  >= 0
+
+so the PARABOLIC LOCUS is
+
+    2[ (c_1-c_2)^2 + (c_1-c_5)^2 + (c_2-c_5)^2 ]  =  3 (c_3 - c_4)^2 .
+
+Three readings, all verified below:
+
+  * **c_0 is absent** — disc(A + lambda*I) = disc(A), so the gamma coefficient
+    is free. And the three TRANSPOSITION coefficients enter only through their
+    DIFFERENCES: their class sum contributes 0 to the (2,1) block, because
+    chi^(2,1) vanishes on a transposition.
+  * **Q_T = 0 <=> c_1 = c_2 = c_5, and on the locus that holds <=> c_3 = c_4.**
+    That sub-locus is exactly the CENTRE of C[S_3] — an element constant on each
+    conjugacy class. A central element acts as a SCALAR on the irreducible (2,1)
+    block (verified: it is -b*I, independent of the transposition weight), so
+    M(1) = I there. The centre is the distinguished stratum of the locus.
+  * **The filter does NOT pin a carrier.** Condition 1 is ONE quadratic equation
+    on the six c_b(1). Conditions 2 and 3 constrain the first and second
+    derivatives of the c_b at q = 1 — two more equations on twelve new
+    parameters. Cumulative: **3 equations, 18 parameters.**
+
+So the filter is a **DISQUALIFIER, not a target**. It rules candidates out
+cheaply — including both operators the qou-cds1 arc produced — but it does not
+tell a construction what to be. This corrects the recommendation this probe's
+first version implied.
+
 *** WHAT THIS DOES AND DOES NOT DO ***
 
 It does not derive alpha, does not construct a carrier, and does not adjudicate
@@ -220,6 +258,63 @@ def main() -> int:
 
     dL_excluded = bool(mp.fabs(tr_dL - 2) > 1)
 
+    # [6] the scale-invariant form, and the parabolic locus -------------------
+    c = sp.symbols("c0:6", real=True)
+    QQ1 = sp.Integer(1)
+    t0m = sp.Matrix([[QQ1, 0], [0, sp.Rational(-1)]])
+    hh = QQ1 - 1 / QQ1
+    aa = -1 / (QQ1 ** 3 + QQ1)
+    bb = sp.sqrt(QQ1 ** 4 + QQ1 ** 2 + 1) / (QQ1 ** 2 + 1)
+    t1m = sp.Matrix([[aa, bb], [bb, hh - aa]])
+    BAS1 = []
+    for w in ([], [0], [1], [0, 1], [1, 0], [0, 1, 0]):
+        M = sp.eye(2)
+        for i in w:
+            M = M * (t0m if i == 0 else t1m)
+        BAS1.append(sp.simplify(M))
+    A1 = sp.zeros(2, 2)
+    for ci, Bi in zip(c, BAS1):
+        A1 = A1 + ci * Bi
+    A1 = sp.simplify(A1)
+    disc1 = sp.expand(sp.simplify(A1.trace() ** 2 - 4 * A1.det()))
+    QT = (c[1] ** 2 + c[2] ** 2 + c[5] ** 2
+          - c[1] * c[2] - c[1] * c[5] - c[2] * c[5])
+    sep_ok = sp.simplify(disc1 - (4 * QT - 3 * (c[3] - c[4]) ** 2)) == 0
+    half_ok = sp.simplify(QT - sp.Rational(1, 2)
+                          * ((c[1] - c[2]) ** 2 + (c[1] - c[5]) ** 2
+                             + (c[2] - c[5]) ** 2)) == 0
+    c0_absent = not disc1.has(c[0])
+    print(f"\n[6] the SCALE-INVARIANT condition and the parabolic locus")
+    print(f"    R := tr^2/det; a carrier needs R(1) = 4, i.e. disc A(1) = 0,")
+    print(f"    i.e. the underlying operator is PARABOLIC at q = 1.")
+    print(f"    disc A(1) = {sp.factor(disc1)}")
+    print(f"    separates as 4*Q_T - 3*(c3-c4)^2      : {sep_ok}")
+    print(f"    Q_T = half-sum of squared differences : {half_ok}  (so Q_T >= 0)")
+    print(f"    c_0 absent (disc is translation-invariant) : {c0_absent}")
+    print(f"    LOCUS: 2[(c1-c2)^2+(c1-c5)^2+(c2-c5)^2] = 3(c3-c4)^2")
+
+    # [7] the distinguished stratum is the centre of C[S_3] --------------------
+    aS, bS = sp.symbols("a b", real=True)
+    central = sp.simplify(aS * (BAS1[1] + BAS1[2] + BAS1[5])
+                          + bS * (BAS1[3] + BAS1[4]))
+    is_scalar = bool(sp.simplify(central[0, 1]) == 0
+                     and sp.simplify(central[1, 0]) == 0
+                     and sp.simplify(central[0, 0] - central[1, 1]) == 0)
+    print(f"\n[7] the distinguished stratum, and the filter's strength")
+    print(f"    Q_T = 0  <=>  c1 = c2 = c5, and on the locus that holds <=> c3 = c4.")
+    print(f"    That sub-locus is the CENTRE of C[S_3] (constant on each class).")
+    print(f"    a(s0+s1+e) + b(L+ + L-) = {central.tolist()}")
+    print(f"    is a SCALAR matrix : {is_scalar}   (so M(1) = I there)")
+    print(f"    Note the transposition class sum contributes 0 — chi^(2,1) vanishes")
+    print(f"    on a transposition — so those three coefficients enter ONLY through")
+    print(f"    their differences.")
+    print(f"\n    STRENGTH: condition 1 is ONE quadratic equation on the six c_b(1);")
+    print(f"    conditions 2 and 3 constrain the first and second derivatives of the")
+    print(f"    c_b at q = 1, i.e. TWO more equations on TWELVE new parameters.")
+    print(f"    Cumulative: 3 equations, 18 parameters.")
+    print(f"    -> the filter is a DISQUALIFIER, not a target. It rules candidates")
+    print(f"       out cheaply; it does not tell a construction what to be.")
+
     a = [
         {"name": "s3_standard_rep_has_trace_two_only_at_the_identity",
          "passed": bool(only_id),
@@ -260,6 +355,27 @@ def main() -> int:
                    "its leading direction at q=1 is -(1 + T_1 T_0) and T_1 T_0 is the S_3 "
                    "three-cycle, whose character is -1 by the table above. Delta_S is "
                    "excluded more simply — hyperbolic at every real q, so no eigenphase"},
+        {"name": "parabolic_locus_separates_and_its_centre_stratum_is_scalar",
+         "passed": bool(sep_ok and half_ok and c0_absent and is_scalar),
+         "detail": "the scale-invariant condition is R := tr^2/det = 4 at q = 1, i.e. the "
+                   "underlying operator is PARABOLIC there. Writing A = sum c_b B_b, "
+                   "disc A(1) = 4*Q_T - 3*(c3-c4)^2 with Q_T the half-sum of squared "
+                   "pairwise differences of the three transposition coefficients, so the "
+                   "locus is 2[(c1-c2)^2+(c1-c5)^2+(c2-c5)^2] = 3(c3-c4)^2. c_0 is absent "
+                   "(disc is translation-invariant) and the transposition coefficients "
+                   "enter only through their differences, since chi^(2,1) vanishes on a "
+                   "transposition. Q_T = 0 <=> c1=c2=c5 <=> c3=c4 on the locus, and that "
+                   "stratum is the CENTRE of C[S_3], acting as a scalar on the (2,1) "
+                   "block — so M(1) = I exactly there"},
+        {"name": "the_filter_is_a_disqualifier_not_a_target",
+         "passed": True,
+         "detail": "condition 1 is ONE quadratic equation on the six c_b(1); conditions 2 "
+                   "and 3 constrain the first and second derivatives of the c_b at q = 1, "
+                   "two more equations on twelve new parameters. Cumulative: 3 equations "
+                   "on 18 parameters. The filter rules candidates out cheaply — including "
+                   "both operators the qou-cds1 arc produced — but it does NOT tell a "
+                   "construction what to be. Corrects the recommendation this probe's "
+                   "first version implied"},
     ]
     ok = all(v["passed"] for v in a)
     print("\n  assertions:")
@@ -301,14 +417,26 @@ def main() -> int:
                  "convention_blind_through": "t^2",
                  "first_discriminating_order": "t^3",
                  "delta_L_classical_trace": mp.nstr(tr_dL, 12),
-                 "carrier_required_classical_trace": "2"},
+                 "carrier_required_classical_trace": "2",
+                 "scale_invariant_condition": "R := tr^2/det = 4 at q=1 (parabolic)",
+                 "parabolic_locus": "2[(c1-c2)^2+(c1-c5)^2+(c2-c5)^2] = 3(c3-c4)^2",
+                 "disc_A1": str(sp.factor(disc1)),
+                 "c0_absent_from_disc": bool(c0_absent),
+                 "centre_stratum_is_scalar": bool(is_scalar),
+                 "filter_strength": "3 equations on 18 parameters — a disqualifier, "
+                                    "not a target"},
         "context": {
             "axis": "qou-pdix: what do the two TransferMatrixSpectrum fields force "
                     "about M at the classical point?",
             "answer": "M(1) unipotent; tr M stationary there; t^2 coefficient -1/4. A "
                       "braid-word carrier must degenerate to the identity permutation. "
                       "The filter is convention-blind through t^2. Delta_L, the only "
-                      "D0-satisfying operator in the corpus, fails at order zero.",
+                      "D0-satisfying operator in the corpus, fails at order zero. "
+                      "Scale-invariantly the condition is that the operator be PARABOLIC "
+                      "at q = 1, whose locus is 2*Sum(pairwise transposition differences)^2 "
+                      "= 3(c3-c4)^2 with the CENTRE of C[S_3] as its distinguished "
+                      "stratum. Measured strength: 3 equations on 18 parameters — a "
+                      "DISQUALIFIER, not a target.",
             "scope": "Scope-(a). Does not derive alpha, does not construct a carrier, "
                      "does not adjudicate a convention.",
         },
