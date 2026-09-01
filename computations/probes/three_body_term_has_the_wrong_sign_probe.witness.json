@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-01T05:07:27.231061+00:00",
-  "commitSha": "c633d006e8e58d9c14d479ff30bad465056d1f19",
+  "computedAt": "2026-09-01T05:34:40.220800+00:00",
+  "commitSha": "e78695a2b9e7b3a5fc07f7ae4c7c96949b02d485",
   "assertions": [
     {
       "name": "A1_chain_attachment_is_exactly_rank_one",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "three_body_term_has_the_wrong_sign_probe",
   "scriptFile": "three_body_term_has_the_wrong_sign_probe.py",
-  "scriptHash": "a851da4a0dda",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "355af504c37c",
+  "scriptCommitSha": "c1491ec1749b96678f14606d3ca597c2d2cb4bc2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

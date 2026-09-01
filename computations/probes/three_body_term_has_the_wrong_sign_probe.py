@@ -2,6 +2,25 @@
 """The many-body term exists, is located, and has the WRONG SIGN — so the bond
 graph cannot reach `4He`, by a factor of 2.10 that `alpha` cannot touch.
 
+TWO UPDATES — SEE `four_body_term_and_the_h12_collapse_probe.py`
+----------------------------------------------------------------
+1. **The ceiling below is no longer conditional.** Its one unmeasured input was
+   the genuine four-body term at `A = 4`. `H_12` turned out to be reachable —
+   convention D zeroes every partition with `>= 3` rows, leaving 7 blocks with
+   largest dimension `297` — and the four-body term is **negative**, in all six
+   nucleon orderings and all 80 random bond orders. `B(4He)` measures
+   `10.387277 MeV`, so the shortfall is `3.4693x`, not the `2.0975x` bounded
+   here. Worse, as predicted, and now unconditional.
+2. **A3/A4 magnitudes here use a non-production bond order.** This probe appends
+   all bonds after all nucleon words; `atom_gen_chains` interleaves them
+   (`N0.N1.b01.N2.b02.b12...`). Bonds do not commute, and the difference is
+   `11 %` at `A = 3` — the `ppn` triangle is `1.607030798` here and
+   `1.503488161673` at production order, moving its three-body term from
+   `-0.236512` to `-0.340055`. **Still negative, and larger**, so every
+   conclusion below holds and strengthens; read the magnitudes at production
+   order. A1-A2 (attachment rank), A5 (no-decay) and A6 (ceiling direction) do
+   not depend on bond order at all.
+
 WHY THIS WAS THE NEXT MEASUREMENT
 ---------------------------------
 The arc had established that binding is carried by inter-nucleon bonds, that the
