@@ -45,8 +45,21 @@ With `t = trace = h*delta/2` and `D = det = (h+d)d - 1 < 0`,
 
     ==>   1 - r  ~  h*delta / (2*sqrt(1 + h^2/4))
 
-Measured `1 - r = 0.000143013772257`; closed form `0.000143023999458`; relative
-error `7.2e-5`. And `(1-r)/delta` is constant across a x1024 sweep of `delta` (3.0 decades):
+EXACT closed form, no expansion:  `1 - r = 2t / (sqrt(t^2 - 4D) + t)`, which
+reproduces the measured `0.00014301377225689` to below `1e-40`.
+
+The small-t expansion `h*delta/(2*sqrt(1 + h^2/4))` gives
+`0.00014302399982344` -- it **drops 1.02e-8**, a `7.15e-5` relative error --
+and that dropped piece is **not harmless downstream**: the weight at
+separation `s` is `r^{s-1}`, so the two `r`s differ by `1.0e-8` at `s = 2`
+but by `7.2e-5` at `s ~ xi`. The error COMPOUNDS, so a sum over separations
+inherits the larger figure. Likewise `xi = -1/ln(r) = 6991.83` exactly,
+where the `1/(1-r)` shortcut gives `6992.33`.
+
+And `delta` is `flavor_split_LEADING` -- itself a leading term, not exact --
+so every figure here inherits that truncation too. Flagged, not fixed.
+
+`(1-r)/delta` is constant across a x1024 sweep of `delta` (3.0 decades):
 `0.1039562759 -> 0.1039637028`, agreeing to **4 significant figures** with a
 **relative variation of 7.14e-5**, against the probe's `1e-4` assertion. That
 is what fixes the power.  (Corrected after Copilot review on #6411: this read
@@ -82,7 +95,13 @@ these transfer matrices will have it.
     `d_pn` happens to equal `-h/2 + h*delta/4`, and `-h/2` happens to be the
     trace-zero point. Whether the colour weighting was CONSTRUCTED to sit there
     is a question about `bring_color_weighted`'s derivation that this probe
-    does not answer.
+    does not answer. **ANSWERED, in the sibling probe on this same branch:**
+    `pn_criticality_is_forced_probe` shows the trace is AFFINE in the bond
+    offset with endpoints `d_pp = 0` and `d_nn = -h`, so the midpoint `-h/2`
+    is trace-zero identically. ANY interpolation placing p-n at the midpoint
+    lands on criticality -- it is forced by averaging, and carries no
+    independent information. Read the two together; this caveat is the
+    weaker half.
   * NOT a binding value, and nothing is wired or fitted.
   * The `|l2/l1|`-as-decay reading is still the assumed form flagged in the
     previous probe; this probe tests whether the ratio is meaningful, not
@@ -226,6 +245,10 @@ def main() -> int:
     print("    -h/2 + h*delta/4, and -h/2 happens to be trace-zero.  Whether")
     print("    bring_color_weighted was CONSTRUCTED to sit there is a question")
     print("    about its derivation that this probe does not answer.")
+    print("    -> ANSWERED by pn_criticality_is_forced_probe (same branch):")
+    print("       the trace is AFFINE in d with endpoints 0 and -h, so the")
+    print("       midpoint IS trace-zero.  Forced by averaging; carries no")
+    print("       independent information.  Read the two together.")
     print("  * NOT a binding value.  Nothing wired, nothing fitted.")
     print("  * The |l2/l1|-as-decay reading remains the ASSUMED form flagged in")
     print("    the previous probe.  This tests whether the ratio is meaningful,")
