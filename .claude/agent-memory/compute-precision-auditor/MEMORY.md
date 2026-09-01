@@ -216,3 +216,12 @@ TRAPs.
   against a true `119`/`1343`. Also: the stored f64 `y_lambda` tables set a
   `~1e-8` agreement floor on anything routed through `load_cost` — quote seven
   digits there, not fourteen, while single-route quantities reach `1e-13`/`1e-16`.
+  **Exact at both endpoints is not exact in between** — a `p-n` writhe exponent
+  was settled by two independent routes agreeing on `+delta/2` (an interpolation
+  from `e_pp=+1`/`e_nn=-1`, and my own operator identity), against production's
+  `-delta/2`. Both were wrong by `217x`: the averaged-exponent and per-diagram
+  forms agree *exactly* at the two endpoints and nowhere else, so the only two
+  bonds anyone had checked could not detect it, and an interpolation anchored on
+  them reproduces itself while looking like a derivation. Test at an interior
+  point, and before averaging a parameter that sits in an exponent, check whether
+  the physics sums or multiplies — `f(mean(x)) = mean(f(x))` only for affine `f`.

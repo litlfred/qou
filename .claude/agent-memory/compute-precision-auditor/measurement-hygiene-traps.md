@@ -109,3 +109,33 @@ epsilon — the chain transfer scalar `F` is prefix-independent to `2.8e-16`, an
 bond constants measured as `H_6`/`H_9` trace ratios agree with the closed form
 `-log(z + d)` to `1.3e-13`. Knowing which floor applies to which number is the
 difference between reporting a cross-check and reporting a discrepancy.
+
+## TRAP — exact at both endpoints is not exact in between
+
+**Worked case, and it caught two arcs independently.** The writhe exponent of a
+`p-n` bond was in dispute: production said `e_pn = -delta/2`, `qou-brng` derived
+`+delta/2` by interpolating from `e_pp = +1` and `e_nn = -1`, and I derived
+`+delta/2` from the operator identity `sigma - beta h = (1-beta) sigma + beta
+sigma^-1`. Two independent routes, same answer, opposite sign from production —
+which reads like confirmation.
+
+Both were wrong, and by a factor of `217`. The bond is a *sum* of two crossings,
+the Markov trace is linear, and the writhe factor `(1-h)^(e/2)` is defined **per
+diagram** — a formal sum of two diagrams is not a diagram and has no writhe. Done
+correctly the effective exponent is `e_eff(beta_pn) = 0.149437`, not `0.000688`.
+The averaged-exponent form and the per-diagram form agree **exactly** at
+`beta = 0` and `beta = 1` and nowhere else, so `p-p` and `n-n` — the only two
+bonds anyone had checked — could never have detected it. An interpolation
+anchored on those two points reproduces itself and looks like a derivation.
+
+**Rule.** When a formula is anchored on endpoints, the endpoints are not evidence
+— they are the construction. Test it at an interior point against an
+independently-derived value, and be most suspicious when the interior point is
+the one you actually care about. Here `e_eff` is concave, so the interpolation
+understated it at *every* interior point; the two candidate signs were both
+"zero to three decimals" and the argument was over the noise.
+
+**Corollary for averaging.** Before averaging a parameter that sits in an
+exponent, check whether the operation the physics performs is a sum or a product.
+`f(mean(x))` and `mean(f(x))` coincide only for affine `f`. The whole dispute was
+`108x` smaller than the error that framing choice introduced.
