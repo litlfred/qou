@@ -931,6 +931,44 @@ code's output, not a computed zero.
 and not in a decayed pair sum. Next candidates are outside the one-crossing
 algebra.
 
+## 2026-09-01 (later) — RETRACTION + the blind-sector determinant (PR #6414)
+
+**RETRACTED, same PR, same day:** my scope-(b) claim that "a bigger irrep does
+NOT escape the R <= 1 bound — det rho(w) = +-1 in every irrep". **False.**
+Verified on ONE irrep (H_3's 2-dim, where m+ = m- by accident of that block) and
+generalised. Counterexample in any H_n: the sign rep `sigma -> -1/q` satisfies
+the Hecke quadratic exactly, `|det| = 1/q = 0.90092 < 1` — the escape condition
+my own bound names.
+
+**Correct statement (exact):** `|det rho_lambda(sigma_i)| = q^(m+ - m-)` with
+m+/m- the SYT counts placing i,i+1 in a row/column. So `|det| = 1` iff m+ = m-,
+and the escape is open on **column-heavy** partitions — combinatorial, not
+accidental.
+
+**What I expected and did NOT find.** Column-heavy = many rows, and Step 27 says
+convention D's SU(2)/TL trace is blind above two rows, so I expected escape-set
+== blind-set. Measured over all 65 partitions of n = 2..8: **they do not
+coincide.** One-way only —
+`column-heavy ==> TL-blind` (1 exception, `(1,1)` at n=2);
+`TL-blind =/=> column-heavy` (14 counterexamples). Escape set strictly smaller.
+
+**At n = 6** (deuteron 3A): 5 escaping blocks — (3,1,1,1), (2,2,2), (2,2,1,1),
+(2,1,1,1,1), (1^6), 30 dims. Sum of squared dims = 720 = 6!, the same 720 Step
+27 reports, from the Wedderburn side — one object, two analyses.
+
+**Discriminates Step 27's two blocks,** which it treats symmetrically (sums their
+phases): `(3,2,1)` is **det-locked** (m+=m-=8, |det|=1 for every braid word at
+every writhe); `(2,2,1,1)` is **free** (|det| = q^-3e).
+
+**Scope limit, stated:** `Delta_bind = beta_atom - beta_free` is a DIFFERENCE of
+braid words, not group-like, so its det is unconstrained in either block. This
+does NOT discriminate Step 27's eigenphases directly — only which mechanisms
+built from braid words alone are available.
+
+**The R <= 1 bound is UNAFFECTED** (regular rep, computed directly, never via the
+irrep argument). Retraction landed on both surfaces — new probe + the original's
+docstring, 3 print sites and its assertion message.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
