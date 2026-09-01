@@ -1421,3 +1421,74 @@ than 0.477 for the same betas, and whose `atom_gen_chains` open-codes `-h/2`
 where this branch has `D_PN`. I nearly reported both as defects. Everything here
 is computed on `claude/mt7r-archimedean-eval-2026-08-24`, and A6 re-verifies the
 previous probe's transitions to 1e-9 as a guard.
+
+## 2026-09-01 — bonds back in: binding is NONZERO, degeneracy breaks, and L is bond-additive
+
+`computations/probes/binding_lp_with_inter_nucleon_bonds_probe.py`, 6/6.
+**This overturns the "binding is zero" conclusion of the previous four probes.**
+
+**First, a correction to my own last turn.** I said the atom carries `C(A,2)`
+inter-nucleon crossings. True of `atom_gen_chains` (`for prev in range(k)`), but
+`atom_braid_word_3A` — the honest 3A-strand builder — places bonds only between
+ADJACENT nucleons (`if include_inter and k < A-1`) at generator `3k+2`: **A-1
+bonds, a chain**. They agree only at A=2 (1 vs 1); A=3 gives 3 vs 2, A=4 gives
+6 vs 3, A=6 gives 15 vs 5. **The chain reading is load-bearing** — `c_atom =
+2A - #odd = A+1` needs exactly `A-1` odd bonds, which is what the census probe's
+`chain_bonds` counts and what Lean `ClassicalTraceFloor` proves. Used the chain
+throughout. **The disagreement between the two builders is a real corpus
+inconsistency, reported not resolved.**
+
+**The bond is a large, correctly-signed effect.** At A=2 in H_6:
+
+    tr_M(free = w_p . w_n)   =  0.299015019
+    tr_M(atom = free . bond) =  0.151968341      defect -49.18%
+
+Negative — bound state lighter than its free constituents. The free value
+reproduces `tr_3(p) tr_3(n)` to 6.1e-9 (the stored f64 `y_lambda` table's
+precision), so multiplicativity self-checks.
+
+**The LP degeneracy breaks.** Rebuilding the positive-sector LP on a space that
+CONTAINS the bond — 36 product words plus their 36 bond-translates, rank 50 —
+
+    phi(free) = 0.429886497    phi(atom) = 0.248443512    gap +0.181442985
+
+and the two states **no longer share a dual vertex** (supports 2 and 3, not
+identical). In the bond-free LP they were identical and rank-one, which is
+exactly why every earlier gap was an algebraic zero. `phi(free) = 0.4298865`
+also reproduces the multiplicative free value from the n-fold probe, so the two
+constructions agree where they overlap.
+
+**THE STRUCTURE: `L := log(tr_free / tr_atom)` is EXACTLY additive over bonds**
+— switching bonds on one at a time and summing reproduces the all-bonds value to
+**4.4e-16**:
+
+    2H   p-n         L = 0.676821587
+    3He  p-n, n-p    L = 1.353643185 = 2 x 0.676821592
+    3H   p-n, n-n    L = 1.584083858 = 0.676821592 + 0.907262266
+
+Two per-bond-type constants carry everything:
+
+    L_pn = 0.676821592386      L_nn = 0.907262265533
+
+with `L_pn` agreeing between 2H and 3He to 5.6e-9. **Nothing fitted — these are
+outputs.**
+
+**What it gets right and wrong** (AME read-only for two ratios, nothing tuned):
+
+    mirror   L(3H)/L(3He) = 1.17024   B(3H)/B(3He) = 1.09896    +6.5%
+    A-scale  L(2H)/L(3He) = 0.50000   B(2H)/B(3He) = 0.28823   +73.5%
+
+The mirror ordering is RIGHT — 3H binds more than 3He because `L_nn > L_pn` —
+and within 6.5% on that ratio. **The A-scaling is badly wrong and structurally
+so**: a bond-count law makes 2H exactly half of 3He whatever the constants are.
+So bond-additivity cannot be the whole binding law, and the mirror agreement
+must not be read as validating it. (The `C(A,2)` topology would give 1 vs 3 =
+0.333, closer — but it contradicts the arity law.)
+
+**And the absolute scale is not a binding energy**: 49% against a physical 0.1%.
+These are dimensionless multiplicative traces; converting `L` to MeV needs the
+corpus's mass normalisation, deliberately not applied.
+
+**Scope**: A=4 not computed — H_12 has 77 partitions with Specht dims to 2673,
+intractable by the dense seminormal route. Three nuclei fix both constants and
+test additivity, but not the law beyond two bonds.
