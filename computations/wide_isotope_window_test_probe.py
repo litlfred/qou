@@ -171,7 +171,7 @@ def main() -> int:
 
     Lpp = L(mp.mpf(0), mp.mpf(1))
     Lnn = L(-h, mp.mpf(-1))
-    Lpn = L(-h * (mp.mpf(1) / 2 - dlt / 4), mp.mpf(0))
+    Lpn = L(-h * (mp.mpf(1) / 2 - dlt / 4), 2 * (mp.mpf(1) / 2 - dlt / 4) - 1)
 
     p = _Path(__file__).resolve().parent / "data" / "ame2020.json"
     raw = json.loads(p.read_text())
