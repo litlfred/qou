@@ -6194,3 +6194,54 @@ monotonically with `A`.
 
 So this session's recommended next was duplicated work twice over. Roast and the
 two surviving self-checks: **`qou-i9gk`**.
+
+---
+
+## 🛑 Step 27's headline reading is CORRECTED — the blind sector is the TL kernel (2026-09-01)
+
+`qou-i9gk` hole 1, settled.
+[`qbeta_blind_sector_is_the_tl_kernel_probe.py`](../computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py)
+(4/4).
+
+**Step 27 said** the `>2`-row blocks carry *"information the observable cannot
+see"* — 588 of 720 dimensions. **They carry no states at `N = 2`.**
+
+Measured at `n = 3..8`, not just Step 27's `n = 6`: `ω_λ = 0 ⟺ ℓ(λ) > 2` exactly,
+with a clean gap (`~1e-16` against `0.039..0.49`), and `∑d²` over the `≤2`-row
+blocks equals `Catalan(n)` at every `n` — `5, 14, 42, 132, 429, 1430`. So those
+blocks **are** `TL_n` and the rest span the **kernel** of `H_n(q) → TL_n(q)`.
+`TL_n = End_{U_q(sl₂)}(V^{⊗n})`, so that kernel is exactly the part of the
+algebra acting as **zero** on the `N = 2` physical space. It is the Schur–Weyl
+row cap (`qou-fvzm`), structurally — not a second, independent vanishing.
+
+### The reading contradicts the convention it was measured in
+
+`FibreCategoricalTraceForcesJones.lean` (bean `qou-n1dj`) already has the chain:
+`ℓ > 2` channels absent at `N = 2` (**proved**) → **open premise**, that the mass
+trace *is* the categorical trace of the fibre action on `V^{⊗n}` → `y_{(1³)} = 0`
+forces **Jones** (**proved**).
+
+**Convention D is forced by the premise that empties the blind sector.** Step 27
+computed in D and read D's zeros as hidden information. Under the premise giving
+D there are no states there; under its negation D is not forced and D's weights
+are the wrong ones. The headline reduces to `qou-n1dj`, already open.
+
+### The 0.13 % coincidence dies structurally
+
+`N_min(λ) = ℓ(λ)`. Physical at `N=2`: `(6), (5,1), (4,2), (3,3)`. `N=3` adds
+`(4,1,1), (3,2,1), (2,2,2)`. `N=4` adds `(3,1,1,1), (2,2,1,1)`.
+
+- `0.0252506` in `(3,2,1)`, `ℓ=3` → needs **`N ≥ 3`**
+- `0.0195531` in `(2,2,1,1)`, `ℓ=4` → needs **`N ≥ 4`**
+- **the sum therefore requires `N ≥ 4`** — nothing in the corpus motivates it.
+
+Cleaner than Step 27's degeneracy-wall argument, and structural.
+
+### What survives
+
+`qou-fvzm`: the super-pairwise binding term **requires `N ≥ 3`**. `(3,2,1)` — the
+block with the largest binding character (`−9.598`) and the smaller phase — is an
+`ℓ = 3` block. So Step 27 measured **what an `N = 3` extension would carry**.
+Weaker and different from its claim, and the part that stands. The construction
+`Δ_bind = P·(I−1)·N`, its validation, and the chain-vs-all-pairs finding are
+untouched.

@@ -3,6 +3,42 @@
 **Date:** 2026-09-01 · **Beans:** `qou-cds1` (Step 27) / `qou-tower` (the cause) ·
 **Scope:** (a).
 
+
+> ## 🛑 THE HEADLINE READING IS CORRECTED (2026-09-01, bean `qou-i9gk`)
+>
+> This audit says the `>2`-row blocks carry *"information the observable cannot
+> see."* They carry **no states at `N = 2`**.
+>
+> Measured at `n = 3..8` (`qbeta_blind_sector_is_the_tl_kernel_probe.py`, 4/4):
+> `ω_λ = 0 ⟺ ℓ(λ) > 2` exactly, and `∑ d_λ²` over the `≤2`-row blocks is
+> `Catalan(n)` at every `n`. So those blocks **are** `TL_n` and the rest span the
+> **kernel** of `H_n(q) → TL_n(q)`. Since `TL_n = End_{U_q(sl₂)}(V^{⊗n})`, the
+> kernel acts as zero on the `N = 2` physical space: this is the Schur–Weyl row
+> cap (`qou-fvzm`), not a second vanishing. §"the finding" below re-measured a
+> proved fact and mis-glossed it.
+>
+> **And the reading contradicts convention D, in which it was measured.**
+> `FibreCategoricalTraceForcesJones.lean` (bean `qou-n1dj`) proves the `ℓ > 2`
+> channels are absent at `N = 2` and that `y_{(1³)} = 0` forces Jones, with one
+> **open premise** between them: that the mass trace *is* the categorical trace of
+> the fibre action on `V^{⊗n}`. D is forced **by** the premise that empties the
+> blind sector. Under it there are no states there; under its negation D is not
+> forced and D's weights are the wrong ones. The headline reduces to `qou-n1dj`.
+>
+> **The coincidence dies more cleanly than §"the 0.13 % coincidence" says.**
+> `N_min(λ) = ℓ(λ)`, so the `0.0252506` phase in `(3,2,1)` needs `N ≥ 3` and the
+> `0.0195531` in `(2,2,1,1)` needs `N ≥ 4`. **The sum requires `N ≥ 4`**, which
+> nothing in the corpus motivates — a structural kill rather than a
+> degeneracy-wall argument.
+>
+> **What survives.** `qou-fvzm` says the super-pairwise binding term *requires*
+> `N ≥ 3`, and `(3,2,1)` — carrying both the largest binding character
+> (`−9.598`) and the smaller phase — is an `ℓ = 3` block. So this audit measured
+> **what an `N = 3` extension would carry**. Weaker and different from what it
+> claimed, and the part that stands. The construction (§"the construction"), its
+> validation, and the chain-vs-all-pairs finding are untouched.
+
+
 **Artifacts.**
 [`QOU/QBeta/TraceBlindSector.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/TraceBlindSector.lean)
 (8 theorems, sorry-free) ·

@@ -115,3 +115,33 @@ separation but cannot be the binding's distance decay, and the decay AME wants
 runs `r* = 0.709..0.827`, falling with `A` rather than constant. So "build the
 all-pairs word" was duplicated work twice over, and the honest next item is
 neither of this session's candidates.
+
+---
+
+## Hole 1 SETTLED (2026-09-01) — and it reduces to `qou-n1dj`
+
+[`qbeta_blind_sector_is_the_tl_kernel_probe.py`](../computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py)
+(4/4).
+
+**The two vanishings are one statement.** `ω_λ = 0 ⟺ ℓ(λ) > 2` exactly at
+`n = 3..8`, and `∑d²` over the `≤2`-row blocks is `Catalan(n)` at every `n`. The
+`>2`-row blocks span the **kernel** of `H_n(q) → TL_n(q) = End_{U_q(sl₂)}(V^{⊗n})`
+— the Schur–Weyl row cap, structurally. Not "unobserved": **zero on the physical
+space at `N = 2`**.
+
+**And Step 27's reading is self-inconsistent.** `FibreCategoricalTraceForcesJones`
+shows convention D is forced by the open premise `MassTraceIsFibreCategorical`
+(bean `qou-n1dj`) — the same premise that empties the blind sector. Measuring in
+D and reading D's zeros as hidden information asserts the premise and its
+negation at once. So hole 1 does **not** resolve to yes/no: it resolves to
+*"Step 27's headline is conditional on `qou-n1dj`, and inconsistent with itself
+if the premise holds."*
+
+**Bonus, and a cleaner kill than the wall argument.** `N_min(λ) = ℓ(λ)`, so
+`0.0252506` (in `(3,2,1)`) needs `N ≥ 3` and `0.0195531` (in `(2,2,1,1)`) needs
+`N ≥ 4` — **the sum coincidence requires `N ≥ 4`**, unmotivated anywhere.
+
+- [x] Hole 1 — settled as above.
+- [x] Hole 2 — settled against Step 28 by `qou-brng`.
+- [ ] residual: is the `tanh(ln q)` / EM match a link or two instances of "odd
+      part over even part"? Still the only live item on this bean.

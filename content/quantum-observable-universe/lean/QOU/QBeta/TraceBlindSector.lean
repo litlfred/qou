@@ -1,6 +1,39 @@
 /-
 # The observable is blind to 588 of the 720 dimensions binding lives in
 
+> ## 🛑 THE READING IS CORRECTED (2026-09-01, bean `qou-i9gk`)
+>
+> This file's title and its `blind_sector` gloss say the `>2`-row blocks carry
+> information *the observable cannot see*. They carry **no states at `N = 2`**.
+>
+> The `>2`-row blocks span the **kernel** of `H_n(q) → TL_n(q)`: measured at
+> `n = 3..8`, `ω_λ = 0 ⟺ ℓ(λ) > 2` exactly, and `∑ d_λ²` over the `≤2`-row
+> blocks is `Catalan(n)` at every `n`. Since `TL_n(q) = End_{U_q(sl₂)}(V^{⊗n})`,
+> that kernel is precisely the part of the algebra acting as **zero** on the
+> `N = 2` physical space. It is the Schur–Weyl row cap (`qou-fvzm`), not a
+> second, independent vanishing.
+>
+> **And the reading contradicts the convention it was measured in.**
+> `QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean` (bean `qou-n1dj`)
+> proves the `ℓ > 2` channels are absent at `N = 2`, and that `y_{(1³)} = 0`
+> forces **Jones** — with one open premise between them, that the mass trace *is*
+> the categorical trace of the fibre action on `V^{⊗n}`. Convention D is forced
+> **by** the premise that empties the blind sector. Measuring in D and then
+> reading D's zeros as hidden information asserts both the premise and its
+> negation. The headline reduces to `qou-n1dj`, which the corpus already tracks
+> as open.
+>
+> **What survives.** The theorems below are all still true — `blind_sector` is a
+> statement about weighted sums and is independent of any of this, and the
+> dimension arithmetic is arithmetic. What changes is only what they *mean*:
+> `588` is the dimension of the kernel, not of a hidden sector. And since
+> `N_min(λ) = ℓ(λ)`, the two small eigenphases Step 27 found need `N ≥ 3`
+> (`(3,2,1)`) and `N ≥ 4` (`(2,2,1,1)`) respectively — so the `0.13 %` sum
+> coincidence requires `N ≥ 4`, which nothing in the corpus motivates.
+>
+> Measured in `computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py`
+> (4/4).
+
 Bean `qou-cds1`, Step 27. Computed and validated in
 `computations/qbeta/qbeta_level_k_binding_operator_probe.py` (6/6).
 
