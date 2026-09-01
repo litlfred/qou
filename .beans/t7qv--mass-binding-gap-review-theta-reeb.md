@@ -1765,3 +1765,60 @@ Orders off, as everywhere — dimensionless traces, no mass normalisation.
 calling it the weak operator is an interpretation. It carries **no lepton
 content** — the electron and antineutrino appear nowhere, and the construction
 has no strand or generator for a neutrino at all.
+
+## 2026-09-01 — MERGED main; and the sibling arc's pairwise ceiling is overstated
+
+Merged `origin/main` (1343 commits) into `claude/mt7r-archimedean-eval-2026-08-24`
+and opened **PR #6412**. 34 conflicts, all in other arcs' files where both
+branches independently fixed the same QA defect class (`qou-26f2`, `qou-3e5m`);
+took main's side throughout as the reviewed trunk. `pyhecke/atom.py` auto-merged
+(gluon `sigma_0^2` term added to `build_nucleon_nf`, bean `qou-1qsw`); `h`,
+`D_PN`, `PN_CONVENTION` and the derived betas all unchanged. **Verified rather
+than assumed: all eleven session probes re-run clean, 66/66 assertions.**
+
+Note: PR #6086 on this branch was merged 2026-08-30 (rebase-merge), so #6412 is
+a NEW pull request for the follow-up work, per the branch discipline.
+
+**READING MAIN SURFACED AN ACTIVE SIBLING ARC ON THIS EXACT PROBLEM** —
+`qou-brng`, `computations/he4_exceeds_pairwise_maximum_probe.py`, which brackets
+each isotope between `B_chain` and `B_allpairs` and concludes three regimes:
+4He ABOVE the pairwise maximum by 1.65x, 2H BELOW the minimum, and 3H/3He/6Li/7Li
+INSIDE. `computations/probes/pairwise_ceiling_is_overstated_probe.py`, 5/5.
+
+**MUTUAL VALIDATION.** Their bond constants come from a closed form
+`-log(z + d)`; mine are Markov-trace ratios measured in H_6/H_9. Neither derived
+from the other. **They agree to 1.35e-13, 3.43e-13, 2.13e-13.** Two completely
+independent routes to the same three numbers — that is real cross-validation of
+both arcs. (My hand estimate of "1e-4" before computing was just sloppy mental
+arithmetic; the actual agreement is thirteen digits.)
+
+**BUT THEIR CEILING IS OVERSTATED.** `B_allpairs` sums the bond multiset. That
+is exact for the CHAIN — this arc proved it via the rank-one transfer operator —
+but NOT once non-adjacent bonds are present: a far bond delivers only ~0.65 of
+its isolated value when the adjacent ones are there (measured 0.659916, 0.650555,
+0.640829, 0.625186). So the complete graph does not deliver the sum of its bonds.
+
+**AND THAT MOVES VERDICTS.** Using the MEASURED A=3 all-pairs traces — no
+extrapolation, band generator and all — with their own `alpha = 4.18598136 MeV`:
+
+    iso    a*L_chain   a*L_allpairs      B_AME     AME/allpairs
+    2H      2.833163      2.833163     2.224566      0.78519
+    3H      6.630946      8.446517     8.481796      1.00418
+    3He     5.666325      7.019621     7.718041      1.09950
+
+**3H and 3He are BOTH ABOVE the measured ceiling**, where the naive-additive one
+put them inside at 0.945 and 0.940. That **changes** the three-regime reading
+rather than reinforcing it: if the correction holds, a many-body term is needed
+at A=3 as well as A=4, and 4He's excess is a matter of degree (1.97x against the
+corrected ceiling, up from 1.65x) rather than a category of its own.
+
+**NOT CLAIMED**: 3H landing at 0.42% is ONE number out of three, with 3He at
+9.95% and 2H at 21.48% — a 51x spread. Not a pattern, and reading it as
+predictive would be the single-isotope coincidence this series refutes elsewhere.
+Reported because omitting it would be selective.
+
+**CAVEAT FLAGGED PROMINENTLY**: two conventions are mixed — `alpha` is theirs
+taken as-is, the `L` are mine WITHOUT their `-(e/2)log(1-h)` charge term. The
+`-log(z+d)` cores agree to 1e-13 but the charge term is not cross-checked, and a
+5-10% convention shift is exactly the size that moves 3H and 3He across the line.
+Offered as a flag for `qou-brng` to check, **not a settled overturn**.
