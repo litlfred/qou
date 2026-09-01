@@ -1822,3 +1822,56 @@ taken as-is, the `L` are mine WITHOUT their `-(e/2)log(1-h)` charge term. The
 `-log(z+d)` cores agree to 1e-13 but the charge term is not cross-checked, and a
 5-10% convention shift is exactly the size that moves 3H and 3He across the line.
 Offered as a flag for `qou-brng` to check, **not a settled overturn**.
+
+## 2026-09-01 — REFUTED the r^(s-1) distance-decay FORM (the sibling's own flagged assumption)
+
+`computations/probes/no_distance_decay_in_the_trace_probe.py`, 6/6.
+
+`spectral_gap_bond_decay_probe` (bean `qou-brng`) derives per-bond decay rates
+from transfer-matrix spectra — `1/q^2` exactly for pp/nn, `0.99985698` for pn —
+and applies them as `B = alpha sum_{i<j} L * r^{|i-j|-1}`. It is scrupulous and
+names its own gap verbatim: *"nothing here derives that a bond at separation s
+enters it with weight r^(s-1). That step is a model, not a theorem."*
+
+**Measured it. The form is not what the braid gives.**
+
+Building the separation-2 bond as an actual braid word (BKL band generator), in
+**four independent routings** — both conjugation directions, and routed from the
+other side of the braid, all carrying the (2,6) transposition:
+
+    (T5T4T3)(T2+d)(T3T4T5)^-1     L = 0.676821592386
+    (T5T4T3)^-1(T2+d)(T3T4T5)     L = 0.676821592386
+    (T2T3T4)(T5+d)(T4T3T2)^-1     L = 0.676821592386
+    (T2T3T4)^-1(T5+d)(T4T3T2)     L = 0.676821592386
+    ---- ADJACENT bond (T2+d)     L = 0.676821592386
+
+**Spread 5.6e-16; distance from adjacent 7.8e-16.** So the measured weight at
+`s = 2` is **1**, not `r`. The model would apply 0.81165 (pp/nn — **19% low**)
+or 0.99986 (pn — nearly harmless, which is why the form looks benign).
+
+**THE REASON GENERALISES.** The Markov trace is a **link invariant** — a
+function of the closure, not the braid word — and axial separation is not a
+property of the closure. Four routings and two different axial distances give one
+value because the invariant cannot tell them apart. **So NO weight of the form
+`r^(s-1)` can arise from the Markov trace of a braid closure, for any `r`.** A
+distance decay has to come from outside the trace.
+
+**Careful about scope**: this touches the FORM, not the RATES. Their spectra are
+exact and I re-derived rather than quoted them (`1/q^2` to **1.15e-41**). And the
+probe had already flagged the form as its load-bearing assumption — this is the
+measurement it said was missing, not a correction of an error.
+
+**Consequence**: 3He improving to +0.136% under their alternating ordering
+**cannot be mechanistic** — it rests on applying 0.81/1.00 where the trace gives
+1. A one-isotope improvement from a weight the functional does not carry is a
+coincidence of the right size, not evidence for the form.
+
+**What IS there**: saturation — marginal contribution 0.659916 (far pp),
+0.640829 (far pn), 0.625186 (far nn) — a function of **what else is switched
+on**, not of separation, and ordered **opposite** to the model (measured
+pp > pn > nn against their pn >> pp = nn).
+
+Caveats carried: the link-invariance argument is the natural mechanism but no
+isotopy is exhibited and no independent link invariant computed; and the
+saturation values were measured at A=3 only, so "no r^(s-1) shape" rests on the
+shape being wrong at the one available separation.
