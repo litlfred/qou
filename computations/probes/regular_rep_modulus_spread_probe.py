@@ -97,6 +97,22 @@ but mixed-sign words need not -- `Baa` gives `k = 2.0321548, ...`, ratio
 `2.032154824`, not rational-looking at all.  So the set is **not** discrete;
 only its positive-word part is.
 
+## 🛑 DO NOT READ THIS AS "THE BLIND SECTOR IS NOT EXCLUDED"
+
+The `R <= 1` bound being 2-dimensional is a statement about **that bound**.  A
+stronger, dimension-independent argument excludes the single-crossing isospin
+criterion in **every** block, blind ones included: `sigma`'s minimal polynomial
+divides `(x - q)(x + 1/q)`, so `spec(rho(sigma_i)) subset {q, -1/q}` in ANY
+representation, the isospin channels are `sigma`'s spectral projectors, and the
+channel asymmetry is therefore **exactly 1 everywhere**.  See
+`isospin_channel_R_is_one_everywhere_probe`, which verifies it by exact matrix
+identity to `5.6e-42`.
+
+The spread measured here is a **word's** spectrum, and a word's eigenprojectors
+are not `sigma`'s -- so it is not available to the channels as currently
+defined.  Using it needs the channels **re-identified**, which is an open
+definitional question, not a bound.
+
 ## What is NOT claimed
 
   * NOT that `R` as the eigenvalue criterion defines it (a per-CHANNEL
@@ -397,8 +413,19 @@ def main() -> int:
     print("    Demonstrated at d = 6 with |det| = 1 and ratio exactly 2.")
     print("  ESTABLISHED: sum_i log|l_i| = log|det| is one equation on d")
     print("    unknowns.  The R <= 1 bound is a 2-DIMENSIONAL fact and does not")
-    print("    extend, which is why the blind sector's high-dimensional blocks")
-    print("    are not excluded by it.")
+    print("    extend to higher blocks.")
+    print("  🛑 BUT DO NOT READ THAT AS 'the blind sector is not excluded'.")
+    print("    This line used to end '...which is why the blind sector's")
+    print("    high-dimensional blocks are not excluded by it' -- true about")
+    print("    the BOUND, misleading about the physics.  A stronger,")
+    print("    dimension-independent argument DOES exclude the single-crossing")
+    print("    isospin criterion in every block, blind ones included: sigma's")
+    print("    minimal polynomial divides (x-q)(x+1/q), so its spectrum is")
+    print("    {q, -1/q} in ANY representation and the channel asymmetry is")
+    print("    exactly 1 everywhere.  See isospin_channel_R_is_one_everywhere.")
+    print("    The spread measured here is a WORD's spectrum, and a word's")
+    print("    eigenprojectors are not sigma's -- so it is not available to the")
+    print("    channels as currently defined.")
     print("  UNAFFECTED: the R <= 1 bound on the BOND-LETTER family stands --")
     print("    that IS a 2x2 statement, computed directly in H_2's regular rep.")
     print("  NOT CLAIMED: that the max/min log-modulus ratio IS the eigenvalue")
