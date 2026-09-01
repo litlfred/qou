@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T21:13:56.178687+00:00",
-  "commitSha": "ac50d02eb50bd2cf3bec4e228371a94d7679bab1",
+  "computedAt": "2026-09-01T04:22:56.939169+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
   "assertions": [
     {
       "name": "A1_plancherel_is_not_a_markov_trace",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 34,
   "computation": "which_functional_the_substrate_extremises_probe",
   "scriptFile": "which_functional_the_substrate_extremises_probe.py",
-  "scriptHash": "2f32f8db741b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "96f06b3ebe25",
+  "scriptCommitSha": "e284e262f79ba2fc079f5a32d70b7c092087cd98",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "invocation": {
     "argv": [

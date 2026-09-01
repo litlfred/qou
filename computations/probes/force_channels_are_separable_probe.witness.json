@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:02:33.832183+00:00",
-  "commitSha": "53b97ef6d482a771c82b1661341821905f9278d5",
+  "computedAt": "2026-09-01T04:23:39.341667+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
   "assertions": [
     {
       "name": "A1_same_beta_opposite_sign_by_channel",
@@ -57,8 +57,8 @@
   "durationMs": 7,
   "computation": "force_channels_are_separable_probe",
   "scriptFile": "force_channels_are_separable_probe.py",
-  "scriptHash": "199c9d87c04b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fe96d32e5b84",
+  "scriptCommitSha": "0cf42cc41600efcf1ab3b65b5236e932b70332d4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -78,7 +78,7 @@
     ],
     "reproduce": "python3 -u computations/probes/force_channels_are_separable_probe.py"
   },
-  "description": "Tests whether the bond falloff rates differ by force channel and whether the channels are independent. The corpus labels channels by generator: 3k+2 strong (inter-nucleon), 3k+1 EM (electron pe crossing), 3k intra. Placing the SAME crossing (sigma^-1, beta = 1, the beta the strong n-n bond carries) on each generator of H_9 gives +0.907262265533 on strong generators, -0.599674300310 (p) and -0.784421240488 (n) on EM ones, and +0.437359834237 (p) / +0.506807726417 (n) on intra ones — same beta, opposite sign, so the generator sets the rate rather than the crossing branch. Strong is flavour-independent (gens 2 and 5 agree to 1e-12 though flanked p-n and n-n) where EM and intra are flavour-split by 31% and 16%. The channels are EXACTLY independent: cross-channel interference is +6.7e-16 (3H) and 0.0 (3He) in the very same words where the strong channel is non-additive with itself at -2.4e-1 and -1.7e-1, and multiple electrons are additive among themselves. EM anti-binds, so including it moves L(3H)/L(3He) from 1.20327 to 2.96934 against an experimental 1.09896; since AME binding energies are nuclear and carry no electron content, strong-only is the correct comparand, which justifies the scope of the preceding probes. The weak channel has no generator assigned anywhere in the corpus.",
+  "description": "Tests whether the bond falloff rates differ by force channel and whether the channels are independent. The corpus labels channels by generator: 3k+2 strong (inter-nucleon), 3k+1 EM (electron pe crossing), 3k intra. Placing the SAME crossing (sigma^-1, beta = 1, the beta the strong n-n bond carries) on each generator of H_9 gives +0.907262265533 on strong generators, -0.599674300310 (p) and -0.784421240488 (n) on EM ones, and +0.437359834237 (p) / +0.506807726417 (n) on intra ones — same beta, opposite sign, so the generator sets the rate rather than the crossing branch. Strong is flavour-independent (gens 2 and 5 agree to 1e-12 though flanked p-n and n-n) where EM and intra are flavour-split by 31% and 16%. The channels are EXACTLY independent: cross-channel interference is +6.7e-16 (3H) and 0.0 (3He) in the very same words where the strong channel is non-additive with itself at -2.4e-1 and -1.7e-1, and multiple electrons are additive among themselves. EM anti-binds, so including it moves L(3H)/L(3He) from 1.20327 to 2.96938 against an experimental 1.09896; since AME binding energies are nuclear and carry no electron content, strong-only is the correct comparand, which justifies the scope of the preceding probes. The weak channel has no generator assigned anywhere in the corpus.",
   "data": {
     "channel_map": {
       "3k+2": "strong (inter-nucleon)",

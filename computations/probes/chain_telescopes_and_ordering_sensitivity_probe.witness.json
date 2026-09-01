@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T03:49:49.736975+00:00",
-  "commitSha": "9093137fdf7c77e530903236125749926092e805",
+  "computedAt": "2026-09-01T04:23:36.346163+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
   "assertions": [
     {
       "name": "A1_chain_transfer_is_rank_one",
@@ -57,8 +57,8 @@
   "durationMs": 7,
   "computation": "chain_telescopes_and_ordering_sensitivity_probe",
   "scriptFile": "chain_telescopes_and_ordering_sensitivity_probe.py",
-  "scriptHash": "2641be4d84fb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e15d4993614a",
+  "scriptCommitSha": "53b97ef6d482a771c82b1661341821905f9278d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -78,7 +78,7 @@
     ],
     "reproduce": "python3 -u computations/probes/chain_telescopes_and_ordering_sensitivity_probe.py"
   },
-  "description": "Finds the sparse route to higher A and uses reordering at A = 3 as a cheaper discriminator than A = 4. The chain's transfer operator is exactly RANK ONE: tr(X . b . w) = tr(X) F(b,w) with F independent of the whole prefix to 2.8e-16, measured over four prefixes and three bond types (F_pn = 0.241477007350, F_nn = 0.191777066944, F_pp = 0.385581983466). So the chain telescopes, L(chain) is a sum over adjacent bonds at every A, and 4He follows with no H_12: L = 3 L_pn = 2.030464777, giving L(4He)/L(3He) = 1.50000 against B(4He)/B(3He) = 3.66618, -59%, deepening the chain's A-scaling failure. The discriminator instead comes from reordering at A = 3, which moves bond distances at fixed bond multiset: the all-pairs answer swings 4.35% (3He pnp vs ppn) and 5.05% (3H pnn vs npn), so distance genuinely matters. The strong bond wants to be adjacent, and the saturation factor is monotone decreasing in the far bond's own strength — 0.659916 (p-p), 0.650555 and 0.640829 (p-n), 0.625186 (n-n), a 5.4% spread — which is the owner's type-dependent falloff rate, measured. All-pairs is also four times less sensitive to the nucleon ordering than the chain (4.35%/5.05% against 16.02%/17.02%), a second independent argument for the all-pairs topology.",
+  "description": "Finds the sparse route to higher A and uses reordering at A = 3 as a cheaper discriminator than A = 4. The chain's transfer operator is exactly RANK ONE: tr(X . b . w) = tr(X) F(b,w) with F independent of the whole prefix to 2.8e-16, measured over four prefixes and three bond types (F_pn = 0.241477007350, F_nn = 0.191777066944, F_pp = 0.385581983466). So the chain telescopes, L(chain) is a sum over adjacent bonds at every A, and 4He follows with no H_12: L = 3 L_pn = 2.030464777, giving L(4He)/L(3He) = 1.50000 against B(4He)/B(3He) = 3.66618, -59%, deepening the chain's A-scaling failure. The discriminator instead comes from reordering at A = 3, which moves bond distances at fixed bond multiset: the all-pairs answer swings 4.35% (3He pnp vs ppn) and 5.05% (3H pnn vs npn), so distance genuinely matters. The strong bond wants to be adjacent, and the saturation factor is monotone decreasing in the far bond's own strength — 0.659916 (p-p), 0.650555 and 0.640829 (p-n), 0.625186 (n-n), a 5.6% spread — which is the owner's type-dependent falloff rate, measured. All-pairs is also four times less sensitive to the nucleon ordering than the chain (4.35%/5.05% against 16.02%/17.02%), a second independent argument for the all-pairs topology.",
   "data": {
     "transfer_scalars": {
       "pn": "0.241477007350",

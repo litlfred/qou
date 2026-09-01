@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-01T03:33:54.959526+00:00",
-  "commitSha": "cfef887052abafd39d45840640943ed925d8c06a",
+  "computedAt": "2026-09-01T04:23:29.229183+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
   "assertions": [
     {
       "name": "A1_bond_topology_disagreement",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 20,
   "computation": "binding_lp_with_inter_nucleon_bonds_probe",
   "scriptFile": "binding_lp_with_inter_nucleon_bonds_probe.py",
-  "scriptHash": "ec4bab7bd676",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b4c177874301",
+  "scriptCommitSha": "9093137fdf7c77e530903236125749926092e805",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
