@@ -1345,7 +1345,14 @@ do not repair that.
 
 Probe now 7/7.
 
-### On the `t³` discriminator — a cheap FIRST MILESTONE for branch 3, proposed not measured
+### ~~On the `t³` discriminator — a cheap FIRST MILESTONE for branch 3~~ — **SUPERSEDED, same day, by the entry below**
+
+> 🛑 The `ζ(3)` test proposed here targets the MONODROMY reading of branch 3,
+> which the next entry closes by a cheaper argument (trace-invariance). No
+> associator computation is needed. On the surviving OPEN-PATH reading the
+> associator coefficients are not the obstruction either, because nothing
+> forces that holonomy to be algebraic. Left in place, struck through, so the
+> reasoning is legible.
 
 Entry 5 fixes the one contentful target: *"build the KZ/Stokes connection whose
 monodromy is the `H₃(q)` braiding on `V_(2,1)`, and compute its holonomy angle."*
@@ -1377,3 +1384,62 @@ Distinct from the exclusion already recorded at entry 4, which is about
 algebraic. This one is about the **angle's own Taylor coefficients** versus
 associator `ζ`-values — a different comparison, and it bites on branch 3, which
 that exclusion explicitly does not reach.
+
+
+---
+
+## 2026-09-01 (14) — branch 3's MONODROMY reading is CLOSED by trace-invariance; only the open-path reading survives
+
+[`qbeta_kd_monodromy_reading_closed_probe.py`](../computations/qbeta/qbeta_kd_monodromy_reading_closed_probe.py)
+(4/4) ·
+[`QOU/QBeta/MonodromyTraceInvariance.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/MonodromyTraceInvariance.lean)
+(sorry-free).
+
+Entry 5 words branch 3 as a connection *"whose monodromy reproduces the Hecke
+braiding"*, escaping the rationality exclusion *"because a holonomy is
+transcendental."* **That escape fails, in one line:**
+
+> Kohno–Drinfeld gives holonomies **gauge-conjugate** to the braid-image
+> matrices. **Conjugation preserves the trace**, and the carrier condition is
+> **on the trace**.
+
+So such a monodromy's trace is *exactly* some `tr ρ(w)`. Measured symbolically in
+the `(2,1)` block, exactly in `q`:
+
+- **`det ρ(σ) = −1` for all four generators**, so an even-length word has
+  `det = +1` exactly. **The carrier's `M.det = 1` field is automatic and free on
+  the braid image — it was never the obstruction.** Odd-length words have
+  `det = −1` and cannot meet it at all, so the image splits cleanly by parity.
+- **Every word trace lies in `ℤ[q,q⁻¹]`** — the seminormal radical
+  `√(q⁴+q²+1)` cancels identically, as characters must. Ten words checked:
+  `σ₀σ₁ ↦ −1`, `σ₀σ₁⁻¹ ↦ −(q⁴−q²+1)/q²`, `σ₀σ₁σ₁σ₀ ↦ (q⁴+1)/q²`, …
+- **`(σ₀σ₁)³ = I` exactly, for every `q`** — verified as a matrix identity, not
+  just a trace. The full twist generates the **centre of `B₃`**, so the `(2,1)`
+  representation factors through **`B₃/⟨Δ²⟩ ≅ PSL(2,ℤ)`** and the achievable
+  traces are indexed by conjugacy classes there: a countable set of Laurent
+  polynomials.
+
+`2cos((z−1)h/2)` is transcendental over `ℚ(q,z)` (entry 4). A Laurent polynomial
+is not. **Branch 3 as entry 5 words it is CLOSED** — no Drinfeld associator, no
+`ζ(3)`, no construction.
+
+Entry 5's escape clause is the wrong reason, and worth naming: transcendental
+matrix *entries* do not buy a transcendental closed-loop *trace* when the loop is
+required to reproduce the braiding.
+
+### What survives — and it is narrower than entry 5's wording
+
+The **open-path / non-abelian Stokes** reading. An open-path holonomy is not a
+monodromy — not a closed loop, not a braid-group image — so it is not
+trace-pinned; and it is gauge-**dependent**, transforming by the endpoint frames
+rather than by conjugation, which is exactly the hypothesis
+`trace_conj_of_mul_eq_one` needs and does not get. Entry 5 cites *"Yekutieli
+non-abelian Stokes"*, so this **is** the corpus's intended shape; its own wording
+just does not capture it.
+
+**Route table:** routes 1–4 stay closed. Route 5 remains the only live one, but
+its branch-3 content is now the open-path reading **only** — the monodromy half
+is closed.
+
+Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
+adjudicated. No anchor required (exact symbolic identities in `q`).

@@ -793,6 +793,7 @@ import QOU.QBeta.DiscriminantCurveInQ
 import QOU.QBeta.TraceBlindSector
 import QOU.QBeta.BondDecayRates
 import QOU.QBeta.EigenphaseCarrierClassicalLimit
+import QOU.QBeta.MonodromyTraceInvariance
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
