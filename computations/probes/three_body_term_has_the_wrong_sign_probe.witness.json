@@ -1,0 +1,166 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-01T05:07:27.231061+00:00",
+  "commitSha": "c633d006e8e58d9c14d479ff30bad465056d1f19",
+  "assertions": [
+    {
+      "name": "A1_chain_attachment_is_exactly_rank_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "spread 3.886e-16 over 20 prefixes; matches F_pp to 2.3e-13"
+    },
+    {
+      "name": "A2_allpairs_attachment_is_not_rank_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "spread 1.469282 against 3.886e-16 at k=1"
+    },
+    {
+      "name": "A3_three_body_term_is_negative_everywhere",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "all 8 orderings negative, -9.04% to -15.04%"
+    },
+    {
+      "name": "A4_middle_nucleon_is_privileged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "reversal exact (8.9e-16); permutation 4.1686-5.0477%"
+    },
+    {
+      "name": "A5_no_decay_and_subadditivity_are_one_fact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "far p-n bond matches adjacent p-n to 1.1e-15 while the triangle defect is -0.236512"
+    },
+    {
+      "name": "A6_alpha_free_shortfall_of_two_point_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "model ratio <= 6.0643 vs AME 12.7196, short 2.0975x, alpha-independent"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "three_body_term_has_the_wrong_sign_probe",
+  "scriptFile": "three_body_term_has_the_wrong_sign_probe.py",
+  "scriptHash": "a851da4a0dda",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/three_body_term_has_the_wrong_sign_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/three_body_term_has_the_wrong_sign_probe.py"
+  },
+  "description": "Locates the many-body term, measures its sign, and derives an alpha-free ceiling that puts 4He out of reach of the bond graph. The chain (k=1) attachment functional P -> tr(P.A)/tr(P) is exactly rank one — one constant over 20 random prefixes to <1e-12, independently reproducing the arc's recorded F_pp = 0.385581983466. The all-pairs (k=2) attachment is not: the same prefixes give 0.196..0.696. The mechanism is the band generator (T5 T4 T3)(T2+d)(T3 T4 T5)^-1, which routes strand 2 through strands 3-5 — the middle nucleon — so a non-adjacent bond does not commute past the prefix. That failure to commute IS the three-body term. It is NEGATIVE in all eight A=3 flavour orderings (-9.04% to -15.04% of the naive sum), i.e. it REMOVES binding. It also privileges the middle nucleon: reversal is exact (pnn vs nnp, 0.0) but permutation is not (pnp vs ppn 4.17%, npn vs nnp 5.05% on identical bond multisets), a labelling artifact of embedding the bond graph in a line. This explains rather than contradicts no-distance-decay: the bond's own invariant is routing-independent while its commutator with what it passes through is not. Ceiling: B(2H) is exact at A=2 (single bond, no many-body term possible) and the naive B(4He) contains no many-body term at all, giving B(4He)/B(2H) <= 6.0643 against AME 12.7196 — short by 2.0975x with alpha cancelling, so no normalisation fixes it, and closing it would need large POSITIVE many-body terms where all eight measured are negative.",
+  "data": {
+    "attachment_rank": {
+      "k1_chain_spread": "3.886e-16",
+      "k1_constant": "0.385581983466",
+      "k1_matches_recorded_F_pp": "2.3e-13",
+      "k2_allpairs_min": "0.094533702101",
+      "k2_allpairs_max": "1.563816061732",
+      "k2_allpairs_spread": "1.469282",
+      "n_prefixes": 20
+    },
+    "three_body_by_ordering": {
+      "ppp": {
+        "true_K3": "1.301140671267",
+        "naive_sum": "1.469698152765",
+        "three_body": "-0.168557481498",
+        "rel_pct": "-11.4689"
+      },
+      "ppn": {
+        "true_K3": "1.607030797631",
+        "naive_sum": "1.843542569028",
+        "three_body": "-0.236511771397",
+        "rel_pct": "-12.8292"
+      },
+      "npp": {
+        "true_K3": "1.607030797631",
+        "naive_sum": "1.843542569028",
+        "three_body": "-0.236511771397",
+        "rel_pct": "-12.8292"
+      },
+      "pnp": {
+        "true_K3": "1.676935518146",
+        "naive_sum": "1.843542569028",
+        "three_body": "-0.166607050882",
+        "rel_pct": "-9.0373"
+      },
+      "pnn": {
+        "true_K3": "2.017810478620",
+        "naive_sum": "2.260905450306",
+        "three_body": "-0.243094971686",
+        "rel_pct": "-10.7521"
+      },
+      "nnp": {
+        "true_K3": "2.017810478620",
+        "naive_sum": "2.260905450306",
+        "three_body": "-0.243094971686",
+        "rel_pct": "-10.7521"
+      },
+      "npn": {
+        "true_K3": "1.920851042951",
+        "naive_sum": "2.260905450306",
+        "three_body": "-0.340054407355",
+        "rel_pct": "-15.0406"
+      },
+      "nnn": {
+        "true_K3": "2.359712777969",
+        "naive_sum": "2.721786796600",
+        "three_body": "-0.362074018631",
+        "rel_pct": "-13.3028"
+      }
+    },
+    "labelling": {
+      "reversal_pnn_vs_nnp": "8.882e-16",
+      "permute_pnp_vs_ppn_pct": "4.1686",
+      "permute_npn_vs_nnp_pct": "5.0477"
+    },
+    "bond_constants": {
+      "pp": "0.489899384255",
+      "pn": "0.676821592386",
+      "nn": "0.907262265533"
+    },
+    "ceiling": {
+      "alpha_MeV": "4.185981363",
+      "B_2H_exact": "2.833163",
+      "B_4He_naive_upper": "17.181143",
+      "model_ratio_upper": "6.064298",
+      "AME_ratio": "12.719632",
+      "shortfall_factor": "2.097461"
+    }
+  },
+  "caveats": [
+    "THE CEILING IS A ONE-SIDED BOUND WITH ONE UNMEASURED INPUT. B(2H) is exact — a single bond admits no many-body term. The B(4He) figure is the naive pairwise sum, which contains no many-body term at all, so it is an upper bound PROVIDED the A=4 many-body terms are non-positive. That is measured for all eight THREE-body terms at A=3 and NOT measured for the genuine FOUR-body term, which needs H_12. The unconditional statement is the weaker and still sufficient one: a pairwise sum with no many-body content gives 6.0643 against 12.7196, and every many-body term measured so far has the sign that makes it worse.",
+    "'Rank one' here is a statement about the functional P -> tr(P.A) restricted to the prefix subalgebra, measured on 20 random words plus the physical configurations — not a proved algebraic rank. The k=1 result is exact to 1e-12 across every prefix tried, which is what the telescoping argument in chain_telescopes_and_ordering_sensitivity_probe already rests on; this reproduces it independently and contrasts it with k=2.",
+    "A=3 traces here are H_9 seminormal and the A=2 bond constants are read off the same machinery, matching the arc's independently recorded L_pp / L_pn / L_nn to all printed digits. Everything is the FRAMED convention (-log(z+d), no writhe normalisation); the framed/normalised choice moves these numbers by 1-3 %, which does not approach the 2.1x shortfall and so cannot affect the conclusion."
+  ]
+}
