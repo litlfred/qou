@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:51:26.039100+00:00",
-  "commitSha": "925b78d10bde5819b9020aa34262bbf521084919",
+  "computedAt": "2026-09-01T04:57:42.554273+00:00",
+  "commitSha": "06d1c010aec6d1913c4c0738bb6302454de594c5",
   "assertions": [
     {
       "name": "A1_bond_is_convex_combination",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "framed_vs_writhe_normalised_bonds_probe",
   "scriptFile": "framed_vs_writhe_normalised_bonds_probe.py",
-  "scriptHash": "8aa2a038c372",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8c099fc3aeef",
+  "scriptCommitSha": "06d1c010aec6d1913c4c0738bb6302454de594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -2,6 +2,18 @@
 """The two arcs are computing FRAMED and WRITHE-NORMALISED bonds — not
 conflicting ones — and the `pn` writhe carries a sign flip.
 
+PARTIALLY SUPERSEDED — READ `pn_writhe_is_not_an_exponent_probe.py`
+------------------------------------------------------------------
+A2 below derives `e_pn = +delta/2` from the operator identity
+`sigma - beta h = (1-beta) sigma + beta sigma^-1`. **The identity is right; the
+value is not.** Feeding its coefficient average into an exponent is the wrong
+operation: the Markov trace is linear and `(1-h)^(e/2)` is defined per diagram,
+so each summand carries its own writhe. Forced back into exponent form the true
+value is `e_eff = 0.149437`, `217x` either `+/-delta/2` — the sign was never the
+live degree of freedom, and that correction is worth `108x` this one. Read A2
+as establishing that the bond is a MIXTURE, not as fixing a value for `e_pn`.
+A1, A4, A5 and A6 stand; the framed branch is untouched throughout.
+
 WHAT THIS SETTLES
 -----------------
 The one real convention difference between this arc and `qou-brng` was the term
