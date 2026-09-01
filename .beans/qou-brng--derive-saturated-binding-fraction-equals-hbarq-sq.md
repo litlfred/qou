@@ -969,6 +969,46 @@ built from braid words alone are available.
 irrep argument). Retraction landed on both surfaces — new probe + the original's
 docstring, 3 print sites and its assertion message.
 
+## 2026-09-01 (third pass) — |det| = 1 does NOT close a d > 2 block
+
+**Third retraction in one arc, and this one reaches the physics.** Section [3c]
+of `irrep_determinant_escape_probe` said "(3,2,1) is det-locked, so the R <= 1
+argument closes that block outright". The det-lock is real; **the closure does
+not follow.** `R <= 1` was derived for a 2x2, where `sum_i log|l_i| = log|det|`
+is one equation on TWO unknowns and pins their ratio. In dimension d it leaves
+`d-2` free — and `dim (3,2,1) = 16`.
+
+**Demonstrated** in the 6-dim regular rep of H_3 (quadratic, braid relation and
+inverse all asserted): `s1^2 s2^2` has `|det| = 1` and log-modulus ratio
+**exactly 2** — moduli `q^4, q^2, q^2, q^-2, q^-2, q^-4`, each checked against
+the exact power of q to 1e-18.
+
+**So the R <= 1 bound is a TWO-DIMENSIONAL fact and does not extend** — which is
+exactly why the blind sector's high-dimensional blocks are not excluded by it.
+
+**Near-miss:** my first test was `s1`, `s1*s2`, `s1*s2*s1` — all ratio 1.0, and
+on those three I was about to retract a *correct* correction. Their 2-dim block
+is elliptic. One more crossing breaks it.
+
+**Two further corrections caught before shipping:**
+1. With the near-unit floor at 1e-15 the enumeration returned ratio **7.75e9**
+   at `AABAAB` and read "reaches 22.25: True". Artefact — four moduli are 1 to
+   within 8.08e-11 (repeated char-poly root), so the ratio divided a real
+   log-modulus by dust. Floor now 1e-8. **Honest max: 5.0 at `abaab` over all
+   5456 words of length <= 6, 0 unresolved. Does NOT reach 22.2457.**
+2. I claimed "the achievable set is DISCRETE — ratios of integers" while
+   printing ROUNDED k beside my own check's "all integers? False" for `Baa`. The
+   rounding hid the counterexample. Measured: all-**positive** words have
+   integer-power moduli; mixed-sign need not (`Baa` -> ratio 2.032154824). Not
+   discrete; only its positive-word part is.
+
+**Unaffected:** the `R <= 1` bound on the bond-letter family stands (genuinely
+2x2, in H_2's regular rep).
+
+**Open:** whether the per-channel R (two eigenvalues of a d-dim block assigned to
+the two isospin channels) is even well-defined — unanswered, and it gates any
+use of the blind sector for the asymmetry.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
