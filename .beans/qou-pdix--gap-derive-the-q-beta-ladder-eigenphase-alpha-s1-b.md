@@ -1344,3 +1344,36 @@ equation on a four-dimensional matrix space, and the classical-point conditions
 do not repair that.
 
 Probe now 7/7.
+
+### On the `t³` discriminator — a cheap FIRST MILESTONE for branch 3, proposed not measured
+
+Entry 5 fixes the one contentful target: *"build the KZ/Stokes connection whose
+monodromy is the `H₃(q)` braiding on `V_(2,1)`, and compute its holonomy angle."*
+That is a large construction. The `t³` discriminator suggests a much smaller
+first check, which either kills the branch or licenses the build.
+
+**The observation.** `α = (z−1)h/2` is **algebraic** in `q`, so its Taylor
+coefficients at `q = 1` are **rational at every order** — `α_C = −t/2 + t²/4 −
+5t³/16`, `α_D = −t/2 + 5t²/4 − t³/2`. But a genuine KZ holonomy angle for `B₃`
+carries the **Drinfeld associator**, whose coefficients are multiple zeta values
+— `ζ(2)` at weight 2, `ζ(3)` at weight 3.
+
+**The proposed test.** Compute only the `t³` coefficient of the KZ holonomy angle
+in the `(2,1)` representation. If a nonzero `ζ(3)` survives into it, that
+coefficient is irrational and cannot equal `−5/16` or `−1/2`: **branch 3 closes
+without building the rest of the connection.** If the `ζ(3)` term collapses — and
+it may, since nested commutators can degenerate in a 2-dimensional
+representation — the branch survives and the full build is licensed.
+
+⚠️ **PROPOSAL, NOT A RESULT.** The rational half is established (`α` is algebraic;
+its coefficients are rational). The `ζ(3)`-survival half is **not checked here**
+and must not be quoted as though it were: whether the weight-3 associator term
+contributes to the *eigenphase* of a 2-dimensional rep is exactly the thing the
+computation would decide. Recorded because it makes the branch's first milestone
+small and falsifiable, not because it settles anything.
+
+Distinct from the exclusion already recorded at entry 4, which is about
+`2cos(α)` being transcendental over `ℚ(q,z)` while Hecke characters are
+algebraic. This one is about the **angle's own Taylor coefficients** versus
+associator `ζ`-values — a different comparison, and it bites on branch 3, which
+that exclusion explicitly does not reach.
