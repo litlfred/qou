@@ -3,6 +3,23 @@
 with `4He` finally measured, the four-body term is negative and the `4He` bound
 becomes unconditional at 3.47x.
 
+TWO CORRECTIONS — SEE `the_alpha_spike_is_an_inverted_stagger_probe.py`
+------------------------------------------------------------------------
+1. **The `3.4693x` headline below is a bad summary.** It is `B(4He)/B(2H)`,
+   which pairs the model's worst undershoot with its **only** overshoot. Across
+   `A = 2..6` the model is within `1.06 .. 1.89x` of AME everywhere except
+   `4He`, a singular outlier at `2.76x`. The ratio is true; as a
+   characterisation of the construction it misleads. The `4He` failure is real
+   and is diagnosed there as an *inverted* odd-even stagger — the model's `B/A`
+   second difference has the opposite sign to AME at `A = 3`, `4` and `5` alike,
+   so it peaks at odd `A` where physics peaks at even `A`.
+2. **The two-row collapse is not a finding of mine.** It is a corollary of
+   theorems this corpus has already proved in Lean: convention D *is* Wenzl
+   level `r = 2` (`wenzlLevel_conventionD`), and `schurPrincipal_eq_zero_iff`
+   gives `s_lambda = 0 <=> l(lambda) > r`. What was new is only the
+   application — nobody had used it to collapse `H_12`. Everything measured
+   below stands; the framing did not.
+
 THE HOLE THIS CLOSES
 --------------------
 `three_body_term_has_the_wrong_sign_probe` (bean `qou-bc09`) bounded

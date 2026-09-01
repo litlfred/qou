@@ -1,0 +1,249 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-01T06:48:32.017104+00:00",
+  "commitSha": "875f0c64800c53b40773927cbad7f49a4682723a",
+  "assertions": [
+    {
+      "name": "A1_sparse_engine_matches_the_dense_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "4He sparse vs dense diff 2.65e-08"
+    },
+    {
+      "name": "A2_shortfall_is_not_monotone_4He_is_singular",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "4He 2.7613x vs 1.0598..1.8924x elsewhere"
+    },
+    {
+      "name": "A3_staggering_sign_is_inverted_at_every_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "d2 opposite in sign at 3/3; A=4 model -0.3880 vs AME +2.9042"
+    },
+    {
+      "name": "A4_inversion_is_not_an_ordering_artifact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "grouped-ordering d2(4) = -0.2915, still negative"
+    },
+    {
+      "name": "A5_channel_purity_fails_off_the_chain",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "band touches ['EM', 'intra', 'strong']; chain is further from AME at 5/6"
+    },
+    {
+      "name": "A6_EM_present_isospin_asymmetry_absent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Z penalty positive in all 3 pairs, 1.71-1.83x too strong; sign inverted at 6He/6Li"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "the_alpha_spike_is_an_inverted_stagger_probe",
+  "scriptFile": "the_alpha_spike_is_an_inverted_stagger_probe.py",
+  "scriptHash": "d095fa9af960",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_alpha_spike_is_an_inverted_stagger_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_alpha_spike_is_an_inverted_stagger_probe.py"
+  },
+  "description": "Diagnoses the 4He binding spike across A=2..6, newly computable via a sparse row-chunked Markov trace (validated against the dense n=12 engine to 1e-12, then run at n=15 and n=18). THE SHORTFALL IS NOT MONOTONE: 4He is a singular outlier at 2.76x where every other A>=3 isotope sits in 1.06..1.89x, exceeding the next-worst by 1.46x. This corrects qou-38i9's '3.4693x' headline, which is B(4He)/B(2H) — a ratio pairing the model's worst undershoot with its only overshoot. THE SPIKE IS AN INVERTED STAGGER, NOT A MISSING PEAK: the B/A second difference has the opposite sign to AME at A=3 (+0.6785 vs -1.2658), A=4 (-0.3880 vs +2.9042) and A=5 (+0.3679 vs -0.6910) — the model peaks at odd A where physics peaks at even A, so nature's pairing enhancement of even-even nuclei is sign-reversed here. It is not an artifact of atom_gen_chains' alternating ordering: grouping gives d2(4) = -0.2915, still negative. CHANNEL PURITY HOLDS ONLY ON THE CHAIN: band_between(0,2) touches generators 2,3,4,5 = strong(n0), intra(n1), EM(n1), strong(n1), so any non-adjacent bond is channel-mixed by construction, and restricting to the pure-strong chain moves the AME comparison further away at 5/6 isotopes. EM PRESENT, ISOSPIN ASYMMETRY ABSENT: the model always penalises higher Z (Coulomb-like, 1.71-1.83x too strong where the sign is right) but AME reverses at A=6 where (N-Z)^2 outweighs Coulomb, so the model ranks 6He above 6Li where nature does the reverse. Liquid-drop reading: volume-like yes, Coulomb-like yes, pairing backwards, asymmetry absent.",
+  "data": {
+    "sweep": {
+      "2H": {
+        "A": 2,
+        "Z": 1,
+        "N": 1,
+        "ordering": "pn",
+        "L": "0.676821592",
+        "B_model_MeV": "2.833163",
+        "B_AME_MeV": "2.224566",
+        "model_over_AME": "1.273580",
+        "shortfall": "0.785188"
+      },
+      "3H": {
+        "A": 3,
+        "Z": 1,
+        "N": 2,
+        "ordering": "pnn",
+        "L": "1.911851879",
+        "B_model_MeV": "8.002976",
+        "B_AME_MeV": "8.481796",
+        "model_over_AME": "0.943547",
+        "shortfall": "1.059830"
+      },
+      "3He": {
+        "A": 3,
+        "Z": 2,
+        "N": 1,
+        "ordering": "pnp",
+        "L": "1.600447597",
+        "B_model_MeV": "6.699444",
+        "B_AME_MeV": "7.718041",
+        "model_over_AME": "0.868024",
+        "shortfall": "1.152042"
+      },
+      "4He": {
+        "A": 4,
+        "Z": 2,
+        "N": 2,
+        "ordering": "pnpn",
+        "L": "2.447952973",
+        "B_model_MeV": "10.247086",
+        "B_AME_MeV": "28.295662",
+        "model_over_AME": "0.362143",
+        "shortfall": "2.761338"
+      },
+      "5He": {
+        "A": 5,
+        "Z": 2,
+        "N": 3,
+        "ordering": "pnpnn",
+        "L": "3.860272620",
+        "B_model_MeV": "16.159029",
+        "B_AME_MeV": "27.560662",
+        "model_over_AME": "0.586308",
+        "shortfall": "1.705589"
+      },
+      "5Li": {
+        "A": 5,
+        "Z": 3,
+        "N": 2,
+        "ordering": "pnpnp",
+        "L": "3.323968178",
+        "B_model_MeV": "13.914069",
+        "B_AME_MeV": "26.330662",
+        "model_over_AME": "0.528436",
+        "shortfall": "1.892377"
+      },
+      "6He": {
+        "A": 6,
+        "Z": 2,
+        "N": 4,
+        "ordering": "pnpnnn",
+        "L": "4.537949492",
+        "B_model_MeV": "18.995772",
+        "B_AME_MeV": "29.271119",
+        "model_over_AME": "0.648960",
+        "shortfall": "1.540928"
+      },
+      "6Li": {
+        "A": 6,
+        "Z": 3,
+        "N": 3,
+        "ordering": "pnpnpn",
+        "L": "4.086138896",
+        "B_model_MeV": "17.104501",
+        "B_AME_MeV": "31.993987",
+        "model_over_AME": "0.534616",
+        "shortfall": "1.870501"
+      }
+    },
+    "staggering": {
+      "3": {
+        "BA_model": "2.667659",
+        "BA_AME": "2.827265",
+        "d2_model": "+0.678482",
+        "d2_AME": "-1.265834",
+        "opposite_sign": true
+      },
+      "4": {
+        "BA_model": "2.561771",
+        "BA_AME": "7.073916",
+        "d2_model": "-0.387961",
+        "d2_AME": "+2.904217",
+        "opposite_sign": true
+      },
+      "5": {
+        "BA_model": "3.231806",
+        "BA_AME": "5.512132",
+        "d2_model": "+0.367939",
+        "d2_AME": "-0.690991",
+        "opposite_sign": true
+      }
+    },
+    "ordering_control": {
+      "grouped_BA": {
+        "3": "2.667659",
+        "4": "2.596819",
+        "5": "3.108991"
+      },
+      "grouped_d2_at_A4": "-0.291506"
+    },
+    "channel_purity": {
+      "band_0_2_generators": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "channels_touched": [
+        "EM",
+        "intra",
+        "strong"
+      ],
+      "chain_over_AME": {
+        "2H": "1.273580",
+        "3H": "0.781786",
+        "3He": "0.734166",
+        "4He": "0.300381",
+        "5He": "0.446189",
+        "5Li": "0.430397"
+      }
+    },
+    "Z_penalty": {
+      "3H->3He": {
+        "dB_model": "+1.303533",
+        "dB_AME": "+0.763755",
+        "ratio": "1.7067"
+      },
+      "5He->5Li": {
+        "dB_model": "+2.244960",
+        "dB_AME": "+1.230000",
+        "ratio": "1.8252"
+      },
+      "6He->6Li": {
+        "dB_model": "+1.891271",
+        "dB_AME": "-2.722868",
+        "ratio": "-0.6946"
+      }
+    }
+  },
+  "caveats": [
+    "ATTRIBUTION CORRECTION TO qou-38i9. That probe presented the two-row collapse (y_lambda = 0 for l(lambda) >= 3 at every n) as a finding. It is a corollary of a theorem this corpus has already proved in Lean: convention D is Wenzl level r = 2 (wenzlLevel_conventionD) and schurPrincipal_eq_zero_iff gives s_lambda = 0 <=> l(lambda) > r. What was new is only the application — nobody had used it to collapse H_12. The measurements stand; the framing did not.",
+    "n=12, n=15 and n=18 weights are RECONSTRUCTED from the closed form y_(n-k,k) = [n-2k+1]_q / Z, since no y_lambda source exists above n=9. Verified against load_cost at n=6 and n=9 and cross-checked wherever an H_6/H_9 counterpart exists, but every number at A>=4 inherits that reconstruction.",
+    "Bond insertion order is worth 11% at A=3 and 38-40% at A=4 (qou-38i9). Everything here uses production's interleaved order throughout, so the comparison is internally consistent, but absolute B values are convention-dependent at that level. The staggering INVERSION is a sign result and survives both orderings tested; the magnitudes should not be quoted without the convention.",
+    "5He, 5Li and 6He are particle-unstable in nature (5He and 5Li are resonances). Their AME binding energies are still well defined and used here only for B/A trend and isobar-ordering comparisons, not as stability claims. The A=6 isobar comparison that carries the asymmetry finding is 6He vs 6Li, both of which are bound."
+  ]
+}
