@@ -176,18 +176,38 @@ def main() -> int:
     print("  made the p-n range parametrically larger than it is.")
     print()
 
-    closed = h * dx / (2 * mp.sqrt(1 + h**2 / 4))
+    t = h + 2 * d_pn
+    Dt = (h + d_pn) * d_pn - 1
+    root = mp.sqrt(t * t - 4 * Dt)
+    exact = 2 * t / (root + t)              # EXACT, no expansion
+    approx = h * dx / (2 * mp.sqrt(1 + h**2 / 4))   # small-t expansion
     meas = 1 - ratio(d_pn)
-    print("  closed form:  1 - r ~ t/sqrt(-D) = h*delta / (2*sqrt(1 + h^2/4))")
-    print(f"    predicted {fmt(closed)}   measured {fmt(meas)}")
-    print(f"    relative error {fmt(abs(closed - meas) / meas, 4)}")
-    assert abs(closed - meas) / meas < mp.mpf("1e-3"), "closed form must match"
+    print("  EXACT closed form (no expansion):")
+    print("    1 - r = 2t / (sqrt(t^2 - 4D) + t),   t = h*delta/2, D = det < 0")
+    print(f"      exact    {fmt(exact)}")
+    print(f"      measured {fmt(meas)}   agree to "
+          f"{fmt(abs(exact - meas), 4)}")
+    assert abs(exact - meas) < mp.mpf("1e-40"), "exact form must be exact"
+    print("\n  the small-t EXPANSION, kept only to show what it costs:")
+    print("    1 - r ~ t/sqrt(-D) = h*delta/(2*sqrt(1 + h^2/4))")
+    print(f"      approx   {fmt(approx)}")
+    print(f"      DROPPED  {fmt(approx - exact, 6)}   "
+          f"({fmt(abs(approx - exact) / exact, 6)} relative)")
     print()
 
-    xi = 1 / meas
+    r_ex = ratio(d_pn)
+    xi = -1 / mp.log(r_ex)                 # EXACT
+    xi_approx = 1 / (1 - r_ex)             # the 1/(1-r) shortcut
     print("WHAT IT EXPLAINS — the Z*N overshoot is not a separate defect")
     print("-" * 78)
-    print(f"  correlation length xi = -1/log(r) ~ 1/(1-r) = {fmt(xi, 6)} spacings")
+    print(f"  correlation length xi = -1/ln(r) = {fmt(xi, 12)} spacings  (EXACT)")
+    print(f"    the 1/(1-r) shortcut gives      {fmt(xi_approx, 12)}, "
+          f"off by {fmt(xi_approx - xi, 4)}")
+    print("  -- small here, but it COMPOUNDS in r^(s-1): the two rs differ by")
+    print("     1e-8 at s=2 and 7.2e-5 at s ~ xi, so a downstream sum over")
+    print("     separations inherits the larger error, not the smaller one.")
+    print("  delta itself is flavor_split_LEADING -- a leading term, not an")
+    print("  exact quantity -- so everything here inherits THAT truncation too.")
     print("  Every p-n pair in ANY nucleus is deep inside that length, so a")
     print("  pairwise model counts all Z*N of them at essentially full strength.")
     print("  That is exactly the overshoot spectral_gap_bond_decay_probe found:")
