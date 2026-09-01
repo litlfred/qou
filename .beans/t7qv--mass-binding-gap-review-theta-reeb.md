@@ -1634,3 +1634,76 @@ model to A=4; the only A=4 number reported is the exact chain value.
 **Also recorded**: the ordering dependence is a modelling ambiguity the corpus
 resolves by convention (`ordering(Z,N)` interleaves protons first → pnp, pnn).
 Neither topology eliminates the artefact; all-pairs minimises it.
+
+## 2026-09-01 — three channels, three rates, OPPOSITE SIGNS — and exactly independent
+
+`computations/probes/force_channels_are_separable_probe.py`, 6/6.
+Owner: *"The rates should probably differ based on whether it is em strong or
+weak nuclear force. don't necessarily assume that these are independent."*
+Both halves answered, and they land **opposite ways**.
+
+**The corpus already labels channels by generator** — quoted, not invented:
+`atom_gen_chains` "Inter-nucleon crossings (**strong force**, gen 0)";
+`build_atom_nf` "Electrons: pe crossing (**EM channel**, gen=1)". Lifted to the
+3A-strand braid:
+
+    gen 3k+2  STRONG (inter-nucleon bond)
+    gen 3k+1  EM     (electron pe crossing)
+    gen 3k    intra  (nucleon's own quark-pair slot)
+
+**Caveat**: `atom_braid_word_3A` contains **NO electrons at all** — the EM
+channel lives only in the collapsed H_3 formalisms. Putting one `sigma^-1` per
+proton on that proton's `3k+1` generator is *my* lift, flagged in the witness.
+
+**THE RATE IS SET BY THE GENERATOR, NOT BY beta.** The electron crossing is
+`sigma^-1`, beta = 1 — **the same beta the strong n-n bond carries**. Placing
+that identical operator on each generator of H_9:
+
+    gen 0  +0.437359834237   intra, proton
+    gen 1  -0.599674300310   EM,    proton
+    gen 2  +0.907262265533   STRONG
+    gen 3  +0.506807726417   intra, neutron
+    gen 4  -0.784421240488   EM,    neutron
+    gen 5  +0.907262265533   STRONG
+    gen 6  +0.506807726417   intra, neutron
+    gen 7  -0.784421240488   EM,    neutron
+
+**Same beta, OPPOSITE SIGN.** Strong binds, EM **anti-binds**, intra binds. The
+owner's expectation confirmed as strongly as possible.
+
+**Channel-specific flavour dependence too**: STRONG is flavour-**independent**
+(gens 2 and 5 agree to 1e-12 though one is flanked p-n and the other n-n — the
+strong bond depends only on its own beta, flavour entering solely via the beta
+rule); EM is 31% flavour-split (p -0.599674 vs n -0.784421); intra 16%.
+
+**THE CHANNELS ARE EXACTLY INDEPENDENT** — tested in the hardest case, where the
+strong channel is NOT additive with itself:
+
+    3H   strong(all pairs) 2.017810479  EM -0.599674300  both 1.418136178
+         cross-channel interference +6.7e-16
+         strong-with-ITSELF non-additivity -2.4e-1
+    3He  strong(all pairs) 1.676935518  EM -1.199348601  both 0.477586918
+         cross-channel interference  0.0e+00
+         strong-with-ITSELF non-additivity -1.7e-1
+
+**Fifteen orders apart, in the very same words.** So: the strong channel
+interferes with itself and **not at all** with EM. Multiple electrons are also
+exactly additive among themselves (-1.199348601 = 2 x -0.599674300).
+
+**AND THAT SETTLES A SCOPE QUESTION.** EM is large and anti-binding, so
+including it wrecks the comparison: `L(3H)/L(3He)` goes 1.20327 (strong only,
++9.5%) -> 2.96938 (with electrons, +170.2%) against experiment 1.09896, because
+3He's two electrons nearly cancel its strong binding (1.676936 - 1.199349 =
+0.477587). But **AME binding energies are NUCLEAR and carry no electron
+content**, so strong-only is the correct comparand. This **retroactively
+justifies the scope of the four preceding probes** rather than undermining them.
+
+**The weak channel is NOT addressed**: nothing in `pyhecke.atom` assigns it a
+generator or a crossing. The owner named three forces; only two are represented.
+Whether weak is meant to have a slot, or is deliberately absent, is not
+something this probe can settle — flagged for the owner.
+
+**Also flagged**: L_EM = -0.5997 per electron is comparable in size to the
+strong bond constants, whereas physical atomic EM binding is ~13.6 eV against
+nuclear MeV. If the term carries electron REST MASS (0.511 MeV) that is roughly
+right, but the dimensionless traces carry no normalisation to check it.
