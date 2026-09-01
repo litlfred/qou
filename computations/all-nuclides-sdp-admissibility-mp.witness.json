@@ -1,15 +1,58 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T13:04:44.096154+00:00",
-  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
-  "assertions": [],
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T16:01:59.055250+00:00",
+  "commitSha": "39a92a9eee847b8a208fb855caa75a2a542ee529",
+  "assertions": [
+    {
+      "name": "nf_overflow_count",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "mp.isfinite(net) on every built NF; the f64 producer this supersedes overflowed for A>=163"
+    },
+    {
+      "name": "nf_build_fail_count",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "build_atom_nf_mp raised on no row"
+    },
+    {
+      "name": "lp_error_count",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "solve_operator_selection_lp raised on no row"
+    },
+    {
+      "name": "rows_carrying_mpfr_dual",
+      "computed": "4932",
+      "expected": "4932",
+      "passed": true,
+      "source": "every row carries y0_star_str, i.e. no row's dual silently degraded to f64"
+    },
+    {
+      "name": "z82_nuclides_solved",
+      "computed": "161",
+      "expected": "161",
+      "passed": true,
+      "source": "Z=82 shell fully solved; guarded non-empty below"
+    },
+    {
+      "name": "z82_shell_non_empty",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Z=82 is reached AT ALL -- the f64 producer could not reach it. Asserted as a positivity flag, not as the observed count: pinning the count would fail on any legitimate change of scan range. It is what stops the solved==nuclides check above from passing vacuously on an empty shell, which is exactly Z=126's state here (0 of 0)"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 23,
   "computation": "all-nuclides-sdp-admissibility-mp",
   "scriptFile": "all_nuclides_sdp_admissibility_mp.py",
-  "scriptHash": "5730d66be2f6",
-  "scriptCommitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
+  "scriptHash": "c1cdbd7e989e",
+  "scriptCommitSha": "39a92a9eee847b8a208fb855caa75a2a542ee529",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +67,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

@@ -535,7 +535,7 @@ def main():
         "computation": "markov-trace-weights-wenzl",
         "description": (
             "Exact block weights of the canonical Markov trace "
-            "(tr(1)=1, tr(x sigma_n)=z tr(x), z=1/(q^{1/2}+q^{-1/2})) on "
+            "(tr(1)=1, tr(x sigma_n)=z tr(x), z=q^3/(q^2+1), convention D) on "
             "H_n(q), n<=%d, at rational s=q^{1/2} samples; identified "
             "hook-content closed form w_lambda = prod_cells "
             "(z q^{c} - z_- q^{-c})/(q^{h} - q^{-h}) with "
@@ -553,11 +553,30 @@ def main():
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _sys.path.insert(0, os.path.join(here, "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "markov-trace-weights-wenzl", witness,
         script_path=__file__, engine="python", start_time=_T0,
         output_dir=here,
-    ).save()
+    )
+    # `all_match` is this script's EXIT CODE and its printed verdict ("closed
+    # form CONFIRMED exactly at all sampled rational s"), and every per-lambda
+    # `match` is an EXACT sympy Rational equality -- yet all of it reached the
+    # witness only as data while it shipped `allPassed: true` over an EMPTY
+    # assertion list (bean qou-srvu). The bar is zero mismatches: the claim is
+    # exact equality of the hook-content closed form with the solved weight,
+    # so there is no tolerance to fit.
+    _n_mismatch = sum(
+        1 for v in results.values()
+        for d in v["per_lambda"].values() if not d["match"]
+    ) + sum(1 for v in results.values() if not v["a2_matches_closed_form"])
+    _wb.add_assertion(
+        "hook_content_closed_form_equals_solved_block_weight_exactly",
+        computed=str(_n_mismatch), expected="0", tolerance="0",
+        source=("w_lambda = prod_cells (z q^c - z_- q^-c)/(q^h - q^-h), "
+                "z_- = z - (q - q^-1); Ocneanu/HOMFLY form at a^2 = z/z_-"),
+    )
+    _wb.add_parameter("n_lambda_equalities_checked", n_checked)
+    out = _wb.save()
     print("witness written:", out)
     return 0 if all_match else 1
 

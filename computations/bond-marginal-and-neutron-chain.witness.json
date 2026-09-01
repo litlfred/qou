@@ -1,0 +1,151 @@
+{
+  "schema": "witness/v1",
+  "name": "bond-marginal-and-neutron-chain",
+  "description": "Marginal (not average) bond energy for the pure-proton and pure-neutron chains at A = 2,3,4 by the column-sparse Schur-Weyl route, and the relative-decline discriminator for whether the B_pp decline measured in qou-gcmn carries charge information.",
+  "beans": [
+    "qou-gcmn",
+    "qou-brng",
+    "qou-o6ml"
+  ],
+  "scope": "(a) scope-limited measurement; nothing refuted, nothing wired",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "committed_B_pp_A2": "2.12836094575708",
+    "A_list": [
+      2,
+      3,
+      4
+    ],
+    "chains": {
+      "pp": {
+        "2": {
+          "B_total_MeV": "2.128360945757083002984978",
+          "B_avg_per_bond_MeV": "2.128360945757083002984978",
+          "B_marginal_MeV": "2.128360945757083002984978",
+          "n_strands": 6,
+          "n_crossings_inter_on": 23,
+          "n_crossings_inter_off": 22,
+          "crossing_types": {
+            "averaged": 4,
+            "sigma": 13,
+            "sigma_inv": 6
+          },
+          "max_dim": 9
+        },
+        "3": {
+          "B_total_MeV": "3.93268521506047772226639",
+          "B_avg_per_bond_MeV": "1.966342607530238861133195",
+          "B_marginal_MeV": "1.804324269303394719281411",
+          "n_strands": 9,
+          "n_crossings_inter_on": 35,
+          "n_crossings_inter_off": 33,
+          "crossing_types": {
+            "averaged": 6,
+            "sigma": 20,
+            "sigma_inv": 9
+          },
+          "max_dim": 48
+        },
+        "4": {
+          "B_total_MeV": "5.554756840629009638693526",
+          "B_avg_per_bond_MeV": "1.851585613543003212897842",
+          "B_marginal_MeV": "1.622071625568531916427136",
+          "n_strands": 12,
+          "n_crossings_inter_on": 47,
+          "n_crossings_inter_off": 44,
+          "crossing_types": {
+            "averaged": 8,
+            "sigma": 27,
+            "sigma_inv": 12
+          },
+          "max_dim": 297
+        }
+      },
+      "nn": {
+        "2": {
+          "B_total_MeV": "2.435584783746245594432895",
+          "B_avg_per_bond_MeV": "2.435584783746245594432895",
+          "B_marginal_MeV": "2.435584783746245594432895",
+          "n_strands": 6,
+          "n_crossings_inter_on": 23,
+          "n_crossings_inter_off": 22,
+          "crossing_types": {
+            "averaged": 4,
+            "sigma": 10,
+            "sigma_inv": 9
+          },
+          "max_dim": 9
+        },
+        "3": {
+          "B_total_MeV": "3.376754267491760844672683",
+          "B_avg_per_bond_MeV": "1.688377133745880422336341",
+          "B_marginal_MeV": "0.9411694837455152502397877",
+          "n_strands": 9,
+          "n_crossings_inter_on": 35,
+          "n_crossings_inter_off": 33,
+          "crossing_types": {
+            "averaged": 6,
+            "sigma": 15,
+            "sigma_inv": 14
+          },
+          "max_dim": 48
+        },
+        "4": {
+          "B_total_MeV": "3.722495003950136568863714",
+          "B_avg_per_bond_MeV": "1.240831667983378856287905",
+          "B_marginal_MeV": "0.3457407364583757241910312",
+          "n_strands": 12,
+          "n_crossings_inter_on": 47,
+          "n_crossings_inter_off": 44,
+          "crossing_types": {
+            "averaged": 8,
+            "sigma": 20,
+            "sigma_inv": 19
+          },
+          "max_dim": 297
+        }
+      }
+    },
+    "max_relative_profile_separation": "0.3604990180602762313960094",
+    "profiles_track": false,
+    "nn_over_pp_low_A": "1.144347620454893970759358",
+    "nn_over_pp_high_A": "0.6701454466418387134295188",
+    "ratio_crosses_unity": true
+  },
+  "assertions": [
+    {
+      "name": "machinery validated on the pp leg against the committed value",
+      "passed": true,
+      "detail": "The nn leg has no committed twin, so this is the only anchor the construction has; it is the same anchor the previous probe used."
+    },
+    {
+      "name": "same crossing COUNT and same bond count; the words differ by a one-for-one sigma <-> sigma_inv trade",
+      "passed": true,
+      "detail": "If the two words agreed, B_nn would equal B_pp identically and the charge question could not be asked. MEASURED: the 'averaged' count is IDENTICAL on the two chains at every A; the entire difference is sigma traded for sigma_inv, one for one. That is the p -> sigma, n -> sigma_inv identification appearing as a measurement. Both chains also toggle exactly A-1 crossings under include_inter, so the per-bond divisor is the same object on both legs."
+    },
+    {
+      "name": "the marginal bond declines FASTER than the reported average, on both chains",
+      "passed": true,
+      "detail": "The previously reported 13.0 % pp drop is a running mean of a faster-moving quantity. The marginal is what an assembly model needs; the average is what was published in the previous probe."
+    },
+    {
+      "name": "the relative decline profile is reported, and its verdict stated explicitly rather than left to the reader",
+      "passed": true,
+      "detail": "max separation 0.360499; verdict = SEPARATE profiles (charge-bearing). This check records the measurement; it does not assert a direction, because either outcome is informative."
+    },
+    {
+      "name": "the nn/pp bond ratio crosses 1 inside the measured range",
+      "passed": true,
+      "detail": "nn/pp = 1.1443476 at A=2, 0.67014545 at A=4. A single multiplicative charge factor on the bond cannot produce a ratio that changes SIDE of 1; whatever distinguishes the two species is A-dependent, not a constant."
+    },
+    {
+      "name": "scope stated before the conclusion, not after",
+      "passed": true,
+      "detail": "Pure chains, three points, one anchored leg, no extrapolation."
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6
+}

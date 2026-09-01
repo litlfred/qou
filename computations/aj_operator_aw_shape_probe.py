@@ -218,12 +218,44 @@ def main() -> int:
         "verdict": verdict,
         "scope": "(a) scope-limited: constrains this identification as-is, not the AW ingredient",
     }
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. Every check below already existed in `payload["checks"]`
+    # -- and three of them are already `assert`ed in Python above, so the script
+    # DOES fail loudly on a regression; what was missing is any of that reaching
+    # the witness, where the audit and every downstream consumer look. Nothing
+    # new is claimed; the existing claims become visible.
+    #
+    # No tolerance anywhere: this file's own `tier` field states the checks are
+    # "exact sympy identities; no fit, no parameters", so each bar is exact
+    # equality and `expected` is a structural count, never a fitted number.
     from witness_base import WitnessBuilder  # noqa: E402
-    out = WitnessBuilder.wrap_legacy(
-        "aj-operator-aw-shape-probe", payload,
-        script_path=__file__, engine="sympy",
-        engine_version=sp.__version__, start_time=t0,
-    ).save()
+    _checks = payload["checks"]
+    _flat = {k: v for k, v in _checks.items() if isinstance(v, bool)}
+    _newton = _checks["lambda_newton_form_ok_N"]
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "aj-operator-aw-shape-probe", payload,
+            script_path=__file__, engine="sympy",
+            engine_version=sp.__version__, start_time=t0,
+        )
+        .add_assertion(
+            "exact_structural_checks_holding_count",
+            computed=str(sum(1 for v in _flat.values() if v)),
+            expected=str(len(_flat)),
+            source="the named scalar checks of `checks` (Jones anchor, "
+                   "termination stability, bar symmetry, multiplier bar-parity, "
+                   "B_k == 0, Casoratian == 0, q-Hermite C_n != 0); expected is "
+                   "how many this script constructs",
+        )
+        .add_assertion(
+            "lambda_newton_form_verified_N_count",
+            computed=str(sum(1 for v in _newton.values() if v)),
+            expected=str(len(_newton)),
+            source="J_N(4_1;q) = sum_k prod_j (Lambda_N - lam_j) verified per N; "
+                   "expected is the number of N values probed",
+        )
+        .save()
+    )
     print(f"  Witness: {out}")
     return 0
 

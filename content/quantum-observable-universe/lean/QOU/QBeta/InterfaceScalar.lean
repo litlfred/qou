@@ -281,6 +281,79 @@ theorem alpha_upper_bound (a mu B : ℝ) (ha : 0 < a) (hmu : 0 < mu)
 
 end EnergyFloor
 
+section FunctionalIsTheLog
+
+/-! ### Which functional carries a multiplicative trace to an additive energy
+
+`docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+§10a argues the binding functional is *derived* rather than chosen: `tr_M` is
+multiplicative over independent subsystems (`tr_atom = tr_free * Prod_bonds mu_k`,
+measured there to 1.2e-31) and energy is extensive, so the map from trace to
+energy satisfies Cauchy's `f(xy) = f(x) + f(y)` and the log form is forced.
+
+That argument lived only in audit prose. The five-path grep in
+`docs/audits/2026-08-25-deuteron-attack-c-convergence.md` recorded **"Lean:
+nothing"**, and that part was correct. This section supplies the half that is
+mechanically checkable.
+
+**What is proved here, and what is not.** The *comparison* the corpus actually
+runs — log versus linear, the two candidates §10a weighs — is proved: the log
+form is extensive, the linear form is not, its failure has an exact closed form,
+and it carries a ceiling that kills it above A = 2 independently of extensivity.
+The *uniqueness* step ("the only continuous solutions of Cauchy's equation on
+`(R_+, x)` are `c log x`") is a classical theorem that is **not** formalised
+here, so "forced" still rests on it. Do not cite this section as a formalisation
+of §10a's uniqueness claim. -/
+
+/-- **The log form is extensive.** A product of bond scalars becomes a sum of
+bond energies — the property §10a requires of the trace-to-energy map. -/
+theorem logForm_extensive (a x y : ℝ) (hx : 0 < x) (hy : 0 < y) :
+    -a * Real.log (x * y) = -a * Real.log x + -a * Real.log y := by
+  rw [Real.log_mul (ne_of_gt hx) (ne_of_gt hy)]
+  ring
+
+/-- **The linear form's extensivity defect, in closed form.** For the rival
+candidate `B = a(1 - t)` the failure is exactly `-a(1-x)(1-y)` — an identity, so
+it needs no positivity hypothesis and no anchor.
+
+This sharpens §10a, which reports the defect as a single measured number. That
+number is **convention-C frame**: the audit is dated one day before the
+2026-08-09 convention-D excision. Re-measured at the proton pin with
+`mu_pp = z`, `mu_nn = z - h`:
+
+    convention C   z = sqrt(q)/(q+1)   defect = 1.487498   <- the audit's 1.4875
+    convention D   z = q^3/(q^2+1)     defect = 0.966887
+
+The conclusion is unaffected in either convention — the closed form vanishes only
+when `x = 1` or `y = 1` — but the quoted figure needs the scope. -/
+theorem linearForm_extensivity_defect (a x y : ℝ) :
+    a * (1 - x * y) - (a * (1 - x) + a * (1 - y)) = -(a * ((1 - x) * (1 - y))) := by
+  ring
+
+/-- **The linear form is not extensive**, whenever neither bond scalar is
+trivial. `x = 1` or `y = 1` is the degenerate case of a bond that contributes
+nothing, so on any bond that binds at all the linear form fails. -/
+theorem linearForm_not_extensive (a x y : ℝ) (ha : a ≠ 0) (hx : x ≠ 1) (hy : y ≠ 1) :
+    a * (1 - x * y) - (a * (1 - x) + a * (1 - y)) ≠ 0 := by
+  rw [linearForm_extensivity_defect]
+  simp only [neg_ne_zero]
+  exact mul_ne_zero ha (mul_ne_zero (sub_ne_zero.mpr (Ne.symm hx))
+    (sub_ne_zero.mpr (Ne.symm hy)))
+
+/-- **The linear form's ceiling.** Because the atom trace is positive,
+`B_lin = a(t_free - t_atom)` is strictly bounded by `a * t_free` — no choice of
+word or convention escapes it.
+
+§10a's table is this bound in the open: with `t_free ~ 1` at every `A`, the
+ceiling sits near `a ~ 4.19 MeV`, so `B_AME` at ³H (8.48), ⁴He (28.30) and ⁷Li
+(39.24) is unreachable. That is a second, independent reason to reject the linear
+form, and unlike extensivity it does not depend on the convention. -/
+theorem linearForm_ceiling (a t_free t_atom : ℝ) (ha : 0 < a) (ht : 0 < t_atom) :
+    a * (t_free - t_atom) < a * t_free := by
+  nlinarith [mul_pos ha ht]
+
+end FunctionalIsTheLog
+
 section WeightsDetermineZ
 
 variable {R : Type*} [Field R]
@@ -515,6 +588,57 @@ theorem content_keyed_interface_refuted
   linarith
 
 end ChannelSelection
+
+section SpaceIndexSeparability
+
+/-! ### Can a space index break the pn degeneracy?
+
+Bean `qou-vbyi` proposes a **space index** on the interface as *"the only route
+past the proved flavour-only degeneracy"*, on the strength of `qou-kj4v`'s
+observation that in the Standard Model the ³S₁/¹S₀ split is the tensor force —
+a spin-**space** coupling — and that *"the Hecke interface has one index (the
+strand) and no space index to carry it."*
+
+The reading of that as "add a space factor" does not survive a check, and the
+reason is in `qou-kj4v`'s own sentence: *"In S-wave Pauli LOCKS spin to isospin
+(**space symmetric** ⇒ spin and isospin symmetry opposite)."* **Both pn channels
+are S-wave**, `L = 0` — ³S₁ and ¹S₀ are both `S` in `²ᴹ⁺¹L_J`. So a factor keyed
+on `L` takes the *same* value on both, and a common factor cannot separate what
+was already equal.
+
+The theorem below states this for an arbitrary separable interface, so it covers
+any space index entering multiplicatively, keyed on anything constant across the
+two channels — not merely `L`. -/
+
+variable {R : Type*} [CommMonoid R]
+
+/-- **A separable interface stays degenerate on the two pn channels, whatever
+space index it carries.**
+
+The hypotheses encode the Pauli lock exactly as `qou-kj4v` states it: the
+triplet is `(S = 1, T = 0)` and the singlet `(S = 0, T = 1)`, and the *same* two
+projector scalars `μ₊`, `μ₋` appear in each SU(2) with the roles exchanged. The
+space factor is applied at one and the same `ell`, which is the physical input —
+both channels are S-wave.
+
+The conclusion holds for **every** `fSpace`, so no choice of space index rescues
+a separable interface. What the tensor force does in the Standard Model is
+*couple* spin to space; a product of a spin function and a space function is
+precisely what a coupling is not. -/
+theorem separable_interface_degenerate
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 * fIso t0 * fSpace ell = fSpin s0 * fIso t1 * fSpace ell := by
+  rw [hplus, hminus, mul_comm (fIso t1) (fIso t0)]
+
+/-- The bare form: a factor common to both channels cannot break a degeneracy
+that already holds. Stated separately because it is what makes the theorem above
+independent of *why* the space factor is common. -/
+theorem common_factor_preserves_degeneracy (x y g : R) (h : x = y) :
+    x * g = y * g := by rw [h]
+
+end SpaceIndexSeparability
 
 section ConjugationInvariance
 

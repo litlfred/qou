@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T13:37:23Z
+updated_at: 2026-09-01T03:23:39Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -604,3 +604,256 @@ quota is the mechanism, that is the only window where a review can appear.
 Recorded, not acted on. I am not re-requesting on #6180 — AGENTS.md's own
 corrected row says reviews are rationed and not to re-request after every push,
 and the closure above is right that another same-day zero buys nothing.
+
+## THE REQUESTED DATAPOINT, 2026-08-30 14:45Z — recharge > 5 h 40 m, with one honesty caveat
+
+This bean's own closing instruction — *"the next session that requests a review
+on its first substantive PR will produce the datapoint for free"* — is now
+discharged. It did, and here it is.
+
+| | |
+|---|---|
+| PR | [`qou#6157`](https://github.com/litlfred/qou/pull/6157) |
+| request fired | **2026-08-30 13:36:43Z**, via `request_copilot_review` |
+| PR content | 1 Lean file (3 sorry-free defect fixes), 1 new probe + witness, 3 bean bodies — substantive, not a beans-only change |
+| merged | 14:25Z (rebase-merge, `85959c78c0`) |
+| `get_reviews` at 13:45Z | `[]` |
+| `get_reviews` at **14:45Z** | **`[]`** |
+| elapsed since request | **≥ 1 h 09 m** |
+| elapsed since exhaustion (07:56:40Z) | **5 h 40 m** |
+
+**So the recharge lower bound moves from `> ~2 h 13 m` to `> 5 h 40 m`**, and
+unlike the four rows above this one **is** a requested PR, so it bears on the
+quota reading rather than only on the push trigger.
+
+### 🛑 The caveat, and it is load-bearing
+
+**I did not record the `request_copilot_review` response body verbatim.** The
+call returned without raising and I read that as "not quota-blocked" — but that
+was an *inference*, and this bean's earlier entries note that quota refusals
+arrive as a message (*"the user who requested the review has reached their quota
+limit"*) rather than as an error. So I cannot rule out that the request was
+refused in its payload and I did not look.
+
+What is solid either way: **no review existed at ≥ 1 h 09 m after a request
+attempt on a substantive PR.** The two readings — request accepted and unserved,
+or request refused on quota — differ on *why*, not on the observation. Only the
+first tightens the recharge bound; the second would instead be direct evidence
+the ration was still spent at 13:36Z, which is also useful and also new.
+
+**Instruction for the next agent, because this is a cheap fix:** when you fire
+`request_copilot_review`, **paste its response body into this bean**. It costs
+one line and it is the difference between a datapoint that discriminates and one
+that does not. I lost that distinction here for no reason.
+
+### A second, weaker row now accruing
+
+[`qou#6254`](https://github.com/litlfred/qou/pull/6254) was created 14:34Z and
+has taken three pushes since, **with no review requested**. That is the same
+censored-negative configuration as `fa#156` / `#6189` above and will bear on the
+push trigger once the window is long enough to matter — at ~16 min it is not yet
+worth anything. Noted so it is checked rather than re-derived.
+
+
+## FOLLOWING MY OWN INSTRUCTION, 14:50Z — the response body, verbatim
+
+Fired `request_copilot_review` on
+[`qou#6254`](https://github.com/litlfred/qou/pull/6254) at **2026-08-30 ~14:50Z**.
+Response body, verbatim and complete:
+
+```
+(mcp__github__request_copilot_review completed with no output)
+```
+
+**Empty. Not a quota message.** That is the discriminator this bean has been
+missing, and it is cheap: per the entries above, a quota refusal arrives as
+*text* (*"the user who requested the review has reached their quota limit"*),
+while an accepted request returns **nothing at all**. So the response body does
+distinguish the two readings, and recording it costs one line.
+
+### What this does and does not do to the 13:36Z row
+
+**It does not upgrade it.** Same tool, same session, same account, so the 13:36Z
+request very likely also returned empty — but that is an inference about an
+observation I did not make, and this bean has been burned by exactly that class
+of reasoning. The `qou#6157` row above stays as written: *no review at ≥ 1 h
+09 m after a request attempt*, cause undetermined between "accepted and unserved"
+and "refused on quota".
+
+**It does set up a clean one.** `#6254`'s request is now *known accepted* at
+14:50Z, which is **6 h 53 m** after exhaustion at 07:56:40Z. If no review
+arrives, the recharge lower bound becomes `> 6 h 53 m` on an **unambiguous**
+request — strictly better evidence than the `#6157` row, which cannot separate
+the two causes. If one does arrive, it bounds the recharge from **above** for
+the first time, which is the measurement this bean has never had.
+
+Either outcome is worth having, and neither costs another request. Check-in
+armed; result to be appended here.
+
+### Standing note for the tool, not just this bean
+
+`request_copilot_review` returning empty-on-success and text-on-refusal means
+**every** call site that fires it should record the body. An agent that reports
+"requested a review" without it has produced an observation that cannot be used
+for anything.
+
+
+## 2026-08-31 02:46Z — THE DAY-BOUNDARY ROW. This is the discriminator the 12:26Z entry asked for, and it comes back zero
+
+The 12:26Z entry above closes by naming what would discriminate:
+
+> a request on a fresh PR after a **multi-hour** quiet window spanning a UTC day
+> boundary. If a day-scoped quota is the mechanism, that is the only window
+> where a review can appear.
+
+That window has now been observed.
+
+| | |
+|---|---|
+| PR | [`qou#6254`](https://github.com/litlfred/qou/pull/6254) |
+| request fired | **2026-08-30 ~14:50Z** |
+| response body | **empty** — recorded verbatim (see the entry above), no quota message |
+| `get_reviews` at **2026-08-31 02:46Z** | **`[]`** |
+| elapsed | **≥ 11 h 56 m** |
+| elapsed since presumed exhaustion (08-30 07:56:40Z) | **18 h 49 m** |
+| spans 00:00Z day boundary | **yes** — 9 h 10 m before it, 2 h 46 m after |
+
+**Two things this settles, and one it does not.**
+
+**1. It is absence, not latency.** AGENTS.md's corrected row records the two
+measured *positive* latencies: `qou#6122` at **~3 min** and
+`folio-assistant#153` at **~4 min**. Eleven hours fifty-six is ~**200×** that.
+Nothing about this row is consistent with a review that is merely slow.
+
+**2. Day-scoped quota is now the *worst*-supported of the three candidates.**
+Under the working inference that an empty response body means accepted (a
+refusal returns text — established one entry above), the request was live and
+unserved when 00:00Z passed. A day-scoped ration that reset at the boundary had
+**2 h 46 m** to serve it and did not.
+
+**3. What it does NOT settle**, and the assumption is worth naming: I do not
+know that an accepted request *persists* across a day boundary. If acceptance
+merely acknowledges receipt and the work is dropped when unserved, the boundary
+is irrelevant and this row reduces to a very long censored negative. That
+alternative is not excluded by anything measured here. So the honest form is:
+**either day-scoped quota is refuted, or acceptance does not imply enqueueing** —
+and the second is itself a finding, because it would mean the empty response
+body carries less information than the entry above credits it with.
+
+Both readings agree the recharge bound is now **> 18 h 49 m** from the presumed
+exhaustion, which supersedes the `> 5 h 40 m` two entries up and the `> ~2 h 13 m`
+before that.
+
+**Not re-requesting**, per the standing discipline in this bean. The next free
+datapoint is whatever a fresh session's first PR produces; nothing here needs to
+be bought.
+
+
+---
+
+## Data point 2026-08-31 ~19:47 UTC — TWO zeros, with a confound I am naming
+
+Requested `request_copilot_review` on **qou#6404** and **qou#6405** at ~19:37-19:38
+UTC. Both calls returned with **no output and no quota error** — so neither was
+refused for quota, unlike the five-in-30-minutes run of 2026-08-30. Checked
+`pull_request_read get_reviews` on both at ~19:43 and again at ~19:47:
+**`[]` on both, four checks total.** That is ~10 minutes, well past the 3-4 min
+arrival measured on qou#6122 and folio-assistant#153.
+
+**The confound, stated because it may be the whole answer.** I pushed twice to
+#6405 after requesting (`be3797f5e5`, `133346a904`). If a review request is
+bound to the head SHA it was made against, those pushes could have superseded it
+— which would make #6405's zero uninformative. **#6404 has no such confound**:
+one commit, `c031248eb9`, unchanged since 19:24, requested at 19:38, zero at
+19:47. So the clean observation is n=1, not n=2.
+
+**What this does and does not support.** It is consistent with the historical
+zero pattern and inconsistent with the 2026-08-30 correction, but one clean
+observation does not overturn that correction, which rested on four arrivals
+including two that landed minutes after a merge. Both facts can hold if arrival
+is intermittent rather than binary — which is what "mechanism UNSETTLED" already
+says.
+
+**Not recorded in `merge-coordinator/MEMORY.md`**, deliberately: a single
+observation is not enough to rewrite a TRAP that was corrected yesterday on
+stronger evidence, and flipping that row back and forth is worse than leaving it
+at "rationed, arrival intermittent, `get_check_runs` does not discriminate".
+
+**What would settle it:** request on a PR and then *do not push*, checking at
+5 / 15 / 60 min. Every observation so far, including mine, has confounded the
+request with subsequent activity.
+
+
+---
+
+## 2026-08-31 — TRIAL 2 on qou#6407: the first UNCONTAMINATED observation
+
+Every prior observation on this question (n=5 zeros 2026-08-23, four arrivals
+2026-08-30, my two at 19:37) allowed a push between request and read and none
+recorded whether one happened. This one did not.
+
+**Protocol run as specified.** Requested once at **21:01:08Z**, after all pushes
+to `claude/deuteron-trefoil-writhe-interface-2026-08-31` were finished. No push
+since. **Verified rather than remembered:** head at read time was
+`b572920a3a9f87f580b53b9a3d650508898c6cc5`, identical to the head at request,
+and `updated_at` = 20:59:34Z, *before* the request.
+
+    21:30:49Z   T+29m41s   get_reviews = []   head UNCHANGED
+
+**This is a clean negative at ~30 min** — the first observation on this question
+that measures what it claims to. It does **not** settle it: one clean trial
+against four recorded arrivals is not a verdict, and 30 min is not 60. But it is
+the first data point that is not confounded.
+
+**Trial 1 (qou#6406) — TRUNCATED, still not a negative.** Requested 20:25:30Z,
+`[]` at T+5m39s on a verified-clean head, then **merged by litlfred at
+T+7m03s** — not by me. Post-merge read at 21:30:49Z (~58 min after the merge,
+~65 min after the request): still `[]`. Worth having, because this corpus
+records reviews arriving *after* a merge (qou#6104/#6116), but the run was cut
+short at 7 minutes and must not be quoted as a 60-minute zero.
+
+**A third protocol condition, learned from trial 1:** *do not merge the subject
+PR either.* The protocol in `copilot-review-arrival.md` says request-once and
+do-not-push; trial 1 died on a third way to end a run that the protocol did not
+name. Add it when that file is next touched (it is on `main` as of #6406, so it
+needs its own branch — do not reopen #6406).
+
+**Still NOT changing the `merge-coordinator/MEMORY.md` TRAP row.** One clean
+30-minute zero plus one truncated run does not overturn a row corrected on
+2026-08-30 from four arrivals. The stable wording holds: rationed, intermittent,
+`get_check_runs` = 0 does not discriminate.
+
+
+### Trial 2 COMPLETE — clean negative at T+6h21m
+
+Final reading **2026-09-01T03:22:41Z**, elapsed **6h 21m 33s** from the
+21:01:08Z request. Head still `b572920a3a9f87f580b53b9a3d650508898c6cc5`,
+`updated_at` still 20:59:34Z (pre-request). `get_reviews = []`.
+
+    21:30:49Z   T+29m41s   []   head verified unchanged
+    03:22:41Z   T+6h21m    []   head verified unchanged   <- trial complete
+
+**So trial 2 is the first end-to-end uncontaminated run this question has had,
+and it is a NEGATIVE at six hours** — two orders of magnitude past the 3-4 min
+arrival measured on 2026-08-30, and past the 60 min the protocol asked for.
+
+**What it licenses:** the protocol works and has now been run once, cleanly,
+start to finish. A silent request that produces no review is real and is not
+explained by a subsequent push — which was the live alternative hypothesis and
+is now ruled out for at least this instance.
+
+**What it does NOT license.** One clean negative against four recorded arrivals
+(`qou#6122`, `fa#153`, `qou#6104`, `qou#6116`, all ~3-4 min, all with
+substantive findings) is not a verdict — it is consistent with arrival being
+**intermittent**, which is what the TRAP row already says. **The
+`merge-coordinator/MEMORY.md` row stays as it is.** It was corrected on
+2026-08-30 from stronger evidence than this, and flipping it back on n=1 would
+repeat the original error with the sign reversed.
+
+**Next, if anyone wants to settle it:** a second clean trial. The protocol now
+has all three conditions — request once, do not push, **do not merge** (trial 1
+died on the merge). Two clean negatives against four arrivals would start to
+look like a rate; one does not.
+
+**Trial 1 (`qou#6406`) final state:** still `[]` at 03:22:41Z, ~6h50m after its
+merge. Remains labelled TRUNCATED and must never be quoted as a timed negative.

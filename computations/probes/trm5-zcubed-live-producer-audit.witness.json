@@ -1,15 +1,37 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:06:54.193307+00:00",
-  "commitSha": "4b5a7eed1528308da423028bd127d537f8db8396",
-  "assertions": [],
+  "computedAt": "2026-08-31T02:59:22.674835+00:00",
+  "commitSha": "a9173247cc5fcaf665865a6da42370a2531bc6a7",
+  "assertions": [
+    {
+      "name": "regression_guard_all_five_fixed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "each of the five live producers carries TR_M[5] = h*z^2 + z and no longer carries z^3. Keyed on file content, not line numbers"
+    },
+    {
+      "name": "markov_derivation_is_NOT_z_cubed",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "the Markov axioms give tr(s0 s1 s0) = h*z^2 + z symbolically with z free; it is NOT z^3. This is the audit's premise, proved by exact sympy simplification, not numerically"
+    },
+    {
+      "name": "same_gram_as_gram_h3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "with the correct weight, compound_shift_nf's |det| matches the independent gram_h3_det_factorization value at q0 to the 1e-9 already declared at that call site (40 dps; sign differs by a basis-ordering orientation, so magnitude is the claim)"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm5-zcubed-live-producer-audit",
   "scriptFile": "trm5_zcubed_live_producer_audit.py",
-  "scriptHash": "0b704f390325",
-  "scriptCommitSha": "48cc99bba6d294c4f2f31f1600e266bb48e84048",
+  "scriptHash": "37aa3a1813c2",
+  "scriptCommitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -98,7 +120,7 @@
   },
   "corpus_scan": {
     "note": "Shape-keyed scan of the whole tree, not a file list. Added after the five-name guard printed all-clear while seven other files on the same basis still carried the bug -- two of them in spellings (`z ** 3` inside np.array, `z * z * z`) that no pattern in the guard could match.",
-    "six_vectors_found": 32,
+    "six_vectors_found": 34,
     "still_cubed": 0,
     "bug_sites": [],
     "clean_sites": [
@@ -119,7 +141,7 @@
       },
       {
         "file": "computations/compound_shift_nf.py",
-        "line": 322,
+        "line": 323,
         "sixth_entry": "h * z ** 2 + z"
       },
       {
@@ -159,7 +181,7 @@
       },
       {
         "file": "computations/molecular-frobenius-lp.py",
-        "line": 59,
+        "line": 60,
         "sixth_entry": "h * z**2 + z"
       },
       {
@@ -198,8 +220,13 @@
         "sixth_entry": "z * (h * z + 1)"
       },
       {
+        "file": "computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py",
+        "line": 92,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
         "file": "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
-        "line": 130,
+        "line": 204,
         "sixth_entry": "HA * z * z + z"
       },
       {
@@ -210,6 +237,11 @@
       {
         "file": "computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py",
         "line": 185,
+        "sixth_entry": "z * (h * z + 1)"
+      },
+      {
+        "file": "computations/qbeta/qbeta_d_frame_two_block_forced_weights_probe.py",
+        "line": 119,
         "sixth_entry": "z * (h * z + 1)"
       },
       {

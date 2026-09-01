@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T18:10:03Z
+updated_at: 2026-08-31T05:53:25Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -767,3 +767,335 @@ and with `lead_inj` no longer in front of it.
 **Note for whoever picks this up:** #6297 (the maximal-length element) is now **unused by this
 route**. It was built for the refuted `lead`. It is correct, sorry-free and plausibly
 Mathlib-upstreamable on its own, but do not assume the (C1) proof needs it.
+
+
+## 2026-08-31 — supp_le is UNREACHABLE, and the Triangular route is retired (session hecke-murphy-index-bridge)
+
+**Index bridge: DONE.** `murphyIndexEquivRSKCodomain` + `murphyIndexEquivPerm : MurphyIndex n ≃
+Equiv.Perm (Fin n)` + `lead` + `lead_injective`, all sorry-free. The composition was already
+inside `SchenstedRSKBurnside.card_pairs_eq_sum`'s proof, kept only as a shadow on `Nat.card`;
+lifting it to the `Equiv` was assembly. **`lead_inj` is discharged** — `Equiv.injective`.
+
+**supp_le: REFUTED, and not only for RSK.** `computations/hecke/murphy_supp_rsk_probe.py`
+(exact integer arithmetic, complete at n=3,4,5) establishes two things:
+
+1. RSK is not even a legal lead — `diag_unit` needs `lead x ∈ supp (m x)`, true for only
+   1/6, 3/24, 11/120 of indices (3/6, 9/24, 23/120 with the other (P,Q) orientation).
+   Hand-checkable witness: n=3, λ=(2,1), s=t=t^λ ⇒ d(s)=d(t)=1 ⇒ m = x_λ = T_1 + T_{s₁},
+   support {1, s₁}; RSK⁻¹(s,t) = s₂ is not in it.
+2. NO bijective lead works, for ANY linear order. The order-maximum M must lie in exactly one
+   support (else injectivity fails), so peeling M+its index is forced; a Triangular structure
+   exists iff the peel never stalls. At n=3 it stalls at once — all six permutations lie in
+   ≥2 of the six supports (multiplicities 4,2,4,2,2,2), because x_{(3)} = Σ_{w∈S₃} T_w already
+   has full support. Stalls after 1/24 at n=4, 5/120 at n=5.
+
+Scope-(b) structural exclusion of THIS LEVER on THIS PAIR OF BASES — cited invariant is the
+peeling argument, n=3 exhaustive not sampled. Says nothing against the Murphy basis (a theorem)
+or against `Triangular` (which the Specht standard basis still runs on).
+
+**Replacement route, from the corpus's own library.** `library/hecke-alg/` (Mathas, Thm 3.20)
+proves the Murphy basis by **spanning + rank**, no triangularity: M spans, H is free of rank n!,
+|M| = Σ_λ (f^λ)² = n! by RSK, done. Every ingredient but spanning is sorry-free here — and the
+RSK ingredient is the same bijection that gave lead_inj.
+
+**Landed sorry-free this session** (all `[propext, Classical.choice, Quot.sound]`):
+`murphyFamily` (the m_{st} indexed by MurphyIndex (n+1); the SYT-type bridge it needed,
+`NumSYTBridge.toBraidKnotSYT`, was already in the corpus — eighth such instance this arc),
+`instFintypeMurphyIndex`, `murphyIndex_fintypeCard`, `basisOfSpanning`,
+`murphyBasisOfSpanning`, `murphyFamily_linearIndependent`.
+
+**next**: Mathas Lemma 3.9 + 3.14 — spanning — is now the SINGLE open input to (C1).
+Audit: docs/audits/2026-08-31-murphy-basis-triangular-lever-refuted.md
+
+
+### 2026-08-31 (cont.) — the right-handed structure constants, x_λ two-sided
+
+`σ_mul_Tw` only goes one way, and the handedness is inverted: left multiplication by σ_i in
+the algebra is RIGHT multiplication by s_i on the permutation. So Murphy's `T_{d(t)}` factor
+had no lemma at all. Built the mirror, sorry-free, all from what was already on main:
+
+- `Tw_sw` — `T_{s_i} = σ_i` (reproved locally; the corpus copy is in TwGramRankOne, whose
+  Gram cone this file has no use for)
+- `Tw_mul_σ_of_length_add` — ascending case, ONE LINE from `Tw_mul_Tw` (whose convention
+  already reverses the order: `T_v · T_w = T_{wv}`)
+- `Tw_mul_σ_of_length_sub` — descending case, from the ascending one + `σ_quadratic`
+- `simple_eq_sw` — `(permCoxeterSystem n).simple i = sw i`, via `toPerm_simple`
+- `sw_length_dichotomy` — from Mathlib `length_simple_mul` + `length_simple`; this is what
+  makes the pair lemma UNCONDITIONAL, matching its left twin (whose dichotomy came free
+  from the concrete descent test)
+- `Tw_mul_σ_pair` / `Tw_mul_σ_pair'` — the right-handed q-eigenvector pair
+- `murphySum_mul_σ` — `x_S · σ_i = q·x_S` for S closed under LEFT mult by s_i
+- `murphySum_mul_σ_subgroup` — so `x_λ` is a **two-sided** q-eigenvector for every
+  generator of its Young subgroup. That is what Mathas uses throughout Lemma 3.9/3.12.
+
+All nine `[propext, Classical.choice, Quot.sound]`; downstream HeckeMurphyYoung re-verified
+exit 0. These three `Tw_mul_σ_*` belong upstream in `QOU.Hecke.TwMul` beside their left
+twins — left here because that file sits deep in the Hecke cluster and this is the only
+consumer so far.
+
+**next**: Mathas Lemma 3.13 — the Hecke Garnir decomposition `t = g·w` with
+`ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` — then Lemma 3.14's dominance induction. This is the q-analogue
+of `standardPolytabloid_straightening`, which the corpus already proved sorry-free on the
+`colWordNum` measure for the q=1 side; that proof is the template. Multi-session.
+
+
+### 2026-08-31 — 🛑 TWO CORRECTIONS, one of them a defect in `murphyM` on main
+
+**(1) My own supp_le probe had the WRONG HANDEDNESS.** The first run computed
+`m_st = T_{d(s)^-1} x T_{d(t)}` — inverting on the LEFT only. That family is NOT a basis
+(rank 19/24 at n=4), so its supports were of the wrong object. A sweep of all 16
+combinations (reference tableau x d-direction x which side inverted) shows exactly 4 are
+full rank at n=4, and they are precisely those inverting the two d-factors on OPPOSITE
+sides. Which side carries it depends on d's own direction, so Murphy's
+`T_{d(s)}^* x_λ T_{d(t)}` is the same convention read with the other d; what is
+convention-independent is the opposite-side inversion.
+
+**The refutation SURVIVES and is stronger.** The n=3 support table — the hand-checkable
+witness — is byte-identical under both conventions (they first differ at n=4). Corrected
+numbers: peel stalls at 0/6, **0/24**, **0/120** (was 0, 1, 5); `diag_unit` for RSK
+1/6, **1/24**, **1/120** (was 1, 3, 11), and 3/6, 9/24, **29/120** for the other
+orientation. Only those figures were wrong.
+
+**(2) `murphyM` ON MAIN IS NOT MURPHY'S ELEMENT AND CANNOT SPAN.** It sums over
+`youngSubgroup n h t = Specht.rowStab t` — the SECOND TABLEAU's own row stabiliser, a
+different conjugate subgroup per t. Murphy's `x_λ` is one FIXED subgroup (the reference
+tableau's row stabiliser) for every pair of that shape. Exact rank at q=7:
+
+  n     fixed x_λ [Murphy]     rowStab t [corpus murphyM]
+  3     6/6  FULL              5/6
+  4     24/24 FULL             23/24 (row ref) / 21/24 (col ref)
+  5     120/120 FULL           117/120 (row ref) / 112/120 (col ref)
+
+Full rank in EVERY fixed-x cell, deficient in EVERY rowStab-t cell, under both reference
+tableaux and all handedness variants. Note the axis I suspected first — colSuperstandard
+(column-major) vs Murphy's row-superstandard t^λ — is a RED HERRING: both are full rank.
+The subgroup is the defect.
+
+**Consequence.** `basisOfSpanning` is stated for an ARBITRARY family and is unaffected —
+that genericity was deliberate and is what saves the work. `murphyFamily`,
+`murphyBasisOfSpanning`, `murphyFamily_linearIndependent` remain TRUE but their hypothesis
+is now measured UNSATISFIABLE (conditional-proved ≠ premise-established). Re-documented in
+place rather than deleted, so the shape the corrected family slots into survives.
+
+**Lesson, recorded because it generalises:** a probe measuring a rich structural property
+(supports, orders, peelings) says nothing if the object is wrong, and it will NOT announce
+that — it returns a well-formed table either way. A RANK TEST is seconds of exact
+arithmetic and caught both errors, the second AFTER the Lean built on it was written,
+verified sorry-free, committed and described in a PR body as Murphy's family. Sorry-free
+and wrong are entirely compatible. Guard is now `run_rank_guard` in the probe.
+
+**next**: fix `murphyM` to sum over the reference tableau's row stabiliser, then re-point
+`murphyFamily` at it and re-run the rank guard as the acceptance test. THEN spanning.
+
+
+### 2026-08-31 — murphyM FIXED; and the anchor lemma is the one that couldn't see the bug
+
+`murphyM` now sums over the reference tableau's row stabiliser
+(`youngSubgroup n h (colSuperstandard μ)`) instead of `rowStab t`. Contained change: that
+file was the only consumer in the whole Lean tree. lean-direct exit 0; all seven touched
+declarations `[propext, Classical.choice, Quot.sound]`. Acceptance test is `run_rank_guard`:
+6/6, 24/24, 120/120 (was 5/6, 23/24, 117/120).
+
+**That is evidence, not proof.** Full rank at n=3,4,5 says the spanning hypothesis is no
+longer measured UNSATISFIABLE; it does not say Mathas Lemma 3.14 holds. `murphyBasisOfSpanning`
+and `murphyFamily_linearIndependent` still prove only `spans -> basis` / `spans -> independent`.
+
+**Worth flagging so nobody "fixes" a correct lemma:** `murphyM_colSuperstandard_diag`
+(`m_{t^λ t^λ} = x_λ`, the sibling's anchor from claude/hecke-c1-triangular-2026-08-30) is
+stated at `t = colSuperstandard μ` — exactly where the defective and correct definitions
+COINCIDE. It was right throughout, and it is precisely the case that cannot detect the defect.
+A base case that is invariant under the bug is not evidence the definition is sound.
+
+**next**: spanning (Mathas Lemma 3.9 + 3.14) — now genuinely the single open input to (C1).
+The q=1 template is the corpus's own sorry-free `standardPolytabloid_straightening` on the
+`colWordNum` measure.
+
+
+### 2026-08-31 — CORRECTING my own scoping of "spanning"
+
+I have twice written that spanning is "Mathas Lemma 3.9 + 3.14". Having now read the actual
+statements rather than the sentence that cites them, that is imprecise in a way that matters
+for planning.
+
+**Lemma 3.9 is NOT the spanning lemma.** It says: for a COMPOSITION μ with λ the partition
+obtained by reordering μ's parts, and s,t row-standard μ-tableaux, `m_st` is an R-combination
+of `m_uv` with u,v row-standard λ-tableaux. It moves compositions to partitions. Useful, not
+the spanning step.
+
+**Lemma 3.14 is the straightening**: for s,t ROW-standard λ-tableaux, `m_st` is a combination
+of `m_uv` with u,v STANDARD ν-tableaux, where either ν ⊳ λ, or ν = λ and u ⊵ s, v ⊵ t. It runs
+through Lemma 3.13 (the Garnir decomposition t = g·w with ℓ(d(t)) = ℓ(d(g)) + ℓ(w)) and
+Lemma 3.12.
+
+**The actual spanning chain is three steps, and step 1 is already ours:**
+
+1. `{T_w}` spans H — the corpus HAS this (`QOU.Hecke.TwSpanning`, `basisTwOfField`).
+2. **Every `T_w` IS a Murphy element of the one-column shape.** For μ = (1^n) the Young
+   subgroup is trivial, so `x_μ = 1` and `m_st = T_{d(s)^-1} T_{d(t)}`; every filling of a
+   single column is row-standard, so there are n! of them and `d(t)` ranges over all of S_n.
+   Taking s = t^μ gives `m = T_{d(t)}`, i.e. every `T_w`. Hence the ROW-STANDARD Murphy family
+   spans, immediately, from step 1.
+3. Lemma 3.14 straightens row-standard to standard, moving up in dominance. (1^n) is the
+   dominance-minimum, so everything is reachable.
+
+**Structural consequence for the Lean, and it is not a detail.** Steps 2-3 are about the
+family indexed by ROW-STANDARD pairs — n! per shape, not (f^λ)². `MurphyIndex` and
+`murphyFamily` are over STANDARD pairs only. So spanning cannot even be STATED for
+`murphyFamily` directly: it needs a row-standard-indexed family first, which does not exist in
+the corpus. For the one-column shape the standard family has exactly ONE element while the
+row-standard family has n!, so the gap is the whole of the argument, not a technicality.
+
+**next**, in order: (a) a row-standard tableau type + the row-standard-indexed family;
+(b) step 2, `x_{(1^n)} = 1` and hence every `T_w` is a one-column Murphy element — small,
+self-contained, and it reduces spanning to straightening alone; (c) Lemma 3.13/3.14, the hard
+core, with the corpus's own sorry-free `standardPolytabloid_straightening` on the `colWordNum`
+measure as the q=1 template.
+
+
+### 2026-08-31 — step 2 landed; spanning now reduces to straightening alone
+
+`murphySum_singleton_one` (`x_{(1^n)} = 1`) and `span_murphySum_one_conjugates_eq_top` (the
+two-sided conjugates of that 1 span H). Both sorry-free, lean-direct exit 0,
+`[propext, Classical.choice, Quot.sound]`.
+
+**It is a CHEAP result and I want that on record rather than dressed up**: it is `x = 1` plus
+the fact that the `T_w` are a basis. What it buys is not difficulty but a pin — with step 1
+(`basisTwOfField`) and step 2 both in hand, the ENTIRE spanning input to `basisOfSpanning` is
+Mathas Lemma 3.14's straightening. Nothing else is outstanding on that leg.
+
+Stated over the conjugating PAIR rather than over tableaux, deliberately: the row-standard
+tableau type does not exist in the corpus, and this is the algebraic content, which does not
+have to wait for the indexing.
+
+**next** (the honest remaining cost, in order):
+(a) a row-standard tableau type + a row-standard-indexed Murphy family — without it Lemma 3.14
+    cannot be STATED, since it quantifies over n! pairs per shape and MurphyIndex has (f^λ)²;
+(b) Lemma 3.13, the Garnir decomposition `t = g·w` with `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`;
+(c) Lemma 3.14's dominance induction. The q=1 template is the corpus's own sorry-free
+    `standardPolytabloid_straightening` on the `colWordNum` measure — same argument, and it
+    already carries the hard measure-descent work.
+
+
+### 2026-08-31 — the row-standard index set exists (step (a) of the spanning blocker)
+
+`QOU/BraidKnot/RowStandardTableau.lean`, sorry-free:
+`IsRowStandard`, `RowStandardTab` (subtype), `Decidable`/`Fintype` instances,
+`isRowStandard_of_no_second_column`, `equivTableauOfNoSecondColumn`,
+`card_eq_factorial_of_no_second_column`.
+
+**Design note worth keeping.** It is a PREDICATE on `Specht.Tableau μ`, not a new structure.
+`Tableau μ = Fin (nOf μ) ≃ μ.cells` is already the arbitrary bijective filling and is what
+`dOf`/`dAt`/`murphyM` consume, so row-standardness is a condition on it and a row-standard
+tableau is a subtype — nothing downstream needs re-plumbing. (`BraidKnot.StandardYoungTableau`
+is a separate `entry`-based structure carrying both `row_strict` and `col_strict`; row-standard
+is that minus the column half, but expressed on the type the Hecke side already speaks.)
+
+`card_eq_factorial_of_no_second_column` makes the gap quantitative and Lean-checked: on a
+one-column shape there are `n!` row-standard tableaux against exactly ONE standard tableau.
+That is why Lemma 3.14 cannot be stated against `MurphyIndex`, and why
+`span_murphySum_one_conjugates_eq_top` had to be phrased over conjugating permutations.
+
+Note the hypothesis is `(0,1) ∉ μ` — YoungDiagram is closed under up-left, so "no cell in
+column 1" IS "every row has length ≤ 1", and the row-standard condition is then vacuous.
+
+**next**: (b) Lemma 3.13, the Garnir decomposition `t = g·w` with `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`;
+then (c) 3.14's dominance induction. Also still open and cheap-ish: `IsRowStandard` for the
+image of a standard tableau under `sytToTableau` (the forgetful direction), which the
+straightening's target side will want.
+
+
+### 2026-08-31 — the forgetful map Std -> RowStd, and the lemma it needed
+
+`entry_lt_entry_of_lt` and `isRowStandard_sytToTableau`, both sorry-free.
+
+**It was not immediate, and the reason is worth recording.**
+`StandardYoungTableau.row_strict` compares only ADJACENT cells (`entry i j < entry i (j+1)`),
+while row-standardness compares arbitrary pairs within a row. The corpus had no transitive form
+and Mathlib has none for this type, so `entry_lt_entry_of_lt` proves it by induction on the
+right-hand column, using the diagram's up-left closure to know the intermediate cells exist.
+That transitive step IS the content; the bridging lemma on top of it is bookkeeping
+(`sytToTableau` is the inverse of `cellLabel`, and `cellLabel` is literally `T.entry`).
+
+`entry_lt_entry_of_lt` is about `StandardYoungTableau` alone and BELONGS UPSTREAM in
+`QOU.BraidKnot.StandardYoungTableau`; kept in RowStandardTableau.lean to hold the change to one
+file, same call as the `Tw_mul_σ_*` lemmas in HeckeMurphyYoung. Both are flagged in their
+docstrings as misplaced-on-purpose so a later tidy-up knows where they go.
+
+**next**: Mathas Lemma 3.13 — the Garnir decomposition `t = g·w` with
+`ℓ(d(t)) = ℓ(d(g)) + ℓ(w)` for a row-standard non-standard `t` — then 3.14's dominance
+induction. Both index sets and the map between them now exist, so 3.14 is finally STATABLE,
+which it was not before this session.
+
+
+### 2026-08-31 — IsStandard on the filling type; and a RECONNAISSANCE of the q=1 Garnir apparatus
+
+Landed sorry-free: `IsColStandard`, `IsStandard`, `entry_lt_entry_of_lt_row`,
+`isColStandard_sytToTableau`, `isStandard_sytToTableau`, `IsStandard.isRowStandard`, plus
+Decidable instances. All three of Lemma 3.14's index sets — row-standard source, standard
+target, and the map between them — are now on ONE type, `Specht.Tableau μ`. **3.14 has nothing
+missing from its statement any more.**
+
+**Reconnaissance of what the q=1 side already provides (ninth reuse find this arc), and — more
+usefully — what it does NOT.**
+
+Already built, all on `Specht.Tableau μ`, the same type: `colWordNum` / `cmajSig` (the validated
+straightening measure), `garnirA` / `garnirB` (the label sets), `garnirG` / `garnirH` (the
+permutation sets), `garnirGSub` / `garnirHSub` (as subgroups), `garnir_full_annihilation`,
+`colStandard_of_colWordMin`, `exists_row_descent_of_colWordMin`, `exists_descent_of_not_mem_range`.
+
+**But the reuse is LESS DIRECT than the names suggest, and this is the part worth recording.**
+The descent lemmas are phrased against POLYTABLOID MEMBERSHIP
+(`Specht.polytabloid t ∉ Set.range standardPolytabloid`), not against tableau standardness, so
+they are Specht-module statements rather than combinatorial ones. `IsStandard` above is what
+lets that be restated combinatorially, but the restatement is work, not a rename.
+
+**Three genuinely new pieces remain for Mathas 3.13, and #2 is why his proof differs from
+Sagan's at all:**
+1. the Garnir TABLEAU `g` (the corpus has Garnir SETS and SUBGROUPS, not the tableau) and the
+   factorisation `t = g·w`;
+2. **the length additivity `ℓ(d(t)) = ℓ(d(g)) + ℓ(w)`** — a Coxeter-length statement, and the
+   q=1 side never tracks lengths at all, so there is nothing to transport;
+3. the q-analogue of Garnir annihilation: at q=1 the relation is `sign`-weighted
+   (`garnir_full_annihilation`), in `H_n(q)` it is weighted by the Hecke relation.
+
+**next**: (1) and (2) above. (2) is the load-bearing one and is where I would start, since it
+is the piece with no q=1 antecedent and therefore the one most likely to reveal that the route
+needs rethinking.
+
+### 2026-08-31 — Lemma 3.13's length additivity PROBED, and it is stronger than Mathas states it
+
+`computations/hecke/murphy_garnir_length_additivity_probe.py` — exact integer arithmetic
+(tableaux as tuples, permutations as tuples, Coxeter length as inversion count; no float).
+
+Applied the session's own lesson: this is the one ingredient with NO q=1 antecedent (Sagan's
+Garnir straightening never tracks Coxeter lengths), so it is the piece most likely to reveal
+that the route needs rethinking — measure it before formalising.
+
+**Result: it holds, on every case, and the FIRST descent node always works.**
+
+  n     row-standard non-standard t     SOME node works     FIRST node works
+  3     6                               6/6                 6/6
+  4     37                              37/37               37/37
+  5     220                             220/220             220/220
+  6     1526                            1526/1526           1526/1526
+
+**Mathas states EXISTENCE of a descent node; the probe says the first one always suffices.**
+That is a constructive strengthening and it matters for the Lean: no search over nodes and no
+induction on the node choice — take the first descent, done. Mathas' own proof handles the
+non-Garnir case by induction ("otherwise there exists s in S such that t' = ts is row standard
+... by induction"); if the first-node form holds in general, that induction collapses.
+
+The probe also asserts `d(t) = w . d(g)` on every case (1789 of them), which confirms the
+composition convention rather than leaving it inferred — the exact class of error that cost
+this session a wrong-handed supp_le probe earlier.
+
+The Garnir-tableau construction is verified against Mathas' own three worked examples for
+lambda = (3,3) (`g_11`, `g_12`, `g_13`) BEFORE any measurement runs, and the script refuses to
+proceed if they mismatch. Same discipline as the rank guard: check the object before measuring
+a property of it.
+
+**n <= 6 is evidence, not proof** — the claim is over all n. But it de-risks the hardest
+remaining piece and tells the formaliser exactly what to prove.
+
+**next**: formalise `l(d(t)) = l(d(g)) + l(w)` at the first descent node. Then the Garnir
+tableau itself as a Lean definition, then 3.14's dominance induction.

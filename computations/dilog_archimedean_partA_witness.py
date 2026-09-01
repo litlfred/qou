@@ -76,6 +76,11 @@ def file_hash(path):
 def main():
     results = []
     all_ok = True
+    # Worst-case error/bound ratio and monotonicity over the whole sweep,
+    # carried out of the loop so the witness can ASSERT them rather than only
+    # record `all_within_bound_and_monotone` as data (bean qou-srvu).
+    max_err_over_bound = mp.mpf(0)
+    all_shrink = True
     for x in XS:
         li2 = mp.polylog(2, x)
         row = {"x": str(x), "Li2_x": mp.nstr(li2, 18), "sweep": []}
@@ -87,6 +92,9 @@ def main():
             within = err <= bound * 2  # generous: error within 2x the bound
             shrinks = prev_err is None or err < prev_err
             all_ok = all_ok and within and shrinks
+            if bound > 0:
+                max_err_over_bound = max(max_err_over_bound, err / bound)
+            all_shrink = all_shrink and shrinks
             row["sweep"].append({
                 "eps": mp.nstr(eps, 3),
                 "q": mp.nstr(mp.e ** (-eps), 12),
@@ -119,7 +127,9 @@ def main():
         "scriptCommitSha": git_sha_of(script_path),
         "scriptHash": file_hash(script_path),
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "result": {"all_within_bound_and_monotone": bool(all_ok), "rows": results},
+        "result": {"all_within_bound_and_monotone": bool(all_ok),
+                   "max_abs_error_over_predicted_bound": mp.nstr(max_err_over_bound, 12),
+                   "rows": results},
         "refs": [
             "docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md",
             "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md",
@@ -128,11 +138,29 @@ def main():
     import sys as _sys  # noqa: E402
     _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    out = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "dilog-archimedean-limit-partA", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=os.path.dirname(script_path),
-    ).save()
+    )
+    # This script's whole purpose -- "Numerical confirmation of Part A of
+    # conj:dilogarithm-archimedean-limit" -- was recorded as the data field
+    # `all_within_bound_and_monotone` while the witness shipped
+    # `allPassed: true` over an EMPTY assertion list (bean qou-srvu). Both
+    # criteria below are this file's own: the 2x bound is its `within = err <=
+    # bound * 2` ("generous: error within 2x the bound"), and monotonicity is
+    # its `shrinks`. Neither number is fitted to what was observed.
+    _wb.add_assertion(
+        "partA_abs_error_within_2x_predicted_bound",
+        computed=mp.nstr(max_err_over_bound, 12), expected="0", tolerance="2",
+        source="conj:dilogarithm-archimedean-limit Part A (elementary Riemann-sum + tail bound)",
+    )
+    _wb.add_assertion(
+        "partA_error_monotone_decreasing_along_eps_sweep",
+        computed=str(bool(all_shrink)), expected="True",
+        source="conj:dilogarithm-archimedean-limit Part A",
+    )
+    out = _wb.save()
     print(f"all_within_bound_and_monotone = {all_ok}")
     for row in results:
         print(f"  x={row['x']}  Li2={row['Li2_x']}")

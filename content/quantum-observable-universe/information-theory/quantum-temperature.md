@@ -1,5 +1,3 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion supersedes it.
-
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ and Planck time $t_P(q) = q/(q-1) = 1/\hbar_q$. The **quantum temperature** of a region $U \subset M$ is defined as
 $$
   T_q(U) = \hbar_q = \frac{q - 1}{q}.

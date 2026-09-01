@@ -17,4 +17,4 @@ See [Table 3](#tbl:hausdorff-dimension-recurrence-table3-data).
 It takes three Planck steps from our universe to reach the classical limit. The convergence is superlinear. At the fixed point, $\eta_q = 1$ nat, meaning each Reeb operation carries exactly one natural unit of information.
 
 **Cosmological arrow of time.**
-The monotone decrease of $d_{H,q}$ with $q$ defines an information-theoretic arrow. The parameter $q$ flows from the classical limit toward the Big Bang. Reversing time reverses the discrete recurrence. The second law of thermodynamics asserts that the $q$-deformed dimension increases as $q$ decreases.
+The monotone decrease of $d_{H,q}$ with $q$ defines an information-theoretic arrow. Forward in time the parameter $q$ flows from the Big Bang ($q$ large) toward the classical limit $q = 1$ — the downward iteration above — so $d_{H,q}$ increases along it. Reversing time reverses the discrete recurrence. The second law of thermodynamics asserts that the $q$-deformed dimension increases as $q$ decreases.

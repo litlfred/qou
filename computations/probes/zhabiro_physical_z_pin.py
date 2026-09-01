@@ -208,6 +208,56 @@ def main() -> None:
     print()
     print("cross_checks:", json.dumps(cross, indent=2))
 
+    # Assertions (bean qou-srvu). This witness had NO `assertions` key while
+    # setting `allPassed`, so every consumer that reads `assertions` saw an
+    # empty claim beside a green verdict. The three checks below were already
+    # computed in `cross` above and already fed `allPassed`; they were simply
+    # never surfaced per-check with their numbers. Nothing new is claimed.
+    #
+    # THRESHOLD PROVENANCE: 0.05 and 1e-3 are this file's OWN declared bars,
+    # written into `cross` above and predating this change. Carrying the
+    # computed value beside them lets a reader see the headroom instead of
+    # taking a boolean on trust.
+    #
+    # `all_physical_z_below_one` is asserted as a COUNT, not a boolean: the bar
+    # `z < 1` is the claim's own logic (a Markov parameter at or above 1 is
+    # outside the physical regime this probe pins), and `expected` is the size
+    # of VHAT_FULL, not a number chosen to match the result.
+    #
+    # NOT asserted: `phi_q_blows_up_li2q_bounded`. Its bars -- `max_phi_q > 100`
+    # and `|max_neg_li2q| < 5` -- are order-of-magnitude thresholds with no
+    # provenance in this file or its cone; "blows up" and "bounded" are
+    # qualitative readings, and choosing 100 and 5 to make them true would be a
+    # fit. It stays in `cross_checks` as recorded data.
+    _all_z = [mp.mpf(s) for zs in VHAT_FULL.values() for s in zs]
+    assertions = [
+        {
+            "name": "phi_q_hbar_sq_correction_pct_matches_pr2460",
+            "computed": mp.nstr(corr_rep, 15),
+            "expected": "9.36",
+            "tolerance": "0.05",
+            "passed": cross["phi_q_hbar_sq_matches_pr2460_9_36pct"],
+            "source": "PR #2460 production anchor; bar is this file's own 0.05",
+        },
+        {
+            "name": "phi_q_electron_matches_upstream_witness",
+            "computed": mp.nstr(phi_e, 20),
+            "expected": "629.9354190959173",
+            "tolerance": "1e-3",
+            "passed": cross["phi_q_electron_matches_witness_629_9354"],
+            "source": "value recorded upstream; bar is this file's own 1e-3",
+        },
+        {
+            "name": "physical_z_below_one_count",
+            "computed": str(sum(1 for z in _all_z if z < 1)),
+            "expected": str(len(_all_z)),
+            "passed": cross["all_physical_z_below_one"],
+            "source": "every Markov parameter in VHAT_FULL must satisfy z < 1 "
+                      "to sit in the physical regime; expected is the size of "
+                      "VHAT_FULL, not a number matched to the result",
+        },
+    ]
+
     witness = {
         "engine": "mpmath",
         "engineVersion": f"mpmath {mp.__version__}",
@@ -237,6 +287,7 @@ def main() -> None:
         },
         "data": {"atoms": atoms_out},
         "cross_checks": cross,
+        "assertions": assertions,
         "allPassed": all(cross.values()),
         "provenance": [
             "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",

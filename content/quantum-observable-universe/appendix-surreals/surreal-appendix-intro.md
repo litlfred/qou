@@ -3,8 +3,7 @@ Universe from its native ground field $\mathbb{R}$ (or $\mathbb{C}$)
 to Conway's surreal numbers $\mathbf{No}$ — the unique proper-class
 real-closed field containing every ordered-field extension of
 $\mathbb{R}$, including the hyperreals $^{*}\mathbb{R}$, the ordinals
-$\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ [@conway1976;
-@ehrlich2012].
+$\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ \cite{conway1976,ehrlich2012}.
 
 **Nothing in this appendix alters this paper.** We develop and prove the Quantum Observable Universe over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which we recover it via standard-part. Our claims are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
 
@@ -17,11 +16,11 @@ Four distinct uses motivate the lift:
    \mathbf{No}$ replaces the (classically broken) classical-limit
    functor ([classical limit functor](#def:classical-limit-functor))
    with the evaluation at a specific surreal, composed with
-   Robinson's standard-part map [@robinson1966]. The classical
+   Robinson's standard-part map \cite{robinson1966}. The classical
    regime becomes a quotient, not a limit.
 
 2. **A grading source aligned with braid combinatorics.** Gonshor's
-   sign-sequence presentation of $\mathbf{No}$ [@gonshor1986] assigns
+   sign-sequence presentation of $\mathbf{No}$ \cite{gonshor1986} assigns
    every surreal a function $\alpha \to \{+,-\}$ for some ordinal
    $\alpha$. The Hecke generator $\sigma$ has two eigenvalues
    ($q$ and $-q^{-1}$), so a braid word decorated with eigenspace

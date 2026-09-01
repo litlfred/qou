@@ -37,7 +37,7 @@ When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry o
 
 - **GB filtration level.** None: the claim addresses a Z/2 categorical symmetry on color-sheet metadata, not Hecke elements at a particular Coxeter length.
 - **Jet order.** $h^0$: the $C$-action is independent of $q$, and the flavor-conjugation map forms a structural Z/2 lifting through the color-tube tensor.
-- **Bar-symmetry.** $C$ is bar-symmetric. It preserves $q$ and commutes with $\sigma_i \leftrightarrow \sigma_i$, since it acts on color-sheet labels and not on Hecke generators. It is $C$ composed with $PT$ that yields the bar-involution; $C$ itself is bar-trivial in [`bar-involution-table4-data`](../stochastic-mechanics/bar-involution-table4-data.md).
+- **Bar-symmetry.** $C$ is bar-symmetric. It preserves $q$ and commutes with $\sigma_i \leftrightarrow \sigma_i^{-1}$, since it acts on color-sheet labels and not on Hecke generators. It is $C$ composed with $PT$ that yields the bar-involution; $C$ itself is bar-trivial in [`bar-involution-table4-data`](../stochastic-mechanics/bar-involution-table4-data.md).
 
 ## Lean axiomatisation (sketch)
 

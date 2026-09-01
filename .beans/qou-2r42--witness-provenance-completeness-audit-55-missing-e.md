@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:30:03Z
-updated_at: 2026-08-30T13:40:18Z
+updated_at: 2026-08-31T05:41:15Z
 ---
 
 Found 2026-08-21 while sweeping duplicate witness stems (qou-kcii).
@@ -116,3 +116,60 @@ should first find out *why* 23 new witnesses landed without provenance in one
 172-commit window — a producer template, a copied script, or WitnessBuilder
 not being reachable from some subdirectory — because that is cheaper to fix
 than 101 files.
+
+
+## 2026-08-31 — ROOT CAUSE MEASURED, and all three of my hypotheses were wrong
+
+The previous entry said whoever takes this should first find out *why* 23 new
+witnesses landed without provenance, and guessed *"a producer template, a copied
+script, or WitnessBuilder not being reachable from some subdirectory"*. **None of
+those.** Measured:
+
+### It is not clustered — it is diffuse
+
+**30** provenance-missing witnesses were added in the last 250 commits, spread
+across **~28 distinct commits, one each**. No shared template, no copied script,
+no bad producer propagating. Nearly every recent research commit that emits a
+witness emits one without provenance.
+
+### The cause is that the producers hand-roll their JSON
+
+Of the 30, **27 have an identifiable producer** (3 not found), and:
+
+| | count |
+|---|---|
+| producers using `WitnessBuilder` | **0** |
+| producers calling `json.dump` directly | **27** |
+
+Not a builder failing to stamp. A builder that is **never invoked**.
+
+### The control shows this is a decline, not a norm
+
+| population | uses `WitnessBuilder` |
+|---|---|
+| all non-deprecated `computations/*.py` | **2827 / 3636 = 78 %** |
+| `.py` files ADDED in the last 250 commits | **120 / 234 = 51 %** |
+| producers of the 27 provenance-missing witnesses in that window | **0 / 27 = 0 %** |
+
+So the builder is the established corpus norm at 78 %, adoption in **new** code
+has fallen to ~51 %, and every provenance-missing witness in the window comes
+from the non-adopting half.
+
+**Honest bound:** "does not import `WitnessBuilder`" is not the same as "emits a
+witness without provenance" — many of the 114 non-adopting new files emit no
+witness at all. So 114 is an upper bound on the affected population; the tight,
+measured number is **27 of 27 witness-emitting producers in the window**.
+
+### What this changes about the fix
+
+The previous entry's framing — *"a drain-only plan loses to the inflow"* —
+stands, but the inflow is now identified and it is **not** something a drain or
+a template fix reaches. The lever is at authoring time: `json.dump` of a witness
+is the thing to catch, and it is trivially greppable (`json.dump` in a file
+under `computations/` that writes a `*.witness.json`).
+
+That is a different and much cheaper intervention than draining 101 files, and
+it is the one that would stop the count rising. **Not implemented here** — this
+entry is the diagnosis, and wiring a new check is a decision about gate policy
+that belongs with whoever owns `precision-gates.sh`, given this repo's record
+with gates that arrive red.

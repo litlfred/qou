@@ -40,8 +40,8 @@ class fields in the Lean sibling:
 The conjecture is carried as a content-bearing Lean `class` with **no
 instance** — the honest open state. For the concrete surreals the
 evaluation exists model-theoretically: Robinson's ultrapower supplies
-one [@robinson1966], and the Berarducci–Mantova identification of
-surreals with transseries/germs [@berarducci-mantova2018] supplies the
+one \cite{robinson1966}, and the Berarducci–Mantova identification of
+surreals with transseries/germs \cite{berarducci-mantova2018} supplies the
 canonical one for the definable-germ class (evaluation of the germ at
 $\omega$). Neither construction is available from the axiomatised
 `SurrealField` interface alone, which is exactly why the block is a

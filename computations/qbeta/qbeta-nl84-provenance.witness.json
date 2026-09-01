@@ -1,15 +1,44 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T19:23:05.341089+00:00",
-  "commitSha": "79e2a903449ef29602f9de9eebfeda5264688c93",
-  "assertions": [],
-  "allPassed": true,
-  "durationMs": 134,
+  "computedAt": "2026-08-30T14:03:53.678687+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "neither_the_block_nor_what_it_uses_declares_a_producer",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "ilp-solution-count-unwrap.ts is a bare `remark` with no `computation:` field, and prop:stable-atom-decidable, the block it `uses`, declares none either. So nothing in the manifest layer points at code that computes N_l"
+    },
+    {
+      "name": "the_ONE_named_source_is_a_DEAD_citation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the 2026-05-27 mass-formula-uniqueness audit cites '84 feasible integer solutions' with Witness: mass-endomorphism.witness.json. The file exists but contains ZERO fields equal to 84 and ZERO keys naming ilp/solution/feasible/count/gluon. Its description is a different quantity -- a Phi_q tower mass endomorphism recording a 407.06% error against CODATA. The citation resolves to a file, which is why it survived review, but not to the number"
+    },
+    {
+      "name": "the_only_counting_code_CANNOT_return_84_and_is_orphaned",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "confinement_adaptive.ilp_solution_count_nucleon_level returns [0, 1, 2, 3] -- a magic-number lookup capped at 3, whose own docstring calls it 'a categorical proxy' for 'the full ILP enumeration per Lenstra's algorithm'. It cannot produce 84 for anything, and it is deprecated with 0 live importers"
+    },
+    {
+      "name": "N_l_eq_84_is_an_UNSOURCED_FIGURE",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "no manifest declares a producer, the one named witness does not carry the number, and the only counting code is a deprecated heuristic capped at 3. So the two reproduction attempts on this branch were measured against a figure nothing derives, and their failure is NOT evidence against their readings. NOT claimed: that 84 is wrong -- an exhaustive enumeration may have been run and its result recorded by hand. Claimed only: the corpus contains nothing that reproduces it, so it cannot be checked and a mismatch against it cannot be interpreted. Same class as the neutron NF table"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 138,
   "computation": "qbeta-nl84-provenance",
   "scriptFile": "qbeta_nl84_provenance_probe.py",
-  "scriptHash": "0ab9b13daf0e",
-  "scriptCommitSha": "ff36ee2ac99a0c5324fc195038f65b74878470ef",
+  "scriptHash": "7eca095e53fd",
+  "scriptCommitSha": "116e63ee17ca9663988cac126502f04d42392831",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +53,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -49,7 +78,7 @@
     ],
     "counting_code_live_importers": 0,
     "the_only_counting_code_CANNOT_return_84_and_is_orphaned": true,
-    "grep_adjoin_loose": 50,
+    "grep_adjoin_loose": 51,
     "grep_adjoin_excluding_adjoint": 8,
     "N_l_eq_84_is_an_UNSOURCED_FIGURE": false,
     "scope": "(a) provenance only"

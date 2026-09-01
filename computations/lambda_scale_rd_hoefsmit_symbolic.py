@@ -225,6 +225,22 @@ def main() -> int:
         ),
     })
 
+    # The one falsifiable check this script performs. At q=1 the braid
+    # (σ_1 σ_2^{-1})^3 reduces to the identity of S_3, so χ^λ must equal
+    # dim V_λ — an INDEPENDENTLY KNOWN expected value ({(3): 1, (2,1): 2,
+    # (1,1,1): 1}), not a self-comparison. `sanity_ok` was already computed
+    # and already printed per shape, and a failure already triggers the
+    # caveat + early return below, but it was recorded only via `add_data`
+    # — so the witness claimed `allPassed: true` over an empty assertion
+    # list (bean `qou-srvu`). Exact symbolic limits; no tolerance.
+    w.add_assertion(
+        "chi_at_q1_equals_classical_S3_dimensions",
+        sanity_ok, True,
+        source=(
+            "sp.limit(chi^lambda(beta), q, 1) == dim V_lambda for every "
+            "shape: (3)->1, (2,1)->2, (1,1,1)->1"
+        ),
+    )
     out = w.save()
     print(f"\nWitness emitted: {out.name}")
     return 0

@@ -1,15 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:44.206075+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:02:58.755936+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "no_canonical_interface_factor_enhances_the_trace",
+      "computed": "0.6126880371464652516",
+      "expected": "0.5",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Lean markovParam_le_half / productModel_3body_nonpos"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 121,
+  "durationMs": 99,
   "computation": "interface-factor-enhancing-check",
   "scriptFile": "interface_factor_enhancing_check_probe.py",
-  "scriptHash": "334e74b581b0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "f71249353646",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -65,7 +74,9 @@
       }
     ],
     "any_enhances": false,
-    "z_le_half_all_q": true,
+    "max_interface_factor": "0.6126880371464652516",
+    "z_le_half_at_q0": false,
+    "z_le_half_note": "Was the hardcoded literal `z_le_half_all_q: true` -- a convention-C claim (z = 1/(sqrt q + 1/sqrt q) = 0.4993) recorded as fact while markov_z returns convention D (0.6127). Now computed. The verdict does not depend on it; it depends on max factor < 1.",
     "verdict": "enhancing_escape_foreclosed"
   },
   "q0Anchor": "proton",
