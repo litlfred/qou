@@ -879,6 +879,58 @@ is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
 
 
+## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
+
+**1. All-pairs-with-distance-decay is excluded by R8's t-ladder interior maximum.**
+Tested against `saturating_shared_channel_probe`'s invariant, not against AME.
+CLAIM A (formalize-first, stated before the scan): if every `L_XY > 0` and the
+`k -> k+1` step appends a contiguous block without splitting an adjacency, every
+existing pair keeps its separation and every new pair adds a strictly positive
+`L*r^(s-1)`, so `V(k)` strictly increases for EVERY `(r_pp, r_nn, r_pn) in
+(0,1]^3` and P1 excludes it. **Decay buys nothing** — it shrinks contributions
+but never removes one. Confirmed, 0 violations / 1000 grid points. The two
+SPLITTING orderings also went non-monotone at zero points, which Claim A does not
+predict. At the framework's own derived rates `V = 12.79, 30.41, 54.11, 83.52`,
+monotone. The arrangement-free bound is INCONCLUSIVE and is kept as such
+(`Lo(19)=44.46` vs `Up(15)=72.60`, overlapping); a 400-sample arrangement search
+closes it empirically only (margin +22.58).
+
+**2. The 22.25:1 channel asymmetry is excluded by an EXACT inequality.** The
+eigenvalue criterion's falsification named 'whatever breaks the bar symmetry',
+and `delta` is the sector's only bar-breaking. Checked exactly: `d_pn = w*d_nn +
+(1-w)*d_pp` with `w = 1/2 - delta/4`, so `delta/4` IS the isospin-mixing
+asymmetry. Then for `R(d) = |log|l_-||/|log|l_+||` (alpha-free):
+
+    R(d) <= 1 for every admissible d in [-h,0],
+    equality iff |l_+| = |l_-| OR |det T| = 1.
+
+Proof: `|det T| = 1 + s(h-s) >= 1` so `log|l_+| + log|l_-| >= 0`; both cases give
+`R <= 1`. Nature needs `R ~ 22.25 > 1`, so the family is excluded **on the wrong
+side of 1**, not merely short. `delta` is a 1.4e-3 displacement inside that
+range and could not have helped. Scope (b).
+
+**Two corrections to my own claims, both caught by the sweep and both recorded
+with assertions:** I first called R's range 'a narrow band around 1' (false — min
+is 0.00119), and I first stated equality as 'iff |det| = 1' (incomplete — the
+midpoint `d = -h/2` has `|det| = 1.0109` yet `R = 1`, because the moduli coincide).
+
+**Found on the way, unsought:** `L_nn > L_pn > L_pp`. In the bond-graph functional
+a larger `L` is MORE binding, so the hierarchy is n-n most bound, p-p least —
+inverted against the two-nucleon data. Does not contradict the eigenvalue
+criterion's 4/4 signs (different functional, built from eigenvalues not `L`), but
+the one that gets the channels wrong is the one the whole bond-graph binding path
+is built on. Flagged, not chased.
+
+**Also found:** R9 states its invariant as `0 = M(1) < ...`; its own `modelg_miss`
+returns `M(1) = +0.1219` and the witness row carries `resid_MeV = -0.1218526` —
+witness and consumer define the residual with opposite signs. The invariant is
+unaffected (P1 needs the turnover), but the `0 =` is a simplification of the
+code's output, not a computed zero.
+
+**Where this leaves the arc:** the missing structure is not in the bond letter,
+and not in a decayed pair sum. Next candidates are outside the one-crossing
+algebra.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
