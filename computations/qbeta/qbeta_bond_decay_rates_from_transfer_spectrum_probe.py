@@ -113,14 +113,15 @@ parity. The bond rates reproduce that classification exactly:
                    = tanh(ln q) . delta + O(delta^2)
 
     because tanh(ln q) = (q - 1/q)/(q + 1/q) = (q^2-1)/(q^2+1). And
-    tanh(ln q_0) = 0.103963710 is EXACTLY the odd-to-even ratio the taxonomy
-    derives for the ELECTROMAGNETIC coupling — the mixed cell. Measured:
+    tanh(ln q_0) = 0.103963710 is the odd-to-even ratio the taxonomy derives for
+    the electromagnetic coupling — BUT SEE THE BANNER: that match is FORMAL, not
+    a link (qou-i9gk resolved 2026-09-01). Measured:
     tanh(ln q_0) . delta = 1.4302400e-4 against 1.4301377e-4, agreeing to
     7.2e-5 relative, which is the second order in delta.
 
 So the p-p / n-n pair is the bar-conjugate (strong/weak) axis, and the p-n bond
-sits at the intertwiner point carrying the EM ratio — the same place the
-taxonomy independently puts the electromagnetic sector. The rates differ by
+sits at the bar-fixed point carrying h/(q+1/q). Calling that "the EM ratio" is
+WITHDRAWN — `q` alone has the same odd/even ratio, so the match is formal. The rates differ by
 sector and they are not independent, exactly as the owner said.
 
 *** THE h-ORDERS LINE UP WITH THE CAL LADDER ***
@@ -258,9 +259,12 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     print(f"    |tanh(ln q_0) - closed form|  = "
           f"{mp.nstr(mp.fabs(tanh0 - tanh0_closed), 4)}")
     print(f"    tanh(ln q_0) = {mp.nstr(tanh0, 18)}")
-    print(f"    — EXACTLY the odd-to-even ratio `interaction-sector-taxonomy.md`")
-    print(f"      derives for the ELECTROMAGNETIC coupling (0.10396), the cell it")
-    print(f"      proves admits no pure parity.")
+    print(f"    the taxonomy quotes 0.10396 for its EM coupling — but that match is")
+    print(f"    FORMAL, not a link (qou-i9gk, 2026-09-01): `q` ALONE has this same")
+    print(f"    odd/even ratio, X = q.B gives it for any bar-even B, and tanh(ln q)")
+    print(f"    IS h/(q+1/q) — which is exactly how it arises here. The match also")
+    print(f"    lands on the taxonomy's BARE ratio, not its dressed 0.10356 (54x the")
+    print(f"    residual away). The closed form is kept; the EM link is withdrawn.")
     dep_rows = {}
     for nm, fn in (("leading", flavor_split_leading),
                    ("subleading", flavor_split_subleading)):
@@ -328,8 +332,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                         and all(v[3] < mp.mpf("1e-3") for v in dep_rows.values())),
          "detail": f"1 - |r_pn| = 2.delta.(q^2-1)/(delta.(q^2-1) + 2q^2 + 2), whose "
                    f"leading coefficient is (q^2-1)/(q^2+1) = tanh(ln q). At the pin "
-                   f"tanh(ln q_0) = {mp.nstr(tanh0, 12)} — the odd-to-even ratio the "
-                   f"taxonomy derives for the ELECTROMAGNETIC coupling. Predicted "
+                   f"tanh(ln q_0) = {mp.nstr(tanh0, 12)}. The taxonomy quotes the same "
+                   f"number for its EM coupling, but that match is FORMAL and is "
+                   f"WITHDRAWN (qou-i9gk): `q` alone has the ratio. Predicted "
                    f"{mp.nstr(dep_rows['leading'][2], 10)} against measured "
                    f"{mp.nstr(1 - dep_rows['leading'][1], 10)}, agreeing to "
                    f"{mp.nstr(dep_rows['leading'][3], 4)} relative — the second order in "
@@ -376,9 +381,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "STRONG cosh channel) and their ratio bar-odd (its WEAK sinh channel). The "
             "colour-weighted p-n bond's departure from -1 is tanh(ln q).delta + "
             "O(delta^2), and tanh(ln q_0) = 0.103963710 is exactly the odd-to-even ratio "
-            "`interaction-sector-taxonomy.md` derives for the ELECTROMAGNETIC coupling — "
-            "the cell it proves admits no pure parity. Predicted 1.4302400e-4 against "
-            "measured 1.4301377e-4, agreeing to 7.2e-5 relative. delta vanishes to order "
+            "the taxonomy also quotes for its EM coupling — but that match is FORMAL and "
+            "is WITHDRAWN (qou-i9gk, 2026-09-01): `q` alone has the same odd/even ratio. "
+            "Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5. delta vanishes to order "
             "h^3, CAL-3's order. What this does NOT do: supply the coupling word — a "
             "non-adjacent nucleon pair still has no single generator to sit on."),
         "contentBlock": "prop:three-calibration-inputs",
@@ -437,7 +442,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="sympy+mpmath",
             q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
-        json.dump(witness, f, indent=2)
+        # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
+        # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
+        json.dump(witness, f, indent=2, ensure_ascii=False)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")
     return 0 if ok else 1

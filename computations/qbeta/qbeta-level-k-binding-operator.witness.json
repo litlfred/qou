@@ -1,7 +1,7 @@
 {
   "computation": "qbeta-level-k-binding-operator",
   "engine": "mpmath",
-  "description": "qou-cds1 Step 27. CORRECTS Step 25's 'the level-k avenue is not instantiated'. `build_atom_nf` returning a 6-vector at every A is not evidence that the atom lives in H_3 \u2014 it is evidence that the production chain reduces to H_3 after every crossing (bean qou-tower), i.e. that H_3 is where the atom can be OBSERVED. The faithful object is `atom_braid_word_3A`, whose `include_inter` switch is exactly composite-vs-constituents. Binding is a DIFFERENCE of observations, so the level-k operator is the same difference taken on the OPERATORS: Delta_bind = beta_atom - beta_free. For the deuteron it factors exactly as P.(I-1).N (2.1e-40 in all 11 blocks of H_6), and since I - 1 carries sigma_2 while beta_free lives in H_3 (x) H_3, Delta_bind is genuinely H_6-valued and Step 24's branching argument does not reach it. Validated against the corpus's own `chi_lambda_of_word` to 5.4e-15. THE FINDING: convention D is the SU(2)/Temperley-Lieb trace, so omega_lambda vanishes on every partition with more than two rows \u2014 measured < 2e-16 on seven of eleven shapes, and confirmed by dimension arithmetic (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). 588 of 720 dimensions are invisible to the observable, and the binding character is LARGEST in an invisible block (chi_(3,2,1) = -9.598). The only small eigenphases in the corpus live there: 0.0252506 in (3,2,1) and 0.0195531 in (2,2,1,1), the first values in this arc BELOW the required 0.0447444. They sum to it within 0.13 %, but that is a wall artefact: theta_2 collapses at the (2,2,1,1) ellipticity wall q_w = 1.1121238, the crossing is at q* = 1.109988469 = 1.07e7 sigma_q0 from the pin, and 'sum of two block eigenphases' has no derivation behind it.",
+  "description": "qou-cds1 Step 27. CORRECTS Step 25's 'the level-k avenue is not instantiated'. `build_atom_nf` returning a 6-vector at every A is not evidence that the atom lives in H_3 — it is evidence that the production chain reduces to H_3 after every crossing (bean qou-tower), i.e. that H_3 is where the atom can be OBSERVED. The faithful object is `atom_braid_word_3A`, whose `include_inter` switch is exactly composite-vs-constituents. Binding is a DIFFERENCE of observations, so the level-k operator is the same difference taken on the OPERATORS: Delta_bind = beta_atom - beta_free. For the deuteron it factors exactly as P.(I-1).N (2.1e-40 in all 11 blocks of H_6), and since I - 1 carries sigma_2 while beta_free lives in H_3 (x) H_3, Delta_bind is genuinely H_6-valued and Step 24's branching argument does not reach it. Validated against the corpus's own `chi_lambda_of_word` to 5.4e-15. THE FINDING: convention D is the SU(2)/Temperley-Lieb trace, so omega_lambda vanishes on every partition with more than two rows — measured < 2e-16 on seven of eleven shapes, and confirmed by dimension arithmetic (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). READING CORRECTED 2026-09-01 (qou-i9gk): those 588 dimensions are the TL KERNEL and act as ZERO on the N = 2 physical space — the Schur-Weyl row cap, not a hidden sector — and the reading contradicts convention D, which is forced by the same open premise (qou-n1dj) that empties them. The binding character is LARGEST in a kernel block (chi_(3,2,1) = -9.598), an l = 3 block, so it measures what an N = 3 extension would carry. The only small eigenphases in the corpus live there: 0.0252506 in (3,2,1) and 0.0195531 in (2,2,1,1), the first values in this arc BELOW the required 0.0447444. They sum to it within 0.13 %, but that is a wall artefact: theta_2 collapses at the (2,2,1,1) ellipticity wall q_w = 1.1121238, the crossing is at q* = 1.109988469 = 1.07e7 sigma_q0 from the pin, and 'sum of two block eigenphases' has no derivation behind it.",
   "contentBlock": "prop:three-calibration-inputs",
   "assertions": [
     {
@@ -12,27 +12,27 @@
     {
       "name": "construction_validates_against_the_corpus_character_routine",
       "passed": true,
-      "detail": "my rho_lambda reproduces `chi_lambda_of_word` to 5.39e-15 in all 11 blocks \u2014 at the float64 floor of the corpus's own path, so the operator is the corpus's object and not a re-derivation of it"
+      "detail": "my rho_lambda reproduces `chi_lambda_of_word` to 5.39e-15 in all 11 blocks — at the float64 floor of the corpus's own path, so the operator is the corpus's object and not a re-derivation of it"
     },
     {
       "name": "trace_is_blind_to_every_partition_with_more_than_two_rows",
       "passed": true,
-      "detail": "convention D is the SU(2)/Temperley-Lieb trace, so it factors through TL_6: measured omega is ~1e-1 on the four <=2-row shapes and < 2e-16 on the other seven, and the dimension arithmetic confirms it independently \u2014 sum d^2 over all 11 is 720 = 6!, over the visible 4 is 132 = Catalan(6) = dim TL_6"
+      "detail": "convention D is the SU(2)/Temperley-Lieb trace, so it factors through TL_6: measured omega is ~1e-1 on the four <=2-row shapes and < 2e-16 on the other seven, and the dimension arithmetic confirms it independently — sum d^2 over all 11 is 720 = 6!, over the visible 4 is 132 = Catalan(6) = dim TL_6"
     },
     {
-      "name": "binding_character_is_largest_in_an_invisible_block",
+      "name": "binding_character_is_largest_in_a_tl_kernel_block",
       "passed": true,
-      "detail": "the largest binding character of any block is (3, 2, 1) at -9.597856, against 0.0085637314 in the one-dimensional visible block \u2014 and it contributes nothing to the observable. 588 of 720 dimensions are invisible"
+      "detail": "the largest binding character of any block is (3, 2, 1) at -9.597856, against 0.0085637314 in the one-dimensional visible block — and it contributes nothing to the observable. 588 of 720 dimensions are the TL KERNEL — they act as ZERO on the N = 2 physical space (qou-i9gk), not a hidden sector; and (3,2,1) is an l = 3 block, so this measures what an N = 3 extension would carry"
     },
     {
       "name": "the_only_small_eigenphases_are_in_blind_blocks",
       "passed": true,
-      "detail": "small eigenphases appear only in ['(2, 2, 1, 1)', '(3, 2, 1)'], both trace-invisible, at 0.025250633 and 0.01955313 against a required 0.044744395. These are the first phases in this arc BELOW the required one \u2014 Step 25's smallest species-pair phase was 4.41x too large and Step 26's cyclotomic minimum 24.8x"
+      "detail": "small eigenphases appear only in ['(2, 2, 1, 1)', '(3, 2, 1)'], both TL-kernel blocks, at 0.025250633 and 0.01955313 against a required 0.044744395. These are the first phases in this arc BELOW the required one — Step 25's smallest species-pair phase was 4.41x too large and Step 26's cyclotomic minimum 24.8x"
     },
     {
       "name": "the_sum_coincidence_is_a_degeneracy_wall_artefact",
       "passed": true,
-      "detail": "the two small phases sum to 0.04480376303 against the required 0.04474439462 \u2014 0.13 %. But theta_2 collapses to zero at the (2,2,1,1) wall q_w = 1.11212376285, so the sum sweeps through every value below it and a crossing must exist; it is at q* = 1.1099884692266, 1.07326e+7 sigma_q0 from the pin. Both q* and q_0 sit ~0.192 % below the same wall. Recorded as a target, never as a criterion: 'sum of two block eigenphases' has no derivation behind it"
+      "detail": "the two small phases sum to 0.04480376303 against the required 0.04474439462 — 0.13 %. But theta_2 collapses to zero at the (2,2,1,1) wall q_w = 1.11212376285, so the sum sweeps through every value below it and a crossing must exist; it is at q* = 1.1099884692266, 1.07326e+7 sigma_q0 from the pin. Both q* and q_0 sit ~0.192 % below the same wall. Recorded as a target, never as a criterion: 'sum of two block eigenphases' has no derivation behind it"
     },
     {
       "name": "observable_share_collapses_super_exponentially_with_A",
@@ -42,7 +42,7 @@
     {
       "name": "corpus_word_is_a_nearest_neighbour_chain_exact_only_at_A_2",
       "passed": true,
-      "detail": "`atom_braid_word_3A` places an interface at gen 3k+2 for k < A-1 in a fixed ['p']*Z + ['n']*N order \u2014 A-1 couplings where all pairs would be A(A-1)/2, a deficit of (A-1)(A-2)/2. It is ZERO at A=2, so this probe's deuteron result is exact. From A=3 it bites: permuting the arbitrary ordering (ppn / pnp / npp) moves the binding character by 22.54 %, and an all-pairs coupling would have no such dependence by symmetry"
+      "detail": "`atom_braid_word_3A` places an interface at gen 3k+2 for k < A-1 in a fixed ['p']*Z + ['n']*N order — A-1 couplings where all pairs would be A(A-1)/2, a deficit of (A-1)(A-2)/2. It is ZERO at A=2, so this probe's deuteron result is exact. From A=3 it bites: permuting the arbitrary ordering (ppn / pnp / npp) moves the binding character by 22.54 %, and an all-pairs coupling would have no such dependence by symmetry"
     }
   ],
   "allPassed": true,
@@ -64,7 +64,7 @@
     "chi_validation_max_rel_err": "5.38974e-15",
     "dim_H6": 720,
     "dim_TL6_visible": 132,
-    "invisible_dimensions": 588,
+    "tl_kernel_dimensions": 588,
     "blocks": [
       {
         "partition": [
@@ -338,18 +338,18 @@
     "ordering_max_relative_spread": "0.2254043935"
   },
   "context": {
-    "axis": "qou-cds1: construct the genuinely level-k operator the corpus does not have, and ask whether the ladder phase lives where the trace cannot see.",
-    "answer": "The operator exists and is BINDING \u2014 composite minus constituents, taken on the operators rather than the numbers. The trace is blind to 588 of the 720 dimensions it lives in, structurally, because convention D factors through Temperley-Lieb. The first small eigenphases in this entire arc are in that blind sector. Their sum matches the required phase to 0.13 % at q_0, but the crossing is a degeneracy-wall artefact 1.07e7 sigma from the pin and the combination is unmotivated, so it is recorded as a target rather than a result.",
+    "axis": "qou-cds1: construct the genuinely level-k operator the corpus does not have, and ask whether the ladder phase lives in the blocks the convention-D trace annihilates.",
+    "answer": "The operator exists and is BINDING — composite minus constituents, taken on the operators rather than the numbers. 588 of the 720 dimensions it lives in are the TL kernel (reading corrected 2026-09-01, qou-i9gk: they act as zero at N = 2, they are not hidden), and 588 of the 720 dimensions it lives in, structurally, because convention D factors through Temperley-Lieb. The first small eigenphases in this entire arc are in that blind sector. Their sum matches the required phase to 0.13 % at q_0, but the crossing is a degeneracy-wall artefact 1.07e7 sigma from the pin and the combination is unmotivated, so it is recorded as a target rather than a result.",
     "corrects": "Step 25's 'the corpus is H_3-valued at every A, so the level-k avenue is not instantiated'. The 6-vector is the observation, not the object.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* and the 0.13 % ratio are facts about the operator, never criteria."
   },
-  "gitCommit": "699f98c3cf6740d8df9a4b63823e2a884f65aa3f",
+  "gitCommit": "85c2bb046881fed2b78f5faf3166916e791fdc20",
   "durationMs": 0,
   "scriptFile": "qbeta_level_k_binding_operator_probe.py",
-  "scriptHash": "5cb7bf34650a",
+  "scriptHash": "30d782c69268",
   "scriptCommitSha": "bfc8da8dd92ddf8bb0bb61d47bff9a56495e15c1",
-  "commitSha": "699f98c3cf6740d8df9a4b63823e2a884f65aa3f",
-  "computedAt": "2026-09-01T04:16:58.976013+00:00",
+  "commitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "computedAt": "2026-09-01T04:54:44.361250+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton (experimental pin)",
   "q0Value": "1.10997858275138080759166909561"

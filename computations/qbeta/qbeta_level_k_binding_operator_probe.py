@@ -1,6 +1,29 @@
 #!/usr/bin/env python3
-"""qou-cds1 Step 27: the level-k operator exists — it is BINDING, and the trace is
-blind to 588 of the 720 dimensions it lives in.
+"""qou-cds1 Step 27: the level-k operator exists — it is BINDING, and 588 of the
+720 dimensions it lives in are the Temperley-Lieb KERNEL.
+
+*** 🛑 THE HEADLINE READING IS CORRECTED (2026-09-01, bean qou-i9gk) ***
+
+This probe first said the >2-row blocks carry "information the observable cannot
+see". They carry NO STATES at N = 2. Measured at n = 3..8
+(`qbeta_blind_sector_is_the_tl_kernel_probe.py`, 4/4): omega_lambda = 0 <=>
+l(lambda) > 2 exactly, and sum d^2 over the <=2-row blocks is Catalan(n) at every
+n. So those blocks ARE TL_n and the rest span the KERNEL of H_n(q) -> TL_n(q);
+since TL_n = End_{U_q(sl2)}(V^(x)n) that kernel acts as ZERO on the N = 2
+physical space. It is the Schur-Weyl row cap (qou-fvzm), not a second vanishing.
+
+And the reading contradicts convention D, in which it was measured:
+`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj) shows D is forced BY the
+open premise that empties the blind sector. Under the premise there are no states
+there; under its negation D is not forced. The headline reduces to qou-n1dj.
+
+N_min(lambda) = l(lambda), so the two small eigenphases below need N >= 3
+((3,2,1)) and N >= 4 ((2,2,1,1)) — the 0.13 % sum coincidence requires N >= 4,
+which nothing motivates. What SURVIVES: (3,2,1) is an l = 3 block carrying the
+largest binding character, and qou-fvzm says the super-pairwise binding term
+requires N >= 3 — so this probe measures what an N = 3 extension would carry.
+The construction, its validation and the chain-vs-all-pairs finding are untouched.
+Read every "invisible / cannot see" below through this banner.
 
 *** THIS STEP CORRECTS STEP 25, MINE ***
 
@@ -57,16 +80,16 @@ seven. Arithmetic confirmation, independent of the numerics:
     sum of d^2 over all 11 partitions of 6            = 720 = 6!    = dim H_6
     sum of d^2 over the 4 with at most two rows       = 132 = C_6   = dim TL_6
 
-**588 of 720 dimensions are invisible to the observable**, and the binding
+**588 of 720 dimensions are the TL KERNEL** (see the banner: they act as zero on
+the N = 2 physical space, they are not a hidden sector), and the binding
 character is large in them — chi_(3,2,1) = -9.598, the largest of any block,
-against chi_(6) = +0.009 in the one-dimensional visible block. This is the
-tower statement made numerical: the information is there and the trace is blind
-to it, structurally rather than accidentally.
+against chi_(6) = +0.009 in the one-dimensional visible block. Read as a
+measurement of what an N = 3 extension would carry, not of hidden information.
 
 *** WHAT IS IN THE BLIND SECTOR ***
 
 The first SMALL eigenphases found anywhere in this arc, and they are all in
-blocks the trace cannot see:
+kernel blocks (unphysical at N = 2; see the banner for the N_min reading):
 
     lambda        dim   visible?   small eigenphase
     (3,2,1)        16   NO         0.0252506
@@ -250,8 +273,8 @@ def _head_sha() -> str:
 def main() -> int:  # noqa: C901 — one linear narrative, deliberately not split
     t_start = time.monotonic()
     print("=" * 78)
-    print(" Step 27: the level-k operator is BINDING, and the trace is blind to")
-    print("          588 of the 720 dimensions it lives in")
+    print(" Step 27: the level-k operator is BINDING; 588 of the 720 dimensions")
+    print("          it lives in are the TL KERNEL (reading corrected — qou-i9gk)")
     print("=" * 78)
 
     w_atom = atom_braid_word_3A(1, 1, include_inter=True, q=Q0)
@@ -296,7 +319,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     print(f"    worst relative disagreement over all 11 blocks : "
           f"{mp.nstr(chi_err, 4)}  (their path is float64, so ~1e-14 is the floor)")
 
-    # [3] what the trace can and cannot see -----------------------------------
+    # [3] the TL kernel — what convention D annihilates -----------------------------------
     # float64-ok: `omega_lambda_via_inversion` takes f64 by signature, and the
     # weights are used ONLY to classify a block visible or blind at a 1e-10
     # threshold against values that are ~1e-1 or ~1e-16 — nine orders of margin,
@@ -323,11 +346,14 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     print(f"\n    visible <=> at most two rows : {vis_is_two_row}")
     print(f"    sum d^2, all 11 shapes       : {tot_dim}  (= 6! = dim H_6)")
     print(f"    sum d^2, the 4 visible ones  : {two_row}  (= Catalan(6) = dim TL_6)")
-    print(f"    INVISIBLE TO THE OBSERVABLE  : {tot_dim - vis_dim} of {tot_dim} "
+    print(f"    THE TL KERNEL                : {tot_dim - vis_dim} of {tot_dim} "
           f"dimensions ({mp.nstr(mp.mpf(tot_dim - vis_dim) / tot_dim * 100, 5)} %)")
+    print(f"    -> these act as ZERO on the N = 2 physical space (qou-i9gk); they")
+    print(f"       are not a hidden sector. N_min(lambda) = l(lambda).")
     big = max(SHAPES, key=lambda s: abs(chis[s]))
     print(f"    largest |chi(binding)| is {str(big)} at "
-          f"{mp.nstr(chis[big], 8)} — and it is INVISIBLE")
+          f"{mp.nstr(chis[big], 8)} — an l = 3 block, so it measures what an")
+    print(f"    N = 3 extension would carry (qou-fvzm: super-pairwise needs N >= 3)")
 
     # [4] the spectra ----------------------------------------------------------
     print(f"\n[4] eigenphases of Delta_bind, block by block")
@@ -351,7 +377,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     print(f"\n    required ladder phase (z_D) : {mp.nstr(th_req0, 12)}")
     print(f"    small phases found          : "
           f"{ {str(s): mp.nstr(v, 10) for s, v in small.items()} }")
-    print(f"    every one of them is in a block the trace CANNOT see: "
+    print(f"    every one of them is in a TL-KERNEL block (zero at N=2): "
           f"{all(not vis[s] for s in small)}")
     print(f"    and they are the first phases in this arc BELOW the required one")
     print(f"    (Step 25's smallest was 4.41x too large; Step 26's cyclotomic 24.8x)")
@@ -491,17 +517,20 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                    "< 2e-16 on the other seven, and the dimension arithmetic confirms it "
                    "independently — sum d^2 over all 11 is 720 = 6!, over the visible 4 "
                    "is 132 = Catalan(6) = dim TL_6"},
-        {"name": "binding_character_is_largest_in_an_invisible_block",
+        {"name": "binding_character_is_largest_in_a_tl_kernel_block",
          "passed": bool(not vis[big] and abs(chis[big]) > 5),
          "detail": f"the largest binding character of any block is {str(big)} at "
                    f"{mp.nstr(chis[big], 8)}, against {mp.nstr(chis[(6,)], 8)} in the "
                    f"one-dimensional visible block — and it contributes nothing to the "
-                   f"observable. {tot_dim - vis_dim} of {tot_dim} dimensions are invisible"},
+                   f"observable. {tot_dim - vis_dim} of {tot_dim} dimensions are the TL "
+                   f"KERNEL — they act as ZERO on the N = 2 physical space (qou-i9gk), not "
+                   f"a hidden sector; and (3,2,1) is an l = 3 block, so this measures what "
+                   f"an N = 3 extension would carry"},
         {"name": "the_only_small_eigenphases_are_in_blind_blocks",
          "passed": bool(small and all(not vis[s] for s in small)
                         and all(v < th_req0 for v in small.values())),
          "detail": f"small eigenphases appear only in {sorted(map(str, small))}, both "
-                   f"trace-invisible, at {mp.nstr(t1, 8)} and {mp.nstr(t2, 8)} against a "
+                   f"TL-kernel blocks, at {mp.nstr(t1, 8)} and {mp.nstr(t2, 8)} against a "
                    f"required {mp.nstr(th_req0, 8)}. These are the first phases in this "
                    f"arc BELOW the required one — Step 25's smallest species-pair phase "
                    f"was 4.41x too large and Step 26's cyclotomic minimum 24.8x"},
@@ -563,9 +592,13 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "FINDING: convention D is the SU(2)/Temperley-Lieb trace, so omega_lambda "
             "vanishes on every partition with more than two rows — measured < 2e-16 on "
             "seven of eleven shapes, and confirmed by dimension arithmetic (720 = 6! "
-            "total, 132 = Catalan(6) = dim TL_6 visible). 588 of 720 dimensions are "
-            "invisible to the observable, and the binding character is LARGEST in an "
-            "invisible block (chi_(3,2,1) = -9.598). The only small eigenphases in the "
+            "total, 132 = Catalan(6) = dim TL_6 visible). READING CORRECTED 2026-09-01 "
+            "(qou-i9gk): those 588 dimensions are the TL KERNEL and act as ZERO on the "
+            "N = 2 physical space — the Schur-Weyl row cap, not a hidden sector — and the "
+            "reading contradicts convention D, which is forced by the same open premise "
+            "(qou-n1dj) that empties them. The binding character is LARGEST in a kernel "
+            "block (chi_(3,2,1) = -9.598), an l = 3 block, so it measures what an N = 3 "
+            "extension would carry. The only small eigenphases in the "
             "corpus live there: 0.0252506 in (3,2,1) and 0.0195531 in (2,2,1,1), the "
             "first values in this arc BELOW the required 0.0447444. They sum to it within "
             "0.13 %, but that is a wall artefact: theta_2 collapses at the (2,2,1,1) "
@@ -585,7 +618,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
             "factorisation_max_err": mp.nstr(fact_err, 6),
             "chi_validation_max_rel_err": mp.nstr(chi_err, 6),
             "dim_H6": tot_dim, "dim_TL6_visible": two_row,
-            "invisible_dimensions": tot_dim - vis_dim,
+            "tl_kernel_dimensions": tot_dim - vis_dim,
             "blocks": [{"partition": list(s), "rows": len(s), "dim": dims[s],
                         "omega_abs": mp.nstr(mp.fabs(mp.mpf(str(om.get(s, 0.0)))), 8),
                         "visible": vis[s], "chi_binding": mp.nstr(chis[s], 12),
@@ -610,11 +643,13 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         },
         "context": {
             "axis": "qou-cds1: construct the genuinely level-k operator the corpus does "
-                    "not have, and ask whether the ladder phase lives where the trace "
-                    "cannot see.",
+                    "not have, and ask whether the ladder phase lives in the blocks the "
+                    "convention-D trace annihilates.",
             "answer": (
                 "The operator exists and is BINDING — composite minus constituents, taken "
-                "on the operators rather than the numbers. The trace is blind to 588 of "
+                "on the operators rather than the numbers. 588 of the 720 dimensions it "
+                "lives in are the TL kernel (reading corrected 2026-09-01, qou-i9gk: they "
+                "act as zero at N = 2, they are not hidden), and 588 of "
                 "the 720 dimensions it lives in, structurally, because convention D "
                 "factors through Temperley-Lieb. The first small eigenphases in this "
                 "entire arc are in that blind sector. Their sum matches the required "
@@ -638,7 +673,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
             q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
-        json.dump(witness, f, indent=2)
+        # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
+        # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
+        json.dump(witness, f, indent=2, ensure_ascii=False)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")
     return 0 if ok else 1

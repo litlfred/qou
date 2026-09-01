@@ -1,7 +1,7 @@
 {
   "computation": "qbeta-tanh-em-match-is-formal",
   "engine": "sympy+mpmath",
-  "description": "qou-i9gk residual, settling Step 28's last surviving positive. The claim was that the colour-weighted p-n bond's departure, tanh(ln q).delta, links it to the electromagnetic sector because tanh(ln q_0) = 0.103963710 is the taxonomy's EM odd-to-even ratio. It does not. (1) CENSUS: 5 of 14 swept q-quantities have that ratio exactly, and `q` ALONE is one of them \u2014 every quantum integer is bar-even so [9]_q[10]_q divides out, and the matched number is a property of the bare prefactor with zero electromagnetic content. (2) LEMMA: X = q.B with B bar-even gives the ratio identically for ANY B; and tanh(ln q) IS h/(q+1/q), the ratio of the most basic bar-odd and bar-even quantities, which is exactly how it arises in the p-n departure \u2014 so the two 'matching' expressions are one expression written twice. (3) DISCRIMINATOR: the taxonomy documents a bare ratio 0.10396 and a Chern-Simons-dressed 0.10356, differing by 3.9e-3 relative = 54x Step 28's 7.2e-5 residual; the match lands on the BARE value, i.e. the algebraic form rather than the physical coupling. Downgraded: the closed form is kept, the EM link is withdrawn.",
+  "description": "qou-i9gk residual, settling Step 28's last surviving positive. The claim was that the colour-weighted p-n bond's departure, tanh(ln q).delta, links it to the electromagnetic sector because tanh(ln q_0) = 0.103963710 is the taxonomy's EM odd-to-even ratio. It does not. (1) CENSUS: 5 of 14 swept q-quantities have that ratio exactly, and `q` ALONE is one of them — every quantum integer is bar-even so [9]_q[10]_q divides out, and the matched number is a property of the bare prefactor with zero electromagnetic content. (2) LEMMA: X = q.B with B bar-even gives the ratio identically for ANY B; and tanh(ln q) IS h/(q+1/q), the ratio of the most basic bar-odd and bar-even quantities, which is exactly how it arises in the p-n departure — so the two 'matching' expressions are one expression written twice. (3) DISCRIMINATOR: the taxonomy documents a bare ratio 0.10396 and a Chern-Simons-dressed 0.10356, differing by 3.9e-3 relative = 54x Step 28's 7.2e-5 residual; the match lands on the BARE value, i.e. the algebraic form rather than the physical coupling. Downgraded: the closed form is kept, the EM link is withdrawn.",
   "contentBlock": "prop:three-calibration-inputs",
   "assertions": [
     {
@@ -12,17 +12,17 @@
     {
       "name": "the_lemma_forces_it_for_any_bar_even_factor",
       "passed": true,
-      "detail": "X = q.B with B bar-even gives (X - Xbar)/(X + Xbar) = tanh(ln q) identically, B cancelling \u2014 so the ratio cannot distinguish one such quantity from another. And tanh(ln q) IS h/(q + 1/q), the ratio of the most basic bar-odd and bar-even quantities in the algebra, which is exactly how it arises in the p-n departure (numerator h from the offset, denominator q + 1/q from the averaged eigenvalue). The two expressions are one expression written twice"
+      "detail": "X = q.B with B bar-even gives (X - Xbar)/(X + Xbar) = tanh(ln q) identically, B cancelling — so the ratio cannot distinguish one such quantity from another. And tanh(ln q) IS h/(q + 1/q), the ratio of the most basic bar-odd and bar-even quantities in the algebra, which is exactly how it arises in the p-n departure (numerator h from the offset, denominator q + 1/q from the averaged eigenvalue). The two expressions are one expression written twice"
     },
     {
       "name": "the_match_lands_on_the_bare_ratio_not_the_dressed_one",
       "passed": true,
-      "detail": "the taxonomy documents tanh(ln q_0) = 0.1039637101 for the BARE coupling and ~0.10356 for the Chern-Simons-dressed one \u2014 the physical coupling. They differ by 0.00388318 relative, 54.301x Step 28's residual, so the measurement distinguishes them and lands on the ALGEBRAIC form. A physical EM link should have shown the dressed value"
+      "detail": "the taxonomy documents tanh(ln q_0) = 0.1039637101 for the BARE coupling and ~0.10356 for the Chern-Simons-dressed one — the physical coupling. They differ by 0.00388318 relative, 54.301x Step 28's residual, so the measurement distinguishes them and lands on the ALGEBRAIC form. A physical EM link should have shown the dressed value"
     },
     {
       "name": "step28_last_positive_is_downgraded",
       "passed": true,
-      "detail": "KEPT: the p-n departure is exactly tanh(ln q).delta + O(delta^2), a closed form, with delta the derived flavour split at CAL-3's order h^3. WITHDRAWN: that this links the p-n bond to the electromagnetic sector. It links it to the bar involution, which every quantity in the algebra is linked to. Step 28 now retains only its first result \u2014 the bond rates as derived closed forms \u2014 which qou-brng derived independently and more correctly on main"
+      "detail": "KEPT: the p-n departure is exactly tanh(ln q).delta + O(delta^2), a closed form, with delta the derived flavour split at CAL-3's order h^3. WITHDRAWN: that this links the p-n bond to the electromagnetic sector. It links it to the bar involution, which every quantity in the algebra is linked to. Step 28 now retains only its first result — the bond rates as derived closed forms — which qou-brng derived independently and more correctly on main"
     }
   ],
   "allPassed": true,
@@ -116,13 +116,13 @@
     "corrects": "Step 28's 'the p-n bond sits at the intertwiner point, which is where the taxonomy independently puts the EM sector'.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "2f7b150425c1ae5af5cd34e361fd4a39d305ae77",
+  "gitCommit": "85c2bb046881fed2b78f5faf3166916e791fdc20",
   "durationMs": 0,
   "scriptFile": "qbeta_tanh_em_match_is_formal_probe.py",
-  "scriptHash": "f42a887656de",
-  "scriptCommitSha": "unknown",
-  "commitSha": "2f7b150425c1ae5af5cd34e361fd4a39d305ae77",
-  "computedAt": "2026-09-01T04:39:43.383008+00:00",
+  "scriptHash": "f3b309d83086",
+  "scriptCommitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "commitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "computedAt": "2026-09-01T04:54:47.944940+00:00",
   "q0Anchor": "proton (experimental pin)",
   "q0Value": "1.10997858275138080759166909561"
 }

@@ -289,7 +289,9 @@ def main() -> int:
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="sympy+mpmath",
             q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
-        json.dump(witness, f, indent=2)
+        # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
+        # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
+        json.dump(witness, f, indent=2, ensure_ascii=False)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")
     return 0 if ok else 1
