@@ -67,12 +67,12 @@ session's own history is the argument for it.
 Enumerating all 5456 words of length <= 6 in `{s1, s1^-1, s2, s2^-1}`, with
 every word's roots resolved (0 unresolved, counted and reported):
 
-    best log-modulus ratio = 5.0   at  abaab       nature needs ~ 22.2457
+    best log-modulus ratio = 5.0   at  abaab       nature needs ~ 33.7055
 
 ## 🛑 THE FIGURE THIS PROBE ALMOST REPORTED INSTEAD
 
 With the near-unit floor set at `1e-15`, that same enumeration returned
-**7752455236.0** at `AABAAB`, and the summary line read *"reaches 22.25:
+**7752455236.0** at `AABAAB`, and the summary line read *"reaches 33.7:
 True"*.  It is an artefact.  Four of `AABAAB`'s six moduli are `1` to within
 `8.08e-11` -- exactly 1 as algebra, numerical dust as arithmetic, from a
 repeated characteristic-polynomial root -- so the ratio was dividing a genuine
@@ -121,7 +121,7 @@ definitional question, not a bound.
     eigenvalues to the two isospin channels in a `d`-dimensional block is a
     separate question, unanswered here.
   * NOT a binding value, nothing wired, nothing fitted.
-  * NOT that the reachable ratio settles the 22.25 target -- the search below
+  * NOT that the reachable ratio settles the 33.7 target -- the search below
     reports what it found over the words enumerated, and that is a lower bound
     on what is reachable, never an upper one.
 
@@ -222,7 +222,7 @@ def spread(A):
     The floor matters more than it looks: with a 1e-15 cut, the word AABAAB
     reports a ratio of 7.75e9 purely because four of its moduli are 1 to within
     8.08e-11 -- exactly 1 as algebra, noise as arithmetic.  That figure was
-    briefly this probe's headline 'reaches 22.25: True'.  It does not."""
+    briefly this probe's headline 'reaches 33.7: True'.  It does not."""
     ms = moduli(A)
     if ms is None:
         return None, None
@@ -340,7 +340,7 @@ def main() -> int:
           + (f"   e.g. {', '.join(unres_ex)}" if unres_ex else ""))
     print("    (counted and reported, not skipped silently -- a dropped word is")
     print("     how an enumeration reports a maximum it never searched.)")
-    need = mp.mpf("2.224566") / mp.mpf("0.1")
+    need = mp.mpf("2.224566") / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
     print()
     print(f"    nature's channel asymmetry needs R ~ {fmt(need, 6)}")
     print(f"    best over this enumeration          {fmt(best[0], 10)}   at {best[1]}")
@@ -396,7 +396,7 @@ def main() -> int:
     print("    was reporting.  The set is not discrete; only the positive-word")
     print("    part of it is.")
     print()
-    print("    What survives: nothing here reaches 22.2457, and if a future")
+    print("    What survives: nothing here reaches 33.7055, and if a future")
     print("    attempt lands on a near-integer ratio such as 89/4 = 22.25")
     print("    (already 1.9e-4 off), that is an approximate match to a ratio")
     print("    nobody derived -- numerology, not a mechanism.")

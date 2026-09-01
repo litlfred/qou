@@ -17,7 +17,7 @@ Two facts sit next to each other and invite exactly one inference:
 
   * The eigenvalue criterion predicts `B(T=1) = -B(T=0)` **exactly**, because
     `|lambda_+ * lambda_-| = |det T| = 1` for the pure braid generator.  Nature
-    gives `+2.224566` against `~ -0.1`: a **22.25 : 1** asymmetry.
+    gives `+2.224566` against `~ -0.066`: a **33.7 : 1** asymmetry.
   * `delta = flavor_split_leading(q)` is the ONLY bar-symmetry breaking in the
     bond-letter family, and it is exactly what displaces the p-n letter off the
     bar-symmetric midpoint.
@@ -47,7 +47,7 @@ so the channel asymmetry is the pure ratio
     R(d)  =  |log|lambda_-||  /  |log|lambda_+||
 
 with `R = 1` meaning exact antisymmetry (the falsified case) and nature
-requiring `R ~ 22.25`.  **`R` is scale-free**: `alpha` cancels, so no
+requiring `R ~ 33.7`.  **`R` is scale-free**: `alpha` cancels, so no
 calibration, no MeV, and nothing to fit.
 
 ## THE RESULT — an EXACT INEQUALITY, not a swept band
@@ -55,7 +55,7 @@ calibration, no MeV, and nothing to fit.
     R(d) <= 1  for every admissible letter,
                with equality iff  |l_+| = |l_-|  OR  |det T| = 1
 
-and nature requires `R ~ 22.25`.  **Excluded by an inequality, in the correct
+and nature requires `R ~ 33.7`.  **Excluded by an inequality, in the correct
 direction**: the asymmetry cannot even point the right way, let alone reach 22.
 
 PROOF (two lines, and the sweep below only confirms it):
@@ -158,7 +158,7 @@ That is evidence *against* the letter carrying the asymmetry, not a place to
 aim a derivation.
 
 **Two further corrections to my own passes, both about RANGE, not arithmetic.**
-I first swept only to `d = 3h` and reported "R never reaches 22.25" -- true of
+I first swept only to `d = 3h` and reported "R never reaches 33.7" -- true of
 the range swept, false of the family, since the pole sits at `4.309*h`.  I then
 swept the right window on a UNIFORM grid, which a logarithmic divergence
 outruns: 20000 points reach only `R = 14.3`.  The assertion failed rather than
@@ -206,7 +206,11 @@ TOL = mp.mpf(10) ** -40
 
 # nature, for comparison only (AME2020 / scattering); never an input
 B_PN_3S1 = mp.mpf("2.224566")      # deuteron, bound
-B_T1_SCALE = mp.mpf("0.1")         # the 1S0 channels, ~ -0.066 .. -0.1, unbound
+B_T1_SCALE = mp.mpf("0.066")       # np 1S0 virtual state -- SAME pair as the
+                                   # deuteron, differing only in isospin.
+                                   # CORRECTED from 0.1 (= pp/nn, a DIFFERENT
+                                   # pair): a CHANNEL ratio must compare one
+                                   # pair across isospin.  main 1d9d3500f5.
 
 
 def fmt(x, n=12):
@@ -347,7 +351,7 @@ def main() -> int:
     print("      * if log|l_-| >= 0:  R = log|l_-|/log|l_+| <= 1 since |l_-|<=|l_+|")
     print("      * if log|l_-| <  0:  |log|l_-|| <= log|l_+| directly from sum>=0")
     print("    Either way R <= 1, equality iff log|det| = 0.  QED -- an exact")
-    print("    inequality, not a swept observation.  Nature needs R ~ 22.25 > 1,")
+    print("    inequality, not a swept observation.  Nature needs R ~ 33.7 > 1,")
     print("    so the family is excluded ON THE WRONG SIDE, not merely short.")
     print()
     print("    delta is a displacement of 1.4e-3 INSIDE this range.  It is not")

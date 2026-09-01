@@ -28,7 +28,7 @@ eigenvalues -- whatever its rank.  So the eigenvalue criterion
     B(T=1) = -alpha*log q        B(T=0) = +alpha*log q
     R = |B(T=0)/B(T=1)| = 1      EXACTLY, in every block, at every dimension.
 
-Nature requires `R ~ 22.25`.  **The single-crossing isospin criterion is
+Nature requires `R ~ 33.7`.  **The single-crossing isospin criterion is
 therefore excluded everywhere -- not merely on the bond-letter family, and not
 merely in two dimensions.**
 
@@ -234,7 +234,7 @@ def main() -> int:
     print(f"    R = |B(T=0)/B(T=1)| = {fmt(R, 20)}")
     assert abs(B1 + B0) < TOL, "the two channels must be exactly antisymmetric"
     assert abs(R - 1) < TOL, "R must be exactly 1"
-    need = mp.mpf("2.224566") / mp.mpf("0.1")
+    need = mp.mpf("2.224566") / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
     print(f"    nature requires R ~ {fmt(need, 6)}")
     print(f"    shortfall factor    {fmt(need / R, 6)}")
     print("    => the single-crossing isospin criterion is EXCLUDED at every")
