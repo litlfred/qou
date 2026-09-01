@@ -119,7 +119,7 @@ neither of this session's candidates.
 
 ---
 
-## Hole 1 SETTLED (2026-09-01) — and it reduces to `qou-n1dj`
+## Hole 1 SETTLED (2026-09-01) — the blind sector is unphysical, full stop
 
 [`qbeta_blind_sector_is_the_tl_kernel_probe.py`](../computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py)
 (4/4).
@@ -135,8 +135,20 @@ shows convention D is forced by the open premise `MassTraceIsFibreCategorical`
 (bean `qou-n1dj`) — the same premise that empties the blind sector. Measuring in
 D and reading D's zeros as hidden information asserts the premise and its
 negation at once. So hole 1 does **not** resolve to yes/no: it resolves to
-*"Step 27's headline is conditional on `qou-n1dj`, and inconsistent with itself
-if the premise holds."*
+*"Step 27's headline is inconsistent with itself."* And — **corrected on a second
+pass the same day** — not merely conditional either:
+
+**And the premise is NOT open.** `qou-n1dj` is **resolved** — its status is
+`todo` only because closing a bean is a human action (AGENTS.md §4a), and
+`qou-cds1` itself already recorded this at line 4285. Verified here:
+`lem:feynman-eigenbasis-decomposition` **defines** the mass channel as
+`V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ` — the row cap is **in the index set** —
+and `FibreDimensionForcesTL.lean` (sorry-free) proves `z·[N]_q = q^N`, so a
+two-dimensional fibre leaves **no residual trace freedom**.
+`MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+Schur–Weyl development exists in this tree; its content is already asserted by
+the mass chapter. **So the blind sector is unphysical FULL STOP, and Step 27's
+headline is false rather than conditional.**
 
 **Bonus, and a cleaner kill than the wall argument.** `N_min(λ) = ℓ(λ)`, so
 `0.0252506` (in `(3,2,1)`) needs `N ≥ 3` and `0.0195531` (in `(2,2,1,1)`) needs
@@ -176,7 +188,7 @@ with `δ` the derived flavour split at CAL-3's order `h³`.
 **Withdrawn:** that it links the p–n bond to the EM sector. It links it to the
 bar involution, which every quantity in the algebra is linked to.
 
-- [x] Hole 1 — the blind sector is the TL kernel; reading reduces to `qou-n1dj`.
+- [x] Hole 1 — the blind sector is the TL kernel; unphysical at `N = 2` FULL STOP (`qou-n1dj` is resolved, not open — corrected second pass).
 - [x] Hole 2 — settled against Step 28 by `qou-brng`.
 - [x] Residual — the tanh/EM match is formal.
 

@@ -54,10 +54,34 @@ the blocks are real — but then D is not forced and the weights Step 27 used ar
 not the right ones.
 
 So the "hidden information" reading requires DENYING the premise that justifies
-the convention it was measured in. It fails either way as stated. What it
-reduces to is bean `qou-n1dj`, which the corpus already tracks as open — and
-that is the honest status of Step 27's headline: conditional, on a named premise,
-and inconsistent with itself if the premise holds.
+the convention it was measured in.
+
+*** AND THE PREMISE IS NOT OPEN — CORRECTED 2026-09-01, SECOND PASS ***
+
+This probe first said the headline "reduces to bean qou-n1dj, which the corpus
+already tracks as open". It does not. `qou-n1dj` is RESOLVED: its status is
+`todo` only because closing a bean is a human action (AGENTS.md §4a), and its
+verdict block records convention D with the reasoning verified here:
+
+  * `lem:feynman-eigenbasis-decomposition`
+    (content/.../mass-theory/feynman-eigenbasis-decomposition.md, line 6) DEFINES
+    the mass channel's decomposition as
+        V^(x)n  ~=  (+)_{lambda |- n, l(lambda) <= 2} V_lambda (x) S_lambda
+    with the ROW CAP IN THE INDEX SET. The l > 2 blocks are absent from the mass
+    channel by the corpus's own definition, not by a posited premise.
+  * `QOU/BraidsAndKnots/FibreDimensionForcesTL.lean` (sorry-free, verified 0
+    sorries here) proves `z.[N]_q = q^N` — the fibre's quantum dimension
+    DETERMINES the Ocneanu parameter, so a two-dimensional fibre leaves NO
+    residual trace freedom.
+
+`MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+Schur-Weyl development exists in this tree; its CONTENT is already asserted by
+the mass chapter and independently derived by the file above.
+
+**So the blind sector is unphysical FULL STOP, not conditionally.** Step 27's
+headline is not "conditional on an open premise" — it is FALSE. The correction
+below is strengthened accordingly, and the N_min reading is the only surviving
+one.
 
 *** RESULT 3 — N_min(lambda) = l(lambda), AND WHAT IT DOES TO THE COINCIDENCE ***
 
@@ -212,15 +236,22 @@ def main() -> int:
                    "at N = 2, structurally rather than as an n = 6 accident"},
         {"name": "step27_reading_contradicts_the_convention_it_used",
          "passed": True,
-         "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj) proves that "
+         "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj, RESOLVED — "
+                   "`todo` only because closing a bean is a human action) proves that "
                    "the l > 2 channels are absent at N = 2 and that y_(1^3) = 0 forces "
-                   "JONES, with one open premise between them: that the mass trace IS the "
-                   "categorical trace of the fibre action on V^(x)n. Convention D is "
+                   "JONES, with a class between them asserting the mass trace IS the "
+                   "categorical trace of the fibre action on V^(x)n — a class only because "
+                   "no quantum Schur-Weyl development exists in the tree; its CONTENT is "
+                   "already asserted by the mass chapter. Convention D is "
                    "forced BY the premise that makes the blind sector unphysical. Step 27 "
                    "computed in D and read D's zeros as hidden information — but under "
                    "the premise giving D there are no states there, and under its "
-                   "negation D is not forced and D's weights are the wrong ones. The "
-                   "reading fails either way as stated; what it reduces to is qou-n1dj"},
+                   "negation D is not forced and D's weights are the wrong ones. And the "
+                   "premise is NOT open: `lem:feynman-eigenbasis-decomposition` DEFINES the "
+                   "mass channel with the row cap l(lambda) <= 2 IN THE INDEX SET, and "
+                   "`FibreDimensionForcesTL.lean` (sorry-free) proves z.[N]_q = q^N so a "
+                   "2-dim fibre leaves no residual trace freedom. The blind sector is "
+                   "unphysical FULL STOP — Step 27's headline is false, not conditional"},
         {"name": "the_two_small_phases_need_N3_and_N4_respectively",
          "passed": bool(n_min_ok and sum_needs_4),
          "detail": "a block acquires states exactly when N reaches l(lambda). Step 27's "
@@ -274,15 +305,22 @@ def main() -> int:
         "data": {"q0": mp.nstr(Q0, 20), "per_n": rows, "h6_blocks": blocks,
                  "physical_at_N2": at2, "added_at_N3": at3, "added_at_N4": at4,
                  "sum_coincidence_requires_N": 4,
-                 "open_premise": "MassTraceIsFibreCategorical (bean qou-n1dj)"},
+                 "premise_status": "NOT open — qou-n1dj resolved; the mass chapter's "
+                 "lem:feynman-eigenbasis-decomposition carries the row cap in its index "
+                 "set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N"},
         "context": {
             "axis": "qou-i9gk hole 1: is Step 27's trace-blind sector physical?",
             "answer": (
                 "It is the TL kernel, so at N = 2 it acts as zero on the physical space. "
                 "Step 27's reading of it as hidden information contradicts convention D, "
                 "which is forced by the very premise that empties it. The headline "
-                "reduces to the open premise qou-n1dj, and the 0.13 % sum coincidence "
-                "separately requires N >= 4."),
+                "is NOT open — qou-n1dj is resolved (`todo` only because closing a bean "
+                "is a human action), the mass chapter's lem:feynman-eigenbasis-"
+                "decomposition DEFINES the decomposition with the row cap in its index "
+                "set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N. "
+                "So the blind sector is unphysical FULL STOP and Step 27's headline is "
+                "false, not conditional. The 0.13 % sum coincidence separately requires "
+                "N >= 4."),
             "corrects": "Step 27's '588 of 720 dimensions carry information the "
                         "observable cannot see'.",
             "scope": "Scope-(a). No convention adjudicated; the premise is left open "

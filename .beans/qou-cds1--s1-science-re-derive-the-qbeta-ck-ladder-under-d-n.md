@@ -6224,7 +6224,19 @@ forces **Jones** (**proved**).
 **Convention D is forced by the premise that empties the blind sector.** Step 27
 computed in D and read D's zeros as hidden information. Under the premise giving
 D there are no states there; under its negation D is not forced and D's weights
-are the wrong ones. The headline reduces to `qou-n1dj`, already open.
+are the wrong ones.
+
+**And the premise is NOT open.** `qou-n1dj` is **resolved** — its status is
+`todo` only because closing a bean is a human action (AGENTS.md §4a), and
+`qou-cds1` itself already recorded this at line 4285. Verified here:
+`lem:feynman-eigenbasis-decomposition` **defines** the mass channel as
+`V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ` — the row cap is **in the index set** —
+and `FibreDimensionForcesTL.lean` (sorry-free) proves `z·[N]_q = q^N`, so a
+two-dimensional fibre leaves **no residual trace freedom**.
+`MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+Schur–Weyl development exists in this tree; its content is already asserted by
+the mass chapter. **So the blind sector is unphysical FULL STOP, and Step 27's
+headline is false rather than conditional.**
 
 ### The 0.13 % coincidence dies structurally
 

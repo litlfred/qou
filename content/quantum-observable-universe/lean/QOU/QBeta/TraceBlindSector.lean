@@ -20,8 +20,19 @@
 > the categorical trace of the fibre action on `V^{⊗n}`. Convention D is forced
 > **by** the premise that empties the blind sector. Measuring in D and then
 > reading D's zeros as hidden information asserts both the premise and its
-> negation. The headline reduces to `qou-n1dj`, which the corpus already tracks
-> as open.
+> negation.
+>
+> **And the premise is NOT open.** `qou-n1dj` is **resolved** — its status is
+> `todo` only because closing a bean is a human action (AGENTS.md §4a), and
+> `qou-cds1` itself already recorded this at line 4285. Verified here:
+> `lem:feynman-eigenbasis-decomposition` **defines** the mass channel as
+> `V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ` — the row cap is **in the index set** —
+> and `FibreDimensionForcesTL.lean` (sorry-free) proves `z·[N]_q = q^N`, so a
+> two-dimensional fibre leaves **no residual trace freedom**.
+> `MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+> Schur–Weyl development exists in this tree; its content is already asserted by
+> the mass chapter. **So the blind sector is unphysical FULL STOP, and Step 27's
+> headline is false rather than conditional.**
 >
 > **What survives.** The theorems below are all still true — `blind_sector` is a
 > statement about weighted sums and is independent of any of this, and the
