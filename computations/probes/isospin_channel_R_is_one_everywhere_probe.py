@@ -84,16 +84,31 @@ separation, in every representation.**  The channel asymmetry cannot come from
 
 ## WHERE THIS LEAVES THE OPEN PROBLEM
 
-    single crossing, any dimension      R = 1 exactly        EXCLUDED (here)
-    ANY pair at ANY separation          R = 1 exactly        EXCLUDED (here)
-    bond-letter family, 2-dim           R <= 1               EXCLUDED (earlier)
-    non-conjugate multi-crossing        ratio up to 5.0      channels UNDEFINED
+    single crossing, any rep, any dim        R = 1 exactly    EXCLUDED
+    pair exchange at ANY separation          R = 1 exactly    EXCLUDED
+    sigma_i^k, any power                     R = 1 exactly    EXCLUDED
+    far-commuting product sigma_i sigma_j    R = 1 exactly    EXCLUDED
+    adjacent 2-crossing sigma_i sigma_j      R = 1            EXCLUDED
+    >= 3 crossings, BOTH non-commuting gens  up to 5.0        channels UNDEFINED
 
-Only the last row survives, and it is not an exchange of a pair at all -- a
-product `sigma_i sigma_j`, or the difference `Delta_bind`.  Its obstacle is not
-a bound: nobody has said which operator the two isospin channels are the
-spectral projectors OF, once the object is not a pair exchange.  That is a
-definitional question, and it is now the gate.
+**I named "a product `sigma_i sigma_j`" as a surviving candidate last pass.  It
+does not survive.**  When `|i-j| >= 2` the generators commute, span
+`H_2 (x) H_2`, and the product's spectrum is the PRODUCT SET
+`{q,-1/q} x {q,-1/q} = {q^2, -1, -1, 1/q^2}` -- moduli `{q^2, 1, 1, 1/q^2}`,
+whose two non-unit log-moduli are BOTH `2 log q`, so `R = 1` exactly.  Verified
+on the exact `H_2 (x) H_2` model.  The adjacent 2-crossing product measures 1
+too.
+
+Measured minimum for **any** spread: both generators present **and** total
+length `>= 3`.  Nothing of length 1 or 2 spreads, and no power of a single
+generator spreads at any exponent.
+
+**So the asymmetry requires an ADJACENT, MULTIPLY-BRAIDED object -- three or
+more crossings on two non-commuting strands.**  Not a pair, not a product, not
+a power: it needs the braid-relation region itself.  Its obstacle is then not a
+bound but a definition -- which operator are the two isospin channels the
+spectral projectors OF, once the object is not a pair exchange.  That is now
+the gate.
 
 Note how this composes with the all-pairs exclusion in
 `allpairs_decay_turnover_exclusion_probe`: that ruled out summing pairwise
@@ -316,7 +331,71 @@ def main() -> int:
     print("       -- a product like sigma_i sigma_j, or the difference")
     print("       Delta_bind -- and those are not exchanges of a pair.")
 
-    print("\n[8] A METHOD NOTE WORTH MORE THAN THE RESULT")
+    print("\n[8] THE FULL CATALOGUE — and it closes two more rows I had left open")
+    print("-" * 78)
+    print("    Last pass I named 'a product sigma_i sigma_j' as a surviving")
+    print("    candidate.  It does NOT survive, and neither do several others.")
+    print()
+    print("    FAR-COMMUTING PRODUCT.  For |i-j| >= 2 the generators commute, so")
+    print("    they span H_2 (x) H_2 and the product's spectrum is the PRODUCT")
+    print("    SET {q,-1/q} x {q,-1/q} = {q^2, -1, -1, 1/q^2}.  Moduli")
+    print("    {q^2, 1, 1, 1/q^2}: the two non-unit log-moduli are BOTH 2 log q,")
+    print("    so R = 1 exactly.  Verified on the exact H_2 (x) H_2 model:")
+    A2 = mp.matrix([[h, 1], [1, 0]])
+
+    def kron(X, Y):
+        n, m = X.rows, Y.rows
+        M = mp.zeros(n * m, n * m)
+        for a in range(n):
+            for b in range(n):
+                for c in range(m):
+                    for d in range(m):
+                        M[a * m + c, b * m + d] = X[a, b] * Y[c, d]
+        return M
+    I2 = mp.eye(2)
+    Si, Sj = kron(A2, I2), kron(I2, A2)
+
+    def nr4(M):
+        return max(abs(M[a, b]) for a in range(M.rows) for b in range(M.cols))
+    print(f"      [Si, Sj] commutator      = {fmt(nr4(Si * Sj - Sj * Si), 4)}")
+    print(f"      Si quadratic residual    = {fmt(nr4(Si * Si - h * Si - mp.eye(4)), 4)}")
+    assert nr4(Si * Sj - Sj * Si) < TOL, "far-commuting generators must commute"
+    assert nr4(Si * Si - h * Si - mp.eye(4)) < TOL, "and satisfy the quadratic"
+    ev = mp.eig(Si * Sj, left=False, right=False)
+    mods = sorted((abs(x) for x in ev), reverse=True)
+    print(f"      spectrum moduli of Si*Sj = " + ", ".join(fmt(m, 12) for m in mods))
+    print(f"      q^2 = {fmt(q ** 2, 12)}   1/q^2 = {fmt(1 / q ** 2, 12)}")
+    lg = [abs(mp.log(m)) for m in mods if abs(mp.log(m)) > mp.mpf("1e-8")]
+    print(f"      non-unit log-moduli      = " + ", ".join(fmt(x, 10) for x in lg))
+    print(f"      RATIO                    = {fmt(max(lg) / min(lg), 16)}")
+    assert abs(max(lg) / min(lg) - 1) < mp.mpf("1e-12"), (
+        "a far-commuting product must give R = 1")
+    print()
+    print("    So nucleons that are FAR APART -- whose generators commute --")
+    print("    cannot carry the asymmetry even as a product.  Together with the")
+    print("    band-generator result in [7], no separated pair contributes.")
+    print()
+    print("    THE CATALOGUE (all measured in this PR):")
+    print(f"      {'object':44s} {'R':>10s}")
+    for nm, val in (
+            ("single crossing, any rep, any dimension", "1 exactly"),
+            ("pair exchange at ANY separation (band gen)", "1 exactly"),
+            ("sigma_i^k, any power k", "1 exactly"),
+            ("far-commuting product sigma_i sigma_j", "1 exactly"),
+            ("adjacent 2-crossing product sigma_i sigma_j", "1"),
+            (">= 3 crossings, BOTH non-commuting gens", "up to 5.0")):
+        print(f"      {nm:44s} {val:>10s}")
+    print()
+    print("    Measured minimum for any spread at all: BOTH generators present")
+    print("    AND total length >= 3.  Nothing of length 1 or 2 spreads, and no")
+    print("    power of a single generator spreads at any exponent.")
+    print()
+    print("    => THE ASYMMETRY REQUIRES AN ADJACENT, MULTIPLY-BRAIDED OBJECT:")
+    print("       three or more crossings on two NON-COMMUTING strands.  Not a")
+    print("       pair, not a product, not a power -- it needs the braid")
+    print("       relation region itself.")
+
+    print("\n[9] A METHOD NOTE WORTH MORE THAN THE RESULT")
     print("-" * 78)
     print("    My first check here was numerical -- extract eigenvalues, test")
     print("    membership in {q, 1/q} at 1e-25.  It reported FALSE, against a")
