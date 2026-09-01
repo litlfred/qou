@@ -1557,3 +1557,80 @@ inconsistent, one negative. **A one-parameter falloff is refuted outright.**
 Per-type rates would be 2 unknowns against 2 ratios — exactly determined, i.e. a
 fit with zero predictive content at this size. Separating them needs A=4, which
 is out of reach: H_12 has 77 partitions with Specht dims to 2673.
+
+## 2026-09-01 — the chain's transfer operator is RANK ONE; ordering is the discriminator
+
+`computations/probes/chain_telescopes_and_ordering_sensitivity_probe.py`, 6/6.
+Owner asked for a sparse/transfer-matrix route to A=4, with spectral
+decomposition and decay rate in the tower. Found it — and it is degenerate.
+
+**THE CHAIN TELESCOPES EXACTLY.** Peeling the top block with the Markov property
+`tr(a T_n b) = z tr(ab)` and expanding the top nucleon in its own H_3 NF basis,
+every term reduces to a multiple of `tr(X)`:
+
+    tr(X . b . w) = tr(X) . F(b, w),   F independent of the ENTIRE prefix
+
+Measured over four prefixes and all three bond types, F is constant to 2.8e-16:
+
+    F_pn = 0.241477007350   F_nn = 0.191777066944   F_pp = 0.385581983466
+
+So `tr(W_A) = tr(w_0) prod_k F_k` and **L(chain) is a sum over adjacent bonds at
+every A**. That is the *proof* of last turn's 4.4e-16 additivity — the Markov
+property, not a numerical accident — and it reaches A=4 with no H_12.
+
+**But the transfer operator is RANK ONE — a scalar, not a matrix.** There is no
+spectral decay to find within the chain; a single nonzero eigenvalue. That is a
+result, not a shortcut: it is why the chain is exactly additive and why it can
+produce no distance falloff at all. A genuinely non-scalar transfer operator
+appears only once non-adjacent bonds are present.
+
+**A=4 on the chain, exactly**: 4He orders `pnpn`, three adjacent p-n bonds, so
+`L = 3 L_pn = 2.030464777`. Against experiment `L(4He)/L(3He) = 1.50000` vs
+`B(4He)/B(3He) = 3.66617`, **-59.1%** — the chain's A-scaling failure DEEPENS at
+A=4 rather than relieving.
+
+**THE REAL DISCRIMINATOR WAS CHEAPER THAN A=4.** At A=3, reordering the nucleons
+moves bond *distances* without changing the bond *multiset*:
+
+    3He  pnp {pn,np | pp}  pp at distance 2   vs  ppn {pp,pn | pn}  pp adjacent
+    3H   pnn {pn,nn | pn}  nn adjacent        vs  npn {np,pn | nn}  nn far
+
+**The all-pairs answer depends on the ordering** — 4.35% (3He), 5.05% (3H) — so
+**distance genuinely matters**; the model is not a function of the multiset
+alone. Direct evidence for the owner's "falls away", with no H_12.
+
+**The strong bond wants to be adjacent**: pnn (nn adjacent, 2.017810) > npn (nn
+far, 1.920851); pnp (both pn adjacent, 1.676936) > ppn (one pn far, 1.607031).
+Exactly what far-bond suppression predicts.
+
+**THE FALLOFF RATE DEPENDS ON BOND TYPE, MONOTONICALLY** — the owner's
+prediction, measured:
+
+    far bond   L_far       saturation
+    p-p        0.489899    0.659916
+    p-n        0.676822    0.650555   (ppn)
+    p-n        0.676822    0.640829   (pnn)
+    n-n        0.907262    0.625186
+
+Monotone across types p-p > p-n > n-n; spread 5.6%. The two p-n rows are split
+by the adjacent total they sit against (1.166721 vs 1.584084) — the larger
+suppresses more. **Saturation in both variables.** A weak dependence, but real
+and ordered.
+
+**ALL-PAIRS IS 3.4-3.7x LESS ORDERING-SENSITIVE** than the chain (4.35%/5.05%
+against 16.02%/17.02%). Ordering is a labelling convention — a physical nucleus
+has no preferred nucleon order — so sensitivity to it is an artefact.
+All-pairs would be *exactly* permutation-invariant but for the saturation; the
+residual few per cent IS the saturation. **A second independent argument for
+all-pairs**, on top of the A-scaling one.
+
+**All-pairs at A=4 remains uncomputed**, and the reason is precise: six bonds at
+distances 1,1,1,2,2,3 leave no prefix-independent F, so the telescoping fails
+and H_12 is unavoidable. Reaching it needs a Hecke word reducer (greedy
+top-generator peeling with the quadratic relation, elements as `{word: coeff}`
+maps) — a build, not a measurement. Nothing here extrapolates the saturation
+model to A=4; the only A=4 number reported is the exact chain value.
+
+**Also recorded**: the ordering dependence is a modelling ambiguity the corpus
+resolves by convention (`ordering(Z,N)` interleaves protons first → pnp, pnn).
+Neither topology eliminates the artefact; all-pairs minimises it.
