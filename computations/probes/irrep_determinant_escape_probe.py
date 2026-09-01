@@ -114,7 +114,7 @@ which constructions are available, not about `Delta_bind`.
     NECESSARY for `R > 1`, not sufficient, and `R` as defined in the bound
     probe is a two-eigenvalue quantity whose extension to a `d`-dimensional
     block is a separate question this probe does not settle.
-  * NOT that the blind sector supplies the 22.25:1 asymmetry.  It says the
+  * NOT that the blind sector supplies the 33.7:1 asymmetry.  It says the
     bound that EXCLUDED it does not apply there.  Removing an obstruction is
     not producing a mechanism.
   * NOT a binding value.  Nothing wired, nothing fitted.
