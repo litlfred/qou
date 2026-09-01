@@ -1,0 +1,136 @@
+{
+  "computation": "qbeta-staircase-ew-lives-in-the-tl-kernel",
+  "engine": "mpmath",
+  "description": "The staircase EW-residual conjecture (content/.../mass-theory/staircase-ew-residual.md) computes entirely in the Temperley-Lieb kernel. rho_k = (k, k-1, ..., 1) has EXACTLY k rows, so the Schur-Weyl row cap gives N_min(rho_k) = k, and at the framework's fibre N = 2 only k = 2 is physical — which is precisely the case the block itself calls UNTESTABLE ('the word collapses to length 0'). Its two empirically-loaded cases are k = 3 (rho_3 = (3,2,1), 3 rows, the cot(theta_W) 2.19 % -> 0.13 % claim) and k = 4 (4 rows). Measured: |omega_(3,2,1)| < 2e-16 at n = 6 under convention D against a minimum 7.6e-2 over the <=2-row shapes, with 720 = 6! total and 132 = Catalan(6) = dim TL_6 visible — so (3,2,1) is in the kernel of H_6(q) -> TL_6(q) and contributes nothing to any trace the framework computes. NOT a refutation: the Specht modules exist for every k and the eigenvalue ratio is not challenged; what is in question is what the empirical content can mean. Downstream Lean is unaffected — the block axiomatises the conjecture as a hypothesis-only class. Same defect qou-i9gk closed against Step 27, surfacing independently in the electroweak sector.",
+  "contentBlock": "conj:staircase-ew-residual",
+  "assertions": [
+    {
+      "name": "staircase_rho_k_has_exactly_k_rows_so_only_k2_is_physical",
+      "passed": true,
+      "detail": "rho_k = (k, k-1, ..., 1) has exactly k rows, so the Schur-Weyl row cap gives N_min(rho_k) = k. At the framework's fibre dimension N = 2 — which lem:feynman-eigenbasis-decomposition places in the INDEX SET of the mass channel's decomposition — only k = 2 is physical. The conjecture is stated 'for every k >= 2'; the row cap says that quantifier has exactly one physical instance"
+    },
+    {
+      "name": "every_empirically_loaded_case_is_outside_the_N2_space",
+      "passed": true,
+      "detail": "the block's empirical content is k = 3 (closes cot(theta_W) from 2.19 % to 0.13 %) and k = 4 (pairwise ratio, 0.14 %); both have 3 and 4 rows. Its only <=2-row case, k = 2, it calls UNTESTABLE itself — 'the word collapses to length 0 ... renders the case untestable'. So every case carrying a physical number sits outside the N = 2 space, and the one case inside it has no matrix to inspect"
+    },
+    {
+      "name": "the_k3_block_is_in_the_TL_kernel_measured",
+      "passed": true,
+      "detail": "|omega_(3,2,1)| = 1.868e-16 against a minimum of 0.07562 over the <=2-row shapes, and the dimension arithmetic confirms the split independently (720 = 6! total, 132 = Catalan(6) = dim TL_6 visible). (3,2,1) is in the kernel of H_6(q) -> TL_6(q) = End_{U_q(sl2)}(V^(x)6), so it contributes nothing to any trace the framework computes"
+    },
+    {
+      "name": "this_does_not_refute_the_conjecture_and_downstream_lean_is_unaffected",
+      "passed": true,
+      "detail": "the conjecture is about Specht modules of H_{n_k}(q) as an abstract algebra and those exist for every k; nothing here says the eigenvalue ratio is wrong. What is in question is what its EMPIRICAL content can mean, cot(theta_W) being a physical observable read off a module the framework's own fibre gives zero dimension. The block axiomatises the conjecture as a hypothesis-only class, so downstream Lean consumers are rigorous-conditional and stay so. Same defect qou-i9gk closed against this session's Step 27, surfacing independently in the electroweak sector"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 30,
+    "fibre_dimension_N": 2,
+    "trace_convention": "D (SU(2)/Temperley-Lieb)"
+  },
+  "data": {
+    "q0": "1.1099785827513808076",
+    "staircases": [
+      {
+        "k": 2,
+        "shape": [
+          2,
+          1
+        ],
+        "n": 3,
+        "rows": 2,
+        "dim": 2,
+        "h_corner": 3,
+        "N_min": 2,
+        "physical_at_N2": true
+      },
+      {
+        "k": 3,
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "n": 6,
+        "rows": 3,
+        "dim": 16,
+        "h_corner": 5,
+        "N_min": 3,
+        "physical_at_N2": false
+      },
+      {
+        "k": 4,
+        "shape": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 10,
+        "rows": 4,
+        "dim": 768,
+        "h_corner": 7,
+        "N_min": 4,
+        "physical_at_N2": false
+      },
+      {
+        "k": 5,
+        "shape": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 15,
+        "rows": 5,
+        "dim": 292864,
+        "h_corner": 9,
+        "N_min": 5,
+        "physical_at_N2": false
+      },
+      {
+        "k": 6,
+        "shape": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 21,
+        "rows": 6,
+        "dim": 1100742656,
+        "h_corner": 11,
+        "N_min": 6,
+        "physical_at_N2": false
+      }
+    ],
+    "omega_321_abs": "1.8678421e-16",
+    "min_omega_two_row": "0.07561905",
+    "dim_H6": 720,
+    "dim_TL6": 132,
+    "catalan_6": 132,
+    "only_k2_physical_at_N2": true
+  },
+  "context": {
+    "axis": "does the staircase EW-residual conjecture's empirical content live in the N = 2 physical space?",
+    "answer": "No. rho_k has exactly k rows, so only k = 2 is physical at N = 2, and the block itself calls that case untestable. Both empirically-loaded cases (k = 3, 4) are in the TL kernel.",
+    "scope": "Scope-(a). The conjecture is NOT refuted and no content block is edited here."
+  },
+  "gitCommit": "82da216923ff5a455b71e6f06d06e72b41248ca2",
+  "durationMs": 0,
+  "scriptFile": "qbeta_staircase_ew_lives_in_the_tl_kernel_probe.py",
+  "scriptHash": "aa8b84bcbda1",
+  "scriptCommitSha": "unknown",
+  "commitSha": "82da216923ff5a455b71e6f06d06e72b41248ca2",
+  "computedAt": "2026-09-01T07:52:58.804399+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}
