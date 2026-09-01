@@ -46,8 +46,11 @@ With `t = trace = h*delta/2` and `D = det = (h+d)d - 1 < 0`,
     ==>   1 - r  ~  h*delta / (2*sqrt(1 + h^2/4))
 
 Measured `1 - r = 0.000143013772257`; closed form `0.000143023999458`; relative
-error `7.2e-5`. And `(1-r)/delta` is constant to 6 digits across four decades of
-`delta` (0.1039562759 -> 0.1039637028), which is what fixes the power.
+error `7.2e-5`. And `(1-r)/delta` is constant across a x1024 sweep of `delta` (3.0 decades):
+`0.1039562759 -> 0.1039637028`, agreeing to **4 significant figures** with a
+**relative variation of 7.14e-5**, against the probe's `1e-4` assertion. That
+is what fixes the power.  (Corrected after Copilot review on #6411: this read
+"6 digits across four decades", overstating both the precision and the span.)
 
 **My first pass printed "the gap opens like sqrt(delta)". That was wrong** -- I
 had divided by `sqrt(delta)` and read a halving column as a constant one. The
@@ -164,15 +167,15 @@ def main() -> int:
               f"{fmt(rr / mp.sqrt(dd), 10):>14}")
     assert abs(cols[-1] - cols[0]) / cols[0] < mp.mpf("1e-4"), \
         "(1-r)/delta must be constant -> the law is LINEAR in delta"
-    print("\n  (1-r)/delta is CONSTANT to 6 digits across four decades:")
+    print(f"\n  (1-r)/delta varies by {fmt(abs(cols[-1]-cols[0])/cols[0], 4)}"
+          f" relative across a x1024 sweep (3.0 decades),")
+    print("  agreeing to 4 significant figures against a 1e-4 assertion:")
     print("  the gap is LINEAR in delta.  The sqrt column HALVES, which is what")
     print("  a wrong diagnostic looks like -- my first pass divided by sqrt and")
     print("  reported sqrt scaling.  Recorded because the wrong law would have")
     print("  made the p-n range parametrically larger than it is.")
     print()
 
-    tr = h + 2 * d_pn
-    dt = (h + d_pn) * d_pn - 1
     closed = h * dx / (2 * mp.sqrt(1 + h**2 / 4))
     meas = 1 - ratio(d_pn)
     print("  closed form:  1 - r ~ t/sqrt(-D) = h*delta / (2*sqrt(1 + h^2/4))")
