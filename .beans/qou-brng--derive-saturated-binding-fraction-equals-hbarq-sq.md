@@ -1082,6 +1082,48 @@ pair. Obstacle is definitional, not a bound: which operator are the two isospin
 channels the spectral projectors OF, once the object is not a pair exchange?
 **That is the gate.**
 
+## 2026-09-01 (sixth pass) — the full catalogue; a far-commuting product is ALSO R = 1
+
+**Closes a row I had named as surviving.** Last pass I listed "a product
+`sigma_i sigma_j`" as a live candidate. It is not.
+
+**Far-commuting product.** For `|i-j| >= 2` the generators commute, span
+`H_2 ⊗ H_2`, and the product's spectrum is the **product set**
+`{q,-1/q} × {q,-1/q} = {q², -1, -1, 1/q²}`. Moduli `{q², 1, 1, 1/q²}` — the two
+non-unit log-moduli are **both `2 log q`**, so **R = 1 exactly**. Verified on the
+exact `H_2 ⊗ H_2` model: commutator 0.0, quadratic 0.0, ratio asserted to 1e-12.
+
+Physically: nucleons far enough apart that their generators commute cannot carry
+the asymmetry even as a product. With the band-generator result, **no separated
+pair contributes by any route.**
+
+**THE CATALOGUE (all measured in PR #6414):**
+
+| object | R |
+|---|---|
+| single crossing, any rep, any dimension | 1 exactly |
+| pair exchange at ANY separation (band generator) | 1 exactly |
+| `sigma_i^k`, any power k (checked k=1..5) | 1 exactly |
+| far-commuting product `sigma_i sigma_j` | 1 exactly |
+| adjacent 2-crossing product `sigma_i sigma_j` | 1 |
+| **>= 3 crossings, BOTH non-commuting generators** | **up to 5.0** |
+
+Measured minimum for any spread: **both generators present AND total length >= 3.**
+Nothing of length 1 or 2 spreads; no power of a single generator spreads at any
+exponent.
+
+**⇒ THE ASYMMETRY REQUIRES AN ADJACENT, MULTIPLY-BRAIDED OBJECT** — three or more
+crossings on two non-commuting strands. Not a pair, not a product, not a power:
+it needs the braid-relation region itself. Against nature's 22.2457, the measured
+spread reaches only 5.0 (a lower bound — length <= 6 in H_3).
+
+This agrees with the corpus's own super-pairwise conclusion reached from the AME
+side, by a completely different route.
+
+**Gate (definitional, not a bound):** which operator are the two isospin channels
+the spectral projectors OF, once the object is not a pair exchange? Do not invent
+an identification and fit to it.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
