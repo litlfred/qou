@@ -1349,3 +1349,75 @@ or two roots — it reported `h* = 2.0009` for a chain with no root in range at
 all. The committed probe scans for sign changes on a geometric grid first and
 bisects only inside a bracketed one. The proton and neutron each have a single
 crossing, so their values were never affected.
+
+## 2026-09-01 — YES, the betas are forced by quark content. And the LP was missing the bonds.
+
+`computations/probes/betas_are_forced_by_quark_content_probe.py`, 6/6.
+Owner: *"they should hopefully be forced by the quark content."* **They are.**
+
+**The rule is already in `pyhecke.atom.nucleon_gen_chains`**, which takes the
+quark list as its argument. Three quark pairs, assigned to generators, each
+crossing typed by the flavour pair it joins:
+
+    pairs      (0,1) -> gen 0 ,  (0,2) -> gen 0 ,  (1,2) -> gen 1
+    flavours   uu -> sigma (beta 0) ,  dd -> sigma^-1 (1) ,  ud -> average (1/2)
+
+    proton  uud:  (u,u)=0, (u,d)=1/2, (u,d)=1/2  ->  (0, 1/2, 1/2)
+    neutron udd:  (u,d)=1/2, (u,d)=1/2, (d,d)=1  ->  (1/2, 1/2, 1)
+
+exactly the values measured last turn, confirmed by calling the function and
+reading beta back out of its `(c,d)` tuples. **Zero freedom in the six numbers.
+Nothing was fitted; there is no dial.**
+
+**The same map one level up, with one documented difference.** Like-flavour is
+exact at both scales (`uu`/`pp` -> 0, `dd`/`nn` -> 1). Unlike-flavour is where
+they part: quark `ud -> 1/2` exactly (colour-BLIND `-h/2`), nucleon
+`pn -> 0.49965607229824338` (colour-WEIGHTED `D_PN = pn_interface_offset(q0)`,
+`PN_CONVENTION = bring_color_weighted`, canonical by owner ruling 2026-08-15 R3,
+reaffirmed 2026-08-26) — a shift of `-3.44e-4` off the midpoint. And `atom.py`
+says of the quark-level crossings, verbatim: *"nothing here establishes what
+convention a u-d crossing should carry."*
+
+That is live by the corpus's own account, because **`b2` — the parameter that
+dominates the transition — IS a u-d crossing.** Tested: switching the quark `ud`
+crossings to the colour-weighted value moves the proton transition by `-1.30e-4`
+and the neutron by `+5.63e-5`, against the `0.27` needed to reach `q_0`. **The
+conclusion is robust to the one convention the corpus leaves open.**
+
+**The only residual freedom is quark ordering, and it does not help.** Ordering
+decides which pair lands on gen 1; since `b0, b1` commute, six orderings give
+four classes:
+
+    proton  uud/udu (uu on g0)  (0,1/2,1/2)   h* = 0.477184637   [CORPUS]
+    proton  duu     (uu on g1)  (1/2,1/2,0)   h* = NONE, never switches
+    neutron udd     (dd on g1)  (1/2,1/2,1)   h* = 0.569840291   [CORPUS]
+    neutron dud/ddu (dd on g0)  (1,1/2,1/2)   h* = 0.433865897
+
+**No pairing straddles q_0.** Every window lies in `[0.4339, 0.5698]`;
+`h(q_0) = 0.20906` is below all of them, and two pairings have no window at all.
+The corpus's choice is a uniform convention (u's first, then d's) which happens
+to put the proton's like-pair on g0 and the neutron's on g1.
+
+**AND THAT EXPOSES THE REAL PROBLEM — a scope error in my own LP.**
+`atom_gen_chains(Z,N)` builds an atom from THREE things: per-nucleon crossings,
+**`C(A,2)` inter-nucleon crossings** (one per nucleon pair, typed pp/nn/pn), and
+`Z` electron crossings on gen 1. Measured: for 2H/3H/4He the atom's gen-0 chain
+carries **1, 3, 6** crossings more than the sum of its nucleons' — exactly
+`C(A,2)` — plus 1, 1, 2 extra on gen 1.
+
+**The aggregation LP of `nfold_ip_coupling_duality_gap_probe` used only `v_p`
+and `v_n`. It had NO inter-nucleon term at all.** Every binding zero I have
+reported — that probe, the functional probe, the hysteresis probe — is a zero
+for a nucleus **with its bonds left out**. The bonds are, on their face, the
+part that binds.
+
+This does not retract those results: the dual-vertex hysteresis, the rank-one
+dual and the two transitions are correct statements about the per-nucleon LP
+that was built. It bounds what they were ever evidence about.
+
+**Hazard recorded.** A container reset dropped this session onto a different
+branch (`claude/omegaorder-exponent-group`), whose `pyhecke` gives 0.679 rather
+than 0.477 for the same betas, and whose `atom_gen_chains` open-codes `-h/2`
+where this branch has `D_PN`. I nearly reported both as defects. Everything here
+is computed on `claude/mt7r-archimedean-eval-2026-08-24`, and A6 re-verifies the
+previous probe's transitions to 1e-9 as a guard.
