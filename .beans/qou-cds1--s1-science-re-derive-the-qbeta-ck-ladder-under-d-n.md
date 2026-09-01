@@ -5577,3 +5577,77 @@ eigenphases in the corpus are in that blind sector. Two open items, in order:
 call on the decay convention; **(b)** whether anything derives a *combination* of
 block eigenphases, which is what the 0.13 % target would need before it could be
 anything but a coincidence.
+
+---
+
+## Step 28 — the all-pairs decay rates are DERIVED: transfer-matrix spectrum, sector-indexed, one degree of freedom
+
+**Artifacts.**
+[`qbeta_bond_decay_rates_from_transfer_spectrum_probe.py`](../computations/qbeta/qbeta_bond_decay_rates_from_transfer_spectrum_probe.py)
+(5/5) ·
+[`QOU/QBeta/BondDecayRates.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/BondDecayRates.lean)
+(sorry-free) ·
+[audit](../docs/audits/2026-09-01-qbeta-bond-decay-rates-from-transfer-spectrum.md).
+
+Unblocks Step 27's stopping point. Owner steer: *"go back to looking at how we
+define CAL 123 ideal math — there are decay rates right there… link these to the
+spectral decomposition of the transfer matrices operating on the tower."* Both
+halves hold.
+
+### 1. Where the rates were
+
+The math-ideal CAL triple is **`(m_e, 𝔇_β, 𝔇_π)`**, not three masses: CAL-2 is the
+**neutron β-decay width** at `h²`, CAL-3 the **pion decay width** at `h³` (owner
+ruling 2026-06-26). `m_μ/m_e` and `m_π` are only the observational proxies. **Two
+of the three calibration points are decay rates by definition.**
+
+### 2. The transfer matrix's spectrum IS the bond rate
+
+`chi_monotone_transfer._alpha_beta` reduces each fine-Bratteli step to
+`O_g = α·σ_g + β·I` with `E₁ = ∏(q + d_j)`, `E₂ = ∏(−1/q + d_j)`. Those ARE the
+step's spectrum, so the falloff across one bond is `E₂/E₁`:
+
+| bond | `d` | `E₂/E₁` |
+|---|---|---|
+| p–p `σ` | `0` | **`−1/q²`** |
+| n–n `σ⁻¹` | `−h` | **`−q²`** |
+| p–n avg | `−h/2` | **`−1` exactly** |
+| p–n colour | `−h(½−δ/4)` | `−1 + tanh(ln q)·δ + O(δ²)` |
+
+Closed forms in `q`. **No free parameter** — the rate Step 27 declined to invent
+was already fixed by the transfer matrix.
+
+### 3. ⚠️ They are NOT independent (owner's steer, confirmed)
+
+`r_pp · r_nn = 1 = r_pn²` and `r_nn/r_pp = q⁴`. **One relation → one degree of
+freedom (`q²`), not three.** An all-pairs coupling on these adds NO parameter.
+
+### 4. And they ARE sector-indexed, by bar parity
+
+| | under `q ↦ 1/q` | sector |
+|---|---|---|
+| `r_pp ↔ r_nn` | **exchange** | a bar-conjugate pair |
+| `r_pp·r_nn = 1` | bar-**even** (cosh) | **strong** |
+| `r_nn/r_pp = q⁴` | bar-**odd** (sinh) | **weak** |
+| `r_pn = −1` | bar-**fixed** | **electromagnetic** |
+
+The last row is the sharp one. `1 − |r_pn| = tanh(ln q)·δ + O(δ²)`, and
+`tanh(ln q₀) = 0.103963710` is **exactly** the odd-to-even ratio
+`interaction-sector-taxonomy.md` derives for the **EM coupling** by a wholly
+separate argument (bar decomposition of `α_EM⁻¹ = q[9]_q[10]_q`). Predicted
+`1.4302400e-4` vs measured `1.4301377e-4` — `7.2e-5` relative, the second order
+in `δ`. The p–n bond sits at the intertwiner point, where the taxonomy
+independently puts EM.
+
+### 5. h-orders match the CAL ladder
+
+`r_pp, r_nn` are `O(h⁰)`; `tanh(ln q)` is `O(h)` (measured `0.9999980`); **`δ` is
+`O(h³)` (measured `2.9999902`) — CAL-3's order, the pion decay width's**; so
+`1 − |r_pn|` is `O(h⁴)`.
+
+### What is still open
+
+The **coupling word**, not the rate. `σ_g` couples strands `g`, `g+1` only, so a
+non-adjacent nucleon pair has no generator to sit on and the all-pairs braid
+remains a construction. Step 27's caveat stands; only the three-free-parameter
+objection is removed.
