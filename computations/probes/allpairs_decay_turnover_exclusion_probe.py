@@ -26,7 +26,15 @@ in `spectral_gap_bond_decay_probe` as the transfer matrices' spectral gaps:
 light cluster (triton) held fixed, k alphas added, k = 1..4.  The Model-G miss
 along it has a strict INTERIOR MAXIMUM:
 
-    0 = M(1) < M(2) < M(3) > M(4)
+    0 = M(1) < M(2) < M(3) > M(4)          <- R9's WORDING, quoted verbatim;
+                                              its own code gives M(1) = +0.1219,
+                                              see the correction section below.
+
+The `0 =` is R9's simplification of its own `modelg_miss` output, not a
+computed zero, and is quoted here unaltered so the two statements can be
+compared.  **What P1 needs is only the turnover `M(3) > M(4)`, plus the rising
+leg `M(1) < M(2) < M(3)`, and both hold under either sign convention** -- so
+nothing in this probe depends on the `0 =`.
 
 That turnover is what killed R8's whole class:
 
@@ -175,7 +183,9 @@ def fmt(x, n=10):
 
 def ladder_miss():
     """Model-G miss M(k), rebuilt exactly as saturating_shared_channel_probe does."""
-    W = _json.load(open(_DL / "alpha-activation-brunnian.witness.json"))
+    with open(_DL / "alpha-activation-brunnian.witness.json",
+              encoding="utf-8") as _fh:
+        W = _json.load(_fh)
     rows = W["model_G_per_isotope"]
     b = mp.mpf(str(W["inputs"]["b_linear_MeV_per_nucleon"]["value"]))
 
@@ -422,8 +432,6 @@ def main() -> int:
     print("    The four ladder rungs are INDEPENDENT nuclei, so a turnover needs")
     print("    only SOME arrangement of 15N beating SOME arrangement of 19F.")
     print("    Test the extreme case: max over arrangements at k=3 vs min at k=4.")
-    rng_state = [mp.mpf(0)]  # deterministic LCG; Math.random is not available
-
     def _lcg(n):
         # deterministic, seeded, reproducible -- no wall-clock, no RNG import
         x = 12345
