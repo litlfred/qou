@@ -214,3 +214,28 @@ structural finding (deficit `(A−1)(A−2)/2`, zero at `A=2`, `22.54 %` orderin
 spread at `A=3`) stands. And Step 27's blind-sector characters are a measurement
 of **what an `N = 3` extension would carry**, which is what `qou-fvzm` says the
 super-pairwise binding term requires.
+
+
+---
+
+## 🛑 Third correction (2026-09-01) — the `N = 3` reading is withdrawn too
+
+**🛑 THIRD CORRECTION, same day — the last positive goes too.** The reading
+*"(3,2,1) is an ℓ = 3 block carrying the largest binding character, so this
+measures what an `N = 3` extension would carry"* cited **`qou-fvzm`'s REOPENED
+paragraph**. That bean is **`status: completed`**, and its line 18 closes
+exactly that paragraph: *"my reopened form … is closed — the route is
+**UNAVAILABLE**, not merely hard"*, and *"**THE MISSING ADDITIVE TERM IS NOT A
+HECKE-TRACE OBJECT AT ALL**."* Moving to `N = 3` re-weights channels the mass
+pipeline already evaluates (`y_(2,1)/y_(3) = q[2]_q[N−1]_q/[N+2]_q` differs at
+every `q`), so it is a **regression risk, not an opening**. The surviving
+candidates that bean names are the ones that were never trace objects — the
+extended-Bloch route (`qou-985x`) and the atomic-braid→nucleus map (`qou-imcd`).
+>
+**So Steps 27–28 retain no positive claim about the blind sector at all.** What
+stands from that arc is the construction `Δ_bind = P·(I−1)·N` (validated to
+`5.4·10⁻¹⁵`, genuinely `H₆`-valued) and the chain-vs-all-pairs structural
+finding.
+
+Found by a dispatched audit of the Standard-Model work against the full tower;
+verified against `qou-fvzm` directly rather than taken on the agent's word.

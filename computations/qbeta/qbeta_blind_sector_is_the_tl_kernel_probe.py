@@ -102,12 +102,24 @@ a much cleaner one than Step 27's degeneracy-wall argument: the two phases canno
 both be physical in any framework with dim V < 4, and the corpus has dim V = 2
 with N = 3 open (`qou-8pl3`) and nothing whatever motivating N = 4.
 
-Note the one thing this does NOT kill: `qou-fvzm` says the super-pairwise binding
-term REQUIRES N >= 3 for row-cap reasons, and (3,2,1) — the block carrying both
-the largest binding character and the smaller of the two phases — is exactly an
-l = 3 block. So Step 27's measurement is a measurement of what an N = 3 extension
-would carry. That is a weaker and different claim than the one Step 27 made, and
-it is the one that survives.
+*** 🛑 AND THE LAST SURVIVING POSITIVE DOES NOT STAND EITHER (corrected same day) ***
+
+This probe first added: "qou-fvzm says the super-pairwise binding term REQUIRES
+N >= 3, and (3,2,1) is an l = 3 block, so Step 27 measured what an N = 3
+extension would carry." **That cites a RETRACTED paragraph as current.**
+
+qou-fvzm is COMPLETED and its line 18 CLOSES the paragraph that claim rests on: "my reopened form ('N>=3 is necessary for the >=3-body term, making the N=3-route load-bearing for binding') is closed -- the route is UNAVAILABLE, not merely hard", and "THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL". Moving to N=3 re-weights channels the mass pipeline already evaluates (y_(2,1)/y_(3) = q[2]_q[N-1]_q/[N+2]_q differs at every q), so it is a regression risk, not an opening.
+
+So Step 27's blind-sector characters are not a measurement of what an N = 3
+extension would carry: there is no such extension to measure for, and the object
+the binding gap is missing is not a Hecke-trace object in the first place. The
+surviving candidates qou-fvzm names are the ones that were never trace objects —
+the extended-Bloch/geometric route (qou-985x) and the atomic-braid -> nucleus map
+(qou-imcd).
+
+**Steps 27-28 now retain no positive claim about the blind sector at all.** What
+stands from that arc is the construction (Delta_bind = P.(I-1).N, validated to
+5.4e-15, genuinely H_6-valued) and the chain-vs-all-pairs structural finding.
 
 SCOPE. Scope-(a). No convention adjudicated — the premise is left open exactly as
 `qou-n1dj` has it. Nothing proposed, wired or readmitted; no N >= 3 extension
@@ -137,6 +149,10 @@ from ocneanu_weights import omega_lambda_via_inversion  # noqa: E402
 mp.mp.dps = 30
 Q0 = mp.mpf(str(CONST.Q_50_DIGIT_STR))
 Z_D0 = Q0 ** 3 / (Q0 ** 2 + 1)
+FVZM_DETAIL = (
+    'qou-fvzm is COMPLETED and its line 18 CLOSES the paragraph that claim rests on: "my reopened form (\'N>=3 is necessary for the >=3-body term, making the N=3-route load-bearing for binding\') is closed -- the route is UNAVAILABLE, not merely hard", and "THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL". Moving to N=3 re-weights channels the mass pipeline already evaluates (y_(2,1)/y_(3) = q[2]_q[N-1]_q/[N+2]_q differs at every q), so it is a regression risk, not an opening.'
+)
+
 SMALL = {(3, 2, 1): "0.0252506327621", (2, 2, 1, 1): "0.0195531302631"}
 
 
@@ -260,14 +276,15 @@ def main() -> int:
                    "requires N >= 4 — a structural kill, cleaner than the degeneracy-wall "
                    "argument. The corpus has dim V = 2, N = 3 open (qou-8pl3), and "
                    "nothing motivating N = 4"},
-        {"name": "what_survives_is_a_measurement_of_an_N3_extension",
-         "passed": bool(any(b["rows"] == 3 and b["small_phase"] for b in blocks)),
-         "detail": "qou-fvzm says the super-pairwise binding term REQUIRES N >= 3 for "
-                   "row-cap reasons, and (3,2,1) — carrying both the largest binding "
-                   "character (-9.598) and the smaller of the two phases — is an l = 3 "
-                   "block. So Step 27 measured what an N = 3 extension would carry. That "
-                   "is weaker and different from what Step 27 claimed, and it is the part "
-                   "that survives"},
+        {"name": "the_N3_extension_reading_is_withdrawn_too",
+         "passed": True,
+         "detail": "this probe first claimed Step 27's blind-sector characters measure "
+                   "\"what an N = 3 extension would carry\", citing qou-fvzm. WITHDRAWN: "
+                   + FVZM_DETAIL +
+                   " So Steps 27-28 retain NO positive claim about the blind sector. What "
+                   "stands from that arc is the construction (Delta_bind = P.(I-1).N, "
+                   "validated to 5.4e-15, genuinely H_6-valued) and the chain-vs-all-pairs "
+                   "structural finding"},
     ]
     ok = all(v["passed"] for v in a)
     print("\n  assertions:")
@@ -294,8 +311,12 @@ def main() -> int:
             "(in (2,2,1,1)) needs N >= 4 — the 0.13 % sum coincidence requires N >= 4, a "
             "structural kill cleaner than the degeneracy-wall argument. What survives is "
             "that (3,2,1) is an l = 3 block carrying the largest binding character, so "
-            "Step 27 measured what an N = 3 extension would carry — which is what "
-            "qou-fvzm says the super-pairwise term requires."),
+            "AND the N = 3 reading is withdrawn too (same-day correction): it cited "
+            "qou-fvzm's REOPENED paragraph, which that COMPLETED bean's line 18 closes — "
+            "the N>=3 route is UNAVAILABLE, not merely hard, and the missing additive term "
+            "is NOT A HECKE-TRACE OBJECT AT ALL. Steps 27-28 therefore retain no positive "
+            "claim about the blind sector; what stands is the construction and the "
+            "chain-vs-all-pairs finding."),
         "contentBlock": "prop:three-calibration-inputs",
         "assertions": a,
         "allPassed": ok,
