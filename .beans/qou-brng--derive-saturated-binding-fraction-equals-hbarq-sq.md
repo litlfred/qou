@@ -1009,6 +1009,52 @@ is elliptic. One more crossing breaks it.
 the two isospin channels) is even well-defined — unanswered, and it gates any
 use of the blind sector for the asymmetry.
 
+## 2026-09-01 (fourth pass) — the isospin-channel R is EXACTLY 1 everywhere
+
+**Strongest result of the arc, and it is one line.** Every Hecke generator
+satisfies `(sigma - q)(sigma + 1/q) = 0`, so its **minimal polynomial divides**
+`(x-q)(x+1/q)` in ANY representation. Hence `spec(rho(sigma_i)) ⊂ {q, -1/q}` at
+every dimension — only multiplicities vary. The isospin channels are `sigma`'s
+**spectral projectors**, each carrying one of those two eigenvalues whatever its
+rank. So `B(T=1) = -alpha log q`, `B(T=0) = +alpha log q`, **`R = 1` exactly, in
+every block, at every dimension.** Nature needs 22.2457.
+
+**The single-crossing isospin criterion is excluded EVERYWHERE** — not just the
+bond-letter family, not just 2-dim, blind sector included.
+
+Verified by **exact matrix identity, no root-finding**: `(M-qI)(M+I/q)` residual
+`5.584e-42` for s1, s2 and two conjugates.
+
+**🛑 This undercuts my own previous entry.** I had written that the `R <= 1`
+bound is 2-dimensional "which is why the blind sector's high-dimensional blocks
+are not excluded by it". True about the *bound*, misleading about the physics —
+the argument above excludes them anyway, with no determinant reasoning.
+"Not excluded by THAT bound" ≠ "not excluded". Corrected at source.
+
+**Does not contradict the measured 5.0 spread** — different operators. `sigma`
+satisfies the quadratic (5.6e-42); the word `s1^2 s2^2` does not (same product =
+0.429342), so its spectrum genuinely spreads. But a word's eigenprojectors are
+not `sigma`'s, so the spread is unavailable to the channels as defined.
+
+**Where the problem now sits:**
+| construction | asymmetry | status |
+|---|---|---|
+| single crossing, any dim | R = 1 exactly | EXCLUDED |
+| bond-letter family, 2-dim | R <= 1 | EXCLUDED |
+| multi-crossing word, d > 2 | up to 5.0 | **OPEN** |
+
+Only the third survives, and its obstacle is **not a bound** — nobody has said
+which operator the two isospin channels are the spectral projectors OF once the
+object is a word rather than a crossing. **Definitional question, and now the
+gate.**
+
+**Method note worth more than the result:** my first check was numerical
+(eigenvalues, membership in `{q,1/q}` at 1e-25) and reported FALSE against a
+one-line proof — `polyroots` resolves a triple root to only ~3e-15, so the
+tolerance was tighter than the instrument. **When a claim is algebraic, test it
+algebraically.** Three root-finding artefacts have misled this session:
+`mp.eig` non-convergence, a 7.75e9 ratio from a repeated root, and this.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
