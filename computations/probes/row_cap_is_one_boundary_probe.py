@@ -136,6 +136,58 @@ the eightfold asks it as the `N = 3` blocker, Step 27 measures it as
 trace-blindness at `n = 6`.  Convention C is the full-Hecke Ocneanu trace and
 does **not** kill the 3-row block; D does; D is canonical.
 
+## THE N=3 CONSTRUCTION IS NOT MISSING — IT IS THE NEXT MEMBER OF A FAMILY
+
+The eightfold ledger says of `dim V = N = 3`: *"the obstruction is proved; the
+**construction is missing**."*  It is not missing.  It is the `N = 3` member of
+a one-parameter family the framework already inhabits, and its weights are
+computable in closed form.
+
+`h3-markov-wenzl-weights-context.md` records that the Ocneanu parameter fixes
+the fibre dimension through `z * [N]_q = q^N`.  Solving that for `z` gives
+
+    z_N  =  q^N / [N]_q
+
+and **convention D is exactly the `N = 2` member** (verified: `q^2/[2]_q` against
+`q^3/(q^2+1)` agree to `2.3e-41`).  The family at the proton pin:
+
+    N = 1:  1.10997858275138081
+    N = 2:  0.612688037146465252   == CONVENTION D  (canonical)
+    N = 3:  0.449304809090207861   <- the flavour sector
+    N = 4:  0.369360232235604919
+    N = 5:  0.322749650471015791
+
+**Convention C is not an integer member at all** -- solving `q^N/[N]_q = z_C`
+gives `N = 2.5995155364`, reproducing the scope note's figure and its verdict of
+"no integer fibre dimension".
+
+**And the `N = 3` member is a perfectly legitimate trace.**  Solving the same
+3x3 Markov system `(tr 1, tr s, tr ss) = (1, z, z^2)` that fixes `D` -- the
+machinery validated first against `D`'s known answer
+`([4]_q/[2]_q^3, 1/[2]_q^2, 0)`, reproduced to 16 digits:
+
+    lambda      y at z_D (canonical)      y at z_3 (N = 3)
+    (3)         0.5054042265039308        0.378370691342330394
+    (2,1)       0.2472978867480346        0.293082487286846423
+    (1^3)       0                         0.0354643340839767606   <- ALIVE
+
+all three weights **positive**, and `SUM y_lambda * dim_lambda = 1.0` exactly.
+
+So the eightfold's *"no q raises the row cap"* is exactly right and slightly
+misdirecting: **no `q` raises it because the cap is set by `z`, not by `q`.**
+Changing `q` cannot help; moving to `z_3` does, and `z_3` is forced -- there is
+no freedom in it, `z * [3]_q = q^3` has one solution.
+
+**The trade is therefore explicit and derived, not a matter of taste:**
+
+    N = 2  (z_D):  factors through TL_3, faithful on it, 3-row block dead,
+                   SU(2) fibre, canonical by owner ruling 2026-08-15
+    N = 3  (z_3):  3-row block alive with weight 0.0355, all weights positive,
+                   and by MarkovTraceTLUniqueness it CANNOT factor through TL_3
+
+You cannot have both from one Markov trace on `H_3`.  That is the whole content
+of the `N = 3` blocker, stated as a choice rather than an absence.
+
 ## THE CONVERGENCE THE CORPUS ALREADY HALF-CONTAINS
 
 The corpus-grep turned up work that must be cited before any of the above is
@@ -200,6 +252,20 @@ whole of its honesty:
     (`strand-twist-datum`) is honest that it is a FREE LABEL -- "an addition to
     the structure, not a reading of it" -- and this does not change that.
   * **NOT a binding value.**  Nothing wired, nothing fitted.
+  * **🛑 NOT a proposal to adopt `z_3`.**  `D` is canonical by owner ruling and
+    by a sorry-free uniqueness theorem, and switching `z` moves every mass and
+    binding number in the corpus.  What is shown is only that the `N = 3`
+    object EXISTS and is computable -- turning "the construction is missing"
+    into "the construction is a different member of a family we already
+    inhabit, and here are its weights".  Which member is right is not settled
+    here and is not mine to settle.
+  * **NOT that a nonzero 3-row weight gives SU(3).**  `y_(1^3) = 0.0355 != 0`
+    means the block is alive in the trace; it does not construct a flavour
+    action on it.  That gap is untouched.
+  * The `z * [N]_q = q^N` reading of "fibre dimension" is taken from
+    `h3-markov-wenzl-weights-context.md`, **not derived here**.  What is
+    verified here is that `D` satisfies it at `N = 2` exactly and that `C`
+    gives `N = 2.5995`, reproducing that note's own figures.
 
 Scope **(a)**: the arithmetic identity is exact; the connection between the two
 chapters is an observation about the corpus, offered for the author to accept
@@ -213,6 +279,8 @@ from __future__ import annotations
 
 import sys as _sys
 from math import comb, factorial
+
+TOLZ = 1e-30
 from pathlib import Path as _Path
 
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -377,6 +445,82 @@ def main() -> int:
     print("    Step 27  : 588 of 720 invisible at n = 6")
     print("  Convention C is the full-Hecke Ocneanu trace and does NOT kill the")
     print("  3-row block; D does; D is canonical.")
+
+    print("\n[4b] THE N=3 CONSTRUCTION IS NOT MISSING — IT IS THE NEXT MEMBER")
+    print("-" * 78)
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR
+    mp.mp.dps = 40
+    q = mp.mpf(Q_50_DIGIT_STR)
+
+    def qint(N):
+        return (q ** N - q ** (-N)) / (q - 1 / q)
+
+    zD = q ** 3 / (q ** 2 + 1)
+    zC = mp.sqrt(q) / (q + 1)
+    print("  The eightfold says of dim V = N = 3: 'the obstruction is proved;")
+    print("  the CONSTRUCTION IS MISSING'.  It is not missing.")
+    print()
+    print("  h3-markov-wenzl-weights-context.md records that the Ocneanu")
+    print("  parameter fixes the fibre dimension via z*[N]_q = q^N.  Solving:")
+    print("      z_N = q^N / [N]_q")
+    for N in range(1, 6):
+        zN = q ** N / qint(N)
+        tag = "   == CONVENTION D (canonical)" if abs(zN - zD) < TOLZ else ""
+        print(f"      N = {N}:  {mp.nstr(zN, 18):>22}{tag}")
+    assert abs(q ** 2 / qint(2) - zD) < TOLZ, "D must be the N=2 member exactly"
+    NC = mp.findroot(lambda N: q ** N / qint(N) - zC, mp.mpf("2.6"))
+    print(f"  Convention C is NOT an integer member: N = {mp.nstr(NC, 12)}")
+    assert abs(NC - mp.nint(NC)) > mp.mpf("1e-4"), "C must be non-integer"
+
+    # the 3x3 Markov system, validated against D's known closed form first
+    s1 = mp.matrix([[q, 1], [0, -1 / q]])
+    tt = mp.findroot(
+        lambda t: (s1 * mp.matrix([[-1 / q, 0], [t, q]]) * s1
+                   - mp.matrix([[-1 / q, 0], [t, q]]) * s1
+                   * mp.matrix([[-1 / q, 0], [t, q]]))[0, 0], mp.mpf(1))
+    s2 = mp.matrix([[-1 / q, 0], [tt, q]])
+    P = s1 * s2
+    X = mp.matrix([[1, 2, 1],
+                   [q, s1[0, 0] + s1[1, 1], -1 / q],
+                   [q ** 2, P[0, 0] + P[1, 1], 1 / q ** 2]])
+
+    def weights(z):
+        return mp.lu_solve(X, mp.matrix([1, z, z ** 2]))
+
+    wD, w3 = weights(zD), weights(q ** 3 / qint(3))
+    assert abs(wD[0] - qint(4) / qint(2) ** 3) < mp.mpf("1e-25"), "validate vs D"
+    assert abs(wD[1] - 1 / qint(2) ** 2) < mp.mpf("1e-25"), "validate vs D"
+    assert abs(wD[2]) < mp.mpf("1e-25"), "D must kill the 3-row block"
+    print()
+    print("  Same 3x3 Markov system that fixes D (validated against D's known")
+    print("  closed form ([4]/[2]^3, 1/[2]^2, 0) to 25 digits), solved at z_3:")
+    print(f"      {'lambda':>8} {'y at z_D':>24} {'y at z_3':>24}")
+    for nm, a, b in zip(("(3)", "(2,1)", "(1^3)"), wD, w3):
+        print(f"      {nm:>8} {mp.nstr(a, 16):>24} {mp.nstr(b, 18):>24}")
+    print(f"      3-row block ALIVE at z_3?  {abs(w3[2]) > mp.mpf('1e-12')}")
+    print(f"      all weights positive?      {all(x > 0 for x in w3)}")
+    print(f"      sum y*dim = {mp.nstr(w3[0] + 2 * w3[1] + w3[2], 12)}")
+    assert abs(w3[2]) > mp.mpf("1e-6"), "the N=3 member must keep the 3-row block"
+    assert all(x > 0 for x in w3), "and must be a POSITIVE trace"
+    assert abs(w3[0] + 2 * w3[1] + w3[2] - 1) < mp.mpf("1e-25"), "normalised"
+    print()
+    print("  So 'no q raises the row cap' is right and slightly misdirecting:")
+    print("  no q raises it because the cap is set by z, NOT by q.  Moving to")
+    print("  z_3 does, and z_3 is FORCED -- z*[3]_q = q^3 has one solution.")
+    print()
+    print("  THE TRADE, derived rather than a matter of taste:")
+    print("    N=2 (z_D): factors through TL_3, faithful, 3-row DEAD,")
+    print("               SU(2) fibre, canonical by ruling 2026-08-15")
+    print("    N=3 (z_3): 3-row ALIVE at weight 0.0355, all weights positive,")
+    print("               and by MarkovTraceTLUniqueness CANNOT factor via TL_3")
+    print("  You cannot have both from one Markov trace on H_3.  That is the")
+    print("  whole content of the N=3 blocker, stated as a CHOICE not an ABSENCE.")
+    print()
+    print("  🛑 NOT a proposal to adopt z_3.  D is canonical by ruling and by a")
+    print("  sorry-free uniqueness theorem, and switching z moves every mass and")
+    print("  binding number.  And a nonzero 3-row weight does NOT construct an")
+    print("  SU(3) action -- that gap is untouched.")
 
     print("\n[5] THE CONVERGENCE THE CORPUS ALREADY HALF-CONTAINS")
     print("-" * 78)
