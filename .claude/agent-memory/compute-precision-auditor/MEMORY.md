@@ -225,3 +225,13 @@ TRAPs.
   them reproduces itself while looking like a derivation. Test at an interior
   point, and before averaging a parameter that sits in an exponent, check whether
   the physics sums or multiplies — `f(mean(x)) = mean(f(x))` only for affine `f`.
+  **BEFORE OPTIMISING ANY HECKE TRACE:** convention D zeroes every partition with
+  `>=3` rows at *every* strand count (`N=2` specialisation, not just `y_alt=0` at
+  `n=3`). `n=6` is 4 nonzero blocks of 11, `n=9` is 5 of 30, `n=12` is **7 of
+  77** — largest dim `297`, built in `0.04 s`. `A=4` was believed to need `H_12`
+  and be unreachable; it is under a second. Weights: `y_(n-k,k) = [n-2k+1]_q / Z`
+  normalised by `sum(y*dim)=1` at `q=q0` — exact against `load_cost` at `n=9`.
+  Reach: `A=5` comfortable (2002), `A=6` sparse (13260), `A=7` out (90440); the
+  largest block is *not* at the largest `k`. Also: **atom bonds do not commute** —
+  insertion order is worth `11 %` at `A=3` and `38-40 %` at `A=4`, so take the
+  order from `atom_gen_chains` (interleaved) and quote it with any trace.

@@ -139,3 +139,61 @@ understated it at *every* interior point; the two candidate signs were both
 exponent, check whether the operation the physics performs is a sum or a product.
 `f(mean(x))` and `mean(f(x))` coincide only for affine `f`. The whole dispute was
 `108x` smaller than the error that framing choice introduced.
+
+## THE BIG ONE — you are probably computing blocks whose weight is ZERO
+
+**Read this before optimising any Hecke trace.** Convention D puts the
+three-strand q-antisymmetriser in the radical (`y_alt = 0`). That is the `N = 2`
+specialisation, and it does **not** stop at `n = 3`: **every partition with
+`>= 3` rows carries weight exactly zero, at every strand count.**
+
+Measured against `load_cost`: `n = 6` has **4 nonzero blocks of 11**; `n = 9`
+has **5 of 30**. At `n = 12` it is **7 of 77**, and the seven have dimensions
+`1, 11, 54, 154, 275, 297, 132` — largest **297**, built in `0.04 s`.
+
+For scale: `qou-sv7h` reports a Rust LP-accumulator kernel taking **278 s for a
+single `A = 2` deuteron**, and `qou-w2vy` documents `binding_energy` as unable to
+run for any `A >= 2`. Both are working on a computation whose cost is dominated
+by blocks that contribute nothing. `A = 4` was believed to need `H_12` and to be
+out of reach; it takes under a second.
+
+The surviving weights have a closed form — for two-row `(n-k, k)`:
+
+    y = [n - 2k + 1]_q / Z ,    Z fixed by  sum_lambda y . dim = 1
+
+with `[m]_q` the balanced q-integer **at `q0`**, and
+`dim(n-k,k) = C(n,k) - C(n,k-1)`. Verified against `load_cost`: **exact** at
+`n = 9`, and `1.14e-8` at `n = 6` — which is that path's own stored-f64 floor,
+so the closed form is the *more* precise of the two. There is no `y_lambda`
+source for `n = 12`; this is how you get one.
+
+**Reach, and note the largest block is NOT at the largest `k`** — at `n = 18` it
+sits at `k = 7`, not `k = 9`, which is easy to get wrong by inspection:
+
+    A=4  n=12  largest    297   dense, comfortable
+    A=5  n=15  largest   2002   dense, comfortable
+    A=6  n=18  largest  13260   needs sparse handling
+    A=7  n=21  largest  90440   out of reach
+
+**Cross-validate before believing it.** Reconstructed-weight `H_12` reproduces
+`L_pp`/`L_pn`/`L_nn` to `1.3e-13`, band-routed bonds at separation 2 *and* 3 to
+`3.4e-13`, and the `ppn` triangle to `3.69e-10` — each against an `H_6`/`H_9`
+computation that does not share the weight source.
+
+## TRAP — the bonds in an atom word DO NOT COMMUTE
+
+Inserting the same set of bonds in a different order gives a different trace:
+**`11.12 %` spread over the six orderings of one `A = 3` triangle, `38-40 %`
+over `4He`'s six bonds** (`B` ranging `8.04 .. 12.43 MeV`). That is far larger
+than the framed-vs-writhe-normalised question two probes were spent on.
+
+Four of the six triangle orderings agree exactly; the two outliers are precisely
+those with the band-routed bond sandwiched between the two adjacent ones — the
+only pair that fails to commute. `atom_gen_chains` fixes an **interleaved**
+order, `N0 . N1 . b01 . N2 . b02 . b12 . N3 . b03 . b13 . b23`, which had never
+been lifted to the strand picture; a probe that appends all bonds after all
+nucleon words is computing a different quantity (mine was, and it needed a
+correction).
+
+**Rule.** Quote a bond order with any atom trace, and take it from
+`atom_gen_chains` rather than inventing one.
