@@ -10,14 +10,24 @@ anchor-independent). It does not reproduce from the current anchor pair.
 
 WHAT THIS ESTABLISHES
 
-1. **The current cross-anchor swing is 2.3748 %** (proton-normalised), or
-   2.4571 % normalised by the candidate `-2`. Not 2.98 %.
+1. **The current cross-anchor swing is 2.3912 %** (proton-normalised), or
+   2.4741 % normalised by the candidate `-2`. Not 2.98 %.
+
+   *These figures are ANCHOR-DEPENDENT and are printed from the live
+   computation below rather than quoted — they were 2.3748 % / 2.4571 % while
+   the muon pin was CODATA-2018, and moved when `fca08de7d2` (2026-08-22) put
+   it on CODATA 2022. This file had the stale pair hard-typed three lines
+   under the computed one, i.e. it printed 2.3912 % and then said "the current
+   swing, which is 2.3748 %". Corrected 2026-08-31 (qou-cds1 / qou-t39x): every
+   percentage here is now interpolated from `cur_p` / `cur_2`.*
 
 2. **2.98 % is STALE, not mis-normalised.** It comes from a superseded muon
    value `c_3 = -2.0097`, explicitly labelled *"muon-pin (stale, pre-#1422)"*
    in `2026-05-31-c-3-categorical-derivation-attempt.md`. Today's extraction
-   at the muon anchor is `-2.02020024` (this probe; independently in registry
-   §9g). The muon value moved; the percentage did not follow.
+   at the muon anchor is `-2.01986031` at the CODATA-2022 pin this probe
+   computes from (it was `-2.02020024` at the CODATA-2018 pin, and registry
+   §9g still carries that one). The muon value moved twice; the percentage
+   followed neither.
 
 3. **2.98 % and 2.88 % are the SAME stale gap under two normalisations** —
    `|c_p - c_m^stale| / 2` vs `|c_p - c_m^stale| / |c_p|`. Both are live in
@@ -34,7 +44,7 @@ WHAT THIS ESTABLISHES
 
 WHAT THIS DOES NOT ESTABLISH. The **verdict is unchanged.** c_3 remains a
 q₀-dependent NEAR-MATCH, REFUTED as a real-q fibre element: the corrected
-swing 2.3748 % is smaller than the quoted 2.98 % but still enormous next to
+swing ~2.39 % is smaller than the quoted 2.98 % but still enormous next to
 the 10⁻⁵⁰ compute precision, so it supports the same conclusion. This is a
 scope-(a) correction to the *evidence*, not a change to the finding. No tier
 moves, no value is wired or un-wired.
@@ -94,10 +104,16 @@ def main() -> int:
 
     print(f"\n  {'swing':<34}{'/|c_p|':>12}{'/2':>12}")
     print("  " + "-" * 58)
-    print(f"  {'CURRENT  (c_p vs c_m)':<34}{float(cur_p):>11.4f}%{float(cur_2):>11.4f}%")
-    print(f"  {'STALE    (c_p vs pre-#1422 muon)':<34}{float(old_p):>11.4f}%{float(old_2):>11.4f}%")
+    # mp.nstr, not float(): these percentages are the probe's RESULT, and the
+    # float64 guard is right to refuse a binary64 round-trip on the way out
+    # (pre-existing here; fixed 2026-08-31 with the CODATA-2022 correction).
+    def _pct(x):
+        return f"{mp.nstr(x, 5)} %".rjust(12)
+    print(f"  {'CURRENT  (c_p vs c_m)':<34}{_pct(cur_p)}{_pct(cur_2)}")
+    print(f"  {'STALE    (c_p vs pre-#1422 muon)':<34}{_pct(old_p)}{_pct(old_2)}")
     print("\n  The corpus's 2.88 % and 2.98 % are the STALE row's two columns.")
-    print("  Neither is the current swing, which is 2.3748 % / 2.4571 %.")
+    print(f"  Neither is the current swing, which is {mp.nstr(cur_p, 5)} % / "
+          f"{mp.nstr(cur_2, 5)} % — computed above, not quoted.")
 
     coincidence = abs(C3_MUON_STALE - model)
     print(f"\n  Coincidence guard: stale muon extraction vs the candidate model")
@@ -113,13 +129,22 @@ def main() -> int:
 {'=' * 78}
 
   2.98 % is stale, not mis-normalised: the muon-anchor c_3 moved from
-  -2.0097 (pre-#1422) to -2.02020024, and the percentage did not follow.
-  The current cross-anchor swing is 2.3748 % (proton-normalised).
+  -2.0097 (pre-#1422) to -2.02020024 (CODATA-2018) to {mp.nstr(cm, 10)}
+  (CODATA-2022, fca08de7d2), and the percentage followed none of it.
+  The current cross-anchor swing is {mp.nstr(cur_p, 5)} % (proton-normalised).
+
+  AND THE SWING IS THE ONE THING HERE THAT SURVIVES ITS OWN ERROR BAR.
+  Propagated through the CAL inputs the ABSOLUTE c_3 is -2.0199 +- 1.26
+  (Q_beta-dominated via 1/u^3), i.e. 0.2 supported significant figures. But
+  Q_beta and m_e are COMMON MODE and cancel in the difference, leaving the
+  swing at 9.5 sigma. So this probe's quantity is experimentally resolved
+  while the values it is built from are not
+  (qbeta-c3-muon-anchor-codata-edition-attribution).
 
   The VERDICT IS UNCHANGED. c_3 stays a q_0-dependent NEAR-MATCH, refuted as
-  a real-q fibre element: 2.3748 % is smaller than the quoted 2.98 % but still
-  vast next to the 1e-50 compute precision, so the same conclusion follows.
-  Scope-(a) correction to the evidence, not to the finding.
+  a real-q fibre element: {mp.nstr(cur_p, 5)} % is smaller than the quoted
+  2.98 % but still vast next to the 1e-50 compute precision, so the same
+  conclusion follows. Scope-(a) correction to the evidence, not the finding.
 """)
 
     wb = WitnessBuilder("qbeta-c3-crossanchor-swing-provenance", engine="mpmath")
@@ -128,8 +153,11 @@ def main() -> int:
         "across ~6 audit docs and in the qbeta-ck-truncation-canonical "
         "authorNote. It does not reproduce from the current anchor pair: the "
         "figure was computed against a superseded muon-anchor c_3 = -2.0097 "
-        "(pre-#1422), whereas today's muon extraction is -2.02020024. The "
-        "current swing is 2.3748 % proton-normalised (2.4571 % normalised by "
+        "(pre-#1422), whereas today's muon extraction is "
+        f"{mp.nstr(cm, 10)} at the CODATA-2022 pin (it was -2.02020024 at the "
+        "CODATA-2018 pin, which registry section 9g still carries). The "
+        f"current swing is {mp.nstr(cur_p, 5)} % proton-normalised "
+        f"({mp.nstr(cur_2, 5)} % normalised by "
         "the candidate -2). The corpus's 2.88 % and 2.98 % are the SAME stale "
         "gap under the two normalisations — the same trap as c_2/c-tilde_2 and "
         "as the 3.47 %/3.35 % pair. Also records a coincidence guard: the "

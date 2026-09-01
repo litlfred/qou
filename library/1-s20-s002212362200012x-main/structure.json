@@ -1,0 +1,262 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1-s20-s002212362200012x-main",
+ "source": {
+  "file": "1-s2.0-S002212362200012X-main.pdf",
+  "sha256": "6fc7d28c8d40bf423dd361a7a83ce95503ca8e54248b5c67d2bd80b6b9692453",
+  "bytes": 477961,
+  "pages": 22,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1016/j.jfa.2022.109392",
+  "title": "www.elsevier.com/locate/jfa",
+  "authors_raw": "Log concavity and concentration of Lipschitz",
+  "title_lines": [
+   "www.elsevier.com/locate/jfa"
+  ],
+  "abstract": null,
+  "docinfo": {}
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "A lower bound on the entropy",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "An application: concentration of negatively dependent random variables",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible extensions to spectral gap",
+   "page": 6,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries and a stochastic construction",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Some preliminary definitions",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Stochastic localization",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Estimating the variance in terms of the transportation distance between tilts",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Proposition 15: the stochastic coupling",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Fact 4",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 6",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-log-concavity-and-concentration-of-lipschitz-fun",
+   "number": null,
+   "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1700,
+   "n_words": 264
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4644,
+   "n_words": 841
+  },
+  {
+   "id": "sec-002-11-a-lower-bound-on-the-entropy",
+   "number": "1.1",
+   "title": "A lower bound on the entropy",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1109,
+   "n_words": 211
+  },
+  {
+   "id": "sec-003-12-an-application-concentration-of-negatively-de",
+   "number": "1.2",
+   "title": "An application: concentration of negatively dependent random variables",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4448,
+   "n_words": 810
+  },
+  {
+   "id": "sec-004-13-relation-to-the-works-of-anari-liu-oveis-ghar",
+   "number": "1.3",
+   "title": "Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible extensions to spectral gap",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4605,
+   "n_words": 811
+  },
+  {
+   "id": "sec-005-2-preliminaries-and-a-stochastic-construction",
+   "number": "2",
+   "title": "Preliminaries and a stochastic construction",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 805,
+   "n_words": 146
+  },
+  {
+   "id": "sec-006-22-stochastic-localization",
+   "number": "2.2",
+   "title": "Stochastic localization",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 4286,
+   "n_words": 837
+  },
+  {
+   "id": "sec-007-3-proof-of-theorem-2",
+   "number": "3",
+   "title": "Proof of Theorem 2",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-31-estimating-the-variance-in-terms-of-the-trans",
+   "number": "3.1",
+   "title": "Estimating the variance in terms of the transportation distance between tilts",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 4261,
+   "n_words": 877
+  },
+  {
+   "id": "sec-009-32-proof-of-proposition-15-the-stochastic-coupli",
+   "number": "3.2",
+   "title": "Proof of Proposition 15: the stochastic coupling",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 6185,
+   "n_words": 1321
+  },
+  {
+   "id": "sec-010-4-proof-of-fact-4",
+   "number": "4",
+   "title": "Proof of Fact 4",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 917,
+   "n_words": 182
+  },
+  {
+   "id": "sec-011-5-proof-of-theorem-6",
+   "number": "5",
+   "title": "Proof of Theorem 6",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 1692,
+   "n_words": 384
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 3082,
+   "n_words": 441
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 13,
+  "chars_total": 37734
+ }
+}

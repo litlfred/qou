@@ -1,0 +1,104 @@
+{
+  "computation": "qbeta-holonomy-spectrum-sign-obstruction",
+  "engine": "mpmath",
+  "description": "qou-pdix route 5 / qou-cds1 branch 3: a holonomy whose generator has REAL spectrum has normalised character cosh(a) >= 1 for every real a, while the measured correction is strictly below 1 (Q_beta/Q_A = 0.998325; ladder cosine factor 0.998399 under C, 0.998999 under D). The Kohno-Drinfeld scale-fixing hbar = 2 ln q makes the generator real at the substrate's real q0 > 1, giving character (q + 1/q)/2 = 1.005448 -- excess (q-1)^2/(2q), a square, so never negative. WRONG SIDE of 1, by 0.706 %. Because the bound is quantified over ALL real a, this is INDEPENDENT of the residues and so closes all three survivors PhaseFailsLogFunctionalEquation left open (q-dependent residues, non-flat, q-dependent-parameter). What route 5 needs is an ELLIPTIC generator (det A > 0) at real q, which points at conj:im-q-physical-role. Also a new tier-0 discriminator for qou-pdix's D1-D6 test, read from the construction like D5/D6. Lean: QOU/QBeta/HolonomySpectrumSignObstruction.lean, 6 theorems, sorry-free.",
+  "contentBlock": "conj:im-q-physical-role",
+  "assertions": [
+    {
+      "name": "required_character_is_strictly_below_one",
+      "passed": true,
+      "detail": "Q_beta/Q_A = 0.998325241673; ladder cosine factor 0.998398945253 (C), 0.998999136574 (D) \u2014 all below 1"
+    },
+    {
+      "name": "kd_character_is_at_least_one_and_is_a_square_excess",
+      "passed": true,
+      "detail": "(q + 1/q)/2 = 1.0054484333536; excess over 1 equals (q-1)^2/(2q) = 0.005448433354 exactly \u2014 a square over a positive, so never negative (Lean kd_character_sub_one)"
+    },
+    {
+      "name": "kd_holonomy_is_on_the_wrong_side_of_one",
+      "passed": true,
+      "detail": "KD gives 1.00544843335, the data needs 0.998398945253 \u2014 not merely off by 0.70608 %, but on the wrong side"
+    },
+    {
+      "name": "no_real_generator_eigenvalue_reaches_the_target",
+      "passed": true,
+      "detail": "cosh(a) >= 1 > required for every real a sampled, and the minimum over all real a is exactly 1 at a = 0 \u2014 so the exclusion is INDEPENDENT of the residues, which only change which a appears"
+    },
+    {
+      "name": "elliptic_generator_is_required_not_optional",
+      "passed": true,
+      "detail": "an elliptic generator (det A > 0, spectrum +-i*0.056594738) reproduces the character; Kohno-Drinfeld gives det A = -0.010886986 < 0, hyperbolic"
+    },
+    {
+      "name": "strengthens_the_constant_residue_exclusion",
+      "passed": true,
+      "detail": "PhaseFailsLogFunctionalEquation excluded c*ln q (constant residues) by a functional equation; this excludes every real-spectrum generator including q-dependent and non-flat ones, by a sign"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "dps": 50,
+    "lean": "QOU/QBeta/HolonomySpectrumSignObstruction.lean",
+    "lean_theorems": [
+      "two_le_add_inv",
+      "real_spectrum_character_ge_one",
+      "correction_below_one_excludes_real_spectrum",
+      "kd_character_sub_one",
+      "kd_holonomy_cannot_realise_subunit_correction",
+      "kd_character_eq_one_iff"
+    ],
+    "companion_lean": [
+      "QOU/QBeta/PhaseFailsLogFunctionalEquation.lean",
+      "QOU/QBeta/BraidImageEigenphaseExclusion.lean",
+      "QOU/QBeta/CosineParametrisationUnfalsifiable.lean"
+    ]
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "h": "0.2090602987956393",
+    "u": "0.008517234550156141",
+    "required_character": {
+      "full_correction": "0.9983252416732466",
+      "ladder_cosine_C": "0.9983989452530845",
+      "ladder_cosine_D": "0.9989991365744098"
+    },
+    "kohno_drinfeld": {
+      "hbar_eq_2_log_q": "0.208681440639039",
+      "generator_eigenvalue": "0.1043407203195195",
+      "character": "1.00544843335356115",
+      "excess_over_one": "0.0054484333535611",
+      "excess_closed_form": "(q-1)^2/(2q)",
+      "det_traceless_generator": "-0.010886985916796",
+      "miss_pct_vs_ladder_cosine_C": "0.70607928"
+    },
+    "cosh_samples": {
+      "a=0.0": "1.0",
+      "a=0.104341": "1.0054484333536",
+      "a=0.0566": "1.0016022076622",
+      "a=1.0": "1.5430806348152",
+      "a=-0.104341": "1.0054484333536",
+      "a=-0.5": "1.1276259652064"
+    },
+    "elliptic_requirement": {
+      "theta_needed": "0.056594737543307",
+      "condition": "det A > 0 (spectrum +-i*theta), not det A < 0"
+    }
+  },
+  "context": {
+    "axis": "qou-cds1 branch 3 / qou-pdix route 5: can a KZ holonomy give the phase?",
+    "answer": "Not with a real-spectrum generator, whatever its residues. The character is cosh(a) >= 1 for every real a and the data needs < 1. Kohno-Drinfeld's own scale-fixing hbar = 2 ln q makes the generator real at the substrate's real q, so the reading the corpus cites is on the wrong side of 1. Route 5 now needs an ELLIPTIC generator at real q -- the imaginarity has to come from somewhere, and conj:im-q-physical-role is the corpus's name for that place.",
+    "strengthens": "PhaseFailsLogFunctionalEquation, which excluded only CONSTANT-residue holonomies (c*ln q, by the doubling identity). This closes the three survivors that bean names -- q-dependent residues, non-flat, q-dependent-parameter -- because the inequality is quantified over all real a and never reads the residues.",
+    "scope": "Scope-(b). Does not show no connection exists, does not derive alpha, does not adjudicate a convention, wires nothing. It shows the elliptic requirement is not optional."
+  },
+  "gitCommit": "3410116836d243d6b577cd57f3a009e75961e88b",
+  "durationMs": 0,
+  "scriptFile": "qbeta_holonomy_spectrum_sign_obstruction_probe.py",
+  "scriptHash": "7b78a2a01233",
+  "scriptCommitSha": "unknown",
+  "commitSha": "3410116836d243d6b577cd57f3a009e75961e88b",
+  "computedAt": "2026-08-31T19:41:45.307384+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

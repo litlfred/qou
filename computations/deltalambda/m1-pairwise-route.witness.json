@@ -1,0 +1,155 @@
+{
+ "probe": "m1_pairwise_route",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "lean": "QOU.MathlibExt.WeightedChebyshev.two_mul_weighted_cov_eq",
+ "pairs": [
+  {
+   "n": 6,
+   "npart": 11,
+   "disc_count_pct": "3.306",
+   "disc_mass_pct": "1.538",
+   "neg_over_pos": "0.015625",
+   "outside_2_0_pct": "0.0",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 7,
+   "npart": 15,
+   "disc_count_pct": "3.556",
+   "disc_mass_pct": "1.57",
+   "neg_over_pos": "0.015945",
+   "outside_2_0_pct": "0.0",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 8,
+   "npart": 22,
+   "disc_count_pct": "4.132",
+   "disc_mass_pct": "0.8428",
+   "neg_over_pos": "0.0084998",
+   "outside_2_0_pct": "0.0",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 9,
+   "npart": 30,
+   "disc_count_pct": "4.0",
+   "disc_mass_pct": "0.8103",
+   "neg_over_pos": "0.008169",
+   "outside_2_0_pct": "0.0",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 10,
+   "npart": 42,
+   "disc_count_pct": "3.855",
+   "disc_mass_pct": "0.8331",
+   "neg_over_pos": "0.0084007",
+   "outside_2_0_pct": "0.08615",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 11,
+   "npart": 56,
+   "disc_count_pct": "4.337",
+   "disc_mass_pct": "1.032",
+   "neg_over_pos": "0.010429",
+   "outside_2_0_pct": "0.6142",
+   "outside_2_5_pct": "0.0",
+   "two_M1_pos": true
+  },
+  {
+   "n": 12,
+   "npart": 77,
+   "disc_count_pct": "4.453",
+   "disc_mass_pct": "0.8529",
+   "neg_over_pos": "0.0086027",
+   "outside_2_0_pct": "1.246",
+   "outside_2_5_pct": "5.094e-5",
+   "two_M1_pos": true
+  },
+  {
+   "n": 13,
+   "npart": 101,
+   "disc_count_pct": "5.098",
+   "disc_mass_pct": "0.8696",
+   "neg_over_pos": "0.0087727",
+   "outside_2_0_pct": "0.07032",
+   "outside_2_5_pct": "7.909e-7",
+   "two_M1_pos": true
+  },
+  {
+   "n": 14,
+   "npart": 135,
+   "disc_count_pct": "5.092",
+   "disc_mass_pct": "0.7197",
+   "neg_over_pos": "0.0072492",
+   "outside_2_0_pct": "0.4128",
+   "outside_2_5_pct": "4.762e-6",
+   "two_M1_pos": true
+  },
+  {
+   "n": 15,
+   "npart": 176,
+   "disc_count_pct": "5.314",
+   "disc_mass_pct": "0.7422",
+   "neg_over_pos": "0.0074775",
+   "outside_2_0_pct": "1.367",
+   "outside_2_5_pct": "8.741e-5",
+   "two_M1_pos": true
+  },
+  {
+   "n": 16,
+   "npart": 231,
+   "disc_count_pct": "5.007",
+   "disc_mass_pct": "0.7063",
+   "neg_over_pos": "0.0071135",
+   "outside_2_0_pct": "0.04908",
+   "outside_2_5_pct": "6.851e-7",
+   "two_M1_pos": true
+  },
+  {
+   "n": 17,
+   "npart": 297,
+   "disc_count_pct": "5.496",
+   "disc_mass_pct": "0.7099",
+   "neg_over_pos": "0.0071502",
+   "outside_2_0_pct": "0.2141",
+   "outside_2_5_pct": "8.323e-6",
+   "two_M1_pos": true
+  },
+  {
+   "n": 18,
+   "npart": 385,
+   "disc_count_pct": "5.262",
+   "disc_mass_pct": "0.7132",
+   "neg_over_pos": "0.0071835",
+   "outside_2_0_pct": "0.6765",
+   "outside_2_5_pct": "6.161e-5",
+   "two_M1_pos": true
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 1: pairwise margin ~140x, vs ~2.9x for the +/- split",
+   "pass": true,
+   "detail": "2 M_1 = sum over pairs of P P (dSh)(dSc2) -- the symmetrisation identity, Lean-proved as QOU.MathlibExt.WeightedChebyshev.two_mul_weighted_cov_eq -- so M_1 > 0 iff concordant mass exceeds discordant mass. Exact over n = 6..18: discordant/concordant = ['0.015625', '0.015945', '0.0084998', '0.008169', '0.0084007', '0.010429', '0.0086027', '0.0087727', '0.0072492', '0.0074775', '0.0071135', '0.0071502', '0.0071835'], settling at 0.007235 over the last five n, i.e. a ~138.0x margin, and 2M_1 > 0 at every n. The gap's recorded +/- split has the negative term at ~65 % of the positive, a margin of ~2.9x -- so the pairwise form has roughly 48x more room for the same conclusion, and states it with no asymptotics and no CLT."
+  },
+  {
+   "name": "FINDING 2 (ROUTE CLOSED): discordance is BULK, not tail",
+   "pass": true,
+   "detail": "The obvious bound on the discordant mass is to call discordant pairs atypical and use a Plancherel large-deviation estimate on lambda_1 (VKLS: lambda_1/sqrt n -> 2). It fails. Fraction of discordant product-mass from pairs with max(lambda_1, rows) beyond t*sqrt(n): t = 2.0 gives ['0.08615', '0.6142', '1.246', '0.07032', '0.4128', '1.367', '0.04908', '0.2141', '0.6765'] %, t = 2.5 gives ['0.0', '0.0', '5.094e-5', '7.909e-7', '4.762e-6', '8.741e-5', '6.851e-7', '8.323e-6', '6.161e-5'] %. So essentially 100 % of the discordant mass sits INSIDE the VKLS window: the discordant pairs are TYPICAL diagrams and no tail estimate on lambda_1 can isolate them. Recorded so the route is not retried."
+  }
+ ],
+ "passed": 2,
+ "total": 2,
+ "ms": 2161
+}

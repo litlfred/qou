@@ -1,0 +1,74 @@
+{
+ "probe": "a3_mirror_selection",
+ "bean": [
+  "t7qv"
+ ],
+ "lean": "QOU.MathlibExt.SelectionBound",
+ "ratio_B": "1.09895708617",
+ "ratio_V": "1.13081714957",
+ "discrepancy_pct": "2.8991181",
+ "menu_min_pct": "2.52",
+ "selection": [
+  {
+   "R": "0.25",
+   "p": "0.1008",
+   "P_exact": "0.99982",
+   "P_lower_bound": "0.99972"
+  },
+  {
+   "R": "0.5",
+   "p": "0.0504",
+   "P_exact": "0.98484",
+   "P_lower_bound": "0.98313"
+  },
+  {
+   "R": "1.0",
+   "p": "0.0252",
+   "P_exact": "0.87348",
+   "P_lower_bound": "0.87013"
+  },
+  {
+   "R": "2.0",
+   "p": "0.0126",
+   "P_exact": "0.64195",
+   "P_lower_bound": "0.63962"
+  }
+ ],
+ "coulomb": [
+  {
+   "R_fm": "1.7",
+   "E_C_MeV": "1.0164",
+   "dB_over_EC": "0.7514"
+  },
+  {
+   "R_fm": "1.9",
+   "E_C_MeV": "0.90945",
+   "dB_over_EC": "0.8398"
+  },
+  {
+   "R_fm": "2.1",
+   "E_C_MeV": "0.82283",
+   "dB_over_EC": "0.9282"
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 2: parameter-free discrepancy is 2.899 %, menu min bought 13 %",
+   "pass": true,
+   "detail": "Both A = 3 targets are usable in the corpus four-point table, so the ratio test runs with ZERO free parameters: B(3H)/B(3He) = 1.09895709, Vol(8_11)/Vol(L6a4) = 1.13081715, discrepancy = 2.8991 %. The bean's quoted 'best structural 2.52 %' is smaller by a factor 1.15, i.e. the 81-candidate menu reduced the error by 13.1 % -- that is what 81 degrees of selection freedom bought."
+  },
+  {
+   "name": "FINDING 3: a 2.52 % menu min from 81 candidates is EXPECTED",
+   "pass": true,
+   "detail": "With N candidates each inside tolerance with probability p, P(best one is) >= 1 - exp(-N p) -- QOU.MathlibExt.SelectionBound.menu_min_prob_ge, sorry-free on [propext, Classical.choice, Quot.sound]. For N = 81 and candidate errors uniform on [0, R]: R = 0.25 -> P = 0.99982; R = 0.5 -> P = 0.98484; R = 1.0 -> P = 0.87348; R = 2.0 -> P = 0.64195. CONTROL: the closed-form P and the exponential lower bound agree in order at every R, with the bound below the exact value as it must be. Even granting errors spread over a full 100 %, a menu min at or below 2.52 % arrives by chance seven times in eight, so it is not evidence for the structure that produced it."
+  },
+  {
+   "name": "FINDING 4: the mirror splitting is 75-93 % naive Coulomb",
+   "pass": true,
+   "detail": "dB = B(3H) - B(3He) = 0.76375488 MeV. Naive Coulomb (3/5) Z(Z-1) e^2 / R for 3He, with e^2 = 1.43996 MeV.fm: R = 1.7 fm -> 1.0164 MeV, dB/E_C = 0.7514; R = 1.9 fm -> 0.90945 MeV, dB/E_C = 0.8398; R = 2.1 fm -> 0.82283 MeV, dB/E_C = 0.9282. So Coulomb alone accounts for three-quarters to all of the splitting. A charge-BLIND topological ratio has almost nothing left to explain; conversely any structural account must reproduce a Coulomb-sized effect, and here the only charge dependence enters through the link assignment (8_11 vs L6a4) from the braid word."
+  }
+ ],
+ "passed": 3,
+ "total": 3,
+ "ms": 0
+}

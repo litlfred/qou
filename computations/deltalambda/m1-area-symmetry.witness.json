@@ -1,0 +1,183 @@
+{
+ "probe": "m1_area_symmetry",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "plancherel": [
+  {
+   "n": 2,
+   "E_Aplus": "1/2",
+   "E_D0": "1",
+   "pred": "1/2"
+  },
+  {
+   "n": 3,
+   "E_Aplus": "1",
+   "E_D0": "1",
+   "pred": "1"
+  },
+  {
+   "n": 4,
+   "E_Aplus": "17/12",
+   "E_D0": "7/6",
+   "pred": "17/12"
+  },
+  {
+   "n": 5,
+   "E_Aplus": "43/24",
+   "E_D0": "17/12",
+   "pred": "43/24"
+  },
+  {
+   "n": 6,
+   "E_Aplus": "87/40",
+   "E_D0": "33/20",
+   "pred": "87/40"
+  },
+  {
+   "n": 7,
+   "E_Aplus": "311/120",
+   "E_D0": "109/60",
+   "pred": "311/120"
+  },
+  {
+   "n": 8,
+   "E_Aplus": "10223/3360",
+   "E_D0": "3217/1680",
+   "pred": "10223/3360"
+  },
+  {
+   "n": 9,
+   "E_Aplus": "141737/40320",
+   "E_D0": "39703/20160",
+   "pred": "141737/40320"
+  },
+  {
+   "n": 10,
+   "E_Aplus": "1449541/362880",
+   "E_D0": "364859/181440",
+   "pred": "1449541/362880"
+  },
+  {
+   "n": 11,
+   "E_Aplus": "1158203/259200",
+   "E_D0": "267397/129600",
+   "pred": "1158203/259200"
+  },
+  {
+   "n": 12,
+   "E_Aplus": "196821197/39916800",
+   "E_D0": "42679603/19958400",
+   "pred": "196821197/39916800"
+  },
+  {
+   "n": 13,
+   "E_Aplus": "1288847687/239500800",
+   "E_D0": "267907513/119750400",
+   "pred": "1288847687/239500800"
+  }
+ ],
+ "omega_exact": [
+  {
+   "n": 6,
+   "ratio": "0.30303"
+  },
+  {
+   "n": 7,
+   "ratio": "0.413265"
+  },
+  {
+   "n": 8,
+   "ratio": "0.481505"
+  },
+  {
+   "n": 9,
+   "ratio": "0.526528"
+  },
+  {
+   "n": 10,
+   "ratio": "0.560049"
+  },
+  {
+   "n": 11,
+   "ratio": "0.587466"
+  },
+  {
+   "n": 12,
+   "ratio": "0.611141"
+  },
+  {
+   "n": 13,
+   "ratio": "0.632102"
+  },
+  {
+   "n": 14,
+   "ratio": "0.650925"
+  },
+  {
+   "n": 15,
+   "ratio": "0.668064"
+  },
+  {
+   "n": 16,
+   "ratio": "0.683836"
+  },
+  {
+   "n": 17,
+   "ratio": "0.69836"
+  },
+  {
+   "n": 18,
+   "ratio": "0.71163"
+  }
+ ],
+ "omega_sampled": [
+  {
+   "n": 20,
+   "ratio": "0.730737"
+  },
+  {
+   "n": 50,
+   "ratio": "0.858705"
+  },
+  {
+   "n": 100,
+   "ratio": "0.912287"
+  },
+  {
+   "n": 200,
+   "ratio": "0.942398"
+  }
+ ],
+ "checks": [
+  {
+   "name": "EXACT: E[A_+] = E[A_-] = (n - E[D(0)])/2 under Plancherel, at every n",
+   "pass": true,
+   "detail": "verified as exact rationals for n = 2..13, 0 failures. Conjugation invariance (dim lam = dim lam^T) maps content c -> -c, so the two strict sides have equal expectation and the main diagonal is the entire discrepancy. Since E[D(0)] ~ (2/pi)sqrt(n), this is n/2 with a RELATIVE correction of order n^-1/2 -- a symmetry, not an asymptotic."
+  },
+  {
+   "name": "...and the c = 0 bookkeeping is the whole difficulty",
+   "pass": true,
+   "detail": "counting A_+ as #{content >= 0} puts the main diagonal on the positive side and breaks the symmetry: E[A_+] = (n + E[D0])/2 then, off by the same amount the other way. That was the first attempt here, and the c = 0 diagonal has now caused three separate errors in this cluster."
+  },
+  {
+   "name": "FALSIFIER FIRED: the symmetry does NOT transfer to the omega-measure",
+   "pass": true,
+   "detail": "E_omega[A_sigma]/(n/2), exact, n = 6..18: ['0.30303', '0.413265', '0.481505', '0.526528', '0.560049', '0.587466', '0.611141', '0.632102', '0.650925', '0.668064', '0.683836', '0.69836', '0.71163']. Far from 1. A_sigma is the area on the side where the NEAR corner sits, and which corner is near is selected by the edge geometry, which correlates with the shape -- so the Plancherel symmetry does not simply carry over. This was the stated risk and it is what happened."
+  },
+  {
+   "name": "...but it converges to 1, FROM BELOW -- the favourable direction",
+   "pass": true,
+   "detail": "sampled ratios at n = [20, 50, 100, 200]: ['0.730737', '0.858705', '0.912287', '0.942398'], rising toward 1 at roughly the n^-1/2 rate the O(sqrt n) diagonal correction predicts. From BELOW matters: a smaller A gives a TIGHTER bound sqrt(a^2+2A) - a, so the 7.54% margin computed at A = n/2 is conservative at finite n. NOT a proof -- rigour needs concentration of A_sigma about its mean, or Jensen against the CONDITIONAL mean given the geometry (the bound is concave in A, so Jensen points the right way). Neither is done here."
+  },
+  {
+   "name": "WHAT THIS CHANGES for the remaining analytic input",
+   "pass": true,
+   "detail": "the input carrying the 7.54% margin is no longer 'effective VKLS'. It is CONCENTRATION of one smooth functional of a Plancherel diagram, about a mean fixed by an exact symmetry. That is a much narrower literature question than a quantitative limit shape, and it is the one to ask."
+  }
+ ],
+ "passed": 5,
+ "total": 5,
+ "ms": 5913
+}

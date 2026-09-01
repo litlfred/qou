@@ -3,353 +3,73 @@
  "doc_id": "download-1",
  "source": {
   "file": "Download (1).pdf",
-  "sha256": "b683296f448ed027d57a629800660ad4facb84b9a6ba01b4304ac9971bcb4124",
-  "bytes": 900203,
-  "pages": 100,
+  "sha256": "bbb001c909958e8a2c281846eeab29e5bb49e1d1f4645f51221afb88ac641e3f",
+  "bytes": 198627,
+  "pages": 24,
   "text_source": "embedded"
  },
  "metadata": {
   "arxiv": null,
-  "doi": "10.2140/gt.2015.19.853",
-  "title": "On the Kashaev invariant and the twisted Reidemeister torsion of two-bridge knots",
-  "authors_raw": "TOMOTADA OHTSUKI TOSHIE TAKATA",
+  "doi": "10.2969/jmsj/06120483",
+  "title": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+  "authors_raw": "By Kei FUNANO",
   "title_lines": [
-   "On the Kashaev invariant and",
-   "the twisted Reidemeister torsion of two-bridge knots"
+   "Central and Lp-concentration of 1-Lipschitz maps",
+   "into R-trees"
   ],
-  "abstract": null,
+  "abstract": "In this paper, we study the Le \u00b4vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.",
   "docinfo": {
-   "Creator": "Geometry & Topology",
-   "Author": "Tomotada Ohtsuki and Toshie Takata",
-   "Title": "On the Kashaev invariant and the twisted Reidemeister torsion of two-bridge knots",
-   "Producer": "pdfTeX-1.40.14",
-   "CreationDate": "D:20150410140141-07'00'"
+   "CreationDate": "D:20090420233152Z",
+   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
+   "Author": "Kei Funano",
+   "Title": "Central and L^{p}-concentration of 1-Lipschitz maps into \\mbi{R}-trees",
+   "Creator": "Arbortext Advanced Print Publisher 9.1.422/W"
   }
  },
  "toc": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "outline",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Preliminaries",
-   "page": 5,
-   "source": "outline",
-   "number": "2"
-  },
-  {
    "level": 2,
-   "title": "Kashaev invariant",
-   "page": 6,
-   "source": "outline",
-   "number": "2.1"
-  },
-  {
-   "level": 2,
-   "title": "Knot diagrams parameterized by hyperbolicity parameters",
-   "page": 8,
-   "source": "outline",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "Calculation of the twisted Reidemeister torsion",
-   "page": 10,
-   "source": "outline",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "The monodromy representation",
-   "page": 11,
-   "source": "outline",
-   "number": "3.1"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of the twisted Reidemeister torsion for the 5_2 knot",
-   "page": 13,
-   "source": "outline",
-   "number": "3.2"
-  },
-  {
-   "level": 2,
-   "title": "Decomposing two-bridge knot diagrams into elementary diagrams",
-   "page": 23,
-   "source": "outline",
-   "number": "3.3"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of a determinant",
-   "page": 24,
-   "source": "outline",
-   "number": "3.4"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of det( _1 _1 )",
-   "page": 37,
-   "source": "outline",
-   "number": "3.5"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of the twisted Reidemeister torsion for any two-bridge knot",
-   "page": 40,
-   "source": "outline",
-   "number": "3.6"
-  },
-  {
-   "level": 1,
-   "title": "Definition and calculation of _2",
-   "page": 44,
-   "source": "outline",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Definition of _2",
-   "page": 44,
-   "source": "outline",
-   "number": "4.1"
-  },
-  {
-   "level": 2,
-   "title": "Relation to the Kashaev invariant",
-   "page": 51,
-   "source": "outline",
-   "number": "4.2"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of _2 for open two-bridge knot diagrams",
-   "page": 61,
-   "source": "outline",
-   "number": "4.3"
-  },
-  {
-   "level": 1,
-   "title": "Proof of Theorem 1.1",
-   "page": 68,
-   "source": "outline",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Appendix A: Cellular decompositions of the knot complement",
-   "page": 80,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Appendix B: Transformation of a basis of C*",
-   "page": 81,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Appendix C: The numerators and the denominators of the f_i",
-   "page": 82,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Appendix D: Representations of two-bridge knot groups",
-   "page": 87,
-   "source": "outline",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "Appendix E: The case of nonhyperbolic two-bridge knots",
-   "page": 97,
-   "source": "outline",
-   "number": null
+   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.3"
   },
   {
    "level": 1,
    "title": "References",
-   "page": 98,
-   "source": "outline",
+   "page": 23,
+   "source": "inferred",
    "number": null
   }
  ],
- "toc_source": "outline",
+ "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 5,
-   "n_chars": 8830,
-   "n_words": 1512
-  },
-  {
-   "id": "sec-001-21-kashaev-invariant",
-   "number": "2.1",
-   "title": "Kashaev invariant",
+   "id": "sec-000-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
+   "number": "2.3",
+   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
    "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 2419,
-   "n_words": 382
-  },
-  {
-   "id": "sec-002-2-preliminaries",
-   "number": "2",
-   "title": "Preliminaries",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 8,
-   "n_chars": 3132,
-   "n_words": 647
-  },
-  {
-   "id": "sec-003-22-knot-diagrams-parameterized-by-hyperbolicity",
-   "number": "2.2",
-   "title": "Knot diagrams parameterized by hyperbolicity parameters",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3170,
-   "n_words": 655
-  },
-  {
-   "id": "sec-004-3-calculation-of-the-twisted-reidemeister-torsio",
-   "number": "3",
-   "title": "Calculation of the twisted Reidemeister torsion",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 86,
-   "n_words": 14
-  },
-  {
-   "id": "sec-005-31-the-monodromy-representation",
-   "number": "3.1",
-   "title": "The monodromy representation",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 13,
-   "n_chars": 4029,
-   "n_words": 766
-  },
-  {
-   "id": "sec-006-32-calculation-of-the-twisted-reidemeister-torsi",
-   "number": "3.2",
-   "title": "Calculation of the twisted Reidemeister torsion for the 5_2 knot",
-   "level": 2,
-   "page_start": 13,
+   "page_start": 7,
    "page_end": 23,
-   "n_chars": 12809,
-   "n_words": 2818
+   "n_chars": 28717,
+   "n_words": 5833
   },
   {
-   "id": "sec-007-33-decomposing-two-bridge-knot-diagrams-into-ele",
-   "number": "3.3",
-   "title": "Decomposing two-bridge knot diagrams into elementary diagrams",
-   "level": 2,
-   "page_start": 23,
-   "page_end": 40,
-   "n_chars": 21318,
-   "n_words": 4826
-  },
-  {
-   "id": "sec-008-36-calculation-of-the-twisted-reidemeister-torsi",
-   "number": "3.6",
-   "title": "Calculation of the twisted Reidemeister torsion for any two-bridge knot",
-   "level": 2,
-   "page_start": 40,
-   "page_end": 51,
-   "n_chars": 14502,
-   "n_words": 3040
-  },
-  {
-   "id": "sec-009-42-relation-to-the-kashaev-invariant",
-   "number": "4.2",
-   "title": "Relation to the Kashaev invariant",
-   "level": 2,
-   "page_start": 51,
-   "page_end": 68,
-   "n_chars": 23266,
-   "n_words": 4523
-  },
-  {
-   "id": "sec-010-5-proof-of-theorem-11",
-   "number": "5",
-   "title": "Proof of Theorem 1.1",
-   "level": 1,
-   "page_start": 68,
-   "page_end": 80,
-   "n_chars": 15649,
-   "n_words": 3139
-  },
-  {
-   "id": "sec-011-appendix-a-cellular-decompositions-of-the-knot-c",
-   "number": null,
-   "title": "Appendix A: Cellular decompositions of the knot complement",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 82,
-   "n_chars": 3643,
-   "n_words": 707
-  },
-  {
-   "id": "sec-012-appendix-c-the-numerators-and-the-denominators-o",
-   "number": null,
-   "title": "Appendix C: The numerators and the denominators of the f_i",
-   "level": 1,
-   "page_start": 82,
-   "page_end": 87,
-   "n_chars": 6429,
-   "n_words": 1337
-  },
-  {
-   "id": "sec-013-appendix-d-representations-of-two-bridge-knot-gr",
-   "number": null,
-   "title": "Appendix D: Representations of two-bridge knot groups",
-   "level": 1,
-   "page_start": 87,
-   "page_end": 97,
-   "n_chars": 16123,
-   "n_words": 3120
-  },
-  {
-   "id": "sec-014-appendix-e-the-case-of-nonhyperbolic-two-bridge",
-   "number": null,
-   "title": "Appendix E: The case of nonhyperbolic two-bridge knots",
-   "level": 1,
-   "page_start": 97,
-   "page_end": 98,
-   "n_chars": 1955,
-   "n_words": 362
-  },
-  {
-   "id": "sec-015-references",
+   "id": "sec-001-references",
    "number": null,
    "title": "References",
    "level": 1,
-   "page_start": 98,
-   "page_end": 100,
-   "n_chars": 5493,
-   "n_words": 820
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3175,
+   "n_words": 531
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 16,
-  "chars_total": 142853
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 31892
  }
 }

@@ -770,6 +770,17 @@ import QOU.QBeta.CuspShapeBarParity
 import QOU.QBeta.ArgUPhaseBranchSelection
 import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
+import QOU.QBeta.HolonomySpectrumSignObstruction
+import QOU.QBeta.ImQCannotSupplyEllipticGenerator
+import QOU.QBeta.BringEllipticCurveJInvariant
+import QOU.QBeta.JetTowerBlindToDecay
+import QOU.QBeta.TraceRealSpectrumComplex
+import QOU.QBeta.TracelessDifferenceEllipticity
+import QOU.QBeta.DiscriminantCurveInQ
+import QOU.QBeta.TraceBlindSector
+import QOU.QBeta.BondDecayRates
+import QOU.QBeta.CosineParametrisationUnfalsifiable
+import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
 import QOU.QBeta.SLeakMagnitudeOffsetRatio
 import QOU.QBeta.SLeakMagnitudeTaylorRatio

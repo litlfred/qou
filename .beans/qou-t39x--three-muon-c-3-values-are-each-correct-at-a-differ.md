@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T02:27:01Z
-updated_at: 2026-08-29T02:50:22Z
+updated_at: 2026-08-31T18:30:12Z
 ---
 
 Found chasing the root cause behind `qou-kt8o` (the `dc_3/dq ≈ 4.6e6`
@@ -115,3 +115,67 @@ land, contaminated witnesses do not.
 OPEN, not started: AGENTS.md's own site list for this figure ('five other sites
 ... audit docs and local/compute-author') is wrong — measured 55 files, incl. 3
 .lean and several under computations/.
+
+
+## 2026-08-31 — the pairing rule reached the registry, the content and AGENTS.md
+
+This bean's general rule ("a `c_3` value is meaningless without its anchor") was
+landed into *producers* on 2026-08-29. It had not reached the places a reader
+takes the number **from**, and `qou-cds1` Finding B is what that cost: an agent
+three weeks later read `−2.01986031187` as "a third value" of unknown origin,
+340× tolerance, and opened it as a defect. It was this bean's CODATA-2022 row.
+Closed against this bean; commits `636c1541c0` + `1ee9666f7d`.
+
+**Sites corrected** (all had `−2.02020024` as *today's* value): the sensitivity
+probe's regression target; `c3_even_canonical_split_contradiction.py` (was
+itself a straddle — **frozen** pin paired with the **CODATA-2018** `c_3`);
+`sleak_offset_genericity_check.py`; `ck-dk-registry.json` + the `.md` twin
+(`--twin` T1–T5 green after); `SLeakZeroCrossing.lean`,
+`FaddeevModularDouble.lean`, `ThetaLipschitzObstruction.lean`;
+`qbeta-ck-truncation-canonical.ts`; `AGENTS.md`. Anchors are now **derived**
+where they were transcribed.
+
+**A live self-contradiction this turned up**, worse than a stale literal:
+`qbeta_c3_crossanchor_swing_provenance_probe.py` *computed* 2.3912 % / 2.4741 %
+and then printed, three lines later, "the current swing, which is 2.3748 % /
+2.4571 %" — the stale pair hard-typed under the fresh one, and the stale pair is
+what went into its witness description. Now interpolated.
+
+### Two more CODATA-2018-era literals the same edition step surfaces
+
+1. **`S(muon) = 886.8`** (2026-07-07 audit, 4 s.f.) is **3.17× outside its own
+   rounding window** at the live pin, where it reads **886.6**.
+2. **KC21's Φ_b scale claim degrades 3.01 % → 6.63 %** — 2.2× worse. The deficit
+   0.0094 is anchor-blind to sub-ppm, so *all* the movement is on the `|S|`
+   side: the quoted "~2.9 %" was never a property of the saddle. Recorded in the
+   Lean table it is read off, and computed rather than asserted.
+
+### `dc_3/dq` — your retraction re-verified, and it holds
+
+You retracted a "3.812e6 / 0.7 % stale" claim here as your own straddle and
+asserted the slope is anchor-layer invariant. Confirmed independently at the
+2022 pin: secant **3838405.894** (2018) vs **3838405.878** (2022), identical to
+8 digits. `3.84e6` stays everywhere; it was the one number that did **not** need
+correcting, and it is the one an unwary sweep would have "fixed".
+
+### What the pairing rule was missing: an error bar
+
+Three values differing in the fourth significant figure all call themselves
+"muon `c_3`" — and **none of them carries four significant figures**. Propagated
+through the CAL inputs at CODATA-2022 published uncertainties (recomputed at
+±1σ, not via a recorded derivative): **`c_3(muon) = −2.0199 ± 1.26`**, dominated
+by `Q_β` alone (0.78 ppm × `1/u³` = 1.6e6) — **0.2** supported significant
+figures against the **9** quoted. So the three-way spread this bean is about is
+**3700× inside** the experimental bar; the pairing rule is about
+*reproducibility*, and was right to be, but it should not be read as being about
+physical resolution.
+
+What *is* resolved: `Q_β` and `m_e` are **common mode** and cancel in the
+difference, leaving the cross-anchor swing at **−0.0494823 ± 0.0052 = 9.5σ** —
+the same 9.5σ as the μ–p tension, because it is the same statement.
+Probe `qbeta-c3-muon-anchor-codata-edition-attribution` (11/11).
+
+**Still open** (unchanged): re-pinning `Q_MUON_50_DIGIT_STR` and migrating the
+336 ancestor-bearing files, sequenced behind PR #5500 and `qou-1c4y`; and the
+audit docs under `docs/audits/` that record `−2.02020024` — those are dated
+records of what was true then and were deliberately left alone.

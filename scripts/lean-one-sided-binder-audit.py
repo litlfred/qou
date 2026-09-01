@@ -199,7 +199,14 @@ def split_hypotheses(body: str):
 
 def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
     findings = []
-    for p in sorted(root.rglob("*.lean")):
+    scanned = 0
+    # A ROOT MAY BE A SINGLE FILE (see lean-self-assuming-audit.py). This one
+    # was the worst of the three: it printed no scanned-file count at all, so
+    # `<script> path/to/One.lean` reported "0 candidates", exited 0, and left
+    # nothing in the output to reveal that nothing had been read.
+    cands = [root] if (root.is_file() and root.suffix == ".lean") else root.rglob("*.lean")
+    for p in sorted(cands):
+        scanned += 1
         src = strip_comments(p.read_text(encoding="utf-8", errors="replace"))
         for m in re.finditer(
             r"^(axiom|theorem|lemma)\s+([A-Za-z0-9_.']+)\s*((?:[^\n]|\n[ \t]+)*)", src, re.M
@@ -325,7 +332,7 @@ def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
                     "unproved": unproved, "constrained": constrained,
                     "signal": "one-sided-constant",
                 })
-    return findings
+    return findings, scanned
 
 
 # The two real defects this detector was written from, plus the false positive
@@ -414,7 +421,12 @@ def main() -> int:
         print(f"error: {root} does not exist", file=sys.stderr)
         return 2
 
-    findings = scan(root, include_constrained, all_kinds)
+    findings, scanned = scan(root, include_constrained, all_kinds)
+    print(f"scanned {scanned} .lean files")
+    if scanned == 0:
+        print("error: scanned 0 .lean files — this is NOT a pass. Nothing was "
+              "audited; check the root given.", file=sys.stderr)
+        return 2
     unsound = [f for f in findings if f["signal"] == "unsound-order-bound"]
     advisory = [f for f in findings
                 if f["signal"] == "unconstrained-structure-projection"]

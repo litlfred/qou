@@ -1,0 +1,417 @@
+{
+ "probe": "m1_area_fluctuation_scale",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "library": [
+  "arxiv-1108.0687v3",
+  "arxiv-0707.2340v2"
+ ],
+ "exact": [
+  {
+   "n": 2,
+   "E_Ap": "1/2",
+   "E_D0": "1",
+   "sd": "0.5",
+   "gap": "0.5",
+   "ratio": "1.0",
+   "is_identity": true
+  },
+  {
+   "n": 3,
+   "E_Ap": "1",
+   "E_D0": "1",
+   "sd": "0.57735027",
+   "gap": "0.5",
+   "ratio": "0.866025",
+   "is_identity": false
+  },
+  {
+   "n": 4,
+   "E_Ap": "17/12",
+   "E_D0": "7/6",
+   "sd": "0.64009548",
+   "gap": "0.58333333",
+   "ratio": "0.911322",
+   "is_identity": false
+  },
+  {
+   "n": 5,
+   "E_Ap": "43/24",
+   "E_D0": "17/12",
+   "sd": "0.7058781",
+   "gap": "0.70833333",
+   "ratio": "1.00348",
+   "is_identity": false
+  },
+  {
+   "n": 6,
+   "E_Ap": "87/40",
+   "E_D0": "33/20",
+   "sd": "0.7709572",
+   "gap": "0.825",
+   "ratio": "1.0701",
+   "is_identity": false
+  },
+  {
+   "n": 7,
+   "E_Ap": "311/120",
+   "E_D0": "109/60",
+   "sd": "0.838277",
+   "gap": "0.90833333",
+   "ratio": "1.08357",
+   "is_identity": false
+  },
+  {
+   "n": 8,
+   "E_Ap": "10223/3360",
+   "E_D0": "3217/1680",
+   "sd": "0.90538194",
+   "gap": "0.95744048",
+   "ratio": "1.0575",
+   "is_identity": false
+  },
+  {
+   "n": 9,
+   "E_Ap": "141737/40320",
+   "E_D0": "39703/20160",
+   "sd": "0.96686025",
+   "gap": "0.98469742",
+   "ratio": "1.01845",
+   "is_identity": false
+  },
+  {
+   "n": 10,
+   "E_Ap": "1449541/362880",
+   "E_D0": "364859/181440",
+   "sd": "1.0203915",
+   "gap": "1.0054536",
+   "ratio": "0.985361",
+   "is_identity": false
+  },
+  {
+   "n": 11,
+   "E_Ap": "1158203/259200",
+   "E_D0": "267397/129600",
+   "sd": "1.0674299",
+   "gap": "1.0316242",
+   "ratio": "0.966456",
+   "is_identity": false
+  },
+  {
+   "n": 12,
+   "E_Ap": "196821197/39916800",
+   "E_D0": "42679603/19958400",
+   "sd": "1.110726",
+   "gap": "1.069214",
+   "ratio": "0.962626",
+   "is_identity": false
+  },
+  {
+   "n": 13,
+   "E_Ap": "1288847687/239500800",
+   "E_D0": "267907513/119750400",
+   "sd": "1.1523254",
+   "gap": "1.118608",
+   "ratio": "0.97074",
+   "is_identity": false
+  },
+  {
+   "n": 14,
+   "E_Ap": "18132151577/3113510400",
+   "E_D0": "3662421223/1556755200",
+   "sd": "1.1931594",
+   "gap": "1.1762997",
+   "ratio": "0.98587",
+   "is_identity": false
+  },
+  {
+   "n": 15,
+   "E_Ap": "9099959107/1452971520",
+   "E_D0": "1797327293/726485760",
+   "sd": "1.2335333",
+   "gap": "1.237001",
+   "ratio": "1.00281",
+   "is_identity": false
+  },
+  {
+   "n": 16,
+   "E_Ap": "1168979120051/174356582400",
+   "E_D0": "225873539149/87178291200",
+   "sd": "1.2735927",
+   "gap": "1.295469",
+   "ratio": "1.01718",
+   "is_identity": false
+  },
+  {
+   "n": 17,
+   "E_Ap": "906941506193/126804787200",
+   "E_D0": "170899185007/63402393600",
+   "sd": "1.3134262",
+   "gap": "1.3477345",
+   "ratio": "1.02612",
+   "is_identity": false
+  },
+  {
+   "n": 18,
+   "E_Ap": "25773175515173/3387499315200",
+   "E_D0": "4714318321627/1693749657600",
+   "sd": "1.352963",
+   "gap": "1.391681",
+   "ratio": "1.02862",
+   "is_identity": false
+  }
+ ],
+ "sampled": [
+  {
+   "n": 100,
+   "nsamp": 4000,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.312968",
+    "0.316814",
+    "0.320607"
+   ],
+   "sd_mean": "0.316796",
+   "sd_se": "0.00205",
+   "sd_zscore": "-0.74",
+   "gap_over_sqrtn": [
+    "0.3175",
+    "0.316925",
+    "0.317375"
+   ],
+   "ratio": [
+    "1.01448",
+    "1.00035",
+    "0.989918"
+   ],
+   "ratio_mean": "1.00158",
+   "ratio_spread": "0.02456"
+  },
+  {
+   "n": 200,
+   "nsamp": 3000,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.308814",
+    "0.32472",
+    "0.321089"
+   ],
+   "sd_mean": "0.318208",
+   "sd_se": "0.00237",
+   "sd_zscore": "-0.04303",
+   "gap_over_sqrtn": [
+    "0.318316",
+    "0.318528",
+    "0.318233"
+   ],
+   "ratio": [
+    "1.03077",
+    "0.98093",
+    "0.991106"
+   ],
+   "ratio_mean": "1.00094",
+   "ratio_spread": "0.04984"
+  },
+  {
+   "n": 400,
+   "nsamp": 2400,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.317239",
+    "0.315345",
+    "0.319888"
+   ],
+   "sd_mean": "0.317491",
+   "sd_se": "0.00265",
+   "sd_zscore": "-0.3096",
+   "gap_over_sqrtn": [
+    "0.31874",
+    "0.31901",
+    "0.319365"
+   ],
+   "ratio": [
+    "1.00473",
+    "1.01162",
+    "0.998365"
+   ],
+   "ratio_mean": "1.00491",
+   "ratio_spread": "0.01326"
+  },
+  {
+   "n": 800,
+   "nsamp": 1800,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.326765",
+    "0.321448",
+    "0.314894"
+   ],
+   "sd_mean": "0.321036",
+   "sd_se": "0.00309",
+   "sd_zscore": "0.8821",
+   "gap_over_sqrtn": [
+    "0.318699",
+    "0.318218",
+    "0.318267"
+   ],
+   "ratio": [
+    "0.975314",
+    "0.989951",
+    "1.01071"
+   ],
+   "ratio_mean": "0.991992",
+   "ratio_spread": "0.0354"
+  },
+  {
+   "n": 1600,
+   "nsamp": 1200,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.319345",
+    "0.319983",
+    "0.314344"
+   ],
+   "sd_mean": "0.317891",
+   "sd_se": "0.00375",
+   "sd_zscore": "-0.1118",
+   "gap_over_sqrtn": [
+    "0.318344",
+    "0.3185",
+    "0.318354"
+   ],
+   "ratio": [
+    "0.996865",
+    "0.995366",
+    "1.01276"
+   ],
+   "ratio_mean": "1.00166",
+   "ratio_spread": "0.01739"
+  },
+  {
+   "n": 3200,
+   "nsamp": 800,
+   "seeds": [
+    101,
+    202,
+    303
+   ],
+   "sd_over_sqrtn": [
+    "0.302219",
+    "0.306627",
+    "0.31096"
+   ],
+   "sd_mean": "0.306602",
+   "sd_se": "0.00443",
+   "sd_zscore": "-2.644",
+   "gap_over_sqrtn": [
+    "0.318209",
+    "0.318485",
+    "0.318198"
+   ],
+   "ratio": [
+    "1.05291",
+    "1.03867",
+    "1.02328"
+   ],
+   "ratio_mean": "1.03829",
+   "ratio_spread": "0.02963"
+  }
+ ],
+ "pemantle_peres": [
+  {
+   "n": 100,
+   "pp_threshold": "285.46",
+   "gap": "3.1831",
+   "shortfall": "89.68"
+  },
+  {
+   "n": 10000,
+   "pp_threshold": "9027.03",
+   "gap": "31.831",
+   "shortfall": "283.59"
+  },
+  {
+   "n": 1000000,
+   "pp_threshold": "285460.0",
+   "gap": "318.31",
+   "shortfall": "896.8"
+  },
+  {
+   "n": 100000000,
+   "pp_threshold": "9.02703e+6",
+   "gap": "3183.1",
+   "shortfall": "2835.9"
+  }
+ ],
+ "kerov": {
+  "S": "0.249999999975",
+  "S_exact_target": "1/4",
+  "var_I": "0.405284734529",
+  "sd_pred_over_sqrtn": "0.318309886168",
+  "inv_pi": "0.318309886184",
+  "quad_control_max_err": "1.488e-31",
+  "sd_measured_n1600": "0.317891"
+ },
+ "checks": [
+  {
+   "name": "gap/sd is NOT a finite-n identity",
+   "pass": true,
+   "detail": "Var(A_+) = (E[D0]/2)^2 as exact rationals only at n = [2] (n = 2 has a single partition pair and is degenerate). Over n = 2..18 the ratio runs ['1.0', '0.866', '0.9113', '1.003'] ... ['1.003', '1.017', '1.026', '1.029'], crossing 1 3 times. So there is no identity to prove: the coincidence in FINDING 1 is asymptotic, and both constants are 1/pi."
+  },
+  {
+   "name": "CONTROL: E[A_+] = (n - E[D0])/2 exactly",
+   "pass": true,
+   "detail": "Exact rational equality at every n = 2..18 (violations: []). This is the conjugation symmetry, and it is what fixes the gap n/2 - E[A_+] = E[D0]/2 that FINDING 1 compares sd(A_+) against. Formalised sorry-free as QOU.BraidKnot.M1EdgeCalculus.areaUpper_transpose together with areaUpper_add_areaLower_add_diagLen_zero. Re-checked here because an error in it would silently move the target, and the c = 0 diagonal has caused three separate bookkeeping errors in this cluster."
+  },
+  {
+   "name": "sd(A_+)/sqrt(n) -> 1/pi, against the propagated error",
+   "pass": true,
+   "detail": "Seed-pooled sd(A_+)/sqrt(n) over n = 100..3200: ['0.316796', '0.318208', '0.317491', '0.321036', '0.317891', '0.306602'] against 1/pi = 0.31831; standard errors ['0.00205', '0.00237', '0.00265', '0.00309', '0.00375', '0.00443'] (se of a sample sd is s/sqrt(2(ns-1)), pooled over 3 seeds), giving z-scores ['-0.74', '-0.04303', '-0.3096', '0.8821', '-0.1118', '-2.644'], all under 3. Largest raw departure is 0.0161, which is WITHIN the error bar and not evidence of a trend -- the earlier version of this check used a hardcoded 0.03 tolerance and tripped on exactly that noise. Flat in n, so the fluctuation exponent is 1/2, not 1/4."
+  },
+  {
+   "name": "E[D0]/(2 sqrt(n)) -> 1/pi, measured",
+   "pass": true,
+   "detail": "The gap, independently accumulated: ['0.3175', '0.318316', '0.31874', '0.318699', '0.318344', '0.318209']; worst deviation from 1/pi is 0.00138. This one is the known VKLS constant D(0)/sqrt(n) -> 2/pi, so it is a check on the sampler as much as on the claim."
+  },
+  {
+   "name": "FINDING 1: gap/sd = 1 -- the margin is exactly one sigma",
+   "pass": true,
+   "detail": "Seed-mean ratio over n = 100..3200 (a 32x range): ['1.00158', '1.00094', '1.00491', '0.991992', '1.00166', '1.03829']; worst departure from 1 is 0.0383, largest seed spread at fixed n is 0.0498 -- so the departures are within sampling noise and there is no trend. THE CONSEQUENCE: a concentration inequality asked to rule out A_+ >= n/2 must cover one standard deviation, and a 1-sigma event has probability ~0.16. No sharpening of the inequality helps, because the obstruction is the width of the distribution."
+  },
+  {
+   "name": "FINDING 3: Pemantle-Peres is short by a growing n^(1/4)",
+   "pass": true,
+   "detail": "Thm 3.5 needs a >= c sqrt(32 mu) with c ~ 2 sqrt(n) the TV-Lipschitz constant of A_+ and mu ~ (2/pi) sqrt(n); the gap is (1/pi) sqrt(n). Shortfall thr/gap at n = [100, 10000, 1000000, 100000000]: ['89.68', '283.59', '896.8', '2835.9'] -- growing like n^(1/4), never below 89.68. NOT a weakness of the theorem: D(c) IS Lipschitz-1 in that metric (a particle count), so the same theorem concentrates the per-diagonal profile at scale n^(1/4). A_+ fails it because it is a linear statistic with unbounded coefficients."
+  },
+  {
+   "name": "FINDING 4: Kerov's CLT DERIVES sd(A_+) -> (1/pi) sqrt(n)",
+   "pass": true,
+   "detail": "From Delta(2 cos t) = (1/pi) sum alpha_m sin(m t)/sqrt(m): Var(I) = (16/pi^2) S with S = sum_(m even) m/(m^2-1)^2 = 0.249999999975 (= 1/4), so sd(A_+)/sqrt(n) -> 0.318309886168 against 1/pi = 0.318309886184. Measured at n = 1600: 0.317891. CONTROL: the closed form for c_m checked against direct quadrature at m = 2..7, max error 1.488e-31 -- the odd m vanish as the parity argument requires, which is what would break first if the substitution u = 2 cos t were wrong. This makes the 1-sigma margin a DERIVED coincidence between two constants that are both 2/pi, not a numerical accident."
+  }
+ ],
+ "passed": 7,
+ "total": 7,
+ "ms": 44721
+}

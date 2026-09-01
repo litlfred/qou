@@ -120,10 +120,24 @@ theorem not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
 
 The fibre-side spec for the `c_k` evaluation map (handed to the z→c_k f-map
 keystone, PR #3458). The observed cross-anchor `c_3` swing
-(`c_3(q_p) = −2.0693` proton vs `−2.02020024` muon; `Δq = 1.28×10⁻⁸`) demands a
+(`c_3(q_p) = −2.0693` proton vs `−2.01986031` muon at the CODATA-2022 pin —
+`−2.02020024` was the superseded CODATA-2018 one; `Δq = 1.28×10⁻⁸`) demands a
 slope `dc_3/dq ≈ 3.84×10⁶`, which for a **smooth real function of `q`** requires
 a singularity within `≈ 5.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
 #1821 — no categorical object supplies such a pole).
+> **🛑 CONVENTION-C SCOPE (added 2026-08-31).** The `c₃` values quoted here —
+> `−2.01986031` (muon, CODATA-2022 pin) and `−2.06934258` (proton) — are
+> **C-frame extractions**.
+> Owner ruling 2026-08-09 excised convention C at the `z` level (production uses
+> `z_D = q³/(q²+1)`), but the `c_k` **ladder** has not been re-derived under D:
+> bean `qou-cds1` states it "must be re-derived, not re-evaluated", and the
+> `c₃ ≈ −974` obtained by feeding `z_D` to the current extractor is a
+> sensitivity measurement, **not** a proposed value. So every value-level `c₃`
+> fact below is C-conditional and moves if `qou-cds1` lands.
+>
+> **No theorem in this file depends on it** — the values appear in this
+> docstring only, verified by AST scan in
+> `computations/deltalambda/wlambda_binding_c_frame_conditionality_audit.py`.
 
 All three numbers were corrected on 2026-08-29 (bean `qou-kt8o`) from
 `−2.0097` / `4.66×10⁶` / `4.4×10⁻⁷`. The muon `c_3` was the **pre-#1422

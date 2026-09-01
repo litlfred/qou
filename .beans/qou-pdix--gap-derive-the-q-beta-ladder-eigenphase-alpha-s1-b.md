@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T13:53:54Z
+updated_at: 2026-08-31T19:43:09Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1159,3 +1159,73 @@ while silent on tier 2 has shown nothing.
 
 PROBE: `computations/qbeta/qbeta_route5_discriminating_test.py` (19/19; the
 correction and the tier-1-is-automatic fact are assertions, not prose).
+
+
+## 2026-08-31 — ROUTE 5's three survivors close at once: the generator must be ELLIPTIC
+
+The constant-residue exclusion left exactly three survivors, recorded above as
+*"a connection whose residues depend on `q`, a non-flat construction, or a
+genuinely `q`-dependent-parameter transcendental object is untouched"*. **All
+three close together**, by a sign argument that never reads the residues. Probe
+`qbeta-holonomy-spectrum-sign-obstruction` (6/6), Lean
+`QOU/QBeta/HolonomySpectrumSignObstruction.lean` (6 theorems, sorry-free, axioms
+clean), write-up
+`docs/audits/2026-08-31-qbeta-holonomy-spectrum-sign-obstruction.md`. Commit
+`4471ee72ce`.
+
+### The argument
+
+The correction is read as a holonomy's normalised character — the
+`EigenphaseCarrier` shape `tr M = 2 cos α`. Measured, it is **strictly below 1**:
+`Q_β/Q_A = 0.998325`; ladder cosine factor `0.998399` (C), `0.998999` (D).
+
+A generator with **real** spectrum `±a` has character `cosh a ≥ 1` for **every**
+real `a`, equality only at `a = 0`. **The bound is quantified over all real `a`**,
+so a `q`-dependent residue only changes which `a` occurs — the bound is unmoved.
+That is the residue-independent step, and it is exactly what the doubling-identity
+argument could not reach.
+
+At the Kohno–Drinfeld value the miss is elementary. This bean's own scale-fixing
+(`braiding = P exp(ħt/2)`, `t` eigenvalues `±1`, Hecke `{q, −1/q}`) gives
+`ħ = 2 ln q`, **real** at the substrate's real `q₀ = 1.10998 > 1`, so the
+generator eigenvalues `±ln q₀` are real and
+
+    (q + 1/q)/2 − 1 = (q−1)²/(2q)
+
+a square over a positive — never negative. **1.005448** against a required
+**0.998399**: not merely off by 0.706 %, but **on the wrong side of 1**.
+
+| `a` | `cosh a` | below target? |
+|---|---|---|
+| 0 | 1.000000 | no |
+| `ln q₀` = 0.104341 | 1.005448 | no |
+| 0.0566 | 1.001602 | no |
+| 1 | 1.543081 | no |
+
+No analysis, no transcendence, no appeal to `cosh`: the whole obstruction is
+`(x−1)² ≥ 0`.
+
+### What route 5 is left with
+
+Not *"find a connection"* but **"find one whose generator is ELLIPTIC at real
+`q`"** — `det A > 0`, spectrum `±iθ` with `θ = 0.0565947`, against
+Kohno–Drinfeld's `det A = −(ln q₀)² = −0.010887 < 0`. The imaginarity has to come
+from somewhere, and the corpus already names that place:
+**`conj:im-q-physical-role`**, whose "phase coordinate" candidate role is exactly
+this. Materially narrower and more checkable than the open construction problem
+this bean recorded.
+
+### 🆕 TIER-0 for the D1–D6 acceptance test
+
+    D0  ELLIPTIC GENERATOR   the construction's traceless generator must have
+                             det A > 0 at real q (spectrum +-i*theta), not
+                             det A < 0. Kohno-Drinfeld's scale-fixing gives the
+                             latter, so a candidate that does not say where its
+                             imaginarity comes from has already failed.
+
+Like D5/D6 it is **read, not run** — a condition on the *generator*, not on `α`'s
+output. Distinct from the validation table's "cosh-shaped" row, which checks the
+shape of `α` as a function of `q`, not a generator's spectrum.
+
+**Scope-(b).** Does not show no connection exists, does not derive `α`, does not
+adjudicate a convention, wires nothing.

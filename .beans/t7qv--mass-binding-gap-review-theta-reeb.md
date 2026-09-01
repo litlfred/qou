@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-07-11T22:05:00Z
+updated_at: 2026-08-31T17:50:00Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -1875,3 +1875,351 @@ Caveats carried: the link-invariance argument is the natural mechanism but no
 isotopy is exhibited and no independent link invariant computed; and the
 saturation values were measured at A=3 only, so "no r^(s-1) shape" rests on the
 shape being wrong at the one available separation.
+
+---
+
+### 2026-08-31 — max-contact simplex bound Lean-proved (`w_n(K)` geometric piece)
+
+This bean's frontier update records the `w_n(K)` closure's missing piece as
+**geometric**, with the edge set a max-contact sphere packing:
+
+> "Edge set = max-contact sphere packing (Part 13; A≤4 simplex = C(A,2),
+>  A≥5 saturates below)"
+
+and notes the tempting fit-free light-nucleus match — ⁴He weighted
+`6·a_D² + 4·a_D³ + 1·a_D⁴` — is exactly that A≤4 simplex bond count, i.e.
+`C(4,2), C(4,3), C(4,4)`. That was **prose, and load-bearing**. It is a theorem,
+so it is now proved.
+
+**`QOU/Mass/MaxContactSimplex.lean`**, 5 theorems, sorry-free on
+`[propext, Classical.choice, Quot.sound]` (`he4_body_order` needs **no axioms**):
+
+| theorem | statement |
+|---|---|
+| `inner_spokes` | the Gram entry is `c²/2` |
+| `linearIndependent_spokes` | the spokes `pᵢ − p₀` are independent |
+| `card_le_finrank_succ_of_equidistant` | at most `finrank + 1` pairwise-equidistant points |
+| `not_five_equidistant` | **no five equal spheres are mutually tangent in 3D** |
+| `he4_body_order` | `C(4,2), C(4,3), C(4,4) = 6, 4, 1` |
+
+Equal spheres are mutually tangent iff centres are pairwise equidistant, so the
+A≥5 "saturates below" is exactly the impossibility of a complete contact graph.
+Proof: with `vᵢ = pᵢ − p₀` the Gram is `c²` diagonal, `c²/2` off, so
+`‖Σaᵢvᵢ‖² = (c²/2)[(Σaᵢ)² + Σaᵢ²]`, vanishing only at `a = 0`.
+
+Verified numerically first, with a firing control (a wrong off-diagonal breaks
+the identity on 967/1000 random vectors).
+
+**Not touched:** the routes this bean marks refuted (Part 4 Frobenius-dual
+kernel, Part 5 amplifying-weight tower).
+
+
+---
+
+### 2026-08-31 — Gap #2: corpus-grep first, then the one piece that was closable
+
+**What the grep found — Gap #2 has moved past this bean's July frontier, and the
+direct route is blocked for a reason not recorded here.**
+`2026-08-08-volume-binding-four-point-is-unrunnable.md`: the whole-A link-volume
+four-point test is **data-blocked, not effort-blocked** — only 2 of the 4 targets
+are usable (D has `Vol = 0`, the Hopf link not being hyperbolic; ⁴He has no
+Reading-2 link). Not re-probed, per this bean's own warning. Two audits from
+2026-08-30 (`coordination-saturation-formalized`,
+`bonded-pair-linking-is-derived-and-not-uniform`) advanced adjacent pieces.
+
+**What is closed.** `CoordinationSaturation.lean` refutes complete-graph
+coordination by its **consequence** (`complete_graph_no_saturation`: the
+`C(A,2)` model drives `B/A` past every bound), then takes bounded degree as a
+modelling **assumption**. `MaxContactSimplex` proves the complete contact graph
+is geometrically impossible for A ≥ 5. **The two had never been connected.**
+
+> `no_complete_contact_of_five_le` — in 3D, no `A ≥ 5` equal spheres are all
+> mutually tangent. Sorry-free.
+
+So `C(A,2)` is not merely wrong by its predictions for heavy A; it is
+geometrically **unavailable**. That is this bean's "A≥5 saturates below" as a
+theorem rather than a premise, and an independent second refutation.
+
+**What it does not supply.** `bounded_degree_saturates` needs a **degree** bound
+— the 3D kissing number (12, Schütte–van der Waerden). Not proved here, and not
+a modest formalisation.
+
+**🪤 A trap, verified, recorded in the file.** The standard spherical-code
+argument (`Σ⟪uᵢ,uⱼ⟫² ≥ m²/d` vs `Σ_{i≠j} ≤ m(m−1)/4`) gives `m ≤ 9` in d=3.
+**False** — the icosahedral configuration realises 12. It needs
+`|⟪uᵢ,uⱼ⟫| ≤ ½`, but tangency bounds the inner product only from **above**.
+Measured there: inner products span `[−1, 0.4472]`, so `⟪⟫ ≤ ½` holds while
+`|⟪⟫| ≤ ½` fails at the antipodal pairs; `Σ⟪⟫² = 48` exactly, meeting the
+Frobenius bound `m²/d = 48` with equality and exceeding the naive ceiling 45.
+
+**Gap #2 stays OPEN** — the link-volume half is data-blocked.
+
+
+---
+
+### 2026-08-31 — Gap #3: the quoted "best structural 2.52 %" is a MENU MINIMUM
+
+**This bean records "Gap #3: A=3 mirror magnitude (³H/³He; best structural
+2.52%)". The corpus already contains its own verdict on that number, and this
+bean's phrasing does not carry it.**
+`docs/audits/2026-05-31-option-e-kashiwara-refresh-assessment.md`:
+
+> 9 scales × 9 inputs (**81 candidates**) + explicit back-solve …
+> **FITTED + BACK-SOLVED.** This is the PR #1578 `(1+q)/2` antipattern verbatim …
+> **The 81-candidate menu min (+2.52 %) is also a fit.**
+
+So the headline is a menu minimum and the published 0.11 % beside it is an
+explicit back-solve. **Neither is parameter-free.**
+
+**The parameter-free number.** Both A=3 targets *are* usable in the four-point
+table (unlike D and ⁴He), so the ratio test runs with zero free parameters:
+
+| | |
+|---|---|
+| `B(³H)/B(³He)` | 1.09895709 |
+| `Vol(8₁₁)/Vol(L6a4)` | 1.13081715 |
+| **discrepancy** | **2.899 %** |
+
+The menu min of 2.52 % is a **13.1 % reduction** on that — what 81 degrees of
+selection freedom bought.
+
+**And it is expected.** With N candidates each inside tolerance with probability
+`p`, `P(best one is) ≥ 1 − exp(−Np)` — **`QOU.MathlibExt.SelectionBound.menu_min_prob_ge`**,
+sorry-free. For N = 81 with candidate errors uniform on [0,R]:
+
+| R | 0.25 | 0.5 | 1.0 | 2.0 |
+|---|---|---|---|---|
+| P | 0.9998 | 0.985 | **0.873** | 0.642 |
+
+Even granting errors spread over a full 100 %, a menu min ≤ 2.52 % arrives by
+chance **seven times in eight**.
+
+**What the splitting actually is.** `ΔB = 0.76375 MeV` against naive Coulomb
+0.82–1.02 MeV (R = 1.7–2.1 fm), i.e. `ΔB/E_C = 0.75–0.93`. Coulomb alone
+accounts for three-quarters to all of it. A charge-**blind** topological ratio
+has almost nothing left to explain; the only charge dependence here enters via
+the link assignment (8₁₁ vs L6a4) from the braid word.
+
+**Consequence: Gap #3 is WIDER than recorded, not narrower.** The honest
+parameter-free figure is **2.899 %**, and 2.52 % should not sit beside it as a
+structural result.
+
+
+---
+
+### 2026-08-31 — Gap #4: gate checked, and it is CLOSED. No migration needed.
+
+This bean says of Gap #4: *"gated on R(K) derivation; **check gate first**"*. Done,
+and the answer is that the item is **stale, not open**.
+
+**1. The referenced bean is completed and its target superseded — twice.**
+`beans show 0voz` → status **`completed`**:
+
+> **Resolved 2026-07-05 (swarm 1).** Migration already substantially complete;
+> literal 'borromean→per_block' target **superseded by the 2026-06-24 owner
+> ruling** (per_block is binding-ratios-only; absolute mass routes via
+> `canonical_mass` facade). Inventory audit + docstring redirect merged in PR #3340.
+
+Superseded again on **2026-08-11** (`qou-exam`): absolute mass excised entirely.
+
+**2. The migration happened — to a different destination than Gap #4 names.**
+Measured now against the 2026-06-02 audit baseline:
+
+| | audit (2026-06-02) | now |
+|---|---|---|
+| uniform-form scripts | 87 | **66** |
+| `vol_density_per_block` | 2 | **3** |
+| atom-specific among uniform | 65 | **35** |
+| via `canonical_mass` | — | **51** |
+
+`per_block` is essentially flat (2→3) — **correctly**, since the ruling makes it
+binding-ratios-only. The real migration went to the `canonical_mass` facade.
+
+**3. Enforcement exists in three layers, all green.**
+
+| layer | check | result |
+|---|---|---|
+| prose | `canonical_mass_status_guard.py` | OK |
+| runtime | `DeprecationWarning`, `mass_vol_density.py:217` | present |
+| AST | `noncanonical_reentry_audit.py --strict` | **2730 scripts, 0 parse errors, 0 violations** |
+
+So the 35 remaining atom-specific uniform-form scripts are **not violations** —
+the banned-symbol registry finds nothing re-entered.
+
+**Verdict: Gap #4 is DONE.** Mark it closed rather than migrating anything.
+
+**Two process notes, because both are the failure mode this repo guards against.**
+I first ran `scripts/guard_check.py` assuming it was the gate — it is an
+unrelated markdown-diff check for `content/` edits, and its silent exit 0 means
+"no modified .md files". I nearly reported it as a pass. I then inferred "no
+mechanical enforcement" from the prose guard's `content/ + docs/` scope — also
+wrong; that guard's own docstring names the compute-layer and AST layers.
+Both corrected by reading rather than by the exit code.
+
+
+---
+
+### 2026-08-31 — `w_n(K)`: Part 5 and Part 13 are CONSISTENT; leverage relocated
+
+**The tension this bean flags** (frontier, "NOTE for future me"): the `C(A,n)`
+body-order weighting — ⁴He as `6·a_D^(2) + 4·a_D^(3) + 1·a_D^(4) ≈ 13.88×` vs
+`12.72×` exp — "is exactly Part-13's A≤4 simplex bond-count **AND** the
+Part-5-refuted full tower".
+
+**Resolved: they are consistent. The tower is domain-limited.**
+
+| A | model | exp | error | |
+|---|---|---|---|---|
+| 2 | 1.000 | 1.000 | 0% | anchor |
+| 3 | 4.340 | 3.813 | **+13.8%** | simplex valid |
+| 4 | 13.89 | 12.720 | **+9.2%** | simplex valid |
+| 6 | 125.6 | 14.382 | **+773%** | NOT a simplex |
+
+The break is exactly at the boundary of
+`MaxContactSimplex.not_five_equidistant`, and **Part 5's counterexamples are
+A = 6, 7, 9, 12 — every one outside the simplex domain.** So `C(A,n)` *is* the
+max-contact bond count where Part 13 claims it, and *is not* the packing's
+clique count where Part 5 refutes it. (Control: reproduces this bean's own
+quoted 13.88×/12.72× to three figures.)
+
+**🛑 My hypothesis, half falsified.** Part 5's redirect names a "few-body
+truncation (fixed small n_max, ~2–3)" as a *choice*; `not_five_equidistant`
+**derives** one (cliques ≤ 4). I expected that to rescue A ≥ 5. **It does not** —
+truncation takes A=6 from +773% only to **+454%**, because `C(6,4) = 15`
+mutually-tangent 4-sets is itself geometrically impossible. Necessary, not
+sufficient.
+
+**What carries the scaling.** Holding clique counts linear in A at densities
+read off the A=4 simplex (`κ_n = C(4,n)/4 = 1.5, 1.0, 0.25` — no free
+parameter, nothing fitted to A=6) drops A=6 to **+45%**:
+
+| constraint | effect | factor |
+|---|---|---|
+| body-order cap `n_max ≤ 4` | 773% → 454% | **1.7×** |
+| clique-count linearity | 454% → 45% | **10.1×** |
+
+Control: at A=4 all three coincide (+9.2%), as they must. Diagnostic, **not a
+model** — the 45% is not offered as a prediction.
+
+**Consequence: two geometric inputs needed, one in hand.**
+(i) `n_max ≤ 4` — **PROVED**, worth 1.7×.
+(ii) clique count `O(A)` — **NOT proved**, worth 10×, and it is exactly the
+bounded-degree hypothesis `CoordinationSaturation.bounded_degree_saturates`
+already assumes, i.e. the 3D kissing number.
+
+**The remaining leverage is the kissing-number bound, not the truncation Part
+5's redirect names.** Closure stays OPEN.
+
+
+---
+
+### 2026-08-31 — toward the binding goal: C-frame excision taken over; it was nearly done
+
+**Critical path, from the corpus (not re-derived).** This bean's review: 3/7 L2
+pass; `m_n` and `Δ_pn` ride on `Q_β`, so **Q_β is 3 of the 4 failures**.
+`qbeta-ck-truncation-canonical.ts` names the root cause outright — the `c_k` are
+*"cached for downstream reuse but NOT credited as predictions … the single
+shared root cause of the L2 100× misses on Q_β (164×), m_n (185×), Δ_pn (163×) —
+**only c₂ is derived**"*. The 2026-08-29 adversarial audit: all five gaps
+converge on **`qou-cds1`**, the ladder re-derivation under D.
+
+**C-frame excision: already complete at the z level.** Owner ruling 2026-08-09;
+production uses `z_D = q³/(q²+1)`. Of 110 production files mentioning `z_C`:
+
+| class | n | disposition |
+|---|---|---|
+| comments documenting the excision | 54 | **keep** — prevents recurrence |
+| probe-named | 42 | exempt by repo convention |
+| C↔D comparison machinery | 13 | **keep** — `z_C` is the object of comparison; `cds1` needs these |
+| apparent production consumer | 1 | **AST-verified docstring-only** |
+
+**Zero live-code production consumers of `z_C` remain.** (A naive line-based
+classifier calls that last file live code — its triple-quote toggle desyncs on
+nested docstrings. Recorded, since grep alone will repeat the mistake.)
+
+**What was actually left, and is now done.** `cds1`'s C-conditional register
+(§9g) lives in the **bean**, so a reader of an affected **file** cannot see the
+scoping. Three Lean files cited C-frame `c₃` with no marker —
+`SLeakZeroCrossing`, `FaddeevModularDouble`, `ThetaLipschitzObstruction`. Each
+now carries a scope banner; all three still compile.
+
+**And the reassuring half: no theorem depends on it.** Every C-frame occurrence
+in the formal layer is docstring-only (AST-verified). The convention-D
+re-derivation **cannot invalidate a proved result**.
+
+**What is NOT excisable.** The `c_k` **ladder values** have no D replacement —
+`cds1` says the ladder "must be re-derived, not re-evaluated", and the
+`c₃ ≈ −974` from feeding `z_D` to the current extractor is "a sensitivity
+measurement, not a proposed value". Excising them would delete results with
+nothing in their place. **That is the re-derivation, not an excision.**
+
+---
+
+## 2026-09-01 — the A=2 sector is falsified, and it is an IMPOSSIBILITY
+
+Seven beans this session (`qou-6pt7`, `qou-kb25`, `qou-bc09`, `qou-38i9`,
+`qou-9el1`, `qou-v3u2`, `qou-m896`), 42 assertions. The arc ends somewhere it
+did not start: at `A = 2`, not `A = 4`.
+
+### The H_12 wall was an artifact
+
+Convention D *is* Wenzl level `r = 2` — already Lean-proved here
+(`wenzlLevel_conventionD`, `schurPrincipal_eq_zero_iff`) — so `y_lambda = 0` for
+**every** partition with `>= 3` rows at every strand count. `n = 12` is **7 live
+blocks of 77**, largest dim 297, built in 0.04 s, where `qou-sv7h` reports 278 s
+for a single `A = 2` deuteron. Weights from the closed form
+`y_(n-k,k) = [n-2k+1]_q / Z` (exact against `load_cost` at `n = 9`). With a
+sparse row-chunked trace this reaches `A = 6` (`n = 18`, 172 s). New only in
+application — nobody had used the theorem to collapse `H_12`.
+
+### 4He measured, then re-diagnosed
+
+Four-body term **negative** in all six nucleon orderings and 80/80 random bond
+orders. But the `A = 2..6` sweep shows the shortfall is **not monotone**: `4He`
+is a singular outlier at `2.76x` where every other `A >= 3` isotope is
+`1.06..1.89x`. The spike is an **inverted stagger** — the `B/A` second difference
+has the opposite sign to AME at `A = 3, 4` **and** `5`, so the model peaks at odd
+`A` where physics peaks at even `A`. Liquid-drop reading: volume-like yes,
+Coulomb-like yes, **pairing backwards, asymmetry absent**.
+
+### And then the real result, at A=2
+
+The bond trace ratio is **exactly `mu(d) = z + d`** (slope 1 to `5.3e-15`,
+`|mu-(z+d)| <= 8.9e-16` on exact weights, flavour-blind). The model binds **all
+three** two-nucleon systems and makes the **dineutron the most bound**; nature
+binds one. Because `mu` is affine, `{d : mu > 1}` is a half-line, so it cannot
+contain both endpoints of `[-h, 0]` while excluding an interior point:
+**no offset assignment, in any block or weighted combination, reproduces the
+physical pattern.** Every convention (framing, writhe, colour weighting) only
+moves `d`, so none of them can help. And the affineness is not incidental — the
+constant is the **Markov parameter**, so the property making this trace a link
+invariant is the same one forbidding the physics.
+
+### The escape, and its ceiling
+
+Grading by `(T,S)` rather than flavour — forced by Pauli, since `1S0` needs
+symmetric isospin and `3S1` antisymmetric, and the 2-strand algebra has exactly
+those two blocks — **restores the sign pattern at `beta = 0`, with no flavour
+grading at all**: `T=1` unbound (`|mu| = q`), `T=0` bound (`|mu| = 1/q`). Window
+`beta in [0, 1/(q+1))` in closed form, thresholds complementary to 1; `beta = 1/2`
+is outside at **every** substrate and production's `beta_pn` misses by `0.0257`.
+
+But the achievable channel asymmetry is **capped at exactly 1**, attained only at
+`beta = 0` where both channels equal `log q` — because the Hecke eigenvalues `q`
+and `-1/q` multiply to `-1`. Nature's ratio is `33.7`. So the failure changes
+character, from an impossible sign pattern to a **forced degeneracy**, rather
+than going away.
+
+### Corrections made to my own claims this session
+
+`e_pn = +delta/2` retracted (the operator identity is right, the exponent it fed
+is not; true `e_eff` is `217x` either candidate sign); the `3.4693x` headline
+withdrawn as a summary (it is `B(4He)/B(2H)`, pairing the worst undershoot with
+the only overshoot); `A = 3` three-body magnitudes corrected to production's
+interleaved bond order (bonds do not commute — `11 %` at `A = 3`, `38-40 %` at
+`A = 4`); and the two-row collapse re-attributed to the corpus's own Lean. Each
+superseded probe carries a forward pointer.
+
+**Still open:** escape (a), more than one crossing per bond — `mu` becomes
+polynomial in `d`, which is the minimal change that can break a degeneracy forced
+by a single generator's eigenvalue product. Not attempted.

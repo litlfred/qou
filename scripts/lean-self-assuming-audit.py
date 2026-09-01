@@ -192,7 +192,14 @@ def main():
     hits = []
     scanned = 0
     for root in roots:
-        for p in Path(root).rglob("*.lean"):
+        # A ROOT MAY BE A SINGLE FILE. `rglob` on a file path matches nothing,
+        # so without this the script printed "scanned 0 .lean files -- 0
+        # candidates" and exited 0 for `<script> path/to/One.lean`: an absent
+        # check that reads exactly like a passing one. Same shape as
+        # `real-sorry-scan.py`, which already got this right.
+        rp = Path(root)
+        cands = [rp] if (rp.is_file() and rp.suffix == ".lean") else rp.rglob("*.lean")
+        for p in sorted(cands):
             # Vendored dependency trees are not our corpus: Mathlib ships
             # `(h : P) : P := h` fixtures in MathlibTest/ on purpose.
             if ".lake" in p.parts:
@@ -203,6 +210,10 @@ def main():
             except Exception as e:  # noqa: BLE001
                 print(f"  ! {p}: {e}", file=sys.stderr)
     print(f"scanned {scanned} .lean files — {len(hits)} self-assuming candidate(s)\n")
+    if scanned == 0:
+        print("error: scanned 0 .lean files — this is NOT a pass. Check the "
+              "root(s) given; nothing was audited.", file=sys.stderr)
+        return 2
     for h in sorted(hits, key=lambda x: x["file"]):
         rel = h["file"]
         print(f"  {h['kind']} {h['decl']}")
