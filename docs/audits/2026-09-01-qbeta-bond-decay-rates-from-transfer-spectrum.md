@@ -37,10 +37,19 @@
 > Step 27's three-free-parameter objection); the averaged p–n interface has rate
 > exactly `1`, so the p–n bond is **long-range** while both like-nucleon bonds are
 > short-range — the asymmetry `qou-brng` leads with; and the colour-weighted p–n
-> departure is `tanh(ln q)·δ + O(δ²)` with `tanh(ln q₀) = 0.103963710` matching
-> the taxonomy's EM ratio to `7.2·10⁻⁵`. **Self-raised caveat on that last one**
-> (bean `qou-i9gk`): `tanh(ln q)` is just "odd part over even part", which any bar
-> decomposition produces, so it may be two instances of one triviality.
+> departure is `tanh(ln q)·δ + O(δ²)` — a closed form, which is kept.
+>
+> **🛑 SECOND CORRECTION (2026-09-01, `qou-i9gk` resolved): the EM reading of
+> that coefficient is WITHDRAWN too.** The self-raised caveat was right. A census
+> finds 5 of 12 unrelated corpus `q`-quantities share the ratio and **`q` alone
+> is one of them** — quantum integers are bar-even, so `[9]_q[10]_q` divides out
+> of the taxonomy's coupling and contributes nothing to the matched number.
+> `X = q·B` with `B` bar-even gives it identically for any `B`. And
+> `tanh(ln q)` **is** `h/(q+1/q)`, which is exactly how it arises here: the two
+> expressions are one expression written twice. The discriminator: the taxonomy's
+> **dressed** ratio is `0.10356`, `54×` the residual away, and the match lands on
+> the **bare** value — the algebraic form, not the physical coupling.
+> `qbeta_tanh_em_match_is_formal_probe.py` (4/4).
 >
 > Sections below are left as written so the error is legible; read them through
 > this banner.

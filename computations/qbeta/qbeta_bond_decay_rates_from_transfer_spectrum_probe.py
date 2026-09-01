@@ -42,11 +42,15 @@ WHAT SURVIVES, and it is the part that never depended on the ordering:
     O(delta^2), because tanh(ln q) = (q^2-1)/(q^2+1); at the pin
     tanh(ln q_0) = 0.103963710 is the odd-to-even ratio
     `interaction-sector-taxonomy.md` derives for the ELECTROMAGNETIC coupling.
-    Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5
-    relative — the second order in delta. (Caveat, self-raised: tanh(ln q) is
-    just "odd part over even part", which ANY bar decomposition produces, so
-    this may be two instances of one triviality rather than a link. Open in
-    bean `qou-i9gk`.)
+    Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5.
+    *** THE EM READING IS WITHDRAWN (2026-09-01, qou-i9gk resolved). *** The
+    self-raised caveat was right: it is a triviality. `q` ALONE has that
+    odd/even ratio (quantum integers are bar-even so [9]_q[10]_q divides out),
+    X = q.B gives it for any bar-even B, and tanh(ln q) IS h/(q+1/q) — which is
+    exactly how it arises here. And the match lands on the taxonomy's BARE
+    ratio, not its Chern-Simons-DRESSED 0.10356, which differs by 54x the
+    residual. The closed form is kept; the link is not.
+    See qbeta_tanh_em_match_is_formal_probe.py (4/4).
   * delta = flavor_split_leading(q) vanishes to order h^3 — CAL-3's order, the
     pion decay width's.
 

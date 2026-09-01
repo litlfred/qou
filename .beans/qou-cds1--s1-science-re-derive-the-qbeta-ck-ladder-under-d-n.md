@@ -6245,3 +6245,35 @@ block with the largest binding character (`−9.598`) and the smaller phase — 
 Weaker and different from its claim, and the part that stands. The construction
 `Δ_bind = P·(I−1)·N`, its validation, and the chain-vs-all-pairs finding are
 untouched.
+
+---
+
+## 🛑 Step 28's last positive is DOWNGRADED — the tanh/EM match is formal (2026-09-01)
+
+`qou-i9gk` residual, settled and the bean completed.
+[`qbeta_tanh_em_match_is_formal_probe.py`](../computations/qbeta/qbeta_tanh_em_match_is_formal_probe.py)
+(4/4).
+
+A census finds **5 of 12** unrelated corpus `q`-quantities have odd-to-even ratio
+exactly `tanh(ln q)`, and **`q` alone is one of them** — quantum integers are
+bar-even, so `[9]_q[10]_q` divides out of the taxonomy's coupling and contributes
+**nothing** to the matched number. `X = q·B` with `B` bar-even gives it for any
+`B`. And `tanh(ln q)` **is** `h/(q+1/q)`, exactly how it arises in the p–n
+departure. Discriminator: the taxonomy's **dressed** ratio is `0.10356`, `54×`
+the residual away, and the match lands on the **bare** value.
+
+**Kept:** the closed form `1 − |r_pn| = tanh(ln q)·δ + O(δ²)`, `δ` at CAL-3's `h³`.
+**Withdrawn:** the electromagnetic link.
+
+### Where Steps 26–28 stand, after three self-checks
+
+Step 26 stands in full (the discriminant curves, the exact `2π/3` classical
+limit, the `3·10¹¹ σ` exclusion). Step 27 keeps its construction and its
+chain-vs-all-pairs finding, and loses its headline. Step 28 keeps only derived
+closed-form bond rates, which `qou-brng` had first and correctly.
+
+**The real blocker is unchanged and upstream of all of it:** `α` is axiomatised
+(`q-beta-cos-resummation.ts:48`), the two-row cap admits exactly `{q, z_D}` and
+both fail (PR #6264), so the functional form must change. `qou-pdix`. And
+`qou-n1dj` now sits upstream of *that*, since which convention is forced depends
+on the same fibre-categorical premise.

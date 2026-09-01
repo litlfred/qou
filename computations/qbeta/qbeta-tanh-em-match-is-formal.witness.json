@@ -1,0 +1,128 @@
+{
+  "computation": "qbeta-tanh-em-match-is-formal",
+  "engine": "sympy+mpmath",
+  "description": "qou-i9gk residual, settling Step 28's last surviving positive. The claim was that the colour-weighted p-n bond's departure, tanh(ln q).delta, links it to the electromagnetic sector because tanh(ln q_0) = 0.103963710 is the taxonomy's EM odd-to-even ratio. It does not. (1) CENSUS: 5 of 14 swept q-quantities have that ratio exactly, and `q` ALONE is one of them \u2014 every quantum integer is bar-even so [9]_q[10]_q divides out, and the matched number is a property of the bare prefactor with zero electromagnetic content. (2) LEMMA: X = q.B with B bar-even gives the ratio identically for ANY B; and tanh(ln q) IS h/(q+1/q), the ratio of the most basic bar-odd and bar-even quantities, which is exactly how it arises in the p-n departure \u2014 so the two 'matching' expressions are one expression written twice. (3) DISCRIMINATOR: the taxonomy documents a bare ratio 0.10396 and a Chern-Simons-dressed 0.10356, differing by 3.9e-3 relative = 54x Step 28's 7.2e-5 residual; the match lands on the BARE value, i.e. the algebraic form rather than the physical coupling. Downgraded: the closed form is kept, the EM link is withdrawn.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "the_tanh_ratio_is_generic_and_q_alone_produces_it",
+      "passed": true,
+      "detail": "5 of 12 swept q-quantities have odd-to-even ratio exactly tanh(ln q), and `q` ALONE is one of them. Every quantum integer is bar-even, so [9]_q[10]_q divides out of the taxonomy's coupling entirely: the matched number is a property of the bare prefactor, and the electromagnetic content contributes nothing to it"
+    },
+    {
+      "name": "the_lemma_forces_it_for_any_bar_even_factor",
+      "passed": true,
+      "detail": "X = q.B with B bar-even gives (X - Xbar)/(X + Xbar) = tanh(ln q) identically, B cancelling \u2014 so the ratio cannot distinguish one such quantity from another. And tanh(ln q) IS h/(q + 1/q), the ratio of the most basic bar-odd and bar-even quantities in the algebra, which is exactly how it arises in the p-n departure (numerator h from the offset, denominator q + 1/q from the averaged eigenvalue). The two expressions are one expression written twice"
+    },
+    {
+      "name": "the_match_lands_on_the_bare_ratio_not_the_dressed_one",
+      "passed": true,
+      "detail": "the taxonomy documents tanh(ln q_0) = 0.1039637101 for the BARE coupling and ~0.10356 for the Chern-Simons-dressed one \u2014 the physical coupling. They differ by 0.00388318 relative, 54.301x Step 28's residual, so the measurement distinguishes them and lands on the ALGEBRAIC form. A physical EM link should have shown the dressed value"
+    },
+    {
+      "name": "step28_last_positive_is_downgraded",
+      "passed": true,
+      "detail": "KEPT: the p-n departure is exactly tanh(ln q).delta + O(delta^2), a closed form, with delta the derived flavour split at CAL-3's order h^3. WITHDRAWN: that this links the p-n bond to the electromagnetic sector. It links it to the bar involution, which every quantity in the algebra is linked to. Step 28 now retains only its first result \u2014 the bond rates as derived closed forms \u2014 which qou-brng derived independently and more correctly on main"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 40
+  },
+  "data": {
+    "q0": "1.1099785827513808076",
+    "tanh_ln_q0": "0.10396371005241014568",
+    "tanh_closed_form": "(q - 1)*(q + 1)/(q**2 + 1)",
+    "census": [
+      {
+        "quantity": "q [9]_q [10]_q   (the taxonomy's OWN coupling)",
+        "ratio": "(q - 1)*(q + 1)/(q**2 + 1)",
+        "hit": true
+      },
+      {
+        "quantity": "q                (the bare prefactor, alone)",
+        "ratio": "(q - 1)*(q + 1)/(q**2 + 1)",
+        "hit": true
+      },
+      {
+        "quantity": "q [2]_q",
+        "ratio": "(q - 1)*(q + 1)/(q**2 + 1)",
+        "hit": true
+      },
+      {
+        "quantity": "q [3]_q [5]_q",
+        "ratio": "(q - 1)*(q + 1)/(q**2 + 1)",
+        "hit": true
+      },
+      {
+        "quantity": "q (q^4+q^2+1)/(q^2+1)^2",
+        "ratio": "(q - 1)*(q + 1)/(q**2 + 1)",
+        "hit": true
+      },
+      {
+        "quantity": "z_D = q^3/(q^2+1)",
+        "ratio": "(q - 1)*(q + 1)*(q**2 + 1)/(q**4 + 1)",
+        "hit": false
+      },
+      {
+        "quantity": "z_C = sqrt(q)/(1+q)",
+        "ratio": "0",
+        "hit": false
+      },
+      {
+        "quantity": "Q_A shape (q^2-2q-1)(q+1)/(2q^3)",
+        "ratio": "-(q - 1)*(q**2 + 1)*(q**2 + 3*q + 1)/((q + 1)*(q**4 + q**3 - 2*q**2 + q + 1))",
+        "hit": false
+      },
+      {
+        "quantity": "q (q^2+1)",
+        "ratio": "(q - 1)*(q + 1)*(q**2 + 1)/(q**4 + 1)",
+        "hit": false
+      },
+      {
+        "quantity": "hbar_q = 1 - 1/q",
+        "ratio": "-(q + 1)/(q - 1)",
+        "hit": false
+      },
+      {
+        "quantity": "[2]_q = q + 1/q",
+        "ratio": "0",
+        "hit": false
+      },
+      {
+        "quantity": "q^3",
+        "ratio": "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/((q**2 + 1)*(q**4 - q**2 + 1))",
+        "hit": false
+      }
+    ],
+    "hits": [
+      "q [9]_q [10]_q   (the taxonomy's OWN coupling)",
+      "q                (the bare prefactor, alone)",
+      "q [2]_q",
+      "q [3]_q [5]_q",
+      "q (q^4+q^2+1)/(q^2+1)^2"
+    ],
+    "n_hits": 5,
+    "n_swept": 12,
+    "dressed_ratio_as_documented": "0.10356",
+    "bare_dressed_separation_rel": "0.003883182432",
+    "step28_residual_rel": "7.1512e-5",
+    "separation_over_residual": "54.30113"
+  },
+  "context": {
+    "axis": "qou-i9gk residual: is the tanh(ln q) / EM match a link or a triviality?",
+    "answer": "A triviality, three ways: `q` alone produces the ratio; the lemma forces it for any bar-even factor and tanh(ln q) IS h/(q+1/q); and the match lands on the bare rather than the dressed value.",
+    "corrects": "Step 28's 'the p-n bond sits at the intertwiner point, which is where the taxonomy independently puts the EM sector'.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
+  },
+  "gitCommit": "2f7b150425c1ae5af5cd34e361fd4a39d305ae77",
+  "durationMs": 0,
+  "scriptFile": "qbeta_tanh_em_match_is_formal_probe.py",
+  "scriptHash": "f42a887656de",
+  "scriptCommitSha": "unknown",
+  "commitSha": "2f7b150425c1ae5af5cd34e361fd4a39d305ae77",
+  "computedAt": "2026-09-01T04:39:43.383008+00:00",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}

@@ -1,10 +1,11 @@
 ---
 # qou-i9gk
 title: 'ROAST of Steps 27-28: is the trace-blind sector physical, and is E_2/E_1 a vertex or only a propagator?'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-01T04:19:34Z
-updated_at: 2026-09-01T04:19:34Z
+updated_at: 2026-09-01T04:40:49Z
 ---
 
 Two self-identified holes in this session's Steps 27-28 (qou-cds1), either of which would deflate the headline. Both are checkable and neither has been checked.
@@ -145,3 +146,59 @@ if the premise holds."*
 - [x] Hole 2 — settled against Step 28 by `qou-brng`.
 - [ ] residual: is the `tanh(ln q)` / EM match a link or two instances of "odd
       part over even part"? Still the only live item on this bean.
+
+---
+
+## Residual SETTLED (2026-09-01) — the tanh/EM match is formal
+
+[`qbeta_tanh_em_match_is_formal_probe.py`](../computations/qbeta/qbeta_tanh_em_match_is_formal_probe.py)
+(4/4). It is a triviality, three ways:
+
+1. **Census.** 5 of 12 unrelated corpus `q`-quantities have odd-to-even ratio
+   exactly `tanh(ln q)` — and **`q` alone is one of them**. Every quantum integer
+   is bar-even, so `[9]_q[10]_q` divides out of the taxonomy's coupling entirely:
+   the matched number is a property of the bare prefactor and the electromagnetic
+   content contributes **zero** to it.
+2. **Lemma.** `X = q·B` with `B` bar-even gives the ratio identically for *any*
+   `B`. And `tanh(ln q)` **is** `h/(q+1/q)`, the ratio of the most basic bar-odd
+   and bar-even quantities — exactly how it arises in the p–n departure
+   (numerator `h` from the offset `d = −h(½−δ/4)`, denominator `q+1/q` from the
+   averaged eigenvalue). The two "matching" expressions are one expression
+   written twice, not two computations that agreed.
+3. **Discriminator.** The taxonomy documents a **bare** ratio `0.10396` and a
+   Chern–Simons-**dressed** `0.10356` — the physical coupling. They differ by
+   `3.9e-3` relative, **`54×`** Step 28's `7.2e-5` residual, so the measurement
+   distinguishes them and lands on the **bare**, algebraic form. A physical EM
+   link should have shown the dressed value.
+
+**Kept:** the p–n departure is exactly `tanh(ln q)·δ + O(δ²)`, a closed form,
+with `δ` the derived flavour split at CAL-3's order `h³`.
+**Withdrawn:** that it links the p–n bond to the EM sector. It links it to the
+bar involution, which every quantity in the algebra is linked to.
+
+- [x] Hole 1 — the blind sector is the TL kernel; reading reduces to `qou-n1dj`.
+- [x] Hole 2 — settled against Step 28 by `qou-brng`.
+- [x] Residual — the tanh/EM match is formal.
+
+## Summary of Changes
+
+All three items closed, all three **against** this session's Steps 27–28.
+
+| claim | status |
+|---|---|
+| Step 27: 588 of 720 dimensions carry hidden information | **withdrawn** — TL kernel, no states at `N=2`; reading contradicts convention D |
+| Step 27: the 0.13 % sum coincidence | **killed structurally** — requires `N ≥ 4` |
+| Step 28: n–n bond rate `−q²` | **wrong** — `1/q²`; `qou-brng` had it right |
+| Step 28: one degree of freedom (`r_pp·r_nn = r_pn²`) | **withdrawn** — product is `1/q⁴` |
+| Step 28: bar-parity → strong/weak sector split | **withdrawn** — vacuous, and partly circular |
+| Step 28: p–n departure ↔ EM coupling | **withdrawn** — formal, three ways |
+
+**What survives from both steps.** The construction `Δ_bind = P·(I−1)·N` is
+genuine, validated to `5.4e-15` against the corpus's own character routine, and
+genuinely `H₆`-valued so Step 24's branching argument does not reach it. The bond
+rates are derived closed forms (`1/q²` like-nucleon, p–n long-range) — though
+`qou-brng` derived them independently and correctly first. The chain-vs-all-pairs
+structural finding (deficit `(A−1)(A−2)/2`, zero at `A=2`, `22.54 %` ordering
+spread at `A=3`) stands. And Step 27's blind-sector characters are a measurement
+of **what an `N = 3` extension would carry**, which is what `qou-fvzm` says the
+super-pairwise binding term requires.

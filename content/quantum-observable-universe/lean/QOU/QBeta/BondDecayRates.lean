@@ -42,11 +42,26 @@ moves it off `−1`: the colour weight `d = −h(½ − δ/4)` gives
 
     1 − |r_pn| = 2δ(q²−1) / (δ(q²−1) + 2q² + 2)  =  tanh(ln q)·δ + O(δ²),
 
-because `tanh_log_eq`: `tanh(ln q) = (q²−1)/(q²+1)`. At the pin
-`tanh(ln q₀) = 0.103963710`, which is **exactly** the odd-to-even ratio the
-taxonomy derives for the electromagnetic coupling. Measured `1.4301377·10⁻⁴`
-against a predicted `1.4302400·10⁻⁴` — agreeing to `7.2·10⁻⁵` relative, the
-second order in `δ`.
+because `tanh_log_eq`: `tanh(ln q) = (q²−1)/(q²+1)`.
+
+> **🛑 The electromagnetic reading of that coefficient is WITHDRAWN
+> (2026-09-01, bean `qou-i9gk`).** This file previously said `tanh(ln q₀) =
+> 0.103963710` is "exactly the odd-to-even ratio the taxonomy derives for the
+> electromagnetic coupling", implying a link. It is a **triviality**, three ways:
+> a census finds 5 of 12 unrelated corpus `q`-quantities have that ratio and
+> **`q` alone is one of them** (every quantum integer is bar-even, so
+> `[9]_q[10]_q` divides out of the taxonomy's coupling and contributes nothing to
+> the number); `X = q·B` with `B` bar-even gives the ratio identically for *any*
+> `B`; and `tanh(ln q)` **is** `h/(q+1/q)`, the ratio of the most basic bar-odd
+> and bar-even quantities — which is exactly how it arises here (numerator `h`
+> from the offset, denominator `q+1/q` from the averaged eigenvalue). The two
+> "matching" expressions are one expression written twice. The discriminator
+> settles it: the taxonomy's *dressed* ratio is `0.10356`, differing from the
+> bare by `54×` the measured residual, and the match lands on the **bare**
+> value — the algebraic form, not the physical coupling.
+>
+> `tanh_log_eq` and `pn_departure_*` below are unaffected; only the gloss changes.
+> Measured in `computations/qbeta/qbeta_tanh_em_match_is_formal_probe.py` (4/4).
 
 ## What is not here
 
