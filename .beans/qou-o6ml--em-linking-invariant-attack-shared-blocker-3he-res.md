@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-02T21:42:47Z
+updated_at: 2026-09-02T22:24:01Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1145,3 +1145,66 @@ at all — eq. (43)'s topological factor is A-independent for a fixed local
 configuration, so it *relocates* κ(A) into the flux: κ falls by 2.099 across
 A = 3…41, requiring the per-component flux to fall by 1.449. Independently derivable
 from the corpus braid geometry; not derived; nothing wired.
+
+
+## 2026-09-02 — the flux leg, explored: the bound is CHARGE-BLIND, and the recorded obligation has the wrong sign
+
+Taking up the one live successor `qou-0hdx` left behind. The obligation was
+stated as *"derive the per-component flux law"*; it is not one function of A, and
+the shape it must have is the opposite of the one recorded.
+
+**The structural point.** Every factor on the right of Komendarczyk eq. (43) is
+either link topology (`ac`) or flux — **nothing in it distinguishes a proton from
+a neutron.** But κ(A) is built from the mirror-pair binding split, which is pure
+charge. So charge can enter at exactly one place: the flux must differ between
+proton and neutron components. The obligation was never `Flux(A)`; it is the pair
+`(Φ_p, Φ_n)`.
+
+**And that is not enough.** For a vertex-transitive carrier (`ac(L_k,L) = a` for
+every k — true of the Borromean rings, S₃-symmetric, and of every carrier this arc
+has used), assign flux by charge and swap Z↔N. Mirror partners share A, the link,
+and `min_k|Flux|`; the swap only relabels. Then
+
+    E₁ = C·a·(Z·Φ_p + N·Φ_n)·m ,  E₂ = C·a·(N·Φ_p + Z·Φ_n)·m
+    ΔE = C·a·m·(Z − N)·(Φ_p − Φ_n)
+
+For the whole `d = |Z−N| = 1` ladder — the entire `A = 2Z−1` series the arc scores
+against — this is **one constant, independent of the nucleus**. Sorry-free in Lean,
+`lean`-direct exit 0, `#print axioms` = `[propext, Quot.sound]` on all five decls
+(no `Classical.choice`, no `sorryAx`):
+`content/quantum-observable-universe/lean/QOU/Mass/FreedmanHeMirrorSplitChargeBlind.lean`
+— `mirrorSplit_eq`, `mirrorSplit_succ_const`, `mirrorSplit_succ_eq_of_ne`,
+`mirrorSplit_eq_zero_of_flux_eq`, `mirrorSplit_add_eq`.
+
+The AME ladder is **not** constant: the split grows **13.63×** from A=3 to A=63.
+So constant charge-fluxes are refuted, and the required `Φ_p − Φ_n` must **GROW**
+by that factor.
+
+**This contradicts what the corpus records, in sign.** `em-linking-fh-link-bound-correction.witness.json`
+records the obligation as a per-component flux **DECLINE of 1.4487357**. That is
+`√(κ(3)/κ(41))`, read off κ. But **κ is not an energy**: measured here,
+`κ := split/(n_pairs·u)` with `u` constant to **5.042e-8** across all 31 rows and
+`n_pairs = Z−1` exactly, so the pp-pair count is already divided out. Eq. (43)
+bounds an ENERGY; the observable to confront it with is the split. Reading the
+obligation off κ silently asks the bound to explain a per-pair ratio. Opposite in
+sign, **9.41×** in magnitude. Both corpus figures are reproduced exactly in the new
+witness before being disputed (2.098835 and 1.4487357, to 1e-6).
+
+**And the framework defines no flux.** Measured, not recalled: `Flux` occurs
+nowhere in `content/quantum-observable-universe/lean/` as a quantity. The grep hits
+are a photon docstring (`KnotRegistry.lean:48`), meson colour tubes
+(`MesonFluxTubeReduction.lean`), and the English idiom *"in flux in Mathlib's
+CoxeterSystem API"* (`Tw.lean:56`, `Defn.lean:114`, `Quotient.lean:62,136`). So
+supplying `(Φ_p, Φ_n)` is not reading off an existing structure — it is introducing
+one, which is where CAL-4 pressure would land.
+
+**Scope — (a) on a model class, not on eq. (43).** Excluded:
+`{vertex-transitive carrier} × {flux depending only on charge} × {saturation}`.
+Three escapes survive and are NOT refuted: a carrier that is not vertex-transitive;
+an `ac` that depends on the charge assignment; an unsaturated bound — eq. (43) is
+an inequality, and using it as an equality is an assumption **nothing in this corpus
+establishes**. Each is a further thing to derive, not a thing the sources supply.
+
+Artifacts: `computations/em_linking_fh_mirror_split_charge_blindness.py`,
+`computations/em-linking-fh-mirror-split-charge-blindness.witness.json` (5/5).
+Nothing wired.
