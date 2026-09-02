@@ -59,7 +59,7 @@
       "detail": "bpp_a_dependence_bound_probe computed -alpha*ln z from the convention-D z directly; this derives the same number as the slope of a measured log-ratio. Two routes, one value."
     },
     {
-      "name": "L is independent of g \u2014 verified by recomputing with g scaled 1.7x",
+      "name": "L is independent of g \u2014 recomputing with g scaled 1.7x agrees to <1e-30 (not exactly; see note)",
       "passed": true,
       "detail": "Lean: QOU.MassTheory.MarginalRatio.logRatio_independent_of_growth. This is the mechanism behind the corpus's assertion that the extensive invariant is the log-ratio, which had been stated without a derivation."
     },
