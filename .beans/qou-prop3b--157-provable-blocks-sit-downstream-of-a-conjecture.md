@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T19:05:00Z
-updated_at: 2026-08-29T19:05:00Z
+updated_at: 2026-09-02T22:16:25Z
 ---
 
 Reached from `qou-hprp`'s revised order, which put
@@ -223,3 +223,90 @@ quoting" into a detector docstring earlier in the same session. The rule needed
 here is stronger: **when a corpus tool exists for the question, fix the tool
 rather than approximate it** — the approximation was not merely imprecise, it
 pointed the opposite way.
+
+
+--------
+
+## 2026-09-02 — re-measured. The count is right; the ARC is 4 conjectures, not 34 blocks.
+
+### The headline holds
+
+Re-ran `conjectural-propagation-audit.ts` on current `main`: **34 violators**,
+164 provable blocks touching a conjecture, 130 correctly `conditional_on_class`.
+This bean's count is accurate and current.
+
+**Its worked example is done, though.** `prop:crystal-basis-resolves-mass-tower-
+open-problems` was repaired on 2026-08-31 (bean `qou-z9ws`) — the
+`reduction_holds : Prop` + `reduction_holds_proof` shape became a parameterised
+`ReducesTo` encoding. Verified: it is **absent** from the violator list, so that
+fix cleared both the vacuity and propagation axes.
+
+### 5 of the 34 are DETECTOR FALSE POSITIVES — a namespace is not a directory
+
+A violator is *"a block whose cone touches a **non-class-axiomatised**
+conjecture"* (audit line 205). `isClassAxiomatised` resolves a conjecture's
+`lean.ref` by mapping the **declaration path to a file path** —
+`QOU.A.B.C` → `lean/QOU/A/B/C.lean`.
+
+That assumption is false in this corpus, because a Lean **namespace** need not
+mirror a directory. Three conjectures have a class that genuinely exists at a
+non-derived path:
+
+| conjecture | `lean.ref` decl | class actually in |
+|---|---|---|
+| `conj:tower-geometric-lower-bound` | `QOU.Mass.LevelSelection.TowerGeometricLowerBound` | `QOU/Mass/**LevelSelectionLogarithmic**.lean:48` |
+| `conj:gs-graded-markov-trace-existence` | `QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence` | `QOU/IwahoriHecke/**MarkovTrace**.lean` |
+| `conj:kashaev-surreal` | `QOU.AppendixSurreals.KashaevSurreal` | `QOU/AppendixSurreals/**Conjectures**.lean` |
+
+Worked case: `prop:level-selection-not-linear` satisfies **all five** §3b-cond
+conditions — class-axiomatised conjecture, `[TowerGeometricLowerBound w r c]` as
+an explicit Lean hypothesis, the conditional banner literally opening its `.md`,
+`uses[]` naming the conjecture, and a genuine derivation via Mathlib's
+`isLittleO_coe_const_pow_of_one_lt` rather than a projection. It is not a
+violator; the detector cannot see its class.
+
+**Corrected: 34 reported → 29 true.**
+
+**Fix location** (folio-assistant, not qou):
+`content/pipeline/conjectural-propagation-audit.ts::isClassAxiomatised` —
+fall back to a tree-wide `class <Decl>` search when the derived path is absent.
+
+### The 29 trace to FOUR conjectures
+
+| conjecture | violating blocks |
+|---|---|
+| `conj:magic-numbers-from-q` | **17** |
+| `conj:b1-hyperbolic-rows-theorem` | 6 |
+| `conj:shell-transition-knot` | 4 |
+| `conj:im-q-physical-role` | 1 |
+
+So this is **not 34 per-block judgements**. Class-axiomatise four conjectures
+and the whole arc closes; do the first and 17 of 29 go.
+
+### Why the 17 exist, and why they are NOT a cheap fix
+
+`conj:magic-numbers-from-q` became a conjecture in `dfb14e3efe` (*"demote
+magic-numbers-from-q to conjecture: the signal is a parity test at K=10"*). That
+demotion was correct, and **its propagation was never followed up** — 17
+downstream provable blocks have violated §3b ever since.
+
+But class-axiomatising it is **not mechanical**, and this is the part that needs
+the author. Its Lean (`QOU/AtomicMass/MagicNumbersFromQ.lean`, 301 lines) is a
+**fully proved, sorry-free theorem**:
+
+    theorem magic_numbers_from_q :
+        ∀ Z, Z ∈ [8, 20, 28] → delta2_Phi 10 Z q_zero > 0
+
+proved by `norm_num` from a tabulation, with `magic_numbers_from_q_holds_at_
+every_q` besides. **The arithmetic is not open.** What is conjectural is the
+*physical* reading — that this `K = 10` second-difference signal identifies
+nuclear magic numbers rather than being a truncation artifact.
+
+So a class carrier has to encode **that** claim, and writing it means deciding
+what the conjecture asserts beyond the proved arithmetic. That is a physics
+judgement, not a refactor, and I am not inventing it.
+
+**Recommendation, marked as judgement:** fix the detector first (cheap, clears 5
+and prevents the next agent re-deriving this), then take
+`conj:magic-numbers-from-q` — with the author naming what the open content is —
+since it alone is 17 of the remaining 29.
