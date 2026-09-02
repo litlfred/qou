@@ -164,6 +164,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
+from partition_utils import conjugate_partition  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 mp.mp.dps = 60
@@ -184,10 +185,6 @@ def partitions(n, maxpart=None):
     for k in range(min(n, maxpart), 0, -1):
         for rest in partitions(n - k, k):
             yield (k,) + rest
-
-
-def conjugate(lam):
-    return tuple(sum(1 for p in lam if p > j) for j in range(lam[0]))
 
 
 def charpoly(A, n):
@@ -318,7 +315,7 @@ def main() -> int:
     assert exps[(6,)] == (9,) and exps[(1,) * 6] == (-9,)
     ok = True
     for lam, ks in exps.items():
-        dual = conjugate(lam)
+        dual = tuple(conjugate_partition(lam))
         want = tuple(sorted(-k for k in ks))
         got = exps[dual]
         if got != want:

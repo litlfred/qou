@@ -286,10 +286,24 @@ from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-# Self-contained by design: the only sibling with these helpers
-# (irrep_determinant_escape_probe) is on an unmerged branch, and a probe should
-# not carry a cross-branch import.  Both are ~15 lines of exact integer
-# combinatorics.
+from partition_utils import dim_lambda  # noqa: E402
+
+# Irrep dimensions come from the corpus's canonical `partition_utils.dim_lambda`
+# (exact hook-length, on main since #2353 — whose commit message is literally
+# "centralize dim_lambda").  An earlier version of this probe counted them by
+# enumerating standard Young tableaux instead, which was wrong twice over: it is
+# exponential where the hook-length formula is not, and it re-created one of the
+# ad-hoc copies that function's docstring says it exists to replace.  I had
+# justified it as "self-contained by design", but the sibling I checked for the
+# helper was `irrep_determinant_escape_probe` on an unmerged branch; the merged,
+# canonical module one directory up went unchecked.  Caught by Copilot on #6415.
+#
+# `syt` is KEPT, and is not dead weight: it is an INDEPENDENT check that the
+# hook-length formula agrees with an actual enumeration, run below at n <= 6
+# only, where the whole enumeration is a few thousand tableaux.  Bounding it is
+# what removes the scaling objection; deleting it would remove a real check.
+#
+# `partitions` stays local — `partition_utils` has no partition generator.
 
 
 def partitions(n, maxpart=None):
@@ -353,12 +367,25 @@ def main() -> int:
 
     print("\n[2] THE ARITHMETIC — visible dimension is EXACTLY Catalan(n)")
     print("-" * 78)
+    print("    dim_lambda is the corpus's canonical exact hook-length formula;")
+    print("    cross-checked here against a direct SYT enumeration at n <= 6.")
+    xcheck = 0
+    for n in range(1, 7):
+        for lam in partitions(n):
+            enumerated, formula = len(syt(lam)), dim_lambda(lam)
+            assert enumerated == formula, (
+                f"hook-length disagrees with SYT enumeration at {lam}: "
+                f"{formula} vs {enumerated}")
+            xcheck += 1
+    print(f"    cross-check: hook-length == enumeration on all {xcheck} "
+          f"partitions of n <= 6  (asserted)")
+    print()
     print(f"    {'n':>2} {'sum dim^2':>10} {'n!':>10} {'<=2 rows':>10} "
           f"{'Catalan':>9} {'match':>6} {'blind':>8} {'blind %':>8}")
     for n in range(3, 10):
         tot = vis = 0
         for lam in partitions(n):
-            d = len(syt(lam))
+            d = dim_lambda(lam)
             tot += d * d
             if len(lam) <= 2:
                 vis += d * d
