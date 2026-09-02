@@ -24,9 +24,9 @@ The categorical primitives are **two**:
 - $c_1, c_2$: pure Kashiwara (no Jones).
 - $c_3$: pure Jones (no Kashiwara).
 - $c_4$: multiplicative Jones $\times$ Kashiwara mixing ($c_3 \cdot b^4$).
-- $c_5$: additive Jones$^2 \cdot$ integer + Kashiwara mixing ($c_3^2 \cdot 3 + b$).
+- $c_5$: Kashiwara $b^2$ plus a half-Hopf offset, mixed intra/inter block ($-(b^2 + 1/2)$).
 
-The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
+Two supersessions, in order. The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%. The expression $b^2 + 1/2$ was then reassigned to the $c_5$ slot, carrying its categorical reading with it. The earlier $c_5 = c_3^2 \cdot 3 + b = +12.87$ form is in turn superseded: the SDP extraction gives $c_5 = -1.2229$, from which $-(b^2 + 1/2) = -1.2527$ is 2.4% away while $+12.87$ is an order of magnitude away and of the opposite sign.
 
 The KL decategorification governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
@@ -87,15 +87,20 @@ Verified at $q_0$ via the canonical formalism at 50 dps:
 
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
-The N=3 rung is the first to beat the **7.80 ppb 100$\times$ experimental
+The N=4 rung is the first to beat the **7.80 ppb 100$\times$ experimental
 target** (CAL-3 σ = 0.78 ppm) — with $c_3$ at tier *near-match* (see the
-truncation-order section above). N=4, N=5 reduce the residual further at
-$q_0$, but the $N{=}4 \to N{=}5$ non-monotonicity (the residual ticks
-back up) is the signature that the $c_k{\geq}3$ are q$_0$-dependent
-near-matches rather than exact Taylor coefficients: a series with exact
-$c_k$ converges monotonically. Sub-ppb agreement at $q_0$ is therefore
-still research-grade and **conditional on** the Habiro-element
-upgrade, not an unconditional derivation.
+truncation-order section above). N=3 lands at 13.15 ppb, above that target.
+The column is strictly decreasing at both documented pins: with the live
+$c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$ and is
+therefore below 1. The $N{=}4 \to N{=}5$ non-monotonicity reported in
+earlier drafts — the residual ticking back up, read there as the signature
+that the $c_k{\geq}3$ are q$_0$-dependent near-matches — was produced by
+the superseded $c_5 = +12.87$, whose positive sign makes the fifth factor
+exceed 1. It does not survive that supersession, so the ladder no longer
+carries a numerical signature of its own inexactness. The near-match tier
+of $c_{k\geq3}$ still rests on the q$_0$-anchor swing recorded above.
+Agreement at $q_0$ is research-grade and **conditional on** the
+Habiro-element upgrade, not an unconditional derivation.
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction
 gives $b^2$ (= 0.7527) rather than the exact empirical $0.7656$ — the
@@ -113,11 +118,11 @@ $$
 
 See [Table 3](#tbl:q-beta-categorical-precision-ladder-table3-data).
 
-At $N=3$, the n−p mass-split residual is **3.6 ppb** — already
-below the 4.74 ppb 100$\times$-experimental Δm_pn target. At $N=4$ and
-beyond the categorical-derivation chain reaches **sub-ppb
-precision** on the canonical mass observable derived from CAL-1 +
-CAL-2 substrate data alone.
+At $N=3$ the n−p mass-split residual is **7.96 ppb**, above the 4.74 ppb
+100$\times$-experimental Δm_pn target; **$N=4$ is the first rung below
+it**, at 4.35 ppb, and $N=5$ adds 0.03 ppb more. The chain does not reach
+sub-ppb precision on this observable at either documented pin — an earlier
+draft of this paragraph claimed it did, on the superseded column.
 
 ## Open
 
@@ -131,11 +136,10 @@ sub-percent empirical match. The remaining open questions:
    source: spectral-sequence stratification of the Wedderburn-block
    cohomology of $H_n(q)$.
 
-2. **Why $c_5 = c_3^2 \cdot 3 + b$?** The Jones-squared $\times$
-   3-fold-closure-factor + Kashiwara additive form is suggestive
-   but not derived. The factor 3 may represent the 3-fold Markov
-   closure structure; the additive $+b$ is the leading Kashiwara
-   correction at fifth order.
+2. **Why $c_5 = -(b^2 + 1/2)$?** The Kashiwara $b^2$ plus half-Hopf
+   offset is suggestive but not derived, and it is 2.4% from the SDP
+   extraction $-1.2229$. The earlier $c_3^2 \cdot 3 + b$ reading of this
+   slot is superseded.
 
 3. **Inductive closure for $k \geq 6$.** No closed forms proposed.
    The pattern of growing Jones-Kashiwara mixing complexity suggests
@@ -146,3 +150,47 @@ The full inductive ladder follows from a categorical source for the
 operator-valued generating function
 $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ — for instance the KLR
 canonical basis or a Khovanov–Rozansky spectral sequence.
+
+## Provenance of the tables
+
+Tables 2 and 3 above are computed by
+[`qbeta_precision_ladder_n5.py`](../../../computations/qbeta/qbeta_precision_ladder_n5.py)
+at the muon-pin (CAL-2) $q_0$, in convention C, with $c_4 = c_3 b^4$ and
+$c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
+boxed five-rung product itself: the block's previously declared producer,
+`probe_q_beta_operator_valued_N3.py`, stops at $N=3$, carries no $c_5$, and is
+not the generator of these tables at all — its own witness records
+$\varepsilon_{N=1} = 674.83$ ppm against the $+73.80$ ppm of the $N=1$ row,
+because its first rung is $\cos(\alpha_{N=1})$ rather than the boxed
+$\cos(\alpha - b\hbar_q^2/2)$.
+
+**As previously published, for the record.** The $\varepsilon_Q$ column read
+$+1677.5$, $+73.79$, $+1.24$ ppm, then $+6.02$, $-0.57$ ppb and, at $N=5$,
+$\sim 0$ ppb in table 2 and $+0.04$ ppb in table 3; the headline residual was
+quoted as $-0.0066$ ppm. Three defects are corrected above.
+
+*The sign.* The published headline was negative. It cannot be: $\mathfrak{Q}_\beta^A$
+sits 1677 ppm above CODATA and every live rung factor is below 1, so the ladder
+descends to CODATA from above and a negative residual requires overshooting
+zero. Over both documented pins and all four documented $(c_4, c_5)$
+assignments the most negative fifth-rung residual is $+6.50$ ppb. This is a
+scope-limited negative about the boxed ladder under those assignments, not a
+proved invariant.
+
+*The input epoch.* The published $\varepsilon_Q$ column sits 7.133 ppb below the
+recomputed one. A change of inputs shifts $\mathfrak{Q}_\beta^A / \mathfrak{Q}_\beta^{\mathrm{CODATA}}$
+by one relative amount and moves every rung by it, so the $N=3$ row calibrates
+the whole column; applied to the recomputed column that single offset then
+reproduces the published $N=2$ row (to its three significant figures) and the
+published $N=4$ row (to $-0.572$ against $-0.57$) — the latter only with the
+*retired* $c_4 = b^2 + 1/2$, so the published $N=4$ number predated the $c_4$
+supersession that its own label column already carried. The cause of the 7.133
+ppb offset is not identified: it is not the stored $Q_{\mathrm{AME}}$
+(0.78233355931 against the present 0.7823334093099085, a 191.7 ppb gap in the
+wrong direction), and not the CODATA-2018 to 2022 $m_e$ move (1.35 ppb).
+
+*The headline's magnitude.* Under that same offset the published-epoch fifth-rung
+residual lies in $[-0.63, +0.63]$ ppb across all four assignments, so $-6.6$ ppb
+is unreachable at the published epoch as well as at the present one. The
+published magnitude has no reproducible provenance in this ladder, and the
+recomputed value replaces it rather than being reconciled with it.
