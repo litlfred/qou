@@ -921,6 +921,50 @@ badly. That version also filtered k=0 silently, which would have made 'ceiling
 OPEN: whether the unbounded trace-blind sector is reachable by subtraction.
 Locating it is not reaching it.
 
+## 2026-09-02 — subtraction-recovery of the blind sector is CLOSED (negative)
+
+`computations/probes/markov_trace_family_rank_probe.py` (PR #6415, 9f97474c46).
+Answers the question the lift probe left open, negatively.
+
+The Ocneanu weight at z_N = q^N/[N]_q is the SU(N) quantum dimension (quantum
+hook-content formula), vanishing exactly when ell(lambda) > N — row cap asserted
+on 178 (lambda,N) pairs. Higher N lifts the cap, so the hope was a finite
+combination isolating a blind block.
+
+MEASURED (SVD and Gram-Schmidt, agreeing at every n):
+
+    n       2   3   4   5   6   7
+    p(n)    2   3   5   7  11  15
+    rank    2   3   4   5   6   7     -> rank = n EXACTLY
+
+Singular-value gap at n=6: 2.23e-13 retained vs 1.74e-121 discarded, ~108
+orders. Not a threshold judgement.
+
+**Only the two ONE-DIMENSIONAL blocks are individually recoverable.** So the
+answer is no — and the reason is stronger than the question assumed: **the
+recoverability boundary is NOT the row cap.** (4,2) is trace-VISIBLE, carries
+the largest finite asymmetry found (ratio 5), and is still not isolable.
+
+Also settles the H_3 three-trace combination (6.22044128, -33.41778449,
+28.19734321): it works because p(3)=3=rank, i.e. n=3 is COMPLETE. It does NOT
+generalise — from n=4 on, p(n) > n. Asserted at both ends.
+
+Scope (a), narrowly: excludes the Ocneanu/Markov trace family parameterised by
+N and nothing else. Non-Markov-trace functionals untouched — that is where a
+closure must now come from. rank=n is measured at n=2..7, not proved; a proof
+would upgrade this to scope (b) and is the obvious formalize-first target.
+
+TRAPS recorded in-probe: (1) mp.lu_solve does not raise on a singular system —
+returned 1e57 coefficients with residual 1.0 at 60 dps; precision scaling
+(1e119 at 120 dps, 'numerically singular' at 240) is what settled singular vs
+ill-conditioned. (2) Column normalisation changes the row space, so residual
+distances from a normalised SVD answer a different question; rank and
+membership survive, distances do not. Conjugation symmetry exposed it.
+
+CONSEQUENCE for the arc: the three routes past the ceiling of 9 that I could
+name are now (i) a non-Markov-trace functional, (ii) a further additive term in
+the closure, (iii) higher n. Subtraction over the trace family is closed.
+
 ## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
 
 `computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
