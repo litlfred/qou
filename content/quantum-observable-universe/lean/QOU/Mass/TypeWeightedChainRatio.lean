@@ -135,4 +135,60 @@ theorem production_bRatio_eq_neg_one :
     muTripleMiddleHeavy (0 : ℚ) (-1/2) (-1) / muPair (-1/2) - 3 = -1 :=
   bRatio_eq_neg_one_of_mean production_weights_on_mean_locus (by norm_num)
 
+/-! ## The colour-weighted `pn` interface — the one weighting left, also excluded -/
+
+/-- **An all-`pn` chain gives ratio `2` for ANY `pn` weight, with no locus
+condition at all.** The `middle-light` arrangement (`n-p-n` and `p-n-p`) has only
+`pn` bonds, so the weight cancels entirely between numerator and denominator.
+
+This is the sharpest form of the obstruction: on that arrangement `b₃/b₂ = -1`
+*whatever* the `pn` interface is — colour-weighted, `δ`-dependent, anything. -/
+theorem allPn_ratio_eq_two {wpn : R} (hne : wpn ≠ 0) :
+    muTripleMiddleLight wpn / muPair wpn = 2 := by
+  unfold muTripleMiddleLight muPair
+  field_simp
+
+/-- `d_for_ctype "averaged_weighted"` is `-h(1/2 - δ/4)`, with `δ` the substrate
+flavour split `(m_n - m_p)/M_N`. In units of `h`, that is the `pn` weight below;
+`pp` and `nn` are untouched by the colour weighting. -/
+def wpnColour (δ : R) : R := -(1/2 - δ/4)
+
+/-- **The colour-weighted interface sits OFF the arithmetic-mean locus, by exactly
+`δ/2`.** So the preceding theorems do not cover it — which is why it needed its
+own treatment rather than a remark. -/
+theorem colourWeighted_off_locus (δ : R) :
+    2 * wpnColour δ - ((0 : R) + (-1)) = δ / 2 := by
+  unfold wpnColour; ring
+
+/-- On the locus exactly when `δ = 0` — and `δ` is a nucleon mass-difference
+ratio, so it is not. -/
+theorem colourWeighted_on_locus_iff (δ : R) :
+    (0 : R) + (-1) = 2 * wpnColour δ ↔ δ = 0 := by
+  unfold wpnColour
+  constructor
+  · intro h; linear_combination -2 * h
+  · intro h; linear_combination -h / 2
+
+/-- **The `middle-heavy` ratio under colour weighting is `(4 - δ)/(2 - δ)`.** -/
+theorem colourWeighted_ratio_middleHeavy {δ : R} (hδ : 2 - δ ≠ 0)
+    (hne : wpnColour δ ≠ 0) :
+    muTripleMiddleHeavy 0 (wpnColour δ) (-1) / muPair (wpnColour δ)
+      = (4 - δ) / (2 - δ) := by
+  have h2w : 2 * wpnColour δ ≠ 0 := mul_ne_zero (by norm_num) hne
+  unfold muTripleMiddleHeavy muPair
+  rw [div_div, div_eq_div_iff h2w hδ]
+  unfold wpnColour
+  ring
+
+/-- **Reaching the measured `b₃/b₂` would need `δ > 1`.** Solving
+`(4 - δ)/(2 - δ) = 3 + rMeasured` gives `δ = 4867718/3916903 ≈ 1.2427` — and
+`δ = (m_n - m_p)/M_N > 1` would need the neutron-proton mass difference to exceed
+the whole nucleon mass. The physical value is `≈ 0.0013757`, so the required
+figure is **903× too large and unphysical besides**. -/
+theorem colourWeighted_target_forces_delta_gt_one :
+    (1 : ℚ) < 4867718 / 3916903 ∧
+      (4 - (4867718 : ℚ) / 3916903) / (2 - 4867718 / 3916903)
+        = 3 + 950815 / 1483044 := by
+  constructor <;> norm_num
+
 end QOU.Mass.TypeWeightedChainRatio

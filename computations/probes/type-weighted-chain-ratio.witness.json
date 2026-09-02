@@ -1,7 +1,7 @@
 {
   "computation": "type-weighted-chain-ratio",
   "scriptFile": "probes/type_weighted_chain_ratio_probe.py",
-  "computedAt": "2026-09-02T21:50:42.652450+00:00",
+  "computedAt": "2026-09-02T21:56:48.876865+00:00",
   "contentBlock": "qou-brng",
   "description": "Production weights inter-nucleon bonds by TYPE (d_for_ctype: pp 0, pn -h/2, nn -h), so the uniformity that BrunnianTripleExhaustion named as its free ingredient is already relaxed. It does not help: on the arithmetic-mean locus w_pp + w_nn = 2 w_pn, which production satisfies exactly, the triple/pair ratio is 2 identically and b3/b2 = -1 -- the same value the uniform chain gives, wrong sign, with h cancelling. Also relocates the exhaustion: it excludes the crossing-energy channel, which is none of the four evaluable channels in the seven-channel taxonomy.",
   "production_weights_units_of_h": {
@@ -70,6 +70,26 @@
       "name": "and it is the SAME -1 the uniform chain gives",
       "passed": true,
       "detail": "CarrierCrossingQuantisation's 'chain / coordination z = A-1' row is also -1. Weighting by type turns mu from a count into a weighted count and leaves the one number b3 can see exactly where it was -- so this is not an escape from the exhaustion, it is inside it"
+    },
+    {
+      "name": "the colour-weighted interface sits OFF the mean locus, by delta/2",
+      "passed": true,
+      "detail": "2 w_pn - (w_pp + w_nn) = 0.000687855403514 = delta/2. So the theorems above do NOT cover it -- which is why it needed its own treatment rather than a remark"
+    },
+    {
+      "name": "all-pn arrangement gives ratio EXACTLY 2 for ANY pn weight",
+      "passed": true,
+      "detail": "the middle-light chain (n-p-n, p-n-p) has only pn bonds, so the pn weight cancels between numerator and denominator -- no locus condition needed, and delta is irrelevant (Lean allPn_ratio_eq_two)"
+    },
+    {
+      "name": "colour weighting moves b3/b2 by ~7e-4 and does not change the sign",
+      "passed": true,
+      "detail": "middle-heavy b3/b2 = -0.999311671126 against the uniform -1; rel err vs measured -255.869%"
+    },
+    {
+      "name": "reaching the measured value would need delta > 1 -- UNPHYSICAL",
+      "passed": true,
+      "detail": "solving (4-delta)/(2-delta) = 3 + r gives delta = 4867718/3916903 = 1.2427466292, i.e. 903.3x the physical 0.0013757108 -- and delta = (m_n - m_p)/M_N > 1 would need the mass difference to exceed the whole nucleon mass"
     }
   ],
   "allPassed": true,
@@ -78,12 +98,24 @@
     "RELOCATION, and it limits what the exhaustion binds: the excluded channel is the CROSSING-ENERGY one, which is not among the four evaluable channels of the seven-channel taxonomy. Production ships a trace-ratio channel that is neither extensive nor bond-additive. So neither the exhaustion nor this file binds the shipped channel.",
     "The chain bond set is FORCED (StrandLayoutForcesChain), so this is not a choice of bond set. A different bond set is not available in this producer.",
     "A=3 only. b4 and the A=4 carrier are untouched.",
-    "The weights are read from production's d_for_ctype in units of h. The colour-weighted 'averaged_weighted' ctype is NOT covered -- it carries a flavour split delta and may sit off the mean locus; that is the one type weighting this file does not exclude."
+    "The colour-weighted 'averaged_weighted' ctype IS now covered (it was flagged as the gap in the first version of this probe). It sits off the mean locus by delta/2, and is excluded anyway: the all-pn arrangement gives ratio exactly 2 for any pn weight, and matching the measured value would need delta > 1.",
+    "delta is q0-pinned and anchor-adaptive (proton by default). The exclusion does not depend on its value -- 903x is not a near miss -- so the anchor choice cannot move this conclusion."
   ],
   "lean": "QOU/Mass/TypeWeightedChainRatio.lean (5 declarations, sorry-free, lean-direct exit 0)",
   "related": [
     "probes/brunnian-triple-exhaustion.witness.json",
     "probes/carrier-crossing-quantisation.witness.json"
   ],
+  "colour_weighted": {
+    "delta": "0.0013757108070270960086",
+    "w_pn_units_of_h": "-0.499656072298243226",
+    "off_locus_by": "delta/2",
+    "ratio_middle_heavy": "2.0006883288742490946",
+    "ratio_middle_light": "2 (exactly, for any delta)",
+    "b3_over_b2_middle_heavy": "-0.99931167112575090536",
+    "delta_required_for_measured": "4867718/3916903",
+    "delta_required_over_physical": "903.3487437",
+    "verdict": "excluded -- delta would have to exceed 1, which needs m_n - m_p > M_N"
+  },
   "source": "AME2020; canonical_braid_crossings.d_for_ctype"
 }

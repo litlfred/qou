@@ -163,6 +163,50 @@ def main():
           "count and leaves the one number b3 can see exactly where it was -- "
           "so this is not an escape from the exhaustion, it is inside it")
 
+    # --- the colour-weighted pn interface, the one weighting left -------------
+    from canonical_braid_crossings import _avg_color_delta
+    from mpmath import mp, mpf
+    mp.dps = 50
+    dlt = _avg_color_delta()
+    wpnC = -(mpf(1) / 2 - dlt / 4)          # d_for_ctype "averaged_weighted"/h
+    rm = mpf("950815") / mpf("1483044")
+
+    print(f"\n  colour-weighted pn: delta = {mp.nstr(dlt, 16)}, "
+          f"w_pn = {mp.nstr(wpnC, 16)}")
+
+    check("the colour-weighted interface sits OFF the mean locus, by delta/2",
+          abs((2 * wpnC - (mpf(0) + mpf(-1))) - dlt / 2) < mpf("1e-40"),
+          f"2 w_pn - (w_pp + w_nn) = {mp.nstr(2 * wpnC - mpf(-1), 12)} = "
+          f"delta/2. So the theorems above do NOT cover it -- which is why it "
+          "needed its own treatment rather than a remark")
+
+    ratio_heavy = ((mpf(0) + mpf(-1) + 2 * wpnC) / 2) / wpnC
+    ratio_light = (2 * wpnC) / wpnC
+    print(f"    middle-heavy ratio = {mp.nstr(ratio_heavy, 16)}  "
+          f"b3/b2 = {mp.nstr(ratio_heavy - 3, 16)}")
+    print(f"    middle-light ratio = {mp.nstr(ratio_light, 16)}  "
+          f"b3/b2 = {mp.nstr(ratio_light - 3, 16)}")
+
+    check("all-pn arrangement gives ratio EXACTLY 2 for ANY pn weight",
+          abs(ratio_light - 2) < mpf("1e-45"),
+          "the middle-light chain (n-p-n, p-n-p) has only pn bonds, so the pn "
+          "weight cancels between numerator and denominator -- no locus "
+          "condition needed, and delta is irrelevant (Lean allPn_ratio_eq_two)")
+
+    check("colour weighting moves b3/b2 by ~7e-4 and does not change the sign",
+          abs((ratio_heavy - 3) - mpf(-1)) < mpf("1e-3") and ratio_heavy - 3 < 0,
+          f"middle-heavy b3/b2 = {mp.nstr(ratio_heavy - 3, 12)} against the "
+          f"uniform -1; rel err vs measured "
+          f"{mp.nstr((ratio_heavy - 3 - rm) / rm * 100, 6)}%")
+
+    d_need = F(4867718, 3916903)
+    check("reaching the measured value would need delta > 1 -- UNPHYSICAL",
+          d_need > 1 and abs(float(d_need) - 1.2427466291608447) < 1e-12,
+          f"solving (4-delta)/(2-delta) = 3 + r gives delta = {d_need} = "
+          f"{float(d_need):.10f}, i.e. {float(d_need) / float(dlt):.1f}x the "
+          f"physical {mp.nstr(dlt, 8)} -- and delta = (m_n - m_p)/M_N > 1 would "
+          "need the mass difference to exceed the whole nucleon mass")
+
     witness = {
         "computation": "type-weighted-chain-ratio",
         "scriptFile": "probes/type_weighted_chain_ratio_probe.py",
@@ -216,10 +260,14 @@ def main():
             "not a choice of bond set. A different bond set is not available in "
             "this producer.",
             "A=3 only. b4 and the A=4 carrier are untouched.",
-            "The weights are read from production's d_for_ctype in units of h. "
-            "The colour-weighted 'averaged_weighted' ctype is NOT covered -- it "
-            "carries a flavour split delta and may sit off the mean locus; that "
-            "is the one type weighting this file does not exclude.",
+            "The colour-weighted 'averaged_weighted' ctype IS now covered (it "
+            "was flagged as the gap in the first version of this probe). It "
+            "sits off the mean locus by delta/2, and is excluded anyway: the "
+            "all-pn arrangement gives ratio exactly 2 for any pn weight, and "
+            "matching the measured value would need delta > 1.",
+            "delta is q0-pinned and anchor-adaptive (proton by default). The "
+            "exclusion does not depend on its value -- 903x is not a near "
+            "miss -- so the anchor choice cannot move this conclusion.",
         ],
         "lean": ("QOU/Mass/TypeWeightedChainRatio.lean "
                  "(5 declarations, sorry-free, lean-direct exit 0)"),
@@ -227,6 +275,19 @@ def main():
             "probes/brunnian-triple-exhaustion.witness.json",
             "probes/carrier-crossing-quantisation.witness.json",
         ],
+        "colour_weighted": {
+            "delta": mp.nstr(dlt, 20),
+            "w_pn_units_of_h": mp.nstr(wpnC, 20),
+            "off_locus_by": "delta/2",
+            "ratio_middle_heavy": mp.nstr(ratio_heavy, 20),
+            "ratio_middle_light": "2 (exactly, for any delta)",
+            "b3_over_b2_middle_heavy": mp.nstr(ratio_heavy - 3, 20),
+            "delta_required_for_measured": str(d_need),
+            "delta_required_over_physical": mp.nstr(
+                mpf(d_need.numerator) / mpf(d_need.denominator) / dlt, 10),
+            "verdict": ("excluded -- delta would have to exceed 1, which needs "
+                        "m_n - m_p > M_N"),
+        },
         "source": "AME2020; canonical_braid_crossings.d_for_ctype",
     }
     out = _HERE / "type-weighted-chain-ratio.witness.json"
