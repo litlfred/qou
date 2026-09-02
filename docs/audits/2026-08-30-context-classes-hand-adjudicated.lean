@@ -90,19 +90,11 @@ example : QOU.BraidsAndKnots.EwInterfaceKnotContext where
   n_disjoint_strand_pairs := 3
   claim_iii_bar_self_duality := ⟨rfl, rfl⟩
 
-/-- The fermion/boson ↔ knot/link correspondence holds of `Odd`/`Even`
+/-! The fermion/boson ↔ knot/link correspondence holds of `Odd`/`Even`
 themselves, so the class asserts nothing about torus knots: `T_2n` is opaque
-context data and no field constrains it. -/
-example : QOU.Braiding.FermionBosonKnotLinkContext where
-  CategoricalObj := Unit
-  T_2n := fun _ => Unit
-  is_knot := Odd
-  is_link := Even
-  claim_knot_iff_odd := fun _ _ => Iff.rfl
-  claim_link_iff_even := fun _ _ => Iff.rfl
-  is_fermion := Odd
-  is_boson := Even
-  claim_fermion_boson_knot_link := fun _ _ => ⟨Iff.rfl, Iff.rfl⟩
+context data and no field constrains it.
+
+**Witness removed 2026-08-31 with its subject.** `QOU/Braiding/fermion_boson_knot_link.lean` was gutted (0 importers); the block resolves to its sibling, which carries `TorusKnotLink`, `fermion_iff_odd` and `boson_iff_even`. The finding stands as recorded; it cannot be re-run, because the class is gone. -/
 
 /-- "Bare hydrogen is LP-unstable, the 𝓑₃ dressing stabilises it" is satisfied
 by one candidate whose bare volume is `0` and whose dressed volume is `1`.
@@ -189,20 +181,12 @@ example : QOU.BraidKnot.UnstableAtom.DecayChannelContext where
   claim_iii_phase_boundary_crossing := by
     intro _; exact ⟨0, le_refl 0, le_refl 0, trivial⟩
 
-/-- The Schur–Weyl decomposition `tr_M(𝒜) = Σ_λ s_λ χ_λ / H_q(λ)` holds over
+/-! The Schur–Weyl decomposition `tr_M(𝒜) = Σ_λ s_λ χ_λ / H_q(λ)` holds over
 the EMPTY partition set: `partitions` is a context field and no claim requires
 it to be the partitions of `3A`, so `Z` and `N` are inert.  The sum identity is
-`0 = 0`. -/
-example : QOU.BraidKnot.SchurWeylMassContext ℚ 1 0 where
-  q := 0
-  Partition := Unit
-  partitions := ∅
-  schurFunction := fun _ => 0
-  qHookProduct := fun _ => 1
-  chi_atomic := fun _ => 0
-  trM_atomic := 0
-  qHookProduct_ne_zero := by intro _; norm_num
-  claim_schur_weyl_sum := by simp
+`0 = 0`.
+
+**Witness removed 2026-08-31 with its subject.** `QOU/BraidKnot/schur_weyl_mass_decomposition.lean` was gutted (0 importers). The finding stands as recorded; it cannot be re-run, because the class is gone. -/
 
 /-- The "master reciprocity formula" `⟨O⟩_T = Σ_{i,j∈A*} u*ᵢ (G⁻¹)_{ij} ⟨O,bⱼ⟩`
 holds when the physical expectation and the Frobenius pairing are both zero —
@@ -308,12 +292,10 @@ noncomputable instance degenerateMarkovTraceContext : QOU.Shared.MarkovTraceCont
   heckeInst := rankOneModel 3
   markovInst := rankOneMarkov 3
 
-/-- First of the family: `p(4) = 5` conjugacy classes.  The claim is `5 = 5`
-and the inherited Markov-trace substrate is the degenerate one above. -/
-noncomputable example : QOU.BraidsAndKnots.ExplicitAlphaKH4Context where
-  toMarkovTraceContext := degenerateMarkovTraceContext
-  n_classes := 5
-  claim_explicit_alpha_k_h4 := rfl
+/-! First of the family: `p(4) = 5` conjugacy classes.  The claim is `5 = 5`
+and the inherited Markov-trace substrate is the degenerate one above.
+
+**Witness removed 2026-08-31 with its subject.** `QOU/BraidsAndKnots/explicit_alpha_k_h4.lean` was gutted (0 importers). The elaboration note that follows still applies to the `extends` family generally and is kept. The finding stands as recorded; it cannot be re-run, because the class is gone. -/
 
 /-! ### An elaboration note that costs an hour if you don't know it
 
@@ -344,20 +326,11 @@ noncomputable example : QOU.BraidsAndKnots.QmnRecursiveMemoizedContext :=
     cache_get := fun _ _ => (none : Option ℚ)
     claim_iii_stores_result_cache := by intro _ _ v h; simp at h }
 
-/-- Bratteli recursion: per-row monotonicity, sign tracking and the ε-N limit
+/-! Bratteli recursion: per-row monotonicity, sign tracking and the ε-N limit
 all hold at the constant-zero ratio with `z_real := 0`.  The limit claim is the
-only one with analytic shape and it is satisfied by a constant sequence. -/
-noncomputable example : QOU.BraidsAndKnots.WedderburnBratteliRecursionContext :=
-  { degenerateMarkovTraceContext with
-    y_lambda := fun _ _ => (0 : ℚ)
-    ratio := fun _ => 0
-    claim_i_per_row_monotonicity := fun _ => le_refl 0
-    q_content_sign := fun _ => 0
-    claim_ii_sign_tracking_added := by intro _; norm_num
-    z_real := 0
-    diagonal_ratio_n := fun _ => 0
-    claim_iii_trivial_rep_limit := by
-      intro ε hε; exact ⟨0, fun n _ => by simpa using hε⟩ }
+only one with analytic shape and it is satisfied by a constant sequence.
+
+**Witness removed 2026-08-31 with its subject.** `QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean` was gutted (0 importers). The finding stands as recorded; it cannot be re-run, because the class is gone. -/
 
 /-! ### A second parent: `OperatorSelectionLPContext`
 
@@ -377,22 +350,13 @@ noncomputable instance degenerateLPContext : QOU.Shared.OperatorSelectionLPConte
   A_star := ∅
   strong_duality := by simp
 
-/-- Demazure-fibre Markov trace.  `T^Dem(λ; w_0) = y_λ` holds at the constant
+/-! Demazure-fibre Markov trace.  `T^Dem(λ; w_0) = y_λ` holds at the constant
 `1`; Plancherel completeness `Σ f_λ T^Dem(λ;w_0) = 1` holds over one partition
 with `f_λ = 1`.  The Bruhat-order sub-claim is an opaque `Prop` carrying its own
 witness, so it is `True`/`trivial` — the same shape as
-`SpectralSequenceH3ExplicitContext`. -/
-noncomputable example : QOU.BraidsAndKnots.DemazureFiberMarkovTraceContext :=
-  { degenerateLPContext with
-    T_Dem := fun _ _ => 1
-    y_lambda := fun _ => 1
-    w_0 := 0
-    claim_i_standard_jones_markov := fun _ => rfl
-    claim_ii_bruhat_order_structural := True
-    claim_ii_bruhat_order_structural_holds := trivial
-    f_lambda := fun _ => 1
-    n_partitions := 1
-    claim_iii_plancherel_completeness := by simp }
+`SpectralSequenceH3ExplicitContext`.
+
+**Witness removed 2026-08-31 with its subject.** `QOU/BraidsAndKnots/demazure_fiber_markov_trace.lean` was gutted (0 importers). The finding stands as recorded; it cannot be re-run, because the class is gone. -/
 
 /-! ### A third parent: `ArchimedeanEval`, and the last of the `extends` family
 
