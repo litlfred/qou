@@ -7,8 +7,8 @@ exactly when `N < 3`.  That is the shape the eightfold-way question needed, and
 it is the only shape the corpus had.
 
 Everything else that appeals to the row cap appeals to it for **other**
-partitions — `(3,2,1)` at `n = 6` in the staircase electroweak residual
-(`qou-4qno`), `(2,2,1,1)` at `n = 6`, the whole `ℓ(λ) > 2` sector in the
+partitions — `(3,2,1)` at `n = 6` in the staircase electroweak residual,
+`(2,2,1,1)` at `n = 6`, the whole `ℓ(λ) > 2` sector in the
 Temperley–Lieb kernel measurements — and for those it was corpus prose plus a
 numerical measurement, not a theorem.  `markov-trace-frobenius-selection.md`
 states it by name ("**the row cap**") and
@@ -52,14 +52,14 @@ for every `λ ⊢ n` whatever `N` is, and its seminormal matrices, characters an
 eigenvalues all exist; `dim V_λ = 0` says the *multiplicity space* pairing that
 Specht module into `V^{⊗n}` is trivial, so the block acts on no states.  A
 number read off `S^λ` for `ℓ(λ) > N` is a number about the algebra, not about
-the carrier — which is exactly the distinction `qou-4qno` turns on.
+the carrier, and that distinction is what the electroweak residual turns on.
 
 ## Base ring (§7c)
 
 Pure combinatorics over `ℕ` and `Fin` — no ring, no ordering beyond `ℕ`, no
 archimedean content.  Nothing here is `q`-dependent: the cap is a statement
 about the fibre dimension `N`, and the `q`-deformation moves the *weights*
-`y_λ = s_λ(1, q, …, q^{N-1})`, not which `λ` survive (`qou-fvzm`).
+`y_λ = s_λ(1, q, …, q^{N-1})`, not which `λ` survive.
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Fintype.Card
@@ -125,10 +125,10 @@ empty.**  This is the general form of what the corpus measured blockwise: the
 `ℓ(λ) > 2` sector spans the kernel of `H_n(q) → TL_n(q)`. -/
 theorem isEmpty_of_three_rows {r : ℕ} (h : 3 ≤ r) :
     IsEmpty (ColumnFilling r fibreDim) :=
-  isEmpty_columnFilling_of_lt (by omega)
+  isEmpty_columnFilling_of_lt (show 2 < r by omega)
 
 /-- `(3,2,1)` — the staircase `ρ₃`, three rows — carries no states at `N = 2`.
-This is the block the electroweak residual reads `cot θ_W` off (`qou-4qno`). -/
+This is the block the staircase electroweak residual reads `cot θ_W` off. -/
 theorem staircase_three_isEmpty : IsEmpty (ColumnFilling 3 fibreDim) :=
   isEmpty_of_three_rows (le_refl 3)
 
