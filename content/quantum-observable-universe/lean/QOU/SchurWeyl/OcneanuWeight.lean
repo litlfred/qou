@@ -147,4 +147,70 @@ theorem ocneanuWeight_conventionD_eq_zero_of_three_rows {R : Type*} [Field R] (q
       simpa using ocneanuNumFactor_eq_zero_of_content_neg_two (R := R) q hq 0)
   rw [ocneanuWeight, hzero, zero_div]
 
+/-! ### The `z`-dependence lives only off the diagonal
+
+The numerator factor of a cell is affine in `z`; its `z`-coefficient is
+`q^{2j+1} − q^{2i+1}`, which vanishes **identically on the diagonal `i = j`** — with no hypothesis
+on `q` whatever, since the two `z` terms cancel term-for-term. So a diagonal cell contributes a
+constant, and the whole `z`-dependence of `ocneanuWeight` is carried by the off-diagonal cells.
+
+Counting them gives the degree: a Young diagram has `d(μ)` diagonal cells (its Durfee square size),
+so the numerator has `z`-degree at most `|μ| − d(μ)`. Since **every** non-empty diagram contains
+`(0,0)`, `d ≥ 1` always, and the naive bound `|μ|` from `|μ|` affine factors is never attained.
+
+**Why this matters, and where it is used.** The span of the Markov traces over the whole Ocneanu
+family `{z_N}` is bounded by that degree plus one: writing `W(z) = Σ_k z^k c_k`, the family lies in
+the span of the coefficient vectors `c_k`. Measured against `p(n)` — the number of Wedderburn
+blocks, i.e. the dimension of the full space of trace functionals — this is a strong restriction,
+and it is what forbids recovering an individual block's character by any *subtraction* over the
+family.
+
+`computations/probes/markov_trace_family_rank_probe.py` measures the consequences: `deg_z = |μ| −
+d(μ)` for every partition at `n = 2..6` (exact, sympy over `ℚ(q)`), a resulting family rank of
+exactly `n` against `p(n)` blocks, and — at `n = 6` — only the two one-dimensional blocks
+individually recoverable, `(4,2)` **not** among them despite being visible to convention D.
+
+**What is proved here is the mechanism, not the degree count.** The statement below confines the
+`z`-dependence to the off-diagonal cells, which is the content; turning that into `deg_z ≤ |μ| −
+d(μ)` needs the polynomial-degree argument over the product and is **not** done here. Nor is
+`rank = n` proved — it is measured at `n = 2..7`, so the exclusion it supports is scope-(a). -/
+
+/-- **The cell numerator factor is affine in `z`**, with `z`-coefficient `q^{2j+1} − q^{2i+1}`. -/
+theorem ocneanuNumFactor_affine {R : Type*} [Field R] (q z : R) (i j : ℕ) :
+    q ^ (2 * i) * (q ^ 2 - 1 - q * z) + q ^ (2 * j + 1) * z
+      = q ^ (2 * i) * (q ^ 2 - 1) + (q ^ (2 * j + 1) - q ^ (2 * i + 1)) * z := by
+  ring
+
+/-- **A diagonal cell contributes no `z`.** At `i = j` the two `z` terms cancel identically, so the
+factor is the constant `q^{2i}(q² − 1)`. Unconditional: no hypothesis on `q`. -/
+theorem ocneanuNumFactor_diagonal_z_free {R : Type*} [Field R] (q z : R) (i : ℕ) :
+    q ^ (2 * i) * (q ^ 2 - 1 - q * z) + q ^ (2 * i + 1) * z = q ^ (2 * i) * (q ^ 2 - 1) := by
+  ring
+
+/-- **The `z`-dependence of the numerator is confined to the off-diagonal cells.**
+
+The product splits into a `z`-free part over the diagonal cells and a part over the off-diagonal
+cells, each factor there affine in `z` with a nonzero-in-general coefficient. The number of factors
+that can carry `z` is therefore `|μ| − d(μ)`, `d(μ)` the count of diagonal cells. -/
+theorem ocneanuNum_diagonal_split {R : Type*} [Field R] (q z : R) (mu : YoungDiagram) :
+    (∏ c ∈ mu.cells, (q ^ (2 * c.1) * (q ^ 2 - 1 - q * z) + q ^ (2 * c.2 + 1) * z))
+      = (∏ c ∈ mu.cells.filter (fun c => c.1 = c.2), q ^ (2 * c.1) * (q ^ 2 - 1))
+        * (∏ c ∈ mu.cells.filter (fun c => ¬ (c.1 = c.2)),
+            (q ^ (2 * c.1) * (q ^ 2 - 1) + (q ^ (2 * c.2 + 1) - q ^ (2 * c.1 + 1)) * z)) := by
+  rw [← Finset.prod_filter_mul_prod_filter_not mu.cells (fun c => c.1 = c.2)]
+  congr 1
+  · refine Finset.prod_congr rfl ?_
+    intro c hc
+    have hij : c.1 = c.2 := (Finset.mem_filter.mp hc).2
+    rw [← hij]
+    exact ocneanuNumFactor_diagonal_z_free q z c.1
+  · exact Finset.prod_congr rfl fun c _ => ocneanuNumFactor_affine q z c.1 c.2
+
+/-- **Every non-empty diagram has a diagonal cell**, namely `(0,0)`. So `d(μ) ≥ 1` and the top
+`z`-power `z^{|μ|}` always dies — the naive degree bound from `|μ|` affine factors is never
+attained. -/
+theorem mem_cells_diag_zero (mu : YoungDiagram) (h : 0 < mu.rowLen 0) : (0, 0) ∈ mu.cells := by
+  rw [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
+  exact h
+
 end QOU.SchurWeyl
