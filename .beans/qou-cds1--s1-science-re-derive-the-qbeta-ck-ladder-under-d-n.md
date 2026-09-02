@@ -6956,3 +6956,70 @@ the load-bearing half of the S1 finding — *every symmetric q-integer passes th
 parity filter, for all n* — inside the corpus's own existing abstractions.
 
 Not attempted here.
+
+## 2026-09-02, S1 — LEAN: every symmetric q-integer is bar-symmetric, for all n
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumIntBarSymmetric.lean`
+— `lean`-direct **exit 0**, no errors, no warnings; `#print axioms` on all seven
+declarations gives `[propext, Classical.choice, Quot.sound]`, **no `sorryAx`**.
+
+This makes the S1 negative permanent. The empirical observation was that the
+parity filter admits `[2]_q … [5]_q`; this proves it admits `[n]_q` for **every**
+`n`, so no candidate generator built from symmetric q-integers can ever be
+distinguished from another by bar-parity.
+
+    theorem quantumInt_isCPEven {q : R}
+        (hbarq : BarInvolution.bar q = q⁻¹) (hden : q - q⁻¹ ≠ 0) (n : ℕ) :
+        IsCPEven (quantumInt n q)
+
+The proof needs neither the Chebyshev identity nor any field theory: numerator
+`qⁿ - q⁻ⁿ` and denominator `q - q⁻¹` are each bar-**anti**-symmetric, and the two
+signs cancel in the quotient. Supporting lemmas `bar_zero'`, `bar_neg'`,
+`bar_sub'`, `bar_inv'`, `bar_inv_eq` are derived from the four class axioms
+(`bar_involutive`, `bar_add`, `bar_mul`, `bar_one`) — the class has no `bar_zero`
+or `bar_inv` field, so both are proved rather than assumed.
+
+**Base ring (§7c):** generic `{R : Type*} [Field R]`, `Field` only because
+`[n]_q` needs `q⁻¹`. No ordering, no `Real.sqrt`, no archimedean construct, no
+numerical `q₀`. Pre-archimedean.
+
+### Where it had to live, and why that is a finding
+
+The ring-level bar algebra I cited two entries ago —
+`braids-and-knots/bar-involution.lean`, 321 lines, sorry-free, carrying
+`IsBarSymmetric`/`IsBarAntiSymmetric` and the closure lemmas — **is outside the
+Lake library glob** (`globs = ["QOU", "QOU.+"]`; that file is under
+`braids-and-knots/`, not `QOU/`) and **is imported by nothing**. The only
+reference to it anywhere is a docstring mention in `ThetaQcdFramingCp.lean`.
+
+So my "PRESENT" in the correction entry was true of the *source* and false of the
+*module*: the algebra is proved but unreachable from any library file. That is a
+third correction to my own inventory, and it is the one that changed what could
+be built.
+
+It also cites `bar-symmetric-three-layer-synthesis.lean` as the file it
+"intentionally duplicates during the transition, once both blocks land on main".
+**That file does not exist.** The transition its header describes cannot complete
+as written.
+
+**What is reachable, and is a better home anyway:**
+`QOU/StandardModel/ThetaQcdFramingCp.lean` declares an in-library
+`BarInvolution` + `IsCPEven`, with a docstring saying it is declared locally
+"so this file is verifiable stand-alone by `lean`-direct without depending on
+whether the content-block sibling is compiled". Someone hit this exact problem
+and solved it locally. It also already carries `bar_qpow`
+(`bar (qⁿ) = (qⁿ)⁻¹`), which is precisely the helper this proof needs.
+
+### Verification, and two process notes
+
+`lean`-direct against the real import cone (a genuine Lake build here — 3399
+traces against 3393 mathlib oleans, so not a restored no-trace cache and
+`lake build` was never at risk). Compiled with `-o` to produce an olean, then a
+separate importing file for `#print axioms`, because bare `lean` writes no olean.
+
+Two of my own errors, both caught before any claim: I wrote `linarith` into a
+proof over a generic `CommRing` and a nonsense `▸` term, and I read `EXIT=0`
+off `head` rather than off `lean` on the first run — the same wrong-exit-code
+trap recorded earlier in this bean. The first real run then failed on two
+Mathlib argument-order mismatches, fixed with `linear_combination` and an
+explicit `calc` rather than by guessing further lemma names.
