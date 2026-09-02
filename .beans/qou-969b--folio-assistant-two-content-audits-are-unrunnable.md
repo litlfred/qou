@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-02T21:49:25Z
-updated_at: 2026-09-02T21:50:01Z
+updated_at: 2026-09-02T22:07:53Z
 ---
 
 ## What
@@ -48,3 +48,22 @@ plumbing is one argument deep.
 NOT fixable in qou: the code is in the platform repo, reachable here only through the
 `folio-assistant/` symlink that `scripts/setup-folio-assistant.sh` creates. Recorded so the
 verdicts are known-missing rather than assumed-clean.
+
+
+## NARROWED 2026-09-02 — the criteria DO run; only the two standalone scripts do not
+
+My original framing said the verdicts of these two audits are unavailable. **That over-stated
+it.** The *criteria* they correspond to run fine under `qa-sweep` (which takes an explicit path
+and so never calls `requirePaper`), and both PASS on the two blocks in question:
+
+    proof-conditional-class-banner        pass   (qa-checkers-extended.ts)
+    proof-no-conj-propagation-violation   pass   (qa-checkers-extended.ts)
+
+So the §3b epistemic-status axis IS checked and green. What is genuinely unavailable is only the
+two **standalone, witness-emitting** scripts — `conjectural-propagation-audit.ts` and
+`conditional-class-banner-audit.ts` — which produce corpus-wide audit witnesses
+(`docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json` and its banner twin) rather
+than per-block sidecar entries. Those witnesses cannot be regenerated from a multi-paper folio.
+
+The bug and its one-argument fix are unchanged. Only the impact claim shrinks: it costs the
+corpus-wide witnesses, not the per-block verdicts.
