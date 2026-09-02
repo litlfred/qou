@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-02T21:27:41Z
-updated_at: 2026-09-02T21:28:21Z
+updated_at: 2026-09-02T22:01:04Z
 ---
 
 ## Measured 2026-09-02 — `computations/probes/logratio_exactly_extensive_probe.py` (4/4)
@@ -58,3 +58,53 @@ further from the data.
 **Extensive-and-short is a different problem from not-extensive.** What this
 closes is the shape question; the arc's remaining difficulty is entirely in the
 magnitude category now.
+
+
+## EXTENDED 2026-09-02 — the channel has NO many-body term at all
+
+`computations/probes/logratio_exactly_pairwise_additive_probe.py`, 4/4.
+
+Extended the exact-linearity test from the pure chains to **every mixed
+composition** of A=3 and A=4:
+
+    S_on/S_off = f_pp^(Z-1) * f_pn * f_nn^(N-1)     worst rel dev 1.78e-50
+
+across all 9 compositions. Taking logs, `L = sum over chain bonds of
+(-log f_bond)` — **exactly pairwise-additive, with identically ZERO many-body
+terms.** No three-body at A=3, no four-body at A=4. Not small; zero to fifty
+digits.
+
+### The consequence for the shortfall
+
+The channel is ~2.7x short (`B(4He) = 10.387` vs AME `28.296`). The natural
+place to look for missing binding is a many-body term. **In this channel there
+is none to find.** Whatever closes the gap must change the per-bond VALUES or
+the BOND COUNT — it cannot be an irreducible 3- or 4-body piece of L. That
+removes a candidate class; it does not supply the binding.
+
+### Tension with t7qv, and the candidate reconciliation
+
+`t7qv` measures three-body negative at all 8 A=3 orderings (`c1491ec174`) and
+four-body negative in 80/80 random bond orders (`2bbb6115c5`), by **Mobius
+inversion over nucleon SUBSETS**. Not in conflict with additivity over the
+CHAIN bond set: for chain 1-2-3, the subset {1,3} has a sub-braid where 1 and 3
+are adjacent and bonded, while the full chain has no such bond. Mobius
+inversion attributes that manufactured bond to a "three-body term".
+
+**FLAGGED AS A READING, NOT VERIFIED.** Their own commit names *"a labelling
+artifact of embedding the bond graph in a line"*, so the mechanism was
+identified there. What this adds is the measurement that over the chain bond
+set the term is exactly zero. Confirming it against their probe is separate
+work and was not done.
+
+### An f_pn mismatch, chased rather than rounded away
+
+    measured (blind arm) 0.50815788774864559388
+    canonical            0.50822978937673896258     rel 1.41e-4
+
+Not a defect: `atomic_tr_m_helium4_canonical.py:243` defines
+`f_pn = z_d - h_q*(1/2 - delta/4)`, the colour-WEIGHTED value; this probe uses
+the blind arm. Every mixed composition carries exactly one `averaged_weighted`
+crossing (#6379) and that is the only place the arms differ — #6379 measured
+the gap at ~1e-4. `f_pp` and `f_nn` are arm-independent: a pure chain carries
+no `averaged_weighted` crossing at all.
