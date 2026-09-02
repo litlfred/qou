@@ -7023,3 +7023,63 @@ off `head` rather than off `lean` on the first run — the same wrong-exit-code
 trap recorded earlier in this bean. The first real run then failed on two
 Mathlib argument-order mismatches, fixed with `linear_combination` and an
 explicit `calc` rather than by guessing further lemma names.
+
+## 2026-09-02, S1 — I re-derived a result the corpus already has. Credit + a small correction.
+
+Working the "what non-parity input could select ρ?" question, I computed the
+experimental error bar on `c_3` and was about to record it as an S1 finding.
+**The corpus already has it**, and the corpus-grep caught me one step before
+writing it up.
+
+[`mass-theory/rem-qstar-decay-sector-q0.md:43`](../content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md)
+states it exactly:
+
+> "The extractor amplifies the experimental Q_β uncertainty by `1/u³`, giving
+> `σ(c_3) = σ(Q_β)/(Q_N2 u³) ≈ ±1.262` — about 61 % of `|c_3|`. Against that
+> band, `c_3`'s proximity to `−Vol(4_1)` is 0.031σ at the proton pin and 0.008σ
+> at the muon. These are not close agreements in the evidential sense; they are
+> the absence of a measurement, since every candidate constant in
+> `[0.807, 3.331]` agrees at least as well."
+
+Same mechanism, same conclusion, and it goes further than I had (the admissible
+interval, and the `32×`/`130×` sharpening a decisive measurement would need).
+**Not my finding.** Recorded here because it is directly load-bearing for S1 and
+belongs in this bean's chain of reasoning, not because it is new.
+
+### What it means for S1, combined with the parity result
+
+Two independent closures now sit on the generator:
+
+- **Parity cannot select it** — `Fix(bar) = Q([2]_q)`, an infinite-dimensional
+  family, now Lean-proved for all `[n]_q` (this bean, above).
+- **The data cannot select it either** — `c_3 = −2.069 ± 1.38` is a 67 %
+  uncertainty, so `−2`, the Wenzl `−2.0596`, and `−(b²+1/2) = −1.2527` all sit
+  **inside 0.6σ** of the extracted value and of each other.
+
+So the "3.47 % gap" between `−2` and the extracted `c_3` that this corpus has
+flip-flopped over six times is **0.05σ**. It is not a near-match to be explained;
+it is a quantity with no measurement behind it.
+
+Only the superseded `+12.87` is excluded, at **10.8σ** — an independent
+confirmation of the `c_5`-slot direction settled in `qou-54g5`, from a completely
+different argument.
+
+### One correction to the block's number, in the direction that strengthens it
+
+The block's `±1.262` corresponds to the **neutron-mass-alone** uncertainty:
+
+    sigma source                          sigma(Q_beta)   sigma(c_3)   % of |c_3|
+    full quadrature (Q_NEUTRON_MEV_ERR)      6.66408e-7      1.37865      66.62 %
+    neutron mass alone (M_N_MEV_ERR)              6.0e-7      1.24126      59.98 %
+    proton alone                                  2.9e-7     0.599943      28.99 %
+    electron alone                               1.6e-10   0.000331003      0.016 %
+
+But `Q_β = m_n − m_p − m_e`, and `qou_substrate.constants` defines
+`Q_NEUTRON_MEV_ERR` as the quadrature sum of all three — the proton term alone
+contributes 29 %, which is not negligible. So the correct bar is **±1.379
+(66.6 %)**, and the block's is understated by ~9 %.
+
+That makes the block's own argument **stronger**, not weaker: the admissible
+interval widens, so even more candidates are indistinguishable. Not fixed here —
+it is a one-number edit in another chapter's block, and it belongs with whoever
+owns that block rather than riding on an S1 branch.
