@@ -13,6 +13,7 @@ updated_at: 2026-08-31T04:50:43Z
 updated_at: 2026-08-31T05:58:46Z
 updated_at: 2026-08-31T07:27:11Z
 updated_at: 2026-08-31T07:32:23Z
+updated_at: 2026-09-02T22:01:25Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1135,3 +1136,40 @@ erroring**, so the weight lemmas type-check over a meaningless type. Caught only
 because a `ring` failed downstream and the goal display showed `ℝ : Type u_1`.
 
 File now 12 declarations, sorry-free.
+
+
+### CAPSTONE — every evaluable channel gives `b₃` the wrong sign, the shipped one included (2026-09-02)
+
+Each earlier exclusion in this arc carried the same caveat: production ships
+something else, so none of it bound production. **This removes the caveat.**
+
+| channel | `b₃/b₂` | vs measured |
+|---|---|---|
+| **ch1 observe-early — SHIPPED** | **−1.3995** | −318.3 % |
+| ch3 log-ratio | −0.9679 | −251.0 % |
+| ch4 bar-norm log | −0.9681 | −251.0 % |
+| ch5 pairwise sum | −1.0205 | −259.2 % |
+| **measured** | **+0.6411239316** | |
+
+**And the two structural families fail SEPARATELY.** ch3/ch4/ch5 cluster near
+`−1` because on the chain they sum one term per bond and A=3 has twice A=2's bond
+count — the ratio-of-2 `TypeWeightedChainRatio` proves pins `b₃/b₂` to `−1`. ch1
+sits at `−1.3995` precisely because it is **not** additive (its `|tr_p|^Z|tr_n|^N`
+prefactor is exponential in A). So the joint negative cannot be blamed on one
+shared modelling choice.
+
+**The failure is a SIGN.** No magnitude, normalisation, anchor or convention
+reaches it. Independently corroborated by the `t7qv` arc, which measured the
+many-body term directly: negative in all eight A=3 flavour orderings, α-free
+ceiling short by `2.0975×`.
+
+**Scope (b)** on the four **evaluable** channels, invariant named: the sign of
+`b₃`. **(a)** on ch2/ch6/ch7, which the taxonomy classifies from source and
+neither it nor I re-evaluated — calling the arc closed over all seven would
+overstate it.
+
+**Precision, stated:** B/A comes from the taxonomy producer at ~8 significant
+figures, re-run in this container and reproducing the audit byte-for-byte. Ample
+for a sign test at 251–318 % margins; not a precision claim, and none is made.
+
+Probe 5/5, exact `Fraction` over the producer's decimal strings.

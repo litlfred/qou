@@ -1,0 +1,79 @@
+{
+  "computation": "all-channels-b3-sign",
+  "scriptFile": "probes/all_channels_b3_sign_probe.py",
+  "computedAt": "2026-09-02T22:00:41.549321+00:00",
+  "contentBlock": "qou-brng",
+  "description": "All four evaluable binding channels -- including ch1, the one binding_canonical ships -- give the Ursell three-body cumulant ratio b3/b2 a NEGATIVE value, against a measured +0.6411239316. The three bond-additive channels cluster near -1 for the reason TypeWeightedChainRatio proves; ch1 sits at -1.3995 because it is not additive, so the two structural families fail separately. Closes the qou-brng b3 arc: no channel the corpus can evaluate produces a positive b3, and a sign is not repairable by magnitude.",
+  "measured_b3_over_b2": "950815/1483044",
+  "channels": [
+    {
+      "channel": "ch1 observe-early (SHIPPED)",
+      "b2": "10885087/25000000",
+      "b3": "-30468429/50000000",
+      "b3_over_b2": "-30468429/21770174",
+      "rel_err_fraction": "-32942714404843/10349703995905"
+    },
+    {
+      "channel": "ch3 log-ratio",
+      "b2": "14165813/5000000",
+      "b3": "-27420789/10000000",
+      "b3_over_b2": "-27420789/28331626",
+      "rel_err_fraction": "-33802185788453/13469067487595"
+    },
+    {
+      "channel": "ch4 bar-norm log",
+      "b2": "7084387/2500000",
+      "b3": "-27432633/10000000",
+      "b3_over_b2": "-27432633/28337548",
+      "rel_err_fraction": "-16906891869118/6735941425405"
+    },
+    {
+      "channel": "ch5 pairwise sum",
+      "b2": "2912107/1250000",
+      "b3": "-23773983/10000000",
+      "b3_over_b2": "-23773983/23296856",
+      "rel_err_fraction": "-14352215745473/5537750034410"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "EVERY evaluable channel gives b3 the WRONG SIGN",
+      "passed": true,
+      "detail": "all four are negative against a measured +0.6411239316; margins 251-318%, so the producer's ~8 significant figures are ample for a sign test"
+    },
+    {
+      "name": "the SHIPPED channel is among them",
+      "passed": true,
+      "detail": "ch1 = -1.3995. This is the channel binding_canonical actually ships, and the one none of the earlier exclusions in this arc could reach"
+    },
+    {
+      "name": "the three bond-additive channels cluster near -1",
+      "passed": true,
+      "detail": "ch3, ch4, ch5 = [-0.9679, -0.9681, -1.0205]. On the chain they sum one term per bond and A=3 has twice A=2's bond count -- the same ratio-of-2 that TypeWeightedChainRatio proves pins b3/b2 to -1"
+    },
+    {
+      "name": "ch1 differs BECAUSE it is not additive -- two families, two failures",
+      "passed": true,
+      "detail": "ch1 = -1.3995, away from the additive cluster. Its trace prefactor |tr_p|^Z|tr_n|^N is exponential in A, so it fails SEPARATELY rather than as one shared artefact -- which makes the joint negative harder to blame on a single modelling choice"
+    },
+    {
+      "name": "the failure is a SIGN, so no magnitude repair reaches it",
+      "passed": true,
+      "detail": "no normalisation, anchor, convention or overall scale changes the sign of b3/b2; a positive measured value against four negative models is qualitative"
+    }
+  ],
+  "allPassed": true,
+  "scope": "(b) on the four EVALUABLE channels of the seven-channel taxonomy, invariant named: the sign of b3. (a) on the three not evaluated there (ch2 needs per-partition characters and is self-marked refuted; ch6 needs Vol(K_bind), which the corpus has only for A <= 3 and which is 0 for the deuteron; ch7 is a deprecation candidate carrying acknowledged-anchor constants). Nothing here says the framework cannot have a positive b3 -- it says none of the four channels that can currently be computed produces one.",
+  "caveats": [
+    "PRECISION. The B/A inputs are the taxonomy producer's printed output at ~8 significant figures. Ample for a SIGN test with 251-318% margins; NOT enough for a precision claim, and none is made. A high-dps re-derivation would change no digit that matters here.",
+    "This uses the CHAIN bond set, which StrandLayoutForcesChain proves is forced by the strand layout rather than chosen -- so the shared negative is not an artefact of a bond-set choice.",
+    "b4 is not tested. The A=4 row is carried in the table but the quad cumulant needs the A=4 carrier's six pairs, which is a different object and untouched by this arc.",
+    "ch2/ch6/ch7 are classified from source in the taxonomy, not re-evaluated there or here. Calling the arc closed over ALL seven would overstate what was measured."
+  ],
+  "provenance": "computations/binding_channel_taxonomy_probe.py, re-run in this container 2026-09-02, reproducing docs/audits/2026-08-31-binding-channel-taxonomy.md",
+  "related": [
+    "probes/type-weighted-chain-ratio.witness.json",
+    "probes/brunnian-triple-exhaustion.witness.json"
+  ],
+  "source": "AME2020; binding_channel_taxonomy_probe B/A output"
+}
