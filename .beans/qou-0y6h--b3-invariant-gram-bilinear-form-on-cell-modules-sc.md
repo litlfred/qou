@@ -1,11 +1,11 @@
 ---
 # qou-0y6h
 title: 'B3: invariant Gram bilinear form on cell modules; Schur element = hook/content product (reuse WenzlSchurElement.schurElement); det(Gram)=∏ Schur (Geck-Pfeiffer)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-09-02T21:26:27Z
+updated_at: 2026-09-02T21:39:56Z
 ---
 
 ## 2026-08-29 — this is closer than the standing plan implies (from qou-0ubf)
@@ -232,3 +232,45 @@ UNCONDITIONAL and independent of all of the above, already on main:
 isSemisimpleRing_rank_one (+ the substrate corollary over R, q > 0), twGram and
 isSemisimpleRing_of_twGram_det_ne_zero at every rank, the full sigma_mul_Tw
 table, trace_lmul_sigma, and IsHeckeOfFullRank for IwahoriHecke at every rank.
+
+
+## 2026-09-02 — CLOSED at what is proved; the remainder is qou-kwoa
+
+Owner instruction, this session: close this bean at what is proved and split
+Geck-Pfeiffer 7.2.6 into its own Mathlib-scale bean, because this title reads as
+though a lemma is missing when the remainder is a book-length development.
+
+### Delivered, all sorry-free and on main (#6053, #6134, #6165)
+
+* basisTwOfField — the T_w basis, a real Module.Basis over a field, WITHOUT
+  Matsumoto (still a Mathlib TODO); finrank_eq_factorial : dim = (n+1)!.
+* twGram + isSemisimpleRing_of_twGram_det_ne_zero — det != 0 => H_n(q)
+  semisimple, AT EVERY RANK. This is the statement the 2026-08-29 gap inventory
+  §3b recorded as 'cannot even be stated without the basis'.
+* TwMul.sigma_mul_Tw — the full generator multiplication table, both branches.
+* TwTrace.trace_lmul_sigma / two_mul_trace_lmul_sigma — the generator trace is
+  counted by descents; 2 tr = (q-1)(n+1)!.
+* twGram_det_rank_one = (1+q)^2 and isSemisimpleRing_rank_one — the first
+  end-to-end discharge, on IwahoriHecke ITSELF rather than a power-basis model,
+  unconditional (axioms clean on the discharge and both keystones it composes
+  with).
+* isHeckeOfFullRank_iwahoriHecke — the Iwahori basis theorem was a GRANTED
+  ASSUMPTION in FullRank.lean's own docstring and no longer is.
+* The determinant VALUE at n = 1,2,3 with the constant identified as
+  prod_lambda d_lambda^(d_lambda^2); n=3 as a polynomial identity.
+* The route BOUNDED: det != 0 => semisimple is one-directional, converse false.
+* The blocker CHARACTERISED: not combinatorial, refuted with an S_5 witness;
+  and then IDENTIFIED as a character sum, verified against the corpus's own
+  seminormal engine with the convention bridge measured
+  (tw_trace_equals_character_sum_probe.py).
+
+### Not delivered, and now carried by qou-kwoa
+
+det(twGram) != 0 at rank >= 2 in Lean. The mathematics is not the obstacle —
+qou-avt2 already supplies exact symbolic chi_lambda at general n, and the
+identity tr(L_{T_u}) = sum_lambda d_lambda chi_lambda(T_u) is measured. What
+remains is formalising that character theory, which is Mathlib-scale.
+
+SchurElementCriterion still has NO instance; both obligations the gap inventory
+§3b separates remain open. Nothing here bears on the P!=NP wall — semisimplicity
+is a magnitude-axis fact.
