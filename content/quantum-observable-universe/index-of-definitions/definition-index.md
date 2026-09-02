@@ -332,6 +332,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
+ | [prop:tower-geometric-lower-bound](#prop:tower-geometric-lower-bound) | Brane-tower growth above the containment threshold (GAP-A-3) | Ch 12 | `qou:QOU.Mass.WStd.wStd_geometric_from_three` |
 | [prop:silver-ratio-beta-decay-null](#prop:silver-ratio-beta-decay-null) | **Silver-ratio trace degeneracy**: at $q = 1 \pm \sqrt{2}$, the Hecke generator $\sigma$ has eigenvalues = $1 \pm \sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable | Ch 10 | `qou:QOU.ParticleInteractions.beta_decay_null_iff_h_zero_or_two` |
 | [prop:force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) | $(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots | Ch 14 | `qou:QOU.Archimedean.force_carrier_bring_uniqueness` |
 | [prop:em-coupling-fixed-point](#prop:em-coupling-fixed-point) | $\alpha_{EM}$ as the root of the self-consistent fixed-point cubic $-h^2H\alpha^3 + H\alpha^2 + T\alpha - 1 = 0$ (conditional on the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization) | Ch 14 | `qou:QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root` |
@@ -1184,7 +1185,6 @@
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 12 | `qou:QOU.BraidKnot.RhoPrefactorStructural` |
 | [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Substrate $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 10 | `qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification` |
 | [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 25 | `qou:QOU.AppendixSurreals.LocalInfinitesimalField` |
-| [conj:tower-geometric-lower-bound](#conj:tower-geometric-lower-bound) | Super-exponential brane-tower growth (GAP-A-3) | Ch 12 | `qou:QOU.Mass.LevelSelection.TowerGeometricLowerBound` |
 | [conj:surreal-limit-transfer](#conj:surreal-limit-transfer) | Surreal limit transfer: limits as standard-part equalities via an $\omega$-evaluation | Ch 26 | `qou:QOU.AppendixSurreals.SurrealLimitTransfer` |
 | [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 25 | `qou:QOU.AppendixSurreals.QCollatz` |
