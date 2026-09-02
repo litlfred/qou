@@ -1,0 +1,150 @@
+{
+ "probe": "m1_discordance_split",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "pairs": [
+  {
+   "n": 8,
+   "q": "0.0236593",
+   "mean_disc": "7.1501",
+   "mean_conc": "20.3848",
+   "mean_ratio": "0.350757",
+   "neg_over_pos": "0.00849977",
+   "factorised": "0.00849977",
+   "max_disc_over_n25": "0.088388",
+   "max_all_over_n25": "9.8995"
+  },
+  {
+   "n": 9,
+   "q": "0.0297266",
+   "mean_disc": "7.50235",
+   "mean_conc": "28.1372",
+   "mean_ratio": "0.266634",
+   "neg_over_pos": "0.00816898",
+   "factorised": "0.00816898",
+   "max_disc_over_n25": "0.069959",
+   "max_all_over_n25": "14.309"
+  },
+  {
+   "n": 10,
+   "q": "0.0504576",
+   "mean_disc": "6.03738",
+   "mean_conc": "38.1898",
+   "mean_ratio": "0.158089",
+   "neg_over_pos": "0.00840066",
+   "factorised": "0.00840066",
+   "max_disc_over_n25": "0.15179",
+   "max_all_over_n25": "20.16"
+  },
+  {
+   "n": 11,
+   "q": "0.0563737",
+   "mean_disc": "8.61475",
+   "mean_conc": "49.3498",
+   "mean_ratio": "0.174565",
+   "neg_over_pos": "0.0104288",
+   "factorised": "0.0104288",
+   "max_disc_over_n25": "0.11213",
+   "max_all_over_n25": "27.423"
+  },
+  {
+   "n": 12,
+   "q": "0.041111",
+   "mean_disc": "12.1295",
+   "mean_conc": "60.4502",
+   "mean_ratio": "0.200653",
+   "neg_over_pos": "0.00860271",
+   "factorised": "0.00860271",
+   "max_disc_over_n25": "0.21049",
+   "max_all_over_n25": "35.956"
+  },
+  {
+   "n": 13,
+   "q": "0.0435782",
+   "mean_disc": "14.2995",
+   "mean_conc": "74.2688",
+   "mean_ratio": "0.192537",
+   "neg_over_pos": "0.00877273",
+   "factorised": "0.00877273",
+   "max_disc_over_n25": "0.16247",
+   "max_all_over_n25": "46.201"
+  },
+  {
+   "n": 14,
+   "q": "0.0510259",
+   "mean_disc": "12.1866",
+   "mean_conc": "90.3927",
+   "mean_ratio": "0.134819",
+   "neg_over_pos": "0.00724916",
+   "factorised": "0.00724916",
+   "max_disc_over_n25": "0.26181",
+   "max_all_over_n25": "57.434"
+  },
+  {
+   "n": 15,
+   "q": "0.0631138",
+   "mean_disc": "12.1435",
+   "mean_conc": "109.402",
+   "mean_ratio": "0.110999",
+   "neg_over_pos": "0.00747748",
+   "factorised": "0.00747748",
+   "max_disc_over_n25": "0.22377",
+   "max_all_over_n25": "70.506"
+  },
+  {
+   "n": 16,
+   "q": "0.0606892",
+   "mean_disc": "14.1669",
+   "mean_conc": "128.674",
+   "mean_ratio": "0.110099",
+   "neg_over_pos": "0.00711351",
+   "factorised": "0.00711351",
+   "max_disc_over_n25": "0.33691",
+   "max_all_over_n25": "85.62"
+  },
+  {
+   "n": 17,
+   "q": "0.0605907",
+   "mean_disc": "16.6299",
+   "mean_conc": "150.011",
+   "mean_ratio": "0.110858",
+   "neg_over_pos": "0.00715019",
+   "factorised": "0.00715019",
+   "max_disc_over_n25": "0.26855",
+   "max_all_over_n25": "102.77"
+  },
+  {
+   "n": 18,
+   "q": "0.0600657",
+   "mean_disc": "19.4585",
+   "mean_conc": "173.103",
+   "mean_ratio": "0.11241",
+   "neg_over_pos": "0.00718347",
+   "factorised": "0.00718347",
+   "max_disc_over_n25": "0.41903",
+   "max_all_over_n25": "121.48"
+  }
+ ],
+ "checks": [
+  {
+   "name": "CONTROL: discordant/concordant = [q/(1-q)] * [mean ratio]",
+   "pass": true,
+   "detail": "The two sides are accumulated independently -- one as a ratio of product-weighted sums, the other as (probability mass ratio) x (mean |dSh.dSc2| ratio) -- so agreement is a real check on the split. Worst relative disagreement over n = 8..18: 0.0."
+  },
+  {
+   "name": "HYPOTHESIS FALSIFIED: discordant pairs are NOT bounded near n^2",
+   "pass": true,
+   "detail": "I briefed that discordant pairs would be CLOSE in (sum h, sum c^2) -- |dSh.dSc2| one power of n below the typical n^(5/2) -- which would give discordant/concordant a free n^(-1/2) decay. It does not hold. max|dSh.dSc2| over discordant pairs, over n^(5/2): ['0.088388', '0.069959', '0.15179', '0.11213', '0.21049', '0.16247', '0.26181', '0.22377', '0.33691', '0.26855', '0.41903'] -- GROWING from 0.0884 to 0.419, so the max itself grows like roughly n^4.4, well ABOVE the typical n^(5/2). (For scale, the max over ALL pairs runs ['9.8995'] .. ['121.48'].) No n^2 bound, no free decay."
+  },
+  {
+   "name": "WHAT IS TRUE: both factors are stable, so the margin is a CONSTANT",
+   "pass": true,
+   "detail": "Over n = 15..18: q (probability mass of discordant pairs) = ['0.0631138', '0.0606892', '0.0605907', '0.0600657'], spread 0.00305; mean-|d| ratio = ['0.110999', '0.110099', '0.110858', '0.11241'], spread 0.00231 -- discordant pairs each contribute about 9x less than a typical pair. Their product is discordant/concordant = ['0.00747748', '0.00711351', '0.00715019', '0.00718347']. So the ~138x margin is a CONSTANT: it neither decays nor erodes with n, which is what a uniform-in-n bound needs, and equally a warning that large n will not make this easier. The factorisation splits the target into two independently boundable pieces. CAVEAT: 'stable' here is four points of exact enumeration, not an asymptotic."
+  }
+ ],
+ "passed": 3,
+ "total": 3,
+ "ms": 2014
+}

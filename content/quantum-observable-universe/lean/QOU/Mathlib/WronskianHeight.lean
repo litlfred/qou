@@ -728,9 +728,14 @@ wants that same `S` below `2^{Σd}`.  Both are met by `S := 2^{Σd}` itself, and
 elementary: a monomial in the support has every exponent at most the corresponding `degreeOf`,
 so the support injects into `∏ (d h + 1)` boxes, and `k + 1 ≤ 2^k`. -/
 
-/-- **A polynomial's support is bounded by the box its degrees cut out.** -/
+/-- **A polynomial's support is bounded by the box its degrees cut out.**
+
+Stated over an arbitrary coefficient semiring: nothing in the proof is arithmetic, it is a
+statement about which multi-indices can occur.  It was written against `ℤ` for §12's budget and
+generalised when Roth's theorem's step 2 needed the same count over `ℝ`. -/
 theorem card_support_le_prod_succ [Fintype σ] [DecidableEq σ]
-    {P : MvPolynomial σ ℤ} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
+    {R : Type*} [CommSemiring R]
+    {P : MvPolynomial σ R} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
     P.support.card ≤ ∏ h, (d h + 1) := by
   classical
   have hinj : Function.Injective (fun n : σ →₀ ℕ => (fun h => n h : σ → ℕ)) :=
@@ -761,7 +766,8 @@ theorem prod_succ_le_two_pow_sum [Fintype σ] (d : σ → ℕ) :
 /-- **`S := 2^{Σd}` serves both lemmas** — `exists_divided_wronskian`'s `hS` and
 `height_budget`'s `hS`, with `hS1 : 1 ≤ S` free. -/
 theorem card_support_le_two_pow_sum [Fintype σ] [DecidableEq σ]
-    {P : MvPolynomial σ ℤ} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
+    {R : Type*} [CommSemiring R]
+    {P : MvPolynomial σ R} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
     ((P.support.card : ℕ) : ℤ) ≤ 2 ^ (∑ h, d h) := by
   exact_mod_cast le_trans (card_support_le_prod_succ hd) (prod_succ_le_two_pow_sum d)
 

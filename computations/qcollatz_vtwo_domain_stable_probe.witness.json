@@ -1,0 +1,78 @@
+{
+  "schema": "qou-probe/v0",
+  "description": "Does v_[2] descend on the q-Collatz domain-stable cone D_inf? Backward-orbit construction of D_inf elements from the attractor cycle, exact Z[q^{+-1}] arithmetic. Bean qou-4atn. Exploratory research probe (NOT canonical production).",
+  "map": {
+    "even": "C(P)=P/[2]_q when P(-1)=0",
+    "odd": "C(P)=([3]_q P+1)/[2]_q when P(-1)=-1",
+    "attractor_cycle": [
+      "q^-1",
+      "1+q^-1"
+    ],
+    "even_preimage": "[2]_q * P (always exists)",
+    "odd_preimage": "([2]_q P - 1)/[3]_q (when exact)"
+  },
+  "question": "Is v_[2](C(P)) < v_[2](P) for every P in D_inf off the attractor? A single violation refutes v_[2] as a descent measure on D_inf.",
+  "result": {
+    "depth": 22,
+    "nodes": 52,
+    "odd_branch_nodes": 3,
+    "forward_verified_in_Dinf": 52,
+    "forward_verification_failures": [],
+    "max_v_two_seen": 23,
+    "transition_histogram": {
+      "v0->v7/O": 1,
+      "v0->v13/O": 1,
+      "v0->v19/O": 1,
+      "v1->v0/E": 3,
+      "v2->v1/E": 4,
+      "v3->v2/E": 4,
+      "v4->v3/E": 3,
+      "v5->v4/E": 3,
+      "v6->v5/E": 3,
+      "v7->v6/E": 3,
+      "v8->v7/E": 3,
+      "v9->v8/E": 3,
+      "v10->v9/E": 2,
+      "v11->v10/E": 2,
+      "v12->v11/E": 2,
+      "v13->v12/E": 2,
+      "v14->v13/E": 2,
+      "v15->v14/E": 2,
+      "v16->v15/E": 1,
+      "v17->v16/E": 1,
+      "v18->v17/E": 1,
+      "v19->v18/E": 1,
+      "v20->v19/E": 1,
+      "v21->v20/E": 1,
+      "v22->v21/E": 1,
+      "v23->v22/E": 1
+    },
+    "descent_violations_count": 3,
+    "descent_violations": [
+      {
+        "P": "+1*q^5 +7*q^4 +20*q^3 +29*q^2 +21*q^1 +6*q^0 +1*q^-1",
+        "v_P": 0,
+        "C_P": "+1*q^6 +7*q^5 +21*q^4 +35*q^3 +35*q^2 +21*q^1 +7*q^0 +1*q^-1",
+        "v_CP": 7,
+        "branch": "O",
+        "steps_to_cycle": 7
+      },
+      {
+        "P": "+1*q^11 +13*q^10 +77*q^9 +274*q^8 +650*q^7 +1078*q^6 +1275*q^5 +1079*q^4 +649*q^3 +274*q^2 +78*q^1 +12*q^0 +1*q^-1",
+        "v_P": 0,
+        "C_P": "+1*q^12 +13*q^11 +78*q^10 +286*q^9 +715*q^8 +1287*q^7 +1716*q^6 +1716*q^5 +1287*q^4 +715*q^3 +286*q^2 +78*q^1 +13*q^0 +1*q^-1",
+        "v_CP": 13,
+        "branch": "O",
+        "steps_to_cycle": 13
+      },
+      {
+        "P": "+1*q^17 +19*q^16 +170*q^15 +951*q^14 +3724*q^13 +10829*q^12 +24207*q^11 +42484*q^10 +59279*q^9 +66197*q^8 +59280*q^7 +42483*q^6 +24207*q^5 +10830*q^4 +3723*q^3 +951*q^2 +171*q^1 +18*q^0 +1*q^-1",
+        "v_P": 0,
+        "C_P": "+1*q^18 +19*q^17 +171*q^16 +969*q^15 +3876*q^14 +11628*q^13 +27132*q^12 +50388*q^11 +75582*q^10 +92378*q^9 +92378*q^8 +75582*q^7 +50388*q^6 +27132*q^5 +11628*q^4 +3876*q^3 +969*q^2 +171*q^1 +19*q^0 +1*q^-1",
+        "v_CP": 19,
+        "branch": "O",
+        "steps_to_cycle": 19
+      }
+    ]
+  }
+}

@@ -28,6 +28,12 @@ Build-verified 2026-06-07: `lake build QOU.BraidKnot.GSReductionOrder`
 exit 0 (2244/2244 targets), sorry-free (the single conjectural input is
 the `order_match` class field per AGENTS.md §3b).
 
+That last claim only became true on 2026-08-24. Until then `GSOrderMatch.canonical`
+was an unconditional `instance` discharging `order_match` by `rfl` on `0 = 0`, so
+typeclass resolution supplied the open input for every `R` and `q` and the file was
+sorry-free by vacuity rather than by conditionality. It is now a `def`; see its
+docstring.
+
 -- Ref: [manuscript] particle-interactions/crystal-graph-realization
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
 -- Ref: [kashiwara1991] Kashiwara, "On crystal bases of the q-analogue of universal enveloping algebras," Duke Math. J. 63 (1991)
@@ -119,12 +125,39 @@ theorem confinement_eq_crystalDeg
     M.confinementLevel T = M.crystalDeg T :=
   (M.order_match T).symm
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `NormalForm := PUnit` and both `confinementLevel _ := 0` and
+    `crystalDeg _ := 0`, so the order-match (★) is discharged by `rfl` on
+    `0 = 0`. Two filtrations agree because both are identically zero on a
+    one-element set of normal forms, not because the GS reduction order tracks
+    the KLR grading. A `sorry` would at least be visible to `#print axioms`;
+    this was not.
+
+    The class docstring calls `order_match` "the `sorry`-equivalent the whole
+    `crystal-graph-realization` chain reduces to". That is the right reading of
+    the *class*; this model was what stopped it from being true of the corpus,
+    because as an unconditional `instance` it discharged that field for every
+    `R` and `q` and made `confinement_eq_crystalDeg` an unconditional theorem
+    about the zero filtration.
+
+    Same shape as `ConfinementGradingCorrespondence.canonical`, which states
+    the same correspondence over `[CrystalGraphRealization R q]`, and demoted
+    the same way (bean `qou-fngs`). Nothing consumed it: the class has no users
+    outside this file.
+
+    **Still open:** (★) itself — that `crystalDeg T = confinementLevel T` on the
+    `n!` genuine GS normal forms, on the nose rather than up to a re-indexing of
+    strata. -/
+def canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   NormalForm := PUnit
   confinementLevel _ := 0
   crystalDeg _ := 0
-  -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the KLR grading, sorry = the conjecture)
+  -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the
+  --      KLR grading; discharged here by both degrees being `0`, not by a `sorry`
+  --      and not by the conjecture)
   order_match _ := rfl
 
 end GSOrderMatch

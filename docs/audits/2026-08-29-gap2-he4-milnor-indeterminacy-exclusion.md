@@ -1,4 +1,40 @@
-# GAP-2: the ⁴He magic surplus is NOT a Milnor μ̄ term — a structural (Milnor-indeterminacy) exclusion
+# GAP-2: the ⁴He magic surplus and the Milnor μ̄ term — CONDITIONAL, re-scoped (b) → (a) 2026-08-30
+
+> **🛑 RE-SCOPED 2026-08-30 (b) → (a), by its own author. The premise is
+> contradicted by the corpus one file over.**
+>
+> This audit claims a scope-(b) structural exclusion on the strength of *"a
+> cluster in which every bonded pair is Hopf-linked (`lk = 1`) — which is
+> exactly the max-contact nuclear contact graph"*. **The corpus does not
+> establish that, and contradicts it at the triton.**
+> [`binding_mn_milnor_linking.py:188`](../../computations/binding_mn_milnor_linking.py)
+> models the triton as `BORROMEAN`, whose pairwise linking numbers are
+> `[0, 0, 0]` (recomputed, not quoted), while
+> [`gap2_borromean_triple_count.py`](../../computations/gap2_borromean_triple_count.py)
+> gives the triton `M₂ = 3` — all three pairs **bonded**. So three bonded pairs
+> are modelled with `lk = 0`.
+>
+> Neither branch of the resulting dichotomy leaves the exclusion standing:
+>
+> - **the triton model is right** ⇒ bonded pairs may have `lk = 0`, so ⁴He's
+>   `K₄` may too, `μ̄` is determinate there, and `M₃`/`M₄` need **not** vanish;
+> - **`bonded ⇒ lk = 1` is right** ⇒ the triton triple is indeterminate too,
+>   `M₃(T) = 0`, and `e₃ = (B(T) − 3e₂)/M₃(T)` is a division by zero with a
+>   **nonzero** numerator (1.8080976 MeV) — the corpus's own 3-body calibration
+>   does not exist.
+>
+> **What survives is the conditional**, and it is untouched: *if* every bonded
+> pair on a cluster has `lk = 1`, *then* every higher `μ̄` on it is
+> content-free. Milnor's indeterminacy theorem is a theorem. What fails is my
+> assertion of its **hypothesis** — the `conditional-proved ≠
+> premise-established` failure mode, committed while citing a real invariant
+> whose applicability I had not checked.
+>
+> The load-bearing open question this promotes: **what fixes the linking number
+> of a bonded pair?** Until that is derived rather than assigned, every `μ̄`
+> count in the tower — the overshoot and the vanishing alike — is conditional
+> on an unforced choice. Demonstration:
+> [`bonded_pair_linking_inconsistency_probe.py`](../../computations/probes/bonded_pair_linking_inconsistency_probe.py).
 
 **Date:** 2026-08-29 · **Bean:** `qou-klgu` (GAP-2 open step, under `qou-ooqh` / `qou-vibo`) ·
 **Compute:** [`computations/gap2_he4_borromean_mu_bar.py`](../../computations/gap2_he4_borromean_mu_bar.py)

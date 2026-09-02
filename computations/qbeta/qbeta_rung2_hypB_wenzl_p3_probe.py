@@ -154,15 +154,61 @@ def main() -> int:
         "hypB_pred": mp.nstr(hypB_q0, 25),
     })
 
+    # Was `computed=1, expected=1` named `hypB_decisively_resolved` (bean
+    # `qou-26f2`): a literal on both sides, so it read PASS whichever way the
+    # comparison went — and equally if `diff` had never been formed. Every
+    # quantity below was already computed here and none of it was compared.
+
+    # (1) The identity the Hyp-B prediction is built on. The module writes
+    # `[4]_q / [2]_q = q² + q⁻² (standard)` in a comment and in the witness
+    # data and never checks it; were it false, the "prediction" would not be
+    # Wenzl's tr_M(p_3)/δ_q at all.
+    wenzl_identity_residual = sp.simplify(hypB_pred - (q ** 2 + q ** -2))
     builder.add_assertion(
-        "hypB_decisively_resolved",
-        computed=1,
-        expected=1,
-        tolerance=0,
-        source=("Symbolic compare rung-2 form (hbar_q^3/[2]_q) "
-                "against Hyp-B literal prediction [4]_q/[2]_q. "
-                "Classical-limit cross-check provides independent "
-                "confirmation. Reports CONFIRMED or REFUTED."),
+        "hypB_prediction_is_q_squared_plus_q_minus_squared",
+        computed=str(wenzl_identity_residual),
+        expected="0",
+        source="sympy.simplify([4]_q/[2]_q − (q² + q⁻²)) with "
+               "[4]_q = q³+q+q⁻¹+q⁻³ and [2]_q = q+q⁻¹; the Wenzl-projector "
+               "chain tr_M(p_3) = [4]_q that the whole hypothesis rests on",
+    )
+
+    # (2) The classical limit, which the prose calls the independent
+    # confirmation and which nothing recorded. rung 2 is cubic in (q−1) so it
+    # vanishes; [4]_1/[2]_1 = 4/2 = 2 does not. Both targets are known
+    # independently of this computation.
+    classical_gap = sp.simplify(sp.Abs(rung2_at_q1) + sp.Abs(hypB_at_q1 - 2))
+    builder.add_assertion(
+        "classical_limits_match_known_values",
+        computed=str(classical_gap),
+        expected="0",
+        source=f"|rung2(q=1) − 0| + |HypB(q=1) − 2| with measured "
+               f"rung2(q=1) = {rung2_at_q1}, HypB(q=1) = {hypB_at_q1}. The "
+               "two limits differ, which is what makes the literal reading "
+               "incompatible — a vanishing rung set equal to a non-vanishing "
+               "one",
+    )
+
+    # (3) The verdict itself, now read off `diff` instead of asserted.
+    builder.add_assertion(
+        "hypB_literal_reading_confirmed",
+        computed=str(bool(hypB_confirmed)),
+        expected="False",
+        source=f"rung2 − HypB_pred = {diff}, not identically zero, so Hyp-B "
+               "in its literal reading is REFUTED",
+    )
+
+    # (4) …corroborated numerically at the pinned q_0, where the two forms
+    # are three orders apart rather than marginally different.
+    numeric_gap = abs(actual_q0 - hypB_q0)
+    builder.add_assertion(
+        "hypB_numeric_separation_at_q0",
+        computed=mp.nstr(numeric_gap, 12),
+        expected="2.04322250174",
+        tolerance="1e-8",
+        source=f"|rung2(q_0) − HypB(q_0)| = |{mp.nstr(actual_q0, 12)} − "
+               f"{mp.nstr(hypB_q0, 12)}|; the refutation is not a near-miss "
+               "— the forms differ by a factor of ~4200 at the substrate",
     )
 
     builder.save()

@@ -66,6 +66,32 @@ export default conjecture({
       see: "computations/qbeta/qbeta-c3-crossanchor-swing-provenance.witness.json",
     },
     {
+      kind: "note",
+      date: "2026-08-31",
+      body:
+        "**The 2026-08-16 note above is itself now on a superseded anchor, and every " +
+        "percentage in this block is anchor-dependent.** `fca08de7d2` (2026-08-22, owner " +
+        "ruling) moved the muon pin to CODATA 2022. There is no single muon `c_3`: the " +
+        "extractor returns `−2.02018813` at the frozen pin, `−2.02020024` at CODATA-2018 " +
+        "and `−2.01986031` at CODATA-2022 — a *fourth*-significant-figure spread, because " +
+        "the extraction divides by `u³ ≈ 6.2e-7` and so amplifies a relative move in `q` by " +
+        "≈2.1e6. Restated at the live pin: cross-anchor swing **2.3912%** proton-normalised " +
+        "(**2.4741%** normalised by −2), muon gap **0.9930%**, proton gap 3.4671% (unchanged " +
+        "— `m_p/m_e` moved 2e-12 relative between editions against the muon ratio's 1.5e-9, " +
+        "which is why only the muon arm ever broke). " +
+        "**And the honest error bar, which nothing here had:** propagated through the CAL " +
+        "inputs at their CODATA-2022 published uncertainties, `c_3(muon) = −2.0199 ± 1.26`, " +
+        "dominated by `Q_β` alone (0.78 ppm × 1/u³). Nine significant figures are quoted for " +
+        "a quantity the calibration inputs support to **0.2** of one. What IS experimentally " +
+        "resolved is the cross-anchor *swing*: `Q_β` and `m_e` are common mode and cancel in " +
+        "the difference, leaving −0.0494823 ± 0.0052, **9.5σ** — the same 9.5σ as the μ–p " +
+        "tension, because it is the same statement. **The NEAR-MATCH verdict is unchanged and " +
+        "now rests on the quantity that carries the significance**; the absolute `c_3` " +
+        "digits do not. Scope-(a); no tier moves, no `c_k` wired.",
+      see:
+        "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+    },
+    {
       kind: "caveat",
       date: "2026-05-31",
       body:

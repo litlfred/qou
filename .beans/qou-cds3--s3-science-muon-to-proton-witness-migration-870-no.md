@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T12:36:26Z
+updated_at: 2026-08-30T12:28:02Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -734,3 +734,133 @@ argument for the check being mechanical rather than careful.
 Removed; `ideal_muon` is 20.
 
 **Both layers now report 0 contradictions, 0 unresolved, 0 dead declarations.**
+
+## 2026-08-30 — the "inert manifest entry" detector: NEGATIVE RESULT, 3 shapes tried
+
+This bean names the class and says "Not filed as its own bean yet". Attempted
+it. **The general form is not decidable statically**, and the reason is worth
+more than the attempt.
+
+### Root cause — TWO steering mechanisms on TWO DIFFERENT stems
+
+    q_parameter.py:107        _stem = Path(sys.argv[0]).stem     ENTRY POINT
+    qou_substrate/witness.py  stem  = Path(_script_path).stem    CALLER FRAME
+                              (_script_path defaults to inspect.stack()[1])
+
+**The bean's framing describes only the second.** A producer run as
+`python3 foo.py` is steered correctly by `q_parameter` whatever its
+WitnessBuilder does, because `sys.argv[0]` IS the producer. So "constructs no
+WitnessBuilder" does NOT imply "the manifest entry is inert" — which is what
+the note above invites a reader to test.
+
+### Three shapes measured, all over-flag — DO NOT REBUILD THESE
+
+1. **"listed but never constructs a WitnessBuilder"** -> **176**.
+   `torus_knot_markov_trace_closed_form` builds a plain dict and writes it with
+   `json.dumps`, never touching WitnessBuilder, and is steered anyway via
+   `q_parameter`'s `sys.argv[0]` lookup at import.
+
+2. **"a scriptFile on many witnesses = a helper stamping foreign witnesses"**
+   -> 37 shared basenames, two largest both legitimate.
+   `canonical_isotope_witness.py` (120) and `_habiro_coefficient_extract.py`
+   (26) are BOTH entry points, BOTH manifest-listed, each emitting its own
+   named family (`habiro-coefficients-*`). One producer / many witnesses is
+   the normal case here. **A leading underscore is not evidence.**
+
+3. **"scriptFile names a module with no `__main__`"** -> **90**. Those are
+   producers running at top level without a guard, each naming its own witness
+   (`meson-mass-from-hecke.witness.json` <- `meson_mass_from_hecke.py`).
+
+I reported 176 to myself before checking it. Recording the numbers that were
+WRONG as well as the one that survived, because the failure mode is the
+detector-blindness pattern this corpus keeps hitting from the other side: here
+the detector was too BROAD, not too narrow.
+
+### The residual real cases exist and need a different method
+
+`habiro_interpolation_wlambda` (recorded above) stamped `muon` through TWO full
+re-runs while the manifest said `ambiguous`. That is genuine. It was found by
+**running the producer and watching it ignore the manifest** — not by any
+static shape. No shape tried here separates it from the 176/37/90.
+
+### What DOES survive — 2 entries that cannot bind to anything
+
+    alpha_high_precision  [ideal_muon]       only computations/_deprecated/
+    binding_k_enumerator  [physical_proton]  only computations/_deprecated/
+
+Both still have a committed witness carrying their name. The manifest asserts
+an anchor class for two RETIRED producers. Decidable without running anything:
+either the live tree has the file or it does not, so this class has no
+false-positive mechanism.
+
+**Reported, not fixed.** Removing an entry changes what `resolve_q0_anchor`
+returns for that stem (unlisted => the `proton` default), and whether those two
+witnesses should be retired alongside their producers is an owner call, not a
+sweep.
+
+AUDIT: computations/audits/manifest_inert_entry_audit.py (reporting-only; no
+witness regenerated, no manifest edited). Its docstring carries the three dead
+shapes so the next reader does not re-derive them.
+
+### cds3 status from this session's reading
+
+Everything else on this bean is GATED, not open:
+
+    4  qbeta c_k          -> gated on qou-cds1 (the D re-derivation)
+    2  float64 defect     -> gated on qou-k6b3
+    1  hadron_knot_table  -> compute-blocked (stalls on deuterium, killed 1297 s)
+
+Direct readers 20/20 and the indirect class closed at zero. There is no
+unblocked migration work left on cds3.
+
+
+## 2026-08-30 (LATER) — CORRECTION to my own "no unblocked work left" claim
+
+My entry above ended: *"Direct readers 20/20 and the indirect class closed at
+zero. There is no unblocked migration work left on cds3."* **Too strong, and it
+was already false when I wrote it.**
+
+Sibling bean `qou-tekx` landed on main in the same window and is actively
+finding and fixing muon-pin work on this territory:
+
+    5e54be20d1  the muon migration is 73 live witnesses, not ~477 —
+                and 3 of them straddle invisibly
+    672a1f893e  the 45 unstamped are 40 producers, 6 outside the audit's scope
+    fcc65c1380  three probes computed at the retired muon pin while stamping proton
+
+So the population cds3 tracks is NOT drained; it was re-measured under a
+different (tighter) definition and still has live defects. What my entry
+correctly established is narrower: **the items enumerated ON THIS BEAN** —
+direct readers, the indirect class, the 4 cds1-gated, hadron_knot_table — have
+no unblocked remainder. That is not the same as "no muon-migration work exists",
+and I stated the second while having measured only the first.
+
+### And the canonical muon pin CHANGED under both of us
+
+`3a919ad14f ruling(muon): CODATA 2022 is canonical — the frozen pin matches no
+published ratio`, effective `fca08de7d29` (2026-08-28). The canonical muon value
+is now `1.10997859564273904...` (family C), not the frozen
+`1.1099785955573347...` (family A). **Every count on this bean that keys on the
+A-family literal is therefore counting a superseded value**, including the
+870 / 105 / 103 figures in the entries above. They are correct as *records of
+what was measured then*; they are not current, and re-measuring under the A
+prefix would now answer a question about a retired pin.
+
+This is the exact hazard AGENTS.md records two sections up — three different
+values are all called "the muon q0", and the prefix silently selects which. It
+has now bitten prospectively rather than retrospectively: the definition moved
+under a live bean.
+
+### What is NOT affected
+
+My inert-manifest-entry work and its two surviving findings
+(`alpha_high_precision`, `binding_k_enumerator` listed while their producers
+live only under `_deprecated/`) are pin-independent — they are about whether a
+manifest entry can bind to a producer at all, not about which q0 it names.
+Re-verified on the rebased tree.
+
+Cross-reference: `qou-2whe` (new, from tekx) records that
+`hardcoded_q0_literal_families_audit.py` is blind to BARE float literals (104
+files carry only a bare one) and to the C-family canonical pin entirely (28
+files). Same detector-blindness class as my three over-flagging shapes above,
+from the opposite direction — theirs is too narrow, mine were too broad.

@@ -382,10 +382,23 @@ def main() -> int:
     # The probe's structural contribution is the matrix execution itself;
     # individual cell verdicts go in `data`. A single assertion records
     # whether the matrix ran end-to-end.
+    #
+    # That assertion was `computed=1, expected=1` (bean `qou-26f2`) — the one
+    # form that cannot establish "ran end-to-end", since a run producing a
+    # partial matrix would have reported 1 == 1 just the same.
+    #
+    # The matrix is 4 invariants x 3 candidates, and all four rows are
+    # recorded above as dicts keyed by candidate name. Counting the cells
+    # against 4*len(candidates) is the falsifiable form: a candidate that
+    # silently drops out of one row fails here instead of shrinking the
+    # matrix unnoticed.
+    _rows = (anchor_verdicts, bar_verdicts, shadow_verdicts,
+             direction_verdicts)
+    _cells = sum(len(r) for r in _rows)
     builder.add_assertion(
         "mass_theory_formalize_first_invariants_matrix_executed",
-        computed=1,
-        expected=1,
+        computed=_cells,
+        expected=4 * len(candidates),
         tolerance=0,
         source=("Mass-theory §4 invariants 4×3 verdict matrix executed on "
                 "three published linking_weight candidates. The probe is "

@@ -1,13 +1,13 @@
 ---
 # qou-q407
 title: 'GAP: 8 self-assuming projections — ''theorem (h : P) : P := h'' asserts nothing'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - lean
 created_at: 2026-08-07T18:24:34Z
-updated_at: 2026-08-21T15:23:31Z
+updated_at: 2026-08-30T11:30:24Z
 ---
 
 Eight provable declarations have the shape 'theorem name ... (h : P) : P := h' — hypothesis identical to conclusion, proof term the identity. They assert nothing about the objects named, and stay true if every definition is swapped.
@@ -456,3 +456,18 @@ to this integration (403), so I cannot confirm what CI actually does with this.
 - [ ] `∃ C, True` → `Nonempty C` across the `_discharged` family, and ledger
       verdicts for the 4 pre-existing candidates. Own bean.
 - [ ] `qou/29pv` — the two pre-existing broken knot-factor files.
+
+
+
+## Status flipped 2026-08-30 (was left at in-progress)
+
+Re-verified: none of the original 8 appears in a fresh
+`scripts/lean-self-assuming-audit.py` run. The body's DONE note was accurate;
+only the status field lagged.
+
+The detector now reports **14** candidates, but these are NOT a regression of
+the 8 — they are its **Rule 2** ("the proof projects a class field whose
+DECLARED TYPE is the conclusion"), a different shape from the `(h : P) : P := h`
+identity rule those 8 carried. All 14 already hold ledger verdicts (5 genuine /
+9 legit). Rule 2's precision is measured in `qou-qf8t`: 36 % against an 85 %
+base rate — below baseline.

@@ -333,15 +333,34 @@ def main() -> int:
                      computed=tau, expected=1.0, tolerance=1e-8,
                      source="tau_RS(T^b1)=exp(1/2 zeta'_Delta0(0) Sum_q(-1)^q q C(b1,q))=exp(0)=1: "
                             "analytic torsion trivial (pi cancels); fails pi-power=-1 and reciprocal-b1 axes")
-    wb.add_assertion("permode_derivative_is_b1_independent_not_reciprocal",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source="d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is b1-independent; "
-                            "no graded/per-mode determinant object on T^{b1} is reciprocal in b1")
-    wb.add_assertion("no_flat_torus_object_meets_all_three_axes",
-                     computed=0.0, expected=0.0, tolerance=0.5,
-                     source="A (torsion=1, covolume residue) and B (alt-ratio=1, per-mode const) each fail "
-                            "area-free + pi^-1 + reciprocal-b1; measure must be the RT/WRT S-matrix total "
-                            "quantum dimension D=Sum d_i^2 (off the flat-torus determinant). No alpha_k wired; no fit.")
+    # Demoted from `add_assertion` to data (bean `qou-26f2`). Both read
+    # `computed=<const>, expected=<the same const>`, so neither could fail.
+    # They are the *conclusions of the analytical argument* this probe
+    # narrates — the three-axis verdicts printed above — not quantities it
+    # computes, and those axis results exist only as printed narration, not
+    # as variables.
+    #
+    # `controls_pass` above is the shape a verdict flag should have when the
+    # predicate IS available: `computed=1.0 if controls_ok else 0.0,
+    # expected=1.0`. Putting these two into that form would mean re-deriving
+    # the three-axis argument in code — a rewrite of someone's analysis
+    # rather than a drain — so they are recorded as findings instead.
+    wb.add_data("three_axis_conclusions", {
+        "permode_derivative_is_b1_independent_not_reciprocal": {
+            "finding": "d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is "
+                       "b1-independent; no graded/per-mode determinant "
+                       "object on T^{b1} is reciprocal in b1",
+            "has_independent_expected_value": False,
+        },
+        "no_flat_torus_object_meets_all_three_axes": {
+            "finding": "A (torsion=1, covolume residue) and B (alt-ratio=1, "
+                       "per-mode const) each fail area-free + pi^-1 + "
+                       "reciprocal-b1; the measure must be the RT/WRT "
+                       "S-matrix total quantum dimension D=Sum d_i^2, off "
+                       "the flat-torus determinant. No alpha_k wired; no fit",
+            "has_independent_expected_value": False,
+        },
+    })
     wb.save()
 
     print("\n" + "=" * 78)

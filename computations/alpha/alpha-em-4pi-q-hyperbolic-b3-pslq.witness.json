@@ -1,24 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:18:58.027394+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
-  "assertions": [
-    {
-      "name": "pslq_executed_at_maxcoeff_50",
-      "computed": 1,
-      "expected": 1,
-      "passed": true,
-      "tolerance": 0,
-      "source": "PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50."
-    }
-  ],
+  "computedAt": "2026-08-30T05:02:41.280109+00:00",
+  "commitSha": "7ca5e2beca4ae776137bcfeaa2b6506285e13b86",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 440,
+  "durationMs": 422,
   "computation": "alpha-em-4pi-q-hyperbolic-b3-pslq",
   "scriptFile": "alpha_em_4pi_q_hyperbolic_b3_pslq.py",
-  "scriptHash": "336f7903d502",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "ceb178d9ecda",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +17,19 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "ac75fea5c01de435"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_4pi_q_hyperbolic_b3_pslq.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_4pi_q_hyperbolic_b3_pslq.py"
   },
   "description": "B_3-via-PSLQ canonical derive-or-refute for the α/(4π) next-order term in the FSC α_EM⁻¹ closure. Promotes the B_2 Bring-zero-mode PSLQ template (bring_zero_mode_bloch_hunt.py) one depth up: searches for an integer relation between α/(4π) and the depth-3 grouplike basis {Cl_3, S_3} at the same Bring-symmetric angles (kπ/n, n ∈ {3,4,5,6,9,10,15,30}) plus ζ(3) as reference. NEGATIVE outcome is structurally meaningful (parallel to the B_2 hunt's own partial refutation): rules out B_3-at-symmetric-angles, points to higher-denominator angles or off-unit-circle classes. Honest derive-or-refute, no fit.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
@@ -274,6 +273,10 @@
       "maxcoeff": 50,
       "maxsteps": 2000
     },
-    "relation_residual_abs": "9.05567907882671236750911929089e-72"
+    "relation_residual_abs": "9.05567907882671236750911929089e-72",
+    "pslq_executed_at_maxcoeff_50": {
+      "value": 1,
+      "source": "PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50."
+    }
   }
 }

@@ -1,11 +1,11 @@
 ---
 # qou-rq9n
 title: Five q-NS conjecture carriers carry a FABRICATED trivial-zero instance
-status: todo
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-08-29T19:45:34Z
-updated_at: 2026-08-30T03:16:49Z
+updated_at: 2026-08-30T13:07:33Z
 ---
 
 `lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean` declares five `Prop`
@@ -107,3 +107,21 @@ So the five children stay open. What each needs is the real statement encoded:
 
 Four of the five need analytic setup the docstrings only gesture at; that is
 the author's mathematics, not a cleanup.
+
+STATUS CORRECTED 2026-08-30: four of five, not zero and not five.
+
+Closed: qou-93hu (CriticalExponent, main 33d9eb4b414/5f019815d56), and
+qou-3ytx / qou-5nj1 / qou-m7a2 (PR #6122, merged).
+OPEN: qou-88nf (BlowupYekutieli).
+
+This bean sat at 'todo' on main while four of its five children were completed,
+which understated the work done. It is not 'completed' either: qou-88nf is
+genuinely open and is different IN KIND from its siblings -- conj:blowup-yekutieli
+is declared by NO content block, so unlike the other four there is no upstream
+statement to transcribe. Closing it requires recovering or re-authoring the
+missing conjecture block, which is authorial mathematics, not encoding.
+
+I briefly closed qou-88nf by inventing an affine bound C*(1+T) off its
+docstring; that was retracted (see its body). Do not repeat it.
+
+All five carriers are done as of 2026-08-30. QAubinLions (qou-3ytx), NSCounterexample (qou-5nj1), RegularityBreakdown (qou-m7a2) and CriticalExponent (qou-93hu, later de-boxed by qou-4670) were re-encoded by transcription; BlowupYekutieli (qou-88nf) was REPLACED, its rate existential and the upstream obstruction statement being different propositions that shared a name. Refutations and satisfiability witnesses for all five in docs/audits/2026-08-30-qns-carriers-are-refutable.lean, lean-direct exit 0. The companion 'still vacuous' audit now records a finding of zero rather than being deleted.

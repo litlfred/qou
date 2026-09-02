@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-17T17:40:29Z
+updated_at: 2026-08-26T21:10:30Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -234,3 +234,124 @@ T = 0 would CONTRADICT the working formula rather than support it.
 So the target is not "prove T = 0". It is "DECLARE which framing the mass path
 uses", which is a corpus/owner ruling and not a Lean obligation. This file makes
 the choice visible as a choice.
+
+
+
+## 2026-08-26 — TAKEOVER, and the stated blocker is gone
+
+Bean was in-progress since 2026-08-17 with no movement (9 days), so taken over per the
+stalled-claim rule.
+
+**The handoff's blocker no longer holds.** It said hSpherical 'needs several intermediate
+lemmas — at minimum a twist-vs-ev/coev compatibility and a slide lemma — and is a session of
+work'. Those slide lemmas now exist, landed today in PR #5848 (`bfdedc68e6`):
+
+* `QOU.MathlibExt.braiding_slide_cap_right` / `_left` — a strand crossing ANY cap
+  `c : A ⊗ B ⟶ 𝟙` can be pushed off it at the cost of braiding past each leg separately.
+  Nothing assumed of `c` beyond its type: no rigidity, no exact pairing.
+* `braiding_slide_cup_right` / `_left` — the cup duals.
+* `braiding_slide_cap_right_inv` — the inverse form, which is what produces a leftover
+  braiding rather than deleting one.
+
+That last is likely the load-bearing one here: the goal is to relate `(β_ X Xᘁ).hom` to
+`(β_ Xᘁ X).inv` under the coev/ev sandwich, i.e. exactly a difference of one braiding
+across a cap.
+
+**Also newly available**, from #5848/#5859/#5860:
+* `rightDualIso_swap_tensor` — two dual structures differ by the inverse monodromy.
+* `PivotalCategory` now carries monoidality (`pivotor_tensor`), and `pivotalOfRibbon`
+  supplies it from a balancing. So Barrett–Westbury's 'braided pivotal ⇒ spherical' is
+  applicable to the class as stated, which it was not before.
+* `twist_tensor_three` — θ on a 3-fold tensor is pairwise braidings + single twists only.
+
+**Scope (a) preserved from the original entry, and re-affirmed:** this closes a
+correctness/consistency gap in the mass chain's DERIVATION. It does not claim to improve
+m_p, the Δ_λ binding magnitude, or any number. Both Do-nots from the handoff stand.
+
+
+
+## 2026-08-26 (same day) — RETRACTION: the chain is broken at the link this bean exists to supply
+
+I claimed the takeover above was unblocked. **Checking the bean's own premises against current
+code, its consumer chain no longer runs through sphericality at all.** Two independent reasons:
+
+**1. The named consumer is already discharged, by a different route.**
+`QOU.BraidKnot.Ribbon.qDim_conj_object` proves `qDimObj (Xᘁ) = qDimObj X` **unconditionally**,
+in any braided right-rigid category — no pivotal, no spherical, no transport hypothesis. It goes
+via `QOU.MathlibExt.qDimWith_rightDual`: the quantum dimension does not depend on the choice of
+dual, and `X` is itself a right dual of `Xᘁ`. So the chain
+`sphericality → qDim_conj → dim_q(λ) → G⁻¹ → mass` is severed at its first arrow: `qDim_conj`
+does not need sphericality.
+
+**2. For these definitions, ribbon probably does NOT imply spherical — and the file already says
+so.** `KeystonePivotalSpherical`'s own docstring records it: `qDim_twist_eq_leftQDim` shows the
+two traces differ by the twist factor `θ_{Xᘁ} ⊗ θ_X`, so the classical `ribbon ⇒ spherical` — a
+theorem about the **twisted** trace — does not reach these **twistless** ones.
+
+My own algebra lands in the same place. Using `rightAdjointMate_comp_evaluation` on
+`f = θ_X`, then `tensorHom_def`:
+
+    (θ_{Xᘁ} ⊗ₘ θ_X) ≫ ε  =  ((θ_{Xᘁ} ≫ (θ_X)ᘁ) ▷ X) ≫ ε
+
+so `leftQDim X = qDimObj X` would require `θ_{Xᘁ} ≫ (θ_X)ᘁ = 𝟙`. The repo's ribbon axiom is
+`twist_dual : θ_{Xᘁ} = (θ_X)ᘁ`, which gives `((θ_X)ᘁ)²` — so it would need **θ² = 𝟙**, false in
+general. The axiom that WOULD close it is the anti-compatibility `θ_{Xᘁ} = ((θ_X)ᘁ)⁻¹`, which is
+a different axiom from the one the class carries.
+
+**Where the error was:** I ran the corpus-grep, found this bean, and then took its premises at
+face value instead of checking them against current code — the same failure the grep discipline
+exists to prevent, one level up. AGENTS.md's own warning applies verbatim: a sibling's bean is not
+a primary source.
+
+**What is actually left**, and it is smaller and differently shaped:
+- Decide whether `SphericalStructure` (twistless) is the right class at all, given the classical
+  theorem is about twisted traces. That is a definitional question, not a proof gap.
+- If it is kept, the honest statement is the **obstruction**: `leftQDim` and `qDimObj` differ by
+  `((θ_X)ᘁ)²` under the sandwich. Worth proving as a lemma — it converts 'not yet proved' into
+  'precisely this, and here is why ribbon does not give it'.
+
+No number moves either way. Scope (a) throughout.
+
+
+
+## 2026-08-26 — the bean's OWN question answered: NO, the ribbon axioms cannot close it
+
+This bean asks 'can the ribbon axioms close mass/binding derivation gaps'. Having severed the
+sphericality route above, here is the answer for the *binding* half, from the binding side.
+
+**The missing term is graph-combinatorial, not categorical.**
+`QOU.MassTheory.AdditiveSignChangingTerm` gives the leading derived candidate as a
+bond−frustration simplex term on the A-nucleon coordination graph `K_A`:
+
+    M(A) = s · (C(A,2) − κ · C(A,3))
+
+`C(A,2)` edges (2-body bonds) minus κ times `C(A,3)` triangular faces (frustrated 3-cycles).
+It is defined by **counting simplices on a graph**, not as a composite of twists and braidings
+in a ribbon category. So `twist_tensor_three` — 'θ on a 3-fold tensor is pairwise braidings
+plus single-object twists, with no irreducible 3-body datum' — **does not apply to it**. The
+bridge I left open on 2026-08-26 is now closed, and it closes the wrong way for the ribbon route.
+
+**What IS gained, narrowly.** The same lemma is a scope-(b) structural exclusion of one route:
+**no ribbon-derived weight can supply the `C(A,3)` piece**, because the balancing axiom
+decomposes θ on a 3-fold tensor into pairwise + per-object data only. The invariant is named
+(`BalancedCategory.twist_tensor`), so this qualifies as (b) rather than (a). It does not
+retroactively explain the six failed ansätze — Frobenius co-Casimir, Demazure-fibre,
+LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov are representation-theoretic, not
+twist/braiding composites.
+
+**Where the real gap is**, per that file, and it is not where this bean assumed:
+- The **sign** is already derived, 0-parameter: `M(3) > 0 ∧ M(4) < 0 ↔ 3/2 < κ < 3`, a genuine
+  open window from the simplex structure.
+- The **magnitude** is a fit, and provably vacuous: `(s,t) ↦ (M(3), M(4))` has determinant
+  −6 ≠ 0, so ANY target pair is hit uniquely. Matching both residuals is 2 parameters on 2
+  points and carries zero predictive content.
+- Progress = fixing **κ** by structure to 0–1 free parameters, turning `M(3)/M(4)` into a
+  prediction. Pre-registered candidates `κ ∈ {1,2,3,[3]_q}` + tetrahedral penalty were tried
+  and none lands.
+
+**Not going fishing for κ.** Searching the window `3/2 < κ < 3` for something that fits is
+precisely the fit-hunting the anti-fit rules forbid; a κ must come from structure or not at all.
+
+**Verdict for this bean: answer is NO on both halves.** Sphericality's consumer was already
+discharged by a shorter route; the binding term is not ribbon-shaped. Recommend closing it as
+answered-negative rather than leaving it in-progress.

@@ -80,11 +80,25 @@
     registry quoted `≈ 4.6e6`.  **RECONCILED 2026-08-29 (bean `qou-kt8o`): this
     file was right and the registry was stale.**  `4.6e6` is what the secant
     gives when the muon `c₃` is the pre-#1422 **superseded** `-2.0097`; the live
-    value is `-2.02020024`, which yields `3.84e6` — exactly the number computed
+    value is `-2.01986031` at the CODATA-2022 pin (`-2.02020024` at the
+    superseded CODATA-2018 one), which yields `3.84e6` — exactly the number computed
     here.  `ck-dk-canonical-registry.md` §3 absorbed the correction on
     2026-08-25 (PR #5765) and its JSON twin on 2026-08-29.  The caution above
     was well placed: the disagreement was real, not a rounding artifact, and the
     conclusion is indeed insensitive to it.
+> **🛑 CONVENTION-C SCOPE (added 2026-08-31).** The `c₃` values quoted here —
+> `−2.01986031` (muon, CODATA-2022 pin) and `−2.06934258` (proton) — are
+> **C-frame extractions**.
+> Owner ruling 2026-08-09 excised convention C at the `z` level (production uses
+> `z_D = q³/(q²+1)`), but the `c_k` **ladder** has not been re-derived under D:
+> bean `qou-cds1` states it "must be re-derived, not re-evaluated", and the
+> `c₃ ≈ −974` obtained by feeding `z_D` to the current extractor is a
+> sensitivity measurement, **not** a proposed value. So every value-level `c₃`
+> fact below is C-conditional and moves if `qou-cds1` lands.
+>
+> **No theorem in this file depends on it** — the values appear in this
+> docstring only, verified by AST scan in
+> `computations/deltalambda/wlambda_binding_c_frame_conditionality_audit.py`.
   * Nothing here proposes a ϑ or derives `A_ω`.
 
   Scope (a): what is excluded is the class of Lipschitz-with-moderate-constant

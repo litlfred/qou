@@ -1,0 +1,198 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1002.4860v2",
+ "source": {
+  "file": "1002.4860v2.pdf",
+  "sha256": "a2cfe924f7a9f5a0156048952718b6d7482871967b7792cef4f79f703fe2f211",
+  "bytes": 137203,
+  "pages": 8,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1002.4860",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "3 Jun 2010"
+  },
+  "doi": null,
+  "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+  "authors_raw": "SAMSON BLACK",
+  "title_lines": [
+   "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL"
+  ],
+  "abstract": "We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools ar e the Markov trace formulas for the HOMFLY-PT polynomial and Young\u2019s semi-nor mal repre- sentations of the Iwahori-Hecke algebras of type A.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210921025623-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Semi-normal representations of Hecke algebras",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Braid group",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Iwahori-Hecke algebra",
+   "page": 2,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Seminormal representations",
+   "page": 3,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Sign sequences and hook partitions",
+   "page": 3,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Construction",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Example",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-22-iwahori-hecke-algebra",
+   "number": "2.2",
+   "title": "Iwahori-Hecke algebra",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 160,
+   "n_words": 25
+  },
+  {
+   "id": "sec-002-21-braid-group",
+   "number": "2.1",
+   "title": "Braid group",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1898,
+   "n_words": 317
+  },
+  {
+   "id": "sec-003-2-semi-normal-representations-of-hecke-algebras",
+   "number": "2",
+   "title": "Semi-normal representations of Hecke algebras",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1606,
+   "n_words": 341
+  },
+  {
+   "id": "sec-004-23-seminormal-representations",
+   "number": "2.3",
+   "title": "Seminormal representations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1631,
+   "n_words": 320
+  },
+  {
+   "id": "sec-005-25-sign-sequences-and-hook-partitions",
+   "number": "2.5",
+   "title": "Sign sequences and hook partitions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2385,
+   "n_words": 504
+  },
+  {
+   "id": "sec-006-3-construction",
+   "number": "3",
+   "title": "Construction",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4035,
+   "n_words": 675
+  },
+  {
+   "id": "sec-007-4-example",
+   "number": "4",
+   "title": "Example",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 854,
+   "n_words": 159
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1591,
+   "n_words": 246
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 14160
+ }
+}

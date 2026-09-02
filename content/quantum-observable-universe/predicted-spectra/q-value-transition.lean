@@ -77,18 +77,18 @@ structure QAnomaly where
 
 /-- ℏ_q = 1 - q⁻¹ (quantum Planck constant). -/
 -- Ref: [manuscript] §6/q-value-transition
-noncomputable def hbar_q' (q : ℝ) : ℝ := 1 - 1 / q
+noncomputable def hbarQ' (q : ℝ) : ℝ := 1 - 1 / q
 
 /-- The self-deformation shift Δq_eff = (A-1)/A² · ℏ_q². -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 noncomputable def delta_q_eff (q : ℝ) (A : ℕ) : ℝ :=
-  ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (hbar_q' q) ^ 2
+  ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (hbarQ' q) ^ 2
 
 /-- The self-deformation is positive for A ≥ 2 and q > 1. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
     0 < delta_q_eff q A := by
-  unfold delta_q_eff hbar_q'
+  unfold delta_q_eff hbarQ'
   have hA1 : (1 : ℝ) < (A : ℝ) := by exact_mod_cast (show 1 < A by omega)
   have hq0 : (0 : ℝ) < q := by linarith
   have hAne : (A : ℝ) ≠ 0 := by positivity
@@ -104,7 +104,7 @@ theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
 /-- At q = 1, the anomaly vanishes (classical limit). -/
 -- Ref: [manuscript] §6/q-value-transition
 theorem delta_q_eff_classical (A : ℕ) : delta_q_eff 1 A = 0 := by
-  unfold delta_q_eff hbar_q'
+  unfold delta_q_eff hbarQ'
   simp
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -172,7 +172,7 @@ structure QDeformedBalance where
     At q = 1.110: ℏ_q² ≈ 0.009816, so Δq ≈ 0.00218. -/
 -- Ref: [manuscript] beta-decay-from-q.witness.json
 theorem tritium_self_deformation :
-    delta_q_eff 1.110 3 = (2 : ℝ) / 9 * (hbar_q' 1.110) ^ 2 := by
+    delta_q_eff 1.110 3 = (2 : ℝ) / 9 * (hbarQ' 1.110) ^ 2 := by
   unfold delta_q_eff
   norm_num
 
@@ -190,7 +190,7 @@ theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
   have hq0 : (0 : ℝ) < q := by linarith
   have hlt : 1 / q < 1 := by
     rw [div_lt_one hq0]; linarith
-  have hbpos : (0 : ℝ) < hbar_q' q := by unfold hbar_q'; linarith
+  have hbpos : (0 : ℝ) < hbarQ' q := by unfold hbarQ'; linarith
   apply mul_lt_mul_of_pos_right
   · -- (A)/(A+1)² < (A-1)/A²
     -- Equivalently: A³ < (A-1)(A+1)² = (A²-1)(A+1) = A³ + A² - A - 1

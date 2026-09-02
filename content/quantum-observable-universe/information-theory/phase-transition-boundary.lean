@@ -4,7 +4,16 @@
   Critical temperatures from the Hecke algebra representation theory:
   - Gas-liquid: T_q^{g→l} = S_q^{∂} / [2]_q
   - Liquid-solid: T_q^{l→s} = S_q^{∂} / ([2]_q · [n_K]_q)
-  - Sublimation: when Ext¹_{H_n(q)}(V_asym, V_sym) ≠ 0
+  - Sublimation: no mechanism (bean `qou-zut2`, 2026-08-24)
+
+  The block previously read sublimation off `Ext¹_{H_n(q)}(V_asym, V_sym) ≠ 0`.
+  That group is zero: `H_n(q)` is semisimple away from roots of unity, so every
+  short exact sequence of its modules splits
+  (`QOU.Mathlib.ExtensionClass.isSplit_of_isSemisimpleRing`), and the sym/asym
+  pair splits on the Hecke quadratic alone once `[2]_q` is a unit
+  (`QOU.Mathlib.ExtensionClass.heckeSES_isSplit`) — the same `[2]_q` the two
+  critical temperatures above divide by.  `SublimationCondition` below keeps a
+  bare `Prop` field for the condition and asserts nothing about its content.
 
 **Ground ring**: archimedean specialisation over `ℝ` (AGENTS.md §7c).
 The critical-temperature proofs use ordering, division, and positivity,
@@ -33,7 +42,7 @@ abbrev R_q := ℝ
     to ∂(S³_q) ≅ S².  This is the energy cost of threading a knot
     through the fibre boundary.
     Label: prop:phase-transition-boundary -/
-noncomputable def s3BoundaryAction {M : Type*} (sp : SubstrateParameter M)
+noncomputable def s3BoundaryAction {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : R_q :=
   let eta := operationalEntropy sp p
   let hbar := quantumPlanckConstant sp p
@@ -42,19 +51,19 @@ noncomputable def s3BoundaryAction {M : Type*} (sp : SubstrateParameter M)
 
 /-- **Gas-liquid critical temperature**.
     T_q^{g→l} = S_q^{∂} / [2]_q. -/
-noncomputable def gasLiquidCriticalTemp {M : Type*} (sp : SubstrateParameter M)
+noncomputable def gasLiquidCriticalTemp {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : R_q :=
   s3BoundaryAction sp p / (sp.field p + (sp.field p)⁻¹)
 
 /-- **Liquid-solid critical temperature**.
     T_q^{l→s} = S_q^{∂} / ([2]_q · [n_K]_q).
     Parameterised by the crossing number n_K and [n_K]_q. -/
-noncomputable def liquidSolidCriticalTemp {M : Type*} (sp : SubstrateParameter M)
+noncomputable def liquidSolidCriticalTemp {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (qIntegerNK : R_q) : R_q :=
   s3BoundaryAction sp p / ((sp.field p + (sp.field p)⁻¹) * qIntegerNK)
 
 /-- The gas-liquid critical temperature is positive when q > 1. -/
-theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
+theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     0 < gasLiquidCriticalTemp sp p := by
   unfold gasLiquidCriticalTemp s3BoundaryAction
@@ -77,7 +86,7 @@ theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- The liquid-solid critical temperature is below the gas-liquid
     critical temperature when [n_K]_q > 1. -/
-theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
+theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (qIntNK : R_q) (hq : sp.field p > 1) (hnk : 1 < qIntNK) :
     liquidSolidCriticalTemp sp p qIntNK <
     gasLiquidCriticalTemp sp p := by
@@ -94,14 +103,18 @@ theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
   gcongr
   nlinarith
 
-/-- **Sublimation condition** (type-level): the liquid phase is
-    topologically obstructed when the Hecke extension is non-split.
+/-- **Sublimation condition** (type-level): the shell-and-parity pattern
+    `rem:composite-crossing-sublimation-criteria` records, with the condition
+    it implies left abstract.
 
-    We model this as a proposition: for a given crossing number n_K,
-    the Ext group is non-trivial iff certain representation-theoretic
-    conditions hold. -/
+    The `sublimes` field is a bare `Prop` supplied by the instantiator. It was
+    once documented as "the Hecke extension is non-split"; that reading is
+    withdrawn (bean `qou-zut2`, 2026-08-24) because `Ext¹_{H_n(q)}` vanishes
+    identically away from roots of unity. Nothing here asserts what the
+    condition *is*, so the structure survives the withdrawal unchanged in
+    content — only in name and documentation. -/
 structure SublimationCondition (M : Type*) where
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   point : M
   /-- Crossing number of the composite atom. -/
   crossingNumber : ℕ
@@ -109,13 +122,13 @@ structure SublimationCondition (M : Type*) where
   valenceElectrons : ℕ
   /-- Capacity of the valence shell. -/
   shellCapacity : ℕ
-  /-- The extension is non-split (sublimation occurs). -/
-  extensionNonSplit : Prop
-  /-- Half-filled shell with odd Z implies non-split. -/
-  halfFilled_implies_nonSplit :
+  /-- The atom sublimes. Left abstract: this file supplies no mechanism. -/
+  sublimes : Prop
+  /-- Half-filled shell with odd `Z` is the recorded sublimation pattern. -/
+  halfFilled_implies_sublimes :
     2 * valenceElectrons = shellCapacity →
     crossingNumber % 2 = 1 →
-    extensionNonSplit
+    sublimes
 
 end
 

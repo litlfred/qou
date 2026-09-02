@@ -1,0 +1,117 @@
+{
+  "computation": "qbeta-imq-elliptic-generator-refutation",
+  "engine": "mpmath",
+  "description": "qou-pdix route 5 / qou-cds1 branch 3. Im(q) is NOT the source of the elliptic generator route 5 needs. A purely elliptic Kohno-Drinfeld generator needs |q| = 1, impossible since Re q = 1.10998 > 1 forces |q| > 1 for every Im q. Allowing a complex character and keeping its real part needs Im q = +-0.139956 (12.61 % of Re q) and leaves Im[character] = 0.014069 -- 8.40x the deviation being explained and 18074 sigma -- which must vanish since Q_beta is real, and vanishes only at Im q = 0. The non-Hermitian route gives ellipticity but forces unit-modulus braiding eigenvalues, which cannot match the Hecke pair {1.10998, -0.90092}, dissolving the scale-fixing. Does NOT refute conj:im-q-physical-role (its chirality role is untouched). Also quantifies 'retire the tower': the residual after 1 - theta^2/2 is -7.3394e-5 = 94.3 sigma (real, not droppable), c_2 = -1 consumes 98.84 % of it, and c_3 plus every coefficient above rests on a 1.09-sigma leftover (absolute bar sigma/u^3 = 1.2598, reproducing Step 15's 1.2619). And c_3's CENTRAL VALUE shifts 33.49 % -- -2.069343 via cos, -1.376381 via the parabola -- on a choice the data resolves at 0.549 sigma. Lean: QOU/QBeta/ImQCannotSupplyEllipticGenerator.lean, 4 theorems, sorry-free.",
+  "contentBlock": "conj:im-q-physical-role",
+  "assertions": [
+    {
+      "name": "purely_elliptic_generator_impossible_for_any_im_q",
+      "passed": true,
+      "detail": "Re q = 1.109978583 > 1 forces |q|^2 >= 1.232052454 > 1 for every Im q, so ln q is never purely imaginary (Lean abs_sq_gt_one)"
+    },
+    {
+      "name": "forcing_the_real_part_needs_a_large_im_q",
+      "passed": true,
+      "detail": "Im q = +-0.1399557732 = 12.609 % of Re q, and the bare threshold for Re[character] < 1 is already 11.065 % \u2014 not a perturbation"
+    },
+    {
+      "name": "complex_character_leaves_an_imaginary_part_dwarfing_the_effect",
+      "passed": true,
+      "detail": "Im[character] = 0.014068933 is 8.4006x the deviation and 18073.9 sigma; real part verified against the closed form to 1e-30"
+    },
+    {
+      "name": "hecke_pair_has_no_unit_modulus_member",
+      "passed": true,
+      "detail": "{q, -1/q} moduli are 1.109978583 and 0.900918284; an elliptic generator forces unit modulus, so route B dissolves the Kohno-Drinfeld scale-fixing (Lean hecke_eigenvalues_not_unit_modulus)"
+    },
+    {
+      "name": "the_residual_is_real_and_large",
+      "passed": true,
+      "detail": "delta = -7.3393707e-5 = 94.2863 sigma \u2014 retiring the tower does NOT mean dropping the correction"
+    },
+    {
+      "name": "c2_consumes_almost_all_of_the_residual",
+      "passed": true,
+      "detail": "-u^2 = -7.2543284e-5 is 98.841 % of delta, which is why c_2 = -1 looks good (and is 1.6 sigma consistent, Step 15)"
+    },
+    {
+      "name": "c3_and_above_rest_on_a_one_sigma_residue",
+      "passed": true,
+      "detail": "what is left for c_3 and every coefficient above is -8.5042228e-7 = 1.093 sigma; the absolute bar sigma/u^3 = 1.25984 reproduces Step 15's independently-propagated 1.2619"
+    },
+    {
+      "name": "c3_central_value_is_parametrisation_dependent",
+      "passed": true,
+      "detail": "c_3 = -2.0693426 via cos, -1.3763814 via 1 - theta^2/2 \u2014 a 33.49 % shift from a choice the data resolves at 0.549 sigma. c_3 is not merely imprecise; its central value is an artefact of the parametrisation"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "dps": 50,
+    "lean": "QOU/QBeta/ImQCannotSupplyEllipticGenerator.lean",
+    "lean_theorems": [
+      "abs_sq_gt_one",
+      "character_im_zero_iff",
+      "no_complex_q_gives_real_subunit_character",
+      "hecke_eigenvalues_not_unit_modulus"
+    ],
+    "companion_lean": "QOU/QBeta/HolonomySpectrumSignObstruction.lean"
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "u": "0.008517234550156141",
+    "theta_C": "-0.05659473754330691",
+    "target": "0.9983252416732466",
+    "one_sigma": "7.784128731e-7",
+    "cos_theta_C": "0.9983989452530845",
+    "route_A": {
+      "im_q_threshold_for_re_below_one": "0.122818896092",
+      "im_q_required": "0.1399557731736",
+      "im_q_pct_of_re": "12.608871",
+      "abs_q_required": "1.1187672110906",
+      "im_character": "0.014068933112",
+      "im_character_over_deviation": "8.4005751",
+      "im_character_sigma": "18073.87005"
+    },
+    "route_B": {
+      "hecke_eigenvalues": [
+        "1.1099785827514",
+        "-0.90091828395574"
+      ],
+      "moduli": [
+        "1.1099785827514",
+        "0.90091828395574"
+      ]
+    },
+    "tower": {
+      "quadratic_only": "0.9983985178412",
+      "delta": "-7.33937066673e-5",
+      "delta_sigma": "94.286348",
+      "minus_u_squared": "-7.25432843824e-5",
+      "c2_share_pct": "98.841287",
+      "leftover_for_c3_and_above": "-8.50422284955e-7",
+      "leftover_sigma": "1.09251",
+      "c3_via_quadratic": "-1.37638145",
+      "c3_via_cosine_corpus": "-2.069342577",
+      "c3_absolute_sigma": "1.259836504",
+      "c3_central_shift_pct": "33.487"
+    }
+  },
+  "context": {
+    "axis": "qou-cds1 branch 3: is Im(q) the elliptic source? and what is 'no tower'?",
+    "answer": "Im(q) is not the source. Purely elliptic needs |q| = 1, impossible at Re q > 1; the complex-character workaround needs Im q = 12.61 % of Re q and leaves an imaginary part 8.40x the effect, which must vanish and does so only for real q. The non-Hermitian route dissolves the Kohno-Drinfeld scale-fixing. 'No tower' means keeping delta = -7.3394e-5 as one measured number rather than a series: c_2 = -1 consumes 98.84 % of it and c_3 and above rest on 1.09 sigma.",
+    "does_not_refute": "conj:im-q-physical-role. Its chirality role is untouched and Im(q) may be physical for other reasons; what is settled is that it cannot supply the elliptic generator.",
+    "scope": "Scope-(b) for the exclusions, scope-(a) for the tower measurement. Nothing derived, proposed, wired or readmitted; no convention adjudicated."
+  },
+  "gitCommit": "875482cd2db26397668bc5a5393e3c10bc0f1d1d",
+  "durationMs": 0,
+  "scriptFile": "qbeta_imq_elliptic_generator_refutation_probe.py",
+  "scriptHash": "7088a0cecf93",
+  "scriptCommitSha": "unknown",
+  "commitSha": "875482cd2db26397668bc5a5393e3c10bc0f1d1d",
+  "computedAt": "2026-08-31T20:01:15.161124+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

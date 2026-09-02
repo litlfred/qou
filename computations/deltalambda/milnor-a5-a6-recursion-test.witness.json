@@ -1,0 +1,22 @@
+{
+ "computation": "milnor-a5-a6-recursion-test",
+ "scriptFile": "milnor_a5_a6_recursion_test.py",
+ "engine": "python-sympy-exact",
+ "free_parameters": 0,
+ "description": "Tests the candidate convention-D deficit recursion D_{A+1}=-h^2(h^2+2)D_A against the EXACT A=5 (and A=6) closed forms \u2014 full rational function, not just leading coeff. Convention D (signed chi, TL weights, 2-row diagrams). 0-fit; exact Q(q); zero float64. No Lean instance created.",
+ "results": {
+  "base_D4_eq_R_D3": true,
+  "candidate_recursion": "D_{A+1} = -h^2(h^2+2)\u00b7D_A",
+  "predicted_closed_form": "D_A = (-1)^(A-3) h^(2(A-1)) (h^2+2)^(A-3) (h^2+3)/(h^2+4)",
+  "A5": {
+   "D5_h_form": "(h**14 + 7*h**12 + 16*h**10 + 12*h**8)/(h**2 + 4)",
+   "recursion_D5_eq_R_D4_exact": true,
+   "predicted_D5": "(h**14 + 7*h**12 + 16*h**10 + 12*h**8)/(h**2 + 4)"
+  },
+  "A6": {
+   "D6_h_form": "(-h**18 - 9*h**16 - 30*h**14 - 44*h**12 - 24*h**10)/(h**2 + 4)",
+   "recursion_D6_eq_R_D5_exact": true
+  },
+  "verdict": "RECURSION CONFIRMED on the FULL rational function at A=5 and A=6 \u2014 strong evidence D_{A+1}=-h^2(h^2+2)D_A holds for all A; next: structural TL/strand-addition derivation to PROVE it (would close MilnorExactOrderConjecture nonvanishing \u2200A by induction)."
+ }
+}

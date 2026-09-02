@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-08-08T15:17:15Z
+updated_at: 2026-08-30T07:59:10Z
 ---
 
 
@@ -784,3 +784,36 @@ Not "3 of 10 carriers left". It is:
 
 **Update the inventory's detection line** to the corrected pattern before the
 next pass, or the next agent re-derives this.
+
+
+## SCOPE WIDENED 2026-08-30 (bean `qou-1nv0`, PR #6133) — an 11th instance this bean cannot see
+
+A carrier with the same defect was found outside both of this bean's boundaries. Recorded here
+because it means the "10" is a count of one spelling in one surface, not of the defect.
+
+**Different schema.** This bean keys on `residual : ℝ; residual_eq_zero : residual = 0`,
+inhabited by `⟨0, rfl⟩`. The new instance, `PairGenCanonical` as published in
+`mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md`, was
+
+```lean
+class PairGenCanonical : Prop where
+  exists_subpercent_recovery :
+    ∀ (M : ℝ), 0 ≤ M → ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
+```
+
+inhabited by the **identity witness** `M_rec := M`, not by a constant. Verified by compiling
+`instance : MdPublishedVersion := ⟨fun M hM => ⟨M, by simpa using by linarith⟩⟩`. A scan for
+the `residual = 0` spelling cannot see this one — the detector-blindness pattern AGENTS.md
+catalogues for the convention-C surface, one defect class over.
+
+**Different surface, and this is the sharper half.** That vacuous carrier lived in the **`.md`**.
+The sibling `.lean` had already been corrected to a content-bearing field, and its docstring
+says so in as many words. So a reader of the paper met a vacuous carrier that no scan of the
+Lean tree would report. **The count of live trivially-inhabited carriers is not bounded by the
+count in `.lean`** — the `.md` narrative blocks are a second, unscanned surface, and they are
+the ones a referee actually reads.
+
+The instance itself is fixed in PR #6133 (the `.md` re-synced to the `.lean`). What is *not*
+done, and belongs to this bean: re-running the search under both generalisations — any field
+whose conjunction admits a witness, not just a constant; and across `.md` lean blocks as well
+as `.lean` files.

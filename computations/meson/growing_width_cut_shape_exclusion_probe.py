@@ -68,6 +68,7 @@ quantitative optimum reported (A7) is the best-constant bound
 from __future__ import annotations
 
 import pathlib
+import re
 import sys
 from math import factorial
 
@@ -95,10 +96,32 @@ ISO = [("2H", 1, 2), ("3H", 1, 3), ("3He", 2, 3), ("4He", 2, 4),
 _FAILED: list[str] = []
 
 
+# bean qou-srvu. Each `check` below is a real falsifiable claim -- it prints
+# [PASS]/[FAIL], is tallied, and decides this script's exit code -- but none of
+# them reached the witness, so `save()` emitted `allPassed: true` over an EMPTY
+# assertions list: green while asserting nothing, and in direct contradiction
+# with the same run's exit code. Recorded here and flushed to the witness just
+# before `save()`, which needs no call-site change. The assertion NAME is the
+# label the message already carries ("A1", "C2", ...); the whole message
+# becomes `source`, so every caveat in it travels with the assertion. No
+# threshold is introduced: every one already sits at its call site.
+_CHECKS: list[tuple[bool, str]] = []
+
+
 def check(ok: bool, msg: str) -> None:
     print(f"  [{'PASS' if ok else 'FAIL'}] {msg}")
+    _CHECKS.append((bool(ok), msg))
     if not ok:
         _FAILED.append(msg)
+
+
+def _flush_assertions(wb) -> None:
+    """Emit each recorded check as a witness assertion."""
+    for i, (ok, msg) in enumerate(_CHECKS, 1):
+        label = msg.split(":", 1)[0].strip()
+        if not re.fullmatch(r"[A-Z]\d+", label):
+            label = f"check_{i}"
+        wb.add_assertion(label, computed=ok, expected=True, source=msg)
 
 
 # -- the closed form, exactly as Addendum 23 defines it --------------------
@@ -312,6 +335,7 @@ def main() -> int:
     wb.add_caveat(
         "S(k)/k is measured monotone over k = 1..64, not proved monotone for "
         "all k. The exclusion needs it only on the range the isotopes reach.")
+    _flush_assertions(wb)
     wb.save()
 
     print("\n" + "=" * 92)

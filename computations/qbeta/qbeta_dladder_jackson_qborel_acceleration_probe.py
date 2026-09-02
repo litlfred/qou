@@ -395,10 +395,48 @@ def main() -> int:
                      computed=float(self_check), expected=1.0, tolerance=0.5,
                      source="Borel–Leroy Γ(1+sk) back-transform equals the direct partial "
                             "sum at the meridian to <1e-15 at both anchors")
-    wb.add_assertion("no_identification_claimed",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source="scope-(a): no instanton action / Stokes datum / candidate "
-                            "value claimed at k=%d; gate_pass_anywhere=%s" % (KMAX, gate_any))
+    # Was `computed=1.0, expected=1.0` named `no_identification_claimed` (bean
+    # `qou-26f2`): a literal on both sides, so the probe asserted "nothing was
+    # identified" without consulting `gate_any`, which it had already computed
+    # and which is the only thing that decides it. Had the gate passed — an
+    # identification — this would still have read PASS. Three checks replace
+    # it, each of which flips the moment an identification is actually made.
+
+    # (1) The ARM2 estimator gate, across the whole s-scan.
+    n_arm2_pass = sum(1 for r in arm2 if r["gate_pass"])
+    wb.add_assertion("arm2_estimator_gate_passes",
+                     computed=n_arm2_pass, expected=0, tolerance=0,
+                     source=f"{n_arm2_pass} of {len(arm2)} scanned Borel–Leroy "
+                            f"s values clear the pre-registered "
+                            f"{float(GATE_TOL):.0%} dlog-Padé / root-test "
+                            f"consistency gate at k={KMAX}; "
+                            f"gate_pass_anywhere={gate_any}. A pass here IS "
+                            "the singularity resolution this probe declines "
+                            "to claim")
+
+    # (2) …and the ARM3 parity-split branches, scanned separately, which could
+    # resolve one 2-adic grading without the other.
+    n_parity_pass = arm3["odd"]["n_gate_pass"] + arm3["even"]["n_gate_pass"]
+    n_parity_rows = len(arm3["odd"]["rows"]) + len(arm3["even"]["rows"])
+    wb.add_assertion("parity_split_gate_passes",
+                     computed=n_parity_pass, expected=0, tolerance=0,
+                     source=f"odd {arm3['odd']['n_gate_pass']}/"
+                            f"{len(arm3['odd']['rows'])}, even "
+                            f"{arm3['even']['n_gate_pass']}/"
+                            f"{len(arm3['even']['rows'])} = {n_parity_pass} of "
+                            f"{n_parity_rows} graded scans clear the gate; "
+                            "both branches unresolved is what makes the "
+                            "negative uniform")
+
+    # (3) The scan really reached the order the pre-registration names. Every
+    # arm's verdict is stated "at k=21"; a shorter ladder would make the
+    # negative cheap rather than informative.
+    wb.add_assertion("dladder_order_reaches_preregistered_k",
+                     computed=KMAX, expected=21, tolerance=0,
+                     source=f"build_d_ladder() supplied {KMAX} exact D-ladder "
+                            "terms; the docstring and every arm's verdict are "
+                            "stated at k=21, and the probe reports itself "
+                            "blocked on the ORD-63 extension beyond it")
     out = wb.save()
     print(f"  Witness: {out}")
     return 0 if self_check and (over and noacc) else 1

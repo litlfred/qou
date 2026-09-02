@@ -116,11 +116,34 @@ def main() -> int:
     import sys as _sys  # noqa: E402
     _sys.path.insert(0, str(_here / "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    out = WitnessBuilder.wrap_legacy(
-        "figure-eight-aj-operator", witness,
-        script_path=__file__, engine="sympy", start_time=_T0,
-        output_dir=str(_here),
-    ).save()
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "figure-eight-aj-operator", witness,
+            script_path=__file__, engine="sympy", start_time=_T0,
+            output_dir=str(_here),
+        )
+        # The three exact symbolic checks this script prints as `[anchor]`,
+        # `[self-duality]` and `[q-holonomicity]`. All three were already
+        # computed and recorded as payload flags; without an assertion the
+        # witness claimed `allPassed: true` over an empty list (`qou-srvu`).
+        # Each is an exact sympy identity, so no tolerance is chosen.
+        .add_assertion(
+            "jones_anchor_J2_eq_V_4_1",
+            j2_ok, True,
+            source="exact: sp.simplify(J[2] - (q^-2-q^-1+1-q+q^2)) == 0",
+        )
+        .add_assertion(
+            "self_duality_bar_symmetry_all_N",
+            all_bar, True,
+            source=f"exact: J_N(q) == J_N(1/q) for N=1..{Nmax} (4_1 amphichiral)",
+        )
+        .add_assertion(
+            "q_holonomic_top_degree_law",
+            deg_law_ok, True,
+            source=f"exact: deg_q(J_N * q^(N(N-1))) == 2N(N-1) for N=2..{Nmax}",
+        )
+        .save()
+    )
     print(f"\n  Witness: {out}")
     return 0
 

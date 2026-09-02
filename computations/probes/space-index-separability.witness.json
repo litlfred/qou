@@ -1,0 +1,93 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:06:40.486563+00:00",
+  "commitSha": "3587c23ed4ff244548324ec6c736dbdba1ba6a12",
+  "assertions": [
+    {
+      "name": "the two pn channels are exactly degenerate before any space index",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "mu+ * mu- vs mu- * mu+ -- commutativity, so equal identically"
+    },
+    {
+      "name": "and no space FACTOR splits them, because both channels are S-wave",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "six values of g(L=0) applied to both channels alike; Lean separable_interface_degenerate covers every fSpace"
+    },
+    {
+      "name": "the degenerate value reproduces qou-kj4v's recorded figure",
+      "computed": "4.76978322072179740288873277015e-21",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "qou-kj4v records 0.18614164195799085217"
+    },
+    {
+      "name": "mu+ + mu- = 1 -- the projector decomposition, so both channels bind",
+      "computed": "1.81113581576534247350182385818e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "stated in qou-kj4v; unbinding needs mu > 1, outside the convex hull"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "space-index-separability",
+  "scriptFile": "space_index_separability_probe.py",
+  "scriptHash": "283778df6c35",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/space_index_separability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/space_index_separability_probe.py"
+  },
+  "parameters": {
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D"
+  },
+  "data": {
+    "lean_declarations": [
+      "QOU.QBeta.InterfaceScalar.separable_interface_degenerate",
+      "QOU.QBeta.InterfaceScalar.common_factor_preserves_degeneracy"
+    ],
+    "mu_plus": "0.7527021132519654015937793516202361378302",
+    "mu_minus": "0.2472978867480345984062206483797638621698",
+    "mu_triplet_3S1": "0.1861416419579908521652302167792782025971",
+    "mu_singlet_1S0": "0.1861416419579908521652302167792782025971",
+    "both_channels_are_S_wave": true,
+    "L_of_3S1": 0,
+    "L_of_1S0": 0
+  },
+  "caveats": [
+    "Scope (b) for what it excludes -- a space index entering as a FACTOR -- with the invariant cited: commutativity plus a factor common to both channels. It does NOT close qou-vbyi. The Standard Model's tensor force is a spin-space COUPLING, and a product of a spin function and a space function is exactly what a coupling is not. A non-separable interface, depending jointly on (S, L), is untouched and remains the live shape.",
+    "Nothing here bears on 3S1-3D1 mixing itself, which is a genuine L = 0 vs L = 2 admixture WITHIN the deuteron. A space index is the right home for that; it is simply not what separates the deuteron from the virtual state, since both of those are S-wave.",
+    "The physics input -- that both pn channels are S-wave -- is quoted from qou-kj4v ('space symmetric'), not derived here. It is standard: 3S1 and 1S0 are both S in the term symbol."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

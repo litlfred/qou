@@ -59,11 +59,11 @@ def torusKnotDegree : ℕ × ℕ → ℕ
   | _ => 0
 
 /-- The quantum Planck constant ℏ_q = (q - 1)/q. -/
-noncomputable def hbar (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The bare Q-value: |log_q(P_dau/P_par)| · ℏ_q · m_e/3. -/
 noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
-  |Real.log skeinRatio / Real.log q| * hbar q * m_e / 3
+  |Real.log skeinRatio / Real.log q| * hbarQ q * m_e / 3
 
 open scoped BigOperators
 

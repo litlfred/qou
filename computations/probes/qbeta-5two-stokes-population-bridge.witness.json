@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T04:35:28.171893+00:00",
-  "commitSha": "13a5ebfaddf4b37a3d3aa9253acdd71db6287a4e",
+  "computedAt": "2026-08-30T06:46:37.246456+00:00",
+  "commitSha": "5a9bbf3350ffb169964cbea3086145b5e993b821",
   "assertions": [
     {
       "name": "sigma3_series_real",
@@ -14,27 +14,26 @@
     },
     {
       "name": "sigma_pair_population_forced_zero",
-      "computed": 51205437672889.484,
-      "expected": 51205437672889.484,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 25602718836444.742,
-      "source": "σ-pair amplitude overshoots the Habiro scale by > 1e4 ⇒ n₁ = n₂ = 0 on the real-q ray (derived pruning)"
+      "source": "σ-pair amplitude overshoots the Habiro scale by > 1e4 (measured 5.12054e+13) ⇒ n₁ = n₂ = 0 on the real-q ray (derived pruning)"
     },
     {
       "name": "assembly_scan_completed",
-      "computed": 180.0,
-      "expected": 180.0,
+      "computed": 180,
+      "expected": 180,
       "passed": true,
-      "tolerance": "0.5",
-      "source": "pre-registered parameter-free scan ran to completion; hits+near-misses recorded in full"
+      "tolerance": 0,
+      "source": "pre-registered parameter-free scan ran to completion: 3 live channel(s) × 3 weight(s) × 20 candidate(s); hits+near-misses recorded in full"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-stokes-population-bridge",
   "scriptFile": "qbeta_5two_stokes_population_bridge_probe.py",
-  "scriptHash": "f13968baf033",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "917c6678d215",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +47,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_stokes_population_bridge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_stokes_population_bridge_probe.py"
   },
   "description": "B1 (bean qou-ossd): the Stokes-population bridge attack. T1 (derived pruning): the σ-pair sectors carry e^{+13.2}-growing exponentials at x₀ = −ln q₀ vs the O(1) Habiro value — integer population n₁ = n₂ = 0 is FORCED on the real-q ray; the odd channel must route through the real saddle σ₃ (pure phase) — consistent with A4.3's Stokes-free ray, #4213's GZ weight rule, and A2's Ind^rot-bar-even finding. T2: the exact sector-amplitude table (Gaussian factors, phases, resummed φ_σ1/φ_σ3 with the per-saddle engine). T3: pre-registered parameter-free assembly family (σ₃ phase channels × GZ weight powers × small (half-)integers + A2 O-matrix entries), gate 1e-6 (pin-band), every near-miss reported — no selection. auditOnly; no fit; no c_k wired; a hit is a lead, not an identification.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -106,19 +112,19 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-phi-series-engine.witness.json",
-        "sha256": "f866db7ad97ad2068716ed86f703443105f2bdf1e635450f0cec58c0a40ae963",
-        "size_bytes": 5970,
+        "sha256": "f4531337dafa8574bab3dac83440a1a11433a3b1ea5c8b09c662239aff2b67d2",
+        "size_bytes": 5978,
         "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
         "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
         "computedAt": "2026-08-01T15:17:51.390941+00:00"
       },
       {
         "path": "qbeta-5two-stokes-barodd-index.witness.json",
-        "sha256": "a80fd701463598f50ad182990ce8f260762e653aa404a70ffedcf781ec36c874",
-        "size_bytes": 6510,
-        "commitSha": "80bd9ad75cd025ccb05177289a22b62020530d06",
-        "scriptCommitSha": "c4df210824c148c3fc6c9f1ad2c7a5aca10aa864",
-        "computedAt": "2026-07-18T17:52:55.488437+00:00"
+        "sha256": "8c5deb785ce1348487c92be520651311e4005fa8e4b952b380628278d3696fd6",
+        "size_bytes": 6901,
+        "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
+        "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+        "computedAt": "2026-08-29T11:27:48.906476+00:00"
       }
     ]
   }

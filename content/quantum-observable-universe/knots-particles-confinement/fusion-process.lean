@@ -171,10 +171,13 @@ def lrPos (lam mu nu : Partition) : Bool :=
 
 Active sets from the committed LP-dual witnesses
 (`nucleus-real-sdp-{deuteron,tritium,he4,neutron}.witness.json`,
-`positive_norm_subspace_solve.active_blocks`, read 2026-08-30): -/
+`positive_norm_subspace_solve.active_blocks`, read 2026-08-30 AFTER the
+deuteron staleness adjudication of the same day — the deuteron witness was
+regenerated from the live trace (tr_M 0.38836 → 0.57517), collapsing its
+active set from seven blocks to three; the containment below survives the
+re-measurement, at |S_init| = 47 (was 79 against the stale set): -/
 
-def act2H : List Partition :=
-  [[2, 1, 1, 1, 1], [2, 2, 2], [3, 3], [4, 1, 1], [4, 2], [5, 1], [6]]
+def act2H : List Partition := [[4, 2], [5, 1], [6]]
 def act3H : List Partition := [[6, 3], [7, 2], [8, 1], [9]]
 def act4He : List Partition :=
   [[6, 6], [7, 5], [8, 4], [9, 3], [10, 2], [11, 1]]
@@ -198,9 +201,9 @@ all 176 partitions of 15. -/
 theorem support_contraction : sFin.all (fun nu => sInit.contains nu) = true := by
   decide
 
-/-- The containment is strict: the sizes are 23 and 79, independently
+/-- The containment is strict: the sizes are 23 and 47, independently
 reproducing `fusion_process_lr_support_probe.py`. -/
-theorem support_sizes : sFin.length = 23 ∧ sInit.length = 79 := by decide
+theorem support_sizes : sFin.length = 23 ∧ sInit.length = 47 := by decide
 
 theorem support_strict : sFin.length < sInit.length := by decide
 

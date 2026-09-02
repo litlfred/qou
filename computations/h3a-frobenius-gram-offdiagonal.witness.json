@@ -1,0 +1,140 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-08-31T18:47:49.013434+00:00",
+  "commitSha": "1e4882f5cda814a114bdccd7c0a50ffa05026224",
+  "assertions": [
+    {
+      "name": "markov_trace_multiplicative_on_disjoint_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max rel err 1.095e-08"
+    },
+    {
+      "name": "gram_is_nondiagonal_with_rank_5_pow_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[{'A': 1, 'dim': 6, 'rank': 5, 'five_pow_A': 5, 'radical_dim': 1, 'max_abs_offdiag': '1.272584', 'diagonal': False}, {'A': 2, 'dim': 36, 'rank': 25, 'five_pow_A': 25, 'radical_dim': 11, 'max_abs_offdiag': '1.832269', 'diagonal': False}, {'A': 3, 'dim': 216, 'rank': 125, 'five_pow_A': 125, 'radical_dim': 91, 'max_abs_offdiag': '2.638104', 'diagonal': False}, {'A': 4, 'dim': 1296, 'rank': 625, 'five_pow_A': 625, 'radical_dim': 671, 'max_abs_offdiag': '3.798347', 'diagonal': False}]"
+    },
+    {
+      "name": "cost_vector_is_the_first_gram_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "t = G e_1 exactly for A = 1,2,3"
+    },
+    {
+      "name": "realisable_demand_is_orthogonal_to_gram_kernel",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |u.k| = 1.249e-15"
+    },
+    {
+      "name": "no_demand_moves_the_dual",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "5 trials, all duals equal: True"
+    },
+    {
+      "name": "offdiagonal_gram_still_does_not_separate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "active same True, duals same True"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "h3a-frobenius-gram-offdiagonal",
+  "scriptFile": "h3a_frobenius_gram_offdiagonal_probe.py",
+  "scriptHash": "39df73c6b43a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/h3a_frobenius_gram_offdiagonal_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h3a_frobenius_gram_offdiagonal_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv): builds the H_{3A} Frobenius Gram WITH off-diagonals and settles what it does and does not fix. In the BLOCK basis diagonality is a theorem (central idempotents are orthogonal), so off-diagonals exist only away from the centre; the right object is the Gram on the constituent subalgebra (H_3)^(x)A < H_{3A}, dimension 6^A. Markov trace multiplicativity on disjoint strand blocks is verified (max rel err 1.1e-8, the f64 y_lambda precision), giving G^(A) = G^(x)A with rank exactly 5^A and radical 6^A - 5^A (1, 11, 91, 671 for A=1..4). BUT it does not unblock Phase B: because b_1 = 1, G_{1j} = t_j, i.e. t = G e_1, so row 1 of `Gx >= u` IS the objective, it is always the binding row, the optimum is always u_1 and the dual is always e_1 — measured invariant across equality/inequality forms, realisable/non-realisable/kernel demands, identity kept or dropped, and T vs He3 (identical active sets AND duals, only the objective differing). This unifies prop:operator-selection-lp's two documented degeneracies with the two measured, and WITHDRAWS the previous turn's 'the blocker is the diagonal Gram', which was a special case. No fit; nothing wired.",
+  "data": {
+    "multiplicativity": {
+      "max_rel_err": "1.095e-08",
+      "sum_y_dim_minus_1": "0.0e+00"
+    },
+    "gram_rank_law": [
+      {
+        "A": 1,
+        "dim": 6,
+        "rank": 5,
+        "five_pow_A": 5,
+        "radical_dim": 1,
+        "max_abs_offdiag": "1.272584",
+        "diagonal": false
+      },
+      {
+        "A": 2,
+        "dim": 36,
+        "rank": 25,
+        "five_pow_A": 25,
+        "radical_dim": 11,
+        "max_abs_offdiag": "1.832269",
+        "diagonal": false
+      },
+      {
+        "A": 3,
+        "dim": 216,
+        "rank": 125,
+        "five_pow_A": 125,
+        "radical_dim": 91,
+        "max_abs_offdiag": "2.638104",
+        "diagonal": false
+      },
+      {
+        "A": 4,
+        "dim": 1296,
+        "rank": 625,
+        "five_pow_A": 625,
+        "radical_dim": 671,
+        "max_abs_offdiag": "3.798347",
+        "diagonal": false
+      }
+    ],
+    "cost_is_first_gram_row": true,
+    "realisable_demand_kernel_projection": "1.249e-15",
+    "T_vs_He3": {
+      "same_active_set": true,
+      "same_duals": true,
+      "obj_T": "0.142072057",
+      "obj_He3": "0.188178643"
+    }
+  },
+  "caveats": [
+    "The BLOCK-basis Gram of nucleus_sdp_assembly is diagonal by a theorem — central primitive idempotents are orthogonal, so tr_M(P_l P_m) = delta tr_M(P_l) identically. Nothing was 'omitted' there and nothing can be added. The Gram built here is a different object on a different space, the constituent subalgebra, and does not replace it.",
+    "G^(A) = G^(x)A rests on Markov multiplicativity across disjoint strand blocks, verified to 1.1e-8 relative — the precision of the stored f64 y_lambda table, not an exact check. An exact verification wants a higher-precision y_lambda source.",
+    "The A5 sweep is at A=2 (dim 36) for cost; A6 confirms the same dual degeneracy at A=3 (dim 216). Box bounds +-1e4 are used to keep the LP bounded; with the identity dropped from the basis the LP becomes unbounded and hits them, which is reported as a failed route rather than a result."
+  ]
+}

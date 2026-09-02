@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-27T05:31:46.003730+00:00",
-  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T16:31:51.002038+00:00",
+  "commitSha": "914a13857e33611d501672d17a4c5fc0f95be10d",
   "assertions": [
     {
       "name": "coefficient_lock_holds",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "wedderburn-mass-table-z1-20",
   "scriptFile": "wedderburn_mass_table_z1_20.py",
-  "scriptHash": "499c15158793",
-  "scriptCommitSha": "8df884ddc38a1b82d05964b0b9490030976a89aa",
+  "scriptHash": "abfacd3d5e6c",
+  "scriptCommitSha": "dc17437c90d9279352b9ef02271456fa4560b2eb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

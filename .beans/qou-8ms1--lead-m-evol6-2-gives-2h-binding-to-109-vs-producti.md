@@ -33,3 +33,32 @@ substrate with NO reference to B_AME, then ask if the match is unique in that cl
 0 better matches inside the tabulated census, 796 without it - all the discriminating
 power is in the restriction, and nothing derives it. Registry asserts n_braid: 3, n_0: 6;
 CHECK whether that is derived or handed over. See docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md
+
+## ANSWERED 2026-08-31 — the derived restriction exists, and the class is empty (bean `t7qv`, Gap #2)
+
+This bean's "one thing worth doing" was: *derive a braid-index/crossing-number
+bound for `K(²H)` from the substrate with NO reference to `B_AME`, then ask if
+the match is unique in that class.*
+
+Done, with a different invariant than either suggested — the closure's
+**component count**, which the substrate fixes outright. `σ_g` and `σ_g⁻¹` are
+the same transposition, so the permutation, and hence the cycle count, is
+branch- and convention-independent. Measured exact:
+
+    c_free = 2A                                  23/23
+    c_atom = 2A − #(odd-multiplicity bonds)     414/414   ⇒ A+1 at unit mult.
+
+Corroborates `QOU.MassTheory.ClassicalTraceFloor` (`qou-zrx2`) by an independent
+route. **Answer to the question posed: the match is not unique in that class —
+the class is EMPTY.** 0 of 799 census manifolds at ²H and 0 of 1,102 at ³H have
+both the derived arity and a volume matching as well as the named knot; 29 of
+26,843 at ³He. The named knot is not in its own class either.
+
+Extends this bean's scope-(b) result from `A = 2` to `A = 3`: `8_11` is a knot
+where 4 components are required, `L6a4` has 3 where 4 are required. So `n_braid:
+3, n_0: 6` in the registry is **handed over, not derived** — the substrate says
+the ²H closure is a 3-component link on 6 strands, which `6_2` (a knot) is not.
+
+Probe `computations/probes/link_assignment_census_selectivity_probe.py`;
+the census-degeneracy half of it is this bean's prior work, re-measured as a
+guard (A5) and cited, not claimed.

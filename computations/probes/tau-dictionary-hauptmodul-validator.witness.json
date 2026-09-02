@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T12:25:29.170672+00:00",
-  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
+  "computedAt": "2026-08-30T09:24:14.924971+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "control_tau0_passes",
@@ -37,18 +37,27 @@
     },
     {
       "name": "verdicts_q0_pin_independent",
-      "computed": "stable",
-      "expected": "stable",
+      "computed": 5,
+      "expected": 5,
       "passed": true,
-      "source": "Asserted in-loop: every q0-dependent candidate's verdict set is a singleton across {muon, proton} pins (gate constrains the tau side only; pins differ by ~1.6e-8 relative)."
+      "tolerance": 0,
+      "source": "q0-dependent candidates whose verdict set is a singleton across {muon, proton}: 5 of 5 (gate constrains the tau side only; pins differ by ~1.6e-8 relative). Flips: none."
+    },
+    {
+      "name": "candidate_verdicts_match_prestated",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "candidates whose observed verdict set equals the pre-stated single expected verdict (REF-tau0 PASS; C1n ill-defined; C1, S1-S3 FAIL). Mismatches: none."
     }
   ],
   "allPassed": true,
-  "durationMs": 539,
+  "durationMs": 353,
   "computation": "tau-dictionary-hauptmodul-validator",
   "scriptFile": "tau_dictionary_hauptmodul_validator.py",
-  "scriptHash": "273f61b7b733",
-  "scriptCommitSha": "065cacc63b9c987bd2d1229bbd517ade14b5337c",
+  "scriptHash": "b02d704ae5df",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +72,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -226,6 +235,68 @@
     "q0_pins": {
       "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
       "proton": "1.1099785827513808075916690956107688798744991218736"
+    },
+    "pin_verdict_sets": {
+      "C1-nome-exact": [
+        "FAIL"
+      ],
+      "C1n-nome-naive": [
+        "ill-defined"
+      ],
+      "S1-rate": [
+        "FAIL"
+      ],
+      "S2-hbar": [
+        "FAIL"
+      ],
+      "S3-rate-halfshift": [
+        "FAIL"
+      ]
+    },
+    "n_pin_dependent_candidates": 5,
+    "expected_verdict_check": {
+      "REF-tau0": {
+        "expected": "PASS",
+        "got": [
+          "PASS"
+        ],
+        "match": true
+      },
+      "C1-nome-exact": {
+        "expected": "FAIL",
+        "got": [
+          "FAIL"
+        ],
+        "match": true
+      },
+      "C1n-nome-naive": {
+        "expected": "ill-defined",
+        "got": [
+          "ill-defined"
+        ],
+        "match": true
+      },
+      "S1-rate": {
+        "expected": "FAIL",
+        "got": [
+          "FAIL"
+        ],
+        "match": true
+      },
+      "S2-hbar": {
+        "expected": "FAIL",
+        "got": [
+          "FAIL"
+        ],
+        "match": true
+      },
+      "S3-rate-halfshift": {
+        "expected": "FAIL",
+        "got": [
+          "FAIL"
+        ],
+        "match": true
+      }
     }
   },
   "caveats": [

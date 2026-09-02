@@ -1,0 +1,216 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0607416v6",
+ "source": {
+  "file": "0607416v6.pdf",
+  "sha256": "0705075947ce4a3d33138b0eec4cc4654ab937324801b4c67f8a2bc5b4dfaa07",
+  "bytes": 324410,
+  "pages": 23,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0607416",
+   "version": "6",
+   "primary_class": null,
+   "stamp_date": "27 Jul 2008"
+  },
+  "doi": null,
+  "title": "P\u00d3LYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+  "authors_raw": "JULIUS BORCEA AND PETTER BR\u00c4ND\u00c9N",
+  "title_lines": [
+   "P\u00d3LYA-SCHUR MASTER THEOREMS FOR CIRCULAR",
+   "DOMAINS AND THEIR BOUNDARIES"
+  ],
+  "abstract": "W e characterize all linear operators on \ufb01nite or in\ufb01nite-di mensio- nal polynomial spaces that preserve the property of having t he zero set inside a prescribed region \u2126 \u2286 C for arbitrary closed circular domains \u2126 (i.e., images of the closed unit disk under a M\u00a8 obius transformation) and t heir boundaries. This provides a natural framework for dealing with several l ong-standing fun- damental problems, which we solve in a uni\ufb01ed way. In particu lar, for \u2126 = R our results settle open questions that go back to Laguerre an d P\u00b4 olya-Schur.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181107145841-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Main Results",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolicity and Stability Preservers",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of the Main Results",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolic and Stable Polynomials",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The Transcendental Characterization",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Closed Circular Domains and Their Boundaries",
+   "page": 17,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Open Problems",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7653,
+   "n_words": 1330
+  },
+  {
+   "id": "sec-001-2-main-results",
+   "number": "2",
+   "title": "Main Results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-hyperbolicity-and-stability-preservers",
+   "number": "2.1",
+   "title": "Hyperbolicity and Stability Preservers",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 9255,
+   "n_words": 1928
+  },
+  {
+   "id": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo",
+   "number": "2.2",
+   "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6131,
+   "n_words": 1358
+  },
+  {
+   "id": "sec-004-3-proofs-of-the-main-results",
+   "number": "3",
+   "title": "Proofs of the Main Results",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-31-hyperbolic-and-stable-polynomials",
+   "number": "3.1",
+   "title": "Hyperbolic and Stable Polynomials",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 16,
+   "n_chars": 18679,
+   "n_words": 4414
+  },
+  {
+   "id": "sec-006-32-the-transcendental-characterization",
+   "number": "3.2",
+   "title": "The Transcendental Characterization",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1631,
+   "n_words": 360
+  },
+  {
+   "id": "sec-007-33-closed-circular-domains-and-their-boundaries",
+   "number": "3.3",
+   "title": "Closed Circular Domains and Their Boundaries",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 10961,
+   "n_words": 2349
+  },
+  {
+   "id": "sec-008-4-open-problems",
+   "number": "4",
+   "title": "Open Problems",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3656,
+   "n_words": 611
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 6161,
+   "n_words": 985
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 64127
+ }
+}

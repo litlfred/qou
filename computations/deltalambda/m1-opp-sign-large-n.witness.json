@@ -1,0 +1,178 @@
+{
+ "probe": "m1_opp_sign_large_n",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "nsamp": 30000,
+ "seeds": [
+  11,
+  22,
+  33
+ ],
+ "rows": [
+  {
+   "n": 24,
+   "S_opp": "0.0484670910869",
+   "S_opp_spread": "0.000344864693066",
+   "B_opp": "0.636852266916",
+   "B_opp_spread": "0.00101489323236",
+   "S_opp_per_seed": [
+    "0.0484470116824",
+    "0.0481322660961",
+    "0.0488219954823"
+   ],
+   "B_opp_per_seed": [
+    "0.636059361596",
+    "0.63640829109",
+    "0.638089148061"
+   ],
+   "w_opp": "0.457111675812",
+   "slack": "13.1398904418",
+   "nsamp": 500000,
+   "exact_S_opp": "0.048580950501",
+   "rel_err": "-0.00234370494873",
+   "exact_B_opp": "0.635998513053"
+  },
+  {
+   "n": 40,
+   "S_opp": "0.116407740203",
+   "S_opp_spread": "0.000429446570177",
+   "B_opp": "0.646345216559",
+   "B_opp_spread": "0.000566606946093",
+   "S_opp_per_seed": [
+    "0.116809290687",
+    "0.116463532375",
+    "0.115950397547"
+   ],
+   "B_opp_per_seed": [
+    "0.646470373808",
+    "0.645716030988",
+    "0.646849244881"
+   ],
+   "w_opp": "0.460286851907",
+   "slack": "5.55242473939",
+   "nsamp": 300000,
+   "exact_S_opp": "0.117130431558",
+   "rel_err": "-0.00616997090724",
+   "exact_B_opp": "0.647148847884"
+  },
+  {
+   "n": 100,
+   "S_opp": "0.186587627542",
+   "S_opp_spread": "0.000766293136851",
+   "B_opp": "0.635115288466",
+   "B_opp_spread": "0.000680973255036",
+   "S_opp_per_seed": [
+    "0.186018191939",
+    "0.186193912472",
+    "0.187550778213"
+   ],
+   "B_opp_per_seed": [
+    "0.634331765137",
+    "0.635693711647",
+    "0.635320388614"
+   ],
+   "w_opp": "0.456741591649",
+   "slack": "3.40384460017",
+   "nsamp": 120000,
+   "exact_S_opp": null,
+   "rel_err": null,
+   "exact_B_opp": null
+  },
+  {
+   "n": 200,
+   "S_opp": "0.232334288415",
+   "S_opp_spread": "0.00398131149728",
+   "B_opp": "0.653466719423",
+   "B_opp_spread": "0.0098377043316",
+   "S_opp_per_seed": [
+    "0.231784629271",
+    "0.22862780649",
+    "0.236590429485"
+   ],
+   "B_opp_per_seed": [
+    "0.649840147552",
+    "0.645442301027",
+    "0.66511770969"
+   ],
+   "w_opp": "0.473484762141",
+   "slack": "2.81261420292",
+   "nsamp": 60000,
+   "exact_S_opp": null,
+   "rel_err": null,
+   "exact_B_opp": null
+  },
+  {
+   "n": 400,
+   "S_opp": "0.261073246006",
+   "S_opp_spread": "0.00104288196746",
+   "B_opp": "0.657991103732",
+   "B_opp_spread": "0.00311531617766",
+   "S_opp_per_seed": [
+    "0.261916144818",
+    "0.261473212317",
+    "0.259830380883"
+   ],
+   "B_opp_per_seed": [
+    "0.656454506791",
+    "0.655644086025",
+    "0.661874718381"
+   ],
+   "w_opp": "0.480615526913",
+   "slack": "2.5203314158",
+   "nsamp": 30000,
+   "exact_S_opp": null,
+   "rel_err": null,
+   "exact_B_opp": null
+  },
+  {
+   "n": 800,
+   "S_opp": "0.281148747796",
+   "S_opp_spread": "0.0010767922311",
+   "B_opp": "0.664456010275",
+   "B_opp_spread": "0.00415226205271",
+   "S_opp_per_seed": [
+    "0.281596103847",
+    "0.279848277539",
+    "0.282001862001"
+   ],
+   "B_opp_per_seed": [
+    "0.665658101388",
+    "0.668007226772",
+    "0.659702702666"
+   ],
+   "w_opp": "0.4862397017",
+   "slack": "2.36336108727",
+   "nsamp": 30000,
+   "exact_S_opp": null,
+   "rel_err": null,
+   "exact_B_opp": null
+  }
+ ],
+ "checks": [
+  {
+   "name": "CONTROL: reproduces the exact S_opp where it is known",
+   "pass": true,
+   "detail": "n = [24, 40] against the committed telescoping witness: relative errors ['-0.234%', '-0.617%'], worst 0.617%, tolerance 5%. B_opp there: sampled ['0.6369', '0.6463'] against exact ['0.636', '0.6471']."
+  },
+  {
+   "name": "PREDICTED: S_opp grows well past its n = 46 value of 0.118",
+   "pass": true,
+   "detail": "S_opp = ['0.1866', '0.2323', '0.2611', '0.2811'] at n = [100, 200, 400, 800]. Predicted before the run: the budget S -> 0.6605 with S_same -> 0.327 forces S_opp -> about 0.33, nearly triple the exact 0.118 at n = 46. A flat S_opp here would mean the accounting is wrong."
+  },
+  {
+   "name": "FALSIFIER: the Lean bound's slack B_opp/S_opp does NOT grow",
+   "pass": true,
+   "detail": "B_opp/S_opp = ['3.404', '2.813', '2.52', '2.363'] at n = [100, 200, 400, 800]. B_opp itself = ['0.6351', '0.6535', '0.658', '0.6645']. If this ratio grew, |slope| <= D(0)/g would be asymptotically useless and the opposite-sign half would need a different input. It does not grow -- the bound stays a bounded factor above the truth."
+  },
+  {
+   "name": "MEASURED: opposite-sign edges keep a large share of omega-weight",
+   "pass": true,
+   "detail": "w_opp = ['0.4567', '0.4735', '0.4806', '0.4862'] at n = [100, 200, 400, 800]. These edges are not a vanishing correction, which is why they had to be handled rather than bounded away."
+  }
+ ],
+ "passed": 4,
+ "total": 4,
+ "ms": 266299
+}

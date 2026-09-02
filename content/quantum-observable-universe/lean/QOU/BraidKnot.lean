@@ -1,4 +1,21 @@
 import QOU.BraidKnot.PieceAGeneral
+-- The linear hook sum `Σ_c h(c) = Σ_i C(λ_i,2) + Σ_j C(λ'_j,2) + n`, equivalently
+-- `2 Σ_c h(c) = p₂(λ) + p₂(λ')`. Built on PieceAGeneral's arm/leg reflections plus a
+-- cells-to-rows decomposition; the conjugation-symmetric form is the input to the
+-- Plancherel argument that `Σ_h` is not a shifted symmetric function.
+import QOU.BraidKnot.HookSumClosedForm
+-- Bridges that hook sum to `QOU.Common.HookSumComplete`, which proves the same
+-- identity over a sorted `List ℕ` in truncated ℕ subtraction. Identifies the two
+-- hook sums and re-derives the YoungDiagram closed form from the list one, so the
+-- duplicate is a checked equivalence rather than two proofs free to drift.
+import QOU.BraidKnot.HookSumRegisterBridge
+-- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
+-- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
+-- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
+-- what caps the per-edge N/P ratio. Both were flagged "Lean-formalizable, verified
+-- exact" in qou-k5r5 and are now proved. They are the floor under the M_1 > 0
+-- analysis, NOT a route around it: per-edge arguments are refuted there.
+import QOU.BraidKnot.M1EdgeCalculus
 import QOU.BraidKnot.BarParityInvariant
 import QOU.BraidKnot.BsymLinearChain
 import QOU.BraidKnot.ChiralityTopologySelection

@@ -114,17 +114,38 @@ def main() -> int:
         print(f"  u = {mp.nstr(u, 12)}   u_odd = {mp.nstr(u_odd, 12)}   "
               f"u_even = {mp.nstr(u_even, 12)}")
 
+        # bar(a) is COMPUTED, not assumed. The previous version hardcoded
+        # `bar_phase = -a - q^2 u/2`, i.e. it substituted bar(a) = -a from the
+        # comment beside it. That makes `a` cancel identically -- defect
+        # = -u(1+q^2)/2 with no `a` in it -- so the two assertions below became
+        # algebraic identities that could not fail, and the ONE assumption
+        # carrying the content (that each arm's `a` really is bar-odd) was never
+        # tested. It is tested now, per arm, before it is used.
+        def a_C_of(x):
+            hx = x - 1 / x
+            return (mp.sqrt(x) / (x + 1) - 1) * hx / 2
+
+        def a_D_odd_of(x):
+            hx = x - 1 / x
+            return (x**3 / (x**2 + 1) - 1) * hx / 2 - hx**2 / 4
+
         defects = []
-        for nm, a in (("C  a_C", a_C), ("D  a_odd (forced)", a_D_odd)):
+        for nm, a, a_of in (("C  a_C", a_C, a_C_of),
+                            ("D  a_odd (forced)", a_D_odd, a_D_odd_of)):
+            bar_a = a_of(1 / q)                       # the bar involution q -> 1/q
+            is_bar_odd = abs(bar_a + a) < mp.mpf("1e-40")
+            ok &= is_bar_odd                          # the assumption, now a check
             phase = a - u / 2
-            # bar(a) = -a for both (a_C bar-odd; a_odd bar-odd by construction)
-            bar_phase = -a - (q**2 * u) / 2
+            bar_phase = bar_a - (q**2 * u) / 2        # bar(u) = q^2 u (finding 1)
             defect = bar_phase + phase
             defects.append(defect)
-            print(f"  {nm:<20} bar(phase)+phase = {mp.nstr(defect, 10)}  "
-                  f"(0 iff bar-odd)")
+            print(f"  {nm:<20} bar(a)+a = {mp.nstr(bar_a + a, 6)} "
+                  f"({'bar-odd OK' if is_bar_odd else 'NOT BAR-ODD'});  "
+                  f"bar(phase)+phase = {mp.nstr(defect, 10)}  (0 iff bar-odd)")
 
-        # the defect is the SAME in both frames, and equals -u_even
+        # the defect is the SAME in both frames, and equals -u_even.
+        # These two now have content: with bar(a) computed rather than
+        # substituted, they can fail if either arm is not in fact bar-odd.
         ok &= abs(defects[0] - defects[1]) < mp.mpf("1e-40")
         ok &= abs(defects[0] + u_even) < mp.mpf("1e-40")
         ok &= abs(defects[0]) > mp.mpf("1e-3")        # and it is not small

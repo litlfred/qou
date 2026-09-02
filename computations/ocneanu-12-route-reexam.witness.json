@@ -1,24 +1,48 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:25.908485+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T14:00:23.877700+00:00",
+  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
   "assertions": [
     {
-      "name": "reexam_completed",
-      "computed": true,
-      "expected": true,
+      "name": "borromean_pole_leading_coefficient_is_minus_one",
+      "computed": "-1.0",
+      "expected": "-1",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "Route A: tr_M(β_Bor, q)·q⁴ from the Lean-proved closed form evaluated at q = 1e-15 in mpmath at 50 dps. Route B: sympy's exact limit of q^order·tr_M as q → 0 after clearing denominators in ℚ(q). The retracted attribution needed -1/12 here."
+    },
+    {
+      "name": "borromean_pole_order_is_four",
+      "computed": 4,
+      "expected": 4,
       "passed": true,
       "tolerance": 0,
-      "source": "Ocneanu route re-exam completed at 50 dps."
+      "source": "Route A: the q-valuation of numerator and denominator of cancel(together(tr_M)) — deg-lowest monomial exponents, exact integer arithmetic in sympy. Route B: the pole order commit 6766b40b9 states for β_Bor (4, versus the 10 the 2026-05-04 Ocneanu audit reported for the proton T_w)."
+    },
+    {
+      "name": "k_required_matches_integer_twelve_within_verdict_band",
+      "computed": "11.99960972984508386212587",
+      "expected": "12",
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "Route A: k = (2·m_μ·F_Bor − m_p)/m_e at 50 dps from CODATA masses and F_Bor = |tr_M(β_Bor)|·[3]_q!/q³. Route B: the integer 12 in m_p = 2·m_μ·F_Bor − 12·m_e (audit 2026-05-25). Tolerance 0.01 is the threshold the Step-4 verdict branches on."
+    },
+    {
+      "name": "local_electron_mass_literal_matches_codata_registry",
+      "computed": "0.51099895069",
+      "expected": "0.51099895069",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "Route A: the m_e literal hand-typed in this module and used to divide out k. Route B: codata_constants.M_E_MEV. k scales as 1/m_e, so a drift of 1e-5 relative here moves k by more than the 0.01 band assertion (3) allows."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 16,
   "computation": "ocneanu-12-route-reexam",
   "scriptFile": "ocneanu_12_route_reexam.py",
-  "scriptHash": "4270d8b28df8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "3185b3a6b879",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +54,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/ocneanu_12_route_reexam.py"
+    ],
+    "reproduce": "python3 -u computations/ocneanu_12_route_reexam.py"
   },
   "description": "Re-examines commit 6766b40b9's correction of the Ocneanu −1/12 attribution for the proton-mass-identity '12'. Confirms the Borromean pole-order claim (pole 4, leading -1) but finds the empirical k = 12.0xx is tighter than the audit's 'empirical integer near-match' phrasing suggests, deserving deeper categorical investigation. Several natural candidates (4·3 edge cells, Σd_λ²·2, 3!·[2]_q-at-1) all give 12 EXACTLY.",
   "parameters": {
@@ -42,7 +74,26 @@
     "delta_k_minus_12": "-0.0003902701549161378741312839",
     "relative_pct": "-0.00325225129097",
     "F_Bor_at_q0": "4.469138735767522529389075",
-    "verdict": "AUDIT VERDICT STANDS but with NUANCE: the empirical k ≈ 12 is extraordinarily close to integer 12 (~10⁻⁴ relative). The correction commit was right that the Borromean's pole structure doesn't give -1/12 — but the integer 12 itself is so tight (10⁻⁴) that it deserves a NEW structural explanation, not just 'empirical near-match.' Several natural candidates (4·3 = #edge cells × #strands; Σd_λ²·2 = 6·2; 3!·[2]_q at q=1 = 12) hit exactly 12 — deserves categorical investigation."
+    "verdict": "AUDIT VERDICT STANDS but with NUANCE: the empirical k ≈ 12 is extraordinarily close to integer 12 (~10⁻⁴ relative). The correction commit was right that the Borromean's pole structure doesn't give -1/12 — but the integer 12 itself is so tight (10⁻⁴) that it deserves a NEW structural explanation, not just 'empirical near-match.' Several natural candidates (4·3 = #edge cells × #strands; Σd_λ²·2 = 6·2; 3!·[2]_q at q=1 = 12) hit exactly 12 — deserves categorical investigation.",
+    "borromean_pole": {
+      "route_a_numeric_trM_times_q4_at_1e-15": "-1.0",
+      "route_b_symbolic_pole_order": 4,
+      "route_b_symbolic_leading_coefficient": "-1"
+    },
+    "h3_structural_ingredients": {
+      "hook_length_dims": {
+        "(3,)": 1,
+        "(2, 1)": 2,
+        "(1, 1, 1)": 1
+      },
+      "sum_d_lambda_squared": 6,
+      "dim_H3_factorial": 6
+    },
+    "m_e_two_routes": {
+      "literal_in_this_module": "0.51099895069",
+      "codata_registry_M_E_MEV": "0.51099895069",
+      "difference": "0.0"
+    }
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

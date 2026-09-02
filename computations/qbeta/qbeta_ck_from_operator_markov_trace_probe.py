@@ -211,11 +211,15 @@ def main() -> int:
         builder.add_data("tr_M_at_q0", str(sp.N(tr_M.subs(q, q0_sp), 25)))
         builder.add_data("u0_at_q0", str(u0_const))
         builder.add_data("verdict", "u'(q_0) = 0 EXACTLY; scalar series reversion impossible (matches PR #1840)")
-        builder.add_assertion(
-            "stage_c_operator_data_assembled",
-            computed=1, expected=1, tolerance=0,
-            source="Stage C operator data assembled symbolically.",
-        )
+        # Was `add_assertion(computed=1, expected=1)` (bean `qou-26f2`) — a
+        # note that this branch was reached, which is what `add_data` is for.
+        # The finding on this path is the verdict recorded just above.
+        builder.add_data("stage_c_operator_data_assembled", {
+            "assembled": True,
+            "path": "scalar route singular (u'(q_0) = 0) — early return; "
+                    "the matrix N=k reading is required",
+            "has_independent_expected_value": False,
+        })
         builder.save()
         return 0
 
@@ -365,9 +369,22 @@ def main() -> int:
         ],
     })
 
+    # Was `computed=1, expected=1` (bean `qou-26f2`) — a constant standing in
+    # for the whole Stage C deliverable, so nothing the assembly produced
+    # could have made it fail.
+    #
+    # The per-block chi closed forms named in the source are literals assigned
+    # at the top of this function, so asserting them would compare a literal
+    # to itself — circular, and no better than what it replaces. The
+    # falsifiable half of the claim is the *combination*: the source says the
+    # Wenzl weights and chi forms combine into "tr_M(trefoil)(q) exact
+    # rational". That is a property of `tr_M`, and it is exactly what breaks
+    # if `y_lambda_wenzl_bridge` ever returns a weight carrying a radical —
+    # the sqrt branch this same source string warns about two sentences later.
     builder.add_assertion(
-        "stage_c_operator_data_assembled",
-        computed=1, expected=1, tolerance=0,
+        "stage_c_tr_M_is_exact_rational_in_q",
+        computed=bool(tr_M.is_rational_function(q)),
+        expected=True,
         source=("Stage C deliverable: per-block chi closed forms "
                 "(q^3, 0, -q^{-3}) from PR #1873, Wenzl weights "
                 "y_lambda(q) symbolic from y_lambda_wenzl_bridge, "

@@ -216,9 +216,16 @@ def main() -> int:
         "[3]_q · ℏ_q / [2]_q² · ℏ_q²":         (q ** 2 + 1 + 1/q**2) * hbar_q
                                               / qint_2 ** 2 * hbar_q ** 2,
     }
+    # One entry of this scan is labelled "trivially" — (1 − q⁻¹)³ IS ℏ_q³ by
+    # definition — so it doubles as a check that `hbar_q` is the thing its
+    # name says. Kept rather than only printed; see the assertion below.
+    trivial_candidate_key = "(1 - q⁻¹)³ = ℏ_q³ trivially"
+    hbar_q_definition_ok = None
     for name, expr in candidates.items():
         diff_to_rung2_num = sp.simplify(expr - hbar_q ** 3)
         marker = " ✓ matches ℏ_q³" if diff_to_rung2_num == 0 else ""
+        if name == trivial_candidate_key:
+            hbar_q_definition_ok = (diff_to_rung2_num == 0)
         print(f"    {name:<50}{marker}")
     print()
 
@@ -251,16 +258,40 @@ def main() -> int:
         "Structural lift holds with this categorical interpretation."
     ))
 
+    # `computed=1, expected=1` recorded that a verdict had been reached, not
+    # that the verdict was sound — and a REFUTED reached because sympy simply
+    # failed to reduce a difference that is really zero would have looked
+    # identical. The probe already runs the second route that settles it: a
+    # 50-dps evaluation of both sides at q₀. Assert that the two routes agree
+    # on the verdict, which is what "decisively resolved" has to mean here
+    # (bean qou-26f2). The measured relative gap is ~255, so the REFUTED is
+    # not a near-miss; 1e-40 is the 50-dps floor, not a fitted threshold.
+    numeric_gap = mp.fabs(actual_q0 - hypA_q0) / actual_q0
+    numeric_says_confirmed = numeric_gap < mp.mpf("1e-40")
     builder.add_assertion(
-        "hypA_decisively_resolved",
-        computed=1,
+        "hypA_symbolic_and_numeric_verdicts_agree",
+        computed=int(bool(hypA_confirmed) == bool(numeric_says_confirmed)),
         expected=1,
         tolerance=0,
-        source=("The probe symbolically computes both rung-2 and "
-                "Hyp-A's prediction as rational functions in q, "
-                "simplifies the difference, and reports CONFIRMED "
-                "(diff = 0) or REFUTED (diff ≠ 0). Either way the "
-                "Hyp-A status is decisively resolved at this scope."),
+        unit="boolean",
+        source=("The probe computes rung-2 and Hyp-A's prediction as rational "
+                "functions in q and simplifies the difference; it also "
+                "evaluates both at q₀ to 50 dps. The symbolic verdict "
+                f"(diff == 0 → {bool(hypA_confirmed)}) and the numerical one "
+                f"(relative gap {mp.nstr(numeric_gap, 6)} < 1e-40 → "
+                f"{bool(numeric_says_confirmed)}) must agree, or the "
+                "resolution is a simplification artefact rather than a "
+                "result."),
+    )
+    builder.add_assertion(
+        "hbar_q_matches_its_definition",
+        computed=int(bool(hbar_q_definition_ok)),
+        expected=1,
+        tolerance=0,
+        unit="boolean",
+        source=("The auxiliary scan's own 'trivially' entry: (1 − q⁻¹)³ − "
+                "ℏ_q³ must simplify to exactly 0, so ℏ_q is (q−1)/q as the "
+                "rung-2 form assumes."),
     )
 
     builder.save()

@@ -1,0 +1,582 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s00209-021-02825-4",
+ "source": {
+  "file": "s00209-021-02825-4.pdf",
+  "sha256": "85ca5ec21f42a98839650384c0db181914ee4f2af49dd7282ff17681f7096a01",
+  "bytes": 587553,
+  "pages": 42,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s00209-021-02825-4",
+  "title": "Mathematische Zeitschrift (2022) 300:1359\u20131400 A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization Jonathan Leake 1 \u00a9 The Author(s) 2021",
+  "authors_raw": null,
+  "title_lines": [
+   "Mathematische Zeitschrift (2022) 300:1359\u20131400",
+   "A representation theoretic explanation of the",
+   "Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "Jonathan Leake 1",
+   "\u00a9 The Author(s) 2021"
+  ],
+  "abstract": "In 2009, Borcea and Br\u00e4nd\u00e9n characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their \ufb01ndings, which generalizes and simpli\ufb01es their result and leads to a conceptual uni\ufb01cation of many related results in polynomial stability theory. At the heart of this uni\ufb01cation is a generalized Grace\u2019s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea\u2013Br\u00e4nd\u00e9n result to characterize a certain subclass of the linear operators which preserve such polynomials.",
+  "docinfo": {
+   "Author": "Jonathan Leake ",
+   "CreationDate": "D:20210808172847+05'30'",
+   "Creator": "Springer",
+   "Title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "The main idea",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A generalized Grace's theorem and interval- and ray-rootedness",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A roadmap",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Preliminaries",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 4,
+   "title": "Notation",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 4,
+   "title": "Homogeneous polynomials",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 4,
+   "title": "Homogeneous polynomials as representations",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 5,
+   "title": "The action of SL2(C)",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 5,
+   "title": "An important invariant map, and apolarity",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 5,
+   "title": "The symbol of an operator",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 4,
+   "title": "Polynomial stability theory",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 5,
+   "title": "Polar derivatives",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 5,
+   "title": "Projective convexity and Laguerre's theorem",
+   "page": 14,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 5,
+   "title": "Real stable polynomials",
+   "page": 15,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Grace's theorem",
+   "page": 16,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 4,
+   "title": "Other regions",
+   "page": 17,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 4,
+   "title": "Evaluation symbols",
+   "page": 19,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Stability properties of complex linear operators",
+   "page": 20,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "Weak stability preservation",
+   "page": 21,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 3,
+   "title": "Strong stability preservation",
+   "page": 22,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 3,
+   "title": "Deriving the complex Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "page": 25,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Stability properties of real linear operators",
+   "page": 27,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 3,
+   "title": "Weak real stability preservation",
+   "page": 27,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 3,
+   "title": "Strong real stability preservation",
+   "page": 28,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 3,
+   "title": "Deriving the real Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "page": 29,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "Ray and interval stability",
+   "page": 30,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Tensor product decomposition of SL2(C) representations",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.1 Decomposition of V(n) tensor V(m)",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.2 Decomposition of V(lambda) tensor V(mu)",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B The Grace\u2013Walsh\u2013Szego coincidence theorem",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "B.1 Polarization and projection",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "B.2 The coincidence theorem",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "References",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-a-representation-theoretic-explanation-of-the-bo",
+   "number": null,
+   "title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 153,
+   "n_words": 24
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 716,
+   "n_words": 103
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7202,
+   "n_words": 1155
+  },
+  {
+   "id": "sec-003-the-main-idea",
+   "number": null,
+   "title": "The main idea",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 7231,
+   "n_words": 1227
+  },
+  {
+   "id": "sec-004-21-notation",
+   "number": "2.1",
+   "title": "Notation",
+   "level": 4,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 252,
+   "n_words": 40
+  },
+  {
+   "id": "sec-005-a-roadmap",
+   "number": null,
+   "title": "A roadmap",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2759,
+   "n_words": 432
+  },
+  {
+   "id": "sec-006-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 274,
+   "n_words": 42
+  },
+  {
+   "id": "sec-007-22-homogeneous-polynomials",
+   "number": "2.2",
+   "title": "Homogeneous polynomials",
+   "level": 4,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4974,
+   "n_words": 999
+  },
+  {
+   "id": "sec-008-3-homogeneous-polynomials-as-representations",
+   "number": "3",
+   "title": "Homogeneous polynomials as representations",
+   "level": 4,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 959,
+   "n_words": 159
+  },
+  {
+   "id": "sec-009-31-the-action-of-sl2c",
+   "number": "3.1",
+   "title": "The action of SL2(C)",
+   "level": 5,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2617,
+   "n_words": 509
+  },
+  {
+   "id": "sec-010-32-an-important-invariant-map-and-apolarity",
+   "number": "3.2",
+   "title": "An important invariant map, and apolarity",
+   "level": 5,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3739,
+   "n_words": 739
+  },
+  {
+   "id": "sec-011-33-the-symbol-of-an-operator",
+   "number": "3.3",
+   "title": "The symbol of an operator",
+   "level": 5,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4140,
+   "n_words": 810
+  },
+  {
+   "id": "sec-012-4-polynomial-stability-theory",
+   "number": "4",
+   "title": "Polynomial stability theory",
+   "level": 4,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1545,
+   "n_words": 256
+  },
+  {
+   "id": "sec-013-41-polar-derivatives",
+   "number": "4.1",
+   "title": "Polar derivatives",
+   "level": 5,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 6342,
+   "n_words": 1220
+  },
+  {
+   "id": "sec-014-43-real-stable-polynomials",
+   "number": "4.3",
+   "title": "Real stable polynomials",
+   "level": 5,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 7341,
+   "n_words": 1454
+  },
+  {
+   "id": "sec-015-51-other-regions",
+   "number": "5.1",
+   "title": "Other regions",
+   "level": 4,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 6728,
+   "n_words": 1439
+  },
+  {
+   "id": "sec-016-52-evaluation-symbols",
+   "number": "5.2",
+   "title": "Evaluation symbols",
+   "level": 4,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2966,
+   "n_words": 602
+  },
+  {
+   "id": "sec-017-6-stability-properties-of-complex-linear-operato",
+   "number": "6",
+   "title": "Stability properties of complex linear operators",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 902,
+   "n_words": 128
+  },
+  {
+   "id": "sec-018-62-strong-stability-preservation",
+   "number": "6.2",
+   "title": "Strong stability preservation",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 481,
+   "n_words": 66
+  },
+  {
+   "id": "sec-019-61-weak-stability-preservation",
+   "number": "6.1",
+   "title": "Weak stability preservation",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 12092,
+   "n_words": 2358
+  },
+  {
+   "id": "sec-020-63-deriving-the-complex-borceabr\u00e4nd\u00e9n-characteri",
+   "number": "6.3",
+   "title": "Deriving the complex Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 5497,
+   "n_words": 994
+  },
+  {
+   "id": "sec-021-7-stability-properties-of-real-linear-operators",
+   "number": "7",
+   "title": "Stability properties of real linear operators",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 95,
+   "n_words": 14
+  },
+  {
+   "id": "sec-022-71-weak-real-stability-preservation",
+   "number": "7.1",
+   "title": "Weak real stability preservation",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 447,
+   "n_words": 73
+  },
+  {
+   "id": "sec-023-72-strong-real-stability-preservation",
+   "number": "7.2",
+   "title": "Strong real stability preservation",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4801,
+   "n_words": 921
+  },
+  {
+   "id": "sec-024-73-deriving-the-real-borceabr\u00e4nd\u00e9n-characterizat",
+   "number": "7.3",
+   "title": "Deriving the real Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 3575,
+   "n_words": 686
+  },
+  {
+   "id": "sec-025-74-ray-and-interval-stability",
+   "number": "7.4",
+   "title": "Ray and interval stability",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 11957,
+   "n_words": 2285
+  },
+  {
+   "id": "sec-026-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 41,
+   "n_chars": 18832,
+   "n_words": 3614
+  },
+  {
+   "id": "sec-027-references",
+   "number": null,
+   "title": "References",
+   "level": 4,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 2469,
+   "n_words": 362
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 28,
+  "chars_total": 121086
+ }
+}

@@ -465,6 +465,32 @@ def main() -> int:
     })
     w.set_content_block("prop:mass-endomorphism-tower")
     w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
+    # The validity precondition for every branch-A number in this witness:
+    # each Phi product expansion must actually terminate — inside the radius
+    # of convergence, last term below the file's own 1e-16 bar, and not by
+    # exhausting the 2000-iteration cap. All three were computed and stored
+    # as telemetry, but only as data, so the witness claimed
+    # `allPassed: true` over an empty assertion list (bean `qou-srvu`).
+    # Without this, a silent fallthrough to `max_iter_hit` would leave the
+    # branch-A mass in the witness looking exactly as authoritative as a
+    # converged one.
+    #
+    # This is genuinely failable, not a rubber stamp: the margin is thin.
+    # phi_V0 terminates at iteration 354 with last_term 9.82e-17 against
+    # the 1e-16 bar — 1.8 % of headroom.
+    for _tag, _tr in (("phi_V0", trace_v0), ("phi_V1", trace_v1),
+                      ("phi_V0V1", trace_v01)):
+        w.add_assertion(
+            f"{_tag}_product_expansion_converged",
+            bool(_tr.get("converged_below_1e-16", False)
+                 and not _tr.get("diverged_at_radius", True)
+                 and not _tr.get("max_iter_hit", True)),
+            True,
+            source=(
+                f"{_tag}: inside radius, |coef*z| < 1e-16 reached in "
+                f"{_tr.get('iters')} of at most 2000 iterations"
+            ),
+        )
     w.save()
     return 0
 

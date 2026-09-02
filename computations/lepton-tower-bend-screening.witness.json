@@ -1,15 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T10:35:01.925406+00:00",
-  "commitSha": "83bb5560a8ba67fd60639da2ae9dfad0fb9191c1",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:00:51.228957+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "bend_invariant_under_jones_writhe_prefactor",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "geometric_readout_forces_unit_bend / prop:lepton-continuant-recurrence"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lepton-tower-bend-screening",
   "scriptFile": "lepton_tower_bend_screening.py",
-  "scriptHash": "36475bdcd9fe",
-  "scriptCommitSha": "83bb5560a8ba67fd60639da2ae9dfad0fb9191c1",
+  "scriptHash": "04a10abd3350",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

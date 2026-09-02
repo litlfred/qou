@@ -113,8 +113,8 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
-$q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09888$,
-$\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10450$,
+$q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
+$\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
 $m_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,
 $m_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,
 $m_e \approx 0.51100$ MeV.
@@ -123,10 +123,10 @@ $m_e \approx 0.51100$ MeV.
 
 | Symbol | Formula | Value |
 |--------|---------|:-----:|
-| $\hbar_q$ | $1 - q_0^{-1}$ | $\approx 0.09888$ |
-| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10450$ |
-| $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.05049$ |
-| $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01099$ |
+| $\hbar_q$ | $1 - q_0^{-1}$ | $\approx 0.09908$ |
+| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q_0 - q_0^{-1})$ | $\approx 0.10453$ |
+| $s$ | $q_0^{1/2} - q_0^{-1/2}$ | $\approx 0.10439$ |
+| $[2]_{q_0}$ | $q_0 + q_0^{-1}$ | $\approx 2.01090$ |
 
 **Knot-particle identification.** Each constituent knot is
 classified by the fermion--boson decomposition

@@ -1,24 +1,48 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:40:30.447272+00:00",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+  "computedAt": "2026-08-30T14:04:54.095637+00:00",
+  "commitSha": "1717c95e6cd31392765736c080e042799c26c2d2",
   "assertions": [
     {
-      "name": "phi8_squared_mechanism_identified",
-      "computed": 1,
-      "expected": 1,
+      "name": "habiro_expansion_reconstructs_input_polynomial",
+      "computed": 4,
+      "expected": 4,
       "passed": true,
       "tolerance": 0,
-      "source": "sympy.factor + cyclotomic_poly on z(q)^k Habiro sums and (u;u)_m Pochhammer factors."
+      "source": "Route A: Σ a_m·(u;u)_m rebuilt from the sequential Pochhammer division of `cyclotomic_expansion`, for z(q)^1, z(q)^2, z(q)^3 and z²−z. Route B: the denominator-cleared p(u) each expansion was given. Expanded difference must be identically 0 in ℤ[u]."
+    },
+    {
+      "name": "pochhammer_phi8_multiplicity_matches_floor_m_over_8",
+      "computed": 21,
+      "expected": 21,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: repeated sp.div of (u;u)_m by cyclotomic_poly(8, u), m = 0..20. Route B: ⌊m/8⌋ from the divisor factorisation 1−u^k = Π_{d|k} Φ_d(u). The FROM-POCHHAMMER-BOUNDARY verdict is a statement about exactly this law."
+    },
+    {
+      "name": "phi8_multiplicity_agrees_with_residue_fold_route",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: Φ_8-multiplicity by repeated sp.div. Route B: by reducing mod Φ_8 = u⁴+1 through a coefficient fold (u^i ↦ (−1)^(i//4)·u^(i mod 4)) and differentiating for higher multiplicity — Φ_8 is irreducible over ℚ and Φ_8' = 4u³ is coprime to it, so Φ_8^k | S iff Φ_8 divides S and its first k−1 derivatives. Covers z(q)^1..3, z²−z and the three Δa_m chains."
+    },
+    {
+      "name": "z_pow_k_habiro_sums_carry_no_phi8",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: max Φ_8 multiplicity over the k = 1, 2, 3 Habiro sums, measured. Route B: 0, because z(q)^k in u is u^(6k)/Φ_4(u)^k and `to_u_polynomial` clears the denominator, leaving a monomial — which no cyclotomic polynomial of degree > 0 divides. If this is ever nonzero the verdict is not FROM-POCHHAMMER-BOUNDARY."
     }
   ],
   "allPassed": true,
-  "durationMs": 39785,
+  "durationMs": 35140,
   "computation": "qbeta-habiro-phi8-squared-from-z-squared-probe",
   "scriptFile": "qbeta_habiro_phi8_squared_from_z_squared_probe.py",
-  "scriptHash": "2bc320fdba90",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "c8474bf01a64",
+  "scriptCommitSha": "1717c95e6cd31392765736c080e042799c26c2d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "9916510690677ea8"
   },
   "invocation": {
     "argv": [
@@ -77,14 +101,16 @@
       {
         "m": 0,
         "cyclotomic_counts": {},
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 1,
         "cyclotomic_counts": {
           "1": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 2,
@@ -92,7 +118,8 @@
           "1": 2,
           "2": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 3,
@@ -101,7 +128,8 @@
           "2": 1,
           "3": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 4,
@@ -111,7 +139,8 @@
           "3": 1,
           "4": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 5,
@@ -122,7 +151,8 @@
           "4": 1,
           "5": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 6,
@@ -134,7 +164,8 @@
           "5": 1,
           "6": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 7,
@@ -147,7 +178,8 @@
           "6": 1,
           "7": 1
         },
-        "phi8_power": 0
+        "phi8_power": 0,
+        "phi8_power_floor_m_over_8": 0
       },
       {
         "m": 8,
@@ -161,7 +193,8 @@
           "7": 1,
           "8": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 9,
@@ -176,7 +209,8 @@
           "8": 1,
           "9": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 10,
@@ -192,7 +226,8 @@
           "9": 1,
           "10": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 11,
@@ -209,7 +244,8 @@
           "10": 1,
           "11": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 12,
@@ -227,7 +263,8 @@
           "11": 1,
           "12": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 13,
@@ -246,7 +283,8 @@
           "12": 1,
           "13": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 14,
@@ -266,7 +304,8 @@
           "13": 1,
           "14": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 15,
@@ -287,7 +326,8 @@
           "14": 1,
           "15": 1
         },
-        "phi8_power": 1
+        "phi8_power": 1,
+        "phi8_power_floor_m_over_8": 1
       },
       {
         "m": 16,
@@ -309,7 +349,8 @@
           "15": 1,
           "16": 1
         },
-        "phi8_power": 2
+        "phi8_power": 2,
+        "phi8_power_floor_m_over_8": 2
       },
       {
         "m": 17,
@@ -332,7 +373,8 @@
           "16": 1,
           "17": 1
         },
-        "phi8_power": 2
+        "phi8_power": 2,
+        "phi8_power_floor_m_over_8": 2
       },
       {
         "m": 18,
@@ -356,7 +398,8 @@
           "17": 1,
           "18": 1
         },
-        "phi8_power": 2
+        "phi8_power": 2,
+        "phi8_power_floor_m_over_8": 2
       },
       {
         "m": 19,
@@ -381,7 +424,8 @@
           "18": 1,
           "19": 1
         },
-        "phi8_power": 2
+        "phi8_power": 2,
+        "phi8_power_floor_m_over_8": 2
       },
       {
         "m": 20,
@@ -407,20 +451,24 @@
           "19": 1,
           "20": 1
         },
-        "phi8_power": 2
+        "phi8_power": 2,
+        "phi8_power_floor_m_over_8": 2
       }
     ],
     "z_diff_habiro_result": {
       "diff_p_in_u": "u**6*(u**6 - u**4 - 1)",
       "habiro_sum_factored": "u**6*(u**6 - u**4 - 1)",
       "cyclotomic_counts": {},
-      "phi8_power": 0
+      "phi8_power": 0,
+      "phi8_power_root_test": 0,
+      "reconstructs_input_polynomial": true
     },
     "actual_delta_am_phi8_counts": [
       {
         "pair": "(D − n)",
         "cyclotomic_counts": {},
         "phi8_power": 0,
+        "phi8_power_root_test": 0,
         "first_phi8_m": null,
         "first_phi8_sq_m": null,
         "factored_excerpt": "4*u**18*(u**16 - u**12 + u**8 + 1)*(u**20 + u**12 - u**8 + u**4 - 1)*(u**64 - 2*u**62 + 8*u**60 - 2*u**58 + 7*u**56 + 18*u**52 + 18*u**48 + 29*u**44 + 2*u**42 - 28*u**40 + 6*u**38 - 126*u**36 + 6*u**34 - 140*u**32 - 2*u**30 - 38*u**28 - 6*u**26 - 9*u**24 - 6*u**20 - 10*u**16 - 4*u**14 - 3*u**12 - 2*u**10 - 6*u**8 + 2*u**6 - 2*u**4 + 2*u**2 - 1)"
@@ -431,9 +479,10 @@
           "8": 3
         },
         "phi8_power": 3,
+        "phi8_power_root_test": 3,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 15,
-        "factored_excerpt": "64*u**42*(u**4 + 1)**3*(u**16 + u**8 + u**4 + 1)*(u**16 - u**12 + u**8 + 1)*(u**28 + u**24 + u**20 - 1)*(u**20 + u**12 - u**8 + u**4 - 1)*(3*u**48 + 3*u**44 + 6*u**40 + 6*u**36 + 8*u**32 + 2*u**30 - 4*u**28 + 6*u**26 - 19*u**24 + 2*u**22 - 23*u**20 - 10*u**18 - 14*u**16 - 10*u**14 - 17*u**12 + 2*u**10 - 13*u**8 + 6*u**6 - 7*u**4 + 2*u**2 - 1)"
+        "factored_excerpt": "192*u**46*(u**4 + 1)**3*(u**16 + u**8 + u**4 + 1)*(u**16 - u**12 + u**8 + 1)*(u**28 + u**24 + u**20 - 1)*(u**20 + u**12 - u**8 + u**4 - 1)*(u**20 - 2*u**18 + 7*u**16 - 2*u**12 + 4*u**10 + 4*u**8 + u**4 - 2*u**2 + 1)*(u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 - 2*u**24 - 11*u**20 - 13*u**16 - 4*u**12 - u**8 - u**4 - 1)"
       },
       {
         "pair": "(⁴He − ³He)",
@@ -441,9 +490,10 @@
           "8": 2
         },
         "phi8_power": 2,
+        "phi8_power_root_test": 2,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 15,
-        "factored_excerpt": "64*(u**4 + 1)**2*(1993*u**201 + 848*u**200 - 1044*u**199 - 1245*u**198 - 6104*u**197 - 2498*u**196 + 857*u**195 + 3058*u**194 + 10835*u**193 + 5060*u**192 + 658*u**191 - 2962*u**190 - 14908*u**189 - 6751*u**188 - 796*u**187 + 2175*u**186 + 18659*u**185 + 7923*u**184 + 282*u**183 - 3715*u**182 - 23776*u**181 - 9152*u**180 + 2428*u**179 + 3326*u**178 + 28178*u**177 + 7031*u**176 - 7737*u**175 - 1166"
+        "factored_excerpt": "768*(u**4 + 1)**2*(29068579*u**201 + 5456591*u**200 - 22633070*u**199 - 27241221*u**198 - 90423491*u**197 - 20306822*u**196 + 34305336*u**195 + 70517997*u**194 + 171349100*u**193 + 58700459*u**192 - 17746905*u**191 - 80261848*u**190 - 241126218*u**189 - 83888288*u**188 + 16694851*u**187 + 79030725*u**186 + 297767781*u**185 + 93130261*u**184 - 34973819*u**183 - 101293541*u**182 - 382416896*u**181 -"
       }
     ],
     "verdict_short": "FROM_POCHHAMMER_BOUNDARY",
@@ -455,7 +505,49 @@
       "z_sq_at_q0": 0.3753866308623884,
       "phi8_at_u0": 2.232052454166764
     },
-    "elapsed_seconds": 39.785507678985596
+    "habiro_reconstruction": {
+      "checked": 4,
+      "exact": 4
+    },
+    "pochhammer_counting_law": {
+      "rows": 21,
+      "agreeing": 21,
+      "law": "Φ_8 multiplicity of (u;u)_m is #{k<=m : 8|k} = floor(m/8)"
+    },
+    "phi8_two_routes": {
+      "pairs_division_vs_root_fold": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "agreeing": 7
+    },
+    "elapsed_seconds": 35.14091610908508
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,0 +1,253 @@
+{
+  "computation": "qbeta-eigenphase-tower-and-fraction-readings",
+  "engine": "mpmath",
+  "description": "qou-cds1 Step 24: both readings of the 0.0566-vs-2.0204 gap are CLOSED. CHECK A -- across k=3..6 and every partition, the ONLY distinct |arg| of a complex eigenvalue of rho_lambda(Delta_L) is 2.02044502, in blocks of dimension 1..16. The reason is structural and is standard representation theory: an H_3 element acts block-diagonally on the H_3-isotypic decomposition of lambda|H_3, so the tower REPEATS the H_3 spectrum and cannot add to it -- closing this reading for every H_3-induced operator, not just Delta_L. CHECK B -- theta_eig/theta_req = 35.700, not an integer; seven pre-declared fraction candidates all miss, the closest (theta/22) by 62 %. The non-numerological version settles it: theta_req is (z-1)h/2 - u/2, a function of z, so reading theta_eig as a ladder phase requires z = 20.37 or -18.29 against admissible z_D = 0.6127, z_C = 0.4993 -- different ranges, not a rational factor. What remains open is the one thing Step 22's correction opened: a genuinely level-k operator not induced from H_3.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "one_eigenphase_only_across_the_whole_tower",
+      "passed": true,
+      "detail": "the only distinct |arg| anywhere in k=3..6 is 2.02044502, in blocks of dimension 1..16, with 0 eig failures \u2014 the tower repeats the H_3 spectrum and adds nothing"
+    },
+    {
+      "name": "higher_blocks_cannot_carry_a_new_phase_for_H3_induced_operators",
+      "passed": true,
+      "detail": "structural: an H_3 element acts block-diagonally on the H_3-isotypic decomposition, so spec at level k is the H_3 spec with multiplicity. Standard rep theory, cited not proved; the measurement is consistent with it at every block"
+    },
+    {
+      "name": "no_declared_fraction_lands",
+      "passed": true,
+      "detail": "closest of 7 pre-declared candidates is theta/22 at ratio 1.62274, 62.27 % off. No search beyond the declared list"
+    },
+    {
+      "name": "eigenphase_read_as_a_ladder_phase_needs_inadmissible_z",
+      "passed": true,
+      "detail": "z = 20.369566 or -18.288085 against admissible z_D = 0.61268804, z_C = 0.49932033 \u2014 the two phases are not related by a rational factor, they live in different ranges"
+    },
+    {
+      "name": "both_readings_closed_elliptic_generator_is_not_the_ladders",
+      "passed": true,
+      "detail": "Delta_L supplies a genuine elliptic generator whose ellipticity is a fact about the nucleons (Step 23), but its phase is not the ladder's and neither tower level nor a rational factor bridges the gap"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 30,
+    "declared_candidates": [
+      "theta/2",
+      "theta/11 (per crossing)",
+      "theta/22",
+      "2*pi - theta",
+      "pi - theta",
+      "theta - 2",
+      "2*theta"
+    ],
+    "anti_fit": "candidate list fixed before computing; all reported"
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "theta_eig": "2.02044502",
+    "theta_required": "0.056594737543307",
+    "ratio": "35.7002277545",
+    "distinct_tower_phases": [
+      "2.02044502"
+    ],
+    "eig_failures": 0,
+    "per_block": {
+      "k3_(3,)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k3_(2, 1)": {
+        "dim": 2,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k3_(1, 1, 1)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k4_(4,)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k4_(3, 1)": {
+        "dim": 3,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k4_(2, 2)": {
+        "dim": 2,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k4_(2, 1, 1)": {
+        "dim": 3,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k4_(1, 1, 1, 1)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k5_(5,)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k5_(4, 1)": {
+        "dim": 4,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k5_(3, 2)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k5_(3, 1, 1)": {
+        "dim": 6,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k5_(2, 2, 1)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k5_(2, 1, 1, 1)": {
+        "dim": 4,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k5_(1, 1, 1, 1, 1)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k6_(6,)": {
+        "dim": 1,
+        "phases": []
+      },
+      "k6_(5, 1)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(4, 2)": {
+        "dim": 9,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(4, 1, 1)": {
+        "dim": 10,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(3, 3)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(3, 2, 1)": {
+        "dim": 16,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(3, 1, 1, 1)": {
+        "dim": 10,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(2, 2, 2)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(2, 2, 1, 1)": {
+        "dim": 9,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(2, 1, 1, 1, 1)": {
+        "dim": 5,
+        "phases": [
+          "2.02044502"
+        ]
+      },
+      "k6_(1, 1, 1, 1, 1, 1)": {
+        "dim": 1,
+        "phases": []
+      }
+    },
+    "declared_candidates": {
+      "theta/2": {
+        "value": "1.01022251",
+        "ratio_to_required": "17.85011388"
+      },
+      "theta/11 (per crossing)": {
+        "value": "0.18367682",
+        "ratio_to_required": "3.24547525"
+      },
+      "theta/22": {
+        "value": "0.09183841",
+        "ratio_to_required": "1.622737625"
+      },
+      "2*pi - theta": {
+        "value": "4.26274028718",
+        "ratio_to_required": "75.32043565"
+      },
+      "pi - theta": {
+        "value": "1.12114763359",
+        "ratio_to_required": "19.81010395"
+      },
+      "theta - 2": {
+        "value": "0.02044502",
+        "ratio_to_required": "0.3612530226"
+      },
+      "2*theta": {
+        "value": "4.04089004",
+        "ratio_to_required": "71.40045551"
+      }
+    },
+    "closest_candidate": "theta/22",
+    "z_from_eigenphase": [
+      "20.3695660911",
+      "-18.2880849625"
+    ],
+    "z_D": "0.612688037146",
+    "z_C": "0.499320334184"
+  },
+  "context": {
+    "axis": "qou-cds1: can tower level or a rational factor bridge 0.0566 vs 2.0204?",
+    "answer": "Neither. The tower carries exactly one eigenphase for any H_3-induced operator (block-diagonal on the isotypic decomposition), and reading the eigenphase as a ladder phase requires an inadmissible z ~ 20.4 or -18.3. The elliptic generator exists and is not the ladder's.",
+    "leaves_open": "a genuinely level-k operator not induced from H_3 \u2014 the one thing Step 22's correction opened, and by Check A the only place in the tower a different phase could come from.",
+    "scope": "Scope-(a). The block-diagonal argument is standard rep theory, cited not proved; what is verified is that the measured spectra agree with it at every block k=3..6. Nothing derived, proposed or wired."
+  },
+  "gitCommit": "597ab740cf63d2bd5b5e7de6552e0a0d87a95f9a",
+  "durationMs": 0,
+  "scriptFile": "qbeta_eigenphase_tower_and_fraction_readings_probe.py",
+  "scriptHash": "a78b905533c7",
+  "scriptCommitSha": "unknown",
+  "commitSha": "597ab740cf63d2bd5b5e7de6552e0a0d87a95f9a",
+  "computedAt": "2026-08-31T21:01:48.523534+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

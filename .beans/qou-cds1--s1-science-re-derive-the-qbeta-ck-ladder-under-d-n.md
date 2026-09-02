@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T06:57:23Z
+updated_at: 2026-08-31T21:41:12Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2621,6 +2621,74 @@ reads _PROTON_G0/_G1. Not filed as its own bean yet.
 ## 2026-08-29 — workflow: ALL 5 Q_beta/c3 lanes converge on this bean as the blocker
 Adversarially-verified (audit 2026-08-29-convention-d-qbeta-front). Key results: (1) proved-lean STRUCTURAL VERDICT (both lenses survive): the C ladder does NOT survive under D; z_D IS the two-row/TL trace (y_(1^3)=0 IFF z=z_D; qou-06wh/PR#5925 proves roots {q,z_D}, net excluded); C->D not a z-swap. Next brick = owner-call qou-99qc (a counit eps that DESCENDS to TL_inf AND reduces to the mass-channel eps; current net(e) != 0 on J_(1^3)). (2) c2 under D is OPEN, NOT -1 and NOT -9.299: the C-frame expression 1-u^2 is z-free (docstring, symbolic-exact) but whether the D-REBUILT N=2 factor = 1-u^2 is OPEN; -9.299 is a CODATA data-inversion (Q_exp/Q_N1^D-1)/u^2, scope-(a) non-structural. (3) -974 cost framing corrected: it is a 1/u^3 amplifier; D phase residual 0.895x (better than C) -- 'measures the amplifier, not the physics'. Mass three-row forcing is COMPATIBLE with a genuine D ladder (must factor through TL, co-located with mass channel).
 
+
+## 2026-08-29 — an ADJACENT class exclusion from the #5337 branch, and that branch closing out
+
+Recorded by the agent who opened #5337 (closed unmerged; the takeover was
+correct — the branch was stale and its named route was already pruned). One
+result from it is worth keeping, and it is **not** a re-derivation of the
+2026-08-18 prune above: it excludes a different class, by a bound rather than
+by a measurement.
+
+**Not the same object.** The 2026-08-18 entry prunes
+`F = two-row restriction fraction of the n=3 trace` — the correction taken to
+BE the dropped weight, `dim.y_(1^3) = 0.0227449`, 13.6x the target. The class
+below instead keeps Form B's functional shape and resolves it per block:
+
+    g(zeta) := ln(1 + zeta.h)/zeta          (Form B's integrand)
+    F_blocks := Sum_lambda p_lambda . g(zeta_lambda)
+
+where `zeta_lambda := chi_lambda(sigma)/f^lambda` is the block's own loop value
+and `p_lambda := f^lambda.y_lambda`. This is a **Jensen gap** — Form B as
+written evaluates `g` AT the mean, this averages `g` — not a restriction
+fraction. Nothing above covers it.
+
+**The identity underneath it, symbolically exact (sympy, over Q(q)).** With
+characters `chi_(3) = q`, `chi_(2,1) = h`, `chi_(1^3) = -1/q` (the Hecke
+generator's eigenvalues `q` and `-1/q`, §7a):
+
+    Sum_lambda y_lambda . chi_lambda(sigma)  =  q^3/(q^2+1)  =  z_D   EXACTLY
+
+So `z` is not an independent convention knob at all: it is the MEAN of the
+per-block loop values under `p_lambda`. This is the n=3 shadow of the
+now-proved `y_(1^3) = 0 <=> z = z_D` (qou-06wh / PR #5925), reached
+independently and before that landed, and it is a third route to the
+`Sum dim.y = 1` normalisation the 2026-08-18 entry reports.
+
+**The exclusion, and why it is a class statement.** A convex combination lies
+in the convex hull of its arguments, so for ANY weights whatsoever
+`F_blocks in [min_lambda g, max_lambda g]`. Measured at 65 dps, proton pin:
+
+    convention D   hull = [0.786985113907, 0.865697506066] MeV
+    convention C   hull = [0.786985113907, 0.969606940981] MeV
+    Q_codata       = 0.782 MeV                       BELOW BOTH HULLS
+
+The lower edge is identical in the two frames because it is set by the same
+block, `(2,1)`, which both retain. So **no block-resolved Form B reaches the
+measured Q-value in either convention, under any weighting** — the weights
+never enter. Scope-(b) for the class as stated, with the invariant cited
+(convexity); scope-(a) as to the physics, since the hull is evaluated
+numerically at one anchor and the per-block `1/zeta` normalisation is an
+assumption the corpus does not derive.
+
+For completeness, the derived weights themselves (they are inside their own
+hull by construction, and far from the target):
+
+    frame  mean_form      blocks_full    blocks_logonly   (rel. to Q_codata)
+    D      +5.2549e-02    +5.5708e-02    +1.4436e-02
+    C      +6.3990e-02    +6.7785e-02    +8.2005e-03
+
+all 1-6 % objects, consistent with the F-coordinate audit's finding that the
+bridge is a ~5e-2 object while the cos factor is ~1e-6 — i.e. this class is the
+wrong SIZE for the correction, independently of the hull.
+
+**The probe was never committed.** It lived on `claude/qbeta-f-coordinate-2026-08-19`
+as an uncommitted file and is not being landed: the route is settled, and a
+witness for a pruned class is maintenance surface with no consumer. The
+argument above is ten lines to reproduce from this text.
+
+**That agent is off this bean.** No claim held; the takeover stands.
+
 ## 2026-08-30 — a LEAD on where the D-frame re-derivation should start (NOT a finding)
 
 Stating this as a lead because I can measure the identity but cannot yet
@@ -2905,3 +2973,3539 @@ remove the dependence where it was never real. Where a real c_k value is at
 stake, this bean still gates.
 
 Status untouched — not this bean's owner.
+
+## Step 2 (2026-08-30, PR #6110) — the bar-weight prune: the OFFSET is forced, not z
+
+`computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py`. This is the formalize-first prune this bean's Discipline section asks for, done before any numerical re-fit.
+
+**Two recorded forms are ONE fact.** This bean records `bar(z_D) = q^-4·z_D`; PR #6110 measured `bar(z_D) = z_D − h`. Both are correct and equal `1/(q³+q)`. Recorded because they read as competing parity claims.
+
+**z is bar-HOMOGENEOUS in BOTH conventions** — `bar(z_C)/z_C = 1` (weight 0), `bar(z_D)/z_D = q^-4` (weight −4). So "bar-even" is not something C has and D lacks; it is weight 0. The KC13 statement is the weight-0 instance of a two-case fact.
+
+**What breaks under D is the AFFINE OFFSET, not z.** With `h` bar-odd:
+
+    C:  bar(alpha)/alpha = -1                            bar-ODD, clean
+    D:  bar(alpha)/alpha = (q^3+q-1)/(q(q^3-q^2-1))      NOT an eigenvector
+
+`z_D` has weight −4, the constant `1` has weight 0, and a sum of two bar-weights is never an eigenvector. **The `−1` is the obstruction.** That is a structural explanation for this bean's own sensitivity row (`c_3 → −974`, "no convergence"): the naive swap keeps a weight-mismatched offset and destroys the grading the C ladder's convergence rests on.
+
+**THE PRUNE.** For `(z − c)h/2` to be bar-anti-homogeneous, `c` must carry z's bar-weight. For `c = q^n`, `bar(c)/c = q^{-2n}`:
+
+    C: weight  0 => n = 0 => c = 1     bar(alpha)/alpha = -1     <- DERIVES the existing ladder
+    D: weight -4 => n = 2 => c = q^2   bar(alpha)/alpha = -q^-4
+
+The rule reproduces C's offset rather than assuming it — the consistency check that makes it worth stating.
+
+**NOT established:** that `c = q²` IS the D offset. Only that bar-homogeneity FORCES weight −4, uniquely `q²` among monomials. What replaces `tr_M(1) = 1` in the D normalisation is open. A `q²` reached by search would be a fit; this is reached by grading. No `c_k` proposed, extracted or wired.
+
+Complements Step 1: that proved the ADDITIVE defect forms; this is the MULTIPLICATIVE (eigenvector) reading, and it is the one that prunes the offset class.
+
+## Step 3 (2026-08-30) — the open half of Step 2 is ANSWERED, and it CLOSES the repair
+
+`computations/qbeta/qbeta_trm_identity_normalisation_under_d.py`.
+
+Step 2 left exactly one thing open: *what replaces `tr_M(1) = 1` in the D normalisation.* **Answer: nothing.**
+
+`tr_M(1) = Σ_λ y_λ·f^λ` on the convention-D Wenzl weights, exact rationals: **== 1 EXACTLY at all 12 rows** (s = 3/2, 7/5, 13/9 × n = 2..5). It holds even though every ℓ(λ) ≥ 3 block VANISHES under D — the surviving two-row blocks carry the whole normalisation.
+
+**But it is IMPOSED, not derived.** `markov_trace_s` seeds the recursion with `tr = {1: {(0,): Fraction(1)}}`. The twelve hits establish that the imposed normalisation and the D block weights are CONSISTENT — and that the vanishing ℓ ≥ 3 blocks do not break it — not that `tr_M(1)` must be 1 under D. It is a normalisation carried unchanged across the convention, not a quantity the convention determines.
+
+**Consequence: the natural repair is CLOSED.** Step 2 forced the phase offset to bar-weight −4 (uniquely q² among monomials). The hope was that the D normalisation would supply something of weight −4 in place of the `1`. It does not — `1` has bar-weight 0 in both conventions. So IF the offset is the trace normalisation, **no offset-reinterpretation can make the D phase bar-homogeneous**, and the ladder must be rebuilt on a principle other than bar-homogeneity of `α = (z−1)h/2`.
+
+**The one link NOT established, and the cheap next step.** The `1` in `α = (z−1)h/2` is a **bare literal** at `qbeta_utils.py:255`. That it IS `tr_M(1)` is the reading under which the verdict follows; this probe does not prove it. Settling that provenance is cheap and decides which of two paths the re-derivation takes — if the `1` has a different origin, the weight-0 argument does not bind it and the offset question reopens.
+
+Consistent with the corpus already treating this as unresolved: `qbeta_utils.py` WITHHOLDS `z` and `alpha` under D behind a guard citing the proved invalidity of substituting `z_D` here. No `c_k` proposed, extracted or wired.
+
+## Step 3 CORRECTION (same session) — the link is settled and it is FALSE
+
+Step 3 above flagged the `tr_M(1)` reading as unproved and said settling it would decide the path. **Settled, and it goes the other way.**
+
+`content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md:21`:
+
+> `α = (z−1)h/2` is the single-wrap **eigenphase on V_(2,1)** (per `prop:q-beta-spectral-bridge`)
+
+So the `1` is an artifact of an eigenphase computation on the 2-dim Wedderburn block, **not** the trace normalisation. The weight-0 argument does not bind it, and **"the offset repair is CLOSED" is RETRACTED.** The offset question is REOPENED.
+
+**What survives, unaffected:** the measurement. `tr_M(1) = 1` is preserved exactly under D at all 12 rows, is imposed rather than derived, and nothing replaces it. That answers what Step 2 asked; it simply lacks the consequence Step 2's framing expected, because Step 2 mis-identified which `1` sits in the phase.
+
+**Sharpened next step, and it is narrower than "re-derive the ladder".** From `beta-decay-transfer-matrix-proof.md`, the phase factors as `(z − 1)·(h/2)` where `h/2` is the β-decay transfer-matrix shift `Δ_β = (h/2)·𝕀` — built from `h` alone, so **z-free and convention-INDEPENDENT**. All convention dependence sits in `(z − 1)`. The D phase therefore comes from re-deriving the single-wrap eigenphase on V_(2,1) under the D trace, from `prop:q-beta-spectral-bridge` — not by substituting `z_D`, and not by adjusting the offset to weight −4.
+
+**Also noted:** `computations/probes/probe_alpha.py` substitutes `z_D` into `α = (z−1)h/2` and calls it "the canonical convention", while `qbeta_utils.py:172` WITHHOLDS `α` under D because that substitution is "proved invalid". The probe is inert (no consumers, no witness) and its Taylor expansion of a formal expression is defensible, but the two files read as disagreeing and a reader could quote the probe.
+
+## Step 4 (2026-08-30) — WHAT breaks under D is now precisely located: the cosine loses its justification
+
+Traced the phase to its authority. Two corrections to my own Step 3 correction, and then a much stronger result.
+
+**(a) The `1` is not an eigenphase offset either — the ladder block and its authority describe it differently.** `q-beta-categorical-precision-ladder.md:21` calls `α = (z−1)h/2` "the single-wrap eigenphase on V_(2,1)". `prop:q-beta-spectral-bridge` derives it as the **first-order term of a ratio**: `Q^A/Q^B = 1 + (z−1)h/2 + O(h²)`. Both are right — `q-beta-cos-resummation` is the block that connects them, and it says so explicitly: it *replaces* the linear bridge correction with `cos((z−1)h/2)`, and separately identifies α as the eigenphase of M_β, whose spectrum on V_(2,1) is `{e^{+iα}, e^{−iα}}`.
+
+**(b) THE RESULT. The cosine's justification is that α is BAR-ODD — and under D it is not.** Quoting the theorem's own constraint 1:
+
+> Markov cyclicity. The trace is cyclic. It is invariant under the bar involution q ↦ q⁻¹, which maps **α ↦ −α**. The resummation must be **even in α**. The minimal even-power resummation that matches the linear bridge is the cosine.
+
+Measured (Step 2, this session): `bar(α_C)/α_C = −1` **exactly** — α IS bar-odd under C, so `α ↦ −α` holds and the evenness requirement is satisfied by `cos`. Under D, `bar(α_D)/α_D = (q³+q−1)/(q(q³−q²−1))` — not −1, not even constant in q. **So under convention D, α ↦ −α FAILS, the trace-symmetrization argument does not apply, and the cosine form loses the structural justification the theorem gives for it.**
+
+That is much sharper than Step 2's "the bar grading is destroyed". It names the exact load-bearing step that fails: constraint 1 of the cos-resummation theorem, which is the theorem's own stated reason for the cosine rather than some other even resummation.
+
+**(c) Two content blocks carry live convention-C `z` in their own statements**, and they are the upstream authority for the entire ladder phase:
+- `nuclear-interactions/q-beta-spectral-bridge.md` — "We define the Markov–Jones parameter as z := 1/(√q + 1/√q)"
+- `nuclear-interactions/q-beta-cos-resummation.md` — "z = 1/(√q + 1/√q)"
+
+**Consequence for the re-derivation.** The D-frame ladder needs more than a new phase value: it needs a replacement for the *resummation form*. Under C the chain is [α bar-odd] ⇒ [trace symmetrization is even in α] ⇒ [cos is the minimal even resummation]. Under D the first link is gone, so neither the cosine nor its minimality survives, and the D re-derivation must establish what the M_β spectrum on V_(2,1) is under the D trace and what evenness (if any) the D bar involution imposes.
+
+## Step 5 (2026-08-30) — the D weights in closed form, and the carrier block SURVIVES
+
+Solved the H₃ Wedderburn system with `z` free and specialised to D. The weights collapse to closed forms of striking simplicity (against convention C's half-integer-power mess):
+
+    y_(3)   = (q^4 + 1)/(q^2 + 1)^2
+    y_(2,1) = q^2/(q^2 + 1)^2
+    y_(1^3) = 0                      IDENTICALLY, all q
+
+Three results at once:
+
+1. **The radical is confirmed symbolically for all q**, not just at sampled s — `y_(1³) ≡ 0` is an identity. (Step 4 and the PR #6110 Wenzl run had it only at sampled rational s.)
+2. **Step 3 upgrades from 12 sampled rows to an identity**: `Σ_λ y_λ f^λ = (q⁴+1)/(q²+1)² + 2q²/(q²+1)² = (q²+1)²/(q²+1)² = 1` **for all q**. `tr_M(1) = 1` under D is now proved, not sampled.
+3. **THE LADDER'S CARRIER BLOCK SURVIVES D.** `y_(2,1) = q²/(q²+1)²` has numerator `q²`, whose only real root is q = 0 — so it is **nonzero for every q > 0**. V_(2,1), the block the whole eigenphase/cos-resummation construction lives on, is NOT in the D radical.
+
+That third point is the one that matters for planning: **the D re-derivation is not futile.** Had V_(2,1) been in the radical the entire ladder would be dead under D and the only honest move would be to abandon it. It is not; the carrier survives, the weights are simple, and what needs replacing is the resummation FORM (Step 4) rather than the object it acts on.
+
+## Step 6 (2026-08-30) — the bridge phase is GENERIC in z; the D target is narrower than the guard reads
+
+`computations/qbeta/qbeta_d_frame_bridge_generic_z.py`.
+
+**Where z enters, measured.** `beta-decay-transfer-matrix-proof.md` gives T_pp, T_nn, T_mix and Δ_β explicitly, and **all four are z-FREE** (built from `h` alone) — verified by symbolic differentiation. So M_β as an OPERATOR is convention-independent. `z` enters in exactly two downstream places, both trace/normalisation:
+
+    Vhat_i = z·M_11 + M_21              the Markov trace on a 2x2 (z-linear)
+    Q^B    = ln(Vhat_dau/Vhat_par)·E_0/z
+
+**The result.** Re-derived the bridge with `z` carried as a FREE symbol (Vhat_pp = z·h+1, Vhat_nn = 1, Q^A/E_0 from `prop:neutron-qvalue-symbolic` over E_0 = m_e/(q(q−1))), expanded about q = 1+w:
+
+    w^0 : 1
+    w^1 : z − 1                          <- matches the corpus's (z−1)h/2 EXACTLY
+    w^2 : −z²/3 − 3z/2 + 1/2             } NEW — the corpus records only
+    w^3 : z³/3 + 2z²/3 + 3z/2 − 1/2      }  first order plus O(h²)
+
+**So `α = (z−1)h/2` is the GENERIC-z result, not a convention-C specialisation.** Nothing in the bridge derivation privileges z_C.
+
+**Scope — and the guard is NOT wrong.** `qbeta_utils.py`'s KeyError says *"substituting z_D into alpha = (z−1)h/2 is proved invalid by decayLadder_zC_threeRow_ne_zero and eigenphase_bar_defect_of_fullBar"*. Those two Lean results are about the **ladder's three-row forcing** and the **bar defect** — not about whether the bridge's first-order coefficient is generic. The sentence is correct for the ladder. What this adds is the split:
+
+| object | status under D |
+|---|---|
+| bridge term `(z−1)h/2` | **generic in z** → z_D substitution legitimate |
+| cos resummation `cos α` | justified by α bar-odd (Step 4) → **FAILS** |
+| c_k ladder | C-frame → **FAILS** |
+
+So the D re-derivation target is the **resummation form + the ladder**, not the phase formula — strictly narrower than "re-derive the ladder from scratch". **The guard should stay exactly as it is**: it withholds z/α unless a convention is NAMED (a visibility mechanism) and already serves `convention='D'`. Nothing here asks for it to be loosened.
+
+**Values at the proton pin:** α_C = −0.0523361202682285, α_D = −0.0404857773406426. Recorded as generic-formula values, NOT wired ladder inputs. No c_k proposed, extracted or wired; c_3 ≈ −974 remains a sensitivity measurement.
+
+**I also corrected my own reading twice here.** I had described the guard as "withholding α under D because the substitution is proved invalid" — the withholding is actually of UNNAMED access, and D is served. And the quoted sentence is in the KeyError, not the docstring; my quote was accurate, my characterisation of its scope was not.
+
+## Step 7 (2026-08-30) — WHY the cosine fails: the bar action itself changes shape
+
+`computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py`. Step 4 saw the *symptom* (α not bar-odd under D). This derives the *cause*, from the group action.
+
+**The phase is a re-centred traced volume.** With `V̂ = z·h + 1` (the Markov trace on the pp transfer matrix), verified for BOTH conventions:
+
+    alpha = (z-1)h/2 = (Vhat - 1 - h)/2        EXACT identity
+
+**The bar involution acts completely differently in the two conventions** — different group actions, not different values of one:
+
+    C:  bar(Vhat) = 2 - Vhat        AFFINE REFLECTION, fixed point 1
+    D:  bar(Vhat) = Vhat / q^2      MULTIPLICATIVE eigenvector, weight -2
+
+Under C bar fixes the centre 1 and negates h, so `V̂ − 1 − h` is bar-ODD and α inherits `α ↦ −α`. Under D bar does not fix 1 — it scales — so the centring buys nothing: `bar(α)+α = (q−1)²(q+1)²/(2q²) ≠ 0`.
+
+**No constant re-centring repairs it.** Solving for the offset `c` making `V̂ − c − h` bar-odd under D gives `c = (q⁴+1)/(2q²)` — which is exactly the **bar-midpoint** of V̂, and is q-dependent. A q-dependent offset is not a re-centring of the phase, it is a different object. Independently confirms Step 2's bar-weight argument, reached there from weights rather than from the action.
+
+**THE RESULT.** `cos α = (e^{iα}+e^{−iα})/2` is precisely the **ADDITIVE** symmetrisation. Measured:
+
+    C:  bar(Vhat) + Vhat = 2                    CONSTANT in q
+    D:  bar(Vhat) + Vhat = (q^4+1)/q^2          NOT constant
+        bar(Vhat) * Vhat = (q^4+1)^2/(q^2(q^2+1)^2)   NOT constant
+
+Under C the additive bar-symmetrisation of the traced volume is a **constant**. That is the precise sense in which the additive/cosine structure belongs to convention C: the bar action is affine, so additive symmetrisation is the invariant and the cosine is its trigonometric realisation. Under D the action is multiplicative, so **no additive form — cosine included — can be the minimal invariant.**
+
+**What it does NOT establish:** the replacement form. It fixes the CLASS (multiplicative in the bar action) and closes the additive route, from the group action rather than by search. Naming the form still needs the D-frame M_β spectrum on V_(2,1). No c_k proposed, extracted or wired.
+
+## Step 8 (2026-08-30) — the sharpest statement: under D there is NO FIXED CENTRE to resum around
+
+Same probe, extended. Step 7 showed the bar action changes from affine to multiplicative. This asks what each action's **invariant** is, which is what a resummation needs.
+
+**Which q-power makes V̂ bar-invariant?**
+
+    C:  NONE          an affine reflection has a FIXED POINT, not a weight
+    D:  q^(-1) only   -> Vhat_D/q = (q^4+1)/(q(q^2+1))   bar-invariant, UNIQUE
+
+**And the decisive difference is whether the invariant is CONSTANT:**
+
+    C invariant = (Vhat + bar Vhat)/2 = 1              CONSTANT
+    D invariant = Vhat/q = (q^4+1)/(q(q^2+1))          NOT constant
+
+**Closed form for the D invariant** (derived, verified exactly):
+
+    Vhat_D / q  =  ( [2]_q + h^2 · z_D / q^2 ) / 2,      [2]_q = q + 1/q
+
+At the proton pin: [2]_q = 2.01089686670712230, h²z_D/q² = 0.0217346842874601, V̂_D/q = 1.01631577549729119.
+
+**THE SHARPEST STATEMENT of why cos is C-only.** A resummation needs something to be centred on. Under C the bar-invariant is the **constant 1** — a fixed centre — and `cos` is the additive resummation about it. Under D the invariant is `V̂/q`, which **moves with q**: there is no fixed centre, so no additive resummation has anything to be centred on. That is stronger than Step 7's "the action is multiplicative": it names what is missing.
+
+**Still NOT established:** the replacement form. The class is fixed (must respect the multiplicative action; the invariant is `V̂/q`), the additive route is closed, and the closed form above is a derived candidate anchor — but naming the form needs the D-frame M_β spectrum on V_(2,1). No c_k proposed, extracted or wired.
+
+
+
+## (D1) IS LEAN-PROVED (PR #6211) — and this bean's own next-step note over-states what was missing
+
+The entry above says "The concrete next step is therefore narrower than
+'derive alpha': Lean-prove (D1)". Correct in direction, but the scope is
+smaller again, and the corpus-grep is why.
+
+### The analytic core has existed since 2026-06-16
+
+QOU/Interactions/qbeta_counit_vs_trace.lean already carries, TWO AND A HALF
+MONTHS before this bean asked for it:
+
+    epsNP h     = h^2/2 - h        the Frobenius counit of Delta  (= net)
+    trMNP h z   = h^2/2 - h*z      the Ocneanu trace of Delta
+    eps_sub_trMNP : epsNP h - trMNP h z = h*(z-1)      the exact gap
+    agree_iff     : for h != 0, the two agree iff z = 1
+
+I wrote a first draft that re-derived all four under new names before grepping.
+Deleted; #6211 imports them instead. Recording it because the bean's phrasing
+invites exactly that duplication: "Lean-prove (D1)" reads as from-scratch work
+and it is not.
+
+### What was genuinely missing: the alpha bridge
+
+That file relates the counit to the trace and NEVER MENTIONS alpha. So it never
+says the gap IS twice the rung-1 phase — which is the whole content of (D1) and
+the step that upgrades alpha from bare def to derived.
+
+Neither existing alpha closes it:
+  EigenphaseCarrierVacuity.eigenphase  built on markovZC — pinned to the
+                                       EXCISED convention C
+  BraidImageEigenphaseExclusion.alphaOf  R-valued AND function-valued
+A claim holding "identically in q and z" needs the free form over a general
+field. That is what #6211 adds.
+
+### The three theorems (sorry-free, axioms propext/Classical.choice/Quot.sound)
+
+  rungOnePhase_eq_counit_sub_trace    2*alpha = epsNP - trMNP          (D1)
+  generatorWeight_forced              with the sigma-weight left UNKNOWN as w,
+                                      (D1) holds IFF w = z. The falsifiable
+                                      content: the phase PINS the Markov
+                                      parameter rather than merely agreeing
+                                      with it. This is the precise form of
+                                      "z enters the ladder in exactly one
+                                      place", and it is what stops (D1) from
+                                      being arithmetic on chosen constants.
+  generatorWeight_unpinned_at_classical
+                                      sharpness: at h = 0 the weight is
+                                      unpinned — (D1) holds for EVERY w. Same
+                                      degeneracy this bean records elsewhere
+                                      when warning that a theorem evaluated
+                                      only at q = 1 is convention-agnostic by
+                                      accident.
+
+### Characteristic two is a REAL hypothesis
+
+2*(x/2) = x fails when 2 = 0, so (D1)'s left side is identically 0 in char 2
+while the gap need not be: the identity is FALSE there and (2 : K) != 0 is
+required. My first attempt omitted it and `ring` refused — that refusal was
+mathematics, not a syntax error. The imported lemmas do NOT need it (in
+epsNP - trMNP the h^2/2 cancels first); it enters with alpha's uncancelled /2.
+The classical-point lemma does not need it either, so it is DROPPED there
+rather than carried unused, which makes that lemma strictly stronger.
+
+### Scope
+
+Delta's NF coordinates are INPUT, not proved — rebuilt from typed-crossing
+words by qbeta_d_frame_rung_one_rederivation_probe.py and already encoded in
+the imported defs. Identification remains the sibling's (PR #5337 comment
+5421747260, bean qou-avt5); the exact derivation incl. the factor of 2 is that
+probe (PR #5864).
+
+NO convention is assumed: z free throughout, nothing substituted. This does NOT
+touch the resummation question — Steps 6-8 landed while I was working and Step
+8's "no fixed centre under D" is untouched by this.
+
+### What this does and does not change for the ladder
+
+alpha is now DERIVED in Lean rather than a bare def, which was the bean's
+stated goal for this step. It does not produce a c_k, does not re-derive the
+ladder, and does not reopen the additive-resummation route Step 8 closed. The
+status line above should now read alpha: DERIVED (probe) + FORMALIZED (#6211),
+where it previously read "NOT formalized in Lean, where it remains a bare def".
+
+
+
+## The offset is the BAR-MIDPOINT — and one rule derives C's `1` too (PR #6211)
+
+Owner authorised duplication ("duplicate ok", 2026-08-30). This walks at
+Steps 7/8 from a different direction and lands on a WEAKER conclusion than
+Step 8's. Probe: `computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py`,
+12/12, sympy exact, no float64 (verified: 0 hits in f64-into-mpmath and
+raw-float64; the file imports only sympy).
+
+### The measurement
+
+  * `(q^4+1)/(2q^2)` — the offset Step 7 solves for — is NOT an arbitrary
+    function of q. It is `(q^2 + q^-2)/2`, the BAR-MIDPOINT `(Vhat + bar Vhat)/2`,
+    i.e. `cosh(2 log q)`.
+  * Under C the bar-midpoint is the CONSTANT `1`. So the single rule
+    **offset := bar-midpoint** DERIVES convention C's offset instead of
+    assuming it, and hands D its `(q^2+q^-2)/2`. C's `1` is `cosh(0)`.
+  * The midpoint-built phase `(Vhat - midpoint - h)/2` is bar-ODD in BOTH
+    conventions.
+  * Under C it reproduces the KNOWN `alpha` exactly — so it is not a new object
+    there, it IS `alpha` re-derived. Under D it DIFFERS from the naive z-swap,
+    which is what makes it a candidate rather than a restatement.
+
+That is the same consistency test Step 2's bar-weight argument passed — a rule
+that only described D could be tuned to say anything — applied to the OFFSET
+rather than the weight.
+
+### What this changes, and what it does not
+
+**Step 8's "no FIXED centre" is CONFIRMED**, explicitly, by check 5:
+`d/dq` of the D midpoint is nonzero. Not overturned, and I am not claiming to.
+
+**Step 7's "a q-dependent offset is not a re-centring of the phase, it is a
+different object" is too strong as stated.** It IS the same object; its VALUE
+is constant in C and q-dependent in D — exactly as the bar-weight is 0 in C
+and −4 in D. Both are two-case facts about one construction, not a structure
+C has and D lacks. This bean already makes that correction once, for
+bar-homogeneity ("'bar-even' is not something C has and D lacks; it is weight
+0"). The offset is the same shape of correction, one line down.
+
+So: **"no fixed centre" stands; "nothing to be centred on" does not follow
+from it.**
+
+### What is still open — unchanged
+
+The replacement FORM. Naming a centre does not exhibit a resummation about it,
+and `cos` remains the wrong realisation because the action is multiplicative.
+NO `c_k` is proposed, extracted or wired. Scope (a): one object (`Vhat`), two
+conventions, symbolic.
+
+The concrete next question this leaves is narrower than Step 8's: not "what
+replaces the cosine" in general, but **what resums about a centre that moves as
+`cosh(2 log q)`** — a named, derived, q-dependent centre rather than an absent
+one.
+
+
+
+## The replacement FORM, named: resum `log Vhat`, not `Vhat` (PR #6211)
+
+Step 8 leaves this open in as many words — *"The replacement FORM. The class is
+fixed ... the additive route is closed ... but naming the form needs [more]."*
+Probe: `computations/qbeta/qbeta_d_frame_log_coordinate_form_probe.py`, 11/11,
+sympy exact.
+
+### The move
+
+Work in `theta = log q`, where the bar involution is simply `theta -> -theta`.
+Every bar statement becomes a PARITY statement in theta, and the two conventions
+stop looking like different phenomena.
+
+### Closed forms, derived not assumed
+
+    C:  Vhat = 1 + 2 sinh(theta/2)
+             = bar-EVEN CONSTANT  +  bar-ODD term            ADDITIVE
+
+    D:  Vhat = e^theta * cosh(2 theta)/cosh(theta)
+             = bar-ODD MONOMIAL   *  bar-EVEN factor         MULTIPLICATIVE
+
+D's even factor is `(q^2+q^-2)/(q+q^-1) = [2]_{q^2}/[2]_q` — a **ratio of
+q-integers**, not a generic function of q.
+
+### Why this answers the form question
+
+`cos` is not a generic resummation. It is the one adapted to C's shape: a SUM
+whose bar-odd part sits on a fixed centre. D has no such sum. The object adapted
+to a PRODUCT is the LOGARITHM:
+
+    log Vhat_D  =  theta  +  [ log cosh 2theta - log cosh theta ]
+                   ^odd       ^--------- even ---------^
+
+So the D-frame ladder should resum `log Vhat`, not `Vhat`. In that coordinate
+the bar-odd part is exactly `theta = log q`, and the bar-even remainder is a
+series in `theta^2` — equivalently in the `q^{2k}`-integers.
+
+### It absorbs the "moving centre"
+
+The bar-midpoint `cosh(2 theta)` — Step 7's q-dependent offset, identified as
+the bar-midpoint in the previous entry — is exactly the NUMERATOR of D's
+bar-even factor. So the moving centre is not a separate obstacle: it is one half
+of the multiplicative decomposition, and it moves *because* the decomposition is
+multiplicative rather than additive. Two entries that arrived separately are one
+fact.
+
+### Step 8 is CONFIRMED, not overturned
+
+There is no fixed centre for an ADDITIVE resummation of `Vhat`, and that is
+exactly why the additive form fails. What is added here is the positive half —
+the coordinate in which the structure is visible — not a contradiction.
+
+### Not claimed
+
+No `c_k`. Naming the coordinate and the parity structure is not exhibiting the
+ladder; the series coefficients are untouched and nothing is wired. Scope (a):
+one object (`Vhat`), two conventions, symbolic.
+
+### The next question, now sharper again
+
+Not "what replaces the cosine" (answered: the log), and not "what resums about a
+moving centre" (dissolved: the centre is the even factor's numerator). It is:
+**what are the coefficients of `log Vhat_D`'s bar-even remainder in the
+`q^{2k}`-integer basis, and do they reproduce the ladder's rung structure?**
+That is a concrete symbolic expansion, and it is the first form of this question
+that does not presuppose an additive shape.
+
+
+
+## `u` and `Vhat` carry OPPOSITE bar-weights — `u*Vhat` is invariant (PR #6223)
+
+Follows the log-coordinate entry above. That one asked what `Vhat` does under
+bar; this asks what the LADDER'S OWN expansion variable does, which the corpus
+does not state anywhere. Probe:
+`computations/qbeta/qbeta_d_frame_u_vhat_bar_pairing_probe.py`, 8/8, sympy exact.
+
+    object      bar-weight   q-integer form
+    u            +2          sqrt([3]_{q^2})/[2]_q * hbar_q^2
+    Vhat_D       -2          q * [2]_{q^2}/[2]_q
+    u * Vhat_D    0          BAR-INVARIANT
+
+### The pieces, each verified
+
+* **`b = sqrt([3]_{q^2})/[2]_q`.** The Hoefsmit `b` is a RATIO OF q-INTEGERS:
+  `q^4+q^2+1 = q^2*[3]_{q^2}` and `q^2+1 = q*[2]_q`, so the powers of q cancel.
+  It is not written that way anywhere in the corpus — `_h4_route_ladder_scan.py:25`
+  carries it as `sqrt(q**4+q**2+1)/(q**2+1)`.
+* **`b` is bar-EVEN** — `[2]_x` and `[3]_x` are each invariant under `x -> 1/x`.
+* **`hbar_q` is a bar-eigenvector**: `bar(hbar) = -q*hbar`. So `hbar^2` carries
+  `q^2`, and with `b` even, `u` has bar-weight **+2** — exactly minus `Vhat`'s.
+* **The additive counterpart does NOT cancel**: `u + Vhat` is not invariant. The
+  cancellation is specifically MULTIPLICATIVE, matching the multiplicative
+  action Step 7 identified.
+* **`b` and `Vhat_D/q` share the `[2]_q` denominator**, so it cancels in their
+  ratio: `(Vhat_D/q)/b = [2]_{q^2}/sqrt([3]_{q^2})` — a pure q^2-object.
+
+### Why it matters
+
+A resummation needs a bar-invariant to organise around. Step 8 showed the D
+invariant `Vhat/q` is not CONSTANT, which is what closes the additive route.
+This exhibits a DIFFERENT invariant — one built from the ladder's own variable
+rather than from `Vhat` alone. The weights permit an organising object that
+`Vhat` by itself does not supply.
+
+### What it is NOT
+
+Not a resummation. No series exhibited, no `c_k` proposed, extracted or wired,
+and nothing here shows the ladder MUST be organised this way — only that the
+bar-weights permit it. **Step 8's closure of the ADDITIVE route is untouched and
+remains correct.** Under C the question does not arise: the action is affine
+there and weights are not what organises it. Scope (a).
+
+### Where this leaves the arc
+
+Four entries now, in one direction:
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` have opposite bar-weights; `u*Vhat` is invariant.
+
+Each is scope (a) and none proposes a `c_k`. The next question is whether the
+invariant in (4) is the thing the ladder's rungs actually expand in — i.e.
+whether `log(u*Vhat)` or `u*Vhat` has a series whose coefficients reproduce the
+rung structure. That is a concrete symbolic expansion and it is the first
+version of the question that has a bar-invariant to expand ABOUT, which is what
+Step 8 said was missing.
+
+
+
+## `alpha_eff`'s bar-defect: D's is u-INDEPENDENT — the series is the wrong tool (PR #6223)
+
+A NEGATIVE on my own hypothesis, plus a sharpening. Both recorded so neither is
+re-walked. Probe:
+`computations/qbeta/qbeta_alpha_eff_bar_defect_order_probe.py`, 9/9, sympy exact.
+
+### The hypothesis, and its refutation
+
+Having found that `u` has bar-weight +2 while `Vhat` has −2, I guessed the
+ladder's `− u/2` term might be exactly the bar-correction repairing `alpha`
+under D. **It is not.**
+
+The ladder uses `alpha_eff = alpha − u/2`, not `alpha`
+(`Q_N1 = Q_A*cos(alpha_eff)`, `_h4_route_ladder_scan.py:26`):
+
+    convention   bar(alpha)+alpha       bar(alpha_eff)+alpha_eff
+    C            0       (bar-ODD)      -u*(q^2+1)/2
+    D            (q^2-1)^2/(2q^2)       (q^2-1)^2/(2q^2) - u*(q^2+1)/2
+
+### My first reading of that was ALSO wrong
+
+Seeing "`alpha_eff` is bar-odd in NEITHER frame", I took it to mean C's clean
+bar structure does not survive to the object the ladder actually evaluates —
+i.e. that Step 7 describes `alpha` but not the ladder. **Wrong.** Under C the
+residual is EXACTLY `−u*(q^2+1)/2`, a RATIONAL multiple of `u`: the bar-oddness
+fails precisely at the order of the correction term that caused it. That is what
+a truncated series does, and it is not a defect.
+
+### What is actually there
+
+The `− u/2` term's own bar-defect is CONVENTION-INDEPENDENT — the same
+`−u*(q^2+1)/2` in both frames. What differs is what it is added to:
+
+    C:  residual = O(u)                      vanishes with truncation order
+    D:  residual = (q^2-1)^2/(2q^2) - O(u)   carries a u-INDEPENDENT piece
+
+Verified by the surd: `residual/u` is rational in q under C (`−(q^2+1)/2`, no
+surd) and retains `sqrt(q^4+q^2+1)` under D — precisely because the D residual
+has a part not proportional to `u` at all.
+
+### The sharpening
+
+D's obstruction is **not** "the phase has a bar-defect" — C's does too,
+harmlessly. It is that **D's defect does not live in the series**, so no order
+of ladder correction removes it and the correction series is the wrong
+instrument. That takes Step 7 from a statement about `alpha` to one about the
+LADDER.
+
+It also explains, structurally, the sensitivity row this bean already records
+(`c_3 -> -974`, "no convergence"): fitting a series against a defect the series
+cannot represent is what that number looks like.
+
+### Symbol collision, worth flagging
+
+`alpha_eff` is OVERLOADED. `qbeta_multi_block_eigenphase_probe.py` uses it for a
+dimension-weighted block average — a different object. This probe means the
+ladder one (`alpha − b*hbar^2/2`).
+
+### Not claimed
+
+No `c_k`, no replacement phase. Steps 7 and 8 untouched. Scope (a).
+
+
+
+## The un-removable defect IS `h^2/2` — and it is built from the ladder's own `b`
+
+Identifies the u-independent piece the previous entry left unnamed. Probe:
+`computations/qbeta/qbeta_d_bar_defect_is_h_squared_probe.py`, 8/8, sympy exact.
+
+    bar(alpha_D) + alpha_D  =  h^2/2  =  ([3]_{q^2} - 3)/2  =  ((b*[2]_q)^2 - 3)/2
+
+`alpha_C` has NO such defect (it is bar-odd), so this is D-specific.
+
+### The link
+
+The Hoefsmit `b` — which defines the ladder variable `u = b*hbar_q^2` — is
+`sqrt([3]_{q^2})/[2]_q` (established earlier in this arc). So
+`(b*[2]_q)^2 = [3]_{q^2}`, and the defect is `((b*[2]_q)^2 - 3)/2`.
+
+**The same q^2-integer governs both the ladder's expansion variable and the
+defect the ladder cannot remove.**
+
+### Why that matters
+
+The order result says the defect does not live in the series. One might then
+expect it to be something external to the construction. It is not: it is
+`h^2/2`, the most elementary invariant in the algebra, expressible in the
+ladder's own `b`. So D does not introduce an alien obstruction — the same
+ingredient enters at a place the correction series cannot reach. That is a
+sharper account of why the series is the wrong instrument than "the defect does
+not live in the series": it says WHICH object it is and where it comes from.
+
+### A notation trap, recorded because it caught me
+
+AGENTS.md writes `h_A^2 = [3]_q - 3`. With the symmetric convention
+`[3]_x = x + 1 + 1/x` that is **FALSE at argument q** (giving `q - 2 + 1/q`) and
+**TRUE at argument q^2**. My first test used the literal argument `q` and
+returned a false negative on the corpus's own identity. The corpus is right; the
+argument is `q^2`. The probe asserts both the true and the false form so the
+trap is on record rather than re-discovered.
+
+### Not claimed
+
+A repair, a replacement phase, or any `c_k`. Naming an obstruction is not
+removing it. Steps 7 and 8 untouched. Scope (a).
+
+### Where the arc stands — six entries
+## D's bar-odd slot is EMPTY OF CONTENT — no cos-type phase can express it (PR #6244)
+
+Closes the follow-up the previous entry left open: can the log form absorb the
+`h^2/2` defect? **No**, and for a structural reason rather than a failed search.
+Probe: `computations/qbeta/qbeta_d_odd_content_is_structure_free_probe.py`,
+5/5, sympy exact.
+
+    odd(log Vhat_D) = log q                     EXACTLY
+    odd(log Vhat_C) = z-dependent, NOT log q
+
+Under D the log frame DOES supply a bar-odd object — but it is `theta = log q`,
+carrying no `z`, no Markov data, nothing convention-specific. ALL of D's
+structure sits in the bar-EVEN part (the cosh-ratio `[2]_{q^2}/[2]_q`).
+
+Under C the position is reversed: `Vhat_C - 1 = 2 sinh(theta/2)` is a bar-ODD
+eigenvector AND carries the convention's data.
+
+### The consequence
+
+`cos(phase)` is bar-invariant only when the phase is bar-ODD.
+
+  * **C**: such a phase exists and carries structure — a cosine has something
+    to resum.
+  * **D**: every bar-odd object available from `Vhat` is structure-free. So NO
+    bar-odd phase can carry D's structure, and therefore no cos-type
+    resummation of a phase can express it, **whatever offset is chosen**.
+
+Stronger than Step 7 ("the offset must be q-dependent") and than Step 8 ("no
+fixed centre"): those say the additive repair is awkward. This says the bar-odd
+slot is EMPTY OF CONTENT, so there is nothing for a phase to be.
+
+### Honesty about what is new
+
+`odd(log Vhat) = log q` is EQUIVALENT to Step 7's `bar(Vhat) = Vhat/q^2` — take
+logs of both sides. A restatement in log coordinates, NOT an independent
+discovery; the probe asserts it as such. Only the consequence is new.
+
+### A discarded test, recorded so it is not repeated
+
+I first substituted a generic CONSTANT `zz` for `z` to find which `z` collapses
+the odd part to `log q`. That test is MEANINGLESS: it treats `z` as
+bar-invariant when `z` is a function of `q` and `bar` acts on it. Any conclusion
+from a constant-`z` substitution here is void. Dropped before it reached a claim.
+
+### Not claimed
+
+That no D-frame resummation exists — only that no cos-of-a-bar-odd-phase one
+does. The multiplicative/log route and the `u*Vhat` invariant are untouched by
+this negative. No `c_k`. Scope (a).
+
+### Where the arc stands — seven entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the correction series cannot reach it.
+     (Includes two recorded wrong turns of mine.)
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+
+None proposes a `c_k`; all are scope (a). Taken together they say: the D-frame
+ladder fails not because a coefficient is wrong but because the correction
+series is the wrong instrument for an obstruction that is `h^2/2` and sits
+outside it. The next question is whether the multiplicative/log form (3) plus
+the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
+exists that reaches it.
+## Step 9 (2026-08-30) — Steps 6-8 are now LEAN-PROVED, sorry-free
+
+`content/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
+
+Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Convention C is carried in the square-root variable `u` (`q = u²`), which keeps it algebraic in the same generic setting.
+
+| theorem | content |
+|---|---|
+| `bridgePhase_eq_recentred_tracedVolume` | `α = (V̂ − 1 − h)/2` for EVERY z — no hypothesis; this is why the phase formula is convention-independent |
+| `hq_bar` | `h(q⁻¹) = −h(q)` |
+| `zD_bar` | `z_D(q⁻¹) = z_D(q)/q⁴` — weight −4 |
+| `tracedVolume_D` | `V̂_D = (q⁴+1)/(q²+1)` |
+| **`tracedVolume_D_bar`** | **`V̂(q⁻¹) = V̂(q)/q²`** — the D action is MULTIPLICATIVE |
+| **`tracedVolume_C_bar`** | **`V̂(u⁻¹) = 2 − V̂(u)`** — the C action is an AFFINE REFLECTION |
+| `tracedVolume_D_invariant` | `V̂/q` is bar-invariant |
+| `tracedVolume_D_invariant_closed_form` | `V̂_D/q = ([2]_q + h²z_D/q²)/2` |
+| `bridgePhase_C_bar_odd` | α IS bar-odd under C — the cos-resummation's stated hypothesis |
+| `bridgePhase_D_bar_defect` | defect `= (q−1)²(q+1)²/(2q²)` under D |
+| `bridgePhase_D_not_bar_odd` | that defect is NONZERO for q ≠ ±1 |
+
+**The hypotheses are genuine, not bookkeeping.** `q ≠ 0` and `q²+1 ≠ 0` are both needed — over a field where −1 is a square (ℂ at q = i) the denominators vanish — and `CharZero` is needed wherever the construction divides by 2, since in characteristic 2 neither the phase nor the closed form is well posed. Proving it forced those out into the open; the Python probes had them implicitly.
+
+**On the M_β spectrum question.** The spectrum claim `{e^{+iα}, e^{−iα}}` on V_(2,1) is the content block's (`q-beta-cos-resummation`), not mine, and I have not re-derived it. What Steps 6-9 establish is that the *phase* α is generic in z (so the spectrum formula carries to D unchanged) and that what fails under D is the *trace symmetrisation* `tr_M(M_β) = cos α` — because bar stops being an affine reflection. So the spectrum is not the open part; the resummation is.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — so no cos-type phase can work at all.
+
+Read together, (5)–(7) are a converging negative: the C ladder's instrument
+(a cosine of a bar-odd phase, corrected by a series in `u`) fails under D in
+BOTH of its parts — the series cannot reach the defect, and the phase slot has
+no content to carry. That is a much sharper statement of the obstruction than
+"the naive z-swap gives c_3 -> -974".
+
+**The surviving positive lead is (3)+(4)**: the multiplicative/log form, and the
+bar-invariant `u*Vhat`. Nothing in (5)–(7) touches either — they close the
+ADDITIVE/phase family specifically. Whether `u*Vhat` or `log(u*Vhat)` admits an
+expansion whose coefficients reproduce the rung structure is still open, and is
+now the only live route this arc has identified.
+
+
+
+## The PRODUCT FORM is weight-inhomogeneous under D — and the fix is forced (PR #6244)
+
+Applies the arc's surviving lead (the multiplicative form + the bar-invariant
+`u*Vhat`) to the ladder's product form. Probe:
+`computations/qbeta/qbeta_d_product_form_grading_probe.py`, 12/12, sympy exact.
+
+    bar(u^k)/u^k          = q^{2k}     weight 2k, verified k = 1,2,3
+    bar((u*Vhat)^k)/(..)  = 1          weight 0,  verified k = 1,2,3
+
+    1 + c*u^k          is NEVER a bar-eigenvector — bar(f)/f depends on q for
+                       EVERY c, so no coefficient repairs it
+    1 + c*(u*Vhat)^k   is EXACTLY bar-invariant for EVERY c
+
+Under D each ladder factor `(1 + c_k u^k)` mixes bar-weight 0 (the `1`) with
+bar-weight 2k (the `u^k`). That is the SAME weight-mismatch pathology Step 2
+found in the offset, now one level up — **in the product form itself**. It is
+the grading that fails, not the coefficients.
+
+The weight-homogeneous form is FORCED by the grading:
+
+        Pi ( 1 + c_k (u * Vhat)^k )
+
+because `u*Vhat` is the bar-invariant. Reached BY GRADING, not by search —
+which is what makes it a candidate rather than a fit.
+
+### The C control, without which this would be an overclaim
+
+`u` is convention-INDEPENDENT (`u = b*hbar_q^2`; neither factor involves `z`),
+so `1 + c*u^k` is weight-inhomogeneous under C as well. That is **not** a defect
+there: C's bar action is AFFINE and weights are not its grading. Confirmed —
+`u*Vhat_C` is NOT bar-invariant, so the D repair does not even typecheck under
+C. Two-case, like every other result in this arc.
+
+### Not claimed
+
+That `Pi(1 + c_k (u*Vhat)^k)` **is** the D ladder. Only that it is the
+weight-homogeneous form. No `c_k` proposed, extracted or wired; no series
+evaluated; nothing compared to experiment. A form reached by fitting
+coefficients to Q_beta would be exactly what this bean's Discipline section
+forbids, and none is attempted. Scope (a).
+
+### Where the arc stands — eight entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT FORM is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+
+(5)-(7) closed the phase family. (8) says the *other* half of the C instrument —
+the product in `u` — is also wrong under D, for the same grading reason. So both
+halves of `Q_A cos(alpha_eff) * Pi(1 + c_k u^k)` fail under D, and in each case
+the replacement is dictated by the multiplicative grading rather than chosen.
+
+**The next question is now concrete and non-fitting:** does
+`Pi(1 + c_k (u*Vhat)^k)` reproduce the known structural rung `c_2 = -1`? That is
+a derivation check against an already-proved value, not a fit to experiment — if
+it fails, the forced form is wrong and this route closes too.
+
+
+
+## The forced form, worked through: BLOCKED on the N=1 phase — not refuted (PR #6244)
+
+Probe: `computations/qbeta/qbeta_d_forced_form_derivation_probe.py`, 6/6. Two of
+the three findings are corrections to my own plan.
+
+### 1 — my proposed test does NOT discriminate
+
+The previous entry said the next check was whether the forced form reproduces
+the proved `c_2 = -1`, and called that falsifying. **It is not.** `c_2 = -1`
+comes from `N2_factor = 1 - b^2*hbar^4 = 1 - u^2`; its content is that the N=2
+factor has the SHAPE `1 - x^2`, and the `x^2` coefficient of `1 - x^2` is `-1`
+for ANY `x`. So `u -> u*Vhat` preserves it trivially. A consistency check, not
+evidence. Recorded because I claimed otherwise one entry ago.
+
+### 2 — convergence is not broken
+
+At the proton pin: `u = 0.0085172`, `Vhat_D = 1.1280887`,
+`u*Vhat = 0.0096082` — same order, 1.128x. The route does not die on numerics.
+
+### 3 — but it cannot be tested against Q_beta. This is the terminus.
+
+    Q_beta = Q_A * cos(alpha_eff) * Pi_{k>=2}(1 + c_k u^k)
+
+The forced form replaces only the PRODUCT. The N=1 factor is `cos(alpha_eff)`,
+and **entry 7 of this arc** showed that under D the bar-ODD slot is
+structure-free — so no cos-of-a-bar-odd-phase exists to play that role.
+Confirmed against the committed cache: its only DERIVED rung is `k = 2`
+(`k = 3` is tier `cal-anchored`, i.e. extracted from experiment).
+
+So the forced product refines a leading term that **does not exist** under D. No
+D-frame Q_beta is computable from it — not because the comparison would be a
+fit, but because there is nothing to compare.
+
+### Derivable anyway, and not nothing
+
+Rung `k` scales by `Vhat^k`, so the `k=2` rung — the ONLY one the corpus derives
+rather than extracts — is `Vhat^2 = 1.2726x` larger under the forced form.
+**+27.3%**, stated without any fit.
+
+### Status
+
+**NOT refuted. BLOCKED**, on the N=1 phase, by a blocker this arc established
+itself. Naming which of two open pieces gates the other is progress; claiming
+the form confirmed would not be.
+
+### The arc, closed out — nine entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT form is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+  9. That forced product is BLOCKED on (7) — it refines a leading term that
+     does not exist.
+
+**The single open item this arc leaves is sharp: what replaces `cos(alpha_eff)`
+as the N=1 factor under D?** Everything else is either settled or downstream of
+it. (7) says it is not a cosine of a bar-odd phase; (3) says the frame is
+multiplicative/log; (4) says `u*Vhat` is the available invariant. A candidate
+must be bar-invariant, must reduce to `cos(alpha_eff)` in the C limit, and must
+absorb the `h^2/2` defect of (6) — three conditions, all stated, none yet met.
+
+That is a better-posed question than the one this arc started with, and it is
+the honest end of what I can derive without either a new structural input or a
+fit.
+
+
+## Entry 10 — the N=1 factor IS a bar-midpoint. The single open item is answered.
+
+Probe: `computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py`, **8/8**.
+
+The arc closed with one open item and three conditions on any candidate. All
+three are met, by **re-applying the arc's own entry-2 rule one slot over**.
+
+### The move introduces no new freedom
+
+Entry 2 established `offset := the bar-midpoint of Vhat`, and showed that rule
+DERIVES convention C's offset of `1` rather than assuming it. It was applied to
+the **offset**. It had not been applied to the **N=1 factor**. Applying it:
+
+    N=1 factor := ( cos(alpha) + bar(cos alpha) ) / 2
+
+No fitted quantity, no new structure — the same rule, one slot over.
+
+### Why C could use a bare cosine, which is what makes the rest work
+
+Under C, `alpha_C` is bar-ODD and cosine is EVEN, so
+`bar(cos a_C) = cos(-a_C) = cos(a_C)`: **the C-frame N=1 factor is already its
+own bar-midpoint.** The rule is *vacuous* in C.
+
+That is a sharper statement of entry 7 than "the bar-odd slot is empty" — it
+says why the C form was available at all, and why its unavailability under D is
+structural rather than a gap in the search.
+
+Under D, `bar(a_D) = h^2/2 - a_D` — a **reflection about `h^2/4`**, not about 0.
+So `cos(a_D)` is not bar-invariant, which is the arc's blocker restated.
+
+### The result
+
+    M := (cos(a_D) + cos(h^2/2 - a_D))/2  =  cos(a_D - h^2/4) * cos(h^2/4)
+
+| condition (set by the arc) | verdict | how |
+|---|---|---|
+| (a) bar-invariant | **PASS** | exact symbolic identity, `bar(M) - M = 0` |
+| (b) reduces to `cos(alpha_eff)` in C | **PASS** | exact symbolic identity |
+| (c) absorbs the `h^2/2` defect | **PASS** | as a phase re-centring by `h^2/4` **times a u-independent constant** `cos(h^2/4)` |
+
+(c) lands in exactly the multiplicative/log frame **entry 3** requires, with the
+**u-independence entry 5** established for the defect. Size at the proton pin:
+phase shift `h^2/4 = 0.0109265521331`, constant `cos(h^2/4) = 0.99994030582315`.
+
+### 🛑 A CAS trap that nearly cost the result
+
+`sympy.simplify` does **not** reduce
+`(cos A + cos B)/2 - cos((A+B)/2)cos((A-B)/2)` to 0 for these arguments — it
+returns a non-zero residual of two uncombined cosines. **That is a
+non-simplification, not a refutation.** Re-checked numerically at 60 dps across
+five values of q including both pins: worst `|diff| = 7.779e-62`, i.e. mpmath's
+floor. Reading the CAS residual as a negative would have retired a correct
+identity, and I was one step from doing so.
+
+### Scope — what this does NOT claim
+
+- **NOT uniqueness.** Other bar-invariant functions exist. The argument is that
+  this one adds no freedom, being the arc's own rule re-applied.
+- **NOT a D-frame Q_beta.** Rungs above `k=2` are still `cal-anchored`
+  (extracted from experiment), so no D-frame number is computable and none is
+  quoted here. The arc's entry-9 blocker on *testing* against Q_beta stands.
+- **NOT wired.** Nothing downstream consumes it.
+
+Scope (a). What changes is that the arc's terminus — *"it refines a leading term
+that does not exist"* — no longer holds: the leading term now has a derived
+candidate form.
+
+
+## Entry 10b — uniqueness, tested by trying to break it: (a)+(b) FAIL, (c) saves it
+
+Entry 10 asked whether `M` is **the** N=1 factor or merely **a** candidate. The
+first two conditions do not pin it, and the third turns out to carry the content.
+
+### The rival
+
+`G := sqrt(cos(a_D) · bar(cos a_D))` — the **geometric** mean — is also
+bar-invariant (verified symbolically) and also reduces correctly under C, where
+`bar(a_C) = −a_C` gives `|cos a_C|`. So **(a) and (b) admit a second solution.**
+
+**And it is not a rounding difference:**
+
+    proton pin   M = 0.9986190619723252   G = 0.9986189041126984   rel 1.581e-7
+    muon pin     M = 0.9986190616623656   G = 0.9986189038026348   rel 1.581e-7
+
+**158 ppb**, against the Q_beta 100× target of 7.8 ppb — **~20× the target**.
+Had the arc stopped at (a)+(b), the framework would carry a 158 ppb ambiguity
+in its leading factor.
+
+### Condition (c) discriminates — structurally, not numerically
+
+Read as **entry 3** requires (the defect enters as a phase shift times a factor
+with no phase dependence: `log F = f(a − c(δ)) + g(δ)`):
+
+- `M = cos(a − δ/2)·cos(δ/2)` **separates exactly**. One singular set in `a`.
+- `G` **does not**. It inherits the poles of *both* `cos a` and `cos(a − δ)` —
+  two shifted singular sets — and a separated `f(a−c)·K` admits only one.
+  Counted symbolically: at `δ = 0` both have **2** pole families (they must
+  agree when there is no defect); at `δ = 1/3`, M has **2** and G has **3**.
+
+So (c) is not decoration on (a)+(b) — **it is the condition doing the work**,
+and the arc was right to state it separately.
+
+### Not claimed
+
+**Full uniqueness.** (c) is shown to exclude `G`; it is *not* shown that no
+other function satisfies all three. That needs a functional-equation argument
+this probe does not attempt, and entry 10's summary now says so rather than the
+blanket "NOT uniqueness" it carried before.
+
+Probe **12/12**.
+
+
+## Entry 10c — the functional equation SETTLES uniqueness, in the negative
+
+Entry 10b left full uniqueness open. It is now settled — as a **proof**, not a
+failure to find one.
+
+Under bar, `a -> delta - a`. Seek every `F(a, delta)` with (i) bar-invariance,
+(ii) the log-separable form **entry 3** requires (`F = phi(a - c(delta)) *
+K(delta)`), and (iii) the C limit `F(a, 0) = cos a`. Then (iii) gives
+`phi = cos`, `c(0) = 0`, `K(0) = 1`, and (i) demands
+`cos(a - c) = cos(delta - a - c)` for all `a`. The `+` branch gives `2a = delta`
+— not an identity in `a`. The `-` branch gives
+
+    c(delta) = delta / 2          ← THE PHASE SHIFT IS FORCED
+
+and **`K(delta)` is left FREE** apart from `K(0) = 1` — verified symbolically
+for an arbitrary `K`.
+
+**So uniqueness does not follow from the three conditions**, and the arc's
+choice of `K = cos(delta/2)` comes from the **entry-2 bar-midpoint rule**, not
+from the conditions.
+
+### That distinction is quantitative, not pedantic
+
+    |1 - K| at both pins = 5.96942e-5 = 59694 ppb
+    Q_beta 100x target   =                7.797 ppb
+    ratio                =              7656x
+
+The residual freedom the conditions leave open is **~7656× the accuracy
+target**. The rule is doing real work, and had the arc stopped at "three
+conditions met" the leading factor would carry that ambiguity.
+
+### The three results together
+
+| claim | status |
+|---|---|
+| phase re-centring by `delta/2` | **FORCED** by (i)+(ii)+(iii) |
+| the rival `G` (geometric mean) | **EXCLUDED** by (c), on pole structure |
+| the constant `K(delta)` | **FREE** — selected by the entry-2 rule alone |
+
+**Not claimed:** that the bar-midpoint rule is itself forced. It is the arc's
+own rule applied consistently — parsimony, not derivation. Probe **14/14**.
+---
+
+## Entry 11 — bar-parity prunes **every** D rung, and `u` is why C escaped it
+
+`computations/qbeta/qbeta_d_rung_bar_parity_prune_probe.py` — **6/6**.
+
+Entry 7 recorded that D's bar-odd slot is structure-free. This entry says the
+same thing from the algebra, and turns it into a **test a candidate rung can
+fail**.
+
+### The prune
+
+Under D the ladder variable is `X = u·V̂`, which entry 4 established is
+**bar-invariant**. Expand `∏_{k≥2}(1 + c_k X^k)` and apply `bar` coefficient by
+coefficient:
+
+    [X^2]   c2 - bar(c2) = 0
+    [X^3]   c3 - bar(c3) = 0
+    [X^4]   c4 - bar(c4) = 0
+
+Verified symbolically, not numerically. So **every D rung is forced bar-even** —
+`bar(c_k) = c_k` for all `k`, with no bar-odd freedom anywhere in the ladder.
+
+### Why the C ladder was never pinned this way
+
+Because the C variable is **not** bar-invariant. Measured exactly:
+
+    u = (q-1)^2 * sqrt(q^4 + q^2 + 1) / (q^4 + q^2)
+    bar(u) / u = q^2          (exact, symbolic)
+
+`u` is bar-**covariant** with weight `q²`. A `bar` applied to `∏(1 + c_k u^k)`
+therefore reshuffles the grading instead of matching coefficient to coefficient,
+so the C product imposes no parity condition on its own rungs. The conventions
+differ here structurally, not by a substitution.
+
+### What this buys, and what it does not
+
+**Buys:** a falsifying test. Any future D-frame `c_k` must be bar-even, and the
+extraction route — invert one rung against experimental `Q_β` — does not respect
+that constraint, so a candidate produced that way is checkable against something
+other than its own residual.
+
+**Does not buy:** a value. No `c_3` is produced, proposed or fitted; the k=3 rung
+stays underived and L2 is untouched. Scope **(a)**.
+
+**Three things it is explicitly not:**
+
+1. Not a claim the C-frame `c_3 = -2.0693…` *fails* the test. Bar-evenness needs
+   `c_3` at both `q` and `1/q`; every anchor in this corpus sits at `q ≈ 1.11`,
+   so the C value is not measurable against it (same accessibility obstruction as
+   the §"Defined residual ≠ derived decomposition" bar-split).
+2. Not applicable to the candidate `c_3 = -2 = J_Hopf(q=1)` — a constant is
+   trivially bar-even, so the test has nothing to say about it either way.
+3. Not a uniqueness result. It constrains the rungs; it does not select them.
+---
+
+## Entry 12 — bar-parity is SILENT on `K(δ)`, the freedom that dominates L2
+
+`computations/qbeta/qbeta_d_n1_constant_bar_silence_probe.py` — **6/6**.
+
+Entry 11 forces every D rung bar-even. The obvious next hope is that the same
+symmetry pins entry 10c's free constant `K(δ)`. **It does not, and the reason is
+structural rather than circumstantial.**
+
+    delta = h^2/2,  h = q - 1/q
+    bar: q -> 1/q  sends  h -> -h,  so  h^2 -> h^2
+
+`δ` is bar-**invariant**. Therefore `K(δ)` is bar-even for **every** `K`, and
+bar-parity imposes no condition at all. It is not a weak constraint on `K`; it is
+a vacuous one. (Verified symbolically, with the contrast: `bar(u)/u = q²` exactly
+— `u` is bar-covariant, a *graded* weight, which is precisely what makes entry 11
+bite on the rungs.)
+
+### Why this matters more than the k=3 rung
+
+The gap between the two `K` the arc admits — `K ≡ 1` and `K = cos(δ/2)`, the
+latter being what the midpoint factor `M` supplies — is
+
+    delta(q0)          = 0.021853104266260994701
+    |1 - cos(delta/2)| = 5.9694176850430203e-5   =  59694.18 ppb
+    vs target 7.797    = 7656.0x
+
+**That single residual is ~7656× the Q_β 100× target**, which is far larger than
+anything a derived k=3 rung could contribute. So `K` is the L2 blocker at N=1,
+and entry 11 — real as it is — does not reach it.
+
+### A rounding, not a discrepancy
+
+My first run reported **7653.1×** against entry 10c's recorded **7656×**. Same
+number: 59694.18 / 7.8 = 7653.1 and 59694.18 / 7.797 = 7656.0. AGENTS.md quotes
+the Q_β target as "7.8 ppb", which is `σ_exp/100 = 779.7/100 = 7.797` rounded.
+The probe now uses the unrounded target and says so in a comment, so the pair
+cannot be mistaken later for two measurements — the exact failure mode the `c₃`
+"3.47 % vs 3.35 %" note in AGENTS.md was written about.
+
+### Scope
+
+A **negative**, scope (a). No `c_k` is produced, proposed or fitted; Q_β stays at
+1279 ppb. It is **not** a claim that `K` is underivable — only that bar-parity is
+not the tool, and that no sharpening of entry 11 will become one, because the
+quantity it would have to constrain is invariant under the symmetry it is built
+from. Closing `K` needs a genuinely different input.
+
+
+---
+
+## Entry 13 — `K(δ)` is NOT free in this arc; it is fixed by entry 2's rule
+
+`computations/qbeta/qbeta_d_n1_constant_rule_determined_probe.py` — **6/6**.
+
+Entries 10c and 12 read together suggest a 7656× residual with nothing in the arc
+to close it. **That reading is wrong**, and this entry corrects it.
+
+Entry 10 did **not** obtain `M` by searching the space of functions satisfying
+(a)+(b)+(c). It obtained `M` by applying a rule the arc had already established
+one slot over:
+
+| | rule |
+|---|---|
+| entry 2 | `offset := bar-midpoint of V̂` |
+| entry 10 | `N=1 factor := bar-midpoint of cos(α)` |
+
+The arithmetic bar-midpoint of `cos(a_D)` is not *some* function meeting the three
+conditions — it is a single determinate object,
+
+    M = (cos(a_D) + cos(delta - a_D))/2 = cos(a_D - delta/2) * cos(delta/2)
+
+whose constant factor is `cos(δ/2)`, **not** 1. So `K ≡ 1` is not an alternative
+the arc admits: it is what you get by **discarding the rule** and keeping only the
+three weaker conditions the rule happens to satisfy. Verified symbolically that
+`K ≡ 1` does satisfy (a) — which is exactly the point, since it shows the
+conditions are strictly weaker than the rule.
+
+### Where the rule's authority comes from, and where it does not
+
+- **Offset slot — non-vacuous and independently checked.** The rule *re-derives*
+  convention C's known offset `1` (as `cosh(0)`) and C's known `α` exactly,
+  rather than assuming them (entry 2). That is a genuine two-point validation.
+- **N=1 slot — vacuous under C.** `α_C` is bar-odd and cosine is even, so the
+  C-frame N=1 factor is already its own bar-midpoint. Verified here. The C limit
+  therefore says only `K(0) = 1` and **cannot discriminate `K` at δ ≠ 0**.
+
+### Status, stated precisely because it decides whether L2 may use it
+
+`K = cos(δ/2)` is **rule-determined and slot-untested**: strictly stronger than
+"free", strictly weaker than "derived". It is **not a fit** — nothing was
+inverted against Q_β, and the rule was fixed before this slot was considered.
+
+### What would settle it
+
+A **third slot** where the bar-midpoint rule is non-vacuous under C, so the rule
+can be tested somewhere other than where it was built. This probe does not find
+one; it states the requirement, which is the next concrete thing to look for.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb. The
+7656× figure of entry 12 is unchanged as a *measurement of the condition-set
+freedom*; what changes is that the arc does not actually sit at that freedom.
+
+
+---
+
+## Entry 14 — the third slot exists, the rule FAILS it, and entry 13 is withdrawn
+
+`computations/qbeta/qbeta_d_bar_midpoint_rule_third_slot_probe.py` — **6/6**.
+
+Entry 13 named the test that would settle `K`: **a third slot where the
+bar-midpoint rule is non-vacuous under C.** This entry finds one and runs it.
+
+**The slot:** the N=2 ladder factor `1 − u²`, whose `u²` coefficient is the
+corpus's structural `c₂ = −1` (no fit, no CODATA, no q₀). Under C the ladder
+variable is bar-**covariant** (`bar(u)/u = q²`), so the rule is non-vacuous
+there — exactly the condition entry 13 required.
+
+**The result:** the rule does not reproduce `c₂`.
+
+    bar-midpoint of (1 - u^2)  has u^2 coefficient  -(q^4 + 1)/2
+    at the proton pin          -1.25897662490917    vs known -1
+    off by                     25.8977 %
+
+| slot | C-frame | verdict |
+|---|---|---|
+| offset | non-vacuous | **passes** (entry 2 — re-derives C's `1` and C's `α`) |
+| N=1 factor | vacuous | no evidence available |
+| N=2 factor | non-vacuous | **FAILS, 25.90 %** |
+
+### Entry 13's status claim is withdrawn
+
+It rested on an implicit **universality** of the rule. That universality is now
+measured false. `K = cos(δ/2)` is rule-**transported** from a slot where the rule
+works, to a slot where it cannot be tested, **past a slot where it demonstrably
+fails**. Entry 12's **7656×** freedom is reinstated as live.
+
+### The defence, and what it costs
+
+One can read the rule as *"re-express in bar-invariant form"* rather than *"apply
+everywhere"* — vacuous wherever that is already done. Under D the N=2 slot **is**
+vacuous (`X = u·V̂` is bar-invariant, verified here), so on that reading the
+C-frame N=2 test is outside the rule's remit. But **entry 2's validation is a
+C-frame check of exactly the same kind.** The dichotomy has no comfortable
+branch:
+
+- the C-frame check is legitimate ⇒ **the rule fails at N=2**;
+- it is not ⇒ **entry 2's validation goes too**, and the rule is validated nowhere.
+
+Either way `K` is not rule-determined in entry 13's strong sense.
+
+### Also fixed here: entry 11 asserted entry 4 rather than computing it
+
+Entry 11's sixth check was labelled *"stated structurally; entry 4 supplies
+`bar(u·V̂) = u·V̂`"*. Now computed: `V̂ = z·h + 1` gives
+`V̂_D = (q⁴+1)/(q²+1) = 1.12808874411` (matching the value the arc records),
+`bar(V̂_D)/V̂_D = q⁻²` against `bar(u)/u = q²`, hence `bar(X)/X = 1` **exactly**.
+**Entry 4 is confirmed.** My first pass guessed `V̂ = q²` from the offset
+`cosh(2 log q)` and got `bar(X)/X = q⁻²` — which looked like a refutation of
+entry 4 and was a wrong `V̂`, not a wrong entry. Recorded because the near-miss
+is the point: an assumed definition nearly produced a false retraction of a
+correct result.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb.
+## Entry 10d — entries 10/10b/10c are now LEAN-PROVED (8 theorems, sorry-free)
+
+`content/quantum-observable-universe/lean/QOU/QBeta/N1FactorUniqueness.lean`.
+`lean`-direct exit 0; `#print axioms` clean on all 8; zero sorryAx.
+
+**No new mathematics.** The functional-equation argument is entry 10c's (PR
+#6310). I started the same derivation independently, found 10c on the intent
+pass ~35 min after it landed, and re-scoped from *derive* to *verify with a
+different instrument* per the converge-on-landing rule. 10c is cited, not
+restated.
+
+**The one that earns its keep:** entry 10 records that `sympy.simplify` returns a
+NON-ZERO residual for
+
+    (cos A + cos B)/2 - cos((A+B)/2)*cos((A-B)/2)
+
+and that the identity was therefore confirmed at 60 dps, one step from being
+read as a refutation. `barMidpoint_eq` proves it exactly (`Real.cos_add_cos`).
+A CAS non-simplification is not a refutation; a proof assistant settles which.
+
+| theorem | content |
+|---|---|
+| `barMidpoint_eq` | the identity sympy would not reduce |
+| `phase_forced` | `BarInvariant δ c K ↔ ∃k, c = δ/2 − kπ` (K ≠ 0) — an **iff** |
+| `const_free` | for ARBITRARY K, `cos(a−δ/2)·K` is bar-invariant — 10c's "K is FREE" as a proved negative |
+| `barMidpoint_barInvariant` | the arc's M sits in the forced phase |
+| `c_limit` | `δ = 0` gives the bare cosine (condition iii) |
+| `c_rule_is_vacuous` | under C, bar is `a ↦ −a` and cos is even — WHY C could use a bare cosine |
+| `uncentred_fails` | **CONTROL**: `c = 0` is bar-invariant only if `δ = 2kπ`, arbitrary δ, proved FROM `phase_forced` |
+| `uncentred_fails_of_pos_of_lt` | **CONTROL**: physical form, `0 < δ < 2π`, needs only `Real.pi_pos` |
+
+The controls exist because all eight compiled on the first attempt, which is
+exactly when a vacuous statement hides.
+
+**Unchanged:** the bar-midpoint RULE is still not derived (parsimony, not
+derivation); `const_free` proves the conditions do NOT select `K = cos(δ/2)`;
+no `c_k` proposed or wired; no D-frame Q_beta computable while rungs above
+`k = 2` are cal-anchored. Entry 9's blocker on TESTING against Q_beta stands.
+
+Mathlib note: `Real.pi_gt_three` is in `Mathlib.Analysis.Real.Pi.Bounds`, whose
+olean is absent from the restored cache. The π-free control is the better
+statement regardless — general in δ rather than one sample point.
+
+### Read against entries 11-14, which landed while this was in review
+
+Entries 12/13/14 oscillated on whether `K(δ)` is free: 12 measured the 7656×
+condition-set freedom, 13 argued `K` is rule-determined, 14 **withdrew 13** (the
+bar-midpoint rule fails the N=2 slot by 25.90 %) and reinstated 12's freedom as
+live. `const_free` is the theorem on the condition-set side of that question: for
+ARBITRARY `K`, `cos(a − δ/2)·K` is bar-invariant. So the freedom entry 14
+reinstates is not an unfound constraint — it is proved that (i)+(ii)+(iii) cannot
+supply one, and any closure must come from outside them, as entry 14 concludes.
+
+Nothing here bears on entry 14's separate finding that the RULE fails at N=2;
+that is about the rule's authority, not about what the conditions force.
+## The z=1 exclusion is a WALL — measured, and it goes against the hypothesis (2026-08-30, PR #6144)
+
+I tested whether `one_not_root` is as strong as the framing treats it, expecting
+it to be weaker. It is not. Negative recorded.
+
+**The gap in the reasoning I was probing.** `AdmissibleRoots` defines admissible
+= the (1^3) weight VANISHES (the two-row cap), roots {q, z_D}, z=1 excluded. The
+2026-08-29 correction search measured that the augmentation base's required
+correction IS the trace's own z=q -> z=1 return to 0.17 %, and called that
+direction forbidden on the strength of `one_not_root`. That moves from a BINARY
+fact to a claim about a MAGNITUDE. `one_not_root` is an invariant about a SIGN:
+N(q,1) = (1-q)(q^2+1-q^3) < 0. It says the leak is nonzero, not that it is
+correction-sized.
+
+**MEASURED** (`qbeta_admissibility_is_a_magnitude_probe.py`, 4/4, exact sympy
+from the H_3 trace on the NF basis with the CORRECTED weight z(hz+1)):
+
+    y_(1^3) numerator == q^2 * wtNumer   EXACTLY  (independent Lean confirmation,
+                                         and it SURVIVES the qou-isu5 trace fix)
+    denominator = (q^2+1)(q^2-q+1)(q^2+q+1)
+
+    three-row share at z=1     1.4589 %
+    augmentation base needs   11.087 %   ->  leak 7.6x too small
+    tr_M base needs           75.924 %   ->  leak 52x too small
+
+**Two separate facts, neither dressed as the other:**
+1. The exclusion HOLDS, exactly as proved.
+2. The leak is the WRONG SIZE to be the correction, by 7.6x. So the 08-29
+   verdict is now quantitatively supported rather than merely defensible: the
+   near-coincidence net/aug = 0.8906 vs F_required = 0.88913 is NOT explained by
+   the admissibility violation being correction-sized.
+
+**Reference scale, because a verdict against a self-chosen threshold is not a
+measurement:** three-row share at other z. z=1 gives 1.459 %, the SECOND SMALLEST
+of seven sampled; generic z gives 3-33 %. So z=1 IS unusually close to two-row,
+just not close enough to matter. Worth knowing before anyone reaches for it again.
+
+LIMITATION: the leak is a weight SHARE, the correction a RATIO OF TRACE VALUES.
+Order-of-magnitude check, not a proof. 7.6x is outside what that could hide;
+1.2x would not have been.
+
+**What this does NOT do:** it does not derive F, does not readmit z=1, does not
+propose a correction. It closes off one way of rescuing the augmentation base
+and confirms the wall the 08-29 audit hit is real.
+
+**Also relevant to this bean from the same PR:** the scope-(a) negative published
+by `qbeta_c3_barodd_hs_matrix_resolvent_probe` is WITHDRAWN. Its trace vector was
+`z*z*z`; with the correct weight its finding 2 ("the pairing is bar-even") is
+falsified at mu=0 (BAR-ODD, 18.38 vs 6.86). Not a positive either -- still
+convention C, and inverting a now-singular Gram in float64. Re-run belongs here.
+
+### How this sits with Step 8 (added on the rebase that brought Step 8 in)
+
+Step 8 and this section are two DIFFERENT routes, both negative, and neither
+subsumes the other. Recording the relation so a later reader does not treat one
+as a restatement of the other:
+
+  Step 8   closes the ADDITIVE/cos route: under C the bar-invariant is the
+           constant 1, a fixed centre for a resummation; under D it is V^/q,
+           which moves with q, so nothing is available to centre on.
+  this     closes RESCUING THE AUGMENTATION BASE via the z=1 return: the
+           admissibility leak at z=1 is 1.459 %, against an 11.087 % required
+           correction -- 7.6x short, so the violation is not correction-sized.
+
+They converge on the same consequence from opposite ends: the D re-derivation
+needs a genuinely new form, not a repair of the C one. Step 8 says the C FORM
+has no D analogue; this says the nearest INADMISSIBLE point is not where the
+missing size comes from either.
+
+
+## Step 9 (2026-08-30, PR #6144) — the D decay carrier is ONE block, and that closes the block route
+
+**Lean-proved sorry-free**, `QOU/QBeta/DecayBlockCarrier.lean`, lean-direct exit 0,
+`#print axioms` = [propext, Classical.choice, Quot.sound] on all ten, no sorryAx.
+
+### The finding
+
+    chi^(2,1)(Delta_S) = 0     EXACTLY, at EVERY z
+
+The 2-dimensional block never carries the decay element. It follows from two
+one-line identities, both proved:
+
+    reg_char(Delta_S) = 0                  traceless in the regular rep
+    chi^(3)(Delta_S)  = -chi^(1^3)(Delta_S)  exact opposites
+
+so `chi^(2,1) = (reg - chi3 - chi111)/2 = 0`. Consequence, also proved:
+
+    tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3)(Delta_S)   for ALL z
+
+### What it does to the framing
+
+**The two-row cap does NOT take the decay carrier from 3 blocks to 2. It takes
+it from 2 to 1**, because (2,1) was never in it. Under D the decay lives
+entirely in a single 1-dimensional block with weight
+`y_(3)(z_D) = (q^4+1)/(q^2+1)^2` (proved), alongside
+`y_(2,1)(z_D) = q^2/(q^2+1)^2` and `y_(1^3)(z_D) = 0` (both proved), normalising
+to 1 (proved).
+
+### Why this closes a class
+
+I set out to test whether the D weights are FORCED: two surviving blocks, two
+constraints (normalisation + anchor), zero free parameters. They are -- and the
+solve is DEGENERATE. The anchor constrains only `y_3`, returning
+
+    y_3*  = F * y_3^D          exactly: the anchor can only RESCALE the one
+                               carrying weight
+    y_21* = normalisation's leftover, INVISIBLE to Q_beta
+
+**So block re-weighting cannot source the convention-D correction.** There is
+one weight after the cap and it is fixed by the trace axioms. The new form the
+D re-derivation needs cannot come from the Wedderburn decomposition at all.
+
+Recognition test ran against a candidate list declared BEFORE solving (nearest
+form 8.9 %, not isolated) -- but the structural verdict does not depend on it.
+
+### How this sits with Steps 7-8
+
+Three routes now closed from three directions, none subsuming another:
+
+  Step 8    the ADDITIVE/cos route: under D the bar-invariant V^/q moves with q,
+            so there is no fixed centre to resum around
+  z=1 wall  rescuing the AUGMENTATION base via the z=1 return: the admissibility
+            leak is 1.459 % against an 11.087 % correction, 7.6x short
+  Step 9    the BLOCK route: only one block carries the decay, so re-weighting
+            has nothing to re-weight
+
+The 2026-08-29 audit had already closed `admissible base x one multiplicative
+correction`. Four classes down. Still NOT established: the replacement form.
+
+### Caveat on scope, stated in the Lean too
+
+The two 1-dim characters are DEFINED by their defining evaluations; the REGULAR
+character's basis values are taken as DATA from the corpus's own
+trace-of-left-multiplication computation. Formalising the H_3 multiplication
+table is not what these results turn on. The theorems are exactly "given those
+values, these identities hold".
+
+
+## Step 10 (2026-08-30, PR #6144) — z_required = 0.99850, and the block is a RULING
+
+### The reduction makes the question exact
+
+Step 9 proved `tr(Delta_S)(z) = (y_3 - y_(1^3))(z) * chi^(3)(Delta_S)` with
+`chi^(3)` FIXED. So the whole z-dependence is one scalar, and it is AFFINE:
+
+    g(z) = (2qz - q^2 + 1)/(q^2 + 1)
+    g(z) * chi^(3)(Delta_S) = h^2/2 - h z        exact, all z
+    g(z_D) = (q^4+1)/(q^2+1)^2
+
+Affine => invertible => "what z does CODATA require" is EXACT and UNIQUE, zero
+free parameters. Not a fit.
+
+### The number
+
+    z_required = 0.998500302563
+    z = 1        PROVED inadmissible (one_not_root)
+    z_D          0.612688037146   admissible
+    z = q        1.109978582751   admissible
+
+**0.15 % from z = 1, and 257x nearer to it than the admissible z_D.** Both
+admissible bases give the SAME z_required to 10 digits -- as they must, since
+only one z reproduces the Q-value. The two "different bases" were never
+different problems; that agreement is the check the reduction is right.
+
+### The block is a ruling, not an impossibility — CHECKED, not assumed
+
+`MarkovZFullBarCondition`'s docstring says "Which horn is the decay channel's is
+NOT decided here: no corpus block derives the decay fibre, and the channel is
+registered `disputed`". That could be a stale status note superseded by the
+2026-08-15 ruling. It is not. The trace-convention registry preserves the
+distinction verbatim:
+
+  "Supersedes the CONTRADICTORY/null registration ... AS A STATUS, NOT AS
+   ANALYSIS: its finding that neither convention was DERIVED for this channel
+   stands"
+
+STATUS settled (D, by ruling); DERIVATION not. `AdmissibleRoots` proves
+`admissible <=> y_(1^3)=0 <=> z in {q,z_D}` -- a theorem ABOUT the condition.
+That the DECAY channel must satisfy it is the ruling.
+
+### Splitting my own results honestly
+
+UNCONDITIONAL (any z, any convention):
+  - chi^(2,1)(Delta_S) = 0                    (Lean, sorry-free)
+  - tr(Delta_S)(z) = g(z) * chi^(3), g affine
+  - the decay channel's entire z-content is ONE affine scalar
+  - z_required = 0.998500302563
+
+CONDITIONAL ON THE RULING:
+  - "under D the carrier is a single block"
+  - "block re-weighting cannot source the correction"  <- Step 9's own headline
+  - the inadmissibility of z_required
+  - the four closed correction routes (08-29, Step 8, z=1 wall, Step 9)
+
+conditional-proved != premise-established, applied to my own work.
+
+### The reframing — what the open problem actually is
+
+The D re-derivation is NOT blocked by a proved impossibility. The decay trace is
+one affine scalar; the data fixes it at 0.99850; the ruling fixes it at 0.61269.
+Closing that gap means **DERIVING THE DECAY FIBRE**, which the registry already
+names as the open item — not finding another correction.
+
+**The thing missing is not a form.** Every "new form" search, mine included, has
+been searching inside a constraint that was never derived for this channel.
+
+z = 1 is NOT readmitted: its admissibility leak is 7.6x too small to be the
+correction. "Nearly z=1" describes the tension; it is not a mechanism.
+
+
+## Step 11 (2026-08-30, PR #6144) — the decay fibre DERIVED from bar-parity, and the settled account
+
+Lean sorry-free, `QOU/QBeta/DecayFibreBarParity.lean`, lean-direct exit 0,
+axioms clean on all ten.
+
+### Derived: the bar-parity iff (uses NO two-row cap)
+
+    chi3S_bar_odd                  chi^(3)(Delta_S) at q^-1 is its NEGATIVE
+    g_bar_defect_mul               (g(q^-1,zbar) - g(q,z))(q^2+1) = 2q(zbar-(z-h))
+    g_bar_even_iff_fullBar         g bar-EVEN  <=>  bar(z) = z - h  (FULL-BAR)
+    decayTrace_bar_odd_of_fullBar  full-bar => the decay trace is bar-ODD
+    one_not_fullBar                the CONSTANT z == 1 is not full-bar
+    barEven_not_fullBar            a bar-EVEN z is NEVER full-bar (so z_C isn't)
+    y21_at_augmentation            y_(2,1)(q) = 0 EXACTLY
+
+g can never be bar-ODD (no solution). Measured parity:
+
+    z = q  full-bar YES -> bar-ODD      z = 1  full-bar NO -> NO definite parity
+    z_D    full-bar YES -> bar-ODD      z_C    full-bar NO -> NO definite parity
+
+This also explains `decayLadder_zC_threeRow_ne_zero` from the parity side:
+**z_C is bar-EVEN, which is a DIFFERENT condition from full-bar.** The two have
+sat adjacent in the corpus for weeks; what is new is that they are not the same
+one, and which one this channel needs.
+
+### THE SETTLED ACCOUNT — three conditions, three different jobs
+
+  cap  y_(1^3) = 0     RULING for this channel    narrows to {q, z_D}
+  faithful y_21 != 0   STRUCTURAL (corpus hfaith) picks z_D from that pair
+  full-bar             DERIVED here               excludes z_C and z == 1;
+                                                  constrains FORM, not VALUE
+
+**The limitation, and it narrows my own Step 11 first pass.** `fullBar_add_const`:
+z_D + c is full-bar for ANY constant c, since constants are bar-even. So a
+full-bar parameter can take ANY value at the pin. `one_not_fullBar` excludes
+z = 1 as a CHOICE OF PARAMETER; it does NOT exclude the required VALUE
+(z_required ~ 0.99850), which a full-bar function could attain.
+
+**So the narrowing to the admissible set — and hence the exclusion of what the
+data wants — still rests on the cap, i.e. on the ruling.** Bar-parity and
+faithfulness say WHICH POINT of that set is the decay channel's; they do not
+establish the set.
+
+### Correction trail, recorded so it stops oscillating
+
+  Step 10        "the block is a ruling, not an impossibility"  — right about
+                 the CAP
+  Step 11 (1st)  "bar-parity excludes z=1 independently"        — right about
+                 the CONSTANT, overstated as a closure of the gap
+  Step 11 (2nd)  this reconciliation                            — written INTO
+                 the Lean file's prose so it cannot be quoted away
+
+### Still open
+
+What establishes the admissible set for the DECAY channel without the ruling.
+Bar-parity + faithfulness pin z_D GIVEN the cap; nothing yet derives the cap
+for this channel. That is the same open item the registry names, now with the
+logical structure around it fully mapped.
+
+
+## Step 12 — the decay channel is BLIND to the cap (so it HAD to be a ruling)
+
+Lean sorry-free: `threeRow_undetermined_by_decay`, `cap_member_of_family`.
+
+tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3), so the decay pairing depends on the
+weights ONLY through the difference. With normalisation that is 2 constraints on
+3 unknowns:
+
+    y_3 = g + t,  y_21 = (1 - g - 2t)/2,  y_111 = t
+
+normalised, decay pairing g, for EVERY t. A one-parameter family all giving the
+same Q-value and sweeping every value of y_(1^3).
+
+**The cap is not merely un-derived for this channel — it is UNDETERMINABLE BY
+it.** No decay measurement at any precision can establish or refute
+y_(1^3) = 0. It selects one member of a family the channel cannot tell apart.
+
+So the cap had to arrive as a ruling: there was never a decay-side derivation to
+find. A derivation would have to come from another channel or a structural
+argument, never from Q_beta itself. This CLOSES the question Step 11 left open,
+with a negative, and retro-justifies the registry's "no corpus block derives the
+decay fibre".
+
+### Arc status after Steps 9-12
+
+  what the channel determines   g = y_3 - y_(1^3), one affine scalar; and the
+                                data fixes it exactly (z_required = 0.99850)
+  what it cannot determine      y_(1^3) separately — hence the cap, hence the
+                                admissible set, hence the exclusion of 0.99850
+  derived here                  the bar-parity iff (full-bar <=> definite parity)
+                                and faithfulness picking z_D within {q, z_D}
+  still open                    a cross-channel or structural derivation of the
+                                cap. NOT findable in Q_beta data.
+
+
+## Step 13 — WITHDRAWAL: the cap is DERIVED, not a ruling. Steps 10/12 framing was wrong.
+
+Asked "what condition makes the mass fibre functor land in Rep(SU_q(2))~TL".
+Answer: (a) tau monoidal, (b) dim tau(fundamental) = 2, i.e. Lambda^3_q V = 0 --
+the (1^3) block IS the image of the q-antisymmetrizer, which projects onto
+Lambda^3 V, zero for a 2-dim fibre.
+
+**And it is ALREADY VERIFIED.** Bean `qou-n1dj`, RESOLVED 2026-08-08, found on
+corpus-grep path 6 (`.beans/`):
+
+- `lem:feynman-eigenbasis-decomposition` writes the mass decomposition with the
+  row cap `l(lambda) <= 2` IN THE INDEX SET, so (1^3) is absent at n=3 by
+  construction — not an extra assumption.
+- `FibreDimensionForcesTL.lean` (verified today: lean-direct exit 0, 0 sorries)
+  proves `z*[N]_q = q^N` (fibre q-dim DETERMINES the Ocneanu parameter),
+  `N=2 => z_D`, and `z_D => y_(1^3) = 0`.
+
+### Why I got it wrong
+
+I read `MarkovTraceTLUniqueness.lean`'s "What this does NOT establish" section as
+current. It is STALE — the file establishing the premise is in the SAME
+DIRECTORY, and the audit that section cites is the one that POSED the question.
+AGENTS.md's "source-file status notes are NOT authoritative" applies to Lean
+docstrings too; mine only fired on `## Status` blocks. Fixed at the source.
+
+### Arc status
+
+  Step  9  chi^(2,1)(Delta_S) = 0                 STANDS
+  Step 10  z_required = 0.998500302563            STANDS
+  Step 10  "the block is a ruling"                WITHDRAWN
+  Step 11  bar-parity iff                         STANDS, less load-bearing
+  Step 12  decay cannot determine y_(1^3)         STANDS; the inference "hence
+                                                  the cap had to be a ruling" is
+                                                  WITHDRAWN
+  today    joint determinacy (decay+mass)         STANDS and GAINS: the derived
+                                                  cap is empirically falsifiable
+
+### The real remaining tension, restated
+
+The cap is derived, so z_D is forced, so z_required = 0.99850 is genuinely
+excluded. The gap between what the data wants and what the theory gives is
+therefore REAL and unexplained — not an artefact of an undecided convention.
+That is a sharper problem than the one I thought I had.
+
+
+## Step 14 (2026-08-30) — the terminus, stated as a negative
+
+With the two-row cap DERIVED (Step 13), the missing convention-D Q_beta
+factor `Q_beta = K · g · χ` has exactly three places to live, and all
+three are measured-negative. Probe
+`computations/qbeta/qbeta_d_frame_terminus_probe.py`, 2/2, proton pin.
+
+| leg | status |
+|---|---|
+| `g` block-weight pairing | **CLOSED.** Cap derived ⇒ `z = z_D` forced ⇒ `g = y_(3)(z_D) = (q⁴+1)/(q²+1)² = 0.5054042265`, no freedom left. Data wants `0.8891258104` — short by ×1.7592369905. Not a failed search; a DOF that does not exist. |
+| `χ` element characters | **NEGATIVE.** `χ^(2,1)(Δ_S) = 0` exactly (Lean-proved), so `Δ_S` is `(c, 0, −c)`. An element would need `a_(2,1)/a_(3) = 1.5516573513`. Nearest declared: `[3]_q/[2]_q` 2.45 %, `3/2` 3.33 % — basket distance, not isolation. |
+| `K` trace→MeV scale | **NEGATIVE.** Enumerated 2026-08-29 (`qbeta_d_frame_admissible_base_correction_search`): nothing parameter-free within 6.31 %. |
+
+Joins the four correction classes already closed: the 2026-08-29
+corrections, additive/cos (Step 8), the `z = 1` wall, block re-weighting
+(Step 9).
+
+**Scope-(a), explicitly.** An enumeration over DECLARED classes, not a
+proved impossibility. A *derived* (not searched) decay element with the
+right character ratio would still close it. Searching for one on the
+number would be a fit, so `1.5516573513` is recorded as a target to check
+a future derivation AGAINST, never a criterion to search ON.
+
+**Not claimed:** that the framework or convention D is wrong, or that no
+closure exists — only that none is findable by any enumeration this
+corpus has run.
+
+## Step 14b — my own Step-13 correction had not been propagated
+
+The Step-13 withdrawal ("the cap is a ruling" → the cap is DERIVED, from
+the 2-dim mass fibre, `FibreDimensionForcesTL.lean`, `qou-n1dj`) fixed
+the Lean docstring and this bean and left the same wrong sentence live in
+`qbeta_cap_is_jointly_determined_probe.py` — in its verdict string, its
+`premise_corrected` field, and the witness both write. Two copies, five
+commits apart, on one branch. Corrected in `c297bd7b04`.
+
+What stands unchanged: `χ^(3)(β_Bor) = χ^(1³)(β_Bor) = 1`, so mass sees
+`y₃ + y₁₃` and decay sees `y₃ − y₁₃`; with normalisation
+`det = −2(q−1)⁴(q+1)⁴(q²−q+1)(q²+q+1)/q⁶ ≠ 0` off `{0,1,−1}`, so the
+three functionals determine all three weights uniquely. Re-scoped, not
+retracted: the cap is *also* an observable — a falsifiable cross-check on
+the derived `z_D`, not a second route to be taken on trust.
+
+## Step 14c — all five of this branch's probes were `Q0_ANCHOR_MISSING`
+
+They read `q_at()` (proton) but no stem was in `q0_anchor_manifest.json`,
+and `WitnessBuilder.build()` stamps `q0Anchor` only on a positive
+declaration. `q0-anchor-consistency-audit` `Q0_ANCHOR_MISSING`
+1634 → 1639; the +5 was mine. Registered and re-run (`7820b814f6`) —
+fixed at the producer, no witness hand-edited, no computed value moved.
+
+
+---
+
+## 2026-08-31 — the Borromean trace with `z` SYMBOLIC, and the anomaly is NOT the convention
+
+Owner-requested. `computations/qbeta/qbeta_z_symbolic_borromean_crosscheck.py`,
+PR #6328.
+
+### Why it was needed
+
+`m_p_substrate_identity_50dps.trM_borromean(q)` is a closed form in `h` alone
+with **no `z` parameter** — convention D was substituted before it was written
+down. So `y_(1³) = 0` is baked into `F_Bor → canonical_mass`, and any attempt to
+*measure* the cap through that route measures its own assumption. Provably
+circular, not merely suspected.
+
+### The control, which is why the rest is trustworthy
+
+    tr_M(β_Bor)(z,q) = (−q¹⁰z + q⁹z² − q⁹ + 5q⁸z − 4q⁷z² + 4q⁷ − 10q⁶z + 6q⁵z²
+                        − 5q⁵ + 10q⁴z − 4q³z² + 4q³ − 5q²z + qz² − q + z) / q⁵
+
+At `z = z_D` this reproduces `BorromeanMarkovTrace.lean`'s
+`(4 + h² − 3h⁴ − h⁶)/(h² + 4)` with **symbolic difference exactly 0**.
+`y_(1³)(z) = 0` has exactly the two known roots `{q, z_D}`.
+
+### 🛑 A CORRECTION TO PR #6144's FRAMING — mine
+
+#6144 solved a 3×3 system treating `(y₃, y₂₁, y₁₁₁)` as three unknowns fixed by
+three independent functionals, and concluded the cap is **"jointly
+determined"**. Correct as linear algebra, **wrong about the object**: for a
+normalised Markov trace the 3×3 Markov system already consumes all freedom, so
+the weights are a **one-parameter family in `z`** and `y_(1³)` is a function of
+`z` alone.
+
+Mass and decay do **not** measure three independent weights — they each
+determine **the same single parameter**. The system is **over-determined**, not
+jointly determined. Do not repeat the "jointly determined" phrasing.
+
+### The measurement — muon pin, the only convention-free one
+
+The proton pin is fixed *through* `F_Bor` and so presupposes what is under test.
+The muon pin is `m_μ/m_e = Vol(4₁)/ℏ_q²` — pure geometry, no trace.
+
+| determination of `z` | value | vs cap |
+|---|---|---|
+| the **cap** (`y_(1³) = 0`, derived) | 0.612688050638272415 | — |
+| **mass** (measured `m_p`, non-circular) | 0.612812650836121753 | **0.0203 %** |
+| **decay** (measured `Q_β`) | 0.998500302563013 | **62.97 %** |
+
+**The anomaly is localised to the decay channel, not the convention.** An
+independent, non-circular measurement puts `z` essentially where the derived cap
+puts it. That is a materially different problem from the one this arc has been
+treating.
+
+### Quoted with its leverage — the agreement is weaker than it looks
+
+`d ln(tr_M)/d ln z = 0.00119` against decay's `1.206`: the mass channel is
+**1012× less sensitive** to `z`. A tr_M residual of 2.42e-7 opens out to 2.03e-4
+in `z`. This does **not** claim mass confirms the cap to 1e-7.
+
+### The residual is not absorbed
+
+2.42e-7 relative in tr_M is **~21× the μ–p substrate tension** (11.5 ppb), so it
+is neither obviously that tension nor obviously experimental. Open.
+
+### Standing owner rulings from this session
+
+- The **cross-check was green-lit** and has now run.
+- A **categorically constrained *and derived*** search is permitted; a fit is
+  not. This licenses `[3]_q/[2]_q` (2.45 % from the needed character ratio,
+  isolated by 2.1× inside the constrained class) as something to derive
+  *toward*, never to fit to.
+- Open with the owner: whether the **counit reading** now becomes the leading
+  hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
+  and mass independently confirms `z_D`.
+
+
+
+## The two-row cap route is EXHAUSTED (2026-08-30, PR #6264)
+
+The §"Remaining piece" above is closed **as a route**, without running a search.
+
+The cap is `y_(1³) = 0`, whose admissible set is **proved complete** by
+`qou-06wh`: `N = (z−q)((q²+1)z − q³)`, roots exactly `{q, z_D}`. Verified
+symbolically: `y_(1³)(z_D) = 0` exactly, nonzero at `z_C`.
+
+So the cap permits **exactly two** bases and only `z_D` had been phase-tested.
+
+    alpha_required = -0.052358683519      window = +/- 1.09189e-5
+    z_C   -0.0523361202682       2.07 windows
+    z_D   -0.0404857773406    1087.37 windows
+    z=q   +0.0114960776856    5848.10 windows
+
+**`z = q` is excluded structurally, not numerically.** Since `h = q − 1/q > 0`
+for all `q > 1`, `α = (z−1)h/2 < 0 ⟺ z < 1`. The required phase is negative, so
+the form forces `z < 1`; and `z = q > 1` always. No anchor, no window, no
+numerics — the 5848-window figure is an illustration at one anchor, not the
+argument.
+
+**Consequence.** The prune in §Progress tested `z_D` and *inferred* the
+one-parameter class. It is now **exhaustive over the admissible set** — the
+stronger statement, because the cap was the only structural constraint selecting
+members of that class.
+
+**Scope (a).** Excludes the cap as a route to a D-frame ladder *in the
+`α = (z−1)h/2` form*. Does NOT exclude convention D, nor a D-frame ladder derived
+another way. The finding that **neither frame's α is derived** is untouched.
+
+**Does not license a search for a third base:** the set is proved to have exactly
+two members, so a third requires dropping the cap — the constraint under the
+ruling.
+
+**What remains** is what this bean already names: the functional form must
+change, and α is axiomatised in both frames
+(`q-beta-cos-resummation.ts:48`). That is a derivation, not a measurement.
+
+
+## The filter, verified and made executable (2026-08-30, PR #6264)
+
+### The two-constraint filter
+
+`α_required` is known at two anchors that share `Q_codata_MeV` **exactly**
+(checked, not assumed — otherwise the "slope" is a confound between two
+experimental values, not a q-derivative). Imposing both value and slope on
+`α = (z−1)h/2`:
+
+    required   z(q0) = 0.499104480185     z'(q0) = +400.289678821
+    z_C        z = 0.4993203342           z' = -0.01172370089
+    z_D        z = 0.6126880371           z' =  1.046577629
+    z=q        z = 1.109978583            z' =  1.0
+
+**`z_C` passes the VALUE row to four decimals and misses the SLOPE row by a
+factor of −34,144, sign included.** That is this bean's "transversal crossing",
+quantified. **Passing row 1 alone is not evidence.**
+
+For *constant* z the two rows are contradictory: the value needs `z ≈ 0.4991`,
+the slope needs `z = 46.69` (which gives `α = +4.78`).
+
+### The slope was red-teamed before being relied on
+
+It is a secant over `dq = 1.29e-8` from two points, and two points cannot
+distinguish a derivative from an artifact. Reconstructed `α_required` from its
+closed form (`−arccos(Q_codata/(Q_A(1−u²)))`) and differentiated exactly:
+
+    witness secant   41.388615
+    my secant        41.31873053
+    my exact deriv   41.31853588        agree to 0.17 %
+
+**Caveat:** my reconstruction sits a *constant* −0.004259 from the witness at
+both anchors (my `Q_A`/`m_e` differs slightly), which is exactly why the slopes
+agree while the values do not. Quote the slope as **≈ +41.3–41.4**, not to six
+digits.
+
+**Bonus corroboration:** at `q₀+1e-3` the reconstruction returns a COMPLEX α —
+independently reproducing this bean's separate note that past ±0.1 % in q the
+ladder has no real phase at all.
+
+### Delivered as a probe, not a table
+
+`computations/qbeta/qbeta_ladder_alpha_form_filter_probe.py` recomputes the
+filter from the required-phase witness on every run and asserts its own
+precondition. Rationale is this arc's own history: the convention-C tranche was
+a sequence of recorded figures going stale, three of them mine. A table records
+what the numbers were; the probe tracks the anchor.
+
+### What this changes for the search
+
+The prune is now **exhaustive over the two-row cap's admissible set** (proved
+complete: `{q, z_D}`; `z = q` excluded structurally by sign for all `q > 1`), and
+the filter says what any replacement must satisfy: **sit at ≈0.499 while
+carrying a derivative ≈+400**. No rational function of the kind this corpus uses
+does that near `q₀` without a near-pole or an engineered feature exactly there —
+a fine-tuning signature.
+
+That is independent support for this bean's existing conclusion: **the
+functional form must change.** The problem is not that the wrong `z` was picked.
+
+**Still open, and unchanged:** the derivation of α itself, axiomatised in both
+frames (`q-beta-cos-resummation.ts:48`). The filter above is now the
+pre-registered test any candidate must pass — which is what the Discipline
+section asks for before a search begins.
+
+---
+
+## Entry 15 — the defect at BLOCK resolution: C's bar-oddness is a CANCELLATION, D's defect is z-FREE. Two hypotheses of mine refuted. (2026-08-31)
+
+`computations/qbeta/qbeta_block_bar_defect_conjugation_probe.py` — **14/14**,
+sympy exact, **runs standalone with `PYTHONPATH` stripped**.
+Audit: `docs/audits/2026-08-31-cds1-block-bar-defect-and-conjugation.md`.
+
+Built on entry 8's master identity (`qbeta_phase_block_resolution_probe`,
+a sibling's) — **not re-derived**. `bar` acts on `(q, z)` jointly; `zbar` is an
+independent symbol specialised only at the end, by the two conditions
+`MarkovZFullBarCondition.lean` proves. The constant-`z` substitution this bean
+already discarded as meaningless is not done here.
+
+### What was tested, and why
+
+Entry 12 closed with *"Closing `K` needs a genuinely different input."* Entry 14
+then withdrew entry 13, so `K` is free again at **7656×** the target — the
+arc's largest single L2 blocker. Two structural candidates:
+
+  * **(A)** does resolving the defect PER BLOCK restore a parity handle?
+  * **(B)** is `bar` the Kohno–Drinfeld conjugation `λ ↔ λ'`, making C's
+    cancellation a theorem rather than a coincidence?
+
+**Both refuted.** They were my hypotheses; recorded as negatives because each is
+plausible enough to cost someone else a session.
+
+### The positive that came out of the attempt
+
+| | `(3)` | `(2,1)` | `(1³)` | floor | sum |
+|---|---|---|---|---|---|
+| bar-even (C) | **z-dep** | 0 | **z-dep** | z-free | **0**, every bar-even z |
+| full-bar (D) | `(h²/2)·r` | 0 | `(h²/2)/r` | `−2q²h²/(q⁴+q²+1)` | **h²**, every full-bar z |
+
+`r = (q²+q+1)/(q²−q+1)`; the two D defects are exact **reciprocal** multiples of
+`h²/2`. At q₀ in units of h²: `(3)` 1.48922059503199, `(1³)` 0.16787304770965,
+floor −0.6570936427416, `r(q₀)` 2.97844119006. `χ^(2,1)(Δ) = 0` identically, so
+the phase is blind to the 2-dim block in both conventions.
+
+**C's bar-oddness — what the whole C ladder's bare cosine rests on — is a
+CANCELLATION between the symmetric and antisymmetric blocks, not a property any
+block has.** Under D the cancellation dies and the per-block defects become
+CONSTANTS: the z-dependence cancels *inside* each block, not *between* blocks.
+
+**Consequence.** No z within the full-bar class changes the D defect, at block
+resolution or in aggregate. The "choose a better z" direction is now closed from
+**two independent directions** — the anchors (`qbeta_ladder_alpha_form_filter_probe`:
+no constant z meets both the value and slope rows) and parity (this: the defect
+does not depend on z at all).
+
+### (A) refuted
+
+Every `d_λ` is itself bar-INVARIANT — as a bar-defect always is
+(`bar(bar X + X) = X + bar X`). Entry 12's silence survives block resolution
+verbatim. Block resolution is **not** the different input entry 12 asked for.
+
+### (B) refuted, and the failing half is ONE scalar
+
+```
+bar(chi^λ(Δ)) = chi^{λ'}(Δ)   EXACT, all three blocks, convention-free
+bar(a_λ)     != a_{λ'}
+bar(y_λ)     != y_{λ'}
+```
+
+The block CHARACTERS do carry Kohno–Drinfeld. The weights do not — but all three
+residuals carry the **same factor `(z + zbar)`**, and solving them simultaneously
+gives the unique action `zbar = −z`. So `y_λ` is conjugation-equivariant **iff z
+is bar-ODD**, which is neither C (`zbar = z`) nor D (`zbar = z−h`). C's
+bar-oddness is therefore **not** conjugate-partition equivariance.
+
+### A distinguished fourth value, excluded twice
+
+`z = h/2` is the unique bar-ODD member of the full-bar class (`bar(z) = z−h` AND
+`bar(z) = −z`), so there the weights ARE conjugation-equivariant. Excluded by the
+two-row cap (`qou-06wh`: admissible set exactly `{q, z_D}`) and by the anchor
+filter (needs 0.499104480185 / +400.29; `h/2` gives **0.104530149398** /
+**0.905826877183**). Recorded, not pursued.
+
+### Not claimed
+
+No `c_k`, no `K`, no Q_β movement — L2 stays 1279 ppb. Not a claim that no
+D-frame resummation exists. Scope (a).
+
+### Entry 15 read against the counit-hypothesis entry (merged from main, 2026-08-31)
+
+The two landed in parallel and are **complementary, not overlapping** — recorded
+so a later reader does not take them for one result stated twice.
+
+  * The counit entry attacks the **trace** side: which `z` reproduces the
+    required weight. Answer: neither admissible point (`z = q` 12.470 % off,
+    `z_D` 43.157 % off), the point that fits (`z = 1`, counit) is proved
+    excluded, and `z_required` forces a **negative** Wedderburn weight.
+  * Entry 15 attacks the **bar-defect** side: the defect is z-FREE within the
+    full-bar class, so no `z` in that class changes it.
+
+They converge on the same conclusion from opposite directions — *the `z`
+direction is closed* — and neither is evidence for the other. Together with the
+anchor filter (`qbeta_ladder_alpha_form_filter_probe`) that is **three**
+independent closures: trace weight, bar parity, and the anchors.
+
+One cross-check worth stating because it is easy to conflate: entry 15's
+distinguished `z = h/2` and the counit entry's `z = 1` are **different points**
+excluded for **different reasons** — `h/2` by the two-row cap (it is the unique
+bar-ODD member of the full-bar class), `z = 1` by `one_not_root`. Neither
+exclusion implies the other.
+
+---
+
+## Entry 16 — the two-anchor filter on `K(δ)`: entry 12 measured the SMALLER of two quantities (2026-08-31)
+
+`computations/qbeta/qbeta_n1_constant_two_anchor_filter_probe.py` — **9/9**,
+mpmath 60 dps, **runs standalone with `PYTHONPATH` stripped**.
+Audit: `docs/audits/2026-08-31-cds1-block-bar-defect-and-conjugation.md` (addendum).
+
+Entry 12 asked for a "genuinely different input" on `K`. Entry 15 established
+that neither block resolution nor Kohno–Drinfeld supplies one. This applies the
+technique the **z-form filter** already uses — two anchors sharing `Q_codata`
+exactly (asserted, not assumed) — to `K` instead of to `z`:
+
+    K_required = Q_codata / ( Q_A * (1 - u^2) * cos(alpha - delta/2) )
+
+### 1 — Neither admitted candidate reaches the VALUE, and that reframes entry 12
+
+| | miss vs `K_required` | × the 7.797 ppb target |
+|---|---|---|
+| `K ≡ 1` | **281380 ppb** | 36088× |
+| `K = cos(δ/2)` | **221686 ppb** | 28432× |
+| *gap between the candidates* | *59694 ppb* | *7656×* ← **what entry 12 measured** |
+
+**The choice between the two is not the blocker.** The N=1 factor is ~2.8e-4
+short whichever is chosen. Entry 12 is not wrong about the gap — it is measuring
+the smaller of two quantities, and the larger was never computed.
+
+### 2 — The SLOPE misses by three orders, wrong sign
+
+    required  dK/ddelta = +6.2399501753 (D)   +6.2934180689 (C)
+    cos(delta/2)        = -0.0054631674        ratio -1142.19
+    K == 1              =  0
+
+### 3 — Candidate-free self-consistency
+
+`K(0) = 1` + the value fix the MEAN slope over `[0, δ₀]` = **−0.0128759899**;
+the filter fixes the LOCAL slope = **+6.2399501753**. Ratio **−484.62**. Any `K`
+meeting all three is strongly non-monotonic on the scale of `δ`, with nothing in
+the arc motivating it.
+
+### Convention-INDEPENDENT — which is what makes it a statement about the FORM
+
+C and D require slopes agreeing to **0.85 %**. The obstruction belongs to
+`F = cos(a − δ/2)·K(δ)`, not to a convention choice.
+
+### The slope is RED-TEAMED, unlike the z filter's
+
+That one was a 2-point secant over `dq = 1.29e-8` and carried an explicit
+caveat. This is a central difference **stable to 12 significant figures across
+twelve orders of step size** (rel `1e-8`→`1e-20`, max spread 3e-15), with the
+independent two-anchor secant reproducing it to 8.
+
+### Scope — read the attribution
+
+Scope (a). `K_required` holds `α` at the value **the form** gives, and `α` is
+not derived — so a wrong `α` is absorbed into `K_required`. This does **not**
+show `K` must equal 0.99972; it shows the **pair** `(α, K)` from this form
+cannot reproduce both anchors. Form-level negative, consistent with and sharper
+than the arc's standing conclusion that the form must change. No `c_k`, no fit,
+L2 unchanged at 1279 ppb.
+
+### Also: my own "next" recommendation was wrong twice, and the corpus said so
+
+I twice recommended the **Habiro-element route** as the untried source for `K`.
+Corpus-grep on `qou-i2ir` (in-progress, Route C f-map) shows the amplitude leg
+is **already fenced**: C16 (not a formal Habiro element), C17 (qZeilberger,
+O(1) residuals), C18 (PSLQ, entropy-blocked), and the Route-C amplitude route
+itself REFUTED scope-(a) structurally by a one-scale/two-target gate
+(`4λ₂³ + λ₃² = 6.088 ≠ 0`, a sum of positives) plus a √3-parity mismatch. That
+fencing targets the **`c_k` rungs**, so it does not literally reach `K` — but
+the route I was pointing at is not open ground, and I should have grepped before
+recommending it rather than after.
+
+### Entry 16b — `K` is OVERLOADED in this arc, and the two verdicts are opposite
+
+Found while reading Step 14 against entry 16. Two different objects carry the
+letter `K` in this bean, and a reader who transfers a verdict between them gets
+the wrong answer in **both** directions:
+
+| | what it is | verdict |
+|---|---|---|
+| Step 14's `K` | the trace → MeV scale, **outside the Hecke trace entirely**; a MeV-scale factor | **NEGATIVE** — enumerated 2026-08-29, nothing parameter-free within 6.31 % |
+| entries 10c/12/16's `K(δ)` | the multiplicative constant in the N=1 factor `F = cos(a − δ/2)·K(δ)`, `K(0) = 1`; numerically ≈ 1 | **FREE** (entry 12), then filtered but **not determined** (entry 16) |
+
+Take "K is closed, enumerated negative" from Step 14 and you close a question
+that is open; take "K is free" from entry 12 and you re-open one that is
+enumerated. Same class as the `alpha_eff` overload this arc **already flags**
+(`qbeta_multi_block_eigenphase_probe` uses it for a dimension-weighted block
+average), and as the `markovZ` / `markovZC` / `markovZc` family in AGENTS.md —
+which is why the omission is worth recording rather than just fixing: the arc
+has the habit and this one still slipped through.
+
+Disambiguating notes added at all three sites so a reader arriving at any one of
+them sees the collision: `qbeta_d_frame_terminus_probe.py`,
+`qbeta_d_n1_constant_bar_silence_probe.py`,
+`qbeta_n1_constant_two_anchor_filter_probe.py`. All three re-run exit 0.
+
+**Not renamed.** Renaming either would churn a witness key and the arc's own
+prose across a dozen entries; the notes are the cheaper fix and they put the
+warning where the reader is. If a future tranche does rename, Step 14's is the
+one to change — it is the later coinage and the less used.
+## Where to look: the corpus names it — and the D generator is forced BAR-INVARIANT (PR #6282)
+
+Owner asked where to look for a structural replacement for `cos(alpha_eff)`.
+The corpus answers itself, and following the pointer gives two results. Probe:
+`computations/qbeta/qbeta_d_habiro_generator_parity_probe.py`, 8/8, sympy exact.
+
+### The place, already named
+
+AGENTS.md:1828 — "Permanent fix is the Q_beta Habiro element". The Lean exists:
+`QOU/BraidKnot/QBetaHabiroGeneratorRigidity.lean` carries the open class
+`QBetaSingleHabiroGenerator` (verified: **NO instance**), conjecturing the tower
+is ONE fixed generator, forcing the rank-1 law `c_{k+1} = rho*c_k` and
+collapsing the per-rung freedom to `(rho, c_2)`.
+
+It also already carries a **falsifiable test**: `hankel_minor_vanishes` /
+`not_single_generator_of_hankel_ne` — a single generator REQUIRES
+`c_2*c_4 = c_3^2`, and the corpus's fitted menu (`c_2=-1, c_3=-2, c_4 != -4`)
+already fails it.
+
+### Hypothesis (both results are conditional on it)
+
+Under D each ladder factor `(1 + c_k X^k)` must be bar-INVARIANT, since Q_beta
+is an observable and D's grading is multiplicative. Under C this does NOT apply
+— C's action is affine, weights are not its grading — so nothing here is a
+claim about the C ladder.
+
+### Result 1 — the generator's parity is FORCED, and is not bar-odd
+
+    X = u        bar(X)/X = q^2  ->  forced bar(rho)/rho = q^{-2}
+    X = u*Vhat   bar(X)/X = 1    ->  forced bar(rho)/rho = 1   BAR-INVARIANT
+
+Neither is `-1`. The class STATEMENT is parity-free
+(`exists rho, c_{k+1} = rho*c_k`), so **nothing in Lean has to change**. It is
+the DOCSTRING's intended bar-ODD "sinh partner" — dual to alpha_EM's bar-even
+`[2]_q` — that is a C-frame reading and does not carry to D. **The D-frame
+search target is a BAR-INVARIANT generator.**
+
+### Result 2 — `c_2 = -1` discriminates after all, by WEIGHT not by VALUE
+
+A previous entry of mine recorded that this test "does not discriminate". That
+holds for its VALUE (the `x^2` coefficient of `1 - x^2` is `-1` for any `x`) and
+I stand by it. Its BAR-WEIGHT is a different question:
+
+    c_2 = -1 is a rational constant  ->  bar-ratio 1, weight 0
+    X = u*Vhat requires w(c_k) = 0   ->  CONSISTENT
+    X = u      requires w(c_2) = -4  ->  INCONSISTENT
+
+So the one rung the corpus DERIVES rather than extracts is compatible with the
+forced form and incompatible with the naive one — evidence from an
+already-proved value, nothing fitted. This partially recovers a test I had
+written off; the write-off was right about the value and wrong to stop there.
+
+### Not claimed
+
+That the forced form IS the D ladder — conditional on the bar-invariance
+hypothesis, which is motivated but not proved. No `c_k` proposed, extracted or
+wired. No instance of `QBetaSingleHabiroGenerator` produced. Scope (a).
+
+### Other surfaces measured
+
+`Faddeev` (165 content files), `quantum dilogarithm` (141), `q-Pochhammer` (41),
+`cyclotomic completion` (13) — all carry MULTIPLICATIVE inversion relations, the
+right shape for D's multiplicative action.
+
+### The next move, concrete
+
+Search for a bar-INVARIANT single generator (not bar-odd), test any candidate
+against the already-formalized `c_2*c_4 = c_3^2` Hankel condition, and check its
+`c_k` weights are all 0. Three gates, all pre-existing or derived here, none
+requiring a fit.
+
+
+
+## Correction: parity is a FILTER not a selector, and the Hankel gate is VACUOUS (PR #6282)
+
+Two corrections to the method I proposed in the previous entry. Probe:
+`computations/qbeta/qbeta_d_parity_is_a_filter_not_a_selector_probe.py`, 7/7.
+
+**1. Parity is a filter, not a selector.** The corpus's `quantumInt` is the
+SYMMETRIC convention `(q^n - q^-n)/(q - q^-1)`, and every symmetric q-integer is
+bar-invariant — `[2]_q`, `[3]_q`, `[4]_q`, `[5]_q` all have bar-ratio 1. So the
+parity condition admits the ENTIRE q-integer family at once. It rules out the
+bar-ODD "sinh partner" reading (that result stands) but does **not** pick a
+member. Reading the previous entry as "parity identifies the generator" would be
+over-reading it.
+
+**2. The Hankel gate is vacuous for rank-1 candidates.** I listed
+`c_2*c_4 = c_3^2` as a gate on candidates. But rank-1 gives `c_3 = rho*c_2` and
+`c_4 = rho^2*c_2`, so the condition holds IDENTICALLY for every `rho`. It
+excludes non-rank-1 menus — which is what the corpus uses it for, against the
+fitted menu — but cannot discriminate BETWEEN single generators. Listing it as a
+candidate gate was my error.
+
+**So of the three gates I named: one is a class filter, one is vacuous, and one
+(the C-limit reduction) survives** — joined by the numerical value of
+`c_3 = rho*c_2`, which I had not listed.
+
+### A worked non-candidate, so it is not mistaken for a refutation
+
+`habiroT25 = [3]_q/25` (`MmuR9V9Closure.lean:76`) IS bar-invariant and passes
+the parity filter; with `c_2 = -1` it gives `c_3 = -0.1217` at the proton pin
+against the extracted `-2.0693`. NOT a match — but `habiroT25` belongs to the
+m_mu R9/V9 closure, NOT the Q_beta ladder. It refutes nothing; it is a different
+object sharing a name. Recorded because it shows the shape of how the surviving
+gates work: parity passes it, the value test rejects it.
+
+### Honest status of the "where to look" answer
+
+The place is named (the Habiro element, `QBetaSingleHabiroGenerator`, open with
+no instance). The parity is now derived (bar-invariant, not bar-odd). What is
+NOT available is a way to select the generator without either a new structural
+input or a fit — the surviving gates test a candidate once you have one; they do
+not produce one. That is the honest boundary of this arc.
+
+### Scope against entries 10–10d, which landed on main while this was in flight
+
+Entries 10/10b/10c/10d (sibling, now on `main`) answer the **N=1 slot** — the
+leading `cos(alpha_eff)` factor — deriving `M = cos(a_D - h^2/4)*cos(h^2/4)` as
+its bar-midpoint and Lean-proving it. That is a **different slot** from the one
+above. The "honest boundary" I state is about the **product generator** (the
+`rho` in `c_{k+1} = rho*c_k`), and is unaffected by their result: N=1 has a
+derived candidate form, the generator does not.
+
+The two results are consistent and complementary. Their entry 10 shows why C
+could use a bare cosine (the midpoint rule is *vacuous* in C, since `alpha_C` is
+bar-odd and cosine is even); my Result 1 shows the *generator's* forced parity is
+bar-INVARIANT rather than bar-odd. Both are the same underlying fact — D's action
+is multiplicative, C's is affine — read at two different slots of the ladder.
+
+## CORRECTION to the previous entry — Result 2 tested a coefficient the corpus does not derive
+
+Probe: `computations/qbeta/qbeta_d_n2_factor_bar_invariance_probe.py`, **13/13**,
+sympy exact.
+
+The previous entry argued that `c_2 = -1`, being a rational constant of bar-weight
+0, is CONSISTENT with the forced expansion variable `X = u*Vhat_D` and INCONSISTENT
+with plain `u`. The weight arithmetic is right. The object it was applied to is
+not.
+
+### What the corpus actually derives
+
+AGENTS.md ties the derived rung to `u` **specifically**:
+
+    "1 - b^2*hbar^4 = 1 - (b*hbar^2)^2, a one-line `ring` identity: it proves
+     only that re-reading the N=2 factor in the ansatz form yields -1."
+
+So the derived object is `1 - u^2`, in the variable `u` — not an abstract
+`1 + c_2*X^2` whose variable is free to be chosen later.
+
+### That object is not bar-invariant under D
+
+    bar(1 - u^2) - (1 - u^2)  =  (1 - q^4)*u^2   != 0
+
+exactly, since `w(u) = +2` (`b` is bar-invariant, `bar(hbar_q)/hbar_q = -q`, and
+the sign squares away). Re-expressed in the forced variable:
+
+    1 - u^2  =  1 - X^2/Vhat_D^2   ->   c_2^(X) = -1/Vhat_D^2,  weight +4
+
+against the weight 0 the forced form requires. **INCONSISTENT.** The previous
+entry's "CONSISTENT" verdict came from reading `-1` as the coefficient of `X^2`
+when it is the coefficient of `u^2`; the two differ by `Vhat_D^2 = 1.27258` at
+the proton pin — the same +27.3% k=2 rescaling the forced-form probe already
+measured, arrived at from the other side.
+
+### What this does and does not say
+
+- **NOT** that `c_2 = -1` is wrong. It is correct in the frame it was derived in.
+  What fails is its TRANSPORT to D. Scope **(a)**: a scope-limited negative about
+  one construction, not a structural exclusion of anything.
+- **NOT** a new refutation of the ladder. It is the same failure already
+  established for `cos(alpha_eff)` (#6244) and for the product form (#6282),
+  now shown for the third and last leg.
+
+### The consolidated statement, which is cleaner than the three separate ones
+
+All three legs of the C-frame instrument — the leading phase `cos(alpha_eff)`,
+the product form `Prod(1 + c_k u^k)`, and the one structurally derived rung
+`1 - u^2` — fail to transport to D, **for a single reason**: D's bar action is
+multiplicative (a grading, `bar(x)/x = q^w`) where C's is affine. Nothing in the
+C ladder is a bar-eigenvector, so nothing in it survives the change of frame
+unmodified. That is a sharper result than "the ladder needs re-deriving": it says
+the ladder has no D-frame reading at all, in any of its three parts.
+
+The sibling's entries 10-10d supply the replacement for leg 1 (the bar-midpoint
+`M = cos(a_D - h^2/4)*cos(h^2/4)`). Legs 2 and 3 have no replacement yet, and per
+the previous entry the generator is not selectable without a new structural input
+or a fit.
+
+---
+
+### 2026-08-31 — attack options: the D-frame trace COLLAPSES, and the assets exist
+
+Question put: *we have a Habiro basis and D in terms of it — can we use that?*
+**Yes**, and the D side is structurally **simpler** than C — the opposite of
+what "blocked" suggests.
+
+**ASSET 1 — the D-frame Habiro machinery exists and is LIVE.**
+`habiro_mass_table_convention_attribution_probe.py`, run today: *"committed
+reproduced by convention D : **25/25** … uniformly convention D: True"*, exit 0.
+PR #5526 regenerated all 25 atoms into D (`cde2fbcd89`), probe kept as a
+regression check. Four regenerators sit beside it
+(`regenerate_y_lambda_{jones_markov,symbolic,orphans,sdp}_conventionD.py`) — the
+`y_λ` weights are **already** convention D.
+
+**ASSET 2 — at `z_D` the trefoil trace collapses to ONE closed-form term.**
+`tr_M = Σ_λ y_λ χ^λ` with `χ^(3)=q³`, `χ^(2,1)=0` exactly (PR #1873),
+`χ^(1³)=−q⁻³`. Two of three die for **independent** reasons: `χ^(2,1)=0` is a
+convention-free character fact, and `y_(1³)=0` under D — exactly the Lean
+characterisation this bean already cites
+(`markovWeights_eq_jones_of_threeRow_eq_zero`: `y_(1³)=0 ⟺ z=z_D`), verified
+against the live bridge. What remains:
+
+> **`tr_M(trefoil)|_D = q³(q⁴+1)/(q²+1)²`**
+
+Control: weights normalise exactly, `1·y_(3) + 2·y_(2,1) + 1·y_(1³) = 1`, so the
+collapse is a property of the trace, not a truncation artefact.
+
+**Why this reframes "not a z-swap", favourably.** Under C,
+`decayLadder_zC_threeRow_ne_zero` forces `y_(1³) ≠ 0` for every `s=√q>1`, so the
+C trace has **two** terms. The C→D move changes the trace's **rank**, not a
+parameter value — this bean's own point — and it cuts the helpful way: **the
+object to re-derive under D is smaller than the one under C.**
+
+**OBSTRUCTION, named.** `qbeta_habiro_element_probe.py` records its divisibility
+fact `D(u) = 4u¹⁹(1+u²)` as the convention-C denominator, explicitly *"true
+under convention C, false under D"*. So the Habiro **basis** transfers while the
+integrality/divisibility **lemmas** do not — they must be re-derived against the
+collapsed D trace. That is the real remaining work, and it is **narrower than
+re-deriving the ladder from nothing**.
+
+**Recommended order.** (1) re-run the operator route
+(`qbeta_ck_from_operator_markov_trace_probe.py`, the existing vehicle) with the D
+weights and the one-term trace; (2) re-derive divisibility against the D
+denominator — derive-anew, not port; (3) only then compare to the C-frame `c₃`,
+and **not** to the −974 sensitivity number.
+
+**Nothing here derives the ladder.** cds1 stays OPEN.
+
+
+---
+
+### 2026-08-31 — step 1 RUN, and REFUTED. Plus two findings under it.
+
+**🛑 My own recommended step 1 is closed, and I should have run the existing
+probe before recommending it.** `qbeta_ck_local_taylor_around_u0_probe.py` had
+already evaluated the route and returns FAIL with a structural diagnostic:
+
+> `R := tr_M(trefoil)/[Q_A·cos(α_eff)]` is **NOT** the correct global ladder
+> target `Π_k(1+c_k u^k)` … R's Taylor coefficients grow with ratio ~90 around
+> `u₀` (radius ≈0.011), whereas an O(1) ladder would have singularities at
+> `|u| ~ 1`. … **the c_k are PER-RUNG operator identities at each truncation
+> level N=k. Aggregating them via `tr_M` of the trefoil gives the WRONG global
+> function.**
+
+This kills the route **independent of C-vs-D**. So last entry's one-term D trace
+`q³(q⁴+1)/(q²+1)²` is a true closed form but **irrelevant to the ladder** — the
+ladder is not extracted from the global trace at all.
+
+**FINDING A — the per-rung route's own anchor is C-frame.** This bean's table
+already records it and the probe confirms it live:
+`implied c₂: C −1.0176238, D −9.2988629 (proved: −1, C frame)`, with the
+assertion `implied_c2_is_minus1_in_C_frame_only` **passing**. So "derive each
+`c_k` as a per-rung operator identity" cannot use `c₂ = −1` as its gate under D.
+**Both routes are blocked at the ANCHOR, not at the extraction** — which is a
+sharper statement of what this bean needs than "re-derive the ladder".
+
+**FINDING B — this bean cites the sensitivity probe as 9/9; it is committed at
+8/9.** `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` fails
+`C_frame_regression_matches_committed_corpus_values`, and the **committed
+witness on disk already records `allPassed: False`** — pre-existing, not a
+container artefact. The substance:
+
+| | probe computes | registry asserts | diff | tol |
+|---|---|---|---|---|
+| C proton | −2.06934257712 | −2.06934258 | 2.9e-9 | 1e-6 ✓ |
+| **C muon** | **−2.01986031187** | **−2.02020024** | **3.4e-4** | 1e-6 ✗ |
+
+**340× the tolerance, muon anchor only** — and the muon anchor is where `q₀` is
+pinned. Note −2.01986 is neither the live −2.02020024 nor the superseded
+−2.0097; it is a third value. Too large to be the container's mpmath 1.3.0 vs
+the recorded 1.4.1.
+
+**Witnesses NOT committed** — this container's environment is weaker than the
+recorded one (mpmath 1.4.1→1.3.0, numpy 2.5.0→2.4.6, python 3.13→3.11), and the
+probes' own guards say so; I reverted the timestamp-only changes rather than
+downgrade the provenance.
+
+
+## FINDING B — RESOLVED and CLOSED (2026-08-31, commit 636c1541c0)
+
+**It is not a third value; it is `qou-t39x`.** Finding B above reports
+`-2.01986031187` as "neither the live `-2.02020024` nor the superseded
+`-2.0097`". It is the live one. `-2.02020024` is the superseded one:
+`fca08de7d2` (2026-08-22, owner ruling) moved the muon pin to CODATA 2022 three
+weeks before Finding B was written, and the probe's regression target stayed on
+CODATA 2018. Attribution, at 60 dps (probe
+`qbeta-c3-muon-anchor-codata-edition-attribution`, 11/11):
+
+| quantity | value |
+|---|---|
+| disagreement `corpus − c_3(2022)` | −3.3992813e-4 |
+| edition shift `c_3(2018) − c_3(2022)` | −3.3992315e-4 |
+| **explained fraction** | **0.9999853535** |
+| residual | −5.0e-9 = the corpus literal's own rounding to its 9 quoted figures |
+
+The lever is `1/u³ = 1.618e6`: a **1.451 ppb** step on `m_μ/m_e`
+(206.7682830 → 206.7682827) is **1.7e-4 relative** on `c_3`, amplification
+2.1e6. The proton arm never warned because `m_p/m_e` moved 2e-12 relative
+against the muon ratio's 1.5e-9.
+
+**One correction to what Finding B records above:** "the committed witness on
+disk already records `allPassed: False`" — it does not. The witness records
+`allPassed: true` with `c_3(muon) = -2.020200235021255` and
+`computedAt 2026-08-15`, i.e. generated *before* the re-pin. Stale but
+internally consistent, which is worse to read and better to fix. Fixed.
+
+### THE EXPERIMENTAL IDEAL — and this is the part that matters for the bean
+
+Nothing had priced `c_3` against the CAL inputs it is built from. Recomputing at
+±1σ of each CODATA-2022 published uncertainty (not through a recorded
+derivative):
+
+| input | rel. σ | δc_3(proton) | δc_3(muon) | δ(swing) |
+|---|---|---|---|---|
+| CAL-2 `m_μ/m_e` | 2.225e-8 | 0 | 5.212e-3 | 5.212e-3 |
+| CAL-2′ `m_p/m_e` | 1.743e-11 | 3.54e-6 | 0 | 3.54e-6 |
+| CAL-1 `m_e` | 3.131e-10 | 5.068e-4 | 5.068e-4 | 3.06e-10 |
+| `Q_β` | 7.797e-7 | **1.2619** | **1.2619** | 7.63e-7 |
+| **total** | | **1.262** | **1.262** | **0.005212** |
+
+**`c_3(muon) = −2.0199 ± 1.26`, `Q_β`-dominated** — 0.78 ppm on a 0.782 MeV
+Q-value times `1/u³`. The registry quotes **nine** significant figures for a
+quantity its own calibration inputs support to **0.2** of one, and the 3.4e-4
+Finding B calls "340× the tolerance" is **3700× *inside* the error bar**. The
+1e-6 is a *reproducibility* tolerance being read as a physics one.
+
+**The cross-anchor swing survives, and it is the only thing that does.** `Q_β`
+and `m_e` are common mode and cancel in the difference to 7.6e-7 and 3.1e-10,
+leaving **swing = −0.0494823 ± 0.0052 = 9.49σ** — the same 9.5σ as the μ–p
+tension, because it is the same statement. So the "REFUTED as real-q fibre
+element" verdict, which rests on the swing, is experimentally supported while
+every absolute `c_3` digit past the first is not. **That asymmetry is the usable
+result for this bean**: a D-frame re-derivation must be validated against the
+swing, not against an absolute `c_3` target, because no absolute target here
+carries more than one supported figure.
+
+### What was changed in live compute
+
+- **sensitivity probe** — target retargeted to CODATA 2022, anchor-qualified,
+  with the 2018 literal kept and asserted-against so a slide back is caught
+  rather than re-diagnosed. **9/9 → 10/10**, witness regenerated under
+  mpmath 1.4.1 (matching its recorded provenance — no engine downgrade; the
+  container was upgraded 1.3.0 → 1.4.1, which is what unblocked this).
+- **`c3_even_canonical_split_contradiction.py`** — was itself a straddle
+  (frozen pin + CODATA-2018 `c_3`); both anchors now derived from the substrate
+  and licensed against the corpus proton value.
+- **`sleak_offset_genericity_check.py`** — anchors derived; window moves to
+  (2.01986, 2.06934), Vol(4₁) still strictly inside, conclusion unchanged.
+
+### Two more CODATA-2018-era literals the same step surfaced
+
+1. the 2026-07-07 audit's **`S(muon) = 886.8`** is now **3.17× outside its own
+   4-s.f. rounding window**; at the live pin it reads **886.6**.
+2. **KC21's Φ_b scale claim degrades 3.01 % → 6.63 %**, i.e. **2.2× worse**. The
+   deficit 0.0094 is anchor-blind to sub-ppm, so all the movement is on the |S|
+   side — the quoted "~2.9 %" was never a property of the saddle. The verdict
+   now computes it rather than asserting it.
+
+**STILL OPEN** (not done here, deliberately): ~20 prose/Lean/TS sites still
+carry `−2.02020024` as "today's muon extraction", including
+`SLeakZeroCrossing.lean`, `FaddeevModularDouble.lean`,
+`ThetaLipschitzObstruction.lean` and `qbeta-ck-truncation-canonical.ts`; and the
+registry's KC21 row and §9f window endpoints. Re-pinning
+`Q_MUON_50_DIGIT_STR` / migrating the 336 ancestor-bearing files is
+owner-authorised work sequenced behind PR #5500 and `qou-1c4y`.
+
+
+## Step 15 (2026-08-31) — the anchor question, answered: there is no D-frame anchor
+
+Finding A left this bean at *"both routes are blocked at the ANCHOR, not the
+extraction"*. Rather than hunt for a D-frame anchor, I asked whether one **can**
+exist. It cannot, and the reason is measurable. Probe
+`qbeta-d-frame-z-determinations-experimental-budget` (8/8), muon pin, 60 dps,
+commit `c6b88d78ea`.
+
+**Method.** Every CAL input shifted ±1σ of its CODATA-2022 published
+uncertainty, with **both ends of each gap recomputed together** — `q₀` is itself
+a function of `m_μ/m_e`, so the cap and the mass determination are correlated
+and a naive per-quantity bar is wrong in both directions.
+
+| gap | value | 1σ | significance |
+|---|---|---|---|
+| mass − cap | 1.246002e-4 | 1.3123e-5 | **9.49479 σ** |
+| decay − cap | 3.858123e-1 | 6.9705e-7 | **553 497 σ** |
+| ladder anchor − `z_C` | −2.107e-4 | 1.3161e-4 | **1.60089 σ** |
+| ladder anchor − cap | −1.1358e-1 | 1.3161e-4 | **862.989 σ** |
+| `c₂(z_C) + 1` | −1.7202e-2 | 1.0748e-2 | **1.60058 σ** |
+| `c₂(z_D) + 1` | −8.298441 | 1.0741e-2 | **772.583 σ** |
+
+### 1. 🛑 The mass channel does NOT confirm the cap — correcting my own entry above
+
+The 2026-08-31 section above says *"an independent, non-circular measurement puts
+`z` essentially where the derived cap puts it… the anomaly is localised to the
+decay channel, not the convention."* **The "0.0203 %" is 9.49 σ.** It is four and
+a half orders of magnitude closer than decay and it is still a decisive
+disagreement. Both channels disagree with the derived cap; decay disagrees
+5.8e4× harder. The localisation claim needs that qualification, and the leverage
+caveat I attached (`d ln tr_M/d ln z = 0.00119`) was the right instinct pointing
+at the wrong conclusion — leverage is *why* the σ is large, not a reason the
+percentage is reassuring.
+
+### 2. Three corpus facts are ONE measurement
+
+| fact | σ |
+|---|---|
+| μ–p substrate tension (11.614 ppb) | 9.49362 |
+| `c₃` cross-anchor swing | 9.49363 |
+| mass-vs-cap gap in `z` | 9.49479 |
+
+They agree to **0.0123 %** because all three **are** `(q_muon − q_proton)`
+divided by CODATA's bar on `m_μ/m_e`. The corpus carries them as three separate
+facts in three coordinates. Anything that explains one explains all three, and a
+proposal that moves one without the others is inconsistent.
+
+### 3. `c₂ = −1` is a 1.6 σ empirical statement — both standing readings are wrong
+
+`implied c₂(z_C) = −1.0172 ± 0.0107` (bar = `Q_β`'s 0.78 ppm ÷ `u² = 7.3e-5`).
+
+- The extraction's **"−1.0176 vs −1"** is **not** a 1.76 % miss — it is
+  **agreement at 1.6 σ**.
+- The red team's **"symbolic-exact"** overstates it the other way: the Lean is
+  the ring tautology `1 − (bℏ_q²)² = 1 − u²` and the N=2-factor identification is
+  asserted in a docstring, so what actually supports `c₂ = −1` is *this* 1.6 σ,
+  nothing stronger.
+
+Under D the same quantity is **−9.2984, i.e. 773 σ from −1**.
+
+### 4. The ladder's anchor is itself a measurement of `z`, and it selects C
+
+Solving `implied c₂ = −1` for `z` at fixed `q` gives a **fourth determination**:
+
+    z = 0.499110 ± 0.000132    →  1.60 σ from z_C,  863 σ from the derived cap
+
+(the other `cos` branch is `z = 1.599`; **neither** is decay's 0.9985). So the
+ladder is not merely *written* in convention C — its empirical anchor
+independently measures the Markov parameter and lands on `z_C`.
+
+### THE ANSWER FOR THIS BEAN
+
+**There is no D-frame anchor.** The object that would play `c₂ = −1`'s role
+under D is excluded, by the same data that supports it under C, at 773 σ. So
+*"re-derive the ladder under D"* **cannot proceed by finding a D-frame `c₂`** —
+the ladder's **functional form** has to change, not its parameter. That is the
+anchor-side statement of what `decayLadder_zC_threeRow_ne_zero` says
+structurally, and it converts this bean's open item from "find the D-frame `c_k`"
+into "derive the D-frame decay functional", which is a different and larger job.
+
+### 5. The two decay-side functionals disagree with each other
+
+The trace reduction wants `z = 0.9985`; the ladder wants `z = 0.4991`. Both claim
+to reproduce the same `Q_β`, so reconciling them needs a scale `K` off by
+**2.2656× (126.6 %)** — **20× outside** Step 14's 6.31 % parameter-free wall. So
+this is not a missing normalisation of the kind already enumerated, and at most
+one of the two functionals is the right reading of the decay channel. That is a
+sharper form of Step 14's terminus.
+
+**Control:** cap and mass reproduce the committed values to **1e-15** through the
+symbolic Borromean trace (imported from `qbeta_z_symbolic_borromean_crosscheck`,
+not re-spelled); decay to **1.49e-8**, asserted as a tolerance because `F` is
+reconstructed from the 2026-08-29 witness rather than re-derived.
+
+**Scope-(a).** Nothing derived, proposed, wired or readmitted; no convention
+adjudicated; no `c_k` value changed. A `z` near an inadmissible point is TENSION,
+not permission — `one_not_root` stands, as does the derived two-row cap.
+
+**Recommended next**, and it is a judgement not a fact: the three-facts-one-
+measurement identity (§2) says the μ–p tension is the single unexplained
+residual behind the mass side, so the decay side is where new information can
+come from — and §5 says the first question there is *which of the two decay
+functionals is right*, since they cannot both be. That is answerable without
+re-deriving anything: it is a question about which object `Q_β` is a trace of.
+
+
+## Step 16 (2026-08-31) — the two decay functionals are ONE functional. Protium settles it.
+
+Step 15 asked which decay reading is right. **Neither — the question was
+malformed.** Probe `qbeta-decay-functional-unification-protium` (6/6), Lean
+`QOU/QBeta/DecayFunctionalUnification.lean` (5 theorems, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`), write-up
+`docs/audits/2026-08-31-qbeta-decay-functional-unification.md`. Commit `a949c94115`.
+
+### Protium is what makes it checkable
+
+β decay's daughter is the **neutral atom**, so `n → ¹H + ν̄` has
+`Q_β = m_n − m(¹H)` — an **atomic** difference, larger by exactly `m_e` than the
+nucleon difference `m_n − m_p` that the corpus's `Δ = NF(n) − NF(p)` notation
+suggests. Priced with the corpus's own derived scale `𝔈₀ = m_e/(q₀(q₀−1))`
+(CAL-1 + CAL-2 only, no fit):
+
+| | vs atomic `Q_β` | vs nuclear `m_n − m_p` |
+|---|---|---|
+| `𝔈₀·\|ε(Δ_S)\|` | **0.168 %** | −39.41 % |
+| `𝔈₀·\|net(Δ_L = n−p)\|` | 21.55 % | −26.48 % |
+| `𝔈₀·\|net(Δ_β = n−¹H)\|` | 5.60 % | −36.12 % |
+
+**235× discrimination, zero free parameters. `Δ_S` is already an ATOMIC object**
+— the emitted electron is inside it, and the `NF(n) − NF(p)` notation misleads
+about what the element is.
+
+**And the protium ELEMENT is refuted.** `Δ_β := NF(n) − NF(protium)`, the naively
+correct β-decay difference, **double-counts**: on the physical pairing its
+nearest required `z` is **0.4439** from the derived cap, *worse* than the
+corpus's **0.3858**. (One off-diagonal cell — atomic element vs the *nuclear*
+target — is nearer at 0.3386; unphysical pairing, still 55 % from `z_D`, rescues
+nothing.) 🛑 Recorded because my first draft asserted *"every protium z is
+further from the cap"* and the data refuted it.
+
+### The unification
+
+`ε(Δ_S) = h²/2 − h` is `tr_M^z(Δ_S)` at `z = 1`, and
+
+    𝔈₀ · (−ε(Δ_S))  ≡  Q_A        identically in q and m_e
+
+**This identity is NOT new** — it is `prop:neutron-qvalue-symbolic`, restated in
+`qbeta_delta_tr_vs_formA.py`. New is the consequence nobody had drawn: the
+ladder's leading term **is** the trace functional at `z = 1` with `K = 𝔈₀`, so
+the two readings share it *by construction*, and equating them forces
+
+    Π_k (1 + c_k u^k) = affine(z) / cos((z−1)h/2 − u/2),
+    affine(z) = (2qz − q² + 1)/(2q − q² + 1),   affine(1) = 1
+
+The trace side is **exact and affine in z**. So the `c_k` are the mismatch
+between an affine function of `z` and a cosine of one — a **reparametrisation
+residual**, the **third** instance of AGENTS.md's STRICT *"defined residual ≠
+derived decomposition"* class after `S_leak` and `S`. Consistent with what the
+corpus already recorded: *"α … a square-root branch point 0.062 % above q₀,
+manufactured by writing a smooth correction as a cosine."*
+
+### Why the routes reported different z
+
+Both invert **their own** correction function to the same measured
+`Q_β/Q_A = 0.998325`. At `z = 1` the affine slope is **1.116732**, the cosine's
+**4.4515e-4** — a factor **2508.65**. That is the entirety of "0.9985 vs
+0.4991"; it was never two physical claims.
+
+### 🛑 Two withdrawals, both Step 15's and both mine
+
+1. *"the two decay-side functionals disagree … reconcilable only by a scale `K`
+   off by 2.2656×, 20× outside Step 14's 6.31 % wall"* — **withdrawn**. No scale
+   gap: the leading terms are identical, and `F_REQUIRED_TRM = 1.75923699` is
+   exactly `(Q_β/Q_A)/affine(z_D)`, reproduced to **3.6e-9**.
+2. *"at most one of the two functionals is the right reading"* — **withdrawn**.
+
+Step 15's other findings stand unchanged: mass-vs-cap 9.49 σ, decay-vs-cap
+5.5e5 σ, `c₂ = −1` at 1.6 σ under C and 773 σ under D, three-facts-one-measurement.
+
+### What this does to the bean's primary item
+
+**"Re-derive the `c_k` ladder under D" has no hidden answer to find.** Given `z`
+the ladder is *defined* by the equation above; under D you substitute `z_D` and
+read off whatever comes out. That is *why* both routes were "blocked at the
+anchor" in Step 15 — there is no independent object for an anchor to pin.
+
+The live question is narrower and different in kind: **should the cosine
+parametrisation exist at all?** The trace side is exact, affine, and needs no
+series; the whole `c_k` tower exists because that affine correction was rewritten
+as `cos(affine)`. Removing the cosine removes the tower — and with it the
+`c₂ = −1`, `c₃ ≈ −2 = J_Hopf(1)` and `c_{k≥4}` program.
+
+**NOT claimed:** that the cosine is wrong, that the framework is wrong, or that
+`Q_β` is closed. The decay channel's **5.5e5 σ** tension with the derived cap is
+untouched by any of this and remains the open problem — this step says only that
+the tension has ONE form rather than two, and that the `c_k` are not where it
+lives.
+
+
+## Step 17 (2026-08-31) — the cosine is unfalsifiable. Phase yes, cosine no.
+
+Probe `qbeta-cosine-parametrisation-justification` (7/7), Lean
+`QOU/QBeta/CosineParametrisationUnfalsifiable.lean` (3 theorems, sorry-free,
+axioms `[propext, Classical.choice, Quot.sound]`), write-up
+`docs/audits/2026-08-31-qbeta-cosine-parametrisation-justification.md`. Commit
+`b19a6ede64`.
+
+### What was already closed, and I nearly re-derived it
+
+`QOU/QBeta/BraidImageEigenphaseExclusion.lean` (this bean, already landed) leaves
+three ways a transfer matrix with spectrum `{e^{±iα}}` could earn the cosine and
+closes two: `EigenphaseCarrier` is **vacuous**, the braid-image branch is
+**excluded in every convention**, and "M arbitrary" is **circular**. Only a
+**KZ/Kohno–Drinfeld holonomy** survives, and nothing supplies one. Read it before
+re-opening this.
+
+### The quantitative half (proton pin, convention C, 50 dps)
+
+| quantity | value | in σ of `Q_β/Q_A` |
+|---|---|---|
+| 1σ on measured `Q_β/Q_A` | 7.784e-7 | 1 |
+| `cos(θ)` explains, of the 0.167 % deviation | **95.599 %** | — |
+| …without the `−u/2` offset | 81.756 % | — |
+| `\|cos θ − (1 − θ²/2)\|` — the cosine's **own signature** | 4.274e-7 | **0.549** |
+| residual the `c_k` tower absorbs | 7.382e-5 | **94.836** |
+| **ratio** residual / signature | | **172.7×** (D: **4039×**) |
+
+**The phase does real work** — 95.6 % of the deviation, zero free parameters, and
+the `−u/2` offset is part of it. **The cosine does none the data can see**: its
+entire content beyond a parabola is *half a standard deviation*, against a
+*ninety-five sigma* residual it fails to explain. Any function agreeing to second
+order fits identically and leaves the same tower. Under D the cosine explains only
+59.8 %.
+
+**And it discards information.** `cos` is even, so `z = 0.4993` and `z' = 1.5822`
+share `cos = 0.998399` while their exact corrections are **0.4409** and
+**1.6501**. The exact correction is affine in `z` hence injective — the algebraic
+form of the "square-root branch point 0.062 % above q₀".
+
+### Warranted vs not
+
+**Warranted:** the correction is `1 − θ²/2` within the experimental resolution.
+**Not warranted by anything measured:** that it is a *cosine*; that `θ` is an
+*angle*; that a rotation or unitary is behind it; or that the residual should be
+expanded **in powers of `u`** at all. The anchor constrains exactly **one**
+number (7.382e-5) — so `c₂ = −1` is an assumption and `c₃` is what is left after
+it. **One measurement cannot determine a series.**
+
+### 🛑 Correction to Step 16 — mine
+
+*"The two decay functionals are one functional in two coordinates"* and *"the
+`c_k` are the affine-vs-cosine reparametrisation residual"* are **overstated**.
+The identity `Π = affine(z)/cos(θ(z))` needs both sides at the **same `z`**; the
+corpus's ladder **fixes** `z = z_conv` and lets the `c_k` absorb, while the trace
+route **frees** `z`. At `z_C`:
+
+    affine(z_C)           = 0.4409      <- 55.84 % from the data
+    corpus ladder product = 0.999926
+    Step 16 printed         0.441582    <- affine/cos, which the ladder is not
+
+They are two **allocations** of one residual with different free parameters, not
+one functional. **Surviving Step 16 unchanged:** the bridge `𝔈₀·(−ε(Δ_S)) ≡ Q_A`;
+both corrections `= 1` at `z = 1` (so leading-order agreement is automatic and
+uninformative); every protium finding (`Δ_S` atomic, 235×; protium element
+refuted); and `F_REQUIRED_TRM = (Q_β/Q_A)/affine(z_D)` to 3.6e-9 — hence Step 15's
+withdrawal of "K off by 2.2656×" stands too. Banner added to the Step-16 audit.
+
+### Where the bean's primary item now stands
+
+*Re-derive the `c_k` ladder under D* has **three** independent problems, none of
+them "the algebra is hard":
+
+1. **No anchor** (Step 15) — `c₂ = −1` is 1.6 σ under C, excluded at 773 σ under D.
+2. **No derivation for the parametrisation** (`BraidImageEigenphaseExclusion` +
+   Step 17) — two of three branches closed, and the survivor is empirically
+   indistinguishable from a parabola.
+3. **Under-determination** — one measured number, a series of coefficients.
+
+**Recommended next, and it is judgement:** the productive direction is **branch
+3** — supply a KZ/Kohno–Drinfeld connection whose holonomy *is* the phase. That
+would justify the cosine independently of the anchor and give the tower a reason
+to exist. The alternative is to state the correction as what the data supports,
+`1 − θ²/2`, and retire the tower. Both are owner calls; neither is done here.
+
+
+## Step 18 (2026-08-31) — branch 3 narrows to one requirement: an ELLIPTIC generator
+
+Attacked branch 3 (= `qou-pdix` route 5). Read that bean first — it is further
+along than this one records: routes 1–4 closed, route 5's constant-residue horn
+closed by `PhaseFailsLogFunctionalEquation`, and the old acceptance test retired
+for a two-tier D1–D6 replacement.
+
+**What I added** (probe `qbeta-holonomy-spectrum-sign-obstruction` 6/6, Lean
+`QOU/QBeta/HolonomySpectrumSignObstruction.lean` 6 theorems sorry-free, audit
+`docs/audits/2026-08-31-qbeta-holonomy-spectrum-sign-obstruction.md`, commit
+`4471ee72ce`): route 5's **three remaining survivors close at once**.
+
+The correction the holonomy must produce is **strictly below 1** (`Q_β/Q_A =
+0.998325`; ladder cosine `0.998399` C / `0.998999` D). A **real-spectrum**
+generator gives `cosh a ≥ 1` for *every* real `a` — quantified over all `a`, so
+**residue-independent**, which is why it reaches the q-dependent, non-flat and
+q-dependent-parameter cases the doubling identity could not. Kohno–Drinfeld's own
+scale-fixing `ħ = 2 ln q` is **real** at real `q₀ > 1`, giving character
+`(q+1/q)/2 = 1.005448` with excess `(q−1)²/(2q)` — a square, so never negative.
+**Wrong side of 1.**
+
+**Branch 3 is therefore not closed but narrowed to one requirement**: an elliptic
+generator (`det A > 0`, spectrum `±iθ`, `θ = 0.0565947`) at real `q`, against
+Kohno–Drinfeld's `det A = −(ln q₀)² < 0`. The imaginarity must come from
+somewhere, and `conj:im-q-physical-role` is the corpus's name for that place.
+Added as **tier-0 (D0)** to `qou-pdix`'s acceptance test.
+
+**Where the primary item stands after Steps 15–18.** *Re-derive the `c_k` ladder
+under D* has four independent blockers, none of them "the algebra is hard":
+
+1. **No anchor** (Step 15) — `c₂ = −1` is 1.6 σ under C, excluded at 773 σ under D.
+2. **No derivation for the parametrisation** (Step 17 + `BraidImageEigenphaseExclusion`).
+3. **Under-determination** — one measured number, a series of coefficients.
+4. **Branch 3 needs an elliptic generator** (Step 18) — and nothing supplies one.
+
+
+## Step 19 (2026-08-31) — Im(q) refuted as the elliptic source; "no tower" quantified
+
+Probe `qbeta-imq-elliptic-generator-refutation` (8/8), Lean
+`QOU/QBeta/ImQCannotSupplyEllipticGenerator.lean` (4 theorems, sorry-free), audit
+`docs/audits/2026-08-31-qbeta-imq-elliptic-generator-refutation.md`. Commit
+`f65a953dd3`.
+
+### Part 1 — `conj:im-q-physical-role` cannot supply the elliptic generator
+
+**Route A, `Im(q)` as a phase coordinate.** Generator eigenvalues are `±ln q`,
+purely imaginary only if `|q| = 1` — impossible, since `Re q = 1.10998 > 1`
+forces `|q|² > 1` for **every** `Im q`. The only move left is a complex character
+with the real part kept, and it costs more than it buys:
+
+| | |
+|---|---|
+| threshold for `Re[character] < 1` at all | `\|Im q\| > 0.122819` (11.07 % of `Re q`) |
+| `Im q` to hit `Re[character] = 0.998399` | **±0.139956** (12.61 %) |
+| resulting `Im[character]` | **0.014069** = **8.40×** the deviation = **18074 σ** |
+
+`Q_β` is real, so that must vanish — and with `|q|² > 1` the factor `1 − 1/|q|²`
+is strictly positive, so it vanishes **only** at `Im q = 0`, returning the
+character to `≥ 1`, which the sign obstruction already excludes.
+
+**Route B, non-Hermitian deformation.** An elliptic generator forces
+unit-modulus braiding eigenvalues, but Kohno–Drinfeld fixes `ħ = 2 ln q` by
+matching the Hecke pair `{1.109979, −0.900918}`, neither of modulus 1. It fails
+not on the data but by **dissolving the scale-fixing the route depends on**.
+
+**This does NOT refute `conj:im-q-physical-role`** — its chirality role is
+untouched and `Im q` may be physical for other reasons. What is settled is that
+it cannot supply the elliptic generator.
+
+### Part 2 — "retire the tower", quantified
+
+The **tower** is the sequence `c₂, c₃, c₄, …` in powers of `u`. Retiring it does
+**not** drop the correction:
+
+| | value | σ |
+|---|---|---|
+| correction needed | 0.998325 | — |
+| `1 − θ²/2` (no cosine, no tower) | 0.998399 | — |
+| residual `δ` | **−7.3394e-5** | **94.29** |
+| `c₂ = −1` predicts `−u²` | −7.2543e-5 | **98.84 %** of `δ` |
+| left for `c₃` **and all above** | −8.5042e-7 | **1.09** |
+
+`δ` is real and large; `c₂ = −1` consumes almost all of it; what remains to
+determine `c₃` **and every coefficient above** is one marginal number. Absolute
+bar `σ/u³ = 1.2598`, reproducing Step 15's independent **1.2619**.
+
+**And `c₃`'s central value is an artefact, not merely imprecise:** `−2.069343`
+through `cos` (reproducing the committed proton `−2.06934258`, which validates
+the extraction) against `−1.376381` through `1 − θ²/2` — a **33.49 % shift** from
+a choice the data resolves at **0.549 σ**.
+
+So "no tower" means writing `Q_β = Q_A·(1 − θ²/2)·(1 + δ)` with `δ` measured,
+rather than asserting `δ = c₂u² + c₃u³ + …`. *One measurement determines one
+number; it cannot determine a series.*
+
+### The fork, both arms now priced
+
+| arm | status |
+|---|---|
+| take `conj:im-q-physical-role` as the elliptic source | **refuted** (Step 19) |
+| retire the cosine, state the correction as `1 − θ²/2` | **coherent**, costs only the tower, not the correction |
+
+Route 5 is not closed — an elliptic generator from some *other* source stays
+logically open — but the one place the corpus had named as a source of
+imaginarity is excluded. **This is an owner call now, not a measurement
+question**: Steps 15–19 have priced everything that can be priced without
+choosing.
+
+
+## Step 20 (2026-08-31) — Bring's elliptic curve: right KIND of source, no phase
+
+Owner: *"Bring's surface has an elliptic curve naturally associated"*. It does.
+Probe `qbeta-bring-elliptic-generator` (5/5), Lean
+`QOU/QBeta/BringEllipticCurveJInvariant.lean` (3 theorems, sorry-free).
+
+**Guard against a pun, stated first:** "elliptic generator" (elliptic element of
+SL₂) and "elliptic curve" are different senses. The bridge is **KZB** — the
+elliptic analogue of KZ — which lives on an elliptic curve and whose monodromy
+genuinely carries `exp(2πiτ)` factors. That is where imaginary spectrum can enter
+a Drinfeld–Kohno construction, which Step 18 showed is missing.
+
+**Why it is the right kind.** A flat **unitary** connection on a torus has
+monodromy in `U(1)×U(1)` — elliptic by construction. So this is the **first
+candidate source of imaginarity to pass tier-0 D0 at all**, where `Im(q)` failed
+(Step 19). And it is not a foreign import: the corpus already carries a *"Bring
+color-tube (n=10 substrate)"* route in the **mass** sector (m_p ≈ 938 MeV,
+−670 ppm).
+
+**The curve** (library: Riera–Rodríguez, *Period matrix of Bring's curve*, Pacific
+J. Math. 154 (1992), held in full). Serre: Jacobian isogenous to **E⁴**,
+`E : y² = x³ − 675x − 79650`, **`j = −25/2`**, period matrix diagonalising to
+`(5τ, 5τ, 5τ, τ)`. `j` re-derived from the equation, not transcribed.
+
+**And it supplies no phase:**
+
+1. **`j = −25/2` is not a CM invariant** — every CM `j` is a rational *integer*;
+   `−25/2` is not even an algebraic integer. So **E has no complex
+   multiplication**, `τ` has no closed form, and the curve hands the ladder no
+   *derived* number — which was the whole appeal of "naturally associated".
+2. **`Re τ = 1/2` exactly** (forced by `j` real and negative), so the natural
+   angle `2π·Re τ = π` is a **sign**, not a tunable phase.
+3. **Nothing lands.** Ratios to `θ_required = 0.0565947`: **55.5, 277.6, 27.8,
+   0.0501** — closest a factor of **19.94**. The four comparisons were declared
+   *before* computing and are reported in full including the misses; no search
+   over combinations was run.
+
+**Verdict:** structurally the best candidate the arc has had; quantitatively
+empty. The **direction is not refuted** — a KZB construction on E is untouched
+and is where an elliptic generator could still come from — but this curve at face
+value gives nothing.
+
+**Provenance caveat:** the library copy is OCR of a scanned page, garbled in
+places. Only legible, independently checkable parts are used. The paper's own
+`τ₀` is pinned by **two** j-values, the second illegible in this scan, so `τ₀` is
+**not** reconstructed — only the SL(2,ℤ) representative with `j = −25/2`.
+Recovering `j(5τ₀)` from a clean copy is the obvious next step if anyone wants to
+push this.
+
+
+## Step 21 (2026-08-31) — τ₀ is not CM; the jet tower is blind to decay
+
+Probe `qbeta-bring-tau0-and-jet-tower-closure` (6/6), Lean
+`BringEllipticCurveJInvariant.lean` (extended) + `JetTowerBlindToDecay.lean`
+(both sorry-free, axioms clean).
+
+### Theorem 2, decoded by DERIVATION
+
+No clean scan was needed. Given `j(τ₀) = −25/2`, the possible `j(5τ₀)` are exactly
+the six roots of `Φ₅(−25/2, Y)`. Computed independently, one is **−3810.78125 =
+−5·29³/2⁵ = −121945/32** — decoding the OCR's `- 293x5` whose `2⁵` exponent had
+been rendered onto its own line.
+
+> **THEOREM 2:  `j(τ₀) = −5²/2`,  `j(5τ₀) = −5·29³/2⁵`**
+
+**And the answer is NO.** Both are **non-integral** rationals: `v₂ = −1` and
+`−5`. A CM j-invariant is an algebraic integer; negative 2-adic valuation is
+potentially *multiplicative* reduction at 2 (Tate curves), exactly what CM
+forbids. **τ₀ is not a CM point** — no closed form, no derived phase. The
+hypothesis is refuted.
+
+### The Gröbner–Shirshov jet tower is blind to decay
+
+The q-Plancherel weight `W_λ = [k]_q!/(∏_cells [h(c)]_q)²` depends on λ **only
+through its hook multiset**, which transposition permutes; and transposition
+swaps the trivial and sign branchings. `λ ↦ λ'` is an involution, so
+
+    w_sym(k) = w_alt(k)   EXACTLY, every k, every q.
+
+Verified: **zero** counterexamples to hook-multiset transpose invariance over
+every partition of every `k ≤ 9`; `|w_sym − w_alt| ≤ 7.3e-40` at 40 dps for
+k=3..9 (exactly 0 for k=3,4,5).
+
+Mass sees `y₃ + y₍₁³₎`; decay sees `y₃ − y₍₁³₎`. **So the tower's decay
+contribution is identically zero at every level — no phase can hide there,
+because the tower contributes nothing at all to the channel that needs one.** The
+mass sector is untouched: `w_sym + w_alt = 2w_sym` is exactly what the tower's
+unbounded ~2.5×/level growth feeds.
+
+### Lean vs numeric, stated so nobody over-reads it
+
+**Lean:** both j-values as rational identities, their non-integrality, and the
+involution reindexing (stated abstractly, so it carries the argument without
+formalising Young diagrams). **Numeric only:** that −3810.78125 is among the six
+`Φ₅` roots; hook-multiset transpose invariance (standard, checked exhaustively
+k≤9); `w_sym = w_alt` at 40 dps.
+
+### Branch 3 is out of NAMED candidates
+
+braid image **excluded** · arbitrary M **circular** · constant-residue holonomies
+**fail the doubling identity** · every real-spectrum generator **on the wrong
+side of 1** · `Im(q)` **cannot supply ellipticity** · Bring's E **non-CM** · τ₀
+**non-CM** · jet tower **blind**. What remains is unnamed — and naming it is
+research, not measurement.
+
+
+## 🛑 Step 22 (2026-08-31) — Step 21 OVER-REACHED. `Δ_L` is ELLIPTIC.
+
+**Owner correction, and it is right.** Step 21 concluded "no phase can hide in
+the jet tower" from the fact that every tower quantity it examined is **real** at
+real `q`. True, and beside the point: the ladder needs an elliptic **generator**
+— a complex-conjugate *spectrum* — and **a real trace says nothing about a real
+spectrum.** Step 21 ranged over traces and drew a conclusion about spectra.
+
+Probe `qbeta-decay-operator-elliptic-spectrum` (6/6), Lean
+`QOU/QBeta/TraceRealSpectrumComplex.lean` (sorry-free). Commit `1540977a43`.
+
+### The owner's framing was the right one, and the corpus already had both pieces
+
+> *"you're not really looking for the beta decay itself, but the thing that does
+> beta decay"* — and *"you should be able to see the trefoil"*.
+
+- The H₃ normal-form basis is `[γ, σ₀, σ₁, L₊, L₋, e⁻]` = `[1, T₀, T₁, T₀T₁,
+  T₁T₀, T₀T₁T₀]`. **Its sixth element, named `e⁻` — the electron — IS the longest
+  element, which IS the trefoil `σ₀σ₁σ₀`.** The electron was in the basis all along.
+- `qbeta_hoefsmit_tbeta_matrix_build` already builds `T_β` **operator-valued** per
+  Wedderburn block, on the stated ground that PR #1840 ruled out the scalar route
+  because *"the `c_k` are irreducibly operator-valued"*.
+
+### The finding — (2,1) block, proton pin
+
+| operator | `tr²−4det` | `det(traceless)` | spectrum |
+|---|---|---|---|
+| `Δ_S` (short; **the ladder's closed forms**) | +0.043706 | −0.010927 | real — hyperbolic |
+| `Δ_L = NF(n)−NF(p)` (long; **production runs on this**) | **−0.035837** | **+0.008959** | **ELLIPTIC** |
+
+eigenvalues `−0.045681 ± 0.094653 i`, `|λ| = 0.105100`, `cos θ = −0.434649`,
+**eigenphase θ = 2.020445 rad**.
+
+**Step 18's exclusions never touched it**, for three reasons: it is a *difference*
+of normal forms — an **algebra** element, not a braid-group element — so
+`BraidImageEigenphaseExclusion` does not apply; it lives in the `(2,1)` block that
+`χ^(2,1)(Δ_S) = 0` hides; and its **trace is real**, so a trace-level scan cannot
+see it.
+
+**The asymmetry is the point:** the model the ladder's closed forms come from is
+hyperbolic; the model production runs on is elliptic. This bean already records
+`Δ_S` vs `Δ_L` as a live fork with mixed pricing — they differ in **kind**.
+
+### But it is the wrong phase
+
+**θ = 2.020445 rad against the required 0.056595 — a factor 35.7.** `Δ_L`
+supplies an elliptic generator, **not** the ladder phase.
+
+### 🛑 Withdrawn / unaffected
+
+- **WITHDRAWN:** Step 20/21's *"branch 3 is out of NAMED candidates"*. The corpus
+  contains an elliptic generator; the arc missed it by looking at the wrong kind
+  of object.
+- **UNAFFECTED:** the vanishing Step 21 proved — a bar-odd operator has zero
+  Plancherel trace, since `W_{λ'} = W_λ` and `χ^{λ'} = −χ^λ` — stands exactly as
+  stated. Only the inference *trace-real ⟹ spectrum-real* is withdrawn.
+
+### ⚠ Flagged coincidence, NOT pursued
+
+`θ = 2.0204450` sits **0.012 %** from `|c₃(muon)| = 2.02020024` — at the
+**superseded** CODATA-2018 anchor (Step 16). No mechanism connects a radian
+eigenphase to a dimensionless Taylor coefficient, and this corpus has a
+documented precedent for exactly this trap (stale `−2.00973976` vs
+`J_Hopf − ℏ_q²` `−2.00981719`, agreeing to four decimals while being different
+objects, which misled an earlier pass). Recorded per the standing owner ruling as
+a target to check a derivation **against**, never a criterion to search **on**.
+No search was run.
+
+**Next, my judgement:** the live question is now whether `Δ_L`'s ellipticity is
+*structural* or an artefact of the 11-crossing word choice — i.e. does every
+long-model nucleon-difference land elliptic, or just this one? That is a
+constrained, derivable question, unlike hunting for a phase.
+
+
+## Step 23 (2026-08-31) — `Δ_L`'s ellipticity is STRUCTURAL: the nucleons are nearly parallel in sl₂
+
+Probe `qbeta-nucleon-difference-ellipticity-structural` (6/6), Lean
+`QOU/QBeta/TracelessDifferenceEllipticity.lean` (sorry-free). Commit `f1e6062e04`.
+
+### The mechanism
+
+For traceless 2×2 matrices,
+
+    det(A₀ − B₀) = det A₀ + det B₀ + tr(A₀B₀)
+
+(Lean `det_sub_traceless`, by `ring`; checked against the direct `det` to 1e-20).
+Traceless real 2×2 is **hyperbolic** at `det < 0`, **elliptic** at `det > 0`, so
+the difference of two hyperbolic directions is elliptic exactly when their
+Killing pairing clears `−(det A₀ + det B₀)` — i.e. when they are **aligned**.
+
+| | value |
+|---|---|
+| `det A₀` (proton) | −1.041656 — hyperbolic |
+| `det B₀` (neutron) | −1.056560 — hyperbolic |
+| `tr(A₀B₀)` | 2.107175 |
+| **sum** | **+0.0089591 > 0 ⇒ ELLIPTIC** |
+| exact-parallel threshold `2√(dA·dB)` | 2.098163 |
+| **alignment excess** | **0.43 %** |
+
+**The neutron and proton traceless parts are the same sl₂ direction to within
+0.43 %.** That is the near-degeneracy of the nucleons (`m_n − m_p = 1.29` MeV out
+of 939) — not a property of any word.
+
+### Supporting, in decreasing weight
+
+- **Robust in `q`:** discriminant negative at all 31 samples over `q ∈ [1.01,
+  1.61]`, **zero** sign changes, smooth from −0.03376 to −0.04484. No fine-tuning
+  at `q₀`. *(A first reading of the 0.43 % as a "thin margin" was wrong — the
+  alignment margin is small, the discriminant margin is not, and the discriminant
+  decides.)*
+- **Random control:** NF vectors resampled at matched scale are elliptic **8.9 %**
+  of the time (357/4000). The right null is this one, not the textbook
+  `1 − 1/√2 = 29 %` for a generic real 2×2 — the NF→matrix map isn't that ensemble.
+- **Word orderings:** 8 of 9 elliptic — **with its caveat**: the 9 collapse to only
+  **3 distinct** (tr, det) pairs, 2 of them elliptic, so the raw 8/9 overstates it.
+  Recorded because quoting 8/9 alone would mislead.
+
+### Observation, not claimed
+
+`det ρ(NF(p))` and `det ρ(NF(n))` agree to **1.4e-16** relative. Looks exact —
+both words have 11 crossings — but it is **not proved** here and is used in no
+argument above. Someone should settle it.
+
+### What it does not settle
+
+That `Δ_L` is the **right** generator. Its eigenphase stays 2.020445 against a
+required 0.056595 — a factor 35.7 (Step 22). This explains why an elliptic
+generator **exists**, and that its existence is a fact about the nucleons.
+Nothing more.
+
+**Next, my judgement:** the gap is now a single clean question — the required
+phase is 0.0566 and the available one is 2.0204, a factor 35.7. Two things could
+close it and both are checkable rather than speculative: whether `Δ_L`'s phase in
+a **higher tower block** differs (Step 22 only measured `(2,1)` at `k = 3`), and
+whether the ladder phase is a *fraction* of an eigenphase rather than an
+eigenphase itself. Neither is a search over forms; both are readings of an
+existing operator.
+
+
+## Step 24 (2026-08-31) — both readings CLOSED; the gap is not bridged
+
+Probe `qbeta-eigenphase-tower-and-fraction-readings` (5/5). Commit `be0d3f2`(see log).
+
+### Check A — a higher tower block? **No, structurally.**
+
+Across `k = 3,4,5,6` and every partition, the **only** distinct `|arg|` of a
+complex eigenvalue of `ρ_λ(Δ_L)` anywhere in the tower is **2.02044502**, in
+blocks of dimension 1–16, zero eig failures. Blocks without complex eigenvalues
+are entirely real.
+
+**The reason is standard rep theory** (cited, not proved): `Δ_L ∈ H₃` acts
+block-diagonally on the H₃-isotypic decomposition of `λ↓H₃`, so
+`spec ρ_λ(x) = ⋃_μ spec ρ_μ(x)` with multiplicity. **The tower repeats the H₃
+spectrum and cannot add to it** — closing this reading for *every* H₃-induced
+operator, not just `Δ_L`.
+
+### Check B — a fraction of the eigenphase? **No, and not close.**
+
+`θ_eig/θ_req = 35.700`, not an integer. Seven pre-declared candidates (list fixed
+before computing; all reported, misses included; 11 and 22 because both nucleon
+words are 11-crossing):
+
+| | ratio | | ratio |
+|---|---|---|---|
+| `θ/2` | 17.850 | `2π−θ` | 75.320 |
+| `θ/11` | 3.2455 | `π−θ` | 19.810 |
+| **`θ/22`** | **1.6227** ← closest, still **62 % off** | `θ−2` | 0.36125 |
+| `2θ` | 71.400 | | |
+
+**And the non-numerological version settles it.** `θ_req` isn't intrinsic — it's
+`(z−1)h/2 − u/2`, a *function of z*. So the real question is what `z` the
+eigenphase corresponds to:
+
+    +θ_eig → z =  20.3696          admissible z_D = 0.6127
+    −θ_eig → z = −18.2881                     z_C = 0.4993
+
+Off by ~33× and outside any admissible range both ways. The two phases aren't
+related by a rational factor — they're different magnitudes in different ranges.
+
+### Where this leaves it
+
+`Δ_L` supplies a genuine elliptic generator whose ellipticity is a fact about the
+nucleons — **but its phase is not the ladder's**, and neither tower level nor a
+rational factor bridges the gap.
+
+**What remains** is the single thing Step 22's correction opened and nothing since
+has touched: **a genuinely level-`k` operator, not induced from H₃.** By Check A
+that is the *only* place in the tower a different phase could come from.
+
+*No new Lean here: the Check-A argument is textbook representation theory, and
+manufacturing a proof file for it would overstate what this step established.*
+
+
+## Step 25 (2026-08-31) — level-k avenue UNINSTANTIATED; real decays hyperbolic; Step 23 corrected
+
+Probe `qbeta-level-k-operator-and-real-decays` (5/5).
+
+### 1. The corpus never leaves H₃
+
+`build_atom_nf` returns a **six-vector in the H₃ normal-form basis for every mass
+number**, tritium (A=3) included. The atom words are laid out on `3A` strands but
+the normal form is H₃-valued throughout. **So Step 24's one remaining avenue
+exists logically but is NOT INSTANTIATED** — building a level-`k` operator is new
+*construction*, not a reading, and belongs to the `T_β` Stage B branch queued
+since PR #1840.
+
+### 2. Real beta decays are hyperbolic
+
+| decay | disc | kind |
+|---|---|---|
+| free n → p (Q=782 keV) | **−0.03584** | ELLIPTIC |
+| n → protium (atomic) | +6.52244 | real |
+| tritium → ³He (Q=18.6 keV) | +4.46143 | real |
+| ¹⁴C → ¹⁴N (Q=156 keV) | +12.94889 | real |
+
+Only the **bare nucleon pair** is elliptic. The alignment diagnostic says why —
+for the nuclear cases parent and daughter are nowhere near parallel in sl₂ (sums
+−1.63, −1.12, −3.24 against the nucleons' +0.00896). **Ellipticity is a property
+of the near-degenerate n/p pair, not of beta decay.**
+
+### 3. No species difference supplies the phase
+
+All 105 pairs from 15 species: **21 elliptic**, eigenphases spanning **0.24950**
+(he4−li6) to **2.96861** (he3−he4). The required **0.0565947 is below all
+twenty-one** — the smallest available is **4.41×** too large.
+
+### 🛑 Correction to Step 23, mine
+
+Step 23 called the ellipticity "structural" on a random control of 8.9 %. That
+control was against **random** vectors; against the corpus's **own** species it is
+**21/105 = 20 %**. So ellipticity is *not rare*, and "structural" should not have
+been read as "special".
+
+What **stands, and is now independently confirmed**: the **mechanism**. `n−p` has
+the **smallest |disc| of all 21** elliptic pairs — marginal ellipticity is exactly
+what a 0.43 % alignment excess predicts. **Near-parallelism is the special thing;
+ellipticity is its consequence.**
+
+### Where the arc stands
+
+Every named avenue closed or uninstantiated: braid image excluded · arbitrary M
+circular · constant-residue holonomies fail the doubling identity · all
+real-spectrum generators on the wrong side of 1 · `Im(q)` cannot supply
+ellipticity · Bring's E and `τ₀` both non-CM · bar-odd operators have zero
+Plancherel trace · the tower carries one eigenphase per H₃ element · no rational
+factor bridges the gap · real nuclear decays hyperbolic · no species difference
+small enough.
+
+**What is left is not a reading but a construction the corpus does not have.**
+
+---
+
+## Step 26 — the discriminant curve in `q`: the tower is not elliptic, and the phase is excluded at `3·10¹¹ σ`
+
+**Artifacts.**
+[`qbeta_discriminant_curve_in_q_probe.py`](../computations/qbeta/qbeta_discriminant_curve_in_q_probe.py)
+(8/8) ·
+[`QOU/QBeta/DiscriminantCurveInQ.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/DiscriminantCurveInQ.lean)
+(15 theorems, sorry-free) ·
+[audit](../docs/audits/2026-08-31-qbeta-discriminant-curve-in-q.md).
+
+### 🛑 A method error running through Steps 21–25, mine
+
+Every one of those steps evaluated its spectra at the **single point** `q = q₀`.
+That cannot distinguish a discriminant that is a perfect square from one that is
+an irreducible degree-18 polynomial, so **nothing in Steps 21–25 could have
+settled a question about the tower** — and each of them asserted tower-level
+conclusions anyway. "Collapsing to order zero" is the right description.
+
+### 🛑 And a factual claim, also mine
+
+Step 25 said `Δ_L` "cannot be asked this question" because `build_nucleon_nf`
+takes no `q`. **Wrong.** `hecke_core_symbolic.hm_sym` is the symbolic-`q` twin of
+`hm`; mirroring `build_nucleon_nf`'s 11-crossing braid-order word through it
+gives the nucleon NF as an exact element of `ℚ(q)`, matching the canonical
+numeric builder to `9·10⁻¹⁷` in all twelve coordinates. There was no gap.
+
+⚠️ `shift_from_nf_basis.build_nucleon_nf_sym_atomic` is **not** that mirror: it
+matches the crossing counts and the 7/4 split but applies the **monotone**
+re-sort of `B₃` where the canonical builder alternates — an **82 %** difference on
+`tr_M` by `nucleon_braid_word`'s own measurement, visible as `L₊ = e⁻ = 0`.
+
+### 1. No twisting exists to be missed
+
+`tr(1/q) = −tr(q)` · `det(1/q) = det(q)` · `disc(1/q) = disc(q)`, as **exact
+identities in `ℚ(q)`**. The bar involution acts trivially, so `disc` is a
+polynomial in `x = q + 1/q`. Consequence on the unit circle: `tr` is purely
+imaginary and `det` real (checked to 40 digits), so every root of unity carries a
+real discriminant.
+
+### 2. The curves: genus 0 and genus 8, never genus 1
+
+| model | `disc(x)` | curve |
+|---|---|---|
+| short `Δ_S` | `x² − 4` (`= h²`, a perfect square in `q`) | conic, **genus 0** |
+| long `Δ_L` | `(x−2)(x+2)G₋G₊/16`, deg 18, squarefree | hyperelliptic, **genus 8** (genus 4 on `w = x²`) |
+
+`G∓(x) = 2x⁸ − 21x⁶ + 77x⁴ − 115x² ∓ 2x + 58`. **Neither is genus 1** — no
+elliptic curve, hence no tower of them.
+
+**New, and only visible symbolically:** `x = q + 1/q ≥ 2` for every real `q > 0`,
+so `disc_S ≥ 0` **identically**. The short model is hyperbolic at *every* real
+`q`, not merely at `q₀`. Closed for good.
+
+### 3. The Hecke tower adds no eigenvalue
+
+Branching: `Res S^λ = ⊕ S^μ`. Verified on all five `H₄` shapes at three `q`.
+Every corpus object is `H₃`-valued (Step 25), so no new discriminant at any level.
+
+### 4. The classical limit is exactly `2π/3`, and the trefoil is second-order
+
+Every NF coordinate of `Δ_L` carries `(q−1)(q+1)`, so `Δ_L → 0` at `q = 1`.
+Orders: `γ:1 σ₀:2 σ₁:2 L₊:3 L₋:1 e⁻:2` → leading direction `−(1 + T₁T₀)`, and
+`T₁T₀` is the `S₃` 3-cycle: eigenvalues the primitive cube roots of unity,
+`tr = −1`, `det = 1`, `disc = −3`, eigenphase **exactly `2π/3`**.
+
+**The electron word `e⁻ = T₀T₁T₀` enters only at second order.** The thing that
+does the decay is `1 + L₋` first; the trefoil is its correction.
+
+### 5. The window, and the closure by measurement
+
+`Δ_L` is elliptic **exactly for `q ∈ (1, 1.379732661603278)`**; `q₀` sits 29.0 %
+up. `θ(q₀) = 2.02044502` — reproducing Step 22's `2.0204` from an independent
+construction. `θ` sweeps to 0 at the wall, so the required phase **is** attained:
+
+| conv | `θ_req @ q₀` | `q*` | `(q*−q₀)/σ_q₀` | dist. to wall |
+|---|---|---|---|---|
+| `z_C` | `0.0565947` | `1.37812464914` | **`2.91·10¹¹`** | `0.0016` |
+| `z_D` | `0.0447444` | `1.37956231361` | **`2.93·10¹¹`** | `0.00017` |
+
+Both hard against the degeneracy wall: **the phase is only small where `Δ_L` is
+about to stop being elliptic.** Excluded by the CODATA proton pin
+(`σ_q₀ = 9.2116·10⁻¹³`) at three hundred billion σ. Curve derived first, crossing
+located after — a falsification test, not a search. `q*` is a fact **about the
+curve**, never a candidate `q`.
+
+### 6. The cyclotomic tower `q = ζ_N` is real, and also too big
+
+`φ₃ = φ₆ = 2π/3` exactly (`disc = 9/16`), `φ₈ = π`, `N=4` singular, `N=5`
+degenerate, `φ_N → 2π/3`. Minimum over every non-degenerate `N ≤ 120`:
+**`φ₇ = 1.4042`** — still **24.8×** the required phase.
+
+### Where the arc stands after Step 26
+
+The short model is closed **for all `q`**. The long model's phase is excluded
+**by the calibration**, not by inspection. Neither tower — Hecke or cyclotomic —
+carries an elliptic curve or a small enough phase. What remains is unchanged from
+Step 25: not a reading, but a construction the corpus does not have.
+
+---
+
+## Step 27 — the level-`k` operator IS binding, and the trace is blind to 588 of the 720 dimensions it lives in
+
+**Artifacts.**
+[`qbeta_level_k_binding_operator_probe.py`](../computations/qbeta/qbeta_level_k_binding_operator_probe.py)
+(8/8) ·
+[`QOU/QBeta/TraceBlindSector.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/TraceBlindSector.lean)
+(8 theorems, sorry-free) ·
+[audit](../docs/audits/2026-09-01-qbeta-level-k-binding-operator.md).
+
+### 🛑 Correction to Step 25, mine
+
+Step 25 said "the corpus is H₃-valued at every `A`, so the level-`k` avenue is not
+instantiated", from `build_atom_nf` returning a 6-vector at every `A`. **That reads
+the evidence backwards**, and `qou-tower` had already named the cause:
+`build_atom_nf_mp` applies the H₃ Gröbner–Shirshov reduction **after every
+crossing**. A 6-vector at every `A` is not evidence the atom *lives* in H₃ — it is
+evidence H₃ is where the chain can **observe** it. `atom_braid_word_3A` is the
+faithful object and its `include_inter` switch is composite-vs-constituents.
+
+### 1. The construction — binding, done on the operators
+
+`Δ_bind = β_atom − β_free ∈ H_{3A}(q)`. `tr_M` is linear, so `tr_M(Δ_bind)` is the
+binding number the corpus already computes — but `Δ_bind` is an **operator**, and
+an operator has a spectrum no linear functional determines.
+
+Deuteron (`3A = 6`), exact in all 11 blocks:
+`β_atom = P·I·N`, `β_free = P·N` ⟹ **`Δ_bind = P·(I−1)·N`**.
+`β_free` uses only gens `{0,1,3,4}` and IS `H₃ ⊗ H₃`; `I−1 = σ₂ + (d−1)·1` is not.
+**So `Δ_bind` is genuinely `H₆`-valued and Step 24's branching argument does not
+reach it.** Validated against the corpus's `chi_lambda_of_word` to `5.4e-15`.
+
+### 2. THE FINDING — the blind spot is structural, not accidental
+
+Convention D is the SU(2)/Temperley–Lieb trace, so `ω_λ = 0` on every partition
+with **> 2 rows** — measured `< 2e-16` on seven of eleven, and confirmed by
+arithmetic: `Σd² = 720 = 6!` total, `132 = C₆ = dim TL₆` visible.
+
+> **588 of 720 dimensions (81.7 %) are invisible**, and the binding character is
+> **largest in an invisible block**: `χ_(3,2,1) = −9.598` vs `+0.009` in the
+> visible 1-dim block.
+
+### 3. The blind sector holds the first small phases in the arc
+
+| λ | dim | vis | eigenphase |
+|---|---|---|---|
+| `(3,2,1)` | 16 | **no** | `0.0252506` |
+| `(2,2,1,1)` | 9 | **no** | `0.0195531` |
+
+Required: `0.0447444`. Every prior candidate was **above** it (Step 25: `4.41×`;
+Step 26 cyclotomic: `24.8×`). **These are the first below.**
+
+### 4. 🎯 TARGET, NOT A RESULT — the 0.13 % sum
+
+`0.0252506 + 0.0195531 = 0.0448038` vs required `0.0447444`. **Wall artefact:**
+`θ₂ → 0` at the `(2,2,1,1)` wall `q_w = 1.1121238`, so the sum sweeps down through
+everything and a crossing is guaranteed. It is at `q* = 1.109988469` =
+**`1.07e7 σ_q₀`**. `q*` is `0.19200 %` below the wall, `q₀` is `0.19289 %` — both
+hard against the **same** degeneracy, exactly Step 26 §5's structure. And "sum of
+two block eigenphases" has **no derivation**. Recorded to check a future
+derivation AGAINST; never a criterion.
+
+### 5. How far it reaches — blindness deepens super-exponentially
+
+Visible share is `C_n/n!`, `n = 3A`: **83.3 %** (A=1) → **18.3 %** (A=2) →
+**1.34 %** (A=3) → **7.5e-6 %** (A=6).
+
+### 6. ⚠️ The corpus's word is a nearest-neighbour CHAIN, not all pairs
+
+`ordering = ['p']*Z + ['n']*N`, interface at `gen 3k+2` for `k < A−1`: `A−1`
+couplings where all pairs would be `A(A−1)/2`. Deficit `(A−1)(A−2)/2` — **zero at
+A=2**, so §1–§4 are exact for the deuteron. From A=3 it bites: permuting the
+arbitrary ordering (`ppn`/`pnp`/`npp`) moves the binding character by **22.54 %**,
+and all-pairs coupling would show none by symmetry. **A first-order modelling
+choice at A≥3 that every heavy-nucleus number inherits.**
+
+**NOT proposed here:** an all-pairs word with distance decay. A decay rate per
+bond type is three free parameters with no derivation, and a non-adjacent nucleon
+pair has **no single generator to sit on** (`σ_g` couples `g`,`g+1` only), so the
+coupling is a modelling choice, not a letter to insert.
+
+### Where the arc stands after Step 27
+
+The level-`k` operator exists, is validated, and is **binding**. The observable is
+blind to 81.7 % of it at A=2 and 98.7 % at A=3, structurally. The only small
+eigenphases in the corpus are in that blind sector. Two open items, in order:
+**(a)** the all-pairs coupling word for A≥3 — a construction, needing an owner
+call on the decay convention; **(b)** whether anything derives a *combination* of
+block eigenphases, which is what the 0.13 % target would need before it could be
+anything but a coincidence.
+
+---
+
+## Step 28 — the all-pairs decay rates are DERIVED: transfer-matrix spectrum, sector-indexed, one degree of freedom
+
+**Artifacts.**
+[`qbeta_bond_decay_rates_from_transfer_spectrum_probe.py`](../computations/qbeta/qbeta_bond_decay_rates_from_transfer_spectrum_probe.py)
+(5/5) ·
+[`QOU/QBeta/BondDecayRates.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/BondDecayRates.lean)
+(sorry-free) ·
+[audit](../docs/audits/2026-09-01-qbeta-bond-decay-rates-from-transfer-spectrum.md).
+
+Unblocks Step 27's stopping point. Owner steer: *"go back to looking at how we
+define CAL 123 ideal math — there are decay rates right there… link these to the
+spectral decomposition of the transfer matrices operating on the tower."* Both
+halves hold.
+
+### 1. Where the rates were
+
+The math-ideal CAL triple is **`(m_e, 𝔇_β, 𝔇_π)`**, not three masses: CAL-2 is the
+**neutron β-decay width** at `h²`, CAL-3 the **pion decay width** at `h³` (owner
+ruling 2026-06-26). `m_μ/m_e` and `m_π` are only the observational proxies. **Two
+of the three calibration points are decay rates by definition.**
+
+### 2. The transfer matrix's spectrum IS the bond rate
+
+`chi_monotone_transfer._alpha_beta` reduces each fine-Bratteli step to
+`O_g = α·σ_g + β·I` with `E₁ = ∏(q + d_j)`, `E₂ = ∏(−1/q + d_j)`. Those ARE the
+step's spectrum, so the falloff across one bond is `E₂/E₁`:
+
+| bond | `d` | `E₂/E₁` |
+|---|---|---|
+| p–p `σ` | `0` | **`−1/q²`** |
+| n–n `σ⁻¹` | `−h` | **`−q²`** |
+| p–n avg | `−h/2` | **`−1` exactly** |
+| p–n colour | `−h(½−δ/4)` | `−1 + tanh(ln q)·δ + O(δ²)` |
+
+Closed forms in `q`. **No free parameter** — the rate Step 27 declined to invent
+was already fixed by the transfer matrix.
+
+### 3. ⚠️ They are NOT independent (owner's steer, confirmed)
+
+`r_pp · r_nn = 1 = r_pn²` and `r_nn/r_pp = q⁴`. **One relation → one degree of
+freedom (`q²`), not three.** An all-pairs coupling on these adds NO parameter.
+
+### 4. And they ARE sector-indexed, by bar parity
+
+| | under `q ↦ 1/q` | sector |
+|---|---|---|
+| `r_pp ↔ r_nn` | **exchange** | a bar-conjugate pair |
+| `r_pp·r_nn = 1` | bar-**even** (cosh) | **strong** |
+| `r_nn/r_pp = q⁴` | bar-**odd** (sinh) | **weak** |
+| `r_pn = −1` | bar-**fixed** | **electromagnetic** |
+
+The last row is the sharp one. `1 − |r_pn| = tanh(ln q)·δ + O(δ²)`, and
+`tanh(ln q₀) = 0.103963710` is **exactly** the odd-to-even ratio
+`interaction-sector-taxonomy.md` derives for the **EM coupling** by a wholly
+separate argument (bar decomposition of `α_EM⁻¹ = q[9]_q[10]_q`). Predicted
+`1.4302400e-4` vs measured `1.4301377e-4` — `7.2e-5` relative, the second order
+in `δ`. The p–n bond sits at the intertwiner point, where the taxonomy
+independently puts EM.
+
+### 5. h-orders match the CAL ladder
+
+`r_pp, r_nn` are `O(h⁰)`; `tanh(ln q)` is `O(h)` (measured `0.9999980`); **`δ` is
+`O(h³)` (measured `2.9999902`) — CAL-3's order, the pion decay width's**; so
+`1 − |r_pn|` is `O(h⁴)`.
+
+### What is still open
+
+The **coupling word**, not the rate. `σ_g` couples strands `g`, `g+1` only, so a
+non-adjacent nucleon pair has no generator to sit on and the all-pairs braid
+remains a construction. Step 27's caveat stands; only the three-free-parameter
+objection is removed.
+
+---
+
+## 🛑 Step 28 CORRECTED, and duplicated — `main` had it right (2026-09-01)
+
+Integrated `main` (271 commits, then 3 more mid-session) and it landed
+**`qou-brng`**: *"the decay rate per bond type IS the transfer matrix spectral
+gap — pp/nn exactly 1/q^2, pn long-range"*, with
+`computations/probes/spectral_gap_bond_decay_probe.py`.
+
+**Same object as Step 28, derived independently, and correctly.** Step 28 read
+the rate as `E₂/E₁` in the **fixed** `(q, −1/q)` order; the correlation decay is
+`|λ₂/λ₁|` with `λ₁` the **larger-magnitude** eigenvalue. `σ⁻¹` carries `σ`'s
+spectrum up to sign, so:
+
+| bond | Step 28 as published | correct |
+|---|---|---|
+| p–p | `−1/q²` | `1/q²` |
+| **n–n** | **`−q²`** | **`1/q²`** |
+| p–n | `−1` | `1` — **long-range** |
+
+**Withdrawn, not restated:**
+- `r_pp · r_nn = 1 = r_pn²` → the product is `1/q⁴`. No "one degree of freedom".
+- bar exchange → strong/weak sector split. Equal rates do not exchange; and the
+  claim was partly circular anyway, since `d = 0` and `d = −h` *are* `σ` and
+  `σ⁻¹`, bar-images by definition.
+
+**Surviving:** the rates are derived closed forms with no free parameter (Step
+27's three-free-parameter objection is still removed); **p–n is long-range while
+both like-nucleon bonds are short-range**; and the colour-weighted p–n departure
+is `tanh(ln q)·δ`, `tanh(ln q₀) = 0.103963710` matching the taxonomy's EM ratio
+to `7.2e-5` — with a self-raised triviality caveat in `qou-i9gk`.
+
+**And the recommended next was already done.** `qou-brng` also carries
+`allpairs_distance_decay_probe.py`, which tests the owner's all-pairs proposal
+directly and returns a **negative**: the strand-routing cost is exactly `z²` per
+unit separation but cannot be the binding's distance decay (read as interaction
+it makes distant pairs bind *more*; read as kinematics it divides out), and the
+decay AME wants is not constant and not fast — `r*` runs `0.709..0.827`, falling
+monotonically with `A`.
+
+So this session's recommended next was duplicated work twice over. Roast and the
+two surviving self-checks: **`qou-i9gk`**.
+
+---
+
+## 🛑 Step 27's headline reading is CORRECTED — the blind sector is the TL kernel (2026-09-01)
+
+`qou-i9gk` hole 1, settled.
+[`qbeta_blind_sector_is_the_tl_kernel_probe.py`](../computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py)
+(4/4).
+
+**Step 27 said** the `>2`-row blocks carry *"information the observable cannot
+see"* — 588 of 720 dimensions. **They carry no states at `N = 2`.**
+
+Measured at `n = 3..8`, not just Step 27's `n = 6`: `ω_λ = 0 ⟺ ℓ(λ) > 2` exactly,
+with a clean gap (`~1e-16` against `0.039..0.49`), and `∑d²` over the `≤2`-row
+blocks equals `Catalan(n)` at every `n` — `5, 14, 42, 132, 429, 1430`. So those
+blocks **are** `TL_n` and the rest span the **kernel** of `H_n(q) → TL_n(q)`.
+`TL_n = End_{U_q(sl₂)}(V^{⊗n})`, so that kernel is exactly the part of the
+algebra acting as **zero** on the `N = 2` physical space. It is the Schur–Weyl
+row cap (`qou-fvzm`), structurally — not a second, independent vanishing.
+
+### The reading contradicts the convention it was measured in
+
+`FibreCategoricalTraceForcesJones.lean` (bean `qou-n1dj`) already has the chain:
+`ℓ > 2` channels absent at `N = 2` (**proved**) → **open premise**, that the mass
+trace *is* the categorical trace of the fibre action on `V^{⊗n}` → `y_{(1³)} = 0`
+forces **Jones** (**proved**).
+
+**Convention D is forced by the premise that empties the blind sector.** Step 27
+computed in D and read D's zeros as hidden information. Under the premise giving
+D there are no states there; under its negation D is not forced and D's weights
+are the wrong ones. The headline reduces to `qou-n1dj`, already open.
+
+### The 0.13 % coincidence dies structurally
+
+`N_min(λ) = ℓ(λ)`. Physical at `N=2`: `(6), (5,1), (4,2), (3,3)`. `N=3` adds
+`(4,1,1), (3,2,1), (2,2,2)`. `N=4` adds `(3,1,1,1), (2,2,1,1)`.
+
+- `0.0252506` in `(3,2,1)`, `ℓ=3` → needs **`N ≥ 3`**
+- `0.0195531` in `(2,2,1,1)`, `ℓ=4` → needs **`N ≥ 4`**
+- **the sum therefore requires `N ≥ 4`** — nothing in the corpus motivates it.
+
+Cleaner than Step 27's degeneracy-wall argument, and structural.
+
+### What survives
+
+`qou-fvzm`: the super-pairwise binding term **requires `N ≥ 3`**. `(3,2,1)` — the
+block with the largest binding character (`−9.598`) and the smaller phase — is an
+`ℓ = 3` block. So Step 27 measured **what an `N = 3` extension would carry**.
+Weaker and different from its claim, and the part that stands. The construction
+`Δ_bind = P·(I−1)·N`, its validation, and the chain-vs-all-pairs finding are
+untouched.
+
+---
+
+## 🛑 Step 28's last positive is DOWNGRADED — the tanh/EM match is formal (2026-09-01)
+
+`qou-i9gk` residual, settled and the bean completed.
+[`qbeta_tanh_em_match_is_formal_probe.py`](../computations/qbeta/qbeta_tanh_em_match_is_formal_probe.py)
+(4/4).
+
+A census finds **5 of 12** unrelated corpus `q`-quantities have odd-to-even ratio
+exactly `tanh(ln q)`, and **`q` alone is one of them** — quantum integers are
+bar-even, so `[9]_q[10]_q` divides out of the taxonomy's coupling and contributes
+**nothing** to the matched number. `X = q·B` with `B` bar-even gives it for any
+`B`. And `tanh(ln q)` **is** `h/(q+1/q)`, exactly how it arises in the p–n
+departure. Discriminator: the taxonomy's **dressed** ratio is `0.10356`, `54×`
+the residual away, and the match lands on the **bare** value.
+
+**Kept:** the closed form `1 − |r_pn| = tanh(ln q)·δ + O(δ²)`, `δ` at CAL-3's `h³`.
+**Withdrawn:** the electromagnetic link.
+
+### Where Steps 26–28 stand, after three self-checks
+
+Step 26 stands in full (the discriminant curves, the exact `2π/3` classical
+limit, the `3·10¹¹ σ` exclusion). Step 27 keeps its construction and its
+chain-vs-all-pairs finding, and loses its headline. Step 28 keeps only derived
+closed-form bond rates, which `qou-brng` had first and correctly.
+
+**The real blocker is unchanged and upstream of all of it:** `α` is axiomatised
+(`q-beta-cos-resummation.ts:48`), the two-row cap admits exactly `{q, z_D}` and
+both fail (PR #6264), so the functional form must change. `qou-pdix`. And
+`qou-n1dj` now sits upstream of *that*, since which convention is forced depends
+on the same fibre-categorical premise.

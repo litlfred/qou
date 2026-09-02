@@ -1,0 +1,770 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T19:46:52.236234+00:00",
+  "commitSha": "b39977e18abcc4b37f1119e148015706b2d21068",
+  "assertions": [
+    {
+      "name": "gap_law_holds_on_Z_ge_5_N_ge_5",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "gap_law_is_independent_of_Z",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "pure_neutron_two_branch_form_A_7_to_40",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "sigma0_offset_survives_the_break_A_ge_8",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "sigma0_offset_sole_exception_is_A_7",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "excess_increment_is_exactly_2_past_the_break",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 356541,
+  "computation": "atom-nf-degree-laws",
+  "scriptFile": "atom_nf_degree_laws_probe.py",
+  "scriptHash": "200f19bf58cd",
+  "scriptCommitSha": "b39977e18abcc4b37f1119e148015706b2d21068",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/atom_nf_degree_laws_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/atom_nf_degree_laws_probe.py"
+  },
+  "description": "Two MEASURED closed forms for the q-degree of hecke_core_symbolic.build_atom_nf_sym, neither derived. (1) The shortfall of the max-plus bound is gap = 6N - 19 + [Z > N] for Z >= 5 and N >= 5, with zero exceptions on the tested grid -- so once a nucleus carries five or more protons the leading-order loss depends on the NEUTRON COUNT ALONE, linearly, at 6 degrees per neutron, independent of Z. Z <= 4 is a larger regime but converges to the same slope: Z=2 and Z=4 both settle to +6 per neutron with different offsets, and Z=0 alone settles to +8, making the pure-neutron chain an outlier in slope rather than only in offset. (2) The A=27 break in the companion probe's triangular law is one clean two-branch maximum: deg(gamma) = A(A+1)/2 + 2*max(0, A-26), verified A=7..40, two branches with the SAME quadratic leading term whose linear parts differ by 2A-52 and cross exactly at A=26; deg(sigma0) = deg(gamma) - 1 holds for A=8..40, across the break too, so it is not a reordering of which component dominates; A=7 is the sole exception at offset +7 and is the lower edge of the triangular window itself. NOT DERIVED: no mechanism for the coefficient 6, the constant -19, the Z >= 5 threshold, or the crossover at 26. These are fits to exact integer data over a STATED range, and the range is stated because the companion probe's triangular law looked exact over twenty consecutive values before breaking at the twenty-first.",
+  "data": {
+    "gap_law": {
+      "formula": "gap(Z,N) = 6N - 19 + [Z > N]",
+      "domain": "Z >= 5, N >= 5, A <= 17",
+      "cells_tested": 36,
+      "exceptions": [],
+      "z_independent": true,
+      "reading": "the leading-order loss is a function of the neutron count alone, at 6 degrees per neutron",
+      "grid": [
+        {
+          "Z": 5,
+          "N": 5,
+          "gap": 11,
+          "predicted": 11
+        },
+        {
+          "Z": 5,
+          "N": 6,
+          "gap": 17,
+          "predicted": 17
+        },
+        {
+          "Z": 5,
+          "N": 7,
+          "gap": 23,
+          "predicted": 23
+        },
+        {
+          "Z": 5,
+          "N": 8,
+          "gap": 29,
+          "predicted": 29
+        },
+        {
+          "Z": 5,
+          "N": 9,
+          "gap": 35,
+          "predicted": 35
+        },
+        {
+          "Z": 5,
+          "N": 10,
+          "gap": 41,
+          "predicted": 41
+        },
+        {
+          "Z": 5,
+          "N": 11,
+          "gap": 47,
+          "predicted": 47
+        },
+        {
+          "Z": 5,
+          "N": 12,
+          "gap": 53,
+          "predicted": 53
+        },
+        {
+          "Z": 6,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 6,
+          "N": 6,
+          "gap": 17,
+          "predicted": 17
+        },
+        {
+          "Z": 6,
+          "N": 7,
+          "gap": 23,
+          "predicted": 23
+        },
+        {
+          "Z": 6,
+          "N": 8,
+          "gap": 29,
+          "predicted": 29
+        },
+        {
+          "Z": 6,
+          "N": 9,
+          "gap": 35,
+          "predicted": 35
+        },
+        {
+          "Z": 6,
+          "N": 10,
+          "gap": 41,
+          "predicted": 41
+        },
+        {
+          "Z": 6,
+          "N": 11,
+          "gap": 47,
+          "predicted": 47
+        },
+        {
+          "Z": 7,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 7,
+          "N": 6,
+          "gap": 18,
+          "predicted": 18
+        },
+        {
+          "Z": 7,
+          "N": 7,
+          "gap": 23,
+          "predicted": 23
+        },
+        {
+          "Z": 7,
+          "N": 8,
+          "gap": 29,
+          "predicted": 29
+        },
+        {
+          "Z": 7,
+          "N": 9,
+          "gap": 35,
+          "predicted": 35
+        },
+        {
+          "Z": 7,
+          "N": 10,
+          "gap": 41,
+          "predicted": 41
+        },
+        {
+          "Z": 8,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 8,
+          "N": 6,
+          "gap": 18,
+          "predicted": 18
+        },
+        {
+          "Z": 8,
+          "N": 7,
+          "gap": 24,
+          "predicted": 24
+        },
+        {
+          "Z": 8,
+          "N": 8,
+          "gap": 29,
+          "predicted": 29
+        },
+        {
+          "Z": 8,
+          "N": 9,
+          "gap": 35,
+          "predicted": 35
+        },
+        {
+          "Z": 9,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 9,
+          "N": 6,
+          "gap": 18,
+          "predicted": 18
+        },
+        {
+          "Z": 9,
+          "N": 7,
+          "gap": 24,
+          "predicted": 24
+        },
+        {
+          "Z": 9,
+          "N": 8,
+          "gap": 30,
+          "predicted": 30
+        },
+        {
+          "Z": 10,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 10,
+          "N": 6,
+          "gap": 18,
+          "predicted": 18
+        },
+        {
+          "Z": 10,
+          "N": 7,
+          "gap": 24,
+          "predicted": 24
+        },
+        {
+          "Z": 11,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        },
+        {
+          "Z": 11,
+          "N": 6,
+          "gap": 18,
+          "predicted": 18
+        },
+        {
+          "Z": 12,
+          "N": 5,
+          "gap": 12,
+          "predicted": 12
+        }
+      ]
+    },
+    "small_Z_regime": {
+      "note": "Z <= 4 is larger and does not follow the law; recorded because the SLOPE still converges. These offsets are read off the last few increments of a short sequence and are the weakest claims in this witness.",
+      "rays": {
+        "0": {
+          "values": [
+            [
+              6,
+              28
+            ],
+            [
+              7,
+              48
+            ],
+            [
+              8,
+              66
+            ],
+            [
+              9,
+              74
+            ],
+            [
+              10,
+              82
+            ],
+            [
+              11,
+              90
+            ],
+            [
+              12,
+              98
+            ],
+            [
+              13,
+              106
+            ],
+            [
+              14,
+              114
+            ],
+            [
+              15,
+              122
+            ],
+            [
+              16,
+              130
+            ],
+            [
+              17,
+              138
+            ]
+          ],
+          "increments": [
+            20,
+            18,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "final_increment": 8
+        },
+        "2": {
+          "values": [
+            [
+              6,
+              29
+            ],
+            [
+              7,
+              49
+            ],
+            [
+              8,
+              71
+            ],
+            [
+              9,
+              97
+            ],
+            [
+              10,
+              101
+            ],
+            [
+              11,
+              107
+            ],
+            [
+              12,
+              113
+            ],
+            [
+              13,
+              119
+            ],
+            [
+              14,
+              125
+            ],
+            [
+              15,
+              131
+            ]
+          ],
+          "increments": [
+            20,
+            22,
+            26,
+            4,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "final_increment": 6
+        },
+        "4": {
+          "values": [
+            [
+              6,
+              29
+            ],
+            [
+              7,
+              51
+            ],
+            [
+              8,
+              55
+            ],
+            [
+              9,
+              61
+            ],
+            [
+              10,
+              67
+            ],
+            [
+              11,
+              73
+            ],
+            [
+              12,
+              79
+            ],
+            [
+              13,
+              85
+            ]
+          ],
+          "increments": [
+            22,
+            4,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "final_increment": 6
+        }
+      }
+    },
+    "pure_neutron_two_branch": {
+      "formula": "deg(gamma) = A(A+1)/2 + 2*max(0, A - 26)",
+      "verified_range": "A = 7..40",
+      "crossover": 26,
+      "branch_difference": "2A - 52 (same quadratic leading term)",
+      "sigma0_offset": "deg(sigma0) = deg(gamma) - 1 for A = 8..40, across the break too; A = 7 is the sole exception at offset +7",
+      "sigma0_offset_exceptions": [
+        {
+          "A": 7,
+          "deg_gamma": 28,
+          "deg_sigma0": 35,
+          "offset": 7
+        }
+      ],
+      "ray": [
+        {
+          "A": 7,
+          "calls": 98,
+          "deg_gamma": 28,
+          "deg_sigma0": 35,
+          "closed_form": 28,
+          "triangular": 28
+        },
+        {
+          "A": 8,
+          "calls": 116,
+          "deg_gamma": 36,
+          "deg_sigma0": 35,
+          "closed_form": 36,
+          "triangular": 36
+        },
+        {
+          "A": 9,
+          "calls": 135,
+          "deg_gamma": 45,
+          "deg_sigma0": 44,
+          "closed_form": 45,
+          "triangular": 45
+        },
+        {
+          "A": 10,
+          "calls": 155,
+          "deg_gamma": 55,
+          "deg_sigma0": 54,
+          "closed_form": 55,
+          "triangular": 55
+        },
+        {
+          "A": 11,
+          "calls": 176,
+          "deg_gamma": 66,
+          "deg_sigma0": 65,
+          "closed_form": 66,
+          "triangular": 66
+        },
+        {
+          "A": 12,
+          "calls": 198,
+          "deg_gamma": 78,
+          "deg_sigma0": 77,
+          "closed_form": 78,
+          "triangular": 78
+        },
+        {
+          "A": 13,
+          "calls": 221,
+          "deg_gamma": 91,
+          "deg_sigma0": 90,
+          "closed_form": 91,
+          "triangular": 91
+        },
+        {
+          "A": 14,
+          "calls": 245,
+          "deg_gamma": 105,
+          "deg_sigma0": 104,
+          "closed_form": 105,
+          "triangular": 105
+        },
+        {
+          "A": 15,
+          "calls": 270,
+          "deg_gamma": 120,
+          "deg_sigma0": 119,
+          "closed_form": 120,
+          "triangular": 120
+        },
+        {
+          "A": 16,
+          "calls": 296,
+          "deg_gamma": 136,
+          "deg_sigma0": 135,
+          "closed_form": 136,
+          "triangular": 136
+        },
+        {
+          "A": 17,
+          "calls": 323,
+          "deg_gamma": 153,
+          "deg_sigma0": 152,
+          "closed_form": 153,
+          "triangular": 153
+        },
+        {
+          "A": 18,
+          "calls": 351,
+          "deg_gamma": 171,
+          "deg_sigma0": 170,
+          "closed_form": 171,
+          "triangular": 171
+        },
+        {
+          "A": 19,
+          "calls": 380,
+          "deg_gamma": 190,
+          "deg_sigma0": 189,
+          "closed_form": 190,
+          "triangular": 190
+        },
+        {
+          "A": 20,
+          "calls": 410,
+          "deg_gamma": 210,
+          "deg_sigma0": 209,
+          "closed_form": 210,
+          "triangular": 210
+        },
+        {
+          "A": 21,
+          "calls": 441,
+          "deg_gamma": 231,
+          "deg_sigma0": 230,
+          "closed_form": 231,
+          "triangular": 231
+        },
+        {
+          "A": 22,
+          "calls": 473,
+          "deg_gamma": 253,
+          "deg_sigma0": 252,
+          "closed_form": 253,
+          "triangular": 253
+        },
+        {
+          "A": 23,
+          "calls": 506,
+          "deg_gamma": 276,
+          "deg_sigma0": 275,
+          "closed_form": 276,
+          "triangular": 276
+        },
+        {
+          "A": 24,
+          "calls": 540,
+          "deg_gamma": 300,
+          "deg_sigma0": 299,
+          "closed_form": 300,
+          "triangular": 300
+        },
+        {
+          "A": 25,
+          "calls": 575,
+          "deg_gamma": 325,
+          "deg_sigma0": 324,
+          "closed_form": 325,
+          "triangular": 325
+        },
+        {
+          "A": 26,
+          "calls": 611,
+          "deg_gamma": 351,
+          "deg_sigma0": 350,
+          "closed_form": 351,
+          "triangular": 351
+        },
+        {
+          "A": 27,
+          "calls": 648,
+          "deg_gamma": 380,
+          "deg_sigma0": 379,
+          "closed_form": 380,
+          "triangular": 378
+        },
+        {
+          "A": 28,
+          "calls": 686,
+          "deg_gamma": 410,
+          "deg_sigma0": 409,
+          "closed_form": 410,
+          "triangular": 406
+        },
+        {
+          "A": 29,
+          "calls": 725,
+          "deg_gamma": 441,
+          "deg_sigma0": 440,
+          "closed_form": 441,
+          "triangular": 435
+        },
+        {
+          "A": 30,
+          "calls": 765,
+          "deg_gamma": 473,
+          "deg_sigma0": 472,
+          "closed_form": 473,
+          "triangular": 465
+        },
+        {
+          "A": 31,
+          "calls": 806,
+          "deg_gamma": 506,
+          "deg_sigma0": 505,
+          "closed_form": 506,
+          "triangular": 496
+        },
+        {
+          "A": 32,
+          "calls": 848,
+          "deg_gamma": 540,
+          "deg_sigma0": 539,
+          "closed_form": 540,
+          "triangular": 528
+        },
+        {
+          "A": 33,
+          "calls": 891,
+          "deg_gamma": 575,
+          "deg_sigma0": 574,
+          "closed_form": 575,
+          "triangular": 561
+        },
+        {
+          "A": 34,
+          "calls": 935,
+          "deg_gamma": 611,
+          "deg_sigma0": 610,
+          "closed_form": 611,
+          "triangular": 595
+        },
+        {
+          "A": 35,
+          "calls": 980,
+          "deg_gamma": 648,
+          "deg_sigma0": 647,
+          "closed_form": 648,
+          "triangular": 630
+        },
+        {
+          "A": 36,
+          "calls": 1026,
+          "deg_gamma": 686,
+          "deg_sigma0": 685,
+          "closed_form": 686,
+          "triangular": 666
+        },
+        {
+          "A": 37,
+          "calls": 1073,
+          "deg_gamma": 725,
+          "deg_sigma0": 724,
+          "closed_form": 725,
+          "triangular": 703
+        },
+        {
+          "A": 38,
+          "calls": 1121,
+          "deg_gamma": 765,
+          "deg_sigma0": 764,
+          "closed_form": 765,
+          "triangular": 741
+        },
+        {
+          "A": 39,
+          "calls": 1170,
+          "deg_gamma": 806,
+          "deg_sigma0": 805,
+          "closed_form": 806,
+          "triangular": 780
+        },
+        {
+          "A": 40,
+          "calls": 1220,
+          "deg_gamma": 848,
+          "deg_sigma0": 847,
+          "closed_form": 848,
+          "triangular": 820
+        }
+      ]
+    },
+    "not_established": {
+      "derivation": "neither law is derived; both are fits to exact data",
+      "constants": "no mechanism for 6, -19, the Z>=5 threshold, or 26",
+      "beyond_range": "Z + N > 17 and A > 40 not measured"
+    },
+    "checks_failed": []
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q is a formal Laurent variable throughout; no q0 is substituted anywhere, so neither pin can affect any number in this witness."
+}

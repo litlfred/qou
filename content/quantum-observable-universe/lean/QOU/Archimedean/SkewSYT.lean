@@ -1088,14 +1088,6 @@ instance knotInvariantConvergence_refl (k : ℕ) (hk : k ≥ 4)
   have : ((k : ℝ) - 3) ≥ 0 := by linarith
   positivity
 
-/-- Per-instance form. -/
-theorem knot_invariant_convergence
-    (k : ℕ) (hk : k ≥ 4)
-    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0)
-    [hi : KnotInvariantConvergence k hk a_k a_inf C hC] :
-    |a_k - a_inf| ≤ C / (k - 3 : ℝ) :=
-  hi.bound
-
 /-! **Error estimate at physical levels**.
 
     The BW formula uses k = 3 through k = 12.
@@ -1179,5 +1171,21 @@ class SquaredToLinearTransition (k : ℕ) (_hk : 4 ≤ k)
 /-- Reflexivity instance for `SquaredToLinearTransition`. -/
 instance squaredToLinearTransition_refl (k : ℕ) (hk : 4 ≤ k) (x : ℝ) :
     SquaredToLinearTransition k hk x x := ⟨rfl⟩
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `knot_invariant_convergence` — body was `hi.bound`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.Archimedean.SkewSYT

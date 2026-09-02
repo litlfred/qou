@@ -32,7 +32,28 @@ Two operator-valued models are reported:
 """
 import pyhecke_native as ph
 
-Q0 = 1.1099785955541805  # tools/hecke-engine/src/gram.rs::Q_0 (f64)
+# The substrate pin is READ, not transcribed. This file previously carried
+#     Q0 = 1.1099785955541805  # tools/hecke-engine/src/gram.rs::Q_0 (f64)
+# -- the CODATA-2018 muon derivation B, 11.54 ppb from the canonical proton pin.
+# Two files in this group cited `tools/hecke-engine/src/gram.rs::Q_0` as the
+# source of that number; gram.rs was RE-PINNED to proton on 2026-08-15 (owner
+# decision, bean `qou-m7py`) and now holds 1.1099785827513808, so the citation
+# had outlived the value it pointed at. AGENTS.md's 2026-08-07 directive makes
+# the experimental/proton pin the default for all touched compute.
+#
+# `docs/audits/scripts/` is outside `hardcoded_q0_literal_families_audit.py`'s
+# `_SCAN_ROOT` (which is `computations/`), so nothing flagged these -- bean
+# `qou-2whe`. Reading the pin means a future re-pin reaches this file without
+# anyone editing a digit.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_ROOT = _pl.Path(__file__).resolve().parents[3]
+for _p in (_ROOT / "computations", _ROOT / "computations" / "substrate"):
+    if str(_p) not in _sys.path:
+        _sys.path.insert(0, str(_p))
+from q_parameter import Q as Q0  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q0_50  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402  # noqa: E402
 DPS = 50
 BORROMEAN = [(-1, 1), (1, 2)] * 3  # b = (s1^{-1} s2)^3
 
@@ -77,17 +98,52 @@ def main() -> int:
 
     # --- Model B: H_5 home-block weight ratio -------------------------------
     print("\n[Model B] H_5 home-block weight ratio  r = y_(3,2) / y_(3,1,1)")
-    y5 = dict(zip([tuple(p) for p in ph.partitions_of(5)],
-                  ph.trace_weights_n(5, Q0)))
+    # EXACT route, not `ph.trace_weights_n(5, Q0)`. That routine is float64
+    # internally (it returns a Python float even when handed an mpf), and
+    # y_(3,1,1) is EXACTLY ZERO -- so it came back as ~1.09e-17 noise and this
+    # block divided by it. The old output was self-contradictory on its face:
+    # it printed `y_(3,1,1)^H5 = 0.000000000000` and, one line later, `ratio r =
+    # 5587920869536671` obtained by dividing 0.0611562 by that printed zero.
+    #
+    # The zero is structural, not numerical: y_lambda = 0 exactly iff lambda has
+    # MORE THAN TWO ROWS (the SU(2)/N=2 truncation). (3,1,1) has three. Same
+    # mechanism and same fix as keystone_qdeform_projector_shift_probe (bean
+    # `qou-j3u0`).
+    # Use the FULL-PRECISION pin, not mpf(str(Q0)). `Q0` here is
+    # `q_parameter.Q`, a float64; feeding its 17-digit decimal into a 50-dps
+    # computation leaves y_(3,1,1) at ~4.6e-52 -- the dps=50 floor for a q that
+    # is itself only float64-accurate -- instead of the exact 0. Measured both
+    # ways: mpf(str(Q0)) -> 4.63291310128e-52, Q_50_DIGIT_STR -> 0.
+    y5 = {tuple(p): y_lambda_wenzl_bridge_numeric(list(p), mpf(_Q0_50))
+          for p in ph.partitions_of(5)}
     y_mu, y_el = y5[(3, 2)], y5[(3, 1, 1)]
-    r = y_mu / y_el
-    print(f"  y_(3,2)^H5   = {y_mu:.12f}")
-    print(f"  y_(3,1,1)^H5 = {y_el:.12f}")
-    print(f"  ratio r      = {r:.12f}   (deviation from 1: {(r-1)*1e9:.3e} ppb)")
-    print(f"  vs 210 ppb target: factor {(r-1)/210e-9:.3e}× too large")
+    print(f"  y_(3,2)^H5   = {mp.nstr(y_mu, 12)}")
+    print(f"  y_(3,1,1)^H5 = {mp.nstr(y_el, 12)}")
+    # Tolerance, not `== 0`: a residue at the arithmetic floor is a zero, and
+    # which floor you land on depends on how precisely q was supplied.
+    _ZERO_TOL = mpf("1e-30")
+    if abs(y_el) <= _ZERO_TOL:
+        # NOT a large ratio -- an undefined one. Reporting 5.59e15 here stated a
+        # property of the float64 floor, not of the weights.
+        r = None
+        print("  ratio r      = UNDEFINED (y_(3,1,1) is exactly 0 -- the (3,1,1)")
+        print("                 block carries no Markov weight in the SU(2)")
+        print("                 truncation, so this ratio does not exist)")
+        print("  vs 210 ppb target: UNDEFINED (see above)")
+    else:
+        r = y_mu / y_el
+        print(f"  ratio r      = {mp.nstr(r, 12)}   (deviation from 1: {mp.nstr((r-1)*10**9, 4)} ppb)")
+        print(f"  vs 210 ppb target: factor {mp.nstr((r-1)/mpf('210e-9'), 4)}× too large")
 
     # --- Structural verdict --------------------------------------------------
     print("\n=== STRUCTURAL VERDICT (no fitting) ===")
+    print(" 🛑 ITEM 3 BELOW IS STALE AND IS LEFT FOR THE AUTHOR (bean `qou-j3u0`).")
+    print("    It calls Model B a \"well-posed object ~1e0\". Model B is")
+    print("    y_(3,2)/y_(3,1,1), and y_(3,1,1) is EXACTLY ZERO -- so Model B is")
+    print("    not ~1e0, and is not an object at all. Note the text was already")
+    print("    contradicted BEFORE this was fixed: the float64 route printed")
+    print("    r = 5.59e15, not ~1e0. Whether the verdict survives with Model B")
+    print("    removed is a judgement about the argument, not a code fix.")
     print(" 1. The h^4-bearing (2,1) channel enters BOTH branchings with the")
     print("    SAME (classical, q-independent) multiplicity 2 -> it cancels")
     print("    exactly in the muon/electron difference.  The naive Res functor")

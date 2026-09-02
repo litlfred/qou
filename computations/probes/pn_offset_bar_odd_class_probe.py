@@ -331,9 +331,25 @@ def main() -> int:
                            "mean is the trace of nothing")
 
     # --- the honest verdict -------------------------------------------------
-    w.add_assertion("an_E_is_selected", "False", "False",
+    # Was `add_assertion("an_E_is_selected", "False", "False")` (bean
+    # `qou-26f2`) — the verdict of the whole probe, and the only claim in it
+    # standing on no computation. Two literals would have read "no E selected"
+    # even on a run where C2's bound had tightened to a single survivor, which
+    # is exactly the event that turns this negative into a selection, and a
+    # selection into a fit. C1, C3 and C4 are identities holding across the
+    # class (the assertions above measure that), so C2 is the only constraint
+    # with per-candidate teeth; count what it leaves standing.
+    survivors = [n for n, E, _r in _bar_even_candidates() if abs(E(q)) < e_bound]
+    n_candidates = len(list(_bar_even_candidates()))
+    an_E_is_selected = (len(survivors) == 1)
+    w.add_assertion("an_E_is_selected",
+                    str(an_E_is_selected), "False",
                     source="none of C1-C4 narrows the class; selecting an E from "
-                           "an isotope anchor would be a fit, and is not done")
+                           "an isotope anchor would be a fit, and is not done. "
+                           f"C2 is the only constraint that can exclude a "
+                           f"candidate and it leaves {len(survivors)} of "
+                           f"{n_candidates} standing, so the class is not "
+                           f"narrowed to one")
 
     path = w.save(extra={"data": {
         "q0": mp.nstr(q, 25),

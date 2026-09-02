@@ -1,9 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T16:25:28.205104+00:00",
-  "commitSha": "8ce76190cd41f8a7825ea293f43d1df2734a9003",
+  "computedAt": "2026-08-30T09:11:29.636941+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
+    {
+      "name": "coth_exceeds_one_pointwise_on_probed_alphas",
+      "computed": 40,
+      "expected": 40,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The premise of the exclusion: coth(alpha) > 1 pointwise on (0, inf), hence c0 = <coth>_M > 1 for any finite-volume M. Checked on a decade grid 1e-9..10 plus every alpha this probe scores the incumbent at."
+    },
     {
       "name": "unsubtracted_kernel_outside_admissible_family",
       "computed": 1,
@@ -11,7 +19,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "coth(alpha) > 1 pointwise on (0, inf), so c0 = <coth>_M > 1 for any finite-volume M. The scored H_coth uses c0 = 0, which is not a member. Structural, no data involved."
+      "source": "The scored H_coth uses c0 = 0.0, strictly below the admissible floor c0 >= 1.0 that the scan above enumerates from, so it is not a member of the family. Structural, no data involved."
     },
     {
       "name": "admissible_family_does_not_beat_incumbent_at_equal_dof",
@@ -42,11 +50,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "em-linking-o2-neutralised-kernel",
   "scriptFile": "em_linking_o2_neutralised_kernel_probe.py",
-  "scriptHash": "6c206ea1b6c3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0bdba84f8fd3",
+  "scriptCommitSha": "c126516ce3208bc9887a92c22eb59156334bc3ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,9 +63,13 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

@@ -20,12 +20,25 @@ Connects the new `QOU.Mathlib.*` upstream-shaped scaffolding
   S-mass-identity           ← per-atom MassIdentity theorems (already proved)
   S-RSK-cardinality         ← RSKBridge.CohortRSKWitness
   S-Wedderburn-iso          ← HeckeAlgebra.WedderburnIsomorphism
-  S-Archimedean-realisation ← ArchimedeanRealization.ArchimedeanRealizationFunctor
+  S-Archimedean-realisation ← NOT COVERED (see Bridge 3)
 
 Each substrate axiom is a `def` over `Prop` in the QOU
 substrate file; this file provides downstream **theorems**
 deriving the substrate axiom from the upstream class instances.
 This shows the upstream infrastructure is downstream-usable.
+
+**`S-Archimedean-realisation` is not covered** (2026-08-24, bean
+`qou-7nbx`).  This table read
+`S-Archimedean-realisation ← ArchimedeanRealization.ArchimedeanRealizationFunctor`,
+mapping a named substrate axiom onto a class whose entire content was
+`q0 = q_zero` — a pinned real number with no source category, no
+target category, no action on morphisms and no Hecke-compatibility
+square.  The class has been renamed to what it is
+(`ArchimedeanEvaluationPoint`) and the row corrected.  What Bridge 3
+does establish is the *scalar* piece and it is genuine:
+`archimedean_eval_well_defined` proves the evaluation is the **unique**
+ring map `ℝ[q] → ℝ` fixing constants and sending `q ↦ q₀`.  The functor
+itself remains blocked on `Mathlib.Algebra.IwahoriHecke`.
 
 **File status**: bridge / glue file.  No sorries.
 -/
@@ -40,19 +53,32 @@ open QOU.Mathlib.RSKBridge
 open QOU.Mathlib.ArchimedeanRealization
 open QOU.Mathlib.NonAbelianStokes
 
-/-! ### Bridge 1: GB spectral sequence collapse at E_2
+/-! ### Bridge 1: a collapsing spectral sequence exists — NOT the GB one
 
-    The QOU substrate axiom asserts the GB-filtration spectral
-    sequence collapses at the E_2 page.  Upstream class:
-    `GBFiltrationCollapsesAtE2 R`.  Downstream usage: take the
-    canonical instance and read off the collapse property. -/
+    The QOU substrate axiom `S-GB-spectral-collapse` asserts that the
+    **Gröbner-filtration** spectral sequence collapses at `E_2`. This bridge
+    does **not** establish that, and until 2026-08-24 it was named as though it
+    did (bean `qou-fngs`).
 
-/-- **Substrate-discharger**: at any ground ring `R`, the
-    canonical `GBFiltrationCollapsesAtE2 R` instance discharges
-    the QOU substrate-level collapse-at-`E_2` claim. -/
-theorem gb_spectral_collapse_at_E2_discharged (R : Type u) :
+    What it establishes is that *some* spectral sequence over `R` collapses —
+    witnessed by `canonicalTrivial R`, whose cells are `PUnit` and whose
+    differentials are the constant map, so collapse holds by `rfl`. See
+    `SpectralSequence.collapse_is_definitional`.
+
+    That is worth having as an API sanity check and is worth nothing as
+    evidence about the Gröbner filtration. -/
+
+/-- **The API is inhabited**: some spectral sequence over `R` collapses at
+    `E_2`, witnessed by the trivial model.
+
+    Was `gb_spectral_collapse_at_E2_discharged`, which read as though the
+    substrate axiom had been discharged. Nothing here mentions the Gröbner
+    filtration, and the witness performs no computation: the statement is
+    `∃ S, CollapsesAtE2 S`, which the constant-zero differential satisfies
+    definitionally. Renamed so the name matches the content. -/
+theorem exists_collapsing_spectralSequence (R : Type u) :
     ∃ (S : SpectralSequence R), CollapsesAtE2 S :=
-  ⟨(canonical R).ss, (canonical R).collapses⟩
+  ⟨(canonicalTrivial R).ss, (canonicalTrivial R).collapses⟩
 
 /-! ### Bridge 2: RSK cardinality for n = 2..8
 
@@ -85,12 +111,21 @@ theorem rsk_cardinality_discharged_n2_to_n8 :
   · exact ⟨[1, 7, 20, 21, 28, 64, 35, 14, 70, 56, 90, 35, 42, 56, 70,
             64, 21, 14, 28, 20, 7, 1], by decide⟩
 
-/-! ### Bridge 3: Archimedean evaluation
+/-! ### Bridge 3: Archimedean evaluation — the scalar piece only
 
-    The QOU substrate axiom asserts the existence of a real-
-    valued evaluation `Real_q₀ : ℚ(q) → ℝ`.  Upstream class:
-    `ArchimedeanRealizationFunctor`.  Scalar piece: `evalAtQZero`.
-    The full functor remains chained on Hecke. -/
+    The QOU substrate axiom `S-Archimedean-realisation` asserts a
+    Hecke-compatible realisation functor `Real_q₀`.  This bridge does
+    **not** establish that and, until 2026-08-24, the table above was
+    written as though it did (bean `qou-7nbx`).
+
+    What it establishes is the chain-independent *scalar* piece: the
+    evaluation `ℝ[q] → ℝ` at `q₀` is the unique ring map fixing the
+    constants and sending `q ↦ q₀`.  The upstream class
+    `ArchimedeanEvaluationPoint` names the point and asserts nothing
+    about a functor; a genuine discharge additionally owes the two
+    categories, the action on morphisms, and the Hecke-compatibility
+    square, all of which remain chained on
+    `Mathlib.Algebra.IwahoriHecke`. -/
 
 /-- **Scalar Archimedean discharge**: the real-valued evaluation at the
     substrate point is *unique*.  Any ring homomorphism `ℝ[q] → ℝ` that
@@ -191,7 +226,7 @@ theorem upstream_discharge_complete (R : Type u) [CommRing R]
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
     (∃ W3 : WedderburnIsomorphism R 3 q, True) :=
-  ⟨gb_spectral_collapse_at_E2_discharged R,
+  ⟨exists_collapsing_spectralSequence R,
    ⟨wedderburn_n2 R q, trivial⟩,
    ⟨wedderburn_n3 R q, trivial⟩⟩
 
@@ -286,7 +321,7 @@ theorem complete_upstream_discharge (R : Type u) [CommRing R]
     (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
       Y.trace n = z_G ^ n) ∧
     (q_zero > 1) :=
-  ⟨gb_spectral_collapse_at_E2_discharged R,
+  ⟨exists_collapsing_spectralSequence R,
    ⟨wedderburn_n2 R q, trivial⟩,
    ⟨wedderburn_n3 R q, trivial⟩,
    markov_axiom_h1_to_h2_discharged q_ℝ z,
@@ -368,7 +403,7 @@ theorem extended_upstream_discharge (R : Type u) [CommRing R]
     (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
       Y.trace n = z_G ^ n) ∧
     (q_zero > 1) := by
-  refine ⟨gb_spectral_collapse_at_E2_discharged R,
+  refine ⟨exists_collapsing_spectralSequence R,
           rsk_cardinality_discharged_n2_to_n8,
           yekutieli_finite_slice_discharged G z_G,
           substrate_q0_in_regime⟩

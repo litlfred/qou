@@ -153,25 +153,30 @@ def main() -> int:
             "idempotency_minus_residue_b": str(idem_minus_b),
         })
         .add_assertion(
+        # `sp.N(x)` DEFAULTS TO 15 DIGITS, so on these three sites dropping the
+        # `float()` alone would have gained nothing -- the truncation was
+        # already inside `sp.N`, one call further in, and a 1e-30 tolerance
+        # still could not mean anything. Both changes are needed: `sp.N(x, 50)`
+        # and no cast. Bean qou-58zw.
             name="completeness_e_plus_plus_e_minus_eq_1",
-            computed=float(sp.N(sp.Abs(completeness_a) + sp.Abs(completeness_b))),
+            computed=sp.N(sp.Abs(completeness_a) + sp.Abs(completeness_b), 50),
             expected=0.0, tolerance=1e-30,
             unit="|residue of (e_+ + e_-) − 1|",
             source="Idempotent completeness in H_2(q).",
         )
         .add_assertion(
             name="orthogonality_e_plus_e_minus_eq_0",
-            computed=float(sp.N(sp.Abs(orth_a) + sp.Abs(orth_b))),
+            computed=sp.N(sp.Abs(orth_a) + sp.Abs(orth_b), 50),
             expected=0.0, tolerance=1e-30,
             unit="|residue of e_+ · e_-|",
             source="Central-idempotent orthogonality.",
         )
         .add_assertion(
             name="idempotency_both_residues_zero",
-            computed=float(sp.N(
+            computed=sp.N(
                 sp.Abs(idem_plus_a) + sp.Abs(idem_plus_b) +
-                sp.Abs(idem_minus_a) + sp.Abs(idem_minus_b)
-            )),
+                sp.Abs(idem_minus_a) + sp.Abs(idem_minus_b), 50
+            ),
             expected=0.0, tolerance=1e-30,
             unit="|sum of (e_±² − e_±) residues|",
             source="e_+² = e_+ and e_-² = e_-.",

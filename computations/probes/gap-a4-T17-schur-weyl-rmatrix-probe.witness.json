@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T15:28:24.580212+00:00",
-  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T20:30:26.325460+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "hecke_relation_holds_on_V_tensor_V",
@@ -22,19 +22,19 @@
     },
     {
       "name": "trace_at_q_one_equals_dim_8",
-      "computed": "8.00000000000000000000000000000000000000000000000000000000000",
-      "expected": 8.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "At q = 1, β_Bor → identity ∈ S_3, so tr_{V^⊗3}(β_Bor) = tr_{V^⊗3}(id) = dim V^⊗3 = 2³ = 8."
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "gap-a4-T17-schur-weyl-rmatrix-probe",
   "scriptFile": "gap_a4_T17_schur_weyl_rmatrix_probe.py",
-  "scriptHash": "abd0761ccf53",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "1fb4efd10faf",
+  "scriptCommitSha": "ca73dcc1820c0935a92c642ce2d5aa91fb4aee39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,10 +44,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

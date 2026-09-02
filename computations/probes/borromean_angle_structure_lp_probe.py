@@ -467,6 +467,7 @@ def validate_m004(snappy):
 # ---------------------------------------------------------------------------
 
 def main() -> int:
+    _ok: list[bool] = []
     print("=" * 74)
     print(" Casson-Rivin angle-structure LP of B3 (SnapPy L6a4) with dual emission")
     print(" + exact Prop-A.3 pairing vs vertex spun-normal surfaces")
@@ -518,7 +519,8 @@ def main() -> int:
     log(f"  strong duality exact: dual_obj = {dual_obj} = s*; gap 0")
 
     # complementary slackness cross-check at contract level
-    assert all(xang[i] == s_star for i in active), "CS: active but not binding"
+    _ok.append(bool(all((xang[i] == s_star for i in active))))
+    assert _ok[-1], 'CS: active but not binding'
 
     # geometric octahedral structure: from SnapPy shapes (all z = i for the
     # 2-octahedron decomposition), angles are quarter-integers; build exactly
@@ -617,8 +619,8 @@ def main() -> int:
     # with the pinned eps = -1 this is Q_S = P_S + (1/2) per_S; verify the identity
     a_chk = alphas[0]
     for t, Q in zip(table[:5], QS[:5]):
-        assert sum(Q[i] * a_chk[i] for i in range(3 * N)) == -t["chi"], \
-            "Q_S pairing identity broken"
+        _ok.append(bool(sum((Q[i] * a_chk[i] for i in range(3 * N))) == -t['chi']))
+        assert _ok[-1], 'Q_S pairing identity broken'
     taus = []
     for tt in range(N):
         v = [Fraction(0)] * (3 * N)
@@ -656,14 +658,16 @@ def main() -> int:
         resid = [sum((QS[k][i] * cb[k]) for k in range(len(QS)))
                  + sum(taus[tt][i] * tau_coeff[tt] for tt in range(N)) - z[i]
                  for i in range(3 * N)]
-        assert all(v == 0 for v in resid), "decomposition residual"
+        _ok.append(bool(all((v == 0 for v in resid))))
+        assert _ok[-1], 'decomposition residual'
         supp_desc = [(k, str(v), str(table[k]["chi"]), table[k]["boundary_slopes"])
                      for k, v in surf_support]
         log(f"    support surfaces (index, coeff, chi, slopes): {supp_desc}")
         log(f"    tetrahedral-class coefficients: {[str(v) for v in tau_coeff]}")
         # pairing bookkeeping: sum c_S*(-chi_S) + sum d_t = pairing(z) = s*
         chk = sum(v * (-table[k]["chi"]) for k, v in surf_support) + sum(tau_coeff)
-        assert chk == s_star, "pairing bookkeeping"
+        _ok.append(bool(chk == s_star))
+        assert _ok[-1], 'pairing bookkeeping'
 
     # ---------------- stage 5: the SDP side (read-only) ---------------------
     log("stage 5: confinement-SDP witnesses (read-only; comparison of structure)")
@@ -843,7 +847,7 @@ def main() -> int:
                      computed=float(s_star), expected=0.25, tolerance=1e-12,
                      source="max-min angle s* = 1/4 exactly (> 0 = strict; GHRS "
                             "Rmk 1.10 guarantees existence for link complements)")
-    wb.add_assertion("l6a4_lp_duality_gap_zero", computed=0.0, expected=0.0,
+    wb.add_assertion("l6a4_lp_duality_gap_zero", computed=all(_ok), expected=True,
                      tolerance=1e-30,
                      source="rational arithmetic; strong duality verified exactly "
                             "(prop:operator-selection-lp contract)")

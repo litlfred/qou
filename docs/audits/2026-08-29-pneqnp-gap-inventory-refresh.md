@@ -272,6 +272,61 @@ as though it applied to the discharge, and that is the error.
 (`qou-lrz1` / `qou-twwf`). Do those first, or accept the conditional. It is not
 the cheap win the ranking implied.
 
+> **🛑 The gate is gone (2026-08-30, PR #6053).** `qou-twwf` closed over a
+> field: `QOU.Hecke.TwBasis.basisTwOfField` is a genuine
+> `Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)` whose vectors
+> are the `T_w`, with `finrank_eq_factorial : dim_K H_n(q) = (n+1)!`.
+>
+> So `det(Gram)` **can now be stated**, which is the thing §3b says it could
+> not be. #1 is unblocked, not gated. The two obligations §3b separates are
+> unchanged and both still open: (i) the combinatorial `schurElement` equals
+> the algebra-theoretic Schur element, and (ii) Geck–Pfeiffer 7.2.6 proper.
+> What changed is only that the *basis* half is no longer in front of them.
+>
+> Two scope notes so this does not get over-read. The basis is a **field**
+> statement — everything upstream of `QOU/Hecke/TwBasisField.lean` holds over
+> an arbitrary commutative ring, but the dimension squeeze does not. And
+> **Matsumoto's theorem is still absent from Mathlib** (`Coxeter/Basic.lean:78`)
+> and is still unproved here; the route simply goes around it, so nothing in
+> this document that depends on Matsumoto being available has changed.
+
+> **Follow-on (2026-08-30, PR #6134) — stated at every rank, and now *computed*
+> at rank one.** The block above says `det(Gram)` can be stated; it is now
+> stated (`QOU.Hecke.TwBasis.twGram`, with
+> `isSemisimpleRing_of_twGram_det_ne_zero` at every rank) and closed at `n = 1`:
+>
+> ```lean
+> theorem twGram_det_rank_one : (twGram K q 1).det = (1 + q) ^ 2
+> theorem isSemisimpleRing_rank_one (hq : (1 : K) + q ≠ 0) :
+>     IsSemisimpleRing (QOU.Hecke.IwahoriHecke K q 1)
+> ```
+>
+> Unconditional end to end — `#print axioms` is
+> `[propext, Classical.choice, Quot.sound]` on the discharge *and* on both
+> keystones it composes with. Note what is new against
+> `H2TraceForm.h2_regTraceGram_det`, which already had the same value `[2]_q²`:
+> that one is about `AdjoinRoot (X² - (q-1)X - q)`, a power-basis **model**;
+> this one is about `IwahoriHecke K q 1` itself. Two objects, two routes, one
+> value — a cross-check, not a duplicate.
+>
+> **What is still open is narrower than "GP 7.2.6", and worth stating
+> precisely:** the determinant at rank ≥ 2 needs `tr(L_{T_u})` for a general
+> `u`, i.e. the diagonal structure constant `[T_u T_w : T_w]`, which the corpus
+> does not have in closed form. The generator case does not imply it — at
+> `q = 1` the trace is `δ_{u,1}(n+1)!`, but at generic `q` the `u = s_i` case
+> is `(q-1)(n+1)!/2`, so it is not concentrated at `u = 1`.
+>
+> **The τ-form route was scoped and rejected on measurement**
+> ([`2026-08-30-gp726-tau-route-scoping.md`](2026-08-30-gp726-tau-route-scoping.md)).
+> One negative from that scoping is worth keeping here because it looks like it
+> should work: with `τ(x) := ⟨x⟩_1`, both branches of the generator rule give
+> `τ(σ_i · T_u) = q · ⟨T_u⟩_{s_i}` — the ascent branch cannot land on `T_1`, the
+> descent branch cannot start at `u = 1`. That is clean, and it still does not
+> close by induction on length: it moves the coefficient from index `1` to index
+> `s_i`, so the induction needs the full structure constants rather than the
+> τ-column. The mirror identity on the right has the same shape and the same
+> obstruction.
+
 ## 4. Do not re-attack
 
 Consolidated from the prior audits; each is a *proved* dead end, not a matter of

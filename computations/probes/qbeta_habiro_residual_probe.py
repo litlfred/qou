@@ -57,7 +57,7 @@ COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 sys.path.insert(0, str(COMP / "substrate"))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -221,7 +221,11 @@ def main() -> int:
 
     # cross-check that Q_A in the witness matches the live single-wrap form
     Q_A_live = q_beta_single_wrap(q0, m_e)
-    qA_consistency_ppb = float(abs(Q_A_live - Q_A) / Q_A * 1e9)
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    qA_consistency_ppb_exact_mpf = abs(Q_A_live - Q_A) / Q_A * 1e9
+    qA_consistency_ppb = float(qA_consistency_ppb_exact_mpf)
 
     def rel_ppb(x: mp.mpf) -> float:
         return float((x - Q_codata) / Q_codata * 1e9)
@@ -239,8 +243,12 @@ def main() -> int:
     sigma_theory_ppb = abs(resid_N2_ppb)  # framework's own truncation residual
     sigma_CAL_q0_ppb = float(abs(dlnQ_dlnq) * sig_q0_rel * 1e9)
     sigma_CAL_me_ppb = float(sig_me_rel * 1e9)  # linear in m_e
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    sigma_CAL_total_ppb_exact_mpf = mp.sqrt((abs(dlnQ_dlnq) * sig_q0_rel) ** 2 + sig_me_rel ** 2) * 1e9
     sigma_CAL_total_ppb = float(
-        mp.sqrt((abs(dlnQ_dlnq) * sig_q0_rel) ** 2 + sig_me_rel ** 2) * 1e9
+        sigma_CAL_total_ppb_exact_mpf
     )
     sigma_exp_ppb = float(sig_exp_rel * 1e9)
     target_100x_ppb = sigma_exp_ppb / 100.0
@@ -321,7 +329,7 @@ def main() -> int:
     # committed Q_A witness (guards against a stale q₀ in the witness).
     wb.add_assertion(
         "Q_A_witness_matches_live_single_wrap",
-        computed=qA_consistency_ppb,
+        computed=fmt(qA_consistency_ppb_exact_mpf),
         expected=0.0,
         tolerance=1.0,  # ppb
         source="single-wrap closed form recomputed at canonical q₀",
@@ -329,7 +337,7 @@ def main() -> int:
     # the production residual is σ_theory, two orders above σ_CAL.
     wb.add_assertion(
         "sigma_theory_dominates_sigma_CAL",
-        computed=sigma_CAL_total_ppb,
+        computed=fmt(sigma_CAL_total_ppb_exact_mpf),
         expected=0.0,
         tolerance=sigma_theory_ppb,
         source="σ_CAL << σ_theory (residual is framework's, not propagated)",

@@ -1,24 +1,34 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:31:47.922899+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T10:09:24.181216+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "q0_stability_test_completed",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "q0_drift_within_discipline_lock_threshold",
+      "computed": "0.00027522255",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.0,
-      "source": "probe completes regardless of pass/fail; discipline lock applied"
+      "tolerance": "0.01",
+      "unit": "% drift in err_ppb between the m_p pin and the stale muon pin",
+      "source": "|err_ppb(canonical) − err_ppb(stale)| / |err_ppb(canonical)|. Above 0.01%, discipline lock §4 rules the candidate out as form-fitted to one q₀; the branch above states that rule and the witness never carried the number."
+    },
+    {
+      "name": "the_two_q0_pins_are_distinct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "1 if the canonical and the stale pin differ",
+      "source": "canonical 1.10997858275138080759… vs stale 1.10997859555418057528…; first differing character at index 9."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 0,
   "computation": "qbeta-multi-block-eigenphase-probe",
   "scriptFile": "qbeta_multi_block_eigenphase_probe.py",
-  "scriptHash": "4b68821825e7",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "1a604f585a88",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -65,12 +75,12 @@
     },
     "residuals": {
       "Q_codata_MeV": "0.78233341",
-      "Q_A_MeV": "0.783645827374621227",
-      "Q_bridge_canonical_MeV": "0.773025980152947507",
-      "Q_bridge_stale_MeV": "0.773025954536801494",
+      "Q_A_MeV": "0.783645827374621213",
+      "Q_bridge_canonical_MeV": "0.773025980152947493",
+      "Q_bridge_stale_MeV": "0.773025954536801481",
       "err_canonical_ppb": "-11897011.847",
       "err_stale_ppb": "-11897044.5902",
-      "q0_drift_pct": 0.00027522255266233743
+      "q0_drift_pct": 0.00027522255266233705
     },
     "verdict": {
       "classification": "open (q₀-stable but not Taylor-exact)",
@@ -79,6 +89,9 @@
       "production_action": "Q_β stays at Q_N2 (1279 ppb)"
     }
   },
+  "caveats": [
+    "The bridge does NOT close: residual -1.1897e+7 ppb at the canonical pin, against a 0.001 ppb compute-precision bar. Verdict 'open (q₀-stable but not Taylor-exact)'. The q₀-stability assertion above says only that the candidate is not form-fitted to one pin; it is not evidence that the candidate is right."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

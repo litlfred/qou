@@ -1,0 +1,203 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-01T05:33:50.060491+00:00",
+  "commitSha": "e78695a2b9e7b3a5fc07f7ae4c7c96949b02d485",
+  "assertions": [
+    {
+      "name": "A1_convention_D_collapses_to_two_row_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n=6: 4/11 blocks, zeros ok True, err 1.1e-08; n=9: 5/30 blocks, zeros ok True, err 0.0e+00"
+    },
+    {
+      "name": "A2_h12_is_seven_small_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "7 blocks, max dim 297, sum y.dim=1.000000000000, built 0.04s; reach by A: {4: 297, 5: 2002, 6: 13260, 7: 90440}"
+    },
+    {
+      "name": "A3_h12_reproduces_the_h6_h9_numbers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pair bonds to 3.4e-13, band-routed (sep 2 and 3) to 3.4e-13, triangle to 3.7e-10"
+    },
+    {
+      "name": "A4_bond_insertion_order_is_an_artifact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "3 distinct values over 6 orders, spread 11.12% of mean"
+    },
+    {
+      "name": "A5_four_body_term_is_negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c4 < 0 in all 6 production orderings and all 80 random bond orders; sum c2 matches naive to 1.7e-12"
+    },
+    {
+      "name": "A6_shortfall_is_unconditional_and_worse",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "measured ratio 3.6663 vs AME 12.7196, short 3.4693x; best-case 12.4267 MeV still short 2.8999x"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "four_body_term_and_the_h12_collapse_probe",
+  "scriptFile": "four_body_term_and_the_h12_collapse_probe.py",
+  "scriptHash": "c91ed1387a7d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/four_body_term_and_the_h12_collapse_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/four_body_term_and_the_h12_collapse_probe.py"
+  },
+  "description": "Closes the one unmeasured input in bean qou-bc09's 4He bound by removing the H_12 wall. Convention D puts the three-strand q-antisymmetriser in the radical, which is the N=2 specialisation: EVERY partition with >= 3 rows carries weight exactly zero at every strand count (verified against load_cost at n=6 and n=9), and the survivors have the closed form y_(n-k,k) = [n-2k+1]_q / Z with Z fixed by sum y.dim = 1 and q = q0 — exact at n=9, and 1.14e-8 at n=6 which is load_cost's own stored-f64 floor. H_12 is therefore 7 blocks with largest dimension 297, built in under a second, where 77 blocks would be infeasible; the same rule reaches A=6 at largest block 13260 (dense-comfortable to A=5). Cross-validated before use: H_12 reproduces L_pp, L_pn, L_nn to 1.3e-13, band-routed bonds at separation 2 AND 3 to 3.4e-13 (extending no-distance-decay one step further out), and the ppn triangle to 3.69e-10 at matching bond order. Found on the way: bonds do not commute, so insertion order is a second labelling artifact — 11.12% over one A=3 triangle's six orders, 38-40% over 4He's, with the outliers exactly those putting the band-routed bond between the two adjacent ones. atom_gen_chains fixes an interleaved order that had not been lifted to the strand picture, and using it corrects three_body_term_has_the_wrong_sign's ppn triangle from 1.607030798 to 1.503488161673 (three-body term -0.236512 -> -0.340055, still negative and larger). THE RESULT: the four-body term is negative in all six nucleon orderings and all 80 random bond orders. B(4He) = 10.387277 MeV against AME 28.295661 (-63.29%), so B(4He)/B(2H) = 3.6663 against AME 12.7196 — short by 3.4693x where the conditional bound was 2.0975x, and the most favourable ordering convention tried still leaves 2.8999x. alpha cancels throughout.",
+  "data": {
+    "two_row_collapse": {
+      "n=6": {
+        "two_row_blocks": 4,
+        "total_blocks": 11,
+        "ge3_row_weights_all_zero": true,
+        "closed_form_worst_rel_err": "1.140e-08"
+      },
+      "n=9": {
+        "two_row_blocks": 5,
+        "total_blocks": 30,
+        "ge3_row_weights_all_zero": true,
+        "closed_form_worst_rel_err": "0.000e+00"
+      }
+    },
+    "h12_blocks": {
+      "partitions": [
+        "(12,)",
+        "(11, 1)",
+        "(10, 2)",
+        "(9, 3)",
+        "(8, 4)",
+        "(7, 5)",
+        "(6, 6)"
+      ],
+      "dims": [
+        1,
+        11,
+        54,
+        154,
+        275,
+        297,
+        132
+      ],
+      "largest": 297,
+      "sum_y_dim": "1.000000000000000",
+      "build_seconds": "0.04",
+      "largest_block_by_A": {
+        "4": 297,
+        "5": 2002,
+        "6": 13260,
+        "7": 90440
+      }
+    },
+    "cross_validation": {
+      "pair_bonds_max_diff": "3.43e-13",
+      "band_routed_sep2_and_sep3_max_diff": "3.42e-13",
+      "ppn_triangle_diff": "3.69e-10"
+    },
+    "bond_order_artifact": {
+      "A3_distinct_values": 3,
+      "A3_values": [
+        "1.5034881617",
+        "1.6070307976",
+        "1.6816126914"
+      ],
+      "A3_spread_pct_of_mean": "11.12",
+      "production_ppn": "1.503488161673",
+      "previous_probe_ppn": "1.607030798"
+    },
+    "four_body": {
+      "ppnn": {
+        "L_K4": "2.481443734",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.378215957",
+        "c4": "-0.244788328",
+        "B_MeV": "10.387277"
+      },
+      "pnpn": {
+        "L_K4": "2.447952973",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.411418733",
+        "c4": "-0.245076313",
+        "B_MeV": "10.247086"
+      },
+      "pnnp": {
+        "L_K4": "2.445603146",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.184297086",
+        "c4": "-0.474547787",
+        "B_MeV": "10.237249"
+      },
+      "nppn": {
+        "L_K4": "2.445738974",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.638540381",
+        "c4": "-0.020168665",
+        "B_MeV": "10.237818"
+      },
+      "npnp": {
+        "L_K4": "2.447952973",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.411418733",
+        "c4": "-0.245076313",
+        "B_MeV": "10.247086"
+      },
+      "nnpp": {
+        "L_K4": "2.481443734",
+        "sum_c2": "4.104448019",
+        "sum_c3": "-1.378215957",
+        "c4": "-0.244788328",
+        "B_MeV": "10.387277"
+      }
+    },
+    "shortfall": {
+      "B_2H_MeV": "2.833163",
+      "B_4He_MeV": "10.387277",
+      "model_ratio": "3.666319",
+      "AME_ratio": "12.719632",
+      "shortfall": "3.469320",
+      "best_case_B_4He_MeV": "12.426715",
+      "best_case_shortfall": "2.899945",
+      "previous_conditional_bound": "2.0975"
+    }
+  },
+  "caveats": [
+    "THE WEIGHTS AT n=12 ARE RECONSTRUCTED, NOT LOADED. No y_lambda source exists for n=12, so they come from the closed form y_(n-k,k) = [n-2k+1]_q / Z. That form is verified against load_cost at n=6 and n=9 BEFORE use (exact at n=9), and every H_12 quantity that has an H_6/H_9 counterpart is cross-checked against it. It is nonetheless a reconstruction, and if the two-row rule fails at some n for a reason not visible at n=6 or n=9, every number here moves.",
+    "BOND INSERTION ORDER IS NOT SETTLED PHYSICS, ONLY SETTLED CONVENTION. The headline uses atom_gen_chains' interleaved order because that is what production does, not because anything shows it is right. The spread across orders is 38-40% at A=4, which is far larger than the framed/writhe-normalised question this arc spent two probes on. The CONCLUSION is insensitive to it — c4 < 0 in all 80 random orders and the best case is still 2.90x short — but any single quoted B(4He) is convention-dependent at the tens-of-percent level and should be quoted with its order.",
+    "CORRECTS A PREVIOUS PROBE OF MINE. three_body_term_has_the_wrong_sign_probe appended all bonds after all nucleon words rather than interleaving, giving the ppn triangle as 1.607030798 where production gives 1.503488161673. Its A3/A4 three-body magnitudes should be read at production order (-0.340055 rather than -0.236512 for ppn); the sign and hence every conclusion is unchanged, and the magnitude grows. Its A1/A2 (attachment rank), A5 (no-decay) and A6 (ceiling) do not depend on the bond order.",
+    "All quantities are the FRAMED convention (-log(z+d), no writhe normalisation) and use no electron content, matching AME's nuclear binding. The framed/normalised choice moves these by 1-3%, which does not approach a 2.9-3.5x shortfall."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+ "probe": "m1_kappa_large_n_sampler",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "nsamp": 30000,
+ "seeds": [
+  11,
+  22,
+  33
+ ],
+ "rows": [
+  {
+   "n": 24,
+   "E_dens": "0.133606494806",
+   "E_dens_spread": "0.00133263515661",
+   "E_glob": "0.394055492886",
+   "w_same": "0.538812564627",
+   "infl": "0.33905502453",
+   "infl_per_seed": [
+    "0.340075192697",
+    "0.340157792697",
+    "0.336918108864"
+   ],
+   "infl_spread": "0.00161984191639",
+   "exact": "0.132917949399",
+   "rel_err": "0.00518022893139"
+  },
+  {
+   "n": 40,
+   "E_dens": "0.17041689162",
+   "E_dens_spread": "0.00175583698563",
+   "E_glob": "0.3864406681",
+   "w_same": "0.539710183823",
+   "infl": "0.440991090452",
+   "infl_per_seed": [
+    "0.435114333011",
+    "0.445733480855",
+    "0.442147154583"
+   ],
+   "infl_spread": "0.00530957392202",
+   "exact": "0.171307229439",
+   "rel_err": "-0.00519731608526"
+  },
+  {
+   "n": 48,
+   "E_dens": "0.191345963681",
+   "E_dens_spread": "0.00106338087556",
+   "E_glob": "0.378395966107",
+   "w_same": "0.568079679399",
+   "infl": "0.505676542088",
+   "infl_per_seed": [
+    "0.508412361716",
+    "0.500863077359",
+    "0.507774986509"
+   ],
+   "infl_spread": "0.00377464217838",
+   "exact": "0.190560490254",
+   "rel_err": "0.00412191124271"
+  },
+  {
+   "n": 100,
+   "E_dens": "0.230305600125",
+   "E_dens_spread": "0.00122762395737",
+   "E_glob": "0.369680361346",
+   "w_same": "0.544005048062",
+   "infl": "0.622985757986",
+   "infl_per_seed": [
+    "0.622340296499",
+    "0.621259514457",
+    "0.62534803395"
+   ],
+   "infl_spread": "0.00204425974612",
+   "exact": null,
+   "rel_err": null
+  },
+  {
+   "n": 200,
+   "E_dens": "0.257132360713",
+   "E_dens_spread": "0.000918987429782",
+   "E_glob": "0.362411088552",
+   "w_same": "0.526242995837",
+   "infl": "0.709504672555",
+   "infl_per_seed": [
+    "0.712960856143",
+    "0.708634043282",
+    "0.70692398199"
+   ],
+   "infl_spread": "0.00301843707632",
+   "exact": null,
+   "rel_err": null
+  },
+  {
+   "n": 400,
+   "E_dens": "0.27853342991",
+   "E_dens_spread": "8.38555088008e-5",
+   "E_glob": "0.354156721105",
+   "w_same": "0.519384473087",
+   "infl": "0.786469416818",
+   "infl_per_seed": [
+    "0.786852663008",
+    "0.786997806896",
+    "0.785558891712"
+   ],
+   "infl_spread": "0.000719457592363",
+   "exact": null,
+   "rel_err": null
+  },
+  {
+   "n": 800,
+   "E_dens": "0.293213104687",
+   "E_dens_spread": "0.000438565814706",
+   "E_glob": "0.347059703711",
+   "w_same": "0.5137602983",
+   "infl": "0.844849175952",
+   "infl_per_seed": [
+    "0.843270899511",
+    "0.845129776094",
+    "0.846147230673"
+   ],
+   "infl_spread": "0.00143816558119",
+   "exact": null,
+   "rel_err": null
+  }
+ ],
+ "infl_extrapolated": "1.0282336",
+ "checks": [
+  {
+   "name": "CONTROL: the sampler reproduces the exact values where they are known",
+   "pass": true,
+   "detail": "n = [24, 40, 48] against the committed m1-kappa-site-distribution witness: relative errors ['0.518%', '-0.52%', '0.412%'], worst 0.52%, against a 2% tolerance. Seed spread on E[dens] is ['0.00133', '0.00176', '0.00106']. Without this the large-n numbers would be unfalsifiable."
+  },
+  {
+   "name": "infl is RISING but DECELERATING across the large-n grid",
+   "pass": true,
+   "detail": "n = [100, 200, 400, 800]: infl = ['0.62299', '0.7095', '0.78647', '0.84485']; increments per doubling ['0.0865', '0.077', '0.0584'] -- each doubling adds less than the last."
+  },
+  {
+   "name": "the fit denominator is SIGNIFICANCE-TESTED before any limit is quoted",
+   "pass": true,
+   "detail": "a-2b+c = -0.0186 against a seed-propagated noise of 0.00364 => 5.11 sigma on the grid [200, 400, 800]. Threshold 3 sigma. Verdict: USABLE. On the narrow grid (100, 200, 400) the same rule gave 1.17 sigma and refused to quote a limit; leverage, not sample count, is what fixed it."
+  },
+  {
+   "name": "the three INDEPENDENT seed refits agree",
+   "pass": true,
+   "detail": "re-fitting each seed separately gives ['1.025', '1.012', '1.05'], spanning 1.012..1.05 (spread 0.0374). These share no samples, so agreement here is the real check on the fit -- the point estimate alone was what misled before."
+  },
+  {
+   "name": "EXTRAPOLATED: infl heads for ~1, well under pi/2",
+   "pass": true,
+   "detail": "I = (ac-b^2)/(a-2b+c) = 1.0282 on n = [200, 400, 800], against pi/2 = 1.5708. infl = 1 is exactly the UNIFORM-kappa case (M1EdgeCalculus.kappa_uniform_dot): the omega-chosen intervals drop at the diagram's own global rate, no faster. STILL AN EXTRAPOLATION from three points on a fitted form -- what makes it quotable is the 5.11-sigma denominator and the seed agreement above, not the point estimate."
+  },
+  {
+   "name": "MEASURED (the part that needs no fit): infl at the top of the grid",
+   "pass": true,
+   "detail": "infl = 0.84485 +- 0.0014 at n = 800, still rising. That is a measurement; the limit above is not."
+  },
+  {
+   "name": "E[D(0)/lambda_1] falls toward the VKLS 1/pi",
+   "pass": true,
+   "detail": "E[D(0)/lambda_1|same] = ['0.36968', '0.36241', '0.35416', '0.34706'] at n = [100, 200, 400, 800], decreasing toward 1/pi = 0.31831. That is the denominator of infl, and its limit is what makes 'infl < pi/2' equivalent to the critical pointwise bound."
+  }
+ ],
+ "passed": 7,
+ "total": 7,
+ "ms": 172411
+}

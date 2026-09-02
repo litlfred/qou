@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:51:27.004035+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T09:19:51.430650+00:00",
+  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
   "assertions": [
     {
       "name": "H₂ positive binding",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "ch-bond-writhe-lp",
   "scriptFile": "ch-bond-writhe-lp.py",
-  "scriptHash": "b1683895b8f9",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "602a81d1f48e",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,9 +57,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -71,63 +72,63 @@
   "contentBlock": "def:molecular-braid",
   "parameters": {
     "q": 1.1099785827513808,
-    "E_mol_eV": 6.729338426152079
+    "E_mol_eV": 6.72932460783094
   },
   "data": {
     "bond_H-H": {
       "n": 2,
       "writhe": -2,
       "ops": "σ₁⁻¹,σ₁⁻¹",
-      "E_eV": 4.290502589384523
+      "E_eV": 3.1996273226028817
     },
     "bond_C-H": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₀⁻¹",
-      "E_eV": 0.3475948068602768
+      "E_eV": 0.485619458850115
     },
     "bond_C-O": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₁⁻¹",
-      "E_eV": 1.2016800228006024
+      "E_eV": 0.9939291075437694
     },
     "bond_C-C": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₁⁻¹",
-      "E_eV": 1.3902758042906087
+      "E_eV": 1.0979142048156163
     },
     "bond_O-H": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₀⁻¹",
-      "E_eV": 0.2324479659241255
+      "E_eV": 0.42665446188720274
     },
     "molecules": [
       {
         "name": "H₂",
-        "pred_eV": "4.29050258938452",
+        "pred_eV": "3.19962732260288",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": "3.60504006840181",
+        "pred_eV": "2.98178732263131",
         "obs_eV": 11.09
       },
       {
         "name": "CO₂",
-        "pred_eV": "4.80672009120241",
+        "pred_eV": "3.97571643017508",
         "obs_eV": 16.56
       },
       {
         "name": "CH₄",
-        "pred_eV": "1.39037922744111",
+        "pred_eV": "1.94247783540046",
         "obs_eV": 17.9
       },
       {
         "name": "C₆H₆",
-        "pred_eV": "14.5980510797771",
+        "pred_eV": "12.7949445964412",
         "obs_eV": 57.4
       }
     ]

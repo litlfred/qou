@@ -714,19 +714,6 @@ instance wedderburnWeightPerturbation_zero
   rw [h_link, h_dq_eq, h_fact_eq]
   simp
 
-/-- Per-instance form. -/
-theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
-    (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
-    (w_q w_cl : ℝ) (hw : w_cl > 0)
-    (dq_ratio fact_ratio : ℝ)
-    (h_link : w_q / w_cl = dq_ratio ^ 2 * fact_ratio)
-    (h_dq : |dq_ratio - 1| ≤ h_sq * k / 6)
-    (h_fact : |fact_ratio - 1| ≤ h_sq * k / 6)
-    [hi : WedderburnWeightPerturbation q hq hq2 k h_sq hh
-      w_q w_cl hw dq_ratio fact_ratio h_link h_dq h_fact] :
-    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 :=
-  hi.bound
-
 /-! ## §5  Convergence rate -/
 
 /-! **Convergence rate theorem**: combining the q-perturbation bound
@@ -800,15 +787,6 @@ instance convergenceRate_refl (q : ℝ) (hq : q > 1) (hq2 : q < 2)
   have h_sqrt_nonneg : Real.sqrt ((k : ℝ) - 3) ≥ 0 := Real.sqrt_nonneg _
   positivity
 
-/-- Per-instance form. -/
-theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
-    (k : ℕ) (hk : k ≥ 4)
-    (f_k f_inf : ℝ)
-    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹))
-    [hi : ConvergenceRate q hq hq2 k hk f_k f_inf C_q hC] :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
-  hi.bound
-
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/
 theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :
     3 * (q - q⁻¹) ^ 2 * (q + q⁻¹) > 0 := by
@@ -820,5 +798,23 @@ theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :
   have h2 : q + q⁻¹ > 0 := by linarith
   have h3 : (q - q⁻¹) ^ 2 > 0 := pow_pos h1 2
   exact mul_pos (mul_pos (by norm_num) h3) h2
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `wedderburn_weight_perturbation` — body was `hi.bound`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+- `convergence_rate` — body was `hi.bound`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.Archimedean.QHookBound

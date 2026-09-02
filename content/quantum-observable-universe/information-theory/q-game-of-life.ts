@@ -24,9 +24,11 @@ export default proposition({
     "def:information-speed-of-light",
   ],
   cites: [
+    "aharonov2003",
     "bennett1973",
     "fredkin1982",
     "pena2022",
+    "shi2002",
     "toffoli1980",
   ],
 });

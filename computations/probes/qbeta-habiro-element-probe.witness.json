@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:58:23.800714+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-08-30T11:46:36.269567+00:00",
+  "commitSha": "2861f0a73fcf3d97b4d60e860d3471edf6fb5dc6",
   "assertions": [
     {
       "name": "habiro_infrastructure_reproduces_witness",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 281,
+  "durationMs": 562,
   "computation": "qbeta-habiro-element-probe",
   "scriptFile": "qbeta_habiro_element_probe.py",
-  "scriptHash": "6cd682db7cbe",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "b5bdca14ba6e",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,18 @@
   },
   "environment": {
     "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "afb13136002f692e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_habiro_element_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_habiro_element_probe.py"
   },
   "description": "Q_β Habiro element search — keystone probe per 1ppq-qbeta.md PROBE NEW. (A) verify habiro_exact_qbeta.py reproduces witness tr_M to ≤ 10 ppm; (B) test α_EM-parallel candidate Habiro elements [2]_q·(1−h²α)-style for Q_β c_k; (C) enumerate structural constraints from the witness file.",
   "contentBlock": "prop:neutron-qvalue-symbolic",
@@ -39,17 +46,17 @@
     "habiro_witness_used": "habiro-coefficients-atomic.witness.json",
     "subtask_A_habiro_reproduction": {
       "p": {
-        "tr_M_habiro": "1.06530614425444997566663340374",
-        "tr_M_witness": "1.06530622861316626170946619823",
-        "abs_diff": "8.4358716e-8",
-        "rel_ppm": "0.079187",
+        "tr_M_habiro": "1.14575969245730086968908159577",
+        "tr_M_witness": "1.14575969245730081643544039460",
+        "abs_diff": "5.3253641e-17",
+        "rel_ppm": "0.000000",
         "passes_10ppm": true
       },
       "n": {
-        "tr_M_habiro": "0.923233229911637177970269912007",
-        "tr_M_witness": "0.9232332971861529",
-        "abs_diff": "6.7274516e-8",
-        "rel_ppm": "0.072868",
+        "tr_M_habiro": "0.987743688115809571634020165501",
+        "tr_M_witness": "0.987743688115809530983023454636",
+        "abs_diff": "4.0650997e-17",
+        "rel_ppm": "0.000000",
         "passes_10ppm": true
       }
     },
@@ -118,10 +125,10 @@
       },
       {
         "name": "C2: shared denominator structure",
-        "claim": "D(u) = 4·u^19·(1+u²) divides both tr_M_p and tr_M_n",
-        "p_denom": "4*check_q**21 + 4*check_q**19",
-        "n_denom": "4*check_q**21 + 4*check_q**19",
-        "shared": true
+        "claim": "whether a single D(u) clears both tr_M_p and tr_M_n; true under convention C, false under D",
+        "p_denom": "4*u**26 + 8*u**22 + 4*u**18",
+        "n_denom": "4*u**18",
+        "shared": false
       },
       {
         "name": "C3: Habiro termination order",
@@ -132,37 +139,45 @@
       {
         "name": "C4: leading Habiro coefficient",
         "claim": "a_0 = 4 for both p and n; this 4 is the dim of V_(2,1) ⊕ V_(1,1,1) = 2+1 = 3, mod the χ_(2,1) normalization. Specific value of 4 = degree of the Markov denominator in u.",
-        "p_a_0": "4",
-        "n_a_0": "4"
+        "p_a_0": "8",
+        "n_a_0": "2"
       },
       {
         "name": "C5: sign alternation in low-m coefficients",
         "claim": "a_0 > 0, a_1 < 0, a_2 > 0, a_3 < 0 for both atoms (signature of Habiro element with positive q₀ → 1 limit)",
         "p_signs": [
-          "4",
-          "-74",
-          "340",
-          "-71",
-          "788"
+          "8",
+          "-17",
+          "865",
+          "-19",
+          "217"
         ]
       },
       {
         "name": "C6: neutron-proton coefficient difference",
-        "claim": "Δa_m(u) := a_m(n) - a_m(p) is the Q_β-relevant Habiro element. Difference at m=0 is exactly 0 (common leading coefficient).",
-        "diff_a_m": {
-          "0": "0",
-          "1": "10*check_q + 10",
-          "2": "-64*check_q**2 - 69*check_q - 73",
-          "3": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
-          "4": "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189"
-        }
+        "claim": "Δa_m(u) := a_m(n) - a_m(p) is the Q_β-relevant Habiro element.",
+        "status": "unverified-under-convention-D",
+        "reason": "n - p: the two witnesses' denominators differ, so subtracting their a_m builds d_X*t_X - d_Y*t_Y, not the pair difference. Use trace_diff_numerator(tr_x, tr_y, sym) and expand THAT (bean qou-0ndb / qou-lnog).",
+        "p_denom": "4*u**26 + 8*u**22 + 4*u**18",
+        "n_denom": "4*u**18",
+        "required_restructure": "expand trace_diff_numerator(tr_n, tr_p, sym) rather than differencing two separately-cleared expansions"
       }
     ],
     "verdict": {
       "subtask_A_passes": true,
       "subtask_B_status": "NEGATIVE — no α_EM-parallel candidate matches c_2 AND c_3 simultaneously",
-      "subtask_C_status": "CONSTRAINTS-NARROWED — 6 structural invariants documented",
+      "subtask_C_status": "CONSTRAINTS-NARROWED (5 of 6) — C6 refused: the pair's denominators differ under convention D, so a_m-differencing does not build the pair difference (qou-0ndb / qou-lnog)",
       "overall_status": "PARTIAL — infrastructure validated (A), naive ansätze fail (B), constraints documented for next session (C)"
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "d59c76efc7cdc5050df475ad92df9ce3c0370a38ba1268cb80b048ec3be1bd56",
+        "size_bytes": 23294,
+        "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
+        "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
+        "computedAt": "2026-08-26T14:43:07.168940+00:00"
+      }
+    ]
   }
 }

@@ -52,7 +52,12 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
+from codata_constants import (  # noqa: E402 (codata sweep)
+    M_E_MEV,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    Q_BETA_MEV,
+)
 del _sys, _Path, _bridge
 
 import time
@@ -73,8 +78,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 Q0_MP_PIN = Q_50_DIGIT_STR
-Q_BETA_CODATA_MEV = mp.mpf("0.78233")
-M_E_MEV = mp.mpf("0.51099895069")
+# The 5-decimal Q_β this probe has always used. Kept as a literal ON
+# PURPOSE: this producer's headline finding is that a c_4 "extraction"
+# elsewhere is an artifact of mixing a ROUNDED CODATA Q_β with a
+# full-precision one, and this literal is the rounded one. The
+# assertion in `main()` measures the gap against the registry rather
+# than leaving the claim as prose.
+Q_BETA_CODATA_LITERAL = "0.78233"
+Q_BETA_CODATA_MEV = mp.mpf(Q_BETA_CODATA_LITERAL)
+# Likewise hand-typed here rather than taken from codata_constants.
+# Left in place, and checked against the registry below — deleting the
+# literal would delete the check, and Q_A scales linearly with it.
+M_E_LITERAL_IN_THIS_FILE = "0.51099895069"
+M_E_MEV_LOCAL = mp.mpf(M_E_LITERAL_IN_THIS_FILE)
 
 
 def main() -> int:
@@ -109,6 +125,13 @@ def main() -> int:
     d1 = q ** 3 / (q ** 2 + 1)
     d2 = -1 / (q * (q ** 2 + 1))
     b = mp.sqrt(d1 * d2 + 1)          # Hoefsmit b = √(q⁴+q²+1)/(q²+1)
+    # SECOND ROUTE to b². The comment above asserts an identity that
+    # nothing here checked. `b_sq_skein` reaches the same number from
+    # the Hecke skein variable h alone — (h²+3)/(h²+4) — never forming
+    # d₁ or d₂. u = b·ℏ_q² is the ladder variable every c_k in this file
+    # is a coefficient of, so the two conventions agreeing is the
+    # precondition for comparing c_3 against a closure written in h.
+    b_sq_skein = (h ** 2 + 3) / (h ** 2 + 4)
     hbar_q = (q - 1) / q              # quantum Planck
     hbar_q_sq = hbar_q ** 2
     hbar_q_4 = hbar_q ** 4
@@ -122,7 +145,7 @@ def main() -> int:
     u4 = u ** 4
 
     # Q_A bare scale (substrate region |q²-2q-1| = 2q+1-q²)
-    Q_A = M_E_MEV * (2 * q + 1 - q ** 2) * (q + 1) / (2 * q ** 3)
+    Q_A = M_E_MEV_LOCAL * (2 * q + 1 - q ** 2) * (q + 1) / (2 * q ** 3)
 
     # N=1, N=2, N=3 partial ladder
     alpha_eff = alpha - b * hbar_q_sq / 2
@@ -182,7 +205,19 @@ def main() -> int:
     print()
     print(f"  Empirical c_4 (from N=3 → CODATA residual, u⁴ coefficient):")
     print(f"    c_4_emp = {mp.nstr(c_4_empirical, 15)}")
-    print(f"      (matches qbeta_1ppq_achieved c_4 ≈ -0.972 — even-k geometric)")
+    # The line that used to sit here read "(matches qbeta_1ppq_achieved
+    # c_4 ≈ -0.972 — even-k geometric)". It was a fixed string printed
+    # directly beneath a number that is 0, and it contradicted this
+    # probe's own verdict twenty lines down. Say what the number is
+    # instead, and let it disagree.
+    if c_4_empirical == 0:
+        print(f"      → EXACTLY zero: c_3 was extracted from the same "
+              f"single CODATA Q_β, so it absorbs the whole residual and")
+        print(f"        leaves nothing at u⁴. This CONTRADICTS "
+              f"qbeta_1ppq_achieved's c_4 ≈ -0.972; see the verdict below.")
+    else:
+        print(f"      → nonzero at {mp.nstr(c_4_empirical, 8)}; compare "
+              f"qbeta_1ppq_achieved's c_4 ≈ -0.972.")
     print()
 
     # ---------------------------------------------------------------
@@ -238,6 +273,19 @@ def main() -> int:
     # Sort by smallest |correction - 1| — most promising structural base
     results_sorted = sorted(results, key=lambda r: r["dist_from_one"])
     best = results_sorted[0]
+    # When c_4 is exactly 0, every base gives correction = 0 and every
+    # |correction - 1| is exactly 1: the ranking is a total tie and
+    # "MOST PROMISING" below is just whichever key came first. Say so,
+    # rather than presenting the dict order as a result.
+    tied = [r for r in results_sorted
+            if r["dist_from_one"] == best["dist_from_one"]]
+    ranking_is_degenerate = len(tied) == len(results_sorted)
+    if ranking_is_degenerate:
+        print(f"  ⚠ RANKING DEGENERATE — all {len(results_sorted)} bases tie "
+              f"at |correction - 1| = {best['dist_from_one']:.6f} "
+              f"(c_4 = {mp.nstr(c_4_empirical, 6)}), so the 'most "
+              f"promising' base below is dict order, not a finding.")
+        print()
     print(f"  MOST PROMISING base for c_4 (smallest |correction - 1|):")
     print(f"    {best['base_name']}")
     print(f"    correction factor = {best['correction_factor']}")
@@ -335,24 +383,186 @@ def main() -> int:
     builder.add_data("best_non_trivial_base",
                      non_trivial[0] if non_trivial else None)
 
-    # Assertion: c_2 = -1 STRUCTURAL is the only proved c_k (the
-    # invariant this probe respects). c_3 closes via empirical Habiro
-    # near-match. c_4 has no derivation. The probe's job is to scope,
-    # not to claim.
+    # ── Assertions ────────────────────────────────────────────────────
+    # The narration above says c_2 is the only structural c_k, that c_4
+    # is a normalisation artifact, and that the artifact comes from
+    # mixing two CODATA Q_β values. None of that was asserted. It is now.
+
+    # (1) The MAJOR FINDING, measured on this probe's own constant.
+    #   Route A: the 5-decimal Q_β literal typed into this module.
+    #   Route B: codata_constants.Q_BETA_MEV, derived from CAL-1+CAL-2
+    #            at full precision — and, as a third cross-check
+    #            recorded below, m_n - m_p - m_e from the registry.
+    # This probe IS on the rounded side of the mismatch it describes:
+    # the 4.4 ppm gap propagates to a 0.75% shift in c_3_empirical
+    # (-981.5 here vs -974.1 in the operator-valued N3 witness, which
+    # uses the full-precision value). Tolerance 5e-6 is the half-ulp of
+    # a 5-decimal rounding; anything larger means the literal is not
+    # merely rounded but wrong.
+    q_beta_from_masses = M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - M_E_MEV
+    builder.add_data("codata_q_beta_three_routes", {
+        "literal_in_this_module": Q_BETA_CODATA_LITERAL,
+        "registry_Q_BETA_MEV": mp.nstr(Q_BETA_MEV, 25),
+        "registry_m_n_minus_m_p_minus_m_e": mp.nstr(q_beta_from_masses, 25),
+        "literal_vs_registry_ppm": mp.nstr(
+            (Q_BETA_CODATA_MEV / Q_BETA_MEV - 1) * mp.mpf("1e6"), 10),
+        "note": ("The rounded/full-precision mismatch this probe's "
+                 "verdict attributes to qbeta_1ppq_achieved is present "
+                 "in this probe's own input constant."),
+    })
     builder.add_assertion(
-        "c_2_remains_only_structural_ck",
-        computed=1,
-        expected=1,
-        tolerance=0,
-        source=("Invariant respected by this scoping probe: c_2 = -1 "
-                "is the only c_k with a sorry-free Lean STRUCTURAL "
-                "proof (prop:q-beta-c-2-eq-neg-one-structural, "
-                "PR #1786). c_3 closes via empirical [3]_q/25 Habiro "
-                "near-match (commit 305c08a91 on main, tagged "
-                "NEAR-MATCH not derived). c_4 is empirical extraction "
-                "only. This probe scopes the c_4 base hypothesis "
-                "without claiming a structural derivation."),
+        "qbeta_literal_matches_codata_registry_to_five_decimals",
+        computed=Q_BETA_CODATA_LITERAL,
+        expected=mp.nstr(Q_BETA_MEV, 25),
+        tolerance="5e-6",
+        source=(
+            "Route A: the hand-typed 5-decimal Q_β used throughout this "
+            "probe. Route B: codata_constants.Q_BETA_MEV (CAL-1+CAL-2). "
+            "Tolerance 5e-6 = half-ulp of a 5-decimal rounding."
+        ),
     )
+
+    # (2) The hand-typed electron mass, same shape.
+    builder.add_assertion(
+        "local_electron_mass_literal_matches_codata_registry",
+        computed=M_E_LITERAL_IN_THIS_FILE,
+        expected=mp.nstr(M_E_MEV, 25),
+        tolerance="1e-20",
+        source=(
+            "Route A: the m_e literal in this module, which sets the "
+            "scale of Q_A and hence of every Q_N. Route B: "
+            "codata_constants.M_E_MEV."
+        ),
+    )
+
+    # (3) The ladder, against a SECOND PRODUCER.
+    #   Route A: Q_N2 = Q_A·cos(α_eff)·(1 − u²) rebuilt here at 65 dps
+    #            from q₀ and the Hoefsmit substrate.
+    #   Route B: the `Q_N2` field of the committed
+    #            q-beta-operator-valued-N3 witness, produced by a
+    #            different script.
+    # Neither side sees a CODATA Q_β, so this isolates the ladder from
+    # the rounding question in (1): it says the substrate construction
+    # is the same one the N3 probe used, which is what licenses
+    # comparing c_3 across the two.
+    n3 = builder.add_upstream(
+        HERE.parent / "q-beta-operator-valued-N3.witness.json")
+    builder.add_assertion(
+        "q_n2_ladder_matches_operator_valued_n3_witness",
+        computed=mp.nstr(Q_N2, 25),
+        expected=n3["data"]["Q_N2"],
+        tolerance="1e-22",
+        source=(
+            "Route A: Q_A·cos(α_eff)·(1−u²) from q₀, b and ℏ_q at 65 "
+            "dps in this probe. Route B: the Q_N2 recorded by "
+            "q_beta_operator_valued_N3 in its own witness."
+        ),
+    )
+
+    # (4) The two conventions for the ladder variable's b.
+    #   Route A: 1 + d₁d₂ from the Hoefsmit block entries.
+    #   Route B: (h²+3)/(h²+4) from the Hecke skein variable.
+    builder.add_data("b_squared_two_routes", {
+        "hoefsmit_one_plus_d1_d2": mp.nstr(d1 * d2 + 1, 25),
+        "skein_h2_plus_3_over_h2_plus_4": mp.nstr(b_sq_skein, 25),
+        "difference": mp.nstr((d1 * d2 + 1) - b_sq_skein, 8),
+    })
+    builder.add_assertion(
+        "b_squared_hoefsmit_and_skein_routes_agree",
+        computed=mp.nstr(d1 * d2 + 1, 30),
+        expected=mp.nstr(b_sq_skein, 30),
+        tolerance="1e-55",
+        source=(
+            "Route A: 1 + d₁d₂ with d₁ = q³/(q²+1), d₂ = -1/(q(q²+1)) — "
+            "the Hoefsmit seminormal block. Route B: (h²+3)/(h²+4) with "
+            "h = q − 1/q — the skein form the c_3 closure is written in. "
+            "The comment beside `b` above asserts this identity."
+        ),
+    )
+
+    # (5) The q-brackets the closure formula is built from.
+    #   Route A: the explicit polynomials q + 1/q and q² + 1 + q⁻².
+    #   Route B: the bracket quotients (q^k − q^-k)/(q − q^-1).
+    qint_2_quot = (q ** 2 - q ** -2) / (q - 1 / q)
+    qint_3_quot = (q ** 3 - q ** -3) / (q - 1 / q)
+    builder.add_data("q_bracket_two_routes_gap", {
+        "[2]_q": mp.nstr(qint_2 - qint_2_quot, 8),
+        "[3]_q": mp.nstr(qint_3 - qint_3_quot, 8),
+    })
+    builder.add_assertion(
+        "qint3_polynomial_matches_bracket_quotient",
+        computed=mp.nstr(qint_3, 30),
+        expected=mp.nstr(qint_3_quot, 30),
+        tolerance="1e-55",
+        source=(
+            "Route A: the polynomial q² + 1 + q⁻² written out in this "
+            "probe and fed to the [3]_q/25 closure. Route B: the "
+            "bracket quotient (q³ − q⁻³)/(q − q⁻¹)."
+        ),
+    )
+
+    # (6) The verdict's central claim, asserted.
+    #   Route A: c_4 = (Q_β/Q_N3 − 1)/u⁴ evaluated numerically at 65 dps.
+    #   Route B: 0 — because c_3_empirical is DEFINED as the value making
+    #            Q_N3 hit Q_β exactly at u³, so Q_N3 ≡ Q_β and there is
+    #            no u⁴ residual left to attribute. An evaluated property
+    #            of the extraction, not a copy of Route A.
+    # This is the honest form of "c_4 is a normalisation artifact": it
+    # fails the moment the extraction stops being self-consistent (two
+    # different Q_β values, or 65 dps proving insufficient for the
+    # division by u⁴ ≈ 5e-9).
+    builder.add_assertion(
+        "c4_extraction_vanishes_under_single_codata_value",
+        computed=mp.nstr(mp.fabs(c_4_empirical), 30),
+        expected="0",
+        tolerance="1e-30",
+        source=(
+            "Route A: |c_4| = |Q_β/Q_N3 − 1|/u⁴ at 65 dps. Route B: 0, "
+            "from the construction — c_3 is extracted so that Q_N3 = "
+            "Q_β exactly at u³ order, using ONE CODATA value. "
+            "qbeta_1ppq_achieved reports c_4 ≈ -0.972 by mixing a "
+            "rounded Q_β into the c_3 fit and a full-precision one into "
+            "the comparison; that difference is the whole coefficient."
+        ),
+    )
+
+    # (7) Recorded, not repaired: the empirical/closure c_3 gap.
+    builder.add_data("c_3_two_routes", {
+        "empirical_at_u3_this_probe": mp.nstr(c_3_empirical, 25),
+        "closure_formula_main": mp.nstr(c_3_closure, 25),
+        "relative_gap_ppm": mp.nstr(
+            mp.fabs(c_3_closure - c_3_empirical) / mp.fabs(c_3_empirical)
+            * mp.mpf("1e6"), 10),
+        "docstring_claims_ppm": "2.65",
+    })
+    builder.add_caveat(
+        f"This module's docstring says the c_3 closure lands 2.65 ppm "
+        f"from target and 'closes the 10 ppm gate'. Measured here, the "
+        f"closure ({mp.nstr(c_3_closure, 10)}) and this probe's "
+        f"u³-order empirical extraction ({mp.nstr(c_3_empirical, 10)}) "
+        f"differ by "
+        f"{mp.nstr(mp.fabs(c_3_closure - c_3_empirical) / mp.fabs(c_3_empirical) * mp.mpf('1e6'), 6)} "
+        f"ppm — they are not the same c_3. The empirical one absorbs "
+        f"the entire {float(eps_N2):+.1f} ppm N=2 residual at u³, so it "
+        f"is ~981, of the same order as the -974 recorded in "
+        f"q-beta-operator-valued-N3.witness.json, while the closure "
+        f"formula is O(1). No assertion above compares them, because "
+        f"reconciling the two normalisations is a content question, not "
+        f"a tautology drain. Assertion (6)'s c_4 = 0 result is "
+        f"unaffected: it depends only on c_3 being extracted from the "
+        f"same single Q_β, not on its magnitude."
+    )
+    if ranking_is_degenerate:
+        builder.add_data("base_ranking_degenerate", True)
+        builder.add_caveat(
+            f"With c_4 = 0 exactly, correction = c_4/base = 0 for every "
+            f"base, so all {len(results_sorted)} base hypotheses tie at "
+            f"|correction - 1| = 1. 'MOST PROMISING base' and "
+            f"'best_non_trivial_base' in this witness are dict insertion "
+            f"order, not a ranking — the c_4 base question cannot be "
+            f"scoped at all until c_4 is defined against a second "
+            f"observable, which is the probe's own open item B."
+        )
 
     builder.save()
     print(f"  Witness: qbeta-ck-k-gt-3-habiro-extension-scoping.witness.json")

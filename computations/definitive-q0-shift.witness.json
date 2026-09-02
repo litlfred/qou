@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:58:55.199732+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:43:49.371920+00:00",
+  "commitSha": "bd725815a3d480c9429425de5e82a4f44a1c6730",
   "assertions": [
     {
       "name": "q0_shift_resolves_mp",
-      "computed": 1,
-      "expected": 1,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 0,
-      "source": "At q_exact, m_p/m_e matches CODATA to 10\u207b\u2074\u2078"
+      "tolerance": "1.0e-48",
+      "source": "At q_exact, m_p/m_e matches CODATA to 10⁻⁴⁸"
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "definitive-q0-shift",
   "scriptFile": "definitive_q0_shift_for_mp.py",
-  "scriptHash": "b23050c5eb75",
+  "scriptHash": "ece7d04fdb2d",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -41,15 +41,16 @@
     ],
     "reproduce": "python3 -u computations/definitive_q0_shift_for_mp.py"
   },
-  "description": "The m_p 242 ppb residual is entirely a q\u2080 calibration shift of 11.5 ppb. All correction towers are Taylor expansions of this shift. 1 ppb m_p requires deriving q\u2080 to 12 ppb.",
+  "description": "The m_p 242 ppb residual is entirely a q₀ calibration shift of 11.5 ppb. All correction towers are Taylor expansions of this shift. 1 ppb m_p requires deriving q₀ to 12 ppb.",
   "contentBlock": "prop:proton-mass-substrate-identity",
   "data": {
     "q0_current": "1.109978582751380807591669",
-    "q0_exact_for_mp": "1.109978582751230052440291",
-    "shift_absolute": "-1.50755151377889e-13",
-    "shift_ppb": "-0.0001358180723"
+    "q0_exact_for_mp": "1.109978582751230051518351",
+    "shift_absolute": "-1.50756073318284e-13",
+    "shift_ppb": "-0.0001358189029",
+    "mp_me_residual_at_q_exact": "0.0"
   },
   "q0Anchor": "proton",
-  "q0Value": "1.109978582751380807591669",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_current, data.q0_exact_for_mp). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

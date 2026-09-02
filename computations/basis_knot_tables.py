@@ -51,7 +51,12 @@ NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 z = q0**3 / (q0**2 + 1)
-TR_M = [_ONE, z, z, z**2, z**2, z**3]
+h = q0 - _ONE / q0
+# TR_M[5] = tr_M(sigma_0 sigma_1 sigma_0) = h*z^2 + z, NOT z^3. The Markov
+# axioms give tr(s0 s1 s0) = tr(s1 s0^2) = tr(s1 (h s0 + 1)) = h*tr(s1 s0)
+# + tr(s1) = h*z^2 + z. docs/audits/2026-05-19-trm5-markov-bug.md fixed this
+# in pyhecke.gram on 2026-05-19; it never propagated here (bean qou-ssex).
+TR_M = [_ONE, z, z, z**2, z**2, h * z**2 + z]
 
 
 def hecke_mul(t1, t2):
@@ -179,13 +184,37 @@ w.add_parameter("h", HA)
 w.add_parameter("z", z)
 w.add_parameter("basis", NF_NAMES)
 
+# Expected e⁻ pair counts out of the 36 (b_i, b_j) pairs, pinned.
+#
+# This read `computed=all_tables[...], expected=all_tables[...]` — the same
+# expression on both sides, so it passed whatever the table held and
+# `allPassed` said nothing about it (bean `qou-26f2`).
+#
+# REGRESSION PINS, not an independent derivation: values from the H₃(q)
+# multiplication table as of 2026-08-25, recorded so a change in the table,
+# the basis order or the NF reduction is caught rather than silently
+# re-blessed.
+#
+# Cross-check worth knowing: `photon_operator_table.py` computes the same
+# quantity over the same basis by a different route and agrees on γ (19),
+# σ₀/σ₁ (24) and e⁻ (36) — it names its operators `T_{n,k}` rather than by
+# basis word, and covers the cinquefoil instead of the two Hopf links.
+EXPECTED_E_MINUS_PAIRS = {
+    "γ":  19,   # vacuum / photon (empty knot)
+    "σ₀": 24,   # single crossing (up quark channel)
+    "σ₁": 24,   # single crossing (color channel)
+    "L₊": 32,   # Hopf link (gluon +)
+    "L₋": 32,   # Hopf link (gluon −)
+    "e⁻": 36,   # trefoil (electron) — universally opens the channel
+}
+
 for op_name, _, _ in BASIS_KNOTS:
     w.add_assertion(
         f"{op_name} e⁻ pair count",
         computed=all_tables[op_name]["e_minus_pairs"],
-        expected=all_tables[op_name]["e_minus_pairs"],
+        expected=EXPECTED_E_MINUS_PAIRS[op_name],
         tolerance=0,
-        source="H₃(q) basis multiplication",
+        source="H₃(q) basis multiplication; expected pinned 2026-08-25",
     )
 
 # The key result

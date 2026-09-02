@@ -1,4 +1,4 @@
-The operators below are not part of the [Écalle–Borel resummation](#def:ecalle-borel-resummation) object; they are its surrounding resurgence vocabulary [@ecalle1981], together with a disambiguation of the three unrelated "Borel"s in this paper.
+The operators below are not part of the [Écalle–Borel resummation](#def:ecalle-borel-resummation) object; they are its surrounding resurgence vocabulary \cite{ecalle1981}, together with a disambiguation of the three unrelated "Borel"s in this paper.
 
 ## Alien derivatives and the bridge equation
 

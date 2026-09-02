@@ -239,8 +239,8 @@ def main() -> int:
 
     w.add_assertion(
         name="bring_variant_search_completed",
-        computed=len(variants),
-        expected=len(variants),
+        computed=len(variants) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(variants)} Bring-motivated variants at 60 dps.",
     )

@@ -263,6 +263,30 @@ def main() -> None:
         "term; a Higgs-coupling route where n enters through linking "
         "with 4_1 rather than through net) are NOT excluded."
     )
+    # ── Assertion (bean qou-srvu) ────────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    # The check already existed: `binet_max_err` is computed at line
+    # ~131 and stored under a field literally named `verified`, using
+    # this file's own 1e-40 — but nothing asserted it, so a consumer
+    # reading `allPassed` could not see it fail.
+    #
+    # Not a self-comparison: `b[n]` comes from the Morgan-Voyce
+    # RECURRENCE and `binet_b(n)` from the closed form
+    # (q^n - (-1)^n q^-n)/(q + 1/q). A wrong closed form, a wrong sign
+    # convention or an off-by-one in the recurrence all break it. The
+    # exclusion argument this witness records reads the net values off
+    # that closed form, so if it were wrong the whole conclusion would
+    # be about a different sequence.
+    w.add_assertion(
+        "binet_closed_form_matches_recurrence",
+        computed=mp.nstr(binet_max_err, 8),
+        expected="0",
+        tolerance="1e-40",
+        source=(
+            "max over n = 0..13 of |binet_b(n) - b[n]|; closed form vs "
+            "Morgan-Voyce recurrence, two independent routes"
+        ),
+    )
     w.save()
 
     print(f"q_0 (proton pin) = {q}")

@@ -74,6 +74,26 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from char_fast import _compiled_sigmas  # noqa: E402 — independent route to chi_(2,1)
+
+
+def chi_21_sigma1_pow_via_seminormal(q, k: int):
+    """tr_{V_(2,1)}(σ₁^k) from the COMPILED SEMINORMAL MATRICES.
+
+    The second route to `chi5` below. This script's `chi5` is the closed form
+    q^k − q^{−k}, read off the eigenvalues {q, −q⁻¹} of σ₁ in the standard
+    2-dimensional H_3 representation. This function instead builds the actual
+    seminormal generator matrix through `char_fast._compiled_sigmas((2,1))`,
+    raises it to the k-th power, and takes the matrix trace — no eigenvalue
+    argument anywhere. The whole meson `base` (and therefore C, C/u², and the
+    verdict) hangs off chi5, so the two routes are worth comparing.
+    """
+    fns, dim = _compiled_sigmas((2, 1), precision="mpmath50")
+    sig1 = mp.matrix(fns[0](q))
+    pw = mp.eye(dim)
+    for _ in range(k):
+        pw = pw * sig1
+    return sum(pw[i, i] for i in range(dim))
 
 
 def main() -> int:
@@ -94,10 +114,14 @@ def main() -> int:
     # Strong-sector base: chi_{(2,1)}(σ₁⁵) · (9/5)²
     # chi_{(2,1)}(σ₁⁵) = q^5 - q^-5 (standard rep eigenvalue calc)
     chi5 = q ** 5 - q ** (-5)
+    chi5_seminormal = chi_21_sigma1_pow_via_seminormal(q, 5)
+    chi5_dev = abs(chi5_seminormal - chi5)
     seifert_ratio_sq = (mp.mpf(9) / 5) ** 2
     base = chi5 * seifert_ratio_sq
     print(f"\n[Strong-sector base from audit Path 1]")
     print(f"  chi_(2,1)(σ₁⁵) = q^5 − q^-5 = {mp.nstr(chi5, 12)}")
+    print(f"  same via seminormal tr(σ₁⁵) = {mp.nstr(chi5_seminormal, 12)}"
+          f"   |Δ| = {mp.nstr(chi5_dev, 6)}")
     print(f"  (9/5)²         = {mp.nstr(seifert_ratio_sq, 12)}")
     print(f"  base           = {mp.nstr(base, 18)}")
 
@@ -220,13 +244,49 @@ def main() -> int:
     w.add_data("c2_contribution_pct_to_C", mp.nstr(c2_pct, 12))
     w.add_data("c3_contribution_pct_to_C", mp.nstr(c3_pct, 12))
     w.add_data("verdict", verdict)
+    w.add_data("chi_21_sigma1_pow5", {
+        "closed_form_q5_minus_q_minus5": mp.nstr(chi5, 25),
+        "seminormal_matrix_trace": mp.nstr(chi5_seminormal, 25),
+        "abs_deviation": mp.nstr(chi5_dev, 8),
+    })
+    # `reexam_completed` (computed=True, expected=True) was a tautology: it
+    # recorded that the script reached its own last line and could not fail.
+    # It is replaced by the chi5 cross-route check below, and the "it ran"
+    # fact is demoted to data where it belongs.
+    w.add_data("reexam_completed", {
+        "completed": True,
+        "meaning": "the 50 dps re-examination reached its verdict",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
 
     w.add_assertion(
-        name="reexam_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Meson Habiro c=4 re-examination completed at 50 dps.",
+        name="chi_21_sigma1_pow5_matches_seminormal_trace",
+        computed=mp.nstr(chi5_seminormal, 40),
+        expected=mp.nstr(chi5, 40),
+        tolerance="1e-45",
+        source="χ_(2,1)(σ₁⁵) two ways at q_0: tr(σ₁⁵) of the compiled "
+               "seminormal H_3 generator (char_fast._compiled_sigmas) vs "
+               "the closed form q⁵ − q⁻⁵ read off the eigenvalues "
+               "{q, −q⁻¹}. `base` — and hence C, C/u² and the verdict — "
+               "is built from this character, so a wrong convention here "
+               "silently moves every number in the probe.",
+    )
+    w.add_caveat(
+        "NARRATION DRIFT (recorded, not repaired): the three verdict strings "
+        "hardcode the audit's 2026-05-29 figures — \"the 0.77% residual on "
+        "C/u² = 4.03\" — and cannot disagree with this run, which computes "
+        f"C/u² = {mp.nstr(C_over_u2, 8)} ({mp.nstr((C_over_u2 - 4) / 4 * 100, 4)}% "
+        "off integer 4). The header docstring and the `[Test 1 — reproduce "
+        "audit's C/u² = 4.03]` label carry the same stale numbers. The "
+        "verdict BRANCH is genuinely computed from c_3_required / c2_pct / "
+        "c3_pct; only the prose inside each branch is fixed text."
+    )
+    w.add_caveat(
+        "c_2 = 4 is ASSUMED, and c_3_required is then SOLVED so that "
+        "c_2·u² + c_3·u³ reproduces C exactly. c_3_required therefore has no "
+        "independent route and is recorded as data, never asserted; the "
+        "verdict reads its magnitude against a threshold, it does not test it."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

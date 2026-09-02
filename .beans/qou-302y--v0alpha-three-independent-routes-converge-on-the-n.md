@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T18:45:57Z
-updated_at: 2026-08-30T02:46:56Z
+updated_at: 2026-08-30T03:34:50Z
 parent: qou-mhj9
 ---
 
@@ -52,3 +52,32 @@ fpn > 2/3 whatever the scale.
 So alpha stays a MAGNITUDE-only question. It cannot fix the sign, and any story
 that closes the magnitude via alpha must still leave the sign to a change of
 assembly.
+
+
+## FURTHER CONSTRAINED 2026-08-30 — the 2.70x figure is ASSEMBLY-CONDITIONAL
+
+Following the trilemma landing (qou-edt7, PR #6088): the strongest evidence that
+alpha is ~2.70x too large is qou-brg3's floor
+
+    B(T=1) + B(T=0) >= alpha*log 4 = 5.8030 MeV   vs nature 2.1510 MeV
+
+and that floor is derived from mu+ + mu- = 1 via AM-GM -- i.e. from the PROJECTOR
+CONVEX DECOMPOSITION, which is an assembly assumption. If the assembly is the
+defect (which is now machine-checked for both corpus assemblies at the 3-body
+sign), then the floor indicting alpha may be indicting the assembly instead.
+
+So the three "independent routes" are less independent than the bean's own
+scoping claims:
+  - qou-brg3's floor and 08-08 s10b are ONE observation stated twice (already
+    noted in the roast);
+  - and that one observation is conditional on the very assembly now under
+    suspicion.
+The hbar_q-rung two-scale separation is the only route that does not route
+through the assembly, and its one mechanism (volume-defect) is refuted at
+102-250x.
+
+RECOMMENDATION (judgement): keep PARKED. Do not work alpha until the assembly
+question (qou-edt7) resolves, because a scale extracted against a wrong assembly
+is a fit against a wrong assembly. Working it now is the most fit-prone move on
+the board -- an O(1) number, no mechanism, no decisive test, and e = 2.71828 is
+0.7% from E_0/1.5516 = 2.698.

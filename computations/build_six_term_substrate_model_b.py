@@ -85,6 +85,27 @@ MODEL_B_BRAID_REGISTRY = {
              "knot": "11-cross typed B_3 (uud)", "t1_atom_a": "proton"},
     (0, 1): {"n_canon": 3, "rho": 1,
              "knot": "11-cross typed B_3 (udd)", "t1_atom_a": "neutron"},
+    # 🛑 RETIRED ASSIGNMENT — DO NOT BUILD A PRODUCER AGAINST THIS ROW.
+    #
+    # OWNER RULING 2026-08-29 (docs/audits/2026-08-29-deuteron-knot-owner-
+    # decision.md, bean qou-e5jf): the deuteron knot is the CANONICAL BRAID
+    # CLOSURE (trefoil / Hopf, Vol = 0). Option B — "the deuteron knot is 6_2
+    # (Vol = 4.40)" — was put to the owner and REJECTED, and "the 6_2 census
+    # assignment is retired as a bare lookup" is the ruling's own wording.
+    #
+    # The ruling is about the KNOT IDENTITY, not merely about whether the
+    # binding is a volume term; Option B is phrased as a claim about which
+    # knot the deuteron IS. So this row is not stale bookkeeping, it is the
+    # rejected option still sitting in a live registry.
+    #
+    # Nothing computes from it today (the Model B T1 witness does not exist —
+    # see _load_model_b_t1 above), which is the only reason it is safe to
+    # leave the value in place rather than guess a replacement. Choosing the
+    # replacement is a modelling decision with real consequences: at A=2 the
+    # canonical braid closure is the object Model A already uses, so adopting
+    # it may collapse Model B's deuteron T1 into Model A's, and whether that
+    # is correct or means Model B has no distinct A=2 entry is not something
+    # this comment can settle. Bean qou-imkb.
     (1, 1): {"n_canon": 3, "rho": 1, "knot": "6_2",  "t1_atom": "deuteron"},
     (1, 2): {"n_canon": 5, "rho": 2, "knot": "8_11", "t1_atom": "tritium"},
     (2, 1): {"n_canon": 3, "rho": 2, "knot": "L6a4", "t1_atom": "he3"},
@@ -99,8 +120,16 @@ def _load_model_b_t1() -> dict[str, mp.mpf]:
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
-            f"Model B T1 witness missing: {path}.  Run "
-            f"probe_sdp_canonical_paper_formula.py first."
+            f"missing Model B T1 witness: {path}. "
+            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
+            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
+            f"in this repo, GitHub code search finds it only in these error "
+            f"strings, and no commit in this clone's history touches it — so "
+            f"the old instruction to 'run it first' could not be followed by "
+            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
+            f"registry's deuteron row is blocked on the 2026-08-29 owner "
+            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
+            f"Model A (3A-strand) is the live T1 route."
         )
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}

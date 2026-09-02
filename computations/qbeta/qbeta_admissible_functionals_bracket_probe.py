@@ -72,7 +72,6 @@ set_compute_dps(50)
 
 Z = sp.Symbol("z")
 Z_D = q**3 / (q**2 + 1)
-Z_C = sp.sqrt(q) / (q + 1)
 
 
 def main() -> int:

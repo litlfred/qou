@@ -1,0 +1,169 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T20:30:24.577931+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
+  "assertions": [
+    {
+      "name": "two_body_su4_sum_is_exactly_proportional_to_pair_count",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "deviation of S/C(n,2) from -5/8",
+      "source": "S(n) = -(5/8)C(n,2) exactly for all n, so a two-body SU(4)-invariant interaction gives a constant per pair => w constant => b3 = 0. Lean: SU4CasimirIsAffineInPairCount.pairSum_eq"
+    },
+    {
+      "name": "casimir_is_affine_in_pair_count",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "deviation",
+      "source": "Lean: SU4CasimirIsAffineInPairCount.casimirX8_eq"
+    },
+    {
+      "name": "fit_is_the_fixed_three_quarter_interpolation",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "unit": "deviation from the 3/4 interpolation weight",
+      "source": "lambda = (C2(3)-C2(4))/(C2(2)-C2(4)); no fitted freedom remains"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "su4-casimir-beta-derivation",
+  "scriptFile": "su4_casimir_beta_derivation_probe.py",
+  "scriptHash": "c64655d882ea",
+  "scriptCommitSha": "24fc85a0eb7894fb26b9308c0f93c9b290404db7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/su4_casimir_beta_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/su4_casimir_beta_derivation_probe.py"
+  },
+  "description": "beta cannot be derived: the SU(4) Casimir of [1^n] is AFFINE in the pair count, so a two-body SU(4)-invariant interaction contributes exactly -(5/8) per pair -- w constant, b3 = 0. The fitted w = alpha - beta*C2 is therefore not the SU(4) prediction and has no coupling to derive. RETRACTS the lead. The support bound C(4,n) = 0 for n >= 5, which locates the turnover, is untouched.",
+  "data": {
+    "two_body_sum_table": [
+      {
+        "n": 2,
+        "C2": "2.50000000000000000000000000000000000000000000000000000000000",
+        "S": "-0.625000000000000000000000000000000000000000000000000000000000",
+        "pairs": 1,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 3,
+        "C2": "1.87500000000000000000000000000000000000000000000000000000000",
+        "S": "-1.87500000000000000000000000000000000000000000000000000000000",
+        "pairs": 3,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 4,
+        "C2": "0.0",
+        "S": "-3.75000000000000000000000000000000000000000000000000000000000",
+        "pairs": 6,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 5,
+        "C2": "-3.12500000000000000000000000000000000000000000000000000000000",
+        "S": "-6.25000000000000000000000000000000000000000000000000000000000",
+        "pairs": 10,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 6,
+        "C2": "-7.50000000000000000000000000000000000000000000000000000000000",
+        "S": "-9.37500000000000000000000000000000000000000000000000000000000",
+        "pairs": 15,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 7,
+        "C2": "-13.1250000000000000000000000000000000000000000000000000000000",
+        "S": "-13.1250000000000000000000000000000000000000000000000000000000",
+        "pairs": 21,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 8,
+        "C2": "-20.0000000000000000000000000000000000000000000000000000000000",
+        "S": "-17.5000000000000000000000000000000000000000000000000000000000",
+        "pairs": 28,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 9,
+        "C2": "-28.1250000000000000000000000000000000000000000000000000000000",
+        "S": "-22.5000000000000000000000000000000000000000000000000000000000",
+        "pairs": 36,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 10,
+        "C2": "-37.5000000000000000000000000000000000000000000000000000000000",
+        "S": "-28.1250000000000000000000000000000000000000000000000000000000",
+        "pairs": 45,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 11,
+        "C2": "-48.1250000000000000000000000000000000000000000000000000000000",
+        "S": "-34.3750000000000000000000000000000000000000000000000000000000",
+        "pairs": 55,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 12,
+        "C2": "-60.0000000000000000000000000000000000000000000000000000000000",
+        "S": "-41.2500000000000000000000000000000000000000000000000000000000",
+        "pairs": 66,
+        "S_over_pairs": "-0.625000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "residual_by_variable": {
+      "isospin_average": {
+        "on_B3": "0.0546070896641931258085852703046122897163477229739523955422980",
+        "on_B4": "0.125054641590578208199147866564876742380132440370083013147626",
+        "amplification": "2.29008069024742110296028977218783893887566314757840763607640"
+      },
+      "3H_Coulomb_corrected": {
+        "on_B3": "0.00712532446841861161436536284613865162192885511679707654376322",
+        "on_B4": "0.0170868733576634700023845350939725659152619802249266304506093",
+        "amplification": "2.39804845848033584115705310365874311534053360772356401877342"
+      }
+    },
+    "vs_simplex_baseline": {
+      "mu4_zero_B4": "19.0522778400000000000000000000000000000000000000000000000000",
+      "mu4_zero_err": "-0.326671432155622552239667660156985757647433622193626398369808",
+      "note": "the 8/-18 relation IS better than the mu4=0 baseline; that is real and is why the fit looked good. It is still not a derivation."
+    },
+    "verdict": {
+      "beta_derivable": false,
+      "why": "a two-body SU(4)-invariant interaction contributes exactly -(5/8) per pair, so it has no Casimir term to carry a beta",
+      "lead_status": "RETRACTED as a derivation route",
+      "still_standing": "the SUPPORT bound dim[1^n] = C(4,n) = 0 for n >= 5, which locates the turnover at A=4 and uses the vanishing of the representation, not its Casimir",
+      "scope": "does not refute Wigner SU(4) as physics; closes one route"
+    }
+  }
+}

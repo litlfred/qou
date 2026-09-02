@@ -109,11 +109,6 @@ def sumy(n):
     return mp.fsum(mp.mpf(str(yl[lam])) for lam in parts(n))
 
 
-def ratios(f):
-    v = [f(n) for n in (2, 3, 4)]
-    return (float(v[1] / v[0]), float(v[2] / v[1]))
-
-
 def main() -> int:
     print("=== Frobenius-dual + na-Stokes → w_n(K): REFUTE (scope-a) ===")
     print("target w_n (B_strong, #3534): 4.353, 9.331, 15.919 → ratios 2.144, 1.706 (DECELERATING)\n")
@@ -125,13 +120,22 @@ def main() -> int:
         "Σ y_λ dim_q² (Frob self-dual)": lambda n: frob(n, 2),
         "Σ y_λ (total weight)": sumy,
     }
+    # Target ratios and the acceptance window the verdict is decided on. Named
+    # once so the console verdict and the witness assertion cannot drift apart.
+    TARGET_R32, TARGET_R43, WINDOW = 2.144, 1.706, 0.2
+
     print(f"{'candidate':<32} {'ratio 3/2':>10} {'ratio 4/3':>10}  verdict")
+    rows = {}
     for name, f in cands.items():
-        r = ratios(f)
+        v2, v3, v4 = f(2), f(3), f(4)
+        r = (float(v3 / v2), float(v4 / v3))
         # decelerating like the target means r[0] > r[1] > 1 near 2.1, 1.7
-        ok = abs(r[0] - 2.144) < 0.2 and abs(r[1] - 1.706) < 0.2
+        ok = abs(r[0] - TARGET_R32) < WINDOW and abs(r[1] - TARGET_R43) < WINDOW
         v = "MATCH" if ok else ("accelerating" if r[1] > r[0] else "wrong magnitude")
+        rows[name] = {"n2": float(v2), "n3": float(v3), "n4": float(v4),
+                      "ratio_3_2": r[0], "ratio_4_3": r[1], "matches_target": ok}
         print(f"{name:<32} {r[0]:>10.3f} {r[1]:>10.3f}  {v}")
+    n_match = sum(1 for row in rows.values() if row["matches_target"])
 
     print("\nVERDICT: REFUTED (scope-a). The canonical y_λ normalize tr_M into a trace")
     print("  ⇒ Σ y_λ dim_q ≡ tr_M(𝟙) = 1 and self-pairings give constant ratios;")
@@ -147,15 +151,23 @@ def main() -> int:
             "Σ y_λ dim_q = tr_M(1) ≡ 1 (trivial) and constant-ratio self-pairings; no "
             "Frobenius-dual reweighting matches the decelerating w_n ratios (2.144,1.706). "
             "Structural reason: y_λ normalize tr_M. Weight must be geometric. No fit.")
-        for name, f in cands.items():
-            r = ratios(f)
-            wb.add_data(name, {"n2": float(f(2)), "n3": float(f(3)), "n4": float(f(4)),
-                               "ratio_3_2": r[0], "ratio_4_3": r[1]})
+        for name, row in rows.items():
+            wb.add_data(name, row)
+        # Target ratios / window are NOT re-emitted as data: they are decimal
+        # literals, and `raw-float64-baseline.json` fails a baselined witness
+        # whose float64 count INCREASES. They live in the assertion `source`.
+        wb.add_data("candidates_matching_target", n_match)
         wb.add_assertion(
             name="frobenius_dual_refuted_scope_a",
-            computed="1", expected="1", tolerance=0,
-            source=("no Frobenius-dual reweighting of na-Stokes residues reproduces the "
-                    "decelerating w_n ratios; y_λ normalize tr_M → tr_M(1)=1 / constant self-pairings."))
+            computed=n_match, expected=0, tolerance=0,
+            unit="candidates",
+            source=(f"REFUTATION = zero of the {len(cands)} Frobenius-dual / na-Stokes "
+                    f"reweightings lands within ±{WINDOW} of the target w_n ratios "
+                    f"({TARGET_R32}, {TARGET_R43}) at BOTH n=3/2 and n=4/3. The count is "
+                    "the script's own per-candidate match predicate (`matches_target` in "
+                    "data), so a single matching reweighting turns this red — which is "
+                    "what a scope-a refutation has to risk. Was computed=\"1\"/expected=\"1\", "
+                    "which passed at the value that refutes the claim (qou-26f2)."))
         out = wb.save()
         print(f"\nWitness: {out}")
     except Exception as e:

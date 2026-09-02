@@ -10,7 +10,7 @@ and the trace of a scalar multiple of the identity is that scalar times the
 dimension:
 
 $$
-  \operatorname{Tr}\bigl(C_2|_{S^\mu}\bigr)
+  \mathrm{Tr}\bigl(C_2|_{S^\mu}\bigr)
   = \Bigl(\sum_{\square \in \mu} c(\square)^2\Bigr)\dim\bigl(S^\mu\bigr).
 $$
 
@@ -27,7 +27,7 @@ Trace is additive over that decomposition, and each summand contributes the
 value just computed, giving
 
 $$
-  \operatorname{Tr}(C_2)
+  \mathrm{Tr}(C_2)
   = \sum_{\mu \vdash n}
      \dim\bigl(S^\mu\bigr) \cdot
      \Bigl(\sum_{\square \in \mu} c(\square)^2\Bigr) \dim\bigl(S^\mu\bigr)

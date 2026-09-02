@@ -1,24 +1,48 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:26.369149+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T10:05:47.800310+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "exploration_completed",
-      "computed": true,
-      "expected": true,
+      "name": "q_brackets_reduce_to_classical_at_q_one",
+      "computed": "9.05567907883e-42",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "source": "max(|[3]_q! − 3!|, |tr_M(Borromean) − 1|) at q = 1+1e-30 = 9.05568e-42; 3! = 6 and the classical Markov trace 1 are known independently of this substrate and pin qint / qfact / trM_borromean_closed"
+    },
+    {
+      "name": "k_required_lands_on_categorical_integer_12",
+      "computed": "11.999609729845083862",
+      "expected": "12",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "(2·m_μ·F_Bor − m_p)/m_e = 11.99960972984508; misses the integer 12 = 2·dim H_3 by 0.00039027 (32.5225 ppm). Gate 1e-3, ~2.5× the observed gap: a drift moving k off 12 by a part in 10^4 breaks the near-match this module exists to close"
+    },
+    {
+      "name": "empirical_h4_forms_do_not_reach_sub_ppb",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "FORM A = 207.11433 ppb, FORM B = 207.11661 ppb; neither is within 1 ppb, contradicting the in-file 0.003 / 0.0008 ppb claims"
+    },
+    {
+      "name": "pslq_structure_hits_on_f_minus_1",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "Wider exploration at 70 dps."
+      "source": "0 PSLQ pairwise structures found for f−1; the verdict's non-hit branch depends on this being 0"
     }
   ],
   "allPassed": true,
   "durationMs": 3,
   "computation": "ocneanu-54ppb-residual-exploration",
   "scriptFile": "ocneanu_54ppb_residual_exploration.py",
-  "scriptHash": "71b6dba06cdb",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "e5239271d393",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +54,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/ocneanu_54ppb_residual_exploration.py"
+    ],
+    "reproduce": "python3 -u computations/ocneanu_54ppb_residual_exploration.py"
   },
   "description": "Exploration probe (while user waits) for the 54 ppb residual on the (α_em/π)/dim H_3 Ocneanu near-match. Tests special-function candidates, PSLQ over higher-order α_em + h^k mixed terms, direct α_em-decomposition. Goal: identify f(q_0) ≈ 1.001674.",
   "parameters": {
@@ -42,8 +74,14 @@
     "f_minus_1": "0.008094242482277361534439933",
     "pslq_hits": 0,
     "best_special_function_ppb": "-790491.48",
-    "verdict": "BEST candidate: '1 + α_em (1-loop natural)' at -790491.0 ppb — not below 10 ppb threshold."
+    "verdict": "BEST candidate: '1 + α_em (1-loop natural)' at -790491.0 ppb — not below 10 ppb threshold.",
+    "k_required": "11.99960972984508386212587",
+    "form_a_ppb": "207.114330482",
+    "form_b_ppb": "207.116614892"
   },
+  "caveats": [
+    "Every figure this module's prose quotes has drifted from what it now computes, and the drain is what surfaced it. (a) The title and docstring say a '54 ppb residual'; after the plain (α_em/π)/dim H_3 correction the residual measures 261.13994 ppb. (b) The docstring sets the goal as identifying f(q_0) ≈ 1.001674; the computed f_target is 1.00809424248, so f−1 is 4.8× the stated value. (c) The 2026-06-01 comment block reports FORM A at 0.003 ppb and FORM B at 0.0008 ppb (17,584× and 68,576× over baseline); they measure 207.114 and 207.117 ppb — about five orders worse, and indistinguishable from each other. The computation is self-consistent; the prose predates a substrate or CODATA movement and was never re-derived. Reported, not silently corrected."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

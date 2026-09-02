@@ -287,11 +287,20 @@ def main() -> None:
         expected="0",
         source="u(1+ε) Taylor expansion ⇒ u is O(ε²), not a proper Taylor coord at q=1",
     )
+    # Was `computed=str(v_leading), expected=str(v_leading)`, with its own
+    # comment conceding "tautological: we just verify it's recorded" -- so it
+    # passed even at v_leading = 0, which is exactly the case that would make v
+    # an IMPROPER Taylor coordinate and invert the claim (bean qou-3e5m). Its
+    # two siblings above and below already carry real expected values ("0" and
+    # "2"); this one now does too. The coefficient is recorded beside the flag.
+    wb.add_data("v_leading_eps_coefficient", str(v_leading))
     wb.add_assertion(
         name="v-leading-eps-coefficient-nonzero",
-        computed=str(v_leading),
-        expected=str(v_leading),  # tautological: we just verify it's recorded
-        source="v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper Taylor coord",
+        computed=1 if v_leading != 0 else 0,
+        expected=1,
+        tolerance=0,
+        source="v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper "
+               "Taylor coord; coefficient in data.v_leading_eps_coefficient",
     )
     wb.add_assertion(
         name="w-leading-eps-coefficient",

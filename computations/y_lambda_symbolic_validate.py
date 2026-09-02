@@ -98,6 +98,13 @@ TOL_PLANCHEREL = TOL_MARKOV_M3
 # References — load MPFR witness (q_0 only)
 # ────────────────────────────────────────────────────────────────
 
+#: The y_λ MPFR reference exists at BOTH pins. Do not hardcode one.
+_MPFR_WITNESSES = (
+    "y-lambda-mpfr-proton-witness.json",
+    "y-lambda-mpfr-witness.json",          # muon (the CAL-2 / ideal layer)
+)
+
+
 def load_mpfr_witness() -> dict:
     """The MPFR y_λ reference table AT Q0_STR's OWN ANCHOR (bean qou-mjcd).
 
@@ -142,7 +149,80 @@ def load_mpfr_witness() -> dict:
             for w in table["weights"]
         }
     return out
+    """The y_λ reference table BUILT AT THIS RUN'S PIN, or none at all.
 
+    PIN-STRADDLE FIX (2026-08-30). This used to open
+    `y-lambda-mpfr-witness.json` unconditionally and drop its recorded `q`,
+    returning bare `{n: {partition: y}}`. `test_1_cross_q` then compared the
+    Wenzl bridge evaluated at `Q0_STR` — which resolves to the PROTON pin for
+    this stem — against that MUON table, and reported the difference as a
+    correctness failure of the bridge.
+
+    Measured before the fix: `max|Δ| = 1.19e-9` at n=3 (1.49e-9 at n=4) against
+    `TOL_CROSS_Q = 1e-30`, i.e. 21 orders over tolerance, at every n from 2 to
+    11 — and at EXACTLY the one probe whose reference is the witness. Every
+    self-referential `wenzl-bridge@100dps` probe passed at ~1e-51, which is
+    what localises the defect to the comparison rather than to the bridge.
+
+    The recorded pass on `main` was obtained when this stem still resolved to
+    a muon value, and to only 17 significant digits of one
+    (`1.1099785955541805`, the CODATA-2018 lepton-tower derivation rather than
+    the frozen canonical pin) — a 50-dps validation passing against a q that
+    is neither live anchor.
+
+    So: select by the artifact's OWN recorded `q`, not by a path and not by the
+    manifest. That reconciles against the stamp rather than trusting a
+    filename, and it degrades honestly — an unmatched pin returns `{}`, and
+    `test_1_cross_q` then falls through to its `wenzl-bridge@100dps` reference
+    for every probe instead of comparing across a layer boundary.
+
+    Coverage note, stated precisely because it is easy to overstate: this
+    now returns 17 entries rather than 11, but `main` iterates
+    `range(2, 13)`, so only n=2..12 are ever consumed. The extra proton
+    entries are available and unused — the fix corrects WHICH table is
+    compared against, not HOW MUCH is validated, and it does not change
+    the run's cost.
+    """
+    want = mp.mpf(Q0_STR)
+    for name in _MPFR_WITNESSES:
+        p = Path(__file__).parent / name
+        if not p.exists():
+            continue
+        with p.open() as f:
+            data = json.load(f)
+        tables = data.get("tables_by_n", {})
+        if not tables:
+            continue
+        # EVERY table must be at this pin, not just the first one that has a q.
+        # (Copilot, PR #6104.) The witness records `q` PER TABLE, so a
+        # partially-regenerated file can carry mixed pins across n — and
+        # matching on the first entry would accept it and then return all of
+        # them, silently reintroducing the straddle for the n that disagree.
+        # That is the same defect this function was written to close, one
+        # level down: a check that passes on a sample and generalises to the
+        # whole.
+        # Every table that RECORDS a q must match it — but a table with no q
+        # is not evidence of a different pin, and rejecting the file for one
+        # would be too strict: the proton witness legitimately has no q on
+        # n=13..18 (the tower extension beyond the cached range), so the
+        # literal "all tables must match" rule threw the whole file away and
+        # broke this function. Instead, verify what is verifiable and DROP the
+        # unverifiable tables, so nothing unchecked is ever returned.
+        recorded = [t.get("q") for t in tables.values() if t.get("q")]
+        if not recorded:
+            continue
+        if any(abs(mp.mpf(str(q)) - want) > mp.mpf("1e-40") for q in recorded):
+            continue
+        out = {}
+        for n_str, table in tables.items():
+            if not table.get("q"):
+                continue          # unverifiable pin — omit rather than trust
+            out[int(n_str)] = {
+                tuple(w["partition"]): mp.mpf(w["y_lambda"])
+                for w in table["weights"]
+            }
+        return out
+    return {}
 
 # ────────────────────────────────────────────────────────────────
 # Test 1 — cross-q (Wenzl-bridge numeric vs reference)

@@ -314,6 +314,50 @@ def main() -> int:
         script_path=__file__,
         engine="mpmath",
     )
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    # Both checks below ALREADY EXIST in this file as bare `assert`
+    # statements (lines ~192 and ~197) with these exact tolerances, so
+    # nothing is invented and no threshold is chosen here. The reason to
+    # promote them is that a bare `assert` aborts before `save()` — the
+    # failure is loud in a terminal but leaves NO record in the witness,
+    # so a consumer reading `allPassed` learns nothing about whether
+    # they were checked at all.
+    #
+    # Both are external / algebraic facts, not self-comparisons: the
+    # first is the classical identity sum_lambda d_lambda^2/n! = 1 at
+    # q = 1, the second an exact simplification that must hold at EVERY
+    # q, tested at three unrelated points.
+    plancherel_sum_resid = abs(
+        sum(plancherel_weight(lam, mp.mpf(1)) for lam in partitions_of(5)) - 1
+    )
+    builder.add_assertion(
+        "plancherel_sum_at_q1_is_one",
+        computed=mp.nstr(plancherel_sum_resid, 8),
+        expected="0",
+        tolerance="1e-45",
+        source=(
+            "at q = 1 the Plancherel weights are d_lambda^2/n! and sum "
+            "to exactly 1 over partitions of 5 — this file's own "
+            "assert, previously invisible to the witness"
+        ),
+    )
+    gap_identity_resid = max(
+        abs(gap_bound_categorical(qq) / (((qq - 1) / qq) ** 2)
+            - gap_bound_physical_units(qq))
+        for qq in (q0, mp.mpf("1.01"), mp.mpf("1.000001"))
+    )
+    builder.add_assertion(
+        "gap_bound_normalisation_identity",
+        computed=mp.nstr(gap_identity_resid, 8),
+        expected="0",
+        tolerance="1e-40",
+        source=(
+            "gap_bound_categorical(q) / ((q-1)/q)^2 == "
+            "gap_bound_physical_units(q), an exact simplification "
+            "checked at three unrelated q (substrate, 1.01, 1.000001)"
+        ),
+    )
     out_path = builder.save()
     print(f"\n  Wrote {Path(out_path).name}")
     return 0

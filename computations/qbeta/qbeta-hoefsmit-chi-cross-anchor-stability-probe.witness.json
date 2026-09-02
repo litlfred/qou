@@ -1,23 +1,63 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:31:26.655974+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T14:00:10.996627+00:00",
+  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
   "assertions": [
     {
-      "name": "stage_b_blocker_recorded",
-      "computed": 1,
-      "expected": 1,
+      "name": "handbuild_chi_matches_repo_symbolic_route",
+      "computed": 3,
+      "expected": 3,
       "passed": true,
       "tolerance": 0,
-      "source": "Operational record: Stage B cross-anchor stability test is BLOCKED by three concrete infrastructure constraints (Python fallback q₀-only, Rust kernel build needs network, sympy convention mismatch). This probe documents the blocker + the hand-built symbolic χ values + the three unblock paths so the next session can pick this up without re-discovery."
+      "source": "Route A: trace of σ₁σ₂σ₁ from the hand-built Hoefsmit matrices in this module. Route B: chi_lambda_braid(..., precision='symbolic_q') from hecke_characters_symbolic. Exact rational functions of q, compared symbolically — the reconciliation the recorded Blocker B called out of scope."
+    },
+    {
+      "name": "pr1851_reference_column_is_single_crossing_character",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: the three reference numbers recorded in this module's docstring as PR #1851 pyhecke output at q₀. Route B: χ_λ(σ₁) at q₀ from the repo symbolic route (= q, q−1/q, −1/q). Match band 1e-6 relative — three orders tighter than the alleged 24% and eight orders looser than exact, so it distinguishes 'same quantity' from 'same to transcription precision'."
+    },
+    {
+      "name": "python_fallback_chi_at_muon_anchor_matches_kernel",
+      "computed": "1.2284476135205675102e-15",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "Route A: chi_lambda_braid at q_μ with _RUST_CHI_AVAILABLE forced False — the Python seminormal fallback the recorded Blocker A says raises ValueError for q ≠ q₀. Route B: the same character from the mpfr kernel. Tolerance 1e-12 is the f64 grade of Route A, not a precision claim. This assertion is unformable if Blocker A holds."
+    },
+    {
+      "name": "braid_relation_holds_for_handbuilt_sigmas",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: σ₁σ₂σ₁ from the hand-built Hoefsmit matrices. Route B: σ₂σ₁σ₂ from the same matrices. Symbolic in q, over all three Wedderburn blocks of H_3."
+    },
+    {
+      "name": "hecke_quadratic_relation_holds_for_handbuilt_sigmas",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Route A: σ² by matrix multiplication. Route B: h·σ + I with h = q − 1/q, the Hecke quadratic relation (σ − q)(σ + 1/q) = 0. Both generators of all three blocks, symbolic in q."
+    },
+    {
+      "name": "cross_anchor_chi_delta_matches_derivative_quadrature",
+      "computed": "0.0000000726002033390769299875235966055",
+      "expected": "0.0000000726002033390769299875235966055",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "Route A: Σ_λ |χ^λ(q_μ) − χ^λ(q_p)| by direct subtraction of two ['mpfr_50dps'] evaluations. Route B: Σ_λ |∫ dχ^λ/dq dq| across the anchor interval by mpmath quadrature of the exact symbolic derivative — no subtraction of nearly equal numbers anywhere."
     }
   ],
   "allPassed": true,
-  "durationMs": 233,
+  "durationMs": 1932,
   "computation": "qbeta-hoefsmit-chi-cross-anchor-stability-probe",
   "scriptFile": "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-  "scriptHash": "c2d30c8d57c6",
+  "scriptHash": "cd806931d3af",
   "scriptCommitSha": "ee772cd282cfcbbf33fc3d2e41e5f6b772d3db08",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -33,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "9916510690677ea8"
   },
   "invocation": {
     "argv": [
@@ -41,13 +81,14 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py"
   },
-  "description": "Stage B opening: BLOCKED by infrastructure (chi_lambda_braid Python fallback hard-blocks q ≠ q_0; Rust pyhecke_native needed for non-default q). Hand-built sympy Hoefsmit also uses a different convention (~24% off pyhecke). Documents the blocker + records hand-built χ values + symbolic forms as a reference for future reconciliation.",
+  "description": "Stage B: cross-anchor (proton vs muon) stability of the per-Wedderburn-block χ^λ(electron word). The three infrastructure blockers this probe used to record as fact are re-tested at run time — the Python fallback's q ≠ q₀ guard is gone, pyhecke_native is importable, and the '24% convention mismatch' was the recorded reference column being χ_λ(σ₁) rather than χ_λ(σ₁σ₂σ₁). The test therefore runs, by two independent routes at each anchor.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   "data": {
     "anchors": {
       "q_proton": "1.1099785827513808075916690956107688798744991218736",
       "q_muon": "1.1099785955500000000000000000000000000000000000000",
-      "delta_q": "0.000000012798619192408330904389231120125500878126400000000"
+      "delta_q": "0.000000012798619192408330904389231120125500878126400000000",
+      "delta_q_relative": "0.000000011530510039827531517828667346525264474801286279230"
     },
     "per_block_handbuild_chi_symbolic": [
       {
@@ -55,7 +96,13 @@
           3
         ],
         "chi_symbolic_q": "q**3",
-        "chi_at_q_proton_handbuild": "1.367551836951385187966724"
+        "chi_at_q_proton_handbuild": "1.367551836951385187966724",
+        "chi_symbolic_repo_route": "q**3",
+        "handbuild_matches_repo_symbolic": true,
+        "chi_single_crossing_symbolic": "q",
+        "chi_single_crossing_at_q_proton": "1.109978582751380807591669",
+        "pr1851_recorded_reference": "1.1099785828",
+        "recorded_reference_is_single_crossing": true
       },
       {
         "lambda": [
@@ -63,7 +110,13 @@
           1
         ],
         "chi_symbolic_q": "0",
-        "chi_at_q_proton_handbuild": "0.0"
+        "chi_at_q_proton_handbuild": "0.0",
+        "chi_symbolic_repo_route": "0",
+        "handbuild_matches_repo_symbolic": true,
+        "chi_single_crossing_symbolic": "q - 1/q",
+        "chi_single_crossing_at_q_proton": "0.2090602987956393154308462",
+        "pr1851_recorded_reference": "0.2090603054",
+        "recorded_reference_is_single_crossing": true
       },
       {
         "lambda": [
@@ -72,25 +125,95 @@
           1
         ],
         "chi_symbolic_q": "-1/q**3",
-        "chi_at_q_proton_handbuild": "-0.7312337075494336740413528"
+        "chi_at_q_proton_handbuild": "-0.7312337075494336740413528",
+        "chi_symbolic_repo_route": "-1/q**3",
+        "handbuild_matches_repo_symbolic": true,
+        "chi_single_crossing_symbolic": "-1/q",
+        "chi_single_crossing_at_q_proton": "-0.9009182839557414921608229",
+        "pr1851_recorded_reference": "-0.9009183122",
+        "recorded_reference_is_single_crossing": true
       }
     ],
-    "blockers": {
-      "A_chi_lambda_braid_python_fallback_q0_only": true,
-      "B_handbuild_convention_mismatch_pct": 24,
-      "C_pyhecke_native_build_requires_cargo_and_network": true
-    },
-    "follow_ups_for_unblock": [
-      "Build pyhecke_native (needs cargo + network).",
-      "Reconcile sympy Hoefsmit convention against Rust source.",
-      "Patch Python fallback to accept arbitrary q."
+    "cross_anchor_chi": [
+      {
+        "lambda": [
+          3
+        ],
+        "chi_at_q_proton": "1.3675518369513851879667240299093610007110975207729",
+        "chi_at_q_muon": "1.3675518842570962912832875913788750000000000000000",
+        "delta_direct_subtraction": "0.000000047305711103316563561469513999288902479227100000000",
+        "delta_derivative_quadrature": "0.000000047305711103316563561469513999288902479227153528573",
+        "relative_delta": "0.000000034591530518340581422188510907624934814666523067986",
+        "precision_tag": "mpfr_50dps"
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "chi_at_q_proton": "-3.3409558876152445576756705839393523485189961001313e-51",
+        "chi_at_q_muon": "5.3455294201843912922810729343029637576303937602101e-51",
+        "delta_direct_subtraction": "8.6864853077996358499567435182423161061493898603414e-51",
+        "delta_derivative_quadrature": "0.0",
+        "relative_delta": "-2.6000000000000000000000000000000000000000000000000",
+        "precision_tag": "mpfr_50dps"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "chi_at_q_proton": "-0.73123370754943367404135278109510642676398980932944",
+        "chi_at_q_muon": "-0.73123368225494143828098635504102382051656541014308",
+        "delta_direct_subtraction": "0.000000025294492235760366426054082606247424399186360000000",
+        "delta_derivative_quadrature": "0.000000025294492235760366426054082606247424399186368596777",
+        "relative_delta": "-0.000000034591529321766639212224736671574619441738123355076",
+        "precision_tag": "mpfr_50dps"
+      }
     ],
+    "chi_precision_tags": [
+      "mpfr_50dps"
+    ],
+    "blockers_measured": {
+      "A_python_fallback_rejects_non_q0": {
+        "recorded": true,
+        "measured": false,
+        "detail": "fallback accepted q ≠ q₀"
+      },
+      "B_handbuild_convention_mismatch": {
+        "recorded_pct": 24,
+        "measured": "no mismatch — the recorded reference column is chi_lambda(sigma_1), not chi_lambda(sigma_1 sigma_2 sigma_1); against the same word the hand-build and the repo route agree exactly",
+        "handbuild_matches_repo_symbolic_blocks": "3/3",
+        "reference_matches_single_crossing_blocks": "3/3"
+      },
+      "C_pyhecke_native_unavailable": {
+        "recorded": true,
+        "measured": {
+          "pyhecke_native_importable": true,
+          "pyhecke_native_version": "0.9.0",
+          "rust_chi_available_in_hecke_characters": true
+        }
+      }
+    },
+    "hecke_representation_self_check": {
+      "braid_relation_blocks": "3/3",
+      "quadratic_relation_generators": "6/6"
+    },
     "verdict": {
-      "stage_b_status": "BLOCKED — operator-level cross-anchor test cannot run in this environment",
-      "stage_b_test_ran": false,
-      "next_session_unblock_paths": "A/B/C above"
+      "stage_b_status": "RAN — every recorded blocker re-tested; A and C stale, B a braid-word misattribution rather than a convention conflict",
+      "stage_b_test_ran": true,
+      "open_question": "interpretation: (2,1) carries no signal (χ ≡ 0), (3,) and (1,1,1) move at first order in Δq/q. Whether that clears the PR #1836 scalar gate is a threshold question."
+    },
+    "blocker_a_fallback_vs_reference": {
+      "(3,)": "0.0000000000000012284476135205675102002620697021484375000000000000",
+      "(2, 1)": "2.7755575615628913510590791702270508347052942018439e-16",
+      "(1, 1, 1)": "8.7367664668500037911522100266600245500000000000000e-16"
     }
   },
+  "caveats": [
+    "The comment above Q_PROTON_STR says 'Q_MUON - Q_PROTON is ~1.28e-11 from two values that agree to 11 digits'. Measured: Δq = 1.279861919e-8 ≈ 1.28e-8, and the two anchors agree to 8 significant digits, not 11. The mantissa is right and the exponent is three orders out. The comment's conclusion still holds in direction — float64 subtraction of these two anchors loses about half its digits — but the severity it states is overstated, and the '5 significant digits' figure that follows from 1.28e-11 is not what this anchor pair actually costs."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

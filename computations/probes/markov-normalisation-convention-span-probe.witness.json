@@ -1,0 +1,123 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:12:47.165650+00:00",
+  "commitSha": "4f83a2c2dd29788823227451fc2712ce81d1b00b",
+  "assertions": [
+    {
+      "name": "framing_factor_between_normalisers_is_q",
+      "computed": "1.10997858275138080759166909561",
+      "expected": "1.10997858275138080759166909561",
+      "passed": true,
+      "tolerance": "1e-35",
+      "source": "ratio of the corpus partition-function normaliser (1+q^2) to the unframed loop value [2]_q, vs the substrate constant q0 read from q_parameter"
+    },
+    {
+      "name": "no_convention_member_reaches_B_over_A_plateau_AT_THE_m_e_SCALE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "max over the family is 1.4156404 MeV/nucleon AT m_e; the empirical B/A plateau is 8.5 MeV/nucleon (independent: nuclear data). ⚠ The scale qualifier is not cosmetic: at the corpus's own E_0 the same family gives 11.596588 MeV/nucleon at its maximum and every member CLEARS the plateau, which is why this probe's verdict is withdrawn."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "markov-normalisation-convention-span-probe",
+  "scriptFile": "markov_normalisation_convention_span_probe.py",
+  "scriptHash": "bc51c23e51fc",
+  "scriptCommitSha": "1f0fbac1a0cd7f3ddd4ae9af8416459cb3be4918",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/markov_normalisation_convention_span_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/markov_normalisation_convention_span_probe.py"
+  },
+  "description": "A1/qou-78pt: measures the span of the Markov-normalisation convention family against the extensive-term deficit. The family is discrete and 1.33x wide. VERDICT WITHDRAWN 2026-08-31: the 6-15x deficit was an m_e-vs-E_0 energy-scale artifact; at E_0 the deficit is 1.36-1.81x, the same size as the span, so A1 reverts to unfalsifiable-as-written. See the SCALE_CORRECTION data block.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "strands_per_nucleon": 3
+  },
+  "data": {
+    "family": [
+      {
+        "normaliser": "[2]_q = q + 1/q (unframed Jones/TL loop)",
+        "loop_value": "2.01089686670712",
+        "MeV_per_strand": "0.356974068493",
+        "MeV_per_nucleon_at_3_strands": "1.07092220548"
+      },
+      {
+        "normaliser": "[2]_Q = 1 + q^2 (corpus partition function)",
+        "loop_value": "2.23205245416676",
+        "MeV_per_strand": "0.410292067091",
+        "MeV_per_nucleon_at_3_strands": "1.23087620127"
+      },
+      {
+        "normaliser": "q^(1/2) + q^(-1/2) (Kauffman variable)",
+        "loop_value": "2.00272236386053",
+        "MeV_per_strand": "0.354892571513",
+        "MeV_per_nucleon_at_3_strands": "1.06467771454"
+      },
+      {
+        "normaliser": "|-q^(1/2) - q^(-1/2)| (Kauffman bracket delta)",
+        "loop_value": "2.00272236386053",
+        "MeV_per_strand": "0.354892571513",
+        "MeV_per_nucleon_at_3_strands": "1.06467771454"
+      },
+      {
+        "normaliser": "1 + q^4 (over-shoot control)",
+        "loop_value": "2.51795324981835",
+        "MeV_per_strand": "0.471880125606",
+        "MeV_per_nucleon_at_3_strands": "1.41564037682"
+      }
+    ],
+    "span": {
+      "min_MeV_per_nucleon": "1.06467771454",
+      "max_MeV_per_nucleon": "1.41564037682",
+      "span_ratio": "1.3296422",
+      "deficit_vs_plateau": "6.00435x .. 7.98364x",
+      "deficit_vs_a_V": "11.161x .. 14.8402x",
+      "verdict": "span (1.33x) is two orders of magnitude smaller than the deficit (6-15x)"
+    },
+    "what_closure_would_require": {
+      "loop_value_at_3_strands": "255.87653",
+      "family_offers": "2.00272 .. 2.51795",
+      "strands_per_nucleon_at_corpus_normaliser": "20.716949",
+      "corpus_fixes": 3
+    },
+    "SCALE_CORRECTION_2026_08_31_VERDICT_WITHDRAWN": {
+      "what_is_wrong": "Every MeV figure here uses m_e as the energy scale, unjustified. The corpus's binding machinery uses E_0 = m_e/(q_0(q_0-1)).",
+      "E_0_MeV": "4.1859813632944758969",
+      "scale_ratio": "8.1917611721945038989",
+      "corrected_family_MeV_per_nucleon": "8.7215856 .. 11.596588",
+      "corrected_vs_plateau": "1.02607x .. 1.3643x OVER (every member clears 8.5)",
+      "corrected_vs_a_V": "1.36247x .. 1.8116x short",
+      "span_unchanged": "1.32964",
+      "why_the_verdict_falls": "The refutation was 'span 1.33x vs deficit 6-15x, two orders of magnitude too small'. Corrected, the deficit against a_V is 1.36-1.81x and the span is 1.33x -- the SAME SIZE. That is precisely the condition under which picking a member is a fit, i.e. the ROAST's original charge. A1 REVERTS to 'unfalsifiable as written'; pinning the convention from the axioms is again the actual work.",
+      "see": "computations/probes/extensive_term_energy_scale_reconciliation_probe.py"
+    },
+    "unreconciled_RESOLVED_2026_08_31": {
+      "roast_claim_MeV_per_strand": "2.91",
+      "resolution": "E_0-scaled, not m_e-scaled. 2.91/E_0 = 0.69517749, which is ln 2 = 0.69314718 to 0.3% -- the ROAST's own stated construction 'the extensive coefficient is E_0 log N' at N = 2. At m_e the figure is UNREACHABLE: it would need a normaliser with log = 5.69473, against a family whose logs span 0.694-0.923. Failing to reproduce it was the tell; I logged it as open instead of chasing it."
+    },
+    "unreconciled_ORIGINAL_TEXT_kept_for_the_record": {
+      "roast_claim_MeV_per_strand": "2.91",
+      "this_probe_range_MeV_per_strand": "0.354893 .. 0.47188",
+      "note": "6-8x apart; the ROAST does not show its construction and this probe does not reconstruct it. The span argument is a ratio and is unaffected either way."
+    },
+    "verdict": "[WITHDRAWN 2026-08-31 -- see SCALE_CORRECTION block. Kept verbatim so the retraction has something to point at.] A1 REFUTED, not unfitted. The ROAST called the option unfalsifiable because 'do not normalise' is a convention family and choosing the member that lands on a_V would be a fit. Measured, the family is DISCRETE (the two leading members differ by exactly one factor of q) and spans 1.33x, while the deficit is 6-15x. No member lands on a_V, so there is no fit available -- the option fails uniformly over the family. Pinning the convention from the axioms, which the ROAST called 'the actual work', is therefore not needed to dispose of A1."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

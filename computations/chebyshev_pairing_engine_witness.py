@@ -106,10 +106,58 @@ def main():
     }
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
     from witness_base import WitnessBuilder
-    out = WitnessBuilder.wrap_legacy(
+
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing,
+    # so it read as a pass to every consumer of that field. Nothing is
+    # invented here: the checks below were ALREADY computed (`ok`,
+    # `identity_holds`, `sign_alternation_ok` above) and stored as data
+    # — they were simply never asserted, so no consumer could see a
+    # failure. The tolerance is the module's own TOL, declared at the
+    # top of this file before any result is computed, so it is not a
+    # threshold reverse-engineered from the observed residual.
+    #
+    # These are falsifiable and are not self-comparisons: `lhs` is
+    # (σ⁻¹)^Z built by repeated matrix multiplication, `rhs` is the
+    # closed form c_Z·σ + d_Z. A wrong c_Z / d_Z breaks the identity.
+    n_identity_ok = sum(1 for r in per_q if r["identity_holds"])
+    n_sign_checked = sum(1 for r in per_q if r["sign_alternation_ok"] is not None)
+    n_sign_ok = sum(1 for r in per_q if r["sign_alternation_ok"] is True)
+    overall_max_resid = max(
+        (mp.mpf(r["max_residual"]) for r in per_q), default=mp.mpf(0)
+    )
+
+    builder = WitnessBuilder.wrap_legacy(
         "chebyshev-pairing-engine", witness,
         script_path=__file__, engine="mpmath",
-    ).save()
+    )
+    builder.add_assertion(
+        "identity_holds_all_q",
+        computed=n_identity_ok,
+        expected=len(per_q),
+        tolerance=0,
+        source=(
+            "(σ⁻¹)^Z = c_Z·σ + d_Z in H₂(q), residual ≤ TOL at every "
+            "sampled q; the identity is q-independent and algebraic"
+        ),
+    )
+    builder.add_assertion(
+        "sign_alternation_all_q_gt_1",
+        computed=n_sign_ok,
+        expected=n_sign_checked,
+        tolerance=0,
+        source="c_Z < 0 for even Z and > 0 for odd Z when q > 1",
+    )
+    # Strings keep the residual out of float64 (drained convention,
+    # qou-t0rf); expected 0 because the identity is exact.
+    builder.add_assertion(
+        "max_residual_within_declared_TOL",
+        computed=mp.nstr(overall_max_resid, 8),
+        expected="0",
+        tolerance=mp.nstr(TOL, 2),
+        source="module constant TOL, declared before any result is computed",
+    )
+    out = builder.save()
     print(f"all_ok = {all_ok}")
     for r in per_q:
         print(f"  q={r['q']:>8}  max_resid={r['max_residual']}  "

@@ -28,7 +28,7 @@ abbrev R_q := ℝ
 /-- **Quantum temperature** `T_q(p) = ℏ_q(p)`.
     The brane is at unit thermal scale set by the quantum Planck constant
     (see `quantum-pressure.md`: `T_q = ℏ_q`, `β_q = 1/ℏ_q = t_P(q)`). -/
-noncomputable def quantumTemperature {M : Type*} (sp : SubstrateParameter M)
+noncomputable def quantumTemperature {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : R_q :=
   quantumPlanckConstant sp p
 
@@ -36,7 +36,7 @@ noncomputable def quantumTemperature {M : Type*} (sp : SubstrateParameter M)
     N non-interacting particle knots in a region with quantum volume V_q.
     Label: prop:quantum-ideal-gas-law -/
 structure IdealKnotGas (M : Type*) where
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   point : M
   /-- Number of particle knots. -/
   N : ℕ
@@ -81,7 +81,7 @@ theorem correctionFactor_vanishes_at_zero (S : R_q) (q2 : R_q) (hq2 : q2 ≠ 0) 
     This encodes the equation of state at zeroth order in ℏ_q.
     The full equation includes the correction 1 + ℏ_q²⟨S_q⟩/[2]_q. -/
 theorem ideal_gas_leading_order {M : Type*}
-    (sp : SubstrateParameter M) (p : M)
+    (sp : ArchimedeanSubstrateField M) (p : M)
     (hq : sp.field p > 1)
     (N : ℕ) (V_q P_q : R_q)
     (h_eos : P_q * V_q = N * quantumPlanckConstant sp p) :
@@ -95,7 +95,7 @@ theorem ideal_gas_leading_order {M : Type*}
     Given the equation of state with correction factor, the pressure-volume
     product decomposes into the classical part N·T_q and the q-anomaly part. -/
 theorem ideal_gas_full {M : Type*}
-    (sp : SubstrateParameter M) (p : M)
+    (sp : ArchimedeanSubstrateField M) (p : M)
     (hq : sp.field p > 1)
     (N : ℕ) (P_q V_q S_q : R_q)
     (hS : 0 ≤ S_q)
@@ -117,7 +117,7 @@ theorem ideal_gas_full {M : Type*}
 /-- The full equation of state decomposes as PV = NT + N·T·correction:
     the correction is additive. -/
 theorem ideal_gas_decomposition {M : Type*}
-    (sp : SubstrateParameter M) (p : M)
+    (sp : ArchimedeanSubstrateField M) (p : M)
     (hq : sp.field p > 1)
     (N : ℕ) (S_q : R_q) (hS : 0 ≤ S_q) :
     let hbar := quantumPlanckConstant sp p

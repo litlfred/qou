@@ -106,6 +106,7 @@ import QOU.MathlibExt.BraidedTensorDual
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.TwistedQuantumDimension
+import QOU.MathlibExt.SphericalCategory
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
@@ -187,8 +188,13 @@ import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
+import QOU.MathlibExt.ManifoldVolumePositive
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
+import QOU.Knot.FiveTwoAngleSum
+import QOU.Knot.FiveTwoNinthPower
+import QOU.Knot.FiveTwoVolumeChord
+import QOU.Knot.FiveTwoShapeBounds
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
 import QOU.Knot.IdealTetLawOfSines
@@ -224,11 +230,17 @@ import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+import QOU.MassTheory.MarginalRatioExtensivity
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
+import QOU.MassTheory.CrossingCountAffine
+import QOU.MassTheory.CoulombFromCrossingCounts
+import QOU.MassTheory.BondChargeRule
+import QOU.MassTheory.BondArcTheorems
+import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
 import QOU.MassTheory.SaturationRhoCap
@@ -319,6 +331,12 @@ import QOU.Mass.QBetaProxyHReduction
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
+import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mass.SumSYTEqInvolution
+import QOU.Mathlib.YoungLatticeUpOperator
+import QOU.Mathlib.SkewSYTMaxCorner
+import QOU.Mathlib.YoungLatticeExchange
+import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
@@ -329,6 +347,12 @@ import QOU.Mass.BondChannelClassSelection
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
 -- conditional theorem that logarithmic k(A) follows (k∝A / k∝bond-count excluded).
 import QOU.Mass.LevelSelectionLogarithmic
+-- 3D-realizability cap on max-contact coordination: a pairwise-equidistant family
+-- has at most finrank members, so the complete contact graph K_A is realizable in
+-- ℝ³ only for A ≤ 4. Replaces the EMPIRICAL premise ("saturation is observed")
+-- that CoordinationSaturation's complete-graph exclusion rested on.
+import QOU.Mass.EquidistantCoordinationCap
+import QOU.Mass.StrandLayoutForcesChain
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -432,6 +456,9 @@ import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
+import QOU.Archimedean.LobMonotonicity
+import QOU.Archimedean.BlochWignerNonneg
+import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
@@ -647,6 +674,7 @@ import QOU.QBeta.BarOddLadderShape
 import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
 import QOU.QBeta.PairingSeesCommutator
+import QOU.QBeta.GluonVertexPsdParity
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate
@@ -742,6 +770,17 @@ import QOU.QBeta.CuspShapeBarParity
 import QOU.QBeta.ArgUPhaseBranchSelection
 import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
+import QOU.QBeta.HolonomySpectrumSignObstruction
+import QOU.QBeta.ImQCannotSupplyEllipticGenerator
+import QOU.QBeta.BringEllipticCurveJInvariant
+import QOU.QBeta.JetTowerBlindToDecay
+import QOU.QBeta.TraceRealSpectrumComplex
+import QOU.QBeta.TracelessDifferenceEllipticity
+import QOU.QBeta.DiscriminantCurveInQ
+import QOU.QBeta.TraceBlindSector
+import QOU.QBeta.BondDecayRates
+import QOU.QBeta.CosineParametrisationUnfalsifiable
+import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
 import QOU.QBeta.SLeakMagnitudeOffsetRatio
 import QOU.QBeta.SLeakMagnitudeTaylorRatio
@@ -869,7 +908,6 @@ import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
-import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
@@ -1247,6 +1285,96 @@ import QOU.Mathlib.RothOperatorFamily
 -- vector, one ordering) to the split form every operator-family result is written for.
 import QOU.Mathlib.RothVariableSplit
 import QOU.Mathlib.RothRealLadder
+import QOU.Mathlib.RothGammaProducer
+import QOU.Mathlib.RothAuxiliaryPolynomial
+import QOU.Mathlib.RothHouseBound
+import QOU.Mathlib.RothAuxiliaryConstruction
+import QOU.Mathlib.RothAuxiliary
+-- Roth's theorem step 2, arithmetic half: a translated coefficient at a rational
+-- point has denominator dividing prod q_h^{r_h}, so any bound below its reciprocal
+-- forces it to vanish -- which is a lower bound on the index there, the statement
+-- Roth's Lemma (step 3) contradicts.  The analytic half (Taylor expansion about
+-- alpha) is deliberately left as a hypothesis; see the module header.
+import QOU.Mathlib.RothRationalIndex
+-- The two facts step 2's smallness hypothesis is built from: Taylor's theorem in
+-- the form Roth needs (translating by alpha then gamma is translating by alpha+gamma,
+-- so the index at alpha deletes the low-weight terms of the expansion at alpha+gamma),
+-- and a translateMatrix bound that TRACKS the power of gamma the entry carries.
+-- RothAuxiliaryPolynomial's (2B)^{|n|} is the wrong shape here: step 2's whole content
+-- is that gamma = beta - alpha is tiny, and that bound throws it away.
+import QOU.Mathlib.RothTaylorBound
+-- Produces the constant S the Taylor bound was left waiting on, and closes step 2.
+-- Two weightings meet here: the index gap is weighted by 1/r_h, the sizes by log q_h,
+-- and r_h * T_h >= K is exactly what converts one into the other.  That is Roth's
+-- normalisation r_h log q_h ~ L in the only form the estimate needs -- the same fact
+-- RothGammaProducer discharges for Gamma_m's growth clause.
+import QOU.Mathlib.RothIndexGap
+-- Step 4: steps 2 and 3 collide.  Both bound the SAME number -- the index of the
+-- auxiliary polynomial at the rational point -- one from below, one from above, and
+-- Roth's theorem is that for the right parameters they cannot both hold.  Nothing was
+-- mathematically missing; what was missing is that the two had never been written in
+-- one place, so nothing forced their interfaces to agree (algebraMap vs Int.castRingHom,
+-- and Gamma_m's p,q against the numerators and denominators of the approximations, which
+-- are unrelated despite the shared letters).
+import QOU.Mathlib.RothContradiction
+-- The two-sided normalisation step 4's inequality needs -- and the finding that
+-- rothDegrees already satisfies it.  r_h = log_{H_h} N puts r_h log H_h within
+-- log H_h of log N on BOTH sides, so Gamma_m's growth clause (which consumes the
+-- lower half) and step 4's inequality (which needs both) were never using different
+-- normalisations.  The worry that opened qou-ujl8 was unfounded; recording that they
+-- coincide is the fix, not a record reconciling them.
+import QOU.Mathlib.RothNormalisation
+-- O_K's replacement for "a non-zero integer has absolute value at least one".
+-- Over Z smallness at the one place forces vanishing; over O_K it does not -- an
+-- algebraic integer can be tiny at one place and enormous elsewhere with |N(x)| >= 1
+-- intact.  Vanishing needs smallness at phi_0 AND a bound at every other conjugate,
+-- so the O_K case has an input the Z case does not.  Not a generalisation: a
+-- different theorem with different hypotheses.
+import QOU.Mathlib.RothAlgebraicInteger
+-- Step 2 over O_K, assembled: the Taylor bound at phi_0 and the height budget at
+-- the other d-1 conjugates meet the vanishing criterion.  The two enter the final
+-- inequality DIFFERENTLY -- phi_0 linearly, the conjugate bound raised to the d-1 --
+-- so slack in conjBound costs d-1 times as much, which is why it is named.  Over Z
+-- the asymmetry vanishes because d = 1; that is a fact about the shape, not a route
+-- from one vanishing criterion to the other.
+import QOU.Mathlib.RothAssembly
+-- ROUTE A: the auxiliary polynomial over Z, so that step 1 can reach step 3 at all.
+-- RothAuxiliary builds it over O_K (that is what Mathlib's number-field Siegel lemma
+-- produces) while Roth's Lemma requires MvPolynomial sigma Z through InRothPolySet, so
+-- those two never composed.  The join is made here on the Z side, which is cheaper:
+-- Siegel over Z is in Mathlib and everything from step 2 onward already works over Z.
+-- One O_K-linear vanishing condition is finrank Q K integer ones, so deg(alpha) comes
+-- back into the count and "take m large" becomes m > deg(alpha)/(4 eps^2).
+import QOU.Mathlib.RothAuxiliaryInt
+-- THE CHAIN CLOSES: steps 1 -> 2 -> 3 -> 4 with the coefficient rings agreeing.
+-- Two pieces of glue, both small enough to be invisible and large enough to be wrong:
+-- Siegel states its height bound over R while InRothPolySet wants an integer, so the
+-- ceiling is taken (the only direction that is a consequence rather than an assertion);
+-- and step 1 proves the index over K while step 2 consumes it over R, so it transports
+-- along a real embedding -- which is a real hypothesis, being the statement that the
+-- alpha_h are REAL algebraic numbers, and the composition refuses to typecheck without one.
+import QOU.Mathlib.RothIntegerChain
+-- THE PARAMETER SELECTION -- the one piece of the arc that CONSTRUCTS data rather
+-- than composing supplied hypotheses, and the only place the "infinitely many
+-- solutions" assumption is consumed.  Greedy recursion: pick a denominator past a
+-- threshold, raise it to a power, pick another past THAT.  The max against a floor is
+-- load-bearing -- without it a later height could land below the floor and Gamma_m's
+-- two_le would fail on every index but the first.  At floor 2^F it discharges clause 3
+-- as well, which is the clause that bites hardest (m = 2 needed H = 1024 for it).
+import QOU.Mathlib.RothSelection
+-- The two size estimates hbound's non-circularity rests on, and which RothSelection
+-- could only state: #box <= 2^{sum r_h} and ||auxMatrixInt|| <= c(K) (2B)^{sum r_h}.
+-- Both constants are inert in r, so log b is LINEAR in sum r_h -- which is what lets
+-- the log N on the two sides of b^{mq} <= H_0^{r_0 p} cancel.  The coordinate-vs-house
+-- comparison is Mathlib's basis_repr_norm_le_const_mul_house, so the arc assumes nothing.
+import QOU.Mathlib.RothSiegelBound
+-- The exchange between the two currencies the chain is stated in.  The selection produces
+-- heights and a threshold N; roth_contradiction_of_normalisation consumes real constants
+-- cH, theta, L' and one inequality.  Every conversion turns out to be a FLOOR on the heights
+-- or a POWER of them below N -- exactly the selection's own parameters.  The normalisation
+-- slack eta is 1/k from (H h)^k <= N, and height_le_mul_den is what makes a floor on the
+-- heights serve as a floor on the DENOMINATORS, which is what hpt actually constrains.
+import QOU.Mathlib.RothFinalAssembly
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
@@ -1257,6 +1385,7 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+import QOU.Mathlib.KazhdanLusztigBasis
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
@@ -1293,3 +1422,27 @@ import QOU.Archimedean.ParticleKnots
 -- either, since the old file type-checked fine; but an uncompiled module is one
 -- nobody has reason to open.  Wiring it in at least puts it in the build.
 import QOU.Observations.centered_hecke_variance_positive
+
+-- Hook-sum / balanced-twist cluster (bean qou-si7d). Four modules that nothing
+-- imported, so nothing that WALKS imports -- blueprint, doc-gen, dependency
+-- analysis, an import cone rooted at `QOU` -- could see them. They were still
+-- compiled: `globs = ["QOU", "QOU.+"]` (bean qou-rc7b) covers the whole tree,
+-- and qou-kljb closed on exactly that finding. So this buys visibility, not
+-- coverage; do not cite it as the latter.
+--
+-- `TwistUnconditional` is the one that matters. It discharges a previously
+-- HYPOTHESISED hook-sum exponent in the balanced-quantum-twist result using
+-- `HookSumComplete.hookSum_eq` -- a real theorem consuming a real dependency,
+-- invisible to every import-walking tool until now. Importing it also reaches
+-- `QOU.Common.BalancedQuantumTwist`, which nothing else imported either.
+--
+-- `HookSumGeneral` (the arm half, predecessor of `HookSumComplete`) and
+-- `HookSumIdentity` (`decide`-checked small shapes) are kept rather than
+-- deleted: the `decide` cases are a cheap INDEPENDENT check of an identity now
+-- proved twice in general -- once over `List ℕ` and once over `YoungDiagram`
+-- (`QOU.BraidKnot.HookSum`), with `HookSumRegisterBridge` proving the two equal.
+--
+-- All four verified to compile standalone before wiring (`lean` direct, EXIT=0).
+import QOU.Common.TwistUnconditional
+import QOU.Common.HookSumGeneral
+import QOU.Common.HookSumIdentity

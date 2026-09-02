@@ -1,25 +1,43 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:41:56.678257+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-30T13:17:36.793086+00:00",
+  "commitSha": "7b873928612b64247aed4ea863616754cd9a366b",
   "assertions": [
     {
-      "name": "snappy_available",
+      "name": "figure8_volume_matches_lobachevsky_closed_form",
+      "computed": "2.029883212819307250042405108549040571883",
+      "expected": "2.029883212819307250042405108549040571883",
+      "passed": true,
+      "tolerance": "1e-38",
+      "unit": "hyperbolic volume",
+      "source": "volume-engine calibration: SnapPy's numerical gluing-equation solve of the figure-eight exterior (bits_prec=200) vs Thurston's closed form 6·Λ(π/3) = 3·Cl₂(2π/3) via mpmath's Clausen function — two independent routes to the same constant, agreeing to ~40 dps (snappy 3.3.2)."
+    },
+    {
+      "name": "separability_misses_beyond_50pct_spread",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": "0.5",
       "unit": "boolean",
-      "source": "snappy.version() = 3.3.2"
+      "source": "V(K) = Vol_hyp(K) does NOT separate: rel_std = 1.3982 is at or beyond the 0.5 MISS boundary (committed run: 1.398, max/min = 153×). Pinned as a regression guard — a rerun finding rel_std < 0.5 flips this and reopens conj:delta-lambda-categorical-closure."
+    },
+    {
+      "name": "empirical_tabulation_covers_every_declared_atom",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "atoms",
+      "source": "atoms recovered from delta-lambda-empirical-tabulation.witness.json vs the ATOMS roster this producer declares."
     }
   ],
   "allPassed": true,
-  "durationMs": 784,
+  "durationMs": 668,
   "computation": "delta-lambda-jsj-phase3",
   "scriptFile": "delta_lambda_jsj_phase3.py",
-  "scriptHash": "032039ea55be",
-  "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
+  "scriptHash": "c2bbbd011fdf",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,11 +49,15 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
-  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form \u0394_\u03bb(K) = \u03a3_P c_\u03bb^(P) \u00b7 Vol_hyp(P) on D, T, \u00b3He, \u2074He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |\u0394_\u03bb*|.",
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_jsj_phase3.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_jsj_phase3.py"
+  },
+  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form Δ_λ(K) = Σ_P c_λ^(P) · Vol_hyp(P) on D, T, ³He, ⁴He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |Δ_λ*|.",
   "parameters": {
     "snappy_version": "3.3.2",
     "q0": "1.1099785827513808"
@@ -66,31 +88,49 @@
         "n_components": 2,
         "hyperbolic_volume": 12.776095504236459,
         "n_tetrahedra": 20,
-        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
+        "simplification": "global→level→global→level→global"
       },
       "T": {
         "word_length": 35,
         "n_strands": 9,
         "n_components": 3,
-        "hyperbolic_volume": 12.776095552543637,
+        "hyperbolic_volume": 12.77609523096569,
         "n_tetrahedra": 31,
-        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
+        "simplification": "global→level→global→level→global"
       },
       "3He": {
         "word_length": 35,
         "n_strands": 9,
         "n_components": 1,
-        "hyperbolic_volume": 12.554080052250034,
+        "hyperbolic_volume": 12.5540911654301,
         "n_tetrahedra": 30,
-        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
+        "simplification": "global→level→global→level→global"
       },
       "4He": {
         "word_length": 47,
         "n_strands": 12,
         "n_components": 2,
-        "hyperbolic_volume": 12.554074507253288,
-        "n_tetrahedra": 44,
-        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
+        "hyperbolic_volume": 12.55407716263457,
+        "n_tetrahedra": 41,
+        "simplification": "global→level→global→level→global"
+      }
+    },
+    "declared_vs_inferred_strand_counts": {
+      "D": {
+        "declared_n_strands": 6,
+        "strands_snappy_infers": 5
+      },
+      "T": {
+        "declared_n_strands": 9,
+        "strands_snappy_infers": 8
+      },
+      "3He": {
+        "declared_n_strands": 9,
+        "strands_snappy_infers": 8
+      },
+      "4He": {
+        "declared_n_strands": 12,
+        "strands_snappy_infers": 11
       }
     },
     "empirical_best_abs_delta": {
@@ -101,19 +141,23 @@
     },
     "delta_over_vol_ratios": {
       "D": 1.7968249623271584,
-      "T": 28.66952493071679,
-      "3He": 16.80277609770221,
-      "4He": 274.9022784948189
+      "T": 28.669525652336876,
+      "3He": 16.802761223485202,
+      "4He": 274.9022203487397
     },
     "ratio_stats": {
-      "mean": 80.54285112139127,
+      "mean": 80.54283304672224,
       "min": 1.7968249623271584,
-      "max": 274.9022784948189,
-      "max_over_min": 152.99335453286398,
-      "rel_std": 1.398222006615652,
+      "max": 274.9022203487397,
+      "max_over_min": 152.99332217240573,
+      "rel_std": 1.3982220340066716,
       "n_valid": 4
     },
-    "verdict": "MISS \u2014 rel_std = 1.398, V(K) = Vol(K) insufficient",
+    "verdict": "MISS — rel_std = 1.398, V(K) = Vol(K) insufficient",
+    "figure8_calibration": {
+      "snappy_volume_bits_prec_200": "2.029883212819307250042405108549040571883",
+      "lobachevsky_closed_form": "2.029883212819307250042405108549040571883"
+    },
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-empirical-tabulation.witness.json",
@@ -125,7 +169,10 @@
       }
     ]
   },
+  "caveats": [
+    "BRAID CONSTRUCTION DEFECT (open, not fixed here): the shifted sub-words use `g + k` on the SIGNED generator, so a negative generator is reflected instead of translated (σ_2⁻¹ + 3 = +1, not -5). SnapPy therefore closes a braid on ['3He', '4He', 'D', 'T'] with fewer strands than declared, and every hyperbolic volume in this witness is the volume of that collapsed braid. The separability verdict below is conditional on this defect being repaired."
+  ],
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

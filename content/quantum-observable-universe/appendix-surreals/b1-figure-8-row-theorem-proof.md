@@ -20,7 +20,7 @@ specific number $2 D(\zeta_6) = 2\,\mathrm{Cl}_2(\pi/3) \approx
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 **Theorem-level (explicit Hoefsmit/Markov computation).**
 
-**Step 4.** Murakami–Murakami 2001 [@murakami-murakami2001]:
+**Step 4.** Murakami–Murakami 2001 \cite{murakami-murakami2001}:
 
 $$
   \lim_{N \to \infty} \frac{2\pi}{N} \log\!\bigl|J_{4_1}^{(N)}(e^{2\pi i/N})\bigr|

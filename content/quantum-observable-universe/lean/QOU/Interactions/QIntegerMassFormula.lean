@@ -112,6 +112,33 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
   -- Term 7: shell correction (increases binding at magic numbers)
   + delta_S q m_e * (f_Z + f_N) / A ^ (2/3 : ℝ)
 
+-- ── NAME COLLISION — read before citing "the Lean" for this class ──
+--
+-- `QOU.Interactions.QIntegerMassFormula` is declared TWICE in this repository,
+-- with the same namespace and the same class name:
+--
+--   * THIS file, `lean/QOU/Interactions/QIntegerMassFormula.lean` — compiled by
+--     lake, and with **zero consumers in the compiled tree** (measured
+--     2026-08-29).
+--   * `content/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean`
+--     — outside `lean/`, so NOT compiled. It states `fits_AME` directly instead
+--     of forwarding it to `IsAMEValue.fits_bound`, and supplies no instance, so
+--     its `fits_AME_conditional` is genuinely conditional.
+--
+-- The two differ in exactly the field that carries the conjecture, so "the Lean
+-- says X" is ambiguous between them. A content block's `lean.ref` resolves
+-- SIBLINGS FIRST, so `mass-theory/q-integer-mass-formula.ts` reaches the second
+-- one, not this one; `wigner-coefficient-derivation.lean` binds the class from
+-- that same directory.
+--
+-- Both files were known and measured when `canonical` was demoted here
+-- (`eaebcc286c4`, 2026-08-28: "library file + content-block sibling +
+-- wigner_coefficient_conditional ... all exit 0"). Keeping both is therefore a
+-- standing decision, not an oversight — what was missing is this note. Nothing
+-- detects a `content/*.lean` sibling shadowing a compiled module path.
+--
+-- Bean `qou-ltal`.
+
 -- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 /- **Conjecture class** (plain comment: the doc-comment below documents

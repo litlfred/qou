@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:43:49.866432+00:00",
-  "commitSha": "b19342fcc8f6adbf33952ef28ec764f84bb1fd84",
+  "computedAt": "2026-08-30T09:03:27.315695+00:00",
+  "commitSha": "04f276b483893b6c7c389990ed412d3264a4a00a",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "hardcoded-literal-audit",
   "scriptFile": "hardcoded_literal_audit.py",
   "scriptHash": "3f2d01f7e6e2",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "e45c0b2e6301beeed1e2b5673f73178ad544e822",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,12 +29,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -48,13 +46,13 @@
     "registry_constants_in_scope": 35,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 336,
-    "i9_violation_count": 323,
+    "total_scripts_with_hits": 364,
+    "i9_violation_count": 351,
     "ok_acknowledged_anchor_count": 13
   },
   "data": {
     "by_result": {
-      "i9_violation": 323,
+      "i9_violation": 351,
       "ok_acknowledged_anchor": 13
     },
     "rows": [
@@ -253,7 +251,7 @@
             "snippet": "M_P_MEV_VALIDATION     = mpf(\"938.27208816\")"
           },
           {
-            "line_number": 114,
+            "line_number": 122,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -261,7 +259,7 @@
             "snippet": "Q_BETA_CODATA = mpf(\"0.78233341\")"
           },
           {
-            "line_number": 326,
+            "line_number": 334,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -278,7 +276,7 @@
         "hit_count": 8,
         "hits": [
           {
-            "line_number": 25,
+            "line_number": 33,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -286,7 +284,7 @@
             "snippet": "M_E = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 49,
+            "line_number": 57,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -294,7 +292,7 @@
             "snippet": "AME_D = mp.mpf(\"2.224566\")"
           },
           {
-            "line_number": 118,
+            "line_number": 126,
             "literal": "938.27208943",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208943",
@@ -302,7 +300,7 @@
             "snippet": "M_P = mp.mpf(\"938.27208943\")"
           },
           {
-            "line_number": 119,
+            "line_number": 127,
             "literal": "939.56542194",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542194",
@@ -310,7 +308,7 @@
             "snippet": "M_N = mp.mpf(\"939.56542194\")"
           },
           {
-            "line_number": 121,
+            "line_number": 129,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -318,7 +316,7 @@
             "snippet": "AME_B = {\"D\": mp.mpf(\"2.224566\"), \"T\": mp.mpf(\"8.481798\"),"
           },
           {
-            "line_number": 121,
+            "line_number": 129,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -326,7 +324,7 @@
             "snippet": "AME_B = {\"D\": mp.mpf(\"2.224566\"), \"T\": mp.mpf(\"8.481798\"),"
           },
           {
-            "line_number": 122,
+            "line_number": 130,
             "literal": "7.718043",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -334,7 +332,7 @@
             "snippet": "\"3He\": mp.mpf(\"7.718043\"), \"4He\": mp.mpf(\"28.295673\")}"
           },
           {
-            "line_number": 122,
+            "line_number": 130,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -710,6 +708,120 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/wedderburn_mass_table_convention_d.py",
+        "imported_codata_names": [],
+        "hit_count": 6,
+        "hits": [
+          {
+            "line_number": 28,
+            "literal": "0.51099895",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "1.35e-9",
+            "snippet": "M_E, M_P, M_N = mp.mpf(\"0.51099895\"), mp.mpf(\"938.27208816\"), mp.mpf(\"939.56542052\")"
+          },
+          {
+            "line_number": 28,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "1.354e-9",
+            "snippet": "M_E, M_P, M_N = mp.mpf(\"0.51099895\"), mp.mpf(\"938.27208816\"), mp.mpf(\"939.56542052\")"
+          },
+          {
+            "line_number": 28,
+            "literal": "939.56542052",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542194",
+            "rel_err": "1.511e-9",
+            "snippet": "M_E, M_P, M_N = mp.mpf(\"0.51099895\"), mp.mpf(\"938.27208816\"), mp.mpf(\"939.56542052\")"
+          },
+          {
+            "line_number": 104,
+            "literal": "938.78313",
+            "matches_constant": "M_H1_MEV_VALIDATION",
+            "registry_value": "938.7830731",
+            "rel_err": "6.061e-8",
+            "snippet": "(\"H\", 1, 0, \"938.78313\", \"938.910\"),      (\"He\", 2, 2, \"3728.4013\", \"3734.624\"),"
+          },
+          {
+            "line_number": 104,
+            "literal": "3728.4013",
+            "matches_constant": "M_HE4_ATOMIC_MEV_VALIDATION",
+            "registry_value": "3728.40133075258",
+            "rel_err": "8.248e-9",
+            "snippet": "(\"H\", 1, 0, \"938.78313\", \"938.910\"),      (\"He\", 2, 2, \"3728.4013\", \"3734.624\"),"
+          },
+          {
+            "line_number": 106,
+            "literal": "11177.9292",
+            "matches_constant": "M_C12_ATOMIC_MEV_VALIDATION",
+            "registry_value": "11177.92924464",
+            "rel_err": "3.994e-9",
+            "snippet": "(\"B\", 5, 6, \"10255.103\", \"10237.301\"),    (\"C\", 6, 6, \"11177.9292\", \"11168.874\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/wedderburn_mass_table_z1_20.py",
+        "imported_codata_names": [],
+        "hit_count": 6,
+        "hits": [
+          {
+            "line_number": 33,
+            "literal": "0.510999",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "9.65e-8",
+            "snippet": "M_E = \"0.510999\""
+          },
+          {
+            "line_number": 36,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "1.354e-9",
+            "snippet": "CODATA_M_P = \"938.27208816\""
+          },
+          {
+            "line_number": 37,
+            "literal": "939.56542052",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542194",
+            "rel_err": "1.511e-9",
+            "snippet": "CODATA_M_N = \"939.56542052\""
+          },
+          {
+            "line_number": 41,
+            "literal": "938.78313",
+            "matches_constant": "M_H1_MEV_VALIDATION",
+            "registry_value": "938.7830731",
+            "rel_err": "6.061e-8",
+            "snippet": "(\"H\",  1,  1,  0, \"-0.007015\",  \"-0.0\",     \"1.04342\",    \"938.78313\",   \"938.910\"),"
+          },
+          {
+            "line_number": 42,
+            "literal": "3728.4013",
+            "matches_constant": "M_HE4_ATOMIC_MEV_VALIDATION",
+            "registry_value": "3728.40133075258",
+            "rel_err": "8.248e-9",
+            "snippet": "(\"He\", 2,  2,  2, \"-5.558902\",  \"0.04347\",  \"-0.626052\",  \"3728.4013\",   \"3734.624\"),"
+          },
+          {
+            "line_number": 46,
+            "literal": "11177.9292",
+            "matches_constant": "M_C12_ATOMIC_MEV_VALIDATION",
+            "registry_value": "11177.92924464",
+            "rel_err": "3.994e-9",
+            "snippet": "(\"C\",  6,  6,  6, \"-24.310734\", \"0.391232\", \"-4.382364\",  \"11177.9292\",  \"11168.874\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/compute_audit_scan.py",
         "imported_codata_names": [],
         "hit_count": 5,
@@ -1058,7 +1170,7 @@
         "hit_count": 5,
         "hits": [
           {
-            "line_number": 25,
+            "line_number": 26,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -1066,7 +1178,7 @@
             "snippet": "M_E = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 33,
+            "line_number": 34,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -1074,7 +1186,7 @@
             "snippet": "AME = {\"D\": mp.mpf(\"2.224566\"), \"T\": mp.mpf(\"8.481798\"),"
           },
           {
-            "line_number": 33,
+            "line_number": 34,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -1082,7 +1194,7 @@
             "snippet": "AME = {\"D\": mp.mpf(\"2.224566\"), \"T\": mp.mpf(\"8.481798\"),"
           },
           {
-            "line_number": 34,
+            "line_number": 35,
             "literal": "7.718043",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -1090,7 +1202,7 @@
             "snippet": "\"3He\": mp.mpf(\"7.718043\"), \"4He\": mp.mpf(\"28.295673\")}"
           },
           {
-            "line_number": 34,
+            "line_number": 35,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -1629,7 +1741,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 273,
+            "line_number": 280,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -1637,7 +1749,7 @@
             "snippet": "(\"2H\", 1, 1, \"2.224566\"), (\"3H\", 1, 2, \"8.481798\"),"
           },
           {
-            "line_number": 273,
+            "line_number": 280,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -1645,7 +1757,7 @@
             "snippet": "(\"2H\", 1, 1, \"2.224566\"), (\"3H\", 1, 2, \"8.481798\"),"
           },
           {
-            "line_number": 274,
+            "line_number": 281,
             "literal": "7.718043",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -1653,7 +1765,7 @@
             "snippet": "(\"3He\", 2, 1, \"7.718043\"), (\"4He\", 2, 2, \"28.295673\"),"
           },
           {
-            "line_number": 274,
+            "line_number": 281,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -1846,7 +1958,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 29,
+            "line_number": 30,
             "literal": "8.48180",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -1854,7 +1966,7 @@
             "snippet": "B_AME_MEV = {\"d\": \"2.22452\", \"t\": \"8.48180\", \"3he\": \"7.71804\", \"4he\": \"28.29567\"}"
           },
           {
-            "line_number": 29,
+            "line_number": 30,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -1862,7 +1974,7 @@
             "snippet": "B_AME_MEV = {\"d\": \"2.22452\", \"t\": \"8.48180\", \"3he\": \"7.71804\", \"4he\": \"28.29567\"}"
           },
           {
-            "line_number": 29,
+            "line_number": 30,
             "literal": "28.29567",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -1870,7 +1982,7 @@
             "snippet": "B_AME_MEV = {\"d\": \"2.22452\", \"t\": \"8.48180\", \"3he\": \"7.71804\", \"4he\": \"28.29567\"}"
           },
           {
-            "line_number": 30,
+            "line_number": 31,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -2144,7 +2256,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 759,
+            "line_number": 862,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -2152,7 +2264,7 @@
             "snippet": "\"(default = β-decay Q = 0.78233341)\")"
           },
           {
-            "line_number": 766,
+            "line_number": 869,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -2160,7 +2272,7 @@
             "snippet": "(\"3He\",  2, 1,  7.71804),"
           },
           {
-            "line_number": 767,
+            "line_number": 870,
             "literal": "28.295674",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -2168,7 +2280,7 @@
             "snippet": "(\"4He\",  2, 2, 28.295674),"
           },
           {
-            "line_number": 859,
+            "line_number": 962,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -2385,6 +2497,47 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 32,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = \"0.51099895069\""
+          },
+          {
+            "line_number": 34,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "\"deuteron\": \"2.224566\","
+          },
+          {
+            "line_number": 36,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "\"helium-3\": \"7.718043\","
+          },
+          {
+            "line_number": 37,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "3.746e-7",
+            "snippet": "\"helium-4\": \"28.295673\","
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/binding_triangle_3body_cluster_probe.py",
         "imported_codata_names": [],
         "hit_count": 4,
@@ -2398,7 +2551,7 @@
             "snippet": "M_E = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 32,
+            "line_number": 47,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -2406,7 +2559,7 @@
             "snippet": "B2 = mp.mpf(\"2.224566\")"
           },
           {
-            "line_number": 33,
+            "line_number": 48,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -2414,7 +2567,7 @@
             "snippet": "AME = {\"T\": mp.mpf(\"8.481798\"), \"3He\": mp.mpf(\"7.718043\")}"
           },
           {
-            "line_number": 33,
+            "line_number": 48,
             "literal": "7.718043",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -2594,6 +2747,47 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/he4_body_order_shortfall_location_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "\"D\": mpf(\"2.224566\"),"
+          },
+          {
+            "line_number": 32,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.4817962",
+            "rel_err": "2.122e-7",
+            "snippet": "\"3H\": mpf(\"8.481798\"),"
+          },
+          {
+            "line_number": 33,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "\"3He\": mpf(\"7.718043\"),"
+          },
+          {
+            "line_number": 34,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "3.746e-7",
+            "snippet": "\"4He\": mpf(\"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/path_b_habiro_mass_probe.py",
         "imported_codata_names": [
           "(",
@@ -2603,7 +2797,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 49,
+            "line_number": 50,
             "literal": "938.78308711",
             "matches_constant": "M_H1_MEV_VALIDATION",
             "registry_value": "938.7830731",
@@ -2611,7 +2805,7 @@
             "snippet": "\"p\": (\"p (proton, A=1)\", 938.78308711),"
           },
           {
-            "line_number": 51,
+            "line_number": 52,
             "literal": "1876.12393",
             "matches_constant": "M_D_ATOMIC_MEV_VALIDATION",
             "registry_value": "1876.12393035366",
@@ -2619,7 +2813,7 @@
             "snippet": "\"D\": (\"D (deuteron, A=2)\", 1876.12393),"
           },
           {
-            "line_number": 52,
+            "line_number": 53,
             "literal": "2809.43215",
             "matches_constant": "M_T_ATOMIC_MEV_VALIDATION",
             "registry_value": "2809.43212207852",
@@ -2627,7 +2821,7 @@
             "snippet": "\"T\": (\"T (tritium, A=3)\", 2809.43215),"
           },
           {
-            "line_number": 53,
+            "line_number": 54,
             "literal": "2809.41347",
             "matches_constant": "M_HE3_ATOMIC_MEV_VALIDATION",
             "registry_value": "2809.41353006168",
@@ -2674,6 +2868,47 @@
             "registry_value": "28.2956624",
             "rel_err": "3.746e-7",
             "snippet": "(2, 2, \"magic\", -1, None,      \"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/probes/tower_e0_pole_conditioning_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "938.272",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "9.531e-8",
+            "snippet": "M_P_MEV = mp.mpf(\"938.272\")"
+          },
+          {
+            "line_number": 86,
+            "literal": "938.272",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "9.531e-8",
+            "snippet": "print(f\"     total = {tot_prod:.6g}  ->  E_0 = {938.272 / tot_prod:.6g}\")"
+          },
+          {
+            "line_number": 88,
+            "literal": "938.272",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "9.531e-8",
+            "snippet": "total=f\"{tot_prod:.6g}\", e0=f\"{938.272 / tot_prod:.6g}\","
+          },
+          {
+            "line_number": 181,
+            "literal": "938.272",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "9.531e-8",
+            "snippet": "\"e0_now\": f\"{938.272 / tot_prod:.12g}\","
           }
         ],
         "has_class_a_banner": false,
@@ -2756,6 +2991,47 @@
             "registry_value": "28.2956624",
             "rel_err": "3.746e-7",
             "snippet": "\"helium-4\":  Decimal(\"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/wedderburn_table_binding_recast.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "938.783",
+            "matches_constant": "M_H1_MEV_VALIDATION",
+            "registry_value": "938.7830731",
+            "rel_err": "7.787e-8",
+            "snippet": "(1, \"H\", 1, \"938.910\", \"938.783\"),      (2, \"He\", 4, \"3734.624\", \"3728.401\"),"
+          },
+          {
+            "line_number": 31,
+            "literal": "3728.401",
+            "matches_constant": "M_HE4_ATOMIC_MEV_VALIDATION",
+            "registry_value": "3728.40133075258",
+            "rel_err": "8.871e-8",
+            "snippet": "(1, \"H\", 1, \"938.910\", \"938.783\"),      (2, \"He\", 4, \"3734.624\", \"3728.401\"),"
+          },
+          {
+            "line_number": 33,
+            "literal": "11177.929",
+            "matches_constant": "M_C12_ATOMIC_MEV_VALIDATION",
+            "registry_value": "11177.92924464",
+            "rel_err": "2.189e-8",
+            "snippet": "(5, \"B\", 11, \"10237.301\", \"10255.103\"), (6, \"C\", 12, \"11168.874\", \"11177.929\"),"
+          },
+          {
+            "line_number": 72,
+            "literal": "938.783",
+            "matches_constant": "M_H1_MEV_VALIDATION",
+            "registry_value": "938.7830731",
+            "rel_err": "7.787e-8",
+            "snippet": "b_tab = base_mass(1, 0) - mp.mpf(\"938.783\")"
           }
         ],
         "has_class_a_banner": false,
@@ -2981,7 +3257,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 431,
+            "line_number": 482,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -2989,7 +3265,7 @@
             "snippet": "(\"3He\",  2, 1,  7.71804),"
           },
           {
-            "line_number": 432,
+            "line_number": 483,
             "literal": "28.295674",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -2997,7 +3273,7 @@
             "snippet": "(\"4He\",  2, 2, 28.295674),"
           },
           {
-            "line_number": 484,
+            "line_number": 535,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -3156,7 +3432,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 38,
+            "line_number": 39,
             "literal": "2.22456607",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -3164,7 +3440,7 @@
             "snippet": "\"D\": mp.mpf(\"2.22456607\"),"
           },
           {
-            "line_number": 40,
+            "line_number": 41,
             "literal": "7.7180428",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -3172,7 +3448,7 @@
             "snippet": "\"3He\": mp.mpf(\"7.7180428\"),"
           },
           {
-            "line_number": 41,
+            "line_number": 42,
             "literal": "28.295674",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -3194,7 +3470,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 30,
+            "line_number": 31,
             "literal": "2.22456607",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -3202,7 +3478,7 @@
             "snippet": "\"D\":   mp.mpf(\"2.22456607\"),"
           },
           {
-            "line_number": 32,
+            "line_number": 33,
             "literal": "7.7180428",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -3210,7 +3486,7 @@
             "snippet": "\"3He\": mp.mpf(\"7.7180428\"),"
           },
           {
-            "line_number": 33,
+            "line_number": 34,
             "literal": "28.295674",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -3519,6 +3795,39 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/b3_charge_decomposition_a3_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 28,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.4817962",
+            "rel_err": "2.122e-7",
+            "snippet": "AME = {\"T\": mp.mpf(\"8.481798\"), \"3He\": mp.mpf(\"7.718043\")}"
+          },
+          {
+            "line_number": 28,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "AME = {\"T\": mp.mpf(\"8.481798\"), \"3He\": mp.mpf(\"7.718043\")}"
+          },
+          {
+            "line_number": 29,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "B2 = mp.mpf(\"2.224566\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/b4_1four_reeb_flow_magnitude.py",
         "imported_codata_names": [],
         "hit_count": 3,
@@ -3618,6 +3927,39 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/binding_closed_form_C_vs_D_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 34,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "AME = {(1, 1): (\"2H\", \"2.224566\"), (1, 2): (\"3H\", \"8.481821\"),"
+          },
+          {
+            "line_number": 35,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "(2, 1): (\"3He\", \"7.718043\"), (2, 2): (\"4He\", \"28.295673\"),"
+          },
+          {
+            "line_number": 35,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "3.746e-7",
+            "snippet": "(2, 1): (\"3He\", \"7.718043\"), (2, 2): (\"4He\", \"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
         "imported_codata_names": [],
         "hit_count": 3,
@@ -3645,6 +3987,39 @@
             "registry_value": "2.2245662",
             "rel_err": "8.991e-8",
             "snippet": "AME = {\"T\": mp.mpf(\"8.481798\"), \"3He\": mp.mpf(\"7.718043\"), \"D\": mp.mpf(\"2.224566\")}"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/probes/binding_production_route_C_vs_D_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 33,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "\"deuteron\": \"2.224566\", \"tritium\": \"8.481821\","
+          },
+          {
+            "line_number": 34,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "\"helium-3\": \"7.718043\", \"helium-4\": \"28.295673\","
+          },
+          {
+            "line_number": 34,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "3.746e-7",
+            "snippet": "\"helium-3\": \"7.718043\", \"helium-4\": \"28.295673\","
           }
         ],
         "has_class_a_banner": false,
@@ -3759,7 +4134,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 56,
+            "line_number": 61,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -3767,7 +4142,7 @@
             "snippet": "B_AME = {\"deuteron\": 2.224566, \"tritium\": 8.481798, \"helium3\": 7.718043}"
           },
           {
-            "line_number": 56,
+            "line_number": 61,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -3775,7 +4150,7 @@
             "snippet": "B_AME = {\"deuteron\": 2.224566, \"tritium\": 8.481798, \"helium3\": 7.718043}"
           },
           {
-            "line_number": 56,
+            "line_number": 61,
             "literal": "7.718043",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -3820,6 +4195,39 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/mayer_threebody_sign_threshold_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 28,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "AME = {\"D\": mpf(\"2.224566\"), \"3H\": mpf(\"8.481798\"), \"3He\": mpf(\"7.718043\")}"
+          },
+          {
+            "line_number": 28,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.4817962",
+            "rel_err": "2.122e-7",
+            "snippet": "AME = {\"D\": mpf(\"2.224566\"), \"3H\": mpf(\"8.481798\"), \"3He\": mpf(\"7.718043\")}"
+          },
+          {
+            "line_number": 28,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.71804132",
+            "rel_err": "2.177e-7",
+            "snippet": "AME = {\"D\": mpf(\"2.224566\"), \"3H\": mpf(\"8.481798\"), \"3He\": mpf(\"7.718043\")}"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
         "imported_codata_names": [],
         "hit_count": 3,
@@ -3841,7 +4249,7 @@
             "snippet": "Q_BETA_CODATA_MEV = mp.mpf(\"0.78233341\")"
           },
           {
-            "line_number": 274,
+            "line_number": 301,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -4177,7 +4585,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 113,
+            "line_number": 114,
             "literal": "2.22456612",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -4185,7 +4593,7 @@
             "snippet": "('D',   1, 1): 2.22456612,"
           },
           {
-            "line_number": 114,
+            "line_number": 115,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -4277,7 +4685,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 57,
+            "line_number": 58,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -4285,7 +4693,7 @@
             "snippet": "\"B_AME_MeV\": 2.224566,"
           },
           {
-            "line_number": 69,
+            "line_number": 70,
             "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -4316,6 +4724,31 @@
             "registry_value": "28.2956624",
             "rel_err": "4.1e-7",
             "snippet": "(\"4He\",  4, \"28.295674\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/binding_n3_forcing_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 35,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "B_AME = {\"2H\": mp.mpf(\"2.224566\"), \"3H\": mp.mpf(\"8.481821\"),"
+          },
+          {
+            "line_number": 36,
+            "literal": "28.295661",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "4.948e-8",
+            "snippet": "\"3He\": mp.mpf(\"7.718058\"), \"4He\": mp.mpf(\"28.295661\")}"
           }
         ],
         "has_class_a_banner": false,
@@ -4492,7 +4925,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 62,
+            "line_number": 63,
             "literal": "0.51099894999999995",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -4500,7 +4933,7 @@
             "snippet": "M_E_MEV = mp.mpf(\"0.51099894999999995\")"
           },
           {
-            "line_number": 183,
+            "line_number": 184,
             "literal": "0.51099894999999995",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -4531,6 +4964,31 @@
             "registry_value": "28.2956624",
             "rel_err": "3.746e-7",
             "snippet": "b_ame = {\"2H\": 2.224566, \"3H\": 8.481821, \"3He\": 7.718058, \"4He\": 28.295673}"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/deltalambda/c_knot_tau_transfer_artifact_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 21,
+            "literal": "0.51099895",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "1.35e-9",
+            "snippet": "M_E_STR = \"0.51099895\""
+          },
+          {
+            "line_number": 23,
+            "literal": "2.2245662",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "0.0",
+            "snippet": "B_AME_STR = \"2.2245662\""
           }
         ],
         "has_class_a_banner": false,
@@ -4621,7 +5079,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 54,
+            "line_number": 64,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -4629,7 +5087,7 @@
             "snippet": "BD = mp.mpf(\"2.224566\")"
           },
           {
-            "line_number": 57,
+            "line_number": 67,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -4646,7 +5104,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 63,
+            "line_number": 81,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -4654,7 +5112,7 @@
             "snippet": "BD = mp.mpf(\"2.224566\")"
           },
           {
-            "line_number": 66,
+            "line_number": 84,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -4771,7 +5229,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 30,
+            "line_number": 40,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -4779,7 +5237,7 @@
             "snippet": "ME_MEV = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 31,
+            "line_number": 41,
             "literal": "2.2245662",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -4905,7 +5363,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 149,
+            "line_number": 152,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -4913,12 +5371,37 @@
             "snippet": "codata = 0.78233341"
           },
           {
-            "line_number": 193,
+            "line_number": 198,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
             "rel_err": "0.0",
             "snippet": "\"codata_Q_beta_MeV\": 0.78233341,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/deuteron_real_sdp.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 39,
+            "literal": "2.22456607",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "5.844e-8",
+            "snippet": "B_D_AME_MeV = 2.22456607"
+          },
+          {
+            "line_number": 571,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "\"max(t)*n_target = 0.146058, against B_D(AME2020) = 2.224566: \""
           }
         ],
         "has_class_a_banner": false,
@@ -5010,7 +5493,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 21,
+            "line_number": 24,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -5018,7 +5501,7 @@
             "snippet": "M_E = mpf(\"0.51099895000\")"
           },
           {
-            "line_number": 22,
+            "line_number": 25,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
@@ -5055,12 +5538,12 @@
         "result": "i9_violation"
       },
       {
-        "path": "computations/lepton_tower_additive_screening.py",
+        "path": "computations/lepton_tower_bend_screening.py",
         "imported_codata_names": [],
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 19,
+            "line_number": 22,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -5068,7 +5551,7 @@
             "snippet": "M_E = mpf(\"0.51099895000\")"
           },
           {
-            "line_number": 20,
+            "line_number": 23,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
@@ -5080,12 +5563,12 @@
         "result": "i9_violation"
       },
       {
-        "path": "computations/lepton_tower_bend_screening.py",
+        "path": "computations/lepton_tower_core.py",
         "imported_codata_names": [],
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 19,
+            "line_number": 35,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -5093,7 +5576,7 @@
             "snippet": "M_E = mpf(\"0.51099895000\")"
           },
           {
-            "line_number": 20,
+            "line_number": 36,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
@@ -5171,7 +5654,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 40,
+            "line_number": 51,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -5179,12 +5662,41 @@
             "snippet": "\"D\": 2.22452, \"T\": 8.481821, \"3He\": 7.71804,"
           },
           {
-            "line_number": 41,
+            "line_number": 52,
             "literal": "31.994",
             "matches_constant": "AME_B_LI6_MEV_VALIDATION",
             "registry_value": "31.9939872",
             "rel_err": "4.001e-7",
             "snippet": "\"4He\": 28.2957, \"6Li\": 31.994, \"7Li\": 39.2445,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/two_remaining_fronts_probe.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 136,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "need = mp.sqrt(mp.mpf(\"2.224566\"))"
+          },
+          {
+            "line_number": 138,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "ceil_at_max = max_b ** 2 / mp.mpf(\"2.224566\")"
           }
         ],
         "has_class_a_banner": false,
@@ -5461,7 +5973,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 18,
+            "line_number": 19,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -5469,7 +5981,7 @@
             "snippet": "m_e = mp.mpf('0.51099895000')"
           },
           {
-            "line_number": 19,
+            "line_number": 20,
             "literal": "0.78233341000",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -5525,6 +6037,31 @@
             "registry_value": "28.2956624",
             "rel_err": "2.686e-7",
             "snippet": "B_AME_he4 = mp.mpf(\"28.29567\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/probes/coleman_glashow_charge_quadratic_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 22,
+            "literal": "938.27208943",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "0.0",
+            "snippet": "MASS = {\"p\": (\"938.27208943\", \"0.00000029\"), \"n\": (\"939.56542194\", \"0.00000048\"),"
+          },
+          {
+            "line_number": 22,
+            "literal": "939.56542194",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542194",
+            "rel_err": "0.0",
+            "snippet": "MASS = {\"p\": (\"938.27208943\", \"0.00000029\"), \"n\": (\"939.56542194\", \"0.00000048\"),"
           }
         ],
         "has_class_a_banner": false,
@@ -5666,7 +6203,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 28,
+            "line_number": 29,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -5674,7 +6211,7 @@
             "snippet": "M_E_MEV = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 31,
+            "line_number": 32,
             "literal": "2808.39160743",
             "matches_constant": "M_HE3_MEV_VALIDATION",
             "registry_value": "2808.39161112",
@@ -5963,7 +6500,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 37,
+            "line_number": 48,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -5971,7 +6508,7 @@
             "snippet": "AME = {\"D\": mp.mpf(\"2.224566\"), \"4He\": mp.mpf(\"28.295673\"), \"6Li\": mp.mpf(\"31.994564\")}"
           },
           {
-            "line_number": 37,
+            "line_number": 48,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -6142,7 +6679,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 32,
+            "line_number": 33,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -6150,7 +6687,7 @@
             "snippet": "M_E_MEV = mp.mpf(\"0.51099895069\")"
           },
           {
-            "line_number": 245,
+            "line_number": 246,
             "literal": "939.5654205240",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542194",
@@ -6187,6 +6724,31 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/qbeta/qbeta_d1_admissible_anchor_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 106,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "me = mp.mpf(\"0.51099895069\"); Qexp = mp.mpf(\"0.7823334093099085\")"
+          },
+          {
+            "line_number": 106,
+            "literal": "0.7823334093099085",
+            "matches_constant": "Q_BETA_MEV",
+            "registry_value": "0.78233341",
+            "rel_err": "8.821e-10",
+            "snippet": "me = mp.mpf(\"0.51099895069\"); Qexp = mp.mpf(\"0.7823334093099085\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
         "imported_codata_names": [],
         "hit_count": 2,
@@ -6217,7 +6779,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 30,
+            "line_number": 31,
             "literal": "0.78233410277840137760143636388",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -6225,7 +6787,7 @@
             "snippet": "Q_BETA_CODATA_MEV = \"0.78233410277840137760143636388\""
           },
           {
-            "line_number": 31,
+            "line_number": 32,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -6292,7 +6854,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 32,
+            "line_number": 45,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -6300,7 +6862,7 @@
             "snippet": "M_E_MEV_STR = \"0.51099895069\""
           },
           {
-            "line_number": 34,
+            "line_number": 47,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -6370,7 +6932,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 192,
+            "line_number": 193,
             "literal": "8.48180",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -6378,12 +6940,37 @@
             "snippet": "(\"T\",   1, 2,  8.48180),"
           },
           {
-            "line_number": 194,
+            "line_number": 195,
             "literal": "28.29569",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
             "rel_err": "9.754e-7",
             "snippet": "(\"4He\", 2, 2, 28.29569),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/w3_closeability_audit.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 30,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "B_AME = {\"2H\": mp.mpf(\"2.224566\"), \"3H\": mp.mpf(\"8.481821\"),"
+          },
+          {
+            "line_number": 31,
+            "literal": "28.295661",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.2956624",
+            "rel_err": "4.948e-8",
+            "snippet": "\"3He\": mp.mpf(\"7.718058\"), \"4He\": mp.mpf(\"28.295661\")}"
           }
         ],
         "has_class_a_banner": false,
@@ -6401,6 +6988,27 @@
             "registry_value": "0.51099895069",
             "rel_err": "1.35e-9",
             "snippet": "m_e = float(mp.mpf(\"0.510998950\"))"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/atom_electron_mass.py",
+        "imported_codata_names": [
+          "#",
+          "(",
+          "E402"
+        ],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 147,
+            "literal": "13.605693122990",
+            "matches_constant": "RYDBERG_eV_VALIDATION",
+            "registry_value": "13.605693",
+            "rel_err": "9.04e-9",
+            "snippet": "ry_codata = mpf(\"13.605693122990\")"
           }
         ],
         "has_class_a_banner": false,
@@ -6610,6 +7218,27 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/deltalambda/c_knot_cancellation_conditioning_probe.py",
+        "imported_codata_names": [
+          "#",
+          "(",
+          "E402"
+        ],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 24,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e = mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py",
         "imported_codata_names": [
           "#",
@@ -6670,7 +7299,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 24,
+            "line_number": 52,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -6738,7 +7367,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 28,
+            "line_number": 32,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -6767,12 +7396,29 @@
         "result": "i9_violation"
       },
       {
-        "path": "computations/deltalambda/wlambda_level_selection_kA_probe.py",
+        "path": "computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py",
         "imported_codata_names": [],
         "hit_count": 1,
         "hits": [
           {
             "line_number": 24,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "B_AME_DEUTERON = mp.mpf(\"2.224566\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/deltalambda/wlambda_level_selection_kA_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 25,
             "literal": "31.994",
             "matches_constant": "AME_B_LI6_MEV_VALIDATION",
             "registry_value": "31.9939872",
@@ -6794,7 +7440,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 152,
+            "line_number": 186,
             "literal": "931.494",
             "matches_constant": "U_MEV",
             "registry_value": "931.49410372",
@@ -6806,17 +7452,21 @@
         "result": "i9_violation"
       },
       {
-        "path": "computations/deuteron_real_sdp.py",
-        "imported_codata_names": [],
+        "path": "computations/deuteron_two_body_kernel_overshoot_probe.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 37,
-            "literal": "2.22456607",
+            "line_number": 29,
+            "literal": "2.2245662",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
-            "rel_err": "5.844e-8",
-            "snippet": "B_D_AME_MeV = 2.22456607"
+            "rel_err": "0.0",
+            "snippet": "B_AME_2H = mp.mpf(\"2.2245662\")"
           }
         ],
         "has_class_a_banner": false,
@@ -6896,7 +7546,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 32,
+            "line_number": 33,
             "literal": "2.224566",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -6957,7 +7607,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 217,
+            "line_number": 220,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -7163,7 +7813,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 33,
+            "line_number": 50,
             "literal": "0.51099895",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -7190,6 +7840,95 @@
             "registry_value": "0.51099895069",
             "rel_err": "0.0",
             "snippet": "M_E_MEV = mp.mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/binding_cut_entropy_derived_weightings_probe.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 58,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "B = mp.mpf(\"2.224566\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/colour_derived_interface_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 107,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "need = mp.sqrt(mp.mpf(\"2.224566\"))"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/deuteron_support_reachability_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 30,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "\"bounded by max(t)*n_target = 0.146058 against B_D = 2.224566, short \""
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/interface_candidate_screen_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 109,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "need = mp.sqrt(mp.mpf(\"2.224566\"))"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "computations/meson/satellite_cable_escapes_the_bound_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 121,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.2245662",
+            "rel_err": "8.991e-8",
+            "snippet": "need = mp.sqrt(mp.mpf(\"2.224566\"))"
           }
         ],
         "has_class_a_banner": false,
@@ -7365,7 +8104,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 11,
+            "line_number": 14,
             "literal": "938.272",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208943",
@@ -7655,7 +8394,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 34,
+            "line_number": 35,
             "literal": "28.295673",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.2956624",
@@ -7699,7 +8438,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 20,
+            "line_number": 21,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -7902,7 +8641,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 41,
+            "line_number": 45,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8059,12 +8798,29 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/probes/em_selfenergy_coupling_target_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 14,
+            "literal": "938.27208943",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "0.0",
+            "snippet": "M_P_MEV = mp.mpf(\"938.27208943\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/probes/gap_a3_deuteron_p_lambda_channels_probe.py",
         "imported_codata_names": [],
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 41,
+            "line_number": 42,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8081,7 +8837,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 40,
+            "line_number": 41,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8098,7 +8854,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 37,
+            "line_number": 38,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8132,7 +8888,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 19,
+            "line_number": 29,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -8244,7 +9000,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 270,
+            "line_number": 275,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -8278,7 +9034,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 34,
+            "line_number": 35,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8312,7 +9068,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 17,
+            "line_number": 23,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8363,7 +9119,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 34,
+            "line_number": 44,
             "literal": "0.51099895000",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8643,7 +9399,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 19,
+            "line_number": 23,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -8753,7 +9509,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 37,
+            "line_number": 38,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -8904,7 +9660,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 415,
+            "line_number": 451,
             "literal": "1875.61294257",
             "matches_constant": "M_DEUTERON_MEV_VALIDATION",
             "registry_value": "1875.612945",
@@ -9055,6 +9811,23 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/wedderburn_Mi_constructor_test.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 100,
+            "literal": "1876.12392",
+            "matches_constant": "M_D_ATOMIC_MEV_VALIDATION",
+            "registry_value": "1876.12393035366",
+            "rel_err": "5.519e-9",
+            "snippet": "D_ATOMIC_MEV = mp.mpf(\"1876.12392\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/witness_float64_padding_audit.py",
         "imported_codata_names": [],
         "hit_count": 1,
@@ -9072,6 +9845,23 @@
         "result": "i9_violation"
       },
       {
+        "path": "computations/witness_raw_float64_audit.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 519,
+            "literal": "938.272",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208943",
+            "rel_err": "9.531e-8",
+            "snippet": "({\"y_times_chi_abs\": 0.123, \"E0_times_f_MeV\": 938.272}, 2),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "computations/sweeps/paper_six_term_isotope_sweep.py",
         "imported_codata_names": [
           "#",
@@ -9083,7 +9873,7 @@
         "hit_count": 6,
         "hits": [
           {
-            "line_number": 1086,
+            "line_number": 1087,
             "literal": "939.565",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542194",
@@ -9091,7 +9881,7 @@
             "snippet": "(\"n\",   0, 1, False,  939.565),"
           },
           {
-            "line_number": 1087,
+            "line_number": 1088,
             "literal": "1876.124",
             "matches_constant": "M_D_ATOMIC_MEV_VALIDATION",
             "registry_value": "1876.12393035366",
@@ -9099,7 +9889,7 @@
             "snippet": "(\"D\",   1, 1, True,  1876.124),"
           },
           {
-            "line_number": 1088,
+            "line_number": 1089,
             "literal": "2809.432",
             "matches_constant": "M_T_ATOMIC_MEV_VALIDATION",
             "registry_value": "2809.43212207852",
@@ -9107,7 +9897,7 @@
             "snippet": "(\"T\",   1, 2, True,  2809.432),"
           },
           {
-            "line_number": 1089,
+            "line_number": 1090,
             "literal": "2809.413",
             "matches_constant": "M_HE3_ATOMIC_MEV_VALIDATION",
             "registry_value": "2809.41353006168",
@@ -9115,7 +9905,7 @@
             "snippet": "(\"3He\", 2, 1, True,  2809.413),"
           },
           {
-            "line_number": 1090,
+            "line_number": 1091,
             "literal": "3728.401",
             "matches_constant": "M_HE4_ATOMIC_MEV_VALIDATION",
             "registry_value": "3728.40133075258",
@@ -9123,7 +9913,7 @@
             "snippet": "(\"4He\", 2, 2, True,  3728.401),"
           },
           {
-            "line_number": 1092,
+            "line_number": 1093,
             "literal": "5603.052",
             "matches_constant": "M_LI6_ATOMIC_MEV_VALIDATION",
             "registry_value": "5603.05150278295",
@@ -9140,7 +9930,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 197,
+            "line_number": 217,
             "literal": "2.22456612",
             "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
             "registry_value": "2.2245662",
@@ -9148,7 +9938,7 @@
             "snippet": "B_AME = {\"D\": 2.22456612, \"T\": 8.4817984, \"3He\": 7.7180375}"
           },
           {
-            "line_number": 197,
+            "line_number": 217,
             "literal": "8.4817984",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.4817962",
@@ -9156,7 +9946,7 @@
             "snippet": "B_AME = {\"D\": 2.22456612, \"T\": 8.4817984, \"3He\": 7.7180375}"
           },
           {
-            "line_number": 197,
+            "line_number": 217,
             "literal": "7.7180375",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.71804132",
@@ -9164,7 +9954,7 @@
             "snippet": "B_AME = {\"D\": 2.22456612, \"T\": 8.4817984, \"3He\": 7.7180375}"
           },
           {
-            "line_number": 301,
+            "line_number": 324,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -9259,7 +10049,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 411,
+            "line_number": 441,
             "literal": "939.56542",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542194",
@@ -9267,7 +10057,7 @@
             "snippet": "print(f\"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV\")"
           },
           {
-            "line_number": 411,
+            "line_number": 441,
             "literal": "938.27209",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208943",
@@ -9275,7 +10065,7 @@
             "snippet": "print(f\"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV\")"
           },
           {
-            "line_number": 411,
+            "line_number": 441,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -9292,7 +10082,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 175,
+            "line_number": 183,
             "literal": "938.783",
             "matches_constant": "M_H1_MEV_VALIDATION",
             "registry_value": "938.7830731",
@@ -9300,7 +10090,7 @@
             "snippet": "(1, 0, \"H\",   938.783),"
           },
           {
-            "line_number": 176,
+            "line_number": 184,
             "literal": "3728.401",
             "matches_constant": "M_HE4_ATOMIC_MEV_VALIDATION",
             "registry_value": "3728.40133075258",
@@ -9308,7 +10098,7 @@
             "snippet": "(2, 2, \"He\",  3728.401),"
           },
           {
-            "line_number": 180,
+            "line_number": 188,
             "literal": "11177.930",
             "matches_constant": "M_C12_ATOMIC_MEV_VALIDATION",
             "registry_value": "11177.92924464",
@@ -9331,7 +10121,7 @@
         "hit_count": 2,
         "hits": [
           {
-            "line_number": 492,
+            "line_number": 496,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -9339,7 +10129,7 @@
             "snippet": "print(f\"    E_0 (β)    = 0.78233341 / Q_cat = {E_0_cat!s} MeV/cat.unit\")"
           },
           {
-            "line_number": 554,
+            "line_number": 558,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -9471,7 +10261,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 276,
+            "line_number": 289,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",

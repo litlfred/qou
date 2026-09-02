@@ -1,0 +1,157 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T13:12:03.183832+00:00",
+  "commitSha": "f17e4467ea8c0897bf0f4330f2dcd6111fff08ad",
+  "assertions": [
+    {
+      "name": "all_arity_sign_passers_fail_saturation",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "passers that diverge",
+      "source": "B(A)/A must be bounded; all diverge"
+    },
+    {
+      "name": "sublinear_terms_fail_the_sign_gate",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "sublinear f with D4/D3 < 0",
+      "source": "sign gate wants convexity, saturation wants sublinearity, and a sublinear increasing f alternates -- so no single term passes both. Lean: SaturationSignGateTension.two_terms_necessary"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "sixj-recoupling-and-the-third-gate",
+  "scriptFile": "sixj_recoupling_and_the_third_gate_probe.py",
+  "scriptHash": "d89f12c49ec6",
+  "scriptCommitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sixj_recoupling_and_the_third_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sixj_recoupling_and_the_third_gate_probe.py"
+  },
+  "description": "The 6j route: a trace cannot see an associator (Mac Lane coherence), so the carrier must be the multiplicity structure. Following that to Hecke-natural quantities finds the first candidates to pass BOTH the arity and sign gates (n!, [n]_q!, [n]_q) -- and a third gate, saturation, kills all three. The three gates are structurally opposed: no single term of one variable can satisfy them, so at least two contributions of opposite curvature are forced.",
+  "data": {
+    "arity_and_sign": [
+      {
+        "quantity": "dim_H_n_factorial",
+        "d3": "2.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "9.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "4.50000000000000000000000000000000000000000000000000000000000",
+        "passes_arity_and_sign": true
+      },
+      {
+        "quantity": "q_factorial",
+        "d3": "2.08788867779369656225558483291260461158584658161811549927015",
+        "d4": "9.73670109343381737788903160703354342655386357059578419254471",
+        "b4_over_b3": "4.66341965306442304677370829836913705692468856145499062506162",
+        "passes_arity_and_sign": true
+      },
+      {
+        "quantity": "q_integer",
+        "d3": "0.0110156084111550901445434014017998621004917152611071470449411",
+        "d4": "0.000238777320587002667443314937953899626916726637156072770265682",
+        "b4_over_b3": "0.0216762716751261694188102873282601964162599382468342627519534",
+        "passes_arity_and_sign": true
+      },
+      {
+        "quantity": "partition_count",
+        "d3": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "2.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "passes_arity_and_sign": false
+      },
+      {
+        "quantity": "largest_specht_dim",
+        "d3": "1.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "passes_arity_and_sign": false
+      }
+    ],
+    "saturation_gate": [
+      {
+        "quantity": "dim_H_n_factorial",
+        "A_4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "A_8": "5040.00000000000000000000000000000000000000000000000000000000",
+        "A_12": "39916800.0000000000000000000000000000000000000000000000000000",
+        "A_16": "1307674368000.00000000000000000000000000000000000000000000000",
+        "A_20": "121645100408832000.000000000000000000000000000000000000000000",
+        "diverges": true
+      },
+      {
+        "quantity": "q_factorial",
+        "A_4": "6.28840925121283435635658070180878469205817359699326061177638",
+        "A_8": "7152.56767757985777946022738224652439121401655587990527383950",
+        "A_12": "122397327.057977678482726953509068032401221286681784233190660",
+        "A_16": "16635754106947.5799824994662389167924683006720583794363914314",
+        "A_20": "14398316665364352518.2673055444336590995285850070189522294965",
+        "diverges": true
+      },
+      {
+        "quantity": "q_integer",
+        "A_4": "1.02742060280198529044014219727408256084108201964659522960755",
+        "A_8": "1.11821122723304888372733081998003124375445737475681260747141",
+        "A_12": "1.28022619266690630779608985071319072861597446859132809392735",
+        "A_16": "1.53092932163850678847249427070151545458158802779574828957560",
+        "A_20": "1.89780631575526757883826815482793593189523777953666686086420",
+        "diverges": true
+      }
+    ],
+    "sublinear_family": [
+      {
+        "f": "sqrt(A)",
+        "d3": "0.489410120449592147122380168876778131233789627679536408525768",
+        "d4": "-0.442921856036938881299653020765300996353189762979834073163149",
+        "ratio": "-0.905011640605332710793053544249945887654260446090012096353391"
+      },
+      {
+        "f": "log(1+A)",
+        "d3": "0.169899036795397472900424896523305726435028998333027915399317",
+        "d4": "-0.116654522276585190034554702736776949495456911118048617127346",
+        "ratio": "-0.686610851226116751499942786902070532740779189884092251040670"
+      },
+      {
+        "f": "A^(2/3)",
+        "d3": "0.317880667147305690274939906540960605163325356673703080272734",
+        "d4": "-0.276086880608673280075572247241235281861758464690914419776700",
+        "ratio": "-0.868523660423597899260594707329671851803090951332344488130732"
+      },
+      {
+        "f": "A_minus_sqrt(A)",
+        "d3": "-0.489410120449592147122380168876778131233789627679536408525768",
+        "d4": "0.442921856036938881299653020765300996353189762979834073163149",
+        "ratio": "-0.905011640605332710793053544249945887654260446090012096353391"
+      }
+    ],
+    "verdict": {
+      "trace_can_see_associator": false,
+      "why": "Mac Lane coherence -- all bracketings canonically isomorphic, so a functional of the isomorphism class is bracketing-independent; 6j symbols are basis-dependent structure constants, not invariants",
+      "categorical_carrier_if_any": "the multiplicity structure -- blocks present at n=3 and absent at n=2, concretely S^(2,1)",
+      "single_term_possible": false,
+      "forced_conclusion": "b3>0 and b4>0 with saturation force >= 2 contributions of opposite curvature; cumulant-side restatement of the proved w non-monotonicity",
+      "sixj_refuted": false,
+      "what_is_refuted": "the hope that being genuinely three-object is SUFFICIENT",
+      "derives_a_magnitude": false
+    }
+  }
+}

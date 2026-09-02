@@ -25,7 +25,8 @@ so this dependence was invisible to the convention audit that excised C.
 WHAT THIS PROBE MEASURES (all at 60 dps, both anchors, both conventions):
 
   1. Regression: the C-frame extraction reproduces the committed corpus
-     values c_3(proton) = -2.06934258, c_3(muon) = -2.02020024.
+     values c_3(proton) = -2.06934258, c_3(muon) = -2.01986031 (the muon
+     target is anchor-qualified: CODATA 2022, per fca08de7d2 and qou-t39x).
   2. Exact bar parity of the two z's (sympy, exact zero):
      bar(z_C) = z_C  but  bar(z_D) = q^-4 * z_D — convention D's trace
      parameter is NOT bar-invariant; KC13's "z exactly bar-even" is a
@@ -89,8 +90,35 @@ with mp.workdps(60):
 
 # Committed corpus values for the C-frame extraction (registry section 9f
 # window endpoints; qbeta-c3-barodd-sleak.witness.json).
+#
+# THE MUON TARGET IS ANCHOR-QUALIFIED, AND THAT IS NOT DECORATION (qou-t39x).
+# There is no single "muon c_3": the extractor returns a different value at each
+# muon pin in use, and they differ in the FOURTH significant figure --
+#
+#     frozen pin       (...5557...)   -2.02018813
+#     CODATA-2018      (...5554...)   -2.02020024   <- what this probe targeted
+#     CODATA-2022      (...5642...)   -2.01986031   <- what q_muon_at() returns
+#
+# This probe calls `q_muon_at()`, which `fca08de7d2` (2026-08-22, owner ruling)
+# moved to CODATA 2022. The target below stayed on CODATA 2018, so from that
+# commit the assertion compared a 2022 computation against a 2018 literal and
+# failed by 3.4e-4 -- read in `qou-cds1` as "a third value" of unknown origin.
+# It was neither a third value nor a defect in the extractor: attribution is
+# 99.9985 % the edition step 206.7682830 -> 206.7682827, with the 5.0e-9
+# residual being this literal's own rounding to the 9 figures it quotes
+# (probe: qbeta_c3_muon_anchor_codata_edition_attribution).
+#
+# The superseded value is KEPT, named, and asserted-against below, so a silent
+# slide back onto the 2018 anchor is caught rather than re-diagnosed.
+#
+# SCALE, so the 1e-6 below is not misread: it is a REPRODUCIBILITY tolerance,
+# not a physics one. Propagated through the CAL-1/2/3 published uncertainties
+# this target is -2.0199 +- 1.26 (Q_beta-dominated, via 1/u^3 = 1.6e6) -- 0.2
+# supported significant figures against the 9 quoted. What is experimentally
+# resolved here is the cross-anchor SWING (9.5 sigma), not either absolute.
 CORPUS_C3_PROTON = mp.mpf("-2.06934258")
-CORPUS_C3_MUON = mp.mpf("-2.02020024")
+CORPUS_C3_MUON = mp.mpf("-2.01986031")            # muon pin @ CODATA 2022
+CORPUS_C3_MUON_CODATA2018 = mp.mpf("-2.02020024")  # SUPERSEDED — do not target
 
 
 def _head_sha() -> str:
@@ -201,7 +229,14 @@ def main() -> int:
                         and abs(runs[("C", "muon")]["c3"] - CORPUS_C3_MUON) < mp.mpf("1e-6")
                         and abs(runs[("C", "proton")]["c3"] - c3_api_p) < mp.mpf("1e-40")
                         and abs(runs[("C", "muon")]["c3"] - c3_api_m) < mp.mpf("1e-40")),
-         "detail": "probe's C ladder == qbeta_utils.c3_target_at == registry values"},
+         "detail": "probe's C ladder == qbeta_utils.c3_target_at == registry values "
+                   "(muon target anchor-qualified: CODATA 2022)"},
+        {"name": "muon_anchor_has_not_slid_back_to_codata_2018",
+         "passed": bool(abs(runs[("C", "muon")]["c3"] - CORPUS_C3_MUON_CODATA2018)
+                        > mp.mpf("1e-4")),
+         "detail": f"distance from the SUPERSEDED 2018 target = "
+                   f"{mp.nstr(abs(runs[('C', 'muon')]['c3'] - CORPUS_C3_MUON_CODATA2018), 6)}"
+                   " — guards the straddle that produced qou-cds1 Finding B"},
         {"name": "zC_bar_even_exact",
          "passed": bool(zC_bar_diff == 0)},
         {"name": "zD_bar_twist_is_q_minus_4_exact_and_not_invariant",

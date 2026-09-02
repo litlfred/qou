@@ -7,19 +7,22 @@ the Birman-Hilden 3-braid hyperbolic-knot table through 8
 crossings. Asks: does 2/(3π) lie in the Z-linear lattice of the
 extended basis?
 
-Basis (high-precision hyperbolic volumes, sourced from
-SnapPy / KnotInfo):
+Basis (hyperbolic volumes at 100 dps; SnapPy 3.3.2 at
+bits_prec=2000, each cross-checked against a randomized
+re-triangulation. Corrected 2026-08-30 — see the note at the
+constants: all eight literals were previously wrong inside the
+digits they printed, one of them at the second digit):
 
-  4_1  : 2.0298832...     (figure-8, Tier-0)
+  4_1  : 2.0298832...     (figure-8, Tier-0; closed form 2*Cl_2(pi/3))
   5_2  : 2.8281220...     (NEW)
   6_1  : 3.1639632...     (NEW)
-  6_2  : 4.4008354...     (deuteron, Tier-0)
-  6_3  : 5.6933949...     (NEW)
-  7_2  : 3.3317449...     (NEW)
-  7_3  : 4.5919742...     (NEW)
-  7_4  : 5.0990988...     (NEW)
-  8_11 : 8.2862710...     (tritium, Tier-0)
-  8G   : 7.3277247...     (Borromean, Tier-0)
+  6_2  : 4.4008325...     (deuteron, Tier-0)
+  6_3  : 5.6930210...     (NEW)
+  7_2  : 3.3317442...     (NEW)
+  7_3  : 4.5921256...     (NEW)
+  7_4  : 5.1379412...     (NEW)
+  8_11 : 8.2863168...     (tritium, Tier-0)
+  8G   : 7.3277247...     (Borromean, Tier-0; closed form 8*Catalan)
 
 If a non-trivial small relation appears at 100 dps with max
 coeff 10^8, the BringHyperbolicDecomposition class is
@@ -49,22 +52,59 @@ def main() -> None:
     catalan = mpmath.catalan
     v_4_1 = 2 * cl2_pi_third
     v_8G = 8 * catalan
-    v_6_2 = mpf("4.4008354924779311327842466420115226538195841018537"
-                "9398892918725716731795829093796158929739181849")
-    v_8_11 = mpf("8.2862710479413574611146286395076196815770488043144"
-                 "6814620876549935732839832762283907316876")
+    # ── Hyperbolic volumes at 100 dps, matching mp.dps above ──
+    #
+    # CORRECTED 2026-08-30 (bean qou-ckbv). Every one of the eight literals
+    # below was previously WRONG INSIDE THE DIGITS IT PRINTED, while a
+    # comment claimed "SnapPy values at ~50 dps":
+    #
+    #     knot   printed   actually good
+    #     6_2       96          6
+    #     8_11      90          5
+    #     5_2       51         13
+    #     6_1       51          8
+    #     6_3       38          4
+    #     7_2       35          6
+    #     7_3       35          4
+    #     7_4       32          2      <- wrong at the SECOND digit
+    #
+    # Six of the eight matched NO manifold in SnapPy's censuses at all
+    # (searched 200,067 entries), so these were corrupted numbers rather
+    # than correct volumes under the wrong labels.
+    #
+    # Why this mattered more here than in a display constant: PSLQ searches
+    # for an integer relation among the basis. Fed values that are noise
+    # past digit 2-13 but supplied at 100 dps, it reports a relation among
+    # WRONG NUMBERS. This script's result is a NEGATIVE ("no relation
+    # found"), and a negative is exactly what a corrupted basis produces
+    # whether or not the real basis has a relation — the finding could not
+    # have failed for the reason it claims. Re-run after this correction
+    # before citing the Tier-1 negative anywhere.
+    #
+    # Provenance: snappy 3.3.2, `Manifold(k).volume(bits_prec=2000)`. Each
+    # value independently confirmed against a RANDOMIZED re-triangulation
+    # of the same manifold (volume is a topological invariant, so a
+    # different triangulation is a genuine second route, not a re-read).
+    # Method controlled on the two volumes with closed forms: SnapPy agrees
+    # with 2*Cl_2(pi/3) to 4.5e-64 and with 8*G to 2.6e-65.
+    v_6_2 = mpf("4.40083251612304610144120386564092803398348541851646"
+                "5458521752513316600130972405316677122430240181317")
+    v_8_11 = mpf("8.28631681780659258812682479775116716294874424541111"
+                 "7139762993515683703595296757393453019207255602108")
 
-    # Tier-1 extension (hyperbolic 3-braid knots, SnapPy values
-    # at ~50 dps; sufficient for PSLQ at 100 dps via mpmath's
-    # internal precision extension)
-    v_5_2 = mpf("2.8281220883307505694590614849634757918975571078466"
-                "7")
-    v_6_1 = mpf("3.1639632208627000478003988014556040720144867862519"
-                "8")
-    v_6_3 = mpf("5.6933948726966702754837253144110057395")
-    v_7_2 = mpf("3.3317449268471123398615751006961117")
-    v_7_3 = mpf("4.5919742372451355773960478354104471")
-    v_7_4 = mpf("5.0990988577142773923716083097930")
+    # Tier-1 extension (hyperbolic 3-braid knots)
+    v_5_2 = mpf("2.82812208833078316276389880927663494277098131730064"
+                "9477043520327258802548322471630936947017929999107")
+    v_6_1 = mpf("3.16396322888314398399101471597315448481278767151811"
+                "5266582922441975565984963084839871725288561503347")
+    v_6_3 = mpf("5.69302109128130076511248327748122292694430173300688"
+                "0037850870699995476072590906707654919542407040036")
+    v_7_2 = mpf("3.33174423164111482391456910802971279554695790918600"
+                "4921221604455598741372842366515578862260348786284")
+    v_7_3 = mpf("4.59212569702706255019661399465547373235436032654327"
+                "0894426065765041363091864797025835868422067745209")
+    v_7_4 = mpf("5.13794120187341776984134833947484503564967509273571"
+                "2368597748060678580307623518886258443309869104970")
 
     basis = [
         target,

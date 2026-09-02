@@ -14,7 +14,7 @@
         "FiniteJones"
       ],
       "output_name": "tr_M_p_q0",
-      "output_value": "1.0653062286131670593652845464313725576506616741351",
+      "output_value": "1.14575969245730086968908159577411930594372806194352738498820",
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
@@ -53,11 +53,11 @@
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
       "inputs": [],
       "output_name": "m_e_Hecke",
-      "output_value": "2.4574285840615720238298880769957592812981841128631",
+      "output_value": "2.4574285284596944344614642414274346809022982060072",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.45742858406157202382988807699575928129818411286312681785542) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+      "notes": "script: computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.45742852845969443446146424142743468090229820600722103464036) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
     },
     {
       "name": "Dimensionless mass ratio m_p/m_e at 50 dps",
@@ -67,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_p_over_m_e",
-      "output_value": "0.98553119978228001956219425345332505610256365182375",
+      "output_value": "0.98553122208094893146926571275036437107144956039703",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",

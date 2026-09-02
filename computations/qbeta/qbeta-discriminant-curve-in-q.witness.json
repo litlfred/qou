@@ -1,0 +1,738 @@
+{
+  "computation": "qbeta-discriminant-curve-in-q",
+  "engine": "sympy+mpmath",
+  "description": "qou-cds1 Step 26. CORRECTS a method error running through Steps 21-25: all of them evaluated spectra at the single point q = q_0, which cannot distinguish a perfect-square discriminant from an irreducible degree-18 one. Carrying q symbolically (`hm_sym`, mirroring `build_nucleon_nf`'s 11-crossing braid-order word, validated to 1e-16) gives the exact spectral curves. ALSO CORRECTS Step 25's claim that Delta_L could not be asked this question: there was no gap, only a function not looked for. Results: tr is bar-odd, det and disc bar-even as exact identities, so there is NO q^-n twist and disc is a polynomial in x = q + 1/q. disc_S(x) = x^2 - 4 = h^2 is a perfect square (genus 0) and is >= 0 for every real q, so the short model is hyperbolic everywhere, not just at q_0. disc_L(x) has degree 18, is squarefree with four irreducible factors, and y^2 = disc_L is hyperelliptic of GENUS 8 (genus 4 on the x^2 quotient) — not genus 1, so there is no elliptic curve and no tower of them. The Hecke tower adds no eigenvalue by branching, verified on all five H_4 shapes. The classical limit is EXACTLY 2 pi / 3, because the leading direction of Delta_L at q = 1 is -(1 + T_1 T_0) and T_1 T_0 is the S_3 3-cycle; the trefoil word e^- enters only at second order. Delta_L is elliptic exactly for q in (1, 1.3797326616) with q_0 29 % of the way up, and theta sweeps to 0 at the wall, so the required ladder phase IS attained — at q* = 1.3781 (z_C) / 1.3796 (z_D), both ~3e11 sigma_q0 from the calibrated q_0. The avenue is closed by the CODATA proton pin. The cyclotomic tower q = zeta_N is a genuine tower with phi_3 = phi_6 = 2 pi / 3 exactly, but its minimum over N <= 120 still exceeds the required phase by 24x.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "symbolic_nucleon_nf_mirrors_the_canonical_builder",
+      "passed": true,
+      "detail": "the symbolic (2,1) irrep satisfies the Hecke and braid relations identically in q and matches the corpus Hoefsmit output at q_0 to 2.01e-35; the symbolic nucleon NF matches `build_nucleon_nf` to 9.15e-17 in all 12 coordinates. CORRECTS Step 25's claim that Delta_L could not be asked this question — `hm_sym` is the symbolic twin of `hm` and there was no gap"
+    },
+    {
+      "name": "disc_is_bar_even_for_both_models_no_q_twist",
+      "passed": true,
+      "detail": "tr(1/q) = -tr(q), det(1/q) = det(q), disc(1/q) = disc(q) as exact identities in Q(q). The bar involution acts trivially on the spectral geometry, so there is no q^-n twist to be missed as one goes out the tower, and disc is forced to be a polynomial in x = q + 1/q"
+    },
+    {
+      "name": "short_model_disc_is_h_squared_hence_hyperbolic_at_every_real_q",
+      "passed": true,
+      "detail": "disc_S(q) = h(q)^2 is a perfect square in the q coordinate and disc_S(x) = x^2 - 4 is a degree-2 conic in x, so y^2 = disc_S has genus 0 either way; and x = q + 1/q >= 2 for every real q > 0, so disc_S >= 0 identically. The short model is hyperbolic at EVERY real q, not merely at q_0 — a statement Steps 21-25 could not have made"
+    },
+    {
+      "name": "long_model_curve_is_genus_8_not_elliptic",
+      "passed": true,
+      "detail": "disc_L(x) = (x-2)(x+2) G_-(x) G_+(x) / 16 with G_-+ = 2x^8 - 21x^6 + 77x^4 - 115x^2 -+ 2x + 58: degree 18, squarefree, four irreducible factors over Q. y^2 = disc_L is hyperelliptic of genus 8; being even in x it covers a genus-4 curve in w = x^2. Neither is genus 1, so there is no elliptic curve and no tower of them. Both polynomials agree with the Lean mirror `QOU.QBeta.DiscriminantCurveInQ`"
+    },
+    {
+      "name": "hecke_tower_adds_no_eigenvalue_by_branching",
+      "passed": true,
+      "detail": "all five H_4 spectra of Delta_L are exactly the branching unions of the three H_3 spectra: (2,2)=(2,1), (3,1)=(3)+(2,1), (2,1,1)=(1^3)+(2,1), (4)=(3), (1^4)=(1^3). Every corpus object is H_3-valued, so no new discriminant appears at any level n"
+    },
+    {
+      "name": "classical_limit_eigenphase_is_exactly_two_pi_over_three",
+      "passed": true,
+      "detail": "every NF coordinate of Delta_L carries (q-1)(q+1), so Delta_L -> 0 at q = 1; the leading direction is -(gamma + L_-) = -(1 + T_1 T_0), and T_1 T_0 is the S_3 3-cycle whose standard-rep eigenvalues are the primitive cube roots of unity, giving modulus 1 and eigenphase exactly 2 pi / 3. The trefoil / electron word e^- enters only at order 2"
+    },
+    {
+      "name": "ladder_phase_crossing_is_excluded_by_the_substrate_pin",
+      "passed": true,
+      "detail": "Delta_L is elliptic exactly for q in (1, 1.3797326616) and its eigenphase sweeps from 2 pi / 3 to 0, so the required phase IS attained — at q* = 1.37812464914 (z_C) and 1.37956231361 (z_D), both within 0.2 % of the degeneracy wall and ~3e11 sigma_q0 from the calibrated q_0. Closed by the CODATA proton pin, not by inspection"
+    },
+    {
+      "name": "cyclotomic_tower_phases_all_exceed_the_required_phase",
+      "passed": true,
+      "detail": "on |q| = 1 the trace is purely imaginary and the determinant real (|Re tr| < 1.51e-40, |Im det| < 4.01e-42), so every root of unity carries a real discriminant and a well-defined eigenphase. This IS a genuine tower indexed by the degree N, with phi_3 = phi_6 = 2 pi / 3 exactly and phi_N -> 2 pi / 3 as N -> infinity; its minimum over N <= 120 is phi_7 = 1.4042283, still 24.812x the required phase"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 40,
+    "nf_basis": [
+      "γ",
+      "σ₀",
+      "σ₁",
+      "L₊",
+      "L₋",
+      "e⁻"
+    ],
+    "block": "(2,1)",
+    "orientation": "Delta_L = NF(neutron) - NF(proton)"
+  },
+  "data": {
+    "q0": "1.1099785827513808076",
+    "sigma_q0": "9.21163016616e-13",
+    "irrep_max_err_at_q0": "2.01255e-35",
+    "nucleon_nf_max_err_at_q0": "9.15021e-17",
+    "bar_parity": {
+      "short": {
+        "tr": "n/a",
+        "det": "1",
+        "disc": "1"
+      },
+      "long": {
+        "tr": "-1",
+        "det": "1",
+        "disc": "1"
+      }
+    },
+    "disc_short_in_x": "(x - 2)*(x + 2)",
+    "disc_long_in_x": "(x - 2)*(x + 2)*(2*x**8 - 21*x**6 + 77*x**4 - 115*x**2 - 2*x + 58)*(2*x**8 - 21*x**6 + 77*x**4 - 115*x**2 + 2*x + 58)/16",
+    "disc_long_degree": 18,
+    "disc_long_squarefree": true,
+    "genus_short": 0,
+    "genus_long": 8,
+    "genus_long_x2_quotient": 4,
+    "matches_lean_DiscriminantCurveInQ": true,
+    "disc_short_at_q0": "0.043706208532522",
+    "disc_long_at_q0": "-0.035836573710095",
+    "vanishing_orders_at_q_eq_1": {
+      "γ": 1,
+      "σ₀": 2,
+      "σ₁": 2,
+      "L₊": 3,
+      "L₋": 1,
+      "e⁻": 2
+    },
+    "classical_eigenphase": "2*pi/3",
+    "ellipticity_window_q": [
+      "1",
+      "1.37973266160327744"
+    ],
+    "ellipticity_window_x": [
+      "2",
+      "2.10451074929309094"
+    ],
+    "q0_position_in_window_pct": "28.962108",
+    "theta_L_at_q0": "2.020445020048",
+    "crossings": {
+      "z_C": {
+        "theta_required_at_q0": "0.056594737543307",
+        "q_star": "1.37812464914014419",
+        "sigma_from_q0": "2.910951282e+11",
+        "distance_to_wall": "0.001608012463"
+      },
+      "z_D": {
+        "theta_required_at_q0": "0.044744394615721",
+        "q_star": "1.3795623136102829",
+        "sigma_from_q0": "2.92655834e+11",
+        "distance_to_wall": "0.000170347993"
+      }
+    },
+    "cyclotomic_max_abs_re_tr": "1.51208e-40",
+    "cyclotomic_max_abs_im_det": "4.01458e-42",
+    "cyclotomic_min_phase": {
+      "N": 7,
+      "phi": "1.4042282596998",
+      "over_required": "24.811993"
+    },
+    "cyclotomic_tower": [
+      {
+        "N": 3,
+        "phi": "2.09439510239",
+        "disc": "0.5625"
+      },
+      {
+        "N": 4,
+        "phi": null,
+        "disc": "-841.0"
+      },
+      {
+        "N": 5,
+        "phi": null,
+        "disc": "-131.8685138"
+      },
+      {
+        "N": 6,
+        "phi": "2.09439510239",
+        "disc": "0.5625"
+      },
+      {
+        "N": 7,
+        "phi": "1.4042282597",
+        "disc": "0.3964475808"
+      },
+      {
+        "N": 8,
+        "phi": "3.14159265359",
+        "disc": "1.0"
+      },
+      {
+        "N": 9,
+        "phi": "2.1664451166",
+        "disc": "0.7569873182"
+      },
+      {
+        "N": 10,
+        "phi": "1.94724930843",
+        "disc": "0.6185138334"
+      },
+      {
+        "N": 11,
+        "phi": "2.1846560805",
+        "disc": "0.6520262269"
+      },
+      {
+        "N": 12,
+        "phi": "2.55590711013",
+        "disc": "0.6875"
+      },
+      {
+        "N": 13,
+        "phi": "2.9211402036",
+        "disc": "0.6691066137"
+      },
+      {
+        "N": 14,
+        "phi": "3.0420609532",
+        "disc": "0.6097478443"
+      },
+      {
+        "N": 15,
+        "phi": "2.77367663116",
+        "disc": "0.5337851719"
+      },
+      {
+        "N": 16,
+        "phi": "2.5534966149",
+        "disc": "0.4579996156"
+      },
+      {
+        "N": 17,
+        "phi": "2.37554062945",
+        "disc": "0.3904728817"
+      },
+      {
+        "N": 18,
+        "phi": "2.2335191972",
+        "disc": "0.3336944228"
+      },
+      {
+        "N": 19,
+        "phi": "2.12156339826",
+        "disc": "0.2873457273"
+      },
+      {
+        "N": 20,
+        "phi": "2.0344439358",
+        "disc": "0.25"
+      },
+      {
+        "N": 21,
+        "phi": "1.96761572667",
+        "disc": "0.2199865811"
+      },
+      {
+        "N": 22,
+        "phi": "1.91719875779",
+        "disc": "0.195765256"
+      },
+      {
+        "N": 23,
+        "phi": "1.87993159944",
+        "disc": "0.1760505207"
+      },
+      {
+        "N": 24,
+        "phi": "1.85311081462",
+        "disc": "0.1598224072"
+      },
+      {
+        "N": 25,
+        "phi": "1.83452325163",
+        "disc": "0.1462935179"
+      },
+      {
+        "N": 26,
+        "phi": "1.82237656008",
+        "disc": "0.1348647377"
+      },
+      {
+        "N": 27,
+        "phi": "1.81523223375",
+        "disc": "0.1250831675"
+      },
+      {
+        "N": 28,
+        "phi": "1.81194422574",
+        "disc": "0.1166068525"
+      },
+      {
+        "N": 29,
+        "phi": "1.81160485525",
+        "disc": "0.1091769552"
+      },
+      {
+        "N": 30,
+        "phi": "1.81349859429",
+        "disc": "0.1025965251"
+      },
+      {
+        "N": 31,
+        "phi": "1.81706351928",
+        "disc": "0.0967146075"
+      },
+      {
+        "N": 32,
+        "phi": "1.82185973465",
+        "disc": "0.0914144755"
+      },
+      {
+        "N": 33,
+        "phi": "1.82754385567",
+        "disc": "0.08660496171"
+      },
+      {
+        "N": 34,
+        "phi": "1.83384859109",
+        "disc": "0.08221408505"
+      },
+      {
+        "N": 35,
+        "phi": "1.84056652147",
+        "disc": "0.07818436131"
+      },
+      {
+        "N": 36,
+        "phi": "1.84753727351",
+        "disc": "0.07446934376"
+      },
+      {
+        "N": 37,
+        "phi": "1.8546374116",
+        "disc": "0.07103106106"
+      },
+      {
+        "N": 38,
+        "phi": "1.861772486",
+        "disc": "0.06783811001"
+      },
+      {
+        "N": 39,
+        "phi": "1.86887078339",
+        "disc": "0.06486422738"
+      },
+      {
+        "N": 40,
+        "phi": "1.87587841651",
+        "disc": "0.06208721319"
+      },
+      {
+        "N": 41,
+        "phi": "1.88275546506",
+        "disc": "0.05948811306"
+      },
+      {
+        "N": 42,
+        "phi": "1.88947294106",
+        "disc": "0.05705059234"
+      },
+      {
+        "N": 43,
+        "phi": "1.89601040069",
+        "disc": "0.05476045313"
+      },
+      {
+        "N": 44,
+        "phi": "1.90235406333",
+        "disc": "0.05260525822"
+      },
+      {
+        "N": 45,
+        "phi": "1.90849532893",
+        "disc": "0.05057403571"
+      },
+      {
+        "N": 46,
+        "phi": "1.91442960847",
+        "disc": "0.0486570449"
+      },
+      {
+        "N": 47,
+        "phi": "1.92015540091",
+        "disc": "0.04684558888"
+      },
+      {
+        "N": 48,
+        "phi": "1.92567356454",
+        "disc": "0.0451318633"
+      },
+      {
+        "N": 49,
+        "phi": "1.93098674172",
+        "disc": "0.04350883301"
+      },
+      {
+        "N": 50,
+        "phi": "1.93609890505",
+        "disc": "0.04197013065"
+      },
+      {
+        "N": 51,
+        "phi": "1.9410149996",
+        "disc": "0.04050997251"
+      },
+      {
+        "N": 52,
+        "phi": "1.94574066129",
+        "disc": "0.0391230881"
+      },
+      {
+        "N": 53,
+        "phi": "1.95028199585",
+        "disc": "0.03780466073"
+      },
+      {
+        "N": 54,
+        "phi": "1.9546454058",
+        "disc": "0.03655027699"
+      },
+      {
+        "N": 55,
+        "phi": "1.95883745558",
+        "disc": "0.03535588353"
+      },
+      {
+        "N": 56,
+        "phi": "1.9628647672",
+        "disc": "0.03421774974"
+      },
+      {
+        "N": 57,
+        "phi": "1.96673393991",
+        "disc": "0.03313243537"
+      },
+      {
+        "N": 58,
+        "phi": "1.97045148923",
+        "disc": "0.03209676237"
+      },
+      {
+        "N": 59,
+        "phi": "1.97402380119",
+        "disc": "0.03110779003"
+      },
+      {
+        "N": 60,
+        "phi": "1.97745709869",
+        "disc": "0.0301627932"
+      },
+      {
+        "N": 61,
+        "phi": "1.98075741749",
+        "disc": "0.02925924294"
+      },
+      {
+        "N": 62,
+        "phi": "1.98393058975",
+        "disc": "0.02839478929"
+      },
+      {
+        "N": 63,
+        "phi": "1.9869822336",
+        "disc": "0.02756724597"
+      },
+      {
+        "N": 64,
+        "phi": "1.98991774728",
+        "disc": "0.02677457659"
+      },
+      {
+        "N": 65,
+        "phi": "1.99274230706",
+        "disc": "0.02601488234"
+      },
+      {
+        "N": 66,
+        "phi": "1.99546086785",
+        "disc": "0.02528639082"
+      },
+      {
+        "N": 67,
+        "phi": "1.99807816601",
+        "disc": "0.02458744603"
+      },
+      {
+        "N": 68,
+        "phi": "2.0005987238",
+        "disc": "0.02391649925"
+      },
+      {
+        "N": 69,
+        "phi": "2.00302685498",
+        "disc": "0.0232721008"
+      },
+      {
+        "N": 70,
+        "phi": "2.00536667127",
+        "disc": "0.02265289252"
+      },
+      {
+        "N": 71,
+        "phi": "2.00762208944",
+        "disc": "0.02205760093"
+      },
+      {
+        "N": 72,
+        "phi": "2.00979683872",
+        "disc": "0.02148503099"
+      },
+      {
+        "N": 73,
+        "phi": "2.01189446849",
+        "disc": "0.02093406043"
+      },
+      {
+        "N": 74,
+        "phi": "2.01391835595",
+        "disc": "0.02040363447"
+      },
+      {
+        "N": 75,
+        "phi": "2.0158717139",
+        "disc": "0.01989276109"
+      },
+      {
+        "N": 76,
+        "phi": "2.01775759828",
+        "disc": "0.01940050662"
+      },
+      {
+        "N": 77,
+        "phi": "2.0195789157",
+        "disc": "0.01892599168"
+      },
+      {
+        "N": 78,
+        "phi": "2.02133843064",
+        "disc": "0.0184683875"
+      },
+      {
+        "N": 79,
+        "phi": "2.02303877249",
+        "disc": "0.01802691247"
+      },
+      {
+        "N": 80,
+        "phi": "2.02468244234",
+        "disc": "0.01760082903"
+      },
+      {
+        "N": 81,
+        "phi": "2.02627181947",
+        "disc": "0.0171894407"
+      },
+      {
+        "N": 82,
+        "phi": "2.02780916759",
+        "disc": "0.01679208943"
+      },
+      {
+        "N": 83,
+        "phi": "2.02929664081",
+        "disc": "0.01640815311"
+      },
+      {
+        "N": 84,
+        "phi": "2.03073628927",
+        "disc": "0.01603704323"
+      },
+      {
+        "N": 85,
+        "phi": "2.03213006463",
+        "disc": "0.0156782028"
+      },
+      {
+        "N": 86,
+        "phi": "2.03347982513",
+        "disc": "0.01533110433"
+      },
+      {
+        "N": 87,
+        "phi": "2.03478734052",
+        "disc": "0.01499524801"
+      },
+      {
+        "N": 88,
+        "phi": "2.03605429668",
+        "disc": "0.01467016003"
+      },
+      {
+        "N": 89,
+        "phi": "2.0372823",
+        "disc": "0.01435539092"
+      },
+      {
+        "N": 90,
+        "phi": "2.03847288153",
+        "disc": "0.01405051415"
+      },
+      {
+        "N": 91,
+        "phi": "2.03962750094",
+        "disc": "0.01375512476"
+      },
+      {
+        "N": 92,
+        "phi": "2.0407475502",
+        "disc": "0.01346883799"
+      },
+      {
+        "N": 93,
+        "phi": "2.04183435715",
+        "disc": "0.01319128822"
+      },
+      {
+        "N": 94,
+        "phi": "2.04288918876",
+        "disc": "0.01292212775"
+      },
+      {
+        "N": 95,
+        "phi": "2.04391325434",
+        "disc": "0.01266102581"
+      },
+      {
+        "N": 96,
+        "phi": "2.04490770847",
+        "disc": "0.0124076676"
+      },
+      {
+        "N": 97,
+        "phi": "2.04587365382",
+        "disc": "0.01216175337"
+      },
+      {
+        "N": 98,
+        "phi": "2.04681214381",
+        "disc": "0.01192299757"
+      },
+      {
+        "N": 99,
+        "phi": "2.04772418511",
+        "disc": "0.01169112805"
+      },
+      {
+        "N": 100,
+        "phi": "2.04861073997",
+        "disc": "0.01146588535"
+      },
+      {
+        "N": 101,
+        "phi": "2.04947272855",
+        "disc": "0.01124702199"
+      },
+      {
+        "N": 102,
+        "phi": "2.05031103093",
+        "disc": "0.01103430181"
+      },
+      {
+        "N": 103,
+        "phi": "2.05112648917",
+        "disc": "0.01082749936"
+      },
+      {
+        "N": 104,
+        "phi": "2.0519199092",
+        "disc": "0.01062639935"
+      },
+      {
+        "N": 105,
+        "phi": "2.05269206258",
+        "disc": "0.01043079609"
+      },
+      {
+        "N": 106,
+        "phi": "2.05344368817",
+        "disc": "0.01024049298"
+      },
+      {
+        "N": 107,
+        "phi": "2.0541754938",
+        "disc": "0.01005530206"
+      },
+      {
+        "N": 108,
+        "phi": "2.05488815769",
+        "disc": "0.009875043557"
+      },
+      {
+        "N": 109,
+        "phi": "2.05558232994",
+        "disc": "0.00969954544"
+      },
+      {
+        "N": 110,
+        "phi": "2.05625863388",
+        "disc": "0.009528643059"
+      },
+      {
+        "N": 111,
+        "phi": "2.05691766729",
+        "disc": "0.009362178754"
+      },
+      {
+        "N": 112,
+        "phi": "2.05756000369",
+        "disc": "0.009200001511"
+      },
+      {
+        "N": 113,
+        "phi": "2.05818619342",
+        "disc": "0.009041966627"
+      },
+      {
+        "N": 114,
+        "phi": "2.05879676477",
+        "disc": "0.008887935403"
+      },
+      {
+        "N": 115,
+        "phi": "2.05939222499",
+        "disc": "0.008737774847"
+      },
+      {
+        "N": 116,
+        "phi": "2.05997306127",
+        "disc": "0.008591357401"
+      },
+      {
+        "N": 117,
+        "phi": "2.06053974166",
+        "disc": "0.008448560673"
+      },
+      {
+        "N": 118,
+        "phi": "2.06109271595",
+        "disc": "0.008309267195"
+      },
+      {
+        "N": 119,
+        "phi": "2.06163241649",
+        "disc": "0.008173364186"
+      },
+      {
+        "N": 120,
+        "phi": "2.06215925899",
+        "disc": "0.008040743334"
+      }
+    ]
+  },
+  "context": {
+    "axis": "qou-cds1: is there a tower of elliptic curves indexed by the degree of q, and were the earlier steps collapsing to order zero?",
+    "answer": "The collapse was real and is corrected here. The tower is not elliptic: the short model's discriminant is a perfect square (genus 0) and the long model's is a squarefree degree-18 polynomial (genus 8), and the Hecke tower adds no eigenvalue at any level. There is no twisting to be missed — tr is bar-odd and disc bar-even, exactly. The one genuine tower is the cyclotomic one, and none of its phases is small enough either.",
+    "corrects": "Steps 21-25 evaluated every spectrum at q = q_0 alone; and Step 25's write-up wrongly said Delta_L could not be carried symbolically.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* is recorded as a fact about the curve, never as a candidate q."
+  },
+  "gitCommit": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "durationMs": 0,
+  "scriptFile": "qbeta_discriminant_curve_in_q_probe.py",
+  "scriptHash": "ded38399f44c",
+  "scriptCommitSha": "72841c7a3584c8829dd1094196b5d1a42fa5dc88",
+  "commitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "computedAt": "2026-09-01T04:54:14.072202+00:00",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}

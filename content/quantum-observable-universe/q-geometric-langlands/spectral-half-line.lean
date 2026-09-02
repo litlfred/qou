@@ -1,4 +1,6 @@
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.AlgebraicSubstrate.ReebSpectrum
+import QOU.AlgebraicSubstrate.WeilZeta
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
@@ -45,22 +47,9 @@ namespace QOU.AlgebraicSubstrate
     `Re(ρ · log(↑q)) = Re(ρ) · log(q)` and
     `exp(Re(ρ) · log(q)) = q^{Re(ρ)}` by definition of `rpow`. -/
 theorem abs_cpow_ofReal_eq_rpow_re (q : ℝ) (hq : 0 < q) (ρ : ℂ) :
-    ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re := by
-  have hq_ne : (q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt hq)
-  -- Step 1: unfold cpow to exp(ρ * log(↑q))
-  rw [Complex.cpow_def_of_ne_zero hq_ne]
-  -- Step 2: |exp(z)| = exp(Re(z))
-  rw [Complex.norm_exp]
-  -- Step 3: Re(ρ * log(↑q)) = Re(ρ) * log(q)
-  -- because (log ↑q).re = log|↑q| = log q, and (log ↑q).im = arg(↑q) = 0
-  rw [Complex.mul_re, Complex.log_re, Complex.log_im,
-      Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq,
-      Complex.arg_ofReal_of_nonneg (le_of_lt hq),
-      zero_mul, sub_zero]
-  -- Step 4: exp(Re(ρ) * log q) = q^{Re(ρ)}
-  rw [Real.rpow_def_of_pos hq]
+    ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re :=
+  Complex.norm_cpow_eq_rpow_re_of_pos hq ρ
 
-/-- Backward-compatible alias for q > 1. -/
 theorem abs_rpow_eq_rpow_re (q : ℝ) (hq : q > 1) (ρ : ℂ) :
     ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re :=
   abs_cpow_ofReal_eq_rpow_re q (by linarith) ρ
@@ -96,5 +85,244 @@ theorem spectral_half_line
   have hl := congrArg Real.log h1
   rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
   exact mul_right_cancel₀ hlog hl
+
+/-! ## The spectral coordinate map
+
+`spectral_half_line` takes `spectral_coord` as a hypothesis. Two facts about
+that hypothesis are provable here and are worth separating from what is not
+(bean `qou-qspc`).
+
+**What is proved below.** Such a map always *exists* — `ρ := log α / log q` on
+the principal branch, using only `α ≠ 0`, which `LocalQZetaFunction` carries —
+and, more usefully, `Re(ρ)` is *independent of the branch*: any two exponents
+with the same `q`-power share a real part. So the conclusion `Re(ρᵢ) = 1/2` is
+well-posed even though the map `α ↦ ρ` is not, being determined only modulo
+`2πi / log q`.
+
+**What is NOT proved, and is the open part.** Nothing here identifies these `ρᵢ`
+with the spectrum of the Reeb derivation `ξ_q`. `spectral_coord` in
+`spectral_half_line` is doing double duty: it asserts a coordinate relation
+(supplied below) *and* that the exponents are Reeb eigenvalues (not supplied
+anywhere in the corpus). Existence does not close that gap — it isolates it. -/
+
+/-- A spectral coordinate map always exists: on the principal branch,
+    `ρ := log α / log q` satisfies `α = q^ρ`.
+
+    Uses only `q > 1` and `αᵢ ≠ 0`, the latter being a field of
+    `LocalQZetaFunction`. This supplies the *coordinate relation* of
+    `spectral_half_line`'s `spectral_coord` hypothesis, and nothing more —
+    see the section docstring. -/
+theorem exists_spectral_coord (Z : LocalQZetaFunction) (hq : Z.q > 1) :
+    ∃ ρ : Fin 8 → ℂ, ∀ i, Z.eigenvalues i = (Z.q : ℂ) ^ (ρ i) := by
+  have hq0 : (0 : ℝ) < Z.q := by linarith
+  have hlog : Real.log Z.q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hqC : (Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt hq0)
+  refine ⟨fun i => Complex.log (Z.eigenvalues i) / (Real.log Z.q : ℂ), fun i => ?_⟩
+  have hlogC : (Real.log Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hlog
+  show Z.eigenvalues i = (Z.q : ℂ) ^ (Complex.log (Z.eigenvalues i) / (Real.log Z.q : ℂ))
+  rw [Complex.cpow_def_of_ne_zero hqC, ← Complex.ofReal_log (le_of_lt hq0), mul_comm,
+      div_mul_cancel₀ _ hlogC, Complex.exp_log (Z.eigenvalues_ne_zero i)]
+
+/-- **The real part is branch-independent.** `α = q^ρ` pins `ρ` only modulo
+    `2πi / log q`, but every such `ρ` has the same real part — so
+    `Re(ρᵢ) = 1/2` is a well-posed conclusion despite the map `α ↦ ρ` not being
+    well-defined. -/
+theorem spectral_coord_re_unique
+    (q : ℝ) (hq : q > 1) (α : ℂ) (ρ ρ' : ℂ)
+    (h : (q : ℂ) ^ ρ = α) (h' : (q : ℂ) ^ ρ' = α) :
+    ρ.re = ρ'.re := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have e : q ^ ρ.re = q ^ ρ'.re := by
+    rw [← abs_cpow_ofReal_eq_rpow_re q hq0 ρ, ← abs_cpow_ofReal_eq_rpow_re q hq0 ρ',
+        h, h']
+  have hl := congrArg Real.log e
+  rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
+  exact mul_right_cancel₀ hlog hl
+
+/-- The real part produced by the principal branch, in closed form:
+    `Re(ρ) = log ‖α‖ / log q`. Combined with `spectral_coord_re_unique` this is
+    *the* real part of any spectral coordinate for `α`. -/
+theorem spectral_coord_re_eq
+    (q : ℝ) (hq : q > 1) (α : ℂ) (ρ : ℂ) (h : (q : ℂ) ^ ρ = α) :
+    ρ.re = Real.log ‖α‖ / Real.log q := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have e : q ^ ρ.re = ‖α‖ := by rw [← abs_cpow_ofReal_eq_rpow_re q hq0 ρ, h]
+  have hl := congrArg Real.log e
+  rw [Real.log_rpow hq0] at hl
+  rw [eq_div_iff hlog]
+  exact hl
+
+/-! ## Why the line is `Re = 1/2` — the functional equation's fixed locus
+
+`spectral_half_line` derives `Re(ρ) = 1/2` from `|α| = q^{1/2}`, but nothing so
+far says why *that* line rather than any other vertical one. The reason is a
+symmetry, and it is provable here.
+
+The functional equation pairs `α` with `q/α`. When `|α|² = q` — the Hasse–Weil
+conclusion — that partner is exactly the **complex conjugate**: `q/α = ᾱ`. So
+the Frobenius eigenvalues are Weil numbers on the circle of radius `√q`, closed
+under conjugation, and in the spectral coordinate `α = q^ρ` the pairing
+`α ↦ q/α` becomes `ρ ↦ 1 − ρ`. Its fixed locus under conjugation is
+`Re(ρ) = 1/2`.
+
+That is the classical picture, and stating it in the framework's own terms
+answers a question the arc otherwise leaves open: the critical line is not a
+fitted constant, it is where the functional equation's involution acts
+trivially on real parts. -/
+
+/-- **The pairing acts as `ρ ↦ 1 − ρ` on the spectral coordinate.** If
+    `α = q^ρ` and `q/α = q^σ`, then `σ = 1 − ρ` — provided `q > 1`, so that the
+    exponent is determined by its value up to the usual period.
+
+    Stated on real parts, which is where it is unambiguous:
+    `Re σ = 1 − Re ρ`. -/
+theorem partner_re_eq_one_sub
+    (q : ℝ) (hq : q > 1) (ρ σ : ℂ)
+    (h : (q : ℂ) ^ σ = (q : ℂ) / (q : ℂ) ^ ρ) :
+    σ.re = 1 - ρ.re := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hpow : ((q : ℂ) ^ ρ) ≠ 0 := by
+    simpa using Complex.cpow_ne_zero_iff.mpr
+      (Or.inl (Complex.ofReal_ne_zero.mpr (ne_of_gt hq0)))
+  -- take norms: q^{Re σ} = q / q^{Re ρ} = q^{1 - Re ρ}
+  have hn := congrArg (fun z : ℂ => ‖z‖) h
+  simp only [norm_div, Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq0,
+    abs_cpow_ofReal_eq_rpow_re q hq0] at hn
+  -- hn : q ^ σ.re = q / q ^ ρ.re
+  have hrw : q / q ^ ρ.re = q ^ (1 - ρ.re) := by
+    rw [Real.rpow_sub hq0, Real.rpow_one]
+  rw [hrw] at hn
+  have hl := congrArg Real.log hn
+  rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
+  exact mul_right_cancel₀ hlog hl
+
+/-- **The critical line is the fixed locus.** For `q > 1`, a spectral exponent
+    has real part `1/2` exactly when it is fixed by the functional equation's
+    involution `ρ ↦ 1 − ρ` on real parts.
+
+    So `Re(ρ) = 1/2` is not a fitted constant: it is the unique vertical line on
+    which `α ↦ q/α` acts trivially. -/
+theorem critical_line_iff_fixed (ρ : ℂ) :
+    ρ.re = 1 / 2 ↔ ρ.re = 1 - ρ.re := by
+  constructor <;> intro h <;> linarith
+
+/-- **Assembled.** Under the Hasse–Weil bound, every eigenvalue's spectral
+    exponent is fixed by the functional-equation involution — the content of
+    `spectral_half_line`, restated as the symmetry statement it is. -/
+theorem spectral_half_line_is_fixed_locus
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) (ρ : Fin 8 → ℂ)
+    (spectral_coord : ∀ i, Z.eigenvalues i = (Z.q : ℂ) ^ (ρ i))
+    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    ∀ i, (ρ i).re = 1 - (ρ i).re := fun i =>
+  (critical_line_iff_fixed (ρ i)).mp (spectral_half_line Z hq ρ spectral_coord hw i)
+
+/-! ## The Reeb spectrum on the critical line
+
+`spectral_half_line` concludes `Re(ρᵢ) = 1/2` for *any* exponents with
+`αᵢ = q^{ρᵢ}`, and `exists_spectral_coord` shows such exponents always exist —
+so on its own it is a statement about arbitrary complex numbers, not about the
+Reeb derivation. `QOU.AlgebraicSubstrate.ReebSpectrum` supplies the missing
+object and `HasReebSpectralCoords` the missing identification, as a named
+hypothesis with no instance (bean `qou-qspc`).
+
+With both, the arc's intended statement is available and is a theorem: **the
+Reeb spectrum lies on the critical line**, conditional on the identification and
+on the Hasse–Weil bound. The conditionality is visible in the type, which is the
+point — the identification is unproved, and nothing here pretends otherwise. -/
+
+/-- **The Reeb spectrum lies on the critical line.**
+
+    This is what `cor:spectral-half-line` was always meant to say. What it said
+    before was the same conclusion about unnamed exponents; the `ρ` here are the
+    eigenvalues of an actual operator, carried by `R`.
+
+    **The magnitude is now derived, not assumed.** This statement used to carry
+    `(hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1/2))` as a hypothesis — the very fact
+    `hasse_weil_bound` proves from `IsWeilZeta`, one file away, which this file
+    could not reach because content-block siblings cannot import one another
+    (§0a). Lifting the class into `QOU.AlgebraicSubstrate.WeilZeta` removed the
+    duplication: `[IsWeilZeta Z]` replaces `hw`, and the Hasse–Weil bound is
+    imported rather than re-assumed.
+
+    So the result is now conditional on exactly two things, and it is worth being
+    precise about their different standings:
+
+    - `[IsWeilZeta Z]` — the two classical Weil inputs (functional equation,
+      Castelnuovo–Severi). Cited results, and `weilZetaExample` witnesses that
+      they are jointly satisfiable.
+    - `[HasReebSpectralCoords Z R]` — the identification of the Frobenius
+      exponents with the Reeb spectrum. **This is the open one** (bean
+      `qou-qspc`); no instance exists, and `hasReebSpectralCoords_satisfiable`
+      below shows only that the hypothesis is consistent, not that `ξ_q` meets
+      it. -/
+theorem reeb_spectrum_on_critical_line
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R] :
+    ∀ i, (R.spec i).re = 1 / 2 :=
+  spectral_half_line Z hq R.spec HasReebSpectralCoords.coords
+    (hasse_weil_bound Z)
+
+/-- The same, as the symmetry statement: each Reeb eigenvalue is fixed by the
+    functional equation's involution on real parts. -/
+theorem reeb_spectrum_fixed_by_involution
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R] :
+    ∀ i, (R.spec i).re = 1 - (R.spec i).re := fun i =>
+  (critical_line_iff_fixed (R.spec i)).mp
+    (reeb_spectrum_on_critical_line Z hq R i)
+
+
+/-! ## Is the hypothesis satisfiable?
+
+`reeb_spectrum_on_critical_line` is conditional on `HasReebSpectralCoords`. A
+conditional theorem is worthless if its hypothesis is unsatisfiable — that is
+exactly the defect the `False`-proving axioms in `hasse-weil-bound.lean` had, and
+the reason they were removed. `reebSpectrumExample` does **not** settle it: that
+witness has every `spec i = 1`, which would force `αᵢ = q` for all `i`, false for
+any `Z` with distinct eigenvalues.
+
+So it is proved below, and the proof is a construction: diagonalise. -/
+
+/-- The diagonal operator on `Fin 8 → ℂ` with entries `ρ`. -/
+def diagOp (ρ : Fin 8 → ℂ) : (Fin 8 → ℂ) →ₗ[ℂ] (Fin 8 → ℂ) where
+  toFun v := fun i => ρ i * v i
+  map_add' := by intro x y; funext i; simp [mul_add]
+  map_smul' := by intro c x; funext i; simp [Pi.smul_apply]; ring
+
+/-- **The identification is a consistent hypothesis.** For every `Z` with `q > 1`
+    there is a `ReebSpectrum` satisfying `HasReebSpectralCoords Z`.
+
+    Hence `reeb_spectrum_on_critical_line` is not vacuously true: its hypothesis
+    can be met.
+
+    **What this does not establish**, and the distinction is the whole point:
+    satisfiability says *some* operator has the Frobenius exponents as its
+    spectrum — here a diagonal operator built from them, which is no more than
+    bookkeeping. The arc's claim is that the framework's Reeb derivation `ξ_q` is
+    such an operator. That is a statement about a *particular* operator and is
+    untouched by this. What the result buys is the elimination of one way the arc
+    could have been empty, and a sharper location for the open part: everything
+    now rests on the choice of operator, nothing on the shape of the hypothesis. -/
+theorem hasReebSpectralCoords_satisfiable (Z : LocalQZetaFunction) (hq : Z.q > 1) :
+    ∃ R : ReebSpectrum (Fin 8 → ℂ), HasReebSpectralCoords Z R := by
+  obtain ⟨ρ, hρ⟩ := exists_spectral_coord Z hq
+  refine ⟨{ op := diagOp ρ
+            mode := fun i => Pi.single i 1
+            spec := ρ
+            mode_ne_zero := ?_
+            is_eigen := ?_ }, ⟨hρ⟩⟩
+  · intro i hi
+    have h1 := congrFun hi i
+    simp at h1
+  · intro i
+    funext j
+    by_cases hji : j = i
+    · subst hji; simp [diagOp]
+    · simp [diagOp, Pi.single_eq_of_ne hji]
 
 end QOU.AlgebraicSubstrate

@@ -318,8 +318,12 @@ def main() -> int:
             R_val = mp.mpf(r["a_K_R_ratio"])
             w.add_assertion(
                 "a_K_R_proton_equals_1",
-                computed=mp.nstr(R_val, 30),
-                expected="1.000000000000000000000000000000",
+                # |R - 1| against 0. Comparing R to a 30-digit "1.000..."
+                # cancels in the float64 verdict (witness.py:830) at ~2.2e-16,
+                # so the 1e-30 bound could never be reached; the residual form
+                # can, because float64 carries 16 digits at any exponent.
+                computed=mp.nstr(abs(R_val - 1), 30),
+                expected="0",
                 tolerance=1e-30,
                 source="W_atom = W_free for free nucleon (R trivially 1)",
             )

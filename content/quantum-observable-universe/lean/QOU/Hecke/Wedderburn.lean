@@ -5,6 +5,8 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.List.Sort
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Algebra.Algebra.Hom
+import QOU.BraidKnot.IdentityIContentDecomposition
+import QOU.Mathlib.SYTHookGNW
 
 open BigOperators
 
@@ -58,6 +60,45 @@ class SpechtDimension {n : ℕ} (lam : Partition n) where
   dim : ℕ
   positive : 0 < dim
 
+/-- **The block dimension `f^λ`, computed from the partition.**
+
+`dimHLF` is the Frame–Robinson–Thrall hook-length dimension `n! / ∏_c h_c`
+(`QOU.BraidKnot.IdentityI`). This is a plain function of `λ`, not a field: it is
+what closes the last freedom the class had. Before 2026-08-30 `blockDim` was a
+free `Partition n → ℕ`, so `y_λ` was pinned only *relative* to it and every
+`1/d` remained realisable.
+
+**This IS the SYT count, and that is a theorem here — not a commitment.**
+Frame–Robinson–Thrall (`dimHLF λ = #SYT(λ)`) is proved in this corpus at general
+`n`, sorry-free: `QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF`, via the
+Greene–Nijenhuis–Wilf route (corner recursion + hook-summation identity, combined
+by strong induction). `blockDim_eq_numSYT` below discharges it against a
+`Partition n`, whose `decreasing` and `positive` fields supply exactly the two
+hypotheses FRT needs, so nothing is left assumed.
+
+**Corrected 2026-08-30.** An earlier version of this docstring said the general
+theorem was "open here" and that the class committed to the FRT *formula* without
+proving FRT. Both halves were false. The error came from trusting
+`SYTHookFormulaRows.lean`'s header, which is itself stale and is fixed in the
+same commit — the corpus, not a source file's status note, is the authority
+(AGENTS.md §"Before declaring open"). -/
+def blockDim {n : ℕ} (lam : Partition n) : ℕ :=
+  QOU.BraidKnot.IdentityI.dimHLF lam.parts
+
+/-- **The block dimension IS the number of standard Young tableaux of shape `λ`.**
+
+`blockDim` is defined by the hook-length *formula*; this identifies it with the
+combinatorial object that formula computes, via the corpus's sorry-free general
+Frame–Robinson–Thrall theorem.
+
+Both hypotheses FRT needs come free from the `Partition n` structure — `parts` is
+weakly decreasing (`lam.decreasing`) and its entries are positive
+(`lam.positive`) — so there is nothing left to assume. This is what upgrades
+`blockDim` from a chosen formula to `f^λ`. -/
+theorem blockDim_eq_numSYT {n : ℕ} (lam : Partition n) :
+    blockDim lam = QOU.Mathlib.SYTEnum.numSYTenum lam.parts :=
+  (QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF lam.parts lam.decreasing lam.positive).symm
+
 /--
 Wedderburn–Artin decomposition of `H_n(q)`. An instance asserts:
 - For each partition λ ⊢ n, a central idempotent `pi_lambda λ`;
@@ -109,14 +150,6 @@ class WedderburnDecomp
   unweighted decomposition that rests on this partition of unity; the `y_λ`
   enter one level down, through `block_scaling`. -/
   complete : all_parts.sum (fun lam => pi_lambda lam) = 1
-  /-- Dimension of the `λ` block — the size of the matrix algebra `M_{f^λ}(R)`
-  carrying it.
-
-  Still a **free** natural: nothing here ties it to `λ`, and `SpechtDimension`
-  above does not either. That residual freedom is real and is measured — see
-  `yLambda_residual_freedom` in `QOU.Hecke.RankOneDegeneracy` — and closing it
-  is the hook-length half of Mathas (1999) Thm 3.43. -/
-  blockDim : Partition n → ℕ
   /-- The `λ`-block representation `ρ_λ : A → M_{f^λ}(R)`, as an **algebra
   homomorphism**.
 
@@ -168,7 +201,7 @@ pinned below. A free `chi_lambda` field could take any value at `1`; an algebra
 map cannot, because `ρ_λ 1 = 1` and the trace of an identity matrix is its
 size. -/
 theorem chi_lambda_one (lam : Partition n) :
-    chi_lambda (WD := WD) lam 1 = (WD.blockDim lam : R) := by
+    chi_lambda (WD := WD) lam 1 = (blockDim lam : R) := by
   simp [chi_lambda]
 
 /-- **`y_λ` is determined.** `block_scaling` at `x = 1`, with `χ^λ(1) = f^λ`:
@@ -180,7 +213,7 @@ block dimension. Contrast `QOU.Hecke.RankOneDegeneracy`, where against the
 previous class every nonzero rational was realisable as `y_λ` at every
 partition. -/
 theorem yLambda_determined (lam : Partition n) :
-    MT.trace (WD.pi_lambda lam) = WD.y_lambda lam * (WD.blockDim lam : R) := by
+    MT.trace (WD.pi_lambda lam) = WD.y_lambda lam * (blockDim lam : R) := by
   have h := WD.block_scaling 1 lam
   rw [one_mul] at h
   rw [h, ← chi_lambda_one (WD := WD) lam]
@@ -188,18 +221,21 @@ theorem yLambda_determined (lam : Partition n) :
 
 omit WD in
 /-- **Uniqueness of the weight.** Two decompositions agreeing on the block
-idempotent and the block dimension agree on `y_λ`, provided that dimension is
-not a zero divisor. This is the exact statement that fails for the previous
-class. -/
+idempotent agree on `y_λ`, provided the block dimension is not a zero divisor.
+
+The `blockDim` hypothesis the 2026-08-30 morning version of this theorem
+carried is **gone**, and its absence is the content: `blockDim` is now a
+function of `λ` alone, so two decompositions cannot disagree about it. What
+remains is a hypothesis about `R` (no zero divisors) and about the value
+`(f^λ : R)`, not about the decompositions. -/
 theorem yLambda_unique [NoZeroDivisors R]
     (W W' : WedderburnDecomp n q A) (lam : Partition n)
     (hpi : W.pi_lambda lam = W'.pi_lambda lam)
-    (hdim : W.blockDim lam = W'.blockDim lam)
-    (hne : (W.blockDim lam : R) ≠ 0) :
+    (hne : (blockDim lam : R) ≠ 0) :
     W.y_lambda lam = W'.y_lambda lam := by
   have h  := yLambda_determined (WD := W) lam
   have h' := yLambda_determined (WD := W') lam
-  rw [← hpi, ← hdim] at h'
+  rw [← hpi] at h'
   exact mul_right_cancel₀ hne (h.symm.trans h')
 
 open Classical in

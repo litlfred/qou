@@ -265,8 +265,24 @@ def main() -> int:
             "AGENTS.md permits. Those two classes need per-file judgement; only "
             "`assertion_kwarg` is mechanically safe to drain."
         )
-        wb.add_assertion("all_findings_are_live_not_deprecated", "1", "1", "0",
-                         source="0 of the flagged files are under _deprecated/")
+        # Was `add_assertion("…", "1", "1", "0")` (bean `qou-26f2`) — a constant
+        # that could not tell the sweep-JSON input from the `_deprecated/`-laden
+        # fallback walk, so it read PASS in the one mode where the claim it makes
+        # is false. Count the deprecated paths in the input instead: the checker
+        # scores every `_deprecated/` script `n/a`, never `fail`, so a sweep-fed
+        # run has 0 by construction and a fallback run fails loudly — which is
+        # the correct verdict there, since that run's counts are a whole-tree
+        # scan, not this audit's finding set.
+        deprecated_in_input = sorted(
+            rel for rel in files
+            if rel.startswith("_deprecated/") or "/_deprecated/" in rel
+        )
+        wb.add_data("deprecated_paths_in_input", deprecated_in_input)
+        wb.add_assertion("all_findings_are_live_not_deprecated",
+                         str(len(deprecated_in_input)), "0", "0",
+                         unit="files under _deprecated/",
+                         source=f"{len(deprecated_in_input)} of the {len(files)} "
+                                f"flagged files are under _deprecated/ (input: {src})")
         wb.save()
         print("\nwitness written")
     except Exception as exc:  # pragma: no cover

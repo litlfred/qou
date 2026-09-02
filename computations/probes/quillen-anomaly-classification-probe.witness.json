@@ -1,13 +1,13 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:44:11.079563+00:00",
-  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
+  "computedAt": "2026-08-30T07:11:58.129579+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "curvature_symbolic_exact_residual",
-      "computed": "0",
-      "expected": "0",
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "sympy exact residuals: quarter-Laplacian(2 log y) - (-1/(2y^2)) = 0; mixed d_u d_v [2 log f(u) + 2 log g(v)] = 0; Wirtinger d_tau d_taubar = (1/4)(d_xx + d_yy) verified. Statement: d_tau d_taubar log[(Im tau)^2 |eta|^4] = -1/(2 (Im tau)^2) exactly"
     },
@@ -77,11 +77,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3198,
+  "durationMs": 2924,
   "computation": "quillen-anomaly-classification-probe",
   "scriptFile": "quillen_anomaly_classification_probe.py",
-  "scriptHash": "682755c9280d",
-  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "scriptHash": "0e77c81a1084",
+  "scriptCommitSha": "8a7bf94489a6f7d1a4a0eec2880ef212c71e4b88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -96,7 +96,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

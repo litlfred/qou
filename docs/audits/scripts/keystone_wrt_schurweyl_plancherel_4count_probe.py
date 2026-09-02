@@ -58,7 +58,28 @@ mp.mp.dps = 50
 # #2603 witness, so changing it would break the very cross-check this script
 # performs. Re-pinning is a decision for whoever re-runs #2603.
 Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
-
+# 🛑 DELIBERATELY NOT MIGRATED, and the comment that stood here was WRONG.
+#
+# It read "substrate q_0 (proton-anchored re-pin; matches #2603 witness)".
+# 1.1099785955541805 is B, the CODATA-2018 MUON derivation -- 11.54 ppb from
+# the proton pin, which is 1.1099785827513808. The label named the wrong
+# anchor; only the "#2603 witness" half was right, and that is exactly why the
+# value must stay.
+#
+# WRT and CANON_W below are hardcoded numbers READ OFF the #2603 witness
+# (computations/keystone-wrt-color-schurweyl.witness.json), computed at this
+# q_0. Migrating Q0 alone would leave a proton-pinned q_0 beside B-pinned
+# reference constants -- the layer straddle AGENTS.md forbids, and the same
+# shape as the he_nu_sdp defect this tranche just fixed (PR #6200). The two
+# move together or not at all, and moving them needs the #2603 producer re-run
+# at the new pin.
+#
+# The sibling probes in this directory carry no frozen companions and WERE
+# migrated in this commit. Tracked as bean `qou-tekx`; see also `qou-2whe` for
+# why nothing flagged any of them (docs/audits/scripts/ is outside the
+# hardcoded-literal audit's scan root).
+Q0 = 1.1099785955541805  # B (CODATA-2018 muon); pinned to the #2603 witness's
+                         # frame -- see the block above before changing it
 # WRT false-theta colour components Ψ̃₃₀^(a)(1/q₀), from #2603 witness
 # (computations/keystone-wrt-color-schurweyl.witness.json, 50 dps; 14 sig figs here).
 WRT = {1: 0.98999965222313, 11: 0.78861465023608, 19: 0.50299993214087, 29: 0.04796281223285}

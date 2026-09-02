@@ -1,41 +1,39 @@
 {
   "paper": "quantum-observable-universe",
-  "total_blocks": 3108,
+  "total_blocks": 3119,
   "by_kind": {
-    "remark": 985,
-    "prose": 385,
-    "proposition": 624,
+    "remark": 988,
+    "prose": 387,
+    "proposition": 625,
     "proof": 442,
     "example": 101,
-    "definition": 259,
-    "theorem": 58,
-    "conjecture": 175,
+    "definition": 261,
+    "theorem": 56,
+    "conjecture": 180,
     "corollary": 17,
     "lemma": 49,
     "diagram": 2,
     "simulator": 11
   },
   "provable": {
-    "total": 748,
-    "with_lean_field": 745,
-    "with_lean_file": 740,
-    "sorry_free": 739,
-    "percent_sorry_free": 98.8
+    "total": 747,
+    "with_lean_field": 744,
+    "with_lean_file": 737,
+    "sorry_free": 736,
+    "percent_sorry_free": 98.5
   },
   "conjectures": {
-    "total": 175,
+    "total": 180,
     "external": 15,
-    "qou_original": 160,
-    "primary": 82,
-    "dependent": 78,
-    "primary_class_axiomatized": 72,
-    "percent_primary_class_axiomatized": 87.8,
-    "class_axiomatized": 161,
-    "percent_class_axiomatized": 92,
-    "with_lean_file": 170
+    "qou_original": 165,
+    "primary": 84,
+    "dependent": 81,
+    "primary_class_axiomatized": 73,
+    "percent_primary_class_axiomatized": 86.9,
+    "class_axiomatized": 165
   },
   "definitions": {
-    "total": 259,
-    "with_lean_file": 259
+    "total": 261,
+    "with_lean_file": 261
   }
 }

@@ -205,10 +205,18 @@ The hypothesis `hw` is the one remaining input, and it is a genuine sub-hypothes
 restatement of the conclusion: it is the classical fact that the level-`r` principal specialisation
 is the Vandermonde ratio in the shifted parts `x_i = Q^{μ_i + r − i}`, from which the box-addition
 ratio follows because adding a box to row `i` sends `x_i ↦ Q·x_i` and fixes every other `x_j`.
-Establishing `hw` for `QBeta.WenzlWeight.schurPrincipal` — equivalently, the `q`-analogue of the
-Frame–Robinson–Thrall hook-length identity relating `∏_c (1 − Q^{h(c)})` to the `x_i` — is what
-still stands between this and general-`r` branching for the corpus weight.  Tracked on bean
-`qou-j7ln`; it is *not* stated here as a `sorry`. -/
+Establishing `hw` for `QBeta.WenzlWeight.schurPrincipal` is what still stands between this and
+general-`r` branching for the corpus weight.  It is *not* stated here as a `sorry`.
+
+**Currency note (2026-08-30).**  This paragraph used to identify that gap with *"the `q`-analogue of
+the Frame–Robinson–Thrall hook-length identity relating `∏_c (1 − Q^{h(c)})` to the `x_i`"*, tracked
+on bean `qou-j7ln`.  That identity is **proved**, and the bean is `completed`:
+`SYTBetaGapVandermonde.prodHooksF_one_sub_pow_pair` gives it in `(1 − Q^{β_i − β_j})` form (as the
+`f n = 1 − Qⁿ` case of a per-row identity proved over an arbitrary commutative monoid), and
+`QHookVandermonde.prodHooksF_one_sub_pow_vandermonde` converts it to the Vandermonde `(x_i − x_j)`
+form this file's consumers take.  What remains is the *wiring* — feeding those to `hw` — not a
+missing identity.  Recorded because reading this paragraph at face value cost a later session a
+near-duplicate build of the whole chain. -/
 theorem sum_eq_bracket_mul_of_qratio_scaling {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
     (hv0 : ∀ i ∈ s, v i ≠ 0) {Q : F} (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (w : ι → F) (W : F)
     (hw : ∀ i ∈ s, w i = (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j)) * W) :

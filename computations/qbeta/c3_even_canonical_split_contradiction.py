@@ -92,8 +92,18 @@ WHAT IS WITHDRAWN A SECOND TIME:
      registry KC21, tier symbolic-exact).  That is a genuine geometric
      motivation for subtracting a 4_1 volume, which I asserted did not exist.
 
+     *** THE QUOTED AGREEMENT IS ON A SUPERSEDED ANCHOR (2026-08-31, qou-cds1).
+         `|S(muon)| = 0.00968` is the CODATA-2018 extraction. At the live
+         CODATA-2022 pin (fca08de7d2) S_leak(muon) = 0.010023, so the
+         deficit-vs-|S| agreement is 6.63%, not 3.01% — the match is 2.2x
+         WORSE than the number KC21 quotes, and this file now computes it
+         instead of asserting it. The direction of the finding is unchanged
+         ((H1) is motivated, not derived); its margin is not. The deficit
+         0.0094 is itself anchor-blind to sub-ppm, so all of the movement is
+         on the |S| side. ***
+
      What IS still open is narrower and must be stated precisely: the match is
-     a ~2.9% SCALE agreement, not an exact identity; the exact normalisation is
+     a SCALE agreement, not an exact identity; the exact normalisation is
      open; and `conj:im-q-physical-role` remains a CONJECTURE.  So (H1) as an
      EXACT identity is not established — but "no derivation in the corpus" was
      false.
@@ -125,17 +135,45 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from qbeta_utils import c3_target_at  # noqa: E402
+from qou_substrate.constants import (  # noqa: E402
+    Q_MUON_50_DIGIT_STR, q_at, q_muon_at, vol_4_1_at,
+)
+from substrate import codata_constants as _C  # noqa: E402
 
 set_compute_dps()
 
-# ---------------------------------------------------------------- corpus data
-Q_PROTON = mpf("1.1099785827513808")
-Q_MUON = mpf("1.10997859555733471")
+# ────────────────────────── anchors: DERIVED, and PAIRED ──────────────────────
+# CORRECTED 2026-08-31 (qou-cds1 / qou-t39x). This block used to hand-type
+#
+#     Q_MUON  = 1.10997859555733471   <- the FROZEN muon pin
+#     C3_MUON = -2.02020024           <- the CODATA-2018 muon c_3
+#
+# which is a STRADDLE: those two belong to different anchors. There is no single
+# "muon c_3" — the extractor returns a different value at each pin in use, and
+# they differ in the fourth significant figure (frozen -2.02018813, CODATA-2018
+# -2.02020024, CODATA-2022 -2.01986031). A c_3 carried without its anchor is a
+# straddle waiting to happen, and this file was in exactly that state.
+#
+# So the pair is now DERIVED at each named anchor rather than transcribed —
+# a literal cannot drift from a source it does not have, and these had none.
+# `assert_extraction_reproduces_corpus_proton` below licenses the extractor by
+# reproducing the corpus proton value, which is anchor-stable across editions.
+_ME = mpf(str(_C.M_E_MEV))
+_QB = mpf(str(_C.Q_BETA_MEV))
 
-C3_PROTON = mpf("-2.06934258")
-C3_MUON = mpf("-2.02020024")
+Q_PROTON = mpf(str(q_at(50)))
+Q_MUON = mpf(str(q_muon_at(50)))          # CODATA 2022 (owner ruling fca08de7d2)
+Q_MUON_FROZEN = mpf(Q_MUON_50_DIGIT_STR)  # the pin the 2026-07-07 audit quoted at
 
-VOL_41 = mpf("2.029883212819307")
+C3_PROTON = c3_target_at(Q_PROTON, _QB, _ME, convention="C")
+C3_MUON = c3_target_at(Q_MUON, _QB, _ME, convention="C")
+C3_MUON_FROZEN = c3_target_at(Q_MUON_FROZEN, _QB, _ME, convention="C")
+
+# The corpus proton literal, kept as the regression target for the extractor.
+CORPUS_C3_PROTON = mpf("-2.06934258")
+
+VOL_41 = vol_4_1_at(50)
 
 # As QUOTED (4 significant figures) in the 2026-07-07 audit and hardcoded at
 # qbeta_s_complex_volume_rigidity_probe.py:70-71.  NOT independent data --
@@ -164,6 +202,17 @@ def main():
     assert check_kappa_bar_odd()
     print("\n[0] kappa_(2,1)(1/q) = -kappa_(2,1)(q)  -> genuinely bar-ODD.  OK")
 
+    # The anchors are derived, so the extractor must be licensed before use:
+    # the proton c_3 is anchor-stable across CODATA editions (m_p/m_e moved by
+    # 2e-12 relative, against the muon ratio's 1.5e-9), which is why only the
+    # muon arm ever broke and why this is the right regression target.
+    assert abs(C3_PROTON - CORPUS_C3_PROTON) < mpf("1e-6"), C3_PROTON
+    print(f"    extractor licensed: c_3(proton) = {mp.nstr(C3_PROTON, 12)} "
+          f"reproduces the corpus {CORPUS_C3_PROTON} to "
+          f"{mp.nstr(abs(C3_PROTON - CORPUS_C3_PROTON), 3)}")
+    print(f"    muon anchors  CODATA-2022 {mp.nstr(C3_MUON, 12)}   "
+          f"frozen pin {mp.nstr(C3_MUON_FROZEN, 12)}")
+
     # ---------------------------------------------------------------- [1]
     print("\n[1] THE WITHDRAWN CROSS-CHECK, shown to be an identity.\n")
     print("    S is DEFINED as S := a_1/kappa_(2,1) with a_1 = -c_3")
@@ -171,10 +220,14 @@ def main():
     print("       2026-06-13-qbeta-root-of-unity-residue-program.md:177)")
     print("    so 'reconstructing' S = -c_3/kappa returns the SAME number.\n")
 
+    # The round-trip must be evaluated AT THE ANCHOR THE VALUE WAS QUOTED AT.
+    # The 2026-07-07 audit predates the CODATA-2022 muon re-pin (fca08de7d2,
+    # 2026-08-22), so its S(muon) belongs to the frozen pin; comparing it against
+    # a 2022 reconstruction is the straddle, not a refutation.
     max_dev = mpf("0")
     for name, q, c3, quoted in (
         ("proton", Q_PROTON, C3_PROTON, S_PROTON_QUOTED),
-        ("muon", Q_MUON, C3_MUON, S_MUON_QUOTED),
+        ("muon", Q_MUON_FROZEN, C3_MUON_FROZEN, S_MUON_QUOTED),
     ):
         recon = -c3 / kappa_21(q)
         dev = abs(recon - quoted) / quoted
@@ -188,6 +241,22 @@ def main():
             f"-> {verdict}"
         )
         assert dev < round_win, "would indicate genuinely independent data"
+
+    # ---- and the staleness the re-pin exposes, reported rather than hidden ----
+    recon_2022 = -C3_MUON / kappa_21(Q_MUON)
+    dev_2022 = abs(recon_2022 - S_MUON_QUOTED) / S_MUON_QUOTED
+    win_2022 = mpf("0.05") / S_MUON_QUOTED
+    print(
+        f"\n    STALE, and now measurable: at the CODATA-2022 muon pin the same\n"
+        f"    definition gives S(muon) = {mp.nstr(recon_2022, 7)}, which is\n"
+        f"    {mp.nstr(dev_2022 / win_2022, 3)}x OUTSIDE the 4-s.f. window of the quoted\n"
+        f"    {S_MUON_QUOTED}. The quoted figure is a CODATA-2018-era number; at the\n"
+        f"    live anchor it reads {mp.nstr(recon_2022, 4)}, not {S_MUON_QUOTED}."
+    )
+    assert dev_2022 > win_2022, (
+        "if this ever passes, the quoted S(muon) has been refreshed to the live "
+        "anchor and this staleness report should be retired"
+    )
 
     print(
         "\n    Both deviations lie INSIDE the rounding window of the quoted\n"
@@ -263,13 +332,26 @@ def main():
         "    it, and the registry's KC21 row inherits the same vocabulary."
     )
 
+    # KC21's scale claim, COMPUTED at the live anchor rather than quoted. The
+    # deficit is anchor-blind (sub-ppm); |S_leak| is not, so the agreement is a
+    # function of which muon pin is in force and must never be a literal here.
+    _deficit = mpf("0.0094")           # Phi_b state-integral volume deficit, PR #3654
+    _sleak_mu = C3_MUON + VOL_41
+    _agree = abs(_sleak_mu - _deficit) / _deficit * 100
+    _agree_2018 = abs((C3_MUON_FROZEN + VOL_41) - _deficit) / _deficit * 100
+
     print("\n" + "=" * 74)
     print("VERDICT (scope-(a)), after TWO self-corrections.")
     print("  * (H1) as an EXACT identity: not established (the geometric match")
-    print("    is a ~2.9% scale agreement; exact normalisation open;")
+    print(f"    is a ~{mp.nstr(_agree, 3)}% scale agreement; exact normalisation open;")
     print("    conj:im-q-physical-role still a conjecture).")
     print("  * (H1) as UNMOTIVATED: FALSE -- the Phi_b saddle volume deficit")
-    print("    0.0094 ~ |S(muon)| 0.00968 is fit-free and anchor-blind (KC21).")
+    print(f"    0.0094 ~ |S(muon)| {mp.nstr(abs(_sleak_mu), 5)} is fit-free and "
+          "anchor-blind (KC21).")
+    print(f"  * BUT the margin is anchor-dependent: {mp.nstr(_agree, 3)}% at the live")
+    print(f"    CODATA-2022 pin against {mp.nstr(_agree_2018, 3)}% at the frozen pin KC21")
+    print("    quotes. 0.0094 is anchor-blind; |S_leak| is not, so KC21's")
+    print("    '~2.9%' is a superseded number, not a property of the saddle.")
     print("  * The kappa*S split is definitional and adjudicates nothing.")
     print("  * NEW: the two-S collision is live in the capstone, and the two")
     print("    S's do NOT share epistemic status.")

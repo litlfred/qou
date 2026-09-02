@@ -1,0 +1,97 @@
+{
+  "engine": "python+sympy (exact in q)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T08:08:23.372852+00:00",
+  "commitSha": "564041f3261f6798c3d2484c2758a32d98bd6cc5",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-d-frame-ladder-bar-weight-prune",
+  "scriptFile": "qbeta_d_frame_ladder_bar_weight_prune.py",
+  "scriptHash": "e0da94159989",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py"
+  },
+  "description": "Formalize-first prune for the convention-D Q_beta ladder: the phase offset is forced to bar-weight -4 (uniquely q^2 among monomials), the same rule derives convention C's offset of 1, and the naive z-swap violates it by keeping a weight-0 offset.",
+  "one_fact_two_forms": {
+    "bar_z_D": "1/(q**3 + q)",
+    "q_minus4_times_z_D": "1/(q**3 + q)",
+    "z_D_minus_h": "1/(q**3 + q)",
+    "all_three_equal": true
+  },
+  "bar_weights_of_z": {
+    "z_C": {
+      "bar_ratio": "1",
+      "bar_weight": 0
+    },
+    "z_D": {
+      "bar_ratio": "q**(-4)",
+      "bar_weight": -4
+    }
+  },
+  "phase_with_current_offset_1": {
+    "C": {
+      "alpha": "(q**2 - 1)*(sqrt(q) - q - 1)/(2*q*(q + 1))",
+      "bar_ratio": "-1",
+      "is_bar_eigenvector": true
+    },
+    "D": {
+      "alpha": "(q**5 - q**4 - q**3 + 1)/(2*q*(q**2 + 1))",
+      "bar_ratio": "(q**3 + q - 1)/(q*(q**3 - q**2 - 1))",
+      "is_bar_eigenvector": false
+    }
+  },
+  "prune": {
+    "rule": "offset bar-weight must equal z's bar-weight; c = q^n has weight -2n",
+    "C_forced_offset": "q^0 = 1",
+    "C_alpha_bar_ratio": "-1",
+    "C_reproduces_existing_ladder": true,
+    "D_forced_offset": "q^2",
+    "D_alpha_bar_ratio": "-1/q**4",
+    "D_is_homogeneous": true,
+    "h_is_bar_odd": "-1"
+  },
+  "monomial_offset_bar_ratios": {
+    "q^0": "1",
+    "q^1": "q**(-2)",
+    "q^2": "q**(-4)",
+    "q^3": "q**(-6)"
+  },
+  "numeric_at_q0": {
+    "z_D": "0.61268803714646440639",
+    "z_D_minus_1": "-0.38731196285353559361",
+    "z_D_minus_q2": "-0.61936441702029773206",
+    "alpha_D_pruned": "-0.064742255042824745248"
+  },
+  "does_not_establish": "that c = q^2 IS the D offset. Only that bar-homogeneity FORCES weight -4. What replaces tr_M(1) = 1 in the D normalisation is open; a q^2 reached by search would be a fit, this is reached by grading.",
+  "context": {
+    "beans": [
+      "qou-cds1",
+      "qou-pmkh"
+    ],
+    "prior": "qou-cds1 Step 1 (MarkovZFullBarCondition.lean) proved the ADDITIVE defect forms; this is the MULTIPLICATIVE (eigenvector) reading, which is what prunes the offset",
+    "scope": "conditional structural constraint; exact identity in q"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138"
+}

@@ -1,23 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:15:32.644068+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:08:21.935650+00:00",
+  "commitSha": "2b80f097d2ec5349d901901b7c519b23e00c41f2",
   "assertions": [
     {
-      "name": "charge_conj_neq_bar",
-      "computed": 1,
-      "expected": 1,
+      "name": "bar_even_and_odd_nets_differ",
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 0,
-      "source": "C and bar are distinct symmetries on the meson braid"
+      "source": "the bar involution's even and odd sectors give different nets (ratio != 1) — the observable consequence of bar acting differently from C"
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 16,
   "computation": "meson-symmetry-bar-involution",
   "scriptFile": "meson_symmetry_and_bar_involution.py",
-  "scriptHash": "53ce0046d1f1",
+  "scriptHash": "ef658959cda4",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -48,6 +47,10 @@
     "bar_odd_net": 0.4272578306063123,
     "even_odd_ratio": 2.545096518235653,
     "pi0_pi_pm_predicted": 0.7179202329595002,
-    "pi0_pi_pm_pdg": 0.9672565737622699
+    "pi0_pi_pm_pdg": 0.9672565737622699,
+    "charge_conj_neq_bar": {
+      "claim": "C and bar are distinct symmetries on the meson braid",
+      "derived_here": false
+    }
   }
 }

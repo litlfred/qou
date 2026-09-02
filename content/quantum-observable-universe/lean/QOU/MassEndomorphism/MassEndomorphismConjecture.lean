@@ -83,8 +83,34 @@ def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_transient
 
-/-- **Faithful instance.** Trivial model discharging the structural dependence. -/
-instance canonical {R : Type*} [CommRing R] {β : Type*} : MassEndomorphism R β where
+/-- **The all-zero model of `MassEndomorphism`.**  Every field is `0`:
+    `q = 0`, `N = 0`, the coordinate family `z` is empty, and all three
+    traces vanish, so `vol_eq` is the arithmetic identity `0 = 0 - 0`.
+    It encodes no closed-form NF decomposition for any braid; it
+    witnesses only that the class is inhabitable.
+
+    **A `def`, not an `instance`, since 2026-08-24.**  It was declared
+    `instance` and its docstring called it *"Faithful"*, which it is
+    not — it is the zero model.  The defect was its **globality**: both
+    carriers are implicit (`{R : Type*} [CommRing R] {β : Type*}`), so
+    typeclass resolution supplied it for every commutative ring and
+    every braid type.  `fullMass`, `fullMass_eq_volume` and
+    `braneTowerPartialSum` each take `[M : MassEndomorphism R β]`; with
+    the instance in scope those were not hypotheses, and
+    `fullMass_eq_volume` proved `0 = 0` at every instantiation.  That is
+    what §3b-tax forbids — *"an unproved primary is honestly represented
+    by a content-bearing class with **no** instance; do not fabricate a
+    trivial instance to 'close' it."*
+
+    As a `def` the zero model stays available to anyone who wants it
+    (`letI := canonical (R := ℤ) (β := β)`) and nothing is discharged
+    behind a caller's back.  Blast radius of the demotion, measured:
+    **zero** errors — the three in-file uses are binder positions, and
+    no module outside `QOU/MassEndomorphism/` mentions the class.
+
+    The instance-free alternative for conditional work is
+    `QOU.MassEndomorphism.VolumeBridge`, which ships no instance at all. -/
+def canonical {R : Type*} [CommRing R] {β : Type*} : MassEndomorphism R β where
   q := 0
   N := 0
   z := fun _ => 0

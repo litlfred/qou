@@ -1,0 +1,104 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T12:46:15.049561+00:00",
+  "description": "Quantifies the pair-locality refutation proved in QOU.Mass.CrossingModelPairLocality. A pair-local crossing model has b3 = b4 = 0 forced, so its binding ceiling is C(A,2)*b2. Against AME2020 that ceiling misses 4He by a factor 2.12 -- 52.8% of the binding is irreducibly many-body and no pairwise assembly reaches it, whatever bond functional is applied. With a Brunnian carrier the pair terms vanish and b3 is exactly the triple channel, so the measured b3 > 0 pins that channel to an attractive 1.4262225 MeV per triple.",
+  "q0_pin": "not applicable -- consumes no framework quantity",
+  "free_parameters": 0,
+  "cumulants_MeV": {
+    "b2": "2.224566",
+    "b3": "1.4262225",
+    "b4": "9.243387"
+  },
+  "pair_local_ceiling": [
+    {
+      "A": 2,
+      "bonds": 1,
+      "B_pairlocal_MeV": "2.224566",
+      "B_AME_MeV": "2.224566",
+      "shortfall_MeV": "0.0",
+      "irreducible_fraction": "0.0"
+    },
+    {
+      "A": 3,
+      "bonds": 3,
+      "B_pairlocal_MeV": "6.673698",
+      "B_AME_MeV": "8.0999205",
+      "shortfall_MeV": "1.4262225",
+      "irreducible_fraction": "0.17607858"
+    },
+    {
+      "A": 4,
+      "bonds": 6,
+      "B_pairlocal_MeV": "13.347396",
+      "B_AME_MeV": "28.295673",
+      "shortfall_MeV": "14.948277",
+      "irreducible_fraction": "0.5282884418"
+    }
+  ],
+  "he4_irreducible_fraction": "0.528288441841",
+  "he4_pairlocal_deficit_factor": "2.11993957473",
+  "he4_body_order_decomposition": [
+    {
+      "channel": "pairs (6 x b2)",
+      "MeV": "13.347396",
+      "percent": "47.171156"
+    },
+    {
+      "channel": "triples (4 x b3)",
+      "MeV": "5.70489",
+      "percent": "20.161705"
+    },
+    {
+      "channel": "quad (1 x b4)",
+      "MeV": "9.243387",
+      "percent": "32.66714"
+    }
+  ],
+  "corpus_crosscheck": {
+    "source": "computations/deltalambda/deltalambda-kappa-interface-residual-simplex.witness.json -> derived_rho_F_crosschecks/full_binding_mayer",
+    "b3_over_b2": "0.641123931589",
+    "recorded": "0.64",
+    "b4_over_b2": "4.15514172203",
+    "recorded_b4": "4.16"
+  },
+  "assertions": [
+    {
+      "name": "b3 > 0, so the Lean refutation of pair-locality applies (not_pairLocal_of_b3_ne_zero)",
+      "passed": true
+    },
+    {
+      "name": "with a Brunnian carrier b3 IS the triple channel, so b3 > 0 forces an ATTRACTIVE (negative) triple mutual energy of exactly |b3| per triple (tripleMutual_neg_of_b3_pos)",
+      "passed": true
+    },
+    {
+      "name": "more than half of 4He's binding is irreducibly many-body",
+      "passed": true
+    },
+    {
+      "name": "the body-order decomposition reconstructs B(4He) exactly",
+      "passed": true
+    },
+    {
+      "name": "b3/b2 and b4/b2 reproduce the corpus values (0.64, 4.16) within 1%",
+      "passed": true
+    },
+    {
+      "name": "the shortfall GROWS with A (2H exactly 0, then 3-body, then 4-body) -- consistent with a Brunnian hierarchy rather than a single missing constant",
+      "passed": true
+    }
+  ],
+  "scope": "(b) for pair-local crossing models -- the invariant is b3_eq_zero_of_pairLocal, proved in the Lean, not cited. It excludes NOTHING about which carrier is right, does not identify the triple channel, and does not touch the hbar_q^2 saturation question (qou-brng R3, separately measured numerology-suspect).",
+  "caveats": [
+    "The cumulants themselves are NOT new -- b3/b2 = 0.64 and b4/b2 = 4.16 are already in the corpus from the 2026-06-23 audit. What is new is the bridge making them a REFUTATION of pair-locality in the crossing model, rather than an observation about a fit.",
+    "'Irreducibly many-body' means 'not reachable by summing a function over pairs'. It does NOT mean the physics is not two-body in origin: a genuine two-body force can produce non-pairwise BINDING through the assembly, which is exactly what a Brunnian carrier does. The claim is about the assembly, not about the force.",
+    "b2 is read off the deuteron, whose carrier is a clasp (Hopf / trefoil, Vol = 0) per the 2026-08-29 owner ruling and is therefore NOT Brunnian. So the hierarchy is mixed: pairs contribute through clasps, triples and quads through Brunnian channels. The Lean's Brunnian theorems apply to the higher orders, not to b2.",
+    "Three body orders is three data points. The growth of the irreducible fraction with A is consistent with a Brunnian hierarchy; it does not establish one, and A > 4 is untested here."
+  ],
+  "lean": "QOU/Mass/CrossingModelPairLocality.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/aggregator-convexity-divided-difference.witness.json",
+    "probes/aggregator-family-exclusion.witness.json",
+    "probes/mayer-threebody-sign-threshold.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies"
+}

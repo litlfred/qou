@@ -122,8 +122,11 @@ Counting convention: 19 renormalisable (9 charged-fermion masses, 4 CKM,
 > ([`quark-mass-extraction-stage1.witness.json`](../computations/quark-mass-extraction-stage1.witness.json)):
 > `δ_QCD = Δ_pn + E_EM`, with `Δ_pn = 1.2933 MeV` framework-derived. **Blocked on
 > one object** — the intra-nucleon EM self-energy, i.e. the open *two-like-charge
-> EM-linking invariant*, which is **the same invariant owning 69 % of the ³He
-> mirror residual**. Deriving it closes both. No `m_d − m_u` value is claimed.
+> EM-linking invariant*. (This previously added *"which is the same invariant
+> owning 69 % of the ³He mirror residual. Deriving it closes both."* — **wrong
+> on both counts, corrected 2026-08-25**; see the box under §4-B. The mirror
+> split is a *binding* difference, and single-nucleon self-energy provably
+> cancels in binding energy.) No `m_d − m_u` value is claimed.
 > `m_u + m_d` is **not** extractable: its source is `m_π²`, and `m_π` is CAL-3 —
 > circular.
 
@@ -305,8 +308,45 @@ does not change dimensions).
 ([`2026-08-07-eightfold-live-surface-collapse.md`](audits/2026-08-07-eightfold-live-surface-collapse.md)):
 
 > **Does QOU's braided category admit inequivalent fibre functors?**
-> Equivalently: is `H¹(base, Aut^⊗)` non-trivial, and can the resulting gerbe's
-> band be `SU(3)`?
+
+> **🛑 The "equivalently" that used to follow this was NOT equivalent — re-posed
+> 2026-08-25.** The line read *"Equivalently: is `H¹(base, Aut^⊗)` non-trivial,
+> and can the resulting gerbe's band be `SU(3)`?"*. That second sentence is
+> **symmetric**-category machinery, and QOU's category is non-symmetric.
+>
+> The band / `H¹` formulation comes from classical Tannakian duality, which
+> every source states under an explicit symmetric hypothesis: Tonini
+> (`arxiv-2010.12445v1` §1, `arxiv-1409.4073v1` §2) defines the structure as
+> *"symmetric or **commutative**"*, and Nuiten–Toën (`arxiv-2508.03145v1`) say
+> *"solely based on **symmetric** monoidal ∞-categories"*. Tonini attributes the
+> band identification itself to **[DM82, Prop. 2.8 / Thm. 3.2]** — theorems
+> **about `Rep G`**.
+>
+> So *"`Aut^⊗(τ) = SU(2)`, therefore the band is not `SU(3)`"* **assumes what
+> this section is asking**. It is circular, not merely unlicensed.
+>
+> **QOU's non-symmetry is not a reading — it is proved.**
+> `QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff`
+> (sorry-free): an element satisfying the Hecke relation has `σ² = 1` **iff**
+> `q² = 1`. Symmetry of a braiding *is* triviality of the double braiding, so at
+> `q₀ ≈ 1.10998 > 1` the braiding is non-symmetric as a **consequence** of the
+> Hecke relation, not as a stipulation
+> (`QOU.Archimedean.HeckeBraidingSubstrateNonSymmetric`). The corpus already
+> said so in prose — `qou-definition-intro.md`: *"the **non-symmetric** braiding
+> provides a canonical well-ordering on the Hecke basis"* — and derives the
+> arrow of time from it.
+>
+> **The question to ask instead.** The general non-symmetric reconstruction
+> (Lentner–Mombelli, `arxiv-2311.14221v2` §6.4) produces a **Hopf algebra in
+> `C`** via a relative coend, not a group scheme with a band. So: *what is the
+> reconstructed Hopf algebra of a QOU, and does it contain an `SU(3)`-like
+> sub-object?*
+>
+> **This is a re-posing, not an exclusion.** It does **not** say `SU(3)` is
+> absent — it says `H¹(base, Aut^⊗)` cannot carry the answer either way. The
+> seven exclusions below are untouched and were separately provenance-audited
+> the same day.
+> [`2026-08-25-4a-question-imports-symmetric-theory.md`](audits/2026-08-25-4a-question-imports-symmetric-theory.md).
 
 Routes already **excluded** (scope-(b), invariants cited — do not re-attack
 without dropping a named premise):
@@ -316,7 +356,7 @@ without dropping a named premise):
 | Odd-dimensional summand of `V^⊗n` | Frobenius–Schur **parity**: odd-dim `SU(2)` irreps are orthogonal ⇒ singlet lands in `Sym²` ⇒ fails the gate. (Even-dim summands *pass* — they are simply the wrong dimension. The exclusion is parity, **not** self-duality; §6 of that audit corrects an earlier misstatement) |
 | `S₄`/Fano bridge → Klein quartic | marked-pair obstruction: `S₄` has no orbit of size ≤ 2 on `ℙ²`; and the `S₄`-invariant quartics form an **infinite pencil**, so the datum has essentially no separating power |
 | "4-form degenerates" → `Spin(7)` → `G₂` → `SU(3)` | no open `GL(8)`-orbit on `Λ⁴(ℝ⁸)`; Cayley locus is codim 27 |
-| Re-tune the Ocneanu parameter to `N = 3` | the `N=2` and `N=3` traces are not proportional |
+| Re-tune the Ocneanu parameter to `N = 3` | the `N=2` and `N=3` traces are not proportional — and **not only those two**: `[n+1]_q[n+3]_q − [n]_q[n+4]_q = [3]_q` for **every** `n`, with an `n`-independent right-hand side, so *every* adjacent `N` re-weights and by the same amount (`QOU.Eightfold.OcneanuTwoThreeNotProportional.qb_shift_identity`, `QOU.Archimedean.OcneanuTwoThreeSubstrate.ocneanu_ratio_adjacent_ne`, sorry-free). Widened 2026-08-25: the recorded reason was a finite sample (*"differs at every `q` tested"*), now an identity |
 | Permutation `S₃ = W(A₂)` 3-dim rep | permutation reps are self-dual with FS `+1` ⇒ fails the same gate. `S₃` supplies the **Weyl group**, not the fundamental |
 | Hecke centralizer on regular `H₃` | dim 6 < 8 exclusion (#4564) |
 | Tetraplectic / quaternionic | supplies `SU(2)`, already spent on electroweak |
@@ -333,11 +373,37 @@ which point the honest corpus position is that colour and flavour `SU(3)` are
 
 ### 4-B. The two-like-charge EM-linking invariant
 
-**Gates:** `m_d − m_u` (§3.1) **and** the remaining 69 % of the ³He mirror
-split. One invariant, two fronts. The framework's only derived EM mechanism
-(`tanh(ln q₀) × strong bond`) is **inter**-nucleon; the **intra**-nucleon self-energy
-is the open object. Smallest scope of the three, and the only one that yields a
-new comparable number without touching `SU(3)`.
+**Gates:** `m_d − m_u` (§3.1). The framework's only derived EM mechanism
+(`tanh(ln q₀) × strong bond`) is **inter**-nucleon; the **intra**-nucleon
+self-energy is the open object. Smallest scope of the three, and the only one
+that yields a new comparable number without touching `SU(3)`.
+
+> **🛑 "One invariant, two fronts" was wrong — corrected 2026-08-25.** This read
+> *"Gates `m_d − m_u` **and** the remaining 69 % of the ³He mirror split. One
+> invariant, two fronts."* Both halves fail.
+>
+> **The phrase covers two different objects.** For `m_d − m_u` the two like
+> charges are the two up **quarks** inside one nucleon (**intra**-nucleon); for
+> the mirror split they are the two **protons** of ³He (**inter**-nucleon). Both
+> are "two like charges, linked", which is presumably how they merged.
+>
+> **They provably cannot be the same.**
+> [`mirror_split_s3_em_functional_probe.py`](../computations/deltalambda/mirror_split_s3_em_functional_probe.py)
+> §(A1) *derives* that per-component self-terms cancel identically in binding
+> energy `B = Z·m_p + N·m_n − M`, because single-nucleon EM self-energy already
+> lives in `m_p`, `m_n` — and `split_AME` is defined as `B(lo) − B(hi)`, a
+> **binding** difference. So the intra-nucleon self-energy contributes **exactly
+> zero** to the mirror split. Deriving one does **not** deliver the other.
+>
+> **The 69 % is unsourced.** Fixed-string grep over `docs/`: it occurred three
+> times, all inside this file, and in no audit, ledger or witness. (For scale,
+> the `A=3` mirror ratio is `0.765`, so the residual against the canonical
+> Coulomb is ≈ 23.5 % — the figure does not correspond to that either.) Both
+> other occurrences are corrected with this one.
+>
+> Overloaded-symbol failure of the kind AGENTS.md flags in the `c_k` registry:
+> *distinct objects sharing a glyph is a recurring root cause*.
+> [`2026-08-25-4b-corrections-duplication-and-two-fronts.md`](audits/2026-08-25-4b-corrections-duplication-and-two-fronts.md).
 
 > **State of the route, corrected 2026-08-25 (`qou-17mq`).** The route is
 > identified — the metric Coulomb pairing `⟨A₁, J₂⟩` on the `H³` scalar Green's
@@ -519,7 +585,7 @@ ranking is an agent's judgement, not a corpus fact; argue with it.
 
 | Rank | Target | Why near-term | Blocker |
 |---|---|---|---|
-| 1 | **Two-like-charge EM-linking invariant** (4-B) | Smallest scope of the three gating objects; needs **no** `SU(3)`. Closes `m_d − m_u` **and** 69 % of the ³He mirror residual together. Stage-1 scoping already done and well-posed | intra-nucleon EM self-energy is genuinely underived |
+| 1 | **Two-like-charge EM-linking invariant** (4-B) | Smallest scope of the three gating objects; needs **no** `SU(3)`; stage-1 scoping already done and well-posed. ⚠ **The two-for-one rationale is withdrawn** (2026-08-25): this row read *"Closes `m_d − m_u` **and** 69 % of the ³He mirror residual together"*, and that is false — see the box under §4-B. The rank may still stand on the remaining grounds, but **not** on closing two fronts | intra-nucleon EM self-energy is genuinely underived. Two structural prunes landed 2026-08-25 (pairwise linking cannot see the Borromean carrier; the map must be **even** in `μ̄₁₂₃`), narrowing the shape but deriving no value. Per `qou-17mq` (merged above) the front carries **three** distinct gaps: the route is identified, the kernel is not, and the separation law is imported |
 | 2 | **Content → hyperbolic braid map** (4-C, *retitled* 2026-08-25) | `(n, T₃)` separates all six quarks sorry-free, and `orderedContent_injective` (`by decide`) separates all five mesons — **no third flavour grade is missing**; the `D̄⁰`/`K⁰` collision is a symmetric-multiset artefact | `qou-qpj9` Obstruction A — geometric, and **not** gated on 4-A |
 | 3 | **GMO deviation ≈ 6 %** | Uniquely well-posed: a specific number, a specific mechanism (second-order octet breaking + `η`–`η'` mixing), and a live falsification (framework currently predicts 0; producing a *different* value falsifies) | needs a second-order term; conditional on `N=3` for the octet itself |
 | 4 | **Non-neutral Tannakian gerbe** (4-A) | The whole eightfold surface has collapsed onto **one** question; seven routes are excluded with cited invariants, so the search is narrow | hardest of the three; a **refutation is equally valuable** and would settle the corpus position |

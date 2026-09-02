@@ -18,8 +18,20 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-c3_mu = mpf('-2.02020024')
-c3_p = mpf('-2.06934258')
+# Anchors DERIVED and PAIRED (qou-cds1 / qou-t39x, 2026-08-31). These were
+# hand-typed as -2.02020024 / -2.06934258; the muon literal was the CODATA-2018
+# extraction, superseded when fca08de7d2 (2026-08-22) moved the pin to CODATA
+# 2022 (-2.01986031). The window moves with it -- (2.01986, 2.06934) rather than
+# (2.02020, 2.06934) -- and Vol(4_1) = 2.02988 is still strictly inside, so the
+# conclusion is unchanged and now cannot silently straddle an anchor again.
+from qbeta_utils import c3_target_at  # noqa: E402
+from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from substrate import codata_constants as _C  # noqa: E402
+
+_ME, _QB = mpf(str(_C.M_E_MEV)), mpf(str(_C.Q_BETA_MEV))
+c3_mu = c3_target_at(mpf(str(q_muon_at(50))), _QB, _ME, convention="C")
+c3_p = c3_target_at(mpf(str(q_at(50))), _QB, _ME, convention="C")
+assert abs(c3_p - mpf('-2.06934258')) < mpf('1e-6'), c3_p  # extractor licensed
 lo, hi = -c3_mu, -c3_p
 CANDS = [('Vol(4_1)', mpf('2.029883212819307')), ('2 + 1/36', 2 + mpf(1)/36),
          ('2 + 1/30', 2 + mpf(1)/30), ('2 + 1/25', 2 + mpf(1)/25),

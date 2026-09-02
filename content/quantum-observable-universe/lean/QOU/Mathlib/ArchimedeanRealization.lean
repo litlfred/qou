@@ -20,8 +20,21 @@ Once the full Hecke library lands, the functor `Real_q₀` is
 defined by combining this scalar `evalAt` with the Hecke-module
 structure.
 
+**Nothing in this file is that functor** (2026-08-24, bean
+`qou-7nbx`).  There is no source category, no target category, no
+action on morphisms and no Hecke-compatibility square anywhere
+below — only the scalar evaluation and the point it evaluates at.
+The class at the end of the file was called
+`ArchimedeanRealizationFunctor` and advertised "the existence of a
+Hecke-compatible Archimedean realisation functor … with the listed
+compatibility properties"; its fields were a real number, its
+positivity, and an equation pinning it to `q_zero`, and the listed
+properties were not listed.  It is now `ArchimedeanEvaluationPoint`,
+which is what it always was.
+
 **File status**: upstreamable scalar piece (~50 LoC); the full
-functor requires `Mathlib.Algebra.IwahoriHecke` (deferred).
+functor requires `Mathlib.Algebra.IwahoriHecke`, which this
+checkout's Mathlib does not contain in any form (deferred).
 
 **References**:
 - Mathlib `Polynomial.eval` — the underlying primitive.
@@ -102,24 +115,77 @@ theorem ratPolyEvalAtQZero_def
     ratPolyEvalAtQZero num den hden =
       num.eval q_zero / den.eval q_zero := rfl
 
-/-- **§3b-cond class hypothesis**: the existence of a Hecke-
-    compatible Archimedean realisation functor.  Once Mathlib's
-    Iwahori–Hecke library lands, the class is discharged
-    concretely.  For now, the class wraps the substrate-axiom
-    that some such functor exists with the listed compatibility
-    properties. -/
-class ArchimedeanRealizationFunctor where
-  /-- The substrate value `q₀` at which evaluation occurs. -/
-  q0 : ℝ
-  /-- `q₀ > 1` (analytic-continuation regime). -/
-  q0_gt_one : q0 > 1
-  /-- The substrate `q₀` matches the QOU canonical value. -/
-  q0_canonical : q0 = q_zero
+/-! ### The evaluation point — a pinned constant, not a functor
 
-/-- Canonical instance: pin `q₀` to the QOU substrate value. -/
-noncomputable instance canonical : ArchimedeanRealizationFunctor where
-  q0 := q_zero
-  q0_gt_one := q_zero_gt_one
-  q0_canonical := rfl
+**Restated 2026-08-24 (bean `qou-7nbx`).**  This was
+`class ArchimedeanRealizationFunctor` with fields `q0 : ℝ`,
+`q0_gt_one : q0 > 1`, `q0_canonical : q0 = q_zero`, and a global
+`instance canonical` setting `q0 := q_zero` so that `q0_canonical`
+closed by `rfl`.  Two things were wrong with it and one of them was
+load-bearing:
+
+1. **The name and docstring promised a functor and the class contained
+   a real number.**  Fixed by saying what it is.
+2. **`q0_canonical` pinned the class's only datum to a constant**, so
+   the class had exactly one model, the global instance supplied it,
+   and `[ArchimedeanRealizationFunctor]` was equivalent to no
+   hypothesis at all.  Fixed by moving the point out of the class and
+   taking it as a *parameter*, the remedy worked in
+   `QOU/Archimedean/JetOrderIndependence.lean`: `[ArchimedeanEvaluationPoint q0]`
+   is now a falsifiable constraint on a named `q0` — satisfied at
+   `q_zero` (`instCanonical`) and refuted anywhere else
+   (`not_evaluationPoint_of_ne`, and concretely
+   `not_evaluationPoint_two`).
+
+**Why the class was not given the functor instead.**  That is the
+paper's actual claim and it cannot be written here: this checkout's
+Mathlib has no Iwahori–Hecke algebra at all, so a "functor" declared
+now would have to invent both its source category and its
+compatibility square — which reproduces exactly the defect above, one
+level up, with more prose covering it.  Until
+`Mathlib.Algebra.IwahoriHecke` exists, the honest content of this file
+is the scalar evaluation (`evalAtQZero`, proved a ring map, and proved
+*unique* as one in `UpstreamSubstrateBridge.archimedean_eval_well_defined`)
+plus the point below.  A discharge of `S-Archimedean-realisation`
+would owe: the two categories, the action on morphisms, and the square
+`Real_q₀ ∘ (Hecke action) = (real action) ∘ Real_q₀`.  None of the
+three is here, and `UpstreamSubstrateBridge` no longer says otherwise. -/
+
+/-- **The Archimedean evaluation point.**  `q0` is the substrate value
+    at which `evalAtQZero` evaluates; the class asserts of a *given*
+    `q0` that it is the QOU canonical one.
+
+    Only the pin is a field.  `q0 > 1` (the analytic-continuation
+    regime) was a second field and is derivable from the pin, so it is
+    a theorem below rather than an assumption a model gets to restate. -/
+class ArchimedeanEvaluationPoint (q0 : ℝ) : Prop where
+  /-- The evaluation point is the QOU canonical substrate value. -/
+  is_substrate : q0 = q_zero
+
+/-- **Analytic-continuation regime — PROVED (derived).**  Any
+    Archimedean evaluation point is `> 1`, from the pin and
+    `q_zero_gt_one`. -/
+theorem ArchimedeanEvaluationPoint.gt_one (q0 : ℝ)
+    [h : ArchimedeanEvaluationPoint q0] : q0 > 1 := by
+  rw [h.is_substrate]; exact q_zero_gt_one
+
+/-- **The hypothesis is satisfiable, at `q_zero` (PROVED).**  So
+    `[ArchimedeanEvaluationPoint q0]` for an *unspecified* `q0` asserts
+    nothing beyond that some point exists; a downstream result must say
+    which point. -/
+instance instCanonical : ArchimedeanEvaluationPoint q_zero :=
+  ⟨rfl⟩
+
+/-- **…and it fails at every other real (PROVED).**  This is the content
+    the parameterisation buys: the hypothesis is a real constraint on the
+    supplied point, not a restatement of `q_zero`'s definition. -/
+theorem not_evaluationPoint_of_ne {q0 : ℝ} (h : q0 ≠ q_zero) :
+    ¬ ArchimedeanEvaluationPoint q0 :=
+  fun hp => h hp.is_substrate
+
+/-- **A concrete non-model (PROVED).**  `2` is not the QOU evaluation
+    point, so the class is not satisfied by every real. -/
+theorem not_evaluationPoint_two : ¬ ArchimedeanEvaluationPoint 2 :=
+  not_evaluationPoint_of_ne (by unfold q_zero; norm_num)
 
 end QOU.Mathlib.ArchimedeanRealization

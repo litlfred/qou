@@ -1,29 +1,55 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-28T04:41:01.210056+00:00",
-  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "computedAt": "2026-08-30T10:07:59.925050+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "R_alg_is_algebraic",
-      "computed": 1,
-      "expected": 1,
+      "name": "R_alg_numer_and_denom_are_rational_polynomials_in_u",
+      "computed": "2",
+      "expected": "2",
       "passed": true,
       "tolerance": 0,
-      "source": "R_alg(q) computed as exact polynomial ratio in u"
+      "unit": "of {numerator, denominator} polynomial in u over ℚ",
+      "source": "R_alg × ℏ² = together(bridge · ℏ² / Plancherel); degrees 258 / 129. Free symbols must be {u} alone and every coefficient rational."
+    },
+    {
+      "name": "R_alg_is_rational_valued_at_rational_u",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "1 if R_alg×ℏ² at u = 1/2 is an exact rational",
+      "source": "an algebraic function with rational coefficients maps ℚ → ℚ; Vol(4₁)/ℏ², the transcendental half of the contrast this analysis draws, does not. Value recorded in data."
     }
   ],
   "allPassed": true,
-  "durationMs": 910,
+  "durationMs": 63,
   "computation": "habiro-derivation-vs-fit-analysis",
   "scriptFile": "habiro_derivation_vs_fit.py",
-  "scriptHash": "bdf484a39e56",
-  "scriptCommitSha": "3168ca553cfb4a3a9ca6c5137318a609a2a483f6",
+  "scriptHash": "1fe3030bb8b3",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_derivation_vs_fit.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_derivation_vs_fit.py"
   },
   "description": "Symbolic analysis of Habiro correction: the bridge R_alg(q) is algebraic but S = R_alg/(Vol/ℏ²) is transcendental. The third-factor coefficient is fitted: tightest numerical fit 1/1256, structural near-match 1/1260 = 1/(C(9,4)·10). Neither is derived.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
@@ -41,6 +67,7 @@
       "c₃ tightest=1/1256",
       "c₃ structural=1/1260"
     ],
-    "reason": "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it"
+    "reason": "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it",
+    "R_alg_hsq_at_u_one_half": "300683892617934419667081496053795641954937735175255987289067345/108542282701356273510173527631331733778404068032512"
   }
 }

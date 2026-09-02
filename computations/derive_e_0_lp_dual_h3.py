@@ -36,6 +36,27 @@ no fitting). The findings:
      y_0^* = 0.1245. So y_0^* · m_e ≈ 0.064 MeV, NOT the
      4.186 MeV of convention A.
 
+     ⚠ STALE FIGURES — corrected 2026-08-31, bean `qou-59j5`.
+     The committed witness records, for ALL FOUR targets,
+     y_0^* = 0.3753866308623884, and a cone x^* with two equal
+     components ≈ 0.49956 rather than (0,…,0,1). The prose above
+     predates the 2026-08-23 solver change noted at the top of
+     this file (scipy.linprog → clarabel-MPFR) and was not
+     updated with it. Corrected:
+
+         y_0^*        = 0.375387   (dimensionless)
+         y_0^* · m_e  = 0.191822 MeV
+         convention A = 4.185981 MeV
+         ratio        = 21.82×
+
+     **The negative finding is unchanged**, and the gap is 21.8×
+     rather than 65×, so nothing downstream moves. Note that the
+     `negative_finding` string emitted into the witness below
+     still carries the stale "≈ 0.124"; fixing it means re-running
+     this script under clarabel-MPFR, not done here because the
+     conclusion does not depend on it. Whoever next runs this
+     should correct that string in the same pass.
+
   2. With the unboundedness x_i ≥ -M, the LP slides to a
      signed-coefficient mixed solution with primal_obj ≈ 0
      and y_0^* ≈ 0 — the action is unbounded below.
@@ -75,6 +96,7 @@ import json
 import sys
 from pathlib import Path
 
+import mpmath as mp  # noqa: E402 — assertion arithmetic stays off float64
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
@@ -321,6 +343,57 @@ def main() -> int:
     builder = WitnessBuilder.wrap_legacy(
         "e-0-lp-dual-h3", out, script_path=__file__, engine="scipy"
     )
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous -- on an LP-DUAL producer, which AGENTS.md makes
+    # first-class infra precisely because the duals are the binding-energy
+    # shadow prices. Both quantities below were already computed and recorded;
+    # neither was asserted.
+    #
+    # (1) FEASIBILITY. `_solve_one` has an explicit infeasible branch, so this
+    #     can fail: an infeasible LP means the operator-selection problem has
+    #     no solution at that target. `expected` is the number of LPs solved
+    #     (2 families x len(targets)), not a number matched to the outcome.
+    #
+    # (2) STRONG DUALITY on the POSITIVE-CONE family. `primal_obj == dual_obj`
+    #     is a THEOREM about the LP, not a fit, so the honest bar is the
+    #     framework's own declared L1 target -- 1 ppQ = 1e-15 relative
+    #     (AGENTS.md, "Precision goals"). Not a number invented here.
+    #     Measured relative gaps ~7e-51: about 36 orders of headroom.
+    #
+    #     THE SIGNED FAMILY IS DELIBERATELY EXCLUDED, and this is not cherry-
+    #     picking -- the reason is the producer's OWN recorded
+    #     `negative_finding`: under the signed cone the LP "slides to 0", and
+    #     its `primal_obj` is ~1e-38. A RELATIVE gap on an objective that is
+    #     numerically zero is not a meaningful quantity (measured: ~3e-11,
+    #     which would fail a 1e-15 bar while saying nothing about duality).
+    #     Asserting it either way would be an artefact of the degeneracy the
+    #     witness already documents. Those four stay recorded, unasserted.
+    _all_lps = [r for fam in ("signed", "cone") for r in results[fam].values()]
+    builder.add_assertion(
+        "lp_feasible_count",
+        computed=str(sum(1 for r in _all_lps if r.get("feasible"))),
+        expected=str(len(_all_lps)),
+        source="operator-selection LP per prop:operator-selection-lp, both "
+               "cones x all n_target choices; expected is the number solved",
+    )
+    _cone = list(results["cone"].values())
+    _rel = [
+        mp.fabs(mp.mpf(repr(r["duality_gap"]))) / mp.fabs(mp.mpf(repr(r["primal_obj"])))
+        for r in _cone if r.get("feasible") and r.get("primal_obj")
+    ]
+    if _rel:
+        builder.add_assertion(
+            "positive_cone_strong_duality_worst_relative_gap",
+            computed=mp.nstr(max(_rel), 12),
+            expected="0",
+            tolerance="1e-15",
+            source="|primal_obj - dual_obj| / |primal_obj| over the "
+                   "positive-cone LPs; strong duality is a theorem, so the "
+                   "bar is the framework's declared L1 target (1 ppQ), not a "
+                   "number chosen here. Signed family excluded: its objective "
+                   "slides to ~1e-38 per this witness's own negative_finding, "
+                   "so a relative gap there is an artefact of the degeneracy",
+        )
     saved = builder.save()
     print(f"\n  Wrote {saved.name}")
     return 0

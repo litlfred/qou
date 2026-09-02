@@ -2861,6 +2861,39 @@ export const references: Reference[] = [
     DOI: "10.1007/BF01857727",
   }),
 
+  // ── Shi 2002/03: Toffoli + Hadamard is quantum universal ──────
+  ref({
+    id: "shi2002",
+    type: "article-journal",
+    title:
+      "Both Toffoli and Controlled-NOT need little help to do universal quantum computation",
+    author: [
+      { family: "Shi", given: "Y." },
+    ],
+    "container-title": "Quantum Information and Computation",
+    volume: 3,
+    issue: 1,
+    page: "84-92",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.26421/QIC3.1-7",
+    URL: "https://arxiv.org/abs/quant-ph/0205115",
+    note: "arXiv:quant-ph/0205115 (2002). THE source for Toffoli+Hadamard quantum universality. Added 2026-08-29 (bean qou-nmqd): the q-GoL proof cited fredkin1982 + toffoli1980 for this result, which are classical reversible-computation papers predating it by two decades and cannot carry it. Note the theorem is about the STANDARD Toffoli; a q-deformed gate needs its own argument.",
+  }),
+
+  // ── Aharonov 2003: simple proof of the same universality ──────
+  ref({
+    id: "aharonov2003",
+    type: "article",
+    title:
+      "A Simple Proof that Toffoli and Hadamard are Quantum Universal",
+    author: [
+      { family: "Aharonov", given: "D." },
+    ],
+    issued: { "date-parts": [[2003]] },
+    URL: "https://arxiv.org/abs/quant-ph/0301040",
+    note: "arXiv:quant-ph/0301040. Preprint, no journal DOI. Companion to shi2002; cited together as the actual provenance of Toffoli+Hadamard universality. Added 2026-08-29 (bean qou-nmqd).",
+  }),
+
   // ── Peña et al. 2022: Quantum Game of Life (QGoL) ─────────────
   ref({
     id: "pena2022",
@@ -3721,6 +3754,40 @@ export const references: Reference[] = [
     ISBN: "978-981-02-0344-3",
     issued: { "date-parts": [[1991]] },
     DOI: "10.1142/1116",
+  }),
+
+  // ── Okubo 1962 ────────────────────────────────────────────────
+  ref({
+    id: "okubo1962",
+    type: "article-journal",
+    title: "Note on Unitary Symmetry in Strong Interactions",
+    author: [{ family: "Okubo", given: "Susumu" }],
+    "container-title": "Progress of Theoretical Physics",
+    volume: "27",
+    issue: "5",
+    page: "949-966",
+    DOI: "10.1143/PTP.27.949",
+    issued: { "date-parts": [[1962]] },
+  }),
+
+  // ── Milnor 1957 ───────────────────────────────────────────────
+  ref({
+    id: "milnor1957",
+    type: "chapter",
+    title: "Isotopy of links",
+    author: [{ family: "Milnor", given: "John" }],
+    "container-title":
+      "Algebraic Geometry and Topology: A Symposium in Honor of S. Lefschetz",
+    editor: [
+      { family: "Fox", given: "Ralph H." },
+      { family: "Spencer", given: "Donald C." },
+      { family: "Tucker", given: "Albert W." },
+    ],
+    publisher: "Princeton University Press",
+    "publisher-place": "Princeton, NJ",
+    page: "280-306",
+    DOI: "10.1515/9781400879915-016",
+    issued: { "date-parts": [[1957]] },
   }),
 
   // ── Kawauchi 1996 ─────────────────────────────────────────────
@@ -14664,6 +14731,244 @@ export const references: Reference[] = [
       "omitted rather than guessed. Registered by the dangling-citation drain, bean " +
       "qou-ghy5.",
   }),
+  // ── Symplectic / Floer cluster, uploaded 2026-08-24 (aa17903e09f) ──
+  //
+  // Assessed for the LES / spectral arc in
+  // `docs/curved-dq-and-the-floer-cluster.md`: the cluster is method rather
+  // than content — it supplies the standing name for `d_q² ≠ 0` (a *curved*
+  // complex) and the apparatus for taming one, not results about the QOU
+  // substrate. Journal placements are deliberately NOT asserted: only what is
+  // printed on the document itself is recorded here.
+
+  ref({
+    id: "seidel2001",
+    library: {
+      docId: "arxiv-math-0105186v2",
+      dir: "library/arxiv-math-0105186v2",
+      pdf: "library/arxiv-math-0105186v2/0105186v2.pdf",
+      stage: "candidates",
+      pages: 71,
+      sections: 45,
+      arxiv: "math/0105186v2",
+    },
+    type: "article",
+    title: "A long exact sequence for symplectic Floer cohomology",
+    author: [{ family: "Seidel", given: "Paul" }],
+    issued: { "date-parts": [[2001]] },
+    URL: "https://arxiv.org/abs/math/0105186",
+    note:
+      "PDF library/arxiv-math-0105186v2/0105186v2.pdf — arXiv:math/0105186v2, stamped 20 Jul 2002 ('Revised version, May 2002'); " +
+      "id year 2001 is the arXiv submission. THE long exact sequence of " +
+      "symplectic Floer theory, and the reason this upload matters: " +
+      "`pdf-structure.py` had extracted its title as 'Along exact sequence for " +
+      "symplectic Floer cohomology Paul Seidel' — the space in 'A long' welded " +
+      "shut and the byline absorbed — so it was invisible to an index search " +
+      "for 'long exact sequence' (folio-assistant bean gx86, since fixed).",
+  }),
+
+  ref({
+    id: "smith2010",
+    library: {
+      docId: "arxiv-1006.1099v3",
+      dir: "library/arxiv-1006.1099v3",
+      pdf: "library/arxiv-1006.1099v3/1006.1099v3.pdf",
+      stage: "candidates",
+      pages: 70,
+      sections: 32,
+      arxiv: "1006.1099v3",
+    },
+    type: "article",
+    title: "Floer cohomology and pencils of quadrics",
+    author: [{ family: "Smith", given: "Ivan" }],
+    issued: { "date-parts": [[2010]] },
+    URL: "https://arxiv.org/abs/1006.1099",
+    note:
+      "PDF library/arxiv-1006.1099v3/1006.1099v3.pdf — arXiv:1006.1099v3 [math.SG], stamped 13 Oct 2011; id year is the arXiv " +
+      "submission. The most directly usable paper of the cluster: §3.6 " +
+      "*Formality* proves higher products vanish by a grading/purity argument, " +
+      "which is the same argument `QOU/Mathlib/BarGradedCollapse.lean` makes " +
+      "for a spectral-sequence differential, and §3.5 *Grading and " +
+      "deformations* is that technique in the presence of a deformation " +
+      "parameter — the QOU situation.",
+  }),
+
+  ref({
+    id: "pascaleff2011",
+    library: {
+      docId: "arxiv-1109.3255v2",
+      dir: "library/arxiv-1109.3255v2",
+      pdf: "library/arxiv-1109.3255v2/1109.3255v2.pdf",
+      stage: "candidates",
+      pages: 72,
+      sections: 24,
+      arxiv: "1109.3255v2",
+    },
+    type: "article",
+    title:
+      "Floer cohomology in the mirror of the projective plane and a binodal cubic curve",
+    author: [{ family: "Pascaleff", given: "James" }],
+    issued: { "date-parts": [[2011]] },
+    URL: "https://arxiv.org/abs/1109.3255",
+    note:
+      "PDF library/arxiv-1109.3255v2/1109.3255v2.pdf — arXiv:1109.3255v2 [math.SG], stamped 13 Feb 2014; id year is the arXiv " +
+      "submission. Cited with a caveat: its 'twisting sheaf O(1)' is a FALSE " +
+      "COGNATE for the QOU twist `T_q` — Serre twist shifts a grading, `T_q` " +
+      "deforms the identity by an idempotent. What does connect is the " +
+      "ℤ-graded coordinate ring ⊕ H⁰(O(n)) as a template for where a grading " +
+      "on spectral-sequence pages could come from, which is the input " +
+      "`BarGradedCollapse` does not supply for the Gröbner filtration.",
+  }),
+
+  ref({
+    id: "chanda2023",
+    library: {
+      docId: "arxiv-2301.08311v4",
+      dir: "library/arxiv-2301.08311v4",
+      pdf: "library/arxiv-2301.08311v4/2301.08311v4.pdf",
+      stage: "candidates",
+      pages: 73,
+      sections: 8,
+      arxiv: "2301.08311v4",
+    },
+    type: "article",
+    title: "Floer cohomology and higher mutations",
+    author: [{ family: "Chanda", given: "Soham" }],
+    issued: { "date-parts": [[2023]] },
+    URL: "https://arxiv.org/abs/2301.08311",
+    note:
+      "PDF library/arxiv-2301.08311v4/2301.08311v4.pdf — arXiv:2301.08311v4 [math.SG], stamped 17 Sep 2024; id year is the arXiv " +
+      "submission. One idea taken: Floer cohomology is invariant under local " +
+      "mutation *up to a change of local systems* — the object is not " +
+      "invariant, it is invariant after twisting, which is the shape of " +
+      "`QOU.DqTwist.dq_eq_twist_comp`. The technical core (SFT compactness, " +
+      "moduli of broken maps) is not importable.",
+  }),
+
+  ref({
+    id: "mclean2022",
+    library: {
+      docId: "978-3-98547-562-9-volume-4-chapter-5483",
+      dir: "library/978-3-98547-562-9-volume-4-chapter-5483",
+      pdf: "library/978-3-98547-562-9-volume-4-chapter-5483/978-3-98547-562-9-volume-4-chapter-5483.pdf",
+      stage: "candidates",
+      pages: 22,
+      sections: 8,
+    },
+    type: "chapter",
+    title: "Floer cohomology, singularities, and birational geometry",
+    author: [{ family: "McLean", given: "Mark" }],
+    "container-title": "Proceedings of the International Congress of Mathematicians 2022",
+    publisher: "EMS Press",
+    volume: "4",
+    page: "2616-2637",
+    issued: { "date-parts": [[2022]] },
+    DOI: "10.4171/ICM2022/13",
+    URL: "https://doi.org/10.4171/ICM2022/13",
+    note:
+      "PDF library/978-3-98547-562-9-volume-4-chapter-5483/978-3-98547-562-9-volume-4-chapter-5483.pdf — The only entry here whose publication data is printed on the document " +
+      "itself (DOI, volume, pages, publisher), so it is recorded. Proves part " +
+      "of the cohomological McKay correspondence by computing one Floer " +
+      "cohomology group two different ways — the same move as " +
+      "`QOU/Mathlib/EulerCharacteristic.lean`'s `eulerChar_bump_eq`, where an " +
+      "index is page-independent and so may be evaluated wherever it is " +
+      "reachable.",
+  }),
+
+  // ── Roth's theorem cluster (pre-existing uploads, ingested 2026-08-24) ──
+
+  ref({
+    id: "dolce2021",
+    library: {
+      docId: "arxiv-2111.12409v4",
+      dir: "library/arxiv-2111.12409v4",
+      pdf: "library/arxiv-2111.12409v4/2111.12409v4.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 9,
+      arxiv: "2111.12409v4",
+    },
+    type: "article",
+    title: "On the generalisation of Roth's theorem",
+    author: [
+      { family: "Dolce", given: "Paolo" },
+      { family: "Zucconi", given: "Francesco" },
+    ],
+    issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2111.12409",
+    note:
+      "PDF library/arxiv-2111.12409v4/2111.12409v4.pdf — arXiv:2111.12409v4 [math.NT], stamped 13 May 2023; id year is the arXiv " +
+      "submission. Roth's theorem over adelic curves.",
+  }),
+
+  ref({
+    id: "lewko2026",
+    library: {
+      docId: "arxiv-2605.19310v1",
+      dir: "library/arxiv-2605.19310v1",
+      pdf: "library/arxiv-2605.19310v1/2605.19310v1.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 6,
+      arxiv: "2605.19310v1",
+    },
+    type: "article",
+    title: "A Fourier-free density-increment proof of Roth's theorem",
+    author: [{ family: "Lewko", given: "Mark" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://arxiv.org/abs/2605.19310",
+    note: "PDF library/arxiv-2605.19310v1/2605.19310v1.pdf — arXiv:2605.19310v1 [math.CO], stamped 19 May 2026.",
+  }),
+
+  ref({
+    id: "crootsisask-roth",
+    library: {
+      docId: "noniterativeroth2",
+      dir: "library/noniterativeroth2",
+      pdf: "library/noniterativeroth2/noniterativeroth2.pdf",
+      stage: "candidates",
+      pages: 5,
+      sections: 7,
+    },
+    type: "manuscript",
+    title: "A proof of Roth's theorem on arithmetic progressions",
+    author: [
+      { family: "Croot", given: "Ernie" },
+      { family: "Sisask", given: "Olof" },
+    ],
+    note:
+      "PDF library/noniterativeroth2/noniterativeroth2.pdf — NO YEAR ASSERTED, and the id therefore breaks the <lastname><year> " +
+      "convention deliberately rather than inventing one. The document (5 pp, " +
+      "`library/noniterativeroth2/`) carries no date, no arXiv stamp and no " +
+      "journal mark; its bibliography cites Szemerédi 'to appear in the " +
+      "Montreal Conference Proceedings on Additive Combinatorics', which " +
+      "brackets it to the late 2000s but does not fix it. Author affiliation " +
+      "on the last page: Georgia Institute of Technology. Needs a human pass " +
+      "to fix the year and any publication venue.",
+  }),
+
+  ref({
+    id: "rothlemma-chapter",
+    library: {
+      docId: "roth-lemma",
+      dir: "library/roth-lemma",
+      pdf: "library/roth-lemma/roth_lemma.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 4,
+    },
+    type: "chapter",
+    title: "Roth's Lemma",
+    "chapter-number": "5",
+    note:
+      "PDF library/roth-lemma/roth_lemma.pdf — AUTHOR AND CONTAINING BOOK UNIDENTIFIED — recorded as held rather than " +
+      "attributed, and the id breaks the <lastname><year> convention because " +
+      "neither input is known. `library/roth-lemma/` is a 21-page scan of " +
+      "'Chapter 5 — ROTH'S LEMMA' from a book on Diophantine approximation; " +
+      "running heads number to p. 97, there is no title page, no author line " +
+      "and no imprint in the scan. Do not guess: several classic texts carry a " +
+      "chapter of this name. Needs a human pass to identify the book.",
+  }),
+
 
   // ── Chiral perturbation theory — thirteen-document library tranche (2026-08-24) ──
   // All thirteen were ingested together under library/; metadata below was read
@@ -15166,6 +15471,134 @@ export const references: Reference[] = [
     issued: { "date-parts": [[2025]] },
     DOI: "10.3390/quantum7040055",
     note: "PDF library/quaternioms/ — registered from library intake. Volume, article number and year are from the article's own running head ('Quantum Rep. 2025, 7, 55'); the DOI is on the cover page. The extracted title was '3.01.3', the MDPI reprint cover's section number, so the title here comes from a hand-verified override (docs/audits/library-title-overrides.json).",
+  }),
+
+  // ── Library intake 2026-08-30 — the cluster / Mayer-expansion drop ──
+  // Six PDFs uploaded together (commit a12f83c4cd), all cluster-expansion
+  // literature. They bear on the arc's live open problem — the super-pairwise
+  // extensive term — because that is exactly the vocabulary
+  // QOU.MassTheory.MayerThreeBodySign and QOU.Mass.PairwiseCumulantVanishing
+  // are stated in. jansen2022cluster is the load-bearing one: its §3.1 records
+  // the classical alternating-sign property of the Ursell functions, whose
+  // hypothesis is a NON-NEGATIVE pair potential — and the paper's own subject
+  // is convergence for possibly NEGATIVE ones, i.e. the class the corpus needs
+  // if b₃ > 0 is to be reachable at all. See
+  // docs/audits/2026-08-30-ursell-alternating-sign-and-the-b3-obstruction.md.
+
+  ref({
+    id: "jansen2022cluster",
+    library: {
+      docId: "s10955-022-02992-6",
+      dir: "library/s10955-022-02992-6",
+      pdf: "library/s10955-022-02992-6/s10955-022-02992-6.pdf",
+      stage: "candidates",
+      pages: 47,
+      sections: 15,
+    },
+    type: "article-journal",
+    title: "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+    author: [
+      { family: "Jansen", given: "Sabine" },
+      { family: "Kolesnikov", given: "Leonid" },
+    ],
+    "container-title": "Journal of Statistical Physics",
+    issued: { "date-parts": [[2022]] },
+    volume: "189",
+    issue: "3",
+    page: "33",
+    DOI: "10.1007/s10955-022-02992-6",
+    URL: "https://doi.org/10.1007/s10955-022-02992-6",
+    note: "PDF library/s10955-022-02992-6/ — registered 2026-08-30 from the cluster-expansion upload drop. Cite for §3.1 'Forest Partition Schemes: Alternating Sign Property', which states the classical alternating-sign property of the Ursell functions, φᵀ_n = (−1)ⁿ|φᵀ_n|, for NON-NEGATIVE (purely repulsive) pair potentials — the paper attributes it to its ref [8, Eq. (2.8)] and gives two independent proofs of the multi-rooted generalisation (a forest-graph equality, and Lemma 3.4). At n = 3 that is φᵀ₃ ≤ 0, the same conclusion QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos reaches by a different route. The paper's own result is a new convergence condition valid for POSSIBLY NEGATIVE pair potentials, if-and-only-if in the non-negative case; that generalisation is the interesting direction for the corpus, since the sign obstruction is carried by the positivity hypothesis. Do NOT cite it as establishing that the corpus's b₃ IS an Ursell function in its sense — that identification is open, see the audit doc.",
+  }),
+
+  ref({
+    id: "procacci2016mayer",
+    library: {
+      docId: "arxiv-1508.07379v2",
+      dir: "library/arxiv-1508.07379v2",
+      pdf: "library/arxiv-1508.07379v2/1508.07379v2.pdf",
+      stage: "candidates",
+      pages: 15,
+      sections: 5,
+      arxiv: "1508.07379v2",
+    },
+    type: "article",
+    title:
+      "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+    author: [
+      { family: "Procacci", given: "Aldo" },
+      { family: "Yuhjtman", given: "Sergio A." },
+    ],
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1508.07379",
+    note: "PDF library/arxiv-1508.07379v2/ — registered 2026-08-30 from the cluster-expansion upload drop. New lower bounds on the convergence radius of the Mayer and Virial series for a stable, tempered pair potential, improving Penrose–Ruelle (1963) and Lebowitz–Penrose (1964), via Penrose's 1967 tree-graph identity with a minimum-spanning-tree partition scheme. Cite for the tree-graph identity and for what 'stable and tempered' buys; it is a RADIUS-of-convergence result and says nothing about the sign of any particular cumulant.",
+  }),
+
+  ref({
+    id: "dousse2016ising",
+    library: {
+      docId: "arxiv-1610.05082v3",
+      dir: "library/arxiv-1610.05082v3",
+      pdf: "library/arxiv-1610.05082v3/1610.05082v3.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 15,
+      arxiv: "1610.05082v3",
+    },
+    type: "article",
+    title: "Weighted dependency graphs and the Ising model",
+    author: [
+      { family: "Dousse", given: "Jehanne" },
+      { family: "Féray", given: "Valentin" },
+    ],
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1610.05082",
+    note: "PDF library/arxiv-1610.05082v3/ — registered 2026-08-30 from the cluster-expansion upload drop. Proves that spins in the d-dimensional Ising model carry a weighted-dependency-graph structure, and derives central limit theorems for pattern counts in a growing box. Its working object is the CUMULANT, bounded through the dependency structure. DUPLICATE WARNING: the same drop also carried library/ising/, a LATER revision of this same work (four 2017 cites against two here; 21 sections against 15); the two are adjudicated in docs/audits/library-duplicate-ledger.json, which says read library/ising/ for the text and cite this stem. Two grep hits across the two directories are ONE source.",
+  }),
+
+  ref({
+    id: "rebenko2022virial",
+    library: {
+      docId: "arxiv-2205.07095v1",
+      dir: "library/arxiv-2205.07095v1",
+      pdf: "library/arxiv-2205.07095v1/2205.07095v1.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 10,
+      arxiv: "2205.07095v1",
+    },
+    type: "article",
+    title: "Virial Expansions for Correlation Functions in Canonical Ensemble",
+    author: [{ family: "Rebenko", given: "A. L." }],
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2205.07095",
+    note: "PDF library/arxiv-2205.07095v1/ — registered 2026-08-30 from the cluster-expansion upload drop. Graph expansions of correlation functions in the density parameter for the classical CANONICAL ensemble, via Kirkwood–Salsburg, with uniqueness at small density and high temperature. The canonical (fixed particle number) setting is the one that matches a nucleus, where the grand-canonical activity expansion does not; cite for that distinction.",
+  }),
+
+  ref({
+    id: "mann2021partition",
+    library: {
+      docId: "022201-1-online",
+      dir: "library/022201-1-online",
+      pdf: "library/022201-1-online/022201_1_online.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 8,
+    },
+    type: "article-journal",
+    title: "Efficient algorithms for approximating quantum partition functions",
+    author: [
+      { family: "Mann", given: "Ryan L." },
+      { family: "Helmuth", given: "Tyler" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    issued: { "date-parts": [[2021]] },
+    volume: "62",
+    issue: "2",
+    page: "022201",
+    DOI: "10.1063/5.0013689",
+    URL: "https://doi.org/10.1063/5.0013689",
+    note: "PDF library/022201-1-online/ — registered 2026-08-30 from the cluster-expansion upload drop. Approximation algorithms for quantum partition functions built on the abstract-polymer / cluster-expansion machinery. The QUANTUM member of this drop, and so the one whose setting is closest to the corpus's; cite for the polymer-model formulation, not for any nuclear claim.",
   }),
 ];
 

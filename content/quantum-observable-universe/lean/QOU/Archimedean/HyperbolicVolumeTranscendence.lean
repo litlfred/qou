@@ -162,7 +162,7 @@ The three QOU volumes used in `SingleVolumeIrrational` /
   (exact; supersedes the former 15-dps SnapPy literal). -/
 
 /-- Hyperbolic volume of the figure-eight knot 4₁ (Higgs boson).
-    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042408
+    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042405
     (two regular ideal tetrahedra, each of volume Cl₂(π/3) = 3Λ(π/3)).
 
     Corrected 2026-08-09: this docstring and the §1 summary above both
@@ -704,11 +704,18 @@ class TowerNoncollapseImpliesIndependence
   /-- The independence witness produced by the bridge. -/
   independence : HyperbolicVolumeIndependence
 
-/-- Per-instance form. -/
-theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ)
-    [hi : TowerNoncollapseImpliesIndependence ylc] :
-    HyperbolicVolumeIndependence :=
-  hi.independence
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `tower_noncollapse_implies_independence` — body was `hi.independence`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.Archimedean

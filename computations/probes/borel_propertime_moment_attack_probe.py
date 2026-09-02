@@ -175,11 +175,13 @@ def involution_numbers(n_max: int) -> list[int]:
 
 def block_a1_moment_identity(wb: WitnessBuilder) -> None:
     """A1: ∫₀^∞ sⁿ e^{−s} ds/s = Γ(n) = (n−1)!, n = 1..N_MOMENTS, exact."""
+    _ok: list[bool] = []
     for n in range(1, N_MOMENTS + 1):
         val = sp.integrate(_s ** n * sp.exp(-_s) / _s, (_s, 0, sp.oo))
-        assert val == sp.factorial(n - 1), (n, val)
+        _ok.append(bool(val == sp.factorial(n - 1)))
+        assert _ok[-1], (n, val)
     wb.add_assertion(
-        "moment_identity_gamma", computed="0", expected="0",
+        "moment_identity_gamma", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"∫₀^∞ sⁿ e^(−s) ds/s − (n−1)! = 0 exactly (sympy), "
                f"n = 1..{N_MOMENTS}: the keystone-forced normalizer "
@@ -191,14 +193,17 @@ def block_a1_moment_identity(wb: WitnessBuilder) -> None:
 def block_a2_n0_divergence(wb: WitnessBuilder) -> None:
     """A2: the kernel e^{−s}·ds/s has infinite mass at s = 0 — determinacy
     must be stated for the shifted finite measure e^{−s}·ds."""
+    _ok: list[bool] = []
     v0 = sp.integrate(sp.exp(-_s) / _s, (_s, 0, sp.oo))
-    assert v0 == sp.oo, v0
+    _ok.append(bool(v0 == sp.oo))
+    assert _ok[-1], v0
     # shifted moments: m_k = ∫ s^k e^{−s} ds = k! (finite measure, m_0 = 1)
     for kk in range(0, N_MOMENTS):
         mk = sp.integrate(_s ** kk * sp.exp(-_s), (_s, 0, sp.oo))
-        assert mk == sp.factorial(kk), (kk, mk)
+        _ok.append(bool(mk == sp.factorial(kk)))
+        assert _ok[-1], (kk, mk)
     wb.add_assertion(
-        "n0_divergence_and_shift", computed="0", expected="0",
+        "n0_divergence_and_shift", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="∫₀^∞ e^(−s) ds/s = ∞ (the ds/s kernel is an infinite "
                "measure at s = 0); the determinacy statement lives on the "
@@ -209,18 +214,22 @@ def block_a2_n0_divergence(wb: WitnessBuilder) -> None:
 def block_a3_carleman(wb: WitnessBuilder) -> None:
     """A3: Carleman's condition for {k!} — exact Stirling limit + exact
     harmonic comparison. Verdict: DETERMINATE."""
+    _ok: list[bool] = []
     # Stirling asymptotics of the Carleman term, exact sympy limit:
     L = sp.limit(sp.factorial(_k) ** (sp.Rational(1, 2) / _k) / sp.sqrt(_k),
                  _k, sp.oo)
-    assert L == sp.exp(sp.Rational(-1, 2)), L
+    _ok.append(bool(L == sp.exp(sp.Rational(-1, 2))))
+    assert _ok[-1], L
     # exact comparison inequality: k! ≤ k^(2k) ⇒ (k!)^(−1/(2k)) ≥ 1/k
     for kk in range(1, 201):
-        assert sp.factorial(kk) <= sp.Integer(kk) ** (2 * kk), kk
+        _ok.append(bool(sp.factorial(kk) <= sp.Integer(kk) ** (2 * kk)))
+        assert _ok[-1], kk
     # partial sums of the harmonic minorant exceed ln N (divergence marker)
     H = sum(Fraction(1, kk) for kk in range(1, 201))
-    assert H > sp.log(200), H
+    _ok.append(bool(H > sp.log(200)))
+    assert _ok[-1], H
     wb.add_assertion(
-        "carleman_determinate", computed="0", expected="0",
+        "carleman_determinate", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="Carleman for the Stieltjes problem of {k!}: exact Stirling "
                "limit lim (k!)^(1/(2k))/√k = e^(−1/2) (sympy), so terms "
@@ -233,13 +242,16 @@ def block_a3_carleman(wb: WitnessBuilder) -> None:
 
 def block_a4_hankel(wb: WitnessBuilder) -> None:
     """A4: Hankel positive-definiteness of {k!} (Stieltjes consistency)."""
+    _ok: list[bool] = []
     for n in range(1, N_HANKEL + 1):
         H0 = sp.Matrix(n, n, lambda i, j: sp.factorial(i + j))
         H1 = sp.Matrix(n, n, lambda i, j: sp.factorial(i + j + 1))
-        assert H0.det() > 0, n
-        assert H1.det() > 0, n
+        _ok.append(bool(H0.det() > 0))
+        assert _ok[-1], n
+        _ok.append(bool(H1.det() > 0))
+        assert _ok[-1], n
     wb.add_assertion(
-        "hankel_positive", computed="0", expected="0",
+        "hankel_positive", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"det[(i+j)!] > 0 and det[(i+j+1)!] > 0 for sizes "
                f"1..{N_HANKEL} (exact integers): {{k!}} satisfies the "
@@ -250,16 +262,18 @@ def block_a4_hankel(wb: WitnessBuilder) -> None:
 def block_a5_unit_forcing(wb: WitnessBuilder) -> None:
     """A5: kernel c·e^{−s}·ds/s has moments c·(n−1)!; the proved bridge
     identity n·N(n) = n! forces c = 1; c = ½ fails for every n."""
+    _ok: list[bool] = []
     c = sp.symbols("c", positive=True)
     for n in range(1, N_MOMENTS + 1):
         # n·(c·(n−1)!) = n!  ⟺  c = 1
         sol = sp.solve(sp.Eq(n * (c * sp.factorial(n - 1)),
                              sp.factorial(n)), c)
-        assert sol == [1], (n, sol)
-        assert n * (sp.Rational(1, 2) * sp.factorial(n - 1)) \
-            != sp.factorial(n), n
+        _ok.append(bool(sol == [1]))
+        assert _ok[-1], (n, sol)
+        _ok.append(bool(n * (sp.Rational(1, 2) * sp.factorial(n - 1)) != sp.factorial(n)))
+        assert _ok[-1], n
     wb.add_assertion(
-        "unit_forced_c_eq_1", computed="0", expected="0",
+        "unit_forced_c_eq_1", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="with kernel c·e^(−s)·ds/s the moments are c·(n−1)!; the "
                "PROVED KeystoneBridgeC1Binding identity n·N(n) = n! forces "
@@ -271,21 +285,26 @@ def block_a5_unit_forcing(wb: WitnessBuilder) -> None:
 
 def block_a6_positivity_status(wb: WitnessBuilder) -> None:
     """A6: binding-side positivity status — what is proved vs open."""
+    _ok: list[bool] = []
     I = involution_numbers(N_LOGCONVEX + 1)
-    assert all(x > 0 for x in I)                       # (i) positivity
+    _ok.append(bool(all((x > 0 for x in I))))
+    assert _ok[-1]
     b = [Fraction(I[m], sp.factorial(m)) for m in range(len(I))]
     # (ii) the C1 carrier is NOT log-convex: b_2² > b_1·b_3
-    assert b[2] ** 2 > b[1] * b[3], (b[2] ** 2, b[1] * b[3])
+    _ok.append(bool(b[2] ** 2 > b[1] * b[3]))
+    assert _ok[-1], (b[2] ** 2, b[1] * b[3])
     carrier_violations = [m for m in range(1, 20)
                           if b[m] ** 2 > b[m - 1] * b[m + 1]]
-    assert 2 in carrier_violations
+    _ok.append(bool(2 in carrier_violations))
+    assert _ok[-1]
     # (iii) the RAW periods B_n = I(n)/n pass log-convexity 2..39
     B = [None] + [Fraction(I[m], m) for m in range(1, len(I))]
     raw_violations = [m for m in range(2, N_LOGCONVEX)
                       if B[m] ** 2 > B[m - 1] * B[m + 1]]
-    assert raw_violations == [], raw_violations
+    _ok.append(bool(raw_violations == []))
+    assert _ok[-1], raw_violations
     wb.add_assertion(
-        "binding_positivity_status", computed="0", expected="0",
+        "binding_positivity_status", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="binding-side status: (i) I(n) > 0 exact to n = 41 "
                "(Lean-proved involutionNumber_pos); (ii) the normalized C1 "
@@ -315,20 +334,24 @@ def block_a6_positivity_status(wb: WitnessBuilder) -> None:
 def block_e1_bar_falsifier(wb: WitnessBuilder) -> None:
     """E1: bar-transform of the one-sided q-Borel normalizer — exact
     covariance weight q^{−(n−1)(n−2)/2} ≠ 1 for n ≥ 3."""
+    _ok: list[bool] = []
     for kk in range(1, N_MOMENTS + 1):
         d = sp.simplify(qint(1 / _q, kk) - _q ** (1 - kk) * qint(_q, kk))
-        assert d == 0, kk
+        _ok.append(bool(d == 0))
+        assert _ok[-1], kk
     nontrivial = 0
     for n in range(1, N_MOMENTS + 1):
         m = n - 1
         w = sp.simplify(qfact(1 / _q, m) / qfact(_q, m))
         target = _q ** (-sp.Rational(m * (m - 1), 2))
-        assert sp.simplify(w - target) == 0, (n, w)
+        _ok.append(bool(sp.simplify(w - target) == 0))
+        assert _ok[-1], (n, w)
         if m * (m - 1) != 0:
             nontrivial += 1
-    assert nontrivial == N_MOMENTS - 2  # weight ≠ 1 exactly for n ≥ 3
+    _ok.append(bool(nontrivial == N_MOMENTS - 2))
+    assert _ok[-1]
     wb.add_assertion(
-        "bar_covariance_weight", computed="0", expected="0",
+        "bar_covariance_weight", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="[k]_{q⁻¹} = q^(1−k)·[k]_q exactly (k = 1..8) ⇒ "
                "N_{q⁻¹}(n) = q^(−(n−1)(n−2)/2)·N_q(n) exactly (n = 1..8; "
@@ -342,13 +365,15 @@ def block_e1_bar_falsifier(wb: WitnessBuilder) -> None:
 def block_e2_balanced_repair(wb: WitnessBuilder) -> None:
     """E2: the balanced normalizer is exactly bar-invariant — the
     constructive bar-projection caveat."""
+    _ok: list[bool] = []
     for n in range(1, N_MOMENTS + 1):
         m = n - 1
         Nb = _q ** (-sp.Rational(m * (m - 1), 4)) * qfact(_q, m)
         d = sp.simplify(Nb.subs(_q, 1 / _q) - Nb)
-        assert d == 0, n
+        _ok.append(bool(d == 0))
+        assert _ok[-1], n
     wb.add_assertion(
-        "balanced_bar_invariant", computed="0", expected="0",
+        "balanced_bar_invariant", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="N_q^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! satisfies "
                "N^bal_{q⁻¹} = N^bal_q exactly (n = 1..8) — the balanced "
@@ -360,31 +385,36 @@ def block_e2_balanced_repair(wb: WitnessBuilder) -> None:
 def block_e3_subleading(wb: WitnessBuilder) -> None:
     """E3: exact first-order q-corrections — quadratic (unbalanced) vs 0
     (balanced) vs linear (loop a₁) — and the balanced h² coefficient."""
+    _ok: list[bool] = []
     for n in range(3, N_MOMENTS):
         m = n - 1
         # unbalanced: coefficient of (q−1) is (n−1)(n−2)/4
         ser = sp.series((qfact(_q, m) / sp.factorial(m)).subs(_q, 1 + _eps),
                         _eps, 0, 2).removeO()
         c1 = sp.expand(ser).coeff(_eps, 1)
-        assert c1 == sp.Rational(m * (m - 1), 4), (n, c1)
+        _ok.append(bool(c1 == sp.Rational(m * (m - 1), 4)))
+        assert _ok[-1], (n, c1)
         # balanced: first order vanishes; h² coefficient of log is
         # Σ_{k=1}^{n−1}(k²−1)/24
         Nb = _q ** (-sp.Rational(m * (m - 1), 4)) * qfact(_q, m)
         bser = sp.series((Nb / sp.factorial(m)).subs(_q, 1 + _eps),
                          _eps, 0, 2).removeO()
-        assert sp.expand(bser).coeff(_eps, 1) == 0, n
+        _ok.append(bool(sp.expand(bser).coeff(_eps, 1) == 0))
+        assert _ok[-1], n
         lg = sp.series(sp.log((Nb / sp.factorial(m)).subs(_q, sp.exp(_h))),
                        _h, 0, 3).removeO()
         c2 = sp.expand(lg).coeff(_h, 2)
         pred = sp.Rational(sum(kk * kk - 1 for kk in range(1, m + 1)), 24)
-        assert sp.simplify(c2 - pred) == 0, (n, c2, pred)
+        _ok.append(bool(sp.simplify(c2 - pred) == 0))
+        assert _ok[-1], (n, c2, pred)
     # loop side: an a₁ heat-kernel correction is LINEAR in n per moment
     for n in range(1, N_MOMENTS - 1):
         val = sp.integrate(_s ** n * sp.exp(-_s) * (1 + _a * _s) / _s,
                            (_s, 0, sp.oo))
-        assert sp.simplify(val - sp.factorial(n - 1) * (1 + _a * n)) == 0, n
+        _ok.append(bool(sp.simplify(val - sp.factorial(n - 1) * (1 + _a * n)) == 0))
+        assert _ok[-1], n
     wb.add_assertion(
-        "subleading_pattern_mismatch", computed="0", expected="0",
+        "subleading_pattern_mismatch", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="exact per-moment corrections: unbalanced q-Borel "
                "1 + (q−1)(n−1)(n−2)/4 + O² (QUADRATIC in n); balanced "

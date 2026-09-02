@@ -52,6 +52,10 @@ from pathlib import Path
 
 import sympy as sp
 
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from canonical_braid_crossings import CTYPES  # noqa: E402
 
 HERE = Path(__file__).parent
@@ -194,6 +198,13 @@ def main() -> int:
     print("=" * 76)
 
     tallies = {}
+    # "No float anywhere" is the headline claim of this probe, and nothing was
+    # checking it — the exactness was argued in the docstring and asserted as a
+    # constant. Watch the two places a float could actually enter: the crossing
+    # factors `factors_for` builds (via the rational δ(q)) and the character
+    # `chi_at` returns.
+    values_inspected = 0
+    non_exact = []
     for mode in ("weighted", "blind"):
         ok = 0
         for lam, expr in sorted(cache.items()):
@@ -202,7 +213,18 @@ def main() -> int:
             good = True
             for qv in Q_POINTS:
                 facs = factors_for(crossings, qv, colour_weighted=(mode == "weighted"))
+                for (fc, fd, _fg) in facs:
+                    for val, tag in ((fc, "c"), (fd, "d")):
+                        values_inspected += 1
+                        if not isinstance(val, F):
+                            non_exact.append(
+                                f"{mode}/{list(lam)}/q={qv}/{tag}:"
+                                f"{type(val).__name__}")
                 mine = chi_at(list(lam), facs, qv)
+                values_inspected += 1
+                if not isinstance(mine, F):
+                    non_exact.append(
+                        f"{mode}/{list(lam)}/q={qv}/chi:{type(mine).__name__}")
                 ref = E.subs(sym, sp.Rational(qv.numerator, qv.denominator))
                 if sp.simplify(sp.Rational(mine.numerator, mine.denominator) - ref) != 0:
                     good = False
@@ -230,7 +252,21 @@ def main() -> int:
     wb.add_data("n_cached_characters", len(cache))
     wb.add_assertion("weighted_matches_all", tallies["weighted"], len(cache))
     wb.add_assertion("blind_matches_none", tallies["blind"], 0)
-    wb.add_assertion("no_float_used", True, True)
+    # Was `add_assertion("no_float_used", True, True)` (bean `qou-26f2`) — the
+    # one claim in this probe that no computation stood behind, and the one a
+    # reader is most likely to take on trust, since "no float anywhere" is what
+    # the whole asymmetric-gauge argument is for. It now counts the crossing
+    # factors and characters that came back as anything other than an exact
+    # `Fraction`; the count is 0 or the assertion fails and names the offenders.
+    wb.add_data("exactness_scan", {
+        "values_inspected": values_inspected,
+        "non_exact_values": non_exact[:20],
+    })
+    wb.add_assertion("no_float_used", str(len(non_exact)), "0", "0",
+                     unit="crossing factors / characters that were not exact Fractions",
+                     source=f"{values_inspected} values inspected across both p-n "
+                            f"interface modes and every cached partition × q point; "
+                            f"{len(non_exact)} were not `fractions.Fraction`")
     wb.add_caveat(
         "Proves the EVALUATION is exact and correct at rational q. Recovering the "
         "Laurent polynomial from evaluations (interpolation) is standard and is NOT "

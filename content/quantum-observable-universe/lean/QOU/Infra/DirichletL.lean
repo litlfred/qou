@@ -49,9 +49,16 @@ class DirichletLClass (K : ℕ) (chi : ℕ → ℝ) where
 noncomputable def chi4 : ℕ → ℝ := fun n =>
   if n % 4 = 1 then 1 else if n % 4 = 3 then -1 else 0
 
-/-- The classical identity `β(3) = L(χ_4, 3)` — encoded as a
-    proposition.  Its proof from Theorem A (via Im Li_3(i) = β(3))
-    is in `prop:cyclotomic-l-value-decomposition`. -/
+/-- **Placeholder, not the identity.** Intended: the classical
+    `β(3) = L(χ_4, 3)`, whose proof from Theorem A (via `Im Li_3(i) = β(3)`)
+    is in `prop:cyclotomic-l-value-decomposition`.
+
+    Actually `True`, so it is inhabited by `trivial` and asserts nothing —
+    the identity is *named* here, not stated. Nothing in the corpus references
+    this declaration, so it is inert rather than harmful, but do not read a use
+    of it as a use of the identity. Stating it properly needs `β` and `L(χ, s)`
+    as Mathlib objects; neither is in scope in this file, which is why the
+    placeholder exists. Tracked as `qou-35zi`. -/
 def beta3IsLChi4_3 : Prop := True   -- placeholder for axiomatic class
 
 end QOU.Infra.DirichletL

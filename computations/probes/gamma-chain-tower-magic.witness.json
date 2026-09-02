@@ -1,0 +1,142 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T14:50:46.685283+00:00",
+  "commitSha": "c4a1b36ac846b9879a480fafcbb737f39d966954",
+  "assertions": [
+    {
+      "name": "no_tower",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "NF length is 6 at every stage, H through Pb-208"
+    },
+    {
+      "name": "writhe_is_smooth_3Z",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "no magic feature in the twist data"
+    },
+    {
+      "name": "He4_collapse_is_parity_not_magic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "R monotone in even Z; Z=2 leads by being first"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "gamma-chain-tower-magic",
+  "scriptFile": "gamma_chain_tower_magic_probe.py",
+  "scriptHash": "3ea031d6a9a1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gamma_chain_tower_magic_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gamma_chain_tower_magic_probe.py"
+  },
+  "description": "Step-by-step walk of the generative isotope production chain looking for structural change at the first magic number. THERE IS NO TOWER: the H_3 GS reduction is applied after every crossing, so the state is a 6-vector at every stage of every nucleus -- hydrogen and Pb-208 share one state space. Twist data is featureless (writhe = 3Z, mixed = Z^2+4Z exactly). The LP active set is {gamma} at every n_target from 0.25 to 1000, so receptivity to another knot is not expressible. An apparent collapse onto the trivial channel at He-4 is RETRACTED: R is monotone in even Z, so Z=2 leads by being the smallest even Z, and magic Z rank 1st/4th/10th/14th of 15.",
+  "data": {
+    "no_tower_all_dims_six": true,
+    "nf_dims_observed": [
+      6
+    ],
+    "writhe_equals_3Z": true,
+    "mixed_equals_Zsq_plus_4Z": true,
+    "writhe_by_Z": {
+      "1": 3,
+      "2": 6,
+      "3": 9,
+      "4": 12,
+      "5": 15,
+      "6": 18,
+      "7": 21,
+      "8": 24,
+      "9": 27,
+      "10": 30,
+      "11": 33,
+      "12": 36
+    },
+    "mixed_by_Z": {
+      "1": 5,
+      "2": 12,
+      "3": 21,
+      "4": 32,
+      "5": 45,
+      "6": 60,
+      "7": 77,
+      "8": 96,
+      "9": 117,
+      "10": 140,
+      "11": 165,
+      "12": 192
+    },
+    "R_by_Z": {
+      "1": "15.5749250784",
+      "2": "0.488730449637",
+      "3": "81.0686984081",
+      "4": "0.808147493499",
+      "5": "5.59080309567",
+      "6": "1.14349201297",
+      "7": "4.70753555157",
+      "8": "1.4036967579",
+      "9": "5.9996657063",
+      "10": "1.9928340232",
+      "11": "4.69241971699",
+      "12": "2.31799274562",
+      "13": "3.85478688",
+      "14": "2.52905408294",
+      "15": "3.46990458141",
+      "16": "2.67632401563",
+      "17": "3.27130984549",
+      "18": "2.77666230532",
+      "19": "3.15906733785",
+      "20": "2.84394189425",
+      "21": "3.09199533974",
+      "22": "2.88869670031",
+      "23": "3.05050169547",
+      "24": "2.91834536926",
+      "25": "3.02426021098",
+      "26": "2.93794258937",
+      "27": "3.00742755426",
+      "28": "2.95087936907",
+      "29": "2.99653041279",
+      "30": "2.95941286355"
+    },
+    "R_monotone_in_even_Z": true,
+    "magic_rank_among_even_Z": {
+      "2": 1,
+      "8": 4,
+      "20": 10,
+      "28": 14
+    },
+    "lp_active_set_all_n_targets": [
+      "gamma"
+    ]
+  },
+  "caveats": [
+    "The He-4 collapse was flagged as a candidate magic signal and is RETRACTED here by its own control. 'Is the global minimum magic?' returns True and is empty, because 2 is both the smallest even number and the first magic one -- any monotone-in-even-Z quantity says yes."
+  ]
+}

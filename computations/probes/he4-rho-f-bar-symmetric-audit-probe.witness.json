@@ -1,13 +1,13 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:13:40.683703+00:00",
-  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
+  "computedAt": "2026-08-30T07:11:54.569270+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
-      "computed": 8,
-      "expected": 8,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0.0,
       "source": "Enumeration of structurally-motivated bar-symmetric candidates"
@@ -17,8 +17,8 @@
   "durationMs": 9,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
-  "scriptHash": "de4d24957fbe",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "94e5a2473066",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -45,10 +45,10 @@
   "auditOnly": "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md",
   "data": {
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
-    "m_e_MeV": "0.51099895069",
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "eight_G": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "B_AME_MeV": "28.295674",
-    "required_rho_F": "1.889169370864662482713153983924592115958135460862527017534005472078254",
+    "required_rho_F": "1.889169370864662482713153983924592115958135460862524927082573768461504",
     "candidates": [
       {
         "name": "C1: 2 [production, postulated]",

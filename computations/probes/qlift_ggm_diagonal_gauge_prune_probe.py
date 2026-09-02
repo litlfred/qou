@@ -264,13 +264,33 @@ def main():
                           "scope-(a)/(b) vocabulary per AGENTS.md; no AME data; anti-fit",
         },
     }
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. P1/P2/P3 each compute a verdict against TOL_KILL, the
+    # PRE-STATED kill criterion declared at line 73, and `pruned` is their
+    # conjunction -- yet none reached `assertions[]`, so `save()` emitted
+    # `allPassed: true` over an EMPTY list. A prune probe that records no
+    # assertion cannot report that the prune stopped holding. No threshold is
+    # chosen here: TOL_KILL is the module's own constant and is pre-stated
+    # precisely so the criterion cannot be fitted after the fact.
+    _b = WitnessBuilder.wrap_legacy(
         "qlift_ggm_diagonal_gauge_prune_probe",
         witness,
         script_path=__file__,
         engine="python+mpmath",
         start_time=_T0,
-    ).save()
+    )
+    _b.add_assertion("p1_no_diagonal_gauge_survives",
+                     computed=bool(p1["survived"]), expected=False,
+                     source="P1: " + str(p1["verdict"]))
+    _b.add_assertion("p2_obstructed_at_every_m_and_q",
+                     computed=bool(p2["all_obstructed"]), expected=True,
+                     source="P2: " + str(p2["verdict"]))
+    _b.add_assertion("p3_no_constant_c_or_shift_rescues",
+                     computed=bool(p3["any_rescue"]), expected=False,
+                     source="P3: " + str(p3["verdict"]))
+    _b.add_assertion("pruned", computed=bool(pruned), expected=True,
+                     source=("the conjunction of P1-P3 against TOL_KILL = "
+                             "1e-40, the pre-stated kill criterion"))
+    out = _b.save()
     print(f"witness written: {out}")
 
 

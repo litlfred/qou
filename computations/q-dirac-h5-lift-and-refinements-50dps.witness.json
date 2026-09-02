@@ -1,29 +1,64 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:50:41.807055+00:00",
-  "commitSha": "b0d8a0e860f7730ae0a6143c9e3ed077ce7631f4",
+  "computedAt": "2026-08-30T13:50:44.590237+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "probe_completed",
-      "computed": true,
-      "expected": true,
+      "name": "hook_length_dims_sum_of_squares_equals_n_factorial",
+      "computed": "4",
+      "expected": "4",
       "passed": true,
       "tolerance": 0,
-      "source": "Q-Dirac H_5 lift + refinements completed."
+      "unit": "H_N levels satisfying Σ_λ (f^λ)² = n!",
+      "source": "Route A: Σ_λ (n!/∏hooks(λ))² over partitions_of(n), both from this file. Route B: n! from math.factorial (Wedderburn: Σ d_λ² = |S_n|). Expected = the H_N list the lift sweeps, rebuilt from it, so adding a level tightens the check."
+    },
+    {
+      "name": "content_sum_is_antisymmetric_under_transpose",
+      "computed": "38",
+      "expected": "38",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partitions of 4..7",
+      "source": "Route A: content_sum(λ). Route B: −content_sum(λᵀ) with the conjugate built by counting columns, never by reusing content_sum's own loop. Expected = the partition count rebuilt from partitions_of over the same H_N list."
+    },
+    {
+      "name": "refinement_sweep_scored_every_declared_weight",
+      "computed": "16",
+      "expected": "16",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "H_4 weight variants",
+      "source": "Route A: len(variants), the weights that produced an h-fit. Route B: the offered-weight list rebuilt from the α list, the constant-shift list and the three named weights. Any weight lost to test_scheme's bare `except` now separates them."
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 120,
   "computation": "q-dirac-h5-lift-and-refinements-50dps",
   "scriptFile": "q_dirac_h5_lift_and_refinements_50dps.py",
-  "scriptHash": "072c4283d3d9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fca1c44429f8",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_dirac_h5_lift_and_refinements_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/q_dirac_h5_lift_and_refinements_50dps.py"
   },
   "description": "Q-Dirac probe Part 3: lifts (1+D_q²)/ΣW scheme to H_5 and tests refined variants at H_4 to close the 3.5% gap to -G. Includes alpha-tuned and cosh-based variants.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
@@ -150,6 +185,27 @@
       "name": "(1 + D_q²/2)",
       "a_2_norm": "-0.9313871747592850319153819",
       "abs_delta": "0.0154215805821"
-    }
-  }
+    },
+    "variants_attempted": [
+      "(1 + D_q²/24)",
+      "(1 + D_q²/8)",
+      "(1 + D_q²/4)",
+      "(1 + D_q²/2)",
+      "(1 + D_q²)",
+      "(1 + 2·D_q²)",
+      "(1 + D_q²·G)",
+      "(1 + D_q²/G)",
+      "(1 + D_q²·π/G)",
+      "(q^c + q^{-c}) [cosh]",
+      "(q^c - q^{-c})²",
+      "(2.0 + D_q²)",
+      "(4.0 + D_q²)",
+      "(0.5 + D_q²)",
+      "(0.25 + D_q²)",
+      "cosh(c · log q)"
+    ]
+  },
+  "caveats": [
+    "Part 3 produced NOTHING this run: residual(α) is +1.610 at α=0.001 and +0.115 at α=10, so it never brackets zero and the bisection does not run. The docstring's 'Constructed to match −G EXACTLY: solve for α' is unmet, and optimal_alpha_for_minus_G_exact is absent from the witness. This is the state of the committed 2026-05-25 witness too — not a regression."
+  ]
 }

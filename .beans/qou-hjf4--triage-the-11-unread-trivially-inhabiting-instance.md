@@ -5,6 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
+updated_at: 2026-08-24T19:49:32Z
 updated_at: 2026-08-24T17:24:14Z
 ---
 
@@ -60,6 +61,33 @@ Two of the eleven are the **same class in two files**
 (`ShellClosureNFTermCount`), so a single verdict likely covers both.
 
 
+
+---
+
+## Cross-reference added 2026-08-24
+
+`QOU/Interactions/QIntegerMassFormula.lean:185` — third of the three
+"confirmed harmful" above — has a **second** defect this bean does not name, now
+filed as `qou-tpt6`: `fits_AME` is not discharged by the instance at all, it is
+forwarded to `IsAMEValue.fits_bound`, a field whose own docstring reads
+"Trivialized bound hypothesis to close sorry". `IsAMEValue` has **zero instances
+corpus-wide**, so `fits_AME_conditional` is unsatisfiable-as-stated rather than
+vacuously true. Fix them together — the `f_magic := fun _ => 0` verdict this
+bean owns and the laundering `qou-tpt6` owns are the same edit.
+
+
+---
+
+## One candidate removed 2026-08-24 — 11 -> 10, bean stays open
+
+`QIntegerMassFormula.canonical`'s `f_magic := fun _ => 0` is gone: the whole
+module `QOU/Interactions/QIntegerMassFormula.lean` was deleted as unneeded
+(bean `qou-tpt6`). It had no consumers in the compiled tree and duplicated the
+fully-qualified name of an honest sibling under `content/…/mass-theory/` that
+states the conjecture directly and supplies no instance.
+
+So this candidate is not *triaged*, it is **withdrawn** — there is no longer a
+declaration to judge. The remaining ten still need reading.
 ## 2026-08-24 — triaged, and the count was wrong: 17 actionable, not 14
 
 PR #5686. Findings recorded, no `content/` Lean changed.

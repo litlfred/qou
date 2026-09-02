@@ -64,13 +64,27 @@ structure SubstrateParameter (M : Type*) where
       of the `End(𝟙) ≅ R_q`-element at each point `p`. -/
   field : M → QOU.GroundRing.R_q
 
-/-- **Archimedean substrate field**: the realisation of the substrate parameter
-    as a genuine real field `q : M → ℝ`, obtained by specialising the
-    categorical field through `ι : R_q → ℝ, q ↦ q₀`.
+/-- **Archimedean substrate field**: the substrate parameter as a genuine real
+    field `q : M → ℝ`.
 
-    This is the structure that used to be called `SubstrateParameter`. All four
-    fields are unchanged — the rename is about which side of the §7c wall the
-    name advertises, not about weakening what is assumed. -/
+    This is the structure that used to be called `SubstrateParameter`; the
+    rename is about which side of the §7c wall the name advertises, not about
+    weakening what is assumed. `field_pos` is the one field that did not
+    survive as a field — it is derivable, and is a theorem below.
+
+    **`field` here is independent by construction.** This docstring used to say
+    the structure was "obtained by specialising the categorical field through
+    `ι : R_q → ℝ, q ↦ q₀`" — prose asserting a tie the type did not carry.
+    Nothing related `field` to `SubstrateParameter.field`, so an instance could
+    pair a real field with an entirely unrelated categorical one.
+
+    To get the specialisation that prose described, build a
+    `QOU.Archimedean.ArchimedeanRealisation` and take
+    `toArchimedeanSubstrateField`. There `ι` is **constructed**, not assumed
+    (`QOU/Archimedean/GroundRingEval.lean`, bean `qou-d8m1`): `R_q` is
+    `LaurentPolynomial ℤ`, so evaluation at a real unit is an ordinary ring
+    hom. This bare structure is kept for call sites that need only the
+    archimedean data. -/
 structure ArchimedeanSubstrateField (M : Type*) where
   /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`. -/
   field : M → ℝ

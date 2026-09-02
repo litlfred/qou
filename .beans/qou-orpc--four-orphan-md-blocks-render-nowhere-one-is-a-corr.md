@@ -1,7 +1,7 @@
 ---
 # qou-orpc
-title: 'Four orphan .md blocks render nowhere; one is a c₃ correction the corpus later retracted work for not having'
-status: todo
+title: Four orphan .md blocks render nowhere; one is a c₃ correction the corpus later retracted work for not having
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - orphan
     - c3
 created_at: 2026-08-22T07:05:00Z
-updated_at: 2026-08-22T07:05:00Z
+updated_at: 2026-08-24T13:25:29Z
 ---
 
 Two independent trap-drain batches (`pq_06`, `pq_08`) each flagged a content
@@ -111,3 +111,47 @@ sixteen compound-macro stubs that made them render wrongly rather than fail
 loudly. Its third item — the `leray-profile-construction` wording — is
 untouched and still needs an author. Left open rather than closed; that is the
 author's call.
+
+## Resolved 2026-08-24 — all four, but the "bounded at four" claim did not hold
+
+### The four
+
+| file | outcome |
+|---|---|
+| `q-beta-c3-continuum-geometry.md` | `.ts` written — the c₃ correction renders |
+| `q-clt-jsj-mass-scaling.md` | `.ts` written |
+| `spectral-decomposition-qvalue-interpretation.md` | `.ts` written |
+| `qbeta-fmap-structural-form.md` | deleted outright |
+
+Fixed on `main`, not by me — three got manifests and one was deleted, which is
+the split this bean argued for: it warned that deleting was wrong for the c₃
+correction specifically, and that one was kept.
+
+`run-validate` on the merged tree: **`✓ Valid — 26 issues, 0 errors`**. The
+four `✗` these produced are gone.
+
+### The class was not bounded
+
+This bean stated: *"The class is bounded at four, not open-ended … Nothing is
+hiding here."* Re-measured today: **3571 `.md`, 18 with no `.ts` sibling.**
+
+That claim was a point-in-time measurement presented as a structural fact, and
+it has been falsified. The breakdown is reassuring but the framing was not:
+
+- **13** live under `*/audit/` — probe write-ups, a deliberate non-block
+  convention, not orphan content.
+- **1** is `lean/AUDIT-REPORT.md`, generated, which this bean already excluded.
+- **3** are genuinely unmanifested prose, and they are new since:
+  `PieceACornerInduction.md`, `PieceASpechtCharacter.md`, `bring_tetraplectic.md`.
+
+So the *content-block* class really is small — but it refills, and a bean that
+says "nothing is hiding here" invites nobody to look again. Follow-up:
+`qou-os3o`.
+
+### Not the same defect as `qou-efzm` item 2
+
+Worth separating, because the two beans were being treated as one problem.
+`qou-efzm`'s `section-title-audit.qa.json` files are **live paper-level audit
+output** misfiled under a block-sidecar extension — fixed in the checker
+(`folio-assistant@8835ee6`), not by deletion. These four were genuinely
+unmanifested prose. Same symptom, opposite remedies.

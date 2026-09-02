@@ -42,6 +42,10 @@ mp.mp.dps = 60
 # ---------------------------------------------------------------------------
 # Substrate constants (canonical defs — qbeta_sa_qa_chain_gamma.py lines 63-67)
 # ---------------------------------------------------------------------------
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 H = Q0 - 1 / Q0

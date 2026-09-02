@@ -1,0 +1,134 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T04:23:39.341667+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "assertions": [
+    {
+      "name": "A1_same_beta_opposite_sign_by_channel",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "strong +0.907262, EM -0.599674..-0.784421, intra +0.437360..+0.506808"
+    },
+    {
+      "name": "A2_channel_specific_flavour_dependence",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "strong flavour-independent to 1.1e-15; EM 23.6% and intra 13.7% flavour-split"
+    },
+    {
+      "name": "A3_channels_exactly_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "cross-channel ['+6.7e-16', '+0.0e+00'] against strong self-interference ['-2.4e-01', '-1.7e-01']"
+    },
+    {
+      "name": "A4_electrons_additive_among_themselves",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|L(2e) - 2 L(1e)| = 2.22e-16"
+    },
+    {
+      "name": "A5_em_antibinds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "L_EM = -0.599674300 and -1.199348601, both negative"
+    },
+    {
+      "name": "A6_strong_only_is_the_right_comparand",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "strong-only 1.20327 (+9.5%) beats with-EM 2.96938 (+170.2%) against 1.09896"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "force_channels_are_separable_probe",
+  "scriptFile": "force_channels_are_separable_probe.py",
+  "scriptHash": "fe96d32e5b84",
+  "scriptCommitSha": "0cf42cc41600efcf1ab3b65b5236e932b70332d4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/force_channels_are_separable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/force_channels_are_separable_probe.py"
+  },
+  "description": "Tests whether the bond falloff rates differ by force channel and whether the channels are independent. The corpus labels channels by generator: 3k+2 strong (inter-nucleon), 3k+1 EM (electron pe crossing), 3k intra. Placing the SAME crossing (sigma^-1, beta = 1, the beta the strong n-n bond carries) on each generator of H_9 gives +0.907262265533 on strong generators, -0.599674300310 (p) and -0.784421240488 (n) on EM ones, and +0.437359834237 (p) / +0.506807726417 (n) on intra ones — same beta, opposite sign, so the generator sets the rate rather than the crossing branch. Strong is flavour-independent (gens 2 and 5 agree to 1e-12 though flanked p-n and n-n) where EM and intra are flavour-split by 31% and 16%. The channels are EXACTLY independent: cross-channel interference is +6.7e-16 (3H) and 0.0 (3He) in the very same words where the strong channel is non-additive with itself at -2.4e-1 and -1.7e-1, and multiple electrons are additive among themselves. EM anti-binds, so including it moves L(3H)/L(3He) from 1.20327 to 2.96938 against an experimental 1.09896; since AME binding energies are nuclear and carry no electron content, strong-only is the correct comparand, which justifies the scope of the preceding probes. The weak channel has no generator assigned anywhere in the corpus.",
+  "data": {
+    "channel_map": {
+      "3k+2": "strong (inter-nucleon)",
+      "3k+1": "EM (electron pe)",
+      "3k": "intra (quark pair slot)"
+    },
+    "beta1_by_generator": {
+      "0": "+0.437359834237",
+      "1": "-0.599674300310",
+      "2": "+0.907262265533",
+      "3": "+0.506807726417",
+      "4": "-0.784421240488",
+      "5": "+0.907262265533",
+      "6": "+0.506807726417",
+      "7": "-0.784421240488"
+    },
+    "flavour_split": {
+      "strong": "1.11e-15",
+      "EM_pct": "23.55",
+      "intra_pct": "13.70"
+    },
+    "cross_channel_interference": {
+      "3H": "+6.661e-16",
+      "3He": "+0.000e+00"
+    },
+    "strong_self_interference": {
+      "3H": "-2.431e-01",
+      "3He": "-1.666e-01"
+    },
+    "channel_totals": {
+      "3H": {
+        "strong": "2.017810478620",
+        "EM": "-0.599674300310",
+        "both": "1.418136178310"
+      },
+      "3He": {
+        "strong": "1.676935518146",
+        "EM": "-1.199348600621",
+        "both": "0.477586917525"
+      }
+    },
+    "mirror_ratio": {
+      "strong_only": "1.203273",
+      "with_EM": "2.969378",
+      "experiment": "1.098957"
+    }
+  },
+  "caveats": [
+    "THE EM LIFT INTO THE BRAID IS MINE, NOT THE CORPUS'S. atom_braid_word_3A contains no electrons at all — the EM channel appears only in the collapsed H_3 formalisms build_atom_nf and atom_gen_chains, as hm(nf, 1, -h, 1). Placing one sigma^-1 per proton on that proton's own 3k+1 generator is a faithful reading of that, but it is a reading. A different placement (a shared global EM generator, or extra electron strands) would change every EM number here, though the exact independence is unlikely to be an artefact of the placement since it survives the non-commuting all-pairs case.",
+    "THE WEAK CHANNEL IS NOT ADDRESSED because nothing in the corpus assigns it a generator or a crossing. The owner's note names three forces; only two are represented in pyhecke.atom. Whether the weak force is meant to occupy a slot in this scheme, or is deliberately absent, is not something this probe can settle.",
+    "The EM magnitude should not be read as an EM binding energy. L_EM = -0.5997 per electron is comparable in size to the strong bond constants, whereas physical atomic binding is ~13.6 eV against nuclear MeV. If the term is carrying electron REST MASS (0.511 MeV) rather than EM binding that is roughly the right scale, but nothing here establishes which, and the dimensionless traces carry no normalisation that would let one check."
+  ]
+}

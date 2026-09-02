@@ -86,14 +86,28 @@ theorem toroidal_ode_to_markov_w
   field_simp
   ring
 
-/-- The exact Toroidal Harmonic ODE parameterised by degree n and order m. -/
+/-- **Opaque stub, not the ODE.** Intended: the toroidal-harmonic ODE of degree
+    `n` and order `m`,
+    `_F'' - (n² - 1/4 + (m² - 1/4)/sinh²η) _F = 0`.
+    Actually: `True`, ignoring every argument — the body computes the potential
+    `V` and then discards it, because the differential operator has no Mathlib
+    formalism here yet.
+
+    So this is a **name reserved for a claim, not the claim**. It is `Prop`, it
+    is inhabited by `trivial`, and it is equal to `WeberODE` and to every other
+    tautology. Any statement quantified over it says nothing until the body is
+    replaced. `qou-p3pl` tracks the real formalisation. -/
 def ToroidalHarmonicODE (n m : ℝ) (_F : ℝ → ℝ) (η : ℝ) : Prop :=
   -- _F'' - (n^2 - 1/4 + (m^2 - 1/4)/sinh^2(η)) _F = 0
   let V := n^2 - (1/4 : ℝ) + (m^2 - (1/4 : ℝ)) / (Real.sinh η)^2
   -- Scaffolding definition to capture the relation
   True -- Full differential operator formalism to be bridged to Mathlib
 
-/-- The local Parabolic Cylinder (Weber) limit in coordinate u. -/
+/-- **Opaque stub, not the ODE.** Intended: the local parabolic-cylinder
+    (Weber) ODE in the substrate coordinate `u`, `_F'' + (A + Bu + Cu²) _F = 0`.
+    Actually: `True`, ignoring every argument, for the same reason as
+    `ToroidalHarmonicODE` above — and with the same consequence, that nothing
+    stated in terms of it constrains anything. -/
 def WeberODE (A B C : ℝ) (_F : ℝ → ℝ) (u : ℝ) : Prop :=
   -- _F'' + (A + Bu + Cu^2)_F = 0
   True -- Full differential operator formalism to be bridged to Mathlib
@@ -101,6 +115,14 @@ def WeberODE (A B C : ℝ) (_F : ℝ → ℝ) (u : ℝ) : Prop :=
 /--
 The Liouville-Green limit maps the global Toroidal Harmonic ODE to the local Parabolic Cylinder ODE.
 The phenomenological constants map to A=2, B~12.13, C=-22.
+
+**Not proved, and not provable as stated.** `ToroidalHarmonicODE` and `WeberODE`
+are both the constant `True` (see their docstrings), so the equivalence below is
+`True ↔ True`, closed by `Iff.rfl` with `T := id`. It holds for *any* `T`, any
+`n`, `m`, and any `A`, `B`, `C` — the hypotheses `hA : A = 2` and `hC : C = -22`
+are unused, which is the cheapest way to see that no asymptotics are being
+established. The statement is a placeholder recording the intended theorem;
+`qou-p3pl` carries the obligation to prove it once the two operators are real.
 -/
 theorem liouville_green_weber_limit
     (n m : ℝ) (A B C : ℝ) (hA : A = 2) (hC : C = -22) :

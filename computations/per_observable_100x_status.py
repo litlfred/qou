@@ -264,6 +264,78 @@ def _anchor_layer_check(cache: dict) -> dict:
     }
 
 
+CANONICAL_MARKOV_CONVENTION = "D"
+"""The canonical Markov parameter convention: ``z = q³/(q²+1)``.
+
+Fixed by the owner ruling of 2026-08-15, which excised convention C
+(``z = √q/(q+1)``).  See AGENTS.md §"q₀ anchor convention" R1.
+"""
+
+
+def _convention_frame_check(cache: dict) -> dict:
+    """Record the Markov convention a cached Q_β prediction was BUILT in.
+
+    The convention sibling of :func:`_anchor_layer_check`, and it exists for
+    the same reason: an inherited frame that is stamped one file upstream and
+    **silent** at the point of publication.
+
+    ``qbeta-ck-cache.witness.json`` carries ``data.markov_convention`` and a
+    note saying C "was excised by owner ruling".  This dashboard consumed
+    ``Q_pred_after_this_rung_MeV`` from it and published Q_β — and, through
+    ``Q_beta_best``, the derived m_n and Δ_pn rows — with **no record of the
+    frame at all**.  A reader of this witness could not tell, and AGENTS.md
+    directs agents to quote this artifact for L2 status.
+
+    Why this does NOT size the error, unlike the anchor check.  There, the
+    D-frame counterpart of the number exists and the induced error is a
+    derivative away.  Here it does not: ``qbeta_ck_cache.py`` **refuses to
+    run** under D —
+
+        if convention == "D":
+            print(" REFUSING TO RUN -- convention D has no derived c_k ladder")
+            raise SystemExit(2)
+
+    — so the published Q_β is not merely stale, it is currently
+    *unreproducible under the canonical convention*.  Any "induced convention
+    error" figure emitted here would be manufactured.  The honest field is
+    ``induced_error_ppb: None`` with the reason attached, and that is what
+    this returns.  Naming a number we cannot compute is the failure mode this
+    whole check exists to prevent.
+
+    This does NOT re-derive the ladder.  That is tracked work with its own
+    owner (bean ``qou-cds1``), and the 2026-08-30 bar-weight prune
+    (``add3a7304a``) showed the obstruction is the *offset* — ``α = (z−1)h/2``
+    mixes bar-weight −4 with weight 0 — so it is not a z-swap and must not be
+    attempted from here.  This makes the frame loud; it does not change it.
+    """
+    data = cache.get("data", {}) or {}
+    conv = data.get("markov_convention")
+    if conv is None:
+        return {
+            "status": "unknown",
+            "detail": ("cache carries no markov_convention stamp; the frame "
+                       "cannot be verified from the artifact alone"),
+            "canonical": CANONICAL_MARKOV_CONVENTION,
+        }
+    matched = str(conv).strip().upper() == CANONICAL_MARKOV_CONVENTION
+    return {
+        "status": "matched" if matched else "INHERITED_C",
+        "cache_convention": conv,
+        "canonical": CANONICAL_MARKOV_CONVENTION,
+        "cache_note": data.get("markov_convention_note"),
+        # Deliberately None, not 0 and not a guess -- see the docstring.
+        "induced_error_ppb": None,
+        "induced_error_unquantifiable_reason": (
+            None if matched else
+            "qbeta_ck_cache.py raises SystemExit(2) under convention D "
+            "('convention D has no derived c_k ladder'), so no D-frame "
+            "counterpart of this prediction exists to difference against."
+        ),
+        "reproducible_under_canonical_convention": bool(matched),
+        "tracked_by": None if matched else "qou-cds1",
+    }
+
+
 #: Observables whose "prediction" is a re-evaluation of the quantity that
 #: pinned q_0, so the framework content cancels and the residual is CODATA's
 #: own rounding. They are reported with their numbers but NOT scored — a
@@ -460,6 +532,7 @@ def main() -> dict:
     ck_cache = load_witness("qbeta-ck-cache.witness.json")
     ck_data = ck_cache.get("data", {})
     qbeta_anchor = _anchor_layer_check(ck_cache)
+    qbeta_convention = _convention_frame_check(ck_cache)
     if ck_data.get("rows"):
         # Find the deepest cumulative rung whose tier is "derived".
         # (Fallback to the legacy label for any cache lacking `tier`.)
@@ -477,6 +550,23 @@ def main() -> dict:
             Q_pred = mpf(Q_pred_str)
             Q_beta_best = Q_pred
             _anchor_note = ""
+            _conv_note = ""
+            if qbeta_convention.get("status") == "INHERITED_C":
+                _conv_note = (
+                    f" ⚠ CONVENTION FRAME: this prediction was built in Markov "
+                    f"convention {qbeta_convention['cache_convention']}, which "
+                    f"the owner ruling of 2026-08-15 EXCISED in favour of "
+                    f"{qbeta_convention['canonical']} "
+                    f"(z = q³/(q²+1)). The induced error is NOT quantified here "
+                    f"and that is deliberate: qbeta_ck_cache.py raises "
+                    f"SystemExit(2) under D, so no D-frame counterpart exists to "
+                    f"difference against — this figure is currently "
+                    f"UNREPRODUCIBLE under the canonical convention. Re-derivation "
+                    f"is tracked as bean qou-cds1 and is not a z-swap (the "
+                    f"2026-08-30 bar-weight prune showed the obstruction is the "
+                    f"offset, not z). Applies to the m_n and Δ_pn rows too, which "
+                    f"are derived from this value."
+                )
             if qbeta_anchor.get("status") == "STRADDLE":
                 _anchor_note = (
                     f" ⚠ ANCHOR STRADDLE: this prediction was built at the "
@@ -501,7 +591,7 @@ def main() -> dict:
                 f"for downstream reuse but NOT credited as a prediction. See "
                 f"deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md "
                 f"and qbeta-scaling-bridge-investigation.witness.json."
-                + _anchor_note,
+                + _anchor_note + _conv_note,
             ))
             # Guard with teeth: while the layers disagree by more than the
             # entire L2 target, a 100× PASS on this row would be an artefact of
@@ -672,6 +762,7 @@ def main() -> dict:
         ),
         "rows": rows,
         "anchor_layer_qbeta": qbeta_anchor,
+        "convention_frame_qbeta": qbeta_convention,
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -784,6 +875,24 @@ if __name__ == "__main__":
     w.add_data("rows", out["rows"])
     w.add_data("summary", out["summary"])
     w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
+    w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
+    if out["convention_frame_qbeta"].get("status") == "INHERITED_C":
+        w.add_caveat(
+            "Q_β / m_n / Δ_pn rows: these figures were built in Markov "
+            "convention C (z = √q/(q+1)), which the owner ruling of "
+            "2026-08-15 excised in favour of the canonical D (z = q³/(q²+1)). "
+            "The upstream qbeta-ck-cache.witness.json carries that stamp; "
+            "this dashboard published the numbers without it, which is the "
+            "defect being fixed here (bean qou-zzwm). NO induced-error figure "
+            "is given, deliberately: qbeta_ck_cache.py raises SystemExit(2) "
+            "under D, so no D-frame counterpart exists to difference against "
+            "and any number here would be manufactured. These figures are "
+            "therefore UNREPRODUCIBLE under the canonical convention. "
+            "Re-derivation is bean qou-cds1 and is NOT a z-swap — the "
+            "2026-08-30 bar-weight prune showed the obstruction is the "
+            "offset (α = (z−1)h/2 mixes bar-weight −4 with weight 0), not z. "
+            "This caveat makes the inherited frame visible; it does not "
+            "change any value.")
     if out["anchor_layer_qbeta"].get("status") == "STRADDLE":
         w.add_caveat(
             "Q_β row: the cached prediction is built at the muon q₀ while this "
@@ -797,10 +906,16 @@ if __name__ == "__main__":
             "them'.")
     w.add_assertion(
         "summary_total_observables",
-        computed=out["summary"]["total"],
+        # Read `computed=…["total"], expected=…["total"]` — the same expression,
+        # so it passed however the table was built (bean `qou-26f2`). There is
+        # no external expectation for a snapshot count, but there IS an internal
+        # one: the summary must agree with the rows actually serialised beside
+        # it. That can fail if rows are filtered after the summary is built,
+        # which is the realistic way this dashboard goes wrong.
+        computed=len(out["rows"]),
         expected=out["summary"]["total"],
         tolerance=0,
-        source="Snapshot count of observables in the table.",
+        source="row count in the emitted payload vs the summary's own total",
     )
     # Reference upstream witnesses for staleness tracking
     for upstream in [

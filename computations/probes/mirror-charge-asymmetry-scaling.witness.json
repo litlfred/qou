@@ -1,0 +1,311 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T12:37:31.572321+00:00",
+  "description": "Level-3 charge asymmetry does not inherit level-4 symmetry. Under the Sec.10a log form the binding is additive over bonds, so a mirror pair's difference is exactly (n_pp - n_nn)(B_pp - B_nn) -- ONE constant fixed by the skein relation, times a bond count fixed by the assembly. The chain assembly gives A^0, the complete graph A^1, and the observed Coulomb displacement energy grows as measured here. Magic-number pairs are not fitted better than the rest, so the level-4 self-duality does not propagate down to the level-3 observable.",
+  "q0_pin": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "convention": "D (z = q^3/(q^2+1)), canonical per owner ruling R1 2026-08-15",
+  "bond_constant": {
+    "f_pp": "0.6126880371464652516",
+    "f_nn": "0.40362773835082593616",
+    "f_pn": "0.50822978937673896258",
+    "alpha_MeV": "4.1859813632944759699",
+    "B_pp_minus_B_nn_MeV": "-1.747073242760919674"
+  },
+  "pairs": [
+    {
+      "A": 3,
+      "Z_rich": 2,
+      "N_rich": 1,
+      "magic_touched": [
+        2
+      ],
+      "observed_MeV": "-0.76375488",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-1.74707324276",
+      "chain_over_obs": "2.287479",
+      "complete_over_obs": "2.287479"
+    },
+    {
+      "A": 5,
+      "Z_rich": 3,
+      "N_rich": 2,
+      "magic_touched": [
+        2
+      ],
+      "observed_MeV": "-1.23",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-3.49414648552",
+      "chain_over_obs": "1.4203848",
+      "complete_over_obs": "2.8407695"
+    },
+    {
+      "A": 7,
+      "Z_rich": 4,
+      "N_rich": 3,
+      "magic_touched": [],
+      "observed_MeV": "-1.6442398",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-5.24121972828",
+      "chain_over_obs": "1.0625416",
+      "complete_over_obs": "3.1876249"
+    },
+    {
+      "A": 9,
+      "Z_rich": 5,
+      "N_rich": 4,
+      "magic_touched": [],
+      "observed_MeV": "-1.850382",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-6.98829297104",
+      "chain_over_obs": "0.94416896",
+      "complete_over_obs": "3.7766758"
+    },
+    {
+      "A": 11,
+      "Z_rich": 6,
+      "N_rich": 5,
+      "magic_touched": [],
+      "observed_MeV": "-2.764036",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-8.7353662138",
+      "chain_over_obs": "0.63207326",
+      "complete_over_obs": "3.1603663"
+    },
+    {
+      "A": 13,
+      "Z_rich": 7,
+      "N_rich": 6,
+      "magic_touched": [],
+      "observed_MeV": "-3.0028193",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-10.4824394566",
+      "chain_over_obs": "0.58181098",
+      "complete_over_obs": "3.4908659"
+    },
+    {
+      "A": 15,
+      "Z_rich": 8,
+      "N_rich": 7,
+      "magic_touched": [
+        8
+      ],
+      "observed_MeV": "-3.536532",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-12.2295126993",
+      "chain_over_obs": "0.49400747",
+      "complete_over_obs": "3.4580523"
+    },
+    {
+      "A": 17,
+      "Z_rich": 9,
+      "N_rich": 8,
+      "magic_touched": [
+        8
+      ],
+      "observed_MeV": "-3.5428119",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-13.9765859421",
+      "chain_over_obs": "0.49313181",
+      "complete_over_obs": "3.9450545"
+    },
+    {
+      "A": 19,
+      "Z_rich": 10,
+      "N_rich": 9,
+      "magic_touched": [],
+      "observed_MeV": "-4.0218459",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-15.7236591848",
+      "chain_over_obs": "0.43439587",
+      "complete_over_obs": "3.9095628"
+    },
+    {
+      "A": 21,
+      "Z_rich": 11,
+      "N_rich": 10,
+      "magic_touched": [],
+      "observed_MeV": "-4.3292655",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-17.4707324276",
+      "chain_over_obs": "0.40354957",
+      "complete_over_obs": "4.0354957"
+    },
+    {
+      "A": 23,
+      "Z_rich": 12,
+      "N_rich": 11,
+      "magic_touched": [],
+      "observed_MeV": "-4.8385261",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-19.2178056704",
+      "chain_over_obs": "0.3610755",
+      "complete_over_obs": "3.9718305"
+    },
+    {
+      "A": 25,
+      "Z_rich": 13,
+      "N_rich": 12,
+      "magic_touched": [],
+      "observed_MeV": "-5.059155",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-20.9648789131",
+      "chain_over_obs": "0.34532906",
+      "complete_over_obs": "4.1439487"
+    },
+    {
+      "A": 27,
+      "Z_rich": 14,
+      "N_rich": 13,
+      "magic_touched": [],
+      "observed_MeV": "-5.5947051",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-22.7119521559",
+      "chain_over_obs": "0.31227262",
+      "complete_over_obs": "4.0595441"
+    },
+    {
+      "A": 29,
+      "Z_rich": 15,
+      "N_rich": 14,
+      "magic_touched": [],
+      "observed_MeV": "-5.7245797",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-24.4590253987",
+      "chain_over_obs": "0.30518804",
+      "complete_over_obs": "4.2726325"
+    },
+    {
+      "A": 31,
+      "Z_rich": 16,
+      "N_rich": 15,
+      "magic_touched": [],
+      "observed_MeV": "-6.1803584",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-26.2060986414",
+      "chain_over_obs": "0.28268154",
+      "complete_over_obs": "4.2402231"
+    },
+    {
+      "A": 33,
+      "Z_rich": 17,
+      "N_rich": 16,
+      "magic_touched": [],
+      "observed_MeV": "-6.3648651",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-27.9531718842",
+      "chain_over_obs": "0.27448708",
+      "complete_over_obs": "4.3917933"
+    },
+    {
+      "A": 35,
+      "Z_rich": 18,
+      "N_rich": 17,
+      "magic_touched": [],
+      "observed_MeV": "-6.7485915",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-29.7002451269",
+      "chain_over_obs": "0.25887969",
+      "complete_over_obs": "4.4009546"
+    },
+    {
+      "A": 37,
+      "Z_rich": 19,
+      "N_rich": 18,
+      "magic_touched": [],
+      "observed_MeV": "-6.9298262",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-31.4473183697",
+      "chain_over_obs": "0.25210924",
+      "complete_over_obs": "4.5379664"
+    },
+    {
+      "A": 39,
+      "Z_rich": 20,
+      "N_rich": 19,
+      "magic_touched": [
+        20
+      ],
+      "observed_MeV": "-7.3068333",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-33.1943916125",
+      "chain_over_obs": "0.23910129",
+      "complete_over_obs": "4.5429244"
+    },
+    {
+      "A": 41,
+      "Z_rich": 21,
+      "N_rich": 20,
+      "magic_touched": [
+        20
+      ],
+      "observed_MeV": "-7.2778936",
+      "chain_MeV": "-1.74707324276",
+      "complete_MeV": "-34.9414648552",
+      "chain_over_obs": "0.24005205",
+      "complete_over_obs": "4.8010409"
+    }
+  ],
+  "exponents": {
+    "observed": "0.87383652",
+    "model_chain": "-3.2493829e-143",
+    "model_complete_graph": "1.1137411",
+    "pure_coulomb_reference_same_grid": "0.78040779",
+    "coulomb_asymptote": "2/3, reached only as A -> infinity",
+    "observed_minus_coulomb": "0.093428732",
+    "method": "least squares of ln|dB| on ln A"
+  },
+  "level4_test": {
+    "mean_abs_log_ratio_magic": "0.90805485",
+    "mean_abs_log_ratio_other": "0.89842358",
+    "magic_pairs_closer": false,
+    "n_magic": 6,
+    "n_other": 14
+  },
+  "assertions": [
+    {
+      "name": "the model's mirror asymmetry is ONE constant times a bond-count difference, so its A-dependence is fixed by the assembly alone",
+      "passed": true
+    },
+    {
+      "name": "observed mirror splitting GROWS with A (exponent > 0.4)",
+      "passed": true
+    },
+    {
+      "name": "the chain assembly is flat in A (exponent < 0.05), so it cannot track the observed growth",
+      "passed": true
+    },
+    {
+      "name": "the complete-graph assembly overshoots the observed exponent",
+      "passed": true
+    },
+    {
+      "name": "the observed exponent is bracketed by the two assemblies",
+      "passed": true
+    },
+    {
+      "name": "the observed exponent is near the pure-Coulomb reference on this grid (within 0.15) and NOT near its A->inf asymptote 2/3",
+      "passed": true
+    },
+    {
+      "name": "closed shells do NOT rescue the model \u2014 magic-touching pairs are not closer than the rest",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(a). A measurement of A-scaling against AME2020 plus the exact additive-mirror identity. Nothing refuted, nothing wired. The identity B(Z,N) - B(N,Z) = (n_pp - n_nn)(B_pp - B_nn) is exact for the Sec.10a log form and is what makes the scaling test possible.",
+  "beans": [
+    "qou-1pig",
+    "qou-9v7t",
+    "qou-rvse"
+  ],
+  "allPassed": true,
+  "scriptHash": "336d08518e62",
+  "scriptCommitSha": "ca7777d72380e5350ec8d777505d37cd63279a45",
+  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "mirror_charge_asymmetry_scaling_probe.py"
+}

@@ -60,6 +60,7 @@ Refs:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -115,8 +116,14 @@ def main() -> int:
         "q_0 / -q_0⁻¹ conventions; (2) |tr_M(β_p, q_0)| from "
         "markov_peel.tr_M_atomic (existing canonical infrastructure); "
         "(3) cross-check vs the canonical Layer-1 |tr_M| atlas "
-        "value 1.0653062286. Closes the S(p) ≈ 0 assumed-zero gap "
-        "in conj:borromean-baryon-mass-formula."
+        "value 1.1457596925 (convention D at the proton pin). "
+        "Closes the S(p) ≈ 0 assumed-zero gap "
+        "in conj:borromean-baryon-mass-formula. "
+        "CONVENTION FIX 2026-08-31 (bean qou-46ab): this string said "
+        "1.0653062286, the convention-C value, while calling it the "
+        "canonical atlas value — 7.55 % from the canonical D one. The "
+        "description is emitted into the witness, so the stale literal "
+        "was being published as canonical on every run."
     )
     w.add_parameter("compute_dps", "60")
 
@@ -181,7 +188,11 @@ def main() -> int:
     })
 
     # ── Cross-check against atlas value ───────────────────────
-    atlas_value = mp.mpf("1.0653062286131670")
+    # CONVENTION FIX (2026-08-30, bean qou-46ab). This "atlas_value" was the
+    # convention-C literal, 7.55% from the canonical D value — and it is a
+    # reference other results are checked against, so it could make a correct
+    # D-frame result look like a regression.
+    atlas_value = tr_m_nucleon("proton")
     diff = abs_tr - atlas_value
     rel_diff = mp.fabs(diff / atlas_value)
     w.add_data("atlas_cross_check", {

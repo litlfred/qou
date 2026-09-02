@@ -1,0 +1,225 @@
+{
+  "computation": "qbeta-level-k-operator-and-real-decays",
+  "engine": "mpmath",
+  "description": "qou-cds1 Step 25. (1) build_atom_nf returns a 6-vector in the H_3 normal-form basis for EVERY mass number, tritium included, so the corpus's atom model is H_3-valued throughout and the genuinely level-k operator Step 24 left as the only remaining avenue is NOT INSTANTIATED anywhere \u2014 building one is new construction, not a reading. (2) Real beta-minus decays are HYPERBOLIC: n->protium +6.52, tritium->He3 +4.46, C14->N14 +12.95, against the bare nucleon pair's -0.0358. Ellipticity is a property of the near-degenerate n/p pair, not of beta decay. (3) Exhaustive scan of all 105 species pairs: 21 are elliptic with eigenphases spanning 0.2495..2.9686, and the required 0.0565947 is BELOW ALL of them, the smallest by 4.4x. CORRECTS Step 23: its random control (8.9 %) was against random vectors; against the corpus's own species 20 % of pairs are elliptic, so 'structural' should not have been read as 'special'. The mechanism stands and is confirmed \u2014 n-p has the smallest |disc| of the 21, i.e. marginal ellipticity, exactly what a 0.43 % alignment excess predicts.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "corpus_atom_model_is_H3_valued_at_every_A",
+      "passed": true,
+      "detail": "every species NF vector has length [6] in the H_3 basis, tritium (A=3) included \u2014 so no genuinely level-k operator exists in the corpus and Step 24's remaining avenue is not instantiated"
+    },
+    {
+      "name": "real_nuclear_beta_decays_are_hyperbolic",
+      "passed": true,
+      "detail": "n->protium +6.52, tritium->He3 +4.46, C14->N14 +12.95 \u2014 all real. Only the bare nucleon difference is elliptic"
+    },
+    {
+      "name": "required_phase_is_below_every_available_eigenphase",
+      "passed": true,
+      "detail": "21 elliptic pairs span 0.24949514..2.968607; the required 0.056594738 is below all of them, the smallest by a factor 4.40845"
+    },
+    {
+      "name": "ellipticity_is_common_among_corpus_species",
+      "passed": true,
+      "detail": "21/105 pairs elliptic \u2014 Step 23's 'structural' was right about the mechanism but should not have been read as 'special'; corrected here"
+    },
+    {
+      "name": "nucleon_ellipticity_is_marginal_as_near_parallelism_implies",
+      "passed": true,
+      "detail": "n-p has the smallest |disc| of all elliptic pairs \u2014 marginal ellipticity is exactly what a 0.43 % alignment excess predicts, so the Step-23 mechanism is confirmed even as its significance is corrected"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 30,
+    "species": [
+      "b11",
+      "be9",
+      "c12",
+      "c14",
+      "deuterium",
+      "he3",
+      "he4",
+      "li6",
+      "li7",
+      "n14",
+      "neutron",
+      "o16",
+      "protium",
+      "proton",
+      "tritium"
+    ],
+    "nf_basis": [
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
+    ]
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "theta_required": "0.056594737543307",
+    "nf_vector_lengths": [
+      6
+    ],
+    "decays": {
+      "free n -> p        (Q=782 keV)": {
+        "disc": "-0.03583657371",
+        "det_A0": "-1.056560371",
+        "det_B0": "-1.041655651",
+        "pairing": "2.107175165"
+      },
+      "n -> protium       (atomic)": {
+        "disc": "6.522435143",
+        "det_A0": "-1.056560371",
+        "det_B0": "-0.07003896243",
+        "pairing": "-0.5040094526"
+      },
+      "tritium -> He3     (Q=18.6keV)": {
+        "disc": "4.461430672",
+        "det_A0": "-1.161193239",
+        "det_B0": "0.722610019",
+        "pairing": "-0.6767744476"
+      },
+      "C14 -> N14         (Q=156 keV)": {
+        "disc": "12.94888732",
+        "det_A0": "-12.20773253",
+        "det_B0": "2.307911568",
+        "pairing": "6.662599136"
+      }
+    },
+    "pairs_examined": 105,
+    "elliptic_pairs": 21,
+    "elliptic_fraction_pct": "20.0",
+    "eigenphase_min": "0.24949514021",
+    "eigenphase_max": "2.968606957",
+    "smallest_over_required": "4.408451228",
+    "elliptic_list": [
+      {
+        "a": "b11",
+        "b": "n14",
+        "phase": "1.637408292"
+      },
+      {
+        "a": "be9",
+        "b": "neutron",
+        "phase": "1.936592062"
+      },
+      {
+        "a": "be9",
+        "b": "proton",
+        "phase": "2.465443873"
+      },
+      {
+        "a": "c12",
+        "b": "n14",
+        "phase": "0.4258731204"
+      },
+      {
+        "a": "deuterium",
+        "b": "he4",
+        "phase": "2.858555094"
+      },
+      {
+        "a": "deuterium",
+        "b": "neutron",
+        "phase": "2.064346847"
+      },
+      {
+        "a": "deuterium",
+        "b": "protium",
+        "phase": "2.833918567"
+      },
+      {
+        "a": "deuterium",
+        "b": "proton",
+        "phase": "2.178145632"
+      },
+      {
+        "a": "he3",
+        "b": "he4",
+        "phase": "2.968606957"
+      },
+      {
+        "a": "he3",
+        "b": "neutron",
+        "phase": "2.064498784"
+      },
+      {
+        "a": "he3",
+        "b": "protium",
+        "phase": "2.766919773"
+      },
+      {
+        "a": "he3",
+        "b": "proton",
+        "phase": "2.185288652"
+      },
+      {
+        "a": "he4",
+        "b": "li6",
+        "phase": "0.2494951402"
+      },
+      {
+        "a": "he4",
+        "b": "n14",
+        "phase": "1.000393152"
+      },
+      {
+        "a": "li6",
+        "b": "neutron",
+        "phase": "2.043814143"
+      },
+      {
+        "a": "li6",
+        "b": "protium",
+        "phase": "2.82349781"
+      },
+      {
+        "a": "li6",
+        "b": "proton",
+        "phase": "2.126369643"
+      },
+      {
+        "a": "li7",
+        "b": "n14",
+        "phase": "1.21777814"
+      },
+      {
+        "a": "n14",
+        "b": "protium",
+        "phase": "2.04619422"
+      },
+      {
+        "a": "n14",
+        "b": "tritium",
+        "phase": "1.746045351"
+      },
+      {
+        "a": "neutron",
+        "b": "proton",
+        "phase": "2.02044502"
+      }
+    ]
+  },
+  "context": {
+    "axis": "qou-cds1: is there a level-k operator, and do real decays help?",
+    "answer": "No and no. The corpus is H_3-valued at every A, so the level-k avenue is uninstantiated; real nuclear beta decays are all hyperbolic; and across every species pair the required phase is smaller than any available eigenphase.",
+    "corrects": "Step 23's significance claim. Its mechanism stands and is confirmed by n-p having the smallest |disc| of the 21 elliptic pairs, but ellipticity is common (20 % of corpus pairs), so 'structural' must not be read as 'special'.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
+  },
+  "gitCommit": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
+  "durationMs": 0,
+  "scriptFile": "qbeta_level_k_operator_and_real_decays_probe.py",
+  "scriptHash": "e7853ed47670",
+  "scriptCommitSha": "unknown",
+  "commitSha": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
+  "computedAt": "2026-08-31T21:07:55.992305+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

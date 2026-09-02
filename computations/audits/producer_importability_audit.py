@@ -60,6 +60,26 @@ everything except this audit's own witness:
 The `heavy-at-import` class this reports IS that population, so a nonzero
 count there is advance warning that the run dirtied the tree.
 
+🛑 DO NOT DATE ANYTHING IN THIS REPO WITH `git log` (added 2026-08-30).
+
+Agent clones here are SHALLOW. `git rev-parse --is-shallow-repository` returns
+true, and every change predating the graft is attributed by `git log -- <file>`
+and `git log -L` to the boundary commit `cdb64587b8`, which has NO PARENTS
+(`git rev-list --count cdb64587b8` -> 1) and reports "41473 files changed,
+14448426 insertions" — the graft, not a diff.
+
+Cost of not knowing that, on this very audit: the 2026-08-30 re-run found this
+witness's largest class (`pyhecke`, 35) drained, asked git when, was told
+2026-08-24 by `git log -L` on `computations/_path_bridge.py`, and published
+"drained five days after this audit as a side effect of a float64 commit" in a
+commit message and a PR comment. All of that was the graft answering. The DRAIN
+is real and measured by execution; the DATE and the CAUSAL STORY were not
+measured at all and are withdrawn.
+
+The general rule: in this clone, `git log` can tell you a file changed within
+the fetched window, and nothing whatever about anything older. Measure by
+running; attribute only what you ran.
+
 SCOPE. This is a DETECTOR. It fixes nothing and does not claim the 90 are all
 defects — the optional-dep class in particular is a fact about the environment.
 Draining the in-repo-wiring class is separate work.
@@ -67,11 +87,9 @@ Draining the in-repo-wiring class is separate work.
 from __future__ import annotations
 
 import argparse
-import ast
 import collections
 import json
 import os
-import re
 import subprocess
 import sys
 import time
@@ -92,345 +110,70 @@ IN_REPO = {"pyhecke", "qou_substrate", "_precision", "witness_base",
 
 # `sys.argv[0]` is REWRITTEN to the producer's own filename before the module
 # body runs, and that is load-bearing rather than cosmetic. `q_parameter`
-# resolves the q0 anchor from the running producer's argv stem against the
-# `ideal_muon` list in `q0_anchor_manifest.json`, so a loader that leaves
-# argv[0] as `-c` silently pins every producer to proton and never executes the
-# muon branch at all.
+# resolves the q0 anchor from the running producer's argv stem against
+# `q0_anchor_manifest.json` (257 stems select the muon pin), so a loader that
+# leaves argv[0] as `-c` silently pins every producer to proton and never
+# executes the muon branch at all.
 #
-# Measured 2026-08-19: under the old `-c` argv this audit reported every
-# `ideal_muon` producer importable — it was answering a question no real
-# invocation asks.
-#
-# ⚠ CORRECTED 2026-08-24. This note used to end: "Under a faithful argv they
-# raise `RuntimeError: ideal/muon anchor requested ... refusing to fall back to
+# Measured 2026-08-19: under the old `-c` argv this audit reported all 257
+# `ideal_muon` producers importable. Under a faithful argv they raise
+# `RuntimeError: ideal/muon anchor requested ... refusing to fall back to
 # proton silently`, because the committed `q-pinning-50-digit.witness.json`
-# holds the PROTON value (bean qou-m9xp)." **That is no longer true.** Measured
-# at mp.dps=60, the committed pinning witness holds
-# `1.10997859555733471989976322048322` — 4.5e-24 ppb from the canonical MUON
-# pin A and 11.54 ppb from the proton pin. So the rebind path SUCCEEDS today and
-# `ideal_muon` producers do not hard-fail on it. The argv rewrite is still
-# load-bearing for the same reason; only the failure mode described here has
-# gone. A deliberate stem count is also omitted now: it was 257 when written,
-# 120 on main and 152 here today, and a number that rots inside a comment is how
-# the rest of this note went stale.
+# holds the PROTON value (bean qou-m9xp). The detector was answering a
+# question no real invocation asks.
+# `sys.modules[name] = m` BEFORE exec_module is not optional — it is the
+# documented sequence (CPython docs, "Importing a source file directly"), and
+# omitting it made this audit report NINE producers broken that run fine.
+#
+# Measured 2026-08-30. All nine failed with the same error:
+#
+#   AttributeError: 'NoneType' object has no attribute '__dict__'
+#     File "dataclasses.py", line 712, in _is_type
+#       ns = sys.modules.get(cls.__module__).__dict__
+#
+# `@dataclass` resolves its annotations through `sys.modules.get(module)`, so
+# a module executed but never registered gets `None.__dict__`. Any producer
+# defining a dataclass therefore failed the check by construction, and the
+# error names `dataclasses.py` rather than anything in the producer — so it
+# reads like a corpus defect. All nine exit 0 when run as ordinary scripts:
+# binding_alpha_shift_witness, compound_shift_nf, crystal_basis,
+# derivation_chain_validator, embeddable_knot_operator,
+# gb_filtration_jet_order_reader, gb_filtration_jet_tracker,
+# kashaev_link_statesum, qbeta_c_k_recursion_scaffold.
+#
+# Same lesson as the `-c` argv note above and the hyphenated-filename note in
+# the docstring: this detector's failures have twice been its own harness. When
+# a whole class shares one identical error, suspect the loader first.
 _LOADER = (
     "import importlib.util,sys;"
     "sys.argv=[sys.argv[1]];"
     "spec=importlib.util.spec_from_file_location('_m',sys.argv[0]);"
-    "m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)"
+    "m=importlib.util.module_from_spec(spec);"
+    "sys.modules['_m']=m;"
+    "spec.loader.exec_module(m)"
 )
 
 
-_PRODUCER_SUFFIXES = (".py", ".rs", ".lean", ".sage")
-_basename_index: "dict[str, list[Path]] | None" = None
-
-
-def _repo_basename_index(root: Path) -> "dict[str, list[Path]]":
-    """Every producer-shaped file in the repo, keyed by basename.
-
-    Built once. `_deprecated`, `.git`, `__pycache__` and `node_modules` are
-    excluded so a resolution never lands on a retired copy.
-    """
-    global _basename_index
-    if _basename_index is None:
-        idx: "dict[str, list[Path]]" = {}
-        repo = root.parent
-        skip = {"_deprecated", ".git", "__pycache__", "node_modules"}
-        for f in repo.rglob("*"):
-            if not f.is_file() or f.suffix not in _PRODUCER_SUFFIXES:
-                continue
-            if skip & set(f.parts):
-                continue
-            idx.setdefault(f.name, []).append(f)
-        _basename_index = idx
-    return _basename_index
-
-
-_reverse_index: "dict[str, list[Path]] | None" = None
-_py_src: "dict[Path, str]" = {}
-
-
-def _writes(src: str, name: str) -> bool:
-    """Does this producer WRITE `name`, or merely READ it?
-
-    The distinction is the whole point. A witness name appearing as a string
-    literal proves a RELATIONSHIP, not a direction: `option_e_a4_full_
-    reconciliation.py` names `chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json`
-    because it LOADS it, and writes something else entirely. Resolving a witness
-    to a reader would make this audit import the wrong file and then report the
-    witness refreshable on the strength of it — a false clean, which is the exact
-    defect class this audit exists to detect.
-
-    So: AST taint from the literal to a write sink. Three propagation rules,
-    each one observed in the corpus rather than guessed at:
-      assignment      OUT = HERE / "x.witness.json";  OUT.write_text(...)
-      for-target      for path in TARGETS: ...        (TARGETS holds the names)
-      one call level  process(path)  ->  def process(path): path.write_text(...)
-    Sinks: open(p, 'w'|'a'), p.open('w'|'a'), p.write_text/​write_bytes.
-
-    Under-claiming is deliberate. A producer whose write we cannot see is
-    reported as unresolved with the candidate named, not silently attached.
-    """
-    try:
-        tree = ast.parse(src)
-    except Exception:  # noqa: BLE001 — a producer that will not parse is a
-        return False   # separate defect; do not guess at its outputs
-    def has_lit(node) -> bool:
-        for n in ast.walk(node):
-            if isinstance(n, ast.Constant) and isinstance(n.value, str) \
-                    and name in n.value:
-                return True
-        return False
-    funcs = {n.name: n for n in ast.walk(tree)
-             if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}
-    tainted: "set[str]" = set()
-
-    def expr_tainted(val) -> bool:
-        return val is not None and (has_lit(val) or any(
-            isinstance(x, ast.Name) and x.id in tainted for x in ast.walk(val)))
-
-    def add_targets(t) -> bool:
-        grew = False
-        for x in ast.walk(t):
-            if isinstance(x, ast.Name) and x.id not in tainted:
-                tainted.add(x.id)
-                grew = True
-        return grew
-
-    for _ in range(6):  # shallow fixpoint; the shapes here are not deep
-        grew = False
-        for n in ast.walk(tree):
-            if isinstance(n, (ast.Assign, ast.AnnAssign)):
-                if not expr_tainted(n.value):
-                    continue
-                for t in (n.targets if isinstance(n, ast.Assign) else [n.target]):
-                    grew |= add_targets(t)
-            elif isinstance(n, (ast.For, ast.AsyncFor)):
-                if expr_tainted(n.iter):
-                    grew |= add_targets(n.target)
-            elif isinstance(n, ast.Call) and isinstance(n.func, ast.Name):
-                fn = funcs.get(n.func.id)
-                if fn is None:
-                    continue
-                params = [a.arg for a in fn.args.args]
-                for i, a in enumerate(n.args):
-                    if i < len(params) and expr_tainted(a) \
-                            and params[i] not in tainted:
-                        tainted.add(params[i])
-                        grew = True
-                for kw in n.keywords:
-                    if kw.arg in params and expr_tainted(kw.value) \
-                            and kw.arg not in tainted:
-                        tainted.add(kw.arg)
-                        grew = True
-        if not grew:
-            break
-
-    for n in ast.walk(tree):
-        if not isinstance(n, ast.Call):
-            continue
-        f = n.func
-        if isinstance(f, ast.Name) and f.id == "open" and n.args:
-            mode = n.args[1] if len(n.args) > 1 else None
-            kw = {k.arg: k.value for k in n.keywords}
-            mode = kw.get("mode", mode)
-            mv = mode.value if isinstance(mode, ast.Constant) else ""
-            if isinstance(mv, str) and ("w" in mv or "a" in mv) \
-                    and expr_tainted(n.args[0]):
-                return True
-        elif isinstance(f, ast.Attribute):
-            if f.attr in ("write_text", "write_bytes") and expr_tainted(f.value):
-                return True
-            if f.attr == "open" and expr_tainted(f.value):
-                mv = n.args[0].value if n.args and isinstance(
-                    n.args[0], ast.Constant) else ""
-                if isinstance(mv, str) and ("w" in mv or "a" in mv):
-                    return True
-    return False
-
-
-def _reverse_reference_index(root: Path) -> "dict[str, list[Path]]":
-    """Producers keyed by the witness filename they NAME IN THEIR OWN SOURCE.
-
-    Most witnesses with no `scriptFile` are written by hand — the producer does
-    `json.dump({...})` to a path it spells out literally, instead of routing
-    through `WitnessBuilder`, which is what would have stamped `scriptFile`,
-    `engine` and `commitSha`. Those producers are not guessable from the witness
-    name, but they are not lost either: the source says which file it writes.
-
-    This index records every producer that MENTIONS a witness. Direction is
-    decided separately by `_writes` — see the docstring there for why naming is
-    not enough.
-    """
-    global _reverse_index
-    if _reverse_index is None:
-        idx: "dict[str, list[Path]]" = {}
-        skip = {"_deprecated", ".git", "__pycache__", "node_modules"}
-        for f in root.parent.rglob("*.py"):
-            if skip & set(f.parts):
-                continue
-            try:
-                src = f.read_text(encoding="utf-8", errors="ignore")
-            except Exception:  # noqa: BLE001
-                continue
-            _py_src[f] = src
-            for m in re.finditer(r'["\']([A-Za-z0-9_.\-]+\.witness\.json)["\']',
-                                 src):
-                idx.setdefault(m.group(1), []).append(f)
-        _reverse_index = idx
-    return _reverse_index
-
-
-def _resolve_by_reverse_reference(root: Path, wf: Path):
-    """(producer | None, reason). Only a UNIQUE confirmed writer resolves."""
-    named = _reverse_reference_index(root).get(wf.name, [])
-    if not named:
-        return None, "unnamed"
-    writers = [f for f in named if _writes(_py_src.get(f, ""), wf.name)]
-    if len(writers) == 1:
-        return writers[0], "reverse_reference"
-    if len(writers) > 1:
-        return None, f"written by {len(writers)} producers"
-    return None, ("named by " + ", ".join(
-        f.name for f in named[:3]) + " — none of which visibly writes it")
-
-
-def _resolve_producer(root: Path, sf: str, wf: Path) -> "tuple[Path | None, str]":
-    """Locate the producer a witness names. Returns (path, how).
-
-    The original rule was `wf.parent / basename(scriptFile)` — beside the witness
-    and nowhere else. `computations/` has had subdirectories for a long time, and
-    the rule discards the directory component outright, so it dropped even the
-    witnesses whose `scriptFile` is a CORRECT repo-root path. Measured before this
-    change: 2371 resolved beside, **4** naming a correct path that was thrown away,
-    and **62** whose producer sits one directory over (mostly
-    `computations/probes/`). Those 66 were reported as "producer not beside
-    witness" and silently excluded from an audit whose whole thesis is that a
-    witness with no runnable producer is the maximal case of unrefreshability.
-
-    Resolution order, most to least certain. A basename that matches more than one
-    file is NOT resolved — reported as ambiguous rather than guessed.
-    """
-    base = os.path.basename(sf)
-    beside = wf.parent / base
-    if beside.exists():
-        return beside, "beside_witness"
-    named = root.parent / sf
-    if named.exists() and named.is_file():
-        return named, "declared_path"
-    hits = _repo_basename_index(root).get(base, [])
-    if len(hits) == 1:
-        return hits[0], "basename_search"
-    if len(hits) > 1:
-        return None, "ambiguous"
-    return None, "unresolved"
-
-
 def _producers(root: Path):
-    """witness -> producer path, plus an accounting of what could NOT be resolved.
-
-    Returns `(out, scope)`. Every witness this function declines to map is
-    counted in `scope` rather than merely skipped: the audit's thesis is that a
-    witness whose producer cannot run is unrefreshable and invisible to every
-    staleness check, and *a producer that does not exist at all* is the maximal
-    case of that thesis. The header discloses the `scriptFile` precondition, but
-    the printed report used to show only `producers checked N` with no
-    denominator, so a reader could not tell what fraction of the corpus that N
-    covered. `scope` supplies the denominator.
-    """
+    """witness -> producer path, for producers that exist beside their witness."""
     out = {}
-    scope = {
-        "witnesses_scanned": 0,
-        "unparseable": [],
-        "no_script_file": [],
-        "producer_not_beside_witness": [],
-        "ambiguous_basename": [],
-        "reverse_reference_unresolved": [],
-        "resolved_by": {},
-    }
     for wf in root.rglob("*.witness.json"):
         s = str(wf)
         if "_deprecated" in s or "/data/" in s:
             continue
-        scope["witnesses_scanned"] += 1
-        rel = str(wf.relative_to(root.parent))
         try:
             d = json.loads(wf.read_text())
         except Exception:
-            scope["unparseable"].append(rel)
             continue
         if not isinstance(d, dict):
-            scope["unparseable"].append(rel)
             continue
         sf = d.get("scriptFile")
         if not sf:
-            # No declared producer — but a hand-written witness is usually named
-            # verbatim in the producer that writes it. Try that before giving up.
-            cand, why = _resolve_by_reverse_reference(root, wf)
-            if cand is not None:
-                scope["resolved_by"]["reverse_reference"] = (
-                    scope["resolved_by"].get("reverse_reference", 0) + 1)
-                out.setdefault(cand, []).append(wf)
-                continue
-            if why == "unnamed":
-                scope["no_script_file"].append(rel)
-            else:
-                scope["reverse_reference_unresolved"].append(f"{rel}  ->  {why}")
             continue
-        cand, how = _resolve_producer(root, str(sf), wf)
-        if cand is not None:
-            scope["resolved_by"][how] = scope["resolved_by"].get(how, 0) + 1
+        cand = wf.parent / os.path.basename(str(sf))
+        if cand.exists():
             out.setdefault(cand, []).append(wf)
-        elif how == "ambiguous":
-            scope["ambiguous_basename"].append(f"{rel}  ->  {sf}")
-        else:
-            scope["producer_not_beside_witness"].append(f"{rel}  ->  {sf}")
-    scope["witnesses_resolved"] = sum(len(v) for v in out.values())
-    scope["witnesses_unresolved"] = (len(scope["unparseable"])
-                                     + len(scope["no_script_file"])
-                                     + len(scope["producer_not_beside_witness"])
-                                     + len(scope["ambiguous_basename"])
-                                     + len(scope["reverse_reference_unresolved"]))
-    # Deliberately NO ratio stored: a float64 in a witness violates the corpus's
-    # no-float64 rule (the repo's own raw-float64 guard fires on it), and a
-    # coverage ratio needs no precision policy anyway — the two integers above
-    # are exact and the fraction is derivable from them. _print_scope computes
-    # the percentage for display only.
-    return out, scope
-
-
-def _print_scope(scope: dict) -> None:
-    """The denominator, printed whether or not it is flattering."""
-    print("\n  SCOPE — which witnesses this audit could even look at")
-    print("  (counts here are WITNESSES; 'producers checked' below counts distinct")
-    print("   producer files, which is smaller — one producer can emit several.)")
-    print(f"    witnesses scanned                {scope['witnesses_scanned']}")
-    pct = (100.0 * scope["witnesses_resolved"] / scope["witnesses_scanned"]
-           if scope["witnesses_scanned"] else 0.0)
-    print(f"    witnesses w/ producer resolved   {scope['witnesses_resolved']}"
-          f"   [{pct:.1f}% EVALUATED]")
-    print(f"    witnesses NOT evaluated          {scope['witnesses_unresolved']}")
-    print(f"      no scriptFile field            {len(scope['no_script_file'])}")
-    print(f"      producer not locatable         "
-          f"{len(scope['producer_not_beside_witness'])}")
-    print(f"      ambiguous basename (>1 match)  "
-          f"{len(scope['ambiguous_basename'])}")
-    print(f"      named, writer unconfirmed      "
-          f"{len(scope['reverse_reference_unresolved'])}")
-    print(f"      unparseable                    {len(scope['unparseable'])}")
-    if scope.get("resolved_by"):
-        print("    resolved by: " + ", ".join(
-            f"{k}={v}" for k, v in sorted(scope["resolved_by"].items())))
-    if scope["witnesses_unresolved"]:
-        print("    NOTE: a witness whose producer cannot be located is the MAXIMAL"
-              "\n          case of this audit's thesis, not an exemption from it."
-              "\n          It is excluded from the counts below, not cleared by them.")
-        for label, key in (("no scriptFile", "no_script_file"),
-                           ("producer missing", "producer_not_beside_witness"),
-                           ("writer unconfirmed",
-                            "reverse_reference_unresolved")):
-            for ex in scope[key][:3]:
-                print(f"      e.g. [{label}] {ex}")
+    return out
 
 
 def _classify(err: str) -> tuple[str, str]:
@@ -444,19 +187,23 @@ def _classify(err: str) -> tuple[str, str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--timeout", type=int, default=45)
+    # 45 -> 20 (2026-08-30). The sys.modules fix above makes far more producers
+    # ACTUALLY IMPORT, so the ones that used to fail in milliseconds now run
+    # their module body and sit out the full timeout. Measured: the 45 s
+    # default stalled a full sweep past 800/2378 in ~25 min, where the
+    # pre-fix run finished 2378 in ~17. An import that is going to resolve
+    # resolves well inside 20 s, and a timeout is already read as "not
+    # broken" -- the safe direction -- so the shorter budget costs
+    # classification detail (more land in `heavy-at-import`), never a missed
+    # defect.
+    ap.add_argument("--timeout", type=int, default=20)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any in-repo-wiring failure is found")
-    ap.add_argument("--scope-only", action="store_true",
-                    help="print the coverage accounting and exit; imports nothing")
     args = ap.parse_args()
 
     root = HERE.parent
-    prod, scope = _producers(root)
-    if args.scope_only:
-        _print_scope(scope)
-        return 0
+    prod = _producers(root)
     items = sorted(prod)
     if args.limit:
         items = items[: args.limit]
@@ -489,7 +236,6 @@ def main() -> int:
     print("\n" + "=" * 74)
     print(" producers that cannot be imported — their witnesses are unrefreshable")
     print("=" * 74)
-    _print_scope(scope)
     print(f"\n  producers checked        {len(items)}")
     print(f"  UNIMPORTABLE             {len(bad)}")
     print(f"    in-repo-wiring         {n_wiring}   <- real, fixable defects")
@@ -526,7 +272,6 @@ def main() -> int:
         "cleanly under ast.parse, inflating 90 real findings to 109. This is a "
         "DETECTOR: it fixes nothing and does not claim every hit is a defect."
     )
-    wb.add_data("scope", scope)
     wb.add_data("producers_checked", len(items))
     wb.add_data("unimportable_total", len(bad))
     wb.add_data("counts", {k: len(v) for k, v in buckets.items()})

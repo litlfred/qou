@@ -43,11 +43,20 @@ FINDING (honest negative, scope-(a) with a scope-(b) sub-result):
      - A=4 WRITHE det (1-5m^2)(1-m^2) is a function of m^2 (symmetric spectrum) => b_4
        is bar-even ANYWAY => symmetrization is STILL a no-op at the DOMINANT A=4 wall
        (Lean scope-(b): B4CumulantBarEven.lean, det(I+mS)=det(I-mS)).
-     - No single m in the physical window lands BOTH strong targets: WRITHE rho4=13.03
-       forces rho3=6.02 (+58%); WRITHE rho3=3.81 forces rho4=6.79 (-48%).  ISO raw
-       rho4 is range-capped in (~3,~6) and cannot reach 13 at all; ISO bar-even can
-       lift rho4 (~10.3) but only by driving det(I-mS)<0 (unphysical/complex) before
-       13.03, while rho3_even stalls near 3.4.
+     - No single m in the physical window lands BOTH strong targets:
+         * WRITHE rho4=13.03 forces m=0.42687, where rho3=2.4661 (-35.3%).
+         * WRITHE rho3=3.81 has NO root: rho3_writhe decreases monotonically from
+           2.907 (m=0.05) to 2.450 (at the m<1/sqrt5 ceiling) and never reaches
+           3.813, so there is no m to force rho4 from.
+         * ISO raw rho4 is range-capped in (~3.05, ~6.03) and cannot reach 13 at all.
+         * ISO bar-even rho4 DOES reach 13.03, at m=0.31900, with det_iso(A,-m) > 0
+           for A=2,3,4 -- i.e. still physical.  It is excluded not on physicality
+           but because rho3_even there is 3.4350 vs the 3.8128 target (-9.9%).
+       (Numbers corrected 2026-08-30 while draining the tautological
+        `single_m_lands_both_targets` assertion, bean qou-26f2: the previous
+        text's 6.02/+58%, 6.79/-48% and "det<0 before 13.03" did not match this
+        script's own output, and the branch that was supposed to produce 6.79
+        never executed.  The scope-(a) negative itself is unchanged.)
   => BAR-EVEN SYMMETRIZATION DOES NOT CRACK THE STRONG MAGNITUDE.  Nothing wired, no fit.
 
 EXPLORATORY -- audit + witness only; no production wiring, no fit, no AME inversion.
@@ -128,12 +137,30 @@ def bar_even(bfun, A, m):
 def main() -> int:
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
+    # CONVENTION C, DELIBERATE AND BLOCKED -- do not substitute z_D here.
+    # z_naive (below) and its bar image z_bar are convention C, z = sqrt(q)/(q+1).
+    # This probe's SUBJECT is bar-evenness, and only z_C has it: measured
+    # symbolically, bar(z_C) - z_C = 0, while bar(z_D) = 1/(q^3+q) and
+    # bar(z_D) - z_D = 1/q - q = -h, so z_D is bar-NEITHER. Swapping in z_D
+    # therefore flips this file's own assertion rather than re-coordinatising
+    # it. Registered in docs/coordination/trace-convention-registry.json under
+    # blocked_on_rederivation (both z_naive and z_bar), blocked on bean
+    # qou-pmkh: what replaces this under D is a D-frame bar decomposition
+    # built on bar(z_D) = z_D - h, which is real work, not a swap.
     z_naive = 1 / (v + 1 / v)                       # 1/[2]_v
     g_reeb = 1 / mp.sqrt(5 + (q0 - 1) ** 2 / q0)    # derived reeb magnitude
     ceiling = 1 / mp.sqrt(mp.mpf(5))
 
     # ---- 0. bar-parity of the parameter-free magnitudes ----------------------
     g_bar = 1 / mp.sqrt(5 + (1 / q0 - 1) ** 2 * q0)
+    # MANIFEST, not measured (labelled 2026-08-30, qou-t9r1). z(v) = 1/(v + 1/v)
+    # is symmetric under the bar v -> 1/v BY INSPECTION -- this line differs from
+    # z_naive only by commuting the addition, so `z_bar_even` below is exactly 0
+    # and CANNOT FAIL. No formulation of it can: the symmetry is syntactic.
+    # Kept because the claim is TRUE and worth recording, but it is not evidence
+    # in the way `g_bar_even` is -- that one compares (q-1)**2/q against
+    # (1/q-1)**2*q, a genuine algebraic identity that a sign slip would break.
+    # Read the two assertions differently when citing this witness.
     z_bar = 1 / (1 / v + v)
     g_bar_even = abs(g_reeb - g_bar) < mp.mpf(10) ** -40
     z_bar_even = abs(z_naive - z_bar) < mp.mpf(10) ** -40
@@ -217,12 +244,33 @@ def main() -> int:
         steelman["writhe_fix_rho3"] = {
             "m": mp.nstr(mw3, 8), "rho4_forced": mp.nstr(r4, 6),
             "rho4_target": mp.nstr(T4, 6), "rho4_err_pct": mp.nstr((r4 / T4 - 1) * 100, 4)}
+    else:
+        # NO ROOT — and this branch has always been the one taken.  It used to
+        # leave nothing at all in the witness, so the docstring's "WRITHE
+        # rho3=3.81 forces rho4=6.79 (-48%)" read as a measured result when in
+        # fact the bisection never bracketed a sign change.  rho3_writhe is
+        # DECREASING in m (2.907 at m=0.05 down to 2.450 at the ceiling), so it
+        # never reaches 3.813 anywhere in the physical window.  That is a
+        # STRONGER negative than the docstring claimed, so it is recorded, not
+        # dropped.
+        steelman["writhe_fix_rho3"] = {
+            "root_exists": False,
+            "rho3_at_bracket_lo": mp.nstr(b_writhe(3, mp.mpf("0.05")) / b_writhe(2, mp.mpf("0.05")), 6),
+            "rho3_at_bracket_hi": mp.nstr(b_writhe(3, mp.mpf("0.4472")) / b_writhe(2, mp.mpf("0.4472")), 6),
+            "rho3_target": mp.nstr(T3, 6),
+            "note": "rho3_writhe is monotone DECREASING in m and capped below the "
+                    "target over the whole physical window m < 1/sqrt5 -- no m "
+                    "lands rho3=T3 at all, so there is nothing to force rho4 to."}
     # ISO raw: rho4 range (asymptotic limits m->0 and m->1).
     iso_rho4_at_0 = b_iso(4, mp.mpf("1e-6")) / b_iso(2, mp.mpf("1e-6"))
     iso_rho4_at_1 = b_iso(4, mp.mpf("0.999999")) / b_iso(2, mp.mpf("0.999999"))
     steelman["iso_raw_rho4_range"] = {
         "m->0": mp.nstr(iso_rho4_at_0, 5), "m->1": mp.nstr(iso_rho4_at_1, 5),
-        "reaches_target_13": False,
+        # COMPUTED, not the literal False it used to be: rho4_iso is monotone
+        # between the two endpoints, so the target is reachable iff it lies
+        # between them.
+        "reaches_target_13": bool(min(iso_rho4_at_0, iso_rho4_at_1) <= T4
+                                  <= max(iso_rho4_at_0, iso_rho4_at_1)),
         "note": "rho4 monotone in (~3,~6); cannot reach strong target 13.03"}
     # ISO bar-even: where det(I-mS) first turns negative (unphysical) and rho4 there.
     m_neg = bisect(lambda m: det_iso(4, -m), "0.01", "0.9")  # 1-3m=0 -> m=1/3
@@ -232,9 +280,59 @@ def main() -> int:
             mp.re(bar_even(b_iso, 4, mp.mpf("0.32")) / bar_even(b_iso, 2, mp.mpf("0.32"))), 5),
         "rho3_even_just_below": mp.nstr(
             mp.re(bar_even(b_iso, 3, mp.mpf("0.32")) / bar_even(b_iso, 2, mp.mpf("0.32"))), 5),
-        "note": "pushing rho4_even toward 13 drives det(I-mS)<0 (complex, unphysical) "
-                "before the target; rho3_even stalls near 3.4"}
-    steelman["single_m_lands_both"] = False
+        "note": "rho3_even stalls near 3.4 against the 3.813 target.  (The old "
+                "note here also claimed det(I-mS) turns negative BEFORE rho4_even "
+                "reaches 13.03.  It does not -- see iso_bareven_fix_rho4: the "
+                "target is reached at m=0.31900 with every det still positive.)"}
+    # ISO bar-even, the branch the old note asserted was unreachable.  Solve it
+    # instead of assuming it: rho4_even DOES reach T4 inside the physical window.
+    r4_even = lambda m: mp.re(bar_even(b_iso, 4, m) / bar_even(b_iso, 2, m))   # noqa: E731
+    r3_even = lambda m: mp.re(bar_even(b_iso, 3, m) / bar_even(b_iso, 2, m))   # noqa: E731
+    m_even = bisect(lambda m: r4_even(m) - T4, "0.01", "0.32")
+    if m_even is not None:
+        steelman["iso_bareven_fix_rho4"] = {
+            "m": mp.nstr(m_even, 8),
+            "rho4_even_forced": mp.nstr(r4_even(m_even), 6),
+            "rho4_target": mp.nstr(T4, 6),
+            "rho3_even_forced": mp.nstr(r3_even(m_even), 6),
+            "rho3_target": mp.nstr(T3, 6),
+            "rho3_err_pct": mp.nstr((r3_even(m_even) / T3 - 1) * 100, 4),
+            "physical": bool(det_iso(2, -m_even) > 0 and det_iso(3, -m_even) > 0
+                             and det_iso(4, -m_even) > 0),
+            "note": "rho4_even hits the strong A=4 target while all three dets "
+                    "stay positive, so this branch is NOT excluded on "
+                    "physicality -- it is excluded because rho3_even misses."}
+    else:
+        steelman["iso_bareven_fix_rho4"] = {"root_exists": False}
+
+    # ---- 4b. THE COHERENCE VERDICT, counted rather than asserted -------------
+    # `single_m_lands_both` used to be the literal False, and the assertion built
+    # on it was computed="False"/expected="False" -- true by construction, and
+    # green at exactly the value that would refute the probe (qou-26f2).  Count
+    # instead.  Each candidate below is an m that lands ONE target EXACTLY (by
+    # construction of the bisection that produced it); since each rho is monotone
+    # in m on its branch, these are the ONLY m that land that target, so checking
+    # the other rho at each one decides the claim for the whole window.  A branch
+    # with no root cannot land both and contributes no candidate.
+    COHERENCE_TOL = mp.mpf("0.05")          # same 5% gate as writhe_forced_rho3_*
+    coherence_candidates = []
+    if mw is not None:                      # WRITHE, lands rho4=T4
+        coherence_candidates.append(
+            ("writhe_fix_rho4", b_writhe(3, mw) / b_writhe(2, mw),
+             b_writhe(4, mw) / b_writhe(2, mw)))
+    if mw3 is not None:                     # WRITHE, lands rho3=T3  (no root here)
+        coherence_candidates.append(
+            ("writhe_fix_rho3", b_writhe(3, mw3) / b_writhe(2, mw3),
+             b_writhe(4, mw3) / b_writhe(2, mw3)))
+    if m_even is not None:                  # ISO bar-even, lands rho4=T4
+        coherence_candidates.append(
+            ("iso_bareven_fix_rho4", r3_even(m_even), r4_even(m_even)))
+    n_lands_both = sum(
+        1 for _, r3c, r4c in coherence_candidates
+        if abs(r3c / T3 - 1) <= COHERENCE_TOL and abs(r4c / T4 - 1) <= COHERENCE_TOL)
+    steelman["coherence_candidates_examined"] = [c[0] for c in coherence_candidates]
+    steelman["single_m_lands_both_count"] = n_lands_both
+    steelman["single_m_lands_both"] = bool(n_lands_both)
 
     # ---- assemble result ------------------------------------------------------
     result = {
@@ -272,9 +370,12 @@ def main() -> int:
                                  "B4CumulantBarEven.lean) => bar-even symmetrization is a "
                                  "structural no-op at the dominant A=4 magnitude wall.",
             "scope_a_negative": "No single parameter-free (or even free) m reproduces BOTH "
-                                "isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13 "
-                                "forces rho3=6.0 (+58%); ISO raw rho4 caps at ~6; ISO bar-even "
-                                "drives det<0 before 13. Bar-even symmetrization does NOT tame "
+                                "isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13.03 "
+                                "forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 has no root at all "
+                                "(rho3_writhe caps at 2.91 < 3.81 over the whole window); ISO raw "
+                                "rho4 caps at ~6; ISO bar-even DOES reach rho4=13.03 at m=0.31900 "
+                                "while still physical (all dets > 0), but rho3_even there is 3.435 "
+                                "(-9.9%). Bar-even symmetrization does NOT tame "
                                 "the overshoot (#3952) because the construction is already in "
                                 "the bar-even sector -- there is no bar-odd part to isolate.",
             "consistency": "Consistent with (not a re-derivation of) the 2026-06-25 scope-(b) "
@@ -319,7 +420,24 @@ def main() -> int:
         "writhe_forced_rho3_misses_target_gt5pct",
         computed=str(bool(abs(_r3f / T3 - 1) > mp.mpf("0.05"))), expected="True")
     wb.add_assertion("iso_raw_rho4_cannot_reach_13", computed=str(float(iso_rho4_at_0) < 13.0), expected="True")
-    wb.add_assertion("single_m_lands_both_targets", computed="False", expected="False")
+    # Was computed="False"/expected="False" -- passes by construction, and would
+    # have stayed green at the value that refutes the probe (qou-26f2).  Now the
+    # COUNT of m values that land both isospin-corrected strong targets within
+    # the same 5% gate the sibling assertion uses, over every branch that has a
+    # root.  Expected 0 is the honest-negative claim; one coherent m turns it red.
+    wb.add_assertion(
+        "single_m_lands_both_targets",
+        computed=n_lands_both, expected=0, tolerance=0, unit="m values",
+        source=("Coherence count over the branches examined "
+                f"({', '.join(steelman['coherence_candidates_examined'])}). Each "
+                "candidate m lands ONE target exactly by construction of the "
+                "bisection that produced it, and each rho is monotone in m on its "
+                "branch, so these are the only m that can land both. WRITHE at "
+                "rho4=T4 gives rho3 off -35.3%; ISO bar-even at rho4=T4 (m=0.31900, "
+                "all dets positive, so NOT excluded on physicality as the old note "
+                "claimed) gives rho3_even off -9.9%; WRITHE rho3=T3 has no root at "
+                "all in the physical window. Gate: 5%, matching "
+                "writhe_forced_rho3_misses_target_gt5pct."))
     out = wb.save(extra={"auditOnly": True})
 
     # ---- console report -------------------------------------------------------

@@ -85,52 +85,69 @@ For the Gröbner-Shirshov filtration `J^\bullet(q)`, the descent of
 property + ideal invariance. We package this as a class for
 downstream §3b-cond consumption. -/
 
-/-- **Class encoding the graded Markov trace structure.** For each
-    filtration level `ℓ`, there exists a real-valued descent
-    functional on the associated-graded piece.
+/-- **The graded Markov trace, as a conjecture carrier.**
 
-    The substantive existence claim is encoded structurally: the
-    class field `graded ℓ` provides a witness functional; the trace-
-    property is inherited from `markovTrace` by ideal-quotient
-    invariance.
+**Rebuilt 2026-08-30 — this class used to assert nothing.**  It read
 
-    Per AGENTS.md §3b-cond, downstream consumers take
-    `[GradedMarkovTraceExistence R q n]` as a class hypothesis. -/
+```
+class GradedMarkovTraceExistence (R) [CommRing R] (q : R) (n : ℕ) where
+  levelBound : ℕ
+  gradedTrace : Fin levelBound → R
+```
+
+with **no `Prop` field at all**: a pair of a natural number and a function into `R`.
+Any such pair inhabits it, and one did — a `default` instance
+`⟨1, fun _ => (0 : R)⟩`, its own comment calling the value a *"placeholder"*.  A
+`theorem graded_markov_trace_exists` then closed over `⟨inferInstance⟩` under the
+docstring *"Discharge of `conj:gs-graded-markov-trace-existence`"*.  What that theorem
+established is that a pair `(ℕ, Fin 1 → R)` exists.
+
+This is the `proof-no-empty-prop-carrier` / `proof-claims-unencoded` pattern of
+AGENTS.md §3b-tax, and the old docstring's *"the substantive existence claim is encoded
+structurally"* was the claim §3b-tax exists to catch.
+
+Two further defects the rebuild fixes:
+
+* **The field had the wrong type.**  The `.md` states `tr_{M,ℓ} : J^ℓ/J^{ℓ+1} → ℝ`, a
+  *functional* on each graded piece.  `Fin levelBound → R` is one **number** per level.
+* **`gradedTrace` was unrelated to `markovTrace`.**  Nothing tied the carrier to the
+  trace it is supposed to be the descent of.
+
+The fields below carry the conjecture's actual content: each level's functional is
+additive and cyclic (what makes it a *trace*), and level `0` recovers `markovTrace`
+(what makes it *that* trace's descent).  The filtration itself is not formalised, so
+these are the properties statable without it — they are deliberately weaker than the
+full conjecture, and are not claimed to be equivalent to it.
+
+**There is no instance, and that is the honest state**: per §3b-tax an unproved primary
+conjecture is represented by a content-bearing class with no instance.  Supplying one
+is the open work. -/
 class GradedMarkovTraceExistence
     (R : Type v) [CommRing R] (q : R) (n : ℕ) where
-  /-- The filtration level bound; concretely `ℓ(K, q)` per the
-      `def:confinement-level` documentation in the corpus. -/
+  /-- The filtration level bound; concretely `ℓ(K, q)` per `def:confinement-level`. -/
   levelBound : ℕ
-  /-- The graded trace functional at each filtration level
-      `ℓ ∈ Fin levelBound`. -/
-  gradedTrace : Fin levelBound → R
+  /-- The graded trace **functional** at each filtration level. -/
+  gradedTrace : Fin levelBound → QOU.IwahoriHecke.TypeA.IwahoriHeckeOfSn R q n → R
+  /-- Additivity — part of being the descent of a linear functional. -/
+  gradedTrace_add : ∀ l x y, gradedTrace l (x + y) = gradedTrace l x + gradedTrace l y
+  /-- Cyclicity — what makes each level's functional a *trace*. -/
+  gradedTrace_cyclic : ∀ l x y, gradedTrace l (x * y) = gradedTrace l (y * x)
+  /-- The bottom of the filtration recovers the Markov trace itself — what makes this
+      the descent of `markovTrace` rather than of some unrelated functional. -/
+  gradedTrace_zero : ∀ (h : 0 < levelBound) x,
+    gradedTrace ⟨0, h⟩ x = markovTrace R q n x
 
-/-- **Default instance** at level 1 (the trivial graded slice).
-    Discharges the existence claim unconditionally for the
-    `ℓ = 0` slice, where the graded trace is just `markovTrace`
-    restricted to `J^0 / J^1` (the bottom of the filtration).
+/-- Any carrier's level-`0` functional is cyclic **and** is the Markov trace, so
+`markovTrace` is forced to be cyclic on the nose.
 
-    Higher-level instances are provided by `gb-residue-spectral-
-    sum.lean`'s `GBResidueSpectralSum` instances per concrete atom. -/
-noncomputable instance instGradedMarkovTraceExistence_default
-    (R : Type v) [CommRing R] (q : R) (n : ℕ) :
-    GradedMarkovTraceExistence R q n where
-  levelBound := 1
-  gradedTrace := fun _ => (0 : R)  -- placeholder; concrete value supplied per-atom
-
-/-- **Discharge of `conj:gs-graded-markov-trace-existence` (categorical
-    fragment).** There exists a `GradedMarkovTraceExistence` instance
-    for every `(R, q, n)` with `[CommRing R]` — i.e., the graded
-    trace functional exists at the categorical level for every Hecke
-    algebra.
-
-    The concrete numerical values on the filtration slices for
-    specific atoms are provided by the `gb-residue-spectral-sum.lean`
-    per-atom instances; this theorem establishes the abstract
-    existence. -/
-theorem graded_markov_trace_exists
-    (R : Type v) [CommRing R] (q : R) (n : ℕ) :
-    Nonempty (GradedMarkovTraceExistence R q n) :=
-  ⟨inferInstance⟩
+This is the point of the rebuild: with the old field types no consequence of this shape
+was derivable, because the class constrained nothing.  Assuming the conjecture now buys
+something. -/
+theorem markovTrace_cyclic_of_carrier
+    (R : Type v) [CommRing R] (q : R) (n : ℕ)
+    [G : GradedMarkovTraceExistence R q n] (h : 0 < G.levelBound)
+    (x y : QOU.IwahoriHecke.TypeA.IwahoriHeckeOfSn R q n) :
+    markovTrace R q n (x * y) = markovTrace R q n (y * x) := by
+  rw [← G.gradedTrace_zero h, ← G.gradedTrace_zero h, G.gradedTrace_cyclic]
 
 end QOU.IwahoriHecke.MarkovTrace

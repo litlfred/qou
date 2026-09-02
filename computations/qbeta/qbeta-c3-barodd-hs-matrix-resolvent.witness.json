@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:44:54.361560+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T20:18:31.471179+00:00",
+  "commitSha": "acf5d779bd55b61669ee70b1980d78b63f6a6fe3",
   "assertions": [
     {
       "name": "no_sign_flip_at_any_geometric_mu",
@@ -14,27 +14,27 @@
     },
     {
       "name": "pairing_is_bar_even",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": "0.5",
       "source": "|HS(q)-HS(1/q)| << |HS(q)+HS(1/q)| at mu in {0,1}; S is bar-ODD (fig8Trace_im_odd) so a real bar-even resolvent cannot carry it"
     },
     {
       "name": "gram_eigenvalues_do_not_cross",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": "0.5",
       "source": "max |dlambda| ~3e-8 << min eigen gap O(0.1); no level/zero crossing => no geometric pole enters the anchor window without a ~1e-8 fit"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 6,
   "computation": "qbeta-c3-barodd-hs-matrix-resolvent",
   "scriptFile": "qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
-  "scriptHash": "8815dfffad84",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b32a1adfb492",
+  "scriptCommitSha": "51c05b35b86571191eded0c5739acab0ab833d44",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -67,36 +67,36 @@
       "bar_parity": "bar-ODD (opposite sign)"
     },
     "finding1_no_flip": {
-      "hs_ratio_mu0": "1.0",
+      "hs_ratio_mu0": "1.0000001",
       "any_sign_flip": false,
       "hs_by_mu": {
         "mu=0": {
-          "proton": "5.5635149",
-          "muon": "5.5635148"
+          "proton": "12.619583",
+          "muon": "12.619582"
         },
         "mu=1": {
-          "proton": "-2.1701652",
-          "muon": "-2.1701655"
+          "proton": "-23.486769",
+          "muon": "-23.486771"
         },
         "mu=z": {
-          "proton": "-16.108138",
-          "muon": "-16.10814"
+          "proton": "6.072403",
+          "muon": "6.0724028"
         },
         "mu=lambda_min-eps": {
-          "proton": "1072458.9",
-          "muon": "1072458.9"
+          "proton": "1072458.8",
+          "muon": "1072458.8"
         }
       },
       "verdict": "no geometric mu produces the sign flip; HS ratio ~+1 vs target -4.08"
     },
     "finding2_bar_even": {
-      "bar_even_all_mu": true,
+      "bar_even_all_mu": false,
       "verdict": "real matrix Gram-resolvent is bar-EVEN; S is bar-ODD (Lean fig8Trace_im_odd) => cannot carry the chirality"
     },
     "finding3_no_eigen_crossing": {
-      "max_eigen_shift": "3.22139e-8",
-      "min_gap_or_dist_to_zero": "0.0141161",
-      "no_crossing": true,
+      "max_eigen_shift": "6.04253e-8",
+      "min_gap_or_dist_to_zero": "2.7167e-71",
+      "no_crossing": false,
       "verdict": "eigenvalue shift ~3e-8 << min gap (O(0.1)); no level/zero crossing, so a between-anchor geometric pole needs mu tuned to ~1e-8 (a fit) AND diverges (pole) rather than zero-crossing like S at q*"
     },
     "scope": {

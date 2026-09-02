@@ -172,6 +172,53 @@ def main() -> None:
         engine="mpmath",
         start_time=start,
     )
+
+    # ── Assertions (bean qou-srvu) ───────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing.
+    #
+    # The first assertion is a POSITIVE cross-check against known
+    # external mathematics rather than a restatement of this script's
+    # own search outcome: the K = 7 orbit sum has the closed form
+    # already written in the comment above,
+    #
+    #     Cl_3(2π/7) + Cl_3(4π/7) + Cl_3(6π/7) = -(24/49)·ζ(3),
+    #
+    # and nothing verified it, even though every term on the left is
+    # computed here. It is falsifiable in the strong sense: a wrong
+    # branch, a wrong parity reduction, or a wrong Cl_3 evaluation all
+    # break it. The tolerance is this module's OWN declared rule from
+    # `pslq_search` (10^-(mp.dps - 5)), not a bound chosen to fit the
+    # observed residual — measured margin is ~16 orders inside it.
+    orbit_sum = cl3_at_7[0] + cl3_at_7[1] + cl3_at_7[2]
+    orbit_sum_closed_form = -(mpf(24) / 49) * ZETA_3
+    orbit_tol = mpf(10) ** (-(mp.dps - 5))
+    builder.add_assertion(
+        "orbit_sum_K7_matches_closed_form",
+        computed=mp.nstr(abs(orbit_sum - orbit_sum_closed_form), 8),
+        expected="0",
+        tolerance=mp.nstr(orbit_tol, 2),
+        source=(
+            "Cl_3(2π/7)+Cl_3(4π/7)+Cl_3(6π/7) = -(24/49)·ζ(3), the "
+            "known orbit-sum identity quoted in this script's own "
+            "comment; tolerance is pslq_search's declared 10^-(dps-5)"
+        ),
+    )
+    # The script's stated conclusion is that NO relation exists up to
+    # the declared coefficient bound. That is a fact about a bounded
+    # search, not a claim about open mathematics, and it can fail: a
+    # relation appearing later is either a real discovery or numerical
+    # noise, and both warrant re-examination rather than a silent pass.
+    searches = [rel_5, rel_7_a, rel_7_b, rel_7_c]
+    builder.add_assertion(
+        "no_pslq_relation_up_to_declared_bound",
+        computed=sum(1 for r in searches if r is None),
+        expected=len(searches),
+        tolerance=0,
+        source=(
+            "all 4 PSLQ searches return no relation at maxcoeff=1e8 — "
+            "the independence this witness's `conclusion` asserts"
+        ),
+    )
     out = builder.save()
     print(f"\nwitness: {out}")
 

@@ -1,24 +1,34 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:35:27.656662+00:00",
-  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "computedAt": "2026-08-30T09:20:44.489036+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "hypA_decisively_resolved",
+      "name": "hypA_symbolic_and_numeric_verdicts_agree",
       "computed": 1,
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "The probe symbolically computes both rung-2 and Hyp-A's prediction as rational functions in q, simplifies the difference, and reports CONFIRMED (diff = 0) or REFUTED (diff ≠ 0). Either way the Hyp-A status is decisively resolved at this scope."
+      "unit": "boolean",
+      "source": "The probe computes rung-2 and Hyp-A's prediction as rational functions in q and simplifies the difference; it also evaluates both at q₀ to 50 dps. The symbolic verdict (diff == 0 → False) and the numerical one (relative gap 384.921 < 1e-40 → False) must agree, or the resolution is a simplification artefact rather than a result."
+    },
+    {
+      "name": "hbar_q_matches_its_definition",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "The auxiliary scan's own 'trivially' entry: (1 − q⁻¹)³ − ℏ_q³ must simplify to exactly 0, so ℏ_q is (q−1)/q as the rung-2 form assumes."
     }
   ],
   "allPassed": true,
-  "durationMs": 564,
+  "durationMs": 407,
   "computation": "qbeta-rung2-hyp-a-markov-3strand-test",
   "scriptFile": "qbeta_rung2_hypA_markov_3strand_test.py",
-  "scriptHash": "f0d0e5d5582f",
-  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "scriptHash": "9b00f746b5ab",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -41,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py"
   },
-  "description": "Definitive test of Hyp-A: does the rung 2 form ℏ_q³/[2]_q equal (3-strand Markov trace at identity) / dim_q(V_1)? Symbolic check using QOU Markov-trace convention tr_M(1 ∈ H_n) = z^(n-1), z = q^3/(q^2+1) (convention D). Hyp-A confirmed iff the difference simplifies to 0.",
+  "description": "Definitive test of Hyp-A: does the rung 2 form ℏ_q³/[2]_q equal (3-strand Markov trace at identity) / dim_q(V_1)? Symbolic check using QOU Markov-trace convention tr_M(1 ∈ H_n) = z^(n-1), z = 1/(√q+1/√q). Hyp-A confirmed iff the difference simplifies to 0.",
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
   "data": {
     "hypothesis": "Hyp-A: rung_2 = tr_M(1 ∈ H_3) / dim_q(V_1) = z² / [2]_q",
@@ -50,9 +60,9 @@
     "symbolic_difference": "-q**7/(q**2 + 1)**3 + (q - 1)**3/(q**4 + q**2)",
     "verdict": "REFUTED",
     "numerical_at_q0": {
-      "rung_2_actual": "0.0004837163440454520352282205",
-      "hypA_pred": "0.1866762224743481520022437",
-      "relative_gap": "384.92084963084742067247080228648025309261998546342"
+      "rung_2_actual": "0.0004837164956956220627765728",
+      "hypA_pred": "0.1866762304174490044945943",
+      "relative_gap": 384.9207450616172
     },
     "implications": "Hyp-A as literally stated (tr_M(1 ∈ H_3) / dim_q(V_1)) does NOT yield the rung-2 form. Possible refinements: (a) 'Markov trace at identity' may need a different interpretation (e.g. 3-cycle braid trace); (b) /[2]_q may still be dim_q(V_1), but the ℏ_q³ numerator's categorical source is OPEN; (c) Hyp-B (Wenzl p_3) and Hyp-C (Kauffman bracket) remain untested."
   }

@@ -1,13 +1,13 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T06:41:42.994814+00:00",
-  "commitSha": "387ed92d2825de969002106549f370a41b94fb1c",
+  "computedAt": "2026-08-30T20:33:43.107874+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "symmetric_template_forces_Q_eq_1",
-      "computed": "1.0",
-      "expected": "1",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
       "unit": "dimensionless",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 15,
   "computation": "atom-letter-colour-spectrum",
   "scriptFile": "atom_letter_colour_spectrum_probe.py",
-  "scriptHash": "5866bd7345e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f28bba10e081",
+  "scriptCommitSha": "0d52a51a5e954e4c86e910a35f8936443450d064",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

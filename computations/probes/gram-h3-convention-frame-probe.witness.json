@@ -1,15 +1,51 @@
 {
   "engine": "python+sympy(exact over Q(q,z))",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:17:33.944967+00:00",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:26:01.642829+00:00",
+  "commitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
+  "assertions": [
+    {
+      "name": "det_at_z_D_is_identically_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "z_D = q^3/(q^2+1) is a ROOT of the H_3 Gram determinant, as an identity in q -- exact sympy over Q(q,z), not a numerical zero"
+    },
+    {
+      "name": "antisymmetriser_annihilated",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the q-antisymmetriser spans the radical at z_D; confirms gram_radical_exact_probe.py and qou-u2jg from the determinant side"
+    },
+    {
+      "name": "agrees_with_lean_factorization",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "cross-validation against the sorry-free Lean QOU.Interactions.GramMatrixH3Symbolic.gram_det_eq"
+    },
+    {
+      "name": "gramMatrix_isSymm_holds_for_every_z",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "survives the frame change: symmetry is z-free"
+    },
+    {
+      "name": "gramMatrix_top_left_holds_for_every_z",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "survives the frame change: top-left entry is z-free"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "gram-h3-convention-frame-probe",
   "scriptFile": "gram_h3_convention_frame_probe.py",
-  "scriptHash": "5db5b09d11b7",
-  "scriptCommitSha": "6a9c95981591372c4b0e3ce9a73fd6fa3ebed37b",
+  "scriptHash": "7fd1674c9516",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +57,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

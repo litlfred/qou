@@ -1,0 +1,254 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1108.0687v3",
+ "source": {
+  "file": "1108.0687v3.pdf",
+  "sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
+  "bytes": 271299,
+  "pages": 23,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1108.0687",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "28 Jul 2013"
+  },
+  "doi": null,
+  "title": "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures",
+  "authors_raw": "Robin Pemantle 1, 2 and Yuval Peres 3",
+  "title_lines": [
+   "Concentration of Lipschitz functionals of determinantal a nd other strong",
+   "Rayleigh measures"
+  ],
+  "abstract": "Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n \u2192 R be a Lipschitz function. Under a negative dependence hypothesis k nown as the strong Rayleigh con- dition, we show thatf \u2212Ef satis\ufb01es a concentration inequality. The class of strong Rayleigh me asures includes determinantal measures, weighted uniform matroids and e xclusion measures; some familiar examples from these classes are generalized negative binomials and s panning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spann ing tree on vertex set V (e.g., the number of leaves) satis\ufb01es the Gaussian concentration inequality P(f \u2212 Ef \u2265a) \u2264 exp ( \u2212 a2 8 |V | ) . We also prove a continuous version for concentration of Lipschitz f unctionals of a determinantal point process.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180521154253-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Classical concentration inequalities",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalizations",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The classical proofs",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorems ?? and ??",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Applications",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Matroids",
+   "page": 14,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Exclusion measures",
+   "page": 16,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Determinantal measures on a finite Boolean lattice",
+   "page": 17,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Determinantal point processes",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 830,
+   "n_words": 165
+  },
+  {
+   "id": "sec-001-11-classical-concentration-inequalities",
+   "number": "1.1",
+   "title": "Classical concentration inequalities",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1276,
+   "n_words": 259
+  },
+  {
+   "id": "sec-002-12-generalizations",
+   "number": "1.2",
+   "title": "Generalizations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4616,
+   "n_words": 804
+  },
+  {
+   "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
+   "number": "2",
+   "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4963,
+   "n_words": 918
+  },
+  {
+   "id": "sec-004-3-results",
+   "number": "3",
+   "title": "Results",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6066,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-005-4-proofs",
+   "number": "4",
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-41-the-classical-proofs",
+   "number": "4.1",
+   "title": "The classical proofs",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 8525,
+   "n_words": 1644
+  },
+  {
+   "id": "sec-007-5-applications",
+   "number": "5",
+   "title": "Applications",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 267,
+   "n_words": 43
+  },
+  {
+   "id": "sec-008-51-matroids",
+   "number": "5.1",
+   "title": "Matroids",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4753,
+   "n_words": 868
+  },
+  {
+   "id": "sec-009-52-exclusion-measures",
+   "number": "5.2",
+   "title": "Exclusion measures",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4462,
+   "n_words": 799
+  },
+  {
+   "id": "sec-010-6-determinantal-point-processes",
+   "number": "6",
+   "title": "Determinantal point processes",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 12441,
+   "n_words": 2221
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 11,
+  "chars_total": 48199
+ }
+}

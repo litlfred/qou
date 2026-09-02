@@ -240,7 +240,15 @@ theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
 -- §6. Contact threshold (supplementary — uses Real.log)
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The contact threshold `1 < v* < 2` (equivalently `[2] < [3] < [2]²`).
+/-- **One-sided: `v* < 2`** (equivalently `[3] < [2]²`).
+
+    This docstring previously announced the two-sided `1 < v* < 2`, which the
+    statement and proof below never established. The lower half `1 < v*`
+    (equivalently `[2] < [3]`) is proved in
+    `QOU.AppendixSurreals.CollatzThreeForms.one_lt_contactThreshold`, and the
+    two-sided form is `contactThreshold_mem_Ioo` there. The lower half is what
+    rules out a *single* halving per tripling, so it is load-bearing for the
+    claim that the integer threshold is exactly two.
 
     Since v* < 2 is proved algebraically ([3] < [2]²), the integer
     condition ⟨v⟩ ≥ 2 (two halvings per tripling) suffices — and

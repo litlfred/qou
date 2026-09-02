@@ -1,24 +1,34 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:55:05.697973+00:00",
-  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
+  "computedAt": "2026-08-30T10:06:17.151890+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "hyp_C_decisively_resolved_for_natural_knots",
-      "computed": 1,
-      "expected": 1,
+      "name": "jones_polynomials_take_the_classical_value_at_q_1",
+      "computed": "6",
+      "expected": "6",
       "passed": true,
       "tolerance": 0,
-      "source": "Probe computes V(K) Taylor at q=1 for Hopf, trefoil 3_1, figure-eight 4_1, and cinquefoil T(2,5), reads off cubic coefficient, compares to required value. Reports CONFIRMED or REFUTED for each."
+      "unit": "knots whose V(K)(1) equals (−2)^(components−1)",
+      "source": "classical evaluation of the Jones polynomial at q = 1; independent of the Taylor extraction the verdict uses. Hopf link H+: -2 vs -2; Trefoil 3_1 (right-handed): 1 vs 1; Trefoil 3_1 (left-handed): 1 vs 1; Figure-eight 4_1: 1 vs 1; Cinquefoil T(2,5): 1 vs 1; Unknot (sanity): 1 vs 1"
+    },
+    {
+      "name": "required_cubic_coefficient_matches_the_hand_derivation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "h³ coefficient of ℏ_q³ at q = 1 + h",
+      "source": "docstring derivation: ℏ_q³ = (q−1)³/q³ = h³·(1 − 3h + …), so the h³ coefficient is 1. Code route: sympy.series of ((q−1)/q)³ under q → 1 + h. Every ✓/✗ in the table is a comparison against this number."
     }
   ],
   "allPassed": true,
-  "durationMs": 198,
+  "durationMs": 90,
   "computation": "qbeta-rung2-hyp-c-kauffman-probe",
   "scriptFile": "qbeta_rung2_hypC_kauffman_probe.py",
-  "scriptHash": "9581e490ff4b",
-  "scriptCommitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
+  "scriptHash": "504925de03cd",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_rung2_hypC_kauffman_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_rung2_hypC_kauffman_probe.py"
   },
   "description": "Concrete Hyp-C test for rung-2 lift. Computes Jones polynomial Taylor coefficient at (q-1)^3 for 4 natural knots (Hopf, trefoil 3_1, figure-eight 4_1, cinquefoil T(2,5)). Hyp-C is satisfied iff cubic Taylor coefficient = 1. Reports CONFIRMED or REFUTED per knot.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
@@ -37,43 +58,70 @@
     "results_per_knot": [
       {
         "knot": "Hopf link H+",
+        "components": 2,
         "V_at_q1": "-2",
+        "V_at_q1_classical": "-2",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "3/8",
         "hyp_c_confirmed": false
       },
       {
         "knot": "Trefoil 3_1 (right-handed)",
+        "components": 1,
         "V_at_q1": "1",
+        "V_at_q1_classical": "1",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "9",
         "hyp_c_confirmed": false
       },
       {
         "knot": "Trefoil 3_1 (left-handed)",
+        "components": 1,
         "V_at_q1": "1",
+        "V_at_q1_classical": "1",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "-3",
         "hyp_c_confirmed": false
       },
       {
         "knot": "Figure-eight 4_1",
+        "components": 1,
         "V_at_q1": "1",
+        "V_at_q1_classical": "1",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "-3",
         "hyp_c_confirmed": false
       },
       {
         "knot": "Cinquefoil T(2,5)",
+        "components": 1,
         "V_at_q1": "1",
+        "V_at_q1_classical": "1",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "39",
         "hyp_c_confirmed": false
       },
       {
         "knot": "Unknot (sanity)",
+        "components": 1,
         "V_at_q1": "1",
+        "V_at_q1_classical": "1",
+        "V_at_q1_matches_classical": true,
         "cubic_taylor_coefficient": "0",
         "hyp_c_confirmed": false
       }
     ],
     "matching_knots": [],
     "verdict": "REFUTED for all 4 natural-knot candidates",
-    "combined_status": "All three rung-2 lift hypotheses now REFUTED in literal form: Hyp-A (Markov-trace-at-identity, PR #1801), Hyp-B (Wenzl p_3, this PR), Hyp-C (Jones-cubic over unknot, this probe). The categorical source of rung 2 = ℏ_q³/[2]_q remains OPEN; future work needs more exotic candidates (higher-genus knots, convention-shifted Kauffman brackets, or alternative quantum-group constructions)."
-  }
+    "combined_status": "All three rung-2 lift hypotheses now REFUTED in literal form: Hyp-A (Markov-trace-at-identity, PR #1801), Hyp-B (Wenzl p_3, this PR), Hyp-C (Jones-cubic over unknot, this probe). The categorical source of rung 2 = ℏ_q³/[2]_q remains OPEN; future work needs more exotic candidates (higher-genus knots, convention-shifted Kauffman brackets, or alternative quantum-group constructions).",
+    "hyp_c_outcome": {
+      "n_candidates": 6,
+      "n_confirming_excluding_unknot": 0,
+      "required_cubic_coefficient": "1",
+      "has_independent_expected_value": false
+    }
+  },
+  "caveats": [
+    "Hyp-C is REFUTED by this probe, not confirmed: none of the 5 non-unknot candidates has cubic Taylor coefficient 1. The prose says 'all 4 natural-knot candidates' while the table carries 5 non-unknot rows (both trefoil chiralities); the refutation covers all of them."
+  ]
 }

@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:56:07.705559+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:29:44.327149+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "full_tower_overshoots_A_ge_5",
-      "computed": "1",
-      "expected": "1",
+      "computed": "8",
+      "expected": "8",
       "passed": true,
       "tolerance": 0,
-      "source": "na-Stokes super-exp period summed to n=A overshoots B_strong by >900% at ⁶Li for every bounded/amplifying body-order weight; structural (super-exp vs extensive). Few-body truncation required."
+      "unit": "(weight, isotope) pairs with A≥5 overshooting by >900%",
+      "source": "na-Stokes super-exp period summed to n=A overshoots B_strong by >900% at ⁶Li for every bounded/amplifying body-order weight; measured: n^2/6Li +920%, n^2/7Li +3023%, n^2/9Be +34222%, n^2/12C +2263587%, [n]_q^2/6Li +989%, [n]_q^2/7Li +3384%, [n]_q^2/9Be +42615%, [n]_q^2/12C +3481063%. Structural (super-exp vs extensive). Few-body truncation required."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "binding-wn-multianchor-tower-refute",
   "scriptFile": "binding_wn_multianchor_tower_refute.py",
-  "scriptHash": "8acac47f0655",
+  "scriptHash": "2a18451e4dde",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

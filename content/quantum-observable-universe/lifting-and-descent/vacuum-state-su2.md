@@ -43,4 +43,4 @@ $$
   [2j+1]_{q_0}
   = \frac{q_0^{2j+1} - q_0^{-(2j+1)}}{q_0 - q_0^{-1}}.
 $$
-For $j = \frac{1}{2}$, we have $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.012$. For $j = 1$, we have $[3]_{q_0} = q_0^2 + 1 + q_0^{-2} \approx 3.041$. These quantum dimensions determine the normalisation of the vacuum state at each spin level.
+For $j = \frac{1}{2}$, we have $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.011$. For $j = 1$, we have $[3]_{q_0} = q_0^2 + 1 + q_0^{-2} \approx 3.044$. These quantum dimensions determine the normalisation of the vacuum state at each spin level.

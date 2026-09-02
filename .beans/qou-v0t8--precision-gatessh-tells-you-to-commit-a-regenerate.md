@@ -1,11 +1,11 @@
 ---
 # qou-v0t8
 title: precision-gates.sh tells you to commit a regenerated audit witness without checking whether your branch is behind main
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T04:51:58Z
-updated_at: 2026-08-26T21:08:07Z
+updated_at: 2026-08-30T14:29:53Z
 ---
 
 ## The instruction
@@ -111,3 +111,28 @@ instruction unconditionally on any branch with an open PR.
 
 Resolution here: dropped the commit and rebased. Nothing was lost — the
 movement was main's, which main now carries anyway.
+
+
+## GUARD IMPLEMENTED 2026-08-30 — and the fix this bean proposed was not enough
+
+`scripts/precision-gates.sh` no longer tells a feature branch to commit these.
+
+**The proposed discriminator was `git rev-list --count HEAD..origin/main`, and
+this bean's own third section already showed it insufficient** — the PR #5805
+case was `0 behind` and still went `mergeable_state: dirty` within twenty
+minutes. A behind-count guard would have waved it through. So the guard keys on
+**which branch**, not on the behind-count; the behind-count is printed as
+context only.
+
+    on main             -> unchanged ("commit the regenerated one")
+    on any other branch -> "DO NOT COMMIT THESE. Revert them." + both reasons
+
+It also separates two things the old banner conflated: the **measurement** is
+still worth reading (if the movement is the branch's own producer, that is a
+real finding about the change), it is the **commit** that is wrong.
+
+**Verified against the live case rather than hypothetically.** A full run on
+branch `claude/precision-gates-stale-witness-guard-2026-08-30` flagged four
+moved witnesses and printed the branch-mode text at `0 behind origin/main` —
+the exact configuration mode 1 cannot catch. Both arms of the conditional were
+also exercised in isolation with the branch name stubbed.

@@ -1,0 +1,163 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T04:23:36.346163+00:00",
+  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "assertions": [
+    {
+      "name": "A1_chain_transfer_is_rank_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "F prefix-spreads ['2.8e-17', '8.3e-17', '2.2e-16']"
+    },
+    {
+      "name": "A2_ordering_changes_the_answer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "all-pairs swings 4.35% (3He) and 5.05% (3H) at fixed bond multiset"
+    },
+    {
+      "name": "A3_strong_bond_prefers_adjacency",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pnn > npn and pnp > ppn on the all-pairs value"
+    },
+    {
+      "name": "A4_saturation_monotone_in_bond_strength",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "saturation ['0.659916', '0.640829', '0.650555', '0.625186'] monotone in L_far, spread 5.6%"
+    },
+    {
+      "name": "A5_all_pairs_less_ordering_sensitive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "chain 16.02%/17.02% vs all-pairs 4.35%/5.05%; ratio 3.68x and 3.37x"
+    },
+    {
+      "name": "A6_chain_reaches_A4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "L(chain,4He) = 2.030464777; ratio 1.50000 vs 3.66617 (-59.1%)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "chain_telescopes_and_ordering_sensitivity_probe",
+  "scriptFile": "chain_telescopes_and_ordering_sensitivity_probe.py",
+  "scriptHash": "e15d4993614a",
+  "scriptCommitSha": "53b97ef6d482a771c82b1661341821905f9278d5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chain_telescopes_and_ordering_sensitivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chain_telescopes_and_ordering_sensitivity_probe.py"
+  },
+  "description": "Finds the sparse route to higher A and uses reordering at A = 3 as a cheaper discriminator than A = 4. The chain's transfer operator is exactly RANK ONE: tr(X . b . w) = tr(X) F(b,w) with F independent of the whole prefix to 2.8e-16, measured over four prefixes and three bond types (F_pn = 0.241477007350, F_nn = 0.191777066944, F_pp = 0.385581983466). So the chain telescopes, L(chain) is a sum over adjacent bonds at every A, and 4He follows with no H_12: L = 3 L_pn = 2.030464777, giving L(4He)/L(3He) = 1.50000 against B(4He)/B(3He) = 3.66618, -59%, deepening the chain's A-scaling failure. The discriminator instead comes from reordering at A = 3, which moves bond distances at fixed bond multiset: the all-pairs answer swings 4.35% (3He pnp vs ppn) and 5.05% (3H pnn vs npn), so distance genuinely matters. The strong bond wants to be adjacent, and the saturation factor is monotone decreasing in the far bond's own strength — 0.659916 (p-p), 0.650555 and 0.640829 (p-n), 0.625186 (n-n), a 5.6% spread — which is the owner's type-dependent falloff rate, measured. All-pairs is also four times less sensitive to the nucleon ordering than the chain (4.35%/5.05% against 16.02%/17.02%), a second independent argument for the all-pairs topology.",
+  "data": {
+    "transfer_scalars": {
+      "pn": "0.241477007350",
+      "nn": "0.191777066944",
+      "pp": "0.385581983466"
+    },
+    "transfer_prefix_spread": {
+      "pn": "2.78e-17",
+      "nn": "8.33e-17",
+      "pp": "2.22e-16"
+    },
+    "orderings": {
+      "pnp": {
+        "chain": "1.353643184773",
+        "all_pairs": "1.676935518146",
+        "far_alone": "0.489899384255"
+      },
+      "ppn": {
+        "chain": "1.166720976641",
+        "all_pairs": "1.607030797631",
+        "far_alone": "0.676821592386"
+      },
+      "pnn": {
+        "chain": "1.584083857920",
+        "all_pairs": "2.017810478620",
+        "far_alone": "0.676821592386"
+      },
+      "npn": {
+        "chain": "1.353643184773",
+        "all_pairs": "1.920851042951",
+        "far_alone": "0.907262265533"
+      }
+    },
+    "saturation_by_far_bond": [
+      {
+        "type": "pp",
+        "L_far": "0.489899384",
+        "saturation": "0.659915778",
+        "from": "pnp"
+      },
+      {
+        "type": "pn",
+        "L_far": "0.676821592",
+        "saturation": "0.640828581",
+        "from": "pnn"
+      },
+      {
+        "type": "pn",
+        "L_far": "0.676821592",
+        "saturation": "0.650555222",
+        "from": "ppn"
+      },
+      {
+        "type": "nn",
+        "L_far": "0.907262266",
+        "saturation": "0.625186211",
+        "from": "npn"
+      }
+    ],
+    "ordering_swing": {
+      "3He": {
+        "chain": "16.0212",
+        "all_pairs": "4.3499"
+      },
+      "3H": {
+        "chain": "17.0237",
+        "all_pairs": "5.0477"
+      }
+    },
+    "chain_A4": {
+      "L": "2.030464777",
+      "ratio_model": "1.500000",
+      "ratio_exp": "3.666171",
+      "err_pct": "-59.09"
+    }
+  },
+  "caveats": [
+    "THE 'TRANSFER MATRIX' IS DEGENERATE ON THE CHAIN. The owner asked for a spectral decomposition and a decay rate within the tower; for the adjacent chain there is none to find, because the transfer operator has a single nonzero eigenvalue. That is a result, not a shortcut: it is why the chain is exactly additive and why it cannot produce any distance falloff. A genuinely non-scalar transfer operator only appears once non-adjacent bonds are present, and that is precisely the case this probe cannot yet compute at A = 4.",
+    "ALL-PAIRS AT A = 4 IS STILL NOT COMPUTED. Six bonds at distances 1,1,1,2,2,3 leave no prefix-independent F, so the telescoping fails and H_12 is unavoidable by this route. Reaching it needs a Hecke word reducer (greedy top-generator peeling with the quadratic relation, elements as {word: coefficient} maps), which is a build rather than a measurement. Nothing here extrapolates the saturation model to A = 4; the only A = 4 number reported is the exact chain value.",
+    "The ordering dependence is a MODELLING AMBIGUITY the corpus currently resolves by convention: `ordering(Z,N)` interleaves protons first, giving pnp and pnn. A physical nucleus has no preferred nucleon order, so the 16-17% chain swing and the 4-5% all-pairs swing are both artefacts of that convention. Reporting which topology minimises the artefact is the point; neither eliminates it."
+  ]
+}

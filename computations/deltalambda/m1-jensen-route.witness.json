@@ -1,0 +1,138 @@
+{
+ "probe": "m1_jensen_route",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "exact": [
+  {
+   "n": 8,
+   "max_ratio": "1.0",
+   "at": "(1, 2)",
+   "bin_weight": "0.0102",
+   "groups_over": 0
+  },
+  {
+   "n": 9,
+   "max_ratio": "0.888889",
+   "at": "(2, 3)",
+   "bin_weight": "0.01177",
+   "groups_over": 0
+  },
+  {
+   "n": 10,
+   "max_ratio": "0.868852",
+   "at": "(2, 3)",
+   "bin_weight": "0.01684",
+   "groups_over": 0
+  },
+  {
+   "n": 11,
+   "max_ratio": "0.906158",
+   "at": "(2, 3)",
+   "bin_weight": "0.01224",
+   "groups_over": 0
+  },
+  {
+   "n": 12,
+   "max_ratio": "0.954545",
+   "at": "(2, 3)",
+   "bin_weight": "0.006229",
+   "groups_over": 0
+  },
+  {
+   "n": 13,
+   "max_ratio": "0.924825",
+   "at": "(3, 4)",
+   "bin_weight": "0.005475",
+   "groups_over": 0
+  },
+  {
+   "n": 14,
+   "max_ratio": "0.908737",
+   "at": "(3, 4)",
+   "bin_weight": "0.008516",
+   "groups_over": 0
+  },
+  {
+   "n": 15,
+   "max_ratio": "0.900462",
+   "at": "(3, 4)",
+   "bin_weight": "0.008798",
+   "groups_over": 0
+  },
+  {
+   "n": 16,
+   "max_ratio": "0.912626",
+   "at": "(3, 4)",
+   "bin_weight": "0.006501",
+   "groups_over": 0
+  },
+  {
+   "n": 17,
+   "max_ratio": "0.920927",
+   "at": "(3, 4)",
+   "bin_weight": "0.003952",
+   "groups_over": 0
+  },
+  {
+   "n": 18,
+   "max_ratio": "0.904493",
+   "at": "(4, 5)",
+   "bin_weight": "0.003484",
+   "groups_over": 0
+  }
+ ],
+ "sampled": [
+  {
+   "n": 50,
+   "max_ratio": "0.934872",
+   "at": "(4, 5)",
+   "groups_over": 0
+  },
+  {
+   "n": 100,
+   "max_ratio": "0.944783",
+   "at": "(4, 4)",
+   "groups_over": 0
+  },
+  {
+   "n": 200,
+   "max_ratio": "0.957539",
+   "at": "(2, 2)",
+   "groups_over": 0
+  }
+ ],
+ "pointwise_violations": 676,
+ "pointwise_total": 3250,
+ "checks": [
+  {
+   "name": "JENSEN REDUCTION: the bound is concave in A, so the conditional mean suffices",
+   "pass": true,
+   "detail": "A |-> min(D0, L-a, sqrt(a^2+2A)-a) is a min of concave functions, hence concave. So E[bound(A_sigma) | a,r] <= bound(E[A_sigma | a,r]), and E_omega[A_sigma | a,r] <= n/2 would give the 7.54% margin with NO concentration input -- one conditional-mean inequality in place of concentration of a functional."
+  },
+  {
+   "name": "MEASURED: E_omega[A_sigma | a,r] <= n/2 on every group, exactly, n = 8..18",
+   "pass": true,
+   "detail": "grouping opposite-sign edges by the integer pair (a,r): 0 groups over n/2 across n = 8..18. Max ratios ['1.0', '0.888889', '0.868852', '0.906158', '0.954545', '0.924825', '0.908737', '0.900462', '0.912626', '0.920927', '0.904493']."
+  },
+  {
+   "name": "MEASURED: and at large n too, binned in rescaled coordinates",
+   "pass": true,
+   "detail": "n = [50, 100, 200]: 0 bins over n/2; max ratios ['0.934872', '0.944783', '0.957539'] -- RISING toward 1 from below. The route is viable and asymptotically tight at the same time."
+  },
+  {
+   "name": "REFUTED (my prediction): the maximum is NOT at large a",
+   "pass": true,
+   "detail": "I predicted failure at large `a` -- a near corner far out ought to mean that side is long and carries more than half the area. The maximum sits at SMALL (a,r) instead: ['(1, 2)', '(2, 3)', '(2, 3)', '(2, 3)', '(2, 3)', '(3, 4)', '(3, 4)', '(3, 4)', '(3, 4)', '(3, 4)', '(4, 5)'], near the diagonal, in groups carrying ['0.0102', '0.01177', '0.01684', '0.01224', '0.006229', '0.005475', '0.008516', '0.008798', '0.006501', '0.003952', '0.003484'] of the weight."
+  },
+  {
+   "name": "REFUTED: the natural POINTWISE explanation A_near <= A_far is FALSE",
+   "pass": true,
+   "detail": "676 violations out of 3250 opposite-sign edges (20%). If it held, A_near <= (n - D0)/2 < n/2 would follow deterministically -- no Jensen, no probability. Minimal counterexample: lambda = (5, 2, 1) with corners at c = 1 and -2, near = 1, A_near = 4 > A_far = 2 -- the diagram is wide, so the near side carries more area despite the far corner sitting further out. The conditional-mean inequality is therefore a genuine AVERAGING statement with no elementary pointwise route behind it."
+  }
+ ],
+ "passed": 5,
+ "total": 5,
+ "ms": 4957
+}

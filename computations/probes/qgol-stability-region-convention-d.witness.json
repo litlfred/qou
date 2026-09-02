@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:40:50.921261+00:00",
+  "commitSha": "adf471d341bd71714db2e1460cf7085f10329bd2",
+  "assertions": [
+    {
+      "name": "P77_D_positive_at_golden_threshold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_D_has_no_positive_root",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "sextic_has_no_positive_real_root",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_negative_at_q0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_positive_below_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qgol-stability-region-convention-d",
+  "scriptFile": "qgol_stability_region_convention_d.py",
+  "scriptHash": "386939c6fd2e",
+  "scriptCommitSha": "b60e3ec99c196748dbf7c878d660adf1e6571b49",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qgol_stability_region_convention_d.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qgol_stability_region_convention_d.py"
+  },
+  "description": "Measures the sign of the two convention-D Toffoli amplitudes across the region prop:q-game-of-life asserts. P_77^D has no positive root, so the golden-ratio threshold the q-GoL proof once cited is a convention-C artifact; Phi^D has a single zero on q > 0, at q = 1. SETTLED 2026-08-30 (owner ruling, bean qou-nmqd): the criterion is NON-VANISHING (Phi != 0), not strict positivity, so the well-definedness region is q != 1 and contains the substrate. Strict positivity would have given 0 < q < 1 and excluded it; these signs are the record of why the question had to be asked.",
+  "parameters": {
+    "convention": "D (z = q^3/(q^2+1))",
+    "P_77_D": "q^3 (q^4+1) / (q^2+1)^2  [toffoli-lp-stability.md]",
+    "Phi_D": "-(q-1)(q+1)(q^6+q^4+2q^2+1) / (2q(q^2+1)^2)  [toffoli-q-and.md]"
+  },
+  "data": {
+    "P77_D_at_q0": "0.691166478358444526147719530979",
+    "Phi_D_at_q0": "-0.143769370003809294991367940081",
+    "P77_D_at_golden_threshold": "0.0433440700006542778381263639471",
+    "stability_region_both_strictly_positive": "0 < q < 1",
+    "region_asserted_by_proposition": "q > 1"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

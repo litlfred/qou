@@ -1,24 +1,45 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:30:41.887754+00:00",
-  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "computedAt": "2026-08-30T10:16:13.838346+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "hypB_decisively_resolved",
-      "computed": 1,
-      "expected": 1,
+      "name": "hypB_prediction_is_q_squared_plus_q_minus_squared",
+      "computed": "0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0,
-      "source": "Symbolic compare rung-2 form (hbar_q^3/[2]_q) against Hyp-B literal prediction [4]_q/[2]_q. Classical-limit cross-check provides independent confirmation. Reports CONFIRMED or REFUTED."
+      "source": "sympy.simplify([4]_q/[2]_q − (q² + q⁻²)) with [4]_q = q³+q+q⁻¹+q⁻³ and [2]_q = q+q⁻¹; the Wenzl-projector chain tr_M(p_3) = [4]_q that the whole hypothesis rests on"
+    },
+    {
+      "name": "classical_limits_match_known_values",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "|rung2(q=1) − 0| + |HypB(q=1) − 2| with measured rung2(q=1) = 0, HypB(q=1) = 2. The two limits differ, which is what makes the literal reading incompatible — a vanishing rung set equal to a non-vanishing one"
+    },
+    {
+      "name": "hypB_literal_reading_confirmed",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "source": "rung2 − HypB_pred = (-q**6 - q**4 + q**3 - 4*q**2 + 3*q - 2)/(q**4 + q**2), not identically zero, so Hyp-B in its literal reading is REFUTED"
+    },
+    {
+      "name": "hypB_numeric_separation_at_q0",
+      "computed": "2.04322250174",
+      "expected": "2.04322250174",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "|rung2(q_0) − HypB(q_0)| = |0.000483716495696 − 2.04370621823|; the refutation is not a near-miss — the forms differ by a factor of ~4200 at the substrate"
     }
   ],
   "allPassed": true,
-  "durationMs": 283,
+  "durationMs": 216,
   "computation": "qbeta-rung2-hyp-b-wenzl-p3-probe",
   "scriptFile": "qbeta_rung2_hypB_wenzl_p3_probe.py",
-  "scriptHash": "65c670e9a969",
-  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "scriptHash": "f4ce02345b84",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +54,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -57,8 +78,8 @@
     },
     "verdict": "REFUTED",
     "numerical_at_q0": {
-      "rung_2_actual": "0.0004837163440454520352282205",
-      "hypB_pred": "2.043706208532521989402019"
+      "rung_2_actual": "0.0004837164956956220627765728",
+      "hypB_pred": "2.043706218232901310218245"
     }
   }
 }

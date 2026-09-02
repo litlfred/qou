@@ -1,0 +1,162 @@
+{
+  "computation": "qbeta-decay-functional-unification-protium",
+  "engine": "mpmath",
+  "description": "qou-cds1: attacked through protium, the simplest beta decay (daughter 1H, so Q_beta = m_n - m(1H) exactly). With the corpus's derived scale E_0 = m_e/(q0(q0-1)), the counit of Delta_S prices 0.168 % from the ATOMIC target and 39.4 % from the nuclear one, so Delta_S already contains the emitted electron; building the element from protium's own NF instead is REFUTED (every required z is further from the derived cap than the corpus's). E_0*(-eps(Delta_S)) = Q_A identically (prop:neutron-qvalue-symbolic), so the trace and ladder readings share their leading term BY CONSTRUCTION and the c_k are forced to be affine(z)/cos((z-1)h/2 - u/2) -- a reparametrisation residual, not an independent expansion. The 0.9985-vs-0.4991 z discrepancy is the 2508.65x slope ratio between the two correction functions. WITHDRAWS Step 15's claim that the functionals disagree and need a K off by 2.2656x: F_REQUIRED_TRM is exactly (Q_beta/Q_A)/affine(z_D). Lean: QOU/QBeta/DecayFunctionalUnification.lean, 5 theorems, sorry-free.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "assertions": [
+    {
+      "name": "bridge_identity_E0_times_counit_equals_QA",
+      "passed": true,
+      "detail": "|E_0*(-eps) - Q_A| = 0.0 \u2014 prop:neutron-qvalue-symbolic; Lean E0_mul_counit_eq_QA, generic over any char-0 field"
+    },
+    {
+      "name": "corpus_decay_element_is_atomic_not_nuclear",
+      "passed": true,
+      "detail": "E_0*|eps(Delta_S)| is 0.1678 % from Q_beta = m_n - m(1H) and -39.41 % from m_n - m_p: a 234.9x discrimination, zero free parameters"
+    },
+    {
+      "name": "protium_element_is_refuted_as_the_missing_factor",
+      "passed": true,
+      "detail": "on the physical pairing (atomic element, atomic target) the best z is 0.443947 from the derived cap, WORSE than the corpus's own 0.385812. One off-diagonal cell (atomic element vs the NUCLEAR target) is nearer at 0.338572, but that pairing is unphysical and is still 55 % of the way from z_D \u2014 so no cell rescues the route. The obvious move, and it double-counts the electron"
+    },
+    {
+      "name": "two_functionals_share_their_leading_term_identically",
+      "passed": true,
+      "detail": "affine(1) = 1 and E_0*(-tr_M^1(Delta_S)) = Q_A exactly, so leading-order agreement is by construction and carries no information about which reading is right"
+    },
+    {
+      "name": "z_discrepancy_is_the_slope_ratio_not_a_disagreement",
+      "passed": true,
+      "detail": "affine slope 1.11673 vs cosine slope 0.000445153 = 2508.65x; inverting each to the same measured correction gives z = 0.9985003044 and 0.4869951666"
+    },
+    {
+      "name": "F_required_is_where_z_D_sits_on_the_affine_line",
+      "passed": true,
+      "detail": "(Q_beta/Q_A)/affine(z_D) = 1.75923699418 reproduces the committed F_REQUIRED_TRM to 3.64e-9 \u2014 WITHDRAWS Step 15's 'K off by 2.2656x, 20x outside the wall'"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "dps": 50,
+    "nf_basis": [
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
+    ],
+    "tr_M_basis_weights": "[1, z, z, z^2, z^2, h*z^2 + z]",
+    "lean": "QOU/QBeta/DecayFunctionalUnification.lean",
+    "lean_theorems": [
+      "E0_mul_counit_eq_QA",
+      "traceDelta_cross_mul",
+      "traceFunctional_eq_QA_mul_affine",
+      "traceRatio_sub_one",
+      "alpha_two_mul"
+    ]
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "h": "0.2090602987956393",
+    "u": "0.008517234550156141",
+    "z_D": "0.6126880371464652",
+    "z_C": "0.4993203341836945",
+    "E_0_MeV": "4.185981363294476",
+    "Q_A_MeV": "0.7836458273746212",
+    "counit_Delta_S": "-0.1872071945293783",
+    "bridge_residual": "0.0",
+    "targets_MeV": {
+      "atomic_Q_beta": "0.78233341",
+      "nuclear_m_n_minus_m_p": "1.29333251"
+    },
+    "protium_2x2_pct": {
+      "Delta_S  eps = h^2/2 - h (corpus)": {
+        "vs_atomic": "0.16775678",
+        "vs_nuclear": "-39.408789"
+      },
+      "Delta_L  = n - p          net": {
+        "vs_atomic": "21.544895",
+        "vs_nuclear": "-26.477815"
+      },
+      "Delta_L  = n - p       tr(z_D)": {
+        "vs_atomic": "-17.495929",
+        "vs_nuclear": "-50.093506"
+      },
+      "Delta_b  = n - protium    net": {
+        "vs_atomic": "5.597398",
+        "vs_nuclear": "-36.124414"
+      },
+      "Delta_b  = n - protium tr(z_D)": {
+        "vs_atomic": "259.13693",
+        "vs_nuclear": "117.24098"
+      }
+    },
+    "nf_vectors": {
+      "proton": [
+        "-0.0921880535371",
+        "0.0164565446523",
+        "0.999522441834",
+        "0.218297370264",
+        "0.0903207440506",
+        "-0.024325296371"
+      ],
+      "neutron": [
+        "-0.191641667042",
+        "0.00806571364154",
+        "1.01092655213",
+        "0.220581678517",
+        "-0.0188778603077",
+        "-0.0481303778151"
+      ],
+      "protium": [
+        "1.01879530385",
+        "0.0868803339084",
+        "-0.0921880535371",
+        "-0.0699626098246",
+        "0.0164565446523",
+        "0.218297370264"
+      ]
+    },
+    "delta_b_required_z": [
+      "1.3581617268",
+      "1.05663506231",
+      "1.45076248889",
+      "0.95125978372"
+    ],
+    "measured_Q_beta_over_Q_A": "0.9983252416732466",
+    "slopes_at_z_eq_1": {
+      "affine": "1.1167321818",
+      "cosine": "0.000445152554455",
+      "ratio": "2508.65050784"
+    },
+    "z_from_each_route": {
+      "affine": "0.99850030441135",
+      "cosine": "0.48699516660313"
+    },
+    "F_required_reconstructed": "1.759236994183429",
+    "F_required_committed": "1.759236990546106",
+    "ladder_product_by_z": {
+      "z_C": "0.441581901209",
+      "z_D": "0.568044801951",
+      "z=1": "1.00000906798"
+    }
+  },
+  "context": {
+    "axis": "qou-cds1: which decay functional is right \u2014 answered by dissolving it",
+    "answer": "Neither is more right: they are one functional in two coordinates. The trace side is exact and affine in z; the ladder writes the same correction as cos(affine) times a power series, so the c_k are the coordinate-change residual. 'Re-derive the c_k ladder under D' has no hidden answer -- given z the ladder is defined by the equation. The live question is whether the cosine parametrisation should exist at all.",
+    "withdraws": "Step 15 items 5 and its inference: the functionals do NOT disagree and do NOT need a K off by 2.2656x. F_REQUIRED_TRM is (Q_beta/Q_A)/affine(z_D).",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted; no convention adjudicated. The ladder-product figures at z_C and z_D show the parametrisation's behaviour and are NOT proposed c_k values. Delta_S closed forms are the corpus's, valid for the SHORT model."
+  },
+  "gitCommit": "807a18bada9d8c1df058d7765a6ca5e8d32be5ae",
+  "durationMs": 0,
+  "scriptFile": "qbeta_decay_functional_unification_protium_probe.py",
+  "scriptHash": "341209644af8",
+  "scriptCommitSha": "unknown",
+  "commitSha": "807a18bada9d8c1df058d7765a6ca5e8d32be5ae",
+  "computedAt": "2026-08-31T19:06:17.224689+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

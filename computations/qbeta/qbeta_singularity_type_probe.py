@@ -124,6 +124,25 @@ def load_ck() -> dict[int, mp.mpf]:
     with src.open() as f:
         d = json.load(f)
     raw = d["data"]["c_k_extracted_50dps"]
+    # Every rung may be `null`. The SDP extractor nulls a rung it could not
+    # resolve (its `why_unresolved_rungs_are_null` note: once R_k − 1 stops
+    # dropping it IS the model's accuracy floor, and dividing a fixed floor by
+    # an ever-smaller u^k manufactures c_k ~ floor/u^k — a geometric blow-up
+    # with ratio exactly 1/u and flat |c_k·u^k|). Fail with that sentence in
+    # hand rather than with `mpmath: cannot create mpf from None` six frames
+    # down, because the artefact it describes is INDISTINGUISHABLE from the
+    # simple-pole signature this probe reports.
+    missing = sorted((k for k, v in raw.items() if v is None),
+                     key=lambda k: int(k.split("_")[1]))
+    if missing:
+        raise SystemExit(
+            f"BLOCKED: {src.name} has no extracted value for {', '.join(missing)}"
+            f" — {d['data'].get('c_k_resolution', {}).get('n_unresolved', '?')}"
+            f" rungs are recorded unresolved. The discriminator below cannot "
+            f"run, and its former SIMPLE_POLE verdict (flat |c_k·u^k|, ratio "
+            f"1/u) is precisely the artefact that witness now warns those "
+            f"numbers were. Re-derive the c_k before re-running."
+        )
     return {int(k.split("_")[1]): mp.mpf(str(v)) for k, v in raw.items()}
 
 
@@ -245,11 +264,32 @@ def test_essential(c_k: dict[int, mp.mpf], u_subst: mp.mpf) -> dict:
     return out
 
 
+def u_subst_from_canonical_q0() -> mp.mpf:
+    """u = b·ℏ_q² rebuilt from the canonical q₀ PINNING, closed form only.
+
+    The second route to `u_subst`. `load_R_q0` reads `hoefsmit_b` and
+    `hbar_q_sq` as recorded fields of q-beta-operator-valued-N3.witness.json;
+    this recomputes both from `q_parameter.Q_50_DIGIT_STR` via
+    b = √((h²+3)/(h²+4)), h = q − q⁻¹ and ℏ_q² = (1 − q⁻¹)², touching that
+    witness not at all. u_subst is the abscissa every test in this probe
+    measures against — c_k·u^k, log(1/u), the log-log fit — so an upstream
+    that has drifted off the pinning would move all three verdicts silently.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — local: 2nd route only
+    q = mp.mpf(Q_50_DIGIT_STR)
+    h = q - 1 / q
+    return mp.sqrt((h ** 2 + 3) / (h ** 2 + 4)) * (1 - 1 / q) ** 2
+
+
 def main() -> int:
     R_q0, _b, _hbar_q_sq, u_subst = load_R_q0()
+    u_subst_closed = u_subst_from_canonical_q0()
+    u_subst_dev = abs(u_subst - u_subst_closed)
     print(f"Q_β singularity-type probe @ q_0 (m_p anchor)")
     print(f"  u_subst = {mp.nstr(u_subst, 12)}")
     print(f"  1/u_subst = {mp.nstr(1 / u_subst, 8)}")
+    print(f"  u_subst from canonical q₀ closed form = "
+          f"{mp.nstr(u_subst_closed, 12)}   |Δ| = {mp.nstr(u_subst_dev, 6)}")
     print(f"  R(q_0)   = {mp.nstr(R_q0, 18)}")
     print(f"  Compute precision: {mp.mp.dps} dps")
     print()
@@ -259,6 +299,18 @@ def main() -> int:
           f"(canonical-pinned extraction):")
     for k in sorted(c_k.keys()):
         print(f"  c_{k:>2} = {mp.nstr(c_k[k], 14)}")
+    print()
+
+    # Radius of convergence, second route: the ratio test on the k≥8 tail.
+    # PR #1713 read 1/u = 117.41 off exactly these ratios; `u_subst` above
+    # comes from the substrate parameters and never sees a c_k.
+    tail_ratios = [c_k[k + 1] / c_k[k]
+                   for k in sorted(c_k) if k >= ASYMPTOTIC_K_MIN and (k + 1) in c_k]
+    tail_ratio_mean = (sum(tail_ratios) / len(tail_ratios) if tail_ratios
+                       else mp.mpf("nan"))
+    print(f"  ratio-test tail mean c_(k+1)/c_k (k≥{ASYMPTOTIC_K_MIN}) = "
+          f"{mp.nstr(tail_ratio_mean, 12)}  vs 1/u_subst = "
+          f"{mp.nstr(1 / u_subst, 12)}")
     print()
 
     # Hypothesis (P): simple pole
@@ -313,12 +365,57 @@ def main() -> int:
                 continue
             w_out.add_data(f"{d['name']}_{kk}", str(vv))
     w_out.add_data("verdict", verdict)
+    # `singularity_type_discriminator_runs` (computed=True, expected=True) was
+    # a tautology: it recorded that main() reached its last line and could not
+    # fail. Demoted to data. The tail-ratio and u_subst assertions below are
+    # the ones that CAN fail.
+    w_out.add_data("singularity_type_discriminator_runs", {
+        "ran": True,
+        "meaning": "all three hypothesis tests (P, B, E) were evaluated",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    w_out.add_data("u_subst_cross_check", {
+        "from_operator_valued_N3_witness": mp.nstr(u_subst, 30),
+        "from_canonical_q0_closed_form": mp.nstr(u_subst_closed, 30),
+        "abs_deviation": mp.nstr(u_subst_dev, 8),
+    })
     w_out.add_assertion(
-        name="singularity_type_discriminator_runs",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Step 1 of Q_β 1ppQ closure",
+        name="u_subst_witness_matches_canonical_q0_closed_form",
+        computed=mp.nstr(u_subst, 45),
+        expected=mp.nstr(u_subst_closed, 45),
+        tolerance="1e-40",
+        source="u = b·ℏ_q² two ways: the recorded hoefsmit_b × hbar_q_sq "
+               "fields of q-beta-operator-valued-N3.witness.json, vs both "
+               "rebuilt from q_parameter.Q_50_DIGIT_STR by closed form. "
+               "u_subst is the abscissa of every test here — c_k·u^k, "
+               "log(1/u), the log-log fit — so an upstream that drifts off "
+               "the pinning moves all three verdicts at once.",
+    )
+    w_out.add_assertion(
+        name="ck_tail_ratio_recovers_inverse_u_subst",
+        computed=mp.nstr(tail_ratio_mean * u_subst, 30),
+        expected="1",
+        tolerance="1e-2",
+        unit="ratio of the two routes",
+        source="Radius of convergence two ways at the k≥8 tail: the mean of "
+               "c_{k+1}/c_k over the SDP-extracted coefficients, vs 1/(b·ℏ_q²) "
+               "from the substrate parameters. PR #1713 read the radius off "
+               "the first; the second never touches a c_k. Agreement is the "
+               "premise the (P)/(B)/(E) discrimination stands on — and, per "
+               "the upstream's own note, is ALSO what a pure accuracy-floor "
+               "artefact would produce, so it is necessary, not sufficient.",
+    )
+    w_out.add_caveat(
+        "PREMISE UNDER DOUBT (recorded, not repaired): the upstream "
+        "qbeta-decay-sdp-extended-ck.witness.json now records all nine c_k as "
+        "unresolved (null), with the note that once R_k − 1 stops dropping it "
+        "is the model's accuracy floor and c_k := (R_k−1)/u^k then manufactures "
+        "a geometric blow-up of ratio exactly 1/u with flat |c_k·u^k| — which "
+        "is verbatim the SIMPLE_POLE signature this probe reported. The "
+        "committed witness's verdict must be read as provisional until the "
+        "c_k are re-derived; this producer now refuses to run against nulls "
+        "rather than crashing inside mpmath."
     )
 
     out = w_out.save()

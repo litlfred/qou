@@ -105,7 +105,29 @@ Q0 = float(Q_50_DIGIT_STR)
 # So: the 50-dps STRING goes to y_lambda, and float() only where numpy needs it
 # (chi_numpy / hoefsmit are f64 by construction anyway).
 Q0_STR: str = Q_50_DIGIT_STR
-RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
+# READ the pin; do not transcribe it. This was
+#     Q0 = 1.1099785955573347
+# -- a bare float64 literal of the RETIRED muon pin A (superseded by CODATA 2022
+# in fca08de7d29, 2026-08-28). The witness recorded it as `q0` while
+# `stamp_staleness_metadata(..., q0_anchor=None)` below resolved to the default
+# PROTON anchor and wrote `q0Value` = 1.10997858275138..., so the witness
+# declared an anchor it had not computed at, with its own two fields ~11.5 ppb
+# apart -- the mu-p substrate tension itself. `q0_anchor_consistency_audit`
+# compares q0Anchor against q0Value, and those agreed, so the straddle passed
+# every gate (bean `qou-tekx`).
+#
+# Proton is the correct target here, not a choice: AGENTS.md's 2026-08-07 owner
+# directive makes the experimental (proton) pin the default for all touched
+# compute, and this stem is absent from `q0_anchor_manifest.json` entirely, so
+# the stamper already resolves it to proton. Reading `q_parameter.Q` makes the
+# computation agree with the stamp instead of contradicting it.
+#
+# float64 is forced at this boundary, not chosen: scipy/numpy below
+# (`linprog`, `np.linalg`) cannot accept mpf. `q_parameter.Q` is already the
+# float64 view of the proton pin, so nothing is downgraded here that was not
+# float64 for the whole probe. The verdict is combinatorial (support sizes /
+# PSD counts), not a precision measurement.
+from q_parameter import Q as Q0  # noqa: E402RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
 
 
 def _parts(n, mx=None):

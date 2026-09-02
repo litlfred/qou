@@ -91,21 +91,18 @@ class PhiQTowerAlgebraicStratification (R : Type u) [CommRing R] where
       PR #535. -/
   pentagon_ascension : level3plus = 0
 
-/-- **The algebraic-stratification proposition** (statement-level).
 
-    Given any instance of `PhiQTowerAlgebraicStratification R`, the
-    mass equals the sum of the four GS-filtration levels.  This is
-    the formal content of `prop:phi-q-tower-algebraic-stratification`,
-    extracted from the class field `mass_sum`.
+/-! ### Removed 2026-08-30 — self-assuming projections
 
-    The proposition is **unconditional**: no `[VolumeConjecture q]`
-    needed.  -/
--- Ref: [manuscript] `prop:phi-q-tower-algebraic-stratification`,
---      §"Proof". Term-by-term identification of the mass formula
---      with the level-indexed sum over GS-filtration strata.
-theorem phi_q_tower_algebraic_stratification
-    {R : Type u} [CommRing R] [s : PhiQTowerAlgebraicStratification R] :
-    s.mass = s.level0 + s.level1 + s.level2_adj + s.level2_non_adj :=
-  s.mass_sum
+- `phi_q_tower_algebraic_stratification` — body was `s.mass_sum`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot

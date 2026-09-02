@@ -149,11 +149,23 @@ def main() -> int:
     print(f"  Worst multi-dim residual: {mp.nstr(multi_dim_max_resid, 4)}")
 
     # Headline assertions.
+    #
+    # This was `computed=1, expected=1` (bean `qou-26f2`), and the sibling
+    # site at the top of this function shows what it should have been: the
+    # absent-witness path asserts `computed=0, expected=1`, a real failure.
+    # Same assertion name on two branches, and only this one hardcoded its
+    # answer — true by control flow, since the guard above returns when the
+    # witness is None.
+    #
+    # Now checked against the loaded content rather than the branch taken:
+    # "present" should mean the witness carries per-λ results, so a file that
+    # exists but arrives empty fails here instead of reporting present.
     w.add_assertion(
         name="A_operator_witness_present",
-        computed=1,
+        computed=int(bool(rs)),
         expected=1,
-        source="v_hat_to_chi_lambda_integrated",
+        source=f"v_hat_to_chi_lambda_integrated: {len(rs)} per-λ "
+               f"result(s) loaded",
     )
     w.add_assertion(
         name="multi_dim_residuals_below_threshold",

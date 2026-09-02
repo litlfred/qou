@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
-title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: todo
+title: 'GAP (closed): thm:wedderburn-mass-formula''s three invariants were carried — Phi_2/Phi_3 now derived, Phi_1 recomputed under convention D, D table adopted'
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T19:01:37Z
+updated_at: 2026-08-30T08:26:01Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -580,3 +580,527 @@ TWO THINGS REMAIN, both recorded as caveats, neither authorised here:
      This is the deeper provenance gap and is the natural next item.
   2. Base masses are 44/36 ppm below CODATA -- ~1.5 MeV at Z=20, i.e. LARGER
      than the coefficient fix on heavy rows. Separate defect.
+
+
+=== ARC REVIEW 2026-08-29 — where this stands after three sibling PRs ===
+
+Returning to this arc after main moved ~2500 commits. Reviewed rather than
+resumed, because most of what I left open was closed by other sessions while
+I was away — and two of my own claims did not survive.
+
+MY CLAIMS, ADJUDICATED
+  RETRACTED (theirs, correct — verified independently here). "Vol_B3 is
+    mislabelled: 8G, not a volume." WRONG. Vol(Borromean) = 2*V_oct = 8G IS
+    the volume, V_oct = 4G, and binding_link_volumes.py:112 already sets
+    VOL_B3 = 8*catalan under that exact comment. I mistook a closed form for a
+    substitution — and the check that catches it is the same corpus-grep my
+    own audit section 1 invokes. I failed to run my own discipline.
+    Worse than a wrong claim: alpha = m_e*8G and Vol_B3 = 8G are the SAME
+    number because alpha = m_e * Vol(B^3). Calling it a mislabelling destroyed
+    a real structural coherence.
+  SUPERSEDED, by a strictly stronger argument. I left "either the published
+    h_A^2 is wrong or beta3 is undocumented" open, saying the artifact cannot
+    distinguish. It can be settled without the artifact: h_A^2 = [3]_q - 3
+    exactly, so beta2 = -2[3]_q forces 2*beta3 + beta2 + 6 = 0 IDENTICALLY IN
+    q. The recorded pair misses by 0.012385 — inconsistent for EVERY q. Mine
+    needed q0 and produced a 14.2 % gap at one anchor. Verified both here.
+  STANDS. The Delta/B vs Delta/m recast (the published error metric divides by
+    the inputs); the four space-corrupted citations; the migration class
+    (three witnesses lost to folio-assistant/computations/ in miga); the
+    basename-search discipline.
+
+WHAT LANDED WHILE I WAS AWAY
+  #5763, #5773 (265ae726df), #5781. Net: the table was REGENERATED under
+  h_A^2 — mean 0.0745925 %, max 0.190854 % (worst row improves), 0 fitted
+  parameters, proton pin, and the block is now witness-backed by
+  computations/wedderburn_mass_table_z1_20.py. My own PR #5758 was closed
+  WITHOUT merging, but all of its content reached main by rebase at
+  2026-08-25T20:16Z — verify content, not PR state, before assuming work was
+  lost.
+
+THE TWO REMAINING ITEMS — and item 1 is my n=3 finding, which nobody has
+connected:
+
+  1. Phi_1/Phi_2/Phi_3 are CARRIED VERBATIM from the recovered witness, not
+     re-derived (wedderburn_mass_table_z1_20.py:30, :69, :204 say so
+     explicitly). Named there as "the deeper provenance gap and the natural
+     next item".
+     *** THIS IS EXACTLY WHAT computations/wedderburn_Mi_constructor_test.py
+     ATTEMPTED AND FAILED. *** That probe reconstructs Phi from the content
+     blocks (def:atomic-braid + tbl:atomic-braid-table1-data +
+     thm:wedderburn-mass-formula) and misses D by 54 %-2653 % across four
+     readings of the M_i prose. So the gap is not merely unclosed — its size
+     is already MEASURED, and the measurement says the published prose does
+     not determine the construction. Anyone taking item 1 should start from
+     that probe, not from scratch, and should treat "which reading" as the
+     open question rather than assuming one.
+     This also re-scopes my "unfalsifiable as written" finding correctly: the
+     TABLE is now reproducible (witness-backed, 0 fitted parameters); it is
+     the DERIVATION of Phi from the atomic braid that is not.
+
+  2. Base masses 44/36 ppm below CODATA (M_P = 938.230457, M_N = 939.532005),
+     explicitly not fixed. Measured here against binding, since "larger than
+     the coefficient fix" is true but not the right yardstick:
+        D      -0.0750 MeV   3.37 % of B
+        4He    -0.1501 MeV   0.53 %
+        12C    -0.4503 MeV   0.49 %
+        40Ca   -1.5009 MeV   0.43 %   (vs +1.205 coefficient fix — larger, yes)
+        208Pb  -7.6241 MeV   0.47 %
+     Real, and worst at D where B is smallest — but ~0.4 % of B on heavy rows
+     against a reported Delta/B near 9.9 %, so NOT the dominant term. Fixing it
+     will not close the table; treat it as hygiene, not as the accuracy story.
+
+NEXT, my judgement and open to being overruled: item 1, entered through the
+existing constructor probe. Item 2 is cheaper and certain, but it is hygiene —
+it moves 0.4 %-of-binding on rows already 9.9 % out. Item 1 is where the
+framework's claim actually rests, and it already has a measurement waiting.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; no fitting (owner,
+2026-08-25); do not close the D residual with any parameter; only CAL-1/2/3
+admissible.
+
+
+=== ITEM 1, ONE THIRD CLOSED (commit 63b99a84ba) ===
+
+Entered item 1 through the existing constructor probe, as the review proposed.
+
+DERIVED, not observed. Every tbl:atomic-braid-table1-data crossing has
+chirality ratio lam_sym/lam_alt equal to -q^2, -q^-2 or +-1:
+    pp,ee -> -q^2 (+2 units of ln q)   nn,pe -> -q^-2 (-2)   pn,ne -> +-1 (0)
+These are the three cases ALREADY PROVED sorry-free in
+QOU/BraidKnot/HeckeLinearReduction.lean (symAltRatio_zero/_full/_half) plus the
+identity. So Phi_3 is FORCED to be an EVEN integer multiple of ln q — no
+ordering, no M_i reading, no anchor needed.
+
+MEASURED. All 20 carried Phi_3 = w*ln q, integer w, every w even. Residuals are
+NOT noise: a constant RELATIVE 1.22e-5 = (1.10998 - q0_proton)/q0_proton. The
+producer used its own recorded 5-decimal q; at that q, |w - Phi_3/ln q| <= 4.3e-6
+on every row.
+
+REFUTED — do not quote. w = -Z(2N - Z + 1) matches 18/19 non-hydrogen rows and
+FAILS Ar (recorded -498, formula -486). Ar is the ONLY row with N-Z > 1; every
+other row is N=Z or N=Z+1. Read off a sample blind to the (N-Z) dependence, and
+the one row testing it kills it. Scope (a).
+
+STATUS
+  Phi_3 quantum ..... DERIVED (Lean, sorry-free)
+  Phi_3 integer w ... OPEN, one candidate refuted
+  Phi_1, Phi_2 ...... UNTOUCHED — neither is quantised, so this does not reach
+                      them. Phi_3 was the tractable third; the other two are not
+                      easier for this being done.
+
+NEXT for w, needing no new mathematics: w = 2*sum_j m_j*s_j, s_j the crossing
+sign, m_j the number of chains M_i containing crossing j. So w is a
+POSITION-WEIGHTED CROSSING COUNT, and finding it is a question about the
+ground-state ORDERING — the exponential minimisation this arc already flagged.
+The obstacle is one we already named, which is why I did not push further.
+
+=== A THIRD GATE CATEGORY, worth carrying forward ===
+
+`q0-anchor refill ratchet` was RED on the branch with "NEW (not in baseline): 1"
+and GREEN on clean main — so it read as mine. It was NEITHER mine NOR
+pre-existing: the branch was 37 commits behind, and a witness main had since
+stamped read as newly-unstamped against the newer baseline. MERGING MAIN
+CLEARED IT.
+
+So a gate red has THREE possible owners, not two: the branch's change, main's
+state, or the branch's STALENESS. Check the third before attributing. Final
+state here: this branch's five reds are byte-identical to clean main's five.
+
+Also caught: the stash/checkout dance for the baseline comparison left OTHER
+AGENTS' bean edits in my working tree. Reset to HEAD and re-applied only my own
+file. A baseline comparison that touches the tree can pick up neighbours' work —
+check `git status` before every commit, not just at the end.
+
+
+=== THE ORDERING IS NOT THE OBSTACLE — I named it wrong (commit fb27763501) ===
+
+The previous entry derived Phi_3's quantum and named the ground-state ORDERING
+as the next obstacle for w(Z,N). WRONG, and here is the refutation.
+
+What I missed: w is an EXACT INTEGER already in the tree, so the ordering can be
+INVERTED rather than derived. Enumerate every ordering def:atomic-braid allows
+(each electron immediately before its proton), compute w, compare.
+
+RESULT over 4 readings of the M_i prose x every allowed ordering, He/Li/Be/B/C:
+16 of the 20 (atom x reading) cells do not merely miss — the target is OUTSIDE
+the achievable range entirely.
+
+And the failure is STRUCTURED. For Li, Be, B, C the recorded w sits strictly
+BETWEEN the weakest weighting (m_j = 1) and the next weakest (m_j = j-1):
+
+    atom  target   max at m=1   max at m=j-1
+    Li      -18        -6           -24
+    Be      -28        -8           -44
+    B       -40       -10           -70
+    C       -42       -12           -90
+
+The ordering only slides w WITHIN a family; the target is in the gap BETWEEN
+families. No ordering reaches it.
+
+WHY THIS MATTERS MORE THAN THE NEGATIVE. def:atomic-braid's ground-state rule is
+an exponential minimisation (C(40,20) = 1.4e11 at Ca), already flagged by this
+arc as intractable as written. I had put it on the critical path for Phi_3. IT IS
+NOT ON THAT PATH. That removes the one genuinely unsolvable-as-written step from
+the Phi_3 problem.
+
+WHERE THE OBSTACLE ACTUALLY IS: upstream of the ordering — the crossing-sign
+assignment (Table 1 as read), the chain structure, or the strand content.
+
+SCOPE (a): this construction over these orderings/readings does not reach the
+integers. Excludes the ORDERING as the search target, not a construction. He is
+reachable (m=1 family) and is least constrained, so it weighs little.
+
+DO NOT, on picking this up: solve for a weight profile m_j that WOULD hit the
+targets. That is fitting a construction to its own outputs and the owner
+directive of 2026-08-25 forbids it. I deliberately did not do it.
+
+STATUS NOW
+  Phi_3 quantum ....... DERIVED (Lean, sorry-free)
+  Phi_3 integer w ..... OPEN — but the ordering is RULED OUT as the obstacle,
+                        and one closed form (-Z(2N-Z+1)) is refuted by Ar
+  Phi_1, Phi_2 ........ UNTOUCHED — not quantised, so neither argument reaches
+                        them
+
+NEXT, and it is now a narrower question than before: which of the three upstream
+candidates is wrong — the crossing signs, the chain structure, or the strand
+content. The Phi_3 integers are 19 exact constraints to test any candidate
+against, which is a far sharper instrument than the MeV corrections I started
+this arc with.
+
+
+=== ANSWERED: THE CHAIN STRUCTURE — and two invariants are now RE-DERIVED (4366709e74) ===
+
+Which of crossing signs / chain structure / strand content is wrong: the CHAIN
+STRUCTURE, and the error is MINE, not the corpus's.
+
+thm:wedderburn-mass-formula says M_i chains "the crossing matrices of all
+strands j > i". I read that as a SUFFIX PRODUCT OF ADJACENT crossings and tested
+four variants of that misreading. It means what it says: for strand i, cross
+with EVERY strand j > i. Summing over i visits every PAIR once. ALL-PAIRS, with
+NO ordering dependence — which is exactly why the ordering inversion failed and
+why the target sat in the gap BETWEEN ordering-dependent families.
+
+The corpus already said so: markov-pair-z2.md:137 — the pair weight holds
+"regardless of its position in the braid, matching the empirically-verified
+all-pairs set". I did not connect it.
+
+RETRACTION, and it is on MAIN. My claim in this arc and in PRs #5743 + #5753
+(both merged) that "the published prose does not determine the construction" and
+that the formula is "unfalsifiable as written" is WRONG and withdrawn. The prose
+determines it; I misread one preposition four ways and never tried the plain
+reading. THAT CLAIM IS LIVE ON MAIN AND NEEDS CORRECTING THERE — in
+computations/wedderburn_Mi_constructor_test.py's SCOPED banner and
+wedderburn_table_binding_recast.py's docstring. Not done in this commit.
+
+RE-DERIVED (signs from HeckeLinearReduction.lean's sorry-free ratio lemmas;
+pair counts forced by strand content Z p, N n, Z e):
+
+  Phi_3 = w*ln q,  w = 2[2*C(Z,2) - C(N,2) - Z^2] = -2Z - N(N-1)
+      19/19 EXACT, including Ar — the row that REFUTED the earlier candidate
+      -Z(2N-Z+1). Held-out confirmation, not a fit.
+  Phi_2 = Z*N*ln(1 + h^2/4)
+      19/19, worst rel err 5.0e-6 = the 6-decimal publication precision.
+
+Phi_2 also discriminates the pn coefficient: only pn has |det| != 1, and the
+recorded values match the UN-DOUBLED (1, -h/2), NOT Table 1's doubled (2, -h).
+Both give chirality ratio -1, so Phi_3 is unaffected — which is why Phi_3 held
+at 19/19 while Phi_2 decides. (1, -h/2) is symAltRatio_half's exact hypothesis.
+
+CONVENTION C EXCISED (owner directive, received mid-work). Costs nothing here:
+Phi_2 and Phi_3 are CONVENTION-FREE — neither uses z at all. The C/D ruling does
+not reach them; both stand under D unchanged. Phi_1 is the ONLY invariant using
+z, hence the only convention-dependent one.
+
+PHI_1 — NOT SHIPPED, finding recorded here instead. Its probe computed in
+convention C and was DELETED rather than committed; zero C sites in what landed.
+The provenance finding, as a fact about the recovered artifact and an input to
+the C-excision effort:
+  Under convention C, minimised over orderings (def:atomic-braid's own
+  ground-state rule), Phi_1 reproduced He (-5.55890166 vs -5.558902) and Li
+  (-9.83864166 vs -9.838642) at published precision. Be missed under the
+  "electron immediately before its proton" constraint, so that constraint is
+  too strong or the true ground state lies outside it.
+  => the April-2026 producer appears to have been CONVENTION-C. That bears on
+     whether the published table is C-frame. OWNER DECISION, not mine.
+
+STATUS
+  Phi_2 ..... RE-DERIVED, 19/19, convention-free
+  Phi_3 ..... RE-DERIVED, 19/19, convention-free
+  Phi_1 ..... open; convention-dependent; C evaluation excised
+
+NEXT: (1) correct the "unfalsifiable as written" claim on main — it is my own
+and it is wrong; (2) Phi_1 under convention D, which is the honest way to ask
+whether the table survives the C excision at all.
+
+
+=== BOTH NEXT ITEMS DONE (cf660aaa4f) ===
+
+(1) RETRACTION AT SOURCE. The "unfalsifiable as written / prose does not
+determine a unique construction" claim is corrected in the two files on main
+that carried it: wedderburn_Mi_constructor_test.py (SCOPED banner) and
+wedderburn_mass_table_z1_20.py (my cross-reference). The constructor probe's
+numbers are kept as the record of a REFUTED READING and now say so. The table
+producer's caveat now says the remaining gap is PHI_1 ALONE, not all three.
+
+(2) PHI_1 DOES NOT SURVIVE THE C EXCISION — measured, convention D only.
+
+    atom   carried Phi_1   min over D    reachable?   rel gap
+    He        -5.558902    -4.064853         NO        0.269
+    Li        -9.838642    -6.979815         NO        0.291
+    Be       -18.272718   -10.642315         NO        0.418
+    B        -22.803608   -14.999845         NO        0.342
+    C        -24.310734   -17.239301         NO        0.291
+
+0/5. Every carried value lies BELOW convention D's reachable minimum, by
+27-42 %. The carried Phi_1 — and therefore the published mass table computed
+from it — is a CONVENTION-C ARTIFACT.
+
+COST OF THE EXCISION: excising C does NOT leave the table intact. Phi_1 must be
+recomputed under D, moving every published row. OWNER DECISION, same kind as
+the beta3 repair. Not taken here.
+
+WHAT IT DOES NOT COST: Phi_2 and Phi_3 are convention-free (neither uses z) and
+stay re-derived at 19/19 under D. So the excision's blast radius is EXACTLY ONE
+INVARIANT — which is the useful part of the measurement.
+
+Probe: computations/phi1_convention_d_probe.py (D only; the earlier C-computing
+probe was deleted, not committed).
+
+SCOPE (a): 400-arrangement cap (reported per row, hit for B and C), five light
+atoms, one chain structure. Not a claim that no convention-D construction
+reaches these values — only that the one which works for Phi_2 and Phi_3 does not.
+
+=== ARC STATUS ===
+  Phi_2 ..... RE-DERIVED 19/19, convention-free
+  Phi_3 ..... RE-DERIVED 19/19, convention-free
+  Phi_1 ..... open, convention-dependent, and shown to be C-frame
+  item 2 .... base masses 44/36 ppm below CODATA, untouched
+
+NEXT, and it is now an owner call rather than a research question: recomputing
+Phi_1 under D moves every published row of the mass table. Someone has to decide
+whether the table is regenerated (as beta3 was, PR #5781) or the C-frame
+provenance is documented and the table left as-is. The measurement needed to
+make that decision is done; the decision is not mine.
+
+
+=== CONVENTION D REGENERATION DONE (97fe14f6d7) — and it is 2.4x LESS ACCURATE ===
+
+Owner authorised 2026-08-29: "recompute Phi_1 (and anything else convention
+C -> D)". Done. Producer: computations/wedderburn_mass_table_convention_d.py
+
+TWO OF THE THREE STOPPED BEING CARRIES. Phi_2 and Phi_3 are no longer taken from
+the recovered witness at all — both are DERIVED:
+    Phi_3 = (-2Z - N(N-1)) * ln q
+    Phi_2 = Z*N * ln(1 + h^2/4)
+Both reproduced all 19 carried values exactly, so the swap is value-neutral, and
+both are CONVENTION-FREE (neither uses z) so C->D does not move them.
+Phi_1 is the only z-dependent invariant and is the only thing actually recomputed.
+
+MINIMISATION: exponential (C(40,20) = 1.4e11 at Ca), so swap hill-climbing with
+restarts — VALIDATED, not assumed: finds the exact global minimum on all five
+atoms where exhaustive enumeration is feasible (He, Li, Be, B, C). Rows record
+their regime: 5 exact, 14 local.
+
+THE RESULT:
+                        mean |err|     max |err|
+    published (conv C)   0.0745925 %   0.190854 %
+    recomputed (conv D)  0.182721  %   0.321365 %
+
+2.4x worse on the mean, 1.7x on the max. Every D row shifts POSITIVE, +11 to
++53 MeV. THE CONVENTION EXCISION COSTS ACCURACY ON THIS TABLE.
+
+WHAT IT DOES NOT MEAN: that convention C is right. The 2026-08-15 ruling settled
+that on other grounds, and a table fitting better in the superseded convention is
+exactly what you expect if it was BUILT in that convention. What it DOES mean:
+the published Z=1..20 accuracy figures were convention-C figures, and the honest
+D-frame numbers are the ones above.
+
+NOT DONE — OWNER DECISION: replacing the published table. This producer stands
+BESIDE the convention-C one rather than overwriting it, because swapping a
+20-row published table for one 2.4x less accurate is a content decision. The
+numbers needed to make it are in the producer's output.
+
+ARC STATUS
+  Phi_2 ..... DERIVED, convention-free, replaces the carry
+  Phi_3 ..... DERIVED, convention-free, replaces the carry
+  Phi_1 ..... RECOMPUTED under D; costs 2.4x accuracy
+  item 1 .... effectively CLOSED — nothing is carried any more
+  item 2 .... base masses; the D producer already uses CODATA, so this is
+              folded in here rather than outstanding separately
+
+NEXT: the owner call above (adopt the D table or keep C-frame with documented
+provenance). No research question is blocking.
+
+
+
+=== THE D TABLE IS ADOPTED (owner, 2026-08-29: "adopt the convention-D table") ===
+
+The entry immediately above says "NOT DONE — OWNER DECISION: replacing the
+published table. This producer stands BESIDE the convention-C one rather than
+overwriting it." THAT IS NOW FALSE and is the reason for this entry: the owner
+took the decision and the swap is done. A reader who stops at the previous
+section will conclude the C table is still published.
+
+WHAT CHANGED, on branch claude/arc-workplan-review-2026-08-29 (PR #6043):
+  - mass-table-z1-20-table-data.ts  -> script/witness rewired to
+    computations/wedderburn_mass_table_convention_d.py and its witness.
+  - mass-table-z1-20-table-data.md  -> REGENERATED from the D witness. It is
+    generated, never transcribed; do not hand-edit a row.
+  - mass-table-z1-20.md             -> two new sections: what convention D
+    costs (with the C->D and base-mass changes SEPARATED, not quoted together)
+    and what is now derived vs carried.
+  - wedderburn_mass_table_convention_d.py -> emits a witness via WitnessBuilder
+    (it previously printed and saved nothing, so the .ts had nothing to cite).
+
+THE ACCURACY LOSS IS PUBLISHED, NOT BURIED. mean |Delta|/m 0.0746 % -> 0.1827 %,
+max 0.1909 % -> 0.3214 %. The block states this as measured and explicitly says
+it is not an improvement.
+
+THE TWO CHANGES WERE SEPARATED, because quoting them together would have
+misattributed the loss:
+    published, conv C, recorded base masses ....... 0.0746 %
+    conv C -> D, base masses held fixed ........... 0.1787 %
+    base masses recorded -> CODATA, D held ........ 0.1827 %
+The convention accounts for nearly all of it. Note the direction of the last
+row: using the CORRECT CODATA base masses makes agreement slightly WORSE, which
+is what you expect if the formula had been absorbing part of the input error.
+I nearly published a wrong D-vs-C attribution by comparing the D producer
+(CODATA base masses) against the C table (recorded ones) in one step.
+
+LEAN. The algebra the two derived invariants rest on is proved, sorry-free,
+axiom-clean, in QOU/BraidKnot/HeckeLinearReduction.lean: detT_zero / detT_full /
+detT_id / detT_half (the |det| = 1 dichotomy that collapses Phi_2 to one term
+per p-n pair), one_add_hSq_div_four, symAltRatio_zero / _full / _half, and
+chiralityCount_collapse. All over a generic CommRing or Field with h free — no
+q, no z, no anchor — which is WHY Phi_2 and Phi_3 are convention-independent.
+A tautology I wrote to dodge CommRing division (detT_half_four_mul: A = B - (A - A'))
+was DELETED, not kept: it is the vacuous pattern AGENTS.md 1a bans.
+
+TITLE. This bean's title asserted "unfalsifiable as written" until now. I
+retracted that claim (see the RETRACTION entries above): "all strands j > i"
+means ALL-PAIRS, and I had tested four variants of one misreading without ever
+testing the plain one. The filename still carries the older "is not exact at
+n=3" phrasing — beans files are named at creation and it cannot be renamed
+without minting a new ID. Read the title, not the filename.
+
+ARC STATUS
+  Phi_2 ..... DERIVED, convention-free, Lean-proved algebra, 19/19
+  Phi_3 ..... DERIVED, convention-free, Lean-proved algebra, 19/19
+  Phi_1 ..... RECOMPUTED under D and PUBLISHED; costs 2.4x accuracy
+  item 1 .... CLOSED. Nothing is carried.
+  item 2 .... CLOSED. The D producer uses CODATA base masses.
+
+WHAT IS ACTUALLY LEFT, and it is not a research question: the owner's judgement
+on whether a 2.4x accuracy loss is acceptable now that it is visible in the
+published block. If the answer is no, the honest move is to document the C-frame
+provenance and revert the adoption — NOT to re-fit Phi_1. Still prohibited,
+unchanged: no seventh Delta_lambda ansatz, no parameter beyond CAL-1/2/3, and
+sign agreement remains one bit.
+
+
+
+=== QUEUED LEAD (not worked): the xzrj arc on main derives a z-dependence I only measured ===
+
+Noticed on a check-in, recorded so it does not evaporate. NOT investigated, NOT
+claimed to transfer. Do not treat the connection below as established.
+
+WHAT LANDED ON MAIN (b1e9af9538 .. 9ce3ed2942, bean qou-xzrj, q-beta sector):
+"ALL of mu's convention-dependence is derived; only a pure-q constant is still
+identified", reaching mu = -dim/([3]_q * y_(2,1)) with the residual gap a
+z-FREE constant. Verified same object, not merely the same letter:
+qbeta_mu_is_block_invariants_probe.py evaluates y_(2,1)(z_D) at the proton pin
+under convention D — the same Markov parameter z = q^3/(q^2+1) that Phi_1 uses.
+
+WHY IT MIGHT BEAR ON PHI_1. Phi_1 is the one z-dependent invariant of the three,
+and this arc RECOMPUTED it numerically under D rather than deriving its
+z-dependence. The xzrj route factorises a z-dependent scalar into NAMED block
+invariants (y_(2,1), [3]_q, dim) and isolates a z-free residue. If Phi_1's
+z-dependence admits the same treatment, the D recomputation stops being a
+number and becomes a derivation — which is what would actually answer the
+2.4x accuracy question rather than merely reporting it.
+
+WHY IT PROBABLY DOES NOT TRANSFER, and this is the honest half. mu is a SCALAR
+NORMALISATION. Phi_1 is a MINIMUM over arrangements — exponential in A, hit by a
+400-arrangement cap in the earlier probe and by hill-climbing in the producer
+(5 rows exact, 14 local). A minimisation over a combinatorial set is not the
+kind of object a factorisation into block invariants closes; the min operator
+is exactly what blocks a closed form. Different sector too: q-beta decay, not
+the mass table.
+
+SO: a lead, at maybe-low odds, whose value is that it is CHEAP TO KILL — read
+qbeta_mu_is_block_invariants_probe.py and ask whether anything in it survives
+a min(). If the answer is no, write that down and close the lead; a recorded
+negative is worth more than an unexamined maybe.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; NO FITTING; only
+CAL-1/2/3 admissible; and a factorisation that reproduces Phi_1 by tuning a
+constant against the table is a fit, not a derivation.
+
+
+
+=== THE xzrj LEAD IS DEAD — and my objection to it was wrong (PR #6137) ===
+
+Worked the lead I queued above. It dies, but NOT for the reason I recorded, and
+the difference matters for anyone who picks this up.
+
+WHAT I HAD WRITTEN: "mu is a scalar normalisation, Phi_1 is a MINIMUM over
+arrangements, and min() is exactly what a factorisation into block invariants
+does not close."
+
+THAT IS WRONG ABOUT THE MECHANISM. I reasoned from the shape of Phi_1 instead
+of reading the producer. In wedderburn_mass_table_convention_d.py::V the
+transfer recursion builds (a, b) from the crossing content ALONE, and z enters
+exactly once, at the end:
+
+    def V(chain):
+        a, b = mp.mpf(0), mp.mpf(1)
+        for c, d in chain:
+            a, b = a*(c*H + d) + b*c,  a*c + b*d
+        return Z_D * a + b            # z appears HERE and nowhere else
+
+So V is AFFINE in z with z-FREE coefficients (verified: divided second
+difference over three z points is exactly 0.0), and
+
+    Phi_1(seq) = sum_i log |z*a_i + b_i|.
+
+A min over a finite set of z-free (a_i, b_i) multisets is NO obstacle to a
+closed form at all. The min was never the problem.
+
+WHY IT DIES ANYWAY — the coupling I had not considered. The argmin ARRANGEMENT
+moves with z. Exhaustive over all arrangements at z_D and z_C:
+
+    atom   Z   N   #arrangements   argmin stable?
+    He     2   2               6   yes
+    Li     3   4              35   yes
+    Be     4   5             126   yes
+    B      5   6             462   yes
+    C      6   6             924   NO -- it moves
+
+One of five. There is no fixed multiset to factorise: the combinatorial
+selection carries its own convention-dependence, and that is what blocks the
+xzrj route.
+
+TWO THINGS WORTH KEEPING, so this is not merely "closed, no":
+
+  1. NEAR-SEPARABILITY. 4 of 5 stable means the coupling is weak and localised,
+     not pervasive. A future attempt has a sharp question rather than a vague
+     one: are the z-free a_i, b_i named block invariants, and is the argmin
+     instability confined to a characterisable set of atoms? That is a better
+     starting point than the lead had.
+
+  2. A SUBSTANTIVE FACT ABOUT THE ADOPTED TABLE. For carbon, the C and D tables
+     do not merely evaluate the same arrangement at two z -- THEY MINIMISE AT
+     DIFFERENT ARRANGEMENTS. Stronger than "Phi_1 moved", and not previously
+     recorded anywhere in the corpus.
+
+Probe: computations/phi1_z_separability_probe.py (mpmath 50 dps end to end, no
+float64; q0 from q_at(50), not the f64 constants.Q). SCOPE (a): five light
+atoms, two z points, exhaustive over arrangements. Not a claim about all Z or
+all z, and nothing is excluded.
+
+METHOD NOTE FOR MYSELF: I recorded the lead WITH an objection and the objection
+was the wrong one. Queuing a lead with a reason it will fail is still better
+than queuing it bare -- it made the test obvious -- but the reason has to be
+checked against the code, not inferred from the shape of the formula. Reading
+V() took two minutes and overturned it.

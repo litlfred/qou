@@ -328,6 +328,7 @@ export default chapter({
             "delta-lambda-dt-index-unification",
             "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
+            "brunnian-binding-channel",
             "jet-filtration-binding-extensive",
             "tower-geometric-lower-bound",
             "level-selection-not-linear",

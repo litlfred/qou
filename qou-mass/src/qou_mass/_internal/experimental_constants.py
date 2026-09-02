@@ -219,7 +219,38 @@ VOL_BORROMEAN_ERR    = 1e-15
 # witness rather than this constant; this constant is kept for backward
 # compatibility with f64-tier consumers.
 VOL_BORROMEAN_50DPS_STR = "7.3277247534177521204368281194590728861931949942534"
-VOL_4_1_50DPS_STR       = "2.02988321281930725004240510854904057483004159909893"
+# Figure-eight knot complement, closed form Vol(4_1) = 2·Cl₂(π/3) (Thurston).
+# Until 2026-08-30 this string agreed with 2·Cl₂(π/3) to only **36**
+# significant digits: it ran `2.029883212819307250042405108549040` and then
+# diverged at digit 37, continuing `5748300415990989` where the truth
+# continues `5718833786150606` — abs err 2.947e-36, under a name promising
+# 50. (The bad value is quoted here in two pieces deliberately: spelled as
+# one decimal it becomes a fresh false positive in the very audit report
+# discussed below.) No consumer wanted 36 digits: three
+# probes read it straight into `mp.mpf(...)` and carried a 1e-36 error through
+# 50-dps arithmetic that looked exact. Its sibling directly above is genuinely
+# good (|VOL_BORROMEAN_50DPS_STR − 8·G| = 2.293e-50), so the two sat adjacent
+# at a 14-order-of-magnitude quality difference with nothing saying so.
+#
+# Why it stood for so long is worth recording, because the usual explanation
+# does not apply: `scripts/known-constant-literal-audit.py` scans this path by
+# default and HAS been reporting this exact line, correctly, with the right
+# first-wrong-digit. The detector was never blind and never mis-aimed. It was
+# one of 90 candidates in that report, and nobody worked the pile. A finding
+# that is printed and unread fails in the same place as one never generated.
+#
+# Replaced with the value the substrate computes rather than a retyped one:
+# byte-identical to `qou_substrate.constants.VOL_FIGURE_EIGHT_50_STR`, which
+# is `nstr(2*clsin(2, pi/3), 50)` evaluated at 60 dps. Gap is now 4.160e-52.
+#
+# THIS FILE IS THE SOURCE. `qou-mass/src/qou_mass/_internal/
+# experimental_constants.py` is a GENERATED mirror of it — flattened and with
+# `import _path_bridge` dropped, nothing else — produced by
+# `scripts/sync-qou-mass-vendor.py` and gated by its `--check`. Probes under
+# `computations/` import this copy; `qou-mass` consumers import the mirror,
+# so the defect was live on both paths. Edit here and re-run `--apply`; never
+# hand-edit the mirror.
+VOL_4_1_50DPS_STR       = "2.0298832128193072500424051085490405718833786150606"
 
 # ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
 #    downstream Z=N ρ-correction probes — pulled from #523). ──

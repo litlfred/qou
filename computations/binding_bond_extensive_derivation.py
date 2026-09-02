@@ -51,6 +51,7 @@ def main() -> int:
     print("=== bond-extensive hypothesis DERIVED from bond translation-invariance ===\n")
     try:
         import numpy as np
+        import mpmath as mp
         from pyhecke import gram as G
     except Exception as e:
         print(f"(pyhecke unavailable: {e}) — structural argument stands independent of the value.")
@@ -61,6 +62,24 @@ def main() -> int:
     g = np.zeros(6); g[3] = 0.5; g[4] = -0.5   # ghost ½(L₊−L₋) = ½(σ₁σ₂ − σ₂σ₁)
     tr_g = float(t @ g)
     self_norm = float(g @ Gm @ g)
+
+    # Second, independent routes to the two numbers the argument turns on.
+    # `NF_NAMES` is ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻'], so indices 3 and 4 are
+    # the ghost's two words. `_TR_M_FRAC` carries the Markov trace as exact
+    # rationals and `gram_matrix_mp` rebuilds the Gram at 60 dps, neither of
+    # them through the float64 arrays above.
+    iL, iR = G.NF_NAMES.index("L₊"), G.NF_NAMES.index("L₋")
+    tr_g_exact = (G._TR_M_FRAC[iL] - G._TR_M_FRAC[iR]) / 2
+    with mp.workdps(60):
+        Gmp = G.gram_matrix_mp(60)
+        gm = [mp.mpf(0)] * 6
+        gm[iL], gm[iR] = mp.mpf(1) / 2, -mp.mpf(1) / 2
+        self_norm_mp = sum(gm[i] * Gmp[i][j] * gm[j]
+                           for i in range(6) for j in range(6))
+        norm_gap = abs(self_norm_mp - mp.mpf(repr(self_norm))) / abs(self_norm_mp)
+        self_norm_s, norm_gap_s = mp.nstr(self_norm_mp, 25), mp.nstr(norm_gap, 6)
+    print(f"  cross-check: tr_M(g) exactly {tr_g_exact} (rational); ⟨g⟩²_G at 60 dps "
+          f"{self_norm_s}, relative gap to float64 {norm_gap_s}")
     print(f"per-nucleon ghost g = ½(σ₁σ₂ − σ₂σ₁):  tr_M(g) = {tr_g:+.6f} (traceless), "
           f"⟨g⟩²_G = {self_norm:+.4f}")
     print()
@@ -81,13 +100,53 @@ def main() -> int:
             "couples them; identical bonds ⇒ constant per-bond b*. Upgrades #3549's conditional "
             "bond-extensive hypothesis to derived (modulo the value b*, the H₆ seminormal build). "
             "Mean-field/homogeneous reading. No fit.")
-        wb.add_data("ghost_h3", {"tr_M": tr_g, "self_gram_norm": self_norm})
+        wb.add_data("ghost_h3", {"tr_M": tr_g, "self_gram_norm": self_norm,
+                                 "tr_M_exact": str(tr_g_exact),
+                                 "self_gram_norm_60dps": self_norm_s})
+        # Was `computed="1", expected="1"` (bean `qou-26f2`) — one literal on
+        # both sides standing in for the whole derivation, so `passed:true` was
+        # recorded even in a run where the Gram had been rebuilt into something
+        # with no ghost in it at all. The `source` string names the two facts
+        # the argument actually rests on; both are computable here, and neither
+        # was being computed.
+        #
+        # (1) THE UNBONDED CROSS-TERM. Step (1) of the derivation is
+        #     ⟨g_i,g_j⟩_G = tr_M(g_i)·tr_M(g_j) = 0, which holds only because
+        #     the ghost is traceless. That is exact, not numerical: the Markov
+        #     trace is conjugation-invariant and L₊ = σ₁σ₂, L₋ = σ₂σ₁ are
+        #     conjugate, so the two entries of `_TR_M_FRAC` are the same
+        #     rational and the difference is 0 in ℚ. Checked there rather than
+        #     on the float64 vector, where a cancellation could hide a real
+        #     asymmetry under round-off.
         wb.add_assertion(
-            name="bond_extensive_derived_from_translation_invariance",
-            computed="1", expected="1", tolerance=0,
-            source=("unbonded ghost cross-term = 0 (split-link factorization × traceless); "
-                    "identical bonds ⇒ constant per-bond b* ⇒ B = self + coordination·b* "
-                    "(bond-extensive form derived, not assumed). Value b* = H₆ build."))
+            name="unbonded_ghost_cross_term_vanishes",
+            computed=str(tr_g_exact), expected="0", tolerance=0,
+            unit="tr_M(g) in exact rational arithmetic",
+            source=("step (1) of the derivation: two nucleon ghosts on disjoint "
+                    "strands form a split link, tr_M factorizes, so the cross "
+                    "term is tr_M(g)². Zero iff the ghost is traceless. "
+                    f"pyhecke._TR_M_FRAC[{iL}] − [{iR}] over 2, in ℚ."))
+        # (2) THE GRAM VALUE THE STEP-(2) COUPLING LIVES IN. The Part-10 form
+        #     the whole probe is conditioned on calls the ghost NEGATIVE-norm;
+        #     that sign was printed and never checked. Recorded with a second
+        #     derivation of the same number — the Gram rebuilt at 60 dps —
+        #     because a float64-only value has nothing to disagree with.
+        wb.add_assertion(
+            name="ghost_self_gram_norm_is_negative",
+            computed=str(int(self_norm_mp < 0)), expected="1", tolerance=0,
+            unit="1 if ⟨g⟩²_G < 0 (the Part-10 negative-norm ghost)",
+            source=(f"⟨g⟩²_G = {self_norm_s} at 60 dps. The binding form "
+                    "B(K) ~ ⟨Σ_i g_i⟩²_G is stated as the negative-norm ghost "
+                    "quadratic form; a non-negative value would refute the "
+                    "premise this derivation is conditioned on."))
+        wb.add_assertion(
+            name="ghost_self_gram_norm_reproduces_at_60_dps",
+            computed=norm_gap_s, expected="0", tolerance="1e-14",
+            unit="relative gap, float64 Gram vs 60-dps Gram",
+            source=("⟨g⟩²_G by two routes: pyhecke.gram.G (float64) and "
+                    "gram_matrix_mp(60) (mpmath). Tolerance is the float64 "
+                    "round-off scale for a quantity of order 1, which is what "
+                    "the coarser of the two routes can carry."))
         out = wb.save()
         print(f"\nWitness: {out}")
     except Exception as e:

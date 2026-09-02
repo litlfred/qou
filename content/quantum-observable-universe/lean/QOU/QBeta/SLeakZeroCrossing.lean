@@ -41,10 +41,43 @@ Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_prob
 
 | anchor | `c₃` | `S_leak = c₃ + Vol(4₁)` |
 |--------|------|-------------------------|
-| muon   | −2.02020024 | **+0.00968298** |
+| muon (CODATA 2022) | −2.01986031 | **+0.01002290** |
+| muon (CODATA 2018, superseded) | −2.02020024 | +0.00968298 |
 | proton | −2.06934258 | **−0.03945936** |
 
-`S_leak(muon) > 0 > S_leak(proton)`: a genuine sign change, `S_p/S_μ ≈ −4.08`.
+> **🛑 THE MUON ROW IS ANCHOR-QUALIFIED, AND THAT IS LOAD-BEARING (2026-08-31,
+> beans `qou-cds1` / `qou-t39x`).** There is no single "muon `c₃`": the
+> extractor returns a different value at each muon pin in use and they differ
+> in the *fourth* significant figure. `fca08de7d2` (2026-08-22, owner ruling)
+> moved the pin to CODATA 2022; the `−2.02020024` this table carried is the
+> CODATA-2018 extraction. The lever is `1/u³ ≈ 1.6×10⁶`, so a **1.451 ppb**
+> step on `m_μ/m_e` is `1.7×10⁻⁴` on `c₃` — "far below the 11.5 ppb μ–p
+> tension" does not imply below the resolution of what divides by `u³`.
+>
+> **Consequence for KC21, stated here because this table is where it is read
+> off:** the Φ_b state-integral volume deficit `0.0094` matches `|S_leak(muon)|`
+> to **6.63 %** at the live pin, not the **3.01 %** the registry quotes. The
+> deficit is anchor-blind to sub-ppm, so all of that movement is on the `|S|`
+> side — the quoted margin was never a property of the saddle.
+>
+> None of the theorems below move: they are generic in `S_leak` and
+> hypothesis-carrying, and the sign flip `S_leak(muon) > 0 > S_leak(proton)`
+> holds at every pin in the table.
+
+`S_leak(muon) > 0 > S_leak(proton)`
+> **🛑 CONVENTION-C SCOPE (added 2026-08-31).** The `c₃` values quoted here —
+> `−2.01986031` (muon, CODATA-2022 pin) and `−2.06934258` (proton) — are
+> **C-frame extractions**.
+> Owner ruling 2026-08-09 excised convention C at the `z` level (production uses
+> `z_D = q³/(q²+1)`), but the `c_k` **ladder** has not been re-derived under D:
+> bean `qou-cds1` states it "must be re-derived, not re-evaluated", and the
+> `c₃ ≈ −974` obtained by feeding `z_D` to the current extractor is a
+> sensitivity measurement, **not** a proposed value. So every value-level `c₃`
+> fact below is C-conditional and moves if `qou-cds1` lands.
+>
+> **No theorem in this file depends on it** — the values appear in this
+> docstring only, verified by AST scan in
+> `computations/deltalambda/wlambda_binding_c_frame_conditionality_audit.py`.: a genuine sign change, `S_p/S_μ ≈ −4.08`.
 
 ## ⚠ APPLICABILITY (2026-08-08): the anchor signs are NOT resolved by the data
 
