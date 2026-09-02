@@ -1,11 +1,11 @@
 ---
 # wsxl
 title: 'Mathlib-gap: prove the super-exponential lower bound on w_std(k)=E_Planch[f^{lambda/(2,1)}] (closes GAP-A-3 level-selection conditional)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-11T18:45:00Z
-updated_at: 2026-08-31T07:45:39Z
+updated_at: 2026-09-02T21:49:25Z
 ---
 
 ## What
@@ -230,3 +230,47 @@ own history says gets quoted wrong months later.
 constant offset in the index, and the defect being fixed here is precisely a statement that was
 tidy and wrong. Route C (do nothing) is safe, but leaves a paper block asserting a false
 proposition. Awaiting the author.
+
+
+## 2026-09-02 — ROUTE A ADOPTED (author said 'Go'). The combinatorial side of this bean is CLOSED.
+
+`TowerGeometricLowerBound` now carries a threshold `k₀` and **is inhabited** at `k₀ = 3` by
+`QOU.Mass.WStd.towerGeometricLowerBound_wStd`. Everything this bean was about is proved.
+
+**Lean.** The measured cost matched the prediction exactly. `no_linear_selection` and
+`no_superlinear_selection` keep their statements verbatim (one widened `eventually_atTop`
+witness each); `level_geometric_bound` and `linear_selection_bound` gained a `k₀ ≤ _`
+hypothesis, free because neither has a consumer anywhere. New:
+`not_towerGeometricLowerBound_wStd_of_lt_three` (refutes EVERY `k₀ < 3`, all `r, c` — so the
+threshold is forced, not chosen), the instance, and `no_linear_selection_wStd` /
+`no_superlinear_selection_wStd` — the two exclusions at the ACTUAL `w_std` with nothing
+conditional left. lean-direct exit 0 on all three touched modules; `#print axioms` clean.
+
+**Paper.** `conj:tower-geometric-lower-bound` → `prop:tower-geometric-lower-bound`. Its `.md`
+stated the bound 'for every jet level k', which was false; it now states the threshold form plus
+the vanishing below it. `prop:level-selection-not-linear` drops its conditional banner, and its
+'Restriction to A ≥ 1' paragraph — which justified the restriction by 'the tower bound forces
+w(0) ≥ c > 0' — now records that the reading was **backwards**: w_std(0) = 0, so that case was a
+falsity in the antecedent, not a nuisance of the conclusion.
+
+**Content validation 15 → 14 issues**, the delta being a dangling xref I introduced and fixed.
+
+## What is NOT done, and why
+
+* **The two epistemic-status audits could not be run.**
+  `conjectural-propagation-audit.ts` and `conditional-class-banner-audit.ts` both call
+  `requirePaper()` with **no argument**, and `requirePaper` throws unless the folio has exactly
+  one paper. This folio has five (bach2013-double-slit, fred2005-formal-groups,
+  quantum-observable-universe, unital-groebner-bases, visualizer), and there is no CLI flag or
+  env var to disambiguate — `argv[2]` is the witness path. So these two checkers are
+  **structurally unrunnable against this folio**, and their verdicts on my change are UNKNOWN
+  rather than green. Platform-side (`litlfred/folio-assistant`); out of scope here. New bean.
+* **The 137 QA sidecar criteria are stale** (both blocks' `.md` and `.ts` changed, so every
+  `source_hashes` entry drifted). Not re-swept.
+* **`definition-index.md` is generated and was hand-edited** — one row moved section. A
+  regeneration will re-sort it.
+* **The witness is weak**: `r = √2` against measured ratios 1.38 → 2.88. The class is
+  parameterised by `(r, c, k₀)`, so a sharper instance can land later without touching anything.
+* **The super-exponential claim is still only proved in its geometric shadow.** `wStd_sq_lower`
+  carries the super-exponential content (`w_std ≥ √(k!)/(9·2^{k/2})`) but is not stated in
+  'for every r there is a c' form.
