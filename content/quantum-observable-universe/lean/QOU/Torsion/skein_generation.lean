@@ -178,4 +178,95 @@ def trivialSkeinGenerationContext (R Skein : Type*)
     intro _ hs
     exact absurd hs (lt_irrefl 0)
 
+/-! ## Route (3), hadron half — the narrative's actual quantifier
+
+`skein_generation` above concludes for **every** `h : Skein`, while the
+narrative says *"every **hadron** admits a terminal Skein resolution"*. Those
+are different claims, and the unrestricted one is not automatically the more
+useful: it demands a resolution for elements the physics never asks about.
+
+The class below is the honest restriction. Its hypotheses are **strictly
+weaker** — only hadrons need resolve, and a resolution must stay within
+hadrons — and its conclusion is correspondingly restricted. It is not a
+specialisation of the above; neither implies the other.
+
+This supersedes `QOU/scratch_skein.lean`, which carried the `Hadron`
+restriction but did so as a projection: its `hadron_is_polynomial` field *was*
+the conclusion. The restriction was the only thing in that file worth keeping,
+and here it is derived rather than assumed (beans `qou-skgn`, `qou-scrx`). -/
+
+/-- Hadron-relative terminating resolution.
+
+    Weaker than `SkeinGenerationContext`: `base` and `resolve` are required
+    only of hadrons, and `resolve` must produce hadrons, so the induction stays
+    inside the restricted class. -/
+class HadronSkeinResolution (R Skein FundamentalKnotIndex : Type*)
+    [CommRing R] [Ring Skein] [Algebra R Skein] where
+  /-- The fundamental knot embeddings `K_i ∈ 𝓢_q`. -/
+  fundamentalKnot : FundamentalKnotIndex → Skein
+  /-- The Hopf-link generator `𝓛_Hopf`. -/
+  hopfLink : Skein
+  /-- The hadron predicate — the narrative's quantifier. -/
+  Hadron : Skein → Prop
+  /-- Complexity measure; crossing number in the intended model. -/
+  complexity : Skein → ℕ
+  /-- Base case, required only of hadrons. -/
+  base : ∀ s : Skein, Hadron s → complexity s = 0 →
+    s ∈ Algebra.adjoin R (range fundamentalKnot ∪ {hopfLink})
+  /-- Resolution step, required only of hadrons and **producing** hadrons —
+      without that the induction could leave the restricted class. -/
+  resolve : ∀ s : Skein, Hadron s → 0 < complexity s →
+    ∃ t : Finset Skein, (∀ x ∈ t, Hadron x ∧ complexity x < complexity s) ∧
+      s ∈ Algebra.adjoin R ((↑t : Set Skein) ∪ (range fundamentalKnot ∪ {hopfLink}))
+
+/-- The hadron-restricted induction. -/
+theorem hadron_mem_adjoin_of_complexity_eq {R Skein FundamentalKnotIndex : Type*}
+    [CommRing R] [Ring Skein] [Algebra R Skein]
+    [ctx : HadronSkeinResolution R Skein FundamentalKnotIndex] :
+    ∀ n : ℕ, ∀ s : Skein, ctx.Hadron s → ctx.complexity s = n →
+      s ∈ Algebra.adjoin R (range ctx.fundamentalKnot ∪ {ctx.hopfLink}) := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro s hh hs
+    rcases Nat.eq_zero_or_pos n with h0 | hpos
+    · exact ctx.base s hh (hs.trans h0)
+    · obtain ⟨t, hlt, hmem⟩ := ctx.resolve s hh (hs ▸ hpos)
+      refine Algebra.adjoin_le ?_ hmem
+      rintro x (hx | hx)
+      · exact ih (ctx.complexity x) (hs ▸ (hlt x hx).2) x (hlt x hx).1 rfl
+      · exact Algebra.subset_adjoin hx
+
+/-- **Skein generation, hadron-restricted** — the narrative's own statement.
+
+    *Every hadron admits a terminal Skein resolution into a finite polynomial
+    in the fundamental knots and the Hopf link.*
+
+    Derived from a hadron-relative terminating resolution, not assumed. The
+    `Finset` in `resolve` is the "finite polynomial"; the strict decrease is
+    the "terminal". -/
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-generation.md
+theorem skein_generation_hadron {R Skein FundamentalKnotIndex : Type*}
+    [CommRing R] [Ring Skein] [Algebra R Skein]
+    [ctx : HadronSkeinResolution R Skein FundamentalKnotIndex]
+    (h : Skein) (hh : ctx.Hadron h) :
+    h ∈ Algebra.adjoin R (range ctx.fundamentalKnot ∪ {ctx.hopfLink}) :=
+  hadron_mem_adjoin_of_complexity_eq (ctx.complexity h) h hh rfl
+
+/-- Non-vacuity for the hadron-relative interface. A `def`, not an `instance`,
+    for the reason given above. -/
+def trivialHadronSkeinResolution (R Skein : Type*)
+    [CommRing R] [Ring Skein] [Algebra R Skein] :
+    HadronSkeinResolution R Skein Skein where
+  fundamentalKnot := id
+  hopfLink := 0
+  Hadron := fun _ => True
+  complexity := fun _ => 0
+  base := by
+    intro s _ _
+    exact Algebra.subset_adjoin (Or.inl ⟨s, rfl⟩)
+  resolve := by
+    intro _ _ hs
+    exact absurd hs (lt_irrefl 0)
+
 end QOU.Torsion
