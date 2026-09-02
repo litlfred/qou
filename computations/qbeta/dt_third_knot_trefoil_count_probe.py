@@ -39,10 +39,33 @@ the table, and ALL THREE predict 2 for the trefoil:
     total = deg(trace field) + 1         1 + 1 = 2      (3_1's field is Q)
     total = full A-polynomial L-degree   2              (the corpus's R1)
 
-So the third point CORROBORATES the family and DISCRIMINATES between none of
-them. Reporting it as "the third-knot test passed" without that sentence would
-over-read it — which is exactly the `#4534 two-knot-linear-fit guard` the bean
-already raises against a 2-integer target.
+So the third point does not separate THOSE three. Reporting it as "the
+third-knot test passed" without that sentence would over-read it -- which is
+exactly the `#4534 two-knot-linear-fit guard` the bean raises against a
+2-integer target.
+
+BUT IT DOES DISCRIMINATE, AGAINST A FOURTH READING THAT WAS NOT ON THE LIST --
+and this is the load-bearing half. The adversarial alternative to the whole R1
+identification is that the count tracks the COMPUTATION's presentation rather
+than the knot: the triangulation. That reading fits BOTH original points exactly
+and is killed by the trefoil.
+
+    knot   tets   crossings   MEASURED   crossing-1   tets+1
+    3_1      2        3           2          2         3   <-- FAILS by 1
+    4_1      2        4           3          3         3       fits
+    5_2      3        5           4          4         4       fits
+
+`tets + 1` is NOT a strawman: SnapPy triangulates 4_1 with 2 tetrahedra and 5_2
+with 3, so on the corpus's two knots it is INDISTINGUISHABLE from `crossing - 1`.
+The trefoil separates them because 3_1 has the SAME tetrahedron count as 4_1 and
+one fewer crossing. This matters more than the three readings above, because the
+triangulation is NOT canonical -- had the count tracked it, the R1 reading would
+have been an artifact of how the manifold was presented to Magma rather than a
+fact about the knot.
+
+I first wrote that this test "discriminates nothing". That was wrong: I had not
+put the triangulation reading on the list, and it is the one an adversarial
+referee reaches for first.
 
 WHAT IT DOES BUY, stated precisely. The datum moves from TWO points to THREE:
 counts (2, 3, 4) at crossing numbers (3, 4, 5), and irreducible parts (1, 2, 3)
@@ -122,9 +145,10 @@ def main() -> int:
     w.set_description(
         "The third-knot DT test the corpus recorded as blocked, run: 3_1's "
         "bundled sl2 fixtures give 1 irreducible + 1 abelian = 2 connections, "
-        "with 4_1 and 5_2 reproducing the committed controls. All three "
-        "candidate readings predict 2, so it corroborates without "
-        "discriminating."
+        "with 4_1 and 5_2 reproducing the committed controls. The three listed "
+        "readings all predict 2, but the trefoil DOES kill a fourth — that the "
+        "count tracks the non-canonical triangulation, which fits both original "
+        "knots exactly."
     )
     ok = []
 
@@ -178,9 +202,34 @@ def main() -> int:
         "trace_field_degree_plus_1": rows["3_1"]["per_class"][1]["degrees"][0] + 1,
         "full_A_polynomial_L_degree_R1": 2,
     }
-    check("ALL_THREE_candidate_readings_predict_the_measured_trefoil_count",
+    check("the_three_listed_readings_are_NOT_separated_by_the_trefoil",
           all(v == t for v in predictions.values()),
-          f"(all predict {t}) — so this CORROBORATES and DISCRIMINATES NOTHING")
+          f"(all predict {t}) — these three are not separated by the third knot")
+
+    # The FOURTH reading, and the one the trefoil DOES kill: that the count
+    # tracks the TRIANGULATION rather than the knot. It fits both original
+    # points exactly, since SnapPy triangulates 4_1 with 2 tetrahedra and 5_2
+    # with 3. The trefoil separates them: same tetrahedron count as 4_1, one
+    # fewer crossing.
+    import snappy
+    tets = {kk: snappy.Manifold(kk).num_tetrahedra()
+            for kk in ("3_1", "4_1", "5_2")}
+    print("\n  the triangulation reading (tets + 1), which the trefoil KILLS:")
+    print(f"    {'knot':<6}{'tets':>5}{'cross':>7}{'measured':>10}"
+          f"{'crossing-1':>12}{'tets+1':>8}")
+    for kk in ("3_1", "4_1", "5_2"):
+        print(f"    {kk:<6}{tets[kk]:>5}{CROSSINGS[kk]:>7}"
+              f"{rows[kk]['total']:>10}{CROSSINGS[kk] - 1:>12}{tets[kk] + 1:>8}")
+    check("the_triangulation_reading_fits_BOTH_original_knots",
+          tets["4_1"] + 1 == rows["4_1"]["total"]
+          and tets["5_2"] + 1 == rows["5_2"]["total"],
+          "(so on the corpus's two knots it is INDISTINGUISHABLE from "
+          "crossing-1 — not a strawman)")
+    check("the_TREFOIL_KILLS_the_triangulation_reading",
+          tets["3_1"] + 1 != rows["3_1"]["total"],
+          f"(tets+1 = {tets['3_1'] + 1} vs measured {rows['3_1']['total']}) — "
+          "the adversarial alternative to R1 is that the count tracks the "
+          "non-canonical PRESENTATION, not the knot. It does not.")
 
     check("the_datum_is_now_THREE_collinear_points_not_two",
           [rows[k]["total"] for k in ("3_1", "4_1", "5_2")] == [2, 3, 4]
@@ -192,8 +241,22 @@ def main() -> int:
     w.add_data("candidate_readings", {
         "measured_trefoil_total": t,
         "predictions": predictions,
-        "verdict": "all three agree at 3_1, so the third knot corroborates the "
-                   "family and separates none of its members",
+        "verdict": "the three listed readings all agree at 3_1, so the "
+                   "third knot does not separate them; it kills a "
+                   "FOURTH, the triangulation reading — see below",
+    })
+    w.add_data("triangulation_reading_EXCLUDED", {
+        "reading": "total = number of tetrahedra + 1",
+        "why_it_matters": "the adversarial alternative to the R1 identification "
+                          "— that the count tracks the computation's "
+                          "PRESENTATION rather than the knot. The triangulation "
+                          "is not canonical, so had the count tracked it, R1 "
+                          "would be an artifact.",
+        "tets": tets,
+        "fits_4_1": True, "fits_5_2": True, "fails_3_1": True,
+        "note": "indistinguishable from crossing-1 on the corpus's two knots; "
+                "separated by the trefoil, which shares 4_1's tetrahedron count "
+                "and has one fewer crossing. THIS is what the third knot buys.",
     })
     w.add_data("what_would_discriminate", {
         "rules_that_must_diverge": "crossing_number - 2  vs  trace_field_degree "
