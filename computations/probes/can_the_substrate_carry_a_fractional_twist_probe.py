@@ -3,6 +3,28 @@
 available values are RATIONAL. QCD's colour ratio `2` is hit exactly. The
 nuclear `33.7` is not in the set at all.
 
+PARTLY RETRACTED — READ `the_twist_is_absent_where_it_is_needed_probe.py`
+------------------------------------------------------------------------
+Two things below do not survive.
+
+1. **The cumulative enumeration is not a predictive claim.** The union of
+   achievable `t` over `n <= 24` covers `43` of the `45` rationals with
+   denominator `<= 12` (`96 %`). Eight exact group-theoretic ratios all "hit"
+   it, because almost everything does. The `n <= 12` table below looks sparse
+   only because of where it was cut.
+2. **The `t = 1/3` hit is withdrawn as evidence.** It is realised at `n = 12`,
+   but two quarks are `n = 2`. A colour observable for `3 (x) 3` cannot be
+   evaluated at `4He`'s strand count.
+
+And the decisive fact, which this probe did not check: per strand count the
+admissible sets are small, and **`n = 2`, `n = 3` and `n = 6` admit none at
+all** — so the two-nucleon sector, where the obstruction lives, cannot be
+repaired by this mechanism.
+
+**What stands:** the mechanism itself — `c_n^n = Delta^2`, block magnitude
+exactly `q^(2 c(lambda)/n)`, fractionality from `n = 5` — and the per-`n`
+availability table as a sparse closed-form structure.
+
 THE QUESTION
 ------------
 `the_hull_exit_is_a_fractional_twist_probe` (bean `qou-vlrq`) showed the
