@@ -340,3 +340,146 @@ edit:
    gives 7.133937), unchanged.
 
 Bean stays open on (1)-(4). Everything here is C-frame.
+
+## 2026-08-31 — (A) SETTLED and (B) ANSWERED. The sign is POSITIVE; the producer did not exist.
+
+Producer: `computations/qbeta/qbeta_precision_ladder_n5.py`, **29/29**, mpmath,
+convention C, registered `physical_proton`. PR #6424.
+
+### (B) No producer reached N=5, and the DECLARED one is a different ladder
+
+Searched the whole tree including `_deprecated/`. Three near-misses, none of
+which evaluates the block's boxed product:
+
+  * `probe_q_beta_operator_valued_N3.py` — the block's **declared** producer.
+    Stops at N=3, no c_5. **And it never generated table 2 at all**: its own
+    witness records `eps_N1 = 674.83 ppm` and `eps_N2 = 602.24 ppm` against
+    table 2's `+73.79` and `+1.24` ppm, because its first rung is
+    `cos(alpha_N1)`, `alpha_N1 = -0.0447444`, not the box's
+    `cos(alpha - b*hbar^2/2)`, `alpha = (z-1)h/2 = -0.0404858`. This is a
+    fourth defect, and it is upstream of the earlier entries' framing: the
+    block's `computation.script` has been pointing at a different ladder.
+  * `qbeta_ck_truncation_order_analysis.py` — DOES iterate k = 3,4,5 (so the
+    previous entry's "no producer reaches N=5" was too strong), but it seeds
+    `Q = Q_N2` from that same witness, so its column starts ~602 ppm, and it
+    uses the superseded `c_5`.
+  * `_deprecated/.../precision_ladder_ck_symbolic_probe.py` — carries the
+    superseded c_5, computes no residual.
+
+The new producer evaluates N = 0..5 at both pins over all four documented
+(c_4, c_5) assignments and emits a witness.
+
+### (A) The SIGN — settled, three ways, and the published minus is wrong
+
+**A1. The convention is `(pred - CODATA)/CODATA`** — i.e. exactly
+`qbeta_ladder_convention_fee_probe.ppb`. Not assumed. Read off table 2's own
+coarsely-quoted rows at the MUON pin:
+
+    table 2 N=0   +1677.5 ppm      computed  +1677.53852 ppm
+    table 2 N=1     +73.79 ppm     computed    +73.7975604 ppm
+
+At the proton pin N=1 is +73.828, which does not round to 73.79 — the table is
+muon-frame, confirming the bean's earlier reading. (N=2's `1.24` is 3 s.f.,
+where the 7.133 ppb epoch offset below is visible, so it is checked against its
+published-epoch value instead and is not evidence about the convention.)
+
+**A2. The ladder descends to CODATA from ABOVE.** Q_A sits +1677 ppm above
+CODATA and every live rung factor `1 + c_k u^k` has `c_k < 0`, hence `< 1`. A
+negative residual requires overshooting zero.
+
+**A3. It never overshoots.** Over both pins and all four assignments the most
+negative N=5 residual is **+6.5046 ppb**:
+
+              c_4      c_5            N=3         N=4         N=5
+    proton   live     live       43.72672   37.763639    37.70749
+    proton   live     superseded 43.72672   37.763639   38.340392
+    proton   retired  live       43.72672   37.134339   37.078191
+    proton   retired  superseded 43.72672   37.134339   37.711093
+    muon     live     live       13.153171   7.1900855   7.1339366
+    muon     live     superseded 13.153171   7.1900855   7.7668394
+    muon     retired  live       13.153171   6.5607857   6.5046368
+    muon     retired  superseded 13.153171   6.5607857   7.1375396
+
+**=> the corrected headline sign is POSITIVE.** Scope (a): scope-limited to the
+boxed ladder under the four documented assignments at the two documented pins.
+No proved invariant, so this is not a structural exclusion.
+
+### Why the tables show negatives anyway — an input epoch, not a sign flip
+
+Table 2's N=3 row (+6.02 ppb, 3 s.f., the tightest constraint in the block)
+sits **7.1332 ppb below** the recomputed N=3. An input change shifts
+`Q_A/Q_CODATA` by one relative amount and moves every rung by it, so one row
+calibrates the column. Calibrated on N=3, the offset then predicts **two rows
+it was not fitted to**:
+
+    published-epoch N=4, RETIRED c_4   -0.5724 ppb    table 2's N=4:  -0.57
+    published-epoch N=4, LIVE    c_4   +0.0569 ppb    (does not)
+    published-epoch N=2                 1.24176 ppm   table 2's N=2:   1.24
+
+So **table 2's N=4 NUMBER predates the c_4 supersession its own LABEL column
+already carried** — the same failure mode as the c_5 slot, one rung earlier.
+
+And the load-bearing consequence: under that offset the published-epoch N=5
+lies in **[-0.629, +0.634] ppb** over all four assignments. **-6.6 ppb is
+unreachable at the published epoch too**, so the minus is not an epoch
+artefact. Table 3's published +0.04 ppb sits inside that window.
+
+NOT FITTED: the *cause* of the 7.133 ppb offset is **not** identified. It is
+not the stored `Q_AME` (0.78233355931 vs today's 0.7823334093099085 — a 191.7
+ppb gap, and in the wrong direction), and not the CODATA-2018 -> 2022 m_e move
+(1.35 ppb). Recorded as unexplained rather than tuned to anything.
+
+### The headline's MAGNITUDE has no provenance — correcting the previous entry
+
+The 2026-08-31 entry above reported `context c_5, muon pin = +6.6133 ppb` as
+`0.202 %` from the headline and read that as the headline's provenance. **That
+agreement is coincidental and should not be quoted as provenance.** It is a
+*today's-inputs* number, while the headline is a published-epoch one; at the
+published epoch the same quantity is `-0.520 ppb`. Nothing in the block's own
+ladder produces `6.6 ppb` at the epoch the headline was written in, under any
+of the four assignments. The magnitude is unrecoverable, so the correction
+replaces it from the live producer rather than reconciling with it.
+
+### What was changed
+
+    q-beta-categorical-precision-ladder.md      headline: -0.0066 -> +0.0071 ppm
+                                                (muon pin; +0.0377 at proton),
+                                                convention now stated inline
+    ...-table2-data.md, ...-table3-data.md      recomputed, live c_4/c_5, muon pin
+    ...-ladder-context.md                       mixing-pattern c_5; "N=3 is first to
+                                                beat 7.80 ppb" -> N=4; the Delta S
+                                                paragraph; open question 2; a new
+                                                "Provenance of the tables" section
+                                                keeping the as-published column
+    ...-ladder.ts                               computation.script -> the new producer;
+                                                authorNotes status entry
+    q-beta-gamma-gamma-canonical-derivation.md  retired b^2+1/2 at c_4 -> c_3*b^4
+
+### FLAGGED FOR THE OWNER, not changed: the non-monotonicity claim
+
+With the live `c_5 = -(b^2+1/2)` the column is **strictly decreasing at both
+pins** — every factor is below 1. The "N=4 -> N=5 non-monotonicity (the
+residual ticks back up)", which the context block and **AGENTS.md's own c_k
+banner** both cite as *the experimental signature that c_k>=3 are q0-dependent
+near-matches*, was produced by the superseded **positive** `c_5 = +12.87`,
+whose factor exceeds 1. It does not survive that supersession.
+
+The context block now says so. **AGENTS.md was NOT edited** — that is an owner
+call, and the banner's tiering conclusion is independently supported by the
+q0-anchor swing, which is untouched. Only the numerical signature is gone.
+
+### Also noticed, NOT chased (out of remit, no provenance found)
+
+Table 1's c_5 row publishes a `99.9 %` empirical match. The conj block records
+a 2.4 % residual for the same coefficient, i.e. `97.6 %`. Left alone: fixing it
+would mean re-litigating the c_5 question the task ruled settled.
+
+### Still open
+
+  * `qbeta-ladder-convention-fee.witness.json` still holds 7.336484 against a
+    live 7.133937. NOT refreshed — that producer was not touched here, and the
+    movement is main's.
+  * The 7.133 ppb epoch offset's cause.
+  * The headline's original magnitude — unrecoverable, now superseded.
+
+Everything here is C-frame.
