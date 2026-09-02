@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-02T21:27:41Z
-updated_at: 2026-09-02T22:06:03Z
+updated_at: 2026-09-02T22:09:37Z
 ---
 
 ## Measured 2026-09-02 — `computations/probes/logratio_exactly_extensive_probe.py` (4/4)
@@ -156,3 +156,44 @@ that observation.
 t7qv reports `B(4He) = 10.387277`; my chain log-ratio gives `8.682248`. The gap
 is 19.6 %, far larger than the ~1e-4 colour arm, so it is a different
 construction. NOT reconciled here.
+
+
+## 🛑 SCOPE CORRECTION — "all three repairs are closed" was WRONG
+
+Reconciling the 19.6 % `B(4He)` disagreement with `t7qv` found an error in the
+entry above, made one commit earlier.
+
+`StrandLayoutForcesChain` forbids a **single generator** from joining
+non-consecutive nucleons. It does NOT forbid a bond routed through **several**
+generators. The sibling does exactly that —
+`four_body_term_and_the_h12_collapse_probe.py:224`: *"bond between nucleons
+i<j: strand 3i+2 routed rightwards to strand 3j"*, line 324 branching to a
+single generator only when `j = i+1` and to `band_between` otherwise.
+
+**So "more bonds" is NOT closed.** Band-routed bonds are a live escape.
+
+### And it reconciles both disagreements at once
+
+    adjacent bonds     exactly multiplicative -> order-independent, many-body ZERO
+    band-routed bonds  DO NOT COMMUTE -- 11.12 % spread over one A=3 triangle's
+                       six orders, 38-40 % over 4He's
+
+So the structure this bean measured as absent reappears exactly where band
+routing enters. And the numeric gap is explained: their `B(4He) = 10.387277`
+against my adjacent-only `8.682248` is **two different bond sets, both computed
+correctly** — not the colour arm (~1e-4), not an error on either side.
+
+### Corrected status
+
+| repair | status |
+|---|---|
+| rescale f_pp, f_pn, f_nn | **closed** — cancel in `alpha_relation` |
+| irreducible many-body term | **closed on the adjacent set** — measured zero |
+| add band-routed bonds | **OPEN — the live frontier** |
+
+The parameter-free refutation stands, scoped to the ADJACENT bond set, which is
+what `atom_canonical_crossings` builds and what every measurement here uses.
+
+The sibling's finding that band routing does not close the gap either (still
+-63 %, every many-body term negative) is **their** result, cited not re-derived,
+and does not follow from anything proved on this branch.

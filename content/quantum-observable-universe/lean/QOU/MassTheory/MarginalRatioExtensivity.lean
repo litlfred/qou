@@ -601,16 +601,58 @@ with the per-bond values cancelling out entirely. Against AME:
     predicted  13.975275 MeV
     AME        28.295661 MeV        ratio 2.0247
 
-**So the chain bond set is refuted for `4He`, and not by being short.** It is
+**So the ADJACENT bond set is refuted for `4He`, and not by being short.** It is
 refuted *whatever* the per-bond values are — no rescaling of `f_pp, f_pn, f_nn`
-can help, because they do not appear in the relation. Combined with §8 (no `g`
-makes the difference channel extensive) and the measured zero many-body term,
-the three obvious repairs are each closed: bond count is forced, many-body is
-zero, per-bond values cancel.
+can help, because they do not appear in the relation.
 
-This is the alpha particle's well-known excess binding, arriving as a structural
-obstruction rather than a numerical shortfall. It is scope (b), with the
-invariant named: the bond-multiset identity above.
+## 🛑 SCOPE CORRECTION — "all three repairs are closed" was WRONG
+
+A first version of this section claimed the three obvious repairs were each
+closed: bond count forced, many-body zero, per-bond values cancel. **The first
+of those is not closed**, and the error was mine.
+
+`StrandLayoutForcesChain` forbids a **single generator** from joining
+non-consecutive nucleons. It does **not** forbid a bond routed through
+*several* generators. The sibling arc does exactly that —
+`four_body_term_and_the_h12_collapse_probe.py:224`: *"bond between nucleons
+`i<j`: strand `3i+2` routed rightwards to strand `3j`"*, with line 324
+branching to a single generator only when `j = i+1` and to `band_between`
+otherwise.
+
+**Band-routed bonds are therefore a live escape**, and they are precisely where
+the structure this file measures as absent reappears:
+
+* the adjacent bond set is exactly multiplicative, hence order-independent and
+  many-body-free — measured to `1.8e-50`;
+* band-routed bonds **do not commute**. The sibling measures an insertion-order
+  spread of **11.12 %** over one `A=3` triangle's six orders and **38–40 %**
+  over `4He`'s, *"with the outliers exactly those putting the band-routed bond
+  between the two adjacent ones"*.
+
+That also explains the numerical disagreement between the two arcs: their
+`B(4He) = 10.387277` against this file's adjacent-only `8.682248`, a 19.6 % gap
+far too large to be the `~1e-4` colour arm. **Two different bond sets, both
+computed correctly.**
+
+## What actually survives
+
+The refutation stands **on the adjacent bond set** — which is what
+`atom_canonical_crossings` builds and what every measurement in this file uses.
+Restated honestly, the three repairs are:
+
+| repair | status |
+|---|---|
+| rescale `f_pp, f_pn, f_nn` | **closed** — they cancel in `alpha_relation` |
+| irreducible many-body term | **closed on the adjacent set** — measured zero |
+| add band-routed bonds | **OPEN** — and it is the live frontier |
+
+So this is the alpha particle's excess binding arriving as a structural
+obstruction *for adjacent bonds*, scope (b) with the bond-multiset identity as
+its invariant — and simultaneously a sharp statement of where the remaining
+freedom lives. The sibling's measurement is that band routing does not close the
+gap either (`B(4He)` still `-63 %`, every many-body term negative), but that is
+their result, not this file's, and it does not follow from anything proved
+here.
 -/
 
 /-- Chain binding as an additive functional on the bond multiset, parametrised
