@@ -108,6 +108,25 @@ def main() -> int:
     print(f"\n  E0 = {mp.nstr(E0, 20)} MeV\n")
 
     data, linear_ok, gcancel_ok = {}, [], []
+    # Copilot review: without this, a checkpoint holding only one species would
+    # KeyError at data['nn'] below, and `all(linear_ok)` on an empty list is
+    # vacuously True -- the probe would pass having verified nothing. Fail
+    # loudly and early instead.
+    REQUIRED = ("pp", "nn")
+    have = {sp for sp, _ in agg}
+    missing = [sp for sp in REQUIRED if sp not in have]
+    if missing:
+        print(f"  checkpoint is missing species {missing}. Run "
+              f"bpp_higher_a_resumable_driver 2 3 4 5 (pp) and again with "
+              f"--neutron (nn) before this probe. REFUSING to report on a "
+              f"partial checkpoint.")
+        return 1
+    for sp in REQUIRED:
+        n_pts = len([A for s, A in agg if s == sp])
+        if n_pts < 3:
+            print(f"  species {sp} has only {n_pts} A-points; 3 are needed to "
+                  f"test linearity. REFUSING to report.")
+            return 1
     for sp in ("pp", "nn"):
         As = sorted(A for s, A in agg if s == sp)
         if len(As) < 3:
@@ -152,7 +171,7 @@ def main() -> int:
     print("  1. L is linear in the BOND COUNT, exactly — no constant term")
     print("-" * 78)
     check("log-ratio is exactly linear in bonds on both species",
-          all(linear_ok),
+          all(linear_ok) and len(linear_ok) == len(REQUIRED),
           f"worst relative deviation: pp "
           f"{mp.nstr(data['pp']['worst_rel'], 4)}, nn "
           f"{mp.nstr(data['nn']['worst_rel'], 4)} — exact at compute "
@@ -180,16 +199,25 @@ def main() -> int:
     print("-" * 78)
     print("""
   S_off = g^(b+1)  and  S_on = g^(b+1) * f^b, so the free-trace growth appears
-  in BOTH and drops out of the ratio. Recomputing L with g scaled by 1.7 gives
-  a bit-identical value at every A and on both species.
+  in BOTH and drops out of the ratio. Recomputing L with g scaled by 1.7 agrees
+  to better than 1e-30 at every A on both species.
+
+  NOT bit-identical, and the distinction is the reviewer's (Copilot, #6418).
+  An earlier draft claimed "bit-identical" while the check used a tolerance.
+  Measured: at b=2 the two differ by 2.3e-41 -- last-place rounding from
+  g^(b+1) not cancelling exactly in finite-precision arithmetic, NOT a residual
+  dependence on g. Tightening the check to exact equality would therefore make
+  it FAIL, correctly; the wording was the defect, so the wording is what
+  changed.
 
   The DIFFERENCE channel cannot cancel it — that is precisely what its two
   exclusion branches are about (g <= 1 bounded, g > 1 at least geometric). So
   the two channels are not two guesses at one quantity: they differ by whether
   the single-nucleon growth survives, and that alone decides extensivity.
 """)
-    check("L is independent of g — verified by recomputing with g scaled 1.7x",
-          all(gcancel_ok),
+    check("L is independent of g — recomputing with g scaled 1.7x agrees to "
+          "<1e-30 (not exactly; see note)",
+          all(gcancel_ok) and len(gcancel_ok) > 0,
           "Lean: QOU.MassTheory.MarginalRatio.logRatio_independent_of_growth. "
           "This is the mechanism behind the corpus's assertion that the "
           "extensive invariant is the log-ratio, which had been stated without "
