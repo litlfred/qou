@@ -1,0 +1,287 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-02T21:46:09.177790+00:00",
+  "commitSha": "e3e4302fa037bd83883d5de0912062abbc1efef5",
+  "assertions": [
+    {
+      "name": "table2_N=0_reproduces_at_muon_pin_with_a_PLUS_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "table2_N=1_reproduces_at_muon_pin_with_a_PLUS_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "table2_N=2_is_POSITIVE_as_published",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "table2_N1_does_NOT_reproduce_at_the_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "Q_A_is_above_CODATA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_every_live_rung_factor_is_below_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_live_column_is_strictly_decreasing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_every_live_rung_factor_is_below_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_live_column_is_strictly_decreasing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_liveC4_liveC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_liveC4_supersededC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_retiredC4_liveC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "proton_retiredC4_supersededC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_liveC4_liveC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_liveC4_supersededC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_retiredC4_liveC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "muon_retiredC4_supersededC5_N5_is_POSITIVE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "published_headline_sign_is_WRONG_in_the_blocks_own_convention",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "epoch_offset_calibrated_on_N3_predicts_table2_N4_with_the_RETIRED_c4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_LIVE_c4_does_not_predict_table2_N4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_same_offset_lands_table2_N2_within_its_quoted_3_s_f",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "minus_6p6_ppb_is_unreachable_AT_THE_PUBLISHED_EPOCH_TOO",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "and_table3_published_N5_lies_in_that_epoch_window",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "declared_producer_does_not_generate_table2_N1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "declared_producer_carries_no_c5",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "live_c5_is_within_3pct_of_the_SDP_extraction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "superseded_c5_has_the_opposite_sign_to_the_extraction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "corrected_muon_frame_headline_still_clears_the_cK_ceiling",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_canonical_proton_pin_does_NOT_clear_it",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "qbeta-precision-ladder-n5",
+  "scriptFile": "qbeta_precision_ladder_n5.py",
+  "scriptHash": "809055d9e50e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_precision_ladder_n5.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_precision_ladder_n5.py"
+  },
+  "description": "First producer to evaluate the boxed Q_beta five-rung categorical precision ladder to N=5, at both documented q0 pins and over all four documented (c_4, c_5) assignments. Settles the published headline's SIGN: the residual convention is (predicted - CODATA)/CODATA, the ladder descends to CODATA from above, and no documented assignment reaches a negative residual at either pin or at the published input epoch -- so the published '-0.0066 ppm' minus is wrong. Convention C throughout. No fitting.",
+  "data": {
+    "muon_live_N0_eps_Q_ppb": "1677538.52158505225137376999861581703125783888450857167143354",
+    "muon_live_N0_eps_dS_ppb": "1014738.72565937367156761268583340314438663573013021146748579",
+    "proton_live_N0_eps_Q_ppb": "1677568.73104829946723350200931500391578271731363534534657373",
+    "proton_live_N0_eps_dS_ppb": "1014756.99928578754899876315702610573554759653502276302864101",
+    "muon_live_N1_eps_Q_ppb": "73797.5604382449499937060773238807910982817201161611618787748",
+    "muon_live_N1_eps_dS_ppb": "44639.9539994578667470111004542877654352938865764399551676445",
+    "proton_live_N1_eps_Q_ppb": "73828.1047526769110195347872636643703911223628303303663528210",
+    "proton_live_N1_eps_dS_ppb": "44658.4301764898800812564815255973803258787579867283354702271",
+    "muon_live_N2_eps_Q_ppb": "1248.89183549881118676766470946751521864152617438305234948505",
+    "muon_live_N2_eps_dS_ppb": "755.451450642712976269069737061578815096036177093543471008563",
+    "proton_live_N2_eps_Q_ppb": "1279.46463710492411956825511599702532962208086636659953119600",
+    "proton_live_N2_eps_dS_ppb": "773.944859492907886099000577593558324908382514151404222308941",
+    "muon_live_N3_eps_Q_ppb": "13.1531714949994715387249058440633248624591637625730890892057",
+    "muon_live_N3_eps_dS_ppb": "7.95631951783961446196479391598326714174254875347274740341559",
+    "proton_live_N3_eps_Q_ppb": "43.7267197772729707882233720793771163830635150676771968150045",
+    "proton_live_N3_eps_dS_ppb": "26.4501800305185175200255568059935678877324472809766655603699",
+    "muon_live_N4_eps_Q_ppb": "7.19008554864417894264708048721421069971599737804814630976833",
+    "muon_live_N4_eps_dS_ppb": "4.34926420653473978269127853570224854275735707484970494379265",
+    "proton_live_N4_eps_Q_ppb": "37.7636387052818420554982622692029328528503852813691690788404",
+    "proton_live_N4_eps_dS_ppb": "22.8431276677039555191791191053380851565655968238174877276149",
+    "muon_live_N5_eps_Q_ppb": "7.13393664139533734366747321112833652086929876447809796346755",
+    "muon_live_N5_eps_dS_ppb": "4.31529987733708853797257661321441292884835367709693058797991",
+    "proton_live_N5_eps_Q_ppb": "37.7074898557493246572264919369599095480546980362305028253361",
+    "proton_live_N5_eps_dS_ppb": "22.8091633734187599442303564717284522959927984131690693276593",
+    "eps_dS_over_eps_Q": "0.604897421193392120888430561947016690587111074857191944585187",
+    "proton_liveC4_liveC5_N5_ppb": "37.7074898557493246572264919369599095480546980362305028253361",
+    "proton_liveC4_supersededC5_N5_ppb": "38.3403919764545620261380764846951469037306965614348267407389",
+    "proton_retiredC4_liveC5_N5_ppb": "37.0781905563431167797168534362339821139040246940284416332234",
+    "proton_retiredC4_supersededC5_N5_ppb": "37.7110926766500693024942506902650794202286608849846099619695",
+    "muon_liveC4_liveC5_N5_ppb": "7.13393664139533734366747321112833652086929876447809796346755",
+    "muon_liveC4_supersededC5_N5_ppb": "7.76683941241152781393912222012263836341619501734135641715797",
+    "muon_retiredC4_liveC5_N5_ppb": "6.50463683490299002081599257693995621303154950951150705669300",
+    "muon_retiredC4_supersededC5_N5_ppb": "7.13753960552089490260002666864965651708215642198928365333440",
+    "min_N5_over_all_documented_assignments_ppb": "6.50463683490299002081599257693995621303154950951150705669300",
+    "published_epoch_offset_ppb": "7.13317149499947153872490584406332486245916376257308908920574",
+    "published_epoch_N4_retired_c4_ppb": "-0.572385752882974415143684709916093203859085658631439267075860",
+    "published_epoch_N5_window_ppb": [
+      "-0.628534660096481517908913267123368649427614253061582032512742",
+      "0.633667917412056275214216376059313500957031254768267327952233"
+    ],
+    "c5_live": "-1.25270211325196540159377935162023613783017559887490468132603",
+    "c5_superseded": "12.8675840669652511556511628915360523957049793773943141885959",
+    "c5_sdp_extracted": "-1.22290000000000000000000000000000000000000000000000000000000",
+    "corrected_headline_muon_ppm": "0.00713393664139533734366747321112833652086929876447809796346755",
+    "corrected_headline_proton_ppm": "0.0377074898557493246572264919369599095480546980362305028253361"
+  }
+}
