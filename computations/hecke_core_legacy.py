@@ -82,8 +82,18 @@ import mpmath as _mp  # mpf-safe sqrt/exp (bean qou-9ay6, NO-FLOAT64)
 # per-element Python arithmetic rather than vectorised BLAS. Under NO-FLOAT64
 # that is the price of a correct number, and the alternative — casting the
 # chain coefficient down — is the move the directive forbids.
+#
+# `q_int_mp as q_int` for the same reason (bean `qou-uiut`). The plain `q_int`
+# closes over q_parameter's FLOAT `Q`/`Q_INV`/`HA`, so it returns a Python
+# float at any working precision — 2.156e-16 relative against the mpf closed
+# form at [±2]. Every one of the five call sites below divides an mpf by it,
+# which capped the result at ~17 digits while its type still said mpf. Measured
+# on the seminormal off-diagonal blocks: the braid relation read 2.649e-16
+# (float64 epsilon) instead of the 4.677e-51 this construction actually
+# reaches. Aliasing rather than renaming the call sites keeps the five uses
+# reading as the q-integer they are.
 from q_parameter import (Q_MP as q0, Q_INV_MP as qi, HA_MP as h,
-                         q_int, E_CROSS_MP as E_CROSS)
+                         q_int_mp as q_int, E_CROSS_MP as E_CROSS)
 
 # Exact mpf 0 and 1, for seeding matrices whose entries are now mpf.
 # `0.0` and `1.0` are exactly representable so this costs no precision — it
@@ -897,21 +907,37 @@ def magic_proximity(x, sigma=None):
 # σ_1 swaps (1,2): T1 same row → eigenvalue q; T2 same column → -q⁻¹.
 # σ_3 swaps (3,4): T1 same row → eigenvalue q; T2 same column → -q⁻¹.
 # σ_2 swaps (2,3): mixes T1 ↔ T2 with axial-distance ρ = ±2.
-#   diag = h / [ρ]_q,  off-diagonal = √(diag·(h-diag)+1).
+#   diag = q^ρ / [ρ]_q,  off-diagonal = √(diag·(h-diag)+1).
+#   (`q^ρ / [ρ]_q`, not `h / [ρ]_q` — see `_build_ysn_matrices`; the wrong
+#   form broke the braid relation by 0.731514, bean `qou-uiut`.)
 #
 # All entries are q-rational (computed from q₀ via q_int).
-_M22_S1 = ((q0,    0.0    ),
-           (0.0,   -qi    ))
-_M22_S3 = ((q0,          _MPF_ZERO),
-           (_MPF_ZERO,   -qi      ))
-_diag_T1 = h / q_int(-2)                          # = -h/[2]_q
-_diag_T2 = h - _diag_T1                            # h([2]_q+1)/[2]_q
-_bc_22 = _diag_T1 * _diag_T2 + 1.0
-# `_mp.sqrt`, not `math.sqrt` — same NO-FLOAT64 reason as the per-generator
-# off-diagonal below (bean `qou-9ay6`).
-_off_22 = _mp.sqrt(abs(_bc_22)) * (1 if _bc_22 > 0 else -1)
-_M22_S2 = ((_diag_T1, _off_22),
-           (_off_22,  _diag_T2))
+#
+# These were three hand-written tuples — a second copy of what
+# `_build_ysn_matrices((2, 2))` returns, and they went wrong in both of the
+# ways a copy goes wrong (bean `qou-uiut`):
+#
+#  1. They carried the same incorrect Hoefsmit diagonal, `h / [ρ]_q`, so the
+#     copy had to be found and fixed separately from its source.
+#  2. Being module-level, they were evaluated at IMPORT-time `mp.dps` and
+#     frozen there. `q_parameter` only raises the 50-dps floor on the
+#     ideal/muon anchor branch; on any other anchor `qou_substrate.constants`
+#     computes its `_MP` family inside `mp.workdps(...)`, which RESTORES the
+#     ambient precision — mpmath's default 15. So a producer that imported
+#     this module before raising `mp.dps` got 17-digit (2,2) constants while
+#     `_build_ysn_matrices`, called later at 50 dps, returned 50-digit
+#     matrices for the same generators. Measured: the two disagreed at
+#     1.98e-17, float64 grade, inside a module excised to mpf end to end.
+#     That is precisely the mixed-precision state NO-FLOAT64 forbids, and
+#     nothing in the types showed it.
+#
+# Deriving them instead fixes both at once, and the dps key means a caller
+# that raises precision after import gets constants at the new precision
+# rather than the one frozen at import.
+@lru_cache(maxsize=4)
+def _m22_sigmas(_dps):
+    """(σ_1, σ_2, σ_3) for (2,2), built at the CALLER's working precision."""
+    return tuple(_build_ysn_matrices((2, 2), sparse_threshold=1 << 30))
 
 
 def _matmul2(A, B):
@@ -922,7 +948,7 @@ def _matmul2(A, B):
 
 def _crossing_M22(c, d, j):
     """Matrix of c·σ_j + d·I in the (2,2) representation, j ∈ {1,2,3}."""
-    Mj = _M22_S1 if j == 1 else (_M22_S2 if j == 2 else _M22_S3)
+    Mj = _m22_sigmas(_mp.mp.dps)[j - 1]
     return ((c*Mj[0][0] + d, c*Mj[0][1]    ),
             (c*Mj[1][0],     c*Mj[1][1] + d))
 
@@ -1108,8 +1134,17 @@ def _is_coo_mpf(x) -> bool:
     return isinstance(x, _CooMPF)
 
 
-def _build_ysn_matrices(partition, sparse_threshold=32):
+def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
+
+    `q` overrides the module's q₀ so a caller sweeping q can use this builder
+    instead of re-implementing it. `sdp_cross_channel.q_sweep_sdp_atom` kept a
+    private copy of this loop for exactly that reason, and both copies carried
+    the same wrong `a_rho` (bean `qou-uiut`) — the divergence between copies of
+    one loop being the defect, as it was for the three `.dot` sites in
+    `qou-9ay6`. The arithmetic follows the operand: an f64 `q` gives f64
+    matrices and takes `math.sqrt`, so the sweep is bit-identical to what its
+    own copy produced, while `q=None` keeps the mpf module path.
 
     For dim ≥ sparse_threshold, returns `_CooMPF` objects — a COO form whose
     values may be mpf. This was scipy.sparse.csr_matrix until the NO-FLOAT64
@@ -1121,6 +1156,27 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
 
     All entries numerical (evaluated at q₀).
     """
+    if q is None:
+        q_v, qi_v, h_v, zero_v = q0, qi, h, _MPF_ZERO
+        _sqrt, _qint = _mp.sqrt, q_int
+    else:
+        # `_sqrt_for` dispatches on the operand (float / mpf / sympy) rather
+        # than on a flag, so a float `q` still routes to `math.sqrt` and is
+        # bit-identical to the private copy this replaced.
+        from pyhecke.syt_prefix_cache import _sqrt_for as _sqrt
+        q_v = q
+        qi_v = 1 / q_v
+        h_v = q_v - qi_v
+        zero_v = q_v * 0
+
+        def _qint(m, _q=q_v, _qi=qi_v, _h=h_v):
+            # `[m]_q → m` as q → 1: the ratio is 0/0 there and the sweep does
+            # evaluate at q = 1. `_q * 0 + m` carries the operand's own type
+            # rather than pinning a float.
+            if _h == 0:
+                return _q * 0 + m
+            return (_q**m - _qi**m) / _h
+
     n = sum(partition)
     if n < 2:
         return []
@@ -1137,7 +1193,7 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
         if use_sparse:
             rows, cols, vals = [], [], []
         else:
-            M = [[_MPF_ZERO] * dim for _ in range(dim)]
+            M = [[zero_v] * dim for _ in range(dim)]
         processed = set()
         for i, T in enumerate(tabs):
             if i in processed:
@@ -1157,24 +1213,24 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                     break
             if same_row:
                 if use_sparse:
-                    rows.append(i); cols.append(i); vals.append(q0)
+                    rows.append(i); cols.append(i); vals.append(q_v)
                 else:
-                    M[i][i] = q0
+                    M[i][i] = q_v
                 processed.add(i)
             elif same_col:
                 if use_sparse:
-                    rows.append(i); cols.append(i); vals.append(-qi)
+                    rows.append(i); cols.append(i); vals.append(-qi_v)
                 else:
-                    M[i][i] = -qi
+                    M[i][i] = -qi_v
                 processed.add(i)
             else:
                 T_swapped = _swap_tab(T, k, k + 1)
                 if T_swapped is None:
                     if use_sparse:
                         rows.append(i); cols.append(i)
-                        vals.append(q0 if rho > 0 else -qi)
+                        vals.append(q_v if rho > 0 else -qi_v)
                     else:
-                        M[i][i] = q0 if rho > 0 else -qi
+                        M[i][i] = q_v if rho > 0 else -qi_v
                     processed.add(i)
                     continue
                 key = tuple(tuple(r) for r in T_swapped)
@@ -1182,13 +1238,31 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 if j is None:
                     if use_sparse:
                         rows.append(i); cols.append(i)
-                        vals.append(q0 if rho > 0 else -qi)
+                        vals.append(q_v if rho > 0 else -qi_v)
                     else:
-                        M[i][i] = q0 if rho > 0 else -qi
+                        M[i][i] = q_v if rho > 0 else -qi_v
                     processed.add(i)
                     continue
-                a_rho = h / q_int(rho)
-                a_neg = h - a_rho
+                # Hoefsmit's seminormal diagonal is `h / (1 - q^{-2ρ})`.
+                # Multiplying numerator and denominator by q^ρ turns that into
+                # `q^ρ / [ρ]_q`, since `[ρ]_q = (q^ρ - q^{-ρ}) / h`. It is NOT
+                # `h / [ρ]_q` — that was off by a factor of `q^ρ / h`, and it
+                # made these matrices fail the braid relation by a constant
+                # 0.731514 at EVERY partition (bean `qou-uiut`).
+                #
+                # The two branches above already knew the right answer: at
+                # ρ = +1, `[1]_q = 1`, so this yields `q` — exactly the `q0`
+                # the `same_row` branch hardcodes; at ρ = -1, `[-1]_q = -1`,
+                # yielding `-q^{-1}` = the `-qi` of `same_col`. The old form
+                # gave `h` and `-h` there, contradicting its own special cases.
+                #
+                # `a_neg = h_v - a_rho` needs no change and never did: the true
+                # Hoefsmit pair satisfies a_ρ + a'_ρ = h, so this identity held
+                # for the wrong `a_rho` too. That is why the QUADRATIC relation
+                # passed throughout — it only constrains the 2x2 block trace,
+                # and is blind to this error. Only the braid relation sees it.
+                a_rho = q_v**rho / _qint(rho)
+                a_neg = h_v - a_rho
                 bsq = a_rho * a_neg + 1.0
                 # `_mp.sqrt`, not `math.sqrt` (bean `qou-9ay6`, NO-FLOAT64).
                 # `a_rho`, `a_neg` and `bsq` are mpf, and `math.sqrt` downcast
@@ -1196,7 +1270,7 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 # generator, which outnumber the diagonal ones, were float64
                 # while the diagonal was mpf. That both lost the precision and
                 # re-mixed the matrix the excision had just made uniform.
-                off = _mp.sqrt(abs(bsq)) * (1 if bsq > 0 else -1)
+                off = _sqrt(abs(bsq)) * (1 if bsq > 0 else -1)
                 if use_sparse:
                     rows.extend([i, j, i, j])
                     cols.extend([i, j, j, i])

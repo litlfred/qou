@@ -472,65 +472,26 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
 
     def chi_at_q(partition, q):
         """YSN trace of the atom braid in partition at given q."""
-        import math as _math
-        h_q = q - 1.0 / q
-        # Build YSN matrices at this q (NOT the globally-precomputed ones)
-        from hecke_core_legacy import (
-            _standard_tableaux, _swap_tab, _content_at,
-        )
         n = sum(partition)
         if n < 2:
             return 1.0
-        tabs = list(_standard_tableaux(partition))
-        dim = len(tabs)
-        if dim == 0:
+
+        # The private YSN build that used to live here is gone: it was a
+        # verbatim copy of `_build_ysn_matrices`, and both copies carried the
+        # same wrong Hoefsmit diagonal `h/[ρ]_q` where the correct value is
+        # `q^ρ/[ρ]_q` — a braid-relation defect of 0.731514 at every partition
+        # (bean `qou-uiut`). Fixing one copy and not the other is how this
+        # class of bug comes back, so the loop now has one home and this
+        # caller passes its sweep `q` in. `_build_ysn_matrices` follows the
+        # operand's arithmetic, so an f64 sweep stays f64.
+        #
+        # `sparse_threshold` is set past any reachable dim because the code
+        # below indexes `sigmas[...]` as dense tuples.
+        # Build at THIS q, not from the globally-precomputed q₀ matrices.
+        sigmas = _build_ysn_matrices(partition, sparse_threshold=1 << 30, q=q)
+        if not sigmas:
             return 1.0
-        tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
-
-        def q_int(nn):
-            if q == 1: return float(nn)
-            return (q ** nn - q ** (-nn)) / (q - q ** (-1))
-
-        def build_sigma(k_idx):
-            M = [[0.0]*dim for _ in range(dim)]
-            processed = set()
-            for i, T in enumerate(tabs):
-                if i in processed: continue
-                ca = _content_at(T, k_idx)
-                cb = _content_at(T, k_idx + 1)
-                rho = cb - ca
-                if rho == 0: continue
-                same_row = any(k_idx in row and (k_idx+1) in row for row in T)
-                same_col = False
-                width = max(len(r) for r in T)
-                for c in range(width):
-                    col_vals = [T[r][c] for r in range(len(T)) if c < len(T[r])]
-                    if k_idx in col_vals and (k_idx+1) in col_vals:
-                        same_col = True; break
-                if same_row:
-                    M[i][i] = q; processed.add(i)
-                elif same_col:
-                    M[i][i] = -1.0/q; processed.add(i)
-                else:
-                    Tsw = _swap_tab(T, k_idx, k_idx+1)
-                    if Tsw is None:
-                        M[i][i] = q if rho > 0 else -1.0/q
-                        processed.add(i); continue
-                    key = tuple(tuple(r) for r in Tsw)
-                    j = tab_index.get(key)
-                    if j is None:
-                        M[i][i] = q if rho > 0 else -1.0/q
-                        processed.add(i); continue
-                    a_rho = h_q / q_int(rho)
-                    a_neg = h_q - a_rho
-                    bsq = a_rho * a_neg + 1.0
-                    off = _math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
-                    M[i][i] = a_rho; M[j][j] = a_neg
-                    M[i][j] = off;   M[j][i] = off
-                    processed.add(i); processed.add(j)
-            return tuple(tuple(r) for r in M)
-
-        sigmas = [build_sigma(g) for g in range(1, n)]
+        dim = len(sigmas[0])
         n_gens = n - 1
 
         # Matrix product of atom braid

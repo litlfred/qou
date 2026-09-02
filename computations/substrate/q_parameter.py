@@ -214,6 +214,26 @@ if _anchor in ("ideal", "muon", "canonical"):
         TANH_LN_Q_MP = HA_MP / TWO_Q_MP
         LN_Q_MP      = _mp.log(Q_MP)
 
+        def q_int_mp(n, _Q=Q_MP, _QI=Q_INV_MP, _HA=HA_MP):
+            """Quantum integer [n]_q = (q^n - q^-n)/(q - q^-1) at mpf precision.
+
+            The `_MP` counterpart of `q_int`, which was missing from this family
+            (bean `qou-uiut`). Re-defined here over the MUON `_MP` globals for
+            the same reason the float `q_int` is re-defined above: the imported
+            one closes over qou_substrate's PROTON values. `q_int` closes over the float64 `Q`/`Q_INV`/`HA`,
+            so it returns a Python float at ANY working precision — and a consumer
+            that divides an mpf by `q_int(n)` gets an mpf carrying only ~17 good
+            digits, with nothing in the type to show the loss.
+
+            That is precisely how it went wrong: after `hecke_core_legacy` was
+            excised to mpf end to end under NO-FLOAT64, its Hoefsmit seminormal
+            blocks still read `a_rho = q**rho / q_int(rho)` and so came back f64
+            on the off-diagonal while the rest of the matrix carried 50 digits.
+            The braid relation measured 2.6e-16 — float64 epsilon — instead of
+            the 4.7e-51 the mpf construction actually reaches.
+            """
+            return (_Q**n - _QI**n) / _HA
+
         # ── q_at / q_str re-bound to the canonical MUON source ──
         # The imported `q_at`/`q_str` (from `import *`) Newton-solve the PROTON
         # pin, so a producer doing `from q_parameter import q_at; q_at(dps)` got
