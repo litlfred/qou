@@ -92,6 +92,17 @@ Brunnian forces `a = b = 0`, the trivial carrier
 **adjacent** generators. So on the minimal set the enumerator could never have
 found the corpus's own answer, at any length.
 
+**The reachability step is now PROVED on `main`, and this file should defer to
+it.** `QOU.Mass.StrandLayoutForcesChain` (`8421cd4163`, landed after this file was
+drafted) carries `no_single_generator_joins_nonadjacent`: with `block m = m / 3`,
+a single generator joins two *different* nucleons only at `m % 3 = 2`, and then
+only **consecutive** ones. That is exactly what `twoLk`'s third component encodes
+below, and it is why the encoding caveat there can be discharged by citation
+rather than by building a braid-word model here. Indexing differs — that file
+gives nucleon `k` strands `3k, 3k+1, 3k+2` (0-based, bridges at `m % 3 = 2`);
+this one uses `3k+1 … 3k+3` (1-based, bridges at `3 | i`). Same fact, and
+`interface_iff_three_dvd` is its 1-based twin.
+
 ## The fix is the generator set, and it is a known one
 
 The obstruction above is **not** the strand layout — `n = 3A` is forced corpus-wide
@@ -116,11 +127,26 @@ Every `1|3` band has `|t - s| ≥ 4`, so none is an adjacent transposition and n
 could have been in the search set. That is exactly the pair a Brunnian carrier
 needs. **The subset chosen excludes precisely what was required.**
 
-Corpus-grepped: band / Birman–Ko–Lee generators appear nowhere in `content/`,
-`computations/` or `docs/` — the one `BKL` hit is **BKLR**
-(Bischoff–Kawahigashi–Longo–Rehren), a Frobenius-algebra theory and a substring
-false positive. Four library documents cover the band presentation, so adopting
-it is a **citation, not a derivation**.
+🛑 **RETRACTED — that grep was wrong when I ran it.** This read: *"band /
+Birman–Ko–Lee generators appear nowhere in `content/`, `computations/` or
+`docs/`"*. **False.** At the very commit my own checkout was sitting on
+(`ed4ffbe424`), `computations/deltalambda/` already carried them in at least six
+files — `brunnian_route_feasibility_probe.py` names
+`a_{7,3} = (σ₆σ₅σ₄…)` explicitly, and `milnor_exact_coefficient_probe.py`
+works with *"commutators of pure-braid **band generators**"*.
+
+**The mechanism, because it generalises.** My pattern was correct and *did* match
+those files. I piped it through `head -10`, and
+`content/quantum-observable-universe/lean/.lake/packages/…` sorts before
+`computations/` — six vendored Mathlib/batteries blobs consumed the budget, and I
+read the truncated output as *empty*. **`head` on a corpus grep is a correctness
+hazard, not a display convenience**, and a repo with a vendored `.lake/` will eat
+the budget before reaching the directory that matters. Exclude `.lake/` and drop
+the cap.
+
+What survives: the band presentation *is* the right generating set (the count
+argument above is unaffected), and four library documents cover it. What does not
+survive is the claim that adopting it would be new here.
 
 ## Scope
 
