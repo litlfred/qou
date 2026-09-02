@@ -913,4 +913,25 @@ theorem ocneanu_numerator_collapse {q z zm : ℝ} (hq : 0 < q) (N c : ℕ)
   simp only [two_mul, pow_add, div_pow, one_pow]
   field_simp
 
+/-- **The row bound, formally.**  At a cell of content `-N`, the Ocneanu
+    numerator vanishes identically whenever the framing ratio is `q^N`.
+
+    Since a partition with more than `N` rows always contains such a cell, this
+    is why `w_λ = 0` there — and at `N = 2` it is why the corpus's exact
+    `y_(1³) = 0` holds.  It is also what refutes the Wenzl-bridge premise
+    `y_λ = w̃_λ` on the `κ_λ = 0` stratum: at `(3,1,1)` and `(3,2,1)` the left
+    side is `0` by this lemma while `w̃_λ` is a ratio of positive quantum
+    integers, so the identity asserts `0 = positive` and no parameter can
+    reconcile it
+    (`computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`,
+    10/10). -/
+theorem ocneanu_numerator_vanishes_at_content_neg {q z zm : ℝ} (hq : 0 < q)
+    (N : ℕ) (h : z = q ^ (2 * N) * zm) :
+    z * (1 / q) ^ N - zm * q ^ N = 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  subst h
+  simp only [two_mul, pow_add, div_pow, one_pow]
+  field_simp
+  ring
+
 end QOU.Information

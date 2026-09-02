@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-09-02T21:30:15Z
+updated_at: 2026-09-02T22:04:14Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -378,3 +378,75 @@ At n=3 the self-conjugate partition is (2,1), and my two numbers there DISAGREE
 `dim_q` or `[n]_q!` normalisation differently than intended. I have NOT
 established which, and am not declaring it refuted -- it needs the block's own
 normalisation pinned down first. Successor bean material.
+
+
+---
+
+## FLAG RESOLVED 2026-09-02 — the Wenzl-bridge premise is FALSE, and my flag was right for the wrong reason
+
+Probe: `computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`,
+**10/10**. Lean: `ocneanu_numerator_vanishes_at_content_neg`, sorry-free.
+
+**MY FLAG SAID** the two blocks disagreed on the self-conjugate stratum, and
+that I might be misreading `wedderburn-weight-canonical`'s normalisation. Two
+corrections to my own framing, then the finding.
+
+**FIRST, I HAD "SELF-CONJUGATE" WRONG.** I assumed it meant `lambda = lambda'`.
+The Lean says `kappa_lambda = sum_x c(x) = 0`. (2,1) satisfies both, so my
+example survived, but the stratum is different from what I said.
+
+**SECOND, THE GLYPH.** The block's `.ts` title and `.lean` both call its weight
+`w~_lambda` (the THIRD registered family); only the `.md` body wrote
+`w_lambda(q)`, conflating it with the Ocneanu/Markov family. So there was never
+a cross-block contradiction of the kind I flagged -- there was a WITHIN-block
+notation defect. Fixed in the `.md`.
+
+**THE FINDING, which is bigger than the flag.** The premise
+`y_lambda = w~_lambda on kappa = 0` is FALSE at every such partition with
+n <= 6 except the trivial (1) -- in convention D AND in convention C, so it is
+not a convention-scoping issue:
+
+    lambda      y^D(q0)      y^C(q0)      w~(q0)
+    (1)         1.00000000   1.00000000   1.00000000
+    (2,1)       0.24729789   0.28092963   0.66067377
+    (2,2)       0.06115624   0.06947330   0.16604895
+    (3,1,1)     0            0.01676661   0.29466896
+    (3,2,1)     0            0.00731845   0.35863564
+
+(2,2) and (3,2,1) are exactly the two partitions the block's own cited script
+`_deprecated/bw_wenzl_shadow_equivalence.py` is said to have verified.
+
+**SCOPE (b) for the last two rows** -- structural, not numerical. Convention D
+is the sl_2 point, so `y = 0` identically once lambda has more than two rows (a
+cell of content -2 kills the Ocneanu numerator; Lean:
+`ocneanu_numerator_vanishes_at_content_neg`), while `w~ > 0` as a ratio of
+positive quantum integers. The identity asserts `0 = positive`; no parameter
+reconciles it. **SCOPE (a) for (2,1) and (2,2)**: measured non-equality under
+six readings of `dim_q^2/[n]!` (symmetric vs unbalanced quantum integer,
+q-deformed vs ordinary dimension, squared vs unsquared), none matching -- which
+is not the same as every reading that exists.
+
+**MY IMPLEMENTATION IS VALIDATED AGAINST THE CORPUS**, not merely
+self-consistent: at (2,1) it reproduces the registered `1/[2]_q^2 ~ 0.2472979`
+(D) to 10 digits and the recorded `0.2809` (C). So the disagreement is not an
+artefact of my Ocneanu product.
+
+**WHAT IS *NOT* INVALIDATED, which is most of the block.**
+`y_eq_self_conjugate` is a Lean CLASS FIELD -- assumed, not proved -- so nothing
+in the corpus is *proved* wrong ("conditional-proved != premise-established").
+What follows: the class has no inhabitant carrying the intended `y` and `w~`
+together, so `[WedderburnWeightCanonical R]`-conditional results are VACUOUS at
+the intended instance rather than false. And `beta_mul_h_eq_neg_C`, the file's
+one real theorem, never reads the `y` field (`rw [c.beta_eq, c.C_eq]; ring`) --
+the BW/LP scalings stand as definitional.
+
+**A THIRD DEFECT, found on the way.** The Lean docstring cited
+`computations/probe-wedderburn-weight-scheme.witness.json` for the off-stratum
+ratios "~0.14 to ~2.54". That file DOES NOT EXIST and `git log --all` shows it
+never existed in tracked history -- the only evidence offered for that claim.
+Citation replaced with the live probe.
+
+**DISPOSITION IS THE OWNER'S, deliberately not taken.** Restrict the field to
+lambda = (1), drop it, or demote the block to a conjecture. Weakening the class
+to make it inhabitable would be laundering. Recorded in the `.md` and the Lean
+docstring; the field is left standing.
