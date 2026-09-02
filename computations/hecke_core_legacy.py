@@ -1095,6 +1095,44 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
     return matrices
 
 
+# ── Rust LP-accumulator kernel (qou-sv7h) ───────────────────────────────
+# `pyhecke_native.lp_accumulator_step_traces_mpfr` performs the per-partition
+# chain accumulation entirely in Rust at MPFR precision, building its seminormal
+# matrices via `seminormal_matrices_mpfr` -- the family that satisfies the braid
+# relation (the Python `_build_ysn_matrices` family does NOT; see
+# docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md and
+# computations/audits/ysn_braid_relation_audit.py).
+#
+# Verified against a pure-mpmath reference on the SAME matrices to 7.09e-48:
+# computations/audits/lp_accumulator_kernel_gate.py.
+#
+# Optional by design: a bare container has no pyhecke_native, and this module
+# must still import there. When absent the original Python path runs unchanged.
+try:                                                    # pragma: no cover
+    import pyhecke_native as _PHN
+    _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+except ImportError:                                     # pragma: no cover
+    _PHN = None
+    _HAS_LP_KERNEL = False
+
+
+def _lp_kernel_steps(partition, chains):
+    """Per-step (trace, log_norm) for one partition, computed in Rust.
+
+    Returns None when the kernel is unavailable, so callers fall back.
+    Coefficients cross the boundary as decimal STRINGS: nothing narrows to f64.
+    """
+    if not _HAS_LP_KERNEL:
+        return None
+    from mpmath import mp as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    out = _PHN.lp_accumulator_step_traces_mpfr(
+        list(partition),
+        [[(str(c), str(d), g) for c, d, g in ch] for ch in chains],
+        _Q50, 50)
+    return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
+
+
 def _matmul_dim(A, B, dim):
     """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8 (significant
     speedup for higher Hecke levels)."""
@@ -1425,6 +1463,21 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     per_step = []
     cumul_total = 0.0
 
+    # Precompute every partition's per-step (trace, log_norm) in Rust, once.
+    # This replaces ONLY the matrix maintenance; every line of the accumulation
+    # below -- raw_delta, cumul_partition, final_tr_sign -- and the whole of
+    # Pass 2's complementary-slackness gate are untouched. That distinction is
+    # the point: a reimplementation of this function drops Pass 2 and is wrong
+    # by a factor of ~4.6 (measured), which is why the kernel is wired in here
+    # rather than around.
+    for s in state:
+        s['kernel_steps'] = None
+        if _HAS_LP_KERNEL:
+            _ng = s['entry']['n_gens']
+            _chains = [_step_chain_generic(ordering[_k], ordering[:_k], _ng)
+                       for _k in range(A)]
+            s['kernel_steps'] = _lp_kernel_steps(s['entry']['partition'], _chains)
+
     # ── Pass 1: forward accumulation ──────────────────────────
     for kk in range(A):
         nuc = ordering[kk]
@@ -1468,7 +1521,15 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # both O(dim*nnz)), so the outer exactness test was not only wrong,
             # it was redundant. Value-equality verified against the pre-fix
             # result at k_exact = 4..8 (k=8 carries 12 sparse partitions).
-            if s['sparse']:
+            if s.get('kernel_steps') is not None:
+                # Rust supplied this partition's whole trajectory up front:
+                # the trace and accumulated log-norm for every step, including
+                # the same `max|M| > 1e80` rescale applied below. The matrix
+                # itself is never materialised in Python.
+                _kernel_hit = True
+                tr_run, s['log_norm'] = s['kernel_steps'][kk]
+            elif s['sparse']:
+                _kernel_hit = False
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
@@ -1514,12 +1575,15 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:
+                _kernel_hit = False
                 M_step = _identity(dim)
                 for c, d, gen in chain:
                     M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
-            if isinstance(s['M'], np.ndarray):
+            if _kernel_hit:
+                m_max = 0.0          # the rescale already happened in Rust
+            elif isinstance(s['M'], np.ndarray):
                 m_max = float(np.max(np.abs(s['M'])))
             else:
                 m_max = 0.0
@@ -1535,7 +1599,8 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                                   for i in range(dim)]
                     s['M'] = tuple(tuple(r) for r in M_rescaled)
                 s['log_norm'] += math.log(m_max)
-            tr_run = _trace_dim(s['M'], dim)
+            if not _kernel_hit:
+                tr_run = _trace_dim(s['M'], dim)
             log_cur = (s['log_norm'] + math.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
@@ -1679,6 +1744,16 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = np.eye(dim) if sparse_sigmas else _identity(dim)
     log_norm = 0.0
+    # Rust LP-accumulator kernel (qou-sv7h). Same recurrence, same rescale, at
+    # MPFR precision over the braid-satisfying seminormal family. Only the FINAL
+    # step's trace and log-norm are returned by this function, so take the last.
+    _ks = _lp_kernel_steps(entry['partition'], [
+        _step_chain_generic(ordering[_k], ordering[:_k], n_gens,
+                            include_inter=include_inter)
+        for _k in range(A)])
+    if _ks:
+        _tr, _ln = _ks[-1]
+        return (float(_tr), float(_ln), int(dim))
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
