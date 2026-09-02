@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-02T21:27:41Z
-updated_at: 2026-09-02T22:01:04Z
+updated_at: 2026-09-02T22:06:03Z
 ---
 
 ## Measured 2026-09-02 — `computations/probes/logratio_exactly_extensive_probe.py` (4/4)
@@ -108,3 +108,51 @@ the blind arm. Every mixed composition carries exactly one `averaged_weighted`
 crossing (#6379) and that is the only place the arms differ — #6379 measured
 the gap at ~1e-4. `f_pp` and `f_nn` are arm-independent: a pure chain carries
 no `averaged_weighted` crossing at all.
+
+
+## PARAMETER-FREE REFUTATION 2026-09-02 — the chain bond set cannot make an alpha
+
+The three obvious repairs to the shortfall are each now closed, and the last one
+is closed without using any model constant.
+
+    bonds(3H) + bonds(3He) - bonds(2H) = bonds(4He)      (1,1,1) both sides
+
+an EXACT multiset identity for the chain layout `p..p n..n`, where (Z,N) has
+(Z-1) pp, one pn, (N-1) nn bonds. So **any** additive functional on those
+multisets obeys
+
+    B(4He) = B(3H) + B(3He) - B(2H)
+
+with the per-bond values cancelling entirely. Against AME2020:
+
+    predicted 13.975275 MeV     AME 28.295661 MeV     ratio 2.0247
+
+**No rescaling of f_pp, f_pn, f_nn can help — they do not appear in the
+relation.** This is the alpha particle's excess binding arriving as a structural
+obstruction rather than a numerical shortfall.
+
+### All three repairs are closed
+
+| repair | status |
+|---|---|
+| more bonds | bond set is FORCED — `QOU.Mass.StrandLayoutForcesChain` (sibling, Lean) |
+| many-body term | exactly ZERO, measured to 1.8e-50 at every A=3,4 composition |
+| rescale per-bond values | they CANCEL in the relation — parameter-free |
+
+### Lean (sorry-free, axioms clean)
+
+    QOU.MassTheory.MarginalRatio.alpha_relation
+    QOU.MassTheory.MarginalRatio.chain_additive_cannot_match_alpha
+
+### And the shortfall is not even uniform
+
+Model vs AME with the model's own slopes: 2H **0.785** (model OVERSHOOTS), 3H
+1.279, 3He 1.580, 4He 3.259. The ratio changes SIDE of 1, so no uniform rescale
+was ever going to work — the parameter-free relation is the sharp version of
+that observation.
+
+### Unreconciled
+
+t7qv reports `B(4He) = 10.387277`; my chain log-ratio gives `8.682248`. The gap
+is 19.6 %, far larger than the ~1e-4 colour arm, so it is a different
+construction. NOT reconciled here.

@@ -567,4 +567,79 @@ theorem bounded_not_eventually_above_line {S g f c : ℝ} (hS : 0 ≤ S)
     linarith
   linarith
 
+
+/-! ### 9. The chain bond set cannot produce the alpha binding — parameter-free
+
+The strongest statement in this file, and the one that needs no model constants
+at all.
+
+**Three inputs, none of them a fitted parameter.**
+
+1. **The bond set is the chain**, and that is *forced*, not chosen:
+   `QOU.Mass.StrandLayoutForcesChain` (sibling arc, `lean`-direct exit 0) shows
+   a single generator `σ_m` joins two different nucleons only when `m % 3 = 2`,
+   and then only *consecutive* ones, under the 3-strands-per-nucleon layout.
+2. **The channel is exactly pairwise-additive over that bond set.** Measured at
+   every composition of `A = 3` and `A = 4` to `1.8e-50`
+   (`logratio_exactly_pairwise_additive_probe`): `S_on/S_off` is exactly the
+   product of the bond factors, so `L` is a sum of per-bond terms with
+   identically **zero** many-body correction.
+3. **AME2020.**
+
+Laying a chain out `p…p n…n`, the bond multiset of `(Z, N)` is `(Z-1)` pp, one
+pn, `(N-1)` nn. Writing `p = Z-1`, `n = N-1`, those multisets satisfy an
+**exact identity**:
+
+    bonds(3H) + bonds(3He) - bonds(2H) = bonds(4He)      (1,1,1) both sides
+
+so **any** additive functional on them obeys
+
+    B(4He) = B(3H) + B(3He) - B(2H)
+
+with the per-bond values cancelling out entirely. Against AME:
+
+    predicted  13.975275 MeV
+    AME        28.295661 MeV        ratio 2.0247
+
+**So the chain bond set is refuted for `4He`, and not by being short.** It is
+refuted *whatever* the per-bond values are — no rescaling of `f_pp, f_pn, f_nn`
+can help, because they do not appear in the relation. Combined with §8 (no `g`
+makes the difference channel extensive) and the measured zero many-body term,
+the three obvious repairs are each closed: bond count is forced, many-body is
+zero, per-bond values cancel.
+
+This is the alpha particle's well-known excess binding, arriving as a structural
+obstruction rather than a numerical shortfall. It is scope (b), with the
+invariant named: the bond-multiset identity above.
+-/
+
+/-- Chain binding as an additive functional on the bond multiset, parametrised
+by `p = Z-1` and `n = N-1` so no `ℕ` subtraction appears. -/
+noncomputable def chainBinding (sPP sPN sNN : ℝ) (p n : ℕ) : ℝ :=
+  (p : ℝ) * sPP + sPN + (n : ℝ) * sNN
+
+/-- The bond-multiset identity, as a relation among bindings. Holds for **every**
+choice of per-bond values — they cancel. -/
+theorem alpha_relation (sPP sPN sNN : ℝ) :
+    chainBinding sPP sPN sNN 1 1
+      = chainBinding sPP sPN sNN 0 1 + chainBinding sPP sPN sNN 1 0
+        - chainBinding sPP sPN sNN 0 0 := by
+  unfold chainBinding
+  push_cast
+  ring
+
+/-- **Parameter-free refutation.** If a pairwise-additive chain model matches the
+AME bindings of `2H`, `3H` and `3He`, its `4He` binding is forced to
+`13.975275` MeV and therefore cannot be the AME value `28.295661`.
+
+No per-bond value appears in the conclusion: the hypotheses pin three numbers and
+`alpha_relation` determines the fourth, whatever `sPP, sPN, sNN` are. -/
+theorem chain_additive_cannot_match_alpha {sPP sPN sNN : ℝ}
+    (h2H : chainBinding sPP sPN sNN 0 0 = 2.224566)
+    (h3H : chainBinding sPP sPN sNN 0 1 = 8.481798)
+    (h3He : chainBinding sPP sPN sNN 1 0 = 7.718043) :
+    chainBinding sPP sPN sNN 1 1 ≠ 28.295661 := by
+  rw [alpha_relation, h2H, h3H, h3He]
+  norm_num
+
 end QOU.MassTheory.MarginalRatio
