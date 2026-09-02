@@ -171,7 +171,89 @@ and needs an owner call on sequencing.
 
 ### Still open on this bean
 
-- [ ] Witness blast radius: every producer reaching `atom_character_raw`,
-      `_crossing_M22`, `unified_iterative_correction` or `chi_at_q` emitted
-      numbers from matrices that were not a representation. Those witnesses
-      are WRONG, not stale, and must be regenerated from the producers.
+- [x] Witness blast radius enumerated (AST over imports AND call sites, plus
+      the attribute-access callers the AST pass missed).
+- [ ] `hadron-knot-table.witness.json` — BLOCKED on `qou-sv7h`. The producer
+      cannot finish (deuterium alone >11 min, Fe-56 ~144x that), so this
+      witness cannot be regenerated until the scaling work lands.
+
+
+## 2026-09-02 — blast radius, and one of two witnesses regenerated
+
+### Independent confirmation, from a gate I did not write
+
+`computations/audits/ysn_braid_relation_audit.py` already existed — written
+because it FOUND this defect ("A family can satisfy (Q) everywhere and still
+fail (B) -- which is exactly what this audit found"). It compares against
+`pyhecke_native.seminormal_matrices_mpfr`, the Rust MPFR build. It now exits 0:
+
+         partition  dim    impl    quadratic        BRAID    commuting
+            (2, 1)    2  python    2.806e-50    3.207e-50          0.0
+            (2, 1)    2    rust    1.203e-50    2.005e-50          0.0
+         (3, 2, 1)   16  python    4.009e-50    3.207e-50          0.0
+         (3, 2, 1)   16    rust    1.203e-50    2.005e-50          0.0
+
+    RESULT: the Python YSN family satisfies all three relations.
+
+Python and Rust now agree at the same order of magnitude, both mpf roundoff.
+
+### Tainted modules — 8, resolved by import + call site
+
+The AST pass found 4 via `from X import Y` + a matching call. It MISSED the
+`import hecke_core_legacy as H` + attribute-access callers; grepping for the
+import form found 4 more. Recording the miss because the resolver is the kind
+of thing that gets reused:
+
+    witness producers (2)
+      computations/hadron_knot_table.py                     -> hadron-knot-table.witness.json
+      computations/phase5/phase3_triton_binding_convention_b.py
+                                                            -> phase3-triton-binding-convention-b.witness.json
+    no witness emitted (6)
+      computations/hecke_core_legacy.py
+      computations/sdp_cross_channel.py
+      computations/probes/h6_wedderburn_block_unbinding_probe.py
+      computations/probes/h6_block_selection_lp_probe.py
+      computations/audits/lp_accumulator_kernel_gate.py
+      computations/audits/ysn_braid_relation_audit.py
+
+`atomic_chirality_residue.py` imports only `_step_chain_generic`, which builds
+the braid WORD and not the matrices — correctly excluded.
+
+### phase3-triton: regenerated, but it was never producing numbers
+
+Running it revealed it had been broken since `e5dcd8f54` (2026-08-01) by a
+keyword rename that missed `hecke_core_legacy.py:2521`. The committed witness
+holds the AssertionError TEXT in all four rows and still declares
+`allPassed: true`:
+
+    "atom": "T", ..., "error": "AssertionError: binding_canonical: the `E_0`
+     keyword is deprecated; ..."
+
+Fixed the missed caller (pure rename — `E_0_CALIBRATION_MEV` and
+`binding_canonical._Q_BETA_N` are bit-identical `mpf('0.78233340930999995')`,
+so no number moved) and regenerated:
+
+        D    +0.435403 MeV   T  +0.695131 MeV
+      3He    +0.698552 MeV  4He +0.876064 MeV
+
+**Do not read this as "the braid fix changed these numbers."** The previous
+witness had no numbers to compare against. What this establishes is that the
+producer runs again and its output now comes from matrices that are a
+representation; whether the canonical Markov-trace path routes through
+`_build_ysn_matrices` at all is a separate question I have not resolved.
+
+The green-witness-with-error-rows failure mode is filed as `qou-qe81`.
+
+### hadron-knot-table: blocked, not skipped
+
+The other affected witness cannot be regenerated. `hadron_knot_table` calls
+`binding_energy` over a nuclide table running to ca40, and per `qou-sv7h`
+deuterium alone does not finish in 11 minutes. It stays wrong until the
+scaling work lands. Recorded rather than quietly left.
+
+### Procedure note
+
+The triton run OVERWROTE the committed witness with a 0-row degraded version
+before I had the fix. Restored byte-identically from the scratchpad snapshot
+taken before the run — by explicit single path, never a glob. The snapshot
+rule earned its keep.

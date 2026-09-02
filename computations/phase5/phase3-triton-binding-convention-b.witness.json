@@ -1,15 +1,16 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:20:40.955991+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-02T21:59:40.075029+00:00",
+  "commitSha": "9c68f144dc9c850e9b9851fbc813a282561ddbee",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "phase3-triton-binding-convention-b",
   "scriptFile": "phase3_triton_binding_convention_b.py",
   "scriptHash": "7de8b116cb78",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +22,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase3_triton_binding_convention_b.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase3_triton_binding_convention_b.py"
   },
   "description": "Phase 3 of the 1ppb workplan: atom binding at H_{3A} via the canonical hecke_core._canon chain (convention B, E_0 = Q_β^CODATA). NO FITTING per owner directive 2026-05-10. The residuals vs AME 2020 are the honest exposure of the brane-tower closure problem — the ℏ_q² scaling is structurally correct (via |tr_M| difference); the gap is in the T2/T3 brane-tower terms, not in E_0.",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md (Phase 3); docs/audits/2026-05-10-hbar-q-scaling-audit.md (convention B)",
@@ -32,7 +42,7 @@
     "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
     "strand_count": "3·A (whole atom braid)",
     "derivation": "Calibration to CAL-3 𝔇_π(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
-    "operator_class": "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the ℏ_q^2 scaling; E_0 is the unit-action scale.",
+    "operator_class": "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the ℏ_q^2 scaling; E_0 is the unit-action scale.\n\n⚠ CORRECTED 2026-08-31 (bean `qou-zrx2`). MEASURED, the trace-difference operator carries NEITHER an ℏ_q^2 leading term NOR a vanishing classical limit. Swept along q = exp(η) over four decades it is\n    tr_M(W_free) − tr_M(W_atom) = c₀(A) + c₁·ℏ_q + O(ℏ_q²)\nwith c₀(A) = 2^{-A} − 2^{1-2A}, DERIVED (Schur–Weyl at q = 1 gives tr_M = 2^{c(σ)−n}, and the braid words have c_free = 2A, c_atom = A+1 for A = 2..20). So the operator is ℏ_q^0 + ℏ_q^1, not ℏ_q^2. At q₀ the ℏ_q^0 floor is 22.46 % of the deuteron value and 4.88 % of ⁴He's. See computations/probes/classical_floor_derivation_probe.py and QOU/MassTheory/ClassicalTraceFloor.lean (sorry-free).\n\nCONSEQUENCE, and it points the other way from `validity` below: subtract the floor and Δtr − c₀(A) is a pure ℏ_q^1 observable, which pairs with convention **A** (ℏ_q^1) to total ℏ_q^2 — the same bookkeeping as Δ(net) × A, which predicts Q_β to 0.168 %. So on ℏ_q grounds the corrected atom-level observable takes A, not B. Before the subtraction NO convention paired consistently, because the operator's two parts sat at different orders. Recorded as a measured fact; re-designating the canonical convention is an owner decision and is NOT taken here.",
     "canonical_for": [
       "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
       "canonical_tower.py (lines 446-528)",
@@ -40,11 +50,11 @@
       "mass_at_3A_proper.py (line 676)",
       "adjacent_vs_full_probe.py (line 46)"
     ],
-    "validity": "Phase 3+ Triton / ³He / ⁴He binding MUST use this convention. Naively using convention A with a Δ(net)-style operator difference would miss the 1/ℏ_q^2 factor (≈ 102× error)."
+    "validity": "Phase 3+ Triton / ³He / ⁴He binding MUST use this convention. Naively using convention A with a Δ(net)-style operator difference would miss the 1/ℏ_q^2 factor (≈ 102× error).\n\n⚠ THE ≈102× WARNING CANNOT BE RECOMPUTED AS STATED (2026-08-31, bean `qou-zrx2`). 1/ℏ_q² = 101.862 is arithmetically right, but its premise — that this operator class is ℏ_q^2 — is measured false (see `operator_class`). The mismatch between using A and using B on the SAME trace difference is the scale ratio E_0^A/E_0^B = 5.35, not 102, and two live producers currently differ by exactly that: binding_canonical uses B (deuteron 0.4354 MeV) while derive_binding_chain_cooperative uses A (2.3297 MeV). The 'MUST use B' rule above therefore rests on a wrong index and cannot adjudicate them. Not resolved here — picking the convention that lands closer to AME is the fit this lane has withdrawn three times."
   },
   "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
   "data": {
-    "E_0_MeV": 0.7823334093100222,
+    "E_0_MeV": 0.78233340931,
     "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
     "rows": [
       {
@@ -53,7 +63,13 @@
         "N": 1,
         "A": 2,
         "hecke_level": "H_6",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.78233340931,
+        "B_pred_MeV": 0.43540348160748027,
+        "B_ame_MeV": 2.22456612,
+        "residual_pct": -80.42748751349858,
+        "residual_keV": -1789.1626383925197,
+        "compute_time_s": 0.4710564613342285
       },
       {
         "atom": "T",
@@ -61,7 +77,13 @@
         "N": 2,
         "A": 3,
         "hecke_level": "H_9",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.78233340931,
+        "B_pred_MeV": 0.695131497432181,
+        "B_ame_MeV": 8.481798,
+        "residual_pct": -91.80443229805543,
+        "residual_keV": -7786.6665025678185,
+        "compute_time_s": 0.026847124099731445
       },
       {
         "atom": "3He",
@@ -69,7 +91,13 @@
         "N": 1,
         "A": 3,
         "hecke_level": "H_9",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.78233340931,
+        "B_pred_MeV": 0.6985522099897444,
+        "B_ame_MeV": 7.7181,
+        "residual_pct": -90.94916870745722,
+        "residual_keV": -7019.547790010256,
+        "compute_time_s": 0.022121191024780273
       },
       {
         "atom": "4He",
@@ -77,7 +105,13 @@
         "N": 2,
         "A": 4,
         "hecke_level": "H_12",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.78233340931,
+        "B_pred_MeV": 0.8760639975074899,
+        "B_ame_MeV": 28.29567,
+        "residual_pct": -96.9038937847823,
+        "residual_keV": -27419.60600249251,
+        "compute_time_s": 0.10437130928039551
       }
     ]
   }

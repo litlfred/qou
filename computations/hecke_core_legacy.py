@@ -2518,7 +2518,21 @@ def binding_from_frobenius_pairing(Z, N, k_cap=None, *, canonical: bool = False)
         from pathlib import Path as _Path
         _sys.path.insert(0, str(_Path(__file__).parent))
         from binding_canonical import binding_canonical as _canon
-        r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)
+        # `Q_beta_n_mev=`, not `E_0=`. The keyword was renamed in `e5dcd8f54`
+        # (2026-08-01) because it was MISNAMED: the value is the free-neutron
+        # β-decay Q-value, not the canonical energy scale E_0 ≈ 4.186 MeV.
+        # That commit's docstring says it updated "the single internal caller
+        # `kahler_lift.py:343`" — it missed this one, and `binding_canonical`
+        # asserts on the old keyword, so every call through here has raised
+        # AssertionError since. `phase3_triton_binding_convention_b` errored on
+        # all four atoms and still wrote a green witness with 0 assertions.
+        #
+        # Pure rename, no number moves: `E_0_CALIBRATION_MEV` and
+        # `binding_canonical._Q_BETA_N` are bit-identical
+        # (mpf('0.78233340930999995')). The constant's own name is still the
+        # misnomer the rename was about; not renamed here, that is a wider
+        # change than this call site.
+        r = _canon(Z, N, Q_beta_n_mev=E_0_CALIBRATION_MEV)
         if r.get("status") != "solved":
             # Fall back to Plancherel on failure (e.g.
             # NotImplementedError for complex braid patterns).
