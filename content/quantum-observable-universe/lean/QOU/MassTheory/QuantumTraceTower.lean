@@ -7,7 +7,12 @@ brick supplies the two **dimension-general** facts about the weighted quantum tr
 
 * **Kronecker multiplicativity** `qtr_{D₁⊗D₂}(X₁⊗X₂) = qtr_{D₁}(X₁)·qtr_{D₂}(X₂)` — the algebraic
   content of "disjoint strand blocks factor", and what makes `qtr(W e W⁻¹) = qtr(e)` and the
-  juxtaposition terms work at every strand count.
+  juxtaposition terms work at every strand count. This is the **μ-weighted specialization** of the
+  repo's canonical plain-trace multiplicativity `QOU.MathlibExt.MarkovTraceMultiplicative.trace_kron`
+  (`(A⊗ₖB).trace = A.trace·B.trace`); `qtr_kron` routes through it rather than re-invoking
+  `Matrix.trace_kronecker` in parallel, so there is one trace-multiplicativity lemma underneath both
+  the mass/binding Markov-trace compute and this weighted tower (retires the parallel-track overlap
+  noted in `docs/audits/2026-08-31-milnor-brick3-roast.md` §R5).
 * **The loop tower** `qtr(1) = [2]^n` on `n` strands — the free-strand factor `[2]^{n}` / `[2]^{n-1}`
   in identity (I).
 
@@ -22,6 +27,7 @@ Scope: this is brick 2. The Brunnian word `ρ(w_n)` as a concrete operator, the 
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Matrix.Kronecker
 import Mathlib.LinearAlgebra.Matrix.Trace
+import QOU.MathlibExt.MarkovTraceMultiplicative
 
 namespace QOU.MassTheory.QuantumTraceTower
 
@@ -39,12 +45,18 @@ theorem qtr_one {a : Type*} [Fintype a] [DecidableEq a] (D : Matrix a a K) :
   simp [qtr]
 
 /-- **Kronecker multiplicativity of the quantum trace.** Disjoint strand blocks factor:
-`qtr_{D₁⊗D₂}(X₁⊗X₂) = qtr_{D₁}(X₁)·qtr_{D₂}(X₂)`. -/
+`qtr_{D₁⊗D₂}(X₁⊗X₂) = qtr_{D₁}(X₁)·qtr_{D₂}(X₂)`.
+
+The μ-weighted case reduces to the canonical plain-trace multiplicativity
+`QOU.MathlibExt.MarkovTraceMultiplicative.trace_kron`: pull the two products through
+`Matrix.mul_kronecker_mul` (`(D₁⊗ₖD₂)·(X₁⊗ₖX₂) = (D₁·X₁)⊗ₖ(D₂·X₂)`), then apply `trace_kron`. One
+trace-multiplicativity lemma serves both this tower and the mass/binding Markov-trace compute. -/
 theorem qtr_kron {a b : Type*} [Fintype a] [DecidableEq a] [Fintype b] [DecidableEq b]
     (D₁ X₁ : Matrix a a K) (D₂ X₂ : Matrix b b K) :
     qtr (D₁ ⊗ₖ D₂) (X₁ ⊗ₖ X₂) = qtr D₁ X₁ * qtr D₂ X₂ := by
   unfold qtr
-  rw [← Matrix.mul_kronecker_mul, Matrix.trace_kronecker]
+  rw [← Matrix.mul_kronecker_mul,
+    QOU.MathlibExt.MarkovTraceMultiplicative.trace_kron (D₁ * X₁) (D₂ * X₂)]
 
 /-- The weight factorises on the identity: `qtr_{D₁⊗D₂}(1) = qtr_{D₁}(1)·qtr_{D₂}(1)`. -/
 theorem qtr_kron_one {a b : Type*} [Fintype a] [DecidableEq a] [Fintype b] [DecidableEq b]
