@@ -292,11 +292,14 @@ below split on `g` and neither branch can be linear:
   linear function is eventually exceeded by any `g ^ n` with `g > 1`. The `pp`
   chain sits in this branch (`g > 1`).
 
-So `g < 1` and `g = 1` are too slow and `g > 1` is too fast; **linear is
-unreachable for every parameter value.** That is a scope-(b) structural
-exclusion of the channel as a whole, with the invariant named — it does not
-depend on which `f`, which anchor, or which species, and it therefore replaces
-per-channel numerical scoring with one argument.
+So `g < 1` and `g = 1` are too slow and `g > 1` is too fast; linear is
+unreachable for every parameter value.
+
+**That combination step was PROSE when first written, and §8 now proves it.**
+The two lemmas above are the branches; the conclusion drawn from them was a
+docstring sentence, while being billed as a scope-(b) exclusion. §8's
+`chain_never_exactly_linear` supplies the missing proof — and by a shorter route
+that needs no case split on `g` at all. Read the exclusion there, not here.
 
 **This also SCOPES a corpus claim.** `2026-06-02-binding-intensive-vs-extensive-
 derivation.md` states the binding is intensive (bounded). That is the `g ≤ 1`
@@ -401,5 +404,167 @@ theorem logRatio_independent_of_growth {g₁ g₂ f : ℝ}
     Real.log (g₁ ^ (b + 1) / (g₁ ^ (b + 1) * f ^ b))
       = Real.log (g₂ ^ (b + 1) / (g₂ ^ (b + 1) * f ^ b)) := by
   rw [logRatio_linear_in_bonds hg₁ hf b, logRatio_linear_in_bonds hg₂ hf b]
+
+
+/-! ### 8. The exclusion itself — previously prose, now proved
+
+**A gap in my own work, closed here.** §6 proved the two *branches* — bounded
+for `g ≤ 1`, at-least-geometric for `g > 1` — and then combined them in a
+docstring sentence ("bounded is too slow to be linear and geometric is too
+fast") to conclude that no `g` makes the channel extensive. That conclusion was
+billed as a scope-(b) exclusion while existing only as prose. The branches were
+proved; the exclusion was not.
+
+It turns out the exclusion has a **much stronger and shorter proof** than the
+asymptotic argument, and it needs only three bond counts.
+
+Write the channel bond-indexed to avoid `ℕ` subtraction:
+
+    chainB S g f b = S * g ^ (b + 1) * (1 - f ^ b)
+
+Suppose it were *exactly* linear, `chainB b = c * b` for every `b` with `c > 0`.
+Evaluating at `b = 1, 2, 3` and eliminating `S`:
+
+    g * (1 + f) = 2          from b = 1, 2
+    g² * (1 + f + f²) = 3    from b = 1, 3
+
+Then `4 * (ii) - 3 * (i)²` gives `g² * (f - 1)² = 0`, so `f = 1` — which makes
+the channel identically zero, contradicting `c > 0`. **One computation, every
+`(g, f)` at once**, with no case split on `g` and no limit.
+
+`chain_never_exactly_linear` is that argument.
+
+## What is proved here, and what is NOT
+
+**Proved.** Exact linearity is refuted for every `(g, f)`
+(`chain_never_exactly_linear`); the §6 iteration claim
+(`chain_ge_geom_iterated`); and the `g ≤ 1` half of the *asymptotic* exclusion
+(`bounded_not_eventually_above_line`) — a bounded channel is overtaken by every
+positive line, stated finitely so no filters are needed.
+
+**NOT proved, and this is the honest residue.** The `g > 1` half of the
+*asymptotic* exclusion. `chain_ge_geom_iterated` gives the geometric lower
+bound, but the step from "grows at least like `g^m`" to "eventually exceeds
+every line" — the standard fact that a geometric sequence outgrows a linear one
+— is not formalised here. So:
+
+* *exact* linearity is excluded for all `(g, f)` — fully proved;
+* *asymptotic* linearity is excluded for `g ≤ 1` — fully proved;
+* *asymptotic* linearity for `g > 1` rests on that one standard growth fact.
+
+Since the measured `g_pp = 1.1458 > 1`, the proton chain is precisely the case
+sitting on the unformalised step. Anyone citing the exclusion asymptotically
+for `pp` should cite it as resting on that fact, not as fully mechanised.
+
+**Also not formalised, and not a Lean question.** That `S_off(A) = g^A` — the
+factorisation of the weighted Schur–Weyl sum over the disjoint per-nucleon
+blocks — is verified numerically at `A = 1..5` to 20 digits and is an algebra
+fact about the Hecke construction, not about real sequences. Likewise
+`f_pp = z_D` (agreement `2.8e-31`) is a computation, not a theorem. Everything
+in this file is conditional on those inputs being what the probes measured.
+-/
+
+/-- The channel, indexed by bond count `b` (so `A = b + 1` nucleons). -/
+noncomputable def chainB (S g f : ℝ) (b : ℕ) : ℝ := S * g ^ (b + 1) * (1 - f ^ b)
+
+/-- **The exclusion, proved.** The channel is never *exactly* linear in the bond
+count, for any `S, g > 0` and any `f < 1`. Uses only `b = 1, 2, 3`.
+
+Note `0 < f` is **not** needed and is deliberately absent: the compiler flagged
+it unused, and dropping it strengthens the statement to cover `f ≤ 0` as well.
+The physical `f` is a bond factor in `(0,1)`, so the extra generality is free
+rather than useful — but an unused hypothesis is worth removing, not
+silencing. -/
+theorem chain_never_exactly_linear {S g f c : ℝ}
+    (hS : 0 < S) (hg : 0 < g) (hf1 : f < 1) (hc : 0 < c) :
+    ¬ (∀ b : ℕ, chainB S g f b = c * (b : ℝ)) := by
+  intro h
+  have h1 := h 1
+  have h2 := h 2
+  have h3 := h 3
+  simp only [chainB] at h1 h2 h3
+  push_cast at h1 h2 h3
+  have hfne : (1 : ℝ) - f ≠ 0 := by linarith
+  have hSg : 0 < S * g ^ 2 := by positivity
+  -- from b = 1,2 :  g * (1 + f) = 2
+  have hi : g * (1 + f) = 2 := by
+    have e : S * g ^ 2 * ((1 - f) * (g * (1 + f) - 2)) = 0 := by nlinarith [h1, h2]
+    have := mul_eq_zero.mp e
+    rcases this with hz | hz
+    · exact absurd hz (ne_of_gt hSg)
+    · rcases mul_eq_zero.mp hz with hz' | hz'
+      · exact absurd hz' hfne
+      · linarith
+  -- from b = 1,3 :  g^2 * (1 + f + f^2) = 3
+  have hii : g ^ 2 * (1 + f + f ^ 2) = 3 := by
+    have e : S * g ^ 2 * ((1 - f) * (g ^ 2 * (1 + f + f ^ 2) - 3)) = 0 := by
+      nlinarith [h1, h3]
+    have := mul_eq_zero.mp e
+    rcases this with hz | hz
+    · exact absurd hz (ne_of_gt hSg)
+    · rcases mul_eq_zero.mp hz with hz' | hz'
+      · exact absurd hz' hfne
+      · linarith
+  -- 4*(ii) - 3*(i)^2  gives  g^2 * (f - 1)^2 = 0, so f = 1, contradicting f < 1
+  have hkey : g ^ 2 * (f - 1) ^ 2 = 0 := by nlinarith [hi, hii]
+  have hg2 : g ^ 2 ≠ 0 := by positivity
+  have : (f - 1) ^ 2 = 0 := by
+    rcases mul_eq_zero.mp hkey with hz | hz
+    · exact absurd hz hg2
+    · exact hz
+  have : f = 1 := by nlinarith [this]
+  linarith
+
+/-- One step, stated natively for `chainB` so the iteration below needs no
+`simpa` normalisation (which is what made the first attempt miss an off-by-one
+in the `g` exponent: `chainB`'s is `b+1`, not `b`). -/
+theorem chainB_step {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
+    (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (b : ℕ) :
+    g * chainB S g f b ≤ chainB S g f (b + 1) := by
+  unfold chainB
+  have hmono : f ^ (b + 1) ≤ f ^ b := by
+    calc f ^ (b + 1) = f ^ b * f := by ring
+      _ ≤ f ^ b * 1 := mul_le_mul_of_nonneg_left hf1 (pow_nonneg hf0 b)
+      _ = f ^ b := by ring
+  have hbase : 0 ≤ S * g ^ (b + 1 + 1) := mul_nonneg hS (pow_nonneg hg0 _)
+  have hle : (1 - f ^ b) ≤ (1 - f ^ (b + 1)) := by linarith
+  calc g * (S * g ^ (b + 1) * (1 - f ^ b))
+      = (S * g ^ (b + 1 + 1)) * (1 - f ^ b) := by ring
+    _ ≤ (S * g ^ (b + 1 + 1)) * (1 - f ^ (b + 1)) :=
+        mul_le_mul_of_nonneg_left hle hbase
+    _ = S * g ^ (b + 1 + 1) * (1 - f ^ (b + 1)) := by ring
+
+/-- The iteration the §6 docstring asserted without proving: for `g ≥ 0` and
+`f ∈ [0,1]`, `m` steps multiply the channel by at least `g ^ m`. -/
+theorem chain_ge_geom_iterated {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
+    (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (b m : ℕ) :
+    g ^ m * chainB S g f b ≤ chainB S g f (b + m) := by
+  induction m with
+  | zero => simp
+  | succ m ih =>
+      calc g ^ (m + 1) * chainB S g f b
+          = g * (g ^ m * chainB S g f b) := by ring
+        _ ≤ g * chainB S g f (b + m) := mul_le_mul_of_nonneg_left ih hg0
+        _ ≤ chainB S g f (b + m + 1) := chainB_step hS hg0 hf0 hf1 (b + m)
+        _ = chainB S g f (b + (m + 1)) := by ring_nf
+
+/-- The `g ≤ 1` half of the ASYMPTOTIC exclusion, proved: a bounded channel
+cannot dominate a positive line, because a line is unbounded.
+
+Stated finitely — given any `c > 0` there is a bond count at which the line has
+overtaken the channel — so no filters are needed. -/
+theorem bounded_not_eventually_above_line {S g f c : ℝ} (hS : 0 ≤ S)
+    (hg0 : 0 ≤ g) (hg1 : g ≤ 1) (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (hc : 0 < c) :
+    ∃ b : ℕ, chainB S g f b < c * (b : ℝ) := by
+  obtain ⟨b, hb⟩ := exists_nat_gt ((S + 1) / c)
+  refine ⟨b, ?_⟩
+  have hbound : chainB S g f b ≤ S := by
+    simpa [chainB] using
+      chain_bounded_of_growth_le_one (S := S) (g := g) (f := f) hS hg0 hg1
+        hf0 hf1 (b + 1) b
+  have : (S + 1) < c * (b : ℝ) := by
+    have := (div_lt_iff₀ hc).mp hb
+    linarith
+  linarith
 
 end QOU.MassTheory.MarginalRatio
