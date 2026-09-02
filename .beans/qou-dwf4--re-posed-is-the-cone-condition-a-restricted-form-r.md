@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T05:09:05Z
+updated_at: 2026-09-02T21:30:15Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -305,3 +305,76 @@ order. Both are weaker than (b) was and neither has a lead. A better successor,
 suggested by this result: the framing ratio `a = q^2` is a monomial in D -- does
 that have consequences for the Ocneanu weight formula the block quotes, e.g. do
 the D weights `w_lambda` have a closed form in `q` alone that C's do not?
+
+
+---
+
+## ITEM (b) SUCCESSOR ANSWERED 2026-08-31 — the framing ratio CLASSIFIES the convention: D is the sl_2 point
+
+Probe: `computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py`,
+**13/13**. Lean: `qIntSym_two`, `markovZAt_framing`, `markovZAt_two_eq_markovZ`,
+`ocneanu_numerator_collapse` -- sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. File now 44 theorems / 0 sorries.
+
+**THE QUESTION.** The previous step showed D's Ocneanu framing ratio
+`a^2 = z/z_-` is the MONOMIAL `q^4` and C's is not a monomial, and called that a
+structural separation. Successor: does the monomial DO anything in the weight
+formula, or is it decoration?
+
+**THE MECHANISM.** It does. `rem:markov-z-reconciliation` gives the block weights
+by the frame-general Ocneanu product over cells of lambda of
+`(z q^c - z_- q^{-c})/(q^h - q^{-h})`. When `a = q^N`, i.e. `z = q^{2N} z_-`,
+every numerator collapses:
+
+    z q^c - z_- q^{-c} = z_-(q^{2N+c} - q^{-c}) = z_- q^N (q^{N+c} - q^{-(N+c)})
+
+and with `z_- q^N = 1/[N]_q` the whole product is the HOOK-CONTENT FORMULA:
+
+    w_lambda = dim_q(V_lambda^{sl_N}) / [N]_q^n
+
+So an Ocneanu trace whose framing ratio is a power of q IS a Lie-type
+specialisation, and the exponent names which one.
+
+**THE FAMILY.** Solving `a = q^N` for z gives `z_N = q^N/[N]_q`, and
+
+    N=1  z=q                       N=2  z=q^3/(q^2+1)   <== CONVENTION D
+    N=3  z=q^5/(q^4+q^2+1)         N=4  z=q^7/((q^2+1)(q^4+1))
+
+Verified for N=1..4 over EVERY partition of n <= 5: `a^2 = q^{2N}`,
+`z_- q^N = 1/[N]_q`, `w = dim_q/[N]^n`, and `w = 0` exactly when lambda has more
+than N rows.
+
+**TWO CONSEQUENCES.** The registered `w_(3) = [4]_q/[2]_q^3` and
+`w_(2,1) = 1/[2]_q^2` are the quantum dimensions of the 4- and 2-dimensional
+U_q(sl_2) irreps over `[2]_q^3`. And the exact vanishing `y_(1^3) = 0` -- which
+the corpus records as a notable fact verified three independent ways -- is the
+sl_2 ROW BOUND: a partition with more than N rows has a cell of content -N,
+whose numerator factor carries `[0]_q = 0`. Three rows, N = 2.
+
+**C IS IN NO MEMBER, FOR ANY N** -- not merely no integer N. Its framing
+ratio's logarithmic derivative is
+`-(3s^6+s^4+s^2+3)/(2(s^6+s^4-s^3-s^2-1))` with `s = sqrt q`, which is NOT
+constant; `a^2 = q^t` would force it to equal the constant t. And C's weights
+vanish on NO partition (checked `(1^3)`, `(2,1,1)`, `(1^4)`), so C has no row
+bound. This upgrades the previous step from "D is clean, C is ugly" to a
+CLASSIFICATION: D is the sl_2 point of the Ocneanu family, C is off the family.
+
+**PRIOR ART, credited.** `rem:markov-z-reconciliation` supplies the
+frame-general formula, `z_-`, the framing ratio, `z_C = 1/[2]_{sqrt q}`, and the
+registered D weights. The probe READS that file and asserts against it.
+
+**A SYMBOL COLLISION I ALMOST WALKED INTO** (notation register §7aa -- the
+partition-weight families are distinct at q != 1). `wedderburn-weight-canonical`
+defines a DIFFERENT `w_lambda(q) = dim_q(lambda)^2/[n]_q!` from the
+Frame-Robinson-Thrall hook-LENGTH dimension. Mine is the Ocneanu/Markov weight
+(the production `y_lambda`), hook-CONTENT. Measured at n=3 they differ on every
+partition and differ already at q=1: `(1/6, 2/3, 1/6)` against `(1/2, 1/4, 0)`.
+Recorded as a notation warning in the reconciliation block.
+
+**FLAGGED, NOT CLAIMED.** `wedderburn-weight-canonical` says its Wenzl-bridge
+reduction `y_lambda = w_lambda(q)` "applies only to the self-conjugate stratum".
+At n=3 the self-conjugate partition is (2,1), and my two numbers there DISAGREE
+(2/3 vs 1/4 at q=1). That may mean the block is wrong, or that I am reading its
+`dim_q` or `[n]_q!` normalisation differently than intended. I have NOT
+established which, and am not declaring it refuted -- it needs the block's own
+normalisation pinned down first. Successor bean material.

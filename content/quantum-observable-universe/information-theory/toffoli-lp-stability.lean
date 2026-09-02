@@ -807,4 +807,110 @@ theorem markovZ_eq_qsq_div_qDimTwo {q : ℝ} (hq : 0 < q) :
   unfold markovZ qDimTwo
   field_simp
 
+/-! ## The Ocneanu family `z_N = q^N/[N]_q`, and why convention D is `N = 2`
+
+The monomial framing ratio of `markov_framing_ratio_eq` is not an aesthetic
+fact.  `rem:markov-z-reconciliation` gives the Wedderburn block weights by the
+frame-general Ocneanu formula, a product over the cells of `λ` of
+`(z q^c - z₋ q^{-c})/(q^h - q^{-h})`.  When `a = q^N` — that is, when
+`z = q^{2N} z₋` — every numerator collapses:
+
+`z q^c - z₋ q^{-c} = z₋(q^{2N+c} - q^{-c}) = z₋ q^N (q^{N+c} - q^{-(N+c)})`,
+
+so with `z₋ q^N = 1/[N]_q` the whole product becomes the hook-content formula
+for the `U_q(𝔰𝔩_N)` quantum dimension, `w_λ = dim_q(V_λ)/[N]_q^n`.  Solving
+`a = q^N` for `z` gives the family `z_N = q^N/[N]_q`, and `z₂` is convention D
+on the nose.
+
+Two consequences worth naming.  The exact vanishing `y_(1³) = 0` that the
+corpus records for the production trace is the `𝔰𝔩₂` **row bound** — a
+partition with more than `N` rows has a cell of content `-N`, whose numerator
+factor carries `[0]_q = 0`.  And convention C is in *no* member of this family:
+its framing ratio's logarithmic derivative is not constant, so it is `q^N` for
+no `N` at all, and its weights vanish on no partition.
+
+⚠ **`w_λ` is overloaded in this corpus** (notation register §7aa: the three
+partition-weight families are distinct at `q ≠ 1`).  The weight identified here
+is the **Ocneanu/Markov** one — the `y_λ` of the production trace.  It is *not*
+`wedderburn-weight-canonical`'s `w_λ(q) = dim_q(λ)²/[n]_q!`, which is built
+from the Frame–Robinson–Thrall hook-*length* dimension rather than the
+hook-*content* one; measured at `n = 3` the two differ on every partition, and
+differ already at `q = 1` (`1/6, 2/3, 1/6` against `1/2, 1/4, 0`).
+
+Measurement:
+`computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py`, 13/13. -/
+
+/-- The symmetric quantum integer `[m]_q = (q^m - q^{-m})/(q - q^{-1})`. -/
+noncomputable def qIntSym (m : ℕ) (q : ℝ) : ℝ := (q ^ m - (1 / q) ^ m) / (q - 1 / q)
+
+/-- `[2]_q` agrees with the quantum dimension `q + q⁻¹`. -/
+theorem qIntSym_two {q : ℝ} (hq : 0 < q) (h1 : q ≠ 1) :
+    qIntSym 2 q = qDimTwo q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : q - 1 / q ≠ 0 := by
+    rw [sub_ne_zero]
+    intro h
+    rw [eq_div_iff hq0] at h
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp hfac with h' | h'
+    · exact h1 (by linarith)
+    · linarith
+  have h2 : q ^ 2 - 1 ≠ 0 := by
+    intro hz
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [hz]
+    rcases mul_eq_zero.mp hfac with h' | h'
+    · exact h1 (by linarith)
+    · linarith
+  unfold qIntSym qDimTwo
+  field_simp
+  ring
+
+/-- The Ocneanu family member with framing ratio `a = q^N`, in the form
+    `z_N = q^{2N}ħ/(q^{2N} - 1)`; equivalently `q^N/[N]_q`. -/
+noncomputable def markovZAt (N : ℕ) (q : ℝ) : ℝ :=
+  q ^ (2 * N) * (q - 1 / q) / (q ^ (2 * N) - 1)
+
+/-- **The defining property of the family: the framing ratio is `q^{2N}`.**
+    `z_N = q^{2N}·(z_N - ħ)`, for every `N` — this is what makes the Ocneanu
+    numerator collapse into quantum integers. -/
+theorem markovZAt_framing {q : ℝ} (N : ℕ) (h : q ^ (2 * N) - 1 ≠ 0) :
+    markovZAt N q = q ^ (2 * N) * (markovZAt N q - (q - 1 / q)) := by
+  unfold markovZAt
+  field_simp
+  ring
+
+/-- **Convention D is the `N = 2` member.**  `z₂ = q⁴ħ/(q⁴-1) = q³/(q²+1)`. -/
+theorem markovZAt_two_eq_markovZ {q : ℝ} (hq : 0 < q) (h1 : q ≠ 1) :
+    markovZAt 2 q = markovZ q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h2 : q ^ 2 - 1 ≠ 0 := by
+    rw [sub_ne_zero]
+    intro h
+    apply h1
+    nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : q ^ 4 - 1 ≠ 0 := by
+    intro h
+    apply h2
+    have : (q ^ 2 - 1) * (q ^ 2 + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp this with h' | h'
+    · exact h'
+    · exact absurd h' hd
+  unfold markovZAt markovZ
+  norm_num
+  field_simp
+  ring
+
+/-- **The Ocneanu numerator collapses at framing `a = q^N`.**  Stated at the
+    cell content `c` as a natural-number offset, which is all the `n = 3`
+    weights below need: `z q^c - z₋ q^{-c} = z₋ q^N (q^{N+c} - q^{-(N+c)})`. -/
+theorem ocneanu_numerator_collapse {q z zm : ℝ} (hq : 0 < q) (N c : ℕ)
+    (h : z = q ^ (2 * N) * zm) :
+    z * q ^ c - zm * (1 / q) ^ c
+      = zm * q ^ N * (q ^ (N + c) - (1 / q) ^ (N + c)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  subst h
+  simp only [two_mul, pow_add, div_pow, one_pow]
+  field_simp
+
 end QOU.Information
