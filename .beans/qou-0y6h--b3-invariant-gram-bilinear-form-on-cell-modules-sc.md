@@ -73,11 +73,11 @@ declaration, and on both downstream keystones it composes with):
 * `TwGram.twGram` + `isSemisimpleRing_of_twGram_det_ne_zero` — det != 0 =>
   semisimple, at EVERY rank. This is the statement §3b recorded as 'cannot
   even be stated without the basis'.
-* `TwMul.sigma_mul_Tw` — the full generator multiplication table, both
+* `TwMul.σ_mul_Tw` — the full generator multiplication table, both
   branches. Index handedness is `T_v . T_w = T_{wv}` (right factor acts
   first); documented, not hidden.
-* `TwTrace.trace_lmul_sigma` — tr(L_{sigma_i}) = (q-1) * #descents, and
-  `two_mul_trace_lmul_sigma` — 2*tr = (q-1)*(n+1)!, doubled so it holds in
+* `TwTrace.trace_lmul_σ` — tr(L_{sigma_i}) = (q-1) * #descents, and
+  `two_mul_trace_lmul_σ` — 2*tr = (q-1)*(n+1)!, doubled so it holds in
   any characteristic.
 * `TwGramRankOne.twGram_det_rank_one` — det(twGram K q 1) = (1+q)^2, hence
   `IsSemisimpleRing (IwahoriHecke K q 1)` for 1+q != 0. First end-to-end
@@ -106,7 +106,7 @@ characters; isSemisimpleRing_iff_pi_matrix_divisionRing is a Mathlib
 proof_wanted.
 
 Note for whoever picks up the tau route anyway: tau(x) := <x>_1 satisfies
-tau(sigma_i . T_u) = q * <T_u>_{s_i} in BOTH branches of sigma_mul_Tw (the
+tau(sigma_i . T_u) = q * <T_u>_{s_i} in BOTH branches of σ_mul_Tw (the
 ascent branch cannot land on T_1, the descent branch cannot start at u=1).
 That is clean but it does NOT close by induction on length — it moves the
 coefficient from index 1 to index s_i, so the induction needs the full
@@ -230,8 +230,8 @@ finished), that is the honest state.
 
 UNCONDITIONAL and independent of all of the above, already on main:
 isSemisimpleRing_rank_one (+ the substrate corollary over R, q > 0), twGram and
-isSemisimpleRing_of_twGram_det_ne_zero at every rank, the full sigma_mul_Tw
-table, trace_lmul_sigma, and IsHeckeOfFullRank for IwahoriHecke at every rank.
+isSemisimpleRing_of_twGram_det_ne_zero at every rank, the full σ_mul_Tw
+table, trace_lmul_σ, and IsHeckeOfFullRank for IwahoriHecke at every rank.
 
 
 ## 2026-09-02 — CLOSED at what is proved; the remainder is qou-kwoa
@@ -247,8 +247,8 @@ though a lemma is missing when the remainder is a book-length development.
 * twGram + isSemisimpleRing_of_twGram_det_ne_zero — det != 0 => H_n(q)
   semisimple, AT EVERY RANK. This is the statement the 2026-08-29 gap inventory
   §3b recorded as 'cannot even be stated without the basis'.
-* TwMul.sigma_mul_Tw — the full generator multiplication table, both branches.
-* TwTrace.trace_lmul_sigma / two_mul_trace_lmul_sigma — the generator trace is
+* TwMul.σ_mul_Tw — the full generator multiplication table, both branches.
+* TwTrace.trace_lmul_σ / two_mul_trace_lmul_σ — the generator trace is
   counted by descents; 2 tr = (q-1)(n+1)!.
 * twGram_det_rank_one = (1+q)^2 and isSemisimpleRing_rank_one — the first
   end-to-end discharge, on IwahoriHecke ITSELF rather than a power-basis model,
