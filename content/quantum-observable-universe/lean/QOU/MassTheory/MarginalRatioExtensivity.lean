@@ -5,6 +5,7 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # Marginal-ratio criteria for extensivity — and why "ratios rising to 1" proves nothing
@@ -334,5 +335,71 @@ theorem chain_step_ge_growth {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
     _ ≤ (S * g ^ (n + 1)) * (1 - f ^ (k + 1)) :=
         mul_le_mul_of_nonneg_left hle hbase
     _ = S * g ^ (n + 1) * (1 - f ^ (k + 1)) := by ring
+
+
+/-! ### 7. The OTHER channel is exactly extensive — and `g` is why
+
+Section 6 excluded the *difference* channel `B = S_off - S_on` from extensivity
+for every `g`. The corpus's own answer to that has been the **log-ratio**, which
+`log_ratio_binding_prototype.py` asserts in one sentence: *"the EXTENSIVE
+invariant is the log-ratio."* That assertion now has a derivation, from the same
+identity, and it is exact rather than approximate.
+
+Write the measured structure with `b = A - 1` bonds:
+
+    S_off = g ^ (b + 1)          (free: A disjoint identical blocks)
+    S_on  = g ^ (b + 1) * f ^ b  (bonded: one factor of f per bond)
+
+Then `logRatio_linear_in_bonds` gives
+
+    log (S_off / S_on) = -b * log f
+
+**exactly linear in the bond count**, verified numerically to `1e-30` on both
+species at `A = 2,3,4,5`, with slope
+
+    -E₀ * log f  =  2.05070969238143369 MeV/bond   (pp)
+    -E₀ * log f  =  3.79778293514235333 MeV/bond   (nn)
+
+the pp value being exactly the Sec.10a chain bond `-α·ln z`.
+
+**The mechanism is `g`, and it is one line.** `logRatio_independent_of_growth`
+says the log-ratio does not depend on `g` at all: the free-trace growth `g^(b+1)`
+appears in numerator and denominator and cancels. The difference channel cannot
+cancel it — that is precisely what §6's two branches are about. So the two
+channels are not two guesses at one quantity; they differ by whether the
+single-nucleon growth survives, and **that** is why one is extensive and the
+other provably never is.
+
+**Scope.** This says the log-ratio channel *has the right shape*. It says
+nothing about its magnitude being right, and the corpus's measurement is that it
+is not: the `t7qv` arc measures `B(4He) = 10.387 MeV` against AME `28.296`
+(-63 %), with the three-body term negative at all eight `A=3` orderings and the
+four-body term negative in 80/80 random bond orders — every many-body
+correction pushing further from the data. Extensive-and-short is a different
+problem from not-extensive, and this file only settles which of the two each
+channel has.
+-/
+
+/-- The log-ratio of free to bonded trace is **exactly linear in the bond
+count**, with slope `-log f`. This is the derivation behind the corpus's
+"the extensive invariant is the log-ratio". -/
+theorem logRatio_linear_in_bonds {g f : ℝ} (hg : 0 < g) (hf : 0 < f) (b : ℕ) :
+    Real.log (g ^ (b + 1) / (g ^ (b + 1) * f ^ b)) = -(b : ℝ) * Real.log f := by
+  have hgb : (0:ℝ) < g ^ (b + 1) := pow_pos hg (b + 1)
+  have hfb : (0:ℝ) < f ^ b := pow_pos hf b
+  have hrw : g ^ (b + 1) / (g ^ (b + 1) * f ^ b) = (f ^ b)⁻¹ := by
+    field_simp
+  rw [hrw, Real.log_inv, Real.log_pow]
+  ring
+
+/-- **The mechanism.** The log-ratio is independent of the free-trace growth
+`g`: it cancels between numerator and denominator. The difference channel of §6
+cannot cancel it, which is exactly why that one is never extensive and this one
+always is. -/
+theorem logRatio_independent_of_growth {g₁ g₂ f : ℝ}
+    (hg₁ : 0 < g₁) (hg₂ : 0 < g₂) (hf : 0 < f) (b : ℕ) :
+    Real.log (g₁ ^ (b + 1) / (g₁ ^ (b + 1) * f ^ b))
+      = Real.log (g₂ ^ (b + 1) / (g₂ ^ (b + 1) * f ^ b)) := by
+  rw [logRatio_linear_in_bonds hg₁ hf b, logRatio_linear_in_bonds hg₂ hf b]
 
 end QOU.MassTheory.MarginalRatio
