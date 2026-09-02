@@ -1,0 +1,89 @@
+{
+  "computation": "type-weighted-chain-ratio",
+  "scriptFile": "probes/type_weighted_chain_ratio_probe.py",
+  "computedAt": "2026-09-02T21:50:42.652450+00:00",
+  "contentBlock": "qou-brng",
+  "description": "Production weights inter-nucleon bonds by TYPE (d_for_ctype: pp 0, pn -h/2, nn -h), so the uniformity that BrunnianTripleExhaustion named as its free ingredient is already relaxed. It does not help: on the arithmetic-mean locus w_pp + w_nn = 2 w_pn, which production satisfies exactly, the triple/pair ratio is 2 identically and b3/b2 = -1 -- the same value the uniform chain gives, wrong sign, with h cancelling. Also relocates the exhaustion: it excludes the crossing-energy channel, which is none of the four evaluable channels in the seven-channel taxonomy.",
+  "production_weights_units_of_h": {
+    "pp": "0",
+    "pn": "-1/2",
+    "nn": "-1"
+  },
+  "measured_b3_over_b2": "950815/1483044",
+  "model_b3_over_b2": "-1",
+  "rel_err_fraction": "-2433859/950815",
+  "per_isotope_arrangements": {
+    "3H": {
+      "nnp": "-3/2",
+      "npn": "-1",
+      "pnn": "-3/2"
+    },
+    "3He": {
+      "npp": "-1/2",
+      "pnp": "-1",
+      "ppn": "-1/2"
+    }
+  },
+  "isospin_average": {
+    "middle-heavy": "-1",
+    "middle-light": "-1"
+  },
+  "mean_locus": {
+    "condition": "w_pp + w_nn = 2 w_pn",
+    "production_lhs": "-1",
+    "production_rhs": "-1",
+    "holds": true,
+    "vs_orderIndependent_iff": "ChainBondOrderDependence requires L_pp = L_pn = L_nn, which production FAILS; the mean locus is strictly weaker and is what the isospin average actually needs"
+  },
+  "assertions": [
+    {
+      "name": "production's weights are NOT uniform -- mu is a WEIGHTED count",
+      "passed": true,
+      "detail": "d_for_ctype: sigma -> 0 (pp), averaged -> -h/2 (pn), sigma_inv -> -h (nn). So mu \u221d c does not describe production, and the exhaustion's free ingredient is already relaxed there -- one axis over"
+    },
+    {
+      "name": "per-isotope mu IS arrangement-dependent",
+      "passed": true,
+      "detail": "3H spans ['-1', '-3/2'], 3He spans ['-1', '-1/2'] -- which nucleon sits in the middle changes the bond multiset"
+    },
+    {
+      "name": "but the ISOSPIN AVERAGE is arrangement-INDEPENDENT",
+      "passed": true,
+      "detail": "both extremes give mu_t = -1; the 3H and 3He arrangement shifts cancel against each other. I claimed mid-analysis that b3 was undefined without an ordering -- computing both showed otherwise, and this cancellation is why"
+    },
+    {
+      "name": "the cancellation condition is the ARITHMETIC-MEAN locus, which production satisfies exactly",
+      "passed": true,
+      "detail": "w_pp + w_nn = -1 = 2 w_pn = -1. STRICTLY WEAKER than ChainBondOrderDependence.orderIndependent_iff's L_pp = L_pn = L_nn, which production FAILS (0, -1/2, -1 all differ) -- so Bbar(3) is well-defined though neither isotope's chain is"
+    },
+    {
+      "name": "on that locus the triple/pair ratio is 2 IDENTICALLY",
+      "passed": true,
+      "detail": "mu_t = 2 w_pn and mu_p = w_pn, so the ratio is 2 with no dependence on the weights and none on h (Lean ratio_eq_two_of_mean)"
+    },
+    {
+      "name": "hence b3/b2 = -1 -- wrong sign, and h cannot move it",
+      "passed": true,
+      "detail": "model -1 vs measured +0.6411239316, rel err -256.0%. h CANCELS in the ratio, so no q0 pin, convention or normalisation changes it"
+    },
+    {
+      "name": "and it is the SAME -1 the uniform chain gives",
+      "passed": true,
+      "detail": "CarrierCrossingQuantisation's 'chain / coordination z = A-1' row is also -1. Weighting by type turns mu from a count into a weighted count and leaves the one number b3 can see exactly where it was -- so this is not an escape from the exhaustion, it is inside it"
+    }
+  ],
+  "allPassed": true,
+  "scope": "(b) on type-weighted chain carriers, invariant named: on the arithmetic-mean locus the triple/pair ratio is 2, so b3/b2 = -1 for every such weighting. (a) elsewhere -- a weighting OFF that locus is not excluded here, but it buys an arrangement-dependent Bbar(3), which is a defect of its own since a nucleus has no middle.",
+  "caveats": [
+    "RELOCATION, and it limits what the exhaustion binds: the excluded channel is the CROSSING-ENERGY one, which is not among the four evaluable channels of the seven-channel taxonomy. Production ships a trace-ratio channel that is neither extensive nor bond-additive. So neither the exhaustion nor this file binds the shipped channel.",
+    "The chain bond set is FORCED (StrandLayoutForcesChain), so this is not a choice of bond set. A different bond set is not available in this producer.",
+    "A=3 only. b4 and the A=4 carrier are untouched.",
+    "The weights are read from production's d_for_ctype in units of h. The colour-weighted 'averaged_weighted' ctype is NOT covered -- it carries a flavour split delta and may sit off the mean locus; that is the one type weighting this file does not exclude."
+  ],
+  "lean": "QOU/Mass/TypeWeightedChainRatio.lean (5 declarations, sorry-free, lean-direct exit 0)",
+  "related": [
+    "probes/brunnian-triple-exhaustion.witness.json",
+    "probes/carrier-crossing-quantisation.witness.json"
+  ],
+  "source": "AME2020; canonical_braid_crossings.d_for_ctype"
+}
