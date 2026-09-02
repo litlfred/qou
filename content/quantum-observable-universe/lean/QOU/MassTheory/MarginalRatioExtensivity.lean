@@ -684,4 +684,87 @@ theorem chain_additive_cannot_match_alpha {sPP sPN sNN : ℝ}
   rw [alpha_relation, h2H, h3H, h3He]
   norm_num
 
+
+/-! ### 10. NO bond topology works — the exclusion is not about the chain
+
+§9 refuted the *adjacent* bond set, and §9's own scope correction named
+band-routed bonds as the escape. This closes that escape for every **additive**
+model, on **every** topology.
+
+**The enumeration.** A nucleus's available bonds are fixed by its nucleon
+multiset: `2H {p,n}` has one pn slot; `3H {p,n,n}` has two pn and one nn;
+`3He {p,p,n}` one pp and two pn; `4He {p,p,n,n}` one pp, four pn, one nn.
+Requiring at least a spanning tree's worth of edges and calibrating
+`sPP, sPN, sNN` from `2H`, `3H`, `3He`, an exhaustive search over every
+remaining graph gives:
+
+    exact solutions reproducing AME B(4He)   0
+    MAXIMUM reachable B(4He)                 20.648973 MeV
+    AME                                      28.295661 MeV
+    short by                                 1.3703x
+
+and the maximum is attained at the **complete** graph on `4He`, `(1,4,1)`, with
+`sPP = 5.493477`, `sPN = 2.224566`, `sNN = 6.257232`. There is nothing left to
+add: every edge the nucleon multiset permits is already in.
+
+`pairwise_additive_cannot_reach_alpha` below is that bound, stated so it needs
+no enumeration: `sPN` is forced by `2H`, connectivity bounds `sPP` and `sNN` by
+their calibrating nuclei, and the edge caps are the multiset's.
+
+## 🛑 What this does NOT exclude, and it is the whole remaining freedom
+
+**Additivity is the hypothesis, and band-routed bonds violate it.** This file
+measures the *adjacent* bond product to be exactly multiplicative, hence
+order-independent; the sibling arc measures band-routed bonds as
+**non-commuting**, with an insertion-order spread of 11.12 % over one `A=3`
+triangle and 38–40 % over `4He`'s. A non-additive `B` is not of the form
+`Σ_edges s_type` and is therefore **outside** this theorem.
+
+So the honest frontier, after §9's correction and this section, is narrow and
+well-posed:
+
+* additive, any topology, species-only bond values — **excluded** (here);
+* the only source of non-additivity in the construction is band routing;
+* the sibling measures its many-body contribution **negative in 80/80** random
+  bond orders — the wrong sign to close a shortfall.
+
+That last line is *their* measurement, cited not re-derived, and 80/80 is strong
+evidence rather than a proof. **Whether a band-routed structure with a positive
+many-body contribution exists is the open question**, and it is now the only one
+left standing between this channel and the binding table.
+-/
+
+/-- **No additive pairwise model on any topology reaches the alpha binding.**
+
+`sPN` is fixed by `2H`; connectivity of the calibrating nuclei bounds `sPP` and
+`sNN`; the edge counts are capped by what the `4He` nucleon multiset permits
+(one pp, four pn, one nn). The conclusion is strict, so no boundary case
+escapes.
+
+Hypotheses are stated as bounds rather than equations precisely so that the
+theorem covers *every* graph at once rather than one enumeration.
+
+Note `0 ≤ sPP` and `0 ≤ sNN` are **not** needed and are deliberately absent:
+the compiler flagged them unused, and dropping them strengthens the result to
+cover negative bond values too. Physically the bond values are positive, so the
+extra generality is free rather than useful — but an unused hypothesis is worth
+removing, not silencing. This is the second time in this file the linter has
+found a hypothesis the proof does not use. -/
+theorem pairwise_additive_cannot_reach_alpha
+    {sPP sPN sNN : ℝ} {a b c : ℕ}
+    (hPN : sPN = 2.224566)
+    (hPP : sPP ≤ 7.718043 - 2.224566)
+    (hNN : sNN ≤ 8.481798 - 2.224566)
+    (ha : a ≤ 1) (hb : b ≤ 4) (hc : c ≤ 1) :
+    (a : ℝ) * sPP + (b : ℝ) * sPN + (c : ℝ) * sNN < 28.295661 := by
+  have ha' : (a : ℝ) ≤ 1 := by exact_mod_cast ha
+  have hb' : (b : ℝ) ≤ 4 := by exact_mod_cast hb
+  have hc' : (c : ℝ) ≤ 1 := by exact_mod_cast hc
+  have ha0 : (0 : ℝ) ≤ (a : ℝ) := Nat.cast_nonneg a
+  have hb0 : (0 : ℝ) ≤ (b : ℝ) := Nat.cast_nonneg b
+  have hc0 : (0 : ℝ) ≤ (c : ℝ) := Nat.cast_nonneg c
+  subst hPN
+  nlinarith [mul_le_mul_of_nonneg_left hPP ha0,
+             mul_le_mul_of_nonneg_left hNN hc0]
+
 end QOU.MassTheory.MarginalRatio
