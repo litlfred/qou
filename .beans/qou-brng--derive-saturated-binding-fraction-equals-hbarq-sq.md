@@ -870,6 +870,48 @@ is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
 
 
+## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
+
+`computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
+Takes the step main's `t7qv/m896` flagged as out of scope: 'this is the n=2
+interface only, not lifted to the 3-strands-per-nucleon construction'.
+
+A nucleon is three strands, so the exchange operator is the 3-block transposition
+Delta_{3,3} = (s3 s2 s1)(s4 s3 s2)(s5 s4 s3) in B_6 — 9 crossings, verified to
+induce the block swap exactly. Forced by the construction, not selected.
+
+Exhaustive over all 11 Wedderburn blocks of H_6:
+
+  * **Every eigenvalue modulus is exactly q^k, k an INTEGER.** Deviation falls
+    3.4e-7 / 9.1e-10 / 1.2e-14 / 1.8e-22 at dps 30/40/60/90 — exact, not
+    approximate. So the asymmetry is a COUNTING quantity and cannot be tuned.
+  * **The n=2 cap of 1 breaks**: max 5 in-block at (4,2) — a 2-row, TL-VISIBLE
+    block — and 9 across blocks. Achievable set is discrete {1, 2, 5}.
+  * **But the ceiling is 9 against nature's 33.7.** Scope (a): Delta_{3,3} alone
+    does not supply the observed channel asymmetry from its trace-visible
+    spectrum. A closure adding a further term is untouched.
+  * **Three blocks carry k=0 (|lambda|=1), for which the ratio is UNBOUNDED** —
+    and every one of those is trace-blind (rows > 2), while no trace-visible
+    block carries one. Both directions exact, asserted. So the unbounded
+    asymmetry exists in this construction but lives entirely in the sector the
+    Markov trace cannot see under convention D's row cap l(lambda) <= 2. That
+    is the 'computable but not directly observable' class the owner raised.
+
+Internal checks asserted: trivial/sign reps give k = +9/-9 (9 crossings at
+sigma -> q and -1/q); conjugation duality k(lambda') = -k(lambda) holds for all
+11 blocks.
+
+TRAP recorded in-probe: the first version thresholded near-unit moduli at
+UNIT_FLOOR=1e-8 and reported ratio 8888561 for (3,2,1) — numerical dust, the
+same artefact class caught twice earlier this session at a 1e-15 floor. Fix was
+NOT a bigger floor: the integer quantization removes the need for a threshold
+entirely, and a threshold-free test cannot be defeated by choosing the threshold
+badly. That version also filtered k=0 silently, which would have made 'ceiling
+9' stronger than the measurement supports; now stated with the proviso explicit.
+
+OPEN: whether the unbounded trace-blind sector is reachable by subtraction.
+Locating it is not reaching it.
+
 ## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
 
 `computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
