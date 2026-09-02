@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T21:57:00Z
+updated_at: 2026-09-02T22:29:28Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -112,3 +112,35 @@ producers; relevant if this bean's verification ever needs characters in bulk.
 
 First move is a SCOPING CHECK, not construction: is the character-sum route
 this bean prescribes circular for the semisimplicity goal? See the entry below.
+
+
+## 2026-09-02 — SUPERSEDED IN ITS CONCLUSION. Semisimplicity at every rank is DONE.
+
+The bean asked for Geck-Pfeiffer character theory because det(twGram) at rank
+>= 2 needs tr(L_{T_u}) for general u. That is still true and still Mathlib-scale.
+But the CONCLUSION the determinant route was chasing — semisimplicity of the
+Hecke algebra at every rank — did not need it, and was reachable by composing
+four things that already existed in the corpus and had never been put together.
+
+QOU/SchurWeyl/HeckeSemisimpleGeneral.lean (new, sorry-free, #print axioms clean
+on all four declarations):
+
+  isSemisimpleRing_hecke              q != 0, q^2 != 1  =>  IsSemisimpleRing (Hecke R q q^-1 n)
+  isSemisimpleRing_hecke_of_one_lt    1 < q             =>  same, at every n
+  wenzlCriterion_of_one_lt            a MODEL for the cited WenzlCriterion
+  semisimple_of_one_lt_unconditional  the composition, no cited class left
+
+### The four pieces, all pre-existing
+
+* QOU.SchurWeyl.heckeWedderburn (SW-7): H_{n+1}(q) = prod_lambda M_{d_lambda}(R)
+  at EVERY n. I verified the whole chain sorry-free: rskBurnsideHolds
+  (sum d^2 = n! from Robinson-Schensted), heckeProduct_surjective, the
+  dimension squeeze, heckeProduct_bijective, heckeWedderburn.
+* QOU.MathlibExt.MatrixSemisimple.instIsSemisimpleRing_matrix — fills Mathlib's
+   for division rings.
+* Mathlib's finite-product IsSemisimpleRing instance.
+* Mathlib's RingEquiv.isSemisimpleRing.
+
+### What this discharges
+
+WenzlCriterion (Information/PNeqNpEquivalence.lean) calls itself hypothesis
