@@ -78,3 +78,68 @@ which is all that function returns.
 
 Both fall back to the original Python path when `pyhecke_native` is absent — a
 bare container has no extension module, and this module must still import there.
+
+---
+
+# Second atom: the wrong sign is SYSTEMATIC, and the magnitude is nearly flat in A
+
+| atom | A | B_pred (MeV) | AME2020 (MeV) | sign | \|pred\|/AME | secs |
+|---|---|---|---|---|---|---|
+| deuterium | 2 | -7.271102125 | +2.224566 | **WRONG** | 3.269 | 942.3 |
+| tritium | 3 | -7.742121347 | +8.481796 | **WRONG** | 0.913 | 1567.6 |
+
+**Both wrong-signed.** Two points is not many, but it is enough to say the sign
+is not an A = 2 peculiarity.
+
+**The more informative number is the shape, not the sign.** From A = 2 to A = 3
+the prediction moves `-7.271 → -7.742` — **6.5 %** — while the experimental
+binding moves `2.225 → 8.482`, **+281 %**. The accumulator is close to
+**A-independent** over this range, where real binding grows steeply and roughly
+linearly in A.
+
+So the defect is unlikely to be a stray sign convention: flipping the sign would
+give `+7.27` and `+7.74` against `2.22` and `8.48`, which is wrong in the
+opposite direction at A = 2 and still nearly flat. **Whatever is missing is
+extensive in A**, and a sign flip does not supply it.
+
+That is consistent with the standing open problem recorded in AGENTS.md — the
+"separate, super-pairwise additive extensive object" that the six Δ_λ closure
+ansätze all failed to produce, and the pairwise cap
+`QOU.MassTheory.exchangeDet_pow_two_le_four`. This measurement does not solve
+that; it is the first time the framework's own binding path has been able to
+*exhibit* it end to end.
+
+## Still not established
+
+- **Two atoms.** he3, he4, li6, li7 did not complete: the container's worker was
+  restarted mid-run (SIGKILL) and the process died. They are not reported.
+- **No witness regenerated.** `hadron-knot-table.witness.json` untouched, and it
+  should stay that way while the sign is wrong — recording these as a witness
+  would publish them.
+- **No cause identified.** "Extensive term missing" is a reading of two points,
+  consistent with prior work; it is not a measurement of the mechanism.
+
+# Copilot review (#6427) — finding accepted, fix relocated
+
+Copilot flagged, correctly, that the kernel path makes `tr_run` and
+`s['log_norm']` `mpmath.mpf`, so `unified_iterative_correction` and
+`binding_energy` return `mpf`, and `hadron_knot_table.py:204`'s
+`round(B, 4)` then hits
+`TypeError: Object of type mpf is not JSON serializable`. **Verified by
+reproduction**, not taken on trust.
+
+**Its suggested fix — coerce at the kernel boundary — is wrong for this repo**,
+and the fix is applied one level out instead: the casts are at the *public
+returns* of `unified_iterative_correction` and `binding_energy`, which is where
+the float contract has always been. Coercing at the kernel would discard the
+50-dps the kernel exists to carry, through the entire accumulation, which is
+exactly what the NO-FLOAT64 discipline forbids.
+
+**And it costs nothing measurable either way**, which is worth stating because
+it identifies a real defect Copilot did not flag: `log_cur = s['log_norm'] +
+math.log(abs(tr_run))` at line 1604 **already narrows to float64 inside the
+loop** — `math.log` returns a Python float whatever it is handed. Measured:
+`math.log(mpf(3)/7)` → `-0.8472978603872037` (float) against `mp.log` →
+`-0.847297860387203613710107506521`. So this accumulator has been
+float64-limited at its log step all along, upstream of any cast. That is a
+**pre-existing precision defect**, neither introduced nor repaired here.
