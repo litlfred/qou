@@ -1,11 +1,11 @@
 ---
 # qou-kwoa
 title: 'Lean/Mathlib-scale: Hecke character theory for det(twGram) at rank >= 2 (Geck-Pfeiffer 7.2.6)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T21:39:20Z
+updated_at: 2026-09-02T21:57:00Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -106,3 +106,9 @@ qou-avt2 (in-progress) is the mathematical supplier — cite it, do not duplicat
 it. qou-mtx9 records that the GP reduction is the compute bottleneck and scales
 with WORD LENGTH, with a batched entry point (chi_lambdas_via_gp) unused in 9
 producers; relevant if this bean's verification ever needs characters in bulk.
+
+
+## Claimed 2026-09-02 by branch claude/p-neq-np-gaps-n8dxxl
+
+First move is a SCOPING CHECK, not construction: is the character-sum route
+this bean prescribes circular for the semisimplicity goal? See the entry below.
