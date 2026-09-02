@@ -1,7 +1,7 @@
 {
   "computation": "enumerator-selection-criterion-audit",
   "scriptFile": "probes/enumerator_selection_criterion_audit.py",
-  "computedAt": "2026-08-31T05:57:53.510040+00:00",
+  "computedAt": "2026-09-02T21:36:35.012329+00:00",
   "contentBlock": "qou-brng",
   "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
   "source_witness": "_deprecated/binding-k-enumerator.witness.json",
@@ -230,9 +230,9 @@
       "detail": "the 1|3 bands are [(1, 7), (1, 8), (1, 9), (2, 7), (2, 8), (2, 9), (3, 7), (3, 8), (3, 9)]; every one has |t - s| >= 4, so none is an adjacent transposition and none was in the search set. That is exactly the pair a Brunnian carrier needs, and it is why the Borromean was unreachable -- the generator set, not the layout"
     },
     {
-      "name": "band generators are NOT in this corpus's compute (corpus-grepped)",
+      "name": "RETRACTED -- band generators WERE already in the corpus when I claimed they were not",
       "passed": true,
-      "detail": "grep over content/, computations/, docs/ finds no band or Birman-Ko-Lee generator; the only 'BKL' hit is BKLR (Bischoff-Kawahigashi-Longo-Rehren), a Frobenius-algebra theory and a substring false positive. Four library documents cover the band presentation, so this is a citation rather than a derivation"
+      "detail": "I asserted 'no band or Birman-Ko-Lee generator in content/, computations/, docs/'. FALSE at the very commit my checkout sat on (ed4ffbe424): computations/deltalambda/ carried them in >= 6 files, brunnian_route_feasibility_probe.py naming a_{7,3} explicitly. My PATTERN matched them; I piped through `head -10` and content/.../.lake/packages/ sorts first, so six vendored blobs ate the budget and I read the truncation as empty. `head` on a corpus grep is a CORRECTNESS hazard; exclude .lake/ and drop the cap"
     },
     {
       "name": "RETRACTED -- the band route is ~4400x LARGER, not cheaper",

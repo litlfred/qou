@@ -242,13 +242,17 @@ def main():
           "exactly the pair a Brunnian carrier needs, and it is why the "
           "Borromean was unreachable -- the generator set, not the layout")
 
-    check("band generators are NOT in this corpus's compute (corpus-grepped)",
+    check("RETRACTED -- band generators WERE already in the corpus when I "
+          "claimed they were not",
           True,
-          "grep over content/, computations/, docs/ finds no band or "
-          "Birman-Ko-Lee generator; the only 'BKL' hit is BKLR "
-          "(Bischoff-Kawahigashi-Longo-Rehren), a Frobenius-algebra theory "
-          "and a substring false positive. Four library documents cover the "
-          "band presentation, so this is a citation rather than a derivation")
+          "I asserted 'no band or Birman-Ko-Lee generator in content/, "
+          "computations/, docs/'. FALSE at the very commit my checkout sat on "
+          "(ed4ffbe424): computations/deltalambda/ carried them in >= 6 files, "
+          "brunnian_route_feasibility_probe.py naming a_{7,3} explicitly. My "
+          "PATTERN matched them; I piped through `head -10` and "
+          "content/.../.lake/packages/ sorts first, so six vendored blobs ate "
+          "the budget and I read the truncation as empty. `head` on a corpus "
+          "grep is a CORRECTNESS hazard; exclude .lake/ and drop the cap")
 
     # ---- RETRACTION: the band route is NOT cheaper ---------------------------
     from math import factorial
