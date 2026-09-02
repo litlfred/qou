@@ -6905,3 +6905,54 @@ carries bar-invariance lemmas for individual `quantumInt` values; the general
 statement is what is missing. That is the honest thing to prove — and it is
 worth more than any further candidate testing, since it is the theorem that
 makes candidate testing pointless.
+
+### CORRECTION to the entry above — I had the Lean inventory backwards
+
+The previous entry closes with: *"The corpus carries bar-invariance lemmas for
+individual `quantumInt` values; the general statement is what is missing."*
+**Both halves are wrong, and in opposite directions.** I wrote it without
+grepping, immediately after an entry whose whole subject is a claim asserted
+without checking.
+
+**What IS present** — `content/quantum-observable-universe/braids-and-knots/bar-involution.lean`,
+sorry-free, generic over `[CommRing R] [BarInvolution R]`:
+
+    IsBarSymmetric / IsBarAntiSymmetric        (both, as first-class predicates)
+    barSymmetricProjection / barSkewProjection + `decompose`
+    IsBarSymmetric.add / .mul / .neg
+    IsBarAntiSymmetric.add / .neg
+    IsBarSymmetric.of_mul_antisym
+    IsBarAntiSymmetric.of_sym_mul
+    IsBarAntiSymmetric.pow_two_mul  /  .pow_two_mul_add_one
+
+So the **general** bar-grading algebra is already there — including the Z/2 half.
+`IsBarAntiSymmetric.pow_two_mul` is exactly the "the sign squares away" fact I
+observed for `u = b*hbar_q^2`. My correction to #6282's wording stands (that PR
+did drop the sign), but I should not have implied the corpus was unaware of it:
+it carries the anti-symmetric half as a first-class notion.
+
+**What is ABSENT**: `quantumInt` bar-invariance, at all. Not per-n, not general —
+grepped for `IsBarSymmetric (quantumInt`, `quantumInt_bar`, `bar_quantumInt`,
+and for `quantumInt` near `bar`: nothing. And no `[n]_q = U_{n-1}([2]_q)`; the
+Chebyshev material in the corpus (`brings-surface/genus-filtration-ideal.lean`)
+is about Seifert genus and is unrelated.
+
+So the inventory is the reverse of what I wrote: **the abstract layer is
+present, the concrete instantiation is missing.**
+
+### Which makes the Lean target sharper, not vaguer
+
+The missing bridge is one lemma, and it connects two things that already exist:
+
+    theorem quantumInt_barSymmetric (n : N) (q : R) : IsBarSymmetric (quantumInt n q)
+
+with the Chebyshev identity `quantumInt n q = U (n-1) (quantumInt 2 q)` as the
+natural route (induction on the recurrence `U_k = s U_{k-1} - U_{k-2}`, with
+`IsBarSymmetric.add` / `.mul` / `.neg` discharging the step — all already proved).
+
+That is a better target than the field-theoretic `Fix(bar) = Q(s)`, which needs
+Mathlib `IntermediateField` / `fixedField` machinery. The lemma above delivers
+the load-bearing half of the S1 finding — *every symmetric q-integer passes the
+parity filter, for all n* — inside the corpus's own existing abstractions.
+
+Not attempted here.
