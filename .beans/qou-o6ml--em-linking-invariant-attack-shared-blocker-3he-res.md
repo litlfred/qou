@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T05:31:39Z
+updated_at: 2026-09-02T21:42:47Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1109,3 +1109,39 @@ them.
 **Scope (a)** on route (2)'s reachability — a negative about the available
 carriers, not about knot energy as an EM mechanism. If a *derived* carrier
 assignment ever appears, every piece above is waiting for it.
+
+
+## 2026-09-02 — the fourth route (`qou-0hdx`) is closed too, so route (2) has no successor
+
+`qou-0hdx` was opened 2026-08-01 as this bean's successor: the Freedman–He
+**asymptotic crossing number**, advertised as clearing every obstruction that killed
+the trichotomy's routes — symmetric in the pair (O1-proof), unsigned so nonzero at
+`lk = 0` (Brunnian-proof), `Flux^2` rather than `Flux^3`, and carrying an explicit
+`Vol^{-1/3}` factor claimed to *converge* with the empirical `A^{-1/3}` κ-null. It
+sat at `todo` with `updated_at == created_at` for a month.
+
+It is now **scrapped**, on two corrections verified against the primary source
+(`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`, Komendarczyk
+eq. 43) rather than taken from the audit trail:
+
+1. The bound's invariant is `ac(L_k, L)` — one component against the whole link,
+   summed over `n` **components**. The per-pair object the bean proposed to derive
+   **does not exist** in either source. Structural, scope-(b).
+2. The prefactor is `(pi/16)^{1/4}`, a pure constant with **no volume factor**. The
+   `Vol^{-1/3}` is Khesin Thm 3.6's *single-knotted-torus* bound, misapplied. The
+   advertised convergence was one route and a misattribution, not two independent
+   ones — retracted (Round 5, `docs/audits/2026-08-01-em-linking-reads-round1.md`).
+
+**And it does not escape this bean's blocker.** Eq. (43) is indexed on an
+n-component link `L` in `R^3`, so evaluating `ac(L_k, L)` for a nucleus requires
+first saying which link the nucleus **is** — the same carrier assignment that
+`qou-5vhf` establishes is an admitted AME-driven census search. Route (2)'s failure
+of this bean's own no-tuned-constant (CAL-4) gate therefore applies to the successor
+verbatim.
+
+Net: the trichotomy's route (2) is closed and its one named successor is closed with
+it. The **one live positive target** the arc leaves behind is not a crossing number
+at all — eq. (43)'s topological factor is A-independent for a fixed local
+configuration, so it *relocates* κ(A) into the flux: κ falls by 2.099 across
+A = 3…41, requiring the per-component flux to fall by 1.449. Independently derivable
+from the corpus braid geometry; not derived; nothing wired.
