@@ -1698,8 +1698,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return gated_total, per_step
-    return gated_total
+        return float(gated_total), per_step
+    # float, as this function has always returned. See the note on
+    # binding_energy's return: the cast is at the public boundary rather than at
+    # the kernel, so the accumulation keeps its precision, and it costs nothing
+    # because math.log already narrows inside the loop.
+    return float(gated_total)
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2482,7 +2486,23 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
         B += sdp_contrib
     if frobenius:
         B += binding_from_frobenius_pairing(Z, N)
-    return B
+    # Public contract is a float, and has always been. The Rust kernel makes the
+    # accumulator carry mpf internally, and an mpf reaching a witness raises
+    # `TypeError: Object of type mpf is not JSON serializable` at
+    # `hadron_knot_table.py`'s `round(B, 4)` (Copilot, #6427 — verified).
+    #
+    # The cast belongs HERE, not at the kernel boundary as suggested: coercing
+    # the kernel's output would discard the 50-dps the kernel exists to carry,
+    # through the whole accumulation. Casting at the public return keeps the
+    # precision everywhere it can still be used.
+    #
+    # It costs nothing measurable either way: `log_cur = s['log_norm'] +
+    # math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
+    # (math.log returns a Python float whatever it is handed), so this path is
+    # float64-limited well upstream of here. That narrowing is a real,
+    # PRE-EXISTING precision defect and is tracked separately — it is not
+    # introduced, or fixed, by this cast.
+    return float(B)
 
 
 def q_value_beta(Z_parent, N_parent):
