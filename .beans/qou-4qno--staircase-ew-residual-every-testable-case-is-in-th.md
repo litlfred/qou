@@ -254,17 +254,36 @@ Carries `staircase_three_isEmpty`, `staircase_four_isEmpty`,
 and `choose_eq_zero_iff_isEmpty` tying the general cap back to the n = 3
 arithmetic so the two cannot drift.
 
-**🛑 NOT COMPILED LOCALLY, and not reported as green.** Mathlib's olean cache
-host `lakecache.blob.core.windows.net` is denied by organization policy in this
-environment, and the local Mathlib build carries only `Tactic`/`Util`/`Lean`
-infrastructure — none of `Data.Nat.Choose.Basic`, `Data.Fintype.Card`,
-`Logic.IsEmpty`, `Order.Fin.Basic`, `Mathlib.Tactic`. Building Mathlib from
-source is hours. What *was* run: every Mathlib name and signature used was
-verified against the Mathlib **source** present in `.lake/packages/mathlib/`
-(`Nat.choose_eq_zero_iff`, `Fintype.card_le_of_injective`, `not_nonempty_iff`,
-`StrictMono.injective`, `Fin.strictMono_castLE`), and the two proofs that had
-leaned on an unverified `Nat.not_le` were rewritten onto `omega`. **Needs a CI
-build before it is trusted.**
+**COMPILED AND SORRY-FREE (corrected 2026-09-02, same session).** This section first read
+**"NOT COMPILED LOCALLY, and not reported as green"** — true when written and
+false within the hour. The retraction is recorded rather than quietly
+overwritten, because why it was false is the useful part.
+
+`lake build QOU.Hecke.RowCap` from the **repo root**: *Build completed
+successfully (3087 jobs)*, exit 0, olean produced. `#print axioms` on all ten
+theorems: `[propext, Classical.choice, Quot.sound]`, and `alt_channel_empty_iff`
+needs only `[propext]`. No `sorryAx`.
+
+**What made it look impossible, and the two traps in it.** Mathlib's olean cache
+host `lakecache.blob.core.windows.net` *is* denied by organization policy here —
+`lake exe cache get` failed 476 times for 476 attempts. But this repo does not
+use that host: `scripts/lean-cache-restore.sh` pulls a chunked tarball from the
+`lake-cache/qou-<toolchain-slug>` orphan branch over **GitHub**, which is
+reachable. 2.4 GB in `lake-oleans.tgz.part*` blobs, concatenated and extracted,
+gave 3470 Mathlib oleans including every module this file imports.
+
+- **TRAP — the restore script no-ops when the cache is present but useless.** It
+  skips at `>= 2000` mathlib oleans, and there were **6990** — all
+  `Mathlib/Tactic/**` and `Mathlib/Lean/**` infrastructure, with `Data`,
+  `Order` and `Logic` absent, so nothing mathematical would compile. The
+  threshold counts files, not coverage. `lean-axiom-guard.yml` gates on the same
+  `-lt 2000` test and would neutral-skip on a warm-looking cold cache the same
+  way. Check for a module you actually import, not a count.
+- **TRAP — build from the repo root, not from `content/…/lean/`.** The root
+  `lakefile.toml` says so in its own header ("the preferred build entry point
+  for CI and agents"), and the two trees carry **separate** `.lake/packages/`.
+  Building in the sub-project recompiled Aesop from source while the restored
+  cache sat unused at the root.
 
 ### B + C + D — the surfaces
 
@@ -286,4 +305,6 @@ proximity search is not derivation while the proof block called the same hook
   touched file.
 - `probe-float64-guard --diff`: clean on both new probes.
 - `witness_shape_guard`: clean.
-- **Lean: NOT RUN** — see above.
+- **Lean: `lake build` green from the repo root** (3087 jobs, exit 0) and all
+  ten theorems sorry-free under `#print axioms`. The first write-up of this
+  bean said the gate could not run; see the correction above.

@@ -307,6 +307,15 @@ do not treat any number here as a threshold.
 
 ## Session log
 
+- 2026-09-02 — `QOU/Hecke/RowCap.lean` (general Schur-Weyl row cap, 10 thms):
+  `lake build` from ROOT green (3087 jobs), `#print axioms` clean on all ten
+  (`alt_channel_empty_iff` needs only `propext`). Restore survived the build —
+  3470 mathlib oleans still present afterwards, so the eviction TRAP did not
+  fire this time. Hit the ROOT-vs-per-paper TRAP anyway by not reading this
+  file first: built in `content/…/lean/`, which recompiled Aesop from source
+  while the restored cache sat unused at the root. **Read this memory before
+  touching the build, not after.** New TRAP added above (the `>= 2000` skip).
+
 Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs. (Pruned 2026-09-03: entries 08-29 → 09-03
