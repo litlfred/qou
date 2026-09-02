@@ -278,3 +278,64 @@ path, at four nuclei.
 - **No witness regenerated.** `hadron-knot-table.witness.json` is untouched and
   should stay so: recording a wrong-signed, nucleus-independent number as a
   witness would publish it.
+
+---
+
+# A numerical target for the extensive term (`qou-brng`) — weak, and labelled so
+
+The four points give the missing term directly. Writing
+`B_true = B_pred + E(A)`:
+
+| atom | A | E = AME − B_pred | E/A | E/C(A,2) | E/(A−1) |
+|---|---|---|---|---|---|
+| deuterium | 2 | 9.496 | 4.748 | 9.496 | 9.496 |
+| tritium | 3 | 16.224 | 5.408 | **5.408** | 8.112 |
+| he3 | 3 | 15.174 | 5.058 | **5.058** | 7.587 |
+| he4 | 4 | 35.124 | 8.781 | **5.854** | 11.708 |
+
+Across all four, every normalisation is poor (E/A 67 %, E/C(A,2) 69 %,
+E/(A−1) 45 %). **Excluding the deuteron** — which this corpus already treats as
+special (owner ruling 2026-08-29: its knot is the canonical braid closure,
+`Vol = 0`, and the Gram/SDP route is a scope-(a) negative) — one normalisation
+separates:
+
+```
+E / C(A,2)   5.408, 5.058, 5.854     spread 14.6 %
+E / A        5.408, 5.058, 8.781     spread 58.0 %
+E / (A−1)    8.112, 7.587, 11.708    spread 45.1 %
+```
+
+So for A ≥ 3 the required term is roughly **`E ≈ 5.4 MeV × C(A,2)`** — it scales
+like the **all-pairs count**.
+
+## How much this is worth, stated honestly
+
+**Not much on its own, and the arithmetic says why.**
+
+- Excluding the deuteron leaves **two distinct A values** (3 and 4). Many forms
+  fit two points.
+- The **within-A scatter is the noise floor**: tritium and ³He are both A = 3 and
+  their `E/C(A,2)` differ by **6.7 %**. The cross-A spread is 14.6 %, i.e. only
+  **2.2×** that floor.
+
+A trend 2.2× above the noise, over two distinct abscissae, is a **target, not a
+determination**. It says where to aim; it does not say the term is pairwise.
+
+## And it sits in tension with a proved result — deliberately flagged
+
+AGENTS.md records the missing object as **"super-pairwise"**, with the pairwise
+cap **proved** (`QOU.MassTheory.exchangeDet_pow_two_le_four`, `ρ_A ≤ C(A,2)`).
+An `E` that scales *as* `C(A,2)` is pairwise-shaped, which is not obviously
+consistent with that framing.
+
+Three readings, none settled here:
+
+1. The apparent `C(A,2)` scaling is an artefact of two points and 6.7 % noise.
+2. `E` genuinely saturates the proved cap rather than exceeding it — `≤ C(A,2)`
+   permits `∝ C(A,2)`.
+3. The A ≥ 5 behaviour, where `C(A,2)` and any super-pairwise form diverge
+   sharply, distinguishes them — and is exactly what was not reached.
+
+**⁶Li (A = 6) is the discriminating measurement**, and it is now merely
+expensive rather than impossible: per-atom cost ran 942, 1568, 1496, 2425 s for
+A = 2,3,3,4. That is the concrete next step this arc leaves behind.
