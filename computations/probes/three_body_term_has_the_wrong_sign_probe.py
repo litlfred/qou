@@ -127,6 +127,14 @@ here and match the arc's independently-recorded bond constants to all printed
 digits, which is the cross-check that the machinery is the same one. `B_AME` is
 a comparison target only.
 
+SIGN CLAIM NARROWED — SEE `cumulant_hierarchy_does_not_converge_probe.py`
+-------------------------------------------------------------------------
+The three-body terms below are negative at every `A = 3` ordering and that
+stands. But the hierarchy does not continue that way: at `A = 5` the fifth
+cumulant is **positive** and larger than the fourth, and the cumulant
+hierarchy does not converge. Read the negative sign as a fact about `c_3`,
+not as a pattern the higher orders follow.
+
 -- Ref: [manuscript] bean t7qv
 -- Ref: [probe] no_distance_decay_in_the_trace_probe.py
 -- Ref: [probe] chain_telescopes_and_ordering_sensitivity_probe.py

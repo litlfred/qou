@@ -136,6 +136,16 @@ before use, and every `H_12` quantity is cross-validated against an `H_6`/`H_9`
 computation that does not share its weight source. `B_AME` is a comparison
 target only; the headline is a ratio in which `alpha` cancels.
 
+SIGN CLAIM NARROWED — SEE `cumulant_hierarchy_does_not_converge_probe.py`
+-------------------------------------------------------------------------
+The four-body term measured below is negative and that stands, as does
+everything about `4He`: at `A = 4` the cumulant expansion terminates at
+`k = 4`, so orders `2, 3, 4` exhaust it and all were measured. What does NOT
+extend is the general reading. At `A = 5` the fifth cumulant is **positive**
+and larger than the fourth (`+1.6045` against `-1.2308`), so "every many-body
+term is negative" and "the naive sum is an upper bound" are false from
+`A = 5` on. No `A <= 4` measurement here licenses extrapolation.
+
 -- Ref: [manuscript] bean t7qv
 -- Ref: [probe] three_body_term_has_the_wrong_sign_probe.py (bound now closed)
 -- Ref: [code] pyhecke.atom.atom_gen_chains (the interleaved bond order)
