@@ -1,8 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 /**
- * Conditional (§3b-cond) exclusion of linear / bond-count level-selection:
- * given the geometric tower lower bound (conj:tower-geometric-lower-bound) and
+ * Exclusion of linear / bond-count level-selection (no longer conditional —
+ * the tower-bound class is inhabited at k₀ = 3 by QOU.Mass.WStd):
+ * given the geometric tower lower bound (prop:tower-geometric-lower-bound) and
  * extensive binding for A ≥ 1, a geometric c·r^A eventually beats any linear
  * M·A, so no linear selection rule is consistent — the level is at most
  * logarithmic. Lean sorry-free (QOU.Mass.LevelSelection.no_linear_selection),
@@ -16,7 +17,7 @@ export default proposition({
     ref: "qou:QOU.Mass.LevelSelection.no_linear_selection",
     validation: "not_checked",
   },
-  uses: ["conj:tower-geometric-lower-bound"],
+  uses: ["prop:tower-geometric-lower-bound"],
   tags: ["binding", "level-selection", "logarithmic", "gap-a-3", "brane-tower"],
   authorNotes: [
     {
@@ -43,7 +44,7 @@ export default proposition({
         "growth lemma lives. Nothing generic is being hidden: the " +
         "combinatorial level indexing is $\\mathbb{N}$-valued and the " +
         "conjectural growth hypothesis is carried separately by " +
-        "[`conj:tower-geometric-lower-bound`](tower-geometric-lower-bound.md).",
+        "[`prop:tower-geometric-lower-bound`](tower-geometric-lower-bound.md).",
     },
   ],
 });

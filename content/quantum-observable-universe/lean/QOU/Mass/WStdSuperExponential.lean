@@ -24,21 +24,27 @@ it explicitly declines to discharge — its docstring calls them "the open combi
 
 Both are now theorems, so `wStd_sq_lower` states the bound with **no hypotheses but `k ≥ 3`**.
 
-## The class as stated cannot be instantiated, and that is a defect in the class
+## The class was unsatisfiable as stated; it now carries a threshold, and is inhabited
 
-`LevelSelectionLogarithmic.TowerGeometricLowerBound w r c` demands `c · r^k ≤ w k` for
+`LevelSelectionLogarithmic.TowerGeometricLowerBound` used to demand `c · r^k ≤ w k` for
 **every** `k`.  At the real `w_std` that is false, and not marginally: `w_std(k) = 0` for
 `k < 3`, because no diagram of fewer than three cells contains `(2,1)` and `fDimSkew` guards
-on containment.  `not_towerGeometricLowerBound_wStd` proves the refutation outright — it is a
-structural exclusion with an invariant, not a failed search.
+on containment.  `not_towerGeometricLowerBound_wStd_of_lt_three` proves the refutation
+outright, for every `r` and `c` — a structural exclusion with an invariant, not a failed
+search, so no choice of constants could have repaired it.
 
-So the honest positive statement is a **threshold** bound, and `wStd_geometric_from_three`
+The class therefore carries a threshold `k₀`, and `towerGeometricLowerBound_wStd` **inhabits
+it at `k₀ = 3`**.  With that instance the level-selection exclusions apply to the actual
+`w_std` rather than to an abstract `w`: `no_linear_selection_wStd` and
+`no_superlinear_selection_wStd` below are those two theorems with nothing left conditional.
+
+The honest positive statement is a **threshold** bound, and `wStd_geometric_from_three`
 supplies one: `(1/30)·(√2)^k ≤ w_std(k)` for `k ≥ 3`, which is the class's `lower_bound` field
 with `r = √2 > 1` and `c = 1/30 > 0` on that tail.  `k ≥ 3` is not an artifact — it is exactly
 where `w_std` stops vanishing, so the bound covers the whole range on which any bound is
 possible.  Everything downstream (`no_linear_selection`, `no_superlinear_selection`) already
-works on a tail — they pick an `A` from an `atTop` filter — so a threshold class would serve
-them unchanged.  Changing the class is left to the author; this file does not edit it.
+works on a tail — they pick an `A` from an `atTop` filter — so the threshold class serves
+them unchanged.
 
 **A correction to my own first attempt, kept because the reasoning is the point.**  The first
 version of this file proved the bound only from `k ≥ 9`, and its header said the threshold was
@@ -169,19 +175,48 @@ theorem wStd_geometric_from_three (k : ℕ) (hk : 3 ≤ k) :
   have := Real.sqrt_le_sqrt hle
   rwa [Real.sqrt_sq hb, Real.sqrt_sq (wStd_nonneg k)] at this
 
-/-! ### The class as stated is unsatisfiable -/
+/-! ### Why the class needs its threshold, and what inhabits it -/
 
-/-- **`TowerGeometricLowerBound wStd r c` is false for every `r` and `c`.**
+/-- **No threshold below 3 is satisfiable, for any `r` and `c`.**
 
-The class demands `c · r^k ≤ w k` for **every** `k`; at `k = 0` that reads `c ≤ w_std 0 = 0`,
-contradicting `c_pos`. This is a structural exclusion with a named invariant (the `fDimSkew`
-containment guard), not a scope-limited negative: no choice of `r, c` can repair it, and the
-fix has to be a threshold in the class rather than a better constant. -/
-theorem not_towerGeometricLowerBound_wStd (r c : ℝ) :
-    ¬ QOU.Mass.LevelSelection.TowerGeometricLowerBound wStd r c := by
+At `k = k₀ < 3` the class's own field reads `c · r^{k₀} ≤ w_std(k₀) = 0`, against `c_pos` and
+`r > 0`. A structural exclusion with a named invariant (the `fDimSkew` containment guard), not
+a scope-limited negative: no choice of constants repairs it, which is why the class carries a
+threshold rather than better constants.
+
+In particular the class's previous `∀ k` form — the `k₀ = 0` case here — was **false**, so
+every result conditional on it was conditional on a falsehood. -/
+theorem not_towerGeometricLowerBound_wStd_of_lt_three (r c : ℝ) (k₀ : ℕ) (hk₀ : k₀ < 3) :
+    ¬ QOU.Mass.LevelSelection.TowerGeometricLowerBound wStd r c k₀ := by
   intro T
-  have h0 := T.lower_bound 0
-  rw [wStd_eq_zero_of_lt_three 0 (by norm_num), pow_zero, mul_one] at h0
-  exact absurd h0 (not_le.mpr T.c_pos)
+  have h := T.lower_bound k₀ le_rfl
+  rw [wStd_eq_zero_of_lt_three k₀ hk₀] at h
+  have hr : (0:ℝ) < r := lt_trans zero_lt_one T.one_lt_r
+  nlinarith [T.c_pos, pow_pos hr k₀]
+
+/-- **The class is inhabited at `k₀ = 3`** — the first threshold the previous result allows,
+and exactly where `w_std` stops vanishing. -/
+instance towerGeometricLowerBound_wStd :
+    QOU.Mass.LevelSelection.TowerGeometricLowerBound wStd (Real.sqrt 2) (1/30) 3 where
+  one_lt_r := by nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num), Real.sqrt_nonneg 2]
+  c_pos := by norm_num
+  lower_bound := wStd_geometric_from_three
+
+/-! ### The exclusions, now about `w_std` itself
+
+`no_linear_selection` and `no_superlinear_selection` were stated over an abstract `w : ℕ → ℝ`
+with an uninhabited hypothesis, so neither could be applied to anything. These are those two
+theorems at the actual branched tower weight, with nothing conditional left. -/
+
+/-- **Linear level-selection is excluded, unconditionally, for the real `w_std`.** -/
+theorem no_linear_selection_wStd (M : ℝ)
+    (hext : ∀ A : ℕ, 1 ≤ A → wStd A ≤ M * (A : ℝ)) : False :=
+  QOU.Mass.LevelSelection.no_linear_selection wStd (Real.sqrt 2) (1/30) 3 M hext
+
+/-- **Super-linear selection — bond-count `A(A−1)/2` included — likewise.** -/
+theorem no_superlinear_selection_wStd (M : ℝ) (kA : ℕ → ℕ) (A₀ : ℕ)
+    (hsuper : ∀ A, A₀ ≤ A → A ≤ kA A)
+    (hext : ∀ A, A₀ ≤ A → wStd (kA A) ≤ M * (A : ℝ)) : False :=
+  QOU.Mass.LevelSelection.no_superlinear_selection wStd (Real.sqrt 2) (1/30) 3 M kA A₀ hsuper hext
 
 end QOU.Mass.WStd
