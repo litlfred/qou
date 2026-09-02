@@ -120,7 +120,7 @@ See [Table 3](#tbl:q-beta-categorical-precision-ladder-table3-data).
 
 At $N=3$ the n−p mass-split residual is **7.96 ppb**, above the 4.74 ppb
 100$\times$-experimental Δm_pn target; **$N=4$ is the first rung below
-it**, at 4.35 ppb, and $N=5$ adds 0.03 ppb more. The chain does not reach
+it**, at 4.35 ppb, with $N=5$ taking off a further 0.03 ppb. The chain does not reach
 sub-ppb precision on this observable at either documented pin — an earlier
 draft of this paragraph claimed it did, on the superseded column.
 
