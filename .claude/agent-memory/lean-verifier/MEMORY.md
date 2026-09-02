@@ -298,6 +298,19 @@ prune the log, never the TRAPs.
   (MTM build real 1m37s / user 11s). LEAN_PATH = all root `.lake/packages/*/
   .lake/build/lib/lean` + `$ROOT/.lake/build/lib/lean`. `/usr/bin/time` is NOT
   installed here — use the bash `time` builtin.
+- 2026-09-02 (magnus-o6ov): verified `QOU/MassTheory/MagnusHookExteriorPower.lean`
+  (esymm generating function, 2 thms + 1 def, `import Mathlib`, general CommRing).
+  As-written FAILS: second thm used `Finset.sum_powerset_card` which **does not
+  exist** in v4.24.0, plus an `rw [esymm]`-under-binder that can't fire. FIX: the
+  purpose-built lemma is `Finset.sum_powerset s f` (additive of `prod_powerset`,
+  `Mathlib.Algebra.BigOperators.Group.Finset.Powerset`): `∑ t∈powerset s = ∑ j∈
+  range(#s+1), ∑ t∈powersetCard j s`; then `Finset.card_univ`, and `rw [esymm]`
+  AFTER `intro j` (no longer under binder). Aggregator `Mathlib.olean` is ABSENT
+  from the QOU-cone partial restore (3470 mathlib oleans), so `import Mathlib` on
+  the literal file errors `Mathlib.olean does not exist` — verified via a
+  byte-identical-tactics temp copy with narrowed imports (strict subset of
+  Mathlib). EXIT 0, no sorry, both thms `#print axioms` = `[propext,
+  Classical.choice, Quot.sound]`. Confirmed cold-cache TRAP (wall 2m6s / user 6s).
 - 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
   lean-direct EXIT 0, std-3 axioms, no sorryAx. Cache tarball ~2.3G; restore ran
   out at ~2.2G free (QOU lib files cut off) but mathlib's 3407 oleans suffice for
