@@ -81,4 +81,28 @@ and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{m}}(q^2)$.
 
 All of the above is sorry-free in `QOU.Information.markovZNeg_eq`, `markov_loop_value_product`, `markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo` and `qDimTwo_sq_sub_hbar_sq`, with the symbolic cross-check in [`markov_loop_value_product_and_framing_ratio.py`](https://github.com/litlfred/qou/blob/main/computations/probes/markov_loop_value_product_and_framing_ratio.py) (13/13). It was found while chasing the algebraic relation between $z$ and $\hbar_\times$ out of the Toffoli LP arc, where it first appeared only as an obstruction.
 
+**The framing ratio classifies the convention: D is the $\mathfrak{sl}_2$ point.** The monomial above is doing real work in the weight formula below. When $a = q^N$ — that is, $z = q^{2N}z_-$ — every numerator of that product collapses,
+
+$$
+  z\,q^{c} - z_{-}q^{-c} \;=\; z_{-}\bigl(q^{2N+c} - q^{-c}\bigr) \;=\; z_{-}q^{N}\bigl(q^{N+c} - q^{-(N+c)}\bigr),
+$$
+
+so with $z_{-}q^{N} = 1/[N]_q$ the whole product becomes the hook-content formula for the $U_q(\mathfrak{sl}_N)$ quantum dimension:
+
+$$
+  w_\lambda \;=\; \frac{\dim_q\bigl(V_\lambda^{\mathfrak{sl}_N}\bigr)}{[N]_q^{\,n}} .
+$$
+
+Solving $a = q^N$ for $z$ gives a one-parameter family $z_N = q^N/[N]_q$, and $z_2 = q^3/(q^2+1)$ is convention D on the nose. Verified for $N = 1,2,3,4$ and every partition of $n \leq 5$: the framing ratio is $q^{2N}$, the weights are $\dim_q/[N]_q^{\,n}$, and $w_\lambda = 0$ exactly when $\lambda$ has more than $N$ rows.
+
+Two consequences. First, the registered $w_{(3)} = [4]_q/[2]_q^3$ and $w_{(2,1)} = 1/[2]_q^2$ are the quantum dimensions of the $4$- and $2$-dimensional $U_q(\mathfrak{sl}_2)$ irreps over $[2]_q^3$. Second, the exact vanishing $w_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound**, not a coincidence of the trace: a partition with more than $N$ rows has a cell of content $-N$, whose numerator factor carries $[0]_q = 0$.
+
+**Convention C lies in no member of the family, for any $N$** — not merely for no integer $N$. Its framing ratio has logarithmic derivative $q\,(a^2)'/a^2 = -(3s^6+s^4+s^2+3)/\bigl(2(s^6+s^4-s^3-s^2-1)\bigr)$ with $s = \sqrt q$, which is not constant; $a^2 = q^t$ would force it to equal the constant $t$. Consistently, C's weights vanish on no partition at all — checked at $(1^3)$, $(2,1,1)$ and $(1^4)$ — so C has no row bound.
+
+So the convention-D ruling has a classification behind it, not only the empirical figures above: D is the $\mathfrak{sl}_2$ point of the Ocneanu family, C is off the family entirely, and no anchor or measurement enters the argument.
+
+> **Notation warning.** The $w_\lambda$ of this block is the **Ocneanu/Markov** weight — the $y_\lambda$ of the production trace. It is *not* the $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ of [`wedderburn-weight-canonical`](../mass-theory/wedderburn-weight-canonical.md), which is built from the Frame–Robinson–Thrall hook-*length* dimension rather than the hook-*content* one. At $n = 3$ the two differ on every partition and differ already at $q = 1$ — $(1/6, 2/3, 1/6)$ against $(1/2, 1/4, 0)$ — so the notation register's rule that the partition-weight families are distinct at $q \neq 1$ applies here at $q = 1$ as well.
+
+Sorry-free in `QOU.Information.markovZAt_framing`, `markovZAt_two_eq_markovZ`, `ocneanu_numerator_collapse` and `qIntSym_two`; measurement in [`ocneanu_weights_are_sl_n_quantum_dimensions.py`](https://github.com/litlfred/qou/blob/main/computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py) (13/13).
+
 The weight formula itself is **frame-general** — it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights exactly, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.
