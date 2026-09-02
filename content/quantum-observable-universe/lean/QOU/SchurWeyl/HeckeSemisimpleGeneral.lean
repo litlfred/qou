@@ -81,10 +81,15 @@ theorem isSemisimpleRing_hecke (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n 
 
 /-- **The substrate discharges semisimplicity at every rank (sorry-free).**
 
-    For any real `q > 1` — in particular the substrate `q₀ ≈ 1.10998` — the
-    Iwahori–Hecke algebra is semisimple at every rank.  This is the shape in
-    which the substrate parameter discharges the semisimplicity leg of the
-    `P ≠ NP`-in-QOU counting argument, with no cited class and no `sorry`. -/
+    For any real `q > 1` — in particular the substrate `q₀ ≈ 1.10998` —
+    `QOU.SchurWeyl.Hecke ℝ q q⁻¹ n` is semisimple at every rank.  This is the
+    shape in which the substrate parameter discharges the semisimplicity leg of
+    the `P ≠ NP`-in-QOU counting argument, with no cited class and no `sorry`.
+
+    The carrier is named explicitly rather than called "the Iwahori–Hecke
+    algebra", because this file's scope section distinguishes it from
+    `QOU.Hecke.IwahoriHecke`, and the informal name would read as a claim about
+    that one. -/
 theorem isSemisimpleRing_hecke_of_one_lt {q : ℝ} (hq : 1 < q) (n : ℕ) :
     IsSemisimpleRing (Hecke ℝ q q⁻¹ n) := by
   refine isSemisimpleRing_hecke q (by positivity) ?_ n
