@@ -62,10 +62,47 @@ vacuity risk concentrates there. Rust + `pyhecke` have genuinely good hygiene.
 - *Instances (live, `_deprecated` excluded):* **153 total**, split:
   - **146 boolean-flag literals** (`computed=1, expected=1, tolerance=0`) — a "this code path executed / this property held" idiom. Examples: `per_bond_growth_a3.py:104` (`kernel_ran`), `three_body_joint_trace_a3.py:101` (`kernel_ran`), `eigenvalue_reeb_extension_h4_h5.py:172` (`extends_beyond_h3`), `meson_spectrum_predictions.py:141` (`kaon_predicted`), `mass_vol_density.py:301` and `:305`. These are *honest-but-misleading*: the JSON shows a passing value-check that is really a status flag.
   - **7 real-physical-literal cases** (the ones that warrant agent scrutiny):
-    - `folio-assistant/computations/probes/khovanov_at_q0_probe.py:222` — `c_3_match_at_q1`, `computed=-2, expected=-2` while the genuine `empirical_c3` is computed two lines up (`c_3_empirical`, line 213) but **never compared**. The honest form is `computed=float(empirical_c3), expected=-2`.
+    - `folio-assistant/computations/probes/khovanov_at_q0_probe.py:222` — `c_3_match_at_q1`, `computed=-2, expected=-2`. **CORRECTED 2026-08-30 (bean `qou-l81w`): this entry's original prescription was itself a tautology and must not be applied.** It read: *"the genuine `empirical_c3` is computed two lines up (`c_3_empirical`, line 213) but never compared. The honest form is `computed=float(empirical_c3), expected=-2`."* Both halves are wrong. `empirical_c3` is **not computed** — line 190 is the literal assignment `empirical_c3 = mpf(-2)` — so `float(empirical_c3)` is `-2.0` and the prescribed form evaluates to `-2.0 == -2`: the same defect with a cast in front of one side, and now **invisible** to an AST census keyed on expression equality. Applying it makes the corpus figure fall while the defect survives. The real remedy uses the module's own second route: the Khovanov tabulation gives `Hopf+` and `unknot` independently, so `computed=kh_at_q1['Hopf+']`, `expected=kh_at_q1['unknot'] * abs(empirical_c3)` compares two separately computed quantities. Landed.
     - `folio-assistant/computations/probes/khovanov_klr_rank_cohomology_probe.py:231` — `c_3_exact_match`, same `-2==-2` pattern, source literally says "matches empirical c_3 exactly" yet asserts the constant against itself.
-    - `folio-assistant/computations/m_p_m_e_li2q.py:126` — `codata_mp_me_loaded`, `computed=1836.152, expected=1836.152`. Benign *re: vacuity* (a CODATA load self-check, honestly named; the real predicted `mp_me` is used in the error computation at line 98) — but the hardcoded literal `1836.152` is *separately* a `canonical-no-hardcoded-observable` violation: it should import from `folio-assistant/computations/substrate/codata_constants.py` (a `*_MEV_VALIDATION` alias) rather than inline the value.
-    - `probes/qbeta_complex_c3_fibre_probe.py:293` (`computed=4.0==4.0`), `probes/additive_composition_categorical_probe.py:268` (`…supported_by_all_4_hypotheses`, `4==4`), `alpha/alpha_em_habiro_taylor_investigation.py:245` (`habiro_taylor_coefficients_extracted`, `5==5`), `qbeta/qbeta_habiro_depth15_interpretation.py:623` (`6==6`) — these encode a *count* (of hypotheses / extracted coefficients) as a tautology rather than asserting the count was actually produced.
+    - `folio-assistant/computations/m_p_m_e_li2q.py:126` — `codata_mp_me_loaded`, `computed=1836.152, expected=1836.152`. **CORRECTED 2026-08-30 (bean `qou-l81w`): not benign.** This entry originally called it "benign *re: vacuity* (a CODATA load self-check, honestly named)". It is a literal compared to a copy of itself under `tolerance=1e-10`, which reads as a precision check on a loaded constant while nothing is loaded — `codata_mp_me` is a local literal a few lines above. Since demoted to data. The entry's *secondary* point stands and is still open: the hardcoded `1836.152` should come from `codata_constants.py` (a `*_MEV_VALIDATION` alias), and until it does there is nothing for an assertion to compare against.
+    - `probes/qbeta_complex_c3_fibre_probe.py:293` (`computed=4.0==4.0`), `probes/additive_composition_categorical_probe.py:268` (`…supported_by_all_4_hypotheses`, `4==4`), `alpha/alpha_em_habiro_taylor_investigation.py:245` (`habiro_taylor_coefficients_extracted`, `5==5`), `qbeta/qbeta_habiro_pn_split_depth.py:623` (`6==6`) — these encode a *count* (of hypotheses / extracted coefficients) as a tautology rather than asserting the count was actually produced.
+
+#### What counts as a fix (added 2026-08-30, bean `qou-l81w`)
+
+This section originally prescribed remedies per site and one of them was itself
+a tautology, so the rule it was missing is worth stating once, generally.
+
+**A remedy must introduce an INDEPENDENT ROUTE to the value.** Not a
+reformatting of the existing one. Concretely, an acceptable `expected` comes
+from exactly one of:
+
+1. a **second derivation** the module already performs (a closed form beside a
+   numerical fit, a recurrence beside a series, two tabulations);
+2. a **known constant** with authority outside this script (CODATA, a
+   published value, a partition function, a bean's deliberately corrected
+   table);
+3. a **property the name asserts**, evaluated — finiteness, a bound, a sign, a
+   band the `source` string states;
+4. a **coverage count** rebuilt from the inputs rather than read back off the
+   loop that produced it.
+
+**Not a remedy:** wrapping one side in `float()`, `str()`, `round()`, `int()`,
+or a variable. `computed=float(x), expected=<the literal x was assigned>` is
+`x == x` with a cast, and it is *worse* than the original because an
+AST-identity census stops flagging it. Same for a tolerance: a conditional or
+generous tolerance around two identical expressions does not make either side
+independent, it only obscures that they are the same.
+
+**The test to apply:** name the two routes out loud. If you cannot say what the
+second one is without repeating the first, the honest remedy is to demote the
+site to `add_data` with `has_independent_expected_value: false` — a recorded
+measurement is not a failure, and it is what most of this class actually is.
+
+**Two more shapes this heuristic does not catch**, both found while draining
+and both requiring a reader rather than a regex: `computed=all(_ok)` where each
+element of `_ok` was bare-asserted immediately after being appended (so it can
+only be `True` at witness time), and an `add_assertion` sitting inside an `if`,
+so the cases that do not match leave no trace in the witness at all.
 
 ### B3. Hardcoded-witness producer (literal baked in as "computed") — **0 strict, ~2 borderline**
 - *Misleading because:* a producer that writes a literal numeric result it claims to compute is the self-assuming-projection analogue — the witness "proves" a number the script never derived.

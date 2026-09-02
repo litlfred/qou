@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:56:40.994462+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T12:52:47.632450+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "mmu_categorical_correction_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 15,
   "computation": "mmu-categorical-correction-first-probe",
   "scriptFile": "mmu_categorical_correction_first_probe.py",
-  "scriptHash": "9e1cbc348f4c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "5724d664dcd9",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,13 +29,18 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mmu_categorical_correction_first_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mmu_categorical_correction_first_probe.py"
   },
   "data": {
     "target_delta": "0.0000002098",
     "q_substrate": "1.10997858275138080759166909561",
-    "vol_4_1": "2.0298832128193072500115970029",
+    "vol_4_1": "2.02988321281930725004240510855",
     "candidates_tested": [
       "D1. hbar_q^6 / 4",
       "D2. hbar_q^6 * b / 4",
@@ -68,12 +73,12 @@
         "passed": false
       },
       "D5. hbar_q^4 * (q-1) * Vol(4_1)": {
-        "computed_delta": "0.0000215155895003425466657977450663",
+        "computed_delta": "0.00002151558950034254666612429319",
         "err_ppm_vs_target": 101552857.48495018,
         "passed": false
       },
       "D6. hbar_q^8 / Vol(4_1)": {
-        "computed_delta": "0.00000000457590612107480549521231749021",
+        "computed_delta": "0.00000000457590612107480549514286768229",
         "err_ppm_vs_target": 978189.1986602726,
         "passed": false
       },

@@ -1,24 +1,24 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:56:07.651775+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T09:24:15.723640+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "all_4_candidates_have_verdicts",
-      "computed": 4.0,
-      "expected": 4.0,
+      "name": "all_candidates_have_verdicts",
+      "computed": 4,
+      "expected": 4,
       "passed": true,
-      "tolerance": 0.0,
-      "source": "Diagnostic probe enumerates 4 candidates with explicit verdicts"
+      "tolerance": 0,
+      "source": "candidates recorded with a non-empty verdict: 4 of 4 (candidate_1_im_delta, candidate_2_complex_q, candidate_3_re_im_via_bar_decomp, candidate_4_re_projection_minus_2)"
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 17,
   "computation": "qbeta-complex-c3-fibre-probe",
   "scriptFile": "qbeta_complex_c3_fibre_probe.py",
-  "scriptHash": "add20d102077",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "d2ce11f2ed24",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

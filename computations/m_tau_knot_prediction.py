@@ -73,45 +73,64 @@ Q0 = mp.mpf(Q_50_DIGIT_STR)
 HBAR_Q = (Q0 - 1) / Q0  # ≈ 0.0991
 HBAR_Q_SQ = HBAR_Q ** 2
 
-# ── knot/link volume table (SnapPy literature, 10+ dps where possible) ────
+# ── knot/link volume table ───────────────────────────────────────────────
 #
-# Source: SnapPy 3.x knot census; cross-checked against Adams/Reid/Wakefield.
-# All values verified to 8+ dps. Higher-precision values are noted.
+# Source: snappy 3.3.2, `Manifold(k).volume(bits_prec=1000)`, re-derived
+# 2026-08-30 (bean qou-ckbv).
+#
+# This header used to read "All values verified to 8+ dps". They were not.
+# Measured against SnapPy, 21 of the 25 hyperbolic entries were wrong inside
+# the digits they printed — most of the 7_x family correct to 4-5 of the 20
+# shown, and 6_2 and 7_4 wrong at the SECOND significant digit. Only 4_1,
+# 8_5, 8_20, L6a1, L6a4 and Whitehead survived unchanged.
+#
+# Two were not imprecision but mislabels, worth naming because a reader
+# checking the table would have had to know the answer already to catch them:
+#
+#   * "L5a1" held 4.05686 — that is Vol(9_42), not the Whitehead link's
+#     3.66386. The table's own separate "Whitehead" entry was correct, so one
+#     manifold sat in the table twice under two different numbers.
+#   * "9_46" held Vol(9_42) under the comment "cosmetic surgery with 9_42".
+#     The two are not a volume-preserving pair: 4.0569 against 4.7517. The
+#     comment supplied a reason, which is what made the entry look
+#     deliberate rather than wrong.
+#
+# Entries now print only as many digits as they are good for.
 KNOT_VOL_TABLE: dict[str, str] = {
     # smallest hyperbolic knots (Rolfsen, up to 7 crossings)
     "4_1":  "2.0298832128193072500",   # = 2·Cl₂(π/3) = 6Λ(π/3); 15+ dps from canonical sources
-    "5_2":  "2.8281220883177828550",   # 10-cell hyperbolic
-    "6_1":  "3.1639632305103625730",
-    "6_2":  "4.0597664956578801590",
-    "6_3":  "5.6930189652893685750",   # amphicheiral
-    "7_2":  "3.3317071740434540750",
-    "7_3":  "4.5921353689739140750",
-    "7_4":  "5.0747080320244000940",
-    "7_5":  "6.4435773522029438800",
-    "7_6":  "7.0844080262679660780",
-    "7_7":  "7.6432187737125247200",
+    "5_2":  "2.8281220883307831628",   # 10-cell hyperbolic
+    "6_1":  "3.1639632288831439840",
+    "6_2":  "4.4008325161230461014",
+    "6_3":  "5.6930210912813007651",   # amphicheiral
+    "7_2":  "3.3317442316411148239",
+    "7_3":  "4.5921256970270625502",
+    "7_4":  "5.1379412018734177698",
+    "7_5":  "6.4435373808505730861",
+    "7_6":  "7.0849259535108303647",
+    "7_7":  "7.6433751723599554782",
     # 8-crossing notables
-    "8_1":  "3.4274129125",
+    "8_1":  "3.42720524627",
     "8_5":  "6.997189",
-    "8_9":  "9.114078",
-    "8_10": "9.290127",
-    "8_18": "12.35095955",             # amphicheiral
+    "8_9":  "7.58818022364",
+    "8_10": "8.65114855802",
+    "8_18": "12.3509062092",             # amphicheiral
     "8_19": "0.0",                     # torus T(3,4) — non-hyperbolic (sentinel)
     "8_20": "4.1249032",
-    "8_21": "5.5535296",
+    "8_21": "6.78371351984",
     # 9-crossing notables
-    "9_42": "4.0568960",
-    "9_46": "4.0568960",               # cosmetic surgery with 9_42
+    "9_42": "4.05686022424",
+    "9_46": "4.75170196552",               # NOT equal to 9_42: 4.7517 vs 4.0569 (see header)
     # 10-crossing notables
-    "10_139": "11.2780",
-    "10_165": "12.0466",
+    "10_139": "4.85117075733",
+    "10_165": "12.5066879309",
     # links (multi-component)
     "L2a1_Hopf":      "0.0",          # Hopf link — non-hyperbolic (Seifert-fibered)
     "L4a1_Solomon":   "0.0",          # Solomon's seal — non-hyperbolic
-    "L5a1":           "4.05686",
+    "L5a1":           "3.66386237671",
     "L6a1":           "5.33348956",
     "L6a4_Borromean": "7.32772475",   # Borromean rings
-    "L8a8":           "12.30577",
+    "L8a8":           "8.83066495491",
     "Whitehead":      "3.66386237671",
 }
 

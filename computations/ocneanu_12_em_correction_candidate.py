@@ -17,6 +17,20 @@ The 32 ppm residual `12 − k_required = 3.878e-4` is approximately:
 at **0.17% match** at 50 dps — a 600× improvement over the bare
 integer 12. Two structurally motivated factors:
 
+⚠ THE THREE NUMBERS IN THE PARAGRAPH ABOVE ARE STALE (measured
+  2026-08-30, unchanged since; left as written because they are what
+  was claimed, not silently corrected). This run computes
+  `12 − k_required = 3.90270e-4` (not 3.878e-4), the correction
+  reproduces it to **0.803%** (not 0.17%), and the improvement over
+  the bare integer is **124.5×** (not 600×). The *verdict* string
+  below is built from live values and has always printed the right
+  ones (0.26114 ppm, 124.545×); only this docstring drifted. The
+  reading is unchanged — still a tier=near-match inside the 1%
+  empirical-fit threshold the verdict names — but 0.803% is four
+  times closer to that threshold than 0.17% suggested, which is what
+  `em_correction_reproduces_bare12_residual_within_one_percent`
+  now measures. Recorded as a witness caveat too.
+
   - `(α_em/π)` — the standard EM-correction prefactor that appears
     in the m_K/m_π closure derivation (Bring zero-mode projection
     per PR #1442 / `em-coupling-bring-zero-mode`)
@@ -210,12 +224,102 @@ def main() -> int:
     w.add_data("verdict", verdict)
     w.add_data("tier", "near-match")
 
+    # ── Was `em_correction_candidate_evaluated`, computed=True/expected=True ──
+    # Two bare literals: it fired on reaching the end of main() and said
+    # nothing about the candidate. Replaced by the claim the script exists to
+    # make, plus the two constants that claim is built out of.
+
+    # (1) THE claim. Route A: the correction (α_em/π)/dim H_3, built from the
+    #     fine-structure constant and the H_3 Plancherel dimension — no mass
+    #     and no knot enters it. Route B: the residual 12 − k_required, built
+    #     from m_μ, m_p, m_e and the Borromean Markov trace at q₀ — no
+    #     electromagnetic coupling enters it. Disjoint inputs; that they land
+    #     on the same 3.9e-4 is the entire finding. Bound is the 1% empirical-
+    #     fit threshold the verdict names; the run sits at 0.803%, so ~20%
+    #     headroom — a real drift in α_em, the masses, q₀ or trM breaks it.
+    residual_match = abs(em_correction / residual_bare - 1)
+    w.add_data("em_correction_vs_residual_rel_gap", mp.nstr(residual_match, 12))
     w.add_assertion(
-        name="em_correction_candidate_evaluated",
-        computed=True,
-        expected=True,
+        name="em_correction_reproduces_bare12_residual_within_one_percent",
+        computed=mp.nstr(residual_match, 18),
+        expected="0",
+        tolerance="0.01",
+        unit="relative gap between (α_em/π)/dim H_3 and (12 − k_required)",
+        source=("Route A: (α_em/π)/dim H_3 from the fine-structure constant and "
+                "|S_3| — no mass, no knot. Route B: 12 − k_required from "
+                "m_μ/m_p/m_e and the Borromean Markov trace at q₀ — no EM "
+                "coupling. Tolerance = the 1% empirical-fit threshold the "
+                "verdict cites; measured 0.803%, NOT the 0.17% the docstring "
+                "claims."),
+    )
+
+    # (2) dim H_3 = 6. The docstring flags the ambiguity ("six things are
+    #     equal") and then hard-codes a 6 that nothing checks. Route A: the
+    #     mp.mpf(6) the formula divides by. Route B: Σ_{λ⊢3} (f^λ)² rebuilt
+    #     from the hook-length formula over the partitions of 3 — the
+    #     Wedderburn identity Σ d_λ² = |S_3| = 3!, so the Plancherel reading
+    #     and the |S_3| reading are checked to be the same 6 rather than
+    #     assumed to be.
+    from math import factorial
+
+    def _hook_product(part):
+        col_h = [sum(1 for r in part if r > j) for j in range(part[0])]
+        prod = 1
+        for i, rl in enumerate(part):
+            for j in range(rl):
+                prod *= (rl - 1 - j) + (col_h[j] - 1 - i) + 1
+        return prod
+
+    parts_of_3 = [(3,), (2, 1), (1, 1, 1)]
+    sum_d_squared = sum((factorial(3) // _hook_product(p)) ** 2
+                        for p in parts_of_3)
+    w.add_data("S3_irrep_dims", [factorial(3) // _hook_product(p)
+                                 for p in parts_of_3])
+    w.add_assertion(
+        name="dim_H_3_equals_sum_of_squares_of_S3_irrep_dims",
+        computed=str(sum_d_squared),
+        expected=str(int(dim_H_3)),
         tolerance=0,
-        source="EM-correction candidate test completed at 50 dps; NOT a derivation.",
+        unit="dim H_3",
+        source=("Route A: the dim_H_3 the correction divides by. Route B: "
+                "Σ_{λ⊢3} (f^λ)² = 1²+2²+1² rebuilt from the hook-length formula "
+                "over the partitions of 3 (Wedderburn: = |S_3| = 3!). Ties the "
+                "Plancherel reading of the 6 to the |S_3| reading instead of "
+                "leaving the docstring's ambiguity unchecked."),
+    )
+
+    # (3) The α_em literal. Route A: the 1/137.0359991 typed in this file.
+    #     Route B: ALPHA_EM_INV in substrate/experimental_constants.py
+    #     (CODATA-2018, Cs recoil, ±21e-9). The two agree to 1.2e-10, well
+    #     inside CODATA's own 2.1e-8 — but the literal is a registry bypass,
+    #     so this is the check that would catch it drifting.
+    from experimental_constants import ALPHA_EM_INV  # noqa: E402
+    alpha_registry_gap = abs(mp.mpf("137.0359991") / mp.mpf(str(ALPHA_EM_INV)) - 1)
+    w.add_assertion(
+        name="alpha_em_literal_matches_codata_registry",
+        computed=mp.nstr(alpha_registry_gap, 12),
+        expected="0",
+        tolerance="1e-9",
+        unit="relative gap in 1/α_em",
+        source=("Route A: the 137.0359991 hard-typed in this file. Route B: "
+                "ALPHA_EM_INV from substrate/experimental_constants.py "
+                "(CODATA-2018 Cs recoil). Tolerance 1e-9 sits under CODATA's "
+                "own 2.1e-8 uncertainty, so this tests the transcription, not "
+                "the measurement."),
+    )
+    w.add_caveat(
+        "Docstring headline numbers are STALE and were left as written rather "
+        "than silently corrected: it claims the residual is 3.878e-4, matched "
+        "to 0.17%, a 600× improvement. This run measures 3.90270e-4, matched "
+        "to 0.803%, a 124.5× improvement. The verdict string is built live and "
+        "has always printed the correct 0.26114 ppm / 124.545×. The tier "
+        "(near-match, inside 1%) is unchanged."
+    )
+    w.add_caveat(
+        "α_em is hard-typed here as 1/137.0359991 rather than read from "
+        "substrate/experimental_constants.ALPHA_EM_INV. Left in place (the "
+        "computed values are unchanged) and pinned by the "
+        "alpha_em_literal_matches_codata_registry assertion instead."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

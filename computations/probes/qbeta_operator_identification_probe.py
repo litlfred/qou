@@ -83,6 +83,27 @@ def main() -> None:
     b = mp.sqrt(b_sq)
     hbar_q_sq = ((Q_0 - 1) / Q_0) ** 2
 
+    # ── Two structural facts the whole probe rests on, each checkable by a
+    #    SECOND route that does not repeat the first. Without them the
+    #    negative result is not a negative result about V_(2,1) at H_3 — it
+    #    is a negative result about the wrong matrices.
+    #
+    # (i) braid relation.  σ₁σ₂σ₁ and σ₂σ₁σ₂ are two DIFFERENT products of the
+    #     compiled seminormal generators; they coincide iff those matrices
+    #     really carry the H_3 braid action every trace below is taken over.
+    braid_lhs = sig1 * sig2 * sig1
+    braid_rhs = sig2 * sig1 * sig2
+    braid_dev = max(abs(braid_lhs[i, j] - braid_rhs[i, j])
+                    for i in range(2) for j in range(2))
+    # (ii) the Hoefsmit parameter.  `b` above is the closed form
+    #      √(q⁴+q²+1)/(q²+1); the SAME number is the off-diagonal entry of the
+    #      seminormal σ₂ that char_fast compiles from the Young-orthogonal
+    #      recipe. Neither route consults the other — the closed form knows
+    #      nothing of the matrix, the matrix nothing of the closed form — and
+    #      `b` scales every ratio in Test 1 and the N=1 factor in Test 3.
+    b_from_seminormal = sig2[0, 1]
+    b_dev = abs(b_from_seminormal - b)
+
     print("=" * 78)
     print("Q_β precision-ladder operator-identification probe (Path 1)")
     print("=" * 78)
@@ -93,6 +114,8 @@ def main() -> None:
     print()
     print(f"σ_1 = diag({float(sig1[0, 0]):.6f}, {float(sig1[1, 1]):.6f})")
     print(f"σ_2 entries: {[float(sig2[i, j]) for i in range(2) for j in range(2)]}")
+    print(f"braid σ₁σ₂σ₁ vs σ₂σ₁σ₂: max |Δ| = {mp.nstr(braid_dev, 6)}")
+    print(f"b closed form vs seminormal σ₂[0,1]: |Δ| = {mp.nstr(b_dev, 6)}")
     print()
 
     # Test 1: σ_1^k powers
@@ -166,12 +189,52 @@ def main() -> None:
         "Path 2: Khovanov-Rozansky bigraded polynomial at finite q",
         "Path 3: spectral sequence on Wedderburn-block stratification",
     ])
+    # `path_1_attempted` (computed=1, expected=1) was a tautology: it recorded
+    # that the script ran and could not fail. Demoted to data; the two
+    # assertions below are the ones that CAN fail, and they are the premises
+    # without which the negative result above says nothing.
+    w.add_data("path_1_attempted", {
+        "attempted": True,
+        "meaning": "Path 1 operator-identification was run and its negative "
+                   "outcome documented",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    w.add_data("substrate_cross_checks", {
+        "braid_relation_max_abs_dev": mp.nstr(braid_dev, 8),
+        "hoefsmit_b_closed_form": mp.nstr(b, 25),
+        "hoefsmit_b_from_seminormal_sigma2": mp.nstr(b_from_seminormal, 25),
+        "hoefsmit_b_abs_dev": mp.nstr(b_dev, 8),
+    })
     w.add_assertion(
-        "path_1_attempted",
-        computed=1,
-        expected=1,
-        tolerance=0,
-        source="Path 1 operator-identification attempted and documented",
+        "v21_generators_satisfy_hecke_braid_relation",
+        computed=mp.nstr(braid_dev, 40),
+        expected="0",
+        tolerance="1e-45",
+        source="σ₁σ₂σ₁ − σ₂σ₁σ₂ on the compiled seminormal V_(2,1) at q_0 — "
+               "two distinct products of the same generators. If they part "
+               "company the matrices are not the H_3 braid action and every "
+               "trace in this probe is over the wrong object.",
+    )
+    w.add_assertion(
+        "hoefsmit_b_matches_seminormal_sigma2_offdiagonal",
+        computed=mp.nstr(b_from_seminormal, 40),
+        expected=mp.nstr(b, 40),
+        tolerance="1e-45",
+        source="b two ways at q_0: the off-diagonal entry of the seminormal "
+               "σ₂ built by char_fast from the Young-orthogonal recipe, vs "
+               "the closed form √(q⁴+q²+1)/(q²+1). b scales every ratio in "
+               "Test 1 and the N=1 factor in Test 3.",
+    )
+    w.add_caveat(
+        "SCOPE (recorded, not repaired): the headline negative result — "
+        "\"no candidate operator on V_(2,1) matches the empirical c_3..c_7\" "
+        "— is asserted in prose only. This script never loads the empirical "
+        "c_k and never computes a distance to them; Tests 1-3 print traces "
+        "and ratios and the reader is left to see that none of them land. "
+        "Making the null falsifiable needs the c_k in hand, and the canonical "
+        "source (qbeta-decay-sdp-extended-ck.witness.json) has since had "
+        "every c_k nulled as unresolved."
     )
     w.save()
 

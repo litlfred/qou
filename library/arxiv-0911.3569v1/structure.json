@@ -1,0 +1,499 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0911.3569v1",
+ "source": {
+  "file": "0911.3569v1.pdf",
+  "sha256": "4e7c15c9724fb453894cc98728345c4be09627ba9701186cf240d83c83fc1030",
+  "bytes": 435070,
+  "pages": 30,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0911.3569",
+   "version": "1",
+   "primary_class": "math.CV",
+   "stamp_date": "18 Nov 2009"
+  },
+  "doi": null,
+  "title": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS",
+  "authors_raw": "DAVID G. WAGNER",
+  "title_lines": [
+   "MULTIVARIATE STABLE POLYNOMIALS:",
+   "THEORY AND APPLICATIONS"
+  ],
+  "abstract": "Univariate polynomials with only real roots \u2013 while special \u2013 do occur often enough that their properties can lead to interesting conclusions in diverse areas. Due mainly to the recent work of two young mathematicians, Julius Borcea and Petter Br\u00a8 and\u00b4 en, a very successful multivariate generaliza- tion of this method has been developed. The \ufb01rst part of this paper surveys some of the main results of this theory of \u201cmultivariate stable\u201d polynomials \u2013 the most central of these results is the characterization of linear transfor- mations preserving stability of polynomials. The second part presents various applications of this theory in complex analysis, matrix theory, probability and statistical mechanics, and combinatorics.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181022205710Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Stable polynomials.",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Examples.",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Elementary properties.",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Univariate stable polynomials.",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Multivariate analogues of the HKO and HB Theorems.",
+   "page": 6,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Multiaffine stable polynomials.",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "A criterion for real stability.",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Linear transformations preserving stability \u2013 multiaffine case.",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The Grace-Walsh-Szego Coincidence Theorem.",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Reduction to the case of stable polynomials.",
+   "page": 11,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Partial symmetrization.",
+   "page": 13,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Convergence to the polarization.",
+   "page": 13,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Polarization arguments and stability preservers.",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The real stability criterion revisited.",
+   "page": 14,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Linear transformations preserving stability \u2013 polynomial case.",
+   "page": 15,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Linear transformations preserving stability \u2013 transcendental case.",
+   "page": 15,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Johnson's Conjectures.",
+   "page": 17,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The symmetric exclusion process.",
+   "page": 19,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Negative correlation and negative association.",
+   "page": 19,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "A conjecture of Liggett and Pemantle.",
+   "page": 20,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Further observations.",
+   "page": 22,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Inequalities for mixed discriminants.",
+   "page": 23,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Further Directions.",
+   "page": 27,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Other circular regions.",
+   "page": 27,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Applications of Theorem 5.4.",
+   "page": 27,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "A converse to the Grace-Walsh-Szego Theorem.",
+   "page": 28,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Phase and support theorems.",
+   "page": 29,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2021,
+   "n_words": 314
+  },
+  {
+   "id": "sec-001-2-stable-polynomials",
+   "number": "2",
+   "title": "Stable polynomials.",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2649,
+   "n_words": 470
+  },
+  {
+   "id": "sec-002-21-examples",
+   "number": "2.1",
+   "title": "Examples.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1454,
+   "n_words": 275
+  },
+  {
+   "id": "sec-003-22-elementary-properties",
+   "number": "2.2",
+   "title": "Elementary properties.",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1946,
+   "n_words": 375
+  },
+  {
+   "id": "sec-004-23-univariate-stable-polynomials",
+   "number": "2.3",
+   "title": "Univariate stable polynomials.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5031,
+   "n_words": 1001
+  },
+  {
+   "id": "sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo",
+   "number": "2.4",
+   "title": "Multivariate analogues of the HKO and HB Theorems.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 6754,
+   "n_words": 1471
+  },
+  {
+   "id": "sec-006-3-multiaffine-stable-polynomials",
+   "number": "3",
+   "title": "Multiaffine stable polynomials.",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 418,
+   "n_words": 83
+  },
+  {
+   "id": "sec-007-31-a-criterion-for-real-stability",
+   "number": "3.1",
+   "title": "A criterion for real stability.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3203,
+   "n_words": 663
+  },
+  {
+   "id": "sec-008-32-linear-transformations-preserving-stability-m",
+   "number": "3.2",
+   "title": "Linear transformations preserving stability \u2013 multiaffine case.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 4485,
+   "n_words": 863
+  },
+  {
+   "id": "sec-009-41-reduction-to-the-case-of-stable-polynomials",
+   "number": "4.1",
+   "title": "Reduction to the case of stable polynomials.",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2006,
+   "n_words": 387
+  },
+  {
+   "id": "sec-010-42-partial-symmetrization",
+   "number": "4.2",
+   "title": "Partial symmetrization.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 958,
+   "n_words": 185
+  },
+  {
+   "id": "sec-011-43-convergence-to-the-polarization",
+   "number": "4.3",
+   "title": "Convergence to the polarization.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1938,
+   "n_words": 377
+  },
+  {
+   "id": "sec-012-5-polarization-arguments-and-stability-preserver",
+   "number": "5",
+   "title": "Polarization arguments and stability preservers.",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 582,
+   "n_words": 115
+  },
+  {
+   "id": "sec-013-51-the-real-stability-criterion-revisited",
+   "number": "5.1",
+   "title": "The real stability criterion revisited.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 693,
+   "n_words": 126
+  },
+  {
+   "id": "sec-014-52-linear-transformations-preserving-stability-p",
+   "number": "5.2",
+   "title": "Linear transformations preserving stability \u2013 polynomial case.",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 9711,
+   "n_words": 1849
+  },
+  {
+   "id": "sec-015-7-the-symmetric-exclusion-process",
+   "number": "7",
+   "title": "The symmetric exclusion process.",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1720,
+   "n_words": 321
+  },
+  {
+   "id": "sec-016-71-negative-correlation-and-negative-association",
+   "number": "7.1",
+   "title": "Negative correlation and negative association.",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1796,
+   "n_words": 359
+  },
+  {
+   "id": "sec-017-72-a-conjecture-of-liggett-and-pemantle",
+   "number": "7.2",
+   "title": "A conjecture of Liggett and Pemantle.",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4318,
+   "n_words": 840
+  },
+  {
+   "id": "sec-018-73-further-observations",
+   "number": "7.3",
+   "title": "Further observations.",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 4495,
+   "n_words": 872
+  },
+  {
+   "id": "sec-019-8-inequalities-for-mixed-discriminants",
+   "number": "8",
+   "title": "Inequalities for mixed discriminants.",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 7821,
+   "n_words": 1492
+  },
+  {
+   "id": "sec-020-9-further-directions",
+   "number": "9",
+   "title": "Further Directions.",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-91-other-circular-regions",
+   "number": "9.1",
+   "title": "Other circular regions.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1316,
+   "n_words": 248
+  },
+  {
+   "id": "sec-022-92-applications-of-theorem-54",
+   "number": "9.2",
+   "title": "Applications of Theorem 5.4.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 2786,
+   "n_words": 511
+  },
+  {
+   "id": "sec-023-94-phase-and-support-theorems",
+   "number": "9.4",
+   "title": "Phase and support theorems.",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1681,
+   "n_words": 314
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2475,
+   "n_words": 380
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 25,
+  "chars_total": 72257
+ }
+}

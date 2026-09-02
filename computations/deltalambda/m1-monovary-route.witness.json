@@ -1,0 +1,182 @@
+{
+ "probe": "m1_monovary_route",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "lean": "QOU.MathlibExt.WeightedChebyshev",
+ "monovary": [
+  {
+   "n": 2,
+   "npart": 2,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 0
+  },
+  {
+   "n": 3,
+   "npart": 3,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 0
+  },
+  {
+   "n": 4,
+   "npart": 5,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 0
+  },
+  {
+   "n": 5,
+   "npart": 7,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 0
+  },
+  {
+   "n": 6,
+   "npart": 11,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 2
+  },
+  {
+   "n": 7,
+   "npart": 15,
+   "viol_abs_c2": 2,
+   "viol_h_c2": 4
+  },
+  {
+   "n": 8,
+   "npart": 22,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 10
+  },
+  {
+   "n": 9,
+   "npart": 30,
+   "viol_abs_c2": 0,
+   "viol_h_c2": 18
+  },
+  {
+   "n": 10,
+   "npart": 42,
+   "viol_abs_c2": 14,
+   "viol_h_c2": 34
+  },
+  {
+   "n": 11,
+   "npart": 56,
+   "viol_abs_c2": 12,
+   "viol_h_c2": 68
+  },
+  {
+   "n": 12,
+   "npart": 77,
+   "viol_abs_c2": 14,
+   "viol_h_c2": 132
+  },
+  {
+   "n": 13,
+   "npart": 101,
+   "viol_abs_c2": 84,
+   "viol_h_c2": 260
+  },
+  {
+   "n": 14,
+   "npart": 135,
+   "viol_abs_c2": 120,
+   "viol_h_c2": 464
+  }
+ ],
+ "mass": [
+  {
+   "n": 6,
+   "pair_viol_pct": "0.0",
+   "weighted_viol_pct": "0.0",
+   "neg_over_pos": "0.0",
+   "cov_pos": true
+  },
+  {
+   "n": 7,
+   "pair_viol_pct": "1.778",
+   "weighted_viol_pct": "0.1159",
+   "neg_over_pos": "0.0011601",
+   "cov_pos": true
+  },
+  {
+   "n": 8,
+   "pair_viol_pct": "0.0",
+   "weighted_viol_pct": "0.0",
+   "neg_over_pos": "0.0",
+   "cov_pos": true
+  },
+  {
+   "n": 9,
+   "pair_viol_pct": "0.0",
+   "weighted_viol_pct": "0.0",
+   "neg_over_pos": "0.0",
+   "cov_pos": true
+  },
+  {
+   "n": 10,
+   "pair_viol_pct": "1.587",
+   "weighted_viol_pct": "0.01589",
+   "neg_over_pos": "0.00015894",
+   "cov_pos": true
+  },
+  {
+   "n": 11,
+   "pair_viol_pct": "0.7653",
+   "weighted_viol_pct": "0.02132",
+   "neg_over_pos": "0.0002132",
+   "cov_pos": true
+  },
+  {
+   "n": 12,
+   "pair_viol_pct": "0.4723",
+   "weighted_viol_pct": "0.004675",
+   "neg_over_pos": "4.6751e-5",
+   "cov_pos": true
+  },
+  {
+   "n": 13,
+   "pair_viol_pct": "1.647",
+   "weighted_viol_pct": "0.05615",
+   "neg_over_pos": "0.00056186",
+   "cov_pos": true
+  },
+  {
+   "n": 14,
+   "pair_viol_pct": "1.317",
+   "weighted_viol_pct": "0.05097",
+   "neg_over_pos": "0.00050999",
+   "cov_pos": true
+  },
+  {
+   "n": 15,
+   "pair_viol_pct": "1.834",
+   "weighted_viol_pct": "0.05264",
+   "neg_over_pos": "0.00052665",
+   "cov_pos": true
+  },
+  {
+   "n": 16,
+   "pair_viol_pct": "1.769",
+   "weighted_viol_pct": "0.06033",
+   "neg_over_pos": "0.00060365",
+   "cov_pos": true
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 1 (MY EXPECTATION FALSIFIED): monovary fails on partitions",
+   "pass": true,
+   "detail": "I briefed that sum|c| and sum c^2 monovary, so the positive term would be exactly the weighted Chebyshev inequality. That holds PER GROWTH STEP (c^2 is a function of |c| there) but NOT for the sums over a partition, which is what the covariance is over. Exhaustive check: (sum|c|, sum c^2) first violates at n = 7, (sum h, sum c^2) at n = 6; violation counts [0, 0, 0, 0, 0, 2, 0, 0, 14, 12, 14, 84, 120] and [0, 0, 0, 0, 2, 4, 10, 18, 34, 68, 132, 260, 464] over n = 2..14. The inequality does not apply directly and the route as briefed is CLOSED."
+  },
+  {
+   "name": "FINDING 2: violating pairs carry ~0.05-0.12 % of the weighted mass",
+   "pass": true,
+   "detail": "The inequality needs only the WEIGHTED SUM of pair products to be non-negative, not every pair. Split over n = 6..16: violating pairs are ['0.0', '1.778', '0.0', '0.0', '1.587', '0.7653', '0.4723', '1.647', '1.317', '1.834', '1.769'] % by COUNT but carry only ['0.0', '0.1159', '0.0', '0.0', '0.01589', '0.02132', '0.004675', '0.05615', '0.05097', '0.05264', '0.06033'] % of the weighted mass, ratio neg/pos = ['0.0', '0.0011601', '0.0', '0.0', '0.00015894', '0.0002132', '4.6751e-5', '0.00056186', '0.00050999', '0.00052665', '0.00060365'] -- roughly a 2000x margin, and Cov(sum|c|, sum c^2) > 0 at every n checked. So a proof of the positive term needs a BOUND ON THE VIOLATING MASS rather than a monovary hypothesis, with ~2000x of room. Same shape as the (b') weakening: a crude bound replaces a sharp one. It does NOT settle M_1 > 0 -- the negative term is ~65 % of the positive one, and that difference stays open."
+  }
+ ],
+ "passed": 2,
+ "total": 2,
+ "ms": 687
+}

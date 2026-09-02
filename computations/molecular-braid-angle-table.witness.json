@@ -1,16 +1,9 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:17.432418+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T10:07:39.013921+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
-    {
-      "name": "lone/bond ratio is q² for every molecule (universal braid weight)",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "all share the local e⁻=σ₀σ₁σ₀ (ℓ=3) / σ (ℓ=1) braid; q³/q=q²"
-    },
     {
       "name": "H₂S resolved by the pure-p base within ~2° (not a weight anomaly)",
       "computed": true,
@@ -20,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6296,
+  "durationMs": 4309,
   "computation": "molecular-braid-angle-table",
   "scriptFile": "molecular_braid_angle_table.py",
-  "scriptHash": "e5ca26937868",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "d65fd9ff9e5c",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +29,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/molecular_braid_angle_table.py"
+    ],
+    "reproduce": "python3 -u computations/molecular_braid_angle_table.py"
   },
   "description": "Braid-level bond-angle table. The lone/bond weight ratio is q² for every atom (same local e⁻=σ₀σ₁σ₀ / σ braid on the symmetric block, weights q³/q). Molecule variation = domain counts + the hybridisation BASE: second-row C/N/O hybridise (sp³, 109.47°), third-row S does not (pure-p, 90°). CH₄/NH₃/H₂O within 0.22° (sp³ base + q²); H₂S within 2.1° (pure-p base). The H₂S deviation is the base geometry (s–p promotion gap), NOT an anomalous weight — no fit.",
   "contentBlock": "prop:symmetric-block-domain-weight",
@@ -128,6 +129,12 @@
     },
     "second_row_max_abs_miss_deg": 0.21945849639551795,
     "h2s_pure_p_miss_deg": -2.0999999999999943,
+    "lone_bond_ratio_is_q2_universal": {
+      "claim": "lone/bond ratio is q² for every molecule (universal braid weight)",
+      "derivation": "all share the local e⁻=σ₀σ₁σ₀ (ℓ=3) / σ (ℓ=1) braid on the symmetric Wedderburn block, where each generator ↦ q; q³/q = q².",
+      "has_independent_expected_value": false,
+      "why_not": "algebraic identity over a DECLARED (not derived) braid word; no second route exists in this module or in molecular_angle_symmetric_block_general.py."
+    },
     "finding": "Richer braid table: the q² lone/bond ratio is universal (identical e⁻/σ braid words on the symmetric block for C, N, O, S). The bond angle is set by (i) the AX_nE_m domain counts and (ii) the HYBRIDISATION BASE — sp³ (109.47°) for the second row (small s–p promotion gap), pure-p (90°) for third-row S (large gap, no hybridisation). CH₄/NH₃/H₂O land within 0.22° on the sp³ base; H₂S lands within 2.1° on the pure-p base. The earlier 'q^7.8' was an artefact of forcing the sp³ base onto a pure-p atom — the real discriminator is the structural s–p gap, not a fitted weight."
   },
   "q0Anchor": "proton",

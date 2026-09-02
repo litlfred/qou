@@ -43,6 +43,7 @@ mp.dps = 60
 # 470 ppb and a factor of 5, far above float64 resolution either way, so this
 # is discipline rather than a correction to the result.)
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
 CODATA_ALPHA_EM_INV = mp.mpf("137.035999177")
 
@@ -265,17 +266,14 @@ def volume_over_catalan_genericity():
     """
     G = mp.catalan
     v_oct = 8 * (mp.clsin(2, mp.pi / 2) / 2)
-    vols = [
-        ("4_1 figure-eight", mp.mpf("2.02988321281931")),
-        ("5_2 three-twist", mp.mpf("2.82812208832975")),
-        ("6_1", mp.mpf("3.16396322888")),
-        ("6_2", mp.mpf("4.40083251")),
-        ("6_3", mp.mpf("5.69302109")),
-        ("7_4", mp.mpf("5.13794120")),
-        ("8_18", mp.mpf("12.35090620")),
-        ("Whitehead = V_oct", v_oct),
-        ("L6a4 Borromean", mp.mpf("7.32772475341775")),
-    ]
+    # EXCISED (bean qou-ckbv): these were nine hand-typed literals at
+    # f64-or-worse width; the 5_2 entry printed 15 and was good to 12.
+    # Read from the canonical registry instead — the Whitehead row was
+    # already a computed closed form and is left as it was.
+    vols = [(f"{k}", vol_at(k, mp.dps)) for k in
+            ("4_1", "5_2", "6_1", "6_2", "6_3", "7_4", "8_18")]
+    vols += [("Whitehead = V_oct", v_oct),
+             ("L6a4 Borromean", vol_at("L6a4", mp.dps))]
     print()
     print("-" * 68)
     print("  Is Vol(K)/G an integer generically?  (if so, `8` explains nothing)")

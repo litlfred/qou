@@ -105,6 +105,19 @@ def hbar_q_squared(q):
     return (1 - 1 / q) ** 2
 
 
+def hoefsmit_b_alt_closed_form(q):
+    """The SECOND closed form for b(q), from `hoefsmit_b`'s own docstring.
+
+    `hoefsmit_b` evaluates √((h²+3)/(h²+4)) with h = q − q⁻¹; this evaluates
+    √(q⁴+q²+1)/(q²+1). The two are equal after clearing q² from numerator and
+    denominator, but they are written independently and share no subexpression,
+    so agreeing is a real check rather than a restatement — and it is exactly
+    the check that separates them from the bar-ODD (q−q⁻¹)/(q+q⁻¹) that used
+    to sit in this slot and gave u ≈ 0.00102, wrong by ~8×.
+    """
+    return mp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
+
+
 def J_hopf(q):
     """Jones polynomial of the Hopf link = -(q² + q⁻²).
 
@@ -127,6 +140,24 @@ def main() -> int:
     b = hoefsmit_b(q)
     h2 = hbar_q_squared(q)
     u = b * h2  # the c_k expansion variable
+
+    # Two independent handles on b, both load-bearing for every ppb figure
+    # below (u = b·ℏ_q² enters at u³ and u⁴, and c_4 ≈ c_3·b⁴):
+    #   (1) the alternative closed form √(q⁴+q²+1)/(q²+1);
+    #   (2) bar-evenness b(q⁻¹) = b(q), the Lean-proved property
+    #       QOU.QBeta.hoefsmitBSq_bar_even — a genuinely different EVALUATION
+    #       (at the bar-conjugate point), not a rearrangement of the same one.
+    # The bar-odd form this function used to carry fails (2) outright.
+    b_alt = hoefsmit_b_alt_closed_form(q)
+    b_alt_dev = abs(b_alt - b)
+    b_bar = hoefsmit_b(1 / q)
+    b_bar_dev = abs(b_bar - b)
+    print(f"\n[0] b cross-checks (both must hold; the bar-odd form fails both)")
+    print(f"      b  = √((h²+3)/(h²+4))        = {mp.nstr(b, 25)}")
+    print(f"      b' = √(q⁴+q²+1)/(q²+1)       = {mp.nstr(b_alt, 25)}"
+          f"   |Δ| = {mp.nstr(b_alt_dev, 6)}")
+    print(f"      b(q⁻¹) (bar-conjugate point) = {mp.nstr(b_bar, 25)}"
+          f"   |Δ| = {mp.nstr(b_bar_dev, 6)}")
     print(f"\nq_0           = {Q_50_DIGIT_STR}")
     print(f"b (Hoefsmit)  = {mp.nstr(b, 20)}")
     print(f"ℏ_q²          = {mp.nstr(h2, 20)}")
@@ -262,12 +293,61 @@ def main() -> int:
         "tier (still pending Habiro-element identification per the "
         "α_EM PR #1511 template)."
     ))
+    # `audit_completed` (computed=True, expected=True) was a tautology: it
+    # recorded that main() reached its last line and could not fail. Demoted
+    # to data; the two b cross-checks below are the ones that CAN fail, and
+    # both of them fail loudly for the bar-odd b this file used to carry —
+    # the single error that has actually bitten this computation.
+    w.add_data("audit_completed", {
+        "completed": True,
+        "meaning": "the 50 dps Rule A vs Rule B comparison ran to its verdict",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    w.add_data("hoefsmit_b_cross_checks", {
+        "b_from_h_form": mp.nstr(b, 25),
+        "b_from_q_form": mp.nstr(b_alt, 25),
+        "b_at_bar_conjugate_q_inverse": mp.nstr(b_bar, 25),
+        "abs_dev_between_closed_forms": mp.nstr(b_alt_dev, 8),
+        "abs_dev_under_bar": mp.nstr(b_bar_dev, 8),
+    })
     w.add_assertion(
-        name="audit_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Q_β c_3 evaluation comparison completed at 50 dps.",
+        name="hoefsmit_b_two_closed_forms_agree",
+        computed=mp.nstr(b_alt, 40),
+        expected=mp.nstr(b, 40),
+        tolerance="1e-45",
+        source="b at q_0 two ways: √(q⁴+q²+1)/(q²+1) vs √((h²+3)/(h²+4)) "
+               "with h = q − q⁻¹ — the two forms this function's docstring "
+               "gives, written with no shared subexpression. u = b·ℏ_q² "
+               "carries every ppb figure in this audit.",
+    )
+    w.add_assertion(
+        name="hoefsmit_b_is_bar_even",
+        computed=mp.nstr(b_bar, 40),
+        expected=mp.nstr(b, 40),
+        tolerance="1e-45",
+        source="b(q_0⁻¹) vs b(q_0) — an evaluation at the BAR-CONJUGATE "
+               "point, independent of the evaluation at q_0. This is the "
+               "Lean-proved QOU.QBeta.hoefsmitBSq_bar_even (audit "
+               "2026-06-20-hoefsmit-b-bar-parity-correction.md); the "
+               "bar-ODD (q−q⁻¹)/(q+q⁻¹) that once sat in `hoefsmit_b` "
+               "flips sign here.",
+    )
+    w.add_caveat(
+        "STALE COMMENT (recorded, not repaired): the c_4-estimate comment in "
+        "section [5] states \"b = hoefsmit_b(q) = (q-q⁻¹)/(q+q⁻¹)\" — the "
+        "bar-ODD form that `hoefsmit_b`'s own docstring says was REMOVED as "
+        "wrong by ~8×. The code calls the corrected function; only the "
+        "comment still describes the defect. The two b assertions above now "
+        "fail if the code ever regresses to what the comment claims."
+    )
+    w.add_caveat(
+        "The 3.47% m_p-pin swing quoted in [3] and in the description is the "
+        "audit's figure, not this run's: J(q_0)/J(q=1) − 1 computes to "
+        f"{mp.nstr(swing_pct, 6)}% here. c_4 ≈ c_3·b⁴ is a natural-magnitude "
+        "ESTIMATE with no independent route in this script (the empirical c_4 "
+        "would have to come from the SDP extraction, whose c_k are now nulled "
+        "as unresolved), so the truncation bound is recorded as data only."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

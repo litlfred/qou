@@ -1,24 +1,48 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:38.685234+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T10:01:04.896222+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "pslq_search_completed",
-      "computed": true,
-      "expected": true,
+      "name": "basis_covers_24_substrate_elements",
+      "computed": 24,
+      "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "PSLQ search across 24 basis elements at 60 dps."
+      "source": "the witness description states 'across 24 natural substrate basis elements'; this counts what was actually enumerated"
+    },
+    {
+      "name": "no_pslq_call_swallowed_an_exception",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "90 PSLQ calls attempted under `except Exception`, 0 raised. A NULL verdict is only evidence if the searches ran"
+    },
+    {
+      "name": "pslq_integer_relations_found",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 pairwise hits (tol 1e-12, maxcoeff 10000) + 0 pair-of-basis hits (tol 1e-15, maxcoeff 200) = the NULL the verdict asserts; any hit refutes it"
+    },
+    {
+      "name": "c3_reconstructs_mK_over_mpi",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "χ_5·(9/5)²·(1 + 4u² + c_3·u³) vs m_K/m_π from the CODATA registry; inverts the solve that defined c_3, so a broken u, base or target shows up here rather than as a silent NULL"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "meson-habiro-c3-pslq-search",
   "scriptFile": "meson_habiro_c3_pslq_search.py",
-  "scriptHash": "a99620ab76ae",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "6c257cb92864",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +54,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_habiro_c3_pslq_search.py"
+    ],
+    "reproduce": "python3 -u computations/meson_habiro_c3_pslq_search.py"
   },
   "description": "PSLQ integer-relation search for meson Habiro c_3 = -0.7156 across 24 natural substrate basis elements (G, π, h-powers, b-powers, q-brackets, ℏ_q-powers, J_Hopf). Tests pairwise, triples (top-12), and full basis. Complements the NULL hand-curated scan in meson_habiro_c3_categorical_search.py.",
   "parameters": {
@@ -42,8 +74,14 @@
     "basis_size": 24,
     "pairwise_matches": "[]",
     "pair_basis_hits_count": 0,
-    "verdict": "NULL — no clean PSLQ integer relation for c_3 = -0.715019629787 across 24 natural substrate basis elements (pairwise tol 1e-12, triples tol 1e-15, full tol 1e-25). Strong evidence that c_3 is NOT a natural rational combination of substrate quantities — likely transcendental in q OR the meson Habiro c=4 leading framing is wrong."
+    "verdict": "NULL — no clean PSLQ integer relation for c_3 = -0.715019629787 across 24 natural substrate basis elements (pairwise tol 1e-12, triples tol 1e-15, full tol 1e-25). Strong evidence that c_3 is NOT a natural rational combination of substrate quantities — likely transcendental in q OR the meson Habiro c=4 leading framing is wrong.",
+    "pslq_calls_attempted": 90,
+    "pslq_calls_errored": 0,
+    "pslq_errors": []
   },
+  "caveats": [
+    "The docstring and witness description both name the target as 'c_3 = -0.7156'; the computed value is -0.715019629787, i.e. -0.7150, differing by 5.8e-4. The prose figure is stale — every PSLQ tolerance here is 1e-12 or tighter, so the two are not interchangeable. Reported, not silently corrected."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

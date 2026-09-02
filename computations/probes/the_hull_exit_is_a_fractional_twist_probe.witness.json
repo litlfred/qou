@@ -1,0 +1,156 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-02T20:55:47.438546+00:00",
+  "commitSha": "ded5462ce28709cef973f8ce815b41cf442d77e4",
+  "assertions": [
+    {
+      "name": "A1_framing_scalar_scales_the_determinant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|det| = 1.010926552 >= 1; c=0.95 gives 0.912361213 < 1"
+    },
+    {
+      "name": "A2_window_is_c_between_inverse_q_and_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c in (1/q, 1] = (0.9009182840, 1]; e in [0, 0.88977225)"
+    },
+    {
+      "name": "A3_integer_writhe_is_excluded",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "e=1 gives c=0.889347908, outside 1/q by 0.011570376; e=2 also excluded, e=1/2 admitted"
+    },
+    {
+      "name": "A4_admissible_exponent_is_twist_not_writhe",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "e_max = 0.88977225 < 1, so no integer writhe is admissible and the window is purely fractional"
+    },
+    {
+      "name": "A5_the_matching_exponent_is_a_fit_not_a_constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "e* = 0.8384967429; nearest corpus constant 4h at 0.2690%, not a match"
+    },
+    {
+      "name": "A6_scope_is_stated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ingredient identified and window derived; value fitted and mechanism absent"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "the_hull_exit_is_a_fractional_twist_probe",
+  "scriptFile": "the_hull_exit_is_a_fractional_twist_probe.py",
+  "scriptHash": "a25c3174fcf2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_hull_exit_is_a_fractional_twist_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_hull_exit_is_a_fractional_twist_probe.py"
+  },
+  "description": "Identifies what can exit the convex hull of {sigma, sigma^-1} that qou-o8ww proved necessary. The answer is not a stranger offset d but a FRAMING SCALAR: a framed bond carries an overall factor c (the corpus's own mu_eff = mu (1-h)^(e/2)), which multiplies BOTH block ratios and therefore scales the det T = -1 obstruction by c^2. |det| >= 1 blocks every d in the hull, but c = 0.95 already drops the product to 0.912 < 1. With u = -log c and beta = 0, L(T=0) = u + log q and L(T=1) = u - log q, so the T=1 channel stays unbound iff u < log q, giving the closed-form window c in (1/q, 1], equivalently e in [0, 0.8897722518), across which the ratio rises from 1 to unbounded. CRUCIALLY THE EXPONENT MUST BE FRACTIONAL: e = 1, one full crossing's writhe, gives c = 0.8893479079 against the threshold 1/q = 0.9009182840 — outside by 0.011570, so the T=1 channel binds — and every integer e >= 1 fails likewise. In Calugareanu's Lk = Tw + Wr the writhe is an integer crossing count (what this construction has) and the twist is continuous (what it lacks, and what the writhe-normalised convention divides out). Matching the experimental 33.7055 requires e* = 0.838496742899, 94.24% across the window — but this is A FIT: scanned against 22 corpus constants the nearest is 4h at 0.27%, which is not a match at an arc that quotes agreements at 1e-13, and no mechanism producing a fractional twist is exhibited.",
+  "data": {
+    "obstruction_scaling": {
+      "det_at_vertex": "-1.01092655213",
+      "product_at_c_1": "1.01092655213",
+      "product_at_c_095": "0.9123612133"
+    },
+    "window": {
+      "c_lower_bound_1_over_q": "0.900918283955741",
+      "c_upper_bound": "1",
+      "e_max": "0.889772251760875",
+      "log_q": "0.10434072031952"
+    },
+    "integer_writhe_excluded": {
+      "0": {
+        "c": "1.000000000000",
+        "in_window": true
+      },
+      "1/2": {
+        "c": "0.943052441731",
+        "in_window": true
+      },
+      "e_max": {
+        "c": "0.900918283956",
+        "in_window": false
+      },
+      "1": {
+        "c": "0.889347907854",
+        "in_window": false
+      },
+      "2": {
+        "c": "0.790939701204",
+        "in_window": false
+      }
+    },
+    "matching_nature": {
+      "target_ratio": "33.705545",
+      "u_star": "0.098327806881454",
+      "c_star": "0.90635174671193",
+      "e_star": "0.83849674289868",
+      "pct_of_window": "94.2372",
+      "is_a_fit": true
+    },
+    "constant_scan": {
+      "4h": {
+        "value": "0.836241195183",
+        "rel_diff": "0.268999%"
+      },
+      "z+h": {
+        "value": "0.821748335942",
+        "rel_diff": "1.997433%"
+      },
+      "1-h": {
+        "value": "0.790939701204",
+        "rel_diff": "5.671703%"
+      },
+      "sqrt(1-h)": {
+        "value": "0.889347907854",
+        "rel_diff": "6.064563%"
+      },
+      "1-h/2": {
+        "value": "0.895469850602",
+        "rel_diff": "6.794673%"
+      },
+      "1/q": {
+        "value": "0.900918283956",
+        "rel_diff": "7.444458%"
+      }
+    }
+  },
+  "caveats": [
+    "e* = 0.8384967 IS A FIT AND MUST NOT BE QUOTED AS A RESULT. One free parameter was solved against one experimental number. The nearest corpus constant (4h) misses by 0.27%, which at an arc quoting agreements at 1e-13 is not a match, and no substrate mechanism producing a fractional twist is exhibited anywhere. What is established is the INGREDIENT and the WINDOW, not the value.",
+    "THE CALUGAREANU READING IS AN INTERPRETATION, NOT A COMPUTATION. Lk = Tw + Wr is standard, and it is standard that Wr is an integer for a braid diagram while Tw is continuous. That the admissible window excludes every integer and admits a continuum IS computed here; the identification of that continuum with a geometric twist of a framed curve is a reading of what the corpus's own (1-h)^(e/2) factor means, and no framed curve is constructed.",
+    "Everything is at the n=2 interface with the |mu| < 1 binding convention inherited from qou-m896, where the antisymmetric block's negative eigenvalue makes the magnitude necessary. The A1-A2 determinant scaling is independent of that convention; the ratio and window numbers are not. Lifting to the 3-strands-per-nucleon construction is untested here."
+  ]
+}

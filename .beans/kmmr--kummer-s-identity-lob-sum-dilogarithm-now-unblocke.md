@@ -312,3 +312,106 @@ transporting dilogarithm facts onto `BlochWigner_lob` is lifted, and the first
 consumer `FiveTwoVolumeConstant.lean` (`VOL_5_2_eq_dilog`) has landed. Only the
 frontmatter `status: todo` was stale. NOT this bean (untouched): the geometric
 factor `Vol = D` (`qou-m015`/`qou-krvm`).
+
+## 2026-08-31 — the half-plane restriction is now the last thing gating `hbw`. And a roast of my own report of it.
+
+`FiveTwoOhtsukiBridge.volume_conjecture_five_two_wired` (landed sorry-free today)
+carries `hbw : ∀ z, z.im ≠ 0 → BlochWigner_lob z = (Li₂ z).im + arg(1−z)·log‖z‖`.
+`KummerRadial.kummer` proves it only for `Im z > 0`; the bridge's proof needs it at
+`1/y₀`, `1/x₀`, `1/(x₀y₀)`, **all in the lower half-plane** (measured: `Im` =
+−1.307, −0.745, −0.745). So extending across the real axis is the last gate.
+
+### Roast of three claims I made when relaying this
+
+**1. "takes no free identity hypotheses at all — only … that `Li₂` is a
+dilogarithm." FALSE, and it understates what is assumed.** The signature carries
+three explicit hypotheses (`hbw`, `hone`, `hζ`), and `hbw` is not a definitional
+property of a dilogarithm — it is the **full Bloch–Wigner identity**, universally
+quantified over the punctured plane, tying the corpus's *Lobachevsky-built*
+`BlochWigner_lob` to `Im Li₂` with a specific `arg`–`log` normalisation. A function
+can satisfy Kummer and not satisfy that. The honest phrasing is "one substantive
+identity hypothesis, proved on half its domain".
+
+**2. "it would let the 5₂ bridge be instantiated at a real dilogarithm." OVERSTATED.**
+Discharging `hbw` removes a hypothesis; it does not instantiate anything. The theorem
+still requires instances of `OhtsukiAsymptotic` and `FiveTwoTriangulation`, and
+**neither has one** — deliberately, per §3b-tax. "Instantiated" implies applicable;
+it stays gated on two axioms either way.
+
+**3. "it looks short … conjugation commutes with all three Möbius maps, and
+`BlochWigner_lob_conj` already proves that on the Λ side." Right conclusion, wrong
+warrant — and my own objection to it was also wrong.** The Λ side has no branch cut,
+so citing it as evidence for the `Li₂` side was citing the easy case for the hard
+one. I then expected the hard case to bite, because `Li₂`'s cut `[1,∞)` lies **on**
+the axis one reflects across. Measured, it does not bite:
+
+    Li₂(z̄) = conj(Li₂(z))    exact (0.0 at 30 dps) at 1/y₀, 1/x₀, 1/(x₀y₀),
+                             and still exact 1e-7 from the cut at Re = 5.
+
+`Li₂` is discontinuous *across* the cut (jump 4.355 at `Re = 2`), but that never
+obstructs the reflection, because `hbw`'s domain `z.im ≠ 0` excludes the real axis
+entirely. So "short" survives — for a reason neither the original claim nor my
+objection had established.
+
+**Net:** the estimate stands, the justification for it did not, and the two
+surrounding claims were wrong in the direction of flattering the result. The three
+arguments also sit 1.15–2.02 away from the cut, so even a pointwise argument at
+those three values would do — the ∀-quantified form is stronger than the bridge needs.
+
+## 2026-08-31 (later) — CLOSED. The half-plane gate is gone, and so is the `Li₂` parameter.
+
+Two changes, both sorry-free (`#print axioms` → `[propext, Classical.choice,
+Quot.sound]` on every declaration named below).
+
+### 1. `hbw` weakened from a half plane to five named points
+
+`FiveTwoOhtsukiBridge` now takes `IsKummerAtOhtsukiArgs Li₂ y` — a five-field
+structure, one Kummer instance per non-unit argument of `ohtsukiSum` — instead
+of `∀ z, z.im ≠ 0 → …`. The proof applies it at **five** points, not three as the
+note above implies: `y₀` and `x₀y₀` are upper, `1/y₀`, `1/x₀`, `1/(x₀y₀)` lower.
+`IsKummerAtOhtsukiArgs.of_forall` recovers the old ∀-form, so nothing that could
+already discharge it is worse off.
+
+### 2. Schwarz reflection, done — and it was not the shape I predicted
+
+`isKummerAt_of_conj` proves that Kummer at `z̄` gives Kummer at `z` for
+`z.im ≠ 0`: every ingredient is odd under conjugation (`BlochWigner_lob_conj`,
+`arg_conj_of_im_ne_zero`, `‖z̄‖ = ‖z‖`), so the identity at `z̄` is `(−1)×` the
+identity at `z` and `linear_combination -h` closes it.
+`IsKummerAtOhtsukiArgs.of_upper_half_plane` then builds all five points from
+`KummerRadial.kummer`'s own `Im z > 0` range plus one hypothesis:
+`Li₂(z̄) = conj (Li₂ z)` off the real axis.
+
+**No continuation across the cut was needed.** The roast above expected the cut
+to be the difficulty and measured that it was not; the reason is now formal — the
+lower half plane is reached by an algebraic identity, and `kummer` is only ever
+evaluated where it is already proved.
+
+### 3. The hypothesis discharged at `cLiTwoExt` — and the parameter eliminated
+
+`QOU.MathlibExt.cLiTwoExt_conj` proves `Li₂(ȳ) = conj (Li₂ y)` for `y.im ≠ 0`
+directly from the integral definition: conjugation passes through the real-interval
+integral (`intervalIntegral_conj`, no integrability hypothesis — `conj` is an
+isometry, so both sides are Bochner junk `0` together), and pointwise
+`conj(log(1 − yz)/z) = log(1 − ȳz)/z` by `Complex.log_conj`, whose side condition
+`arg(1 − yz) ≠ π` holds because `Im(1 − yz) = −(Im y · z)` and `z = 0` gives `1`.
+`cLiTwoExt_one_im` discharges `hone` the same way, from the stronger local fact
+that the integrand is *real* on `[0,1]`.
+
+So `volume_conjecture_five_two_cLiTwoExt` has **no function parameter and no
+identity hypothesis**.
+
+**`hy : y.im ≠ 0` is load-bearing, not decorative.** The unrestricted
+`∀ y, Li₂(ȳ) = conj (Li₂ y)` is FALSE for the principal branch: on the cut it
+degenerates to `Li₂ y ∈ ℝ`, and `mpmath` gives
+`Li₂(5) = 1.78371916127 − 5.05619832211i`. Recorded because a theorem whose
+hypotheses nothing satisfies is exactly the failure this file already has one
+example of (the excised `hinv`).
+
+### What did NOT change — and the roast's claim 2 still stands
+
+`OhtsukiAsymptotic` and `FiveTwoTriangulation` still have **no instances**, per
+§3b-tax (`#synth` fails; checked). Eliminating the `Li₂` parameter is not
+"instantiating the bridge" and I am not repeating that claim: the theorem remains
+conditional on Ohtsuki's published asymptotic expansion and on the `5₂`
+triangulation, which is the whole and only residue.

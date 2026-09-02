@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:15:32.016274+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:17:21.758777+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "kaon_predicted",
-      "computed": 1,
-      "expected": 1,
+      "name": "one_dim_block_characters_scale_as_q_pow_n",
+      "computed": 10,
+      "expected": 10,
       "passed": true,
       "tolerance": 0,
-      "source": "Kaon mass ratio computed from character structure"
+      "source": "For each meson row, χ_(3) scales by q^n and χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings — the Hoefsmit eigenvalue structure the mass ratios are read off, checked to 1e-9 relative."
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 17,
   "computation": "meson-spectrum-predictions",
   "scriptFile": "meson_spectrum_predictions.py",
-  "scriptHash": "6ee7af1812fc",
+  "scriptHash": "7d7f3005f90e",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -90,6 +90,12 @@
         "m_pred_MeV": 385.4856613597274,
         "m_PDG_MeV": 1869.66
       }
-    ]
+    ],
+    "kaon_prediction": {
+      "m_pred_MeV": 186.31985677437706,
+      "m_PDG_MeV": 493.677,
+      "note": "structural ratio from character growth, not a fit; there is no independent expected value for the prediction itself",
+      "has_independent_expected_value": false
+    }
   }
 }

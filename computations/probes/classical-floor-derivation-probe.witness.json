@@ -1,0 +1,341 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T15:07:39.469350+00:00",
+  "commitSha": "3708969e8368dc4f093ba5b16eaf5799a803cc42",
+  "assertions": [
+    {
+      "name": "free_word_has_two_cycles_per_nucleon",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "cycle count of the ordered product of transpositions s_g over atom_braid_word_3A(include_inter=False), vs 2A, for A = 2..20 (18 isotopes). Computed from the WORD -- no Hecke trace, no q-dependence: every letter's d coefficient is 0, -h or -h/2 and vanishes at q = 1."
+    },
+    {
+      "name": "atom_word_cycle_count_is_A_plus_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "same computation with include_inter=True, vs A+1, over the same isotopes"
+    },
+    {
+      "name": "each_inter_nucleon_interface_merges_exactly_one_cycle_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c(free) - c(atom) vs A-1 over the same isotopes. This is the same (A-1)-bond chain adjacency derive_binding_chain_cooperative sums over, arrived at from the permutation rather than from the interface list -- so the floor's A-dependence IS the chain structure."
+    },
+    {
+      "name": "markov_trace_at_q_one_is_two_to_the_cycle_count_minus_n",
+      "computed": "1.0451358e-8",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "worst relative error between the Richardson q -> 1 limit of tr_m_atom_zn (transfer kernel over all partitions) and 2^(c - n) with c from the permutation count. Two entirely separate computations. This is the Schur-Weyl step: sum_lambda dim(V_lambda) chi^lambda(sigma) = 2^c(sigma), the character of sigma permuting the factors of (C^2)^{tensor n}. Residuals are extrapolation error and grow with A."
+    },
+    {
+      "name": "closed_form_follows_from_the_cycle_counts_exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "2^(c_free - 3A) - 2^(c_atom - 3A) with the MEASURED cycle counts, vs 2^-A - 2^(1-2A), for A = 2..20 at 60 dps. Exact, not extrapolated: this is step 3 of the derivation and it is pure arithmetic once steps 1 and 2 hold."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1795,
+  "computation": "classical-floor-derivation-probe",
+  "scriptFile": "classical_floor_derivation_probe.py",
+  "scriptHash": "adaf73fa8309",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/classical_floor_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/classical_floor_derivation_probe.py"
+  },
+  "description": "Derives the classical floor of tr_M(W_free) - tr_M(W_atom) instead of extrapolating it: Schur-Weyl at q=1 gives tr_M = 2^(c(sigma)-n), and the cycle counts read straight off the braid words are c_free = 2A, c_atom = A+1, so c0(A) = 2^-A - 2^(1-2A) exactly, for every A -- including where the trace itself is not computable.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561"
+  },
+  "data": {
+    "cycle_counts": [
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "c_free": 4,
+        "c_atom": 3,
+        "c_free_minus_c_atom": 1
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "c_free": 6,
+        "c_atom": 4,
+        "c_free_minus_c_atom": 2
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "c_free": 6,
+        "c_atom": 4,
+        "c_free_minus_c_atom": 2
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "c_free": 8,
+        "c_atom": 5,
+        "c_free_minus_c_atom": 3
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "n_strands": 15,
+        "c_free": 10,
+        "c_atom": 6,
+        "c_free_minus_c_atom": 4
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "A": 5,
+        "n_strands": 15,
+        "c_free": 10,
+        "c_atom": 6,
+        "c_free_minus_c_atom": 4
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_strands": 18,
+        "c_free": 12,
+        "c_atom": 7,
+        "c_free_minus_c_atom": 5
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_strands": 21,
+        "c_free": 14,
+        "c_atom": 8,
+        "c_free_minus_c_atom": 6
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "n_strands": 24,
+        "c_free": 16,
+        "c_atom": 9,
+        "c_free_minus_c_atom": 7
+      },
+      {
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "n_strands": 27,
+        "c_free": 18,
+        "c_atom": 10,
+        "c_free_minus_c_atom": 8
+      },
+      {
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "n_strands": 30,
+        "c_free": 20,
+        "c_atom": 11,
+        "c_free_minus_c_atom": 9
+      },
+      {
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "n_strands": 33,
+        "c_free": 22,
+        "c_atom": 12,
+        "c_free_minus_c_atom": 10
+      },
+      {
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "n_strands": 36,
+        "c_free": 24,
+        "c_atom": 13,
+        "c_free_minus_c_atom": 11
+      },
+      {
+        "Z": 6,
+        "N": 7,
+        "A": 13,
+        "n_strands": 39,
+        "c_free": 26,
+        "c_atom": 14,
+        "c_free_minus_c_atom": 12
+      },
+      {
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "n_strands": 42,
+        "c_free": 28,
+        "c_atom": 15,
+        "c_free_minus_c_atom": 13
+      },
+      {
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "n_strands": 48,
+        "c_free": 32,
+        "c_atom": 17,
+        "c_free_minus_c_atom": 15
+      },
+      {
+        "Z": 9,
+        "N": 9,
+        "A": 18,
+        "n_strands": 54,
+        "c_free": 36,
+        "c_atom": 19,
+        "c_free_minus_c_atom": 17
+      },
+      {
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "n_strands": 60,
+        "c_free": 40,
+        "c_atom": 21,
+        "c_free_minus_c_atom": 19
+      }
+    ],
+    "schur_weyl_check": [
+      {
+        "isotope": "D",
+        "A": 2,
+        "n_strands": 6,
+        "tr_atom_limit": "0.1249999998703076",
+        "two_pow_c_atom_minus_n": "0.125",
+        "tr_free_limit": "0.249999999744366",
+        "two_pow_c_free_minus_n": "0.25",
+        "worst_relative_error": "1.03754e-9"
+      },
+      {
+        "isotope": "T",
+        "A": 3,
+        "n_strands": 9,
+        "tr_atom_limit": "0.0312499999357002",
+        "two_pow_c_atom_minus_n": "0.03125",
+        "tr_free_limit": "0.1249999996790448",
+        "two_pow_c_free_minus_n": "0.125",
+        "worst_relative_error": "2.56764e-9"
+      },
+      {
+        "isotope": "3He",
+        "A": 3,
+        "n_strands": 9,
+        "tr_atom_limit": "0.03124999988428884",
+        "two_pow_c_atom_minus_n": "0.03125",
+        "tr_free_limit": "0.1249999996146651",
+        "two_pow_c_free_minus_n": "0.125",
+        "worst_relative_error": "3.70276e-9"
+      },
+      {
+        "isotope": "4He",
+        "A": 4,
+        "n_strands": 12,
+        "tr_atom_limit": "0.007812499957242413",
+        "two_pow_c_atom_minus_n": "0.0078125",
+        "tr_free_limit": "0.06249999965825193",
+        "two_pow_c_free_minus_n": "0.0625",
+        "worst_relative_error": "5.47297e-9"
+      },
+      {
+        "isotope": "5Li",
+        "A": 5,
+        "n_strands": 15,
+        "tr_atom_limit": "0.001953124979587191",
+        "two_pow_c_atom_minus_n": "0.001953125",
+        "tr_free_limit": "0.03124999970402691",
+        "two_pow_c_free_minus_n": "0.03125",
+        "worst_relative_error": "1.04514e-8"
+      }
+    ],
+    "derivation": {
+      "step_1": "tr_M(beta)|_{q=1} = 2^(c(sigma_beta) - n). y_lambda = s_lambda(1,Q)/(1+Q)^n and at Q=1 s_lambda(1,1) = dim V_lambda^{GL(2)} = lambda_1 - lambda_2 + 1, zero for l(lambda) > 2 (the row cap). Schur-Weyl then gives sum_lambda dim(V_lambda) chi^lambda(sigma) = character of sigma on (C^2)^{tensor n} = 2^{c(sigma)}, since sigma fixes exactly the basis vectors constant on each cycle.",
+      "step_2": "c(sigma_free) = 2A, c(sigma_atom) = A+1, and c_free - c_atom = A-1: each of the A-1 inter-nucleon interfaces merges one pair of cycles. Every letter's d coefficient vanishes at q=1, so the word degenerates to a product of transpositions and the count is q-independent.",
+      "step_3": "c0(A) = 2^(2A-3A) - 2^((A+1)-3A) = 2^-A - 2^(1-2A).",
+      "scope": "exact for every A -- the cycle count costs nothing, so this holds far past A = 5 where the Markov trace stops being computable."
+    },
+    "classical_contamination_dies_exponentially": {
+      "rows": [
+        {
+          "isotope": "D",
+          "A": 2,
+          "delta_tr_at_q0": "0.55654466040444",
+          "c0(A)": "0.125",
+          "classical_share_percent": "22.46"
+        },
+        {
+          "isotope": "T",
+          "A": 3,
+          "delta_tr_at_q0": "0.88853612687367",
+          "c0(A)": "0.09375",
+          "classical_share_percent": "10.5511"
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "delta_tr_at_q0": "0.89290857539352",
+          "c0(A)": "0.09375",
+          "classical_share_percent": "10.4994"
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "delta_tr_at_q0": "1.1198090060862",
+          "c0(A)": "0.0546875",
+          "classical_share_percent": "4.88365"
+        },
+        {
+          "isotope": "5Li",
+          "A": 5,
+          "delta_tr_at_q0": "1.3544669451459",
+          "c0(A)": "0.029296875",
+          "classical_share_percent": "2.16298"
+        }
+      ],
+      "asymptotics": "c0(A) ~ 2^-A, so the share falls by roughly a factor of 2 per nucleon while Delta_tr(q0) grows. Measured 22.46 % at the deuteron and 4.88 % at 4He.",
+      "consequence": "the floor is a LIGHT-nucleus contaminant. The deuteron's apparent agreement under convention A was floor-driven (qou-zrx2); the 4He 4-body alpha-residual story is essentially untouched by the subtraction."
+    },
+    "what_is_still_not_formal": "Step 1 uses Schur-Weyl duality, which Mathlib does not have (no Specht/GL-duality development). Steps 2 and 3 are finite combinatorics and arithmetic and are Lean-sized: 'the ordered product of these transpositions has A+1 cycles' and '2^(2A-3A) - 2^((A+1)-3A) = 2^-A - 2^(1-2A)'. So a Lean statement would carry Schur-Weyl as a hypothesis class and prove the rest -- the honest split, since assuming step 1 assumes a published theorem while steps 2-3 would be genuinely derived.",
+    "verdict": "c0(A) = 2^-A - 2^(1-2A) is DERIVED, not fitted. tr_M at q=1 is 2^(c-n) by Schur-Weyl (checked against the transfer kernel to 1e-7 at five isotopes), and the cycle counts c_free = 2A, c_atom = A+1 come straight off the braid words for A = 2..20 with no trace evaluation. c_free - c_atom = A-1 recovers the corpus's own chain adjacency from the permutation, so the floor's A-dependence IS the chain. qou-zrx2's finding no longer rests on an extrapolation."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

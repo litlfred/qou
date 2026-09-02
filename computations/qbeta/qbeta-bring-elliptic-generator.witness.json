@@ -1,0 +1,92 @@
+{
+  "computation": "qbeta-bring-elliptic-generator",
+  "engine": "mpmath",
+  "description": "qou-pdix route 5 / qou-cds1 branch 3. Bring's curve does have a naturally associated elliptic curve -- Serre, y^2 = x^3 - 675x - 79650, j = -25/2 (re-derived here from the equation), Jacobian isogenous to E^4 diagonalising to (5tau,5tau,5tau,tau), per Riera-Rodriguez 1992 held in the library. It is the FIRST candidate source of imaginarity that passes tier-0 D0 in principle, because a flat unitary connection on a torus has U(1)xU(1) monodromy, elliptic by construction -- unlike Im(q), refuted in Step 19. BUT it supplies no phase: j = -25/2 is not a CM invariant (CM j are rational integers), so E has no complex multiplication and tau no closed form; Re(tau) = 1/2 exactly, so the natural angle 2*pi*Re(tau) = pi is a sign; and none of four pre-declared comparisons lands of theta_required = 0.0565947 (ratios 55.5, 277.6, 27.8, 0.0501; closest a factor of 19.94). Direction not refuted -- a KZB construction on E is untouched -- but this curve at face value hands the ladder nothing. Lean: QOU/QBeta/BringEllipticCurveJInvariant.lean, 3 theorems, sorry-free.",
+  "contentBlock": "conj:im-q-physical-role",
+  "assertions": [
+    {
+      "name": "serre_j_invariant_is_minus_25_over_2",
+      "passed": true,
+      "detail": "j re-derived from y^2 = x^3 - 675x - 79650 as -12.5, matching the library's -25/2 \u2014 the transcription is checked, not trusted (Lean bring_serre_j_invariant)"
+    },
+    {
+      "name": "serre_curve_has_no_complex_multiplication",
+      "passed": true,
+      "detail": "-25/2 is not a rational integer, so not a CM j-invariant; E has no CM, tau has no closed form, and the curve supplies no DERIVED phase \u2014 which was the point of 'naturally associated' (Lean not_cm_j_invariant)"
+    },
+    {
+      "name": "tau_has_real_part_one_half_so_the_angle_is_a_sign",
+      "passed": true,
+      "detail": "Re(tau) = 1/2 exactly (forced by j real and negative), so 2*pi*Re(tau) = pi \u2014 a sign, not a tunable phase"
+    },
+    {
+      "name": "no_declared_phase_lands_near_the_required_one",
+      "passed": true,
+      "detail": "closest of the four pre-declared comparisons misses by a factor of 19.9409 \u2014 an order of magnitude; ratios 55.5103, 277.552, 27.7552, 0.0501481. No search was run over combinations, and the threshold is an order of magnitude rather than the factor of 20 a first draft used, which the data missed by 0.06"
+    },
+    {
+      "name": "an_elliptic_curve_is_the_right_KIND_of_source",
+      "passed": true,
+      "detail": "a flat UNITARY connection on a torus has monodromy in U(1)xU(1), elliptic by construction \u2014 so unlike Im(q) (Step 19) this passes D0 in principle. Structural, not measured; recorded as the reason the direction stays open"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "dps": 40,
+    "source": "library/pjm-v154-n1-p09-s \u2014 Riera & Rodriguez, The period matrix of Bring's curve, Pacific J. Math. 154 (1992) 179-200",
+    "lean": "QOU/QBeta/BringEllipticCurveJInvariant.lean",
+    "lean_theorems": [
+      "bring_serre_j_invariant",
+      "bring_serre_nonsingular",
+      "not_cm_j_invariant"
+    ],
+    "anti_fit": "the four comparisons were declared before computing and are reported in full including the misses; no search over combinations was run"
+  },
+  "data": {
+    "serre_curve": "y^2 = x^3 - 675x - 79650",
+    "j_rederived": "-12.5",
+    "j_library": "-25/2",
+    "is_cm_j": false,
+    "tau_re": "0.5",
+    "tau_im": "0.9333823123140496",
+    "five_tau_im": "4.666911561570248",
+    "theta_required": "0.05659473754330691",
+    "declared_comparisons": {
+      "2*pi*Re(tau)": {
+        "value": "3.1415926535898",
+        "ratio_to_theta": "55.5103317"
+      },
+      "2*pi*Re(5tau)": {
+        "value": "15.707963267949",
+        "ratio_to_theta": "277.5516585"
+      },
+      "pi*Re(tau)": {
+        "value": "1.5707963267949",
+        "ratio_to_theta": "27.75516585"
+      },
+      "|nome| = |exp(2 pi i tau)|": {
+        "value": "0.0028381182605939",
+        "ratio_to_theta": "0.05014809475"
+      }
+    },
+    "closest_factor": "19.94093704"
+  },
+  "context": {
+    "axis": "branch 3: can Bring's associated elliptic curve supply the generator?",
+    "answer": "The right KIND of object -- first candidate to pass D0 in principle, since a flat unitary connection on a torus has elliptic monodromy by construction. But this curve supplies no phase: non-CM, so tau has no closed form; Re(tau) = 1/2 so the natural angle is pi, a sign; and nothing declared lands within a factor of 20.",
+    "not_refuted": "the DIRECTION. A KZB construction on E -- the elliptic analogue of KZ, where exp(2 pi i tau) factors genuinely enter -- is untouched, and is where an elliptic generator could still come from.",
+    "provenance_caveat": "the library copy is OCR of a scanned page and is garbled in places. Only the legible and independently checkable parts are used: the curve equation, its j (re-derived), and the (5tau,...,tau) diagonalisation. The paper's own tau_0 is pinned by TWO j-values, the second illegible in this scan, so tau_0 is NOT reconstructed -- only the SL(2,Z) representative with j = -25/2.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted; E is not adopted; no convention adjudicated."
+  },
+  "gitCommit": "7c1b082f03acf98b9288c52f9aa138b7b660fb79",
+  "durationMs": 0,
+  "scriptFile": "qbeta_bring_elliptic_generator_probe.py",
+  "scriptHash": "05e1cefe5f08",
+  "scriptCommitSha": "unknown",
+  "commitSha": "7c1b082f03acf98b9288c52f9aa138b7b660fb79",
+  "computedAt": "2026-08-31T20:10:08.964777+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

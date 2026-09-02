@@ -325,4 +325,296 @@ theorem hasReebSpectralCoords_satisfiable (Z : LocalQZetaFunction) (hq : Z.q > 1
     · subst hji; simp [diagOp]
     · simp [diagOp, Pi.single_eq_of_ne hji]
 
+/-! ## What the functional equation ALONE forces on the Reeb spectrum
+
+`reeb_spectrum_on_critical_line` is the arc's target, and it consumes both Weil
+inputs: the functional equation *and* Castelnuovo–Severi, the latter through
+`hasse_weil_bound`. Castelnuovo–Severi is the deep one.
+
+The two results below use **only the functional equation**, and say so in their
+types — they take the permutation as an explicit argument rather than reaching
+for `[IsWeilZeta Z]`, so a reader can see at a glance which half of the Weil
+input is doing the work. That matters for a reason beyond tidiness: it isolates
+a *cheap necessary condition* on the identification.
+
+The identification `HasReebSpectralCoords` is open (`qou-qspc`). Anyone
+proposing that the framework's `ξ_q` satisfies it now has something to check
+that does not require establishing the Hasse–Weil bound first, and
+`reeb_spectrum_sum_re` reduces that check to **one real number**. -/
+
+/-- **The functional equation reflects the Reeb spectrum in the critical line.**
+
+    Given the Weil pairing `α_{σ i} = q / αᵢ` as a permutation `σ`, the
+    identification transports it to `Re ρ_{σ i} = 1 − Re ρᵢ`. So the multiset of
+    real parts is symmetric about `1/2`.
+
+    This is strictly weaker than `reeb_spectrum_on_critical_line`, and
+    deliberately so: symmetry about the line is not the same as lying on it. A
+    spectrum with real parts `{0.3, 0.7}` satisfies this and violates the
+    critical line. Castelnuovo–Severi is what collapses the symmetry onto the
+    fixed locus; `critical_line_iff_fixed` names that locus. -/
+theorem reeb_spectrum_reflected_by_functional_equation
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i) :
+    ∀ i, (R.spec (σ i)).re = 1 - (R.spec i).re := by
+  intro i
+  refine partner_re_eq_one_sub Z.q hq (R.spec i) (R.spec (σ i)) ?_
+  rw [← HasReebSpectralCoords.coords (Z := Z) (R := R) (σ i),
+      ← HasReebSpectralCoords.coords (Z := Z) (R := R) i]
+  exact hσ i
+
+/-- **The Reeb spectrum has trace equal to the genus.** `∑ᵢ Re ρᵢ = 4`.
+
+    Bring's curve has genus `g = 4`, and `LocalQZetaFunction` carries `2g = 8`
+    eigenvalues — the `Fin 8` throughout this file. So the statement is
+    `∑ Re ρᵢ = g`, and it is forced by the functional equation alone.
+
+    **Why this is the useful form.** It follows from
+    `reeb_spectrum_on_critical_line` too (eight halves make four), but that route
+    needs Castelnuovo–Severi. Here the hypothesis is only the pairing, and the
+    conclusion is a *single real number* computable from any candidate operator
+    without diagonalising it in the complex plane: the trace of the Reeb
+    derivation on the eight fundamental modes, real part, must be `4`.
+
+    So it is a falsification test for `qou-qspc`'s open identification. If the
+    framework's `ξ_q` has `∑ᵢ Re ρᵢ ≠ 4` on its eight modes, then no `IsWeilZeta`
+    datum can satisfy `HasReebSpectralCoords` with that operator, and the
+    identification is refuted — without ever touching the deep Weil input.
+
+    It is of course only necessary, not sufficient: `{0.3, 0.7}` sums correctly
+    and sits off the line. Scope-(a): passing this test is evidence, not a
+    proof. -/
+theorem reeb_spectrum_sum_re
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i) :
+    ∑ i, (R.spec i).re = 4 := by
+  have hrefl := reeb_spectrum_reflected_by_functional_equation Z hq R σ hσ
+  have hperm : ∑ i, (R.spec (σ i)).re = ∑ i, (R.spec i).re :=
+    Equiv.sum_comp σ (fun i => (R.spec i).re)
+  have key : ∑ i, (R.spec i).re = ∑ i : Fin 8, (1 - (R.spec i).re) := by
+    rw [← hperm]
+    exact Finset.sum_congr rfl (fun i _ => hrefl i)
+  rw [Finset.sum_sub_distrib] at key
+  simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul,
+    Nat.cast_ofNat, mul_one] at key
+  linarith
+
+/-- The same two facts packaged for a datum that carries `[IsWeilZeta Z]`, which
+    supplies the permutation. Convenience only — the content is above, and the
+    explicit-`σ` forms are the ones that record which hypothesis was used. -/
+theorem reeb_spectrum_sum_re_of_isWeilZeta
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R] :
+    ∑ i, (R.spec i).re = 4 := by
+  obtain ⟨σ, hσ⟩ := IsWeilZeta.functional_equation (Z := Z)
+  exact reeb_spectrum_sum_re Z hq R σ hσ
+
+/-- **The whole chain is jointly satisfiable, and the trace really is 4.**
+
+    `reeb_spectrum_sum_re` is conditional on three things at once — a Weil datum,
+    a Reeb spectrum, and the identification between them. Each is separately
+    known to be inhabited, which is *not* the same as their being jointly
+    inhabited, and a theorem conditional on an unsatisfiable conjunction proves
+    nothing.
+
+    Here they are met together, on `weilZetaExample` (`q = 4`, every `αᵢ = 2`).
+    That datum is supersingular: `|αᵢ| = 2 = √q`, so every spectral exponent is
+    `log 2 / log 4 = 1/2` and the eight of them sum to `4`. The conclusion is
+    therefore exhibited on a concrete case, not merely derived. -/
+theorem reeb_spectrum_sum_re_witness :
+    ∃ R : ReebSpectrum (Fin 8 → ℂ),
+      ∃ _ : HasReebSpectralCoords weilZetaExample R,
+        ∑ i, (R.spec i).re = 4 := by
+  have hq : weilZetaExample.q > 1 := by norm_num [weilZetaExample]
+  obtain ⟨R, hR⟩ := hasReebSpectralCoords_satisfiable weilZetaExample hq
+  refine ⟨R, hR, ?_⟩
+  haveI := hR
+  exact reeb_spectrum_sum_re_of_isWeilZeta weilZetaExample hq R
+
+/-- **The Weil pairing is an involution on the eigenvalues.** Applying
+    `α ↦ q/α` twice returns `αᵢ`.
+
+    Stated on the eigenvalues rather than on the permutation, because that is
+    the form that is unconditionally true: `σ² = id` as a permutation needs the
+    `αᵢ` to be *distinct* (a repeated eigenvalue lets `σ` permute its indices
+    without moving any value), whereas `α_{σ²i} = αᵢ` holds always. The weaker
+    statement is the honest one and is all the fixed-point result below uses. -/
+theorem eigenvalue_functional_equation_involutive
+    (Z : LocalQZetaFunction)
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) :
+    Z.eigenvalues (σ (σ i)) = Z.eigenvalues i := by
+  have hq : (Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt Z.q_pos)
+  have hi : Z.eigenvalues i ≠ 0 := Z.eigenvalues_ne_zero i
+  rw [hσ (σ i), hσ i]
+  field_simp
+
+/-- **A fixed point of the pairing lies ON the critical line — from the
+    functional equation alone.**
+
+    If the Weil involution fixes index `i`, then `Re ρᵢ = 1/2` exactly, with **no
+    Castelnuovo–Severi input**. `reeb_spectrum_on_critical_line` gets the same
+    conclusion for *every* `i`, but pays the deep Weil bound for it; this gets it
+    for the fixed indices for free.
+
+    Why that is worth stating separately. `critical_line_iff_fixed` already
+    observes that `Re ρ = 1/2` is *equivalent* to being fixed by `ρ ↦ 1 − ρ`, but
+    that is an identity about real numbers — it holds for any `ρ` whatsoever and
+    says nothing about this spectrum. Here the fixed-ness is supplied by the
+    Weil pairing itself, so the critical line stops being a value the spectrum is
+    observed to have and becomes **the fixed locus of a symmetry the functional
+    equation forces on it**.
+
+    Concretely a fixed index means `αᵢ = q/αᵢ`, i.e. `αᵢ² = q` — the
+    supersingular shape, `αᵢ = ±√q`. `weilZetaExample` is exactly this case at
+    every index, which is why its permutation is `Equiv.refl`. -/
+theorem reeb_spectrum_fixed_point_on_critical_line
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) (hfix : σ i = i) :
+    (R.spec i).re = 1 / 2 := by
+  have h := reeb_spectrum_reflected_by_functional_equation Z hq R σ hσ i
+  rw [hfix] at h
+  linarith
+
+/-- The eigenvalue form of the same fact: a fixed index has `αᵢ² = q`. Needs no
+    Reeb spectrum and no identification — it is a statement about `Z` alone. -/
+theorem eigenvalue_sq_eq_q_of_fixed
+    (Z : LocalQZetaFunction)
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) (hfix : σ i = i) :
+    Z.eigenvalues i ^ 2 = (Z.q : ℂ) := by
+  have hi : Z.eigenvalues i ≠ 0 := Z.eigenvalues_ne_zero i
+  have h := hσ i
+  rw [hfix] at h
+  field_simp at h
+  linear_combination h
+
+/-! ## Periodicity — the framework's OWN Reeb axiom, against the critical line
+
+Everything above constrains the spectrum using Weil inputs only. The framework
+carries an independent constraint on `ξ_q` that has never been set against them:
+`QOU.AlgebraicSubstrate.CategoricalReebDerivation` has a field
+
+    reeb_periodic : (reeb : End obj) ^ period = 1
+
+so the Reeb derivation is **periodic**. Combining that with the critical line
+pins the spectrum to two points, and the pinning is sharply falsifiable.
+
+The periodicity is carried below as an explicit hypothesis on `R.op` rather than
+imported from `CategoricalReebDerivation`: that structure's `reeb` is an
+endomorphism of a monoidal-category object, and identifying it with a `ℂ`-linear
+operator on an 8-dimensional space is precisely `qou-qspc`'s open problem. What
+is proved here is the *consequence* of periodicity, available to any candidate
+operator that has it. -/
+
+/-- An eigenvector stays one under iteration: `op^n (modeᵢ) = specᵢ^n • modeᵢ`. -/
+theorem reeb_spectrum_pow_apply
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H) (i : Fin 8) :
+    ∀ n : ℕ, (R.op ^ n) (R.mode i) = (R.spec i) ^ n • R.mode i := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ k ih =>
+    -- `(f * g) v = f (g v)` is definitional for linear maps, so no lemma here.
+    have hstep : (R.op ^ (k + 1)) (R.mode i) = (R.op ^ k) (R.op (R.mode i)) := by
+      rw [pow_succ]; rfl
+    rw [hstep, R.is_eigen i, map_smul, ih, smul_smul]
+    congr 1
+    ring
+
+/-- **A periodic Reeb operator has root-of-unity eigenvalues.** If
+    `op^Ω = id` then `specᵢ^Ω = 1`.
+
+    This is where `mode_ne_zero` earns its place in the structure: without it the
+    zero vector would satisfy the eigenvalue equation for every scalar and
+    nothing could be concluded. -/
+theorem reeb_spectrum_periodic_eigenvalue
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    (Ω : ℕ) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    (R.spec i) ^ Ω = 1 := by
+  have h := reeb_spectrum_pow_apply R i Ω
+  rw [hper] at h
+  simp only [LinearMap.id_coe, id_eq] at h
+  -- h : R.mode i = specᵢ^Ω • R.mode i
+  have hz : ((R.spec i) ^ Ω - 1) • R.mode i = 0 := by
+    rw [sub_smul, one_smul, ← h]; simp
+  rcases smul_eq_zero.mp hz with hc | hm
+  · linear_combination hc
+  · exact absurd hm (R.mode_ne_zero i)
+
+/-- Root-of-unity eigenvalues have modulus one (for a positive period). -/
+theorem reeb_spectrum_norm_one_of_periodic
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    (Ω : ℕ) (hΩ : Ω ≠ 0) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    ‖R.spec i‖ = 1 :=
+  Complex.norm_eq_one_of_pow_eq_one (reeb_spectrum_periodic_eigenvalue R Ω hper i) hΩ
+
+/-- **The pinning.** A periodic Reeb operator whose spectrum realises the
+    Frobenius exponents of a Weil datum has
+    `Re ρᵢ = 1/2` *and* `(Im ρᵢ)² = 3/4` — that is, every `ρᵢ` is one of the two
+    primitive sixth roots of unity `1/2 ± i√3/2`.
+
+    **This is a sharply falsifiable consequence, and it is the point.** The two
+    constraints are independent in origin — the real part comes from the Weil
+    bound, the modulus from the framework's own `reeb_periodic` field — and
+    together they leave the eight eigenvalues only **two** possible values. A
+    genus-4 curve whose Frobenius eigenvalues are not all
+    `q^{1/2 ± i√3/2}` therefore **refutes the conjunction**: either `ξ_q` is not
+    the operator whose spectrum these are, or it is not periodic.
+
+    Note this does not contradict Hasse–Weil, which it entails:
+    `‖q^{ρᵢ}‖ = q^{Re ρᵢ} = √q` for either value.
+
+    A corollary worth stating in words rather than Lean: since
+    `1/2 ± i√3/2` are primitive **sixth** roots of unity, `specᵢ^Ω = 1` forces
+    `6 ∣ Ω`. So the framework's Reeb period cannot be any natural number — the
+    identification requires it to be a multiple of six.
+
+    **WHICH `Ω`, because the glyph is overloaded three ways (bean `qou-9iwt`).**
+    The `Ω` here is the natural number in `op ^ Ω = id` — reading (1) below. It
+    is *not*:
+
+    * the **topological space** `Ω_q` of `q-plancherel-asymptotic-skeleton`,
+      target of the pushforwards `ι_n : {λ ⊢ n} → Ω_q`; nor
+    * the **infinite surreal** `Ω_q ≍ ε⁻¹` of the `appendix-surreals` blocks,
+      with `ε = 1/ω` the Reeb infinitesimal.
+
+    A space and an infinite surreal are not natural numbers, so `6 ∣ Ω` says
+    nothing whatever about either. Carrying this corollary to them is the
+    category error AGENTS.md warns of — *"attributes do not transfer across
+    overloaded symbols"*.
+
+    **And the test is not runnable today.** `CategoricalReebDerivation` has
+    **no instance** and no `period :=` anywhere in the tree, so reading (1) has
+    no value in the corpus and there is nothing for `6` to divide. Inhabiting
+    that structure is the prerequisite. -/
+theorem reeb_spectrum_pinned_by_periodicity
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (Ω : ℕ) (hΩ : Ω ≠ 0) (hper : R.op ^ Ω = LinearMap.id) (i : Fin 8) :
+    (R.spec i).re = 1 / 2 ∧ (R.spec i).im ^ 2 = 3 / 4 := by
+  have hre : (R.spec i).re = 1 / 2 := reeb_spectrum_on_critical_line Z hq R i
+  refine ⟨hre, ?_⟩
+  have hn : ‖R.spec i‖ = 1 := reeb_spectrum_norm_one_of_periodic R Ω hΩ hper i
+  have hsq : (R.spec i).re ^ 2 + (R.spec i).im ^ 2 = 1 := by
+    have h1 : Complex.normSq (R.spec i) = 1 := by
+      rw [← Complex.sq_norm, hn]; norm_num
+    simpa [Complex.normSq_apply, sq] using h1
+  rw [hre] at hsq
+  linarith
+
 end QOU.AlgebraicSubstrate

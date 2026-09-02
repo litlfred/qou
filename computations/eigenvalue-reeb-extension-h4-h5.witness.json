@@ -1,23 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:07:31.707829+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:29:45.512560+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "extends_beyond_h3",
-      "computed": 1,
-      "expected": 1,
+      "computed": "66",
+      "expected": "66",
       "passed": true,
       "tolerance": 0,
-      "source": "H₄ and H₅ eigenvalues computed"
+      "unit": "multi-dim (braid, irrep) spectra computed at H₄ and H₅",
+      "source": "H₄ and H₅ eigenvalues computed: 66 multi-dim spectra over 19 (level, braid) pairs; expected 66 = Σ_levels #braids × #{λ ⊢ n : f^λ > 1} from the hook-length formula"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "eigenvalue-reeb-extension-h4-h5",
   "scriptFile": "eigenvalue_reeb_extension_h4_h5.py",
-  "scriptHash": "c8c7c8491690",
+  "scriptHash": "85fef2c72157",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -42,5 +43,123 @@
     "reproduce": "python3 -u computations/eigenvalue_reeb_extension_h4_h5.py"
   },
   "description": "Extends eigenvalue/Reeb analysis from H₃ to H₄ and H₅. Tests whether det=+1 braids act unitarily on multi-dim irreps at higher Hecke levels.",
-  "contentBlock": "prop:figure-eight-reeb-rotation"
+  "contentBlock": "prop:figure-eight-reeb-rotation",
+  "data": {
+    "per_braid_unitarity": [
+      {
+        "level": 3,
+        "braid": "(σ₁σ₂⁻¹)²",
+        "multidim_irreps": 1,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 3,
+        "braid": "σ₁σ₂",
+        "multidim_irreps": 1,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 3,
+        "braid": "σ₁σ₂σ₁",
+        "multidim_irreps": 1,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 4,
+        "braid": "(σ₁σ₂⁻¹)²",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 3
+      },
+      {
+        "level": 4,
+        "braid": "σ₁σ₂",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 4,
+        "braid": "σ₁σ₂σ₁",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 4,
+        "braid": "(σ₁σ₂⁻¹σ₃)²",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 4,
+        "braid": "σ₁σ₂σ₃",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 4,
+        "braid": "(σ₁σ₂σ₃)²",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 4,
+        "braid": "σ₁σ₃ (commuting)",
+        "multidim_irreps": 3,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "(σ₁σ₂⁻¹)²",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 5
+      },
+      {
+        "level": 5,
+        "braid": "σ₁σ₂",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "σ₁σ₂σ₁",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "(σ₁σ₂⁻¹σ₃)²",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "σ₁σ₂σ₃",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "(σ₁σ₂σ₃)²",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "σ₁σ₃ (commuting)",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      },
+      {
+        "level": 5,
+        "braid": "σ₁σ₂σ₃σ₄",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 1
+      },
+      {
+        "level": 5,
+        "braid": "(σ₁σ₂⁻¹)²σ₃σ₄⁻¹",
+        "multidim_irreps": 5,
+        "unitary_multidim_irreps": 0
+      }
+    ]
+  }
 }

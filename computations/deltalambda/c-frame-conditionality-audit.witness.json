@@ -1,0 +1,35 @@
+{
+ "probe": "c_frame_conditionality_audit",
+ "bean": [
+  "t7qv",
+  "qou-cds1"
+ ],
+ "layers": {
+  "content": 9,
+  "probes": 18,
+  "audits": 1,
+  "docs": 26
+ },
+ "lean_files": [
+  "FaddeevModularDouble.lean",
+  "SLeakZeroCrossing.lean",
+  "ThetaLipschitzObstruction.lean"
+ ],
+ "lean_code_hits": [],
+ "scoped_markers": 9,
+ "checks": [
+  {
+   "name": "FINDING 1: no Lean THEOREM depends on the C-frame c_3 value",
+   "pass": true,
+   "detail": "3 Lean file(s) cite the C-frame c_3 values (['FaddeevModularDouble.lean', 'SLeakZeroCrossing.lean', 'ThetaLipschitzObstruction.lean']); every occurrence sits in a docstring or comment, never in a definition or theorem statement (code-level hits: none). So the machine-checked layer is NOT C-conditional, and the convention-D re-derivation of qou-cds1 cannot invalidate a proved theorem. CONTROL: the scan found the files at all (3 > 0), so a green here is not the empty-scan false pass this repo has been bitten by."
+  },
+  {
+   "name": "FINDING 2/3: the content block needing C-scoping carries it",
+   "pass": true,
+   "detail": "q-beta-categorical-precision-ladder-context carries 9 convention-D / C-scoped / cds1 markers, and its QA sidecar states the ladder is 'C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1'. Of the remaining content hits, two are QA sidecars (review notes, not claims) and the blocks they annotate -- S_leak and q*_S -- are BOTH named in qou-cds1's \u00a79g register. Layer counts: {'content': 9, 'probes': 18, 'audits': 1, 'docs': 26}. So no unregistered C-conditional claim was found. Contrast Gap #3 earlier today, where the headline WAS an unflagged selection fit: the registration discipline held here."
+  }
+ ],
+ "passed": 2,
+ "total": 2,
+ "ms": 377
+}

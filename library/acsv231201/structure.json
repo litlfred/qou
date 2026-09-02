@@ -1,0 +1,1633 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "acsv231201",
+ "source": {
+  "file": "ACSV231201.pdf",
+  "sha256": "1a664d0bf666041e9a4c25622a585a2f83e96edd7051993fbb021ed223de1837",
+  "bytes": 12103798,
+  "pages": 589,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Analytic Combinatorics in Several Variables",
+  "authors_raw": "Expanded Second Edition",
+  "title_lines": [
+   "Analytic Combinatorics in Several",
+   "Variables"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20231128123224-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Preface to the second edition",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preface to the first edition",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "List of Symbols",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "\\MakeUppercasePart I Combinatorial enumeration",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Generating functions and asymptotics",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "New multivariate methods",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Outline of the remaining chapters",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Generating functions",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Power series",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Rational operations on generating functions",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Algebraic generating functions",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "D-finite generating functions and diagonals",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Labeled classes",
+   "page": 69,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Univariate asymptotics",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "An explicit formula for rational functions",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Meromorphic asymptotics",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Darboux's method",
+   "page": 85,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Transfer theorems",
+   "page": 88,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The saddle point method",
+   "page": 95,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "\\MakeUppercasePart II Mathematical background",
+   "page": 105,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fourier\u2013Laplace integrals in one variable",
+   "page": 107,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Real integrands",
+   "page": 109,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Complex phase",
+   "page": 115,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Analytic versus smooth functions",
+   "page": 123,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Multivariate Fourier\u2013Laplace integrals",
+   "page": 132,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Overview",
+   "page": 132,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Standard phase",
+   "page": 136,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Real part of phase has a strict minimum",
+   "page": 139,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "General nondegenerate phase with finite critical set",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Higher order terms in the expansions",
+   "page": 147,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Laurent series, amoebas, and convex geometry",
+   "page": 152,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Laurent series",
+   "page": 153,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Polynomial amoebas",
+   "page": 159,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Convex cones and exponential bounds",
+   "page": 165,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Singularities, amoeba boundaries, and minimal points",
+   "page": 171,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Additional constructions",
+   "page": 180,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "\\MakeUppercasePart III Multivariate enumeration",
+   "page": 185,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Overview of analytic methods for multivariate GFs",
+   "page": 187,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Some illustrative examples",
+   "page": 189,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The smooth case",
+   "page": 200,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The general case via stratified Morse theory",
+   "page": 214,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Geometry",
+   "page": 224,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Deformations",
+   "page": 232,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Effective computations and ACSV",
+   "page": 239,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Techniques for polynomial systems",
+   "page": 240,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Computing critical points",
+   "page": 244,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Verifying minimal points",
+   "page": 253,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Further computations for asymptotics",
+   "page": 256,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Smooth point asymptotics",
+   "page": 263,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Finitely minimal points and the surgery method",
+   "page": 271,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The method of residue forms",
+   "page": 275,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Smooth bivariate functions",
+   "page": 280,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Additional formulae for asymptotics",
+   "page": 297,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Multiple point asymptotics",
+   "page": 309,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A taxonomy of multiple points",
+   "page": 311,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Main results on integrals",
+   "page": 317,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Main results on coefficient asymptotics",
+   "page": 320,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Classifying multiple points",
+   "page": 340,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Surgery, non-generic directions, and non-arrangement points",
+   "page": 345,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cone point asymptotics",
+   "page": 357,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Results on cones and deformations",
+   "page": 359,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 11.1",
+   "page": 365,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Evaluating asymptotics",
+   "page": 379,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Examples and consequences",
+   "page": 386,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Combinatorial applications",
+   "page": 399,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Some classifications",
+   "page": 399,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Powers, quasi-powers, and Riordan arrays",
+   "page": 403,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Lagrange inversion",
+   "page": 408,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Transfer matrices",
+   "page": 411,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Higher order asymptotics",
+   "page": 417,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Algebraic generating functions",
+   "page": 420,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Additional worked examples",
+   "page": 422,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Limit laws from probability theory",
+   "page": 430,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Challenges and extensions",
+   "page": 442,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Contributing singularities and diagonals",
+   "page": 442,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Phase transitions",
+   "page": 444,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Degenerate phase",
+   "page": 444,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Critical points at infinity",
+   "page": 447,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Algebraic GFs",
+   "page": 448,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Asymptotic formulae",
+   "page": 450,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Symmetric functions",
+   "page": 451,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Conclusion",
+   "page": 453,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "to 1.15Appendix AIntegration on manifolds",
+   "page": 456,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Manifolds",
+   "page": 456,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Vector fields and differential forms",
+   "page": 461,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Integration of forms",
+   "page": 470,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Complex manifolds and differential forms in Cn",
+   "page": 474,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "to 1.15Appendix BAlgebraic topology",
+   "page": 480,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Chain complexes and homology theory",
+   "page": 480,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Tools for homology",
+   "page": 486,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Cohomology",
+   "page": 493,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Topology of complex manifolds",
+   "page": 495,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "to 1.15Appendix CResidue forms and classical Morse theory",
+   "page": 498,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Intersection classes",
+   "page": 499,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Residue forms and the residue integral theorem",
+   "page": 503,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Classical Morse theory",
+   "page": 517,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Description at the level of homology",
+   "page": 523,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "to 1.15Appendix DStratification and stratified Morse theory",
+   "page": 531,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Whitney stratified spaces",
+   "page": 531,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Critical points and the fundamental lemma",
+   "page": 536,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Description of the attachments",
+   "page": 541,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Stratified Morse theory for complex manifolds",
+   "page": 545,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 551,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Author Index",
+   "page": 571,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Subject Index",
+   "page": 577,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-preface-to-the-second-edition",
+   "number": null,
+   "title": "Preface to the second edition",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 13164,
+   "n_words": 2111
+  },
+  {
+   "id": "sec-001-list-of-symbols",
+   "number": null,
+   "title": "List of Symbols",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 3410,
+   "n_words": 579
+  },
+  {
+   "id": "sec-002-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4288,
+   "n_words": 757
+  },
+  {
+   "id": "sec-003-generating-functions-and-asymptotics",
+   "number": null,
+   "title": "Generating functions and asymptotics",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 7899,
+   "n_words": 1432
+  },
+  {
+   "id": "sec-004-new-multivariate-methods",
+   "number": null,
+   "title": "New multivariate methods",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 8177,
+   "n_words": 1319
+  },
+  {
+   "id": "sec-005-outline-of-the-remaining-chapters",
+   "number": null,
+   "title": "Outline of the remaining chapters",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 35,
+   "n_chars": 11292,
+   "n_words": 1847
+  },
+  {
+   "id": "sec-006-generating-functions",
+   "number": null,
+   "title": "Generating functions",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 440,
+   "n_words": 72
+  },
+  {
+   "id": "sec-007-power-series",
+   "number": null,
+   "title": "Power series",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 4903,
+   "n_words": 887
+  },
+  {
+   "id": "sec-008-rational-operations-on-generating-functions",
+   "number": null,
+   "title": "Rational operations on generating functions",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 48,
+   "n_chars": 24642,
+   "n_words": 4501
+  },
+  {
+   "id": "sec-009-algebraic-generating-functions",
+   "number": null,
+   "title": "Algebraic generating functions",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 69,
+   "n_chars": 38091,
+   "n_words": 6956
+  },
+  {
+   "id": "sec-010-labeled-classes",
+   "number": null,
+   "title": "Labeled classes",
+   "level": 3,
+   "page_start": 69,
+   "page_end": 78,
+   "n_chars": 18182,
+   "n_words": 3247
+  },
+  {
+   "id": "sec-011-univariate-asymptotics",
+   "number": null,
+   "title": "Univariate asymptotics",
+   "level": 2,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 355,
+   "n_words": 63
+  },
+  {
+   "id": "sec-012-an-explicit-formula-for-rational-functions",
+   "number": null,
+   "title": "An explicit formula for rational functions",
+   "level": 3,
+   "page_start": 78,
+   "page_end": 80,
+   "n_chars": 4809,
+   "n_words": 900
+  },
+  {
+   "id": "sec-013-meromorphic-asymptotics",
+   "number": null,
+   "title": "Meromorphic asymptotics",
+   "level": 3,
+   "page_start": 80,
+   "page_end": 88,
+   "n_chars": 15415,
+   "n_words": 2895
+  },
+  {
+   "id": "sec-014-transfer-theorems",
+   "number": null,
+   "title": "Transfer theorems",
+   "level": 3,
+   "page_start": 88,
+   "page_end": 95,
+   "n_chars": 9613,
+   "n_words": 1946
+  },
+  {
+   "id": "sec-015-the-saddle-point-method",
+   "number": null,
+   "title": "The saddle point method",
+   "level": 3,
+   "page_start": 95,
+   "page_end": 107,
+   "n_chars": 14768,
+   "n_words": 2801
+  },
+  {
+   "id": "sec-016-fourierlaplace-integrals-in-one-variable",
+   "number": null,
+   "title": "Fourier\u2013Laplace integrals in one variable",
+   "level": 2,
+   "page_start": 107,
+   "page_end": 109,
+   "n_chars": 2609,
+   "n_words": 502
+  },
+  {
+   "id": "sec-017-real-integrands",
+   "number": null,
+   "title": "Real integrands",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 115,
+   "n_chars": 9721,
+   "n_words": 1914
+  },
+  {
+   "id": "sec-018-complex-phase",
+   "number": null,
+   "title": "Complex phase",
+   "level": 3,
+   "page_start": 115,
+   "page_end": 123,
+   "n_chars": 11552,
+   "n_words": 2264
+  },
+  {
+   "id": "sec-019-analytic-versus-smooth-functions",
+   "number": null,
+   "title": "Analytic versus smooth functions",
+   "level": 3,
+   "page_start": 123,
+   "page_end": 132,
+   "n_chars": 17264,
+   "n_words": 3178
+  },
+  {
+   "id": "sec-020-multivariate-fourierlaplace-integrals",
+   "number": null,
+   "title": "Multivariate Fourier\u2013Laplace integrals",
+   "level": 2,
+   "page_start": 132,
+   "page_end": 132,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-overview",
+   "number": null,
+   "title": "Overview",
+   "level": 3,
+   "page_start": 132,
+   "page_end": 136,
+   "n_chars": 8832,
+   "n_words": 1646
+  },
+  {
+   "id": "sec-022-standard-phase",
+   "number": null,
+   "title": "Standard phase",
+   "level": 3,
+   "page_start": 136,
+   "page_end": 139,
+   "n_chars": 2630,
+   "n_words": 539
+  },
+  {
+   "id": "sec-023-real-part-of-phase-has-a-strict-minimum",
+   "number": null,
+   "title": "Real part of phase has a strict minimum",
+   "level": 3,
+   "page_start": 139,
+   "page_end": 147,
+   "n_chars": 16096,
+   "n_words": 3062
+  },
+  {
+   "id": "sec-024-higher-order-terms-in-the-expansions",
+   "number": null,
+   "title": "Higher order terms in the expansions",
+   "level": 3,
+   "page_start": 147,
+   "page_end": 152,
+   "n_chars": 8509,
+   "n_words": 1486
+  },
+  {
+   "id": "sec-025-laurent-series-amoebas-and-convex-geometry",
+   "number": null,
+   "title": "Laurent series, amoebas, and convex geometry",
+   "level": 2,
+   "page_start": 152,
+   "page_end": 159,
+   "n_chars": 13514,
+   "n_words": 2444
+  },
+  {
+   "id": "sec-026-polynomial-amoebas",
+   "number": null,
+   "title": "Polynomial amoebas",
+   "level": 3,
+   "page_start": 159,
+   "page_end": 165,
+   "n_chars": 9258,
+   "n_words": 1764
+  },
+  {
+   "id": "sec-027-convex-cones-and-exponential-bounds",
+   "number": null,
+   "title": "Convex cones and exponential bounds",
+   "level": 3,
+   "page_start": 165,
+   "page_end": 171,
+   "n_chars": 10775,
+   "n_words": 1989
+  },
+  {
+   "id": "sec-028-singularities-amoeba-boundaries-and-minimal-poin",
+   "number": null,
+   "title": "Singularities, amoeba boundaries, and minimal points",
+   "level": 3,
+   "page_start": 171,
+   "page_end": 180,
+   "n_chars": 23008,
+   "n_words": 3469
+  },
+  {
+   "id": "sec-029-additional-constructions",
+   "number": null,
+   "title": "Additional constructions",
+   "level": 3,
+   "page_start": 180,
+   "page_end": 187,
+   "n_chars": 8597,
+   "n_words": 1623
+  },
+  {
+   "id": "sec-030-overview-of-analytic-methods-for-multivariate-gf",
+   "number": null,
+   "title": "Overview of analytic methods for multivariate GFs",
+   "level": 2,
+   "page_start": 187,
+   "page_end": 189,
+   "n_chars": 4649,
+   "n_words": 743
+  },
+  {
+   "id": "sec-031-some-illustrative-examples",
+   "number": null,
+   "title": "Some illustrative examples",
+   "level": 3,
+   "page_start": 189,
+   "page_end": 200,
+   "n_chars": 32104,
+   "n_words": 3748
+  },
+  {
+   "id": "sec-032-the-smooth-case",
+   "number": null,
+   "title": "The smooth case",
+   "level": 3,
+   "page_start": 200,
+   "page_end": 224,
+   "n_chars": 46795,
+   "n_words": 8388
+  },
+  {
+   "id": "sec-033-geometry",
+   "number": null,
+   "title": "Geometry",
+   "level": 3,
+   "page_start": 224,
+   "page_end": 232,
+   "n_chars": 11619,
+   "n_words": 2027
+  },
+  {
+   "id": "sec-034-deformations",
+   "number": null,
+   "title": "Deformations",
+   "level": 3,
+   "page_start": 232,
+   "page_end": 240,
+   "n_chars": 17486,
+   "n_words": 3079
+  },
+  {
+   "id": "sec-035-techniques-for-polynomial-systems",
+   "number": null,
+   "title": "Techniques for polynomial systems",
+   "level": 3,
+   "page_start": 240,
+   "page_end": 244,
+   "n_chars": 10692,
+   "n_words": 1976
+  },
+  {
+   "id": "sec-036-computing-critical-points",
+   "number": null,
+   "title": "Computing critical points",
+   "level": 3,
+   "page_start": 244,
+   "page_end": 253,
+   "n_chars": 16386,
+   "n_words": 3003
+  },
+  {
+   "id": "sec-037-verifying-minimal-points",
+   "number": null,
+   "title": "Verifying minimal points",
+   "level": 3,
+   "page_start": 253,
+   "page_end": 256,
+   "n_chars": 6901,
+   "n_words": 1163
+  },
+  {
+   "id": "sec-038-further-computations-for-asymptotics",
+   "number": null,
+   "title": "Further computations for asymptotics",
+   "level": 3,
+   "page_start": 256,
+   "page_end": 263,
+   "n_chars": 14138,
+   "n_words": 2488
+  },
+  {
+   "id": "sec-039-smooth-point-asymptotics",
+   "number": null,
+   "title": "Smooth point asymptotics",
+   "level": 2,
+   "page_start": 263,
+   "page_end": 271,
+   "n_chars": 15604,
+   "n_words": 2812
+  },
+  {
+   "id": "sec-040-finitely-minimal-points-and-the-surgery-method",
+   "number": null,
+   "title": "Finitely minimal points and the surgery method",
+   "level": 3,
+   "page_start": 271,
+   "page_end": 275,
+   "n_chars": 7502,
+   "n_words": 1326
+  },
+  {
+   "id": "sec-041-the-method-of-residue-forms",
+   "number": null,
+   "title": "The method of residue forms",
+   "level": 3,
+   "page_start": 275,
+   "page_end": 280,
+   "n_chars": 10864,
+   "n_words": 1915
+  },
+  {
+   "id": "sec-042-smooth-bivariate-functions",
+   "number": null,
+   "title": "Smooth bivariate functions",
+   "level": 3,
+   "page_start": 280,
+   "page_end": 297,
+   "n_chars": 33825,
+   "n_words": 6132
+  },
+  {
+   "id": "sec-043-additional-formulae-for-asymptotics",
+   "number": null,
+   "title": "Additional formulae for asymptotics",
+   "level": 3,
+   "page_start": 297,
+   "page_end": 309,
+   "n_chars": 22349,
+   "n_words": 3949
+  },
+  {
+   "id": "sec-044-multiple-point-asymptotics",
+   "number": null,
+   "title": "Multiple point asymptotics",
+   "level": 2,
+   "page_start": 309,
+   "page_end": 311,
+   "n_chars": 3416,
+   "n_words": 561
+  },
+  {
+   "id": "sec-045-a-taxonomy-of-multiple-points",
+   "number": null,
+   "title": "A taxonomy of multiple points",
+   "level": 3,
+   "page_start": 311,
+   "page_end": 317,
+   "n_chars": 9314,
+   "n_words": 1578
+  },
+  {
+   "id": "sec-046-main-results-on-integrals",
+   "number": null,
+   "title": "Main results on integrals",
+   "level": 3,
+   "page_start": 317,
+   "page_end": 340,
+   "n_chars": 48408,
+   "n_words": 8697
+  },
+  {
+   "id": "sec-047-classifying-multiple-points",
+   "number": null,
+   "title": "Classifying multiple points",
+   "level": 3,
+   "page_start": 340,
+   "page_end": 345,
+   "n_chars": 9509,
+   "n_words": 1716
+  },
+  {
+   "id": "sec-048-surgery-non-generic-directions-and-non-arrangeme",
+   "number": null,
+   "title": "Surgery, non-generic directions, and non-arrangement points",
+   "level": 3,
+   "page_start": 345,
+   "page_end": 357,
+   "n_chars": 22715,
+   "n_words": 4126
+  },
+  {
+   "id": "sec-049-cone-point-asymptotics",
+   "number": null,
+   "title": "Cone point asymptotics",
+   "level": 2,
+   "page_start": 357,
+   "page_end": 359,
+   "n_chars": 3876,
+   "n_words": 643
+  },
+  {
+   "id": "sec-050-results-on-cones-and-deformations",
+   "number": null,
+   "title": "Results on cones and deformations",
+   "level": 3,
+   "page_start": 359,
+   "page_end": 365,
+   "n_chars": 12269,
+   "n_words": 2280
+  },
+  {
+   "id": "sec-051-proof-of-theorem-111",
+   "number": null,
+   "title": "Proof of Theorem 11.1",
+   "level": 3,
+   "page_start": 365,
+   "page_end": 379,
+   "n_chars": 31723,
+   "n_words": 5752
+  },
+  {
+   "id": "sec-052-evaluating-asymptotics",
+   "number": null,
+   "title": "Evaluating asymptotics",
+   "level": 3,
+   "page_start": 379,
+   "page_end": 386,
+   "n_chars": 15314,
+   "n_words": 2760
+  },
+  {
+   "id": "sec-053-examples-and-consequences",
+   "number": null,
+   "title": "Examples and consequences",
+   "level": 3,
+   "page_start": 386,
+   "page_end": 399,
+   "n_chars": 27703,
+   "n_words": 4718
+  },
+  {
+   "id": "sec-054-combinatorial-applications",
+   "number": null,
+   "title": "Combinatorial applications",
+   "level": 2,
+   "page_start": 399,
+   "page_end": 403,
+   "n_chars": 7958,
+   "n_words": 1208
+  },
+  {
+   "id": "sec-055-powers-quasi-powers-and-riordan-arrays",
+   "number": null,
+   "title": "Powers, quasi-powers, and Riordan arrays",
+   "level": 3,
+   "page_start": 403,
+   "page_end": 408,
+   "n_chars": 9965,
+   "n_words": 1780
+  },
+  {
+   "id": "sec-056-lagrange-inversion",
+   "number": null,
+   "title": "Lagrange inversion",
+   "level": 3,
+   "page_start": 408,
+   "page_end": 411,
+   "n_chars": 4286,
+   "n_words": 788
+  },
+  {
+   "id": "sec-057-transfer-matrices",
+   "number": null,
+   "title": "Transfer matrices",
+   "level": 3,
+   "page_start": 411,
+   "page_end": 417,
+   "n_chars": 10645,
+   "n_words": 2082
+  },
+  {
+   "id": "sec-058-higher-order-asymptotics",
+   "number": null,
+   "title": "Higher order asymptotics",
+   "level": 3,
+   "page_start": 417,
+   "page_end": 420,
+   "n_chars": 5599,
+   "n_words": 975
+  },
+  {
+   "id": "sec-059-algebraic-generating-functions",
+   "number": null,
+   "title": "Algebraic generating functions",
+   "level": 3,
+   "page_start": 420,
+   "page_end": 422,
+   "n_chars": 4898,
+   "n_words": 817
+  },
+  {
+   "id": "sec-060-additional-worked-examples",
+   "number": null,
+   "title": "Additional worked examples",
+   "level": 3,
+   "page_start": 422,
+   "page_end": 430,
+   "n_chars": 14383,
+   "n_words": 2809
+  },
+  {
+   "id": "sec-061-limit-laws-from-probability-theory",
+   "number": null,
+   "title": "Limit laws from probability theory",
+   "level": 3,
+   "page_start": 430,
+   "page_end": 442,
+   "n_chars": 22489,
+   "n_words": 4100
+  },
+  {
+   "id": "sec-062-challenges-and-extensions",
+   "number": null,
+   "title": "Challenges and extensions",
+   "level": 2,
+   "page_start": 442,
+   "page_end": 442,
+   "n_chars": 337,
+   "n_words": 51
+  },
+  {
+   "id": "sec-063-contributing-singularities-and-diagonals",
+   "number": null,
+   "title": "Contributing singularities and diagonals",
+   "level": 3,
+   "page_start": 442,
+   "page_end": 444,
+   "n_chars": 3615,
+   "n_words": 599
+  },
+  {
+   "id": "sec-064-phase-transitions",
+   "number": null,
+   "title": "Phase transitions",
+   "level": 3,
+   "page_start": 444,
+   "page_end": 444,
+   "n_chars": 1730,
+   "n_words": 289
+  },
+  {
+   "id": "sec-065-degenerate-phase",
+   "number": null,
+   "title": "Degenerate phase",
+   "level": 3,
+   "page_start": 444,
+   "page_end": 448,
+   "n_chars": 6653,
+   "n_words": 1209
+  },
+  {
+   "id": "sec-066-algebraic-gfs",
+   "number": null,
+   "title": "Algebraic GFs",
+   "level": 3,
+   "page_start": 448,
+   "page_end": 450,
+   "n_chars": 5807,
+   "n_words": 1052
+  },
+  {
+   "id": "sec-067-asymptotic-formulae",
+   "number": null,
+   "title": "Asymptotic formulae",
+   "level": 3,
+   "page_start": 450,
+   "page_end": 451,
+   "n_chars": 298,
+   "n_words": 46
+  },
+  {
+   "id": "sec-068-symmetric-functions",
+   "number": null,
+   "title": "Symmetric functions",
+   "level": 3,
+   "page_start": 451,
+   "page_end": 453,
+   "n_chars": 4283,
+   "n_words": 741
+  },
+  {
+   "id": "sec-069-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 3,
+   "page_start": 453,
+   "page_end": 456,
+   "n_chars": 4953,
+   "n_words": 809
+  },
+  {
+   "id": "sec-070-manifolds",
+   "number": null,
+   "title": "Manifolds",
+   "level": 3,
+   "page_start": 456,
+   "page_end": 470,
+   "n_chars": 30783,
+   "n_words": 5776
+  },
+  {
+   "id": "sec-071-integration-of-forms",
+   "number": null,
+   "title": "Integration of forms",
+   "level": 3,
+   "page_start": 470,
+   "page_end": 480,
+   "n_chars": 17270,
+   "n_words": 3300
+  },
+  {
+   "id": "sec-072-chain-complexes-and-homology-theory",
+   "number": null,
+   "title": "Chain complexes and homology theory",
+   "level": 3,
+   "page_start": 480,
+   "page_end": 486,
+   "n_chars": 12845,
+   "n_words": 2294
+  },
+  {
+   "id": "sec-073-tools-for-homology",
+   "number": null,
+   "title": "Tools for homology",
+   "level": 3,
+   "page_start": 486,
+   "page_end": 493,
+   "n_chars": 14094,
+   "n_words": 2585
+  },
+  {
+   "id": "sec-074-cohomology",
+   "number": null,
+   "title": "Cohomology",
+   "level": 3,
+   "page_start": 493,
+   "page_end": 495,
+   "n_chars": 3927,
+   "n_words": 745
+  },
+  {
+   "id": "sec-075-topology-of-complex-manifolds",
+   "number": null,
+   "title": "Topology of complex manifolds",
+   "level": 3,
+   "page_start": 495,
+   "page_end": 498,
+   "n_chars": 6454,
+   "n_words": 1127
+  },
+  {
+   "id": "sec-076-intersection-classes",
+   "number": null,
+   "title": "Intersection classes",
+   "level": 3,
+   "page_start": 498,
+   "page_end": 503,
+   "n_chars": 8897,
+   "n_words": 1572
+  },
+  {
+   "id": "sec-077-residue-forms-and-the-residue-integral-theorem",
+   "number": null,
+   "title": "Residue forms and the residue integral theorem",
+   "level": 3,
+   "page_start": 503,
+   "page_end": 516,
+   "n_chars": 24517,
+   "n_words": 4593
+  },
+  {
+   "id": "sec-078-classical-morse-theory",
+   "number": null,
+   "title": "Classical Morse theory",
+   "level": 3,
+   "page_start": 516,
+   "page_end": 523,
+   "n_chars": 13888,
+   "n_words": 2597
+  },
+  {
+   "id": "sec-079-description-at-the-level-of-homology",
+   "number": null,
+   "title": "Description at the level of homology",
+   "level": 3,
+   "page_start": 523,
+   "page_end": 536,
+   "n_chars": 25680,
+   "n_words": 4684
+  },
+  {
+   "id": "sec-080-critical-points-and-the-fundamental-lemma",
+   "number": null,
+   "title": "Critical points and the fundamental lemma",
+   "level": 3,
+   "page_start": 536,
+   "page_end": 541,
+   "n_chars": 10089,
+   "n_words": 1764
+  },
+  {
+   "id": "sec-081-description-of-the-attachments",
+   "number": null,
+   "title": "Description of the attachments",
+   "level": 3,
+   "page_start": 541,
+   "page_end": 551,
+   "n_chars": 17823,
+   "n_words": 3359
+  },
+  {
+   "id": "sec-082-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 551,
+   "page_end": 571,
+   "n_chars": 41373,
+   "n_words": 6472
+  },
+  {
+   "id": "sec-083-author-index",
+   "number": null,
+   "title": "Author Index",
+   "level": 2,
+   "page_start": 571,
+   "page_end": 577,
+   "n_chars": 8394,
+   "n_words": 1645
+  },
+  {
+   "id": "sec-084-subject-index",
+   "number": null,
+   "title": "Subject Index",
+   "level": 2,
+   "page_start": 577,
+   "page_end": 589,
+   "n_chars": 21099,
+   "n_words": 3110
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 10,
+  "likely_scanned": false,
+  "toc_entries": 106,
+  "sections": 85,
+  "chars_total": 1122006
+ }
+}

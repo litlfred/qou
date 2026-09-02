@@ -1,0 +1,488 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2502.02662v1",
+ "source": {
+  "file": "2502.02662v1.pdf",
+  "sha256": "3f87983ce379a8d668e2180183a0cb81624936d26a7698b68df1aeb50cdd8409",
+  "bytes": 551240,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2502.02662",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "4 Feb 2025"
+  },
+  "doi": null,
+  "title": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+  "authors_raw": "Lior Benizri and Jan Troost",
+  "title_lines": [
+   "The String Dual to Two-dimensional Yang-Mills Theory",
+   "Revisited"
+  ],
+  "abstract": "We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the Gromov-Witten theory of X. Firstly, we argue that the algebraic structure that underlies the large N limit of the chiral gauge theory is a partial permutation Frobenius algebra of observables which codes covering maps of all degrees simultaneously. Secondly, we exploit the Gromov-Witten/Hurwitz correspondence to interpret chiral Yang-Mills theory as a finite deformation of a Gromov- Witten theory by an area-dependent transposition interaction and an operator that codes a compactification of Hurwitz space. The proposed string dual manifestly includes an integral over the moduli space of Riemann surfaces as well as the identification of closed string states as completed cycles. arXiv:2502.02662v1 [hep-th] 4 Feb 2025",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20250206010240Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Hurwitz Topological Quantum Field Theory",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Hurwitz Theory at Fixed Degree",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Extended Hurwitz Theory",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The String Dual",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "From Two-dimensional Yang-Mills to Hurwitz",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Observables of Two-dimensional Yang-Mills Theory",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Schur-Weyl Dictionary",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Gross-Taylor Expansion",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Double Expansion",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Vertex Operators",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Stringy Deformation",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Deformed Gromov-Witten Theory",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Duality Map",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Gromov-Witten Formulation",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Inverse Map",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Remarks on Wilson Loops",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Useful Identities",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Determining the Dictionary",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Phase Transitions",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Analytical Phase Transitions",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Numerical Phase Transitions",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
+   "number": null,
+   "title": "The Hurwitz Topological Quantum Field Theory",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5896,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
+   "number": null,
+   "title": "The Hurwitz Theory at Fixed Degree",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2139,
+   "n_words": 353
+  },
+  {
+   "id": "sec-003-the-extended-hurwitz-theory",
+   "number": null,
+   "title": "The Extended Hurwitz Theory",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3792,
+   "n_words": 643
+  },
+  {
+   "id": "sec-004-the-string-dual",
+   "number": null,
+   "title": "The String Dual",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 7271,
+   "n_words": 1141
+  },
+  {
+   "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
+   "number": null,
+   "title": "From Two-dimensional Yang-Mills to Hurwitz",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 835,
+   "n_words": 134
+  },
+  {
+   "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
+   "number": null,
+   "title": "The Observables of Two-dimensional Yang-Mills Theory",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3837,
+   "n_words": 649
+  },
+  {
+   "id": "sec-007-the-schur-weyl-dictionary",
+   "number": null,
+   "title": "The Schur-Weyl Dictionary",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3863,
+   "n_words": 657
+  },
+  {
+   "id": "sec-008-the-gross-taylor-expansion",
+   "number": null,
+   "title": "The Gross-Taylor Expansion",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 4703,
+   "n_words": 778
+  },
+  {
+   "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
+   "number": null,
+   "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5447,
+   "n_words": 919
+  },
+  {
+   "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
+   "number": null,
+   "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 189,
+   "n_words": 29
+  },
+  {
+   "id": "sec-011-a-double-expansion",
+   "number": null,
+   "title": "A Double Expansion",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 90,
+   "n_words": 12
+  },
+  {
+   "id": "sec-012-vertex-operators",
+   "number": null,
+   "title": "Vertex Operators",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 6228,
+   "n_words": 1067
+  },
+  {
+   "id": "sec-013-a-stringy-deformation",
+   "number": null,
+   "title": "A Stringy Deformation",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3155,
+   "n_words": 538
+  },
+  {
+   "id": "sec-014-a-deformed-gromov-witten-theory",
+   "number": null,
+   "title": "A Deformed Gromov-Witten Theory",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 664,
+   "n_words": 107
+  },
+  {
+   "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
+   "number": null,
+   "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2337,
+   "n_words": 381
+  },
+  {
+   "id": "sec-016-the-duality-map",
+   "number": null,
+   "title": "The Duality Map",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2885,
+   "n_words": 493
+  },
+  {
+   "id": "sec-017-the-gromov-witten-formulation",
+   "number": null,
+   "title": "The Gromov-Witten Formulation",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3566,
+   "n_words": 598
+  },
+  {
+   "id": "sec-018-the-inverse-map",
+   "number": null,
+   "title": "The Inverse Map",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2875,
+   "n_words": 494
+  },
+  {
+   "id": "sec-019-remarks-on-wilson-loops",
+   "number": null,
+   "title": "Remarks on Wilson Loops",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2325,
+   "n_words": 379
+  },
+  {
+   "id": "sec-020-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3551,
+   "n_words": 548
+  },
+  {
+   "id": "sec-021-useful-identities",
+   "number": null,
+   "title": "Useful Identities",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 879,
+   "n_words": 149
+  },
+  {
+   "id": "sec-022-determining-the-dictionary",
+   "number": null,
+   "title": "Determining the Dictionary",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1551,
+   "n_words": 285
+  },
+  {
+   "id": "sec-023-phase-transitions",
+   "number": null,
+   "title": "Phase Transitions",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1292,
+   "n_words": 208
+  },
+  {
+   "id": "sec-024-analytical-phase-transitions",
+   "number": null,
+   "title": "Analytical Phase Transitions",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 5563,
+   "n_words": 959
+  },
+  {
+   "id": "sec-025-numerical-phase-transitions",
+   "number": null,
+   "title": "Numerical Phase Transitions",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 9741,
+   "n_words": 1390
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 26,
+  "sections": 26,
+  "chars_total": 84674
+ }
+}

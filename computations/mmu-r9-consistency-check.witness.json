@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:56:43.612856+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T12:52:22.719132+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "r9_within_codata_sigma_exp",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "mmu-r9-consistency-check",
   "scriptFile": "mmu_r9_consistency_check.py",
-  "scriptHash": "25372ebb51c3",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "2a478d4651f4",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mmu_r9_consistency_check.py"
+    ],
+    "reproduce": "python3 -u computations/mmu_r9_consistency_check.py"
   },
   "data": {
     "q_substrate": "1.10997858275138080759166909561",
@@ -45,14 +50,14 @@
     "sigma_exp_MeV": "0.0000023",
     "sigma_exp_ppb": 21.76826956799085,
     "target_100x_ppb": 0.2176826956799085,
-    "m_mu_pred_bare_MeV": "105.65839781134181392456707179",
-    "bare_err_ppb": 211.1649143604765,
-    "bare_miss_factor": 970.0583397358508,
+    "m_mu_pred_bare_MeV": "105.658397811341813926170678865",
+    "bare_err_ppb": 211.16491436049168,
+    "bare_miss_factor": 970.0583397359205,
     "delta_r9": "0.000000210041791166587192453879270148",
-    "m_mu_pred_r9_MeV": "105.658375618662685838516511318",
-    "r9_err_ppb": 1.1230788404324512,
-    "r9_miss_factor": 5.1592472103702836,
-    "improvement_factor": 188.0232328828897,
+    "m_mu_pred_r9_MeV": "105.658375618662685840120118057",
+    "r9_err_ppb": 1.1230788404476284,
+    "r9_miss_factor": 5.159247210440005,
+    "improvement_factor": 188.0232328803623,
     "r9_within_codata_sigma_exp": true,
     "r9_meets_l2_100x": false,
     "delta_lambda_gate_status": "near-match (fit pattern, not derived)",

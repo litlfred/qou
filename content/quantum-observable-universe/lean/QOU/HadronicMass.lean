@@ -409,69 +409,106 @@ theorem dressed_quark_mass_difference :
   unfold dressed_mass_down dressed_mass_up
   norm_num
 
-/-! The proton pair-Skein decomposition agrees with the CODATA proton
-    mass to within 0.5 MeV (limited by dressed-mass rounding).
+/-! ### Pair-Skein agreement — PROVED, and the classes it needed are gone
 
-    **Narrowing (Pattern 1)**: hoisted the √q witness as an explicit
-    hypothesis. When `norm_num` gains support for `Real.rpow`, the
-    proof follows from `h_denom` alone.
+**History (2026-08-31).**  These two bounds were carried by
+`ProtonPairSkeinApprox` / `NeutronPairSkeinApprox`, a pair of context classes
+whose single field was the bound itself, handed back by projection — §3b-cond
+item 5, and two entries in the self-assuming-projection ledger.  The stated
+reason was that *"the full proof reduces to a numerical evaluation of
+`Real.rpow` at `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge"*.
+That is true of `norm_num` alone and is not a reason the bound cannot be proved.
 
-    **Numerical verification** (SageMath, Mathematica, Python `mpmath`):
-    - `√(1.1097) ≈ 1.05341`, so denom = `q^½ + q^{-½} ≈ 2.00228`
-    - `S_uu ≈ 312.37 MeV`, `S_ud ≈ 312.89 MeV`
-    - `proton_from_pair_skein = S_uu + 2·S_ud ≈ 938.15 MeV`
-    - `|938.15 − 938.272| ≈ 0.12 MeV < 0.5` ✓
+`q^{1/2}` is eliminated rather than evaluated.  Writing `s = q^{1/2}`, the only
+facts needed are `s > 0` and `s * s = q`; the denominator collapses to
+`s + s⁻¹ = (q + 1)/s`, so every `pair_skein_mass` is *linear* in `s`, and
+`s ∈ (1.0534, 1.0535)` follows from `s * s = 1.1097` by `nlinarith`.  Both
+bounds then close by `field_simp; nlinarith`.  The classes are deleted; nothing
+outside this file referenced them.
 
-    Ref: NIST CODATA 2022 proton mass: 938.272 089 43(29) MeV/c². -/
+**The side hypothesis both classes bound was FALSE**, and is recorded below as
+`pair_skein_denom_hypothesis_false`.  `q^{1/2} + q^{-1/2} = 2.0027092783…`, so
+`|denom − 2.00228| = 4.293e-4` — **4.3× the 1e-4 tolerance the hypothesis
+asserted**.  Since that hypothesis was an explicit argument of both theorems,
+neither could ever be invoked: no proof of it exists to supply.  So the two
+declarations were not merely conditional on nothing, they were unreachable.
+
+**Corrected numbers** (mpmath, 50 dps; the docstrings previously here did not
+reproduce).  `√1.1097 = 1.0534230…`, not `1.05341`; denom `2.0027093`, not
+`2.00228`; `S_uu = 312.3637`, `S_ud = 312.9442` (was stated `312.89`),
+`S_dd = 313.6590`.  Hence `proton_from_pair_skein = 938.25205` (was stated
+`938.15`) and `neutron_from_pair_skein = 939.54729` (was stated `939.46`).  The
+agreements are **better** than claimed, not worse: `0.0200 MeV` and
+`0.0181 MeV` against the stated `0.12` and `0.10`.
+
+Ref: NIST CODATA 2022 — proton 938.272 089 43(29), neutron 939.565 421 94(48)
+MeV/c². -/
 -- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
 
-/-- **Proton pair-Skein approximation — typeclass (Pattern 4).**
+/-- **The denominator hypothesis the two former context classes bound is false.**
+`q^{1/2} + q^{-1/2} = 2.0027092783…` at `q = 1.1097`, so its distance from
+`2.00228` is `4.293e-4`, over four times the asserted `1e-4`. -/
+theorem pair_skein_denom_hypothesis_false :
+    ¬ (|substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) := by
+  unfold substrate_q
+  have hxp : (0:ℝ) < 11097/10000 := by norm_num
+  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
+  rw [show (1.1097 : ℝ) = 11097/10000 by norm_num]
+  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
+  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
+  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
+  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
+    rw [hsdef, ← Real.rpow_neg hx]
+  rw [hneg]
+  have hub : s < 10535/10000 := by nlinarith
+  have hlb : 10534/10000 < s := by nlinarith
+  have hinv : s⁻¹ * s = 1 := inv_mul_cancel₀ (ne_of_gt hs0)
+  rw [abs_lt]
+  push_neg
+  intro _
+  nlinarith [hinv, hs0, hub, hlb, hs2]
 
-    Witnesses the 0.5-MeV agreement of the pair-Skein decomposition
-    with the topological proton mass, given the
-    `q^½ + q^{-½} ≈ 2.00228` denominator approximation. The full
-    proof reduces to a numerical evaluation of `Real.rpow` at
-    `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge.
-    Per-instance, the numerical witness is supplied by SageMath /
-    `mpmath` (see calculations.json). -/
-class ProtonPairSkeinApprox
-    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
-  /-- 0.5-MeV agreement bound. -/
-  bound : |proton_from_pair_skein - proton_topological| < 0.5
+/-- **Proton pair-Skein agreement — proved.**
+`|proton_from_pair_skein − proton_topological| = 0.0200 MeV < 0.5`. -/
+theorem proton_pair_skein_approx :
+    |proton_from_pair_skein - proton_topological| < 0.5 := by
+  have hxp : (0:ℝ) < 11097/10000 := by norm_num
+  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
+  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
+  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
+  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
+  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
+  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
+    rw [hsdef, ← Real.rpow_neg hx]
+  have hsne : s ≠ 0 := ne_of_gt hs0
+  have hub : s < 10535/10000 := by nlinarith
+  have hlb : 10534/10000 < s := by nlinarith
+  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
+  unfold proton_from_pair_skein S_uu S_ud pair_skein_mass proton_topological
+    proton_quarks proton_mass_MeV dressed_mass_up dressed_mass_down
+  rw [hq, hneg, hD, abs_lt]
+  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
 
-/-- Per-instance form. -/
-theorem proton_pair_skein_approx
-    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
-    [hi : ProtonPairSkeinApprox h_denom] :
-    |proton_from_pair_skein - proton_topological| < 0.5 :=
-  hi.bound
-
-/-! The neutron pair-Skein decomposition agrees with the CODATA neutron
-    mass to within 0.5 MeV (limited by dressed-mass rounding).
-
-    **Narrowing (Pattern 1)**: same witness as `proton_pair_skein_approx`.
-
-    **Numerical verification**:
-    - `S_dd ≈ 313.68 MeV`, `S_ud ≈ 312.89 MeV`
-    - `neutron_from_pair_skein = 2·S_ud + S_dd ≈ 939.46 MeV`
-    - `|939.46 − 939.565| ≈ 0.10 MeV < 0.5` ✓
-
-    Ref: NIST CODATA 2022 neutron mass: 939.565 421 94(48) MeV/c². -/
--- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
-
-/-- **Neutron pair-Skein approximation — typeclass (Pattern 4).**
-    Companion to `ProtonPairSkeinApprox`. -/
-class NeutronPairSkeinApprox
-    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
-  /-- 0.5-MeV agreement bound. -/
-  bound : |neutron_from_pair_skein - neutron_topological| < 0.5
-
-/-- Per-instance form. -/
-theorem neutron_pair_skein_approx
-    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
-    [hi : NeutronPairSkeinApprox h_denom] :
-    |neutron_from_pair_skein - neutron_topological| < 0.5 :=
-  hi.bound
+/-- **Neutron pair-Skein agreement — proved.**
+`|neutron_from_pair_skein − neutron_topological| = 0.0181 MeV < 0.5`. -/
+theorem neutron_pair_skein_approx :
+    |neutron_from_pair_skein - neutron_topological| < 0.5 := by
+  have hxp : (0:ℝ) < 11097/10000 := by norm_num
+  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
+  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
+  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
+  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
+  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
+  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
+    rw [hsdef, ← Real.rpow_neg hx]
+  have hsne : s ≠ 0 := ne_of_gt hs0
+  have hub : s < 10535/10000 := by nlinarith
+  have hlb : 10534/10000 < s := by nlinarith
+  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
+  unfold neutron_from_pair_skein S_ud S_dd pair_skein_mass neutron_topological
+    neutron_quarks neutron_mass_MeV dressed_mass_up dressed_mass_down
+  rw [hq, hneg, hD, abs_lt]
+  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
 
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
@@ -577,50 +614,97 @@ These propositions correspond to the LaTeX `\begin{proposition}` environments
 in the Experimental Evidence chapter.  They bundle the key results above
 into self-contained statements suitable for cross-referencing. -/
 
-/-- **Proposition (q-Deformed Skein Relation).**
-    The mass functional `𝓜(H)` for a composite hadron obeys the
-    quantum Skein relation at every crossing in color-exchange space:
-    `q · 𝓜(L₊) − q⁻¹ · 𝓜(L₋) = (q^(1/2) − q^(-1/2)) · 𝓜(L₀)`.
+/-! ### The q-deformed Skein relation, and why (p, n, d) is NOT an instance of it
 
-    This proposition witnesses that the `SkeinMassRelation` structure
-    is inhabited at the derived substrate parameter `q = 1.1097`,
-    using the proton/neutron/deuteron mass data.
+**The relation itself is not in question.** `prop:skein-mass-relation` states, in
+[`observations/skein-mass-relation-proof.md`](../../observations/skein-mass-relation-proof.md),
+that the three resolutions of **one crossing** in a colour-exchange diagram
+satisfy
 
-    LaTeX: `\label{prop:skein-mass-relation}`
+  `q · 𝓜(L₊) − q⁻¹ · 𝓜(L₋) = (q^{1/2} − q^{-1/2}) · 𝓜(L₀)`
 
-    The Skein relation involves `q ^ (1/2 : ℝ)` (Real.rpow), which
-    Lean 4 / Mathlib's `norm_num` cannot evaluate for non-integer exponents.
+— the mass-functional form of the Hecke relation. That is the `SkeinMassRelation`
+structure above, and nothing here disputes it.
 
-    **Numerical verification** (SageMath / Python `mpmath`):
-    - LHS: `1.1097 × 938.27208943 − (1/1.1097) × 939.56542194 ≈ 192.83`
-    - RHS: `(1.1097^0.5 − 1.1097^(−0.5)) × 1875.61294500 ≈ 192.83`
-    - `|LHS − RHS| < 0.01` ✓
+**What was here until 2026-08-31** was a *particular instantiation* of it,
+substituting the proton for `L₊`, the neutron for `L₋` and the deuteron for `L₀`:
 
-    Pattern 4: per-instance witness for the q-rpow numerical
-    identity, since `norm_num` cannot evaluate `Real.rpow` at
-    non-integer exponents. The numerical witness is supplied by
-    SageMath / `mpmath` (see calculations.json).
-    Ref: [manuscript] §11-experimental-evidence -/
+```lean
 class SkeinMassRelationHolds : Prop where
-  /-- The Skein mass identity at the substrate `q`. -/
-  identity :
-    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
+  identity : substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV
+           = (substrate_q ^ (1/2:ℝ) - substrate_q ^ (-(1/2:ℝ))) * deuteron_mass_MeV
+```
 
-/-- Per-instance form. -/
-theorem skein_mass_relation_holds [hi : SkeinMassRelationHolds] :
-  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV :=
-  hi.identity
+plus a projection and a `def skein_mass_relation_proton_neutron
+[SkeinMassRelationHolds] : SkeinMassRelation` building the structure from it.
 
-noncomputable def skein_mass_relation_proton_neutron
-    [SkeinMassRelationHolds] : SkeinMassRelation where
-  q := substrate_q
-  q_gt_one := by unfold substrate_q; norm_num
-  m_plus := proton_mass_MeV
-  m_minus := neutron_mass_MeV
-  m_zero := deuteron_mass_MeV
-  skein := skein_mass_relation_holds
+**That instantiation is FALSE**, proved below. Three measurements, all at the
+constants this file defines (mpmath, 40 dps):
+
+| | |
+|---|---|
+| LHS `q·m_p − q⁻¹·m_n` | **194.516369** |
+| RHS `(√q − 1/√q)·m_d` | **195.320153** |
+| difference | **0.8038 MeV**, rel **0.41 %** |
+
+For scale: this file's own `row1_proton_matches_CODATA` treats `1e-3 MeV` as
+agreement, so the gap is ~800× that.
+
+**It is not a tolerance problem.** Two independent checks say the failure is
+structural, not a rounding artefact:
+
+- the `q` that would make it exact at these three masses is **1.17296190**, a
+  **5.7 %** shift from the substrate `1.1097` — and `q₀` is pinned to sub-ppb;
+- the `m_zero` that would make it exact at `q = 1.1097` is **1867.894 MeV**,
+  which is `m_d − 7.72 MeV` and matches no quantity in the framework.
+
+**And the `.md` never claimed this instantiation.** The source block states the
+relation for `L₊ / L₋ / L₀` — the three resolutions of a *single* crossing. The
+proton, neutron and deuteron are three different bound states; the deuteron is a
+bound state *of* a proton and a neutron, not the smoothing of a crossing between
+them. So the substitution was introduced in Lean, is not licensed by the
+narrative, and is what is false. Same shape as
+`QOU.Interactions.LRFusion.DoubleMagicConjecture`, where the Lean likewise
+invented a conjunct the `.md` does not assert.
+
+**The docstring's own "numerical verification" did not reproduce either.** It
+recorded `LHS ≈ 192.83`, `RHS ≈ 192.83`, `|LHS − RHS| < 0.01 ✓`. Both figures are
+wrong (the true values are above), and the conclusion inverts the actual result.
+Recorded because a wrong check that reports agreement is worse than no check.
+
+**What is NOT claimed here.** Nothing above says the Skein mass relation is
+wrong, or that no triple satisfies it. It says this triple does not, at these
+constants — a scope-(a) negative in the sense of AGENTS.md, sharpened by the two
+structural checks. Which triple *is* the `(L₊, L₋, L₀)` of a colour-exchange
+crossing is an open modelling question and is deliberately not answered here.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-skein-mass-relation-is-false.lean`. -/
+
+/-- **The proton/neutron/deuteron Skein instantiation is false at the substrate.**
+`q·m_p − q⁻¹·m_n = 194.516369` against `(√q − 1/√q)·m_d = 195.320153`.
+
+The two `rpow` terms are eliminated rather than evaluated: with `s = q^{1/2}`,
+only `s > 0` and `s·s = q` are needed. The `norm_num` before the rewrite is
+load-bearing — without it the base is the decimal literal `1.1097` while the
+lemma is stated for `11097/10000`, and the rewrite finds no occurrence. -/
+theorem skein_pnd_identity_false :
+    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV ≠
+      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV := by
+  intro h
+  rw [substrate_q, proton_mass_MeV, neutron_mass_MeV, deuteron_mass_MeV] at h
+  norm_num at h
+  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
+  have hxp : (0:ℝ) < 11097/10000 := by norm_num
+  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
+  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
+  have hs2 : s * s = 11097/10000 := by
+    rw [hsdef, ← Real.rpow_add hxp]; norm_num
+  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
+    rw [hsdef, ← Real.rpow_neg hx]
+  rw [hneg] at h
+  have hsne : s ≠ 0 := ne_of_gt hs0
+  field_simp at h
+  nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
 
 /-- **Proposition (Terminal Resolution of Hadronic Mass).**
     Using the derived substrate parameter `q = 1.1097`, all four rows

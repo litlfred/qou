@@ -1,65 +1,48 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.Braiding.r_matrix_braiding_structure — Yang-Baxter for the universal `R`-matrix
+# `QOU.Braiding.r_matrix_braiding_structure` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Proposition** ([`prop:r-matrix-braiding-structure`](../../../quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md)).
+This module used to hold `RMatrixBraidingContext` together with a projection that
+discharged the Yang–Baxter equation from that class's own fields.  Both are
+removed (2026-08-31).
 
-*The universal `R`-matrix
-`R ∈ U_q(𝔰𝔲(2)) ⊗̂ U_q(𝔰𝔲(2))` satisfies the Yang–Baxter equation*
+**Why the declaration was empty.**  The class carried `V3`, `comp`, `R12`, `R13`,
+`R23` and the Yang–Baxter equation itself as *fields*, and
+`r_matrix_braiding_structure` returned `ctx.claim_yang_baxter` — so a
+`[RMatrixBraidingContext]` binder assumed nothing and the declaration asserted
+nothing.  The old docstring was candid about the projection (*"Assumed, not
+derived here"*) and even named the risk (*"`comp`, `R12`, `R13`, `R23` are
+arbitrary context data and YBE fails for a general assignment"*), but drew the
+wrong conclusion from it: because the data are the *instance's* to choose, the
+statement is not conditional on anything.  Measured — `V3 := ℕ`,
+`comp := (· * ·)`, `R12 := 2`, `R13 := 3`, `R23 := 5` discharges
+`claim_yang_baxter` by `ring`.  It is the `proof-no-self-assuming-projection`
+shape of AGENTS.md §3b-cond item 5 (bean `qou-z9ws`).
 
-```
-  R₁₂ · R₁₃ · R₂₃ = R₂₃ · R₁₃ · R₁₂
-```
+**Why removal costs nothing readable.**  Three facts, all measured:
 
-*and the braid operator `R̆ = P ∘ R` (with `P` the tensor swap)
-gives a representation of the braid group on any tensor product of
-finite-dimensional `U_q(𝔰𝔲(2))`-modules.*
+1. The content block's `lean.ref` is `qou:QOU.Braiding.r_matrix_braiding_structure`,
+   and per AGENTS.md §0a resolution checks the **sibling first** — so the block
+   already resolves to
+   [`braids-and-knots/r-matrix-braiding-structure.lean`](../../braids-and-knots/r-matrix-braiding-structure.lean),
+   never to this file.
+2. That sibling carries what there is to carry: `RMatrixEigenData` and
+   `su2_fundamental_r_matrix` (the Hecke eigenvalue data, real content), plus
+   `YangBaxterHolds` / `BraidRelationHolds` / `r_matrix_braiding_structure`,
+   which **name** the manuscript's two claims over caller-supplied data rather
+   than asserting them.  That is the honest disposition here: the `.md` itself
+   says *"The underlying `R`-matrix theory is standard"*, for the universal
+   `R`-matrix of `U_q(𝔰𝔲(2))` — an object this development never constructs.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
 
-The Lean encoding records the YBE as an equation on an abstract
-`RMatrixBraidingContext` carrying the three-fold tensor product
-maps `R₁₂, R₁₃, R₂₃`.
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/Braiding/r_matrix_braiding_structure.lean` — still
+exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.Braiding
-
-/-- Abstract context for the universal `R`-matrix and its Yang–Baxter
-    equation. -/
-class RMatrixBraidingContext where
-  /-- The three-fold tensor product space `V ⊗ V ⊗ V`. -/
-  V3 : Type
-  /-- Multiplication on `V3` (composition of operators). -/
-  comp : V3 → V3 → V3
-  /-- The three `R`-matrix actions on the three pairs of strands. -/
-  R12 : V3
-  R13 : V3
-  R23 : V3
-  /-- Universal Yang–Baxter equation:
-      `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
-  claim_yang_baxter :
-    comp (comp R12 R13) R23 = comp (comp R23 R13) R12
-
-/-- **Yang–Baxter equation for the universal `R`-matrix**
-    ([`prop:r-matrix-braiding-structure`]).
-
-    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`.
-
-    **Assumed, not derived here.** The body projects
-    `RMatrixBraidingContext.claim_yang_baxter`, so this declaration restates
-    the hypothesis rather than proving it. Drinfeld is cited for where the
-    property is established for the object this abstract context models — the
-    universal `R`-matrix of a quantised enveloping algebra — which this
-    development never constructs. The statement is genuinely conditional:
-    `comp`, `R12`, `R13`, `R23` are arbitrary context data and YBE fails for a
-    general assignment, so it may not be strengthened to a global `axiom`. -/
--- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang-Baxter equation, 1985
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
-def r_matrix_braiding_structure
-    [ctx : RMatrixBraidingContext] :
-    ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
-      = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 :=
-  ctx.claim_yang_baxter
-
-end QOU.Braiding

@@ -277,10 +277,80 @@ def main() -> int:
             else "Q_β stays at Q_N2 (1279 ppb)"
         ),
     })
+    # Was `computed=1.0, expected=1.0` named `full_eps_expansion_completed`
+    # (bean `qou-26f2`): reaching this line was the whole test, so the probe
+    # read PASS for a truncated order loop, a diverging expansion, a
+    # q₀-unstable ansatz, or an ε⁶ result that disagreed with the same
+    # computation run a line later. Each of those is checked now.
+
+    # (1) Coverage: what "through ε⁶ with all 3 ansätze" means as a count.
+    _err_keys = ("err_cos_ppb", "err_exp_ppb", "err_lin_ppb")
+    n_recorded = sum(1 for r in order_results for k in _err_keys if k in r)
     builder.add_assertion(
-        "full_eps_expansion_completed",
-        computed=1.0, expected=1.0, tolerance=0.0,
-        source="probe completes through ε⁶ with all 3 ansätze; verdict reported",
+        "eps_expansion_covers_six_orders_by_three_ansaetze",
+        computed=n_recorded, expected=18, tolerance=0,
+        source=f"{len(order_results)} orders × {len(_err_keys)} ansätze = "
+               f"{n_recorded} error values recorded; a shortened order loop "
+               "reduces this instead of passing silently",
+    )
+
+    # (2) The order-6 row of the loop and the standalone `canon` call are the
+    # same computation run twice. They must agree exactly; if mp.dps or any
+    # cached state leaks between calls, they will not.
+    # Compared RELATIVELY: order_results stores 12 significant digits and the
+    # errors are ~1e8 ppb, so an absolute gap of ~1e-4 is pure serialisation.
+    # The relative gap is the precision-independent statement.
+    _o6 = order_results[-1]
+    determinism_gap = max(
+        abs(mp.mpf(_o6[k]) - canon[k]) / abs(canon[k]) for k in _err_keys
+    )
+    builder.add_assertion(
+        "order6_row_matches_standalone_canonical_run",
+        computed=mp.nstr(determinism_gap, 12), expected="0", tolerance="1e-11",
+        source="max over the 3 ansätze of |order-loop ε⁶ error − `canon` "
+               "error| / |canon error|; bridge_test_full is invoked twice at "
+               "the same order and precision, so anything beyond the 12-digit "
+               "serialisation of order_results (1e-12 relative) is leaked "
+               "state",
+    )
+
+    # (3) The expansion actually converges: the α_eff increment shrinks at
+    # every order from 3 to 6. "Completed" without this is just six loop
+    # iterations.
+    _alphas = [mp.mpf(r["alpha_eff"]) for r in order_results]
+    _incr = [abs(_alphas[i] - _alphas[i - 1]) for i in range(1, len(_alphas))]
+    n_shrinking = sum(1 for i in range(1, len(_incr)) if _incr[i] < _incr[i - 1])
+    builder.add_assertion(
+        "alpha_eff_increments_shrink_through_eps6",
+        computed=n_shrinking, expected=len(_incr) - 1, tolerance=0,
+        source="|Δα_eff| per order = "
+               + ", ".join(f"ε^{i + 2}:{mp.nstr(v, 4)}"
+                           for i, v in enumerate(_incr))
+               + f"; {n_shrinking} of {len(_incr) - 1} successive increments "
+                 "shrink, i.e. the ε-series is converging rather than merely "
+                 "terminating",
+    )
+
+    # (4) The q₀-stability gate the verdict quotes from discipline lock §4.
+    n_stable = sum(1 for a in ("cos", "exp", "1+α") if drifts[a] < 0.01)
+    builder.add_assertion(
+        "all_three_ansaetze_below_form_fitting_drift_threshold",
+        computed=n_stable, expected=3, tolerance=0,
+        source="drift across the canonical and stale-muon pins: "
+               + ", ".join(f"{a} {drifts[a]:.5f}%"
+                           for a in ("cos", "exp", "1+α"))
+               + "; all under the 0.01% form-fitting threshold",
+    )
+
+    # (5) …and the branch NOT taken: no ansatz reaches compute precision, so
+    # the RULED-IN / "wire it" path stays closed. The gate is the module's own
+    # 0.001 ppb, and the best sits ten orders above it.
+    builder.add_assertion(
+        "no_ansatz_reaches_compute_precision",
+        computed="1" if abs_best_err >= 0.001 else "0",
+        expected="1", tolerance="0.5",
+        source=f"best ansatz {best_ans} at {mp.nstr(best_err, 8)} ppb against "
+               "the 0.001 ppb RULED-IN gate; production stays Q_N2",
     )
     builder.save()
     print(f"  Witness: qbeta-multi-block-eigenphase-full-eps-probe.witness.json")

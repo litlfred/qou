@@ -163,7 +163,15 @@ def main(argv):
     findings = []
     scanned = 0
     for root in roots:
-        for f in sorted(root.rglob("*.lean")):
+        # A ROOT MAY BE A SINGLE FILE. `rglob` on a file path matches nothing,
+        # so `<script> path/to/One.lean` printed "scanned 0 .lean files / 0
+        # candidates" and exited 0 -- an absent check indistinguishable from a
+        # passing one. There is also no `--diff` flag, though its absence is
+        # silent: `--diff` is simply taken as a root, matches nothing, and
+        # contributes 0. Both were hit for real before being fixed.
+        cands = [root] if (root.is_file() and root.suffix == ".lean") \
+            else sorted(root.rglob("*.lean"))
+        for f in cands:
             if ".lake" in f.parts:
                 continue
             scanned += 1
@@ -186,6 +194,10 @@ def main(argv):
             print(f"{f['file']}:{f['line']}  [{flag}]")
             print(f"    {f['kind']} {f['name']} : ∃ {f['bound_var']}, "
                   f"{f['bound_var']} = {f['rhs']}")
+    if scanned == 0:
+        print("error: scanned 0 .lean files — this is NOT a pass. Nothing was "
+              "audited; check the root(s) given.", file=sys.stderr)
+        return 2
     return 0
 
 

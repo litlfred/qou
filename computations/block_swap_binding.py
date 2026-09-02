@@ -239,13 +239,23 @@ def main() -> int:
     w.add_data("S_free", float(S_free))
     w.add_data("binding_signal_log_Sfree_over_Satom", float(binding_signal))
     w.add_data("convention", "sign-only (chi_q_via_gp); averaged-binding is the slow refinement")
-    # The block-swap braids are verified permutations (asserted in block_swap_word).
+    # `computed=0.0, expected=0.0` was a constant standing in for a check that
+    # lives in a bare `assert` inside `block_swap_word`. That assert aborts
+    # before `w.save()`, so a braid failing to realise its block permutation
+    # produced NO witness rather than a failing one — and under `python -O`
+    # it produces no check at all. Re-run the same comparison here, at the
+    # one place whose outcome the witness can carry (bean qou-26f2).
+    block_swaps_ok = sum(
+        1 for s in (0, 6)
+        if _apply(block_swap_word(s, 3, n), n) == _block_swap_perm(s, 3, n)
+    )
     w.add_assertion(
         name="block_swap_braids_realize_block_perms",
-        computed=0.0, expected=0.0, tolerance=1e-30,
-        source="block_swap_word self-asserts _apply(word)==block_swap_perm for "
-               "swap_p (0,3) and swap_n (6,3) — the braids are the correct "
-               "S₂×S₂ block transpositions.",
+        computed=block_swaps_ok, expected=2, tolerance=0,
+        source="_apply(block_swap_word(s,3,n), n) == _block_swap_perm(s,3,n) "
+               "re-evaluated at witness time for swap_p (s=0) and swap_n "
+               "(s=6) — the braids are the correct S₂×S₂ block "
+               "transpositions.",
     )
     out = w.save()
     print(f"\n Witness: {out}")

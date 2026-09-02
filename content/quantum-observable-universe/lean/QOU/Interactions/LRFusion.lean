@@ -94,41 +94,99 @@ instance contentAdditive_fromUnion (ydZ ydN : YoungDiagram) :
 /-! ## §3  Double-magic predicate -/
 
 /-- The composite is **double magic** when both constituents are
-    saturated and self-conjugate (the LR-rigidity input). -/
-def IsDoubleMagic (C : Composite) : Prop :=
-  isSelfConjugate C.ydZ ∧ isSelfConjugate C.ydN
+    saturated and self-conjugate (the LR-rigidity input).
 
-/-- **Lemma (proved):** a double-magic composite has zero global
+    **Corrected 2026-08-31 — the `saturated` half was in this docstring but
+    not in the definition.** The `.md`
+    ([`conj:diagrammatic-double-magic-lr-fusion`](../../../observations/diagrammatic-double-magic-lr-fusion.md))
+    opens *"Let `Z, N ∈ 𝔐`"* — both constituent levels are drawn from the magic
+    set — and only then invokes `prop:categorical-neutrality-saturated-shells`
+    for self-conjugacy. The definition here carried the self-conjugacy alone, so
+    "double magic" meant "both constituents self-conjugate", with no magic
+    number involved anywhere. Under that reading the **empty** composite
+    `⟨∅, ∅, ∅⟩` is double-magic — the empty diagram is trivially self-conjugate
+    (`emptyDiagram_isSelfConjugate`) — which is what refuted the class below. -/
+def IsDoubleMagic (C : Composite) : Prop :=
+  (C.ydZ.n ∈ magicLadder ∧ isSelfConjugate C.ydZ) ∧
+  (C.ydN.n ∈ magicLadder ∧ isSelfConjugate C.ydN)
+
+/-- **Lemma (proved):** self-conjugate constituents force zero global
     Jucys–Murphy charge `κ_{ydA} = 0`. Direct from
     `kappa_zero_of_self_conjugate` (proved in ShellNeutrality) plus
-    content additivity (typeclass field). -/
+    content additivity (typeclass field).
+
+    Stated on the two self-conjugacy facts rather than on `IsDoubleMagic`,
+    because that is all the proof uses — saturation is irrelevant to it, and
+    requiring it would weaken the lemma for no gain. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem kappa_zero_of_selfConj_constituents
+    (C : Composite) [CA : ContentAdditive C]
+    (hZ' : isSelfConjugate C.ydZ) (hN' : isSelfConjugate C.ydN) :
+    kappa C.ydA = 0 := by
+  have hZ : kappa C.ydZ = 0 := kappa_zero_of_self_conjugate C.ydZ hZ'
+  have hN : kappa C.ydN = 0 := kappa_zero_of_self_conjugate C.ydN hN'
+  rw [CA.kappa_add, hZ, hN, add_zero]
+
+/-- **Lemma (proved):** a double-magic composite has zero global
+    Jucys–Murphy charge `κ_{ydA} = 0`. -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
 theorem doubleMagic_kappa_zero
-    (C : Composite) [CA : ContentAdditive C]
+    (C : Composite) [ContentAdditive C]
     (hM : IsDoubleMagic C) :
-    kappa C.ydA = 0 := by
-  have hZ : kappa C.ydZ = 0 := kappa_zero_of_self_conjugate C.ydZ hM.1
-  have hN : kappa C.ydN = 0 := kappa_zero_of_self_conjugate C.ydN hM.2
-  rw [CA.kappa_add, hZ, hN, add_zero]
+    kappa C.ydA = 0 :=
+  kappa_zero_of_selfConj_constituents C hM.1.2 hM.2.2
 
 /-! ## §4  The LR-fusion rigidity conjecture -/
 
 /-- **Conjecture 3 — Diagrammatic double-magic and LR-fusion rigidity.**
 
-    A composite nuclear configuration is double-magic (both
-    constituents saturated and self-conjugate) iff its dominant LR
-    composite has zero Jucys–Murphy charge **and** the composite
-    strand count `A = Z + N` lies on the magic ladder
-    `{2, 8, 20, 28, 50, 82, 126}` for the relevant shell.
+    For saturated, self-conjugate constituents `λ_Z ⊢ Z` and `μ_N ⊢ N`
+    (`Z, N ∈ 𝔐`), the LR-fusion at level `A = Z + N` is **rigid**: the dominant
+    composite `ν_{ZN} ⊢ A` is itself self-conjugate. That is the `.md`'s claim
+    and it is what `lr_rigidity` states.
 
-    Both directions are conjectural. The forward direction
-    (`double-magic → magic ladder`) is essentially the union of
-    the previous two conjectures: `κ_{ydA} = 0` (from content
-    additivity, Lemma `doubleMagic_kappa_zero`) plus
-    self-conjugacy of `ydA` (from LR-rigidity at saturated inputs)
-    yields the homological-condensation precondition. The reverse
-    direction asserts that *only* double-magic compositions reach
-    the magic ladder via LR-fusion of saturated inputs. -/
+    ### 🛑 The second field is gone (2026-08-31), and it was FALSE
+
+    Until 2026-08-31 this class carried a second field:
+
+    ```lean
+    magic_iff_double_magic : ∀ (C : Composite),
+      (kappa C.ydA = 0 ∧ isSelfConjugate C.ydA ∧ C.ydA.n ∈ magicLadder)
+      ↔ IsDoubleMagic C
+    ```
+
+    It is removed for **two independent reasons**, both measured.
+
+    **(1) The `A ∈ magicLadder` conjunct is not in the `.md`, and is false at
+    every physically intended instance.** The source block claims that the
+    dominant `ν_{ZN}` is self-conjugate with `c(ν) = 0` and LR multiplicity one;
+    it never claims the *composite strand count* `A = Z + N` is a magic number.
+    Magic numbers are shell closures for a proton or neutron count separately,
+    and the sum of two of them is essentially never one: of the seven observed
+    double-magic nuclei — ⁴He (A=4), ¹⁶O (16), ⁴⁰Ca (40), ⁴⁸Ca (48), ⁵⁶Ni (56),
+    ¹³²Sn (132), ²⁰⁸Pb (208) — **not one** has `A ∈ {2, 8, 20, 28, 50, 82, 126}`.
+    Exhaustively, the only magic pair whose sum is magic at all is `8 + 20 = 28`.
+
+    **(2) The `↔` was refutable, and the repair to `IsDoubleMagic` moves the
+    falsity rather than removing it.** With the old definition the `←`
+    direction failed at the empty composite (double-magic by triviality,
+    `A = 0 ∉ magicLadder`). Adding the missing saturation makes `←` safe and
+    breaks `→` at the same point: `κ(∅) = 0` and `∅` is self-conjugate, but
+    `0 ∉ magicLadder` so `∅` is not saturated. A converse of this shape cannot
+    be rescued by a non-degeneracy guard alone.
+
+    The converse was in any case a Lean addition: the removed docstring said
+    *"The reverse direction asserts that **only** double-magic compositions
+    reach the magic ladder"*, a claim the `.md` does not make.
+
+    **Still not encoded**: the `.md` also claims the LR multiplicity is one
+    (`c^{ν}_{λ,μ} = 1`, all others vanishing). That needs Littlewood–Richardson
+    coefficients, which this file does not carry, so it is stated in the
+    narrative and absent here. Recorded so the gap is visible rather than
+    implied.
+
+    Bean `qou-z9ws`; refutation of the old form in
+    `docs/audits/2026-08-31-double-magic-conjecture-is-false.lean`. -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
 class DoubleMagicConjecture where
   /-- LR-rigidity: the dominant composite of two self-conjugate
@@ -136,14 +194,6 @@ class DoubleMagicConjecture where
   lr_rigidity :
     ∀ (C : Composite),
       IsDoubleMagic C → isSelfConjugate C.ydA
-  /-- Magic-ladder coincidence: a composite whose dominant module
-      has zero charge **and** is self-conjugate sits on the magic
-      ladder iff it arose from a double-magic LR-fusion. -/
-  magic_iff_double_magic :
-    ∀ (C : Composite),
-      (kappa C.ydA = 0 ∧ isSelfConjugate C.ydA
-        ∧ C.ydA.n ∈ magicLadder)
-      ↔ IsDoubleMagic C
 
 /-- Re-export: at a double-magic composite, the dominant module is
     self-conjugate. -/
@@ -175,7 +225,7 @@ theorem fromUnion_kappa_zero_of_double_magic
     (ydZ ydN : YoungDiagram)
     (hZ : isSelfConjugate ydZ) (hN : isSelfConjugate ydN) :
     kappa (Composite.fromUnion ydZ ydN).ydA = 0 :=
-  doubleMagic_kappa_zero (Composite.fromUnion ydZ ydN) ⟨hZ, hN⟩
+  kappa_zero_of_selfConj_constituents (Composite.fromUnion ydZ ydN) hZ hN
 
 /-- **LR-rigidity proved for the trivial composite.** If both
     constituents are self-conjugate, then the trivial union composite
@@ -192,34 +242,41 @@ theorem fromUnion_lr_rigidity
     (ydZ ydN : YoungDiagram)
     (h : IsDoubleMagic (Composite.fromUnion ydZ ydN)) :
     isSelfConjugate (Composite.fromUnion ydZ ydN).ydA :=
-  unionDiagram_isSelfConjugate h.1 h.2
+  unionDiagram_isSelfConjugate h.1.2 h.2.2
 
 /-! ## §5  Downstream — double-magic ⇒ homological condensation -/
 
-/-- **Capstone theorem (proved, conditional on the three conjectures).**
+/-! ### 🛑 The "capstone" is gone (2026-08-31) — it never made the connection
 
-    If a composite is double-magic and the LR-rigidity conjecture
-    holds, and if the composite mass number `A = Z + N` lies on the
-    magic ladder, then the homological-shell-condensation conjecture
-    delivers `E_∞^{p, >0}(A) = 0`.
+Until 2026-08-31 this section ended with
 
-    This is the algebraic-geometry capstone connecting:
-    * `SaturatedShellConjecture` (constituents are self-conjugate),
-    * `DoubleMagicConjecture` (LR-rigidity preserves self-conjugacy
-      to the composite, and the magic-ladder coincidence holds),
-    * `ShellCondensationConjecture` (collapse on the magic ladder).
-
-    All hypotheses are exposed as typeclass instances; the proof is
-    by direct chaining. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
--- Ref: [manuscript] conj:homological-shell-condensation
+```lean
 theorem doubleMagic_implies_condensation
-    [D : DoubleMagicConjecture]
-    [ShellCondensationConjecture]
+    [D : DoubleMagicConjecture] [ShellCondensationConjecture]
     (C : Composite) [ContentAdditive C]
-    (hM : IsDoubleMagic C)
-    (hL : C.ydA.n ∈ magicLadder) :
+    (hM : IsDoubleMagic C) (hL : C.ydA.n ∈ magicLadder) :
     InfinityVanishesAtPositiveQ C.ydA.n :=
   condensation_at_magic hL
+```
+
+described as *"the algebraic-geometry capstone connecting"* three conjectures.
+Its body is `condensation_at_magic hL`, which needs `hL` and
+`[ShellCondensationConjecture]` and nothing else: **`D`, `[ContentAdditive C]`
+and `hM` are all unused.** The theorem is `condensation_at_magic` under another
+name, with three decoy binders making it look like a chain.
+
+The link it appeared to supply — from *"C is double-magic"* to
+*"`C.ydA.n ∈ magicLadder`"* — is exactly what the removed
+`magic_iff_double_magic` asserted, and that assertion is false: no observed
+double-magic nucleus has a magic mass number (see the class docstring above).
+So the chain cannot be closed by repairing the binders; the step it needs does
+not hold.
+
+Removed rather than re-stated. A caller wanting the real content applies
+`condensation_at_magic` directly, which says what it does. Whether some *other*
+route leads from double-magic constituents to shell condensation is open, and
+naming a theorem after that route does not create it.
+
+Bean `qou-z9ws`. -/
 
 end QOU.Interactions.LRFusion

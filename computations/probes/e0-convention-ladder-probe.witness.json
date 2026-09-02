@@ -1,0 +1,137 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:28:00.925356+00:00",
+  "commitSha": "dd8b30b65efd6e6ffc20f1016a4638d74b89f0cc",
+  "assertions": [
+    {
+      "name": "registry_stated_102x_error_is_one_over_hbar_q_squared",
+      "computed": "101.862",
+      "expected": "102.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "1/hbar_q^2 with hbar_q = (q_0-1)/q_0 from q_parameter, vs the '~ 102x error' quoted in derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed']['validity']"
+    },
+    {
+      "name": "convention_A_computes_to_the_registry_quoted_value",
+      "computed": "4.18598",
+      "expected": "4.186",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "m_e/(q_0(q_0-1)) at 40 dps vs the '~ 4.186 MeV' recorded in derivation_chain.E_0_CONVENTIONS['A_single_hecke_tick']['value_MeV']"
+    },
+    {
+      "name": "lp_dual_shadow_price_does_not_reproduce_E0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "max over targets of y_0^* from computations/e-0-lp-dual-h3.witness.json is 0.37538663 (dimensionless); times m_e that is 0.19182217 MeV against convention A's 4.1859814 MeV -- a factor of 21.8222 away. Asserting the gap exceeds 10x, i.e. that the derivation attempt failed, which is that probe's own recorded negative finding."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "e0-convention-ladder-probe",
+  "scriptFile": "e0_convention_ladder_probe.py",
+  "scriptHash": "7c667df3c080",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/e0_convention_ladder_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/e0_convention_ladder_probe.py"
+  },
+  "description": "Answers bean qou-59j5: E_0 is NOT derivable -- the corpus's own E_0_CONVENTIONS registry calls convention A a closed-form substitution from CAL-1 + CAL-2, and the sole derivation attempt (convention D, the LP dual) is a recorded negative finding. Also shows the problem is a 256x-wide four-convention registry, not a two-scale tension, and that the extensive term log Z(3A) matches no registered operator class.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "hbar_q": "0.09908171604425850783917712",
+    "m_e_MeV": "0.51099895069"
+  },
+  "data": {
+    "E_0_convention_ladder": [
+      {
+        "convention": "m_e (NOT in the registry; used by my three probes)",
+        "E_0_MeV": "0.51099895069",
+        "extensive_coefficient_MeV_per_nucleon": "1.230876201",
+        "vs_a_V_15.8": "12.8364x short",
+        "vs_B_over_A_plateau_8.5": "6.90565x",
+        "registry_index": "no registry entry, no operator class, no hbar_q index"
+      },
+      {
+        "convention": "A_single_hecke_tick",
+        "E_0_MeV": "4.18598136329",
+        "extensive_coefficient_MeV_per_nucleon": "10.08304387",
+        "vs_a_V_15.8": "1.56699x short",
+        "vs_B_over_A_plateau_8.5": "0.842999x",
+        "registry_index": "hbar_q^1, H_3, 3 strands; operator Delta_NF (beta-decay single wrap)"
+      },
+      {
+        "convention": "B_q_value_absorbed",
+        "E_0_MeV": "0.78233341",
+        "extensive_coefficient_MeV_per_nucleon": "1.884457051",
+        "vs_a_V_15.8": "8.38438x short",
+        "vs_B_over_A_plateau_8.5": "4.51058x",
+        "registry_index": "hbar_q^0, H_3A, 3A strands; operator |tr_M(W_free)| - |tr_M(W_atom)|"
+      },
+      {
+        "convention": "C_proton_back_fit",
+        "E_0_MeV": "200.0",
+        "extensive_coefficient_MeV_per_nucleon": "481.7529271",
+        "vs_a_V_15.8": "0.0327969x short",
+        "vs_B_over_A_plateau_8.5": "0.0176439x",
+        "registry_index": "DISCIPLINE VIOLATION per Workplan 0b §5 -- do not consume"
+      }
+    ],
+    "ladder_spread": {
+      "registry_min_MeV": "0.78233341",
+      "registry_max_MeV": "200.0",
+      "spread": "255.64548x",
+      "spacing_mechanism": "powers of hbar_q; one wrong power is 101.86218x",
+      "my_error_for_comparison": "8.1917612x"
+    },
+    "A_and_B_are_related_by_the_operator": {
+      "Delta_net = |h(h-2)/2|": "0.187207194529",
+      "h = q - 1/q": "0.209060298796",
+      "h_over_hbar_q": "2.10997858275  (= q+1 exactly, so h is hbar_q^1)",
+      "A_times_Delta_net_MeV": "0.783645827375",
+      "codata_Q_beta_MeV": "0.78233341",
+      "agreement": "0.1678 %",
+      "reading": "A is the unit-action scale with the operator carried separately; B absorbs the operator. Both routes give total hbar_q^2. So which convention a quantity takes is decided by what hbar_q power the quantity itself already carries -- not by taste."
+    },
+    "why_the_extensive_term_is_still_unpinned": {
+      "the_quantity": "log Z(3A) = 3A log(1+q_0^2), the Markov-trace normaliser",
+      "log_loop_value": "0.802921545214",
+      "its_hbar_q_content": "ZERO -- log(1+q_0^2) = 0.80292155 is O(1), not small. In hbar_q units it is 8.10363, not a clean power.",
+      "its_Hecke_level": "H_3A -- which indexes to convention B",
+      "its_operator_class": "NONE OF THE REGISTERED ONES. It is neither Delta_NF (A) nor a trace DIFFERENCE (B) nor a mass assembly (C). It is the logarithm of a partition function.",
+      "consequence": "Hecke level points at B, hbar_q content points at A, and they differ by 5.35064x. The registry does not adjudicate, so 'the extensive term is short by N' has no determinate N: it is 1.57, 8.38 or 12.84 depending on a choice the corpus has not made and, per convention D, cannot derive."
+    },
+    "what_survives_because_it_is_scale_free": [
+      "the A-exponent of log Z is exactly 1, the SEMF volume exponent (qou-imcd)",
+      "the four counters are exactly linear: bonds A-1, averaged 2A+1, strands 3A, letters 12A-1, and letters = 4 x strands (extensive_counter_family_probe)",
+      "the framing factor (1+q^2)/(q+1/q) = q exactly (qou-78pt assertion 1)",
+      "b_nn/b_pp = 1.78 in the B_sym linear chain"
+    ],
+    "stale_figure_noted": {
+      "where": "computations/derive_e_0_lp_dual_h3.py docstring",
+      "says": "y_0^* = 0.1245 for the positive-cone LP",
+      "witness_records": "0.3753866309 for every target",
+      "why": "the docstring predates the 2026-08-23 scipy.linprog -> clarabel-MPFR change noted in that same file",
+      "impact": "none on the conclusion -- both are far from 4.186 MeV -- but the prose figure is stale"
+    },
+    "verdict": "qou-59j5 ANSWERED: NO. E_0 is not derivable. derivation_chain's own registry calls convention A a 'closed-form algebraic substitution from CAL-1 m_e + CAL-2 q_0', the sole derivation attempt (convention D, LP dual) is a recorded negative finding with y_0^* m_e a factor of 21.8 from the target, and convention C is flagged a discipline violation. Moreover the problem is not the two-scale tension I described but a four-convention registry spanning 256x whose rungs are 1/hbar_q^2 = 102x apart, and log Z(3A) matches no registered operator class, so the registry cannot even select among A and B for it. STOP QUOTING MAGNITUDE DEFICITS FOR THE EXTENSIVE TERM."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

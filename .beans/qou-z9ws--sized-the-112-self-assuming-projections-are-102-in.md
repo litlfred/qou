@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T14:39:06Z
+updated_at: 2026-08-31T12:15:10Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -218,3 +218,126 @@ Four untouched declarations staled on their file hashes across this batch
 `neutron_pair_skein_approx`, `skein_mass_relation_holds`); each verified
 byte-identical to origin/main before its verdict was refreshed, verdict field
 included.
+
+
+---
+
+## 2026-08-30 — the sizing verdict is refuted by its own three examples
+
+The bullet this bean rests on — *"for many of these that IS the open research,
+not a formalisation chore"* — was asserted, never measured. Measured now:
+
+**25 of the 79 context classes carrying the 90 remaining findings are inhabited
+by `Unit` and zero, with no hypotheses at all** (machine-checked, lean-direct).
+All THREE classes the sizing doc named as examples of open research —
+`KnotOperatorSelectionContext`, `HoefsmitScatteringPipelineContext`,
+`NucleonOrderingFactorizationContext` — are among them.
+
+A class inhabited that cheaply constrains nothing, so a `[C]` binder assumes
+nothing and the downstream `[C]`-conditional declaration is conditional on
+nothing. **Constructing a witness for one is the defect, not progress** — the
+same defect the q-NS carriers had before 2026-08-30.
+
+Stated narrowly: inhabited does NOT mean the block is bad. `BorromeanQuark` is
+inhabitable by the corpus's own `orbital_dim_eq_square` and that is §3b-cond
+working. The discriminator is whether the downstream declaration *derives* from
+the field or *projects* it verbatim; all 90 are the latter by construction.
+
+Second, different finding: `Term7ShellCorrectionClass` is not vacuous but
+**provable** — `alpha5_value := -1`, so its field is `-1 < 0`. The open part
+(the magnitude, per the source's own comment) is encoded nowhere. That is
+`proof-claims-unencoded`, wanting a different disposition.
+
+**Literature: none needed.** Kerov–Vershik 32 documents held, LR 27, elliptic
+functions 15, Călugăreanu 3+1 OCR. The one apparent gap is a Mathlib question
+and the corpus overstates it: `HasFiniteLPDuality` says LP duality "does not
+exist in Mathlib", but `ProperCone.hyperplane_separation` and
+`ProperCone.innerDual_innerDual` both resolve against the restored cache.
+
+Artifacts: `scripts/lean-context-class-inhabitation-probe.py` (with
+`--selftest`), `docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean`,
+`docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`. PR #6276.
+
+Floor is soft in both directions: three generator fixes moved it 15 → 25 without
+touching a class, and 54 classes remain unmeasured rather than established hard.
+
+
+---
+
+## 2026-08-30 (later) — hand adjudication works, and one class is FALSE
+
+After refuting the "keep fixing the tool" route (yields 1 of 54, then 0 of 6),
+applied per-class hand construction. **Floor 26 → 35**, all `lean`-direct exit 0,
+in `docs/audits/2026-08-30-context-classes-hand-adjudicated.lean`.
+
+**Rate, which matters more than the count:** nine classes in ~40 min, much of
+that `lean` startup rather than thought. The remaining ~44 are **hours, not the
+week** the sizing audit projected.
+
+### The one that is not vacuous but FALSE
+
+`QOU.HadronicMass.SkeinMassRelationHolds` asserts
+`q·m_p − q⁻¹·m_n = (√q − 1/√q)·m_d` at the constants its own file defines.
+**LHS 194.5164, RHS 195.3202 — 0.41 % apart.** Refuted in Lean
+(`docs/audits/2026-08-30-skein-mass-relation-is-false.lean`).
+
+**Refutable is worse than vacuous.** A vacuous class makes its downstream
+conditional empty; a false one makes it *vacuously true* — it proves nothing and
+would equally "prove" the negation. Two consumers, and the second is the
+concern: `skein_mass_relation_proton_neutron [SkeinMassRelationHolds] :
+SkeinMassRelation` **constructs** the p/n/d Skein mass relation from the false
+hypothesis, so that object is unreachable and anything reasoning from it is
+vacuous.
+
+Not a claim that the Skein mass relation is wrong as mathematics — only that the
+equality *as written, at these constants* is false by 0.41 %, far outside what
+the same file treats as agreement (its `row1_proton_matches_CODATA` uses 1e-3
+MeV). The repair — approximate form with a stated tolerance, different
+constants, or a corrected relation — is authorial.
+
+Proof note: `norm_num` alone cannot close it (the two `rpow` terms survive);
+set `s = q^(1/2)`, supply `s*s = q`, rewrite the negative exponent via
+`Real.rpow_neg`, `field_simp`, `nlinarith`. The `norm_num at h` before the
+rewrite is load-bearing — without it the base is the decimal `1.1097` and the
+rewrite finds no occurrence.
+
+Two others say more than "inhabited": `SchurWeylMassContext`'s decomposition
+holds over the EMPTY partition set (so its `Z`/`N` parameters are inert), and
+`DecayChannelContext`'s "uniqueness off the boundary variety" is discharged by
+`on_boundary := fun _ => True`. Both are §3b-cond item 5 with the constraint
+missing BETWEEN fields rather than within one — invisible to a syntactic check.
+
+PR #6276.
+
+
+## 2026-08-31 second tranche — items 1 and 3 closed, item 2 at A 15/15 + B 6/6
+
+All three handed-back items worked. Two were decidable by measurement.
+
+- **Both false classes repaired.** Same defect in each: the .md states one
+  thing, the Lean asserts something stronger the .md never claims, and the
+  invention is what is false. Neither needed a physics decision.
+- **Confinement settled: the library model is canonical** on three criteria
+  (.md's SDP-feasibility link; fields are hypotheses not conclusions; 9 vs 2
+  consumers). Corrects my own "not mine to pick".
+- **Bucket A 15/15, bucket B 6/6.** Four of the six B re-encodings gained a
+  real derivation, not just a demotion. Two files claimed "no instance" and
+  had one (CPT at Unit/0/id; cusp-holonomy at z = i, verified by compiling).
+  `newton_seed_completeness` was statement-identical to its neighbour under a
+  docstring claiming a seeding property its type never mentioned.
+  `core_levi_cond_aspect_bound` was redundant with its docstring saying the
+  opposite. DecayChannel sub-claim (iii) turned out to be the IVT.
+
+**REMAINING: 46 bare projections (31 library, 15 sibling)**, measured by the
+new `scripts/sap-projection-liveness.py`. It is a QUEUE, not a defect count --
+the four gate accessors in it are the `Group.mul_assoc` idiom over
+parameterised classes and were adjudicated legitimate; what those blocks
+lacked was the converse of the equivalence their .md claims, now added.
+
+**Two errors of mine, corrected in-branch.** (1) The obvious liveness check
+("does the name still occur?") reports 81/81 still live on a tree where nine
+were just repaired -- a repaired file keeps the name and a gutted file names
+it in the docstring. (2) `7e9230d39a9` converted 82 decls across 69 files
+theorem->def; I inferred that hid one from the detector and MEASURED IT FALSE
+-- the audit flags it as a def, and it is absent from the ledger because it is
+exempt. The 82 stands; the inference did not.

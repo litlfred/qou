@@ -1,0 +1,251 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s00453-026-01372-w",
+ "source": {
+  "file": "s00453-026-01372-w.pdf",
+  "sha256": "98b569eff84fb4893f38795b1c75a726a05d418f31ee2115852f3314572e0680",
+  "bytes": 317282,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s00453-026-01372-w",
+  "title": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 \u00b7 George Z. Li 2 \u00b7 Juan Luque 1 \u00b7 Aravind Srinivasan 1 \u00b7",
+  "authors_raw": null,
+  "title_lines": [
+   "Algorithmica (2026) 88:21",
+   "Concentration of Submodular Functions and Read-k",
+   "Families Under Negative Dependence",
+   "Sharmila Duppala 1 \u00b7 George Z. Li 2 \u00b7 Juan Luque 1 \u00b7 Aravind Srinivasan 1 \u00b7"
+  ],
+  "abstract": "We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([ 1]). Previous work showed such concentration results for random variables that come from speci\ufb01c dependent-rounding algorithms ([ 2, 3]). We discuss some applications of our results to combinatorial optimization and beyond. We also show applications to the concentration of read- k families [4] under certain forms of negative dependence; we further show a simpli\ufb01ed proof of the entropy-method approach of [4].",
+  "docinfo": {
+   "Author": "Sharmila Duppala ",
+   "CreationDate": "D:20260214145740+05'30'",
+   "Creator": "Springer",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Notions of Negative Dependence",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Submodular Functions",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Submodular Chernoff Bounds",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "1-Negative Association and Weak Negative Regression",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Submodular Concentration",
+   "page": 7,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Concentration of read-k families",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A 1-Negative Association and Weak Negative Regression",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B Concentration of Read-k Families",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "References",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-concentration-of-submodular-functions-and-read-k",
+   "number": null,
+   "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 234,
+   "n_words": 43
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 869,
+   "n_words": 123
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 11855,
+   "n_words": 1856
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-21-notions-of-negative-dependence",
+   "number": "2.1",
+   "title": "Notions of Negative Dependence",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2179,
+   "n_words": 430
+  },
+  {
+   "id": "sec-005-22-submodular-functions",
+   "number": "2.2",
+   "title": "Submodular Functions",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1369,
+   "n_words": 290
+  },
+  {
+   "id": "sec-006-31-1-negative-association-and-weak-negative-regr",
+   "number": "3.1",
+   "title": "1-Negative Association and Weak Negative Regression",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1396,
+   "n_words": 237
+  },
+  {
+   "id": "sec-007-32-proof-of-submodular-concentration",
+   "number": "3.2",
+   "title": "Proof of Submodular Concentration",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5675,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-008-33-concentration-of-read-k-families",
+   "number": "3.3",
+   "title": "Concentration of read-k families",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4672,
+   "n_words": 987
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 11282,
+   "n_words": 2122
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 6863,
+   "n_words": 856
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 11,
+  "chars_total": 46394
+ }
+}

@@ -1,0 +1,226 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-02T21:28:16.613878+00:00",
+  "commitSha": "58d32983c7aebd71a8e9ff4cbfd1fc3f6dcc0dc1",
+  "assertions": [
+    {
+      "name": "A1_cumulative_set_is_dense",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "43/45 = 96% coverage by n<=24"
+    },
+    {
+      "name": "A2_all_targets_trivially_hit_cumulatively",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "8/8 group-theoretic targets in the cumulative set"
+    },
+    {
+      "name": "A3_per_n_sets_are_sparse",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n=2: 0; n=3: 0; n=6: 0; n=9: 3; n=12: 3; n=15: 6; n=18: 7"
+    },
+    {
+      "name": "A4_no_admissible_twist_at_n_2_3_6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n=2,3,6 all admit none; n=6 content sums [-15, -9, -5, -3, 0, 3, 5, 9, 15] miss the required {-1,-2}"
+    },
+    {
+      "name": "A5_both_targets_unreachable_at_their_own_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "n=6 admits none so the nuclear sector is unrepairable; t=1/3 exists only at n=12 while two quarks are n=2"
+    },
+    {
+      "name": "A6_scope_of_the_correction_is_stated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "mechanism stands; cumulative claim and 1/3 hit withdrawn"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "the_twist_is_absent_where_it_is_needed_probe",
+  "scriptFile": "the_twist_is_absent_where_it_is_needed_probe.py",
+  "scriptHash": "a060a428b916",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_twist_is_absent_where_it_is_needed_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_twist_is_absent_where_it_is_needed_probe.py"
+  },
+  "description": "Tests and largely retracts qou-bq9l's use of the fractional-twist mechanism. TWO CORRECTIONS. First, the cumulative achievable set is dense: the union of t over n <= 24 covers 43 of the 45 rationals with denominator <= 12 (96%, only 4/9 and 7/8 missing), so a 'substrate only produces rational ratios' prediction has no discriminating power, and all eight exact group-theoretic targets tested (QCD 3bar/6 = 2, QCD singlet/octet = 8, piN 9 and 9/2, quark-model 3/2 and 5/3, 4, SU(6) 25/9) trivially hit it. Second and decisive, cumulative is the wrong object: a physical system has a FIXED strand count — two quarks n=2, a nucleon n=3, two nucleons n=6, 4He n=12 — and per n the admissible sets are small (n=9: 3 values; n=12: 3; n=15: 6; n=18: 7). At n=2, n=3 and n=6 there is NO admissible fractional twist at all: t in (0,1) needs c(lambda) strictly between -n/2 and 0, and at n=6 the achievable content sums are {-15,-9,-5,-3,0,3,5,9,15} while the window needs {-1,-2}; at n=2 the only candidate gives t = 1 exactly, the excluded boundary. CONSEQUENCES: the two-nucleon sector, which is n=6 and is where qou-v3u2 proved the impossibility lives, cannot be repaired by this mechanism; and the t = 1/3 QCD hit is realised at n=12 while two quarks are n=2, so it is withdrawn as evidence. What stands from qou-bq9l is the mechanism itself — c_n^n = Delta^2, block magnitude exactly q^(2c(lambda)/n), fractional values from n=5, and a sparse closed-form per-n availability table.",
+  "data": {
+    "cumulative_coverage": {
+      "5": {
+        "distinct_t": 1,
+        "covered_of_45": 1,
+        "pct": "2.2"
+      },
+      "8": {
+        "distinct_t": 4,
+        "covered_of_45": 4,
+        "pct": "8.9"
+      },
+      "12": {
+        "distinct_t": 13,
+        "covered_of_45": 13,
+        "pct": "28.9"
+      },
+      "16": {
+        "distinct_t": 32,
+        "covered_of_45": 23,
+        "pct": "51.1"
+      },
+      "20": {
+        "distinct_t": 57,
+        "covered_of_45": 31,
+        "pct": "68.9"
+      },
+      "24": {
+        "distinct_t": 86,
+        "covered_of_45": 43,
+        "pct": "95.6"
+      }
+    },
+    "cumulative_missing": [
+      "4/9",
+      "7/8"
+    ],
+    "targets_all_hit_cumulatively": {
+      "QCD 3bar/6": {
+        "R": "2",
+        "t": "1/3",
+        "in_cumulative_set": true
+      },
+      "QCD singlet/octet": {
+        "R": "8",
+        "t": "7/9",
+        "in_cumulative_set": true
+      },
+      "piN at Delta (9:1)": {
+        "R": "9",
+        "t": "4/5",
+        "in_cumulative_set": true
+      },
+      "piN (9:2)": {
+        "R": "9/2",
+        "t": "7/11",
+        "in_cumulative_set": true
+      },
+      "quark model |mu_p/mu_n|": {
+        "R": "3/2",
+        "t": "1/5",
+        "in_cumulative_set": true
+      },
+      "quark model g_A": {
+        "R": "5/3",
+        "t": "1/4",
+        "in_cumulative_set": true
+      },
+      "width ratio 4": {
+        "R": "4",
+        "t": "3/5",
+        "in_cumulative_set": true
+      },
+      "SU(6) 25/9": {
+        "R": "25/9",
+        "t": "8/17",
+        "in_cumulative_set": true
+      }
+    },
+    "per_n_admissible": {
+      "2": [],
+      "3": [],
+      "6": [],
+      "9": [
+        "2/9",
+        "2/3",
+        "8/9"
+      ],
+      "12": [
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "15": [
+        "2/15",
+        "4/15",
+        "2/5",
+        "2/3",
+        "4/5",
+        "14/15"
+      ],
+      "18": [
+        "1/9",
+        "2/9",
+        "1/3",
+        "5/9",
+        "2/3",
+        "7/9",
+        "8/9"
+      ]
+    },
+    "content_sums": {
+      "n=2": [
+        -1,
+        1
+      ],
+      "n=3": [
+        -3,
+        0,
+        3
+      ],
+      "n=6": [
+        -15,
+        -9,
+        -5,
+        -3,
+        0,
+        3,
+        5,
+        9,
+        15
+      ],
+      "n6_window_requires": [
+        -1,
+        -2
+      ],
+      "n6_window_satisfied": false
+    }
+  },
+  "caveats": [
+    "THIS PROBE RETRACTS PART OF qou-bq9l, WHICH IS MINE. Its mechanism (c_n^n = Delta^2, magnitude q^(2c/n), fractionality from n=5) is re-verified and stands. Its cumulative enumeration as a predictive claim, and its t = 1/3 coincidence as evidence, do not. Anyone quoting that probe should quote this one alongside it.",
+    "THE PER-n ANALYSIS ASSUMES A SYSTEM'S TWIST MUST COME FROM ITS OWN STRAND COUNT. That is the natural reading — the Coxeter element of B_n is defined on n strands — but a construction could in principle embed a subsystem in a larger braid and inherit a twist from there. Nothing here rules that out; it would need the embedding exhibited, and the resulting object would no longer be the n-strand system's own Coxeter element.",
+    "The eight group-theoretic ratios are used ONLY to demonstrate that the cumulative test has no power. They are not claimed as predictions, matches, or targets the substrate should meet, and no per-n check against them is offered — at the strand counts where they would be posed (n=2, n=3) there is nothing to check against."
+  ]
+}

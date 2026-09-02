@@ -1,0 +1,75 @@
+{
+ "probe": "wn_tower_domain",
+ "bean": [
+  "t7qv"
+ ],
+ "lean": [
+  "QOU.Mass.MaxContactSimplex.not_five_equidistant",
+  "QOU.Mass.CoordinationSaturation.bounded_degree_saturates"
+ ],
+ "period_aD": {
+  "2": "1.0",
+  "3": "1.34",
+  "4": "2.53",
+  "5": "5.38",
+  "6": "13.56"
+ },
+ "rows": [
+  {
+   "A": 2,
+   "exp": "1.0",
+   "full": "1.0",
+   "err_full_pct": "0.0",
+   "err_trunc_pct": null,
+   "err_linear_pct": null,
+   "simplex_valid": true
+  },
+  {
+   "A": 3,
+   "exp": "3.81279",
+   "full": "4.34",
+   "err_full_pct": "13.828",
+   "err_trunc_pct": null,
+   "err_linear_pct": null,
+   "simplex_valid": true
+  },
+  {
+   "A": 4,
+   "exp": "12.7196",
+   "full": "13.89",
+   "err_full_pct": "9.2013",
+   "err_trunc_pct": "9.2013",
+   "err_linear_pct": "9.2013",
+   "simplex_valid": true
+  },
+  {
+   "A": 6,
+   "exp": "14.3824",
+   "full": "125.59",
+   "err_full_pct": "773.22",
+   "err_trunc_pct": "454.5",
+   "err_linear_pct": "44.865",
+   "simplex_valid": false
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 1: the tower breaks exactly at the A<=4 simplex boundary",
+   "pass": true,
+   "detail": "Full tower normalised to D: A=2 model 1.0 vs exp 1.0 (0.0 %); A=3 model 4.34 vs exp 3.81279 (13.828 %); A=4 model 13.89 vs exp 12.7196 (9.2013 %); A=6 model 125.59 vs exp 14.3824 (773.22 %). Errors stay under 13.83 % for A <= 4 -- where QOU.Mass.MaxContactSimplex.not_five_equidistant permits the complete contact graph -- and jump to 773.22 % at A = 6. CONTROL: this reproduces the frontier's own quoted 13.88x model / 12.72x experimental for He-4 to three figures, so the reading of a_D^(n) and of the tower is the intended one. Part 5's counterexamples are A = 6, 7, 9, 12 -- every one outside the simplex domain. Part 5 and Part 13 are therefore CONSISTENT: C(A,n) is the max-contact bond count where Part 13 claims it and is not the packing's clique count where Part 5 refutes it."
+  },
+  {
+   "name": "FINDING 2 (MY HYPOTHESIS, HALF FALSIFIED): truncation is necessary, not sufficient",
+   "pass": true,
+   "detail": "Part 5's redirect names a 'few-body truncation (fixed small n_max, ~2-3)' as a modelling choice. not_five_equidistant DERIVES a cap -- cliques of mutually tangent equal spheres have at most 4 members -- so I expected n_max <= 4 to rescue A >= 5. It does not. At A = 6 truncation takes the error from 773.2 % to 454.5 %, a factor 1.7 and still enormous, because C(6,4) = 15 mutually-tangent 4-sets is itself geometrically impossible."
+  },
+  {
+   "name": "FINDING 3: the clique COUNT bound carries the scaling, 10x vs 1.7x",
+   "pass": true,
+   "detail": "Holding clique counts LINEAR in A at densities read off the A = 4 simplex -- kappa_n = C(4,n)/4 = ['1.5', '1.0', '0.25'], no free parameter, nothing fitted to A = 6 -- drops A = 6 to 44.86 %. So the body-order cap is worth 1.7x and the clique-count bound 10.1x. CONTROL: at A = 4 all three coincide (9.2013 %), as they must -- there the simplex IS the complete graph and the densities were read off it -- so the comparison is not circular at the anchor. This is a DIAGNOSTIC of which constraint carries the scaling, not a model: the 45 % is not offered as a prediction. CONSEQUENCE: the closure needs two geometric inputs and has one -- (i) n_max <= 4, PROVED, worth 1.7x; (ii) clique count O(A), NOT proved, worth 10x, and it is exactly the bounded-degree hypothesis CoordinationSaturation.bounded_degree_saturates already assumes. The remaining leverage is the kissing-number bound, not the truncation Part 5's redirect names."
+  }
+ ],
+ "passed": 3,
+ "total": 3,
+ "ms": 0
+}

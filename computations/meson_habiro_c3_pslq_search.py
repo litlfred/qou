@@ -116,9 +116,16 @@ def main() -> int:
         print(f"  {n:<14}= {mp.nstr(basis_dict[n], 10)}")
 
     print(f"\n[PSLQ — pairwise (c_3, b_i) — tests c_3 = (p/q)·b_i]")
+    # Every mp.pslq call below sits under a bare `except Exception: pass`. A
+    # run in which all of them RAISED would print, and conclude, exactly the
+    # NULL that a run in which all of them completed and found nothing prints
+    # — the verdict cannot tell the two apart. Count both so the witness can.
+    pslq_attempted = 0
+    pslq_errors: list[str] = []
     matches = []
     for n, v in basis_dict.items():
         try:
+            pslq_attempted += 1
             rel = mp.pslq([c_3, v], tol=mp.mpf("1e-12"), maxcoeff=10000)
             if rel and rel[0] != 0:
                 ratio = -mp.mpf(rel[1]) / mp.mpf(rel[0])
@@ -126,8 +133,8 @@ def main() -> int:
                 if abs(check) < mp.mpf("1e-10"):
                     matches.append((f"{rel[1]}/{rel[0]} · {n}", ratio * v, abs(check)))
                     print(f"  c_3 ≈ ({rel[1]}/{rel[0]}) · {n} = {mp.nstr(ratio * v, 15)} (residual {mp.nstr(abs(check), 8)})")
-        except Exception:
-            pass
+        except Exception as exc:
+            pslq_errors.append(f"pairwise[{n}]: {type(exc).__name__}: {exc}")
 
     if not matches:
         print(f"  No tight pairwise integer-relation hits (tol 1e-12, maxcoeff 10000).")
@@ -144,6 +151,7 @@ def main() -> int:
                 break
             v1, v2 = basis_dict[n1], basis_dict[n2]
             try:
+                pslq_attempted += 1
                 rel = mp.pslq([c_3, v1, v2], tol=mp.mpf("1e-15"), maxcoeff=200)
                 if rel and rel[0] != 0:
                     a0, a1, a2 = rel
@@ -153,8 +161,8 @@ def main() -> int:
                         found += 1
                         print(f"  c_3 ≈ ({-a1}·{n1} + {-a2}·{n2}) / {a0} = {mp.nstr(pred, 18)} "
                               f"(residual {mp.nstr(abs(check), 8)})")
-            except Exception:
-                pass
+            except Exception as exc:
+                pslq_errors.append(f"triple[{n1},{n2}]: {type(exc).__name__}: {exc}")
 
     if found == 0:
         print(f"  No tight pair-of-basis integer relations within maxcoeff 200.")
@@ -227,12 +235,72 @@ def main() -> int:
     w.add_data("pair_basis_hits_count", found)
     w.add_data("verdict", verdict)
 
+    w.add_data("pslq_calls_attempted", pslq_attempted)
+    w.add_data("pslq_calls_errored", len(pslq_errors))
+    w.add_data("pslq_errors", pslq_errors[:10])
+
+    # Was `computed=True, expected=True` named `pslq_search_completed` (bean
+    # `qou-26f2`): reaching the witness was the whole test, so a search whose
+    # every PSLQ call raised — the state that produces this module's NULL
+    # verdict for free — would still have read PASS.
+
+    # (1) The searched basis is the one the description advertises.
     w.add_assertion(
-        name="pslq_search_completed",
-        computed=True,
-        expected=True,
+        name="basis_covers_24_substrate_elements",
+        computed=len(basis_names),
+        expected=24,
         tolerance=0,
-        source=f"PSLQ search across {len(basis_names)} basis elements at 60 dps.",
+        source="the witness description states 'across 24 natural substrate "
+               "basis elements'; this counts what was actually enumerated",
+    )
+
+    # (2) …and every PSLQ call over it really ran. 24 pairwise + 66 triples
+    # (C(12,2) over `top_basis`, minus any skipped once 5 hits are found; with
+    # a NULL result none are skipped) — an error count above 0 means part of
+    # the NULL is silence, not evidence.
+    w.add_assertion(
+        name="no_pslq_call_swallowed_an_exception",
+        computed=len(pslq_errors),
+        expected=0,
+        tolerance=0,
+        source=f"{pslq_attempted} PSLQ calls attempted under `except "
+               f"Exception`, {len(pslq_errors)} raised. A NULL verdict is only "
+               "evidence if the searches ran"
+               + (f"; first error: {pslq_errors[0]}" if pslq_errors else ""),
+    )
+
+    # (3) The verdict itself, from the counters the module already kept.
+    w.add_assertion(
+        name="pslq_integer_relations_found",
+        computed=len(matches) + found,
+        expected=0,
+        tolerance=0,
+        source=f"{len(matches)} pairwise hits (tol 1e-12, maxcoeff 10000) + "
+               f"{found} pair-of-basis hits (tol 1e-15, maxcoeff 200) = the "
+               "NULL the verdict asserts; any hit refutes it",
+    )
+
+    # (4) c_3 was solved out of R_exact = 1 + 4u² + c_3·u³; putting it back
+    # must return m_K/m_π. Independent of the PSLQ search, and it is what
+    # makes the searched target the right number in the first place.
+    c3_reconstruction_gap = abs(
+        base * (1 + 4 * u ** 2 + c_3 * u ** 3) - target
+    )
+    w.add_assertion(
+        name="c3_reconstructs_mK_over_mpi",
+        computed=mp.nstr(c3_reconstruction_gap, 12),
+        expected="0",
+        tolerance="1e-50",
+        source="χ_5·(9/5)²·(1 + 4u² + c_3·u³) vs m_K/m_π from the CODATA "
+               "registry; inverts the solve that defined c_3, so a broken "
+               "u, base or target shows up here rather than as a silent NULL",
+    )
+    w.add_caveat(
+        "The docstring and witness description both name the target as "
+        f"'c_3 = -0.7156'; the computed value is {mp.nstr(c_3, 12)}, i.e. "
+        "-0.7150, differing by 5.8e-4. The prose figure is stale — every "
+        "PSLQ tolerance here is 1e-12 or tighter, so the two are not "
+        "interchangeable. Reported, not silently corrected."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

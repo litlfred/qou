@@ -1,69 +1,52 @@
-import QOU.Shared.SobolevHkRegularity
+import Mathlib.Tactic
 
 /-!
-# QOU.FluidDynamics.core_levi_form
+# `QOU.FluidDynamics.core_levi_form` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Canonical declaration** for content block referenced by
-`qou:QOU.FluidDynamics.core_levi_form`.
+This module used to hold `CoreLeviFormContext` together with a projection that
+discharged all five clauses of md part (c) from that class's own fields.  Both
+are removed (2026-08-31).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Why the declaration was empty.**  `CoreLeviFormContext` carried
+`levi_form_regular : Prop` as a *field* and `levi_form_active :
+levi_form_regular` as a second field proving it — so the instance chose the
+hypothesis **and** its proof.  Taking `levi_form_regular := True`,
+`levi_form_active := trivial`, every scalar `0` (or `1` where a strict
+inequality is wanted), `hom_dim_at_p := 0`, `integral_submfd_dim := 0`
+satisfies every field, and `core_levi_form` returned the five implications
+applied to that self-supplied proof.  A `[CoreLeviFormContext]` binder
+therefore assumed nothing.  The file's own docstring said as much: *"the
+substantive mathematical content is carried by the context-class axioms"*.
+AGENTS.md §3b-cond item 5 (bean `qou-z9ws`).
+
+Note also that it `extends QOU.Shared.SobolevHkRegularityContext`, which pulls
+`Mathlib.Data.Real.Basic` and the archimedean setup into a claim that never
+uses either — the §7c hazard, in a file whose content was zero.
+
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.FluidDynamics.core_levi_form`,
+   and per AGENTS.md §0a resolution checks the **sibling first** — so the
+   block already resolves to
+   [`fluid-dynamics/core-levi-form.lean`](../../fluid-dynamics/core-levi-form.lean),
+   never to this file.
+2. That sibling carries the real content: `CoreLeviData` (data only, no claim
+   is a field), the md's claims as named propositions over it, and four
+   derived theorems — the eigenvalue-to-aspect bridge, `core_levi_form`
+   (`1 ≤ cond` and `cond = max(a⊥/a∥, a∥/a⊥)²`, both derived), the (1)⟺(2)
+   equivalence of md (c), and the quantum-pressure consequence.  What it does
+   not encode, it says: the `(1 + O(ℏ_q²))` factors, the `q > 1` restriction,
+   and md (c) clauses (3)–(5) — which are exactly the clauses *this* file
+   projected.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` and `.ts` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second
+resolution candidate — `<lakeRoot>/QOU/FluidDynamics/core_levi_form.lean` —
+still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.FluidDynamics
-
-
-/-- Abstract context for the `core_levi_form` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class CoreLeviFormContext extends QOU.Shared.SobolevHkRegularityContext where
-  /-- The supremum-over-time `sup_{t<T*} (a_⊥/a_∥)(t)` of the core
-      aspect ratio. -/
-  aspect_sup : ℝ
-  /-- The aspect-ratio bound constant `C`. -/
-  C : ℝ
-  /-- The supremum-over-time `sup_{t<T*} cond(L|_{N_p})` of the Levi-
-      form condition number on the horizontal normal plane. -/
-  cond_sup : ℝ
-  /-- The minimum Levi eigenvalue `min(λ_∥, λ_⊥)` on the collision
-      locus `Σ`. -/
-  lambda_min : ℝ
-  /-- Dimension of `Hom_C(𝟙, Ad(A))` locally at each `p ∈ Σ`. -/
-  hom_dim_at_p : ℕ
-  /-- Dimension of the maximal integral submanifold of `ker(Θ)` at `Σ`. -/
-  integral_submfd_dim : ℕ
-  /-- Levi form regularity proposition. -/
-  levi_form_regular : Prop
-  /-- Hypothesis that the Levi form is regular. -/
-  levi_form_active : levi_form_regular
-  /-- (i) Bounded core aspect ratio: the supremum is finite. -/
-  impl_core_aspect_ratio : levi_form_regular → aspect_sup ≤ C
-  /-- (ii) Bounded Levi-form condition number (squared aspect-ratio bound). -/
-  impl_levi_form_condition : levi_form_regular → cond_sup ≤ C ^ 2
-  /-- (iii) Non-degenerate contact structure at `Σ`: both Levi eigenvalues are strictly positive. -/
-  impl_contact_structure_remains : levi_form_regular → 0 < lambda_min
-  /-- (iv) Observability axiom holds locally: `dim Hom_C(𝟙, Ad(A)) = 0` at every `p ∈ Σ`. -/
-  impl_observability_axiom_holds : levi_form_regular → hom_dim_at_p = 0
-  /-- (v) No 2-dimensional integral submanifold of `ker(Θ)` forms at `Σ` (Frobenius integrability fails): `integral_submfd_dim < 2`. -/
-  impl_no_integral_submanifold : levi_form_regular → integral_submfd_dim < 2
-
-/-- **Content statement** (from manuscript):
-
-Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
-the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$
-with contact form $\varTheta$ and
-[Levi form](#def:levi-form-defect)
-$\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each
-point $p \in \varrho$, let $N_p\varrho \subset \ker(\varTheta_p)$ be
-the horizontal normal plane.  Define:
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/core-levi-form.ts
-theorem core_levi_form [ctx : CoreLeviFormContext] :
-    ctx.aspect_sup ≤ ctx.C ∧
-    ctx.cond_sup ≤ ctx.C ^ 2 ∧
-    0 < ctx.lambda_min ∧
-    ctx.hom_dim_at_p = 0 ∧
-    ctx.integral_submfd_dim < 2 :=
-  ⟨ctx.impl_core_aspect_ratio ctx.levi_form_active, ctx.impl_levi_form_condition ctx.levi_form_active, ctx.impl_contact_structure_remains ctx.levi_form_active, ctx.impl_observability_axiom_holds ctx.levi_form_active, ctx.impl_no_integral_submanifold ctx.levi_form_active⟩
-
-end QOU.FluidDynamics

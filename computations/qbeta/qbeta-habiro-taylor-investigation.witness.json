@@ -1,24 +1,39 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:25:19.996689+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-30T10:17:34.851466+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "symbolic_delta_tr_loaded",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "delta_tr_is_a_rational_function_of_q",
+      "computed": "True",
+      "expected": "True",
       "passed": true,
-      "tolerance": 0.0,
-      "source": "\u0394tr_M(q) is symbolic-rational; Taylor coefficients extracted as exact rationals"
+      "source": "sympy `is_rational_function(q)` on tr_M(β_n) − tr_M(β_p) as loaded from habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "taylor_coefficients_are_exact_rationals",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "tolerance": 0,
+      "source": "10 of 10 ε-coefficients are sympy Rational: ε^0=0, ε^1=-5/4, ε^2=-11/8, ε^3=-23/8, ε^4=-1/2, ε^5=-15/16, ε^6=17/32, ε^7=-13/32"
+    },
+    {
+      "name": "taylor_series_reproduces_delta_tr_at_q0",
+      "computed": "1.13613257691e-10",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "Σ_{n<10} c_n·ε₀ⁿ = -0.158016004455104 vs direct Δtr_M(q₀) = -0.158016004341491 at ε₀ = 0.1099785828; gate 1e-9 is the O(ε₀¹⁰) ≈ 2.6e-10 truncation the series is cut at, not a chosen band"
     }
   ],
   "allPassed": true,
-  "durationMs": 1439,
+  "durationMs": 582,
   "computation": "qbeta-habiro-taylor-investigation",
   "scriptFile": "qbeta_habiro_taylor_investigation.py",
-  "scriptHash": "ed81d6293a6b",
-  "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
+  "scriptHash": "df3d2aee1b0d",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,50 +47,57 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
   },
-  "description": "Habiro Taylor expansion of the exact Q_\u03b2 expression in h = q - q\u207b\u00b9 basis at q=1. Tests whether the Q_\u03b2 c_k are uniquely determined Habiro Taylor coefficients of a substrate-canonical Q_\u03b2 formula consuming Habiro-witness-cited tr_M polynomials. If yes, closes the c_k flip-flop saga the same way PR #1511 closed the \u03b1_EM saga.",
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_habiro_taylor_investigation.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_habiro_taylor_investigation.py"
+  },
+  "description": "Habiro Taylor expansion of the exact Q_β expression in h = q - q⁻¹ basis at q=1. Tests whether the Q_β c_k are uniquely determined Habiro Taylor coefficients of a substrate-canonical Q_β formula consuming Habiro-witness-cited tr_M polynomials. If yes, closes the c_k flip-flop saga the same way PR #1511 closed the α_EM saga.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "inputs": {
-      "tr_M_proton_symbolic_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
-      "tr_M_neutron_symbolic_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
+      "tr_M_proton_symbolic_in_q": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
+      "tr_M_neutron_symbolic_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
       "Q_codata_MeV": "0.78233341",
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
     },
     "delta_tr_M_taylor_at_q_eq_1": {
-      "basis": "\u03b5 = q - 1",
+      "basis": "ε = q - 1",
       "coefficients": {
         "eps^0": "0",
         "eps^1": "-5/4",
-        "eps^2": "-3/8",
-        "eps^3": "-1/16",
-        "eps^4": "5/32",
-        "eps^5": "-17/64",
-        "eps^6": "25/64",
-        "eps^7": "-135/256"
+        "eps^2": "-11/8",
+        "eps^3": "-23/8",
+        "eps^4": "-1/2",
+        "eps^5": "-15/16",
+        "eps^6": "17/32",
+        "eps^7": "-13/32"
       },
-      "note": "These are the substrate-exact Taylor coefficients of \u0394tr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_\u03b2 c_k will inherit from these via the (yet-undefined) categorical formula Q_\u03b2 = m_e \u00d7 f(\u0394tr_M, q)."
+      "note": "These are the substrate-exact Taylor coefficients of Δtr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_β c_k will inherit from these via the (yet-undefined) categorical formula Q_β = m_e × f(Δtr_M, q)."
     },
     "numerical_sanity_at_q0": {
-      "tr_M_proton_at_q0": "1.06530614425445",
-      "tr_M_neutron_at_q0": "0.9232332299116371",
-      "delta_tr_M_at_q0": "-0.14207291434281288"
+      "tr_M_proton_at_q0": "1.1457596924573008",
+      "tr_M_neutron_at_q0": "0.9877436881158096",
+      "delta_tr_M_at_q0": "-0.1580160043414912"
     },
     "gap_identified": {
-      "missing_categorical_formula": "Q_\u03b2 = m_e \u00d7 f(\u0394tr_M(q), q) for substrate-canonical f",
+      "missing_categorical_formula": "Q_β = m_e × f(Δtr_M(q), q) for substrate-canonical f",
       "current_form_A_misses_by_ppm": 1677,
       "current_form_A_consumes_delta_tr": false,
-      "parallel_to_alpha_em_thread": "PR #1511 (main) \u2014 there [2]_q \u00b7 (1-h\u00b2\u03b1) was the Habiro element; Q_\u03b2's analog is yet to be identified"
+      "parallel_to_alpha_em_thread": "PR #1511 (main) — there [2]_q · (1-h²α) was the Habiro element; Q_β's analog is yet to be identified"
     },
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "640903ed5f8137e42b5e2581b7bd3a80bc313755b9e923c1ff4b4746d55d468a",
-        "size_bytes": 12671,
-        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:55:54.718701+00:00"
+        "sha256": "d59c76efc7cdc5050df475ad92df9ce3c0370a38ba1268cb80b048ec3be1bd56",
+        "size_bytes": 23294,
+        "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
+        "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
+        "computedAt": "2026-08-26T14:43:07.168940+00:00"
       }
     ]
   },

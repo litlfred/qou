@@ -1,21 +1,42 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:09:31.269304+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T13:57:54.021522+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "spike_completed",
-      "computed": 1.0,
-      "expected": 1.0,
-      "passed": true
+      "name": "su_n_quantum_dimension_matches_minus_bracket_N",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "SU(N) channels",
+      "source": "Route A: δ = (v⁻¹−v)/z with v = q₀^{N/2}, z = √q₀−1/√q₀ — the point the engine evaluates at. Route B: −[N]_s = −(s^N−s^{−N})/(s−s^{−1}) at s = √q₀ — the defining rep's quantum dimension. Expected = the channel list rebuilt from range(2, N_max+1), so raising N_max tightens this. Guards the 2026-06-04 v-exponent fix (audit §2e)."
+    },
+    {
+      "name": "figure_eight_amphichiral_in_every_su_n_channel",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "SU(N) channels with |P − P_mirror| < 1e-8",
+      "source": "Route A: P(σ₁σ₂⁻¹σ₁σ₂⁻¹; SU(N), q₀). Route B: P of the mirror word σ₁⁻¹σ₂σ₁⁻¹σ₂. 4₁ is amphichiral, so agreement is a known property, not a restatement. Worst gap this run: 1.776e-15."
+    },
+    {
+      "name": "borromean_mirror_pair_has_zero_channel_split",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "max_N |P(proton) − P(neutron)| at SU(N)",
+      "source": "Route A: P((σ₁σ₂⁻¹)³; SU(N), q₀). Route B: P((σ₁⁻¹σ₂)³) — its mirror. Both close to the Borromean rings, which is amphichiral, so this engine returns no p/n split in ANY channel: the ratio column is 1.0 throughout and the Q_β back-solve has no input. Recorded so a later engine that does split the pair flips this rather than passing silently."
     }
   ],
   "allPassed": true,
-  "durationMs": 81,
+  "durationMs": 131,
   "computation": "homflypt-su-n-mass-tower",
   "scriptFile": "homflypt_su_n_mass_tower.py",
-  "scriptHash": "7bb40bbffe56",
+  "scriptHash": "aaf52ac27150",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -31,7 +52,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "9916510690677ea8"
   },
   "invocation": {
     "argv": [
@@ -88,8 +109,18 @@
       "4": 0.0,
       "5": 0.0,
       "6": 0.0
-    }
+    },
+    "channels_evaluated": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   },
+  "caveats": [
+    "The p/n mirror difference is identically zero at every N, so the 'multi-channel mass-split data' and the |ΔP| Q_β back-solve in the docstring produce nothing at all — the back-solve block prints no rows. Separately, the absolute normalisation is confirmed broken in this run: the 2-strand trefoil σ₁³ comes out 14%–44% away from Lickorish's P(3₁⁺; v, z) = 2v² − v⁴ + v²z² at the same (v, z), so no absolute value here is assertable and only δ and mirror pairs are."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

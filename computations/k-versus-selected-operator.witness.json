@@ -1,0 +1,195 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-31T19:25:34.855381+00:00",
+  "commitSha": "1994745b6a1fd0a7020c91c1a15046142c880eb4",
+  "assertions": [
+    {
+      "name": "K_at_A2_is_the_single_pn_letter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max diff 1.58e-17"
+    },
+    {
+      "name": "K_leaves_positive_sector_exactly_on_1_to_qc",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "q_c = 3.458099300032797192042069; q_0/q_c = 0.320979384"
+    },
+    {
+      "name": "K_is_never_in_the_positive_sector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[('D', 1), ('T', 3), ('He3', 3), ('He4', 3), ('Li6', 4)]"
+    },
+    {
+      "name": "x_star_is_not_proportional_to_K",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ratios [-9.640158, 0.290774]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 51,
+  "computation": "k-versus-selected-operator",
+  "scriptFile": "k_versus_selected_operator_probe.py",
+  "scriptHash": "19eecedc74c2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/k_versus_selected_operator_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/k_versus_selected_operator_probe.py"
+  },
+  "description": "EXPLORATORY (bean t7qv): asks, formally and with no physical input, whether the positive-sector LP's selected operator x* relates to the knot-convolution binding operator K. K is made exactly computable in the H_3-local model as K = M_P^-1 . atom (M_P = left multiplication by the nucleon product P, electrons excluded), and validates itself at A=2 by returning the single colour-weighted pn letter sigma_0 + D_PN.1. K(2H)'s ONLY negative NF coefficient is the gamma one and it IS D_PN, so positivity of K reduces to the sign of D_PN, which is settled in closed form: the numerator factors as (q-1)(q+1)(q^6-2q^5-5q^4-q^2+2q-1), the sextic has exactly one real root above 1 at q_c = 3.4580993000327971920, and D_PN < 0 precisely on 1 < q < q_c — which contains q_0 = 1.10998 by a factor of ~3.12. (An earlier draft claimed 'all q > 1'; false, corrected.) At A >= 3 K has 3-4 negative components at q_0. So the LP, whose feasible set is {x >= 0}, CANNOT return K; and x* is not even proportional to K on their shared support (ratios -9.640158 vs 0.290774 at A=2). STRUCTURAL READING: K and x* are complementary, not competing — K is the free-to-bound map and necessarily carries inverse-crossing (entanglement) content, x* is defined by excluding it. No fit; no B_AME; nothing wired.",
+  "data": {
+    "K_per_nucleus": [
+      {
+        "nucleus": "D",
+        "n_negative": 1,
+        "min_coeff": "-0.104458248",
+        "negative_components": [
+          "γ"
+        ],
+        "K": [
+          "-0.104458248",
+          "1.000000000",
+          "0.000000000",
+          "-0.000000000",
+          "0.000000000",
+          "-0.000000000"
+        ]
+      },
+      {
+        "nucleus": "T",
+        "n_negative": 3,
+        "min_coeff": "-0.420972131",
+        "negative_components": [
+          "γ",
+          "σ₀",
+          "L₋"
+        ],
+        "K": [
+          "-0.097870977",
+          "-0.073987831",
+          "0.053512115",
+          "0.087070240",
+          "-0.420972131",
+          "1.055079353"
+        ]
+      },
+      {
+        "nucleus": "He3",
+        "n_negative": 3,
+        "min_coeff": "-0.312086712",
+        "negative_components": [
+          "γ",
+          "σ₀",
+          "L₋"
+        ],
+        "K": [
+          "-0.112322433",
+          "-0.087752574",
+          "0.017245975",
+          "0.203380539",
+          "-0.312086712",
+          "1.057935963"
+        ]
+      },
+      {
+        "nucleus": "He4",
+        "n_negative": 3,
+        "min_coeff": "-0.305505824",
+        "negative_components": [
+          "σ₀",
+          "L₊",
+          "e⁻"
+        ],
+        "K": [
+          "1.145852918",
+          "-0.113388417",
+          "0.445089816",
+          "-0.133570109",
+          "0.073528463",
+          "-0.305505824"
+        ]
+      },
+      {
+        "nucleus": "Li6",
+        "n_negative": 4,
+        "min_coeff": "-0.462317814",
+        "negative_components": [
+          "γ",
+          "σ₁",
+          "L₊",
+          "e⁻"
+        ],
+        "K": [
+          "-0.462317814",
+          "1.149088483",
+          "-0.064742999",
+          "-0.075689390",
+          "0.453318131",
+          "-0.113887116"
+        ]
+      }
+    ],
+    "dpn_numerator_factored": "(q - 1)*(q + 1)*(q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1)",
+    "dpn_sextic": "q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1",
+    "q_c": "3.458099300032797192042069",
+    "q0_over_qc": "0.320979383889",
+    "A2_comparison": {
+      "x_star": [
+        "1.006993996",
+        "0.290773817",
+        "0.000000000",
+        "0.000000000",
+        "0.000000000",
+        "0.192275279"
+      ],
+      "K": [
+        "-0.104458248",
+        "1.000000000",
+        "0.000000000",
+        "-0.000000000",
+        "0.000000000",
+        "-0.000000000"
+      ],
+      "shared_support": [
+        "γ",
+        "σ₀"
+      ],
+      "ratios": [
+        "-9.640157838",
+        "0.290773817"
+      ]
+    }
+  },
+  "caveats": [
+    "CORRECTION carried in this witness: D_PN(q) is NOT negative for all q > 1. The sextic factor has a real root at q_c = 3.4580993000327971920 and D_PN > 0 beyond it. The exact statement is the interval 1 < q < q_c, which contains q_0 and the whole range swept in positive_sector_q_stability_probe.",
+    "INTERPRETATION, NOT DERIVED: the entire negative content of K(2H) is D_PN, the p-n interface offset, and the deuteron is the p-n bound system. Nothing here derives that correspondence and no physical quantity enters the computation. Recorded only so a later reader finds it labelled rather than rediscovering it as a lead.",
+    "K is computed in the H_3-LOCAL model of pyhecke.atom, where inter-nucleon crossings act on generator 0 of the same H_3. That is a different model from the (H_3)^(x)A tensor space the earlier probes' LP runs on; the A=2 comparison is made in the H_3-local model on both sides so it is like-for-like. Electrons are excluded throughout as the EM channel."
+  ]
+}

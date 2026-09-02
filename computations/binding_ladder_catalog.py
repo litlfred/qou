@@ -62,6 +62,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as m_e
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
@@ -75,14 +76,20 @@ def qpoch(n):
     return out
 
 
-# Knot Vols
+# Knot Vols — read from the canonical registry at the working precision.
+#
+# EXCISED 2026-08-30 (bean qou-ckbv). These were five hand-typed f64-grade
+# literals. Checked against SnapPy they were correct to 9, 6, 10, 15 and
+# **1** digits: `"7_4": "5.01376240499"` is 5.1379412018... in truth, wrong
+# at the second significant figure, and it feeds a binding ladder.
+#
+# The "4_1" row had already been converted, with the note "was 20-dps string;
+# now exact at working precision". The other five were left behind by that
+# pass; this finishes it. `knot_volumes` had no accessor for 7_4 until now,
+# which is why this table hand-typed one.
 VOLS = {
-    "6_2":     mp.mpf("4.40083251397820"),
-    "8_11":    mp.mpf("8.28631808635811"),
-    "L6a4":    mp.mpf("7.32772475300860"),  # = 8G
-    "5_2":     mp.mpf("2.82812208833078"),
-    "7_4":     mp.mpf("5.01376240499"),
-    "4_1":     vol_4_1_at(mp.mp.dps),  # was 20-dps string; now exact at working precision
+    name: vol_at(name, mp.mp.dps)
+    for name in ("6_2", "8_11", "L6a4", "5_2", "7_4", "4_1")
 }
 
 

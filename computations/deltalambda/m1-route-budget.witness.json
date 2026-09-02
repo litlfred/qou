@@ -1,0 +1,58 @@
+{
+ "probe": "m1_route_budget",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "inputs": {
+  "infl": "1.0282336",
+  "w_same": "0.5137602983",
+  "S_opp": "0.2811487478",
+  "B_opp": "0.6644560103",
+  "n_sampler": 800,
+  "n_opp": 800
+ },
+ "S_same": "0.3363043267",
+ "sum": "0.6174530745",
+ "bound_total": "1.000760337",
+ "checks": [
+  {
+   "name": "ACCOUNTING: the two halves reproduce the proved limit N/P -> 0.6605",
+   "pass": true,
+   "detail": "S_same 0.3363 + S_opp 0.28115 = 0.617453 against 0.6605, short by 6.52%. S_opp is still RISING at n = 800, so the sum is a lower bound on the limit and should sit slightly under -- overshooting would be the failure. The two halves and the target come from three different routes, so this is a real cross-check on the decomposition."
+  },
+  {
+   "name": "BOUNDS: at this precision the total is INDISTINGUISHABLE from 1",
+   "pass": true,
+   "detail": "granting S_same its measured value for free -- which is NOT a bound, and is generous -- and adding the only deterministic opposite-sign bound B_opp = 0.66446 +- 0.0042, the total is 1.00076 with a range of [0.991351, 1.01189] once infl's seed refits (['1.025', '1.012', '1.05']) and B_opp's seed spread are carried through. That range STRADDLES 1. So the honest verdict is not 'closes' and not 'misses' -- the bounds land exactly on the boundary and the precision in hand cannot separate them."
+  },
+  {
+   "name": "...and the tie-breaker is against us: B_opp is still RISING",
+   "pass": true,
+   "detail": "B_opp across the grid = ['0.6369', '0.6463', '0.6351', '0.6535', '0.658', '0.6645'] at n = [24, 40, 100, 200, 400, 800]. Landing on the boundary with the leading term still growing is not a near miss that a better constant fixes -- extrapolating the rise puts the total above 1. The opposite-sign half needs an averaging argument of its own; the same-sign half got one from the telescoping density reading, and that reading provably does not apply here."
+  },
+  {
+   "name": "DECOMPOSITION: Ehat FALLS while w_opp RISES -- the rise is w_opp's",
+   "pass": true,
+   "detail": "Ehat = E[D(0)/g | opp] = ['0.69527', '0.69006', '0.68453', '0.68326'] (monotonically FALLING) and w_opp = ['0.45674', '0.47348', '0.48062', '0.48624'] (monotonically RISING) at n = [100, 200, 400, 800]. So the deterministic bound is not degrading because the per-edge estimate is getting worse -- it is improving -- but because opposite-sign edges keep taking a larger share of the omega-weight. Both monotonicities are solid; neither LIMIT is (below)."
+  },
+  {
+   "name": "...but NEITHER factor's limit is determined at this precision",
+   "pass": true,
+   "detail": "Ehat's second difference is 0.00426 against a seed-propagated noise of 0.013 -- 0.329 sigma, far under the 3-sigma bar. The same 3-point fit that is quotable for infl is not quotable here, and saying so is the point: the fit would give 0.68288 and it means nothing."
+  },
+  {
+   "name": "THE ROUTE REDUCES TO ONE CONSTANT: the limiting w_opp",
+   "pass": true,
+   "detail": "closure needs 2*w_opp*Ehat < 1 - S_same = 0.6637, i.e. with Ehat at its current 0.68326, w_opp < 0.48568. Measured w_opp at n = 800 is 0.48624 -- already at that line, and rising (['0.4567', '0.4735', '0.4806', '0.4862']). So the whole deterministic-bound route now turns on a SINGLE limiting constant: the share of omega-weight carried by opposite-sign content pairs. That is a far sharper target than 'effective limit-shape estimates', and unlike the rest of this it may be computable in closed form from the limiting edge measure rather than measured."
+  },
+  {
+   "name": "MEASURED: B_opp reaches the closure threshold around n = 800",
+   "pass": true,
+   "detail": "n=24: 0.636852<thr by 26.4 sigma; n=40: 0.646345<thr by 30.6 sigma; n=100: 0.635115<thr by 42.0 sigma; n=200: 0.653467<thr by 1.04 sigma; n=400: 0.657991<thr by 1.83 sigma; n=800: 0.664456>thr by 0.183 sigma. Threshold 0.663696. It sits 1.8 sigma UNDER at n = 400 and 0.2 sigma OVER at n = 800 -- i.e. it has reached the line and is indistinguishable from it, not clearly past it."
+  }
+ ],
+ "passed": 7,
+ "total": 7,
+ "ms": 2
+}

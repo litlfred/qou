@@ -1,0 +1,142 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-01T03:25:06.009074+00:00",
+  "commitSha": "51429a1445dc1d380381354f7c33ea0a84c1d213",
+  "assertions": [
+    {
+      "name": "A1_betas_are_derived_from_quark_content",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "nucleon_gen_chains yields (0.0, 0.5, 0.5) and (0.5, 0.5, 1.0), matching the measured values"
+    },
+    {
+      "name": "A2_map_exact_for_like_flavours_pn_colour_weighted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "pp=0.0, nn=1.0 exact; pn=0.499656072298 differs from 1/2 by -3.44e-04; switching the quark ud crossings shifts transitions by {'proton': '-1.3e-04', 'neutron': '+5.6e-05'}"
+    },
+    {
+      "name": "A3_ordering_gives_a_small_finite_set",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "3 orderings each; transitions {(0.0, 0.5, 0.5): 0.47718463679554995, (0.5, 0.0, 0.5): 0.47718463679554995, (0.5, 0.5, 0.0): None, (0.5, 0.5, 1.0): 0.56984029099805, (0.5, 1.0, 0.5): 0.4338658968886499, (1.0, 0.5, 0.5): 0.4338658968886499}"
+    },
+    {
+      "name": "A4_no_ordering_straddles_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 of 6 windows contain h(q_0); all lie in [0.4339, 0.5698]"
+    },
+    {
+      "name": "A5_atom_has_bonds_the_lp_omitted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "extra gen-0 crossings [1, 3, 6] = C(A,2) [1, 3, 6]"
+    },
+    {
+      "name": "A6_reproduces_previous_transitions",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "proton d = 4.5e-13, neutron d = 5.0e-14"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "betas_are_forced_by_quark_content_probe",
+  "scriptFile": "betas_are_forced_by_quark_content_probe.py",
+  "scriptHash": "10464c79b33f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/betas_are_forced_by_quark_content_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/betas_are_forced_by_quark_content_probe.py"
+  },
+  "description": "Answers whether the crossing-branch parameters beta are forced by the quark content: they are. pyhecke.atom.nucleon_gen_chains types each of the three quark-pair crossings by flavour — uu -> sigma (beta 0), dd -> sigma^-1 (beta 1), ud -> average (beta 1/2) — with pairs (0,1),(0,2) on generator 0 and (1,2) on generator 1, yielding proton (0,1/2,1/2) and neutron (1/2,1/2,1) with zero freedom. The same template map types the inter-nucleon crossings (pp -> 0, nn -> 1, pn -> 1/2), so one rule applies at two scales. The only residual freedom is the quark ordering, which picks which pair sits on generator 1; it gives four classes with transitions 0.477184637, NONE, 0.569840291 and 0.433865897, and NO proton/neutron pairing straddles q_0 — every window lies in [0.4339, 0.5698] while h(q_0) = 0.20906. The last apparent dial is therefore closed. The substantive finding is a scope error it exposes: atom_gen_chains carries C(A,2) inter-nucleon crossings (1, 3, 6 extra on generator 0 for 2H, 3H, 4He) plus Z electron crossings, and the aggregation LP of nfold_ip_coupling_duality_gap_probe used only v_p and v_n, with no inter-nucleon term at all.",
+  "data": {
+    "rule": {
+      "uu": "sigma (beta 0)",
+      "dd": "sigma^-1 (beta 1)",
+      "ud": "average (beta 1/2)",
+      "pairs": "(0,1)->gen0, (0,2)->gen0, (1,2)->gen1"
+    },
+    "derived_betas": {
+      "proton": [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      "neutron": [
+        "1/2",
+        "1/2",
+        "1"
+      ]
+    },
+    "inter_nucleon_betas": {
+      "pp": "0",
+      "nn": "1",
+      "pn": "1/2"
+    },
+    "ordering_classes": {
+      "proton:(0.5, 0.5, 0.0)": "NONE",
+      "proton:(0.5, 0.0, 0.5)": "0.477184637",
+      "proton:(0.0, 0.5, 0.5)": "0.477184637",
+      "neutron:(1.0, 0.5, 0.5)": "0.433865897",
+      "neutron:(0.5, 1.0, 0.5)": "0.433865897",
+      "neutron:(0.5, 0.5, 1.0)": "0.569840291"
+    },
+    "window_span": {
+      "lo": "0.433866",
+      "hi": "0.569840"
+    },
+    "h_q0": "0.209060298796",
+    "atom_extra_crossings": {
+      "2H": {
+        "gen0": 1,
+        "gen1": 1,
+        "C(A,2)": 1
+      },
+      "3H": {
+        "gen0": 3,
+        "gen1": 1,
+        "C(A,2)": 3
+      },
+      "4He": {
+        "gen0": 6,
+        "gen1": 2,
+        "C(A,2)": 6
+      }
+    }
+  },
+  "caveats": [
+    "SCOPE BOUND ON THE EARLIER BINDING RESULTS, not a retraction. The dual-vertex hysteresis, the rank-one dual and the two transition points are correct statements about the per-nucleon LP that was actually built. What A5 establishes is that this LP omits the C(A,2) inter-nucleon bonds and the Z electron crossings the corpus's own atom_gen_chains includes, so 'binding is zero at q_0' has only ever been demonstrated for a nucleus with its bonds left out.",
+    "The flavour rule itself is a convention in one respect: it fixes u <-> forward and d <-> inverse rather than the reverse. Swapping that orientation maps proton (0,1/2,1/2) -> (1,1/2,1/2) and neutron (1/2,1/2,1) -> (1/2,1/2,0), i.e. exactly onto the two alternative ordering classes already enumerated in A3/A4 — so the swap changes no conclusion here: those classes are covered and none of them straddles q_0 either.",
+    "A container reset mid-investigation dropped this session onto a different branch (claude/omegaorder-exponent-group), whose pyhecke gives a different transition for the same betas (0.679 rather than 0.477). Everything reported here is computed on claude/mt7r-archimedean-eval-2026-08-24, and A6 re-verifies the previous probe's two transition values to 1e-9 as a guard."
+  ]
+}

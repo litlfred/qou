@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T04:28:55Z
+updated_at: 2026-08-31T21:20:07Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -448,3 +448,423 @@ carry the rest. The `A = 2` Hopf carrier is unaffected: it is **not** Brunnian
 (`lk = 1`, `n₊ = 2`, `n₋ = 0`), the boundary case where `lk = z = 1`.
 
 File is now 20 declarations; probe 11/11.
+
+
+## GS tower / jet order — the degree index is not body order past 3He (PR #6393, 2026-08-31)
+
+The 'full GS tower, not just degree 0' step. Two probes, one finding.
+
+**1. `gs_tower_jet_degree_body_order_probe`** — `lem:bond-order-eq-jet-degree`
+reads the jet degree index as BODY order ('the n-nucleon cluster sub-word at jet
+vertical degree n'). Measured on the filtration's own graded dimension
+[A]_q! = sum_l M(A,l) q^l, that reading is inconsistent from A=4. Two exact facts,
+run as gates on A=2..8: deg [A]_q! = C(A,2), and every coefficient on 0..C(A,2) is
+strictly positive. So there is a non-zero graded piece at every degree up to
+C(A,2) — read as body order, non-zero n-body clusters for n up to C(A,2) among
+only A nucleons. C(A,2) > A exactly when A > 3, so it holds at D and T/3He and
+breaks first at 4He — where this arc's closures wall and where mu_4 = -4.591 sits.
+Weight in the impossible degrees at the proton pin: 20.85 % at A=4, 49.49 % at
+A=5, 73.98 % at A=6, 96.12 % at A=8. Not a tail effect.
+
+The reading that survives is the block's own LaTeX LABEL — BOND order. C(A,2) is
+the complete-graph bond count. Not a rescue by relabelling: CoordinationSaturation
+caps rho_A <= C(A,2) from the coordination side with no reference to the jet
+filtration. Same number, reached twice.
+
+**2. `graded_reference_simplex_basis_span_probe`** — the coordination basis
+C(A,2), C(A,3), C(A,4) that #4316/#4320 decomposes in cannot span rho_grad.
+Expanding rho_grad ALONE (no AME, no rho_strong, so not a fit) and pinning on
+A=2,3,4: exact at those three by construction, then 0.5639 at A=5, 0.1901 at A=6,
+0.007037 at A=8 — a factor 142 short. Cross-check run as a gate: the solve returns
+g_4 = 8.371447988, reproducing the '+8.37' helium_four_body_cluster_probe quotes
+as the graded reference's own 4-body simplex coefficient. rho_grad grows
+factorially (ratios 3.34, 4.71, 6.23, 7.91, 9.78, 11.86) while the basis is
+polynomial of degree <= 4. The basis fails exactly where probe 1 shows the
+coefficient mass goes.
+
+**NOT claimed** (recorded so it is not written down later): bodyorder_eq_jet_total
+stays true — body_eq_graded is a hypothesis FIELD composed with total_eq, a
+legitimate 3b-cond conditional, not a self-assuming projection; what is measured
+is that its premise cannot be instantiated past 3He. NOT that #4316/#4320 is a fit
+— a 3-point solve for 3 coefficients has no freedom to fit with; the charge is
+against the basis's SPAN. NOT that the sign pattern is wrong — mu_2=0, mu_3>0,
+mu_4<0 is correct arithmetic at its three points; what is added is that the signs
+inherit the same restriction to A<=4 as the values, so mu_4<0 is about 4He and not
+about 4-body clusters generally. Nothing about rho_strong.
+
+**Corpus-grep note.** My working thesis entering this — 'every live binding
+producer computes only the n=2 graded piece, nothing evaluates the tower' — was
+WRONG and was caught before being written. 18 producers reference rho_grad and the
+deltalambda family already decomposes the residual into mu_2/mu_3/mu_4. Fifth
+near-miss of this arc; the four earlier ones landed.
+
+Scope (a) throughout. Nothing wired.
+
+
+### Third probe (same PR #6393): 'a PURE >=3-body residual' is 1 - 1 = 0
+
+`mu2_vanishing_is_a_normalisation_identity_probe`.
+deltalambda_kappa_interface_residual_simplex_probe sets mu2 = M(2) and
+residual_pure_ge3body = abs(mu2) < 1e-40, emitting 'Residual is a PURE >=3-body
+object: NO edge/2-body component' into its witness. Both A=2 inputs are
+self-ratios: rho_grad(2) = [2]_q!/[2]_q! is an empty product returning 1 for ANY
+q, and rho_strong(2) = B(2H)/B(2H) = 1 is a literal whose own comment says it is
+'the deuteron self-reference ... NOT an independent AME datum'. So mu2 = 1-1 = 0
+identically and the flag is True unconditionally.
+
+Demonstrated over 30 combinations (six moduli q = 0.5..2.0, five rho_strong
+scalings 0.25x..4x): mu2 exactly 0 at every point, while mu3 ranges
+-6.0468..13.5012 and mu4 ranges -85.8784..3.16385.
+
+THE DISTINCTION, and it is the whole point: the kappa refutation next to it is
+SOUND -- the #4316 model predicts M(2) = s with s > 0 (fit gives 0.4708), and a
+model that CONTRADICTS an identity is refuted by it, so kappa = t/s is ill-posed.
+What is NOT supported is reading the same identity as 'a PURE >=3-body residual',
+a structural claim about where binding lives. Refuting a model that contradicts
+an identity uses the identity correctly; concluding a physical ABSENCE from an
+identity does not.
+
+NOT said: not that mu2 is non-zero or that the residual HAS a 2-body component
+(the measurement is silent, and an uninformative statistic is not evidence for
+the opposite conclusion either); not that #4316/#4320 is a fit; nothing about
+mu3 = +0.4708 or mu4 = -4.591, which the transcription reproduces and which is
+what validates it.
+
+
+### Fourth probe (same PR #6393): the log channel does NOT rescue the basis — my own conjecture, refuted
+
+`log_channel_does_not_rescue_simplex_basis_probe`. Conjecture: rho_grad is a
+product, so its additive object is the log, and log[k]_q ~ k log q would give
+log rho_grad ~ C(A,2) log q — the bond count a THIRD time, aligned with the log
+channel the binding producers already use.
+
+REFUTED (i): at the proton pin log q0 = 0.10434, so k*log q does not reach 1
+until k = 9.58, and that is optimistic. Measured, log[k]_q is nearer the NAIVE
+log k all the way to k = 20; k*log q takes over only between 20 and 50. So
+log rho_grad/(C(A,2) log q) is 4.40 at A=4 and DECLINES to 3.34 at A=12.
+
+REFUTED (ii): in the simplex basis, log pred/true goes 0.3741 (A=5), -1.0401
+(A=6), -6.78 (A=8), -33.05 (A=12) — sign inversion — against linear's collapse
+to 4.53e-7. Neither spans it.
+
+BY-PRODUCT: the log solve also returns g2 = 0 EXACTLY (log rho_grad(2) = log 1 =
+0), so the mu_2 = 0 normalisation identity is CHANNEL-INDEPENDENT — it survives
+any monotone reparametrisation fixing 1 -> 0. Independent confirmation of the
+third probe.
+
+WHAT rho_grad IS at nuclear A: rho/(A!/2) runs 1.31 (A=4) to 39.5 (A=12) while
+rho/q^C(A,2) runs 8.42 to 9.67e6. Far nearer the plain factorial (permutation
+count, q->1 limit) than the asymptotic. At nuclear A the q-deformation is
+SUBLEADING and the leading content is the bare permutation count. This does not
+disturb the tower probe (height and positivity are exact combinatorial facts
+independent of q) but it does mean the C(A,2) coincidence is about DEGREE
+STRUCTURE, not magnitudes.
+
+No replacement basis. After four probes the constructive question — what basis
+carries a factorially-growing graded reference — is OPEN, and the two obvious
+candidates (polynomial-in-A, and its log) are both measured to fail.
+
+
+### Cross-PR synthesis with #6394 (2026-08-31)
+
+Sibling #6394 (`qou-23dn`/`qou-gcmn`/`qou-brng`) proves a scope-(b) exclusion:
+the chain binding has the exact closed form B(A) = E0*S_off(A0)*g^(A-A0)*(1-f^(A-1))
+(four points at 1e-30, two constants), and NO value of g makes it extensive —
+bounded if g<=1, at least geometric if g>1. Its f_pp reproduces z_D to 2.8e-31.
+
+That and PR #6393's probe 2 are the same shape-mismatch from opposite ends:
+framework objects are MULTIPLICATIVE (geometric g^A; factorial [A]_q!) while the
+targets are ADDITIVE (extensive cA; the polynomial coordination basis C(A,k)).
+
+SCOPE, settled from binding_channel_taxonomy_probe (already on main, same bean —
+I raised it as an open question on #6394 and then found the corpus had it):
+
+  * #6394's exclusion scopes to the MULTIPLICATIVE trace-difference channel
+    (taxonomy channel 1, what binding_canonical ships) — neither extensive nor
+    additive over bonds, for any bond set.
+  * The LOG / per-bond-energy channels (3, 4, 5) ARE extensive and additive over
+    bonds by measurement. They are NOT covered by that exclusion. Their failure
+    is separate: a 2-3x magnitude shortfall against AME (at 4He, 24 % pairwise
+    share and a 21.4 MeV many-body residual).
+  * So: trace-difference family excluded on EXTENSIVITY; log family excluded on
+    MAGNITUDE; neither exclusion reaches the other's channel. Recorded on #6394
+    so a later reader does not take the (b) wider than its invariant supports.
+
+Probe 4's log-channel refutation does not conflict: it kills taking the log of a
+[A]_q!-shaped object at nuclear A (pre-asymptotic), not the log of a geometric
+one, whose log IS exactly linear.
+
+
+## The <g,g> tower walk (PR #6396, 2026-08-31) — rank is Catalan, pairing factors through Temperley-Lieb
+
+TWO probes, answering 'where does the binding error come in' from both ends.
+
+### 1. mirror_pair_em_isolation_probe — the error is NOT electromagnetic
+3H/3He are mirror nuclei; in B_sym = alpha[(Z-1)L_pp + L_pn + (N-1)L_nn] the L_pn
+terms cancel identically and so does the flavour split delta (it enters only
+d_pn), leaving Delta_model = alpha*ln(z(1-h)/(z-h)) -- q0 and the CAL-1 scale
+ONLY, no EM input.
+  Delta_exp (AME)  = 0.76375488 MeV
+  Delta_model      = 0.76532019 MeV     ratio 1.002049 -> 0.205 %
+Same fact from the other side: deficits 2.341727 (3H) vs 2.343293 (3He), equal to
+0.07 % -- the model's error is ISOSPIN-BLIND.
+Writhe normalisation is load-bearing (without it 2.287x) and Lean-proved unique
+up to sign, so it cannot have been tuned. It also DISCRIMINATES: B_qCLT_fac gives
+0.668x on the same pair.
+=> EM right to 0.205 %; the whole residual is STRONG. Weak is not probed by
+B(A,Z) at all.
+
+### 2. gg_gram_tower_walk_probe — where the strong channel goes missing
+The recorded scope-(a) negative (deuteron_real_sdp at H_6) used the WEDDERBURN
+BLOCK basis, where G_lm = tr_M(P_l P_m) = delta_lm tr_M(P_l) is DIAGONAL BY
+CONSTRUCTION (orthogonal central idempotents). Its degeneracy is a property of
+the basis, not of <g,g>; the one non-zero result was the AME value fed in as the
+constraint. NOT overturned -- re-scoped.
+
+On the GB normal-form basis, G_vw = tr_M(T_v T_w), calibrated to 4.94e-51
+against pyhecke.gram_matrix_mp at n=3:
+  n   dim   rank  corank   C_n
+  2     2      2       0     2
+  3     6      5       1     5
+  4    24     14      10    14
+  5   120     42      78    42
+RANK = CATALAN NUMBER = dim TL_n, gated. The Markov trace form's radical is
+ker(H_n -> TL_n): <g,g> FACTORS THROUGH TEMPERLEY-LIEB. The q-antisymmetriser
+(-1/q)^len(w) -- a JET-DEGREE-indexed vector -- lies in the radical at every
+level (projection norm 1.0).
+
+Atom at n = 3A, visible fraction C_{3A}/(3A)!: A=1 83.3 %, A=2 18.3 %,
+A=3 1.34 %, A=4 0.043 %. PREDICTION from the gated rank law, not measured past
+n=5.
+
+DOES NOT explain the deficit quantitatively: if it scaled with the invisible
+fraction, 4He would miss by ~2300x; it misses by 3.26. What IS established is
+structural -- an SDP on <g,g> cannot select among Hecke elements differing only
+in the radical, which is most of them.
+
+CONVERGENCE with qou-unqc / #6395: both say the licensing object cannot be the
+Markov trace itself -- there from KMS/traciality, here from the TL radical.
+
+
+## Convention D IS the Temperley-Lieb specialisation (PR #6397, 2026-08-31)
+
+Follows the tower walk (#6396: rank <g,g> = C_n = dim TL_n at the canonical z).
+Two proposed routes out, both measured.
+
+BASIS CANNOT BE THE CAUSE, by pure algebra: rank of a bilinear form is
+basis-independent, and a surjection from a larger algebra induces the identical
+form on the quotient. So 'do the GB in an algebra projecting onto H_n' cannot
+move the rank. Demonstrated: rank(P^T G P) = rank(G) = 14 at n=4.
+
+z_D = q^3/(q^2+1) = q^2 * [1/(q + 1/q)] (identity checked to 1.3e-51). Sweeping
+z = q^a/(q+1/q) at n=3,4:
+  a     -2  -1   0  0.5   1  1.5   2  2.5   3
+  n=3    6   6   6    6   6    6   5    6   6
+  n=4   24  24  24   24  24   24  14   24  24
+ONLY a=2 degenerates -- an ISOLATED point flanked by full rank at 1.5 and 2.5.
+
+STRUCTURAL IN q: z=q^3/(q^2+1) gives rank (5,14)=(C_3,C_4) at q = 0.8, 1.01,
+1.10998, 1.5, 2.0, 3.0 -- every value tested.
+
+=> z_D is not NEAR a TL point, it IS the TL specialisation, exactly, for all q.
+Choosing convention D is mathematically the same act as choosing to make the
+Frobenius pairing factor through Temperley-Lieb and discard n! - C_n of the
+algebra.
+
+ANSWERS. Q1 (pairing not factoring through TL): YES, every z but this one point.
+Q2 (fix = v=sqrt(q) with GB upstairs): NO on both halves -- GB by
+basis-independence, and sqrt(q) does no work either since half-integer exponents
+AND every integer but 2 are full rank. z_C is fine because it is not a=2, not
+because it has a sqrt(q). I reported the misleading 'sqrt(q) is the
+non-degenerate one' form before running the sweep; corrected in the probe.
+
+TENSION FOR THE OWNER: convention D canonical (ruling 2026-08-15) and convention
+D = the TL specialisation were decided on different grounds and never weighed
+together. Not a claim the ruling is wrong; a claim that an <g,g>/SDP binding
+derivation under D is asking a pairing to distinguish what it provably cannot see.
+
+NOT ESTABLISHED: the symbolic det G(z,q) factorisation TIMED OUT at 600 s, so the
+q-independence is EMPIRICAL over six q values, not proved. Which lambda-blocks
+die was not computed (rank=C_n implies the >=3-row level-2 Wenzl reading but the
+weights were not checked). And NOT that a full-rank pairing would source the
+binding.
+
+GIT NOTE: the merge agent checked out its branch under this session's shell
+mid-command and my probe commit briefly landed on PR #6395's branch. Caught via
+reflog, moved to its own branch, agent's branch restored to origin. Nothing lost
+either way. Shared-worktree hazard when dispatching a merge agent while working.
+
+
+## The two obstructions are INDEPENDENT, and the KMS one costs the link invariant (PR #6399, 2026-08-31)
+
+Explores the convergence of #6395 (KMS: state must be non-tracial) and #6397
+(rank: pairing must be off z_D).
+
+1. NON-TRACIALITY DOES NOT RESTORE RANK. Rank of <x,y> = tr_M(h.xy) at z_D:
+     h = 1 (plain)                   5   14
+     h = T_1 (non-central, invert.)  5   14
+     h = T_1 + 2                     5   14
+   Identical. For invertible h, x -> hx is a BIJECTION, so
+   rad(tr_M(h x y)) = h^-1 . rad(tr_M(xy)) -- same dimension. A unit permutes
+   the algebra; it cannot shrink a radical, exactly as a change of basis cannot
+   change a rank. T_1's invertibility checked (T_1(T_1-h)=1) not asserted.
+   => the two requirements are ORTHOGONAL. Changing z fixes rank but the Markov
+   trace at ANY z is still a TRACE (nothing for KMS); a non-tracial weight fixes
+   KMS but with invertible h does nothing for rank. BOTH knobs must move.
+
+2. AND (2) IS NOT FREE: MARKOV MOVE I IS TRACIALITY. Markov's theorem needs
+   (I) conjugation invariance; for a linear functional phi(g b g^-1) = phi(b)
+   holds EXACTLY WHEN phi(ab) = phi(ba). Same condition, not three related ones.
+   Measured on H_3, all 36 ordered pairs:
+     h = 1    max |phi(ab)-phi(ba)| = 0.0 EXACTLY      move I holds
+     h = T_1  max |phi(ab)-phi(ba)| = 0.75270211       move I FAILS
+   witness a=(1,0,2), b=(1,2,0); the violation is order the Gram's own singular
+   values (0.7527 is its four-fold repeated SV).
+
+TRILEMMA:
+  (1) keep tr_M tracial -> KMS only at beta=0, alpha*ln(ratio) unlicensed;
+  (2) go non-tracial -> finite-temperature dynamics but MARKOV I FAILS, so it is
+      not a link invariant and not the framework's trace in any sense;
+  (3) either way the rank problem needs z off the isolated TL point.
+(2) is not a cost the framework can obviously pay -- the Jones polynomial, tr_M
+as a link invariant, and the braid-closure picture of nucleons all rest on
+conjugation invariance.
+
+NOT ESTABLISHED: the non-invertible h case (x -> hx not surjective, so it can
+only make the radical LARGER -- not measured); no candidate (h,z) pair proposed;
+no SDP run, no binding energy computed. And the trilemma's leg (2) is a
+DEFINITIONAL identity -- the measurement demonstrates it, the definition
+establishes it.
+
+
+**2026-08-31 — #6405: widening the isotope table is near-worthless; I proposed it**
+
+Widened 5 → 12 isotopes (³H … ¹⁶O). **Zero shapes changed verdict**; per-α
+window 1.29 % tighter ([11.1145, 17.4638] → [11.1145, 17.2392]). Every
+exclusion at 12 was already available at A ≤ 7. Correcting my own claim that
+this was "the highest-value cheap move" — it was cheap and nearly
+information-free.
+
+What it did establish: the discriminator among 8 shapes is **not** growth rate
+(`A` excluded, `floor(A/4)` survives despite being 4× smaller asymptotically).
+Two small-A constraints do the work — must vanish at A=3 (A=3 caps T at 2.34,
+⁴He demands ≥ 11.11), must not increment before A=8 (⁶Li → c ≤ 5.82, ⁷Li →
+5.35). So the survivor is a **step function counting complete 4-blocks**.
+
+Caveat recorded in the probe: `floor(A/4)` is built to satisfy those two
+constraints, so its survival is weak evidence, not support. The defensible
+claim is the negative one.
+
+`computations/wide_isotope_window_test_probe.py`, PR #6405.
+
+
+**CORRECTION, same day — the corpus already had the 4-block shape (sixth
+near-miss on this arc)**
+
+`docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md` (`qou-0c19`,
+`qou-uclw`) identified the extensive term as the α-cluster SU(4) `[1⁴]` volume
+term on 2026-08-02, **with the shape written as `n_α = ⌊A/4⌋`**, backed by the
+sorry-free `QOU.MassTheory.su4_supermultiplet_dim_vanishes_iff`
+(`Nat.choose 4 A = 0 ↔ 4 < A`). Block size four is structural: no `[1⁵]`.
+
+Cuts both ways. **For me:** `⌊A/4⌋` predates the test, so it is pre-registered,
+not post-hoc — my "close to circular" caveat was wrong and understated the
+result. **Against me:** the other seven shapes are still mine, chosen knowing
+which should survive, so the caveat relocates rather than vanishes.
+
+New, narrowly: 2026-08-02 was a scaling observation on α-conjugate nuclei only;
+this is an exclusion test including the non-α-conjugate ones (³H ³He ⁶Li ⁷Li
+⁹Be ¹⁰B ¹¹B ¹⁴N). The two small-A constraints independently rediscover the gate
+from the AME side.
+
+Not a conflict: audit's ~29.8 MeV is the TOTAL per α; `c ∈ [11.11, 17.24]` is
+the EXCESS over pairwise. ⁴He reconstructs to `B_AME = 28.2957`.
+
+**Follow-up WITHDRAWN.** "Derive the 4-block counting" is partly answered
+(gate proved) and partly forbidden: the bridge to `B = n_α·B_α` is reasoned-not-
+proved, and the dimensionful per-α scale is FOREVER-GATED — `8G·c·m_e`,
+`c = 7.956`, was tested there and refused as numerology. Do not re-propose it.
+
+PR #6405 commit `be3797f5e5`.
+
+
+**2026-08-31 — #6407: the ruled trefoil beats production 9.45× on the deuteron**
+
+Joined Owner Ruling A (deuteron knot = trefoil `T(2,3)`, a **volume** ruling) to
+the already-tabulated writhe-normalised stacked scalar. `T(2,3)` = closure of
+`σ³` in `B₂` ⇒ the ruling fixes `m = 3`, and that row was already in the table:
+**2.1601931 MeV, −2.89 %** against production's **+27.36 %**.
+
+Hopf (`σ²`) lands at −78.5 %, so the ruling's *own* canonical/linear-chain
+distinction picks out the working one — a fit would have taken either.
+
+**Suggestive, not a result.** Look-elsewhere `p ≈ 0.121` (computed: 11 positive
+candidates over 0.48–12.2 MeV); `mu_eff` is a braid-WORD property not a link
+invariant; and it leaves the sector's real defect untouched.
+
+**Strategic finding (the important half):** the two-nucleon sector's failure is
+a **SIGN** error, not a precision one — the framework binds the diproton
+(+2.5416) and dineutron (+3.3069) where nature has none, and
+`QOU.QBeta.single_crossing_binds` proves sorry-free that no single crossing can
+unbind while `q³ < q²+1`. **No amount of magnitude work reaches L2 while a
+predicted observable has the wrong sign.** Signs before digits.
+
+
+**2026-08-31 — the even-negative stacked branch is CLOSED (two exclusions), and
+#6407's framing retracted**
+
+Worked the branch named in `SingleCrossingAlwaysBinds` as the one survivor
+("a repair *direction*, not a repair"). **It is not a direction.**
+
+**Scope (a) — 6.13× is a MINIMUM.** `m = −60..60`: 30 unbinding powers, all
+even-negative, `|B|` monotone in `|m|`. `σ^-2` at −0.6127 MeV is the global
+minimum; every other member is worse. Exact mechanism: `mu_eff(-2k) ~
+A·(q²/(1−h))^k`, `q²/(1−h) = 1.5577`, measured ratios 1.203→1.255→1.310→1.364.
+Nature needs `mu_eff = 1.0242`; smallest available excess over 1 is 0.1576 vs a
+needed 0.0242.
+
+**Scope (b) — projector ∘ stacking excluded, invariant named.** At `m = 2` it
+looks promising (`B(T=1) = −0.0375`, within 2× not 6×) then dies for every `m`
+on `mu₊ + mu₋ = 1` — the partition of unity holds for any substituted scalar, so
+`mu₊ > 1 ⟺ mu₋ < 0` and `B` is undefined. **Unbinding T=1 destroys the T=0
+channel that must hold the deuteron.**
+
+**RETRACTED my own #6407 framing** (arithmetic stands). It said "one leg of
+three"; there are **four** channels, and pn ³S₁ / pn ¹S₀ share content with
+opposite boundness ⇒ a content-keyed word is refuted in Lean
+(`content_keyed_interface_refuted`). The −2.89 % survives only if keyed on
+isospin `T`.
+
+**Sector status: every mechanism in the algebra is now excluded for the unbound
+channels** — single-crossing (b), stacked-alone (a), projector∘stacking (b), and
+T=0-as-deuteron (the `α·ln4 = 5.803` floor, AME 61.7 % below). Selection is
+derived; magnitude has no surviving carrier. Needs something outside the family;
+no candidate proposed.
+
+**2026-08-31 — owner selected all four routes; 2 and 3 worked**
+
+**Route 2 (Hoefsmit off-diagonal) — CLOSED, scope (b), #6408.** Solved the
+`V_(2,1)` block in closed form from the braid relation (residual 4.7e-51). Four
+exact identities: `a = −(z−h)`, `d = z`, `b·c = μ₊`, `z(z−h) = μ₋`. **So the
+projectors ARE the bond family's block** — one 2×2 object read two ways, never
+two independent attempts. `|b| = √(1 − z(z−h)) = 0.8676 < 1` ⇒ binds, and for
+every `q` since `h < z` is `h_lt_markov_z` (sorry-free). Unbinding needs `h > z`
+— the same wall, missed by 24 %.
+
+**Route 3 (re-scope ¹S₀) — SPLIT; only the smaller half survives.**
+- **Withdrawn:** the −0.066 MeV *energy* as a target. It is a virtual state
+  (second-sheet pole, `a_s ≈ −23.7 fm` vs ~1.4 fm range), not a bound-state
+  energy, and reaching it from `α = 4.186 MeV` needs a 1.6 % cancellation with
+  no small parameter. Pre-emptive: nothing currently scores it.
+- **🛑 RETAINED and FAILED:** "pp and nn are unbound". `B(pp) = +2.5416`,
+  `B(nn) = +3.3069`. **Boundness is a sign, not a magnitude.** Re-scoping the
+  energy does not retire the sign error, and a re-scope that took the whole row
+  would be using a real observation about one quantity to retire a failure about
+  another.
+
+L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
+
+**Remaining: routes 1 (non-separable `(S,L)` coupling, `qou-vbyi`) and 4
+(non-tracial functional).** Neither is an object already in the algebra — which
+is now the point: every excluded route is a *scalar read off one block*, and two
+of them were the same scalar.

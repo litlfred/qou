@@ -701,10 +701,32 @@ def main() -> int:
         computed=electron_rational_in_u,
         expected=True,
     )
+    # `computed=True` with a comment explaining why is a claim, not a check:
+    # if someone added `from derivation_chain import M_HECKE_PIPELINE_AT_Q0`
+    # tomorrow, this assertion would go on passing and the witness would go
+    # on saying the chain was placeholder-free. The property is mechanically
+    # decidable on this file's own AST, so decide it — the name must appear
+    # in no import, no bound name and no attribute access. The docstring's
+    # prose mentions of it are string Constants, not Name nodes, so they do
+    # not count, which is the behaviour wanted here (bean qou-26f2).
+    import ast as _ast  # noqa: PLC0415 — used only for this self-check
+    _placeholder = "M_HECKE_PIPELINE_AT_Q0"
+    _placeholder_refs = sum(
+        1 for _n in _ast.walk(
+            _ast.parse(Path(__file__).read_text(encoding="utf-8")))
+        if (isinstance(_n, _ast.Name) and _n.id == _placeholder)
+        or (isinstance(_n, _ast.Attribute) and _n.attr == _placeholder)
+        or (isinstance(_n, _ast.alias)
+            and _placeholder in (_n.name, _n.asname))
+    )
     w.add_assertion(
         "no_placeholder_literals_consumed",
-        computed=True,   # this script does not import M_HECKE_PIPELINE_AT_Q0
-        expected=True,
+        computed=_placeholder_refs,
+        expected=0,
+        tolerance=0,
+        source="AST scan of this producer's own source: the placeholder "
+               "literal M_HECKE_PIPELINE_AT_Q0 from derivation_chain.py is "
+               "referenced by no import, name or attribute node here.",
     )
     w.add_assertion(
         "tr_M_proton_at_q0_matches_content_block",

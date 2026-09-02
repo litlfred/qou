@@ -594,7 +594,35 @@ numerical check stands at 20 digits — limited by the `Vol(5₂)` literal, not 
 the computation — but a numerical check is not a proof.
 
 The shape and the volume are **parameters**, so the class stays `Prop`-valued
-and carries only hypotheses. There is deliberately **no instance**. -/
+and carries only hypotheses. There is deliberately **no instance**.
+
+⚠ **"No instance" is weaker here than it is for `OhtsukiAsymptotic`, and the
+difference matters.** This class is *satisfiable*, at a **derived** `vol` — the
+following typechecks (probed 2026-08-31, bean `qou-6x46`; deliberately not
+committed as an `instance`):
+
+```
+example {y : ℂ} (hy : IsOhtsukiShape y) :
+    FiveTwoTriangulation ((starRingEnd ℂ) (1 / y))
+      (3 * BlochWigner_lob ((starRingEnd ℂ) (1 / y))) where
+  shape_im_pos   := (conj_inv_is_five_two_shape hy).2
+  shape_root     := (conj_inv_is_five_two_shape hy).1
+  vol_eq_three_D := rfl
+```
+
+and `FiveTwoOhtsukiBridge.exists_isOhtsukiShape` supplies the `hy`. The first
+two fields are already theorems there, and the third *defines* `vol`. So the
+absence of an instance is not unsatisfiability — it is a refusal to launder the
+name `vol`. Adding that instance would make a downstream conclusion read
+`… → nhds (3·D(y₊))`, which is true content, but it would no longer say **"the
+hyperbolic volume of the `5₂` complement"**, because Lean has no definition of
+hyperbolic volume to tie the name to. That is the whole gap, and it is a
+definitional one, not an arithmetic one.
+
+`OhtsukiAsymptotic` in `FiveTwoOhtsukiBridge` is a different animal: it carries
+genuine unproved analysis (steepest descent on the Kashaev invariant), and no
+instance is constructible at all. Do not describe the two as "the two remaining
+axioms" without saying which is which. -/
 class FiveTwoTriangulation (shape : ℂ) (vol : ℝ) : Prop where
   /-- The shape lies in the upper half plane — the tetrahedra are
       non-degenerate. -/

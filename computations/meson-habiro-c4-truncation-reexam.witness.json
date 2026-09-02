@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:39.359083+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T13:57:59.388314+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "reexam_completed",
-      "computed": true,
-      "expected": true,
+      "name": "chi_21_sigma1_pow5_matches_seminormal_trace",
+      "computed": "1.091387012864929717055132249115480620271",
+      "expected": "1.091387012864929717055132249115480620271",
       "passed": true,
-      "tolerance": 0,
-      "source": "Meson Habiro c=4 re-examination completed at 50 dps."
+      "tolerance": "1e-45",
+      "source": "χ_(2,1)(σ₁⁵) two ways at q_0: tr(σ₁⁵) of the compiled seminormal H_3 generator (char_fast._compiled_sigmas) vs the closed form q⁵ − q⁻⁵ read off the eigenvalues {q, −q⁻¹}. `base` — and hence C, C/u² and the verdict — is built from this character, so a wrong convention here silently moves every number in the probe."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 23,
   "computation": "meson-habiro-c4-truncation-reexam",
   "scriptFile": "meson_habiro_c4_truncation_reexam.py",
-  "scriptHash": "698f3a7306f0",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "fb581319a886",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_habiro_c4_truncation_reexam.py"
+    ],
+    "reproduce": "python3 -u computations/meson_habiro_c4_truncation_reexam.py"
   },
   "description": "Re-examines audit 2026-05-29 Path 1 ruling on meson Habiro c=4 under the Q_β c_k truncation-order canonical framing. Tests whether the 0.77% miss is a bounded c_3·u³ truncation error (parallel to Q_β c_3 = -2 at tier=near-match) rather than evidence c=4 is wrong.",
   "parameters": {
@@ -45,8 +53,23 @@
     "c3_required_to_absorb_residual": "-0.7150196297869717581779597",
     "c2_contribution_pct_to_C": "100.152481901",
     "c3_contribution_pct_to_C": "0.15248190068",
-    "verdict": "**REOPENED**: the 0.77% residual on C/u² = 4.03 is consistent with a BOUNDED c_3·u³ truncation error (analog of Q_β c_3 wired at tier=near-match). The audit's binary 'ruled out' may have made the same framing error the Q_β deep audit made: treating an unmatched residual as evidence the leading c_2 = 4 is wrong, rather than as bounded higher-rung contribution."
+    "verdict": "**REOPENED**: the 0.77% residual on C/u² = 4.03 is consistent with a BOUNDED c_3·u³ truncation error (analog of Q_β c_3 wired at tier=near-match). The audit's binary 'ruled out' may have made the same framing error the Q_β deep audit made: treating an unmatched residual as evidence the leading c_2 = 4 is wrong, rather than as bounded higher-rung contribution.",
+    "chi_21_sigma1_pow5": {
+      "closed_form_q5_minus_q_minus5": "1.091387012864929717055132",
+      "seminormal_matrix_trace": "1.091387012864929717055132",
+      "abs_deviation": "2.6727647e-50"
+    },
+    "reexam_completed": {
+      "completed": true,
+      "meaning": "the 50 dps re-examination reached its verdict",
+      "recorded_not_gated": true,
+      "has_independent_expected_value": false
+    }
   },
+  "caveats": [
+    "NARRATION DRIFT (recorded, not repaired): the three verdict strings hardcode the audit's 2026-05-29 figures — \"the 0.77% residual on C/u² = 4.03\" — and cannot disagree with this run, which computes C/u² = 3.99391 (-0.1522% off integer 4). The header docstring and the `[Test 1 — reproduce audit's C/u² = 4.03]` label carry the same stale numbers. The verdict BRANCH is genuinely computed from c_3_required / c2_pct / c3_pct; only the prose inside each branch is fixed text.",
+    "c_2 = 4 is ASSUMED, and c_3_required is then SOLVED so that c_2·u² + c_3·u³ reproduces C exactly. c_3_required therefore has no independent route and is recorded as data, never asserted; the verdict reads its magnitude against a threshold, it does not test it."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

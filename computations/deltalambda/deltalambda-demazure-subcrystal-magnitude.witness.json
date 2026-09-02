@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:23:41.558561+00:00",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "computedAt": "2026-08-30T09:55:05.636514+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
       "name": "object_is_bruhat_subsum_graded_dim",
@@ -44,15 +44,31 @@
       "computed": "False",
       "expected": "False",
       "passed": true,
-      "source": "honest negative: brackets A=4, cannot reach A=3"
+      "source": "honest negative: 0 of 12 enumerated truncations land both targets within 5% (brackets A=4, cannot reach A=3)"
+    },
+    {
+      "name": "best_member_joint_relative_miss",
+      "computed": "0.142914665995",
+      "expected": "0.1429147",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "min over all 12 truncations of max(|ρ_dem(3)/ρ_strong(3)−1|, |ρ_dem(4)/ρ_strong(4)−1|), attained at t=(t_3,t_4)=(2, 2) where the A=4 leg binds (14.29% vs 12.35% on A=3). ~2.9× outside the 5% gate, so the negative is not a near-miss"
+    },
+    {
+      "name": "a3_family_floor_relative_miss",
+      "computed": "0.123470229368",
+      "expected": "0.1234702",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "min over t_3 of |ρ_dem(3)/ρ_strong(3)−1|, attained at the FULL truncation t_3=2 ([3]_q0=3.34203 vs 3.81280). Independent of t_4, so it floors every member of the family at 12.35% — this is the monotonicity obstruction the verdict calls 'cannot reach A=3', as a number"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deltalambda-demazure-subcrystal-magnitude",
   "scriptFile": "deltalambda_demazure_subcrystal_magnitude_probe.py",
-  "scriptHash": "a73091c8de3d",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "2ec982510b44",
+  "scriptCommitSha": "2caa0ad00cb4b913541759e54ea2925db9d08af7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,7 +83,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

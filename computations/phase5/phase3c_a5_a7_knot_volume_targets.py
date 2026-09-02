@@ -211,12 +211,59 @@ def main():
     w.add_data("a5_status", "UNBOUND — no stable A=5 nucleus (⁵He and ⁵Li are resonances)")
     w.add_data("a6_a7_approach", "α-cluster extension: separation energy = B(composite) − B(⁴He) − B(fragment)")
 
+    # Was `computed=1, expected=1` named `a5_unbound` (bean `qou-26f2`): a
+    # literal on both sides standing in for a fact this module never computes.
+    # It cannot — the a567 table carries `None` for ⁵He and ⁵Li, so there is
+    # no binding energy here to test unboundness against. What IS checkable is
+    # the table's own shape, and the two constants the A=2..4 mapping rests on.
+
+    # (1) What "A=5 is unbound" means in this module's data: the A=5 rows are
+    # the ones AME assigns no bound-state binding energy, and they are the
+    # ONLY such rows. A filled-in A=5 number, or a dropped A=6/7 one, breaks
+    # the premise that the atom→knot rule has nothing to map at A=5.
+    _a5 = [r for r in a567 if r[1] + r[2] == 5]
+    _a67 = [r for r in a567 if r[1] + r[2] in (6, 7)]
+    _a5_unbound = sum(1 for r in _a5 if r[3] is None)
+    _a67_missing = sum(1 for r in _a67 if r[3] is None)
     w.add_assertion(
-        name="a5_unbound",
-        computed=1,
-        expected=1,
+        name="a5_rows_are_the_only_ones_without_binding_energy",
+        computed=_a5_unbound if _a67_missing == 0 else -1,
+        expected=2,
         tolerance=0,
-        source="A=5 nuclei (⁵He, ⁵Li) are particle-unstable — no atom→knot rule needed"
+        source=f"{_a5_unbound} of {len(_a5)} A=5 rows (⁵He, ⁵Li) carry "
+               f"B_ame=None; {_a67_missing} of {len(_a67)} A=6,7 rows do. "
+               "A=5's particle-instability is an INPUT here (AME lists no "
+               "bound state), not a result this module derives",
+    )
+
+    # (2) The α-cluster premise for A=6,7: each composite must be BOUND
+    # against emitting the α it is modelled as containing, i.e. every
+    # separation energy positive. Derived from seven AME literals, so a
+    # transcription slip large enough to flip a sign shows up here.
+    _seps = [("6Li α+d", S_li6), ("7Li α+t", S_li7), ("7Be α+3He", S_be7)]
+    w.add_assertion(
+        name="alpha_cluster_separation_energies_all_positive",
+        computed=sum(1 for _, s in _seps if s > 0),
+        expected=3,
+        tolerance=0,
+        source="; ".join(f"S({n}) = {mp.nstr(s, 8)} MeV" for n, s in _seps)
+               + " — all bound against α-emission, which is what makes the "
+                 "α+fragment decomposition available at A=6,7",
+    )
+
+    # (3) The Catalan literal on line 57, against mpmath's own constant. It
+    # sets Vol(𝓑₃) = 8G, the A=4 leg of the mapping the whole table is built
+    # around, and nothing else in this file would notice a wrong digit.
+    _catalan_gap = abs(catalan_G - mp.catalan)
+    w.add_assertion(
+        name="hardcoded_catalan_matches_mpmath",
+        computed=mp.nstr(_catalan_gap, 12),
+        expected="0",
+        tolerance="1e-29",
+        source=f"|literal − mp.catalan| = {mp.nstr(_catalan_gap, 6)}; the "
+               "literal is given to 30 places, so the gap is its truncation. "
+               f"Vol(𝓑₃) = 8G = {mp.nstr(8 * catalan_G, 16)}, the Borromean "
+               "rings volume the ⁴He row uses",
     )
     out = w.save()
     print(f"\n  Witness: {out}")

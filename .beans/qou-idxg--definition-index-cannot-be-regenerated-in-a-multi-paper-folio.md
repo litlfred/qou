@@ -1,7 +1,7 @@
 ---
 # qou-idxg
 title: 'The generated definition index cannot be regenerated in this folio — requirePaper() takes no argument'
-status: todo
+status: completed
 type: task
 priority: medium
 created_at: 2026-08-29T17:45:00Z
@@ -76,3 +76,48 @@ through, e.g. `requirePaper(Bun.argv[2])` — `requirePaper` already accepts the
 missing entries land in one commit. Worth adding a `scripts/` wrapper on the qou
 side at the same time, so the invocation is discoverable; the grep that should
 have found one returned nothing.
+
+---
+
+## CLOSED 2026-08-30 — the generator runs, and the index is regenerated
+
+`folio-assistant#150` merged (`21498cc`), so `generate-index` takes `--paper`
+and no longer throws in a five-paper folio. Run from `main`'s producer:
+
+```
+bun run <fa>/content/pipeline/generate-index.ts --paper quantum-observable-universe
+→ exit 0, "Index written: 1285 entries"
+```
+
+**1281 → 1285.** Every changed row was read rather than trusted:
+
+- **+2 definitions** — `def:fusion-process`, `def:interaction-sector-taxonomy`,
+  both landed on `main` recently and never indexed.
+- **+2 propositions** — `prop:brunnian-binding-channel`, and
+  `conj:adelic-critical-line-persistence`, the keystone carrier added in #6039.
+- **1 row moved** — `conj:tannaka-krein-isomorphism` re-sorted after its
+  `thm:` → `conj:` demotion. Not an add; the +4 net is the two defs plus the
+  two props.
+- **2 Lean refs CORRECTED**, which is the part worth noticing:
+  `QOU.Mass.selection_rule_c3_eq_family_a` → `…c3_anchor_derived` and
+  `QOU.Mass.selection_rule_c2_eq_closed_form` → `…c2_prediction_derived`.
+  Those declarations were **renamed on `main`** and the index still pointed at
+  names that no longer exist.
+
+That last item is what an un-regenerable generated file accumulates, and it is
+the same defect class Copilot caught in #6039 (a definition-index row pointing
+at a superseded declaration). While the generator was unrunnable, the only
+repair was hand-editing — which is what #6039 did for the one row it knew
+about, and which cannot find the rows nobody is looking at.
+
+**Provenance note, deliberate.** #150's own body asked that downstream
+regenerations follow its landing so their provenance points at a producer on
+`main` rather than a local patch. This regeneration was run *after* the merge,
+from `main`'s copy, for exactly that reason — an earlier run during
+verification was discarded rather than committed.
+
+**Not closed by this:** the `--paper` flag now works for all nine scripts, but
+`validate-references` still exits non-zero — it gets *past* `requirePaper` and
+fails later on `configureReferenceRegistry` not being configured, an unrelated
+dependency-injection requirement of the downstream repo. Separate problem,
+separate owner.

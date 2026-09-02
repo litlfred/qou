@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:21:42.125800+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:50:40.932818+00:00",
+  "commitSha": "a95c80239e9c67ac63c5e7312e41b9466cda9db2",
   "assertions": [
     {
       "name": "zero_nontrivial_substrate_combinations_within_one_percent",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 323,
+  "durationMs": 193,
   "computation": "casimir-grid-sweep-probe",
   "scriptFile": "casimir_grid_sweep_probe.py",
   "scriptHash": "2f17b1148082",
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -274,5 +274,7 @@
         "n_terms": 2
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

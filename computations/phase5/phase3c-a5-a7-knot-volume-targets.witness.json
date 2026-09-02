@@ -1,23 +1,39 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:16:45.623445+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:07:54.184546+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "a5_unbound",
-      "computed": 1,
-      "expected": 1,
+      "name": "a5_rows_are_the_only_ones_without_binding_energy",
+      "computed": 2,
+      "expected": 2,
       "passed": true,
       "tolerance": 0,
-      "source": "A=5 nuclei (⁵He, ⁵Li) are particle-unstable — no atom→knot rule needed"
+      "source": "2 of 2 A=5 rows (⁵He, ⁵Li) carry B_ame=None; 0 of 5 A=6,7 rows do. A=5's particle-instability is an INPUT here (AME lists no bound state), not a result this module derives"
+    },
+    {
+      "name": "alpha_cluster_separation_energies_all_positive",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "S(6Li α+d) = 1.473814 MeV; S(7Li α+t) = 2.467019 MeV; S(7Be α+3He) = 1.586689 MeV — all bound against α-emission, which is what makes the α+fragment decomposition available at A=6,7"
+    },
+    {
+      "name": "hardcoded_catalan_matches_mpmath",
+      "computed": "3.84110774149e-31",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-29",
+      "source": "|literal − mp.catalan| = 3.84111e-31; the literal is given to 30 places, so the gap is its truncation. Vol(𝓑₃) = 8G = 7.327724753417752, the Borromean rings volume the ⁴He row uses"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "phase3c-a5-a7-knot-volume-targets",
   "scriptFile": "phase3c_a5_a7_knot_volume_targets.py",
-  "scriptHash": "9d8380f7f0c2",
+  "scriptHash": "6a4041deb78c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

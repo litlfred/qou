@@ -2,72 +2,34 @@ import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.wedderburn_bratteli_recursion
+# `QOU.BraidsAndKnots.wedderburn_bratteli_recursion` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Canonical declaration** for content block Wedderburn-Bratteli recursion.
+This module used to hold `WedderburnBratteliRecursionContext` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[WedderburnBratteliRecursionContext]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
 
-Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
-this plural `QOU.BraidsAndKnots` namespace was inherited from existing
-`.ts` lean.ref URIs (a pre-existing convention drift).
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.BraidsAndKnots.wedderburn_bratteli_recursion`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`mass-theory/wedderburn-bratteli-recursion.lean`](../../mass-theory/wedderburn-bratteli-recursion.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `markovZD`, `Partition`, `Partition.height`, `BratteliEdge`, `bratteliFactor`, `SatisfiesWedderburnBratteliRecursion`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.BraidsAndKnots
-
-
-/-- Abstract context for the `wedderburn_bratteli_recursion` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class WedderburnBratteliRecursionContext extends QOU.Shared.MarkovTraceContext where
-  /-- Jones-Markov weight `y_λ^{(n)}` indexed by partition and `n`, valued in
-      the inherited coefficient ring `R` of the parent Markov-trace context
-      (§7c: `y_λ(q)` is a q-rational in `√q`). -/
-  y_lambda : ℕ → ℕ → R
-  /-- Ratio of consecutive weights along a fixed-shape monotone path.
-
-      This and the fields below stay at `ℝ` on purpose (§7c): the sub-claims
-      about them are order comparisons (`ratio (k+1) ≤ ratio k`,
-      `0 ≤ ratio k * q_content_sign k`) and an ε-N convergence statement with
-      an absolute value.  Ordering, `|·|` and limits are archimedean, so this
-      part of the block sits after the substrate→archimedean wall. -/
-  ratio : ℕ → ℝ
-  /-- Manuscript sub-claim (i) — Per-row monotonicity: ratios decrease
-      along the fixed-shape path (`ratio k ≥ ratio (k+1)`). -/
-  claim_i_per_row_monotonicity : ∀ k : ℕ, ratio (k + 1) ≤ ratio k
-  /-- Sign of the q-content of the added cell at step `k`. -/
-  q_content_sign : ℕ → ℝ
-  /-- Manuscript sub-claim (ii) — Sign tracking: the ratio sign matches
-      the q-content sign of the added cell. -/
-  claim_ii_sign_tracking_added : ∀ k : ℕ,
-    0 ≤ ratio k * q_content_sign k
-  /-- Markov parameter `z = 1 / (√q + 1/√q)`. -/
-  z_real : ℝ
-  /-- Diagonal ratio at the one-row partition `(n)`, indexed by `n`. -/
-  diagonal_ratio_n : ℕ → ℝ
-  /-- Manuscript sub-claim (iii) — Trivial-rep limit: for the
-      one-row partition `(n)`, the diagonal ratios approach `z` as
-      `n → ∞`. Stated as the ε-N convergence condition. -/
-  claim_iii_trivial_rep_limit : ∀ ε : ℝ, 0 < ε →
-    ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
-      |diagonal_ratio_n n - z_real| < ε
-/-- **Proposition statement** (from manuscript):
-
-Let $H_n(R, q)$ be the Iwahori–Hecke algebra at generic $q$ with
-Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$, and let
-$\{y_\lambda^{(n)}\}_{\lambda \,\vdash\, n}$ be the Jones–Markov
-weights of [α_k derivation procedure](#prop:alpha-k-derivation-procedure).
-Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
-def wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
-    (∀ k : ℕ, ctx.ratio (k + 1) ≤ ctx.ratio k) ∧
-    (∀ k : ℕ, 0 ≤ ctx.ratio k * ctx.q_content_sign k) ∧
-    (∀ ε : ℝ, 0 < ε →
-      ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
-        |ctx.diagonal_ratio_n n - ctx.z_real| < ε) :=
-  ⟨ctx.claim_i_per_row_monotonicity, ctx.claim_ii_sign_tracking_added,
-   ctx.claim_iii_trivial_rep_limit⟩
-
-end QOU.BraidsAndKnots

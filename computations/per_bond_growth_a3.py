@@ -67,10 +67,13 @@ def _bond_type(Z, N, k):
     return "pp" if (a, b) == ('p', 'p') else "nn" if (a, b) == ('n', 'n') else "pn"
 
 
+ATOMS = {"T": (1, 2), "3He": (2, 1)}
+
+
 def main() -> int:
     print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}\n")
     results = {}
-    for name, (Z, N) in {"T": (1, 2), "3He": (2, 1)}.items():
+    for name, (Z, N) in ATOMS.items():
         full = atom_braid_word_3A(Z, N, include_inter=True)
         free = [x for x in full if x[2] % 3 != 2]
         pf = _perblock_word(free)
@@ -85,7 +88,8 @@ def main() -> int:
             growth = B_emb / B_ISO[bt]
             iso[f"bond{k}_{bt}"] = {"B_emb_MeV": float(B_emb),
                                     "B_iso_MeV": float(B_ISO[bt]),
-                                    "growth": float(growth)}
+                                    "growth": float(growth),
+                                    "binds": bool(mp.isfinite(B_emb) and B_emb > 0)}
             print(f"   bond {k} ({bt}) @gen{gen}: B_emb = {float(B_emb):+.4f}  "
                   f"B_iso = {float(B_ISO[bt]):.4f}  growth = {float(growth):.3f}×")
         results[name] = iso
@@ -101,7 +105,58 @@ def main() -> int:
         "Embedded per-bond binding (marginal of one chain interface in the H_9 "
         "free braid) vs isolated H_6 bond. growth>1 ⇒ embedding enhancement, "
         "the A=3 −15% residual mechanism. Rust kernel; no fit.")
-    wb.add_assertion("kernel_ran", computed=1, expected=1, tolerance=0)
+    # Was `add_assertion("kernel_ran", computed=1, expected=1)` (bean
+    # `qou-26f2`) — the same literal on both sides, so `passed:true` was
+    # recorded whether or not `pyhecke_native` returned anything usable. Two
+    # things are checkable and neither was being checked.
+    #
+    # (1) COVERAGE + SIGN. `_perblock_word` sums only the shapes `y_lambda_at`
+    #     knows, so a partition-table mismatch silently drops terms and returns
+    #     a smaller `tot` rather than raising; the marginal `pf − pb` then comes
+    #     out near zero or negative while every print still looks ordinary. The
+    #     expected interface count is re-derived from the ATOMS spec — chain
+    #     interfaces are A−1 per atom — rather than counted off `results`, so a
+    #     dropped bond fails instead of shrinking both sides together.
+    n_binding = sum(1 for a in results.values() for b in a.values() if b["binds"])
+    n_expected = sum(Z + N - 1 for (Z, N) in ATOMS.values())
+    wb.add_assertion(
+        "every_chain_interface_binds",
+        computed=str(n_binding),
+        expected=str(n_expected),
+        tolerance=0,
+        unit="chain interfaces with finite B_emb > 0",
+        source=("marginal of adding one inter-nucleon generator to the H_9 free "
+                "braid; B_emb = E_0·(perblock(free) − perblock(free+I_b)) must be "
+                "positive for a bound bond. Expected count = Σ_atoms (A−1) from "
+                "the ATOMS spec, independent of the results dict."),
+    )
+
+    # (2) THE HYPOTHESIS THE PROBE EXISTS TO TEST. The module docstring says
+    #     "each bond inside the dense A-nucleon braid SHOULD be stronger than
+    #     the isolated 2-nucleon bond", and nothing about the outcome reached
+    #     the witness. Measured here it holds for 2 of the 4 interfaces and
+    #     fails for the other 2, so it is recorded rather than asserted: there
+    #     is no independent expected value for a growth ratio, and the ratio is
+    #     against `B_ISO`, four hardcoded session literals.
+    growth_above_1 = {f"{atom}.{bond}": b["growth"] > 1.0
+                      for atom, a in results.items() for bond, b in a.items()}
+    wb.data["growth_hypothesis"] = {
+        "claim": "growth = B_emb / B_iso > 1 for every embedded chain interface",
+        "per_interface": growth_above_1,
+        "holds_for": sum(growth_above_1.values()),
+        "of": len(growth_above_1),
+        "has_independent_expected_value": False,
+    }
+    if not all(growth_above_1.values()):
+        wb.add_caveat(
+            "The per-bond GROWTH hypothesis in the module docstring is not "
+            "uniform: " + ", ".join(sorted(k for k, v in growth_above_1.items()
+                                           if not v))
+            + " have growth <= 1, i.e. the embedded bond is no stronger than "
+              "the isolated H_6 one. Note the pn bond type occurs at both "
+              "interface positions and does not agree with itself across them, "
+              "so growth is not a function of bond type alone — which is the "
+              "assumption B_ISO encodes.")
     wb.save()
     print("\n✓ Witness: per-bond-growth-a3.witness.json")
     return 0

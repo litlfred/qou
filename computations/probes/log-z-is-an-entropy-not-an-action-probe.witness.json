@@ -1,0 +1,227 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T04:52:30.658826+00:00",
+  "commitSha": "c2a642bea6ae5496079ec6f73c99d19cf9135973",
+  "assertions": [
+    {
+      "name": "normaliser_coefficients_are_the_binomial_coefficients",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "coefficients of q^{2k} in Z(n) = sum over partitions of s_lambda(1,q^2) * f^lambda, rebuilt from markov_weights_symbolic's own hook/Schur components, vs C(n,k) from the binomial theorem, n = 2..6. Agreement identifies Z(n) as the weight generating function of (C^2)^{tensor n} with q^{2k} counting k down-spins among n strands."
+    },
+    {
+      "name": "normaliser_at_q_one_is_the_hilbert_space_dimension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Z(n)|_{q=1} from the partition sum above vs 2^n = dim (C^2)^{tensor n} (independent: elementary linear algebra, not a corpus quantity), n = 2..6"
+    },
+    {
+      "name": "every_registered_operator_class_vanishes_at_q_equals_one",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "max over the E_0 registry's operator classes of |value at q = 1|: convention A's Delta(net) = h(h-2)/2 with h = q - 1/q, and convention B's spectral block sum via b_over_a_evaluator.spectral_b_over_a(q=1.0) at D, 4He and 12C. All are identically zero: at q = 1 every one-crossing eigenvalue is +-1, so the Hecke algebra degenerates to C[S_n] and no deformation is left to carry an energy."
+    },
+    {
+      "name": "classical_entropy_is_the_majority_of_the_extensive_term",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "log 2 / log(1+q_0^2) = 0.86328133. The numerator is the q = 1 value, which survives where every operator class above is zero; the denominator is the full per-strand extensive term at q_0. A share above 1/2 means the extensive term is mostly the hbar_q^0 entropy."
+    },
+    {
+      "name": "landauer_temperature_hunt_found_no_candidate_scale",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "near_matches_5pct from computations/landauer-crossing-energy-probe.witness.json is empty for both proton and neutron; its implied kT_eff is ~17856 MeV/q-bit against five canonical candidate scales, with ratios running 41.8774x to 4271.6x. Different information measure from log Z, so suggestive rather than decisive here."
+    },
+    {
+      "name": "no_framework_scale_matches_the_temperature_log_Z_would_need",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "kT required for 3*log(1+q_0^2)*kT = a_V is 6.5593789 MeV; the nearest of the framework's canonical scales is m_e/hbar_q at ratio 1.27185, i.e. 27.19 % away. Asserting nothing is within 5 %. Back-computed from a_V, so this refutes an identification rather than establishing one."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 133,
+  "computation": "log-z-is-an-entropy-not-an-action-probe",
+  "scriptFile": "log_z_is_an_entropy_not_an_action_probe.py",
+  "scriptHash": "3b3c7c6a53a8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/log_z_is_an_entropy_not_an_action_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/log_z_is_an_entropy_not_an_action_probe.py"
+  },
+  "description": "Answers the qou-59j5 successor question with no energy scale: log Z carries hbar_q^0 and the framework assigns it no operator class. Z(n) is the weight generating function of (C^2)^{tensor n}, so log Z(3A) is a graded log-dimension -- an entropy. Every registered operator class vanishes at q=1; log Z does not, and 86.33% of it is the classical log 2. Comparing it to a_V is a category error.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "hbar_q": "0.09908171604425850783917712",
+    "strands_per_nucleon": 3
+  },
+  "data": {
+    "temperature_hunt": {
+      "why_a_temperature": "F = -kT log Z. Entropy times temperature is an energy, so the objection 'log Z CAN become an energy' is correct. What the framework lacks is the kT, not the arithmetic.",
+      "why_E_0_is_not_it": "every E_0 registry convention is (scale) x (hbar_q-suppressed operator), totalling hbar_q^2 (bean qou-59j5). Pairing that with an hbar_q^0 log-dimension breaks the registry's own index. E_0 is an action scale, not a temperature.",
+      "kT_required_for_a_V_MeV": "6.55937893068",
+      "ratio_vs_framework_scales": {
+        "m_e": "12.836384",
+        "E_0 = m_e/(q(q-1))": "1.5669871",
+        "m_e/hbar_q": "1.271851",
+        "m_e c_q^2 = m_e/hbar_q^2": "0.12601718",
+        "E_0 c_q^2": "0.015383405"
+      },
+      "nearest": "m_e/hbar_q at 27.19 %",
+      "landauer_probe_near_matches_5pct": {
+        "proton": [],
+        "neutron": []
+      }
+    },
+    "Z_is_a_graded_dimension": [
+      {
+        "n": 2,
+        "Z_coeffs_in_q2k": [
+          1,
+          2,
+          1
+        ],
+        "binomial_C_n_k": [
+          1,
+          2,
+          1
+        ],
+        "Z_at_q_1": 4,
+        "two_to_the_n": 4
+      },
+      {
+        "n": 3,
+        "Z_coeffs_in_q2k": [
+          1,
+          3,
+          3,
+          1
+        ],
+        "binomial_C_n_k": [
+          1,
+          3,
+          3,
+          1
+        ],
+        "Z_at_q_1": 8,
+        "two_to_the_n": 8
+      },
+      {
+        "n": 4,
+        "Z_coeffs_in_q2k": [
+          1,
+          4,
+          6,
+          4,
+          1
+        ],
+        "binomial_C_n_k": [
+          1,
+          4,
+          6,
+          4,
+          1
+        ],
+        "Z_at_q_1": 16,
+        "two_to_the_n": 16
+      },
+      {
+        "n": 5,
+        "Z_coeffs_in_q2k": [
+          1,
+          5,
+          10,
+          10,
+          5,
+          1
+        ],
+        "binomial_C_n_k": [
+          1,
+          5,
+          10,
+          10,
+          5,
+          1
+        ],
+        "Z_at_q_1": 32,
+        "two_to_the_n": 32
+      },
+      {
+        "n": 6,
+        "Z_coeffs_in_q2k": [
+          1,
+          6,
+          15,
+          20,
+          15,
+          6,
+          1
+        ],
+        "binomial_C_n_k": [
+          1,
+          6,
+          15,
+          20,
+          15,
+          6,
+          1
+        ],
+        "Z_at_q_1": 64,
+        "two_to_the_n": 64
+      }
+    ],
+    "operator_classes_at_q_equals_one": {
+      "convention_A_Delta_net": "0.0",
+      "convention_B_block_sum": {
+        "D": "0.0",
+        "4He": "0.0",
+        "12C": "0.0"
+      },
+      "why": "at q = 1 the one-crossing eigenvalues (sym: q, 1/q, (q+1/q)/2; alt: their negatives; std: 1) all become +-1, so |Lambda_free/Lambda_nuc| = 1 and its log is 0. H_n(q) -> C[S_n].",
+      "at_q0_for_contrast": {
+        "Delta_net": "0.1872071945",
+        "block_sum_D": "0.01114852020621126551441605809175279550022"
+      }
+    },
+    "hbar_q_grading_of_the_extensive_term": {
+      "log(1+q0^2)": "0.802921545213693",
+      "hbar_q^0 term  (log 2)": "0.693147180559945",
+      "hbar_q^1 term  (q0 - 1)": "0.109978582751381",
+      "sum_of_first_two": "0.803125763311326",
+      "residual": "-0.0002042180976",
+      "note": "d/dq log(1+q^2) = 2q/(1+q^2) = 1 at q = 1 and the second derivative vanishes there, so the expansion is log 2 + (q-1) + O((q-1)^3). The residual measured above is consistent with that.",
+      "classical_share_percent": "86.3281"
+    },
+    "NOT_A_CANDIDATE": {
+      "the_tempting_move": "strip log 2 and call the remainder (q0 - 1) = 0.1099785828 per strand the deformation energy",
+      "why_it_is_not_reported_in_MeV": "It would still be scale-ambiguous by the same 5.35x (convention A vs B, bean qou-59j5), so converting it would be picking a scale that lands somewhere -- the same fit this lane has walked into three times now. Recorded as a dimensionless measurement only."
+    },
+    "what_this_explains": "Why the EXPONENT test passed cleanly (qou-imcd: A-exponent exactly 1) while six magnitude ansaetze failed. An extensive entropy and an extensive energy have the same A-scaling by construction, so the exponent test cannot distinguish them. The magnitude ansaetze were fitting a conversion between two different KINDS of quantity, which is why they failed 'all in the same way'.",
+    "verdict": "log Z carries hbar_q^0 and has no operator class. Z(n) = sum_k C(n,k) q^{2k} is the weight generating function of (C^2)^{tensor n} and Z(n)|_{q=1} = 2^n is its dimension, so log Z(3A) is a graded log-dimension -- an ENTROPY. Every operator class the E_0 registry indexes vanishes at q = 1; log Z does not, and 86.33% of it is that classical log 2. Comparing log Z(3A)*E_0 to a_V is a CATEGORY ERROR, independently of which E_0 is chosen. Every deficit reported this session -- 1.57x, 6.9x, 8.38x, 12.84x -- was an entropy measured against an energy through an undetermined conversion. The successor question is closed and the answer removes the comparison rather than settling it."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,123 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T21:01:18.898783+00:00",
+  "commitSha": "4365b161f185645245badf12d506e9f1029930bb",
+  "assertions": [
+    {
+      "name": "A1_gap_nonnegative_structurally",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "x_p+x_n feasible (slack 4.44e-16), cost = free"
+    },
+    {
+      "name": "A2_block_program_collapses_to_six_vars",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "block and collapsed LPs agree to 1e-12 at A = 2, 3, 4"
+    },
+    {
+      "name": "A3_gap_exactly_zero_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |gap| = 5.329e-15 over 10 isotopes"
+    },
+    {
+      "name": "A4_window_exists_and_excludes_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "h in (0.477184742, 0.569840291); q_0 is 56.2% below"
+    },
+    {
+      "name": "A5_pairing_law_and_pure_species_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "E_bind/min(Z,N) takes exactly 2 values [0.069589805, 0.070191428] over 0<=Z,N<=4 (spread 0.86%); Z=0 or N=0 gives exactly 0"
+    },
+    {
+      "name": "A6_in_window_gap_is_real",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "3 methods agree to 0.0e+00; duals valid; cheaper aggregate point exhibited"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "nfold_ip_coupling_duality_gap_probe",
+  "scriptFile": "nfold_ip_coupling_duality_gap_probe.py",
+  "scriptHash": "e8d489f52c1d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nfold_ip_coupling_duality_gap_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nfold_ip_coupling_duality_gap_probe.py"
+  },
+  "description": "Reformulates the atom LP as an n-fold integer program (De Loera-Hemmecke-Onn-Weismantel, math/0605242): free = n separate local blocks min{t.x_k : G x_k >= G v_k, x_k >= 0}, atom = the same constraints aggregated into one coupling block. Aggregation is a relaxation so E_bind = free - atom >= 0 structurally, with x_p + x_n an explicit aggregate-feasible point of cost exactly free. The atom program collapses from 6^A to 6 variables (verified against the explicit block LP at A = 2,3,4), making binding the cone-crossing defect of the LP value function. At q_0 the proton and neutron optimal supports are nested ((2,3,4) and (2,3)), so both lie in one linearity cone and E_bind is an exact zero (max 5.3e-15 across 2H..16O). The mechanism is real but windowed: h in (0.47718, 0.56984), peak 0.0687 at h = 0.534, with q_0 56.2% below the lower edge. Inside the window E_bind = min(Z,N)*kappa exactly, kappa ~ 0.0696, and zero for pure-proton or pure-neutron systems. NEGATIVE for the L2 binding gap: this route does not repair the 4He miss.",
+  "data": {
+    "h_of_q0": "0.209060298795639",
+    "supports_at_q0": {
+      "proton": [
+        2,
+        3,
+        4
+      ],
+      "neutron": [
+        2,
+        3
+      ],
+      "nested": true
+    },
+    "max_abs_gap_at_q0": "5.329e-15",
+    "window_h": {
+      "lower": "0.47718474189158",
+      "upper": "0.56984029056366"
+    },
+    "window_q": {
+      "lower": "1.26666159014921",
+      "upper": "1.32471795696803"
+    },
+    "peak": {
+      "h": "0.5340",
+      "gap": "0.06869219"
+    },
+    "q0_below_lower_edge_pct": "56.19",
+    "kappa_values": [
+      "0.069589805",
+      "0.070191428"
+    ],
+    "pairing_law": "E_bind = min(Z,N) * kappa; min(Z,N) = (A - |N-Z|)/2"
+  },
+  "caveats": [
+    "THE COST FUNCTIONAL CHANGED. The n-fold form requires an ADDITIVE cost sum_k t.x_k, where the corpus's atom construction uses the multiplicative t^(x)A . x. These are different functionals, not two spellings of one. The Markov trace IS multiplicative on disjoint strand blocks (h3a_frobenius_gram_offdiagonal_probe), so the additive cost is its logarithm in spirit but not literally — log(t.x) is not linear in x, so no exact change of variables converts one program into the other. The zero reported here is a zero for the additive-Markov-cost program specifically.",
+    "The pairing law is NOT the semi-empirical mass formula. min(Z,N) = (A-|N-Z|)/2 gives a volume term and an asymmetry term with coefficients locked at ratio 1, and an asymmetry term linear in |N-Z|; the SEMF's goes as (N-Z)^2/A with an independent coefficient. The agreement claimed here is qualitative only: binding proportional to the proton-neutron pair count, and exactly zero for pure-species systems. Nothing was fitted and no B_AME value was consulted.",
+    "THIS IS THE LP RELAXATION, NOT THE IP. Everything measured here runs scipy.linprog over the continuous relaxation. The n-fold AGGREGATION structure is fully exercised — it is what produces the gap, the 6^A collapse and the pairing law — but Theorem 1.1's actual content, poly-time solvability of the INTEGER program via Graver-basis stabilisation, is untouched. Since the relaxation collapses to 6 variables it is trivially tractable, so the entire complexity question lives in the integrality not built here.",
+    "Window edges are 50-step bisections on a 1e-9 threshold against a float64 LP, so the last few digits quoted are the bisection's precision, not certified algebraic values. The interior gap (0.0687 at the peak) is 8 orders above the noise floor and is separately verified by three LP methods, dual certificates, and an explicit cheaper feasible point; the exact zeros at q_0 are 9 orders below the same floor."
+  ]
+}

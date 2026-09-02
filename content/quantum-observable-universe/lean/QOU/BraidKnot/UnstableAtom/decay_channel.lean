@@ -1,117 +1,53 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.BraidKnot.UnstableAtom.decay_channel
+# `QOU.BraidKnot.UnstableAtom.decay_channel` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts`](quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts).
+This module used to hold `DecayChannelContext` together with a projection
+that discharged all three manuscript sub-claims from that class's own fields.
+Both are removed (2026-08-31).  It is the fifteenth and last of the drained
+library shells for bean `qou-z9ws`, and it was **held back** from the first
+fourteen because its sibling's docstring said the opposite of the pattern:
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidKnot.UnstableAtom.decay_channel` resolves to a real declaration in the `qou`
-Lake package.
+> *"The **substantive** Lean encoding (the `DecayChannelContext` class plus
+> the `decay_channel` conditional result) lives at the **canonical library
+> path** `QOU/BraidKnot/UnstableAtom/decay_channel.lean`."*
+
+That claim was wrong twice.
+
+**Unreachable.**  Per AGENTS.md §0a a block's `lean.ref` resolves to the
+**sibling first**, and the sibling
+[`knots-particles-confinement/unstable-atom-decay-channel.lean`](../../../knots-particles-confinement/unstable-atom-decay-channel.lean)
+exists — so `qou:QOU.BraidKnot.UnstableAtom.decay_channel` resolved there,
+never here.  Worse, the sibling declared `decay_channel_unique` and no
+`decay_channel`, so the ref named a declaration that existed only at a path
+resolution could not reach.
+
+**Not substantive.**  `DecayChannelContext` carried `Z`, `N`, `q`,
+`PartitionIdx`, `lam_star`, `E_lambda`, `on_boundary`, `lam_alt`, `q_1`,
+`q_2` **and** all three sub-claims as its own fields, and `decay_channel`
+returned the three claim fields as a triple.  Since the data were fields the
+instance chose them: `on_boundary := fun _ => True` makes sub-claim (ii)
+vacuous (`¬ True` is false), `q_1 := 1, q_2 := 0` makes (iii) vacuous, and
+`E_lambda := 1` discharges (i).  So a `[DecayChannelContext]` binder assumed
+nothing — AGENTS.md §3b-cond item 5.
+
+**The sibling now carries the encoding, under the name the ref names**, and
+sub-claim (iii) is **derived** there rather than assumed: *"stable at `q₁`,
+unstable at `q₂` implies `∃ q* ∈ [q₁, q₂]` with `E(λ*, q*) = 0"* is the
+intermediate value theorem for a continuous energy, which is what the
+manuscript's own Connection-to-phase-boundary paragraph argues.  Sub-claim
+(ii) is derived from the LP-duality selection input, and what is not encoded
+— sub-claim (i)'s LP construction, the boundary variety, continuity of `E` —
+is stated there rather than implied.
+
+**Nothing imports this module**, and nothing else in `content/` names the
+class (measured 2026-08-31 across every `.lean` in the tree).
+
+The file is kept rather than deleted so that the `lean.ref`'s second
+resolution candidate —
+`<lakeRoot>/QOU/BraidKnot/UnstableAtom/decay_channel.lean` — still exists as
+a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.BraidKnot.UnstableAtom
-
-
-/-- Abstract context for the `decay_channel` claim — manuscript-themed
-    typed fields below; sub-claims encode (i) well-definedness of the
-    decay channel `λ*(K, q)`, (ii) uniqueness off the boundary variety,
-    and (iii) the phase-boundary crossing condition. -/
-class DecayChannelContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- Partition / Young-diagram indexing. -/
-  PartitionIdx : Type
-  /-- The decay-channel partition `λ*(K, q) : PartitionIdx`. -/
-  lam_star : PartitionIdx
-  /-- Energy `E(λ, q)` of constraint-violation at partition `λ`. -/
-  E_lambda : ℝ
-  /-- Manuscript sub-claim (i) — `λ*` is well-defined whenever the
-      atom is unstable (energy is non-zero at `q`). -/
-  claim_i_well_defined : E_lambda ≠ 0
-  /-- Predicate: `q` is on the boundary variety `{q : E(λ*, q) = 0}`. -/
-  on_boundary : ℝ → Prop
-  /-- A candidate alternative decay-channel partition `λ'`. -/
-  lam_alt : PartitionIdx
-  /-- Manuscript sub-claim (ii) — Uniqueness off the boundary variety:
-      off the boundary, every alternative `λ'` that also minimises
-      `E_λ` must coincide with `λ*`. -/
-  claim_ii_unique_off_boundary : ¬ on_boundary q → lam_alt = lam_star
-  /-- The two endpoints of the phase-crossing interval. -/
-  q_1 : ℝ
-  q_2 : ℝ
-  /-- Manuscript sub-claim (iii) — Phase-boundary crossing: stable at
-      `q_1`, unstable at `q_2` implies `∃ q* ∈ [q_1, q_2]` with
-      `E(λ*, q*) = 0` (the boundary variety is crossed). -/
-  claim_iii_phase_boundary_crossing :
-    q_1 ≤ q ∧ q ≤ q_2 → ∃ q_star : ℝ, q_1 ≤ q_star ∧ q_star ≤ q_2 ∧
-      on_boundary q_star
-
-/-- **Manuscript statement** (full body):
-
-**Proposition.**
-*If atom-knot $K$ is [unstable](#def:unstable-atom) at $q$, then
-the **decay channel** $\lambda^*(K, q)$ — the unique violated
-constraint — is well-defined.*
-
-*Proof.*
-*Since $K$ is unstable, the ILP
-$\{x \in \mathbb{Z}_{\geq 0}^N : G(q) x \geq 0\}$ has no
-solution within the confinement filtration $J^{\ell(K, q)}(q)$.*
-
-*Run the LP relaxation
-$\{x \in \mathbb{R}_{\geq 0}^N : G(q) x \geq 0\}$.  This is
-always feasible (the trivial $x = 0$ vector satisfies $G \cdot 0
-= 0 \geq 0$, and the relaxation is the convex hull of integer
-solutions).  Pick the unique optimal vertex $x^*_{LP} \in
-\mathbb{R}_{\geq 0}^N$ closest to an integer point.*
-
-*The **violated constraint** is*
-
-$$
-  \gamma^*(K, q)
-  \;:=\;
-  \arg\min_\gamma\;
-    (G(q)\, \lceil x^*_{LP} \rceil)_\gamma,
-$$
-
-*the constraint with the smallest (most negative) Frobenius
-positivity value at the rounded integer point.  By LP duality
-([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
-this corresponds to a unique partition $\lambda^*(K, q)$ — the
-operator $e_{\lambda^*}$ that fails to satisfy positivity.*
-
-*Uniqueness: if two distinct partitions $\lambda_1, \lambda_2$
-both achieve the minimum at the same integer point, they have
-identical shadow prices at $q$, i.e., $|y_{\lambda_1}(q)| =
-|y_{\lambda_2}(q)|$ — these lie on the **boundary variety**
-([local shadow ordering](#def:local-shadow-ordering)) of measure
-zero.  Generically (off the boundary variety), $\lambda^*$ is
-unique.  $\square$*
-
-**Connection to phase boundary.**
-*An atom that is stable at $q_1$ and unstable at $q_2$
-necessarily crosses a $q^* \in [q_1, q_2]$ where
-$E(\lambda^*, q^*) = |y_{\lambda^*}(q^*)| = 0$ — the LP
-boundary for the violated constraint vanishes.  Crossing $q^*$
-flips ILP feasibility.*
-
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
-def decay_channel [ctx : DecayChannelContext] :
-    ctx.E_lambda ≠ 0 ∧
-    (¬ ctx.on_boundary ctx.q → ctx.lam_alt = ctx.lam_star) ∧
-    (ctx.q_1 ≤ ctx.q ∧ ctx.q ≤ ctx.q_2 →
-      ∃ q_star : ℝ, ctx.q_1 ≤ q_star ∧ q_star ≤ ctx.q_2 ∧
-        ctx.on_boundary q_star) :=
-  ⟨ctx.claim_i_well_defined, ctx.claim_ii_unique_off_boundary,
-   ctx.claim_iii_phase_boundary_crossing⟩
-
-end QOU.BraidKnot.UnstableAtom

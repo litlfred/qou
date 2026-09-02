@@ -1,24 +1,49 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:14:59.799457+00:00",
-  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
+  "computedAt": "2026-08-30T10:34:10.537214+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
   "assertions": [
     {
-      "name": "probe_completed",
-      "computed": true,
-      "expected": true,
+      "name": "mirror_pair_difference_equals_h_over_2",
+      "computed": "6.68191177523e-52",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "|[(1+q)/2 − (1+q⁻¹)/2] − h/2| = 6.68191e-52 at q_0, with h = q − q⁻¹ and both sides = 0.104530149397819658. This exact identity is what makes (1+q)/2 chirality-odd where [2]_q/2 is bar-symmetric"
+    },
+    {
+      "name": "candidates_fully_deriving_the_target",
+      "computed": 6,
+      "expected": 6,
       "passed": true,
       "tolerance": 0,
-      "source": "(1+q)/2 categorical-derivation probe completed at 50 dps."
+      "source": "6 of 7 candidate chains satisfy both C1 (q→1 limit = 1) and C2 (matches (1+q)/2 at q_0 within 0.1%): (a), (b), (c), (d), (e), (g). 1 fails C2 — the [2]_q/2 distinguishing test. Over-determination is the probe's finding; a count of 7 or of 1 would both refute it"
+    },
+    {
+      "name": "bar_symmetric_candidate_is_separated_from_target",
+      "computed": "4.69586",
+      "expected": "4.69586",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "percent",
+      "source": "[2]_q/2 = (q+q⁻¹)/2 misses (1+q)/2 by -4.69586359095% at q_0 — 47× the 0.1% C2 band, so the bar-symmetric averaging operator is excluded rather than merely disfavoured"
+    },
+    {
+      "name": "target_matches_v9_empirical_correction_factor",
+      "computed": "2.91375690404e-7",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "|(1+q_0)/2 − 1.054989| = 2.91376e-7; (1+q_0)/2 = 1.0549892913756904 against the correction factor v9 needed"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "v9-one-plus-q-categorical-derivation-probe",
   "scriptFile": "v9_one_plus_q_categorical_derivation_probe.py",
-  "scriptHash": "80004c028293",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "a8725c19f9e4",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +55,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -151,6 +176,9 @@
       "discriminating_test_open": "WHY (1+σ)/2 instead of (σ+σ⁻¹)/2 — needs Hopf-antipode justification for mirror-swap structure"
     }
   },
+  "caveats": [
+    "Three prose claims in this module are contradicted by its own arithmetic, surfaced by draining the tautological assertion. (a) The printed chain 'Categorically: (1+q)/2 = 1 + h/2' and 'step 6 Frobenius pairing: chirality = 1 + h/2' are wrong: at q_0, (1+q)/2 = 1.05498929138 while 1 + h/2 = 1.1045301494. What IS exact is that the mirror-pair DIFFERENCE (1+q)/2 − (1+q⁻¹)/2 equals h/2 (asserted above), and that (1+q)/2 = 1 + ℏ_q·q/2, the third form in the same printed chain. (b) The header's C2 and the 'step 9 Archimedean' line quote the required factor as 1.054855; the value used throughout and recorded in the witness is 1.054989, and (1+q_0)/2 = 1.05498929138. (c) The verdict names 'candidates (b), (d), (e), (g)' as giving (1+q)/2; the scan finds 6 — the narrative section's own '(a, b, c, d, e, g)' is the correct list. Reported, not silently corrected."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

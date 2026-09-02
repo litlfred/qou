@@ -304,26 +304,38 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
   convert hdiv using 1
   norm_num
 
-/-- **Theorem (order-2 Taylor coefficient = 5/6 via Taylor expansion).**
-The second Taylor coefficient at q = 1 of `delta_tau_M_surrogate` is `5/6`.
+/-! ### Order-2 Taylor coefficient — proved in the library, not restated here
 
-Per the script's order-2 print: `Order 2:  5/6`.
+`deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6` is **proved, sorry-free**,
+as `QOU.BraidKnot.delta_tau_M_surrogate_taylor_coeff_2` in
+`content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`,
+by differentiating the quotient-rule result a second time and transporting it
+along `delta_tau_M_surrogate_deriv_eventuallyEq`. That file is `lean`-direct
+clean (exit 0, 0 errors, 0 `sorry`).
 
-**Stated form**: `Δτ_M(1 + w) = (-5/6)·w + (5/6)·w² + O(w³)` ⇒ the
-order-2 term as a Taylor coefficient is `5/6`. The Lean encoding
-of this fact would require either (a) the second derivative
-calculation (very bulky for a rational function) or (b) the
-`Mathlib.Analysis.Analytic.Basic` Taylor series machinery. We
-state this as an axiom for now (sorry referenced to the SymPy
-witness) and propose the second-derivative proof as future work. -/
+**What was here until 2026-08-31, and why it is gone.** This block carried
+
+```lean
 class DeltaTauMSurrogateTaylorCoeff2 : Prop where
-  /-- The missing input for the second Taylor coefficient. -/
   coeff2 : deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6
 
--- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
 theorem delta_tau_M_surrogate_taylor_coeff_2 [ctx : DeltaTauMSurrogateTaylorCoeff2] :
-    deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 :=
-  ctx.coeff2
+    deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 := ctx.coeff2
+```
+
+— a class whose only field is the conclusion, handed back by projection: the
+self-assuming projection forbidden by AGENTS.md §3b-cond item 5, and an entry in
+the vacuity ledger. Its docstring said the second-derivative proof was *"future
+work"*. That sentence was already stale when it was read: the library twin had
+the proof.
+
+Removed rather than re-proved. Restating it here would put a second, independent
+formalisation of the same fact in the tree, and a content-block sibling cannot
+`import` the library module that already has it. Nothing referenced either
+declaration (measured: zero occurrences outside this file). Bean `qou-z9ws`;
+`docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
+
+Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2) -/
 
 /-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,
 `-1729/108`, `111/4`, `-3665/81`) are recorded in the witness JSON

@@ -1,0 +1,158 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-31T17:54:43.062142+00:00",
+  "commitSha": "4b3482b6ffc195b04efe8c1423d176255b1a1f6c",
+  "assertions": [
+    {
+      "name": "c_free_equals_2A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 deviations in 23 cases"
+    },
+    {
+      "name": "c_atom_equals_2A_minus_odd_bonds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 deviations in 414 cases"
+    },
+    {
+      "name": "all_assignments_fail_derived_arity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "2H:6_2 1 vs 3; 2H:Hopf L2a1 (bind) 2 vs 3; 3H:8_11 1 vs 4; 3He:L6a4 3 vs 4"
+    },
+    {
+      "name": "arity_and_volume_intersection_empty_at_A2_A3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "survivors {'2H': 0, '3H': 0, '3He': 29}"
+    },
+    {
+      "name": "reproduces_prior_census_degeneracy",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "prior {'2H': 796, '3H': 1101, '3He': 26671}; here {'2H': 799, '3H': 1102, '3He': 26843}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "link-assignment-census-selectivity",
+  "scriptFile": "link_assignment_census_selectivity_probe.py",
+  "scriptHash": "98ba710a46df",
+  "scriptCommitSha": "4b3482b6ffc195b04efe8c1423d176255b1a1f6c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/link_assignment_census_selectivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/link_assignment_census_selectivity_probe.py"
+  },
+  "description": "Gap #2 (bean t7qv). The 2026-08-25 audit (qou-8ms1, knot-id-is-an-admitted-fit) asked for a complexity bound on K derived from the substrate with no B_AME input, then whether the volume match is unique inside that class. This supplies one — the closure's COMPONENT COUNT, fixed by the permutation of the canonical word and identical on every branch since sigma and sigma^-1 are the same transposition. Measured exact: c_free = 2A (0 deviations) and c_atom = 2A - #(odd-multiplicity bonds) (414/414), = A+1 at unit multiplicity, corroborating QOU.MassTheory.ClassicalTraceFloor by an independent route. All three assignments FAIL it: 6_2 (1 vs 3), 8_11 (1 vs 4), L6a4 (3 vs 4) — the 3H and 3He rows are new, the audit reached only 2H. Intersected with each pick's own volume window the class is EMPTY at 2H (0 of 799) and 3H (0 of 1,102), and 29 of 26,843 at 3He. No fit; no wiring; no knot proposed.",
+  "data": {
+    "cycle_count_laws": {
+      "free_tested": 23,
+      "free_deviations": 0,
+      "atom_tested": 414,
+      "atom_deviations": 0
+    },
+    "assignment_arity": [
+      {
+        "atom": "2H",
+        "link": "6_2",
+        "components": 1,
+        "required_A_plus_1": 3
+      },
+      {
+        "atom": "2H",
+        "link": "Hopf L2a1 (bind)",
+        "components": 2,
+        "required_A_plus_1": 3
+      },
+      {
+        "atom": "3H",
+        "link": "8_11",
+        "components": 1,
+        "required_A_plus_1": 4
+      },
+      {
+        "atom": "3He",
+        "link": "L6a4",
+        "components": 3,
+        "required_A_plus_1": 4
+      }
+    ],
+    "picks": [
+      {
+        "atom": "2H",
+        "knot": "6_2",
+        "rho_handpicked": 1,
+        "B_AME_MeV": "2.22456619999999999999999999999999999999999999999999734095406",
+        "vol": "4.40083251612304610144120386564092803398348541851650000000000",
+        "vol_target": "4.35336745211741914154418671962928918631983580678455048232391",
+        "B_pred_MeV": "2.24882079790130906476295047207288596968336570965084948487340",
+        "err_pct": "1.09030686078522027184223477246422109997741176013787195504031",
+        "derived_components": 3,
+        "in_volume_window": 799,
+        "with_derived_arity": 0
+      },
+      {
+        "atom": "3H",
+        "knot": "8_11",
+        "rho_handpicked": 2,
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
+        "vol": "8.28631681780659258812682479775116716294874424541110000000000",
+        "vol_target": "8.29923054494247184654624911828701039088624904275926253929746",
+        "B_pred_MeV": "8.46859839796813743979427764858463578397918511131650526624482",
+        "err_pct": "-0.155601499029917273958107498684821217713470746721128527591544",
+        "derived_components": 4,
+        "in_volume_window": 1102,
+        "with_derived_arity": 0
+      },
+      {
+        "atom": "3He",
+        "knot": "L6a4",
+        "rho_handpicked": 2,
+        "B_AME_MeV": "7.71804131999999999999999999999999999999999999999999571104141",
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "vol_target": "7.55191503776901816322592730841053618054739649743368357627820",
+        "B_pred_MeV": "7.48891931988322064952348334695094443048990486136408081656894",
+        "err_pct": "-2.96865474823318710188657882242402363181563193076964534567741",
+        "derived_components": 4,
+        "in_volume_window": 26843,
+        "with_derived_arity": 29
+      }
+    ],
+    "snappy_version": "3.3.2",
+    "census_sizes": {
+      "OrientableCuspedCensus": 212641,
+      "HTLinkExteriors": 180511
+    }
+  },
+  "caveats": [
+    "Component count is a NECESSARY condition on the closure, so an empty intersection refutes while a survivor is only a candidate. Cusp count equals component count for link exteriors and the census is not exhausted by link exteriors, so the arity-restricted counts are UPPER bounds on genuine link candidates — the emptiness at 2H/3H only strengthens.",
+    "The census-degeneracy measurement (A5) is prior work, docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md; it is re-measured here as a guard, not claimed. The counts differ slightly because that audit counted STRICTLY closer over OrientableCuspedCensus alone and this counts AT LEAST AS GOOD over OCC + HTLinkExteriors.",
+    "L14n62525 (Vol 7.597116, +0.598%) beats L6a4 (-2.969%) inside 3He's arity-restricted class. It is NOT proposed as a replacement — a 14-crossing link with no structural motivation would repeat the census-fitting this probe documents. It is reported only to show the incumbent is not the best candidate in its own class."
+  ]
+}

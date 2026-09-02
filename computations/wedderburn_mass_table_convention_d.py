@@ -104,6 +104,14 @@ def phi1(seq):
     return t
 
 
+def phi2(Z, N):
+    return Z * N * mp.log(1 + H ** 2 / 4)
+
+
+def phi3(Z, N, lnq):
+    return mp.mpf(-2 * Z - N * (N - 1)) * lnq
+
+
 def nuc_to_seq(nuc):
     s = []
     for c in nuc:
@@ -170,8 +178,8 @@ def main() -> int:
     rows = []
     for el, Z, N, mobs, mpub in ROWS:
         p1, _ = minimise(Z, N)
-        p2 = Z * N * mp.log(1 + H ** 2 / 4)
-        p3 = mp.mpf(-2 * Z - N * (N - 1)) * lnq
+        p2 = phi2(Z, N)
+        p3 = phi3(Z, N, lnq)
         corr = ALPHA * (p1 + BETA2 * p2 + BETA3 * p3)
         base = Z * M_P + N * M_N + Z * M_E
         pred = base + corr
@@ -241,12 +249,111 @@ def main() -> int:
                  "against exhaustive search on every atom where exhaustive "
                  "is feasible, but not proved global on the rest."),
     })
-    wb.add_assertion("phi_2_and_phi_3_are_convention_free",
-                     computed=True, expected=True,
-                     source="neither uses the Markov parameter z; "
-                            "QOU.BraidKnot.detT_* and chiralityCount_collapse")
-    wb.add_assertion("no_fitted_parameters", computed=0, expected=0,
-                     source="every coefficient from q0, m_e and Catalan")
+    # Both assertions below were `computed=X, expected=X` on the same literal
+    # (bean `qou-26f2`) — `True==True` and `0==0` — so each recorded
+    # `passed:true` without evaluating anything. Both restated as measurements.
+
+    # (1) CONVENTION-FREENESS, MEASURED. The claim is that Phi_2 and Phi_3 do
+    #     not read the Markov parameter z, so only Phi_1 can move under the
+    #     C -> D ruling. Re-evaluate all three at a SECOND z and compare. The
+    #     Phi_1 leg is the positive control and is the part that can fail
+    #     informatively: without it, "Phi_2 and Phi_3 did not move" would also
+    #     hold if z had stopped reaching the pipeline at all, which is the
+    #     failure the ruling is most exposed to.
+    #
+    #     The perturbation rebinds the MODULE GLOBAL rather than passing a
+    #     parameter, because the claim is about what these functions read, and
+    #     a parameter this file added for the test would not be that.
+    seq_probe = nuc_to_seq(list("ppnn"))     # fixed arrangement, no search
+    base_p1 = phi1(seq_probe)
+    base_23 = [(phi2(Z_, N_), phi3(Z_, N_, lnq)) for _, Z_, N_, _, _ in ROWS]
+    _z_saved = Z_D
+    try:
+        globals()["Z_D"] = _z_saved * 2 + 1   # any z != z_D; not a convention
+        alt_p1 = phi1(seq_probe)
+        alt_23 = [(phi2(Z_, N_), phi3(Z_, N_, lnq)) for _, Z_, N_, _, _ in ROWS]
+    finally:
+        globals()["Z_D"] = _z_saved
+    dphi1 = abs(alt_p1 - base_p1)
+    n_phi23_stable = sum(1 for a, b in zip(base_23, alt_23) if a == b)
+    print(f"\n  convention-freeness: Phi_1 moves by {mp.nstr(dphi1, 8)} under a "
+          f"second z; Phi_2/Phi_3 unmoved on {n_phi23_stable}/{len(ROWS)} rows")
+    wb.add_assertion(
+        "phi_2_and_phi_3_unmoved_by_z",
+        computed=str(n_phi23_stable),
+        expected=str(len(ROWS)),
+        tolerance=0,
+        unit="table rows whose (Phi_2, Phi_3) are bit-identical at a second z",
+        source=("z_D rebound to 2·z_D + 1 and both invariants recomputed for "
+                "every row. Phi_2 = Z·N·ln(1 + h²/4), Phi_3 = (−2Z − N(N−1))·ln q "
+                "— neither should see the Markov parameter."),
+    )
+    wb.add_assertion(
+        "phi_1_does_move_with_z",
+        computed=str(int(dphi1 > 0)),
+        expected="1",
+        tolerance=0,
+        unit="1 if Phi_1 responds to the same z perturbation",
+        source=("positive control for the assertion above: without it, "
+                "'Phi_2/Phi_3 did not move' would also hold if z had stopped "
+                f"reaching V() at all. Measured |ΔPhi_1| = {mp.nstr(dphi1, 8)} "
+                f"on the fixed ppnn arrangement."),
+    )
+
+    # (2) THE PHI_3 IDENTITY THE DOCSTRING STATES BUT NEVER CHECKED. The module
+    #     header gives two forms — (−2Z − N(N−1))·ln q and
+    #     2(2·C(Z,2) − C(N,2) − Z²)·ln q — and only the first is used. The
+    #     second is an independent route to the same integer coefficient.
+    n_phi3_comb = sum(
+        1 for (el, Z_, N_, _, _) in ROWS
+        if (-2 * Z_ - N_ * (N_ - 1))
+        == 2 * (2 * comb(Z_, 2) - comb(N_, 2) - Z_ ** 2)
+    )
+    wb.add_assertion(
+        "phi_3_coefficient_matches_its_combinatorial_form",
+        computed=str(n_phi3_comb),
+        expected=str(len(ROWS)),
+        tolerance=0,
+        unit="rows where both docstring forms of the Phi_3 coefficient agree",
+        source=("module docstring: Phi_3 = (−2Z − N(N−1))·ln q "
+                "[= 2(2·C(Z,2) − C(N,2) − Z²)·ln q]. Only the first is used to "
+                "build the table; the second is evaluated here as a check."),
+    )
+
+    # (3) NO FITTED PARAMETERS, MADE MECHANICAL. "Every coefficient from q0,
+    #     m_e and Catalan" is refutable: re-derive each of the three from a
+    #     second closed form. A coefficient nudged to improve the AME column
+    #     stops reproducing.
+    #       alpha  = m_e·8G,  G re-derived as the Dirichlet beta series
+    #                Σ (−1)^k/(2k+1)² rather than mp.catalan
+    #       beta_2 = −2[3]_q, [3]_q re-derived as (q³−q⁻³)/(q−q⁻¹) rather than
+    #                the expanded q²+1+q⁻²
+    #       beta_3 = h_A²,   re-derived as q² − 2 + q⁻² rather than (q−1/q)²
+    G_series = mp.nsum(lambda k: (-1) ** k / (2 * k + 1) ** 2, [0, mp.inf])
+    redrv = {
+        "alpha": (ALPHA, M_E * 8 * G_series),
+        "beta2": (BETA2, -2 * (Q ** 3 - Q ** -3) / (Q - Q ** -1)),
+        "beta3": (BETA3, Q ** 2 - 2 + Q ** -2),
+    }
+    coef_resid = max(abs(a - b) / abs(a) for a, b in redrv.values())
+    coef_floor = mp.mpf(10) ** -(mp.mp.dps - 10)
+    print(f"  coefficient re-derivation: max relative residual "
+          f"{mp.nstr(coef_resid, 6)} (floor {mp.nstr(coef_floor, 3)})")
+    wb.add_data("coefficient_rederivation", {
+        k: {"used": s20(a), "second_route": s20(b),
+            "rel_residual": mp.nstr(abs(a - b) / abs(a), 8)}
+        for k, (a, b) in redrv.items()})
+    wb.add_assertion(
+        "coefficients_reproduce_from_a_second_closed_form",
+        computed=mp.nstr(coef_resid, 8),
+        expected="0",
+        tolerance=mp.nstr(coef_floor, 3),
+        unit="max relative residual over alpha, beta_2, beta_3",
+        source=("alpha = m_e·8G vs Dirichlet beta series for G; beta_2 = "
+                "−2(q²+1+q⁻²) vs −2(q³−q⁻³)/(q−q⁻¹); beta_3 = (q−1/q)² vs "
+                "q²−2+q⁻². None of the three reads the AME column. "
+                "Floor = 10^-(dps−10)."),
+    )
     out = wb.save()
     print(f"witness -> {out}")
     return 0

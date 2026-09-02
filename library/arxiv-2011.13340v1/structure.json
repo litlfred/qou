@@ -1,0 +1,128 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2011.13340v1",
+ "source": {
+  "file": "2011.13340v1.pdf",
+  "sha256": "e73876ed2c923608a5efcf6053a7d21c0148bfd9c3b1d63bc32fe6ba91179480",
+  "bytes": 167619,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2011.13340",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "26 Nov 2020"
+  },
+  "doi": null,
+  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions*",
+  "authors_raw": "Tarun Kathuria",
+  "title_lines": [
+   "A Matrix Bernstein Inequality for Strong Rayleigh",
+   "Distributions*"
+  ],
+  "abstract": "The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional inequalities like P oincare and log-Sobolev inequalities. These inequalities are especially useful for deriving conc entration for dependent distributions coming from stationary distributions of Markov chains. In c ontrast to the scalar case, the study of matrix concentration inequalities is fairly recent and t here does not seem to be a general framework for proving matrix concentration inequalities u sing the Entropy method. In this paper, we initiate the study of Matrix valued functional ine qualities and show how matrix valued functional inequalities can be used to establish a ki nd of iterative variance comparison argument to prove Matrix Bernstein like inequalities. Stro ng Rayleigh distributions are a class of distributions which satisfy a strong form of negative dep endence properties. W e show that scalar Poincare inequalities recently established for a \ufb02i p-swap markov chain considered in the work of Hermon and Salez [ HS19] can be lifted to prove matrix valued Poincare inequalities. This can then be combined with the iterative variance argume nt to prove a version of matrix Bernstein inequality for Lipshitz matrix-valued function s for Strong Rayleigh measures.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20201129210529-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Matrix Valued Poincare Inequality for Strong Rayleigh measures",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Comparison with KyngSong18",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion and Open Questions",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 20751,
+   "n_words": 3854
+  },
+  {
+   "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
+   "number": "3",
+   "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 9315,
+   "n_words": 1861
+  },
+  {
+   "id": "sec-002-5-conclusion-and-open-questions",
+   "number": "5",
+   "title": "Conclusion and Open Questions",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1350,
+   "n_words": 215
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3758,
+   "n_words": 536
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 4,
+  "chars_total": 35174
+ }
+}
