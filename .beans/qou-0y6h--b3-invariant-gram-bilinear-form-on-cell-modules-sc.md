@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T07:35:56Z
+updated_at: 2026-09-02T21:26:27Z
 ---
 
 ## 2026-08-29 — this is closer than the standing plan implies (from qou-0ubf)
@@ -184,3 +184,51 @@ the general diagonal structure constant [T_u T_w : T_w] still has no closed form
 in the corpus, and the proved generator case does not imply it -- at q=1 the
 trace is delta_{u,1}(n+1)!, at generic q the u = s_i case is (q-1)(n+1)!/2, so
 it is not concentrated at u=1.
+
+
+## 2026-09-02 — the blocker is NOT combinatorial; price the rest as Mathlib-scale
+
+Probe: computations/hecke/tw_regular_trace_statistics_probe.py
+Audit: docs/audits/2026-09-02-tw-regular-trace-not-combinatorial.md
+
+The single thing blocking det(twGram) at rank >= 2 is [T_u T_w : T_w] for
+general u, i.e. tr(L_{T_u}). Measured exactly, it is determined by NONE of the
+three obvious statistics:
+
+  length(u) alone      -- NO, fails from S_4 on
+  cycleType(u) alone   -- NO, fails from S_3 on
+  (length, cycleType)  -- NO: holds in S_4, FAILS in S_5
+
+Witness, same length 4 and same cycle type (2,2,1) in S_5:
+  u = (0,3,4,1,2)  tr =  5 (q-1)^2 (q^2 + 4q + 1)
+  u = (1,0,4,3,2)  tr = 10 (q-1)^2 (q^2 +  q + 1)
+Not proportional; not even the same irreducible factors. Exact finite
+computation => a refutation with a witness, not a numerical near-miss.
+
+TRAP, recorded because I walked into it twice in one session. S_2 satisfies all
+three, S_3 two, S_4 the joint one, S_5 none. From S_3 I concluded 'depends only
+on length'; from S_4 I concluded 'depends on (length, cycle type)'. Both were
+consistent with every datum I had at the time and both are false. In this corpus
+a Hecke pattern first breaks at n = 4 or n = 5 — that is where S_n first has two
+elements of equal length in one class. DO NOT promote a rank-3 or rank-4 pattern
+here without testing S_5. The probe asserts both halves of the split so a future
+edit that breaks either fails loudly.
+
+NOT established: that no closed form exists. tr(L_{T_u}) = sum_lambda d_lambda
+chi_lambda(T_u), and this is the signature of Geck-Pfeiffer's minimal-length
+class-representative theory: the trace at a class's minimal length differs from
+the trace at higher length in the same class, which is exactly why cycle type
+cannot determine it. In S_4, class (3,1) has minimal length 2 with 4(q-1)^2 and
+reappears at length 4 with (q-1)^2(q+1)^2.
+
+=> The closed form, if wanted, IS Geck-Pfeiffer 7.2.6, the theorem this bean
+names. PRICE THE REMAINDER AS MATHLIB-SCALE CHARACTER THEORY: multi-session,
+research formalisation, not a proof to be typed out. Combined with the
+characteristic bound already recorded (det != 0 => semisimple is
+one-directional, so the route cannot reach small characteristic even when
+finished), that is the honest state.
+
+UNCONDITIONAL and independent of all of the above, already on main:
+isSemisimpleRing_rank_one (+ the substrate corollary over R, q > 0), twGram and
+isSemisimpleRing_of_twGram_det_ne_zero at every rank, the full sigma_mul_Tw
+table, trace_lmul_sigma, and IsHeckeOfFullRank for IwahoriHecke at every rank.
