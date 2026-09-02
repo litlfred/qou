@@ -266,14 +266,26 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-09-02 (qtr-kron-consolidation): verified edited
+  `QOU/MassTheory/QuantumTraceTower.lean` — the only change vs main is a new
+  `import QOU.MathlibExt.MarkovTraceMultiplicative` and `qtr_kron` rerouted to
+  `...MarkovTraceMultiplicative.trace_kron (D₁ * X₁) (D₂ * X₂)`. First QOU-import
+  in this file, so needed the QOU cone. `MarkovTraceMultiplicative.olean` was
+  ABSENT from restored cache; built it lean-direct into the QOU lib dir first
+  (Mathlib-only, exit 0), then built QuantumTraceTower.olean fresh from current
+  source (avoids false-green), then `#print axioms` against the fresh cone.
+  Target lean-direct EXIT 0, zero diagnostics; the `trace_kron (A) (B)` two-arg
+  form compiled AS AUTHORED — no tactic line changed. qtr_kron / qtr_kron_one /
+  qtrDiag_one all = `[propext, Classical.choice, Quot.sound]`, no sorryAx.
+  Note: a background process committed+pushed the edit as `398f760001` mid-session
+  (I did not); committed bytes == verified bytes. Confirmed cold-cache TRAP
+  (MTM build real 1m37s / user 11s). LEAN_PATH = all root `.lake/packages/*/
+  .lake/build/lib/lean` + `$ROOT/.lake/build/lib/lean`. `/usr/bin/time` is NOT
+  installed here — use the bash `time` builtin.
 - 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
-  (sign-isotype exclusion, statement-B). lean-direct EXIT 0, `#print axioms` =
-  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`. TRAP: cache tarball is
-  now **2.3G** (was 1.6G) and restore ran out at ~2.2G free — extraction cut off
-  in the QOU library files, but mathlib extracted 3407 oleans, ENOUGH for a
-  Mathlib-only import cone. Lesson: a Mathlib-only file needs no complete restore
-  — probe the import cone with a minimal `example` first. Gotcha: `omit [inst] in`
-  must precede the docstring, not sit between docstring and `theorem`.
+  lean-direct EXIT 0, std-3 axioms, no sorryAx. Cache tarball ~2.3G; restore ran
+  out at ~2.2G free (QOU lib files cut off) but mathlib's 3407 oleans suffice for
+  a Mathlib-only cone. `omit [inst] in` must precede the docstring.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
@@ -297,30 +309,8 @@ prune the log, never the TRAPs.
   sorryAx. Cache already restored (3407 mathlib oleans, RESTORED-NO-TRACES marker).
   Confirmed cold-cache TRAP again: file real 1m16s but user only 5.7s. File is
   untracked (new, uncommitted) — the import fix lives in the working tree.
-- 2026-08-30 (milnor-v7ro): verified new `QOU/MassTheory/DeficitRecursionReduction.lean`
-  (Mathlib.Tactic-only, no QOU imports; `deficit` def + 2 field-algebra theorems).
-  lean-direct EXIT 0, zero errors/sorries. `#print axioms` on BOTH theorems =
-  `[propext, Classical.choice, Quot.sound]`, no sorryAx. Cache already restored
-  (3407 mathlib oleans, RESTORED-NO-TRACES marker present). Confirmed cold-cache
-  TRAP again: wall 3m31s but `user` only 10s — page faulting, not a rebuild.
-- 2026-08-31: verified NEW `QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`
-  (Mathlib-only, 4 decls). As-written FAILS: line 41/42 `import
-  Mathlib.Algebra.BigOperators.Ring` is a non-existent module in v4.24.0 (it's a
-  dir, no `Ring.lean`) — a SOURCE bug, not a cache gap. With that one import
-  fixed to `...Ring.Finset` (verified on a temp copy; source left unedited),
-  lean-direct EXIT 0, all 4 axiom-clean {propext, Quot.sound[, Classical.choice]},
-  no sorryAx. 3 harmless `unusedSectionVars [DecidableEq n]` linter warnings only.
-  New TRAP added (BigOperators.Ring). Restore note: QOU-cone seed is a PARTIAL
-  mathlib (3469 oleans, not 6990) — it lacks mathlib modules QOU never imports;
-  full extract ran the 38G quota out mid-QOU-lib (didn't matter, mathlib is first).
-- 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
-  after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
-  Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT
-  source FIRST (avoids false-green), then Borromean/Brunnian against the fresh
-  olean: all exit 0. Magnus standalone exit 0. All 9 key theorems axiom-clean
-  {propext,Classical.choice,Quot.sound}. No instance of `BrunnianDeficitRecursion`
-  (content-bearing class, honest §3b-cond open state). No rebase breakage; Milnor
-  still exports leadingOrder/leadingOrder_four/tauBorromean/borromean_deficit_factor/
-  MilnorExactOrderConjecture. Confirmed: cache restores to ROOT `.lake` (2277 QOU
-  oleans), the per-paper `content/.../lean/.lake` tree is a 3-olean decoy — the
-  harness §3 base path must be ROOT, not $LEANLIB.
+  (older milnor-brick / magnus / deficit-recursion single-file verifications
+  pruned 2026-09-02 — their distinct lessons are captured in the TRAPs above:
+  v4.24.0 module moves incl. `BigOperators.Ring`→`Ring.Finset`; rebuild-from-
+  current-source-first to avoid false green; cache restores to ROOT `.lake`,
+  the per-paper `.lake` tree is a decoy.)
