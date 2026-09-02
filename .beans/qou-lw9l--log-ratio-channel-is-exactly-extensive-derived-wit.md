@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-02T21:27:41Z
-updated_at: 2026-09-02T22:09:37Z
+updated_at: 2026-09-02T22:20:12Z
 ---
 
 ## Measured 2026-09-02 — `computations/probes/logratio_exactly_extensive_probe.py` (4/4)
@@ -197,3 +197,51 @@ what `atom_canonical_crossings` builds and what every measurement here uses.
 The sibling's finding that band routing does not close the gap either (still
 -63 %, every many-body term negative) is **their** result, cited not re-derived,
 and does not follow from anything proved on this branch.
+
+
+## NO BOND TOPOLOGY WORKS — the escape named one entry ago is closed
+
+The scope correction above named band-routed bonds as the live escape. This
+closes it for every **additive** model, on **every** topology.
+
+Exhaustive over all bond graphs (species-pair slots fixed by the nucleon
+multiset; at least a spanning tree's worth of edges; `sPP, sPN, sNN` calibrated
+from 2H/3H/3He):
+
+    exact solutions reproducing AME B(4He)   0
+    MAXIMUM reachable B(4He)                 20.648973 MeV
+    AME                                      28.295661 MeV
+    short by                                 1.3703x
+
+The maximum is attained at the **complete** graph on 4He, `(1,4,1)`, with
+`sPP = 5.493477`, `sPN = 2.224566`, `sNN = 6.257232`. **Every edge the nucleon
+multiset permits is already in** — there is nothing left to add.
+
+Lean: `QOU.MassTheory.MarginalRatio.pairwise_additive_cannot_reach_alpha`,
+sorry-free, stated as bounds so it covers every graph at once rather than one
+enumeration.
+
+### 🛑 What it does NOT exclude — the whole remaining freedom
+
+**Additivity is the hypothesis, and band-routed bonds violate it.** Adjacent
+bonds are exactly multiplicative, hence order-independent; band-routed bonds
+DO NOT COMMUTE (sibling: 11.12 % over one A=3 triangle, 38-40 % over 4He's). A
+non-additive B is not of the form `sum over edges` and is OUTSIDE the theorem.
+
+So the frontier is now narrow and well-posed:
+
+  * additive, any topology, species-only values -> **EXCLUDED** (here)
+  * the only source of non-additivity is band routing
+  * its many-body contribution is measured **negative in 80/80** random bond
+    orders -- the wrong sign to close a shortfall (sibling's measurement, cited
+    not re-derived; 80/80 is strong evidence, not a proof)
+
+**Whether a band-routed structure with a POSITIVE many-body contribution exists
+is the open question, and it is the only one left standing** between this
+channel and the binding table.
+
+### Process
+
+Second time in this file the linter found unused hypotheses (`0 <= sPP`,
+`0 <= sNN`). Removed rather than silenced, which strengthens the theorem to
+cover negative bond values.
