@@ -143,3 +143,73 @@ loop** — `math.log` returns a Python float whatever it is handed. Measured:
 `-0.847297860387203613710107506521`. So this accumulator has been
 float64-limited at its log step all along, upstream of any cast. That is a
 **pre-existing precision defect**, neither introduced nor repaired here.
+
+---
+
+# Third atom: the prediction is very nearly a CONSTANT
+
+| atom | A | Z | B_pred (MeV) | AME2020 | sign | \|pred\|/AME | secs |
+|---|---|---|---|---|---|---|---|
+| deuterium | 2 | 1 | -7.271102125 | +2.224566 | **WRONG** | 3.269 | 942 |
+| tritium | 3 | 1 | -7.742121347 | +8.481796 | **WRONG** | 0.913 | 1568 |
+| he3 | 3 | 2 | -7.456199506 | +7.718041 | **WRONG** | 0.966 | 1496 |
+
+**This is the finding, and it is sharper than the sign.**
+
+```
+prediction spread :  -7.742 .. -7.271   =   6.3 % of its mean
+AME2020    spread :  +2.225 .. +8.482   = 101.9 % of its mean
+```
+
+Across A = 2 → 3, and across two *different* A = 3 nuclei, the framework's
+binding accumulator moves **6 %** while the experimental binding it is meant to
+reproduce moves **102 %**. The output is essentially **a constant ≈ −7.5 MeV**,
+almost independent of both A and Z.
+
+That reframes the defect. A wrong sign suggests a convention; a wrong *magnitude*
+suggests a missing coefficient. **A near-constant where the target varies by 4×
+suggests the accumulator is not computing a binding energy at all** — it is
+producing something whose nuclear dependence is almost entirely absent.
+
+## The mirror pair, stated carefully
+
+⁴³H (tritium, Z = 1) and ³He (Z = 2) are mirror nuclei, and the comparison is
+worth making precisely rather than loosely:
+
+```
+raw differences (tritium − he3):   prediction  -0.2859      AME  +0.7638
+```
+
+Those have **opposite signs as raw differences** — I initially mislabelled them
+as agreeing, and that was wrong. The defensible statement is about **ordering
+under the global sign flip**: `|pred(tritium)| > |pred(he3)|` and
+`B(tritium) > B(he3)`, so the framework does rank the mirror pair the way
+experiment does, at **0.37×** the experimental splitting.
+
+That is a genuine but weak positive: some Z-dependence exists and points the
+right way. It does not survive as evidence for the sign being a mere convention,
+because the near-constancy above is not something a sign flip repairs.
+
+## Consistency with the standing open problem
+
+AGENTS.md records the arc's one real open problem as a **"separate,
+super-pairwise additive extensive object"** that six Δ_λ closure ansätze all
+failed to produce, with the pairwise cap proved
+(`QOU.MassTheory.exchangeDet_pow_two_le_four`). A binding accumulator that is
+**flat in A** is exactly what that description predicts you would see if the
+extensive term is absent — the intensive part is present and the extensive part
+is not.
+
+**This measurement does not prove that reading.** Three points, two of them at
+the same A. It is consistent with the standing account, which is a different and
+much weaker claim than confirming it.
+
+## Still running / still not established
+
+- **he4 (A = 4) is the real test** and was still running when this was written.
+  AME `B(⁴He) = 28.296` — more than 3× the A = 3 values — so if the prediction
+  stays near −7.5 there, flatness is established across a 13× range of the
+  target. li6/li7 after that.
+- **No witness regenerated.** `hadron-knot-table.witness.json` untouched.
+- **No mechanism identified.** Flatness is a symptom; where the A-dependence is
+  lost in the accumulator is not measured.
