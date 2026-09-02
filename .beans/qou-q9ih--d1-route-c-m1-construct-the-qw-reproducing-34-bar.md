@@ -175,11 +175,29 @@ probe already reads. No DB, no Magma, no network.
 Both controls reproduce the committed certified witness exactly, so the method
 is the corpus's own, not a new one.
 
-**It corroborates and discriminates NOTHING, and that must be said.** All three
-candidate readings predict 2 for the trefoil: `crossing − 1` (3−1), `deg(trace
-field) + 1` (1+1, the field is ℚ), and the corpus's R1 `full A-polynomial
-L-degree` (2). Reporting "the third-knot test passed" without this sentence
-would be exactly the over-read the `#4534 two-knot-linear-fit guard` warns of.
+**It does not separate the three readings that were on the list.** All three
+predict 2 for the trefoil: `crossing − 1` (3−1), `deg(trace field) + 1` (1+1,
+the field is ℚ), and the corpus's R1 `full A-polynomial L-degree` (2). Saying
+"the third-knot test passed" without that would be the over-read the
+`#4534 two-knot-linear-fit guard` warns of.
+
+**🛑 CORRECTION to my own first write-up: it DOES discriminate, against a fourth
+reading I had not listed — and that is the load-bearing half.** The adversarial
+alternative to the whole R1 identification is that the count tracks the
+COMPUTATION's presentation rather than the knot, i.e. the **triangulation**:
+
+    knot   tets   crossings   MEASURED   crossing-1   tets+1
+    3_1      2        3           2          2         3   <-- FAILS by 1
+    4_1      2        4           3          3         3       fits
+    5_2      3        5           4          4         4       fits
+
+`tets + 1` is **not a strawman**: SnapPy triangulates 4₁ with 2 tetrahedra and
+5₂ with 3, so on the corpus's own two knots it is **indistinguishable** from
+`crossing − 1`. The trefoil separates them because 3₁ has the **same**
+tetrahedron count as 4₁ and one fewer crossing. This matters more than the three
+readings above, because the triangulation is **not canonical** — had the count
+tracked it, R1 would have been an artifact of how the manifold was handed to
+Magma rather than a fact about the knot.
 
 **What it does buy.** The datum moves from TWO points to THREE: totals (2,3,4)
 at crossings (3,4,5), irreducibles (1,2,3) equal to the trace-field degrees.
