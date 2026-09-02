@@ -6743,3 +6743,86 @@ NOT a claim that no gate exists.
 An **external structural input**, not more candidates. Not asserted here as
 available — naming routes is the next step, and each needs the corpus-grep
 before it is called open or novel.
+
+## 2026-09-02, S1 — the Wenzl c_3 candidate: a fit that misses, formalized as `rfl`
+
+Probe: `computations/qbeta/qbeta_wenzl_c3_candidate_audit_probe.py`, **6/6**.
+
+Found by the corpus-grep for an external structural input (the previous entry's
+stated next step). `docs/coordination/2026-06-13-qbeta-habiro-element-ledger.md`
+records a candidate for `c_3` and marks it "Structural decomposition identified.
+Proceeding to formal derivation." It is a **worked instance of the
+gate-exhaustion finding**, which is why it belongs here rather than as a
+separate defect.
+
+### What the ledger says, verbatim
+
+    "Swept q-deformed fractions against the empirical c_3 = -2.06249 from
+     Kashiwara truncation."
+    "Finding: The residual EXACTLY matches -2 - (3/2) W_4(q), where
+     W_4(q) = 1/[4]_q! is the alternating Wenzl weight."
+
+The selection method is a **sweep against an empirically extracted target** —
+a fit, by its own wording.
+
+### "Exactly matches" does not hold
+
+    [4]_q!                    25.1536370049
+    W_4 = 1/[4]_q!             0.0397556822422
+    candidate -2-(3/2)W_4     -2.05963352336
+
+      vs ledger's own target        -2.06249          0.1385 %
+      vs live extracted, proton     -2.0693425728     0.4692 %
+      vs live extracted, muon       -2.0202002328     1.952  %
+
+Not exact against **any** of them — including the target it was swept to.
+
+### The promised formal derivation is `X = X`
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`:
+
+```lean
+noncomputable def q_beta_c3_wenzl_coefficient (q : ℝ) : ℝ :=
+  -2 - (3/2 : ℝ) * wenzlAltWeight 4 q
+
+theorem q_beta_c3_wenzl_decomposition_exact {q : ℝ} :
+  q_beta_c3_wenzl_coefficient q = -2 - (3/2 : ℝ) * wenzlAltWeight 4 q := by
+  rfl
+```
+
+The theorem unfolds the definition and proves it equals itself. Its docstring
+says *"Here we formally assert the Wenzl weight identity for the c_3 scalar"* —
+it asserts nothing. This is `X = X := rfl`, banned by AGENTS.md §"No trivial
+trues, no tautologies, no laundering" rule 5; and the definition's own docstring
+says the value was *"Empirically identified"*. **Sorry-free is not derived.**
+Nothing in that file connects the Wenzl weight to `c_3`.
+
+### Why this belongs to the gate-exhaustion entry
+
+`W_4` is built from symmetric q-integers, so it is **bar-invariant** — verified
+symbolically, as is the whole candidate. It therefore **passes the parity gate**,
+and would pass the Hankel and C-limit gates too, since those hold identically.
+
+That is the previous entry instantiated: a candidate with a categorical story,
+clearing every named gate, and still a fit that misses by 0.47 % against the
+live value.
+
+### Reconstruction-independence, stated because one finding is weaker
+
+Findings above are independent of how this probe rebuilds the ladder: the
+0.1385 % is two stated numbers compared, the `rfl` is read off the file, the
+bar-invariance is symbolic. A **fourth** check — that no pin reproduces the
+ledger's headline `-0.0005 ppm` (closest reconstruction 0.00738 ppm away) —
+**does** depend on the reconstruction, and is recorded as the weakest of the
+four. Same caution as table 3 in `qou-54g5`.
+
+### Scope
+
+**(a).** NOT a claim that the Wenzl weight is the wrong object, that `1/[4]_q!`
+plays no role, or that the ledger's categorical reasoning is wrong. Only that
+**this identification is unestablished**: not exact, selected by fitting, not
+derived by the Lean written for it.
+
+**What would establish it:** derive `c_3` FROM the H_4 Wenzl projector — the
+route the ledger says produced `1/[4]_q!` in the m_n−m_p split — with Lean
+deriving the coefficient rather than restating it. Not attempted here.
