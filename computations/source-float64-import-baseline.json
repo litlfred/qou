@@ -311,10 +311,6 @@
     "computations/derive_b2.py": [
       "Q"
     ],
-    "computations/derived_bond_graph_binding.py": [
-      "HA",
-      "Q"
-    ],
     "computations/det_pair_law.py": [
       "Q"
     ],
@@ -540,9 +536,6 @@
     "computations/log_delta_per_depth_binding.py": [
       "Q"
     ],
-    "computations/log_ratio_binding_prototype.py": [
-      "Q"
-    ],
     "computations/lp-duality-check.py": [
       "HA",
       "Q",
@@ -717,10 +710,25 @@
     "computations/probes/ak_lp_dual_quotient_probe.py": [
       "HA"
     ],
+    "computations/probes/all_pairs_bonds_and_saturation_probe.py": [
+      "Q"
+    ],
     "computations/probes/aoperator_a5_crosscheck.py": [
       "Q"
     ],
+    "computations/probes/betas_are_forced_by_quark_content_probe.py": [
+      "Q"
+    ],
     "computations/probes/binding_depth_stratified_derived_alpha_probe.py": [
+      "Q"
+    ],
+    "computations/probes/binding_k_convolution_sdp_probe.py": [
+      "Q"
+    ],
+    "computations/probes/binding_lp_with_inter_nucleon_bonds_probe.py": [
+      "Q"
+    ],
+    "computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py": [
       "Q"
     ],
     "computations/probes/brane_tower_two_avenues_probe.py": [
@@ -747,11 +755,20 @@
     "computations/probes/casimir_q_zeta_probe.py": [
       "Q"
     ],
+    "computations/probes/chain_telescopes_and_ordering_sensitivity_probe.py": [
+      "Q"
+    ],
     "computations/probes/confinement_b3_enumeration_recheck_probe.py": [
       "HA",
       "Q"
     ],
     "computations/probes/crystal_limit_transport_probe.py": [
+      "Q"
+    ],
+    "computations/probes/force_channels_are_separable_probe.py": [
+      "Q"
+    ],
+    "computations/probes/four_body_term_and_the_h12_collapse_probe.py": [
       "Q"
     ],
     "computations/probes/gg_production_bond_probe.py": [
@@ -763,11 +780,46 @@
     "computations/probes/gram_qtrace_hutchinson_probe.py": [
       "Q"
     ],
+    "computations/probes/he_nu_sdp_barfold_h9_test.py": [
+      "Q"
+    ],
+    "computations/probes/he_nu_sdp_psd_count_test.py": [
+      "Q"
+    ],
+    "computations/probes/he_nu_sdp_saturation_obstruction.py": [
+      "Q"
+    ],
     "computations/probes/homflypt_operator_valued_probe.py": [
       "HA",
       "Q"
     ],
+    "computations/probes/isospin_grading_restores_the_sign_probe.py": [
+      "Q"
+    ],
+    "computations/probes/k_versus_selected_operator_probe.py": [
+      "Q"
+    ],
     "computations/probes/markov_reduction_h3_to_h4_verify.py": [
+      "Q"
+    ],
+    "computations/probes/metallic_ladder_regime_test_probe.py": [
+      "Q"
+    ],
+    "computations/probes/metallic_silver_coincidence_weighting_probe.py": [
+      "Q"
+    ],
+    "computations/probes/nfold_ip_coupling_duality_gap_probe.py": [
+      "Q"
+    ],
+    "computations/probes/no_distance_decay_in_the_trace_probe.py": [
+      "Q"
+    ],
+    "computations/probes/nucleon-lp-convention-probe.py": [
+      "HA",
+      "Q",
+      "Q_INV"
+    ],
+    "computations/probes/nucleon_chain_sets_the_transition_probe.py": [
       "Q"
     ],
     "computations/probes/path_b_defect_binding_probe.py": [
@@ -779,16 +831,37 @@
     "computations/probes/phi_q_regularization_probe.py": [
       "Q"
     ],
+    "computations/probes/positive_sector_q_stability_probe.py": [
+      "Q"
+    ],
     "computations/probes/probe_convention_d_vs_c_borromean.py": [
       "Q"
     ],
     "computations/probes/probe_writhe0_trace_insensitivity.py": [
       "Q"
     ],
+    "computations/probes/qc_is_the_convexity_boundary_probe.py": [
+      "Q"
+    ],
     "computations/probes/rho_k_markov_multiplicativity_probe.py": [
       "Q"
     ],
+    "computations/probes/the_alpha_spike_is_an_inverted_stagger_probe.py": [
+      "Q"
+    ],
+    "computations/probes/three_body_term_has_the_wrong_sign_probe.py": [
+      "Q"
+    ],
+    "computations/probes/two_nucleon_pattern_is_unreachable_probe.py": [
+      "Q"
+    ],
+    "computations/probes/weak_channel_is_a_flavour_flip_probe.py": [
+      "Q"
+    ],
     "computations/probes/wedderburn_sdp_extreme_point.py": [
+      "Q"
+    ],
+    "computations/probes/which_functional_the_substrate_extremises_probe.py": [
       "Q"
     ],
     "computations/profile_transfer_scaling.py": [
@@ -812,7 +885,22 @@
     "computations/qbeta/bsym_residual_shell_structure.py": [
       "Q"
     ],
+    "computations/qbeta/qbeta_bring_elliptic_generator_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_bring_tau0_and_jet_tower_closure_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_cosine_parametrisation_justification_probe.py": [
+      "Q"
+    ],
     "computations/qbeta/qbeta_d_frame_trace_baseline_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_decay_functional_unification_protium_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_decay_operator_elliptic_spectrum_probe.py": [
       "Q"
     ],
     "computations/qbeta/qbeta_decay_sdp_solver.py": [
@@ -821,10 +909,25 @@
     "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py": [
       "Q"
     ],
+    "computations/qbeta/qbeta_eigenphase_tower_and_fraction_readings_probe.py": [
+      "Q"
+    ],
     "computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py": [
       "Q"
     ],
     "computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_holonomy_spectrum_sign_obstruction_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_imq_elliptic_generator_refutation_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_level_k_operator_and_real_decays_probe.py": [
+      "Q"
+    ],
+    "computations/qbeta/qbeta_nucleon_difference_ellipticity_structural_probe.py": [
       "Q"
     ],
     "computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py": [
@@ -1002,7 +1105,7 @@
       "Q"
     ]
   },
-  "files_count": 285,
-  "names_count": 428,
+  "files_count": 319,
+  "names_count": 463,
   "note": "Producers importing the FLOAT form of a q_parameter constant, by name. The backlog is tolerated; it must only SHRINK. Adding a file here to silence a failure defeats the gate \u2014 excise at the import instead."
 }
