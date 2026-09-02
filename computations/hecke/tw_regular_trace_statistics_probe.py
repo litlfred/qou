@@ -6,15 +6,26 @@ Bean `qou-0y6h`.  The Gram entries of `QOU.Hecke.TwBasis.twGram` are
 the diagonal structure constant `[T_u T_w : T_w]` for a general `u` --
 equivalently `tr(L_{T_u}) = sum_w [T_u T_w : T_w]`, since left multiplication by
 `T_u` is what the Gram reads.  The generator case is proved in Lean
-(`trace_lmul_sigma`: only descents contribute, `2 tr = (q-1)(n+1)!`).
+(`trace_lmul_σ`: only descents contribute; `two_mul_trace_lmul_σ` gives
+`2 tr = (q-1)(n+1)!`).
 
 Before formalising a closed form one should know whether a *simple* one exists.
 This probe asks whether `tr(L_{T_u})` is determined by any of the three obvious
 combinatorial statistics of `u`.  It is not:
 
     determined by length(u) alone        -- NO  (fails from S_4 on)
-    determined by cycle type(u) alone    -- NO  (fails from S_4 on)
+    determined by cycle type(u) alone    -- NO  (fails from S_3 on)
     determined by (length, cycle type)   -- NO  (holds in S_4, FAILS in S_5)
+
+Every rank here is computed SYMBOLICALLY, including S_5, and classified on a
+canonical key (the coefficient list of the expanded polynomial), so a verdict
+never depends on sampling or on how sympy chose to print an expression.  An
+earlier draft classified S_5 from five integer evaluations of `q` with the
+comment "S_5 symbolically is slow"; that justification was never measured and
+is false -- the full symbolic S_5 table takes 1.3 s.  A refutation drawn from
+samples would in fact have been sound (a difference at a sample point is a real
+difference), but a "determined by" verdict from samples would not be, and the
+code should not leave that trap lying around for a future edit.
 
 **The third line is the one that matters, and the S_4 / S_5 split is the trap.**
 `(length, cycle type)` determines the trace for every element of `S_4`.  It is a
@@ -163,11 +174,26 @@ def regular_traces(m: int, q) -> Dict[Perm, object]:
     return out
 
 
-def determined_by(traces: Dict[Perm, object], stat) -> Tuple[bool, List]:
-    """Does `stat(u)` determine `traces[u]`?  Returns (verdict, failing keys)."""
+def canonical_key(expr, q):
+    """A canonical, hashable key for a polynomial in `q`.
+
+    The coefficient list of the EXPANDED polynomial.  Comparing `str(expr)`
+    instead would be wrong in both directions: two equal polynomials can print
+    differently (a spurious refutation) and formatting can coincide where the
+    values do not."""
+    import sympy as sp
+
+    return tuple(sp.Poly(sp.expand(expr), q).all_coeffs())
+
+
+def determined_by(keys: Dict[Perm, object], stat) -> Tuple[bool, List]:
+    """Does `stat(u)` determine the trace?  Returns (verdict, failing keys).
+
+    `keys` maps each `u` to a canonical key, so grouping is structural
+    equality."""
     groups = defaultdict(set)
-    for u, t in traces.items():
-        groups[stat(u)].add(str(t))
+    for u, k in keys.items():
+        groups[stat(u)].add(k)
     bad = sorted(k for k, vals in groups.items() if len(vals) > 1)
     return (not bad), bad
 
@@ -186,18 +212,16 @@ def main() -> None:
     ]
 
     verdicts = {}
+    tables = {}
     for m in (2, 3, 4, 5):
-        # S_5 symbolically is slow; integer q at several points separates the
-        # classes just as well and the S_4 answers are cross-checked symbolically.
-        if m <= 4:
-            traces = regular_traces(m, q)
-            traces = {u: sp.factor(sp.expand(t)) for u, t in traces.items()}
-        else:
-            tabs = [regular_traces(m, x) for x in (2, 3, 5, 7, 11)]
-            traces = {u: tuple(t[u] for t in tabs) for u in perms(m)}
+        # Symbolic at every rank, including S_5 (1.3 s), and classified on a
+        # canonical key -- no sampling, no string comparison.
+        traces = regular_traces(m, q)
+        tables[m] = traces
+        keys = {u: canonical_key(t, q) for u, t in traces.items()}
         print(f"S_{m}  ({len(perms(m))} elements)")
         for name, stat in stats:
-            ok, bad = determined_by(traces, stat)
+            ok, bad = determined_by(keys, stat)
             note = "" if ok else f"   fails at {bad[:4]}{' …' if len(bad) > 4 else ''}"
             print(f"    determined by {name:22s}: {'YES' if ok else 'NO '}{note}")
             verdicts[(m, name)] = ok
@@ -211,7 +235,8 @@ def main() -> None:
         assert not verdicts[(m, "cycle type alone")]
 
     # The witness pair, stated explicitly so a reader can check it by hand.
-    tr5 = regular_traces(5, q)
+    # Reuses the S_5 table computed above rather than recomputing it.
+    tr5 = tables[5]
     a, b = (0, 3, 4, 1, 2), (1, 0, 4, 3, 2)
     ta, tb = sp.factor(sp.expand(tr5[a])), sp.factor(sp.expand(tr5[b]))
     assert length(a) == length(b) == 4

@@ -26,9 +26,9 @@ rank from that one input.
 * THE BASIS. basisTwOfField, a Module.Basis indexed by Equiv.Perm (Fin (n+1))
   whose vectors are the T_w, with finrank_eq_factorial. Reached WITHOUT
   Matsumoto (still a Mathlib TODO at Coxeter/Basic.lean:78).
-* THE MULTIPLICATION TABLE. TwMul.sigma_mul_Tw, both branches. Handedness is
+* THE MULTIPLICATION TABLE. TwMul.σ_mul_Tw, both branches. Handedness is
   T_v . T_w = T_{wv} (right factor acts first); it is documented, not a typo.
-* THE GENERATOR TRACE. TwTrace.trace_lmul_sigma and two_mul_trace_lmul_sigma.
+* THE GENERATOR TRACE. TwTrace.trace_lmul_σ and two_mul_trace_lmul_σ.
 * THE RANK-ONE CASE, END TO END. twGram_det_rank_one = (1+q)^2 and
   isSemisimpleRing_rank_one, unconditional, no cited class.
 * THE TARGET VALUES at n = 1,2,3, exactly, with the integer constant identified
