@@ -965,6 +965,56 @@ CONSEQUENCE for the arc: the three routes past the ceiling of 9 that I could
 name are now (i) a non-Markov-trace functional, (ii) a further additive term in
 the closure, (iii) higher n. Subtraction over the trace family is closed.
 
+## 2026-09-02 — sibling convergence with qou-r1yj: same spectrum, no conflict
+
+de5c18f588 (t7qv/r1yj, `main`) did the SAME six-strand lift from a different
+session, same day, neither knowing of the other. Reconciled in
+`block_transposition_lift_probe` (a42e580e0b / rebased 5828849a49) as an
+ASSERTION, not a remark.
+
+**Spectra identical.** Union of exponents over the four trace-visible blocks is
+{-3,-1,2,3,5,6,9} = r1yj's seven magnitudes. Independent confirmation.
+
+**Sign convention differs** — r1yj reports L/log q negated, so its bound {3,1}
+and unbound {-2,-3,-5,-6,-9} are that set negated. Recorded so nobody
+'corrects' one into the other.
+
+**The ratios answer different questions, and are NOT in conflict:**
+  * r1yj APPLIES the isospin assignment -> 3/2 (assigned value)
+  * this branch makes NO assignment -> 5 in-block, 9 across (ceiling over ALL)
+
+3/2 <= 5 <= 9, and the ceiling BOUNDS what any re-assignment of r1yj's channels
+could reach: its 22.47x miss cannot be repaired by choosing channels
+differently, best conceivable 33.7/9 = 3.7x. Strengthens its negative.
+
+**What this branch adds:** r1yj scans the four LIVE blocks; this scans all 11,
+and the extra seven are where the k=0 (unbounded-ratio) eigenvalues live —
+absent from the visible four, consistent with r1yj seeing no unit modulus.
+
+qou-m896's n=2 cap of 1 stands at the two-strand interface. All three quote
+together.
+
+## Lean: the mechanism, in the canonical carrier (verification pending)
+
+Corpus-grep found `QOU/SchurWeyl/OcneanuWeight.lean` ALREADY carries
+`ocneanuWeight q z mu` with exactly the formula used, plus a content-(-2)
+numerator vanishing lemma and the convention-D row cap. So the degree argument
+belongs IN that file, not a new one. Four declarations appended:
+
+  ocneanuNumFactor_affine          — z-coefficient is q^(2j+1) - q^(2i+1)
+  ocneanuNumFactor_diagonal_z_free — at i=j the z terms cancel IDENTICALLY,
+                                     no hypothesis on q at all
+  ocneanuNum_diagonal_split        — the z-dependence is confined to the
+                                     off-diagonal cells (Finset product split)
+  mem_cells_diag_zero              — every non-empty diagram has (0,0), so
+                                     d >= 1 and z^|mu| always dies
+
+Proves the MECHANISM, not the degree count: turning it into deg_z <= |mu| -
+d(mu) needs the polynomial-degree argument over the product and is NOT done.
+rank = n stays measured (n=2..7), so the exclusion stays scope-(a).
+
+NOT COMMITTED until lean-direct verification returns.
+
 ## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
 
 `computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
