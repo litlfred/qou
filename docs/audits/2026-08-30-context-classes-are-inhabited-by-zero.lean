@@ -96,28 +96,32 @@ example : QOU.BraidKnot.JetPrefixGbFiltrationContext where
   GbDepth := 0
   claim_jet_prefix_eq_gb_depth := rfl
 
-/-- Reidemeister invariance of mass holds when the moves are the identity. -/
-example : QOU.Braiding.ReidemeisterMassInvarianceContext where
-  CategoricalObj := Unit
-  mass := fun _ => 0
-  R_I := id
-  R_II := id
-  R_III := id
-  claim_reidemeister_mass_invariance := by intro _; exact ⟨rfl, rfl, rfl⟩
+/-! **`ReidemeisterMassInvarianceContext` — witness removed 2026-08-31 with its
+subject.**  The class and its projection were gutted from
+`QOU/Braiding/reidemeister_mass_invariance.lean` (0 importers; the block
+resolves to its substantive sibling per AGENTS.md §0a).  The finding stands as
+recorded: `CategoricalObj := Unit`, `mass := fun _ => 0`, all three moves
+`id`, discharged `claim_reidemeister_mass_invariance` by `rfl` — so the binder
+assumed nothing.  It cannot be re-run, because the class is gone; unlike the
+`R`-matrix case below, the finding lived entirely in the class's own shape and
+has no statement to survive into. -/
 
 /-- Deliberately NOT the trivial model: a *commutative* one, where the
 Yang–Baxter equation holds by `mul_comm`.  So `[RMatrixBraidingContext]`
 assumes nothing specific to a quantum `R`-matrix — anything commutative
 satisfies it.  The file's own docstring already says the converse half
 correctly ("YBE fails for a general assignment, so it may not be strengthened
-to a global `axiom`"); both are true and they are different facts. -/
-example : QOU.Braiding.RMatrixBraidingContext where
-  V3 := ℕ
-  comp := fun a b => a * b
-  R12 := 2
-  R13 := 3
-  R23 := 5
-  claim_yang_baxter := by ring
+to a global `axiom`"); both are true and they are different facts.
+
+**Witness restated 2026-08-31.**  `RMatrixBraidingContext` was removed with the
+rest of `QOU/Braiding/r_matrix_braiding_structure.lean` (0 importers), and the
+content-block sibling now *names* the Yang–Baxter equation as
+`YangBaxterHolds comp R12 R13 R23` instead of asserting it.  The measurement
+below is the same one, spelled out without the class, so the evidence survives
+its subject: at `V3 := ℕ`, `comp := (· * ·)`, `R12 := 2`, `R13 := 3`,
+`R23 := 5`, the equation `comp (comp R12 R13) R23 = comp (comp R23 R13) R12`
+holds by `ring`. -/
+example : (2 * 3 : ℕ) * 5 = (5 * 3) * 2 := by ring
 
 /-- One partition carrying weight `1` and unit character.  Note this one needs
 the all-ONE model, not the all-zero one: `Σ_λ w_λ = 1` rejects all-zero.  That

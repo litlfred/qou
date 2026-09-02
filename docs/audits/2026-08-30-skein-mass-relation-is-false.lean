@@ -67,28 +67,36 @@
         lean docs/audits/2026-08-30-skein-mass-relation-is-false.lean
 
   Measured 2026-08-30: exit 0, 0 errors.
+
+  ## 2026-08-31 — the subject was removed, so this became a guard
+
+  `SkeinMassRelationHolds` and its projection are **gone** from
+  `QOU/HadronicMass.lean`: the class carried a proton/neutron/deuteron
+  instantiation of the skein relation that the `.md` never states, and the
+  measurement below is what showed it false.  The refutation itself survived
+  the repair — it is now `QOU.HadronicMass.skein_pnd_identity_false`, proved
+  in that file over the same constants.
+
+  The theorem below no longer re-proves it.  It **restates** the surviving
+  result and discharges it by that name, so this file compiles exactly when
+  the replacement is present with the right statement.  A refutation whose
+  target has been removed should leave behind a regression guard, not a file
+  that no longer elaborates.
+
+  The `rintro`/`nlinarith` proof this file used to carry moved verbatim into
+  `skein_pnd_identity_false`; nothing was lost by deleting it here.
 -/
 import QOU.HadronicMass
 
-open QOU.HadronicMass in
-/-- **`SkeinMassRelationHolds` is false at the constants its own file defines.**
-LHS 194.5164, RHS 195.3202 — 0.41 % apart. -/
-theorem skeinMassRelationHolds_false : ¬ SkeinMassRelationHolds := by
-  rintro ⟨h⟩
-  rw [QOU.MassDerivation.substrate_q, proton_mass_MeV, neutron_mass_MeV,
-      deuteron_mass_MeV] at h
-  -- Normalise the decimal literals to rationals FIRST: the rewrite below is
-  -- stated for `11097/10000` and will not match the literal `1.1097`.
-  norm_num at h
-  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
-  have hxp : (0:ℝ) < 11097/10000 := by norm_num
-  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
-  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
-  have hs2 : s * s = 11097/10000 := by
-    rw [hsdef, ← Real.rpow_add hxp]; norm_num
-  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
-    rw [hsdef, ← Real.rpow_neg hx]
-  rw [hneg] at h
-  have hsne : s ≠ 0 := ne_of_gt hs0
-  field_simp at h
-  nlinarith [hs2, hs0, h, sq_nonneg s, sq_nonneg (s - 1)]
+open QOU.HadronicMass QOU.MassDerivation in
+/-- **Guard: the refutation survived the class's removal.**
+
+`SkeinMassRelationHolds` asserted `q·m_p − q⁻¹·m_n = (√q − 1/√q)·m_d`, which
+is false at the file's own constants — LHS `194.5164`, RHS `195.3202`, `0.41 %`
+apart, against a `1e-3 MeV` sibling tolerance.  The class is gone; the
+inequality is proved in the library file, and this restatement fails to
+elaborate if that ever stops being true. -/
+theorem skein_pnd_identity_false_guard :
+    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV ≠
+      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV :=
+  skein_pnd_identity_false
