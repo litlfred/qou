@@ -6826,3 +6826,82 @@ derived by the Lean written for it.
 **What would establish it:** derive `c_3` FROM the H_4 Wenzl projector — the
 route the ledger says produced `1/[4]_q!` in the m_n−m_p split — with Lean
 deriving the coefficient rather than restating it. Not attempted here.
+
+## 2026-09-02, S1 — WHY parity cannot select: the bar-fixed subfield is Q([2]_q)
+
+Probe: `computations/qbeta/qbeta_bar_fixed_field_is_q_of_two_probe.py`, **19/19**,
+exact sympy. This upgrades the gate-exhaustion entry from an empirical
+observation to a structural one, and supplies the reason.
+
+### First, a CORRECTION to PR #6282's own wording
+
+That PR said D's bar action is a multiplicative grading, `bar(x)/x = q^w`.
+Measured, the ratio is **`±q^w`** — there is a Z/2 sign alongside the Z weight,
+and the sign is not a curiosity:
+
+    q        +q^-2         b          +q^0
+    h        -q^0    <--   z_D        +q^-4
+    hbar_q   -q^1    <--   u          +q^2
+    h^2      +q^0          Vhat_D     +q^-2
+                           u*Vhat_D   +q^0
+
+**`h`, the ladder's primary ingredient, is bar-ANTI-invariant of weight 0.** Its
+square is invariant, which is the only reason `u = b*hbar^2` came out clean —
+the sign squares away. The pure-Z-grading statement is right about `u` and
+`Vhat_D` by accident of their even degree in `h`, and I generalised from those
+two cases.
+
+### The reason parity cannot select
+
+Bar-invariance is exactly membership in the fixed field, and that field is
+`Q(s)` with `s = q + 1/q = [2]_q`:
+
+- `bar(s) = s`;
+- `q` satisfies `q^2 - s*q + 1 = 0` over `Q(s)`, so `[Q(q) : Q(s)] = 2`;
+- `1/q` is the other root, and bar exchanges them, so bar is a nontrivial
+  `Q(s)`-automorphism;
+- hence by Galois for a degree-2 extension, **`Fix(bar) = Q(s)` exactly**.
+
+And every symmetric q-integer is a Chebyshev polynomial in `s` — verified n=1..8,
+and it is the recurrence `U_k = s*U_{k-1} - U_{k-2}`, not a coincidence about
+small n:
+
+    [1] = 1              [2] = s            [3] = s^2 - 1
+    [4] = s^3 - 2s       [5] = s^4 - 3s^2 + 1
+    [6] = s^5 - 4s^3 + 3s                   [7] = s^6 - 5s^4 + 6s^2 - 1
+
+so they all lie in `Z[s] ⊂ Q(s)`. The ladder's own ingredients sit there too:
+`h^2 = s^2 - 4`, and `b = sqrt([3]_q)/[2]_q = sqrt(s^2-1)/s` in the quadratic
+extension `Q(s)[sqrt(s^2-1)]`.
+
+**CONSEQUENCE.** "`rho` is bar-invariant" is the single condition "`rho` lies in
+an index-2 subfield" — and an index-2 subfield of `Q(q)` is still an
+infinite-dimensional Q-vector space. A condition whose solution set is an entire
+function field cannot select one element of it.
+
+That is why the parity filter admitted `[2]_q … [5]_q` in #6282 and will admit
+every further one: **they are polynomials in `[2]_q`, and `Q([2]_q)` IS the
+fixed field.** No sharpening of parity-type reasoning helps, because there is
+nothing left to sharpen.
+
+So the gate inventory being exhausted is a *structural fact*, not a gap in the
+search — the three gates are consequences of, or weaker than, membership in
+`Q(s)`.
+
+### Scope, stated carefully because half of this is (b)
+
+- **(b) STRUCTURAL** for the narrow claim: `Fix(bar) = Q(s)` is Galois for a
+  degree-2 extension, and the Chebyshev identity is a recurrence. Neither is a
+  numerical observation.
+- **(a) scope-limited** for the consequence: it says **parity** cannot select the
+  generator, NOT that the generator is unselectable. An input that is not a
+  parity condition — a degree bound, an anchor-independent functional equation,
+  a derivation from the H_4 Wenzl projector — is untouched by this.
+
+### Next, and deliberately not done here
+
+Formalise `Fix(bar) = Q(s)` and `[n]_q = U_{n-1}([2]_q)` in Lean. The corpus
+carries bar-invariance lemmas for individual `quantumInt` values; the general
+statement is what is missing. That is the honest thing to prove — and it is
+worth more than any further candidate testing, since it is the theorem that
+makes candidate testing pointless.
