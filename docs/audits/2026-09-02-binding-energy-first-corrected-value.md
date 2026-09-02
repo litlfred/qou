@@ -213,3 +213,68 @@ much weaker claim than confirming it.
 - **No witness regenerated.** `hadron-knot-table.witness.json` untouched.
 - **No mechanism identified.** Flatness is a symptom; where the A-dependence is
   lost in the accumulator is not measured.
+
+---
+
+# ⁴He settles it: the accumulator carries no extensive term
+
+| atom | A | Z | B_pred (MeV) | AME2020 | sign | \|pred\|/AME | secs |
+|---|---|---|---|---|---|---|---|
+| deuterium | 2 | 1 | -7.271102125 | +2.224566 | **WRONG** | 3.269 | 942 |
+| tritium | 3 | 1 | -7.742121347 | +8.481796 | **WRONG** | 0.913 | 1568 |
+| he3 | 3 | 2 | -7.456199506 | +7.718041 | **WRONG** | 0.966 | 1496 |
+| he4 | 4 | 2 | -6.828594293 | +28.295662 | **WRONG** | 0.241 | 2425 |
+
+```
+prediction :  -7.742 .. -6.829     spread  12.5 % of its mean
+AME2020    :  +2.225 .. +28.296    range   12.7x
+```
+
+**The target varies by 12.7×. The prediction varies by 12.5 %.**
+
+And ⁴He is the sharpest point available: it has the **lowest** \|prediction\|
+(6.829) at the **highest** experimental binding (28.296). The prediction does not
+merely fail to grow with A — at the one place where binding triples, it *falls*.
+
+```
+correlation  |pred| vs AME :  r = -0.731
+correlation  |pred| vs A   :  r = -0.471
+```
+
+Both **negative**, on four points. Read cautiously — four points, and two share
+an A — but the sign of the trend is the opposite of what a binding energy must do.
+
+## What this establishes
+
+The framework's binding accumulator, computed correctly for the first time,
+produces **a number near −7.3 MeV that is essentially independent of the
+nucleus**. It is not a mis-scaled binding energy and not a sign-flipped one:
+
+- A **sign flip** does not help — `+7.27, +7.74, +7.46, +6.83` against
+  `2.22, 8.48, 7.72, 28.30` is wrong at both ends and still flat.
+- A **constant rescale** does not help — the ratios run 3.269, 0.913, 0.966,
+  0.241, spanning 13.6×.
+
+**Nothing multiplicative repairs a quantity that is flat where the target is
+extensive.** What is missing has to be *additive and extensive in A* — which is
+precisely the object AGENTS.md records as the arc's one real open problem: a
+"separate, super-pairwise additive extensive object" that six Δ_λ closure
+ansätze failed to produce, with the pairwise cap proved
+(`QOU.MassTheory.exchangeDet_pow_two_le_four`).
+
+**This is the first direct measurement of that gap.** Prior work inferred it from
+failed closures; this exhibits it, end to end, in the framework's own binding
+path, at four nuclei.
+
+## What it does NOT establish
+
+- **Not a mechanism.** *Where* the A-dependence is lost inside the accumulator is
+  not measured. Flatness is the symptom.
+- **Not a refutation of the framework.** It is a measurement of one computational
+  path, which until this week could not run at all. The intensive part may well
+  be right; what is absent is absent.
+- **Four points, two at A = 3.** li6/li7 were not reached — cost per atom is
+  942, 1568, 1496, 2425 s and grows.
+- **No witness regenerated.** `hadron-knot-table.witness.json` is untouched and
+  should stay so: recording a wrong-signed, nucleus-independent number as a
+  witness would publish it.
