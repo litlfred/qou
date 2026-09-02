@@ -32,7 +32,7 @@ below. That is what is proved here.
   recurrence. The whole file rests on this one step.
 * `involution_ratio_unbounded` — for every `C`, eventually `C·I n ≤ I (n+2)`: the
   two-step ratio is **unbounded**, so `I` leaves every geometric class. This is the
-  corpus's own reading of "super-exponential" in `conj:tower-geometric-lower-bound`
+  corpus's own reading of "super-exponential" in `prop:tower-geometric-lower-bound`
   ("successive ratios strictly increasing").
 * `factorial_le_involution_two_mul` — `n ! ≤ I (2n)`, the quantitative form: the
   involution numbers grow at least factorially along the even subsequence.
@@ -108,7 +108,7 @@ theorem mul_involution_le_involution_add_two (n : ℕ) :
 /-- **`I` leaves every geometric class.** For any constant `C`, past `n = C` the
 two-step ratio exceeds `C`. A geometric sequence has *constant* two-step ratio, so no
 geometric sequence dominates `I` — this is the corpus's reading of "super-exponential"
-in `conj:tower-geometric-lower-bound`. -/
+in `prop:tower-geometric-lower-bound`. -/
 theorem involution_ratio_unbounded (C : ℕ) :
     ∀ n, C ≤ n → C * involutionNumber n ≤ involutionNumber (n + 2) := by
   intro n hn
