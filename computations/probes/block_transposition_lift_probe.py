@@ -100,6 +100,48 @@ the sector the trace cannot see -- which is the "computable but not directly
 observable" class rather than a direct `n = 2` observable.  This probe does not
 claim that class is reachable by subtraction; it locates it.
 
+## SIBLING CONVERGENCE — `qou-r1yj` did this lift independently, same day
+
+`de5c18f588` (*"t7qv/r1yj: lifting (T,S) to six strands raises the cap to 3/2 —
+and costs Pauli"*) landed on `main` while this was being written, from a
+different session.  It uses the **same operator**, verifies the **same
+permutation before use**, and finds the **same spectrum**.  Neither probe knew
+of the other; the agreement is independent confirmation, and the two numbers
+are **not** in conflict.
+
+**The spectra agree exactly.**  Restricting this probe to the four
+trace-visible blocks and taking the union of exponents gives
+`{-3, -1, 2, 3, 5, 6, 9}`, which is `r1yj`'s seven magnitudes.  Asserted below.
+
+**The sign convention differs — do NOT "correct" one into the other.**  `r1yj`
+reports `L/log q` with the opposite sign, so its bound `{3, 1}` and unbound
+`{-2, -3, -5, -6, -9}` are the negation of the set above.  Same measurement.
+
+**The two ratios answer different questions:**
+
+  * `r1yj` applies the **isospin assignment** — which eigenvalues are the bound
+    and unbound channels — and reports the resulting `|L_bound|/|L_unbound|`,
+    best value **3/2**.
+  * this probe deliberately makes **no** assignment (see *What is NOT claimed*)
+    and reports the **ceiling over all assignments**: **5** within a block,
+    **9** across blocks.
+
+So `3/2 <= 5 <= 9`, and the relation is informative in one direction:
+**the ceiling here bounds what any re-assignment of `r1yj`'s channels could
+ever achieve.**  Its 22.47x miss against 33.7 cannot be repaired by choosing
+the channels differently — the best conceivable is `33.7/9 = 3.7x`, still a
+miss.  That strengthens `r1yj`'s negative rather than competing with it.
+
+**What this probe adds:** `r1yj` scans the four *live* blocks; this scans all
+**11**, and the extra seven are where the `k = 0` eigenvalues live -- the
+unbounded-ratio sector, absent from the visible four.  That is consistent with
+`r1yj` seeing no unit modulus, and is why the containment result above is
+stated over the full block set.
+
+`qou-m896`'s `n = 2` cap of 1 is not overturned by either probe; it was stated
+at the two-strand interface and stands there.  All three should be quoted
+together.
+
 ## Internal consistency checks asserted here
 
   * **Trivial and sign reps.** `sigma -> q` and `sigma -> -1/q`, so a
@@ -325,6 +367,34 @@ def main() -> int:
           f"{len(exps)} blocks?  {ok}")
     assert ok, "lambda -> lambda' is q -> -1/q; the exponents must negate"
 
+    print("\n[3a] SIBLING CONVERGENCE — qou-r1yj (de5c18f588, main) agrees")
+    print("-" * 78)
+    visible = sorted({k for lam, ks in exps.items() if len(lam) <= 2
+                      for k in ks})
+    r1yj = [-3, -1, 2, 3, 5, 6, 9]
+    print(f"    exponents over the four TRACE-VISIBLE blocks: {visible}")
+    print(f"    qou-r1yj's seven magnitudes:                  {r1yj}")
+    print(f"    identical?  {visible == r1yj}")
+    assert visible == r1yj, (
+        "an independent sibling measured this spectrum; a disagreement is a "
+        "defect in one of the two and must be resolved, not reported")
+    print("    Independent session, same operator, same permutation check,")
+    print("    same spectrum.  r1yj reports L/log q with the OPPOSITE SIGN,")
+    print("    so its bound {3,1} / unbound {-2,-3,-5,-6,-9} is this set")
+    print("    negated — the same measurement, not a discrepancy.")
+    print()
+    print("    The RATIOS differ because they answer different questions:")
+    print("      r1yj  applies the isospin assignment  -> 3/2 (assigned value)")
+    print("      here  makes NO assignment             -> 5 in-block, 9 across")
+    print("                                               (ceiling over ALL)")
+    print("    So 3/2 <= 5 <= 9, and the ceiling BOUNDS what any re-assignment")
+    print("    of r1yj's channels could reach: its 22.47x miss against 33.7")
+    print("    cannot be repaired by choosing channels differently, since the")
+    print("    best conceivable is 33.7/9 = 3.7x.  That strengthens its")
+    print("    negative rather than competing with it.")
+    print("    qou-m896's n=2 cap of 1 stands at the two-strand interface;")
+    print("    all three results should be quoted together.")
+
     print("\n[3b] WHERE THE UNIT MODULI SIT — the two threads meet here")
     print("-" * 78)
     unit = sorted(L for L, ks in exps.items() if 0 in ks)
@@ -413,8 +483,12 @@ def main() -> int:
     print("    transposition as an INGREDIENT.  Scope (a): it does not reach")
     print("    33.7 on its own trace-visible spectrum.")
     print("  * NOT a claim that the unbounded trace-blind sector of [3b] IS")
-    print("    the closure.  Locating it is not reaching it; whether it is")
-    print("    recoverable by subtraction is a separate, open question.")
+    print("    the closure.  Locating it is not reaching it — and it is now")
+    print("    ANSWERED, negatively: markov_trace_family_rank_probe shows the")
+    print("    Markov family spans rank n of a p(n)-dimensional character")
+    print("    space, so NO subtraction over it isolates that sector (nor,")
+    print("    in fact, any block of dimension > 1).  A non-trace functional")
+    print("    is where a closure would have to come from.")
     print("  * NOT a re-identification of the isospin channels.  WHICH")
     print("    eigenspaces carry T=0 and T=1 at n=6 is unanswered here; that is")
     print("    why the ceiling is a maximum over assignments, not a value.")
