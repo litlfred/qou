@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:57:35.110178+00:00",
-  "commitSha": "5d0d13f50c2dac8b817a53b2858df80884490a6d",
+  "computedAt": "2026-09-02T22:06:53.009527+00:00",
+  "commitSha": "297b1f2236abc43b69f4efe08a916675d2248eb3",
   "assertions": [
     {
       "name": "the_3x3_Markov_solve_is_unique",
@@ -97,11 +97,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2571,
+  "durationMs": 2656,
   "computation": "qbeta-cds1-terminus-status",
   "scriptFile": "qbeta_cds1_terminus_status_probe.py",
-  "scriptHash": "0bbd73f9fba5",
-  "scriptCommitSha": "5d0d13f50c2dac8b817a53b2858df80884490a6d",
+  "scriptHash": "7445e0c0d77f",
+  "scriptCommitSha": "af41fa4c180caa6a48b9ef88be1befdf2999521c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -116,7 +116,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -200,11 +200,13 @@
     "open": [
       {
         "item": "a derivation of the ladder phase alpha",
-        "note": "the z direction is closed from three independent sides (trace weight, bar parity, anchors); the cos form is closed (Steps 7-8, entry 15); the amplitude route is fenced (qou-i2ir C16/C17/C18 + a structural one-scale/two-target refutation)."
+        "status_at_step_14": "the z direction closed from three independent sides (trace weight, bar parity, anchors); the cos form closed (Steps 7-8, entry 15); the amplitude route fenced (qou-i2ir C16/C17/C18 + a structural one-scale/two-target refutation).",
+        "SUPERSEDED_BY": "Steps 15-28 (2026-08-31). The phase is no longer merely unfound: Step 26 EXCLUDES it at 3e11 sigma, having shown symbolically in q that the discriminant curves are genus 0 (short) and genus 8 (long) — NEVER genus 1, so there is no elliptic source and no tower of them. Step 17 adds that the cosine is UNFALSIFIABLE (phase yes, cosine no) and that the only surviving justification would be a KZ/Kohno-Drinfeld holonomy, which nothing supplies. Step 24 closes both eigenphase readings: the Hecke tower repeats the H_3 spectrum and cannot add to it.",
+        "my_earlier_wording_was_wrong": "'no route is known to be open' describes a search that has not found one. Step 26 is an EXCLUSION. Different epistemic state; do not quote the weaker form."
       },
       {
         "item": "selecting the product generator rho in c_{k+1} = rho*c_k",
-        "note": "PR #6282 states the boundary more sharply than 'no route is open', and its form is adopted here: the place IS named (QBetaSingleHabiroGenerator, open with no instance) and the parity IS derived (bar-INVARIANT, not bar-odd). What is missing is a SELECTOR. Of the three gates that PR first proposed, it then corrected two of its own: parity is a class FILTER admitting the entire symmetric q-integer family at once, and the Hankel condition c_2*c_4 = c_3^2 is VACUOUS for rank-1 candidates. The survivors -- the C-limit reduction and the numerical value of c_3 = rho*c_2 -- TEST a candidate once you have one; they do not PRODUCE one. So the gap is a source, not a test.",
+        "note": "PR #6282: the place IS named (QBetaSingleHabiroGenerator, open with no instance) and the parity IS derived (bar-INVARIANT, not bar-odd). What is missing is a SELECTOR. That PR corrected two of its own three proposed gates — parity is a class FILTER admitting the entire symmetric q-integer family at once, and the Hankel condition c_2*c_4 = c_3^2 is VACUOUS for rank-1 candidates. The survivors TEST a candidate once you have one; they do not PRODUCE one. The gap is a source, not a test.",
         "distinct_from": "the N=1 slot, which entries 10-10d DO answer (M = cos(a_D - h^2/4)*cos(h^2/4), Lean-proved). Different slot; do not read one as the other."
       },
       {
@@ -212,6 +214,11 @@
         "note": "free function; filtered but not determined"
       }
     ],
+    "corroborates_a_sibling_result": {
+      "sibling": "Step 17 — the only surviving justification for the cosine is a KZ/Kohno-Drinfeld holonomy, and nothing supplies one.",
+      "this_arc_measured_the_same_thing_from_the_other_side": "entry 15 (merged, on main): bar DOES act as Kohno-Drinfeld partition conjugation on the block CHARACTERS (bar chi^(3) = chi^(1^3), exact, convention-free) but NOT on the Markov weights — every residual carries the single factor (z + zbar), so the weights are conjugation-equivariant iff z is bar-ODD, which neither convention is. Independent evidence for Step 17's claim.",
+      "note": "both landed 2026-08-31, so neither cites the other. Recorded here so the connection is not lost."
+    },
     "symbol_collision": {
       "symbol": "K",
       "step14": "trace -> MeV scale, outside the Hecke trace; verdict NEGATIVE",

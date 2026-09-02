@@ -57,6 +57,16 @@ proposes no `c_k`. Its value is that a future disagreement between the prose and
 the mathematics surfaces as a FAILING ASSERTION rather than as a stale sentence.
 L2 unchanged at 1279 ppb.
 
+🛑 AND IT HAS ALREADY EARNED THAT, ON ITSELF. Written against the arc at Step 14,
+this probe sat in review while Steps 15-28 landed on `main` (2026-08-31) and moved
+the open question materially — Step 26 EXCLUDES the phase at 3e11 sigma rather
+than leaving it unfound. All 13 assertions still pass against that advanced
+corpus, because they are about `y_lambda`, the two-row cap, `chi^(2,1)(Delta)`
+and the two bar conditions, none of which those steps touch. The prose around
+them did go stale, and is restated from `main` in the `open` data block rather
+than left at Step 14. That is the intended failure mode working: the numbers held
+and the narrative had to be re-fetched.
+
 NO FLOAT64: sympy exact symbolic; mpmath mpf at 50 dps for the reported
 numerics only.
 """
@@ -273,15 +283,64 @@ def main() -> int:
          "replacement": "both candidates miss the required VALUE by MORE than "
                         "that gap (281380 / 221686 ppb)"},
     ])
+    # 🛑 SUPERSEDED IN PART. This probe was written against the arc at Step 14.
+    # Steps 15-28 landed on `main` on 2026-08-31 while it was in review and moved
+    # the open question materially. Every ASSERTION above survives untouched —
+    # they are about y_lambda, the two-row cap, chi^(2,1)(Delta) and the two bar
+    # conditions, none of which those steps touch, and all 13 still pass against
+    # the advanced corpus. What changed is the STATUS below, so it is restated
+    # from `main` rather than left at Step 14.
     w.add_data("open", [
         {"item": "a derivation of the ladder phase alpha",
-         "note": "the z direction is closed from three independent sides "
-                 "(trace weight, bar parity, anchors); the cos form is closed "
-                 "(Steps 7-8, entry 15); the amplitude route is fenced "
-                 "(qou-i2ir C16/C17/C18 + a structural one-scale/two-target "
-                 "refutation). No route is known to be open."},
+         "status_at_step_14": "the z direction closed from three independent "
+                              "sides (trace weight, bar parity, anchors); the "
+                              "cos form closed (Steps 7-8, entry 15); the "
+                              "amplitude route fenced (qou-i2ir C16/C17/C18 + a "
+                              "structural one-scale/two-target refutation).",
+         "SUPERSEDED_BY": "Steps 15-28 (2026-08-31). The phase is no longer "
+                          "merely unfound: Step 26 EXCLUDES it at 3e11 sigma, "
+                          "having shown symbolically in q that the discriminant "
+                          "curves are genus 0 (short) and genus 8 (long) — "
+                          "NEVER genus 1, so there is no elliptic source and no "
+                          "tower of them. Step 17 adds that the cosine is "
+                          "UNFALSIFIABLE (phase yes, cosine no) and that the "
+                          "only surviving justification would be a KZ/"
+                          "Kohno-Drinfeld holonomy, which nothing supplies. "
+                          "Step 24 closes both eigenphase readings: the Hecke "
+                          "tower repeats the H_3 spectrum and cannot add to it.",
+         "my_earlier_wording_was_wrong": "'no route is known to be open' "
+                                         "describes a search that has not "
+                                         "found one. Step 26 is an EXCLUSION. "
+                                         "Different epistemic state; do not "
+                                         "quote the weaker form."},
+        {"item": "selecting the product generator rho in c_{k+1} = rho*c_k",
+         "note": "PR #6282: the place IS named (QBetaSingleHabiroGenerator, "
+                 "open with no instance) and the parity IS derived "
+                 "(bar-INVARIANT, not bar-odd). What is missing is a SELECTOR. "
+                 "That PR corrected two of its own three proposed gates — "
+                 "parity is a class FILTER admitting the entire symmetric "
+                 "q-integer family at once, and the Hankel condition "
+                 "c_2*c_4 = c_3^2 is VACUOUS for rank-1 candidates. The "
+                 "survivors TEST a candidate once you have one; they do not "
+                 "PRODUCE one. The gap is a source, not a test.",
+         "distinct_from": "the N=1 slot, which entries 10-10d DO answer "
+                          "(M = cos(a_D - h^2/4)*cos(h^2/4), Lean-proved). "
+                          "Different slot; do not read one as the other."},
         {"item": "K(delta)", "note": "free function; filtered but not determined"},
     ])
+    w.add_data("corroborates_a_sibling_result", {
+        "sibling": "Step 17 — the only surviving justification for the cosine "
+                   "is a KZ/Kohno-Drinfeld holonomy, and nothing supplies one.",
+        "this_arc_measured_the_same_thing_from_the_other_side": "entry 15 "
+            "(merged, on main): bar DOES act as Kohno-Drinfeld partition "
+            "conjugation on the block CHARACTERS (bar chi^(3) = chi^(1^3), "
+            "exact, convention-free) but NOT on the Markov weights — every "
+            "residual carries the single factor (z + zbar), so the weights are "
+            "conjugation-equivariant iff z is bar-ODD, which neither convention "
+            "is. Independent evidence for Step 17's claim.",
+        "note": "both landed 2026-08-31, so neither cites the other. Recorded "
+                "here so the connection is not lost.",
+    })
     w.add_data("symbol_collision", {
         "symbol": "K",
         "step14": "trace -> MeV scale, outside the Hecke trace; verdict NEGATIVE",
