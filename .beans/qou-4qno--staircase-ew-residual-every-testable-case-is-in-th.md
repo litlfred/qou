@@ -65,10 +65,8 @@ pipeline already evaluates.
 
 ## Todo
 
-- [ ] Decide with the owner whether the block should carry a row-cap caveat. It
-      already disowns the number in other ways; this is an additional and
-      structural ground, and editing a content block with a QA sidecar is an
-      owner-facing editorial call, not an agent one.
+- [x] Decide with the owner whether the block should carry a row-cap caveat.
+      **Owner said do all four options, 2026-09-02.** Landed below.
 - [x] Sweep for other physical numbers read off `l(lambda) > 2` blocks. **Done
       2026-09-01** — see below. No new sector.
 
@@ -173,3 +171,119 @@ in two sectors it had never looked at — were absorbed into that verdict. The
 optimistic default *is* the failure mode. Trace-only and inert are mechanically
 safe; everything else stays `UNTRIAGED` and **fails the run** until read by
 hand.
+
+
+---
+
+## Resolved 2026-09-02 — all four options, plus the owner's steer
+
+Owner directive: "do all. formalization is important". Plus a steer that
+changed the order of work and nearly changed the answer, recorded next.
+
+### The steer, and why it went first
+
+> "there may be more than one observable that's really in play. some may be at
+> n=2 some maybe higher, but still need to take trace. some observables are not
+> really direct observables of n=2, but 'computable' observables -- operators
+> acting at higher orders, observable at order 0 only by subtraction. A
+> higher-tower operator projected down is not obviously a convex combination of
+> the two crossings, which is precisely the property needed."
+
+If computable observables escaped the row cap, the caveat would have been wrong
+on all four surfaces at once. So it was probed before anything was written.
+Probe: `computations/qbeta/qbeta_computable_observables_vs_row_cap_probe.py`
+(8/8). **The question splits, and the halves go opposite ways.**
+
+**The owner is right about the tower, and it is not speculative — it is the
+Hecke quadratic relation.** In the two-crossing basis `x = a.sigma +
+b.sigma^-1`, with `sigma^-1 = sigma - h`, an element `c_1.1 + c_sigma.sigma` has
+`b = -c_1/h`. So `sigma^2 = h.sigma + 1` gives `b = -1/h < 0`: **two crossings
+compose to something outside the segment between the two crossings.** Measured
+for `sigma^k`, k = 2..8 — none is in the cone. The convex hull of the crossings
+is not closed under multiplication.
+
+And the corpus's own object shows it. `atom_braid_word_3A` returns letters
+`(c, d, g)` meaning `c.sigma_g + d.1`, and **every one of the deuteron's 23
+letters is a convex combination of the two crossings** (11 pure `sigma`, 7 pure
+`sigma^-1`, 5 averaged at `a = b = 1/2`) — so the atom is a convex combination
+of 2^5 signed braid words. Its order-0 projection is not:
+
+| operator | a | b | in cone? |
+|---|---|---|---|
+| `E_2(beta_atom)` | +1.71000 | −1.17070 | no |
+| `E_2(beta_free)` | +3.36463 | −2.30348 | no |
+| `E_2(Delta_bind)` | **−1.65462** | +1.13278 | **no** |
+
+(`E_2` = the Markov-trace-orthogonal projection onto `H_2 = span{1, sigma_1}`,
+fixed by `tr_M(E(x).y) = tr_M(x.y)` for `y` in `{1, sigma_1}`.)
+
+**But subtraction does not escape the row cap, by linearity.** A computable
+observable is a *difference of Markov traces*:
+`tr_M(Delta_bind) = tr_M(atom) - tr_M(free)` — verified to a residual of
+`2.3e-41` — and `tr_M = sum_lambda y_lambda chi_lambda` with `y_lambda = 0` for
+`l(lambda) > 2`. A linear combination of functionals blind to the tall blocks is
+blind to the tall blocks. Being computable rather than directly observed buys
+**nothing** against the cap.
+
+**What survives, and it is not a rescue.** Reading a *spectrum* instead of a
+trace does see the tall blocks. Measured: `rho_(3,2,1)(Delta_bind)` has max
+entry `5.12` — a genuinely nonzero 16x16 operator — while `|y_(3,2,1)| =
+1.1e-17`, so its contribution to `tr_M(Delta_bind)` is exactly zero. That is
+the precise sense in which the tower carries what the trace cannot see, and the
+precise sense in which reading it is not physical.
+
+**So the caveat is unconditional, but the reason is sharper than "unverified":**
+every route from a `>2`-row block to a physical number is either a **trace**
+(which the row cap zeroes) or a **spectrum** (which has no states). Subtraction
+opens no third.
+
+### G — the general row cap, formalized
+
+`content/quantum-observable-universe/lean/QOU/Hecke/RowCap.lean`, registered in
+`QOU.lean`. `QOU.Eightfold.RowCapObstruction` proved the cap for `V^(x)3` alone
+(`weylDimAlt N = N.choose 3`); every other appeal to it — `(3,2,1)` at n = 6,
+`(2,2,1,1)`, the whole `l(lambda) > 2` sector — was corpus prose plus a
+measurement. This proves it for every partition, in one pigeonhole step:
+`dim V_lambda = #SSYT(lambda, N)`, a column of `l(lambda)` boxes is a strictly
+monotone `Fin (l lambda) -> Fin N`, and an injection into a smaller finite type
+does not exist. The asymmetry is the content — rows increase *weakly* so give no
+bound; columns increase *strictly*.
+
+Carries `staircase_three_isEmpty`, `staircase_four_isEmpty`,
+`staircase_two_nonempty` (the only physical staircase, and the untestable one),
+and `choose_eq_zero_iff_isEmpty` tying the general cap back to the n = 3
+arithmetic so the two cannot drift.
+
+**🛑 NOT COMPILED LOCALLY, and not reported as green.** Mathlib's olean cache
+host `lakecache.blob.core.windows.net` is denied by organization policy in this
+environment, and the local Mathlib build carries only `Tactic`/`Util`/`Lean`
+infrastructure — none of `Data.Nat.Choose.Basic`, `Data.Fintype.Card`,
+`Logic.IsEmpty`, `Order.Fin.Basic`, `Mathlib.Tactic`. Building Mathlib from
+source is hours. What *was* run: every Mathlib name and signature used was
+verified against the Mathlib **source** present in `.lake/packages/mathlib/`
+(`Nat.choose_eq_zero_iff`, `Fintype.card_le_of_injective`, `not_nonempty_iff`,
+`StrictMono.injective`, `Fin.strictMono_castLE`), and the two proofs that had
+leaned on an unverified `Nat.not_le` were rewritten onto `omega`. **Needs a CI
+build before it is trusted.**
+
+### B + C + D — the surfaces
+
+| surface | change |
+|---|---|
+| `mass-theory/staircase-ew-residual.md` | new **Carrier** section: `N_min(rho_k) = k`, only k = 2 physical and it is the untestable case; trace-or-spectrum dichotomy; subtraction does not open a third. First bullet now says the exponent is selected rather than derived. |
+| `mass-theory/staircase-corner-hook-proof.md` | "**arithmetic anchor**" → "makes the exponent *available*"; "uses *exactly* this corner hook" → "matches"; adds "availability is not derivation", the enumerated sweep, that the k = 4 prediction was not testable, and the row cap. The identity `h_corner = 2k-1` stands untouched. |
+| `appendix-standard-model/sm-params-gauge-couplings.md` | adds the row-cap ground beside the anti-fit one, and why it is stronger: **deriving the exponent would not close the gap.** |
+| `docs/sm-eightfold-derivation-cheat-sheet.md` | same, in the G6 guardrail. |
+| `nuclear-interactions/weinberg-angle-categorical.md` | records that its three proposed repairs all act *inside* the carrier, which is where a repair must act, and that a construction reaching CODATA by reading a tall block's spectrum is not a competing evaluation of the same quantity. |
+
+The contradiction the sweep found is gone: the guard said availability after a
+proximity search is not derivation while the proof block called the same hook
+"the arithmetic anchor". Both now say the same thing.
+
+### Gates
+
+- content validation: **✓ Valid**, 9 issues, all pre-existing and none in a
+  touched file.
+- `probe-float64-guard --diff`: clean on both new probes.
+- `witness_shape_guard`: clean.
+- **Lean: NOT RUN** — see above.

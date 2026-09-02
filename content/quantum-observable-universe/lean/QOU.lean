@@ -1413,6 +1413,7 @@ import QOU.Mathlib.StandardYoungCountInstance
 -- blueprint, doc-gen and every dependency walk, though still compiled by the
 -- lakefile glob.  The first two predate this commit (bean qou-kljb).
 import QOU.Hecke.ClosedFormInterfaceFactors
+import QOU.Hecke.RowCap
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 
