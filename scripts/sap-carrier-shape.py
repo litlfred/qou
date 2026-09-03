@@ -9,9 +9,12 @@ obvious discriminator is wrong.
 
 **"Is the class parameterised?" does not separate them.** Tried first, on the
 31 library projections: it splits 8 / 10 / 13, and the 8 "parameterised" bucket
-contains `KnotFactorSpectralContext` (10 data fields), `SortingColorEnergyContext`
-(9) and `SixTermMassFormulaContext` (8). A class can take a parameter *and*
-carry ten objects the instance chooses; the parameter buys nothing then.
+contained `KnotFactorSpectralContext`, `SortingColorEnergyContext` and
+`SixTermMassFormulaContext` — carriers with **ten, twelve and eight data
+fields** respectively. A class can take a parameter *and* carry a dozen
+objects the instance chooses; the parameter buys nothing then. (The first and
+third have since been repaired and no longer appear; `SortingColorEnergyContext`
+is still here at `data = 12`.)
 
 **The discriminator is DATA FIELDS.** AGENTS.md §3b-cond item 5 asks whether
 the class axiomatises *hypotheses* or supplies the objects the claim is about.
@@ -27,7 +30,31 @@ Operationally:
   repair is to move the data to parameters.
 
 Measured on `main` 2026-09-02 over the 31 library projections:
-**19 defect, 2 accessor, 10 unresolved.**
+**19 defect, 2 accessor, 10 unresolved.** After the first five repairs and the
+field-parser fix below, the library figure is **10 / 2 / 10** and the whole
+tree is **18 / 4 / 15**.
+
+## The field parser under-counted, and by a lot — but no verdict moved
+
+Found in Copilot's review of PR #6422. `FIELD` was `^  (\w+)\s*:` and was
+wrong twice, both times downward:
+
+* `\w` excludes the characters Lean identifiers use — `'`, `!`, `?`, and all
+  of unicode. A field named `S'` or `y_λ` was **invisible**.
+* It captured one name per line, so `W_sym W_std W_alt : R` counted as **one**
+  field instead of three.
+
+Measured by running both parsers over the same tree: **11 of 37 rows had their
+data count corrected upward**, the worst by nineteen (`knot-eigenbasis-complete`,
+4 → 23; `diagrammatic-double-magic-lr-fusion`, 7 → 21).
+
+**And zero verdicts flipped.** That is not luck and is worth stating as the
+reason the published triage stands: `ACCESSOR` requires `data == 0`, so an
+under-count can only manufacture a *false accessor* — and no row was pushed to
+zero, because a carrier with any data field at all had at least one name the
+old regex could see. So the counts were wrong and the partition was not.
+
+Quote the counts from a run, never from this docstring.
 
 ## Three sharper discriminators were tried after this one. All three fail.
 
@@ -52,10 +79,11 @@ reading the files.
    graded on prose the grader wrote is not a measurement.
 
 3. **Data-field count**, the one this script reports. It over-flags:
-   `BondExtensiveBinding` (`data=2`) is the *honest* version of the same
-   shape — the file states plainly that `extensive` is the arc's open input
-   and that `binding_eq_bond_energy` is *"just `h.extensive`, exposed as a
-   named consumer"*. Counting fields cannot see that.
+   `BondExtensiveBinding` (`data = 2` when measured 2026-09-02; the row has
+   since left the queue) is the *honest* version of the same shape — the file
+   states plainly that `extensive` is the arc's open input and that
+   `binding_eq_bond_energy` is *"just `h.extensive`, exposed as a named
+   consumer"*. Counting fields cannot see that.
 
 **Why no syntactic signal can work.** `theorem foo [ctx : C] : ctx.a = ctx.b
 := ctx.claim` is a true, non-vacuous statement — it is the identity on a
@@ -95,6 +123,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import sys
 from pathlib import Path
 
@@ -102,7 +131,26 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content/quantum-observable-universe"
 
 CLAIMY = re.compile(r"[=≤<>∀∃↔≠∈]|Nonempty|IsOpen|Subsingleton|Prop\s*$")
-FIELD = re.compile(r"^  (\w+)\s*:(.*)$", re.M)
+
+# A field line: exactly two spaces, then one or more names, then `:` (not `:=`).
+#
+# `(\w+)` was WRONG in two ways, both of which UNDER-count data fields — and an
+# under-count flips a DEFECT verdict to ACCESSOR, which is the one direction
+# that hides work rather than inventing it.
+#
+#   1. `\w` excludes the characters Lean identifiers actually use — `'`, `!`,
+#      `?`, and the whole unicode range (`Δ`, `χ`, `y_λ`, `σ₀`). A field named
+#      `S'` was invisible. (Copilot review, PR #6422.)
+#   2. It captured only ONE name, so the standard multi-binder line
+#      `W_sym W_std W_alt : R` counted as a single field instead of three.
+#
+# So the name class is "anything that is not whitespace, a delimiter, or the
+# colon", and the group is a whitespace-separated run of them. Requiring
+# exactly two leading spaces keeps continuation lines of a previous field's
+# type (indented four) from matching, and excluding `(` `⟨` etc. from the name
+# class keeps a binder line like `  (h : Foo)` out.
+_NAME = r"[^\s:()\[\]{}⟨⟩,]+"
+FIELD = re.compile(rf"^  ((?:{_NAME}[ \t]+)*{_NAME})[ \t]*:(?!=)(.*)$", re.M)
 
 
 def load_tree() -> dict[str, str]:
@@ -125,10 +173,15 @@ def find_class(tree: dict[str, str], cname: str):
         body = t[m.end():]
         nb = re.search(r"\n(?=\S)", body)
         body = body[: nb.start()] if nb else body[:4000]
-        fields = FIELD.findall(body)
-        data = [x for x in fields if not CLAIMY.search(x[1])]
-        claim = [x for x in fields if CLAIMY.search(x[1])]
-        return f, m.group(1).strip(), len(data), len(claim)
+        # One entry PER NAME: `W_sym W_std W_alt : R` is three fields, not one.
+        data = claim = 0
+        for names, ty in FIELD.findall(body):
+            n = len(names.split())
+            if CLAIMY.search(ty):
+                claim += n
+            else:
+                data += n
+        return f, m.group(1).strip(), data, claim
     return None, None, None, None
 
 
@@ -159,14 +212,21 @@ def main() -> int:
     ap.add_argument("--json", help="write the full result set here")
     args = ap.parse_args()
 
-    live_json = ROOT / "sap-live.tmp.json"
-    subprocess.run(
-        [sys.executable, str(ROOT / "scripts/sap-projection-liveness.py"),
-         "--json", str(live_json)],
-        capture_output=True, check=True,
-    )
-    rows = json.loads(live_json.read_text())
-    live_json.unlink(missing_ok=True)
+    # A private temp file, cleaned up on any exit path. The previous fixed
+    # `ROOT / "sap-live.tmp.json"` clobbered concurrent runs and, when the
+    # liveness call raised, left an untracked file in the repo root — which in
+    # this repo reads as real work to the next agent's `git status`.
+    fd, tmp = tempfile.mkstemp(prefix="sap-live-", suffix=".json")
+    os.close(fd)
+    try:
+        subprocess.run(
+            [sys.executable, str(ROOT / "scripts/sap-projection-liveness.py"),
+             "--json", tmp],
+            capture_output=True, check=True,
+        )
+        rows = json.loads(Path(tmp).read_text())
+    finally:
+        Path(tmp).unlink(missing_ok=True)
 
     sel = [r for r in rows if r["status"] == "PROJECTION"
            and (args.tree is None or r["tree"] == args.tree)]
