@@ -1,8 +1,10 @@
 {
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "bpp-higher-a-sparse",
   "description": "qou-gcmn ANSWERED. B_pp per bond on pure-proton chains: 2.128360946 (A=2, reproducing the committed value by a different evaluator), 1.966342608 (A=3), 1.851585614 (A=4) MeV \u2014 a monotone 13.0% decline, against an A-independent chain bond of 2.050709692. So B_pp is NOT A-independent, the confound is real and signed, and the measured kappa decline OVERSTATES the EM-linking invariant. The companion probe's first disjunction branch is withdrawn. Also: the H_2A trace was never intractable \u2014 the sparse Hoefsmit multiply does A=4 (n=12, max dim 297) in ~50s where the dense evaluator does not return in 600s. Scope (a); the series is NOT corrected past A=4, which would be a fit.",
-  "computedAt": "2026-09-03T10:50:27.812752+00:00",
+  "computedAt": "2026-09-03T21:49:05.125822+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "q0_anchor": "proton",
@@ -19,7 +21,7 @@
         "S_inter_false": "1.312765272859848671421713",
         "B_total_MeV": "2.128360945757083003",
         "B_pp_per_bond_MeV": "2.128360945757083003",
-        "elapsed_sec": 0.0
+        "seconds": 0.0
       },
       {
         "A": 3,
@@ -31,7 +33,7 @@
         "S_inter_false": "1.504113535300524873911184",
         "B_total_MeV": "3.9326852150604777223",
         "B_pp_per_bond_MeV": "1.9663426075302388611",
-        "elapsed_sec": 0.5
+        "seconds": 0.7
       },
       {
         "A": 4,
@@ -43,7 +45,7 @@
         "S_inter_false": "1.723352661626792934774866",
         "B_total_MeV": "5.5547568406290096387",
         "B_pp_per_bond_MeV": "1.8515856135430032129",
-        "elapsed_sec": 34.0
+        "seconds": 42.3
       }
     ],
     "B_pp_per_bond": {
@@ -74,7 +76,7 @@
       {
         "name": "the H_2A bond is computable \u2014 the intractability claim was stale",
         "passed": true,
-        "detail": "A=4 completes in 34 s with the column-sparse Hoefsmit multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), machinery that landed 2026-08-30 in colour_weighting_across_mixed_nuclei_probe. em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, intractable' predates it."
+        "detail": "A=4 completes in 42 s with the column-sparse Hoefsmit multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), machinery that landed 2026-08-30 in colour_weighting_across_mixed_nuclei_probe. em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, intractable' predates it."
       }
     ],
     "allPassed": true

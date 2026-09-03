@@ -1,8 +1,10 @@
 {
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "arc-count-diagnostic-degeneracy",
   "description": "qou-0c19's 'error ~ inter-nucleon arc count, R^2=0.83 (vs signed-h 0.26)' localization evidence does not match its cited source. low-isotope-sign-flip-diagnostic.witness.json contains no 0.83; it records 0.2653 (arc) and 0.0018 (signed-h) on n=5 with 3 informative points, and its own verdict is WEAK correlation / sign-flips NOT explained. Separately, the absolute-error reading used in the bean, audit and content block is degenerate: R^2(B_AME ~ arc) = 0.994 with no model, and arc=A-1 scores exactly what bare A scores. Does NOT refute conj:inter-nucleon-channel-color-tube. Scope (a).",
-  "computedAt": "2026-09-03T10:49:31.839804+00:00",
+  "computedAt": "2026-09-03T21:48:21.193047+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "cited_witness": "computations/low-isotope-sign-flip-diagnostic.witness.json",
@@ -14,12 +16,12 @@
     "corpus_quoted_r2_arc": "0.83",
     "corpus_quoted_r2_signed_h": "0.26",
     "r2_ame_vs_arc_exact": "19338783100343083431581374515755024809/19450479764643817134307830471636097816",
-    "r2_ame_vs_arc": "0.994257382560620908948433446049884354098428191548292877673886",
+    "r2_ame_vs_arc_float": 0.9942573825606209,
     "n_nuclei_ame": 2449,
     "regressor_race": {
-      "arc count = A - 1": "0.994257382560620908948433446049884354098428191548292877673886",
-      "A": "0.994257382560620908948433446049884354098428191548292877673886",
-      "7*A - 3": "0.994257382560620908948433446049884354098428191548292877673886"
+      "arc count = A - 1": 0.9942573825606209,
+      "A": 0.9942573825606209,
+      "7*A - 3": 0.9942573825606209
     },
     "shallow_clone_caveat": "This clone is shallow; only 2 commits touching the cited witness are in the fetched window and both carry 0.2653. An earlier version outside the window cannot be excluded, so the claim is about the witness AS COMMITTED TODAY.",
     "assertions": [
