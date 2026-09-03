@@ -73,12 +73,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
-Q_MUON = mp.mpf("1.10997859555733471")
-Q_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+# Both anchors read BY NAME (bean qou-9ugp, 2026-09-03). `Q_MUON` was the
+# literal "1.10997859555733471" — the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the live CODATA-2022 lepton-ratio derivation
+# `q_muon_at()` (+0.0769 ppb); `Q_PROTON` was the proton 50-digit string
+# re-typed by hand. A hardcoded pin cannot be checked against the name it is
+# bound to, so both are derived now rather than transcribed.
+Q_MUON = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
 Q_STAR = mp.mpf("1.10997859303152")
 VOL_5_2 = mp.mpf("2.8281220883307832")
 
@@ -299,22 +306,22 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("gate_N2_equals_corpus_jones",
-                     computed=1.0 if g1_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g1_ok))), expected="1.0", tolerance="0.5",
                      source="J'_2(K₋₁), J'_2(K₂) reproduce the validated TL₃ V(4₁), "
                             "V(5₂) (variable/mirror-tolerant) at 3 q-points")
     wb.add_assertion("gate_p_pm1_plumbing",
-                     computed=1.0 if g2_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g2_ok))), expected="1.0", tolerance="0.5",
                      source="f̃_{K₁,n}=q^n and f̃_{K₋₁,n}=(−1)^n q^{−n(n+1)/2} "
                             "(Masbaum Rmk 5.2) from the same c'-machinery as p=2")
     wb.add_assertion("gate_amphichiral_41_null",
-                     computed=1.0 if g3_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g3_ok))), expected="1.0", tolerance="0.5",
                      source="B_N(4₁) = 0 to 1e-30 for N ≤ 10 — mirror/bar control")
     wb.add_assertion("gate_41_vc_control",
-                     computed=1.0 if g4a_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g4a_ok))), expected="1.0", tolerance="0.5",
                      source="4₁ tower growth − 3π·logN/N increasing toward the proven "
                             "Vol(4₁) = 2.0299 (N=20..80) — assembly machinery validated")
     wb.add_assertion("p2_tower_vs_gz79_discrepancy_confirmed",
-                     computed=1.0 if g4b_disc else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g4b_disc))), expected="1.0", tolerance="0.5",
                      source="GZ eq-(7.9) tracks Vol(5₂)=2.828 while the p=2 tower's "
                             "growth constant ≈ 2.03 and |GZ|/|tower| > 100 at N=80 — "
                             "the Thm-5.1 p=2 assembly (as transcribed) is NOT J'_N(5₂)")
@@ -347,7 +354,10 @@ def main() -> int:
                  "now Thm-5.1 p=2)."
                  if ok else "GATES FAILED — inspect before trusting even the "
                             "discrepancy claim."))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q_MUON, proton=Q_PROTON,
+        reason="the cross-anchor bar-odd slope |B_mu − B_pr|/(q_mu − q_pr) is the "
+               "measured quantity; both pins are read on purpose"))
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-t0:.0f}s)")
     print("  witness -> computations/probes/qbeta-5two-colored-tower-barodd-qstar.witness.json")
     return 0 if ok else 1
