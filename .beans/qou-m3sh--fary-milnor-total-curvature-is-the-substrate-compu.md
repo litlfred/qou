@@ -182,3 +182,13 @@ Corpus Reeb status: rotation channel blind to p/n (2026-06-01); constant-scale
 `ReebLinkingCWF.lean` derives the pn linking amplitude `ℓ(z) = z/√(1+z²)` from
 Markov + CWF + Kauffman transverse selection — the corpus's own Călugăreanu
 thread, and the exchange channel is the transverse (linking) direction.
+
+- [x] Lean: `QOU/Mass/TorusKnotPages.lean` — Seifert form of T(2,n) unimodular for
+  every odd n (upper-triangular det = (−1)^(n−1)); the curvature floor as
+  bookkeeping (b ≥ μ + #knotted, μ = A+1, #knotted = A ⇒ 2A+1 ≤ b ≤ 3A); the
+  pages T(2,3/5/7) embed on Bring's surface at the corpus's forced g = 4 via its
+  own `Embeds` (`decide`), T(2,9) the last; Bennequin χ = −5, genus 3 for both
+  sub-braid shapes. Sorry-free, standard axioms only. NOT formalised: Milnor's
+  theorem, the torus-knot identification, the Alexander polynomial and
+  monodromy order (checked exactly at n = 3,5,7 by the probe), fibered-knot
+  page uniqueness.
