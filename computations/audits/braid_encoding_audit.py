@@ -77,7 +77,7 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q as Q0_FLOAT, HA as HA_FLOAT
+from q_parameter import Q_50_DIGIT_STR
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -89,6 +89,40 @@ from q_parameter import Q as Q0_FLOAT, HA as HA_FLOAT
 #   (1, −h)       →  σ_i⁻¹             negative crossing
 #   (1, −h/2)     →  ½(σ_i + σ_i⁻¹)    averaged (Markov-symmetric)
 #   (0, 1)        →  𝟏                 no-interaction
+
+
+def _ser_cd(word_cd) -> list:
+    """Serialize a (c, d, gen) word for the witness WITHOUT losing the word.
+
+    This used to be `[(float(c), float(d), int(g)) …]`, and the cast was the
+    defect rather than an inherited limitation. `atom_braid_word_3A` builds
+    every offset inside `with workdps(max(mp.dps, 60))` from
+    `Q_50_DIGIT_STR` — its own comment says so, and says why: `pyhecke.gram.h`
+    is a Python float at 2.6e-16 relative, and reading it took the deuteron
+    dual-path cross-check from 3.2e-50 to 1.0e-16. That producer then tells
+    consumers to "cast at their own boundary, where the loss is visible".
+    Casting in the SERIALIZER is the one place the loss is NOT visible: the
+    witness reads as a braid word rather than as a rounded copy of one.
+
+    Verified against the source rather than assumed: with q = mpf(Q_50_DIGIT_STR)
+    and h = q − 1/q at 60 dps, the three distinct `d` in the proton word are
+    exactly {0, −h/2, −h} to all 60 digits.
+
+    BOTH slots are coerced through `mpf` before `fmt`, and that is not
+    cosmetic. The word mixes Python types *within one field*: a σ letter
+    carries the int `0` in the `d` slot while a σ⁻¹ letter carries an mpf, and
+    `fmt` spells those `"0"` and `"0.0"`. The `c` slot does the same — int `1`
+    for the isospin-symmetric letters, mpf `1` for the three colour-weighted
+    p-n interfaces. Left uncoerced, one field holds two spellings of the same
+    number and string equality on it is meaningless.
+
+    Both were found by measurement rather than by reading, and the second
+    contradicted this docstring's own first draft, which asserted `c` is
+    "always an int": the `d` split showed up as 84/161 on the assertion below,
+    and the `c` split showed up as three `1.0 -> "1.0000…0"` entries in the
+    diff against `origin/main`.
+    """
+    return [(fmt(mp.mpf(c)), fmt(mp.mpf(d)), int(g)) for (c, d, g) in word_cd]
 
 
 def crossing_label(c: float, d: float, h: float) -> str:
@@ -118,13 +152,18 @@ def particle_braid_inventory() -> dict:
     inventory = {}
 
     # Electron: σ₁³ ∈ H_2 (trefoil T_{2,3})
-    e_word_cd = [(1.0, 0.0, 0)] * 3
+    # `(1, mpf(0))`, not `(1.0, 0.0)`: σ₁³ has exactly-zero offsets, so nothing
+    # is gained by the float — but `word_cd` is ONE field across seven atoms,
+    # and a reader (or a consumer) that finds strings for six atoms and bare
+    # floats for the seventh has to discover the split before it can parse
+    # either. Routed through the same `_ser_cd` as the rest.
+    e_word_cd = [(1, mp.mpf(0), 0)] * 3
     inventory["electron"] = {
         "particle": "e⁻ (trefoil T_{2,3})",
         "Hecke": "H_2",
         "n_strands": 2,
         "n_generators": 1,
-        "word_cd": e_word_cd,
+        "word_cd": _ser_cd(e_word_cd),
         "word_str": " · ".join(crossing_label(c, d, float(h_num)) + f"_{g}"
                                  for (c, d, g) in e_word_cd),
         "writhe": sum(1 if abs(d) < 1e-6 else (-1 if abs(d + float(h_num)) < 1e-6 else 0)
@@ -174,7 +213,7 @@ def _build_record(name, word_cd, h_num, gens=None):
         "Hecke": f"H_{n_strands}",
         "n_strands": n_strands,
         "n_generators": n_strands - 1,
-        "word_cd": [(float(c), float(d), int(g)) for (c, d, g) in word_cd],
+        "word_cd": _ser_cd(word_cd),
         "word_str": " · ".join(f"{lab}_{g}" for ((_, _, g), lab) in zip(word_cd, labels)),
         "word_length": len(word_cd),
         "writhe": writhe,
@@ -555,13 +594,60 @@ def main() -> int:
         "m_n directly, hence the −8.3% error."
     )
     w.set_content_block("prop:atomic-mass-gb-nf")
-    w.add_parameter("q_0", float(Q0_FLOAT))
-    w.add_parameter("h", float(HA_FLOAT))
+    # These recorded the wrong q₀, at the wrong width. `q_parameter.Q` / `.HA`
+    # are the float64 convenience constants — the `_FLOAT` in the local aliases
+    # is accurate, not a misnomer — but they are NOT what this witness's data
+    # was computed at: `atom_braid_word_3A` builds every crossing offset inside
+    # `workdps(max(mp.dps, 60))` from `Q_50_DIGIT_STR`, precisely because
+    # `pyhecke.gram.h` is a float at 2.6e-16 relative.
+    #
+    # So this is not a widening of a float64 — that would be laundering — it is
+    # reading the constant the computation actually used. Checked rather than
+    # assumed: with q = mpf(Q_50_DIGIT_STR), the identity h = q − 1/q reproduces
+    # the proton word's three distinct offsets {0, −h/2, −h} to all 60 digits,
+    # and the assertion below re-checks it on every run.
+    _q0_exact = mp.mpf(Q_50_DIGIT_STR)
+    _h_exact = _q0_exact - 1 / _q0_exact
+    w.add_parameter("q_0", fmt(_q0_exact))
+    w.add_parameter("h", fmt(_h_exact))
     w.add_data("braid_inventory", inventory)
     w.add_data("knot_operation_classifications", classifications)
     w.add_data("gamma_gamma_per_particle", gg)
     w.add_data("tr_M_cross_check", xc)
     w.add_data("structural_finding", STRUCTURAL_FINDING)
+
+    # Does the recorded `h` describe the words this witness actually carries?
+    # Asserted rather than argued, because the two sides are built
+    # independently: `crossing_label` classifies a letter by comparing its
+    # offset to the FLOAT `hecke_core.h` within 1e-6, while the offset itself
+    # comes from `atom_braid_word_3A` at >= 60 dps. So "the labeller called
+    # this σ⁻¹" and "the offset is exactly −h" are different claims, and the
+    # first is 6-digit evidence for the second. This checks the second: every
+    # letter the labeller placed in one of the three exact templates must have
+    # an offset equal to that template under the recorded h, to the last digit.
+    # A drift between the recorded h and the word's h fails here even when it
+    # is far too small for the labeller to notice — which is the failure mode
+    # a witness recording q₀ at float64 width could not have caught.
+    #
+    # The colour-weighted p-n interface `σ − h(1/2 − δ/4)` is NOT a rational
+    # multiple of h and is excluded BY LABEL (it falls to `crossing_label`'s
+    # display fallback), never by tolerance.
+    _tmpl = {"σ": fmt(mp.mpf(0)),
+             "σ⁻¹": fmt(-_h_exact),
+             "½(σ+σ⁻¹)": fmt(-_h_exact / 2)}
+    _tmpl_letters = _tmpl_exact = 0
+    for _rec in inventory.values():
+        _labs = [_s.rsplit("_", 1)[0] for _s in _rec["word_str"].split(" · ")]
+        for (_c, _d, _g), _lab in zip(_rec["word_cd"], _labs):
+            if _lab in _tmpl:
+                _tmpl_letters += 1
+                _tmpl_exact += int(_d == _tmpl[_lab])
+    w.add_assertion(
+        "every templated crossing offset equals the recorded h exactly",
+        computed=_tmpl_exact, expected=_tmpl_letters, tolerance=0,
+        source="q_0 and h are recorded from Q_50_DIGIT_STR via h = q − 1/q; "
+               "the offsets come from atom_braid_word_3A at >= 60 dps. Exact "
+               "string equality, so any disagreement at any digit fails.")
 
     # ── ROUTE 1: give this audit assertions it can actually FAIL ───────────
     #
@@ -600,9 +686,21 @@ def main() -> int:
     #     `markov-trace-assembly-proton.derivation.json` declares
     #     `target = "tr_M(p, q_0) [canonical Wenzl-bridge]"` with
     #     `target_tolerance = 1e-09`; the option-b chain computes the same
-    #     quantity. They differ by 43.46% (normalised by the option-b value;
-    #     76.88% the other way round -- ONE gap under two normalisations, not
-    #     two findings). Asserted at 1e-3, four orders looser than the
+    #     quantity. They differ by 39.20% (normalised by the option-b value;
+    #     64.46% the other way round -- ONE gap under two normalisations, not
+    #     two findings).
+    #
+    #     BOTH figures here read 43.46% / 76.88% until 2026-09-03, and the
+    #     correction is not a rounding: main's committed witness recorded
+    #     `markov_trace_assembly_chain = 1.0653062285923893` while the upstream
+    #     it names, `markov-trace-assembly-proton.derivation.json`, carries
+    #     `target_value = 1.1457596924573008` -- identical on disk and on
+    #     origin/main. So the witness was stale against an upstream that had
+    #     not moved, and the stale value was quoted here as the finding. The
+    #     gap is smaller than advertised and still far outside any tolerance;
+    #     the qou-soj6 conclusion is unaffected.
+    #
+    #     Asserted at 1e-3, four orders looser than the
     #     derivation's own claimed tolerance, so this is not a tight-tolerance
     #     artifact.
     if _ob is not None and _ch is not None:
