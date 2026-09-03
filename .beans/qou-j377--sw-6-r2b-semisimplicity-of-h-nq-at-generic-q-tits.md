@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T08:58:22Z
+updated_at: 2026-09-03T09:09:54Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -280,3 +280,59 @@ or `S1`.  Answer: **NONE**.  Run it before believing any OFF verdict.
 
 Recorded because the earlier over-count and this correction come from the same place: a
 detector one granularity too coarse, trusted because it was specific.
+
+
+## 2026-09-03 — first tranche file done, and the remaining threading is now sized
+
+**`SeminormalParam` is generic, and it needed NO new hypothesis.**  Its five declarations
+on the general path moved to `{K : Type*} [Field K]` carrying the *same* `q ≠ 0`,
+`q ^ 2 ≠ 1` they already had.  No `NotRootOfUnity` threading, no order, no proof changed —
+`sub_ne_zero` + `field_simp` + `ring` never needed `ℝ`.  **The `ℝ` in that file was not
+load-bearing at all; it was inherited from a `variable (q : ℝ)` line.**
+
+Its sixth declaration `S1_eq_seminormalParam` genuinely cannot be generic (it identifies
+`HoefsmitRep`'s `ℝ`-valued `S1`, and proves `1 - q⁴ ≠ 0` via `nlinarith [sq_nonneg q]`), so
+per §7c it moved to `SeminormalParamAnchorReal.lean`.  It is **off the general path**
+anyway.  Tranche: **59 → 54 declarations, 11 → 10 modules.**
+
+### How NOT to do this edit
+
+My first attempt blanket-replaced `(1 : ℝ) → (1 : K)` across the file.  It hit the private
+helper `add_inv_aux`, whose binders are separate, and it inserted the section boundary
+*between a docstring and its theorem* (`unexpected token 'end'; expected 'lemma'`).
+Reverted; redone with explicit line anchors plus an assertion that no `ℝ` survives in the
+generic section.
+
+### The remaining threading, measured
+
+`SeminormalRep` is next in dependency order and is where the real work is — not because of
+`ℝ` in its types (those are base-ring shaped) but because `zpow_ne_one` is consumed **36
+times inside it**, each as `zpow_ne_one hq0 hq2`, and generalising means those become
+`NotRootOfUnity`.
+
+    module                        decls  sig-hq2  zpow sites
+    SeminormalRep                    40       15          36
+    OffDiagNonvanishing               2        2           3
+    QJucysMurphyEigen                21        8           1
+    SeminormalSimpleSpectrum          3        3           1
+    SeminormalInequivalence          26        7           0
+    SeminormalRange                   3        3           0
+    SeminormalRangeTop                3        3           0
+    HeckeProductSurjective            7        6           0
+    HeckeWedderburnGeneral            7        3           0
+
+**THREADING: 50 signatures carrying `q ^ 2 ≠ 1`, 41 `zpow_ne_one` call sites, over 112
+declarations.**  Mechanical, bounded, but not a single sitting — `SeminormalRep` alone is
+1810 lines with a >2-minute build loop.
+
+**Do not quote a "0 signatures" figure.**  My first attempt at this measurement reported
+exactly that, from a regex that took everything between the declaration name and the first
+`:` as the binder list — and every binder contains a `:`.  The corrected version splits the
+declaration at `:=` and searches the header.
+
+### Order of attack, if resuming
+
+`OffDiagNonvanishing` cannot go before `SeminormalRep`: it consumes `offDiag`, which is
+defined there.  So the order is `SeminormalRep` → `OffDiagNonvanishing` /
+`QJucysMurphyEigen` → the three `Seminormal*` leaves → `HeckeProductSurjective` →
+`HeckeWedderburnGeneral`.
