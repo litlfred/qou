@@ -3,8 +3,8 @@
 Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
 **BASELINE** (a number — re-measure, never quote from here).
 
-Seeded 2026-08-29 from `AGENTS.md` + the skill (which governs where they
-disagree). Only the first 200 lines are injected; detail is in sibling files:
+Seeded 2026-08-29 from `AGENTS.md` + the skill (governs where they disagree).
+NOTHING is auto-injected here (measured) — read this yourself. Sibling files:
 
 - `verification-harness.md` — false greens, partial overlays, exit-139, cone triage, FQN guards
 - `authoring-traps-v4-24-0.md` — module moves, lexer tokens, the small-determinant recipe
@@ -178,7 +178,9 @@ against Mathlib-only oleans while the real import cone rebuilds.
 directory (→ `.Ring.Finset`); `Finset.sum_powerset_card` does not exist (→
 `Finset.sum_powerset`). Symptom is identical to a cache miss — check the
 mathlib **source** tree before diagnosing the cache. `₊`/`₋` are notation
-tokens under `Mathlib.Tactic`; rename such binders.
+tokens under `Mathlib.Tactic`; rename such binders. `ring` needs a *commutative*
+ring: over `[Ring A]` it fails on mere associativity with the misleading
+`ring_nf made no progress` — use explicit `mul_assoc` (or `noncomm_ring`).
 
 ## TRAP — docstring figures inherit the probe's hardcoded constants → `verification-harness.md` §9
 
