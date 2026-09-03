@@ -440,23 +440,63 @@ def main() -> int:
         # canonical builder, the whole bond sweep is measuring a lookalike.
         wb.add_assertion("bond_sweep_control_reproduces_canonical_builder",
                          computed=str(ctrl_ok), expected="True")
-        wb.add_assertion("h3_grades_vs_bond_product_grades_at_A4",
-                         computed=f"{MAX_GRADE + 1} vs {comb(4, 2) + 1}",
-                         expected=f"{MAX_GRADE + 1} vs {comb(4, 2) + 1}")
-        wb.add_assertion("bond_sweep_distinct_shapes_over_configurations",
-                         computed=f"{len(sweep_seen)}/{len(sweep_rows)}",
-                         expected=f"{len(sweep_seen)}/{len(sweep_rows)}")
-        wb.add_assertion("z2n2_shapes_over_bond_counts",
-                         computed=f"{z2n2_distinct}/{len(z2n2)}",
-                         expected=f"{z2n2_distinct}/{len(z2n2)}")
-        for A in (2, 20):
-            wb.add_assertion(f"full_tower_max_grade_at_A{A}",
-                             computed=str(comb(3 * A, 2)),
-                             expected=str(comb(3 * A, 2)))
+        # qou-3e5m. Five assertions here passed the IDENTICAL f-string as both
+        # `computed` and `expected` -- X == X, which cannot fail and reports
+        # nothing when it fires. Two lines above, `h3_quotient_jet_grades` and
+        # the control are written correctly against literals, so the shape was
+        # a copied idiom rather than a misunderstanding.
+        #
+        # Split by what each one actually claims. Where the name states a
+        # falsifiable proposition, assert the proposition. Where the value is a
+        # recorded measurement with no pass/fail sense, it is DATA -- promoting
+        # it to a comparison against itself is how the defect got here.
+
+        # DATA, not assertions. "4 vs 7" is a recorded contrast (the H_3
+        # quotient carries 4 grades where the A=4 bond product would give 7);
+        # asserting equality would be FALSE, and asserting the inequality is a
+        # closed-form against a constant, true by arithmetic. Likewise
+        # comb(3A,2) is a formula with no measured counterpart in scope.
+        wb.add_data("h3_grades_vs_bond_product_grades_at_A4",
+                    {"h3_quotient_grades": MAX_GRADE + 1,
+                     "bond_product_grades_at_A4": comb(4, 2) + 1})
+        wb.add_data("full_tower_max_grade",
+                    {f"A{A}": comb(3 * A, 2) for A in (2, 20)})
+
+        # REAL CLAIMS. The interesting fact in the sweep is the COLLAPSE --
+        # distinct shapes strictly fewer than configurations, i.e. the shape
+        # map is non-injective. The docstring reports 107 distinct with 115
+        # collisions, and 6 distinct across 7 bond counts at Z=2,N=2. If that
+        # map ever became injective these fail, which is the point.
+        wb.add_data("bond_sweep_shape_counts",
+                    {"distinct_shapes": len(sweep_seen),
+                     "configurations": len(sweep_rows),
+                     "collisions": len(collisions)})
+        wb.add_assertion("bond_sweep_shape_map_is_non_injective",
+                         computed=str(int(len(sweep_seen) < len(sweep_rows))),
+                         expected="1")
+        wb.add_data("z2n2_shape_counts",
+                    {"distinct_shapes": z2n2_distinct,
+                     "bond_counts": len(z2n2)})
+        wb.add_assertion("z2n2_shape_map_is_non_injective",
+                         computed=str(int(z2n2_distinct < len(z2n2))),
+                         expected="1")
+        # This one's NAME already stated the proposition; only the code failed
+        # to test it. Both groups non-empty is what makes any magic /
+        # non-magic comparison at that level meaningful at all.
         for A, v in per_level.items():
-            wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
+            wb.add_data(f"group_sizes_at_A{A}",
+                        {"n_magic": v["n_magic"],
+                         "n_non_magic": v["n_non_magic"]})
+            wb.add_assertion(
+                f"both_groups_non_empty_at_A{A}",
+                computed=str(int(min(v["n_magic"], v["n_non_magic"]) > 0)),
+                expected="1")
+        # Computed at line ~357, printed, and stored as data -- but never
+        # asserted. A falsifiable boolean sitting one field away from the
+        # assertions list is exactly what this drain is for.
+        wb.add_assertion("support_is_full_at_every_bond_count",
+                         computed=str(int(bool(sup_always_full))),
+                         expected="1")
         out = wb.save(extra={"auditOnly": True})
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover

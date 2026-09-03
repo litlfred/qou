@@ -483,9 +483,19 @@ def main():
     for A in levels:
         j = judgements[A]
         if j.get("comparable"):
-            wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{j['n_magic']}/{j['n_non_magic']}",
-                             expected=f"{j['n_magic']}/{j['n_non_magic']}")
+            # qou-3e5m. The comment above states the right principle -- the
+            # verdict is data, assertions record the CONTROL -- and this then
+            # passed the IDENTICAL f-string as both sides, X == X, unable to
+            # fail. Non-emptiness IS the control here (it is the precondition
+            # for the comparison being meaningful), so assert it; the sizes
+            # are the measurement and go to data.
+            wb.add_data(f"group_sizes_at_A{A}",
+                        {"n_magic": j["n_magic"],
+                         "n_non_magic": j["n_non_magic"]})
+            wb.add_assertion(
+                f"both_groups_non_empty_at_A{A}",
+                computed=str(int(min(j["n_magic"], j["n_non_magic"]) > 0)),
+                expected="1")
     wb.add_assertion("selftest_reproduces_A3_reference_figures",
                      computed="True", expected="True")
     out = wb.save(extra={"auditOnly": True})

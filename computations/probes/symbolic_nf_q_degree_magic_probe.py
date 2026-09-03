@@ -400,10 +400,20 @@ def main() -> int:
         )
         wb.add_assertion("exact_agreement_with_build_atom_nf_sym",
                          computed="True", expected="True")
+        # qou-3e5m. This passed the IDENTICAL f-string as both `computed` and
+        # `expected` -- X == X, unable to fail. The NAME already stated the
+        # proposition; only the code failed to test it. Both groups non-empty
+        # is what makes the magic / non-magic comparison at that level mean
+        # anything, so it is the right thing to assert; the sizes themselves
+        # are a measurement and belong in data.
         for A, v in verdicts.items():
-            wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
+            wb.add_data(f"group_sizes_at_A{A}",
+                        {"n_magic": v["n_magic"],
+                         "n_non_magic": v["n_non_magic"]})
+            wb.add_assertion(
+                f"both_groups_non_empty_at_A{A}",
+                computed=str(int(min(v["n_magic"], v["n_non_magic"]) > 0)),
+                expected="1")
         out = wb.save(extra={"auditOnly": True})
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover
