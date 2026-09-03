@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-09-03T05:29:26Z
+updated_at: 2026-09-03T11:01:48Z
 ---
 
 ## Summary
@@ -501,3 +501,34 @@ Still open elsewhere in this arc (unchanged): binding-knots-visual-inventory
 braid words (3 of 4 close to the wrong component count — needs an indexing
 convention choice); rem:holonomy-trefoil 'isomorphism' -> 'surjection';
 rem:brings-qou-4tuple 'degree 4'.
+
+## Three author calls resolved (2026-09-03) — all three approved and fixed on #6449
+
+A. binding-knots-visual-inventory braid words: Hopf s0s1 in B3 -> s0^2 in B2;
+   trefoil s0s1s0 in B3 -> s0^3 in B2; Borromean s0s1s2s0s1s2 in B4 ->
+   (s0 s1^-1)^3 in B3. Figure-eight was already correct. All crossing counts
+   PRESERVED (2/3/6), so 3*E_x(q) and Vol = 8G are untouched.
+   CORRECTION to my own framing: I twice called this an indexing-convention
+   question. It was not — the block is consistently 0-indexed and the words
+   were simply wrong. Do not re-park this as a decision.
+
+B. rem:holonomy-trefoil: 'isomorphism' was false and the block refuted itself
+   ((H1H2)^3 = id vs (sigma_1 sigma_2)^3 = the full twist generating the
+   infinite cyclic centre of B_3). SPLIT rather than word-swapped: the braid
+   half ('monodromy group = trefoil-knot group') is now PROVED by this PR's
+   image-is-B_3 result and was previously only asserted; the SU(2) half is a
+   surjection onto a proper quotient. .ts gains a computation: block pointing
+   at colour_mu_bar_monodromy_probe.
+
+C. rem:brings-qou-4tuple: 'degree 4' -> 'degree 3'. It contradicted 'the S_3
+   permutation of the three sheets' in the same sentence; Riemann-Hurwitz with
+   six simple branch points gives g=1 at d=3 (matching bring_cubic_monodromy
+   _probe A5) and g=0 at d=4. chi(S) = -6 is the state bundle, untouched.
+
+Audit §12. Pipeline validate clean ('Valid — 9 issues', none in these blocks),
+run in an ISOLATED worktree because the shared folio-assistant clone is 338
+behind and holds 62 files of a sibling's uncommitted work.
+
+STILL OPEN: qa-sweep sidecars for the three blocks are stale by source-hash
+drift and were NOT refreshed — qa-sweep lives in that same shared clone.
+One sweep needed after this lands.

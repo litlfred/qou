@@ -721,3 +721,96 @@ A further consequence worth stating separately, since it is about the Bring
 fibration rather than about this arc: **the braid monodromy group of the colour
 cover is the full `B₃`**, not a proper subgroup. Every question of the form
 "does the image contain such-and-such a braid" collapses to "does `B₃`".
+
+---
+
+## §12 — three corpus fixes the arc surfaced, author-approved 2026-09-03
+
+Recorded here rather than only in the commit, because two of the three change
+what a reader is told about objects this audit reasons over.
+
+### 12.1 `binding-knots-visual-inventory` — three wrong braid words
+
+Three of the four stated words close to the wrong number of components.
+Verified with `n_components(perm_image(w, n))` from
+[`colour_sign_line_pure_braid_probe`](../../computations/probes/colour_sign_line_pure_braid_probe.py):
+
+| entry | was | closed to | needs | now | closes to |
+|---|---|---|---|---|---|
+| gluon / Hopf | `σ₀σ₁ ∈ B₃` | 1 | 2 | `σ₀² ∈ B₂` | 2 ✓ |
+| electron / trefoil | `σ₀σ₁σ₀ ∈ B₃` | 2 | 1 | `σ₀³ ∈ B₂` | 1 ✓ |
+| Higgs / figure-eight | `(σ₀σ₁⁻¹)² ∈ B₃` | 1 | 1 ✓ | unchanged | — |
+| proton / Borromean | `σ₀σ₁σ₂σ₀σ₁σ₂ ∈ B₄` | 2 | 3 | `(σ₀σ₁⁻¹)³ ∈ B₃` | 3 ✓ |
+
+**Every crossing count is preserved** — Hopf 2, trefoil 3, Borromean 6 — so the
+trefoil entry's `3·𝔈_×(q) = (3/2)(q − q⁻¹)` and the Borromean
+`Vol(𝓑₃) = 8G ≈ 7.32772475342` are untouched, and no producer consumes the
+words. The one entry that was already correct is the only one written in
+`(σσ⁻¹)ⁿ` form; the three wrong ones were all all-positive words.
+
+**Corrects the framing this arc gave the finding twice** — in PR #6449's body
+and in a session summary — as *"needs an indexing convention choice, the block
+being 0-indexed while much of the corpus is 1-indexed"*. It does not. The block
+is consistently 0-indexed, both readings had already been measured to give the
+same wrong counts, and the replacements are the standard words. Presenting a
+mechanical fix as an open convention question is its own kind of error: it
+parks work that nobody needed to decide.
+
+### 12.2 `rem:holonomy-trefoil` — the SU(2) map is a surjection, and the braid
+statement is now proved
+
+The block asserted an **isomorphism** `π₁(S³∖K_{3,2}) →∼ ⟨H₁,H₂⟩` and supplied
+its own refutation two sentences later: it states `(H₁H₂)³ = id`, while in `B₃`
+the word `(σ₁σ₂)³` is the full twist and generates the infinite cyclic centre.
+The map kills it, so the kernel is nontrivial.
+
+The fix **splits the claim** rather than swapping one word, because the two
+halves have opposite verdicts:
+
+- *"the monodromy group of the branched cover is exactly the trefoil-knot
+  group"* — **now proved**, by §11: the braid monodromy image is all of `B₃`,
+  and `⟨x,y ∣ xyx=yxy⟩ ≅ B₃`. This was previously asserted.
+- *"the mapping into `SU(2)` is an isomorphism"* — **false**; it is a surjection
+  onto a proper quotient by a subgroup of the centre.
+
+The block's `.ts` gains a `computation:` block pointing at
+`colour_mu_bar_monodromy_probe` and its witness, so the newly-proved half is
+traceable. A word-swap alone would have read as a retraction of a claim that
+the corpus now supports *more* strongly than before.
+
+### 12.3 `rem:brings-qou-4tuple` — the cover is degree 3
+
+*"The branched covering `π: S → ℙ¹(ℂ)` (degree 4, six branch points)"*
+contradicted *"the `S₃` permutation of the three sheets"* in the same sentence.
+Riemann–Hurwitz with six simple branch points, `2g−2 = −2d + 6`:
+
+| `d` | `g` |
+|---|---|
+| **3** | **1** — what `bring_cubic_monodromy_probe` A5 measured for the colour cover |
+| 4 | 0 |
+
+and Bring's own genus 4 is unreachable at any degree with only six simple
+branch points. Corrected to degree 3. The likely source of the slip is the
+resolvent basis `(w₁,…,w₄)`, which does supply a genuine degree-4 object —
+just not this map. `χ(𝓢) = −6` in that block's Summary is the **state bundle**,
+a different object, and is not in question.
+
+### 12.4 Verification, and one defect in this section's own first draft
+
+Pipeline validate ran clean — *"Valid — 9 issue(s)"*, none in these three
+blocks (all pre-existing, mostly the documented unknown-field class). It had to
+run in an **isolated worktree against a fresh `folio-assistant` clone**: the
+shared clone is 338 commits behind `main` and holds 62 files of another
+session's uncommitted work, so updating it in place would have destroyed that
+work. The render-QA grep battery is clean on all three blocks.
+
+The expository half of the render-QA gate caught a defect in the §12.2 text as
+first written: it introduced `Δ²` for the braid full twist, colliding with
+`Δ_λ`, the `Δ²g` of the μ₃ door, and the alien derivative `Δ_ω`. The symbol is
+gone; the prose names the object instead. This is the notation-collision class
+the gate exists for, and it was introduced by the same session that was
+auditing for it.
+
+**`qa-sweep` sidecars are NOT refreshed.** The sweep lives in the stale shared
+clone and running it there would touch the sibling's tree. All three `.qa.json`
+files are stale by source-hash drift and need one sweep once this lands.
