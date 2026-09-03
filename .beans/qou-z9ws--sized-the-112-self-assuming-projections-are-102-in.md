@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-09-03T08:49:26Z
+updated_at: 2026-09-03T16:13:01Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -414,3 +414,47 @@ Sixth repair landed: `sorting_color_energy` — the first where the claim is
 roots of the manuscript's own Hecke relation, so the block's claim is concluded
 to rather than assumed; NoZeroDivisors justified by a ZMod 8 witness, not prose.
 Five of its fields (V, V_sq, Sym2, Wedge2, sigma) never appeared in the claim.
+
+
+## 2026-09-03 (final) — bucket C DRAINED: library 19 -> 0 DEFECT
+
+12 repairs, all to §1a disposition 3, each with a refutation-at-free-data
+theorem so a later `sorry` fails against a counterexample rather than prose.
+Whole tree now **4 / 25 / 0** (all 4 sibling-tree).
+
+**SIX bugs in `sap-carrier-shape.py`, all pushing the same way.** 2 from
+Copilot, 4 from reading a file whose answer I knew. None visible in the
+totals; every one either misclassified a CLAIM as data or misattributed the
+CARRIER, and both manufacture FALSE DEFECTS:
+1. under-count (`\w` misses `S'`; one name per line) — Copilot
+2. over-count (docstring line with a colon parsed as 6 fields) — mine
+3. multi-line field type -> claim counted as data
+4. wrong carrier (first class binder, not the projected one; returned
+   `CommRing` twice)
+5. one-line `class … where` only -> `unresolved` hid 2 defects + 8 accessors
+6. **`CLAIMY` had `≤` but not `≥`** — asymmetry means an absent operator
+   lands in the OTHER bucket, not in none. Cleared the last 2 LIB rows.
+
+`--selftest` now pins each shape to a FIXTURE. My first version pinned
+`BindingAssemblyContext` and this drain deleted that class 3 commits later —
+a test pinned to a carrier the work removes is stale by construction.
+
+**Retracted:** my "zero verdicts flipped" claim (compared against the
+over-counting intermediate; 8 of 36 actually flip). Evidence the parser is now
+right: it reproduces the 2026-08-31 hand adjudication of all four §4 gate
+classes.
+
+**New findings worth their own beans:**
+- **convention-C `z_C` live in `.lean`**, sqrt spelling, inside a class field
+  type — `lean-markov-convention-audit.py` does NOT see it. Verified
+  0.4993203341836945 at the proton pin. Flagged + labelled `skeinNormaliserC`,
+  NOT migrated (re-derivation required). -> `qou-cds1`
+- **`qa-agent-entry.ts` hashed only a sibling `.lean`** -> on 180 blocks an
+  agent verdict could never go fresh. Fixed by delegating to
+  `resolveCanonicalLean`; 749/750 lexer agreement.
+- **~200 files with 404ing docstring `.md` links** (doubled path segment);
+  5 also name a chapter that does not hold their block. Not swept.
+- `markov_identification`: a documented correction that **reinstated the
+  defect it documents**.
+- `jet_prefix_gb_filtration`: the Lean asserted a claim the block **never
+  makes** — substitution, not weakening.
