@@ -535,6 +535,7 @@ import QOU.BraidKnot.WedderburnUnconditional
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral
+import QOU.BraidKnot.KeystoneN5LevelSixSuffices
 import QOU.BraidsAndKnots.SecondMomentKernelVanishes
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
