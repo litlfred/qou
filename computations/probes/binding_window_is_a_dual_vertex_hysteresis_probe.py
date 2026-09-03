@@ -145,7 +145,7 @@ import numpy as np  # noqa: E402
 from scipy.optimize import linprog  # noqa: E402
 
 from pyhecke.gram import _hm_mp, gram_matrix_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -155,7 +155,7 @@ except Exception:  # pragma: no cover
 
 mp.mp.dps = 40
 NAMES = ["gamma", "s0", "s1", "L+", "L-", "e-"]
-H_Q0 = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
+H_Q0 = float(q_at(mp.mp.dps) - 1 / q_at(mp.mp.dps))
 # window edges bisected independently from the gap, previous probe
 WIN_LO, WIN_HI = 0.47718474189158, 0.56984029056366
 
