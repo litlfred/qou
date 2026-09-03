@@ -84,7 +84,7 @@ The following are verified sorry-free in
   vanishing alternating channel and not in some unaccounted-for piece.
 
 **What that Lean does not establish.**
-The same caveat applies here as to `Sym2Gate.lean` and
+The same caveat applies here as to
 `WeylInvarianceQDeformation.lean` above, and it is load-bearing in this one
 place because $N = 3$ is the chapter's central open problem.  What is
 machine-checked is the *arithmetic* of the row cap on the channel
@@ -121,16 +121,17 @@ construction directions are:
    ([Proposition](#prop:color-su3-from-g2)).
 
 **Status of the $\mathrm{Sym}^2$ gate.**  The gate is the
-requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  The Lean file
-`QOU/Eightfold/Sym2Gate.lean` records the arithmetic of the test
-($\dim \mathrm{Sym}^2(\mathbf{3}) = 6$; the icosahedral triple $T_1$
-decomposes $1 + 5$ and so carries a singlet, while the octonionic
-$\mathbf{3}$ decomposes $6 + 0$ and does not).  What that file
-*proves* is only the arithmetic --- its declarations reduce to
-identities such as $6 = 6 \wedge 0 = 0$, with the representation-theoretic
-content supplied by hand in the statement names, not by the proofs.  So
-the correct reading is: the octonionic $\mathbf{3}$ is *not
-excluded* by the $\mathrm{Sym}^2$ gate, on a decomposition taken from the
-literature.  It is not a machine-checked pass, and the file should not be
-cited as one.  Whether the route yields *flavour* $\mathrm{SU}(3)_{\mathrm{f}}$
-(not just colour $\mathrm{SU}(3)_{\mathrm{c}}$) remains open.
+requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  Its
+representation-theoretic content is machine-checked in
+`QOU/Eightfold/Sym2GateFSTrichotomy.lean`: at dimension three, passing
+the gate forces a complex-type summand (`gate_forces_complex_of_dim_three`),
+so the icosahedral triple $T_1$ --- a rotation representation of
+$A_5 \subset \mathrm{SO}(3)$, hence real --- fails
+(`real_triple_fails_gate`), while the octonionic $\mathbf{3}$ is *not
+excluded*, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}
+\oplus \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
+That the Günaydin--Gürsey triple is complex type is the cited input, not a
+formalised one, so the octonionic route is *not excluded* rather than
+*machine-checked to pass*.  Whether the route yields *flavour*
+$\mathrm{SU}(3)_{\mathrm{f}}$ (not just colour $\mathrm{SU}(3)_{\mathrm{c}}$)
+remains open.
