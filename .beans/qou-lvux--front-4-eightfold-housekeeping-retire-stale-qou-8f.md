@@ -1,10 +1,11 @@
 ---
 # qou-lvux
 title: 'Front 4: eightfold housekeeping — retire stale qou-8fl1 items, fix cheat-sheet 4-C title, Sym2Gate vacuity'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-03T04:37:54Z
-updated_at: 2026-09-03T04:37:54Z
+updated_at: 2026-09-03T16:15:24Z
 parent: qou-icj2
 ---
 
@@ -21,3 +22,5 @@ parent: qou-icj2
   sites (schur-weyl-eightfold ×2, open-problems ledger rows 19/30 + item 1) and
   the definition index repointed; nothing imported the file. Both blocks
   render-checked (markdownToLatex + validateLatexAst) and qa-swept.
+
+Completed 2026-09-03: PR #6458 rebase-merged to main at bf97976176.

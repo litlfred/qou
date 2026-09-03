@@ -1,6 +1,8 @@
 {
   "schema": "qou-probe/v0",
   "description": "Can a v=0 block (two consecutive odd steps) occur inside the q-Collatz domain-stable cone D_inf? Searches the backward-orbit tree of the attractor using two exact criteria: forward P(-1)=-1 & P'(-1)=-2, backward P(w)=-w & P'(w)=2 at a primitive cube root of unity. Exact Laurent and Z[w] arithmetic. Exploratory research probe (NOT canonical production).",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q-Collatz orbit combinatorics on D_inf. The variable q here is the Laurent variable of D_inf, NOT the substrate modulus q_0: the arithmetic is exact over Z and Z[w], and the import cone is stdlib only (json, sys, collections), so no substrate constant is reachable.",
   "result": {
     "depth": 40,
     "nodes": 154,

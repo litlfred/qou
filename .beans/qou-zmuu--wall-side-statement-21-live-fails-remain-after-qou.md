@@ -1,11 +1,11 @@
 ---
 # qou-zmuu
 title: 'wall-side-statement: 21 live fails remain after qou-7q0a''s five — 4 templated, 15 ''missing Lean sibling'', 2 ''Lean fails'' — re-adjudicate / n-a'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T05:32:27Z
-updated_at: 2026-09-03T05:33:05Z
+updated_at: 2026-09-03T10:57:05Z
 ---
 
 MEASURED 2026-09-03 on branch claude/wall-side-readjudicate-2026-09-03 @ 01dfbca94f0 (after the five of qou-7q0a flipped to pass). Corpus tally of the LATEST wall-side-statement entry per block: 545 pass / 21 fail / 20 n/a / 1 warn.
@@ -31,3 +31,7 @@ All 21 with stamps, model, staleness and evidence class are in the parent sessio
 Not done here because the owner asked for the five and 'what next'; this bean IS the what-next candidate.
 
 MEASURED at creation: of the 15 class-(B) blocks, 14 still have NO .lean; q-reeb-flow-on-color-coords now HAS one (its 'missing Lean' fail is doubly stale). Both class-(C) .lean files exist; build status not re-checked.
+
+2026-09-03 10:5x: owner: 'next qou-zmuu class A — the four remaining templated'. Branch claude/wall-side-class-a-2026-09-03 off main c10071d7f73. Dispatching 4 read-and-judge agents (q-energy, gram-weighted-qvalue, parity-regime-selection, frobenius-positivity-filter); parent is scribe. Classes B/C untouched this tranche.
+
+2026-09-03 10:5x CLASS A RESULT: 4/4 pass, 4/4 prior_verdict_was_correct=false, all archimedean regime. Appended on claude/wall-side-class-a-2026-09-03; qa-sweep --only wall-side-statement clean on all four. Grounds: q-energy has ZERO archimedean tokens in its .md (generic H_n(R,q) definition; chapter profile admits generic-R) — a different false-positive shape from the other eight; gram-weighted-qvalue's prior fail was issued against a version that carried the s7c banner RENDERED in prose, so it was wrong on its own terms; parity-regime-selection declares 'for all q>1' at md:6 and its prior field_hash did not match the md at the prior sha either (stale on arrival); frobenius-positivity-filter inherits the ordering from parity-regime-selection one uses[] hop away. Class A is now DRAINED: 9/9 templated 2026-07-07T14:26:5x fails re-adjudicated pass across #6475 + this branch. Classes B (15) and C (2) remain — owner decision: adjudicate on merits vs mechanical n/a.

@@ -47,17 +47,43 @@ open QOU.Archimedean
 /-- Frobenius stability data — class-supplied evaluation of
     `σ_F(D, q) = n_target · y₀*(D, q)` (the optimal dual objective
     of the confinement SDP at `(D, q)`; equivalently, by strong
-    duality, the optimal primal `⟨T, Φ*⟩`). -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+    duality, the optimal primal `⟨T, Φ*⟩`).
 
-local instance : LE R_q := ⟨fun _ _ => True⟩
+    **The index is `ℝ`-valued, and that is the whole point (2026-09-02).**
+    It used to be `R_q → R_q`, and because `R_q = ℤ[q, q⁻¹]` carries no
+    order, this file installed one:
+
+        local instance : LE R_q := ⟨fun _ _ => True⟩
+
+    Under that instance `x ≤ y` is `True` for every pair, so claim (1) below
+    — *"the stability index is non-decreasing along the dressing chain"* —
+    was `True`, and `ShellClosureMonotone` was inhabited by `⟨trivial⟩` for
+    **any** pair of dressed particles, one-step or not. Measured
+    `lean`-direct, exit 0, with the instance in scope:
+
+        example (x y : R_q) : x ≤ y := trivial
+        example … : frobeniusStability D_prev q ≤ frobeniusStability D q := trivial
+        example … : ShellClosureMonotone D_prev D q h := ⟨trivial⟩
+
+    An ordering is an archimedean construct (AGENTS.md §7c), so it belongs
+    on the `ℝ` side of the substrate wall, not on the Laurent ring. `σ_F` is
+    an SDP dual objective and is a real number; making that explicit removes
+    the need for a fabricated order and makes claim (1) falsifiable. The
+    argument stays `R_q` — the *point* of evaluation is still substrate-side.
+
+    **Claim (2) was never affected**, and this is worth separating rather
+    than sweeping in: `bindingMultiplicity` is `ℕ`-valued, so `μ ≥ 2` is over
+    `ℕ`'s genuine order. The same probe rejects `… ≥ 2 := trivial` with a
+    type mismatch. Only the `σ_F` comparisons collapsed. -/
+-- Ref: [manuscript] particle-interactions/confinement-sdp
 class HasFrobeniusStability (D : DressedParticle) where
-  /-- The stability index `σ_F(D, q)`. -/
-  sigma : R_q → R_q
+  /-- The stability index `σ_F(D, q)`, real-valued: it is an SDP dual
+      objective, and it is compared with `≤`. -/
+  sigma : R_q → ℝ
 
 /-- Frobenius stability accessor, backed by `HasFrobeniusStability`. -/
 def frobeniusStability (D : DressedParticle) [h : HasFrobeniusStability D]
-    (q : R_q) : R_q :=
+    (q : R_q) : ℝ :=
   h.sigma q
 
 /-- Is `D` a one-step dressing of `D_prev` (one extra electron)? -/
@@ -95,9 +121,11 @@ instance shellClosureMonotone_refl
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
   -- Ref: [manuscript] particle-interactions/shell-closure-stability
-  -- `≤` on `R_q` is the trivial (`fun _ _ => True`) order (local instance
-  -- above), so `x ≤ x` is `True`.
-  ⟨trivial⟩
+  -- Now `le_refl` on `ℝ`. It used to be `⟨trivial⟩`, and the comment here
+  -- said why: "`≤` on `R_q` is the trivial (`fun _ _ => True`) order". That
+  -- was an accurate description of the mechanism and it did not draw the
+  -- conclusion — that the theorem two declarations down was therefore empty.
+  ⟨le_refl _⟩
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/

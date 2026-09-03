@@ -1,22 +1,48 @@
 -- Sibling docstub for `conj:b1-hyperbolic-rows-theorem`.
 --
--- This file is documentation only.  The compiled formalisation
--- lives in the Lake-built tree at:
+-- This file is documentation only, and as of 2026-09-03 that is finally
+-- true: it declares nothing.  The compiled formalisation lives in the
+-- Lake-built tree at
 --
 --   lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean
 --
--- See `QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows`.
+-- See `QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows`
+-- there, and the chapter umbrella `lean/QOU/AppendixSurreals.lean` for the
+-- import wiring.
 --
--- See the chapter umbrella `lean/QOU/AppendixSurreals.lean`
--- for the import wiring.
-
-namespace QOU.AppendixSurreals.B1HyperbolicRowsTheorem
-
-/-- **CONJECTURE.** B1 at additional hyperbolic-knot rows (Borromean, Whitehead, twist knots) conditionally reduces to Volume Conjecture. -/
+-- ## Why this file was emptied: it still carried the INCONSISTENT axiom
+--
+-- The library file's own history section records that until 2026-08-08 the
+-- statement was
+--
+--     axiom b1_hyperbolic_rows
+--         (n_hyperbolic_rows_verified : Nat)
+--         (bloch_suslin van_der_veen : Prop) :
+--         bloch_suslin -> van_der_veen -> 3 <= n_hyperbolic_rows_verified
+--
+-- with every binder universally quantified, the count included -- so it
+-- asserts `3 <= n` for EVERY `n`, given ANY two `Prop`s, and instantiating
+-- at `n = 0` with both taken to be `True` proves `False`.
+--
+-- That repair fixed the LIBRARY copy and left this one.  Re-measured
+-- 2026-09-03, on this file as it then stood:
+--
+--     theorem sibling_axiom_is_inconsistent : False := by
+--       have h : (3 : Nat) <= 0 := b1_hyperbolic_rows 0 True True trivial trivial
+--       omega
+--
+--     lean exit 0
+--     'sibling_axiom_is_inconsistent' depends on axioms:
+--       [propext, Quot.sound,
+--        QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows]
+--
+-- An `axiom` in a `.lean` file is not documentation, whatever the header
+-- says.  This sibling is also what the block's `lean.ref` resolves to FIRST
+-- (AGENTS.md §0a candidate 1), so the unsound copy was the one a reader
+-- following the reference reached.  Emptying the file makes route (1) find
+-- nothing to declare and the reference fall through to the repaired library
+-- version, which states the conjecture as a per-row `axiom` over opaque
+-- propositions and DERIVES the count.
+--
 -- Ref: [manuscript] conj:b1-hyperbolic-rows-theorem
-axiom b1_hyperbolic_rows
-    (n_hyperbolic_rows_verified : Nat)
-    (bloch_suslin van_der_veen : Prop) :
-    bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
-
-end QOU.AppendixSurreals.B1HyperbolicRowsTheorem
+-- Bean: qou-t7zg (the original repair), qou-prop3b (this one).

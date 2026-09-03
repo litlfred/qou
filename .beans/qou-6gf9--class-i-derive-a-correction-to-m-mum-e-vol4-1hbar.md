@@ -3,8 +3,9 @@
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-08-08T09:31:00Z
+updated_at: 2026-09-03T11:48:30Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -65,3 +66,48 @@ matching. Nothing here advances that route; it only shows every cheaper route is
 Relabel the `MmuR9V9Closure.lean` m_mu rungs to record (i) bar-mixedness and
 (ii) that `delta_V9` is sub-resolution, and re-measure its quoted "0.036x L2 miss" at
 the documented proton pin (not reproducible there: R9+V9 gives -1.418 ppb).
+
+
+
+## 2026-09-03 (session tender-keller) — consolidation pass, claimed
+
+Owner picked the s5-so3 / GAP-A-4 lane ("4") among four. Corpus-grep before
+acting: the WRT line for W_lambda reached its deflationary terminus 2026-06-22
+(s5bb: WRT data and W_lambda are Schur-Weyl DUAL, not equal); qou-2v7k names the
+real wall as the Beasley-Witten S^3/2I localization construction (class
+BWVacuumRowIsHecke, no genuine instance) with NO in-session tractable probe. So
+there is no honest first step on the CONSTRUCTION this session. What IS bounded
+and formalize-first: consolidate this bean's three prunes into one Lean
+exclusion — a bar-even monomial in (hbar_q, q) with small-height coefficient
+cannot carry the 209.755 ppb residual at the proton pin (bar-even forces the
+w-tower, w = q + 1/q − 2; the w-tower has no small-height order: t/w^3 ≈ 0.162,
+t/w^4 ≈ 14.9). The w-tower half was MEASURED here, never Lean-proved. Target
+file: QOU/BraidKnot/MuPCorrectionAdmissibility.lean (additive; does not touch
+GapA4MuonBranching.lean). Scope (b) on that class; constructs nothing.
+
+
+
+## 2026-09-03 — LANDED (PR #6476, commit 4dbfd2ee31): the consolidation Lean
+
+QOU/BraidKnot/MuPCorrectionAdmissibility.lean: bar_even_monomial_iff (the
+CONVERSE half of the selection rule, 1 < q), wGen bounds on the pin window,
+no_small_height_w_monomial (the measured t/w^3 = 0.162 < 1/5, t/w^4 = 14.9 > 5
+now PROVED for every order j), capstone no_bar_even_small_height_monomial
+(+ hbarQ bridge), and the content-bearing GapA4CorrectionAdmissible structure
+with monomial_not_admissible. Scope (b) on {single monomial in (hbar_q, q),
+bar-even, |c| in [1/5, 5]}; constructs nothing; bar-even precondition stays
+argued, carried as a hypothesis. Companion content block
+rem:mu-p-residual-two-readings (574d8531e1) documents the residual with both
+readings (R1 falsifiable +2.1e-7 prediction of the bare relation / R2
+unclosed bar-even series — the conservative reading) and what decides. GAP
+unchanged: the a-priori coefficient. Note GapA4MuonBranching.lean's
+target_correction_constraint is a def : Prop carrying a float fit target at a
+q0 literal 580 ppb off the pin — handed to the docstring/def-Prop drain (#6471).
+
+
+
+Released 2026-09-03 after the consolidation landed (PR #6476). Status back
+to todo: the GAP — a bar-even correction with an a-priori coefficient — is
+unchanged and nobody is on it; the Lean now records exactly which cheap class
+is excluded (single small-height bar-even monomial, any order, any pin in the
+window) so the next attempt starts past it.

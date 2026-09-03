@@ -1,0 +1,708 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "colour_mu_bar_monodromy_probe",
+  "bean": "qou-dg07",
+  "question": "Does the Bring monodromy image contain a pure braid whose closure has a nonzero Milnor mu-bar_123, i.e. does this fibration REALISE the sign-line separation proved on B_3?",
+  "method": "Artin representation B_3 -> Aut(F_3); for a pure braid the image is x_i |-> w_i x_i w_i^{-1}; w_i is the i-th longitude of the closure; Milnor's invariants are its Magnus coefficients. Exact integer arithmetic on non-commutative power series truncated at degree 2. No floating point.",
+  "self_test": [
+    {
+      "name": "borromean_is_pure",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "borromean_all_linking_zero",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "borromean_mu_bar_is_unit",
+      "expected": "|mu-bar| == 1",
+      "actual": -1,
+      "passed": true
+    },
+    {
+      "name": "unlink_mu_bar_zero",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "name": "unlink_all_linking_zero",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "hopf_linking_detected",
+      "expected": "|lk(1,2)| == 1",
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "name": "agrees_with_corpus_commutator_model",
+      "expected": "|mu-bar| == 1 from hand-given longitudes l_i = [x_j, x_k]",
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "name": "braid_route_matches_model_route",
+      "expected": "|1| == |braid-derived|",
+      "actual": -1,
+      "passed": true
+    }
+  ],
+  "self_test_examples": {
+    "borromean": {
+      "word": [
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": 0,
+      "longitudes": {
+        "w_1": [
+          1,
+          3,
+          -1,
+          -3,
+          2,
+          3,
+          1,
+          -3,
+          -1,
+          -3,
+          -2,
+          3
+        ],
+        "w_2": [
+          1,
+          3,
+          -1,
+          -3
+        ],
+        "w_3": [
+          -3,
+          -2,
+          3,
+          -1,
+          -3,
+          2,
+          3,
+          1
+        ]
+      },
+      "linking_numbers": {
+        "lk(1,2)": 0,
+        "lk(1,3)": 0,
+        "lk(2,1)": 0,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": true,
+      "mu_bar_indeterminacy": 0,
+      "mu_bar_123": -1,
+      "mu_bar_cyclic_readings": [
+        -1,
+        -1,
+        -1
+      ],
+      "mu_bar_well_defined": true
+    },
+    "trivial": {
+      "word": [],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": 0,
+      "longitudes": {
+        "w_1": [],
+        "w_2": [],
+        "w_3": []
+      },
+      "linking_numbers": {
+        "lk(1,2)": 0,
+        "lk(1,3)": 0,
+        "lk(2,1)": 0,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": true,
+      "mu_bar_indeterminacy": 0,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_well_defined": true
+    },
+    "hopf_plus_split": {
+      "word": [
+        1,
+        1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": 2,
+      "longitudes": {
+        "w_1": [
+          1,
+          2
+        ],
+        "w_2": [
+          1
+        ],
+        "w_3": []
+      },
+      "linking_numbers": {
+        "lk(1,2)": 1,
+        "lk(1,3)": 0,
+        "lk(2,1)": 1,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_well_defined": false
+    },
+    "corpus_commutator_model_mu_bar": 1
+  },
+  "monodromy_loop_words": [
+    [
+      -1
+    ],
+    [
+      2,
+      -1,
+      -2
+    ],
+    [
+      2,
+      -1,
+      -2
+    ],
+    [
+      -1
+    ],
+    [
+      2,
+      1,
+      -2,
+      -1,
+      -2
+    ],
+    [
+      -1,
+      -2,
+      1
+    ]
+  ],
+  "pure_products": [
+    {
+      "word": [
+        -1,
+        -1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -2
+        ],
+        "w_2": [
+          -2,
+          -1
+        ],
+        "w_3": []
+      },
+      "linking_numbers": {
+        "lk(1,2)": -1,
+        "lk(1,3)": 0,
+        "lk(2,1)": -1,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        0,
+        3
+      ]
+    },
+    {
+      "word": [
+        -1,
+        2,
+        1,
+        -2,
+        -1,
+        -2
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -2
+        ],
+        "w_2": [
+          -2,
+          -1
+        ],
+        "w_3": []
+      },
+      "linking_numbers": {
+        "lk(1,2)": -1,
+        "lk(1,3)": 0,
+        "lk(2,1)": -1,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        0,
+        4
+      ]
+    },
+    {
+      "word": [
+        2,
+        -1,
+        -1,
+        -2
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -3
+        ],
+        "w_2": [
+          -3,
+          -1,
+          3,
+          1
+        ],
+        "w_3": [
+          -3,
+          -1
+        ]
+      },
+      "linking_numbers": {
+        "lk(1,2)": 0,
+        "lk(1,3)": -1,
+        "lk(2,1)": 0,
+        "lk(2,3)": 0,
+        "lk(3,1)": -1,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        1
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": [
+        2,
+        -1,
+        -2,
+        -1,
+        -2,
+        1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -3
+        ],
+        "w_2": [
+          -3,
+          -1,
+          3,
+          1
+        ],
+        "w_3": [
+          -3,
+          -1
+        ]
+      },
+      "linking_numbers": {
+        "lk(1,2)": 0,
+        "lk(1,3)": -1,
+        "lk(2,1)": 0,
+        "lk(2,3)": 0,
+        "lk(3,1)": -1,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        1
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        1,
+        5
+      ]
+    },
+    {
+      "word": [
+        2,
+        -1,
+        -2,
+        -1,
+        -2,
+        1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -3
+        ],
+        "w_2": [
+          -3,
+          -1,
+          3,
+          1
+        ],
+        "w_3": [
+          -3,
+          -1
+        ]
+      },
+      "linking_numbers": {
+        "lk(1,2)": 0,
+        "lk(1,3)": -1,
+        "lk(2,1)": 0,
+        "lk(2,3)": 0,
+        "lk(3,1)": -1,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        1
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        2,
+        5
+      ]
+    },
+    {
+      "word": [
+        -1,
+        2,
+        1,
+        -2,
+        -1,
+        -2
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "pure": true,
+      "exponent_sum": -2,
+      "longitudes": {
+        "w_1": [
+          -2
+        ],
+        "w_2": [
+          -2,
+          -1
+        ],
+        "w_3": []
+      },
+      "linking_numbers": {
+        "lk(1,2)": -1,
+        "lk(1,3)": 0,
+        "lk(2,1)": -1,
+        "lk(2,3)": 0,
+        "lk(3,1)": 0,
+        "lk(3,2)": 0
+      },
+      "brunnian": false,
+      "mu_bar_indeterminacy": 1,
+      "mu_bar_123": 0,
+      "mu_bar_cyclic_readings": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_well_defined": false,
+      "pair": [
+        3,
+        4
+      ]
+    }
+  ],
+  "image_generation_proof": {
+    "generators_distinct_words": [
+      [
+        -1
+      ],
+      [
+        -1,
+        -2,
+        1
+      ],
+      [
+        2,
+        -1,
+        -2
+      ],
+      [
+        2,
+        1,
+        -2,
+        -1,
+        -2
+      ]
+    ],
+    "generators_distinct_elements": [
+      {
+        "loops": [
+          0,
+          3,
+          4
+        ],
+        "word": [
+          -1
+        ]
+      },
+      {
+        "loops": [
+          1,
+          2,
+          5
+        ],
+        "word": [
+          2,
+          -1,
+          -2
+        ]
+      }
+    ],
+    "sigma_1_as": {
+      "word_in_gens": "g0^{-1}",
+      "reduces_to": [
+        1
+      ]
+    },
+    "sigma_2_inv_as": {
+      "word_in_gens": "g0^{-1} g1 g0",
+      "reduces_to": [
+        -2
+      ]
+    },
+    "conclusion": "the monodromy image contains both Artin generators of B_3 and is a subgroup of B_3, hence equals B_3; its pure part is all of P_3",
+    "full_twist_relation": {
+      "checked": true,
+      "a": [
+        -1
+      ],
+      "b": [
+        2,
+        -1,
+        -2
+      ],
+      "angular_order": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ]
+      ],
+      "identity": "(ab)^3 = Delta^-2  where Delta = sigma_1 sigma_2 sigma_1",
+      "holds": true,
+      "note": "the B_3 lift of rem:holonomy-trefoil's (H_1 H_2)^3 = id; the SU(2) map kills the full twist, hence is a surjection onto a proper quotient and not an isomorphism"
+    }
+  },
+  "borromean_in_image": {
+    "word": [
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2
+    ],
+    "permutation": [
+      0,
+      1,
+      2
+    ],
+    "pure": true,
+    "exponent_sum": 0,
+    "longitudes": {
+      "w_1": [
+        1,
+        3,
+        -1,
+        -3,
+        2,
+        3,
+        1,
+        -3,
+        -1,
+        -3,
+        -2,
+        3
+      ],
+      "w_2": [
+        1,
+        3,
+        -1,
+        -3
+      ],
+      "w_3": [
+        -3,
+        -2,
+        3,
+        -1,
+        -3,
+        2,
+        3,
+        1
+      ]
+    },
+    "linking_numbers": {
+      "lk(1,2)": 0,
+      "lk(1,3)": 0,
+      "lk(2,1)": 0,
+      "lk(2,3)": 0,
+      "lk(3,1)": 0,
+      "lk(3,2)": 0
+    },
+    "brunnian": true,
+    "mu_bar_indeterminacy": 0,
+    "mu_bar_123": -1,
+    "mu_bar_cyclic_readings": [
+      -1,
+      -1,
+      -1
+    ],
+    "mu_bar_well_defined": true,
+    "built_from_loop_lifts": "(g0^{-1} . g0^{-1} g1 g0)^3"
+  },
+  "cayley_ball_scan": {
+    "radius": 5,
+    "distinct_reduced_words": 14801,
+    "brunnian_pure_elements_found": 100,
+    "of_those_with_nonzero_mu_bar": 0,
+    "note": "corroboration only; the Borromean braid needs 12 generator-letters so this ball cannot reach it. A miss bounds the ball, not the image."
+  },
+  "aside_short_words_mislead": "Aside, and it is the reason the search was abandoned for a proof: all 6 pure PAIRWISE products have indeterminacy 1, so mu-bar is vacuous on every one of them, and the radius-5 ball's 100 Brunnian elements all give 0. Read alone, that sample says the escape stands. It is a fact about short words, not about the image.",
+  "counts": {
+    "pure_products": 6,
+    "mu_bar_nonzero_and_well_defined": 0,
+    "non_brunnian": 6,
+    "brunnian_in_ball": 100,
+    "brunnian_in_ball_with_nonzero_mu_bar": 0
+  },
+  "verdict": "CLOSED, and by the Milnor invariant itself. The six local monodromies give only TWO distinct ELEMENTS of B_3, and those two generate: sigma_1 = g0^-1 and sigma_2^-1 = g0^-1 g1 g0. So the monodromy image is not a proper subgroup of B_3 — it IS B_3, and its pure part is all of P_3. The Borromean braid (sigma_1 sigma_2^-1)^3 is therefore an element of the image; built from the loop lifts it has every pairwise linking number zero (indeterminacy 0, so mu-bar is a genuine integer) and mu-bar_123 = -1, against 0 for the identity, which is also in the image. Both are pure, so both carry sign character +1. The two colour sign lines agree as sign characters and disagree on mu-bar, ON THIS FIBRATION — the vacuous-agreement escape of F5 is closed on the very invariant the Milnor route locates colour antisymmetry in, not merely on a lower one.",
+  "scope_note": "The verdict is now a PROOF of group membership plus an exact integer computation, not a sample, so it is not scope-(a): the image equals B_3 by exhibiting both Artin generators as words in the loop lifts, and mu-bar_123 = -1 on an element of it. What remains conditional is the INPUT — the six loop words come from bring_monodromy_braid_lift_probe's numerical continuation, guarded but numerical. If those words are right, this conclusion is exact.",
+  "superseded_scope": "Scope-(a) either way: this reads the six local monodromies lifted by bring_monodromy_braid_lift_probe and their pairwise products, not the whole image group. A zero here bounds what these words show, and excludes nothing about the image.",
+  "scriptHash": "e9259b82f720",
+  "scriptCommitSha": "ce4e1f50bec81a942a4f89579535d811aa68d822",
+  "commitSha": "85d5955a0f7e7e9c77775b210458c0721fa6418a",
+  "engine": "python",
+  "computedAt": "2026-09-03T11:09:28.271328+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "colour_mu_bar_monodromy_probe.py"
+}

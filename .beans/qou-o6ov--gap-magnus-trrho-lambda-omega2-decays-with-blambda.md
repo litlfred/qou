@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-03T15:56:47Z
+updated_at: 2026-09-03T19:42:18Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -54,3 +54,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-03 (Lean verified, PR #6520): MagnusHookDecayBound.lean — abs_esymm_le_esymm_abs, abs_sum_esymm_sub_le, abs_mul_sum_esymm_sub_le — lean-direct EXIT 0, zero diagnostics after dropping an unused [DecidableEq ι] binder (strictly more general); all three #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. Binders [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] are exactly what Finset.abs_prod takes in v4.24.0.
+
+
+- 2026-09-03 (two-row handle): the two-row column of Ω₂^P is carried EXACTLY by the up-spin sectors of the 2-dim R-matrix — tr_(n−k,k)(g) = tr_W_k(g) − tr_W_(k−1)(g), W_k = k-up-spin sector (dim C(n,k)), verified PLAIN and with ρΩ₂^P at A=2,3 to ~1e-139 (magnus_two_row_weight_sector_probe.py). Two-row analogue of the hooks' reduced-Burau handle (#6464); exists because Ω₂^P is an algebra element (#6445) — the germ failed this by 6.5% (#6432). Per-dim two-row decay monotone in k=b(λ) at both A (A=3: 33.6, 8.67, 4.00, 1.70). Next: a decay BOUND for two-rows must respect the difference structure — a per-sector triangle inequality does not decay in k.

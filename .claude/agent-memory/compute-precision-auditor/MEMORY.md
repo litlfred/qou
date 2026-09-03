@@ -150,6 +150,14 @@ And **baseline from git** (`git show origin/main:<witness>`), never from a
 tree your own sweep writes to — a contaminated baseline produced a 73%
 figure of which two of three spot-checked verdicts were false.
 
+**And a MOVED verdict is usually the harness, not the arithmetic.** Measured
+over 99 producers in two sweeps (`qou-y98b`, #6454/#6493): five distinct causes
+of a false mover — an unlisted field name, a timing formatted into PROSE (no
+field-name mask reaches it), a CLI argument the witness itself records, a
+CWD-relative write that strays the witness to the repo root, and one genuinely
+stale consumer. **Zero were environment drift.** Full worked cases:
+`measurement-hygiene-traps.md`.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,
