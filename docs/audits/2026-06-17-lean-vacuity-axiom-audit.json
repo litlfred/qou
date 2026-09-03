@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-03T12:58:33.479Z",
+  "generated": "2026-09-03T13:17:49.596Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3515,
-  "files_flagged": 104,
-  "total_defects": 70,
+  "files_flagged": 103,
+  "total_defects": 69,
   "total_exempt": 56,
   "total_promoted_from_exempt": 42,
   "categories": {
     "proof-no-self-assuming-projection": 62,
-    "proof-claims-unencoded": 6,
+    "proof-claims-unencoded": 5,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
   },
@@ -2572,7 +2572,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean": [
       {
-        "line": 70,
+        "line": 97,
         "category": "proof-claims-unencoded",
         "pattern": "tautological-field",
         "snippet": "class TransferMatrixEigenphase (q : ℝ) : Prop where",
@@ -3000,17 +3000,6 @@
         "exempt": false,
         "detail": "the projected field `h.angle_eq_holonomy` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean": [
-      {
-        "line": 124,
-        "category": "proof-claims-unencoded",
-        "pattern": "tautological-field",
-        "snippet": "class TransferMatrixEigenphase (q : ℝ) : Prop where",
-        "decl": "TransferMatrixEigenphase",
-        "severity": "major",
-        "detail": "every field is a tautology about the subject (symmetrized_character_in_unit_disc, cos_eigenphase_bar_invariant) — each holds for an arbitrary substitution, so the carrier is equivalent to True and any [TransferMatrixEigenphase]-conditional result is unconditional. Encode the real property, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [
