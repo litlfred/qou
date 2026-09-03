@@ -57,6 +57,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 # B/A, verbatim from binding_channel_taxonomy_probe (re-run 2026-09-02;
 # identical to docs/audits/2026-08-31-binding-channel-taxonomy.md).
@@ -199,6 +200,17 @@ def main():
         ],
         "source": "AME2020; binding_channel_taxonomy_probe B/A output",
     }
+    # P30: stamp WitnessBuilder provenance (scriptHash / commitSha /
+    # engine) so the staleness machinery can track this witness. Written
+    # with raw json below because the payload carries a flat
+    # assertions/allPassed shape, which is what stamp_staleness_metadata
+    # is for; wrap_legacy().save() would reshape it.
+    # q0_anchor=False: nothing here evaluates at q0 -- the arithmetic is
+    # exact rational over AME literals and integers -- so stamping an
+    # anchor would assert a dependence this probe does not have.
+    WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python", q0_anchor=False)
+
     out = _HERE / "all-channels-b3-sign.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(_COMP.parent)}")

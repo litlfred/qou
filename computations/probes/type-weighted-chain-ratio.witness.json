@@ -1,7 +1,7 @@
 {
   "computation": "type-weighted-chain-ratio",
   "scriptFile": "probes/type_weighted_chain_ratio_probe.py",
-  "computedAt": "2026-09-02T21:56:48.876865+00:00",
+  "computedAt": "2026-09-03T03:58:34.503910+00:00",
   "contentBlock": "qou-brng",
   "description": "Production weights inter-nucleon bonds by TYPE (d_for_ctype: pp 0, pn -h/2, nn -h), so the uniformity that BrunnianTripleExhaustion named as its free ingredient is already relaxed. It does not help: on the arithmetic-mean locus w_pp + w_nn = 2 w_pn, which production satisfies exactly, the triple/pair ratio is 2 identically and b3/b2 = -1 -- the same value the uniform chain gives, wrong sign, with h cancelling. Also relocates the exhaustion: it excludes the crossing-energy channel, which is none of the four evaluable channels in the seven-channel taxonomy.",
   "production_weights_units_of_h": {
@@ -117,5 +117,12 @@
     "delta_required_over_physical": "903.3487437",
     "verdict": "excluded -- delta would have to exceed 1, which needs m_n - m_p > M_N"
   },
-  "source": "AME2020; canonical_braid_crossings.d_for_ctype"
+  "source": "AME2020; canonical_braid_crossings.d_for_ctype",
+  "scriptHash": "e833c5691389",
+  "scriptCommitSha": "fc0e8b7bfcba87803ecf3a87b4be49f4d28ae8b6",
+  "commitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
