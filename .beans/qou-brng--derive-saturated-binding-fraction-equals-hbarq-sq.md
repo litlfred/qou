@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T12:53:11Z
+
 updated_at: 2026-09-03T08:59:54Z
 
 updated_at: 2026-09-03T08:28:10Z
@@ -2069,6 +2071,36 @@ complementary, not conflicting.** That probe builds its object from
 `_step_chain_generic`. Different constructions, checked — no shared call. Their
 object IS A-dependent (positive A=3, negative A=4); this one is not. Do not read
 either as confirming the other.
+
+
+### 2026-09-03 — E₀-conditionality flagged by a sibling; it splits this arc's results in two
+
+Sibling #6443 (merged `4b83e4cf53`) warned on #6427 that "N× short" figures in
+the extensive lane are E₀-conditional — `derivation_chain.E_0_CONVENTIONS` spans
+**5.35x** between conventions A and B. Checked at the source; the warning is live
+for part of the arc and inert for the rest.
+
+`binding_energy` = `unified_iterative_correction` (m_e scale) +
+`sdp_cross_channel_contribution` + `binding_from_frobenius_pairing`, and term 3
+is literally `E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))`.
+
+**E₀-CONDITIONAL — do not quote as convention-free:** the four-nucleus `B_pred`
+table, every `|pred|/AME` ratio, and the "target varies 12.7x, prediction varies
+12.5 %" comparison. E₀ multiplies ONLY term 3, whose share differs per nucleus,
+so even a spread-of-ratios is not invariant under a convention change.
+
+**NOT affected:** the paired `k_exact` ladder (the 0.9504 flatness) — it measured
+`unified_iterative_correction` ALONE, which carries `M_E_MEV` not E₀, and it is a
+ratio at matched truncation so scale cancels a second time independently. Also
+unaffected: the layer-1/2/3 localisation, all of which sits inside `uic`.
+
+So the two load-bearing results survive and the headline table does not. Stated
+plainly because the strongest-sounding table was the one carrying the unmarked
+dependence.
+
+**Still open:** the per-term decomposition. Existence of the E₀ exposure is
+established FROM THE SOURCE; its magnitude is unmeasured (a run was launched and
+had produced no output at time of writing).
 
 Corrections pushed: retraction banners on `UrsellChainMismatch.lean` and the
 probe, witness description/caveats rewritten to lead with the priority note, and
