@@ -386,3 +386,52 @@ impractical. Current 7-point fit `t = 44.1 * A^1.351`:
 Earlier notes on this bean quoted 4.6 h and then 6.9 h; both were low, and
 the reason was fitting over too small an A range. ~8.4 h is the current
 number and it should be roughly stable now that the exponent has settled.
+
+
+## RESUME RUNBOOK — read this first after a container reclaim
+
+This container has been reclaimed twice mid-session. Recovery is mechanical
+but the ORDER matters, and getting it wrong is silent: the run continues and
+is ~300x slower, or discards the journal.
+
+    # 1. Recover the branch. The checkout resets to an OLD commit on reclaim,
+    #    while the pushed work is safe on origin. Ancestry-check, never force.
+    cd /workspace/qou
+    git fetch origin claude/anchor-followups-2026-08-08
+    git merge-base --is-ancestor HEAD FETCH_HEAD && git merge --ff-only FETCH_HEAD
+
+    # 2. REBUILD THE WHEEL. It is ephemeral and dies with the container.
+    #    Skipping this does not fail — it silently takes the ~300x slower
+    #    pure-Python path, and the table will not finish.
+    bash scripts/build-pyhecke-native.sh
+    python3 -c "import pyhecke_native as N; \
+      print(hasattr(N,'chi_q_atomic_mpfr'), \
+            hasattr(N,'chi_q_atomic_prefix_traces_mpfr'))"   # must be True True
+
+    # 3. Resume. The journal is committed, so step 1 restored it.
+    nohup env QOU_HKT_CHECKPOINT=.work/hadron-knot-table-regen.json \
+      python3 computations/hadron_knot_table.py > /tmp/hkt.log 2>&1 &
+
+    # 4. Commit the journal after EVERY atom. A reclaim then costs one atom,
+    #    not the run.
+    git add .work/hadron-knot-table-regen.json && git commit && git push
+
+### Things that will silently ruin the run
+
+- **Editing `hadron_knot_table.py`, `hecke_core_legacy.py` or
+  `hecke_core.py`.** The journal key hashes all three; any edit — a comment
+  included — prints KEY MISMATCH and starts from zero. Deliberately
+  conservative, because the alternative is resuming onto stale numbers. Do
+  other work in files outside that set while this runs.
+- **Forgetting step 2.** No error, just 300x.
+- **Running a second producer in this checkout.** Beyond the standing rule,
+  it steals CPU from a run that is using 3.9 of 4 cores; every core-minute
+  taken is a core-minute added to an 8-hour job.
+
+### When it finishes
+
+`computations/hadron-knot-table.witness.json` is written only when all 19
+atoms are present (a short pass writes nothing and names what is missing).
+Then **delete `.work/hadron-knot-table-regen.json`** — it is a regeneration
+artifact, not corpus data, and leaving it behind invites someone to read it
+as a source.
