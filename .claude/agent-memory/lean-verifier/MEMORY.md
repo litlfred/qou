@@ -146,11 +146,17 @@ rename reaches declaration types. Measured 2026-08-29 on
 and `4803c6f9d272 → 33891c65fd26`.
 
 A green `lean`-direct verdict is **not** the whole preflight there. The sidecar
-wants `qa-sweep --only <crit>` and must never be hand-edited. Two cautions
-measured the same day: `qa-staleness`/`qa-sweep` take a **directory**, not a
-file (a file path dies `ENOTDIR`), and a chapter-scoped sweep rewrites **every**
-block's sidecar — 128 files for a one-block change — so revert all but the
-block you actually staled, or a rename PR silently becomes a chapter sweep.
+wants `qa-sweep` and must never be hand-edited. **Pass the BLOCK STEM, not the
+directory** (corrected 2026-09-03, measured on six blocks):
+`bun run folio-assistant/content/pipeline/qa-sweep.ts content/<paper>/<chapter>/<block>`
+(no extension) refreshes **only that block's** `.qa.json` — `source_hashes`
+plus every script-kind criterion re-run — in ~1–2 min. The 2026-08-29 note
+that it "takes a directory and rewrites every block's sidecar (128 files)" is
+what happens when you pass the *chapter*; a bare file path still dies
+`ENOTDIR`. `scripts/check-sidecars.sh` prints the exact stem command per file,
+and keeps printing "→ refresh" even after the refresh (it lists applicable
+criteria; it is not a staleness detector) — verify freshness by comparing
+`source_hashes.lean` to `sha256(file)[:12]` yourself.
 
 ## TRAP — false greens and corrupt oleans → `verification-harness.md`
 
@@ -253,6 +259,40 @@ it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
 the QOU-cone partial and it is sufficient for QOU + Mathlib.Tactic files.)
 
 ---
+## TRAP — the vacuity audit's `--review-ledger` rewrites the WHOLE ledger; port your entries by hand
+`bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe
+--review-ledger <ledger>` (2026-09-03, ~6 min over 3421 files) pruned **28
+entries in files I never touched** and reset 6 others to `needs-agent`, because
+it recomputes the candidate set corpus-wide and "resolved candidates are pruned".
+It also only *produces* six categories; the borrowed-name / zero-placeholder /
+docstring-body-mismatch / vacuous-hypotheses entries (source
+`scripts/lean-borrowed-name-audit.py`, which has **no ledger mode**) are
+preserved untouched with a stale `file_sha`. So: run it against a **copy**
+(`--review-ledger $S/ledger-copy.json --json $S/vacuity.json`), read the diff,
+and hand-edit only your keys in the committed ledger. Key format
+`<relpath>::<decl>::<category>`; `file_sha` = `sha256(file bytes)[:12]`
+(verified against two existing entries); verdicts `genuine|legit|advisory|
+needs-agent`. Its `conjecture_graph` reads the dependency edge from
+`[Instance]` **binders** only — a class taking the upstream class as a *field*
+is classified primary (fixed by moving it to a binder, per §3b-tax).
+## TRAP — small authoring facts that cost a compile each (v4.24.0)
+- `deriving Fintype` needs `import Mathlib.Tactic.DeriveFintype` (the handler is
+  not in `Mathlib.Data.Fintype.Card`): *"No deriving handlers have been
+  implemented for class `Fintype`"*.
+- `div_add_div_same` is **deprecated** → `← add_div`.
+- `field_simp` often closes a determinant/ratio goal outright; a trailing
+  `ring` then errors *"No goals to be solved"* — that is a success signal, drop
+  the `ring`.
+- `Mathlib.Algebra.Algebra.Basic` alone gives neither `ring` nor `field_simp`
+  nor `add_div`; add `Mathlib.Tactic.Ring`, `Mathlib.Tactic.FieldSimp`,
+  `Mathlib.Algebra.Field.Basic`.
+- `beans create --parent <task>` is refused (*"task beans can only have
+  milestone, epic, or feature as parent"*) — parent to the session milestone
+  and name the task bean in the body. Backticks in a `--body "…"` string are
+  command substitution; use `--body-file`.
+- `scripts/check-sidecars.sh` flags a file of recorded CODATA/witness
+  decimals typed `ℝ` as "§7c gratuitous ℝ". That is the §7c CODATA row, not a
+  defect; say so in the file header and move on.
 
 ## STABLE — the honest dispositions when a proof will not close
 
@@ -335,62 +375,21 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   (via `decide`) = `[propext, Quot.sound]`. Confirmed cold-cache TRAP (File 2 warm
   run 1m45s wall / 11s user; first attempt timed out at 2m). New: ELAN_TOOLCHAIN
   note above. Cache already restored (6990 mathlib oleans, RESTORED-NO-TRACES).
-- 2026-09-02 (qtr-kron-consolidation): verified edited
-  `QOU/MassTheory/QuantumTraceTower.lean` — the only change vs main is a new
-  `import QOU.MathlibExt.MarkovTraceMultiplicative` and `qtr_kron` rerouted to
-  `...MarkovTraceMultiplicative.trace_kron (D₁ * X₁) (D₂ * X₂)`. First QOU-import
-  in this file, so needed the QOU cone. `MarkovTraceMultiplicative.olean` was
-  ABSENT from restored cache; built it lean-direct into the QOU lib dir first
-  (Mathlib-only, exit 0), then built QuantumTraceTower.olean fresh from current
-  source (avoids false-green), then `#print axioms` against the fresh cone.
-  Target lean-direct EXIT 0, zero diagnostics; the `trace_kron (A) (B)` two-arg
-  form compiled AS AUTHORED — no tactic line changed. qtr_kron / qtr_kron_one /
-  qtrDiag_one all = `[propext, Classical.choice, Quot.sound]`, no sorryAx.
-  Note: a background process committed+pushed the edit as `398f760001` mid-session
-  (I did not); committed bytes == verified bytes. Confirmed cold-cache TRAP
-  (MTM build real 1m37s / user 11s). LEAN_PATH = all root `.lake/packages/*/
-  .lake/build/lib/lean` + `$ROOT/.lake/build/lib/lean`. `/usr/bin/time` is NOT
-  installed here — use the bash `time` builtin.
-- 2026-09-02 (magnus-o6ov): verified `QOU/MassTheory/MagnusHookExteriorPower.lean`
-  (esymm generating function, 2 thms + 1 def, `import Mathlib`, general CommRing).
-  As-written FAILS: second thm used `Finset.sum_powerset_card` which **does not
-  exist** in v4.24.0, plus an `rw [esymm]`-under-binder that can't fire. FIX: the
-  purpose-built lemma is `Finset.sum_powerset s f` (additive of `prod_powerset`,
-  `Mathlib.Algebra.BigOperators.Group.Finset.Powerset`): `∑ t∈powerset s = ∑ j∈
-  range(#s+1), ∑ t∈powersetCard j s`; then `Finset.card_univ`, and `rw [esymm]`
-  AFTER `intro j` (no longer under binder). Aggregator `Mathlib.olean` is ABSENT
-  from the QOU-cone partial restore (3470 mathlib oleans), so `import Mathlib` on
-  the literal file errors `Mathlib.olean does not exist` — verified via a
-  byte-identical-tactics temp copy with narrowed imports (strict subset of
-  Mathlib). EXIT 0, no sorry, both thms `#print axioms` = `[propext,
-  Classical.choice, Quot.sound]`. Confirmed cold-cache TRAP (wall 2m6s / user 6s).
-- 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
-  lean-direct EXIT 0, std-3 axioms, no sorryAx. Cache tarball ~2.3G; restore ran
-  out at ~2.2G free (QOU lib files cut off) but mathlib's 3407 oleans suffice for
-  a Mathlib-only cone. `omit [inst] in` must precede the docstring.
-- 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
-  Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
-  Confirmed the cold-cache and sidecar TRAPs.
-- 2026-08-30 (torus-knots): restored `lake-cache/qou-v4-24-0` fresh (3407
-  mathlib oleans this seed — vs 6990 in the baseline; cone was sufficient),
-  verified new `QOU/Interactions/EmCouplingBarParity.lean` lean-direct exit 0
-  + `#print axioms` (std 3 only). One fix: `/-!` docstring preceded imports —
-  Lean rejects any `import` after a module doc; imports must be first.
-- 2026-08-30: found `QOU/Hecke/WedderburnRankDegeneracy.lean` red on `main` for
-  six days behind a FALSE GREEN — my own #5710 removed a field its instance
-  discharged. Rebuilt the 8-module reverse-import cone: ALL-GREEN after repair.
-  Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
-  stale `open`). Added `verification-harness.md` with all three traps measured.
-  PR #6097.
-- 2026-08-31 (milnor-tl-brick2): verified new `QOU/MassTheory/QuantumTraceTower.lean`
-  (Mathlib-only; `qtr`/`muDiag`/`qtrDiag` defs + 5 theorems). One fix, NOT a
-  tactic/statement change: `import Mathlib.Data.Matrix.Kronecker` → `.LinearAlgebra.`
-  (v4.24.0 module move, see TRAP above). All tactic blocks compiled as authored.
-  lean-direct EXIT 0, zero diagnostics/sorries. `#print axioms` on qtr_kron,
-  qtr_kron_one, qtrDiag_one all = `[propext, Classical.choice, Quot.sound]`, no
-  sorryAx. Cache already restored (3407 mathlib oleans, RESTORED-NO-TRACES marker).
-  Confirmed cold-cache TRAP again: file real 1m16s but user only 5.7s. File is
-  untracked (new, uncommitted) — the import fix lives in the working tree.
+- 2026-09-02 (qtr-kron-consolidation): verified edited (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-09-02 (magnus-o6ov): verified `QOU/MassTheory/MagnusHookExteriorPower.lean` (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean` (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-08-30 (torus-knots): restored `lake-cache/qou-v4-24-0` fresh (3407 (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-08-30: found `QOU/Hecke/WedderburnRankDegeneracy.lean` red on `main` for (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-08-31 (milnor-tl-brick2): verified new `QOU/MassTheory/QuantumTraceTower.lean` (details pruned 2026-09-03; lessons live in the TRAPs above)
+- 2026-09-03 (sm-surface sweep, bean qou-08zf): 58 files on the SM/eightfold/
+  α_EM surface, all lean-direct exit 0 (50 unchanged, 7 rewritten, 1 new
+  companion `AlphaEM/FormLadderAnchorDominanceChecks.lean`); `#print axioms` on
+  every new/changed decl = std-3 or none, no sorryAx. Rebuilt the changed
+  library module into a `cp -al` mirror before compiling its consumer. Cache
+  state: no RESTORED marker but 3470 mathlib + 2443 root oleans were live;
+  never ran `lake build`. Cold-cache TRAP confirmed again (probe 3m26s wall /
+  6.5s user). Report: docs/audits/2026-09-03-sm-surface-lean-best-practices-sweep.md.
   (older milnor-brick / magnus / deficit-recursion single-file verifications
   pruned 2026-09-02 — their distinct lessons are captured in the TRAPs above:
   v4.24.0 module moves incl. `BigOperators.Ring`→`Ring.Finset`; rebuild-from-
