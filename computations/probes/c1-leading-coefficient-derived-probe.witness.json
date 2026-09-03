@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T08:58:55.107797+00:00",
-  "commitSha": "2ef2369a7160072466f4ff102ecbf66a118d1d9b",
+  "computedAt": "2026-09-03T21:17:16.017962+00:00",
+  "commitSha": "dce2f5e66420ba337e4d531b48b0d4496de0a2c0",
   "assertions": [
     {
       "name": "three_row_weights_vanish_identically_at_n_6_9_12",
@@ -63,11 +63,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 394083,
+  "durationMs": 381201,
   "computation": "c1-leading-coefficient-derived-probe",
   "scriptFile": "c1_leading_coefficient_derived_probe.py",
   "scriptHash": "69de90009f3a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1e10637070a8b3199ad23fd25b03beb97a3b6c18",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2427,5 +2427,7 @@
       "hypotheses_not_proved_here": "quantum Schur-Weyl (tr_M = Tr(K ρ)/Z with K = diag(1,q²)^⊗n) — the same input ClassicalTraceFloor carries as a hypothesis; the rest is finite algebra."
     },
     "verdict": "c1 is DERIVED: the leading hbar_q coefficient of the trace difference is a signed sum over the word's non-averaged letters of 2^(c(σ with that letter deleted) - n), exactly like the floor c0 is 2^(c-n). Checked three ways — exact series, the permutation count, and the six Richardson measurements — all equal as Fractions. The six Lean definitions in PairwiseChainLeadingOrder.lean can become theorems conditional on Schur-Weyl."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

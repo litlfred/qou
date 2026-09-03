@@ -1,8 +1,10 @@
 {
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "bpp-a-dependence-bound",
   "description": "qou-gcmn's B_pp confound is IDENTICALLY ZERO in the corpus's chain model: B_pp^chain = -alpha*ln z with z = q^3/(q^2+1) a function of q alone, so it cannot vary with A (scope (b), invariant named). The H_6 trace bond agrees with it to 3.6% at A=3 \u2014 the only point both are computable \u2014 but one point cannot establish a proxy, so the result is a one-sided disjunction, not a bound on the trace bond. kappa(A) reproduced from AME (3.2 at A=3, 2.1-2.3 at A>=7). Re-scopes qou-gcmn from 'compute the intractable H_2A series' to 'does the trace bond track the chain bond' \u2014 decidable with ONE second point (H_8). Scope (a) for the numbers; nothing wired.",
-  "computedAt": "2026-09-03T18:36:02.520454+00:00",
+  "computedAt": "2026-09-03T21:48:21.582456+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "z": "0.612688037146465251595829863946",
@@ -96,7 +98,5 @@
       }
     ],
     "allPassed": true
-  },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  }
 }
