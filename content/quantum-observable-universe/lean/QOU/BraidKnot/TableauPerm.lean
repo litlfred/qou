@@ -1,5 +1,6 @@
 import QOU.BraidKnot.RowStandardTableau
 import QOU.BraidKnot.SytMathlibBridge
+import QOU.BraidKnot.SytRowSuperstandard
 import QOU.Hecke.LengthAdditive
 
 /-!
@@ -116,6 +117,26 @@ noncomputable def equivPerm : Specht.Tableau μ ≃ Perm (Fin (Specht.nOf μ)) :
   Equiv.ofBijective dOf ⟨dOf_injective, dOf_surjective⟩
 
 @[simp] theorem equivPerm_apply (t : Specht.Tableau μ) : equivPerm t = dOf t := rfl
+
+/-! ### `refTab` in closed form
+
+Everything downstream of `dOf` — the Garnir tableaux above all — needs to name
+*the label sitting in cell `(i,j)`*, so `refTab` has to be computable, not merely
+existent.  Reading labels off the row-superstandard filling row by row: -/
+
+/-- **The reference tableau in closed form.**  The label in cell `(i, j)` of `t^μ`
+is `rowPrefix μ i + j` — the number of cells in the rows above, plus the offset
+along the row.  (`rowPrefix μ i = ∑_{i' < i} μ.rowLen i'`.) -/
+theorem refTab_symm_apply {i j : ℕ} (h : (i, j) ∈ μ) :
+    (((refTab μ).symm ⟨(i, j), (YoungDiagram.mem_cells _).2 h⟩ :
+        Fin (Specht.nOf μ)) : ℕ)
+      = QOU.BraidKnot.rowPrefix μ i + j := by
+  show ((QOU.BraidKnot.SpechtStandardBasis.cellLabel
+      (QOU.BraidKnot.rowSuperstandardBraidKnot μ) ⟨(i, j), _⟩ : Fin _) : ℕ) = _
+  show (QOU.BraidKnot.rowSuperstandardBraidKnot μ).entry i j = _
+  show (QOU.BraidKnot.rowSuperstandardSsyt μ).entry i j - 1 = _
+  rw [QOU.BraidKnot.rowSuperstandardSsyt_entry_of_mem μ h]
+  omega
 
 /-! ### Transport to `Fin (n+1)`
 
