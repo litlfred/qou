@@ -17,13 +17,15 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Topology.FiberBundle.Basic
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -111,5 +113,7 @@ axiom transfer_matrix_level_independence
     (T₁ T₂ : CategoricalTransferMatrix q)
     (h_same_hadron : T₁.base = T₂.base)
     : T₁.vertex_volume = T₂.vertex_volume
+
+end
 
 end QOU

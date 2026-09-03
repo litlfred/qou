@@ -20,14 +20,16 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Topology.FiberBundle.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -71,6 +73,8 @@ axiom ope_is_skein
     : ∃ (ope : OPE q),
         ope.left = Y₁ ∧ ope.right = Y₂ ∧
         ope.bosonic_eigenvalue = q ∧
-        ope.fermionic_eigenvalue = -(q⁻¹)
+        ope.fermionic_eigenvalue = -q_inv_param
+
+end
 
 end QOU
