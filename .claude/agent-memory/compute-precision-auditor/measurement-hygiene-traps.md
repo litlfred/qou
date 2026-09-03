@@ -258,3 +258,86 @@ canonical `1.1099785827513808075...`, rel dev `2.62e-16`, denominator
 but carrying its precision, under a field named `q0_pin_exact_rational`).
 Declaring any of those three `independent` would have written a silent claim —
 exactly what `build()`'s `require_declared` rule exists to prevent.
+
+## TRAP — a q0-anchor manifest entry is INERT for a hand-rolled producer, and the count is not small
+
+Measured 2026-09-03 on the anchor ratchet's 35-witness refill (`qou-y98b`):
+**22 of the 27 proton producers were already declared `physical_proton` in
+`computations/q0_anchor_manifest.json`, and their witnesses were unstamped
+anyway.** 18 of those 22 hand-roll their witness — `json.dumps` +
+`write_text` — and so never enter `WitnessBuilder.build()`, which is where the
+manifest is read.
+
+So: **"the stem is in the manifest" is not evidence the witness is stamped**,
+and a triage pass that treats a manifest entry as done will skip the producers
+that most need fixing. Check how the producer WRITES before believing a
+declaration:
+
+    grep -l 'WitnessBuilder' <producer>     # manifest route works
+    grep -l 'write_text\|json.dump' <producer>   # manifest is inert
+
+The fix for a hand-rolled producer is a producer-side `"q0Anchor"` key in the
+witness dict. Leave the manifest entry in place — it states the pin correctly,
+it is just not what stamps the file.
+
+The ratchet's own header documents this mechanism; what was missing was the
+measurement of how much of the live refill it accounts for. Two-thirds of it.
+
+## TRAP — "a q0 value is in the source" does not mean "a pin is baked in"
+
+`computations/audits/producer_baked_pin_audit.py` decides by VALUE (it parses
+and evaluates literals and `Rational`/`Fraction`/`mpf`/`Decimal` calls), which
+is what closes the import-cone trace's documented blind spot: a pin written as
+`sp.Rational(num, den)` is invisible to a `1.1099785` prefix match.
+
+But a `BAKED_PIN` verdict answers only "is a q0-valued literal present". Two
+of the 27 proton producers flag, and **neither bakes a pin** —
+`alpha_scale_is_outside_the_trace_probe` and
+`extensive_carrier_scale_inversion_probe` carry `1.10997858` inside a
+`Q_50_DIGIT_STR.startswith("1.10997858")` **guard** asserting the proton
+anchor (added by a Copilot review on #6443). Read as a pin, they would have
+been mislabelled — when in fact they self-assert the correct anchor, which is
+stronger evidence than either audit gives.
+
+Read the line before acting on the verdict.
+
+## TRAP — one tolerance cannot serve anchor separations four orders apart
+
+Writing that audit, my first draft used a single 1e-6 relative window. The
+proton/muon gap is 1.16e-8, so the window was ~100x too wide — and it did NOT
+blur the answer, it **silently returned the first candidate**: the retired
+MUON pin was reported `proton` on 21 lines of one file.
+
+There are FOUR anchors, not two — three different numbers are all called "the
+muon q0" (retired self-certified pin; lepton-tower at CODATA 2018; at CODATA
+2022), diverging at the 13th significant digit. The separations:
+
+    proton vs any muon            1.16e-8
+    muon-retired vs -codata2022   7.7e-11
+    muon-retired vs -codata2018   2.8e-12
+
+Hence three windows, and an explicit `ambiguous` verdict when a value matches
+more than one. A pin truncated to 8 significant digits is `1.1099785...`,
+which is a prefix of every anchor and is genuinely unattributable — say so
+rather than assigning it to the nearest.
+
+General form, worth more than the instance: **a tolerance looser than the
+separation it is meant to resolve does not produce an uncertain answer, it
+produces a confident wrong one.**
+
+## BASELINE — baked q0 pins in `computations/`, 2026-09-03
+
+    python3 computations/audits/producer_baked_pin_audit.py --all --quiet
+
+    369 of 4387 files bake a q0 pin
+      196 files  proton
+      174 files  muon-retired      <- retired 2026-08-22
+       46 files  muon-codata2018
+       39 files  muon (vintage unresolvable from the digits present)
+       29 files  ambiguous:truncated
+        7 files  muon-codata2022   <- the LIVE canonical anchor
+
+The `muon-retired` 174 is the **producer-source** surface and is a different
+population from the ~40 witness FILES carrying the same string that AGENTS.md
+records. Re-measure before quoting; run `--selftest` first (exits non-zero if
+the matcher has stopped seeing a pin it provably used to see).

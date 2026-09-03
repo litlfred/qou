@@ -1,6 +1,8 @@
 {
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no q0. The family exclusion is decided by the sign of a divided difference over AME2020 data; no substrate quantity enters. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-03T18:36:01.579814+00:00",
+  "computedAt": "2026-09-03T21:10:03.069614+00:00",
   "description": "Two zero-fit consistency tests from QOU.MassTheory.AggregatorFamilyExclusions, run against the AME2020 light-nucleus grid. Result: the volume-minus-surface two-parameter family -- the canonical member of the convex class that survived AggregatorConvexityDichotomy -- is EXCLUDED, as is every other correction shape tried, and no pure power law fits either. The surviving aggregator must be convex with an accelerating local exponent, which neither route supplies.",
   "q0_pin": "not applicable -- consumes no framework quantity",
   "free_parameters": 0,
@@ -161,7 +163,5 @@
     "probes/aggregator-convexity-divided-difference.witness.json",
     "probes/mayer-threebody-sign-threshold.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "source": "AME2020 total nuclear binding energies"
 }
