@@ -266,5 +266,7 @@ if __name__ == '__main__':
         'result': r,
     }
     with open('qcollatz_vtwo_domain_stable_probe.witness.json', 'w') as f:
+        w["q0Anchor"] = "independent"
+        w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Does v_[2] descend on the domain-stable cone D_inf?  (bean qou-4atn)."
         json.dump(w, f, indent=2)
     print("wrote qcollatz_vtwo_domain_stable_probe.witness.json")

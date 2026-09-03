@@ -221,6 +221,8 @@ def main():
     wit = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "m1-kappa-correction-exponent.witness.json")
     with open(wit, "w") as fh:
+        out["q0Anchor"] = "independent"
+        out["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1 correction exponent: what order must the effective bound actually prove?."
         json.dump(out, fh, indent=1)
         fh.write("\n")
     print(json.dumps(out, indent=1))

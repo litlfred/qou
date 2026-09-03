@@ -302,7 +302,9 @@ def main() -> int:
         "untouched."))
     for n, ok, _ in checks:
         w.add_assertion(n, "pass" if ok else "fail", "pass")
-    w.save()
+    w.save(extra={"q0Anchor": "independent",
+             "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Where the H_3(q) Gram degenerates, and whether the \"hadronic melt\" survives.",
+             })
     return 0 if npass == len(checks) else 1
 
 

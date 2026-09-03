@@ -157,5 +157,7 @@ if __name__ == '__main__':
         'result': r,
     }
     with open('qcollatz_backward_tree_structure_probe.witness.json', 'w') as f:
+        w["q0Anchor"] = "independent"
+        w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Structure of the q-Collatz backward tree at a primitive cube root of unity."
         json.dump(w, f, indent=2)
     print("wrote qcollatz_backward_tree_structure_probe.witness.json")
