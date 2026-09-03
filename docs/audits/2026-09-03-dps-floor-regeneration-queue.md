@@ -13,27 +13,6 @@ helper and probably move.
 Regenerate ONE AT A TIME: the standing rule is no two producers at once in
 a checkout, and several of these are heavy.
 
-## What this queue does and does not cover
-
-- **Only the `q_parameter` import cone** — 229 of the 264 moving producers.
-  The other 35 (10 `moves_own_mp`, 25 `moves_via_helper`) reach
-  `qou_substrate.constants` WITHOUT going through `q_parameter`; the audit's
-  `--list` defaults to the `q_parameter` cone and they need
-  `--cone constants_only`. Not a small residue to ignore: it was precisely
-  the argument for landing the floor in `constants.py` rather than in the
-  `q_parameter` shim, so leaving them out of the queue would reintroduce the
-  hole the placement decision closed.
-- **192 of 229 have a witness stem resolved by static scan.** The remaining
-  37 are listed separately: their stem is built dynamically, written by a
-  helper, or they emit no witness at all. Each needs a look, not a guess.
-- **Witness counts, not producer counts, are what matters downstream.** The
-  scope audit attributes 48 witnesses to tier 1 and 135 to tier 2, 183 in
-  all — and could not attribute 813 of 3104 witnesses to any producer, so
-  183 is a lower bound on what actually moves.
-- **Tier 2 is "probably", not "definitely".** A producer reaching mpmath
-  through a helper may or may not have its emitted numbers change. Cheapest
-  discriminator is to regenerate and diff, not to reason about it.
-
 ## Tier 1-definite — 47 producers
 
 - [ ] `computations/audits/q0_consistency_audit.py` -> `q0-consistency-audit.witness.json`
@@ -232,7 +211,44 @@ a checkout, and several of these are heavy.
 - [ ] `computations/tr_m_algebraic_q.py` -> `tr-m-algebraic-q.witness.json`
 - [ ] `computations/wedderburn_pair_volumes.py` -> `wedderburn-pair-volumes.witness.json`
 
-## No witness stem found by static scan — 37
+## Tier 1-definite (constants-only cone) — 8 producers
+
+- [ ] `computations/bar_parity_involution_atlas_probe.py` -> `bar-parity-involution-atlas.witness.json`
+- [ ] `computations/crossing_energy_channel_basis_probe.py` -> `crossing-energy-channel-basis.witness.json`
+- [ ] `computations/delta_lambda_extended_tower.py` -> `delta-lambda-extended-tower.witness.json`, `mass-table-ppb.witness.json`
+- [ ] `computations/derive_e_0_lp_dual_h3.py` -> `gram-matrix-dual.witness.json`, `beta-decay-energy-scale.witness.json`, `e-0-lp-dual-h3.witness.json`
+- [ ] `computations/hecke/hecke_engine.py` -> `hecke-engine.witness.json`
+- [ ] `computations/q0_repin_regen_batch.py` -> `-audit.witness.json`, `-scan.witness.json`, `-compliance.witness.json`
+- [ ] `computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py` -> `deuteron-real-sdp.witness.json`, `computations/deuteron-real-sdp.witness.json`, `qbk2-reeb-vs-lp-dual-active-channel.witness.json`
+- [ ] `tools/qou-substrate/python/qou_substrate/witness.py` -> `my-computation.witness.json`, `my-witness.witness.json`, `path-b-evacuation.witness.json`
+
+## Tier 2-probable (constants-only cone) — 23 producers
+
+- [ ] `computations/atom_vhyp_closure_matrix_m.py` -> `atom-vhyp-closure-matrix-m.witness.json`, `ame-2020-binding-energies.witness.json`, `tr-m-atom-via-transfer.witness.json`
+- [ ] `computations/binding_alpha_shift_witness.py` -> `binding-alpha-shift-witness.witness.json`
+- [ ] `computations/c_alpha_from_Q_beta_trace.py` -> `c-alpha-from-Q-beta-trace.witness.json`
+- [ ] `computations/codata_masses.py` -> `codata-masses.witness.json`
+- [ ] `computations/deltalambda/deltalambda_grho_jet_order_derivation_probe.py` -> `deltalambda-grho-jet-order-derivation.witness.json`
+- [ ] `computations/deltalambda/deltalambda_sign_cyclotomic_locus_probe.py` -> `deltalambda-sign-cyclotomic-locus.witness.json`
+- [ ] `computations/deltalambda/deltalambda_sign_operator_narrowing_probe.py` -> `deltalambda-sign-operator-narrowing.witness.json`
+- [ ] `computations/deltalambda/deltalambda_sign_pivotal_grading_capstone_probe.py` -> `deltalambda-sign-pivotal-grading-capstone.witness.json`
+- [ ] `computations/kashaev_link_statesum.py` -> `kashaev-link-statesum.witness.json`
+- [ ] `computations/keystone_wlambda_ladder_higher_rungs.py` -> `wlambda-ladder-higher-rungs.witness.json`
+- [ ] `computations/probes/ame_registry_routing_triage.py` -> `ame-registry-routing-triage.witness.json`
+- [ ] `computations/probes/jet_filtration_hypothesis_fails_probe.py` -> `jet-filtration-hypothesis-fails.witness.json`
+- [ ] `computations/probes/qbeta_5two_masbaum_cyclo_level_probe.py` -> `qbeta-5two-masbaum-cyclo-level.witness.json`
+- [ ] `computations/probes/qbeta_5two_masbaum_theta_tower_probe.py` -> `qbeta-5two-masbaum-theta-tower.witness.json`
+- [ ] `computations/probes/qbeta_fmap_power_class_prune.py` -> `habiro-mode-to-ladder-bridge.witness.json`, `qbeta-per-block-paper-closed-forms.witness.json`, `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`
+- [ ] `computations/probes/qbeta_ujmw_qzero_dt_count.py` -> `aomega-qzero-dt-count.witness.json`
+- [ ] `computations/prototype_gs_nf_shell_binding.py` -> `prototype-gs-nf-shell-binding.witness.json`
+- [ ] `computations/qbeta/qbeta_r12_knot_invariant_probe.py` -> `qbeta-r12-knot-invariant.witness.json`
+- [ ] `computations/qbeta/qbeta_r12_trace_variable_probe.py` -> `qbeta-r12-trace-variable.witness.json`
+- [ ] `computations/qbeta/qbeta_zeta4_fibre_cyclotomic_probe.py` -> `qbeta-zeta4-fibre-cyclotomic.witness.json`
+- [ ] `computations/whitehead_van_der_veen.py` -> `whitehead-van-der-veen.witness.json`
+- [ ] `computations/witness_regen_wave.py` -> `built-thing.witness.json`, `downstream.witness.json`, `a.witness.json`
+- [ ] `computations/witness_upstream_declaration_audit.py` -> `mine.witness.json`, `w.witness.json`, `y-lambda-at-q0.witness.json`
+
+## No witness stem found by static scan — 41
 
 These are in the moving set but the scan could not name their
 witness (dynamic stem, helper-written, or they emit none).
@@ -243,6 +259,8 @@ witness (dynamic stem, helper-written, or they emit none).
 - [ ] `computations/qbeta/qbeta_d_frame_bridge_generic_z.py` — resolve stem by hand
 - [ ] `computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py` — resolve stem by hand
 - [ ] `computations/y_lambda_equivalence_proof.py` — resolve stem by hand
+- [ ] `computations/probes/tower_walk_magic_replication_probe.py` — resolve stem by hand
+- [ ] `computations/run_pipeline.py` — resolve stem by hand
 - [ ] `computations/a_operator/A_operator_extract_at_level.py` — resolve stem by hand
 - [ ] `computations/build_atomic_braid_recipe_4he_chain.py` — resolve stem by hand
 - [ ] `computations/build_markov_trace_assembly_deuteron_chain.py` — resolve stem by hand
@@ -274,3 +292,5 @@ witness (dynamic stem, helper-written, or they emit none).
 - [ ] `computations/sweeps/light_isotope_sweep.py` — resolve stem by hand
 - [ ] `computations/topic2_mirror_pair_phi8_boundary_scan.py` — resolve stem by hand
 - [ ] `computations/wenzl_lr_convention_adapter.py` — resolve stem by hand
+- [ ] `computations/producer_repad_sweep.py` — resolve stem by hand
+- [ ] `computations/witness_padding_provenance.py` — resolve stem by hand
