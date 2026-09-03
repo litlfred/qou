@@ -67,6 +67,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import ast as _ast
 import hashlib
 import json
 import os
@@ -325,8 +326,23 @@ def run_producer_at(prod: Path, timeout: int, log_dir: Path | None,
 # So a matching count is not agreement, and tightening a pattern is not the same
 # as fixing it: this had to widen (the anchor APIs) as well as narrow (the
 # actual witness filename, not the producer's name).
+# CORRECTED 2026-09-03 (bean `qou-aj91`): the first entry was the witness
+# FILENAME, "q-pinning-50-digit.witness.json". A filename cannot tell READING a
+# file from MENTIONING it, and after nine producers were correctly routed
+# through `q_parameter` the tool still called every one of them bypassed --
+# matching a comment documenting the routing, a `w.add_upstream(witness_path(
+# ...))` provenance edge, and a witness string describing the file
+# historically. None of those source a value.
+#
+# The filename is replaced by `derived_50_digit`, the field a value-read of
+# that witness ALWAYS subscripts (`d["derived_50_digit"]["q"]`), and which a
+# provenance reference never does. Verified 15/15 on the two known sets: the 9
+# routed producers and the 6 that must stay bypassed (the anchor definer, the
+# flip detector, the L1-muon cross-check, the dual-layer producer, the
+# deliberate two-anchor comparison, and the probe that validates other fields
+# of the same witness).
 _PIN_FILE_MARKERS = (
-    "q-pinning-50-digit.witness.json",   # the witness itself, read directly
+    "derived_50_digit",                  # the field a direct value-read subscripts
     "q_muon_at",                         # the muon anchor API, by name
     "_q0_value_for_anchor",              # the underlying anchor resolver
     "load_q_50dps",                      # muon default (qou-dkm2)
@@ -343,12 +359,41 @@ def env_override_reaches(prod: Path) -> bool:
     assertions, and be reported PASSES-AT-PROTON. A false pass on a migration
     question is the worst output this tool can produce, worse than no answer,
     because it is indistinguishable from a real one.
+
+    MEASURED FALSE NEGATIVE, FIXED 2026-09-03 (bean `qou-aj91`). See the note on
+    `_PIN_FILE_MARKERS` for what was wrong. The remaining half of the fix is
+    here: match against the source with COMMENTS AND DOCSTRINGS REMOVED, so
+    prose about the anchor cannot masquerade as a read of it. Comments never
+    reach the AST; docstrings are blanked explicitly.
+
+    An unparseable file falls back to the raw substring test, and an unreadable
+    one is reported as reached. Both fall on the safe side of the asymmetry
+    above: unmeasurable is a worse answer than nothing, but a FALSE PASS is
+    worse than either.
     """
     try:
         src = prod.read_text(errors="replace")
     except OSError:
         return True                       # cannot tell; run it and find out
-    return not any(m in src for m in _PIN_FILE_MARKERS)
+
+    try:
+        tree = _ast.parse(src)
+    except SyntaxError:
+        return not any(m in src for m in _PIN_FILE_MARKERS)   # conservative
+
+    for node in _ast.walk(tree):
+        if isinstance(node, (_ast.Module, _ast.FunctionDef, _ast.AsyncFunctionDef,
+                             _ast.ClassDef)) and node.body:
+            first = node.body[0]
+            if (isinstance(first, _ast.Expr)
+                    and isinstance(first.value, _ast.Constant)
+                    and isinstance(first.value.value, str)):
+                first.value.value = ""
+    try:
+        code_only = _ast.unparse(tree)
+    except Exception:
+        return not any(m in src for m in _PIN_FILE_MARKERS)   # conservative
+    return not any(m in code_only for m in _PIN_FILE_MARKERS)
 
 
 def check(prod: Path, timeout: int, state: Path, log_dir: Path | None):
