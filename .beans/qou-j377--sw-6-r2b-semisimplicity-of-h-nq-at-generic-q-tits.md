@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T08:44:21Z
+updated_at: 2026-09-03T08:51:49Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -176,3 +176,52 @@ by grepping its declaration names corpus-wide.  `S0` and `S1` reported 17 and 13
 **meaningless**, they are two-character names and the grep cannot tell this file's `S0` from
 any other file's.  The reliable signal is `seminormalRep21`, used by 4 files including
 `QJucysMurphy`, which IS in the chain.  So `HoefsmitRep` is not free.
+
+
+## 2026-09-03 — the tranche does NOT need an ordered field (formalize-first prune)
+
+The `Real.* = 0` result above left an open question I flagged rather than answered: the
+cone still has **24 order uses** across 9 files, and `[LinearOrderedField K]` is not
+`[Field K]`.  If even one were essential, the migration would land on an ordered field and
+most of its value would be gone.
+
+Read all 24 before spending the refactor.  **The recurring hard one is a single
+statement:**
+
+    (q ^ 2 + 1) ≠ 0
+
+- `HoefsmitRep.sq_add_one_ne` — `by positivity`.
+- `SeminormalParam` twice: inside `hne4 : 1 - q^4 ≠ 0`, which case-splits
+  `(q²−1)(q²+1) = 0` and kills the second branch with `nlinarith [sq_nonneg q]`; and inside
+  `hden : q³ + q ≠ 0`, which factors to `q·(q²+1)` and closes with `positivity`.
+
+Over a general field the statement is **false** — a primitive fourth root of unity has
+`q² + 1 = 0` — so it reads as a second, independent obstruction to leaving `ℝ`.
+
+**It is not.**  `q² + 1 = 0` forces `q⁴ = 1`, which `NotRootOfUnity` already forbids.  The
+one hypothesis introduced for the `Real.log` sites covers the order sites too.  Proved
+rather than argued: `GenericParameter.sq_add_one_ne_zero` over any field, plus `ne_one` and
+`sq_ne_one` for the call-site shapes.
+
+**In one place the hypothesis does better than replace the argument — it deletes it.**
+Under `NotRootOfUnity`, `1 - q⁴ ≠ 0` is immediate from `hq 4`; the case split and both
+`nlinarith` calls go away.
+
+### The conclusion, and how far it is verified
+
+**The tranche needs `[Field K]` + `NotRootOfUnity`, not `[LinearOrderedField K]`.**
+
+Scope that honestly: the two `SeminormalParam` sites are **verified against the source**,
+because the conclusion turns on them.  The other 22 I classified **by inspection** as
+convenience tactics over linear/ring facts — `sub_ne_zero` shapes (`A ≠ 1 → 1 - A ≠ 0`), a
+cast equality, a `zpow` identity, and `0 < q²` feeding the old
+`pow_right_injective_of_pos_of_ne_one` signature, which the generic lemma has already
+displaced.  That is a reading, not a machine check; a site that resists is a finding, not a
+refutation of this note.
+
+### Proof note worth keeping
+
+`sq_add_one_ne_zero` keeps `GenericParameter`'s single Mathlib import:
+`q⁴ = (q²+1)(q²−1) + 1` by `ring`, then rewrite by the hypothesis.  The obvious
+`linear_combination` route **fails here as "unknown tactic"** — `Mathlib.Tactic.LinearCombination`
+is not imported and deliberately should not be, to keep this file's cone minimal.
