@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:07:44Z
-updated_at: 2026-09-03T04:08:03Z
+updated_at: 2026-09-03T04:54:51Z
 ---
 
 Done on `claude/rag-document-ingestion-options-orasrw` (qou 40538dbcfc, fa d07c325).
@@ -55,3 +55,42 @@ seeds and **0 ingested**. Wenzl 1988 is not in `library/` — so every Wenzl-wei
 result in this corpus is unbacked by the source it cites, and the provenance
 split is now what makes that visible at a glance rather than something you have
 to already suspect. Same for Jones 1987.
+
+
+---
+
+## Wired up (2026-09-03) — the graph is now reachable from the checklist
+
+The graph was correct and unused: `graphSearch` lived in a pipeline module with
+a CLI, and the discipline an agent actually follows is a list of greps. A
+capability behind a script path and a flag spelling is not on that list.
+
+**`corpus_search` (MCP)** — folio-assistant `6d79ff4`. Added to
+`adapters/mcp-server/tools/graph.ts` beside `search_graph` / `get_neighbors`,
+which are deliberately disjoint (one answers "which nodes contain these words",
+the other "what is adjacent") so that using them together meant search → copy
+an id → walk → repeat, and the graph contributed nothing to a search. I first
+wrote it as a separate tool in the document adapter and undid that: the graph
+tools share a lazily-built index measured at 29,780 nodes on this corpus, and a
+separate tool would have rebuilt it per call.
+
+**`AGENTS.md` step 0** — qou `85be360bea`. Placed BEFORE the six greps, not as
+a seventh path, because it is not another sample of the same kind: all six are
+greps and they share one blind spot — a grep finds prior work only if it used
+YOUR words. It also says what to read in the answer (`why` / `~` for a
+backwards edge, `seedsByProvenance`, `emptyRoots`), that it does not replace
+the six, and that it is not a gate.
+
+**`emptyRoots` got its own TRAP** in `corpus-grepper`'s memory, because it is
+this same failure one level up: before today qou had 3595 blocks, 576 library
+documents and zero `.jsonld`, so every graph query returned nothing in the
+shape of "no results" rather than "nothing was indexed".
+
+Memory hit 230 lines against the 200-line injection cap, so two sections
+already duplicated in the sibling became pointers and the 29-line resolved-
+topics lookup split into `resolved-topics.md` (198 now). The sibling carried
+one heading twice; removed.
+
+Verified on a live question: `corpus_search "Hoefsmit"` → 20 seeds, 47
+graph-reached, `byProvenance {"authored": 67}` — **zero ingested**, which is
+`hoefsmit1974` (83 citations, source not held) visible in one line.
