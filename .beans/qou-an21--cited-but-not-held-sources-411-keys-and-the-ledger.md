@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:16:26Z
-updated_at: 2026-09-03T04:26:13Z
+updated_at: 2026-09-03T04:41:50Z
 ---
 
 Measured and partly repaired on `claude/rag-document-ingestion-options-orasrw`
@@ -56,3 +56,47 @@ measures against.
 flag. Reporting that 0 as "Lean cites nothing" would have been a false negative
 about the larger half of the citation surface. The option order is now written
 into the script with the reason.
+
+
+---
+
+## 🛑 CORRECTION (same session, commit 4ec7496669) — the "212 held but uncitable" figure above is WRONG
+
+**It is 1, not 212, and none of the 51 `core` work-list exists.** Read the
+paragraph above headed *"Held and triaged but UNCITABLE"* as retracted.
+
+**Why it was wrong.** The bib↔library join has TWO sides. The ledger carries a
+bib id per row; `references.ts` entries carry a `library` block naming the
+document they are held as — and AGENTS.md makes that side authoritative for
+bibliographic metadata. My detector read the ledger's `id` field only. 183 of
+the 195 `id: null` rows were keyed perfectly well in `references.ts`, and 11
+more are duplicate COPIES whose `duplicate_of` front-matter names a keyed
+primary. `id: null` meant the LEDGER was behind, not that the source was
+unreachable from the text.
+
+**The one real case is correctly uncitable.** `ant-v14-n7-s` is a mis-upload a
+prior agent had already diagnosed: an entire 330-page journal issue of ten
+unrelated articles, so "which work is this" is not well posed and there is
+nothing to cite.
+
+**This is the same failure class as the two generator defects in `qou-uhzk`
+and as the whole detector-blindness taxonomy: a checker that sees one spelling
+of the thing it is checking.** Third instance this session, and the one I
+reported most confidently.
+
+**What actually changed.** All 194 ids backfilled, each row recording whether
+the key came from the `library` block or from its primary copy. The audit now
+reads both sides, which recovered 3 further cited keys as held — notably
+`mathas1999` (26 citations, `library/hecke-alg`), the Iwahori-Hecke / Schur
+algebra text this corpus leans on, which the ledger had as external.
+`reachable` 84 -> 87 keys.
+
+**Duplicate-id count corrected in the same direction.** Raw count went 15 -> 29
+after the backfill because a work held in several copies now legitimately
+shares one key; reporting that as a defect would repeat the mistake one level
+down. Benign when the rows are `duplicate_of`-linked, the same document, or
+name no document (external / vanished upload). Genuine collisions — two
+different held works claiming one id — measure **0**.
+
+**Unmoved:** `jones1987` (390 citations), `wenzl1988` (213), `hoefsmit1974`
+(83) are still not held. That was the original question.
