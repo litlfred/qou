@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mi-sw-abelianisation",
+  "kind": "proposition",
+  "title": "Abelianisation of the MI integral on exceptional divisors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness",
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-weight-space-decomposition",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-mi-sw-abelianisation"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.mi_sw_abelianisation",
+  "text": "mi-sw-abelianisation.md",
+  "provenance": "authored"
+}

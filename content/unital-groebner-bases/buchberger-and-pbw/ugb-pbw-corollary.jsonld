@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/cor-ugb-pbw",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:ugb-pbw",
+  "kind": "corollary",
+  "title": "Poincaré–Birkhoff–Witt theorem over a commutative ring",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-ugb-main",
+    "papers/unital-groebner-bases/blocks/thm-ugb-buchberger"
+  ],
+  "tags": [
+    "groebner-basis",
+    "lie-algebra",
+    "pbw",
+    "main-result"
+  ],
+  "leanRef": "ugb:UGB.BuchbergerPBW.ugb_pbw_corollary",
+  "text": "ugb-pbw-corollary.md",
+  "leanSource": "ugb-pbw-corollary.lean",
+  "provenance": "authored"
+}

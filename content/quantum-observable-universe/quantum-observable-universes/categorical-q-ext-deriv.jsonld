@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-q-ext-deriv",
+  "kind": "definition",
+  "title": "Categorical $q$-deformed exterior derivative",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-connection",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-q-ext-deriv",
+    "papers/quantum-observable-universe/blocks/ex-q-lie-bracket",
+    "papers/quantum-observable-universe/blocks/ex-q-connection",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-vector-field",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf"
+  ],
+  "tags": [
+    "exterior-derivative",
+    "deformation"
+  ],
+  "leanRef": "qou:QOU.CategoricalQExtDeriv",
+  "text": "categorical-q-ext-deriv.md",
+  "leanSource": "categorical-q-ext-deriv.lean",
+  "provenance": "authored"
+}

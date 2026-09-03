@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-gravitational-constant-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gravitational-constant-properties",
+  "kind": "remark",
+  "title": "Variational origin and Hausdorff-dimension prediction of $G_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gravitational-constant",
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry",
+    "papers/quantum-observable-universe/blocks/rem-jet-planck-steps",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+    "papers/quantum-observable-universe/blocks/rem-julia-hausdorff-dimension-prediction"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-julia-hausdorff-dimension-prediction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-gravitational-constant",
+  "cites": [
+    "references/jacobson1995",
+    "references/bekenstein1981"
+  ],
+  "tags": [
+    "gravitational-constant",
+    "information-theory",
+    "jacobson",
+    "entropy-area",
+    "emergent-gravity"
+  ],
+  "text": "gravitational-constant-properties.md",
+  "provenance": "authored"
+}

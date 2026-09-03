@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-homological-shell-condensation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:homological-shell-condensation",
+  "kind": "proposition",
+  "title": "Proposition (homological shell condensation): BB-stratified $E_\\infty^{p,>0}(n) = 0$ at magic $n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-brane-tower-levels",
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+    "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split"
+  ],
+  "cites": [
+    "references/bialynicki1973",
+    "references/yekutieli2010",
+    "references/ariki1996"
+  ],
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "spectral-sequence",
+    "BB-stratification",
+    "brane-tower",
+    "homological-condensation",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.ShellCondensation.HomologicalConjecture",
+  "text": "homological-shell-condensation.md",
+  "leanSource": "homological-shell-condensation.lean",
+  "provenance": "authored"
+}

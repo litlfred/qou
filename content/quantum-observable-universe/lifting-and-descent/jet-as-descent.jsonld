@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-as-descent",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-as-descent",
+  "kind": "remark",
+  "title": "Jet prolongation as formal descent of information",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
+    "papers/quantum-observable-universe/blocks/def-descent-involution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
+  "tags": [
+    "jet-bundle",
+    "descent",
+    "cosimplicial"
+  ],
+  "text": "jet-as-descent.md",
+  "provenance": "authored"
+}

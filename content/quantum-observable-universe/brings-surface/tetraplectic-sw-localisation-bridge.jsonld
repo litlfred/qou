@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-tetraplectic-sw-localisation-bridge",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:tetraplectic-sw-localisation-bridge",
+  "kind": "conjecture",
+  "title": "Combinatorial evaluation of tetraplectic matrix elements by $S_5$ localization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bring-cone-tetraplectic-structure"
+  ],
+  "cites": [
+    "references/seiberg-witten1994b",
+    "references/nekrasov2002"
+  ],
+  "tags": [
+    "tetraplectic",
+    "seiberg-witten",
+    "localization",
+    "wigner-eckart",
+    "clebsch-gordan",
+    "bring-cone",
+    "open-problem",
+    "conjectural-framing"
+  ],
+  "text": "tetraplectic-sw-localisation-bridge.md",
+  "provenance": "authored"
+}

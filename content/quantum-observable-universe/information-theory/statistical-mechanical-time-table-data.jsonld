@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-statistical-mechanical-time-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:statistical-mechanical-time-table-data",
+  "kind": "table",
+  "title": "Data table from rem:statistical-mechanical-time",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-statistical-mechanical-time"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "statistical-mechanical-time-table-data.md",
+  "provenance": "authored"
+}

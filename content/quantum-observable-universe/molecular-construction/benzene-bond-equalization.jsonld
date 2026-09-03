@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-benzene-bond-equalization",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:benzene-bond-equalization",
+  "kind": "remark",
+  "title": "Bond equalization from $D_6$ symmetry of $T(2,6)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-benzene-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-benzene-threading-emergence",
+  "tags": [
+    "benzene",
+    "bond-equalization",
+    "D6",
+    "aromatic",
+    "bond-order"
+  ],
+  "text": "benzene-bond-equalization.md",
+  "provenance": "authored"
+}

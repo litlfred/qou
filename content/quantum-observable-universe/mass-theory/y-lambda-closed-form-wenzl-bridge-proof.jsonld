@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-y-lambda-closed-form-wenzl-bridge",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:y-lambda-closed-form-wenzl-bridge",
+  "kind": "proof",
+  "title": "Proof of y lambda closed form wenzl bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "text": "y-lambda-closed-form-wenzl-bridge-proof.md",
+  "provenance": "authored"
+}

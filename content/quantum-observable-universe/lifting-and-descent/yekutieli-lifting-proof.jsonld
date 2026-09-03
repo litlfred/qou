@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-yekutieli-lifting",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:yekutieli-lifting",
+  "kind": "proof",
+  "title": "Proof of categorical lifting condition in the brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting"
+  ],
+  "text": "yekutieli-lifting-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-braid-group",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:braid-group",
+  "kind": "definition",
+  "title": "Braid group on three strands",
+  "tags": [
+    "braid-group",
+    "group-theory"
+  ],
+  "leanRef": "qou:QOU.BraidGroup",
+  "text": "braid-group.md",
+  "leanSource": "braid-group.lean",
+  "provenance": "authored"
+}

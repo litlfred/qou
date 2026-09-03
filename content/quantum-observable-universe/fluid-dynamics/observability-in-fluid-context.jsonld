@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-observability-fluid-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observability-fluid-context",
+  "kind": "remark",
+  "title": "Observability for the brane fluid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "tags": [
+    "observability",
+    "fluid-dynamics",
+    "contact",
+    "vortex",
+    "interpretation"
+  ],
+  "text": "observability-in-fluid-context.md",
+  "provenance": "authored"
+}

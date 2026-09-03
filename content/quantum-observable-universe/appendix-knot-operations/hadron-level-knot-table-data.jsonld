@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-hadron-level-knot-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:hadron-level-knot-table-data",
+  "kind": "table",
+  "title": "Hadron-level knot decomposition: nucleons + 14 atoms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hadron-level-knot-table"
+  ],
+  "tags": [
+    "hecke",
+    "normal-form",
+    "hadron",
+    "knot-table",
+    "appendix"
+  ],
+  "text": "hadron-level-knot-table-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/thm-ugb-buchberger",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ugb-buchberger",
+  "kind": "theorem",
+  "title": "Buchberger's theorem over a commutative ring",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-unital-groebner-basis",
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/prop-ugb-s-poly-decomposition"
+  ],
+  "tags": [
+    "groebner-basis",
+    "buchberger",
+    "criterion"
+  ],
+  "leanRef": "ugb:UGB.BuchbergerPBW.buchberger_theorem",
+  "text": "buchberger-theorem.md",
+  "leanSource": "buchberger-theorem.lean",
+  "provenance": "authored"
+}

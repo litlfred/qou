@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-collatz-surreal-bound",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:collatz-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal bound for Collatz: contact-boundary deviation costs transfinite Reeb period",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-collatz",
+  "cites": [
+    "references/conway1976",
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "collatz",
+    "millennium-problem",
+    "surreal",
+    "squeeze",
+    "contact-boundary",
+    "hailstone",
+    "classical-limit"
+  ],
+  "text": "collatz-surreal-bound.md",
+  "provenance": "authored"
+}

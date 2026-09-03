@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-knot-factor-spectral-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:knot-factor-spectral-form",
+  "kind": "proof",
+  "title": "Proof of knot factor spectral derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-factor-spectral-form"
+  ],
+  "text": "knot-factor-spectral-derivation-proof.md",
+  "provenance": "authored"
+}

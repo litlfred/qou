@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-resolvent-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-resolvent-exists",
+  "kind": "proposition",
+  "title": "Existence of the $q$-resolvent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-resolvent",
+    "papers/quantum-observable-universe/blocks/prop-categorical-laplace-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-resolvent-exists"
+  ],
+  "tags": [
+    "existence",
+    "resolvent"
+  ],
+  "leanRef": "qou:QOU.QResolvent.exists",
+  "text": "q-resolvent-exists.md",
+  "leanSource": "q-resolvent-exists.lean",
+  "provenance": "authored"
+}

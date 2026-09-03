@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-self-duality",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-self-duality",
+  "kind": "proof",
+  "title": "Proof of Categorical self-duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-self-duality"
+  ],
+  "leanRef": "qou:QOU.categorical_self_duality",
+  "text": "categorical-self-duality-proof.md",
+  "leanSource": "categorical-self-duality-proof.lean",
+  "provenance": "authored"
+}

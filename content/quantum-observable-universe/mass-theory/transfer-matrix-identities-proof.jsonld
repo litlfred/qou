@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-transfer-matrix-identities",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:transfer-matrix-identities",
+  "kind": "proof",
+  "title": "Proof of transfer matrix identities",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-transfer-matrix-identities"
+  ],
+  "text": "transfer-matrix-identities-proof.md",
+  "provenance": "authored"
+}

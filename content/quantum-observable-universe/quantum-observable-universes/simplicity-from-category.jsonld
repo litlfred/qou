@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-simplicity-from-category",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:simplicity-from-category",
+  "kind": "remark",
+  "title": "Categorical origin of the simplicity constraint",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-self-dual-2group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+  "tags": [
+    "2-group",
+    "instanton",
+    "category-theory"
+  ],
+  "text": "simplicity-from-category.md",
+  "provenance": "authored"
+}

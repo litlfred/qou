@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/alg-frobenius-pairing",
+  "@type": [
+    "folio:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:frobenius-pairing",
+  "kind": "algorithm",
+  "title": "Frobenius pairing $\\langle a, b\\rangle_F$ and self-duality $\\Psi = S^2 = \\mathrm{id}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-pairing-exists",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-pairing-unique"
+  ],
+  "tags": [
+    "mba",
+    "step-6",
+    "frobenius-pairing",
+    "self-duality",
+    "rigid-monoidal",
+    "canonical-chain"
+  ],
+  "text": "mba-step06-frobenius-pairing.md",
+  "provenance": "authored"
+}

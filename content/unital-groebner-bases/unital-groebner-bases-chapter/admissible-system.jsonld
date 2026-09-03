@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/def-admissible-system",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:admissible-system",
+  "kind": "definition",
+  "title": "Monomial ordering and admissible system",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-monomial-basis"
+  ],
+  "tags": [
+    "groebner-basis",
+    "ordering",
+    "admissible"
+  ],
+  "leanRef": "ugb:UGB.GrobnerShirshov.AdmissibleOrder",
+  "text": "admissible-system.md",
+  "leanSource": "admissible-system.lean",
+  "provenance": "authored"
+}

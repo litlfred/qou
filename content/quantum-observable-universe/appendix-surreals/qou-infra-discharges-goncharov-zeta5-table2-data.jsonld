@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-qou-infra-discharges-goncharov-zeta5-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:qou-infra-discharges-goncharov-zeta5-table2-data",
+  "kind": "table",
+  "title": "Table 2 from conj:qou-infra-discharges-goncharov-zeta5",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-qou-infra-discharges-goncharov-zeta5"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "qou-infra-discharges-goncharov-zeta5-table2-data.md",
+  "provenance": "authored"
+}

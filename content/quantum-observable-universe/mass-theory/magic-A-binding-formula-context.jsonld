@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-magic-A-binding-formula-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:magic-A-binding-formula-context",
+  "kind": "remark",
+  "title": "Regime necessity, the ρ_F prefactor, and the comparison witness for the doubly-magic binding formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-magic-A-binding-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-magic-A-binding-formula",
+  "tags": [
+    "binding",
+    "doubly-magic",
+    "catalan",
+    "borromean",
+    "strutinsky"
+  ],
+  "text": "magic-A-binding-formula-context.md",
+  "provenance": "authored"
+}

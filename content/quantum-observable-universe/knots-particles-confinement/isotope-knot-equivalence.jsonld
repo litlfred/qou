@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-isotope-knot-equivalence",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:isotope-knot-equivalence",
+  "kind": "proposition",
+  "title": "Isotope relation is an equivalence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-isotope-knot"
+  ],
+  "tags": [
+    "equivalence-relation",
+    "isotope",
+    "atom-knot"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.IsotopeKnot.equivalence",
+  "text": "isotope-knot-equivalence.md",
+  "leanSource": "isotope-knot-equivalence.lean",
+  "provenance": "authored"
+}

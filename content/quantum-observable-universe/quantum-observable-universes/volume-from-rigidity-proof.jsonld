@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-volume-from-rigidity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:volume-from-rigidity",
+  "kind": "proof",
+  "title": "Proof of Volume form from rigidity and symplectic self-duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-volume-from-rigidity"
+  ],
+  "text": "volume-from-rigidity-proof.md",
+  "provenance": "authored"
+}

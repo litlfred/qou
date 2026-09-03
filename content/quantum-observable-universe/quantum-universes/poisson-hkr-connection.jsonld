@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-poisson-hkr-connection",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:poisson-hkr-connection",
+  "kind": "remark",
+  "title": "HKR and skew-Poisson integration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-poisson-object",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/prop-skew-poisson-integration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-poisson-object",
+  "cites": [
+    "references/yekutieli2010",
+    "references/fred2005"
+  ],
+  "tags": [
+    "poisson",
+    "hkr",
+    "deformation-theory"
+  ],
+  "text": "poisson-hkr-connection.md",
+  "provenance": "authored"
+}

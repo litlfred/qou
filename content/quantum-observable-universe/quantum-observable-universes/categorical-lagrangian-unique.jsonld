@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-lagrangian-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-lagrangian-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical Lagrangian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-lagrangian-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-lagrangian-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "lagrangian"
+  ],
+  "leanRef": "qou:QOU.CategoricalLagrangian.unique",
+  "text": "categorical-lagrangian-unique.md",
+  "leanSource": "categorical-lagrangian-unique.lean",
+  "provenance": "authored"
+}

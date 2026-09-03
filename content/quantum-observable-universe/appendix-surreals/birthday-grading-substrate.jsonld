@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-birthday-grading-substrate",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:birthday-grading-substrate",
+  "kind": "example",
+  "title": "Birthday of the substrate parameters $c_q$, $\\hbar_q$, $d_H(q)$ at $q = 1 + \\varepsilon$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-birthday-grading"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-birthday-grading",
+  "tags": [
+    "surreal-numbers",
+    "birthday",
+    "substrate",
+    "infinitesimal"
+  ],
+  "text": "birthday-grading-substrate.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-phi-q-tower-algebraic-stratification",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:phi-q-tower-algebraic-stratification",
+  "kind": "proof",
+  "title": "Proof of phi q tower algebraic stratification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phi-q-tower-algebraic-stratification"
+  ],
+  "text": "phi-q-tower-algebraic-stratification-proof.md",
+  "provenance": "authored"
+}

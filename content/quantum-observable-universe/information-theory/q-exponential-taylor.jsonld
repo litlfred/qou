@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-exponential-taylor",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-exponential-taylor",
+  "kind": "proposition",
+  "title": "Taylor series of $\\exp_q$ (archimedean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-exponential",
+    "papers/quantum-observable-universe/blocks/rem-archimedean-realisations"
+  ],
+  "tags": [
+    "q-exponential",
+    "taylor-series",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qExponentialTaylor",
+  "text": "q-exponential-taylor.md",
+  "leanSource": "q-exponential-taylor.lean",
+  "provenance": "authored"
+}

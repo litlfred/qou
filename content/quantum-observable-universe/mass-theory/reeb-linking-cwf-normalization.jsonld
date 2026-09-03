@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-reeb-linking-cwf-normalization",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:reeb-linking-cwf-normalization",
+  "kind": "conjecture",
+  "title": "CWF linking normalization: the pn-bond amplitude is the unit-normalized exchange-channel component, $\\ell(z)^2\\,(1+z^2)=z^2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-pn-magnitude-criticality"
+  ],
+  "cites": [
+    "references/jones1987"
+  ],
+  "tags": [
+    "exchange-sector",
+    "pn-bond",
+    "cwf",
+    "reeb-flow",
+    "open-postulate",
+    "gap-a4"
+  ],
+  "leanRef": "qou:QOU.MassTheory.ReebLinkingCWF",
+  "text": "reeb-linking-cwf-normalization.md",
+  "leanSource": "reeb-linking-cwf-normalization.lean",
+  "provenance": "authored"
+}

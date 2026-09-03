@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-em-coupling-chern-simons",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:em-coupling-chern-simons",
+  "kind": "remark",
+  "title": "Conjectured Chern-Simons correction form $1/\\alpha = q[9]_q[10]_q\\cdot(1+\\delta_{CS}+\\kappa\\,\\delta_{CS}^2)$ (Gram-determinant $\\kappa$ unproved)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+    "papers/quantum-observable-universe/blocks/prop-quantum-observable-universe-exists"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+  "tags": [
+    "fine-structure",
+    "chern-simons",
+    "brings-surface",
+    "genus-4",
+    "torus-knot",
+    "gram-matrix",
+    "conjecture",
+    "kappa-unproved"
+  ],
+  "leanRef": "qou:QOU.ArchimedeanUniverse.ChernSimonsCorrectionConjecture",
+  "text": "em-coupling-chern-simons.md",
+  "leanSource": "em-coupling-chern-simons.lean",
+  "provenance": "authored"
+}

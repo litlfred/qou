@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:h2o-molecular-braid",
+  "kind": "definition",
+  "title": "Water $H_2O$ as a molecular braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+    "papers/quantum-observable-universe/blocks/def-molecular-strand-partition"
+  ],
+  "tags": [
+    "water",
+    "H2O",
+    "molecular-braid",
+    "assembly-projector",
+    "c2v",
+    "lone-pair"
+  ],
+  "leanRef": "qou:QOU.Molecular.waterParts",
+  "text": "h2o-molecular-braid.md",
+  "leanSource": "h2o-molecular-braid.lean",
+  "provenance": "authored"
+}

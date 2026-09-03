@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-complex-volume-character-variety-path",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:complex-volume-character-variety-path",
+  "kind": "remark",
+  "title": "Bound $\\leftrightarrow$ free as a character-variety path: the deformation reading of $\\mathfrak{V}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+  "cites": [
+    "references/neumann-zagier1985",
+    "references/garoufalidis-zagier-2024"
+  ],
+  "tags": [
+    "complex-volume",
+    "character-variety",
+    "deformation-path",
+    "chern-simons",
+    "askey-scheme",
+    "fibre-level"
+  ],
+  "leanRef": "qou:QOU.MassEndomorphism.AWDeformationPath",
+  "text": "complex-volume-character-variety-path.md",
+  "provenance": "authored"
+}

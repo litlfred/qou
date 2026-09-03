@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-dilogarithm",
+  "kind": "definition",
+  "title": "$q$-Dilogarithm (iterated primitive, categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-logarithm"
+  ],
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "pentagon-identity",
+    "associator",
+    "q-series"
+  ],
+  "leanRef": "qou:QOU.QDilogarithm",
+  "text": "q-dilogarithm.md",
+  "leanSource": "q-dilogarithm.lean",
+  "provenance": "authored"
+}

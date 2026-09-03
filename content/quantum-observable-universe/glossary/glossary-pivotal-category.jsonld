@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-pivotal-category",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-pivotal-category",
+  "kind": "remark",
+  "title": "Pivotal category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-rigid-category"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal",
+    "duality"
+  ],
+  "defines": [
+    "pivotal-category"
+  ],
+  "text": "glossary-pivotal-category.md",
+  "provenance": "authored"
+}

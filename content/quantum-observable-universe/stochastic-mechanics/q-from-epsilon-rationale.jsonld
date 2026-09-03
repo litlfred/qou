@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-from-epsilon-rationale",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-from-epsilon-rationale",
+  "kind": "remark",
+  "title": "Primitivity of $\\varepsilon$ and the $q-1 \\leftrightarrow \\varepsilon$ convention",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+  "tags": [
+    "substrate-parameter",
+    "surreal",
+    "categorical-primitive",
+    "q-expansion",
+    "classical-limit"
+  ],
+  "text": "q-from-epsilon-rationale.md",
+  "provenance": "authored"
+}

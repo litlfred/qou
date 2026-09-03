@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-universal-ilp-algorithm",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:universal-ilp-algorithm",
+  "kind": "definition",
+  "title": "Universal ILP algorithm for operator selection",
+  "tags": [
+    "ILP",
+    "operator-selection",
+    "confinement",
+    "gluon",
+    "covalent-bond",
+    "universal",
+    "algorithm"
+  ],
+  "leanRef": "qou:QOU.Interactions.UniversalILP",
+  "text": "universal-ilp-algorithm.md",
+  "leanSource": "universal-ilp-algorithm.lean",
+  "provenance": "authored"
+}

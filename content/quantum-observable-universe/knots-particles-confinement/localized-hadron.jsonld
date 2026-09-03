@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-localized-hadron",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:localized-hadron",
+  "kind": "definition",
+  "title": "Localized hadron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hadron"
+  ],
+  "tags": [
+    "hadron",
+    "knot",
+    "localized",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.LocalizedHadron",
+  "text": "localized-hadron.md",
+  "leanSource": "localized-hadron.lean",
+  "provenance": "authored"
+}

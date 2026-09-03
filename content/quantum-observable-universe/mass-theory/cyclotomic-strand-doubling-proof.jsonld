@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-cyclotomic-strand-doubling",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:cyclotomic-strand-doubling",
+  "kind": "proof",
+  "title": "Proof of cyclotomic strand doubling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-strand-doubling"
+  ],
+  "text": "cyclotomic-strand-doubling-proof.md",
+  "provenance": "authored"
+}

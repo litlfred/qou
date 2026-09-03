@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-cosmological-chirality-flip",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cosmological-chirality-flip",
+  "kind": "remark",
+  "title": "Chirality reversal at cosmological extremes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-cosmological-limits",
+    "papers/quantum-observable-universe/blocks/rem-time-reversal-energy-barrier",
+    "papers/quantum-observable-universe/blocks/sec-cp-violation-evidence",
+    "papers/quantum-observable-universe/blocks/prop-u1-equivariant-reduction",
+    "papers/quantum-observable-universe/blocks/rem-symmetry-preserving-leptons"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "tags": [
+    "big-bang",
+    "heat-death",
+    "chirality",
+    "cosmological",
+    "observability",
+    "frobenius-degeneration",
+    "aeon"
+  ],
+  "text": "cosmological-chirality-flip.md",
+  "provenance": "authored"
+}

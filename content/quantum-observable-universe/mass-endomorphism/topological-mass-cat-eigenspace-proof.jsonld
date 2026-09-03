@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-eigenspace",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-mass-cat-eigenspace",
+  "kind": "proof",
+  "title": "Proof of the eigenspace decomposition (categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-eigenspace"
+  ],
+  "text": "topological-mass-cat-eigenspace-proof.md",
+  "provenance": "authored"
+}

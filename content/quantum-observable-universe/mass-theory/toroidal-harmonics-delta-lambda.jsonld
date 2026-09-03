@@ -1,0 +1,14 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-toroidal-harmonics-delta-lambda",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:toroidal-harmonics-delta-lambda",
+  "kind": "proposition",
+  "title": "A toroidal-harmonic change of variables for the $z$-recursion",
+  "leanRef": "qou:QOU.QBeta.toroidal_ode_to_markov_w",
+  "text": "toroidal-harmonics-delta-lambda.md",
+  "provenance": "authored"
+}

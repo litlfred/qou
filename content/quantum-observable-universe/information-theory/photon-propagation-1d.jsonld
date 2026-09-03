@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-photon-propagation-1d",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:photon-propagation-1d",
+  "kind": "remark",
+  "title": "Photon modes and $q$-deformed dispersion in a 1D channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-one-dim-qou-channel"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-one-dim-qou-channel",
+  "tags": [
+    "optical-fibre",
+    "photon",
+    "dispersion",
+    "mode-quantization",
+    "information-theory"
+  ],
+  "text": "photon-propagation-1d.md",
+  "provenance": "authored"
+}

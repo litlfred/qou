@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:q-ns-wellposedness",
+  "kind": "theorem",
+  "title": "Global regularity of the $q$-deformed Navier--Stokes equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-kelvin-dispersion-derivation",
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-interpretation"
+  ],
+  "tags": [
+    "navier-stokes",
+    "well-posedness",
+    "regularity",
+    "millennium-problem",
+    "q-deformation",
+    "global-existence",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.q_ns_wellposedness",
+  "text": "q-ns-wellposedness.md",
+  "provenance": "authored"
+}

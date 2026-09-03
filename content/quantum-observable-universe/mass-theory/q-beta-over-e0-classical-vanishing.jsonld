@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-over-e0-classical-vanishing",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-beta-over-e0-classical-vanishing",
+  "kind": "proposition",
+  "title": "$S(q) = \\mathfrak{Q}_\\beta(q)/E_0(q)$ vanishes at the classical point $q = 1$ — the SDP-constraint scalar is not the $c_k$ ladder normalization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-neutron-qvalue-symbolic",
+    "papers/quantum-observable-universe/blocks/rem-beta-decay-energy-scale",
+    "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "q-beta",
+    "markov-trace",
+    "frobenius",
+    "diagnostic",
+    "ladder-normalization",
+    "classical-limit"
+  ],
+  "leanRef": "qou:QOU.QBeta.OverE0ClassicalVanishing.qbeta_over_e0_numerator_at_one_eq_zero",
+  "text": "q-beta-over-e0-classical-vanishing.md",
+  "leanSource": "q-beta-over-e0-classical-vanishing.lean",
+  "provenance": "authored"
+}

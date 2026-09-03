@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-gs-spectral-sum-finite",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gs-spectral-sum-finite",
+  "kind": "conjecture",
+  "title": "Finiteness of the GS residue spectral sum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-gs-residue-at-root-existence"
+  ],
+  "tags": [
+    "gs-filtration",
+    "spectral-sequence",
+    "finiteness",
+    "confinement-level",
+    "noncomputable-opaque",
+    "audit-flag-13a"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.spectral_sum_finite",
+  "text": "gs-spectral-sum-finite.md",
+  "provenance": "authored"
+}

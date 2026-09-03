@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-quantum-characteristic-classes-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:quantum-characteristic-classes-su2",
+  "kind": "example",
+  "title": "Quantum characteristic classes for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+    "papers/quantum-observable-universe/blocks/ex-recursive-brane-tower-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+  "tags": [
+    "su2",
+    "obstruction",
+    "cohomology",
+    "chern-class"
+  ],
+  "text": "quantum-characteristic-classes-su2.md",
+  "provenance": "authored"
+}

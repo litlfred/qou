@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:lagrange-resolvent-transform",
+  "kind": "proposition",
+  "title": "Discrete Fourier transform diagonalises $C_5$ on the Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-lagrange-resolvents"
+  ],
+  "tags": [
+    "lagrange",
+    "resolvent",
+    "fourier",
+    "c5",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.lagrange_resolvent_transform",
+  "text": "lagrange-resolvent-transform.md",
+  "leanSource": "lagrange-resolvent-transform.lean",
+  "provenance": "authored"
+}

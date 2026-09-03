@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-chebyshev-degree-genus",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:chebyshev-degree-genus",
+  "kind": "lemma",
+  "title": "Chebyshev degree equals Seifert genus for $T_{2,p}$",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-chebyshev-degree-genus"
+  ],
+  "tags": [
+    "chebyshev",
+    "seifert-genus",
+    "torus-knot",
+    "hecke-recurrence"
+  ],
+  "leanRef": "qou:QOU.Archimedean.chebyshev_degree_genus",
+  "text": "chebyshev-degree-genus.md",
+  "provenance": "authored"
+}

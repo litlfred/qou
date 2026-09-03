@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-fourier",
+  "kind": "definition",
+  "title": "Categorical Fourier transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+    "papers/quantum-observable-universe/blocks/prop-tannaka-krein-reconstruction",
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness"
+  ],
+  "tags": [
+    "hopf-algebra",
+    "grouplike",
+    "monoidal-functor",
+    "fourier",
+    "peter-weyl",
+    "tannakian"
+  ],
+  "leanRef": "qou:QOU.CategoricalFourier",
+  "text": "categorical-fourier-transform.md",
+  "leanSource": "categorical-fourier-transform.lean",
+  "provenance": "authored"
+}

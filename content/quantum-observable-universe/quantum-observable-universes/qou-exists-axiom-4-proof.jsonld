@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-4",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qou-exists-axiom-4",
+  "kind": "proof",
+  "title": "Proof of axiom 4 (volume constraint) for QOU existence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-4"
+  ],
+  "cites": [
+    "references/kassel1995"
+  ],
+  "text": "qou-exists-axiom-4-proof.md",
+  "provenance": "authored"
+}

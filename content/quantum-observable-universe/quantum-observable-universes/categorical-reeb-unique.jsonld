@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-reeb-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-reeb-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical Reeb derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-reeb-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "reeb",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.CategoricalReeb.unique",
+  "text": "categorical-reeb-unique.md",
+  "leanSource": "categorical-reeb-unique.lean",
+  "provenance": "authored"
+}

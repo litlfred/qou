@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-borromean-h4-categorical-derivation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borromean-h4-categorical-derivation",
+  "kind": "proposition",
+  "title": "Borromean $h^4 = -3/4$ derived as $(-3) \\cdot (1/4)$ via R-matrix + Markov normalisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-markov-trace-closed-form",
+    "papers/quantum-observable-universe/blocks/prop-h3-markov-wenzl-weights",
+    "papers/quantum-observable-universe/blocks/prop-habiro-residue-sum-equivalence"
+  ],
+  "cites": [
+    "references/jones1987"
+  ],
+  "tags": [
+    "borromean",
+    "markov-trace",
+    "schur-weyl",
+    "r-matrix",
+    "categorical-derivation",
+    "h-expansion",
+    "wenzl-weights"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.borromean_h4_numeric_factorisation",
+  "text": "borromean-h4-categorical-derivation.md",
+  "leanSource": "borromean-h4-categorical-derivation.lean",
+  "provenance": "authored"
+}

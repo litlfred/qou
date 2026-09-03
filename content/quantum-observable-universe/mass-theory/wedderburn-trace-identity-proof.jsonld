@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-wedderburn-trace-identity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:wedderburn-trace-identity",
+  "kind": "proof",
+  "title": "Proof of wedderburn trace identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "text": "wedderburn-trace-identity-proof.md",
+  "provenance": "authored"
+}

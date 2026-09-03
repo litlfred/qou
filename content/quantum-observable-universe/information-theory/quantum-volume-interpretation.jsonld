@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-volume-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-volume-interpretation",
+  "kind": "remark",
+  "title": "Volume as knot capacity of $S^3$ fibres",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-volume",
+    "papers/quantum-observable-universe/blocks/ex-hydrogen-knot-structure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-volume",
+  "tags": [
+    "volume",
+    "s3-fibre",
+    "knot-capacity",
+    "configuration-space",
+    "classical-limit"
+  ],
+  "text": "quantum-volume-interpretation.md",
+  "provenance": "authored"
+}

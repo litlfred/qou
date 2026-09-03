@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-knot-formula-table-table5-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:knot-formula-table-table5-data",
+  "kind": "table",
+  "title": "Data table 5 from rem:knot-formula-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-formula-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "knot-formula-table-table5-data.md",
+  "provenance": "authored"
+}

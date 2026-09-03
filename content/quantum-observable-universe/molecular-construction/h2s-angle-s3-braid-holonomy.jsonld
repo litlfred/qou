@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-h2s-angle-s3-braid-holonomy",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:h2s-angle-s3-braid-holonomy",
+  "kind": "conjecture",
+  "title": "H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-symmetric-block-domain-weight",
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/prop-bring-trefoil-cinquefoil-channel"
+  ],
+  "tags": [
+    "H2S",
+    "bond-angle",
+    "chirality",
+    "S3-holonomy",
+    "Chern-Simons",
+    "bar-anti-symmetric",
+    "q-Dirac-kernel"
+  ],
+  "leanRef": "qou:QOU.Molecular.H2SAngleS3HolonomyConjecture",
+  "text": "h2s-angle-s3-braid-holonomy.md",
+  "leanSource": "h2s-angle-s3-braid-holonomy.lean",
+  "provenance": "authored"
+}

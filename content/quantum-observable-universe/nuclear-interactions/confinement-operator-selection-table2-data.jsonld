@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-confinement-operator-selection-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:confinement-operator-selection-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:confinement-operator-selection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "confinement-operator-selection-table2-data.md",
+  "provenance": "authored"
+}

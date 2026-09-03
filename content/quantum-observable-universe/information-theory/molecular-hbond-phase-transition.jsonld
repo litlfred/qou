@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-molecular-hbond-phase-transition",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:molecular-hbond-phase-transition",
+  "kind": "remark",
+  "title": "Molecular phase transitions: the hydrogen-bond network as the boundary action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",
+    "papers/quantum-observable-universe/blocks/prop-quantum-ideal-gas-law",
+    "papers/quantum-observable-universe/blocks/prop-symmetric-block-domain-weight",
+    "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil",
+    "papers/quantum-observable-universe/blocks/prop-tetrahedral-hbond-directions",
+    "papers/quantum-observable-universe/blocks/prop-boltzmann-constant",
+    "papers/quantum-observable-universe/blocks/def-quantum-temperature",
+    "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary",
+  "tags": [
+    "phase-transition",
+    "hydrogen-bond",
+    "boiling-point",
+    "latent-heat",
+    "hbond-cohesion",
+    "sp3-flip",
+    "q-ideal-gas",
+    "water"
+  ],
+  "text": "molecular-hbond-phase-transition.md",
+  "provenance": "authored"
+}

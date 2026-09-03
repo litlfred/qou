@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-knot-factor-shell-closed",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:knot-factor-shell-closed",
+  "kind": "proof",
+  "title": "Proof of knot factor shell closed",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-knot-factor-shell-closed"
+  ],
+  "text": "knot-factor-shell-closed-proof.md",
+  "provenance": "authored"
+}

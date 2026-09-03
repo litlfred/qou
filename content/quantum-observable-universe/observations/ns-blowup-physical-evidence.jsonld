@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-blowup-physical-evidence",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-blowup-physical-evidence",
+  "kind": "remark",
+  "title": "Physical signatures of the Navier--Stokes blow-up: intermittency, GRBs, CMB anomalies",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+    "papers/quantum-observable-universe/blocks/sec-cmb-torsion-data",
+    "papers/quantum-observable-universe/blocks/rem-bec-vortex-data",
+    "papers/quantum-observable-universe/blocks/prop-leray-profile"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+  "tags": [
+    "navier-stokes",
+    "blowup",
+    "physical-evidence",
+    "intermittency",
+    "gamma-ray-burst",
+    "cmb",
+    "falsifiability",
+    "millennium-problem"
+  ],
+  "text": "ns-blowup-physical-evidence.md",
+  "provenance": "authored"
+}

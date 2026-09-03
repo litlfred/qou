@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-exterior-square-borromean",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:exterior-square-borromean",
+  "kind": "proposition",
+  "title": "45 = dim_q Λ²(V_natural^10) — Borromean strand-pair representation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-borromean-baryon-interpretation",
+    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-collapse"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.exterior_square_borromean",
+  "text": "exterior-square-borromean.md",
+  "leanSource": "exterior-square-borromean.lean",
+  "provenance": "authored"
+}

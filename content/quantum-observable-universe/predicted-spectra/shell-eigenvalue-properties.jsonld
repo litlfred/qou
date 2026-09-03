@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-eigenvalue-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-eigenvalue-properties",
+  "kind": "remark",
+  "title": "Shell eigenvalue properties, sub-shells, and the Skein extraction algorithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+  "tags": [
+    "shell",
+    "eigenvalue",
+    "sub-shell",
+    "rydberg",
+    "numerical",
+    "tensor-product",
+    "skein"
+  ],
+  "text": "shell-eigenvalue-properties.md",
+  "provenance": "authored"
+}

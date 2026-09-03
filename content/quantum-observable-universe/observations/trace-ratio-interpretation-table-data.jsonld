@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-trace-ratio-interpretation-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:trace-ratio-interpretation-table-data",
+  "kind": "table",
+  "title": "Trace ratio per affected generator: six verification nuclei",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-trace-ratio-interpretation"
+  ],
+  "tags": [
+    "markov-trace",
+    "half-life",
+    "verification-nuclei"
+  ],
+  "text": "trace-ratio-interpretation-table-data.md",
+  "provenance": "authored"
+}

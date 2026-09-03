@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-content-scaling-correspondence",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:content-scaling-correspondence",
+  "kind": "proposition",
+  "title": "Content $c = m_j$ by Schur--Weyl: box content determines BW scaling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "tags": [
+    "schur-weyl",
+    "content",
+    "magnetic-quantum-number",
+    "scaling",
+    "braid-graph"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.BoxContent.boxContent",
+  "text": "content-scaling-correspondence.md",
+  "provenance": "authored"
+}

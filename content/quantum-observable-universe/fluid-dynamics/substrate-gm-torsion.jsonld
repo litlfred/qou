@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:substrate-gm-torsion",
+  "kind": "remark",
+  "title": "The substrate parameter as a $\\mathbb{G}_m$-section: torsion, specialisation, and the $q = 1$ boundary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ns-obstruction-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "multiplicative-group",
+    "torsion",
+    "specialisation",
+    "projective",
+    "not-root-of-unity"
+  ],
+  "text": "substrate-gm-torsion.md",
+  "provenance": "authored"
+}

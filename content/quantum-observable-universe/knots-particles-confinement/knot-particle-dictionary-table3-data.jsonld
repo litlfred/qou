@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-knot-particle-dictionary-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:knot-particle-dictionary-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from rem:knot-particle-dictionary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "knot-particle-dictionary-table3-data.md",
+  "provenance": "authored"
+}

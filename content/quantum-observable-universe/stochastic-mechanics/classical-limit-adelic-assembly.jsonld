@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-limit-adelic-assembly",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-limit-adelic-assembly",
+  "kind": "remark",
+  "title": "Adelic-assembly reading of $\\mathcal{L}$ and phase-decoherence non-fullness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-adelic-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+  "tags": [
+    "classical-limit",
+    "adelic-assembly",
+    "realization-tower",
+    "decoherence",
+    "q-to-1"
+  ],
+  "text": "classical-limit-adelic-assembly.md",
+  "provenance": "authored"
+}

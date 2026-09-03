@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-1",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:qou-exists-axiom-1",
+  "kind": "lemma",
+  "title": "Axiom 1 — Haar state gives a non-degenerate Frobenius pairing",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-1"
+  ],
+  "cites": [
+    "references/woronowicz1987"
+  ],
+  "tags": [
+    "haar-state",
+    "frobenius-pairing",
+    "non-degenerate",
+    "woronowicz"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse.exists_axiom_1_frobenius",
+  "text": "qou-exists-axiom-1.md",
+  "leanSource": "qou-exists-axiom-1.lean",
+  "provenance": "authored"
+}

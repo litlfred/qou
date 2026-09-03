@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-hadron-q-self-correction",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hadron-q-self-correction",
+  "kind": "proposition",
+  "title": "Effective substrate parameter: hadron self-deformation of $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-half-life"
+  ],
+  "tags": [
+    "substrate-parameter",
+    "self-energy",
+    "effective-q",
+    "hadron",
+    "linking-number",
+    "back-reaction"
+  ],
+  "leanRef": "qou:QOU.Archimedean.hadron_q_self_correction",
+  "text": "hadron-q-self-correction.md",
+  "leanSource": "hadron-q-self-correction.lean",
+  "provenance": "authored"
+}

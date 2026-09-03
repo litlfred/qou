@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-confinement-category-atomic-chain",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:confinement-category-atomic-chain",
+  "kind": "example",
+  "title": "The atomic chain in $\\mathbf{Conf}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-confinement-category"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-confinement-category",
+  "tags": [
+    "confinement",
+    "category",
+    "atomic-chain",
+    "morphism"
+  ],
+  "text": "confinement-category-atomic-chain.md",
+  "provenance": "authored"
+}

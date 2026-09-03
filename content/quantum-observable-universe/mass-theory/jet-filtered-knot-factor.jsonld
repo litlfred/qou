@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-jet-filtered-knot-factor",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:jet-filtered-knot-factor",
+  "kind": "conjecture",
+  "title": "Jet-filtered knot factor: per-level character convergence and nuclear quotient braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confined-knot-binding"
+  ],
+  "tags": [
+    "tier:S",
+    "knot-factor",
+    "jet-filtration",
+    "character-convergence",
+    "nuclear-quotient-braid",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.jet_filtered_knot_factor",
+  "text": "jet-filtered-knot-factor.md",
+  "provenance": "authored"
+}

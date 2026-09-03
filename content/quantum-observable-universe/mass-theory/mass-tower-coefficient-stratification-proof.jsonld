@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-mass-tower-coefficient-stratification",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mass-tower-coefficient-stratification",
+  "kind": "proof",
+  "title": "Proof of mass tower coefficient stratification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mass-tower-coefficient-stratification"
+  ],
+  "text": "mass-tower-coefficient-stratification-proof.md",
+  "provenance": "authored"
+}

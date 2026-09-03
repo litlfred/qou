@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:categorical-reeb-exists",
+  "kind": "theorem",
+  "title": "Existence of the categorical Reeb derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-reeb-exists"
+  ],
+  "tags": [
+    "existence",
+    "reeb",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.categorical_reeb_exists",
+  "text": "categorical-reeb-exists.md",
+  "leanSource": "categorical-reeb-exists.lean",
+  "provenance": "authored"
+}

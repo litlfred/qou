@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/fred2005-formal-groups/blocks/def-non-commutative-formal-group",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:non-commutative-formal-group",
+  "kind": "definition",
+  "title": "Non-commutative formal group",
+  "uses": [
+    "papers/fred2005-formal-groups/blocks/def-commutative-formal-group"
+  ],
+  "cites": [
+    "references/fred2005"
+  ],
+  "tags": [
+    "formal-group",
+    "non-commutative",
+    "distribution-algebra"
+  ],
+  "leanRef": "fred2005:Fred2005.NoncommutativeFormalGroup",
+  "text": "non-commutative-formal-group.md",
+  "leanSource": "non-commutative-formal-group.lean",
+  "provenance": "authored"
+}

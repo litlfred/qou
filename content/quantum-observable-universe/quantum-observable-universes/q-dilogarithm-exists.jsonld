@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-dilogarithm-exists",
+  "kind": "proposition",
+  "title": "Existence of the $q$-dilogarithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/prop-q-logarithm-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-dilogarithm-exists"
+  ],
+  "tags": [
+    "existence",
+    "q-dilogarithm",
+    "pentagon-identity"
+  ],
+  "leanRef": "qou:QOU.QDilogarithm.exists",
+  "text": "q-dilogarithm-exists.md",
+  "leanSource": "q-dilogarithm-exists.lean",
+  "provenance": "authored"
+}

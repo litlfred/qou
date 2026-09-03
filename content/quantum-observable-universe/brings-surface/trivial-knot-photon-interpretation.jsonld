@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-trivial-knot-photon-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trivial-knot-photon-interpretation",
+  "kind": "remark",
+  "title": "Term-by-term interpretation of the trivial knot operator on colored photons",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content",
+    "papers/quantum-observable-universe/blocks/rem-knot-operator-basis-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content",
+  "tags": [
+    "photon",
+    "color-content",
+    "polarization",
+    "hecke-algebra",
+    "pair-production",
+    "trivial-knot",
+    "hopf-link"
+  ],
+  "text": "trivial-knot-photon-interpretation.md",
+  "provenance": "authored"
+}

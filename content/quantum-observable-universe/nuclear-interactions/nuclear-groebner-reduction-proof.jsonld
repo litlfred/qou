@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-nuclear-groebner-reduction",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:nuclear-groebner-reduction",
+  "kind": "proof",
+  "title": "Proof of nuclear groebner reduction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction"
+  ],
+  "text": "nuclear-groebner-reduction-proof.md",
+  "provenance": "authored"
+}

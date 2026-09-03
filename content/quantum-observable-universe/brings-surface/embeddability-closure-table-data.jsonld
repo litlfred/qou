@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-embeddability-closure-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:embeddability-closure-table-data",
+  "kind": "table",
+  "title": "Data table from thm:embeddability-closure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-embeddability-closure"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "embeddability-closure-table-data.md",
+  "provenance": "authored"
+}

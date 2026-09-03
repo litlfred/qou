@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-golden-skew-dual-node-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:golden-skew-dual-node-interpretation",
+  "kind": "remark",
+  "title": "Mathematical novelty of the skew-dual stability margin",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node",
+  "text": "golden-skew-dual-node-interpretation.md",
+  "provenance": "authored"
+}

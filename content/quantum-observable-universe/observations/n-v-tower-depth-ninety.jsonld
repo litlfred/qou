@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-n-v-tower-depth-ninety",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:n-v-tower-depth-ninety",
+  "kind": "conjecture",
+  "title": "Brane-tower depth from m_e to v equals 90",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism"
+  ],
+  "tags": [
+    "tier:E",
+    "n-v",
+    "electroweak",
+    "tower-depth",
+    "substrate-axiom"
+  ],
+  "leanRef": "qou:QOU.Observations.tower_depth_m_e_to_v_is_ninety",
+  "text": "n-v-tower-depth-ninety.md",
+  "leanSource": "n-v-tower-depth-ninety.lean",
+  "provenance": "authored"
+}

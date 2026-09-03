@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-omega-constraints",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:omega-constraints",
+  "kind": "remark",
+  "title": "Algebraic constraints in the $\\omega_k$ basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents",
+    "papers/quantum-observable-universe/blocks/ex-self-dual-curvature"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents",
+  "text": "omega-constraints.md",
+  "provenance": "authored"
+}

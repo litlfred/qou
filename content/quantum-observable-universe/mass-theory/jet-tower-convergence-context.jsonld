@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-tower-convergence-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-tower-convergence-context",
+  "kind": "remark",
+  "title": "Boundedness hypothesis, engineering consequence, and confinement-SDP relation for jet-tower convergence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-tower-convergence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-tower-convergence",
+  "tags": [
+    "jet-tower",
+    "convergence",
+    "confinement-sdp",
+    "brane-tower"
+  ],
+  "text": "jet-tower-convergence-context.md",
+  "provenance": "authored"
+}

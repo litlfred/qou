@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-qbeta-z-recursion-to-ck-recursion-bridge",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qbeta-z-recursion-to-ck-recursion-bridge",
+  "kind": "proof",
+  "title": "Proof of qbeta z recursion to ck recursion bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-z-recursion-to-ck-recursion-bridge"
+  ],
+  "text": "qbeta-z-recursion-to-ck-recursion-bridge-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-tm-interaction-completeness-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:tm-interaction-completeness-table-data",
+  "kind": "table",
+  "title": "Data table from tm-interaction-completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-interaction-completeness"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "tm-interaction-completeness-table-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-point",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-point",
+  "kind": "definition",
+  "title": "Categorical point",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe"
+  ],
+  "tags": [
+    "point",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.CategoricalPoint",
+  "text": "categorical-point.md",
+  "leanSource": "categorical-point.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-tower-binding-energy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tower-binding-energy",
+  "kind": "proposition",
+  "title": "Nuclear binding energy from the $3$-channel brane tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hecke-charge-mass-duality"
+  ],
+  "tags": [
+    "binding-energy",
+    "brane-tower",
+    "wedderburn",
+    "three-channel",
+    "partition-function",
+    "zero-fitting",
+    "analytic-continuation"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.towerBinding",
+  "text": "tower-binding-energy.md",
+  "leanSource": "tower-binding-energy.lean",
+  "provenance": "authored"
+}

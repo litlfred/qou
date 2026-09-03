@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-yang-mills-mass-gap-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:yang-mills-mass-gap-table-data",
+  "kind": "table",
+  "title": "Data table from conj:yang-mills-mass-gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-yang-mills-mass-gap"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "yang-mills-mass-gap-table-data.md",
+  "provenance": "authored"
+}

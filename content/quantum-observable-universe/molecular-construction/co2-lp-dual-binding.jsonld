@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-co2-lp-dual-binding",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:co2-lp-dual-binding",
+  "kind": "proposition",
+  "title": "LP dual selects linear $O{=}C{=}O$ geometry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-q-integer-mass-formula",
+    "papers/quantum-observable-universe/blocks/def-co2-molecular-braid",
+    "papers/quantum-observable-universe/blocks/prop-co-lp-dual-binding"
+  ],
+  "tags": [
+    "CO2",
+    "LP-dual",
+    "linear",
+    "geometry",
+    "double-bond"
+  ],
+  "leanRef": "qou:QOU.Molecular.co2_lp_dual_binding",
+  "text": "co2-lp-dual-binding.md",
+  "provenance": "authored"
+}

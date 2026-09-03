@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-particle-correspondence-hadron-reading",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-particle-correspondence-hadron-reading",
+  "kind": "remark",
+  "title": "Localized knots and hadrons under the knot–particle bijection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence",
+    "papers/quantum-observable-universe/blocks/def-hadron"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence",
+  "tags": [
+    "knot",
+    "particle",
+    "dictionary",
+    "hadron",
+    "markov-trace"
+  ],
+  "text": "knot-particle-correspondence-hadron-reading.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-photon-threading-mass-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:photon-threading-mass-interpretation",
+  "kind": "remark",
+  "title": "The three computations agree, the physical threading picture, and gauge invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-photon-threading-mass",
+    "papers/quantum-observable-universe/blocks/ex-mass-identity-su2",
+    "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+    "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy",
+    "papers/quantum-observable-universe/blocks/ex-photon-wavefront"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-photon-threading-mass",
+  "cites": [
+    "references/yekutieli2015",
+    "references/reshetikhin1991"
+  ],
+  "text": "photon-threading-mass-interpretation.md",
+  "provenance": "authored"
+}

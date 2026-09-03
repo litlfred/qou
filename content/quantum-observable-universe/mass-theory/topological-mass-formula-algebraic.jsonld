@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula-algebraic",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:topological-mass-formula-algebraic",
+  "kind": "proposition",
+  "title": "Topological mass formula (algebraic, $\\mathbb{Q}(q)$-side)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-tower-pair-equality-fixed-level"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/habiro2002",
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "mass",
+    "algebraic",
+    "quantum-volume",
+    "tau-wall",
+    "narrative-replacement"
+  ],
+  "leanRef": "qou:QOU.Torsion.AlgebraicMassFormula",
+  "text": "topological-mass-formula-algebraic.md",
+  "leanSource": "topological-mass-formula-algebraic.lean",
+  "provenance": "authored"
+}

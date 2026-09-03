@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:horizon-conformal-invariance",
+  "kind": "proposition",
+  "title": "Conformal invariance at the jet horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-aeon",
+    "papers/quantum-observable-universe/blocks/def-observation"
+  ],
+  "cites": [
+    "references/penrose2010"
+  ],
+  "tags": [
+    "jet-horizon",
+    "conformal-invariance",
+    "aeon",
+    "observability",
+    "degree-zero"
+  ],
+  "leanRef": "qou:QOU.horizon_conformal_invariance",
+  "text": "horizon-conformal-invariance.md",
+  "provenance": "authored"
+}

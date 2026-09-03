@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sim-beta-decay-braid",
+  "@type": [
+    "folio:Simulator"
+  ],
+  "label": "sim:beta-decay-braid",
+  "kind": "simulator",
+  "title": "Beta decay as $T_{3,5}$ braid insertion: crossing budget and transfer matrices",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-neutron"
+  ],
+  "tags": [
+    "simulator",
+    "beta-decay",
+    "braid",
+    "T35",
+    "weak-vertex",
+    "transfer-matrix",
+    "hecke-algebra",
+    "skein-relation",
+    "interactive"
+  ],
+  "text": "beta-decay-braid-visualizer.md",
+  "provenance": "authored"
+}

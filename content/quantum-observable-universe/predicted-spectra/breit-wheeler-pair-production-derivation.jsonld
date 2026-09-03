@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-breit-wheeler-pair-production-derivation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:breit-wheeler-pair-production-derivation",
+  "kind": "remark",
+  "title": "Color-dressed photon, polarization models, and the $4$-term Breit--Wheeler normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-breit-wheeler-pair-production",
+    "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content",
+    "papers/quantum-observable-universe/blocks/rem-physics-names-knot-operations",
+    "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-breit-wheeler-pair-production",
+  "tags": [
+    "breit-wheeler",
+    "pair-production",
+    "photon",
+    "electron",
+    "positron",
+    "hecke-algebra",
+    "colored-photon",
+    "normal-form"
+  ],
+  "text": "breit-wheeler-pair-production-derivation.md",
+  "provenance": "authored"
+}

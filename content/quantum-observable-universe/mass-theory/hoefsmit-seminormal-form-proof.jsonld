@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-hoefsmit-seminormal-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hoefsmit-seminormal-form",
+  "kind": "proof",
+  "title": "Proof of hoefsmit seminormal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
+  ],
+  "text": "hoefsmit-seminormal-form-proof.md",
+  "provenance": "authored"
+}

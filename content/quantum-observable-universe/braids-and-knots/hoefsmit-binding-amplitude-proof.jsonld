@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-hoefsmit-binding-amplitude",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hoefsmit-binding-amplitude",
+  "kind": "proof",
+  "title": "Proof of hoefsmit binding amplitude",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-binding-amplitude"
+  ],
+  "text": "hoefsmit-binding-amplitude-proof.md",
+  "provenance": "authored"
+}

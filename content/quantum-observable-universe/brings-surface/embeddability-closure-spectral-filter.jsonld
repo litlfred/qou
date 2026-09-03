@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-embeddability-closure-spectral-filter",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:embeddability-closure-spectral-filter",
+  "kind": "remark",
+  "title": "Genus behaviour of the generation moves and the genus-$4$ spectral filter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-embeddability-closure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-embeddability-closure",
+  "tags": [
+    "embeddability",
+    "genus",
+    "torus-knot",
+    "generation",
+    "descent",
+    "localized-knot",
+    "spectral-filter"
+  ],
+  "text": "embeddability-closure-spectral-filter.md",
+  "provenance": "authored"
+}

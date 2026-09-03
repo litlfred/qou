@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-c-quantum-universe",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:c-quantum-universe",
+  "kind": "example",
+  "title": "Archimedean realisation: quantum universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "archimedean",
+    "cr-geometry"
+  ],
+  "leanRef": "qou:QOU.CRManifoldData",
+  "text": "c-quantum-universe.md",
+  "leanSource": "c-quantum-universe.lean",
+  "provenance": "authored"
+}

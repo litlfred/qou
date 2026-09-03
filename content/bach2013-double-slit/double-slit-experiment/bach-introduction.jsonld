@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/bach2013-double-slit/blocks/sec-bach-intro-prose",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:bach-intro-prose",
+  "kind": "prose",
+  "text": "bach-introduction.md",
+  "meta": {
+    "source": "arxiv:1210.6243",
+    "importedAt": "2026-03-25T00:00:00Z"
+  },
+  "provenance": "authored"
+}

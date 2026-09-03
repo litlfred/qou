@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-parameter-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:substrate-parameter-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the substrate parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-substrate-parameter-exists",
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction"
+  ],
+  "text": "substrate-parameter-exists-proof.md",
+  "provenance": "authored"
+}

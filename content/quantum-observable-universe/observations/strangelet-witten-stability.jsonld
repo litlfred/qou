@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-strangelet-witten-stability",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strangelet-witten-stability",
+  "kind": "remark",
+  "title": "Witten's strange matter hypothesis as a crossing-energy inequality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-strangelet-crossing-energy",
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-strangelet-crossing-energy",
+  "cites": [
+    "references/witten1984"
+  ],
+  "tags": [
+    "strangelet",
+    "witten",
+    "strange-quark-matter",
+    "stability",
+    "ground-state",
+    "genus"
+  ],
+  "text": "strangelet-witten-stability.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-residue-at-root",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:residue-at-root",
+  "kind": "proof",
+  "title": "Proof of residue at root",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-residue-at-root",
+    "papers/quantum-observable-universe/blocks/conj-gs-residue-at-root-existence"
+  ],
+  "text": "residue-at-root-proof.md",
+  "provenance": "authored"
+}

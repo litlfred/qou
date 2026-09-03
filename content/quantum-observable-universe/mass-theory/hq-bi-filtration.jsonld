@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-hq-bi-filtration",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hq-bi-filtration",
+  "kind": "definition",
+  "title": "Knot-indexed bi-filtration $\\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-bring-embeddable-knots",
+    "papers/quantum-observable-universe/blocks/rem-chirality-period-pairing"
+  ],
+  "cites": [
+    "references/kontsevich1995",
+    "references/bloch2000"
+  ],
+  "tags": [
+    "bi-filtration",
+    "depth-filtration",
+    "knot-indexed",
+    "graded-mikusinski",
+    "framework-definition"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration",
+  "text": "hq-bi-filtration.md",
+  "leanSource": "hq-bi-filtration.lean",
+  "provenance": "authored"
+}

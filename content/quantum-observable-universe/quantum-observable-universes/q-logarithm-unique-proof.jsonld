@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-logarithm-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-logarithm-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the $q$-logarithm primitive",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-logarithm-unique"
+  ],
+  "text": "q-logarithm-unique-proof.md",
+  "provenance": "authored"
+}

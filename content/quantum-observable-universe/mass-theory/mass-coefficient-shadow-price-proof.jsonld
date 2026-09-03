@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-mass-coefficient-shadow-price",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:mass-coefficient-shadow-price",
+  "kind": "proof",
+  "title": "Proof of mass coefficient shadow price",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price"
+  ],
+  "text": "mass-coefficient-shadow-price-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-lusztig-vs-hermitian-bar",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:lusztig-vs-hermitian-bar",
+  "kind": "proof",
+  "title": "Proof of lusztig vs hermitian bar",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lusztig-vs-hermitian-bar"
+  ],
+  "text": "lusztig-vs-hermitian-bar-proof.md",
+  "provenance": "authored"
+}

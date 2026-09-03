@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-hodge-star-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-hodge-star-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the categorical Hodge star",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-hodge-star-exists"
+  ],
+  "text": "categorical-hodge-star-exists-proof.md",
+  "provenance": "authored"
+}

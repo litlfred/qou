@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-braid-twist-flip",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:braid-twist-flip",
+  "kind": "definition",
+  "title": "Braid involutions: twist and flip",
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-holonomy-trefoil"
+  ],
+  "tags": [
+    "braid-group",
+    "involution",
+    "klein-four"
+  ],
+  "leanRef": "qou:QOU.BraidTwistFlip",
+  "text": "braid-twist-flip.md",
+  "leanSource": "braid-twist-flip.lean",
+  "provenance": "authored"
+}

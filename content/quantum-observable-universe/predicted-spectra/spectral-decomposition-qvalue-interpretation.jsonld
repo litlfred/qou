@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-spectral-decomposition-qvalue-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:spectral-decomposition-qvalue-interpretation",
+  "kind": "remark",
+  "title": "Torus knots on $\\Sigma_4$ as a self-dual basis: why the $Q$-value decomposition is exact and terminates at degree $2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue",
+  "tags": [
+    "spectral-decomposition",
+    "q-value",
+    "torus-knots",
+    "hecke-algebra",
+    "beta-decay"
+  ],
+  "text": "spectral-decomposition-qvalue-interpretation.md",
+  "provenance": "authored"
+}

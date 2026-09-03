@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-poisson-object",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:poisson-object",
+  "kind": "definition",
+  "title": "Internal Poisson object",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/def-higher-forms"
+  ],
+  "cites": [
+    "references/kock2004"
+  ],
+  "tags": [
+    "poisson",
+    "bivector",
+    "pullback",
+    "differential-calculus"
+  ],
+  "leanRef": "qou:QOU.PoissonObject",
+  "text": "poisson-object.md",
+  "leanSource": "poisson-object.lean",
+  "provenance": "authored"
+}

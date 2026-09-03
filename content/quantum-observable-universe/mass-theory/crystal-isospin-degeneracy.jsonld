@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crystal-isospin-degeneracy",
+  "kind": "proposition",
+  "title": "Crystal-limit isospin degeneracy: $S_{\\mathrm{crystal}}$ is invariant under $\\sigma_i \\leftrightarrow \\sigma_i^{-1}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization",
+    "papers/quantum-observable-universe/blocks/prop-content-scaling-correspondence",
+    "papers/quantum-observable-universe/blocks/prop-spin-involution-lp-dual-invariance"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/lecouvey2007"
+  ],
+  "tags": [
+    "crystal-limit",
+    "term-7",
+    "isospin",
+    "tritium",
+    "helium-3",
+    "shadow-price",
+    "q-curvature",
+    "shell-correction"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.crystal_isospin_degeneracy",
+  "text": "crystal-isospin-degeneracy.md",
+  "leanSource": "crystal-isospin-degeneracy.lean",
+  "provenance": "authored"
+}

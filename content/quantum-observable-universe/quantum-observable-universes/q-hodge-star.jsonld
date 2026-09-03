@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-hodge-star",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-hodge-star",
+  "kind": "definition",
+  "title": "$q$-Hodge star",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-hodge-star",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "hodge-star",
+    "deformation"
+  ],
+  "leanRef": "qou:QOU.QHodgeStar",
+  "text": "q-hodge-star.md",
+  "leanSource": "q-hodge-star.lean",
+  "provenance": "authored"
+}

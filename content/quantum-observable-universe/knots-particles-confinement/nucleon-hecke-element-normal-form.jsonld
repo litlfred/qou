@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-nucleon-hecke-element-normal-form",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:nucleon-hecke-element-normal-form",
+  "kind": "example",
+  "title": "Six-term normal form and net of the nucleon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-nucleon-hecke-element"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-nucleon-hecke-element",
+  "tags": [
+    "nucleon",
+    "normal-form",
+    "hecke-algebra",
+    "net",
+    "witness"
+  ],
+  "text": "nucleon-hecke-element-normal-form.md",
+  "provenance": "authored"
+}

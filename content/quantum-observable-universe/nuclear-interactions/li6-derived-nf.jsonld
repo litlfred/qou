@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-li6-derived-nf",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:li6-derived-nf",
+  "kind": "example",
+  "title": "Li-6: post-magic operator transition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+  "tags": [
+    "lithium",
+    "normal-form",
+    "derived",
+    "operator-transition",
+    "post-magic",
+    "open-shell"
+  ],
+  "text": "li6-derived-nf.md",
+  "provenance": "authored"
+}

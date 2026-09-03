@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-wedderburn-bratteli-recursion",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wedderburn-bratteli-recursion",
+  "kind": "proposition",
+  "title": "Wedderburn--Bratteli recursion for Jones--Markov weights $y_\\lambda$ at $H_n(R, q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-k-derivation-procedure",
+    "papers/quantum-observable-universe/blocks/prop-explicit-alpha-k-h3"
+  ],
+  "tags": [
+    "wedderburn",
+    "bratteli",
+    "recursion",
+    "jones-markov",
+    "y-lambda",
+    "q-content",
+    "hoefsmit",
+    "structural-derivation"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.wedderburn_bratteli_recursion",
+  "text": "wedderburn-bratteli-recursion.md",
+  "leanSource": "wedderburn-bratteli-recursion.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:brings-surface",
+  "kind": "definition",
+  "title": "Bring's surface",
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-braid-group-action",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-interpretation",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic",
+    "papers/quantum-observable-universe/blocks/rem-color-bundles",
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness"
+  ],
+  "tags": [
+    "algebraic-geometry",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.BringsSurface",
+  "text": "brings-surface-def.md",
+  "leanSource": "brings-surface-def.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-collatz-three-forms",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:collatz-three-forms",
+  "kind": "remark",
+  "title": "Three faces of the $q$-Collatz conjecture",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-contact-boundary"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-collatz-contact-boundary",
+  "tags": [
+    "collatz",
+    "hecke-algebra",
+    "markov-trace",
+    "gaussian-integers",
+    "contact-order",
+    "saturation"
+  ],
+  "text": "collatz-three-forms.md",
+  "provenance": "authored"
+}

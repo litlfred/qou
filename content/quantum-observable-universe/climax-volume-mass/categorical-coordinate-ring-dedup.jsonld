@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-coordinate-ring-dedup",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-coordinate-ring-dedup",
+  "kind": "remark",
+  "title": "$R[i,q^{\\pm1}]$ as the ambient deformation ring: deduplicating four complexifications",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/rem-commutative-crossing-energy",
+    "papers/quantum-observable-universe/blocks/prop-categorical-coordinate-ring",
+    "papers/quantum-observable-universe/blocks/rem-laplace-fourier-wick-rotation",
+    "papers/quantum-observable-universe/blocks/rem-complex-substrate-interpretation",
+    "papers/quantum-observable-universe/blocks/rem-i-as-braiding-orientation",
+    "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic",
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
+    "papers/quantum-observable-universe/blocks/rem-u1-phase-tube"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "categorical-coordinate",
+    "deformation-ring",
+    "complexification",
+    "wick-rotation",
+    "dedup"
+  ],
+  "text": "categorical-coordinate-ring-dedup.md",
+  "provenance": "authored"
+}

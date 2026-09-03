@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-feynman-markov-identification",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:feynman-markov-identification",
+  "kind": "lemma",
+  "title": "Markov-weighted eigenbasis sum equals the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-feynman-eigenbasis-decomposition",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-feynman-markov-identification"
+  ],
+  "tags": [
+    "markov-trace",
+    "wedderburn",
+    "feynman",
+    "hecke",
+    "identification"
+  ],
+  "leanRef": "qou:QOU.FeynmanPathIntegrals.markov_identification",
+  "text": "feynman-markov-identification.md",
+  "provenance": "authored"
+}

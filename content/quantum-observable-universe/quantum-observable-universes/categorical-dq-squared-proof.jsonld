@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-dq-squared",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-dq-squared",
+  "kind": "proof",
+  "title": "Proof of Non-vanishing of $d_q^2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared"
+  ],
+  "leanRef": "qou:QOU.categorical_dq_squared",
+  "text": "categorical-dq-squared-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/cor-knot-factor-amphicheiral",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:knot-factor-amphicheiral",
+  "kind": "corollary",
+  "title": "Knot factor for Markov-amphicheiral knots: sum of positive squares",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-factor-spectral-form"
+  ],
+  "tags": [
+    "knot-factor",
+    "amphicheiral",
+    "figure-eight",
+    "alternating-block",
+    "tritium",
+    "helium-3"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.knot_factor_amphicheiral",
+  "text": "knot-factor-amphicheiral.md",
+  "provenance": "authored"
+}

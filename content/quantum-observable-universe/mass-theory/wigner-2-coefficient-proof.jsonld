@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-wigner-2-coefficient",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:wigner-2-coefficient",
+  "kind": "proof",
+  "title": "Proof of wigner 2 coefficient",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wigner-2-coefficient"
+  ],
+  "text": "wigner-2-coefficient-proof.md",
+  "provenance": "authored"
+}

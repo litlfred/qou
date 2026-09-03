@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-dagger-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:dagger-su2",
+  "kind": "example",
+  "title": "Involutive structure on $\\mathrm{Rep}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger",
+    "papers/quantum-observable-universe/blocks/ex-frobenius-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-involutive-structure",
+  "tags": [
+    "su2",
+    "involutive"
+  ],
+  "leanRef": "qou:QOU.Examples.su2Dagger",
+  "text": "dagger-su2.md",
+  "leanSource": "dagger-su2.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-operator-selection-lp",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:operator-selection-lp",
+  "kind": "proposition",
+  "title": "Knot operator selection as linear program with LP duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp"
+  ],
+  "tags": [
+    "linear-programming",
+    "operator-selection",
+    "lp-duality",
+    "frobenius-dual",
+    "gram-matrix",
+    "knot-operator",
+    "motivic-shadows"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.operator_selection_lp",
+  "text": "operator-selection-lp.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-tower-geometric-lower-bound",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:tower-geometric-lower-bound",
+  "kind": "conjecture",
+  "title": "Super-exponential brane-tower growth (GAP-A-3)",
+  "tags": [
+    "binding",
+    "brane-tower",
+    "level-selection",
+    "gap-a-3",
+    "plancherel"
+  ],
+  "leanRef": "qou:QOU.Mass.LevelSelection.TowerGeometricLowerBound",
+  "text": "tower-geometric-lower-bound.md",
+  "provenance": "authored"
+}

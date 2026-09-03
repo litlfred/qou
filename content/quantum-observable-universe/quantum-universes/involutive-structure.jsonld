@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-involutive-structure",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:involutive-structure",
+  "kind": "definition",
+  "title": "Involutive structure ($\\ast$-structure)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-dagger-su2"
+  ],
+  "tags": [
+    "category-theory",
+    "involutive"
+  ],
+  "leanRef": "qou:QOU.InvolutiveStructure",
+  "text": "involutive-structure.md",
+  "leanSource": "involutive-structure.lean",
+  "provenance": "authored"
+}

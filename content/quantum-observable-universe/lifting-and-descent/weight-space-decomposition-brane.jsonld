@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-weight-space-decomposition",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:weight-space-decomposition",
+  "kind": "remark",
+  "title": "Weight-space decomposition of the harmonic basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+    "papers/quantum-observable-universe/blocks/rem-j1e-local-states"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+  "tags": [
+    "weight-decomposition",
+    "su2",
+    "harmonic-forms"
+  ],
+  "text": "weight-space-decomposition-brane.md",
+  "provenance": "authored"
+}

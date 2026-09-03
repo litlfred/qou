@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/lem-ugb-generator-choice",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:ugb-generator-choice",
+  "kind": "lemma",
+  "title": "Generator choice in division",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-unital-groebner-basis",
+    "papers/unital-groebner-bases/blocks/def-admissible-system"
+  ],
+  "tags": [
+    "groebner-basis",
+    "division"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.lemma_generator_choice",
+  "text": "lemma-generator-choice.md",
+  "leanSource": "lemma-generator-choice.lean",
+  "provenance": "authored"
+}

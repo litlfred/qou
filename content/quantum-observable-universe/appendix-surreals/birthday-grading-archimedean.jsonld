@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-birthday-grading-archimedean",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:birthday-grading-archimedean",
+  "kind": "remark",
+  "title": "Birthday grading as a depth gauge and its archimedean sub-category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-birthday-grading"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-birthday-grading",
+  "tags": [
+    "surreal-numbers",
+    "birthday",
+    "archimedean",
+    "grading",
+    "filtration"
+  ],
+  "text": "birthday-grading-archimedean.md",
+  "provenance": "authored"
+}

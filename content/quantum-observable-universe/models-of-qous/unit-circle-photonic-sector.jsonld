@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-unit-circle-photonic-sector",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:unit-circle-photonic-sector",
+  "kind": "remark",
+  "title": "Phase on the circle, mass off it",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "symmetric-point",
+    "unit-circle",
+    "photon",
+    "crossing-energy"
+  ],
+  "text": "unit-circle-photonic-sector.md",
+  "provenance": "authored"
+}

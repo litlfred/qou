@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-baryon-product-from-alt",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:baryon-product-from-alt",
+  "kind": "proposition",
+  "title": "The baryon integrand $\\prod_k dc_k/dz$ is the $\\mathrm{Alt}^3$-isotype of the color-tube Jacobian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation"
+  ],
+  "cites": [
+    "references/fulton1997",
+    "references/macdonald1995"
+  ],
+  "tags": [
+    "schur-weyl",
+    "alternating-representation",
+    "wedderburn",
+    "frobenius-pairing",
+    "color-tube",
+    "vandermonde",
+    "baryon",
+    "categorical",
+    "archimedean-universe"
+  ],
+  "leanRef": "qou:QOU.Archimedean.baryonProductFromAlt",
+  "text": "baryon-product-from-alt.md",
+  "leanSource": "baryon-product-from-alt.lean",
+  "provenance": "authored"
+}

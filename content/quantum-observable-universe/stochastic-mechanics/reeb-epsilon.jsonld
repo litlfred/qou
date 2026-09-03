@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:reeb-epsilon",
+  "kind": "definition",
+  "title": "The Reeb infinitesimal $\\varepsilon$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation",
+    "papers/quantum-observable-universe/blocks/rem-calculus-up-to-epsilon"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986"
+  ],
+  "tags": [
+    "reeb",
+    "infinitesimal",
+    "derivation",
+    "surreal",
+    "categorical-primitive",
+    "classical-limit"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.ReebEpsilon",
+  "text": "reeb-epsilon.md",
+  "leanSource": "reeb-epsilon.lean",
+  "provenance": "authored"
+}

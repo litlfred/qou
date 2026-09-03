@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-archimedean-shadow",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-archimedean-shadow",
+  "kind": "remark",
+  "title": "Skein relations as an archimedean shadow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding",
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding",
+  "tags": [
+    "skein-relations",
+    "jones-polynomial",
+    "r-matrix"
+  ],
+  "text": "skein-archimedean-shadow.md",
+  "provenance": "authored"
+}

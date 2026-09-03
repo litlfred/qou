@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-action-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-action-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-action-unique"
+  ],
+  "text": "categorical-action-unique-proof.md",
+  "provenance": "authored"
+}

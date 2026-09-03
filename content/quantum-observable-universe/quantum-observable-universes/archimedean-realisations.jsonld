@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-realisations",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-realisations",
+  "kind": "remark",
+  "title": "Archimedean realisations of categorical structures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+    "papers/quantum-observable-universe/blocks/prop-variational-equations"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+  "tags": [
+    "archimedean",
+    "realisations"
+  ],
+  "text": "archimedean-realisations.md",
+  "provenance": "authored"
+}

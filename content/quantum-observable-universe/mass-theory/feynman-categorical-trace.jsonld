@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-feynman-categorical-trace",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:feynman-categorical-trace",
+  "kind": "proposition",
+  "title": "Feynman transition amplitude as categorical trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-feynman-categorical-trace"
+  ],
+  "tags": [
+    "path-integral",
+    "feynman",
+    "categorical-trace",
+    "markov-trace",
+    "eigenbasis"
+  ],
+  "leanRef": "qou:QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace",
+  "text": "feynman-categorical-trace.md",
+  "provenance": "authored"
+}

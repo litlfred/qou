@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-curvature-rank",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:curvature-rank",
+  "kind": "definition",
+  "title": "Curvature-rank $r(T_w)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-curvature-2-cocycle"
+  ],
+  "cites": [
+    "references/bokutchen2014"
+  ],
+  "tags": [
+    "curvature-rank",
+    "gb-filtration",
+    "normal-form",
+    "hecke",
+    "reduction"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.curvatureRank",
+  "text": "curvature-rank.md",
+  "leanSource": "curvature-rank.lean",
+  "provenance": "authored"
+}

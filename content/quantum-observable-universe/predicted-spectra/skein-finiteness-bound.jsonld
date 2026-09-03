@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skein-finiteness-bound",
+  "kind": "proposition",
+  "title": "Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "tags": [
+    "finiteness",
+    "stability",
+    "skein-polynomial",
+    "transfer-matrix",
+    "eigenvalue",
+    "drip-line",
+    "nuclear-chart"
+  ],
+  "leanRef": "qou:QOU.Archimedean.skein_finiteness_bound",
+  "text": "skein-finiteness-bound.md",
+  "leanSource": "skein-finiteness-bound.lean",
+  "provenance": "authored"
+}

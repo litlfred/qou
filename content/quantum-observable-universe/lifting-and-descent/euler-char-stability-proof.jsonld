@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-euler-char-stability",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:euler-char-stability",
+  "kind": "proof",
+  "title": "Proof of Stability of the Euler characteristic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-euler-char-stability"
+  ],
+  "text": "euler-char-stability-proof.md",
+  "provenance": "authored"
+}

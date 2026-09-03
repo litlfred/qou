@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-atomic-nf-witness-procedure",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:atomic-nf-witness-procedure",
+  "kind": "remark",
+  "title": "Construction and certification procedure for the atomic normal-form witness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atomic-nf-witness",
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-atomic-nf-witness",
+  "tags": [
+    "atomic-braid",
+    "normal-form",
+    "witness",
+    "diamond-lemma",
+    "pauli-character"
+  ],
+  "text": "atomic-nf-witness-procedure.md",
+  "provenance": "authored"
+}

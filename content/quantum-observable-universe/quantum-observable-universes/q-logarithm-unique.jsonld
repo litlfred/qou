@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-logarithm-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-logarithm-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the $q$-logarithm primitive",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-logarithm-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-logarithm-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "q-logarithm",
+    "primitive",
+    "hopf-algebra"
+  ],
+  "leanRef": "qou:QOU.QLogarithm.unique",
+  "text": "q-logarithm-unique.md",
+  "leanSource": "q-logarithm-unique.lean",
+  "provenance": "authored"
+}

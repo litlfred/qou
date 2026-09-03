@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:information-speed-of-light",
+  "kind": "definition",
+  "title": "Speed of light as Lieb--Robinson velocity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-connection",
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/rem-light-cone-affine"
+  ],
+  "tags": [
+    "speed-of-light",
+    "information-theory",
+    "lieb-robinson",
+    "causal-structure",
+    "q-connection"
+  ],
+  "leanRef": "qou:QOU.Information.speedOfLight",
+  "text": "information-speed-of-light.md",
+  "leanSource": "information-speed-of-light.lean",
+  "provenance": "authored"
+}

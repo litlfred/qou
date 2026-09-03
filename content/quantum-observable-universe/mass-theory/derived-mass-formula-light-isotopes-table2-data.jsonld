@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-derived-mass-formula-light-isotopes-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:derived-mass-formula-light-isotopes-table2-data",
+  "kind": "table",
+  "title": "Data table 2 from prop:derived-mass-formula-light-isotopes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-derived-mass-formula-light-isotopes"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "derived-mass-formula-light-isotopes-table2-data.md",
+  "provenance": "authored"
+}

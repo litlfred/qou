@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:qu-to-qou",
+  "kind": "theorem",
+  "title": "Quantum universe with observability and categorical lifting is a QOU",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+    "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-qu-to-qou"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-qu-to-qou-su2"
+  ],
+  "tags": [
+    "main-theorem",
+    "qou",
+    "yekutieli",
+    "descent"
+  ],
+  "leanRef": "qou:QOU.Torsion.YekutieliTriple.qu_to_qou",
+  "text": "qu-to-qou.md",
+  "leanSource": "qu-to-qou.lean",
+  "provenance": "authored"
+}

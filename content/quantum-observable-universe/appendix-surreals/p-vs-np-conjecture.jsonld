@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-p-vs-np-qou",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:p-vs-np-qou",
+  "kind": "conjecture",
+  "title": "P vs NP in the QOU: classical-limit separation of BQP-width classes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus"
+  ],
+  "cites": [
+    "references/cook1971",
+    "references/freedman2003"
+  ],
+  "tags": [
+    "tier:famous",
+    "p-vs-np",
+    "millennium-problem",
+    "complexity",
+    "bqp",
+    "reeb-period",
+    "classical-limit",
+    "surreal",
+    "speculative"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.PvsNPQou",
+  "text": "p-vs-np-conjecture.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-geometric-langlands",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-geometric-langlands",
+  "kind": "conjecture",
+  "title": "$q$-Geometric Langlands correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-hecke-eigensheaf",
+    "papers/quantum-observable-universe/blocks/def-q-langlands-dual"
+  ],
+  "cites": [
+    "references/frenkel2007",
+    "references/aganagic2018"
+  ],
+  "tags": [
+    "tier:keystone",
+    "geometric-langlands",
+    "q-deformation",
+    "main-conjecture"
+  ],
+  "leanRef": "qou:QOU.QGeometricLanglands.QGeometricLanglandsConjecture",
+  "text": "q-gl-conjecture.md",
+  "provenance": "authored"
+}

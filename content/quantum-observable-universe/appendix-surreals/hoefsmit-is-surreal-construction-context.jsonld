@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hoefsmit-is-surreal-construction-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hoefsmit-is-surreal-construction-context",
+  "kind": "remark",
+  "title": "Hoefsmit-as-surreal — eigencomponent recursion, tableau counting, and consequences",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-is-surreal-construction",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hoefsmit-is-surreal-construction",
+  "tags": [
+    "surreal",
+    "hoefsmit",
+    "young-jucys-murphy",
+    "conway-construction",
+    "appendix"
+  ],
+  "text": "hoefsmit-is-surreal-construction-context.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-inter-shell-operator",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:inter-shell-operator",
+  "kind": "definition",
+  "title": "Inter-shell torus-knot operator $\\Phi_{\\mathrm{shell}}^{(\\ell)}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-chebyshev-torus-coefficients"
+  ],
+  "tags": [
+    "torus-knot",
+    "shell-binding",
+    "transfer-matrix",
+    "hecke-algebra",
+    "groebner-basis",
+    "nuclear-structure"
+  ],
+  "leanRef": "qou:QOU.Archimedean.InterShellOperator",
+  "text": "inter-shell-operator.md",
+  "leanSource": "inter-shell-operator.lean",
+  "provenance": "authored"
+}

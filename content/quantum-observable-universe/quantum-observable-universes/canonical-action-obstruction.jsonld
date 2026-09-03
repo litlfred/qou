@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-canonical-action-obstruction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:canonical-action-obstruction",
+  "kind": "remark",
+  "title": "Scalar-ambiguity obstruction of the canonical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition",
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-stokes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+  "tags": [
+    "action",
+    "canonical",
+    "observability",
+    "yekutieli",
+    "obstruction"
+  ],
+  "text": "canonical-action-obstruction.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-pure-colour-sublocus",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pure-colour-sublocus",
+  "kind": "remark",
+  "title": "Pure colour sublocus and confinement constraint",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-color-tube-subloci"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "tags": [
+    "colour",
+    "sublocus",
+    "confinement",
+    "color-tube",
+    "resolvent"
+  ],
+  "text": "pure-colour-sublocus.md",
+  "provenance": "authored"
+}

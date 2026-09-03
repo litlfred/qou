@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-stat-mech-computational-horizon-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:stat-mech-computational-horizon-table-data",
+  "kind": "table",
+  "title": "Data table from rem:stat-mech-computational-horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-stat-mech-computational-horizon"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "stat-mech-computational-horizon-table-data.md",
+  "provenance": "authored"
+}

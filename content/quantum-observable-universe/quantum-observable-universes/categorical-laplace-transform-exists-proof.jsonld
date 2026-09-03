@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-laplace-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-laplace-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the categorical Laplace transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-laplace-exists"
+  ],
+  "text": "categorical-laplace-transform-exists-proof.md",
+  "provenance": "authored"
+}

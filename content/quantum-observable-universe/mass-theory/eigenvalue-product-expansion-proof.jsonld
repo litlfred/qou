@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-eigenvalue-product-expansion",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:eigenvalue-product-expansion",
+  "kind": "proof",
+  "title": "Proof of eigenvalue product expansion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-eigenvalue-product-expansion"
+  ],
+  "text": "eigenvalue-product-expansion-proof.md",
+  "provenance": "authored"
+}

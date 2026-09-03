@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-einstein-ether-substrate",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:einstein-ether-substrate",
+  "kind": "remark",
+  "title": "Einstein's ether and the categorical substrate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action",
+    "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment",
+  "tags": [
+    "substrate",
+    "einstein",
+    "ether",
+    "categorical",
+    "foundations"
+  ],
+  "text": "einstein-ether-substrate.md",
+  "provenance": "authored"
+}

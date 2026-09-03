@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-b1-torus-knot-rows-theorem",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:b1-torus-knot-rows-theorem",
+  "kind": "proposition",
+  "title": "The depth correspondence is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-b1-figure-8-row-theorem"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/suslin1991"
+  ],
+  "tags": [
+    "B1-discharge",
+    "torus-knots",
+    "garoufalidis-le",
+    "chern-simons-rational",
+    "tate-twist",
+    "theorem-level",
+    "graded-mikusinski"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.B1TorusKnotRowsTheorem.b1_torus_knot_rows",
+  "text": "b1-torus-knot-rows-theorem.md",
+  "provenance": "authored"
+}

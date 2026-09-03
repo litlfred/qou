@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sim-knot-periodic-table",
+  "@type": [
+    "folio:Simulator"
+  ],
+  "label": "sim:knot-periodic-table",
+  "kind": "simulator",
+  "title": "Knot-Centric Periodic Table with Beta Decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence"
+  ],
+  "tags": [
+    "periodic-table",
+    "knot-centric",
+    "nuclear-shell",
+    "borromean",
+    "transfer-matrix",
+    "skein-polynomial",
+    "beta-decay",
+    "knot-diagram",
+    "interactive"
+  ],
+  "text": "knot-periodic-table-sim.md",
+  "provenance": "authored"
+}

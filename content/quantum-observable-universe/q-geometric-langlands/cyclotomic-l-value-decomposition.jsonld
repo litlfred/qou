@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-cyclotomic-l-value-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cyclotomic-l-value-decomposition",
+  "kind": "proposition",
+  "title": "Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\\beta(3) = \\pi^3/32$ as a corollary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-dimension-synthesis-all-depths",
+    "papers/quantum-observable-universe/blocks/prop-jonquiere-cyclotomic-tate-rationality"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "dirichlet-l-value",
+    "catalan-beta",
+    "gauss-sum",
+    "hurwitz-lerch",
+    "cyclotomic",
+    "polylogarithm",
+    "graded-mikusinski",
+    "theorem-level",
+    "analytic-number-theory-bridge"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.CyclotomicLValueDecomposition.beta_3_from_jonquiere",
+  "text": "cyclotomic-l-value-decomposition.md",
+  "provenance": "authored"
+}

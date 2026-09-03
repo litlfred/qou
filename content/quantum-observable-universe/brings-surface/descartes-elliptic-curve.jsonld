@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:descartes-elliptic-curve",
+  "kind": "proposition",
+  "title": "The Descartes elliptic curve $\\mathcal{E}_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic"
+  ],
+  "tags": [
+    "elliptic-curve",
+    "descartes",
+    "color-fibration",
+    "substrate-parameter",
+    "golden-ratio",
+    "weierstrass"
+  ],
+  "leanRef": "qou:QOU.Archimedean.descartes_elliptic_curve",
+  "text": "descartes-elliptic-curve.md",
+  "leanSource": "descartes-elliptic-curve.lean",
+  "provenance": "authored"
+}

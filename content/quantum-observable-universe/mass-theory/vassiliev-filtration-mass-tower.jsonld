@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-vassiliev-filtration-mass-tower",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vassiliev-filtration-mass-tower",
+  "kind": "remark",
+  "title": "The mass-tower $h$-expansion is a Vassiliev filtration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-archimedean-image-table",
+    "papers/quantum-observable-universe/blocks/rem-operator-valued-magnitude-budget"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+  "cites": [
+    "references/birmanlin1993",
+    "references/jones1987",
+    "references/reshetikhin1991"
+  ],
+  "tags": [
+    "vassiliev",
+    "finite-type",
+    "filtration",
+    "mass-tower",
+    "exposition",
+    "optimization"
+  ],
+  "text": "vassiliev-filtration-mass-tower.md",
+  "provenance": "authored"
+}

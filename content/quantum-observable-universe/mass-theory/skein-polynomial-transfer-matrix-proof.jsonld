@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-skein-polynomial-transfer-matrix",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skein-polynomial-transfer-matrix",
+  "kind": "proof",
+  "title": "Proof of skein polynomial transfer matrix",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix"
+  ],
+  "text": "skein-polynomial-transfer-matrix-proof.md",
+  "provenance": "authored"
+}

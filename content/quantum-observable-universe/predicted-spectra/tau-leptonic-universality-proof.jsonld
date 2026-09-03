@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-tau-leptonic-universality",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:tau-leptonic-universality",
+  "kind": "proof",
+  "title": "Proof of tau leptonic universality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tau-leptonic-universality"
+  ],
+  "text": "tau-leptonic-universality-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-zeta8-witness-level2-su2",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:zeta8-witness-level2-su2",
+  "kind": "proof",
+  "title": "Proof of zeta8 witness level2 su2",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-zeta8-witness-level2-su2"
+  ],
+  "text": "zeta8-witness-level2-su2-proof.md",
+  "provenance": "authored"
+}

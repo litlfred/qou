@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-crystal-basis-resolves-mass-tower-open-problems",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
+  "kind": "proposition",
+  "title": "Crystal-basis correspondence (Brundan-Kleshchev + Type-B folding) reduces three mass-tower open problems to crystal-graph combinatorics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-kazhdan-lusztig-classical-limit"
+  ],
+  "cites": [
+    "references/brundankleshchev2009",
+    "references/kashiwara1991",
+    "references/khovanovlauda2009",
+    "references/lecouvey2007",
+    "references/mayer1949"
+  ],
+  "tags": [
+    "crystal-basis",
+    "klr-algebra",
+    "kashiwara-crystal",
+    "brundan-kleshchev",
+    "type-b-folding",
+    "kazhdan-lusztig",
+    "chirality-factor",
+    "term-7",
+    "z-habiro",
+    "open-problem-reduction"
+  ],
+  "leanRef": "qou:QOU.Archimedean.crystal_basis_reduction",
+  "text": "crystal-basis-resolves-mass-tower-open-problems.md",
+  "leanSource": "crystal-basis-resolves-mass-tower-open-problems.lean",
+  "provenance": "authored"
+}

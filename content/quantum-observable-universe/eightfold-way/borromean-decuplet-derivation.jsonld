@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-borromean-decuplet",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borromean-decuplet",
+  "kind": "proposition",
+  "title": "The baryon decuplet as symmetric Borromean channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon"
+  ],
+  "leanRef": "qou:QOU.Eightfold.RowCapObstruction.eightfold_channels_at_three",
+  "text": "borromean-decuplet-derivation.md",
+  "provenance": "authored"
+}
