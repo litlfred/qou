@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:24:07Z
-updated_at: 2026-08-28T15:42:09Z
+updated_at: 2026-09-03T04:43:07Z
 ---
 
 Claimed by branch `claude/q0-anchor-refill-gate-2026-08-28`, PR #5891.
@@ -139,3 +139,53 @@ The 1678 backlog. The gate stops the inflow; draining is separate work, and the
 partition says how to scope it: UNDECLARED (1193) is a manifest+builder problem
 over 1149 producers, NOT_BUILDER (356) needs producer migration, NO_PRODUCER (55)
 are orphans needing a producer or a deletion.
+
+
+## 2026-09-03 — continuing on claude/q0-refill-147-2026-09-03, PR #6454
+
+PR #5891 (this bean's original claim) is MERGED; the gate is live and it is now
+firing. Its own cause partition said the drain was 'a manifest+builder problem
+over 1149 producers' and left it open. This is the first tranche of that drain,
+scoped to what the gate actually reports.
+
+**The 150 the ratchet calls NEW is two things, and neither is quiet debt.**
+  * The baseline records generated_from_rev origin/main 03f57c2b75 (2026-08-28)
+    but was committed into a tree from 08-30/09-01. Measured: 114 of the 150
+    already existed on main at the commit that last touched the baseline, and
+    0 of the 150 existed at 03f57c2b75. Stale on arrival.
+  * Add-commit dates: 73 on 08-30, 48 on 08-31, 15/7/1 on 09-01..03. Almost all
+    t7qv / M1 / milnor. Live output, still arriving — consistent with this
+    bean's own ~50%-of-arrivals rate.
+
+**Triage of the 150** (cone trace for q0 reads + WitnessBuilder check):
+  115  UNDECLARED, reads q0, no muon signal  -> declared physical_proton (#6454)
+   22  NOT_BUILDER (hand-rolled)             -> producer-side, M1 arc's own
+   10  no q0 signal at all                   -> want 'independent' + reason
+    1  muon_pin_A_residual_surface_audit     -> (E1) comparison, needs q0Values
+    2  NO_PRODUCER (bnn/bpp-higher-a-resumable)
+
+The manifest declaration cannot move a number: q_parameter keys on ideal_muon
+alone (substrate/q_parameter.py:108), so these stems already resolved to proton.
+The entry only makes the declaration positive so build()'s require_declared
+passes. Verified both directions.
+
+**Correction to my own first pass.** I reported 24 witnesses as having no
+producer. 22 of them do — the resolver keyed on scriptFile and on a
+witness-stem->script-stem guess, and the M1 cluster names its producer after the
+epic (m1-area-symmetry.witness.json <- wlambda_covariance_epic_M1_area_symmetry.py).
+All 22 are hand-rolled, so the exclusion stands; only the reason was wrong.
+Any witness->producer tool keyed on stem is blind to the whole
+wlambda_covariance_epic_* family.
+
+**Detector blindness, measured, not fixed.** _Q0_FIELDS is a four-name allowlist
+('q_0_50dps','q0','q_0','q0_50dps'). Of the 150, 29 record a prefix-matching q0
+value somewhere and 14 record it ONLY under a key the allowlist does not know
+(q, q0_value, q0Value, q0_muon_pin, q0_proton_pin, q0_current, z, z_1,
+q_core_window, abs_mu_sym). Payload evidence outranks the manifest in
+resolve_q0_anchor_payload_first, so those are witnesses that PROVE their own pin
+and the resolver cannot read it.
+
+**Environment hazard (qou-x5mi) probed, not assumed.** Three of the smallest
+declared producers re-run and diff byte-identical to HEAD modulo provenance —
+only +q0Anchor/+q0Value. A bounded 93-producer sweep is running to establish
+how far that generalises; anything that moves a number is reverted, not landed.
