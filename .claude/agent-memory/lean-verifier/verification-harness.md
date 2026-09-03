@@ -155,3 +155,60 @@ Measured 2026-08-30 on PR #6278, by running them rather than reading them:
 **Baselines after the fix** (re-measure, do not quote): FQN propose **0** pairs,
 `--check-baseline` **0** confirmed collisions; surface audit `L~L` **0/0** with
 **1** private pair reported as excluded, `L~S` 76/48, `S~S` 38/25.
+
+
+---
+
+## Stale import cone — the restore is a snapshot
+
+The restore-first recipe above gives you oleans built at whatever commit the
+cache branch was seeded from, **not** at your checkout. `lean`-direct resolves
+every `import QOU.X` out of those oleans, so a file whose import cone changed
+since the seed is checked against the *old* declarations — silently, with no
+warning and no staleness signal anywhere in the output.
+
+**Measured 2026-09-03.** `QOU/BraidKnot/KazhdanLusztigClassicalLimit.olean` is
+dated **2026-07-02**; its source last changed **2026-08-25**, in commit
+`3e3d3046d1` *"repair KazhdanLusztigClassicalLimit — the conjecture field
+asserted nothing"* — the commit that ADDED the load-bearing `q = 1 →`
+hypothesis. Against the restored olean:
+
+    #check @KazhdanLusztigClassicalLimit.kl_compatible_with_tau
+    -- ... (T : NormalForm) -> statSign (klMap T) = 1 or = -1      <-- NO `q = 1`
+
+so a correct `... hq T` fails with *"argument `hq` has type `q = 1` but is
+expected to have type `NormalForm q`"*. The error points at your call site and
+says nothing about the cache. **I first "fixed" it by blaming dot notation and
+wrote that wrong diagnosis into a source comment.** The code was right the whole
+time.
+
+**How to tell**, before you trust a green or debug a red:
+
+    ls -l <olean>            # cache seed date
+    git log -1 --format=%ad -- <source>.lean
+    # source newer than olean => you are NOT checking against your checkout
+
+**The fix — build the cone from current source into a scratch dir and PREPEND
+it**, which shadows the stale oleans without disturbing the restore:
+
+    FRESH=/tmp/freshlib; rm -rf "$FRESH"; mkdir -p "$FRESH"
+    export LEAN_PATH="$FRESH:$LEAN_PATH"
+    for m in QOU/Basic QOU/BraidKnot/HeckeAnyonicSubstrate \
+             QOU/BraidKnot/CrystalGraphRealization \
+             QOU/BraidKnot/KazhdanLusztigClassicalLimit; do
+      mkdir -p "$FRESH/$(dirname $m)"
+      lean "$SRC/$m.lean" -o "$FRESH/$m.olean"
+    done
+
+Four modules took well under a minute here. After that the same file was
+**exit 0** with clean axioms. Do NOT reach for `lake build` — it evicts the
+restore (TRAP above).
+
+**Scope note, so this is not read as wider than it is.** A stale import cone
+does not invalidate every restore-based verification: check whether the
+declarations you actually used moved. Two other files I verified the same day
+import `QOU/Archimedean/BorromeanVolumeCatalan` (source 2026-08-30, olean
+2026-07-02) — one commit touched it in the window, and `git diff` showed **zero**
+changes to any `vol_B3` / `catalan_G` line, so those greens stand. Measure the
+specific declarations; do not assume either way.
+

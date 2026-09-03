@@ -280,6 +280,27 @@ it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
 (The prior log's "6990 mathlib" was not what THIS restore produced; 3407 is
 the QOU-cone partial and it is sufficient for QOU + Mathlib.Tactic files.)
 
+## TRAP — the restored oleans are a SNAPSHOT; you may be checking against months-old imports
+
+`lean`-direct resolves every `import QOU.X` out of the restored oleans, which
+were built at the cache branch's seed commit, **not** at your checkout. A file
+whose import cone changed since then is checked against the *old* declarations —
+silently, with no staleness signal in the output, and the resulting error points
+at your call site.
+
+**Measured 2026-09-03:** `KazhdanLusztigClassicalLimit.olean` seeded 2026-07-02,
+source last changed 2026-08-25 in the commit that ADDED its `q = 1 →`
+hypothesis. Correct code failed; I first blamed dot notation and wrote that wrong
+diagnosis into a source comment.
+
+**Check before trusting a green or debugging a red:** `ls -l <olean>` against
+`git log -1 --format=%ad -- <source>.lean`. Source newer ⇒ you are not checking
+your checkout.
+
+**Fix:** build that cone from current source into a scratch dir and PREPEND it to
+`LEAN_PATH` (never `lake build` — it evicts the restore). Recipe, the worked
+case, and the scope limits: `verification-harness.md` §"Stale import cone".
+
 ---
 
 ## Session log

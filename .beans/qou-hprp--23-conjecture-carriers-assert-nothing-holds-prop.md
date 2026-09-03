@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-09-03T08:35:25Z
+updated_at: 2026-09-03T08:51:43Z
 ---
 
 Found sweeping the q-geometric-langlands Lean siblings after the four
@@ -200,3 +200,53 @@ whose `.md` declares a conditionality the type does not carry — and note the f
 there is **not** just adding a binder: adding `[KazhdanLusztigClassicalLimit]` to a
 `holds : Prop` carrier leaves the field just as contentless. Both halves are
 needed.
+
+
+### 2026-09-03 (cont.) — first category-(b) carrier, and a verification trap worth more than it
+
+**`conj:lusztig-canonical-basis-q-eq-1`** done. Category (b)'s named defect is that
+the `.md` declares a conditionality the type does not carry — the block's own title
+says *"conditional on `conj:kazhdan-lusztig-classical-limit`"* while the type said
+no such thing, so the derived primary/dependent graph classified it as a **root**.
+The `[KazhdanLusztigClassicalLimit R q]` binder now *is* that edge.
+
+**But the binder alone is not the fix, as this bean already warned.** The field
+needed content, and the upstream class supplied the objects to state it over —
+`NormalForm`, `KLBasisElt`, `klMap`. Upstream axiomatises the *statistics* half of
+the `q → 1` limit; this block is the *decategorification* half. Assumed:
+`klMap` is a **bijection** at `q = 1` (the block says the crystal decategorifies
+*to* the canonical basis — a map missing part of it would not be onto, one
+collapsing two normal forms would lose the count), plus KL positivity and
+`P_{w,w}(1) = 1`.
+
+**The payoff is a result neither class has alone.**
+`canonicalBasis_statSign_pm_one`: upstream gives `statSign = ±1` on the *image* of
+`klMap`; surjectivity here extends it to **every** canonical basis element. That is
+what a §3b-cond conditional result should look like, and it is why the binder earns
+its place rather than decorating the signature.
+
+Detector: contentless-carrier **37 → 36**. Running total this tranche 39 → 36.
+
+**🛑 The verification trap this turned up is the more valuable finding.**
+`lean`-direct against the restored `lake-cache` oleans checks your file against
+**the cone as it was when the cache was seeded**, not against your checkout.
+Measured: `KazhdanLusztigClassicalLimit.olean` dated **2026-07-02**, source last
+changed **2026-08-25** — in the commit that *added* the load-bearing `q = 1 →`
+hypothesis. Correct code failed with an error pointing at my call site, and **I
+first blamed dot notation and wrote that wrong diagnosis into a source comment**
+before checking the signature with `#check`. Fix: build the cone from current
+source into a scratch dir and prepend it to `LEAN_PATH` (four modules, under a
+minute); never `lake build`, which evicts the restore. Recorded as a TRAP in
+`.claude/agent-memory/lean-verifier/MEMORY.md` with the worked case in
+`verification-harness.md`.
+
+**Scope, so this is not read as wider than it is:** a stale cone does not
+invalidate every restore-based green. The two carriers earlier in this tranche
+import `BorromeanVolumeCatalan` (source 2026-08-30, olean 2026-07-02); one commit
+touched it in that window and `git diff` shows **zero** changes to any `vol_B3` /
+`catalan_G` line, so those greens stand. Measure the declarations you used.
+
+**Note for whoever prunes:** `lean-verifier/MEMORY.md` is **383 lines** against the
+~200 the injection budget allows, so roughly half of it is not reaching the agent.
+It was 362 before this entry. Pruning someone else's TRAPs is not mine to do
+unilaterally.
