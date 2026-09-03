@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-09-03T04:41:08Z
+updated_at: 2026-09-03T09:01:26Z
 ---
 
 ## The defect (PR #6442)
@@ -82,3 +82,32 @@ TWO BUGS IN MY OWN FIX, both caught by testing rather than shipping:
 
 Both are the same shape as the defect itself: a check that reports success for
 a question nobody asked.
+
+
+## ORDERING CONSTRAINT — he4-sparse gates on the COMMITTED triton witness
+
+Discovered by hitting it. `he4_magnus_omega2_sign_sparse_probe` failed:
+
+    assert reldiff < mp.mpf(10)**-30, "GATE FAIL: P_total disagrees with triton"
+    AssertionError: GATE FAIL: P_total disagrees with triton (1.0)
+
+That is the gate working as designed, not a defect. Line 44 states the probe's
+purpose (c) is to "reproduce the COMMITTED triton", and line 540 is
+"[gate 2] reproduce COMMITTED triton H_9 P_total with the sparse method". With
+the weight fix applied it computes the CORRECTED P_total and compares against
+triton's still-INVERTED committed witness, so it correctly refuses.
+
+**The four probes are therefore NOT independent.** Regeneration order is:
+triton first, commit it, then he4-sparse. Any agent regenerating this family
+piecemeal will hit the same wall, and the failure message names the cause
+precisely — worth keeping rather than working around.
+
+Do NOT relax that assertion to get he4-sparse green. It is a cross-producer
+consistency check and it just earned its keep by catching a half-migrated
+state I created.
+
+Status: deuteron-magnus + deuteron-interface-handle regenerated, committed,
+both verdicts byte-identical and reciprocal exact on every partition. Triton is
+the blocker — ~40 min CPU, SINGLE-THREADED, and grep shows ZERO
+resume/checkpoint machinery, so each container restart costs the entire run
+(three so far). he4-sparse is fast (30 partitions in ~20s) once triton lands.
