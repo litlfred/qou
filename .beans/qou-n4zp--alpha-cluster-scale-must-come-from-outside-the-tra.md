@@ -84,3 +84,48 @@ must meet, and it is the stricter.
 NOT to be read into the 1.71: it is `a_V/(hbar_q^2*m_N)` computed FROM the
 empirical `a_V` — a re-expression of the SEMF constant in substrate units, not a
 derivation. `1.71 * hbar_q^2 * m_N ~ 15.8 MeV` is arithmetic, not a prediction.
+
+
+## 🛑 SECOND CORRECTION 2026-09-03 — the percentages are NOT scale-free; scope (a), not (b)
+
+The "go" question: **are `a_V`, `a_S`, `a_C` derived anywhere in the framework?**
+Corpus-wide grep (content/, computations/, docs/, .beans/, lean): **no — all three
+are empirical imports**, and the corpus says so in four places:
+
+| where | what it says |
+|---|---|
+| `observations/bw-mass-decomposition-dictionary.md:7` | *"The empirical `a_V ≈ 15.6` MeV and `a_S ≈ 17.2` MeV are **conjectured** to be artifact parameters of fitting a classical drop to a q-deformed Markov trace; deriving them from the trace (rather than fitting) is open."* |
+| `QOU/Mass/SaturationPeakStructure.lean` §Scope | *"Nothing here derives `a_V`, `a_S` or `a_C`"* — the file proves what follows FROM the SEMF shape |
+| `QOU/MassTheory/CoulombFromCrossingCounts.lean` §Scope | *"`a_C` is nowhere, the `1/R` is not derived"* |
+| `QOU/Mass/AffineCountIsNotASurfaceTerm.lean` | scope-(b) PROVED: the affine crossing count `12A−1` cannot be a surface term (`12m − m⁻²` strictly monotone, `no_constant_surface_coefficient`) |
+
+**And the energy scale itself is not derived either** — bean `qou-59j5`
+(2026-08-31, completed) established that `E₀ = m_e/(q₀(q₀−1))` is CAL-1, a
+calibration, and that *"no N× claim about the extensive term means anything"*
+until a scale is pinned. **This bean is an N× claim about the extensive term.**
+It inherits the defect.
+
+New probe `extensive_carrier_scale_inversion_probe.py` (4/4) inverts the ratio
+into the falsifiable form `E_req = T / L` and compares against every scale the
+corpus carries:
+
+    close one alpha   29.800 MeV -> E_req = 12.372 MeV = 2.956 × E₀
+    close the bulk    63.048 MeV -> E_req = 26.175 MeV = 6.253 × E₀
+
+    m_e                 0.511 MeV   0.122 × E₀   no
+    E₀                  4.186 MeV   1.000 × E₀   no
+    ℏ_q²·m_N            9.218 MeV   2.202 × E₀   no   (SaturationPeakStructure's unit)
+    m_p/tr_M(proton) 1662.730 MeV 397.214 × E₀   YES  — excised (qou-exam), overshoots 134×
+
+**What changes:**
+- `20.6–33.8 %` and `9.8–16.0 %` are **E₀ figures**. At `ℏ_q²·m_N` the same
+  trace supplies **74.5 % of one alpha** and **35.2 % of the bulk**. "Two thirds
+  to four fifths not in this channel" is an E₀ statement; at the other live
+  scale it is "one quarter".
+- The exclusion **survives** every live scale (largest is 1.34× short of one
+  alpha, 2.84× short of bulk) — direction robust, numbers not.
+- A larger scale closes it and nothing bounds the scale from above ⇒ **scope
+  (a)**, not (b). Do not write "the trace channel cannot carry the extensive
+  term" without "at any energy scale the corpus currently carries".
+
+No scale is derived here. `qou-59j5`'s open item stays open.
