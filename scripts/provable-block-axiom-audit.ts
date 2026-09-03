@@ -52,7 +52,7 @@ const KINDS = ["axiom", "theorem", "lemma", "def", "abbrev", "class",
 const DECL = new RegExp(
   String.raw`^\s*(?:@\[[^\]]*\]\s*)?` +
   String.raw`(?:noncomputable\s+|private\s+|protected\s+|scoped\s+|partial\s+)*` +
-  `(${KINDS.join("|")})\\s+([A-Za-z_][A-Za-z0-9_'!?]*)`, "gm");
+  `(${KINDS.join("|")})\\s+([A-Za-z_][A-Za-z0-9_'!?.]*)`, "gm");
 
 function walk(d: string, out: string[] = []): string[] {
   for (const e of readdirSync(d)) {
@@ -70,9 +70,15 @@ for (const f of walk(ROOT)) {
     .replace(/\/-[\s\S]*?-\//g, " ")
     .replace(/--[^\n]*/g, " ");
   for (const m of txt.matchAll(DECL)) {
-    const arr = index.get(m[2]) ?? [];
-    arr.push({ kind: m[1], file: f });
-    index.set(m[2], arr);
+    // A Lean declaration name may itself be dotted (`CategoricalProton.exists`).
+    // Index the full name AND its final segment: a ref's final segment alone
+    // would otherwise miss every dotted declaration, which is exactly how this
+    // script first reported 68 dangling refs against a true 25.
+    for (const key of new Set([m[2], m[2].split(".").pop()!])) {
+      const arr = index.get(key) ?? [];
+      arr.push({ kind: m[1], file: f });
+      index.set(key, arr);
+    }
   }
 }
 
@@ -89,7 +95,8 @@ for (const [label, b] of blocks) {
   const decl = ref.split(":")[1];
   if (!decl) continue;
   checked++;
-  const cands = index.get(decl.split(".").pop()!);
+  const cands = index.get(decl) ?? index.get(decl.split(".").slice(-2).join("."))
+             ?? index.get(decl.split(".").pop()!);
   if (!cands?.length) { dangling.push({ label, kind: b.kind, decl }); continue; }
   const sib = cands.filter((c) => !c.file.startsWith(LIB));
   const chosen = sib.length ? sib : cands;
