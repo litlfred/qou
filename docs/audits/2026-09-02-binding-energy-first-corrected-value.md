@@ -736,11 +736,35 @@ So the two load-bearing results of this arc survive the caveat intact, and the
 headline four-nucleus table does not. That asymmetry is worth stating plainly
 rather than letting the strongest-sounding table carry an unmarked dependence.
 
+**Which convention the code is on — measured.** `E_0_CALIBRATION_MEV =
+0.78233340931`, i.e. **convention B**, the *smallest* of the three registered
+scales. So the exposure is one-sided:
+
+    conv B          0.782    x 1.000   <- the live constant
+    E_0             4.186    x 5.351
+    hbar_q^2 * m_N  9.218    x11.783
+
+The sibling's "5.35×" is the E₀/conv-B ratio. Against the third registered scale
+the span is **11.78×**, and since the code sits at the bottom of the range,
+**every other convention makes term 3 larger** — the E₀-scaled contribution to
+`B_pred` is currently at its minimum, not somewhere in the middle.
+
 **Open, and honestly open:** the per-term decomposition of `B_pred` at the four
-nuclei. A run was launched and had produced no output when this was written;
-until it lands, the *magnitude* of the E₀ exposure is unquantified — only its
-*existence* is established, and that from the source rather than from a
-measurement.
+nuclei. Two runs have been launched; the first was killed at its 900 s timeout
+having produced zero bytes, the second is still going. Until one lands, the
+*magnitude* of the E₀ exposure is unquantified — only its *existence* (from the
+source) and the *convention span* (above) are established.
+
+**A self-inflicted lesson from the first run, recorded because it nearly cost a
+wrong conclusion.** That run was piped through `| tail -12`, which buffers to
+EOF — so `SIGTERM` at the timeout discarded everything it held, and the run
+looked like it had produced *no output at all*. It had: the relaunch shows
+`imported at 0s`, so those header lines existed and my pipeline ate them. The
+repo's long-compute discipline says `2>&1 | tee /tmp/<script>.log`, not `| tail`,
+and this is exactly why. **Both halves of the diagnosis turned out true** — the
+pipe swallowed output *and* `binding_from_frobenius_pairing` at ²H genuinely
+exceeds 900 s — but only the relaunch could distinguish them, and with `tail` in
+the way the natural reading was "the import hangs", which is false.
 
 ## Still open
 
