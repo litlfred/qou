@@ -232,6 +232,114 @@ import time as _time
 _T0 = _time.monotonic()
 _atom_secs = {}
 
+# ── Resume across restarts (beans `qou-uiut` / `qou-sv7h`) ────────
+#
+# This table runs 19 atoms up to fe56 (A = 56) and writes its witness only at
+# the very end, so an interrupted run loses everything. That was academic while
+# the producer could not finish a single A=2 atom; now that it can (deuterium:
+# ~40 days estimated -> 31 s, via the Rust MPFR character kernel) the full
+# table is a multi-hour run, and multi-hour runs in an ephemeral container get
+# reclaimed part-way.
+#
+# OFF by default: without `QOU_HKT_CHECKPOINT` this file behaves exactly as
+# before. The checkpoint is a CACHE, never an input to the corpus — it is
+# written outside the repo and must not be committed.
+#
+# The cache is keyed on a hash of the sources that determine the numbers plus
+# q itself. Any edit to those files discards it. That is deliberately
+# conservative — it will throw away a long run for a comment change — because
+# the alternative failure is resurrecting stale numbers into a witness, and
+# this table has already carried wrong numbers once (the YSN matrices were not
+# a representation of H_n(q) until bean `qou-uiut`).
+#
+# mpf values are stored as their exact `_mpf_` limbs, not as decimal strings:
+# `round(mp.log(abs(tr)), 12)` and friends in `compute_atom` return mpf, and a
+# decimal round-trip would quietly reduce their precision on resume. Verified
+# exact round-trip for 1/7, -1e-300, 0, log(3)/9 and a rounded mpf.
+import hashlib as _hashlib
+import json as _json
+import os as _os
+
+_CKPT_PATH = _os.environ.get("QOU_HKT_CHECKPOINT", "").strip()
+
+
+def _ckpt_key():
+    """Hash of everything that determines the numbers."""
+    h = _hashlib.sha256()
+    h.update(repr(Q).encode())
+    import hecke_core as _hc
+    import hecke_core_legacy as _hcl
+    for mod in (__file__, _hcl.__file__, _hc.__file__):
+        with open(mod, "rb") as fh:
+            h.update(fh.read())
+    return h.hexdigest()
+
+
+def _ckpt_enc(o):
+    if isinstance(o, mp.mpf):
+        return {"__mpf__": [int(t) for t in o._mpf_]}
+    if isinstance(o, dict):
+        return {k: _ckpt_enc(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ckpt_enc(v) for v in o]
+    return o
+
+
+def _ckpt_dec(o):
+    if isinstance(o, dict):
+        if "__mpf__" in o and len(o) == 1:
+            return mp.make_mpf(tuple(o["__mpf__"]))
+        return {k: _ckpt_dec(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ckpt_dec(v) for v in o]
+    return o
+
+
+def _ckpt_load():
+    if not _CKPT_PATH or not _os.path.exists(_CKPT_PATH):
+        return {}
+    try:
+        with open(_CKPT_PATH, encoding="utf-8") as fh:
+            blob = _json.load(fh)
+    except (OSError, ValueError) as exc:
+        print(f"  [checkpoint] unreadable ({exc}); starting fresh", flush=True)
+        return {}
+    if blob.get("key") != _ckpt_key():
+        print("  [checkpoint] KEY MISMATCH — the producer or its inputs "
+              "changed since it was written. Discarding it rather than "
+              "resuming onto stale numbers.", flush=True)
+        return {}
+    return {k: _ckpt_dec(v) for k, v in blob.get("atoms", {}).items()}
+
+
+def _ckpt_save(cache):
+    """Atomic write — a crash mid-save must not leave a truncated cache."""
+    if not _CKPT_PATH:
+        return
+    tmp = _CKPT_PATH + ".tmp"
+    _os.makedirs(_os.path.dirname(_os.path.abspath(_CKPT_PATH)), exist_ok=True)
+    with open(tmp, "w", encoding="utf-8") as fh:
+        _json.dump({"key": _ckpt_key(),
+                    "atoms": {k: _ckpt_enc(v) for k, v in cache.items()}}, fh)
+    _os.replace(tmp, _CKPT_PATH)
+
+
+_ckpt = _ckpt_load()
+if _CKPT_PATH:
+    print(f"  [checkpoint] {_CKPT_PATH} — {len(_ckpt)} atom(s) already done",
+          flush=True)
+
+# Optional chunking: compute only these atoms this pass (comma-separated
+# names), resuming the rest from the checkpoint. Lets a table longer than one
+# container lifetime be finished across several passes.
+#
+# The witness is written ONLY when every atom in ATOMS is present. A partial
+# witness is the failure this producer already committed once — four rows of
+# AssertionError text serialised as `allPassed: true` (bean `qou-qe81`) — so a
+# short pass ends by naming what is still missing and writing nothing.
+_ONLY = {x.strip() for x in _os.environ.get("QOU_HKT_COMPUTE_ONLY", "").split(",")
+         if x.strip()}
+
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
 print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
@@ -241,8 +349,18 @@ print("-" * 80)
 
 for name, Z, N, quarks in ATOMS:
     _t_atom = _time.monotonic()
-    r = compute_atom(name, Z, N, quarks)
-    _atom_secs[name] = _time.monotonic() - _t_atom
+    if name in _ckpt:
+        r = _ckpt[name]
+        _atom_secs[name] = 0.0      # resumed, not recomputed
+    elif _ONLY and name not in _ONLY:
+        print(f"{name:>12} {Z + N:>3}   deferred (not in QOU_HKT_COMPUTE_ONLY)",
+              flush=True)
+        continue
+    else:
+        r = compute_atom(name, Z, N, quarks)
+        _atom_secs[name] = _time.monotonic() - _t_atom
+        _ckpt[name] = r
+        _ckpt_save(_ckpt)           # after EVERY atom, not at the end
     results.append(r)
     print(
         f"{name:>12} {r['A']:>3} "
@@ -254,6 +372,16 @@ for name, Z, N, quarks in ATOMS:
         f"{_atom_secs[name]:>9.2f}s",
         flush=True,
     )
+
+_missing = [n for n, _z, _n, _q in ATOMS if n not in {r["name"] for r in results}]
+if _missing:
+    print(f"\n  {len(results)}/{len(ATOMS)} atoms computed. NOT writing a "
+          f"witness — still missing: {', '.join(_missing)}")
+    if _CKPT_PATH:
+        print(f"  Re-run with QOU_HKT_CHECKPOINT={_CKPT_PATH} to continue.")
+    else:
+        print("  Set QOU_HKT_CHECKPOINT=<path> so a partial pass is not lost.")
+    raise SystemExit(0)
 
 total_terms = sum(r["n_terms"] for r in results)
 print(f"\nTotal NF entries: {total_terms} (vs 21,694 quark-level)")
