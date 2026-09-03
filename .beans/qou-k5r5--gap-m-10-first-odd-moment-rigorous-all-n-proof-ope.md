@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T20:53:32Z
+updated_at: 2026-09-03T21:04:00Z
 ---
 
 
@@ -711,3 +711,46 @@ Probe: computations/deltalambda/wlambda_covariance_epic_M1_CA_to_margin_conversi
 (exit 0, 3.4s, PYTHONPATH-unset-safe, NO float64). Gap qou-k5r5 OPEN; NEXT: budget the
 rigorous C per leg, with rho_P the binding one, via the Toeplitz-determinant route
 (_bulk_kernel_rate_probe: oscillations cancel at the integrated level, not pointwise).
+
+
+2026-09-03 (PR #6528, cont.) TWO CANCELLATIONS IN THE MARGIN -- a constraint on the
+SHAPE of the proof -- and a CORRECTION of the 'rho_P is the binding leg' claim I made
+in this same PR an hour earlier.
+EXACT DECOMPOSITION (a rearrangement, no error term; verified to close to 0.0 at every
+n): m(n)-m_inf = [rho_P(n)-rho_inf] - [sqrt(V_D/V_A)(n)-sig_ratio_inf] =: L_rho - L_sig.
+Exact Fraction covariances over all partitions, n=4..40, NO float64, 10s.
+CORRECTION: I concluded from the POISSONIZED large-theta ingredients that 'rho_P is the
+bigger leg, V_A the small one' and recommended budgeting with rho_P binding. WRONG. That
+compared rho_P's FULL deviation (0.1329/theta) against only the V_A PART of the
+sigma-ratio leg (0.003251/sqrt(theta)) -- V_D was never in the comparison. Measured at
+fixed n exactly, |L_sig| exceeds |L_rho| by 4x to 700x (|L_rho|/|L_sig| = 1.885, 0.152,
+0.127, 0.0222, 0.243, 0.00148, 0.0269 at n=6,12,18,24,30,36,40). The SIGMA-RATIO leg
+dominates and V_D is the binding ingredient -- not rho_P, not V_A. SURVIVING from that
+commit: the conversion C_margin,A = 0.41922 C_A and the ~821x V_A-leg headroom; both are
+correct statements ABOUT THE V_A LEG. The disagreement is NOT the theta-vs-n difference;
+it is an omitted TERM, which no de-poissonization could account for.
+CANCELLATION 1 (between legs): |L_rho - L_sig|/(|L_rho|+|L_sig|) over n>=16 in
+[0.2238, 1.0] -- at worst a 4.5x loss if bounded separately and added.
+CANCELLATION 2 (inside L_sig): linearising sqrt(V_D/V_A) ~ sig_inf(1+(dD-dA)/2) with dX
+the relative deviation of V_X/n^2 (prediction tracks L_sig to a few %, the residual
+being second order), dD and dA carry the SAME SIGN and largely cancel:
+dA/dD = -0.036893/-0.058358 at n=40, difference -0.021465 against |dD|+|dA| = 0.095251.
+Inner cancellation ratio over n>=16 in [0.1079, 0.2258] -- a further 4.4x-9.3x loss.
+CONSEQUENCE, and the point: multiplying the two, a budget that bounds rho_P, V_D and V_A
+separately and adds via the triangle inequality can overshoot by ~an ORDER OF MAGNITUDE,
+against the 46x TOTAL headroom (#6500) -- i.e. most of the room. THE RIGOROUS ARGUMENT
+MUST PRESERVE THESE CANCELLATIONS rather than bound the three ingredients independently.
+That is a constraint on the SHAPE of the proof, not merely on its constants, and it is
+the first such constraint this arc has measured.
+PATTERN, four corrections in one day and all ONE error -- comparing quantities belonging
+to different objects: (1) C<=23.4, V_A's rate as a premise about the margin; (2) ~17x,
+relative error on V_A vs an absolute margin; (3) C_A vs C<=2.668, phrasing only, verdict
+unit-correct; (4) 'rho_P is binding', full deviation vs only part of the other leg. The
+guard already recorded ('V_A, sigma_A, sigma_D/sigma_A and m are four different objects;
+write the conversion down') is NECESSARY BUT NOT SUFFICIENT -- #4 was not a missing
+factor but a missing TERM. STRONGER GUARD: before comparing two quantities, enumerate
+everything that feeds each one and check the lists match.
+Probe: computations/deltalambda/wlambda_covariance_epic_M1_margin_leg_decomposition.py
+Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-leg-cancellation.md
+Gap qou-k5r5 OPEN; NEXT: a rigorous route that keeps the V_D/V_A cancellation intact,
+with V_D the binding ingredient.
