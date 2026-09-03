@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T22:29:28Z
+updated_at: 2026-09-03T04:42:01Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -210,3 +210,32 @@ isSemisimpleRing_rank_one (#6134) proves semisimplicity of IwahoriHecke at n = 1
 field with 1 + q != 0, via the determinant. isSemisimpleRing_iwahoriHecke proves it at
 EVERY n over R with Q > 1, via Wedderburn. Neither subsumes the other: one is general in
 the field, the other general in the rank.
+
+
+## 2026-09-03 — the "blocked upstream" item is characterised, and it is not an accident
+
+This bean's general-field item read *"blocked upstream — `heckeWedderburn` is
+`ℝ`-only"*.  True, and it says nothing about **why**, so it reads as an accident
+of statement that a `variable {K : Type*} [Field K]` would fix.  It is not.
+
+Measured on `heckeWedderburn`'s **103-module in-repo import cone**: `Real.sqrt`
+does not occur in it at all (so the seminormal form needs no square roots), and
+**exactly two** modules use anything `Real.*` in code — both only the `Real.log`
+family, both in the single idiom
+`zpow_ne_one : q ≠ 0 → q² ≠ 1 → ∀ m ≠ 0, qᵐ ≠ 1`.
+
+**Over `ℝ` that two-line hypothesis IS "q is not a root of unity"** (its own
+docstring says it is sharp: `qᵐ = 1 ⇒ |q| = 1 ⇒ q = ±1 ⇒ q² = 1`).  Over a
+general field it is not — a primitive cube root of unity satisfies both.
+
+So the general-field statement needs the **classical criterion carried as a
+hypothesis**, which is what `QOU/SchurWeyl/GenericParameter.lean` now supplies
+(sorry-free): `NotRootOfUnity`, `pow_left_injective`, `zpow_ne_one`,
+`poly_eq_zero_of_eval_pow`, and `ofSqNeOne` — the bridge proving the `ℝ` form
+implies it, so generalising the cone strengthens no hypothesis.
+
+**Remaining cost, measured: 13 files, 248 occurrences of `ℝ`.**  A tranche, not
+an idle-pass step.  Tracked with the rest of the general-field work on
+`qou-j377`, whose own headline ("`q` generic, not a root of unity") turns out to
+name exactly this; that bean's blocker list was stale — it cited SW-5 and SW-3,
+both of which have landed.
