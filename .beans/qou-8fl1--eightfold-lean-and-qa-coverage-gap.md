@@ -331,3 +331,25 @@ items (1,2,3,4) done. REMAINING (research, not formalization bookkeeping):
    /integration-audit.
 This bean is now essentially at its research frontier; no clean formalization
 increment remains.
+
+
+## 2026-09-03 re-measure (PR #6458, bean qou-lvux) — items 1, 2, 5 are STALE; 3, 6, 7 stand
+
+Measured on this branch (main `8ddfeaf1`):
+
+- **Item 1 (QA sidecars) — RETIRED.** All 16 `eightfold-way/*.qa.json` now carry
+  populated criteria: 45 (octonion-algebra) to 76 (color-su3-from-g2) entries each,
+  none `{}`. The "no sidecar coverage" state this item describes no longer exists.
+- **Item 2 (Lean coverage) — RETIRED.** All three propositions carry `lean:` refs:
+  `prop:schur-weyl-eightfold` → `RowCapObstruction.weyl_dim_alt_eq_zero_iff`;
+  `prop:meson-octet-decomposition` → `MesonOctet.meson_octet_at_three`
+  (sibling `meson-octet-decomposition.lean`); `prop:borromean-decuplet` →
+  `RowCapObstruction.eightfold_channels_at_three`.
+- **Item 5 (`def:octonion-algebra`) — RETIRED.** Block exists
+  (`eightfold-way/octonion-algebra.{md,ts}`, authored 2026-08-29, `qou-7arp`);
+  `color-su3-from-g2.ts` `uses: ["def:octonion-algebra"]` resolves.
+- **Item 4** — discharged 2026-08-08 (recorded above).
+- **Item 3 (`Sym2Gate.lean` arithmetic-only)** — STILL LIVE; worked on this branch
+  (see qou-lvux). `prop:color-su3-from-g2` `lean.ref` points at
+  `Sym2Gate.sym2_dim_3 : 3*(3+1)/2 = 6`, which derives nothing the block claims.
+- **Items 6, 7** — unchanged (research-gated `.ts` TODOs; §8 owners).
