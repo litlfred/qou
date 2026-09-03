@@ -369,7 +369,11 @@ This is the same bound D1-e anticipated ("`V ≥ 4` … near-trivial pigeonhole"
 D1-c as separate entries, so nobody had pointed the one at the other. D1-c's own
 vertex count violates it.
 
-### A structurally-motivated repair — PROPOSED, UNTESTED
+### A structurally-motivated repair — PROPOSED here, TESTED below, and it FAILS
+
+> **Superseded by the 2026-09-03 (3) entry at the end of this bean.** The
+> repair clears the vertex bound and then fails D1-c's *own* bar-ray
+> stipulation. Do not re-run this test; read that entry.
 
 The corpus's own decomposition is `total = irreducible + abelian` with
 abelian = 1: 4₁ = 2+1, 5₂ = 3+1, 3₁ = 1+1. So the natural vertex set is not the
@@ -443,3 +447,57 @@ Scope-(a). `W = 0` (a potential can only cut further). What is closed is the
 **blocks-plus-abelian repair under D1-c's own bar-ray stipulation** — not D1-c
 the route, and not every `(Q,W)`. The per-ray equality is **measured** here; the
 cited Lean theorem proves the general statement. Nothing derives `A_ω`.
+
+── 2026-09-03 (4): ledger status after the D1 tranche — no LIVE route is derivation-tier ──
+
+The three entries above (D1-a, the D1-c vertex bound, the V=4 repair) settle
+enough of the 2026-08-15 attack-options ledger that it should be read with
+outcomes attached. Restating it so the next agent does not re-run a finished
+scan or re-enter a blocked route:
+
+| entry | tier | status after this tranche |
+|---|---|---|
+| **D1-e** formalize-first | prunes | **delivered, and it was a deletion.** `(7,1)` is `plus±minus` on `(4,3)`, so the target is 2 constraints, not 4. Filtering on it is a no-op. |
+| **D1-a** small-quiver scan | candidate generator | **done. Predicted outcome confirmed:** 64/74 quivers meet the target — the datum underdetermines `(Q,W)`. The trefoil's third point cuts **exactly 0**. Do not re-run for more integers of the same kind. |
+| **D1-c** Hecke/Bring extraction | **the only derivation-tier route** | **blocked at its own entry test, both readings.** `V=3` (one vertex per block) is under the measured per-ray ceiling `V`; `V=4` (blocks + abelian) clears the ceiling and then fails the bar-ray stipulation, because a `σ` that is a quiver automorphism forces the two ray counts **equal** while the datum needs `4 ≠ 3`. |
+| **D1-b** Jacobi from character-variety / NZ | candidate-plus (import) | **untouched. Now the highest-value live route** by default, not by result. |
+| **D1-d** exponential networks | import | untouched. Still lowest priority per unit cost. |
+| **D1-f** wait-on-lit | passive | untouched — and item **(4)** ("a categorification of the 3d-index from Hecke/Soergel data") is now the *named* unblocker for D1-c rather than a nice-to-have. |
+
+**The consequence, stated plainly: after this tranche no live D1 route is
+derivation-tier.** D1-b and D1-d both terminate in a labeled CANDIDATE or a
+certified import; the ledger itself says D1-c was the only one whose success
+would be a derivation. So M3 does not have a live path, and the arc should say
+so rather than presenting D1-b's progress as progress toward a derivation.
+
+### What would reopen D1-c — and what would NOT
+
+D1-c is **blocked, not refuted**. The block is scope-(a) plus one mechanism:
+
+- **Scope-(a) part.** The per-ray ceiling `V` is *measured* over `V ∈ {2,3,4}`
+  with `W = 0`, real roots, and a numerical King proxy. A potential can only
+  cut further, so this never excludes a `(Q,W)` once `W` is added.
+- **Mechanism part.** The `V=4` failure is *not* an enumeration artifact and
+  does not depend on the arrow-multiplicity cap the scan used: if `σ` is an
+  automorphism of the quiver it carries the `θ`-stable spectrum bijectively
+  onto the `σ·θ` spectrum, so the counts are equal for **any** multiplicity and
+  any `W` that is itself `σ`-invariant. That is the landed
+  `QuiverMirrorAutomorphismExcluded`, measured here on the specific vertex set.
+
+So the following would **not** reopen it, and should not be attempted as though
+they might: a larger arrow multiplicity at `V=4`; a `V=5` blocks-plus-abelian
+variant; a different `θ` with the same `σ`-symmetric quiver. All three leave the
+automorphism argument intact.
+
+What **would** reopen it is exactly one thing: **the mirror acting as something
+other than a quiver automorphism or a ray relation** — e.g. a `σ` realised as a
+derived autoequivalence that is not induced by a vertex permutation, or a
+non-`σ`-invariant `W` breaking the symmetry the counts inherit. Nothing in the
+corpus supplies either, which is why D1-f (4) is the live dependency.
+
+### Scope of this entry
+
+This is bookkeeping over the three entries above; it measures nothing new. No
+route is declared refuted, nothing is wired, and `A_ω` remains underived. The
+"no live derivation-tier route" statement is a claim about **this ledger's**
+entries, not about the framework.
