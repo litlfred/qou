@@ -297,6 +297,74 @@ theorem twoOp_residual_kills_residue (c₁ c₂ : ℤ → R) (hc₁ : Annihilate
   rw [hodd]
   exact residue_slot_zero_shift_one c₁ hc₁ X hX n
 
+/-! ### The residual demanded only from a level `n₀` on
+
+The corpus's Door-v residual is *asymptotic*: the sign alternation of the GGM
+carrier's growing solution sets in only once its recurrence coefficient
+`2 − q^{m+1}` turns negative (`conj:c1-ggm-bar-parity-faces`, "for
+`m+1 < log 2 / log q` … no sign change occurs"). So the hypothesis that matters
+is alternation for `n ≥ n₀`, not for all `n`. The theorem survives with the
+same proof, applied to the level-`n₀` jet as the seed: from `n₀` on the tower
+is the odd part's, and — because a shift-1 iterate of length `≥ 2` reads
+`t^{−2}` through `t^{−1}` with the dead weight `c₁(−1)` — the residue slot is
+dead at every level `≥ n₀ + 2`, **with no hypothesis on the seed**. Levels
+`2 … n₀ + 1` are untouched: there the residue formula `twoOp_iterate_residue`
+still applies and the slot is alive. -/
+
+theorem residual_from_level_tower_is_odd_part (E O : (ℤ → R) → (ℤ → R))
+    (hE : ∀ f, E (mono f) = mono (E f)) (hO : ∀ f, O (mono f) = -mono (O f))
+    (hEs : ∀ (r : R) f, E (r • f) = r • E f) (hOs : ∀ (r : R) f, O (r • f) = r • O f)
+    (X : ℤ → R) (ε : R) (hε : ε ≠ 0) (n₀ : ℕ)
+    (halt : ∀ n, n₀ ≤ n → mono ((fun f => E f + O f)^[n] X)
+      = ((-1 : R) ^ n * ε) • (fun f => E f + O f)^[n] X) (k : ℕ) :
+    (fun f => E f + O f)^[n₀ + k] X = O^[k] ((fun f => E f + O f)^[n₀] X)
+      ∧ E (O^[k] ((fun f => E f + O f)^[n₀] X)) = 0 := by
+  have hε' : (-1 : R) ^ n₀ * ε ≠ 0 :=
+    mul_ne_zero (pow_ne_zero _ (neg_ne_zero.mpr one_ne_zero)) hε
+  have halt' : ∀ m, mono ((fun f => E f + O f)^[m] ((fun f => E f + O f)^[n₀] X))
+      = ((-1 : R) ^ m * ((-1 : R) ^ n₀ * ε)) •
+        (fun f => E f + O f)^[m] ((fun f => E f + O f)^[n₀] X) := by
+    intro m
+    have h := halt (m + n₀) (Nat.le_add_left _ _)
+    rw [Function.iterate_add_apply, pow_add, mul_assoc] at h
+    exact h
+  have := residual_tower_is_odd_part E O hE hO hEs hOs _ _ hε' halt' k
+  rw [add_comm, Function.iterate_add_apply]
+  exact this
+
+omit [CharZero R] [NoZeroDivisors R] in
+/-- A shift-1 iterate of length `≥ 2` has a dead residue slot for **every**
+seed — the `i = 1` factor of the iterate is `c₁(−1) = 0`. (The `#6474` lemma
+`residue_slot_zero_shift_one` needs a power-series seed only for lengths `0`
+and `1`.) -/
+theorem shiftOne_iterate_residue_zero_of_two_le (c₁ : ℤ → R)
+    (hc₁ : AnnihilatesConstants 1 c₁) (Y : ℤ → R) (k : ℕ) :
+    (shiftOp 1 c₁)^[k + 2] Y (-2) = 0 := by
+  rw [shiftOp_iterate]
+  have h1 : c₁ (-1) = 0 := hc₁
+  have : ∏ i ∈ range (k + 2), c₁ (-2 + (i : ℤ) * 1) = 0 := by
+    apply Finset.prod_eq_zero (i := 1) (Finset.mem_range.mpr (by omega))
+    norm_num [h1]
+  rw [this, zero_mul]
+
+/-- **Asymptotic residual, per-level exclusivity.** If the two-term derivative-like
+tower alternates only from level `n₀` on, the residue slot is dead at every
+level `≥ n₀ + 2` — no seed hypothesis — while levels `2 … n₀ + 1` keep the
+`twoOp_iterate_residue` formula and are generically alive. -/
+theorem twoOp_residual_from_level_kills_residue_beyond (c₁ c₂ : ℤ → R)
+    (hc₁ : AnnihilatesConstants 1 c₁) (X : ℤ → R) (ε : R) (hε : ε ≠ 0) (n₀ : ℕ)
+    (halt : ∀ n, n₀ ≤ n → mono ((twoOp c₁ c₂)^[n] X)
+      = ((-1 : R) ^ n * ε) • (twoOp c₁ c₂)^[n] X) (k : ℕ) :
+    (twoOp c₁ c₂)^[n₀ + (k + 2)] X (-2) = 0 := by
+  have h := residual_from_level_tower_is_odd_part (shiftOp 2 c₂) (shiftOp 1 c₁)
+    (fun f => shiftOp_comm_mono_of_even 2 even_two c₂ f)
+    (fun f => shiftOp_anticomm_mono_of_odd 1 odd_one c₁ f)
+    (shiftOp_smul 2 c₂) (shiftOp_smul 1 c₁) X ε hε n₀ halt (k + 2)
+  have hodd : (twoOp c₁ c₂)^[n₀ + (k + 2)] X
+      = (shiftOp 1 c₁)^[k + 2] ((twoOp c₁ c₂)^[n₀] X) := h.1
+  rw [hodd]
+  exact shiftOne_iterate_residue_zero_of_two_le c₁ hc₁ _ k
+
 /-- The general-sum form: for any finite sum split into even and odd shifts, the
 residual forces the even part off the tower. -/
 theorem sumOp_residual_even_part_dead (ks : Finset ℤ) (c : ℤ → ℤ → R)
