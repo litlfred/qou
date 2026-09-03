@@ -1,0 +1,106 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T04:28:33.279573+00:00",
+  "commitSha": "a3d454e7335ea6b9f908eff13acaa6121538fc59",
+  "assertions": [
+    {
+      "name": "float(Q) loses q0 below ~1e-17 (the arc's real precision ceiling)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "q0's own uncertainty Q_ERR ~1e-12 dominates the float64 loss",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "engine agrees with the corpus exact builder below 1e-45",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "D_PN reproduces pn_interface_offset exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "float64 bond constants were good to ~1e-13, not 1e-15",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L_pp < L_pn < L_nn ordering unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "every identity holds below 1e-55 (was quoted at the 1e-15 floor)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "additivity is real, at the 200-bit floor rather than the f64 one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L_k is computable in its own minimal system n=3k, not the ambient n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "the_binding_arc_was_measured_in_float64_probe",
+  "scriptFile": "the_binding_arc_was_measured_in_float64_probe.py",
+  "scriptHash": "19d50e3d26b9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_binding_arc_was_measured_in_float64_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_binding_arc_was_measured_in_float64_probe.py"
+  },
+  "description": "Precision audit of the t7qv binding-gap arc. The arc ran entirely in float64 -- both the seminormal matrices (numpy/scipy dtype=float) and, worse, the substrate parameter itself (q = mp.mpf(str(Q)) off a Python float, i.e. 17 digits). Re-measured at 200 bits with q from Q_50_DIGIT_STR. Every identity the arc asserted survives, with residuals falling from the float64 floor (~1e-15) to the 200-bit floor (~1e-60); the arc's magnitudes were accurate to ~1e-13. The conclusions stand; the arithmetic warrant offered for them did not.",
+  "data": {
+    "L_pp_200bit": "0.48989938425513485140655016749462194823043396786058",
+    "L_pn_200bit": "0.67682159238634338966311878404365178434961219856897",
+    "L_nn_200bit": "0.90726226553321290067017528738691153644541109117659",
+    "h_200bit": "0.20906029879563931543084621312967494385975749526306",
+    "d_pn_200bit": "-0.10445824776972628901783406629000564412800000062852",
+    "q_50_digits": "1.1099785827513808075916690956107688798744991218736",
+    "worst_identity_residual_200bit": "1.742444e-59",
+    "additivity_residual_200bit": "4.978412e-60",
+    "float64_residuals_as_quoted_at_A5": "{'exchangeability nnnnn |S|=2': 3.33e-15, 'exchangeability nnnnn |S|=3': 5.77e-15, 'exchangeability nnnnn |S|=4': 6.22e-15, 'size-only vs Mobius': 7.55e-15, 'additivity / reconstruction': 0.0}",
+    "bond_deltas_f64_minus_200bit": "{'pp': '-1.348e-13', 'pn': '-3.434e-13', 'nn': '-2.129e-13'}"
+  },
+  "caveats": [
+    "THIS PROBE COVERS A<=4 ONLY. Every A>=5 number in the arc -- the A=5 cumulant hierarchy, the c_5 sign, the 12-ordering sweep, the A=6 run -- is still a float64 measurement and must not be quoted as exact. Those are sign and magnitude claims with margins ~1e13 above the float64 floor, so they are not in doubt the way a 1e-15 residual was, but they are not established here.",
+    "200-bit precision tests ALGEBRAIC identities, which hold for every q. It buys nothing physical: Q_ERR = 9.2e-13 is q0's own stated uncertainty, so no quantity in this arc carries physical meaning below ~1e-12 at any working precision.",
+    "The float64 route is not thereby shown harmless anywhere else. It was harmless HERE because every identity tested is exact and every magnitude is O(1); a cancellation-heavy quantity would not have survived, and the arc had no way to tell the difference.",
+    "The seminormal off-diagonal uses b = sqrt(|a a' + 1|). The absolute value is a no-op: a a' = -1/[rho]^2 exactly, and a branching swap forces |rho| >= 2, so the radicand is non-negative. It is retained to mirror `build_seminormal_matrices_mp` letter for letter."
+  ]
+}
