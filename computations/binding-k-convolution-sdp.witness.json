@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-31T18:07:36.429257+00:00",
-  "commitSha": "d5c902bbe5222bb71707a3763783e6f9f915496f",
+  "computedAt": "2026-09-03T04:44:37.114173+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "psd_machinery_validated_against_recorded_witness",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "binding-k-convolution-sdp",
   "scriptFile": "binding_k_convolution_sdp_probe.py",
   "scriptHash": "2b641b53ae48",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9ed04c3a10dd9b345551c835720d5774e1ec679b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -233,5 +235,7 @@
     "Wedderburn evaluation is at f64, as in binding_k_solver.py. The eigenvalue magnitudes are O(1) and every conclusion is a SIGN conclusion, so f64 is adequate; declared, not laundered.",
     "PSD is tested on the symmetric part, i.e. on the quadratic form x'Mx — rho_lambda(K) is not symmetric in general. The validation run reproduces all four recorded H_3 results under this convention, including locating 6_2's failure in the standard (2,1) block; the magnitude there is -0.8334 here against -0.89 recorded, a q-pin/normalisation difference. The argument uses the sign and the block, which agree.",
     "include_inter=False is taken as the constituent product: the generator layout is identical to the full word minus the inter-nucleon crossings, which is what the factorisation T_w(atom) = K . (x)_i T_w(nucleon_i) means. binding_k_solver.py builds K from the HISTORICAL knot braid words instead; this probe uses the canonical substrate word, which is the point."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

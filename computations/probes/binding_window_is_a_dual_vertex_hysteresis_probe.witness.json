@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T21:23:26.796970+00:00",
-  "commitSha": "d8116264a976fc6b8d84b7607f0dada407fa1373",
+  "computedAt": "2026-09-03T04:44:48.324603+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_three_fold_tie_is_an_identity_in_q",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 29,
   "computation": "binding_window_is_a_dual_vertex_hysteresis_probe",
   "scriptFile": "binding_window_is_a_dual_vertex_hysteresis_probe.py",
   "scriptHash": "b3a02b120ff5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e284e262f79ba2fc079f5a32d70b7c092087cd98",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -119,5 +121,7 @@
     "WITHDRAWAL OF MY OWN FRAMING. The previous probe asked 'why does the substrate sit exactly on that critical face', treating it as a coincidence needing explanation. It is not one: the face is occupied at every q by an identity. The genuinely contingent quantities are the two nucleon transition points, and they are properties of the nucleon chains v_p, v_n rather than of q.",
     "CORRECTION to the earlier reading of t = G e_1 as the blanket obstruction (h3a_frobenius_gram_offdiagonal_probe, carried forward in later probes). It is neither necessary nor sufficient for the no-gap property: rows 1, 3 and 5 of G open gaps of 9.5e-3, 2.1e-2 and 5.2e-3, and 150 of 150 random costs of the form Gw with w >= 0 open gaps. Its real role is to make e_0 dual-feasible with all six rows tight, i.e. to supply the second competing degenerate vertex.",
     "The neutron transition agrees with the independently bisected window edge to 4.4e-8, which is the bisection tolerance of the two runs rather than an exact match; the proton agrees to 4e-15. Both are cross-checks between a dual-support computation here and a primal-gap computation in the earlier probe, so the agreement is meaningful, but the neutron figure should be quoted to about seven digits, not fourteen."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-31T04:25:56.210371+00:00",
-  "commitSha": "e30894ddeff0e917e53621c726e9f52d5bad61d0",
+  "computedAt": "2026-09-03T04:43:43.650426+00:00",
+  "commitSha": "ad13600fdb2001a4bd70f749e817e5db917fecf9",
   "assertions": [
     {
       "name": "quadrature_converged",
@@ -51,11 +51,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "mobius-cross-energy-borromean",
   "scriptFile": "mobius_cross_energy_borromean.py",
   "scriptHash": "0b80721bd5f3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b863f801bbf45a53d7c0ab84942c5831f55ba27b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -99,5 +99,7 @@
     },
     "equal_circles_min_separation_squared": "1.6661407e-143",
     "pair_convention": "E_total sums UNORDERED pairs, the convention in which Agol-Marques-Neves state E(Hopf) >= 2*pi^2 and in which the calibration reproduces it. Doubling gives the ordered-pair value."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
