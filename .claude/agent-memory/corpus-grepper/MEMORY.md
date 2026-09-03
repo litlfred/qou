@@ -173,6 +173,19 @@ factor.
 Found an over-claimed (b)? Re-scope to (a). Do not delete the finding — the
 numerical result stands, only the scope was wrong.
 
+## TRAP — your own two halves disagreeing is a BUG, not a refutation
+
+Testing `tr_M|_(q=1) = 2^(c-n)` for the classical binding floor I got
+`c_free = 6` from a cycle count and `tr_M(W_free) = 1/4` from Richardson —
+and `1/4 = 2^(c-6)` forces `c = 4`. I published that disagreement as a
+refutation of the formula rather than a bug in the count (it was the count:
+the permutation is `(0 1)(3 4)`, 4 cycles). The mechanism was the corpus's
+own **derived** one — and it was in the bean I was appending to, **two
+sections above where I wrote "no closed form was identified"**, with the
+same formula, the probe and a sorry-free Lean file. I had read the bean
+with `tail -60`. Check a refutation against every other number **in your
+own probe**; then read the whole destination bean, not its tail. `qou-zrx2`.
+
 ## Resolved topics — where the answer actually lives
 
 A lookup table, consulted when a specific topic
@@ -197,4 +210,5 @@ these open, and add a row whenever a sweep settles one.
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
 - 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
-- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild.
+- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
+- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.
