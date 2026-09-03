@@ -15842,6 +15842,35 @@ export const references: Reference[] = [
     volume: "406",
     note: "Cited in QOU/QBeta/HabiroClassicalLimit.lean (eq 161). Identity CONFIRMED from the held PDF library/arxiv-2111.04763v2 -- authors Garoufalidis, Gu, Marino, Wheeler (GGMW), title exact. The citing key 'ggmw2020' and its inline expansion 'Gukov-Garoufalidis-Marino-Wheeler (2020)' were BOTH wrong: it is Garoufalidis-Gu-Marino-Wheeler, arXiv:2111.04763 (2021), CMP 406 (2025). Entry carries the true authors/year; the 'eq (161)' anchor is the citing author's and was not re-verified against the PDF this session.",
   }),
+
+  ref({
+    id: "frenkel2020",
+    type: "article",
+    title: "q-Opers, QQ-Systems, and Bethe Ansatz",
+    author: [
+      { family: "Frenkel", given: "Edward" },
+      { family: "Koroteev", given: "Peter" },
+      { family: "Sage", given: "Daniel S." },
+      { family: "Zeitlin", given: "Anton M." },
+    ],
+    issued: { "date-parts": [[2020]] },
+    URL: "https://arxiv.org/abs/2002.07344",
+    note: "Cited in QOU/Mathlib/QOper.lean. arXiv:2002.07344. The Lean's inline URL was arXiv:2007.11786, which is a DIFFERENT paper (Koroteev-Zeitlin, 'Toroidal q-Opers') -- the key 'frenkel2020' names the Frenkel-first-author q-Opers/QQ-system paper, so the URL was repointed to 2002.07344 in the same change (bib triage 2026-09-03). arXiv id from web search; JEMS DOI not verifiable this session, so omitted.",
+  }),
+
+  ref({
+    id: "koroteev-zeitlin2022",
+    type: "article-journal",
+    title: "q-Opers, QQ-systems, and Bethe Ansatz II: Generalized Minors",
+    author: [
+      { family: "Koroteev", given: "Peter" },
+      { family: "Zeitlin", given: "Anton M." },
+    ],
+    "container-title": "Journal für die reine und angewandte Mathematik (Crelle's Journal)",
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2108.04184",
+    note: "Cited in QOU/Mathlib/QOper.lean. arXiv:2108.04184. The Lean's inline URL was arXiv:2108.01557, which does not resolve to a Koroteev-Zeitlin paper -- a likely digit transposition; repointed to 2108.04184 (the real KZ 'q-Opers II: Generalized Minors', Crelle 2022) in the same change (bib triage 2026-09-03). Crelle DOI not verifiable this session, so omitted.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
