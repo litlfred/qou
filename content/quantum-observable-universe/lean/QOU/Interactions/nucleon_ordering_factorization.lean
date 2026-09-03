@@ -90,6 +90,14 @@ class NucleonOrderingFactorizationContext (R : Type*) [CommRing R] where
     `computations/`).  The scalar-channel ordering-independence half is proved
     sorry-free above (`scalar_channel_ordering_independent`).
 
+    **The body is `ctx.factorization_ident`, not a `sorry` (corrected
+    2026-09-03).** An earlier revision of this docstring was headed "**Honest
+    `sorry` — and now actually one.**"; `#print axioms` reports no `sorryAx`.
+    The identity is a context-class field and this theorem projects it. Whether
+    that field is an honest open input or the conclusion under another name is
+    the projection question tracked in bean `qou-z9ws`; only the prose is
+    corrected here.
+
     **Base ring (§7c).**  The context is now over a generic `[CommRing R]`.
     `tr_M`, the Wedderburn channel weights `W_*`, the channel values `S(π)`,
     `A(π)` and the Markov parameter `z` are all algebraic quantities in the
