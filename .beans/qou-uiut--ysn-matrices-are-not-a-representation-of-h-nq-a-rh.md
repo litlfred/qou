@@ -435,3 +435,35 @@ atoms are present (a short pass writes nothing and names what is missing).
 Then **delete `.work/hadron-knot-table-regen.json`** — it is a regeneration
 artifact, not corpus data, and leaving it behind invites someone to read it
 as a source.
+
+
+## 2026-09-03 — third reclaim. The runbook worked; it also exposed its one gap.
+
+Container reclaimed again mid-run. Recovery followed the runbook above exactly
+and cost one atom:
+
+    HEAD had reset to 4d0b1eae9 (pre-everything); ff-only from origin restored
+      it to ba3455079 and with it the committed journal — 13 atoms, intact.
+    The wheel was gone again; rebuilt, both kernels verified present.
+    Resumed; the 13 cached atoms replayed at 0.00s each.
+
+**Lost: n14 only.** It had completed (1705.74s, B = +22.0780 MeV) and the
+monitor reported it, but the reclaim landed before I committed the journal.
+That is the design's stated cost — "a reclaim then costs one atom, not the
+run" — realised exactly once, as predicted.
+
+### The gap, and why it is not fixable right now
+
+Commits are driven by ME reacting to a monitor event, so there is a window
+between an atom completing and the journal being committed. For a 28-minute
+atom that window is small; for fe56 (~169 min) it is the same size, but the
+loss if it lands in the window is far larger.
+
+The real fix is for the PRODUCER to commit the journal itself after each
+atom, closing the window entirely. That means editing
+`hadron_knot_table.py` — which the journal key hashes, so doing it now would
+discard 13 atoms to protect against losing 1. Not worth it mid-run.
+
+- [ ] After the witness lands: move the journal commit into the producer (or a
+      small wrapper around it) so the commit is not gated on an agent turn.
+      Note it must not `git add -A`; explicit path only.
