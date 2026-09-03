@@ -149,6 +149,25 @@ source** — all six touched modules `exit 0`, and `#print axioms` on twelve dec
 returns `[propext, Classical.choice, Quot.sound]`. That second pass is the one to trust, and
 it exists because the first pass could have been a false green for a reason worth recording.
 
+> **🛑 BOTH TRAPS BELOW WERE ALREADY DOCUMENTED, and I re-derived them because I
+> did not read the file that holds them.**
+> [`.claude/agent-memory/lean-verifier/verification-harness.md`](../../.claude/agent-memory/lean-verifier/verification-harness.md)
+> §1 is the stale-dependency false green, measured 2026-08-30; §2 is the shadowing,
+> already naming `QOU/` and the mechanism (`SearchPath.findWithExt`), which is more
+> precise than what I worked out. Its §3 also gives a better harness than mine — a
+> complete `cp -al` hardlink mirror with `rm -f` before each write, where the `rm -f`
+> is load-bearing because a truncate-in-place would corrupt the *shared inode*, i.e.
+> the real build tree. I wrote straight into the real tree instead.
+>
+> The two are kept below as the *measurements this session added* (a fresh instance
+> of each, and in the stale-cache case a new sub-shape: the restore itself is stale
+> for anything merged after it was seeded, needing no edit of yours). They are not
+> discoveries. The only genuinely new entry is the mtime caveat, now §9 of that file.
+>
+> Recorded because it is the corpus-grep discipline applied to a place I did not
+> think of as a corpus: agent memory. The cost was a re-derivation and a discarded
+> tool; the fix was one file read.
+
 **Trap 1 — the `LEAN_PATH` shadowing applies to `QOU/`, not just `Mathlib/`.** Lean commits
 to the *first* `LEAN_PATH` root containing the module's top-level directory and does not fall
 through to later roots. So a scratch build directory works only while the **entire** cone
@@ -178,3 +197,11 @@ The practical rule, which holds regardless: **after restoring the olean cache, a
 verification is only as current as the dependency oleans it loads.** Rebuild the cone from
 source before trusting a green on any module whose dependencies this branch or a recent merge
 touched.
+
+**And the reverse-import cone, which the first pass here also skipped.** §1 of that memory
+prescribes checking the modules that *import* what changed, not only the dependencies it
+builds on. Done: of the six files this PR touches, five have importers, and exactly one —
+`QOU/SchurWeyl/HeckeSemisimpleReal.lean` — lay outside what had already been rebuilt. It
+compiles `exit 0`. The change it consumes is docstring-only (every changed line of
+`HeckeSemisimpleGeneral.lean` sits inside the module `/-! -/`), so it could not have broken;
+the point is that "could not have broken" was an argument, and the memory asks for a build.
