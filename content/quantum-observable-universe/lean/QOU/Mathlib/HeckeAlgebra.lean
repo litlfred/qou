@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Data.Fintype.Card
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
@@ -98,18 +100,41 @@ class MarkovTrace (R : Type u) [CommRing R] (n : ℕ) (q z : R)
   markov_axiom : Prop
   markov_axiom_holds : markov_axiom
 
-/-- Standard-Young-tableau count `d_λ = #SYT(λ)` for a partition
-    indexed abstractly by `λ : Type*` with cardinality `n`.  The
-    QOU substrate uses small-partition values directly (`d_[3] =
-    1`, `d_[2,1] = 2`, `d_[1,1,1] = 1`); the abstract class lets
-    callers supply the genuine `Mathlib.Combinatorics.Young.SYT`
-    count when it lands. -/
-class StandardYoungCount (n : ℕ) where
-  /-- The dimension of the irreducible at partition index `λ`. -/
+/-- **Standard-Young-tableau count** `d_λ = #SYT(λ)`, together with the Burnside/RSK identity
+`∑_{λ ⊢ n} d_λ² = n!`.
+
+## The identity is now stated; it used to be a variable
+
+This class read
+
+```
   dim : ℕ → ℕ
-  /-- Sum-of-squares identity: `Σ d_λ² = n!`. -/
-  squares_sum_factorial : Prop
+  squares_sum_factorial : Prop          -- ← the INSTANCE chose this
   squares_sum_holds : squares_sum_factorial
+```
+
+A field typed `Prop` is a *variable*, so an instance supplied both the proposition and its proof:
+`squares_sum_factorial := True` with `squares_sum_holds := trivial` discharged it, and the class
+constrained nothing.  Worse than a bare `True` field — which `AGENTS.md` §3b-tax's
+`proof-claims-unencoded` already flags — because it did not even say *which* nothing, so a reader
+could not recover what was meant to be asserted.  `AGENTS.md`'s stated remedy is a
+parameter-quantified statement in the shape of the claim, which is what `squares_sum` now is.
+
+Two consequences of writing the real statement.  The index moved from `ℕ` to `Nat.Partition n`,
+because the identity is a sum over partitions and `ℕ → ℕ` cannot express it; and the class is now
+genuinely inhabited rather than vacuously inhabitable —
+`QOU.Mathlib.StandardYoungCountInstance.instStandardYoungCount` supplies `dimSYT` together with
+`QOU.Mathlib.RSK_substrate_proved`, which is unconditional.
+
+The old docstring said the abstract class "lets callers supply the genuine
+`Mathlib.Combinatorics.Young.SYT` count when it lands".  It has landed in-repo:
+`QOU.Mathlib.dimSYT`, with the identity proved from Robinson–Schensted
+(`QOU.Mathlib.rskBurnsideHolds`, `SchenstedRSKBurnside.lean`).  Nothing is waiting on upstream. -/
+class StandardYoungCount (n : ℕ) where
+  /-- The dimension of the irreducible indexed by the partition `λ ⊢ n`. -/
+  dim : Nat.Partition n → ℕ
+  /-- **Burnside/RSK**: `∑_{λ ⊢ n} d_λ² = n!`, stated rather than nominated. -/
+  squares_sum : ∑ lam : Nat.Partition n, (dim lam) ^ 2 = n.factorial
 
 /-- **Wedderburn decomposition** at generic `q`: `H_n(q) ≅
     ⊕_{λ ⊢ n} M_{d_λ}(R)`.  Encoded as a class hypothesis
