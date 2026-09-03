@@ -240,3 +240,25 @@ TRAPs.
   duck-typed `Fraction` seminormal pipeline over power series; three traps
   (valuation, constant allocation, `reject_float64_q` vs short decimals) —
   see `exact-series-route.md`.
+- 2026-09-03 — SM gauge-coupling row (params 14-16). Gate family: **EXIT 1**,
+  10 blocking reds, all pre-existing. Four carry-forwards:
+  * **`precision-gates.sh` DIRTIES THE TREE** — it regenerates the eight
+    tree-measuring audit witnesses it runs. `git checkout -- computations/`
+    afterwards, every time; never commit them from a branch (bean `qou-v0t8`).
+  * **A bare container needs `pip install mpmath` then
+    `pip install -e tools/qou-substrate`** or the family exits **2** with
+    "PREFLIGHT FAILED … This is NOT a gate failure. Nothing was examined."
+    Exit 2 is neither green nor red.
+  * **A producer that HARDCODES its q₀ literal is invisible to three detectors
+    at once**: absent from `q0_anchor_manifest.json` (stem lookup never fires),
+    witness has no `q0Anchor` (filed `Q0_ANCHOR_MISSING`, not `Q0_FLIP`), and
+    `hardcoded_literal_audit` keys only on `codata_constants.py` entries, which
+    q₀ is not. Case: `alpha_em_form_ladder_probe.py` carries the **retired**
+    muon pin A `1.10997859555733471`; 193 py/lean sites still do.
+  * **sympy→`numpy.complex128` is a float64 route no gate sees.**
+    `mpf_mixed_arithmetic_audit` looks for mpmath/f64 *mixing*; a producer that
+    never imports mpmath and casts exact sympy matrices to `np.complex128` for
+    `np.linalg.eigvals` passes it while being f64 end to end. Case:
+    `close_321_weinberg_gap.py` — witness declares `engine: sympy`,
+    `compute_dps: 70`, carries **127** raw-f64 fields, `det_product:
+    -0.9999999999999998`.
