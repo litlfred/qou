@@ -89,8 +89,16 @@ dead end for **both** `A = 2` defects: identically zero on the singlet where `pp
 - **A change to the binding law** `B = −α log μ` itself. The `qou-y0mc` `S`-vs-`H` ambiguity is
   open — but the eight-closures audit already notes neither form fixes the *sign*
   (`−α·μ·log μ > 0` always).
-- **Whether `pp` / `nn` are single-clasp bonds at all** (the carrier / bond-type assignment) — a
-  different question from the interface value.
+- ~~**Whether `pp` / `nn` are single-clasp bonds at all** (the carrier / bond-type assignment)~~
+  **CORRECTED 2026-09-03 (same day, same author): this is NOT a surviving direction.** In production
+  the bond is exactly one crossing: `atom_braid_word_3A` emits a single inter-nucleon letter at
+  generator `3k+2` with offset `d = 0` (pp), `−h/2` (pn), `−h` (nn), multiplicity `m_* = 1`
+  (`_bond_type_L` / `tr_m_atom_zn`). That is precisely the object `single_crossing_binds` covers.
+  And any interface keyed by the species pair — which a carrier-by-content assignment is — was
+  already refuted in Lean on 2026-08-09 (`InterfaceScalar.content_keyed_interface_refuted`): pn ³S₁
+  and pn ¹S₀ have identical content and opposite boundness. The "carrier" survivor named here and in
+  the `qou-s42j` / `qou-vbyi` beans was stale; see the eight-closures audit §6 — the sector needs a
+  *structural* change, and its remaining items (`qou-ls86`, `qou-y0mc`) are not two-nucleon items.
 - **The `T`-projector route** is not what this file is about: `qou-7nwg` correctly notes the
   `T = 1 / T = 0` split is available in the Hecke algebra via `P±` with no spin at all — and the
   corpus already proves those scalars *both bind* (`mu_sum_eq_one`). This file closes the
@@ -100,9 +108,12 @@ dead end for **both** `A = 2` defects: identically zero on the singlet where `pp
 
 The sign defect is now boxed from every interface-side direction: scalar (single crossing,
 projectors, gradings, T-odd), separable space factor, **and** non-separable spin-space coupling.
-Every surviving direction is *outside the interface value*: the stacked-word class (wrong
-magnitude), the binding law, or the bond/carrier assignment for `pp`/`nn`. "Signs before digits"
-still gates the L2 binding claim; this narrows where the sign can come from, it does not supply it.
+**CORRECTED 2026-09-03:** with the carrier direction retired (above), and the stacked `σ^{−2k}`
+class closed on channel *ordering* (eight-closures route 3 — it flips the sign but orders the two
+channels backwards), **no in-algebra direction for the sign remains open.** The binding law
+(`qou-y0mc`) does not fix the sign either. "Signs before digits" still gates the L2 binding claim;
+the two-nucleon sector is a standing structural defect, exactly as the eight-closures audit §6
+states, and this file adds one more closed door rather than a candidate.
 
 ## Verification
 
