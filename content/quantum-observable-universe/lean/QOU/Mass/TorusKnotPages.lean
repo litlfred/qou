@@ -146,4 +146,19 @@ theorem alexContinuant_torus (g : ℕ) :
     alexContinuant (2 * g) * (X + 1) = X ^ (2 * g + 1) + 1 := by
   rw [alexContinuant_mul_X_add_one, (even_two_mul g).neg_one_pow]
 
+open Polynomial in
+/-- `D_{2g}` divides `X^(2n) - 1` with `n = 2g + 1`. This is the algebraic core of "the
+monodromy of `T(2, n)` has order dividing `2n`": Cayley–Hamilton turns it into `h^(2n) = 1`
+once the characteristic polynomial of the monodromy is identified with `D_{2g}`, which is
+the same determinant step left to the probe (it checks the order is exactly `2n` at
+`n = 3, 5, 7`). -/
+theorem alexContinuant_dvd_X_pow_sub_one (g : ℕ) :
+    alexContinuant (2 * g) ∣ X ^ (2 * (2 * g + 1)) - 1 := by
+  refine ⟨(X + 1) * (X ^ (2 * g + 1) - 1), ?_⟩
+  have h := alexContinuant_torus g
+  calc X ^ (2 * (2 * g + 1)) - 1
+      = (X ^ (2 * g + 1) + 1) * (X ^ (2 * g + 1) - 1) := by ring
+    _ = (alexContinuant (2 * g) * (X + 1)) * (X ^ (2 * g + 1) - 1) := by rw [h]
+    _ = alexContinuant (2 * g) * ((X + 1) * (X ^ (2 * g + 1) - 1)) := by ring
+
 end QOU.Mass.TorusKnotPages
