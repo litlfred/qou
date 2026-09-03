@@ -10,19 +10,28 @@ sub-constant is C_A for Var(Sum|c|), and the audits reduce it to three regions: 
 uniform Bessel remainder, which is NOT in corpus. THIS PROBE isolates the part of region (1) that is
 rigorous WITHOUT Olver.
 
-RIGOROUS ELEMENTARY BOUND (DLMF 10.14.4, real argument, corpus-free standard):
-    |J_x(2 sqrt(theta))| <= (sqrt(theta))^x / x!  =  theta^{x/2} / Gamma(x+1)    (x >= 0).
-For x > e*sqrt(theta) this majorant B(x) decays super-exponentially (Stirling: B(x) ~
-(e sqrt(theta)/x)^x / sqrt(2 pi x), and e sqrt(theta)/x < 1). So the DEEP tail x > e sqrt(theta) is
-rigorously negligible with NO uniform-asymptotic input. The NEAR-edge transition band
-2 sqrt(theta) < x <= e sqrt(theta) is where B(x) does NOT yet decay -- that band, plus the bulk
-oscillatory error, are the regions that genuinely require Olver.
+RIGOROUS ELEMENTARY BOUNDS USED (both corpus-free standards, real argument, integer order):
+    (i)  |J_x(2 sqrt(theta))| <= theta^{|x|/2} / |x|!            (DLMF 10.14.4)
+    (ii) |J_n(z)| <= 1                                            (universal, n integer, z real)
+The code uses their MINIMUM, Jbound(x) = min( theta^{|x|/2}/|x|!, 1 ), which is valid everywhere.
+Bound (i) alone is tight ONLY in the deep tail and is exponentially LOOSE in the bulk (it exceeds 1
+there), which is why the min is needed: a tail index then contributes its tiny (i), while a bulk
+index contributes at worst 1.
 
-THIS PROBE: (a) verifies |besselj(x,2sqrt th)| <= B(x) on a grid (sanity of the rigorous majorant);
-(b) computes a RIGOROUS upper bound on the deep-tail (x or y > X* := ceil(e sqrt th)+m) contribution
-to V_A = (1/2) Sum (g(x)-g(y))^2 J(x,y;th)^2 using the majorant, showing it is astronomically small
-against the leading V_A ~ 0.81 theta^2; (c) reports the width and B-magnitude of the transition band
-that remains Olver-dependent. NO float64 (mpmath.mpf). Nothing wired; no c_k; L2 unchanged. Gap OPEN.
+The cutoff is X* := the first index at which the (i)-factor drops below 1e-20 (NOT ceil(e sqrt th);
+the (i)-factor first falls below 1 near e sqrt(theta), but reaching 1e-20 takes a further O(sqrt th)).
+Beyond X* the far tail is rigorously negligible with NO uniform-asymptotic input. The band
+2 sqrt(theta) < x <= X* is where only the trivial bound (ii) is available -- too crude to expose the
+O(theta^{-1/2}) Bessel->sine cancellation -- so that band, plus the bulk oscillatory error, are the
+regions that would require Olver.
+
+THIS PROBE: (a) verifies |besselj(x,2sqrt th)| <= Jbound(x) on a grid (sanity of the bound);
+(b) computes a RIGOROUS upper bound on the far-tail (|x| or |y| > X*) contribution to
+V_A = (1/2) Sum (g(x)-g(y))^2 J(x,y;th)^2; (c) computes a RIGOROUS LOWER bound on V_A itself -- every
+term of that sum is non-negative, so any windowed partial sum is a valid lower bound -- so that the
+reported far-tail SHARE is a genuine rigorous upper bound on the true ratio, not a division by a
+measured reference scale; (d) reports the width of the band that remains Olver-dependent.
+NO float64 (mpmath.mpf). Nothing wired; no c_k; L2 unchanged. Gap OPEN.
 """
 from __future__ import annotations
 import mpmath as mp
@@ -66,6 +75,28 @@ def verify_bound(theta, xs):
     return worst
 
 
+def VA_lower_bound(theta, W):
+    """RIGOROUS LOWER bound on V_A = Sum_{x<y} (gA(x)-gA(y))^2 J(x,y;theta)^2.
+    EVERY term is a product of two squares, hence non-negative, so ANY partial sum over a sub-window
+    is a valid lower bound for the full sum. Here: the window |x|,|y| <= W, evaluated with the EXACT
+    kernel at 50 dps (arithmetic error ~1e-45 relative, far below any digit reported)."""
+    arg = 2 * mp.sqrt(theta)
+    st = mp.sqrt(theta)
+    J = {0: mp.besselj(0, arg)}
+    for x in range(1, W + 2):
+        J[x] = mp.besselj(x, arg)
+        J[-x] = (-1) ** x * J[x]
+    xs = list(range(-W, W + 1))
+    g = {k: gA(k) for k in xs}
+    tot = mp.mpf(0)
+    for i, x in enumerate(xs):
+        gx = g[x]
+        for y in xs[i + 1:]:
+            Jxy = st * (J[x] * J[y + 1] - J[x + 1] * J[y]) / (x - y)
+            tot += (gx - g[y]) ** 2 * Jxy * Jxy
+    return tot
+
+
 def find_Xstar(theta, eps):
     """Smallest X with Bdeep(X, theta) < eps (super-exp factor below threshold)."""
     x = int(mp.ceil(mp.e * mp.sqrt(theta)))
@@ -98,7 +129,8 @@ def deep_tail_majorant(theta, Xstar, M):
 
 def main():
     print(f"# Deep-tail rigorous majorant for Var(Sum|c|); dps={mp.mp.dps}; NO float64")
-    print(f"# elementary bound |J_x(2 sqrt th)| <= theta^(x/2)/x!  (DLMF 10.14.4, corpus-free)")
+    print(f"# elementary bound Jbound(x) = min( theta^(|x|/2)/|x|! , 1 ) >= |J_x(2 sqrt th)|")
+    print(f"#   [(i) DLMF 10.14.4 + (ii) universal |J_n(real)|<=1; both corpus-free]")
     print("#")
     for theta in (mp.mpf(100), mp.mpf(256), mp.mpf(640)):
         st = mp.sqrt(theta)
@@ -108,17 +140,23 @@ def main():
         # (a) sanity: the rigorous bound dominates exact besselj across bulk+tail
         grid = list(range(2, M, max(1, M // 40)))
         worst = verify_bound(theta, grid)
-        # (b) rigorous FAR-tail bound (at least one index beyond X*)
+        # (b) rigorous FAR-tail upper bound (at least one index beyond X*)
         tail = deep_tail_majorant(theta, Xstar, M)
-        VA_lead = mp.mpf('0.8106') * theta ** 2   # leading Var(Sum|c|) ~ 0.81 theta^2 (measured, ref only)
-        # (c) the region <= X* that still needs Olver (trivial |J|<=1 too crude there)
+        # (c) RIGOROUS LOWER bound on V_A (non-negative terms => windowed partial sum is valid).
+        #     This is what makes the reported SHARE a genuine bound rather than a division by a
+        #     measured reference scale.
+        W = int(mp.ceil(2 * st))
+        VA_lo = VA_lower_bound(theta, W)
+        share = tail / VA_lo                      # rigorous: tail/V_A <= tail/VA_lo since V_A >= VA_lo
+        # (d) the region <= X* that still needs Olver (trivial |J|<=1 too crude there)
         band_lo, band_hi = edge, Xstar
-        print(f"# theta={int(theta)}: edge 2sqrt={mp.nstr(edge,5)}, X* (Bdeep<1e-20)={Xstar}, M={M}")
+        print(f"# theta={int(theta)}: edge 2sqrt={mp.nstr(edge,5)}, X* (factor<1e-20)={Xstar}, M={M}")
         print(f"#   (a) max |besselj|/Jbound over grid = {mp.nstr(worst,4)}  (must be <=1 => "
               f"{'OK' if worst <= 1 else 'FAIL'})")
-        print(f"#   (b) RIGOROUS far-tail V_A bound (|x| or |y| > X*) <= {mp.nstr(tail,4)}")
-        print(f"#       vs leading V_A ~ {mp.nstr(VA_lead,4)}  => far-tail/V_A <= {mp.nstr(tail/VA_lead,4)}")
-        print(f"#   (c) Olver-dependent region x in ({mp.nstr(band_lo,5)}, {Xstar}] (edge+transition+")
+        print(f"#   (b) RIGOROUS far-tail ABSOLUTE bound (|x| or |y| > X*) <= {mp.nstr(tail,4)}")
+        print(f"#   (c) RIGOROUS LOWER bound V_A >= {mp.nstr(VA_lo,6)} (window |.|<={W}, non-neg terms)")
+        print(f"#       => RIGOROUS far-tail share  tail/V_A <= {mp.nstr(share,4)}")
+        print(f"#   (d) Olver-dependent region x in ({mp.nstr(band_lo,5)}, {Xstar}] (edge+transition+")
         print(f"#       outer-bulk error) width {mp.nstr(band_hi-band_lo,4)} ~ O(sqrt(theta))")
         print("#")
     print("# VERDICT: the FAR tail (|x| > X*, where the DLMF-10.14.4 factor < 1e-20) contributes a")
@@ -126,10 +164,15 @@ def main():
     print("#   min(theta^{x/2}/x!, 1) >= |J_x(2sqrt th)|. NO Olver needed there. What the elementary")
     print("#   bounds CANNOT resolve is the region |x| <= X* (~ 2sqrt th .. e sqrt th + O(sqrt th)):")
     print("#   there |J|<=1 is too crude to see the O(theta^{-1/2}) Bessel->sine cancellation that sets")
-    print("#   C_A. THAT is the precise 'need lit?' answer: Olver's explicit uniform Bessel remainder")
-    print("#   (DLMF 10.19/10.20 + Olver 1997 Ch.10 error bounds), NOT in corpus, for x in [0, X*] only.")
-    print("RESULT: far-tail |x|>X* pinned rigorously corpus-free; the O(sqrt th)-wide region x<=X*")
-    print("        (edge+transition+outer-bulk error) needs Olver. qou-k5r5 OPEN, need-lit localised.")
+    print("#   C_A.")
+    print("# BUT NOTE (companion probe _pointwise_bound_insufficiency.py): supplying a sharper")
+    print("#   POINTWISE bound on that band -- Olver's uniform remainder included -- does NOT close it")
+    print("#   either. At theta=78 the pointwise route needs a remainder constant K<0.058 against an")
+    print("#   O(1) Debye coefficient (~17x short). The band needs the OSCILLATORY CANCELLATION")
+    print("#   (summation by parts / stationary phase), not a better magnitude bound. So this probe")
+    print("#   localises WHERE the work is, and the companion probe shows a citation will not do it.")
+    print("RESULT: far-tail |x|>X* pinned rigorously corpus-free (both directions); the O(sqrt th)-wide")
+    print("        band x<=X* needs the oscillatory cancellation, not a pointwise bound. qou-k5r5 OPEN.")
     print("EXIT: 0")
     return 0
 

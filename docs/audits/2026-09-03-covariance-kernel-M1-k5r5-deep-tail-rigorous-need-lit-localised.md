@@ -45,20 +45,32 @@ Two standard, corpus-free bounds hold for integer `x` and real argument:
   `x > e√θ`, exponentially loose in the bulk.
 - **Universal**: `|J_n(z)| ≤ 1` for integer `n`, real `z`.
 
-Their **minimum** `Jb(x) := min(θ^{x/2}/x!, 1)` is a valid bound everywhere.
+Their **minimum** `Jb(x) := min(θ^{|x|/2}/|x|!, 1)` is a valid bound everywhere (bound (i) alone
+*exceeds 1* in the bulk, so the `min` is what makes it usable there).
 [`wlambda_covariance_epic_M1_deep_tail_rigorous_majorant.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_deep_tail_rigorous_majorant.py)
-(exit 0; `mpmath` 50 dps; NO float64) uses it to bound the far-tail share of
-`V_A = ½Σ(g(x)−g(y))²J(x,y;θ)²` (`J(x,y)=√θ(J_xJ_{y+1}−J_{x+1}J_y)/(x−y)`, `g=G_A`), taking the cutoff
-`X*` where `θ^{X*/2}/X* ! < 10^{−20}`:
+(exit 0; `mpmath` 50 dps; NO float64) bounds the far tail of
+`V_A = ½Σ(g(x)−g(y))²J(x,y;θ)²` (`J(x,y)=√θ(J_xJ_{y+1}−J_{x+1}J_y)/(x−y)`, `g=G_A`), with cutoff `X*`
+the first index where the (i)-factor `θ^{X*/2}/X*! < 10^{−20}`.
 
-| θ | edge `2√θ` | `X*` | far-tail `V_A` share (rigorous ≤) |
-|---|---|---|---|
-| 100 | 20.0 | 58 | `1.6×10⁻³⁸` |
-| 256 | 32.0 | 77 | `1.5×10⁻³⁸` |
-| 640 | 50.6 | 104 | `1.0×10⁻³⁷` |
+The **share** is made rigorous by bounding `V_A` from *below* as well: every term of `V_A` is a
+product of two squares, hence non-negative, so any windowed partial sum is a valid lower bound.
 
-(sanity: `max |besselj|/Jb ≤ 0.47` across the grid — the bound is valid). So the contribution from
-`|x| > X*` is **rigorously** below `10⁻³⁷·V_A` with **no** uniform-asymptotic input.
+| θ | edge `2√θ` | `X*` | far-tail **absolute** bound ≤ | rigorous `V_A ≥` | rigorous share ≤ |
+|---|---|---|---|---|---|
+| 100 | 20.0 | 58 | `1.33×10⁻³⁴` | `7.81×10³` | `1.7×10⁻³⁸` |
+| 256 | 32.0 | 77 | `7.94×10⁻³⁴` | `5.03×10⁴` | `1.6×10⁻³⁸` |
+| 640 | 50.6 | 104 | `3.39×10⁻³²` | `3.20×10⁵` | `1.1×10⁻³⁷` |
+
+(sanity: `max |besselj|/Jb ≤ 0.42` across the grid — the bound is valid). So the contribution from
+`|x| > X*` is **rigorously** below `1.1×10⁻³⁷·V_A` with **no** uniform-asymptotic input — both the
+numerator (majorant) and the denominator (non-negative partial sum) being rigorous bounds in the
+correct directions.
+
+> **Correction (Copilot review, same day).** The first version of this table divided the rigorous
+> absolute bound by the *measured* reference scale `0.8106·θ²` and labelled the quotient a rigorous
+> share. That overstated rigor: a rigorous ratio needs a proven **lower** bound on `V_A`. Fixed above
+> by the non-negative-partial-sum lower bound; the numbers moved only in the 2nd digit
+> (`1.6→1.7×10⁻³⁸`), so the conclusion is unchanged — but the claim is now actually proved.
 
 ### What remains genuinely Olver-dependent
 
@@ -124,8 +136,9 @@ a refinement.
 
 Gap `qou-k5r5` **OPEN**. Two results, one positive and one negative, both rigorous/measured:
 
-- **Positive (corpus-free):** the far tail `|x| > X*` (`X* ~ e√θ + O(√θ)`) contributes `< 10⁻³⁷·V_A`,
-  by elementary bounds alone.
+- **Positive (corpus-free):** the far tail `|x| > X*` (`X* ~ e√θ + O(√θ)`) contributes
+  `≤ 1.1×10⁻³⁷·V_A`, by elementary bounds alone (majorant above, non-negative-partial-sum lower bound
+  on `V_A` below).
 - **Negative (decisive):** the **pointwise** Bessel-remainder route to `C_A` cannot work — at `θ=78`
   it demands a remainder constant `K < 0.058` against an `O(1)` Debye coefficient. So "get Olver's
   bound" is *not* the next step, and the answer to **"need lit?" is NO** for the chosen route.
@@ -138,7 +151,7 @@ Lean-proved, `m_∞ = 0.30019` derived, `M₁>0` exact for `n ≤ 78`, far tail 
 ## Compute + sources
 
 - [`wlambda_covariance_epic_M1_deep_tail_rigorous_majorant.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_deep_tail_rigorous_majorant.py)
-  (exit 0; NO float64; far-tail `< 10⁻³⁷·V_A` rigorous corpus-free).
+  (exit 0; NO float64; far-tail `≤ 1.1×10⁻³⁷·V_A`, rigorous corpus-free in both directions).
 - Elementary bounds: DLMF 10.14.4 (`|J_ν(z)| ≤ (z/2)^ν/Γ(ν+1)`), `|J_n(real)| ≤ 1`.
 - Missing input (region `x ≤ X*`): Olver, *Asymptotics and Special Functions* (1997) Ch. 10 error
   bounds / DLMF §10.19–§10.20 — **not in corpus**.
