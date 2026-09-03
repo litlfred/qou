@@ -100,7 +100,12 @@ respected by construction.
 - The prune is for **single-shift** operators. A general q-D-module element is a
   finite sum `Σ_k c_k σ^k`; its residue slot is the sum of the slots and could in
   principle cancel or survive. The composition law is the tool for that case;
-  the sum case is not claimed here.
+  the sum case is not claimed here. **Settled 2026-09-03
+  ([`2026-09-03-ramified-shift-calculus-sum-case.md`](2026-09-03-ramified-shift-calculus-sum-case.md),
+  bean `qou-60ew`): it survives — not by cancellation but by a word that jumps
+  over the constant slot — so the "non-derivative component" clause above is a
+  single-shift statement; the `(−1)^n` residual then forces the even part off
+  the tower and the conclusion is recovered for sums by that route.**
 - Shift `k ≥ 3` (a triple pole per jet) is not pruned by the residue argument;
   it is geometrically unnatural but not excluded here.
 - The keystone `a_D^(n) = lw(n−1)` is neither weakened nor strengthened.
