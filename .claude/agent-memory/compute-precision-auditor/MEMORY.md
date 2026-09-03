@@ -165,6 +165,40 @@ of work with wall elapsed + ETA. A silent end with 0-byte output inside the
 expected window means it crashed — re-launch with stricter logging, do not
 silently abandon. Report bottlenecks in the end-of-task summary.
 
+## TRAP — `tr_m_word_lq` Case C is a MISSING BRANCH, and #886 forbids auto-chaining
+
+`tr_m_atomic_mpfr` / `tr_m_word_lq` raise
+
+    RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not implemented
+
+The recursion (`tools/hecke-engine/src/tr_m_word_lq.rs`) finds the top generator,
+takes the `segment` after its innermost occurrence and branches on how many
+`top-1` it contains: **none** → apply `sigma^2 = h.sigma + 1`; **exactly one** →
+apply the braid relation; **more than one** → unimplemented. So it is a gap in a
+reduction algorithm, not a mathematical wall, and it fires on ordinary suffixed
+words — appending an interface generator to a 9-strand atom word is enough.
+
+**Do not "fix" it by chaining to the sympy Ocneanu fallback.** PR #886 declined
+that deliberately: Case C is *"a MATHEMATICAL condition where the Rust kernel is
+inapplicable and the right answer may differ"*, so an automatic switch would
+mask a discrepancy rather than surface one. `canonical_mass_table_extended.py`
+carries that decision in a comment and narrows its own fallback to a MISSING
+extension (an environment fact) rather than to Case C (a case distinction).
+
+**The validated detour is the CHARACTER route.** Case C belongs to the
+Markov-trace *recursion*; `chi_q_atomic_all_partitions_mpfr` computes
+`chi_lambda(prod_i (c_i sigma_{g_i} + d_i I))` for every `lambda |- n` straight
+from the `(c, d, g)` letters — no expansion, no recursion, no Case C — and
+`tr_M = sum_lambda y_lambda chi^lambda`. It reaches `n = 12`. Measured
+2026-09-03 against the committed `chi-<atom>-h<n>-at-q0-50dps` witnesses: worst
+`|chi - committed|` 2.0e-49, worst `|tr_M - committed|` 8.0e-51. Validate against
+those witnesses before trusting it — a third route to the same number is only
+worth anything once it reproduces the first.
+
+**Its generator indices are 1-BASED**; `tr_m_atomic_mpfr`'s are 0-based. Mixing
+them is SILENT at `n >= 4` (it just evaluates a different word) and only panics
+at small `n`, where the index falls out of range.
+
 ## BASELINE — re-measure, do not quote
 
 Everything here is a *method*, not an answer.

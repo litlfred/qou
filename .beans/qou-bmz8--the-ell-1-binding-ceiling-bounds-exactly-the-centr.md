@@ -279,11 +279,23 @@ obvious place to look.
 
 ## Todo (revised)
 
-- [ ] Decide with the owner whether `qou-fvzm` should carry a pointer. It is
-      `completed` with 7 inbound references and its closing line is what later
-      sessions quote — this session quoted it twice before testing it. The
-      pointer would now read "the stated ground is narrower than the conclusion,
-      and the gap was measured and found empty", which is a strengthening.
-- [ ] `tr_m_word_lq` Case C is worth a look on its own: it blocks a class of
-      suffixed words, not just this one. It fails loudly, which is the good
-      kind, and the character route is a workable detour.
+- [x] `qou-fvzm` now carries a scoping note (2026-09-03). Added rather than
+      altered: its verdict is NOT withdrawn, and the note says so in its first
+      sentence. Safe to do unilaterally only because the measurement came back
+      negative — had the gap been non-empty it would have been a challenge to
+      someone's conclusion and an owner call.
+- [x] `tr_m_word_lq` Case C — investigated, and the answer is **do not fix it
+      that way**. It is a missing branch of the reduction, not a mathematical
+      wall: the recursion branches on how many `top-1` sit in the segment after
+      the top generator's innermost occurrence — none applies
+      `sigma^2 = h.sigma + 1`, exactly one applies the braid relation, and more
+      than one is unimplemented. But **PR #886 deliberately declined an
+      automatic chain out of Case C**, calling it "a MATHEMATICAL condition
+      where the Rust kernel is inapplicable and the right answer may differ", so
+      silently routing to the sympy Ocneanu fallback would mask a discrepancy
+      instead of surfacing one. The right move is what this arc actually did:
+      take the CHARACTER route, which is a different algorithm reaching the same
+      number, and validate it against the committed witnesses first. Recorded as
+      a TRAP in `.claude/agent-memory/compute-precision-auditor/MEMORY.md`,
+      together with the 1-based/0-based generator-index difference, which is
+      silent at `n >= 4`.
