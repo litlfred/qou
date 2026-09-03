@@ -445,3 +445,99 @@ it described.
 | **3b — make regeneration non-lossy (emit `q0Value`)** | **NEW — blocks stage 4** |
 | 3c — unify the derive path and the read path | **NEW — latent until CODATA updates** |
 | 4 — consumer migration, producer by producer | still gated on 3b |
+
+---
+
+## STAGE 3b DONE 2026-09-03 — and it **CORRECTS my own stage-3 finding**
+
+### 🛑 First, the retraction
+
+The stage-3 note above says:
+
+> `q_pinning_50_digit.py` **never writes `q0Value`** … The field was added
+> **downstream** by a witness sweep on 2026-08-28 (`83bab99730` /
+> `cfe73b8eb5`). This is the *bare producer* hazard.
+
+**That is wrong.** It is in PR #6429's body too, already merged. The producer
+*does* write `q0Value` — and the mechanism is worse than "doesn't write it".
+
+The symptom I measured was real: a fresh run produced no `q0Value`. But I ran
+that regeneration **with the witness file moved away** (it was the same
+experiment that proved the compute-side circle broken), and never re-ran it with
+the file present. Isolated properly:
+
+```
+RUN A: witness PRESENT ->  q0Value: 1.10997859564273904668179512938000175270
+RUN B: witness ABSENT  ->  q0Value: None
+```
+
+The field is not missing from the producer. **The producer reads its own prior
+output to populate it** — a read-modify-write on the very file it defines. My
+"added downstream" evidence was git-log timing on the witness, which is equally
+consistent with both stories; I picked one without testing it.
+
+### What was actually wrong: the self-certification loop was only HALF closed
+
+Chain, confirmed by execution:
+
+```
+q_pinning_50_digit.py
+  -> stamp_staleness_metadata(q0_anchor=None)     # resolve, don't declare
+     -> _q0_value_for_anchor("muon")
+        -> reads computations/q-pinning-50-digit.witness.json
+           -> derived_50_digit.q                   # the file it is overwriting
+```
+
+```
+_q0_value_for_anchor('muon'), witness ABSENT -> None
+_q0_value_for_anchor('muon'), witness PRESENT -> 1.1099785956427390466817951293
+_q0_value_for_anchor('proton')               -> resolves either way (constant)
+```
+
+`fca08de7d2` removed the read from **`q_parameter.py`** — the *compute* path —
+and left it in **`witness.py`** — the *stamping* path. Its message says *"the
+witness now records a value it did not choose"*: true of `derived_50_digit.q`,
+**false of `q0Value`**. `_q0_value_for_anchor`'s own docstring even states the
+loop "is now broken" while the code three lines below still read the file.
+
+The live consequence: `derived_50_digit.q` follows CODATA automatically;
+`q0Value` was copied forward. They agree today only because a sweep re-pinned
+the file. **On the next CODATA revision they diverge silently** — and `q0Value`
+is the field the whole `q0Anchor`/`q0Value` taxonomy keys on.
+
+### The fix — the muon branch now DERIVES
+
+`_q0_value_for_anchor`'s muon branch takes `q_muon_at(70)` instead of reading
+the witness. This is the change the docstring's `REVERTED 2026-08-15` note
+argues against — **and that objection is now void.** It said deriving made the
+stamp disagree with the compute (`1.1099785955573347` computed vs
+`1.1099785955541805` stamped). Since `fca08de7d2` the compute derives from the
+same `q_muon_at()`, so deriving the stamp makes them **agree**. A note recording
+this is in the docstring so the next agent does not re-revert.
+
+**Everything measured before the change:**
+
+| check | result |
+|---|---|
+| `q_muon_at(70)` vs committed `derived_50_digit.q` | **byte-identical, all 70 digits** |
+| `q0_anchor_consistency_audit.py`, branch vs `main` | **all 13 counters identical** (`Q0_OK` 1145, `Q0_FLIP` 1, `Q0_ANCHOR_MISSING` 1675, …) |
+| resolver with witness absent | was `None` → **now returns the value** |
+| producer with its own witness absent | now round-trips `q0Value` **and** `q0Anchor` |
+| from-nothing regeneration vs committed | **2** substantive diffs, both my own edits from #6429 (`anchor_role` prose, `scriptHash`) |
+
+`_Q0_PREFIXES` needed no change — it already carried the CODATA-2022 muon
+prefix `1.10997859564`.
+
+### Revised staging
+
+| stage | status |
+|---|---|
+| 1 — establish what reads A | done (#6421) |
+| 2 — what "muon-anchored" means pre-ruling | open |
+| 3 — break the circularity (compute side) | closed `fca08de7d2`, verified #6429 |
+| **3b — break it on the STAMPING side** | **DONE — this entry** |
+| 3c — unify the derive path and the read path | **CLOSED BY 3b**: both paths now derive from `q_muon_at()` |
+| 4 — consumer migration, producer by producer | **UNBLOCKED** |
+
+3c is closed as a side effect: the divergence risk existed *because* one path
+derived and the other read. Both derive now.
