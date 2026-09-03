@@ -49,6 +49,8 @@ Magnus-wall audit (the untested A≥3 half), qou-v7ro / #6077 (the sign conventi
 from __future__ import annotations
 
 import datetime as _dt
+import hashlib
+import pathlib
 import json
 import os
 import sys
@@ -166,12 +168,58 @@ def main() -> None:
     P_total = mp.mpf(0)
     P_ctrl = mp.mpf(0)
 
+    # RESUME CACHE (bean qou-omr7). The H_9 sweep is ~90 min single-threaded and
+    # this probe had NO checkpoint, so every container restart cost the entire
+    # run — three consecutive attempts died before 10 of 30 partitions. The
+    # sibling `he4_binding_k_stage2_probe` already carries this pattern and it
+    # demonstrably works: a restart there resumed 154/154 + 74/77 for free.
+    #
+    # STAMPED, not just keyed on the partition. A cache entry records the q it
+    # was computed at, and a mismatch DISCARDS rather than silently serving a
+    # stale block. That is the qou-5ovu lesson: a gate that answers "is this
+    # entry PRESENT?" when the question is "is this entry CURRENT?" is how two
+    # witnesses sat at a superseded convention for three weeks.
+    _stamp = hashlib.sha256(f"{Q0}|9".encode()).hexdigest()[:12]
+    _prog = pathlib.Path(os.path.dirname(__file__)) / ".triton_magnus_omega2_progress.jsonl"
+    _done: dict[tuple, dict] = {}
+    _dropped = 0
+    if _prog.exists():
+        for _line in _prog.read_text().splitlines():
+            if not _line.strip():
+                continue
+            try:                       # a torn final line from a hard kill is
+                _r = json.loads(_line)  # skipped, never fatal
+            except Exception:
+                continue
+            if _r.get("st") != _stamp:
+                _dropped += 1
+                continue
+            _done[tuple(_r["row"]["lambda"])] = _r["row"]
+        if _dropped:
+            print(f"  dropped {_dropped} cached partitions computed at a "
+                  f"different q", flush=True)
+        if _done:
+            print(f"  resumed {len(_done)}/{len(PARTITIONS_9)} partitions from "
+                  f"{_prog.name}", flush=True)
+
+    def _checkpoint(row):
+        with open(_prog, "a") as _pf:
+            _pf.write(json.dumps({"st": _stamp, "row": row}) + "\n")
+
     for shape in PARTITIONS_9:
+        _cached = _done.get(tuple(shape))
+        if _cached is not None:
+            rows.append(_cached)
+            P_total += mp.mpf(_cached["y_lambda"]) * mp.mpf(_cached["tr_rho_Omega2"])
+            P_ctrl += mp.mpf(_cached["y_lambda"]) * mp.mpf(_cached["tr_Omega2_ctrl"])
+            continue
         sig, A, dim = germ_matrices(shape)
         y = wedderburn_weight(shape, Q0)
         if dim == 1:                                    # singlet: germs abelian, Ω₂=0
-            rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
-                         "tr_rho_Omega2": fmt(mp.mpf(0)), "tr_Omega2_ctrl": fmt(mp.mpf(0))})
+            _row = {"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
+                    "tr_rho_Omega2": fmt(mp.mpf(0)), "tr_Omega2_ctrl": fmt(mp.mpf(0))}
+            rows.append(_row)
+            _checkpoint(_row)
             continue
 
         ngen = len(sig)
@@ -196,10 +244,14 @@ def main() -> None:
 
         P_total += y * tr_rO
         P_ctrl += y * tr_O
-        rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
-                     "tr_rho_Omega2": fmt(tr_rO), "tr_Omega2_ctrl": fmt(tr_O)})
+        _row = {"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
+                "tr_rho_Omega2": fmt(tr_rO), "tr_Omega2_ctrl": fmt(tr_O)}
+        rows.append(_row)
+        _checkpoint(_row)
         print(f"  {str(tuple(shape)):>22} dim={dim:>3}  tr(rho Om2)={mp.nstr(tr_rO,6):>14}  "
               f"[running P={mp.nstr(P_total,6)}]", flush=True)
+
+    _prog.unlink(missing_ok=True)   # completed cleanly -> next run starts fresh
 
     _EXACT = mp.mpf(10) ** -30
     ctrl_ok = abs(P_ctrl) < _EXACT
