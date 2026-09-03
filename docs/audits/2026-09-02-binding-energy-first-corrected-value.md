@@ -477,3 +477,66 @@ Two routes, neither attempted here:
    other, so the ratio `E(6)/E(4)` could discriminate at a fraction of the cost.
    This is a genuinely different measurement, not a cheaper version of the same
    one, and would need its own gate.
+
+---
+
+# 🛑 RETRACTION: the `E ≈ 5.4 × C(A,2)` target is mostly an artefact of my own arithmetic
+
+The section above extracted `E = AME − B_pred` and reported that, excluding the
+deuteron, `E/C(A,2)` is near-constant at 5.408 / 5.058 / 5.854 — offering it to
+`qou-brng` as a numerical target. **That framing is wrong and is withdrawn.**
+
+**Why.** `B_pred` is nearly constant at ≈ −7.3 and small compared with AME at
+A ≥ 3, so `E ≈ AME + 7.3`. Measured:
+
+| nucleus | A | AME | E = AME − B_pred | E/C(A,2) | (AME+7.3)/C(A,2) |
+|---|---|---|---|---|---|
+| ²H | 2 | 2.225 | 9.496 | 9.496 | 9.525 |
+| ³H | 3 | 8.482 | 16.224 | 5.408 | 5.261 |
+| ³He | 3 | 7.718 | 15.174 | 5.058 | 5.006 |
+| ⁴He | 4 | 28.296 | 35.124 | 5.854 | 5.933 |
+
+The last two columns agree to **~1 %**. So `E/C(A,2)` is very nearly a statement
+about **AME2020's own light-nucleus systematics**, with the framework
+contributing an almost constant offset.
+
+**And AME alone does not support the scaling:**
+
+```
+nucleus   A     AME    AME/A   AME/C(A,2)
+2H        2    2.225   1.112      2.225
+3H        3    8.482   2.827      2.827
+4He       4   28.296   7.074      4.716
+6Li       6   31.994   5.332      2.133
+7Li       7   39.245   5.606      1.869
+12C      12   92.162   7.680      1.396
+```
+
+`AME/C(A,2)` **peaks at ⁴He and falls steeply**. The apparent constancy I
+reported lives entirely in the A = 3…4 window, and **⁶Li breaks it on
+experimental grounds alone** — `(31.994 + 7.3)/15 ≈ 2.62`, less than half of 5.4.
+
+## What this does to the ⁶Li plan
+
+**It removes the discriminator as I posed it.** Running ⁶Li would not separate
+"E saturates the pairwise cap" from "super-pairwise growth", because `E` is
+dominated by experiment, not by the framework. I could have predicted the answer
+from AME2020 without running anything — which is the tell that the quantity was
+not measuring what I said it measured.
+
+The generosity of the framing was the error: I normalised a *residual against
+experiment* and read its shape as a property of the *theory*.
+
+## The measurement that IS informative
+
+**`B_pred` itself at A = 6**, not `E`.
+
+The four-point claim that carries weight is that the framework's own output is
+flat: −7.271, −7.742, −7.456, −6.829 across a 12.7× range of the target. The
+question ⁶Li actually answers is **whether `B_pred` stays ≈ −7.3 at A = 6**, where
+`C(A,2)` is 15 and any genuine many-body term would have to show. That is a
+statement about the framework alone, with no experimental normalisation in it,
+and it is worth the compute.
+
+`qou-brng` should take from this arc **the flatness of `B_pred`**, and **not**
+the withdrawn `5.4 × C(A,2)` figure.
