@@ -525,7 +525,7 @@
     }
   ],
   "image_generation_proof": {
-    "generators_distinct": [
+    "generators_distinct_words": [
       [
         -1
       ],
@@ -547,6 +547,30 @@
         -2
       ]
     ],
+    "generators_distinct_elements": [
+      {
+        "loops": [
+          0,
+          3,
+          4
+        ],
+        "word": [
+          -1
+        ]
+      },
+      {
+        "loops": [
+          1,
+          2,
+          5
+        ],
+        "word": [
+          2,
+          -1,
+          -2
+        ]
+      }
+    ],
     "sigma_1_as": {
       "word_in_gens": "g0^{-1}",
       "reduces_to": [
@@ -559,7 +583,33 @@
         -2
       ]
     },
-    "conclusion": "the monodromy image contains both Artin generators of B_3 and is a subgroup of B_3, hence equals B_3; its pure part is all of P_3"
+    "conclusion": "the monodromy image contains both Artin generators of B_3 and is a subgroup of B_3, hence equals B_3; its pure part is all of P_3",
+    "full_twist_relation": {
+      "checked": true,
+      "a": [
+        -1
+      ],
+      "b": [
+        2,
+        -1,
+        -2
+      ],
+      "angular_order": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ]
+      ],
+      "identity": "(ab)^3 = Delta^-2  where Delta = sigma_1 sigma_2 sigma_1",
+      "holds": true,
+      "note": "the B_3 lift of rem:holonomy-trefoil's (H_1 H_2)^3 = id; the SU(2) map kills the full twist, hence is a surjection onto a proper quotient and not an isomorphism"
+    }
   },
   "borromean_in_image": {
     "word": [
@@ -643,14 +693,14 @@
     "brunnian_in_ball": 100,
     "brunnian_in_ball_with_nonzero_mu_bar": 0
   },
-  "verdict": "CLOSED, and by the Milnor invariant itself. The six local monodromies lift to only FOUR distinct braid words, two of which already generate: sigma_1 = g0^-1 and sigma_2^-1 = g0^-1 g1 g0. So the monodromy image is not a proper subgroup of B_3 — it IS B_3, and its pure part is all of P_3. The Borromean braid (sigma_1 sigma_2^-1)^3 is therefore an element of the image; built from the loop lifts it has every pairwise linking number zero (indeterminacy 0, so mu-bar is a genuine integer) and mu-bar_123 = -1, against 0 for the identity, which is also in the image. Both are pure, so both carry sign character +1. The two colour sign lines agree as sign characters and disagree on mu-bar, ON THIS FIBRATION — the vacuous-agreement escape of F5 is closed on the very invariant the Milnor route locates colour antisymmetry in, not merely on a lower one.",
+  "verdict": "CLOSED, and by the Milnor invariant itself. The six local monodromies give only TWO distinct ELEMENTS of B_3, and those two generate: sigma_1 = g0^-1 and sigma_2^-1 = g0^-1 g1 g0. So the monodromy image is not a proper subgroup of B_3 — it IS B_3, and its pure part is all of P_3. The Borromean braid (sigma_1 sigma_2^-1)^3 is therefore an element of the image; built from the loop lifts it has every pairwise linking number zero (indeterminacy 0, so mu-bar is a genuine integer) and mu-bar_123 = -1, against 0 for the identity, which is also in the image. Both are pure, so both carry sign character +1. The two colour sign lines agree as sign characters and disagree on mu-bar, ON THIS FIBRATION — the vacuous-agreement escape of F5 is closed on the very invariant the Milnor route locates colour antisymmetry in, not merely on a lower one.",
   "scope_note": "The verdict is now a PROOF of group membership plus an exact integer computation, not a sample, so it is not scope-(a): the image equals B_3 by exhibiting both Artin generators as words in the loop lifts, and mu-bar_123 = -1 on an element of it. What remains conditional is the INPUT — the six loop words come from bring_monodromy_braid_lift_probe's numerical continuation, guarded but numerical. If those words are right, this conclusion is exact.",
   "superseded_scope": "Scope-(a) either way: this reads the six local monodromies lifted by bring_monodromy_braid_lift_probe and their pairwise products, not the whole image group. A zero here bounds what these words show, and excludes nothing about the image.",
-  "scriptHash": "43a21a550417",
-  "scriptCommitSha": "d75f359a3efc1818ec88b360d00d15d6216094bd",
-  "commitSha": "c16db4610368d294dbf1fd096348811b34e359c5",
+  "scriptHash": "e9259b82f720",
+  "scriptCommitSha": "ce4e1f50bec81a942a4f89579535d811aa68d822",
+  "commitSha": "85d5955a0f7e7e9c77775b210458c0721fa6418a",
   "engine": "python",
-  "computedAt": "2026-09-03T05:53:11.763849+00:00",
+  "computedAt": "2026-09-03T11:09:28.271328+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

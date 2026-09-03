@@ -630,16 +630,50 @@ need a computation over the image at all.
 
 The six local monodromies lifted by
 [`bring_monodromy_braid_lift_probe`](../../computations/probes/bring_monodromy_braid_lift_probe.py)
-reduce to only **four distinct braid words** — loops 0 and 3 are both `σ₁⁻¹`,
-loops 1 and 2 are both `σ₂σ₁⁻¹σ₂⁻¹` — and two of the four already generate:
+give only **two distinct elements** of `B₃`:
+
+| element | loops | word |
+|---|---|---|
+| `a` | 0, 3, 4 | `σ₁⁻¹` |
+| `b` | 1, 2, 5 | `σ₂σ₁⁻¹σ₂⁻¹` |
+
+and those two already generate:
 
 | | word in the loop lifts | reduces to |
 |---|---|---|
 | `σ₁` | `g₀⁻¹` | `σ₁` |
 | `σ₂⁻¹` | `g₀⁻¹ g₁ g₀` | `σ₂⁻¹` |
 
-with `g₀ = σ₁⁻¹` (loops 0, 3) and `g₁ = σ₁⁻¹σ₂⁻¹σ₁` (loop 5). Both reductions
-are verified by free reduction in the probe, not asserted.
+with `g₀ = a` and `g₁ = σ₁⁻¹σ₂⁻¹σ₁`, loop 5's reduced word, which is `b`
+written another way. Both reductions are verified by free reduction in the
+probe, not asserted.
+
+> **Corrected 2026-09-03.** This section first said **four distinct braid
+> words**, and named loops 0, 3 as the only `a`-loops and 1, 2 as the only
+> `b`-loops. Four distinct *reduced words* do appear, but two of them are the
+> same *element* written differently: loop 4's `σ₂σ₁σ₂⁻¹σ₁⁻¹σ₂⁻¹` reduces to
+> `σ₁⁻¹` by the braid relation, and loop 5's `σ₁⁻¹σ₂⁻¹σ₁` equals `σ₂σ₁⁻¹σ₂⁻¹`.
+> **Free reduction cannot see either coincidence** — each needs a braid
+> relation — so counting reduced words over-counted the group. The probe now
+> decides it with the faithful Artin representation (`same_element_classes`).
+>
+> **Two generators is a tighter result than four, so the conclusion is
+> strengthened, not weakened**, and every downstream statement in §11 is
+> unchanged. The correction was contributed by the independent verification on
+> PR #6458 and re-derived here before being accepted — a sibling's finding is
+> not a primary source any more than a sibling's bean is.
+
+**The two lifts also satisfy `(ab)³ = Δ⁻²`**, where `Δ = σ₁σ₂σ₁` is the half
+twist and `Δ²` generates the centre of `B₃` — verified in the probe
+(`full_twist_relation`). In angular order the six loops read `ababab`, so this
+is the product around all six branch points, and it is the **inverse full
+twist, not the identity**.
+
+That is precisely the `B₃` lift of `rem:holonomy-trefoil`'s `(H₁H₂)³ = id`, and
+it is the same fact §12.2 uses to demote that block's "isomorphism" to a
+surjection: the `SU(2)` map kills the full twist. The two arrived
+independently — §12.2 from reading the block against `B₃`'s centre, this from
+transporting the six loops — which is worth more than either alone.
 
 So the monodromy image contains both Artin generators, and is a subgroup of `B₃`
 by construction. **The image is `B₃`**, and its pure part is all of `P₃`.

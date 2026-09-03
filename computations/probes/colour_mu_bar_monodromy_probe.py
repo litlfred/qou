@@ -59,11 +59,21 @@ unlink, must give `0`. A method that cannot separate those two cannot be
 trusted on the monodromy image, where there is no independent answer to
 check against.
 
-RESULT, and it did not need a search. The six local monodromies lift to
-only FOUR distinct braid words, and two of them already generate:
+RESULT, and it did not need a search. The six local monodromies give
+only TWO distinct ELEMENTS of `B_3`, and those two already generate:
 
-    sigma_1      = g0^{-1},        g0 = sigma_1^{-1}          (loops 0, 3)
+    sigma_1      = g0^{-1},        g0 = sigma_1^{-1}       (loops 0, 3, 4)
     sigma_2^{-1} = g0^{-1} g1 g0,  g1 = sigma_1^{-1} sigma_2^{-1} sigma_1
+                                        (loops 1, 2, 5)
+
+CORRECTED: this said "four distinct braid words". Four distinct REDUCED
+WORDS do appear, but two of them are the same element written another
+way -- each coincidence needs a braid relation, which free reduction
+cannot apply, so the word-level count over-counted. `same_element_classes`
+now decides it with the faithful Artin representation. Two elements
+generating `B_3` is a tighter result than four, not a weaker one; the
+conclusion below is unchanged. Contributed by the sibling verification on
+PR #6458 and re-derived here before being accepted.
 
 so the monodromy image contains both Artin generators, is a subgroup of
 `B_3` by construction, and therefore IS `B_3` -- its pure part is all of
@@ -436,12 +446,85 @@ def load_pure_products():
     return words, out
 
 
+def same_element_classes(words):
+    """Partition the loop lifts by EQUALITY IN B_3, not by reduced word.
+
+    The Artin representation is faithful (Artin 1947), so two braids are
+    equal exactly when their automorphisms of `F_3` agree. Free reduction
+    is strictly weaker: it cannot apply a braid relation, so it reports
+    `sigma_2 sigma_1 sigma_2^-1 sigma_1^-1 sigma_2^-1` and `sigma_1^-1`
+    as different when they are the same element. That gap is what made
+    the first version of this probe say "four distinct".
+    """
+    autos = [braid_auto(w) for w in words]
+    classes = []
+    for i, a in enumerate(autos):
+        for c in classes:
+            if autos[c[0]] == a:
+                c.append(i)
+                break
+        else:
+            classes.append([i])
+    return [{"loops": c, "word": list(words[c[0]])} for c in classes]
+
+
+def full_twist_relation(words):
+    """Check `(ab)^3 = Delta^-2`, the B_3 lift of `(H_1 H_2)^3 = id`.
+
+    `Delta = sigma_1 sigma_2 sigma_1` is the half twist and `Delta^2`
+    generates the centre of `B_3`. The two distinct lifts `a`, `b` sit in
+    angular order `ababab`, so their product around all six branch points
+    is `(ab)^3` -- and it is the INVERSE FULL TWIST, not the identity.
+
+    This is the same fact `rem:holonomy-trefoil` records as
+    `(H_1 H_2)^3 = id` on SO(3): the SU(2) map kills the full twist, which
+    is exactly why it is a surjection onto a proper quotient rather than
+    an isomorphism. Verified here rather than cited.
+    """
+    cls = same_element_classes(words)
+    if len(cls) != 2:
+        return {"checked": False, "reason": f"{len(cls)} distinct elements, expected 2"}
+    a, b = tuple(cls[0]["word"]), tuple(cls[1]["word"])
+    lhs = braid_auto(reduce_word((a + b) * 3))
+    delta = (1, 2, 1)
+    rhs = braid_auto(reduce_word(inv_word(delta + delta)))
+    return {
+        "checked": True,
+        "a": list(a),
+        "b": list(b),
+        "angular_order": [c["loops"] for c in cls],
+        "identity": "(ab)^3 = Delta^-2  where Delta = sigma_1 sigma_2 sigma_1",
+        "holds": lhs == rhs,
+        "note": (
+            "the B_3 lift of rem:holonomy-trefoil's (H_1 H_2)^3 = id; the "
+            "SU(2) map kills the full twist, hence is a surjection onto a "
+            "proper quotient and not an isomorphism"
+        ),
+    }
+
+
 def prove_image_is_all_of_B3(gens):
     """Exhibit `sigma_1` and `sigma_2` as words in the six loop lifts.
 
-    This supersedes searching. The six loops reduce to only FOUR distinct
-    words -- loops 0,3 are both `sigma_1^-1` and loops 1,2 are both
-    `sigma_2 sigma_1^-1 sigma_2^-1` -- and two of them already generate:
+    This supersedes searching. The six loops give only TWO distinct
+    ELEMENTS of `B_3` -- not four, as this probe and the audit first said.
+    Four distinct REDUCED WORDS appear, but two of them are the same
+    element written differently: loop 4's `sigma_2 sigma_1 sigma_2^-1
+    sigma_1^-1 sigma_2^-1` reduces to `sigma_1^-1` by the braid relation,
+    and loop 5's `sigma_1^-1 sigma_2^-1 sigma_1` equals `sigma_2
+    sigma_1^-1 sigma_2^-1`. So the lifts are
+
+        a = sigma_1^-1                 on loops {0, 3, 4}
+        b = sigma_2 sigma_1^-1 sigma_2^-1   on loops {1, 2, 5}
+
+    and TWO elements generate all of `B_3` -- a tighter statement than
+    the one this function used to make. Free reduction cannot see either
+    coincidence (both need a braid relation), which is why the word-level
+    count came out at four; `same_element_classes` below decides it with
+    the faithful Artin representation instead. Correction contributed by
+    the sibling verification on PR #6458 and re-derived here.
+
+    Two of them already generate:
 
         sigma_1      = g0^{-1}                with g0 = sigma_1^{-1}
         sigma_2^{-1} = g0^{-1} g1 g0          with g1 = sigma_1^{-1} sigma_2^{-1} sigma_1
@@ -468,7 +551,8 @@ def prove_image_is_all_of_B3(gens):
     if s2_inv != (-2,):
         raise ValueError(f"g0^-1 g1 g0 reduced to {s2_inv}, expected sigma_2^-1")
     return {
-        "generators_distinct": [list(w) for w in sorted(have)],
+        "generators_distinct_words": [list(w) for w in sorted(have)],
+        "generators_distinct_elements": same_element_classes(gens),
         "sigma_1_as": {"word_in_gens": "g0^{-1}", "reduces_to": list(s1)},
         "sigma_2_inv_as": {
             "word_in_gens": "g0^{-1} g1 g0",
@@ -575,13 +659,20 @@ def main():
     linked = [r for r in records if not r["brunnian"]]
 
     proof = prove_image_is_all_of_B3(loop_words)
+    twist = full_twist_relation(loop_words)
+    proof["full_twist_relation"] = twist
     print("\nimage generation:")
-    print(f"  distinct loop lifts: {proof['generators_distinct']}")
+    print(f"  distinct reduced WORDS:    {proof['generators_distinct_words']}")
+    print("  distinct ELEMENTS of B_3:  "
+          f"{[(c['loops'], c['word']) for c in proof['generators_distinct_elements']]}")
     print(f"  sigma_1      = {proof['sigma_1_as']['word_in_gens']}"
           f"  ->  {proof['sigma_1_as']['reduces_to']}")
     print(f"  sigma_2^{{-1}} = {proof['sigma_2_inv_as']['word_in_gens']}"
           f"  ->  {proof['sigma_2_inv_as']['reduces_to']}")
     print(f"  => {proof['conclusion']}")
+    if twist["checked"]:
+        print(f"  {twist['identity']}:  {twist['holds']}")
+        print(f"     (the B_3 lift of rem:holonomy-trefoil's (H_1H_2)^3 = id)")
 
     bor = borromean_in_image(loop_words)
     print(f"\n  {bor['built_from_loop_lifts']} = {bor['word']}")
@@ -602,8 +693,8 @@ def main():
 
     verdict = (
         "CLOSED, and by the Milnor invariant itself. The six local "
-        "monodromies lift to only FOUR distinct braid words, two of "
-        "which already generate: sigma_1 = g0^-1 and sigma_2^-1 = "
+        "monodromies give only TWO distinct ELEMENTS of B_3, and those "
+        "two generate: sigma_1 = g0^-1 and sigma_2^-1 = "
         "g0^-1 g1 g0. So the monodromy image is not a proper subgroup "
         "of B_3 — it IS B_3, and its pure part is all of P_3. The "
         "Borromean braid (sigma_1 sigma_2^-1)^3 is therefore an element "
