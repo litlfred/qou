@@ -596,10 +596,30 @@ The three ⁶Li kills were real, and the ceiling on the *full* path at A = 6
 stands. What changed is that the full path was never the measurement this
 question needed.
 
+## k = 11 — half the pair, and why only half
+
+`k_exact = 11` is the production truncation, so it is the one rung of the ladder
+that is not a reduced-cost proxy. The ⁴He leg completed:
+
+    he4   A=4  k=11   uic = -8.201558468      1104 s
+
+The ⁶Li leg did **not**. The run was killed by a **worker-process restart** at
+~1919 s of wall — an environment event, not a compute-cost ceiling, and a
+different failure from the three ⁶Li kills recorded above. It has been
+relaunched; the driver is resumable (each cell is written to
+`route1.json` as it lands and re-entry skips completed keys), so only the one
+missing cell is recomputed.
+
+Until that lands, **k = 11 has no ratio** and must not be quoted as one. The
+⁴He k=11 value continues the smooth `|uic|` growth in `k`
+(3.71 → 5.67 → 8.20 for k = 9, 10, 11) with no sign of the truncation
+saturating, which is worth recording on its own: the accumulator is *not*
+converged at the production truncation.
+
 ## Still open
 
-- **k = 11** (production truncation) for the pair was still running. The k = 7…10
-  trend is flat and the k = 11 pair is expected to follow, but that is an
+- **k = 11 for ⁶Li** — the second half of the production-truncation pair. The
+  k = 7…10 trend is flat and k = 11 is expected to follow, but that is an
   expectation, not a measurement.
 - **Why** the accumulator is nucleus-independent remains unmeasured. This
   localises the symptom to A = 6; it does not identify where the A-dependence is
