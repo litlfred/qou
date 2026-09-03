@@ -2247,3 +2247,5 @@ the `> 1` assert passed. The assert now pins 33.7055 to four decimals.
 Also: corpus-grepper memory updated (`MEMORY.md` trimmed 202 → 200 lines,
 detail in `resolved-topics.md`), since its own entry ended by handing over the
 gate that this closes.
+## 2026-09-03 — a NON-bond-graph structural source for the extensive term exists in the trace (qou-kru4)
+The bond-graph routes are closed from every direction above. Separately: the Markov trace is NOT bond-multiplicative at n=4 — the interleaved word s0 s1 s0 s2 s1 carries the exact cross term z(z^2-hz-1) = z * (conv-D Markov defect), negative (extra binding), confirmed two independent ways. This is a WORD-CLASS effect (bonds re-crossing after a neighbour bond), not a bond-graph count, so none of the bond-graph exclusions apply to it. It is a candidate source, not a closure: the production word is sequential (no number moves) and which word class a nucleus is remains qou-5vhf. See qou-ls86's 2026-09-03 entry and docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.
