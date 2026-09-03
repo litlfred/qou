@@ -81,6 +81,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3898a3d0665a",
+          "ts": "3bf6bcad6d22",
+          "lean": "f6271c5bb24a",
+          "lean_statement": "8d3f892885e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:54:52.994Z",
+        "reviewed_sha": "d8897ceefbdf21b197b0bd173ca658165b1c9330",
+        "severity": "critical",
+        "evidence": "lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean did not derive the spectral formula. KnotFactorSpectralContext carried ten fields of which eight were DATA - q, Partition, partitions, plancherelWeight, chi_beta, chi_beta_mirror, chi_one, knotFactor - and two were the claims; knot_factor_spectral_derivation was a def whose body was ctx.claim_knot_factor_spectral. The 2026-08-30 pass removed the sibling projection on the stated ground that \"the content stays in the class field ... which asserts the same proposition under the same hypotheses\". That ground is wrong here: a field is a hypothesis only when it constrains the class PARAMETERS, and the sole parameter n does not appear in the identity, so the binder assumed nothing about caller data.",
+        "notes": "Repaired to 1a disposition 3. Naming recovers content here (unlike six-term) because the two named propositions COMBINE: knotFactor_eq_one_of_trivial_braid derives a_K = 1 for a braid with the identity character, from the spectral formula plus the normalisation, using the chi_one non-vanishing the class carried as chi_one_ne_zero. That is the propositions own unknot consistency check and it is sorry-free. Verdict stays fail: H_n(R,q), beta_K and its mirror, the characters chi_lambda, the Gram pairing, and the definition w_lambda = dim_q^2(V_lambda)/[n]_q! that makes the weights PLANCHEREL rather than arbitrary reals summing to one are all unencoded. The class field q was unused by the identity and is gone with it. Side fix: five .md paths in the file named braids-and-knots/, a chapter that does not hold this block - it is in mass-theory/. Verified lean-direct exit 0. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -96,6 +115,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3898a3d0665a",
+          "ts": "3bf6bcad6d22",
+          "lean": "f6271c5bb24a",
+          "lean_statement": "8d3f892885e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:54:34.498Z",
+        "reviewed_sha": "d8897ceefbdf21b197b0bd173ca658165b1c9330",
+        "notes": "Repaired on this branch. KnotFactorSpectralContext is deleted; PlancherelNormalised and knot_factor_spectral_derivation are Prop-valued defs over parameters and nothing projects a field. The 2026-08-30 pass had removed the sibling plancherelWeight_sum_eq_one but left this declaration as a def whose body was ctx.claim_knot_factor_spectral. Verified lean-direct exit 0, sorry-free. Bean qou-z9ws."
       }
     ],
     "proof-no-trivial-true": [
@@ -2313,6 +2349,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:01:49.189Z",
+  "updated_at": "2026-09-03T04:54:52.994Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
