@@ -72,3 +72,49 @@ wall 1m52s). Corollary lemma names, all confirmed in this pin:
 
 `sympy` is absent by default in this container; `python3 -m pip install --user
 sympy` works through the proxy (got 1.14.0, matching the witness environment).
+
+## Lean notation tokens used as binder names — a whole parse-failure class
+
+Measured 2026-09-03 across the 908 content-block siblings. Four of them failed
+at the PARSER, and two were this: a Unicode identifier that Lean 4 has already
+claimed as notation cannot be a binder name.
+
+- **`Σ` is `Sigma`.** `axiom foo (Σ : ElectroweakSlice)` gives
+  `unexpected token 'Σ'; expected '_' or identifier`, once per use.
+  `observations/n-v-bring-action.lean` had **8** such errors and had been dead
+  for some time.
+- **`λ` is the lambda.** `cs.partitions.prod fun λ => …` gives
+  `unexpected token '=>'`, because `fun λ` parses as one lambda and then
+  another. `mass-theory/gram-determinant-plancherel-ratio.lean`.
+
+**Scan for the lowercase one too.** A first pass here checked
+`Σ Π Λ ∑ ∏ ⋀ ⋁ ∫` and missed `λ` entirely — capital `Λ` is NOT reserved
+(17 library files use it happily), and the one that bites is the lowercase.
+Confirm any candidate with a two-line file rather than by eye:
+
+```lean
+example (l : List ℕ) : List ℕ := l.map fun λ => λ + 1
+-- error: unexpected token '=>'  ⇒ λ is not a legal binder
+```
+
+**Fixing the parse error reveals what it was masking, every time.** In all
+four files the count went UP or sideways before it went down: `Σ` 8 → 3
+(`opaque … : ℝ` needs `Inhabited ℝ`, never imported); `section` 13 → 12 → 4
+(no `Mathlib.Algebra.Polynomial.Laurent`, then an unclosed
+`noncomputable section` that could not surface while the section never
+opened). Budget for a second and third round; do not read the first drop as
+the fix.
+
+## Orphaned docstrings — the other half of that parse class
+
+The remaining two were a `/-- … -/` with **no declaration under it**, which is
+a parse error however harmless it looks. Both were left behind by editing:
+one theorem deleted with its docstring kept, and one where the file's own next
+docstring says *"Auto-extracted from the single-sorry theorem body in this
+file"* — i.e. a tool lifted the declaration out and left the comment.
+
+Symptom is `unexpected token '/--'; expected 'lemma'`, or `unexpected token
+'section'` when the next thing is `noncomputable section`. Same cause: a
+docstring must attach to a **declaration**, and `section` is not one, nor is
+another docstring. Demote to `/- … -/` or merge into the real docstring —
+do not delete, the text is usually the only record of why a claim is unproved.
