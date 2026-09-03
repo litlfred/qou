@@ -1,4 +1,4 @@
-import QOU.SchurWeyl.HeckeSemisimpleGeneral
+import QOU.SchurWeyl.HeckeAlgebra
 import QOU.Hecke.IwahoriHecke
 
 /-!
@@ -50,6 +50,14 @@ no square root is adjoined, and nothing leaves a generic `[Field K]`.  This is t
 same rescaling `QOU/BraidKnot/HeckeIwahoriConventionBridge.lean` derives for
 *generator families*; what is new here is that it is upgraded to an `AlgEquiv` of
 the two `RingQuot` carriers, which is what transports a ring-theoretic property.
+
+## Where the ℝ corollary went
+
+`isSemisimpleRing_iwahoriHecke` — the payoff this equivalence exists to carry — is **not**
+in this file.  It needs `Real.sqrt` (to name the `q` whose square is the Iwahori `Q`), and
+§7c forbids mixing a generic-ring development with its archimedean specialisation in one
+file.  It lives in `QOU/SchurWeyl/HeckeCarrierSemisimpleReal.lean`, which imports this one
+and consumes `skeinIwahoriEquiv`.
 
 ## What this is not
 
@@ -215,27 +223,5 @@ noncomputable def skeinIwahoriEquiv {K : Type*} [Field K] (q : K) (hq : q ≠ 0)
     Hecke K q q⁻¹ n ≃ₐ[K] IwahoriHecke K (q ^ 2) n :=
   carrierEquiv K q q⁻¹ (q ^ 2) q⁻¹ q n
     (by field_simp) (by field_simp) (by field_simp)
-
-/-- **`QOU.Hecke.IwahoriHecke` — the `T_w` / `twGram` carrier — is semisimple at every
-    rank (sorry-free).**
-
-    This is the carrier item `QOU/SchurWeyl/HeckeSemisimpleGeneral.lean` recorded as
-    *not* reached: that file proves semisimplicity for `QOU.SchurWeyl.Hecke`, and the
-    `T_w` basis is built on `QOU.Hecke.IwahoriHecke`.  `skeinIwahoriEquiv` transports it.
-
-    Stated in the Iwahori parameter `Q` directly, which is what consumers of
-    `twGram` use. -/
-theorem isSemisimpleRing_iwahoriHecke {Q : ℝ} (hQ : 1 < Q) (n : ℕ) :
-    IsSemisimpleRing (IwahoriHecke ℝ Q n) := by
-  have hQ0 : (0 : ℝ) ≤ Q := by linarith
-  have hsq : Real.sqrt Q ^ 2 = Q := Real.sq_sqrt hQ0
-  have hq1 : 1 < Real.sqrt Q := by
-    have : Real.sqrt 1 < Real.sqrt Q := by
-      apply Real.sqrt_lt_sqrt (by norm_num) hQ
-    simpa using this
-  have hqne : Real.sqrt Q ≠ 0 := by positivity
-  have hss := isSemisimpleRing_hecke_of_one_lt hq1 n
-  have := (skeinIwahoriEquiv (Real.sqrt Q) hqne n).toRingEquiv.isSemisimpleRing
-  rwa [hsq] at this
 
 end QOU.SchurWeyl

@@ -1,6 +1,4 @@
 import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Algebra.Order.Ring.Abs
-import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.SchurWeyl.GenericParameter — what "generic `q`" has to mean over a general field
@@ -102,21 +100,5 @@ theorem poly_eq_zero_of_eval_pow (hq0 : q ≠ 0) (hq : NotRootOfUnity q)
   exact Set.Infinite.mono hsub (Set.infinite_range_of_injective (pow_left_injective hq0 hq))
 
 end Field
-
-/-- **The bridge: over `ℝ` the hypothesis is free.**  `q ≠ 0` and `q ^ 2 ≠ 1` already give
-it, because the only real roots of unity are `±1` — so every `ℝ`-statement in the
-Wedderburn cone is the specialisation of a `NotRootOfUnity` statement, and generalising
-those files weakens no hypothesis. -/
-theorem ofSqNeOne {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) : NotRootOfUnity q := by
-  intro m hm h
-  -- `|q| ^ m = 1` with `|q| > 0` forces `|q| = 1`, hence `q ^ 2 = 1`.
-  have habs : |q| ^ m = 1 := by rw [← abs_pow, h, abs_one]
-  have habs0 : 0 < |q| := abs_pos.mpr hq0
-  have habs1 : |q| = 1 := by
-    rcases lt_trichotomy |q| 1 with hlt | heq | hgt
-    · exact absurd habs (ne_of_lt (pow_lt_one₀ habs0.le hlt hm.ne'))
-    · exact heq
-    · exact absurd habs (ne_of_gt (one_lt_pow₀ hgt hm.ne'))
-  exact hq2 (by rw [← sq_abs, habs1, one_pow])
 
 end QOU.SchurWeyl.GenericParameter
