@@ -749,22 +749,64 @@ the span is **11.78×**, and since the code sits at the bottom of the range,
 **every other convention makes term 3 larger** — the E₀-scaled contribution to
 `B_pred` is currently at its minimum, not somewhere in the middle.
 
-**Open, and honestly open:** the per-term decomposition of `B_pred` at the four
-nuclei. Two runs have been launched; the first was killed at its 900 s timeout
-having produced zero bytes, the second is still going. Until one lands, the
-*magnitude* of the E₀ exposure is unquantified — only its *existence* (from the
-source) and the *convention span* (above) are established.
+### 🛑 PARTIAL RESULT (²H only) — the sign claim is convention-conditional
 
-**A self-inflicted lesson from the first run, recorded because it nearly cost a
-wrong conclusion.** That run was piped through `| tail -12`, which buffers to
-EOF — so `SIGTERM` at the timeout discarded everything it held, and the run
-looked like it had produced *no output at all*. It had: the relaunch shows
-`imported at 0s`, so those header lines existed and my pipeline ate them. The
-repo's long-compute discipline says `2>&1 | tee /tmp/<script>.log`, not `| tail`,
-and this is exactly why. **Both halves of the diagnosis turned out true** — the
-pipe swallowed output *and* `binding_from_frobenius_pairing` at ²H genuinely
-exceeds 900 s — but only the relaunch could distinguish them, and with `tail` in
-the way the natural reading was "the import hangs", which is false.
+The decomposition landed for the deuteron (606 s):
+
+    2H:   B_pred = -7.271102   term3 = +1.876634   =>  terms 1+2 = -9.147736
+
+**Term 3 is positive and the other two are strongly negative.** Since term 3
+scales linearly with E₀ and the live constant sits at the *bottom* of the
+registered range, raising the convention moves `B_pred` toward — and past —
+zero:
+
+    conv B (live)     term3  +1.8766     B_pred  -7.2711    negative
+    E_0    4.186      term3 +10.0419     B_pred  +0.8941    POSITIVE
+    hbar_q^2 m_N      term3 +22.1124     B_pred +12.9646    POSITIVE
+
+    break-even at E_0 x4.875 — and the registered E_0 is x5.351, past it.
+
+**So at convention E₀ the deuteron's predicted binding is `+0.894 MeV`: the
+right sign.** This document's four-nucleus table marks the sign **WRONG** at
+every nucleus; that verdict is **correct at convention B and not
+convention-independent**, at least at A = 2.
+
+Also worth recording on its own: **term 3 alone gives `+1.877` against AME
+`+2.225`** — right sign, 15.6 % low, from the E₀-scaled Frobenius pairing with
+no fitting. It is terms 1+2 (`−9.148`) that swamp it.
+
+**Do not over-read this yet.** It is one nucleus, and the deuteron is
+owner-ruled special. ³H, ³He and ⁴He are still computing (~600 s each); until
+they land it is unknown whether the break-even crossing generalises or is a
+deuteron peculiarity. What is already established is narrower and sufficient to
+act on: **the sign column of the headline table is a convention-B statement, not
+a framework statement, and this document previously presented it as the latter.**
+
+**Unaffected, again:** the flatness and the localisation both live in terms 1+2,
+which carry `M_E_MEV` and no E₀ — and the paired ladder is a matched-truncation
+ratio besides.
+
+**Open:** the same decomposition at ³H, ³He and ⁴He, still computing.
+
+**A self-inflicted lesson, and my first reading of it was also wrong.** The
+first decomposition run was piped through `| tail -12`, which buffers to EOF —
+so `SIGTERM` at its 900 s timeout discarded the buffer and the run appeared to
+produce **no output at all**, whose natural reading is "the import hangs".
+
+I then wrote that *"both halves of the diagnosis turned out true — the pipe
+swallowed output **and** `binding_from_frobenius_pairing` at ²H genuinely
+exceeds 900 s"*. **The second half is false.** The relaunch measures ²H at
+**606 s** and the import at **0 s**. So the first run had already computed the
+imports, the two header lines *and the entire ²H answer* by 606 s, and was
+killed partway through ³H — with `tail` holding every one of those lines
+unflushed. Nothing was slow enough to justify the timeout; the pipe lost a
+completed result.
+
+The repo's long-compute discipline says `2>&1 | tee /tmp/<script>.log`, not
+`| tail`, and this is exactly why. Recorded at length because the failure
+produced **two** wrong readings in sequence — first "the import hangs", then "²H
+exceeds 900 s" — and both were artefacts of the pipeline rather than facts about
+the compute.
 
 ## Still open
 
