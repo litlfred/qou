@@ -179,22 +179,32 @@ def test_q0_path_is_mpf_not_float64():
 
 
 @pytest.mark.parametrize("partition", [(2, 1), (2, 2), (3, 2), (3, 2, 1)])
-def test_q_override_satisfies_the_relations_in_float(partition):
-    """The `q=` override (used by `sdp_cross_channel`'s sweep) is a rep too.
+def test_q_override_is_mpf_and_still_a_representation(partition):
+    """The `q=` override (used by `sdp_cross_channel`'s sweep) is a rep, in mpf.
 
     That sweep kept a private copy of this builder, with the same wrong
     diagonal. It now delegates here, so the override path needs its own
-    coverage — in the f64 arithmetic the sweep actually runs in.
+    coverage.
+
+    This test used to assert the OPPOSITE — that a float `q` yields float
+    matrices — because the override dispatched arithmetic on the operand type
+    to stay bit-identical to the private f64 copy it replaced. That preserved
+    a float64 path on purpose, which NO FLOAT64 EVER (owner directive)
+    forbids: bit-compatibility with an f64 predecessor is not a reason to keep
+    computing in f64. The override now promotes whatever it is handed, and
+    this test pins that direction so it cannot drift back.
     """
-    qv = 1.1099785827513808
+    qv = 1.1099785827513808          # a float on purpose: the caller's grid
     mats = L._build_ysn_matrices(partition, sparse_threshold=1 << 30, q=qv)
     dim = len(list(L._standard_tableaux(partition)))
     mats = [_dense(M, dim) for M in mats]
-    assert all(isinstance(mats[k][i][j], float)
+    assert all(isinstance(mats[k][i][j], mp.mpf)
                for k in range(len(mats)) for i in range(dim) for j in range(dim)), (
-        "an f64 `q` must yield f64 matrices — the override is not for promoting")
-    quad, braid, comm = _relations(mats, dim, qv - 1.0 / qv, 0.0, 1.0)
-    assert max(quad, braid, comm) < 1e-12
+        "a float `q` must still yield mpf matrices — NO FLOAT64 EVER")
+    q_m = mp.mpf(qv)
+    quad, braid, comm = _relations(mats, dim, q_m - mp.mpf(1) / q_m,
+                                   mp.mpf(0), mp.mpf(1))
+    assert max(quad, braid, comm) < MPF_TOL
 
 
 @pytest.mark.parametrize("partition", [(2, 1), (3, 2), (3, 2, 1)])
@@ -211,14 +221,14 @@ def test_q_to_one_gives_youngs_orthogonal_form(partition):
     mats = [_dense(M, dim) for M in mats]
     # Every generator is an involution in S_n: sigma^2 = 1 (h = 0 above).
     for k, S in enumerate(mats):
-        S2 = _mul(S, S, dim, 0.0)
+        S2 = _mul(S, S, dim, mp.mpf(0))
         for i in range(dim):
             for j in range(dim):
-                assert abs(S2[i][j] - (1.0 if i == j else 0.0)) < 1e-12, (
+                assert abs(S2[i][j] - (1 if i == j else 0)) < MPF_TOL, (
                     f"sigma_{k + 1}^2 != I at q=1")
-    quad, braid, comm = _relations(mats, dim, 0.0, 0.0, 1.0)
-    assert max(braid, comm) < 1e-12
-    assert any(abs(mats[k][i][i]) > 1e-9
+    quad, braid, comm = _relations(mats, dim, mp.mpf(0), mp.mpf(0), mp.mpf(1))
+    assert max(braid, comm) < MPF_TOL
+    assert any(abs(mats[k][i][i]) > mp.mpf("1e-9")
                for k in range(len(mats)) for i in range(dim)), (
         "the q=1 diagonal collapsed to zero — the `h/[rho]` form is back")
 

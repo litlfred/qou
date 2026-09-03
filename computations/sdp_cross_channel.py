@@ -48,6 +48,7 @@ References
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math
+import mpmath as _mp  # NO FLOAT64 EVER (owner directive) — q-sweep arithmetic
 import numpy as np
 
 try:
@@ -435,10 +436,10 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
         """Build entries with μ_λ(q)."""
         def qi(n):
             if q == 1:
-                return float(n)
+                return _mp.mpf(n)
             return (q ** n - q ** (-n)) / (q - q ** (-1))
         def mu_at(partition):
-            mu = 0.0
+            mu = _mp.mpf(0)
             for i, li in enumerate(partition):
                 for j in range(li):
                     c = j - i
@@ -474,7 +475,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
         """YSN trace of the atom braid in partition at given q."""
         n = sum(partition)
         if n < 2:
-            return 1.0
+            return _mp.mpf(1)
 
         # The private YSN build that used to live here is gone: it was a
         # verbatim copy of `_build_ysn_matrices`, and both copies carried the
@@ -490,7 +491,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
         # Build at THIS q, not from the globally-precomputed q₀ matrices.
         sigmas = _build_ysn_matrices(partition, sparse_threshold=1 << 30, q=q)
         if not sigmas:
-            return 1.0
+            return _mp.mpf(1)
         dim = len(sigmas[0])
         n_gens = n - 1
 
@@ -507,7 +508,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
             M = _matmul_dim(M, M_step, dim)
             # Rescale to avoid overflow
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
-            if m_max > 1e80:
+            if m_max > _mp.mpf("1e80"):
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
         return _trace_dim(M, dim)
@@ -515,17 +516,26 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
     # Run sweep
     results = []
     prev_signs = None
-    for q in q_values:
+    for q_in in q_values:
+        # NO FLOAT64 EVER (owner directive). Everything DERIVED from a sweep
+        # point is mpf from here down; previously `q` stayed a Python float and
+        # carried f64 through mu_λ, the YSN matrices, the characters and the
+        # pair couplings.
+        #
+        # The grid POINTS are the caller's. `_mp.mpf` accepts decimal strings,
+        # so pass `q_values` as strings for exact points — a Python float
+        # literal is already f64-quantised before this function sees it
+        # (`1.05` promotes to 1.05000000000000004440892098...).
+        q = _mp.mpf(q_in)
         entries = partition_entries_at_q(q)
         # Compute chi for each
         chi_by_idx = {}
         for i, e in enumerate(entries):
             chi_by_idx[i] = chi_at_q(e['partition'], q)
         # Pair couplings
-        import math as _math
-        h_val = q - 1.0 / q
-        total_sq = sum(c*c for c in chi_by_idx.values())
-        if total_sq < 1e-30:
+        h_val = q - _mp.mpf(1) / q
+        total_sq = sum((c * c for c in chi_by_idx.values()), _mp.mpf(0))
+        if total_sq < _mp.mpf("1e-30"):
             continue
         phi = {i: chi_by_idx[i]**2 / total_sq for i in chi_by_idx}
         pair_results = []
@@ -545,7 +555,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
             seen.add(key)
             # c_ij target (from SDP equality constraint)
             sign_ij = 1 if chi_by_idx[i] * chi_by_idx[j] >= 0 else -1
-            target_c = sign_ij * _math.sqrt(phi[i] * phi[j]) * (
+            target_c = sign_ij * _mp.sqrt(phi[i] * phi[j]) * (
                 (entries[i]['q_laplacian_eigenvalue']
                  + entries[j]['q_laplacian_eigenvalue']) / 2
             )
@@ -570,7 +580,10 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
                         'new_sign': sign,
                     })
         results.append({
-            'q': float(q),
+            # A decimal string, not `float(q)`: this reaches witnesses, and
+            # downcasting the mpf on the way out is the same loss the
+            # directive forbids, moved to the serialisation boundary.
+            'q': _mp.nstr(q, _mp.mp.dps, strip_zeros=False),
             'pairs': pair_results,
             'regime_transitions': transitions,
         })
@@ -609,17 +622,16 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
     # Too invasive.  Instead: reuse existing partitions, just recompute μ_λ
     # using q_int(c, q) · q_int(c+1, q) as a function of q.
     import hecke_core as hc_orig
-    from q_parameter import HA as h_orig
 
     results = []
     prev_tight = None
 
     def mu_at_q(partition, q):
         """q-Laplacian eigenvalue with explicit q (not q_0)."""
-        mu = 0.0
+        mu = _mp.mpf(0)
         def qi(n):
             if q == 1:
-                return float(n)
+                return _mp.mpf(n)
             return (q**n - q**(-n)) / (q - q**(-1))
         for i, li in enumerate(list(partition)):
             for j in range(li):
@@ -627,7 +639,17 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
                 mu += qi(c) * qi(c + 1)
         return mu
 
-    for q in q_values:
+    for q_in in q_values:
+        # NO FLOAT64 EVER (owner directive). Everything DERIVED from a sweep
+        # point is mpf from here down; previously `q` stayed a Python float and
+        # carried f64 through mu_λ, the YSN matrices, the characters and the
+        # pair couplings.
+        #
+        # The grid POINTS are the caller's. `_mp.mpf` accepts decimal strings,
+        # so pass `q_values` as strings for exact points — a Python float
+        # literal is already f64-quantised before this function sees it
+        # (`1.05` promotes to 1.05000000000000004440892098...).
+        q = _mp.mpf(q_in)
         # Build partition entries at this q
         entries = []
         for _k in range(2, k_cap + 1):
@@ -640,14 +662,19 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
                     'k': _k,
                     'dim': d,
                     'q_laplacian_eigenvalue': mu_at_q(lam, q),
-                    'wedderburn_weight': 1.0,  # not needed for sweep
-                    'q_hook': 1.0,
+                    'wedderburn_weight': _mp.mpf(1),  # not needed for sweep
+                    'q_hook': _mp.mpf(1),
                 })
 
         if not entries:
             continue
         # Solve scalar LP (faster; SDP structure only matters for
         # cross-couplings which we'll add in a future version)
+        # VISIBLE f64 boundary: the scalar LP is a float64 solver, so the
+        # entries are downcast HERE, at the call, rather than by having
+        # been computed in f64 all along. `float(Z + N)` is an exact
+        # int->float of a nucleon count and loses nothing. Excising this
+        # last one means replacing the solver, which is a separate job.
         sol = _scalar_lp_fallback(entries, n_target=float(Z + N))
         # Tight partitions = those with y_λ ≈ 0
         tight = frozenset(name for name, y in sol['y_lambda'].items()
@@ -655,7 +682,7 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
         transition = (prev_tight is not None
                       and tight != prev_tight)
         results.append({
-            'q': float(q),
+            'q': _mp.nstr(q, _mp.mp.dps, strip_zeros=False),
             'y0': sol['y0'],
             'n_tight': len(tight),
             'tight_partitions': sorted(tight),

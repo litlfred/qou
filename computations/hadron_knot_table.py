@@ -30,7 +30,6 @@ from mpmath import mp  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q, Q_INV, HA, HBAR_Q_SQ
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_core import (
     build_nucleon_nf,
@@ -50,10 +49,6 @@ from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
-_z = Q**3 / (Q**2 + 1)
-_Z2 = _z * _z
-
 # ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
 # Use the TRUE substrate q0, not the legacy 111/100 (~2e-4 off). The
 # exact-Fraction HeckeEngine cannot run at q0 (q0^k denominators 10^7k blow
@@ -66,7 +61,20 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 _Q0 = mp.mpf(Q_50_DIGIT_STR)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
+# Markov parameter under convention D: z = q³/(q²+1).
+#
+# NO FLOAT64 EVER (owner directive). This was computed twice: once here in mpf
+# as `_z_q0`, which nothing used, and once ~15 lines above as
+# `_z = Q**3 / (Q**2 + 1)` over the FLOAT `Q` — and it was the float one that
+# fed `delta_xchan = _Z2 * cross_sum * M_E_MEV` and the witness. An exact value
+# sat unread next to the approximate one that did the work.
+#
+# (The comment on the deleted line described z as `1/(q^{1/2} + q^{-1/2})`,
+# which is convention C — excised by owner ruling — while the code was already
+# convention D. Both are fixed here.)
 _z_q0 = _Q0**3 / (_Q0**2 + 1)
+_z = _z_q0
+_Z2 = _z * _z
 _HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
 
 
@@ -266,7 +274,7 @@ _CKPT_PATH = _os.environ.get("QOU_HKT_CHECKPOINT", "").strip()
 def _ckpt_key():
     """Hash of everything that determines the numbers."""
     h = _hashlib.sha256()
-    h.update(repr(Q).encode())
+    h.update(mp.nstr(_Q0, 50, strip_zeros=False).encode())
     import hecke_core as _hc
     import hecke_core_legacy as _hcl
     for mod in (__file__, _hcl.__file__, _hc.__file__):
@@ -342,7 +350,7 @@ _ONLY = {x.strip() for x in _os.environ.get("QOU_HKT_COMPUTE_ONLY", "").split(",
 
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
-print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
+print(f"q = {mp.nstr(_Q0, 12)}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
 print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5} {'wall':>9}")
 print("-" * 80)
@@ -397,7 +405,7 @@ w.set_description(
     f"formula's third sum."
 )
 w.set_content_block("rem:hadron-level-knot-table")
-w.add_parameter("q", Q)
+w.add_parameter("q", _Q0)      # mpf, not the float64 Q (NO FLOAT64 EVER)
 w.add_parameter("basis", NF_NAMES)
 w.add_parameter("z_markov", _z)
 w.add_parameter("z_squared", _Z2)

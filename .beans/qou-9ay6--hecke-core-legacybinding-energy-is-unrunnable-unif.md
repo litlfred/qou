@@ -269,3 +269,46 @@ rather than paying object arithmetic to carry digits the inputs never had.
 **Not doing this unilaterally.** It is a NO-FLOAT64 boundary decision and the
 directive is the owner's. Recorded with the evidence so the ruling can be made
 on measurements rather than on my say-so.
+
+
+## 2026-09-03 — NO FLOAT64 EVER: excised the f64 I had preserved on purpose
+
+Owner restated the directive. Three things went, two of which I had built or
+kept myself:
+
+1. **`_build_ysn_matrices(q=...)`** dispatched arithmetic on the operand type
+   (`pyhecke.syt_prefix_cache._sqrt_for`) so a float `q` produced float
+   matrices. I wrote that to keep `sdp_cross_channel`'s sweep bit-identical to
+   the private copy the builder replaced — i.e. I preserved an f64 path
+   deliberately. Bit-compatibility with an f64 predecessor is not a reason to
+   keep computing in f64. It now promotes whatever it is handed.
+
+2. **Both q-sweeps in `sdp_cross_channel`** (`q_sweep_sdp_atom` and
+   `q_sweep_regime_detection` — a second copy of the same shape) carried f64
+   through mu_λ, the YSN matrices, the characters and the pair couplings.
+   Now mpf throughout; the reported `q` is a decimal string rather than
+   `float(q)`, because downcasting on the way out is the same loss moved to
+   the serialisation boundary. `_mp.mpf` accepts strings, so callers can pass
+   exact grid points — a Python float literal is f64-quantised before the
+   function ever sees it (`1.05` -> 1.05000000000000004440892098...).
+   The scalar LP remains f64; that boundary is now marked at the call site
+   rather than being invisible, since excising it means replacing the solver.
+
+3. **`hadron_knot_table` computed its Markov z in float64 while the exact mpf
+   value sat unused fifteen lines below.** `_z = Q**3 / (Q**2 + 1)` over the
+   float `Q` fed `delta_xchan = _Z2 * cross_sum * M_E_MEV` and the witness,
+   while `_z_q0 = _Q0**3 / (_Q0**2 + 1)` — same formula, mpf — was defined and
+   read by nothing. Also `w.add_parameter("q", Q)` put an f64 q INTO the
+   witness. Both now use `_Q0`. The float import of `Q, Q_INV, HA,
+   HBAR_Q_SQ` is gone entirely; the last three were dead. (The deleted line's
+   comment described z as `1/(q^{1/2}+q^{-1/2})`, convention C — excised by
+   owner ruling — while the code was already convention D. Both fixed.)
+
+`source_float64_import_audit`: **2 files drained, 463 -> 458** imported names,
+0 regressed, 0 new. Baseline re-written.
+
+That 458 is the remaining corpus-wide debt under this directive:
+Q=313, HA=56, Q_INV=49, HBAR_Q=12, E_CROSS=9, S_SKEIN=5, HBAR_Q_SQ=5, LN_Q=4,
+TWO_Q=4, TANH_LN_Q=1.
+
+Full suite 183 passed; braid audit exit 0.

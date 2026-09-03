@@ -439,12 +439,6 @@
     "computations/habiro/habiro_residue_symbolic.py": [
       "Q"
     ],
-    "computations/hadron_knot_table.py": [
-      "HA",
-      "HBAR_Q_SQ",
-      "Q",
-      "Q_INV"
-    ],
     "computations/hecke/hecke_3a_weights.py": [
       "HA",
       "Q",
@@ -962,9 +956,6 @@
     "computations/schur_weyl_symbolic.py": [
       "Q"
     ],
-    "computations/sdp_cross_channel.py": [
-      "HA"
-    ],
     "computations/shadow_price_c_321_q0.py": [
       "Q"
     ],
@@ -1105,7 +1096,7 @@
       "Q"
     ]
   },
-  "files_count": 319,
-  "names_count": 463,
+  "files_count": 317,
+  "names_count": 458,
   "note": "Producers importing the FLOAT form of a q_parameter constant, by name. The backlog is tolerated; it must only SHRINK. Adding a file here to silence a failure defeats the gate \u2014 excise at the import instead."
 }

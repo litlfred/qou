@@ -1142,9 +1142,8 @@ def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
     private copy of this loop for exactly that reason, and both copies carried
     the same wrong `a_rho` (bean `qou-uiut`) — the divergence between copies of
     one loop being the defect, as it was for the three `.dot` sites in
-    `qou-9ay6`. The arithmetic follows the operand: an f64 `q` gives f64
-    matrices and takes `math.sqrt`, so the sweep is bit-identical to what its
-    own copy produced, while `q=None` keeps the mpf module path.
+    `qou-9ay6`. Whatever `q` is handed in, the arithmetic is mpf: NO FLOAT64
+    EVER (owner directive).
 
     For dim ≥ sparse_threshold, returns `_CooMPF` objects — a COO form whose
     values may be mpf. This was scipy.sparse.csr_matrix until the NO-FLOAT64
@@ -1160,21 +1159,31 @@ def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
         q_v, qi_v, h_v, zero_v = q0, qi, h, _MPF_ZERO
         _sqrt, _qint = _mp.sqrt, q_int
     else:
-        # `_sqrt_for` dispatches on the operand (float / mpf / sympy) rather
-        # than on a flag, so a float `q` still routes to `math.sqrt` and is
-        # bit-identical to the private copy this replaced.
-        from pyhecke.syt_prefix_cache import _sqrt_for as _sqrt
-        q_v = q
-        qi_v = 1 / q_v
+        # NO FLOAT64 EVER — owner directive, restated 2026-09-03.
+        #
+        # This branch previously dispatched arithmetic on the operand's type
+        # (`pyhecke.syt_prefix_cache._sqrt_for`), so a float `q` produced float
+        # matrices. That was written to keep `sdp_cross_channel`'s q-sweep
+        # bit-identical to the private copy this builder replaced — i.e. it
+        # PRESERVED a float64 path on purpose, which is exactly what the
+        # directive forbids. Bit-compatibility with an f64 predecessor is not
+        # a reason to keep computing in f64.
+        #
+        # The override now promotes to mpf whatever it is handed. A caller
+        # sweeping Python floats gets mpf matrices and mpf characters out; the
+        # sweep values themselves are still only as good as the floats they
+        # came in as, but nothing is COMPUTED in f64 downstream of here.
+        q_v = _mp.mpf(q)
+        qi_v = _MPF_ONE / q_v
         h_v = q_v - qi_v
-        zero_v = q_v * 0
+        zero_v = _MPF_ZERO
+        _sqrt = _mp.sqrt
 
         def _qint(m, _q=q_v, _qi=qi_v, _h=h_v):
             # `[m]_q → m` as q → 1: the ratio is 0/0 there and the sweep does
-            # evaluate at q = 1. `_q * 0 + m` carries the operand's own type
-            # rather than pinning a float.
+            # evaluate at q = 1.
             if _h == 0:
-                return _q * 0 + m
+                return _MPF_ZERO + m
             return (_q**m - _qi**m) / _h
 
     n = sum(partition)
@@ -1305,11 +1314,22 @@ def _matmul_dim(A, B, dim):
          64   numpy 1.02x slower  numpy 49.42x faster
 
     The object-dtype half of the original claim is right in kind — numpy has
-    no BLAS there, so it is a wash either way (±5%, no consistent sign). But
-    this function is ALSO called with float64 matrices, by the q-sweep in
-    `sdp_cross_channel.chi_at_q`, and there the branch is worth 4x-49x and
-    growing. Deleting it would have traded nothing on the mpf path for a
-    large regression on the f64 one, so the item is scrapped, not done.
+    no BLAS there — but the measured direction is the opposite: a wash, with
+    numpy marginally ahead, never the 31% loss claimed.
+
+    A first pass at this kept the branch on the grounds that `_matmul_dim` was
+    ALSO called with float64 matrices by the q-sweep in
+    `sdp_cross_channel.chi_at_q`, where it is worth 4x-49x. That reasoning is
+    void: NO FLOAT64 EVER (owner directive, restated 2026-09-03) means the
+    sweep should not have been f64 in the first place, and it no longer is —
+    so there is no f64 caller left to protect. "It accelerates a float64 path"
+    is not an argument for anything under that directive.
+
+    The branch stays anyway, on the measurement alone: every caller is now mpf,
+    and on mpf numpy is 1.03x-1.10x AHEAD, so deleting it would be a small
+    regression for no gain. Object dtype means elementwise Python arithmetic on
+    mpf either way — no BLAS, and no precision lost — so this is a speed
+    question only, not a precision one.
     """
     if dim >= 8:
         return np.asarray(A) @ np.asarray(B)

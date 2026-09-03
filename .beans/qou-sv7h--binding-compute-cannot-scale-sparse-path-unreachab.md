@@ -290,3 +290,19 @@ lines removed in total).
 Verified no consumer outside this module read `log_trace` / `method:
 q_gaussian` across the .py and .json corpus (excluding the `qou-mass/`
 vendored copy). Full suite 178 passed.
+
+
+## 2026-09-03 — item 4's scrap rationale is VOID under NO FLOAT64 EVER
+
+Owner restated the directive. My reason for keeping the `dim >= 8` numpy
+branch was that it accelerates the FLOAT64 q-sweep in
+`sdp_cross_channel.chi_at_q` by 4x-49x. Under the directive that sweep should
+not have been f64 at all, and it no longer is — so there is no f64 caller left
+to protect. "It accelerates a float64 path" is not an argument for anything
+here.
+
+The branch stays anyway, but on the measurement alone: every caller is now
+mpf, and on mpf numpy is 1.03x-1.10x AHEAD, so deleting it is a small
+regression for no gain. Object dtype means elementwise Python arithmetic on
+mpf either way — no BLAS, no precision lost — so it is a speed question, not
+a precision one. Docstring corrected to say that instead.
