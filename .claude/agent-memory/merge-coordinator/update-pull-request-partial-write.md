@@ -36,3 +36,53 @@ whose surface message names the wrong cause. The tell here is the same one that
 caught the ledger `source_hash` bug earlier in the same session — **the count
 did not move**, so check whether the write landed before assuming it did not.
 
+
+---
+
+## `qou#6444` 2026-09-03 — corroboration, and two things still worth knowing
+
+Same signature as above: `merge_pull_request` returned `405 Pull Request is still
+a draft` while every `update_pull_request draft:false` returned *"API rate limit
+already exceeded for user ID 662242"*. The `MEMORY.md` discriminator isolated the
+blocker to GraphQL first try.
+
+**My own recommendation here was WRONG, and the all-REST fix in `MEMORY.md`
+supersedes it.** I wrote "the wait can be HOURS, so re-arm and wait"; the sibling
+correction landed the same day (`ec96d89b1a`, from `qou#6439`/`#6466`/`#6468`)
+and is right: **close the draft, re-create it with `draft=false` from the same
+head, merge — all REST, 3/3 first try.** Do that instead of waiting.
+
+Two notes that survive the correction:
+
+**1. It really is ~4 h, measured independently.** 04:22Z -> 09:37Z on `#6444`,
+>=7 attempts, clearing only at the end; the sibling measured ~4 h across three
+other PRs the same day. Two independent measurements, same window, so the outage
+is real and wide rather than one session's bad luck. That is why the all-REST
+route matters — it is not a reason to wait it out.
+
+**2. `create_pull_request` fails while the draft is still OPEN.** I tried the
+re-create step *without* closing first, got *"A pull request already exists for
+litlfred:<branch>"*, and wrongly concluded the whole route was closed. The close
+is not bookkeeping — it is what frees the head. Skip it and you reproduce my dead
+end and may write off a working fix.
+
+**3. The git-native fallback in `api-down-and-shared-worktree.md` §"Merging with
+git alone" is NOT always available.** Under Claude Code **auto mode** the
+classifier denied `git push origin HEAD:refs/heads/main`, then denied even a bare
+`git rebase origin/main`. That recipe is the other documented escape hatch, so an
+agent will reach for it and find it closed; it needs an explicit Bash permission
+rule from the author. Do not route around the denial.
+
+**Corroborated from that recipe:** the FF proof
+(`git merge-base --is-ancestor FETCH_HEAD HEAD`) is load-bearing, not ceremony.
+`main` lands ~100 commits/hour here and it fired correctly — `main` moved during
+the ~40 s Lean verification window between the branch push and the base push, and
+the guard refused. Expect to lose that race repeatedly.
+
+**And resolving a conflict with a merge commit costs you the rebase-merge.**
+`merge_pull_request merge_method:"rebase"` then returns `405 This branch can't be
+rebased`. On a branch you own, linearise with `git rebase origin/main` instead —
+but note the rebase replays your ORIGINAL commit, so any fix you made while
+resolving the earlier merge is silently dropped. Re-apply it and verify the file
+after `--continue`; I lost this exact correction that way and nearly shipped text
+contradicting the corrected `MEMORY.md` one file over.
