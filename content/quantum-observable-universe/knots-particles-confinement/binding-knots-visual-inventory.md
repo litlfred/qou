@@ -20,7 +20,7 @@ The unknot $0_1 = T_{1,0}$ is a single unknotted circle — the trivial element 
 
 ## Hopf link (the "bowtie")
 
-The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial link: two circles linked once. Its braid word $\sigma_0 \sigma_1 \in B_3$ closes to two interlocked loops, giving a "bowtie" silhouette when drawn flat with a single crossing per loop. This is the categorical identity of the **gluon** (strong-force mediator).
+The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial link: two circles linked once. Its braid word $\sigma_0^2 \in B_2$ closes to two interlocked loops, giving a "bowtie" silhouette when drawn flat with a single crossing per loop. This is the categorical identity of the **gluon** (strong-force mediator).
 
 ```tex
 \begin{tikzpicture}[scale=1, line width=1.2pt]
@@ -31,7 +31,7 @@ The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial link: two circles lin
     (0.6, 0) ++(165:0.6) arc (165:195:0.6);
   \draw[->, >=Latex] (0.6, 0) circle (0.6);
   \node at (0, -1.2) {\small $L2a1 = T(2,2)$};
-  \node at (3.4, 0) {$\beta = \sigma_0 \sigma_1 \in B_3$};
+  \node at (3.4, 0) {$\beta = \sigma_0^2 \in B_2$};
 \end{tikzpicture}
 ```
 
@@ -39,7 +39,7 @@ The full torus-link family $T(2, 2k)$ supplies the electroweak bosons: $T(2,2)$ 
 
 ## Trefoil $3_1 = T(2,3)$
 
-The trefoil knot is the simplest non-trivial knot, and the canonical **electron** identity. Its braid word $\sigma_0\sigma_1\sigma_0 \in B_3$ closes to a 3-cusp shape with three over/under crossings. The crossing energy $3 \cdot \mathfrak{E}_\times(q) = \frac{3}{2}(q - q^{-1})$ fixes the leptonic mass quantum.
+The trefoil knot is the simplest non-trivial knot, and the canonical **electron** identity. Its braid word $\sigma_0^3 \in B_2$ closes to a 3-cusp shape with three over/under crossings. The crossing energy $3 \cdot \mathfrak{E}_\times(q) = \frac{3}{2}(q - q^{-1})$ fixes the leptonic mass quantum.
 
 ```tex
 \begin{tikzpicture}[scale=0.9, line width=1.2pt]
@@ -49,7 +49,7 @@ The trefoil knot is the simplest non-trivial knot, and the canonical **electron*
       (0:1.0) .. controls (40:1.4) and (80:1.4) .. (120:1.0);
   }
   \node at (0, 0) {\small $3_1$};
-  \node at (3.0, 0) {$\beta = \sigma_0\sigma_1\sigma_0$};
+  \node at (3.0, 0) {$\beta = \sigma_0^3 \in B_2$};
 \end{tikzpicture}
 ```
 
@@ -74,7 +74,7 @@ The figure-eight $4_1$ is the smallest hyperbolic knot ($\mathrm{Vol}(4_1) \appr
 
 ## Borromean rings $\mathcal{B}_3 = 6^3_2$
 
-The Borromean rings are three mutually linked circles such that removing any one frees the other two — no two are individually linked. The braid word is $\mathcal{B}_3 = \sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_2 \in B_4$. The hyperbolic volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G$ (twice the volume of a regular ideal octahedron, where $G$ is Catalan's constant). This provides the **three-quark confinement** identity for the proton, neutron, and $^4$He nucleus, and sets the binding-energy scale $\alpha = m_e \cdot 8G \approx 3.7445$ MeV.
+The Borromean rings are three mutually linked circles such that removing any one frees the other two — no two are individually linked. The braid word is $(\sigma_0\sigma_1^{-1})^3 \in B_3$ (three strands, six crossings). The hyperbolic volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G$ (twice the volume of a regular ideal octahedron, where $G$ is Catalan's constant). This provides the **three-quark confinement** identity for the proton, neutron, and $^4$He nucleus, and sets the binding-energy scale $\alpha = m_e \cdot 8G \approx 3.7445$ MeV.
 
 ```tex
 \begin{tikzpicture}[scale=0.85, line width=1.2pt]
@@ -86,7 +86,7 @@ The Borromean rings are three mutually linked circles such that removing any one
   \draw[blue!70!black] ({\d*0.866}, {-\d*0.5}) circle (\R);
   \node at (0, -2.0) {\small $6^3_2 = \mathcal{B}_3$};
   \node at (4.7, 0)
-    {$\beta = \sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_2$};
+    {$\beta = (\sigma_0\sigma_1^{-1})^3 \in B_3$};
 \end{tikzpicture}
 ```
 
