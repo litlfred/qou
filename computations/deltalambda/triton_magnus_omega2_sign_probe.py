@@ -112,8 +112,17 @@ def wedderburn_weight(shape, q):
             arm = ri - j - 1
             leg = cols[j] - i - 1
             hooks.append(arm + leg + 1)
-    dq = prod(q_int(hh, q) for hh in hooks)
+    # HOOK-LENGTH FORMULA: d_q(λ) = [n]_q! / ∏_x [h(x)]_q.
+    #
+    # This previously read `dq = prod(q_int(hh, q) for hh in hooks)` — the
+    # DENOMINATOR of that formula, not d_q — and then returned dq²/[n]_q!.
+    # The result was the EXACT RECIPROCAL of the documented weight:
+    # computed H²/[n]_q! where d_q²/[n]_q! = [n]_q!/H². Verified against the
+    # committed witnesses to a relative 1e-40, and probe × correct = 1.0
+    # identically on every partition checked.
+    hook_prod = prod(q_int(hh, q) for hh in hooks)
     nfact = prod(q_int(k, q) for k in range(1, n + 1))
+    dq = nfact / hook_prod
     return (dq * dq) / nfact
 
 
