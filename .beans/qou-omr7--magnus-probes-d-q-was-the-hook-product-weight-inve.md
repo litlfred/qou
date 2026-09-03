@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-09-03T09:01:26Z
+updated_at: 2026-09-03T14:56:20Z
 ---
 
 ## The defect (PR #6442)
@@ -111,3 +111,49 @@ both verdicts byte-identical and reciprocal exact on every partition. Triton is
 the blocker — ~40 min CPU, SINGLE-THREADED, and grep shows ZERO
 resume/checkpoint machinery, so each container restart costs the entire run
 (three so far). he4-sparse is fast (30 partitions in ~20s) once triton lands.
+
+
+## LANDED — PR #6442 merged as 95d9b62368 (2026-09-03)
+
+Verified in merged main: convention-C fingerprint 0 files / 0 fields over 3462
+witnesses; the hook-length fix and the triton checkpoint both present.
+
+Shipped: the d_q inversion fixed in all 4 Magnus probes; the fingerprint audit's
+weight-family false positive killed (recomputes d_q²/[n]_q! and accepts the
+reciprocal, so it cannot be fooled by either the correct Plancherel weight or
+the inverted one); 2 of 4 witnesses regenerated with byte-identical verdicts;
+a stamped resume checkpoint for triton; .gitignore for its progress file.
+
+## STILL OPEN — 2 of 4 witnesses, and why
+
+  triton-magnus-omega2-sign          NOT regenerated
+  he4-magnus-omega2-sign-sparse      BLOCKED on triton (gate 2 reproduces the
+                                     COMMITTED triton; do NOT relax it)
+
+**Triton cannot finish in this environment.** Measured across FIVE attempts:
+the H_9 sweep is ~90 min single-threaded and container restarts land every
+~30-60 min. Best progress was 12/30 partitions. Attempts 1-4 lost everything;
+attempt 5 was the first with the checkpoint and banked 8/30, then died within
+minutes of resuming — the checkpoint is proven (it printed "resumed 8/30
+partitions") but the window is shorter than the remaining work.
+
+**The path forward is incremental, and now cheap.** The checkpoint is in main,
+so each relaunch resumes and adds a few partitions:
+
+    cd computations/deltalambda
+    setsid nohup python3 -u triton_magnus_omega2_sign_probe.py >/tmp/t.log 2>&1 &
+
+Repeat until the witness is written (the checkpoint self-deletes on clean
+completion). Then run he4_magnus_omega2_sign_sparse_probe.py, which is fast
+(30 partitions in ~20s) and will pass once triton's witness is committed.
+
+**LIVENESS CHECK — do not use `pgrep -c`.** It counts your own diagnostic
+shells; it made me report a dead run as alive for ~4 hours. Use:
+
+    pgrep -af triton_magnus | grep -v "bash -c"
+    wc -l < computations/deltalambda/.triton_magnus_omega2_progress.jsonl
+
+Neither remaining witness is a correctness risk: both are stale-but-correctly-
+excluded by the fixed audit (hence 0/0), and the source fix is verified
+independently of them — reciprocal exact and verdict byte-identical on the two
+that DID regenerate, plus agreement with pyhecke's independent implementation.
