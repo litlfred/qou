@@ -1,21 +1,20 @@
-Let $\mathbf{w}=(w_1,w_2,w_3,w_4)$ be a spectral resolvent tuple. The two generators of the trefoil monodromy group $S_3\cong D_3$ are the **twist** $\sigma_1=(w_1\,w_2)$ and the **flip** $\sigma_2=(w_2\,w_3)$:
-```tex
-\begin{align}
-  \sigma_1(\mathbf{w}) &= (w_2,w_1,w_3,w_4)
-    \label{eq:braid-twist}\\[4pt]
-  \sigma_2(\mathbf{w}) &= (w_1,w_3,w_2,w_4).
-    \label{eq:braid-flip}
-\end{align}
-```
-As $4\times 4$ permutation matrices, these are:
+Let $\mathbf{b}=(b_0,b_1,b_2)$ be the three branches of the cubic constraint — the sheets that the trefoil monodromy group $S_3\cong D_3$, the Galois group of the cubic, permutes. The two braid generators are the reflections **twist** $\sigma_1=(b_0\,b_1)$ and **flip** $\sigma_2=(b_1\,b_2)$, as $3\times 3$ permutation matrices:
 ```tex
 \begin{equation}\label{eq:perm-matrices}
   \sigma_1=\begin{pmatrix}
-    0&1&0&0\\1&0&0&0\\0&0&1&0\\0&0&0&1
+    0&1&0\\1&0&0\\0&0&1
   \end{pmatrix},\quad
   \sigma_2=\begin{pmatrix}
-    1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1
+    1&0&0\\0&0&1\\0&1&0
   \end{pmatrix}.
 \end{equation}
 ```
-Both are involutions. A faithful $S_3$ action on four resolvents must fix one resolvent and permute the other three by the standard representation, since $S_3$ has no faithful action on four points ($4\nmid 6$); here $w_4$ is the fixed resolvent, the choice of index being a labelling convention. The generators satisfy the **braid relation** $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$ — the defining relation of the trefoil-knot group $B_3$ — and their product is the order-$3$ $3$-cycle $\sigma_1\sigma_2\colon\mathbf{w}\mapsto(w_3,w_1,w_2,w_4)$. They do **not** commute; the commuting reading (which would give the Klein four-group $V_4$) violates the braid relation.
+Both are involutions ($\sigma_1^2=\sigma_2^2=\mathrm{id}$). They satisfy the **braid relation** $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$ — the defining relation of the trefoil-knot group $B_3$ — and their product is the order-$3$ **rotation**
+
+$$
+  \alpha=\sigma_1\sigma_2,\qquad \alpha^3=\mathrm{id},
+$$
+
+the cyclic permutation of the three branches; it is the $\mathrm{SU}(2)$ generator $\alpha$ of [the $\mathrm{SU}(2)$ generators](#def:su2-generators). The **dihedral relation** $\sigma_1\,\alpha\,\sigma_1=\alpha^{-1}$ exhibits $D_3\cong S_3$.
+
+The four spectral resolvents $w_1,\dots,w_4$ carry this action through the conjugate pairs $(w_1,w_4)$ and $(w_2,w_3)$ and the projective ratios $\eta_1=w_1/w_2$, $\eta_2=w_3/w_4$ ([the braid-group action](#rem:braid-group-action)): the reflection swaps the conjugate pairs, and the rotation cycles the three branches. The action lives on the branches rather than on the resolvents because $S_3$ has no faithful action on four points ($4\nmid 6$).
