@@ -182,7 +182,10 @@ def main() -> int:
                      "S_inter_false": mp.nstr(s_off, 25),
                      "B_total_MeV": mp.nstr(tot, 20),
                      "B_pp_per_bond_MeV": mp.nstr(pb, 20),
-                     "seconds": round(el, 1)})
+                     # wall-clock runtime metadata, not a payload number —
+                     # reserved ephemeral name so the raw-float64 ratchet's
+                     # runtime-duration carve-out covers it (qou-6sts).
+                     "elapsed_sec": round(el, 1)})
         print(f"  {A:>3}{n:>5}{len(cr):>7}{len(cache):>7}"
               f"{max(dims) if dims else 0:>8}{mp.nstr(tot, 12):>16}"
               f"{mp.nstr(pb, 12):>16}{el:>7.1f}")
@@ -257,7 +260,7 @@ def main() -> int:
     print("\n" + "-" * 78)
     print("  4. 'Intractable' was the dense evaluator, not the object")
     print("-" * 78)
-    slowest = max(r["seconds"] for r in rows)
+    slowest = max(r["elapsed_sec"] for r in rows)
     print(f"\n  Largest case here: A=4, n=12, max dim 297 — {slowest:.0f} s.")
     print("  Dense chi_lambda_numerical did not return within 600 s.")
     check("the H_2A bond is computable — the intractability claim was stale",

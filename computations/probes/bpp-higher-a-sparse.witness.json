@@ -2,7 +2,7 @@
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "bpp-higher-a-sparse",
   "description": "qou-gcmn ANSWERED. B_pp per bond on pure-proton chains: 2.128360946 (A=2, reproducing the committed value by a different evaluator), 1.966342608 (A=3), 1.851585614 (A=4) MeV \u2014 a monotone 13.0% decline, against an A-independent chain bond of 2.050709692. So B_pp is NOT A-independent, the confound is real and signed, and the measured kappa decline OVERSTATES the EM-linking invariant. The companion probe's first disjunction branch is withdrawn. Also: the H_2A trace was never intractable \u2014 the sparse Hoefsmit multiply does A=4 (n=12, max dim 297) in ~50s where the dense evaluator does not return in 600s. Scope (a); the series is NOT corrected past A=4, which would be a fit.",
-  "computedAt": "2026-09-03T18:36:44.649335+00:00",
+  "computedAt": "2026-09-03T10:50:27.812752+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "q0_anchor": "proton",
@@ -19,7 +19,7 @@
         "S_inter_false": "1.312765272859848671421713",
         "B_total_MeV": "2.128360945757083003",
         "B_pp_per_bond_MeV": "2.128360945757083003",
-        "seconds": 0.0
+        "elapsed_sec": 0.0
       },
       {
         "A": 3,
@@ -31,7 +31,7 @@
         "S_inter_false": "1.504113535300524873911184",
         "B_total_MeV": "3.9326852150604777223",
         "B_pp_per_bond_MeV": "1.9663426075302388611",
-        "seconds": 0.7
+        "elapsed_sec": 0.5
       },
       {
         "A": 4,
@@ -43,7 +43,7 @@
         "S_inter_false": "1.723352661626792934774866",
         "B_total_MeV": "5.5547568406290096387",
         "B_pp_per_bond_MeV": "1.8515856135430032129",
-        "seconds": 41.0
+        "elapsed_sec": 34.0
       }
     ],
     "B_pp_per_bond": {
@@ -74,11 +74,9 @@
       {
         "name": "the H_2A bond is computable \u2014 the intractability claim was stale",
         "passed": true,
-        "detail": "A=4 completes in 41 s with the column-sparse Hoefsmit multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), machinery that landed 2026-08-30 in colour_weighting_across_mixed_nuclei_probe. em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, intractable' predates it."
+        "detail": "A=4 completes in 34 s with the column-sparse Hoefsmit multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), machinery that landed 2026-08-30 in colour_weighting_across_mixed_nuclei_probe. em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, intractable' predates it."
       }
     ],
     "allPassed": true
-  },
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  }
 }
