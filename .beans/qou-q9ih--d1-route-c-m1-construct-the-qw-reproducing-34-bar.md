@@ -307,3 +307,70 @@ labeled CANDIDATES only, per this bean's anti-laundering instruction.
 **Done, and negative in the way the assessment predicted.** The remaining D1
 entries are unaffected: D1-c is still the only route whose success would be a
 derivation, and it is still under-specified. Nothing here derives `A_ω`.
+
+── 2026-09-03 (2): D1-c's stated VERTEX ASSIGNMENT is excluded ──
+
+`computations/qbeta/dt_d1c_hecke_block_vertex_bound_probe.py`, **6/6**.
+
+D1-c is the only D1 route whose success would be a **derivation**, and the
+2026-08-22 assessment called its two inputs under-specified: the exact `(7,1)`
+bar-split target, and the blocks→spectrum "natural pairing" dictionary.
+
+**Half that blocker was already gone.** The D1-a probe's Result 0 shows `(7,1)`
+is `(plus+minus, plus−minus)` — arithmetic on `(4,3)`. There is no separate
+bar-split target to specify; D1-c must hit `(4,3)`, full stop.
+
+**The other half does not need specifying either, because the vertex assignment
+is excluded before any dictionary is chosen.**
+
+### The measured bound
+
+Over every acyclic quiver on `V` vertices, the largest number of stable objects
+sharing ONE ray (slope) is exactly `V`, never more:
+
+    V   quivers   max per-ray   exceeds V?
+    2      3           2          no
+    3     27           3          no
+    4    729           4          no
+
+and for `V = 3` it is **not** a box artifact — growing the enumeration box grows
+the root system without lifting the cap:
+
+    DMAX  TMAX   max #roots   max per-ray
+      3     3        18            3
+      4     4        24            3
+      5     4        30            3
+
+Likely mechanism, offered as the reason and **not proved here**: at a fixed
+slope the θ-semistables form an abelian category whose simples are the
+θ-stables, and its rank is bounded by the rank of K-theory, which is `V`.
+
+### The consequence
+
+`H₃(q)` has exactly **three** Wedderburn blocks — `(3)` dim 1, `(2,1)` dim 2,
+`(1³)` dim 1. D1-c's stated assignment therefore gives `V = 3`, ceiling 3, while
+the datum needs a ray carrying **4** (5₂). **D1-c as written cannot produce
+`(4,3)` whatever the blocks→spectrum dictionary turns out to be.**
+
+This is the same bound D1-e anticipated ("`V ≥ 4` … near-trivial pigeonhole").
+**What is new is not the bound but where it lands**: the bean lists D1-e and
+D1-c as separate entries, so nobody had pointed the one at the other. D1-c's own
+vertex count violates it.
+
+### A structurally-motivated repair — PROPOSED, UNTESTED
+
+The corpus's own decomposition is `total = irreducible + abelian` with
+abelian = 1: 4₁ = 2+1, 5₂ = 3+1, 3₁ = 1+1. So the natural vertex set is not the
+three blocks alone but **the three blocks together with the abelian
+connection** — `V = 4`, clearing the bound exactly. That reconciliation comes
+from the corpus's arithmetic rather than from choosing 4 to fit, which is why it
+is worth recording. Nothing here tests whether such a quiver reproduces `(4,3)`
+at two rays, and one that did would still be a labeled CANDIDATE.
+
+### Scope, and what is NOT closed
+
+Only the stated **vertex assignment** is excluded — not D1-c the route. `W = 0`
+throughout (a potential can only cut further). The bound is **measured**, not
+proved, over the stated ranges with the numerical King proxy. A `V = 5`
+extension was attempted and **timed out** (exit 124); it was not load-bearing —
+`V = 2,3,4` carry the result. Nothing derives `A_ω`.
