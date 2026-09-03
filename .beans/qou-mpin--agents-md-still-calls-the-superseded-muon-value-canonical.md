@@ -1,11 +1,11 @@
 ---
 # qou-mpin
 title: 'AGENTS.md still calls the SUPERSEDED muon value "the frozen canonical pin" — the anchor moved to CODATA 2022 by owner ruling on 2026-08-22'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-29T12:05:00Z
-updated_at: 2026-08-29T12:05:00Z
+updated_at: 2026-09-03T04:20:00Z
 ---
 
 Found while establishing whether the `Q0_FLIP: 2` red in
@@ -90,3 +90,54 @@ today.
 drain continues, and agents keep meeting a document that names the
 superseded value canonical — which cost this session about twenty minutes
 and one wrong intermediate conclusion.
+
+
+---
+
+## 2026-09-03 — CLOSED. Fixed by someone else, four days ago.
+
+Re-measured on `main` (`d502ed06ce9`). **The condition this bean describes no
+longer exists**, and had already stopped existing before anyone read the bean.
+
+`fffa742dce8` — *"correct(muon): the anchor was already migrated — my ruling
+block described a tree state false since 2026-08-28"* — relabelled every site.
+Measured now:
+
+    grep -c 'frozen canonical pin' AGENTS.md   ->  0
+
+The three surviving mentions of the literal `1.1099785955573347` now read
+**"former frozen pin (retired)"**, **"then-canonical frozen pin"**, and
+**"the then-canonical pin only"**. All past tense, all correctly scoped. The
+live muon anchor still resolves to the CODATA-2022 derivation
+`1.109978595642739…`, exactly as this bean reported — so the *fact* was right;
+only the *defect* is gone.
+
+**My own recommendation on this bean was option 1 + option 3** (relabel, plus
+one sentence recording that the "NEVER re-pin an anchor-DEFINING witness" rule
+has a sanctioned exception). Option 1 is done by the above. **Option 3 was not
+done and is not being carried forward** — the rule still reads as an absolute
+at its one site, and the 2026-08-22 ruling is recorded two sections away rather
+than beside it. That is a much weaker version of the original problem (a reader
+who follows the cross-reference gets the right answer), so it does not justify
+keeping a high-priority bean open. If it bites someone, re-open with the
+incident attached rather than on this bean's speculation.
+
+### The part worth keeping
+
+**I misread my own measurement while checking this.** The verification printed
+
+    === does AGENTS.md still call it the frozen canonical pin? ===
+    4
+
+and I reported the bean as still live. The `4` was the count of the *literal
+value*; the `grep -o 'frozen canonical pin'` on the next line printed **nothing**,
+which was the actual answer to the question asked. Two greps, one number
+printed, and the number that appeared belonged to the question I was not asking.
+
+That is this bean's own subject — a stale label read as current — committed
+while re-checking a bean about stale labels. **When a check prints fewer
+results than it ran, the silent one is the answer.**
+
+**And a bean left open past its fix becomes the thing it warned about.** This
+one sat `todo` for four days describing a tree state that was false when it was
+written down. Anyone actioning it would have "fixed" correct text.
