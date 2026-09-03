@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-09-03T04:13:00Z
+updated_at: 2026-09-03T04:54:10Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -215,3 +215,13 @@ VERDICT: DEFER still stands. R2 crux (concrete evaluable ρ(w_n) on V^⊗n + μ-
 BUT landscape shifted: (1) TwoRowCapDerived shrinks target to ≤2-row characters (exact ≥3-row vanishing), which reduce to 2-dim sl2; (2) lighter route now exists — reduced-Burau exterior-power character columns + landed esymm generating function (MagnusHookExteriorPower.prod_one_add_mul_eq_sum_esymm) + ≤2-row cap, avoiding the full 2^n V^⊗n operator; (3) R5 retired (#6425).
 
 SHARPENED RESIDUAL GAP: Lean-derive w_n's two-row/reduced-Burau surviving spectrum ∀n, feed through esymm gen-fn + cap to reconstruct Q_n, close via DeficitRecursionReduction (#6228) glue. Upstream: qou-o6ov two-row character machinery (tr_{(k,1^{n-k})}=q^{L(1-j)}e_j). Smaller than 'all of R2'; still real work (position-indexed e_{n-1} on reduced space ∀n + Brunnian-word spectrum recursion).
+## Brick 3 MINIMAL WEDGE landed (2026-09-03, PR #6466)
+
+The R2 crux (concrete evaluable ρ(w_n)) is now supplied at the base case n=3, lean-direct exit 0 + axiom-clean. File QOU.MassTheory.BrunnianWordN3TwoRow (generic Field, sorry-free):
+- w₃ = [A₀₁,A₁₂] = [σ₁²,σ₂²] in B₃, evaluated in the 2-dim reduced-Burau / (2,1) two-row irrep (the sorry-free heckeGen1/2 of GermRootVectorGaugeFixing) — the FIRST concrete ρ(w) in the arc.
+- brunnianW3_eq (explicit 2×2), brunnianW3_det=1, brunnianW3_trace = exact χ^{(2,1)}(w₃).
+- deficitA3_eq_closed_form: Schur–Weyl reconstruction [4]·χ^{(3)}+[2]·χ^{(2,1)} + D₃=1−qtr/[2]³ reproduces EXACTLY the certified D₃=h⁴(h²+3)/(h²+4). The concrete word closes to the certified recursion at A=3.
+
+HONEST SEAM: Schur–Weyl duality itself ([4],[2] qdim weights, χ^{(3)}=1) is CITED as the def of survivingQTrace, not proved in Lean (Mathlib has no ribbon cat / quantum trace). BrunnianDeficitRecursion instance stays UNFABRICATED.
+
+REMAINING (∀n body, still open): position-indexed e_{n-1} on the reduced (≤2-row) space ∀n + the Brunnian-word spectrum recursion. Upstream: qou-o6ov two-row character machinery. Blocked on the same categorical-trace infra gap as R2 (Jones/quantum-trace not in Mathlib) for the general-n closure.
