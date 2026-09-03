@@ -696,6 +696,52 @@ invisible to a type check, so it was measured. The ratios are good to ~1e-15,
 fifteen orders below the effects reported, so nothing here rests on the narrowed
 arithmetic — but these values are not 50-dps and should not be quoted as such.
 
+## ⚠ E₀-CONDITIONALITY — raised by a sibling, and it is live for half of this document
+
+Sibling PR #6443 (merged, `4b83e4cf53`) flagged on #6427: the *"N× short"* figures
+in the extensive lane are all **E₀-conditional**, because
+`derivation_chain.E_0_CONVENTIONS` spans **5.35×** between conventions A and B
+(conv B 0.782, E₀ 4.186, ℏ_q²·m_N 9.218 MeV). *"Worth a look before quoting any
+magnitude deficit from your flat-`binding_energy` result."*
+
+**Checked at the source, and it applies — to part of this document.**
+`binding_energy` is three terms:
+
+    B = unified_iterative_correction(Z,N)        [LP-dual shadow]   -- m_e scale
+      + sdp_cross_channel_contribution(Z,N)      [SDP couplings]
+      + binding_from_frobenius_pairing(Z,N)      [Markov trace]     -- E_0 scale
+
+and term 3 is literally `E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))`.
+So:
+
+**Affected — treat as E₀-conditional:**
+
+- the four-nucleus `B_pred` table and every `|pred|/AME` ratio in it;
+- the *"target varies 12.7×, prediction varies 12.5 %"* comparison. A common
+  rescale would leave a spread-of-ratios invariant, but E₀ multiplies **only
+  term 3**, whose share differs per nucleus — so the 12.5 % figure moves under a
+  convention change and **cannot be quoted as convention-free**;
+- the sign statements about `B_pred`, to the extent term 3 dominates. The
+  per-term decomposition that would settle *how much* is not in hand.
+
+**Not affected:**
+
+- **the paired `k_exact` ladder and the 0.9504 flatness result** — that measured
+  `unified_iterative_correction` **alone**, which carries `M_E_MEV` (CAL-1), not
+  E₀. It is also a **ratio at matched truncation**, so any overall scale cancels
+  a second time, independently;
+- **the localisation probe** — layers 1–3 all sit inside `uic`. E₀ never enters.
+
+So the two load-bearing results of this arc survive the caveat intact, and the
+headline four-nucleus table does not. That asymmetry is worth stating plainly
+rather than letting the strongest-sounding table carry an unmarked dependence.
+
+**Open, and honestly open:** the per-term decomposition of `B_pred` at the four
+nuclei. A run was launched and had produced no output when this was written;
+until it lands, the *magnitude* of the E₀ exposure is unquantified — only its
+*existence* is established, and that from the source rather than from a
+measurement.
+
 ## Still open
 
 - **The cancellation mechanism.** *Where* the A-dependence is lost is now
@@ -704,5 +750,7 @@ arithmetic — but these values are not 50-dps and should not be quoted as such.
 - **The accumulator is not converged in `k`** (see the k = 11 section). The
   absolute `B_pred` values are truncation-limited; only the matched-`k` ratio is
   trustworthy as stated.
+- **The per-term E₀ decomposition** of `B_pred` (see the E₀ section above) —
+  existence established from the source, magnitude unmeasured.
 - **`E`-based scalings are withdrawn** — see the retraction above. `qou-brng`
   should take the flatness of `B_pred`, not any `C(A,2)` figure.
