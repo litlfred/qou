@@ -19,6 +19,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -37,7 +38,23 @@ from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-def load_f1_cache() -> dict[tuple, complex]:
+def _quoting_tolerance(quoted: str) -> float:
+    """Relative tolerance implied by how precisely `quoted` was serialized.
+
+    A number written to `sig` significant digits carries up to half a unit in
+    its last place, i.e. 0.5e-(sig-1) relative. Comparing a recomputation
+    against it below that is comparing against digits the file does not have.
+    Doubled, to absorb Path B's own float64 accumulation over the 47-generator
+    word -- which is ~1e-15 and thus negligible beside the quoting error, but
+    the margin keeps the gate from sitting exactly on its own boundary.
+    """
+    digits = len(re.sub(r"[^0-9]", "", quoted).lstrip("0"))
+    if digits <= 0:
+        return 1e-9
+    return 10.0 ** (-(digits - 1))
+
+
+def load_f1_cache() -> tuple[dict[tuple, complex], dict[tuple, float]]:
     """Load F1's per-λ⊢12 character from its cached witness.
 
     The F1 witness was re-schema'd: the per-partition list moved from
@@ -60,14 +77,24 @@ def load_f1_cache() -> dict[tuple, complex]:
     data = d.get("data", {})
 
     chi_a: dict[tuple, complex] = {}
+    tol_a: dict[tuple, float] = {}
     # Current shape.  chi_lambda is a _precision.fmt string; complex() parses
     # it directly, and the value it carries is real (the character at q0).
+    #
+    # It is quoted to 6-8 significant digits (measured over all 77 entries:
+    # min 6, max 8), so it cannot support a comparison below ~5e-8. The
+    # tolerance therefore travels WITH each value rather than being a single
+    # constant -- see `_quoting_tolerance` and the comparison below.
     for c in data.get("per_block_ranked", []):
-        chi_a[tuple(c["partition"])] = complex(float(c["chi_lambda"]), 0.0)
+        lam = tuple(c["partition"])
+        chi_a[lam] = complex(float(c["chi_lambda"]), 0.0)
+        tol_a[lam] = _quoting_tolerance(str(c["chi_lambda"]))
     if not chi_a:
-        # Pre-#4619 shape.
+        # Pre-#4619 shape: a raw float64, so full double resolution.
         for c in data.get("per_partition_contributions", []):
-            chi_a[tuple(c["partition"])] = complex(c["chi_q_at_q0"], 0.0)
+            lam = tuple(c["partition"])
+            chi_a[lam] = complex(c["chi_q_at_q0"], 0.0)
+            tol_a[lam] = 1e-9
 
     if not chi_a:
         raise SystemExit(
@@ -77,7 +104,7 @@ def load_f1_cache() -> dict[tuple, complex]:
             f"would pass vacuously. Re-run the F1 producer, or teach this "
             f"loader whichever field now holds the per-λ character."
         )
-    return chi_a
+    return chi_a, tol_a
 
 
 def main() -> int:
@@ -94,7 +121,7 @@ def main() -> int:
     print()
 
     # Path A: F1 cached chi_q_at_q0
-    chi_a = load_f1_cache()
+    chi_a, tol_a = load_f1_cache()
     print(f"  Path A loaded from F1 cache: {len(chi_a)} λ ⊢ 12")
 
     # Path B: iterated branching basis at H_12 ↓ H_9 × H_3
@@ -132,7 +159,7 @@ def main() -> int:
     print()
 
     print(f"  {'λ':<28} {'dim':>5} {'χ^λ(F1)':>16} {'χ^λ(Path B)':>16} "
-          f"{'|rel|':>11}  status")
+          f"{'|rel|':>11} {'tol':>7}  status")
     print("  " + "-" * 92)
     max_rel = 0.0
     n_pass = 0
@@ -152,12 +179,21 @@ def main() -> int:
         denom = max(abs(a), 1e-15)
         rel = abs(a - b) / denom
         max_rel = max(max_rel, rel)
-        ok = rel < 1e-9
+        # Compare at the RESOLUTION OF THE REFERENCE, not at a fixed 1e-9.
+        # This threshold was 1e-9 while Path A is quoted to 6-8 significant
+        # digits, i.e. BELOW the ~5e-8 floor an 8-digit reference can support:
+        # no correct computation could pass it. After the Path B braid-word
+        # repair (`1a8f3f5f80`, qou-oppb) every residual landed in 5e-9..4.8e-8
+        # -- agreement to the last digit the file carries -- and the producer
+        # still reported 0/8. A gate that cannot be satisfied is as
+        # uninformative as one that cannot be failed.
+        tol = tol_a.get(lam, 1e-9)
+        ok = rel < tol
         if ok:
             n_pass += 1
         status = "✓" if ok else "✗"
         print(f"  {str(lam):<28} {d:>5} {a.real:>+16.8e} {b.real:>+16.8e} "
-              f"{rel:>11.2e}  {status}  ({elapsed_b:.2f}s)")
+              f"{rel:>11.2e} < {tol:.0e}  {status}  ({elapsed_b:.2f}s)")
 
     print()
     print(f"  Verified: {n_pass}/{n_total}  max rel residual: {max_rel:.2e}")

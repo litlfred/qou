@@ -1,10 +1,11 @@
 ---
 # qou-ag9p
 title: sublemma_2_1_h12_he4_phase25 verifies 0 of 0 and reports success — its Path A cache key has never existed
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-23T17:05:55Z
-updated_at: 2026-08-23T17:05:55Z
+updated_at: 2026-09-03T04:34:34Z
 ---
 
 Surfaced by fixing the `qou-pag7` dimension loop: with that 67 h loop out of
@@ -78,3 +79,64 @@ not — it **reads** that one and writes
 `sublemma-2-1-h12-he4-phase25-verify.witness.json`, which is **untracked**. Same
 read-vs-write conflation the doc's own §7 correction describes, one instance
 further on. Correcting it there.
+
+
+## CLOSED 2026-09-03 — and my own diagnosis above is RETRACTED
+
+Both halves were fixed on `main` by other sessions while this bean sat at
+`todo`:
+
+* `ab096db895` fix(qou-poi1) — the loader RAISES instead of returning `{}`;
+  the producer refuses to emit a witness when the comparison set is empty.
+* `55338e43f0` phase25 — the schema drift: it now reads `per_block_ranked` /
+  `chi_lambda`, newest shape first, falling back to the old one.
+
+### The retraction
+
+This bean says `per_block_ranked` / `chi_lambda` is **"not the right
+quantity"** and warns the next agent off exactly the repointing that has since
+landed and is correct. That warning was wrong and would have cost someone real
+time.
+
+The measurement was real: on 2026-08-23 the repointing gave O(1) disagreement
+with sign flips at every `dim > 1`. **The inference blamed the wrong side.** It
+was Path B that was broken — `1a8f3f5f80` (qou-oppb) repaired
+`he4_braid_canonical` to delegate to the corpus braid word, and the same
+comparison now gives **5e-9 … 4.8e-8** on all eight shapes.
+
+The clue was in my own table. Agreement held **only at rank 1** — and rank-1
+shapes are precisely the ones a braid-word error cannot disturb, since every
+σᵢ acts as a scalar and the word's order stops mattering. I read that as
+"agrees where convention is irrelevant" when it equally read "agrees where the
+word is irrelevant", and only the second was true.
+
+Declining to commit the repointing was still right on the evidence then. The
+defect was the diagnosis recorded beside it.
+
+### What was left, now fixed
+
+With both paths finally agreeing the producer still reported **0/8**, because
+the pass threshold was `1e-9` while `chi_lambda` is serialized to **6-8
+significant digits** (measured over all 77 entries: min 6, max 8). A reference
+quoted to 8 digits cannot support a comparison below ~5e-8 — **no correct
+computation could pass**. Every observed residual sits inside the reference's
+own half-ulp; the worst is 0.95x of it.
+
+`_quoting_tolerance` now derives the threshold per-λ from the stored digit
+count, so the comparison happens at the resolution the file actually carries:
+`1e-7` for the 8-digit entries, `1e-6` for the 7-digit one. Result **8/8**.
+
+Not a widened baseline — injecting a relative perturbation into Path B:
+
+    1e-6  ->  1/8   (10x the tolerance)
+    1e-4  ->  0/8
+    1e-2  ->  0/8
+
+against the ~1e0 a wrong decomposition gives. The gate went from unfailable to
+unpassable; it now discriminates.
+
+### Left alone
+
+The producer emits 32 raw float64 fields into an **untracked** witness
+(`chi_path_a_from_f1`, `max_relative_residual`). Pre-existing, out of scope
+here, and it needs the F1 side to carry precision before it is worth fixing.

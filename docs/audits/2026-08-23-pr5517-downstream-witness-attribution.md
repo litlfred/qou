@@ -427,3 +427,46 @@ flips — 0 of 8. The rank-1 agreement is the case where χ is
 convention-insensitive, so it is not evidence. That repointing was reverted and
 not committed: a confidently wrong 0/8 is worse than an honest 0/0. Filed as
 `qou-ag9p`.
+
+## 8. RETRACTED (2026-09-03) — §7's reading of the F1 mismatch was wrong
+
+§7 concluded that `per_block_ranked` / `chi_lambda` is **"not the right
+quantity"**, on the evidence that repointing the loader at it made every
+`dim > 1` shape disagree at O(1) with sign flips. The measurement was real. The
+inference was wrong, and it blamed the wrong side of the comparison.
+
+**It was Path B that was broken, not the identification.** `1a8f3f5f80`
+(qou-oppb) repaired `he4_braid_canonical` to delegate to the corpus braid word.
+With that in place, the same repointing — now landed on `main` as `55338e43f0` —
+gives residuals of **5e-9 … 4.8e-8** on all eight shapes. The identification is
+correct; a wrong braid word was making it look otherwise.
+
+The clue was in §7's own table and I read past it: agreement held **only at
+rank 1**, and rank-1 shapes are exactly the ones a braid-word error cannot
+disturb, because every σᵢ acts as a scalar and the word's order stops
+mattering. "Agrees where the word is irrelevant, disagrees where it is not"
+points at the word. I read it instead as "agrees where convention is
+irrelevant", which fit the data equally well and happened to be false.
+
+Not committing the repointing was still the right call on the evidence then —
+the two sides genuinely disagreed, and shipping that would have been shipping a
+0/8. What was wrong was the *diagnosis* recorded alongside it, which is what a
+later reader would have acted on. Both halves of `qou-ag9p` have since been
+fixed on `main` by other sessions.
+
+**What remained, and is fixed now.** With Path A and Path B finally agreeing,
+the producer still reported `0/8` — because the pass threshold was `1e-9` while
+`chi_lambda` is serialized to **6–8 significant digits** (measured across all
+77 entries). A reference quoted to 8 digits cannot support a comparison below
+~5e-8, so no correct computation could pass. Every observed residual sits
+within the reference's own half-ulp — worst 0.95× of it.
+
+The threshold now travels with each value, derived from its stored digit count
+(`_quoting_tolerance`), so the comparison happens at the resolution the file
+actually carries: `1e-7` for the 8-digit entries, `1e-6` for the 7-digit one.
+Result **8/8**. And it is not a rubber stamp — injecting a relative
+perturbation into Path B takes it to 1/8 at `1e-6`, 0/8 at `1e-4` and `1e-2`,
+against the ~`1e0` a wrong decomposition would give.
+
+The producer went from a gate that could not fail to a gate that could not
+pass. Neither carries information; it now does.
