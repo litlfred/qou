@@ -1,0 +1,210 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T08:28:35.015107+00:00",
+  "commitSha": "dce9420f3b84dfd007f8d756fc1a4796b4dc09fc",
+  "assertions": [
+    {
+      "name": "unknot Jones = 1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "2-unlink Jones = -A^2 - A^-2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "trefoil Jones is T(2,3) or its mirror",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "figure-eight Jones is t^2 - t + 1 - t^-1 + t^-2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "Hopf Jones is not expressible in integer powers of t",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "sigma_1^5 Jones is T(2,5) or its mirror",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "2H: mu = A+1 = 3 on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "2H: linking graph is a path on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "2H: every multi-strand component is a (2,odd)-torus knot on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3H: mu = A+1 = 4 on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3H: linking graph is a path on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3H: every multi-strand component is a (2,odd)-torus knot on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3He: mu = A+1 = 4 on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3He: linking graph is a path on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3He: every multi-strand component is a (2,odd)-torus knot on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "4He: mu = A+1 = 5 on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "4He: linking graph is a path on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "4He: every multi-strand component is a (2,odd)-torus knot on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "6Li: mu = A+1 = 7 on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "6Li: linking graph is a path on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "6Li: every multi-strand component is a (2,odd)-torus knot on both branches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "lower bound is 2π(2A+1) on both branches for every isotope",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no consecutive pair is a (2,2lk)-torus link: the round-chain picture is refuted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 80,
+  "computation": "total_curvature_is_the_computable_half_probe",
+  "scriptFile": "total_curvature_is_the_computable_half_probe.py",
+  "scriptHash": "7016a53b580c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/total_curvature_is_the_computable_half_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/total_curvature_is_the_computable_half_probe.py"
+  },
+  "description": "Total curvature as the computable half of the serpenoid tower. Milnor: inf over the isotopy class of the total curvature equals 2*pi*b(L), and b(L) >= mu + #knotted components. The canonical closure has mu = A+1 components (exact, Lean-proved) of which A are (2,odd)-torus knots on both classical branches (exact-integer Kauffman bracket), so inf total curvature >= 2*pi*(2A+1): extensive with slope 4*pi per nucleon. Under Crofton, curvature = pi * (mean number of critical points of the height functions), which is the precise form of 'the oscillations happen at the saddle points'. The twist is not produced here.",
+  "data": {
+    "2H_sigma_mu": "3",
+    "2H_sigma_components": "['T(2,7)', 'T(2,7)', 'unknot']",
+    "2H_sigma_curvature_bound_over_2pi": "5",
+    "2H_sigma-1_mu": "3",
+    "2H_sigma-1_components": "['T(2,5)', 'T(2,3)', 'unknot']",
+    "2H_sigma-1_curvature_bound_over_2pi": "5",
+    "3H_sigma_mu": "4",
+    "3H_sigma_components": "['T(2,7)', 'T(2,7)', 'T(2,7)', 'unknot']",
+    "3H_sigma_curvature_bound_over_2pi": "7",
+    "3H_sigma-1_mu": "4",
+    "3H_sigma-1_components": "['T(2,5)', 'T(2,3)', 'T(2,3)', 'unknot']",
+    "3H_sigma-1_curvature_bound_over_2pi": "7",
+    "3He_sigma_mu": "4",
+    "3He_sigma_components": "['T(2,7)', 'T(2,7)', 'T(2,7)', 'unknot']",
+    "3He_sigma_curvature_bound_over_2pi": "7",
+    "3He_sigma-1_mu": "4",
+    "3He_sigma-1_components": "['T(2,5)', 'T(2,5)', 'T(2,3)', 'unknot']",
+    "3He_sigma-1_curvature_bound_over_2pi": "7",
+    "4He_sigma_mu": "5",
+    "4He_sigma_components": "['T(2,7)', 'T(2,7)', 'T(2,7)', 'T(2,7)', 'unknot']",
+    "4He_sigma_curvature_bound_over_2pi": "9",
+    "4He_sigma-1_mu": "5",
+    "4He_sigma-1_components": "['T(2,5)', 'T(2,5)', 'T(2,3)', 'T(2,3)', 'unknot']",
+    "4He_sigma-1_curvature_bound_over_2pi": "9",
+    "6Li_sigma_mu": "7",
+    "6Li_sigma_components": "['T(2,7)', 'T(2,7)', 'T(2,7)', 'T(2,7)', 'T(2,7)', 'T(2,7)', 'unknot']",
+    "6Li_sigma_curvature_bound_over_2pi": "13",
+    "6Li_sigma-1_mu": "7",
+    "6Li_sigma-1_components": "['T(2,5)', 'T(2,5)', 'T(2,5)', 'T(2,3)', 'T(2,3)', 'T(2,3)', 'unknot']",
+    "6Li_sigma-1_curvature_bound_over_2pi": "13"
+  },
+  "caveats": [
+    "The canonical word is a Hecke element, not a braid: its 2A+1 averaged letters have no crossing sign. Everything geometric here is per classical branch. A link-theoretic statement about the un-resolved object does not exist, and this probe does not make one.",
+    "Knot types are read from the Jones polynomial. Jones distinguishes the (2,odd)-torus knots from the unknot unconditionally (non-trivial polynomial => knotted); naming a component T(2,k) from its Jones polynomial alone is an identification, safe at these crossing numbers.",
+    "The lower bound 2*pi*(2A+1) is a theorem about every geometric realisation of the closure. It is NOT a substrate observable and it is NOT connected to binding by anything here. Its extensivity is noted because the theta_lambda gate needed an extensive channel; that is an observation about shape, not a mechanism.",
+    "This is the curvature half. The hull-exit analysis puts the missing ingredient in the twist, a torsion integral the osculating circle is blind to. Nothing here supplies it."
+  ]
+}

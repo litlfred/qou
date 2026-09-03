@@ -58,3 +58,58 @@ matters for the binding gap is the other one.
 ## Prerequisite
 Do not start this before the size-only recursion probe lands (A=6 homonuclear,
 running exact at 128 bits).
+
+## Result (2026-09-03) — `total_curvature_is_the_computable_half_probe.py`, 23/23
+
+**The curvature half is worth `2π(2A+1)`, and the round-chain picture is
+refuted.** Exact-integer Kauffman bracket on each component of the canonical
+closure (other strands deleted), both classical branches of the `2A+1`
+averaged letters:
+
+| A | μ | components (σ branch)              | components (σ⁻¹ branch)             | inf ∫κ ≥ |
+|---|---|------------------------------------|-------------------------------------|----------|
+| 2 | 3 | T(2,7), T(2,7), unknot             | T(2,5), T(2,3), unknot              | 2π·5     |
+| 3 | 4 | T(2,7)×3, unknot                   | T(2,5), T(2,3), T(2,3), unknot      | 2π·7     |
+| 4 | 5 | T(2,7)×4, unknot                   | T(2,5)×2, T(2,3)×2, unknot          | 2π·9     |
+| 6 | 7 | T(2,7)×6, unknot                   | T(2,5)×3, T(2,3)×3, unknot          | 2π·13    |
+
+Every multi-strand component is a `(2, odd)`-torus knot — never an unknot —
+on both branches, for every isotope. The single 1-strand component is the
+unknot. So `b(L) ≥ μ + #knotted = (A+1) + A = 2A+1`, and Milnor gives
+
+    inf ∫κ ds  ≥  2π(2A+1)      (slope 4π per nucleon, extensive)
+    inf ∫κ ds  ≤  2π·3A         (braid presentation)
+
+Fáry–Milnor proper: each knotted component has `∫κ > 4π` on every realisation.
+Consecutive pairs are NOT `(2,2lk)`-torus links (all 2×14 pairs tested), so the
+"round chain of unknots" that would have made the bound sharp is refuted — the
+bound is a floor, not a value.
+
+**Cross-corpus consequence, and it matters more than the curvature.** The
+triton Borromean model (`binding_mn_milnor_linking.py`) and the μ̄-route
+(`atom_closure_milnor_indeterminacy_probe`) both lean on the Brunnian picture:
+pairwise-unlinked UNKNOTS whose whole content sits in a triple invariant.
+Milnor's μ̄ is defined for any link, but that picture is not: the canonical
+closure's components are `(2,odd)`-torus knots on every branch, each carrying
+its own knot-level content (non-trivial Jones, bridge number 2) before any
+linking is counted. That is a second, independent obstruction to modelling
+the triton as Borromean rings, on top of the non-vanishing pairwise linking
+that probe already found. Forward pointer added there.
+
+**Reeb / saddle points, answered.** Under Crofton, `∫κ ds = π·⟨μ_v⟩` where
+`μ_v` is the number of critical points of the height function in direction
+`v`, averaged over the sphere. The oscillations ARE the curvature, integrated;
+the Reeb graph of each height function has those critical points as nodes.
+Milnor's `μ_v ≥ 2b` is what turns the count into the bridge bound.
+
+**Not done, and not claimable:** no connection from this bound to binding; no
+twist. `Tw` is a torsion integral and the osculating circle is blind to it.
+The bound's extensivity (`4π` per nucleon) is noted next to the `θ_λ` gate's
+need for an extensive channel as a shape coincidence, nothing more.
+
+- [x] compute per-component knot types on both branches, A = 2,3,4,6
+- [x] Milnor bridge bound from μ + #knotted
+- [x] round-chain test (refuted)
+- [x] forward pointer on `atom_closure_milnor_indeterminacy_probe`
+- [ ] is `2A+1` sharp? needs `b(L)` from above: a `(2A+1)`-bridge presentation or a
+      stronger lower bound. Open.
