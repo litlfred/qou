@@ -73,7 +73,7 @@ theorem trace_eq_sum_compress (hμ : 0 < μ.cells.card)
 
 
 /-- The weighted seminormal trace at convention D. -/
-noncomputable def wtrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
+noncomputable def wtrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
     Hecke ℝ q q⁻¹ n →ₗ[ℝ] ℝ where
   toFun x := ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
     ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace
@@ -84,18 +84,18 @@ noncomputable def wtrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
     simp only [map_smul, Matrix.trace_smul, smul_eq_mul, RingHom.id_apply, Finset.mul_sum]
     exact Finset.sum_congr rfl fun ν _ => by ring
 
-theorem wtrace_apply (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
+theorem wtrace_apply (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
     wtrace q hq0 hq2 n x = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
       ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace := rfl
 
-theorem wtrace_cyclic (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem wtrace_cyclic (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
     (x y : Hecke ℝ q q⁻¹ n) :
     wtrace q hq0 hq2 n (x * y) = wtrace q hq0 hq2 n (y * x) := by
   rw [wtrace_apply, wtrace_apply]
   refine Finset.sum_congr rfl fun ν _ => ?_
   rw [map_mul, map_mul, Matrix.trace_mul_comm]
 
-theorem wtrace_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem wtrace_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (n : ℕ) :
     wtrace q hq0 hq2 n 1 = 1 := by
   rw [wtrace_apply]
@@ -110,14 +110,14 @@ theorem wtrace_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 +
   exact sum_dim_weight_eq_one q hq0 hq21 hgen (n + 1)
 
 
-theorem seminormalRep_last (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {m : ℕ}
+theorem seminormalRep_last (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) {m : ℕ}
     {μ : YoungDiagram} (hN : μ.cells.card = m + 2) :
     seminormalRep q hq0 hq2 (m + 1) hN (Hecke.σ ℝ q q⁻¹ (m + 1) (Fin.last m))
       = genMat q (m + 1) (by omega) (by omega) := by
   rw [seminormalRep_σ]
   rfl
 
-theorem wtrace_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem wtrace_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (m : ℕ) (y : Hecke ℝ q q⁻¹ m) :
     wtrace q hq0 hq2 (m + 1)
         (heckeIncl ℝ q q⁻¹ m y * Hecke.σ ℝ q q⁻¹ (m + 1) (Fin.last m))
@@ -127,7 +127,7 @@ theorem wtrace_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 
   refine Finset.sum_congr rfl fun L _ => ?_
   rw [map_mul, seminormalRep_last q hq0 hq2 L.2]
 
-theorem wtrace_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem wtrace_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (m : ℕ) (y : Hecke ℝ q q⁻¹ m) :
     wtrace q hq0 hq2 (m + 1) (heckeIncl ℝ q q⁻¹ m y) = wtrace q hq0 hq2 m y := by
   classical
@@ -177,7 +177,7 @@ theorem wtrace_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 
 
 
 /-- **The Ocneanu weight defines a Markov trace on the Hecke tower**, at convention D. -/
-noncomputable def ocneanuMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+noncomputable def ocneanuMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hq21 : q ^ 2 + 1 ≠ 0) (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) :
     HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ (q ^ 3 / (q ^ 2 + 1)) where
   tr := wtrace q hq0 hq2
@@ -188,7 +188,7 @@ noncomputable def ocneanuMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 
 
 /-- **The identification.**  *Every* Markov trace on the Hecke tower with parameter `z_D` is the
 Ocneanu-weighted seminormal trace. -/
-theorem eq_wtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem eq_wtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1)
     (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ (q ^ 3 / (q ^ 2 + 1)))
     (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
