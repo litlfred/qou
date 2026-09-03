@@ -348,3 +348,41 @@ is not idle busywork — it is what keeps them alive.
 If they turn out unreachable this way, the real fix is intra-atom
 checkpointing (the per-partition loop in `atom_character_raw` is the natural
 seam), which is a bigger change than the between-atom journal.
+
+
+## 2026-09-03 — pre-flight: the finished witness will pass the new gate
+
+`qou-qe81` landed a gate that demotes any witness carrying rows with
+exception-shaped `error` values. Worth confirming BEFORE eight more hours of
+compute that it will not demote this one. Ran a hadron-knot-table-shaped
+payload through the real `WitnessBuilder.build()`:
+
+    clean payload      -> allPassed: True   basis: assertions
+    error-row payload  -> allPassed: False  basis: error-rows
+
+Green, on the `assertions` basis rather than vacuously — the producer calls
+`w.add_assertion(...)` per atom, so it is not in the 359 zero-assertion
+witnesses that gate deliberately leaves alone. And the producer has no
+try/except around `compute_atom`, so a failure kills the run rather than
+writing an error row; there is no path by which it produces the shape the
+gate rejects.
+
+### Cost curve: the exponent IS converging
+
+Successive fits over growing prefixes:
+
+    A <= 4   1.222
+    A <= 6   1.307
+    A <= 7   1.335
+    A <= 9   1.351
+
+The increments are halving (+0.085, +0.028, +0.016), so this is converging to
+roughly 1.37 — not drifting toward the 2.0 that would have made the table
+impractical. Current 7-point fit `t = 44.1 * A^1.351`:
+
+    A=28   ~66 min      A=40  ~107 min      A=56  ~169 min
+    remaining 9 atoms   ~8.4 h
+
+Earlier notes on this bean quoted 4.6 h and then 6.9 h; both were low, and
+the reason was fitting over too small an A range. ~8.4 h is the current
+number and it should be roughly stable now that the exponent has settled.
