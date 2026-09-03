@@ -8,13 +8,17 @@
   "label": "def:braid-twist-flip",
   "kind": "definition",
   "title": "Braid involutions: twist and flip",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-su2-generators"
+  ],
   "examples": [
     "papers/quantum-observable-universe/blocks/rem-holonomy-trefoil"
   ],
   "tags": [
     "braid-group",
     "involution",
-    "klein-four"
+    "s3",
+    "dihedral"
   ],
   "leanRef": "qou:QOU.BraidTwistFlip",
   "text": "braid-twist-flip.md",
