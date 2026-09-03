@@ -365,12 +365,31 @@ as it works.
 > subagent in the same session. The fix may take effect once committed and a
 > fresh session starts; that has **not** been demonstrated.
 >
-> **Which is why this AGENTS.md note is the load-bearing carrier, not the
-> agent-definition edit.** `AGENTS.md` provably arrives in subagent prompts in
-> full — both agents quoted it back verbatim, including this section. So if you
-> are a subagent reading this: **read `.claude/agent-memory/<your-name>/MEMORY.md`
-> yourself before you start, whatever your own definition does or does not
-> say.**
+> **🛑 AND I WAS WRONG ABOUT THE CARRIER — corrected the same hour.** This
+> paragraph first said *"this AGENTS.md note is the load-bearing carrier … it
+> provably arrives in subagent prompts in full"*. It does arrive in full, but
+> **the version that arrives is snapshotted at session start**: a
+> `convention-auditor` launched minutes after this very edit was committed
+> still received the *pre-edit* text, uncaveated. So a mid-session edit to
+> `AGENTS.md` reaches no subagent either — **the same failure as the agent
+> definitions, through a different file.**
+>
+> Three causes remain consistent with that single observation and it does not
+> separate them: session-start snapshotting, a cached/differently-rooted copy,
+> or an edit at a path other than the one `CLAUDE.md` `@`-includes. Snapshotting
+> is the leading candidate only because definitions failed the same way.
+> **The discriminator is a genuinely new top-level session**, not another
+> subagent.
+>
+> **The practical rule, which holds whatever the cause:** nothing you write to
+> `AGENTS.md` or to an agent definition reaches a subagent **in the session you
+> write it**. If a subagent must know something you learned this session, **put
+> it in that subagent's prompt** — that is the only channel demonstrated to
+> work today. Everything here is for *later* sessions.
+>
+> So if you are a subagent reading this in a later session: **read
+> `.claude/agent-memory/<your-name>/MEMORY.md` yourself before you start**,
+> whatever your own definition does or does not say.
 >
 > **A figure to not repeat.** The first version of the agent-definition block
 > quoted "2,520 lines across 16 files" — that is the *whole tree across all
@@ -414,7 +433,8 @@ in the same PR. When a session re-measures a BASELINE, update the entry with
 the fresh number and date. A memory file that only accretes becomes the thing
 it exists to prevent.
 
-Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+Two mechanical notes. `MEMORY.md` is the entry point an agent reads first
+(**not** injected — see the block above), so keep it
 under 200 lines — split detail into sibling files the agent reads on demand
 (`compute-precision-auditor/producer-health.md` is the worked example). And
 `memory: project` writes under `.claude/agent-memory/`, which is **committed**;
