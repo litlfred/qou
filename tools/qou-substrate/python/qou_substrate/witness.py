@@ -1226,6 +1226,161 @@ def _check_nonfinite(witness: dict, name: str) -> None:
         raise ValueError(f"non-finite guard: {msg}")
 
 
+# \u2500\u2500 Error-row gate: a recorded exception must not serialise as green \u2500\u2500\u2500\u2500
+#
+# WHAT THIS FIXES (bean qou-qe81). `phase3_triton_binding_convention_b.py`
+# caught an `AssertionError` per atom, wrote the exception TEXT into each row,
+# and emitted
+#
+#     {"atom": "T", "Z": 1, "N": 2, "A": 3, "hecke_level": "H_9",
+#      "error": "AssertionError: binding_canonical: the `E_0` keyword is
+#                deprecated; ..."}
+#     allPassed: true      assertions: 0
+#
+# Four rows, every one an error string, and the witness passed. It sat in the
+# corpus in that state for a month (2026-08-01 -> 2026-09-02), because
+# `allPassed` is `all(a.passed for a in self.assertions)` and a producer that
+# registers no assertions gets `all([]) == True`. Nothing else in the write
+# path looked at the payload.
+#
+# This is the THIRD sibling of a family the repo already runs two members of:
+#
+#   * `witness_hollowness_audit.py`       \u2014 green with `assertions: []`
+#   * `witness_failed_assertion_audit.py` \u2014 a FAILED assertion, committed green
+#   * this                                \u2014 a failure recorded in the DATA,
+#                                           where neither of the other two looks
+#
+# WHY THE VALUE SHAPE AND NOT THE KEY NAME. `error` is overloaded in this
+# corpus and keying on its presence alone is wrong about half the time.
+# Measured over 3175 witnesses (qou-mass/ and _deprecated/ excluded): 14 carry
+# a nested `error` key, and 5 of them mean a NUMERICAL error \u2014
+# `mass-from-q-symbolic` has `.data.proton.volumes[0].error = 9.98e-13`,
+# `m-p-spectral-corrected-50dps` has `.data.error = {leading_pct, full_ppm}`,
+# `laplace-sum-theta-exactness` has `error: "e^{-pi^2/a} = e^{-pi N/sqrt3}"`.
+# The sibling key `err` is numeric in all 34 of its occurrences. So the
+# discriminator is the SHAPE OF THE VALUE \u2014 `"<SomeError>: <message>"`, which
+# is what `f"{type(e).__name__}: {e}"` produces and what every real offender in
+# the corpus is written as. On that signal the corpus has 4 green offenders,
+# and 0 of the numeric-`error` witnesses are touched.
+#
+# The gate is NOT keyed on `assertions: []` either: two of the four offenders
+# (`paper-six-term-isotope-sweep`, 30 `FileNotFoundError` rows;
+# `producer-importability-audit`) carry passing assertions alongside their
+# error rows, so an assertion-count test misses them.
+#
+# LIMITS, stated so nobody reads more into a green run than is there:
+#   * a bare `str(e)` (message only, no class prefix) is not matched \u2014 nothing
+#     distinguishes it from prose;
+#   * a producer that writes its own JSON instead of going through `save()`
+#     (`stamp_staleness_metadata` users) never reaches this;
+#   * exception text under a key outside `_ERROR_KEYS` is not matched. It is
+#     deliberately narrow: `witness-producer-executes-audit` records
+#     `ModuleNotFoundError` under `smoke_detail` as its PAYLOAD, and widening
+#     the key set to catch that would fail an audit for doing its job.
+
+# Keys whose value is read as "an exception happened here", not "the numerical
+# error is". `err` is EXCLUDED on measurement: all 34 occurrences are numbers.
+_ERROR_KEYS = ("error", "exception", "traceback", "exc",
+               "error_message", "errorMessage")
+
+# `f"{type(e).__name__}: {e}"` \u2014 optionally dotted (`json.JSONDecodeError`).
+_EXCEPTION_TEXT_RE = _re.compile(
+    r"^\s*(?:[A-Za-z_][A-Za-z0-9_]*\.)*"
+    r"[A-Za-z_][A-Za-z0-9_]*"
+    r"(?:Error|Exception|Warning|Exit|Interrupt|Timeout|Failure|Fault)"
+    r"\s*:"
+)
+
+
+def _exception_text_paths(obj, path=""):
+    """Yield JSON paths of every recorded-exception string in `obj`.
+
+    A hit is a string under one of `_ERROR_KEYS` whose leading token names an
+    exception class. See the note above for why both halves are needed.
+    """
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if (k in _ERROR_KEYS and isinstance(v, str)
+                    and _EXCEPTION_TEXT_RE.match(v)):
+                yield f"{path}.{k}"
+            else:
+                yield from _exception_text_paths(v, f"{path}.{k}")
+    elif isinstance(obj, (list, tuple)):
+        for i, v in enumerate(obj):
+            yield from _exception_text_paths(v, f"{path}[{i}]")
+
+
+def _apply_error_row_gate(witness: dict) -> list:
+    """Demote `allPassed` when the payload records an exception. Idempotent.
+
+    Returns the offending paths (empty when clean), so the caller can report
+    them. Mutates `witness`: `allPassed` -> False, `allPassedBasis` ->
+    "error-rows", and a caveat naming the count.
+
+    THE DEMOTION IS UNCONDITIONAL \u2014 there is no env var that turns it off.
+    `QOU_WITNESS_STRICT_ERROR_ROWS` controls only how loudly `_check_error_rows`
+    REPORTS (warn / raise); an invisible env escape from the verdict itself
+    would recreate the exact lie this exists to stop.
+
+    The one opt-out is visible IN THE WITNESS: a top-level `expectErrors`
+    (see `WitnessBuilder.expect_errors`), for an audit whose payload IS the
+    collected failures. `computations/audits/producer-importability-audit` is
+    the measured instance \u2014 13 `ModuleNotFoundError` findings that are its
+    result, not its breakage. Same reasoning as the `preserved: true` freeze in
+    `save()`: the escape hatch is a declaration in the file, not a docstring
+    and not an environment variable.
+    """
+    paths = list(_exception_text_paths(witness))
+    if not paths:
+        return []
+    if witness.get("expectErrors"):
+        return paths
+    if witness.get("allPassed") is not False:
+        witness["allPassed"] = False
+    witness["allPassedBasis"] = "error-rows"
+    caveat = (f"allPassed forced false: {len(paths)} recorded exception(s) in "
+              f"the payload (first: {paths[0]}). Bean qou-qe81.")
+    caveats = witness.setdefault("caveats", [])
+    if isinstance(caveats, list) and caveat not in caveats:
+        caveats.append(caveat)
+    return paths
+
+
+def _check_error_rows(witness: dict, name: str, paths: list) -> None:
+    """Report the paths `_apply_error_row_gate` found. See the note above.
+
+    Reporting only \u2014 the verdict was already decided by the gate.
+
+        QOU_WITNESS_STRICT_ERROR_ROWS=1     raise (CI, and while draining)
+        QOU_WITNESS_STRICT_ERROR_ROWS=warn  print to stderr (the default)
+        QOU_WITNESS_STRICT_ERROR_ROWS=0     silence the message ONLY; the
+                                            witness is still not green
+    """
+    if not paths:
+        return
+    mode = os.environ.get("QOU_WITNESS_STRICT_ERROR_ROWS", "warn").strip().lower()
+    if mode == "":
+        mode = "warn"
+    head = ", ".join(paths[:8]) + (" \u2026" if len(paths) > 8 else "")
+    declared = bool(witness.get("expectErrors"))
+    msg = (f"{name}: {len(paths)} recorded exception(s) in the payload \u2014 "
+           f"{head}. " + (
+               "The witness declares `expectErrors`, so the verdict is left "
+               "alone; drop that declaration if the errors are not the point."
+               if declared else
+               "`allPassed` is forced false: a witness whose rows are "
+               "exception text must not serialise as passing. Fix the "
+               "producer and re-run, or declare "
+               "`builder.expect_errors(<why>)` if collecting failures is "
+               "what this witness is for."))
+    if mode in ("0", "off", "false"):
+        return
+    if mode in ("warn", "warning"):
+        print(f"\u26a0 error-rows: {msg}", file=sys.stderr)
+    else:
+        raise ValueError(f"error-row guard: {msg}")
+
+
 class WitnessBuilder:
     """
     Build a structured witness JSON conforming to ComputationWitness.
@@ -1341,6 +1496,10 @@ class WitnessBuilder:
         self.parameters: dict[str, Any] = {}
         self.data: dict[str, Any] = {}
         self.caveats: list[str] = []
+        # Set by `expect_errors(reason)`. Emitted as top-level `expectErrors`
+        # and read by `_apply_error_row_gate` as the one visible opt-out from
+        # the error-row demotion. See the note above that gate.
+        self._expect_errors: Optional[str] = None
         # Anti-staleness hashes for every upstream witness this
         # builder's caller has consumed.  Populated via
         # ``add_upstream(path)``; emitted by ``build()`` under
@@ -1384,6 +1543,31 @@ class WitnessBuilder:
     def set_content_block(self, label: str) -> "WitnessBuilder":
         """Link this witness to a content block label (e.g. 'prop:foo')."""
         self.content_block = label
+        return self
+
+    def expect_errors(self, reason: str) -> "WitnessBuilder":
+        """Declare that recorded exceptions in the payload are the RESULT.
+
+        The only opt-out from the error-row gate (see `_apply_error_row_gate`),
+        and it is deliberately a declaration written into the witness rather
+        than an environment variable: the file itself then says why it carries
+        exception text, and a reader can disagree with the claim.
+
+        Use it ONLY for a witness whose payload IS the collected failures —
+        `computations/audits/producer_importability_audit.py` is the measured
+        instance, with 13 `ModuleNotFoundError` findings that are its output,
+        not its breakage. A producer that merely wants its own errors to stop
+        failing it is the case the gate exists for; fix the producer instead.
+
+        `reason` is free text and is emitted verbatim as top-level
+        `expectErrors`.
+        """
+        if not reason or not str(reason).strip():
+            raise ValueError(
+                "expect_errors(reason) needs a reason. An undeclared reason is "
+                "the docstring-as-mechanism failure this exists to avoid."
+            )
+        self._expect_errors = str(reason).strip()
         return self
 
     def set_audit_only(self, report_path: str) -> "WitnessBuilder":
@@ -1929,6 +2113,40 @@ class WitnessBuilder:
 
         all_passed = all(a.passed for a in self.assertions)
 
+        # `allPassedBasis` — WHAT the verdict rests on (bean qou-qe81).
+        #
+        # `all([])` is `True`, so a producer that registers no assertions
+        # reports that everything passed having checked nothing. Measured over
+        # 3175 witnesses (qou-mass/ and _deprecated/ excluded): 359 of the 2522
+        # carrying an `allPassed` field are green with `assertions: []`, 192 of
+        # them while declaring rows. That is 14 % of the corpus, so flipping
+        # the verdict is not on the table — and it was already tried: making
+        # `allPassed` null for an empty assertion list was investigated under
+        # bean qou-vfy1 and WITHDRAWN, because about a dozen producers write
+        # `return 0 if wit["allPassed"] else 1` and `None` is falsy, which
+        # turns a silent false positive into a loud false negative.
+        #
+        # So the fix is a DISCRIMINATOR, not a flip — exactly the move
+        # `durationMsBaseline` above makes for the same class of problem (904
+        # ambiguous callers, fixed here rather than in the callers, because
+        # nothing at the call site tells a right one from a wrong one). A
+        # consumer reading only `allPassed` cannot tell earned green from
+        # vacuous green; one that reads this can, without re-deriving anything.
+        #
+        # `witness_hollowness_audit.py` already DETECTS this shape (its H1
+        # offence) by reading `len(assertions)` directly. It is wired into no
+        # gate array — `scripts/precision-gates.sh` mentions it only in a
+        # comment — which is that file's own "a gate wired nowhere is a gate
+        # nobody runs". Wiring it is a separate job with a 359-witness backlog
+        # in front of it; this field is what makes the state self-describing in
+        # the meantime.
+        if not all_passed:
+            all_passed_basis = "failed-assertions"
+        elif not self.assertions:
+            all_passed_basis = "vacuous"
+        else:
+            all_passed_basis = "assertions"
+
         witness: dict[str, Any] = {
             # ── Structured fields (ComputationWitness interface) ──
             "engine": self.engine,
@@ -1937,6 +2155,10 @@ class WitnessBuilder:
             "commitSha": head_sha,
             "assertions": [a.to_dict() for a in self.assertions],
             "allPassed": all_passed,
+            # "assertions" -> earned; "vacuous" -> green over an EMPTY
+            # assertion array; "failed-assertions"; "error-rows" -> demoted by
+            # the error-row gate. See the note above.
+            "allPassedBasis": all_passed_basis,
             "durationMs": duration_ms,
             # "caller" -> a real runtime; "builder-construction" -> the baseline
             # is this builder's own construction, so this is only a runtime if
@@ -2054,6 +2276,20 @@ class WitnessBuilder:
             except Exception:  # noqa: BLE001
                 pass
 
+        # A declared error-collector says so IN THE WITNESS, before the gate
+        # reads it. `_extra_top_level` can also carry `expectErrors` forward
+        # from a `wrap_legacy` payload, hence `setdefault`.
+        if self._expect_errors:
+            witness.setdefault("expectErrors", self._expect_errors)
+
+        # Error-row gate. Runs LAST, on the assembled dict, because the
+        # offending rows can arrive by any of three routes — `self.data`,
+        # `self.parameters`, and `_extra_top_level` (the measured
+        # `paper-six-term-isotope-sweep` carries them at TOP level, under
+        # `.rows[]`, not under `.data`). `save()` runs it again after merging
+        # its `extra`; the gate is idempotent.
+        _apply_error_row_gate(witness)
+
         return witness
 
     def save(self, extra: Optional[dict] = None) -> Path:
@@ -2071,6 +2307,12 @@ class WitnessBuilder:
         witness = self.build()
         if extra:
             witness.update(extra)
+            # `extra` can introduce error rows that `build()` never saw, and
+            # can overwrite `allPassed` outright. Re-run the gate on the merged
+            # dict; it is idempotent, so a witness already demoted in `build()`
+            # is unchanged. Held for `_check_error_rows` below so the paths are
+            # reported once, from the final dict.
+        _error_row_paths = _apply_error_row_gate(witness)
 
         out_path = self._output_dir / f"{self.name}.witness.json"
 
@@ -2290,6 +2532,10 @@ class WitnessBuilder:
                 # Weaker or lateral. Keep the file; warn only if weaker.
                 _check_environment_regression(
                     witness, existing, out_path.name, preserved=True)
+                # Say WHY the summary below reads FAILURES. On this branch
+                # nothing is written, so without this a preserved-but-demoted
+                # witness prints "0 assertions, FAILURES" and names no cause.
+                _check_error_rows(witness, out_path.name, _error_row_paths)
                 # Re-print the assertion summary for the validator runner
                 # without re-writing the file.
                 print(f"✓ Witness: {out_path.name}  "
@@ -2308,6 +2554,7 @@ class WitnessBuilder:
 
         _check_raw_float64(witness, out_path.name)
         _check_nonfinite(witness, out_path.name)
+        _check_error_rows(witness, out_path.name, _error_row_paths)
         _check_environment_regression(witness, existing, out_path.name)
 
         with open(out_path, "w", encoding="utf-8") as f:
