@@ -786,7 +786,75 @@ a framework statement, and this document previously presented it as the latter.*
 which carry `M_E_MEV` and no E₀ — and the paired ladder is a matched-truncation
 ratio besides.
 
-**Open:** the same decomposition at ³H, ³He and ⁴He, still computing.
+### ALL FOUR — and the reading moved twice more
+
+    atom  A    B_pred      term3    terms1+2      AME  | E_0x5.351  hbq^2x11.783 |  flip
+    2H    2  -7.271102   1.876634  -9.147736   2.2246  |   +0.8941      +12.9646  | x   4.87
+    3H    3  -7.742121   0.221623  -7.963744   8.4818  |   -6.7778       -5.3524  | x  35.93
+    3He   3  -7.456200   0.006659  -7.462858   7.7180  |   -7.4272       -7.3844  | x1120.8
+    4He   4  -6.828594   1.372964  -8.201558  28.2957  |   -0.8548       +7.9761  | x   5.97
+
+`flip` is the E₀ multiple at which `B_pred` crosses zero; the registered ceiling
+is ℏ_q²·m_N at **×11.783**.
+
+**³H and ³He are robust** — thresholds ×35.9 and ×1120.8, far outside the
+registered span. On that pair alone I wrote *"the ²H crossing is a deuteron
+peculiarity"*.
+
+**⁴He then partially re-reversed that.** Its threshold is **×5.97**: E₀ (×5.351)
+does not reach it — landing at `−0.855`, close but still negative — while
+ℏ_q²·m_N does, at **+7.98**. So **two of four nuclei flip under some registered
+convention, and ⁴He is the alpha particle**, not an owner-ruled special case like
+the deuteron. The accurate scoping is neither of my first two:
+
+- **convention-conditional at A = 2 and A = 4** (×4.87, ×5.97 — inside the span);
+- **robust at A = 3, both isobars** (×35.9, ×1120.8 — far outside it).
+
+That is **three successive readings each overturned by the next nucleus** —
+"wrong sign, full stop" → "convention-conditional" → "deuteron peculiarity" →
+this. All are kept above rather than tidied away, because *the instability of the
+reading across four points* is the most reliable thing this decomposition
+measured.
+
+### Term 2 is ZERO
+
+    terms 1+2 at 4He     = -8.201558468
+    uic(4He, k=11) alone = -8.201558468      (measured independently, above)
+    difference           =  1.5e-10
+
+The residual sits at the rounding limit of the `B_pred` figure on record, so
+**`sdp_cross_channel_contribution` contributes nothing at ⁴He**.
+`binding_energy` advertises three terms in its own docstring and delivers two.
+
+### 🛑 The 12.5 % flatness figure is partly MANUFACTURED — this corrects the headline
+
+    spread of terms 1+2 :  1.684878 / mean 8.193974  = 20.56 %
+    spread of B_pred    :  0.913527 / mean 7.324504  = 12.47 %
+
+Term 3 is **largest exactly where terms 1+2 are most negative** — ²H 1.877
+against −9.148, ⁴He 1.373 against −8.202, versus ³He 0.0067 against −7.463. It
+therefore partially **offsets** their variation, and the flatter number is the
+total. **The underlying accumulator varies 20.6 %, not 12.5 %**, and this
+document headlines the flattered figure.
+
+**The 0.9504 result is untouched, structurally rather than luckily:** it measured
+`uic` **alone**, ⁴He against ⁶Li, at matched truncation — term 3 is not in it.
+Both figures are true of different comparisons: `uic` varies **20.6 %** across
+²H–⁴He and **5 %** between ⁴He and ⁶Li. Against AME's 12.7× range, 20.6 % is
+still flat in the sense the argument needs. It is simply not 12.5 %.
+
+### Term 3's own behaviour, which explains none of the above
+
+Term 3 is **non-monotonic in A** and spans **282×** (0.0067 → 1.877), with no
+A-trend and no visible relation to AME (2.22, 8.48, 7.72, 28.30). The sharpest
+case: **³H and ³He differ 33-fold in term 3** (0.2216 vs 0.0067) at *identical*
+mass number, while their totals differ by 3.8 % — terms 1+2 absorb nearly the
+whole swing (−7.9637 vs −7.4629).
+
+No explanation is offered, and none should be guessed. Recorded because it is a
+far larger within-A variation than the 6.7 % noise floor quoted earlier in this
+document, and it sits in the one term that had been characterised as the
+scale-exposed outlier rather than as a source of scatter.
 
 **A self-inflicted lesson, and my first reading of it was also wrong.** The
 first decomposition run was piped through `| tail -12`, which buffers to EOF —
