@@ -516,3 +516,30 @@ the thing to watch as si28/ca40/fe56 land; I am NOT predicting it.
 - It says nothing about AME2020 agreement. The binding energies are large and
   positive at high A (+414 MeV at ne20) where AME2020 values are ~150-160 MeV;
   the residual question is untouched by this and remains open.
+
+
+## 2026-09-03 — CORRECTION: the exponent had not converged
+
+An earlier section on this bean claimed the cost exponent was "converging to
+roughly 1.37 — not drifting toward the 2.0 that would have made the table
+impractical", on the grounds that its increments were halving (+0.085, +0.028,
++0.016). Adding ne20 (A=20, 3293.48s) refutes that:
+
+    exponent over A<=9     1.351
+    exponent over A<=12    1.361     (+0.010)
+    exponent over A<=20    1.417     (+0.056)
+
+The increment GREW. The apparent convergence was an artifact of fitting inside
+a narrow A range; each time the range extends, the exponent moves up again.
+Current fit over 11 clean points (n14 and o16 excluded — my own audit runs
+contended their timings):
+
+    t = 40.2 * A^1.417
+    si28   75 min      ca40  125 min      fe56  201 min
+    endgame                                     ~6.7 h
+
+Treat that as a lower bound too. The honest summary of this whole sequence is
+that every estimate on this bean — 4.6 h, 6.9 h, 8.0 h, 8.4 h — has been low,
+and the reason each time was extrapolating from A values well below the ones
+that dominate the total. The only figure that has held is the per-atom
+prediction ONE step ahead.
