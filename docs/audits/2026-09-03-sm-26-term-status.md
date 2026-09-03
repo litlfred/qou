@@ -273,8 +273,8 @@ fibre-level $q$-expansion — with the observable parameter its order-zero
 archimedean rendering at $q_0$. Under that reading every attack in §§2–7 above is
 order-zero-only except the Habiro-element route and the Magnus hook-slice result,
 and the residual of an order-zero-only construction is not evidence about the
-tower. Whether "full tower" means all $n$, all orders in $q$, or both is left to
-the owner; this file takes both. Each per-term bean (`qou-bsu0`) carries a *tower
+tower. The owner confirmed the same day that "full tower" means both: all $n$ of the
+Hecke tower and all orders in $q$. Each per-term bean (`qou-bsu0`) carries a *tower
 status* line accordingly.
 
 ## 11. Corpus defects found, and their disposition

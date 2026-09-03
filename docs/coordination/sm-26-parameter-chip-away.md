@@ -325,5 +325,6 @@ all eight `sm-params-*` blocks are byte-identical to their QA sidecars.
   though what is observable is only order zero."* Every attack front in this ledger
   is to be re-read against it: an order-zero-only construction is structurally
   incomplete regardless of residual; per-term beans (`qou-bsu0`) carry a tower-status
-  line. Reading and open question recorded in the audit above.
+  line. The owner confirmed the same day that "full tower" means both — all `n`
+  and all orders in `q`; recorded in the audit above.
 

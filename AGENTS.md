@@ -2006,8 +2006,8 @@ When working on math-affecting code or content, **trace the change to a step in 
 > under this ruling, whatever its residual; (ii) every per-term bean carries a
 > *tower status* line (FULL-TOWER / ORDER-ZERO-ONLY / MIXED); (iii) the L2
 > residual of an order-zero-only construction is not evidence about the tower.
-> **Open (owner):** whether "full tower" means all `n` of the Hecke tower, all orders
-> in `q`, or both — the reading above takes both. Recorded in
+> **Settled (owner, same day):** "full tower" means **both** — all `n` of the Hecke
+> tower *and* all orders in `q`. Recorded in
 > `docs/audits/2026-09-03-sm-26-term-status.md` §10.
 
 ## Precision goals (STRICT — read before any precision-affecting work)
