@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-09-03T16:13:01Z
+updated_at: 2026-09-03T16:17:46Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -458,3 +458,37 @@ classes.
   defect it documents**.
 - `jet_prefix_gb_filtration`: the Lean asserted a claim the block **never
   makes** — substitution, not weakening.
+
+
+### TRAP — a 'prose lies about the code' grep false-positives on prose QUOTING removed code
+
+Nearly published: *"the 2026-08-31 audit claims `magic_iff_double_magic` was
+removed; it is still at LRFusion.lean:153"*. **False.** Line 153 sits inside a
+```lean fence **within the class docstring**, under the heading
+"🛑 The second field is gone (2026-08-31), and it was FALSE" — it quotes the
+deleted field to explain why it went.
+
+Verified the right way: strip `/- … -/` first, then read the class body.
+`DoubleMagicConjecture` has **exactly one field, `lr_rigidity`**, and
+`magic_iff_double_magic` does not occur in code at all. The repair landed
+exactly as documented; `IsDoubleMagic` also carries the saturation now.
+
+This is the inverse of the defect I spent the session documenting, and it
+matters because the obvious detector for that defect — grep the code for what
+the prose says was removed — produces this false positive **systematically**,
+on precisely the files that documented their repair most carefully. Any such
+detector must strip comments before matching.
+
+**Item 1 of the owner's three-part request is therefore already closed:**
+`DoubleMagicConjecture` repaired 2026-08-31 (pre-session), `SkeinMassRelation`
+in #6276. No further repair decision is needed on either.
+
+**Third same-name-different-namespace duplication in this drain:**
+`QOU.LRFusion.DoubleMagicConjecture` (observations file) is NOT the false one —
+its `DoubleMagic Z N := Z ∈ magicSet ∧ N ∈ magicSet` has saturation from the
+start and there is no `magic_iff` field. Its flagged `nu_selfConjugate` is a
+projection whose docstring **discloses** it ("one of the conditions of the
+conjecture itself, lifted to a callable theorem") — the `BondExtensiveBinding`
+over-flag class. Ledger says `genuine` (2026-08-09); re-adjudication to
+`legit` is a judgement call left to the owner, not taken unilaterally.
+(After `MassVolumeFactorization` and `binding_assembly`, that is 3.)
