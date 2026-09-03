@@ -1,11 +1,11 @@
 ---
 # qou-4bef
 title: 'GAP: alpha_EM ladder producers hardcode q0 (muon literal = retired pin A), emit float64 ppb fields, and honest_status.not_at_target is stale muon-framed'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T05:00:50Z
-updated_at: 2026-09-03T15:40:12Z
+updated_at: 2026-09-03T16:22:05Z
 parent: qou-ggdk
 ---
 
@@ -14,3 +14,7 @@ Measured 2026-09-03 (session qou-ggdk, compute-precision-auditor). computations/
 PROGRESS 2026-09-03 (owner-authorised, session qou-ggdk): the two ladder producers now read the anchors BY NAME (form ladder: q_muon_at(50) + Q_50_DIGIT_STR, stamped q0Anchor=comparison with both q0Values; Schwinger: Q_50_DIGIT_STR, stamped proton), carry mpf residuals serialized with _precision.fmt, and both stems are declared under physical_proton in q0_anchor_manifest.json. Regenerated: muon quadratic 80.50996 → 81.03574 ppb; proton quadratic 1.67232704821 → 1.67232704570 ppb (moved at the 9th significant digit: the old 19-figure proton literal); Schwinger 0.31342795362 → 0.31342795110 ppb. honest_status.not_at_target regenerated proton-framed. DOWNSTREAM (measured): no computational consumer reads either witness (the L2 dashboard takes alpha_EM from meson_em_sinh_closed_form.alpha_em_inv_derived); readers are FormLadderAnchorDominanceChecks.lean (recorded literals, updated on this branch), sm-params-gauge-couplings.md (80.5 → 81.0 ppb), the cheat-sheet table cell, and tree-measuring audit witnesses + the two ratchet baselines (which drain by these entries). REMAINING TRANCHE (not done here — scope the same way): six more alpha_EM producers hardcode the retired muon literal 1.10997859555733471 — alpha_em_anchor_preference_probe (its witness publishes muon 80.50996), alpha_em_loop_measure_consistency_probe (1loop_ppb 80.50996), alpha_em_b2_invariant_c_probe, alpha_em_b2_scalar_c_probe, alpha_em_b2_tau_intertwiner_probe, alpha_em_perloop_integer_forcedness_probe, alpha_em_theta_graph_two_loop_probe; corpus-wide 47 computations/*.py carry the literal, all UNSTAMPED and therefore invisible to the qou-3f7a anchor drain.
 
 Two ladder producers done 2026-09-03 (PR #6519); the six-producer alpha_EM tranche listed above remains — reopen or fork when scoping it.
+
+REOPENED 2026-09-03 16:1xZ on owner 'go': the six-producer tranche, same recipe, riding on PR #6519.
+
+MEASURED 2026-09-03 (tranche 2, session qou-ggdk): the retired literal 1.10997859555733471 sits in 14 producers of the alpha cluster, in three shapes. (A) DEAD FALLBACK, 9 files — 'q_at(50) if the substrate imports, else the muon literal': alpha_em_b2_canonical_scale_ratio_probe, alpha_em_b2_invariant_c_probe, alpha_em_b2_tau_intertwiner_probe, alpha_em_b2_scalar_c_probe, alpha_k_selection_rule_conditional, alpha_k_split_pole_order_audit, alpha_k_four_strand_singlet_selection, alpha_k_per_force_assembly — all computed at proton on disk; the fallback is now a hard refusal (a missing substrate is an error, not a silent anchor switch). The ninth, alpha_em_channel_swap_involution_probe, COMPUTED on the muon literal while its witness was auto-stamped proton — a mislabel no detector could see because the literal never reached the witness; moved to the proton pin by name. (B) EXPLICIT COMPARISONS (E1), 4 files — anchor_preference, loop_measure_consistency, perloop_integer_forcedness (which was DECLARED q0-independent, q0_anchor=False, while reading both pins), theta_graph_two_loop: both pins by name, mpf residuals, q0_comparison stamp. (C) MUON-ONLY WITH NO COMPARISON PURPOSE, 1 file — alpha_em_period_qdeformation_probe: proton by default (2026-08-30 rule), stamped proton. All 14 stems declared under physical_proton in q0_anchor_manifest.json.
