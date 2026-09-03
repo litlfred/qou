@@ -18,8 +18,8 @@
 
   Pre-archimedean: generic `Field K`. No analysis.
 
-  -- Ref: [frenkel2020] https://arxiv.org/abs/2007.11786
-  -- Ref: [koroteev-zeitlin2022] https://arxiv.org/abs/2108.01557
+  -- Ref: [frenkel2020] https://arxiv.org/abs/2002.07344
+  -- Ref: [koroteev-zeitlin2022] https://arxiv.org/abs/2108.04184
 -/
 
 import Mathlib.Data.Matrix.Basic
