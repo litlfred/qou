@@ -43,9 +43,27 @@ blanket-post).
    count was recorded as zero, then `precision-gates.sh --changed` found a
    35th site on `main` that the sweep list had never contained. Re-run the
    detector; the diff is not the population.
-2. **`q0_anchor_ratchet.py` self-perturbs** — `NEW: 153` then `154` on two
-   consecutive runs of an unchanged tree, because the run writes its own
-   witness into its own scope.
+2. ~~**`q0_anchor_ratchet.py` self-perturbs**~~ — **RETRACTED, this was my
+   error.** Re-measured on a genuinely clean tree, three consecutive runs give
+   `NEW=39` every time and dirty **zero** files. The script writes nothing on
+   its read path (`BASELINE.write_text` is reached only under `--rebaseline`;
+   the other writes are its self-test's tmpdir), and it **already excludes**
+   audit-emitted witnesses — it imports `AUDIT_SUFFIXES` from
+   `q0_anchor_consistency_audit` and filters on them at `_is_in_scope`.
+
+   The `153 → 154` I reported came from the same contaminated sequence as the
+   retracted `1748 vs 1630` figure: the tree was dirty with witnesses my own
+   probe runs had rewritten, and I was checking out `origin/main --
+   computations` between measurements. I retracted the pair and kept the
+   mechanism, which was not independently checked. I had also conflated two
+   scripts — `q0_anchor_consistency_audit.py` **does** write a witness via
+   `WitnessBuilder`, but that witness ends in `-audit.witness.json` and is
+   excluded by the very convention above.
+
+   **The general lesson survives and is the one to keep: never measure a gate
+   on a tree your own runs have written to.** It is just not what this
+   particular gate does. #6453 spent three verification runs answering the
+   false version of this question.
 3. **Probes write SIBLING witnesses.** A before/after sweep dirtied 32
    `*.witness.json` and mutated the tree it measured; restore
    `computations/` after every run.

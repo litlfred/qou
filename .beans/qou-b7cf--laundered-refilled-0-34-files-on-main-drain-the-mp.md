@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-09-03T13:28:41Z
+updated_at: 2026-09-03T20:20:19Z
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -146,3 +146,29 @@ the run writes its own witness into its own scope.
    `beans(...)` — the whole of class (a) and (c). Caught only because the
    re-run reported 16 of 17 probes IDENTICAL, impossible for this change.
    Reverted in `5119c3dcea`.
+
+
+## RETRACTION (2026-09-03): "the q0 ratchet self-perturbs" was my error
+
+Re-measured on a genuinely clean tree: three consecutive
+`q0_anchor_ratchet.py` runs give **NEW=39 every time** and dirty **zero**
+files. The script writes nothing on its read path, and it ALREADY excludes
+audit-emitted witnesses (`AUDIT_SUFFIXES`, imported from
+`q0_anchor_consistency_audit`, filtered at `_is_in_scope`).
+
+The `153 -> 154` came from the same contaminated sequence as the retracted
+`1748 vs 1630`: a tree dirty with witnesses my own probe runs had written,
+with `git checkout origin/main -- computations` in between. **I retracted
+the pair and kept the mechanism without re-checking it** — that is the
+actual error, and it is worse than the original mistake because the
+retraction was the moment to catch it.
+
+I had also conflated two scripts: `q0_anchor_consistency_audit.py` DOES
+write a witness via `WitnessBuilder`, but it ends in `-audit.witness.json`
+and is excluded by the very convention above.
+
+Cost: I published this on #6453, #6489 and in the ledger, and #6453 spent
+three verification runs answering the false version.
+
+**The general rule survives — never measure a gate on a tree your own runs
+have written to.** It is simply not what this gate does.
