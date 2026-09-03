@@ -70,11 +70,27 @@ import sys
 from pathlib import Path
 
 # Resolve the ENTIRE module graph (q_parameter → hecke_core → word builder →
-# _avg_color_delta) at the certified chain's canonical-muon pin. Without this,
-# a non-manifest process gets the proton pin and the color-weighted δ drifts
-# by the pin difference — measured as an irreducible 5.9e-11 floor on the
-# deuteron/⁴He reproductions (vs 6e-31 with the pin aligned).
-os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")
+# _avg_color_delta) at the certified chain's canonical-muon pin. Without it the
+# color-weighted δ drifts by the pin difference — measured as an irreducible
+# 5.9e-11 floor on the deuteron/⁴He reproductions (vs 6e-31 with the pin
+# aligned). That requirement is REAL and is unchanged.
+#
+# What changed 2026-09-03 (bean `qou-aj91`): the pin is now DECLARED in
+# q0_anchor_manifest.json, where this stem is listed `ideal_muon`, instead of
+# being forced here by os.environ.setdefault("QOU_Q0_ANCHOR", "ideal").
+#
+# The old line was right about the anchor and wrong about the mechanism. The
+# stem was UNLISTED, so the manifest said proton while the file forced muon --
+# a declaration that disagreed with the behaviour. It also defeated every q0
+# detector: a script setting the variable on itself matches none of the pin
+# markers, so this producer's real anchor was invisible to the audit that
+# exists to report it. Two sibling files carried the same line with no
+# rationale at all and were straightforwardly wrong; this one was correct and
+# merely undeclared, which is why it is being converted rather than deleted.
+#
+# Verified equivalent before the swap: with the stem listed and QOU_Q0_ANCHOR
+# unset, q_parameter resolves 1.109978595642739046681795... -- the same muon
+# pin the setdefault was forcing.
 
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
