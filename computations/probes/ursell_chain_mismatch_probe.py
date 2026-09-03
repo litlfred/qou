@@ -1,5 +1,37 @@
 """The additive channels' b3 = -b2 is the Ursell INVERSION, not a three-body term.
 
+*** RETRACTION OF NOVELTY (2026-09-03) -- READ FIRST ***
+
+The arithmetic below is correct.  The claim that check 3 was NEW is not, and it
+was mine.  QOU.Mass.UniformBondSimpleGraphExclusion (main c9d47234ce, 2026-08-30,
+FOUR DAYS before this probe merged, bean qou-edt7) already proves the same
+exclusion and proves it MORE GENERALLY: b3Uniform_nonpos gives eps(e3 - 3 e2) <= 0
+for e3 <= 3, e2 >= 1, eps >= 0, of which check 3 is the e2 = 1 case.  Its chain
+and complete-graph rows are b3Uniform_neg_of_chain and
+b3Uniform_eq_zero_of_complete.
+
+The "surviving escape" of check 4 was not a new direction either.  The ratio
+computed there, w/w_d = 5399947/4449132 = 1.2137079772, IS the corpus's w(2)/w(1),
+recorded to 60 digits in coordination-weight-rise-and-turnover.witness.json as
+1.21370760735284029758..., whose own source line calls it "the entire content of
+b3 > 0".  Check 6 below now verifies that agreement rather than leaving the
+duplication implicit.  And the obvious mechanism on that axis -- single-ratio
+(Markov-power) scaling eps(z) = eps(1) r^(z-1) -- is already REFUTED there: the
+two available ratios disagree by ~44%, for every r, convention-independently.
+
+HOW IT HAPPENED: I ran the six-path corpus-grep AFTER merging instead of before.
+Path 3 surfaces coordination_weight_rise_and_turnover_probe.py on the first
+pattern tried, and its docstring names UniformBondSimpleGraphExclusion in the
+third paragraph.
+
+WHAT SURVIVES as this probe's own contribution: check 5 only -- the link between
+the exclusion and the four MEASURED channel values, which reframes my own earlier
+capstone (ch3/ch4/ch5 are one identity; ch1 is not explained by it).  That link is
+not in qou-edt7.  Checks 1-4 are an independent re-derivation by a different route
+(Ursell counts rather than graph edges); corroboration, not priority.  Do not cite
+this probe as establishing the exclusion -- cite UniformBondSimpleGraphExclusion.
+
+
 REFRAMES A RESULT OF MY OWN.  all_channels_b3_sign_probe measured b3/b2 < 0 for
 all four evaluable binding channels and read the three bond-additive ones
 clustering at ~ -1 as a shared physical failure.  For those three it is
@@ -187,8 +219,9 @@ def main() -> int:
     chk("nonuniform_escape_is_open",
         r_at_needed == R_MEASURED and w_over_wd_needed > 1,
         f"w/w_d = {float(w_over_wd_needed):.6f} (> 1) reproduces the measured "
-        "value exactly -- so non-uniformity is NOT excluded here, and is the "
-        "next direction")
+        "value exactly, so non-uniformity is not excluded HERE -- but see "
+        "check 6: this is the corpus's already-recorded w(2)/w(1), and its "
+        "single-ratio (Markov-power) mechanism is already REFUTED in qou-edt7")
 
     # -- 5. Which measured channels the identity explains ----------------
     print()
@@ -211,6 +244,25 @@ def main() -> int:
         f"identity), while ch1 -- the SHIPPED, non-additive channel -- is "
         f"{float(ch1):.4f} away and is NOT explained by it")
 
+    # -- 6. cross-check against the corpus value this duplicates -------
+    print()
+    print("6. cross-check: is check 4's ratio the corpus's w(2)/w(1)?")
+    cw = _HERE / "coordination-weight-rise-and-turnover.witness.json"
+    recorded = None
+    for a in json.loads(cw.read_text())["assertions"]:
+        if a["name"] == "bond_strengthens_from_z1_to_z2":
+            recorded = F(a["computed"])
+    rel = abs(w_over_wd_needed - recorded) / recorded
+    print(f"     recorded w(2)/w(1) = {float(recorded):.16f}  (60 dps, "
+          f"coordination-weight-rise-and-turnover.witness.json)")
+    print(f"     check 4  w/w_d     = {float(w_over_wd_needed):.16f}")
+    print(f"     relative difference = {float(rel):.3e}")
+    chk("check4_ratio_is_the_recorded_coordination_weight_ratio",
+        rel < F(1, 1000000),
+        f"agree to {float(rel):.2e} -- the same quantity by two routes (my "
+        "input is a rounded AME ratio; theirs is not). This is CORROBORATION "
+        "of a recorded number, NOT a new one; see the retraction above")
+
     ok = all(c["passed"] for c in checks)
     print()
     print(f"  {sum(c['passed'] for c in checks)}/{len(checks)} checks passed")
@@ -221,10 +273,15 @@ def main() -> int:
         "computedAt": datetime.datetime.now(
             datetime.timezone.utc).isoformat().replace("+00:00", "Z"),
         "description": (
-            "The three bond-additive channels' b3/b2 ~ -1 is the Ursell "
-            "inversion meeting a bond set, not a three-body finding. "
-            "Generalised: b3/b2 = n(3)/n(2) - 3 <= 0 for EVERY uniform "
-            "pairwise-bond model, since n(2) = 1 and n(3) <= C(3,2) = 3."),
+            "RETRACTED NOVELTY: the exclusion here duplicates "
+            "QOU.Mass.UniformBondSimpleGraphExclusion (main c9d47234ce, "
+            "2026-08-30, bean qou-edt7), which proves it more generally, and "
+            "check 4's ratio is the corpus's recorded w(2)/w(1). The "
+            "arithmetic is correct and is an independent re-derivation by a "
+            "different route (Ursell counts rather than graph edges). What is "
+            "this probe's own is check 5: the link between the exclusion and "
+            "the four MEASURED channel values, which reframes the earlier "
+            "capstone -- ch3/ch4/ch5 are one identity, ch1 is not."),
         "measured_b3_over_b2": str(R_MEASURED),
         "count_table": table,
         "bond_count_rows": rows,
@@ -242,6 +299,14 @@ def main() -> int:
             "while the Ursell inversion subtracts three pair terms. (a) on "
             "everything else."),
         "caveats": [
+            "PRIORITY: this probe does NOT establish the uniform-bond "
+            "exclusion. UniformBondSimpleGraphExclusion / b3Uniform_nonpos "
+            "does, more generally, and landed four days earlier. Cite that.",
+            "The single-ratio (Markov-power) scaling family on the "
+            "non-uniformity axis is ALREADY REFUTED in qou-edt7 (~44% "
+            "disagreement between the two available ratios, for every r), so "
+            "'non-uniformity is the next direction' understates what is "
+            "already known about it.",
             "This EXCLUDES NO CHANNEL and refutes no physics. It reclassifies "
             "why three already-measured channels failed; the measurement "
             "itself is unchanged.",
