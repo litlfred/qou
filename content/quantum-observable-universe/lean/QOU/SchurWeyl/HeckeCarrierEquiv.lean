@@ -16,14 +16,27 @@ but for `QOU.SchurWeyl.Hecke`, whereas the `T_w` basis and `twGram` are built on
     QOU.Hecke.HeckeRel  K Q  n  :  σ² = (Q − 1)·σ + Q·1
 
 The braid and far-commutation clauses are **verbatim identical**, on the same
-`FreeAlgebra K (Fin n)`.  So the whole content is the quadratic, and a generator
-rescaling `σ ↦ c • σ` moves it: for `g i = c • T i` with `T` Iwahori at `Q`,
+`FreeAlgebra K (Fin n)`.  So the whole content is the quadratic, and it moves under a
+generator rescaling.  Write `σ` for the skein generator (source) and `T` for the
+Iwahori generator at `Q` (target), and send `σ i ↦ c • T i`.  Squaring the target and
+using the Iwahori relation on `T` gives
 
-    g² = c²(Q−1)·g/c + c²Q  ⇒  matching needs  c·(Q − 1) = q − qi  and  c²·Q = q·qi.
+    (c • T)² = c²(Q − 1) • T + (c² Q) • 1,
 
-Those two are the hypotheses `hc₁` and `hc₂` below.  Both are homogeneous of the
-same degree on the braid and commutation clauses, so a rescaling cannot disturb
-them — proved here rather than asserted.
+while the skein relation demands
+
+    (c • T)² = (q − qi) • (c • T) + (q · qi) • 1 = c(q − qi) • T + (q · qi) • 1.
+
+Matching the two coefficients gives `c²(Q − 1) = c(q − qi)` and `c² Q = q · qi`.  We
+take the first in the **division-free, slightly stronger** form `c(Q − 1) = q − qi`,
+which implies it by multiplying through by `c`.  Nothing here asks `c` to be a unit:
+`toIwahori` is built over a bare `[CommRing K]` from those two identities alone.  An
+inverse enters only for the map *back* — `fromIwahori` takes a separate `d` with
+`d · c = 1` — and only there because the two directions must compose to the identity.
+
+Those two identities are the hypotheses `hc₁` and `hc₂` below.  The braid and
+commutation clauses are homogeneous of the same degree in the generators, so the
+rescaling cannot disturb them — proved here rather than asserted.
 
 ## The specialisation that matters
 
