@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T04:27:36Z
+
 updated_at: 2026-09-03T02:58:23Z
 
 updated_at: 2026-09-03T04:57:24Z
@@ -920,6 +922,59 @@ TWO ROUTES TO SETTLE IT, neither attempted:
   2. A=4 and A=6 both at reduced k_exact -- not comparable to the k=11 points,
      but comparable to EACH OTHER, so E(6)/E(4) discriminates cheaply. A
      different measurement needing its own gate.
+
+## 2026-09-03 — RETRACTION of the `E ≈ 5.4 × C(A,2)` target above, and what replaced it
+
+**The target in the previous entry is WITHDRAWN. Do not carry it forward.** It
+is mostly an artefact of the arithmetic, not a finding about the framework.
+
+The mechanism: `E := AME − B_pred`, and the entry immediately above establishes
+that `B_pred ≈ −7.3 MeV` is **near-constant** across nuclei. So
+`E ≈ AME + 7.3`, and `E/C(A,2) ≈ (AME + 7.3)/C(A,2)` — a statement about
+**AME2020 plus an offset**, with almost no framework content in it. Measured:
+
+    nucleus   A    AME     E/C(A,2)   (AME+7.3)/C(A,2)
+    ²H        2    2.225     9.496          9.525
+    ³H        3    8.482     5.408          5.261
+    ³He       3    7.718     5.058          5.006
+    ⁴He       4   28.296     5.854          5.933
+
+The last two columns agree to **~1 %**. And `AME/C(A,2)` is not constant — it
+is 2.225, 2.827, **4.716**, 2.133, 1.869, 1.396 for ²H/³H/⁴He/⁶Li/⁷Li/¹²C: it
+**peaks at ⁴He and falls steeply**. The near-constancy was a three-point
+coincidence in the region where the AME curve happens to turn over; ⁶Li breaks
+it on AME grounds alone (≈2.62 with the offset), before the framework is
+consulted.
+
+The `E/C(A,2)` figure therefore does **not** bear on the pairwise-cap tension
+flagged in the previous entry — that tension is withdrawn along with the
+figure, not resolved.
+
+### What the retraction bought: a better experiment
+
+The informative measurement is **`B_pred` itself as a function of `A`**, with
+no experimental normalisation anywhere in it — so nothing about AME can
+contaminate it. Run as a **paired** comparison of ⁴He and ⁶Li at *matched*
+truncation `k_exact`, which also sidesteps the A=6 wall (three full
+`binding_energy` attempts at ⁶Li were killed at ~900 s / 326 s / 124 s):
+
+    k_exact   ⁴He (A=4)      ⁶Li (A=6)      ratio li6/he4
+      5      -0.375110164   -0.539212954       1.4375
+      6      -0.838749076   -0.992757495       1.1836
+      7      -1.515118319   -1.414063111       0.9333
+      8      -2.153722974   -2.183158129       1.0137
+      9      -3.711581534   -3.404340982       0.9172
+     10      -5.669659692   -5.467686217       0.9644
+
+`A` grows 1.5×; `C(A,2)` grows 2.5×; the accumulator ratio sits in
+**0.917 … 1.014 for k ≥ 7** (mean 0.957). **The flatness extends to A = 6** —
+`B_pred` carries essentially no `A`-dependence over a range where binding grows
+by 3.5×. That is the finding the withdrawn target was obscuring, and it is the
+direct measurement this bean's missing extensive term needs.
+
+Scope: this is a scope-(a) statement about the current `unified_iterative_correction`
+path at truncations k = 5…10 — not a structural exclusion of any ingredient.
+Audit: `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`; PR #6427.
 
 ## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
 
