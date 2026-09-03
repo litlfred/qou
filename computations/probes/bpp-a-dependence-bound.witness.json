@@ -2,7 +2,7 @@
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "bpp-a-dependence-bound",
   "description": "qou-gcmn's B_pp confound is IDENTICALLY ZERO in the corpus's chain model: B_pp^chain = -alpha*ln z with z = q^3/(q^2+1) a function of q alone, so it cannot vary with A (scope (b), invariant named). The H_6 trace bond agrees with it to 3.6% at A=3 \u2014 the only point both are computable \u2014 but one point cannot establish a proxy, so the result is a one-sided disjunction, not a bound on the trace bond. kappa(A) reproduced from AME (3.2 at A=3, 2.1-2.3 at A>=7). Re-scopes qou-gcmn from 'compute the intractable H_2A series' to 'does the trace bond track the chain bond' \u2014 decidable with ONE second point (H_8). Scope (a) for the numbers; nothing wired.",
-  "computedAt": "2026-08-31T03:21:03.549738+00:00",
+  "computedAt": "2026-09-03T18:36:02.520454+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "z": "0.612688037146465251595829863946",
@@ -96,5 +96,7 @@
       }
     ],
     "allPassed": true
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
