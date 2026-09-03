@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-09-03T12:46:51Z
+updated_at: 2026-09-03T13:28:41Z
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -72,3 +72,77 @@ manifest covers 764 of 3798 scripts. Not registering.
 `pyhecke.gram.q0` is a **float64** module constant; `pyhecke.atom` binds
 `D_PN` from it, and that file's own comment says 1027 of the 1929
 witness-writing producers reach it. Far beyond this branch.
+
+
+## Sweep complete (PR #6489)
+
+**35 sites, not 34.** `precision-gates.sh --changed` found
+`mirror_penalty_decomposition_probe.py:95` after I had recorded the count
+as zero. It is on main and was outside my sweep list because that list was
+"files I changed", not "files the detector flags". **A sweep keyed on the
+files you touched cannot close a defect class; only re-running the detector
+can.**
+
+### Before/after, both sides in one environment from a clean tree
+
+|  | before (origin/main) | after (branch) |
+|---|---|---|
+| exit 0 | 32 | 32 |
+| exit 1 | 1 | 1 |
+| exit 124 | 1 | 1 |
+
+* exit codes identical; both failures pre-existing and unrelated
+  (`qbeta_habiro...` raises its own `AmDifferenceInvalid` guard,
+  `the_alpha_spike...` exceeds 300 s)
+* **verdict changes: 0 / 34** — no PASS/FAIL/allPassed/ELLIPTIC/REFUTED/
+  CONFIRMED moves anywhere
+* stdout: 19 identical, 8 digits-only, 7 other — all 7 read individually,
+  every one a near-zero residual whose printed value is round-off, or an
+  added digit
+
+Two worth recording as improvements rather than churn:
+`qbeta_bring_tau0`'s `w_sym - w_alt` went `4.6e-41/1.8e-40/7.3e-40` ->
+`0.0/0.0/3.7e-40` (two became exactly zero), and the protium probe's
+`|E_0*(-eps) - Q_A| = 0.0` became `2.67e-51` — the `0.0` was the laundered
+q_0 faking exact agreement with a Lean theorem.
+
+### The one non-numeric change was a pre-existing degeneracy
+
+`the_hull_exit`'s `e_max` row: `u = -log c = LQ` EXACTLY by the definition
+of `e_max`, so `ratio_at_u`'s `u < LQ` is a strict comparison on an exact
+tie and `LQ - u` in its denominator IS the round-off. Laundered q_0 printed
+`False / T=1 BINDS`; `q_at` printed `True` and a ratio of 4.8e40. Neither
+meant anything. Window is half-open, so the row now reads
+`boundary / excluded`. Assertion never read it; still PASS.
+
+### Precision gates: red, and it is main's red
+
+11 gates red, exit 1. **Proved not attributable to this branch**: the
+ratchets read `*.witness.json`, and between the merge base and HEAD exactly
+4 witnesses differ, all 4 byte-identical to origin/main's (untracked files
+swept in by the bad `63a8f129d9`; they vanish on rebase). Nothing else in
+the diff but `.py` and `.beans/`.
+
+Two of my own measurement errors, corrected: I first read the ratchet as
+1748/153 (branch) vs 1630/39 (main) and nearly called the 114 difference
+mine — but `git checkout origin/main -- computations` compares my BASE to
+CURRENT main (base `098983e5a2`, main `b8d883189d`) and does not remove
+files absent from it, so that tree was a mixture; and my "only on branch"
+list was measuring output VERBOSITY, not content (two sampled entries exist
+identically on both refs). The audit also **self-perturbs** — two
+consecutive runs on an unchanged tree gave `NEW: 153` then `154`, because
+the run writes its own witness into its own scope.
+
+### Method traps hit, all three named in AGENTS.md
+
+1. Probes write SIBLING witnesses; my first run mutated the tree it
+   measured (32 dirtied). Harness now restores `computations/` per run.
+2. `origin/main`'s own probe gave different numbers 80 min apart on an
+   unchanged tree; four hypotheses refuted by measurement before the
+   container was replaced, which is the likeliest cause and is now
+   unconfirmable. First comparison discarded.
+3. **`git checkout <ref> -- <path>` STAGES.** A later `git add .beans &&
+   git commit` swept 56 `.py` reversions into a commit labelled
+   `beans(...)` — the whole of class (a) and (c). Caught only because the
+   re-run reported 16 of 17 probes IDENTICAL, impossible for this change.
+   Reverted in `5119c3dcea`.
