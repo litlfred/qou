@@ -1186,6 +1186,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9e6da503f903",
+          "ts": "6a2245237f05",
+          "lean": "5dd43a362f09",
+          "lean_statement": "4ba3a58824bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T20:51:23.630Z",
+        "reviewed_sha": "aa2d00fe0b6315e9c5130236e241ac7f09f1ea0a",
+        "evidence": "descent-lemma.lean:82 — `def descent_surjective … (descentMap : A →ₐ[R] B) : Prop := Function.Surjective descentMap`. The prior shape was `structure DescentLemma` carrying `surjective : Function.Surjective descentMap` as a field with `theorem descent_surjective (dl : DescentLemma R) : Function.Surjective dl.descentMap := dl.surjective` — the map and its surjectivity both chosen by the instance (AGENTS.md §3b-cond item 5). Now the map is a parameter, so the Prop constrains caller data.",
+        "notes": "AGENTS.md §1a disposition 3. `descentSurjective_comp` derives the tower statement from it; `not_descentSurjective_diagonal` refutes it at `Algebra.ofId ℤ (ℤ × ℤ)`, so a `sorry` over free data would have been unsound. lean-direct exit 0; #print axioms = [propext, Quot.sound] on both theorems."
       }
     ],
     "proof-no-trivial-true": [
@@ -1432,6 +1450,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9e6da503f903",
+          "ts": "6a2245237f05",
+          "lean": "5dd43a362f09",
+          "lean_statement": "4ba3a58824bb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T20:51:42.413Z",
+        "reviewed_sha": "aa2d00fe0b6315e9c5130236e241ac7f09f1ea0a",
+        "severity": "major",
+        "evidence": "descent-lemma.md states three things about `𝔡ₙ : End_C(Aₙ) → End_C(A_{n-1})`: it is a surjective ALGEBRA homomorphism, it INTERTWINES the `G_q`-actions, and `(C, A_{n-1}, τ)` is again a QOU. The Lean encodes only the first, and until this commit encoded it as `→ₗ[R]` (a LinearMap — multiplicativity dropped entirely); descent-lemma.lean:82 now uses `→ₐ[R]`. The `G_q`-intertwining and the QOU-preservation claim have no counterpart in the Lean at all. The prior sidecar entry recorded `pass` on the weaker version.",
+        "notes": "warn, not fail: the two remaining gaps are now stated in the module docstring (§'What is still unencoded') rather than implied, and closing them needs the brane tower, End_C(Aₙ) and the G_q-action, none of which exist in Lean. Scope-(a): the encoding is narrower than the .md, not wrong."
       }
     ],
     "da-citation-misuse": [
@@ -2119,6 +2156,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-09-03T20:51:42.413Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
