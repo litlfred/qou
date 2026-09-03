@@ -113,6 +113,29 @@ determinant. Kept in the Lean as a regression.
    scalar extension is missing. Over `ℝ` with `Q > 0`, or any field where `Q` is a square,
    `twGram_det_ne_zero_of_sq` already gives the statement at `Q`.
 
+   **The obvious route to that base change is closed, and the closure is structural**
+   (measured 2026-09-03, not estimated). It looks like a complete chain —
+   `RingQuot.ringQuotEquivIdealQuotient` turns the algebra into an ideal quotient,
+   `quotIdealMapEquivTensorQuot` base-changes an ideal quotient, `LinearMap.trace_baseChange`
+   base-changes the trace. But `ringQuotEquivIdealQuotient` sits inside `section CommRing`
+   with `[CommRing B]` (`Mathlib/Algebra/RingQuot.lean:470`), and `FreeAlgebra K (Fin n)` is
+   **noncommutative for `n ≥ 2`** — which is this bean's entire content. The downstream piece
+   fails for the same reason: Mathlib's `Ideal B = Submodule B B` is a *left* ideal, so that
+   machinery is commutative-only here. Nor is there a free-algebra base change to start from:
+   intersecting every file mentioning `FreeAlgebra` with every file mentioning
+   `TensorProduct` or `baseChange` yields exactly one hit,
+   `Mathlib/LinearAlgebra/TensorAlgebra/Basic.lean`, and that is `FreeAlgebra` being *used to
+   define* `TensorAlgebra`, not a scalar-extension lemma.
+
+   **The route that is open** does the base change on `RingQuot` directly via the universal
+   property, never touching ideals — and the corpus already holds both halves of that
+   property for this algebra: `QOU.SchurWeyl.iwahoriLift` (generators → `AlgHom` out) and
+   `iwahori_hom_ext` (two `AlgHom`s agreeing on generators are equal), the same tools
+   `skeinIwahoriEquiv` is built from. Four pieces: the tensor as an `L`-algebra whose
+   `1 ⊗ σᵢ` satisfy `HeckeRel L Q n`; the two `AlgHom`s and their round trips; basis
+   compatibility for `basisTwOfField` (the fiddliest); Gram compatibility, after which `det`
+   commutes with a ring hom and `algebraMap` of a field is injective. Scoped in `qou-kwoa`.
+
 ## Scope
 
 Semisimplicity and the Gram determinant are **magnitude-axis** facts. Nothing here bears on

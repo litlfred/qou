@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-03T20:58:48Z
+updated_at: 2026-09-03T22:02:35Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -331,3 +331,70 @@ its deps are NOT in the lake-cache/qou-v4-24-0 restore. Build them lean-direct I
 mathlib build tree (7 s for all three). A scratch LEAN_PATH directory does NOT work --
 Lean commits to the first path root containing Mathlib/, so a partial scratch tree
 silently shadows the entire real one.
+
+
+## 2026-09-03 21:58 — item 3 (the square root) PRICED. The ideal-quotient route is CLOSED.
+
+Measured against Mathlib at lake-cache/qou-v4-24-0, not estimated. Recording because
+"needs base change of IwahoriHecke" is not actionable on its own, and the obvious way to
+do it does not work.
+
+### What exists
+
+  LinearMap.trace_baseChange              Mathlib/LinearAlgebra/Trace.lean:336
+  RingQuot.ringQuotEquivIdealQuotient     Mathlib/Algebra/RingQuot.lean:505
+  quotIdealMapEquivTensorQuot             Mathlib/RingTheory/TensorProduct/Quotient.lean:42
+
+That reads like a complete chain: IwahoriHecke is a RingQuot, turn it into an ideal
+quotient, base-change the ideal quotient, base-change the trace. It is not.
+
+### Why it is closed
+
+ringQuotEquivIdealQuotient sits inside `section CommRing` with `variable [CommRing B]`
+(RingQuot.lean:470). IwahoriHecke K Q n is RingQuot (HeckeRel K q n) on
+FreeAlgebra K (Fin n), which is NONCOMMUTATIVE for n >= 2 -- and n >= 2 is the entire
+content of this bean. So the bridge does not apply, and neither does
+quotIdealMapEquivTensorQuot downstream of it: Mathlib's `Ideal B = Submodule B B` is a
+LEFT ideal, and the whole ideal-quotient machinery is commutative-only here.
+
+Nor is there a free-algebra base change to start from. Searched: every file mentioning
+FreeAlgebra intersected with every file mentioning TensorProduct or baseChange gives one
+hit, Mathlib/LinearAlgebra/TensorAlgebra/Basic.lean, and that is FreeAlgebra being USED to
+define TensorAlgebra -- not a scalar-extension lemma. There is no
+`L (x)_K FreeAlgebra K X = FreeAlgebra L X` in Mathlib.
+
+### The route that IS open, and it is cheaper than it looks
+
+Do the base change on RingQuot directly via the UNIVERSAL PROPERTY, never touching ideals.
+The corpus already has both halves of that property for this algebra:
+
+  QOU.SchurWeyl.iwahoriLift        HeckeCarrierEquiv.lean:104  -- generators -> AlgHom out
+  QOU.SchurWeyl.iwahori_hom_ext    HeckeCarrierEquiv.lean:130  -- two AlgHoms agreeing on
+                                                                  generators are equal
+
+They are the same tools carrierEquiv / skeinIwahoriEquiv are built from, so the pattern is
+already worked in this file. Build AlgHoms both ways between L (x)_K IwahoriHecke K Q n and
+IwahoriHecke L Q n and kill the composites with iwahori_hom_ext.
+
+Four pieces, in dependency order:
+
+  1. L (x)_K H_K as an L-algebra whose `1 (x) sigma_i` satisfy HeckeRel L Q n. Needs
+     Algebra.TensorProduct.lift for the map OUT of the tensor.
+  2. The two AlgHoms and the round trips (iwahori_hom_ext both ways).
+  3. Basis compatibility: basisTwOfField L Q n corresponds to 1 (x) basisTwOfField K Q n.
+     Probably the fiddliest piece -- Module.Basis.baseChange exists but tying it to the
+     T_w indexing is work.
+  4. Gram compatibility: twGram L Q n = (twGram K Q n).map (algebraMap K L), then
+     det commutes with a ring hom and algebraMap of a field is injective.
+
+The hypothesis needs nothing: NotRootOfUnity Q => NotRootOfUnity q when q^2 = Q, since
+q^m = 1 forces Q^m = 1. So this buys the statement at a general Iwahori parameter Q, over
+any characteristic-zero field, with no square root assumed.
+
+### Recommendation (my judgement, not a finding)
+
+LOW priority relative to the value (item 1). It never bites in the corpus's own use: the
+substrate q0 ~ 1.11 is real and positive, so a square root always exists, and over any
+algebraically closed field every Q is a square. It is a mathematical tidying of a
+statement that is already sharp where the framework stands. Worth doing if someone wants
+the clean general-field theorem; not worth pre-empting the Schur-element work for.
