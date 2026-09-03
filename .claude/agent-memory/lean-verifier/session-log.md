@@ -4,6 +4,19 @@ One line-block per session: what was verified, by what method, and any
 `MEMORY.md` entry confirmed or corrected. Moved out of `MEMORY.md` 2026-09-03 so
 the injected file stays under 200 lines. Newest first.
 
+- 2026-09-03 (skeptic pass, `qou-6gf9`, `QOU/BraidKnot/MuPCorrectionAdmissibility.lean`
+  as committed `4dbfd2ee31`): could NOT refute. lean-direct against the author's
+  scratch mirror (4 cone oleans rebuilt 10:49, `grep -c -a <decl>` confirmed
+  current, mirror complete 944 = 942 + the 2 never-built prune oleans, no
+  hardlink into the shared tree): EXIT 0, 0 diagnostics, 7.2 s wall / 7.9 s user
+  (page cache warm from the author). Scratch copy: 9/9 `#print axioms` = std-3,
+  no sorryAx. Grep clean (sorry/native_decide/decide/axiom/True/trivial/unsafe/
+  opaque/set_option). mpmath 50 dps confirmed every interval. Findings, all
+  prose: CODATA-2018 `t` unlabelled (→ harness §9); admissibility class trivially
+  inhabited by constants; `bar_even_monomial_iff` could be generic-field with
+  "q² not a root of unity" (advisory — statement carries `1 < q`, gate's letter
+  satisfied). Concurrent sibling instance restructured `MEMORY.md` mid-session;
+  anchored edits only.
 - 2026-09-03 (tender-keller, lane L1 GramQuotientDetD): authored + verified NEW
   `QOU/Interactions/GramQuotientDetD.lean` (convention-D successor to
   `gramMatrix_det_ne_zero`: `det(gramQuotientD q) = -(q⁴+1)(q²-q+1)⁴(q²+q+1)⁴/(q²+1)¹⁰`,
