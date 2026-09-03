@@ -259,3 +259,58 @@ breaks, and wrong in the sense the bean already argues.
 - Basename collision is **not** a problem at this scope: 10 colliding stems
   over 33 files in the scanned universe, and only 2 module names ever resolve
   to more than one file.
+
+
+## 2026-09-03 — LANDED in constants.py, on the owner's call
+
+Owner chose the wider placement after the scoping measurement. `max(mp.dps,
+_DPS_DEFAULT)` sits next to `_DPS_DEFAULT` in
+`tools/qou-substrate/python/qou_substrate/constants.py`.
+
+Verified: `import hecke_core_legacy` now leaves `mp.dps == 50` on EVERY
+anchor — unset, proton, and muon — where unset and proton previously left it
+at mpmath's 15.
+
+`max`, never a bare assignment: the objection recorded at constants.py:311-315
+is against a global assignment that "silently overrode" a caller's setting,
+which is an argument against LOWERING, and `max` cannot lower. Exactly one
+file in the corpus sits below the floor and is raised by it
+(`computations/probes/em_selfenergy_coupling_target_probe.py`, 40 dps).
+
+### It immediately exposed a second float64 defect — in the CODATA table
+
+Five `test_codata_table` rows went red. Not incidental:
+
+    codata("neutron mass energy equivalent in MeV").value
+      = mpf('939.5654219399999647066579200327396392822265625')
+
+which is exactly `float64(939.56542194)`. `_parse_table` called
+`mpf(value_str)` at the AMBIENT precision, so with the ambient default at 15
+every constant in the NIST table was stored as a 53-bit value — a CODATA
+table holding float64 constants.
+
+The test could not see it: it asserted `entry.value == mp.mpf(value)` with
+BOTH sides evaluated at that same ambient precision, so both truncated
+identically and it passed. Two mpf parsed at different precisions are never
+equal, so the assertion was only ever true by coincidence.
+
+Fixed at the source — `_PARSE_DPS = 60`, a fixed precision independent of the
+caller, so a CODATA constant is the same value whenever it is read — and the
+test now compares at that precision, which is what its own docstring
+("digit strings are returned exactly as NIST prints them") always claimed.
+Confirmed after: `e.value == mp.mpf(float(e.value))` is now False, i.e. it no
+longer fits in 53 bits.
+
+Full suite 196 passed.
+
+### Still owed
+
+- [ ] Regenerate the witnesses whose producers now compute at 50 rather than
+      15. The agent's scoping puts this at ~183 attributable (a lower bound;
+      813 of 3104 witnesses could not be attributed to a producer), of which
+      116 already DECLARE `compute_dps >= 50` while having actually run at 15
+      — `WitnessBuilder` stamps `precisionMetadata.compute_dps` from the
+      module constant `COMPUTE_DPS`, never from live `mp.dps`.
+- [ ] `computations/never-raises-dps-baseline.json` is stale by 35 files
+      (records 46/206; its own `scan()` returns 11/63 today). Owed a
+      `--rebaseline`.

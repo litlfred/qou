@@ -43,6 +43,12 @@ import mpmath as _mp
 
 _TABLE_PATH = Path(__file__).resolve().parent / "data" / "allascii.txt"
 
+# Precision the table's decimal literals are parsed at — independent of the
+# caller's `mp.dps`, so a CODATA constant is the same value whenever it is
+# read. The longest value in the NIST table is well under 40 significant
+# digits; 60 leaves room and matches the corpus's compute guard.
+_PARSE_DPS = 60
+
 _HEADER_RULE = "-" * 40  # the dashed rule that opens the data section
 
 # Fixed-width column starts, read off the NIST header row.
@@ -98,6 +104,24 @@ def _parse_table(path: Path = _TABLE_PATH) -> dict[str, CodataEntry]:
     if start is None:
         raise ValueError(f"{path}: no header rule found; is this the NIST listing?")
 
+    # NO FLOAT64 EVER (owner directive). `mpf(value_str)` parses at the AMBIENT
+    # precision, so the constants this table stores used to depend on what
+    # `mp.dps` happened to be when the table was first built. With the ambient
+    # default at mpmath's 15 that made every entry a 53-bit value: measured,
+    # `codata("neutron mass energy equivalent in MeV").value` came back as
+    # mpf('939.5654219399999647066579200327396392822265625'), which is exactly
+    # float64(939.56542194) — a CODATA table holding float64 constants.
+    #
+    # It went unnoticed because `test_codata_table` compares `entry.value`
+    # against `mp.mpf(value_str)` evaluated at the SAME ambient precision, so
+    # both sides were truncated identically and the test passed. Raising the
+    # compute floor (bean `qou-zbws`) made the two sides disagree and exposed
+    # it.
+    #
+    # Parse at a precision set by the printed digits, not by the caller: these
+    # are decimal literals from NIST and the stored mpf should be the closest
+    # value to what is printed, at any working precision. `_PARSE_DPS` is well
+    # past the longest row in the table.
     entries: dict[str, CodataEntry] = {}
     for line in lines[start:]:
         if not line.strip():
@@ -112,19 +136,20 @@ def _parse_table(path: Path = _TABLE_PATH) -> dict[str, CodataEntry]:
         value_str = _clean_number(value_field)
         uncert_str = _clean_number(uncert_field)
 
-        if uncert_str.startswith("(exact"):
-            uncertainty = None
-        else:
-            try:
-                uncertainty = _mp.mpf(uncert_str)
-            except (ValueError, TypeError):
+        with _mp.workdps(_PARSE_DPS):
+            if uncert_str.startswith("(exact"):
                 uncertainty = None
+            else:
+                try:
+                    uncertainty = +_mp.mpf(uncert_str)
+                except (ValueError, TypeError):
+                    uncertainty = None
 
-        try:
-            value = _mp.mpf(value_str)
-        except (ValueError, TypeError):
-            # A few rows carry non-numeric values; skip rather than guess.
-            continue
+            try:
+                value = +_mp.mpf(value_str)
+            except (ValueError, TypeError):
+                # A few rows carry non-numeric values; skip rather than guess.
+                continue
 
         entries[quantity.lower()] = CodataEntry(
             quantity=quantity,

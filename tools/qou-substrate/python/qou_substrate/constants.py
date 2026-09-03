@@ -308,11 +308,42 @@ try:
         the canonical witness-JSON / Clarabel-HP serialisation."""
         return _mp.nstr(q_at(dps), dps, strip_zeros=False)
 
+    # ── The 50-dps compute floor (bean `qou-zbws`) ────────────────
+    #
+    # NO FLOAT64 EVER (owner directive). Until now the floor was set only
+    # inside `q_parameter.py`'s ideal/muon anchor branch, so on the default or
+    # proton anchor NOTHING raised it and the ambient precision stayed at
+    # mpmath's 15 — ~17 digits, i.e. float64. The cached `_MP` values below are
+    # still 50-digit mpf OBJECTS, because they are built inside the `workdps`
+    # block; it is every subsequent ARITHMETIC operation on them that rounded.
+    # Measured: `1/Q_MP` differs by 1.979e-17 between ambient 15 and 50, and
+    # the 15-dps result satisfies `a == mpf(float(a))` — 53 bits, nothing more.
+    # That is the same float64 epsilon that showed up as the 1.98e-17
+    # disagreement in `hecke_core_legacy`'s (2,2) constants (bean `qou-uiut`).
+    #
+    # Placed HERE rather than in `q_parameter.py` because that module's own
+    # docstring calls itself a back-compat shim whose callers should migrate to
+    # `qou_substrate` directly: the `q_parameter` cone is a strict SUBSET of
+    # this one, so fixing it there leaves 35 producers permanently outside the
+    # floor and the hole grows as callers follow the shim's advice.
+    #
+    # `max`, never a bare assignment. The comment below argues against a global
+    # assignment that "silently overrode" a caller's setting — an argument
+    # against LOWERING, which `max` cannot do. Of 533 files that set precision
+    # at module scope before their first substrate import, 324 use bare
+    # `set_compute_dps()` (which is 70, not 50 — `COMPUTE = OUTPUT 60 + GUARD
+    # 10`), 185 use a literal >= 50, and exactly ONE sits below the floor:
+    # `computations/probes/em_selfenergy_coupling_target_probe.py` at 40 dps,
+    # which this raises to 50.
+    _mp.mp.dps = max(_mp.mp.dps, _DPS_DEFAULT)
+
     # Compute the cached _MP globals at the default precision via
     # `mp.workdps` so this module does NOT mutate the caller's
     # `mp.mp.dps`.  Many downstream scripts set `mp.mp.dps` BEFORE
     # importing q_parameter; the previous global assignment silently
     # overrode their precision setting.  workdps restores on exit.
+    # (The floor above is monotone, so it does not participate in that
+    # failure mode: it can only ever raise.)
     with _mp.workdps(_DPS_DEFAULT):
         Q_MP         = q_at(_DPS_DEFAULT)            # m_p-pinned (proton identity)
         VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)

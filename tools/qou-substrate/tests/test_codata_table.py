@@ -17,7 +17,7 @@ import mpmath as mp
 import pytest
 
 from qou_substrate import constants
-from qou_substrate.codata import codata, table
+from qou_substrate.codata import _PARSE_DPS, codata, table
 
 _REPO = Path(__file__).resolve().parents[3]
 _UPLOADED = _REPO / "library" / "allascii.txt"
@@ -67,7 +67,23 @@ def test_known_rows(quantity, value, uncertainty):
     entry = codata(quantity)
     assert entry.value_str == value
     assert entry.uncertainty_str == uncertainty
-    assert entry.value == mp.mpf(value)
+    # Compare at the precision the table PARSES at, not the caller's.
+    #
+    # This read `entry.value == mp.mpf(value)` at ambient precision. Two mpf
+    # parsed at different precisions are never equal, so that assertion only
+    # held while both sides were being truncated identically — which they were,
+    # because the ambient default was mpmath's 15 and BOTH collapsed to 53
+    # bits. `entry.value` was literally
+    # mpf('939.5654219399999647066579200327396392822265625'), i.e.
+    # float64(939.56542194), and the test could not see it.
+    #
+    # Raising the compute floor (bean `qou-zbws`) broke the coincidence and
+    # exposed it; `codata._parse_table` now parses at a fixed `_PARSE_DPS`
+    # independent of the caller, so a CODATA constant is the same value
+    # whenever it is read. This asserts that, which is what the docstring
+    # claimed all along.
+    with mp.workdps(_PARSE_DPS):
+        assert entry.value == mp.mpf(value)
 
 
 def test_digit_grouping_is_stripped():
