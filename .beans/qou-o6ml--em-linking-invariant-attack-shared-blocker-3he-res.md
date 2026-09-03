@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T04:31:29Z
+updated_at: 2026-09-03T08:28:02Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1265,5 +1265,62 @@ show saturation is *implausible* by computing how far `B` sits below the observe
 energies. That cannot be done here: evaluating `B` needs a per-nucleus carrier
 link, and `qou-5vhf` establishes the `A ≤ 4` assignments are an admitted
 AME-driven census search. The slack is **unmeasured**, not measured-and-small.
+
+Nothing wired.
+
+
+## 2026-09-03 — the UPPER-BOUND route dies on PRECISION, not availability
+
+The entry above named the missing ingredient: an energy **upper** bound, since a
+lower bound alone cannot constrain a difference. The obvious next move is to go
+acquire one. That move is wrong, and the reason needs no carrier, no flux value
+and no acquisition.
+
+**The arithmetic.** With two-sided bounds `B_i ≤ E_i ≤ U_i` the difference is
+pinned to `[B₁ − U₂, U₁ − B₂]`, an interval of width exactly `(U₁ − B₁) +
+(U₂ − B₂)` — the **sum of the two slacks**. For that to be narrower than the split
+it is meant to explain, the combined slack must beat the split. But the mirror
+split is a **difference of two large, nearly equal energies**. Under the arc's own
+model (`ΔE = c(Φp − Φn)` against `E = c(Z·Φp + N·Φn)`), if the two fluxes lie
+within a factor `r`,
+
+    ΔE / E  ≤  (r − 1) / A
+
+**and the budget FALLS with A** — it sharpens 21-fold across the ladder
+(`63/3`), so the requirement is hardest exactly where the data is best. At
+`A = 63` with a generous factor-2 flux ratio it is **1.5873016 %**. Freedman–He-type
+bounds are order-of-magnitude estimates; nothing in that literature is tight to a
+percent. So an upper bound of the available quality cannot narrow the interval
+below the observable, whatever it is.
+
+**And the library holds nothing anyway** — but that is the weaker half of the
+finding, not the point. Measured by a **live scan** in the probe (not a
+remembered grep): **zero** files matching `ropelength|ideal knot` across `docs/`,
+`computations/`, `content/` and `library/` — both the `sections/` and `ocr/`
+tiers, all library directories. Asserted so that a future acquisition **flips the
+assertion** and prompts a revisit, rather than the probe asserting a stale
+absence. The precision argument does not depend on it.
+
+Lean, sorry-free, `lean`-direct exit 0 no warnings:
+`content/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
+— `split_fraction_bound`, `interval_width`, `interval_narrower_than_split_iff`.
+`#print axioms`: `interval_width` is `[propext, Quot.sound]`; the other two add
+`Classical.choice`. Zero `sorry`/`axiom`.
+
+**A fourth declaration was written and REMOVED rather than shipped.** A
+`budget_tightens_with_A` had two hypotheses that did no work and a proof that was
+just `split_fraction_bound` applied at the larger indices — it asserted nothing
+the main bound does not already say, and the disjunction it stated was satisfied
+by its right branch regardless of the growth hypothesis. That is a trivial-true
+dressed as monotonicity, and the `1/A` is already visible in the main bound. Noted
+in the file header so the removal is on the record.
+
+Probe: `computations/em_linking_upper_bound_precision_budget.py` + witness, 4/4.
+
+**SCOPE — scope-(a), and one escape is explicitly NOT closed.** The fraction bound
+assumes the two fluxes are comparable (`Φn ≤ Φp ≤ r·Φn`, `r` finite). A model with
+**`Φn → 0`** — neutron components carrying no flux at all — has unbounded `r` and
+escapes this entirely. It is not refuted here. Eq. (43) itself remains untouched;
+it is a true lower bound throughout.
 
 Nothing wired.
