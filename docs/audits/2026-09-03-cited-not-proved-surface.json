@@ -1,6 +1,6 @@
 {
   "rev": "origin/main",
-  "files_scanned": 2551,
+  "files_scanned": 2552,
   "sorries": [],
   "axioms": [
     {
@@ -124,11 +124,11 @@
       "ref": null
     }
   ],
-  "prose_occurrences": 2869,
+  "prose_occurrences": 2921,
   "class_totals": {
-    "declared": 715,
-    "inhabited": 225,
-    "uninhabited": 490
+    "declared": 701,
+    "inhabited": 227,
+    "uninhabited": 474
   },
   "uninhabited_classes": [
     {
@@ -485,11 +485,6 @@
       "file": "QOU/Archimedean/integer_stability.lean",
       "line": 31,
       "class": "IntegerStabilityContext"
-    },
-    {
-      "file": "QOU/Archimedean/knot_operator_selection.lean",
-      "line": 39,
-      "class": "KnotOperatorSelectionContext"
     },
     {
       "file": "QOU/Archimedean/metallic_character_knot.lean",
@@ -863,7 +858,7 @@
     },
     {
       "file": "QOU/BraidKnot/ShellClosureStability.lean",
-      "line": 54,
+      "line": 46,
       "class": "HasFrobeniusStability"
     },
     {
@@ -888,13 +883,8 @@
     },
     {
       "file": "QOU/BraidKnot/SixTermPerDerivationWeights.lean",
-      "line": 46,
+      "line": 83,
       "class": "SixTermAssemblyData"
-    },
-    {
-      "file": "QOU/BraidKnot/SixTermPerDerivationWeights/binding_assembly.lean",
-      "line": 15,
-      "class": "BindingAssemblyContext"
     },
     {
       "file": "QOU/BraidKnot/StructuralRank.lean",
@@ -972,16 +962,6 @@
       "class": "jet_filtered_knot_factor"
     },
     {
-      "file": "QOU/BraidKnot/jet_prefix_gb_filtration.lean",
-      "line": 13,
-      "class": "JetPrefixGbFiltrationContext"
-    },
-    {
-      "file": "QOU/BraidKnot/knot_factor_spectral_derivation.lean",
-      "line": 28,
-      "class": "KnotFactorSpectralContext"
-    },
-    {
       "file": "QOU/BraidKnot/markovTraceRecursiveReducer.lean",
       "line": 27,
       "class": "MarkovTraceRecursiveReducerContext"
@@ -995,16 +975,6 @@
       "file": "QOU/BraidKnot/per_nucleon_shift_additive_linearity.lean",
       "line": 33,
       "class": "PerNucleonShiftContext"
-    },
-    {
-      "file": "QOU/BraidKnot/six_term_mass_formula_complete.lean",
-      "line": 25,
-      "class": "SixTermMassFormulaContext"
-    },
-    {
-      "file": "QOU/BraidKnot/sorting_color_energy.lean",
-      "line": 20,
-      "class": "SortingColorEnergyContext"
     },
     {
       "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean",
@@ -1142,11 +1112,6 @@
       "class": "AtomicJSJDecomposition"
     },
     {
-      "file": "QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean",
-      "line": 26,
-      "class": "MassVolumeFactorization"
-    },
-    {
       "file": "QOU/BraidsKnots/mobius_frobenius_kernel.lean",
       "line": 45,
       "class": "MobiusFrobeniusKernelContext"
@@ -1155,11 +1120,6 @@
       "file": "QOU/BraidsKnots/nsi_q_deformed_kernel.lean",
       "line": 144,
       "class": "NsiQDeformedKernelContext"
-    },
-    {
-      "file": "QOU/BraidsKnots/skein_mass_from_linking.lean",
-      "line": 53,
-      "class": "SkeinMassFromLinkingContext"
     },
     {
       "file": "QOU/BraidsKnots/tmli_constituent_composite_agreement.lean",
@@ -1240,11 +1200,6 @@
       "file": "QOU/Experimental/terminal_resolution.lean",
       "line": 21,
       "class": "TerminalResolutionContext"
-    },
-    {
-      "file": "QOU/FeynmanPathIntegrals/markov_identification.lean",
-      "line": 57,
-      "class": "MarkovIdentificationContext"
     },
     {
       "file": "QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean",
@@ -1370,11 +1325,6 @@
       "file": "QOU/HadronicMass/deuteron_binding_energy.lean",
       "line": 24,
       "class": "DeuteronBindingEnergyContext"
-    },
-    {
-      "file": "QOU/HadronicMass/pair_skein_mass_formula.lean",
-      "line": 37,
-      "class": "PairSkeinMassContext"
     },
     {
       "file": "QOU/Hecke/Hoefsmit.lean",
@@ -1557,11 +1507,6 @@
       "class": "InductiveGBReductionContext"
     },
     {
-      "file": "QOU/Interactions/nucleon_ordering_factorization.lean",
-      "line": 50,
-      "class": "NucleonOrderingFactorizationContext"
-    },
-    {
       "file": "QOU/IwahoriHecke/MarkovTrace.lean",
       "line": 80,
       "class": "GradedMarkovTraceExistence"
@@ -1593,7 +1538,7 @@
     },
     {
       "file": "QOU/KnotTheory/JonesPolynomial.lean",
-      "line": 80,
+      "line": 86,
       "class": "JonesPolynomialDef"
     },
     {
@@ -2082,16 +2027,6 @@
       "class": "WignerSU4FromSpinIsospin"
     },
     {
-      "file": "QOU/ParticleInteractions/atomic_lp_stability.lean",
-      "line": 69,
-      "class": "AtomicLPStabilityContext"
-    },
-    {
-      "file": "QOU/ParticleInteractions/atomic_nf_witness.lean",
-      "line": 24,
-      "class": "AtomicNfWitnessContext"
-    },
-    {
       "file": "QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean",
       "line": 48,
       "class": "ConfinementFrobeniusReciprocityContext"
@@ -2457,11 +2392,6 @@
       "class": "CatDescendedInputs"
     },
     {
-      "file": "QOU/TopologicalMass/cat_eigenspace_decomposition.lean",
-      "line": 37,
-      "class": "CatEigenspaceDecompositionContext"
-    },
-    {
       "file": "QOU/TopologicalMass/cat_transient_localises_blowup.lean",
       "line": 71,
       "class": "CatTransientInputs"
@@ -2500,11 +2430,6 @@
       "file": "QOU/Torsion/quantum_dilogarithm.lean",
       "line": 38,
       "class": "QuantumDilogarithmContext"
-    },
-    {
-      "file": "QOU/Torsion/skein_generation.lean",
-      "line": 30,
-      "class": "SkeinGenerationContext"
     },
     {
       "file": "QOU/Torsion/weak_equiv_invariance.lean",
@@ -2562,11 +2487,6 @@
       "class": "QouCanonicalActionContext"
     },
     {
-      "file": "QOU/scratch_skein.lean",
-      "line": 12,
-      "class": "SkeinGenerationContext"
-    },
-    {
       "file": "QOU/substrate_radial_coordinate.lean",
       "line": 31,
       "class": "SubstrateRadialContext"
@@ -2621,6 +2541,10 @@
       "carrier": "B1TorusKnotRowsContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "h_bloch_suslin"
+      ],
+      "consumed": true,
       "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
     },
     {
@@ -2629,6 +2553,10 @@
       "carrier": "B1TorusKnotRowsContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "h_garoufalidis_le"
+      ],
+      "consumed": true,
       "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
     },
     {
@@ -2677,6 +2605,10 @@
       "carrier": "BringWPlaneMonodromy",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "seifert_holds"
+      ],
+      "consumed": false,
       "file": "QOU/BraidKnot/BringWPlaneMonodromy.lean"
     },
     {
@@ -2701,6 +2633,10 @@
       "carrier": "EInfinityIdentificationsContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_wenzl_bridge_correction_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidKnot/e_infinity_identifications.lean"
     },
     {
@@ -2733,6 +2669,10 @@
       "carrier": "SpectralSequenceH3ExplicitContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_i_d1_differential_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
     },
     {
@@ -2741,6 +2681,10 @@
       "carrier": "SpectralSequenceH3ExplicitContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_ii_d2_differential_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
     },
     {
@@ -2749,6 +2693,10 @@
       "carrier": "SpectralSequenceH3ExplicitContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_iii_page_identifications_concretised_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
     },
     {
@@ -2757,6 +2705,10 @@
       "carrier": "QmnRecursiveMemoizedContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_ii_miss_computes_via_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidsAndKnots/qmn_recursive_memoized.lean"
     },
     {
@@ -2765,6 +2717,10 @@
       "carrier": "WenzlQmnSynergyContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "claim_iii_atom_knot_identification_holds"
+      ],
+      "consumed": true,
       "file": "QOU/BraidsAndKnots/wenzl_qmn_synergy.lean"
     },
     {
@@ -2781,6 +2737,10 @@
       "carrier": "AcousticHorizonConditionsContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "horizon_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/acoustic_horizon_conditions.lean"
     },
     {
@@ -2789,6 +2749,10 @@
       "carrier": "DiscreteVortexSpectrumContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "spectrum_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/discrete_vortex_spectrum.lean"
     },
     {
@@ -2797,6 +2761,10 @@
       "carrier": "KelvinDispersionDerivationContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "dispersion_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/kelvin_dispersion_derivation.lean"
     },
     {
@@ -2853,6 +2821,10 @@
       "carrier": "QOUFluidUniverse",
       "carrier_kind": "structure",
       "shape": "self_nominating",
+      "witnesses": [
+        "observability_holds"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
     },
     {
@@ -2893,6 +2865,10 @@
       "carrier": "QuantumPeterWeylContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "peter_weyl_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/quantum_peter_weyl.lean"
     },
     {
@@ -2917,6 +2893,10 @@
       "carrier": "RootOfUnityTruncationContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "truncation_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
     },
     {
@@ -2925,6 +2905,10 @@
       "carrier": "VorticityLowerBoundContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "bound_active"
+      ],
+      "consumed": true,
       "file": "QOU/FluidDynamics/vorticity_lower_bound.lean"
     },
     {
@@ -3013,6 +2997,10 @@
       "carrier": "ComplexityDictionary",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "witnesses_leak"
+      ],
+      "consumed": true,
       "file": "QOU/Information/JetHorizonScaffold.lean"
     },
     {
@@ -3069,6 +3057,10 @@
       "carrier": "TmEigenspaceDecompContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "h_killing_orthogonal"
+      ],
+      "consumed": true,
       "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean"
     },
     {
@@ -3077,6 +3069,10 @@
       "carrier": "TmEigenspaceDecompContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "h_mi_additive"
+      ],
+      "consumed": true,
       "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean"
     },
     {
@@ -3085,6 +3081,10 @@
       "carrier": "IwahoriHeckeAlgebra",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "hecke_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3093,6 +3093,10 @@
       "carrier": "IwahoriHeckeAlgebra",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "braid_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3101,6 +3105,10 @@
       "carrier": "IwahoriHeckeAlgebra",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "far_commute_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3109,6 +3117,10 @@
       "carrier": "MarkovTrace",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "markov_axiom_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3117,6 +3129,10 @@
       "carrier": "WedderburnDecomposition",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "blocks_sum_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3125,6 +3141,10 @@
       "carrier": "WedderburnDecomposition",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "blocks_orthogonal_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3133,6 +3153,10 @@
       "carrier": "WenzlBridge",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "bridge_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3141,6 +3165,10 @@
       "carrier": "MarkovTraceRecursion",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "markov_axiom_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3149,6 +3177,10 @@
       "carrier": "HasGeneratorAction",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "hecke_holds_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3157,6 +3189,10 @@
       "carrier": "HasGeneratorAction",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "braid_holds_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3165,6 +3201,10 @@
       "carrier": "HasGeneratorAction",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "far_commute_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/HeckeAlgebra.lean"
     },
     {
@@ -3173,6 +3213,10 @@
       "carrier": "NonAbelianStokes",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "stokes_holds_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/NonAbelianStokes.lean"
     },
     {
@@ -3181,6 +3225,10 @@
       "carrier": "NonAbelianStokes",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "finite_slice_holds"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/NonAbelianStokes.lean"
     },
     {
@@ -3189,6 +3237,10 @@
       "carrier": "LieValuedStokes",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "stokes_identity_witness"
+      ],
+      "consumed": false,
       "file": "QOU/Mathlib/NonAbelianStokes.lean"
     },
     {
@@ -3245,6 +3297,10 @@
       "carrier": "KnotParticleGenerationContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "generation_active"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/KnotParticleGeneration.lean"
     },
     {
@@ -3253,6 +3309,10 @@
       "carrier": "HasYangMillsMassGap",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "gap_present"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/MassGap.lean"
     },
     {
@@ -3261,6 +3321,10 @@
       "carrier": "AntiparticleCrossingReversalContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "reversal_active"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/antiparticle_crossing_reversal.lean"
     },
     {
@@ -3301,6 +3365,10 @@
       "carrier": "BraneBoundaryContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "boundary_active"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/brane_boundary_structure.lean"
     },
     {
@@ -3309,6 +3377,10 @@
       "carrier": "MassDecompositionCategoricalContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "decomposition_active"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/mass_decomposition_categorical.lean"
     },
     {
@@ -3317,6 +3389,10 @@
       "carrier": "WeakEquivInvarianceContext",
       "carrier_kind": "class",
       "shape": "self_nominating",
+      "witnesses": [
+        "invariance_active"
+      ],
+      "consumed": true,
       "file": "QOU/Torsion/weak_equiv_invariance.lean"
     },
     {
