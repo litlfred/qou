@@ -409,9 +409,78 @@ untouched by any of this.
       (1.2309 vs 0.2253 MeV/nucleon)? Now fully answerable — `Delta_tr(Z,N)` is
       exact in `q`, so "energy per nucleon" can be stated as a closed form
       rather than estimated from four atoms.
-- [ ] With `Delta_tr` exact, the deficit `B/(Q_beta . Delta_tr)` is now a
-      closed-form function of `(Z, N)` against AME data. Its shape against the
-      semi-empirical surface/Coulomb/pairing terms is a direct comparison that
-      needs no new Hecke computation at all.
+- [x] **Done 2026-09-03 — the whole AME2020 table, and it changes sign.** See
+      below.
+- [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
+      (unchanged; the existing vacuity audits do not catch this pattern).
+
+
+---
+
+## The framework against ALL 3554 nuclides — it CROSSES the data near A = 150
+
+Probe: `computations/qbeta/qbeta_full_ame_scan_probe.py` (6/6). Until now the
+binding law had only ever been evaluated on four atoms, because anything larger
+needed seminormal matrices at `n = 3A`. The closed form makes the whole table
+instant.
+
+| A | Z | N | B_AME (MeV) | B_pred (MeV) | B/B_pred |
+|---|---|---|---|---|---|
+| 2 | 1 | 1 | 2.225 | 0.4354 | 5.109 |
+| 4 | 2 | 2 | 28.296 | 0.8761 | 32.30 |
+| 12 | 6 | 6 | 92.162 | 1.643 | 56.10 |
+| 20 | 9 | 11 | 154.403 | 2.324 | 66.43 |
+| 40 | 18 | 22 | 343.810 | 6.906 | 49.78 |
+| 56 | 25 | 31 | 489.347 | 16.02 | 30.54 |
+| 100 | 43 | 57 | 859.512 | 134.6 | 6.384 |
+| 150 | 63 | 87 | 1236.202 | 1413.6 | **0.8745** |
+| 208 | 84 | 124 | 1630.586 | 15600 | 0.1045 |
+| 238 | 94 | 144 | 1801.270 | 47529 | **0.0379** |
+
+**The deficit changes SIGN.** It rises on the light flank, and the heaviest A
+whose median ratio still exceeds 1 is **A = 150**; by ²³⁸U the framework
+**overshoots by a factor of 26**. **1641 of 3554 nuclides are overshoots (46 %).**
+
+Worst undershoot over the whole table: **A = 39, Z = 11, N = 28 at 95.45x** — a
+very neutron-rich sodium isotope, not on the median slice. (The 66x at A = 20 is
+a median, not a maximum; only the 95.45x is a bound.)
+
+### Why: an exponential crossing a line
+
+`Delta_tr` is dominated by `t_p^Z t_n^N` with `t_p = 1.1458 > 1`, so `B_pred`
+grows **exponentially in Z** while real binding grows roughly **linearly in A**.
+Two such curves cross exactly once, and they do.
+
+### What it settles
+
+Three claims resting on the four light atoms are now visibly artefacts of where
+those atoms sit — all six A ≤ 4 nuclides lie **below** the deficit peak, on the
+rising flank:
+
+* *"the framework supplies 8–20 % of binding"* — false above A ~ 150, where it
+  supplies **more than 100 %**.
+* *"the missing term must be added"* — for nearly half the table it would have
+  to be **subtracted**.
+* *"`Delta_tr` is extensive"* — already withdrawn on the closed form; this is the
+  same fact seen against data.
+
+### 🛑 Scope
+
+Nothing is refuted about the **algebra**: the closed form reproduces every
+measured `Delta_tr` to 1e-35 with no fitted constant. What is measured here is
+the fit of `B = Q_beta . Delta_tr` to nature, and it fails in two opposite
+directions on either side of A ~ 150. Entries with non-positive `B_AME` or
+`B_pred` are excluded and counted, not silently dropped.
+
+## Todo (revised)
+
+- [ ] **Owner:** the two extensive scales (1.2309 vs 0.2253 MeV/nucleon) — and
+      now a sharper question behind it. With the law overshooting half the
+      table, "how far off is the extensive term" has no single answer; the sign
+      of the error depends on A.
+- [ ] The crossover near A ~ 150 is a derived, falsifiable feature. Whether it
+      is a coincidence of `Q_beta` or structural (it is where `t_p^Z t_n^N`
+      meets the SEMF volume term) is a short calculation and would say whether
+      the law has any regime of validity at all.
 - [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
       (unchanged; the existing vacuity audits do not catch this pattern).
