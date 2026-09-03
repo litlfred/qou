@@ -128,6 +128,65 @@ Scope (a): established from the carrier's definition and its own list of applica
 bounded corpus grep for any file pairing `μ̄₁₂₃` with an isospin channel was attempted and
 **timed out before completing**; it is not cited as evidence either way.
 
+## Follow-up (same day): the residue's *linking-data* half is closed, scope (b)
+
+The section above ends by naming what would be needed: *"an invariant of the
+six-strand two-nucleon link that is sensitive to the exchange — a different object
+from the per-baryon `μ̄₁₂₃`, and one this corpus does not currently carry."*
+
+A corpus sweep confirmed the object is genuinely absent on all six paths. But the
+natural candidate class for it — the **linking data** of the six-component link,
+i.e. pairwise linking numbers and the Milnor `μ̄` tower built on them — is dead,
+and the reason is one line long once two facts already in the corpus are put
+side by side. Probe:
+[`computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py`](../../computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py).
+
+**(F1) The inter-nucleon linking number *is* the isospin projection.**
+[`inter_nucleon_linked_channel.py`](../../computations/inter_nucleon_linked_channel.py)
+derives the inter-nucleon arc as the minimal non-Brunnian 2-component link, the
+Hopf link `T(2,2k)` — `pp → lk +1`, `nn → lk −1`, `pn → lk 0` — under a docstring
+heading "DERIVATION OF THE BRAID WORD (provenance, NOT a fit)" that states *"NO
+numeric is tuned."* `u1_hypercharge_assignment.py:336` names the same datum in
+isospin terms: *"I_3 = writhe/2-of-inter-nucleon-arc carries the p/n split."*
+Since `lk(T(2,2k)) = k = writhe/2`, those are one statement.
+
+**(F2) Milnor's indeterminacy theorem**, already load-bearing in this corpus as
+the scope-(b) exclusion of the Milnor route for ⁴He
+([`2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`](2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md)):
+`μ̄` is well-defined only modulo the gcd of the lower invariants, so one
+Hopf-linked pair sends the whole higher tower to `ℤ/1 = 0`.
+
+**Composed.** The `³S₁` (T=0) and `¹S₀` (T=1) np channels have the *same flavour
+content* — one proton, one neutron — so `I₃ = 0` in both. By (F1) their linking
+matrices are therefore identical, verified entry by entry on all 15 pairs, under
+both the corpus's literal single-arc reading and the maximal all-nine-pairs
+reading, so the verdict does not rest on that modelling choice. Every function of
+the linking data consequently takes **equal values on the two channels**: the
+achievable asymmetry is exactly `1`, against the `33.7055` required. This is not a
+bound a better choice inside the class might beat — the two inputs are the same
+matrix.
+
+**Where the tower is even alive**, as a by-product of (F2): `gcd = 1` on `pp`/`nn`
+(indeterminacy `ℤ/1`, no content) and `gcd = 0` on `np` (indeterminacy `ℤ/0 = ℤ`,
+genuine invariant). So the Milnor tower survives across the interface *only* on
+the np line — where **both** channels sit. Surviving is exactly what does not help.
+
+**Scope.** (b), structural, cited invariant. It excludes invariants that are
+functions of the pairwise linking data. It does **not** exclude an invariant
+reading the braid word beyond its linking data — the `Δ₃,₃` exchange spectrum is
+such an object, and is capped at `9` by the separate integer-exponent argument —
+nor a non-Milnor super-pairwise object, nor anything carrying **spin**, which is
+what actually separates the channels.
+
+**Convergence, and its limit.** Bean `qou-7zob` records from the flavour side that
+*"a flavour-only interface CANNOT split ³S₁ from ¹S₀ … NO map from strand position
+to orbital angular momentum anywhere in the corpus"*, and the `t7qv` arc's
+`det T = −1` caps the channel-asymmetry ratio at `1`. This gives a *reason* those
+ratios are `1` rather than merely small: the objects compared are functions of
+`I₃`, and both channels have `I₃ = 0`. That is corroboration rather than a fourth
+independent measurement — these routes share the assignment (F1), so they are not
+structurally independent the way the two proofs in the section above are.
+
 ## What this does NOT claim
 
 * **NOT** that `mubarMeasured` and `μ̄₁₂₃` are unrelated — only that no property
