@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T05:31:39Z
+updated_at: 2026-09-03T04:31:29Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1109,3 +1109,161 @@ them.
 **Scope (a)** on route (2)'s reachability — a negative about the available
 carriers, not about knot energy as an EM mechanism. If a *derived* carrier
 assignment ever appears, every piece above is waiting for it.
+
+
+## 2026-09-02 — the fourth route (`qou-0hdx`) is closed too, so route (2) has no successor
+
+`qou-0hdx` was opened 2026-08-01 as this bean's successor: the Freedman–He
+**asymptotic crossing number**, advertised as clearing every obstruction that killed
+the trichotomy's routes — symmetric in the pair (O1-proof), unsigned so nonzero at
+`lk = 0` (Brunnian-proof), `Flux^2` rather than `Flux^3`, and carrying an explicit
+`Vol^{-1/3}` factor claimed to *converge* with the empirical `A^{-1/3}` κ-null. It
+sat at `todo` with `updated_at == created_at` for a month.
+
+It is now **scrapped**, on two corrections verified against the primary source
+(`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`, Komendarczyk
+eq. 43) rather than taken from the audit trail:
+
+1. The bound's invariant is `ac(L_k, L)` — one component against the whole link,
+   summed over `n` **components**. The per-pair object the bean proposed to derive
+   **does not exist** in either source. Structural, scope-(b).
+2. The prefactor is `(pi/16)^{1/4}`, a pure constant with **no volume factor**. The
+   `Vol^{-1/3}` is Khesin Thm 3.6's *single-knotted-torus* bound, misapplied. The
+   advertised convergence was one route and a misattribution, not two independent
+   ones — retracted (Round 5, `docs/audits/2026-08-01-em-linking-reads-round1.md`).
+
+**And it does not escape this bean's blocker.** Eq. (43) is indexed on an
+n-component link `L` in `R^3`, so evaluating `ac(L_k, L)` for a nucleus requires
+first saying which link the nucleus **is** — the same carrier assignment that
+`qou-5vhf` establishes is an admitted AME-driven census search. Route (2)'s failure
+of this bean's own no-tuned-constant (CAL-4) gate therefore applies to the successor
+verbatim.
+
+Net: the trichotomy's route (2) is closed and its one named successor is closed with
+it. The **one live positive target** the arc leaves behind is not a crossing number
+at all — eq. (43)'s topological factor is A-independent for a fixed local
+configuration, so it *relocates* κ(A) into the flux: κ falls by 2.099 across
+A = 3…41, requiring the per-component flux to fall by 1.449. Independently derivable
+from the corpus braid geometry; not derived; nothing wired.
+
+
+## 2026-09-02 — the flux leg, explored: the bound is CHARGE-BLIND, and the recorded obligation has the wrong sign
+
+Taking up the one live successor `qou-0hdx` left behind. The obligation was
+stated as *"derive the per-component flux law"*; it is not one function of A, and
+the shape it must have is the opposite of the one recorded.
+
+**The structural point.** Every factor on the right of Komendarczyk eq. (43) is
+either link topology (`ac`) or flux — **nothing in it distinguishes a proton from
+a neutron.** But κ(A) is built from the mirror-pair binding split, which is pure
+charge. So charge can enter at exactly one place: the flux must differ between
+proton and neutron components. The obligation was never `Flux(A)`; it is the pair
+`(Φ_p, Φ_n)`.
+
+**And that is not enough.** For a vertex-transitive carrier (`ac(L_k,L) = a` for
+every k — true of the Borromean rings, S₃-symmetric, and of every carrier this arc
+has used), assign flux by charge and swap Z↔N. Mirror partners share A, the link,
+and `min_k|Flux|`; the swap only relabels. Then
+
+    E₁ = C·a·(Z·Φ_p + N·Φ_n)·m ,  E₂ = C·a·(N·Φ_p + Z·Φ_n)·m
+    ΔE = C·a·m·(Z − N)·(Φ_p − Φ_n)
+
+For the whole `d = |Z−N| = 1` ladder — the entire `A = 2Z−1` series the arc scores
+against — this is **one constant, independent of the nucleus**. Sorry-free in Lean,
+`lean`-direct exit 0, `#print axioms` = `[propext, Quot.sound]` on all five decls
+(no `Classical.choice`, no `sorryAx`):
+`content/quantum-observable-universe/lean/QOU/Mass/FreedmanHeMirrorSplitChargeBlind.lean`
+— `mirrorSplit_eq`, `mirrorSplit_succ_const`, `mirrorSplit_succ_eq_of_ne`,
+`mirrorSplit_eq_zero_of_flux_eq`, `mirrorSplit_add_eq`.
+
+The AME ladder is **not** constant: the split grows **13.63×** from A=3 to A=63.
+So constant charge-fluxes are refuted, and the required `Φ_p − Φ_n` must **GROW**
+by that factor.
+
+**This contradicts what the corpus records, in sign.** `em-linking-fh-link-bound-correction.witness.json`
+records the obligation as a per-component flux **DECLINE of 1.4487357**. That is
+`√(κ(3)/κ(41))`, read off κ. But **κ is not an energy**: measured here,
+`κ := split/(n_pairs·u)` with `u` constant to **5.042e-8** across all 31 rows and
+`n_pairs = Z−1` exactly, so the pp-pair count is already divided out. Eq. (43)
+bounds an ENERGY; the observable to confront it with is the split. Reading the
+obligation off κ silently asks the bound to explain a per-pair ratio. Opposite in
+sign, **9.41×** in magnitude. Both corpus figures are reproduced exactly in the new
+witness before being disputed (2.098835 and 1.4487357, to 1e-6).
+
+**And the framework defines no flux.** Measured, not recalled: `Flux` occurs
+nowhere in `content/quantum-observable-universe/lean/` as a quantity. The grep hits
+are a photon docstring (`KnotRegistry.lean:48`), meson colour tubes
+(`MesonFluxTubeReduction.lean`), and the English idiom *"in flux in Mathlib's
+CoxeterSystem API"* (`Tw.lean:56`, `Defn.lean:114`, `Quotient.lean:62,136`). So
+supplying `(Φ_p, Φ_n)` is not reading off an existing structure — it is introducing
+one, which is where CAL-4 pressure would land.
+
+**Scope — (a) on a model class, not on eq. (43).** Excluded:
+`{vertex-transitive carrier} × {flux depending only on charge} × {saturation}`.
+Three escapes survive and are NOT refuted: a carrier that is not vertex-transitive;
+an `ac` that depends on the charge assignment; an unsaturated bound — eq. (43) is
+an inequality, and using it as an equality is an assumption **nothing in this corpus
+establishes**. Each is a further thing to derive, not a thing the sources supply.
+
+Artifacts: `computations/em_linking_fh_mirror_split_charge_blindness.py`,
+`computations/em-linking-fh-mirror-split-charge-blindness.witness.json` (5/5).
+Nothing wired.
+
+
+## 2026-09-03 — SATURATION IS PRIOR, not one escape of three: a lower bound cannot constrain a DIFFERENCE
+
+Correcting my own scoping from the entry above. That entry closed by naming three
+surviving escapes from the charge-blindness result — a non-vertex-transitive
+carrier, a charge-dependent `ac`, and an unsaturated bound — and presented them as
+parallel. **They are not parallel.** The third is prior to the other two, and the
+reason is elementary once stated.
+
+**Eq. (43) is an inequality**, `E_{3/2}(X) ≥ B(L, Φ)`. The arc's observable is a
+mirror-pair **split** — a *difference* of two such energies, `(Z,N)` against
+`(N,Z)`. From `B₁ ≤ E₁` and `B₂ ≤ E₂`, **nothing at all follows about `E₁ − E₂`**:
+for any target value `t` whatsoever there are energies meeting both bounds whose
+difference is exactly `t`. Take `E₂ = max(B₂, B₁ − t)` and `E₁ = E₂ + t`.
+
+So eq. (43) does not merely fail to *predict* κ(A) — it fails to **constrain** it,
+in either direction. Whatever the AME ladder had turned out to be (constant,
+growing, falling, alternating), the bound would have been consistent with it.
+
+**Why that reorders the escapes.** Escapes 1 and 2 concern the *shape* of `B`. The
+shape of `B` only matters once `B` is being read as the energy — i.e. once
+saturation is assumed. Without it there is nothing for a carrier or an `ac` to be
+the shape *of*. Every κ-scoring result in this arc inherits the assumption.
+
+**What would restore a constraint is an UPPER bound**, which eq. (43) does not
+supply. With `B₁ ≤ E₁ ≤ U₁` and `B₂ ≤ E₂ ≤ U₂` the difference is pinned to
+`[B₁ − U₂, U₁ − B₂]`, and that interval collapses to a point exactly when both
+bounds are tight — so saturation is the *extreme* case of the two-sided situation,
+not a mild simplification of it. Naming the missing ingredient precisely: not more
+topology, but an **upper bound on the energy of a knotted flux configuration**.
+
+Sorry-free in Lean, `lean`-direct exit 0 no warnings, over the weakest structure
+that admits the statements (`[AddCommGroup R] [LinearOrder R]
+[IsOrderedAddMonoid R]` — an ordering is genuinely required here, unlike the
+sibling file's generic `CommRing`; note `LinearOrderedAddCommGroup` is deprecated
+in this Mathlib and is no longer a class at all, so it cannot be used as a binder):
+`content/quantum-observable-universe/lean/QOU/Mass/LowerBoundCannotConstrainADifference.lean`
+— `diff_unconstrained`, `no_split_value_is_excluded`, `diff_of_saturated`,
+`diff_bounded_of_upper`, `diff_bounded_collapses_iff_saturated`. `#print axioms`:
+four carry `[propext, Classical.choice, Quot.sound]` (Classical.choice enters via
+`max`), and `diff_of_saturated` depends on **no axioms at all**.
+
+**Corpus-grep before claiming novelty.** `saturat` has many hits, all other
+subjects (Δ_λ saturation, coth-saturation, channel saturation). The closest prior
+remark is `docs/audits/2026-08-01-em-linking-reads-round1.md:281` — *"the
+inequality itself is vacuous for our tubes"* — but that is about **Khesin Thm
+3.6** having a `2·genus−1` factor that vanishes on unknot components, a different
+statement about a different inequality. No prior instance of the
+difference-of-lower-bounds argument in `docs/`, `computations/`, `content/` or
+`.beans/`.
+
+**NOT measured, and worth saying rather than leaving implicit.** One might hope to
+show saturation is *implausible* by computing how far `B` sits below the observed
+energies. That cannot be done here: evaluating `B` needs a per-nucleus carrier
+link, and `qou-5vhf` establishes the `A ≤ 4` assignments are an admitted
+AME-driven census search. The slack is **unmeasured**, not measured-and-small.
+
+Nothing wired.

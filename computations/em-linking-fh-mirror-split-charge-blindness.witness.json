@@ -1,0 +1,160 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-02T22:08:18.295417+00:00",
+  "commitSha": "8266e31a0de56868a33a9c492741ac80d289dd0a",
+  "assertions": [
+    {
+      "name": "corpus_kappa_decline_reproduced",
+      "computed": "2.098835",
+      "expected": "2.098835",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "ratio",
+      "source": "kappa(3)/kappa(41) recomputed from the mirror-series witness matches the 2.098835 recorded in em-linking-fh-link-bound-correction.witness.json. Reproducing the figures I dispute, before disputing them: the dispute is about which observable the bound applies to, not about arithmetic."
+    },
+    {
+      "name": "corpus_flux_decline_reproduced",
+      "computed": "1.448736",
+      "expected": "1.448736",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "ratio",
+      "source": "sqrt(kappa(3)/kappa(41)) matches the recorded 1.4487357."
+    },
+    {
+      "name": "kappa_divides_out_the_pair_count",
+      "computed": "5.042e-8",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "relative",
+      "source": "split/(n_pairs*kappa) is constant to 5.0e-8 across all 31 rows, and n_pairs == Z-1 exactly on every row (True). So kappa is definitionally a per-pair ratio with the pp-pair count divided out -- not an energy for eq. (43), which bounds one, to be confronted with."
+    },
+    {
+      "name": "mirror_split_grows_13x_where_constant_charge_flux_predicts_exactly_1",
+      "computed": "13.62771",
+      "expected": "13.627712",
+      "passed": true,
+      "tolerance": "1e-5",
+      "unit": "ratio split(A=63)/split(A=3)",
+      "source": "THE RESULT. Under a vertex-transitive carrier with charge-only flux and eq. (43) saturated, dE = C*a*m*(Z-N)(Phi_p-Phi_n) is A-INDEPENDENT for the d=1 ladder -- this ratio would be exactly 1. It is 13.63. So constant fluxes are refuted and the required Phi_p-Phi_n must GROW by that factor. Pinned to the measured value so the refutation cannot silently regress."
+    },
+    {
+      "name": "required_flux_growth_is_opposite_in_sign_to_the_recorded_decline",
+      "computed": "9.4066228",
+      "expected": "9.4066226",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "ratio",
+      "source": "The corpus records the obligation as a flux DECLINE of 1.449. Confronting the bound with the energy rather than the per-pair ratio makes it a flux-difference GROWTH of 13.63 -- opposite in sign, 9.4x in magnitude. Both directions positive: True."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "em-linking-fh-mirror-split-charge-blindness",
+  "scriptFile": "em_linking_fh_mirror_split_charge_blindness.py",
+  "scriptHash": "1068214600fe",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_fh_mirror_split_charge_blindness.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_fh_mirror_split_charge_blindness.py"
+  },
+  "description": "EXPLORATORY. The Freedman-He link bound (Komendarczyk eq. 43) has a charge-blind right-hand side -- only link topology and fluxes -- while kappa(A) is built from a mirror-pair split, which is pure charge. So the open obligation is not Flux(A) but the pair (Flux_p, Flux_n). Under a vertex-transitive carrier with charge-only flux, the d=1 mirror split is C*a*m*(Phi_p - Phi_n) -- ONE CONSTANT for the whole A=3..63 ladder. The data grows by 13.63, so constant fluxes are refuted and the required Phi-difference must GROW by 13.63. The corpus records the obligation as a DECLINE by 1.449, which is sqrt(kappa(3)/kappa(41)) read off kappa -- but kappa is split/((Z-1)*u), a per-pair ratio with the pair count already divided out, not an energy. Both figures are reproduced here. Scope-(a) on the model class {vertex-transitive carrier} x {charge-only flux} x {saturation}; eq. (43) itself is untouched. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+  "data": {
+    "eq43_source": {
+      "file": "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216",
+      "citation": "Komendarczyk, arXiv:0808.1533v1, eq. (43), p. 26",
+      "statement": "E_{3/2}(X) >= (pi/16)^(1/4) * ( sum_{k=1..n} ac(L_k,L)|Flux(X_k)| ) * min_{1<=k<=n}|Flux(X_k)|",
+      "charge_blind": "every factor on the right is link topology (ac) or flux; nothing in it distinguishes a proton from a neutron, so charge can only enter via Flux",
+      "it_is_a_LOWER_BOUND": "using (43) as an equality assumes saturation. Nothing in this corpus establishes it; the assumption is recorded, not discharged"
+    },
+    "kappa_is_a_per_pair_ratio_not_an_energy": {
+      "definition": "kappa := split / (n_pairs * u)",
+      "u_constant_to_relative": "5.042e-8",
+      "u_value": "0.2376702203",
+      "n_pairs_equals_Z_minus_1": true,
+      "why_it_matters": "the pp-pair count (Z-1) is already divided out of kappa, so confronting eq. (43) -- a bound on an ENERGY -- with kappa asks it to explain a per-pair ratio. The energy-like observable is the split."
+    },
+    "corpus_figures_reproduced": {
+      "kappa_decline_A3_to_A41": "2.098835",
+      "corpus_value": "2.098835",
+      "flux_decline_read_off_kappa": "1.448736",
+      "corpus_value_flux": "1.448736",
+      "note": "reproduced exactly. The disagreement below is about which observable the bound applies to, not about arithmetic."
+    },
+    "charge_blindness_prediction": {
+      "model_class": "{vertex-transitive carrier: ac(L_k,L) = a for all k} x {flux depends only on charge: Phi_p, Phi_n} x {eq. (43) saturated}",
+      "derivation": "E_1 = C a (Z Phi_p + N Phi_n) m ; E_2 = C a (N Phi_p + Z Phi_n) m ; dE = C a m (Z-N)(Phi_p - Phi_n). For the d=1 ladder Z-N=1, so dE is ONE CONSTANT independent of A.",
+      "predicted_split_spread": "0 (constant)",
+      "observed_split_spread_relative": "12.62771",
+      "observed_split_growth_A3_to_A63": "13.62771",
+      "observed_split_growth_A3_to_A41": "9.529096",
+      "verdict": "constant fluxes are REFUTED for this ladder; the required Phi-difference must grow by the same 13.63"
+    },
+    "direction_disagreement": {
+      "corpus_says": "per-component flux must FALL by 1.4487357 (A=3 -> A=41)",
+      "this_probe_says": "the proton-neutron flux DIFFERENCE must GROW by 9.529096 over the same range, 13.62771 over the full ladder",
+      "these_are_opposite_in_sign": true,
+      "magnitude_ratio_full_ladder": "9.4066228",
+      "root_cause": "the corpus figure divides the pair count out of the observable before confronting it with a bound on the total energy"
+    },
+    "required_dphi_relative_to_A3": {
+      "3": "1.0",
+      "5": "1.6104643",
+      "7": "2.152837",
+      "9": "2.4227433",
+      "11": "3.6190093",
+      "13": "3.9316532",
+      "15": "4.6304542",
+      "17": "4.6386766",
+      "19": "5.2658857",
+      "21": "5.6683965",
+      "23": "6.3351819",
+      "25": "6.6240559",
+      "27": "7.3252627",
+      "29": "7.4953101",
+      "31": "8.0920706",
+      "33": "8.333649",
+      "35": "8.8360699",
+      "37": "9.0733642",
+      "39": "9.5669874",
+      "41": "9.529096",
+      "43": "10.022728",
+      "45": "10.351713",
+      "47": "10.770891",
+      "49": "11.12238",
+      "51": "11.569664",
+      "53": "11.876136",
+      "55": "12.407625",
+      "57": "12.51356",
+      "59": "12.995174",
+      "61": "13.088739",
+      "63": "13.62771"
+    },
+    "what_would_have_to_be_supplied": {
+      "not_one_function": "the obligation is the PAIR (Phi_p, Phi_n), not a single Flux(A); a charge-blind bound cannot produce a charge-driven observable otherwise",
+      "and_the_framework_defines_no_flux": "`Flux` occurs nowhere in content/quantum-observable-universe/lean/ as a quantity. The grep hits are a photon docstring (KnotRegistry.lean:48), meson colour flux tubes (MesonFluxTubeReduction.lean), and the English idiom \"in flux in Mathlib's CoxeterSystem API\" (Tw.lean:56, Defn.lean:114, Quotient.lean:62,136). Measured, not recalled.",
+      "escape_hatches_not_excluded": "a carrier that is NOT vertex-transitive, or an ac that depends on the charge assignment, or an unsaturated bound, all evade this. Each is a further thing to derive, not a thing the sources supply."
+    }
+  }
+}
