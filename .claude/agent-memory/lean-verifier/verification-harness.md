@@ -354,3 +354,46 @@ Lake globs (`globs = ["QOU", "QOU.+"]`, `srcDir = "."` = the `lean/` dir), so
 `lake build QOU` never sees them; CI is `workflow_dispatch`-only. A sibling
 can be broken for months with nothing reporting it — `n-v-bring-action.lean`
 was (8 parse errors, `Σ` used as a binder name, which is `Sigma` notation).
+
+---
+
+## 13. No Mathlib source and no LSP: grep the OLEANS for renamed declarations
+
+Measured 2026-09-03. This container's restore gives `.lake/packages/mathlib/`
+containing **only** `.lake/build` — there is no `Mathlib/` source tree — and
+the `lean-lsp` MCP server does not connect here. So the two obvious ways to
+resolve a Mathlib rename are both unavailable, and the third is not obvious:
+
+```bash
+D=.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions
+grep -rhoa "tendsto_log_mul_rpow[A-Za-z_0-9']*" "$D" | sort -u
+#   tendsto_log_mul_rpow_nhdsGT_zero
+#   tendsto_log_mul_rpow_nhds_zero
+```
+
+**Olean binaries carry declaration names as plain strings.** `grep -a` with a
+prefix of the name you remember, plus `[A-Za-z_0-9']*`, enumerates the live
+spellings in seconds. `grep -rloa` gives the module, which is what you need
+for the import.
+
+**Two limits, both bitten in practice.**
+
+1. **Namespaces are stored as separate components**, so the *qualified* name is
+   NOT contiguous in the file — `grep -oa "Real.tendsto_log_mul_rpow[…]"`
+   returns nothing even when the declaration is there. The grep finds the last
+   component only; confirm the namespace with `#check`.
+2. It found `tendsto_log_mul_rpow_nhdsGT_zero` in a module the file already
+   imported, while the error said `Unknown constant
+   Real.tendsto_log_mul_rpow_nhdsGT_zero`. **The defect was the namespace, not
+   the name** — the lemma is in the ROOT namespace. `#check @<bare name>`
+   settled it. Do not conclude "renamed" from an `Unknown constant` whose last
+   component greps fine.
+
+Same run: `tendsto_id` is `Filter.tendsto_id` and is not exported to root.
+
+**Where this stops helping.** Names are cheap; proofs are not. On
+`townsend-biot-savart-strain.lean` these two fixes took 9 errors to 7, and the
+remaining seven are `Application type mismatch` / `rewrite failed` / `unsolved
+goals` inside a real-analysis argument — proof-level drift, not name-level.
+Budget accordingly: grep the names, then expect the proof body to still need
+doing.

@@ -147,11 +147,11 @@ theorem kappa_squared_tends_to_zero_axiom (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) 
     -- Denominator: C₁ - ν·τ² → C₁ > 0
     -- Key Mathlib fact: tendsto_log_mul_rpow_nhdsGT_zero : log(x) * x^r → 0 for r > 0
     have h_tau2_log : Filter.Tendsto (fun τ => Real.log τ * τ ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
-      Real.tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+      tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
     -- τ² → 0
     have h_tau2 : Filter.Tendsto (fun τ : ℝ => τ ^ 2) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
       have : Filter.Tendsto (fun τ : ℝ => τ) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
-        tendsto_nhdsWithin_of_tendsto_nhds tendsto_id
+        tendsto_nhdsWithin_of_tendsto_nhds Filter.tendsto_id
       exact (this.pow 2).congr (fun _ => rfl)
     -- V2 τ = τ * (-2ν·log(τ) + C₂), so V2/V1 → 0/C₁ = 0
     -- Use the closed form: V2/V1 = τ² * (-2ν·log(τ) + C₂) / (C₁ - ν·τ²)
