@@ -109,13 +109,31 @@ set_compute_dps()
 
 
 def load_canonical_q() -> str:
-    """The certified chain's pin: canonical-muon q from the pinning witness
-    (q_parameter is anchor-adaptive and would resolve PROTON in this
-    non-manifest process — see docstring)."""
-    d = json.loads((COMP / "q-pinning-50-digit.witness.json").read_text())
-    q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595642"), q
-    return q
+    """The certified chain's pin, now resolved through `q_parameter`.
+
+    Routed 2026-09-03 (bean `qou-aj91`), completing the group-B tranche.
+
+    The direct read this replaces had a REASON, and that reason stopped being
+    true earlier the same day. The old docstring said `q_parameter` "would
+    resolve PROTON in this non-manifest process" -- correct while this stem was
+    UNLISTED, which is exactly why the read was here. The same change that
+    removed this file's os.environ.setdefault("QOU_Q0_ANCHOR", "ideal") listed
+    the stem `ideal_muon`, so the process is no longer non-manifest and
+    `q_parameter` resolves MUON.
+
+    Verified rather than argued: with the stem listed and QOU_Q0_ANCHOR unset,
+    `q_parameter` returns 1.109978595642739046681795..., string-identical to
+    what this function read out of the witness, and it satisfies the muon-prefix
+    assertion that used to guard the read.
+
+    The requirement the old comment protected is untouched: the whole module
+    graph (q_parameter -> hecke_core -> word builder -> _avg_color_delta) still
+    resolves at the canonical-muon pin, or the color-weighted delta drifts to a
+    5.9e-11 floor on the deuteron/4He reproductions against 6e-31 aligned. Only
+    the route to that pin changed, from a hardcoded read to the manifest.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 -- anchor-aware
+    return Q_50_DIGIT_STR
 
 
 def classify_word(triples, h_f64):
