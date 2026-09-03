@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T20:29:55Z
+updated_at: 2026-09-03T20:53:32Z
 ---
 
 
@@ -671,3 +671,43 @@ weight-bug-retraction-retracted; these two beans. Audit:
 docs/audits/2026-09-03-covariance-kernel-M1-k5r5-pointwise-shortfall-recomputed.md
 Gap qou-k5r5 OPEN; NEXT unchanged: a RIGOROUS C <= 2.6681 from the oscillatory
 cancellation, against an empirical envelope of 0.0580 (46x headroom).
+
+
+2026-09-03 (PR #6528, cont.) THE C_A -> MARGIN CONVERSION, written down for the first
+time in this arc, plus a PER-LEG budget that relocates where the work is.
+CONTEXT: two sites compared a V_A-remainder constant against a MARGIN threshold and
+derived numbers from it (corrected: C<=23.4 in #6500, K<0.058 in #6528). A third,
+_debye_CA_investigation, phrases it that way in its DOCSTRING ('whether a rigorous
+Olver/Debye C_A can land under the target C <= 2.668') but its VERDICT compares the
+true MARGIN constant (~0.087) to 2.668, which is unit-correct, and derives nothing
+from the conflation. PHRASING DEFECT, NOT a third numerical error -- recorded that way
+deliberately; miscounting the errors would be the same sin as the errors. Docstring
+now carries a units-clarification block.
+THE CONVERSION (nothing in the arc had it): C_A bounds |V_A/theta^2 - v_A| <= C_A
+theta^{-1/2}; m = rho_P - sqrt(V_D/V_A). So delta_A = C_A theta^{-1/2}/v_A and
+|Delta m| = (sig_ratio_inf/2) delta_A, giving
+    C_margin,A = (sig_ratio_inf / (2 v_A)) * C_A = 0.41922 * C_A.
+=> the V_A leg alone may spend C_A <= 2.6681/0.41922 = 6.3645, NOT 2.668; the naive
+reading is 2.385x too strict. Measured C_A^emp = 0.00775419 (theta in [80,2560]) =>
+~821x headroom on this leg.
+THE FINDING THAT MATTERS MORE -- PER-LEG BUDGETING. The rho_P leg enters m LINEARLY
+(no conversion factor at all) and is the BIGGER contribution: |rho_P - rho_inf| ~
+0.1329/theta (exponent measured flat at b=1.0: 0.1319 0.1308 0.1332 0.1323 0.1329
+0.1333) against the V_A leg's 0.003251/sqrt(theta). So the 46x headroom on the TOTAL
+margin (#6500) and the ~821x on the V_A leg are consistent -- V_A is the SMALL
+contribution and most of the margin's finite-n deviation is rho_P's. A rigorous C
+should be budgeted PER LEG, not as one number, and the rho_P leg is where the binding
+constraint actually sits. That is a redirection of the remaining work.
+CAVEATS, both real and stated in the probe: (1) DE-POISSONIZATION NOT DONE -- C_A is a
+theta-object, the requirement is at fixed n; the conversion is exact for the SHAPE but
+the theta<->n factor is unpinned, so read ~821x as 'modulo de-poissonization'.
+(2) C_A^emp is measured at rate theta^{-1/2} while the TRUE V_A rate is theta^{-1}
+(exponent 0.93949 here, matching c_1 ~ -0.0678), so |.|sqrt(theta) decreases and the
+sup sits at the window's left end -- conservative, but not established below theta=80
+while the requirement is n>=79.
+CROSS-CHECK: v_A re-extracted independently as 0.81057182513 vs exact 8/pi^2 =
+0.81056946914, rel 2.91e-6.
+Probe: computations/deltalambda/wlambda_covariance_epic_M1_CA_to_margin_conversion.py
+(exit 0, 3.4s, PYTHONPATH-unset-safe, NO float64). Gap qou-k5r5 OPEN; NEXT: budget the
+rigorous C per leg, with rho_P the binding one, via the Toeplitz-determinant route
+(_bulk_kernel_rate_probe: oscillations cancel at the integrated level, not pointwise).
