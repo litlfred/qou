@@ -468,3 +468,51 @@ discard 13 atoms to protect against losing 1. Not worth it mid-run.
 - [ ] After the witness lands: move the journal commit into the producer (or a
       small wrapper around it) so the commit is not gated on an agent turn.
       Note it must not `git add -A`; explicit path only.
+
+
+## 2026-09-03 — first evidence on whether the fix improves the PHYSICS
+
+The audit document this bean supersedes was explicit that "whether the
+corrected numbers agree better or worse with AME2020 is unknown and
+unmeasured". Here is the first measured signal, and it is not about AME2020 —
+it is about the producer's own stability gate.
+
+### The committed witness is RED, and always was
+
+    computed allPassed: False    assertions: 23    failing: 6
+
+The six failures are `LP_stable(<atom>)` — "all atoms must be Frobenius-stable
+(gluon-dressed nucleons satisfy Gx >= 0)". So this witness was not
+green-with-wrong-numbers; it has been failing its own stability assertion for
+c14, o16, ne20, si28, ca40 and fe56.
+
+### Two of the six now pass
+
+    atom   old stable   new stable |            old tr_M      new tr_M
+    c14         False         True |      -0.483334408182      0.035123
+    n14          True         True |       5.632418845162      6.877323
+    o16         False         True |      18.278897005998     19.002147
+    ne20        False        False |     247.041699299606    224.072409
+
+c14 and o16 were unstable under the non-representation matrices and are stable
+under the corrected ones. ne20 is still unstable. Three remain to compute, all
+False in the committed witness:
+
+    si28   old tr_M 2.09e+06
+    ca40   old tr_M 1.71e+15
+    fe56   old tr_M 5.04e+30
+
+Those old traces are worth staring at. `tr_M` growing to 5e30 by A=56 is what
+a product of matrices that do NOT satisfy the braid relation looks like —
+nothing constrains the growth. Whether the corrected values stay bounded is
+the thing to watch as si28/ca40/fe56 land; I am NOT predicting it.
+
+### What this does and does not establish
+
+- It DOES establish that the fix changes the stability verdict, in the
+  direction of more atoms passing, on 2 of the 4 A>=14 atoms measured so far.
+- It does NOT establish that the finished witness will be green. ne20 already
+  fails, and one failing `LP_stable` is enough for `allPassed: False`.
+- It says nothing about AME2020 agreement. The binding energies are large and
+  positive at high A (+414 MeV at ne20) where AME2020 values are ~150-160 MeV;
+  the residual question is untouched by this and remains open.
