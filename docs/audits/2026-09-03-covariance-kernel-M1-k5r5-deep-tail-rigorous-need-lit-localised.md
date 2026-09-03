@@ -76,15 +76,64 @@ That was *not* shipped; the fix (take `min(·,1)` per index, push `X*` to where 
 is what makes the far-tail bound genuine. Recorded because the loose version *looks* like a rigorous
 tail bound and is not.
 
+## 🛑 CORRECTION (same day): acquiring Olver's bound would NOT close it — the pointwise route fails
+
+The section above, and my own recommendation to the owner ("fetch Olver, then track `C_A`"), assumed
+that an explicit **pointwise** remainder `|J − S| ≤ ε ~ K·θ^{−1/2}` could be carried through the
+weighted sum to give `C_A`. **Measured: it cannot, for any constant `K`.**
+
+Write `J = S + E`. Then `V_A(J) − V_A(S) = ½Σ w·E·(2S + E)`, so *any* pointwise bound gives at best
+`|ΔV| ≤ ε·U + …` with `U := Σ w |S|`, against `V := ½Σ w S² = V_A`. The relevant quantity is `U/V`.
+[`wlambda_covariance_epic_M1_pointwise_bound_insufficiency.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_pointwise_bound_insufficiency.py)
+(exit 0; NO float64) computes both from the **exact** discrete Bessel kernel:
+
+| θ | 64 | 78 | 128 | 256 | 512 |
+|---|---|---|---|---|---|
+| `U/V` | 42.78 | **45.65** | 53.87 | 70.71 | 91.91 |
+
+`U/V` grows without bound (`d log(U/V)/d log θ` = 0.33→0.39, still drifting; growth is *sub*-`√θ` —
+the normalised `(U/V)/√θ` decreases 5.35→4.06, so **do not quote "`U/V ~ √θ`"**; the exponent is not
+pinned and the conclusion does not need it).
+
+**The decisive number is a direct measurement, not an extrapolation.** At `θ = 78` — the largest `n`
+the exact `Fraction` table reaches, hence exactly where the asymptotic must take over — `U/V = 45.65`,
+so a pointwise `ε = K·θ^{−1/2}` gives a *relative* error on `V_A` of `≈ 5.17·K`. Keeping that below
+`m_∞ = 0.3002` forces
+
+> **`K < 0.058`**, whereas the leading Debye/Olver remainder coefficient is `O(1)` — short by ~17×.
+
+So a sharper **pointwise-magnitude** bound cannot close `N₀ ≤ 78` however good its constant. The
+**oscillatory cancellation** in `Σ w·S·E` (summation by parts / stationary phase) is load-bearing, not
+a refinement.
+
+**Consequences, stated plainly:**
+
+1. **My "need lit? → fetch Olver" recommendation is retracted.** Acquiring DLMF §10.19/§10.20 or
+   Olver 1997 would not, by itself, pin `C_A`. (Moot in any case: `arxiv.org` and `dlmf.nist.gov` are
+   both blocked by org egress policy — 403 on CONNECT — so this agent cannot fetch them; per the proxy
+   rules that is reported, not routed around.)
+2. **This *reinforces* the corpus's own Route-1 decision.** Route 1 (Kerov limit shape +
+   `CompositeEulerMaclaurin`) never forms the pointwise `|J − S|` difference at all — it works with
+   the smooth limit-shape integrands, where EM's explicit remainder *is* the constant. Route 2 (the
+   Bessel route this note started down) is the one that needs the cancellation.
+3. **Route 1's missing piece is not literature.** It is the Kerov/VKLS limit shape and its
+   fluctuation field as *analytic* objects (per the inventory audit) — a build, with the underlying
+   theorems (Kerov CLT, IO) already published and IO already in corpus.
+
 ## Honest status
 
-Gap `qou-k5r5` **OPEN**, now with the need-lit pinned to a single bounded band. Rigorous corpus-free
-this note: the far tail `|x| > X*` (`X* ~ e√θ + O(√θ)`) is `< 10⁻³⁷·V_A`. Everything else in the
-closure is either already rigorous (reduction Lean-proved; `m_∞` derived; `n≤78` exact) or pinnable
-from published bounds — **except** the `C_A` bulk band `x ≤ X*`, which needs Olver's uniform Bessel
-remainder (not in corpus). The next honest step is to ingest that reference and carry it through the
-`x²`-weighted band to a verified `C_A ≤ 2.65` — a well-scoped multi-page estimate with ~30× headroom,
-not a new idea, and **not** to be faked without the bound in hand.
+Gap `qou-k5r5` **OPEN**. Two results, one positive and one negative, both rigorous/measured:
+
+- **Positive (corpus-free):** the far tail `|x| > X*` (`X* ~ e√θ + O(√θ)`) contributes `< 10⁻³⁷·V_A`,
+  by elementary bounds alone.
+- **Negative (decisive):** the **pointwise** Bessel-remainder route to `C_A` cannot work — at `θ=78`
+  it demands a remainder constant `K < 0.058` against an `O(1)` Debye coefficient. So "get Olver's
+  bound" is *not* the next step, and the answer to **"need lit?" is NO** for the chosen route.
+
+The live route is unchanged and is **Route 1** (Kerov limit shape + `CompositeEulerMaclaurin`), whose
+missing piece is an analytic build (the VKLS limit shape and Kerov fluctuation field as analytic
+objects, feeding the EM remainder), not a citation. Everything else is already rigorous: reduction
+Lean-proved, `m_∞ = 0.30019` derived, `M₁>0` exact for `n ≤ 78`, far tail as above.
 
 ## Compute + sources
 
