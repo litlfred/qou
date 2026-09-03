@@ -27,9 +27,11 @@ is reported by WHY it is not, because the four reasons need different fixes:
                        and the one class that makes an agent re-derive a result
                        the repo could have cited.
 
-It also reports the OPPOSITE gap, which nothing was measuring: a source that
-is held and triaged but carries no bibliography key. It is in the repo and no
-block can cite it, so it reads to the corpus exactly like a source we lack.
+It also reports the OPPOSITE gap: a source that is held and triaged but that
+no block can cite. Note that the ledger is only ONE side of that join —
+`references.ts` entries carry a `library` block naming the document they are
+held as, and that side is the authoritative one. Reading the ledger alone
+reports 195 uncitable sources where 183 are keyed on the other side.
 
 ## What this does NOT claim
 
@@ -133,13 +135,59 @@ def load_ledger() -> tuple[dict, list]:
     entries = json.loads(LEDGER.read_text()).get("entries", [])
     keyed = {e["id"]: e for e in entries if isinstance(e.get("id"), str)}
     unkeyed = [e for e in entries if not isinstance(e.get("id"), str)]
-    dups = sorted(k for k, n in Counter(
-        e["id"] for e in entries if isinstance(e.get("id"), str)).items() if n > 1)
-    if dups:
-        print(f"  ledger has {len(dups)} DUPLICATE bib id(s) — a lookup keyed on id\n"
-              f"  silently keeps one and discards the rest: {', '.join(dups[:8])}"
-              + (" …" if len(dups) > 8 else "") + "\n")
+    # A repeated id is not automatically a defect. The ledger has one row per
+    # FILE, and this library deliberately holds ~19 works more than once (a
+    # preprint beside its published version, or one PDF ingested twice), each
+    # extra copy naming the preferred one in its `duplicate_of` front-matter.
+    # Those copies SHOULD share the primary's key. What is a defect is two
+    # unrelated documents claiming one id — so separate the two rather than
+    # reporting a number that is mostly expected.
+    rows_by_id: dict[str, list] = defaultdict(list)
+    for e in entries:
+        if isinstance(e.get("id"), str):
+            f = (e.get("source") or {}).get("file")
+            rows_by_id[e["id"]].append(
+                Path(f).parent.name if f and (REPO / f).exists() else None)
+    copies, collisions = [], []
+    for key, raw in sorted(rows_by_id.items()):
+        # A row whose file is external or has vanished names no document, so it
+        # cannot collide with anything; and two rows on the SAME document are a
+        # bookkeeping duplicate, not two works fighting over one key.
+        docs = sorted({d for d in raw if d})
+        if len(docs) < 2:
+            continue
+        linked = {d for d in docs if _duplicate_of(d)} | {
+            _duplicate_of(d) for d in docs if _duplicate_of(d)}
+        (copies if linked & set(docs) else collisions).append((key, docs))
+    if copies:
+        print(f"  {len(copies)} bib id(s) shared by several HELD COPIES of one work "
+              f"(expected — `duplicate_of` links them)")
+    if collisions:
+        print(f"  {len(collisions)} bib id(s) claimed by UNRELATED documents — a lookup\n"
+              f"  keyed on id silently keeps one and discards the rest:")
+        for key, docs in collisions[:6]:
+            print(f"    {key:32} {', '.join(d[:26] for d in docs)}")
+    if copies or collisions:
+        print()
     return keyed, unkeyed
+
+
+_DUP_CACHE: dict[str, str | None] = {}
+
+
+def _duplicate_of(docname: str) -> str | None:
+    """The document this copy defers to, from its section front-matter."""
+    if docname in _DUP_CACHE:
+        return _DUP_CACHE[docname]
+    out = None
+    d = LIBRARY / docname
+    if d.is_dir():
+        for s in sorted(d.glob("sections/*.md"))[:1]:
+            m = re.search(r'^duplicate_of:\s*"?([^"\n]+)"?', s.read_text(), re.M)
+            if m:
+                out = m.group(1).strip()
+    _DUP_CACHE[docname] = out
+    return out
 
 
 def load_refs() -> dict:
@@ -154,7 +202,8 @@ def load_refs() -> dict:
     prog = (
         f'import {{ references }} from "{script}";\n'
         'console.log(JSON.stringify(references.map((r) => ({'
-        ' id: r.id, title: r.title, DOI: r.DOI, URL: r.URL }))));\n'
+        ' id: r.id, title: r.title, DOI: r.DOI, URL: r.URL,'
+        ' libDocId: r.library?.docId, libDir: r.library?.dir }))));\n'
     )
     tmp = REPO / ".cited-source-audit.tmp.ts"
     try:
@@ -250,6 +299,16 @@ def main() -> int:
               "first — an ungenerated graph reads as a corpus that cites nothing.")
         return 0
 
+    # `references.ts` entries carry a `library` block naming the document they
+    # are held as. That is the authoritative side of the join, so a key held
+    # there is REACHABLE even when the ledger says external or knows nothing —
+    # reading the ledger alone under-reports availability in both directions.
+    lib_of: dict[str, str] = {}
+    for r in refs.values():
+        d = r.get("libDir") or (f"library/{r['libDocId']}" if r.get("libDocId") else None)
+        if d and (REPO / d).is_dir():
+            lib_of[r["id"]] = d
+
     buckets: dict[str, list] = defaultdict(list)
     candidates: dict[str, list] = {}
     self_refs = []
@@ -262,6 +321,9 @@ def main() -> int:
         src = (entry or {}).get("source") or {}
         if src.get("kind") == "upload" and (REPO / src.get("file", "")).exists():
             buckets["reachable"].append((key, n, src["file"]))
+            continue
+        if key in lib_of:
+            buckets["reachable"].append((key, n, lib_of[key] + "  (via references.ts)"))
             continue
         doc, cands = (recover(key, refs, by_slug, titles) if refs else (None, []))
         if doc:
@@ -290,21 +352,44 @@ def main() -> int:
         print("\n  NOTE: `bun` could not evaluate references.ts, so the recovery pass\n"
               "  did NOT run. `recovered` is 0 because it was not measured.")
 
-    # The other direction, and the one nothing was looking at: a source that is
-    # HELD and TRIAGED but joined to no bibliography key cannot be cited by any
-    # block or any `-- Ref:`. It is in the repo and unreachable from the text.
+    # The other direction: a HELD, TRIADED source that no block can cite.
+    #
+    # THE JOIN HAS TWO SIDES AND ONLY ONE OF THEM IS AUTHORITATIVE. The ledger
+    # carries a bib id per row, and `references.ts` carries a `library` block
+    # per entry naming the document it is held as. Reading only the ledger
+    # reports 195 uncitable sources where 183 of them are keyed perfectly well
+    # on the OTHER side — and `references.ts` is the side AGENTS.md calls
+    # authoritative for bibliographic metadata. A ledger row with `id: null` is
+    # therefore a STALE LEDGER, not an uncitable source, unless `references.ts`
+    # also has nothing for that document.
     if unkeyed:
-        verdicts = Counter((e.get("relevance") or {}).get("verdict", "(untriaged)")
-                           for e in unkeyed)
-        on_disk = sum(1 for e in unkeyed
-                      if (REPO / ((e.get("source") or {}).get("file") or "_")).exists())
-        print(f"\n  held but UNCITABLE — no bibliography key: {len(unkeyed)} "
-              f"({on_disk} with the file on disk)")
-        for verdict in ("core", "supporting", "tangential", "not-relevant",
-                        "undetermined", "(untriaged)"):
-            if verdicts.get(verdict):
-                print(f"    relevance {verdict:14} {verdicts[verdict]:4}")
-        print("    Each needs a `references.ts` entry before anything can cite it.")
+        by_doc = {}
+        for r in refs.values():
+            for k in ("libDocId", "libDir"):
+                v = r.get(k)
+                if v:
+                    by_doc[Path(v).name] = r["id"]
+        stale, orphan = [], []
+        for e in unkeyed:
+            doc = Path((e.get("source") or {}).get("file") or "_").parent.name
+            (stale if by_doc.get(doc) else orphan).append((e, by_doc.get(doc)))
+        if refs:
+            print(f"\n  ledger rows with `id: null`: {len(unkeyed)}")
+            print(f"    keyed in references.ts already — STALE LEDGER: {len(stale)}")
+            print(f"    no bibliography entry anywhere — UNCITABLE:    {len(orphan)}")
+            if orphan:
+                verdicts = Counter((e.get("relevance") or {}).get("verdict", "(untriaged)")
+                                   for e, _ in orphan)
+                for verdict in ("core", "supporting", "tangential", "not-relevant",
+                                "undetermined", "(untriaged)"):
+                    if verdicts.get(verdict):
+                        print(f"      relevance {verdict:14} {verdicts[verdict]:4}")
+                print("      Check `duplicate_of` in the document's section front-matter\n"
+                      "      before minting: a duplicate copy needs the PRIMARY's key,\n"
+                      "      not a second one.")
+        else:
+            print(f"\n  ledger rows with `id: null`: {len(unkeyed)} — CANNOT SPLIT stale\n"
+                  "    from uncitable without references.ts, which `bun` could not read.")
 
     if args.list:
         rows = sorted(buckets[args.list], key=lambda t: -t[1])

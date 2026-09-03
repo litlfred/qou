@@ -3491,7 +3491,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-0001202v2/0001202v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-hep-th-0001202v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -3510,6 +3510,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b2e3e22ea3d5"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3552,7 +3558,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0006051v1/0006051v1.pdf"
    },
-   "id": null,
+   "id": "besser2000",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3597,6 +3603,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "10483e75bd36"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3604,7 +3616,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0006111v2/0006111v2.pdf"
    },
-   "id": null,
+   "id": "biane2000",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3661,6 +3673,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "cd99f45d686e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3738,7 +3756,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-ph-0012035v3/0012035v3.pdf"
    },
-   "id": null,
+   "id": "broda2002",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3782,6 +3800,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "06a4c8096c8e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3887,7 +3911,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0104249v1/0104249v1.pdf"
    },
-   "id": null,
+   "id": "zudilin2001",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3923,6 +3947,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "c2fcdefc73b8"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3930,7 +3960,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-ph-0105039v1/0105039v1.pdf"
    },
-   "id": null,
+   "id": "hikami2001",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3956,6 +3986,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "850e6a00721e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3963,7 +3999,7 @@
     "kind": "upload",
     "file": "library/0110001v3/0110001v3.pdf"
    },
-   "id": null,
+   "id": "mellor-melvin2003",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4007,6 +4043,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "f30f603ac1c5"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4014,7 +4056,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0111022v1/0111022v1.pdf"
    },
-   "id": null,
+   "id": "schlesinger2001",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4065,6 +4107,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "fea7f1180148"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4072,7 +4120,7 @@
     "kind": "upload",
     "file": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf"
    },
-   "id": null,
+   "id": "raza-fadel-cesarano2025",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -4091,6 +4139,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "da8c1204e84d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4142,7 +4196,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0203194v1/0203194v1.pdf"
    },
-   "id": null,
+   "id": "andre-baldassarri2002",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -4161,6 +4215,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "6f35e530f071"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4168,7 +4228,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-0205308v2/0205308v2.pdf"
    },
-   "id": null,
+   "id": "braden2002",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -4187,6 +4247,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "2de5a4f40d80"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4279,7 +4345,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0302267v2/0302267v2.pdf"
    },
-   "id": null,
+   "id": "deligne-goncharov2005",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -4346,6 +4412,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "c09c8cabd5f9"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4425,7 +4497,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0305275v1/0305275v1.pdf"
    },
-   "id": null,
+   "id": "francaviglia2003",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4483,6 +4555,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "9b356a9d716a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4490,7 +4568,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0305423v3/0305423v3.pdf"
    },
-   "id": null,
+   "id": "fulman2003",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4548,6 +4626,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "e4554f9084ba"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4555,7 +4639,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-0306165v1/0306165v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-hep-th-0306165v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -4605,6 +4689,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "4f187debec91"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4753,7 +4843,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
    },
-   "id": null,
+   "id": "takata2004",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4811,6 +4901,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "8168d7e7f606"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4818,7 +4914,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
    },
-   "id": null,
+   "id": "takata2004",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4863,6 +4959,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "8168d7e7f606"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5194,7 +5296,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0410233v4/0410233v4.pdf"
    },
-   "id": null,
+   "id": "purcell2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -5214,6 +5316,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "1f7215c9f21a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5221,7 +5329,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0411505v2/0411505v2.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-loebl2005",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -5266,6 +5374,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "a38cec365e0a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5377,7 +5491,7 @@
     "kind": "upload",
     "file": "library/0504116v2/0504116v2.pdf"
    },
-   "id": null,
+   "id": "frigerio2006",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -5396,6 +5510,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "24a8c998e40a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5585,7 +5705,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0603217v3/0603217v3.pdf"
    },
-   "id": null,
+   "id": "murakami2006",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -5646,6 +5766,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "d7375d4fee00"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5653,7 +5779,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0604057v2/0604057v2.pdf"
    },
-   "id": null,
+   "id": "li-wang2006",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -5698,6 +5824,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "649fad141dc3"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5705,7 +5837,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0604094v1/0604094v1.pdf"
    },
-   "id": null,
+   "id": "hikami2006",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -5741,6 +5873,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "f0c4c36ab0ac"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5937,7 +6075,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0611504v1/0611504v1.pdf"
    },
-   "id": null,
+   "id": "baseilhac-benedetti2007",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -5981,6 +6119,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "a33d2771c873"
+   },
+   "note": "Bib key backfilled from duplicate copy of agt-v7-n2-p13-s, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5988,7 +6132,7 @@
     "kind": "upload",
     "file": "library/arxiv-0706.2213v3/0706.2213v3.pdf"
    },
-   "id": null,
+   "id": "dubois2007",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -6057,6 +6201,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "75dd29acc9e3"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6064,7 +6214,7 @@
     "kind": "upload",
     "file": "library/arxiv-0707.3682v2/0707.3682v2.pdf"
    },
-   "id": null,
+   "id": "besser-buckingham-dejeu-roblot2007",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -6083,6 +6233,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "609a6f67a0cd"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6090,7 +6246,7 @@
     "kind": "upload",
     "file": "library/arxiv-0806.3105v3/0806.3105v3.pdf"
    },
-   "id": null,
+   "id": "finkelstein2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -6141,6 +6297,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "a37b4f2e9636"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6148,7 +6310,7 @@
     "kind": "upload",
     "file": "library/arxiv-0806.4741v1/0806.4741v1.pdf"
    },
-   "id": null,
+   "id": "bieliavsky",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -6167,6 +6329,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "5e7ad85a99fb"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6262,7 +6430,7 @@
     "kind": "upload",
     "file": "library/arxiv-0810.1064v1/0810.1064v1.pdf"
    },
-   "id": null,
+   "id": "zhao2008-mpl-roots-of-unity",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -6306,6 +6474,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "b2d7514c5382"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6313,7 +6487,7 @@
     "kind": "upload",
     "file": "library/arxiv-0811.1338v1/0811.1338v1.pdf"
    },
-   "id": null,
+   "id": "epelbaum2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -6366,6 +6540,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "9a57cb6e014d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6666,7 +6846,7 @@
     "kind": "upload",
     "file": "library/arxiv-0906.1500v4/0906.1500v4.pdf"
    },
-   "id": null,
+   "id": "dubois-yamaguchi2012",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -6735,6 +6915,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "9a586f6d134c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6822,7 +7008,7 @@
     "kind": "upload",
     "file": "library/1-s20-s009731651830061x-main/1-s2.0-S009731651830061X-main.pdf"
    },
-   "id": null,
+   "id": "fischer2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -6841,6 +7027,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "8d591fe7f167"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6848,7 +7040,7 @@
     "kind": "upload",
     "file": "library/1-s20-s0097316524000426-main/1-s2.0-S0097316524000426-main.pdf"
    },
-   "id": null,
+   "id": "yao2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -6867,6 +7059,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "76a8ab857163"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6874,7 +7072,7 @@
     "kind": "upload",
     "file": "library/arxiv-1002.0126v1/1002.0126v1.pdf"
    },
-   "id": null,
+   "id": "murakami-h2010",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -6900,6 +7098,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ea218a0586a1"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6933,7 +7137,7 @@
     "kind": "upload",
     "file": "library/arxiv-1003.4808v2/1003.4808v2.pdf"
    },
-   "id": null,
+   "id": "dimofte-gukov2010",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -6968,6 +7172,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "72301d4bee49"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7032,7 +7242,7 @@
     "kind": "upload",
     "file": "library/arxiv-1011.1343v1/1011.1343v1.pdf"
    },
-   "id": null,
+   "id": "meissner2010",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7062,6 +7272,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "7d50e5e28e69"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7069,7 +7285,7 @@
     "kind": "upload",
     "file": "library/arxiv-1012.1039v2/1012.1039v2.pdf"
    },
-   "id": null,
+   "id": "fujiwara-manning2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -7088,6 +7304,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "acb2575050db"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7095,7 +7317,7 @@
     "kind": "upload",
     "file": "library/arxiv-1012.5432v4/1012.5432v4.pdf"
    },
-   "id": null,
+   "id": "thompson-fluxtubes",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -7115,6 +7337,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ec5f6da1f813"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7122,7 +7350,7 @@
     "kind": "upload",
     "file": "library/lee-vanderveen-colored-jones-polynomials-without-tails/lee-vanderveen-colored-jones-polynomials-without-tails.pdf"
    },
-   "id": null,
+   "id": "lee-vanderveen-colored-jones-polynomials-wit",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -7141,6 +7369,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "fcc45aebd34e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7148,7 +7382,7 @@
     "kind": "upload",
     "file": "library/arxiv-1101.0956v3/1101.0956v3.pdf"
    },
-   "id": null,
+   "id": "arcus2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -7173,6 +7407,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "28fffdb404e8"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7231,7 +7471,7 @@
     "kind": "upload",
     "file": "library/arxiv-1102.3530v1/1102.3530v1.pdf"
    },
-   "id": null,
+   "id": "murakami-h2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -7267,6 +7507,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ad3edab19f3d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7274,7 +7520,7 @@
     "kind": "upload",
     "file": "library/arxiv-1104.0755v2/1104.0755v2.pdf"
    },
-   "id": null,
+   "id": "morita-t2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -7333,6 +7579,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "d2fbbea44598"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7340,7 +7592,7 @@
     "kind": "upload",
     "file": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf"
    },
-   "id": null,
+   "id": "alvarez-gaume-moore-vafa1986",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -7399,6 +7651,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "c99ca1cd756f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7406,7 +7664,7 @@
     "kind": "upload",
     "file": "library/arxiv-1105.1998v3/1105.1998v3.pdf"
    },
-   "id": null,
+   "id": "morita2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7442,6 +7700,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "daf3bffad8eb"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7449,7 +7713,7 @@
     "kind": "upload",
     "file": "library/arxiv-1108.4389v1/1108.4389v1.pdf"
    },
-   "id": null,
+   "id": "dimofte-gaiotto2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -7492,6 +7756,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "d3ac77510654"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7499,7 +7769,7 @@
     "kind": "upload",
     "file": "library/arxiv-1108.5286v3/1108.5286v3.pdf"
    },
-   "id": null,
+   "id": "solleveld2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7550,6 +7820,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "447d90883adc"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7644,7 +7920,7 @@
     "kind": "upload",
     "file": "library/1172-1/1172-1.pdf"
    },
-   "id": null,
+   "id": "okamoto-rims1172-1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -7657,6 +7933,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "f067a1bfa4c6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7664,7 +7946,7 @@
     "kind": "upload",
     "file": "library/1172-2/1172-2.pdf"
    },
-   "id": null,
+   "id": "1172-2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -7683,6 +7965,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "390665341d5b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7746,7 +8034,7 @@
     "kind": "upload",
     "file": "library/1172-4/1172-4.pdf"
    },
-   "id": null,
+   "id": "1172-4",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7781,6 +8069,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ffc47732ce01"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7788,7 +8082,7 @@
     "kind": "upload",
     "file": "library/1172-5/1172-5.pdf"
    },
-   "id": null,
+   "id": "murakami-rims1172-5",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -7807,6 +8101,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "21b7a0e13bd2"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7850,7 +8150,7 @@
     "kind": "upload",
     "file": "library/arxiv-1203.2182v1/1203.2182v1.pdf"
    },
-   "id": null,
+   "id": "fuji2012",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7876,6 +8176,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "2fe21af194f6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7883,7 +8189,7 @@
     "kind": "upload",
     "file": "library/arxiv-1203.3404v1/1203.3404v1.pdf"
    },
-   "id": null,
+   "id": "morita2012",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7919,6 +8225,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "2318b14fb270"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7926,7 +8238,7 @@
     "kind": "upload",
     "file": "library/arxiv-1203.6551v1/1203.6551v1.pdf"
    },
-   "id": null,
+   "id": "hodgson2012",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -7977,6 +8289,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "a8e84f8ed63d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -7984,7 +8302,7 @@
     "kind": "upload",
     "file": "library/arxiv-1204.4824v2/1204.4824v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-1204.4824v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8019,6 +8337,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bf01cbaa5a87"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8140,7 +8464,7 @@
     "kind": "upload",
     "file": "library/arxiv-1301.4504v4/1301.4504v4.pdf"
    },
-   "id": null,
+   "id": "arxiv-1301.4504v4",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8189,6 +8513,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "201acc5bb1d4"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8196,7 +8526,7 @@
     "kind": "upload",
     "file": "library/arxiv-1302.0342v1/1302.0342v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-1302.0342v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8231,6 +8561,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ec2ca6ba7896"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8274,7 +8610,7 @@
     "kind": "upload",
     "file": "library/arxiv-1304.2705v1/1304.2705v1.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2013",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -8332,6 +8668,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "cb07e66e418e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8365,7 +8707,7 @@
     "kind": "upload",
     "file": "library/13116841v1/1311.6841v1.pdf"
    },
-   "id": null,
+   "id": "dupuis-girelli2013",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8400,6 +8742,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ca65879d80b1"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8407,7 +8755,7 @@
     "kind": "upload",
     "file": "library/arxiv-1402.4615v3/1402.4615v3.pdf"
    },
-   "id": null,
+   "id": "dolega-feray2014",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8450,6 +8798,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "b6e7c795cd1a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8457,7 +8811,7 @@
     "kind": "upload",
     "file": "library/arxiv-1404.0331v1/1404.0331v1.pdf"
    },
-   "id": null,
+   "id": "tran2014",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8502,6 +8856,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "53d7ce3afaf4"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8509,7 +8869,7 @@
     "kind": "upload",
     "file": "library/arxiv-1404.2541v1/1404.2541v1.pdf"
    },
-   "id": null,
+   "id": "morita2014",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8553,6 +8913,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "edb7c9b2b156"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8602,7 +8968,7 @@
     "kind": "upload",
     "file": "library/arxiv-1504.07260v3/1504.07260v3.pdf"
    },
-   "id": null,
+   "id": "arxiv-1504.07260v3",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8637,6 +9003,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "707cb014400a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8644,7 +9016,7 @@
     "kind": "upload",
     "file": "library/arxiv-1508.01458v1/1508.01458v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-1508.01458v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -8663,6 +9035,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "37cfb89f419c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8670,7 +9048,7 @@
     "kind": "upload",
     "file": "library/arxiv-1511.00400v2/1511.00400v2.pdf"
    },
-   "id": null,
+   "id": "porti2015",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8722,6 +9100,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "6cb493049394"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8729,7 +9113,7 @@
     "kind": "upload",
     "file": "library/arxiv-1512.04993v2/1512.04993v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-1512.04993v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -8748,6 +9132,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b8047bc3d381"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8790,7 +9180,7 @@
     "kind": "upload",
     "file": "library/arxiv-1604.02688v1/1604.02688v1.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-hodgson-hoffman-rubinstein2016",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -8847,6 +9237,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bdcafe379519"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8854,7 +9250,7 @@
     "kind": "upload",
     "file": "library/arxiv-1611.03697v5/1611.03697v5.pdf"
    },
-   "id": null,
+   "id": "bridgeland2016",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -8897,6 +9293,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "3d7e5a14a079"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -8976,7 +9378,7 @@
     "kind": "upload",
     "file": "library/arxiv-1704.01735v4/1704.01735v4.pdf"
    },
-   "id": null,
+   "id": "yang2017",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9020,6 +9422,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "3935747ae929"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9027,7 +9435,7 @@
     "kind": "upload",
     "file": "library/arxiv-1704.02352v2/1704.02352v2.pdf"
    },
-   "id": null,
+   "id": "dolega-sniady2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9070,6 +9478,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "9a14dd6ee332"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9164,7 +9578,7 @@
     "kind": "upload",
     "file": "library/arxiv-1710.04865v2/1710.04865v2.pdf"
    },
-   "id": null,
+   "id": "lovejoy-osburn",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9200,6 +9614,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ac8f436173d5"
+   },
+   "note": "Bib key backfilled from duplicate copy of cjdoubletwistfinal, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9207,7 +9627,7 @@
     "kind": "upload",
     "file": "library/arxiv-1712.04887v3/1712.04887v3.pdf"
    },
-   "id": null,
+   "id": "calegari-garoufalidis-zagier2017",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -9227,6 +9647,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "024317c20a1d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9234,7 +9660,7 @@
     "kind": "upload",
     "file": "library/arxiv-1803.04009v2/1803.04009v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-1803.04009v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -9299,6 +9725,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "8b34299b739c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9306,7 +9738,7 @@
     "kind": "upload",
     "file": "library/arxiv-1806.09450v1/1806.09450v1.pdf"
    },
-   "id": null,
+   "id": "todorov2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -9356,6 +9788,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "8556b67d9785"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9400,7 +9838,7 @@
     "kind": "upload",
     "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
    },
-   "id": null,
+   "id": "susskind2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9430,6 +9868,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "8e17ac8b91bc"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9437,7 +9881,7 @@
     "kind": "upload",
     "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
    },
-   "id": null,
+   "id": "susskind2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -9456,6 +9900,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "8e17ac8b91bc"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9463,7 +9913,7 @@
     "kind": "upload",
     "file": "library/arxiv-1811.05376v4/1811.05376v4.pdf"
    },
-   "id": null,
+   "id": "andersen-mistegard2020",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9512,6 +9962,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a486709d0a78"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9519,7 +9975,7 @@
     "kind": "upload",
     "file": "library/arxiv-1906.12122v2/1906.12122v2.pdf"
    },
-   "id": null,
+   "id": "hammer2019",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9555,6 +10011,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "955e3eda4867"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9618,7 +10080,7 @@
     "kind": "upload",
     "file": "library/arxiv-1909.06744v1/1909.06744v1.pdf"
    },
-   "id": null,
+   "id": "shoji2019",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9660,6 +10122,12 @@
     },
     "assessed_at": "2026-08-08T00:00:00Z",
     "source_sha": "82e3980da78c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9667,7 +10135,7 @@
     "kind": "upload",
     "file": "library/arxiv-1910.09966v1/1910.09966v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-1910.09966v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9703,6 +10171,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "21798500c98e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9710,7 +10184,7 @@
     "kind": "upload",
     "file": "library/arxiv-1911.04486v4/1911.04486v4.pdf"
    },
-   "id": null,
+   "id": "vancea2019",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -9729,6 +10203,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "53a34938c0e6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9736,7 +10216,7 @@
     "kind": "upload",
     "file": "library/arxiv-1912.13486v2/1912.13486v2.pdf"
    },
-   "id": null,
+   "id": "chung2019",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9765,6 +10245,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "9a8dbc1a143f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9772,7 +10258,7 @@
     "kind": "upload",
     "file": "library/1992evansberger/1992EvansBerger.pdf"
    },
-   "id": null,
+   "id": "evans-berger1992",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -9823,6 +10309,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "6f100e931a1e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9925,7 +10417,7 @@
     "kind": "upload",
     "file": "library/arxiv-2009.03688v6/2009.03688v6.pdf"
    },
-   "id": null,
+   "id": "yang2020",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -9944,6 +10436,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "8eb9b4cbe269"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10003,7 +10501,7 @@
     "kind": "upload",
     "file": "library/2018sorus020/2018SORUS020.pdf"
    },
-   "id": null,
+   "id": "benard2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10038,6 +10536,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "c3f929e51959"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10045,7 +10549,7 @@
     "kind": "upload",
     "file": "library/210811825v1/2108.11825v1.pdf"
    },
-   "id": null,
+   "id": "cook2021",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10080,6 +10584,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "1c2a4b317d62"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10087,7 +10597,7 @@
     "kind": "upload",
     "file": "library/arxiv-2109.00379v1/2109.00379v1.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2021",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10130,6 +10640,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "f0c9bd89312a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10137,7 +10653,7 @@
     "kind": "upload",
     "file": "library/arxiv-2109.04664v4/2109.04664v4.pdf"
    },
-   "id": null,
+   "id": "murakami2021",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -10157,6 +10673,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "639cd40a2975"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10164,7 +10686,7 @@
     "kind": "upload",
     "file": "library/arxiv-2111.04763v2/2111.04763v2.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2021a",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10200,6 +10722,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "760a7f9794e8"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10251,7 +10779,7 @@
     "kind": "upload",
     "file": "library/yuasa-rims-kokyuroku-2163-05/yuasa-rims-kokyuroku-2163-05.pdf"
    },
-   "id": null,
+   "id": "yuasa-rims2163",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10270,6 +10798,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "fa2a585b45c2"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10277,7 +10811,7 @@
     "kind": "upload",
     "file": "library/arxiv-2203.17029v1/2203.17029v1.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-wheeler-modular",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10342,6 +10876,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "5557f7f272cb"
+   },
+   "note": "Bib key backfilled from duplicate copy of modularqholonomicmodules, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10349,7 +10889,7 @@
     "kind": "upload",
     "file": "library/arxiv-2205.01282v2/2205.01282v2.pdf"
    },
-   "id": null,
+   "id": "murakami-y2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10384,6 +10924,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "00f656afa60d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10436,7 +10982,7 @@
     "kind": "upload",
     "file": "library/arxiv-2209.06973v1/2209.06973v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-2209.06973v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10472,6 +11018,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "cc3393a17c48"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10479,7 +11031,7 @@
     "kind": "upload",
     "file": "library/arxiv-2211.08164v2/2211.08164v2.pdf"
    },
-   "id": null,
+   "id": "reyescarocca2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10528,6 +11080,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "aff9ff3ef5ac"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10535,7 +11093,7 @@
     "kind": "upload",
     "file": "library/arxiv-2211.13362v2/2211.13362v2.pdf"
    },
-   "id": null,
+   "id": "das2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10554,6 +11112,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "3becbeaa1135"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10561,7 +11125,7 @@
     "kind": "upload",
     "file": "library/arxiv-2301.02038v1/2301.02038v1.pdf"
    },
-   "id": null,
+   "id": "pugliese2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10598,6 +11162,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "27b303939826"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10605,7 +11175,7 @@
     "kind": "upload",
     "file": "library/arxiv-2302.05903v2/2302.05903v2.pdf"
    },
-   "id": null,
+   "id": "mironov2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10624,6 +11194,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "9a17abd36cc8"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10631,7 +11207,7 @@
     "kind": "upload",
     "file": "library/arxiv-2304.07001v3/2304.07001v3.pdf"
    },
-   "id": null,
+   "id": "crew2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10695,6 +11271,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "b6c0d7f50b64"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10729,7 +11311,7 @@
     "kind": "upload",
     "file": "library/arxiv-2304.12545v1/2304.12545v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-2304.12545v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10779,6 +11361,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bfc3c2be395b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10786,7 +11374,7 @@
     "kind": "upload",
     "file": "library/arxiv-2304.12545v1/2304.12545v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-2304.12545v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -10829,6 +11417,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bfc3c2be395b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10836,7 +11430,7 @@
     "kind": "upload",
     "file": "library/arxiv-2305.14884v2/2305.14884v2.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -10856,6 +11450,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ebc8e64d901c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10863,7 +11463,7 @@
     "kind": "upload",
     "file": "library/arxiv-2311.02632v2/2311.02632v2.pdf"
    },
-   "id": null,
+   "id": "lee2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10882,6 +11482,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "0da5ba097b79"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10889,7 +11495,7 @@
     "kind": "upload",
     "file": "library/arxiv-2401.04019v1/2401.04019v1.pdf"
    },
-   "id": null,
+   "id": "ballantine2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10908,6 +11514,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "1a29e52a8163"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10915,7 +11527,7 @@
     "kind": "upload",
     "file": "library/arxiv-2402.01890v4/2402.01890v4.pdf"
    },
-   "id": null,
+   "id": "ormeno-martin-ryom-hansen",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -10934,6 +11546,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "e1eeb2865f0b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10941,7 +11559,7 @@
     "kind": "upload",
     "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
    },
-   "id": null,
+   "id": "kegel2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -10991,6 +11609,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "daf09811c350"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -10998,7 +11622,7 @@
     "kind": "upload",
     "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
    },
-   "id": null,
+   "id": "kegel2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11033,6 +11657,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "daf09811c350"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11040,7 +11670,7 @@
     "kind": "upload",
     "file": "library/arxiv-2402.08782v1/2402.08782v1.pdf"
    },
-   "id": null,
+   "id": "kattan2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -11091,6 +11721,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "30311f0bd815"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11185,7 +11821,7 @@
     "kind": "upload",
     "file": "library/arxiv-2412.02281v1/2412.02281v1.pdf"
    },
-   "id": null,
+   "id": "lin2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11237,6 +11873,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ac4127cf4994"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11244,7 +11886,7 @@
     "kind": "upload",
     "file": "library/arxiv-2412.04241v2/2412.04241v2.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-scholze-wheeler-zagier2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -11288,6 +11930,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "308d1dd1c42b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11432,7 +12080,7 @@
     "kind": "upload",
     "file": "library/arxiv-2507.13873v1/2507.13873v1.pdf"
    },
-   "id": null,
+   "id": "belaey2025",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11467,6 +12115,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "fa1d38d08dc4"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11474,7 +12128,7 @@
     "kind": "upload",
     "file": "library/arxiv-2509.02354v2/2509.02354v2.pdf"
    },
-   "id": null,
+   "id": "mcphail-snyder-reshetikhin2025",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11509,6 +12163,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "14680221e597"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11516,7 +12176,7 @@
     "kind": "upload",
     "file": "library/arxiv-2510.04782v2/2510.04782v2.pdf"
    },
-   "id": null,
+   "id": "wagner2025",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11560,6 +12220,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "591d0bdf2c48"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11593,7 +12259,7 @@
     "kind": "upload",
     "file": "library/arxiv-2601.15862v1/2601.15862v1.pdf"
    },
-   "id": null,
+   "id": "giotopoulos2026",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -11612,6 +12278,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "e37fa9b4515f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11619,7 +12291,7 @@
     "kind": "upload",
     "file": "library/arxiv-2604.16077v1/2604.16077v1.pdf"
    },
-   "id": null,
+   "id": "baseilhac2026",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -11655,6 +12327,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "2f1140b9d5fe"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11662,7 +12340,7 @@
     "kind": "upload",
     "file": "library/arxiv-2605.22763v1/2605.22763v1.pdf"
    },
-   "id": null,
+   "id": "tsoukalas-etal2026",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -11681,6 +12359,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "1fe6b92bb5eb"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11688,7 +12372,7 @@
     "kind": "upload",
     "file": "library/arxiv-2605.28781v1/2605.28781v1.pdf"
    },
-   "id": null,
+   "id": "bloom2026",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -11707,6 +12391,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "eee6d535af19"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11756,7 +12446,7 @@
     "kind": "upload",
     "file": "library/4geo-dedi-rev/4GEO-DEDI-REV.pdf"
    },
-   "id": null,
+   "id": "baseilhac-benedetti-fibred",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11799,6 +12489,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "e4d52947b71a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11806,7 +12502,7 @@
     "kind": "upload",
     "file": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf"
    },
-   "id": null,
+   "id": "klein-fewbody",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -11856,6 +12552,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "7ecafdd08255"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11863,7 +12565,7 @@
     "kind": "upload",
     "file": "library/5s032x/5S032X.pdf"
    },
-   "id": null,
+   "id": "szangolies",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -11882,6 +12584,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "17761383781f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11938,7 +12646,7 @@
     "kind": "upload",
     "file": "library/6gtx-j455/6gtx-j455.pdf"
    },
-   "id": null,
+   "id": "liu-quintin-afshordi",
    "status": "unreviewed",
    "relevance": {
     "verdict": "undetermined",
@@ -11958,6 +12666,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "3b0864e13730"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11965,7 +12679,7 @@
     "kind": "upload",
     "file": "library/90-1-219/90-1-219.pdf"
    },
-   "id": null,
+   "id": "morita1993",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -11985,6 +12699,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "c2e3f2f8946c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11992,7 +12712,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9306069v2/9306069v2.pdf"
    },
-   "id": null,
+   "id": "susskind-thorlacius-uglum1993",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -12011,6 +12731,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a140d10424f7"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12018,7 +12744,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
    },
-   "id": null,
+   "id": "susskind-thorlacius1993",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12053,6 +12779,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "032c25faa757"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12060,7 +12792,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
    },
-   "id": null,
+   "id": "susskind-thorlacius1993",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -12079,6 +12811,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "032c25faa757"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12155,7 +12893,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9408045v1/9408045v1.pdf"
    },
-   "id": null,
+   "id": "barcelosneto1994",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -12174,6 +12912,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a9786c0f44a4"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12381,7 +13125,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9506138v1/9506138v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-hep-th-9506138v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12416,6 +13160,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bb85afba0530"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12500,7 +13250,7 @@
     "kind": "upload",
     "file": "library/arxiv-q-alg-9608020v2/9608020v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-q-alg-9608020v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12529,6 +13279,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "727268098db7"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12536,7 +13292,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-ph-9612303v1/9612303v1.pdf"
    },
-   "id": null,
+   "id": "kleinkreisler1996",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12572,6 +13328,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "5311d7faf2b3"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12685,7 +13447,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9811173v1/9811173v1.pdf"
    },
-   "id": null,
+   "id": "broadhurst1998",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12721,6 +13483,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "986bf5794774"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12728,7 +13496,7 @@
     "kind": "upload",
     "file": "library/afst-2007-6-16-3-665-0/AFST_2007_6_16_3_665_0.pdf"
    },
-   "id": null,
+   "id": "vanderput-reversat2007",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12764,6 +13532,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "402b61574e56"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12771,7 +13545,7 @@
     "kind": "upload",
     "file": "library/aif-2000-50-4-1021-0/AIF_2000__50_4_1021_0.pdf"
    },
-   "id": null,
+   "id": "sauloy2000",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -12815,6 +13589,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a7ca398590a2"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12848,7 +13628,7 @@
     "kind": "upload",
     "file": "library/birkhoff-generalizedriemannproblem-1913/Birkhoff-GeneralizedRiemannProblem-1913.pdf"
    },
-   "id": null,
+   "id": "birkhoff1913",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12883,6 +13663,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bd728603454b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12926,7 +13712,7 @@
     "kind": "upload",
     "file": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/Celebratio Mathematica \u2014 Neumann \u2014 Hyperbolic 3-Manifolds.pdf"
    },
-   "id": null,
+   "id": "arxiv-2304.12545v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12945,6 +13731,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "9e541693c60c"
+   },
+   "note": "Bib key backfilled from duplicate copy of arxiv-2304.12545v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12952,7 +13744,7 @@
     "kind": "upload",
     "file": "library/cuspshapes/CuspShapes.pdf"
    },
-   "id": null,
+   "id": "dang-purcell",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12996,6 +13788,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "01db19e63193"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13003,7 +13801,7 @@
     "kind": "upload",
     "file": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf"
    },
-   "id": null,
+   "id": "fujii2005",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13033,6 +13831,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bca3996c7a66"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13040,7 +13844,7 @@
     "kind": "upload",
     "file": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf"
    },
-   "id": null,
+   "id": "fujii1992",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -13059,6 +13863,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "d3d3bf68955a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13066,7 +13876,7 @@
     "kind": "upload",
     "file": "library/equations-aux-q-differences/Equations_aux_q-differences.pdf"
    },
-   "id": null,
+   "id": "divizio-ramis-sauloy-zhang",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -13115,6 +13925,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "357d4e0b546b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13122,7 +13938,7 @@
     "kind": "upload",
     "file": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf"
    },
-   "id": null,
+   "id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -13141,6 +13957,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "aa2f1eb73610"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13148,7 +13970,7 @@
     "kind": "upload",
     "file": "library/hyperbolicandneumann/HyperbolicAndNeumann.pdf"
    },
-   "id": null,
+   "id": "arxiv-2304.12545v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13167,6 +13989,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "3d66fe4c64bd"
+   },
+   "note": "Bib key backfilled from duplicate copy of arxiv-2304.12545v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13174,7 +14002,7 @@
     "kind": "upload",
     "file": "library/invariant-eigendistributions-2/Invariant_eigendistributions_2.pdf"
    },
-   "id": null,
+   "id": "rossmann-invariant-eigendistributions-2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13217,6 +14045,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ee43c3ebeff9"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13224,7 +14058,7 @@
     "kind": "upload",
     "file": "library/kmj-48-2-255/KMJ-48-2-255.pdf"
    },
-   "id": null,
+   "id": "takata2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13259,6 +14093,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "720279042c6d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13266,7 +14106,7 @@
     "kind": "upload",
     "file": "library/monodromyhitchiny/MonodromyHitchinY.pdf"
    },
-   "id": null,
+   "id": "laszlo-pauly-sorger",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -13292,6 +14132,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "1c9288ddbb5b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13299,7 +14145,7 @@
     "kind": "upload",
     "file": "library/motivicperiodsandp1minus3pointsv3/MotivicPeriodsandP1minus3pointsv3.pdf"
    },
-   "id": null,
+   "id": "brown-motivic-p1-three-points",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13335,6 +14181,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "7870572b8cc3"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13342,7 +14194,7 @@
     "kind": "upload",
     "file": "library/on-the-garoufalidis-kashaev-state-integral-invariant/On the Garoufalidis-Kashaev State-Integral Invariant.pdf"
    },
-   "id": null,
+   "id": "dusenbury2025",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13368,6 +14220,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "eda230da2a59"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13375,7 +14233,7 @@
     "kind": "upload",
     "file": "library/arxiv-2209.06973v1/2209.06973v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-2209.06973v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13410,6 +14268,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "cc3393a17c48"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13417,7 +14281,7 @@
     "kind": "upload",
     "file": "library/ppn356556735-0036/PPN356556735_0036.pdf"
    },
-   "id": null,
+   "id": "springer1976",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -13453,6 +14317,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a41a1773c81c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13460,7 +14330,7 @@
     "kind": "upload",
     "file": "library/physrevd108106023/PhysRevD.108.106023.pdf"
    },
-   "id": null,
+   "id": "singh-physrevd108106023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -13510,6 +14380,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "50c7980e88cd"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13517,7 +14393,7 @@
     "kind": "upload",
     "file": "library/resur-and-mld-calc-d-sauzin-hal/Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf"
    },
-   "id": null,
+   "id": "sauzin2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13546,6 +14422,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b33f24cc7610"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13553,7 +14435,7 @@
     "kind": "upload",
     "file": "library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf"
    },
-   "id": null,
+   "id": "besser-dejeu2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -13604,6 +14486,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "080b5ac8542f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13653,7 +14541,7 @@
     "kind": "upload",
     "file": "library/agt-v12-n2-p04-s/agt-v12-n2-p04-s.pdf"
    },
-   "id": null,
+   "id": "kitano-twisted-alexander",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -13672,6 +14560,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "bcbb460bc75f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13722,7 +14616,7 @@
     "kind": "upload",
     "file": "library/agt-v7-n2-p13-s/agt-v7-n2-p13-s.pdf"
    },
-   "id": null,
+   "id": "baseilhac-benedetti2007",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13765,6 +14659,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "affd571adbaa"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13798,7 +14698,7 @@
     "kind": "upload",
     "file": "library/bn/bn.pdf"
    },
-   "id": null,
+   "id": "mcmullen2009",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13827,6 +14727,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "95ed0908ceb5"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13834,7 +14740,7 @@
     "kind": "upload",
     "file": "library/cjdoubletwistfinal/cJdoubletwistfinal.pdf"
    },
-   "id": null,
+   "id": "lovejoy-osburn",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -13877,6 +14783,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a1e18db5232b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -13921,7 +14833,7 @@
     "kind": "upload",
     "file": "library/centsim/centsim.pdf"
    },
-   "id": null,
+   "id": "geck-rouquier-centsim",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -13978,6 +14890,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "41eaa1d757e6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14029,7 +14947,7 @@
     "kind": "upload",
     "file": "library/cor-ma1/cor-ma1.pdf"
    },
-   "id": null,
+   "id": "corteel-mallet2006",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14049,6 +14967,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "d90c91dcd82b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14056,7 +14980,7 @@
     "kind": "upload",
     "file": "library/cspaper/cspaper.pdf"
    },
-   "id": null,
+   "id": "neumann-cspaper",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14107,6 +15031,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "1910c380cf79"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14114,7 +15044,7 @@
     "kind": "upload",
     "file": "library/deligne-mostow-1986/deligne-mostow-1986.pdf"
    },
-   "id": null,
+   "id": "deligne-mostow1986",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14133,6 +15063,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "d9850f70ab2f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14140,7 +15076,7 @@
     "kind": "upload",
     "file": "library/descendants-colored-jones/descendants_colored_jones.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-kashaev-descendants2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14176,6 +15112,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "f00693a5926c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14183,7 +15125,7 @@
     "kind": "upload",
     "file": "library/ds15v1-2008/ds15v1-2008.pdf"
    },
-   "id": null,
+   "id": "mclaughlin2008",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14202,6 +15144,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "aef155a324c6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14209,7 +15157,7 @@
     "kind": "upload",
     "file": "library/arxiv-0905.0591v3/friedvidu1.pdf"
    },
-   "id": null,
+   "id": "friedl-vidussi2010",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14228,6 +15176,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "cfeaf61f759a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14235,7 +15189,7 @@
     "kind": "upload",
     "file": "library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf"
    },
-   "id": null,
+   "id": "zagier-dilogarithm",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -14270,6 +15224,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "05079cf525c6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14277,7 +15237,7 @@
     "kind": "upload",
     "file": "library/gambaudo-ghys-braids-signatures-2005/gambaudo-ghys-braids-signatures-2005.pdf"
    },
-   "id": null,
+   "id": "gambaudo-ghys2005",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14296,6 +15256,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "647f4c28cab7"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14303,7 +15269,7 @@
     "kind": "upload",
     "file": "library/gn2/gn2.pdf"
    },
-   "id": null,
+   "id": "gelca-nagasato",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -14338,6 +15304,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "ffe8965c496d"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14381,7 +15353,7 @@
     "kind": "upload",
     "file": "library/ki52/ki52.pdf"
    },
-   "id": null,
+   "id": "ohtsuki2016",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14417,6 +15389,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "35ad4ee5a00d"
+   },
+   "note": "Bib key backfilled from duplicate copy of 104171-qt-83, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14466,7 +15444,7 @@
     "kind": "upload",
     "file": "library/mcmullen-braids-hodge-2013/mcmullen-braids-hodge-2013.pdf"
    },
-   "id": null,
+   "id": "mcmullen1988",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14485,6 +15463,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b859c9ad6f62"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14492,7 +15476,7 @@
     "kind": "upload",
     "file": "library/modularqholonomicmodules/modular.qholonomic.modules.pdf"
    },
-   "id": null,
+   "id": "garoufalidis-wheeler-modular",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14536,6 +15520,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "640303a68dd7"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14543,7 +15533,7 @@
     "kind": "upload",
     "file": "library/nrarith/nrarith.pdf"
    },
-   "id": null,
+   "id": "neumann-reid",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14593,6 +15583,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "085ec9541ddc"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14600,7 +15596,7 @@
     "kind": "upload",
     "file": "library/ojm27-03-04/ojm27_03_04.pdf"
    },
-   "id": null,
+   "id": "fujii1990",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -14619,6 +15615,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b357cc8378da"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14626,7 +15628,7 @@
     "kind": "upload",
     "file": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf"
    },
-   "id": null,
+   "id": "malkin2021",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -14662,6 +15664,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "3bc30dc6a4a0"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14669,7 +15677,7 @@
     "kind": "upload",
     "file": "library/phys-rep09/phys-rep09.pdf"
    },
-   "id": null,
+   "id": "blanes-casas-oteo-ros2009",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -14712,6 +15720,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "cd345d3df935"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14762,7 +15776,7 @@
     "kind": "upload",
     "file": "library/s00601-022-01745-1/s00601-022-01745-1.pdf"
    },
-   "id": null,
+   "id": "kievsky-girlanda2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "not-relevant",
@@ -14781,6 +15795,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "9badfa30f706"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14788,7 +15808,7 @@
     "kind": "upload",
     "file": "library/s40687-023-00400-3/s40687-023-00400-3.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2021",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -14831,6 +15851,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "fd7638a8cf51"
+   },
+   "note": "Bib key backfilled from duplicate copy of arxiv-2109.00379v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14926,7 +15952,7 @@
     "kind": "upload",
     "file": "library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf"
    },
-   "id": null,
+   "id": "squier1984",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -14968,6 +15994,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "5087ee3cb486"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -14975,7 +16007,7 @@
     "kind": "upload",
     "file": "library/stateintegralsqseries/state.integrals.qseries.pdf"
    },
-   "id": null,
+   "id": "garoufalidis2013",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -15024,6 +16056,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "a5e86443f35e"
+   },
+   "note": "Bib key backfilled from duplicate copy of arxiv-1304.2705v1, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15068,7 +16106,7 @@
     "kind": "upload",
     "file": "library/zagier-the-dilogarithm-function-copy-b/zagier-the-dilogarithm-function-copy-b.pdf"
    },
-   "id": null,
+   "id": "zagier-dilogarithm",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -15111,6 +16149,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "c584944a501e"
+   },
+   "note": "Bib key backfilled from duplicate copy of zagier-the-dilogarithm-function, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15209,7 +16253,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0005296v1/0005296v1.pdf"
    },
-   "id": null,
+   "id": "li2000",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15228,6 +16272,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "1714653ecfdf"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15235,7 +16285,7 @@
     "kind": "upload",
     "file": "library/04procbryden/04procbryden.pdf"
    },
-   "id": null,
+   "id": "jacoby-lawrence2004",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -15294,6 +16344,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "8baffbc6542c"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15301,23 +16357,35 @@
     "kind": "upload",
     "file": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf"
    },
-   "id": null,
-   "status": "unreviewed"
+   "id": "neumann-zagier1985",
+   "status": "unreviewed",
+   "note": "Bib key backfilled from duplicate copy of 1-s20-0040938385900047-main, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
+   }
   },
   {
    "source": {
     "kind": "upload",
     "file": "library/arxiv-1010.5321v3/1010.5321v3.pdf"
    },
-   "id": null,
-   "status": "unreviewed"
+   "id": "horvath2010",
+   "status": "unreviewed",
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
+   }
   },
   {
    "source": {
     "kind": "upload",
     "file": "library/arxiv-1202.4698v3/1202.4698.pdf"
    },
-   "id": null,
+   "id": "terashima-yamazaki2013",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -15366,6 +16434,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "54171c652161"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15373,7 +16447,7 @@
     "kind": "upload",
     "file": "library/arxiv-2302.08363v2/2302.08363v2.pdf"
    },
-   "id": null,
+   "id": "arxiv-2302.08363v2",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -15447,6 +16521,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "c2244e03b170"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15454,7 +16534,7 @@
     "kind": "upload",
     "file": "library/arxiv-2312.00624v1/2312.00624v1.pdf"
    },
-   "id": null,
+   "id": "mario2023",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -15505,6 +16585,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "bda867f7b84f"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15512,7 +16598,7 @@
     "kind": "upload",
     "file": "library/arxiv-2410.14661v1/2410.14661v1.pdf"
    },
-   "id": null,
+   "id": "arxiv-2410.14661v1",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15531,6 +16617,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "3362fcd5e28e"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15538,7 +16630,7 @@
     "kind": "upload",
     "file": "library/arxiv-q-alg-9504015v2/9504015v2.pdf"
    },
-   "id": null,
+   "id": "rozansky1995",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -15583,6 +16675,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "ea5588225a39"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15590,7 +16688,7 @@
     "kind": "upload",
     "file": "library/di-cairano-2022-j-phys-commun-6-015002/Di_Cairano_2022_J._Phys._Commun._6_015002.pdf"
    },
-   "id": null,
+   "id": "di-cairano2022",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15609,6 +16707,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "f75313b507f9"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15630,7 +16734,7 @@
     "kind": "upload",
     "file": "library/maximal-hoermander-q-var-revised-v03/Maximal-Hoermander-q-Var-revised-v03.pdf"
    },
-   "id": null,
+   "id": "deleaval-kriegler2024",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15649,6 +16753,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "135332c04a1b"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15656,7 +16766,7 @@
     "kind": "upload",
     "file": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf"
    },
-   "id": null,
+   "id": "lin-wang1999",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -15708,6 +16818,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "3fb38d4cfd20"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15715,8 +16831,14 @@
     "kind": "upload",
     "file": "library/poincare-proof-outline/POINCARE-proof-outline.pdf"
    },
-   "id": null,
-   "status": "unreviewed"
+   "id": "simic-maric-boutry2026",
+   "status": "unreviewed",
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
+   }
   },
   {
    "source": {
@@ -15737,7 +16859,7 @@
     "kind": "upload",
     "file": "library/yanagihara-1980-meromorphic-solutions-difference-equations/yanagihara-1980-meromorphic-solutions-difference-equations.pdf"
    },
-   "id": null,
+   "id": "yanagihara1980",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15756,6 +16878,12 @@
     },
     "assessed_at": "2026-08-09T00:10:43.091Z",
     "source_sha": "c5e4a39ec3d4"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15814,7 +16942,7 @@
     "kind": "upload",
     "file": "library/arxiv-1101.1563v1/1101.1563v1.pdf"
    },
-   "id": null,
+   "id": "bokutchenli2011",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15838,6 +16966,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "0c45b250fc4a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15845,7 +16979,7 @@
     "kind": "upload",
     "file": "library/arxiv-1203.6531v1/1203.6531v1.pdf"
    },
-   "id": null,
+   "id": "yilmaz2012",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15864,6 +16998,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "29541f28c1c6"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15945,7 +17085,7 @@
     "kind": "upload",
     "file": "library/arxiv-1808.05026v1/1808.05026v1.pdf"
    },
-   "id": null,
+   "id": "kimlee2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -15969,6 +17109,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "2781e0b34e78"
+   },
+   "note": "Bib key backfilled from duplicate copy of fd58d8e182edda805fed0946606c5ab82f81, which carries this key. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15976,7 +17122,7 @@
     "kind": "upload",
     "file": "library/arxiv-1809.08419v1/1809.08419v1.pdf"
    },
-   "id": null,
+   "id": "lee2018",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -16001,6 +17147,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "7ebca632544a"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -16008,7 +17160,7 @@
     "kind": "upload",
     "file": "library/arxiv-2002.07369v2/2002.07369v2.pdf"
    },
-   "id": null,
+   "id": "pang2020",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -16027,6 +17179,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "6b8b1e509553"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -16034,7 +17192,7 @@
     "kind": "upload",
     "file": "library/arxiv-2008.09788v2/2008.09788v2.pdf"
    },
-   "id": null,
+   "id": "kanelbelov2020",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -16058,6 +17216,12 @@
     },
     "assessed_at": "2026-08-09T19:30:00Z",
     "source_sha": "460f4f5432cb"
+   },
+   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "verified_at": "2026-09-03T04:37:40Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
