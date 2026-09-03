@@ -1,5 +1,7 @@
 import QOU.MathlibExt.RegTraceGram
+import QOU.MathlibExt.TracePi
 import Mathlib.RingTheory.SimpleRing.Basic
+import Mathlib.RingTheory.SimpleRing.Matrix
 
 /-!
 # QOU.MathlibExt.RegTraceGramNondegenerate — the CONVERSE of the Gram criterion
@@ -42,6 +44,13 @@ genuinely semisimple algebra vanishes.
   argument runs on: associativity of the form, and `B(1,1) = finrank`.
 * `regTraceBilin_nondegenerate_of_isSimpleRing` — **the key step.**  On a simple ring the
   radical is a two-sided ideal, hence `⊥` or `⊤`; `⊤` is excluded by `B(1,1) ≠ 0`.
+* `regTraceForm_pi` / `regTraceBilin_nondegenerate_pi` — reassembly over a finite product of
+  algebras, which is what a Wedderburn decomposition actually lands in.  A product of matrix
+  algebras is **not** simple, so the block verdicts have to be summed rather than transported.
+* `regTraceBilin_nondegenerate_matrix` — the block case, and
+  `regTraceBilin_nondegenerate_of_algEquiv_pi_matrix` — the three assembled: any algebra
+  isomorphic to a finite product of matrix algebras over a characteristic-zero field has
+  nondegenerate regular trace form, hence nonzero Gram determinant in *every* basis.
 -/
 
 namespace QOU.MathlibExt
@@ -157,5 +166,92 @@ theorem regTraceBilin_nondegenerate_of_isSimpleRing_charZero
   refine regTraceBilin_nondegenerate_of_isSimpleRing ?_
   rw [regTraceForm_one_one]
   exact_mod_cast (Module.finrank_pos (R := K) (M := A)).ne'
+
+section Pi
+
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+variable {B : ι → Type*} [∀ i, Ring (B i)] [∀ i, Algebra K (B i)]
+variable [∀ i, FiniteDimensional K (B i)]
+
+/-- **The regular trace form of a finite product is the sum of the blocks' forms.**
+
+`L_x` on `∀ i, B i` is block-diagonal with blocks `L_{x i}`, so `QOU.MathlibExt.trace_piDiag`
+applies.  Mathlib covers only the binary case (`LinearMap.trace_prodMap'`); the `∀ i` version
+is in `QOU.MathlibExt.TracePi`. -/
+theorem regTraceForm_pi (x y : ∀ i, B i) :
+    regTraceForm K (∀ i, B i) x y = ∑ i, regTraceForm K (B i) (x i) (y i) := by
+  have hblock : (lmul K (∀ i, B i)) (x * y)
+      = piDiag (fun i => (lmul K (B i)) (x i * y i)) := by
+    ext z i
+    simp [piDiag_apply]
+  rw [regTraceForm, hblock, trace_piDiag]
+  rfl
+
+/-- **Nondegeneracy is inherited from the blocks of a finite product.**
+
+Testing an `x` against `y = Pi.single j w` kills every summand of `regTraceForm_pi` but the
+`j`-th, so the hypothesis at index `j` forces `x j = 0`. -/
+theorem regTraceBilin_nondegenerate_pi
+    (h : ∀ i, (regTraceBilin K (B i)).Nondegenerate) :
+    (regTraceBilin K (∀ i, B i)).Nondegenerate := by
+  intro x hx
+  funext j
+  refine h j (x j) fun w => ?_
+  have hxj := hx (Pi.single j w)
+  rw [regTraceBilin_apply, regTraceForm_pi] at hxj
+  rw [Finset.sum_eq_single j] at hxj
+  · rw [regTraceBilin_apply]
+    simpa using hxj
+  · intro i _ hij
+    have : (Pi.single j w : ∀ i, B i) i = 0 := Pi.single_eq_of_ne hij w
+    rw [this]
+    simp [regTraceForm]
+  · intro hj
+    exact absurd (Finset.mem_univ j) hj
+
+/-- **The regular trace form of a matrix algebra over a characteristic-zero field is
+nondegenerate.**
+
+`Matrix ι ι K` is simple for nonempty `ι` (`IsSimpleRing.matrix` over the simple ring `K`), so
+`regTraceBilin_nondegenerate_of_isSimpleRing_charZero` applies.  Empty `ι` is the zero ring and
+is handled separately — it is *not* simple (simplicity requires `Nontrivial`), but its form is
+nondegenerate for the trivial reason that `0` is its only element. -/
+theorem regTraceBilin_nondegenerate_matrix {ι : Type*} [Fintype ι] [DecidableEq ι] [CharZero K] :
+    (regTraceBilin K (Matrix ι ι K)).Nondegenerate := by
+  rcases isEmpty_or_nonempty ι with hι | hι
+  · intro x _
+    exact Subsingleton.elim x 0
+  · exact regTraceBilin_nondegenerate_of_isSimpleRing_charZero
+
+/-- **The assembled statement.**
+
+An algebra carrying an isomorphism onto a finite product of matrix algebras over a
+characteristic-zero field has nondegenerate regular trace form.  Combined with
+`LinearMap.BilinForm.nondegenerate_iff_det_ne_zero` this says its Gram determinant is nonzero in
+*every* basis — which is the non-vanishing half of Geck–Pfeiffer 7.2.6, obtained without
+computing the Schur-element product.
+
+This is the exact shape `QOU.SchurWeyl.heckeWedderburn` supplies. -/
+theorem regTraceBilin_nondegenerate_of_algEquiv_pi_matrix [CharZero K] [FiniteDimensional K A]
+    {ι : Type*} [Fintype ι] [DecidableEq ι] {J : ι → Type*}
+    [∀ i, Fintype (J i)] [∀ i, DecidableEq (J i)]
+    (e : A ≃ₐ[K] (∀ i, Matrix (J i) (J i) K)) :
+    (regTraceBilin K A).Nondegenerate :=
+  regTraceBilin_nondegenerate_congr e
+    (regTraceBilin_nondegenerate_pi fun _ => regTraceBilin_nondegenerate_matrix)
+
+/-- **Gram determinant nonzero, in any basis.**  The determinant form of the statement above:
+this is what a `T_w`-basis Gram computation was needed for, now supplied by semisimplicity
+rather than by the Schur-element product. -/
+theorem regTraceGram_det_ne_zero_of_algEquiv_pi_matrix [CharZero K] [FiniteDimensional K A]
+    {ι : Type*} [Fintype ι] [DecidableEq ι] {J : ι → Type*}
+    [∀ i, Fintype (J i)] [∀ i, DecidableEq (J i)]
+    (e : A ≃ₐ[K] (∀ i, Matrix (J i) (J i) K))
+    {κ : Type*} [Fintype κ] [DecidableEq κ] (b : Module.Basis κ K A) :
+    (BilinForm.toMatrix b (regTraceBilin K A)).det ≠ 0 :=
+  (BilinForm.nondegenerate_iff_det_ne_zero b).mp
+    (regTraceBilin_nondegenerate_of_algEquiv_pi_matrix e)
+
+end Pi
 
 end QOU.MathlibExt
