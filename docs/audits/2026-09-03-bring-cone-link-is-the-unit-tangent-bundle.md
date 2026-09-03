@@ -85,3 +85,72 @@ No connection from any of this to binding. No statement about the twist/torsion 
 the hull-exit analysis says is the missing one and which none of these frames supplies by
 itself. No claim that `BringCone.lean`'s lemmas are wrong — they are quaternion identities and
 they are true; the question is only what geometric object they are being read on.
+
+## Addendum (later the same day) — does the "degenerate" conciliation work?
+
+Owner asked to check. Three levels, and the answer is the same at each: **it works only as
+the split real form.**
+
+**1. What the corpus's own definition supplies.** `def:bring-cone-tetraplectic-structure`
+puts on the cone a closed 4-form whose top power is a volume form — on a 4-manifold, just an
+$S_5$-averaged volume form. A volume form on the cone induces a volume form on the link and
+nothing else; it does not induce a contact form, let alone a triad. The lemma's "where the
+bulk carries an invariant volume form, that link carries a 3-Sasakian (degenerate
+quaternionic-contact) structure" is therefore not a consequence of the definition it cites.
+The genuine geometric structure the cone carries is different and stronger: the restricted
+flat metric of $\mathbb{C}^5$ is a Kähler *cone* metric, so the link is **Sasakian** with a
+single Reeb field — the fibre rotation $V$ (Boyer–Galicki \cite{boyergalicki2008}). And the
+cone minus its vertex is $K_C^{-1}\setminus 0 \cong T^*C \setminus 0$ (fibrewise inversion),
+which carries the canonical holomorphic symplectic form. So the cone has a triple of closed
+2-forms — the Kähler form and $\mathrm{Re}\,\Omega$, $\mathrm{Im}\,\Omega$ — but the
+holomorphic pair has the wrong homogeneity under the cone's scaling to make a 3-Sasakian
+triple. That mismatch is what "degenerate" can honestly mean.
+
+**2. Whether an $\mathfrak{su}(2)$ Reeb triad can exist on the link at all.** A 3-Sasakian
+3-manifold is a spherical space form $S^3/\Gamma$ (\cite{boyergalicki2008}, Ch. 13), and
+$UT(\Sigma_4)$ is aspherical, so no. Stronger: three Reeb vector fields closing into
+$\mathfrak{su}(2)$ integrate to an $SU(2)$-action; on a closed aspherical 3-manifold every
+orbit of an $SU(2)$-action is a point (orbits are $S^3/\Gamma$, $S^2$, $\mathbb{RP}^2$ or
+points, and the first three are excluded by asphericity and irreducibility), so the action
+is trivial and the fields vanish. There is no degenerate way around this at the level of
+vector fields.
+
+**3. What triad the link does carry, and its brackets.** $UT(\Sigma_4)$ has three genuine
+contact forms: the connection form (Reeb field $V$, fibre rotation), the Liouville form
+(Reeb field $X$, geodesic flow), and the Liouville form pulled back by a quarter turn in
+the fibre (Reeb field $X^\perp$). These are the left-invariant frame of $\mathrm{PSL}(2,\mathbb{R})$,
+and with $X = H/2$, $X^\perp = (E+F)/2$, $V = (E-F)/2$:
+
+$$
+[X, X^\perp] = V,\qquad [X^\perp, V] = X,\qquad [V, X] = -X^\perp .
+$$
+
+Exactly one cyclic bracket has the opposite sign to $\mathfrak{su}(2)$'s
+$[e_1,e_2]=e_3,\ [e_2,e_3]=e_1,\ [e_3,e_1]=e_2$. That is $\mathfrak{sl}_2(\mathbb{R}) \cong
+\mathfrak{so}(2,1)$, and no real rescaling of the basis reaches $\mathfrak{su}(2)$.
+
+**In the lemma's own terms.** Replace the quaternions by the *split* quaternions
+($i^2=-1$, $j^2=k^2=+1$; the algebra $M_2(\mathbb{R})$, whose unit-norm elements are
+$\mathrm{SL}(2,\mathbb{R})$) and run the identical right-multiplication construction.
+`lean/QOU/BringConeSplit.lean` (sorry-free, same proof script as `BringCone.lean`) gives
+
+$$
+[M_i, M_j] = 2M_k,\qquad [M_j, M_k] = -2M_i,\qquad [M_k, M_i] = 2M_j ,
+$$
+
+and `split_ne_compact` records that the flipped bracket differs from the compact one in any
+characteristic-zero ring. So: the lemma's identities are true, and they are the identities
+of the real form that $UT(\Sigma_4)$ does **not** carry. The conciliation works if and only
+if "degenerate quaternionic-contact" is read as "split" — and then the structure constants
+in the lemma are $(2, -2, 2)$, not $(2, 2, 2)$, and the geodesic flow is a Reeb field.
+
+**What survives of the $\mathfrak{su}(2)$.** The structure group of the $\mathbb{H}$-valued
+resolvent bundle along the Reeb ($V$) flow — an internal symmetry, exactly as
+`rem:tetraplectic-su2-gauge-reading` already reads it, and unaffected by any of this. What
+does not survive is the phrase "an $\mathrm{SU}(2)$ triad of contact forms and dual Reeb
+fields" on this link.
+
+**Consequence for the knot complements.** Every component of the canonical closure is a
+$(2, 2g+1)$-torus knot with complement $\mathrm{PSL}(2,\mathbb{R})/\Delta(2,2g+1,\infty)$
+(`prop:canonical-closure-torus-chain`), so the split triad $\{V, X, X^\perp\}$ is the
+coordinate frame on those complements as well, with the same brackets.

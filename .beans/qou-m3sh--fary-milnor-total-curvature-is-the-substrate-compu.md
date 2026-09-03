@@ -211,3 +211,12 @@ thread, and the exchange channel is the transverse (linking) direction.
   cross-check) is the computational instance at A = 2,3,4,6. The two
   topological facts (composite closed braids; T(2,±1) removable) are cited,
   not re-proved; Lean carries the exponent bookkeeping only.
+- [x] **Real-form question answered (owner: "see if that conciliation works").** It
+  works only as the split form. The tetraplectic definition supplies a volume
+  form, not a contact triad; UT(Σ₄) is Sasakian with one Reeb field and, being
+  aspherical, admits no SU(2)-action, so an su(2) Reeb triad cannot exist on
+  it; the triad it carries (connection, Liouville, rotated Liouville; Reeb
+  fields V, X, X⊥) is sl₂(ℝ). `lean/QOU/BringConeSplit.lean`: the lemma's
+  construction on split quaternions gives (2, −2, 2) — one sign flipped —
+  and `split_ne_compact`. Audit addendum + second author note on the lemma
+  block. The su(2) survives as the resolvent bundle's structure group only.

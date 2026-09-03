@@ -51,6 +51,27 @@ export default lemma({
         "`docs/audits/2026-09-03-bring-cone-link-is-the-unit-tangent-bundle.md` " +
         "(bean `qou-m3sh`).",
     },
+    {
+      kind: "caveat",
+      date: "2026-09-03",
+      body:
+        "**The \"degenerate\" conciliation works only as the split real form " +
+        "(checked).** `def:bring-cone-tetraplectic-structure` supplies a volume " +
+        "form, which induces no contact triad; the link is Sasakian with the single " +
+        "Reeb field $V$, and a closed aspherical 3-manifold admits no non-trivial " +
+        "$\\mathrm{SU}(2)$-action, so three Reeb fields closing into " +
+        "$\\mathfrak{su}(2)$ cannot exist on $UT(\\Sigma_4)$. The triad it does " +
+        "carry — connection form, Liouville form, its quarter-turn rotation, Reeb " +
+        "fields $V, X, X^\\perp$ — closes into $\\mathfrak{sl}_2(\\mathbb{R})$. " +
+        "Running this lemma's construction on the split quaternions " +
+        "(`lean/QOU/BringConeSplit.lean`, sorry-free) gives $[M_i,M_j]=2M_k$, " +
+        "$[M_j,M_k]=-2M_i$, $[M_k,M_i]=2M_j$: one sign flipped, and " +
+        "`split_ne_compact` shows it is not the compact bracket. So the identities " +
+        "here are true and are those of the real form this link does not carry; " +
+        "the $\\mathfrak{su}(2)$ survives as the structure group of the resolvent " +
+        "bundle (the gauge reading of `rem:tetraplectic-su2-gauge-reading`), not as " +
+        "a Reeb triad. Addendum in the audit cited above.",
+    },
   ],
   tags: [
     "tetraplectic",
