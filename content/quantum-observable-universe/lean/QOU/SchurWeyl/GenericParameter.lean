@@ -88,6 +88,39 @@ theorem zpow_ne_one (hq : NotRootOfUnity q) {m : ℤ} (hm : m ≠ 0) :
     rw [hk, zpow_natCast] at h
     exact hq k hkpos h
 
+/-! ### The order-free replacements for the cone's `positivity` steps
+
+The Wedderburn cone's remaining archimedean uses are not `Real.*` — they are order tactics,
+and the recurring one is `(q ^ 2 + 1) ≠ 0`, proved over `ℝ` by `positivity`
+(`HoefsmitRep.sq_add_one_ne`) and used again inside `SeminormalParam`'s
+`(q ^ 2 - 1) * (q ^ 2 + 1) = 0` argument.  That statement is **false** over a general field —
+a primitive fourth root of unity has `q ^ 2 + 1 = 0` — so it looks like a second, independent
+obstruction to leaving `ℝ`.
+
+It is not.  `q ^ 2 + 1 = 0` forces `q ^ 4 = 1`, which `NotRootOfUnity` already forbids.  So
+the single hypothesis introduced above covers the order steps too, and the migration does
+not need `[LinearOrderedField K]`. -/
+
+/-- **`q` is not `1`** — the `m = 1` case, named because call sites want it in this form. -/
+theorem ne_one (hq : NotRootOfUnity q) : q ≠ 1 := fun h => hq 1 one_pos (by rw [h, one_pow])
+
+/-- **`q ^ 2 ≠ 1`**, the hypothesis the `ℝ` development carries explicitly. -/
+theorem sq_ne_one (hq : NotRootOfUnity q) : q ^ 2 ≠ 1 := hq 2 (by norm_num)
+
+/-- **`q ^ 2 + 1 ≠ 0` over any field**, given only that `q` is not a root of unity.
+
+This is the lemma that keeps the general-field migration from needing an order.  Over `ℝ`
+it is `positivity`; over a general field `positivity` is unavailable *and the statement can
+fail* — but only at a fourth root of unity, which the hypothesis excludes:
+`q ^ 2 = -1` gives `q ^ 4 = (-1) ^ 2 = 1`. -/
+theorem sq_add_one_ne_zero (hq : NotRootOfUnity q) : q ^ 2 + 1 ≠ 0 := by
+  intro h
+  refine hq 4 (by norm_num) ?_
+  -- `q⁴ = (q² + 1)(q² − 1) + 1`, and the first factor is the hypothesis.  Written this way
+  -- so the file keeps its single Mathlib import: no `linear_combination`, no order.
+  have key : q ^ 4 = (q ^ 2 + 1) * (q ^ 2 - 1) + 1 := by ring
+  rw [key, h, zero_mul, zero_add]
+
 /-- **A polynomial vanishing at every power of `q` is zero.**  `SeminormalInequivalence`
 proves this over `ℝ` from `0 < t` and `t ≠ 1`; the content is only that `m ↦ q ^ m` has
 infinite range, so it holds over any field. -/
