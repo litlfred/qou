@@ -97,3 +97,40 @@ local monodromy, not fitted numerically.
 > kernel with the prolongation symbol remains open and remains the single
 > structural input, but it must be sought as a rank-$2$ symbol, and the closure
 > it would deliver needs a second base case.
+
+> **Scope note (2026-09-03) — what the prolongation operator must look like on
+> the ramified chart, before it is constructed.** The classical lift
+> $d/dz$ is excluded
+> ([`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness)), and
+> the residue that a period needs vanishes for it *locally*, at every branch
+> point, because at $z = z_c + t^2$ the operator $d/dz = (1/2t)\,d/dt$ reads the
+> $t^{-2}$ residue slot from the constant term with multiplier $(-2)+2 = 0$.
+> That observation generalises exactly. On the coefficient model
+> $f:\mathbb{Z}\to R$ of a local Laurent expansion, every derivative-like
+> operator is a **shift operator** $(S_{k,c}f)(e) = c(e)\,f(e+k)$ — a pair
+> (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
+> and symbols compose by adding shifts and multiplying multipliers along the
+> shift. Two exact facts then constrain any single-shift candidate $D_q$
+> (`QOU.Mathlib.RamifiedShiftCalculus`, sorry-free over a generic commutative
+> ring):
+>
+> 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
+>    derivative does: $d/dz$, its $q$-deformation $[e+2]_q$ in either
+>    $q$-integer convention, the Jackson operator $[e+1]_q$ in the local
+>    coordinate, all because $[0]_q = 0$ — then for shift $k \in \{1, 2\}$ the
+>    residue slot is dead at every jet level on a power-series seed such as the
+>    colour-cubic branch. **No derivative-like prolongation of shift $1$ or $2$
+>    can produce the binding period.** A residue needs a component with
+>    $c(-k) \neq 0$: a genuine zeroth-order term, which in rank $2$ is the
+>    connection-matrix datum the previous note already places the symbol in.
+> 2. **Parity.** An even shift commutes with the covering monodromy
+>    $t \mapsto -t$; an odd shift anti-commutes, so its jet tower's monodromy
+>    eigenvalue alternates as $(-1)^n$ — the Door-v residual of
+>    [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces). Carrying
+>    that residual needs an **odd** shift.
+>
+> So $D_q$ must have an odd shift and a non-derivative component. Both
+> conditions are derived from the local geometry of $\Sigma$ and the two
+> measured target properties, never from the kernel's coefficients — the
+> anti-fit obligation is respected. $D_q$ is *not* constructed here; the class
+> is narrowed, which is what the scoping audit's walls W1–W2 asked for first.
