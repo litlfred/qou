@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T14:52:35Z
+
 updated_at: 2026-09-03T12:53:11Z
 
 updated_at: 2026-09-03T08:59:54Z
@@ -2101,6 +2103,47 @@ dependence.
 **Still open:** the per-term decomposition. Existence of the E₀ exposure is
 established FROM THE SOURCE; its magnitude is unmeasured (a run was launched and
 had produced no output at time of writing).
+
+
+### 2026-09-03 — the term-3 decomposition, all four nuclei
+
+    atom  A    B_pred      term3    terms1+2      AME  | E_0x5.351  hbq^2x11.783 | flip
+    2H    2  -7.271102   1.876634  -9.147736   2.2246  |   +0.8941      +12.9646  | x   4.87
+    3H    3  -7.742121   0.221623  -7.963744   8.4818  |   -6.7778       -5.3524  | x  35.93
+    3He   3  -7.456200   0.006659  -7.462858   7.7180  |   -7.4272       -7.3844  | x1120.8
+    4He   4  -6.828594   1.372964  -8.201558  28.2957  |   -0.8548       +7.9761  | x   5.97
+
+`flip` = the E_0 multiple at which B_pred crosses zero. Registered ceiling is
+hbar_q^2*m_N at x11.783. **Two of four flip under some registered convention**,
+and 4He is the alpha, not an owner-ruled special case. Scoping: E_0-conditional
+at A=2 and A=4; robust at A=3, both isobars.
+
+**TERM 2 IS ZERO.** terms1+2 at 4He = -8.201558468 matches the independently
+measured uic(4He,k=11) to 1.5e-10 (the rounding limit of the recorded B_pred).
+`sdp_cross_channel_contribution` contributes nothing at 4He; `binding_energy`
+advertises three terms in its docstring and delivers two.
+
+**THE 12.5% FLATNESS FIGURE IS PARTLY MANUFACTURED.** terms1+2 spread 20.56%
+against B_pred's 12.47% -- term 3 is largest exactly where terms1+2 are most
+negative (2H 1.877/-9.148, 4He 1.373/-8.202 vs 3He 0.0067/-7.463), so it
+OFFSETS their variation and the flatter number is the total. **The accumulator
+varies 20.6%, not 12.5%.**
+
+The 0.9504 paired result is untouched, structurally: it measured uic ALONE at
+matched truncation, term 3 not in it. uic varies 20.6% across 2H-4He and 5%
+between 4He and 6Li -- both true, of different comparisons. Against AME's 12.7x
+range, 20.6% is still flat in the sense the argument needs.
+
+Term 3 spans **282x**, non-monotonic in A, unrelated to AME. Sharpest case: 3H
+vs 3He differ **33-fold** in term 3 at identical mass number while their totals
+differ 3.8% -- terms1+2 absorb nearly the whole swing. That is a far larger
+within-A variation than the 6.7% noise floor quoted earlier in this arc, in the
+one term characterised as the scale-exposed outlier rather than as scatter. No
+explanation offered and none guessed.
+
+Method note worth keeping: three successive readings of the sign question were
+each overturned by the next nucleus. Four points did not support any of the
+first three conclusions drawn from them.
 
 Corrections pushed: retraction banners on `UrsellChainMismatch.lean` and the
 probe, witness description/caveats rewritten to lead with the priority note, and
