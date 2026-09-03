@@ -41,6 +41,26 @@ Verdicts
                    -- read first, this is the incident's shape
   divergent        same fully-qualified name, different normalised statement
   duplicate        same name, same statement -- redundant, 0a says drop it
+
+Epistemic ranking
+-----------------
+A raw `divergent` count is alarming and mostly boring: the bulk is a sibling
+restating a declaration with different binders or formatting.  What matters is
+whether the two copies disagree about **proof status**, because that is what
+misleads a reader who follows `lean.ref` to the sibling.  So the report also
+buckets by kind pair, worst first:
+
+  sibling claims PROVED, library ASSUMES   sibling `theorem`/`lemma` against a
+                                           library `axiom`/`opaque` -- a reader
+                                           sees a proof where the corpus assumes
+  sibling ASSUMES, library does not        the `categorical_jet_prolongation`
+                                           and b1-hyperbolic-rows shape
+  kind mismatch X vs Y                     structural, usually benign
+  same kind, text differs                  the boring bulk
+
+Measured 2026-09-03: the first bucket is **0** and the second is **1**.  Quote
+that split, not the raw 201 -- I first reported the 201 as needing per-pair
+judgement, which overstated it.
 """
 from __future__ import annotations
 import re, sys, json
@@ -116,6 +136,21 @@ def main() -> int:
                 "library_kind": lkind,
             })
 
+    ASSUMED = {"axiom", "opaque"}
+    PROVED = {"theorem", "lemma"}
+    for f in findings:
+        sk, lk = f["sibling_kind"], f["library_kind"]
+        if f["verdict"] == "duplicate":
+            f["risk"] = "duplicate"
+        elif sk in PROVED and lk in ASSUMED:
+            f["risk"] = "sibling claims PROVED, library ASSUMES"
+        elif sk in ASSUMED and lk not in ASSUMED:
+            f["risk"] = "sibling ASSUMES, library does not"
+        elif sk != lk:
+            f["risk"] = f"kind mismatch {sk} vs {lk}"
+        else:
+            f["risk"] = f"same kind ({sk}), text differs"
+
     order = {"divergent-axiom": 0, "divergent": 1, "duplicate": 2}
     findings.sort(key=lambda f: (order[f["verdict"]], f["name"]))
 
@@ -126,6 +161,18 @@ def main() -> int:
     for v in ("divergent-axiom", "divergent", "duplicate"):
         n = sum(1 for f in findings if f["verdict"] == v)
         print(f"  {n:4d}  {v}")
+    print()
+    print("  by epistemic risk (worst first):")
+    RISK_ORDER = ["sibling claims PROVED, library ASSUMES",
+                  "sibling ASSUMES, library does not"]
+    seen = {}
+    for f in findings:
+        seen[f["risk"]] = seen.get(f["risk"], 0) + 1
+    def rank(k: str) -> tuple:
+        return (RISK_ORDER.index(k) if k in RISK_ORDER else len(RISK_ORDER),
+                -seen[k], k)
+    for k in sorted(seen, key=rank):
+        print(f"  {seen[k]:4d}  {k}")
     print()
     for f in findings:
         if f["verdict"] == "duplicate":
