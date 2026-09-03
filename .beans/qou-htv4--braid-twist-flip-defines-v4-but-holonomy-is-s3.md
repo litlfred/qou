@@ -1,7 +1,7 @@
 ---
 # qou-htv4
 title: 'def:braid-twist-flip encodes V4 (commuting involutions) but the trefoil holonomy is S3 — Lean twist_flip_comm is the root error'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-29T15:05:00Z
