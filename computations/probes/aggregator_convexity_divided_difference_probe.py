@@ -176,6 +176,15 @@ def main():
         print(f"    [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
     witness = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The divided differences are taken over AME2020 "
+            "binding energies and bond counts; no substrate quantity "
+            "enters. Established by import-cone trace (cone=1, no q0 "
+            "import) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no q0 "
+            "field."),
         "schema": "witness/v1",
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "description": (

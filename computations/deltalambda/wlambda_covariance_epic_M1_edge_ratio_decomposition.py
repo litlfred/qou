@@ -285,6 +285,16 @@ def main():
 
     ms = (time.monotonic_ns() - t0) // 1_000_000
     out = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The edge-ratio decomposition is combinatorics on "
+            "the Young diagram -- hook lengths, contents and their ratios "
+            "-- and never evaluates at the substrate modulus. Established "
+            "by import-cone trace (cone=2, no q_parameter / "
+            "qou_substrate.constants edge) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no q0 "
+            "field."),
         "probe": "m1_edge_ratio_decomposition",
         "bean": ["qou-t6hc", "qou-k5r5"],
         "nmax": nmax,
