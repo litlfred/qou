@@ -339,3 +339,41 @@ Three readings, none settled here:
 **⁶Li (A = 6) is the discriminating measurement**, and it is now merely
 expensive rather than impossible: per-atom cost ran 942, 1568, 1496, 2425 s for
 A = 2,3,3,4. That is the concrete next step this arc leaves behind.
+
+---
+
+# ⁶Li attempt 1: killed, not completed — recorded as a negative
+
+The A = 6 run **did not produce a value**. The process is gone and `li6` never
+reached the incremental save, so it was killed mid-computation rather than
+erroring — the script's `except BaseException` handler would have recorded an
+exception, and it recorded nothing.
+
+**Cause undetermined, and I am not going to guess it.**
+
+- **Not a timeout expiry.** The cap was 20000 s and the run was alive at 4839 s
+  when last observed.
+- **OOM cannot be confirmed or excluded** — `dmesg` is unavailable in this
+  container. Post-mortem memory is 13.9 GB free of 16 GB, which says nothing
+  about the peak.
+- A **container worker restart** killed an earlier run in this same session
+  (SIGKILL, mid-`binding_energy`), so that is a live possibility.
+
+What *is* established: he3 and he4 survived because the runner writes each result
+the moment it lands. That design choice is the only reason this session has four
+points rather than one — the earlier run lost everything in flight when it died.
+
+**Retried, ⁶Li alone**, with a 300 s heartbeat so a future kill is
+distinguishable from a hang, and a 25000 s cap.
+
+## The discriminator is still open
+
+Nothing here changes the four-point result or the extracted target. It means the
+one measurement that separates the three readings —
+
+1. the `C(A,2)` scaling is a two-point artefact,
+2. `E` saturates the proved pairwise cap (`≤ C(A,2)` permits `∝ C(A,2)`),
+3. super-pairwise growth, which only shows above A ≈ 5
+
+— **has not been made.** ⁶Li has `C(A,2) = 15` against ⁴He's 6, which is why it
+is the point that matters and also why it is the expensive one.
