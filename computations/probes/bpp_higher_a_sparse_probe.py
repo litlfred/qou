@@ -182,7 +182,20 @@ def main() -> int:
                      "S_inter_false": mp.nstr(s_off, 25),
                      "B_total_MeV": mp.nstr(tot, 20),
                      "B_pp_per_bond_MeV": mp.nstr(pb, 20),
-                     "seconds": round(el, 1)})
+                     # NAMED `elapsed_sec`, not `seconds`, and the name is the
+                     # whole point. This is a wall-clock duration -- the one
+                     # class `witness_raw_float64_audit` carves out -- but that
+                     # carve-out matches DECLARED provenance names
+                     # (`_EPHEMERAL_META_FIELDS`), and `seconds` is not one of
+                     # them. So a raw float here was counted as a payload
+                     # number and took the raw-float64 ratchet RED.
+                     #
+                     # The fix is the name, not the detector. Widening the
+                     # audit's filter is the dangerous move it warns about at
+                     # length: a `/time/` test would excuse `y_times_chi`, the
+                     # Frobenius pairing, 177 fields. Declaring the field as
+                     # what it is costs nothing and needs no exception.
+                     "elapsed_sec": round(el, 1)})
         print(f"  {A:>3}{n:>5}{len(cr):>7}{len(cache):>7}"
               f"{max(dims) if dims else 0:>8}{mp.nstr(tot, 12):>16}"
               f"{mp.nstr(pb, 12):>16}{el:>7.1f}")
@@ -257,7 +270,7 @@ def main() -> int:
     print("\n" + "-" * 78)
     print("  4. 'Intractable' was the dense evaluator, not the object")
     print("-" * 78)
-    slowest = max(r["seconds"] for r in rows)
+    slowest = max(r["elapsed_sec"] for r in rows)
     print(f"\n  Largest case here: A=4, n=12, max dim 297 — {slowest:.0f} s.")
     print("  Dense chi_lambda_numerical did not return within 600 s.")
     check("the H_2A bond is computable — the intractability claim was stale",
