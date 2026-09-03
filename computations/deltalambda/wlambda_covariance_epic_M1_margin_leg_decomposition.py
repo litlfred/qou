@@ -168,6 +168,31 @@ def main():
     print("#   built to PRESERVE these cancellations, not to bound V_D, V_A and rho_P independently.")
     print("#   That is a constraint on the SHAPE of the proof, not just on its constants.")
     print("#")
+    print("# SO WHAT SHOULD BE BOUNDED? The cancellation says: not V_D and V_A separately. The")
+    print("#   natural candidate is the RATIO V_D/V_A as ONE object. Measured -- how much more")
+    print("#   stable is the ratio than either variance?")
+    R_INF = SIG_RATIO_INF ** 2                       # (V_D/V_A)_inf
+    print(f"#   (V_D/V_A)_inf = sig_inf^2 = {mp.nstr(R_INF,9)}")
+    print(f"#   {'n':>3} {'|dA|':>11} {'|dD|':>11} {'|d_ratio|':>11} {'gain vs dD':>11}")
+    gains = []
+    for n, lr, ls, dev, c, vAn, vDn in rows:
+        dA = (vAn - V_A_INF) / V_A_INF
+        dD = (vDn - V_D_INF) / V_D_INF
+        d_ratio = ((vDn / vAn) - R_INF) / R_INF      # EXACT, not the linearisation
+        g = abs(dD) / abs(d_ratio) if d_ratio != 0 else mp.mpf('inf')
+        gains.append((n, g))
+        if n % 6 == 0 or n == rows[-1][0]:
+            print(f"#   {n:>3} {mp.nstr(abs(dA),5):>11} {mp.nstr(abs(dD),5):>11} "
+                  f"{mp.nstr(abs(d_ratio),5):>11} {mp.nstr(g,4):>11}")
+    gt = [g for n, g in gains if n >= 16]
+    print(f"#   gain over n >= 16: min {mp.nstr(min(gt),4)}x, max {mp.nstr(max(gt),4)}x")
+    print("#   => bounding the RATIO directly is the right target, and it is worth a factor of a few")
+    print("#      -- real, but NOT the full order of magnitude the two cancellations together are")
+    print("#      worth. The rest of that order lives in the leg-vs-leg cancellation, which a ratio")
+    print("#      bound does not capture. Recovering it needs rho_P and the sigma-ratio handled")
+    print("#      TOGETHER, not two tight bounds added. Stated so the next attempt does not spend")
+    print("#      its effort on the ratio alone and expect the whole factor back.")
+    print("#")
     print("# CORRECTION TO PR #6528 (same session). There I concluded 'rho_P is the bigger leg, V_A")
     print("#   the small one' by comparing rho_P's FULL deviation against only the V_A part of the")
     print("#   sigma-ratio leg -- V_D was never in that comparison. Measured here at fixed n with")

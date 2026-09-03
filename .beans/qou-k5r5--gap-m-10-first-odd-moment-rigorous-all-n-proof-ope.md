@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T21:04:00Z
+updated_at: 2026-09-03T21:09:49Z
 ---
 
 
@@ -754,3 +754,15 @@ Probe: computations/deltalambda/wlambda_covariance_epic_M1_margin_leg_decomposit
 Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-leg-cancellation.md
 Gap qou-k5r5 OPEN; NEXT: a rigorous route that keeps the V_D/V_A cancellation intact,
 with V_D the binding ingredient.
+
+
+2026-09-03 (PR #6528, cont.) WHAT TO BOUND, measured. Following the two-cancellation
+finding: bounding the RATIO V_D/V_A as one object (rather than V_D and V_A separately)
+is worth a gain of |dD|/|d_ratio| = 2.61x to 4.85x over n>=16 (exact, not the
+linearisation; (V_D/V_A)_inf = sig_inf^2 = 0.461869183; e.g. n=40: |dA|=0.036893,
+|dD|=0.058358, |d_ratio|=0.022288, gain 2.618x). So the ratio IS the right target -- but
+it recovers only a factor of a few, NOT the full order of magnitude the two cancellations
+are jointly worth. The remainder lives in the LEG-vs-LEG cancellation, which a ratio bound
+does not capture; recovering that needs rho_P and the sigma-ratio handled TOGETHER rather
+than two tight bounds added. Recorded explicitly so the next attempt does not spend its
+effort on the ratio alone and expect the whole factor back.
