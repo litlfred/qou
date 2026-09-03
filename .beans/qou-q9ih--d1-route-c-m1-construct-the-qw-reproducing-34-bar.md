@@ -501,3 +501,103 @@ This is bookkeeping over the three entries above; it measures nothing new. No
 route is declared refuted, nothing is wired, and `A_ω` remains underived. The
 "no live derivation-tier route" statement is a claim about **this ledger's**
 entries, not about the framework.
+
+── 2026-09-03 (5): D1-b entry test — the NZ datum's SNF is a function of N alone ──
+
+`computations/qbeta/dt_d1b_nz_gluing_invariant_entry_probe.py`, **10/10**
+(PR #6509). Formalize-first, run BEFORE the multi-session NZ → Q dictionary
+assembly the ledger calls for, and it asks the prior question: **can that
+datum carry the information at all?**
+
+### The measurement
+
+The natural first-order invariant of an integer gluing datum is the Smith
+normal form of `A | B` — its class under integral row/column equivalence
+`GL(ℤ) × GL(ℤ)`. Across 16 knots spanning `N = 2..13` tetrahedra:
+
+    SNF(A|B) = (1)^N + (2) + (0)      for EVERY knot.
+
+| N | knots | distinct SNFs |
+|---|---|---|
+| 2 | 3₁, 4₁ | 1 |
+| 3 | 5₁, 5₂, 8₁₉ | 1 |
+| 4 | 6₁, 7₁, 7₂ | 1 |
+| 5 | 6₂, 7₃, 8₂₀, 9₄₂, 10₁₃₉ | 1 |
+| 6 | 6₃, 7₄ | 1 |
+| 13 | 8₁₈ | 1 |
+
+A function of the tetrahedron count alone. The invariant carries **no
+knot-theoretic information**.
+
+### The consequence for D1-b
+
+D1-b's node count must separate 4₁ (3 connections) from 5₂ (4). The SNF
+separates nothing beyond `N`, so **no `GL(ℤ)×GL(ℤ)`-invariant function of the
+NZ gluing matrix can supply it.** The dictionary must read the matrix in a
+**fixed polarization** — its actual entries — not any basis-independent
+invariant of it.
+
+### It does NOT rest on the non-hyperbolic 3₁
+
+The tempting instance is the `N = 2` collision: 3₁ and 4₁ share an SNF but
+have certified `C = 2` and `3`. **3₁ is not hyperbolic** (`contains flat
+tetrahedra`), so a geometric dictionary may legitimately be undefined there —
+that instance *corroborates* and is reported with the caveat attached. What
+*establishes* the claim is the `N = 5` group: five **pairwise non-isometric
+hyperbolic** knots, one SNF, distinctness by `is_isometric_to` rather than by
+comparing volumes.
+
+### Neither input was re-derived
+
+Both already existed and the corpus-grep found them first:
+
+- node counts ← `dt_crossknot_connection_count_certified_probe.py`;
+- the NZ datum ← **cross-checked against** `one_loop_torsion.py::nz_pair`,
+  the corpus's own extractor, rather than replacing it. SnapPy's rectangular
+  form and `nz_pair` agree **exactly** as `(A,B) = (a,−b)` on every row of
+  every knot up to `N = 13`, and the SNF is invariant under that convention
+  flip (both are controls C5/C6).
+
+### Two re-scopings of D1-b the grep surfaced, recorded so they are not redone
+
+- **`W` is NOT needed.** The M2 plethystic-log result
+  (`aomega_m2_bps_cohomology.py` / `AomegaM2BPSCohomology`, lean-direct exit
+  0) gives `dim BPS_d = |Ω_d|`, so a potential-free abelianized quiver already
+  realizes `{3,4}`. **D1-b as written asks for "arrows AND potential" — the
+  potential half asks for an object the corpus records as unnecessary.**
+  Scope-(a), conditional on the imported eq-(98) datum.
+- **The `(7,1)` half of D1-b's target is a no-op** on `(4,3)` — the 2026-09-03
+  (1) Result 0 applies to D1-b exactly as it did to D1-a.
+
+And the live constraint carries over unchanged: `QuiverMirrorAutomorphismExcluded`
+(sorry-free) — the mirror must act on the stability **ray**, never as a quiver
+automorphism.
+
+### Literature gap to plan around
+
+**ACCERV, *BPS quivers and spectra*** — the triangulation-to-BPS-quiver
+precedent — is **NOT held** in `library/`; it appears only in other papers'
+reference lists. DGG (`arxiv-1108.4389`, `arxiv-1112.5179`), KS
+(`arxiv-0811.2435`) and Davison–Meinhardt (`arxiv-1601.02479`) **are** held.
+So the dictionary assembly needs an outbound fetch, not a corpus read.
+
+### A methodology finding from running the checklist (PR #6510)
+
+Path 5's tier 1 — `library/INDEX.md` — was **missing 33 real documents**, and
+AGENTS.md explained the directories-minus-rows gap by the duplicate copies, so
+the shortfall read as accounted for. Among the 33: the volume conjecture, the
+oriented skein category, affine-Hecke Plancherel, knot polynomials on braid
+closures, and q-deformed Plancherel growth. Regenerated with
+`scripts/summarize-library.py --apply`; AGENTS.md corrected with the
+arithmetic check that detects it. **A clean tier-1 scan is evidence about the
+index, not about the library.**
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, a strictly finer equivalence than
+`GL × GL`, so a polarization-dependent construction is **NOT** excluded —
+**D1-b is constrained at its entry, not refuted.** Certified `C` exists only
+for 3₁, 4₁, 5₂ (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled). Exact integer arithmetic throughout; volumes printed for
+orientation and never computed with. Nothing is wired, nothing is fitted, and
+`A_ω` remains underived.
