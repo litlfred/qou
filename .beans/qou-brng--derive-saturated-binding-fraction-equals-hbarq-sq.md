@@ -6,19 +6,6 @@ type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
 updated_at: 2026-09-03T14:52:35Z
-
-updated_at: 2026-09-03T12:53:11Z
-
-updated_at: 2026-09-03T08:59:54Z
-
-updated_at: 2026-09-03T08:28:10Z
-
-updated_at: 2026-09-03T04:27:36Z
-
-updated_at: 2026-09-03T02:58:23Z
-
-updated_at: 2026-09-03T04:57:24Z
-updated_at: 2026-09-03T04:39:05Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2179,3 +2166,29 @@ RETIRED: 'mu-bar_123 carries the asymmetry'. SURVIVES (weaker, honest): mu-bar_1
 as the coefficient SELECTING which magnitude applies, magnitude from elsewhere.
 UNTOUCHED: rank-bound scope — still (a), still excludes only the Markov family.
 No new compute; every value cited from a verified carrier.
+
+
+## 2026-09-03 — B done, A closed (negative): rank = n PROVED; mu-bar_123 is channel-blind
+
+**B — rank = n, both halves now in Lean** (`OcneanuWeight.lean`, 8944047236). The n
+HOOKS (n-k,1^k) are linearly independent, via a triangular evaluation: hook k
+vanishes at leg root z_m iff m <= k, and THE LEG ROOTS ARE THE OCNEANU FAMILY
+z_i = q^i/[i]_q. The row cap and the rank are one phenomenon. Verified
+symbolically at n=4,5,6 first (vanishing pattern, nonzero cyclotomic
+determinant, z_i identity), then formalised: linearIndependent_of_triangular
+(generic, strong induction), armFactor/legFactor/legRoot, two vanishing lemmas,
+hooks_linearIndependent. All sorry-free, lean-direct. HONEST SCOPE: genericity
+conditions on q (distinct leg roots, arm roots off leg roots, q^2 != 1) are
+HYPOTHESES not proved; hookNum == ocneanuNumPoly(hook diagram) is NOT proved
+(YoungDiagram.cells plumbing). So: 'n explicit hook numerators are
+independent', conditional on genericity.
+
+**A — closed, negative, no probe needed.** mu-bar_123 is typed on SINGLE
+objects (B : S -> Q) and applied only to single hadrons (confined triple,
+Borromean rings, 2-tube meson, baryon/vacuum). Both isospin channels are
+two-baryon states; mu-bar_123 = +-1 on every baryon => +-1 on BOTH channels
+=> CHANNEL-BLIND. Cannot select T=0 from T=1; the channels differ by the
+EXCHANGE (Delta_3,3), not by what each nucleon is. The 'selector survives'
+weak form is retired too. Honest residue: an exchange-sensitive invariant of
+the six-strand two-nucleon link, which the corpus does not carry. A bounded
+grep for mu-bar_123 + isospin timed out; not cited as evidence.

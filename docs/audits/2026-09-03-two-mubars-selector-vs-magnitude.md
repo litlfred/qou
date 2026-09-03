@@ -103,6 +103,31 @@ trace family parameterised by `N` and nothing else; a genuinely non-trace functi
 remains open. What this note removes is the *specific* candidate the arc named, not
 the class.
 
+## Follow-up (same day): the selector role does NOT survive for isospin either
+
+The paragraph above kept one thing alive: `μ̄₁₂₃` as *"the coefficient selecting which
+magnitude applies"*. Checked against the carrier, that does not survive for the question this
+arc is asking.
+
+`SecondCrossingInvariant.lean` types the invariant on **single objects** — `B : S → ℚ`
+(lines 100, 119) — and every object it is applied to is a single hadron: the confined triple,
+the Borromean rings, the 2-tube meson, the baryon/vacuum pair. It is never evaluated on a
+two-nucleon state.
+
+The binding channel asymmetry compares **two two-baryon states**: the `T = 0` (³S₁) and
+`T = 1` (¹S₀) channels of the same nucleon pair. `μ̄₁₂₃ = ±1` on every baryon, so it is `±1` on
+both nucleons in both channels. **It is channel-blind.** It selects baryon-from-meson; it cannot
+select `T = 0` from `T = 1`, because the two channels differ in how the nucleons are *exchanged*
+(the `Δ₃,₃` operator of `block_transposition_lift_probe`), not in what each nucleon *is*.
+
+So the weak form is retired too. What would be needed is an invariant of the **six-strand
+two-nucleon link** that is sensitive to the exchange — a different object from the per-baryon
+`μ̄₁₂₃`, and one this corpus does not currently carry. That is the honest residue.
+
+Scope (a): established from the carrier's definition and its own list of applications. A
+bounded corpus grep for any file pairing `μ̄₁₂₃` with an isospin channel was attempted and
+**timed out before completing**; it is not cited as evidence either way.
+
 ## What this does NOT claim
 
 * **NOT** that `mubarMeasured` and `μ̄₁₂₃` are unrelated — only that no property
