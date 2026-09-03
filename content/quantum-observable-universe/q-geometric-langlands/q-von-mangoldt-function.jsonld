@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-von-mangoldt-function",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-von-mangoldt-function",
+  "kind": "definition",
+  "title": "The $q$-von Mangoldt function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck"
+  ],
+  "tags": [
+    "von-mangoldt",
+    "q-deformation",
+    "arithmetic-function",
+    "prime-counting"
+  ],
+  "defines": [
+    "q-von-mangoldt-function"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.QVonMangoldtFunction",
+  "text": "q-von-mangoldt-function.md",
+  "leanSource": "q-von-mangoldt-function.lean",
+  "provenance": "authored"
+}

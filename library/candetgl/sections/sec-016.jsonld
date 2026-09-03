@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of 2",
+  "pageStart": 25,
+  "pageEnd": 29,
+  "contains": [
+    "library/candetgl/blocks/prose-sec-016",
+    "library/candetgl/blocks/lem-sec-016-01",
+    "library/candetgl/blocks/lem-sec-016-02",
+    "library/candetgl/blocks/lem-sec-016-03"
+  ],
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

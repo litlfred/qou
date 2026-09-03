@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-crystal-isospin-degeneracy",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:crystal-isospin-degeneracy",
+  "kind": "proof",
+  "title": "Proof of crystal isospin degeneracy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy"
+  ],
+  "text": "crystal-isospin-degeneracy-proof.md",
+  "provenance": "authored"
+}

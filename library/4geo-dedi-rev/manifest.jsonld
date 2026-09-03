@@ -1,0 +1,49 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/4geo-dedi-rev/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the quantum Teichmüller invariants of fibred cusped 3-manifolds",
+  "contains": [
+    "library/4geo-dedi-rev/sections/sec-000",
+    "library/4geo-dedi-rev/sections/sec-001",
+    "library/4geo-dedi-rev/sections/sec-002",
+    "library/4geo-dedi-rev/sections/sec-003",
+    "library/4geo-dedi-rev/sections/sec-004",
+    "library/4geo-dedi-rev/sections/sec-005",
+    "library/4geo-dedi-rev/sections/sec-006",
+    "library/4geo-dedi-rev/sections/sec-007",
+    "library/4geo-dedi-rev/sections/sec-008",
+    "library/4geo-dedi-rev/sections/sec-009",
+    "library/4geo-dedi-rev/sections/sec-010",
+    "library/4geo-dedi-rev/sections/sec-011",
+    "library/4geo-dedi-rev/sections/sec-012",
+    "library/4geo-dedi-rev/sections/sec-013",
+    "library/4geo-dedi-rev/sections/sec-014",
+    "library/4geo-dedi-rev/sections/sec-015",
+    "library/4geo-dedi-rev/sections/sec-016",
+    "library/4geo-dedi-rev/sections/sec-017",
+    "library/4geo-dedi-rev/sections/sec-018",
+    "library/4geo-dedi-rev/sections/sec-019",
+    "library/4geo-dedi-rev/sections/sec-020",
+    "library/4geo-dedi-rev/sections/sec-021",
+    "library/4geo-dedi-rev/sections/sec-022",
+    "library/4geo-dedi-rev/sections/sec-023",
+    "library/4geo-dedi-rev/sections/sec-024",
+    "library/4geo-dedi-rev/sections/sec-025",
+    "library/4geo-dedi-rev/sections/sec-026"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "4geo-dedi-rev",
+    "source_file": "4GEO-DEDI-REV.pdf",
+    "source_sha256": "e4d52947b71a3f379908f8da1cd3184d581f74ec66d42ba50f8e498136ec11d5",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

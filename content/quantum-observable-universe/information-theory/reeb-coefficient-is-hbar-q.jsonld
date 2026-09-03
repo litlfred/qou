@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-reeb-coefficient-is-hbar-q",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:reeb-coefficient-is-hbar-q",
+  "kind": "proposition",
+  "title": "The Reeb coefficient of $D_\\nabla$ is the quantum Planck constant: $1 - q^{-1} = (q-1)/q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-planck-time"
+  ],
+  "tags": [
+    "reeb-flow",
+    "dirac-operator",
+    "hbar-q",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.reeb_coefficient_eq_hbar_q",
+  "text": "reeb-coefficient-is-hbar-q.md",
+  "provenance": "authored"
+}

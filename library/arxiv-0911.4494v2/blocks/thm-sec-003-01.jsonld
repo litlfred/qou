@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0911.4494v2/blocks/thm-sec-003-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "See [Spr82]",
+  "pageStart": 4,
+  "pageEnd": 9,
+  "text": "thm-sec-003-01.md",
+  "derivedFrom": "library/arxiv-0911.4494v2/sections/sec-003",
+  "sourceDocument": "library/arxiv-0911.4494v2/manifest",
+  "provenance": "ingested"
+}

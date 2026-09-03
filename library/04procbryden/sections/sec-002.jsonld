@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Definition of the manifolds",
+  "pageStart": 4,
+  "pageEnd": 5,
+  "contains": [
+    "library/04procbryden/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/04procbryden/manifest",
+  "sourceDocument": "library/04procbryden/manifest",
+  "provenance": "ingested"
+}

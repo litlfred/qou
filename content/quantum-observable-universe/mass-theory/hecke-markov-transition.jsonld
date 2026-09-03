@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-hecke-markov-transition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hecke-markov-transition",
+  "kind": "proposition",
+  "title": "Hecke generator as stochastic transition operator",
+  "cites": [
+    "references/diaconis-ram2000",
+    "references/bufetov2020"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "markov-chain",
+    "transition-probability",
+    "idempotent",
+    "memoryless"
+  ],
+  "leanRef": "qou:QOU.Braiding.SpectralIdempotentData",
+  "text": "hecke-markov-transition.md",
+  "leanSource": "hecke-markov-transition.lean",
+  "provenance": "authored"
+}

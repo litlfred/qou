@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cohomological computation of H3(J)",
+  "pageStart": 22,
+  "pageEnd": 25,
+  "contains": [
+    "library/cspaper/blocks/prose-sec-013",
+    "library/cspaper/blocks/lem-sec-013-01",
+    "library/cspaper/blocks/thm-sec-013-02"
+  ],
+  "derivedFrom": "library/cspaper/manifest",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

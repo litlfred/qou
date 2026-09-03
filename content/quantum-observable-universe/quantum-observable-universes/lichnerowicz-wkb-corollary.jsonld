@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-lichnerowicz-wkb-corollary",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lichnerowicz-wkb-corollary",
+  "kind": "remark",
+  "title": "Lichnerowicz identity reduces the $\\Phi_q$-WKB conjecture",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-lichnerowicz",
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-lichnerowicz",
+  "tags": [
+    "lichnerowicz",
+    "q-laplacian",
+    "categorical-dirac",
+    "wkb"
+  ],
+  "text": "lichnerowicz-wkb-corollary.md",
+  "provenance": "authored"
+}

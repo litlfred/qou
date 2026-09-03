@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cuspshapes/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgements",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-11-acknowledgements.md",
+  "derivedFrom": "library/cuspshapes/manifest",
+  "sourceDocument": "library/cuspshapes/manifest",
+  "provenance": "ingested"
+}

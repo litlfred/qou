@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/blocks/prose-sec-013",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Corollary to Theorem A",
+  "pageStart": 15,
+  "pageEnd": 21,
+  "text": "../sections/sec-013-c-proof-of-corollary-to-theorem-a.md",
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

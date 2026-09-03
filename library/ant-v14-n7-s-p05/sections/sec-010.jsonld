@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p05/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Comparison isomorphisms",
+  "pageStart": 31,
+  "pageEnd": 36,
+  "contains": [
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-010",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-010-01",
+    "library/ant-v14-n7-s-p05/blocks/thm-sec-010-02",
+    "library/ant-v14-n7-s-p05/blocks/lem-sec-010-03",
+    "library/ant-v14-n7-s-p05/blocks/cor-sec-010-04",
+    "library/ant-v14-n7-s-p05/blocks/lem-sec-010-05",
+    "library/ant-v14-n7-s-p05/blocks/lem-sec-010-06",
+    "library/ant-v14-n7-s-p05/blocks/lem-sec-010-07"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-penrose-ccc",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:penrose-ccc",
+  "kind": "remark",
+  "title": "Penrose's conformal cyclic cosmology",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aeon",
+  "cites": [
+    "references/penrose2010"
+  ],
+  "tags": [
+    "penrose",
+    "ccc",
+    "conformal-cyclic-cosmology",
+    "aeon",
+    "jet-horizon"
+  ],
+  "text": "penrose-ccc.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/blocks/rem-sec-007-01",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "rem-sec-007-01.md",
+  "derivedFrom": "library/ising/sections/sec-007",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

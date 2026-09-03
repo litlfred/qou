@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-011",
+    "library/angled-survey/blocks/prop-sec-011-01"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

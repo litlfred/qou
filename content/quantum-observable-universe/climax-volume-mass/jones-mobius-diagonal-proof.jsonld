@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-jones-mobius-diagonal",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:jones-mobius-diagonal",
+  "kind": "proof",
+  "title": "Proof of jones mobius diagonal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-jones-mobius-diagonal"
+  ],
+  "text": "jones-mobius-diagonal-proof.md",
+  "provenance": "authored"
+}

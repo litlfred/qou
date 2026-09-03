@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-main-commutative-diagram-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:main-commutative-diagram-interpretation",
+  "kind": "remark",
+  "title": "Reading the main commutative diagram edge-by-edge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-main-commutative-diagram"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-main-commutative-diagram",
+  "tags": [
+    "commutative-diagram",
+    "interpretation"
+  ],
+  "text": "main-commutative-diagram-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-tmli-constituent-composite-agreement",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:tmli-constituent-composite-agreement",
+  "kind": "proof",
+  "title": "Proof that constituent and composite traces agree",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-tmli-constituent-composite-agreement"
+  ],
+  "text": "tmli-constituent-composite-agreement-proof.md",
+  "provenance": "authored"
+}

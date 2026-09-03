@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-ns-regular-qou",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:ns-regular-qou",
+  "kind": "definition",
+  "title": "NS-regular quantum observable universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-navier-stokes"
+  ],
+  "tags": [
+    "definition",
+    "navier-stokes",
+    "obstruction",
+    "euler-characteristic",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.GaugeFieldFluidDynamics.BoundaryObservability",
+  "text": "ns-regular-qou.md",
+  "leanSource": "ns-regular-qou.lean",
+  "provenance": "authored"
+}

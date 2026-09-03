@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/noniterativeroth2/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "ERNIE CROOT AND OLOF SISASK",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/noniterativeroth2/blocks/prose-sec-004",
+    "library/noniterativeroth2/blocks/lem-sec-004-01"
+  ],
+  "derivedFrom": "library/noniterativeroth2/manifest",
+  "sourceDocument": "library/noniterativeroth2/manifest",
+  "provenance": "ingested"
+}

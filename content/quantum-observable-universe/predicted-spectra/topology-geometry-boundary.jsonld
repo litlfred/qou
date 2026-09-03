@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-topology-geometry-boundary",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:topology-geometry-boundary",
+  "kind": "remark",
+  "title": "The boundary between $q$-computable quantities and geometric input",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reidemeister-action-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reidemeister-action-table",
+  "tags": [
+    "topology",
+    "geometry",
+    "q-parameter",
+    "mass",
+    "energy",
+    "volume",
+    "hecke-algebra",
+    "killing-form",
+    "boundary"
+  ],
+  "text": "topology-geometry-boundary.md",
+  "provenance": "authored"
+}

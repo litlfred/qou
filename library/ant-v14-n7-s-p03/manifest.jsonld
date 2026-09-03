@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p03/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Nouvelles cohomologies de Weil en caractéristique positive",
+  "contains": [
+    "library/ant-v14-n7-s-p03/sections/sec-000",
+    "library/ant-v14-n7-s-p03/sections/sec-001",
+    "library/ant-v14-n7-s-p03/sections/sec-002",
+    "library/ant-v14-n7-s-p03/sections/sec-003",
+    "library/ant-v14-n7-s-p03/sections/sec-004",
+    "library/ant-v14-n7-s-p03/sections/sec-005",
+    "library/ant-v14-n7-s-p03/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p03",
+    "source_file": "ant-v14-n7-s-p03.pdf",
+    "source_sha256": "e32fde16c3ce09407acfefb813437d288c5ffb99a34c6e6251ec55edbaffac10",
+    "pages": 44,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1747",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

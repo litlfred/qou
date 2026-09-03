@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prose-sm-open-problems",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:sm-open-problems",
+  "kind": "prose",
+  "title": "Open problems",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "open-problem",
+    "epistemic-status"
+  ],
+  "text": "sm-open-problems.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-borromean-gluon-content",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:borromean-gluon-content",
+  "kind": "remark",
+  "title": "Gluon content and color neutrality of the Borromean braid $B_3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-particle-nf-table",
+    "papers/quantum-observable-universe/blocks/rem-hecke-operations"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary",
+  "tags": [
+    "hecke",
+    "borromean",
+    "gluon",
+    "color-singlet",
+    "appendix"
+  ],
+  "text": "borromean-gluon-content.md",
+  "provenance": "authored"
+}

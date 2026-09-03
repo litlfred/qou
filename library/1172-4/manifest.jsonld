@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
+  "contains": [
+    "library/1172-4/sections/sec-000",
+    "library/1172-4/sections/sec-001",
+    "library/1172-4/sections/sec-002",
+    "library/1172-4/sections/sec-003",
+    "library/1172-4/sections/sec-004",
+    "library/1172-4/sections/sec-005",
+    "library/1172-4/sections/sec-006",
+    "library/1172-4/sections/sec-007",
+    "library/1172-4/sections/sec-008",
+    "library/1172-4/sections/sec-009",
+    "library/1172-4/sections/sec-010",
+    "library/1172-4/sections/sec-011",
+    "library/1172-4/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1172-4",
+    "source_file": "1172-4.pdf",
+    "source_sha256": "ffc47732ce0138e9fa08c0fd2598331679a94590b150f5a4f120b8c26f4f56ee",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

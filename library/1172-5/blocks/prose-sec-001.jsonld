@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-5/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "AN OPTIMISTICLIMIT",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-3-an-optimisticlimit.md",
+  "derivedFrom": "library/1172-5/manifest",
+  "sourceDocument": "library/1172-5/manifest",
+  "provenance": "ingested"
+}

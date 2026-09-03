@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hyperbolicandneumann/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Bloch group and the extended Bloch group",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "contains": [
+    "library/hyperbolicandneumann/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/hyperbolicandneumann/manifest",
+  "sourceDocument": "library/hyperbolicandneumann/manifest",
+  "provenance": "ingested"
+}

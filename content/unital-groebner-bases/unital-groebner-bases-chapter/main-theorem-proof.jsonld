@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/prf-unital-groebner-decomposition",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:unital-groebner-decomposition",
+  "kind": "proof",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-unital-groebner-decomposition",
+    "papers/unital-groebner-bases/blocks/lem-generator-choice",
+    "papers/unital-groebner-bases/blocks/def-division-algorithm"
+  ],
+  "text": "main-theorem-proof.md",
+  "provenance": "authored"
+}

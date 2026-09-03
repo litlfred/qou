@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0410233v4/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Background on Cone Deformation",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-007-2-background-on-cone-deformation.md",
+  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
+  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "provenance": "ingested"
+}

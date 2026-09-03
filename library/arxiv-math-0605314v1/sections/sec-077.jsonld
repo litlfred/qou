@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0605314v1/sections/sec-077",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Expansions at roots of unity. For every root of unityζ,ιζ (JM )∈ Z[ζ][[q−ζ]]",
+  "pageStart": 42,
+  "pageEnd": 43,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-077",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-077-01",
+    "library/arxiv-math-0605314v1/blocks/cor-sec-077-02",
+    "library/arxiv-math-0605314v1/blocks/conj-sec-077-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
+  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sim-double-slit-analytical",
+  "@type": [
+    "folio:Simulator"
+  ],
+  "label": "sim:double-slit-analytical",
+  "kind": "simulator",
+  "title": "Double-Slit Analytical Simulator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/prop-variational-equations"
+  ],
+  "tags": [
+    "double-slit",
+    "q-deformation",
+    "analytical",
+    "simulation"
+  ],
+  "text": "double-slit-analytical.md",
+  "provenance": "authored"
+}

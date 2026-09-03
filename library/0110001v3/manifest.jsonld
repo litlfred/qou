@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0110001v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A geometric interpretation of Milnor's triple linking numbers",
+  "contains": [
+    "library/0110001v3/sections/sec-000",
+    "library/0110001v3/sections/sec-001",
+    "library/0110001v3/sections/sec-002",
+    "library/0110001v3/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0110001v3",
+    "source_file": "0110001v3.pdf",
+    "source_sha256": "f30f603ac1c555e0aba08f07e4d55e1a23e8b6d08ce93e89f4963849d6f19050",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

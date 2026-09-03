@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-026",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Lagrangian",
+  "pageStart": 48,
+  "pageEnd": 49,
+  "text": "../sections/sec-026-lagrangian.md",
+  "derivedFrom": "library/arxiv-0908.3425v1/manifest",
+  "sourceDocument": "library/arxiv-0908.3425v1/manifest",
+  "provenance": "ingested"
+}

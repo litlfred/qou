@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-neutron-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-neutron-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the categorical neutron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutron-exists"
+  ],
+  "text": "categorical-neutron-exists-proof.md",
+  "provenance": "authored"
+}

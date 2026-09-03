@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hal-01215114/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The main result",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-005-the-main-result.md",
+  "derivedFrom": "library/hal-01215114/manifest",
+  "sourceDocument": "library/hal-01215114/manifest",
+  "provenance": "ingested"
+}

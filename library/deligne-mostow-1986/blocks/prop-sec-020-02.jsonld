@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/blocks/prop-sec-020-02",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "10.17",
+  "pageStart": 50,
+  "pageEnd": 64,
+  "text": "prop-sec-020-02.md",
+  "derivedFrom": "library/deligne-mostow-1986/sections/sec-020",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

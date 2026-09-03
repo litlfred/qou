@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:classical-limit-obstruction",
+  "kind": "definition",
+  "title": "The classical limit obstruction of a quantum universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "obstruction",
+    "classical-limit",
+    "hochschild-cohomology",
+    "deformation-theory",
+    "q-to-1"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction",
+  "text": "classical-limit-obstruction.md",
+  "leanSource": "classical-limit-obstruction.lean",
+  "provenance": "authored"
+}

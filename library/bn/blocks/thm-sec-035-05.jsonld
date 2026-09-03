@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/blocks/thm-sec-035-05",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Deligne–Mostow",
+  "pageStart": 45,
+  "pageEnd": 49,
+  "text": "thm-sec-035-05.md",
+  "derivedFrom": "library/bn/sections/sec-035",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

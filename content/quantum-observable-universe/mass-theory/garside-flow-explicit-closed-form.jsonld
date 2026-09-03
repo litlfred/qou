@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-garside-flow-explicit-closed-form",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:garside-flow-explicit-closed-form",
+  "kind": "remark",
+  "title": "Explicit closed-form for the Garside trajectory in color coordinates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-garside-as-compound-flow"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+  "tags": [
+    "garside-element",
+    "reeb-flow",
+    "explicit-solution",
+    "color-sectors",
+    "compound-flow"
+  ],
+  "text": "garside-flow-explicit-closed-form.md",
+  "provenance": "authored"
+}

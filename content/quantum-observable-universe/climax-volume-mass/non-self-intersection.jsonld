@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/cor-non-self-intersection",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:non-self-intersection",
+  "kind": "corollary",
+  "title": "Obstruction to self-intersection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mobius-energy",
+    "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-non-self-intersection"
+  ],
+  "tags": [
+    "self-avoidance",
+    "r-matrix",
+    "non-cocommutativity",
+    "knot-energy"
+  ],
+  "leanRef": "qou:QOU.Braiding.non_self_intersection",
+  "text": "non-self-intersection.md",
+  "provenance": "authored"
+}

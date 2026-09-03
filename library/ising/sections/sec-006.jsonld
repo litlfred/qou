@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "JEHANNE DOUSSE AND VALENTIN F ´ERAY",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/ising/blocks/prose-sec-006",
+    "library/ising/blocks/prop-sec-006-01"
+  ],
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

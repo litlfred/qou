@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-pieri-photon-shift",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pieri-photon-shift",
+  "kind": "proposition",
+  "title": "Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-degree-one-braid-trivial-volume"
+  ],
+  "cites": [
+    "references/fulton1997",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "pieri-rule",
+    "non-commutative-fourier",
+    "young-diagrams",
+    "hecke-algebra",
+    "photon",
+    "raising-lowering-operator"
+  ],
+  "leanRef": "qou:QOU.Photon.pieri_one_box_shift",
+  "text": "pieri-photon-shift.md",
+  "leanSource": "pieri-photon-shift.lean",
+  "provenance": "authored"
+}

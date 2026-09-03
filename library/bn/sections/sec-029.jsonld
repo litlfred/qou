@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Similarly, for n = 5 we can rule out d = 4",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "contains": [
+    "library/bn/blocks/prose-sec-029",
+    "library/bn/blocks/cor-sec-029-01",
+    "library/bn/blocks/thm-sec-029-02"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/6gtx-j455/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+  "contains": [
+    "library/6gtx-j455/sections/sec-000",
+    "library/6gtx-j455/sections/sec-001",
+    "library/6gtx-j455/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "6gtx-j455",
+    "source_file": "6gtx-j455.pdf",
+    "source_sha256": "3b0864e1373097cdd6485340173d2dc068d23b9cecd98967b73f5d668cbf43dd",
+    "pages": 6,
+    "arxiv": null,
+    "doi": "10.1103/6gtx-j455",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

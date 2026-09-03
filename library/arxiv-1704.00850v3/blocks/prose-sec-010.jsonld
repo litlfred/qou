@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1704.00850v3/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "B Proof of Proposition 9",
+  "pageStart": 30,
+  "pageEnd": 34,
+  "text": "../sections/sec-010-b-proof-of-proposition-9.md",
+  "derivedFrom": "library/arxiv-1704.00850v3/manifest",
+  "sourceDocument": "library/arxiv-1704.00850v3/manifest",
+  "provenance": "ingested"
+}

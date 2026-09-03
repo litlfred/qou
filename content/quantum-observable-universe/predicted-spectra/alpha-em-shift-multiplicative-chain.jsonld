@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-alpha-em-shift-multiplicative-chain",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:alpha-em-shift-multiplicative-chain",
+  "kind": "proposition",
+  "title": "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
+  "tags": [
+    "alpha-em",
+    "multiplicative-chain",
+    "fine-structure-constant",
+    "shift-exponent",
+    "torus-knot",
+    "force-carrier",
+    "delta-q",
+    "categorical-composition"
+  ],
+  "leanRef": "qou:QOU.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain",
+  "text": "alpha-em-shift-multiplicative-chain.md",
+  "leanSource": "alpha-em-shift-multiplicative-chain.lean",
+  "provenance": "authored"
+}

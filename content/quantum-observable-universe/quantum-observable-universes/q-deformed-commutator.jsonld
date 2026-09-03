@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-deformed-commutator",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-deformed-commutator",
+  "kind": "definition",
+  "title": "$q$-deformed commutator $[\\hat{X}, \\hat{P}]_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "heisenberg",
+    "uncertainty",
+    "commutator",
+    "reeb",
+    "fibre-coordinate"
+  ],
+  "leanRef": "qou:QOU.ArchimedeanUniverse.qDeformedCommutator",
+  "text": "q-deformed-commutator.md",
+  "leanSource": "q-deformed-commutator.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.3404v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The connection formula and alternate representation",
+  "pageStart": 14,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-1203.3404v1/blocks/prose-sec-007",
+    "library/arxiv-1203.3404v1/blocks/lem-sec-007-01",
+    "library/arxiv-1203.3404v1/blocks/lem-sec-007-02"
+  ],
+  "derivedFrom": "library/arxiv-1203.3404v1/manifest",
+  "sourceDocument": "library/arxiv-1203.3404v1/manifest",
+  "provenance": "ingested"
+}

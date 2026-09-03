@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/noniterativeroth2/blocks/thm-sec-001-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "thm-sec-001-01.md",
+  "derivedFrom": "library/noniterativeroth2/sections/sec-001",
+  "sourceDocument": "library/noniterativeroth2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/blocks/prose-sec-015",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorem 2.4",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "text": "../sections/sec-015-6-proof-of-theorem-24.md",
+  "derivedFrom": "library/cspaper/manifest",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

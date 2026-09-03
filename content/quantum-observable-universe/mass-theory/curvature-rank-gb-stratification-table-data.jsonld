@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-curvature-rank-gb-stratification-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:curvature-rank-gb-stratification-table-data",
+  "kind": "table",
+  "title": "Data table from prop:curvature-rank-gb-stratification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-curvature-rank-gb-stratification"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "curvature-rank-gb-stratification-table-data.md",
+  "provenance": "authored"
+}

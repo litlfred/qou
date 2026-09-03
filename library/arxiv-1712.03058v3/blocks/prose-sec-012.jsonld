@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.03058v3/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Practical advice",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "../sections/sec-012-154-practical-advice.md",
+  "derivedFrom": "library/arxiv-1712.03058v3/manifest",
+  "sourceDocument": "library/arxiv-1712.03058v3/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-coulomb-enhancement-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-coulomb-enhancement-interpretation",
+  "kind": "remark",
+  "title": "Magnitude, transition classes, and what the QOU predicts",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-coulomb-enhancement",
+    "papers/quantum-observable-universe/blocks/prop-hadron-half-life",
+    "papers/quantum-observable-universe/blocks/def-electron-knot"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skein-coulomb-enhancement",
+  "text": "skein-coulomb-enhancement-interpretation.md",
+  "provenance": "authored"
+}

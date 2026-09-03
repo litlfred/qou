@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Corollary to Theorem A",
+  "pageStart": 15,
+  "pageEnd": 21,
+  "contains": [
+    "library/candetgl/blocks/prose-sec-013",
+    "library/candetgl/blocks/thm-sec-013-01",
+    "library/candetgl/blocks/lem-sec-013-02",
+    "library/candetgl/blocks/prop-sec-013-03"
+  ],
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

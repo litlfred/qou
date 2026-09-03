@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0405258v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+  "contains": [
+    "library/arxiv-math-0405258v2/sections/sec-000",
+    "library/arxiv-math-0405258v2/sections/sec-001",
+    "library/arxiv-math-0405258v2/sections/sec-002",
+    "library/arxiv-math-0405258v2/sections/sec-003",
+    "library/arxiv-math-0405258v2/sections/sec-004",
+    "library/arxiv-math-0405258v2/sections/sec-005",
+    "library/arxiv-math-0405258v2/sections/sec-006",
+    "library/arxiv-math-0405258v2/sections/sec-007",
+    "library/arxiv-math-0405258v2/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0405258v2",
+    "source_file": "0405258v2.pdf",
+    "source_sha256": "dbd6bf5a94deebaf152abfa7f11ee13eb42f2fd13671bfa7cc466d2fdcacae0b",
+    "pages": 31,
+    "arxiv": {
+      "id": "math/0405258",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "27 Jun 2005"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

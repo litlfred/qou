@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-double-slit-q-phase",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:double-slit-q-phase",
+  "kind": "definition",
+  "title": "$q$-deformed path phase",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "tags": [
+    "double-slit",
+    "phase",
+    "q-deformation",
+    "interference"
+  ],
+  "leanRef": "qou:QOU.Experimental.double_slit_q_phase",
+  "text": "double-slit-q-phase.md",
+  "leanSource": "double-slit-q-phase.lean",
+  "provenance": "authored"
+}

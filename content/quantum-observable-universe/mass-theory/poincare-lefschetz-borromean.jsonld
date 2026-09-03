@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-poincare-lefschetz-borromean",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:poincare-lefschetz-borromean",
+  "kind": "conjecture",
+  "title": "Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-bloch-group-element",
+    "papers/quantum-observable-universe/blocks/prop-reeb-bundle-complement-equals-volume"
+  ],
+  "cites": [
+    "references/lefschetz1926",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "tier:S",
+    "poincare-lefschetz",
+    "duality-d21",
+    "borromean-complement",
+    "manifold-with-cusps",
+    "cohomology-homology",
+    "axiom-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.PoincareLefschetzBorromean",
+  "text": "poincare-lefschetz-borromean.md",
+  "leanSource": "poincare-lefschetz-borromean.lean",
+  "provenance": "authored"
+}

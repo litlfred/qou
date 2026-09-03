@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Denote the vertices of T by v1,...,v 4, and",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/18/blocks/prose-sec-004",
+    "library/18/blocks/lem-sec-004-01",
+    "library/18/blocks/thm-sec-004-02",
+    "library/18/blocks/thm-sec-004-03"
+  ],
+  "derivedFrom": "library/18/manifest",
+  "sourceDocument": "library/18/manifest",
+  "provenance": "ingested"
+}

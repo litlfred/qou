@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-tetrahedral-hbond-directions",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tetrahedral-hbond-directions",
+  "kind": "proposition",
+  "title": "The four H-bond directions are tetrahedral ($\\cos\\theta_0 = -1/3$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid"
+  ],
+  "tags": [
+    "water",
+    "ice",
+    "tetrahedral",
+    "hydrogen-bond",
+    "bond-angle"
+  ],
+  "leanRef": "qou:QOU.Molecular.tetrahedral_cos",
+  "text": "tetrahedral-hbond-directions.md",
+  "leanSource": "tetrahedral-hbond-directions.lean",
+  "provenance": "authored"
+}

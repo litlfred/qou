@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1303.5278v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The 3D index of Dimofte-Gaiotto-Gukov",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-1303.5278v1/blocks/prose-sec-001",
+    "library/arxiv-1303.5278v1/blocks/thm-sec-001-01",
+    "library/arxiv-1303.5278v1/blocks/thm-sec-001-02",
+    "library/arxiv-1303.5278v1/blocks/rem-sec-001-03",
+    "library/arxiv-1303.5278v1/blocks/rem-sec-001-04",
+    "library/arxiv-1303.5278v1/blocks/thm-sec-001-05",
+    "library/arxiv-1303.5278v1/blocks/rem-sec-001-06",
+    "library/arxiv-1303.5278v1/blocks/rem-sec-001-07"
+  ],
+  "derivedFrom": "library/arxiv-1303.5278v1/manifest",
+  "sourceDocument": "library/arxiv-1303.5278v1/manifest",
+  "provenance": "ingested"
+}

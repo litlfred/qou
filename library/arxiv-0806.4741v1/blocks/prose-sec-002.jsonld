@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0806.4741v1/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "What is done in the present work",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-002-what-is-done-in-the-present-work.md",
+  "derivedFrom": "library/arxiv-0806.4741v1/manifest",
+  "sourceDocument": "library/arxiv-0806.4741v1/manifest",
+  "provenance": "ingested"
+}

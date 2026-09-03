@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1507.03238v3/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Face-degenerate edge sets",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-1507.03238v3/blocks/prose-sec-020",
+    "library/arxiv-1507.03238v3/blocks/lem-sec-020-01",
+    "library/arxiv-1507.03238v3/blocks/thm-sec-020-02"
+  ],
+  "derivedFrom": "library/arxiv-1507.03238v3/manifest",
+  "sourceDocument": "library/arxiv-1507.03238v3/manifest",
+  "provenance": "ingested"
+}

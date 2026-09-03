@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-universality-general",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:universality-general",
+  "kind": "remark",
+  "title": "Universality for a given Euler characteristic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-descartes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-descartes",
+  "tags": [
+    "archimedean-universe",
+    "universality",
+    "euler-characteristic"
+  ],
+  "text": "universality-general.md",
+  "provenance": "authored"
+}

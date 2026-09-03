@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-0001202v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
+  "contains": [
+    "library/arxiv-hep-th-0001202v2/sections/sec-000",
+    "library/arxiv-hep-th-0001202v2/sections/sec-001",
+    "library/arxiv-hep-th-0001202v2/sections/sec-002",
+    "library/arxiv-hep-th-0001202v2/sections/sec-003",
+    "library/arxiv-hep-th-0001202v2/sections/sec-004",
+    "library/arxiv-hep-th-0001202v2/sections/sec-005",
+    "library/arxiv-hep-th-0001202v2/sections/sec-006",
+    "library/arxiv-hep-th-0001202v2/sections/sec-007",
+    "library/arxiv-hep-th-0001202v2/sections/sec-008",
+    "library/arxiv-hep-th-0001202v2/sections/sec-009",
+    "library/arxiv-hep-th-0001202v2/sections/sec-010",
+    "library/arxiv-hep-th-0001202v2/sections/sec-011",
+    "library/arxiv-hep-th-0001202v2/sections/sec-012",
+    "library/arxiv-hep-th-0001202v2/sections/sec-013",
+    "library/arxiv-hep-th-0001202v2/sections/sec-014",
+    "library/arxiv-hep-th-0001202v2/sections/sec-015",
+    "library/arxiv-hep-th-0001202v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-0001202v2",
+    "source_file": "0001202v2.pdf",
+    "source_sha256": "b2e3e22ea3d51c0b10a6678d71c5d5b265646c5c8902b7d24b35a3162f709214",
+    "pages": 21,
+    "arxiv": {
+      "id": "hep-th/0001202",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "29 Jan 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

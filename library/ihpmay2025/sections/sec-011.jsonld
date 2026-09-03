@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Stability",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-011",
+    "library/ihpmay2025/blocks/thm-sec-011-01",
+    "library/ihpmay2025/blocks/thm-sec-011-02",
+    "library/ihpmay2025/blocks/thm-sec-011-03",
+    "library/ihpmay2025/blocks/cor-sec-011-04",
+    "library/ihpmay2025/blocks/rem-sec-011-05"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

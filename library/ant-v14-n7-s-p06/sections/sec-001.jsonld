@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p06/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "L′(",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/ant-v14-n7-s-p06/blocks/prose-sec-001",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-01",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-02",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-03",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-04",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-05",
+    "library/ant-v14-n7-s-p06/blocks/thm-sec-001-06",
+    "library/ant-v14-n7-s-p06/blocks/cor-sec-001-07"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p06/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p06/manifest",
+  "provenance": "ingested"
+}

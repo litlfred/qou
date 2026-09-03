@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1010.5321v3/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The 3-dimensional case",
+  "pageStart": 9,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1010.5321v3/blocks/prose-sec-012",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-012-01",
+    "library/arxiv-1010.5321v3/blocks/cor-sec-012-02",
+    "library/arxiv-1010.5321v3/blocks/rem-sec-012-03"
+  ],
+  "derivedFrom": "library/arxiv-1010.5321v3/manifest",
+  "sourceDocument": "library/arxiv-1010.5321v3/manifest",
+  "provenance": "ingested"
+}

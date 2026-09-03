@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-parity-violation-skein-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:parity-violation-skein-interpretation",
+  "kind": "remark",
+  "title": "Physical interpretation: maximal parity violation and CP",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-parity-violation-skein",
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-parity-violation-skein",
+  "text": "parity-violation-skein-interpretation.md",
+  "provenance": "authored"
+}

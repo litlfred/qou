@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0908.3425v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Power-counting scheme",
+  "pageStart": 35,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-0908.3425v1/blocks/prose-sec-021",
+    "library/arxiv-0908.3425v1/blocks/ex-sec-021-01"
+  ],
+  "derivedFrom": "library/arxiv-0908.3425v1/manifest",
+  "sourceDocument": "library/arxiv-0908.3425v1/manifest",
+  "provenance": "ingested"
+}

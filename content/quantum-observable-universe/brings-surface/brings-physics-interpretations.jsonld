@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-physics-interpretations",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-physics-interpretations",
+  "kind": "remark",
+  "title": "Physics interpretations of the $S_5$-symmetric structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-brings-realisations",
+    "papers/quantum-observable-universe/blocks/rem-archimedean-leptons"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "tags": [
+    "lepton",
+    "chirality",
+    "colour",
+    "brings-surface",
+    "S5"
+  ],
+  "text": "brings-physics-interpretations.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/blocks/thm-sec-001-02",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "11.4",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "thm-sec-001-02.md",
+  "derivedFrom": "library/deligne-mostow-1986/sections/sec-001",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

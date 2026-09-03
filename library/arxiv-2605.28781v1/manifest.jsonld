@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.28781v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
+  "contains": [
+    "library/arxiv-2605.28781v1/sections/sec-000",
+    "library/arxiv-2605.28781v1/sections/sec-001",
+    "library/arxiv-2605.28781v1/sections/sec-002",
+    "library/arxiv-2605.28781v1/sections/sec-003",
+    "library/arxiv-2605.28781v1/sections/sec-004",
+    "library/arxiv-2605.28781v1/sections/sec-005",
+    "library/arxiv-2605.28781v1/sections/sec-006",
+    "library/arxiv-2605.28781v1/sections/sec-007",
+    "library/arxiv-2605.28781v1/sections/sec-008",
+    "library/arxiv-2605.28781v1/sections/sec-009",
+    "library/arxiv-2605.28781v1/sections/sec-010",
+    "library/arxiv-2605.28781v1/sections/sec-011",
+    "library/arxiv-2605.28781v1/sections/sec-012",
+    "library/arxiv-2605.28781v1/sections/sec-013",
+    "library/arxiv-2605.28781v1/sections/sec-014",
+    "library/arxiv-2605.28781v1/sections/sec-015",
+    "library/arxiv-2605.28781v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2605.28781v1",
+    "source_file": "2605.28781v1.pdf",
+    "source_sha256": "eee6d535af1996ca3f1592e51bba764df3ae6b01e6f7edfdb79a93abb196c08d",
+    "pages": 25,
+    "arxiv": {
+      "id": "2605.28781",
+      "version": "1",
+      "primary_class": "math.NT",
+      "stamp_date": "27 May 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

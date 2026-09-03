@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2501.03424v1/blocks/prose-sec-032",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A fun but ancillary category",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-032-a-fun-but-ancillary-category.md",
+  "derivedFrom": "library/arxiv-2501.03424v1/manifest",
+  "sourceDocument": "library/arxiv-2501.03424v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0104249v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Estimates for coeﬃcients of linear forms. The values Bk,j , k = 0, ±1,",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-math-0104249v1/blocks/prose-sec-007",
+    "library/arxiv-math-0104249v1/blocks/lem-sec-007-01",
+    "library/arxiv-math-0104249v1/blocks/lem-sec-007-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0104249v1/manifest",
+  "sourceDocument": "library/arxiv-math-0104249v1/manifest",
+  "provenance": "ingested"
+}

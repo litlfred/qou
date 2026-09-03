@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/5s032x/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The standard model symmetry and qubit entanglement",
+  "contains": [
+    "library/5s032x/sections/sec-000",
+    "library/5s032x/sections/sec-001",
+    "library/5s032x/sections/sec-002",
+    "library/5s032x/sections/sec-003",
+    "library/5s032x/sections/sec-004",
+    "library/5s032x/sections/sec-005",
+    "library/5s032x/sections/sec-006",
+    "library/5s032x/sections/sec-007",
+    "library/5s032x/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "5s032x",
+    "source_file": "5S032X.pdf",
+    "source_sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
+    "pages": 20,
+    "arxiv": null,
+    "doi": "10.32388/5S032X",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

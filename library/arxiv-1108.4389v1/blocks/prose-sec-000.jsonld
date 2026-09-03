@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1108.4389v1/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-000-1-institute-for-advanced-study-einstein-dr-princ.md",
+  "derivedFrom": "library/arxiv-1108.4389v1/manifest",
+  "sourceDocument": "library/arxiv-1108.4389v1/manifest",
+  "provenance": "ingested"
+}

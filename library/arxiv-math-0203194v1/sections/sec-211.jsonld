@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-211",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Let S be a scheme. The objects of the the category of S-abelian",
+  "pageStart": 100,
+  "pageEnd": 101,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-211",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-211-01",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-211-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-fiber-adjoint-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:fiber-adjoint-su2",
+  "kind": "example",
+  "title": "Fiber--adjoint-fiber involution for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+    "papers/quantum-observable-universe/blocks/ex-projective-line-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+  "tags": [
+    "su2",
+    "involution"
+  ],
+  "leanRef": "qou:QOU.Examples.su2FiberAdjoint",
+  "text": "fiber-adjoint-su2.md",
+  "leanSource": "fiber-adjoint-su2.lean",
+  "provenance": "authored"
+}

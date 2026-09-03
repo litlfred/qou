@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bq28-r2r7/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Full text",
+  "pageStart": 1,
+  "pageEnd": 15,
+  "text": "../sections/sec-000-full-text.md",
+  "derivedFrom": "library/bq28-r2r7/manifest",
+  "sourceDocument": "library/bq28-r2r7/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-deconfinement-golden-threshold",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:deconfinement-golden-threshold",
+  "kind": "remark",
+  "title": "Quark-gluon plasma deconfinement as the golden ratio phase transition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+    "papers/quantum-observable-universe/blocks/rem-q-chromaticity",
+    "papers/quantum-observable-universe/blocks/prop-strangelet-crossing-energy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+  "tags": [
+    "deconfinement",
+    "quark-gluon-plasma",
+    "phase-transition",
+    "golden-ratio",
+    "first-order",
+    "color-confinement",
+    "nodal-degeneration"
+  ],
+  "text": "deconfinement-golden-threshold.md",
+  "provenance": "authored"
+}

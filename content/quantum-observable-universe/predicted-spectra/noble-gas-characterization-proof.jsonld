@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-noble-gas-characterization",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:noble-gas-characterization",
+  "kind": "proof",
+  "title": "Proof of noble gas characterization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization"
+  ],
+  "text": "noble-gas-characterization-proof.md",
+  "provenance": "authored"
+}

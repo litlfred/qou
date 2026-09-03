@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-convention-d-kills-antisymmetriser",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:convention-d-kills-antisymmetriser",
+  "kind": "proof",
+  "title": "Proof: elimination, factorisation, and the exclusion of the trivial branch",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser"
+  ],
+  "tags": [
+    "temperley-lieb",
+    "convention-d",
+    "wedderburn-weights"
+  ],
+  "leanRef": "qou:QOU.QBeta.TemperleyLiebTower.z_eq_q_forces_trivial",
+  "text": "convention-d-kills-antisymmetriser-proof.md",
+  "provenance": "authored"
+}

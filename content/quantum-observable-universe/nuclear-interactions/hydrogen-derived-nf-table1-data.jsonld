@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-hydrogen-derived-nf-table1-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:hydrogen-derived-nf-table1-data",
+  "kind": "table",
+  "title": "Data table 1 from ex:hydrogen-derived-nf",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-hydrogen-derived-nf"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "hydrogen-derived-nf-table1-data.md",
+  "provenance": "authored"
+}

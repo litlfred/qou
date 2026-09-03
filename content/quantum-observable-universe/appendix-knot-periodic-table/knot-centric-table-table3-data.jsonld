@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-knot-centric-table-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:knot-centric-table-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from rem:knot-centric-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-centric-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "knot-centric-table-table3-data.md",
+  "provenance": "authored"
+}

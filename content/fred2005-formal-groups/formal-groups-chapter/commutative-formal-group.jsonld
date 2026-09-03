@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/fred2005-formal-groups/blocks/def-commutative-formal-group",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:commutative-formal-group",
+  "kind": "definition",
+  "title": "Commutative formal group",
+  "cites": [
+    "references/hazewinkel1978"
+  ],
+  "tags": [
+    "formal-group",
+    "commutative",
+    "characteristic-p"
+  ],
+  "leanRef": "fred2005:Fred2005.CommutativeFormalGroup",
+  "text": "commutative-formal-group.md",
+  "leanSource": "commutative-formal-group.lean",
+  "provenance": "authored"
+}

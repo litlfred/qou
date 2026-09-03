@@ -1,0 +1,50 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2111.06645/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Knots and Their Related q-Series",
+  "contains": [
+    "library/arxiv-2111.06645/sections/sec-000",
+    "library/arxiv-2111.06645/sections/sec-001",
+    "library/arxiv-2111.06645/sections/sec-002",
+    "library/arxiv-2111.06645/sections/sec-003",
+    "library/arxiv-2111.06645/sections/sec-004",
+    "library/arxiv-2111.06645/sections/sec-005",
+    "library/arxiv-2111.06645/sections/sec-006",
+    "library/arxiv-2111.06645/sections/sec-007",
+    "library/arxiv-2111.06645/sections/sec-008",
+    "library/arxiv-2111.06645/sections/sec-009",
+    "library/arxiv-2111.06645/sections/sec-010",
+    "library/arxiv-2111.06645/sections/sec-011",
+    "library/arxiv-2111.06645/sections/sec-012",
+    "library/arxiv-2111.06645/sections/sec-013",
+    "library/arxiv-2111.06645/sections/sec-014",
+    "library/arxiv-2111.06645/sections/sec-015",
+    "library/arxiv-2111.06645/sections/sec-016",
+    "library/arxiv-2111.06645/sections/sec-017",
+    "library/arxiv-2111.06645/sections/sec-018",
+    "library/arxiv-2111.06645/sections/sec-019",
+    "library/arxiv-2111.06645/sections/sec-020",
+    "library/arxiv-2111.06645/sections/sec-021",
+    "library/arxiv-2111.06645/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2111.06645",
+    "source_file": "2304.09377v2.pdf",
+    "source_sha256": "76ae6c6058f4a9f9433feed2ef84207fb352b90102f6a49337e6f8ab95a591f1",
+    "pages": 39,
+    "arxiv": {
+      "id": "2111.06645",
+      "version": null,
+      "primary_class": null,
+      "stamp_date": null
+    },
+    "doi": "10.3842/SIGMA.2023.082",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

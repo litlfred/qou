@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-toffoli-q-and",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:toffoli-q-and",
+  "kind": "remark",
+  "title": "The q-AND as a Toffoli gate at the Planck scale",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-toffoli-transfer-matrix"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-toffoli-transfer-matrix",
+  "cites": [
+    "references/bennett1973",
+    "references/fredkin1982",
+    "references/toffoli1980"
+  ],
+  "tags": [
+    "toffoli",
+    "q-AND",
+    "planck-time",
+    "reversible-computation",
+    "CCNOT",
+    "braiding",
+    "universality"
+  ],
+  "text": "toffoli-q-and.md",
+  "provenance": "authored"
+}

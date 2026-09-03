@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0401068v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
+  "contains": [
+    "library/arxiv-math-0401068v1/sections/sec-000",
+    "library/arxiv-math-0401068v1/sections/sec-001",
+    "library/arxiv-math-0401068v1/sections/sec-002",
+    "library/arxiv-math-0401068v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0401068v1",
+    "source_file": "0401068v1.pdf",
+    "source_sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
+    "pages": 12,
+    "arxiv": {
+      "id": "math/0401068",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "8 Jan 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

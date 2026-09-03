@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Motivation and background",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/gn2/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/gn2/manifest",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

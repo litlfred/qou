@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/li-braid-closures/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Young diagrams",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-003-young-diagrams.md",
+  "derivedFrom": "library/li-braid-closures/manifest",
+  "sourceDocument": "library/li-braid-closures/manifest",
+  "provenance": "ingested"
+}

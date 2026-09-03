@@ -1,0 +1,14 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-phi-b-bar-parity-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:phi-b-bar-parity-decomposition",
+  "kind": "proposition",
+  "title": "Bar-parity (sinh/cosh) decomposition under the bar involution",
+  "leanRef": "qou:QOU.QBeta.bar_parity_decomposition",
+  "text": "phi-b-bar-parity-decomposition.md",
+  "provenance": "authored"
+}

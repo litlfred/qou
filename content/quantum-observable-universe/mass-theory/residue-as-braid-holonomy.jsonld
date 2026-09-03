@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-residue-as-braid-holonomy",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:residue-as-braid-holonomy",
+  "kind": "remark",
+  "title": "Each residue is the holonomy of a braid loop around a singular fibre",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum",
+  "tags": [
+    "holonomy",
+    "residue",
+    "spectral-sum",
+    "filtration",
+    "gauge-theory",
+    "interpretation"
+  ],
+  "text": "residue-as-braid-holonomy.md",
+  "provenance": "authored"
+}

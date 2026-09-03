@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-monoidal-functor",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-monoidal-functor",
+  "kind": "remark",
+  "title": "Monoidal functor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-monoidal-category"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal"
+  ],
+  "defines": [
+    "monoidal-functor"
+  ],
+  "text": "glossary-monoidal-functor.md",
+  "provenance": "authored"
+}

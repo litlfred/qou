@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0605314v1/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 8.2. The following lemma is proved in the next subsec-",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-058",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-058-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
+  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "provenance": "ingested"
+}

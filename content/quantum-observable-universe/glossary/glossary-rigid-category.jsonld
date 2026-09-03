@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-rigid-category",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-rigid-category",
+  "kind": "remark",
+  "title": "Rigid category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-left-dual",
+    "papers/quantum-observable-universe/blocks/rem-glossary-right-dual"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal",
+    "duality"
+  ],
+  "defines": [
+    "rigid-category"
+  ],
+  "text": "glossary-rigid-category.md",
+  "provenance": "authored"
+}

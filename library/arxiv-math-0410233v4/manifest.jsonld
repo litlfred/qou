@@ -1,0 +1,49 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0410233v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Cusp shapes under cone deformation",
+  "contains": [
+    "library/arxiv-math-0410233v4/sections/sec-000",
+    "library/arxiv-math-0410233v4/sections/sec-001",
+    "library/arxiv-math-0410233v4/sections/sec-002",
+    "library/arxiv-math-0410233v4/sections/sec-003",
+    "library/arxiv-math-0410233v4/sections/sec-004",
+    "library/arxiv-math-0410233v4/sections/sec-005",
+    "library/arxiv-math-0410233v4/sections/sec-006",
+    "library/arxiv-math-0410233v4/sections/sec-007",
+    "library/arxiv-math-0410233v4/sections/sec-008",
+    "library/arxiv-math-0410233v4/sections/sec-009",
+    "library/arxiv-math-0410233v4/sections/sec-010",
+    "library/arxiv-math-0410233v4/sections/sec-011",
+    "library/arxiv-math-0410233v4/sections/sec-012",
+    "library/arxiv-math-0410233v4/sections/sec-013",
+    "library/arxiv-math-0410233v4/sections/sec-014",
+    "library/arxiv-math-0410233v4/sections/sec-015",
+    "library/arxiv-math-0410233v4/sections/sec-016",
+    "library/arxiv-math-0410233v4/sections/sec-017",
+    "library/arxiv-math-0410233v4/sections/sec-018",
+    "library/arxiv-math-0410233v4/sections/sec-019",
+    "library/arxiv-math-0410233v4/sections/sec-020",
+    "library/arxiv-math-0410233v4/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0410233v4",
+    "source_file": "0410233v4.pdf",
+    "source_sha256": "1f7215c9f21aa2b7eb8d5133c1a63ab14837ae2694c14e3ff1521d54a41616fe",
+    "pages": 46,
+    "arxiv": {
+      "id": "math/0410233",
+      "version": "4",
+      "primary_class": null,
+      "stamp_date": "23 Jul 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

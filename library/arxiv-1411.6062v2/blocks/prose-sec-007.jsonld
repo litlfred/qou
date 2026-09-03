@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1411.6062v2/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Some lemmas from complex analysis",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "text": "../sections/sec-007-21-some-lemmas-from-complex-analysis.md",
+  "derivedFrom": "library/arxiv-1411.6062v2/manifest",
+  "sourceDocument": "library/arxiv-1411.6062v2/manifest",
+  "provenance": "ingested"
+}

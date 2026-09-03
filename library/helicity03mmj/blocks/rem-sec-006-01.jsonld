@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/blocks/rem-sec-006-01",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "rem-sec-006-01.md",
+  "derivedFrom": "library/helicity03mmj/sections/sec-006",
+  "sourceDocument": "library/helicity03mmj/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof for face equations",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-021",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-021-01",
+    "library/arxiv-1207.6711v1/blocks/cor-sec-021-02",
+    "library/arxiv-1207.6711v1/blocks/rem-sec-021-03"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2502.02662v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Hurwitz Topological Quantum Field Theory",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-the-hurwitz-topological-quantum-field-theory.md",
+  "derivedFrom": "library/arxiv-2502.02662v1/manifest",
+  "sourceDocument": "library/arxiv-2502.02662v1/manifest",
+  "provenance": "ingested"
+}

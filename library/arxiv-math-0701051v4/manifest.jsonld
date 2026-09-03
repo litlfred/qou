@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0701051v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA",
+  "contains": [
+    "library/arxiv-math-0701051v4/sections/sec-000",
+    "library/arxiv-math-0701051v4/sections/sec-001",
+    "library/arxiv-math-0701051v4/sections/sec-002",
+    "library/arxiv-math-0701051v4/sections/sec-003",
+    "library/arxiv-math-0701051v4/sections/sec-004",
+    "library/arxiv-math-0701051v4/sections/sec-005",
+    "library/arxiv-math-0701051v4/sections/sec-006",
+    "library/arxiv-math-0701051v4/sections/sec-007",
+    "library/arxiv-math-0701051v4/sections/sec-008",
+    "library/arxiv-math-0701051v4/sections/sec-009",
+    "library/arxiv-math-0701051v4/sections/sec-010",
+    "library/arxiv-math-0701051v4/sections/sec-011",
+    "library/arxiv-math-0701051v4/sections/sec-012",
+    "library/arxiv-math-0701051v4/sections/sec-013",
+    "library/arxiv-math-0701051v4/sections/sec-014",
+    "library/arxiv-math-0701051v4/sections/sec-015",
+    "library/arxiv-math-0701051v4/sections/sec-016",
+    "library/arxiv-math-0701051v4/sections/sec-017",
+    "library/arxiv-math-0701051v4/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0701051v4",
+    "source_file": "0701051v4.pdf",
+    "source_sha256": "4592a048c3b84a8d33c983bc76e0a447e5834c24747e8f556986212551cc7c66",
+    "pages": 20,
+    "arxiv": {
+      "id": "math/0701051",
+      "version": "4",
+      "primary_class": null,
+      "stamp_date": "21 Mar 2011"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

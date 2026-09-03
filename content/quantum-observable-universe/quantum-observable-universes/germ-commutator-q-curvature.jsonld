@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-germ-commutator-q-curvature",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:germ-commutator-q-curvature",
+  "kind": "proposition",
+  "title": "Germ-commutator of two observations equals the $q$-curvature on the loop",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/def-q-flat-connection",
+    "papers/quantum-observable-universe/blocks/rem-two-observer-parallelogram"
+  ],
+  "tags": [
+    "observation",
+    "q-connection",
+    "curvature",
+    "local-substrate",
+    "substrate-parameter"
+  ],
+  "leanRef": "qou:QOU.LocalQ.ObservationParallelogram.commutator_eq_curvature",
+  "text": "germ-commutator-q-curvature.md",
+  "leanSource": "germ-commutator-q-curvature.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex-literature",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:breit-wheeler-vertex-literature",
+  "kind": "remark",
+  "title": "Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+  "cites": [
+    "references/bilson-thompson2005",
+    "references/bilsonthompson2007",
+    "references/kauffman1991",
+    "references/sugic2021"
+  ],
+  "tags": [
+    "breit-wheeler",
+    "photon",
+    "helicity",
+    "hopf-link",
+    "bilson-thompson",
+    "preon",
+    "topological-photonics",
+    "literature"
+  ],
+  "text": "breit-wheeler-vertex-literature.md",
+  "provenance": "authored"
+}

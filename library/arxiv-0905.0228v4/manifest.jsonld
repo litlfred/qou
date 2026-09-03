@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0905.0228v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+  "contains": [
+    "library/arxiv-0905.0228v4/sections/sec-000",
+    "library/arxiv-0905.0228v4/sections/sec-001",
+    "library/arxiv-0905.0228v4/sections/sec-002",
+    "library/arxiv-0905.0228v4/sections/sec-003",
+    "library/arxiv-0905.0228v4/sections/sec-004",
+    "library/arxiv-0905.0228v4/sections/sec-005",
+    "library/arxiv-0905.0228v4/sections/sec-006",
+    "library/arxiv-0905.0228v4/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0905.0228v4",
+    "source_file": "0905.0228v4.pdf",
+    "source_sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
+    "pages": 19,
+    "arxiv": {
+      "id": "0905.0228",
+      "version": "4",
+      "primary_class": "math.CO",
+      "stamp_date": "17 Jun 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

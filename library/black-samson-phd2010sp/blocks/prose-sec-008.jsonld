@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/black-samson-phd2010sp/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Summary of Thesis",
+  "pageStart": 11,
+  "pageEnd": 22,
+  "text": "../sections/sec-008-12-summary-of-thesis.md",
+  "derivedFrom": "library/black-samson-phd2010sp/manifest",
+  "sourceDocument": "library/black-samson-phd2010sp/manifest",
+  "provenance": "ingested"
+}

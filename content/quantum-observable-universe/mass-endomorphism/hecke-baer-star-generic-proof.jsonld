@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-hecke-baer-star-generic",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hecke-baer-star-generic",
+  "kind": "proof",
+  "title": "Proof of hecke baer star generic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic"
+  ],
+  "text": "hecke-baer-star-generic-proof.md",
+  "provenance": "authored"
+}

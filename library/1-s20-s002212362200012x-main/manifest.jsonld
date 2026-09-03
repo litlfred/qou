@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1-s20-s002212362200012x-main/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "www.elsevier.com/locate/jfa",
+  "contains": [
+    "library/1-s20-s002212362200012x-main/sections/sec-000",
+    "library/1-s20-s002212362200012x-main/sections/sec-001",
+    "library/1-s20-s002212362200012x-main/sections/sec-002",
+    "library/1-s20-s002212362200012x-main/sections/sec-003",
+    "library/1-s20-s002212362200012x-main/sections/sec-004",
+    "library/1-s20-s002212362200012x-main/sections/sec-005",
+    "library/1-s20-s002212362200012x-main/sections/sec-006",
+    "library/1-s20-s002212362200012x-main/sections/sec-007",
+    "library/1-s20-s002212362200012x-main/sections/sec-008",
+    "library/1-s20-s002212362200012x-main/sections/sec-009",
+    "library/1-s20-s002212362200012x-main/sections/sec-010",
+    "library/1-s20-s002212362200012x-main/sections/sec-011",
+    "library/1-s20-s002212362200012x-main/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1-s20-s002212362200012x-main",
+    "source_file": "1-s2.0-S002212362200012X-main.pdf",
+    "source_sha256": "6fc7d28c8d40bf423dd361a7a83ce95503ca8e54248b5c67d2bd80b6b9692453",
+    "pages": 22,
+    "arxiv": null,
+    "doi": "10.1016/j.jfa.2022.109392",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

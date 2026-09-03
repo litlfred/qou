@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quasifconformal conjugacy",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-014",
+    "library/ihpmay2025/blocks/thm-sec-014-01",
+    "library/ihpmay2025/blocks/cor-sec-014-02"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

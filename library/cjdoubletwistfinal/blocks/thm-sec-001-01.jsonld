@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cjdoubletwistfinal/blocks/thm-sec-001-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "thm-sec-001-01.md",
+  "derivedFrom": "library/cjdoubletwistfinal/sections/sec-001",
+  "sourceDocument": "library/cjdoubletwistfinal/manifest",
+  "provenance": "ingested"
+}

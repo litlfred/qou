@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Two-variable q-Legendre polynomials",
+  "contains": [
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-000",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-001",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-002",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-003",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-004",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-005",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-006",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-007",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-008",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-009",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-010",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials",
+    "source_file": "raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf",
+    "source_sha256": "da8c1204e84d019c0f053f3241d0171d978a28b52da525eea1fb7a897ff434a8",
+    "pages": 13,
+    "arxiv": null,
+    "doi": "10.15330/cmp.17",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/characteristic/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Higher rank groups",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "text": "../sections/sec-007-4-higher-rank-groups.md",
+  "derivedFrom": "library/characteristic/manifest",
+  "sourceDocument": "library/characteristic/manifest",
+  "provenance": "ingested"
+}

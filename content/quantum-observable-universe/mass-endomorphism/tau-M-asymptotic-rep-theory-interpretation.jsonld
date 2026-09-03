@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-tau-M-asymptotic-rep-theory-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tau-M-asymptotic-rep-theory-interpretation",
+  "kind": "remark",
+  "title": "Four complementary rep-theory anchors for the rung coefficients and their synthesis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tau-M-asymptotic-rep-theory",
+    "papers/quantum-observable-universe/blocks/prop-habiro-residue-sum-equivalence",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-tau-M-asymptotic-rep-theory",
+  "cites": [
+    "references/kashiwara1990",
+    "references/macdonald1995",
+    "references/habiro2002"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "kashiwara-crystal",
+    "jucys-murphy",
+    "macdonald-polynomial",
+    "habiro-residue",
+    "rep-theory-prediction"
+  ],
+  "text": "tau-M-asymptotic-rep-theory-interpretation.md",
+  "provenance": "authored"
+}

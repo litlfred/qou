@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gt-v10-n3-p07-p/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal",
+  "contains": [
+    "library/gt-v10-n3-p07-p/sections/sec-000",
+    "library/gt-v10-n3-p07-p/sections/sec-001",
+    "library/gt-v10-n3-p07-p/sections/sec-002",
+    "library/gt-v10-n3-p07-p/sections/sec-003",
+    "library/gt-v10-n3-p07-p/sections/sec-004",
+    "library/gt-v10-n3-p07-p/sections/sec-005",
+    "library/gt-v10-n3-p07-p/sections/sec-006",
+    "library/gt-v10-n3-p07-p/sections/sec-007",
+    "library/gt-v10-n3-p07-p/sections/sec-008",
+    "library/gt-v10-n3-p07-p/sections/sec-009",
+    "library/gt-v10-n3-p07-p/sections/sec-010",
+    "library/gt-v10-n3-p07-p/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "gt-v10-n3-p07-p",
+    "source_file": "gt-v10-n3-p07-p.pdf",
+    "source_sha256": "1f226aac77351a695a13977305062da3129a448946d82571018550ed2ccd5419",
+    "pages": 28,
+    "arxiv": null,
+    "doi": "10.2140/gt.2006.10.1425",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

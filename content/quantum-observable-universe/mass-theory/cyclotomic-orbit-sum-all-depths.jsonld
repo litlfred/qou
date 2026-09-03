@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-cyclotomic-orbit-sum-all-depths",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cyclotomic-orbit-sum-all-depths",
+  "kind": "proposition",
+  "title": "General orbit-sum at every depth: $\\sum_k \\mathrm{Cl}_n(2\\pi k/N) = (N^{1-n} - 1)\\zeta(n)$ for $n$ odd, $0$ for $n$ even",
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "multiplication-formula",
+    "orbit-sum",
+    "all-depths",
+    "general-form",
+    "polylogarithm",
+    "cyclotomic",
+    "graded-mikusinski",
+    "theorem-level"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.CyclotomicOrbitSumAllDepths.orbit_sum_all_depths",
+  "text": "cyclotomic-orbit-sum-all-depths.md",
+  "provenance": "authored"
+}

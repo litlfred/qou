@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2502.02662v1/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Vertex Operators",
+  "pageStart": 15,
+  "pageEnd": 17,
+  "text": "../sections/sec-012-vertex-operators.md",
+  "derivedFrom": "library/arxiv-2502.02662v1/manifest",
+  "sourceDocument": "library/arxiv-2502.02662v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prose-knot-periodic-table",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:knot-periodic-table",
+  "kind": "prose",
+  "title": "Knot-periodic table of the elements",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fermion-boson-knot-link",
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/thm-generation-completeness",
+    "papers/quantum-observable-universe/blocks/rem-knot-exhaustiveness"
+  ],
+  "tags": [
+    "knot",
+    "periodic-table",
+    "mass",
+    "generation",
+    "torus-knot",
+    "proton",
+    "neutron",
+    "transfer-matrix",
+    "skein-polynomial",
+    "appendix",
+    "fermion",
+    "boson"
+  ],
+  "text": "knot-periodic-table.md",
+  "provenance": "authored"
+}

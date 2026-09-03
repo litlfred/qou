@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/blocks/thm-sec-011-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "thm-sec-011-01.md",
+  "derivedFrom": "library/candetgl/sections/sec-011",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

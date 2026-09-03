@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-terminal-resolution-cz",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:terminal-resolution-cz",
+  "kind": "example",
+  "title": "Terminal resolution in $\\mathbb{C}[z]$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-terminal-resolution",
+  "tags": [
+    "archimedean",
+    "mass",
+    "polynomial"
+  ],
+  "leanRef": "qou:QOU.Examples.czTerminalResolution",
+  "text": "terminal-resolution-cz.md",
+  "leanSource": "terminal-resolution-cz.lean",
+  "provenance": "authored"
+}

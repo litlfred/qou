@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-qbeta-per-block-chi-closed-forms",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qbeta-per-block-chi-closed-forms",
+  "kind": "proof",
+  "title": "Proof of qbeta per block chi closed forms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-per-block-chi-closed-forms"
+  ],
+  "text": "qbeta-per-block-chi-closed-forms-proof.md",
+  "provenance": "authored"
+}

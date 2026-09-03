@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "It follows that when \u0000 is derived from a quaternion algebra, the associated quaternion",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-014",
+    "library/nrarith/blocks/prop-sec-014-01",
+    "library/nrarith/blocks/cor-sec-014-02",
+    "library/nrarith/blocks/thm-sec-014-03",
+    "library/nrarith/blocks/cor-sec-014-04",
+    "library/nrarith/blocks/rem-sec-014-05"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

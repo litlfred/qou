@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 2.6",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-007",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-007-01",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-007-02",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-007-03",
+    "library/aif-2009-59-1-347-0/blocks/def-sec-007-04",
+    "library/aif-2009-59-1-347-0/blocks/rem-sec-007-05"
+  ],
+  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
+  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "provenance": "ingested"
+}

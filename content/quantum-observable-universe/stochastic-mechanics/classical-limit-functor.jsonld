@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:classical-limit-functor",
+  "kind": "definition",
+  "title": "The classical limit functor $q \\to 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck",
+    "papers/quantum-observable-universe/blocks/def-adelic-substrate"
+  ],
+  "tags": [
+    "classical-limit",
+    "functor",
+    "q-to-1",
+    "deformation",
+    "symmetric-monoidal",
+    "adelic-assembly",
+    "realization-tower"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.ClassicalLimitFunctor",
+  "text": "classical-limit-functor.md",
+  "leanSource": "classical-limit-functor.lean",
+  "provenance": "authored"
+}

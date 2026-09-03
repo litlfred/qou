@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-meson-em-sinh-closed-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:meson-em-sinh-closed-form",
+  "kind": "proof",
+  "title": "Proof of meson em sinh closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-meson-em-sinh-closed-form"
+  ],
+  "text": "meson-em-sinh-closed-form-proof.md",
+  "provenance": "authored"
+}

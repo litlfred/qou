@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0405126v1/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "HITOSHI MURAKAMI",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-000-2-hitoshi-murakami.md",
+  "derivedFrom": "library/arxiv-math-0405126v1/manifest",
+  "sourceDocument": "library/arxiv-math-0405126v1/manifest",
+  "provenance": "ingested"
+}

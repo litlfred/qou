@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-stable-nucleus-valley",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:stable-nucleus-valley",
+  "kind": "remark",
+  "title": "The stability condition restricts the hadron to the valley of stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+    "papers/quantum-observable-universe/blocks/def-hadron",
+    "papers/quantum-observable-universe/blocks/prop-beta-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+  "tags": [
+    "nucleus",
+    "stability",
+    "hadron",
+    "beta-stability",
+    "valley"
+  ],
+  "text": "stable-nucleus-valley.md",
+  "provenance": "authored"
+}

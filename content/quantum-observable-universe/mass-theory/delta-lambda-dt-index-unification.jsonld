@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:delta-lambda-dt-index-unification",
+  "kind": "proposition",
+  "title": "$\\Delta_\\lambda = (-1)^{n(\\lambda)}\\dim V_\\lambda$ is a DT/3d-index Euler characteristic with geometric chirality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration"
+  ],
+  "tags": [
+    "delta-lambda",
+    "dt-index",
+    "springer-dimension",
+    "chirality",
+    "value-proved",
+    "magnitude-open"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional",
+  "text": "delta-lambda-dt-index-unification.md",
+  "provenance": "authored"
+}

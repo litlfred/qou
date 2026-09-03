@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-holonomy",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-mass-holonomy",
+  "kind": "proof",
+  "title": "Proof that the descended term equals the unknot-core holonomy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-holonomy"
+  ],
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "text": "topological-mass-holonomy-proof.md",
+  "provenance": "authored"
+}

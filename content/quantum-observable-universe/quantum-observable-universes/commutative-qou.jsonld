@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-commutative-qou",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:commutative-qou",
+  "kind": "definition",
+  "title": "Strictly commutative QOU (commutative specialisation)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hopf-non-cocommutativity"
+  ],
+  "tags": [
+    "commutative-limit",
+    "classical-limit",
+    "frobenius-hopf"
+  ],
+  "leanRef": "qou:QOU.CommutativeQOU",
+  "text": "commutative-qou.md",
+  "leanSource": "commutative-qou.lean",
+  "provenance": "authored"
+}

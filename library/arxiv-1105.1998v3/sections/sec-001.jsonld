@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1105.1998v3/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The connection formula",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-1105.1998v3/blocks/prose-sec-001",
+    "library/arxiv-1105.1998v3/blocks/thm-sec-001-01"
+  ],
+  "derivedFrom": "library/arxiv-1105.1998v3/manifest",
+  "sourceDocument": "library/arxiv-1105.1998v3/manifest",
+  "provenance": "ingested"
+}

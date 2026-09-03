@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1007.2335v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hopf solitons in the Nicole model",
+  "contains": [
+    "library/arxiv-1007.2335v1/sections/sec-000",
+    "library/arxiv-1007.2335v1/sections/sec-001",
+    "library/arxiv-1007.2335v1/sections/sec-002",
+    "library/arxiv-1007.2335v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1007.2335v1",
+    "source_file": "1007.2335v1.pdf",
+    "source_sha256": "a55d544d1740523fe4af458dc7fc07aa8723e99d3806dcc26753564cdfaebc48",
+    "pages": 11,
+    "arxiv": {
+      "id": "1007.2335",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "14 Jul 2010"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

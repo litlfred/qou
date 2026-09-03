@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The all-orders WKB method",
+  "pageStart": 3,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-the-all-orders-wkb-method.md",
+  "derivedFrom": "library/arxiv-1908.07065v3/manifest",
+  "sourceDocument": "library/arxiv-1908.07065v3/manifest",
+  "provenance": "ingested"
+}

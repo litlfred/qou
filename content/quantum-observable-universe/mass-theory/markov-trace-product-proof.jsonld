@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-product",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-product",
+  "kind": "proof",
+  "title": "Proof of markov trace product",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-product"
+  ],
+  "text": "markov-trace-product-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-typed-garside-element-adjacent-comparison",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:typed-garside-element-adjacent-comparison",
+  "kind": "remark",
+  "title": "Comparison with the adjacent-only construction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-garside-element"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-typed-garside-element",
+  "tags": [
+    "garside-element",
+    "transfer-matrix",
+    "hecke-algebra",
+    "comparison"
+  ],
+  "text": "typed-garside-element-adjacent-comparison.md",
+  "provenance": "authored"
+}

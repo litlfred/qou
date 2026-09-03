@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-piece-a-corner-removal-obligation",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:piece-a-corner-removal-obligation",
+  "kind": "lemma",
+  "title": "Corner-removal obligation: the hook-square change on removing a corner is $(s-r)^2 + 2n - 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-piece-a-hook-content-identity"
+  ],
+  "cites": [
+    "references/macdonald1995",
+    "references/stanley1999"
+  ],
+  "tags": [
+    "piece-a",
+    "hook-length",
+    "corner-cell",
+    "young-diagram",
+    "induction",
+    "combinatorial-lemma"
+  ],
+  "text": "piece-a-corner-removal-obligation.md",
+  "provenance": "authored"
+}

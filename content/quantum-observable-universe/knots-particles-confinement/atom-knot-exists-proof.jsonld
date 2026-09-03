@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-atom-knot-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:atom-knot-exists",
+  "kind": "proof",
+  "title": "Proof of atom knot exists",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-exists"
+  ],
+  "text": "atom-knot-exists-proof.md",
+  "provenance": "authored"
+}

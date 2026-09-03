@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-ew-triplet-far-commuting-minimal",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ew-triplet-far-commuting-minimal",
+  "kind": "theorem",
+  "title": "Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\\{T(2,4),T(2,6),T(2,8)\\}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-electroweak-triplet-bring-embedding",
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content"
+  ],
+  "tags": [
+    "electroweak",
+    "torus-link",
+    "far-commutativity",
+    "braid-group",
+    "seifert-genus",
+    "provable"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.electroweak_triplet_far_commuting_minimal",
+  "text": "electroweak-triplet-far-commuting-minimal.md",
+  "leanSource": "electroweak-triplet-far-commuting-minimal.lean",
+  "provenance": "authored"
+}

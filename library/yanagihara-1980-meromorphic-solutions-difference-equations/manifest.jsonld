@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Meromorphic Solutions of Some Difference Equations",
+  "contains": [
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "yanagihara-1980-meromorphic-solutions-difference-equations",
+    "source_file": "yanagihara-1980-meromorphic-solutions-difference-equations.pdf",
+    "source_sha256": "c5e4a39ec3d43d8fb515eaeb693846a1c003bb01b9091c62e29ff1ac038c7872",
+    "pages": 18,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

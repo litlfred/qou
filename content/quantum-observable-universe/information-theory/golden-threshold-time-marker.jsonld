@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-golden-threshold-time-marker",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:golden-threshold-time-marker",
+  "kind": "remark",
+  "title": "Golden threshold as a Planck-time marker",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-discrete-planck-step",
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-planck-time",
+  "tags": [
+    "planck-time",
+    "golden-ratio",
+    "reeb-flow",
+    "finite-field",
+    "chiral-instability",
+    "information-theory"
+  ],
+  "text": "golden-threshold-time-marker.md",
+  "provenance": "authored"
+}

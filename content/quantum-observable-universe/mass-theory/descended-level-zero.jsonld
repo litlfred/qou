@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-descended-level-zero",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:descended-level-zero",
+  "kind": "proposition",
+  "title": "Descended mass contribution lives at level 0 only",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass"
+  ],
+  "cites": [
+    "references/leitner2026"
+  ],
+  "tags": [
+    "descent",
+    "jet-tower",
+    "mass-endomorphism",
+    "level-counting",
+    "audit"
+  ],
+  "leanRef": "qou:QOU.Descent.descended_level_zero",
+  "text": "descended-level-zero.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-tower-pair-equality-fixed-level",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:tower-pair-equality-fixed-level",
+  "kind": "lemma",
+  "title": "Pair-contribution equality at a fixed jet level: $z^2 \\sum_{(i,j) \\in \\mathcal{P}_n} \\Phi_q(|\\hat V_i^{(n)} \\hat V_j^{(n)}|)$ is an exact identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-vhat-pair-commutation-trace"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/geckpfeiffer2000"
+  ],
+  "tags": [
+    "pair-contribution",
+    "markov-trace",
+    "jet-tower",
+    "sharpness",
+    "equality",
+    "narrative-replacement"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.TowerPairEqualityFixedLevel",
+  "text": "tower-pair-equality-fixed-level.md",
+  "leanSource": "tower-pair-equality-fixed-level.lean",
+  "provenance": "authored"
+}

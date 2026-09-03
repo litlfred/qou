@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-stable-atom-decidable",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:stable-atom-decidable",
+  "kind": "proposition",
+  "title": "Stability is decidable for any (Z, N) at fixed q",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-stable-atom"
+  ],
+  "tags": [
+    "decidability",
+    "stability",
+    "ilp",
+    "atom"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.StableAtom.decidable",
+  "text": "stable-atom-decidable.md",
+  "leanSource": "stable-atom-decidable.lean",
+  "provenance": "authored"
+}

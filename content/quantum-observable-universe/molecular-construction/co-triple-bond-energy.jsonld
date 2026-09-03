@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-co-triple-bond-energy",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:co-triple-bond-energy",
+  "kind": "remark",
+  "title": "$CO$ triple bond energy from the Wedderburn invariants",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-co-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-co-lp-dual-binding",
+  "tags": [
+    "CO",
+    "triple-bond",
+    "binding-energy",
+    "prediction"
+  ],
+  "text": "co-triple-bond-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-skew-poisson-integration",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skew-poisson-integration",
+  "kind": "proof",
+  "title": "Proof of Integration of skewed-Poisson structures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skew-poisson-integration"
+  ],
+  "text": "skew-poisson-integration-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0006111v2/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorems 1 and 2",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-007-2-proof-of-theorems-1-and-2.md",
+  "derivedFrom": "library/arxiv-math-0006111v2/manifest",
+  "sourceDocument": "library/arxiv-math-0006111v2/manifest",
+  "provenance": "ingested"
+}

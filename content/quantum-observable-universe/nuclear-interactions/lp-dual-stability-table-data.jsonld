@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-lp-dual-stability-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:lp-dual-stability-table-data",
+  "kind": "table",
+  "title": "Data table from prop:lp-dual-stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lp-dual-stability"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "lp-dual-stability-table-data.md",
+  "provenance": "authored"
+}

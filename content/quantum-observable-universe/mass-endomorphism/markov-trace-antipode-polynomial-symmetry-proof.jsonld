@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-antipode-polynomial-symmetry",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-antipode-polynomial-symmetry",
+  "kind": "proof",
+  "title": "Proof of markov trace antipode polynomial symmetry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-antipode-polynomial-symmetry"
+  ],
+  "text": "markov-trace-antipode-polynomial-symmetry-proof.md",
+  "provenance": "authored"
+}

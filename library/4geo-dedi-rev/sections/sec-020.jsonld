@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/4geo-dedi-rev/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "ST ´EPHANE BASEILHAC1, RICCARDO BENEDETTI 2",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/4geo-dedi-rev/blocks/prose-sec-020",
+    "library/4geo-dedi-rev/blocks/thm-sec-020-01",
+    "library/4geo-dedi-rev/blocks/lem-sec-020-02"
+  ],
+  "derivedFrom": "library/4geo-dedi-rev/manifest",
+  "sourceDocument": "library/4geo-dedi-rev/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(z −bi). There is a unique homomor-",
+  "pageStart": 11,
+  "pageEnd": 14,
+  "contains": [
+    "library/bn/blocks/prose-sec-009",
+    "library/bn/blocks/rem-sec-009-01"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

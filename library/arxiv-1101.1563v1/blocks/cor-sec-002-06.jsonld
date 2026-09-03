@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1101.1563v1/blocks/cor-sec-002-06",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "Maclane [58], Lemma VIII. 5.1",
+  "pageStart": 8,
+  "pageEnd": 20,
+  "text": "cor-sec-002-06.md",
+  "derivedFrom": "library/arxiv-1101.1563v1/sections/sec-002",
+  "sourceDocument": "library/arxiv-1101.1563v1/manifest",
+  "provenance": "ingested"
+}

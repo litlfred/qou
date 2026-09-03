@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-meson-kaon-pion-hecke-seifert",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:meson-kaon-pion-hecke-seifert",
+  "kind": "proof",
+  "title": "Proof of meson kaon pion hecke seifert",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-meson-kaon-pion-hecke-seifert"
+  ],
+  "text": "meson-kaon-pion-hecke-seifert-proof.md",
+  "provenance": "authored"
+}

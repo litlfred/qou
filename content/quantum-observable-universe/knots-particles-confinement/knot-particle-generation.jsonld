@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:knot-particle-generation",
+  "kind": "definition",
+  "title": "Knot-particle generation from $T_{m,n}$ torus knot generators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-generation",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-interpretation"
+  ],
+  "tags": [
+    "knot",
+    "particle",
+    "generation",
+    "torus-knot",
+    "hopf-link",
+    "color-tube",
+    "skein",
+    "exceptional-divisor"
+  ],
+  "defines": [
+    "torus-knot-generators"
+  ],
+  "leanRef": "qou:QOU.Torsion.KnotParticleGeneration",
+  "text": "knot-particle-generation.md",
+  "leanSource": "knot-particle-generation.lean",
+  "provenance": "authored"
+}

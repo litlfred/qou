@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-surreal-bound",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal bound for Navier--Stokes: enstrophy transfinite exceeds mass-gap infinitesimal",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-blowup-yekutieli",
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "navier-stokes",
+    "millennium-problem",
+    "surreal",
+    "enstrophy",
+    "blowup",
+    "squeeze",
+    "classical-limit"
+  ],
+  "text": "ns-surreal-bound.md",
+  "provenance": "authored"
+}

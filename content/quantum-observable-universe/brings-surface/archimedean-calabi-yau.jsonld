@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-calabi-yau",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-calabi-yau",
+  "kind": "remark",
+  "title": "The Descartes condition on examples",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-calabi-yau",
+    "papers/quantum-observable-universe/blocks/ex-ale"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-descartes",
+  "tags": [
+    "archimedean-universe",
+    "calabi-yau",
+    "ale",
+    "affine"
+  ],
+  "text": "archimedean-calabi-yau.md",
+  "provenance": "authored"
+}

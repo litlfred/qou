@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-binding-knots-visual-inventory-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:binding-knots-visual-inventory-table2-data",
+  "kind": "table",
+  "title": "Table 2 from rem:binding-knots-visual-inventory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-binding-knots-visual-inventory"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "binding-knots-visual-inventory-table2-data.md",
+  "provenance": "authored"
+}

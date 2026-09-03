@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-blowup-literal",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-blowup-literal",
+  "kind": "remark",
+  "title": "Every step of the surreal blow-up is a literal surreal object",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus",
+  "tags": [
+    "surreal-numbers",
+    "renormalisation",
+    "blow-up",
+    "standard-part"
+  ],
+  "text": "surreal-blowup-literal.md",
+  "provenance": "authored"
+}

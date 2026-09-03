@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p10/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Ramiﬁcation and postcritically inﬁnite quadratic maps",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "contains": [
+    "library/ant-v14-n7-s-p10/blocks/prose-sec-002",
+    "library/ant-v14-n7-s-p10/blocks/lem-sec-002-01",
+    "library/ant-v14-n7-s-p10/blocks/lem-sec-002-02",
+    "library/ant-v14-n7-s-p10/blocks/thm-sec-002-03",
+    "library/ant-v14-n7-s-p10/blocks/thm-sec-002-04"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p10/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p10/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-physical-units-gap-linear",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:physical-units-gap-linear",
+  "kind": "proposition",
+  "title": "The physically normalised gap vanishes linearly at $q = 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "tags": [
+    "symmetric-point",
+    "mass-gap",
+    "crossing-energy"
+  ],
+  "leanRef": "qou:QOU.physical_units_gap_linear",
+  "text": "physical-units-gap-linear.md",
+  "leanSource": "physical-units-gap-linear.lean",
+  "provenance": "authored"
+}

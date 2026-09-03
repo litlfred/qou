@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-nsi-q-deformed-kernel",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:nsi-q-deformed-kernel",
+  "kind": "proof",
+  "title": "Proof that the $q$-deformed kernel has a hard singularity at $\\hbar_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-nsi-q-deformed-kernel"
+  ],
+  "text": "nsi-q-deformed-kernel-proof.md",
+  "provenance": "authored"
+}

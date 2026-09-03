@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-018",
+    "library/quaternioms/blocks/prop-sec-018-01",
+    "library/quaternioms/blocks/prop-sec-018-02",
+    "library/quaternioms/blocks/thm-sec-018-03",
+    "library/quaternioms/blocks/prop-sec-018-04"
+  ],
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,53 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The NUBASE2020 evaluation of nuclear physics properties",
+  "contains": [
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-000",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-001",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-002",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-003",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-004",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-005",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-006",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-007",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-008",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-009",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-010",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-011",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-012",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-013",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-014",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-015",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-016",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-017",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-018",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-019",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-020",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-021",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-022",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-023",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-024",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-025",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-026",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-027",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-028",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-029",
+    "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-030"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "kondev-2021-chinese-phys-c-45-030001",
+    "source_file": "Kondev_2021_Chinese_Phys._C_45_030001.pdf",
+    "source_sha256": "29b14ce8a7c0ecac5ffaa01d621ff2cfad96e6dec96a0a5d28fa7355a5482664",
+    "pages": 181,
+    "arxiv": null,
+    "doi": "10.1088/1674-1137/abddae",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

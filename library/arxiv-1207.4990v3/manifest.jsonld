@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.4990v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift",
+  "contains": [
+    "library/arxiv-1207.4990v3/sections/sec-000",
+    "library/arxiv-1207.4990v3/sections/sec-001",
+    "library/arxiv-1207.4990v3/sections/sec-002",
+    "library/arxiv-1207.4990v3/sections/sec-003",
+    "library/arxiv-1207.4990v3/sections/sec-004",
+    "library/arxiv-1207.4990v3/sections/sec-005",
+    "library/arxiv-1207.4990v3/sections/sec-006",
+    "library/arxiv-1207.4990v3/sections/sec-007",
+    "library/arxiv-1207.4990v3/sections/sec-008",
+    "library/arxiv-1207.4990v3/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1207.4990v3",
+    "source_file": "1207.4990v3.pdf",
+    "source_sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
+    "pages": 70,
+    "arxiv": {
+      "id": "1207.4990",
+      "version": "3",
+      "primary_class": "math.FA",
+      "stamp_date": "1 Dec 2012"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

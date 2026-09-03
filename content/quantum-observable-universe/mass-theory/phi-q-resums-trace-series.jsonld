@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-phi-q-resums-trace-series",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:phi-q-resums-trace-series",
+  "kind": "remark",
+  "title": "$\\Phi_q$ resums an infinite series of Markov traces",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-six-term-mass-formula-complete",
+    "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-six-term-mass-formula-complete",
+  "tags": [
+    "mass-tower",
+    "markov-trace",
+    "audit",
+    "exposition"
+  ],
+  "text": "phi-q-resums-trace-series.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-strangelet-crossing-energy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:strangelet-crossing-energy",
+  "kind": "proposition",
+  "title": "Crossing energy of strange quark matter is purely strong",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "tags": [
+    "strangelet",
+    "strange-quark-matter",
+    "crossing-energy",
+    "coulomb-charge",
+    "electromagnetic-neutrality",
+    "witten"
+  ],
+  "leanRef": "qou:QOU.Observations.strangelet_crossing_energy",
+  "text": "strangelet-crossing-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-genus-filtration-ideal",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:genus-filtration-ideal",
+  "kind": "proof",
+  "title": "Proof of genus-filtration ideal characterisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+    "papers/quantum-observable-universe/blocks/lem-yekutieli-leading-coefficient"
+  ],
+  "tags": [
+    "chebyshev",
+    "yekutieli",
+    "hecke-algebra",
+    "ideal"
+  ],
+  "text": "genus-filtration-ideal-proof.md",
+  "provenance": "authored"
+}

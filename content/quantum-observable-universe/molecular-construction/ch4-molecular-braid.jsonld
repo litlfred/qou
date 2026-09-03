@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:ch4-molecular-braid",
+  "kind": "definition",
+  "title": "Methane $CH_4$ as a molecular braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2-molecular-braid"
+  ],
+  "tags": [
+    "methane",
+    "CH4",
+    "tetrahedral",
+    "single-bond",
+    "molecular-braid"
+  ],
+  "leanRef": "qou:QOU.Molecular.CH4Braid",
+  "text": "ch4-molecular-braid.md",
+  "leanSource": "ch4-molecular-braid.lean",
+  "provenance": "authored"
+}

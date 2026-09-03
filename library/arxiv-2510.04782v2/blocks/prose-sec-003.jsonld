@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2510.04782v2/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Organisation of this paper",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-14-organisation-of-this-paper.md",
+  "derivedFrom": "library/arxiv-2510.04782v2/manifest",
+  "sourceDocument": "library/arxiv-2510.04782v2/manifest",
+  "provenance": "ingested"
+}

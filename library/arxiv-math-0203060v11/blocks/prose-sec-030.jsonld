@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203060v11/blocks/prose-sec-030",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorem 2.27 and Theorem 2.30",
+  "pageStart": 28,
+  "pageEnd": 29,
+  "text": "../sections/sec-030-73-proof-of-theorem-227-and-theorem-230.md",
+  "derivedFrom": "library/arxiv-math-0203060v11/manifest",
+  "sourceDocument": "library/arxiv-math-0203060v11/manifest",
+  "provenance": "ingested"
+}

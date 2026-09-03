@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-radial-projection",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:radial-projection",
+  "kind": "remark",
+  "title": "Radial projection of Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-briggs-klein-chart"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-briggs-klein-chart",
+  "text": "radial-projection.md",
+  "provenance": "authored"
+}

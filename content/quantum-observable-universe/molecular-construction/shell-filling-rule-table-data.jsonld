@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-shell-filling-rule-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:shell-filling-rule-table-data",
+  "kind": "table",
+  "title": "Data table from prop:shell-filling-rule",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-filling-rule"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "shell-filling-rule-table-data.md",
+  "provenance": "authored"
+}

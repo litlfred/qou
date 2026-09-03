@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/blocks/prose-sec-030",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Jianqiang Zhao",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "text": "../sections/sec-030-30-jianqiang-zhao.md",
+  "derivedFrom": "library/zhao-standard-2010/manifest",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

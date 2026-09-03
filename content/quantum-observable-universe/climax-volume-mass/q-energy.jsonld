@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-energy",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-energy",
+  "kind": "definition",
+  "title": "$q$-Deformed Energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-angular-momentum"
+  ],
+  "tags": [
+    "energy",
+    "q-deformed",
+    "categorical-action",
+    "momentum",
+    "angular-momentum",
+    "crossing",
+    "mass-energy",
+    "kinematic"
+  ],
+  "leanRef": "qou:QOU.Archimedean.QEnergy",
+  "text": "q-energy.md",
+  "leanSource": "q-energy.lean",
+  "provenance": "authored"
+}

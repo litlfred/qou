@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0811.2435v1/blocks/ex-sec-013-01",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "Seiberg-Witten curve",
+  "pageStart": 35,
+  "pageEnd": 38,
+  "text": "ex-sec-013-01.md",
+  "derivedFrom": "library/arxiv-0811.2435v1/sections/sec-013",
+  "sourceDocument": "library/arxiv-0811.2435v1/manifest",
+  "provenance": "ingested"
+}

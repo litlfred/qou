@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-gs-spectral-decomposition-existence",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gs-spectral-decomposition-existence",
+  "kind": "conjecture",
+  "title": "Spectral decomposition of the mass into descended trace and residue sum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split",
+    "papers/quantum-observable-universe/blocks/conj-gs-residue-at-root-existence",
+    "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified"
+  ],
+  "tags": [
+    "gs-filtration",
+    "spectral-sequence",
+    "mass",
+    "spectral-decomposition",
+    "noncomputable-opaque",
+    "audit-flag-13a"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition",
+  "text": "gs-spectral-decomposition-existence.md",
+  "provenance": "authored"
+}

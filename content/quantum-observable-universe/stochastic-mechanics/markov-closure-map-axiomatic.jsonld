@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-closure-map-axiomatic",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-closure-map-axiomatic",
+  "kind": "remark",
+  "title": "Factorising the Markov-closure → Hopf-link content into two atomic Lean axioms (closure type at k=2 + classical Jones value), reducing the open content to a smaller surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-F3-eps6-leading-eq-neg-2b-cubed"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-c3-hopf-three-fold-markov",
+  "cites": [
+    "references/jones1985"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "track-C-step-B",
+    "markov-closure",
+    "hopf-link",
+    "axiomatic-reduction"
+  ],
+  "text": "markov-closure-map-axiomatic.md",
+  "leanSource": "markov-closure-map-axiomatic.lean",
+  "provenance": "authored"
+}

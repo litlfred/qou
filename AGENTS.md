@@ -1330,6 +1330,40 @@ an audit doc, content block, Lean comment, or PR description — or
 asserts as fact in chat that an item is open/unresolved in the
 corpus — run the **corpus-grep checklist**:
 
+0. **`corpus_search` (MCP) — run this FIRST, because every path below
+   shares one blind spot.** Paths 1-6 are greps, and a grep finds prior
+   work only if it used *your* words. Prior work written in different
+   words is not an edge case here; it is the case that actually costs a
+   session, because the grep comes back empty and reads as a clean bill.
+
+   The knowledge graph is the structure that survives a change of
+   vocabulary: a block that never says "Temperley-Lieb" but `uses` one
+   that does is one hop from the query, and `corpus_search` seeds
+   lexically then expands structurally across the authored corpus and
+   the ingested library at once.
+
+   ```
+   corpus_search  query: "<topic>"        # 1 hop, both directions
+   corpus_search  query: "<topic>", direction: "in"   # what depends on it
+   ```
+
+   Read three things in its answer. **`why`** says whether a hit MATCHED
+   or was REACHED, and by which edge — a `~` prefix means the edge ran
+   backwards, so that node depends on the seed rather than the reverse.
+   **`seedsByProvenance`** splits authored from ingested, and the shape
+   that matters is many ingested hits with no authored ones: that means
+   *cite it*, not *derive it*, which is the distinction path 5 exists to
+   draw. **`emptyRoots`** names a directory that exists but holds no
+   graph nodes — a corpus whose `.jsonld` siblings have never been
+   generated answers every query with a silence indistinguishable from
+   "nobody has done this". If it is non-empty, generate them
+   (`gen-block-jsonld` / `gen-library-jsonld`) before reading any absence
+   as an absence.
+
+   It does **not** replace the paths below — it seeds on labels, titles,
+   kinds and tags (add `searchText: true` for companion prose), so a
+   topic named only inside a proof body is still a grep's job.
+
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    typically land as audit docs; the originating source file's
    status note may lag the audit by weeks or months.
@@ -1456,7 +1490,10 @@ corpus — run the **corpus-grep checklist**:
    i.e. through exactly the two statuses this note says to read.
 
 Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. The source
+originating file itself) may you declare the item open. Step 0 is not a
+seventh gate — it is the step that most often stops you needing the other
+six, and an empty result from it is not by itself a licence to declare
+anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 

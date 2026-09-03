@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tm-interaction-completeness",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-interaction-completeness",
+  "kind": "prose",
+  "title": "Interaction completeness: the seven $\\Sigma_4$ transfer matrices",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-interactions",
+    "papers/quantum-observable-universe/blocks/tm-knot-pairs"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "completeness",
+    "interaction",
+    "summary",
+    "appendix"
+  ],
+  "text": "tm-interaction-completeness.md",
+  "provenance": "authored"
+}

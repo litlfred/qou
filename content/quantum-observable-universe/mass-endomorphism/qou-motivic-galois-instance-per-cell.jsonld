@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-qou-motivic-galois-instance-per-cell",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:qou-motivic-galois-instance-per-cell",
+  "kind": "example",
+  "title": "Per-cell $\\mathrm{Frob}_p$ data for the QOU instance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-qou-motivic-galois-instance"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-qou-motivic-galois-instance",
+  "tags": [
+    "motivic-galois",
+    "frobenius",
+    "habiro",
+    "per-cell-data"
+  ],
+  "text": "qou-motivic-galois-instance-per-cell.md",
+  "provenance": "authored"
+}

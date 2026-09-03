@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p09/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Reducing to simple groups",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/ant-v14-n7-s-p09/blocks/prose-sec-003",
+    "library/ant-v14-n7-s-p09/blocks/lem-sec-003-01",
+    "library/ant-v14-n7-s-p09/blocks/lem-sec-003-02",
+    "library/ant-v14-n7-s-p09/blocks/thm-sec-003-03",
+    "library/ant-v14-n7-s-p09/blocks/thm-sec-003-04",
+    "library/ant-v14-n7-s-p09/blocks/lem-sec-003-05",
+    "library/ant-v14-n7-s-p09/blocks/lem-sec-003-06",
+    "library/ant-v14-n7-s-p09/blocks/lem-sec-003-07"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p09/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p09/manifest",
+  "provenance": "ingested"
+}

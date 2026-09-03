@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0511710v2/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+  "pageStart": 9,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-math-0511710v2/blocks/prose-sec-004",
+    "library/arxiv-math-0511710v2/blocks/ex-sec-004-01",
+    "library/arxiv-math-0511710v2/blocks/ex-sec-004-02",
+    "library/arxiv-math-0511710v2/blocks/ex-sec-004-03",
+    "library/arxiv-math-0511710v2/blocks/ex-sec-004-04",
+    "library/arxiv-math-0511710v2/blocks/ex-sec-004-05",
+    "library/arxiv-math-0511710v2/blocks/thm-sec-004-06",
+    "library/arxiv-math-0511710v2/blocks/thm-sec-004-07",
+    "library/arxiv-math-0511710v2/blocks/thm-sec-004-08"
+  ],
+  "derivedFrom": "library/arxiv-math-0511710v2/manifest",
+  "sourceDocument": "library/arxiv-math-0511710v2/manifest",
+  "provenance": "ingested"
+}

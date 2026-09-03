@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.15740v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The key results",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-2605.15740v1/blocks/prose-sec-004",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-01",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-02",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-03",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-04",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-05",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-06",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-07",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-08",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-09",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-10",
+    "library/arxiv-2605.15740v1/blocks/thm-sec-004-11"
+  ],
+  "derivedFrom": "library/arxiv-2605.15740v1/manifest",
+  "sourceDocument": "library/arxiv-2605.15740v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-faddeev-phib-uniqueness",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:faddeev-phib-uniqueness",
+  "kind": "proposition",
+  "title": "Uniqueness of the modular-double $\\Phi_b$: strip growth pins the quantum dilogarithm up to scale",
+  "cites": [
+    "references/faddeev1995",
+    "references/faddeev1994"
+  ],
+  "tags": [
+    "faddeev",
+    "quantum-dilogarithm",
+    "modular-double",
+    "qbeta",
+    "rigidity",
+    "uniqueness"
+  ],
+  "leanRef": "qou:QOU.QBeta.PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic",
+  "text": "faddeev-phib-uniqueness.md",
+  "provenance": "authored"
+}

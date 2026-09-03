@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-laplace-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-laplace-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical Laplace transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-laplace-exists"
+  ],
+  "tags": [
+    "existence",
+    "laplace",
+    "monoidal-functor"
+  ],
+  "leanRef": "qou:QOU.CategoricalLaplace.exists",
+  "text": "categorical-laplace-transform-exists.md",
+  "leanSource": "categorical-laplace-transform-exists.lean",
+  "provenance": "authored"
+}

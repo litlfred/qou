@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Linking of several measured foliations.",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "contains": [
+    "library/helicity03mmj/blocks/prose-sec-009",
+    "library/helicity03mmj/blocks/thm-sec-009-01",
+    "library/helicity03mmj/blocks/rem-sec-009-02"
+  ],
+  "derivedFrom": "library/helicity03mmj/manifest",
+  "sourceDocument": "library/helicity03mmj/manifest",
+  "provenance": "ingested"
+}

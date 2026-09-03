@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-habiro-pochhammer-bridge",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:habiro-pochhammer-bridge",
+  "kind": "proposition",
+  "title": "Habiro–Markov bridge via Pochhammer factorisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-habiro-precision-ladder-equivalence",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring"
+  ],
+  "cites": [
+    "references/habiro2000",
+    "references/jones1987"
+  ],
+  "tags": [
+    "habiro-ring",
+    "pochhammer",
+    "normalization-bridge",
+    "1ppQ"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.HabiroPochhammerBridge",
+  "text": "habiro-pochhammer-bridge.md",
+  "leanSource": "habiro-pochhammer-bridge.lean",
+  "provenance": "authored"
+}

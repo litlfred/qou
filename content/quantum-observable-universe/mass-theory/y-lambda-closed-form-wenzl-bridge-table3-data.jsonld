@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-y-lambda-closed-form-wenzl-bridge-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:y-lambda-closed-form-wenzl-bridge-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from prop:y-lambda-closed-form-wenzl-bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-closed-form-wenzl-bridge"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "y-lambda-closed-form-wenzl-bridge-table3-data.md",
+  "provenance": "authored"
+}

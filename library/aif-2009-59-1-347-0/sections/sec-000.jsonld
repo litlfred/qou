@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 7,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-000",
+    "library/aif-2009-59-1-347-0/blocks/thm-sec-000-01",
+    "library/aif-2009-59-1-347-0/blocks/cor-sec-000-02",
+    "library/aif-2009-59-1-347-0/blocks/cor-sec-000-03",
+    "library/aif-2009-59-1-347-0/blocks/thm-sec-000-04"
+  ],
+  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
+  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "provenance": "ingested"
+}

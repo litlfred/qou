@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2402.08782v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hecke–Farey coordinates for Bring’s surface",
+  "contains": [
+    "library/arxiv-2402.08782v1/sections/sec-000",
+    "library/arxiv-2402.08782v1/sections/sec-001",
+    "library/arxiv-2402.08782v1/sections/sec-002",
+    "library/arxiv-2402.08782v1/sections/sec-003",
+    "library/arxiv-2402.08782v1/sections/sec-004",
+    "library/arxiv-2402.08782v1/sections/sec-005",
+    "library/arxiv-2402.08782v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2402.08782v1",
+    "source_file": "2402.08782v1.pdf",
+    "source_sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
+    "pages": 12,
+    "arxiv": {
+      "id": "2402.08782",
+      "version": "1",
+      "primary_class": "math.GR",
+      "stamp_date": "13 Feb 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

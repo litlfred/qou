@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-unified-iterative-correction",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:unified-iterative-correction",
+  "kind": "proof",
+  "title": "Proof of unified iterative correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-unified-iterative-correction"
+  ],
+  "text": "unified-iterative-correction-proof.md",
+  "provenance": "authored"
+}

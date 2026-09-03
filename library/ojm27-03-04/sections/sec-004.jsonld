@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ojm27-03-04/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+  "pageStart": 11,
+  "pageEnd": 16,
+  "contains": [
+    "library/ojm27-03-04/blocks/prose-sec-004",
+    "library/ojm27-03-04/blocks/prop-sec-004-01",
+    "library/ojm27-03-04/blocks/prop-sec-004-02",
+    "library/ojm27-03-04/blocks/thm-sec-004-03",
+    "library/ojm27-03-04/blocks/conj-sec-004-04"
+  ],
+  "derivedFrom": "library/ojm27-03-04/manifest",
+  "sourceDocument": "library/ojm27-03-04/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-heat-equation",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-heat-equation",
+  "kind": "definition",
+  "title": "$q$-Heat equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+    "papers/quantum-observable-universe/blocks/prop-substrate-radial-coordinate"
+  ],
+  "tags": [
+    "q-laplacian",
+    "heat-equation",
+    "reeb-flow",
+    "evolution"
+  ],
+  "leanRef": "qou:QOU.QHeatEquation",
+  "text": "q-heat-equation.md",
+  "leanSource": "q-heat-equation.lean",
+  "provenance": "authored"
+}

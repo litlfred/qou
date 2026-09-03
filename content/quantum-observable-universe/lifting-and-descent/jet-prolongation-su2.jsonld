@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-jet-prolongation-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:jet-prolongation-su2",
+  "kind": "example",
+  "title": "Jet prolongation of $\\mathcal{O}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "tags": [
+    "su2",
+    "jet-bundle",
+    "frobenius-hopf",
+    "prolongation"
+  ],
+  "text": "jet-prolongation-su2.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-pawlowski-leitner-basis",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pawlowski-leitner-basis",
+  "kind": "proposition",
+  "title": "Pawlowski--Leitner basis for $\\mathrm{Hom}(V_j, V_{1/2}^{\\otimes n})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-spin-half-representation",
+    "papers/unital-groebner-bases/blocks/cor-pbw"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-adjoint-trace"
+  ],
+  "cites": [
+    "references/leitnerpawloski2004"
+  ],
+  "tags": [
+    "basis",
+    "intertwiner",
+    "representation",
+    "pawlei"
+  ],
+  "leanRef": "qou:QOU.PawLeiBasis",
+  "text": "pawlowski-leitner-basis.md",
+  "leanSource": "pawlowski-leitner-basis.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:coulomb-charge",
+  "kind": "definition",
+  "title": "Coulomb charge of a knot composite",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "tags": [
+    "coulomb",
+    "charge",
+    "crossing",
+    "asymmetry",
+    "skein"
+  ],
+  "leanRef": "qou:QOU.Braiding.CoulombCharge",
+  "text": "coulomb-charge.md",
+  "leanSource": "coulomb-charge.lean",
+  "provenance": "authored"
+}

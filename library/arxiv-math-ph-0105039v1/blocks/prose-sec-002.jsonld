@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Quantum Dilogarithm Function",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-002-2-quantum-dilogarithm-function.md",
+  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
+  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "provenance": "ingested"
+}

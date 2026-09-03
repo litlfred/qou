@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-jet-prolongation-C",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:jet-prolongation-C",
+  "kind": "proof",
+  "title": "Proof of Archimedean realisation of jet prolongation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-jet-prolongation-C"
+  ],
+  "text": "jet-prolongation-C-proof.md",
+  "provenance": "authored"
+}

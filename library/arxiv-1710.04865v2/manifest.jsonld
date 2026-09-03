@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1710.04865v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+  "contains": [
+    "library/arxiv-1710.04865v2/sections/sec-000",
+    "library/arxiv-1710.04865v2/sections/sec-001",
+    "library/arxiv-1710.04865v2/sections/sec-002",
+    "library/arxiv-1710.04865v2/sections/sec-003",
+    "library/arxiv-1710.04865v2/sections/sec-004",
+    "library/arxiv-1710.04865v2/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1710.04865v2",
+    "source_file": "1710.04865v2.pdf",
+    "source_sha256": "ac8f436173d550e816683457955ed337dd1e59b0ae0dc521b7cbd2be70b1d5fd",
+    "pages": 24,
+    "arxiv": {
+      "id": "1710.04865",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "13 Apr 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

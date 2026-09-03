@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/resur-and-mld-calc-d-sauzin-hal/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Alien operators. Alien derivations",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-alien-operators-alien-derivations.md",
+  "derivedFrom": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "sourceDocument": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "provenance": "ingested"
+}

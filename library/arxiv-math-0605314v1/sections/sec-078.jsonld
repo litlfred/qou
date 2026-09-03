@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0605314v1/sections/sec-078",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Divisibility in the ring ˆZ[q]. Here, we make some basic observations about",
+  "pageStart": 43,
+  "pageEnd": 45,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-078",
+    "library/arxiv-math-0605314v1/blocks/lem-sec-078-01",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-078-02",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-078-03",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-078-04"
+  ],
+  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
+  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-c1-ggm-bar-parity-faces",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:c1-ggm-bar-parity-faces",
+  "kind": "conjecture",
+  "title": "The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-qdifference-kernel-prolongation-symbol"
+  ],
+  "tags": [
+    "q-difference",
+    "binding",
+    "stokes",
+    "colored-jones",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity",
+  "text": "c1-ggm-bar-parity-faces.md",
+  "provenance": "authored"
+}

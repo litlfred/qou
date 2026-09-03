@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.04887v3/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The 5-term relation",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1712.04887v3/blocks/prose-sec-006",
+    "library/arxiv-1712.04887v3/blocks/thm-sec-006-01"
+  ],
+  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
+  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "provenance": "ingested"
+}

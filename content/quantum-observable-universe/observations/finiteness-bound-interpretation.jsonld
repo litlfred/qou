@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-finiteness-bound-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:finiteness-bound-interpretation",
+  "kind": "remark",
+  "title": "Physical interpretation of $[A\\!-\\!1]_q! > [2]_q^{A-1}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound",
+  "tags": [
+    "finiteness",
+    "interpretation",
+    "pauli-exclusion",
+    "nuclear-chart",
+    "drip-line",
+    "shell-model"
+  ],
+  "text": "finiteness-bound-interpretation.md",
+  "provenance": "authored"
+}

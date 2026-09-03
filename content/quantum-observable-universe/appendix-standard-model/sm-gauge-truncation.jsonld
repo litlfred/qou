@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-sm-gauge-truncation",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:sm-gauge-truncation",
+  "kind": "conjecture",
+  "title": "Standard-Model truncation: $\\mathrm{SU}(3) \\times \\mathrm{SU}(2) \\times \\mathrm{U}(1)$ in the archimedean gauge image",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gauge-action-groupoid",
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+    "papers/quantum-observable-universe/blocks/conj-g-action-on-substrate",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "gauge-theory",
+    "electroweak",
+    "color",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.StandardModel.StandardModelTruncation",
+  "text": "sm-gauge-truncation.md",
+  "leanSource": "sm-gauge-truncation.lean",
+  "provenance": "authored"
+}

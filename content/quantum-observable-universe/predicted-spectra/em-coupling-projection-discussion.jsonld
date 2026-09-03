@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-em-coupling-projection-discussion",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:em-coupling-projection-discussion",
+  "kind": "remark",
+  "title": "Spectral characterisation, the Chern--Simons correction, and the open bare residual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+    "papers/quantum-observable-universe/blocks/rem-em-coupling-chern-simons",
+    "papers/quantum-observable-universe/blocks/rem-alpha-em-derivation-open-problems",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+  "text": "em-coupling-projection-discussion.md",
+  "provenance": "authored"
+}

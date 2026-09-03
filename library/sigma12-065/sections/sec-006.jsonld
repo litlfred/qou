@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/sigma12-065/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Understanding the isomorphism f",
+  "pageStart": 9,
+  "pageEnd": 15,
+  "contains": [
+    "library/sigma12-065/blocks/prose-sec-006",
+    "library/sigma12-065/blocks/thm-sec-006-01"
+  ],
+  "derivedFrom": "library/sigma12-065/manifest",
+  "sourceDocument": "library/sigma12-065/manifest",
+  "provenance": "ingested"
+}

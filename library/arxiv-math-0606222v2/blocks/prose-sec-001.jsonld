@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606222v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Multivariable little q-Jacobi polynomials",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-2-multivariable-little-q-jacobi-polynomials.md",
+  "derivedFrom": "library/arxiv-math-0606222v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606222v2/manifest",
+  "provenance": "ingested"
+}

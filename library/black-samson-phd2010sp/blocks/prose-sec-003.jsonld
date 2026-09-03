@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/black-samson-phd2010sp/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "COMBINATORIAL PROOF",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-003-v-combinatorial-proof.md",
+  "derivedFrom": "library/black-samson-phd2010sp/manifest",
+  "sourceDocument": "library/black-samson-phd2010sp/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:molecular-hopf-chain",
+  "kind": "definition",
+  "title": "Molecular Hopf chain (open)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-covalent-bond-types"
+  ],
+  "tags": [
+    "molecular",
+    "hopf-chain",
+    "open-chain",
+    "covalent-bond",
+    "linking-matrix",
+    "tridiagonal",
+    "spring"
+  ],
+  "leanRef": "qou:QOU.Organic.MolecularHopfChain",
+  "text": "molecular-hopf-chain.md",
+  "leanSource": "molecular-hopf-chain.lean",
+  "provenance": "authored"
+}

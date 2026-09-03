@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-beta-stability",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:beta-stability",
+  "kind": "proposition",
+  "title": "Beta-stability line from the Skein binding Lagrangian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-skein-binding-lagrangian"
+  ],
+  "tags": [
+    "stability",
+    "beta-decay",
+    "neutron",
+    "valley-of-stability",
+    "coulomb",
+    "lagrangian"
+  ],
+  "leanRef": "qou:QOU.Braiding.beta_stability",
+  "text": "beta-stability.md",
+  "leanSource": "beta-stability.lean",
+  "provenance": "authored"
+}

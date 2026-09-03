@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-crossing-parity-test",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:crossing-parity-test",
+  "kind": "remark",
+  "title": "Observational test of the $Z$-parity sublimation rule",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-composite-crossing-parity",
+    "papers/quantum-observable-universe/blocks/prop-phase-transition-boundary"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-composite-crossing-parity",
+  "tags": [
+    "crossing-parity",
+    "sublimation",
+    "observational-test",
+    "metallic-bonding",
+    "condensed-matter"
+  ],
+  "text": "crossing-parity-test.md",
+  "provenance": "authored"
+}

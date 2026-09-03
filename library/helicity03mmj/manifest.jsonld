@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Geometry of higher helicities",
+  "contains": [
+    "library/helicity03mmj/sections/sec-000",
+    "library/helicity03mmj/sections/sec-001",
+    "library/helicity03mmj/sections/sec-002",
+    "library/helicity03mmj/sections/sec-003",
+    "library/helicity03mmj/sections/sec-004",
+    "library/helicity03mmj/sections/sec-005",
+    "library/helicity03mmj/sections/sec-006",
+    "library/helicity03mmj/sections/sec-007",
+    "library/helicity03mmj/sections/sec-008",
+    "library/helicity03mmj/sections/sec-009",
+    "library/helicity03mmj/sections/sec-010",
+    "library/helicity03mmj/sections/sec-011",
+    "library/helicity03mmj/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "helicity03mmj",
+    "source_file": "helicity03mmj.pdf",
+    "source_sha256": "e364dad3afff318066eddcf12175c21c9943416323ccfded7a105f7f83cf2889",
+    "pages": 23,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

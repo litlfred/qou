@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-025",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Eclipse",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-025-61-eclipse.md",
+  "derivedFrom": "library/arxiv-1603.06017v2/manifest",
+  "sourceDocument": "library/arxiv-1603.06017v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/stateintegralsqseries/blocks/prose-sec-009",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Lemma 1.5",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-009-27-proof-of-lemma-15.md",
+  "derivedFrom": "library/stateintegralsqseries/manifest",
+  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-metallic-character-knot-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:metallic-character-knot-interpretation",
+  "kind": "remark",
+  "title": "Metallic bonding, conduction, and the residual linking number $\\lambda(R)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-metallic-character-knot",
+    "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-metallic-character-knot",
+  "text": "metallic-character-knot-interpretation.md",
+  "provenance": "authored"
+}

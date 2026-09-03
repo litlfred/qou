@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-026",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Jones polynomial 17",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-026",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-01",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-02",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-03",
+    "library/arxiv-math-0606435v2/blocks/ex-sec-026-04",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-026-05",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-06",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-07",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-026-08"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

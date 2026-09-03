@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The early days at Stony Brook",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-000-1-the-early-days-at-stony-brook.md",
+  "derivedFrom": "library/arxiv-1011.1343v1/manifest",
+  "sourceDocument": "library/arxiv-1011.1343v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1511.00400v2/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Analytic torsion",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-1511.00400v2/blocks/prose-sec-008",
+    "library/arxiv-1511.00400v2/blocks/thm-sec-008-01",
+    "library/arxiv-1511.00400v2/blocks/thm-sec-008-02"
+  ],
+  "derivedFrom": "library/arxiv-1511.00400v2/manifest",
+  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "provenance": "ingested"
+}

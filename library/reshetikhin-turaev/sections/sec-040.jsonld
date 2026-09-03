@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/reshetikhin-turaev/sections/sec-040",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/reshetikhin-turaev/blocks/prose-sec-040",
+    "library/reshetikhin-turaev/blocks/rem-sec-040-01"
+  ],
+  "derivedFrom": "library/reshetikhin-turaev/manifest",
+  "sourceDocument": "library/reshetikhin-turaev/manifest",
+  "provenance": "ingested"
+}

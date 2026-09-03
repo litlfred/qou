@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-vc-as-depth-2-instance",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vc-as-depth-2-instance",
+  "kind": "remark",
+  "title": "Volume Conjecture as the depth-2 instance of GS $\\leftrightarrow$ period correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "volume-conjecture",
+    "depth-2",
+    "bloch-wigner",
+    "regulator",
+    "graded-mikusinski",
+    "interpretation"
+  ],
+  "text": "vc-as-depth-2-instance.md",
+  "provenance": "authored"
+}

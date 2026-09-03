@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Stable points",
+  "pageStart": 33,
+  "pageEnd": 36,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-015",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-01",
+    "library/deligne-mostow-1986/blocks/lem-sec-015-02",
+    "library/deligne-mostow-1986/blocks/cor-sec-015-03",
+    "library/deligne-mostow-1986/blocks/prop-sec-015-04",
+    "library/deligne-mostow-1986/blocks/cor-sec-015-05"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

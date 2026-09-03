@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1404.2541v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension",
+  "contains": [
+    "library/arxiv-1404.2541v1/sections/sec-000",
+    "library/arxiv-1404.2541v1/sections/sec-001",
+    "library/arxiv-1404.2541v1/sections/sec-002",
+    "library/arxiv-1404.2541v1/sections/sec-003",
+    "library/arxiv-1404.2541v1/sections/sec-004",
+    "library/arxiv-1404.2541v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1404.2541v1",
+    "source_file": "1404.2541v1.pdf",
+    "source_sha256": "edb7c9b2b1561ac3dd50c96bb6cb02714eb5757d4728b53ba9c171e76dcefb9e",
+    "pages": 22,
+    "arxiv": {
+      "id": "1404.2541",
+      "version": "1",
+      "primary_class": "math.CA",
+      "stamp_date": "9 Apr 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

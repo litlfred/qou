@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-categorical-precision-ladder-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-beta-categorical-precision-ladder-context",
+  "kind": "remark",
+  "title": "Per-rung sources, truncation-order analysis, and open questions for the Q_beta precision ladder",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder",
+  "tags": [
+    "q-beta",
+    "precision-ladder",
+    "truncation-order",
+    "habiro",
+    "hoefsmit",
+    "jones"
+  ],
+  "text": "q-beta-categorical-precision-ladder-context.md",
+  "provenance": "authored"
+}

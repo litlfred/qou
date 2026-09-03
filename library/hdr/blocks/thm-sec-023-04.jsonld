@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/blocks/thm-sec-023-04",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 49,
+  "pageEnd": 54,
+  "text": "thm-sec-023-04.md",
+  "derivedFrom": "library/hdr/sections/sec-023",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

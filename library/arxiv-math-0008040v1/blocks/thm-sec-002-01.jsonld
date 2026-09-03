@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0008040v1/blocks/thm-sec-002-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Lusztig",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "thm-sec-002-01.md",
+  "derivedFrom": "library/arxiv-math-0008040v1/sections/sec-002",
+  "sourceDocument": "library/arxiv-math-0008040v1/manifest",
+  "provenance": "ingested"
+}

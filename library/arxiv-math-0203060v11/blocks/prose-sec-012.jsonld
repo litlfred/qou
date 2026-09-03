@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203060v11/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Integrals",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-012-42-integrals.md",
+  "derivedFrom": "library/arxiv-math-0203060v11/manifest",
+  "sourceDocument": "library/arxiv-math-0203060v11/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-observability-independent-motivation-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:observability-independent-motivation-table-data",
+  "kind": "table",
+  "title": "Data table from rem:observability-independent-motivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-observability-independent-motivation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "observability-independent-motivation-table-data.md",
+  "provenance": "authored"
+}

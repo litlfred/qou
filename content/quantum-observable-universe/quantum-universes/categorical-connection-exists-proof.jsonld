@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-connection-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-connection-exists",
+  "kind": "proof",
+  "title": "Proof of existence of categorical connections",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-connection-exists"
+  ],
+  "text": "categorical-connection-exists-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-dirac-operator-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-dirac-operator-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical Dirac operator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-dirac-operator-exists"
+  ],
+  "tags": [
+    "existence",
+    "dirac-operator"
+  ],
+  "leanRef": "qou:QOU.CategoricalDirac.exists",
+  "text": "categorical-dirac-operator-exists.md",
+  "leanSource": "categorical-dirac-operator-exists.lean",
+  "provenance": "authored"
+}

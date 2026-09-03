@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-gr-qc-0407051v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Black hole entropy from Quantum Geometry",
+  "contains": [
+    "library/arxiv-gr-qc-0407051v2/sections/sec-000",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-001",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-002",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-003",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-004",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-005",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-006",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-007",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-008",
+    "library/arxiv-gr-qc-0407051v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-gr-qc-0407051v2",
+    "source_file": "0407051v2.pdf",
+    "source_sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
+    "pages": 14,
+    "arxiv": {
+      "id": "gr-qc/0407051",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "23 Aug 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "L^2-torsion of 3-manifolds",
+  "contains": [
+    "library/1172-2/sections/sec-000",
+    "library/1172-2/sections/sec-001",
+    "library/1172-2/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1172-2",
+    "source_file": "1172-2.pdf",
+    "source_sha256": "390665341d5b7522bb384d3a99acf76e40126b477362a34f93a5a342c6190737",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

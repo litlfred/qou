@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:van-der-waals-hopf-channel",
+  "kind": "definition",
+  "title": "The Hopf symmetric block $e_+$ — retained cosh carrier (not van der Waals)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hopf-diquark",
+    "papers/quantum-observable-universe/blocks/prop-trm-hopf-sigma1-sq-closed-form"
+  ],
+  "tags": [
+    "van-der-waals",
+    "dispersion",
+    "hopf-link",
+    "wedderburn-block",
+    "idempotent",
+    "intermolecular",
+    "vol-zero"
+  ],
+  "leanRef": "qou:QOU.VanDerWaals.vdwSymmetricBlock",
+  "text": "van-der-waals-hopf-channel.md",
+  "leanSource": "van-der-waals-hopf-channel.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:madelung-fluid",
+  "kind": "remark",
+  "title": "Madelung transformation: quantum fluid and vortex filaments",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-schrodinger-jet-coaction",
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-algebraic-filter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-schrodinger-jet-coaction",
+  "tags": [
+    "madelung",
+    "fluid-dynamics",
+    "acoustic-metric",
+    "divisor",
+    "vortex"
+  ],
+  "text": "madelung-fluid.md",
+  "provenance": "authored"
+}

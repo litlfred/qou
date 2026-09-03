@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-043",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Polygons and Teichm¨ uller curves",
+  "pageStart": 55,
+  "pageEnd": 58,
+  "contains": [
+    "library/bn/blocks/prose-sec-043",
+    "library/bn/blocks/thm-sec-043-01",
+    "library/bn/blocks/thm-sec-043-02",
+    "library/bn/blocks/rem-sec-043-03"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

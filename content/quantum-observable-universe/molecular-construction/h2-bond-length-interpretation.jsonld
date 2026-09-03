@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-h2-bond-length-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:h2-bond-length-interpretation",
+  "kind": "remark",
+  "title": "$H_2$ bond length from covalent channel eigenvalue ratio",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-h2-lp-dual-binding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-h2-molecular-braid",
+  "tags": [
+    "H2",
+    "bond-length",
+    "eigenvalue-ratio",
+    "interpretation"
+  ],
+  "text": "h2-bond-length-interpretation.md",
+  "provenance": "authored"
+}

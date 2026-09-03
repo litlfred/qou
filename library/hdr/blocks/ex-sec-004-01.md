@@ -1,0 +1,1 @@
+Let W = S3. We have W =⟨s,t|s2 = t2 = (st)3 = 1⟩. Let L : W→ Z>0 be a weight

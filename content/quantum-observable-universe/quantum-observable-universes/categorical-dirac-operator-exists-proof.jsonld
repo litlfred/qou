@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-dirac-operator-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-dirac-operator-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the categorical Dirac operator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-dirac-operator-exists"
+  ],
+  "text": "categorical-dirac-operator-exists-proof.md",
+  "provenance": "authored"
+}

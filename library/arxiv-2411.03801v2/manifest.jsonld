@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2411.03801v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS",
+  "contains": [
+    "library/arxiv-2411.03801v2/sections/sec-000",
+    "library/arxiv-2411.03801v2/sections/sec-001",
+    "library/arxiv-2411.03801v2/sections/sec-002",
+    "library/arxiv-2411.03801v2/sections/sec-003",
+    "library/arxiv-2411.03801v2/sections/sec-004",
+    "library/arxiv-2411.03801v2/sections/sec-005",
+    "library/arxiv-2411.03801v2/sections/sec-006",
+    "library/arxiv-2411.03801v2/sections/sec-007",
+    "library/arxiv-2411.03801v2/sections/sec-008",
+    "library/arxiv-2411.03801v2/sections/sec-009",
+    "library/arxiv-2411.03801v2/sections/sec-010",
+    "library/arxiv-2411.03801v2/sections/sec-011",
+    "library/arxiv-2411.03801v2/sections/sec-012",
+    "library/arxiv-2411.03801v2/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2411.03801v2",
+    "source_file": "2411.03801v2.pdf",
+    "source_sha256": "a7f1f6fa74cb0949e8e9b3aa8a175a534182b79d37dabdfb0bf024fd744b9444",
+    "pages": 24,
+    "arxiv": {
+      "id": "2411.03801",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "13 Nov 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

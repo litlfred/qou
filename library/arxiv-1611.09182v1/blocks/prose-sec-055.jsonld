@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1611.09182v1/blocks/prose-sec-055",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Conclusion",
+  "pageStart": 91,
+  "pageEnd": 93,
+  "text": "../sections/sec-055-10-conclusion.md",
+  "derivedFrom": "library/arxiv-1611.09182v1/manifest",
+  "sourceDocument": "library/arxiv-1611.09182v1/manifest",
+  "provenance": "ingested"
+}

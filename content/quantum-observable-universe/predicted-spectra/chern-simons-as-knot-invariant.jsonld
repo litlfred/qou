@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-chern-simons-as-knot-invariant",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chern-simons-as-knot-invariant",
+  "kind": "remark",
+  "title": "Classical Chern--Simons as a non-hyperbolic knot invariant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-em-coupling-chern-simons",
+    "papers/quantum-observable-universe/blocks/rem-categorical-action-vs-chern-simons"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-em-coupling-chern-simons",
+  "cites": [
+    "references/witten2011"
+  ],
+  "tags": [
+    "chern-simons",
+    "torus-knot",
+    "geometric-invariant",
+    "hyperbolic-volume",
+    "fine-structure"
+  ],
+  "text": "chern-simons-as-knot-invariant.md",
+  "provenance": "authored"
+}

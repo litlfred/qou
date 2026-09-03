@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-vdw-pskew-isolation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:vdw-pskew-isolation",
+  "kind": "proposition",
+  "title": "Van der Waals as the bar-odd ($P_{\\mathrm{skew}}$, sinh) channel",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hopf-link-symmetric-decomposition",
+    "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel",
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/rem-im-q-vs-p-skew",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-habiro-bar-involution",
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/cor-gauge-coupling-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio"
+  ],
+  "tags": [
+    "van-der-waals",
+    "bar-involution",
+    "p-skew",
+    "sinh-cosh",
+    "hopf-link",
+    "rapidity",
+    "narrowed-probe"
+  ],
+  "leanRef": "qou:QOU.VdwPskew.hopf_bar_even_odd_decomposition",
+  "text": "vdw-pskew-isolation.md",
+  "leanSource": "vdw-pskew-isolation.lean",
+  "provenance": "authored"
+}

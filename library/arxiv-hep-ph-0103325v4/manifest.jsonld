@@ -1,0 +1,55 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0103325v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quantum algebras in phenomenological description of particle properties",
+  "contains": [
+    "library/arxiv-hep-ph-0103325v4/sections/sec-000",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-001",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-002",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-003",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-004",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-005",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-006",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-007",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-008",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-009",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-010",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-011",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-012",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-013",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-014",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-015",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-016",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-017",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-018",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-019",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-020",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-021",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-022",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-023",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-024",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-025",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-026",
+    "library/arxiv-hep-ph-0103325v4/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0103325v4",
+    "source_file": "0103325v4.pdf",
+    "source_sha256": "38590174ab836fa16ad0017ff8c948276206d8afd52f4c1288012ee0748bb1fb",
+    "pages": 8,
+    "arxiv": {
+      "id": "hep-ph/0103325",
+      "version": "4",
+      "primary_class": null,
+      "stamp_date": "16 Oct 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

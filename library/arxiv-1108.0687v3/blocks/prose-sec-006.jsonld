@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1108.0687v3/blocks/prose-sec-006",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The classical proofs",
+  "pageStart": 9,
+  "pageEnd": 14,
+  "text": "../sections/sec-006-41-the-classical-proofs.md",
+  "derivedFrom": "library/arxiv-1108.0687v3/manifest",
+  "sourceDocument": "library/arxiv-1108.0687v3/manifest",
+  "provenance": "ingested"
+}

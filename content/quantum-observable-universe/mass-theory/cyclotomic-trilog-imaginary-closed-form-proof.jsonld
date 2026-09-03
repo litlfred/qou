@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-cyclotomic-trilog-imaginary-closed-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:cyclotomic-trilog-imaginary-closed-form",
+  "kind": "proof",
+  "title": "Proof of cyclotomic trilog imaginary closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-trilog-imaginary-closed-form"
+  ],
+  "text": "cyclotomic-trilog-imaginary-closed-form-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-qdifference-kernel-prolongation-symbol",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:qdifference-kernel-prolongation-symbol",
+  "kind": "conjecture",
+  "title": "The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-genfun-qdifference",
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation",
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum"
+  ],
+  "tags": [
+    "tier:keystone",
+    "binding",
+    "q-difference",
+    "seiberg-witten",
+    "jet-prolongation",
+    "keystone",
+    "step-9b",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Mass.QDifferenceKernelIsProlongationSymbol",
+  "text": "qdifference-kernel-prolongation-symbol.md",
+  "leanSource": "qdifference-kernel-prolongation-symbol.lean",
+  "provenance": "authored"
+}

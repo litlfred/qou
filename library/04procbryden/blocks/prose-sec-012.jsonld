@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Conclusions",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-012-5-conclusions.md",
+  "derivedFrom": "library/04procbryden/manifest",
+  "sourceDocument": "library/04procbryden/manifest",
+  "provenance": "ingested"
+}

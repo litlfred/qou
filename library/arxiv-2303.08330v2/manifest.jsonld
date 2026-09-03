@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2303.08330v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Cable Knot and BPS-Series II John Chae",
+  "contains": [
+    "library/arxiv-2303.08330v2/sections/sec-000",
+    "library/arxiv-2303.08330v2/sections/sec-001",
+    "library/arxiv-2303.08330v2/sections/sec-002",
+    "library/arxiv-2303.08330v2/sections/sec-003",
+    "library/arxiv-2303.08330v2/sections/sec-004",
+    "library/arxiv-2303.08330v2/sections/sec-005",
+    "library/arxiv-2303.08330v2/sections/sec-006",
+    "library/arxiv-2303.08330v2/sections/sec-007",
+    "library/arxiv-2303.08330v2/sections/sec-008",
+    "library/arxiv-2303.08330v2/sections/sec-009",
+    "library/arxiv-2303.08330v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2303.08330v2",
+    "source_file": "2303.08330v2.pdf",
+    "source_sha256": "94981fa0a792b3fab2d0d5f6c2376a6de076a4198f4bff31c908e20e376d9db0",
+    "pages": 17,
+    "arxiv": {
+      "id": "2303.08330",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "9 Jan 2024"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

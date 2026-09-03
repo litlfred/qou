@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-six-operators-via-vertex-factorisation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:six-operators-via-vertex-factorisation",
+  "kind": "remark",
+  "title": "Six canonical knot operators are the named vertex-factorisation instances",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+    "papers/quantum-observable-universe/blocks/prop-ramified-disc-fusion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor",
+  "tags": [
+    "vertex-factorisation",
+    "knot-operator",
+    "s3-galois",
+    "reeb-flow",
+    "exceptional-divisor"
+  ],
+  "text": "six-operators-via-vertex-factorisation.md",
+  "provenance": "authored"
+}

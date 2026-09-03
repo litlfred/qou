@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-confined-knot-binding",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confined-knot-binding",
+  "kind": "proposition",
+  "title": "Confined knot binding mechanism: character ratio decomposition per jet level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-knot-classification"
+  ],
+  "tags": [
+    "binding-mechanism",
+    "character-ratio",
+    "wedderburn",
+    "extremal-cancellation",
+    "confined-knot"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.confined_knot_binding",
+  "text": "confined-knot-binding.md",
+  "provenance": "authored"
+}

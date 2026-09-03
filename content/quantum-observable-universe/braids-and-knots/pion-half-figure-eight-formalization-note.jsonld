@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-pion-half-figure-eight-formalization-note",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pion-half-figure-eight-formalization-note",
+  "kind": "remark",
+  "title": "Formalization scope and novelty of the pion / half-figure-eight phase identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pion-half-figure-eight"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-pion-half-figure-eight",
+  "tags": [
+    "pion",
+    "figure-eight",
+    "formalization-note",
+    "mathematical-novelty"
+  ],
+  "text": "pion-half-figure-eight-formalization-note.md",
+  "provenance": "authored"
+}

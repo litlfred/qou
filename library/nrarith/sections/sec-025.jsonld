@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Z:",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-025",
+    "library/nrarith/blocks/rem-sec-025-01"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

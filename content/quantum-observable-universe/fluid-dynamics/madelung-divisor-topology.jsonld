@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-madelung-divisor-topology",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:madelung-divisor-topology",
+  "kind": "remark",
+  "title": "Divisor topology of the wavefunction zero-locus",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+    "papers/quantum-observable-universe/blocks/prop-topological-decomposition-mass"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+  "tags": [
+    "divisor",
+    "vortex",
+    "blowup",
+    "linking"
+  ],
+  "text": "madelung-divisor-topology.md",
+  "provenance": "authored"
+}

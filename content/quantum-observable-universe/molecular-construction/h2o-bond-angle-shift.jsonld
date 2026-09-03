@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-h2o-bond-angle-shift",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:h2o-bond-angle-shift",
+  "kind": "proposition",
+  "title": "Bent angle as a quadratic-well shift",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid"
+  ],
+  "tags": [
+    "water",
+    "H2O",
+    "bond-angle",
+    "quadratic",
+    "harmonic",
+    "lone-pair"
+  ],
+  "leanRef": "qou:QOU.Molecular.bond_angle_shift",
+  "text": "h2o-bond-angle-shift.md",
+  "leanSource": "h2o-bond-angle-shift.lean",
+  "provenance": "authored"
+}

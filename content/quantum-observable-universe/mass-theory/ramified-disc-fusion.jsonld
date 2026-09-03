@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-ramified-disc-fusion",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:ramified-disc-fusion",
+  "kind": "proposition",
+  "title": "Ramified-disc fusion at the foundry boundary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-reeb-bundle",
+    "papers/quantum-observable-universe/blocks/def-color-sector-coords",
+    "papers/quantum-observable-universe/blocks/rem-rho-s3-holonomy-exposition"
+  ],
+  "tags": [
+    "ramified-cover",
+    "monodromy",
+    "exceptional-divisor",
+    "s3-galois",
+    "boundary-disc"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement",
+  "text": "ramified-disc-fusion.md",
+  "provenance": "authored"
+}

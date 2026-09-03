@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2209.06973v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+  "pageStart": 5,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-2209.06973v1/blocks/prose-sec-002",
+    "library/arxiv-2209.06973v1/blocks/rem-sec-002-01",
+    "library/arxiv-2209.06973v1/blocks/rem-sec-002-02",
+    "library/arxiv-2209.06973v1/blocks/ex-sec-002-03",
+    "library/arxiv-2209.06973v1/blocks/rem-sec-002-04",
+    "library/arxiv-2209.06973v1/blocks/rem-sec-002-05"
+  ],
+  "derivedFrom": "library/arxiv-2209.06973v1/manifest",
+  "sourceDocument": "library/arxiv-2209.06973v1/manifest",
+  "provenance": "ingested"
+}

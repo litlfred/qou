@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hal-01215114/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Symmetric functions",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-001-symmetric-functions.md",
+  "derivedFrom": "library/hal-01215114/manifest",
+  "sourceDocument": "library/hal-01215114/manifest",
+  "provenance": "ingested"
+}

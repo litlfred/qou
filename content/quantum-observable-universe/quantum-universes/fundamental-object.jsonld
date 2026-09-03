@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-fundamental-object",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:fundamental-object",
+  "kind": "definition",
+  "title": "Fundamental object",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "cites": [
+    "references/deligne1990"
+  ],
+  "tags": [
+    "category-theory",
+    "fundamental-object",
+    "self-dual",
+    "tannaka-krein"
+  ],
+  "leanRef": "qou:QOU.FundamentalObject",
+  "text": "fundamental-object.md",
+  "leanSource": "fundamental-object.lean",
+  "provenance": "authored"
+}

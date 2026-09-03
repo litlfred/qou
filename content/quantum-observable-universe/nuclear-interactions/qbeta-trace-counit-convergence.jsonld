@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-qbeta-trace-counit-convergence",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:qbeta-trace-counit-convergence",
+  "kind": "conjecture",
+  "title": "Trace–counit convergence of the $\\mathfrak{Q}_\\beta$ mass difference",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-counit-closed-form"
+  ],
+  "tags": [
+    "beta-decay",
+    "q-value",
+    "frobenius-counit",
+    "markov-trace",
+    "per-braid-mass-tower",
+    "conjecture"
+  ],
+  "leanRef": "qou:QOU.Interactions.QBetaConvergence.QBetaTraceCounitConvergence",
+  "text": "qbeta-trace-counit-convergence.md",
+  "leanSource": "qbeta-trace-counit-convergence.lean",
+  "provenance": "authored"
+}

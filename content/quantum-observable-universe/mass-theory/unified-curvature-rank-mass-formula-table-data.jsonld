@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-unified-curvature-rank-mass-formula-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:unified-curvature-rank-mass-formula-table-data",
+  "kind": "table",
+  "title": "Data table from prop:unified-curvature-rank-mass-formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-unified-curvature-rank-mass-formula"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "unified-curvature-rank-mass-formula-table-data.md",
+  "provenance": "authored"
+}

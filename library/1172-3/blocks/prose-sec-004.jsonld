@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-3/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "THE PAIRING",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-004-5-the-pairing.md",
+  "derivedFrom": "library/1172-3/manifest",
+  "sourceDocument": "library/1172-3/manifest",
+  "provenance": "ingested"
+}

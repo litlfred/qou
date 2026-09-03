@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/descendants-colored-jones/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A conjecture",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/descendants-colored-jones/blocks/prose-sec-003",
+    "library/descendants-colored-jones/blocks/conj-sec-003-01"
+  ],
+  "derivedFrom": "library/descendants-colored-jones/manifest",
+  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "provenance": "ingested"
+}

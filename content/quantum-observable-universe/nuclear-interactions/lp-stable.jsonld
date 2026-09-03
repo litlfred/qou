@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-lp-stable",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:lp-stable",
+  "kind": "definition",
+  "title": "LP-stable element of $H_3(q)$",
+  "tags": [
+    "lp-stability",
+    "gram-matrix",
+    "confinement",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.LPStable",
+  "text": "lp-stable.md",
+  "leanSource": "lp-stable.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1511.05628v1/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorem 2.2",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-012-33-proof-of-theorem-22.md",
+  "derivedFrom": "library/arxiv-1511.05628v1/manifest",
+  "sourceDocument": "library/arxiv-1511.05628v1/manifest",
+  "provenance": "ingested"
+}

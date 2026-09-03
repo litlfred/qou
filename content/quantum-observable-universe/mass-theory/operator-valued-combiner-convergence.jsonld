@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-operator-valued-combiner-convergence",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:operator-valued-combiner-convergence",
+  "kind": "proposition",
+  "title": "Operator-valued combiner convergence: $\\chi^\\lambda(\\beta_{\\mathrm{atom}})$ assembles from the deuteron base case",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-r-matrix-sub-lemma",
+    "papers/quantum-observable-universe/blocks/prop-lr-coefficient-hecke"
+  ],
+  "cites": [
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "operator-valued",
+    "wenzl-branching",
+    "combiner",
+    "convergence",
+    "binding-tower",
+    "littlewood-richardson",
+    "conditional-class",
+    "section-3b-cond"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.OperatorValuedCombiner.WenzlAOperator.operator_valued_combiner_convergence",
+  "text": "operator-valued-combiner-convergence.md",
+  "provenance": "authored"
+}

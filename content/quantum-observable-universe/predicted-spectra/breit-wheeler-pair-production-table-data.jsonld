@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-breit-wheeler-pair-production-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:breit-wheeler-pair-production-table-data",
+  "kind": "table",
+  "title": "Breit-Wheeler pair-production Hecke product table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-breit-wheeler-pair-production"
+  ],
+  "tags": [
+    "breit-wheeler",
+    "pair-production",
+    "hecke-product"
+  ],
+  "text": "breit-wheeler-pair-production-table-data.md",
+  "provenance": "authored"
+}

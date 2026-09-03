@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.28781v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The construction",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-2605.28781v1/blocks/prose-sec-010",
+    "library/arxiv-2605.28781v1/blocks/lem-sec-010-01",
+    "library/arxiv-2605.28781v1/blocks/thm-sec-010-02",
+    "library/arxiv-2605.28781v1/blocks/lem-sec-010-03"
+  ],
+  "derivedFrom": "library/arxiv-2605.28781v1/manifest",
+  "sourceDocument": "library/arxiv-2605.28781v1/manifest",
+  "provenance": "ingested"
+}

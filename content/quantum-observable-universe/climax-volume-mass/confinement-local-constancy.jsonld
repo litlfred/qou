@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-local-constancy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-local-constancy",
+  "kind": "proposition",
+  "title": "Local constancy of confinement level off $\\mathcal{B}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-local-shadow-ordering",
+    "papers/quantum-observable-universe/blocks/prop-phase-boundary-variety"
+  ],
+  "tags": [
+    "confinement-level",
+    "local-constancy",
+    "phase-boundary"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ConfinementLocalConstancy",
+  "text": "confinement-local-constancy.md",
+  "leanSource": "confinement-local-constancy.lean",
+  "provenance": "authored"
+}

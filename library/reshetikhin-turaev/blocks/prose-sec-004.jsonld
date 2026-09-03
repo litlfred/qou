@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/reshetikhin-turaev/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "N. Yu. Reshetikhin and V. G. Turaev",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-004-4-n-yu-reshetikhin-and-v-g-turaev.md",
+  "derivedFrom": "library/reshetikhin-turaev/manifest",
+  "sourceDocument": "library/reshetikhin-turaev/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-cohomological-embedding",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cohomological-embedding",
+  "kind": "proposition",
+  "title": "Cohomological embedding: torus knot representations exhaust $H^1(\\Sigma_g)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-fivefold-symmetry"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-fivefold-symmetry"
+  ],
+  "tags": [
+    "cohomological-embedding",
+    "torus-knot",
+    "representation",
+    "jones-polynomial",
+    "genus",
+    "completeness",
+    "magic-numbers",
+    "shell-model"
+  ],
+  "leanRef": "qou:QOU.Archimedean.cohomological_embedding",
+  "text": "cohomological-embedding.md",
+  "leanSource": "cohomological-embedding.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-isotope-knot-equivalence",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:isotope-knot-equivalence",
+  "kind": "proof",
+  "title": "Proof of isotope knot equivalence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-isotope-knot-equivalence"
+  ],
+  "text": "isotope-knot-equivalence-proof.md",
+  "provenance": "authored"
+}

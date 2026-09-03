@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-frobenius-cocasimir-refuted-deuteron",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:frobenius-cocasimir-refuted-deuteron",
+  "kind": "lemma",
+  "title": "Frobenius co-Casimir $\\Delta_\\lambda$ ansatz refuted at the deuteron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-rho-prefactor-structural"
+  ],
+  "tags": [
+    "delta-lambda",
+    "refutation",
+    "co-casimir",
+    "gap-a",
+    "deuteron",
+    "formalize-the-refutation"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.coCasimir_refuted_deuteron",
+  "text": "frobenius-cocasimir-refuted-deuteron.md",
+  "provenance": "authored"
+}

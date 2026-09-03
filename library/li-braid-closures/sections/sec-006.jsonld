@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/li-braid-closures/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Split Links",
+  "pageStart": 9,
+  "pageEnd": 13,
+  "contains": [
+    "library/li-braid-closures/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "library/li-braid-closures/manifest",
+  "sourceDocument": "library/li-braid-closures/manifest",
+  "provenance": "ingested"
+}

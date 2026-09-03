@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-nucl-th-0409040v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+  "contains": [
+    "library/arxiv-nucl-th-0409040v2/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0409040v2",
+    "source_file": "0409040v2.pdf",
+    "source_sha256": "986093ee95b94b241d0bd0147d8769ea42a3c23486c9a8d849af0d5155d7f9a2",
+    "pages": 7,
+    "arxiv": {
+      "id": "nucl-th/0409040",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "22 Nov 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

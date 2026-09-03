@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-filling-electronegativity-ilp",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-filling-electronegativity-ilp",
+  "kind": "remark",
+  "title": "Electronegativity and ILP generator alternation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-electron-shell-braid-capacity"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-filling-rule",
+  "tags": [
+    "electronegativity",
+    "ILP",
+    "Hund",
+    "generator-alternation",
+    "LP-dual"
+  ],
+  "text": "shell-filling-electronegativity-ilp.md",
+  "provenance": "authored"
+}

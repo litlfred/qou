@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-tritium-decay-knot-equation",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:tritium-decay-knot-equation",
+  "kind": "example",
+  "title": "Tritium decay as a Skein crossing change: ${}^3_1\\mathrm{H} \\to {}^3_2\\mathrm{He} + e^- + \\nu_e^{\\sigma}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-lepton-number-categorical"
+  ],
+  "tags": [
+    "tritium",
+    "beta-decay",
+    "skein-relation",
+    "knot-equation",
+    "worked-example",
+    "helium-3",
+    "borromean"
+  ],
+  "text": "tritium-decay-knot-equation.md",
+  "provenance": "authored"
+}

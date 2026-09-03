@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-observation-energy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:observation-energy",
+  "kind": "proposition",
+  "title": "Observation increases quantum energy and deforms the action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/def-categorical-action"
+  ],
+  "tags": [
+    "observation",
+    "energy",
+    "substrate-perturbation",
+    "action",
+    "intent"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse.observation_energy",
+  "text": "observation-energy.md",
+  "provenance": "authored"
+}

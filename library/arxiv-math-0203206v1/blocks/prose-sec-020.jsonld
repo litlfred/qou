@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203206v1/blocks/prose-sec-020",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "(S ⊗ (·,η ))βV (ξ) = ( ∗ ⊗ (ξ, ·))βV (η) ∀ξ,η ∈K,",
+  "pageStart": 17,
+  "pageEnd": 17,
+  "text": "../sections/sec-020-2-s-η-βv-ξ-ξ-βv-η-ξη-k.md",
+  "derivedFrom": "library/arxiv-math-0203206v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203206v1/manifest",
+  "provenance": "ingested"
+}

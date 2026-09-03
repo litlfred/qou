@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-sdp",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-sdp",
+  "kind": "proposition",
+  "title": "Confinement as semidefinite program with matrix Frobenius positivity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp"
+  ],
+  "tags": [
+    "semidefinite-programming",
+    "confinement",
+    "psd-cone",
+    "matrix-frobenius",
+    "cross-channel-coupling",
+    "multi-operator-binding",
+    "sdp-duality",
+    "spectral-gap"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.ConfinementSDP",
+  "text": "confinement-sdp.md",
+  "leanSource": "confinement-sdp.lean",
+  "provenance": "authored"
+}

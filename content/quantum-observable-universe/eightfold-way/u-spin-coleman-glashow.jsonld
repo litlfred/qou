@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-u-spin-coleman-glashow",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:u-spin-coleman-glashow",
+  "kind": "remark",
+  "title": "U-spin and the Coleman–Glashow relation: a third null result",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-decuplet",
+    "papers/quantum-observable-universe/blocks/rem-meson-mass-splitting",
+    "papers/quantum-observable-universe/blocks/rem-decuplet-equal-spacing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-borromean-decuplet",
+  "cites": [
+    "references/colemanglashow1961"
+  ],
+  "leanRef": "qou:QOU.Eightfold.ColemanGlashowIdentity.cg_cannot_discriminate",
+  "text": "u-spin-coleman-glashow.md",
+  "provenance": "authored"
+}

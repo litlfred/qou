@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-affine-chart-origin-of-i-and-q",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:affine-chart-origin-of-i-and-q",
+  "kind": "remark",
+  "title": "Affine-chart origin of the categorical coordinates $i$ and $q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spectral-chart-correspondence",
+    "papers/quantum-observable-universe/blocks/rem-i-as-braiding-orientation",
+    "papers/quantum-observable-universe/blocks/rem-braiding-unit-circle-convention"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-projective-line-object",
+  "tags": [
+    "categorical-coordinate",
+    "affine-chart",
+    "chart-transition",
+    "projective-line",
+    "imaginary-unit",
+    "substrate-parameter",
+    "braiding"
+  ],
+  "text": "affine-chart-origin-of-i-and-q.md",
+  "provenance": "authored"
+}

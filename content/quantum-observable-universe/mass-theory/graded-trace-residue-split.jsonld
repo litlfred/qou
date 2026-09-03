@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:graded-trace-residue-split",
+  "kind": "proposition",
+  "title": "Graded-trace residue split on the confinement filtration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition"
+  ],
+  "tags": [
+    "filtration",
+    "graded-trace",
+    "residue",
+    "strutinsky",
+    "associated-graded",
+    "mass",
+    "spectral-sequence"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.graded_trace_residue_split",
+  "text": "graded-trace-residue-split.md",
+  "provenance": "authored"
+}

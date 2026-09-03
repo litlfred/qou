@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-mobius-energy-frobenius-kernel",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:mobius-energy-frobenius-kernel",
+  "kind": "lemma",
+  "title": "Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-mobius-energy-frobenius-kernel"
+  ],
+  "tags": [
+    "frobenius-pairing",
+    "mobius-energy",
+    "classical-limit",
+    "killing-form"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.mobius_frobenius_kernel",
+  "text": "mobius-energy-frobenius-kernel.md",
+  "provenance": "authored"
+}

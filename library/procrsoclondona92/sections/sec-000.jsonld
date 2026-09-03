@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/procrsoclondona92/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Document",
+  "pageStart": 1,
+  "pageEnd": 19,
+  "contains": [
+    "library/procrsoclondona92/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/procrsoclondona92/manifest",
+  "sourceDocument": "library/procrsoclondona92/manifest",
+  "provenance": "ingested"
+}

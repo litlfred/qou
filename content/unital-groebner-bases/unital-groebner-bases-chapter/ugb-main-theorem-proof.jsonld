@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/prf-ugb-main",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:ugb-main",
+  "kind": "proof",
+  "title": "Proof of the main theorem",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/thm-ugb-main",
+    "papers/unital-groebner-bases/blocks/lem-ugb-generator-choice",
+    "papers/unital-groebner-bases/blocks/def-remainder-modules"
+  ],
+  "tags": [
+    "groebner-basis",
+    "freeness"
+  ],
+  "text": "ugb-main-theorem-proof.md",
+  "provenance": "authored"
+}

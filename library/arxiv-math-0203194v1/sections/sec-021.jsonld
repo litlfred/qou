@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The construction of (strictly) analytic K-spaces by gluing aﬃnoid",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-021",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-021-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

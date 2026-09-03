@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-topological-mass-formula-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:topological-mass-formula-context",
+  "kind": "remark",
+  "title": "Archimedean-realisation framing of the topological mass formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+  "tags": [
+    "topological-mass",
+    "hyperbolic-volume",
+    "archimedean",
+    "planck-q"
+  ],
+  "text": "topological-mass-formula-context.md",
+  "provenance": "authored"
+}

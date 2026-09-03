@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0611941v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK",
+  "contains": [
+    "library/arxiv-math-0611941v3/sections/sec-000",
+    "library/arxiv-math-0611941v3/sections/sec-001",
+    "library/arxiv-math-0611941v3/sections/sec-002",
+    "library/arxiv-math-0611941v3/sections/sec-003",
+    "library/arxiv-math-0611941v3/sections/sec-004",
+    "library/arxiv-math-0611941v3/sections/sec-005",
+    "library/arxiv-math-0611941v3/sections/sec-006",
+    "library/arxiv-math-0611941v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0611941v3",
+    "source_file": "0611941v3.pdf",
+    "source_sha256": "bf6f2d55c7adee5154d88e2f923c5598f9cf7f0439d1eb0be1c51706d3be1426",
+    "pages": 16,
+    "arxiv": {
+      "id": "math/0611941",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "19 Mar 2007"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

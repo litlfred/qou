@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prose-sm-intro",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:sm-intro",
+  "kind": "prose",
+  "title": "Scope and epistemic status",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "gauge-theory",
+    "epistemic-status"
+  ],
+  "text": "sm-intro.md",
+  "provenance": "authored"
+}

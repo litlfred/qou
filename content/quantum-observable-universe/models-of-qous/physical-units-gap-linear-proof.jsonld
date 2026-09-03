@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-physical-units-gap-linear",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:physical-units-gap-linear",
+  "kind": "proof",
+  "title": "Proof of physical units gap linear",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-physical-units-gap-linear"
+  ],
+  "text": "physical-units-gap-linear-proof.md",
+  "provenance": "authored"
+}

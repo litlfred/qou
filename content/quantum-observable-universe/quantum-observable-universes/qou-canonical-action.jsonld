@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qou-canonical-action",
+  "kind": "proposition",
+  "title": "Canonical action of a quantum observable universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action",
+    "papers/quantum-observable-universe/blocks/def-categorical-lagrangian",
+    "papers/quantum-observable-universe/blocks/sec-categorical-action-notation",
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-stokes"
+  ],
+  "tags": [
+    "action",
+    "canonical",
+    "dirac",
+    "lagrangian",
+    "decomposition"
+  ],
+  "leanRef": "qou:QOU.qou_canonical_action",
+  "text": "qou-canonical-action.md",
+  "leanSource": "qou-canonical-action.lean",
+  "provenance": "authored"
+}

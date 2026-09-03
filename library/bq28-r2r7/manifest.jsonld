@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bq28-r2r7/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+  "contains": [
+    "library/bq28-r2r7/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "bq28-r2r7",
+    "source_file": "bq28-r2r7.pdf",
+    "source_sha256": "38419a88531ebce78cc3845ce7ae0fca2cc21ae026a719724865c9400bbd20fe",
+    "pages": 15,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

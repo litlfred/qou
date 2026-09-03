@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-projective-line-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:projective-line-su2",
+  "kind": "example",
+  "title": "Projective line for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-projective-line-object",
+    "papers/quantum-observable-universe/blocks/ex-maximal-torus-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-projective-line-object",
+  "tags": [
+    "su2",
+    "projective-line"
+  ],
+  "leanRef": "qou:QOU.Examples.su2ProjectiveLine",
+  "text": "projective-line-su2.md",
+  "leanSource": "projective-line-su2.lean",
+  "provenance": "authored"
+}

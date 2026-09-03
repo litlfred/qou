@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-commutative-chirality-vanishes-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:commutative-chirality-vanishes-interpretation",
+  "kind": "remark",
+  "title": "Significance: chirality is the unique S-odd channel, trivial in the commutative limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-commutative-chirality-vanishes",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-s-classification"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/cor-commutative-chirality-vanishes",
+  "text": "commutative-chirality-vanishes-interpretation.md",
+  "provenance": "authored"
+}

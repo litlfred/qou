@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-hadron-q-self-correction-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:hadron-q-self-correction-table-data",
+  "kind": "table",
+  "title": "Data table from prop:hadron-q-self-correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-q-self-correction"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "hadron-q-self-correction-table-data.md",
+  "provenance": "authored"
+}
