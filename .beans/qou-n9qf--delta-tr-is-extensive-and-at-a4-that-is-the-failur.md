@@ -255,11 +255,8 @@ factorisation DOES hold for real atoms and is verified.
 
 ## Todo (revised again)
 
-- [ ] **The mixed-chain transfer matrix.** Three interface types (p-p, p-n,
-      n-n) and two nucleon types give a small transfer matrix whose dominant
-      eigenvalue replaces `r`. That would give `Delta_tr(Z, N)` in closed form
-      for every real atom — the actual object the binding law needs — and it is
-      now a finite algebra problem rather than a compute wall.
+- [x] **The mixed chain closes too (2026-09-03).** See below. `b_pp` turns out
+      to be the Markov parameter `z`.
 - [ ] **Owner:** which of the two extensive scales is the prediction
       (1.2309 vs 0.2253 MeV/nucleon)? Unchanged, and sharpened: with `Delta_tr`
       asymptotically exponential, "extensive energy per nucleon" needs restating
@@ -274,3 +271,83 @@ factorisation DOES hold for real atoms and is verified.
       `[MarkovTraceAxioms]`; `chainProduct_append` is a real list lemma).
       Checked: the existing vacuity audits catch `def X : True` and do NOT flag
       this pattern, so it is unrecorded.
+
+
+---
+
+## The MIXED chain closes: five numbers give `Delta_tr` for every atom
+
+Probe: `computations/qbeta/qbeta_mixed_chain_closed_form_probe.py` (5/5).
+
+**The form is derived, not guessed.** `atom_braid_word_3A` builds
+`ordering = ['p']*Z + ['n']*N` and inserts the pp / pn / nn crossing at
+generator `3k+2` for each `k < A-1` — read from the source. So `(Z,N)` carries
+`Z-1` p-p bonds, one p-n bond, and `N-1` n-n bonds, giving one factor per bond:
+
+```
+tr_M(beta_atom(Z,N)) = t_p^Z . t_n^N . b_pp^(Z-1) . b_pn^[Z,N>=1] . b_nn^(N-1)
+```
+
+### `b_pp` is the Markov parameter
+
+From the pure-proton chain, `b = tr_atom(A)/t_p^A` is constant in A:
+
+| A | b (taking the (A−1)-th root) |
+|---|---|
+| 2 | 0.61268803714646479409 |
+| 3 | 0.612688037146464828 |
+| 4 | 0.61268803714646537953 |
+| | **z = 0.6126880371464652516** |
+
+`b_pp - z = -4.6e-16`. **One number read off the chain lands on a constant the
+framework already defines**, to sixteen digits. Not fitted to it.
+
+    b_pn = 0.50822978937673896258     (from 2H)
+    b_nn = 0.40362773835082593617     (from 3H)
+
+### Held out
+
+| atom | predicted | measured | rel |
+|---|---|---|---|
+| ³He | 0.403767036851427869 | 0.40376703685142817 | 7.5e-16 |
+| ⁴He | 0.160974145442407262 | 0.160974145442407382 | 7.5e-16 |
+
+Two parameters fixed on two atoms; the other two are predictions, residual at
+the float64 floor of the measured inputs.
+
+### The consequence
+
+```
+Delta_tr(Z,N) = t_p^Z t_n^N . (1 - b_pp^(Z-1) b_pn^[Z,N>=1] b_nn^(N-1))
+```
+
+**Five numbers give `Delta_tr` for every atom.** No matrices at any A — so the
+`n >= 15` dimension wall recorded above does not bear on the question it was
+blocking. And it reconciles with the homogeneous derivation: `t_p . z =
+0.7019932570132013578` against the symbolically derived `r =
+0.70199325701320135779`, so the earlier `r(q)` is `t_p(q) . z(q)` and the two
+routes agree.
+
+### 🛑 What is derived and what is not
+
+**Derived:** the form (chain structure + Ocneanu multiplicativity over disjoint
+strand ranges); `t_p`, `t_n` as H₃ traces; `b_pp = z` as an *identification*
+holding to 4.6e-16 rather than an imposition.
+
+**Not derived:** `b_pn` and `b_nn` are extracted from ²H and ³H. They should
+yield to the same exact-Laurent treatment that produced `r(q)`. Until that is
+done they are two measured constants, and calling the whole thing "closed form"
+without this caveat would make it a fit with two knobs.
+
+## Todo (revised)
+
+- [ ] **Derive `b_pn` and `b_nn` symbolically**, the way `r(q)` was: the ²H and
+      n-n A=2 words are n = 6, expand into ~1024 positive braid words, and
+      `tr_m_word_lq` gives exact Laurent polynomials. That would make the whole
+      closed form derived end to end, with zero fitted constants.
+- [ ] **Owner:** which of the two extensive scales is the prediction
+      (1.2309 vs 0.2253 MeV/nucleon)? Now more pressing — with `Delta_tr(Z,N)`
+      in closed form, "energy per nucleon" can be stated exactly rather than
+      estimated from four atoms.
+- [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
+      (unchanged; the existing vacuity audits do not catch this pattern).
