@@ -72,11 +72,23 @@ from q_parameter import q_at  # noqa: E402 — proton pin
 from witness_base import WitnessBuilder  # noqa: E402
 
 CR = [0, 1, 1, 2, 2, 3]           # crossing numbers of the hm NF basis
+
+# BEFORE the constant, not inside main(). `mp.mpf("0.99839767")` is the right
+# way to carry an exact decimal — but an mpf holds only as many bits as `dps`
+# allows AT CONSTRUCTION, and mpmath's default is 15. Built here and raised
+# later, the constant was the 53-bit double nearest 0.99839767; `str()` at the
+# raised dps then printed that double out to 50 digits
+# (0.99839767000000001484494305259431712329387664794922), which the
+# float64-padding ratchet counts as fake precision — a correct `mpf(str)`
+# defeated by ordering alone. This is the hazard `_precision`'s own docstring
+# names: importing does not raise dps, and a module-scope mpf is built at
+# whatever dps is in force when the module loads.
+mp.mp.dps = 50
+
 REQUIRED_N1 = mp.mpf("0.99839767")   # bean entry (8)
 
 
 def main() -> int:
-    mp.mp.dps = 50
     q0 = mp.mpf(str(q_at()))
     h = q0 - 1 / q0
     zC, zD = mp.sqrt(q0) / (q0 + 1), q0**3 / (q0**2 + 1)
