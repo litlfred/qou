@@ -13,7 +13,7 @@ Both halves come from the corpus and neither is conditional:
 
 * `QOU.Mathlib.dimSYT` — the genuine SYT count, a `Finite`-backed `Nat.card` over
   `Nat.Partition n` (`RSKBurnsideTarget.lean`);
-* `QOU.Mathlib.RSK_substrate_proved` — `∑_{λ ⊢ n} dimSYT λ ² = n!`, delegating to
+* `QOU.Mathlib.RSKBridge.RSK_substrate_proved` — `∑_{λ ⊢ n} dimSYT λ ² = n!`, delegating to
   `QOU.Mathlib.rskBurnsideHolds` in `SchenstedRSKBurnside.lean`, which takes **no** instance
   argument.
 
@@ -27,7 +27,7 @@ conditional.  There are two `rskBurnsideHolds`:
 | `QOU.Mathlib.rskBurnsideHolds` (`SchenstedRSKBurnside.lean`) | **none** — this is the one used here |
 | `…RSKBurnsideDischarge.rskBurnsideHolds` | `[SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]` |
 
-`RSK_substrate_proved` delegates to the first.  (The second is not open either — that class has an
+`RSKBridge.RSK_substrate_proved` delegates to the first.  (The second is not open either — that class has an
 instance for every characteristic-zero field, `SnIsotypicSpechtSplitInstance.lean` — but it is a
 different route and its binder is what makes the two look different.)
 
@@ -46,7 +46,7 @@ could not have been meaningful — the old `Prop`-valued field would have let an
 its own claim. -/
 noncomputable instance instStandardYoungCount (n : ℕ) : StandardYoungCount n where
   dim := QOU.Mathlib.dimSYT
-  squares_sum := QOU.Mathlib.RSK_substrate_proved n
+  squares_sum := QOU.Mathlib.RSKBridge.RSK_substrate_proved n
 
 /-- The instance really does carry the SYT count, not some other dimension function. -/
 theorem dim_eq_dimSYT (n : ℕ) :
