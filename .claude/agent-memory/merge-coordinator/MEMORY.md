@@ -1,8 +1,8 @@
 # merge-coordinator — memory
 
-**STABLE** · **TRAP** · **BASELINE** (re-measure, never quote). Seeded
-2026-08-29 from `AGENTS.md`; detail lives in sibling files. **Keep under 200
-lines — line 201+ is silently dropped**, so when you add, cut, and order last-worst.
+**STABLE** · **TRAP** · **BASELINE** (re-measure, never quote). Seeded 2026-08-29
+from `AGENTS.md`; detail in sibling files. **Keep under 200 lines — 201+ is
+silently dropped**; when you add, cut, and order last-worst.
 
 ## TRAP — TWO Phase-4 gates are dead; the third (Copilot) is intermittent
 
@@ -10,12 +10,9 @@ This is the single most expensive thing in this file. `prepare-merge-auto`
 Phase 1b still prescribes a 15-minute poll for a check run that is never
 created; that wait **can only expire**.
 
-> **This heading read "ALL THREE … are dead. Do not wait on any." until
-> 2026-08-31 — while line 19 of its own body said "ONE intermittent external
-> gate, not zero".** Exactly the heading-vs-body defect recorded at the bottom
-> of this section about `AGENTS.md`, reproduced here, about the same subject,
-> by the correction that fixed the row and not the heading. An agent who skims
-> the heading merges without ever looking for a review.
+> This heading said "ALL THREE are dead" until 2026-08-31 while its own body
+> said "ONE intermittent gate" — fixed; **an agent who skims a heading merges
+> without ever looking for a review, so keep heading and table in step.**
 
 | gate | actual state |
 |---|---|
@@ -158,20 +155,18 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
 
 1. **The API can be dead session-wide while `git` is fine** — `mcp__github__*`
    "No such tool available", REST 403 *"GitHub access is not enabled for this
-   session"*: an Anthropic session gate, not permission or rate limiting, and it
-   does not clear on retry. **Intermittent** — down on #6395/#6396, #6400/#6401
-   and #6415, up on #6404/#6405 the same day; check, don't assume. Merge
-   git-natively: branch first, then the **same SHA** to `main`, non-force (so it
-   is FF-only and self-guarding).
+   session"*: an Anthropic session gate, not permission or rate limiting; it does
+   not clear on retry. **Intermittent** — down on #6395/#6396, #6400/#6401,
+   #6415; up on #6404/#6405 the same day. Merge git-natively: branch first, then
+   the **same SHA** to `main`, non-force (FF-only, self-guarding).
 2. **`/home/user/qou` is SHARED with concurrent siblings** — a sibling's commit
    landed on my branch and nearly shipped in #6395. Symptom: **`HEAD` is not
    what you set it to**. Work in `git worktree add --detach`; never
    `git add -A`; never `git checkout <ref> -- <path>` to peek (it writes the
    index) — use `git show <ref>:<path> >`.
-3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line.
-   `from math import comb`/`factorial` flag but are exact `int` — a real false
-   positive; verify and annotate, never widen a baseline. A hand grep for
-   `math\.(sqrt|exp|log)` misses `from math import` entirely.
+3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line;
+   `from math import comb`/`factorial` are exact `int` false positives (annotate,
+   never widen a baseline), and a grep for `math\.(sqrt|exp|log)` misses them.
 
 ## BASELINE — re-measure, do not quote
 
@@ -185,6 +180,11 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
 supersede the request, which is why no observation so far measures what it
 claims to. **Never flip the TRAP row on one run.**
 Detail: [`copilot-review-arrival.md`](copilot-review-arrival.md).
+
+## TRAP — `git diff --stat` omits untracked files, so a quoted diff can be 7x low
+
+PR #6510: reported "601 files, +616/−1"; it is **634 files, +4223/−1** — `add -A`
+staged 33 untracked ones `--stat` never sees. **Quote it STAGED: `git add -A && git diff --cached --shortstat`.** [`diff-stat-omits-untracked.md`](diff-stat-omits-untracked.md)
 
 ## TRAP — a retraction reaches ONE surface and you think it landed
 

@@ -45,3 +45,71 @@ MEMORY.md inside the 200-line injection cap.
 Merged as #6010 (5ed07e4). Bean returns to `todo` — this is a standing obligation, not a task that completes.
 
 Left open for the author: whether `markovZc` or `markovZC` is the one to rename. Flagged on #5999, not actioned.
+
+── 2026-09-03: measured — FOUR of FIVE MEMORY.md exceed the 200-line rule, and I cannot tell whether that loses anything ──
+
+Two TRAPs added this session (below) pushed me to check the caps. Measured
+directly on `.claude/agent-memory/*/MEMORY.md`:
+
+| agent | lines | bytes | over 200? | over 25 KB? |
+|---|---|---|---|---|
+| `lean-verifier` | **374** | 22,538 | **+174** | no |
+| `compute-precision-auditor` | **237** | 13,628 | **+37** | no |
+| `convention-auditor` | **235** | 13,674 | **+35** | no |
+| `merge-coordinator` | 200 → **200** | 12,369 | at cap | no |
+| `corpus-grepper` | 237 → **195** | 10,331 | under | no |
+
+(This bean says *"the eight MEMORY.md files"*; there are **five** in this repo.)
+
+### 🛑 The part I could NOT settle, and did not guess
+
+AGENTS.md §"Subagents with persistent memory" says *"the first 200 lines **(or
+25 KB)**"* are injected. **Every one of the five is under 25 KB.** So:
+
+- if the **line** limit binds, `lean-verifier` silently loses **174 lines** —
+  nearly half its memory — and two more agents lose ~36 each;
+- if the **byte** limit binds, nothing is lost and 200 lines is a soft
+  authoring convention.
+
+`merge-coordinator/MEMORY.md` line 5 asserts the strong reading — *"line 201+
+is silently dropped"* — but that is an agent's claim, not a verified
+observation of the injector, and I did not verify it either. **I am recording
+the measurement and the ambiguity, not a defect**, because guessing which
+limit binds is the exact error class the two new TRAPs are about.
+
+**Next step is one cheap experiment, not a sweep:** put a unique sentinel
+string past line 200 of one MEMORY.md, start that subagent, and ask whether it
+can see the sentinel. That settles it in one run. Until it is settled, do not
+mass-restructure the three over-cap files — and do not assume they are fine
+either.
+
+### What I did do
+
+Brought the two files I touched into compliance with the stricter reading,
+since staying under both limits is unambiguously safe:
+
+- **`corpus-grepper`** 237 → **195**. Moved the 2026-09-02 Markov/Ocneanu
+  span-rank resolved-topic entry (which sat past line 200) into
+  `resolved-topics.md`, and the three-tier library procedure into
+  `library-and-staleness-traps.md`, leaving pointers. **No `##` heading was
+  lost** — verified by diffing the heading sets before and after across all
+  three files.
+- **`merge-coordinator`** 200 → **200**, by cutting to pay for what I added:
+  compressed a block quote that documented the section's *own past wording*
+  (a defect since fixed, so the least load-bearing lines in the file, per that
+  file's own "order last-worst" rule).
+
+### The two TRAPs
+
+- `corpus-grepper` — **an inherited "X is unavailable" is HALF a
+  measurement.** The corpus said *"the ptolemy DB is firewalled; only
+  4₁/5₂/3₁ ship fixtures"*. Firewall real (403, re-verified two ways); fixture
+  list wrong — **seven** manifolds ship, nobody had run `ls`. The shape to
+  watch: a claim bundling an **environment** fact with a **corpus** fact.
+- `merge-coordinator` — **`git diff --stat` omits untracked files.** Reported
+  PR #6510 as "601 files, +616/−1"; it is **634 files, +4223/−1**. Detail in
+  the new sibling `diff-stat-omits-untracked.md`.
+
+Both are the same root, which is why they are worth keeping together: **a
+tool's count answers a narrower question than the one you asked, and reports
+it in the units you expected.**
