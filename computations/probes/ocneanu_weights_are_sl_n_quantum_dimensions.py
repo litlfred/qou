@@ -63,6 +63,17 @@ WHAT THIS UPGRADES.  The convention-D ruling (owner, 2026-08-09 and
 it a classification: D is the sl_2 point of the Ocneanu family, C is off the
 family entirely.  No anchor, no measurement and no ppm figure enters.
 
+PRIOR ART, CREDITED LATE (2026-09-03).  The classification this probe presents
+was already Lean-proved before it was written, and #6370 cited none of it:
+QOU.QBeta.WenzlWeight.wenzlLevel_conventionD / level_eq_two_of_conventionD
+(D is Wenzl level r=2, PR #5242); QOU.SchurWeyl.OcneanuWeight (PR #5575: z_D
+is the k=2 member of z = q^{2k+1}/(1+q^2+...+q^{2k}) -- this file's z_N with
+N = k -- and C is in no member); QOU.SchurWeyl.WenzlWeightLevelR.wenzlMarkovParam
+(the family); QOU.SchurWeyl.OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_
+schurPrincipal (the hook-content identification at every partition).  What
+remains this probe's own is the framing-ratio mechanism and the log-derivative
+argument for non-integer exponents.
+
 Exact symbolic arithmetic (sympy).  Convention C is computed in s = sqrt(q),
 where its expressions are rational -- sympy's `cancel` fails outright on the
 sqrt(q) forms, so the substitution is load-bearing, not cosmetic.

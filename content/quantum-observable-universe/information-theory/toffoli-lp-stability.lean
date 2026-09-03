@@ -809,6 +809,14 @@ theorem markovZ_eq_qsq_div_qDimTwo {q : ℝ} (hq : 0 < q) :
 
 /-! ## The Ocneanu family `z_N = q^N/[N]_q`, and why convention D is `N = 2`
 
+**Prior art, credited late (2026-09-03).** This family is Wenzl's level-`r` Markov parameter
+in Hecke normalisation: `markovZAt N q = wenzlMarkovParam N (q²) / q`
+(`QOU.SchurWeyl.WenzlWeightLevelR`), and "D is the `N = 2` member" is
+`QOU.QBeta.WenzlWeight.level_eq_two_of_conventionD` (PR #5242) and the `k = 2` remark in
+`QOU.SchurWeyl.OcneanuWeight` (PR #5575).  The theorems below are kept as the per-cell
+*mechanism* (the monomial framing ratio collapsing each numerator) and are not the first
+formalisation of the family.
+
 The monomial framing ratio of `markov_framing_ratio_eq` is not an aesthetic
 fact.  `rem:markov-z-reconciliation` gives the Wedderburn block weights by the
 frame-general Ocneanu formula, a product over the cells of `λ` of

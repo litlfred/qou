@@ -305,7 +305,7 @@ def main() -> int:
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "engine": "pyhecke_native(GP + seminormal-mpfr) + mpmath", "dps": 50,
         "q_pin": {
-            "used": "canonical muon, q-pinning-50-digit.witness.json derived_50_digit.q",
+            "used": "canonical muon, resolved via q_parameter (this stem is listed `ideal_muon`)",
             "value": q_str,
             "note": "q_parameter is anchor-adaptive (q0_anchor_manifest.json): "
                     "ideal_muon producers resolve this value; ad-hoc shells resolve "

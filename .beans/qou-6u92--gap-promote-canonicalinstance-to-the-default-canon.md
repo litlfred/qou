@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:13:14Z
-updated_at: 2026-09-03T04:47:31Z
+updated_at: 2026-09-03T08:45:24Z
 ---
 
 ## DONE 2026-09-03 — promoted, and PAIRED with demoting explicitInstance
@@ -44,3 +44,7 @@ Taking the baseline first is what makes the "after" result mean anything.
 
 Also updated the .md note that said the promotion was "left as an explicit
 follow-up" -- stale the moment this landed.
+
+
+
+Landed on main as a8307f0775 via #6487 (REST landing of #6467; GraphQL un-draft rate-limited).
