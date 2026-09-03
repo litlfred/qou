@@ -146,13 +146,10 @@ one call returned *"API rate limit already exceeded"* while the **title and body
 landed** and only `draft` did not. So: **re-READ the PR before re-sending or
 reporting a failure** (I re-sent four times against a limit that was never
 blocking it), do not generalise "rate limited" across the whole API, and know
-there is **no REST path to un-draft** — but a GraphQL outage does NOT block
-the merge. **CORRECTED 2026-09-03:** the toggle stayed rate-limited for ~4 h
-(qou#6439/#6466/#6468) and the route around it is all REST: rebase the branch,
-`update_pull_request state=closed` on the draft, `create_pull_request draft=false`
-from the same head, `merge_pull_request`. Worked 3/3 first try; the old advice
-"wait and re-arm" would have cost the whole session. Discriminator unchanged:
-`merge_pull_request` returns the *real* `405 Pull Request is still a draft`.
+there is **no REST path to un-draft** — but that does NOT block the merge
+(**corrected 2026-09-03**, toggle dead ~4 h on qou#6439/#6466/#6468): go all-REST
+— `update_pull_request state=closed` the draft, `create_pull_request draft=false`
+from the same head, `merge_pull_request`. 3/3 first try; "wait and re-arm" was wrong.
 Detail: [`update-pull-request-partial-write.md`](update-pull-request-partial-write.md).
 
 ## TRAP — API dead session-wide · shared worktree · float64-guard marker
