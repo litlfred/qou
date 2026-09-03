@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-09-03T04:27:36Z
+updated_at: 2026-09-03T04:40:19Z
 ---
 
 ## Summary
@@ -442,3 +442,31 @@ states 4 braid words and 3 close to the wrong component count (Hopf -> 1
 not 2; trefoil -> 2 not 1; Borromean -> 2 not 3). Only figure-eight is
 right; Vol = 8G is exactly right. No producer consumes them. The fix needs
 a 0- vs 1-indexing convention choice = author call.
+
+
+## F5 braid half CLOSED (2026-09-03) — image not confined to the S_3 quotient
+
+Second probe on PR #6449: bring_monodromy_braid_lift_probe.py. Lifted the
+six local monodromies from S_3 to B_3 by tracking the three colour tubes'
+motion in C at 50 dps and reading crossings off the real-order projection.
+
+All six loops are HALF-TWISTS of exponent sum -1 — the theory prediction
+for a simple branch point, so a check not a restatement. 6 of 15 pairwise
+products land in P_3 and all 6 are NONTRIVIAL as braids (Artin, faithful).
+So the monodromy image is not confined to the S_3 quotient.
+
+TWO DEFECTS IN MY OWN FIRST VERSION, caught pre-push:
+ 1. the docstring promised a consistency guard the code never ran; now
+    implemented against independent continuation-tracking (cycle type
+    matches on all six — literal equality is NOT expected, the two
+    readings label strands differently);
+ 2. base point was on the real axis, where the cubic has real coefficients
+    so two roots are conjugates with IDENTICAL real parts -> the
+    real-order projection is degenerate and recorded phantom crossings
+    (min gap 0.0). Moved to 2 + i/2; gap now 2.55e-7, guard asserts > 0.
+    The first version's words were superseded, not re-run.
+
+STILL OPEN: whether any pure braid in the image has a closure with
+mu-bar != 0. A nontrivial pure braid can still have mu-bar = 0, so the
+vacuous-agreement escape is NARROWED, not closed. Milnor computation, not
+a braid one.

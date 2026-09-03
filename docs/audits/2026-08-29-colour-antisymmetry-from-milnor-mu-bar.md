@@ -560,3 +560,54 @@ entry is **exactly** `2·V_oct` and is right — it is the braid words alone.
 blast radius is the table's own prose and diagrams. Not repaired here: the
 table is 0-indexed while much of the corpus is 1-indexed, so the fix requires
 choosing a convention, which is an author call rather than a typo.
+
+
+## 10. F5's braid half is closed — the image is not confined to the quotient
+
+§9.2 left one residual: the separation is unconditional on `B₃`, but *this*
+fibration's monodromy image might still meet `P₃` only trivially, in which case
+the two sections would agree **vacuously**. That escape is now narrowed, by
+lifting the monodromy from `S₃` to `B₃`
+([`bring_monodromy_braid_lift_probe.py`](../../computations/probes/bring_monodromy_braid_lift_probe.py)).
+
+As `z` traverses a loop, the three colour tubes trace a motion of three points
+in `ℂ`; that motion **is** a braid, and the permutation §6 recorded is only its
+`S₃` image. Tracking at 50 dps and reading crossings off the real-order
+projection gives, for all six loops, a **half-twist of exponent sum `−1`** —
+which is what theory demands at a simple branch point, so it is a check rather
+than a restatement.
+
+**6 of the 15 pairwise products land in `P₃`, and all 6 are nontrivial as
+braids** (Artin representation, faithful). So the image is **not** confined to
+the `S₃` quotient.
+
+### 10.1 Two defects in the first version of that probe
+
+Recorded because both would have produced a confident wrong answer, and one is
+a discipline failure rather than a numerical one.
+
+1. **The docstring promised a guard the code never ran** — "the permutation of
+   the recorded word must equal the permutation the earlier probe computed".
+   Now implemented, against independent continuation-tracking. The two readings
+   label strands differently (real position vs continuation), so literal
+   equality is **not** expected; equal cycle type is, and holds on all six.
+2. **The base point was on the real axis.** With real `z` the cubic has real
+   coefficients, so two roots are complex conjugates with **identical real
+   parts**, and the real-order projection is degenerate along the whole
+   outgoing segment. It showed up as `min real gap at crossing: 0.0` —
+   crossings recorded where none occurred. Base point moved to `2 + i/2`; the
+   gap is now `2.55e-7` and the guard asserts it is positive.
+
+The first version's braid words are **superseded, not merely re-run**: they
+were read off a degenerate projection.
+
+### 10.2 What is still open
+
+Whether any pure braid in the image has a closure with `μ̄ ≠ 0`. **A nontrivial
+pure braid can still have `μ̄ = 0`** — nontriviality in `B₃` and non-vanishing
+of a Milnor invariant are different conditions — so the vacuous-agreement
+escape is narrowed, not closed. That is a Milnor computation rather than a
+braid one, and neither probe does it.
+
+Nothing here disturbs §9.1 (unconditional on `B₃`), §9.4 (statement B and the
+Brunnian exclusion untouched), or §9.3's withdrawal.
