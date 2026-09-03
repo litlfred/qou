@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-09-03T04:43:22Z
+updated_at: 2026-09-03T08:49:26Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -373,3 +373,44 @@ sibling `.lean`, so on **180 blocks** whose Lean is at the Lake path the
 `lean`/`lean_statement` keys were omitted and an agent verdict could never go
 fresh. Now delegates to `resolveCanonicalLean` + the sweep's own lexer (749/750
 agreement with committed hashes). Verified fresh on the six-term block.
+
+
+## 2026-09-03 (later) — CORRECTION: the parser had a third bug and 8 verdicts flip
+
+I recorded above that the Copilot parser fix left the DEFECT/ACCESSOR
+partition intact. **That was wrong**, and the way it was wrong is the useful
+part.
+
+The comparison ran against the *over-counting* intermediate parser. Three bugs,
+two of them mine:
+
+1. under-count — `\w` misses `S'`/`y_λ`, and one name per line (Copilot);
+2. over-count — my repair read a **docstring** line with a colon as fields
+   (`BindingAssemblyContext`: 4 real, reported 11);
+3. mis-classification — a field whose type starts on the **next line** shows an
+   empty type, so `CLAIMY` finds no `=` and a **claim field counts as data**.
+
+(2) inflated exactly the rows (3) deflated, so the totals did not move.
+
+Against the corrected parser: **8 of 36 rows flip DEFECT -> ACCESSOR**, all
+downward. Library **19 -> 7 DEFECT** (not 10), whole tree **9 / 12 / 15**.
+
+**My structural argument was wrong too:** I said an under-count can only
+manufacture a false ACCESSOR. True of bug (1) and irrelevant — the bug that
+decides verdicts is in the CLAIM direction and manufactures false DEFECTs.
+Generalised from one bug to the partition.
+
+**Evidence the parser is now right, not merely different:** it reproduces the
+hand adjudication of 2026-08-31 — all four §4 gate classes read ACCESSOR, which
+the old parser contradicted for every one.
+
+No repair is affected (each file was read first; all 8 flipped rows are
+untouched). `--selftest` added, pinning the parser against hand-counted
+carriers: both earlier bugs were found only because someone knew a file's real
+count, and neither showed in the totals.
+
+Sixth repair landed: `sorting_color_energy` — the first where the claim is
+**derivable**. `eq_or_eq_of_heckeRelation` proves q and -q^-1 are the ONLY
+roots of the manuscript's own Hecke relation, so the block's claim is concluded
+to rather than assumed; NoZeroDivisors justified by a ZMod 8 witness, not prose.
+Five of its fields (V, V_sq, Sym2, Wedge2, sigma) never appeared in the claim.
