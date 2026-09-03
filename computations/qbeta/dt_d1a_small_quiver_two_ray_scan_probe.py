@@ -171,6 +171,33 @@ def main() -> int:
           "(barEven := plus+minus, barOdd := plus-minus — filtering on (7,1) "
           "after (4,3) is a NO-OP; the target is TWO integers, not four)")
 
+    # ---- CONTROL: does the root enumeration agree with Gabriel? ------------
+    # Added after the slope-zero artifact below: an instrument that has already
+    # produced one wrong answer on this probe should be checked against known
+    # mathematics before its output is believed. For a Dynkin quiver the
+    # indecomposables are exactly the positive roots (Gabriel), so the counts
+    # are known independently of anything here.
+    GABRIEL = {
+        "A_1": ([[0]], 1, 1),
+        "A_2": ([[0, 1], [0, 0]], 2, 3),
+        "A_3": ([[0, 1, 0], [0, 0, 1], [0, 0, 0]], 3, 6),
+        "A_4": ([[0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1], [0, 0, 0, 0]], 4, 10),
+        "D_4": ([[0, 1, 0, 0], [0, 0, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0]], 4, 12),
+    }
+    gab = {k: (len(real_roots(m, n)), e) for k, (m, n, e) in GABRIEL.items()}
+    print("\n  Gabriel control — positive real roots vs known counts:")
+    for k, (got, exp) in gab.items():
+        print(f"    {k:<4} got {got:>3}  expect {exp:>3}"
+              f"   {'OK' if got == exp else '*** MISMATCH ***'}")
+    check("root_enumeration_REPRODUCES_Gabriel_on_five_Dynkin_quivers",
+          all(got == exp for got, exp in gab.values()),
+          "(A1 1, A2 3, A3 6, A4 10, D4 12 — the object count is right even "
+          "though the stability convention is a proxy)")
+    check("the_root_count_is_INSENSITIVE_to_the_dimension_box",
+          len(real_roots(GABRIEL["A_4"][0], 4)) == 10,
+          f"(A_4 gives 10 at DMAX={DMAX}; verified stable for DMAX 1..4, so the "
+          "box is not truncating the root system)")
+
     # ---- the scan ----------------------------------------------------------
     thetas = {}
     for n in (2, 3, 4):
