@@ -7,7 +7,6 @@ export default remark({
   interprets: "prop:three-calibration-discipline",
   uses: [
     "rem:epistemic-status-of-calibrations",
-    "prop:three-calibration-inputs",
     "prop:self-dual-higgs-real-volume",
   ],
   tags: [
@@ -27,6 +26,7 @@ export default remark({
       "computations/per-observable-100x-status.witness.json",
       "computations/q-pinning-50-digit.witness.json",
       "computations/probes/keystone-wlambda-vs-ylambda-projected-shift.witness.json",
+      "computations/deuteron-from-scratch-ledger.witness.json",
     ],
     status: "verified",
   },
@@ -49,14 +49,19 @@ export default remark({
         "`sigma_exp/t = 10.49 %`, `c_6 = 0.2217`, `c_7 = 2.2375`, `t/w^3 = 0.1621`, `t/w^4 = 14.877`, " +
         "window 20.98 %; re-measured at the package-layer CODATA-2022 ratio: `t = 2.1121e-7`, " +
         "9.49 sigma, 10.53 %, `c_6 = 0.2232`, `c_7 = 2.2529`, `t/w^3 = 0.1632`, `t/w^4 = 14.98`, " +
-        "window 21.07 % — every figure quoted in the prose is rounded to where the two agree); and " +
+        "window 21.07 % — the prose quotes the CODATA-2022 values; the 2018 run differs in the third " +
+        "significant figure of c_7 and t/w^3); and " +
         "`computations/probes/keystone-wlambda-vs-ylambda-projected-shift.witness.json` " +
         "(`data.over_210ppb_factor = 3.35e6`, `data.bar_parity = even`: the projector-weight-shift " +
         "exclusion is on magnitude alone — its earlier bar-mixed leg was withdrawn 2026-08-30, bean " +
-        "`qou-j3u0`, so the prose does not repeat it). The proton-side sigma count (about 1.4e4 sigma) " +
-        "uses the CODATA-2022 `m_p/m_e` uncertainty 0.017 ppb from `qou_substrate.constants`; the " +
-        "'roughly 4000 sigma' in the sibling epistemic-status remark is the CODATA-2018 (0.06 ppb) " +
-        "figure. Beans: `qou-6au4` (convention-independence: the tension is already the convention-D " +
+        "`qou-j3u0`, so the prose does not repeat it). The proton-side residual is witnessed in " +
+        "`computations/deuteron-from-scratch-ledger.witness.json` (`muon_anchor.err_m_p_ppb = -243.86`, " +
+        "both anchors live); its sigma count (about 1.4e4 sigma) uses the CODATA-2022 `m_p/m_e` " +
+        "uncertainty 0.017 ppb from `qou_substrate.constants`; the 'roughly 4000 sigma' in the sibling " +
+        "epistemic-status remark is the CODATA-2018 (0.06 ppb) figure. The `hbar_q` literal 0.0991 in " +
+        "the prose is the proton-pin value (0.09908171604, order-window probe); the registry's `hbar_q` " +
+        "entry is the muon-pin witness value and was deliberately not used, to keep the block on one " +
+        "pin. Beans: `qou-6au4` (convention-independence: the tension is already the convention-D " +
         "number), `qou-6gf9` (the three prunes: order window, bar parity, entropy), `qou-8t3k` " +
         "(attack-option roast: a direct re-fit of the residual is foreclosed). Audits: " +
         "`docs/audits/2026-08-24-mu-p-tension-is-already-convention-d.md`, " +
@@ -65,8 +70,10 @@ export default remark({
         "the prose: `QOU.BraidKnot.MuPCarrierOrderWindow.order_window`, " +
         "`QOU.BraidKnot.MuPCarrier.hbarGen_bar`, `hbarGen_monomial_bar_even`, " +
         "`hbarGen_six_bar_even_dressing` (all sorry-free per the files' own verification notes). " +
-        "Cross-reference to the parallel Lean consolidation (`QOU.BraidKnot.MuPCorrectionAdmissibility`) " +
-        "to be added once it lands.",
+        "The w-tower exclusion the prose cites as measured is now also Lean-proved, sorry-free: " +
+        "`QOU.BraidKnot.MuPCorrectionAdmissibility` (`bar_even_monomial_iff`, the converse half of the " +
+        "selection rule; `no_small_height_w_monomial`; `no_bar_even_small_height_monomial`; " +
+        "`GapA4CorrectionAdmissible` with `monomial_not_admissible`) — cited in the prose.",
     },
   ],
 });
