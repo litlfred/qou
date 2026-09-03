@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Archimedean.knot_operator_selection
 
-**Proposition** ([`prop:knot-operator-selection`](../../../quantum-observable-universe/predicted-spectra/knot-operator-selection.md)):
+**Proposition** ([`prop:knot-operator-selection`](../../../predicted-spectra/knot-operator-selection.md)):
 *Knot operator selection via the Frobenius dual.*
 
 Let `(C, A, τ)` be a QOU with archimedean realisation `Hᵣ(q)`. Then
