@@ -5,6 +5,37 @@ Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them.
 
 ---
 
+## STABLE — step 0: `corpus_search` (MCP), before any grep
+
+All six paths below are greps, and they share one blind spot: a grep finds
+prior work only if it used **your** words. Work written in different words is
+the case that actually costs a session — the grep comes back empty and reads
+as a clean bill.
+
+`corpus_search` seeds lexically and then expands along the knowledge graph,
+across the authored corpus and the ingested library at once. A block that
+never says "Temperley-Lieb" but `uses` one that does is one hop from the query.
+
+Read three fields. **`why`** — MATCHED vs REACHED, and by which edge; a `~`
+prefix means the edge ran backwards, so that node depends on the seed rather
+than the reverse. **`seedsByProvenance`** — many ingested hits with no authored
+ones means *cite it*, not *derive it*. **`emptyRoots`** — a directory present
+but holding no graph nodes; an ungenerated `.jsonld` corpus answers every query
+with a silence indistinguishable from "nobody has done this".
+
+It does not replace the six: it seeds on labels, titles, kinds and tags
+(`searchText: true` for companion prose), so a topic named only inside a proof
+body is still a grep's job.
+
+## TRAP — an empty `corpus_search` is not evidence until you have read `emptyRoots`
+
+Added 2026-09-03, from the run that generated the graph. Before that day the
+qou graph was **empty**: 3595 authored blocks, 576 library documents, **zero**
+`.jsonld`. Every graph-backed query returned nothing and returned it in the
+shape of "no results" rather than "nothing was indexed". The distinction is the
+entire value of the field, so check it before treating an empty answer as an
+absence — this is the same failure the tool exists to prevent, one level up.
+
 ## STABLE — the six paths, in order
 
 All six must return empty (modulo the originating file) before anything is
@@ -45,15 +76,8 @@ good as the abstract behind it.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`
 
-Path 5 as written reads a file that, for scanned / JSTOR-style docs, holds only
-the download banner. Measured 2026-08-30: **25 of 536 library dirs carry an
-`ocr/` dir; 10 of the 11 single-section ones hold under 15 % of their OCR bytes
-in `sections/`, six under 3 %.** Worked case: `procrsoclondona92` = Moffatt &
-Ricca, *Helicity and the Calugareanu invariant* — 4.1 % visible; `Lk = Wr + Tw`
-and `H = nΦ²` are in `ocr/page-002.txt` only.
-
-**Add a fourth tier when the topic could sit in an older / scanned paper:**
-`grep -rln <topic> library/*/ocr/`. Table + discriminator:
+25 of 542 library dirs keep their real text in `ocr/`, and the documented
+`sections/` grep cannot see it. Worked cases and the measured share:
 `library-and-staleness-traps.md`.
 
 ## TRAP — `uploads/` is invisible to path 5
@@ -129,11 +153,9 @@ examples and why a machine checker cannot do this.
 
 ## TRAP — `beans create` is not idempotent
 
-Fresh ID every call, dedupes on nothing. Run the exact-title existence check in
-`.claude/skills/local/todo-manager.md` first. An unguarded re-run on 2026-08-04
-made **14,688** duplicate beans — 92 % of every open bean — and corrupted a
-later agent's corpus-grep. Your searches read `.beans/`; that is why it matters.
-Detail: `library-and-staleness-traps.md`.
+Run the exact-title existence check before every create; an unguarded
+re-run once produced 14,688 duplicates. Detail:
+`library-and-staleness-traps.md`.
 
 ## STABLE — refutation scoping
 
@@ -157,32 +179,9 @@ numerical result stands, only the scope was wrong.
 
 ## Resolved topics — where the answer actually lives
 
-Append here whenever a sweep lands. Format: *question → where → verdict →
-date*. This is the entry type that saves the most work.
-
-- Groupoid with inequivalent fibre objects carrying a 3-dim `W` whose
-  fundamental is not self-dual → bean `qou-dwsh` body (completed
-  2026-08-03) → answered; reachable by path 6 only.
-
-- **Why is the integer coordination count `M` the binding multiplier while
-  mass carries the q-dim linking weight `lw`?** (bean `qou-brng`, "the
-  linking-vs-self-energy route") → **PARTIALLY COVERED, and the target has
-  moved.** 2026-08-30.
-  - *Still open, and the corpus says so in as many words:*
-    `docs/audits/2026-08-30-coordination-saturation-formalized.md`
-    §"What stays open" — *"the amplitude assignment … is **not** proved."*
-  - *But a `B = Σ_bonds f(bond)` law is scope-(b) EXCLUDED as a TOTAL* by
-    `QOU.Mass.PairwiseCumulantVanishing.b3_eq_zero_ofBondFunctional`
-    (sorry-free, `f` arbitrary, `μ` bond-dependent) against AME
-    `b₃ = +1.426222 MeV`. So "why is `M` the multiplier" cannot be answered
-    by any per-bond assembly alone.
-  - *The nearest existing derivation* is the Gram-quadratic split
-    `B ~ ⟨Σᵢgᵢ⟩²_G = Σᵢ⟨gᵢ⟩²_G + 2Σ_{i<j}⟨gᵢ,gⱼ⟩_G` —
-    `docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`
-    Parts 10–13, beans `qou-v0yw` / `qou-vibo`. **Its numbers are stale**
-    (convention-C + float64, see the TRAP below); its algebra survives.
-  - *Citable rather than re-derivable:* Moffatt–Ricca `procrsoclondona92`
-    (`ocr/` only — see the `ocr/` TRAP).
+A lookup table, not a thing to carry: consulted when a specific topic
+comes up. Moved to `resolved-topics.md` — read it before declaring any of
+these open, and add a row whenever a sweep settles one.
 
 ## BASELINE — re-measure, do not quote
 
