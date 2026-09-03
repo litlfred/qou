@@ -727,3 +727,78 @@ returns `0.5` **without raising**, although `solution_type()` is
 **A returned value is not evidence of hyperbolicity.** The probe therefore
 excludes by an explicit `solution_type()` test, never by trusting an
 exception — and any other consumer of `one_loop` should do the same.
+
+── 2026-09-03 (8): the node count is ARITHMETIC — a single trace-field degree — and my prediction was WRONG ──
+
+`computations/qbeta/dt_d1b_connection_count_galois_orbit_hypothesis_probe.py`,
+**7/7**. Entry (7) concluded D1-b needs **a hypothesis stated before looking**,
+not more data. This is that hypothesis, stated in the docstring before the
+measurement, with a prediction recorded so it could be refuted.
+
+### The hypothesis
+
+> **H.** The irreducible boundary-parabolic PSL(2,ℂ) representations of a
+> 1-cusped hyperbolic manifold form a **single Galois orbit** — the conjugates
+> of the geometric representation — so `C_irr = [trace field : ℚ]`.
+
+It came from noticing where the certified counts actually originate: the
+certified probe sums **Galois-orbit degrees**, and those degrees are degrees of
+the number fields the representations are defined over.
+
+### H HOLDS, 6/6
+
+| manifold | inhabited classes | orbits | degree | `C_irr` |
+|---|---|---|---|---|
+| 4₁ | 1 | 1 | 2 | 2 |
+| 5₂ | 1 | 1 | 3 | 3 |
+| m135 | 1 (of 8) | 1 | 8 | 8 |
+| s000 | 1 (of 2) | 1 | 6 | 6 |
+| t00000 | 1 (of 2) | 1 | 8 | 8 |
+| v0000 | 1 (of 4) | 1 | 8 | 8 |
+
+4₁ and 5₂ are **not** independent evidence — they are what suggested H. The
+four census manifolds are, and all four are single-orbit.
+
+### 🛑 My prediction was WRONG, and the way it was wrong is the useful part
+
+I predicted **H fails at m135**, reasoning that m135 carries **eight
+obstruction classes**, that an obstruction class is an `H²(M,∂M;ℤ/2)` invariant
+the Galois action cannot move a rep across, and that eight inhabited classes
+therefore cannot be one orbit.
+
+The reasoning about Galois and obstruction classes is fine. **The premise was
+not: m135 has eight classes and only ONE is inhabited — seven are empty.** I
+read "8 classes" as "8 classes with solutions in them". Same wrong-denominator
+error as three others today.
+
+It was caught by control **C3**, which exists precisely to stop "one orbit"
+being an artifact of dropping empty classes — and which therefore had to
+*count* the empties: `{m135: 7, v0000: 3, rest: 1}`. A probe without that
+control would have reported H holds and left the reason invisible.
+
+### The consequence for D1-b — this REDIRECTS the route
+
+**The node count does not come from the NZ gluing datum at all.** It is a field
+degree. So the two earlier D1-b probes bracketed the wrong object: entry (5)
+showed the NZ SNF is too coarse and entry (6) that the raw polarization datum
+is too fine, and both are correct — but the count they were bracketing toward
+is supplied by **arithmetic that does not involve the gluing datum**.
+
+That **closes D1-b's node question positively** and leaves the **arrow**
+question open. A dictionary still has to produce arrows and (if wanted) a
+potential; nothing here touches that.
+
+### Scope, and what would break H
+
+Scope-(a). Six fixtures, four census manifolds not knots in S³ — valid for
+testing H, **not** automatically valid as D1-b nodes. Irreducible counts only;
+the abelian `(L−1)` convention does not carry to a census manifold. The
+ptolemy DB stays firewalled, so this sample **cannot be enlarged offline**.
+
+**H is almost certainly classical** in some form — the corpus-grep found
+nothing, but that is a statement about this corpus, not the literature. And H
+should be expected to **fail** for a manifold whose character variety carries
+extra components beyond the geometric one; this sample is small and uniformly
+well-behaved. Do not treat 6/6 as a theorem.
+
+Nothing wired, nothing fitted, `A_ω` underived.

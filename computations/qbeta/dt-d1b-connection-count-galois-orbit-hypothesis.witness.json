@@ -1,0 +1,274 @@
+{
+  "engine": "snappy-ptolemy-magma-fixtures-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T14:52:29.224328+00:00",
+  "commitSha": "7fac4b69991837790f4ec15817c191dc3df61232",
+  "assertions": [
+    {
+      "name": "C1_recomputed_C_irr_REPRODUCES_the_certified_witness",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "4_1 -> 2 (expect 2), 5_2 -> 3 (expect 3). The certified number was arrived at independently, so a wrong orbit parse would not sum to it"
+    },
+    {
+      "name": "C2_the_orbit_DEGREES_are_the_known_trace_field_degrees",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "4_1 [2] (Q(sqrt(-3)), degree 2), 5_2 [3] (cubic trace field)"
+    },
+    {
+      "name": "C3_EMPTY_obstruction_classes_are_counted_not_skipped",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "empty-class counts per manifold {'3_1': 1, '4_1': 1, '5_2': 1, 'm135': 7, 's000': 1, 't00000': 1, 'v0000': 3}; at least one manifold has an empty class, so 'one orbit' cannot be an artifact of dropping empties"
+    },
+    {
+      "name": "H_IS_TESTED_AND_THE_VERDICT_IS_RECORDED_EITHER_WAY",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "H HOLDS on the hyperbolic fixtures: 6 single-orbit ['4_1', '5_2', 'm135', 's000', 't00000', 'v0000'], 0 multi-orbit []"
+    },
+    {
+      "name": "MY_PREDICTION_was_WRONG",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "I predicted H would fail at m135. m135 has 1 orbits with degrees [8] across 1 inhabited classes, so the prediction was WRONG — recorded as such rather than quietly restated"
+    },
+    {
+      "name": "WHAT_THE_COUNT_IS_MADE_OF",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "every hyperbolic fixture is single-orbit, so C_irr = [trace field : Q] on this sample. That makes the node count ARITHMETIC and points D1-b at the trace field rather than at the NZ datum or tau"
+    },
+    {
+      "name": "SCOPE_this_does_not_derive_A_omega",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "seven fixtures, four of them census manifolds rather than knots in S^3; irreducible counts only; the ptolemy DB stays firewalled so this sample cannot be enlarged offline. Nothing wired, no fit"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 74,
+  "computation": "dt-d1b-connection-count-galois-orbit-hypothesis",
+  "scriptFile": "dt_d1b_connection_count_galois_orbit_hypothesis_probe.py",
+  "scriptHash": "6c0c1227a65b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_connection_count_galois_orbit_hypothesis_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_connection_count_galois_orbit_hypothesis_probe.py"
+  },
+  "description": "qou-q9ih D1-b. The ledger's conclusion was that the route needs a HYPOTHESIS stated before looking, not more data. This states one: H, that the irreducible boundary-parabolic PSL(2,C) reps of a 1-cusped hyperbolic manifold form a SINGLE Galois orbit (the conjugates of the geometric rep), so C_irr = [trace field : Q]. If H held, D1-b's node count would be ARITHMETIC -- a field degree -- and neither the NZ gluing datum nor the 1-loop tau would be where the dictionary reads, which redirects the route rather than advancing it. A prediction was recorded before measuring: H FAILS at m135, because an obstruction class is an H^2(M,dM;Z/2) invariant that the Galois action cannot move a rep across, so eight inhabited classes cannot be one orbit. 4_1 and 5_2 are NOT independent evidence (they are what suggested H); the four bundled census manifolds are the test. Scope-(a): the ptolemy DB is firewalled, so the seven wheel fixtures are the whole offline dataset; four are census manifolds, valid for testing H and not automatically valid as D1-b nodes. Irreducible counts only -- the abelian (L-1) convention does not carry to a census manifold. Nothing wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "manifolds": {
+      "3_1": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [
+            1
+          ]
+        },
+        "classes_total": 2,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          1
+        ],
+        "C_irr": 1,
+        "single_orbit": true,
+        "hyperbolic": false,
+        "cusps": 1,
+        "tetrahedra": 2,
+        "solution_type": "contains flat tetrahedra"
+      },
+      "4_1": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [
+            2
+          ]
+        },
+        "classes_total": 2,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          2
+        ],
+        "C_irr": 2,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 2,
+        "solution_type": "all tetrahedra positively oriented"
+      },
+      "5_2": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [
+            3
+          ]
+        },
+        "classes_total": 2,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          3
+        ],
+        "C_irr": 3,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 3,
+        "solution_type": "all tetrahedra positively oriented"
+      },
+      "m135": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": [
+            8
+          ],
+          "6": [],
+          "7": []
+        },
+        "classes_total": 8,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          8
+        ],
+        "C_irr": 8,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 4,
+        "solution_type": "all tetrahedra positively oriented"
+      },
+      "s000": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [
+            6
+          ]
+        },
+        "classes_total": 2,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          6
+        ],
+        "C_irr": 6,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 6,
+        "solution_type": "all tetrahedra positively oriented"
+      },
+      "t00000": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [
+            8
+          ]
+        },
+        "classes_total": 2,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          8
+        ],
+        "C_irr": 8,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 8,
+        "solution_type": "all tetrahedra positively oriented"
+      },
+      "v0000": {
+        "per_obstruction_class": {
+          "0": [],
+          "1": [],
+          "2": [],
+          "3": [
+            8
+          ]
+        },
+        "classes_total": 4,
+        "classes_inhabited": 1,
+        "orbits_total": 1,
+        "orbit_degrees": [
+          8
+        ],
+        "C_irr": 8,
+        "single_orbit": true,
+        "hyperbolic": true,
+        "cusps": 1,
+        "tetrahedra": 7,
+        "solution_type": "all tetrahedra positively oriented"
+      }
+    },
+    "hypothesis": {
+      "statement": "irreducible boundary-parabolic PSL(2,C) reps form a single Galois orbit, so C_irr = [trace field : Q]",
+      "stated_before_measurement": true,
+      "prediction_recorded": "H fails at m135 — obstruction class is an H^2(M,dM;Z/2) invariant the Galois action cannot cross, so 8 inhabited classes cannot be one orbit",
+      "verdict": "HOLDS",
+      "prediction_was": "WRONG",
+      "not_independent_evidence": [
+        "4_1",
+        "5_2"
+      ],
+      "independent_test_set": [
+        "m135",
+        "s000",
+        "t00000",
+        "v0000"
+      ]
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "dataset": "the seven sl2 ptolemy fixtures bundled in the snappy wheel; the ptolemy DB is firewalled (403 on CONNECT)",
+      "census_caveat": "m135/s000/t00000/v0000 are census manifolds, not knots in S^3 — valid for testing H, not automatically valid as D1-b nodes",
+      "abelian_convention": "irreducible counts only; the (L-1) abelian convention is established for knots in S^3 and does not carry over",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
