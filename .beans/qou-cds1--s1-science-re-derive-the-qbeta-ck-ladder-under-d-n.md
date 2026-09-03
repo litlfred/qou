@@ -7083,3 +7083,72 @@ That makes the block's own argument **stronger**, not weaker: the admissible
 interval widens, so even more candidates are indistinguishable. Not fixed here —
 it is a one-number edit in another chapter's block, and it belongs with whoever
 owns that block rather than riding on an S1 branch.
+
+## 2026-09-03, S1 — the two c_3 bands are the SAME sigma, 100x apart. Do not conflate them.
+
+Probe: `computations/qbeta/qbeta_c3_two_bands_are_the_l2_factor_probe.py`, **8/8**.
+Reviewing what landed on main and the live sibling PRs, two bands for the same
+number are now in the corpus:
+
+    (1) EXPERIMENTAL   rem-qstar-decay-sector-q0.md:43
+        sigma_exp(c_3) = sigma(Q_beta)/(Q_N2 u^3) = +/- 1.262    (61 % of |c_3|)
+        "the absence of a measurement ... every candidate constant in
+         [0.807, 3.331] agrees at least as well"
+
+    (2) L2 TOLERANCE   PR #6353, relayed by #6342
+        c_3 = -2.0693425728 +/- 0.01262                          (0.61 %)
+        "c_3 = -2 = J_Hopf(q=1) is 5.495x outside"
+
+**`band(1)/band(2) = 100.0` exactly** — band (2) is band (1) scaled by the L2
+goal's own factor (`sigma_pred <= sigma_exp/100`). Verified to the digit,
+including that #6353's `5.495x` reproduces specifically from the *neutron-only*
+sigma; under the quadrature sigma it is `5.03x`.
+
+### Both are true, and the same gap sits on opposite sides of them
+
+    |c_3 - (-2)| = 0.0693426
+      vs band (1)   0.055 sigma   INSIDE    experimentally indistinguishable
+      vs band (2)   5.495 x       OUTSIDE   misses the L2 goal by 5.5x
+
+**`5.495x outside` is NOT evidence against `c_3 = -2`.** That candidate sits
+0.055σ from the extracted value; nothing in the data disfavours it. The 5.495x
+says only that *if* `-2` holds, Q_β's L2 goal is missed by 5.5×. A statement
+about the **goal**, not the candidate.
+
+Reading it the other way is exactly the trap AGENTS.md's own `c_k` banner
+records — *"a quantity differing only by normalisation, mistaken for a
+discrepancy"* — one normalisation over. Flagging it because the two bands were
+recorded days apart, by different sessions, and the `5.495x` phrasing reads as a
+refutation on its own.
+
+### The consequence, which is the substantive part
+
+**A derived `c_3` that meets the L2 tolerance could not be validated against
+Q_β at all.** It would be a number claimed to 0.61 % inside a quantity the
+experiment pins to 61 %. The measurement cannot separate a correct derivation
+from a wrong one landing anywhere in `[0.807, 3.331]`.
+
+So Q_β's L2 target sits **two orders of magnitude beyond current experimental
+reach on this parameter**. Consequences, both concrete:
+
+1. A derived `c_3` has to be justified **structurally**. Empirical agreement
+   with Q_β is available to every candidate in that interval and therefore
+   discriminates nothing — including agreement claimed by a future derivation.
+2. The experimental route is quantified, not hopeless: the source block gives
+   **32×** (proton pin) / **130×** (muon pin) sharpening of the neutron
+   Q-value as what would make this parameter testable.
+
+This composes with the two closures already in this bean — parity cannot select
+the generator (`Fix(bar) = Q([2]_q)`, Lean-proved for all `[n]_q`), and the data
+cannot either. The third leg is now explicit: **even a successful derivation
+could not be checked here.**
+
+### Scope and coordination
+
+**Scope (a).** Not a claim that `c_3 = -2` is right, nor that the L2 goal is
+unreachable.
+
+**Coordination.** Band (2) is #6353's, reached independently and **first**;
+#6342 relays it. This entry adds only the *relation* between the bands and its
+consequence. It takes **no position** on #6342's entry-9 `|c_4| <= 1.4816`
+threshold, which is that PR's result and is not re-derived here.
