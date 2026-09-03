@@ -515,7 +515,7 @@ Measured in exact rational arithmetic, the collapse is total: at `n = 7` the 15 
 This also sharpens what `cellContentCoshSum_eq_bracket` records (that the bar-even brackets are not
 independent spectral degrees of freedom): the invariant is not merely dependent on the others, it is
 strictly *coarser than the partition itself*. -/
-theorem coshSum_transpose (q : ℝ) (μ : YoungDiagram) :
+theorem coshSum_transpose {K : Type*} [Field K] (q : K) (μ : YoungDiagram) :
     ∑ c ∈ μ.transpose.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
       = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))) := by
   classical
