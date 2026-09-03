@@ -99,7 +99,12 @@ Read `status` and the **whole body**, not the title:
 - a **`completed`** bean is the one that bites — the answer may be a single
   sentence in the body with no artifact anywhere else;
 - a **`scrapped`** bean usually names the bean that superseded it, which is
-  how you find the live carrier.
+  how you find the live carrier;
+- and when you are **appending** to a bean, read the whole file before you
+  write — the destination is the source you are skipping. 2026-09-03
+  (`qou-zrx2`): I wrote "no closed form was identified" two sections below
+  "the floor has a CLOSED FORM" and "the floor is DERIVED", having read the
+  bean with `tail -60`.
 
 Worked case (added 2026-08-26 after a PR re-derived two held results): the
 trail ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh` (completed,
@@ -180,11 +185,17 @@ Testing `tr_M|_(q=1) = 2^(c-n)` for the classical binding floor I got
 and `1/4 = 2^(c-6)` forces `c = 4`. I published that disagreement as a
 refutation of the formula rather than a bug in the count (it was the count:
 the permutation is `(0 1)(3 4)`, 4 cycles). The mechanism was the corpus's
-own **derived** one — and it was in the bean I was appending to, **two
-sections above where I wrote "no closed form was identified"**, with the
-same formula, the probe and a sorry-free Lean file. I had read the bean
-with `tail -60`. Check a refutation against every other number **in your
-own probe**; then read the whole destination bean, not its tail. `qou-zrx2`.
+own **derived** one, in a probe, a sorry-free Lean file, and the bean I was
+appending to. Check a refutation against every other number **in your own
+probe** before you write it down. `qou-zrx2`.
+
+**Second instance, three days apart, a different session** (`qou-brng`,
+`0be7d66fad`): a Lean exclusion re-proved that `qou-edt7` had landed four
+days earlier and proved more generally, plus a "surviving escape" ratio that
+was the corpus's own `w(2)/w(1)` with the obvious mechanism already refuted
+there. Their generalisation is the one to carry: **a "next direction" line in
+a bean or PR body is a novelty claim and needs the checklist exactly as much
+as an "open" declaration does** — and run it BEFORE merging, not after.
 
 ## Resolved topics — where the answer actually lives
 
