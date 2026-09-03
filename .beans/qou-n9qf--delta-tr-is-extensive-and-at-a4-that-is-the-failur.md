@@ -79,11 +79,86 @@ constant *of*.
 - [ ] **Owner:** which of the two scales is the framework's prediction for
       energy per nucleon? The 6.91x and 37.72x deficits are quoted in different
       places for what reads as the same claim.
-- [ ] Test the prediction this makes: if `Delta_tr` is extensive and the data
-      is not, the framework should track `B` *better* at larger A, where `B/A`
-      flattens. A = 6..16 would show it. Cheap on the character route, which
-      reaches n = 12 already and is the validated path (see the Case C trap in
-      `.claude/agent-memory/compute-precision-auditor/MEMORY.md`).
+- [x] ~~Test the prediction at larger A.~~ **BLOCKED BY A HARD WALL, and the
+      wording above was wrong twice.** See "The A-scan cannot be extended"
+      below.
 - [ ] The missing term must be **strongly A-dependent in the light region** —
       surface-like — not a constant multiple of anything flat. That is a real
       negative constraint on candidates and it is derived, not guessed.
+
+
+---
+
+## The A-scan cannot be extended past A = 4, and two corrections to this bean
+
+### Correction 1 — "better at larger A" was backwards
+
+The todo above said the framework should track `B` *better* at larger A. It
+should not. Fraction supplied is
+
+```
+Q_beta . (Delta_tr/A) / (B/A)  =  0.2253 / (B/A)
+```
+
+so as `B/A` rises the supplied fraction **falls**, toward ~2.65 % at the
+8.5 MeV/nucleon plateau. The correct prediction is that the **deficit stops
+varying**: it runs 5.1 → 32.3 across A = 2..4 and should asymptote near 37.7
+once `B/A` flattens. ⁶Li is the interesting probe because `B/A` is
+NON-monotonic there — 7.07 at ⁴He falls to 5.33 — so a flat `Delta_tr/A`
+predicts the deficit falls too, testing against a dropping target rather than
+only a rising one.
+
+### Correction 2 — the test is not merely expensive, it is unavailable
+
+Probe: `computations/qbeta/qbeta_chi_witness_convention_split_probe.py` (7/7).
+
+The corpus has complete `chi` witnesses at n = 15 (⁵Li) and n = 18 (⁶Li), but
+only in `sign-only-crossings`, and the calibration atoms are
+`colour-weighted-averaged-crossing`. Recomputing lithium in the calibration
+convention is what the extension needs — and it **cannot be done**:
+
+| n | partitions | max Specht dim | |
+|---|---|---|---|
+| 12 | 77 | 7,700 | ⁴He — tractable, ~4 min |
+| 15 | 176 | **292,864** | |
+| 18 | 385 | **16,336,320** | |
+
+The colour-weighted route evaluates
+`chi_lambda(prod_i (c_i sigma_{g_i} + d_i I))` by building seminormal
+**matrices**, because a general shift `d` is not a braid generator. A
+16,336,320-square matrix is not a slow computation, it is an impossible one.
+`sign-only` reaches n = 18 precisely because `chi_q_via_gp` is
+character-theoretic and never forms a matrix — but that method requires the
+crossings sign-quantised, which is the very information the colour-weighted
+convention exists to preserve.
+
+The multilinear escape does not rescue it: only the `2A + 1` averaged letters
+carry a general `d`, so expanding just those gives `2^(2A+1)` braid words — 32
+at A = 2, which is how the light atoms were done, but **8192 at A = 6**, each
+still needing a full all-partition sweep.
+
+**Attempted and killed.** A colour-weighted ⁶Li run was stopped after
+**5 h 03 m** without completing the first of its two words.
+
+### So the convention split is FORCED, not accidental
+
+This also answers the question the sibling probe only observed. The corpus's
+conventions divide exactly where the computational method has to change, and the
+one that reaches the larger atoms is necessarily the one that discards the
+colour weighting. That is worth knowing before anyone else tries to extend an
+A-scan and reads the convention field as a labelling choice.
+
+**Consequence for `qou-n9qf`:** the extensivity prediction is **untestable past
+A = 4 with current tooling**. Not "not yet done" — unavailable by the method.
+Testing it needs either a character-theoretic evaluator that accepts a general
+shift `d`, or an independent route to `Delta_tr` that never forms the matrices.
+
+## Todo (revised)
+
+- [ ] **Owner:** which of the two extensive scales is the prediction
+      (1.2309 vs 0.2253 MeV/nucleon, deficits 6.91x vs 37.72x)? Unchanged, and
+      now the more answerable of the two open questions.
+- [ ] A character-theoretic evaluator accepting a general shift `d` would unlock
+      the whole A >= 5 range in the calibration convention. That is the single
+      capability standing between here and the extensivity test, and it is a
+      tooling question rather than a physics one.

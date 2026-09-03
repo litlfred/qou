@@ -59,6 +59,33 @@ colour-weighted trace **at the same pin**; `chi_lambda` may not. That is what
 makes extending the scan to lithium tractable at all: only the characters need
 recomputing.
 
+*** WHY ONLY sign-only REACHES A >= 5: A HARD CAPABILITY WALL, NOT AN OVERSIGHT ***
+
+Measured below. The colour-weighted route evaluates
+`chi_lambda(prod_i (c_i sigma_{g_i} + d_i I))` by building seminormal MATRICES,
+because a general shift `d` is not a braid generator. The largest Specht block:
+
+    n = 12    77 partitions    max dim      7,700     <- 4He, tractable (~4 min)
+    n = 15   176 partitions    max dim    292,864
+    n = 18   385 partitions    max dim 16,336,320
+
+A 16,336,320-square matrix is not a slow computation, it is an impossible one.
+`sign-only-crossings` reaches n = 15 and 18 precisely because `chi_q_via_gp` is
+CHARACTER-THEORETIC (Murnaghan-Nakayama style) and never forms a matrix — but
+that method needs the crossings sign-quantised, which is the very information
+the colour-weighted convention exists to keep.
+
+The multilinear escape does not rescue it either: only the `2A + 1` AVERAGED
+letters carry a general `d`, so expanding just those gives `2^(2A+1)` pure braid
+words — 32 at A = 2 (fine, and that is how the light atoms were done here) but
+8192 at A = 6, each still needing a full all-partition sweep.
+
+**So the A-scan cannot be extended past A = 4 in the calibration convention with
+current tooling.** Attempted here: a colour-weighted 6Li (n = 18) run was killed
+after 5 h 03 m without completing the first of its two words. That is a real
+limit on `qou-n9qf`'s extensivity prediction, not a scheduling problem, and it
+is why the corpus's convention split falls exactly where it does.
+
 *** SCOPE ***
 
 Scope-(a). Nothing is refuted and no witness is edited. Both the `convention`
@@ -212,6 +239,35 @@ def main() -> int:
               all(mp.mpf(r["worst_chi_diff"]) > mp.mpf("1") for r in chi_rows), True,
               "chi_lambda carries the convention — never reuse across the split")
 
+    print("\n" + "=" * 74)
+    print("3. WHY ONLY sign-only REACHES A >= 5 — the dimension wall")
+    print("=" * 74)
+    from math import factorial
+    import pyhecke_native as ph
+
+    def specht_dim(lam):
+        conj = [sum(1 for i in range(len(lam)) if lam[i] > j) for j in range(lam[0])]
+        pr = 1
+        for i in range(len(lam)):
+            for j in range(lam[i]):
+                pr *= (lam[i] - j) + (conj[j] - i) - 1
+        return factorial(sum(lam)) // pr
+
+    wall = []
+    for nn in (12, 15, 18):
+        parts = ph.partitions_of(nn)
+        dims = [specht_dim(list(pp)) for pp in parts]
+        wall.append({"n": nn, "partitions": len(parts), "max_specht_dim": max(dims)})
+        print(f"  n = {nn:<3} partitions {len(parts):>4}   max Specht dim "
+              f"{max(dims):>12,}")
+    print("\n  The colour-weighted route builds seminormal MATRICES (a general")
+    print("  shift d is not a braid generator), so n = 18 needs a 16,336,320-square")
+    print("  matrix. sign-only reaches it because chi_q_via_gp never forms one.")
+    ok &= chk("colour_weighted_route_hits_a_dimension_wall_by_n_15",
+              [w["max_specht_dim"] for w in wall if w["n"] >= 15][0] > 100000, True,
+              "292,864 at n = 15 and 16,336,320 at n = 18, against 7,700 at "
+              "n = 12 where the light atoms are tractable")
+
     print("\n" + ("ALL PASSED" if ok else "SOME FAILED"))
 
     witness = {
@@ -229,7 +285,8 @@ def main() -> int:
                  "worst_y_diffs": y_rows,
                  "worst_chi_diffs": chi_rows,
                  "skipped_pairs": skipped,
-                 "excluded_cross_pin_pairs": cross_pin},
+                 "excluded_cross_pin_pairs": cross_pin,
+                 "dimension_wall": wall},
         "context": {
             "axis": "can committed chi witnesses be used to extend an A-scan "
                     "past A = 4?",
@@ -247,6 +304,15 @@ def main() -> int:
                             "weights may be lifted and only the characters need "
                             "recomputing — which is what makes extending the "
                             "scan tractable.",
+            "capability_wall": "The colour-weighted route builds seminormal "
+                               "matrices; max Specht dim is 7,700 at n = 12 but "
+                               "292,864 at n = 15 and 16,336,320 at n = 18. So "
+                               "the A-scan cannot be extended past A = 4 in the "
+                               "calibration convention with current tooling — a "
+                               "6Li attempt was killed at 5h03m without "
+                               "finishing one word. sign-only reaches n = 18 "
+                               "because chi_q_via_gp is character-theoretic and "
+                               "never forms a matrix.",
             "scope": "Scope-(a). Nothing refuted, no witness edited. The "
                      "convention field is present and correct everywhere; the "
                      "hazard is that nothing forces a consumer to compare it.",

@@ -45,6 +45,13 @@
       "expected": true,
       "passed": true,
       "note": "chi_lambda carries the convention — never reuse across the split"
+    },
+    {
+      "name": "colour_weighted_route_hits_a_dimension_wall_by_n_15",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "292,864 at n = 15 and 16,336,320 at n = 18, against 7,700 at n = 12 where the light atoms are tractable"
     }
   ],
   "allPassed": true,
@@ -250,22 +257,40 @@
         "pin_a": "1.1099785827513808075916",
         "pin_b": "1.1099785956427390466817"
       }
+    ],
+    "dimension_wall": [
+      {
+        "n": 12,
+        "partitions": 77,
+        "max_specht_dim": 7700
+      },
+      {
+        "n": 15,
+        "partitions": 176,
+        "max_specht_dim": 292864
+      },
+      {
+        "n": 18,
+        "partitions": 385,
+        "max_specht_dim": 16336320
+      }
     ]
   },
   "context": {
     "axis": "can committed chi witnesses be used to extend an A-scan past A = 4?",
     "answer": "Not directly. Four conventions are in use and only sign-only-crossings reaches n = 15 and 18, while the binding law's calibration atoms are colour-weighted-averaged-crossing. Walking from A = 4 to A = 5 on committed witnesses changes convention at the boundary, and any shape change there would be an artefact.",
     "what_is_safe": "y_lambda is convention-independent (agrees to 1e-51), because the Markov weights depend on n and q alone. chi_lambda is not (differs by 9.46 at n = 6 and 305.15 at n = 12, same atom). So the weights may be lifted and only the characters need recomputing — which is what makes extending the scan tractable.",
+    "capability_wall": "The colour-weighted route builds seminormal matrices; max Specht dim is 7,700 at n = 12 but 292,864 at n = 15 and 16,336,320 at n = 18. So the A-scan cannot be extended past A = 4 in the calibration convention with current tooling — a 6Li attempt was killed at 5h03m without finishing one word. sign-only reaches n = 18 because chi_q_via_gp is character-theoretic and never forms a matrix.",
     "scope": "Scope-(a). Nothing refuted, no witness edited. The convention field is present and correct everywhere; the hazard is that nothing forces a consumer to compare it."
   },
-  "gitCommit": "5815ffa01c261b3789f8f9dfe1180ae083c3e459",
+  "gitCommit": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
   "durationMs": 0,
   "scriptFile": "qbeta_chi_witness_convention_split_probe.py",
-  "scriptHash": "51ca3713afd7",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5815ffa01c261b3789f8f9dfe1180ae083c3e459",
+  "scriptHash": "209bf349778b",
+  "scriptCommitSha": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
+  "commitSha": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T15:40:52.099868+00:00",
+  "computedAt": "2026-09-03T15:46:03.091154+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
