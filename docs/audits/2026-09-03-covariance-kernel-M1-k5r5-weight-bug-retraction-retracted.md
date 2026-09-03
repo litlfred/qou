@@ -70,6 +70,8 @@ rather than the cell count, on `C²` hypotheses only. With the bulk grid `h = 1/
 `N₀ = ⌈C/m_∞⌉ ≤ 78`, i.e. **`C ≤ 23.4`** — far weaker than the `C ≤ 2.65` a conservative `n^{-1/2}`
 reading demands.
 
+> **🛑 CORRECTED 2026-09-03 (PR #6500).** The sentence above is **wrong** and is retracted. The `θ^{-1}` rate is `V_A`'s, **not the (CS) margin's** — the margin `m(n) = ρ_P − σ_D/σ_A` is a ratio of square roots of variances plus a correlation, and no one has propagated the one rate into the other. What is **proved** (PR #5929) is `|m(n) − m_∞| ≤ C·n^{-1/2}`, so `N₀ = (C/m_∞)²` — *squared* — and the requirement is `C ≤ m_∞·√79 = 2.6681`. That is **the** requirement under the bound in hand, not "a conservative reading" of it. The route is nonetheless in better shape than either number suggested: the empirical envelope over `n ≥ 13` is `C_emp = 0.0580`, a **46× headroom** under the already-proved shape. See [`…-margin-envelope-retraction.md`](2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md).
+
 ## Blast radius — what else carried the bug
 
 The same `gA` appeared in the two other probes I wrote this session. Both were re-run with the
@@ -98,7 +100,8 @@ and it is the one that was wrong.
 ## Status of `qou-k5r5`
 
 Gap **OPEN**, and slightly *better* placed than #6463 left it: the remainder rate is `θ^{-1}` (not the
-worse `θ^{-1/2}`), the required constant is `C ≤ 23.4` (not 2.65), and the EM-osc route has a concrete
+worse `θ^{-1/2}`), the required constant is ~~`C ≤ 23.4` (not 2.65)~~ **`C ≤ 2.6681` — see the
+correction above; the `23.4` is retracted** — and the EM-osc route has a concrete
 falsifiable target `TV(g″) ≈ 3.25`. The remaining step is unchanged in kind: compute `TV(g″)` for the
 variance density and check it lands above that, which needs no literature.
 
