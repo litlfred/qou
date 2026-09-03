@@ -1124,6 +1124,55 @@ side, by a completely different route.
 the spectral projectors OF, once the object is not a pair exchange? Do not invent
 an identification and fit to it.
 
+## 2026-09-01 (correction) — the target ratio is 33.7055, not 22.2457
+
+**What I asserted.** Three entries above quote nature's channel asymmetry as
+**22.2457** — at "Does NOT reach 22.2457" (the length-<=6 regular-rep sweep),
+at "Nature needs 22.2457" (the exactly-`R = 1` minimal-polynomial result), and
+at "Against nature's 22.2457, the measured spread reaches only 5.0". Those three
+sentences are left standing above as the dated record of what was measured
+against; this section is what supersedes the figure in them.
+
+**What is actually true.** The error was methodological, not arithmetic. A
+*channel* asymmetry must compare **the same pair** across two isospin channels.
+I compared the deuteron (np, T=0, +2.224566 MeV) against pp/nn (~0.1 MeV) — a
+**different pair** — which conflates pair identity with isospin. The correct
+denominator is the np ¹S₀ **virtual state** (~0.066 MeV): the same np pair,
+differing only in isospin.
+
+    2.224566 / 0.066 = 33.7055   correct   (67.4 at half, 16.9 at double)
+    2.224566 / 0.1   = 22.2457   what the three entries above quote
+
+Caught by `main`'s `1d9d3500f5` (beans `t7qv` / `m896`), which reached this
+arc's central result independently from Pauli.
+
+**Every conclusion in this bean is unaffected or strengthened; none flips.**
+
+- `R <= 1` on the bond-letter hull — unaffected. `33.7 > 22.25 > 1`.
+- The fine-tuning verdict is **sharper by three and a half orders**. The letter
+  that would reach nature's ratio sits **5.94e-11** from the isospin projector,
+  where the 22.2457 comparison put it at 1.78e-7. A 2e-7 fine-tuning was already
+  the reason to read that localisation as evidence *against* the letter; 6e-11
+  is more so.
+- The regular-rep spread still maxes at **5.0** and still does not reach the
+  target — "reaches it? False" under either figure, by a wider margin under the
+  correct one.
+
+**Where else the figure went, and where it now stands.** It was live in four
+probe scripts and in this bean. All four probes were drained in
+`fix(qou-brng): drain the 22.2457 -> 33.7055 correction to all four probes`,
+at every computational site and in prose, with the reason recorded at each site:
+
+- `computations/probes/allpairs_decay_turnover_exclusion_probe.py`
+- `computations/probes/channel_asymmetry_letter_family_bound_probe.py`
+- `computations/probes/irrep_determinant_escape_probe.py`
+- `computations/probes/regular_rep_modulus_spread_probe.py`
+
+The bean was the fifth surface and was missed by that pass — which is the exact
+trap that commit message names ("correcting one surface and leaving the others").
+Recorded here rather than by editing the three dated entries, so the record of
+what was compared against remains readable.
+
 ## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
 
 `computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
