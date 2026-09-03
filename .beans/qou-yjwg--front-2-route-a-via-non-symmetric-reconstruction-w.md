@@ -1,10 +1,11 @@
 ---
 # qou-yjwg
 title: 'Front 2: Route A via non-symmetric reconstruction — what is the Lentner-Mombelli Hopf algebra of a QOU'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-03T04:37:53Z
-updated_at: 2026-09-03T04:37:53Z
+updated_at: 2026-09-03T16:15:24Z
 parent: qou-icj2
 ---
 
@@ -31,3 +32,5 @@ Probe: computations/probes/fibre_functor_dimension_not_categorical_probe.py (exa
 - Bib: bichon2003, etingof-ostrik2004 added UNVERIFIED (egress blocked).
 Status: this bean's question is closed; the honest successor is an owner-level
 question about axiom 5 / a second fundamental, not a fibre-functor search.
+
+Completed 2026-09-03: PR #6458 rebase-merged to main at bf97976176.
