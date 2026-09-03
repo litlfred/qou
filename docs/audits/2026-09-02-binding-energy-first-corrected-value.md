@@ -550,8 +550,8 @@ A = 6?** That is a statement about the framework alone, with no experimental
 normalisation in it, so it is the one worth the compute.
 
 The answer comes from the **paired** comparison — ⁴He and ⁶Li at the *same*
-truncation, which is comparable even when the truncated values are not
-comparable to the k = 11 points:
+truncation, which is comparable even at truncations below production order,
+because both legs are cut at the same place:
 
 | `k_exact` | ⁴He (A=4) | ⁶Li (A=6) | ratio ⁶Li/⁴He |
 |---|---|---|---|
@@ -561,17 +561,18 @@ comparable to the k = 11 points:
 | 8 | -2.153722974 | -2.183158129 | 1.0137 |
 | 9 | -3.711581534 | -3.404340982 | 0.9172 |
 | 10 | -5.669659692 | -5.467686217 | 0.9644 |
+| 11 | -8.201558468 | -7.794544740 | 0.9504 |
 
 ```
 A          :  4  ->  6      (1.5x)
 C(A,2)     :  6  ->  15     (2.5x)
-accumulator:  ratio 0.917 .. 1.014 at k >= 7,  mean 0.957
+accumulator:  ratio 0.917 .. 1.014 at k >= 7,  mean 0.956
 ```
 
-**⁶Li returns essentially the same number as ⁴He**, at six independent
-truncations, while `C(A,2)` grows 2.5× and `A` grows 1.5×. The low-k ratios
-(1.44, 1.18) are the truncation still settling; from k = 7 the four values sit
-within ±5 % of unity with no trend.
+**⁶Li returns essentially the same number as ⁴He**, at seven independent
+truncations including the production order k = 11, while `C(A,2)` grows 2.5×
+and `A` grows 1.5×. The low-k ratios (1.44, 1.18) are the truncation still
+settling; from k = 7 the five values sit within ±5 % of unity with no trend.
 
 So the flatness established at A = 2…4 **extends to A = 6**. The accumulator's
 output is not merely slowly-varying over the light isotopes — it is close to
@@ -596,33 +597,55 @@ The three ⁶Li kills were real, and the ceiling on the *full* path at A = 6
 stands. What changed is that the full path was never the measurement this
 question needed.
 
-## k = 11 — half the pair, and why only half
+## k = 11 — the production truncation, both legs
 
 `k_exact = 11` is the production truncation, so it is the one rung of the ladder
-that is not a reduced-cost proxy. The ⁴He leg completed:
+that is not a reduced-cost proxy. Both legs completed:
 
     he4   A=4  k=11   uic = -8.201558468      1104 s
+    li6   A=6  k=11   uic = -7.794544740      1269 s
+                            ratio li6/he4 = 0.9504
 
-The ⁶Li leg did **not**. The run was killed by a **worker-process restart** at
-~1919 s of wall — an environment event, not a compute-cost ceiling, and a
-different failure from the three ⁶Li kills recorded above. It has been
-relaunched; the driver is resumable (each cell is written to
-`route1.json` as it lands and re-entry skips completed keys), so only the one
-missing cell is recomputed.
+The ⁶Li leg took two attempts: the first was killed by a **worker-process
+restart** at ~1919 s of wall — an environment event, not the A = 6 compute
+ceiling the three earlier `binding_energy` kills established. The driver is
+resumable (each cell is written to `route1.json` as it lands and re-entry skips
+completed keys), so the relaunch recomputed only the one missing cell and every
+other number in this section is from the original run.
 
-Until that lands, **k = 11 has no ratio** and must not be quoted as one. The
-⁴He k=11 value continues the smooth `|uic|` growth in `k`
-(3.71 → 5.67 → 8.20 for k = 9, 10, 11) with no sign of the truncation
-saturating, which is worth recording on its own: the accumulator is *not*
-converged at the production truncation.
+The full ladder, both legs at matched truncation:
+
+    k_exact   ⁴He (A=4)      ⁶Li (A=6)      ratio li6/he4
+      5      -0.375110164   -0.539212954       1.4375
+      6      -0.838749076   -0.992757495       1.1836
+      7      -1.515118319   -1.414063111       0.9333
+      8      -2.153722974   -2.183158129       1.0137
+      9      -3.711581534   -3.404340982       0.9172
+     10      -5.669659692   -5.467686217       0.9644
+     11      -8.201558468   -7.794544740       0.9504
+
+**The production truncation behaves exactly like the reduced ones.** For
+k ≥ 7 the five ratios are 0.933, 1.014, 0.917, 0.964, 0.950 — mean **0.956**,
+spread ±5 %, no trend in `k`. Meanwhile `A` grows 1.5× and `C(A,2)` grows 2.5×.
+The k = 11 point was the one place the flatness could have failed for a reason
+other than truncation, and it does not.
+
+**A second observation, unrelated to the A-dependence:** ⁴He's `|uic|` runs
+1.52 → 2.15 → 3.71 → 5.67 → 8.20 across k = 7…11 with no sign of levelling off.
+The accumulator is **not converged at the production truncation** — successive
+increments are still growing (0.64, 1.56, 1.96, 2.53). That is a separate defect
+from the flatness and is not addressed here; it means the absolute `B_pred`
+values in the four-nucleus table above are truncation-limited, though the
+*ratio* is stable across k precisely because both legs are cut at the same
+order.
 
 ## Still open
 
-- **k = 11 for ⁶Li** — the second half of the production-truncation pair. The
-  k = 7…10 trend is flat and k = 11 is expected to follow, but that is an
-  expectation, not a measurement.
-- **Why** the accumulator is nucleus-independent remains unmeasured. This
-  localises the symptom to A = 6; it does not identify where the A-dependence is
-  lost.
+- **Why the accumulator is nucleus-independent** remains unmeasured. This
+  localises the symptom to A = 6 at the production truncation; it does not
+  identify where the A-dependence is lost.
+- **The accumulator is not converged in `k`** (see the k = 11 section). The
+  absolute `B_pred` values are truncation-limited; only the matched-`k` ratio is
+  trustworthy as stated.
 - **`E`-based scalings are withdrawn** — see the retraction above. `qou-brng`
   should take the flatness of `B_pred`, not any `C(A,2)` figure.
