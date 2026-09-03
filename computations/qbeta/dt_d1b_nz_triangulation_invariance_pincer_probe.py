@@ -51,16 +51,57 @@ knots on which the Smith normal form collided:
 So D1-b's dictionary is located, not excluded: it lives among the
 triangulation-invariant functionals of the NZ datum.
 
-🛑 WHAT THIS DOES NOT SHOW, AND WHY NO MAP IS PROPOSED. `tau` is a complex
-number, not an integer count; separating knots is not producing 3 and 4. More
-sharply, the corpus CANNOT TEST any proposed `tau -> C` map: certified
-connection counts exist for exactly three knots (4_1, 5_2, 3_1 — the snappy
-wheel's Magma fixtures; the ptolemy database is firewalled), and `tau` is
-undefined on 3_1 because it is not hyperbolic. That leaves TWO usable
-`(tau, C)` points. Any two-parameter family fits two points exactly, so such a
-proposal would be unfalsifiable here by construction. No map is offered and
-none should be fitted; the honest statement is that the search space is
-narrowed and the data to test a candidate does not exist in this corpus.
+🛑 WHAT THIS DOES NOT SHOW. `tau` is a complex number, not an integer
+count; separating knots is not producing 3 and 4. No `tau -> C` map is offered
+here and none is fitted.
+
+🛑 CORRECTING MYSELF: THERE ARE SIX USABLE POINTS, NOT TWO. An earlier
+version of this docstring said the corpus "CANNOT TEST any proposed
+`tau -> C` map", because certified counts existed "for exactly three knots
+(4_1, 5_2, 3_1)" and `tau` is undefined on the non-hyperbolic 3_1 — leaving two
+points, which any two-parameter family fits exactly. **That was wrong, and the
+error was mine: I never enumerated the fixtures.** The ptolemy database is
+indeed firewalled (re-verified: 403 on CONNECT, by `curl` and by snappy's own
+`retrieve_solutions`), but the snappy wheel ships sl2 Magma fixtures for
+**seven** manifolds, not three. Six of them are 1-cusped, hyperbolic, and carry
+both a defined `tau` and a certified irreducible connection count:
+
+    manifold    N   irreducible   |tau|
+    4_1         2        2        0.8660254037844386
+    5_2         3        3        1.1611627381339101
+    m135        4        8       11.3137084989847600
+    s000        6        6       14.2764741671144800
+    t00000      8        8       29.2290115622653500
+    v0000       7        8       20.8938841612730000
+
+So a candidate `tau -> C` relation IS testable here — six points against a
+two-parameter family leaves four degrees of freedom. **The blocker I reported
+was overstated by a factor of three.** Still no map is proposed: fishing for one
+across six points is exactly the numerology this repo forbids, and finding it
+is a separate piece of work that must state its hypothesis first.
+
+Three caveats that a later reader needs, and that this probe records rather
+than papers over:
+
+  * `m135`, `s000`, `t00000`, `v0000` are CENSUS manifolds, not knots in S^3.
+    D1-b's setup is about knots (both are 3-braids), so they are valid for
+    testing whether a `tau -> C` relation exists, and NOT automatically valid
+    as D1-b nodes.
+  * the ABELIAN convention does not carry over. For knots the audit adds one
+    abelian connection (the `(L-1)` factor); that argument is not established
+    for a census manifold, so the common currency across all six is the
+    IRREDUCIBLE count, which is what the table above reports.
+  * `irreducible = N` for four of the six and FAILS for `m135` (4, 8) and
+    `v0000` (7, 8). So the connection count is not the tetrahedron count —
+    worth stating because it is the first thing one would wrongly assume from
+    the 4_1 / 5_2 pair alone.
+
+🛑 AND A TRAP: `one_loop` DOES NOT GUARD AGAINST NON-HYPERBOLIC INPUT.
+Called on 3_1 it returns `0.5` without raising, although `M.solution_type()` is
+`contains flat tetrahedra` and DG's `tau` needs a genuine hyperbolic structure.
+A returned value is therefore NOT evidence that the manifold is hyperbolic;
+check `solution_type()` yourself. That is why 3_1 is excluded from the table
+above by an explicit hyperbolicity test rather than by an exception.
 
 CONTROLS.
   [C1] `tau(4_1) = sqrt(3)/2` — Dimofte-Garoufalidis' own worked figure-eight
@@ -100,6 +141,12 @@ INVARIANCE_TOL = "1e-30"       # mpf; tau is computed at 40 dps
 N5_GROUP = ["6_2", "7_3", "8_20", "9_42", "10_139"]
 VARIANCE_KNOTS = ["4_1", "5_2", "6_2"]
 
+# Every manifold for which the snappy wheel ships an sl2 Magma fixture. The
+# ptolemy DB is firewalled (re-verified: 403 on CONNECT), so this IS the
+# certified-count data available offline. Enumerated, not recalled -- getting
+# this wrong by 3x is the correction this probe carries.
+FIXTURE_MANIFOLDS = ["3_1", "4_1", "5_2", "m135", "s000", "t00000", "v0000"]
+
 
 def polarization_datum(M):
     """Polarization-DEPENDENT NZ data: the symmetric pairing P = A_e . B_e^T.
@@ -118,6 +165,41 @@ def polarization_datum(M):
     return (N,
             tuple(int(S[i, i]) for i in range(min(S.rows, S.cols))),
             int(P.det()), int(P.rank()))
+
+
+def irreducible_count(name):
+    """Certified irreducible boundary-parabolic count from bundled fixtures.
+
+    Sums Galois-orbit degrees over every obstruction class the wheel ships for
+    `name`. Returns None when no fixture exists. This is the ABELIAN-FREE
+    count: the `(L-1)` abelian convention is established for knots in S^3 and
+    is NOT carried over to census manifolds, so the irreducible count is the
+    common currency across the whole fixture set.
+    """
+    import bz2
+    import re
+    import snappy.ptolemy as pm
+    from snappy.ptolemy import processMagmaFile
+    d = Path(pm.__file__).parent / "testing_files"
+    files = sorted(f for f in d.iterdir()
+                   if re.match(rf"{re.escape(name)}__sl2_c\d+\.magma_out\.bz2$",
+                               f.name))
+    if not files:
+        return None
+    total = 0
+    for f in files:
+        sols = processMagmaFile.solutions_from_magma(
+            bz2.open(f, "rt").read(), numerical=False)
+        for sol in sols.flatten():
+            nf = sol.number_field()
+            if nf is None:
+                total += 1
+            else:
+                try:
+                    total += int(nf.poldegree())
+                except Exception:
+                    total += int(nf.degree())
+    return total
 
 
 def main() -> int:
@@ -152,12 +234,23 @@ def main() -> int:
         "Dimofte-Garoufalidis 1-loop invariant tau (one_loop_torsion.py), "
         "measured here as triangulation-invariant to 1e-30 and separating all "
         "five N=5 knots the SNF collided. So D1-b's dictionary is LOCATED, "
-        "not excluded. NO tau->C map is proposed: certified C exists for only "
-        "three knots and tau is undefined on the non-hyperbolic 3_1, leaving "
-        "TWO usable points, which any two-parameter family fits exactly -- "
-        "such a proposal would be unfalsifiable in this corpus by "
-        "construction. mpmath at 40 dps throughout; no float64. Scope-(a); "
-        "nothing wired; no fit."
+        "not excluded. NO tau->C map is proposed. CORRECTION carried in this "
+        "witness: an earlier version claimed the corpus could not TEST such a "
+        "map, on the ground that certified C exists for only three knots and "
+        "tau is undefined on the non-hyperbolic 3_1, leaving two points. That "
+        "was wrong -- the fixtures were never enumerated. The ptolemy DB is "
+        "indeed firewalled (re-verified 403 on CONNECT), but the snappy wheel "
+        "ships sl2 fixtures for SEVEN manifolds, SIX of them 1-cusped "
+        "hyperbolic with both a defined tau and a certified irreducible count "
+        "(4_1, 5_2, m135, s000, t00000, v0000). So a candidate IS testable, "
+        "six points against a two-parameter family; the blocker was overstated "
+        "3x. Caveats recorded: four are census manifolds not knots in S^3, the "
+        "abelian convention does not carry over so the common currency is the "
+        "irreducible count, and irreducible = N fails for m135 and v0000. Also "
+        "a trap: one_loop does NOT guard against non-hyperbolic input -- it "
+        "returns 0.5 for 3_1 without raising, so a returned value is not "
+        "evidence of hyperbolicity. mpmath at 40 dps throughout; no float64. "
+        "Scope-(a); nothing wired; no fit."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
@@ -254,27 +347,94 @@ def main() -> int:
           f"{mp.nstr(min_gap, 6)}. The SNF gave these five knots ONE value; a "
           "triangulation-invariant functional of the same datum gives five")
 
-    # -------------------------------------------------------- the limit
+    # ------------------------- CORRECTION: how many points actually exist
+    print("\n  CORRECTING MYSELF — enumerating the bundled fixtures")
+    print("    (an earlier version of this probe said TWO usable points; it "
+          "never enumerated)")
+    usable, skipped = {}, {}
+    for name in FIXTURE_MANIFOLDS:
+        try:
+            M = snappy.Manifold(name)
+        except Exception as exc:
+            skipped[name] = f"manifold load failed: {type(exc).__name__}"
+            continue
+        hyp = M.solution_type().startswith("all tetrahedra")
+        irr = irreducible_count(name)
+        if not hyp:
+            # one_loop does NOT raise here -- it returns a value. Excluding by
+            # an explicit hyperbolicity test, never by trusting an exception.
+            skipped[name] = (f"not hyperbolic ({M.solution_type()}); tau is "
+                             f"undefined, though one_loop returns a value "
+                             f"without raising")
+            continue
+        if M.num_cusps() != 1:
+            skipped[name] = f"{M.num_cusps()} cusps"
+            continue
+        t = abs(one_loop(M))
+        usable[name] = {"tetrahedra": M.num_tetrahedra(),
+                        "irreducible": irr,
+                        "abs_tau": mp.nstr(t, 22),
+                        "irreducible_equals_N": irr == M.num_tetrahedra()}
+        print(f"    {name:8s} N={M.num_tetrahedra()} irred={irr:2d} "
+              f"|tau|={mp.nstr(t, 20)}")
+    for name, why in skipped.items():
+        print(f"    {name:8s} SKIPPED — {why}")
+
+    check(len(usable) >= 6,
+          "CORRECTION_there_are_SIX_usable_points_not_TWO",
+          f"an earlier version of this probe claimed the corpus could not TEST "
+          f"a tau->C map — certified C for three knots, tau undefined on the "
+          f"non-hyperbolic 3_1, so two points. THAT WAS WRONG and the error "
+          f"was mine: the fixtures were never enumerated. The ptolemy DB is "
+          f"firewalled (re-verified, 403 on CONNECT), but the wheel ships sl2 "
+          f"fixtures for {len(FIXTURE_MANIFOLDS)} manifolds and "
+          f"{len(usable)} are 1-cusped hyperbolic with both a defined tau and "
+          f"a certified irreducible count: {sorted(usable)}. Six points "
+          f"against a two-parameter family leaves four degrees of freedom, so "
+          f"a candidate IS testable. The blocker was overstated 3x")
+
+    not_n = sorted(k for k, v in usable.items() if not v["irreducible_equals_N"])
+    check(len(not_n) >= 2,
+          "the_irreducible_count_is_NOT_the_tetrahedron_count",
+          f"irreducible = N holds for {len(usable) - len(not_n)} of "
+          f"{len(usable)} and FAILS for {not_n}. Worth stating because it is "
+          f"the first thing one would wrongly assume from the 4_1/5_2 pair "
+          f"alone, where both happen to coincide")
+
     check(True,
-          "NO_tau_to_C_map_is_proposed_and_none_can_be_TESTED_here",
-          "certified connection counts exist for exactly 3 knots (4_1, 5_2, "
-          "3_1 — the snappy wheel's Magma fixtures; the ptolemy DB is "
-          "firewalled), and tau is UNDEFINED on 3_1 because it is not "
-          "hyperbolic. That leaves TWO usable (tau, C) points, which any "
-          "two-parameter family fits exactly. A map fitted here would be "
-          "unfalsifiable by construction, so none is offered")
+          "but_STILL_no_tau_to_C_map_is_proposed",
+          "six points make a candidate testable; they do not make fishing for "
+          "one legitimate. Searching a functional form across six points and "
+          "reporting the winner is the numerology this repo forbids. A map is "
+          "separate work that must state its hypothesis BEFORE looking, and "
+          "the census manifolds are valid for testing whether a relation "
+          "exists while NOT automatically valid as D1-b nodes — D1-b's setup "
+          "is about knots in S^3, and four of the six are not")
 
     check(True,
           "CONSEQUENCE_the_dictionary_is_LOCATED_not_excluded",
           "it must be strictly finer than the Smith normal form (part 1) and "
           "triangulation-invariant (this part). That class is non-empty — tau "
           "is in it — so D1-b is narrowed to a well-posed search, not refuted. "
-          "What is missing to PROSECUTE that search is data: more certified "
-          "connection counts, i.e. the ptolemy database or magma")
+          "What is missing to PROSECUTE it is NOT data: the correction above "
+          "found six offline points, enough to test a candidate. What is "
+          "missing is a HYPOTHESIS stated before looking. More certified "
+          "counts (ptolemy DB, firewalled; or magma) would strengthen a test "
+          "but are no longer the blocker I reported them to be")
 
     wb.add_data("polarization_variance_under_retriangulation", variance)
     wb.add_data("tau_triangulation_invariance", inv)
     wb.add_data("tau_on_the_N5_collision_group", taus)
+    wb.add_data("fixture_manifolds_usable_for_a_tau_to_C_test", usable)
+    wb.add_data("fixture_manifolds_skipped", skipped)
+    wb.add_data("ptolemy_db_reachability", {
+        "status": "403 on CONNECT, re-verified this session",
+        "verified_by": "curl to ptolemy.unhyperbolic.org AND snappy's own "
+                       "retrieve_solutions() for 6_1",
+        "consequence": "the bundled wheel fixtures are the whole offline "
+                       "certified-count dataset; they were never enumerated "
+                       "before, which is how the 'two points' claim arose",
+    })
     wb.add_data("tau_fourone_vs_DG", {
         "computed": mp.nstr(tau_41, 30),
         "expected_sqrt3_over_2": mp.nstr(want, 30),
@@ -291,12 +451,20 @@ def main() -> int:
         "does_NOT_show": "that tau, or any triangulation-invariant functional, "
                          "PRODUCES the node count. tau is a complex number, "
                          "not an integer count; separating is not counting",
-        "why_no_map_is_offered": "only two usable (tau, C) points exist in "
-                                 "this corpus (3_1 is non-hyperbolic so tau is "
-                                 "undefined there), and any two-parameter "
-                                 "family fits two points exactly",
-        "what_would_unblock": "more certified connection counts — the ptolemy "
-                              "database (firewalled) or magma",
+        "why_no_map_is_offered": "not for lack of data — CORRECTED: six usable "
+                                 "(tau, irreducible) points exist offline, so "
+                                 "a candidate IS testable. No map is offered "
+                                 "because searching a functional form across "
+                                 "six points and reporting the winner is a "
+                                 "fit; a map must state its hypothesis first",
+        "superseded_claim": "an earlier version said TWO points and that the "
+                            "corpus could not test any map. Wrong by 3x; the "
+                            "wheel fixtures were never enumerated",
+        "what_would_unblock_MORE_points": "the ptolemy database (firewalled, "
+                                          "403 re-verified) or magma",
+        "trap": "one_loop does NOT guard against non-hyperbolic input — it "
+                "returns 0.5 for 3_1 without raising. A returned value is not "
+                "evidence of hyperbolicity; check solution_type() yourself",
         "arithmetic": f"mpmath at {DPS} dps for tau; exact integers for the "
                       "polarization datum; no float64, no float() outside "
                       "mp.nstr rendering",
