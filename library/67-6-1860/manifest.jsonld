@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/67-6-1860/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quaternionic Weinberg-Salam Theory",
+  "contains": [
+    "library/67-6-1860/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "67-6-1860",
+    "source_file": "67-6-1860.pdf",
+    "source_sha256": "e2e5d45edd36976203b7d43853ad9729af749b786e958283fa76fb51ff18e068",
+    "pages": 17,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

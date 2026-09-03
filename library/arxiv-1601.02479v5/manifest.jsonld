@@ -1,0 +1,56 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1601.02479v5/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras",
+  "contains": [
+    "library/arxiv-1601.02479v5/sections/sec-000",
+    "library/arxiv-1601.02479v5/sections/sec-001",
+    "library/arxiv-1601.02479v5/sections/sec-002",
+    "library/arxiv-1601.02479v5/sections/sec-003",
+    "library/arxiv-1601.02479v5/sections/sec-004",
+    "library/arxiv-1601.02479v5/sections/sec-005",
+    "library/arxiv-1601.02479v5/sections/sec-006",
+    "library/arxiv-1601.02479v5/sections/sec-007",
+    "library/arxiv-1601.02479v5/sections/sec-008",
+    "library/arxiv-1601.02479v5/sections/sec-009",
+    "library/arxiv-1601.02479v5/sections/sec-010",
+    "library/arxiv-1601.02479v5/sections/sec-011",
+    "library/arxiv-1601.02479v5/sections/sec-012",
+    "library/arxiv-1601.02479v5/sections/sec-013",
+    "library/arxiv-1601.02479v5/sections/sec-014",
+    "library/arxiv-1601.02479v5/sections/sec-015",
+    "library/arxiv-1601.02479v5/sections/sec-016",
+    "library/arxiv-1601.02479v5/sections/sec-017",
+    "library/arxiv-1601.02479v5/sections/sec-018",
+    "library/arxiv-1601.02479v5/sections/sec-019",
+    "library/arxiv-1601.02479v5/sections/sec-020",
+    "library/arxiv-1601.02479v5/sections/sec-021",
+    "library/arxiv-1601.02479v5/sections/sec-022",
+    "library/arxiv-1601.02479v5/sections/sec-023",
+    "library/arxiv-1601.02479v5/sections/sec-024",
+    "library/arxiv-1601.02479v5/sections/sec-025",
+    "library/arxiv-1601.02479v5/sections/sec-026",
+    "library/arxiv-1601.02479v5/sections/sec-027",
+    "library/arxiv-1601.02479v5/sections/sec-028"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1601.02479v5",
+    "source_file": "1601.02479v5.pdf",
+    "source_sha256": "52c2dcd4adf2e72b5d773c0ef933d3a51ba08d4c03631c4c0283c956ad9f6a1e",
+    "pages": 64,
+    "arxiv": {
+      "id": "1601.02479",
+      "version": "5",
+      "primary_class": "math.RT",
+      "stamp_date": "6 Mar 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

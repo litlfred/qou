@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Boundary structures",
+  "pageStart": 39,
+  "pageEnd": 41,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-010",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-010-01",
+    "library/agt-v7-n2-p13-s/blocks/ex-sec-010-02"
+  ],
+  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
+  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "provenance": "ingested"
+}

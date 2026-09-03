@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-000-05",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "see Theorem 5.1",
+  "pageStart": 2,
+  "pageEnd": 8,
+  "text": "thm-sec-000-05.md",
+  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/sections/sec-000",
+  "sourceDocument": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "provenance": "ingested"
+}

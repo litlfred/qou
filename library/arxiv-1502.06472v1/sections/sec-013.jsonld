@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1502.06472v1/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Embedding of algebras",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1502.06472v1/blocks/prose-sec-013",
+    "library/arxiv-1502.06472v1/blocks/thm-sec-013-01",
+    "library/arxiv-1502.06472v1/blocks/thm-sec-013-02"
+  ],
+  "derivedFrom": "library/arxiv-1502.06472v1/manifest",
+  "sourceDocument": "library/arxiv-1502.06472v1/manifest",
+  "provenance": "ingested"
+}

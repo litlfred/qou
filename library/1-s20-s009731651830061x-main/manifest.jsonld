@@ -1,0 +1,43 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1-s20-s009731651830061x-main/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
+  "contains": [
+    "library/1-s20-s009731651830061x-main/sections/sec-000",
+    "library/1-s20-s009731651830061x-main/sections/sec-001",
+    "library/1-s20-s009731651830061x-main/sections/sec-002",
+    "library/1-s20-s009731651830061x-main/sections/sec-003",
+    "library/1-s20-s009731651830061x-main/sections/sec-004",
+    "library/1-s20-s009731651830061x-main/sections/sec-005",
+    "library/1-s20-s009731651830061x-main/sections/sec-006",
+    "library/1-s20-s009731651830061x-main/sections/sec-007",
+    "library/1-s20-s009731651830061x-main/sections/sec-008",
+    "library/1-s20-s009731651830061x-main/sections/sec-009",
+    "library/1-s20-s009731651830061x-main/sections/sec-010",
+    "library/1-s20-s009731651830061x-main/sections/sec-011",
+    "library/1-s20-s009731651830061x-main/sections/sec-012",
+    "library/1-s20-s009731651830061x-main/sections/sec-013",
+    "library/1-s20-s009731651830061x-main/sections/sec-014",
+    "library/1-s20-s009731651830061x-main/sections/sec-015",
+    "library/1-s20-s009731651830061x-main/sections/sec-016",
+    "library/1-s20-s009731651830061x-main/sections/sec-017",
+    "library/1-s20-s009731651830061x-main/sections/sec-018",
+    "library/1-s20-s009731651830061x-main/sections/sec-019",
+    "library/1-s20-s009731651830061x-main/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1-s20-s009731651830061x-main",
+    "source_file": "1-s2.0-S009731651830061X-main.pdf",
+    "source_sha256": "8d591fe7f1673c5225706070b0b17ade3e51bde21198a6bc1e297def580eb216",
+    "pages": 45,
+    "arxiv": null,
+    "doi": "10.1016/j.jcta.2018.04.008",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

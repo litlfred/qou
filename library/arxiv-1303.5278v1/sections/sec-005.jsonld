@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1303.5278v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Index structures and 1–efficiency",
+  "pageStart": 9,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1303.5278v1/blocks/prose-sec-005",
+    "library/arxiv-1303.5278v1/blocks/cor-sec-005-01",
+    "library/arxiv-1303.5278v1/blocks/lem-sec-005-02",
+    "library/arxiv-1303.5278v1/blocks/cor-sec-005-03",
+    "library/arxiv-1303.5278v1/blocks/rem-sec-005-04",
+    "library/arxiv-1303.5278v1/blocks/ex-sec-005-05",
+    "library/arxiv-1303.5278v1/blocks/ex-sec-005-06"
+  ],
+  "derivedFrom": "library/arxiv-1303.5278v1/manifest",
+  "sourceDocument": "library/arxiv-1303.5278v1/manifest",
+  "provenance": "ingested"
+}

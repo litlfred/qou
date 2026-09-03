@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0802.1072v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A note on closed 3-braids ∗",
+  "contains": [
+    "library/arxiv-0802.1072v2/sections/sec-000",
+    "library/arxiv-0802.1072v2/sections/sec-001",
+    "library/arxiv-0802.1072v2/sections/sec-002",
+    "library/arxiv-0802.1072v2/sections/sec-003",
+    "library/arxiv-0802.1072v2/sections/sec-004",
+    "library/arxiv-0802.1072v2/sections/sec-005",
+    "library/arxiv-0802.1072v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0802.1072v2",
+    "source_file": "0802.1072v2 (1).pdf",
+    "source_sha256": "6f4d93f0b7ba5cd72c25ce3f0f068d6c4baa1173c29794007b654ddfc9963b1b",
+    "pages": 14,
+    "arxiv": {
+      "id": "0802.1072",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "14 May 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

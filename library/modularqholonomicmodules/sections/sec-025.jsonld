@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/modularqholonomicmodules/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The inhomogeneous equation",
+  "pageStart": 47,
+  "pageEnd": 52,
+  "contains": [
+    "library/modularqholonomicmodules/blocks/prose-sec-025",
+    "library/modularqholonomicmodules/blocks/lem-sec-025-01",
+    "library/modularqholonomicmodules/blocks/lem-sec-025-02"
+  ],
+  "derivedFrom": "library/modularqholonomicmodules/manifest",
+  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "provenance": "ingested"
+}

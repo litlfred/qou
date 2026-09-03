@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-physics-0203048v1/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgments",
+  "pageStart": 11,
+  "pageEnd": 14,
+  "text": "../sections/sec-008-acknowledgments.md",
+  "derivedFrom": "library/arxiv-physics-0203048v1/manifest",
+  "sourceDocument": "library/arxiv-physics-0203048v1/manifest",
+  "provenance": "ingested"
+}

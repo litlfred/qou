@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2211.08164v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "contains": [
+    "library/arxiv-2211.08164v2/sections/sec-000",
+    "library/arxiv-2211.08164v2/sections/sec-001",
+    "library/arxiv-2211.08164v2/sections/sec-002",
+    "library/arxiv-2211.08164v2/sections/sec-003",
+    "library/arxiv-2211.08164v2/sections/sec-004",
+    "library/arxiv-2211.08164v2/sections/sec-005",
+    "library/arxiv-2211.08164v2/sections/sec-006",
+    "library/arxiv-2211.08164v2/sections/sec-007",
+    "library/arxiv-2211.08164v2/sections/sec-008",
+    "library/arxiv-2211.08164v2/sections/sec-009",
+    "library/arxiv-2211.08164v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2211.08164v2",
+    "source_file": "2211.08164v2.pdf",
+    "source_sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
+    "pages": 10,
+    "arxiv": {
+      "id": "2211.08164",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "16 Apr 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p01/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "p-adic Asai L-functions of Bianchi modular forms",
+  "contains": [
+    "library/ant-v14-n7-s-p01/sections/sec-000",
+    "library/ant-v14-n7-s-p01/sections/sec-001",
+    "library/ant-v14-n7-s-p01/sections/sec-002",
+    "library/ant-v14-n7-s-p01/sections/sec-003",
+    "library/ant-v14-n7-s-p01/sections/sec-004",
+    "library/ant-v14-n7-s-p01/sections/sec-005",
+    "library/ant-v14-n7-s-p01/sections/sec-006",
+    "library/ant-v14-n7-s-p01/sections/sec-007",
+    "library/ant-v14-n7-s-p01/sections/sec-008",
+    "library/ant-v14-n7-s-p01/sections/sec-009",
+    "library/ant-v14-n7-s-p01/sections/sec-010",
+    "library/ant-v14-n7-s-p01/sections/sec-011",
+    "library/ant-v14-n7-s-p01/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p01",
+    "source_file": "ant-v14-n7-s-p01.pdf",
+    "source_sha256": "976199bfca4ac08637d4b6e7feb7ebc0d953381cf9ffe54fbce5bfa95c4ae139",
+    "pages": 42,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1669",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

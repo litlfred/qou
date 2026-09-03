@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/pjm-v161-n1-p02-p/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+  "contains": [
+    "library/pjm-v161-n1-p02-p/sections/sec-000",
+    "library/pjm-v161-n1-p02-p/sections/sec-001",
+    "library/pjm-v161-n1-p02-p/sections/sec-002",
+    "library/pjm-v161-n1-p02-p/sections/sec-003",
+    "library/pjm-v161-n1-p02-p/sections/sec-004",
+    "library/pjm-v161-n1-p02-p/sections/sec-005",
+    "library/pjm-v161-n1-p02-p/sections/sec-006",
+    "library/pjm-v161-n1-p02-p/sections/sec-007",
+    "library/pjm-v161-n1-p02-p/sections/sec-008",
+    "library/pjm-v161-n1-p02-p/sections/sec-009",
+    "library/pjm-v161-n1-p02-p/sections/sec-010",
+    "library/pjm-v161-n1-p02-p/sections/sec-011",
+    "library/pjm-v161-n1-p02-p/sections/sec-012",
+    "library/pjm-v161-n1-p02-p/sections/sec-013",
+    "library/pjm-v161-n1-p02-p/sections/sec-014",
+    "library/pjm-v161-n1-p02-p/sections/sec-015",
+    "library/pjm-v161-n1-p02-p/sections/sec-016",
+    "library/pjm-v161-n1-p02-p/sections/sec-017",
+    "library/pjm-v161-n1-p02-p/sections/sec-018",
+    "library/pjm-v161-n1-p02-p/sections/sec-019",
+    "library/pjm-v161-n1-p02-p/sections/sec-020",
+    "library/pjm-v161-n1-p02-p/sections/sec-021",
+    "library/pjm-v161-n1-p02-p/sections/sec-022",
+    "library/pjm-v161-n1-p02-p/sections/sec-023"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "pjm-v161-n1-p02-p",
+    "source_file": "pjm-v161-n1-p02-p.pdf",
+    "source_sha256": "a93e922eab1ee67c4e275d97302f3523f4d5c6567797f2963b10cf08f9fa814c",
+    "pages": 93,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

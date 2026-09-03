@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Kashaev invariant and perturbative Chern-Simons theory",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-11-the-kashaev-invariant-and-perturbative-chern.md",
+  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
+  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "provenance": "ingested"
+}

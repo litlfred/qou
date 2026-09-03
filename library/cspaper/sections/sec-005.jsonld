@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "We believe there should be a topological interpretation of an integer vector c as in",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/cspaper/blocks/prose-sec-005",
+    "library/cspaper/blocks/thm-sec-005-01"
+  ],
+  "derivedFrom": "library/cspaper/manifest",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

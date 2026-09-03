@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Arithmetic Kleinian groups are obtained as follows (cf., [Bo] and [Vig, Chap. 4],",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-012",
+    "library/nrarith/blocks/prop-sec-012-01"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

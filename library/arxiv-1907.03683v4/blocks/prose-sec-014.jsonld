@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-014",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorem 3.1. We will use the following Lemma, which we prove at the end",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-014-33-proof-of-theorem-31-we-will-use-the-following.md",
+  "derivedFrom": "library/arxiv-1907.03683v4/manifest",
+  "sourceDocument": "library/arxiv-1907.03683v4/manifest",
+  "provenance": "ingested"
+}

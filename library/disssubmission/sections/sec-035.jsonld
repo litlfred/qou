@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The main argument 39",
+  "pageStart": 47,
+  "pageEnd": 50,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-035"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

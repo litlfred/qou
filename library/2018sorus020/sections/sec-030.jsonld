@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Reducible character in components of irreducible type",
+  "pageStart": 39,
+  "pageEnd": 43,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-030",
+    "library/2018sorus020/blocks/prop-sec-030-01",
+    "library/2018sorus020/blocks/prop-sec-030-02",
+    "library/2018sorus020/blocks/rem-sec-030-03",
+    "library/2018sorus020/blocks/prop-sec-030-04",
+    "library/2018sorus020/blocks/thm-sec-030-05",
+    "library/2018sorus020/blocks/ex-sec-030-06"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

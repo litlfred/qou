@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "5B. Relation to the weight 2k Eisenstein class",
+  "pageStart": 26,
+  "pageEnd": 29,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-020",
+    "library/ant-v14-n7-s/blocks/prop-sec-020-01",
+    "library/ant-v14-n7-s/blocks/thm-sec-020-02",
+    "library/ant-v14-n7-s/blocks/prop-sec-020-03"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s/manifest",
+  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "provenance": "ingested"
+}

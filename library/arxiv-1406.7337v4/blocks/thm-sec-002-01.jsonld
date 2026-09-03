@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1406.7337v4/blocks/thm-sec-002-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Corollary 1.4 of [6], Theorem from Appendix of [13]",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "thm-sec-002-01.md",
+  "derivedFrom": "library/arxiv-1406.7337v4/sections/sec-002",
+  "sourceDocument": "library/arxiv-1406.7337v4/manifest",
+  "provenance": "ingested"
+}

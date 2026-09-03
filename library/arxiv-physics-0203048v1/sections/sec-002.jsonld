@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-physics-0203048v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A third-order invariant from the Chern-Simons three-for m",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-physics-0203048v1/blocks/prose-sec-002",
+    "library/arxiv-physics-0203048v1/blocks/thm-sec-002-01"
+  ],
+  "derivedFrom": "library/arxiv-physics-0203048v1/manifest",
+  "sourceDocument": "library/arxiv-physics-0203048v1/manifest",
+  "provenance": "ingested"
+}

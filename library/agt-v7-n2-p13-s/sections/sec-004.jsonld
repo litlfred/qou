@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "QHG universal functor",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-004",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-004-01",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-004-02",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-004-03",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-004-04"
+  ],
+  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
+  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "provenance": "ingested"
+}

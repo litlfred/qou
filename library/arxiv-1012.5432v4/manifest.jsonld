@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1012.5432v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Towards topological quantum computation? Knotting and fusing flux tubes",
+  "contains": [
+    "library/arxiv-1012.5432v4/sections/sec-000",
+    "library/arxiv-1012.5432v4/sections/sec-001",
+    "library/arxiv-1012.5432v4/sections/sec-002",
+    "library/arxiv-1012.5432v4/sections/sec-003",
+    "library/arxiv-1012.5432v4/sections/sec-004",
+    "library/arxiv-1012.5432v4/sections/sec-005",
+    "library/arxiv-1012.5432v4/sections/sec-006",
+    "library/arxiv-1012.5432v4/sections/sec-007",
+    "library/arxiv-1012.5432v4/sections/sec-008",
+    "library/arxiv-1012.5432v4/sections/sec-009",
+    "library/arxiv-1012.5432v4/sections/sec-010",
+    "library/arxiv-1012.5432v4/sections/sec-011",
+    "library/arxiv-1012.5432v4/sections/sec-012",
+    "library/arxiv-1012.5432v4/sections/sec-013",
+    "library/arxiv-1012.5432v4/sections/sec-014",
+    "library/arxiv-1012.5432v4/sections/sec-015",
+    "library/arxiv-1012.5432v4/sections/sec-016",
+    "library/arxiv-1012.5432v4/sections/sec-017",
+    "library/arxiv-1012.5432v4/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1012.5432v4",
+    "source_file": "1012.5432v4.pdf",
+    "source_sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
+    "pages": 52,
+    "arxiv": {
+      "id": "1012.5432",
+      "version": "4",
+      "primary_class": "quant-ph",
+      "stamp_date": "26 Dec 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

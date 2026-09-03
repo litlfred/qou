@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1003.4485v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "An Invitation to Higher Gauge Theory",
+  "contains": [
+    "library/arxiv-1003.4485v2/sections/sec-000",
+    "library/arxiv-1003.4485v2/sections/sec-001",
+    "library/arxiv-1003.4485v2/sections/sec-002",
+    "library/arxiv-1003.4485v2/sections/sec-003",
+    "library/arxiv-1003.4485v2/sections/sec-004",
+    "library/arxiv-1003.4485v2/sections/sec-005",
+    "library/arxiv-1003.4485v2/sections/sec-006",
+    "library/arxiv-1003.4485v2/sections/sec-007",
+    "library/arxiv-1003.4485v2/sections/sec-008",
+    "library/arxiv-1003.4485v2/sections/sec-009",
+    "library/arxiv-1003.4485v2/sections/sec-010",
+    "library/arxiv-1003.4485v2/sections/sec-011",
+    "library/arxiv-1003.4485v2/sections/sec-012",
+    "library/arxiv-1003.4485v2/sections/sec-013",
+    "library/arxiv-1003.4485v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1003.4485v2",
+    "source_file": "1003.4485v2.pdf",
+    "source_sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
+    "pages": 60,
+    "arxiv": {
+      "id": "1003.4485",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "18 Feb 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

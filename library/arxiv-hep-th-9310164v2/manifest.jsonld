@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9310164v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "SPHERICAL CATEGORIES",
+  "contains": [
+    "library/arxiv-hep-th-9310164v2/sections/sec-000",
+    "library/arxiv-hep-th-9310164v2/sections/sec-001",
+    "library/arxiv-hep-th-9310164v2/sections/sec-002",
+    "library/arxiv-hep-th-9310164v2/sections/sec-003",
+    "library/arxiv-hep-th-9310164v2/sections/sec-004",
+    "library/arxiv-hep-th-9310164v2/sections/sec-005",
+    "library/arxiv-hep-th-9310164v2/sections/sec-006",
+    "library/arxiv-hep-th-9310164v2/sections/sec-007",
+    "library/arxiv-hep-th-9310164v2/sections/sec-008",
+    "library/arxiv-hep-th-9310164v2/sections/sec-009",
+    "library/arxiv-hep-th-9310164v2/sections/sec-010",
+    "library/arxiv-hep-th-9310164v2/sections/sec-011",
+    "library/arxiv-hep-th-9310164v2/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9310164v2",
+    "source_file": "9310164v2.pdf",
+    "source_sha256": "e0972e04667ccc47e526b1289acfeb7cfda6f852c08ed2431f1dffdebbd689e8",
+    "pages": 16,
+    "arxiv": {
+      "id": "hep-th/9310164",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "22 Jul 1998"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

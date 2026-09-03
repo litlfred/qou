@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Application to the character variety of the m-twist knot",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/gn2/blocks/prose-sec-010",
+    "library/gn2/blocks/thm-sec-010-01",
+    "library/gn2/blocks/lem-sec-010-02"
+  ],
+  "derivedFrom": "library/gn2/manifest",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

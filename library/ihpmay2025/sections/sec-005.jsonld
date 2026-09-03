@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Basic definitions",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-005",
+    "library/ihpmay2025/blocks/lem-sec-005-01",
+    "library/ihpmay2025/blocks/lem-sec-005-02",
+    "library/ihpmay2025/blocks/lem-sec-005-03",
+    "library/ihpmay2025/blocks/rem-sec-005-04",
+    "library/ihpmay2025/blocks/prop-sec-005-05",
+    "library/ihpmay2025/blocks/cor-sec-005-06"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2006.02042v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The Strong AJ Conjecture for the Figure 8 Knot",
+  "contains": [
+    "library/arxiv-2006.02042v1/sections/sec-000",
+    "library/arxiv-2006.02042v1/sections/sec-001",
+    "library/arxiv-2006.02042v1/sections/sec-002",
+    "library/arxiv-2006.02042v1/sections/sec-003",
+    "library/arxiv-2006.02042v1/sections/sec-004",
+    "library/arxiv-2006.02042v1/sections/sec-005",
+    "library/arxiv-2006.02042v1/sections/sec-006",
+    "library/arxiv-2006.02042v1/sections/sec-007",
+    "library/arxiv-2006.02042v1/sections/sec-008",
+    "library/arxiv-2006.02042v1/sections/sec-009",
+    "library/arxiv-2006.02042v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2006.02042v1",
+    "source_file": "2006.02042v1.pdf",
+    "source_sha256": "9de75ced3a3360bb7cff8b7d51183eae135606c3a267221a370915288ee45571",
+    "pages": 11,
+    "arxiv": {
+      "id": "2006.02042",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "3 Jun 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

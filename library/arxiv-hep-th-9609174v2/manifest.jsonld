@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9609174v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+  "contains": [
+    "library/arxiv-hep-th-9609174v2/sections/sec-000",
+    "library/arxiv-hep-th-9609174v2/sections/sec-001",
+    "library/arxiv-hep-th-9609174v2/sections/sec-002",
+    "library/arxiv-hep-th-9609174v2/sections/sec-003",
+    "library/arxiv-hep-th-9609174v2/sections/sec-004",
+    "library/arxiv-hep-th-9609174v2/sections/sec-005",
+    "library/arxiv-hep-th-9609174v2/sections/sec-006",
+    "library/arxiv-hep-th-9609174v2/sections/sec-007",
+    "library/arxiv-hep-th-9609174v2/sections/sec-008",
+    "library/arxiv-hep-th-9609174v2/sections/sec-009",
+    "library/arxiv-hep-th-9609174v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9609174v2",
+    "source_file": "9609174v2.pdf",
+    "source_sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
+    "pages": 18,
+    "arxiv": {
+      "id": "hep-th/9609174",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "23 Sep 1996"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

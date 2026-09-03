@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "For closed hyperbolic 3-orbifolds we conjecture a similar result to Corollary 4.7:",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-018",
+    "library/nrarith/blocks/conj-sec-018-01",
+    "library/nrarith/blocks/lem-sec-018-02",
+    "library/nrarith/blocks/rem-sec-018-03"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

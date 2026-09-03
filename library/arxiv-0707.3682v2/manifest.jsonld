@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0707.3682v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
+  "contains": [
+    "library/arxiv-0707.3682v2/sections/sec-000",
+    "library/arxiv-0707.3682v2/sections/sec-001",
+    "library/arxiv-0707.3682v2/sections/sec-002",
+    "library/arxiv-0707.3682v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0707.3682v2",
+    "source_file": "0707.3682v2.pdf",
+    "source_sha256": "609a6f67a0cd5fc8b4ab67d4ec03a229c4a6ed673cc809d4f66c949058967a14",
+    "pages": 44,
+    "arxiv": {
+      "id": "0707.3682",
+      "version": "2",
+      "primary_class": "math.KT",
+      "stamp_date": "19 Nov 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

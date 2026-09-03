@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cor-ma1/blocks/thm-sec-001-05",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "thm-sec-001-05.md",
+  "derivedFrom": "library/cor-ma1/sections/sec-001",
+  "sourceDocument": "library/cor-ma1/manifest",
+  "provenance": "ingested"
+}

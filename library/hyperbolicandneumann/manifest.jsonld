@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hyperbolicandneumann/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "contains": [
+    "library/hyperbolicandneumann/sections/sec-000",
+    "library/hyperbolicandneumann/sections/sec-001",
+    "library/hyperbolicandneumann/sections/sec-002",
+    "library/hyperbolicandneumann/sections/sec-003",
+    "library/hyperbolicandneumann/sections/sec-004",
+    "library/hyperbolicandneumann/sections/sec-005",
+    "library/hyperbolicandneumann/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "hyperbolicandneumann",
+    "source_file": "HyperbolicAndNeumann.pdf",
+    "source_sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
+    "pages": 19,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

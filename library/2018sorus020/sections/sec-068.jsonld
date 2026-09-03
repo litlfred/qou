@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-068",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The complement of anyΣi in M is the disjoint union of two handlebodies",
+  "pageStart": 92,
+  "pageEnd": 95,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-068",
+    "library/2018sorus020/blocks/rem-sec-068-01",
+    "library/2018sorus020/blocks/lem-sec-068-02",
+    "library/2018sorus020/blocks/lem-sec-068-03",
+    "library/2018sorus020/blocks/prop-sec-068-04",
+    "library/2018sorus020/blocks/prop-sec-068-05",
+    "library/2018sorus020/blocks/rem-sec-068-06"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

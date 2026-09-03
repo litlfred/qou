@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1409.2799v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY",
+  "contains": [
+    "library/arxiv-1409.2799v2/sections/sec-000",
+    "library/arxiv-1409.2799v2/sections/sec-001",
+    "library/arxiv-1409.2799v2/sections/sec-002",
+    "library/arxiv-1409.2799v2/sections/sec-003",
+    "library/arxiv-1409.2799v2/sections/sec-004",
+    "library/arxiv-1409.2799v2/sections/sec-005",
+    "library/arxiv-1409.2799v2/sections/sec-006",
+    "library/arxiv-1409.2799v2/sections/sec-007",
+    "library/arxiv-1409.2799v2/sections/sec-008",
+    "library/arxiv-1409.2799v2/sections/sec-009",
+    "library/arxiv-1409.2799v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1409.2799v2",
+    "source_file": "1409.2799v2.pdf",
+    "source_sha256": "2f2067b7b583e731e0baec27574c5f7cd189c7bcd3493cfbf9533aa0d44e48eb",
+    "pages": 50,
+    "arxiv": {
+      "id": "1409.2799",
+      "version": "2",
+      "primary_class": "math.QA",
+      "stamp_date": "31 Dec 2015"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

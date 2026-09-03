@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0304010v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(¯λ(x)− Ω( x)), x ∈ R. (7.1)",
+  "pageStart": 33,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-math-0304010v1/blocks/prose-sec-003",
+    "library/arxiv-math-0304010v1/blocks/prop-sec-003-01",
+    "library/arxiv-math-0304010v1/blocks/prop-sec-003-02",
+    "library/arxiv-math-0304010v1/blocks/prop-sec-003-03",
+    "library/arxiv-math-0304010v1/blocks/prop-sec-003-04",
+    "library/arxiv-math-0304010v1/blocks/prop-sec-003-05",
+    "library/arxiv-math-0304010v1/blocks/thm-sec-003-06"
+  ],
+  "derivedFrom": "library/arxiv-math-0304010v1/manifest",
+  "sourceDocument": "library/arxiv-math-0304010v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2301.02038v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+  "contains": [
+    "library/arxiv-2301.02038v1/sections/sec-000",
+    "library/arxiv-2301.02038v1/sections/sec-001",
+    "library/arxiv-2301.02038v1/sections/sec-002",
+    "library/arxiv-2301.02038v1/sections/sec-003",
+    "library/arxiv-2301.02038v1/sections/sec-004",
+    "library/arxiv-2301.02038v1/sections/sec-005",
+    "library/arxiv-2301.02038v1/sections/sec-006",
+    "library/arxiv-2301.02038v1/sections/sec-007",
+    "library/arxiv-2301.02038v1/sections/sec-008",
+    "library/arxiv-2301.02038v1/sections/sec-009",
+    "library/arxiv-2301.02038v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2301.02038v1",
+    "source_file": "2301.02038v1.pdf",
+    "source_sha256": "27b303939826ab393daeb77ab186311fc7a7ada9d47f6f830bfeafcf14aedb9a",
+    "pages": 26,
+    "arxiv": {
+      "id": "2301.02038",
+      "version": "1",
+      "primary_class": "math.DG",
+      "stamp_date": "5 Jan 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

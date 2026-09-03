@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0702179v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
+  "contains": [
+    "library/arxiv-hep-ph-0702179v1/sections/sec-000",
+    "library/arxiv-hep-ph-0702179v1/sections/sec-001",
+    "library/arxiv-hep-ph-0702179v1/sections/sec-002",
+    "library/arxiv-hep-ph-0702179v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0702179v1",
+    "source_file": "0702179v1.pdf",
+    "source_sha256": "4d78ee89f0e67fbbb91bede3a42d648208e57b62e38425b1d56b0b50a2440bd2",
+    "pages": 8,
+    "arxiv": {
+      "id": "hep-ph/0702179",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "18 Feb 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki52/blocks/rem-sec-001-03",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 1,
+  "pageEnd": 5,
+  "text": "rem-sec-001-03.md",
+  "derivedFrom": "library/ki52/sections/sec-001",
+  "sourceDocument": "library/ki52/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2410.14661v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quantum dilogrithm functions",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-2410.14661v1/blocks/prose-sec-004",
+    "library/arxiv-2410.14661v1/blocks/lem-sec-004-01",
+    "library/arxiv-2410.14661v1/blocks/lem-sec-004-02",
+    "library/arxiv-2410.14661v1/blocks/lem-sec-004-03"
+  ],
+  "derivedFrom": "library/arxiv-2410.14661v1/manifest",
+  "sourceDocument": "library/arxiv-2410.14661v1/manifest",
+  "provenance": "ingested"
+}

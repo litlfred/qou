@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606222v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "contains": [
+    "library/arxiv-math-0606222v2/sections/sec-000",
+    "library/arxiv-math-0606222v2/sections/sec-001",
+    "library/arxiv-math-0606222v2/sections/sec-002",
+    "library/arxiv-math-0606222v2/sections/sec-003",
+    "library/arxiv-math-0606222v2/sections/sec-004",
+    "library/arxiv-math-0606222v2/sections/sec-005",
+    "library/arxiv-math-0606222v2/sections/sec-006",
+    "library/arxiv-math-0606222v2/sections/sec-007",
+    "library/arxiv-math-0606222v2/sections/sec-008",
+    "library/arxiv-math-0606222v2/sections/sec-009",
+    "library/arxiv-math-0606222v2/sections/sec-010",
+    "library/arxiv-math-0606222v2/sections/sec-011",
+    "library/arxiv-math-0606222v2/sections/sec-012",
+    "library/arxiv-math-0606222v2/sections/sec-013",
+    "library/arxiv-math-0606222v2/sections/sec-014",
+    "library/arxiv-math-0606222v2/sections/sec-015",
+    "library/arxiv-math-0606222v2/sections/sec-016",
+    "library/arxiv-math-0606222v2/sections/sec-017",
+    "library/arxiv-math-0606222v2/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0606222v2",
+    "source_file": "0606222v2.pdf",
+    "source_sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
+    "pages": 41,
+    "arxiv": {
+      "id": "math/0606222",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "8 Nov 2006"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

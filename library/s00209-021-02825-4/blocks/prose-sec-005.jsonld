@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s00209-021-02825-4/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A roadmap",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-005-a-roadmap.md",
+  "derivedFrom": "library/s00209-021-02825-4/manifest",
+  "sourceDocument": "library/s00209-021-02825-4/manifest",
+  "provenance": "ingested"
+}

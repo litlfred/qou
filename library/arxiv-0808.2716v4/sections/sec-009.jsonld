@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.2716v4/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Estimates for triangulated hyperbolic 3–manifolds",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-0808.2716v4/blocks/prose-sec-009",
+    "library/arxiv-0808.2716v4/blocks/lem-sec-009-01",
+    "library/arxiv-0808.2716v4/blocks/lem-sec-009-02",
+    "library/arxiv-0808.2716v4/blocks/lem-sec-009-03",
+    "library/arxiv-0808.2716v4/blocks/lem-sec-009-04",
+    "library/arxiv-0808.2716v4/blocks/lem-sec-009-05"
+  ],
+  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
+  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "provenance": "ingested"
+}

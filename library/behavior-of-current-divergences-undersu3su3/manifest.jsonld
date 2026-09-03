@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/behavior-of-current-divergences-undersu3su3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "R. J. OaKeEs",
+  "contains": [
+    "library/behavior-of-current-divergences-undersu3su3/sections/sec-000",
+    "library/behavior-of-current-divergences-undersu3su3/sections/sec-001",
+    "library/behavior-of-current-divergences-undersu3su3/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "behavior-of-current-divergences-undersu3su3",
+    "source_file": "Behavior_of_Current_Divergences_underSU3SU3.pdf",
+    "source_sha256": "c199da203bf156ecefefa9bfe9753bf395d1cbc24a01b77d3f65cc374ff4fab5",
+    "pages": 5,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

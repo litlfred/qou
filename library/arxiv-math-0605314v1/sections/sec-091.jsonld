@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0605314v1/sections/sec-091",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(k−l)(k−l+1)−l−4kl+2k2",
+  "pageStart": 53,
+  "pageEnd": 54,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-091",
+    "library/arxiv-math-0605314v1/blocks/prop-sec-091-01",
+    "library/arxiv-math-0605314v1/blocks/cor-sec-091-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
+  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0405126v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Statement of the result",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/arxiv-math-0405126v1/blocks/prose-sec-001",
+    "library/arxiv-math-0405126v1/blocks/thm-sec-001-01",
+    "library/arxiv-math-0405126v1/blocks/rem-sec-001-02",
+    "library/arxiv-math-0405126v1/blocks/rem-sec-001-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0405126v1/manifest",
+  "sourceDocument": "library/arxiv-math-0405126v1/manifest",
+  "provenance": "ingested"
+}

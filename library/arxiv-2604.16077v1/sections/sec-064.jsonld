@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2604.16077v1/sections/sec-064",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Asymptotics of the quantum integral",
+  "pageStart": 47,
+  "pageEnd": 49,
+  "contains": [
+    "library/arxiv-2604.16077v1/blocks/prose-sec-064",
+    "library/arxiv-2604.16077v1/blocks/lem-sec-064-01",
+    "library/arxiv-2604.16077v1/blocks/lem-sec-064-02"
+  ],
+  "derivedFrom": "library/arxiv-2604.16077v1/manifest",
+  "sourceDocument": "library/arxiv-2604.16077v1/manifest",
+  "provenance": "ingested"
+}

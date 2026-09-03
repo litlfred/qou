@@ -1,0 +1,61 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1906.12122v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Nuclear effective field theory: status and perspectives",
+  "contains": [
+    "library/arxiv-1906.12122v2/sections/sec-000",
+    "library/arxiv-1906.12122v2/sections/sec-001",
+    "library/arxiv-1906.12122v2/sections/sec-002",
+    "library/arxiv-1906.12122v2/sections/sec-003",
+    "library/arxiv-1906.12122v2/sections/sec-004",
+    "library/arxiv-1906.12122v2/sections/sec-005",
+    "library/arxiv-1906.12122v2/sections/sec-006",
+    "library/arxiv-1906.12122v2/sections/sec-007",
+    "library/arxiv-1906.12122v2/sections/sec-008",
+    "library/arxiv-1906.12122v2/sections/sec-009",
+    "library/arxiv-1906.12122v2/sections/sec-010",
+    "library/arxiv-1906.12122v2/sections/sec-011",
+    "library/arxiv-1906.12122v2/sections/sec-012",
+    "library/arxiv-1906.12122v2/sections/sec-013",
+    "library/arxiv-1906.12122v2/sections/sec-014",
+    "library/arxiv-1906.12122v2/sections/sec-015",
+    "library/arxiv-1906.12122v2/sections/sec-016",
+    "library/arxiv-1906.12122v2/sections/sec-017",
+    "library/arxiv-1906.12122v2/sections/sec-018",
+    "library/arxiv-1906.12122v2/sections/sec-019",
+    "library/arxiv-1906.12122v2/sections/sec-020",
+    "library/arxiv-1906.12122v2/sections/sec-021",
+    "library/arxiv-1906.12122v2/sections/sec-022",
+    "library/arxiv-1906.12122v2/sections/sec-023",
+    "library/arxiv-1906.12122v2/sections/sec-024",
+    "library/arxiv-1906.12122v2/sections/sec-025",
+    "library/arxiv-1906.12122v2/sections/sec-026",
+    "library/arxiv-1906.12122v2/sections/sec-027",
+    "library/arxiv-1906.12122v2/sections/sec-028",
+    "library/arxiv-1906.12122v2/sections/sec-029",
+    "library/arxiv-1906.12122v2/sections/sec-030",
+    "library/arxiv-1906.12122v2/sections/sec-031",
+    "library/arxiv-1906.12122v2/sections/sec-032",
+    "library/arxiv-1906.12122v2/sections/sec-033"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1906.12122v2",
+    "source_file": "1906.12122v2.pdf",
+    "source_sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
+    "pages": 76,
+    "arxiv": {
+      "id": "1906.12122",
+      "version": "2",
+      "primary_class": "nucl-th",
+      "stamp_date": "6 Apr 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

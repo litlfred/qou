@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/np-b250-1985-465/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Ground state",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "../sections/sec-004-4-ground-state.md",
+  "derivedFrom": "library/np-b250-1985-465/manifest",
+  "sourceDocument": "library/np-b250-1985-465/manifest",
+  "provenance": "ingested"
+}

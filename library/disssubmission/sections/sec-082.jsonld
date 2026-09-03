@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-082",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The upper boundW(E6)",
+  "pageStart": 123,
+  "pageEnd": 125,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-082"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

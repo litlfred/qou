@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "4B. A norm relation for zeta elements",
+  "pageStart": 23,
+  "pageEnd": 26,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-018",
+    "library/ant-v14-n7-s/blocks/thm-sec-018-01",
+    "library/ant-v14-n7-s/blocks/lem-sec-018-02",
+    "library/ant-v14-n7-s/blocks/lem-sec-018-03",
+    "library/ant-v14-n7-s/blocks/rem-sec-018-04"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s/manifest",
+  "sourceDocument": "library/ant-v14-n7-s/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Abstract",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-000-abstract.md",
+  "derivedFrom": "library/arxiv-hep-th-9609174v2/manifest",
+  "sourceDocument": "library/arxiv-hep-th-9609174v2/manifest",
+  "provenance": "ingested"
+}

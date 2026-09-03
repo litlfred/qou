@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2305.14884v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+  "contains": [
+    "library/arxiv-2305.14884v2/sections/sec-000",
+    "library/arxiv-2305.14884v2/sections/sec-001",
+    "library/arxiv-2305.14884v2/sections/sec-002",
+    "library/arxiv-2305.14884v2/sections/sec-003",
+    "library/arxiv-2305.14884v2/sections/sec-004",
+    "library/arxiv-2305.14884v2/sections/sec-005",
+    "library/arxiv-2305.14884v2/sections/sec-006",
+    "library/arxiv-2305.14884v2/sections/sec-007",
+    "library/arxiv-2305.14884v2/sections/sec-008",
+    "library/arxiv-2305.14884v2/sections/sec-009",
+    "library/arxiv-2305.14884v2/sections/sec-010",
+    "library/arxiv-2305.14884v2/sections/sec-011",
+    "library/arxiv-2305.14884v2/sections/sec-012",
+    "library/arxiv-2305.14884v2/sections/sec-013",
+    "library/arxiv-2305.14884v2/sections/sec-014",
+    "library/arxiv-2305.14884v2/sections/sec-015",
+    "library/arxiv-2305.14884v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2305.14884v2",
+    "source_file": "2305.14884v2.pdf",
+    "source_sha256": "ebc8e64d901c9e4f397ece6170c92d5d65045ef7fbb15d251a268327acf7e1fb",
+    "pages": 48,
+    "arxiv": {
+      "id": "2305.14884",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "12 Jul 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

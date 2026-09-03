@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgements. The proof of Theorem 1.2 was developed while",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-008",
+    "library/angled-survey/blocks/def-sec-008-01",
+    "library/angled-survey/blocks/def-sec-008-02",
+    "library/angled-survey/blocks/def-sec-008-03"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/monodromyhitchiny/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of the Theorem. We will now prove the theorem stated in the introduction. This",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/monodromyhitchiny/blocks/prose-sec-027",
+    "library/monodromyhitchiny/blocks/thm-sec-027-01"
+  ],
+  "derivedFrom": "library/monodromyhitchiny/manifest",
+  "sourceDocument": "library/monodromyhitchiny/manifest",
+  "provenance": "ingested"
+}

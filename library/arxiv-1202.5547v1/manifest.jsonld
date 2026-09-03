@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.5547v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Markov property and Khovanov-Rozansky homology: Coxeter Case. Trafim LASY",
+  "contains": [
+    "library/arxiv-1202.5547v1/sections/sec-000",
+    "library/arxiv-1202.5547v1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1202.5547v1",
+    "source_file": "1202.5547v1.pdf",
+    "source_sha256": "1268c0834b6c920607b5cd8663d4b5f917b6a47392ddaa5f44967822b0d9ff73",
+    "pages": 4,
+    "arxiv": {
+      "id": "1202.5547",
+      "version": "1",
+      "primary_class": "math.RT",
+      "stamp_date": "24 Feb 2012"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

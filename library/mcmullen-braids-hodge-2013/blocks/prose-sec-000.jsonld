@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/mcmullen-braids-hodge-2013/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Document",
+  "pageStart": 1,
+  "pageEnd": 14,
+  "text": "../sections/sec-000-document.md",
+  "derivedFrom": "library/mcmullen-braids-hodge-2013/manifest",
+  "sourceDocument": "library/mcmullen-braids-hodge-2013/manifest",
+  "provenance": "ingested"
+}

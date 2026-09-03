@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
+  "contains": [
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-000",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-001",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-002",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-003",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-004",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-005",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-006",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-007",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-008",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-009",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-010",
+    "library/fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+    "source_file": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf",
+    "source_sha256": "bca3996c7a667b189b9c46e2d745be632afdcc86ed6517a602c25da21db975cb",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

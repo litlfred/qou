@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgements",
+  "pageStart": 23,
+  "pageEnd": 23,
+  "contains": [
+    "library/ising/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

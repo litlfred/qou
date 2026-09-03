@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/prop-sec-019-01",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Complexity over H",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "prop-sec-019-01.md",
+  "derivedFrom": "library/quaternioms/sections/sec-019",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

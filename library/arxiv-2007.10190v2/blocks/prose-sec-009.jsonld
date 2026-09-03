@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2007.10190v2/blocks/prose-sec-009",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The 52 knot",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "../sections/sec-009-53-the-52-knot.md",
+  "derivedFrom": "library/arxiv-2007.10190v2/manifest",
+  "sourceDocument": "library/arxiv-2007.10190v2/manifest",
+  "provenance": "ingested"
+}

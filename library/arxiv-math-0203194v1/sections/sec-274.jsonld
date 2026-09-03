@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-274",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(S, s) is a pro-discrete group ( cf. in this",
+  "pageStart": 129,
+  "pageEnd": 130,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-274",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-274-01",
+    "library/arxiv-math-0203194v1/blocks/rem-sec-274-02",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-274-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

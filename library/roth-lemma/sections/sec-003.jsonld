@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/roth-lemma/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "contains": [
+    "library/roth-lemma/blocks/prose-sec-003",
+    "library/roth-lemma/blocks/def-sec-003-01",
+    "library/roth-lemma/blocks/thm-sec-003-02"
+  ],
+  "derivedFrom": "library/roth-lemma/manifest",
+  "sourceDocument": "library/roth-lemma/manifest",
+  "provenance": "ingested"
+}

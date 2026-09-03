@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/topologicalinvariance3dindex/blocks/lem-sec-013-05",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "Corollary 2.4.6 of [DLRS10]",
+  "pageStart": 34,
+  "pageEnd": 43,
+  "text": "lem-sec-013-05.md",
+  "derivedFrom": "library/topologicalinvariance3dindex/sections/sec-013",
+  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "provenance": "ingested"
+}

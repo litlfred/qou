@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-q-alg-9504020v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A link invariant from quantum dilogarithm",
+  "contains": [
+    "library/arxiv-q-alg-9504020v1/sections/sec-000",
+    "library/arxiv-q-alg-9504020v1/sections/sec-001",
+    "library/arxiv-q-alg-9504020v1/sections/sec-002",
+    "library/arxiv-q-alg-9504020v1/sections/sec-003",
+    "library/arxiv-q-alg-9504020v1/sections/sec-004",
+    "library/arxiv-q-alg-9504020v1/sections/sec-005",
+    "library/arxiv-q-alg-9504020v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9504020v1",
+    "source_file": "9504020v1.pdf",
+    "source_sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
+    "pages": 10,
+    "arxiv": {
+      "id": "q-alg/9504020",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "24 Apr 1995"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

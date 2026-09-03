@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "E+",
+  "pageStart": 4,
+  "pageEnd": 5,
+  "text": "../sections/sec-010-3-e.md",
+  "derivedFrom": "library/arxiv-hep-ph-0103325v4/manifest",
+  "sourceDocument": "library/arxiv-hep-ph-0103325v4/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-102",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some numerical values 149",
+  "pageStart": 157,
+  "pageEnd": 177,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-102"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

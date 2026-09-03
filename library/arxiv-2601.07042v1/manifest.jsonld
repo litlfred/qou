@@ -1,0 +1,43 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2601.07042v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+  "contains": [
+    "library/arxiv-2601.07042v1/sections/sec-000",
+    "library/arxiv-2601.07042v1/sections/sec-001",
+    "library/arxiv-2601.07042v1/sections/sec-002",
+    "library/arxiv-2601.07042v1/sections/sec-003",
+    "library/arxiv-2601.07042v1/sections/sec-004",
+    "library/arxiv-2601.07042v1/sections/sec-005",
+    "library/arxiv-2601.07042v1/sections/sec-006",
+    "library/arxiv-2601.07042v1/sections/sec-007",
+    "library/arxiv-2601.07042v1/sections/sec-008",
+    "library/arxiv-2601.07042v1/sections/sec-009",
+    "library/arxiv-2601.07042v1/sections/sec-010",
+    "library/arxiv-2601.07042v1/sections/sec-011",
+    "library/arxiv-2601.07042v1/sections/sec-012",
+    "library/arxiv-2601.07042v1/sections/sec-013",
+    "library/arxiv-2601.07042v1/sections/sec-014",
+    "library/arxiv-2601.07042v1/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2601.07042v1",
+    "source_file": "2601.07042v1.pdf",
+    "source_sha256": "c2f3e302624e7abbb7516137ad7e9faa828eda570f211604863674015ae4352e",
+    "pages": 26,
+    "arxiv": {
+      "id": "2601.07042",
+      "version": "1",
+      "primary_class": "math.NT",
+      "stamp_date": "11 Jan 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

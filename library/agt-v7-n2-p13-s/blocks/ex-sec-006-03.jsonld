@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/blocks/ex-sec-006-03",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "The Fricke space",
+  "pageStart": 27,
+  "pageEnd": 30,
+  "text": "ex-sec-006-03.md",
+  "derivedFrom": "library/agt-v7-n2-p13-s/sections/sec-006",
+  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "provenance": "ingested"
+}

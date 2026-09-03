@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/9-81/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+  "contains": [
+    "library/9-81/sections/sec-000",
+    "library/9-81/sections/sec-001",
+    "library/9-81/sections/sec-002",
+    "library/9-81/sections/sec-003",
+    "library/9-81/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "9-81",
+    "source_file": "9_81.pdf",
+    "source_sha256": "12a83d647032306e24776887b6ccc3b05827eb0782367d319d7af235c251dedd",
+    "pages": 7,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

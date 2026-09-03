@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Kim and Lee",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-002-12-kim-and-lee.md",
+  "derivedFrom": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "sourceDocument": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Semi-stable points",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-016",
+    "library/deligne-mostow-1986/blocks/prop-sec-016-01",
+    "library/deligne-mostow-1986/blocks/cor-sec-016-02"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

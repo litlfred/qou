@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.6531v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+  "contains": [
+    "library/arxiv-1203.6531v1/sections/sec-000",
+    "library/arxiv-1203.6531v1/sections/sec-001",
+    "library/arxiv-1203.6531v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1203.6531v1",
+    "source_file": "1203.6531v1.pdf",
+    "source_sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
+    "pages": 11,
+    "arxiv": {
+      "id": "1203.6531",
+      "version": "1",
+      "primary_class": "math.GR",
+      "stamp_date": "29 Mar 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

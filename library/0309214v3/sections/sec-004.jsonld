@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgements",
+  "pageStart": 5,
+  "pageEnd": 10,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-004",
+    "library/0309214v3/blocks/thm-sec-004-01"
+  ],
+  "derivedFrom": "library/0309214v3/manifest",
+  "sourceDocument": "library/0309214v3/manifest",
+  "provenance": "ingested"
+}

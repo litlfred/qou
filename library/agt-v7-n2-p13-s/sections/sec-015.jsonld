@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mapping class group representations",
+  "pageStart": 47,
+  "pageEnd": 50,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-015",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-015-01",
+    "library/agt-v7-n2-p13-s/blocks/cor-sec-015-02",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-015-03",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-015-04"
+  ],
+  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
+  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "provenance": "ingested"
+}

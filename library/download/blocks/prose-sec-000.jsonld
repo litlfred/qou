@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 5,
+  "text": "../sections/sec-000-introduction.md",
+  "derivedFrom": "library/download/manifest",
+  "sourceDocument": "library/download/manifest",
+  "provenance": "ingested"
+}

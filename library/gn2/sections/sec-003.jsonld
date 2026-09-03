@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Motivation. The Kau",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/gn2/blocks/prose-sec-003",
+    "library/gn2/blocks/thm-sec-003-01"
+  ],
+  "derivedFrom": "library/gn2/manifest",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

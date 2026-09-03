@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A horospherical section of a cusp of a hyperbolic manifold M is a ﬂat torus. This",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-006",
+    "library/nrarith/blocks/prop-sec-006-01"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

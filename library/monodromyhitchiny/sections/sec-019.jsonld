@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/monodromyhitchiny/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Monodromy of the WZW connection for a family of 4-pointed rational",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/monodromyhitchiny/blocks/prose-sec-019",
+    "library/monodromyhitchiny/blocks/rem-sec-019-01",
+    "library/monodromyhitchiny/blocks/rem-sec-019-02"
+  ],
+  "derivedFrom": "library/monodromyhitchiny/manifest",
+  "sourceDocument": "library/monodromyhitchiny/manifest",
+  "provenance": "ingested"
+}

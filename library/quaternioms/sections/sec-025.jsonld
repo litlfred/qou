@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Hypercomplex Quantum Machine Learning",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-025"
+  ],
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

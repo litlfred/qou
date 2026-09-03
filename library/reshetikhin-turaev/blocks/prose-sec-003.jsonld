@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/reshetikhin-turaev/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, )",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "../sections/sec-003-21-monoidal-categories-see-ma-js-a-monoidal-cate.md",
+  "derivedFrom": "library/reshetikhin-turaev/manifest",
+  "sourceDocument": "library/reshetikhin-turaev/manifest",
+  "provenance": "ingested"
+}

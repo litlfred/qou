@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/phys-rep09/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Optics",
+  "pageStart": 82,
+  "pageEnd": 84,
+  "text": "../sections/sec-004-optics.md",
+  "derivedFrom": "library/phys-rep09/manifest",
+  "sourceDocument": "library/phys-rep09/manifest",
+  "provenance": "ingested"
+}

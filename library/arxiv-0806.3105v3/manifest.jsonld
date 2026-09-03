@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0806.3105v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Knots and preons",
+  "contains": [
+    "library/arxiv-0806.3105v3/sections/sec-000",
+    "library/arxiv-0806.3105v3/sections/sec-001",
+    "library/arxiv-0806.3105v3/sections/sec-002",
+    "library/arxiv-0806.3105v3/sections/sec-003",
+    "library/arxiv-0806.3105v3/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0806.3105v3",
+    "source_file": "0806.3105v3.pdf",
+    "source_sha256": "a37b4f2e96365d302d813c7ab1449719839d6fccf791a4e6754c1e0560182ce7",
+    "pages": 14,
+    "arxiv": {
+      "id": "0806.3105",
+      "version": "3",
+      "primary_class": "hep-th",
+      "stamp_date": "4 Nov 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

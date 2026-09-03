@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.6551v1/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Some Open Questions",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-004-9-some-open-questions.md",
+  "derivedFrom": "library/arxiv-1203.6551v1/manifest",
+  "sourceDocument": "library/arxiv-1203.6551v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310279v5/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tile types in PA",
+  "pageStart": 39,
+  "pageEnd": 46,
+  "contains": [
+    "library/0310279v5/blocks/prose-sec-018",
+    "library/0310279v5/blocks/rem-sec-018-01",
+    "library/0310279v5/blocks/lem-sec-018-02",
+    "library/0310279v5/blocks/lem-sec-018-03",
+    "library/0310279v5/blocks/lem-sec-018-04",
+    "library/0310279v5/blocks/rem-sec-018-05"
+  ],
+  "derivedFrom": "library/0310279v5/manifest",
+  "sourceDocument": "library/0310279v5/manifest",
+  "provenance": "ingested"
+}

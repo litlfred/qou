@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hyperbolicandneumann/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Connections to number theory",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "text": "../sections/sec-005-6-connections-to-number-theory.md",
+  "derivedFrom": "library/hyperbolicandneumann/manifest",
+  "sourceDocument": "library/hyperbolicandneumann/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Standard Quantum Computation over C",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-004-standard-quantum-computation-over-c.md",
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

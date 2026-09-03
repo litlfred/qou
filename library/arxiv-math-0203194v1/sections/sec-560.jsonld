@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-560",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "RELATION WITH FORMAL GEOMETRY. 215",
+  "pageStart": 219,
+  "pageEnd": 221,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-560",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-560-01",
+    "library/arxiv-math-0203194v1/blocks/thm-sec-560-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

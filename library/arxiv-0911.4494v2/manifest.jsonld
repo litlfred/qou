@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0911.4494v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The geometry of Markov traces",
+  "contains": [
+    "library/arxiv-0911.4494v2/sections/sec-000",
+    "library/arxiv-0911.4494v2/sections/sec-001",
+    "library/arxiv-0911.4494v2/sections/sec-002",
+    "library/arxiv-0911.4494v2/sections/sec-003",
+    "library/arxiv-0911.4494v2/sections/sec-004",
+    "library/arxiv-0911.4494v2/sections/sec-005",
+    "library/arxiv-0911.4494v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0911.4494v2",
+    "source_file": "0911.4494v2.pdf",
+    "source_sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
+    "pages": 14,
+    "arxiv": {
+      "id": "0911.4494",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "8 Jul 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

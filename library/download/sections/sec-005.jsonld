@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Local behavior of empirical distributions",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "contains": [
+    "library/download/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "library/download/manifest",
+  "sourceDocument": "library/download/manifest",
+  "provenance": "ingested"
+}

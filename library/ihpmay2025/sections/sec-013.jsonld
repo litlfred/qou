@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quasiconformal maps and Beltrami differentials",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-013",
+    "library/ihpmay2025/blocks/prop-sec-013-01",
+    "library/ihpmay2025/blocks/prop-sec-013-02",
+    "library/ihpmay2025/blocks/thm-sec-013-03"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

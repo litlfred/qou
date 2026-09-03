@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p07/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Nonvanishing of hyperelliptic zeta functions over finite fields",
+  "contains": [
+    "library/ant-v14-n7-s-p07/sections/sec-000",
+    "library/ant-v14-n7-s-p07/sections/sec-001",
+    "library/ant-v14-n7-s-p07/sections/sec-002",
+    "library/ant-v14-n7-s-p07/sections/sec-003",
+    "library/ant-v14-n7-s-p07/sections/sec-004",
+    "library/ant-v14-n7-s-p07/sections/sec-005",
+    "library/ant-v14-n7-s-p07/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p07",
+    "source_file": "ant-v14-n7-s-p07.pdf",
+    "source_sha256": "c5a749ef6be194fd9d8efaea085e4bab3aa771134912a6352dd9eb793926dc5d",
+    "pages": 16,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1895",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

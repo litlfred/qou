@@ -1,0 +1,43 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2504.18825v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU",
+  "contains": [
+    "library/arxiv-2504.18825v2/sections/sec-000",
+    "library/arxiv-2504.18825v2/sections/sec-001",
+    "library/arxiv-2504.18825v2/sections/sec-002",
+    "library/arxiv-2504.18825v2/sections/sec-003",
+    "library/arxiv-2504.18825v2/sections/sec-004",
+    "library/arxiv-2504.18825v2/sections/sec-005",
+    "library/arxiv-2504.18825v2/sections/sec-006",
+    "library/arxiv-2504.18825v2/sections/sec-007",
+    "library/arxiv-2504.18825v2/sections/sec-008",
+    "library/arxiv-2504.18825v2/sections/sec-009",
+    "library/arxiv-2504.18825v2/sections/sec-010",
+    "library/arxiv-2504.18825v2/sections/sec-011",
+    "library/arxiv-2504.18825v2/sections/sec-012",
+    "library/arxiv-2504.18825v2/sections/sec-013",
+    "library/arxiv-2504.18825v2/sections/sec-014",
+    "library/arxiv-2504.18825v2/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2504.18825v2",
+    "source_file": "2504.18825v2.pdf",
+    "source_sha256": "829f97190cb1c8adcc6c5fcfa347fc73b8fb5100ad16b2b8d8e2653c0a5d78a0",
+    "pages": 56,
+    "arxiv": {
+      "id": "2504.18825",
+      "version": "2",
+      "primary_class": "math.RT",
+      "stamp_date": "11 Mar 2026"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

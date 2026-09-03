@@ -1,0 +1,53 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2502.02662v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+  "contains": [
+    "library/arxiv-2502.02662v1/sections/sec-000",
+    "library/arxiv-2502.02662v1/sections/sec-001",
+    "library/arxiv-2502.02662v1/sections/sec-002",
+    "library/arxiv-2502.02662v1/sections/sec-003",
+    "library/arxiv-2502.02662v1/sections/sec-004",
+    "library/arxiv-2502.02662v1/sections/sec-005",
+    "library/arxiv-2502.02662v1/sections/sec-006",
+    "library/arxiv-2502.02662v1/sections/sec-007",
+    "library/arxiv-2502.02662v1/sections/sec-008",
+    "library/arxiv-2502.02662v1/sections/sec-009",
+    "library/arxiv-2502.02662v1/sections/sec-010",
+    "library/arxiv-2502.02662v1/sections/sec-011",
+    "library/arxiv-2502.02662v1/sections/sec-012",
+    "library/arxiv-2502.02662v1/sections/sec-013",
+    "library/arxiv-2502.02662v1/sections/sec-014",
+    "library/arxiv-2502.02662v1/sections/sec-015",
+    "library/arxiv-2502.02662v1/sections/sec-016",
+    "library/arxiv-2502.02662v1/sections/sec-017",
+    "library/arxiv-2502.02662v1/sections/sec-018",
+    "library/arxiv-2502.02662v1/sections/sec-019",
+    "library/arxiv-2502.02662v1/sections/sec-020",
+    "library/arxiv-2502.02662v1/sections/sec-021",
+    "library/arxiv-2502.02662v1/sections/sec-022",
+    "library/arxiv-2502.02662v1/sections/sec-023",
+    "library/arxiv-2502.02662v1/sections/sec-024",
+    "library/arxiv-2502.02662v1/sections/sec-025"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2502.02662v1",
+    "source_file": "2502.02662v1.pdf",
+    "source_sha256": "3f87983ce379a8d668e2180183a0cb81624936d26a7698b68df1aeb50cdd8409",
+    "pages": 34,
+    "arxiv": {
+      "id": "2502.02662",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "4 Feb 2025"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

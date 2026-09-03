@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/centsim/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Document",
+  "pageStart": 1,
+  "pageEnd": 22,
+  "contains": [
+    "library/centsim/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/centsim/manifest",
+  "sourceDocument": "library/centsim/manifest",
+  "provenance": "ingested"
+}

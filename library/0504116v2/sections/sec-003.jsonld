@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0504116v2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Moduli for partially truncated tetrahedra",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/0504116v2/blocks/prose-sec-003",
+    "library/0504116v2/blocks/thm-sec-003-01",
+    "library/0504116v2/blocks/lem-sec-003-02",
+    "library/0504116v2/blocks/prop-sec-003-03",
+    "library/0504116v2/blocks/rem-sec-003-04"
+  ],
+  "derivedFrom": "library/0504116v2/manifest",
+  "sourceDocument": "library/0504116v2/manifest",
+  "provenance": "ingested"
+}

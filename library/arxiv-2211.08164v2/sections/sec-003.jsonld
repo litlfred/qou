@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2211.08164v2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Simple Weierstrass points",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-2211.08164v2/blocks/prose-sec-003",
+    "library/arxiv-2211.08164v2/blocks/thm-sec-003-01",
+    "library/arxiv-2211.08164v2/blocks/rem-sec-003-02"
+  ],
+  "derivedFrom": "library/arxiv-2211.08164v2/manifest",
+  "sourceDocument": "library/arxiv-2211.08164v2/manifest",
+  "provenance": "ingested"
+}

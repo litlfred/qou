@@ -1,0 +1,39 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2202.06733v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE",
+  "contains": [
+    "library/arxiv-2202.06733v1/sections/sec-000",
+    "library/arxiv-2202.06733v1/sections/sec-001",
+    "library/arxiv-2202.06733v1/sections/sec-002",
+    "library/arxiv-2202.06733v1/sections/sec-003",
+    "library/arxiv-2202.06733v1/sections/sec-004",
+    "library/arxiv-2202.06733v1/sections/sec-005",
+    "library/arxiv-2202.06733v1/sections/sec-006",
+    "library/arxiv-2202.06733v1/sections/sec-007",
+    "library/arxiv-2202.06733v1/sections/sec-008",
+    "library/arxiv-2202.06733v1/sections/sec-009",
+    "library/arxiv-2202.06733v1/sections/sec-010",
+    "library/arxiv-2202.06733v1/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2202.06733v1",
+    "source_file": "2202.06733v1.pdf",
+    "source_sha256": "e670632090447f148576cb99c1da40a2cdacb7fb4985e1b80e1359c9360d6406",
+    "pages": 20,
+    "arxiv": {
+      "id": "2202.06733",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "9 Feb 2022"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

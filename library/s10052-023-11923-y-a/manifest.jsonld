@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s10052-023-11923-y-a/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+  "contains": [
+    "library/s10052-023-11923-y-a/sections/sec-000",
+    "library/s10052-023-11923-y-a/sections/sec-001",
+    "library/s10052-023-11923-y-a/sections/sec-002",
+    "library/s10052-023-11923-y-a/sections/sec-003",
+    "library/s10052-023-11923-y-a/sections/sec-004",
+    "library/s10052-023-11923-y-a/sections/sec-005",
+    "library/s10052-023-11923-y-a/sections/sec-006",
+    "library/s10052-023-11923-y-a/sections/sec-007",
+    "library/s10052-023-11923-y-a/sections/sec-008",
+    "library/s10052-023-11923-y-a/sections/sec-009",
+    "library/s10052-023-11923-y-a/sections/sec-010",
+    "library/s10052-023-11923-y-a/sections/sec-011",
+    "library/s10052-023-11923-y-a/sections/sec-012",
+    "library/s10052-023-11923-y-a/sections/sec-013",
+    "library/s10052-023-11923-y-a/sections/sec-014",
+    "library/s10052-023-11923-y-a/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "s10052-023-11923-y-a",
+    "source_file": "s10052-023-11923-y_a.pdf",
+    "source_sha256": "73d1a03532d62ef7dc9f1871f47af7007979838c52ec25030420690c085f2679",
+    "pages": 13,
+    "arxiv": null,
+    "doi": "10.1140/epjc/s10052-023-11923-y",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0307092v2/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Example",
+  "pageStart": 58,
+  "pageEnd": 62,
+  "text": "../sections/sec-008-15-example.md",
+  "derivedFrom": "library/0307092v2/manifest",
+  "sourceDocument": "library/0307092v2/manifest",
+  "provenance": "ingested"
+}

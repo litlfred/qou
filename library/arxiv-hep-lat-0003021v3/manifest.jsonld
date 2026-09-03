@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-lat-0003021v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature",
+  "contains": [
+    "library/arxiv-hep-lat-0003021v3/sections/sec-000",
+    "library/arxiv-hep-lat-0003021v3/sections/sec-001",
+    "library/arxiv-hep-lat-0003021v3/sections/sec-002",
+    "library/arxiv-hep-lat-0003021v3/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-lat-0003021v3",
+    "source_file": "0003021v3.pdf",
+    "source_sha256": "b35dfd9ab88b71d8f0439c1ee11b9747906d758e0f6783f8b9325dd0616ee809",
+    "pages": 21,
+    "arxiv": {
+      "id": "hep-lat/0003021",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "19 May 2000"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Andr´e-Kahn quotient 33",
+  "pageStart": 41,
+  "pageEnd": 43,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-030"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0410233v4/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bounding the meridian",
+  "pageStart": 28,
+  "pageEnd": 31,
+  "contains": [
+    "library/arxiv-math-0410233v4/blocks/prose-sec-016",
+    "library/arxiv-math-0410233v4/blocks/lem-sec-016-01",
+    "library/arxiv-math-0410233v4/blocks/thm-sec-016-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
+  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "provenance": "ingested"
+}

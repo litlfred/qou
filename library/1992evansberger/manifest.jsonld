@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1992evansberger/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Hierarchy of Linking Integrals",
+  "contains": [
+    "library/1992evansberger/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1992evansberger",
+    "source_file": "1992EvansBerger.pdf",
+    "source_sha256": "6f100e931a1e5f2241cb428f007fe82abbe99f2f30047cc0d769ef0d6ad1389e",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

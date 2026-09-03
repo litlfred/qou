@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Zeilberger meets Jones",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-001",
+    "library/0309214v3/blocks/thm-sec-001-01",
+    "library/0309214v3/blocks/thm-sec-001-02",
+    "library/0309214v3/blocks/thm-sec-001-03",
+    "library/0309214v3/blocks/rem-sec-001-04",
+    "library/0309214v3/blocks/rem-sec-001-05",
+    "library/0309214v3/blocks/rem-sec-001-06",
+    "library/0309214v3/blocks/rem-sec-001-07"
+  ],
+  "derivedFrom": "library/0309214v3/manifest",
+  "sourceDocument": "library/0309214v3/manifest",
+  "provenance": "ingested"
+}

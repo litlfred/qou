@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v3-n1-p17-p/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A proof using orthogonal polynomials",
+  "pageStart": 5,
+  "pageEnd": 9,
+  "contains": [
+    "library/agt-v3-n1-p17-p/blocks/prose-sec-003",
+    "library/agt-v3-n1-p17-p/blocks/rem-sec-003-01"
+  ],
+  "derivedFrom": "library/agt-v3-n1-p17-p/manifest",
+  "sourceDocument": "library/agt-v3-n1-p17-p/manifest",
+  "provenance": "ingested"
+}

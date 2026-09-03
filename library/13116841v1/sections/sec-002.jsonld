@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/13116841v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Scalar product",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/13116841v1/blocks/prose-sec-002",
+    "library/13116841v1/blocks/lem-sec-002-01"
+  ],
+  "derivedFrom": "library/13116841v1/manifest",
+  "sourceDocument": "library/13116841v1/manifest",
+  "provenance": "ingested"
+}

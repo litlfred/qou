@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0911.1038v2/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of the main result",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-012-33-proof-of-the-main-result.md",
+  "derivedFrom": "library/arxiv-0911.1038v2/manifest",
+  "sourceDocument": "library/arxiv-0911.1038v2/manifest",
+  "provenance": "ingested"
+}

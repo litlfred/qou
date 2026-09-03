@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "P.DELIGNEANDG.D.MOSTOW",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-011",
+    "library/deligne-mostow-1986/blocks/lem-sec-011-01"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9911033v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "There is a constant C13 such that",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-math-9911033v1/blocks/prose-sec-012",
+    "library/arxiv-math-9911033v1/blocks/thm-sec-012-01"
+  ],
+  "derivedFrom": "library/arxiv-math-9911033v1/manifest",
+  "sourceDocument": "library/arxiv-math-9911033v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1404.2541v1/blocks/thm-sec-000-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 7,
+  "text": "thm-sec-000-01.md",
+  "derivedFrom": "library/arxiv-1404.2541v1/sections/sec-000",
+  "sourceDocument": "library/arxiv-1404.2541v1/manifest",
+  "provenance": "ingested"
+}

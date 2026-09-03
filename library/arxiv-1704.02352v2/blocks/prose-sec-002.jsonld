@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Cumulants",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-002-19-cumulants.md",
+  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
+  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "provenance": "ingested"
+}

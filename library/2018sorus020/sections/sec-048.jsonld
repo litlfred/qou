@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The torsion at an ideal point",
+  "pageStart": 65,
+  "pageEnd": 66,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-048",
+    "library/2018sorus020/blocks/thm-sec-048-01",
+    "library/2018sorus020/blocks/rem-sec-048-02"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

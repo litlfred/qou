@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki52/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki",
+  "contains": [
+    "library/ki52/sections/sec-000",
+    "library/ki52/sections/sec-001",
+    "library/ki52/sections/sec-002",
+    "library/ki52/sections/sec-003",
+    "library/ki52/sections/sec-004",
+    "library/ki52/sections/sec-005",
+    "library/ki52/sections/sec-006",
+    "library/ki52/sections/sec-007",
+    "library/ki52/sections/sec-008",
+    "library/ki52/sections/sec-009",
+    "library/ki52/sections/sec-010",
+    "library/ki52/sections/sec-011",
+    "library/ki52/sections/sec-012",
+    "library/ki52/sections/sec-013",
+    "library/ki52/sections/sec-014",
+    "library/ki52/sections/sec-015",
+    "library/ki52/sections/sec-016",
+    "library/ki52/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ki52",
+    "source_file": "ki52.pdf",
+    "source_sha256": "35ad4ee5a00d4a188ebc77f281ff2aa8048aa30b07d1b926a34761150cc7527b",
+    "pages": 52,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

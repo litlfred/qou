@@ -1,0 +1,43 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0707.2340v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+  "contains": [
+    "library/arxiv-0707.2340v2/sections/sec-000",
+    "library/arxiv-0707.2340v2/sections/sec-001",
+    "library/arxiv-0707.2340v2/sections/sec-002",
+    "library/arxiv-0707.2340v2/sections/sec-003",
+    "library/arxiv-0707.2340v2/sections/sec-004",
+    "library/arxiv-0707.2340v2/sections/sec-005",
+    "library/arxiv-0707.2340v2/sections/sec-006",
+    "library/arxiv-0707.2340v2/sections/sec-007",
+    "library/arxiv-0707.2340v2/sections/sec-008",
+    "library/arxiv-0707.2340v2/sections/sec-009",
+    "library/arxiv-0707.2340v2/sections/sec-010",
+    "library/arxiv-0707.2340v2/sections/sec-011",
+    "library/arxiv-0707.2340v2/sections/sec-012",
+    "library/arxiv-0707.2340v2/sections/sec-013",
+    "library/arxiv-0707.2340v2/sections/sec-014",
+    "library/arxiv-0707.2340v2/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0707.2340v2",
+    "source_file": "0707.2340v2.pdf",
+    "source_sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
+    "pages": 47,
+    "arxiv": {
+      "id": "0707.2340",
+      "version": "2",
+      "primary_class": "math.PR",
+      "stamp_date": "27 Jul 2008"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

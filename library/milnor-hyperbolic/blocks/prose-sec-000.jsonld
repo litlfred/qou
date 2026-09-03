@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/milnor-hyperbolic/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "JOHN MILNOR",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-000-10-john-milnor.md",
+  "derivedFrom": "library/milnor-hyperbolic/manifest",
+  "sourceDocument": "library/milnor-hyperbolic/manifest",
+  "provenance": "ingested"
+}

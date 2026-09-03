@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/resur-and-mld-calc-d-sauzin-hal/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Examples from mathematical physics.",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "../sections/sec-003-examples-from-mathematical-physics.md",
+  "derivedFrom": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "sourceDocument": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "provenance": "ingested"
+}

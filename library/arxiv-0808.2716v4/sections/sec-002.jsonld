@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.2716v4/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cusp area and link diagrams",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-0808.2716v4/blocks/prose-sec-002",
+    "library/arxiv-0808.2716v4/blocks/conj-sec-002-01",
+    "library/arxiv-0808.2716v4/blocks/thm-sec-002-02",
+    "library/arxiv-0808.2716v4/blocks/thm-sec-002-03",
+    "library/arxiv-0808.2716v4/blocks/thm-sec-002-04",
+    "library/arxiv-0808.2716v4/blocks/thm-sec-002-05",
+    "library/arxiv-0808.2716v4/blocks/thm-sec-002-06"
+  ],
+  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
+  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "provenance": "ingested"
+}

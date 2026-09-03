@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "What is Helicity?",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "../sections/sec-001-2-what-is-helicity.md",
+  "derivedFrom": "library/helicity03mmj/manifest",
+  "sourceDocument": "library/helicity03mmj/manifest",
+  "provenance": "ingested"
+}

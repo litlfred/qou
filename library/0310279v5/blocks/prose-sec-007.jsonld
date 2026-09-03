@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310279v5/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Plan of the paper",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "text": "../sections/sec-007-14-plan-of-the-paper.md",
+  "derivedFrom": "library/0310279v5/manifest",
+  "sourceDocument": "library/0310279v5/manifest",
+  "provenance": "ingested"
+}

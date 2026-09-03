@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.0461v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+  "contains": [
+    "library/arxiv-1202.0461v1/sections/sec-000",
+    "library/arxiv-1202.0461v1/sections/sec-001",
+    "library/arxiv-1202.0461v1/sections/sec-002",
+    "library/arxiv-1202.0461v1/sections/sec-003",
+    "library/arxiv-1202.0461v1/sections/sec-004",
+    "library/arxiv-1202.0461v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1202.0461v1",
+    "source_file": "1202.0461v1.pdf",
+    "source_sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
+    "pages": 6,
+    "arxiv": {
+      "id": "1202.0461",
+      "version": "1",
+      "primary_class": "astro-ph.SR",
+      "stamp_date": "2 Feb 2012"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

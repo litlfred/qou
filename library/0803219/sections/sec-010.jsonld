@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0803219/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Example 1 – figure-eight knot",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/0803219/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "library/0803219/manifest",
+  "sourceDocument": "library/0803219/manifest",
+  "provenance": "ingested"
+}

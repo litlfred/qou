@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1105.1998v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Connection Formula of the Hahn-Exton q-Bessel Function",
+  "contains": [
+    "library/arxiv-1105.1998v3/sections/sec-000",
+    "library/arxiv-1105.1998v3/sections/sec-001",
+    "library/arxiv-1105.1998v3/sections/sec-002",
+    "library/arxiv-1105.1998v3/sections/sec-003",
+    "library/arxiv-1105.1998v3/sections/sec-004",
+    "library/arxiv-1105.1998v3/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1105.1998v3",
+    "source_file": "1105.1998v3.pdf",
+    "source_sha256": "daf3bffad8eb2749fdfcc69cde5ee683ab90c9a7f3007930e1b37b8d0da9e59a",
+    "pages": 11,
+    "arxiv": {
+      "id": "1105.1998",
+      "version": "3",
+      "primary_class": "math.CA",
+      "stamp_date": "16 Dec 2011"
+    },
+    "doi": "10.3842/SIGMA.2011.115",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

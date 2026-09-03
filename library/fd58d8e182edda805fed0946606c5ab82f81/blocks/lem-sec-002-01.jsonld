@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/lem-sec-002-01",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "[1, 2]",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "lem-sec-002-01.md",
+  "derivedFrom": "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-002",
+  "sourceDocument": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "provenance": "ingested"
+}

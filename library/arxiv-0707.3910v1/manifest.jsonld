@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0707.3910v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+  "contains": [
+    "library/arxiv-0707.3910v1/sections/sec-000",
+    "library/arxiv-0707.3910v1/sections/sec-001",
+    "library/arxiv-0707.3910v1/sections/sec-002",
+    "library/arxiv-0707.3910v1/sections/sec-003",
+    "library/arxiv-0707.3910v1/sections/sec-004",
+    "library/arxiv-0707.3910v1/sections/sec-005",
+    "library/arxiv-0707.3910v1/sections/sec-006",
+    "library/arxiv-0707.3910v1/sections/sec-007",
+    "library/arxiv-0707.3910v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0707.3910v1",
+    "source_file": "0707.3910v1.pdf",
+    "source_sha256": "ad31f3cba16c4ea4ba12e789dae066ac6642f519613076b901067d0a7bf5b6de",
+    "pages": 20,
+    "arxiv": {
+      "id": "0707.3910",
+      "version": "1",
+      "primary_class": "math.CA",
+      "stamp_date": "26 Jul 2007"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

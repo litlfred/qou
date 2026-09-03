@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-013",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgements",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-013-acknowledgements.md",
+  "derivedFrom": "library/arxiv-1705.01853v2/manifest",
+  "sourceDocument": "library/arxiv-1705.01853v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0702263v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna",
+  "contains": [
+    "library/arxiv-hep-ph-0702263v1/sections/sec-000",
+    "library/arxiv-hep-ph-0702263v1/sections/sec-001",
+    "library/arxiv-hep-ph-0702263v1/sections/sec-002",
+    "library/arxiv-hep-ph-0702263v1/sections/sec-003",
+    "library/arxiv-hep-ph-0702263v1/sections/sec-004",
+    "library/arxiv-hep-ph-0702263v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0702263v1",
+    "source_file": "0702263v1.pdf",
+    "source_sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
+    "pages": 12,
+    "arxiv": {
+      "id": "hep-ph/0702263",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "26 Feb 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "P. DELIGNE AND G. D. MOSTOW",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-009",
+    "library/deligne-mostow-1986/blocks/lem-sec-009-01",
+    "library/deligne-mostow-1986/blocks/rem-sec-009-02"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

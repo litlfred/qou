@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "PROOF OF THEOREM B",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "text": "../sections/sec-012-v-proof-of-theorem-b.md",
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

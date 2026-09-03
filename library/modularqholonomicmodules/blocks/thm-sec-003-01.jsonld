@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/modularqholonomicmodules/blocks/thm-sec-003-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "thm-sec-003-01.md",
+  "derivedFrom": "library/modularqholonomicmodules/sections/sec-003",
+  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "provenance": "ingested"
+}

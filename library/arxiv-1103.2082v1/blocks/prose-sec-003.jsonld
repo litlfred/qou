@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1103.2082v1/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "1.3.",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-13.md",
+  "derivedFrom": "library/arxiv-1103.2082v1/manifest",
+  "sourceDocument": "library/arxiv-1103.2082v1/manifest",
+  "provenance": "ingested"
+}

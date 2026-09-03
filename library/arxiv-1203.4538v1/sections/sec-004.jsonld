@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.4538v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The kappa map.",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-1203.4538v1/blocks/prose-sec-004",
+    "library/arxiv-1203.4538v1/blocks/cor-sec-004-01",
+    "library/arxiv-1203.4538v1/blocks/ex-sec-004-02",
+    "library/arxiv-1203.4538v1/blocks/thm-sec-004-03",
+    "library/arxiv-1203.4538v1/blocks/thm-sec-004-04"
+  ],
+  "derivedFrom": "library/arxiv-1203.4538v1/manifest",
+  "sourceDocument": "library/arxiv-1203.4538v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/centsim/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Centers and Simple Modules for Iwahori-Hecke Algebras",
+  "contains": [
+    "library/centsim/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "centsim",
+    "source_file": "centsim.pdf",
+    "source_sha256": "41eaa1d757e691973cd2908f0afde5007193bc5cd400bfc86ecb70167226a222",
+    "pages": 22,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/modularqholonomicmodules/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Self duality",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "contains": [
+    "library/modularqholonomicmodules/blocks/prose-sec-013",
+    "library/modularqholonomicmodules/blocks/prop-sec-013-01",
+    "library/modularqholonomicmodules/blocks/rem-sec-013-02",
+    "library/modularqholonomicmodules/blocks/rem-sec-013-03"
+  ],
+  "derivedFrom": "library/modularqholonomicmodules/manifest",
+  "sourceDocument": "library/modularqholonomicmodules/manifest",
+  "provenance": "ingested"
+}

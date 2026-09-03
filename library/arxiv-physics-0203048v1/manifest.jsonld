@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-physics-0203048v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Towards a third-order topological invariant for magnetic fields",
+  "contains": [
+    "library/arxiv-physics-0203048v1/sections/sec-000",
+    "library/arxiv-physics-0203048v1/sections/sec-001",
+    "library/arxiv-physics-0203048v1/sections/sec-002",
+    "library/arxiv-physics-0203048v1/sections/sec-003",
+    "library/arxiv-physics-0203048v1/sections/sec-004",
+    "library/arxiv-physics-0203048v1/sections/sec-005",
+    "library/arxiv-physics-0203048v1/sections/sec-006",
+    "library/arxiv-physics-0203048v1/sections/sec-007",
+    "library/arxiv-physics-0203048v1/sections/sec-008",
+    "library/arxiv-physics-0203048v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-physics-0203048v1",
+    "source_file": "0203048v1.pdf",
+    "source_sha256": "47204f32280e91a36b4822807acf6d0bd7ccac42b400750746366c3e4782951b",
+    "pages": 14,
+    "arxiv": {
+      "id": "physics/0203048",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "15 Mar 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

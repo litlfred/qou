@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Verifying the assumption of the saddle point method",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-015",
+    "library/ki6c/blocks/rem-sec-015-01",
+    "library/ki6c/blocks/lem-sec-015-02",
+    "library/ki6c/blocks/lem-sec-015-03",
+    "library/ki6c/blocks/lem-sec-015-04",
+    "library/ki6c/blocks/lem-sec-015-05",
+    "library/ki6c/blocks/lem-sec-015-06"
+  ],
+  "derivedFrom": "library/ki6c/manifest",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

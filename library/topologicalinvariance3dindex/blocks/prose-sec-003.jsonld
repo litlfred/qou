@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Plan of the paper",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-003-14-plan-of-the-paper.md",
+  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
+  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "provenance": "ingested"
+}

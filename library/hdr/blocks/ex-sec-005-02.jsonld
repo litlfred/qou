@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/blocks/ex-sec-005-02",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "ex-sec-005-02.md",
+  "derivedFrom": "library/hdr/sections/sec-005",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

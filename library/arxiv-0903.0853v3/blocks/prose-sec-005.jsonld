@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The problem",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-005-11-the-problem.md",
+  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
+  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "provenance": "ingested"
+}

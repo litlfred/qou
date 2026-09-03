@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9408113v2/sections/sec-051",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B(N−1)",
+  "pageStart": 47,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-hep-th-9408113v2/blocks/prose-sec-051",
+    "library/arxiv-hep-th-9408113v2/blocks/thm-sec-051-01",
+    "library/arxiv-hep-th-9408113v2/blocks/rem-sec-051-02",
+    "library/arxiv-hep-th-9408113v2/blocks/thm-sec-051-03"
+  ],
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
+  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "provenance": "ingested"
+}

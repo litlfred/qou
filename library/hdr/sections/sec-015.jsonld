@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Schur elements and the a-function",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "contains": [
+    "library/hdr/blocks/prose-sec-015",
+    "library/hdr/blocks/thm-sec-015-01"
+  ],
+  "derivedFrom": "library/hdr/manifest",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

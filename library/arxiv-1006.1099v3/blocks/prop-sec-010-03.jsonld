@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/blocks/prop-sec-010-03",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Seidel, Callahan",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "prop-sec-010-03.md",
+  "derivedFrom": "library/arxiv-1006.1099v3/sections/sec-010",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

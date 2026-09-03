@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1010.5321v3/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Further results on concrete volumes",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1010.5321v3/blocks/prose-sec-015",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-015-01",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-015-02",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-015-03",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-015-04",
+    "library/arxiv-1010.5321v3/blocks/thm-sec-015-05"
+  ],
+  "derivedFrom": "library/arxiv-1010.5321v3/manifest",
+  "sourceDocument": "library/arxiv-1010.5321v3/manifest",
+  "provenance": "ingested"
+}
