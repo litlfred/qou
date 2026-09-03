@@ -377,3 +377,41 @@ one measurement that separates the three readings —
 
 — **has not been made.** ⁶Li has `C(A,2) = 15` against ⁴He's 6, which is why it
 is the point that matters and also why it is the expensive one.
+
+## ⁶Li attempt 2: killed again — and the heartbeat says *killed*, not hung
+
+Attempt 2 (⁶Li alone, 300 s heartbeat, 25000 s cap) also produced no value:
+
+```
+6Li Z=3 N=3 A=6  C(A,2)=15
+  ... alive at 326s
+[process gone, no result file]
+```
+
+**The heartbeat did the job it was added for.** One beat fired at 326 s and the
+process was gone with the beat still current — so this is a **kill**, not a hang.
+Attempt 1 could not distinguish those.
+
+It also died *earlier* than attempt 1: within ~600 s of starting ⁶Li, against
+~900 s+ before. Two kills, both early in A = 6, cause still undetermined
+(`dmesg` unavailable).
+
+**Stopping the identical retries**, per the rule set before attempt 2: two kills
+is a signal to change approach, not to try a third time.
+
+### Approach changed: split the terms
+
+`binding_energy` is three terms. Term 2 (`sdp_cross_channel_contribution`) is
+**measured 0.0** at these A. Terms 1 and 3 are independently expensive and each
+runs the same kernel. Splitting them:
+
+- halves the exposure window per process, and
+- makes a kill cost **one term**, not the atom —
+
+which is the same reasoning that saved he3 and he4 when the earlier combined run
+died. Term 1 (`unified_iterative_correction`) is launched alone; it carries the
+sign and most of the magnitude. Term 3 follows separately.
+
+This is not a workaround for a wrong answer — it is scheduling. If A = 6 is
+simply beyond this container, that is worth knowing plainly too, and the split
+will show which term is the one that cannot finish.
