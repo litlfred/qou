@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-09-03T04:39:00Z
+updated_at: 2026-09-03T05:28:46Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -197,3 +197,25 @@ schurElement/hookProd + (1-q^2)/(q-q^-1) = -q; then substitute the n-statistic
 identity to get q^{-contentSum}/hookProd = hconv. This is the laborious nested-
 foldl product bookkeeping over R (signs (-1)^n, q^{Sum h}, (q-q^-1)^n powers);
 no open combinatorics remain, only mechanical algebra.
+
+
+UPDATE 2026-09-03 (PR #6447) -- LEAN SIDE CLOSED, UNCONDITIONALLY.
+Piece 3 (the sign/monomial foldl aggregation) is proved sorry-free, and wired in:
+
+- HconvConventionBridge.hconv (new, sorry-free): for sorted l and 1 < q,
+  q^(-contentSum l)/hookProd q l = schurElement(q^2,0,l)*(1-q^2)^(l.sum).
+  Via denomProd_factor (prod_x (1-q^2h) = (-1)^|l| q^Sum_h (q-q^-1)^|l| hookProd,
+  cell-by-cell with the per-cell brick one_sub_qsq_pow_eq), schurElement_zero_eq,
+  (1-q^2)=-q(q-q^-1), and the n-statistic identity contentSum = Sum_h -|l| -2n(l).
+
+- NormalizedSumUnconditional.normalizedSum_eq_one (new, sorry-free):
+    (n : Nat) (q : R) (hq : 1 < q) : normalizedSum n q = 1
+  Discharges the last hypothesis of NormalizedSumClosure.normalizedSum_eq_one_of_convBridge
+  (#6011) with hconv on the sorted carrier toList p; supplies hq2, hgen from 1 < q.
+
+#print axioms normalizedSum_eq_one = [propext, Classical.choice, Quot.sound] (no sorryAx).
+The general-n q-analogue fake-degree identity normalizedSum n q = 1 is now
+machine-verified for every n, every 1 < q, with NO hypotheses beyond the substrate
+regime. The math (probe exact n<=5) AND the Lean are both closed. Nothing open remains
+on qou-3quc's Lean side; the induction/(B) route (qou-x4zl/qou-ognw) remains an
+independent second proof.
