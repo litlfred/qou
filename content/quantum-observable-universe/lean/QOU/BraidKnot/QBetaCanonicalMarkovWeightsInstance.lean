@@ -52,6 +52,107 @@ noncomputable instance CanonicalMarkovWeightsH3.explicitInstance :
     -- = z + 1 - 2z + z = 1.
     ring
 
+/-! ### The CANONICAL inhabitant
+
+The instance above is a valid inhabitant and was never claimed to be the
+canonical one — the accompanying `.md` says so, and records that
+"identifying the canonical inhabitant remains open".  It is no longer open.
+
+The canonical Wenzl–Markov weights of the production trace (convention D)
+are the `U_q(𝔰𝔩₂)` quantum dimensions normalised by `[2]_q³`:
+
+  `y_(3)   = [4]_q/[2]_q³ = (q⁴+1)/(q²+1)²`
+  `y_(2,1) = 1/[2]_q²     = q²/(q²+1)²`
+  `y_(1³)  = 0`
+
+**Why these and not others.** Convention D is the `N = 2` member of the
+Ocneanu family `z_N = q^N/[N]_q`: its framing ratio `a² = z/z₋` is the
+monomial `q⁴`, which collapses every Ocneanu numerator into quantum
+integers and turns the weight product into the hook-content formula
+`w_λ = dim_q(V_λ^{𝔰𝔩_N})/[N]_q^n`.  So these three values are *derived*
+from the trace, not fitted to it
+(`computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py`,
+13/13; `QOU.Information.markov_framing_ratio_eq` and
+`markovZ_eq_qsq_div_qDimTwo`, sorry-free).
+
+The `y_(1³) = 0` is not a coincidence either: it is the `𝔰𝔩₂` **row
+bound**.  A partition with more than `N` rows contains a cell of content
+`-N`, whose Ocneanu numerator factor vanishes identically
+(`QOU.Information.ocneanu_numerator_vanishes_at_content_neg`).  Three
+rows, `N = 2`.
+
+The numerical values at the substrate `q₀ ≈ 1.10998` are
+`0.5054042, 0.2472979, 0` — exactly what the accompanying `.md` records
+as the canonical convention-D weights. -/
+
+/-- The canonical weight on `V_(3)`: `[4]_q/[2]_q³ = (q⁴+1)/(q²+1)²`. -/
+noncomputable def canonical_y3 (q : ℝ) : ℝ := (q ^ 4 + 1) / (q ^ 2 + 1) ^ 2
+
+/-- The canonical weight on `V_(2,1)`: `1/[2]_q² = q²/(q²+1)²`. -/
+noncomputable def canonical_y21 (q : ℝ) : ℝ := q ^ 2 / (q ^ 2 + 1) ^ 2
+
+/-- **The canonical inhabitant of `CanonicalMarkovWeightsH3`.**
+
+The `𝔰𝔩₂` quantum dimensions of the production trace.  Unlike
+`explicitInstance`, this is not merely *an* inhabitant: it is the one the
+convention-D Markov trace actually carries, derived from the framing
+ratio rather than chosen to satisfy the normalisation.
+
+The normalisation is an identity rather than a constraint that had to be
+arranged: `(q⁴+1) + 2q² = (q²+1)²`.
+
+⚠ **Declared as a `def`, not an `instance`, deliberately.** The class already
+has one global instance (`explicitInstance`), and a second one would silently
+become the resolution default for any future bare `delta_tau_M_canonical q` —
+later instances win.  Every present use either takes the instance as a
+hypothesis binder or names `explicitInstance` with `@`, so nothing changes
+today; but promoting this to the default is a decision whose blast radius
+across the `[CanonicalMarkovWeightsH3]` consumers a per-file `lean`-direct
+check cannot verify.  It is the *canonical* weight set and arguably *should*
+be the default — that promotion is left as an explicit follow-up rather than
+taken as a side effect of adding it. -/
+noncomputable def CanonicalMarkovWeightsH3.canonicalInstance :
+    CanonicalMarkovWeightsH3 where
+  y3   := canonical_y3
+  y21  := canonical_y21
+  y111 := fun _ => 0
+  sum_dim_normalised := by
+    intro q hq
+    have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+    unfold canonical_y3 canonical_y21
+    field_simp
+    ring
+
+/-- **The `(1³)` block carries zero weight** at the canonical instance —
+    the `𝔰𝔩₂` row bound, stated where downstream consumers can use it. -/
+theorem canonical_y111_eq_zero (q : ℝ) :
+    CanonicalMarkovWeightsH3.canonicalInstance.y111 q = 0 := rfl
+
+/-- **The canonical weight set is a genuine inhabitant of the class**, so the
+    `[CanonicalMarkovWeightsH3]`-conditional theorems are non-vacuous at the
+    weights the production trace actually carries — not only at the
+    `√q`-bearing `explicitInstance`. -/
+theorem canonical_is_inhabitant : Nonempty CanonicalMarkovWeightsH3 :=
+  ⟨CanonicalMarkovWeightsH3.canonicalInstance⟩
+
+/-- **Δτ_M at the canonical instance**, unfolded to the `𝔰𝔩₂`-weighted block
+    sum with the `(1³)` block dropping out by the row bound. -/
+theorem delta_tau_M_canonical_at_canonical_eq (q : ℝ) :
+    @delta_tau_M_canonical CanonicalMarkovWeightsH3.canonicalInstance q
+      = canonical_y3 q * chi_block_3 q
+      + canonical_y21 q * chi_block_21 q
+      + 0 * chi_block_111 q :=
+  rfl
+
+/-- **The two nonzero canonical weights sum with their dimensions to one**,
+    with the `(1³)` block contributing nothing. -/
+theorem canonical_two_block_normalisation {q : ℝ} (hq : 0 < q) :
+    canonical_y3 q + 2 * canonical_y21 q = 1 := by
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold canonical_y3 canonical_y21
+  field_simp
+  ring
+
 /-- **Witness (sanity check): the class is inhabited.** This is
 syntactic; it confirms that subsequent conditional theorems
 `[CanonicalMarkovWeightsH3]` have at least one concrete dispatch
