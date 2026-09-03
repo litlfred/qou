@@ -5,7 +5,16 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T04:08:18Z
 updated_at: 2026-08-31T21:20:07Z
+updated_at: 2026-08-31T04:40:24Z
+updated_at: 2026-08-31T04:44:50Z
+updated_at: 2026-08-31T04:50:43Z
+updated_at: 2026-08-31T05:58:46Z
+updated_at: 2026-08-31T07:27:11Z
+updated_at: 2026-08-31T07:32:23Z
+updated_at: 2026-09-02T22:01:25Z
+updated_at: 2026-09-03T04:24:04Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -868,3 +877,880 @@ L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
 (non-tracial functional).** Neither is an object already in the algebra — which
 is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
+
+
+## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
+
+**1. All-pairs-with-distance-decay is excluded by R8's t-ladder interior maximum.**
+Tested against `saturating_shared_channel_probe`'s invariant, not against AME.
+CLAIM A (formalize-first, stated before the scan): if every `L_XY > 0` and the
+`k -> k+1` step appends a contiguous block without splitting an adjacency, every
+existing pair keeps its separation and every new pair adds a strictly positive
+`L*r^(s-1)`, so `V(k)` strictly increases for EVERY `(r_pp, r_nn, r_pn) in
+(0,1]^3` and P1 excludes it. **Decay buys nothing** — it shrinks contributions
+but never removes one. Confirmed, 0 violations / 1000 grid points. The two
+SPLITTING orderings also went non-monotone at zero points, which Claim A does not
+predict. At the framework's own derived rates `V = 12.79, 30.41, 54.11, 83.52`,
+monotone. The arrangement-free bound is INCONCLUSIVE and is kept as such
+(`Lo(19)=44.46` vs `Up(15)=72.60`, overlapping); a 400-sample arrangement search
+closes it empirically only (margin +22.58).
+
+**2. The 22.25:1 channel asymmetry is excluded by an EXACT inequality.** The
+eigenvalue criterion's falsification named 'whatever breaks the bar symmetry',
+and `delta` is the sector's only bar-breaking. Checked exactly: `d_pn = w*d_nn +
+(1-w)*d_pp` with `w = 1/2 - delta/4`, so `delta/4` IS the isospin-mixing
+asymmetry. Then for `R(d) = |log|l_-||/|log|l_+||` (alpha-free):
+
+    R(d) <= 1 for every admissible d in [-h,0],
+    equality iff |l_+| = |l_-| OR |det T| = 1.
+
+Proof: `|det T| = 1 + s(h-s) >= 1` so `log|l_+| + log|l_-| >= 0`; both cases give
+`R <= 1`. Nature needs `R ~ 22.25 > 1`, so the family is excluded **on the wrong
+side of 1**, not merely short. `delta` is a 1.4e-3 displacement inside that
+range and could not have helped. Scope (b).
+
+**Two corrections to my own claims, both caught by the sweep and both recorded
+with assertions:** I first called R's range 'a narrow band around 1' (false — min
+is 0.00119), and I first stated equality as 'iff |det| = 1' (incomplete — the
+midpoint `d = -h/2` has `|det| = 1.0109` yet `R = 1`, because the moduli coincide).
+
+**Found on the way, unsought:** `L_nn > L_pn > L_pp`. In the bond-graph functional
+a larger `L` is MORE binding, so the hierarchy is n-n most bound, p-p least —
+inverted against the two-nucleon data. Does not contradict the eigenvalue
+criterion's 4/4 signs (different functional, built from eigenvalues not `L`), but
+the one that gets the channels wrong is the one the whole bond-graph binding path
+is built on. Flagged, not chased.
+
+**Also found:** R9 states its invariant as `0 = M(1) < ...`; its own `modelg_miss`
+returns `M(1) = +0.1219` and the witness row carries `resid_MeV = -0.1218526` —
+witness and consumer define the residual with opposite signs. The invariant is
+unaffected (P1 needs the turnover), but the `0 =` is a simplification of the
+code's output, not a computed zero.
+
+**Where this leaves the arc:** the missing structure is not in the bond letter,
+and not in a decayed pair sum. Next candidates are outside the one-crossing
+algebra.
+
+## 2026-09-01 (later) — RETRACTION + the blind-sector determinant (PR #6414)
+
+**RETRACTED, same PR, same day:** my scope-(b) claim that "a bigger irrep does
+NOT escape the R <= 1 bound — det rho(w) = +-1 in every irrep". **False.**
+Verified on ONE irrep (H_3's 2-dim, where m+ = m- by accident of that block) and
+generalised. Counterexample in any H_n: the sign rep `sigma -> -1/q` satisfies
+the Hecke quadratic exactly, `|det| = 1/q = 0.90092 < 1` — the escape condition
+my own bound names.
+
+**Correct statement (exact):** `|det rho_lambda(sigma_i)| = q^(m+ - m-)` with
+m+/m- the SYT counts placing i,i+1 in a row/column. So `|det| = 1` iff m+ = m-,
+and the escape is open on **column-heavy** partitions — combinatorial, not
+accidental.
+
+**What I expected and did NOT find.** Column-heavy = many rows, and Step 27 says
+convention D's SU(2)/TL trace is blind above two rows, so I expected escape-set
+== blind-set. Measured over all 65 partitions of n = 2..8: **they do not
+coincide.** One-way only —
+`column-heavy ==> TL-blind` (1 exception, `(1,1)` at n=2);
+`TL-blind =/=> column-heavy` (14 counterexamples). Escape set strictly smaller.
+
+**At n = 6** (deuteron 3A): 5 escaping blocks — (3,1,1,1), (2,2,2), (2,2,1,1),
+(2,1,1,1,1), (1^6), 30 dims. Sum of squared dims = 720 = 6!, the same 720 Step
+27 reports, from the Wedderburn side — one object, two analyses.
+
+**Discriminates Step 27's two blocks,** which it treats symmetrically (sums their
+phases): `(3,2,1)` is **det-locked** (m+=m-=8, |det|=1 for every braid word at
+every writhe); `(2,2,1,1)` is **free** (|det| = q^-3e).
+
+**Scope limit, stated:** `Delta_bind = beta_atom - beta_free` is a DIFFERENCE of
+braid words, not group-like, so its det is unconstrained in either block. This
+does NOT discriminate Step 27's eigenphases directly — only which mechanisms
+built from braid words alone are available.
+
+**The R <= 1 bound is UNAFFECTED** (regular rep, computed directly, never via the
+irrep argument). Retraction landed on both surfaces — new probe + the original's
+docstring, 3 print sites and its assertion message.
+
+## 2026-09-01 (third pass) — |det| = 1 does NOT close a d > 2 block
+
+**Third retraction in one arc, and this one reaches the physics.** Section [3c]
+of `irrep_determinant_escape_probe` said "(3,2,1) is det-locked, so the R <= 1
+argument closes that block outright". The det-lock is real; **the closure does
+not follow.** `R <= 1` was derived for a 2x2, where `sum_i log|l_i| = log|det|`
+is one equation on TWO unknowns and pins their ratio. In dimension d it leaves
+`d-2` free — and `dim (3,2,1) = 16`.
+
+**Demonstrated** in the 6-dim regular rep of H_3 (quadratic, braid relation and
+inverse all asserted): `s1^2 s2^2` has `|det| = 1` and log-modulus ratio
+**exactly 2** — moduli `q^4, q^2, q^2, q^-2, q^-2, q^-4`, each checked against
+the exact power of q to 1e-18.
+
+**So the R <= 1 bound is a TWO-DIMENSIONAL fact and does not extend** — which is
+exactly why the blind sector's high-dimensional blocks are not excluded by it.
+
+**Near-miss:** my first test was `s1`, `s1*s2`, `s1*s2*s1` — all ratio 1.0, and
+on those three I was about to retract a *correct* correction. Their 2-dim block
+is elliptic. One more crossing breaks it.
+
+**Two further corrections caught before shipping:**
+1. With the near-unit floor at 1e-15 the enumeration returned ratio **7.75e9**
+   at `AABAAB` and read "reaches 22.25: True". Artefact — four moduli are 1 to
+   within 8.08e-11 (repeated char-poly root), so the ratio divided a real
+   log-modulus by dust. Floor now 1e-8. **Honest max: 5.0 at `abaab` over all
+   5456 words of length <= 6, 0 unresolved. Does NOT reach 22.2457.**
+2. I claimed "the achievable set is DISCRETE — ratios of integers" while
+   printing ROUNDED k beside my own check's "all integers? False" for `Baa`. The
+   rounding hid the counterexample. Measured: all-**positive** words have
+   integer-power moduli; mixed-sign need not (`Baa` -> ratio 2.032154824). Not
+   discrete; only its positive-word part is.
+
+**Unaffected:** the `R <= 1` bound on the bond-letter family stands (genuinely
+2x2, in H_2's regular rep).
+
+**Open:** whether the per-channel R (two eigenvalues of a d-dim block assigned to
+the two isospin channels) is even well-defined — unanswered, and it gates any
+use of the blind sector for the asymmetry.
+
+## 2026-09-01 (fourth pass) — the isospin-channel R is EXACTLY 1 everywhere
+
+**Strongest result of the arc, and it is one line.** Every Hecke generator
+satisfies `(sigma - q)(sigma + 1/q) = 0`, so its **minimal polynomial divides**
+`(x-q)(x+1/q)` in ANY representation. Hence `spec(rho(sigma_i)) ⊂ {q, -1/q}` at
+every dimension — only multiplicities vary. The isospin channels are `sigma`'s
+**spectral projectors**, each carrying one of those two eigenvalues whatever its
+rank. So `B(T=1) = -alpha log q`, `B(T=0) = +alpha log q`, **`R = 1` exactly, in
+every block, at every dimension.** Nature needs 22.2457.
+
+**The single-crossing isospin criterion is excluded EVERYWHERE** — not just the
+bond-letter family, not just 2-dim, blind sector included.
+
+Verified by **exact matrix identity, no root-finding**: `(M-qI)(M+I/q)` residual
+`5.584e-42` for s1, s2 and two conjugates.
+
+**🛑 This undercuts my own previous entry.** I had written that the `R <= 1`
+bound is 2-dimensional "which is why the blind sector's high-dimensional blocks
+are not excluded by it". True about the *bound*, misleading about the physics —
+the argument above excludes them anyway, with no determinant reasoning.
+"Not excluded by THAT bound" ≠ "not excluded". Corrected at source.
+
+**Does not contradict the measured 5.0 spread** — different operators. `sigma`
+satisfies the quadratic (5.6e-42); the word `s1^2 s2^2` does not (same product =
+0.429342), so its spectrum genuinely spreads. But a word's eigenprojectors are
+not `sigma`'s, so the spread is unavailable to the channels as defined.
+
+**Where the problem now sits:**
+| construction | asymmetry | status |
+|---|---|---|
+| single crossing, any dim | R = 1 exactly | EXCLUDED |
+| bond-letter family, 2-dim | R <= 1 | EXCLUDED |
+| multi-crossing word, d > 2 | up to 5.0 | **OPEN** |
+
+Only the third survives, and its obstacle is **not a bound** — nobody has said
+which operator the two isospin channels are the spectral projectors OF once the
+object is a word rather than a crossing. **Definitional question, and now the
+gate.**
+
+**Method note worth more than the result:** my first check was numerical
+(eigenvalues, membership in `{q,1/q}` at 1e-25) and reported FALSE against a
+one-line proof — `polyroots` resolves a triple root to only ~3e-15, so the
+tolerance was tighter than the instrument. **When a claim is algebraic, test it
+algebraically.** Three root-finding artefacts have misled this session:
+`mp.eig` non-convergence, a 7.75e9 ratio from a repeated root, and this.
+
+## 2026-09-01 (fifth pass) — the pairwise route is CLOSED FROM BOTH ENDS
+
+Completes the minimal-polynomial argument from adjacent crossings to **arbitrary
+separation**. A pair at separation `s > 1` exchanges via the **band generator**
+`a_ij = (s_{j-1}...s_{i+1}) s_i (s_{i+1}^-1...s_{j-1}^-1)`, a **conjugate of
+`s_i` by construction**. Conjugation preserves spectrum ⇒ spectrum `{q, -1/q}`
+⇒ **`R = 1` for that pair too**.
+
+Verified two ways, not asserted: `a_ij` really is the `(i,j)` transposition
+(checked in `S_4` at separations 1, 2, 3), and the H_3 instance
+`a_02 = s2 s1 s2^-1` satisfies the Hecke quadratic to `5.584e-42`.
+
+**⇒ THE ENTIRE PAIRWISE-EXCHANGE PICTURE HAS R = 1** — every pair, every
+separation, every representation. The channel asymmetry cannot come from any
+single exchange.
+
+**How it composes:** `allpairs_decay_turnover_exclusion_probe` ruled out
+*summing* pairwise contributions with distance decay; this rules out the
+pairwise contributions *themselves* carrying the asymmetry. **Closed from both
+ends, by two independent arguments sharing no machinery.**
+
+**Surviving space:** only genuinely NON-CONJUGATE multi-crossing objects — a
+product `sigma_i sigma_j`, or `Delta_bind` — and those are not exchanges of a
+pair. Obstacle is definitional, not a bound: which operator are the two isospin
+channels the spectral projectors OF, once the object is not a pair exchange?
+**That is the gate.**
+
+## 2026-09-01 (sixth pass) — the full catalogue; a far-commuting product is ALSO R = 1
+
+**Closes a row I had named as surviving.** Last pass I listed "a product
+`sigma_i sigma_j`" as a live candidate. It is not.
+
+**Far-commuting product.** For `|i-j| >= 2` the generators commute, span
+`H_2 ⊗ H_2`, and the product's spectrum is the **product set**
+`{q,-1/q} × {q,-1/q} = {q², -1, -1, 1/q²}`. Moduli `{q², 1, 1, 1/q²}` — the two
+non-unit log-moduli are **both `2 log q`**, so **R = 1 exactly**. Verified on the
+exact `H_2 ⊗ H_2` model: commutator 0.0, quadratic 0.0, ratio asserted to 1e-12.
+
+Physically: nucleons far enough apart that their generators commute cannot carry
+the asymmetry even as a product. With the band-generator result, **no separated
+pair contributes by any route.**
+
+**THE CATALOGUE (all measured in PR #6414):**
+
+| object | R |
+|---|---|
+| single crossing, any rep, any dimension | 1 exactly |
+| pair exchange at ANY separation (band generator) | 1 exactly |
+| `sigma_i^k`, any power k (checked k=1..5) | 1 exactly |
+| far-commuting product `sigma_i sigma_j` | 1 exactly |
+| adjacent 2-crossing product `sigma_i sigma_j` | 1 |
+| **>= 3 crossings, BOTH non-commuting generators** | **up to 5.0** |
+
+Measured minimum for any spread: **both generators present AND total length >= 3.**
+Nothing of length 1 or 2 spreads; no power of a single generator spreads at any
+exponent.
+
+**⇒ THE ASYMMETRY REQUIRES AN ADJACENT, MULTIPLY-BRAIDED OBJECT** — three or more
+crossings on two non-commuting strands. Not a pair, not a product, not a power:
+it needs the braid-relation region itself. Against nature's 22.2457, the measured
+spread reaches only 5.0 (a lower bound — length <= 6 in H_3).
+
+This agrees with the corpus's own super-pairwise conclusion reached from the AME
+side, by a completely different route.
+
+**Gate (definitional, not a bound):** which operator are the two isospin channels
+the spectral projectors OF, once the object is not a pair exchange? Do not invent
+an identification and fit to it.
+
+## 2026-09-01 (correction) — the target ratio is 33.7055, not 22.2457
+
+**What I asserted.** **Five** sites above quote nature's channel asymmetry as
+the superseded figure, under **two spellings** — and a grep for either spelling
+alone finds under half of them:
+
+| spelling | site |
+|---|---|
+| `22.25` | "The 22.25:1 channel asymmetry is excluded by an EXACT inequality" (two exclusions) |
+| `22.25` | "Nature needs `R ~ 22.25 > 1`, so the family is excluded on the wrong side of 1" |
+| `22.2457` | "Does NOT reach 22.2457" (the length-<=6 regular-rep sweep) |
+| `22.2457` | "Nature needs 22.2457" (the exactly-`R = 1` minimal-polynomial result) |
+| `22.2457` | "Against nature's 22.2457, the measured spread reaches only 5.0" |
+
+(A sixth occurrence, "reaches 22.25: True", is the label of a *rejected*
+7.75e9 artefact and is part of that entry's own correction, not a claim.)
+
+Those five sentences are left standing above as the dated record of what was
+measured against; this section is what supersedes the figure in them.
+
+**I got this wrong once already, in this very section.** It first said "three
+entries", having grepped only `22.2457` — the exact one-spelling miss AGENTS.md
+records for the `4.6e6`/`4.66e6` figure. Corrected on re-measure. If you drain
+this figure further, grep **both** spellings.
+
+**What is actually true.** The error was methodological, not arithmetic. A
+*channel* asymmetry must compare **the same pair** across two isospin channels.
+I compared the deuteron (np, T=0, +2.224566 MeV) against pp/nn (~0.1 MeV) — a
+**different pair** — which conflates pair identity with isospin. The correct
+denominator is the np ¹S₀ **virtual state** (~0.066 MeV): the same np pair,
+differing only in isospin.
+
+    2.224566 / 0.066 = 33.7055   correct   (67.4 at half, 16.9 at double)
+    2.224566 / 0.1   = 22.2457   what the three entries above quote
+
+Caught by `main`'s `1d9d3500f5` (beans `t7qv` / `m896`), which reached this
+arc's central result independently from Pauli.
+
+**Every conclusion in this bean is unaffected or strengthened; none flips.**
+
+- `R <= 1` on the bond-letter hull — unaffected. `33.7 > 22.25 > 1`.
+- The fine-tuning verdict is **sharper by three and a half orders**. The letter
+  that would reach nature's ratio sits **5.94e-11** from the isospin projector,
+  where the 22.2457 comparison put it at 1.78e-7. A 2e-7 fine-tuning was already
+  the reason to read that localisation as evidence *against* the letter; 6e-11
+  is more so.
+- The regular-rep spread still maxes at **5.0** and still does not reach the
+  target — "reaches it? False" under either figure, by a wider margin under the
+  correct one.
+
+**Where else the figure went, and where it now stands.** It was live in four
+probe scripts and in this bean. All four probes were drained in
+`fix(qou-brng): drain the 22.2457 -> 33.7055 correction to all four probes`,
+at every computational site and in prose, with the reason recorded at each site:
+
+- `computations/probes/allpairs_decay_turnover_exclusion_probe.py`
+- `computations/probes/channel_asymmetry_letter_family_bound_probe.py`
+- `computations/probes/irrep_determinant_escape_probe.py`
+- `computations/probes/regular_rep_modulus_spread_probe.py`
+
+The bean was the fifth surface and was missed by that pass — which is the exact
+trap that commit message names ("correcting one surface and leaving the others").
+Recorded here rather than by editing the three dated entries, so the record of
+what was compared against remains readable.
+
+## 2026-09-02 — the n=2 isospin cap does NOT survive the 3-strand lift; ceiling is 9
+
+`computations/probes/block_transposition_lift_probe.py` (PR #6415, commit b17fc1b609).
+Takes the step main's `t7qv/m896` flagged as out of scope: 'this is the n=2
+interface only, not lifted to the 3-strands-per-nucleon construction'.
+
+A nucleon is three strands, so the exchange operator is the 3-block transposition
+Delta_{3,3} = (s3 s2 s1)(s4 s3 s2)(s5 s4 s3) in B_6 — 9 crossings, verified to
+induce the block swap exactly. Forced by the construction, not selected.
+
+Exhaustive over all 11 Wedderburn blocks of H_6:
+
+  * **Every eigenvalue modulus is exactly q^k, k an INTEGER.** Deviation falls
+    3.4e-7 / 9.1e-10 / 1.2e-14 / 1.8e-22 at dps 30/40/60/90 — exact, not
+    approximate. So the asymmetry is a COUNTING quantity and cannot be tuned.
+  * **The n=2 cap of 1 breaks**: max 5 in-block at (4,2) — a 2-row, TL-VISIBLE
+    block — and 9 across blocks. Achievable set is discrete {1, 2, 5}.
+  * **But the ceiling is 9 against nature's 33.7.** Scope (a): Delta_{3,3} alone
+    does not supply the observed channel asymmetry from its trace-visible
+    spectrum. A closure adding a further term is untouched.
+  * **Three blocks carry k=0 (|lambda|=1), for which the ratio is UNBOUNDED** —
+    and every one of those is trace-blind (rows > 2), while no trace-visible
+    block carries one. Both directions exact, asserted. So the unbounded
+    asymmetry exists in this construction but lives entirely in the sector the
+    Markov trace cannot see under convention D's row cap l(lambda) <= 2. That
+    is the 'computable but not directly observable' class the owner raised.
+
+Internal checks asserted: trivial/sign reps give k = +9/-9 (9 crossings at
+sigma -> q and -1/q); conjugation duality k(lambda') = -k(lambda) holds for all
+11 blocks.
+
+TRAP recorded in-probe: the first version thresholded near-unit moduli at
+UNIT_FLOOR=1e-8 and reported ratio 8888561 for (3,2,1) — numerical dust, the
+same artefact class caught twice earlier this session at a 1e-15 floor. Fix was
+NOT a bigger floor: the integer quantization removes the need for a threshold
+entirely, and a threshold-free test cannot be defeated by choosing the threshold
+badly. That version also filtered k=0 silently, which would have made 'ceiling
+9' stronger than the measurement supports; now stated with the proviso explicit.
+
+OPEN: whether the unbounded trace-blind sector is reachable by subtraction.
+Locating it is not reaching it.
+
+## 2026-09-02 — subtraction-recovery of the blind sector is CLOSED (negative)
+
+`computations/probes/markov_trace_family_rank_probe.py` (PR #6415, 9f97474c46).
+Answers the question the lift probe left open, negatively.
+
+The Ocneanu weight at z_N = q^N/[N]_q is the SU(N) quantum dimension (quantum
+hook-content formula), vanishing exactly when ell(lambda) > N — row cap asserted
+on 178 (lambda,N) pairs. Higher N lifts the cap, so the hope was a finite
+combination isolating a blind block.
+
+MEASURED (SVD and Gram-Schmidt, agreeing at every n):
+
+    n       2   3   4   5   6   7
+    p(n)    2   3   5   7  11  15
+    rank    2   3   4   5   6   7     -> rank = n EXACTLY
+
+Singular-value gap at n=6: 2.23e-13 retained vs 1.74e-121 discarded, ~108
+orders. Not a threshold judgement.
+
+**Only the two ONE-DIMENSIONAL blocks are individually recoverable.** So the
+answer is no — and the reason is stronger than the question assumed: **the
+recoverability boundary is NOT the row cap.** (4,2) is trace-VISIBLE, carries
+the largest finite asymmetry found (ratio 5), and is still not isolable.
+
+Also settles the H_3 three-trace combination (6.22044128, -33.41778449,
+28.19734321): it works because p(3)=3=rank, i.e. n=3 is COMPLETE. It does NOT
+generalise — from n=4 on, p(n) > n. Asserted at both ends.
+
+Scope (a), narrowly: excludes the Ocneanu/Markov trace family parameterised by
+N and nothing else. Non-Markov-trace functionals untouched — that is where a
+closure must now come from. rank=n is measured at n=2..7, not proved; a proof
+would upgrade this to scope (b) and is the obvious formalize-first target.
+
+TRAPS recorded in-probe: (1) mp.lu_solve does not raise on a singular system —
+returned 1e57 coefficients with residual 1.0 at 60 dps; precision scaling
+(1e119 at 120 dps, 'numerically singular' at 240) is what settled singular vs
+ill-conditioned. (2) Column normalisation changes the row space, so residual
+distances from a normalised SVD answer a different question; rank and
+membership survive, distances do not. Conjugation symmetry exposed it.
+
+CONSEQUENCE for the arc: the three routes past the ceiling of 9 that I could
+name are now (i) a non-Markov-trace functional, (ii) a further additive term in
+the closure, (iii) higher n. Subtraction over the trace family is closed.
+
+## 2026-09-02 — sibling convergence with qou-r1yj: same spectrum, no conflict
+
+de5c18f588 (t7qv/r1yj, `main`) did the SAME six-strand lift from a different
+session, same day, neither knowing of the other. Reconciled in
+`block_transposition_lift_probe` (a42e580e0b / rebased 5828849a49) as an
+ASSERTION, not a remark.
+
+**Spectra identical.** Union of exponents over the four trace-visible blocks is
+{-3,-1,2,3,5,6,9} = r1yj's seven magnitudes. Independent confirmation.
+
+**Sign convention differs** — r1yj reports L/log q negated, so its bound {3,1}
+and unbound {-2,-3,-5,-6,-9} are that set negated. Recorded so nobody
+'corrects' one into the other.
+
+**The ratios answer different questions, and are NOT in conflict:**
+  * r1yj APPLIES the isospin assignment -> 3/2 (assigned value)
+  * this branch makes NO assignment -> 5 in-block, 9 across (ceiling over ALL)
+
+3/2 <= 5 <= 9, and the ceiling BOUNDS what any re-assignment of r1yj's channels
+could reach: its 22.47x miss cannot be repaired by choosing channels
+differently, best conceivable 33.7/9 = 3.7x. Strengthens its negative.
+
+**What this branch adds:** r1yj scans the four LIVE blocks; this scans all 11,
+and the extra seven are where the k=0 (unbounded-ratio) eigenvalues live —
+absent from the visible four, consistent with r1yj seeing no unit modulus.
+
+qou-m896's n=2 cap of 1 stands at the two-strand interface. All three quote
+together.
+
+## Lean: the mechanism, in the canonical carrier (verification pending)
+
+Corpus-grep found `QOU/SchurWeyl/OcneanuWeight.lean` ALREADY carries
+`ocneanuWeight q z mu` with exactly the formula used, plus a content-(-2)
+numerator vanishing lemma and the convention-D row cap. So the degree argument
+belongs IN that file, not a new one. Four declarations appended:
+
+  ocneanuNumFactor_affine          — z-coefficient is q^(2j+1) - q^(2i+1)
+  ocneanuNumFactor_diagonal_z_free — at i=j the z terms cancel IDENTICALLY,
+                                     no hypothesis on q at all
+  ocneanuNum_diagonal_split        — the z-dependence is confined to the
+                                     off-diagonal cells (Finset product split)
+  mem_cells_diag_zero              — every non-empty diagram has (0,0), so
+                                     d >= 1 and z^|mu| always dies
+
+Proves the MECHANISM, not the degree count: turning it into deg_z <= |mu| -
+d(mu) needs the polynomial-degree argument over the product and is NOT done.
+rank = n stays measured (n=2..7), so the exclusion stays scope-(a).
+
+NOT COMMITTED until lean-direct verification returns.
+
+## 2026-09-03 — the Lean is VERIFIED sorry-free (lean-direct, real import cone)
+
+Four declarations in `QOU/SchurWeyl/OcneanuWeight.lean` (commit 2cb1d14a5e,
+rebased) now verified. The dispatched lean-verifier subagent never returned —
+the session restarted — so this was run directly.
+
+COMMAND (root mathlib had traces ~= oleans, i.e. genuinely built, so lean-direct
+was safe; `lake build` NOT run, per the restored-cache trap):
+
+    LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+    for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
+             LeanSearchClient; do
+      LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
+    done
+    LEAN_PATH="$LP" lean \
+      content/quantum-observable-universe/lean/QOU/SchurWeyl/OcneanuWeight.lean
+
+exit 0, no diagnostics. Note exit 0 ALONE is not the gate — lean exits 0 on a
+`sorry` (it is a warning), so #print axioms is what settles it:
+
+    ocneanuNumFactor_affine          [propext, Quot.sound]
+    ocneanuNumFactor_diagonal_z_free [propext, Quot.sound]
+    ocneanuNum_diagonal_split        [propext, Classical.choice, Quot.sound]
+    mem_cells_diag_zero              [propext, Classical.choice, Quot.sound]
+
+No sorryAx. Only the three standard Mathlib axioms; the two `ring` proofs do
+not even need Classical.choice. The only 'sorry' string in the file is a
+docstring quoting 'sorry-free'.
+
+Re-verified after rebasing onto main (38 commits, clean): lean-direct exit 0
+again, and all three probes exit 0 again. A clean rebase is not evidence the
+code still works, so both were re-run rather than assumed.
+
+SCOPE UNCHANGED by this verification: the Lean proves the MECHANISM (z-dependence
+confined to off-diagonal cells; diagonal factors z-free unconditionally), NOT
+the degree count deg_z <= |mu| - d(mu), and NOT rank = n. Those stay measured
+(exact symbolic n=2..6, numeric to n=7), so the exclusion stays scope-(a).
+
+## 2026-09-03 — the rank bound is PROVED (the <= half); scope still (a)
+
+Commits 8a8457991f (degree bound) and 18cbcd439b (rank bound), both lean-direct
+verified, **11 declarations, zero sorryAx**.
+
+CHAIN, now end-to-end in Lean:
+
+  1. each cell's numerator factor is affine in z, coefficient q^(2j+1)-q^(2i+1)
+  2. that coefficient is ZERO on the diagonal i=j — identically, no hypothesis
+     on q at all (the two z terms cancel term-for-term)
+  3. hence deg_z(numerator) <= #off-diagonal cells = |mu| - d(mu), d = Durfee
+     (via natDegree_prod_le: product degree <= sum of factor degrees, diagonal
+     factors constant, off-diagonal linear)
+  4. every non-empty diagram has (0,0), so d >= 1 and deg <= |mu| - 1
+  5. a degree-<=d family evaluated at z lies in the span of its d+1 coefficient
+     vectors — for EVERY z, not just sampled ones
+  6. therefore the Ocneanu family at level n spans **at most n dimensions**,
+     against p(n) for the full space of trace functionals
+
+Step 6 is `ocneanuFamily_finrank_le`. Steps 5-6 are stated for an arbitrary
+finite family of polynomials — nothing about the Ocneanu weight is used, which
+is what makes the argument checkable rather than entangled with the formula.
+
+**This is the <= half only.** rank = n EXACTLY is still measured (exact
+symbolic over Q(q) at n=2..6, numeric to n=7), and so is
+deg_z = |mu| - d(mu) exactly. A proved upper bound on the rank is not a proof
+that the rank is attained, so the exclusion of the Markov-trace family stays
+**scope-(a)**. What changed: the bound direction no longer rests on
+measurement — it rests on the degree of a polynomial.
+
+AXIOM REPORT CHANGED, honestly noted: the two `ring` proofs previously showed
+[propext, Quot.sound] and now show Classical.choice too. Nothing in those
+proofs changed — the added LinearAlgebra imports changed instance resolution
+file-wide. Earlier text claiming they 'do not even need Classical.choice' was
+corrected in the same pass rather than left standing.
+
+MATHLIB TRAPS for the next agent (all cost me a cycle):
+  * Mathlib.LinearAlgebra.Finrank does NOT exist in this version;
+    Dimension/Finrank and Dimension/Constructions do.
+  * Submodule.finrank_mono and finrank_span_le_card are in
+    Dimension/Constructions — importing Dimension/Finrank alone is not enough.
+  * finrank_span_le_card needs a Fintype on the range, NOT automatic; wants
+    (Set.finite_range _).fintype plus Module.Finite.span_of_finite.
+  * natDegree_C_mul_X_le does not exist; build from natDegree_mul_le.
+  * Finset.sum_le_sum cannot infer its bounding function — name it
+    (g := fun _ => 1).
+  * `simp` distributes C across a product (C (a*b) -> C a * C b) rather than
+    discharging a natDegree goal; the diagonal case wants explicit rewrites.
+
+## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
+
+`computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
+Many-body term defined at FIXED NUCLEON CONTENT (`L(bond set) - sum of
+single-bond L` on the same braid), NOT by subset-Mobius. That difference is why
+the A=3 sign differs from t7qv's.
+
+    A=3 exhaustive   two-bond sets   EXACTLY ZERO (1.3e-51), band-routed included
+                     the triangle    POSITIVE in ALL SIX orders, 0.0746 to 0.1810
+    A=4              chain           EXACTLY ZERO (5.3e-51)
+                     complete graph  NEGATIVE in all 3 orders, -1.073/-0.561/-0.531
+
+**A positive many-body term DOES exist — at A=3. It flips NEGATIVE at A=4**,
+which is exactly where the alpha lives. So the sign attack fails at the mass
+number that needs it.
+
+Magnitude: best A=4 order gives `B = 10.083 MeV` against AME `28.296`, **2.81x
+short** (consistent with t7qv's independently computed 10.387277). The additive
+route capped at 20.649 MeV with per-bond values free. **Both routes closed.**
+
+### Confirmed t7qv's no-distance-decay result, 37 orders tighter
+
+All six A=4 nucleon pairs give `L = 0.48989938425513485141`, max deviation
+**1.47e-50**, against their float64 `3.4e-13`. Independent implementation.
+
+### A correction I nearly published
+
+A first run used `HF = h/2` and produced an apparent LINEAR decay with
+separation (0.4899, 0.3018, 0.1136) with an exactly constant decrement
+0.188144 -- which I was one step from reporting as contradicting t7qv. **My
+error**: their `HF = float(_H)` is `h`, confirmed by their own `bond_d` (an nn
+bond takes `-HF` and `d_for_ctype("sigma_inv", h) = -h`). A pattern clean to six
+digits is not evidence the constant feeding it is right.
+
+## WHAT ELSE COULD CARRY EXTENSIVE BINDING — the corpus already answers
+
+`docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md`: the missing term
+is **linear in A**, per-nucleon `B/A -> ~8 MeV` (0-fit A-scaling, CV 0.148) --
+NOT `C(A,2)` or `C(A,3)`. Structure derived (SU(4) `[1^4]` alpha-cluster volume
+term); **scale still open**. And a surface term now exists:
+`QOU.Mass.SaturationPeakStructure` (landed 2026-08-30).
+
+Quantified against my measured slopes:
+
+    log-ratio per-nucleon   pp 2.0507   pn 2.8338   nn 3.7978  MeV/nucleon
+    alpha-cluster target                ~8 MeV/nucleon
+    supplies                25.6 % to 47.5 %   -- short by 2.11x to 3.90x
+
+**My exclusions SHARPEN the alpha-cluster route rather than block it.** The
+`[1^4]` singlet is a 4-body SU(4) object, not a bond-graph object, so the
+bond-topology exclusions (additive: capped; non-additive: negative at A=4) do
+not apply to it. What they do is remove the bond graph as a competitor, leaving
+the alpha-cluster term as the carrier that has to supply the missing ~3/4.
+### The selection principle EXISTS and is broken three ways — extending L_K_max is futile (2026-08-31)
+
+I proposed extending the enumeration to `L ≥ 8` as the live next step. **Do not
+run it.** The residual criterion is already there, and read off the enumerator's
+**own recorded output** it has three independent fatal defects.
+
+**First, correcting my own correction.** I said "the principle is not
+minimality". Right about the *code* (sort key is `(PSD, residual, length)`),
+**wrong about the corpus**: the Lean instances' `bindingKWord = [3,3]` came from
+the witness's `min_length_psd_feasible_candidates`, **not** the residual-ranked
+`psd_feasible_top_k`. The recorded carrier *is* the min-length pick.
+
+**Defect 1 — the residual's rank-1 pick is a SELF-CROSSING.** With
+`offsets = [0,3,6]` in `B₉`, `σ_i` is inter-component iff `3 | i`, so only `σ₃`
+and `σ₆` qualify. **`inter_nucleon_generators_extended` has 8 of 12 entries
+intra-nucleon** and its name says otherwise. Rank-1 for **both** ³H and ³He is
+`[-8,-8] = σ₈⁻²`, inside nucleon 3 — zero inter-component crossings, so
+`countChannel = 0` and it binds nothing. Rank-2 `[-5,-5]` likewise. The first
+genuine interface appears at rank 3.
+
+**Defect 2 — the rank-1/rank-2 order is float64 noise.** `σ₅` and `σ₈` are the
+same generator of two different blocks, so block symmetry makes their residuals
+**equal**. Recorded gap: **exactly 2 ULP** (`2.220e-16` at `0.93`, where eps is
+`1.110e-16`), in both nuclei. The top slot is decided by rounding. Same 2-ULP
+split for `[-4,-4]`/`[-7,-7]` and `[7,7]`/`[4,4]`.
+
+**Defect 3 — the two genuine interfaces are exactly degenerate.** `[-3,-3]` and
+`[-6,-6]` record the *identical* residual to every digit. The criterion cannot
+tell the `1|2` interface from `2|3`. That is a symmetry, not a bug — any
+trace-only criterion will tie them — so breaking it needs information the trace
+does not carry.
+
+**Also: the minimal set cannot carry a Brunnian link at any length.** `σ₃` and
+`σ₆` are distant hence commute, so `⟨σ₃,σ₆⟩` is free abelian; every word reduces
+to `σ₃^a σ₆^b` with linking numbers `a/2, b/2, 0`, and Brunnian forces
+`a = b = 0`. The corpus's own Borromean `(σ₁σ₂⁻¹)³` needs **adjacent**
+generators, so it was never reachable there.
+
+**Revised next step.** Repair the criterion before searching wider: restrict to
+`3 | i`, carry the residual in `mpf` not `float64`, and find a tie-breaker for
+the exact `1|2`/`2|3` symmetry. Lean
+`QOU/Mass/EnumeratorSelectionDegeneracy.lean` (8 decls, sorry-free); probe
+`enumerator_selection_criterion_audit.py` (7/7, nothing re-run).
+
+
+**Follow-up measurement — the minimal-set search is both redundant and
+unnecessary.** Because `σ₃` and `σ₆` commute, at `L ≤ 8` the enumerator would
+walk **87,380 words for 145 distinct group elements — 99.83 % redundant.** And
+the answer needs no search at all: Brunnian forces `a = b = 0`. `lk(1,3) = 0` is
+forced by *reachability* — `σ₃` transposes positions 3,4 and `σ₆` positions 6,7,
+so a block-1 strand and a block-3 strand never meet — hence the Borromean, which
+needs all three pairs linked, is **unreachable in this layout**.
+
+That is the real open question now: **what braid presentation of three nucleons
+admits a Brunnian carrier at all?** It is a design question about the
+construction, not a search.
+
+
+### The fix is the GENERATOR SET, and it is a known one — band generators (2026-08-31)
+
+Not the strand layout: `n = 3A` is forced corpus-wide by the three-quark
+structure, and re-labelling which strands belong to which nucleon is a
+conjugation, which the Markov trace cannot see.
+
+The braid group's **band (Birman–Ko–Lee) generators**
+`a_{t,s} = (σ_{t-1}⋯σ_{s+1}) σ_s (σ_{s+1}⁻¹⋯σ_{t-1}⁻¹)` link strands `s` and `t`
+**directly**, and satisfy `a_{s+1,s} = σ_s` — so the adjacent transpositions the
+enumerator used are a **proper subset** of the bands. Counted in `B₉`:
+
+| | count |
+|---|---|
+| inter-nucleon band generators | **27** |
+| searched by the enumerator | **2** (`σ₃`, `σ₆`) |
+| bands reaching the `1|3` pair | **9** |
+| of those, searched | **0** |
+
+Every `1|3` band has `|t−s| ≥ 4`, so none is an adjacent transposition and none
+could have been in the search set. **The subset chosen excludes precisely the
+pair a Brunnian carrier needs** — which is why the Borromean was unreachable.
+
+**Corpus-grepped, absent:** no band / Birman–Ko–Lee generator anywhere in
+`content/`, `computations/` or `docs/`. The single `BKL` hit is **BKLR**
+(Bischoff–Kawahigashi–Longo–Rehren), a Frobenius-algebra theory — a substring
+false positive. **Four library documents** cover the band presentation, so
+adopting it is a **citation, not a derivation**.
+
+**This is the concrete next step**, and it is a rewrite of the search set rather
+than a longer search: re-run the binding-K enumeration over the 27 inter-nucleon
+bands (in `mpf`, not float64), which is a *smaller* space than the 87,380 words
+the length-extension would have walked.
+
+
+### 🛑 RETRACTED: "the band route is cheaper". It is ~4,400× LARGER (2026-08-31)
+
+I asserted, in the bean and in #6366, that re-running the enumeration over the
+27 inter-nucleon bands would be *cheaper* than the length-extension it replaces.
+**I did not compute it. It is wrong.**
+
+A Brunnian carrier needs `n₊ = n₋ ≥ 1` on **each** of the 3 nucleon-pairs, so at
+least **6** band letters:
+
+| | candidates |
+|---|---|
+| naive, 54 signed band letters, `L = 6` | 24,794,911,296 |
+| structured (one `+`/`−` per pair, ordered) | **382,637,520** |
+| the length-extension it replaces | 87,380 |
+| | **4,379× larger** |
+
+The band set is still the **only** one that can *reach* a Brunnian carrier — it
+is **necessary, not cheap**. Do not quote "cheaper".
+
+### And the correction produces the better result: the binding cannot see WHICH band
+
+`countChannel np nn q` depends only on `n₊ + n₋`
+(`countChannel_depends_only_on_total`, proved), and `SelfMutualPartition` makes
+binding a sum over inter-component crossings. **So all 9 bands joining a given
+nucleon-pair are binding-equivalent.** The binding-relevant content of a carrier
+is the triple `(m₁, m₂, m₃)` — **20 triples** at `c ≤ 12` against 382,637,520
+band words, a collapse of **1.9 × 10⁷**.
+
+**This subsumes Defect 3 rather than sitting beside it.** The residual is being
+asked to make a distinction *the binding does not use*; the exact `1|2`-vs-`2|3`
+tie is the two-generator shadow of the same fact. **So no repair of the
+arithmetic — `mpf` instead of float64 — can make a trace criterion select among
+binding-equivalent carriers.** The float64 fix is still right, but it fixes a
+smaller thing than I said.
+
+**Confirmed at the source, not just in the recorded output:**
+`_eval_word_per_block_cached` builds `np.eye(dim)` and multiplies float64
+matrices, so defect 2's root cause is in the producer.
+
+**Revised next step.** Search the **20 binding-relevant triples**, not band
+words — and select on something that is not the Markov trace, since the trace
+provably cannot separate binding-equivalent carriers.
+
+
+### The A=3 count-channel carrier route is EXHAUSTED — there was nothing to search (2026-08-31)
+
+The authorised next step was *"search the 20 binding-relevant triples and select
+on something that is not the Markov trace."* **There is nothing to search.** The
+space collapses once more, to a single integer, and enumerating it is a proof.
+
+**Second collapse.** With `c₂ = 2` (owner-ruled Hopf pair) and `c₃ = 2(m₁+m₂+m₃)`,
+`bRatio_hopf_pair` gives `b₃/b₂ = M − 3` with `M := m₁+m₂+m₃`. **`b₃` cannot see
+the triple either — only its sum.** So 20 triples → 4 values of `M`.
+
+| `M` | `c₃` | `b₃/b₂` | vs measured | triples |
+|---|---|---|---|---|
+| 3 | 6 | `0` | −100 % | 1 — forced `(1,1,1)`, the Borromean |
+| 4 | 8 | `1` | **+55.98 %** | 3 |
+| 5 | 10 | `2` | +211.95 % | 6 |
+| 6 | 12 | `3` | +367.93 % | 10 |
+
+`M ≥ 3`, so `b₃/b₂` is a **non-negative integer** while measured is
+`950815/1483044 ≈ 0.6411`, strictly between 0 and 1. Nothing hits it; every `M`
+misses by `≥ 532229/1483044 ≈ 0.35888` = **55.98 %**, attained at `M = 4`.
+
+**`c ≤ 12` was never a restriction.** `b₃/b₂ = M − 3` *increases* with `M`, so
+nothing above `M = 4` does better. **The exclusion is complete over every
+crossing number** — there is no larger search that could exist.
+
+**Scope (b)** on the conjunction {`b₃` carried by the count channel, `μ ∝ c`,
+Hopf pair carrier, Brunnian A=3 carrier}, invariant named: `M` is an integer.
+**(a)** on each ingredient; `brunnian_binding_survives` untouched.
+
+**The live ingredient is the FIRST one** — that `b₃` is carried by the count
+channel at all. Owner ruling A fixes the pair carrier; dropping Brunnian-ness
+hits `brunnian_not_pairLocal`; `bRatio_scale_invariant` shows `μ ∝ c` is not a
+relaxable convention. So this returns `qou-brng` to its original framing: **the
+extensive term is somewhere the crossing count does not reach.**
+
+Lean `QOU/Mass/BrunnianTripleExhaustion.lean` (8 decls, sorry-free, imports
+`rMeasured` from `CarrierCrossingQuantisation` rather than restating it, so the
+two cannot drift); probe 6/6.
+
+
+### Which ingredient is actually free — RESOLVED, not guessed (2026-08-31)
+
+I wrote that the free ingredient is *"that `b₃` is carried by the count channel at
+all"*. Resolving it to its source names it exactly, and it is sharper than that.
+
+`SelfMutualPartition.binding_eq_neg_mutualEnergy` is **a definitional partition**,
+not an empirical claim: it takes `energy : C → ℝ` as a **parameter** and proves
+`binding = −mutualEnergy` by `unfold` + `ring`. Nothing there pins what `energy`
+is.
+
+The pinning is in **`def:crossing-energy`**, which *defines*
+`𝔈_cross = Σ_crossings (q for L₊, −q⁻¹ for L₋)` — **one weight per crossing, the
+same whichever components it joins.** That uniformity **is** `μ ∝ c`: summing a
+constant over crossings is counting them. A pair-dependent weight would make `μ`
+a weighted sum, and the integrality driving the whole exclusion would vanish.
+
+**So the same defect sits at two levels, and the corpus already refuted the upper
+one.** `CrossingModelPairLocality` proved assembly-independent *pair* weights
+force `b₃ = 0`; one level down, crossing-independent *crossing* weights force
+`b₃/b₂ ∈ ℤ`. **The measured `b₃` refutes uniformity twice**, and the second
+refutation is what this arc supplies.
+
+**TRAP recorded — `ℝ` auto-binds silently.** `BrunnianTripleExhaustion` must
+`import Mathlib.Data.Real.Basic` explicitly; `CarrierCrossingQuantisation` does
+not, and without it Lean **auto-binds `ℝ` as a fresh type variable rather than
+erroring**, so the weight lemmas type-check over a meaningless type. Caught only
+because a `ring` failed downstream and the goal display showed `ℝ : Type u_1`.
+
+File now 12 declarations, sorry-free.
+
+
+### CAPSTONE — every evaluable channel gives `b₃` the wrong sign, the shipped one included (2026-09-02)
+
+Each earlier exclusion in this arc carried the same caveat: production ships
+something else, so none of it bound production. **This removes the caveat.**
+
+| channel | `b₃/b₂` | vs measured |
+|---|---|---|
+| **ch1 observe-early — SHIPPED** | **−1.3995** | −318.3 % |
+| ch3 log-ratio | −0.9679 | −251.0 % |
+| ch4 bar-norm log | −0.9681 | −251.0 % |
+| ch5 pairwise sum | −1.0205 | −259.2 % |
+| **measured** | **+0.6411239316** | |
+
+**And the two structural families fail SEPARATELY.** ch3/ch4/ch5 cluster near
+`−1` because on the chain they sum one term per bond and A=3 has twice A=2's bond
+count — the ratio-of-2 `TypeWeightedChainRatio` proves pins `b₃/b₂` to `−1`. ch1
+sits at `−1.3995` precisely because it is **not** additive (its `|tr_p|^Z|tr_n|^N`
+prefactor is exponential in A). So the joint negative cannot be blamed on one
+shared modelling choice.
+
+**The failure is a SIGN.** No magnitude, normalisation, anchor or convention
+reaches it. Independently corroborated by the `t7qv` arc, which measured the
+many-body term directly: negative in all eight A=3 flavour orderings, α-free
+ceiling short by `2.0975×`.
+
+**Scope (b)** on the four **evaluable** channels, invariant named: the sign of
+`b₃`. **(a)** on ch2/ch6/ch7, which the taxonomy classifies from source and
+neither it nor I re-evaluated — calling the arc closed over all seven would
+overstate it.
+
+**Precision, stated:** B/A comes from the taxonomy producer at ~8 significant
+figures, re-run in this container and reproducing the audit byte-for-byte. Ample
+for a sign test at 251–318 % margins; not a precision claim, and none is made.
+
+Probe 5/5, exact `Fraction` over the producer's decimal strings.
+
+
+## 2026-09-03 — the three additive channels' `b₃ ≈ −1` is the INVERSION, and no uniform bond model can be positive
+
+**Reframes my own capstone.** `all_channels_b3_sign_probe` measured `b₃/b₂ < 0`
+for all four evaluable channels and read the three bond-additive ones clustering
+at `≈ −1` as a shared *physical* failure. For those three it is arithmetic.
+
+**The mismatch.** The Ursell inversion `b₃ = B̄(3) − 3b₂` subtracts `C(3,2) = 3`
+pair terms; the bond set is a chain with `A−1` bonds, forced by
+`StrandLayoutForcesChain`. The counts agree at `A = 2` (1 = 1) and diverge from
+`A = 3` (3 vs 2) — exactly where `b₃` lives. For chain-additive `B(A) = (A−1)b`:
+`b₂ = b`, `b₃ = 2b − 3b = −b`, so **`b₃/b₂ = −1` identically, for every `b`**.
+Measured over five bond values spanning sign and eight orders of magnitude:
+exactly `−1` in all five.
+
+**The generalisation — the part worth having.** Changing the bond set does not
+help. For binding additive over a bond set with a **uniform** bond value the
+value cancels and only the counts survive: `b₃/b₂ = n(3)/n(2) − 3`. Two bound
+nucleons have exactly one bond, and a simple bond set on three has at most
+`C(3,2) = 3`, so
+
+| `n(3)` | 0 | 1 | 2 (chain) | 3 (all-pairs, MAX) |
+|---|---|---|---|---|
+| `b₃/b₂` | −3 | −2 | **−1** | **0** |
+
+`b₃/b₂ = n(3) − 3 ≤ 0` for **every** uniform pairwise-bond model, against a
+measured `+0.6411239316`. **The chain is not the culprit; the uniformity is.**
+
+**The surviving escape, measured not asserted.** All-pairs with an `A=3` bond `w`
+against a deuteron bond `w_d` gives `3w/w_d − 3`, which hits the measured value
+exactly at `w/w_d = 5399947/4449132 = 1.2137079772` (> 1). **Non-uniformity is
+NOT excluded** and is the next direction on this leg.
+
+**What is NOT affected.** `ch1 = −1.3995`, the **shipped** channel, is not
+bond-additive (trace prefactor exponential in `A`) and fails for its own reasons.
+Distance-from-`−1` measured per channel to separate them rather than assume it:
+ch3 0.0321, ch4 0.0319, ch5 0.0205 — ch1 **0.3995**, 12× further. The AME
+`b₃/b₂` is data; no inversion convention alters it.
+
+**Scope (b)** on uniform pairwise-bond-additive models, invariant named: `n(3)`
+capped at 3 while the inversion subtracts 3. **Scope (a)** on everything else.
+
+**Artifacts.** `QOU/Mass/UrsellChainMismatch.lean` — 12 decls, `lean`-direct
+exit 0, sorry-free, axioms only `[propext, Classical.choice, Quot.sound]` (three
+theorems need none). `computations/probes/ursell_chain_mismatch_probe.py` — 9/9,
+exact `Fraction`, P30-stamped, zero raw float64. PR #6366.

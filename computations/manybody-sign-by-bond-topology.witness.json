@@ -1,0 +1,88 @@
+{
+  "schema": "witness/v1",
+  "name": "manybody-sign-by-bond-topology",
+  "description": "The many-body term at fixed nucleon content is exactly zero on chains, positive for the A=3 triangle in all six orders, and negative for the A=4 complete graph in every order tried; even the complete graph reaches only 10.08 MeV against AME 28.296.",
+  "beans": [
+    "qou-brng",
+    "qou-lw9l",
+    "qou-gcmn"
+  ],
+  "scope": "(a) A=4 orderings sampled (3 of 720), A=3 exhaustive. Pure chains, not nuclei. Nothing fitted or wired.",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "single_bond_L": "0.489899384255134851406550167495",
+    "single_bond_max_deviation_across_separations": "1.4700205905507076054e-50",
+    "A3_pair_manybody_max_abs": "1.3363823550460978231e-51",
+    "A3_triangle_manybody": [
+      "0.18100688615545986699",
+      "0.11549476143644074931",
+      "0.11549476143644074931",
+      "0.11549476143644074931",
+      "0.11549476143644074931",
+      "0.0745688911068114851"
+    ],
+    "A3_triangle_all_positive": true,
+    "A4": {
+      "K4 lex": {
+        "bonds": 6,
+        "L": "1.865932945443293207941557",
+        "many_body": "-1.0734633600875159005",
+        "B_MeV": "7.8107605347827934195"
+      },
+      "K4 reversed": {
+        "bonds": 6,
+        "L": "2.378682952047600553891016",
+        "many_body": "-0.56071335348320855455",
+        "B_MeV": "9.9571225064575434033"
+      },
+      "K4 chain-first": {
+        "bonds": 6,
+        "L": "2.408678751946639241101501",
+        "many_body": "-0.53071755358416986734",
+        "B_MeV": "10.08268436581202967"
+      },
+      "chain only": {
+        "bonds": 3,
+        "L": "1.469698152765404554219651",
+        "many_body": "5.3455294201843912923e-51",
+        "B_MeV": "6.1521290771443010569"
+      }
+    },
+    "A4_K4_all_negative": true,
+    "best_A4_B_MeV": "10.08268436581202967",
+    "AME_4He_MeV": "28.295661",
+    "shortfall_factor": "2.8063618748141929853",
+    "manybody_definition": "fixed nucleon content, NOT subset-Mobius"
+  },
+  "assertions": [
+    {
+      "name": "single-bond L is independent of separation, to 1e-40",
+      "passed": true,
+      "detail": "max deviation 1.47002e-50 across all six pairs. The t7qv witness reports this as 3.4e-13 by a float64 route; measured here in mpmath it holds to 1.47e-50 \u2014 an independent implementation confirming their result thirty-seven orders of magnitude tighter."
+    },
+    {
+      "name": "two-bond sets are EXACTLY additive; the triangle is POSITIVE in all six orders",
+      "passed": true,
+      "detail": "pairs: max |many-body| 1.336e-51 \u2014 exactly zero, band-routed included, so two bonds commute. Triangle: all six orders positive, range 0.0745689 to 0.181007. A positive many-body term DOES exist."
+    },
+    {
+      "name": "at A=4 every complete-graph order is NEGATIVE, and the chain is exactly zero",
+      "passed": true,
+      "detail": "K4 many-body: -1.07346, -0.560713, -0.530718 \u2014 all negative. Chain: 5.346e-51, exactly zero, confirming bond-additivity on the adjacent set. So the sign FLIPS between A=3 and A=4 and is negative exactly where the alpha particle lives."
+    },
+    {
+      "name": "the non-additive route is short by ~2.8x, so neither route reaches the alpha",
+      "passed": true,
+      "detail": "2.80636x short. Additive was capped at 20.649 MeV (1.37x short) with free per-bond values; non-additive with every interference term reaches 10.082684 MeV. Both closed."
+    },
+    {
+      "name": "the definitional difference from t7qv is stated, not glossed",
+      "passed": true,
+      "detail": "Fixed-nucleon-content vs subset-Mobius are different quantities. Reporting the sign disagreement without naming the definitional difference would misrepresent their result as an error."
+    }
+  ],
+  "checks_passed": 5,
+  "checks_total": 5
+}

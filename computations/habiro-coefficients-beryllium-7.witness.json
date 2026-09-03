@@ -1,15 +1,45 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:50:07.497155+00:00",
-  "commitSha": "880263606a6a3ceff335b07dacb46deefafbb0e8",
-  "assertions": [],
+  "computedAt": "2026-09-03T04:02:35.993446+00:00",
+  "commitSha": "a1676f177e3e2a0d537ae1b67dd7e8ad569bd682",
+  "assertions": [
+    {
+      "name": "habiro_reconstruction_is_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sp.expand(reconstruct(a_m) - p_u) == 0, exact symbolic identity, no tolerance; load_a_m refuses a false one (qou-s41x)"
+    },
+    {
+      "name": "habiro_coefficients_all_integral",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "every a_m lies in the Habiro ring's coefficient ring"
+    },
+    {
+      "name": "habiro_expansion_non_empty",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "n_nonzero > 0; without it all_integral passes vacuously on an empty coefficient list"
+    },
+    {
+      "name": "tr_M_two_route_agreement_within_L1",
+      "computed": "3.35657976207233431896381813763e-34",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "|tr_M(q0) - tr_M_via_u_poly(q0)| / |tr_M(q0)| against the corpus L1 1 ppQ target; resolution capped at ~1e-30 by the sp.N(..., 30) evaluations, so the margin is harness-bounded"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-beryllium-7",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "8d0d14588e54",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "cfd762ca9f3d",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +54,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [

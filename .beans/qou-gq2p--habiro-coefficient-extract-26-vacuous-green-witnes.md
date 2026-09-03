@@ -1,11 +1,11 @@
 ---
 # qou-gq2p
 title: '_habiro_coefficient_extract: 26 vacuous-green witnesses, unblocked by qou-wc8f'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T07:33:40Z
-updated_at: 2026-08-31T07:34:13Z
+updated_at: 2026-09-03T04:25:11Z
 ---
 
 ## Status
@@ -67,3 +67,60 @@ The 2026-08-25 batch that produced these ran 21:49:01 → 21:57:20 — **~8 minu
 for all 18 mirror-pair slugs**. Small. Log it per the long-compute discipline
 anyway (`-u … | tee`), because the diff step is where this family's findings
 have historically come from.
+
+
+---
+
+## DRAINED 2026-09-03 (PR #6448)
+
+All 26 asserted; baseline 363 -> 337. Producer re-run 529 s, FAILURES 0.
+
+| assertion | basis |
+|---|---|
+| `habiro_reconstruction_is_exact` | `sp.expand(reconstruct(a_m,u) - p_u) == 0`, exact, no tolerance |
+| `habiro_coefficients_all_integral` | every `a_m` in the coefficient ring |
+| `habiro_expansion_non_empty` | non-vacuity guard for the two above |
+| `tr_M_two_route_agreement_within_L1` | vs the corpus L1 1 ppQ target |
+| `no_atom_extraction_failed` | summary; `failures[]` only from the exception handler |
+
+**The bean's guess was right, and that was luck rather than method.** This bean
+named `reconstruction_matches` as the candidate and said explicitly it was NOT a
+plan because witness shape is not evidence a producer computes anything
+falsifiable. Reading the source confirmed it *is* — and turned up the sharper
+point the shape could not have shown: it is an **exact symbolic identity** that
+the shared loader already **refuses** on, so a consumer was gating on a flag the
+producer asserted nothing about. Keep making that caveat; the guess being right
+does not validate guessing.
+
+**Both cautions this bean carried came back clean, and one is now measured
+rather than assumed.** The producer feeds `topic2_mirror_pair_phi8_boundary_scan`
+and the re-run was expected to be a no-op there after #6385 pinned it at the
+D-frame values. It was: the family diff is purely additive (`REMOVED 0`, all 530
+added keys under `/assertions`, one `/timestamp` aside), so **`M_max_used` did
+not move** and no downstream multiplicity can have shifted.
+
+## A NEW finding the drain produced — the cross-check is harness-capped
+
+`tr_M_at_q0_rel_err` reads ~1e-30 to 1e-34 across the whole family, which looks
+like a spectacular two-route agreement. **It is the harness floor.** Lines
+272/281/293 of `_habiro_coefficient_extract.py` evaluate through
+`sp.N(..., 30)` — 30 significant digits — so the cross-check **cannot resolve
+better than ~1e-30 regardless of how well the two routes actually agree**.
+
+Consequences, in order of who they bite:
+
+1. The L1 assertion is sound anyway: 1e-15 is cleared by ~15 orders, and that
+   margin is real because the cap is far below the bar.
+2. **Nobody may quote these residuals as evidence of 30-digit agreement** — that
+   is reporting the arithmetic, not the mathematics, and is the same defect
+   class AGENTS.md bans for float64 agreement at 1e-16. The producer's own
+   comment already refuses the float64 version of this mistake for `rel_err`;
+   the `sp.N(..., 30)` cap one line below is the same trap in mpmath clothing.
+3. If anyone ever wants this cross-check to *demonstrate* L1 rather than merely
+   clear it, the 30 has to rise. Not urgent, and not this bean's job.
+
+## Not drained here
+
+`habiro-coefficients-extended.witness.json` is a different producer (the one
+`721ab7b812` regenerated at the muon pin) and still carries zero assertions. It
+was never in this family's 26 and is out of scope; worth its own look.

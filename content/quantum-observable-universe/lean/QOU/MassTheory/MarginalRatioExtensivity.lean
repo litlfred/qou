@@ -5,6 +5,7 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # Marginal-ratio criteria for extensivity — and why "ratios rising to 1" proves nothing
@@ -291,11 +292,14 @@ below split on `g` and neither branch can be linear:
   linear function is eventually exceeded by any `g ^ n` with `g > 1`. The `pp`
   chain sits in this branch (`g > 1`).
 
-So `g < 1` and `g = 1` are too slow and `g > 1` is too fast; **linear is
-unreachable for every parameter value.** That is a scope-(b) structural
-exclusion of the channel as a whole, with the invariant named — it does not
-depend on which `f`, which anchor, or which species, and it therefore replaces
-per-channel numerical scoring with one argument.
+So `g < 1` and `g = 1` are too slow and `g > 1` is too fast; linear is
+unreachable for every parameter value.
+
+**That combination step was PROSE when first written, and §8 now proves it.**
+The two lemmas above are the branches; the conclusion drawn from them was a
+docstring sentence, while being billed as a scope-(b) exclusion. §8's
+`chain_never_exactly_linear` supplies the missing proof — and by a shorter route
+that needs no case split on `g` at all. Read the exclusion there, not here.
 
 **This also SCOPES a corpus claim.** `2026-06-02-binding-intensive-vs-extensive-
 derivation.md` states the binding is intensive (bounded). That is the `g ≤ 1`
@@ -334,5 +338,433 @@ theorem chain_step_ge_growth {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
     _ ≤ (S * g ^ (n + 1)) * (1 - f ^ (k + 1)) :=
         mul_le_mul_of_nonneg_left hle hbase
     _ = S * g ^ (n + 1) * (1 - f ^ (k + 1)) := by ring
+
+
+/-! ### 7. The OTHER channel is exactly extensive — and `g` is why
+
+Section 6 excluded the *difference* channel `B = S_off - S_on` from extensivity
+for every `g`. The corpus's own answer to that has been the **log-ratio**, which
+`log_ratio_binding_prototype.py` asserts in one sentence: *"the EXTENSIVE
+invariant is the log-ratio."* That assertion now has a derivation, from the same
+identity, and it is exact rather than approximate.
+
+Write the measured structure with `b = A - 1` bonds:
+
+    S_off = g ^ (b + 1)          (free: A disjoint identical blocks)
+    S_on  = g ^ (b + 1) * f ^ b  (bonded: one factor of f per bond)
+
+Then `logRatio_linear_in_bonds` gives
+
+    log (S_off / S_on) = -b * log f
+
+**exactly linear in the bond count**, verified numerically to `1e-30` on both
+species at `A = 2,3,4,5`, with slope
+
+    -E₀ * log f  =  2.05070969238143369 MeV/bond   (pp)
+    -E₀ * log f  =  3.79778293514235333 MeV/bond   (nn)
+
+the pp value being exactly the Sec.10a chain bond `-α·ln z`.
+
+**The mechanism is `g`, and it is one line.** `logRatio_independent_of_growth`
+says the log-ratio does not depend on `g` at all: the free-trace growth `g^(b+1)`
+appears in numerator and denominator and cancels. The difference channel cannot
+cancel it — that is precisely what §6's two branches are about. So the two
+channels are not two guesses at one quantity; they differ by whether the
+single-nucleon growth survives, and **that** is why one is extensive and the
+other provably never is.
+
+**Scope.** This says the log-ratio channel *has the right shape*. It says
+nothing about its magnitude being right, and the corpus's measurement is that it
+is not: the `t7qv` arc measures `B(4He) = 10.387 MeV` against AME `28.296`
+(-63 %), with the three-body term negative at all eight `A=3` orderings and the
+four-body term negative in 80/80 random bond orders — every many-body
+correction pushing further from the data. Extensive-and-short is a different
+problem from not-extensive, and this file only settles which of the two each
+channel has.
+-/
+
+/-- The log-ratio of free to bonded trace is **exactly linear in the bond
+count**, with slope `-log f`. This is the derivation behind the corpus's
+"the extensive invariant is the log-ratio". -/
+theorem logRatio_linear_in_bonds {g f : ℝ} (hg : 0 < g) (hf : 0 < f) (b : ℕ) :
+    Real.log (g ^ (b + 1) / (g ^ (b + 1) * f ^ b)) = -(b : ℝ) * Real.log f := by
+  have hgb : (0:ℝ) < g ^ (b + 1) := pow_pos hg (b + 1)
+  have hfb : (0:ℝ) < f ^ b := pow_pos hf b
+  have hrw : g ^ (b + 1) / (g ^ (b + 1) * f ^ b) = (f ^ b)⁻¹ := by
+    field_simp
+  rw [hrw, Real.log_inv, Real.log_pow]
+  ring
+
+/-- **The mechanism.** The log-ratio is independent of the free-trace growth
+`g`: it cancels between numerator and denominator. The difference channel of §6
+cannot cancel it, which is exactly why that one is never extensive and this one
+always is. -/
+theorem logRatio_independent_of_growth {g₁ g₂ f : ℝ}
+    (hg₁ : 0 < g₁) (hg₂ : 0 < g₂) (hf : 0 < f) (b : ℕ) :
+    Real.log (g₁ ^ (b + 1) / (g₁ ^ (b + 1) * f ^ b))
+      = Real.log (g₂ ^ (b + 1) / (g₂ ^ (b + 1) * f ^ b)) := by
+  rw [logRatio_linear_in_bonds hg₁ hf b, logRatio_linear_in_bonds hg₂ hf b]
+
+
+/-! ### 8. The exclusion itself — previously prose, now proved
+
+**A gap in my own work, closed here.** §6 proved the two *branches* — bounded
+for `g ≤ 1`, at-least-geometric for `g > 1` — and then combined them in a
+docstring sentence ("bounded is too slow to be linear and geometric is too
+fast") to conclude that no `g` makes the channel extensive. That conclusion was
+billed as a scope-(b) exclusion while existing only as prose. The branches were
+proved; the exclusion was not.
+
+It turns out the exclusion has a **much stronger and shorter proof** than the
+asymptotic argument, and it needs only three bond counts.
+
+Write the channel bond-indexed to avoid `ℕ` subtraction:
+
+    chainB S g f b = S * g ^ (b + 1) * (1 - f ^ b)
+
+Suppose it were *exactly* linear, `chainB b = c * b` for every `b` with `c > 0`.
+Evaluating at `b = 1, 2, 3` and eliminating `S`:
+
+    g * (1 + f) = 2          from b = 1, 2
+    g² * (1 + f + f²) = 3    from b = 1, 3
+
+Then `4 * (ii) - 3 * (i)²` gives `g² * (f - 1)² = 0`, so `f = 1` — which makes
+the channel identically zero, contradicting `c > 0`. **One computation, every
+`(g, f)` at once**, with no case split on `g` and no limit.
+
+`chain_never_exactly_linear` is that argument.
+
+## What is proved here, and what is NOT
+
+**Proved.** Exact linearity is refuted for every `(g, f)`
+(`chain_never_exactly_linear`); the §6 iteration claim
+(`chain_ge_geom_iterated`); and the `g ≤ 1` half of the *asymptotic* exclusion
+(`bounded_not_eventually_above_line`) — a bounded channel is overtaken by every
+positive line, stated finitely so no filters are needed.
+
+**NOT proved, and this is the honest residue.** The `g > 1` half of the
+*asymptotic* exclusion. `chain_ge_geom_iterated` gives the geometric lower
+bound, but the step from "grows at least like `g^m`" to "eventually exceeds
+every line" — the standard fact that a geometric sequence outgrows a linear one
+— is not formalised here. So:
+
+* *exact* linearity is excluded for all `(g, f)` — fully proved;
+* *asymptotic* linearity is excluded for `g ≤ 1` — fully proved;
+* *asymptotic* linearity for `g > 1` rests on that one standard growth fact.
+
+Since the measured `g_pp = 1.1458 > 1`, the proton chain is precisely the case
+sitting on the unformalised step. Anyone citing the exclusion asymptotically
+for `pp` should cite it as resting on that fact, not as fully mechanised.
+
+**Also not formalised, and not a Lean question.** That `S_off(A) = g^A` — the
+factorisation of the weighted Schur–Weyl sum over the disjoint per-nucleon
+blocks — is verified numerically at `A = 1..5` to 20 digits and is an algebra
+fact about the Hecke construction, not about real sequences. Likewise
+`f_pp = z_D` (agreement `2.8e-31`) is a computation, not a theorem. Everything
+in this file is conditional on those inputs being what the probes measured.
+-/
+
+/-- The channel, indexed by bond count `b` (so `A = b + 1` nucleons). -/
+noncomputable def chainB (S g f : ℝ) (b : ℕ) : ℝ := S * g ^ (b + 1) * (1 - f ^ b)
+
+/-- **The exclusion, proved.** The channel is never *exactly* linear in the bond
+count, for any `S, g > 0` and any `f < 1`. Uses only `b = 1, 2, 3`.
+
+Note `0 < f` is **not** needed and is deliberately absent: the compiler flagged
+it unused, and dropping it strengthens the statement to cover `f ≤ 0` as well.
+The physical `f` is a bond factor in `(0,1)`, so the extra generality is free
+rather than useful — but an unused hypothesis is worth removing, not
+silencing. -/
+theorem chain_never_exactly_linear {S g f c : ℝ}
+    (hS : 0 < S) (hg : 0 < g) (hf1 : f < 1) (hc : 0 < c) :
+    ¬ (∀ b : ℕ, chainB S g f b = c * (b : ℝ)) := by
+  intro h
+  have h1 := h 1
+  have h2 := h 2
+  have h3 := h 3
+  simp only [chainB] at h1 h2 h3
+  push_cast at h1 h2 h3
+  have hfne : (1 : ℝ) - f ≠ 0 := by linarith
+  have hSg : 0 < S * g ^ 2 := by positivity
+  -- from b = 1,2 :  g * (1 + f) = 2
+  have hi : g * (1 + f) = 2 := by
+    have e : S * g ^ 2 * ((1 - f) * (g * (1 + f) - 2)) = 0 := by nlinarith [h1, h2]
+    have := mul_eq_zero.mp e
+    rcases this with hz | hz
+    · exact absurd hz (ne_of_gt hSg)
+    · rcases mul_eq_zero.mp hz with hz' | hz'
+      · exact absurd hz' hfne
+      · linarith
+  -- from b = 1,3 :  g^2 * (1 + f + f^2) = 3
+  have hii : g ^ 2 * (1 + f + f ^ 2) = 3 := by
+    have e : S * g ^ 2 * ((1 - f) * (g ^ 2 * (1 + f + f ^ 2) - 3)) = 0 := by
+      nlinarith [h1, h3]
+    have := mul_eq_zero.mp e
+    rcases this with hz | hz
+    · exact absurd hz (ne_of_gt hSg)
+    · rcases mul_eq_zero.mp hz with hz' | hz'
+      · exact absurd hz' hfne
+      · linarith
+  -- 4*(ii) - 3*(i)^2  gives  g^2 * (f - 1)^2 = 0, so f = 1, contradicting f < 1
+  have hkey : g ^ 2 * (f - 1) ^ 2 = 0 := by nlinarith [hi, hii]
+  have hg2 : g ^ 2 ≠ 0 := by positivity
+  have : (f - 1) ^ 2 = 0 := by
+    rcases mul_eq_zero.mp hkey with hz | hz
+    · exact absurd hz hg2
+    · exact hz
+  have : f = 1 := by nlinarith [this]
+  linarith
+
+/-- One step, stated natively for `chainB` so the iteration below needs no
+`simpa` normalisation (which is what made the first attempt miss an off-by-one
+in the `g` exponent: `chainB`'s is `b+1`, not `b`). -/
+theorem chainB_step {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
+    (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (b : ℕ) :
+    g * chainB S g f b ≤ chainB S g f (b + 1) := by
+  unfold chainB
+  have hmono : f ^ (b + 1) ≤ f ^ b := by
+    calc f ^ (b + 1) = f ^ b * f := by ring
+      _ ≤ f ^ b * 1 := mul_le_mul_of_nonneg_left hf1 (pow_nonneg hf0 b)
+      _ = f ^ b := by ring
+  have hbase : 0 ≤ S * g ^ (b + 1 + 1) := mul_nonneg hS (pow_nonneg hg0 _)
+  have hle : (1 - f ^ b) ≤ (1 - f ^ (b + 1)) := by linarith
+  calc g * (S * g ^ (b + 1) * (1 - f ^ b))
+      = (S * g ^ (b + 1 + 1)) * (1 - f ^ b) := by ring
+    _ ≤ (S * g ^ (b + 1 + 1)) * (1 - f ^ (b + 1)) :=
+        mul_le_mul_of_nonneg_left hle hbase
+    _ = S * g ^ (b + 1 + 1) * (1 - f ^ (b + 1)) := by ring
+
+/-- The iteration the §6 docstring asserted without proving: for `g ≥ 0` and
+`f ∈ [0,1]`, `m` steps multiply the channel by at least `g ^ m`. -/
+theorem chain_ge_geom_iterated {S g f : ℝ} (hS : 0 ≤ S) (hg0 : 0 ≤ g)
+    (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (b m : ℕ) :
+    g ^ m * chainB S g f b ≤ chainB S g f (b + m) := by
+  induction m with
+  | zero => simp
+  | succ m ih =>
+      calc g ^ (m + 1) * chainB S g f b
+          = g * (g ^ m * chainB S g f b) := by ring
+        _ ≤ g * chainB S g f (b + m) := mul_le_mul_of_nonneg_left ih hg0
+        _ ≤ chainB S g f (b + m + 1) := chainB_step hS hg0 hf0 hf1 (b + m)
+        _ = chainB S g f (b + (m + 1)) := by ring_nf
+
+/-- The `g ≤ 1` half of the ASYMPTOTIC exclusion, proved: a bounded channel
+cannot dominate a positive line, because a line is unbounded.
+
+Stated finitely — given any `c > 0` there is a bond count at which the line has
+overtaken the channel — so no filters are needed. -/
+theorem bounded_not_eventually_above_line {S g f c : ℝ} (hS : 0 ≤ S)
+    (hg0 : 0 ≤ g) (hg1 : g ≤ 1) (hf0 : 0 ≤ f) (hf1 : f ≤ 1) (hc : 0 < c) :
+    ∃ b : ℕ, chainB S g f b < c * (b : ℝ) := by
+  obtain ⟨b, hb⟩ := exists_nat_gt ((S + 1) / c)
+  refine ⟨b, ?_⟩
+  have hbound : chainB S g f b ≤ S := by
+    simpa [chainB] using
+      chain_bounded_of_growth_le_one (S := S) (g := g) (f := f) hS hg0 hg1
+        hf0 hf1 (b + 1) b
+  have : (S + 1) < c * (b : ℝ) := by
+    have := (div_lt_iff₀ hc).mp hb
+    linarith
+  linarith
+
+
+/-! ### 9. The chain bond set cannot produce the alpha binding — parameter-free
+
+The strongest statement in this file, and the one that needs no model constants
+at all.
+
+**Three inputs, none of them a fitted parameter.**
+
+1. **The bond set is the chain**, and that is *forced*, not chosen:
+   `QOU.Mass.StrandLayoutForcesChain` (sibling arc, `lean`-direct exit 0) shows
+   a single generator `σ_m` joins two different nucleons only when `m % 3 = 2`,
+   and then only *consecutive* ones, under the 3-strands-per-nucleon layout.
+2. **The channel is exactly pairwise-additive over that bond set.** Measured at
+   every composition of `A = 3` and `A = 4` to `1.8e-50`
+   (`logratio_exactly_pairwise_additive_probe`): `S_on/S_off` is exactly the
+   product of the bond factors, so `L` is a sum of per-bond terms with
+   identically **zero** many-body correction.
+3. **AME2020.**
+
+Laying a chain out `p…p n…n`, the bond multiset of `(Z, N)` is `(Z-1)` pp, one
+pn, `(N-1)` nn. Writing `p = Z-1`, `n = N-1`, those multisets satisfy an
+**exact identity**:
+
+    bonds(3H) + bonds(3He) - bonds(2H) = bonds(4He)      (1,1,1) both sides
+
+so **any** additive functional on them obeys
+
+    B(4He) = B(3H) + B(3He) - B(2H)
+
+with the per-bond values cancelling out entirely. Against AME:
+
+    predicted  13.975275 MeV
+    AME        28.295661 MeV        ratio 2.0247
+
+**So the ADJACENT bond set is refuted for `4He`, and not by being short.** It is
+refuted *whatever* the per-bond values are — no rescaling of `f_pp, f_pn, f_nn`
+can help, because they do not appear in the relation.
+
+## 🛑 SCOPE CORRECTION — "all three repairs are closed" was WRONG
+
+A first version of this section claimed the three obvious repairs were each
+closed: bond count forced, many-body zero, per-bond values cancel. **The first
+of those is not closed**, and the error was mine.
+
+`StrandLayoutForcesChain` forbids a **single generator** from joining
+non-consecutive nucleons. It does **not** forbid a bond routed through
+*several* generators. The sibling arc does exactly that —
+`four_body_term_and_the_h12_collapse_probe.py:224`: *"bond between nucleons
+`i<j`: strand `3i+2` routed rightwards to strand `3j`"*, with line 324
+branching to a single generator only when `j = i+1` and to `band_between`
+otherwise.
+
+**Band-routed bonds are therefore a live escape**, and they are precisely where
+the structure this file measures as absent reappears:
+
+* the adjacent bond set is exactly multiplicative, hence order-independent and
+  many-body-free — measured to `1.8e-50`;
+* band-routed bonds **do not commute**. The sibling measures an insertion-order
+  spread of **11.12 %** over one `A=3` triangle's six orders and **38–40 %**
+  over `4He`'s, *"with the outliers exactly those putting the band-routed bond
+  between the two adjacent ones"*.
+
+That also explains the numerical disagreement between the two arcs: their
+`B(4He) = 10.387277` against this file's adjacent-only `8.682248`, a 19.6 % gap
+far too large to be the `~1e-4` colour arm. **Two different bond sets, both
+computed correctly.**
+
+## What actually survives
+
+The refutation stands **on the adjacent bond set** — which is what
+`atom_canonical_crossings` builds and what every measurement in this file uses.
+Restated honestly, the three repairs are:
+
+| repair | status |
+|---|---|
+| rescale `f_pp, f_pn, f_nn` | **closed** — they cancel in `alpha_relation` |
+| irreducible many-body term | **closed on the adjacent set** — measured zero |
+| add band-routed bonds | **OPEN** — and it is the live frontier |
+
+So this is the alpha particle's excess binding arriving as a structural
+obstruction *for adjacent bonds*, scope (b) with the bond-multiset identity as
+its invariant — and simultaneously a sharp statement of where the remaining
+freedom lives. The sibling's measurement is that band routing does not close the
+gap either (`B(4He)` still `-63 %`, every many-body term negative), but that is
+their result, not this file's, and it does not follow from anything proved
+here.
+-/
+
+/-- Chain binding as an additive functional on the bond multiset, parametrised
+by `p = Z-1` and `n = N-1` so no `ℕ` subtraction appears. -/
+noncomputable def chainBinding (sPP sPN sNN : ℝ) (p n : ℕ) : ℝ :=
+  (p : ℝ) * sPP + sPN + (n : ℝ) * sNN
+
+/-- The bond-multiset identity, as a relation among bindings. Holds for **every**
+choice of per-bond values — they cancel. -/
+theorem alpha_relation (sPP sPN sNN : ℝ) :
+    chainBinding sPP sPN sNN 1 1
+      = chainBinding sPP sPN sNN 0 1 + chainBinding sPP sPN sNN 1 0
+        - chainBinding sPP sPN sNN 0 0 := by
+  unfold chainBinding
+  push_cast
+  ring
+
+/-- **Parameter-free refutation.** If a pairwise-additive chain model matches the
+AME bindings of `2H`, `3H` and `3He`, its `4He` binding is forced to
+`13.975275` MeV and therefore cannot be the AME value `28.295661`.
+
+No per-bond value appears in the conclusion: the hypotheses pin three numbers and
+`alpha_relation` determines the fourth, whatever `sPP, sPN, sNN` are. -/
+theorem chain_additive_cannot_match_alpha {sPP sPN sNN : ℝ}
+    (h2H : chainBinding sPP sPN sNN 0 0 = 2.224566)
+    (h3H : chainBinding sPP sPN sNN 0 1 = 8.481798)
+    (h3He : chainBinding sPP sPN sNN 1 0 = 7.718043) :
+    chainBinding sPP sPN sNN 1 1 ≠ 28.295661 := by
+  rw [alpha_relation, h2H, h3H, h3He]
+  norm_num
+
+
+/-! ### 10. NO bond topology works — the exclusion is not about the chain
+
+§9 refuted the *adjacent* bond set, and §9's own scope correction named
+band-routed bonds as the escape. This closes that escape for every **additive**
+model, on **every** topology.
+
+**The enumeration.** A nucleus's available bonds are fixed by its nucleon
+multiset: `2H {p,n}` has one pn slot; `3H {p,n,n}` has two pn and one nn;
+`3He {p,p,n}` one pp and two pn; `4He {p,p,n,n}` one pp, four pn, one nn.
+Requiring at least a spanning tree's worth of edges and calibrating
+`sPP, sPN, sNN` from `2H`, `3H`, `3He`, an exhaustive search over every
+remaining graph gives:
+
+    exact solutions reproducing AME B(4He)   0
+    MAXIMUM reachable B(4He)                 20.648973 MeV
+    AME                                      28.295661 MeV
+    short by                                 1.3703x
+
+and the maximum is attained at the **complete** graph on `4He`, `(1,4,1)`, with
+`sPP = 5.493477`, `sPN = 2.224566`, `sNN = 6.257232`. There is nothing left to
+add: every edge the nucleon multiset permits is already in.
+
+`pairwise_additive_cannot_reach_alpha` below is that bound, stated so it needs
+no enumeration: `sPN` is forced by `2H`, connectivity bounds `sPP` and `sNN` by
+their calibrating nuclei, and the edge caps are the multiset's.
+
+## 🛑 What this does NOT exclude, and it is the whole remaining freedom
+
+**Additivity is the hypothesis, and band-routed bonds violate it.** This file
+measures the *adjacent* bond product to be exactly multiplicative, hence
+order-independent; the sibling arc measures band-routed bonds as
+**non-commuting**, with an insertion-order spread of 11.12 % over one `A=3`
+triangle and 38–40 % over `4He`'s. A non-additive `B` is not of the form
+`Σ_edges s_type` and is therefore **outside** this theorem.
+
+So the honest frontier, after §9's correction and this section, is narrow and
+well-posed:
+
+* additive, any topology, species-only bond values — **excluded** (here);
+* the only source of non-additivity in the construction is band routing;
+* the sibling measures its many-body contribution **negative in 80/80** random
+  bond orders — the wrong sign to close a shortfall.
+
+That last line is *their* measurement, cited not re-derived, and 80/80 is strong
+evidence rather than a proof. **Whether a band-routed structure with a positive
+many-body contribution exists is the open question**, and it is now the only one
+left standing between this channel and the binding table.
+-/
+
+/-- **No additive pairwise model on any topology reaches the alpha binding.**
+
+`sPN` is fixed by `2H`; connectivity of the calibrating nuclei bounds `sPP` and
+`sNN`; the edge counts are capped by what the `4He` nucleon multiset permits
+(one pp, four pn, one nn). The conclusion is strict, so no boundary case
+escapes.
+
+Hypotheses are stated as bounds rather than equations precisely so that the
+theorem covers *every* graph at once rather than one enumeration.
+
+Note `0 ≤ sPP` and `0 ≤ sNN` are **not** needed and are deliberately absent:
+the compiler flagged them unused, and dropping them strengthens the result to
+cover negative bond values too. Physically the bond values are positive, so the
+extra generality is free rather than useful — but an unused hypothesis is worth
+removing, not silencing. This is the second time in this file the linter has
+found a hypothesis the proof does not use. -/
+theorem pairwise_additive_cannot_reach_alpha
+    {sPP sPN sNN : ℝ} {a b c : ℕ}
+    (hPN : sPN = 2.224566)
+    (hPP : sPP ≤ 7.718043 - 2.224566)
+    (hNN : sNN ≤ 8.481798 - 2.224566)
+    (ha : a ≤ 1) (hb : b ≤ 4) (hc : c ≤ 1) :
+    (a : ℝ) * sPP + (b : ℝ) * sPN + (c : ℝ) * sNN < 28.295661 := by
+  have ha' : (a : ℝ) ≤ 1 := by exact_mod_cast ha
+  have hb' : (b : ℝ) ≤ 4 := by exact_mod_cast hb
+  have hc' : (c : ℝ) ≤ 1 := by exact_mod_cast hc
+  have ha0 : (0 : ℝ) ≤ (a : ℝ) := Nat.cast_nonneg a
+  have hb0 : (0 : ℝ) ≤ (b : ℝ) := Nat.cast_nonneg b
+  have hc0 : (0 : ℝ) ≤ (c : ℝ) := Nat.cast_nonneg c
+  subst hPN
+  nlinarith [mul_le_mul_of_nonneg_left hPP ha0,
+             mul_le_mul_of_nonneg_left hNN hc0]
 
 end QOU.MassTheory.MarginalRatio

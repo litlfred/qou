@@ -1,0 +1,168 @@
+{
+  "schema": "witness/v1",
+  "name": "logratio-exactly-pairwise-additive",
+  "description": "S_on/S_off equals the product of chain bond factors at every composition of A=3 and A=4 to 1.8e-50, so the log-ratio channel is exactly pairwise-additive with identically zero many-body terms.",
+  "beans": [
+    "qou-lw9l",
+    "qou-brng",
+    "qou-gcmn"
+  ],
+  "scope": "(a) measurement at A=3,4; additivity is not proved in general. Nothing fitted, nothing wired, no AME comparison computed here.",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "colour_arm": "blind (canonical per the Rust cross-check)",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "f_pp": "0.612688037146465251595829863946",
+    "f_pn_blind": "0.508157887748645593880406757381",
+    "f_nn": "0.403627738350825936164983650816",
+    "f_pn_canonical_colour_weighted": "0.50822978937673896258",
+    "f_pn_arm_relative_difference": "0.00014147464315608955637",
+    "rows": [
+      {
+        "A": 3,
+        "Z": 3,
+        "N": 0,
+        "bonds": {
+          "pp": 2,
+          "pn": 0,
+          "nn": 0
+        },
+        "measured_ratio": "0.375386630862388383999372303379",
+        "product_of_bond_factors": "0.375386630862388383999372303379",
+        "relative_deviation": "1.068004754e-50"
+      },
+      {
+        "A": 3,
+        "Z": 2,
+        "N": 1,
+        "bonds": {
+          "pp": 1,
+          "pn": 1,
+          "nn": 0
+        },
+        "measured_ratio": "0.311342258805211491202796475879",
+        "product_of_bond_factors": "0.311342258805211491202796475879",
+        "relative_deviation": "1.502313968e-50"
+      },
+      {
+        "A": 3,
+        "Z": 1,
+        "N": 2,
+        "bonds": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 1
+        },
+        "measured_ratio": "0.205106618957118700310654488719",
+        "product_of_bond_factors": "0.205106618957118700310654488719",
+        "relative_deviation": "9.773324443e-51"
+      },
+      {
+        "A": 3,
+        "Z": 0,
+        "N": 3,
+        "bonds": {
+          "pp": 0,
+          "pn": 0,
+          "nn": 2
+        },
+        "measured_ratio": "0.162915351166202802215088329058",
+        "product_of_bond_factors": "0.162915351166202802215088329058",
+        "relative_deviation": "1.435511819e-50"
+      },
+      {
+        "A": 4,
+        "Z": 4,
+        "N": 0,
+        "bonds": {
+          "pp": 3,
+          "pn": 0,
+          "nn": 0
+        },
+        "measured_ratio": "0.229994898034101453459148252105",
+        "product_of_bond_factors": "0.229994898034101453459148252105",
+        "relative_deviation": "1.743146087e-50"
+      },
+      {
+        "A": 4,
+        "Z": 3,
+        "N": 1,
+        "bonds": {
+          "pp": 2,
+          "pn": 1,
+          "nn": 0
+        },
+        "measured_ratio": "0.190755677428111816183203418589",
+        "product_of_bond_factors": "0.190755677428111816183203418589",
+        "relative_deviation": "1.751431954e-50"
+      },
+      {
+        "A": 4,
+        "Z": 2,
+        "N": 2,
+        "bonds": {
+          "pp": 1,
+          "pn": 1,
+          "nn": 1
+        },
+        "measured_ratio": "0.125666371774585036218850586424",
+        "product_of_bond_factors": "0.125666371774585036218850586424",
+        "relative_deviation": "1.595155095e-50"
+      },
+      {
+        "A": 4,
+        "Z": 1,
+        "N": 3,
+        "bonds": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 2
+        },
+        "measured_ratio": "0.0827867207304464616131551192828",
+        "product_of_bond_factors": "0.0827867207304464616131551192828",
+        "relative_deviation": "6.053427153e-51"
+      },
+      {
+        "A": 4,
+        "Z": 0,
+        "N": 4,
+        "bonds": {
+          "pp": 0,
+          "pn": 0,
+          "nn": 3
+        },
+        "measured_ratio": "0.0657571547338450296958676507902",
+        "product_of_bond_factors": "0.0657571547338450296958676507902",
+        "relative_deviation": "1.7782621e-50"
+      }
+    ],
+    "worst_relative_deviation": "1.7782620999924168851e-50",
+    "many_body_term_is_zero": true,
+    "t7qv_reconciliation_verified": false
+  },
+  "assertions": [
+    {
+      "name": "S_on/S_off is exactly the product of chain bond factors at every composition",
+      "passed": true,
+      "detail": "worst relative deviation across all 9 compositions of A=[3, 4]: 1.77826e-50. Taking logs, L = sum over chain bonds of (-log f_bond) with NO three-body term at A=3 and NO four-body term at A=4."
+    },
+    {
+      "name": "the search space for the shortfall is narrowed to bond values and bond count",
+      "passed": true,
+      "detail": "Stated as a consequence of the measured additivity, not as a new measurement. It removes one candidate class (irreducible many-body terms in L) rather than supplying the missing binding."
+    },
+    {
+      "name": "the tension with t7qv is stated with a proposed mechanism, explicitly unverified",
+      "passed": true,
+      "detail": "Two measurements that look contradictory are reported side by side with the candidate reconciliation labelled as a reading of their commit message. Asserting it as established would be a claim about code this probe never ran."
+    },
+    {
+      "name": "the f_pn mismatch is explained as the colour arm, not silently absorbed",
+      "passed": true,
+      "detail": "relative difference 0.000141475, consistent with the ~1e-4 arm gap measured in #6379. Reported rather than papered over \u2014 a 5th-digit disagreement with a canonical constant is exactly the kind of thing that should be chased, not rounded away."
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4
+}
