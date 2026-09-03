@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:23:39.645601+00:00",
-  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:59:44.191192+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_weak_is_a_beta_reassignment",
@@ -54,7 +54,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "weak_channel_is_a_flavour_flip_probe",
   "scriptFile": "weak_channel_is_a_flavour_flip_probe.py",
   "scriptHash": "1dd76f276df4",
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -132,5 +135,7 @@
     "THE DIRECTIONAL ZERO IS AN OBSERVATION, NOT A MECHANISM. That W(n->p) has no sigma_0 component while W(p->n) does, and that n -> p is the spontaneous direction, is a genuine structural asymmetry — but nothing here derives beta decay from it, predicts a rate or a lifetime, or shows the zero is what makes one direction preferred. Establishing any of that would need a dynamical principle the construction does not currently have.",
     "'W' IS THE ALGEBRAIC CONNECTOR, NOT A WEAK INTERACTION OPERATOR. It is defined purely by v_n . W = v_p, i.e. as whatever element carries one nucleon word to the other. Calling it the weak transition operator is an interpretation. In particular it carries no lepton content: the emitted electron and antineutrino appear nowhere, and the construction has no strand or generator for a neutrino at all.",
     "The magnitudes are wrong by orders, as everywhere in this series. The model's n/p mass ratio is 1.607 against a physical 1.00138, and its 3H-3He splitting is 14.5% of the scale against a physical Q/M of 6.6e-6. Only the two ORDERINGS are being claimed, and they are claimed as signs rather than scales precisely because no mass normalisation has been applied."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

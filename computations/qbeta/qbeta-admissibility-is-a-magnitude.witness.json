@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:00:20.801060+00:00",
-  "commitSha": "e81fc71e9e80de1edef60c9b4b1baafa46d5e1f4",
+  "computedAt": "2026-09-03T04:59:55.383875+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "y_(1^3) numerator is proportional to Lean wtNumer",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 28,
   "computation": "qbeta-admissibility-is-a-magnitude",
   "scriptFile": "qbeta_admissibility_is_a_magnitude_probe.py",
   "scriptHash": "bf485873a481",
-  "scriptCommitSha": "ab3a5a1f080d30c0825cb71a969e68c93b28817b",
+  "scriptCommitSha": "6247033e5af40a98e932e580864e860344bab55b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -118,5 +118,7 @@
     "scope": "(a) measured magnitude; one_not_root stands exactly as proved",
     "q0Anchor": "proton",
     "q0Value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

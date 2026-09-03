@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:57:41.785102+00:00",
-  "commitSha": "06d1c010aec6d1913c4c0738bb6302454de594c5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:49:11.810952+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_framed_ratio_is_exactly_a_two_crossing_sum",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 22,
   "computation": "pn_writhe_is_not_an_exponent_probe",
   "scriptFile": "pn_writhe_is_not_an_exponent_probe.py",
   "scriptHash": "323532fad92d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "def46509f247511bae9f8a7f780e0014a37f0e90",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -154,5 +157,7 @@
     "CONCAVITY IS MEASURED, NOT PROVED. e_eff(beta) - (1 - 2 beta) is positive at all 99 interior grid points and the endpoints are exact, which is enough to establish that interpolation understates e_eff at beta_pn — the only point the conclusion needs. The word 'concave' is a description of that grid, not a theorem.",
     "SCOPE: this is a correction WITHIN the writhe-normalised convention only. Which convention binding should use is still the open physics question from framed_vs_writhe_normalised_bonds_probe (framing is Tw in Lk = Wr + Tw). The framed branch — bond constants, additivity, no-distance-decay — applies no normalisation and is untouched by everything here.",
     "The isotope table is the NAIVE all-pairs sum in both columns, so it inherits the sub-additivity overstatement measured in pairwise_ceiling_is_overstated_probe and is not a binding prediction in either column. Only the DIFFERENCE between the columns is the quantity of interest."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

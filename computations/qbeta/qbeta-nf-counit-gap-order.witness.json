@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:53:25.687926+00:00",
-  "commitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
+  "computedAt": "2026-09-03T05:00:07.718299+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "gap_closed_form",
@@ -124,7 +124,7 @@
   "computation": "qbeta-nf-counit-gap-order",
   "scriptFile": "qbeta_nf_counit_gap_order_probe.py",
   "scriptHash": "e7bb4ed393a7",
-  "scriptCommitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
+  "scriptCommitSha": "76e2182ec578496acc8d118da8029289fa711da7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -139,7 +139,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -284,5 +284,7 @@
       }
     },
     "verdict": "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 and tr_M weights by z^#cr where eps sets z^k -> 1. The bean was right and this probe's first conclusion was wrong. Surviving: the exact closed form; that the 1.00579 is NOT a basis change (eps is canonical, so different eps => different ELEMENTS); and that the typed NF is worse, destroying single-wrap C's t^2 match rather than repairing t^3."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

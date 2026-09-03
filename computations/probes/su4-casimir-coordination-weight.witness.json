@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T10:36:21.491991+00:00",
-  "commitSha": "1adf8f618806478067412b26ed08f7f7b774d5c9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:49:29.138643+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "su4_casimir_predicts_A3_within_1pct_coulomb_corrected",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "su4-casimir-coordination-weight",
   "scriptFile": "su4_casimir_coordination_weight_probe.py",
-  "scriptHash": "9520ef209ce3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "220e386d1467",
+  "scriptCommitSha": "0fac84ad7f10bd14fd2b56b126c80a37a23d1f47",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -71,5 +73,7 @@
       "cannot_be_falsified_further": "[1^n] is empty for n >= 5, so no A >= 5 prediction exists",
       "what_would_promote_it": "derive beta from the three calibrations; the LO SU(4)-symmetric contact interaction has one coupling (nucl-th/0409040)"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

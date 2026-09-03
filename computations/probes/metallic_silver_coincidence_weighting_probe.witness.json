@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T20:38:48.139369+00:00",
-  "commitSha": "825d45ce967538f163b92019e87d8a6efd250f2e",
+  "computedAt": "2026-09-03T04:48:33.967418+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_illustration_stale_and_wrong",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 30,
   "computation": "metallic_silver_coincidence_weighting_probe",
   "scriptFile": "metallic_silver_coincidence_weighting_probe.py",
   "scriptHash": "7cce69326dd0",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4365b161f185645245badf12d506e9f1029930bb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -114,5 +116,7 @@
     "The all-n statement is conditional on GaloisPairCharacterSum (chi^lambda(sigma) + chi^lambda'(sigma) = dim(lambda) h), which is a conjecture CLASS in MetallicLPIdentities.lean, not a theorem — symbolically verified there for n = 3, 4. This probe verifies the resulting identity outright at n = 2 and n = 3 and verifies the other input, W_lambda = W_lambda', at n = 2..5.",
     "Two weightings are in play and neither is 'the' right one. The q-Plancherel measure d_q^2/sum d_q^2 is what pyhecke's regime_scanner uses and what the Lean silver theorem's cost vector turns out to be; the convention-D Markov trace y_lambda is what the atom LP is actually built on. The finding is that the metallic ladder is a feature of the FORMER, so a metallic result cannot be transported into the atom LP without first settling which functional the physics is supposed to extremise.",
     "The withdrawal is of a CITATION, not of a measurement. metallic_ladder_regime_test_probe.py's own H_3 Gram-signature and H_9 selection sweeps are unaffected and still show no metallic feature — because, as shown here, they are Markov-weighted. Its appeal to PR #1999 as independent corroboration, and its framing of 'representation-theoretic regime' versus 'optimisation regime' as distinct, are both withdrawn."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
