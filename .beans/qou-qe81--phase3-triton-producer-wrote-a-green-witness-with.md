@@ -43,11 +43,22 @@ values (D +0.435403, T +0.695131, 3He +0.698552, 4He +0.876064 MeV).
 A witness whose rows are error strings must not serialise as passing. Two
 things are wrong and both are general, not specific to this producer:
 
-- [ ] A row carrying an `error` key should fail the witness, or at minimum
-      set `allPassed: false`. Find where that is decided and make it so.
-- [ ] `assertions: 0` + `allPassed: true` is indistinguishable from "ran
-      correctly and had nothing to assert". Zero assertions on a producer
-      that declares rows should not be green either.
+- [x] A row carrying an `error` key should fail the witness, or at minimum
+      set `allPassed: false`. DONE — `_check_error_rows` / `_apply_error_row_gate`
+      in `qou_substrate/witness.py`, keyed on the VALUE shape
+      (`"<SomeError>: <message>"`) rather than the key's presence, because
+      `error` is overloaded: five witnesses use it for a numeric error
+      (`mass-from-q-symbolic` has `error = 9.98e-13`). Verified live:
+      a clean payload builds `allPassed: True basis: assertions`, an
+      error-row payload `allPassed: False basis: error-rows`.
+- [x] `assertions: 0` + `allPassed: true` — DECIDED, deliberately not flipped.
+      359 of 2522 witnesses (14%) have this shape, and flipping it was already
+      tried and withdrawn under bean `qou-vfy1`: ~a dozen producers do
+      `return 0 if wit["allPassed"] else 1`, so `None`/false trades a silent
+      false positive for a loud false negative. Resolved with a discriminator
+      instead — `allPassedBasis` ∈ {assertions, vacuous, failed-assertions,
+      error-rows} — so earned green and vacuous green are now tellable apart
+      while the boolean stays usable as an exit code.
 
 ## Also observed, separate
 
@@ -186,7 +197,13 @@ says so.
 
 ### Still open on this bean
 
-- [ ] The **NO-FLOAT64** item above ("Also observed, separate") —
+- [x] The **NO-FLOAT64** item above — DONE in code (the witness artifact is
+      tracked separately below). `b_pred` stays mpf; `AME_2020_BINDING_MEV`
+      holds `mp.mpf` of exact decimals rather than float literals (those are
+      the DENOMINATOR of the residual, so their f64 quantisation was
+      propagating into every residual recorded); `E_0_MeV` at both sites and
+      `compute_time_s` as a string. The only `float()` left is inside
+      `print()` — a format width is presentation, not a value. Originally:
       `phase3_triton_binding_convention_b.py`
       serialises `float(...)` instead of carrying `mpf` out of
       `binding_canonical`; 25 raw float64 fields. Untouched here, genuinely
@@ -196,6 +213,12 @@ says so.
       `expect_errors(...)`. Each needs a producer re-run, so none was done here.
 - [ ] The gate is not mirrored into the vendored
       `qou-mass/src/qou_mass/_internal/witness_base.py`.
+      **Recommendation: do NOT hand-patch it.** `qou-mass/` is a vendored copy
+      and is excluded from every audit in this corpus by standing convention;
+      hand-editing it makes the vendored tree diverge from what it vendors,
+      which is the same divergence-between-copies failure that produced the
+      `.dot` and `a_rho` defects. It should pick the gate up by re-vendoring.
+      Left open so the decision is someone's to confirm, not silently closed.
 
 
 ## 2026-09-03 — the NO-FLOAT64 item is now done in CODE; regeneration owed
