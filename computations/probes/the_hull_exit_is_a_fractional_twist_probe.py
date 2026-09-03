@@ -208,6 +208,20 @@ def main() -> int:
                     ("e_max", e_max), ("1", mp.mpf(1)), ("2", mp.mpf(2))):
         cc = (1 - _H) ** (ev / 2)
         uu = -mp.log(cc)
+        # `e_max` is the OPEN endpoint: u = -log c = e_max/2 * -log(1-h) = LQ
+        # exactly, by the definition of e_max two blocks up. So `ratio_at_u`'s
+        # `u < LQ` is a strict comparison on an exact tie and `LQ - u` in its
+        # denominator IS the round-off -- the verdict and the ratio are both
+        # decided by noise at any precision. Under the laundered q_0 this row
+        # printed `False / T=1 BINDS`; with `q_at` it printed `True` and a
+        # ratio of 4.8e40. Neither meant anything. The window is [0, e_max),
+        # so the endpoint is excluded by definition, and that is what is now
+        # printed. The assertion below never read this row.
+        if lbl == "e_max":
+            tab[lbl] = (float(cc), False)
+            print(f"     {lbl:>8s} {float(cc):17.10f} {'boundary':>11s} "
+                  f"{'excluded':>12s}")
+            continue
         r = ratio_at_u(uu)
         tab[lbl] = (float(cc), r is not None)
         print(f"     {lbl:>8s} {float(cc):17.10f} {str(r is not None):>11s} "
