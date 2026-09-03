@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-08-31T10:15:23Z
+updated_at: 2026-09-03T08:57:43Z
 ---
 
 
@@ -404,3 +404,15 @@ than a binding gap, so it was taken last and left open per the owner's redirect
 to the binding primary goal.
 
 It stays as the one remaining computational input other than Schur–Weyl.
+
+
+## 2026-09-03 — cross-reference (session on qou-pdg9)
+
+Follow-up "c1 is measured, not derived" is now closed elsewhere: bean `qou-pdg9`
+derives `c1 = 2^{-n} Σ_ℓ w_ℓ 2^{c(σ^{(ℓ)})}` (free − atom) by the same Schur–Weyl
+route as the floor, obtains all six values EXACTLY by series arithmetic (no
+Richardson), and finds the closed form
+`c1(Z,N) = (21Z+16N)(2^{-A-1} − 2^{-2A}) − 4(I_pp − I_nn)2^{-2A}`. Lean:
+`QOU/MassTheory/LeadingOrderTraceCoefficient.lean`. Follow-up (5) here — the
+permutation-half formalisation (orbit count under a deleted transposition) —
+is still open and is now needed for BOTH c0 and c1.
