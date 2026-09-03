@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-31T03:18:43Z
+updated_at: 2026-09-03T04:54:10Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -205,3 +205,14 @@ multi-session project buying assurance not new math (recursion already proved+ce
 Bank bricks 1-2. If pursued: (3a) pick track + bridge qtr_kron↔markovTrace_kronecker; (3b) e_i on
 V^⊗n ∀n (R2 crux); (3c) w_n tower; (3d) (I)+cap-cup+induction, close via #6228 glue. Instance stays
 unfabricated (honest open state).
+
+## Brick 3 MINIMAL WEDGE landed (2026-09-03, PR #6466)
+
+The R2 crux (concrete evaluable ρ(w_n)) is now supplied at the base case n=3, lean-direct exit 0 + axiom-clean. File QOU.MassTheory.BrunnianWordN3TwoRow (generic Field, sorry-free):
+- w₃ = [A₀₁,A₁₂] = [σ₁²,σ₂²] in B₃, evaluated in the 2-dim reduced-Burau / (2,1) two-row irrep (the sorry-free heckeGen1/2 of GermRootVectorGaugeFixing) — the FIRST concrete ρ(w) in the arc.
+- brunnianW3_eq (explicit 2×2), brunnianW3_det=1, brunnianW3_trace = exact χ^{(2,1)}(w₃).
+- deficitA3_eq_closed_form: Schur–Weyl reconstruction [4]·χ^{(3)}+[2]·χ^{(2,1)} + D₃=1−qtr/[2]³ reproduces EXACTLY the certified D₃=h⁴(h²+3)/(h²+4). The concrete word closes to the certified recursion at A=3.
+
+HONEST SEAM: Schur–Weyl duality itself ([4],[2] qdim weights, χ^{(3)}=1) is CITED as the def of survivingQTrace, not proved in Lean (Mathlib has no ribbon cat / quantum trace). BrunnianDeficitRecursion instance stays UNFABRICATED.
+
+REMAINING (∀n body, still open): position-indexed e_{n-1} on the reduced (≤2-row) space ∀n + the Brunnian-word spectrum recursion. Upstream: qou-o6ov two-row character machinery. Blocked on the same categorical-trace infra gap as R2 (Jones/quantum-trace not in Mathlib) for the general-n closure.
