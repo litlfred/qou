@@ -311,3 +311,40 @@ The `pyhecke-native` wheel is EPHEMERAL and dies with the container.
 `scripts/build-pyhecke-native.sh` must be re-run after every reclaim, BEFORE
 resuming, or `_HAVE_RUST_CHI` is False and the producer silently takes the
 ~300x slower path. Confirmed the hard way this session.
+
+
+## 2026-09-03 — cost REVISED upward from in-run data; and a structural risk
+
+The ~4.6 h figure came from a three-point standalone fit over A=2..4. In-run
+timings (which include the monitor tail and the per-atom journal commits) put
+the exponent higher:
+
+    A=2  deuterium  118.54s
+    A=3  tritium    188.59s
+    A=3  he3        190.28s
+    A=4  he4        277.97s      fit  t = 50.2 * A^1.222
+
+    ca40      ~76 min
+    fe56     ~115 min
+    remaining 12 atoms   ~6.7 h        total  ~6.9 h
+
+So ~4.6 h was optimistic, as flagged when it was quoted. Treat 6.9 h the same
+way — it is still an extrapolation from A <= 4.
+
+### The structural risk: the checkpoint resumes BETWEEN atoms, not within one
+
+fe56 at ~115 minutes is longer than this container has survived so far. The
+resume point is written after each atom COMPLETES, so a reclaim during fe56
+loses the whole atom and it restarts from zero. ca40 (~76 min) has the same
+shape. The small atoms are safe; the two that matter most are not.
+
+Mitigating fact, worth knowing before anyone tries this: per the environment
+docs the container is reclaimed after a period of INACTIVITY, not on a fixed
+timer. Small atoms produce a monitor event every 2-5 minutes, which keeps the
+session active by itself; ca40 and fe56 are long silent gaps and are exactly
+when a reclaim is likely. Doing other work in parallel during those two atoms
+is not idle busywork — it is what keeps them alive.
+
+If they turn out unreachable this way, the real fix is intra-atom
+checkpointing (the per-partition loop in `atom_character_raw` is the natural
+seam), which is a bigger change than the between-atom journal.
