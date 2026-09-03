@@ -1782,22 +1782,6 @@
    }
   },
   {
-   "id": "jones1985",
-   "status": "partial",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 3,
-   "fix_commit": "(this commit)",
-   "note": "3 bare-URL Refs upgraded with title+publisher form. \u2014 Source IS held: library/s0273-0979-1985-15304-2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py. Previous source record: {\"kind\": \"external\", \"url\": \"https://doi.org/10.1090/S0273-0979-1985-15304-2\"}.",
-   "source": {
-    "kind": "upload",
-    "file": "library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf"
-   }
-  },
-  {
    "id": "feynman1948",
    "status": "partial",
    "verified_at": "2026-05-19T15:54:00Z",
@@ -3684,7 +3668,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-0006156v1/0006156v1.pdf"
    },
-   "id": null,
+   "id": "faddeev-kashaev-volkov2000",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -3741,6 +3725,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b799d4ef1502"
+   },
+   "note": "Source IS held: library/arxiv-hep-th-0006156v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -3799,7 +3789,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-ph-0103325v4/0103325v4.pdf"
    },
-   "id": null,
+   "id": "gavrilik2001",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -3849,6 +3839,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "38590174ab83"
+   },
+   "note": "Source IS held: library/arxiv-hep-ph-0103325v4. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4198,7 +4194,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-0206161v1/0206161v1.pdf"
    },
-   "id": null,
+   "id": "nekrasov2002",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -4234,6 +4230,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "9530c40215ba"
+   },
+   "note": "Source IS held: library/arxiv-hep-th-0206161v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4351,7 +4353,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0304010v1/0304010v1.pdf"
    },
-   "id": null,
+   "id": "ivanov-olshanski2003",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -4410,6 +4412,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "fc2296c027b3"
+   },
+   "note": "Source IS held: library/arxiv-math-0304010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -4647,7 +4655,7 @@
     "kind": "upload",
     "file": "library/0307092v2/0307092v2.pdf"
    },
-   "id": null,
+   "id": "neumann2004",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -4696,6 +4704,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "de2f7ddec49b"
+   },
+   "note": "Source IS held: library/0307092v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5123,7 +5137,7 @@
     "kind": "upload",
     "file": "library/arxiv-nucl-th-0409040v2/0409040v2.pdf"
    },
-   "id": null,
+   "id": "platter2005tjon",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -5167,6 +5181,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "986093ee95b9"
+   },
+   "note": "Source IS held: library/arxiv-nucl-th-0409040v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -5809,7 +5829,7 @@
     "kind": "upload",
     "file": "library/arxiv-nucl-th-0610105v2/0610105v2.pdf"
    },
-   "id": null,
+   "id": "hammer2007fourbody",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -5867,6 +5887,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "5f3bd6d31a41"
+   },
+   "note": "Source IS held: library/arxiv-nucl-th-0610105v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6461,7 +6487,7 @@
     "kind": "upload",
     "file": "library/arxiv-0903.2472v1/0903.2472v1.pdf"
    },
-   "id": null,
+   "id": "dimofte-gukov-lenells-zagier-2009",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -6487,6 +6513,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "637cfd1d4d83"
+   },
+   "note": "Source IS held: library/arxiv-0903.2472v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -6563,7 +6595,7 @@
     "kind": "upload",
     "file": "library/arxiv-0905.1873v2/0905.1873v2.pdf"
    },
-   "id": null,
+   "id": "jurgenson2009srg",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -6621,6 +6653,12 @@
     },
     "assessed_at": "2026-08-08T16:12:29.859Z",
     "source_sha": "d4f785469faf"
+   },
+   "note": "Source IS held: library/arxiv-0905.1873v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -9524,7 +9562,7 @@
     "kind": "upload",
     "file": "library/arxiv-1908.07065v3/1908.07065v3.pdf"
    },
-   "id": null,
+   "id": "grassi-gu-marino2019qsw",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -9567,6 +9605,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "c43e413aed71"
+   },
+   "note": "Source IS held: library/arxiv-1908.07065v3. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -11845,7 +11889,7 @@
     "kind": "upload",
     "file": "library/67-6-1860/67-6-1860.pdf"
    },
-   "id": null,
+   "id": "morita1982",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -11881,6 +11925,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "e2e5d45edd36"
+   },
+   "note": "Source IS held: library/67-6-1860. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12073,7 +12123,7 @@
     "kind": "upload",
     "file": "library/arxiv-alg-geom-9408004v1/9408004v1.pdf"
    },
-   "id": null,
+   "id": "donagi-markman1994",
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
@@ -12092,6 +12142,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "d3bc00265294"
+   },
+   "note": "Source IS held: library/arxiv-alg-geom-9408004v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12125,7 +12181,7 @@
     "kind": "upload",
     "file": "library/arxiv-hep-th-9408099v1/9408099v1.pdf"
    },
-   "id": null,
+   "id": "seiberg-witten1994b",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12161,6 +12217,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "b534faddd2e3"
+   },
+   "note": "Source IS held: library/arxiv-hep-th-9408099v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12226,7 +12288,7 @@
     "kind": "upload",
     "file": "library/arxiv-q-alg-9504020v1/9504020v1.pdf"
    },
-   "id": null,
+   "id": "kashaev1995",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -12261,6 +12323,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "0baef40fa993"
+   },
+   "note": "Source IS held: library/arxiv-q-alg-9504020v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -12511,7 +12579,7 @@
     "kind": "upload",
     "file": "library/arxiv-alg-geom-9705010v1/9705010v1.pdf"
    },
-   "id": null,
+   "id": "donagi1997",
    "status": "unreviewed",
    "relevance": {
     "verdict": "core",
@@ -12569,6 +12637,12 @@
     },
     "assessed_at": "2026-08-08T23:34:05.459Z",
     "source_sha": "30ab8d0cc2d8"
+   },
+   "note": "Source IS held: library/arxiv-alg-geom-9705010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
    }
   },
   {
@@ -15542,8 +15616,14 @@
     "kind": "upload",
     "file": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf"
    },
-   "id": null,
-   "status": "unreviewed"
+   "id": "milnor1982",
+   "status": "unreviewed",
+   "note": "Source IS held: library/milnor-1982-hyperbolic-geometry-the-first-150-years. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
+   }
   },
   {
    "source": {
@@ -15643,8 +15723,14 @@
     "kind": "upload",
     "file": "library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf"
    },
-   "id": null,
-   "status": "unreviewed"
+   "id": "jones1985",
+   "status": "unreviewed",
+   "note": "3 bare-URL Refs upgraded with title+publisher form. \u2014 Source IS held: library/s0273-0979-1985-15304-2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py. Previous source record: {\"kind\": \"external\", \"url\": \"https://doi.org/10.1090/S0273-0979-1985-15304-2\"}.",
+   "verified_at": "2026-09-03T04:19:53Z",
+   "verified_by": {
+    "kind": "agent",
+    "model": "claude-opus-5"
+   }
   },
   {
    "source": {
@@ -16073,70 +16159,6 @@
    }
   },
   {
-   "id": "dimofte-gukov-lenells-zagier-2009",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-0903.2472v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-0903.2472v1/0903.2472v1.pdf"
-   }
-  },
-  {
-   "id": "donagi-markman1994",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-alg-geom-9408004v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-alg-geom-9408004v1/9408004v1.pdf"
-   }
-  },
-  {
-   "id": "donagi1997",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-alg-geom-9705010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-alg-geom-9705010v1/9705010v1.pdf"
-   }
-  },
-  {
-   "id": "faddeev-kashaev-volkov2000",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-hep-th-0006156v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-hep-th-0006156v1/0006156v1.pdf"
-   }
-  },
-  {
    "id": "feray-meliot2012",
    "status": "unreviewed",
    "verified_at": "2026-09-03T04:19:53Z",
@@ -16169,38 +16191,6 @@
    }
   },
   {
-   "id": "gavrilik2001",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-hep-ph-0103325v4. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-hep-ph-0103325v4/0103325v4.pdf"
-   }
-  },
-  {
-   "id": "grassi-gu-marino2019qsw",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-1908.07065v3. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-1908.07065v3/1908.07065v3.pdf"
-   }
-  },
-  {
    "id": "halverson_ram_1998",
    "status": "unreviewed",
    "verified_at": "2026-09-03T04:19:53Z",
@@ -16217,38 +16207,6 @@
    }
   },
   {
-   "id": "hammer2007fourbody",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-nucl-th-0610105v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-nucl-th-0610105v2/0610105v2.pdf"
-   }
-  },
-  {
-   "id": "ivanov-olshanski2003",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-math-0304010v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-math-0304010v1/0304010v1.pdf"
-   }
-  },
-  {
    "id": "johansson2001",
    "status": "unreviewed",
    "verified_at": "2026-09-03T04:19:53Z",
@@ -16262,38 +16220,6 @@
    "source": {
     "kind": "upload",
     "file": "library/arxiv-math-9906120v3/9906120v3.pdf"
-   }
-  },
-  {
-   "id": "jurgenson2009srg",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-0905.1873v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-0905.1873v2/0905.1873v2.pdf"
-   }
-  },
-  {
-   "id": "kashaev1995",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-q-alg-9504020v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-q-alg-9504020v1/9504020v1.pdf"
    }
   },
   {
@@ -16329,22 +16255,6 @@
    }
   },
   {
-   "id": "milnor1982",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/milnor-1982-hyperbolic-geometry-the-first-150-years. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf"
-   }
-  },
-  {
    "id": "moffatt-ricca-helicity",
    "status": "unreviewed",
    "verified_at": "2026-09-03T04:19:53Z",
@@ -16358,54 +16268,6 @@
    "source": {
     "kind": "upload",
     "file": "library/procrsoclondona92/procrsoclondona92.pdf"
-   }
-  },
-  {
-   "id": "morita1982",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/67-6-1860. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/67-6-1860/67-6-1860.pdf"
-   }
-  },
-  {
-   "id": "nekrasov2002",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-hep-th-0206161v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-hep-th-0206161v1/0206161v1.pdf"
-   }
-  },
-  {
-   "id": "neumann2004",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/0307092v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/0307092v2/0307092v2.pdf"
    }
   },
   {
@@ -16425,22 +16287,6 @@
    }
   },
   {
-   "id": "platter2005tjon",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-nucl-th-0409040v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-nucl-th-0409040v2/0409040v2.pdf"
-   }
-  },
-  {
    "id": "rivin2003",
    "status": "unreviewed",
    "verified_at": "2026-09-03T04:19:53Z",
@@ -16454,22 +16300,6 @@
    "source": {
     "kind": "upload",
     "file": "library/arxiv-math-9907032v1/9907032v1.pdf"
-   }
-  },
-  {
-   "id": "seiberg-witten1994b",
-   "status": "unreviewed",
-   "verified_at": "2026-09-03T04:19:53Z",
-   "verified_by": {
-    "kind": "agent",
-    "model": "claude-opus-5"
-   },
-   "fixes_applied": 0,
-   "fix_commit": "(this commit)",
-   "note": "Source IS held: library/arxiv-hep-th-9408099v1. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it \u2014 which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.",
-   "source": {
-    "kind": "upload",
-    "file": "library/arxiv-hep-th-9408099v1/9408099v1.pdf"
    }
   }
  ]
