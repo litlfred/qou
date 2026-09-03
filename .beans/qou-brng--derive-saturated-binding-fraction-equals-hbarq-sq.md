@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T14:52:35Z
+updated_at: 2026-09-03T20:49:10Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2192,3 +2192,58 @@ EXCHANGE (Delta_3,3), not by what each nucleon is. The 'selector survives'
 weak form is retired too. Honest residue: an exchange-sensitive invariant of
 the six-strand two-nucleon link, which the corpus does not carry. A bounded
 grep for mu-bar_123 + isospin timed out; not cited as evidence.
+
+
+## 2026-09-03 — the linking-data class is closed: lk IS I₃, and both channels sit at I₃ = 0
+
+Closes the residue this arc named the same day ("an invariant of the six-strand
+two-nucleon link that is sensitive to the exchange"), **for the linking-data
+class specifically**. Probe:
+`computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py` (exact
+integer arithmetic, no witness, asserts are the gate).
+
+**The composition.** Two facts the corpus already holds, neither applied to the
+two-nucleon link by its own carrier:
+
+- **(F1)** `inter_nucleon_linked_channel.py` derives the inter-nucleon arc as the
+  minimal non-Brunnian 2-component link `T(2,2k)` — `pp → lk +1`, `nn → lk −1`,
+  `pn → lk 0` — stating "NO numeric is tuned"; `u1_hypercharge_assignment.py:336`
+  names the same datum *"I_3 = writhe/2-of-inter-nucleon-arc"*. Since
+  `lk(T(2,2k)) = k = writhe/2`, **the inter-nucleon linking number IS I₃**.
+- **(F2)** Milnor indeterminacy — already the scope-(b) exclusion of the Milnor
+  route for ⁴He (`2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`).
+
+**Result (scope b).** The ³S₁ (T=0) and ¹S₀ (T=1) np channels have the same
+flavour content, so `I₃ = 0` in both, so their linking matrices are **identical
+on all 15 pairs** — verified under both the single-arc and all-nine-pairs
+readings, so the verdict does not rest on that modelling choice. Every function
+of the linking data is therefore equal on the two channels: achievable asymmetry
+**exactly 1**, against **33.7055** required. Not a bound a better choice inside
+the class might beat; the two inputs are one matrix.
+
+**By-product.** The Milnor tower is DEAD across the interface at `I₃ = ±1`
+(pp, nn: `ℤ/1 = 0`) and ALIVE only at `I₃ = 0` (np: `ℤ/0 = ℤ`) — where **both**
+channels sit. Surviving is precisely what does not help.
+
+**So do NOT propose a higher-`μ̄` or linking-integral route for the T=0/T=1
+split** — including the Evans–Berger nth-order linking integrals the sweep found
+in `library/1992evansberger/ocr/` (they are inside this closed class).
+
+**NOT excluded:** an invariant reading the braid word beyond its linking data
+(the `Δ₃,₃` spectrum is such an object, capped at 9 by the separate
+integer-exponent argument); a non-Milnor super-pairwise object; anything
+carrying **spin**, which is what actually separates the channels.
+
+**Convergence, with its limit stated.** `qou-7zob` reaches the same wall from the
+flavour side (*"NO map from strand position to orbital angular momentum anywhere
+in the corpus"*), and `t7qv`'s `det T = −1` caps the ratio at 1. This supplies a
+*reason* those ratios are 1 rather than merely small. It is corroboration, **not**
+a fourth independent measurement — these routes share the (F1) assignment.
+
+**Correction made in-flight:** the probe's first draft labelled the deuteron's eV
+digits as keV and printed the shortfall as 33705x, a clean factor of 1000, which
+the `> 1` assert passed. The assert now pins 33.7055 to four decimals.
+
+Also: corpus-grepper memory updated (`MEMORY.md` trimmed 202 → 200 lines,
+detail in `resolved-topics.md`), since its own entry ended by handing over the
+gate that this closes.
