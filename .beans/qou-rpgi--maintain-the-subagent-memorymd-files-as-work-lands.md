@@ -113,3 +113,20 @@ since staying under both limits is unambiguously safe:
 Both are the same root, which is why they are worth keeping together: **a
 tool's count answers a narrower question than the one you asked, and reports
 it in the units you expected.**
+
+### Same-day update (2026-09-03, ~2 h later)
+
+Two things moved, both reinforcing rather than settling:
+
+- **`lean-verifier` grew 374 → 419 lines** while this session worked (main
+  moved). The over-cap files are **accreting**, not draining, so whatever the
+  answer to the line-vs-byte question, the trend is the wrong way. It is now
+  **+219 over** the documented rule and 22.5 KB — still under 25 KB, so the
+  ambiguity is unchanged.
+- **A sibling independently treated the cap as binding**: `ec96d89b1a`
+  *"memory(merge-coordinator): tighten the draft-toggle correction back under
+  the 200-line cap"* — 4 insertions, 7 deletions, purely to fit. So two
+  sessions today have paid the cap cost. **That is agreement about practice,
+  not evidence about the injector**; the sentinel experiment above is still
+  the only thing that settles it, and it is still not done.
+
