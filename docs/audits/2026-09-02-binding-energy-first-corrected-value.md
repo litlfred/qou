@@ -415,3 +415,65 @@ sign and most of the magnitude. Term 3 follows separately.
 This is not a workaround for a wrong answer — it is scheduling. If A = 6 is
 simply beyond this container, that is worth knowing plainly too, and the split
 will show which term is the one that cannot finish.
+
+## ⁶Li attempt 3 (split, term 1 alone): killed too — recording the ceiling
+
+```
+6Li term 1 (unified_iterative_correction) Z=3 N=3
+  ... alive at 124s
+[process gone, no result file]
+```
+
+Three attempts, and **each died earlier than the last**:
+
+| attempt | scope | last heartbeat / sighting | outcome |
+|---|---|---|---|
+| 1 | full `binding_energy` | alive ~900 s into ⁶Li | killed |
+| 2 | ⁶Li alone | `alive at 326s` | killed |
+| 3 | term 1 alone | `alive at 124s` | killed |
+
+**Stopping here**, per the rule set before attempt 2. A fourth identical attempt
+is not an experiment.
+
+### The honest ceiling
+
+**The corrected binding path reaches A = 4 in this container, and not A = 6.**
+
+```
+A=2  deuterium   942 s     A=3  he3    1496 s
+A=3  tritium    1568 s     A=4  he4    2425 s
+A=6  ⁶Li        3 kills, no value
+```
+
+A = 2…4 completed **reliably**, including across long idle periods, so background
+compute is not categorically reclaimed here — the failures are specific to A = 6.
+
+**Cause undetermined**, and I am not inventing one. `dmesg` is unavailable, so
+OOM is neither confirmed nor excluded. The "each attempt dies earlier" pattern is
+recorded as an observation, not explained: it is *consistent* with a resource
+ceiling that tightens as the container fills, and equally consistent with several
+other things. Noting a pattern is not diagnosing it.
+
+### What stays open, and it is the important one
+
+The discriminator between
+
+- **`E` saturates the proved pairwise cap** (`≤ C(A,2)` permits `∝ C(A,2)`), and
+- **super-pairwise growth**, per AGENTS.md's framing,
+
+**is not measured, and is recorded as open rather than guessed.** The four points
+in hand cannot separate them: they span two distinct A values above the deuteron,
+with a 6.7 % within-A noise floor against a 14.6 % cross-A spread.
+
+### What would settle it
+
+Two routes, neither attempted here:
+
+1. **A = 6 on a machine that will hold the process.** Nothing about the
+   computation is known to be wrong — it is scheduling, and the per-atom trend
+   (942 → 2425 s for A = 2 → 4) does not obviously forbid A = 6.
+2. **A = 4 and A = 6 both at a reduced `k_exact`.** Truncated values are not
+   comparable to the k = 11 points above, but they *are* comparable to each
+   other, so the ratio `E(6)/E(4)` could discriminate at a fraction of the cost.
+   This is a genuinely different measurement, not a cheaper version of the same
+   one, and would need its own gate.
