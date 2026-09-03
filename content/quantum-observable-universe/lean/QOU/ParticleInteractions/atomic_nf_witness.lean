@@ -6,7 +6,7 @@ import Mathlib.Tactic
 # QOU.ParticleInteractions.atomic_nf_witness
 
 **Canonical declaration** for content block
-[`prop:atomic-nf-witness`](../../../particle-interactions/atomic-nf-witness.md):
+[`prop:atomic-nf-witness`](../../../nuclear-interactions/atomic-nf-witness.md):
 *Atomic braid normal form witness*.
 
 ## 2026-09-03 — a five-way conjunction carried as one field
@@ -69,7 +69,7 @@ instantiation `R := ℝ`.
 
 Bean `qou-z9ws`.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.md
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -88,7 +88,7 @@ caller-supplied data — sub-claims 1–4 of the `.md`:
 **Named, not asserted.**  Claim 5 of the `.md` is deliberately absent — see
 the module docstring: it is a statement about this repository, not about
 `H_{A+Z}(q)`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.md
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
 def atomic_nf_witness
     (Phi_1 Phi_1_electron : ℕ → R) (pi_star electron_pos_star : ℕ)
     (gb_converges NF_no_strip : ℕ → Prop)
@@ -105,7 +105,7 @@ def atomic_nf_witness
 because it is a property of the certificate that nothing previously checked:
 with `F_Pauli` a class field, an instance could have supplied a negative one
 and satisfied the carrier only by also choosing `trAlt`/`net` to match. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.md
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
 theorem fPauli_nonneg
     {Phi_1 Phi_1_electron : ℕ → R} {pi_star electron_pos_star : ℕ}
     {gb_converges NF_no_strip : ℕ → Prop} {F_Pauli trAlt net : R}
@@ -123,7 +123,7 @@ minimiser has the same cost. This is what "global minimum" asserts over and
 above "a minimum reached by steepest descent", and it is the distinction the
 `.md` draws between the exact regime (`C(A,Z) ≤ 50000`) and the descent
 fallback. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.md
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
 theorem groundState_value_unique
     {Phi_1 Phi_1_electron : ℕ → R} {pi_star electron_pos_star : ℕ}
     {gb_converges NF_no_strip : ℕ → Prop} {F_Pauli trAlt net : R}
