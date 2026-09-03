@@ -240,4 +240,27 @@ theorem m004_regular_mem :
   · simp only [Matrix.cons_val_zero, Matrix.cons_val_one]
     ring
 
+/-- **Hypothesis (iv) of `SymmetricOptimum.optima_coincide` for m004, concave
+half — DISCHARGED.**  The figure-eight volume functional `totalVol` is concave on
+the m004 coupled polytope, in the exact `ConcaveOn ℝ m004Polytope totalVol` form
+`optima_coincide` consumes as its `hf₂`.  This is the `ConcaveOn` companion of the
+strict concavity behind `m004Vol_maximizer_unique`.
+
+Beans `qou-krvm` (iv) / `qou-rvnc` / `qou-7425`.  Two independent single-tetrahedron
+proofs feed the strict concavity this weakens from:
+`QOU.Archimedean.tetVol_strictConcaveOn` (the 2-D simplex route used here, through
+`totalVol_strictConcaveOn`) and `QOU.Knot.Rivin.strictConcaveOn_tetVolLine` (the
+line-parametrised sum-of-squares Hessian, `−cot` on the tangent space of
+`α+β+γ = π`).
+
+What (iv) still lacks is **only the geometric identification** — that the analytic
+functional `totalVol` IS the hyperbolic volume of the ideal simplex — a
+Mostow/Thurston fact Mathlib has no theory for (beans `qou-7y3g`, `qou-idvt` T2).
+The concavity itself is complete.  Invariance under the concrete m004 symmetry is
+not needed for m004: strict concavity alone pins the maximiser
+(`m004Vol_maximizer_unique`), so `optima_coincide`'s symmetry route is not the one
+that closes this anchor. -/
+theorem m004Vol_concaveOn : ConcaveOn ℝ m004Polytope totalVol :=
+  (totalVol_strictConcaveOn convex_m004Polytope (fun x hx i => hx.1 i)).concaveOn
+
 end QOU.Knot.MultiTetVolumeConcave
