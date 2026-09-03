@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-09-02T22:04:14Z
+updated_at: 2026-09-03T09:13:44Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -450,3 +450,13 @@ Citation replaced with the live probe.
 lambda = (1), drop it, or demote the block to a conjecture. Weakening the class
 to make it inhabitable would be laundering. Recorded in the `.md` and the Lean
 docstring; the field is left standing.
+
+
+
+## 2026-09-03 — LANDED on main via REST route-around (PR #6487)
+#6440 and #6467 stayed draft for ~5 h because the un-draft mutation is GraphQL-only and the account was rate-limited (6 attempts). Same two commits rebased onto main 7091dcca94, pushed as claude/canonical-sl2-weights-landing-2026-09-03, opened NON-draft over REST (#6487), rebase-merged: c6d514251d (canonical inhabitant) + a8307f0775 (promotion + rfl guard). #6440/#6467 closed as superseded — not close/reopen, not an empty-commit kick. Re-verified after rebase: lean-direct exit 0 on all 5 class-mentioning files, 0 sorries, probe 11/11, run-validate exit 0 (9 pre-existing).
+
+
+
+## 2026-09-03 — 3y is PRIOR ART; self-correction (bean qou-c35w)
+Corpus-grep for 'push the sl2 family into the mass channel' found it proved, sorry-free, general n: TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl / twoRow_share_eq_one_of_wenzl (#5242), WenzlWeightVanishing.level_eq_two_of_conventionD, SchurWeyl/OcneanuWeight (#5575: z_D is the k=2 member of z = q^{2k+1}/(1+..+q^{2k}); C in no member), OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_schurPrincipal (the bridge), WenzlWeightLevelR.wenzlMarkovParam (the family), MarkovTraceInstance. So the 'Ocneanu family z_N' classification in #6370 and the 'derived from the trace' claim in #6440 re-derived Lean prior art from 2026-08-16..24 without credit. What is mine: the framing-ratio per-cell mechanism, the real-exponent (log-derivative) C exclusion, the Toffoli cone algebra, and the H3 class instance + promotion + rfl guard. Credit notes added to markov-z-reconciliation.md, explicit-instance-proof.md, the probe docstring and toffoli-lp-stability.lean; #6370/#6440 to get comments. New: QBetaCanonicalMarkovWeightsDerived.lean proves canonical_y3/y21/0 = HeckeMarkov3.markovWeight0/2/1 at z_D (derived weights), so the default instance no longer rests on a probe.
