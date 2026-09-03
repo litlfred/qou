@@ -541,3 +541,58 @@ prefix `1.10997859564`.
 
 3c is closed as a side effect: the divergence risk existed *because* one path
 derived and the other read. Both derive now.
+
+---
+
+## 🛑 CORRECTION 2026-09-03 — the stage-3b verification table is WRONG
+
+Every number in the 3b table above, and in PR #6435's body, came from a helper
+that **never ran the audit**. It invoked
+`computations/q0_anchor_consistency_audit.py` — a path that **does not exist**;
+the script lives at `computations/audits/q0_anchor_consistency_audit.py`. The
+run failed silently and the helper fell through to reading the **stale committed
+witness**, on both sides. "All 13 counters identical" was a file compared to
+itself.
+
+Re-measured with the correct path, and with a stability control I should have
+run first — three consecutive runs on `main` give `Q0_ANCHOR_MISSING:1745` every
+time, so the measurement is stable and a delta means something.
+
+| counter | `main` | branch 3b |
+|---|---|---|
+| Q0_OK | 1171 | 1171 |
+| Q0_AMBIGUOUS | 3 | 3 |
+| Q0_INDEPENDENT | 72 | 72 |
+| Q0_COMPARISON | 5 | 5 |
+| **Q0_ANCHOR_MISSING** | **1745** | **1742** |
+| Q0_VALUE_MISSING | 3 | 3 |
+| Q0_AUDIT_EXEMPT | 83 | 83 |
+| Q0_PARSE_ERROR | 0 | 0 |
+| Q0_FLIP | 18 | 18 |
+
+**Three corrections at once:**
+
+1. There are **9** counters, not 13.
+2. They are **not** all identical — `Q0_ANCHOR_MISSING` moves **1745 → 1742**.
+3. Every absolute figure I quoted was from the stale file. Live values are
+   `Q0_OK` **1171** (not 1145), `Q0_FLIP` **18** (not 1),
+   `Q0_ANCHOR_MISSING` **1745** (not 1675).
+
+**The change is still sound — and it is a strict improvement, not the no-op I
+claimed.** Three witnesses gain an anchor on the branch: `_q0_value_for_anchor`
+now succeeds where it previously returned `None`, so `stamp_staleness_metadata`
+stamps three it used to leave bare. That is the loop-breaking effect showing up
+in the numbers. **I did not identify which three** — the audit's witness carries
+no per-verdict list in the shape I probed, and I stopped digging rather than
+guess. Say "3 fewer unstamped", not which.
+
+The other verified facts are unaffected, because they were measured directly
+rather than through that helper: `q_muon_at(70)` is byte-identical to the
+committed `derived_50_digit.q`; the resolver returns a value with the witness
+absent; the producer round-trips `q0Value` and `q0Anchor` from nothing.
+
+**Root cause, and it is the third time in this arc:** I trusted a helper's
+output without checking the helper ran what I thought it ran. A script path
+that does not exist fails into a fallback that returns plausible numbers.
+**When a comparison comes back "identical", check the measurement can move at
+all** — the stability control above is what would have caught this immediately.
