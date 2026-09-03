@@ -169,7 +169,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content/quantum-observable-universe"
 
-CLAIMY = re.compile(r"[=≤<>∀∃↔≠∈]|Nonempty|IsOpen|Subsingleton|Prop\s*$")
+# A field's type "looks like a claim" if it carries a relation or quantifier.
+#
+# **`≥` was missing while `≤` was present** — the sixth bug in this file, and
+# the same *direction* as the multi-line-type one: a claim read as data, which
+# manufactures a false DEFECT. Measured: `NobleGasMultiOperator.multi :
+# bindingMultiplicity S q ≥ 2` and `HasBindingMultiplicity`'s field both
+# counted as data, so two parameterised accessors were reported as the last
+# two library defects.
+#
+# The asymmetry is the lesson. An operator absent here does not merely go
+# uncounted — it lands in the *other* bucket. So the set is written out
+# symmetrically, with each relation's mirror beside it.
+CLAIMY = re.compile(
+    r"[=≠∀∃∈∉↔]"          # equality, membership, quantifiers, iff
+    r"|[≤≥<>]"             # order — BOTH directions
+    r"|[⊆⊇⊂⊃]"             # inclusion — both directions
+    r"|[≡≃≅≈]"             # equivalence / isomorphism
+    r"|∣"                  # divides (U+2223; NOT the ASCII bar of `|x|`)
+    r"|Nonempty|IsOpen|Subsingleton"
+    r"|Prop\s*$"
+)
 
 # A field line: exactly two spaces, then one or more names, then `:` (not `:=`).
 #
@@ -384,6 +404,16 @@ def selftest() -> int:
 
     # (4) `:=` is a default value, not a field declaration.
     check("`:=` is not a field", _fields("  foo := 3\n"), [])
+
+    # (5) CLAIMY must be symmetric in each relation. `≥` was missing while `≤`
+    #     was present, so `multi : … ≥ 2` counted as DATA and two accessors
+    #     were reported as defects. Every operator is checked in both
+    #     directions, since an absent one lands in the wrong bucket rather
+    #     than in none.
+    for op in "= ≠ ≤ ≥ < > ⊆ ⊇ ⊂ ⊃ ≡ ≃ ≅ ≈ ∈ ∉ ∣ ↔".split():
+        check(f"CLAIMY sees `{op}`", bool(CLAIMY.search(f" a {op} b")), True)
+    # …and must NOT fire on an ordinary function-typed data field.
+    check("CLAIMY ignores a plain arrow", bool(CLAIMY.search(" ℕ → R")), False)
 
     # find_class must handle a signature on one line AND one spanning lines —
     # `ShellClosureMonotone`'s occupies four, and the one-line matcher
