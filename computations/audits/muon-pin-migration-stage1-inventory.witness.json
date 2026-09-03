@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
   "engineVersion": "1.4.1",
-  "computedAt": "2026-08-31T07:37:16.232223+00:00",
-  "commitSha": "3dd2019254c2a6efe43c961831ba49dd274cc409",
+  "computedAt": "2026-09-03T05:34:44.502657+00:00",
+  "commitSha": "ed440a4ca2e58b62b3f25b2c7d35c163ebf59b5d",
   "assertions": [
     {
       "name": "the flip gate cannot see most off-canonical live witnesses",
-      "computed": "49",
-      "expected": "49",
+      "computed": "51",
+      "expected": "51",
       "passed": true,
       "tolerance": "0",
       "source": "declared anchor + top-level q0Value is the gate's whole input"
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16806,
+  "durationMs": 18764,
   "computation": "muon-pin-migration-stage1-inventory",
   "scriptFile": "muon_pin_migration_stage1_inventory.py",
   "scriptHash": "59f7108ac18a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9bd4096477801502e605172bf0d9b0c8bfcec9d7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,34 +48,33 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
-      "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "--list"
+      "computations/audits/muon_pin_migration_stage1_inventory.py"
     ],
-    "reproduce": "python3 -u computations/audits/muon_pin_migration_stage1_inventory.py --list"
+    "reproduce": "python3 -u computations/audits/muon_pin_migration_stage1_inventory.py"
   },
   "description": "Stage-1 inventory for the muon-pin migration to CODATA 2022. Classifies every tracked witness by the pin VALUE it records (exact mpmath nearest-neighbour, not a prefix match) and reports how much of the off-canonical surface the q0-anchor flip gate is structurally unable to examine.",
   "result": {
     "rev": "HEAD",
-    "tracked_witnesses": 3584,
-    "off_canonical_total": 317,
+    "tracked_witnesses": 3686,
+    "off_canonical_total": 319,
     "off_canonical_deprecated": 220,
     "off_canonical_live_audit": 36,
-    "off_canonical_live_non_audit": 61,
+    "off_canonical_live_non_audit": 63,
     "by_declared_anchor": {
       "independent": 6,
-      "None": 41,
+      "None": 42,
       "proton": 11,
       "muon": 1,
-      "ambiguous": 2
+      "ambiguous": 2,
+      "both: proton q_at() + muon q_muon_at() @ CODATA 2022": 1
     },
     "gate_visible": 12,
-    "gate_invisible": 49,
-    "gate_invisible_outside_q0_fields": 24,
+    "gate_invisible": 51,
+    "gate_invisible_outside_q0_fields": 26,
     "pin_gaps_relative": {
       "A_B": "2.84163e-12",
       "B_C": "7.97839e-11",
@@ -643,6 +642,22 @@
         }
       },
       {
+        "path": "computations/probes/metallic_silver_coincidence_weighting_probe.witness.json",
+        "declared_anchor": null,
+        "off_canonical": [
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "P_proton": [
+            "data/q0_current"
+          ],
+          "B_codata_2018": [
+            "data/q0_stale_in_illustration"
+          ]
+        }
+      },
+      {
         "path": "computations/probes/probe-mup-dressing-attribution.witness.json",
         "declared_anchor": null,
         "off_canonical": [
@@ -875,6 +890,30 @@
         }
       },
       {
+        "path": "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+        "declared_anchor": "both: proton q_at() + muon q_muon_at() @ CODATA 2022",
+        "off_canonical": [
+          "A_retired_frozen",
+          "B_codata_2018"
+        ],
+        "gate_visible": false,
+        "paths": {
+          "C_codata_2022": [
+            "data/q_muon/codata_2022",
+            "q0Value"
+          ],
+          "B_codata_2018": [
+            "data/q_muon/codata_2018"
+          ],
+          "A_retired_frozen": [
+            "data/q_muon/frozen_pin"
+          ],
+          "P_proton": [
+            "data/q_proton_codata_2022"
+          ]
+        }
+      },
+      {
         "path": "computations/qbeta/qbeta-chain4-kashiwara-step3-cross-anchor.witness.json",
         "declared_anchor": "proton",
         "off_canonical": [
@@ -1084,5 +1123,7 @@
       "qou-tekx"
     ],
     "note": "Not a migration and not a ruling. An off-canonical witness is a correct record of what its producer did; this measures whether anything in the corpus would ever say it is off-canonical."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

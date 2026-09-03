@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T19:47:17.414258+00:00",
-  "commitSha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
+  "computedAt": "2026-09-03T05:29:26.024125+00:00",
+  "commitSha": "ed440a4ca2e58b62b3f25b2c7d35c163ebf59b5d",
   "assertions": [
     {
       "name": "the anchor-defining witness is on CODATA 2022, not the retired frozen pin",
@@ -30,19 +30,19 @@
     },
     {
       "name": "most A-carrying witnesses are quoting it, not computed at it",
-      "computed": "36",
-      "expected": "36",
+      "computed": "38",
+      "expected": "38",
       "passed": true,
       "tolerance": "0",
       "source": "a grep for the literal over-counts the migration surface ~10x"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "muon-pin-A-residual-surface",
   "scriptFile": "muon_pin_A_residual_surface_audit.py",
   "scriptHash": "a8e136688a4c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "3350ecb944ba1374c9b8632e141555281bd35f15",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,8 +56,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -70,8 +69,8 @@
     "C_prefix_codata_2022_canonical": "1.109978595642739"
   },
   "data": {
-    "tracked_witnesses_scanned": 3546,
-    "carrying_A_literal": 40,
+    "tracked_witnesses_scanned": 3686,
+    "carrying_A_literal": 42,
     "computed_at_A": [
       "computations/hadron-knot-table.witness.json",
       "qou-mass/src/qou_mass/data/_deprecated/ame-2020-binding-energies.witness.json",
@@ -87,6 +86,7 @@
       "computations/audits/consumer-control-arm-audit.witness.json",
       "computations/audits/fitted-labelled-canonical-audit.witness.json",
       "computations/audits/hardcoded-q0-literal-families.witness.json",
+      "computations/audits/muon-pin-A-residual-surface.witness.json",
       "computations/audits/q0-consistency-audit.witness.json",
       "computations/cal4-disguise-hunt.witness.json",
       "computations/casimir-xi-2-dig-deeper.witness.json",
@@ -115,6 +115,7 @@
       "computations/q0-value-drift-audit.witness.json",
       "computations/qbeta/qbeta-argu-phase-branch-selection.witness.json",
       "computations/qbeta/qbeta-c3-imq-ratio-and-entropy.witness.json",
+      "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
       "computations/qbeta/qbeta-meridian-holonomy-anchor-swing.witness.json",
       "computations/rho-binding-constancy.witness.json",
       "computations/toffoli-lp-stability.witness.json"
@@ -126,5 +127,7 @@
     "Bean qou-tekx's scoping text says the anchor-defining witness is the only thing frozen at A. That is stale: fca08de7d29 (2026-08-28) migrated it, and this audit measures what remains instead of assuming it.",
     "The one live file needs NO code change — hadron_knot_table is listed ideal_muon in q0_anchor_manifest.json, so a re-run resolves the muon anchor to C and writes C. The blocker is cost: per AGENTS.md the producer ran 50 minutes on deuterium, the first bound atom of nineteen, and was killed by its own timeout (exit 124, zero tracebacks). It does not crash; it does not finish.",
     "This audit does not re-pin anything and must not become a sweep. Re-pinning the anchor witness inside a bulk pass took main red on 2026-08-19 (262 correctly-stamped witnesses flipped to Q0_FLIP). q0_repin_sweep.py's ANCHOR_DEFINING exclusion exists for that; do not remove it."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
