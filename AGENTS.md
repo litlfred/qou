@@ -3966,6 +3966,51 @@ export interface AuthorNote {
 > fields and `authorNotes` is not among them. Zod strips unknown keys, so a
 > note written on one of those blocks validates clean and **vanishes**.
 >
+> **🛑 The `authorNotes` half of this is FIXED, and the standing advice at the
+> bottom was inverted. RE-MEASURED 2026-09-03.** The paragraph below listed
+> six dropped fields, five of them `authorNotes`, and closed by telling agents
+> **not** to put an author note on those four kinds. `folio-assistant`
+> **granted `authorNotes` to all four on 2026-08-24** (bean
+> `folio-assistant-5nle`), so following that advice now suppresses a field
+> that works.
+>
+> **This document could not have known, and that is the reusable lesson: the
+> validator you ran is the validator in the clone.** The count that produced
+> the table below was taken against a `folio-assistant` checkout at
+> `e1030e8` — itself already behind `main`. The same qou tree, validated
+> against `main`, reports **six** warnings of which **five are invented field
+> names** and exactly **one** is a schema gap. Re-measure with
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> `git -C folio-assistant log --oneline -1` before quoting any figure here.
+>
+> **Live state, measured 2026-09-03 against `folio-assistant` `93e476b`:**
+>
+> | class | count | status |
+> |---|---|---|
+> | invented field names (`is_mathematics` ×3, `probe`, `consumers`) | 5 | **fixed** — branch `claude/manifest-dropped-fields-2026-09-03` |
+> | schema gap: `prose:knot-periodic-table` drops `computation` | 1 | **fixed** — folio-assistant#164 |
+> | `authorNotes` dropped | **0** | fixed upstream 2026-08-24 |
+>
+> The five `authorNotes` rows the table below names — `fine-structure-data`,
+> `tm-interaction-completeness`, `millennium-bounds-via-surreals-intro`,
+> `hecke-log-decomposition-table-data`,
+> `q-beta-form-a-n1-symbolic-table-data` — **are no longer dropped**. Kept as
+> a record of what the defect cost, not as a live list.
+>
+> **The structural cause outlived the one-field fix, which is why it is worth
+> reading the rest of this box.** That grant added `authorNotes` to the four
+> schemas *by hand* and left them restating the base. Measured a week later:
+> `defines` was still absent from all four, and `cites`, `simulator` and
+> `computation` from three. `defines` is the sharp one — §4c *mandates* it for
+> every glossary term and the `defterm-declared` rule reads that array, so on
+> those kinds a term could not be declared at all. folio-assistant#164 makes
+> the four **extend `BlockBaseSchema`** and adds a guard
+> (`scripts/tests/block-base-fields.test.ts`) that fails when any block schema
+> falls behind the base, so the next field cannot be forgotten one kind at a
+> time.
+>
+> Superseded text follows.
+>
 > **Six authored fields are being dropped in this corpus right now**, and two
 > of them are substantive:
 >
