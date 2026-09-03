@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-30T08:01:47Z
+updated_at: 2026-09-03T08:33:27Z
 ---
 
 ## What
@@ -673,3 +673,103 @@ updated 2026-08-25T01:03Z — **hours before** the excision commit the same day.
 measurement stands; whether the bean is moot depends on whether its convention-C→D
 `z` diagnosis generalises beyond the one file. Noted on that bean; not closed,
 because that is a scope judgement and I did not write it.
+
+
+## Option-1 routing COMPLETE — 9 of 9, and the detector was lying about all of them (2026-09-03)
+
+Owner chose option 1 (route all). Done. Two of the nine were carrying live
+defects, and the tenth finding was in my own tool.
+
+### The nine
+
+`qbeta_physics`, `cross_check_trM_cw_seminormal_leg`,
+`qbeta_fsc_g_pattern_comparison`, `he4_binding_k_stage2_probe`,
+`he4_stage2_ranking_seminormal_xcheck`, `qbeta_decay_sdp_extended_ck`,
+`qbeta_symbolic_sdp_strict_complementarity`,
+`frakV_askey_wilson_recurrence_tie_probe`, `lambda_scale_substrate_probe`.
+
+All stay `ideal_muon` except `cross_check_trM_cw_seminormal_leg` → `physical_proton`
+(its reference witness is proton-stamped).
+
+**Safety invariant, established before anything was touched:** `q_parameter`
+derives the muon anchor from `q_muon_at(70)`, byte-identical to all 70 digits with
+what the direct reads returned. So routing moves no number, and every regenerated
+witness must be metadata-only. Verified per file; the two exceptions are called out
+below rather than smoothed over.
+
+### Two live defects found by doing it
+
+**`cross_check_trM_cw_seminormal_leg` was RED on `main`.** It compares against
+`markov-peel-atomic-tr-m.witness.json` (stamped `q0Anchor: proton`) at a 1e-15
+tolerance while pinning itself to muon — a gap seven orders of magnitude wider
+than the tolerance. `|Δ|/ref` 7.89e-08 … 2.53e-07 FAIL on all six atoms →
+1.46e-50 … 5.70e-50 OK. **The bypass is what hid it:** group-B producers are
+precisely the ones the assertion check cannot run.
+
+**`qbeta_physics` was straddling a caller by 30 ppb.** Not a producer — no
+`main()`, no witness, never `sys.argv[0]`, so its own `ideal_muon` listing could
+never fire. `paper_six_term_isotope_sweep` (unlisted ⇒ proton) imports `Q_MP` at
+line 81 and used it at 107/1103, then called `compute_substrate_quantities()` and
+got muon: 11.6141 ppb in q₀, **30.1589 ppb in `Q_A`** (amplified ~2.6× by the
+`|q²−2q−1|` near-cancellation).
+
+### A third bypass mechanism, invisible to every q₀ detector
+
+`os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")` — a script forcing its own
+anchor at import, overriding the manifest, matching **none** of the pin markers.
+Found and removed in `cross_check_trM_cw_seminormal_leg:42` and
+`he4_binding_k_stage2_probe:77`. **One remains:**
+`deltalambda/he4_binding_k_presentation_correction_probe.py:77`.
+
+### The detector was reporting all nine as still bypassed
+
+`env_override_reaches()` substring-matched the witness **filename**, which cannot
+tell reading a file from mentioning it. It matched routing comments,
+`w.add_upstream(witness_path(...))` provenance edges, and a witness string
+describing history. Fixed: key on **`derived_50_digit`**, the field a value-read
+always subscripts and a provenance reference never does, over comment- and
+docstring-stripped source.
+
+**My first fix attempt was itself wrong** — making "imports a q from
+`q_parameter`" decisive is too strong, since a file doing *both* is still
+bypassed; it turned `cross_check_trM_1ppb` and `atomic_tr_m_mpfr_50dps` into
+false positives. Caught by a 15-case test, not by eye. Verified 15/15 before
+adoption.
+
+| | before | after |
+|---|---|---|
+| group A (measurable) | 3 | **11** |
+| group B (env-bypassed) | 15 | **6** |
+
+**Part of that movement is producers being fixed and part is the detector
+stopping lying about them — do not quote it as one thing.**
+
+### B is now exclusions only, all six principled
+
+Anchor definer; flip detector (needs both pins); L1-muon cross-check (its source
+says so); dual-layer producer (asserts both); deliberate two-anchor comparison;
+and `q1_mass_gap_probe`, which validates `two_q` and `plancherel_weights_n3` from
+the **same** witness — values derived at its own q₀ — so routing q₀ away while
+keeping those comparisons would manufacture the very straddle this tranche
+removes. Nothing is left in B by accident.
+
+### Two shifts that looked like mine and were not
+
+- `qbeta_symbolic_sdp_strict_complementarity` reports "2 assertions, FAILURES".
+  The committed witness already carried `allPassed: false`, and the producer's
+  own verdict is a deliberate NEGATIVE. Checked against `git show HEAD:`.
+- `lambda-scale`'s `lambda_n_target` moved at the **16th digit** (~9.7e-17) —
+  float64 epsilon, wrong *shape* for the 0.0769 ppb anchor scale. Two controls:
+  importing `q_parameter` does not change `mp.dps` (80 → 80), and re-running the
+  **unrouted** original gives the identical new value. Pre-existing staleness.
+
+### Still open
+
+The he4 witness pair. `he4-binding-k-stage2.witness.json` still carries the
+**retired** pin and is the authoritative value the xcheck reads back; its
+producer is long-compute (154 characters, checkpointing). The xcheck's
+regenerated witness is deliberately **not committed** — alone it would bake in a
+0.0769 ppb straddle. They move together.
+
+Also open: the one remaining `setdefault` in
+`he4_binding_k_presentation_correction_probe.py:77`.
