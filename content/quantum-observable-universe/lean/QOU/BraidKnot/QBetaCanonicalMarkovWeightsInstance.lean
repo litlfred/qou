@@ -37,10 +37,19 @@ Constructed from the Markov parameter `z(q) = √q / (1 + q)`. The
 sum-of-dimensions normalisation `y_(3) + 2·y_(2,1) + y_(1,1,1) = 1`
 follows from `z + (1 - 2z) + z = 1` for any real-valued z.
 
-**Not canonical.** This is one valid inhabitant of the class. The
-canonical Wenzl weights differ; identifying THE canonical inhabitant
-is open math (residue-A categorical ID; see 1ppQ-Q$_β$ ledger). -/
-noncomputable instance CanonicalMarkovWeightsH3.explicitInstance :
+**Not canonical.** This is one valid inhabitant of the class — it
+satisfies the normalisation because `z + 2(1/2 - z) + z = 1` holds for
+*any* `z`, which is precisely why it inhabits the class without being
+the production weights.  ~~identifying THE canonical inhabitant is open
+math~~ — that is now `canonicalInstance` below (2026-09-03).
+
+⚠ **Demoted from `instance` to `def` (2026-09-03).**  It remains a
+first-class inhabitant and every use of it below is unchanged: they all
+name it explicitly with `@`, and `is_inhabited` names it too.  What
+changes is only that it is no longer a candidate for *implicit*
+resolution, so a bare `delta_tau_M_canonical q` now unambiguously means
+the canonical weights rather than whichever instance was declared last. -/
+noncomputable def CanonicalMarkovWeightsH3.explicitInstance :
     CanonicalMarkovWeightsH3 where
   y3   := fun q => markov_parameter q
   y21  := fun q => 1/2 - markov_parameter q
@@ -101,17 +110,17 @@ ratio rather than chosen to satisfy the normalisation.
 The normalisation is an identity rather than a constraint that had to be
 arranged: `(q⁴+1) + 2q² = (q²+1)²`.
 
-⚠ **Declared as a `def`, not an `instance`, deliberately.** The class already
-has one global instance (`explicitInstance`), and a second one would silently
-become the resolution default for any future bare `delta_tau_M_canonical q` —
-later instances win.  Every present use either takes the instance as a
-hypothesis binder or names `explicitInstance` with `@`, so nothing changes
-today; but promoting this to the default is a decision whose blast radius
-across the `[CanonicalMarkovWeightsH3]` consumers a per-file `lean`-direct
-check cannot verify.  It is the *canonical* weight set and arguably *should*
-be the default — that promotion is left as an explicit follow-up rather than
-taken as a side effect of adding it. -/
-noncomputable def CanonicalMarkovWeightsH3.canonicalInstance :
+**This is the class's default instance** (owner decision, 2026-09-03, bean
+`qou-6u92`).  Bare `delta_tau_M_canonical q` therefore means the production
+trace's Δτ_M, not the `√q`-bearing toy.
+
+The promotion was made as a PAIR with demoting `explicitInstance` to a `def`
+below, and the pairing is the point: two global instances of one class is a
+silent hazard, because resolution takes the later declaration and nothing in
+the source says so.  With exactly one instance, what a bare use means is
+stated rather than inferred.  Verified by `lean`-direct on all five files that
+mention the class, against a green baseline taken before the change. -/
+noncomputable instance CanonicalMarkovWeightsH3.canonicalInstance :
     CanonicalMarkovWeightsH3 where
   y3   := canonical_y3
   y21  := canonical_y21
@@ -134,6 +143,22 @@ theorem canonical_y111_eq_zero (q : ℝ) :
     `√q`-bearing `explicitInstance`. -/
 theorem canonical_is_inhabitant : Nonempty CanonicalMarkovWeightsH3 :=
   ⟨CanonicalMarkovWeightsH3.canonicalInstance⟩
+
+/-- **Resolution guard: the default instance IS the canonical one.**
+
+    The left side elaborates by instance resolution; the right names
+    `canonicalInstance` explicitly.  They are `rfl`-equal only because
+    resolution picks the canonical weights — if a second `instance` of the
+    class were ever declared, or `explicitInstance` promoted back, this would
+    stop typechecking rather than silently changing what every bare
+    `delta_tau_M_canonical q` means.
+
+    Verified to have teeth: the same statement written against
+    `explicitInstance` does *not* typecheck. -/
+theorem delta_tau_M_canonical_resolves_to_canonical (q : ℝ) :
+    delta_tau_M_canonical q
+      = @delta_tau_M_canonical CanonicalMarkovWeightsH3.canonicalInstance q :=
+  rfl
 
 /-- **Δτ_M at the canonical instance**, unfolded to the `𝔰𝔩₂`-weighted block
     sum with the `(1³)` block dropping out by the row bound. -/

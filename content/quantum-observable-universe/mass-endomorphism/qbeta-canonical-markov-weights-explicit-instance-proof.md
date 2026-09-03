@@ -42,7 +42,11 @@ These are exactly the convention-D values this block already quotes below; what 
 
 **The pre-existing `explicitInstance` is untouched and was never wrong.** It satisfies the class axiom because $z + 2(\tfrac12 - z) + z = 1$ for *any* $z$ — which is precisely why it inhabits the class without being the production weights. It differs from the canonical set on all three blocks.
 
-⚠ **The new declaration is a `def`, not a second `instance`.** A second global instance would silently become the resolution default for any future bare `delta_tau_M_canonical q`, since later instances win. Every present use either takes the instance as a hypothesis binder or names `explicitInstance` with `@`, so nothing changes today — but promoting the canonical set to the default is a decision whose blast radius across the `[CanonicalMarkovWeightsH3]` consumers a per-file `lean`-direct check cannot verify, and it is left as an explicit follow-up.
+**It is now the class's default instance** (owner decision, 2026-09-03, bean `qou-6u92`), so a bare `delta_tau_M_canonical q` means the production trace's $\Delta\tau_M$ rather than the $\sqrt q$-bearing toy.
+
+The promotion was made as a **pair** with demoting `explicitInstance` from `instance` to `def`, and the pairing is the point: two global instances of one class is a silent hazard, since resolution takes the later declaration and nothing in the source says so. With exactly one instance, what a bare use means is *stated* rather than inferred. `explicitInstance` remains a first-class inhabitant and every use of it is unchanged — they all name it explicitly with `@` — it is simply no longer a candidate for implicit resolution.
+
+The change is machine-guarded, not asserted: `delta_tau_M_canonical_resolves_to_canonical` is `rfl`-provable only because resolution picks the canonical weights, so declaring a second instance or promoting `explicitInstance` back would stop it typechecking rather than silently changing what every bare use means. The guard was verified to have teeth — the same statement written against `explicitInstance` does not typecheck. All five files that mention the class are `lean`-direct exit 0, against a green baseline taken *before* the change.
 
 Measurement: [`canonical_markov_weights_h3_are_sl2_dimensions.py`](https://github.com/litlfred/qou/blob/main/computations/probes/canonical_markov_weights_h3_are_sl2_dimensions.py) (11/11).
 
