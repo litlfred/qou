@@ -601,3 +601,67 @@ for 3₁, 4₁, 5₂ (the snappy wheel's Magma fixtures; the ptolemy DB is
 firewalled). Exact integer arithmetic throughout; volumes printed for
 orientation and never computed with. Nothing is wired, nothing is fitted, and
 `A_ω` remains underived.
+
+── 2026-09-03 (6): D1-b part 2 — the pincer closes, and the needle is threadable ──
+
+`computations/qbeta/dt_d1b_nz_triangulation_invariance_pincer_probe.py`,
+**7/7** (same PR #6509). Part 1 concluded the dictionary must be
+polarization-dependent and deliberately left that open. This closes it.
+
+### The bracket
+
+| | |
+|---|---|
+| **too coarse** | the basis-independent invariant (part 1) is constant across all knots at fixed `N` |
+| **too fine** | the RAW polarization datum is not a manifold invariant at all — retriangulating ONE manifold moves `(N, SNF(P), det P, rank P)` for `P = A_edge·B_edgeᵀ` |
+
+The node count **is** a manifold invariant, so the dictionary must be
+**strictly finer than the Smith normal form, yet triangulation-invariant.**
+
+### The constructive half — that class is non-empty
+
+The corpus already holds a verified member: the **Dimofte–Garoufalidis 1-loop
+invariant `τ`** (`computations/one_loop_torsion.py`). Measured here it is
+triangulation-invariant (spread `0.0` / `1.4e-40` at 40 dps) and it
+**separates all five N=5 knots the SNF collided**, smallest pairwise gap
+`0.555`:
+
+    6_2  2.2165899308911189066      9_42    8.9879137538564859187
+    7_3  2.7717413902489047800      10_139  6.7715656780558894839
+    8_20 5.9288297060394782874
+
+**So D1-b is LOCATED, not excluded** — the dictionary lives among the
+triangulation-invariant functionals of the NZ datum.
+
+### 🛑 Why NO `τ → C` map is proposed — a hard data limit, not caution
+
+`τ` is a complex number, not an integer count; separating is not counting.
+Sharper: **this corpus cannot test any such map.** Certified `C` exists for
+exactly three knots (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled) and `τ` is **undefined on 3₁** because it is not hyperbolic. That
+leaves **two** usable `(τ, C)` points, and any two-parameter family fits two
+points exactly — a map fitted here would be **unfalsifiable by construction**.
+
+**What would unblock the search is DATA, not cleverness:** more certified
+connection counts, i.e. the ptolemy database or magma. That is now the
+concrete dependency for D1-b, and it belongs beside D1-f's watch items.
+
+### One thing I got wrong and fixed before it landed
+
+The part-2 docstring first said "**eleven** distinct values" for 6₂.
+`randomize()` walks a random move sequence, and the next run gave **nine**. A
+stochastic count written as a fixed one is exactly the staleness pattern this
+corpus keeps paying for. The docstring now says the count is stochastic,
+points at the witness for the run's own figures, and notes that only the
+qualitative fact — that it moves at all — is load-bearing; the assertion tests
+`> 1`.
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, strictly finer than `GL × GL`. Three
+controls, including one (`C3′`) that exists because the invariance claim would
+otherwise be vacuous — an invariance test passes trivially when nothing was
+varied — and one (`C1′`) checking `τ(4₁) = √3/2` against DG's own worked
+example, because the module records that **three** 1-loop implementations
+existed here and disagreed. mpmath at 40 dps; no float64. Nothing wired,
+nothing fitted, `A_ω` underived.
