@@ -466,6 +466,15 @@ def main() -> int:
         },
     }
     out = _COMP / "probes" / "coulomb-from-crossing-counts.witness.json"
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
+    # this one. Ask for the anchor with the same precedence q_parameter
+    # uses at compute time (env var > manifest stem > proton) rather than
+    # hardcoding a pin this run may not have used.
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
+    wit["q0Anchor"] = _q0a
+    if _q0v:
+        wit["q0Value"] = _q0v
     out.write_text(json.dumps(wit, indent=2) + "\n", encoding="utf-8")
     print(f"  witness: {out}")
     return 0 if ok else 1
