@@ -1,0 +1,621 @@
+{
+  "engine": "snappy-neumann-zagier-exact-integer",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T12:49:04.224200+00:00",
+  "commitSha": "b8d883189d4393835916f2d6c5a542b3c606e461",
+  "assertions": [
+    {
+      "name": "C4_the_SNF_routine_DISCRIMINATES_on_hand_built_matrices",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "three matrices -> three distinct normal forms [(1, 6), (1, 5), (2, 30)]; so a constant result below is a fact about the manifolds, not about this code"
+    },
+    {
+      "name": "C1_edge_block_satisfies_the_NZ_SYMPLECTIC_identity",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "A_edge . B_edge^T is symmetric for all 16 knots — this is Neumann-Zagier's theorem, so the extracted matrices really are the NZ gluing datum"
+    },
+    {
+      "name": "C2_cusp_rows_satisfy_the_1_CUSPED_NZ_relation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "A_mu.B_lambda^T - A_lambda.B_mu^T = 2 for all knots — the meridian/longitude rows are correctly identified"
+    },
+    {
+      "name": "C3_the_NZ_RANK_STRUCTURE_holds",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "rank(A|B) = N+1 and edge-block rank = N-1 for all knots, i.e. the one relation among the edge equations plus two cusp rows"
+    },
+    {
+      "name": "C5_the_datum_AGREES_with_the_corpus_s_OWN_extractor",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "snappy's rectangular form and one_loop_torsion.nz_pair are related by (A,B) = (a,-b) EXACTLY, on every row of every knot (N up to 13). So this is not a second, possibly-divergent extraction — it is the same NZ datum the corpus already computes, in a stated convention"
+    },
+    {
+      "name": "C6_the_SNF_is_INVARIANT_under_that_convention_flip",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "negating the B columns is unimodular, so SNF(A|-B) = SNF(A|B); verified per knot rather than assumed. The degeneracy below is therefore not an artifact of which convention was used"
+    },
+    {
+      "name": "the_SNF_is_a_function_of_N_ALONE",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "(1)^N + (2) + (0) for every one of 16 knots, N=2..13; at each fixed N all knots give ONE SNF. The invariant carries no knot-theoretic information at all"
+    },
+    {
+      "name": "five_PAIRWISE_NON_ISOMETRIC_HYPERBOLIC_knots_share_ONE_SNF",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "['6_2', '7_3', '8_20', '9_42', '10_139'] are all hyperbolic and pairwise non-isometric (is_isometric_to, not a volume comparison) yet give the single SNF (1, 1, 1, 1, 1, 2, 0) — so the degeneracy is NOT an artifact of including the non-hyperbolic 3_1"
+    },
+    {
+      "name": "3_1_and_4_1_share_an_SNF_but_have_DIFFERENT_certified_C",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "identical SNF (1, 1, 2, 0), C = 2 vs 3. CAVEAT, stated because it matters: 3_1 is not hyperbolic ('contains flat tetrahedra'), so a geometric dictionary may be undefined there. This instance CORROBORATES; the N=5 group above is what establishes the claim"
+    },
+    {
+      "name": "CONSEQUENCE_the_dictionary_must_be_POLARIZATION_DEPENDENT",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "no GL(Z)xGL(Z)-invariant function of (A|B) can supply a node count separating 4_1 from 5_2, so the NZ->Q dictionary must read the matrix's actual entries in a fixed polarization. Scope-(a): DGG acts by Sp(2N,Z), finer than GLxGL, so such a construction is NOT excluded — D1-b is constrained at its entry, not refuted"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 145,
+  "computation": "dt-d1b-nz-gluing-invariant-entry",
+  "scriptFile": "dt_d1b_nz_gluing_invariant_entry_probe.py",
+  "scriptHash": "89b09349119f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_nz_gluing_invariant_entry_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_nz_gluing_invariant_entry_probe.py"
+  },
+  "description": "D1-b (qou-q9ih) entry test, run before the NZ->Q dictionary is assembled. The Smith normal form of the Neumann-Zagier gluing matrix (A|B) is (1)^N + (2) + (0) for every one of 16 knots spanning N=2..13 tetrahedra -- a function of the tetrahedron count alone. Five pairwise non-isometric HYPERBOLIC knots at N=5 share it, so the degeneracy does not rest on the non-hyperbolic 3_1. Hence no GL(Z)xGL(Z)-invariant function of the NZ gluing matrix can supply D1-b's node count, which must separate 4_1 (3 connections) from 5_2 (4). The dictionary must read the matrix in a FIXED POLARIZATION. Scope-(a): the DGG construction acts by Sp(2N,Z), a strictly finer equivalence than GLxGL, so a polarization-dependent construction is NOT excluded and D1-b is NOT refuted. Neither input is re-derived: node counts come from dt_crossknot_connection_count_certified_probe, and the NZ datum is cross-checked against the corpus's own extractor one_loop_torsion.nz_pair, which agrees exactly as (A,B)=(a,-b). Six controls verify the datum is genuine NZ data (edge A.B^T symmetric; cusp pairing 2; rank N+1 and edge rank N-1; the nz_pair agreement; SNF invariance under that convention flip) and that the SNF routine discriminates. Exact integer arithmetic; distinctness by is_isometric_to, never by comparing volumes. Nothing wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "knots": {
+      "3_1": {
+        "tetrahedra": 2,
+        "snf": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 3,
+        "rank_edge_block": 1,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "contains flat tetrahedra",
+        "hyperbolic": false,
+        "volume_display_only": "0",
+        "certified_connections": 2
+      },
+      "4_1": {
+        "tetrahedra": 2,
+        "snf": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 3,
+        "rank_edge_block": 1,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "2.0298832128",
+        "certified_connections": 3
+      },
+      "5_1": {
+        "tetrahedra": 3,
+        "snf": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 4,
+        "rank_edge_block": 2,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "contains flat tetrahedra",
+        "hyperbolic": false,
+        "volume_display_only": "0",
+        "certified_connections": null
+      },
+      "5_2": {
+        "tetrahedra": 3,
+        "snf": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 4,
+        "rank_edge_block": 2,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "2.8281220883",
+        "certified_connections": 4
+      },
+      "6_1": {
+        "tetrahedra": 4,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 5,
+        "rank_edge_block": 3,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "3.16396322888",
+        "certified_connections": null
+      },
+      "6_2": {
+        "tetrahedra": 5,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 6,
+        "rank_edge_block": 4,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "4.40083251612",
+        "certified_connections": null
+      },
+      "6_3": {
+        "tetrahedra": 6,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 7,
+        "rank_edge_block": 5,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "5.6930210913",
+        "certified_connections": null
+      },
+      "7_1": {
+        "tetrahedra": 4,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 5,
+        "rank_edge_block": 3,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "contains flat tetrahedra",
+        "hyperbolic": false,
+        "volume_display_only": "0",
+        "certified_connections": null
+      },
+      "7_2": {
+        "tetrahedra": 4,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 5,
+        "rank_edge_block": 3,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "3.33174423164",
+        "certified_connections": null
+      },
+      "7_3": {
+        "tetrahedra": 5,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 6,
+        "rank_edge_block": 4,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "4.59212569703",
+        "certified_connections": null
+      },
+      "7_4": {
+        "tetrahedra": 6,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 7,
+        "rank_edge_block": 5,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "5.13794120187",
+        "certified_connections": null
+      },
+      "8_18": {
+        "tetrahedra": 13,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 14,
+        "rank_edge_block": 12,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "12.350906209",
+        "certified_connections": null
+      },
+      "8_19": {
+        "tetrahedra": 3,
+        "snf": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 4,
+        "rank_edge_block": 2,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "contains flat tetrahedra",
+        "hyperbolic": false,
+        "volume_display_only": "0",
+        "certified_connections": null
+      },
+      "8_20": {
+        "tetrahedra": 5,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 6,
+        "rank_edge_block": 4,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "4.1249032518",
+        "certified_connections": null
+      },
+      "9_42": {
+        "tetrahedra": 5,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 6,
+        "rank_edge_block": 4,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "4.0568602242",
+        "certified_connections": null
+      },
+      "10_139": {
+        "tetrahedra": 5,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "rank_AB": 6,
+        "rank_edge_block": 4,
+        "edge_ABt_symmetric": true,
+        "cusp_pairing": 2,
+        "agrees_with_corpus_nz_pair": true,
+        "snf_invariant_under_convention_flip": true,
+        "solution_type": "all tetrahedra positively oriented",
+        "hyperbolic": true,
+        "volume_display_only": "4.85117075733",
+        "certified_connections": null
+      }
+    },
+    "snf_by_tetrahedron_count": {
+      "2": {
+        "knots": [
+          "3_1",
+          "4_1"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      "3": {
+        "knots": [
+          "5_1",
+          "5_2",
+          "8_19"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      "4": {
+        "knots": [
+          "6_1",
+          "7_1",
+          "7_2"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      "5": {
+        "knots": [
+          "10_139",
+          "6_2",
+          "7_3",
+          "8_20",
+          "9_42"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      "6": {
+        "knots": [
+          "6_3",
+          "7_4"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      "13": {
+        "knots": [
+          "8_18"
+        ],
+        "distinct_snfs": 1,
+        "snf": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ]
+      }
+    },
+    "n5_hyperbolic_group": {
+      "knots": [
+        "6_2",
+        "7_3",
+        "8_20",
+        "9_42",
+        "10_139"
+      ],
+      "isometric_pairs_found": [],
+      "shared_snf": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0
+      ]
+    },
+    "reused_not_rederived": {
+      "node_counts": "dt_crossknot_connection_count_certified_probe.py (certified against the snappy wheel's Magma fixtures)",
+      "nz_extractor": "computations/one_loop_torsion.py::nz_pair — cross-checked in C5, not replaced",
+      "convention_relation": "snappy rect (A,B) = (a, -b) with (a|b) = nz_pair(raw_row, N); exact on every row"
+    },
+    "corpus_findings_that_rescope_d1b": {
+      "potential_not_needed": "aomega_m2_bps_cohomology.py / AomegaM2BPSCohomology (lean-direct exit 0): the Davison-Meinhardt plethystic log is trivial and dim BPS_d = |Omega_d|, so a potential-free abelianized quiver already realizes {3,4}. D1-b's 'arrows AND potential' asks for an object recorded as unnecessary. Scope-(a), conditional on the imported eq-(98) datum",
+      "seven_one_is_a_noop": "barEven := plus+minus, barOdd := plus-minus, so (7,1) is arithmetic on (4,3) and carries zero independent information (D1-a Result 0)",
+      "live_constraint": "QuiverMirrorAutomorphismExcluded (sorry-free) — the mirror must act on the stability RAY, never as a quiver automorphism, or the counts are forced equal and (4,3) is unreachable",
+      "literature_gap": "Alim-Cecotti-Cordova-Espahbodi-Rastogi-Vafa 'BPS quivers and spectra' — the triangulation-to-BPS-quiver precedent — is NOT held in library/; DGG (1108.4389, 1112.5179), KS (0811.2435) and Davison-Meinhardt (1601.02479) are"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "excludes": "functions of the NZ gluing matrix invariant under integral row/column equivalence (GL(Z) x GL(Z)), equivalently functions of its Smith normal form",
+      "does_NOT_exclude": "polarization-dependent constructions; the DGG closed sector acts by Sp(2N,Z), a strictly finer equivalence, and reads the matrix entries",
+      "certified_C_available_for": [
+        "3_1",
+        "4_1",
+        "5_2"
+      ],
+      "certified_C_caveat": "only 3_1, 4_1, 5_2 ship Magma fixtures in the snappy wheel; the ptolemy DB is firewalled. 3_1 is non-hyperbolic, so the N=2 C-collision corroborates rather than establishes",
+      "arithmetic": "exact integers / sympy Rationals throughout; volumes are printed for orientation and never computed with; manifold distinctness via is_isometric_to",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
