@@ -596,3 +596,46 @@ output without checking the helper ran what I thought it ran. A script path
 that does not exist fails into a fallback that returns plausible numbers.
 **When a comparison comes back "identical", check the measurement can move at
 all** — the stability control above is what would have caught this immediately.
+
+### Addendum, same day — the 1745 → 1742 delta is TREE-DEPENDENT
+
+Re-measured a third time against **current** `main` (`8ddfeaf1b7`), with the
+branch merged onto it, correct script path, same method:
+
+```
+current main   ->  Q0_ANCHOR_MISSING: 1745
+branch merged  ->  Q0_ANCHOR_MISSING: 1745      IDENTICAL
+```
+
+So the 3-witness improvement recorded above is **not visible on today's tree**.
+
+Three separate facts, all true, and they must not be collapsed:
+
+1. The **original** claim ("all 13 counters identical") measured nothing — wrong
+   script path, stale witness read on both sides. **That retraction stands
+   unconditionally**, whatever any later number says.
+2. Measured properly at main `2cf6afcbf8`: **1745 → 1742**. Real at that tree.
+3. Measured properly at main `8ddfeaf1b7`: **identical**. Real at this tree.
+
+**I have NOT established why it vanished.** What is ruled out: `witness.py` is
+untouched on `main` since the branch point (0 commits), and `8eafac7128`
+(`q0_anchor=False` declares independence) **predates** the branch, so it is not
+the cause. What did change is the witness *population* the audit walks —
+`Q0_INDEPENDENT` 72 → 76 and `Q0_AUDIT_EXEMPT` 83 → 84 on `main` between the two
+measurements. Plausibly the three witnesses this change would have stamped are
+now covered by another session's declarations, but **that is a hypothesis I did
+not test**, and naming a mechanism I have not verified is the exact error
+corrected twice above.
+
+**What this does not change:** the merge is clean (0 conflicts on current
+`main`), and the three facts measured *directly* rather than through a counter
+comparison all still hold — `q_muon_at(70)` byte-identical to the committed
+`derived_50_digit.q`, the resolver returns a value with the witness absent, and
+the producer round-trips `q0Value` + `q0Anchor` from nothing. The loop is broken
+either way; only the size of the visible side-effect moved.
+
+**The lesson is the session's own, one level up.** A number can be correctly
+measured and still go stale between measuring it and merging it. Re-measure
+against the tree you are actually merging onto, not the one you branched from —
+and when a figure moves, say which tree each reading came from rather than
+picking the newer one and quietly overwriting the older.
