@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:53:25Z
+updated_at: 2026-09-03T04:21:57Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1099,3 +1099,44 @@ remaining piece and tells the formaliser exactly what to prove.
 
 **next**: formalise `l(d(t)) = l(d(g)) + l(w)` at the first descent node. Then the Garnir
 tableau itself as a Lean definition, then 3.14's dominance induction.
+
+## Length additivity — CLOSED (PR #6444, 2026-09-03)
+
+`length_mul_eq_add_iff` is proved sorry-free in
+`QOU/Hecke/LengthAdditive.lean`:
+
+    ℓ(u * v) = ℓ(u) + ℓ(v)  ↔  invSet v ⊆ invSet (u * v)
+
+i.e. length is additive exactly when `u` undoes none of `v`'s inversions.
+Via the counting identity, also proved:
+
+    ℓ(u) + ℓ(v) = ℓ(u * v) + 2 · #{p ∈ Inv v : p ∉ Inv (u * v)}
+
+**STABLE — this is a Mathlib gap, not a Murphy-only stepping stone.** Mathlib
+has subadditivity (`CoxeterSystem.length_mul_le`) and one-sided bounds, but no
+equality criterion (checked in `GroupTheory/Coxeter/Length.lean`).
+`finPairsLT` does not substitute: sigma-typed scaffolding for `sign`, carries
+a parity not a count. So the lemma is reusable well beyond this arc.
+
+**STABLE — the enabling fact is `length_eq_invCount`** (`QOU.Hecke.PermLength`,
+already on main): Coxeter length IS the inversion count. That is what converts
+the obligation from Coxeter theory into combinatorics, and Mathlib lacks it too.
+Any future length-additivity work should start there rather than from `length`.
+
+**TRAP — `set` on a membership predicate breaks `rw`.** Binding
+`a := fun p => p ∈ invSet v` with `set ... with ha` and then `rw [ha]` fails
+with *"motive is not type correct"*: the `Finset.filter` carries a
+`DecidablePred` instance depending on the abstracted predicate. Symptom is an
+`Application type mismatch` naming `decidableMem`. Fix used: never abstract the
+predicate — work with the difference sets `D₁ := (invSet v).filter (· ∉ invSet (u*v))`
+directly, prove the symmetric-difference decomposition by `ext`, and finish with
+`filter_card_add_filter_neg_card_eq_card` + `filter_mem_eq_inter` + `omega`.
+
+**Verification** (CI is dispatch-only; the agent's own check is the gate):
+`lean`-direct exit 0 on the new file and on `PermLength.lean`, zero warnings;
+`#print axioms` on all four new results shows only
+[propext, Classical.choice, Quot.sound] — no sorryAx; zero `sorry` in the file.
+
+Non-vacuity is committed in-file as `decide` guards rather than checked once:
+the criterion is false for the collapsing `s₀ * s₀`, true for the reduced
+`s₀ * s₁`, and the defect there is genuinely 2. Both sides of the iff occur.
