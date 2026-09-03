@@ -63,8 +63,14 @@ Two losses, not one:
   traces committed as `*.a5_exact.{pnpnn,nnnnn}.json`; the precision probe
   re-derives the table from them. (First runs were killed by a container
   reset; re-run on the rebuilt engine.)
-- [ ] A=6 homonuclear exact — running, minimal-n route, two n=18 traces at
-  128 bits, ~2.5 h remaining at 2 workers.
+- [x] A=6 homonuclear exact (128-bit, minimal-n route, two n=18 traces,
+  2026-09-03): L_6 = 5.13375559430685; size-only recursion gives c_6 = -6.59803338726, signs
+  k=2..6 `+--+-`, |C(6,6)c_6 / C(6,5)c_5| = 0.562375. Sidecar committed;
+  `the_size_only_recursion_reaches_order_six_probe` re-derives everything and
+  cross-checks L_2..L_5 / c_2..c_5 against the 200-bit A=5 ambient run
+  (agreement ~1e-37, below the 128-bit floor). Every item of this bean is
+  now closed. (Two earlier runs were lost to a container reset and a tool
+  timeout; the engine is now committed under computations/.)
 - Nothing here shows the float64 route harmless elsewhere. It was harmless HERE
   because every identity tested is exact and every magnitude is O(1). The arc
   had no way to tell the difference, which is the point.
