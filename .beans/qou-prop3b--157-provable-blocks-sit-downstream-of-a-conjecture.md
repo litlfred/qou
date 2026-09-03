@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-29T19:05:00Z
-updated_at: 2026-09-03T12:53:40Z
+updated_at: 2026-09-03T13:05:02Z
 ---
 
 Reached from `qou-hprp`'s revised order, which put
@@ -435,3 +435,62 @@ preserving the genuinely-new parts (`ho_spacing`, `so_exceeds_spacing`,
 repoint stands independently of it.
 
 Audit: `docs/audits/2026-09-03-shell-transition-knot-ref-repoint-and-the-sibling-lookup-table.md`
+
+
+### 2026-09-03 — 🛑 the 2026-08-08 inconsistency repair fixed the LIBRARY copy and left the sibling
+
+`lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean` carries a history
+section recording that until 2026-08-08 its statement was
+
+```lean
+axiom b1_hyperbolic_rows
+    (n_hyperbolic_rows_verified : Nat) (bloch_suslin van_der_veen : Prop) :
+    bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
+```
+
+— every binder universally quantified, **the count included**, so it asserts
+`3 ≤ n` for *every* `n` given *any* two `Prop`s, and instantiating at `n = 0`
+with both `True` proves `False`. Bean `qou-t7zg` repaired it.
+
+**The sibling `appendix-surreals/b1-hyperbolic-rows-theorem.lean` still had it,
+verbatim, as of today.** Reproduced rather than inferred:
+
+```
+theorem sibling_axiom_is_inconsistent : False := by
+  have h : (3 : Nat) ≤ 0 := b1_hyperbolic_rows 0 True True trivial trivial
+  omega
+
+lean exit 0
+'sibling_axiom_is_inconsistent' depends on axioms:
+  [propext, Quot.sound, QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows]
+```
+
+Its own header said *"This file is documentation only"* — an `axiom` in a
+`.lean` file is not documentation, whatever the header says. And this sibling is
+what the block's `lean.ref` resolves to **first** (§0a candidate 1), so a reader
+following the reference reached the unsound copy, not the repaired one.
+
+**Fixed:** the sibling now declares nothing, so route (1) finds nothing and the
+reference falls through to the repaired library version. `lean` exit 0 on the
+emptied file. **The propagation audit is unchanged at 25 with the same three
+blockers — this is a soundness fix, not a violator fix**, and I checked rather
+than claiming otherwise.
+
+**Generalisation worth a sweep:** a repair applied to one of a library/sibling
+pair leaves the other live, and the sibling is the one `lean.ref` reaches first.
+Nothing in the corpus checks that the two agree.
+
+### And why `conj:b1-hyperbolic-rows-theorem`'s 7 violators should NOT be cleared yet
+
+The obvious move is converting the library's `axiom b1_holds_at_row` into a
+`class`, which is what §3b prescribes for a conjecture and is strictly weaker
+than a global axiom (a class with no instance forces every consumer to carry the
+binder; an axiom is usable silently). That would clear all 7.
+
+**Do not do it alone.** The propagation audit checks only the *class* half of
+§3b-cond, not the downstream `[Instance]` binder. Converting the axiom while the
+7 downstream blocks still lack their binders would clear 7 violators in the
+audit while nothing downstream actually became conditional — the same
+satisfying-the-visible-half move this bean refused for `conj:magic-numbers-from-q`.
+The conversion is right **only** as a package with the 7 downstream signatures,
+which is real work across 7 blocks and should be claimed as such.
