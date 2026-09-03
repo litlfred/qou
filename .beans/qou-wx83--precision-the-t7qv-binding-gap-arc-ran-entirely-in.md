@@ -42,10 +42,29 @@ Two losses, not one:
   hierarchy, the 12-ordering sweep — stays a float64 measurement. Sign and
   magnitude claims with margins ~1e13 above the float64 floor, so not in doubt
   the way a 1e-15 residual was, but NOT exact and not to be quoted as exact.
-- Add forward-pointer blocks to the arc's probes that quoted a residual as
-  evidence: `cumulant_hierarchy_does_not_converge`,
-  `c5_sign_is_robust_convergence_claim_is_not`,
-  `four_body_term_and_the_h12_collapse`, `three_body_term_has_the_wrong_sign`.
+- [x] Forward-pointer blocks on the four probes that quoted a residual as
+  evidence (`0d5c3f9972a`).
+- [x] Lean: `QOU/Mass/SubsetCumulantRecursion.lean` (`dce9420f3b8`) — reconstruction,
+  the size-only `c_k` recursion, mixed cumulants vanish across an additive
+  split, the seminormal radicand `a·a' = −1/[ρ]²`, and the Hecke root product.
+  Sorry-free, axioms `propext/Classical.choice/Quot.sound` only, recompiled
+  after the 2026-09-03 container reset. What is NOT in Lean: exchangeability
+  of `L_S` and its n-independence — properties of the specific trace,
+  established at 200 bits, not derivable from the corpus's `MarkovTrace.lean`
+  (cyclicity + single-generator conjugation only; no split-link tensor rule).
+- [x] A=5 exact, both orders (200-bit, all 26 subset traces each, ~29 min per
+  ordering, 2026-09-03): every float64 figure reproduced to all 9 printed
+  digits. `pnpnn`: c₂ +7.272615735, c₃ −3.786046394, c₄ −1.230795704,
+  c₅ +1.604498983, |c₅/c₄| = 1.303627, signs + − − +. `nnnnn`: c₂ +9.072622655,
+  c₃ −5.081967559, c₄ −1.148549425, c₅ +1.955406398, ratio 1.702501.
+  Reconstruction residual 0 at 200 bits, both. Exchangeability spreads
+  1.74e-59 / 2.49e-59 / 1.74e-59 (were 3.33e-15 / 5.77e-15 / 6.22e-15 in
+  float64); size-only vs full Möbius 3.73e-59 (was 7.55e-15). Raw 60-digit
+  traces committed as `*.a5_exact.{pnpnn,nnnnn}.json`; the precision probe
+  re-derives the table from them. (First runs were killed by a container
+  reset; re-run on the rebuilt engine.)
+- [ ] A=6 homonuclear exact — running, minimal-n route, two n=18 traces at
+  128 bits, ~2.5 h remaining at 2 workers.
 - Nothing here shows the float64 route harmless elsewhere. It was harmless HERE
   because every identity tested is exact and every magnitude is O(1). The arc
   had no way to tell the difference, which is the point.

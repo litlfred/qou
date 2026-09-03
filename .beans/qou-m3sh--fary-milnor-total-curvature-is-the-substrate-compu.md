@@ -149,3 +149,36 @@ of this note said "all positive" — wrong, corrected by the probe's own check.)
 det V = 1, Δ = (tⁿ+1)/(t+1), monodromy order 2n — all verified exactly.
 
 - [x] pencil made explicit; fibration/Seifert data added to the probe (§F)
+
+## Bring's curve as the frame (owner: "we have Bring's curve", 2026-09-03)
+
+The corpus already derives Bring's genus from torus-knot embeddability
+(`BringsSurface/EulerCharacteristicSix.lean`): `T(2,9)` must embed (Seifert
+rank 4 ≤ g), `T(2,11)` must not (5 > g) ⇒ `g = 4`, `χ = −6`. So the pages of
+every component found here — `T(2,3/5/7)`, genera 1/2/3 — embed in Bring's
+surface by the corpus's own criterion, with `T(2,9)` the maximal one.
+
+Link of the Bring cone = circle bundle over `Σ₄` of Euler number `−deg = −6 =
+χ(Σ₄)`, i.e. the unit tangent bundle `UT(Σ₄) = PSL(2,ℝ)/Γ₄`, an `~SL₂`
+manifold (Bézout 1·2·3 = 6, adjunction K = O(1)). The component complements
+`S³∖T(2,2g+1) = PSL(2,ℝ)/Δ(2,2g+1,∞)` are the same kind of object. Both carry
+the global left-invariant frame {X geodesic, Y horocyclic, V fibre rotation}:
+THAT is the coordinate frame in the complement, and it is the frame the Bring
+cone link carries. Two Reeb flows on each: V (Seifert circles = the circle
+pencil, Boothby–Wang form) and X (geodesic, Liouville form; closed orbits =
+closed geodesics of the orbifold, modular-type knots in the complement).
+
+**Flag, not verdict:** `BringCone.lean` models the cone-link Reeb triad on
+quaternion right-multiplication, `[M_i,M_j] = 2M_k` — the compact form su(2),
+i.e. the S³/Hopf picture — while `UT(Σ₄)` for a genus-4 hyperbolic surface
+carries the split form sl₂(ℝ). The "degenerate quaternionic-contact" qualifier
+may be doing this work; someone should say which real form is meant.
+
+Saddle points already in the corpus: 4 turning points of `y⁵+y+x = 0`
+(`TurningPoints.lean`, `5y⁴+1 = 0`, monodromy S₅) and 6 branch points of the
+chiral cubic (`bring_cubic_monodromy_probe`, transpositions, sign surjective).
+Corpus Reeb status: rotation channel blind to p/n (2026-06-01); constant-scale
+`D/Σ|Δθ|` falsified at ⁴He, directional correlation survives (2026-06-24);
+`ReebLinkingCWF.lean` derives the pn linking amplitude `ℓ(z) = z/√(1+z²)` from
+Markov + CWF + Kauffman transverse selection — the corpus's own Călugăreanu
+thread, and the exchange channel is the transverse (linking) direction.

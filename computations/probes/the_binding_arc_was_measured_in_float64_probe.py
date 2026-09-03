@@ -100,14 +100,38 @@ its **own** minimal system, n = 3k, rather than inside the ambient n = 3A. The
 float64 A=6 run this replaces was spending five n=18 traces to re-derive what
 n = 6, 9, 12, 15 already fix; the exact A=6 run needs two.
 
+A = 5, LANDED SEPARATELY (200-bit, 2026-09-03, ~29 min per ordering)
+--------------------------------------------------------------------
+Out of this probe's CI budget, so run by the same engine as a detached job.
+The raw 60-digit subset traces `L_S` are committed alongside as
+`*.a5_exact.{pnpnn,nnnnn}.json`, and section 7 below RE-DERIVES everything
+from them -- cumulants, reconstruction, exchangeability, size-only recursion
+-- rather than copying a log. Both orderings the arc used, all 26 subsets:
+
+    5He (pnpnn)     c_2 +7.272615735   c_3 -3.786046394   c_4 -1.230795704
+                    c_5 +1.604498983   |c_5/c_4| = 1.303627   signs + - - +
+    nnnnn           c_2 +9.072622655   c_3 -5.081967559   c_4 -1.148549425
+                    c_5 +1.955406398   |c_5/c_4| = 1.702501   signs + - - +
+
+    reconstruction residual        0 at 200 bits, both orderings
+    exchangeability (nnnnn)        |S|=2: 1.74e-59  |S|=3: 2.49e-59  |S|=4: 1.74e-59
+    size-only vs full Mobius       3.73e-59
+
+Every A=5 figure the arc quoted in float64 is reproduced to all nine printed
+digits, and the same-system comparison the table above could not make is now
+made: the arc's `3.33e-15 / 5.77e-15 / 6.22e-15` spreads and `7.55e-15`
+recursion agreement are `1.74e-59 / 2.49e-59 / 1.74e-59` and `3.73e-59`. The
+`c_5` sign, the A=5 hierarchy, and the ratio straddling `1` across orderings
+are established, not measured.
+
 WHAT IS NOT RE-ESTABLISHED HERE
 -------------------------------
-A=5 and A=6 are out of this probe's budget and are running separately. Until
-they land, **every A>=5 number in the arc -- the c_5 sign, the A=5 hierarchy,
-the ordering sweep -- remains a float64 measurement**. Those are sign and
-magnitude claims with margins ~1e13 times the float64 floor, so they are not in
-doubt the way a 1e-15 residual was; but they are not exact, they must not be
-quoted as exact, and this probe does not make them so.
+A = 6. It is running by the minimal-n route -- two n=18 traces at 128 bits, the
+lower ones already fixed by n-independence -- and until it lands the A=6
+numbers in the arc remain float64 measurements: sign and magnitude claims with
+margins ~1e13 above the float64 floor, not exact, not to be quoted as exact.
+The float64 12-ordering sweep at A=5 is not re-run either: its sign claim is
+covered by the two exact orderings, its ratio range is not.
 """
 from __future__ import annotations
 
@@ -500,11 +524,77 @@ def main() -> int:
           " n=3k,\n  not one per subset at n=3A. That is what makes A=6"
           " reachable exactly.")
 
+    # ── §3.7 A=5, re-derived from the committed 200-bit traces ──
+    print("\n" + "=" * 68)
+    print("§7  A=5 FROM THE COMMITTED 200-BIT TRACES (re-derived, not copied)")
+    print("=" * 68)
+    import json as _json
+    a5: dict = {}
+    for order in ("pnpnn", "nnnnn"):
+        side = Path(__file__).with_name(f"{Path(__file__).stem}.a5_exact.{order}.json")
+        if not side.exists():
+            print(f"  ({order}: sidecar absent, skipped)")
+            continue
+        d = _json.load(open(side))
+        Ls = {tuple(int(x) for x in k.strip("()").split(",") if x.strip()): mp.mpf(v)
+              for k, v in d["L"].items()}
+        A5 = 5
+        cum5: dict = {}
+        for r in range(2, A5 + 1):
+            for S in combinations(range(A5), r):
+                c = Ls[S]
+                for m in range(2, r):
+                    c -= sum(cum5[T] for T in combinations(S, m))
+                cum5[S] = c
+        tot = {r: sum(cum5[S] for S in combinations(range(A5), r)) for r in range(2, A5 + 1)}
+        resid5 = abs(sum(tot.values()) - Ls[tuple(range(A5))])
+        print(f"\n  {order}  ({d['bits']} bits, {len(Ls)} traces"
+              f"{', PARTIAL' if d.get('partial') else ''})")
+        prev = None
+        for r in range(2, A5 + 1):
+            rt = abs(tot[r] / prev) if prev else None
+            print(f"    k={r}  c_k = {mp.nstr(tot[r], 12):>16s}   ratio "
+                  f"{mp.nstr(rt, 7) if rt is not None else '-'}")
+            prev = tot[r]
+        print(f"    reconstruction residual {mp.nstr(resid5, 3)}")
+        rec = {"c": tot, "resid": resid5, "signs": [tot[r] > 0 for r in range(2, A5 + 1)]}
+        if len(set(order)) == 1:
+            spreads = {}
+            for r in range(2, A5):
+                vals = [Ls[S] for S in combinations(range(A5), r)]
+                spreads[r] = max(vals) - min(vals)
+            cs5: dict = {}
+            for k in range(2, A5 + 1):
+                cs5[k] = Ls[tuple(range(k))] - sum(comb(k, j) * cs5[j] for j in range(2, k))
+            worst5 = max(abs(cum5[tuple(range(k))] - cs5[k]) for k in range(2, A5 + 1))
+            print("    exchangeability spreads: " + "  ".join(
+                f"|S|={r}: {mp.nstr(v, 3)}" for r, v in spreads.items()))
+            print(f"    size-only recursion vs full Mobius: {mp.nstr(worst5, 3)}")
+            rec.update(spreads=spreads, sizeonly=worst5)
+        a5[order] = rec
+    if a5:
+        check("A=5: signs + - - + and reconstruction residual < 1e-55 in every recorded ordering",
+              all(r["signs"] == [True, False, False, True] and r["resid"] < mp.mpf("1e-55")
+                  for r in a5.values()))
+        check("A=5 (pnpnn): |c_5/c_4| = 1.3036 > 1 at 200 bits",
+              "pnpnn" in a5 and abs(a5["pnpnn"]["c"][5] / a5["pnpnn"]["c"][4]) > 1)
+        check("A=5 (nnnnn): exchangeability and size-only recursion hold below 1e-55",
+              "nnnnn" in a5 and all(v < mp.mpf("1e-55") for v in a5["nnnnn"]["spreads"].values())
+              and a5["nnnnn"]["sizeonly"] < mp.mpf("1e-55"))
+
     # ── witness ──
     try:
         from witness_base import WitnessBuilder  # noqa: E402
 
         wb = WitnessBuilder(Path(__file__).stem, engine="python")
+        for order, r in a5.items():
+            for k, v in r["c"].items():
+                wb.add_data(f"a5_{order}_c{k}_200bit", mp.nstr(v, 30))
+            wb.add_data(f"a5_{order}_reconstruction_resid", mp.nstr(r["resid"], 3))
+            if "spreads" in r:
+                for kk, v in r["spreads"].items():
+                    wb.add_data(f"a5_{order}_exch_spread_{kk}", mp.nstr(v, 3))
+                wb.add_data(f"a5_{order}_sizeonly_vs_mobius", mp.nstr(r["sizeonly"], 3))
         wb.set_description(
             "Precision audit of the t7qv binding-gap arc. The arc ran entirely "
             "in float64 -- both the seminormal matrices (numpy/scipy dtype=float) "
@@ -528,12 +618,15 @@ def main() -> int:
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(
-            "THIS PROBE COVERS A<=4 ONLY. Every A>=5 number in the arc -- the "
-            "A=5 cumulant hierarchy, the c_5 sign, the 12-ordering sweep, the "
-            "A=6 run -- is still a float64 measurement and must not be quoted "
-            "as exact. Those are sign and magnitude claims with margins ~1e13 "
-            "above the float64 floor, so they are not in doubt the way a 1e-15 "
-            "residual was, but they are not established here.")
+            "A<=4 is computed here. A=5 is RE-DERIVED here from the committed "
+            "200-bit subset traces of a detached run (sidecars "
+            "*.a5_exact.{pnpnn,nnnnn}.json, same engine, 2026-09-03); the probe "
+            "does not recompute those traces. A=6 is pending: its numbers in the "
+            "arc remain float64 measurements -- sign and magnitude claims with "
+            "margins ~1e13 above the float64 floor, not exact, not to be quoted "
+            "as exact. The float64 12-ordering sweep at A=5 is not re-run; its "
+            "sign claim is covered by the two exact orderings, its ratio range "
+            "is not.")
         wb.add_caveat(
             "200-bit precision tests ALGEBRAIC identities, which hold for every "
             "q. It buys nothing physical: Q_ERR = 9.2e-13 is q0's own stated "
