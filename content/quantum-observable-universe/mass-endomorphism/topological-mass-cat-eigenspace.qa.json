@@ -119,6 +119,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5f8844024f63",
+          "ts": "a86cd56f996f",
+          "lean": "d3d53b858e19",
+          "lean_statement": "762056610853"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T08:58:52.725Z",
+        "reviewed_sha": "43f08f0074e64359e54a82ee8afd954a927dafad",
+        "severity": "major",
+        "evidence": "lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean did not derive the decomposition. CatEigenspaceDecompositionContext carried the conclusion as the field \"decomposition\" and the theorem body was ctx.decomposition, under a docstring asserting the body was an honest sorry (3b-cond item 5). Sharper point: alpha, tau_hat, tr, nrm and m_rho were ALL fields, so the instance chose them - and nrm : R -> R is an arbitrary function, nothing making it a norm, sub-additive or even non-negative, tr likewise. So the equation was not a claim about traces and norms but about three unconstrained functions. The file had also been repaired once before: its own notes record that the prior version laundered alpha = alpha_descended + alpha_transient through a fictitious intermediate_sum.",
+        "notes": "Repaired to 1a disposition 3, and the two halves are now separated. split_eq states the algebraic identity alpha = tau(alpha) + (alpha - tau(alpha)) AS A TAUTOLOGY - it holds for every tau whatever - because that is exactly what the pre-repair version laundered as the lemmas content; naming it trivial is what stops it being mistaken for the claim again. transient_antiInvariant is real derived content: given tau additive on differences and involutive, the transient component lies in the -1 eigenspace, tau(alpha - tau alpha) = -(alpha - tau alpha). That is the eigenspace statement the lemma name promises, sorry-free and independent of any norm. Verdict major not critical: the eigenspace half is derived. Still open: norm-additivity (Pythagoras for the star-compatible Frobenius pairing) is the whole content and cannot even be stated honestly while nrm is an arbitrary function - it is a claim about a norm INDUCED by a pairing, and no pairing is constructed. Verified lean-direct exit 0. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -147,6 +166,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5f8844024f63",
+          "ts": "a86cd56f996f",
+          "lean": "d3d53b858e19",
+          "lean_statement": "762056610853"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T08:58:51.929Z",
+        "reviewed_sha": "43f08f0074e64359e54a82ee8afd954a927dafad",
+        "notes": "Repaired on this branch. CatEigenspaceDecompositionContext is deleted; cat_eigenspace_decomposition is a Prop-valued def over parameters and nothing projects a field. Verified lean-direct exit 0, sorry-free. Bean qou-z9ws."
       }
     ],
     "proof-no-trivial-true": [
@@ -2650,8 +2686,27 @@
         "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "notes": "criterion applies to dak; block kind \"lemma\" is paper"
       }
+    ],
+    "proof-docstring-sorry-mismatch": [
+      {
+        "field_hash": {
+          "md": "5f8844024f63",
+          "ts": "a86cd56f996f",
+          "lean": "d3d53b858e19",
+          "lean_statement": "762056610853"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T08:58:52.337Z",
+        "reviewed_sha": "43f08f0074e64359e54a82ee8afd954a927dafad",
+        "notes": "Resolved. The docstring claimed \"the body is an honest sorry with a manuscript citation (1a item 2), not a self-assuming projection\" over a body reading ctx.decomposition with no sorry in the file. The file now contains no sorry and does not claim one; the disposition (name over parameters) is stated explicitly. Bean qou-z9ws."
+      }
     ]
   },
-  "updated_at": "2026-08-29T15:52:33.383Z",
+  "updated_at": "2026-09-03T08:58:52.725Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
