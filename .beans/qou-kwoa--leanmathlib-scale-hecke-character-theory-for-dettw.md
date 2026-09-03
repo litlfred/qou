@@ -1,11 +1,11 @@
 ---
 # qou-kwoa
 title: 'Lean/Mathlib-scale: Hecke character theory for det(twGram) at rank >= 2 (Geck-Pfeiffer 7.2.6)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T21:39:20Z
+updated_at: 2026-09-02T22:29:28Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -106,3 +106,75 @@ qou-avt2 (in-progress) is the mathematical supplier — cite it, do not duplicat
 it. qou-mtx9 records that the GP reduction is the compute bottleneck and scales
 with WORD LENGTH, with a batched entry point (chi_lambdas_via_gp) unused in 9
 producers; relevant if this bean's verification ever needs characters in bulk.
+
+
+## Claimed 2026-09-02 by branch claude/p-neq-np-gaps-n8dxxl
+
+First move is a SCOPING CHECK, not construction: is the character-sum route
+this bean prescribes circular for the semisimplicity goal? See the entry below.
+
+## 2026-09-02 — SUPERSEDED IN ITS CONCLUSION. Semisimplicity at every rank is DONE.
+
+The bean asked for Geck-Pfeiffer character theory because det(twGram) at rank
+>= 2 needs tr(L_{T_u}) for general u. That is still true and still Mathlib-scale.
+But the CONCLUSION the determinant route was chasing — semisimplicity of the
+Hecke algebra at every rank — did not need it, and was reachable by composing
+four things that already existed in the corpus and had never been put together.
+
+QOU/SchurWeyl/HeckeSemisimpleGeneral.lean (new, sorry-free, #print axioms clean
+on all four declarations):
+
+  isSemisimpleRing_hecke              q != 0, q^2 != 1  =>  IsSemisimpleRing (Hecke R q q^-1 n)
+  isSemisimpleRing_hecke_of_one_lt    1 < q             =>  same, at every n
+  wenzlCriterion_of_one_lt            a MODEL for the cited WenzlCriterion
+  semisimple_of_one_lt_unconditional  the composition, no cited class left
+
+### The four pieces, all pre-existing
+
+* QOU.SchurWeyl.heckeWedderburn (SW-7): H_{n+1}(q) = prod_lambda M_{d_lambda}(R)
+  at EVERY n. I verified the whole chain sorry-free: rskBurnsideHolds
+  (sum d^2 = n! from Robinson-Schensted), heckeProduct_surjective, the
+  dimension squeeze, heckeProduct_bijective, heckeWedderburn.
+* QOU.MathlibExt.MatrixSemisimple.instIsSemisimpleRing_matrix — fills Mathlib's
+  proof_wanted IsSemisimpleRing.matrix for division rings.
+* Mathlib's finite-product IsSemisimpleRing instance.
+* Mathlib's RingEquiv.isSemisimpleRing.
+
+### What this discharges
+
+WenzlCriterion (Information/PNeqNpEquivalence.lean) calls itself a "hypothesis
+class, not a theorem of this development" and had NO INSTANCE anywhere in the
+corpus. Every consumer of semisimple_of_one_lt was therefore conditional on an
+assumption with no known model. It has one now.
+
+NOT an instance, deliberately: a blanket instance over all q would be FALSE as
+the class is stated, since WenzlGeneric 0 n holds vacuously (0^k = 0 != 1)
+while q = 0 is degenerate. Hence a theorem taking 1 < q.
+
+### What is NOT superseded — the bean stays open for this
+
+* CARRIER. This is QOU.SchurWeyl.Hecke R q q^-1 n, NOT QOU.Hecke.IwahoriHecke
+  K q n. Different RingQuots of different relations; bridging them is qou-img9.
+  The T_w route remains the only one that reaches IwahoriHecke itself, so
+  twGram is NOT retired.
+* FIELD. R only. The genericity hypotheses are exactly right over the reals
+  (q != 0 and q^2 != 1 force [k]_q != 0 for every k there) and would be wrong
+  over a general field, where a root-of-unity hypothesis is needed.
+* det(twGram) at rank >= 2 is still open and still Mathlib-scale. What changed
+  is that it is no longer the only road to the conclusion — so pursue it for
+  the IwahoriHecke carrier and for the determinant value, not because
+  semisimplicity depends on it.
+
+### Method note worth keeping
+
+This is the corpus-grep discipline paying at maximum value: a bean scoped as
+multi-session research collapsed to one composition file because the pre-build
+check found the conclusion already reachable. Run the checklist BEFORE building.
+
+### Tooling trap, recorded because it cost a repair
+
+`beans update --body-append "..."` with a DOUBLE-QUOTED shell argument lets the
+shell expand backticks as command substitution. Backticked identifiers were
+executed ("proof_wanted: command not found") and their text was DELETED from
+the bean, silently truncating the rest of the append. Pass long bodies through
+a file, or single-quote the argument.

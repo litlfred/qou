@@ -1024,6 +1024,21 @@ def main() -> int:
         _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
     print(f"\nWrote {out.name}")
+    # ADVISORY-MODE NOTICE (qou-6sts). Without --strict this function returns 0
+    # no matter how red the corpus is, so `$?` is not a gate. The documented
+    # paths already pass --strict (scripts/precision-gates.sh,
+    # .github/workflows/witness-staleness.yml) -- this notice exists for the
+    # HAND-run, which is how six PRs in one session came to report "gate
+    # passed" off a bare invocation that could not have failed. The exit code
+    # is deliberately unchanged so no existing caller's behaviour moves; the
+    # fix is to make the inert exit visible, not to make it blocking.
+    if not args.strict and (new_files or grew):
+        print(
+            f"\n  ⚠ ADVISORY MODE — findings above ({len(new_files)} new, "
+            f"{len(grew)} regressed) but EXIT CODE IS 0.\n"
+            "    `$?` only gates with --strict. Re-run as:\n"
+            f"      python3 {_os.path.basename(__file__)} --strict"
+        )
     return 1 if (args.strict and (new_files or grew)) else 0
 
 

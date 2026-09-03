@@ -32,24 +32,27 @@ and the C8 corollary is `KeystoneC8SuperExpBound`-specific:
   (`involutionNumber` lives in the imported `KeystoneC8SuperExpBound`).
 * `c8_superexp` — a corollary of the sibling arithmetic core `c8_lower_bound`,
   expressed over the canonical `dimSYT` / `partitionShape`. All of its own arithmetic
-  is proved; its only gap is `branching_two_one` below, which it inherits as the
-  `[RSKIdentitiesContext]` hypothesis rather than as a `sorry`.
+  is proved; it inherits `branching_two_one` below as the `[RSKIdentitiesContext]`
+  hypothesis rather than as a `sorry` — and that class is now **inhabited**, so `c8_superexp`
+  applies at every concrete `k ≥ 3`.
 
-The one remaining gap, `branching_two_one`, is a classical Standard-Young-Tableau
-counting fact Mathlib cannot yet prove — a sibling of the canonical
-`QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK correspondence (the open
-P1–P5 program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). It
-states the real proposition and carries a `-- Ref:` to Sagan.
+`branching_two_one` is `§3b`-conditional on the `RSKIdentitiesContext` class and its body
+is the matching class field, so `#print axioms` on it is clean and the hypothesis shows up
+in the signature rather than in the term.
 
-It is **not** a `sorry`, as this header used to say. It is `§3b`-conditional on the
-`RSKIdentitiesContext` class and its body is the matching class field, so `#print axioms`
-on it is clean and the gap shows up in the signature instead. No instance of that class
-exists in this corpus, so neither it — nor `c8_superexp`, which inherits the same
-hypothesis — can be applied at a concrete `k`.
+**The class is now inhabited** (2026-08-31): `QOU.Mathlib.SkewBranchingTwoOne` supplies
+`rskIdentitiesContextInstance`, so `branching_two_one` and `c8_superexp` apply at every
+concrete `k ≥ 3`. The instance lives downstream because everything skew is defined *here*;
+it is not stated unconditionally in this file only for that import-order reason.
 
-Its former companion `sum_dimSYT_eq_involution` was removed from the class on 2026-08-30
-and is now proved unconditionally; see the section below for why it was never actually
-blocked on RSK.
+And it turned out **not to need RSK**, exactly as its former companion
+`sum_dimSYT_eq_involution` did not. That companion was removed from the class on 2026-08-30
+and proved by the `1`-differential structure of Young's lattice; `branching_two_one` falls to
+the same machinery one step further on — the skew branching rule
+(`QOU.Mathlib.SkewSYTBranchingBijection`) plus the up-operator identity
+(`QOU.Mathlib.upSum_eq`), assembled in `QOU.Mathlib.SkewBranchingSum`. That is twice now that
+"Mathlib lacks RSK, therefore blocked" was recorded here as an infrastructure fact and was
+actually a mis-diagnosis.
 
 The third, `skew_le_straight`, is **proved** (§"Skew ↪ straight"): it is an
 *inequality*, and an inequality between two counts needs only an injection, not a
@@ -559,16 +562,23 @@ index-times-dimension formula, and `Σ_λ f^{λ/μ} f^λ` by `s_μ·s_1^{k−m} 
 `λ` not containing `(2,1)`.  See `skewSYT_nonempty_of_not_le`, which exhibits the
 counterexample the guard removes and checks this identity at `k = 3, 4`.
 
-This requires massive infrastructure (the RSK correspondence and hook-length formula),
-and is **not** proved here. It is not a `sorry` either: the body is
-`ctx.branching_two_one`, the matching field of the `[RSKIdentitiesContext]`
-hypothesis, so the gap sits in the signature rather than in the term and
+The body is `ctx.branching_two_one`, the matching field of the `[RSKIdentitiesContext]`
+hypothesis, so the hypothesis sits in the signature rather than in the term and
 `#print axioms` on this declaration is clean.
 
-**Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
-proves the Burnside identity `∑ (dimSYT)² = n!`. It does not yet prove this classical
-branching identity, which remains an open gap. No instance of `RSKIdentitiesContext`
-exists in this corpus, so this theorem cannot currently be applied at any `k`. -/
+**No longer a gap (2026-08-31).** `QOU.Mathlib.SkewBranchingTwoOne.branching_two_one_holds`
+proves this statement unconditionally and registers `rskIdentitiesContextInstance`, so the
+`[ctx]` here resolves and the theorem applies at every concrete `k ≥ 3`. It is kept in
+conditional form only because `SkewStandardYoungTableau` and `fDimSkew` are defined in *this*
+file, so the proof has to live downstream of it.
+
+**And it did not need RSK.** This docstring used to say the identity "requires massive
+infrastructure (the RSK correspondence and hook-length formula)". The proof uses neither: it
+is `|μ|!·∑_λ f^λ f^{λ/μ} = k!·f^μ` (`QOU.Mathlib.factorial_mul_skewPair_of_le`) at
+`μ = (2,1)`, which is the skew branching rule plus the up-operator identity — finite
+combinatorics on `YoungDiagram`. The one shelf item is the single number `f^{(2,1)} = 2`,
+from the `decide`-verified small-`n` hook bridge: a computation on one three-cell shape, not
+the hook-length formula as a theorem. -/
 theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) [ctx : RSKIdentitiesContext] :
     3 * (∑ p : Nat.Partition k,
         dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k :=
@@ -582,8 +592,12 @@ Proved term by term, by the explicit extension `straightOfSkew`: fill `(2,1)`
 with `κ = 1,2,3` and shift each skew value into `{4, …, |λ|}`.  Shapes not
 containing `(2,1)` contribute `0` on the left by the `fDimSkew` guard, so nothing
 is needed for them.  No Jacobi–Trudi and no RSK: the *inequality* is elementary
-once the injection is written down — only the two *equalities*
-(`branching_two_one`, `sum_dimSYT_eq_involution`) need the real machinery. -/
+once the injection is written down.
+
+(This used to close by saying "only the two *equalities* — `branching_two_one`,
+`sum_dimSYT_eq_involution` — need the real machinery". Both are now proved, and **neither**
+needed it. What is true is the weaker claim that an inequality needs only an injection while
+an equality needs a bijection.) -/
 theorem skew_le_straight (k : ℕ) :
     (∑ p : Nat.Partition k, fDimSkew (partitionShape p) mu21)
       ≤ (∑ p : Nat.Partition k, dimSYT p) := by
@@ -626,7 +640,10 @@ discharging its inputs by casting `branching_two_one` (A) and `skew_le_straight`
 
     k! / (9·I(k))  ≤  (Σ_{λ⊢k} (f^λ)² f^{λ/(2,1)}) / k!.
 
-All positivity and arithmetic are proved here; only (A)/(C) are RSK-supplied. -/
+All positivity and arithmetic are proved here. (A) and (C) are *hypotheses* of this
+statement, not RSK inputs: (C) is proved outright above, and (A) is `branching_two_one`,
+whose class is discharged in `QOU.Mathlib.SkewBranchingTwoOne`. So this bound now holds at
+every concrete `k ≥ 3`. -/
 theorem c8_superexp (k : ℕ) (hk : 3 ≤ k) [RSKIdentitiesContext] :
     (Nat.factorial k : ℝ) / (9 * (involutionNumber k : ℝ))
       ≤ (∑ p : Nat.Partition k,
