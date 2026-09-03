@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-03T16:59:06Z
+updated_at: 2026-09-03T20:39:14Z
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -125,3 +125,57 @@ indistinguishable from a hole.
 · `q0-value drift` (10 NEW at −0.0769 ppb, scoped under `qou-3f7a`/`qou-tekx`)
 · `CODATA stale-edition` · `mixed mpf/f64` (1 over baseline) · `witness
 scriptFile provenance` (1 NOT_A_PRODUCER).
+
+
+## 10 -> 7 blocking reds. Third gate green: `never-raises-dps`
+
+**The two remaining NEW producers were FALSE POSITIVES**, and the audit's own
+docstring contains half the reason:
+
+  > `mp.dps` is GLOBAL STATE, so an imported helper legitimately inherits the
+  > precision its caller set.
+
+Correct, and enforced by `is_runnable()`. The state flows the OTHER way too. A
+runnable producer doing `import X`, where X calls `set_compute_dps()` at module
+scope, has dps raised before a line of its own code runs. MEASURED by importing
+each candidate's module-scope imports and reading `mp.dps`:
+`magnus_sign_row_truncation_probe` and `magnus_tr_decay_perpair_cluster_probe`
+both go **15 -> 140** via `he4_magnus_omega2_sign_sparse_probe`. Reported as
+computing at 15 with 34 constructions; they compute at 140.
+
+Careful NOT to reopen `qou-nk3h`/`qou-txru`: that removed clause asked whether a
+raiser NAME appeared in an import, which proves nothing (`chi_sym_alt_closed_form`
+imported one, never called it, ran at 15, took the padding ratchet red). This
+asks whether the IMPORTED MODULE'S OWN CODE calls a raiser at module scope.
+Self-test cases for both distinctions; 9 -> 13 cases.
+
+Reported, not silently exempted — the header names each file and what it
+inherits from, because that inheritance is fragile.
+
+### 🛑 The real find here is not a gate: `e-0-lp-dual-h3.witness.json` is STALE ON MAIN
+
+Committed: `positive_cone_strong_duality_worst_relative_gap = 1.42400633925e-50`,
+`passed: true`. Re-run from a **pristine checkout, no edits**:
+`8.87357464011e-14`, `passed: false` against `tolerance="1e-15"`. All eight
+recorded duality gaps moved ~33 orders (`proton_net` 1.04e-48 -> 8.99e-15).
+
+A production LP's strong-duality check has been failing for some time and the
+committed witness says it passes. Nothing gated: the witness-failed-assertion
+ratchet is ADVISORY. **Which rank treatment is right is a numerics question
+about a production LP and is NOT settled here** — it needs someone with the
+budget to answer it. Witness regenerated so the corpus records reality.
+
+**My own retraction, recorded because the reasoning was seductive.** I first saw
+that shift right after adding `set_compute_dps()` and wrote a confident
+mechanism: global dps widens the LP's input strings, `_input_dps` raises derived
+precision, the pseudo-inverse cutoff moves ~1e-12 -> ~1e-56, different singular
+values count as zero. Plausible, specific, and **wrong** — the pristine run gives
+the identical failing value. I got as far as writing it into a source comment
+before running the one experiment that settles it. **Run the unmodified producer
+FIRST** when a number moves after your edit; it is one command and it is the only
+thing that separates correlation from cause.
+
+### Still red (7)
+`q0-anchor flip` (1, needs compute budget) · `q0-anchor refill` (`qou-fl0a`) ·
+`raw-float64` (3 regressed) · `q0-value drift` (10 NEW, `qou-3f7a`) ·
+`CODATA stale-edition` · `mixed mpf/f64` (1) · `witness scriptFile provenance` (1).
