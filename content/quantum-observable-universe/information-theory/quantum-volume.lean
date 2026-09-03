@@ -50,12 +50,12 @@ theorem qInteger_two (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1) (hqn1 : q ≠ -1) 
 /-- **S³ fibre volume** in the q-deformed metric.
     Vol(S³_q) = π² · [2]_q = π²(q + q⁻¹).
     Label: def:quantum-volume -/
-noncomputable def s3FibreVolume {M : Type*} (sp : SubstrateParameter M)
+noncomputable def s3FibreVolume {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   Real.pi ^ 2 * (sp.field p + (sp.field p)⁻¹)
 
 /-- The S³ fibre volume is positive when q > 1. -/
-theorem s3FibreVolume_pos {M : Type*} (sp : SubstrateParameter M)
+theorem s3FibreVolume_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     0 < s3FibreVolume sp p := by
   unfold s3FibreVolume
@@ -65,7 +65,7 @@ theorem s3FibreVolume_pos {M : Type*} (sp : SubstrateParameter M)
   positivity
 
 /-- At classicality (q = 1), Vol(S³_q) = 2π² = Vol(S³). -/
-theorem s3FibreVolume_classical {M : Type*} (sp : SubstrateParameter M)
+theorem s3FibreVolume_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p = 1) :
     s3FibreVolume sp p = 2 * Real.pi ^ 2 := by
   unfold s3FibreVolume
@@ -74,7 +74,7 @@ theorem s3FibreVolume_classical {M : Type*} (sp : SubstrateParameter M)
 /-- **Quantum volume** of a region with |U| brane points (homogeneous gas).
     V_q(U) = |U| · Vol(S³_q).
     Label: def:quantum-volume -/
-noncomputable def quantumVolume {M : Type*} (sp : SubstrateParameter M)
+noncomputable def quantumVolume {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (branePoints : ℕ) : ℝ :=
   branePoints * s3FibreVolume sp p
 

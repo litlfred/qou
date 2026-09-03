@@ -285,7 +285,7 @@
 | [thm:markov-trace-factorization](#thm:markov-trace-factorization) | Exact factorization of the nuclear Markov trace | Ch 12 | `qou:QOU.Archimedean.markov_trace_factorization` |
 | [thm:jones-markov-trace](#thm:jones-markov-trace) | Existence and non-degeneracy of the Markov trace (Jones, 1987) | Ch 5 | `qou:QOU.Braiding.JonesMarkovTrace` |
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 | `qou:QOU.categorical_reeb_exists` |
-| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.ofReebDecomposition` |
+| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.ArchimedeanSubstrateField.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `qou:QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal) | Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\{T(2,4),T(2,6),T(2,8)\}$ | Ch 8 | `qou:QOU.ParticleInteractions.electroweak_triplet_far_commuting_minimal` |
 | [thm:frobenius-antipode-unifies-chirality-and-tower](#thm:frobenius-antipode-unifies-chirality-and-tower) | Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure | Ch 12 | `qou:QOU.BraidKnot.frobenius_antipode_unifies` |
