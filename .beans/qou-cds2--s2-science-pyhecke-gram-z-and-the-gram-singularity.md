@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T14:14:06Z
+updated_at: 2026-09-03T05:22:25Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -826,3 +826,23 @@ the real scan. 7/7; planting `import pyhecke` takes it to 5/7 exit 1.
 
 Same defect and same fix as this PR's `trm5_zcubed` corpus scan flagging its own
 fixtures. **Two instances in one PR: it is a class, not an accident.**
+
+
+
+## 2026-09-03 (session tender-keller) — the last Lean item, claimed additively
+
+Owner picked this lane ("1") to unblock the Q_beta L2 route; on re-reading the
+live bean the science here is DONE (2026-08-19, 2026-08-30) and cds2 does NOT
+block cds1 — cds1's terminus is upstream (alpha axiomatised, functional form must
+change: qou-pdix / qou-n1dj). What remains on cds2 is the Lean for the positive
+half, which the 2026-08-30 entry says is "ready to formalise" but deferred to
+the wider file migration qou-zf9n. qou-zf9n's backing branch
+claude/rag-document-ingestion-options-orasrw no longer exists on origin and the
+bean has been idle since 2026-08-24 — so I am NOT taking over its rename item;
+I am landing the determinant ADDITIVELY in a new file
+QOU/Interactions/GramQuotientDetD.lean that imports GramMatrixH3Symbolic
+unchanged: gramQuotientD := leading 5x5 principal minor of gramMatrixD (the
+complement basis e_0..e_4, valid because gramRadicalD's last coordinate is 1),
+det = -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4/(q^2+1)^10 (the witness
+gram-h3-quotient-nondegeneracy-probe), hence det ≠ 0 and det < 0 for EVERY real
+q. That is the D successor to gramMatrix_det_ne_zero, stated about the quotient.
