@@ -1,10 +1,10 @@
 ---
 # qou-qe81
 title: phase3_triton producer wrote a GREEN witness with AssertionError strings for every row — broken since the E_0->Q_beta_n_mev rename missed a caller
-status: todo
+status: in-progress
 type: bug
 created_at: 2026-09-02T22:01:09Z
-updated_at: 2026-09-02T22:01:09Z
+updated_at: 2026-09-03T00:00:00Z
 ---
 
 Found while enumerating the witness blast radius of `qou-uiut`.
@@ -62,3 +62,137 @@ was nothing to serialise):
 That is the producer serialising `float(...)` rather than carrying mpf out of
 `binding_canonical`. Pre-existing pattern, unblocked rather than caused by the
 fix. Worth its own pass under the NO-FLOAT64 directive.
+
+## 2026-09-03 — the gate landed; the blast radius was measured first
+
+Branch `claude/qou-qe81-witness-gate`. The producer fix is `372872149` and was
+not touched.
+
+### Blast radius, measured before landing anything
+
+3175 `*.witness.json` scanned, `qou-mass/` and `/_deprecated/` excluded; 2522 of
+them carry an `allPassed` field.
+
+| shape | count | of which GREEN |
+|---|---|---|
+| (a) any nested dict with a truthy `error` key | 14 | 12 |
+| (a′) …restricted to **exception-shaped** values | **4** | **4** |
+| (b) `assertions: []` **and** `allPassed: true` | 359 | — |
+| (b′) …of those, also declaring rows | 192 | — |
+
+**`error` is overloaded, and that is the finding under (a).** Keying a gate on
+the presence of the key would be wrong about half the time: 5 of the 14 mean a
+NUMERICAL error — `mass-from-q-symbolic` has
+`.data.proton.volumes[0].error = 9.98e-13`, `m-p-spectral-corrected-50dps` has
+`.data.error = {leading_pct, full_ppm}`, `laplace-sum-theta-exactness` has
+`error: "e^{-pi^2/a} = …"`, `qbeta-ck-local-taylor-around-u0-probe` a 50-digit
+decimal string. The sibling key `err` is numeric in **all 34** of its
+occurrences. So the discriminator is the SHAPE OF THE VALUE —
+`"<SomeError>: <message>"`, what `f"{type(e).__name__}: {e}"` emits and what
+every real offender is written as. On that signal: 4 witnesses, 0 of the
+numeric-`error` ones touched.
+
+The four that go red on their next producer run:
+
+| witness | hits | assertions |
+|---|---|---|
+| `computations/sweeps/paper-six-term-isotope-sweep` | 30 `FileNotFoundError` | 2, both passing |
+| `computations/audits/producer-importability-audit` | 13 `ModuleNotFoundError` | 2, both passing |
+| `computations/term6-residues-at-roots` | 4 `ValueError` | 0 |
+| `computations/probes/delta-coupling-closed-form-probe` | 3 `ValueError` | 0 |
+
+Three of the four are the phase3_triton failure verbatim. The fourth
+(`producer-importability-audit`) is a legitimate error COLLECTOR — the import
+failures are its result — which is why the gate needed an opt-out at all.
+
+Note the top two carry **passing assertions** alongside their error rows, so a
+gate keyed on `assertions == []` would have missed the largest offender.
+
+### What landed
+
+`tools/qou-substrate/python/qou_substrate/witness.py`
+
+* `_exception_text_paths` / `_apply_error_row_gate` / `_check_error_rows`, in
+  the idiom of the existing `_check_raw_float64` / `_check_nonfinite` guards.
+  Called at the end of `build()` (on the assembled dict, because
+  `paper-six-term-isotope-sweep` carries its rows at TOP level, not under
+  `data`) and again in `save()` after the `extra` merge; idempotent.
+* **The demotion is unconditional.** `QOU_WITNESS_STRICT_ERROR_ROWS`
+  (`warn` default / `1` raises / `0` silences) controls only how loudly the
+  paths are REPORTED. An env var that could restore the green verdict would
+  recreate the exact lie.
+* The one opt-out is visible **in the witness**: top-level `expectErrors`, via
+  `WitnessBuilder.expect_errors(reason)`. Same argument as the `preserved: true`
+  freeze in `save()` — the escape hatch is a declaration in the file, not a
+  docstring and not an environment variable.
+
+Proved by construction: the same payload builds `allPassed: true` under the
+pre-change module (extracted from `HEAD`) and `allPassed: false,
+allPassedBasis: "error-rows"` under the new one.
+
+### The second checkbox: zero assertions — LABELLED, deliberately NOT flipped
+
+359 of 2522 (14 %) are green over an empty assertion array; 192 declare rows.
+Flipping that is a corpus-wide red wall, and **it was already tried**: bean
+`qou-vfy1` investigated emitting `allPassed: null` for an empty assertion list
+and WITHDREW it, because about a dozen producers write
+`return 0 if wit["allPassed"] else 1` and `None` is falsy — turning a silent
+false positive into a loud false negative.
+
+So the fix is a DISCRIMINATOR, not a flip: new top-level **`allPassedBasis`** ∈
+`{assertions, vacuous, failed-assertions, error-rows}`. This is exactly what
+`durationMsBaseline` (already in `build()`) does for the same class of problem —
+904 ambiguous callers, fixed at the one place they pass through rather than in
+the callers, because nothing at the call site distinguishes a right one from a
+wrong one. `allPassed` is unchanged for all 359, so nothing goes red; what
+changes is that a consumer can now tell earned green from vacuous green without
+re-deriving it. Declared in `schemas/witness-schema/schema/witness.schema.json`
+(`additionalProperties: true`; the JS/Python bindings already omit
+`durationMsBaseline`, so they were left alone).
+
+**Answer to "should zero-assertion green be green?"** — No, it should not be
+*read* as green, and it no longer has to be: the witness now says which it is.
+The verdict itself stays true because ~a dozen producers use it as an exit code
+and 14 % of the corpus would flip at once, which is how a checker gets switched
+off rather than fixed.
+
+### Related gates, for whoever picks up the drain
+
+This is the third sibling of a family the repo already runs two of:
+
+* `computations/witness_hollowness_audit.py` — green with `assertions: []` (H1)
+* `computations/witness_failed_assertion_audit.py` — a FAILED assertion,
+  committed green (wired into `scripts/precision-gates.sh`, advisory, baselined
+  at 111)
+* this one — a failure recorded in the **data**, where neither of the other two
+  looks
+
+`witness_hollowness_audit.py` is **wired into no gate array** —
+`precision-gates.sh` mentions it only in a comment, which is that file's own
+"a gate wired nowhere is a gate nobody runs". Wiring it has a 359-witness
+backlog in front of it.
+
+### Tests
+
+`tests/test_witness_error_row_gate.py`, 13 cases. The two load-bearing ones are
+`test_numeric_error_field_stays_green` (holds the value-shape line, without
+which the gate is a corpus-wide false alarm) and
+`test_vacuous_green_is_labelled_not_flipped` (pins the decision above so a later
+pass does not quietly re-litigate it).
+
+`python3 -m pytest tools/qou-substrate/tests/ tests/ -q` → **191 passed**
+(baseline 178 + 13). No module-scope `mp.dps`; the module needs no precision and
+says so.
+
+### Still open on this bean
+
+- [ ] The **NO-FLOAT64** item above ("Also observed, separate") —
+      `phase3_triton_binding_convention_b.py`
+      serialises `float(...)` instead of carrying `mpf` out of
+      `binding_canonical`; 25 raw float64 fields. Untouched here, genuinely
+      separate.
+- [ ] Drain the 4 witnesses above. Three are real defects whose producers need
+      fixing; `producer_importability_audit.py` should declare
+      `expect_errors(...)`. Each needs a producer re-run, so none was done here.
+- [ ] The gate is not mirrored into the vendored
+      `qou-mass/src/qou_mass/_internal/witness_base.py`.

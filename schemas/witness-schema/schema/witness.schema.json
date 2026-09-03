@@ -90,7 +90,21 @@
     },
     "allPassed": {
       "type": "boolean",
-      "description": "Convenience: whether every assertion's `passed` is true."
+      "description": "Convenience: whether every assertion's `passed` is true. NOT on its own evidence that anything was checked -- `all([])` is true, so a producer registering no assertions reports success having verified nothing. Read `allPassedBasis` alongside it. Forced false when the payload records an exception (see `expectErrors`)."
+    },
+    "allPassedBasis": {
+      "type": "string",
+      "enum": [
+        "assertions",
+        "vacuous",
+        "failed-assertions",
+        "error-rows"
+      ],
+      "description": "What the `allPassed` verdict rests on. 'assertions' -- at least one assertion, all passed (earned green). 'vacuous' -- allPassed is true over an EMPTY assertions array, so nothing was checked; measured 2026-09-03, 359 of the 2522 witnesses carrying an allPassed field are in this state, 192 of them while declaring rows. 'failed-assertions' -- at least one assertion failed. 'error-rows' -- WitnessBuilder forced the verdict false because the payload records an exception. Absent on witnesses written before 2026-09-03, where the distinction was not recorded and `allPassed: true` must not be read as evidence of a check. See bean qou-qe81."
+    },
+    "expectErrors": {
+      "type": "string",
+      "description": "Free-text declaration that recorded exceptions in this witness's payload are its RESULT, not its breakage -- an audit that collects import or smoke failures, say. Suppresses the error-row demotion of `allPassed`. Written by `WitnessBuilder.expect_errors(reason)`. Deliberately a claim inside the file rather than an environment variable, so a reader can see it and disagree with it. See bean qou-qe81."
     },
     "parameters": {
       "type": "object",
