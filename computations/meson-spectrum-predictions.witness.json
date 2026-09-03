@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:17:21.758777+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-03T04:54:19.234467+00:00",
+  "commitSha": "fd5f6620d105c84390208d401f6258b6600e4632",
   "assertions": [
     {
       "name": "one_dim_block_characters_scale_as_q_pow_n",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 24,
   "computation": "meson-spectrum-predictions",
   "scriptFile": "meson_spectrum_predictions.py",
-  "scriptHash": "7d7f3005f90e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b397a610dc64",
+  "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -92,8 +92,9 @@
       }
     ],
     "kaon_prediction": {
-      "m_pred_MeV": 186.31985677437706,
-      "m_PDG_MeV": 493.677,
+      "m_pred_MeV": "186.31985677437706",
+      "m_pred_precision": "float64 by construction — build_seminormal_matrices takes a Python float and the character contraction runs in numpy, so this agrees with the model only to the limit of double arithmetic (~16 significant digits). NOT a 50-dps value.",
+      "m_PDG_MeV": "493.677",
       "note": "structural ratio from character growth, not a fit; there is no independent expected value for the prediction itself",
       "has_independent_expected_value": false
     }

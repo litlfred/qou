@@ -198,10 +198,48 @@ def main():
                            "χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings "
                            "— the Hoefsmit eigenvalue structure the mass "
                            "ratios are read off, checked to 1e-9 relative.")
+    # TWO FIELDS, TWO DIFFERENT PRECISION STORIES, and conflating them is what
+    # put this witness on the raw-float64 ratchet (18 -> 20 REGRESSED).
+    #
+    #   m_PDG_MeV  is an experimental INPUT, and its honest width is the one
+    #              PDG quotes: 493.677 +- 0.013, i.e. 26 ppm, ~6 significant
+    #              digits. `mp.nstr` renders exactly that.
+    #
+    #              NOT `fmt`. The registry builds it as `_mpf50("493.677")`,
+    #              correctly from a string -- but an mpf is BINARY, so the
+    #              decimal 493.677 is not exactly representable and `fmt` at 50
+    #              dps prints the binary residue:
+    #              `493.677000000000000000000000000000000000000000000000169688486`.
+    #              Those trailing digits are an artifact of rendering past the
+    #              value's width, and shipping them would state 59 digits of a
+    #              quantity measured to 6 -- the same false-precision defect as
+    #              padding a float64, arrived at from the opposite direction.
+    #
+    #   m_pred_MeV is float64 BY CONSTRUCTION and cannot honestly be widened.
+    #              `full_markov_trace` calls `build_seminormal_matrices(q=q_f)`
+    #              with a PYTHON FLOAT and contracts with `np.trace`, so the
+    #              double enters at the library boundary, upstream of anything
+    #              this file controls. Serializing it at 50 digits would print
+    #              ~34 digits of noise -- the float64-padding defect -- and
+    #              this value feeds m_K/m_pi, the one scoreable L2 result,
+    #              which is precisely where false precision would do most harm.
+    #              So it is written at the double's own shortest exact width
+    #              and the limitation is stated IN the witness rather than
+    #              left for a reader to infer from a bare float.
+    #
+    # Fixing it properly means porting `build_seminormal_matrices` to mpmath.
+    # That is a shared-library change which would move m_K/m_pi, so it is NOT
+    # done here as part of a ratchet drain; bean `qou-p77d` bucket B.
+    _k_pred = next(r["m_pred_MeV"] for r in results
+                   if r["m_PDG_MeV"] == pdg["K±"])
     w.add_data("kaon_prediction", {
-        "m_pred_MeV": next(r["m_pred_MeV"] for r in results
-                           if r["m_PDG_MeV"] == pdg["K±"]),
-        "m_PDG_MeV": pdg["K±"],
+        "m_pred_MeV": repr(float(_k_pred)),
+        "m_pred_precision": (
+            "float64 by construction — build_seminormal_matrices takes a "
+            "Python float and the character contraction runs in numpy, so "
+            "this agrees with the model only to the limit of double "
+            "arithmetic (~16 significant digits). NOT a 50-dps value."),
+        "m_PDG_MeV": mp.nstr(M_K_PM_MEV_VALIDATION, 6),
         "note": "structural ratio from character growth, not a fit; there is "
                 "no independent expected value for the prediction itself",
         "has_independent_expected_value": False,
