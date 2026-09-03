@@ -233,3 +233,19 @@ PDF or the author, so they are recorded here rather than guessed:**
 key-drift repoints (`schrijver1986theory`, `stanley1999`, `neumann-zagier1985`,
 `ratcliffe`) and `rockafellar1970` / `bjorner-brenti2005` are confirmed landed
 on `main`.
+
+## 2026-09-03 (cont.) — 4 -> 3: ggmw2020 CONFIRMED from library/, added
+
+The library HOLDS the paper: `library/arxiv-2111.04763v2` =
+"Resurgence of Chern-Simons theory at the trivial flat connection",
+**Garoufalidis, Gu, Mariño, Wheeler** — exact GGMW match (the bean's warning
+against the initialism was right; the Lean's "Gukov-…-2020" was wrong on both
+the lead author and the year). Added to `references.ts` with the true authors,
+arXiv:2111.04763 (2021), CMP 406 (2025); the "eq (161)" anchor is preserved in
+the note but was not re-checked against the PDF (equations are not numbered in
+the extracted `sections/`).
+
+**Status: 3 errors remain** — `frenkel2020` (URL points to a Koroteev–Zeitlin
+paper), `koroteev-zeitlin2022` (Lean arXiv id does not resolve), `murakami1996`
+(Kauffman/Hecke, undisambiguated). All three need author input or a
+key/URL repoint, not a lookup.
