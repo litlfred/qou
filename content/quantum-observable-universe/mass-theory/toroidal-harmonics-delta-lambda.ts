@@ -3,7 +3,12 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:toroidal-harmonics-delta-lambda",
   title: "A toroidal-harmonic change of variables for the $z$-recursion",
-  is_mathematics: true,
+  // `is_mathematics: true` was written as a top-level field. No schema
+  // declares it, so zod stripped it silently and the parse succeeded — the
+  // declaration reached nothing. Moved into `meta`, the declared escape hatch
+  // (`Record<string, unknown>` on `BlockBase`), so it survives validation
+  // verbatim rather than being discarded or guessed at.
+  meta: { is_mathematics: true },
   lean: { ref: "qou:QOU.QBeta.toroidal_ode_to_markov_w" },
   computation: {
     engine: "sympy",
