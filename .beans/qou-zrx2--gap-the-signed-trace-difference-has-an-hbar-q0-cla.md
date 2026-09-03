@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-03T08:57:43Z
+updated_at: 2026-09-03T15:01:58Z
 ---
 
 
@@ -416,3 +416,49 @@ Richardson), and finds the closed form
 `QOU/MassTheory/LeadingOrderTraceCoefficient.lean`. Follow-up (5) here — the
 permutation-half formalisation (orbit count under a deleted transposition) —
 is still open and is now needed for BOTH c0 and c1.
+
+## Classical-floor closed form: one mechanism tested and REFUTED (2026-09-03)
+
+Scope (a) — this construction, alone, does not reproduce the floors. It does
+NOT exclude a dyadic origin; see what survives below.
+
+**The hypothesis.** Under convention D, z = q³/(q²+1), so **z(q=1) = 1/2
+exactly**. That makes a dyadic classical floor the EXPECTED shape rather than a
+coincidence, and the measured values decompose suggestively:
+
+    deuteron   1/8   = 2⁻² − 2⁻³
+    ⁴He        7/128 = 2⁻⁴ − 2⁻⁷
+
+If the q=1 Markov trace on a braid closing to a c-component link were
+z^(n−c), the floor would be 2^-(n−c_free) − 2^-(n−c_atom).
+
+**Refuted by measurement.** Using the corpus's own accessor —
+`TR.atom_braid_word_3A(Z, N, include_inter=False)` is the free word, the
+keyword I initially missed — the underlying permutations are:
+
+    atom      n    c_free  c_atom   predicted   measured
+    deuteron  6    6       5        1/2         1/8
+    ⁴He       12   12      11       1/2         7/128
+    |word|         22/23 (D), 44/47 (⁴He)
+
+c_free = n both times, i.e. **the free word's underlying permutation is the
+IDENTITY** — it closes to the n-component unlink, which is the right topology
+for non-interacting nucleons. c_atom = n−1: one inter-nucleon crossing merges
+exactly two components. Both are sensible, and neither yields the floor.
+
+**What this rules out:** that the classical limit is the naive cycle-count
+trace z^(n−c). It is not — the words carry 22-47 generators with signs and
+multiplicities, and at q=1 the Hecke algebra degenerates to C[S_n] but the
+Markov trace of a general element is not z^(n−c) unless the element is a
+positive permutation braid.
+
+**What survives, and is worth the next attempt:** z(1) = 1/2 is exact, so the
+floor being dyadic is structural rather than numerical, and the exponents (3
+for A=2, 7 for A=4) satisfy 2A−1. A closed form should exist; it just is not
+this one. The next thing I would test is the q=1 trace computed through the
+actual transfer/seminormal path rather than a cycle-count shortcut — i.e.
+evaluate TR.tr_m_atom_multi_q at q → 1 for both include_inter values and read
+the limit, instead of predicting it.
+
+I am recording this as a refuted mechanism rather than leaving it untried-
+looking, because the guess is the obvious one and the next agent will make it.
