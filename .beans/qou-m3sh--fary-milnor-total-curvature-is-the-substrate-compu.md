@@ -1,11 +1,11 @@
 ---
 # qou-m3sh
 title: 'Fary-Milnor: total curvature is the substrate-computable half of the serpenoid tower; the twist is the other half'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:32:27Z
-updated_at: 2026-09-03T19:40:59Z
+updated_at: 2026-09-03T20:24:26Z
 ---
 
 
