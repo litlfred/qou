@@ -165,11 +165,8 @@ per-partition character of a `(c, d, gen)` factor chain.
 
 ### Items 4 and 5 still open
 
-- [ ] Item 4: delete the `dim >= 8` numpy branch in `_matmul_dim` (measured
-      31% SLOWER than the Python loop at dim 16; object dtype has no BLAS).
-      Now only on the `use_rust=False` fallback path, so lower priority.
-- [ ] Item 5: decide the q-Gaussian tier (k_exact defaults to k_max, so
-      `active_gaussian` is empty — 193 exact, 0 gaussian).
+- [x] Item 4 — **SCRAPPED, the recommendation was wrong.** See below.
+- [x] Item 5 — decided and landed: the tier is deleted. See below.
 
 
 ## 2026-09-03 (later) — the prefix recomputation is gone. New Rust kernel.
@@ -238,3 +235,58 @@ when the installed wheel predates the new function — slower, same numbers.
 Note the wheel is EPHEMERAL per `scripts/build-pyhecke-native.sh`: it installs
 to user site-packages and dies with the container, so a fresh session must
 re-run that script or it silently takes the slow fallback.
+
+
+## 2026-09-03 — items 4 and 5 closed. Item 4 was wrong.
+
+### Item 4: SCRAPPED. Deleting the numpy branch would have been a regression.
+
+The item said to delete the `dim >= 8` numpy branch in `_matmul_dim`, citing
+"31% SLOWER than the Python loop at dim 16 (0.0126s vs 0.0096s); object dtype
+has no BLAS."
+
+Re-measured on the input types the function actually receives — nested TUPLES
+of mpf, not lists — min-of-runs:
+
+    dim   mpf (object)         float64
+      8   numpy 1.03x faster   numpy  4.20x faster
+     12   numpy 1.03x faster   -
+     16   numpy 1.03x faster   numpy  9.24x faster
+     24   numpy 1.03x faster   -
+     32   numpy 1.10x faster   numpy 22.43x faster
+     64   numpy 1.02x slower   numpy 49.42x faster
+
+The claim's REASONING is right — object dtype has no BLAS — but the
+conclusion does not follow. On mpf it is a wash (±5%, no consistent sign),
+not a 31% loss; I could not reproduce that figure in either input form.
+
+And the item missed that `_matmul_dim` is also called with **float64**
+matrices, by the q-sweep in `sdp_cross_channel.chi_at_q`. There the branch is
+worth 4x-49x and growing with dim. Deleting it would have traded nothing on
+the mpf path for a large regression on the f64 one.
+
+Landed the corrected measurement as the function's docstring instead, since
+the old one ("significant speedup for higher Hecke levels") is true only for
+f64 and misleading for the mpf path this module mostly runs.
+
+### Item 5: the tier is deleted, its derivation kept
+
+The q-Gaussian block computed `log_trace_approx`, discarded it into a
+diagnostic, and then added a **hardcoded** `delta_g = 0.0` — the zero was
+never derived from the approximation it had just computed. So it could not
+affect the answer under any input. And with `k_exact = k_max` (the default,
+and the only value any caller passes — no external call site passes `k_exact`
+at all; only this branch's own parity tests do) `active_gaussian` is empty and
+it never ran. Dead twice over.
+
+Deleted rather than repaired, on this corpus's own precedent (`qou-26f2`, the
+self-comparing `tr_M` assertion): there was nothing to repair it TO. The
+LP-complementary-slackness argument for why the contribution is zero is the
+valuable part and is kept as a comment in place; `n_gaussian_partitions` still
+reports how many partitions the cutoff skipped, which was the one honest
+signal the block produced. `_q_gaussian_character_approx` went with it (61
+lines removed in total).
+
+Verified no consumer outside this module read `log_trace` / `method:
+q_gaussian` across the .py and .json corpus (excluding the `qou-mass/`
+vendored copy). Full suite 178 passed.

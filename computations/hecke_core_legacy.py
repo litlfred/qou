@@ -1290,8 +1290,27 @@ def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
 
 
 def _matmul_dim(A, B, dim):
-    """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8 (significant
-    speedup for higher Hecke levels)."""
+    """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8.
+
+    Bean `qou-sv7h` item 5 called for deleting this branch, on a measurement
+    of "31% SLOWER than the Python loop at dim 16; object dtype has no BLAS".
+    Re-measured on the input types this function actually receives (nested
+    TUPLES of mpf, min-of-runs), that does not reproduce and the conclusion
+    inverts for the other dtype:
+
+        dim   mpf (object)        float64
+          8   numpy 1.03x faster  numpy  4.20x faster
+         16   numpy 1.03x faster  numpy  9.24x faster
+         32   numpy 1.10x faster  numpy 22.43x faster
+         64   numpy 1.02x slower  numpy 49.42x faster
+
+    The object-dtype half of the original claim is right in kind — numpy has
+    no BLAS there, so it is a wash either way (±5%, no consistent sign). But
+    this function is ALSO called with float64 matrices, by the q-sweep in
+    `sdp_cross_channel.chi_at_q`, and there the branch is worth 4x-49x and
+    growing. Deleting it would have traded nothing on the mpf path for a
+    large regression on the f64 one, so the item is scrapped, not done.
+    """
     if dim >= 8:
         return np.asarray(A) @ np.asarray(B)
     out = [[_MPF_ZERO] * dim for _ in range(dim)]
@@ -1406,66 +1425,6 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
                 chain.append((1.0, _pn_d(h), g % n_gens))   # pn
             g += 1
     return chain
-
-
-def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
-    """Perron-Frobenius dominant-eigenvalue approximation to ln|Tr M_λ|.
-
-    IMPORTANT NOTE — Bozejko-Speicher q-Gaussian does NOT apply here:
-
-      The Bozejko-Speicher q-Gaussian [bozejko-speicher1991] requires
-      |q| ≤ 1 for a convergent noncommutative distribution.  Our
-      substrate q₀ ≈ 1.11 > 1, so the Touchard pair-partition moments
-      T_n(q₀) = Σ_{π} q₀^{cr(π)} grow super-exponentially in n — NO
-      well-defined q-Gaussian distribution exists at q > 1.
-      Attempting to use Bozejko-Speicher at q₀ would conceptually
-      misapply the framework.
-
-    WHAT WE USE INSTEAD — Perron-Frobenius dominant eigenvalue:
-
-      For any representation of the braid group, the trace of a long
-      word W is dominated by the largest |eigenvalue| of the "mean"
-      crossing matrix in that representation:
-           ln|Tr M_λ(W_N)| ≈ ln d_q(λ) + N · ln|μ_λ|
-      where μ_λ is the spectral radius of a typical crossing (c·σ+d·I)
-      in the λ-irrep.  This is pure linear algebra (Perron-Frobenius
-      theorem for positive operators) and is valid for any q > 0
-      including q > 1.
-
-      For the "average" inter-nucleon crossing (mix of pp, nn, pn):
-        mean (c, d) ≈ (1, -h/2)
-        eigenvalues of (σ - h/2 I) in 1-dim sym rep: q - h/2
-        eigenvalues in alt rep: -q⁻¹ - h/2
-        max |eigenvalue|: max(|q-h/2|, |q⁻¹+h/2|)
-
-      For dim ≥ 2 irreps, the spectral radius is bounded by q (the
-      largest eigenvalue of σ in sym is q; mixing blocks have
-      eigenvalues between q and -q⁻¹).
-
-      Féray-Méliot damping [2]_q^{−(k−3)} modulates how much weight
-      higher-k partitions carry in the typical q-Plancherel spectrum.
-
-    Working approximation (uses actual crossing count, exact d_q,
-    spectral-radius-informed per-crossing rate, Féray-Méliot damping):
-
-        ln|Tr M_λ(step)| ≈ ln d_q(λ)
-                         + N(step) · [2]_q^{−(k−3)} · ln(q₀)
-
-    where N(step) = 12·(step+1) + step·(step+1)/2, and ln(q₀) is
-    the per-crossing log dominant eigenvalue (≈ 0.104).
-    """
-    k = entry['k']
-    dim = entry['dim']
-    n_intra = 12 * (step_idx + 1)
-    n_inter = step_idx * (step_idx + 1) // 2
-    N_total = n_intra + n_inter
-    # Per-partition spectral log rate ρ_λ = |χ_λ(σ_1)| / d(λ)  —
-    # computed from SYT counts without building the full YSN matrix.
-    # See partition_spectral_log_rate for derivation.
-    per_cross_log = entry.get('spectral_log_rate', _mp.log(q0))
-    # Féray-Méliot damping relative to H₃(q) baseline
-    damping = TWO_Q ** (-(k - 3)) if k > 3 else 1.0
-    return _mp.log(dim) + N_total * damping * per_cross_log
 
 
 def _msig_object_safe(sig_sparse, M_run, gen, coo_cache):
@@ -1941,23 +1900,25 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         # generate non-zero corrections — it correctly predicts
         # that typical high-k partitions are SLACK and contribute
         # nothing in the LP-dual framework.
-        gaussian_delta_total = 0.0
-        for eg in active_gaussian:
-            eg_info = eg
-            log_trace_approx = _q_gaussian_character_approx(eg_info, None, kk)
-            # By LP complementary slackness: tr > 0 ⇒ slack ⇒ y_λ* = 0
-            # ⇒ delta = 0.  This is the categorically correct outcome
-            # for partitions with no evidence of the Frobenius
-            # constraint being tight at any step.
-            delta_g = 0.0
-            gaussian_delta_total += delta_g
-            if return_per_step:
-                partitions_step[str(eg['partition'])] = {
-                    'log_trace': log_trace_approx,
-                    'delta_MeV': delta_g,
-                    'method': 'q_gaussian',
-                }
-        step_delta_total += gaussian_delta_total
+        # The loop that stood here (bean `qou-sv7h` item 5) called
+        # `_q_gaussian_character_approx`, discarded the result into a
+        # diagnostic, and then added a HARDCODED `delta_g = 0.0` — the zero was
+        # never derived from the approximation it had just computed. So the
+        # tier could not affect the answer under any input, and with
+        # `k_exact = k_max` (the default, and the only value any caller passes)
+        # `active_gaussian` is empty and it never ran at all. Dead twice over.
+        #
+        # Deleted rather than repaired, on the same grounds as the self-
+        # comparing `tr_M` assertion in `hadron_knot_table` (bean `qou-26f2`):
+        # there was nothing to repair it TO. The reasoning above is the part
+        # worth keeping and it is kept; the loop only advertised a computation
+        # it did not perform. `n_gaussian_partitions` below still reports how
+        # many partitions the cutoff skipped, which is the one honest signal
+        # the block produced.
+        #
+        # Nothing outside this module read `log_trace`/`method: q_gaussian`
+        # (checked over the .py and .json corpus, excluding the `qou-mass/`
+        # vendored copy), so no consumer loses information.
 
         # Single accumulation to cumul_total per step (after exact + gaussian)
         cumul_total += step_delta_total
