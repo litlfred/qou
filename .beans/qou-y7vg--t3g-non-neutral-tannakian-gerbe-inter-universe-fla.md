@@ -365,3 +365,16 @@ explains why it is FORCED.
 NOT FORMALISED: the ribbon-axiom computation itself. Mathlib carries Braided but
 no ribbon categories, so the file formalises the torsor group theory and the
 sign-blindness of invertibility, and argues the categorical step in prose.
+
+## ANSWERED 2026-09-03 (PR #6458, bean qou-yjwg) — yes, inequivalent fibre functors exist; they cannot carry flavour
+
+"Does QOU's braided category admit inequivalent fibre functors?" — YES, by
+Bichon 2003: on Rep(SL_q(2)) there is a fibre functor of every dimension n >= 2,
+real at q0. But a fibre functor preserves fusion rules, so under a 3-dim one
+V^{x3} = 21 + 3 + 3 and never contains the singlet the eightfold 10+8+8+1
+needs (Lean-proved, FibreFunctorDimensionNotCategorical.lean). The "non-neutral
+gerbe" framing was symmetric-theory (already retracted 2026-08-25); the
+non-symmetric answer is that the fibre functor is the wrong knob. Audit:
+docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md. Status
+left for the author; recommendation: close as answered-negative, successor is
+the axiom-5 question in the audit's §4.

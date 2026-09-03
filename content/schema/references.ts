@@ -8133,6 +8133,35 @@ export const references: Reference[] = [
     note: "The source of the decomposition the colour-algebra section depends on: fixing one imaginary unit reduces $\\mathrm{Aut}(\\mathbb{O}) = G_2$ to the stabilizer $\\mathrm{SU}(3)$, under which $\\mathrm{Im}(\\mathbb{O})$ splits as $\\mathbb{R}\\oplus\\mathbb{C}^3$ with the quark triplet and antitriplet as complex-conjugate (NOT self-dual) summands. That non-self-duality is the input the $\\mathrm{Sym}^2$ gate consumes: a self-dual 3 would carry a singlet in $\\mathrm{Sym}^2$ and fail. Added 2026-08-25 — the corpus named 'the Günaydin–Gürsey decomposition' in 7+ places (color-su3-from-g2.md, schur-weyl-eightfold.md, sm-colour-stabilizer-action.md, OctonionSU3Stabilizer.lean, OctonionSU3BracketClosure.lean, ColourComplexStructure.lean) with NO bibliography entry, and OctonionSU3Stabilizer.lean backed it with '-- Ref: [manuscript]' pointing at the corpus's own audit doc. NO DOI RECORDED: api.crossref.org is blocked by the sandbox proxy (403), so the DOI could not be verified from a primary source and is deliberately omitted rather than written from memory. The volume/issue/page above are corroborated by three independent in-repo bibliographies that cite this work: library/arxiv-2306.13098v2 ref [7], library/arxiv-2202.06733v1 ref [69], and library/arxiv-1205.4619v1 ref [7]. Accessible modern restatement: library/arxiv-2403.00360v2 §2.3.",
   }),
 
+  ref({
+    id: "bichon2003",
+    type: "article-journal",
+    title: "The representation category of the quantum group of a non-degenerate bilinear form",
+    author: [{ family: "Bichon", given: "Julien" }],
+    "container-title": "Communications in Algebra",
+    volume: "31",
+    issue: "10",
+    page: "4831-4851",
+    issued: { "date-parts": [[2003]] },
+    note: "Classifies the fibre functors of $\\mathrm{Rep}(\\mathrm{SL}_q(2))$: for $E \\in \\mathrm{GL}_n(k)$, $n \\ge 2$, with $\\mathrm{tr}(E^{-1}E^{t}) = -q - q^{-1}$, the comodule category of the bilinear-form quantum group $B(E)$ is monoidally equivalent to that of $\\mathcal{O}_q(\\mathrm{SL}_2)$, the fundamental going to an $n$-dimensional comodule. Consumed by the eightfold front-2 result that a fibre functor changes dimensions but not fusion rules (FibreFunctorDimensionNotCategorical.lean; fibre_functor_dimension_not_categorical_probe.py). Added 2026-09-03. NO DOI RECORDED and volume/issue/pages NOT verified against the publisher record: doi.org and arxiv.org are blocked by the sandbox egress proxy in this session; the arXiv preprint is math/0207256. Verify before citing in print.",
+  }),
+
+  ref({
+    id: "etingof-ostrik2004",
+    type: "article-journal",
+    title: "Module categories over representations of SL_q(2) and graphs",
+    author: [
+      { family: "Etingof", given: "Pavel" },
+      { family: "Ostrik", given: "Viktor" },
+    ],
+    "container-title": "Mathematical Research Letters",
+    volume: "11",
+    issue: "1",
+    page: "103-114",
+    issued: { "date-parts": [[2004]] },
+    note: "Classifies indecomposable semisimple module categories over $\\mathrm{Rep}(\\mathrm{SL}_q(2))$ at generic $q$ by graphs; the rank-one module categories are the fibre functors, matching Bichon's $B(E)$ classification. Cited alongside bichon2003 for the same eightfold front-2 result. Added 2026-09-03. NO DOI RECORDED and bibliographic data NOT verified against the publisher record (sandbox egress to doi.org / arxiv.org blocked); the arXiv preprint is math/0302130. Verify before citing in print.",
+  }),
+
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
   ref({
     id: "murasugi1996",
