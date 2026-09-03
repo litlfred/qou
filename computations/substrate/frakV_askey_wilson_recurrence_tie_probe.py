@@ -116,12 +116,15 @@ cross_coupling_holds = all(
 
 # -------------------------------------------------------------- numeric layer
 mp.dps = 65
-with open(
-    os.path.join(os.path.dirname(__file__), "..", "q-pinning-50-digit.witness.json"),
-    encoding="utf-8",
-) as f:
-    _qpin = json.load(f)
-q0 = mp.mpf(_qpin["derived_50_digit"]["q"])
+# q_0 from `q_parameter` -- the RUNNING SCRIPT's anchor -- rather than a direct
+# read of q-pinning-50-digit.witness.json (routed 2026-09-03, bean `qou-aj91`).
+# The direct read hardcoded muon and made QOU_Q0_ANCHOR inert here, which is
+# what put this producer in the UNSOUND-ENV-BYPASS group: unmeasurable rather
+# than held for cause. This stem stays listed `ideal_muon`, and q_parameter
+# derives that anchor from q_muon_at(70), byte-identical to 70 digits with the
+# value this read returned -- so no number moves; only the mechanism does.
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 -- anchor-aware
+q0 = mp.mpf(Q_50_DIGIT_STR)
 
 # canonical H₂ Jones–Markov weights at n=2: y_(2) = q/[2]_q, y_(1,1) = q⁻¹/[2]_q
 two_q = q0 + 1 / q0
@@ -197,7 +200,7 @@ witness = {
         "from data; sympy exact with SYMBOLIC weights w± (weight-independent); mpmath 65 dps "
         "compute / tol 1e-45; muon-q₀ canonical (computations layer, AGENTS.md two-layer rule)."
     ),
-    "q0_source": "computations/q-pinning-50-digit.witness.json (canonical muon pin)",
+    "q0_source": "q_parameter (manifest-resolved; this stem is `ideal_muon`, so the canonical muon pin). Was a direct read of computations/q-pinning-50-digit.witness.json until 2026-09-03.",
     "results": {
         "hopf_multiplier": "c = q² + q⁻² (bar-even; x = cosθ Chebyshev/q-ultraspherical node)",
         "full_ladder_multiplier": "q − q⁻¹ (bar-odd; descent fails channel-wise, cross-couples)",
