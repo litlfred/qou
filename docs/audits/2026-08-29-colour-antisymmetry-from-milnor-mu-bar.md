@@ -611,3 +611,113 @@ braid one, and neither probe does it.
 
 Nothing here disturbs §9.1 (unconditional on `B₃`), §9.4 (statement B and the
 Brunnian exclusion untouched), or §9.3's withdrawal.
+
+---
+
+## §11 — §10.2 closed: the monodromy image is all of `B₃`, and `μ̄` separates on it
+
+*Added 2026-09-03. Probe:
+[`computations/probes/colour_mu_bar_monodromy_probe.py`](../../computations/probes/colour_mu_bar_monodromy_probe.py) ·
+witness `computations/probes/colour-mu-bar-monodromy-probe.witness.json` ·
+bean `qou-dg07`.*
+
+§10.2 left one thing open: **a nontrivial pure braid can still have `μ̄ = 0`**,
+so the image's pure part being nontrivial narrowed the vacuous-agreement escape
+without closing it. Closing it needed a Milnor computation. It turned out not to
+need a computation over the image at all.
+
+### 11.1 The finding
+
+The six local monodromies lifted by
+[`bring_monodromy_braid_lift_probe`](../../computations/probes/bring_monodromy_braid_lift_probe.py)
+reduce to only **four distinct braid words** — loops 0 and 3 are both `σ₁⁻¹`,
+loops 1 and 2 are both `σ₂σ₁⁻¹σ₂⁻¹` — and two of the four already generate:
+
+| | word in the loop lifts | reduces to |
+|---|---|---|
+| `σ₁` | `g₀⁻¹` | `σ₁` |
+| `σ₂⁻¹` | `g₀⁻¹ g₁ g₀` | `σ₂⁻¹` |
+
+with `g₀ = σ₁⁻¹` (loops 0, 3) and `g₁ = σ₁⁻¹σ₂⁻¹σ₁` (loop 5). Both reductions
+are verified by free reduction in the probe, not asserted.
+
+So the monodromy image contains both Artin generators, and is a subgroup of `B₃`
+by construction. **The image is `B₃`**, and its pure part is all of `P₃`.
+
+Consequently the Borromean braid `(σ₁σ₂⁻¹)³` is an element of the image — the
+probe *builds* it from the loop lifts as `(g₀⁻¹ · g₀⁻¹g₁g₀)³` and checks the
+reduction, rather than importing it for comparison. Its closure is Brunnian
+(every pairwise linking number `0`, so the indeterminacy is `0` and `μ̄₁₂₃` is a
+genuine integer) with
+
+```
+μ̄₁₂₃ = −1        against  μ̄₁₂₃ = 0  for the identity, also in the image.
+```
+
+Both are pure, so both carry sign character `+1`.
+
+**The vacuous-agreement escape is closed**, and closed on `μ̄` itself — the
+invariant §4 locates colour antisymmetry in — not on a lower one. The two colour
+sign lines agree as sign characters and disagree as sections **on this
+fibration**, not merely on `B₃` abstractly (§9.1).
+
+### 11.2 The sampling route says the opposite, and it is wrong
+
+Recorded because it is the more transferable half. Sampling the image is the
+obvious way to answer §10.2 and it returns a confident negative:
+
+- all **6 of 6** pure pairwise products of the loop words have a **nonzero**
+  pairwise linking number, hence indeterminacy `1`, hence `μ̄₁₂₃ ∈ ℤ/1` — vacuous
+  on every one of them;
+- a radius-5 Cayley ball on the loop words (**14,801** distinct reduced words)
+  contains **100** Brunnian pure elements, and **every one gives `μ̄₁₂₃ = 0`**.
+
+Read alone, that is "the escape stands". It is a fact about **short words**: the
+Borromean braid needs 12 generator-letters, so no radius-5 ball can contain it.
+A negative from a finite sample bounds the sample. The probe keeps and reports
+the scan for exactly this reason, labelled as corroboration rather than
+evidence.
+
+### 11.3 Two defects the self-test caught before any result existed
+
+Both were mine, both were caught by the probe's own validation, and neither
+reached a witness, an audit doc or a bean.
+
+1. **`μ̄` was written as a sum of its three cyclic readings** —
+   `ε₁₂(w₃) + ε₂₃(w₁) + ε₃₁(w₂)`. Milnor's cyclic symmetry makes those three
+   **equal**, so the sum triple-counts: the Borromean self-test returned `−3`
+   against the known `±1`, an exact factor of 3. The corpus already carries the
+   correct single-coefficient form in
+   [`gap2_he4_borromean_mu_bar.py`](../../computations/gap2_he4_borromean_mu_bar.py)
+   (`mu()`: *"coeff of `X_{i₁}..X_{i_{k−1}}` in the Magnus image of `l_{i_k}`"*)
+   and in the tower it cites. A corpus-grep for the summed form finds it in **no
+   file but the probe's own first draft**; nothing downstream was contaminated.
+2. **Cyclic agreement was then enforced unconditionally.** It holds only *modulo
+   the indeterminacy* — the gcd of the pairwise linking numbers — so the fixed
+   probe aborted on the first non-Brunnian closure in the image, readings
+   `[0, 0, 1]`. This is the same subtlety `gap2_he4_borromean_mu_bar.py` handles
+   with `welldef = (g == 0)`; the probe now matches it and enforces literal
+   agreement only at zero indeterminacy.
+
+The pattern in both: **a symmetry of an invariant is not an identity you may
+apply to its representatives.** Cyclic invariance made three quantities equal
+(so summing was wrong) and held only mod gcd (so equality-checking was wrong) —
+opposite errors from the same misreading of the same symmetry.
+
+### 11.4 Scope
+
+Not scope-(a). The verdict is a proof of group membership — both Artin
+generators exhibited as words in the loop lifts — plus an exact integer
+computation on non-commutative power series truncated at degree 2. No floating
+point, no anchor, no `q`.
+
+What remains conditional is the **input**: the six loop words come from
+`bring_monodromy_braid_lift_probe`'s numerical continuation. That probe is
+guarded (adjacent-swap bound, positive real gap at every crossing, cycle type
+cross-checked against independent continuation-tracking) but it is numerical.
+If those six words are right, §11.1 is exact.
+
+A further consequence worth stating separately, since it is about the Bring
+fibration rather than about this arc: **the braid monodromy group of the colour
+cover is the full `B₃`**, not a proper subgroup. Every question of the form
+"does the image contain such-and-such a braid" collapses to "does `B₃`".
