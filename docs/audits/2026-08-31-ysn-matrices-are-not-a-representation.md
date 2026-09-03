@@ -245,3 +245,65 @@ published rather than assumed close, and it retires any hope that the braid
 violation was a harmless normalisation. Whether the corrected numbers agree
 better or worse with AME2020 is **unknown and unmeasured** — and that question,
 not the speed, is what the remaining work is for.
+
+
+---
+
+## RESOLVED 2026-09-03 — the defect is fixed; this document is now history
+
+The title is a present-tense claim and it is no longer true. Kept unedited
+above, because the finding was correct when made and is the evidence trail;
+this section records the outcome.
+
+**The fix.** `_build_ysn_matrices` computed the Hoefsmit seminormal diagonal
+as `a_rho = h / [rho]_q`. Hoefsmit's form is `h / (1 - q^{-2rho})`;
+multiplying through by `q^rho` gives `q^rho / (q^rho - q^{-rho})`, i.e.
+**`q^rho / [rho]_q`**, since `[rho]_q = (q^rho - q^{-rho}) / h`. The old
+expression was off by a factor of `q^rho / h`. Bean `qou-uiut`.
+
+The code already contradicted itself: at `rho = +1`, `[1]_q = 1`, so the
+general branch yielded `h`, while the `same_row` branch three lines above
+hardcoded `q`. The corrected form gives `q^1/1 = q`, agreeing; likewise
+`-1/q` at `rho = -1` against `same_col`.
+
+**Independent agreement with `qou-4m9u`.** That bean solved the
+representation constraints directly, without reference to Hoefsmit, and got
+`a = -1/(q(q^2+1))`. The two forms are the same number:
+
+    q^rho / [rho]_q  at rho = -2   -0.4036277383508259361649837
+    -1/(q(q^2+1))                  -0.4036277383508259361649837
+    h / [rho]_q  (the defect)      -0.1039637100524101456766529
+
+Agreement 1.34e-51 — mpf roundoff at 50 dps, i.e. algebraically identical and
+differing only in evaluation order. Its measured value for the Python defect,
+-0.1039637101, matches too. Two derivations by different routes, same answer.
+
+Its structural observation also holds in the shipped code: `a_neg = h - a_rho`
+is exactly `z_D = q^3/(q^2+1)`, the convention-D Markov parameter, arising as
+a forced consequence of the braid relation rather than a convention choice.
+
+**The detector this document points at now passes.**
+`computations/audits/ysn_braid_relation_audit.py` said "exit 1 while the
+defect stands"; it exits 0:
+
+         partition  dim    impl    quadratic        BRAID    commuting
+            (2, 1)    2  python    2.806e-50    3.207e-50          0.0
+            (2, 1)    2    rust    1.203e-50    2.005e-50          0.0
+         (3, 2, 1)   16  python    4.009e-50    3.207e-50          0.0
+         (3, 2, 1)   16    rust    1.203e-50    2.005e-50          0.0
+
+Python and Rust now also agree ENTRY FOR ENTRY, not merely on the relations —
+a stronger check than this audit performs.
+
+**Two further findings came out of the fix**, both recorded on `qou-uiut`:
+the same wrong diagonal existed in three copies (the builder, the hardcoded
+(2,2) constants, and a private copy in `sdp_cross_channel`), and correcting it
+exposed that `q_parameter`'s `_MP` family had no `q_int`, so the off-diagonal
+blocks were float64-grade even after the algebra was right.
+
+**On this document's "What this does NOT establish".** Those caveats stand.
+No published number has been re-derived yet. The regeneration of
+`hadron-knot-table.witness.json` — the one witness whose numbers this defect
+demonstrably corrupted — is in progress under `qou-uiut`; whether the
+corrected values agree better or worse with AME2020 is still unknown and
+unmeasured.
