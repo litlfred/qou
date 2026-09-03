@@ -2,6 +2,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Algebra.Polynomial.BigOperators
 
 /-!
 # QOU.SchurWeyl.OcneanuWeight — the Ocneanu/Markov weight at general `n`
@@ -212,5 +213,68 @@ attained. -/
 theorem mem_cells_diag_zero (mu : YoungDiagram) (h : 0 < mu.rowLen 0) : (0, 0) ∈ mu.cells := by
   rw [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen]
   exact h
+
+/-! ### The degree bound, as a polynomial in `z`
+
+Packaging the numerator as an element of `R[X]` turns the split above into an actual **degree**
+statement: the product's degree is at most the sum of its factors' degrees, each diagonal factor is
+a constant, and each off-diagonal factor is linear. So
+
+    deg_z (numerator)  ≤  #{cells off the diagonal}  =  |μ| − d(μ)
+
+with `d(μ)` the Durfee square size. This is the `≤` direction, which is the one the span argument
+needs: `W(z) = Σ_{k ≤ deg} z^k c_k` lies in the span of `deg + 1` fixed coefficient vectors, so the
+whole Ocneanu family spans at most that many dimensions of the `p(n)`-dimensional space of trace
+functionals.
+
+Equality (`deg_z = |μ| − d(μ)` exactly) is **not** proved here — it is measured, exactly and
+symbolically over `ℚ(q)`, at `n = 2..6` in
+`computations/probes/markov_trace_family_rank_probe.py`, along with the resulting family rank of
+exactly `n`. Neither equality nor `rank = n` is a theorem for all `n`. -/
+
+open Polynomial in
+/-- The Ocneanu numerator as a polynomial in the Markov parameter `z`, with the affine form of
+`ocneanuNumFactor_affine` as its per-cell factor. -/
+noncomputable def ocneanuNumPoly {R : Type*} [Field R] (q : R) (mu : YoungDiagram) : R[X] :=
+  ∏ c ∈ mu.cells,
+    (C (q ^ (2 * c.1) * (q ^ 2 - 1)) + C (q ^ (2 * c.2 + 1) - q ^ (2 * c.1 + 1)) * X)
+
+open Polynomial in
+/-- `ocneanuNumPoly` really is the numerator: evaluating at `z` returns it. Without this the degree
+bound below would be a statement about a free-standing polynomial rather than about the weight. -/
+theorem ocneanuNumPoly_eval {R : Type*} [Field R] (q z : R) (mu : YoungDiagram) :
+    (ocneanuNumPoly q mu).eval z
+      = ∏ c ∈ mu.cells, (q ^ (2 * c.1) * (q ^ 2 - 1 - q * z) + q ^ (2 * c.2 + 1) * z) := by
+  rw [ocneanuNumPoly, eval_prod]
+  refine Finset.prod_congr rfl fun c _ => ?_
+  simp only [eval_add, eval_mul, eval_C, eval_X]
+  exact (ocneanuNumFactor_affine q z c.1 c.2).symm
+
+open Polynomial in
+/-- A cell factor is linear in `z`, hence of degree at most one. -/
+theorem ocneanuNumFactor_natDegree_le_one {R : Type*} [Field R] (a b : R) :
+    (C a + C b * X).natDegree ≤ 1 := by
+  refine natDegree_add_le_of_degree_le ?_ ?_
+  · simp
+  · exact le_trans natDegree_mul_le (by simp)
+
+open Polynomial in
+/-- **The degree bound.** The numerator's degree in `z` is at most the number of cells **off** the
+diagonal — equivalently `|μ| − d(μ)`, since the diagonal cells contribute constants. -/
+theorem ocneanuNumPoly_natDegree_le {R : Type*} [Field R] (q : R) (mu : YoungDiagram) :
+    (ocneanuNumPoly q mu).natDegree
+      ≤ (mu.cells.filter (fun c => ¬ (c.1 = c.2))).card := by
+  refine le_trans (natDegree_prod_le _ _) ?_
+  rw [← Finset.sum_filter_add_sum_filter_not mu.cells (fun c => c.1 = c.2)]
+  have hdiag : ∑ c ∈ mu.cells.filter (fun c => c.1 = c.2),
+      (C (q ^ (2 * c.1) * (q ^ 2 - 1))
+        + C (q ^ (2 * c.2 + 1) - q ^ (2 * c.1 + 1)) * X).natDegree = 0 := by
+    refine Finset.sum_eq_zero fun c hc => ?_
+    have h : c.1 = c.2 := (Finset.mem_filter.mp hc).2
+    rw [← h, sub_self, map_zero, zero_mul, add_zero, natDegree_C]
+  rw [hdiag, zero_add]
+  refine le_trans (Finset.sum_le_sum (g := fun _ => 1)
+    (fun c _ => ocneanuNumFactor_natDegree_le_one _ _)) ?_
+  simp
 
 end QOU.SchurWeyl
