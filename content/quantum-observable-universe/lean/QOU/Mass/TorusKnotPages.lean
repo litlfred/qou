@@ -101,4 +101,49 @@ theorem bennequin_chi : (2 : ℤ) - 7 = -5 ∧ (3 : ℤ) - 8 = -5 := by norm_num
 /-- Bennequin genus `(c - k + 1) / 2` is `3` for both shapes — equal to `g(T(2,7))`. -/
 theorem bennequin_genus : (7 - 2 + 1) / 2 = 3 ∧ (8 - 3 + 1) / 2 = 3 := by decide
 
+/-! ### The Alexander polynomial, as far as the algebra goes
+
+`det(V - X·Vᵀ)` for the bidiagonal Seifert matrix above is a tridiagonal determinant,
+diagonal `X - 1`, superdiagonal `1`, subdiagonal `-X`. Expanding along the last row gives
+the continuant recurrence `D_m = (X - 1) D_{m-1} + X D_{m-2}` with `D_0 = 1`,
+`D_1 = X - 1`. That expansion is the one step NOT carried out in Lean here; what is proved
+is the closed form the recurrence forces, `(X + 1) D_m = X^(m+1) + (-1)^m`, so that for
+`T(2, n)` with `n = 2g + 1` the Alexander polynomial is `(X^n + 1)/(X + 1)`. The probe
+checks the determinant itself, in exact integer arithmetic, at `n = 3, 5, 7`. -/
+
+open Polynomial in
+/-- The continuant of `V - X·Vᵀ`: `D_0 = 1`, `D_1 = X - 1`,
+`D_{m+2} = (X - 1) D_{m+1} + X D_m`. -/
+noncomputable def alexContinuant : ℕ → Polynomial ℤ
+  | 0 => 1
+  | 1 => X - 1
+  | (m + 2) => (X - 1) * alexContinuant (m + 1) + X * alexContinuant m
+
+open Polynomial in
+/-- `(X + 1) D_m = X^(m+1) + (-1)^m` for every `m`. -/
+theorem alexContinuant_mul_X_add_one (m : ℕ) :
+    alexContinuant m * (X + 1) = X ^ (m + 1) + (-1) ^ m := by
+  induction m using Nat.strong_induction_on with
+  | _ m ih =>
+    match m with
+    | 0 => simp [alexContinuant]
+    | 1 => simp only [alexContinuant]; ring
+    | m + 2 =>
+      have h1 := ih (m + 1) (by omega)
+      have h0 := ih m (by omega)
+      calc alexContinuant (m + 2) * (X + 1)
+          = (X - 1) * (alexContinuant (m + 1) * (X + 1))
+              + X * (alexContinuant m * (X + 1)) := by
+            simp only [alexContinuant]; ring
+        _ = (X - 1) * (X ^ (m + 2) + (-1) ^ (m + 1)) + X * (X ^ (m + 1) + (-1) ^ m) := by
+            rw [h1, h0]
+        _ = X ^ (m + 3) + (-1) ^ (m + 2) := by ring
+
+open Polynomial in
+/-- For `T(2, 2g + 1)`: `(X + 1) · D_{2g} = X^(2g+1) + 1`, i.e. the Alexander polynomial
+is `(X^n + 1)/(X + 1)` with `n = 2g + 1` — degree `2g`, monic, as a fibered knot's must be. -/
+theorem alexContinuant_torus (g : ℕ) :
+    alexContinuant (2 * g) * (X + 1) = X ^ (2 * g + 1) + 1 := by
+  rw [alexContinuant_mul_X_add_one, (even_two_mul g).neg_one_pow]
+
 end QOU.Mass.TorusKnotPages
