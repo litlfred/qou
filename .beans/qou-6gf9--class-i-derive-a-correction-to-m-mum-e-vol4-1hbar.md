@@ -1,11 +1,11 @@
 ---
 # qou-6gf9
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-03T11:08:27Z
+updated_at: 2026-09-03T11:48:30Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -103,3 +103,11 @@ unclosed bar-even series — the conservative reading) and what decides. GAP
 unchanged: the a-priori coefficient. Note GapA4MuonBranching.lean's
 target_correction_constraint is a def : Prop carrying a float fit target at a
 q0 literal 580 ppb off the pin — handed to the docstring/def-Prop drain (#6471).
+
+
+
+Released 2026-09-03 after the consolidation landed (PR #6476). Status back
+to todo: the GAP — a bar-even correction with an a-priori coefficient — is
+unchanged and nobody is on it; the Lean now records exactly which cheap class
+is excluded (single small-height bar-even monomial, any order, any pin in the
+window) so the next attempt starts past it.
