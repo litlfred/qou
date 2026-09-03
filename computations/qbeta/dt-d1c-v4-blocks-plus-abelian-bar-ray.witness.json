@@ -1,8 +1,8 @@
 {
   "engine": "python-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T08:30:11.106521+00:00",
-  "commitSha": "b486ca842564cfff4303ace2a63164f6ba2df3fa",
+  "computedAt": "2026-09-03T08:50:16.601834+00:00",
+  "commitSha": "d1d72e5862c7d566f43931aaaaa7972a8c65211f",
   "assertions": [
     {
       "name": "the_repair_vertex_set_has_FOUR_vertices",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 135544,
+  "durationMs": 141518,
   "computation": "dt-d1c-v4-blocks-plus-abelian-bar-ray",
   "scriptFile": "dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py",
   "scriptHash": "750b2af6a597",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d1d72e5862c7d566f43931aaaaa7972a8c65211f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -123,5 +123,7 @@
       "closes": "the blocks-plus-abelian repair UNDER D1-c's own bar-ray stipulation — not D1-c the route, and not every (Q,W)",
       "per_ray_equality_is": "measured here; the cited Lean theorem proves the general statement"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
