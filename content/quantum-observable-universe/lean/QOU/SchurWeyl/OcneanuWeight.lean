@@ -3,6 +3,8 @@ import Mathlib.Tactic.Ring
 import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Algebra.Polynomial.BigOperators
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.Dimension.Constructions
 
 /-!
 # QOU.SchurWeyl.OcneanuWeight — the Ocneanu/Markov weight at general `n`
@@ -276,5 +278,90 @@ theorem ocneanuNumPoly_natDegree_le {R : Type*} [Field R] (q : R) (mu : YoungDia
   refine le_trans (Finset.sum_le_sum (g := fun _ => 1)
     (fun c _ => ocneanuNumFactor_natDegree_le_one _ _)) ?_
   simp
+
+/-! ### The span bound — why the degree bound restricts the whole family
+
+The degree bound is what limits the *family*. A trace functional in the Ocneanu family is the
+weight vector `W(z)` read at one `z`; if each component is a polynomial of degree `≤ d`, then
+`W(z) = Σ_{k ≤ d} z^k c_k` for `d+1` fixed coefficient vectors, so **every** member of the family —
+at every `z`, not merely the sampled ones — lies in the span of those `d+1` vectors.
+
+Combined with `deg_z ≤ |μ| − d(μ) ≤ |μ| − 1`, the family at level `n` spans **at most `n`
+dimensions**, against the `p(n)` dimensions of the full space of trace functionals. That gap is
+what forbids isolating an individual block's character by subtraction over the family.
+
+The first two lemmas are stated for an arbitrary finite family of polynomials, since nothing about
+the Ocneanu weight is used. `ocneanuFamily_finrank_le` is the application. -/
+
+open Polynomial in
+/-- A family of polynomials of degree `≤ d`, evaluated at `z`, lies in the span of the `d+1`
+coefficient vectors — for **every** `z`. -/
+theorem eval_mem_span_coeff {R ι : Type*} [Field R] [Fintype ι]
+    (p : ι → R[X]) (d : ℕ) (hd : ∀ i, (p i).natDegree ≤ d) (z : R) :
+    (fun i => (p i).eval z)
+      ∈ Submodule.span R (Set.range fun k : Fin (d + 1) => fun i => (p i).coeff (k : ℕ)) := by
+  have key : (fun i => (p i).eval z)
+      = ∑ k : Fin (d + 1), z ^ (k : ℕ) • (fun i => (p i).coeff (k : ℕ)) := by
+    funext i
+    simp only [Finset.sum_apply, Pi.smul_apply, smul_eq_mul]
+    rw [eval_eq_sum_range' (n := d + 1) (Nat.lt_succ_of_le (hd i))]
+    rw [Fin.sum_univ_eq_sum_range (fun k => z ^ k * (p i).coeff k)]
+    exact Finset.sum_congr rfl fun k _ => mul_comm _ _
+  rw [key]
+  exact Submodule.sum_mem _ fun k _ =>
+    Submodule.smul_mem _ _ (Submodule.subset_span ⟨k, rfl⟩)
+
+open Polynomial in
+/-- **The family spans at most `d+1` dimensions.** -/
+theorem finrank_span_eval_le {R ι : Type*} [Field R] [Fintype ι]
+    (p : ι → R[X]) (d : ℕ) (hd : ∀ i, (p i).natDegree ≤ d) :
+    Module.finrank R
+        (Submodule.span R (Set.range fun z : R => fun i => (p i).eval z)) ≤ d + 1 := by
+  classical
+  have hle : Submodule.span R (Set.range fun z : R => fun i => (p i).eval z)
+      ≤ Submodule.span R (Set.range fun k : Fin (d + 1) => fun i => (p i).coeff (k : ℕ)) := by
+    rw [Submodule.span_le]
+    rintro _ ⟨z, rfl⟩
+    exact eval_mem_span_coeff p d hd z
+  haveI : Fintype ↑(Set.range fun k : Fin (d + 1) => fun i => (p i).coeff (k : ℕ)) :=
+    (Set.finite_range _).fintype
+  haveI : Module.Finite R
+      ↥(Submodule.span R (Set.range fun k : Fin (d + 1) => fun i => (p i).coeff (k : ℕ))) :=
+    Module.Finite.span_of_finite R (Set.finite_range _)
+  refine (Submodule.finrank_mono hle).trans ?_
+  refine (finrank_span_le_card _).trans ?_
+  rw [Set.toFinset_range]
+  exact Finset.card_image_le.trans (by simp)
+
+/-- Off-diagonal cells are strictly fewer than all cells, because `(0,0)` is diagonal. -/
+theorem ocneanuOffDiag_card_lt {mu : YoungDiagram} (h : 0 < mu.rowLen 0) :
+    (mu.cells.filter (fun c => ¬ (c.1 = c.2))).card < mu.card := by
+  classical
+  refine Finset.card_lt_card ?_
+  refine (Finset.ssubset_iff_of_subset (Finset.filter_subset _ _)).mpr ?_
+  exact ⟨(0, 0), mem_cells_diag_zero mu h, by simp⟩
+
+open Polynomial in
+/-- **The Ocneanu family at level `n` spans at most `n` dimensions**, against the `p(n)` dimensions
+of the full space of trace functionals on `H_n(q)`.
+
+This is the `≤` half of the measured `rank = n`; equality is **not** proved (see
+`markov_trace_family_rank_probe.py`, exact at `n = 2..6`). -/
+theorem ocneanuFamily_finrank_le {R : Type*} [Field R] (q : R) (n : ℕ) (hn : 0 < n)
+    (S : Finset YoungDiagram) (hcard : ∀ mu ∈ S, mu.card = n)
+    (hne : ∀ mu ∈ S, 0 < mu.rowLen 0) :
+    Module.finrank R (Submodule.span R
+        (Set.range fun z : R => fun mu : {x // x ∈ S} =>
+          (ocneanuNumPoly q (mu : YoungDiagram)).eval z)) ≤ n := by
+  have hd : ∀ mu : {x // x ∈ S},
+      (ocneanuNumPoly q (mu : YoungDiagram)).natDegree ≤ n - 1 := by
+    intro mu
+    refine (ocneanuNumPoly_natDegree_le q _).trans ?_
+    have hlt := ocneanuOffDiag_card_lt (hne _ mu.2)
+    rw [hcard _ mu.2] at hlt
+    omega
+  exact (finrank_span_eval_le
+    (fun mu : {x // x ∈ S} => ocneanuNumPoly q (mu : YoungDiagram)) (n - 1) hd).trans_eq
+    (Nat.sub_add_cancel hn)
 
 end QOU.SchurWeyl
