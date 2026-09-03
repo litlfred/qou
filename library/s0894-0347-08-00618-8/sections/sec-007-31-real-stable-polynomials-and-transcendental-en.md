@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 13-15
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 it was proved that a multi-aﬃne polynomialf ∈ R[z1,...,z n] is stable (in the sense
 5 3 4 J .B O R C E A ,P .B R ¨AND ´EN, AND T. M. LIGGETT

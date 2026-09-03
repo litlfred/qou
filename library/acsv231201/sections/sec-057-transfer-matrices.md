@@ -7,6 +7,7 @@ section_number: null
 pages: 411-417
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Ω ={0, 1, 2}, giving v(z) = 1 + z + z2 and
 µ(v; z) = 2z2

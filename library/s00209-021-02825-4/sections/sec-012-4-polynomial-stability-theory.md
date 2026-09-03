@@ -7,6 +7,7 @@ section_number: 4
 pages: 12-13
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 Given λ ∈ Nm
 0 , a polynomial p(x1, y1,..., xm, ym) ∈ V(λ) is said to be stable if it doesn’t

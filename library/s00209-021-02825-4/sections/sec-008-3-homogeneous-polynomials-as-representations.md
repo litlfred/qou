@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-8
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 In this section, we will discuss some basic representation theory of SL2(C) and show how the
 apolarity form and the notion of the symbol of an operator arise naturally in the representation

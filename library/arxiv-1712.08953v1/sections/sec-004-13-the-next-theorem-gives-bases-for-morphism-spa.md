@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 3-4
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 [T2, Theorems 5.1 and 5.2.3]; Turaev notes that it was also proved inde pendently by
 Morton and Traczyk. To formulate it, given a = am··· a1, b = bn··· b1∈⟨↑,↓⟩, an

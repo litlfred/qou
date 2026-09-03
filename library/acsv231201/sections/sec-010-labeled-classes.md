@@ -7,6 +7,7 @@ section_number: null
 pages: 69-78
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Proof idea The basic idea is to apply a sequence of blowups to a polynomial
 annihilating f (z) to resolve any singularities it has at the origin, until we arrive

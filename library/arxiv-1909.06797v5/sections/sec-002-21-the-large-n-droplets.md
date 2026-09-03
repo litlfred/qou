@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 7-10
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 Droplet description of large N phases is based on the fact that the partition function of UMM has
 two equivalent descriptions - in eigenvalue basis and in Young diagram basis. It is well known

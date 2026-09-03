@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 20-22
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Pemantle arrived independently at the following conjecture, now a theorem.
 Theorem 7.1 (Theorem 5.2 of [7]) . If the initial distribution ϕ0 of a SEP is

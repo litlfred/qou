@@ -7,6 +7,7 @@ section_number: 3
 pages: 5-5
 source_pdf: 2603.25236v1.pdf
 source_sha256: fba6853d6e544e19
+doc_brief: "A Concentration of Measure Phenomenon in — We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian."
 ---
 the bottom left corner. It follows that the other two half-edges coming from the
 bottom edge must be coupled together as well. Following them around the bottom

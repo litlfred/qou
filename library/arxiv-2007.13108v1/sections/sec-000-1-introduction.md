@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 In the Euclidean space Rn, log-concave measures, namely measures whose density is of the
 form e−U with U being a convex potential are known to satisfy several concen tration inequali-

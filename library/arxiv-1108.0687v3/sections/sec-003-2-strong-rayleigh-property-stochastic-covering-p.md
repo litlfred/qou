@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-6
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 and other negative dependence conditions
 Let [n] denote {1,...,n } and let Bn := {0, 1}n denote the Boolean lattice of rank n, with coordi-

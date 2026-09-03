@@ -324,9 +324,84 @@ Concretely:
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
 carrying `memory: project` in its frontmatter. That gives the agent its own
-directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
-25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
-prompt when it starts, and it reads and writes the directory as it works.
+directory under `.claude/agent-memory/<agent-name>/`, which it reads and writes
+as it works.
+
+> **🛑 THE INJECTION DOES NOT HAPPEN IN THIS ENVIRONMENT — measured
+> 2026-09-03.** This paragraph used to state, as fact, that *"the first 200
+> lines (or 25 KB) of that directory's `MEMORY.md` are injected into the
+> subagent's system prompt when it starts."* **For subagents launched via the
+> Agent tool in a Claude Code remote session, nothing is injected — not a
+> truncated 200 lines, none of it.**
+>
+> Measured by asking two agents, independently, what their own system prompt
+> contained: `lean-verifier` and `corpus-grepper` both reported **zero**
+> `MEMORY.md` content. Objective corroboration, checkable without trusting a
+> self-report: **four "see memory" / "see the memory entry" cross-references in
+> three agent definitions are dangling pointers** — they reference content that
+> never arrives. The frontmatter is correct (`memory: project` on all five) and
+> the files exist, so this is a harness behaviour, not a misconfiguration; it
+> may well work in the desktop or CLI harness, and this is a statement about
+> **this** environment only.
+>
+> **Consequence for the 200-line cap.** The cap is now a *convention*, not a
+> live constraint — nothing is being truncated because nothing is being sent.
+> Keep files under it anyway (it bounds what an agent must read), but do not
+> treat "under 200" as evidence an agent has the content.
+>
+> **The repair, and 🛑 it is UNVERIFIED — do not assume it works.** Each
+> agent definition now opens with a `## FIRST ACTION — read your memory; it is
+> NOT injected here` section telling the agent to `Read` its own `MEMORY.md`
+> first, and to open its report with a compliance line naming the files read,
+> `MEMORY.md`'s line count and its last commit sha — so a reader can tell a
+> memory-informed run from a memory-less one instead of taking it on trust.
+> **A report without that line should be presumed to have run without memory.**
+>
+> **But a third agent, launched AFTER that edit, did not receive it** — it
+> quoted its own prompt going straight from the preceding bullet to `## What
+> you do`, with no `## FIRST ACTION` section, while the section was plainly on
+> disk. So agent definitions appear to be **snapshotted** (committed `HEAD`, or
+> cached at session start), and an uncommitted edit to one does not reach a
+> subagent in the same session. The fix may take effect once committed and a
+> fresh session starts; that has **not** been demonstrated.
+>
+> **🛑 AND I WAS WRONG ABOUT THE CARRIER — corrected the same hour.** This
+> paragraph first said *"this AGENTS.md note is the load-bearing carrier … it
+> provably arrives in subagent prompts in full"*. It does arrive in full, but
+> **the version that arrives is snapshotted at session start**: a
+> `convention-auditor` launched minutes after this very edit was committed
+> still received the *pre-edit* text, uncaveated. So a mid-session edit to
+> `AGENTS.md` reaches no subagent either — **the same failure as the agent
+> definitions, through a different file.**
+>
+> Three causes remain consistent with that single observation and it does not
+> separate them: session-start snapshotting, a cached/differently-rooted copy,
+> or an edit at a path other than the one `CLAUDE.md` `@`-includes. Snapshotting
+> is the leading candidate only because definitions failed the same way.
+> **The discriminator is a genuinely new top-level session**, not another
+> subagent.
+>
+> **The practical rule, which holds whatever the cause:** nothing you write to
+> `AGENTS.md` or to an agent definition reaches a subagent **in the session you
+> write it**. If a subagent must know something you learned this session, **put
+> it in that subagent's prompt** — that is the only channel demonstrated to
+> work today. Everything here is for *later* sessions.
+>
+> So if you are a subagent reading this in a later session: **read
+> `.claude/agent-memory/<your-name>/MEMORY.md` yourself before you start**,
+> whatever your own definition does or does not say.
+>
+> **A figure to not repeat.** The first version of the agent-definition block
+> quoted "2,520 lines across 16 files" — that is the *whole tree across all
+> five agents*. Per agent it is **195–419 lines** for `MEMORY.md` and 412–657
+> for the directory, i.e. ~3-7k tokens: cheap. Quoting the tree total in each
+> agent's own file overstates its burden ~6× and invites exactly the wrong
+> trade-off (skipping the read). Caught by the consuming agent, not by me.
+>
+> Tracked in bean `qou-rpgi`.
+>
+> **So "maintaining them is part of the work" below still holds** — the files
+> are read, just deliberately rather than automatically.
 
 | agent | owns |
 |---|---|
@@ -358,7 +433,8 @@ in the same PR. When a session re-measures a BASELINE, update the entry with
 the fresh number and date. A memory file that only accretes becomes the thing
 it exists to prevent.
 
-Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+Two mechanical notes. `MEMORY.md` is the entry point an agent reads first
+(**not** injected — see the block above), so keep it
 under 200 lines — split detail into sibling files the agent reads on demand
 (`compute-precision-auditor/producer-health.md` is the worked example). And
 `memory: project` writes under `.claude/agent-memory/`, which is **committed**;
@@ -1419,19 +1495,39 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **542** document directories, holding **10,922**
+   and re-deriving one. **576** document directories, holding **11,528**
    section files, are searchable this way (this read *"332 documents /
-   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+   7,313 sections"* until 2026-08-30 — low by 62 % — and *"542 / 10,922"*
+   until 2026-09-03; the library grows, so **re-count, do not quote**).
 
    **Say which count you mean, or the next reader will "correct" you.**
    Three numbers describe this library and they are all different:
-   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
-   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   `ls -d library/*/ | wc -l` gives **576** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **552**
    *index rows*, because the 23 known duplicate copies deliberately get no
-   row of their own; and `summarize-library.py` prints that 518 as
-   "documents". A grep-coverage claim wants the 542; a "how many distinct
-   works do we hold" claim wants the 518. Quoting one against the other
+   row of their own; and `summarize-library.py` prints that 552 as
+   "documents". A grep-coverage claim wants the 576; a "how many distinct
+   works do we hold" claim wants the 552. Quoting one against the other
    reads as staleness when it is a category difference.
+
+   **🛑 And the duplicates do NOT always explain the gap — INDEX.md goes
+   STALE, silently (found 2026-09-03).** On that date the index carried
+   **519** rows against 576 directories, and only **23** of the 57 missing
+   were marked `duplicate_of`. The other **33 were real documents with real
+   sections that simply had no row** — invisible to this tier, which is the
+   one the checklist tells you to read FIRST. They were not marginal: the
+   volume conjecture (`0803219`), the oriented skein category
+   (`arxiv-1712.08953v1`), affine-Hecke Plancherel (`arxiv-1110.6212v2`),
+   knot polynomials on braid closures (`li-braid-closures`) and q-deformed
+   Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
+   matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
+
+   **So check the arithmetic before trusting tier 1**: `directories −
+   index rows` should equal the duplicate count, and when it does not the
+   index is behind. The producer fixes it deterministically and offline —
+   `python3 scripts/summarize-library.py --apply` (extractive, no model, no
+   network; agent-written summaries are preserved). A clean tier-1 scan is
+   evidence about the index, not about the library.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1442,7 +1538,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 576** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &

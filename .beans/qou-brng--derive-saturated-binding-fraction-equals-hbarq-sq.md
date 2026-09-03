@@ -6,6 +6,7 @@ type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
 updated_at: 2026-09-03T04:57:24Z
+updated_at: 2026-09-03T04:39:05Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1762,3 +1763,50 @@ TWO SHORTCUTS BOTH FORBIDDEN:
 BindingMassRung does NOT close it: it treats M, lw as free params and only forces q-REGULARITY (order ℏ_q²), not bare-INTEGER-ness. Its own docstring says it does not derive why binding lacks the cusp factor.
 
 RECOMMENDATION: leave sub-q #2 open+unfabricated; the tractable adjacent formalization is the shared quantum-trace/connected-sum-multiplicativity infra (qou-301d), which would foundation BOTH sub-q #2 and R2. Default no-op is safe (nothing moves). Higher-leverage item this frontier sits under: the two-nucleon SIGN defect (binds diproton/dineutron; qou-vbyi route 1) — signs before digits.
+
+## 🛑 2026-09-03 — RETRACTION: the uniform-bond exclusion above DUPLICATES `qou-edt7`
+
+**The mathematics of the entry above is correct; the claim that it was new is
+not, and it was mine.**
+
+`QOU.Mass.UniformBondSimpleGraphExclusion` landed on `main` `c9d47234ce` on
+**2026-08-30**, four days before #6366 merged, under bean **`qou-edt7`**. It
+proves the same exclusion and proves it **more generally**:
+
+| here | `qou-edt7` |
+|---|---|
+| `bondAdditive_nonpositive` — `n(3) − 3 ≤ 0` at `n(2) = 1`, needing `b₂ ≠ 0` | `b3Uniform_nonpos` — `ε(e₃ − 3e₂) ≤ 0` for `e₃ ≤ 3`, `e₂ ≥ 1`, `ε ≥ 0` |
+| `bRatioOfBondCounts_chain` | `b3Uniform_neg_of_chain` |
+| `bRatioOfBondCounts_allPairs` | `b3Uniform_eq_zero_of_complete` |
+| `no_uniform_bond_model_reproduces_b3` | `not_uniform_simple_of_b3_pos` |
+
+Same invariant: a simple graph on three vertices has at most `C(3,2) = 3` edges
+while the Ursell inversion subtracts three.
+
+**The "surviving escape" was not a new direction either.** `w/w_d =
+5399947/4449132 = 1.2137079772` **is** the corpus's `w(2)/w(1)`, recorded to 60
+digits in `coordination-weight-rise-and-turnover.witness.json` as
+`1.21370760735284029758…`, whose own source line calls it *"the entire content of
+`b₃ > 0`"*. They agree to `3.05e-7`. And the obvious mechanism on that axis —
+single-ratio (Markov-power) scaling `ε(z) = ε(1)·r^{z−1}` — is **already
+REFUTED** there (~44 % disagreement between the two available ratios, for every
+`r`, convention-independently).
+
+**Trap, recorded because it is the whole point of the checklist.** I ran the
+six-path corpus-grep *after* merging instead of before. Path 3 surfaces
+`coordination_weight_rise_and_turnover_probe.py` on the **first pattern tried**,
+and its docstring names `UniformBondSimpleGraphExclusion` in the third paragraph.
+The grep is cheap; I ran it at the wrong point in the sequence. **A "next
+direction" line in a bean or PR body is a novelty claim and needs the checklist
+exactly as much as an "open" declaration does.**
+
+**What survives as this arc's own:** the link between the exclusion and the four
+**measured** channel values — ch3/ch4/ch5 within 0.032 of `−1` because they are
+one identity, ch1 at 0.3995 because it is not bond-additive. That reframes my own
+capstone and is not in `qou-edt7`.
+
+Corrections pushed: retraction banners on `UrsellChainMismatch.lean` and the
+probe, witness description/caveats rewritten to lead with the priority note, and
+a new check 6 verifying my ratio against the recorded 60-digit value so the
+duplication is an explicit corroboration rather than an implicit collision.
+Nothing deleted.

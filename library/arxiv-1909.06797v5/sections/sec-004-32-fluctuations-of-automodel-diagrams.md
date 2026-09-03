@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 12-13
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 Fluctuations of Young diagrams have been under investigation in the mathematics literature [9, 26–
 36]. A rescaled Young diagram deﬁned in (3.11) in the k→∞ limit takes the form of limit shape

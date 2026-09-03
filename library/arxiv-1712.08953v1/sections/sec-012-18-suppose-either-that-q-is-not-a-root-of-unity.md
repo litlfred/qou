@@ -7,6 +7,7 @@ section_number: 1.8
 pages: 8-9
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 root of unity for e >1. Let I :={q2n,t−2q−2n|n∈ Z}⊂ k and g be the (complex)
 Kac-Moody algebra with Cartan matrix ( ci,j )i,j∈I deﬁned from

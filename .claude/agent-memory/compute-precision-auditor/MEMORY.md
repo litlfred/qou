@@ -235,3 +235,8 @@ TRAPs.
   largest block is *not* at the largest `k`. Also: **atom bonds do not commute** —
   insertion order is worth `11 %` at `A=3` and `38-40 %` at `A=4`, so take the
   order from `atom_gen_chains` (interleaved) and quote it with any trace.
+
+- 2026-09-03 (qou-pdg9): exact leading-order coefficients by running the
+  duck-typed `Fraction` seminormal pipeline over power series; three traps
+  (valuation, constant allocation, `reject_float64_q` vs short decimals) —
+  see `exact-series-route.md`.

@@ -7,6 +7,7 @@ section_number: 5
 pages: 25-26
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 For the next few sections, we assume that k is a ﬁeld of characteristic p≥ 0 and
 z =q−q−1 for q∈ k ×\{± 1}. Since we are going to be discussing linear representa-

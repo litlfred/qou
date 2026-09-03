@@ -7,6 +7,7 @@ section_number: null
 pages: 256-263
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 We end this section with additional computational results that will be necessary
 for our asymptotic arguments in later chapters.

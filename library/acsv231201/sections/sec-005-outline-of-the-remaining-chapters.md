@@ -7,6 +7,7 @@ section_number: null
 pages: 30-35
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 This book is divided into three parts, of which the third part is the heart of the
 subject: deriving asymptotics in the multivariate setting once a meromorphic

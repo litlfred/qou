@@ -7,6 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 3.1 A longest increasing subsequence of a random walk . . . . . . . . . . 40
 4.1 Some analogous elements in random matrix and spin glass theory.

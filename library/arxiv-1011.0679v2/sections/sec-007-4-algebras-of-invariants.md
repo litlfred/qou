@@ -7,6 +7,7 @@ section_number: 4
 pages: 17-20
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 Let U be a smooth manifold, possibly with corners, and let G be a ﬁnite group
 acting on U by diﬀeomorphisms αg. Let V be a ﬁnite dimensional complex G-

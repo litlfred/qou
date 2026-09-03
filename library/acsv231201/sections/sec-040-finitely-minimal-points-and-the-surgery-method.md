@@ -7,6 +7,7 @@ section_number: null
 pages: 271-275
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Sections 9.3.1 and 9.3.2 complement the decomposition (9.9) by presenting
 an algorithm to determine the integer coe ﬃcients kw for bivariate series, the

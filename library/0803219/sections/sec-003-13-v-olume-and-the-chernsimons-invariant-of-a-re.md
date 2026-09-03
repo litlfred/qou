@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 6-6
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 a closed three-manifold W one can deﬁne the Chern–Simons function cs W on the
 SL(2; C)-character variety of π 1(W ) as follows. See for example [32, Section 2]

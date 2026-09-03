@@ -1,5 +1,5 @@
 import QOU.SchurWeyl.HeckeCarrierEquiv
-import QOU.SchurWeyl.HeckeSemisimpleGeneral
+import QOU.SchurWeyl.HeckeSemisimpleReal
 
 /-!
 # QOU.SchurWeyl.HeckeCarrierSemisimpleReal — the ℝ specialisation of the carrier equivalence

@@ -7,6 +7,7 @@ section_number: 3
 pages: 14-17
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 In this section we prove the Arthur formula for the Euler–Poi ncar´ e pairing (30)
 of representations of aﬃne Hecke algebras. In view of Lemma 2 .2 little is lost if we

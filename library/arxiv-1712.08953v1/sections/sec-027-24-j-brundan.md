@@ -7,6 +7,7 @@ section_number: 24
 pages: 24-25
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 We can use (4.9) to obtain a recursive formula: ﬁrst X(↑) := 1↑, X(↓) := t−21↓; then
 for any b∈⟨↑,↓⟩ we have that

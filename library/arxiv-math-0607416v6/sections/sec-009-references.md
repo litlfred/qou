@@ -7,6 +7,7 @@ section_number: null
 pages: 21-23
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
+doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
 ---
 [1] A. Aleman, D. Beliaev, H. Hedenmalm, Real zero polynomials and P´ olya-Schur type theorems,
 J. Anal. Math. 94 (2004), 49–60.

@@ -459,7 +459,7 @@
 | [prop:h3-markov-wenzl-weights](#prop:h3-markov-wenzl-weights) | Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial): $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$, $y_{(1^3)} = 0$ | Ch 12 | `qou:QOU.BraidsAndKnots.h3_markov_wenzl_weights` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 8 | `qou:QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 6 | `qou:QOU.Archimedean.cohomological_embedding` |
-| [prop:color-su3-from-g2](#prop:color-su3-from-g2) | Color $\mathrm{SU}(3)$ from octonionic stabilization | Ch 9 | `qou:QOU.Eightfold.Sym2Gate.sym2_dim_3` |
+| [prop:color-su3-from-g2](#prop:color-su3-from-g2) | Color $\mathrm{SU}(3)$ from octonionic stabilization | Ch 9 | `qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` |
 | [prop:color-spacetime-s5-factorization](#prop:color-spacetime-s5-factorization) | Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$ | Ch 7 | `qou:QOU.MassEndomorphism.colorSpacetimeEmbed_injective` |
 | [prop:color-elliptic](#prop:color-elliptic) | Color fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.color_elliptic` |
 | [prop:neutron-prediction-comparison](#prop:neutron-prediction-comparison) | Comparison of predicted and observed stable neutron numbers for $p \leq 103$ | Ch 15 | `qou:QOU.Archimedean.stable_neutron_max_error` |

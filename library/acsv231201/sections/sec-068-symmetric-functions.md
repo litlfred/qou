@@ -7,6 +7,7 @@ section_number: null
 pages: 451-453
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Theorem 10.38 and Corollary 10.41 in Chapter 10 imply that the asymptotic
 contribution of a minimal arrangement point is unchanged when the factors in

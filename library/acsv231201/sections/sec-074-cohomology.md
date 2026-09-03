@@ -7,6 +7,7 @@ section_number: null
 pages: 493-495
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Finally, we deﬁne a product on pairs by
 (X′, Y′)× (X′′, Y′′) = (X′× X′′, X′× Y′′∪ Y′× X′′) .

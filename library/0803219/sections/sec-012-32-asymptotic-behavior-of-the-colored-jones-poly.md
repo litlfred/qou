@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 15-17
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 sider the colored Jones polynomial and its asymptotic behav ior.
 As described above, Habiro and Lˆ e independently showed tha t for the ﬁgure-

@@ -7,6 +7,7 @@ section_number: null
 pages: 480-486
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Instead of working only with cycles of integration, we develop homology in a
 more general setting. This approach better illustrates underlying structure, and

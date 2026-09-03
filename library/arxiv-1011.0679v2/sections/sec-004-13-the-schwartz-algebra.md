@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 9-11
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 a topological algebra called the Schwartz algebra. As a vect or space S will consist
 of rapidly decreasing functions on W e, with respect to some length function. For

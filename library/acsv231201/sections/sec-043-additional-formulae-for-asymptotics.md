@@ -7,6 +7,7 @@ section_number: null
 pages: 297-309
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Figure 9.7 The two critical points for Q(x, y) = 3− 3x + x2− y in directions
 (a, 1− a) with a< 1/2, which approach the same degenerate ‘double point’ (1, 1)

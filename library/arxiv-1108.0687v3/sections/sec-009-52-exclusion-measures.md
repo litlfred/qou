@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 16-18
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 The symmetric group Sn acts on Bn by permuting the coordinates. Suppose a nonnegative rate
 r(τ ) is given for each transposition τ ∈ S n. Deﬁne a random evolution on Bn by letting each pair

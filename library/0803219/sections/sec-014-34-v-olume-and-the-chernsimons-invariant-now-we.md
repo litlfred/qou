@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 20-23
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 ﬁnes a representation (with some ambiguity) of π 1(S3 \ E) at SL(2; C). In this
 subsection we calculate the corresponding volume and Chern –Simons invariant.

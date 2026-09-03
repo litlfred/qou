@@ -7,6 +7,7 @@ section_number: null
 pages: 31-34
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 We write σ1(x) = 1 + x and σ2(x) = 1 + x + x2.
 A.1 ˜C2(q1, q2) algebras with L = Q

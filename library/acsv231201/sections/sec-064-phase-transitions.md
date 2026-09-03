@@ -7,6 +7,7 @@ section_number: null
 pages: 444-444
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Our asymptotic approximations typically hold uniformly as r → ∞with ˆr
 staying in certain cones of directions, corresponding to contributing points at

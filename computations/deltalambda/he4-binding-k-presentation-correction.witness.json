@@ -2,11 +2,11 @@
  "computation": "he4-binding-k-presentation-correction",
  "description": "Same-day correction of the A=4 stage-1/stage-1.5 probes: the GP-kernel presentation identity is measured (GP variable v = \u221aq; evaluating at q computes the paper trace at q\u00b2) and the full operator dictionary is certified end-to-end against the certified combiner traces (p, n, D, 4He). Canonical seam structure read off the builder: one pair-typed crossing per seam at generators {2,5,8}. Stage-1/1.5 headline residuals (14.7%, 3.8%) are void.",
  "audit_only": true,
- "computedAt": "2026-09-03T09:33:49.297350+00:00",
+ "computedAt": "2026-09-03T09:38:00.260412+00:00",
  "engine": "mpmath",
  "dps": 50,
  "q_pin": {
-  "used": "canonical muon, q-pinning-50-digit.witness.json derived_50_digit.q",
+  "used": "canonical muon, resolved via q_parameter (this stem is listed `ideal_muon`)",
   "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "note": "q_parameter is anchor-adaptive (q0_anchor_manifest.json): ideal_muon producers resolve this value; ad-hoc shells resolve the proton pin \u2014 an 8.8e-8-level trap for reproduction scripts. Stage-1/1.5's hardcoded muon string agreed to ~1e-17 (pin was NOT their error; the presentation was)."
  },
@@ -109,9 +109,9 @@
   }
  ],
  "allPassed": false,
- "scriptHash": "a8de6be2b826",
- "scriptCommitSha": "ccf7231206ff5bd29522891faaeee5b72d2e9d5b",
- "commitSha": "51cc7998c4c776914bec0dd8aa38157185a4b347",
+ "scriptHash": "91cbfc3f39d9",
+ "scriptCommitSha": "89fa5f012e150493ca0fb803813ade2aaee49290",
+ "commitSha": "89fa5f012e150493ca0fb803813ade2aaee49290",
  "durationMs": 0,
  "engineVersion": "mpmath 1.4.1",
  "q0Anchor": "muon",

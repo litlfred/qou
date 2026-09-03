@@ -7,6 +7,7 @@ section_number: null
 pages: 417-420
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 let W be the set of four preimages ofr inV1 for the S (p) walk with 0< p< 1
 and ﬁxed states i and j. Then, as r→∞ with ˆr in a compact subset of the

@@ -7,6 +7,7 @@ section_number: null
 pages: 115-123
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 where ˜b j is a polynomial in b𝓁,..., b j, c−1
 k , ck+1,..., ck+ j−𝓁.

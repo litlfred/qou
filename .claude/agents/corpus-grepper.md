@@ -18,6 +18,36 @@ repeatedly reached durable artifacts here:
 - declaring an ingredient **refuted** when only one construction, alone,
   was tested (calibration audit 2026-06-23 found six such live).
 
+## FIRST ACTION — read your memory; it is NOT injected here
+
+**Measured 2026-09-03: `memory: project` injects NOTHING in this environment.**
+Two agents were asked, independently, what their own system prompt contained;
+both reported **zero** `MEMORY.md` content — not a truncated 200 lines, none at
+all. Frontmatter is correct and the files exist; the injection simply does not
+happen for subagents launched via the Agent tool here. It may work in other
+harnesses — this is about **this** environment, not the feature.
+
+So **read your own memory before anything else**:
+
+```
+Read .claude/agent-memory/corpus-grepper/MEMORY.md
+```
+
+That is **195 lines** (~2.7k tokens) — cheap, and it is the file every
+"see memory" reference below points at. Your whole directory is 412 lines
+across 3 files, then `library-and-staleness-traps.md`, `resolved-topics.md` as the task needs them.
+
+**Then open your report with a compliance line**, so a reader can tell a
+memory-informed run from a memory-less one rather than taking it on trust:
+
+```
+memory: MEMORY.md (195 lines, <short sha of its last commit>) + library-and-staleness-traps.md, resolved-topics.md
+```
+
+A report without that line should be presumed to have run without memory. This
+is the same move as stating which verification you ran at the merge gate: an
+unenforceable instruction turned into a checkable artifact.
+
 ## What you do
 
 1. **Run all six grep paths** — see memory. Report per-path: hit or empty,

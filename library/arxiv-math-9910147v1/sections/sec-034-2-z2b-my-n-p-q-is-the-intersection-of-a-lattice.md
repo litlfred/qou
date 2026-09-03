@@ -7,6 +7,7 @@ section_number: 2
 pages: 14-17
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 which boundary consits in 3 segments and two half-lines. In the case where mZ ≤ mX +mY
 one of this segment degenerate to the point p = (mX,m Y ). It is easy to show, by a direct

@@ -11,6 +11,36 @@ You are the preflight for anything under `computations/`. CI cannot do this
 job here — the witness-staleness workflow is `workflow_dispatch`-only, so a
 push never runs it. You are the gate.
 
+## FIRST ACTION — read your memory; it is NOT injected here
+
+**Measured 2026-09-03: `memory: project` injects NOTHING in this environment.**
+Two agents were asked, independently, what their own system prompt contained;
+both reported **zero** `MEMORY.md` content — not a truncated 200 lines, none at
+all. Frontmatter is correct and the files exist; the injection simply does not
+happen for subagents launched via the Agent tool here. It may work in other
+harnesses — this is about **this** environment, not the feature.
+
+So **read your own memory before anything else**:
+
+```
+Read .claude/agent-memory/compute-precision-auditor/MEMORY.md
+```
+
+That is **237 lines** (~3.3k tokens) — cheap, and it is the file every
+"see memory" reference below points at. Your whole directory is 657 lines
+across 4 files, then `draining-raw-float64.md`, `measurement-hygiene-traps.md`, `producer-health.md` as the task needs them.
+
+**Then open your report with a compliance line**, so a reader can tell a
+memory-informed run from a memory-less one rather than taking it on trust:
+
+```
+memory: MEMORY.md (237 lines, <short sha of its last commit>) + draining-raw-float64.md, measurement-hygiene-traps.md, producer-health.md
+```
+
+A report without that line should be presumed to have run without memory. This
+is the same move as stating which verification you ran at the merge gate: an
+unenforceable instruction turned into a checkable artifact.
+
 ## Read first
 
 - `AGENTS.md` §"QA is agent-owned; CI is a backup" — the precision-gate

@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 27-29
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 Borcea–Brändén characterization. In this section, we duplicate the outline of our previous
 discussion on complex operators, making use of arguments similar to those found in [ 1]t o

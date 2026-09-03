@@ -37,7 +37,7 @@ three $q$-dependent ingredients:
    integral.
 
 **The Gell-Mann--Okubo mass formula.**
-In standard SU(3) flavour physics, the meson masses obey the
+In standard $\mathrm{SU}(3)_{\mathrm{f}}$ flavour physics, the meson masses obey the
 Gell-Mann--Okubo relation
 $$
   4 m_K^2 = 3 m_\eta^2 + m_\pi^2.
@@ -49,7 +49,7 @@ Earlier drafts treated the relation as something the framework should
 against a $\approx 3.3\%$ figure from the $q$-deformation of the adjoint
 quantum dimension.  Both moves are withdrawn.
 
-First-order $\mathrm{SU}(3)$ breaking means the mass operator is a
+First-order $\mathrm{SU}(3)_{\mathrm{f}}$ breaking means the mass operator is a
 singlet plus an octet piece transforming like $\lambda_8$, so that
 $$
   m^2(I, Y) \;=\; a \;+\; b\,Y \;+\; c\left(I(I+1) - \tfrac{Y^2}{4}\right)

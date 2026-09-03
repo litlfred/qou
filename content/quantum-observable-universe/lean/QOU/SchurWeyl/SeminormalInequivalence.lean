@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.QJucysMurphyEigen
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.SchurWeyl.MatRepEquiv
+import QOU.SchurWeyl.GenericParameterReal
 import Mathlib.Algebra.Polynomial.Roots
 
 /-!
@@ -72,79 +73,6 @@ namespace QOU.SchurWeyl
 open QOU.Mathlib (StandardYoungTableau)
 open TableauCells SeminormalRep
 
-/-! ## Equivalence of matrix representations -/
-
-/-- **Two matrix representations of one algebra are equivalent** when an invertible change of
-basis intertwines them.
-
-Stated with an explicit inverse pair `S`, `T` rather than `IsUnit S`, because the index types
-`ι` and `κ` differ: `S : Matrix κ ι R` is not square, so `IsUnit` does not apply and the two
-one-sided identities are separate data.  Both are needed — `S * T = 1` is what forces the
-scalar comparison below, and `T * S = 1` is what makes this a symmetric notion. -/
-def MatRepEquiv {R A ι κ : Type*} [CommRing R] [Semiring A] [Algebra R A]
-    [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
-    (ρ : A →ₐ[R] Matrix ι ι R) (ρ' : A →ₐ[R] Matrix κ κ R) : Prop :=
-  ∃ (S : Matrix κ ι R) (T : Matrix ι κ R),
-    S * T = 1 ∧ T * S = 1 ∧ ∀ x : A, ρ' x * S = S * ρ x
-
-variable {R A ι κ : Type*} [CommRing R] [Semiring A] [Algebra R A]
-  [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
-
-/-- **A scalar value is an equivalence invariant.**  If `x` is sent to a scalar matrix by both
-representations, the two scalars agree.
-
-This is the whole force of centrality: a central element goes to a scalar in every irreducible
-block, and equivalent blocks cannot disagree about which scalar.  `Nonempty κ` is needed and is
-not a formality — over the empty index type every matrix is `1`, so any two scalars would be
-indistinguishable. -/
-theorem MatRepEquiv.scalar_eq [Nonempty κ] {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
-    (h : MatRepEquiv ρ ρ') {x : A} {c c' : R}
-    (hc : ρ x = c • (1 : Matrix ι ι R)) (hc' : ρ' x = c' • (1 : Matrix κ κ R)) : c' = c := by
-  obtain ⟨S, T, hST, _, hint⟩ := h
-  have key : c' • S = c • S := by
-    have hx := hint x
-    rw [hc, hc'] at hx
-    rwa [Matrix.smul_mul, Matrix.one_mul, Matrix.mul_smul, Matrix.mul_one] at hx
-  have h2 : c' • (1 : Matrix κ κ R) = c • (1 : Matrix κ κ R) := by
-    calc c' • (1 : Matrix κ κ R) = c' • (S * T) := by rw [hST]
-      _ = (c' • S) * T := (Matrix.smul_mul c' S T).symm
-      _ = (c • S) * T := by rw [key]
-      _ = c • (S * T) := Matrix.smul_mul c S T
-      _ = c • (1 : Matrix κ κ R) := by rw [hST]
-  have := congrFun (congrFun h2 (Classical.arbitrary κ)) (Classical.arbitrary κ)
-  simpa [Matrix.one_apply_eq] using this
-
-/-- **An equivalence conjugates one representation into the other.**  The intertwining identity
-`ρ' x * S = S * ρ x` becomes `ρ' x = S * ρ x * T` once `S * T = 1` is used on the right. -/
-theorem MatRepEquiv.conj_eq {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
-    {S : Matrix κ ι R} {T : Matrix ι κ R} (hST : S * T = 1)
-    (hint : ∀ x : A, ρ' x * S = S * ρ x) (x : A) : ρ' x = S * ρ x * T := by
-  calc ρ' x = ρ' x * (S * T) := by rw [hST, Matrix.mul_one]
-    _ = (ρ' x * S) * T := (Matrix.mul_assoc _ _ _).symm
-    _ = (S * ρ x) * T := by rw [hint x]
-
-/-- **The character is an equivalence invariant.**  `tr ρ'(x) = tr ρ(x)` for every `x`.
-
-This is the workhorse for *un*conditional separation, and it is strictly stronger than
-`scalar_eq`: it applies to every algebra element, not only those landing on scalars, so it can
-compare whole spectra rather than one number.  Note it needs only `S * T = 1` and `T * S = 1` —
-no genericity, no algebra structure beyond the intertwining. -/
-theorem MatRepEquiv.trace_eq {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
-    (h : MatRepEquiv ρ ρ') (x : A) : (ρ' x).trace = (ρ x).trace := by
-  obtain ⟨S, T, hST, hTS, hint⟩ := h
-  calc (ρ' x).trace = (S * ρ x * T).trace := by rw [MatRepEquiv.conj_eq hST hint x]
-    _ = (T * (S * ρ x)).trace := Matrix.trace_mul_comm _ _
-    _ = ((T * S) * ρ x).trace := by rw [Matrix.mul_assoc]
-    _ = (ρ x).trace := by rw [hTS, Matrix.one_mul]
-
-/-- **Equivalent representations have equal dimension.**  The `x = 1` instance of `trace_eq`,
-read through `CharZero` to land in `ℕ`. -/
-theorem MatRepEquiv.card_eq [CharZero R] {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
-    (h : MatRepEquiv ρ ρ') : Fintype.card κ = Fintype.card ι := by
-  have := h.trace_eq 1
-  rw [map_one, map_one, Matrix.trace_one, Matrix.trace_one] at this
-  exact_mod_cast this
-
 /-! ## The seminormal application -/
 
 /-- **Shapes with different content-cosh sums carry inequivalent representations.**
@@ -157,7 +85,7 @@ sums to agree.
 differ *at this `q`*.  It is not `μ ≠ ν → ρ_μ ≇ ρ_ν`; see the module docstring for why one
 scalar cannot deliver that, and what does. -/
 theorem seminormalRep_not_matRepEquiv_of_contentCoshSum_ne {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
     (hne : (∑ c ∈ ν.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))))
          ≠ (∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))))) :
@@ -187,15 +115,15 @@ hypothesis for something other than `zpow` injectivity.
 `seminormalRep_barSymJMSum` from the bar-symmetrised `m = ±1` combination to every `m`, by the
 same two ingredients: Ram 4.1 makes each `ρ(L_k)` diagonal, and `sum_cellOf_range` makes the
 diagonal constant because summing over `k` sweeps every cell exactly once. -/
-theorem seminormalRep_jmPowSum {μ : YoungDiagram} (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem seminormalRep_jmPowSum {μ : YoungDiagram} {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) (m : ℕ) :
-    seminormalRep q hq0 hq2 n hN (∑ k ∈ Finset.range (n + 1), (qJM ℝ q q⁻¹ n k) ^ m)
+    seminormalRep q hq0 hq2 n hN (∑ k ∈ Finset.range (n + 1), (qJM K q q⁻¹ n k) ^ m)
       = (∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m)
-          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) := by
   classical
   rw [map_sum]
   have hterm : ∀ k ∈ Finset.range (n + 1),
-      seminormalRep q hq0 hq2 n hN ((qJM ℝ q q⁻¹ n k) ^ m)
+      seminormalRep q hq0 hq2 n hN ((qJM K q q⁻¹ n k) ^ m)
         = Matrix.diagonal (fun T : StandardYoungTableau μ =>
             (q ^ (2 * cellContent (cellOf T (k + 1)))) ^ m) := by
     intro k hk
@@ -214,7 +142,7 @@ theorem seminormalRep_jmPowSum {μ : YoungDiagram} (q : ℝ) (hq0 : q ≠ 0) (hq
 /-- **An equivalence forces every content power sum to agree.**  The unconditional handle on
 pairwise inequivalence: not one number, but a whole family indexed by `m`. -/
 theorem contentPowSum_eq_of_matRepEquiv {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
     (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (m : ℕ) :
     (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
@@ -230,31 +158,32 @@ the work, and it comes from `0 < t`, `t ≠ 1`.
 -/
 
 
-/-- `m ↦ t ^ m` is injective for a positive `t ≠ 1`. -/
-theorem pow_right_injective_of_pos_of_ne_one {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1) :
-    Function.Injective (fun m : ℕ => t ^ m) := by
-  intro a b hab
-  have hlog : (a : ℝ) * Real.log t = (b : ℝ) * Real.log t := by
-    rw [← Real.log_pow, ← Real.log_pow]
-    exact congrArg Real.log hab
-  have hne : Real.log t ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one ht0 ht1
-  exact_mod_cast mul_right_cancel₀ hne hlog
+/-- `m ↦ t ^ m` is injective for a non-root-of-unity `t`.
 
-/-- A real polynomial vanishing at every `t ^ m` is the zero polynomial. -/
-theorem poly_eq_zero_of_eval_pow {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1)
-    (p : Polynomial ℝ) (h : ∀ m : ℕ, p.eval (t ^ m) = 0) : p = 0 := by
-  refine p.eq_zero_of_infinite_isRoot ?_
-  exact Set.infinite_of_injective_forall_mem
-    (pow_right_injective_of_pos_of_ne_one ht0 ht1) (fun m => h m)
+Kept as a named local so the call sites below read unchanged; the content is entirely
+`GenericParameter.pow_left_injective`, which holds over **any** field.  Until 2026-09-03
+this took `0 < t` and `t ≠ 1` and went through `Real.log_pow`, which fused "not a root of
+unity" with the `ℝ`-only proof of it.  Bean `qou-j377`. -/
+theorem pow_right_injective_of_pos_of_ne_one {K : Type*} [Field K] {t : K} (ht0 : t ≠ 0)
+    (ht1 : GenericParameter.NotRootOfUnity t) :
+    Function.Injective (fun m : ℕ => t ^ m) :=
+  GenericParameter.pow_left_injective ht0 ht1
+
+/-- A polynomial vanishing at every `t ^ m` is the zero polynomial. -/
+theorem poly_eq_zero_of_eval_pow {K : Type*} [Field K] {t : K} (ht0 : t ≠ 0)
+    (ht1 : GenericParameter.NotRootOfUnity t)
+    (p : Polynomial K) (h : ∀ m : ℕ, p.eval (t ^ m) = 0) : p = 0 :=
+  GenericParameter.poly_eq_zero_of_eval_pow ht0 ht1 h
 
 /-- The `d`-th coefficient of `∑_{i ∈ s} X ^ (f i)` counts the `i` with `f i = d`. -/
-theorem coeff_sum_X_pow {ι : Type*} (s : Finset ι) (f : ι → ℕ) (d : ℕ) :
-    (∑ i ∈ s, (Polynomial.X : Polynomial ℝ) ^ (f i)).coeff d
-      = ((s.filter (fun i => f i = d)).card : ℝ) := by
+theorem coeff_sum_X_pow {ι : Type*} {K : Type*} [Field K]
+    (s : Finset ι) (f : ι → ℕ) (d : ℕ) :
+    (∑ i ∈ s, (Polynomial.X : Polynomial K) ^ (f i)).coeff d
+      = ((s.filter (fun i => f i = d)).card : K) := by
   classical
   rw [Polynomial.finset_sum_coeff]
   simp only [Polynomial.coeff_X_pow]
-  have hflip : ∀ i ∈ s, (if d = f i then (1 : ℝ) else 0) = (if f i = d then (1 : ℝ) else 0) := by
+  have hflip : ∀ i ∈ s, (if d = f i then (1 : K) else 0) = (if f i = d then (1 : K) else 0) := by
     intro i _
     by_cases h : f i = d
     · simp [h]
@@ -263,13 +192,13 @@ theorem coeff_sum_X_pow {ι : Type*} (s : Finset ι) (f : ι → ℕ) (d : ℕ) 
 
 /-- **Equal power sums at every `m` force equal exponent multisets.** -/
 theorem card_filter_eq_of_powSum_eq {ι κ : Type*} {sμ : Finset ι} {sν : Finset κ}
-    {f : ι → ℕ} {g : κ → ℕ} {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1)
+    {f : ι → ℕ} {g : κ → ℕ} {K : Type*} [Field K] [CharZero K] {t : K} (ht0 : t ≠ 0) (ht1 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity t)
     (h : ∀ m : ℕ, ∑ i ∈ sμ, (t ^ f i) ^ m = ∑ j ∈ sν, (t ^ g j) ^ m) (d : ℕ) :
     (sμ.filter (fun i => f i = d)).card = (sν.filter (fun j => g j = d)).card := by
   classical
-  set p : Polynomial ℝ :=
-    (∑ i ∈ sμ, (Polynomial.X : Polynomial ℝ) ^ (f i))
-      - (∑ j ∈ sν, (Polynomial.X : Polynomial ℝ) ^ (g j)) with hpdef
+  set p : Polynomial K :=
+    (∑ i ∈ sμ, (Polynomial.X : Polynomial K) ^ (f i))
+      - (∑ j ∈ sν, (Polynomial.X : Polynomial K) ^ (g j)) with hpdef
   have hp : p = 0 := by
     refine poly_eq_zero_of_eval_pow ht0 ht1 p (fun m => ?_)
     rw [hpdef]
@@ -279,10 +208,10 @@ theorem card_filter_eq_of_powSum_eq {ι κ : Type*} {sμ : Finset ι} {sν : Fin
       intro u; rw [← pow_mul, ← pow_mul, Nat.mul_comm]
     simp only [hswap]
     rw [h m, sub_self]
-  have hc := congrArg (fun r : Polynomial ℝ => r.coeff d) hp
+  have hc := congrArg (fun r : Polynomial K => r.coeff d) hp
   simp only [hpdef, Polynomial.coeff_sub, Polynomial.coeff_zero, coeff_sum_X_pow] at hc
-  have hreal : ((sμ.filter (fun i => f i = d)).card : ℝ)
-      = ((sν.filter (fun j => g j = d)).card : ℝ) := by linarith
+  have hreal : ((sμ.filter (fun i => f i = d)).card : K)
+      = ((sν.filter (fun j => g j = d)).card : K) := by linear_combination hc
   exact_mod_cast hreal
 
 
@@ -325,15 +254,15 @@ theorem shiftedContent_cast {μ : YoungDiagram} {n : ℕ} (hN : μ.cells.card = 
 
 /-- `t ^ shiftedContent` factors as `q ^ (2·content)` times the shift, with `t = q ^ 2`. -/
 theorem pow_shiftedContent {μ : YoungDiagram} {n : ℕ} (hN : μ.cells.card = n + 1)
-    {q : ℝ} (hq0 : q ≠ 0) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
-    (q ^ 2 : ℝ) ^ (shiftedContent n c) = q ^ (2 * cellContent c) * (q ^ 2 : ℝ) ^ n := by
-  have hq2 : (q ^ 2 : ℝ) ≠ 0 := pow_ne_zero 2 hq0
-  have hz : ((q ^ 2 : ℝ)) ^ (shiftedContent n c) = ((q ^ 2 : ℝ)) ^ ((shiftedContent n c : ℤ)) := by
+    {K : Type*} [Field K] {q : K} (hq0 : q ≠ 0) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    (q ^ 2 : K) ^ (shiftedContent n c) = q ^ (2 * cellContent c) * (q ^ 2 : K) ^ n := by
+  have hq2 : (q ^ 2 : K) ≠ 0 := pow_ne_zero 2 hq0
+  have hz : ((q ^ 2 : K)) ^ (shiftedContent n c) = ((q ^ 2 : K)) ^ ((shiftedContent n c : ℤ)) := by
     rw [zpow_natCast]
   rw [hz, shiftedContent_cast hN hc, zpow_add₀ hq2, zpow_natCast]
   congr 1
   rw [zpow_mul]
-  rfl
+  norm_cast
 
 
 /-- **An equivalence forces the two shapes to have the same content multiset.**
@@ -352,28 +281,30 @@ What remains between this and `μ = ν` is the classical fact that a Young diagr
 its content multiset — stated in the module header as the one open step, and deliberately not
 assumed here. -/
 theorem contentCount_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
     (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
       = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) (d : ℤ) :
     (ν.cells.filter (fun c => cellContent c = d)).card
       = (μ.cells.filter (fun c => cellContent c = d)).card := by
   classical
-  have ht0 : (0 : ℝ) < q ^ 2 := lt_of_le_of_ne (sq_nonneg q) (Ne.symm (pow_ne_zero 2 hq0))
+  have ht0 : (q ^ 2 : K) ≠ 0 := pow_ne_zero 2 hq0
+  have ht1 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity (q ^ 2) :=
+    QOU.SchurWeyl.GenericParameter.pow_notRootOfUnity hq2 (by norm_num)
   by_cases hd : 0 ≤ d + (n : ℤ)
   · have hshift : ∀ m : ℕ,
-        ∑ c ∈ ν.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
-          = ∑ c ∈ μ.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m := by
+        ∑ c ∈ ν.cells, ((q ^ 2 : K) ^ shiftedContent n c) ^ m
+          = ∑ c ∈ μ.cells, ((q ^ 2 : K) ^ shiftedContent n c) ^ m := by
       intro m
-      have hν' : ∀ c ∈ ν.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
-          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
+      have hν' : ∀ c ∈ ν.cells, ((q ^ 2 : K) ^ shiftedContent n c) ^ m
+          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : K) ^ n) ^ m := by
         intro c hc; rw [pow_shiftedContent hν hq0 hc, mul_pow]
-      have hμ' : ∀ c ∈ μ.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
-          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
+      have hμ' : ∀ c ∈ μ.cells, ((q ^ 2 : K) ^ shiftedContent n c) ^ m
+          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : K) ^ n) ^ m := by
         intro c hc; rw [pow_shiftedContent hμ hq0 hc, mul_pow]
       rw [Finset.sum_congr rfl hν', Finset.sum_congr rfl hμ', ← Finset.sum_mul, ← Finset.sum_mul,
         hpow m]
-    have hcount := card_filter_eq_of_powSum_eq ht0 hq2 hshift ((d + (n : ℤ)).toNat)
+    have hcount := card_filter_eq_of_powSum_eq ht0 ht1 hshift ((d + (n : ℤ)).toNat)
     have hre : ∀ (σ : YoungDiagram), σ.cells.card = n + 1 →
         σ.cells.filter (fun c => shiftedContent n c = (d + (n : ℤ)).toNat)
           = σ.cells.filter (fun c => cellContent c = d) := by
@@ -395,7 +326,7 @@ theorem contentCount_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
 /-- **An equivalence forces equal content counts.**  The original form of the previous theorem,
 now a corollary of it: `MatRepEquiv` is only ever used to supply the power-sum equality. -/
 theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
     (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
     (ν.cells.filter (fun c => cellContent c = d)).card
@@ -536,7 +467,7 @@ because its diagonals are downward-closed (`youngDiagram_eq_of_contentCount_eq`)
 Together with irreducibility this is what makes `{ρ_λ : λ ⊢ n}` the *list* of irreducibles of
 `H_n(q)` rather than merely a supply of them — the second half of SW-5 (bean `qou-jfr8`). -/
 theorem seminormalRep_not_matRepEquiv_of_ne {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1) (hne : μ ≠ ν) :
     ¬ MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν) := by
   classical
@@ -553,7 +484,7 @@ This is the form a *product-map* argument needs.  `seminormalRep_not_matRepEquiv
 "are these two blocks isomorphic"; assembling `⊕_λ ρ_λ` instead needs "do the block scalars
 separate the index set", which is this. -/
 theorem youngDiagram_eq_of_contentPowSum_eq {μ ν : YoungDiagram}
-    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
     (hpow : ∀ m : ℕ, (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
       = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m) :
@@ -584,7 +515,7 @@ Measured in exact rational arithmetic, the collapse is total: at `n = 7` the 15 
 This also sharpens what `cellContentCoshSum_eq_bracket` records (that the bar-even brackets are not
 independent spectral degrees of freedom): the invariant is not merely dependent on the others, it is
 strictly *coarser than the partition itself*. -/
-theorem coshSum_transpose (q : ℝ) (μ : YoungDiagram) :
+theorem coshSum_transpose {K : Type*} [Field K] (q : K) (μ : YoungDiagram) :
     ∑ c ∈ μ.transpose.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c)))
       = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))) := by
   classical

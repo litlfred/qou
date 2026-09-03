@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 41-47
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 Using these results, along with the method of Chatterjee and Ledoux, we are able to
 prove the following result:

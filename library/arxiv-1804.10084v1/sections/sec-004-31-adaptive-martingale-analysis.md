@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 4-8
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
 ---
 As we show in Appendix A, it is not possible to replicate the martingale an alysis of McDiarmid’s
 inequality under negative regression, if we work with a ﬁxed ordering of variables X1, . . . , X n. The

@@ -7,6 +7,7 @@ section_number: 6
 pages: 19-19
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 As we have reviewed in section 2, the unitary matrix models admit a phase space or droplet
 description in two dimensions spanned by ( h,θ ). Following [22] we show that the growth of

@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2105.09342v1",
+ "source_sha256": "57ae12327da7b9a1",
+ "brief": "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure.",
+ "extended": "**A Unitary Matrix Model for q-deformed Plancherel Growth**\n\n*Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara*\n\n31 pp, 10 sections.\n\n**Abstract.** In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is theq-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space.\n\n**Outline.** 1 Introduction; 2 q-deformed Plancherel growth; 3 A unitary matrix model for q-deformed Planch; 3.1 Solution class 1: No-gap solution; 3.2 q-deformed automodel class; 3.3 The unitary matrix model from the droplet ; 4 Asymptotic analysis of q-deformed Plancherel; 5 The Hilbert space; 5.1 Moments of Young diagrams and conserved ch; 6 Conclusion",
+ "tokens": {
+  "brief": 49,
+  "extended": 331
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-q-deformed-plancherel-growth",
+   "title": "q-deformed Plancherel growth",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
+   "title": "A unitary matrix model for q-deformed Plancherel growth",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-003-31-solution-class-1-no-gap-solution",
+   "title": "Solution class 1: No-gap solution",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-004-32-q-deformed-automodel-class",
+   "title": "q-deformed automodel class",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
+   "title": "The unitary matrix model from the droplet picture",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
+   "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-007-5-the-hilbert-space",
+   "title": "The Hilbert space",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
+   "title": "Moments of Young diagrams and conserved charges",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-009-6-conclusion",
+   "title": "Conclusion",
+   "pages": "19-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

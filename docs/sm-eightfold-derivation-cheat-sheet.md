@@ -361,6 +361,22 @@ without dropping a named premise):
 | Hecke centralizer on regular `H₃` | dim 6 < 8 exclusion (#4564) |
 | Tetraplectic / quaternionic | supplies `SU(2)`, already spent on electroweak |
 
+> **🛑 The "surviving direction" below is ANSWERED, and the answer does not
+> help (2026-09-03, PR #6458, bean `qou-yjwg`).** *Inequivalent fibre functors
+> exist* — Bichon 2003 classifies them on `Rep(SL_q(2))`: one at every
+> dimension `n ≥ 2`, real at `q₀` (`E ∈ GL_n`, `tr(E⁻¹Eᵗ) = −q − q⁻¹`). But a
+> fibre functor is monoidal and preserves the fusion rules, so under a 3-dim
+> one `V^{⊗3} = 21 + 3 + 3`, never `10 + 8 + 8 + 1`; the singlet is absent by
+> Clebsch–Gordan parity (`FibreFunctorDimensionNotCategorical.lean`,
+> sorry-free). Scope-(b): the fibre-functor route is closed; the missing object
+> is in the **category** (`Λ³W ≠ 0`), which axiom 5 forbids for the
+> fundamental. The 2026-08-25 "what is the reconstructed Hopf algebra?"
+> re-posing was also already answered by `ex:tannaka-krein-su2`
+> (`𝒪_q(SU(2))`) and does not bear on the multiplets, since every fibre
+> functor's reconstruction gives an equivalent category. The `ℤ/2` lead below
+> is thereby moot for the single-fibre category.
+> [`2026-09-03-fibre-functors-do-not-change-the-category.md`](audits/2026-09-03-fibre-functors-do-not-change-the-category.md)
+
 **Surviving direction:** the non-neutral Tannakian gerbe (`qou-y7vg`, T3g),
 merged in scope with `qou-8p1i` (T3b). The sharp first question: *is
 `Out(SU(3)) = ℤ/2` an obstruction to **every** gerbe route, or only to the
@@ -438,7 +454,7 @@ that yields a new comparable number without touching `SU(3)`.
 > is identified, the kernel is not, and the separation law is imported.
 > [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
 
-### 4-C. A third flavour grade (strangeness / charm Cartan)
+### 4-C. Content → hyperbolic braid map (retitled 2026-09-03; formerly "A third flavour grade (strangeness / charm Cartan)")
 
 **Gates:** the charmed-hadron observable spectrum, `m_s`/`m_c`, the `D`-meson
 mass, `Y = B + S` on strange states, and thereby `sin²θ_W`'s normalisation.

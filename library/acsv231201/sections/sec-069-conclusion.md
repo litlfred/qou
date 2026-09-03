@@ -7,6 +7,7 @@ section_number: null
 pages: 453-456
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Problem 13.8. Find a way analogous to Theorem 13.8 to conclude minimal-
 ity in some oﬀ-diagonal direction for some class of multi-a ﬃne polynomials.

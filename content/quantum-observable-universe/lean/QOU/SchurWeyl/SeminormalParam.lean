@@ -61,7 +61,7 @@ open Hecke Matrix
 
 namespace Seminormal
 
-variable (q : ℝ)
+variable {K : Type*} [Field K] (q : K)
 
 /-- **The axial-distance parameter of the seminormal block.**  For an `s_i`-orbit whose
 axial distance is `d`, the `(0,0)` entry of the seminormal matrix of `σ_i` is
@@ -70,7 +70,7 @@ axial distance is `d`, the `(0,0)` entry of the seminormal matrix of `σ_i` is
 
 At `d = 1` (entries in the same row) this is `q`; at `d = -1` (same column) it is `-q⁻¹`;
 at `d = -2` it is the `(0,0)` entry of the hand-built `(2,1)` matrix `S1`. -/
-noncomputable def seminormalParam (d : ℤ) : ℝ := (q - q⁻¹) / (1 - q ^ (-2 * d))
+noncomputable def seminormalParam (d : ℤ) : K := (q - q⁻¹) / (1 - q ^ (-2 * d))
 
 /-- **Same-row orbit**: axial distance `1` gives the eigenvalue `q`. -/
 theorem seminormalParam_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
@@ -78,7 +78,7 @@ theorem seminormalParam_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
   have hne : q ^ 2 - 1 ≠ 0 := sub_ne_zero.mpr hq2
   have hz : q ^ (-2 * (1 : ℤ)) = (q ^ 2)⁻¹ := by
     norm_num [zpow_neg, ← zpow_natCast]
-  have h1 : (1 : ℝ) - q ^ (-2 * (1 : ℤ)) = (q ^ 2 - 1) / q ^ 2 := by
+  have h1 : (1 : K) - q ^ (-2 * (1 : ℤ)) = (q ^ 2 - 1) / q ^ 2 := by
     rw [hz]; field_simp
   rw [seminormalParam, h1]
   field_simp
@@ -86,8 +86,8 @@ theorem seminormalParam_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
 /-- **Same-column orbit**: axial distance `-1` gives the eigenvalue `-q⁻¹`. -/
 theorem seminormalParam_neg_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
     seminormalParam q (-1) = -q⁻¹ := by
-  have hne : (1 : ℝ) - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq2)
-  have h1 : (1 : ℝ) - q ^ (-2 * (-1 : ℤ)) = 1 - q ^ 2 := by
+  have hne : (1 : K) - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq2)
+  have h1 : (1 : K) - q ^ (-2 * (-1 : ℤ)) = 1 - q ^ 2 := by
     norm_num [← zpow_natCast]
   rw [seminormalParam, h1]
   field_simp
@@ -95,10 +95,10 @@ theorem seminormalParam_neg_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
 
 /-- Algebraic core of `seminormalParam_add_neg`: `c/(1-x) + c/(1-x⁻¹) = c`, since
 `1 - x⁻¹ = -(1-x)/x` turns the second summand into `-cx/(1-x)`. -/
-private theorem add_inv_aux {c x : ℝ} (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
+private theorem add_inv_aux {c x : K} (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
     c / (1 - x) + c / (1 - x⁻¹) = c := by
-  have h1 : (1 : ℝ) - x ≠ 0 := sub_ne_zero.mpr (Ne.symm hx1)
-  have h2 : (1 : ℝ) - x⁻¹ ≠ 0 := by
+  have h1 : (1 : K) - x ≠ 0 := sub_ne_zero.mpr (Ne.symm hx1)
+  have h2 : (1 : K) - x⁻¹ ≠ 0 := by
     rw [sub_ne_zero]
     intro hcon
     exact hx1 (by rw [← inv_inv x, ← hcon, inv_one])
@@ -154,47 +154,13 @@ theorem seminormalParam_rel (p r : ℤ) (hq : q ≠ 0) (hp : q ^ (-2 * p) ≠ 1)
     rw [← zpow_add₀ hq]
     congr 1
     ring
-  have h1 : (1 : ℝ) - q ^ (-2 * p) ≠ 0 := sub_ne_zero.mpr (Ne.symm hp)
-  have h2 : (1 : ℝ) - q ^ (-2 * r) ≠ 0 := sub_ne_zero.mpr (Ne.symm hr)
-  have h3 : (1 : ℝ) - q ^ (-2 * p) * q ^ (-2 * r) ≠ 0 := by
+  have h1 : (1 : K) - q ^ (-2 * p) ≠ 0 := sub_ne_zero.mpr (Ne.symm hp)
+  have h2 : (1 : K) - q ^ (-2 * r) ≠ 0 := sub_ne_zero.mpr (Ne.symm hr)
+  have h3 : (1 : K) - q ^ (-2 * p) * q ^ (-2 * r) ≠ 0 := by
     rw [← hsplit]; exact sub_ne_zero.mpr (Ne.symm hpr)
   rw [seminormalParam, seminormalParam, seminormalParam, hsplit]
   field_simp
   ring
-
-/-- **Anchor.**  The hand-built `(2,1)` matrix `S1` — constructed in `HoefsmitRep.lean` to
-satisfy the braid relation with `S0`, independently of any axial-distance formula — is the
-generic block at the parameter this file predicts.  In `[[1,2],[3]]` the entry `2` has
-content `1` and `3` has content `-1`, so `σ_1` acts with axial distance `-2`.
-
-The hypothesis `q² ≠ 1` is necessary, not cosmetic: at `q = ±1` the numerator `q - q⁻¹`
-and the denominator `1 - q⁴` both vanish, so `seminormalParam q (-2)` evaluates to `0`
-(Lean's `0 / 0`), while `S1`'s `(0,0)` entry is `-1 / (2q) ≠ 0`.  That is the Hecke
-algebra degenerating to the group algebra, where the seminormal form is not given by this
-formula. -/
-theorem S1_eq_seminormalParam (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
-    S1 q = seminormalBlock q (seminormalParam q (-2)) := by
-  have h4 : (1 : ℝ) - q ^ (-2 * (-2 : ℤ)) = 1 - q ^ 4 := by
-    norm_num [← zpow_natCast]
-  have hne4 : (1 : ℝ) - q ^ 4 ≠ 0 := by
-    intro hcon
-    apply hq2
-    have h2 : (q ^ 2 - 1) * (q ^ 2 + 1) = 0 := by nlinarith [hcon]
-    rcases mul_eq_zero.mp h2 with h | h
-    · linarith
-    · nlinarith [sq_nonneg q]
-  have hden : q ^ 3 + q ≠ 0 := by
-    have hfac : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
-    rw [hfac]
-    exact mul_ne_zero hq (by positivity)
-  have hparam : seminormalParam q (-2) = -1 / (q ^ 3 + q) := by
-    rw [seminormalParam, h4]
-    field_simp
-    ring
-  rw [hparam]
-  ext i j
-  fin_cases i <;> fin_cases j <;>
-    (simp [S1, seminormalBlock]; try field_simp; try ring)
 
 end Seminormal
 

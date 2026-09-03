@@ -7,6 +7,7 @@ section_number: null
 pages: 13-15
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 We have all the necessary tools in hand to define a deformed Hurwitz theory that is manifestly
 dual to two-dimensional chiral Yang-Mills theory. As suggested at the end of section 3.1, we

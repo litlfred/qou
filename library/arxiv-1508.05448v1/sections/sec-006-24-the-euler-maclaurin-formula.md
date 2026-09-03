@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 34-36
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 The Euler-Maclaurin formula is a formula which enables us to make a connection
 between a sum and its corresponding integral, provided the function is suﬃciently

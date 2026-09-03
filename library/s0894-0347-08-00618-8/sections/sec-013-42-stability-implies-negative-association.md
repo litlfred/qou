@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 24-25
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 of the following theorem goes back to Feder-Mihail [29], although the proof of the
 full theorem is scattered over the literature [24, 57, 58, 72].

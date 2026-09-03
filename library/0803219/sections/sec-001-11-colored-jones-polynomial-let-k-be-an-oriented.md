@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 2-4
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 S3, and D its diagram. We assume that D is the image of a projection R3 ∼=
 S3 \ {∞} → R2 of a circle S1 together with a ﬁnite number of double point
