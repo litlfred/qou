@@ -7152,3 +7152,76 @@ unreachable.
 #6342 relays it. This entry adds only the *relation* between the bands and its
 consequence. It takes **no position** on #6342's entry-9 `|c_4| <= 1.4816`
 threshold, which is that PR's result and is not re-derived here.
+
+## 2026-09-03, S1 — "RESOLVED" overstates the swing: it carries ±0.0052 from the muon pin
+
+Probe: `computations/qbeta/qbeta_c3_derivative_vs_value_precision_probe.py`,
+**7/7**.
+
+**Most of what I set out to find was already in the corpus, and my corpus-grep
+missed it because I searched `AGENTS.md docs/audits/ content/` and skipped
+`computations/` — path 3 of the checklist.** There are ~55 `qbeta_c3_*` probes.
+Recording what is theirs before what is mine:
+
+- **The 1/u³ amplification and the value bar are `qbeta_c3_experimental_uncertainty_probe.py`'s**:
+  gain `1.618e6`, `σ(c_3) = 1.16`, *"-2 is inside 1 sigma"*. Same mechanism I
+  re-derived, same conclusion.
+- **The common-mode cancellation is `qbeta_c3_swing_gate_probe.py`'s**, and it
+  goes further than I did: it *derives* the cancellation by perturbing `Q_β`
+  rather than asserting it, and already uses the swing as the **primary resolved
+  filter on candidate `u(q₀)` maps**, replacing a conditional diagonal gate.
+
+### What survives, and it bears on that live gate
+
+That probe calls the swing **RESOLVED** on the grounds that the CAL-3 error is
+common-mode — and **does not propagate the pin uncertainty** (grepped:
+no `MASS_RATIO_MU_E_ERR`, no `dq/dr`, no pin σ anywhere in it).
+
+That is exactly the gap my own first pass had. Propagating it:
+
+    sigma(swing) from Q_beta   (common-mode, cancels)   +/- 8.33e-7
+    sigma(swing) from muon pin (does NOT cancel)        +/- 5.21e-3   <- 6255x larger
+    total                                               +/- 5.21e-3
+
+    swing        = -0.049482266
+    significance = 9.4936 sigma
+
+**The swing is significant but not exact.** It carries a **10.5 %** bar. A gate
+keyed on ΔS must allow that tolerance; a tighter one rejects correct candidates.
+
+The 9.4936σ independently reproduces the **9.5σ** μ–p substrate tension AGENTS.md
+documents, from the Q_β side rather than the m_μ side — which is what convinced
+me the corrected number is right rather than a third error.
+
+### Two errors of mine, in opposite directions, before that
+
+1. Propagating only `Q_β` gives *"the swing is 59,400σ"* — wrong by four orders,
+   and it would have passed every gate in this repo.
+2. My first hand-fix applied the 22.2 ppb **directly to q**, giving *"0.53σ, not
+   significant"* — also wrong, because the ratio→q₀ map **compresses** by ~18×
+   (`dq/dr = −2.95e-4`).
+
+### The one consequence worth carrying forward
+
+    quantity      value          sigma        relative     limited by
+    c_3           -2.0693        +/- 1.379      67 %       Q_beta^exp
+    dc_3/dq        3838405.9     +/- 4.04e5     10.5 %     m_mu/m_e
+
+**"Improve the measurement" is two programmes.** Sharpening `Q_β` (the 32× / 130×
+in `rem-qstar-decay-sector-q0`) buys the **value** and almost nothing for the
+derivative; sharpening `m_μ/m_e` buys the **derivative** and nothing for the
+value. The derivative's *value* is the corpus's three ways over (my fourth route
+agrees to ~1e-6); the **error bar** is what was missing.
+
+### Note on a small numeric difference, not chased
+
+The swing-gate probe records `ΔS = 0.0491423421` (its O2 value); I get
+`0.049482266`, 0.7 % apart. Different extraction paths (its `S_leak` carries a
+`Vol(4₁)` that cancels in the swing). Flagged, not reconciled — it does not
+move the 10.5 % conclusion, and reconciling it belongs with that probe's owner.
+
+### Scope
+
+**(a).** Convention C. Not a claim that the swing gate is wrong — its cancellation
+derivation is sound and its use as the primary filter stands. Only that its
+tolerance should be **±0.0052**, not zero.
