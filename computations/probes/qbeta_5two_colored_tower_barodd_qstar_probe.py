@@ -79,7 +79,7 @@ from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 # Both anchors read BY NAME (bean qou-9ugp, 2026-09-03). `Q_MUON` was the
-# literal "1.10997859555733471" — the RETIRED self-certified muon pin A,
+# literal "1.1099785955573…" — the RETIRED self-certified muon pin A,
 # superseded 2026-08-22 by the live CODATA-2022 lepton-ratio derivation
 # `q_muon_at()` (+0.0769 ppb); `Q_PROTON` was the proton 50-digit string
 # re-typed by hand. A hardcoded pin cannot be checked against the name it is
