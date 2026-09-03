@@ -11,10 +11,10 @@ obvious discriminator is wrong.
 31 library projections: it splits 8 / 10 / 13, and the 8 "parameterised" bucket
 contained `KnotFactorSpectralContext`, `SortingColorEnergyContext` and
 `SixTermMassFormulaContext` — carriers with **ten, twelve and eight data
-fields** respectively. A class can take a parameter *and* carry a dozen
-objects the instance chooses; the parameter buys nothing then. (The first and
-third have since been repaired and no longer appear; `SortingColorEnergyContext`
-is still here at `data = 12`.)
+fields** respectively — counts taken from the source by hand, since every
+parser this script has had got them wrong. A class can take a parameter *and*
+carry ten objects the instance chooses; the parameter buys nothing then. (All
+three have since been repaired and none appears in a current run.)
 
 **The discriminator is DATA FIELDS.** AGENTS.md §3b-cond item 5 asks whether
 the class axiomatises *hypotheses* or supplies the objects the claim is about.
@@ -30,29 +30,48 @@ Operationally:
   repair is to move the data to parameters.
 
 Measured on `main` 2026-09-02 over the 31 library projections:
-**19 defect, 2 accessor, 10 unresolved.** After the first five repairs and the
-field-parser fix below, the library figure is **10 / 2 / 10** and the whole
-tree is **18 / 4 / 15**.
+**19 defect, 2 accessor, 10 unresolved.** After six repairs and the three
+parser fixes below: library **7 / 4 / 10**, whole tree **9 / 12 / 15**.
 
-## The field parser under-counted, and by a lot — but no verdict moved
+## The field parser was wrong three times, and the third one moved verdicts
 
-Found in Copilot's review of PR #6422. `FIELD` was `^  (\w+)\s*:` and was
-wrong twice, both times downward:
+Two of the three came out of Copilot's review of PR #6422; the third came out
+of reading a carrier whose field count I already knew.
 
-* `\w` excludes the characters Lean identifiers use — `'`, `!`, `?`, and all
-  of unicode. A field named `S'` or `y_λ` was **invisible**.
-* It captured one name per line, so `W_sym W_std W_alt : R` counted as **one**
-  field instead of three.
+1. **Under-count.** `FIELD` was `^  (\w+)\s*:`. `\w` excludes the characters
+   Lean identifiers use — `'`, `!`, `?`, all of unicode — so a field named
+   `S'` or `y_λ` was invisible; and it captured one name per line, so
+   `W_sym W_std W_alt : R` read as one field instead of three.
+2. **Over-count.** The first repair accepted any run of non-delimiter tokens
+   before a colon, so a *docstring* line carrying a colon parsed as fields:
+   `/-- Manuscript claim — atomic-mass recovery: …` became six.
+   `BindingAssemblyContext` (four data fields) was reported with eleven.
+3. **Mis-classification, and this is the one that mattered.** A field whose
+   type begins on the *next* line shows an empty type on its own line, so
+   `CLAIMY` finds no `=` and a **claim field is counted as data**.
 
-Measured by running both parsers over the same tree: **11 of 37 rows had their
-data count corrected upward**, the worst by nineteen (`knot-eigenbasis-complete`,
-4 → 23; `diagrammatic-double-magic-lr-fusion`, 7 → 21).
+### 🛑 The "zero verdicts flipped" claim recorded here earlier was WRONG
 
-**And zero verdicts flipped.** That is not luck and is worth stating as the
-reason the published triage stands: `ACCESSOR` requires `data == 0`, so an
-under-count can only manufacture a *false accessor* — and no row was pushed to
-zero, because a carrier with any data field at all had at least one name the
-old regex could see. So the counts were wrong and the partition was not.
+It compared the original parser against the *over-counting* intermediate,
+where (2) inflated exactly the rows (3) deflated, so the two errors cancelled
+in the totals and nothing appeared to move. Against the corrected parser,
+**8 of 36 rows flip `DEFECT` → `ACCESSOR`** — every change is downward; no row
+moved the other way.
+
+The structural argument offered for that claim was also wrong. It reasoned
+that an under-count can only manufacture a *false accessor* — true of bug (1),
+and irrelevant, because the bug that decided verdicts was in the **claim**
+direction and manufactures false *defects*.
+
+**The corrected parser reproduces the known hand adjudication**, which is the
+real evidence it is right: all four §4 gate classes
+(`MassAnchorStableGateClass`, `MassDirectionSanityGateClass`,
+`DirectionSanityGateClass`, `RadiusOfConvergenceGateClass`) now read
+`ACCESSOR` — the verdict reached by hand on 2026-08-31 and recorded in the
+ledger, which the old parser contradicted.
+
+`--selftest` pins the parser against hand-counted carriers so a fourth
+regression is caught by the script rather than by whoever next opens a file.
 
 Quote the counts from a run, never from this docstring.
 
@@ -96,7 +115,7 @@ Use this script to **order** the reading. Do not use it to skip it.
 
 ## Limits — quote them with the number
 
-- **10 are unresolved**, not clean. The class-declaration matcher wants
+- **10 are unresolved**, not clean (and the count moves with the tree). The class-declaration matcher wants
   `class Name … where` closing on one line; a multi-line signature, an
   `extends` chain, or a carrier declared in another form is missed. Those ten
   need reading, not counting.
@@ -144,13 +163,72 @@ CLAIMY = re.compile(r"[=≤<>∀∃↔≠∈]|Nonempty|IsOpen|Subsingleton|Prop\
 #   2. It captured only ONE name, so the standard multi-binder line
 #      `W_sym W_std W_alt : R` counted as a single field instead of three.
 #
-# So the name class is "anything that is not whitespace, a delimiter, or the
-# colon", and the group is a whitespace-separated run of them. Requiring
-# exactly two leading spaces keeps continuation lines of a previous field's
-# type (indented four) from matching, and excluding `(` `⟨` etc. from the name
-# class keeps a binder line like `  (h : Foo)` out.
+# The first repair — "any run of non-delimiter tokens before a colon" — then
+# OVER-counted, and by more than the original under-counted. A DOCSTRING line
+# can contain a colon:
+#
+#     /-- Manuscript claim — atomic-mass recovery: the atomic mass is the
+#
+# and its six words parsed as six field names. `BindingAssemblyContext` has
+# four data fields and was reported with eleven. So the run is now checked
+# token by token against what a Lean identifier can actually be, and comment
+# openers are rejected outright.
+#
+# Two parser bugs in this one function in one session, in opposite directions.
+# Both were caught by reading a carrier whose real field count I already knew —
+# which is the argument for the `--selftest` below, and against trusting any
+# count from this script that has not been spot-checked against a file.
 _NAME = r"[^\s:()\[\]{}⟨⟩,]+"
 FIELD = re.compile(rf"^  ((?:{_NAME}[ \t]+)*{_NAME})[ \t]*:(?!=)(.*)$", re.M)
+
+# A Lean identifier: a letter or `_`, then word chars and the marks Lean allows
+# (`'`, `!`, `?`, subscripts). Deliberately permissive about unicode letters —
+# `Δ`, `χ`, `σ₀` are all real field names here — and deliberately strict about
+# the first character, which is what rejects `/--`, `--`, `—` and `*`.
+_IDENT = re.compile(r"[^\W\d]['\w!?₀-₉ₐ-ₜᵢⱼₖ]*$", re.UNICODE)
+
+
+def _field_names(line_names: str) -> list[str] | None:
+    """The names on a field line, or `None` if this is not a field line."""
+    names = line_names.split()
+    if not names or not all(_IDENT.match(n) for n in names):
+        return None
+    return names
+
+
+def _fields(body: str) -> list[tuple[list[str], str]]:
+    """`(names, type)` per field, with MULTI-LINE types joined.
+
+    The third defect this parser has had, and the one the earlier
+    line-at-a-time version could not see: a field whose type starts on the
+    following line —
+
+        claim_six_term_recovery :
+          atomic_mass = (Finset.univ.sum …)
+
+    presents an EMPTY type on its own line, so `CLAIMY` finds no `=` and the
+    field is counted as data. That is the direction that matters:
+    `BindingAssemblyContext` read `data = 5, claim = 0` against a true 4 / 1,
+    so a claim field masqueraded as a fifth object the instance chooses.
+
+    So the type of each field is everything up to the next field line.
+    """
+    out: list[tuple[list[str], str]] = []
+    pending: list[str] | None = None
+    parts: list[str] = []
+    for line in body.splitlines():
+        m = FIELD.match(line)
+        names = _field_names(m.group(1)) if m else None
+        if names is None:
+            if pending is not None:
+                parts.append(line)
+            continue
+        if pending is not None:
+            out.append((pending, " ".join(parts)))
+        pending, parts = names, [m.group(2)]
+    if pending is not None:
+        out.append((pending, " ".join(parts)))
+    return out
 
 
 def load_tree() -> dict[str, str]:
@@ -175,12 +253,11 @@ def find_class(tree: dict[str, str], cname: str):
         body = body[: nb.start()] if nb else body[:4000]
         # One entry PER NAME: `W_sym W_std W_alt : R` is three fields, not one.
         data = claim = 0
-        for names, ty in FIELD.findall(body):
-            n = len(names.split())
+        for names, ty in _fields(body):
             if CLAIMY.search(ty):
-                claim += n
+                claim += len(names)
             else:
-                data += n
+                data += len(names)
         return f, m.group(1).strip(), data, claim
     return None, None, None, None
 
@@ -204,13 +281,53 @@ def carrier_of(tree: dict[str, str], path: str, decl: str) -> str | None:
     return None
 
 
+def selftest() -> int:
+    """Hand-counted carriers, to keep the field parser honest.
+
+    Both bugs this parser has had were found by reading a carrier whose real
+    field count was already known — first an UNDER-count (`\\w` missing `S'`
+    and multi-binder lines), then an OVER-count (a docstring line with a colon
+    parsing as six fields). Neither was visible in the totals. So the counts
+    are pinned here against files, not against a previous run of this script.
+    """
+    tree = load_tree()
+    # (class, data, claim) — counted by hand from the source, 2026-09-03.
+    cases = [
+        # 4 data (Z, N, atomic_mass, term_weights) + 1 claim. The docstring
+        # line "Manuscript claim — atomic-mass recovery: …" is the over-count
+        # regression test: it contains a colon and must not read as 6 fields.
+        ("BindingAssemblyContext", 4, 1),
+        # 8 data incl. the bare `Type`s, 1 claim (`claim_eigenvalues`).
+        # `q : Rˣ` is data; five of the eight are unused by the claim.
+        ("SortingColorEnergyContext", 0, 0),  # deleted by this branch — absent
+    ]
+    bad = 0
+    for cname, want_d, want_c in cases:
+        f, _params, d, c = find_class(tree, cname)
+        if f is None:
+            got = (0, 0)
+        else:
+            got = (d, c)
+        ok = got == (want_d, want_c)
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'} {cname:<34} "
+              f"data={got[0]} claim={got[1]}  (want {want_d}/{want_c})")
+    print("selftest: PASS" if not bad else f"selftest: {bad} FAILED")
+    return 1 if bad else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
+    ap.add_argument("--selftest", action="store_true",
+                    help="check the field parser against hand-counted carriers")
     ap.add_argument("--tree", choices=["LIB", "SIBLING"], help="restrict to one tree")
     ap.add_argument("--json", help="write the full result set here")
     args = ap.parse_args()
+
+    if args.selftest:
+        return selftest()
 
     # A private temp file, cleaned up on any exit path. The previous fixed
     # `ROOT / "sap-live.tmp.json"` clobbered concurrent runs and, when the
