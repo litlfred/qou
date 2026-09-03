@@ -1209,6 +1209,24 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "223a7764a0e0",
+          "ts": "8e1f4523b63d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:40:08Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:40:08Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "The statement is a purely algebraic identity in H_N(q) (constituent product = Markov trace = link polynomial P_K(q)) placed in the chapter's explicitly ALGEBRAIC-face section, with zero archimedean tokens; regime matches its section, so pass.",
+        "evidence": "STATEMENT (tmli-constituent-composite-agreement.md:1-14): 'the constituent product prod V_i^const and the composite trace tr_M(rho(beta_H)) evaluate the same element of H_N(q)', displayed as prod_i V_i^const = tr_M(rho(beta_H)) = P_{K_H}(q). Every object is a formal Hecke-algebra element or a polynomial in the formal variable q: no MeV, no m_e/CODATA, no numeric q or q_0, no Real.*, no sqrt/log/exp/cos, no order hypothesis (0<q, q<1), no percentage or 'agreement to N%' claim, no limit. The title 'Constituent and composite Markov-trace evaluations agree exactly' (.ts:8) and tags ['exact-identity','iwahori-hecke','pawlei-basis'] (.ts:9) confirm 'agreement' means an exact algebraic identity, NOT a comparison-boundary MeV agreement -- the dispatcher's suspicion that it quotes MeV values or a percentage does not hold on reading. REGIME: mass-theory is in ARCHIMEDEAN_CHAPTERS (_folio-chapter-profiles.qou.ts:175) but its declared profile is MIXED -- {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90) -- and the chapter docstring (mass-theory.ts:4-21) enumerates an explicit 'Algebraic' face ('transfer matrices, mass-formula derivation, Hoefsmit construction, GS axiomatic backing'), distinct from the 'Archimedean' and 'Physical' faces. The block sits in section 'Transfer Matrix and Topological Mass' (mass-theory.ts:33-35, block at :41), headed by the comment '=== ALGEBRAIC FACE === Wedderburn, Frobenius pairing, transfer matrices, Hecke characters' (:29-32). So the statement's generic/symbolic regime exactly matches its section's declared regime; the second FAIL branch ('archimedean-chapter statement that is a purely algebraic identity belonging upstream') does not fire because the chapter explicitly hosts an algebraic face here and the block consumes rem:knot-factorization + thm:markov-trace-product (.ts:10) as the mass-side application of the product theorem. The WARN branch (mixed regimes, side undeclared) does not fire: there is exactly one regime present. Peers in the same section adjudicated pass on this criterion: categorical-transfer-matrix (2026-07-07) and transfer-matrix-level-independence (2026-06-28). Proof body (tmli-constituent-composite-agreement-proof.md) greps clean for MeV/CODATA/approx/q_0/Real/percent. PRIOR ENTRY: the 2026-06-28 fail (reviewed_sha 6b830a632a, md hash 4464738aca6b -- the .md has since changed to 223a7764a0e0) was 'sibling Lean file is MISSING', which is not a wall-side-statement finding at all; the criterion depends_on ['md'] only. SIDE NOTE (unscored): no sibling .lean exists, but the .ts lean.ref 'qou:QOU.BraidsKnots.tmli_constituent_composite_agreement' (.ts:5) resolves via candidate 2 to content/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean (theorem at :146, documented sorry-free at :45/:134; imports only Mathlib BigOperators + QOU.Hecke.MarkovTrace at :1-2, no Real.* / ℝ in the file), which is the sanctioned no-shadow-stub pattern (AGENTS.md §0a); the Lean side is generic-ring, consistent with the statement's regime."
       }
     ],
     "wall-side-proof": [
