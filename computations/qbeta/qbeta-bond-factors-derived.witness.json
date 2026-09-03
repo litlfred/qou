@@ -1,0 +1,164 @@
+{
+  "computation": "qbeta-bond-factors-derived",
+  "assertions": [
+    {
+      "name": "four_shifts_are_separable",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a loose matcher would map the colour-weighted p-n shift onto the colour-blind one and return a plausible but wrong b_pn"
+    },
+    {
+      "name": "all_five_match_their_measured_values",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "b_pp_IS_the_markov_parameter",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "an identity, not a 4.6e-16 match"
+    },
+    {
+      "name": "same_species_bond_factors_differ_by_q4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp/b_nn = q^4 exactly"
+    },
+    {
+      "name": "agrees_with_the_independent_homogeneous_derivation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "r(q) was derived from different words in a separate computation"
+    },
+    {
+      "name": "closed_form_reproduces_every_atom",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "no fitted constant anywhere in the chain"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "trace_convention": "D (SU(2)/Temperley-Lieb)",
+    "delta": "(1 - 1/q**4)*(q - 1)**2/3",
+    "method": "exact Laurent via tr_m_word_lq over positive braid-word expansions"
+  },
+  "data": {
+    "constants": [
+      {
+        "name": "t_p",
+        "closed_form": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9*(q**2 + 1)**2)",
+        "at_q0": "1.145759692457300869689082",
+        "measured": "1.1457596924573008697",
+        "rel_err": "9.5294e-21"
+      },
+      {
+        "name": "t_n",
+        "closed_form": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
+        "at_q0": "0.9877436881158095716340202",
+        "measured": "0.98774368811580957163",
+        "rel_err": "4.07005e-21"
+      },
+      {
+        "name": "b_pp",
+        "closed_form": "q**3/(q**2 + 1)",
+        "at_q0": "0.6126880371464652515958299",
+        "measured": "0.6126880371464652516",
+        "rel_err": "6.8063e-21"
+      },
+      {
+        "name": "b_pn",
+        "closed_form": "(q**10 - 2*q**9 + 7*q**8 - 2*q**6 + 4*q**5 + 4*q**4 + q**2 - 2*q + 1)/(12*q**5*(q**2 + 1))",
+        "at_q0": "0.5082297893767389625779958",
+        "measured": "0.50822978937673896258",
+        "rel_err": "3.9435e-21"
+      },
+      {
+        "name": "b_nn",
+        "closed_form": "1/(q**3 + q)",
+        "at_q0": "0.4036277383508259361649837",
+        "measured": "0.40362773835082593617",
+        "rel_err": "1.24282e-20"
+      }
+    ],
+    "identities": [
+      {
+        "name": "b_pp - z",
+        "simplifies_to": "0"
+      },
+      {
+        "name": "b_pp/b_nn - q^4",
+        "simplifies_to": "0"
+      },
+      {
+        "name": "r_previous - t_p.z",
+        "simplifies_to": "0"
+      }
+    ],
+    "shift_values_at_q0": {
+      "0": "0.0",
+      "-h": "-0.2090602987956393154308",
+      "-h/2": "-0.1045301493978196577154",
+      "-h(1/2-d/4)": "-0.1044582477697262890178"
+    },
+    "smallest_shift_separation": "7.1901628e-5",
+    "delta_tr": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "delta_closed_form": "0.5565446604044382119048",
+        "delta_measured": "0.5565446604044382119048",
+        "rel_err": "1.54385e-35"
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "delta_closed_form": "0.8885361268736700699963",
+        "delta_measured": "0.8885361268736700699963",
+        "rel_err": "7.05628e-36"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "delta_closed_form": "0.8929085753935158473692",
+        "delta_measured": "0.8929085753935158473692",
+        "rel_err": "7.64419e-36"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "delta_closed_form": "1.11980900608623902881",
+        "delta_measured": "1.11980900608623902881",
+        "rel_err": "4.21308e-36"
+      }
+    ]
+  },
+  "context": {
+    "axis": "can the two remaining measured constants of the chain closed form be derived, leaving zero fitted numbers?",
+    "answer": "Yes. All five are exact rational functions of q. b_pp is the Ocneanu parameter z IDENTICALLY (the difference simplifies to 0, where the previous probe could only match it to 4.6e-16); b_nn = 1/(q^3+q); and b_pp/b_nn = q^4 exactly.",
+    "independent_check": "r_previous - t_p.z simplifies to 0, and r_previous was derived from different words in a separate computation. Two independent derivations agreeing symbolically is the strongest available check that neither is an expansion artefact.",
+    "scope": "Scope-(a). This derives the CONSTANTS of a form whose structure was established and validated earlier (held-out 3He and 4He at 7.5e-16). It does not say the binding law is right — how far Delta_tr is from B remains open."
+  },
+  "gitCommit": "bf7a14aae94d5fa61d0d48ee3db4cef190d8d20c",
+  "durationMs": 0,
+  "scriptFile": "qbeta_bond_factors_derived_probe.py",
+  "scriptHash": "87c98290f733",
+  "scriptCommitSha": "unknown",
+  "commitSha": "bf7a14aae94d5fa61d0d48ee3db4cef190d8d20c",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-03T20:28:38.228354+00:00",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

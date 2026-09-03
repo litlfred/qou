@@ -341,13 +341,77 @@ without this caveat would make it a fit with two knobs.
 
 ## Todo (revised)
 
-- [ ] **Derive `b_pn` and `b_nn` symbolically**, the way `r(q)` was: the ²H and
-      n-n A=2 words are n = 6, expand into ~1024 positive braid words, and
-      `tr_m_word_lq` gives exact Laurent polynomials. That would make the whole
-      closed form derived end to end, with zero fitted constants.
+- [x] **Derived 2026-09-03 — zero fitted constants remain.** See below.
 - [ ] **Owner:** which of the two extensive scales is the prediction
       (1.2309 vs 0.2253 MeV/nucleon)? Now more pressing — with `Delta_tr(Z,N)`
       in closed form, "energy per nucleon" can be stated exactly rather than
       estimated from four atoms.
+- [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
+      (unchanged; the existing vacuity audits do not catch this pattern).
+
+
+---
+
+## All five constants DERIVED — the knobs are gone
+
+Probe: `computations/qbeta/qbeta_bond_factors_derived_probe.py` (7/7). Same
+exact-Laurent route that produced `r(q)`.
+
+```
+t_p  = (q^22+q^20+2q^18+2q^16+3q^14+2q^12+q^10-q^8-q^4-q^2-1) / (4q^9(q^2+1)^2)
+t_n  = (q^18-q^16+2q^14-2q^12+4q^10-3q^8+3q^6-2q^4+q^2-1)     / (4q^9)
+b_pp = q^3/(q^2+1)
+b_pn = (q^10-2q^9+7q^8-2q^6+4q^5+4q^4+q^2-2q+1)               / (12q^5(q^2+1))
+b_nn = 1/(q^3+q)
+```
+
+All five reproduce their measured values to `~1e-20`, and the closed form
+reproduces `Delta_tr` for all four atoms to **1e-35**.
+
+### Three identities, each simplifying to exactly zero
+
+| | |
+|---|---|
+| `b_pp - z` | **0** — the p-p bond factor **IS** the Ocneanu parameter. The previous probe could only say it matched to 4.6e-16. |
+| `b_pp/b_nn - q^4` | **0** — the two same-species bond factors differ by exactly `q^4`, and `b_nn = 1/(q(q^2+1))` is the simplest of the five. |
+| `r_previous - t_p . z` | **0** — `r_previous` came from the homogeneous chain, derived from *different words in a separate computation*. Two independent derivations agreeing symbolically is the strongest available check that neither is an expansion artefact. |
+
+### A trap this method could have fallen into
+
+The builder emits four shift values, and two of them —
+`-h/2` (colour-BLIND) and `-h(1/2-delta/4)` (colour-WEIGHTED, with
+`delta = (q-1)^2(1-q^-4)/3`) — differ by only **7.2e-5** at `q_0`
+(`-0.104530149` against `-0.104458248`). A loose matcher would silently map the
+colour-weighted p-n shift onto the colour-blind one and return a `b_pn` that
+still looked plausible. The probe asserts the four are separable before matching
+and matches at `1e-25`.
+
+### The result
+
+```
+Delta_tr(Z,N) = t_p^Z t_n^N (1 - b_pp^(Z-1) b_pn^[Z,N>=1] b_nn^(N-1))
+```
+
+an exact rational function of `q` for **every** atom — no fitted constant, no
+matrices, no dependence on the `n >= 15` wall.
+
+### 🛑 What this does not say
+
+It derives the CONSTANTS of a form whose structure was established and validated
+earlier (held-out ³He and ⁴He at 7.5e-16). It does **not** say the binding law is
+right. `Delta_tr` is what the law evaluates; how far that sits from `B` is the
+open physics question, and the deficit measured at 5.1 → 32.3 per nucleon is
+untouched by any of this.
+
+## Todo (revised)
+
+- [ ] **Owner:** which of the two extensive scales is the prediction
+      (1.2309 vs 0.2253 MeV/nucleon)? Now fully answerable — `Delta_tr(Z,N)` is
+      exact in `q`, so "energy per nucleon" can be stated as a closed form
+      rather than estimated from four atoms.
+- [ ] With `Delta_tr` exact, the deficit `B/(Q_beta . Delta_tr)` is now a
+      closed-form function of `(Z, N)` against AME data. Its shape against the
+      semi-empirical surface/Coulomb/pairing terms is a direct comparison that
+      needs no new Hecke computation at all.
 - [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
       (unchanged; the existing vacuity audits do not catch this pattern).
