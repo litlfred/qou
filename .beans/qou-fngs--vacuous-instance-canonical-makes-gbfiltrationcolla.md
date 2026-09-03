@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-24T14:13:08Z
-updated_at: 2026-08-24T19:48:54Z
+updated_at: 2026-09-03T04:29:38Z
 ---
 
 `QOU/Mathlib/SpectralSequence.lean:125`:
@@ -295,3 +295,51 @@ That is a live work item with a named next step, so this bean stays
 **in-progress**. Closing it on the strength of the demotion would lose the arc.
 Whoever picks it up: consider splitting (2) into its own bean and closing this
 one, but do not close this one without doing the split first.
+
+
+---
+
+## Re-measured 2026-09-03 — the stated formalisation target was already delivered, and the reasoning above it conflates two filtrations
+
+Three corrections, in increasing order of how much they change the arc.
+
+### 1. The "formalisation target, now concrete" is done
+
+The closing paragraph asks for: *"Build a PagedSS whose pages vanish above `k⋆` … then `Collapses` follows, and `SpectralCollapseCriteria.legacyOfPaged` discharges `GBFiltrationCollapsesAtE2`."* That criterion is `collapses_of_bounded_support`, `SpectralCollapseCriteria.lean:168`, landed in the same tranche this bean records. It takes exactly the `Subsingleton` hypothesis named, and yields `Collapses S (N+1)`. Nothing was left to build on that side.
+
+### 2. Nothing has ever been on the other side of it
+
+Measured on `origin/main`: **every** occurrence of `PagedSS` in the corpus is a hypothesis — `imRank (S : PagedSS K pageK)`, `Collapses (S : PagedSS R page)`, `toLegacy (S : PagedSS R pageU)`, `legacyOfPaged (S : PagedSS R pageU)`. **Not one declaration constructs a `PagedSS`.**
+
+So the whole paged tower — `page_stabilises_of_collapse`, both bounded-support criteria, `toLegacy`, `legacyOfPaged`, the Euler-characteristic results — had never been applied to anything, and consequence 1 above ("`legacyOfPaged` is the route by which a real filtration can discharge `GBFiltrationCollapsesAtE2`") describes a route with zero traffic. `canonicalTrivial` remained the only discharge, exactly as before the repair.
+
+That is the sharper version of this bean's own finding: the defect was not only that a `PUnit` witness was reachable, but that after it was demoted, **nothing replaced it**.
+
+### 3. `p` and `k` are different filtrations — this is the substantive correction
+
+The section "THE COLLAPSE IS LOCALISED TO ONE TERM" concludes:
+
+> collapse at E_2 SPECIFICALLY: still an assertion, and it is what fixes k* to be the max GB-depth rather than something larger
+
+and
+
+> The mass formula needs the specific k*, so it needs E_2, not merely "some page".
+
+Both sentences read the page/column index and the GB-depth as one index. They are not, and `phi-q-categorical-truncation-proof.md` uses them in two different steps:
+
+- **`p`** — the Hochschild / filtration degree, the **column** index (`CellIndex.p`). Step 1 asserts `E_∞^{p,*} = Z(A)` at `p = 0` and `0` for `p ≥ 1`. Collapse is a statement about differentials between columns, and this is the only thing the proof asks collapse for.
+- **`k`** — the GB-depth of a *partition*. Step 3 uses it to stratify `Z(A) = ⊕_{k=0}^{k⋆} Z^{(k)}(A)`: a decomposition **inside** the single surviving column `E_∞^{0,*}`. It indexes no page and no column.
+
+`k⋆ := max_{λ ∈ supp(T_w)} depth_GB(λ)` is finite for the reason Step 3 states — a maximum over a finite NF support — and the spectral sequence plays no part in fixing it. So collapse at E₂ does not fix `k⋆`, and needing a specific `k⋆` is not a reason to need E₂ rather than some other page.
+
+**And separating them is what makes the E₂ claim reachable.** Read as a statement about `p`, Step 1 *is* concentration in one column — the `N = 0` case — and `collapses_two_of_bounded_support` already covers `N ≤ 1`. The bean treats E₂ as the hard strong form that boundedness cannot reach; for the window the mass formula actually states, boundedness reaches it exactly.
+
+### What landed (PR #6452)
+
+`QOU/Mathlib/ConcentratedColumnCollapse.lean` — the `p = 0`-column page family, `concentrated_collapses` (concentration ⇒ `Collapses S 2`, for **every** differential the family admits; the proof never inspects `S.d`), and `gbCollapsesOfConcentrated`, the first `GBFiltrationCollapsesAtE2` in the corpus whose witness is neither `PUnit` nor an assumption. Inhabitation is an existence theorem rather than a named model, following `PagedSpectralSequence.lean`'s stated reason.
+
+`lean`-direct exit 0 (7/7, no warnings); `#print axioms` clean on all five declarations; an `example` confirms the discharge applies at a concrete `R`. Registered in `QOU.lean`, which carried none of this cluster.
+
+### Still open, and unchanged by any of the above
+
+**The concentration itself.** Nothing shows the Gröbner-filtration spectral sequence of `H_n(R,q)` is concentrated in the `p = 0` column. That is `S-GB-spectral-collapse`, it is what the binding-energy exactness rests on, and it is still an assertion. What is no longer assumed is the step from concentration to collapse.
