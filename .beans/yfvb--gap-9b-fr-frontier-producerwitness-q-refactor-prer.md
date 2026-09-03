@@ -1,11 +1,11 @@
 ---
 # yfvb
 title: 'gap-9b FR frontier: producer→witness q₀ refactor (prereq) + H_{3A} Borromean FR driver'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-06T04:25:00Z
-updated_at: 2026-07-06T17:30:48Z
+updated_at: 2026-09-03T20:39:57Z
 ---
 
 ## Context (2026-07-06)
@@ -66,3 +66,37 @@ Design doc: `docs/audits/2026-07-06-q0-producer-muon-refactor-design.md`. Key tr
 **Merge gate:** requires a full re-run+diff sweep of ALL producers vs committed witnesses
 (provenance-drift-filtered) — NOT sample-validatable; a missed constant silently corrupts
 the canonical layer. Focused-session task with the harness in the design doc.
+
+
+## CLOSE-OUT 2026-09-03 (arc update)
+
+Closed as **superseded**, not delivered-in-full. Both legs resolved, neither
+by this bean finishing its original scope.
+
+**Leg 1 — producer/witness q0 refactor (the ~72-producer prereq): DISSOLVED.**
+load_q_50dps() flipped to the proton default on 2026-08-22 (bean qou-dkm2), so
+'witness q0' and 'runtime proton q' are now the same anchor and the
+inconsistency this leg existed to fix no longer exists. The bean's Prereq-1
+finding (committed atom-chi caches sat at the runtime proton q) was TRUE when
+measured 2026-07-06 and is preserved as dated historical data in the driver's
+witness. Its assertion committed_atomchi_is_proton_q was RETIRED today: its
+second clause (visible drift at the witness q0) can no longer be satisfied by
+any input, so it could only ever FAIL. The broader migration continues under
+qou-1c4y / qou-6p3b.
+
+**Leg 2 — H_3A Borromean FR driver: RAN, refuted-(a), now ABSORBED.**
+The beta_Bor FR proxy trimmed the light-series spread only 1.190 -> 1.142 and
+lost to the 4_1 proxy (1.1355), so 'the nucleon's own knot supplies the weight'
+failed on its own terms. Stronger later work subsumes it: the per-lambda
+Delta_lambda VALUE was proved 2026-08-02 (sorry-free), and the 2026-08-30
+cheat-sheet banner relocates the gate to the assembly functional — no per-block
+weight can turn an intensive quantity into an extensive one.
+
+**Why this sat in-progress for two months:** the deliverables were committed to
+claude/cheat-sheet-derivation-gaps-0ykco4 AFTER PR #3440 merged, stranding four
+commits (tip 3409f9df39) that never reached main. Restored today, with
+supersession banners.
+
+**Live residue, tracked separately:** the balanced-convention normalization
+finding (dim_q^2/[n]_q! is not a probability measure; c_n up to 1.517 at H_12),
+still unregistered in the trace-convention registry.
