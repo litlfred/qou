@@ -2150,3 +2150,32 @@ probe, witness description/caveats rewritten to lead with the priority note, and
 a new check 6 verifying my ratio against the recorded 60-digit value so the
 duplication is an explicit corroboration rather than an implicit collision.
 Nothing deleted.
+
+## 2026-09-03 — the mu-bar route is RETIRED as stated: wrong mu-bar (type error)
+
+`docs/audits/2026-09-03-two-mubars-selector-vs-magnitude.md`.
+
+After the rank bound closed trace-subtraction, this arc named 'mu-bar_123, the
+sorry-free triple-linking object' as the non-trace route. That names the WRONG
+object, and SecondCrossingInvariant.lean says so in a section titled 'two mu-bars
+in the corpus (do not conflate)'. Caught by reading the carriers before building
+the probe.
+
+  topological mu-bar_123   {0, +-1}          a SELECTOR (baryon vs meson)
+  mubarMeasured A          (3/4)(-2)^(A-3)   a MAGNITUDE — the Markov-trace
+                           = 3/4, -3/2, 3, -6  deficit coefficient (Lean examples)
+
+The binding asymmetry is a real ratio (~33.7). A {0,+-1} invariant cannot supply
+it — the same integer-type wall as the Delta_{3,3} ceiling of 9. The one with the
+right type is DEFINED as a Markov-trace deficit, and
+cyclic_trace_kills_iterCommTower (MassTheory) already proves a cyclic trace cannot
+reach it.
+
+CONVERGENCE: that theorem and this arc's rank bound (ocneanuFamily_finrank_le) are
+two independent proofs, no shared machinery, that the Markov trace cannot deliver
+the object. Neither was derived with the other in view.
+
+RETIRED: 'mu-bar_123 carries the asymmetry'. SURVIVES (weaker, honest): mu-bar_123
+as the coefficient SELECTING which magnitude applies, magnitude from elsewhere.
+UNTOUCHED: rank-bound scope — still (a), still excludes only the Markov family.
+No new compute; every value cited from a verified carrier.
