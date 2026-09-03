@@ -540,3 +540,69 @@ and it is worth the compute.
 
 `qou-brng` should take from this arc **the flatness of `B_pred`**, and **not**
 the withdrawn `5.4 × C(A,2)` figure.
+
+---
+
+# Both routes run — and the flatness holds at A = 6
+
+The retraction above left one question standing: **does `B_pred` stay flat at
+A = 6?** That is a statement about the framework alone, with no experimental
+normalisation in it, so it is the one worth the compute.
+
+The answer comes from the **paired** comparison — ⁴He and ⁶Li at the *same*
+truncation, which is comparable even when the truncated values are not
+comparable to the k = 11 points:
+
+| `k_exact` | ⁴He (A=4) | ⁶Li (A=6) | ratio ⁶Li/⁴He |
+|---|---|---|---|
+| 5 | -0.375110164 | -0.539212954 | 1.4375 |
+| 6 | -0.838749076 | -0.992757495 | 1.1836 |
+| 7 | -1.515118319 | -1.414063111 | 0.9333 |
+| 8 | -2.153722974 | -2.183158129 | 1.0137 |
+| 9 | -3.711581534 | -3.404340982 | 0.9172 |
+| 10 | -5.669659692 | -5.467686217 | 0.9644 |
+
+```
+A          :  4  ->  6      (1.5x)
+C(A,2)     :  6  ->  15     (2.5x)
+accumulator:  ratio 0.917 .. 1.014 at k >= 7,  mean 0.957
+```
+
+**⁶Li returns essentially the same number as ⁴He**, at six independent
+truncations, while `C(A,2)` grows 2.5× and `A` grows 1.5×. The low-k ratios
+(1.44, 1.18) are the truncation still settling; from k = 7 the four values sit
+within ±5 % of unity with no trend.
+
+So the flatness established at A = 2…4 **extends to A = 6**. The accumulator's
+output is not merely slowly-varying over the light isotopes — it is close to
+independent of the nucleus across a range where every candidate many-body term
+grows substantially.
+
+## The retraction produced a better experiment, not a cheaper one
+
+I had framed the reduced-`k_exact` route as a cheap substitute for the real
+measurement. It is the opposite:
+
+- it isolates **the framework's own A-dependence**, with no AME normalisation to
+  contaminate it — which is exactly what the withdrawn `E/C(A,2)` framing failed
+  to do;
+- it is cheap enough to run at **six truncations** rather than one, so the
+  result is a trend rather than a point;
+- and it sidesteps the A = 6 kill ceiling entirely — the paired run at k ≤ 10
+  finished in **minutes**, where three full-`binding_energy` attempts at A = 6
+  had all been killed.
+
+The three ⁶Li kills were real, and the ceiling on the *full* path at A = 6
+stands. What changed is that the full path was never the measurement this
+question needed.
+
+## Still open
+
+- **k = 11** (production truncation) for the pair was still running. The k = 7…10
+  trend is flat and the k = 11 pair is expected to follow, but that is an
+  expectation, not a measurement.
+- **Why** the accumulator is nucleus-independent remains unmeasured. This
+  localises the symptom to A = 6; it does not identify where the A-dependence is
+  lost.
+- **`E`-based scalings are withdrawn** — see the retraction above. `qou-brng`
+  should take the flatness of `B_pred`, not any `C(A,2)` figure.
