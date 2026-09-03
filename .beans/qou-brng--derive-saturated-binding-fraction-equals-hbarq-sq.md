@@ -14,6 +14,7 @@ updated_at: 2026-08-31T05:58:46Z
 updated_at: 2026-08-31T07:27:11Z
 updated_at: 2026-08-31T07:32:23Z
 updated_at: 2026-09-02T22:01:25Z
+updated_at: 2026-09-03T04:24:04Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1173,3 +1174,50 @@ figures, re-run in this container and reproducing the audit byte-for-byte. Ample
 for a sign test at 251–318 % margins; not a precision claim, and none is made.
 
 Probe 5/5, exact `Fraction` over the producer's decimal strings.
+
+
+## 2026-09-03 — the three additive channels' `b₃ ≈ −1` is the INVERSION, and no uniform bond model can be positive
+
+**Reframes my own capstone.** `all_channels_b3_sign_probe` measured `b₃/b₂ < 0`
+for all four evaluable channels and read the three bond-additive ones clustering
+at `≈ −1` as a shared *physical* failure. For those three it is arithmetic.
+
+**The mismatch.** The Ursell inversion `b₃ = B̄(3) − 3b₂` subtracts `C(3,2) = 3`
+pair terms; the bond set is a chain with `A−1` bonds, forced by
+`StrandLayoutForcesChain`. The counts agree at `A = 2` (1 = 1) and diverge from
+`A = 3` (3 vs 2) — exactly where `b₃` lives. For chain-additive `B(A) = (A−1)b`:
+`b₂ = b`, `b₃ = 2b − 3b = −b`, so **`b₃/b₂ = −1` identically, for every `b`**.
+Measured over five bond values spanning sign and eight orders of magnitude:
+exactly `−1` in all five.
+
+**The generalisation — the part worth having.** Changing the bond set does not
+help. For binding additive over a bond set with a **uniform** bond value the
+value cancels and only the counts survive: `b₃/b₂ = n(3)/n(2) − 3`. Two bound
+nucleons have exactly one bond, and a simple bond set on three has at most
+`C(3,2) = 3`, so
+
+| `n(3)` | 0 | 1 | 2 (chain) | 3 (all-pairs, MAX) |
+|---|---|---|---|---|
+| `b₃/b₂` | −3 | −2 | **−1** | **0** |
+
+`b₃/b₂ = n(3) − 3 ≤ 0` for **every** uniform pairwise-bond model, against a
+measured `+0.6411239316`. **The chain is not the culprit; the uniformity is.**
+
+**The surviving escape, measured not asserted.** All-pairs with an `A=3` bond `w`
+against a deuteron bond `w_d` gives `3w/w_d − 3`, which hits the measured value
+exactly at `w/w_d = 5399947/4449132 = 1.2137079772` (> 1). **Non-uniformity is
+NOT excluded** and is the next direction on this leg.
+
+**What is NOT affected.** `ch1 = −1.3995`, the **shipped** channel, is not
+bond-additive (trace prefactor exponential in `A`) and fails for its own reasons.
+Distance-from-`−1` measured per channel to separate them rather than assume it:
+ch3 0.0321, ch4 0.0319, ch5 0.0205 — ch1 **0.3995**, 12× further. The AME
+`b₃/b₂` is data; no inversion convention alters it.
+
+**Scope (b)** on uniform pairwise-bond-additive models, invariant named: `n(3)`
+capped at 3 while the inversion subtracts 3. **Scope (a)** on everything else.
+
+**Artifacts.** `QOU/Mass/UrsellChainMismatch.lean` — 12 decls, `lean`-direct
+exit 0, sorry-free, axioms only `[propext, Classical.choice, Quot.sound]` (three
+theorems need none). `computations/probes/ursell_chain_mismatch_probe.py` — 9/9,
+exact `Fraction`, P30-stamped, zero raw float64. PR #6366.
