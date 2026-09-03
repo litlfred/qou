@@ -1,11 +1,11 @@
 ---
 # qou-dg07
 title: 'Colour antisymmetry from Milnor mu-bar: located route for eightfold items 4 and 7, gap is one identification'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T15:53:37Z
+updated_at: 2026-09-03T04:27:36Z
 ---
 
 ## Summary
@@ -399,3 +399,46 @@ exhibited.
 **Lesson (§8.4):** §8.1 was stated against an invariant and survived a change
 to the quantity a direct argument would have keyed on; §8.2 was stated against
 three quoted numbers and died with them. Same block, same hour.
+
+
+## §7.4 ANSWERED (2026-09-03) — isomorphic, not the same section
+
+PR #6449, branch claude/colour-sign-line-canonical-2026-09-03.
+
+The 2026-08-30 Brunnian isotype-exclusion note (a sibling, Opus 4.8) built
+on this bean's §4/§7.4, narrowed statement B to ONE surviving premise, and
+identified that premise as §7.4's own question. So the parked item became
+load-bearing while nobody was on it.
+
+**Answer: the two sign lines are isomorphic as S_3-representations, and the
+identification of their SECTIONS is not canonical.** Separating invariant:
+ker(B_3 -> S_3) = P_3, the pure braid group. The monodromy sign character
+factors through S_3, hence is constant on pure-braid closures; mu-bar is
+not. Exact — permutations + reduced free-group words, no float, no anchor.
+
+  F2  Borromean = closure of (sigma_1 sigma_2^-1)^3, in B_3 (the SAME braid
+      group as the colour monodromy), and PURE.
+  F3  nontrivial as a braid, via the faithful Artin rep B_3 -> Aut(F_3).
+  F4  it and the trivial braid share an S_3 image but their closures are
+      separated by mu-bar (+/-1 vs 0, cited).
+
+**CORRECTS MY OWN §7.4.** I wrote 'the two routes are one route with two
+derivations of its key step, not independent evidence'. Withdrawn — the
+group claim stands, the identification claim was an over-read.
+
+**F5, the arity check, is part of the result not a footnote.** Sign
+character is a function of a LOOP, mu-bar of a LINK; the comparison is
+legitimate only after pulling both back to B_3. Unconditional there.
+NOT established: that THIS fibration's monodromy image realises a
+witnessing pair — the local monodromies are recorded as PERMUTATIONS, not
+braid lifts. If the image's pure part carried only mu-bar = 0 the two would
+agree vacuously.
+
+**Does not touch** statement B or the Brunnian exclusion — they run on the
+Milnor side alone — nor B-i.
+
+**Corpus defect flagged, not repaired:** binding-knots-visual-inventory
+states 4 braid words and 3 close to the wrong component count (Hopf -> 1
+not 2; trefoil -> 2 not 1; Borromean -> 2 not 3). Only figure-eight is
+right; Vol = 8G is exactly right. No producer consumes them. The fix needs
+a 0- vs 1-indexing convention choice = author call.
