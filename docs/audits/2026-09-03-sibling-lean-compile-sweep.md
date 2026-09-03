@@ -86,9 +86,31 @@ binder name.
   (`BraidsAndKnots`) the tree writes as `BraidKnot`. Distinguished from a
   harness gap by checking the SOURCE tree, not just the olean: absent olean +
   absent source = real.
-- **`Inv GroundRing.R_q` cannot be synthesised — 5 files.** The single
-  largest shared cause. One missing instance on the corpus's own ground ring,
-  not five independent defects.
+- **`Inv GroundRing.R_q` cannot be synthesised — 5 files. 🛑 And the obvious
+  fix is the WRONG one.** This audit first called it *"one missing instance on
+  the corpus's own ground ring"* and named it the highest-leverage single fix.
+  That diagnosis is **retracted**: adding an `Inv` instance is precisely what
+  must not happen.
+
+  `lean/QOU/GroundRingCore.lean` is explicit — `R_q = ℤ[q, q⁻¹]` is *"an
+  un-ordered commutative ring"*, and `q_inv_param` exists as its own
+  declaration with the reason stated in its docstring: *"`R_q` is a ring, not
+  a field, so it has no `Inv` instance and `q⁻¹` cannot be written."* The
+  absence is deliberate. An `Inv` instance on a non-field would make `x⁻¹`
+  elaborate to a junk value for every non-unit, turning five compile errors
+  into five silently wrong formulas — strictly worse.
+
+  The defect is at the five call sites, which write `(sp.field p)⁻¹` — the
+  inverse of an *arbitrary* ring element. In `ℤ[q, q⁻¹]` the inverse of the
+  indeterminate exists (`q_inv_param = T (-1)`) but the inverse of a general
+  element does not. So each site needs either `q_inv_param`, or an explicit
+  inverse field with the defining relation `q * q_inv = 1` — the pattern the
+  corpus already uses (e.g. `alternating_projection_weak_vertex (q q_inv h)
+  (h_inv : q * q_inv = 1)`). That is a per-site mathematical decision, not a
+  one-line infra fix.
+
+  Recorded at length because the leverage framing — *five files, one root
+  cause* — is what made the wrong fix attractive.
 - **4 parse errors**, i.e. files that never got past the parser.
 - **Mathlib drift**: `Real.tendsto_log_mul_rpow_nhdsGT_zero`,
   `MonoidalCategory.whiskerRight_comp` (renamed `comp_whiskerRight`) and

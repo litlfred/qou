@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-03T22:47:07Z
+updated_at: 2026-09-03T22:49:05Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -61,3 +61,35 @@ as 38 refuted propositions.
 - `n-v-bring-action.lean` — was 8 parse errors (`Σ` used as a binder name);
   now exit 0, zero warnings, and its axiom + self-discharging instance removed.
 - `braid-action-tensor.lean` — 5 errors -> 2 (bean `qou-8qby`).
+
+
+## 🛑 CORRECTION (same day): the `Inv GroundRing.R_q` diagnosis above is WRONG
+
+This bean and the audit first called the 5-file `Inv GroundRing.R_q` failure
+"ONE missing instance on the corpus's own ground ring, not five independent
+defects" and named it the highest-leverage single fix. **Retracted. Adding an
+`Inv` instance is exactly what must not happen.**
+
+`lean/QOU/GroundRingCore.lean` says so in its own docstring, on
+`q_inv_param`:
+
+  "Carried as its own declaration rather than written `q_param⁻¹`: `R_q` is a
+   ring, not a field, so it has no `Inv` instance and `q⁻¹` cannot be written."
+
+The absence is deliberate. An `Inv` instance on a non-field makes `x⁻¹`
+elaborate to a junk value for every non-unit, so it would convert five
+compile errors into five silently wrong formulas. Strictly worse than the
+current state.
+
+The real defect is at the five call sites, which write `(sp.field p)⁻¹` — the
+inverse of an ARBITRARY ring element. In ℤ[q,q⁻¹] the indeterminate has an
+inverse (`q_inv_param = T (-1)`); a general element does not. Each site needs
+either `q_inv_param`, or an explicit inverse field carrying `q * q_inv = 1`
+(the pattern used by `alternating_projection_weak_vertex`). That is a
+per-site mathematical decision, not one-line infra.
+
+Sites: information-theory/quantum-volume.lean,
+quantum-observable-universes/{q-connection,q-ext-deriv,quantum-planck-constant,q-lie-bracket}.lean
+
+Worth noting WHY the wrong fix was attractive: the "five files, one root
+cause" framing. A shared error message is not a shared defect.
