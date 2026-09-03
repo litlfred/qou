@@ -665,3 +665,65 @@ varied — and one (`C1′`) checking `τ(4₁) = √3/2` against DG's own worke
 example, because the module records that **three** 1-loop implementations
 existed here and disagreed. mpmath at 40 dps; no float64. Nothing wired,
 nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (7): 🛑 CORRECTING entry (6) — six usable points offline, not two ──
+
+Entry (6) above stated D1-b's blocker as *"DATA, not cleverness — the ptolemy
+database or magma"*, on the ground that only **two** usable `(τ, C)` points
+exist. **That is wrong and the error was mine.** It is corrected in the probe
+(`dt_d1b_nz_triangulation_invariance_pincer_probe.py`, now **9/9**), and entry
+(6)'s blocker sentence should be read as superseded by this one.
+
+**How the error happened**, because the mechanism generalises: I inherited
+*"the ptolemy DB is firewalled; only 4₁/5₂/3₁ ship fixtures"* from the corpus
+and **never enumerated the directory**. Half of it was true and half was not,
+and I carried both.
+
+- **True, and re-verified this session:** `ptolemy.unhyperbolic.org` returns
+  **403 on CONNECT** — by `curl` and by snappy's own `retrieve_solutions()`
+  for 6₁.
+- **False:** the wheel ships sl2 Magma fixtures for **seven** manifolds, not
+  three. **Six** are 1-cusped, hyperbolic, and carry both a defined `τ` and a
+  certified irreducible count:
+
+| manifold | N | irreducible | \|τ\| |
+|---|---|---|---|
+| 4₁ | 2 | 2 | 0.86602540378443864676 |
+| 5₂ | 3 | 3 | 1.1611627381339100731 |
+| m135 | 4 | 8 | 11.31370849898476039 |
+| s000 | 6 | 6 | 14.276474167114481671 |
+| t00000 | 8 | 8 | 29.22901156226534965 |
+| v0000 | 7 | 8 | 20.893884161273003105 |
+
+Six points against a two-parameter family leaves **four degrees of freedom**,
+so a candidate relation **is** testable offline. The blocker was overstated 3×.
+
+### What does NOT change
+
+**Still no `τ → C` map is proposed.** Six points make a candidate *testable*;
+they do not make *fishing* legitimate. Searching a functional form across six
+points and reporting the winner is the numerology this repo forbids. So the
+corrected statement of D1-b's need is **a hypothesis stated before looking**,
+not more data — and the probe's closing assertion now says that instead of
+naming the ptolemy DB.
+
+### Three caveats, recorded rather than papered over
+
+1. `m135`, `s000`, `t00000`, `v0000` are **census manifolds, not knots in
+   S³**. Valid for testing whether a relation exists; **not** automatically
+   valid as D1-b nodes, since D1-b's setup is about knots (both 3-braids).
+2. The **abelian `(L−1)` convention** is established for knots in S³ and does
+   **not** carry over to a census manifold, so the common currency across all
+   six is the **irreducible** count, which is what the table reports.
+3. **`irreducible = N` fails.** It holds for four of six and breaks at `m135`
+   (4, 8) and `v0000` (7, 8) — worth stating because it is exactly what one
+   would assume from the 4₁/5₂ pair alone, where the two coincide.
+
+### 🛑 A trap found while excluding 3₁
+
+**`one_loop` does not guard against non-hyperbolic input.** Called on 3₁ it
+returns `0.5` **without raising**, although `solution_type()` is
+`contains flat tetrahedra` and DG's `τ` needs a genuine hyperbolic structure.
+**A returned value is not evidence of hyperbolicity.** The probe therefore
+excludes by an explicit `solution_type()` test, never by trusting an
+exception — and any other consumer of `one_loop` should do the same.
