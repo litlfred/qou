@@ -127,7 +127,7 @@ import numpy as np  # noqa: E402
 
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
-from pyhecke.atom import D_PN  # noqa: E402
+from pyhecke.constants import pn_interface_offset  # noqa: E402
 from q_parameter import q_at  # noqa: E402
 
 try:
@@ -139,7 +139,11 @@ except Exception:  # pragma: no cover
 mp.mp.dps = 40
 _Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
-_D = mp.mpf(str(D_PN))
+# `D_PN` is bound at `pyhecke.atom` import from `pyhecke.gram.q0`, which is a
+# Python FLOAT -- so the module constant carries 2.0e-16 relative error and
+# `mp.mpf(str(D_PN))` would read that as exact at this file's dps. Recompute
+# the same `pn_interface_offset` at the working precision instead.
+_D = pn_interface_offset(q_at(mp.mp.dps))
 _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
 ALPHA = _MEM / (_Q * (_Q - 1))
 B_DEUT = mp.mpf("2.224566")        # AME
