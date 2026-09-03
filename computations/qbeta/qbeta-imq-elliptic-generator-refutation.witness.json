@@ -104,14 +104,15 @@
     "does_not_refute": "conj:im-q-physical-role. Its chirality role is untouched and Im(q) may be physical for other reasons; what is settled is that it cannot supply the elliptic generator.",
     "scope": "Scope-(b) for the exclusions, scope-(a) for the tower measurement. Nothing derived, proposed, wired or readmitted; no convention adjudicated."
   },
-  "gitCommit": "875482cd2db26397668bc5a5393e3c10bc0f1d1d",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_imq_elliptic_generator_refutation_probe.py",
-  "scriptHash": "7088a0cecf93",
-  "scriptCommitSha": "unknown",
-  "commitSha": "875482cd2db26397668bc5a5393e3c10bc0f1d1d",
-  "computedAt": "2026-08-31T20:01:15.161124+00:00",
+  "scriptHash": "8439675a5e88",
+  "scriptCommitSha": "f65a953dd32741df11888dd9135ebe8b556e4f02",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:14.123752+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }

@@ -116,13 +116,14 @@
     "corrects": "Step 28's 'the p-n bond sits at the intertwiner point, which is where the taxonomy independently puts the EM sector'.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_tanh_em_match_is_formal_probe.py",
-  "scriptHash": "f3b309d83086",
-  "scriptCommitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
-  "commitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
-  "computedAt": "2026-09-01T04:54:47.944940+00:00",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "scriptHash": "2b8efad53d72",
+  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:56.589652+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }

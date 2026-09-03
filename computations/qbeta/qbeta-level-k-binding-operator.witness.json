@@ -12,7 +12,7 @@
     {
       "name": "construction_validates_against_the_corpus_character_routine",
       "passed": true,
-      "detail": "my rho_lambda reproduces `chi_lambda_of_word` to 5.39e-15 in all 11 blocks — at the float64 floor of the corpus's own path, so the operator is the corpus's object and not a re-derivation of it"
+      "detail": "my rho_lambda reproduces `chi_lambda_of_word` to 1.26e-15 in all 11 blocks — at the float64 floor of the corpus's own path, so the operator is the corpus's object and not a re-derivation of it"
     },
     {
       "name": "trace_is_blind_to_every_partition_with_more_than_two_rows",
@@ -61,7 +61,7 @@
     "letters_atom": 23,
     "letters_free": 22,
     "factorisation_max_err": "2.36658e-30",
-    "chi_validation_max_rel_err": "5.38974e-15",
+    "chi_validation_max_rel_err": "1.26333e-15",
     "dim_H6": 720,
     "dim_TL6_visible": 132,
     "tl_kernel_dimensions": 588,
@@ -343,14 +343,15 @@
     "corrects": "Step 25's 'the corpus is H_3-valued at every A, so the level-k avenue is not instantiated'. The 6-vector is the observation, not the object.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* and the 0.13 % ratio are facts about the operator, never criteria."
   },
-  "gitCommit": "85c2bb046881fed2b78f5faf3166916e791fdc20",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_level_k_binding_operator_probe.py",
-  "scriptHash": "30d782c69268",
-  "scriptCommitSha": "bfc8da8dd92ddf8bb0bb61d47bff9a56495e15c1",
-  "commitSha": "85c2bb046881fed2b78f5faf3166916e791fdc20",
-  "computedAt": "2026-09-01T04:54:44.361250+00:00",
+  "scriptHash": "f76dd74bdfb3",
+  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:51.871990+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }

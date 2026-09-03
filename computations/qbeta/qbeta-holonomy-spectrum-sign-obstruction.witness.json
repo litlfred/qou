@@ -91,14 +91,15 @@
     "strengthens": "PhaseFailsLogFunctionalEquation, which excluded only CONSTANT-residue holonomies (c*ln q, by the doubling identity). This closes the three survivors that bean names -- q-dependent residues, non-flat, q-dependent-parameter -- because the inequality is quantified over all real a and never reads the residues.",
     "scope": "Scope-(b). Does not show no connection exists, does not derive alpha, does not adjudicate a convention, wires nothing. It shows the elliptic requirement is not optional."
   },
-  "gitCommit": "3410116836d243d6b577cd57f3a009e75961e88b",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_holonomy_spectrum_sign_obstruction_probe.py",
-  "scriptHash": "7b78a2a01233",
-  "scriptCommitSha": "unknown",
-  "commitSha": "3410116836d243d6b577cd57f3a009e75961e88b",
-  "computedAt": "2026-08-31T19:41:45.307384+00:00",
+  "scriptHash": "1cb6e223825e",
+  "scriptCommitSha": "4471ee72ce8917afdc4591b5f1f3363e71375812",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:13.857526+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }

@@ -332,7 +332,7 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_anchor_reason="experimental pin (the physical-observations layer)", q0_value=mp.nstr(Q0, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")

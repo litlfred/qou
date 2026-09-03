@@ -92,14 +92,15 @@
     "corrects": "Step 21's 'no phase can hide in the jet tower' and Step 20/21's 'branch 3 is out of named candidates'. The vanishing Step 21 proved -- bar-odd operators have zero Plancherel trace -- STANDS and is unaffected; what is withdrawn is the inference from trace-realness to spectrum-realness.",
     "scope": "Scope-(a) for the finding, scope-(b) for the correction. Nothing derived, proposed, wired or readmitted; no c_k value asserted."
   },
-  "gitCommit": "0eb6b129bcb8528354283cfc08daff68bb51ac7f",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_decay_operator_elliptic_spectrum_probe.py",
-  "scriptHash": "280736c7ad09",
-  "scriptCommitSha": "unknown",
-  "commitSha": "0eb6b129bcb8528354283cfc08daff68bb51ac7f",
-  "computedAt": "2026-08-31T20:42:59.045837+00:00",
+  "scriptHash": "348437397472",
+  "scriptCommitSha": "1540977a438630ea1dc16b6bdb2ed6c8c2440107",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:06.814414+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }

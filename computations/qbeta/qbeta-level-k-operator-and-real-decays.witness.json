@@ -212,14 +212,15 @@
     "corrects": "Step 23's significance claim. Its mechanism stands and is confirmed by n-p having the smallest |disc| of the 21 elliptic pairs, but ellipticity is common (20 % of corpus pairs), so 'structural' must not be read as 'special'.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_level_k_operator_and_real_decays_probe.py",
-  "scriptHash": "e7853ed47670",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
-  "computedAt": "2026-08-31T21:07:55.992305+00:00",
+  "scriptHash": "f6130db49ef3",
+  "scriptCommitSha": "99b8130cca816f6d3176bad4e38f7de7ca2fa6ba",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:52.456464+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "experimental pin (the physical-observations layer)"
 }
