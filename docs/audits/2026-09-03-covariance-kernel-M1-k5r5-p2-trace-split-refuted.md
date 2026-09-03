@@ -103,8 +103,9 @@ force them **down toward 0.5**.
   smooth summand; if the finite-θ correction is an EM remainder *in `k`*, that summand **is** the `g`
   whose `TV(g″)` #6469 asked for. It needs the finite-θ deformation of `Â_k`, which this probe does
   not address. `P1` is now the live candidate.
-- **Nothing about the rate or the constant changes.** `θ^{-1}`, `c₁ ≈ −0.0678`, closure needs only
-  `C ≤ 23.4`. All unchanged.
+- **Nothing about the rate or the constant changes.** `θ^{-1}`, `c₁ ≈ −0.0678`. All unchanged.
+
+  > **🛑 CORRECTED 2026-09-03 (PR #6500).** The sentence above is **wrong** and is retracted. The `θ^{-1}` rate is `V_A`'s, **not the (CS) margin's** — the margin `m(n) = ρ_P − σ_D/σ_A` is a ratio of square roots of variances plus a correlation, and no one has propagated the one rate into the other. What is **proved** (PR #5929) is `|m(n) − m_∞| ≤ C·n^{-1/2}`, so `N₀ = (C/m_∞)²` — *squared* — and the requirement is `C ≤ m_∞·√79 = 2.6681`. That is **the** requirement under the bound in hand, not "a conservative reading" of it. The route is nonetheless in better shape than either number suggested: the empirical envelope over `n ≥ 13` is `C_emp = 0.0580`, a **46× headroom** under the already-proved shape. See [`…-margin-envelope-retraction.md`](2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md).
 
 ## Status of `qou-k5r5`
 
