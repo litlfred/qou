@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T11:21:36Z
+updated_at: 2026-09-03T20:29:55Z
 ---
 
 
@@ -634,3 +634,40 @@ docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md
 NEXT unchanged in kind, now with a number: produce a RIGOROUS C <= 2.6681 in
 |m-m_inf| <= C n^{-1/2} against an empirical 0.0580 (Olver/Debye/Airy constant
 tracking, as constant_C_landscape.py has said all along). Gap qou-k5r5 OPEN.
+
+
+2026-09-03 CORRECTION (PR #6528) of the 'pointwise route ~17x short' figure in the
+DECISIVE NEGATIVE entry above. The STRUCTURAL negative is UNAFFECTED and stands: U/V
+grows without bound (42.8, 45.7, 53.9, 70.7, 91.9 at theta=64..512), so no pointwise
+bound however sharp controls V_A uniformly; the oscillatory cancellation is
+load-bearing. That argument never used the arithmetic below.
+THE DEFECT: 'keeping the relative error on V_A under m_inf=0.3002 forces K<0.058 =>
+~17x short' compares a RELATIVE error on V_A against m_inf, an ABSOLUTE margin, and
+drops the conversion. Since sigma_D/sigma_A = sqrt(V_D/V_A), a relative perturbation
+delta_A on V_A moves the MARGIN by sig_ratio_inf*delta_A/2 = 0.3398*delta_A, not by
+delta_A. Admissible relative error is m_inf/0.3398 = 0.8834, not 0.3002 => the merged
+threshold is 2.943x TOO STRICT.
+RECOMPUTED (wlambda_covariance_epic_M1_pointwise_shortfall_recomputed.py, exit 0,
+0.9s, NO float64, reuses #6438's own U_and_V by file path) at theta=78, the largest n
+the exact Fraction table reaches: U/V = 45.5868; relative err on V_A per K = 5.16169
+(the merged probe quotes 5.17 -- the AGREEMENT is the check that this locates the
+exact defect rather than recomputing something else); K_adm = 0.17115 (merged: 0.058);
+K_adm = 0.085574 if V_A and V_D split the budget. Against an O(1) Debye coefficient
+the shortfall is ~5.8x, or ~11.7x split -- NOT ~17x.
+WHY IT MATTERS: '17x short' reads as hopeless, '5.8x short' reads as a gap a sharp
+constant might close. It does NOT revive the route (the structural negative is
+independent) but it should not decide that question by accident.
+NOT SETTLED: 'O(1)' for the Debye/Olver coefficient is an order of magnitude, not a
+pinned constant anywhere in the corpus. Both ~17x and these figures are 'K_adm vs
+O(1)'; only K_adm is measured.
+SAME ERROR CLASS AS TODAY'S OTHER RETRACTION (C<=23.4, PR #6500): a quantity measured
+for one object compared against a threshold belonging to another, conversion dropped.
+V_A, sigma_A, sigma_D/sigma_A and m are four different objects; write the conversion
+down before comparing anything to m_inf.
+BLAST RADIUS: pointwise_bound_insufficiency.py (docstring + printed RESULT -- fixed at
+the producer, it printed ~17x every run); deep_tail_rigorous_majorant.py printed note;
+audit docs deep-tail-rigorous-need-lit-localised, p2-trace-split-refuted,
+weight-bug-retraction-retracted; these two beans. Audit:
+docs/audits/2026-09-03-covariance-kernel-M1-k5r5-pointwise-shortfall-recomputed.md
+Gap qou-k5r5 OPEN; NEXT unchanged: a RIGOROUS C <= 2.6681 from the oscillatory
+cancellation, against an empirical envelope of 0.0580 (46x headroom).

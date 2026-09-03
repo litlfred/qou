@@ -114,6 +114,8 @@ so a pointwise `ε = K·θ^{−1/2}` gives a *relative* error on `V_A` of `≈ 5
 
 > **`K < 0.058`**, whereas the leading Debye/Olver remainder coefficient is `O(1)` — short by ~17×.
 
+> **🛑 CORRECTED 2026-09-03 (PR #6528).** The `K < 0.058` / `~17×` here is **2.943× too strict** — it compares a *relative* error on `V_A` against `m_∞`, an *absolute* margin, dropping the conversion `|Δm| = σ_ratio,∞·δ_A/2 = 0.3398·δ_A`. Recomputed at θ=78: `K_adm = 0.17115`, so the shortfall is **~5.8×** (or ~11.7× if `V_A` and `V_D` split the budget). **The structural negative is unaffected** — `U/V` grows without bound regardless. See [`…-pointwise-shortfall-recomputed.md`](2026-09-03-covariance-kernel-M1-k5r5-pointwise-shortfall-recomputed.md).
+
 So a sharper **pointwise-magnitude** bound cannot close `N₀ ≤ 78` however good its constant. The
 **oscillatory cancellation** in `Σ w·S·E` (summation by parts / stationary phase) is load-bearing, not
 a refinement.

@@ -22,7 +22,18 @@ The conclusion does not need the exponent. At theta = 78 -- the largest n the ex
 reaches, hence the n at which the asymptotic must take over -- the MEASURED U/V = 45.65 gives, for a
 pointwise remainder eps = K theta^{-1/2}, a relative error on V_A of about K * 5.17. Keeping that below
 m_inf = 0.3002 forces K < 0.058, whereas the leading Debye/Olver remainder coefficient is O(1): the
-pointwise route misses the required constant by ~17x. So the oscillatory cancellation (summation by
+pointwise route misses the required constant by ~17x.
+
+  *** CORRECTED 2026-09-03 (PR #6528): the "K < 0.058" and "~17x" in the paragraph above are WRONG,
+  *** by a dropped unit conversion. They compare a RELATIVE error on V_A against m_inf, an ABSOLUTE
+  *** margin. Since sigma_D/sigma_A = sqrt(V_D/V_A), a relative perturbation delta_A on V_A moves the
+  *** MARGIN by sig_ratio_inf * delta_A / 2 = 0.3398 * delta_A, not by delta_A. So the admissible
+  *** relative error is m_inf / 0.3398 = 0.8834, not 0.3002, and the threshold here is 2.943x too
+  *** strict. Recomputed at theta = 78: K_adm = 0.17115 (not 0.058), so the shortfall against an O(1)
+  *** Debye coefficient is ~5.8x -- or ~11.7x if V_A and V_D split the margin budget -- NOT ~17x.
+  *** THE STRUCTURAL NEGATIVE BELOW IS UNAFFECTED and never used this threshold: U/V grows without
+  *** bound, so no pointwise bound however sharp controls the variance uniformly. Only the quoted
+  *** shortfall FACTOR was wrong. See wlambda_covariance_epic_M1_pointwise_shortfall_recomputed.py. So the oscillatory cancellation (summation by
 parts / stationary phase) is ESSENTIAL, not a refinement, and acquiring a sharper POINTWISE bound
 cannot close N0 <= 78 no matter how good its constant.
 
@@ -112,7 +123,10 @@ def main():
     print("#   The oscillatory cancellation in Sum w S E (summation by parts / stationary phase) is")
     print("#   load-bearing. A pointwise-magnitude bound, however sharp its constant, cannot close it.")
     print("RESULT: pointwise Bessel-remainder route is INSUFFICIENT for C_A -- at theta=78 it needs a")
-    print("        remainder constant K < 0.058 vs the O(1) Debye coefficient (~17x short). qou-k5r5 OPEN.")
+    print("        remainder constant K < 0.17115 vs the O(1) Debye coefficient (~5.8x short; ~11.7x if")
+    print("        V_A and V_D split the budget). The 'K < 0.058 / ~17x' this line once printed was")
+    print("        2.943x too strict -- it compared a RELATIVE error on V_A to the ABSOLUTE margin,")
+    print("        dropping sig_ratio_inf/2 = 0.3398. Structural negative UNAFFECTED. qou-k5r5 OPEN.")
     print("EXIT: 0")
     return 0
 
