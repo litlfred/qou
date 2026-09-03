@@ -1,6 +1,6 @@
 # `conditional_on_class` does not mean the block carries a class hypothesis
 
-**Date:** 2026-09-03 · **Bean:** `qou-3bc2` · **Witness:**
+**Date:** 2026-09-03 · **Bean:** `qou-y3x4` · **Witness:**
 [`2026-09-03-conditional-on-class-hypothesis.witness.json`](2026-09-03-conditional-on-class-hypothesis.witness.json) ·
 **Script:** [`scripts/conditional-on-class-hypothesis-audit.ts`](../../scripts/conditional-on-class-hypothesis-audit.ts)
 
