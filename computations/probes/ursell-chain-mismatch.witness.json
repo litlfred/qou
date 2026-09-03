@@ -1,7 +1,7 @@
 {
   "computation": "ursell-chain-mismatch",
   "scriptFile": "computations/probes/ursell_chain_mismatch_probe.py",
-  "computedAt": "2026-09-03T04:36:57.951556+00:00",
+  "computedAt": "2026-09-03T12:46:52.182358+00:00",
   "description": "RETRACTED NOVELTY: the exclusion here duplicates QOU.Mass.UniformBondSimpleGraphExclusion (main c9d47234ce, 2026-08-30, bean qou-edt7), which proves it more generally, and check 4's ratio is the corpus's recorded w(2)/w(1). The arithmetic is correct and is an independent re-derivation by a different route (Ursell counts rather than graph edges). What is this probe's own is check 5: the link between the exclusion and the four MEASURED channel values, which reframes the earlier capstone -- ch3/ch4/ch5 are one identity, ch1 is not.",
   "measured_b3_over_b2": "950815/1483044",
   "count_table": [
@@ -128,8 +128,8 @@
   ],
   "source": "AME2020; all-channels-b3-sign.witness.json",
   "scriptHash": "d71c8ae94d41",
-  "scriptCommitSha": "75308f88c49ef55d241b98bf980d1919cc2d4e55",
-  "commitSha": "ef9b2ae42f57599b84431338f0c594cf94f77b6c",
+  "scriptCommitSha": "f81232991384cf2fd42c4168a6f4e2ee4ac9aaaf",
+  "commitSha": "b244062b19705d1be08448e1edcd204b33d312a8",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "independent",

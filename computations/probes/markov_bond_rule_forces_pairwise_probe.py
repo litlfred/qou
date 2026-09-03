@@ -129,9 +129,15 @@ def main() -> int:
 
     # -- the corpus's own bond factors, convention D, proton pin -----------
     from canonical_braid_crossings import d_for_ctype  # noqa: E402
-    from q_parameter import Q as Q0  # noqa: E402
+    from q_parameter import q_at  # noqa: E402
 
-    q0 = mp.mpf(str(Q0))
+    # `q_at(dps)`, NOT `mp.mpf(str(q_parameter.Q))`. The module constant `Q`
+    # is a Python float from the float64 Newton solve, so routing it through
+    # `str()` reads ~17 correct digits as if they were 50 -- laundering a
+    # float64 into an mpf. The bond factors below are printed to 20-30
+    # digits, so that floor would be reported as significance it does not
+    # have. Same drain as PR #6489 / bean qou-63lc across 34 probes.
+    q0 = q_at(mp.mp.dps)
     h = q0 - 1 / q0
     z = q0 ** 3 / (q0 ** 2 + 1)          # convention D
     d_pp = d_for_ctype("sigma", h)
@@ -164,7 +170,14 @@ def main() -> int:
     # -- 2. the production functional -------------------------------------
     print()
     print("2. the production functional f = -alpha*ln")
-    alpha = mp.mpf(str(mp.mpf("4.18598136329")))   # E0 = m_e/(q0(q0-1)), MeV
+    # E0 = m_e/(q0(q0-1)) derived at working precision, not a pasted decimal.
+    # It cancels from every vanishing claim below (b3 = 0 holds at alpha = 0),
+    # so this is tidiness rather than a precision requirement -- but a pasted
+    # 12-digit literal in a 50-dps file is the same defect class as the q0
+    # laundering above.
+    from codata_constants import M_E_MEV as _ME  # noqa: E402
+    _me = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
+    alpha = _me / (q0 * (q0 - 1))
     prod_f = lambda t: -alpha * mp.log(t)          # noqa: E731
     b3_prod = b3_of(prod_f, mu)
     print(f"     b3 = {mp.nstr(b3_prod, 12)}")
@@ -294,7 +307,8 @@ def main() -> int:
             "Cauchy solution, not a construction of one. It shows the "
             "conclusion does not use continuity; it is not a claim about "
             "pathological solutions in general.",
-            "alpha = E0 = 4.18598136329 MeV enters only as an overall scale and "
+            "alpha = E0 = m_e/(q0(q0-1)) is derived at working precision (not a "
+            "pasted decimal) and enters only as an overall scale and "
             "cancels from every vanishing claim -- b3 = 0 holds for alpha = 0 "
             "too. No accuracy claim is made and none is possible from a "
             "quantity that is identically zero.",
