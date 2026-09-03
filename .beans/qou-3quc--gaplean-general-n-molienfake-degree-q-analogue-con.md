@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T10:58:44Z
+updated_at: 2026-09-03T04:39:00Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -173,3 +173,27 @@ bridge hconv itself (q^(-kappa)/hookProd = schurElement(q^2,0)*(1-q^2)^n), carri
 as an explicit hypothesis (NOT a sorry). It reduces to the n-statistic identity
 kappa = sum h - n - 2 n(lambda) + foldl chaining of the per-cell brick -- mechanical,
 no open combinatorics. Follow-up bean for hconv if pursued.
+
+
+UPDATE 2026-09-03 (PR #6447, branch claude/hconv-convention-bridge-2026-09-03):
+the ENTIRE COMBINATORIAL CORE of hconv is now proved sorry-free in
+QOU/MathlibExt/ContentSumNStatistic.lean. Two milestones:
+
+1. contentSum lambda = n(lambda') - n(lambda) (was only a prose comment at
+   QPartitionCombinatorics def nLambda). Via cell_fubini column-regrouping.
+2. THE n-STATISTIC IDENTITY, in the Partition.hookLength encoding hconv needs:
+   contentSum lambda = (Sum_cells Partition.hookLength) - |lambda| - 2 nLambda lambda.
+   Combines (1) with HookSumComplete.hookSum_eq (Sum h = n' + n + |lambda|), plus a
+   new colLen-register bridge hsc_colLen_eq (proved by induction) reconciling
+   HookSumComplete's row-index-card colLen with IdentityI's list-value colLen.
+
+All lean-direct exit 0; axioms = propext/Classical.choice/Quot.sound (no sorryAx).
+
+REMAINING for hconv: ONLY the sign/monomial foldl aggregation (piece 3). The
+worked algebra (audit 2026-08-29): schurElement(q^2,0,lambda)*(1-q^2)^n =
+q^{2 nLambda + |lambda| - Sum h}/hookProd, using the per-cell brick
+one_sub_qsq_pow_eq (already sorry-free) chained over the nested foldl of
+schurElement/hookProd + (1-q^2)/(q-q^-1) = -q; then substitute the n-statistic
+identity to get q^{-contentSum}/hookProd = hconv. This is the laborious nested-
+foldl product bookkeeping over R (signs (-1)^n, q^{Sum h}, (q-q^-1)^n powers);
+no open combinatorics remain, only mechanical algebra.
