@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-02T22:24:01Z
+updated_at: 2026-09-03T04:31:29Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1207,4 +1207,63 @@ establishes**. Each is a further thing to derive, not a thing the sources supply
 
 Artifacts: `computations/em_linking_fh_mirror_split_charge_blindness.py`,
 `computations/em-linking-fh-mirror-split-charge-blindness.witness.json` (5/5).
+Nothing wired.
+
+
+## 2026-09-03 — SATURATION IS PRIOR, not one escape of three: a lower bound cannot constrain a DIFFERENCE
+
+Correcting my own scoping from the entry above. That entry closed by naming three
+surviving escapes from the charge-blindness result — a non-vertex-transitive
+carrier, a charge-dependent `ac`, and an unsaturated bound — and presented them as
+parallel. **They are not parallel.** The third is prior to the other two, and the
+reason is elementary once stated.
+
+**Eq. (43) is an inequality**, `E_{3/2}(X) ≥ B(L, Φ)`. The arc's observable is a
+mirror-pair **split** — a *difference* of two such energies, `(Z,N)` against
+`(N,Z)`. From `B₁ ≤ E₁` and `B₂ ≤ E₂`, **nothing at all follows about `E₁ − E₂`**:
+for any target value `t` whatsoever there are energies meeting both bounds whose
+difference is exactly `t`. Take `E₂ = max(B₂, B₁ − t)` and `E₁ = E₂ + t`.
+
+So eq. (43) does not merely fail to *predict* κ(A) — it fails to **constrain** it,
+in either direction. Whatever the AME ladder had turned out to be (constant,
+growing, falling, alternating), the bound would have been consistent with it.
+
+**Why that reorders the escapes.** Escapes 1 and 2 concern the *shape* of `B`. The
+shape of `B` only matters once `B` is being read as the energy — i.e. once
+saturation is assumed. Without it there is nothing for a carrier or an `ac` to be
+the shape *of*. Every κ-scoring result in this arc inherits the assumption.
+
+**What would restore a constraint is an UPPER bound**, which eq. (43) does not
+supply. With `B₁ ≤ E₁ ≤ U₁` and `B₂ ≤ E₂ ≤ U₂` the difference is pinned to
+`[B₁ − U₂, U₁ − B₂]`, and that interval collapses to a point exactly when both
+bounds are tight — so saturation is the *extreme* case of the two-sided situation,
+not a mild simplification of it. Naming the missing ingredient precisely: not more
+topology, but an **upper bound on the energy of a knotted flux configuration**.
+
+Sorry-free in Lean, `lean`-direct exit 0 no warnings, over the weakest structure
+that admits the statements (`[AddCommGroup R] [LinearOrder R]
+[IsOrderedAddMonoid R]` — an ordering is genuinely required here, unlike the
+sibling file's generic `CommRing`; note `LinearOrderedAddCommGroup` is deprecated
+in this Mathlib and is no longer a class at all, so it cannot be used as a binder):
+`content/quantum-observable-universe/lean/QOU/Mass/LowerBoundCannotConstrainADifference.lean`
+— `diff_unconstrained`, `no_split_value_is_excluded`, `diff_of_saturated`,
+`diff_bounded_of_upper`, `diff_bounded_collapses_iff_saturated`. `#print axioms`:
+four carry `[propext, Classical.choice, Quot.sound]` (Classical.choice enters via
+`max`), and `diff_of_saturated` depends on **no axioms at all**.
+
+**Corpus-grep before claiming novelty.** `saturat` has many hits, all other
+subjects (Δ_λ saturation, coth-saturation, channel saturation). The closest prior
+remark is `docs/audits/2026-08-01-em-linking-reads-round1.md:281` — *"the
+inequality itself is vacuous for our tubes"* — but that is about **Khesin Thm
+3.6** having a `2·genus−1` factor that vanishes on unknot components, a different
+statement about a different inequality. No prior instance of the
+difference-of-lower-bounds argument in `docs/`, `computations/`, `content/` or
+`.beans/`.
+
+**NOT measured, and worth saying rather than leaving implicit.** One might hope to
+show saturation is *implausible* by computing how far `B` sits below the observed
+energies. That cannot be done here: evaluating `B` needs a per-nucleus carrier
+link, and `qou-5vhf` establishes the `A ≤ 4` assignments are an admitted
+AME-driven census search. The slack is **unmeasured**, not measured-and-small.
+
 Nothing wired.
