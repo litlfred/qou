@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T05:32:27Z
-updated_at: 2026-09-03T10:57:05Z
+updated_at: 2026-09-03T20:27:51Z
 ---
 
 MEASURED 2026-09-03 on branch claude/wall-side-readjudicate-2026-09-03 @ 01dfbca94f0 (after the five of qou-7q0a flipped to pass). Corpus tally of the LATEST wall-side-statement entry per block: 545 pass / 21 fail / 20 n/a / 1 warn.
@@ -35,3 +35,5 @@ MEASURED at creation: of the 15 class-(B) blocks, 14 still have NO .lean; q-reeb
 2026-09-03 10:5x: owner: 'next qou-zmuu class A — the four remaining templated'. Branch claude/wall-side-class-a-2026-09-03 off main c10071d7f73. Dispatching 4 read-and-judge agents (q-energy, gram-weighted-qvalue, parity-regime-selection, frobenius-positivity-filter); parent is scribe. Classes B/C untouched this tranche.
 
 2026-09-03 10:5x CLASS A RESULT: 4/4 pass, 4/4 prior_verdict_was_correct=false, all archimedean regime. Appended on claude/wall-side-class-a-2026-09-03; qa-sweep --only wall-side-statement clean on all four. Grounds: q-energy has ZERO archimedean tokens in its .md (generic H_n(R,q) definition; chapter profile admits generic-R) — a different false-positive shape from the other eight; gram-weighted-qvalue's prior fail was issued against a version that carried the s7c banner RENDERED in prose, so it was wrong on its own terms; parity-regime-selection declares 'for all q>1' at md:6 and its prior field_hash did not match the md at the prior sha either (stale on arrival); frobenius-positivity-filter inherits the ordering from parity-regime-selection one uses[] hop away. Class A is now DRAINED: 9/9 templated 2026-07-07T14:26:5x fails re-adjudicated pass across #6475 + this branch. Classes B (15) and C (2) remain — owner decision: adjudicate on merits vs mechanical n/a.
+
+2026-09-03 20:3x: CLASS A MERGED — #6499 -> main ec7d81458d3 (rebase). All 9 templated fails from the 2026-07-07T14:26:5x batch now pass on main. Owner: 'merge and go' -> classes B+C adjudicated ON THE MERITS (option 1). First dispatch of 17 agents at 11:45Z died on a session rate limit (429, all 17); re-dispatched 20:3x in batches of 6 on branch claude/wall-side-class-bc-2026-09-03 off main ec7d81458d3. reviewed_sha for the B/C verdicts is 4a4e5ce3d2c (the pre-merge class-A head; the 17 blocks are byte-identical there and on main).
