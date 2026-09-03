@@ -1419,19 +1419,39 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **542** document directories, holding **10,922**
+   and re-deriving one. **576** document directories, holding **11,528**
    section files, are searchable this way (this read *"332 documents /
-   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+   7,313 sections"* until 2026-08-30 — low by 62 % — and *"542 / 10,922"*
+   until 2026-09-03; the library grows, so **re-count, do not quote**).
 
    **Say which count you mean, or the next reader will "correct" you.**
    Three numbers describe this library and they are all different:
-   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
-   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   `ls -d library/*/ | wc -l` gives **576** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **552**
    *index rows*, because the 23 known duplicate copies deliberately get no
-   row of their own; and `summarize-library.py` prints that 518 as
-   "documents". A grep-coverage claim wants the 542; a "how many distinct
-   works do we hold" claim wants the 518. Quoting one against the other
+   row of their own; and `summarize-library.py` prints that 552 as
+   "documents". A grep-coverage claim wants the 576; a "how many distinct
+   works do we hold" claim wants the 552. Quoting one against the other
    reads as staleness when it is a category difference.
+
+   **🛑 And the duplicates do NOT always explain the gap — INDEX.md goes
+   STALE, silently (found 2026-09-03).** On that date the index carried
+   **519** rows against 576 directories, and only **23** of the 57 missing
+   were marked `duplicate_of`. The other **33 were real documents with real
+   sections that simply had no row** — invisible to this tier, which is the
+   one the checklist tells you to read FIRST. They were not marginal: the
+   volume conjecture (`0803219`), the oriented skein category
+   (`arxiv-1712.08953v1`), affine-Hecke Plancherel (`arxiv-1110.6212v2`),
+   knot polynomials on braid closures (`li-braid-closures`) and q-deformed
+   Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
+   matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
+
+   **So check the arithmetic before trusting tier 1**: `directories −
+   index rows` should equal the duplicate count, and when it does not the
+   index is behind. The producer fixes it deterministically and offline —
+   `python3 scripts/summarize-library.py --apply` (extractive, no model, no
+   network; agent-written summaries are preserved). A clean tier-1 scan is
+   evidence about the index, not about the library.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1442,7 +1462,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 576** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
