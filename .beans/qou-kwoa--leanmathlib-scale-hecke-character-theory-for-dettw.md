@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-03T22:02:35Z
+updated_at: 2026-09-03T22:30:29Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -398,3 +398,55 @@ substrate q0 ~ 1.11 is real and positive, so a square root always exists, and ov
 algebraically closed field every Q is a square. It is a mathematical tidying of a
 statement that is already sharp where the framework stands. Worth doing if someone wants
 the clean general-field theorem; not worth pre-empting the Schur-element work for.
+
+
+## 2026-09-03 22:20 — RE-VERIFIED against a purged tree, and two harness traps
+
+Ran an adversarial re-check of the whole PR (nothing had changed on it: no reviews, no
+comments, no check runs, zero drift across 137 main commits).  Everything holds, and the
+verification is now stronger than it was -- but only because a false-green mechanism turned
+up in the process.
+
+RESULT: all six touched modules exit 0, twelve declarations
+[propext, Classical.choice, Quot.sound], against a tree with the stale dependency oleans
+DELETED and rebuilt from source.  Trust that pass, not the earlier file-by-file one.
+
+### Trap 1 — LEAN_PATH shadowing applies to QOU/, not just Mathlib/
+
+Lean commits to the FIRST LEAN_PATH root containing the module's top-level directory and
+does NOT fall through.  So /tmp/qoubuild + qb.sh is sound only while the ENTIRE cone lives
+in the scratch dir.  Reproduced deliberately: after emptying it, five of six modules failed
+naming dependencies that were sitting in .lake/build the whole time.
+
+### Trap 2 — the restored olean cache goes stale, and "skip if present" then FALSE-GREENS
+
+lake-cache/qou-<toolchain> is a snapshot.  A module whose source changed since has an olean
+that is present, loadable and WRONG.  Proved by CONTENT, not timestamps:
+
+    strings .lake/build/lib/lean/QOU/SchurWeyl/HeckeWedderburnGeneral.olean \
+      | grep -c NotRootOfUnity        ->  0
+
+while the source defines heckeWedderburn with exactly that hypothesis.  The cache still held
+the pre-#6486 R-only signature, and a builder that skipped on existence typechecked new code
+against it, reporting the new code's own hypotheses as unknown identifiers.
+
+### CAVEAT ON MY OWN MEASUREMENT — do not quote "21 stale oleans"
+
+A first pass counted 21 by comparing mtimes.  `git checkout` sets source mtimes to checkout
+time, so an mtime comparison over a fresh clone flags files whose content never changed.
+Established BY CONTENT: exactly one file, HeckeWedderburnGeneral.  The rest of the group is
+consistent with the general-field tranche landing after the snapshot but was not verified
+one by one.
+
+That same unsoundness killed a helper script I started writing to automate this: an
+mtime-driven dependency walker treats every Mathlib source as stale and walks the whole
+import graph.  Its own --selftest caught a SECOND bug first (deciding staleness BEFORE
+recursing, so a stale grandchild is invisible -- the exact trap the script existed to
+prevent).  Script DROPPED rather than shipped half-working; it is build tooling, not this
+bean's work.  Anyone who wants it must not key on mtime.
+
+### The rule that survives all of the above
+
+After restoring the olean cache, a lean-direct verification is only as current as the
+dependency oleans it loads.  Rebuild the cone from source before trusting a green on any
+module whose dependencies this branch or a recent merge touched.

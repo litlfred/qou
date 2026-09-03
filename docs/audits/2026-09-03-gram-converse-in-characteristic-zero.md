@@ -140,3 +140,41 @@ determinant. Kept in the Lean as a regression.
 
 Semisimplicity and the Gram determinant are **magnitude-axis** facts. Nothing here bears on
 the P≠NP wall, as `TwGram.lean` also records.
+
+## Verification, and two harness traps found while doing it
+
+The result was first checked file-by-file with the repo's usual `lean`-direct recipe. It was
+then **re-checked against a tree with the stale dependency oleans purged and rebuilt from
+source** — all six touched modules `exit 0`, and `#print axioms` on twelve declarations
+returns `[propext, Classical.choice, Quot.sound]`. That second pass is the one to trust, and
+it exists because the first pass could have been a false green for a reason worth recording.
+
+**Trap 1 — the `LEAN_PATH` shadowing applies to `QOU/`, not just `Mathlib/`.** Lean commits
+to the *first* `LEAN_PATH` root containing the module's top-level directory and does not fall
+through to later roots. So a scratch build directory works only while the **entire** cone
+lives in it: the moment one olean is written there, every dependency still in the package
+tree becomes invisible, and the build fails naming a file that exists one directory away.
+Reproduced deliberately — after emptying the scratch dir, five of six modules failed on
+dependencies that were present in `.lake/build` the whole time.
+
+**Trap 2 — the restored olean cache goes stale, and a "skip if present" builder then verifies
+new code against old dependencies.** `lake-cache/qou-<toolchain>` is a snapshot; a module
+whose source has since changed has an olean that is present, loadable, and **wrong**. Proved
+at the level of content, not timestamps: `QOU/SchurWeyl/HeckeWedderburnGeneral.olean` in the
+restored cache contains **zero** occurrences of `NotRootOfUnity`, while the source defines
+`heckeWedderburn` with exactly that hypothesis — i.e. the cache still held the pre-#6486
+`ℝ`-only signature. A builder that skipped on existence typechecked against it and reported
+the new code's own hypotheses as unknown identifiers.
+
+**A caveat on my own measurement of trap 2.** A first pass counted "21 stale oleans" by
+comparing mtimes. **Do not quote that number.** `git checkout` sets source mtimes to checkout
+time, so an mtime comparison over a fresh clone flags files whose content never changed — and
+that same unsoundness is what made an mtime-driven builder walk into Mathlib's whole import
+graph. What is established *by content* is a single file, `HeckeWedderburnGeneral`; the rest
+of the group is consistent with the general-field tranche having landed after the snapshot,
+but it was not verified one by one.
+
+The practical rule, which holds regardless: **after restoring the olean cache, a `lean`-direct
+verification is only as current as the dependency oleans it loads.** Rebuild the cone from
+source before trusting a green on any module whose dependencies this branch or a recent merge
+touched.
