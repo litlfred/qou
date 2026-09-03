@@ -3,7 +3,7 @@
 Centralizes the standard physics constants and intermediate quantities
 used by the Q_β precision-ladder probes:
 
-  - q_0 (CAL-2 substrate, loaded from q-pinning-50-digit.witness.json)
+  - q_0 (substrate parameter, from `q_parameter` — the CALLER's anchor)
   - h, z, ℏ_q (substrate-derived)
   - α = (z-1)h/2 (single-wrap V_(2,1) eigenphase)
   - b = √(q⁴+q²+1)/(q²+1) (Hoefsmit off-diagonal coupling)
@@ -39,22 +39,39 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
-import json
-from pathlib import Path
-
 import mpmath as mp
 
 from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION
 
-HERE = Path(__file__).resolve().parent
+# `_path_bridge as _pb`, `json`, `Path` and `HERE` were dropped with the direct
+# witness read (2026-08-30) — they existed only to locate and parse
+# q-pinning-50-digit.witness.json. The sys.path bootstrap above is unaffected.
 
 
 def q_0_at_50dps() -> mp.mpf:
-    """CAL-2 substrate parameter at 50 dps from canonical pinning witness."""
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
-        d = json.load(fh)
-    return mp.mpf(d["derived_50_digit"]["q"])
+    """Substrate parameter q_0 at 50 dps, at the RUNNING SCRIPT's anchor.
+
+    Routed through `q_parameter` on 2026-08-30 (bean `qou-aj91`). It used to
+    read `q-pinning-50-digit.witness.json` directly, which hardcoded the MUON
+    anchor for every caller regardless of the caller's own layer.
+
+    This module is a shared library — no `main()`, no witness, never
+    `sys.argv[0]` — so its own `ideal_muon` manifest listing could never fire.
+    `q_parameter` resolves the anchor from the running script, so each caller
+    now gets its own layer instead of this module's.
+
+    The fix is not cosmetic. `paper_six_term_isotope_sweep` is UNLISTED, hence
+    proton: it imports `Q_MP` from `q_parameter` at line 81 and uses it at 107
+    and 1103, then calls `compute_substrate_quantities()` and got MUON back —
+    two anchors inside one script. Measured 2026-08-30: 11.6141 ppb in q_0,
+    amplified to 30.1589 ppb in `Q_A`, because Q_A carries |q^2 - 2q - 1|, a
+    near-cancellation at q_0 that magnifies the input shift ~2.6x.
+
+    `qbeta_symbolic_sdp_strict_complementarity` IS listed `ideal_muon`, so it
+    keeps the muon value byte-for-byte; only the straddling caller moves.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    return mp.mpf(Q_50_DIGIT_STR)
 
 
 def compute_substrate_quantities() -> dict:

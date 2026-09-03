@@ -123,15 +123,22 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     Slater-strict feasibility hypothesis** `h : slaterStrict n` via the
     conic-duality theorem (Boyd–Vandenberghe Thm 5.5): under a strictly
     feasible `Φ ≻ 0` the dual is solvable and primal = dual.  The
-    conic-duality step itself is **not in Mathlib** (no SDP duality
-    API), so it is discharged by `sorry` here — the hypothesis is the
-    genuine analytic input (Slater), **not** the conclusion.
+    conic-duality step itself is **not in Mathlib** (no SDP duality API).
 
-    The retained `[HasConfinementSDPStrongDuality n h]` instance lets a
-    caller who already *has* the duality identity (e.g. from a numerical
-    SDP solver, via the `Fact`-backed default instance) supply it; but
-    the theorem no longer merely projects that class field — it states
-    the real conditional-on-Slater result.
+    **Two sentences here were false and are corrected (2026-09-03).** This
+    docstring said the step "is discharged by `sorry` here" and that "the
+    theorem no longer merely projects that class field". The body is
+    `exact hi.strong_duality` and `#print axioms` reports no `sorryAx`: it
+    *does* project, and there is no `sorry`.
+
+    What it projects is legitimate, which is why only the prose changes.
+    `[HasConfinementSDPStrongDuality n h]` is a conditional **input** a caller
+    supplies when they already have the duality identity (e.g. from a numerical
+    SDP solver, via the `Fact`-backed default instance) — not a data field
+    positing the conclusion. The in-body comment records that the earlier
+    version projected exactly such a data field, and that it was deleted. So the
+    result is conditional on Slater *and* on the supplied duality, and this
+    docstring now says so.
 
     Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
     projection recovered when every Wedderburn block decouples. -/

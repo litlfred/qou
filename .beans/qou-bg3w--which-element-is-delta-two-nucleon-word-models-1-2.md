@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-08-29T18:57:43Z
+updated_at: 2026-09-03T04:41:44Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -255,3 +255,83 @@ Caught in this probe before it shipped: the root check first read
 `solve(c1, h)` while the coefficient comes back in **q**, so it returned `[]`
 and **passed vacuously**. Now solves in q and maps through h = q - 1/q, with an
 exact Sturm count on the octic where a nonzero-h root could have hidden.
+
+
+
+## 2026-09-03 — the 92.1058x is BRACKETED by the two consistent ratios, not understated
+
+`computations/qbeta/qbeta_d_frame_baseline_element_consistency_probe.py` (5/5,
+sympy exact at the 50-digit q_0 as a Rational, no float64).
+
+This bean records the straddle as *"priced consistently on Delta_S it is
+257.26x -- the published figure UNDERSTATES by 2.793x"*. Both halves reproduce
+exactly (257.26025 and 2.79309x). **But the understatement figure is itself
+Delta_S-conditional, and the bean does not say so.** Priced on Delta_L the same
+published number OVERSTATES by 147.688x:
+
+    element     counit (net)              trace at z_D            ratio
+    Delta_S     -0.1872071945   +0.1678 % -0.1062356398  -43.157 %  257.260
+    published   -0.1872071945   +0.1678 % -0.1580160043  -15.451 %   92.106
+    Delta_L     -0.2331977113  +24.776 %  -0.1580160043  -15.451 %    0.6237
+
+The two consistent ratios BRACKET the published one, strictly. So it is not an
+approximation to either with a correction factor -- a cross-element ratio does
+not have one, and quoting "2.793x" silently fixes the element. Same shape as
+the four corrections this bean already collects: a quantity true relative to
+one choice, reported as though the choice were not being made.
+
+Two things established on the way, both checked rather than assumed:
+
+* **The two trace routes are ONE functional.** The baseline probe's Frobenius
+  pairing `sum_lambda y_lambda(q, N=2) chi^lambda` and the Markov trace at
+  `z_D` agree on Delta_L to better than 1e-40 (-0.158016004341491298 both). That
+  is what licenses pricing Delta_S's trace from its recorded closed form
+  `h^2/2 - h z` instead of guessing a word for it.
+* **The straddle took the flattering half of each element** -- Delta_S carries
+  the corpus's best counit (+0.168 % against Delta_L's +24.8 %) and Delta_L the
+  better of the two traces (-15.5 % against -43.2 %). No intent alleged: the
+  counit is a hardcoded closed form and the trace is built from an imported
+  word, so the two halves were never in one place to be compared. That is why
+  it survived review.
+
+**Not fixed, deliberately:** the 92.1058 in `qbeta_d_frame_trace_baseline_probe`
+is left intact, because it is what `qbeta_delta_element_fork_pricing_probe`
+calibrates against. The producer now carries a docstring banner naming which
+element each half is on. The fix for a straddle is to say which element, not to
+move a number consumers key on.
+
+## 2026-09-03 — and (D1) on Delta_S derives the form that is already excluded
+
+Not stated in this bean or in qou-cds1, and it changes what the fork decides.
+
+From this bean's own recorded closed forms, `net(Delta_S) = h^2/2 - h` and
+`tr_M^z(Delta_S) = h^2/2 - h z`, the (D1) relation gives
+
+    2 alpha = net - tr_M^z  =>  alpha = h(z-1)/2 = (z-1)h/2
+
+**identically** -- which is exactly the single-wrap eigenphase axiomatised at
+`q-beta-cos-resummation.ts:48`, and exactly the functional form PR #6264
+excluded EXHAUSTIVELY over the admissible set `{q, z_D}` (z_D misses by 1087
+windows; z = q is excluded structurally, since alpha < 0 forces z < 1 while
+q > 1 always).
+
+So the fork's two arms are not "a derivation of alpha" versus "none":
+
+* **Delta_S canonical** -> (D1) available -> it derives the refuted form, and
+  the axiom becomes a *derived-and-refuted* claim rather than an unsupported
+  one.
+* **any long model canonical** -> (D1) unavailable (quadratic in z, only real
+  root h = 0) -> the axiom stays unsupported, and qou-cds1's terminus already
+  records that no route to alpha is known to be open.
+
+Either way alpha is undetermined in that form. What the owner call decides is
+which of those two the corpus records -- which is a smaller decision than this
+bean was carrying, and worth knowing before spending it.
+
+Recorded on `prop:qbeta-counit-closed-form` as an authorNote, together with a
+caveat that `Delta = NF(n) - NF(p)` as written there does not name a unique
+element (six constructions answer to it; five priced, one struck as a category
+error). Consumers must name their builder.
+
+Scope-(a) throughout. No observable moves -- not Q_beta, not a mass, not a
+binding, not L2.

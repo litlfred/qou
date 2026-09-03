@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-31T05:25:08.672182+00:00",
-  "commitSha": "cb86d1cbc6aeb7f3e16479c781da55cdde0ddf7c",
+  "computedAt": "2026-09-03T04:42:26.393064+00:00",
+  "commitSha": "ad13600fdb2001a4bd70f749e817e5db917fecf9",
   "assertions": [
     {
       "name": "separation_bounded_away_from_zero_across_the_range",
@@ -51,11 +51,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3495,
+  "durationMs": 3554,
   "computation": "mobius-borromean-topology-guard",
   "scriptFile": "mobius_borromean_topology_guard.py",
   "scriptHash": "2845938b46a1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e8fe7c0e41b9b0ca79656b3b830b6e4d6ae13596",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -127,5 +127,7 @@
     "separation_is_monotone_increasing": true,
     "closed_form_check": "The worst case sits at a/b = 1.5 with separation exactly 0.5 = a - b, and a - b also matches exactly at a/b = 1.1 (0.1). It does NOT hold generally: at a/b = 1.8 the separation is 0.74415 against a - b = 0.8, and by a/b = 4 it is 0.96657 against 3. So `min sep = a - b` is a low-end coincidence -- the minimising pair of points on the two ellipses changes -- and is recorded here because it is the obvious wrong generalisation to draw from the worst-case row.",
     "residual_limitation": "a/b is sampled on a grid of step 0.01, so the separation could in principle dip between samples. What actually disposes of this is that the separation is monotone increasing across the sampled profile, so the minimum over any interval sits at its LEFT endpoint -- and the grid scan independently found exactly that. Monotonicity is itself read off seven sample points, not proved, so the honest claim is a strong one about the sampled profile rather than a theorem."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

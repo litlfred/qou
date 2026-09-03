@@ -68,8 +68,15 @@ class MarkovIdentificationContext where
 The substantive content of `lem:feynman-markov-identification`: the
 Jones–Markov trace decomposes as the Markov-weighted sum of
 Specht-module partial traces. This requires massive infrastructure
-(the Wenzl-bridge decomposition) that cannot be added as a simple class
-field, so the body is `sorry` with the manuscript citation.
+(the Wenzl-bridge decomposition).
+
+**The body is `ctx.markovTrace_branching`, not a `sorry` (corrected
+2026-09-03).** This docstring said the infrastructure "cannot be added as a
+simple class field, so the body is `sorry`" — but it *was* added as exactly
+such a field, of the same name, and this theorem projects it. `#print axioms`
+reports no `sorryAx`. The identity is therefore assumed by whoever instantiates
+`MarkovIdentificationContext`, not proved here; the gap analysis below is
+unaffected and still describes what is missing.
 
 **Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
 proves the classical Burnside identity for symmetric groups, not the Wenzl-bridge branching

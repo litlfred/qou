@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:01:32.537355+00:00",
-  "commitSha": "1d732643ee9c88d789e584af9f94cd6b166cf2c5",
+  "computedAt": "2026-09-03T05:00:09.447783+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "alpha_C_fails_log_doubling_identity",
@@ -52,7 +52,7 @@
   "computation": "qbeta-phase-fails-log-functional-equation",
   "scriptFile": "qbeta_phase_fails_log_functional_equation_probe.py",
   "scriptHash": "f205d6f26b8e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0ed8fcbc61f5d5d86819ffc68c73aee5dbd7abe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,7 +67,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -142,5 +142,7 @@
       }
     },
     "scope": "NARROW scope-(b): removes CONSTANT-RESIDUE connections only. A connection with q-dependent residues, a non-flat construction, or a genuinely q-dependent-parameter transcendental object is untouched and need not satisfy the doubling identity. What is gone is the specific Kohno-Drinfeld reading the acceptance test encoded."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

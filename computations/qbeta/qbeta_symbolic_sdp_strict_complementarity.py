@@ -227,10 +227,8 @@ def main() -> int:
             sib = json.load(f)
         A_sib = sib["data"]["A_q_symbolic"]
         # Numeric agreement at q_0 (robust to radical-simplify failures).
-        with open(
-            _pb.witness_path("q-pinning-50-digit.witness.json", HERE), encoding="utf-8"
-        ) as f2:
-            q0_chk = mp.mpf(json.load(f2)["derived_50_digit"]["q"])
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+        q0_chk = mp.mpf(Q_50_DIGIT_STR)
         # #1739's A strings use r = √q; map it to sqrt(q) for evaluation.
         r_sym = sp.sqrt(q)
         diffs = []
@@ -247,10 +245,17 @@ def main() -> int:
     print()
 
     # ---- substrate q_0 ---------------------------------------------------
-    with open(
-        _pb.witness_path("q-pinning-50-digit.witness.json", HERE), encoding="utf-8"
-    ) as f:
-        q0 = mp.mpf(json.load(f)["derived_50_digit"]["q"])
+    # q_0 from `q_parameter` -- the RUNNING SCRIPT's anchor -- rather than a
+    # direct read of q-pinning-50-digit.witness.json (routed 2026-08-30, bean
+    # `qou-aj91`). The direct read hardcoded muon and made QOU_Q0_ANCHOR inert
+    # here. This stem stays `ideal_muon`, and q_parameter derives that anchor
+    # from q_muon_at(70), byte-identical to 70 digits with what was read, so
+    # the value is unchanged; only the mechanism moved to the manifest.
+    # BOTH q_0 sites in this file route together, deliberately: the cross-check
+    # against the #1739 sibling above and the substrate evaluation here must be
+    # at ONE anchor, or the comparison straddles them.
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    q0 = mp.mpf(Q_50_DIGIT_STR)
 
     t_num = np.array([sym_to_float(t_sym[i], q, q0) for i in range(6)])
     G_num = np.array(

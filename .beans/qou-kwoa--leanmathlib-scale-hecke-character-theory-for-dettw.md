@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T22:29:28Z
+updated_at: 2026-09-03T04:42:01Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -178,3 +178,64 @@ shell expand backticks as command substitution. Backticked identifiers were
 executed ("proof_wanted: command not found") and their text was DELETED from
 the bean, silently truncating the rest of the append. Pass long bodies through
 a file, or single-quote the argument.
+
+## 2026-09-03 — the CARRIER item is now CLOSED (qou-img9 / PR follow-on)
+
+One of this bean's three remaining items is done. QOU/SchurWeyl/HeckeCarrierEquiv.lean:
+
+  isSemisimpleRing_iwahoriHecke : 1 < Q -> IsSemisimpleRing (QOU.Hecke.IwahoriHecke R Q n)
+
+at EVERY rank, sorry-free. That is the T_w / twGram carrier, which this bean recorded as
+NOT reached by HeckeSemisimpleGeneral.
+
+Mechanism: the two RingQuot relations differ in exactly one clause (the quadratic); braid
+and far-commutation are verbatim identical on the same FreeAlgebra. A generator rescaling
+sigma |-> c . T moves the quadratic under c(Q-1) = q - qi and c^2 Q = q qi, satisfied
+identically by Q = q^2, c = q^-1 at qi = q^-1. Upgraded to an AlgEquiv of carriers, which
+is what transports IsSemisimpleRing.
+
+### Remaining items on this bean, now TWO not three
+
+* GENERAL FIELD. Everything is over R, inherited from heckeWedderburn (SW-7), which is an
+  R-only construction. carrierEquiv itself is over a CommRing and skeinIwahoriEquiv over
+  any Field, so the restriction is upstream, not here.
+* det(twGram) AT RANK >= 2 ITSELF. Still Mathlib-scale, still open, and still worth doing
+  for the DETERMINANT VALUE — but no longer for the semisimplicity conclusion, which now
+  has two independent routes to it. tr(L_{T_u}) is not combinatorial (refuted with an S_5
+  witness, #6417); the closed form is Geck-Pfeiffer.
+
+### Note for whoever reads twGram next
+
+isSemisimpleRing_rank_one (#6134) proves semisimplicity of IwahoriHecke at n = 1 over ANY
+field with 1 + q != 0, via the determinant. isSemisimpleRing_iwahoriHecke proves it at
+EVERY n over R with Q > 1, via Wedderburn. Neither subsumes the other: one is general in
+the field, the other general in the rank.
+
+
+## 2026-09-03 — the "blocked upstream" item is characterised, and it is not an accident
+
+This bean's general-field item read *"blocked upstream — `heckeWedderburn` is
+`ℝ`-only"*.  True, and it says nothing about **why**, so it reads as an accident
+of statement that a `variable {K : Type*} [Field K]` would fix.  It is not.
+
+Measured on `heckeWedderburn`'s **103-module in-repo import cone**: `Real.sqrt`
+does not occur in it at all (so the seminormal form needs no square roots), and
+**exactly two** modules use anything `Real.*` in code — both only the `Real.log`
+family, both in the single idiom
+`zpow_ne_one : q ≠ 0 → q² ≠ 1 → ∀ m ≠ 0, qᵐ ≠ 1`.
+
+**Over `ℝ` that two-line hypothesis IS "q is not a root of unity"** (its own
+docstring says it is sharp: `qᵐ = 1 ⇒ |q| = 1 ⇒ q = ±1 ⇒ q² = 1`).  Over a
+general field it is not — a primitive cube root of unity satisfies both.
+
+So the general-field statement needs the **classical criterion carried as a
+hypothesis**, which is what `QOU/SchurWeyl/GenericParameter.lean` now supplies
+(sorry-free): `NotRootOfUnity`, `pow_left_injective`, `zpow_ne_one`,
+`poly_eq_zero_of_eval_pow`, and `ofSqNeOne` — the bridge proving the `ℝ` form
+implies it, so generalising the cone strengthens no hypothesis.
+
+**Remaining cost, measured: 13 files, 248 occurrences of `ℝ`.**  A tranche, not
+an idle-pass step.  Tracked with the rest of the general-field work on
+`qou-j377`, whose own headline ("`q` generic, not a root of unity") turns out to
+name exactly this; that bean's blocker list was stale — it cited SW-5 and SW-3,
+both of which have landed.

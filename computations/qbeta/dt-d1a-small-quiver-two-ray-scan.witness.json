@@ -1,0 +1,977 @@
+{
+  "engine": "python-int",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T08:39:42.364291+00:00",
+  "commitSha": "d1d72e5862c7d566f43931aaaaa7972a8c65211f",
+  "assertions": [
+    {
+      "name": "bar_split_7_1_is_ARITHMETIC_on_4_3_not_independent_data",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "root_enumeration_REPRODUCES_Gabriel_on_five_Dynkin_quivers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_root_count_is_INSENSITIVE_to_the_dimension_box",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_scan_enumerated_a_nonempty_quiver_family",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "filter_B_is_a_SUBSET_of_filter_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_integer_target_is_MET_BY_MANY_quivers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_TREFOIL_S_THIRD_POINT_CUTS_NOTHING",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "every_MISS_is_a_quiver_too_small_to_reach_4_stables_at_any_ray",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17410,
+  "computation": "dt-d1a-small-quiver-two-ray-scan",
+  "scriptFile": "dt_d1a_small_quiver_two_ray_scan_probe.py",
+  "scriptHash": "7b43d30bb01a",
+  "scriptCommitSha": "613991a8e28a815fe37cbc596e26f73b1598add0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1a_small_quiver_two_ray_scan_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1a_small_quiver_two_ray_scan_probe.py"
+  },
+  "description": "D1-a scan over <=4-vertex acyclic quivers: (7,1) is arithmetic on (4,3) so the corpus filter is two integers not four, and the measured effect of adding the trefoil's third point to the target.",
+  "data": {
+    "result_0_bar_split_is_not_data": {
+      "barEven_def": "dimBPSplus + dimBPSminus",
+      "barEven": 7,
+      "barOdd_def": "dimBPSplus - dimBPSminus",
+      "barOdd": 1,
+      "consequence": "filtering on (7,1) after (4,3) is a NO-OP; the corpus target is TWO integers, not four. This is the D1-e deliverable: it deletes a slice of the enumeration before the scan runs."
+    },
+    "scan": {
+      "vertices": [
+        2,
+        3,
+        4
+      ],
+      "arrow_multiplicity_max": 1,
+      "dimension_box": 3,
+      "theta_grid": "-3..3",
+      "quivers_enumerated": 74,
+      "hits_filter_A_4_3": 64,
+      "hits_filter_B_2_3_4": 64,
+      "cut_by_the_trefoil_exact": "0",
+      "cut_by_the_trefoil_numerator": 0,
+      "cut_by_the_trefoil_denominator": 1
+    },
+    "hits_A_sample": [
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "hits_B_sample": [
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "vertices": 4,
+        "arrows": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "counts": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "counting_convention": {
+      "potential": "W = 0 (a potential can only cut the spectrum further, so a miss here does not exclude the quiver once W is added)",
+      "objects": "positive REAL roots (Tits form q(d) = 1) inside the box; imaginary roots carry moduli and are not counted",
+      "stability": "theta.d = 0 and theta.d' < 0 for every ROOT d' with 0 < d' < d componentwise — a numerical proxy for King stability in BOTH directions, not a certified DT invariant",
+      "why_the_ratio_is_still_meaningful": "filters A and B use the SAME counting function, so the cut is measured on a fixed convention"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "wired": false,
+      "is_a_fit": false,
+      "hits_are": "labeled CANDIDATES only, per the bean's anti-laundering instruction — a quiver whose only credential is matching the datum is not a derivation",
+      "derives_A_omega": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

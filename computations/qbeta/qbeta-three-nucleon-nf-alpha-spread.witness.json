@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+pyhecke",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:32:25.207777+00:00",
-  "commitSha": "74757784a9199d4e7438a44410b19e78f0f91ee6",
+  "computedAt": "2026-09-03T05:00:15.743652+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "three_builders_give_three_distinct_alphas",
@@ -64,7 +64,7 @@
   "computation": "qbeta-three-nucleon-nf-alpha-spread",
   "scriptFile": "qbeta_three_nucleon_nf_alpha_spread_probe.py",
   "scriptHash": "ba2e812168a1",
-  "scriptCommitSha": "6e50a69ffca1063fc127f7bffa30e6036265236b",
+  "scriptCommitSha": "8dcff9fff7f4bde9ca4ee313fab4917932547558",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,7 +79,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -175,5 +175,7 @@
     "owner_ruling_2026_08_30": "single-wrap is canonical for the Q_beta channel. Verbatim: \"single-wrap. it's A=1, no gluon, no electron\". Structural, not numerical: free-neutron beta decay is A=1, so the gluon dressing and electron that build_atom_nf carries describe a different system. Does NOT double-count the electron — the framework's Q_beta carries m_e as an explicit prefactor, so the emitted electron enters there, not inside the normal form.",
     "caveat": "NOT like-for-like: build_atom_nf includes electrons (sigma_1^-1 per Z), so (0,1)-(1,0) is neutron minus HYDROGEN — the atomic-mass convention beta^- decay uses, arguably the physically right object, but a different object from the bare-nucleon difference the other two compute.",
     "docstring_defect": "pyhecke/atom.py:218 — build_atom_nf's docstring still carries 'No separate gluon dressing — B_3 IS the gluon structure', the exact sentence build_nucleon_nf retracts as unbacked while redirecting to build_atom_nf. There it is FALSE about its own function: lines 252-253 and 264-265 apply two gluon crossings per nucleon. Code is right, redirect is sound, only the line is stale."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:28:37.059709+00:00",
-  "commitSha": "6b533653629200bc0f829118c8ed7c638699de37",
+  "computedAt": "2026-09-03T04:47:30.769643+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "electron block carries zero SU(2) Markov weight but nonzero keystone W",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 180,
+  "durationMs": 356,
   "computation": "keystone-wlambda-vs-ylambda-projected-shift",
   "scriptFile": "keystone_wlambda_vs_ylambda_projected_shift.py",
   "scriptHash": "0778f8e0333f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "27d5a5fd668832cf5118c03e88715e66f6b2e481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -107,5 +107,7 @@
     "bar_odd_residual": "-1.4585791456298356899858545292829395653558680751574",
     "bar_parity": "even",
     "tier": "structural"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

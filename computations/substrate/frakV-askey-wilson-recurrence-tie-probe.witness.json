@@ -3,7 +3,7 @@
   "bean": "1jrh",
   "leanCert": "QOU.MassEndomorphism.recurrence_invol_descent (binding-qbeta-complex-volume.lean, sorry-free); self-dual locus: QOU.Mass.ComplexVolumeFibreDescent.barFixed_qbeta_zero",
   "discipline": "no fit — the multiplier is forced by the crossing eigenvalues (q², q⁻²), never solved from data; sympy exact with SYMBOLIC weights w± (weight-independent); mpmath 65 dps compute / tol 1e-45; muon-q₀ canonical (computations layer, AGENTS.md two-layer rule).",
-  "q0_source": "computations/q-pinning-50-digit.witness.json (canonical muon pin)",
+  "q0_source": "q_parameter (manifest-resolved; this stem is `ideal_muon`, so the canonical muon pin). Was a direct read of computations/q-pinning-50-digit.witness.json until 2026-09-03.",
   "results": {
     "hopf_multiplier": "c = q² + q⁻² (bar-even; x = cosθ Chebyshev/q-ultraspherical node)",
     "full_ladder_multiplier": "q − q⁻¹ (bar-odd; descent fails channel-wise, cross-couples)",
@@ -33,11 +33,13 @@
   },
   "allPassed": true,
   "verdict": "HOLOMORPHIC TIE CONFIRMED at the H₂/Hopf (deuteron-bond) level: the Hopf-power tower and BOTH its parity channels (binding bar-even, Q_β bar-odd) ride ONE Askey-Wilson (continuous q-ultraspherical/Chebyshev) 3-term recurrence with the bar-even multiplier c = q²+q⁻² — exactly recurrence_invol_descent. The bar-even hypothesis is NECESSARY: the full ladder's bar-odd multiplier q−q⁻¹ cross-couples the channels (E_{m+1} = c·O_m + E_{m−1}), so channel-wise descent fails. Scope-limited: 2-strand instance only; the full nuclear 𝔙 assembly stays OPEN/GATED.",
-  "scriptHash": "8d5c042535ad",
-  "scriptCommitSha": "3c6a86ff89eb2746fb6a04e7762780331ca6e418",
-  "commitSha": "3c6a86ff89eb2746fb6a04e7762780331ca6e418",
+  "scriptHash": "5378261236db",
+  "scriptCommitSha": "ce4674024baffe4154497515ff5d00172dbad7b6",
+  "commitSha": "f0b20345dde32c7416302e1cb4609e26426ef851",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-07-02T15:34:42.613010+00:00",
+  "computedAt": "2026-09-03T05:01:08.079411+00:00",
   "durationMs": 0,
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "scriptFile": "frakV_askey_wilson_recurrence_tie_probe.py"
 }

@@ -2,11 +2,11 @@
  "computation": "he4-stage2-ranking-seminormal-xcheck",
  "description": "Fast seminormal-f64 dominant-channel ranking for the A=4 stage-2 binding operator K(\u2074He) = T\u00b7cp\u207b\u00b9 at H12(q0); companion cross-check to the full he4_binding_k_stage2_probe (both Wedderburn legs). Confirms whether the committed GP-legged \u03bb*(K)=(9,3) survives the seminormal engine (GP kernel bug: docs/audits/2026-07-14-gp-kernel-bug-and-he4-stage2.md).",
  "audit_only": true,
- "computedAt": "2026-08-24T08:41:45.510799+00:00",
+ "computedAt": "2026-09-03T09:16:46.487465+00:00",
  "engine": "pyhecke_native seminormal-f64 (chi_lambda_all_partitions_f64); GP path NOT used. tr_M(K) is f64-precision; 50-dps authoritative value from he4-binding-k-stage2.witness.json.",
  "q_pin": {
   "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
-  "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
  },
  "dominant_lambda": [
   9,
@@ -16,70 +16,70 @@
   8,
   4
  ],
- "dominant_margin_rel": 0.07000559596216305,
- "tr_M_K_f64": "0.1256841530472061",
+ "dominant_margin_rel": 0.07000559588119365,
+ "tr_M_K_f64": "0.1256841530482194",
  "per_lambda_top10": [
   {
    "lambda": [
     9,
     3
    ],
-   "chi_K": 19.247879117243897,
-   "y_lambda": 0.001744141684449673,
-   "y_chi_abs": 0.03357102830563346
+   "chi_K": 19.247879116534804,
+   "y_lambda": 0.0017441416844985514,
+   "y_chi_abs": 0.0335710283053375
   },
   {
    "lambda": [
     8,
     4
    ],
-   "chi_K": 26.14660680115613,
-   "y_lambda": 0.0011940696052634427,
-   "y_chi_abs": 0.031220868462034944
+   "chi_K": 26.14660680406349,
+   "y_lambda": 0.0011940696052241027,
+   "y_chi_abs": 0.03122086846447793
   },
   {
    "lambda": [
     10,
     2
    ],
-   "chi_K": 10.701280359903073,
-   "y_lambda": 0.0023704436007255607,
-   "y_chi_abs": 0.025366781548702363
+   "chi_K": 10.7012803576015,
+   "y_lambda": 0.0023704436009776278,
+   "y_chi_abs": 0.025366781545944055
   },
   {
    "lambda": [
     7,
     5
    ],
-   "chi_K": 22.161487724431193,
-   "y_lambda": 0.0006961857928301307,
-   "y_chi_abs": 0.01542851290172834
+   "chi_K": 22.161487726348227,
+   "y_lambda": 0.0006961857927781008,
+   "y_chi_abs": 0.01542851290190989
   },
   {
    "lambda": [
     11,
     1
    ],
-   "chi_K": 4.594652575679922,
-   "y_lambda": 0.0031003486423235443,
-   "y_chi_abs": 0.014245024874957622
+   "chi_K": 4.5946525748944005,
+   "y_lambda": 0.003100348642943167,
+   "y_chi_abs": 0.014245024875369184
   },
   {
    "lambda": [
     12
    ],
-   "chi_K": 1.00552033621878,
-   "y_lambda": 0.003965758198281,
-   "y_chi_abs": 0.003987650516897893
+   "chi_K": 1.0055203362270309,
+   "y_lambda": 0.003965758199495831,
+   "y_chi_abs": 0.003987650518152152
   },
   {
    "lambda": [
     6,
     6
    ],
-   "chi_K": 8.150611920077061,
-   "y_lambda": 0.00022872962858889797,
-   "y_chi_abs": 0.0018642864372514706
+   "chi_K": 8.15061191988541,
+   "y_lambda": 0.0002287296285669421,
+   "y_chi_abs": 0.0018642864370286808
   },
   {
    "lambda": [
@@ -87,7 +87,7 @@
     1,
     1
    ],
-   "chi_K": 3.98879581318425,
+   "chi_K": 3.9887958074071106,
    "y_lambda": 0.0,
    "y_chi_abs": 0.0
   },
@@ -97,7 +97,7 @@
     2,
     1
    ],
-   "chi_K": 7.803199382381172,
+   "chi_K": 7.803199367875183,
    "y_lambda": 0.0,
    "y_chi_abs": 0.0
   },
@@ -108,12 +108,12 @@
     1,
     1
    ],
-   "chi_K": -13.840062405650203,
+   "chi_K": -13.840062422606145,
    "y_lambda": 0.0,
    "y_chi_abs": 0.0
   }
  ],
- "elapsed_sec": 30.3,
+ "elapsed_sec": 43.9,
  "scope": "(a) \u2014 ranking cross-check only; no PSD certificate (see the full probe); no AME input; no fit; nothing wired.",
  "assertions": [
   {
@@ -125,5 +125,12 @@
    "passed": true
   }
  ],
- "allPassed": true
+ "allPassed": true,
+ "scriptFile": "he4_stage2_ranking_seminormal_xcheck.py",
+ "scriptHash": "ace81f963f82",
+ "scriptCommitSha": "fbd0d22d5d7273dceaf75b8193630e44f5824db0",
+ "commitSha": "f638391f944b63a649c3b7ecbfc0267d432016d2",
+ "durationMs": 0,
+ "q0Anchor": "muon",
+ "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

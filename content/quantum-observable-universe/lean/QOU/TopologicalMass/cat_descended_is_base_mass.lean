@@ -76,7 +76,15 @@ class CatDescendedInputs : Prop where
     Frobenius trace of the descended integrand equals the base-level
     trace of the descent: `tr(τ̂ₙ(α)) = tr₀(α₀)`.  Needs the
     level-`(n+1)` → base descent / Frobenius-trace infrastructure (not
-    formalised); body is `sorry`. -/
+    formalised).
+
+    **The body is `ctx.trace_compat`, not a `sorry` (corrected 2026-09-03).**
+    `#print axioms` reports no `sorryAx`. Here that is the *legitimate* shape
+    rather than a defect: `CatDescendedInputs` docstrings this field "Open
+    input 1", so the class honestly names it as an assumption and this theorem
+    is an accessor exposing it under a readable name — Mathlib's
+    `Group.mul_assoc := Group.mul_assoc` idiom. The obligation is real and sits
+    with whoever instantiates the class; it is simply not discharged here. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 theorem descended_trace_is_base_trace [ctx : CatDescendedInputs] :
     trFrob (tauHat alpha) = baseTrace :=
@@ -84,7 +92,13 @@ theorem descended_trace_is_base_trace [ctx : CatDescendedInputs] :
 
 /-- **Open input 2 — the base mass is the norm of the base trace.**
     `‖tr₀(α₀)‖ = 𝔪(ϱ₀)`.  Needs the `*`-norm / mass infrastructure of
-    the base level (not formalised); body is `sorry`. -/
+    the base level (not formalised).
+
+    **The body is `ctx.base_norm`, not a `sorry` (corrected 2026-09-03).**
+    Same shape as `descended_trace_is_base_trace` above: the class docstrings
+    this field "Open input 2", so the accessor is the legitimate idiom and the
+    obligation sits with the instantiator. `#print axioms` reports no
+    `sorryAx`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 theorem base_mass_is_norm_of_base_trace [ctx : CatDescendedInputs] :
     mnorm baseTrace = baseMass :=

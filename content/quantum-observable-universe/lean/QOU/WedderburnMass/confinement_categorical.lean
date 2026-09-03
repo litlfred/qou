@@ -103,12 +103,37 @@ physical observables — hold for the categorical-confinement data.
 
 The proof requires the semisimple-algebra Hochschild vanishing
 (`HH^k(A) = 0`, `k ≥ 1`) and the Wedderburn decomposition of `A`,
-neither of which is in Mathlib.  The body is therefore an honest
-`sorry` + `-- Ref:` — and, unlike the previous encoding, that is now
-what the code actually does: no class field posits this conclusion, so
-the statement cannot be discharged by projection.  Verify with
-`#print axioms`, which must report `sorryAx`; if it ever stops doing so
-without this docstring changing, the projection has come back. -/
+neither of which is in Mathlib.
+
+## 🛑 The tripwire in this docstring fired, and nobody was watching (2026-09-03)
+
+The paragraph that stood here said the body was "an honest `sorry` + `-- Ref:`",
+that "no class field posits this conclusion, so the statement cannot be
+discharged by projection", and — as an explicit alarm —
+
+> *"Verify with `#print axioms`, which must report `sorryAx`; if it ever stops
+> doing so without this docstring changing, the projection has come back."*
+
+**That is exactly what happened.** The body is `ctx.confinement_ident`, a class
+field carrying the whole three-clause conclusion, and the prescribed check now
+reports
+
+    'QOU.WedderburnMass.confinement_categorical' depends on axioms:
+      [propext, Classical.choice, Quot.sound]
+
+with **no `sorryAx`**. The projection came back, the docstring did not change,
+and the alarm went unread until the `proof-docstring-sorry-mismatch` audit
+flagged the file.
+
+**Why only the prose is corrected here.** Restoring the `sorry` the docstring
+demands would propagate `sorryAx` to this theorem's external consumers, which is
+a change to proof content rather than to documentation; the projection itself is
+the `proof-no-self-assuming-projection` question tracked in bean `qou-z9ws` and
+owned elsewhere. What is fixed is the false claim.
+
+**Keep the tripwire, and read it.** The check above is still the right test —
+its failure mode was never the test, it was that nothing ran it. The audit now
+does: `bun run content/pipeline/lean-vacuity-axiom-audit.ts`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-categorical.md
 -- Ref: [manuscript] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :

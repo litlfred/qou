@@ -57,9 +57,9 @@ product of two squares, hence non-negative, so any windowed partial sum is a val
 
 | θ | edge `2√θ` | `X*` | far-tail **absolute** bound ≤ | rigorous `V_A ≥` | rigorous share ≤ |
 |---|---|---|---|---|---|
-| 100 | 20.0 | 58 | `1.33×10⁻³⁴` | `7.81×10³` | `1.7×10⁻³⁸` |
-| 256 | 32.0 | 77 | `7.94×10⁻³⁴` | `5.03×10⁴` | `1.6×10⁻³⁸` |
-| 640 | 50.6 | 104 | `3.39×10⁻³²` | `3.20×10⁵` | `1.1×10⁻³⁷` |
+| 100 | 20.0 | 58 | `1.26×10⁻³⁴` | `7.02×10³` | `1.8×10⁻³⁸` |
+| 256 | 32.0 | 77 | `7.63×10⁻³⁴` | `4.71×10⁴` | `1.6×10⁻³⁸` |
+| 640 | 50.6 | 104 | `3.29×10⁻³²` | `3.07×10⁵` | `1.1×10⁻³⁷` |
 
 (sanity: `max |besselj|/Jb ≤ 0.42` across the grid — the bound is valid). So the contribution from
 `|x| > X*` is **rigorously** below `1.1×10⁻³⁷·V_A` with **no** uniform-asymptotic input — both the

@@ -89,9 +89,18 @@ def main() -> None:
         "exists for c_4..c_7."
     )
 
-    with open(Q_PINNING) as f:
-        q_pinning = json.load(f)
-    q = mpf(q_pinning["derived_50_digit"]["q"])
+    # q_0 comes from `q_parameter`, i.e. the RUNNING SCRIPT's anchor, rather
+    # than from a direct read of q-pinning-50-digit.witness.json (routed
+    # 2026-08-30, bean `qou-aj91`). The direct read hardcoded the muon anchor
+    # and made QOU_Q0_ANCHOR inert here, which is what put this producer in the
+    # UNSOUND-ENV-BYPASS group -- unmeasurable rather than held for cause.
+    #
+    # `Q_PINNING` is KEPT and still passed to `w.add_upstream()` above: the
+    # anchor witness remains a genuine provenance upstream of this result even
+    # though it is no longer the value's source. Dropping it would lose the
+    # provenance edge; that edge is why the two uses are deliberately split.
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    q = mpf(Q_50_DIGIT_STR)
     m_e = mpf(str(M_E_MEV))
     Q_beta = mpf(str(Q_BETA_MEV))
     target = Q_beta / m_e

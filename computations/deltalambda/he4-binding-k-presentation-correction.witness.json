@@ -2,7 +2,7 @@
  "computation": "he4-binding-k-presentation-correction",
  "description": "Same-day correction of the A=4 stage-1/stage-1.5 probes: the GP-kernel presentation identity is measured (GP variable v = \u221aq; evaluating at q computes the paper trace at q\u00b2) and the full operator dictionary is certified end-to-end against the certified combiner traces (p, n, D, 4He). Canonical seam structure read off the builder: one pair-typed crossing per seam at generators {2,5,8}. Stage-1/1.5 headline residuals (14.7%, 3.8%) are void.",
  "audit_only": true,
- "computedAt": "2026-08-29T04:42:06.189521+00:00",
+ "computedAt": "2026-09-03T09:33:49.297350+00:00",
  "engine": "mpmath",
  "dps": 50,
  "q_pin": {
@@ -109,9 +109,9 @@
   }
  ],
  "allPassed": false,
- "scriptHash": "ed7a4dd10802",
- "scriptCommitSha": "fca08de7d29a585a3587ee0c1b06dd36991b8e89",
- "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+ "scriptHash": "a8de6be2b826",
+ "scriptCommitSha": "ccf7231206ff5bd29522891faaeee5b72d2e9d5b",
+ "commitSha": "51cc7998c4c776914bec0dd8aa38157185a4b347",
  "durationMs": 0,
  "engineVersion": "mpmath 1.4.1",
  "q0Anchor": "muon",

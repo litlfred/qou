@@ -54,7 +54,22 @@ mp.mp.dps = 80
 
 # Substrate constants
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# Q_PIN is KEPT and still passed to record_upstream(): the anchor witness stays
+# a genuine provenance upstream of this result even though it is no longer the
+# value's source. Dropping it would lose that edge, so the two uses are split.
+#
+# The VALUE now comes from `q_parameter`, i.e. the RUNNING SCRIPT's anchor
+# (routed 2026-09-03, bean `qou-aj91`). The direct read hardcoded muon and made
+# QOU_Q0_ANCHOR inert here.
+#
+# This does NOT disturb bean `qou-324i`, which on 2026-08-28 corrected this
+# producer's disposition from `independent` to `muon`. The stem stays listed
+# `ideal_muon`, q_parameter resolves that to the same value byte-for-byte, and
+# the corrected disposition remains true. Only the `q0AnchorReason` prose in the
+# witness needed updating, because it described the mechanism, not the layer.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 -- anchor-aware
+Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan

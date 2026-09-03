@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T08:30:32.195348+00:00",
-  "commitSha": "085e1411974993eaf7b261235e7fdd6ff48844df",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:44:26.531595+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_block_product_is_det_of_T_plus_d",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 22,
   "computation": "adding_crossings_cannot_break_the_degeneracy_probe",
   "scriptFile": "adding_crossings_cannot_break_the_degeneracy_probe.py",
   "scriptHash": "3305035b5db3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ded5462ce28709cef973f8ce815b41cf442d77e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -117,5 +120,7 @@
     "THE 'BOUND <=> |mu| < 1' CONVENTION IS INHERITED FROM qou-m896 and is doing real work here too: the antisymmetric block's eigenvalue is negative, so the magnitude is used. Under a convention treating a negative ratio as unphysical the T=0 channel has no binding reading and the whole (T,S) line of argument does not run. The det-magnitude obstruction in A1-A3 is independent of that choice; the ratio numbers in A5 are not.",
     "beta* = -4.309 is a solution of a ONE-PARAMETER family (a single crossing with a free real offset), presented to size what nature would cost, NOT as a proposed value. It has no derivation, sits far outside any braid-crossing reading, and requires a 10-digit tuning. It should be read as a measurement of the gap, not a fit.",
     "The pionless-EFT remark is context, not evidence. The scattering lengths and force range are quoted to establish that near-threshold tuning is a real feature of the NN system; no claim is made that this construction's fine-tuning is the same phenomenon, and the two tunings are not on a common scale."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
