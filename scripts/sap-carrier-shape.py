@@ -29,6 +29,43 @@ Operationally:
 Measured on `main` 2026-09-02 over the 31 library projections:
 **19 defect, 2 accessor, 10 unresolved.**
 
+## Three sharper discriminators were tried after this one. All three fail.
+
+Recorded so the next agent does not build a fourth heuristic instead of
+reading the files.
+
+1. **Explicit argument vs instance binder.** `(h : C)` looks like the caller
+   supplying the record and `[ctx : C]` looks like instance search supplying
+   it. Measured over the 19: 2 explicit, 17 instance. But it is **not a
+   logical difference** — both elaborate to `∀ c : C, P c`. The binder style
+   changes how the value is *found*, not what the theorem *says*. Two files
+   with identical content would land in different buckets.
+
+2. **Does the carrier's docstring disclose the field as an open input?**
+   (Matching `open hypothesis` / `not derived` / `conjectural` / `OPEN` /
+   `never asserting` near the declaration.) Splits 7 / 12 — and is wrong in
+   both directions. `HasFrobeniusStability` scores **disclosed**, and that is
+   the file whose ambient `LE` was `fun _ _ => True`, so every `≤` in it was
+   `True`: a carrier can be candid in prose while the surrounding file empties
+   the claim. Worse, the 7 includes a file this session had just edited, so
+   the signal partly measured my own newly-written note. A prose signal
+   graded on prose the grader wrote is not a measurement.
+
+3. **Data-field count**, the one this script reports. It over-flags:
+   `BondExtensiveBinding` (`data=2`) is the *honest* version of the same
+   shape — the file states plainly that `extensive` is the arc's open input
+   and that `binding_eq_bond_energy` is *"just `h.extensive`, exposed as a
+   named consumer"*. Counting fields cannot see that.
+
+**Why no syntactic signal can work.** `theorem foo [ctx : C] : ctx.a = ctx.b
+:= ctx.claim` is a true, non-vacuous statement — it is the identity on a
+field. What AGENTS.md §3b-cond item 5 asks is whether that field is an honest
+*open hypothesis* the file names as such, or the block's own *conclusion*
+dressed as a derivation. That is a question about the claim's role in the
+argument, and it is settled by reading the file and its `.md`, not by shape.
+
+Use this script to **order** the reading. Do not use it to skip it.
+
 ## Limits — quote them with the number
 
 - **10 are unresolved**, not clean. The class-declaration matcher wants
