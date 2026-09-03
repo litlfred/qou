@@ -28,21 +28,78 @@ Empirical witness (Python, sub-percent on A ≤ 9):
 
 namespace QOU.BraidKnot.SixTermPerDerivationWeights
 
-/-- The six-term mass formula's binding-energy assembly with
-    derivation-fixed per-term weights:
+/-- **The six-term binding-energy assembly**
+([`prop:six-term-per-derivation-weights`](../../../mass-theory/six-term-per-derivation-weights.md)),
+as a proposition over caller-supplied data:
 
-      B(Z, N) = E_0_β · (T1_free − T1_atom)
-              + α · ((T2 + T3)_atom − (T2 + T3)_free)
-              + m_e · (T4_atom − T4_free)
-              + E_0_β · (a_K − 1) · T1_atom
-              + (T6_atom − T6_free)
+      B = E_0_β · (T1_free − T1_atom)
+        + α · (T23_atom − T23_free)
+        + m_e · (T4_atom − T4_free)
+        + E_0_β · (a_K − 1) · T1_atom
+        + (T6_atom − T6_free)
 
-    Returns a real-valued binding energy (MeV).  Type-level
-    interface only; the concrete evaluation lives in the Python
-    pipeline (`assemble_per_derivation_weights`).  This Lean
-    declaration provides the formal handle for downstream
-    proofs that quote the assembly. -/
-opaque binding_assembly (Z N : Nat) : Float
+**Named, not asserted.**  This is the declaration the block's `lean.ref`
+actually resolves to — see the note below on what it replaced.
+
+Nothing here constructs the descended Markov trace `T1`, the `Φ_q` vertex
+terms `T2`/`T3`, `τ(C_dim_q)` (`T4`), the cyclotomic residue sum `T6`, the
+chirality coefficient `a_K`, or the Borromean–Catalan scale `α = m_e·8G`;
+they are reals the caller supplies.  So this states which quantities are
+combined and how, not why they are the ones that appear. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+def binding_assembly (B E_0_β α m_e a_K T1_free T1_atom
+    T23_free T23_atom T4_free T4_atom T6_free T6_atom : ℝ) : Prop :=
+  B = E_0_β * (T1_free - T1_atom)
+    + α * (T23_atom - T23_free)
+    + m_e * (T4_atom - T4_free)
+    + E_0_β * (a_K - 1) * T1_atom
+    + (T6_atom - T6_free)
+
+/-- **No binding when free and bound agree** — derived.
+
+If every per-term value coincides between the free and atomic
+configurations and the chirality coefficient is `a_K = 1`, the assembly
+gives `B = 0`.  Each of the five terms is a difference that vanishes, the
+fourth through its `(a_K − 1)` factor.
+
+The sanity check the assembly must pass to be a *binding* energy at all, and
+the reason the shape is worth naming: it is a hypothesis something is proved
+from. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+theorem binding_assembly_eq_zero_of_no_separation
+    {B E_0_β α m_e T1 T23 T4 T6 : ℝ}
+    (h : binding_assembly B E_0_β α m_e 1 T1 T1 T23 T23 T4 T4 T6 T6) :
+    B = 0 := by
+  simp only [binding_assembly] at h
+  rw [h]; ring
+
+/-- **The assembly is refutable at freely-chosen data**, which is why it is
+named rather than carried as a `sorry`.
+
+With every term zero it reads `1 = 0`. -/
+theorem not_binding_assembly_of_free_data :
+    ¬ binding_assembly 1 0 0 0 0 0 0 0 0 0 0 0 0 := by
+  simp [binding_assembly]
+
+/-! ### 2026-09-03 — what `binding_assembly` was, and the file it shadowed
+
+Until this change `binding_assembly` was `opaque binding_assembly (Z N : Nat)
+: Float` — an **opaque constant**, asserting nothing, with a `Float` standing
+for a mass in MeV.  The block's `lean.ref` resolved to it, so the
+proposition's formal handle carried no statement at all.
+
+It also **shadowed** a second declaration of the same fully-qualified name in
+[`SixTermPerDerivationWeights/binding_assembly.lean`](SixTermPerDerivationWeights/binding_assembly.lean),
+which held `BindingAssemblyContext` and projected its own conclusion field.
+`resolveCanonicalLean` takes the direct module path first when that file
+declares the named decl, so this file always won and that one was never read.
+It is now a drained shell; the projection is gone.
+
+Neither module is imported anywhere, and nothing outside them names either
+declaration (measured across `content/`, 2026-09-03).
+
+Bean `qou-z9ws`.
+-/
 
 /-- The genuinely-open empirical inputs for the sub-percent
     accuracy claim: for an isotope `(Z, N)`, the per-derivation
