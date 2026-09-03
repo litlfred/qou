@@ -257,3 +257,57 @@ The triton run OVERWROTE the committed witness with a 0-row degraded version
 before I had the fix. Restored byte-identically from the scratchpad snapshot
 taken before the run — by explicit single path, never a glob. The snapshot
 rule earned its keep.
+
+
+## 2026-09-03 — the regeneration is now feasible, and the checkpoint has to be committed
+
+### Cost, measured end to end
+
+With BOTH Rust routes in (`unified_iterative_correction` and
+`atom_character_raw` — see `qou-sv7h`; routing only the first left the table
+unable to finish deuterium in 21 minutes):
+
+    binding_energy(1,1)  A=2   102.9s  -> -7.2711021248767 MeV
+    binding_energy(1,2)  A=3   156.8s  -> -7.7421213471361 MeV
+    binding_energy(2,2)  A=4   224.0s  -> -6.8285942931489 MeV
+
+Fit `t = 47.0 * A^1.117`:
+
+    ca40 alone     48 min
+    fe56 alone     70 min
+    FULL TABLE   ~4.6 h        (~50 h if the exponent is really 2 — the fit is
+                                three points over A=2..4, treat it as a lower
+                                bound, not a promise)
+
+### Why the checkpoint must live in the repo
+
+This container has been reclaimed **twice** in one session, roughly every
+40-60 minutes of work. fe56 alone needs ~70 minutes. Measured after the
+second reclaim: the scratchpad checkpoint was **GONE** (the `witness-snapshots/`
+subdirectory had already vanished after the first). So there is no durable
+storage outside git, and without one this witness cannot be regenerated in
+this environment at all — not "slowly", at all.
+
+Moved to `.work/hadron-knot-table-regen.json`, following the corpus's own
+precedent rather than inventing a location. `.gitignore` already distinguishes
+the two cases:
+
+    .work/convention-c-regen.jsonl IS committed — it is the resume point for
+    the serial regeneration harness and the evidence behind
+    docs/audits/2026-08-10-convention-c-witness-regeneration-impact.md
+
+while per-run scratch is ignored (`computations/.bpp-higher-a-checkpoint.json`,
+`*.checkpoint.jsonl`). Mine is the first kind: the resume point for a serial
+regeneration, carrying the computed per-atom values.
+
+It is keyed on a hash of the producer + `hecke_core_legacy` + `hecke_core` +
+q, so it cannot resurrect stale numbers across a code change — it discards
+itself instead. It should be deleted once the witness lands; it is a
+regeneration artifact, not corpus data.
+
+### Note for whoever resumes this
+
+The `pyhecke-native` wheel is EPHEMERAL and dies with the container.
+`scripts/build-pyhecke-native.sh` must be re-run after every reclaim, BEFORE
+resuming, or `_HAVE_RUST_CHI` is False and the producer silently takes the
+~300x slower path. Confirmed the hard way this session.
