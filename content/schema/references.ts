@@ -14506,6 +14506,27 @@ export const references: Reference[] = [
       "drain, bean qou-ghy5.",
   }),
 
+  // ── Ahlfors — Complex Analysis (Cauchy–Goursat, residue theorem) ──
+  ref({
+    id: "ahlfors1979",
+    type: "book",
+    title: "Complex Analysis: An Introduction to the Theory of Analytic Functions of One Complex Variable",
+    author: [{ family: "Ahlfors", given: "Lars V." }],
+    edition: "3rd",
+    publisher: "McGraw-Hill",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1979]] },
+    note:
+      "Standard source for Cauchy's theorem on a rectangle/polygon (Ch. 4 \u00a71) and " +
+      "the residue theorem (Ch. 4 \u00a75). Cited by " +
+      "`QOU/Mathlib/ParallelogramContour.lean` for its ONE remaining Mathlib-gap " +
+      "axiom, `parallelogramIntegral_inv_sub_eq_two_pi_i` (the value 2\u03c0i for a " +
+      "simple interior pole). The Cauchy-vanishing companion was an axiom when this " +
+      "entry was written and is now PROVED in-repo, on `main`, so \u00a71 is cited as " +
+      "context rather than as a carried assumption. UNVERIFIED: ISBN \u2014 no " +
+      "publisher record was reachable, so it is omitted rather than guessed.",
+  }),
+
   // ── Aitken — Determinants and Matrices (Cauchy–Binet) ──
   ref({
     id: "aitken1956",
