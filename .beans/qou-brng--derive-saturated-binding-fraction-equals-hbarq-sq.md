@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T08:28:10Z
+
 updated_at: 2026-09-03T04:27:36Z
 
 updated_at: 2026-09-03T02:58:23Z
@@ -975,6 +977,32 @@ direct measurement this bean's missing extensive term needs.
 Scope: this is a scope-(a) statement about the current `unified_iterative_correction`
 path at truncations k = 5…10 — not a structural exclusion of any ingredient.
 Audit: `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`; PR #6427.
+
+
+### k = 11 (production truncation) — both legs, added 2026-09-03
+
+The ladder above was extended to the production truncation. Both legs completed:
+
+    he4   A=4  k=11   uic = -8.201558468      1104 s
+    li6   A=6  k=11   uic = -7.794544740      1269 s
+                            ratio li6/he4 = 0.9504
+
+So the k >= 7 ratios are 0.933, 1.014, 0.917, 0.964, **0.950** — mean **0.956**,
+spread ±5 %, no trend in k, while `A` grows 1.5x and `C(A,2)` grows 2.5x.
+**k = 11 was the one rung that is not a reduced-cost proxy, and it behaves like
+the rest.** The flatness is not a truncation artefact.
+
+(The 6Li leg took two attempts: the first died to a worker-process restart at
+~1919 s, an environment event, NOT the A=6 compute ceiling the three earlier
+full-`binding_energy` kills established. The driver is resumable, so only that
+one cell was recomputed.)
+
+**A separate defect surfaced by the same run, worth its own attention:** 4He's
+|uic| runs 1.52 -> 2.15 -> 3.71 -> 5.67 -> 8.20 across k = 7..11 with the
+increments still GROWING (0.64, 1.56, 1.96, 2.53). **The accumulator is not
+converged at the production truncation.** The absolute B_pred values in the
+four-nucleus table are therefore truncation-limited; the matched-k ratio is not,
+which is why the flatness claim rests on the ratio and not on the values.
 
 ## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
 
