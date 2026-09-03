@@ -312,6 +312,20 @@ entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs. (Pruned 2026-09-03: entries 08-29 → 09-03
 collapsed; every distinct lesson from them lives in a TRAP above.)
 
+- 2026-09-03 (magnus-o6ov decay-bound): NEW `QOU/MassTheory/MagnusHookDecayBound.lean`
+  (imports sibling `MagnusHookExteriorPower` for `esymm`; 3 thms over
+  `[CommRing R] [LinearOrder R] [IsStrictOrderedRing R]`). EXIT 0 AS AUTHORED, no
+  fix. v4.24.0 facts confirmed live: `Finset.abs_prod` takes exactly those three
+  binders + explicit `(s) (f)`; `Finset.abs_sum_le_sum_abs (f) (s)` needs
+  `[IsOrderedAddMonoid]` which IsStrictOrderedRing supplies; `abs_sub` (`|a-b| ≤
+  |a|+|b|`) exists, no deprecation; `Mathlib.Algebra.Order.BigOperators.{Group,
+  Ring}.Finset` are real modules with oleans in the partial restore. Dep olean was
+  ABSENT → built lean-direct into `$ROOT/.lake/build/lib/lean/QOU/MassTheory/`
+  (4m48s wall / 11s user, cold TRAP), then target 6s. All 3 thms std-3 axioms,
+  no sorryAx. Only diagnostic: `unusedSectionVars` warning on thm 1 (`[DecidableEq
+  ι]` inherited from the file's `variable` line; the sibling's `esymm` does not
+  need it either) — a warning, not an error; left untouched per "statements
+  unchanged". Disk 1.9G free, 3470 mathlib oleans, no marker — as last session.
 - 2026-09-03 (magnus-o6ov gauge-hook): verified committed
   `QOU/MassTheory/MagnusGaugeCurvatureHookColumn.lean` (HEAD 11e80b8a39; def
   `curvatureSum` + 2 thms over generic CommRing/Algebra, `tr : A →ₗ[R] R`).

@@ -372,6 +372,7 @@ import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
+import QOU.SchurWeyl.HeckeSemisimpleReal
 import QOU.SchurWeyl.HeckeCarrierEquiv
 import QOU.SchurWeyl.HeckeCarrierSemisimpleReal
 import QOU.SchurWeyl.GenericParameter
@@ -386,10 +387,12 @@ import QOU.SchurWeyl.HeckeInclusion
 import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.SeminormalParamAnchorReal
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.MatRepEquiv
 import QOU.SchurWeyl.SeminormalInequivalence
 import QOU.SchurWeyl.OffDiagNonvanishing
 import QOU.SchurWeyl.SeminormalRangeTop

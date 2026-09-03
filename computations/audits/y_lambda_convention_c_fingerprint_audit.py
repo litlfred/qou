@@ -91,6 +91,117 @@ def rows_of(value) -> int | None:
     return None
 
 
+def _q_int(k, q):
+    return (q ** k - q ** (-k)) / (q - 1 / q)
+
+
+def _hook_weight(shape, q):
+    """d_q(λ)² / [n]_q!, the SYMMETRIC PLANCHEREL weight — NOT Jones–Markov.
+
+    Hook-length formula: d_q(λ) = [n]_q! / ∏_x [h(x)]_q.
+    """
+    from math import prod
+    rows = list(shape)
+    if not rows or rows[0] <= 0:
+        return None
+    cols = [sum(1 for r in rows if r > c) for c in range(rows[0])]
+    hooks = [(ri - j - 1) + (cols[j] - i - 1) + 1
+             for i, ri in enumerate(rows) for j in range(ri)]
+    n = sum(rows)
+    nfact = prod(_q_int(k, q) for k in range(1, n + 1))
+    dq = nfact / prod(_q_int(h, q) for h in hooks)
+    return (dq * dq) / nfact
+
+
+_Q_CACHE: list = []
+
+
+def _substrate_q():
+    """Resolve the substrate q, warning ONCE and loudly if it cannot.
+
+    The import path moved (`q_parameter` -> `substrate.q_parameter`) between
+    2026-08-24 and 2026-09-03, and the first version of this discriminator
+    swallowed that in a bare `except: return False`. The effect was invisible
+    and exactly backwards from useful: every candidate stayed flagged, so the
+    audit looked like it was working while the new check ran on nothing.
+    A degraded check must say so.
+    """
+    if _Q_CACHE:
+        return _Q_CACHE[0]
+    # Raise precision BEFORE parsing q. Caching it at the default dps=15 makes
+    # every downstream comparison accurate to ~1e-15, so a 1e-20 threshold can
+    # never be met and the discriminator silently answers "not Plancherel" for
+    # everything. This is the module-const-precision trap the corpus already
+    # gates on (computations/module_const_precision_audit.py); the ordering is
+    # the whole bug.
+    from mpmath import mp as _mp
+    _mp.dps = 60
+    import sys as _sys
+    root = pathlib.Path(__file__).resolve().parent.parent
+    for extra in (root, root / "substrate", root / "hecke"):
+        if str(extra) not in _sys.path:
+            _sys.path.insert(0, str(extra))
+    for mod, attr in (("substrate.q_parameter", "Q_MP"),
+                      ("q_parameter", "Q_MP"),
+                      ("substrate.q_parameter", "Q_50_DIGIT_STR"),
+                      ("q_parameter", "Q_50_DIGIT_STR")):
+        try:
+            from importlib import import_module
+            from mpmath import mp
+            v = getattr(import_module(mod), attr)
+            _Q_CACHE.append(mp.mpf(str(v)))
+            return _Q_CACHE[0]
+        except Exception:
+            continue
+    print("  WARNING: cannot resolve the substrate q — the Plancherel "
+          "discriminator is DISABLED and every candidate below is unchecked "
+          "for the weight-family false positive.", file=sys.stderr)
+    _Q_CACHE.append(None)
+    return None
+
+
+def is_plancherel_not_markov(shape, value) -> bool:
+    """True when this `y_lambda` field is the PLANCHEREL weight, not Jones–Markov.
+
+    THE FALSE POSITIVE THIS EXISTS TO KILL. This audit keys on a FIELD NAME,
+    and the docstring has always said a hit on a field that is not the Wenzl
+    y_λ is a false positive it cannot rule out by itself. On 2026-09-03 it
+    produced one: three witnesses reported as a convention-C REGRESSION after
+    the fingerprint was left at 0/0, when the field was the symmetric
+    Plancherel weight d_q²/[n]_q! — a quantity the convention-D row cap says
+    nothing about, and which is positive at ≥3 rows by construction.
+
+    The corpus already forbids the conflation those probes made: the three
+    weight families y_λ / w_λ / w̃_λ are distinct at q ≠ 1 (AGENTS.md §7aa
+    notation register), and `pyhecke.wedderburn.wedderburn_weight`'s own
+    docstring warns that using the Plancherel weight in a Markov-trace context
+    gives the wrong sum. So the discriminator is not a heuristic: recompute
+    d_q²/[n]_q! and see whether the field IS it.
+
+    Returns False on any failure — an unrecognised shape stays flagged, so a
+    genuine convention-C hit is never silently dropped by this check.
+    """
+    q = _substrate_q()
+    if q is None:
+        return False          # cannot check -> stay flagged; _substrate_q warns
+    try:
+        from mpmath import mp
+        mp.dps = 40
+        w = _hook_weight(list(shape), q)
+        if w is None:
+            return False
+        v = mp.mpf(str(value))
+        if v == 0:
+            return False
+        # also accept the RECIPROCAL: four probes shipped H²/[n]_q! under this
+        # same field name (the hook-inversion bug, PR #6442). Both are the
+        # Plancherel family, neither is Jones–Markov.
+        return (abs(v - w) / abs(w) < mp.mpf(10) ** -20
+                or abs(v - 1 / w) / abs(1 / w) < mp.mpf(10) ** -20)
+    except Exception:
+        return False
+
+
 def is_c_scale(value) -> bool:
     """Above the D-residue band. See C_SCALE_FLOOR for how it was measured."""
     try:
@@ -109,7 +220,9 @@ def scan_payload(obj) -> list[tuple]:
             lam_key = next((k for k in node if k.lower() in LAMBDA_KEYS), None)
             if y_key and lam_key:
                 rows = rows_of(node[lam_key])
-                if rows is not None and rows >= MIN_ROWS and is_c_scale(node[y_key]):
+                if (rows is not None and rows >= MIN_ROWS
+                        and is_c_scale(node[y_key])
+                        and not is_plancherel_not_markov(node[lam_key], node[y_key])):
                     hits.append((node[lam_key], node[y_key]))
             for v in node.values():
                 walk(v)

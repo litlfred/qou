@@ -60,21 +60,21 @@ theorem partitionShape_card_succ {n : ℕ} (lam : Partition (n + 1)) :
   QOU.Mathlib.partitionShape_card lam
 
 /-- **The block product map** `Φ = ⊕_λ ρ_λ`. -/
-noncomputable def heckeProduct (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
-    Hecke ℝ q q⁻¹ n →ₐ[ℝ] (∀ lam : Partition (n + 1),
+noncomputable def heckeProduct {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) :
+    Hecke K q q⁻¹ n →ₐ[K] (∀ lam : Partition (n + 1),
       Matrix (StandardYoungTableau (QOU.Mathlib.partitionShape lam))
-        (StandardYoungTableau (QOU.Mathlib.partitionShape lam)) ℝ) :=
+        (StandardYoungTableau (QOU.Mathlib.partitionShape lam)) K) :=
   Pi.algHom _ _ (fun lam => seminormalRep q hq0 hq2 n (partitionShape_card_succ lam))
 
-@[simp] theorem heckeProduct_apply (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
-    (x : Hecke ℝ q q⁻¹ n) (lam : Partition (n + 1)) :
+@[simp] theorem heckeProduct_apply {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
+    (x : Hecke K q q⁻¹ n) (lam : Partition (n + 1)) :
     heckeProduct q hq0 hq2 n x lam
       = seminormalRep q hq0 hq2 n (partitionShape_card_succ lam) x := rfl
 
 /-- **The central Murphy power sums land on scalar tuples.**  Block `λ` sees the scalar
 `Σ_{c ∈ λ} (q^{2c})^m`, which is what `PiBlockSeparation` consumes as its separating family. -/
-theorem heckeProduct_jmPowSum (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) (m : ℕ) :
-    heckeProduct q hq0 hq2 n (∑ k ∈ Finset.range (n + 1), (qJM ℝ q q⁻¹ n k) ^ m)
+theorem heckeProduct_jmPowSum {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) (m : ℕ) :
+    heckeProduct q hq0 hq2 n (∑ k ∈ Finset.range (n + 1), (qJM K q q⁻¹ n k) ^ m)
       = piScalarHom (fun lam : Partition (n + 1) =>
           ∑ c ∈ (QOU.Mathlib.partitionShape lam).cells, (q ^ (2 * cellContent c)) ^ m) := by
   funext lam
@@ -84,7 +84,7 @@ theorem heckeProduct_jmPowSum (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n :
 
 /-- **The block scalars separate the partitions.**  Contrapositive of
 `youngDiagram_eq_of_contentPowSum_eq`, plus injectivity of `partitionShape`. -/
-theorem contentPowSum_separates (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem contentPowSum_separates {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (lam lam' : Partition (n + 1)) (hne : lam ≠ lam') :
     ∃ m : ℕ, (∑ c ∈ (QOU.Mathlib.partitionShape lam).cells, (q ^ (2 * cellContent c)) ^ m)
       ≠ ∑ c ∈ (QOU.Mathlib.partitionShape lam').cells, (q ^ (2 * cellContent c)) ^ m := by
@@ -98,14 +98,14 @@ theorem contentPowSum_separates (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n
 /-- **`Φ` is surjective.**  Separation gives the block idempotents, `seminormalRep_range_eq_top`
 gives the entries, and `eq_top_of_separating_of_blockSurj` puts them together — with no density
 theorem anywhere. -/
-theorem heckeProduct_range_eq_top (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
+theorem heckeProduct_range_eq_top {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) :
     (heckeProduct q hq0 hq2 n).range = ⊤ := by
   classical
   refine eq_top_of_separating_of_blockSurj (V := ℕ) _
     (fun lam m => ∑ c ∈ (QOU.Mathlib.partitionShape lam).cells, (q ^ (2 * cellContent c)) ^ m)
     (fun m => ?_) (fun lam lam' hne => contentPowSum_separates q hq0 hq2 n lam lam' hne)
     (fun lam x => ?_)
-  · exact ⟨∑ k ∈ Finset.range (n + 1), (qJM ℝ q q⁻¹ n k) ^ m,
+  · exact ⟨∑ k ∈ Finset.range (n + 1), (qJM K q q⁻¹ n k) ^ m,
       heckeProduct_jmPowSum q hq0 hq2 n m⟩
   · -- per-block surjectivity is `seminormalRep_range_eq_top`
     have hb : x ∈ (seminormalRep q hq0 hq2 n (partitionShape_card_succ lam)).range := by
@@ -114,7 +114,7 @@ theorem heckeProduct_range_eq_top (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) 
     obtain ⟨h, hh⟩ := hb
     exact ⟨heckeProduct q hq0 hq2 n h, ⟨h, rfl⟩, hh⟩
 
-theorem heckeProduct_surjective (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
+theorem heckeProduct_surjective {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) :
     Function.Surjective (heckeProduct q hq0 hq2 n) := by
   intro x
   have hx : x ∈ (heckeProduct q hq0 hq2 n).range := by

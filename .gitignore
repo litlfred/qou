@@ -180,6 +180,7 @@ computations/borromean-qzeil-certificate.witness.json
 # ⁴He stage-2 probe resume caches (self-cleaning; ignore mid-flight)
 computations/deltalambda/.he4_stage2_legA_progress.jsonl
 computations/deltalambda/.he4_stage2_legB_progress.jsonl
+computations/deltalambda/.triton_magnus_omega2_progress.jsonl
 
 # Split olean-cache tarball parts. scripts/lean-olean-cache-seed.sh builds these
 # in the repo root even on a dry run, and they are ~90 MB each — above GitHub's
