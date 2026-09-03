@@ -113,3 +113,39 @@ need for an extensive channel as a shape coincidence, nothing more.
 - [x] forward pointer on `atom_closure_milnor_indeterminacy_probe`
 - [ ] is `2A+1` sharp? needs `b(L)` from above: a `(2A+1)`-bridge presentation or a
       stronger lower bound. Open.
+
+## The pencil, explicitly (owner asked 2026-09-03)
+
+Plane: Tait–Kneser nest of osculating circles per quarter-wave, centres on the
+evolute; a linear pencil only in the concentric case; coordinates `(s, θ)` on
+the foliated region, singular at vertices and inflections; defined on a CURVE,
+so not on the substrate's isotopy class. Space, on a curve: the Frenet framing
+it induces has `Lk = Wr + (1/2π)∮τ ∈ ℤ` — the torsion the pencil is blind to
+is exactly the framing datum the hull-exit needs.
+
+Complement, invariantly — two pencils, both present because the components are
+torus knots: (i) the Milnor open book (pages of genus g, binding K, monodromy
+order 2(2g+1), Seifert form unimodular ⇒ `H₁(page)` self-dual: a frame with a
+dual frame); (ii) the Seifert circle fibration (orbits of the (2,2g+1)-weighted
+circle action = Reeb orbits, transverse to the pages, two exceptional fibres of
+orders 2 and 2g+1, K a regular fibre). Coordinates: page angle × page point, or
+orbifold base × fibre angle. The 2g Morse saddles of a morsification of
+`z² + w^(2g+1)` are the vanishing cycles whose Dehn twists compose to the
+monodromy — that is "the oscillation is driven at the saddle points", exactly.
+
+Frobenius: corpus sense = trace pairing making A self-dual (`frobenius_relation`);
+page sense = unimodular Seifert form; algebra sense = Markov–Gram form on TL_n
+(exact inverse in `pyhecke.tl`). NOT established: a map TL_n-frame → complement
+frame (would need the skein module of the complement; not computed).
+
+Computed: Bennequin `χ = k − c = −5` for every multi-strand component on both
+branches, so Bennequin genus 3 throughout. σ branch: every component is T(2,7)
+of genus 3, so the Bennequin surface has MINIMAL genus and — fibered knots
+having a unique minimal-genus Seifert surface — is isotopic to the page. (Most
+of those sub-braids are also positive as written; a few carry one σ⁻¹ that does
+not cancel freely, so the page claim rests on genus, not Stallings. First draft
+of this note said "all positive" — wrong, corrected by the probe's own check.)
+σ⁻¹ branch: words mixed, Bennequin surface non-minimal (3 > g). Seifert matrices of T(2,3/5/7):
+det V = 1, Δ = (tⁿ+1)/(t+1), monodromy order 2n — all verified exactly.
+
+- [x] pencil made explicit; fibration/Seifert data added to the probe (§F)

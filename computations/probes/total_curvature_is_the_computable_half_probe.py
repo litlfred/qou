@@ -70,6 +70,81 @@ own total curvature above `4 pi` on every realisation. A component with
 trivial Jones is reported as "Jones-trivial" -- for sub-braids of this size
 that is the unknot, but the probe says which it has checked.
 
+THE PENCIL, EXPLICITLY -- AND WHICH OF ITS SHADOWS SURVIVE ISOTOPY
+-------------------------------------------------------------------
+"Pencil" above is used in the loose sense and it is worth being exact.
+
+*In the plane.* Tait-Kneser: along an arc on which the curvature is monotone
+and non-zero, the osculating circles are nested and pairwise disjoint. So they
+foliate an annular region, and their centres trace the evolute. The serpenoid
+has one such nest per quarter-wave: from the smallest circle at a vertex
+(curvature extremum, evolute cusp) opening out to the tangent line at the
+inflection, reversing at every vertex, repeating with the period. That nest is
+a pencil in the sense of a one-parameter family of circles foliating a region;
+it is a LINEAR pencil (`C_1 + lambda C_2`: elliptic through two base points,
+hyperbolic/Apollonian, parabolic) only in the degenerate concentric case, i.e.
+for a circle. On the region it foliates it gives coordinates `(s, theta)`:
+which circle, where on it -- singular exactly at the vertices and inflections.
+This lives on a CURVE. The substrate's object is an isotopy class, so the
+osculating pencil is not defined on it at all.
+
+*In space, on a curve.* The osculating circle of a space curve lies in the
+osculating plane `span(T, N)`. The family along the curve does not foliate
+anything, but it fixes a framing -- the Frenet normal -- whose twist is the
+torsion integral, `Tw_N = (1/2pi) integral tau ds`, so that
+
+    Lk(K, K_N) = Wr + (1/2pi) integral tau ds   is an integer.
+
+The curvature pencil is blind to `tau`; the framing it induces is not. That is
+the same datum the hull-exit analysis says the substrate lacks.
+
+*In the complement, invariantly.* Two pencils survive isotopy, and both exist
+for every component found here BECAUSE the components are torus knots:
+
+  (i)  the Milnor open book of `T(2, 2g+1)`: pages = Seifert surfaces of genus
+       `g`, binding = the knot, all pages sharing the knot as base locus,
+       monodromy of order `2(2g+1)`, Seifert form unimodular (`det V = 1`,
+       verified below) so `H_1(page)` is self-dual under it -- a frame with a
+       dual frame;
+  (ii) the Seifert circle fibration: the orbits of the `(2, 2g+1)`-weighted
+       circle action, circles foliating the complement with two exceptional
+       fibres of orders `2` and `2g+1` and the knot itself a regular fibre.
+       These orbits are the Reeb orbits of the weighted contact form, they are
+       transverse to the pages of (i), and the binding is a Reeb orbit
+       (Thurston-Winkelnkemper / Giroux).
+
+So the complement carries two circle-valued coordinates -- the page angle
+across (i) and the fibre angle along (ii) -- and (ii) is the closest honest
+analogue of the plane pencil: a foliation by circles with a singular axis (the
+two exceptional fibres) in place of the evolute. What "drives the oscillation"
+in this picture is the monodromy of (i): a morsification of `z^2 + w^(2g+1)`
+has `2g` Morse saddles, one vanishing cycle each, and the monodromy is the
+product of their Dehn twists.
+
+*Frobenius duality, three senses, and which apply.* In this corpus the
+Frobenius pairing is the trace making the observable algebra self-dual
+(`QOU.frobenius_relation`: comultiplication dual to multiplication under it).
+On the page, the corresponding self-duality is the unimodular Seifert form.
+On the algebra, it is the non-degenerate Markov-Gram form on `TL_n`, whose
+exact inverse the corpus already has (`pyhecke.tl`). What is NOT established
+is any map from the `TL_n` frame to the complement's frame: that would pass
+through the skein module of the complement, which the substrate does not
+compute. The claim stops there.
+
+*Computed per component (section F below).* Bennequin surface from the
+sub-braid: `chi = k - c = -5` for EVERY multi-strand component on both
+branches (2 strands, 7 crossings, or 3 strands, 8 crossings), so its genus is
+`3` throughout. On the `sigma` branch every component is `T(2,7)`, of genus
+`3`, so the Bennequin surface is of MINIMAL genus -- and a fibered knot has a
+unique minimal-genus Seifert surface up to isotopy, its fibre. So on that
+branch the Bennequin surface IS the page. (Most of those sub-braids are
+positive as written, which would give the same conclusion by Stallings; a few
+carry one `sigma^-1` that does not cancel freely, and for them the argument
+is the genus one, not positivity -- the probe counts both.) On the `sigma^-1`
+branch the words are mixed and the Bennequin surface is not minimal
+(`3 > g` for `T(2,5)`, `T(2,3)`); the page there is a smaller surface the
+braid does not exhibit.
+
 WHAT IT DOES NOT DO
 -------------------
 It does not produce the twist. `Lk = Tw + Wr` and the hull-exit analysis
@@ -327,6 +402,103 @@ def name_knot(Vt):
 
 
 # ══════════════════════════════════════════════════════════════════
+# §F  The invariant pencil: Bennequin surfaces and Seifert forms (exact)
+# ══════════════════════════════════════════════════════════════════
+def free_reduce(sw):
+    """Cancel adjacent sigma_i sigma_i^-1 pairs only; no braid relation used."""
+    out = []
+    for i, s in sw:
+        if out and out[-1][0] == i and out[-1][1] == -s:
+            out.pop()
+        else:
+            out.append((i, s))
+    return out
+
+
+def det_int(M):
+    """Exact determinant of an integer matrix (Gaussian elimination over Q)."""
+    from fractions import Fraction
+    n = len(M)
+    A = [[Fraction(x) for x in row] for row in M]
+    det = Fraction(1)
+    for c in range(n):
+        p = next((r for r in range(c, n) if A[r][c] != 0), None)
+        if p is None:
+            return 0
+        if p != c:
+            A[c], A[p] = A[p], A[c]
+            det = -det
+        det *= A[c][c]
+        for r in range(c + 1, n):
+            f = A[r][c] / A[c][c]
+            for k in range(c, n):
+                A[r][k] -= f * A[c][k]
+    assert det.denominator == 1
+    return int(det)
+
+
+def seifert_T2(n):
+    """Seifert matrix of T(2,n) from its 2-strand positive braid: (n-1)x(n-1),
+    -1 on the diagonal, +1 on the superdiagonal."""
+    m = n - 1
+    return [[(-1 if i == j else (1 if j == i + 1 else 0)) for j in range(m)]
+            for i in range(m)]
+
+
+def mat_mul(A, B):
+    return [[sum(A[i][k] * B[k][j] for k in range(len(B))) for j in range(len(B[0]))]
+            for i in range(len(A))]
+
+
+def inv_unimodular(V):
+    from fractions import Fraction
+    n = len(V)
+    A = [[Fraction(V[i][j]) for j in range(n)] + [Fraction(int(i == j)) for j in range(n)]
+         for i in range(n)]
+    for c in range(n):
+        p = next(r for r in range(c, n) if A[r][c] != 0)
+        A[c], A[p] = A[p], A[c]
+        piv = A[c][c]
+        A[c] = [x / piv for x in A[c]]
+        for r in range(n):
+            if r != c and A[r][c] != 0:
+                f = A[r][c]
+                A[r] = [x - f * y for x, y in zip(A[r], A[c])]
+    inv = [[A[i][n + j] for j in range(n)] for i in range(n)]
+    assert all(x.denominator == 1 for row in inv for x in row)
+    return [[int(x) for x in row] for row in inv]
+
+
+def monodromy_order(V, cap):
+    Vt = [list(col) for col in zip(*V)]
+    M = mat_mul(inv_unimodular(V), Vt)
+    n = len(V)
+    ident = [[int(i == j) for j in range(n)] for i in range(n)]
+    P = ident
+    for r in range(1, cap + 1):
+        P = mat_mul(P, M)
+        if P == ident:
+            return r
+    return None
+
+
+def alexander_is_torus(V, n):
+    """|det(V - t V^T)| == (t^n + 1)/(t + 1) at n+1 integer points (degree n-1)."""
+    from fractions import Fraction
+    m = len(V)
+    Vt = [list(col) for col in zip(*V)]
+    for t in range(2, n + 3):
+        D = det_int([[V[i][j] - t * Vt[i][j] for j in range(m)] for i in range(m)])
+        target = Fraction(t ** n + 1, t + 1)
+        if target.denominator != 1 or abs(D) != int(target):
+            return False
+    return True
+
+
+TORUS_GENUS = {"T(2,3)": 1, "T(2,5)": 2, "T(2,7)": 3}
+
+
+# ══════════════════════════════════════════════════════════════════
 # §4  Main
 # ══════════════════════════════════════════════════════════════════
 def main() -> int:
@@ -423,6 +595,59 @@ def main() -> int:
         check(f"{name}: every multi-strand component is a (2,odd)-torus knot on both branches",
               all(all(nm.startswith("T(2,") for nm in r["knots"] if nm != "unknot") for r in both)
               and all(len(r["knotted"]) == A_ for r in both))
+
+    print("\n" + "=" * 68)
+    print("§F  THE INVARIANT PENCIL: BENNEQUIN SURFACES AND SEIFERT FORMS")
+    print("=" * 68)
+    chi_all, pos_sigma, nonmin_inv, min_sigma = [], [], [], []
+    for Z, N, name in ISOTOPES:
+        n = 3 * (Z + N)
+        for avg_sign, bname in ((1, "sigma"), (-1, "sigma^-1")):
+            word = resolve(Z, N, avg_sign)
+            comp, cyc = components(n, word)
+            for ci, cycle in enumerate(cyc):
+                k, sw = sub_braid(n, word, cycle)
+                if k == 1:
+                    continue
+                c = len(sw)
+                chi_all.append(k - c)
+                red = free_reduce(sw)
+                positive = all(s == 1 for _, s in red)
+                V = jones_closure(k, sw)
+                Vt = as_t(V)
+                nm = name_knot(Vt) if Vt is not None else "?"
+                g_knot = TORUS_GENUS.get(nm.replace(" mirror", ""))
+                g_benn = (c - k + 1) // 2
+                if bname == "sigma":
+                    pos_sigma.append(positive)
+                    min_sigma.append(g_knot is not None and g_benn == g_knot)
+                else:
+                    nonmin_inv.append(g_knot is not None and g_benn > g_knot)
+                print(f"  {name:4s} {bname:8s} comp {ci}: k={k} c={c} chi={k - c:+d} "
+                      f"g_Bennequin={g_benn}  {'positive' if positive else 'mixed'}"
+                      f" (reduced len {len(red)})  -> {nm}, g={g_knot}")
+    check("Bennequin chi = k - c = -5 for every multi-strand component on both branches",
+          all(x == -5 for x in chi_all))
+    print(f"\n  sigma branch: {sum(pos_sigma)} of {len(pos_sigma)} sub-braids positive as "
+          f"written; Bennequin genus = g(T(2,7)) = 3 in {sum(min_sigma)} of {len(min_sigma)}")
+    check("sigma branch: Bennequin surface has minimal genus for every component "
+          "(fibered knot => it is isotopic to the page)", all(min_sigma))
+    check("sigma branch: positivity is NOT universal as written (the page claim rests "
+          "on genus, not on Stallings)", not all(pos_sigma) and sum(pos_sigma) > 0)
+    check("sigma^-1 branch: the Bennequin surface is never minimal (genus 3 > g)",
+          all(nonmin_inv))
+    print("\n  Seifert forms of the torus knots that occur (exact integer arithmetic):")
+    for nn in (3, 5, 7):
+        V = seifert_T2(nn)
+        d = det_int(V)
+        Vt = [list(col) for col in zip(*V)]
+        di = det_int([[V[i][j] - Vt[i][j] for j in range(len(V))] for i in range(len(V))])
+        order = monodromy_order(V, 4 * nn)
+        alex = alexander_is_torus(V, nn)
+        print(f"    T(2,{nn}): genus {(nn - 1) // 2}, det V = {d}, det(V - V^T) = {di}, "
+              f"Alexander = (t^{nn}+1)/(t+1): {alex}, monodromy order {order}")
+        check(f"T(2,{nn}): Seifert form unimodular, Alexander (t^n+1)/(t+1), monodromy order 2n",
+              d == 1 and di == 1 and alex and order == 2 * nn)
 
     print("\n" + "=" * 68)
     print("§Σ  WHAT THE CURVATURE HALF IS WORTH")
