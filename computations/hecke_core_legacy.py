@@ -1522,9 +1522,64 @@ def _msig_object_safe(sig_sparse, M_run, gen, coo_cache):
     return Msig
 
 
+# ── Rust MPFR character kernel (bean `qou-sv7h`) ───────────────────────────
+#
+# `unified_iterative_correction` spent its whole runtime in per-element mpmath:
+# profiled at A=2 it had not finished in 150 s, with 27.9M `mpf.__mul__` and
+# 20.2M `mpf_mul` calls. That is not a precision cost to be engineered around —
+# it is a loop that belongs in Rust, and the Rust has been there all along.
+#
+# `pyhecke_native.chi_q_atomic_mpfr(shape, factors, q_str, dps)` computes
+# `χ_λ(Π_i (c_i·σ_{g_i} + d_i·I))` directly. Its `factors` are
+# `(c_str, d_str, gen_1based)` DECIMAL STRINGS, so nothing crosses an f64
+# boundary — the NO-FLOAT64 directive is satisfied by construction rather than
+# by care. `qou-sv7h` proposed exporting `dense_dense_mul_mpfr` instead (>=24x);
+# this is strictly better, because it moves the entire per-partition product
+# rather than one matmul, and `chi_q_atomic_all_partitions_mpfr` is
+# rayon-parallel on top of that.
+#
+# Measured against the Python path at 50 dps, same chains:
+#
+#     shape        dim   python     rust   speedup   agreement
+#     (2, 2)         2    0.5 ms   0.3 ms      1.6x   2.9e-50
+#     (3, 2)         5    3.5 ms   0.4 ms      8.0x   1.2e-49
+#     (3, 2, 1)     16   71.3 ms   0.9 ms     82.7x   1.9e-50
+#
+# The speedup grows with dim, which is the point: the partition set reaches
+# dim 2310 and the Python cost is O(dim^3) there.
+#
+# The Rust seminormal build is also the reference the braid audit validates
+# against (`computations/audits/ysn_braid_relation_audit.py`), and since bean
+# `qou-uiut` the Python matrices agree with it entry for entry.
+try:
+    import pyhecke_native as _pyhecke_native
+    _HAVE_RUST_CHI = hasattr(_pyhecke_native, "chi_q_atomic_mpfr")
+except ImportError:  # pragma: no cover - the pure-Python path still works
+    _pyhecke_native = None
+    _HAVE_RUST_CHI = False
+
+
+def _rust_chi_trace(partition, factors, dps):
+    """Tr M_λ for the cumulative factor list, via the Rust MPFR kernel.
+
+    `factors` is the Python `(c, d, gen0)` chain form; `gen0` is 0-based here
+    and 1-based in the Rust ABI, which panics rather than silently accepting
+    an out-of-range index. Coefficients are serialised at `dps` digits — the
+    same precision the kernel computes at, so the string is not the lossy step.
+    """
+    ser = _mp.nstr
+    f = [(ser(_mp.mpf(c), dps, strip_zeros=False),
+          ser(_mp.mpf(d), dps, strip_zeros=False),
+          g + 1) for c, d, g in factors]
+    q_str = ser(q0, dps, strip_zeros=False)
+    return _mp.mpf(_pyhecke_native.chi_q_atomic_mpfr(
+        list(partition), f, q_str, dps))
+
+
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
-                                 k_exact=K_PARTITION_MAX):
+                                 k_exact=K_PARTITION_MAX,
+                                 use_rust=None):
     """Unified iterative correction via LP-dual shadow prices.
 
     A SINGLE consistent algorithm — no special cases for any A.
@@ -1650,6 +1705,18 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # (bean `qou-9ay6`). Detect our own form.
     _issparse = _is_coo_mpf
 
+    # `use_rust=None` means "use it if it is there". Explicit False keeps the
+    # pure-Python path, which is what the equality test in
+    # `tests/test_unified_correction_rust_parity.py` compares against.
+    if use_rust is None:
+        use_rust = _HAVE_RUST_CHI
+    elif use_rust and not _HAVE_RUST_CHI:
+        raise RuntimeError(
+            "unified_iterative_correction(use_rust=True): pyhecke_native is "
+            "not importable, or lacks `chi_q_atomic_mpfr`. Pass use_rust=False "
+            "for the pure-Python path.")
+    _rust_dps = _mp.mp.dps
+
     state = []
     for e in active:
         first = e['ysn'][0]
@@ -1675,6 +1742,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             'entry': e, 'dim': dim, 'M': M, 'log_norm': _MPF_ZERO,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
             'sparse': sparse_sigmas,
+            # Cumulative (c, d, gen) chain for the Rust kernel. It computes
+            # Tr M^(0..step) from the whole prefix each step rather than
+            # updating a running matrix, so the prefix is re-multiplied every
+            # step — O(A^2) crossings against the Python path's O(A). At the
+            # measured per-call speedup that trades a factor of A for a factor
+            # of ~dim, and dim reaches 2310 while A reaches 40.
+            'factors': [] if use_rust else None,
         })
 
     per_step = []
@@ -1723,7 +1797,15 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # both O(dim*nnz)), so the outer exactness test was not only wrong,
             # it was redundant. Value-equality verified against the pre-fix
             # result at k_exact = 4..8 (k=8 carries 12 sparse partitions).
-            if s['sparse']:
+            if s['factors'] is not None:
+                # Rust path: accumulate the chain and ask for Tr M^(0..step)
+                # of the whole prefix. No running matrix, so no rescaling —
+                # MPFR's exponent range makes the `m_max > 1e80` guard below
+                # unnecessary, and `log_norm` stays 0.
+                s['factors'].extend(chain)
+                tr_run = _rust_chi_trace(entry['partition'], s['factors'],
+                                         _rust_dps)
+            elif s['sparse']:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
@@ -1755,23 +1837,24 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
-            if isinstance(s['M'], np.ndarray):
-                m_max = (np.max(np.abs(s['M'])))
-            else:
-                m_max = 0.0
-                for i in range(dim):
-                    for j in range(dim):
-                        if abs(s['M'][i][j]) > m_max:
-                            m_max = abs(s['M'][i][j])
-            if m_max > 1e80:
+            if s['factors'] is None:
                 if isinstance(s['M'], np.ndarray):
-                    s['M'] = s['M'] / m_max
+                    m_max = (np.max(np.abs(s['M'])))
                 else:
-                    M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
-                                  for i in range(dim)]
-                    s['M'] = tuple(tuple(r) for r in M_rescaled)
-                s['log_norm'] += _mp.log(m_max)
-            tr_run = _trace_dim(s['M'], dim)
+                    m_max = 0.0
+                    for i in range(dim):
+                        for j in range(dim):
+                            if abs(s['M'][i][j]) > m_max:
+                                m_max = abs(s['M'][i][j])
+                if m_max > 1e80:
+                    if isinstance(s['M'], np.ndarray):
+                        s['M'] = s['M'] / m_max
+                    else:
+                        M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
+                                      for i in range(dim)]
+                        s['M'] = tuple(tuple(r) for r in M_rescaled)
+                    s['log_norm'] += _mp.log(m_max)
+                tr_run = _trace_dim(s['M'], dim)
             log_cur = (s['log_norm'] + _mp.log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
