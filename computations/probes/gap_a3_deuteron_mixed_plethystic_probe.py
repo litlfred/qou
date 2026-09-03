@@ -51,6 +51,7 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 from codata_constants import M_E_MEV as M_E_MEV_RAW  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -58,7 +59,13 @@ COMPUTE_DIR = HERE.parent
 # Canonical anchors per the existing GAP-A-3 channels probe.
 # CODATA constants imported from the central registry per Gemini
 # review on PR #1899; M_E_MEV is re-cast to mp.mpf for precision.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# q₀ read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). This was
+# the literal 1.1099785955573… — the RETIRED self-certified muon pin A,
+# superseded 2026-08-22. There is no comparison leg here, so under the owner
+# ruling of 2026-08-30 (proton unless an explicit μ-vs-p comparison or the
+# ideal CAL-1/2/3 layer) this producer takes the PROTON default. The pin moves
+# by −11.537 ppb, so the numbers below move at that scale.
+Q_0_50DPS = Q_50_DIGIT_STR
 VOL_HYP_D = mp.mpf("12.776")   # Phase-4 deuteron hyperbolic volume
 M_E_MEV = mp.mpf(str(M_E_MEV_RAW))
 B_D_MEV = mp.mpf("2.2245")
