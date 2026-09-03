@@ -188,3 +188,48 @@ Do not resolve `ggmw2020` from its initialism: the Lean comment expands it as
 "Gukov–Garoufalidis–Mariño–Wheeler (2020)", but GGMW is usually
 Garoufalidis–**Gu**–Mariño–Wheeler, so the comment's own expansion may be wrong.
 `library/` holds four candidate resurgence papers.
+
+## 2026-09-03 — 6 -> 4. Two added, four are NOT clean adds (session cool-johnson-t1wveh)
+
+Added to `references.ts` (verified via web search; arxiv.org still egress-blocked
+but WebSearch resolves it):
+
+- **`murakami2013`** — H. Murakami, "The colored Jones polynomial, the
+  Chern-Simons invariant, and the Reidemeister torsion of the figure-eight
+  knot", *J. Topology* (2013). Matches the Lean's "deformed 4₁ asymptotic".
+  Volume/DOI unverified, so omitted.
+- **`wielenberg1978`** — N. J. Wielenberg, "The structure of certain subgroups
+  of the Picard group", *Math. Proc. Cambridge Philos. Soc.* 84 (1978). Matches
+  WhiteheadVolumeCatalan.lean. Page/DOI unverified, so omitted.
+
+**The remaining four are ambiguous — NOT one-fetch adds — and each needs the
+PDF or the author, so they are recorded here rather than guessed:**
+
+- **`frenkel2020`** — the Lean URL `arXiv:2007.11786` is **"Toroidal q-Opers"
+  by Koroteev & Zeitlin (2020)**, *not a Frenkel paper*. Given `QOper.lean`'s
+  context the intended work is most likely **Frenkel–Koroteev–Sage–Zeitlin,
+  "q-Opers, QQ-Systems, and Bethe Ansatz", arXiv:2002.07344 (2020), JEMS
+  (2024)** — but the key and the URL disagree, so this is a repoint/author call,
+  not an add. Do not resolve from the URL.
+- **`koroteev-zeitlin2022`** — the Lean URL `arXiv:2108.01557` **does not
+  resolve** (no such Koroteev–Zeitlin paper). Closest is **arXiv:2108.04184,
+  "q-Opers, QQ-systems, and Bethe Ansatz II: Generalized Minors" (Crelle
+  2022)** — a plausible digit-typo, unconfirmed. Needs author confirmation of
+  the arXiv id before adding.
+- **`ggmw2020`** — the bean's own warning is confirmed: **GGMW = Garoufalidis–
+  Gu–Mariño–Wheeler**, and their paper is **"Resurgence of Chern-Simons theory
+  at the trivial flat connection", arXiv:2111.04763, CMP 406 (2025)** — a
+  2021/2025 work, *not 2020*, and the initialism the Lean expands
+  ("Gukov–Garoufalidis–Mariño–Wheeler") is wrong. The Lean anchors "eq (161)",
+  which cannot be verified without the PDF. Cross-check against the four
+  resurgence PDFs in `library/` before adding; do not resolve from the
+  initialism.
+- **`murakami1996`** — "Kauffman bracket = Hecke Markov trace" could not be
+  disambiguated confidently: the canonical "Jones = Hecke Markov trace" is
+  Jones 1987; J. Murakami's Kauffman-polynomial / BMW work is 1987/1990, not
+  1996. Needs the author's intended paper.
+
+**Status: 4 errors remain** (was 6), all needing PDF/author input. The four
+key-drift repoints (`schrijver1986theory`, `stanley1999`, `neumann-zagier1985`,
+`ratcliffe`) and `rockafellar1970` / `bjorner-brenti2005` are confirmed landed
+on `main`.
