@@ -47,7 +47,7 @@ namespace QOU.MassTheory
 
 open Finset BigOperators
 
-variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+variable {ι : Type*} [Fintype ι]
   {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
 
 /-- **Triangle inequality for the elementary symmetric sum.** `|e_j(μ)| ≤ e_j(|μ|)`: the

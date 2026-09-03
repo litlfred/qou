@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-03T15:51:28Z
+updated_at: 2026-09-03T15:56:47Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -51,3 +51,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-03 (decay bound, PR #6520): bounded the #6464 hook closed form in j=b(λ). CRUDE spectral-radius bound holds but is a binomial hump (peaks j=2/4 at A=2/3, loose 10–10³) — because r ≈ q^L (r/q^L = 1.006, 1.10): the twist q^{(L+2)(1−j)} EXACTLY cancels the dominant Burau eigenvalue, d ≈ q⁻², so only the subdominant spectrum can decay. SHARP bound |e_j(μ)| ≤ e_j(|μ|): B'_j = T_j·Σ_a[e_j(|μ⁺|)+e_j(|μ⁻|)] HOLDS and B'_j/C(n−1,j) is STRICTLY DECREASING for all j at BOTH A (tightness 0.23/0.13). Burau moduli fall off geometrically (≈0.71–0.77/step). Monotonicity is MEASURED on the real moduli, not a theorem for arbitrary spectra. Lean lemmas (MagnusHookDecayBound.lean: abs_esymm_le_esymm_abs + 2 corollaries) written; verification pending.
+
+
+- 2026-09-03 (Lean verified, PR #6520): MagnusHookDecayBound.lean — abs_esymm_le_esymm_abs, abs_sum_esymm_sub_le, abs_mul_sum_esymm_sub_le — lean-direct EXIT 0, zero diagnostics after dropping an unused [DecidableEq ι] binder (strictly more general); all three #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. Binders [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] are exactly what Finset.abs_prod takes in v4.24.0.
