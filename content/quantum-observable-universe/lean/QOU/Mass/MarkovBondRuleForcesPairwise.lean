@@ -64,6 +64,40 @@ What is proved here is the *implication*. `qou-g8i1` records the premise as
 established by measurement plus the gap-Markov mechanism; it is **not** re-proved
 here, and this file does not claim it.
 
+## Not contradicted by the nonzero Brunnian deficit `D_A` — different word
+
+A reader arriving from `qou-v7ro` will know that the **Brunnian trace deficit**
+`D_A = 1 - qtr(ρ(w_A))/[2]^A` is **nonzero for every `A`** (proved, merged #6217:
+`D_{A+1} = -h²(h²+2)·D_A`, with `D_3 = 1.44e-3` at the proton pin). That looks
+like a factorisation failure sitting beside a bond rule verified to `4.45e-31`,
+and it is worth saying plainly that it is not one: **the two are different
+words.**
+
+* The **bond rule** governs the nucleon **atom word** — a product of bond letters
+  `σ_g + d·I` at interior gaps (`canonical_braid_crossings`, `qou-g8i1`).
+* `w_A` is the **iterated group commutator** `w_n = [w_{n-1}, b]` in the
+  Temperley–Lieb / spin-½ setting. A commutator is not a product of independent
+  bond letters, which is exactly why its trace does not reduce to one.
+
+So `D_A ≠ 0` does not falsify `SatisfiesBondRule` for the atom word, and this
+file's exclusion is not vacuous there.
+
+**Better: `D_A` is the corpus's one known member of the class this file leaves
+open.** The conclusion above is that a carrier must *break* the bond rule; a word
+whose normalised trace departs from the bond product by a nonzero `D_A` is
+precisely such a word. So the search is correctly aimed at non-factorising words
+— and `qou-v7ro` has already measured why this particular one does not finish the
+job: `|D_A|` **falls** geometrically (`D_3 = 1.44e-3` → `D_8 = 8.2e-9`, factor
+`-h²(h²+2) = -0.0893226497` per step) while the empirical binding fraction
+**rises** with `A` (`0.767 → 0.954·ℏ_q²`, ⁴He → ⁵⁶Fe). Opposite trends, so `D_A`
+is the Milnor order/parity marker, not the magnitude — a scope-**(a)** negative on
+that carrier, not on the class.
+
+**Which narrows `qou-edt7`'s positive half to a stated question:** is there a
+non-factorising word whose deficit *rises* with `A`? That is a search over words,
+not over functionals `f` and not over edge sets — both of which this file rules
+out.
+
 ## Scope
 
 **(b)** on bindings of the form `f ∘ (trace of the atom word)` where the trace
