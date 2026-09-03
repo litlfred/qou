@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-31T21:20:07Z
+updated_at: 2026-09-03T04:08:18Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -868,3 +868,58 @@ L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
 (non-tracial functional).** Neither is an object already in the algebra — which
 is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
+
+
+## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
+
+`computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
+Many-body term defined at FIXED NUCLEON CONTENT (`L(bond set) - sum of
+single-bond L` on the same braid), NOT by subset-Mobius. That difference is why
+the A=3 sign differs from t7qv's.
+
+    A=3 exhaustive   two-bond sets   EXACTLY ZERO (1.3e-51), band-routed included
+                     the triangle    POSITIVE in ALL SIX orders, 0.0746 to 0.1810
+    A=4              chain           EXACTLY ZERO (5.3e-51)
+                     complete graph  NEGATIVE in all 3 orders, -1.073/-0.561/-0.531
+
+**A positive many-body term DOES exist — at A=3. It flips NEGATIVE at A=4**,
+which is exactly where the alpha lives. So the sign attack fails at the mass
+number that needs it.
+
+Magnitude: best A=4 order gives `B = 10.083 MeV` against AME `28.296`, **2.81x
+short** (consistent with t7qv's independently computed 10.387277). The additive
+route capped at 20.649 MeV with per-bond values free. **Both routes closed.**
+
+### Confirmed t7qv's no-distance-decay result, 37 orders tighter
+
+All six A=4 nucleon pairs give `L = 0.48989938425513485141`, max deviation
+**1.47e-50**, against their float64 `3.4e-13`. Independent implementation.
+
+### A correction I nearly published
+
+A first run used `HF = h/2` and produced an apparent LINEAR decay with
+separation (0.4899, 0.3018, 0.1136) with an exactly constant decrement
+0.188144 -- which I was one step from reporting as contradicting t7qv. **My
+error**: their `HF = float(_H)` is `h`, confirmed by their own `bond_d` (an nn
+bond takes `-HF` and `d_for_ctype("sigma_inv", h) = -h`). A pattern clean to six
+digits is not evidence the constant feeding it is right.
+
+## WHAT ELSE COULD CARRY EXTENSIVE BINDING — the corpus already answers
+
+`docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md`: the missing term
+is **linear in A**, per-nucleon `B/A -> ~8 MeV` (0-fit A-scaling, CV 0.148) --
+NOT `C(A,2)` or `C(A,3)`. Structure derived (SU(4) `[1^4]` alpha-cluster volume
+term); **scale still open**. And a surface term now exists:
+`QOU.Mass.SaturationPeakStructure` (landed 2026-08-30).
+
+Quantified against my measured slopes:
+
+    log-ratio per-nucleon   pp 2.0507   pn 2.8338   nn 3.7978  MeV/nucleon
+    alpha-cluster target                ~8 MeV/nucleon
+    supplies                25.6 % to 47.5 %   -- short by 2.11x to 3.90x
+
+**My exclusions SHARPEN the alpha-cluster route rather than block it.** The
+`[1^4]` singlet is a 4-body SU(4) object, not a bond-graph object, so the
+bond-topology exclusions (additive: capped; non-additive: negative at A=4) do
+not apply to it. What they do is remove the bond graph as a competitor, leaving
+the alpha-cluster term as the carrier that has to supply the missing ~3/4.
