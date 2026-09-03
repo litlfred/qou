@@ -2,7 +2,7 @@
   "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
   "name": "assembly-shortfall-shape",
   "description": "The chain-assembly binding shortfall is NEITHER an extensivity failure NOR a coefficient. B_model is affine in (Z,N) (exactly A-1 bonds) so B/A converges to -(alpha/2)ln(f_pp*f_nn) and model/AME is bounded below by 0.307 across A=2..238 -- not extensivity. B_model/A is strictly increasing along N=Z and bounded by its limit while AME B/A peaks at 62Ni and falls, so no positive constant reproduces the fall, and the deuteron refuses a uniform factor 3 outright -- not a coefficient. The missing shape is the Z(Z-1) Coulomb multiplicity that CrossingCountAffine proves the crossing counts cannot supply. Scope (a) for the numbers, (b) for the monotonicity exclusion.",
-  "computedAt": "2026-08-30T14:54:59.183913+00:00",
+  "computedAt": "2026-09-03T18:36:02.352598+00:00",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "alpha_MeV": "4.18598136329447589694506215876",
@@ -274,5 +274,7 @@
       }
     ],
     "allPassed": true
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
