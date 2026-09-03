@@ -1330,6 +1330,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59",
+          "lean": "9bf52a2d96c4",
+          "lean_statement": "c7e96852551a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:49:02.166Z",
+        "reviewed_sha": "40f165304b5679c8738dcc8b3f2757541f6f9cd4",
+        "severity": "critical",
+        "evidence": "lean/QOU/ParticleInteractions/atomic_lp_stability.lean did not establish either annihilator-existence claim, and its docstring asserted the opposite: \"Carries the genuine inputs ... but not the conclusion\" and \"Those two facts are therefore stated faithfully and end in sorry (disposition B)\". AtomicLPStabilityContext carried BOTH conclusions as the fields bare_unstable and dressed_stable, each the theorem statement verbatim, and both theorems ended in the projection with no sorry anywhere in the file. Fourth file in this drain with that shape (AGENTS.md 3b-cond item 5).",
+        "notes": "Repaired to 1a disposition 3. The class was inhabitable by junk and that is now PROVED rather than argued: atomic_lp_stability_of_junk_data exhibits Candidate := Unit, normalised := fun _ => True, bareVolume := fun _ => 0, dressedVolume := fun _ => 1, satisfying both conclusions with data unrelated to hydrogen, H2(q) or any Markov trace. not_atomic_lp_stability_of_junk_data gives the other half. Satisfiable AND refutable at free data is the exact measure of what the claim constrains without the Hecke content - nothing - and is why a sorry would have been unsound. Verdict stays fail: nothing constructs sigma_0, the 2x2 Markov pairing, or the normalisation. Two side fixes: bare_ne_dressed_ratio generalises the sorry-free mechanism to every q > 1.1, removing a hardcoded CODATA-2018 muon literal from the statement (the proof never used more than q > 1.1, so the result is pin-independent); and six .md paths in the file pointed at particle-interactions/, a chapter that does not exist - the block is in nuclear-interactions/. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1345,6 +1364,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b1a282a63220",
+          "ts": "591d0a89bb59",
+          "lean": "9bf52a2d96c4",
+          "lean_statement": "c7e96852551a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T04:49:01.680Z",
+        "reviewed_sha": "40f165304b5679c8738dcc8b3f2757541f6f9cd4",
+        "notes": "Repaired on this branch. AtomicLPStabilityContext is deleted; atomic_lp_stability is a Prop-valued def over parameters. bare_is_lp_unstable and dressed_is_lp_stable now destructure a hypothesis the CALLER supplied (h.1 / h.2), which is the legitimate accessor idiom, not a projection of a field an instance chose. Verified lean-direct exit 0, no warnings, sorry-free. Bean qou-z9ws."
       }
     ],
     "proof-no-trivial-true": [
@@ -2470,6 +2506,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:48:19.071Z",
+  "updated_at": "2026-09-03T04:49:02.166Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
