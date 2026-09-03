@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-term6-binding-density",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:term6-binding-density",
+  "kind": "remark",
+  "title": "Term 6 binding density: $B(Z,N)/A \\approx \\alpha \\cdot T_6(Z,N)/A^3 + \\beta + \\delta_M(Z,N)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+  "cites": [
+    "references/bethe1936",
+    "references/weizsacker1935",
+    "references/geckpfeiffer2000"
+  ],
+  "tags": [
+    "binding-energy",
+    "derivation-chain",
+    "gs-filtration",
+    "spectral-sequence",
+    "term-6",
+    "level-3-stratum",
+    "calibrated-fit",
+    "magic-shell-correction"
+  ],
+  "text": "term6-binding-density.md",
+  "provenance": "authored"
+}

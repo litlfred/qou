@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-q-bit",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-q-bit",
+  "kind": "remark",
+  "title": "The $q$-bit: unit of $q$-deformed information",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-operational-entropy"
+  ],
+  "tags": [
+    "glossary",
+    "information-theory",
+    "q-bit",
+    "operational-entropy",
+    "hecke-algebra"
+  ],
+  "defines": [
+    "q-bit"
+  ],
+  "text": "glossary-q-bit.md",
+  "provenance": "authored"
+}

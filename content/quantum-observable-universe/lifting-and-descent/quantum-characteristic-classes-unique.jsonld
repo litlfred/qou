@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-quantum-characteristic-classes-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:quantum-characteristic-classes-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of quantum characteristic classes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-characteristic-classes-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-quantum-characteristic-classes-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "characteristic-classes",
+    "cohomology"
+  ],
+  "leanRef": "qou:QOU.QuantumCharClasses.unique",
+  "text": "quantum-characteristic-classes-unique.md",
+  "leanSource": "quantum-characteristic-classes-unique.lean",
+  "provenance": "authored"
+}

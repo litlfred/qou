@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
+  "kind": "proof",
+  "title": "Proof of qbeta delta tau canonical conditional q2 minus 1 factor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-delta-tau-canonical-conditional-q2-minus-1-factor"
+  ],
+  "text": "qbeta-delta-tau-canonical-conditional-q2-minus-1-factor-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0604057v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT",
+  "contains": [
+    "library/arxiv-math-0604057v2/sections/sec-000",
+    "library/arxiv-math-0604057v2/sections/sec-001",
+    "library/arxiv-math-0604057v2/sections/sec-002",
+    "library/arxiv-math-0604057v2/sections/sec-003",
+    "library/arxiv-math-0604057v2/sections/sec-004",
+    "library/arxiv-math-0604057v2/sections/sec-005",
+    "library/arxiv-math-0604057v2/sections/sec-006",
+    "library/arxiv-math-0604057v2/sections/sec-007",
+    "library/arxiv-math-0604057v2/sections/sec-008",
+    "library/arxiv-math-0604057v2/sections/sec-009",
+    "library/arxiv-math-0604057v2/sections/sec-010",
+    "library/arxiv-math-0604057v2/sections/sec-011",
+    "library/arxiv-math-0604057v2/sections/sec-012",
+    "library/arxiv-math-0604057v2/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0604057v2",
+    "source_file": "0604057v2.pdf",
+    "source_sha256": "649fad141dc34eb9388a87f99a58e4520f3c4b0bbf42f17ae49a267b712b5c7b",
+    "pages": 19,
+    "arxiv": {
+      "id": "math/0604057",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "17 Apr 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

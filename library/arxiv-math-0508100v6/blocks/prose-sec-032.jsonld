@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-032",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The WKB method",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "text": "../sections/sec-032-112-the-wkb-method.md",
+  "derivedFrom": "library/arxiv-math-0508100v6/manifest",
+  "sourceDocument": "library/arxiv-math-0508100v6/manifest",
+  "provenance": "ingested"
+}

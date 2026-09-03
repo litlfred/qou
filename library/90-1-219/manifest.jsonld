@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/90-1-219/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quaternions and non-commutative geometry",
+  "contains": [
+    "library/90-1-219/sections/sec-000",
+    "library/90-1-219/sections/sec-001",
+    "library/90-1-219/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "90-1-219",
+    "source_file": "90-1-219.pdf",
+    "source_sha256": "c2e3f2f8946c6f84c27c4482eb5b8375ce85cc9bd63293c8ce6f41a97c10edce",
+    "pages": 18,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

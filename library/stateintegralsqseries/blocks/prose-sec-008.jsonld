@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/stateintegralsqseries/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Proposition 2.2",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-008-26-proof-of-proposition-22.md",
+  "derivedFrom": "library/stateintegralsqseries/manifest",
+  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "provenance": "ingested"
+}

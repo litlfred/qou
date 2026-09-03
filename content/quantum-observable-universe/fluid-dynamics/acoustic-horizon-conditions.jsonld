@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-acoustic-horizon-conditions",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:acoustic-horizon-conditions",
+  "kind": "proposition",
+  "title": "Acoustic horizon formation and gravitational emergence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-navier-stokes"
+  ],
+  "tags": [
+    "acoustic-metric",
+    "horizon",
+    "analogue-gravity",
+    "black-hole",
+    "hawking"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.acoustic_horizon_conditions",
+  "text": "acoustic-horizon-conditions.md",
+  "leanSource": "acoustic-horizon-conditions.lean",
+  "provenance": "authored"
+}

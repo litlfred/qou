@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/4geo-dedi-rev/blocks/thm-sec-011-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "text": "thm-sec-011-01.md",
+  "derivedFrom": "library/4geo-dedi-rev/sections/sec-011",
+  "sourceDocument": "library/4geo-dedi-rev/manifest",
+  "provenance": "ingested"
+}

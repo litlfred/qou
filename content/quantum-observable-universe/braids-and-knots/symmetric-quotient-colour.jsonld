@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-symmetric-quotient-colour",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:symmetric-quotient-colour",
+  "kind": "remark",
+  "title": "The symmetric quotient and colour sectors",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+    "papers/quantum-observable-universe/blocks/def-color-sector-coords"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+  "tags": [
+    "braid-group",
+    "colour",
+    "symmetric-group"
+  ],
+  "text": "symmetric-quotient-colour.md",
+  "provenance": "authored"
+}

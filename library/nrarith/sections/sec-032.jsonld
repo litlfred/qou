@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "One of the original motivating questions for this work was the question: does",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-032",
+    "library/nrarith/blocks/prop-sec-032-01"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

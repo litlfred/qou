@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-hydrogen-knot-structure",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:hydrogen-knot-structure",
+  "kind": "example",
+  "title": "Hydrogen: the simplest atom in knot form",
+  "interprets": "papers/quantum-observable-universe/blocks/def-up-quark",
+  "tags": [
+    "hydrogen",
+    "knot",
+    "trefoil",
+    "borromean",
+    "ionization",
+    "rydberg"
+  ],
+  "text": "hydrogen-knot-structure.md",
+  "provenance": "authored"
+}

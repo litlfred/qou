@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0709.3157v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "V . Mateu",
+  "contains": [
+    "library/arxiv-0709.3157v1/sections/sec-000",
+    "library/arxiv-0709.3157v1/sections/sec-001",
+    "library/arxiv-0709.3157v1/sections/sec-002",
+    "library/arxiv-0709.3157v1/sections/sec-003",
+    "library/arxiv-0709.3157v1/sections/sec-004",
+    "library/arxiv-0709.3157v1/sections/sec-005",
+    "library/arxiv-0709.3157v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0709.3157v1",
+    "source_file": "0709.3157v1.pdf",
+    "source_sha256": "22a0d9a93c9dcb8d0677f1ff4e0cc10b6c519fbe5b3c667be77dc9879375db59",
+    "pages": 7,
+    "arxiv": {
+      "id": "0709.3157",
+      "version": "1",
+      "primary_class": "hep-ph",
+      "stamp_date": "20 Sep 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

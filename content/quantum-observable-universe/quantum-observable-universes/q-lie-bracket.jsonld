@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-q-lie-bracket",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:q-lie-bracket",
+  "kind": "example",
+  "title": "$q$-Deformed Lie bracket",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-lie-bracket"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-reeb",
+  "tags": [
+    "lie-bracket",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qLieBracket",
+  "text": "q-lie-bracket.md",
+  "leanSource": "q-lie-bracket.lean",
+  "provenance": "authored"
+}

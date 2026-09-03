@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-gluing-equations-do-not-detect-hyperbolicity",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:gluing-equations-do-not-detect-hyperbolicity",
+  "kind": "theorem",
+  "title": "The gluing equations do not detect hyperbolicity: the trefoil's flat shapes satisfy them exactly",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-flat-tetrahedron-zero-volume"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "gluing-equations",
+    "ideal-triangulation",
+    "torus-knot",
+    "degenerate",
+    "negative-control"
+  ],
+  "leanRef": "qou:QOU.Knot.FlatTet.edge_equations_do_not_detect_hyperbolicity",
+  "text": "gluing-equations-do-not-detect-hyperbolicity.md",
+  "provenance": "authored"
+}

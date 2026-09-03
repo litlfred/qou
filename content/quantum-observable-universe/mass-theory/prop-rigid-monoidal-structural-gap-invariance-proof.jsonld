@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-rigid-monoidal-structural-gap-invariance",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:rigid-monoidal-structural-gap-invariance",
+  "kind": "proof",
+  "title": "Proof of prop rigid monoidal structural gap invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-rigid-monoidal-structural-gap-invariance"
+  ],
+  "text": "prop-rigid-monoidal-structural-gap-invariance-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-torus-knot-genus-four-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:torus-knot-genus-four-unique",
+  "kind": "proposition",
+  "title": "Genus-$4$ torus knots: $\\{T_{2,9}, T_{3,5}\\}$ are the only solutions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-generators"
+  ],
+  "tags": [
+    "torus-knot",
+    "genus-4",
+    "diophantine",
+    "uniqueness",
+    "number-theoretic"
+  ],
+  "leanRef": "qou:QOU.Archimedean.torus_knot_genus_four_unique",
+  "text": "torus-knot-genus-four-unique.md",
+  "provenance": "authored"
+}

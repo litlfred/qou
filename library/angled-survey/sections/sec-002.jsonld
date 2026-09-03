@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Where to ﬁnd proofs. Proofs of Theorem 1.1 are readily available in",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

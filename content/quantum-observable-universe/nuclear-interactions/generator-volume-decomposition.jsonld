@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-generator-volume-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:generator-volume-decomposition",
+  "kind": "proposition",
+  "title": "Nuclear energy as a sum of generator volumes via Chebyshev recurrence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy"
+  ],
+  "tags": [
+    "generator-volume",
+    "chebyshev",
+    "hecke-algebra",
+    "energy",
+    "factorization",
+    "braid-word",
+    "nuclear",
+    "binding-energy"
+  ],
+  "leanRef": "qou:QOU.Archimedean.generator_volume_decomposition",
+  "text": "generator-volume-decomposition.md",
+  "leanSource": "generator-volume-decomposition.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-binding-scale-catalan",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:binding-scale-catalan",
+  "kind": "proof",
+  "title": "Proof of binding scale catalan",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan"
+  ],
+  "text": "binding-scale-catalan-proof.md",
+  "provenance": "authored"
+}

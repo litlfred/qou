@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-brane-tower-q-laplacian-decay",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:brane-tower-q-laplacian-decay",
+  "kind": "proposition",
+  "title": "Brane-tower convergence: q-Laplacian exponential decay drives the $\\hbar_q^{2n}$ tail bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-non-commutative-probability-dictionary",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-brane-tower-q-laplacian-decay"
+  ],
+  "cites": [
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "brane-tower",
+    "q-laplacian",
+    "exponential-decay",
+    "geometric-series",
+    "non-local-integration",
+    "issue-649",
+    "established"
+  ],
+  "leanRef": "qou:QOU.Observations.brane_tower_q_laplacian_decay",
+  "text": "brane-tower-q-laplacian-decay.md",
+  "provenance": "authored"
+}

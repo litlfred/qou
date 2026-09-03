@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-molecular-hopf-chain-crossing-energy",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:molecular-hopf-chain-crossing-energy",
+  "kind": "example",
+  "title": "Crossing energy of an open Hopf chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain",
+  "tags": [
+    "molecular",
+    "hopf-chain",
+    "open-chain",
+    "crossing-energy"
+  ],
+  "text": "molecular-hopf-chain-crossing-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-cusp-shape-bar-parity",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cusp-shape-bar-parity",
+  "kind": "proposition",
+  "title": "Cusp-shape bar-parity: the figure-eight modulus splits as $\\mathfrak{V} = \\mathrm{Vol} + i\\,\\mathrm{CS}$",
+  "tags": [
+    "figure-eight",
+    "cusp-shape",
+    "complex-volume",
+    "chern-simons",
+    "bar-parity",
+    "cyclotomic",
+    "exceptional-divisor"
+  ],
+  "leanRef": "qou:QOU.Knot.CuspShapeBarParity.cusp_barParity_split",
+  "text": "cusp-shape-bar-parity.md",
+  "provenance": "authored"
+}

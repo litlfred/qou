@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-qbeta-counit-transition",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qbeta-counit-transition",
+  "kind": "remark",
+  "title": "$\\mathfrak{Q}_\\beta$ as a counit transition observable",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-counit-closed-form",
+    "papers/quantum-observable-universe/blocks/rem-energy-scale-planck",
+    "papers/quantum-observable-universe/blocks/prop-neutron-qvalue-symbolic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-qbeta-counit-closed-form",
+  "tags": [
+    "beta-decay",
+    "q-value",
+    "frobenius-counit",
+    "transition-observable",
+    "interpretation"
+  ],
+  "text": "qbeta-counit-transition.md",
+  "provenance": "authored"
+}

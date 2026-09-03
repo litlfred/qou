@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-fourier-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-fourier-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical Fourier transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+    "papers/quantum-observable-universe/blocks/prop-categorical-laplace-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-fourier-exists"
+  ],
+  "tags": [
+    "existence",
+    "fourier",
+    "peter-weyl"
+  ],
+  "leanRef": "qou:QOU.CategoricalFourier.exists",
+  "text": "categorical-fourier-transform-exists.md",
+  "leanSource": "categorical-fourier-transform-exists.lean",
+  "provenance": "authored"
+}

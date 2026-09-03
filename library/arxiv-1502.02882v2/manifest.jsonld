@@ -1,0 +1,50 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1502.02882v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Fusion categories via string diagrams Bruce Bartlett",
+  "contains": [
+    "library/arxiv-1502.02882v2/sections/sec-000",
+    "library/arxiv-1502.02882v2/sections/sec-001",
+    "library/arxiv-1502.02882v2/sections/sec-002",
+    "library/arxiv-1502.02882v2/sections/sec-003",
+    "library/arxiv-1502.02882v2/sections/sec-004",
+    "library/arxiv-1502.02882v2/sections/sec-005",
+    "library/arxiv-1502.02882v2/sections/sec-006",
+    "library/arxiv-1502.02882v2/sections/sec-007",
+    "library/arxiv-1502.02882v2/sections/sec-008",
+    "library/arxiv-1502.02882v2/sections/sec-009",
+    "library/arxiv-1502.02882v2/sections/sec-010",
+    "library/arxiv-1502.02882v2/sections/sec-011",
+    "library/arxiv-1502.02882v2/sections/sec-012",
+    "library/arxiv-1502.02882v2/sections/sec-013",
+    "library/arxiv-1502.02882v2/sections/sec-014",
+    "library/arxiv-1502.02882v2/sections/sec-015",
+    "library/arxiv-1502.02882v2/sections/sec-016",
+    "library/arxiv-1502.02882v2/sections/sec-017",
+    "library/arxiv-1502.02882v2/sections/sec-018",
+    "library/arxiv-1502.02882v2/sections/sec-019",
+    "library/arxiv-1502.02882v2/sections/sec-020",
+    "library/arxiv-1502.02882v2/sections/sec-021",
+    "library/arxiv-1502.02882v2/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1502.02882v2",
+    "source_file": "1502.02882v2.pdf",
+    "source_sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
+    "pages": 36,
+    "arxiv": {
+      "id": "1502.02882",
+      "version": "2",
+      "primary_class": "math.QA",
+      "stamp_date": "20 Jul 2015"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

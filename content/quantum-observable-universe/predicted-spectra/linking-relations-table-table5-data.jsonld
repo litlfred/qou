@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-linking-relations-table-table5-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:linking-relations-table-table5-data",
+  "kind": "table",
+  "title": "Data table 5 from rem:linking-relations-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-linking-relations-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "linking-relations-table-table5-data.md",
+  "provenance": "authored"
+}

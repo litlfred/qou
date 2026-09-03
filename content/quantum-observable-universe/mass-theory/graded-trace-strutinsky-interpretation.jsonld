@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-graded-trace-strutinsky-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:graded-trace-strutinsky-interpretation",
+  "kind": "remark",
+  "title": "Strutinsky macroscopic-plus-shell reading of the graded-trace residue split",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split",
+  "tags": [
+    "strutinsky",
+    "shell-correction",
+    "physical-interpretation"
+  ],
+  "text": "graded-trace-strutinsky-interpretation.md",
+  "provenance": "authored"
+}

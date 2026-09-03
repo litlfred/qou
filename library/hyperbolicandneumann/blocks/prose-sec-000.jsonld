@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hyperbolicandneumann/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Ideal triangulations and the gluing equations",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-1-ideal-triangulations-and-the-gluing-equations.md",
+  "derivedFrom": "library/hyperbolicandneumann/manifest",
+  "sourceDocument": "library/hyperbolicandneumann/manifest",
+  "provenance": "ingested"
+}

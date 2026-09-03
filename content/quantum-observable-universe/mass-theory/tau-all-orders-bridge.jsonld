@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-tau-all-orders-bridge",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:tau-all-orders-bridge",
+  "kind": "conjecture",
+  "title": "Order-mixing map versus distinct invariants for the fibre functor $\\tau$ across the $h$-expansion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crossed-module-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/conj-geom-universality",
+    "papers/quantum-observable-universe/blocks/rem-geom-bridge-status"
+  ],
+  "cites": [
+    "references/yekutieli2015",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "tier:S",
+    "geom",
+    "non-abelian-stokes",
+    "open-problem",
+    "fibre-functor",
+    "h-expansion",
+    "order-mixing",
+    "bring-surface"
+  ],
+  "leanRef": "qou:QOU.MassTheory.tau_all_orders_bridge",
+  "text": "tau-all-orders-bridge.md",
+  "leanSource": "tau-all-orders-bridge.lean",
+  "provenance": "authored"
+}

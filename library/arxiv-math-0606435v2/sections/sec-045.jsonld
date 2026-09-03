@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-045",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Studying alternating links by braid index",
+  "pageStart": 38,
+  "pageEnd": 39,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-045",
+    "library/arxiv-math-0606435v2/blocks/rem-sec-045-01",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-045-02",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-045-03",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-045-04",
+    "library/arxiv-math-0606435v2/blocks/rem-sec-045-05",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-045-06",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-045-07",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-045-08"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-three-calibration-inputs",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:three-calibration-inputs",
+  "kind": "proof",
+  "title": "Proof of three calibration inputs",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs"
+  ],
+  "text": "three-calibration-inputs-proof.md",
+  "provenance": "authored"
+}

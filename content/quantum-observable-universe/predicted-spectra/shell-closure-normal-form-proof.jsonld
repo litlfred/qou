@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-shell-closure-normal-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:shell-closure-normal-form",
+  "kind": "proof",
+  "title": "Proof of shell closure normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "text": "shell-closure-normal-form-proof.md",
+  "provenance": "authored"
+}

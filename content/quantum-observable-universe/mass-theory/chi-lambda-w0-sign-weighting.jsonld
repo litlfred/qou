@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-chi-lambda-w0-sign-weighting",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chi-lambda-w0-sign-weighting",
+  "kind": "proposition",
+  "title": "Long-element $\\chi_\\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-v21-hoefsmit-matrix-derivation",
+    "papers/quantum-observable-universe/blocks/rem-chi-v111-via-sign-substitution"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "c-k",
+    "wedderburn",
+    "sign-character",
+    "long-element",
+    "s3-representation-theory",
+    "markov-trace",
+    "per-block",
+    "open-rd-item-3"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.chi_lambda_w0_sign_weighting",
+  "text": "chi-lambda-w0-sign-weighting.md",
+  "leanSource": "chi-lambda-w0-sign-weighting.lean",
+  "provenance": "authored"
+}

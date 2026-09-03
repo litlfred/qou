@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1208.3475v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum Tamás G. Kovács Institute for Nuclear Research of the Hungarian Academy of Sciences",
+  "contains": [
+    "library/arxiv-1208.3475v2/sections/sec-000",
+    "library/arxiv-1208.3475v2/sections/sec-001",
+    "library/arxiv-1208.3475v2/sections/sec-002",
+    "library/arxiv-1208.3475v2/sections/sec-003",
+    "library/arxiv-1208.3475v2/sections/sec-004",
+    "library/arxiv-1208.3475v2/sections/sec-005",
+    "library/arxiv-1208.3475v2/sections/sec-006",
+    "library/arxiv-1208.3475v2/sections/sec-007",
+    "library/arxiv-1208.3475v2/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1208.3475v2",
+    "source_file": "1208.3475v2.pdf",
+    "source_sha256": "d53fc4eefa070ba38b1651b3d2bc999133159ceb12fd79de25d4fed3e8fe55eb",
+    "pages": 10,
+    "arxiv": {
+      "id": "1208.3475",
+      "version": "2",
+      "primary_class": "hep-lat",
+      "stamp_date": "12 Sep 2012"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

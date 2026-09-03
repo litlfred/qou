@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/monodromyhitchiny/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "contains": [
+    "library/monodromyhitchiny/blocks/prose-sec-021",
+    "library/monodromyhitchiny/blocks/prop-sec-021-01",
+    "library/monodromyhitchiny/blocks/cor-sec-021-02"
+  ],
+  "derivedFrom": "library/monodromyhitchiny/manifest",
+  "sourceDocument": "library/monodromyhitchiny/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0510388v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "contains": [
+    "library/0510388v1/sections/sec-000",
+    "library/0510388v1/sections/sec-001",
+    "library/0510388v1/sections/sec-002",
+    "library/0510388v1/sections/sec-003",
+    "library/0510388v1/sections/sec-004",
+    "library/0510388v1/sections/sec-005",
+    "library/0510388v1/sections/sec-006",
+    "library/0510388v1/sections/sec-007",
+    "library/0510388v1/sections/sec-008",
+    "library/0510388v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0510388v1",
+    "source_file": "0510388v1.pdf",
+    "source_sha256": "c83c0f6a2eaa74f322292f0da9046fd07d7c1fcd07c30f7b4faf39ecfb66ff12",
+    "pages": 108,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

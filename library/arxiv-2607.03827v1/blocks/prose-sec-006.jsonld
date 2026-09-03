@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2607.03827v1/blocks/prose-sec-006",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "An explicit example",
+  "pageStart": 22,
+  "pageEnd": 29,
+  "text": "../sections/sec-006-61-an-explicit-example.md",
+  "derivedFrom": "library/arxiv-2607.03827v1/manifest",
+  "sourceDocument": "library/arxiv-2607.03827v1/manifest",
+  "provenance": "ingested"
+}

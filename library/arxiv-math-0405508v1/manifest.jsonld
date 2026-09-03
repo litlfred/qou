@@ -1,0 +1,57 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0405508v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
+  "contains": [
+    "library/arxiv-math-0405508v1/sections/sec-000",
+    "library/arxiv-math-0405508v1/sections/sec-001",
+    "library/arxiv-math-0405508v1/sections/sec-002",
+    "library/arxiv-math-0405508v1/sections/sec-003",
+    "library/arxiv-math-0405508v1/sections/sec-004",
+    "library/arxiv-math-0405508v1/sections/sec-005",
+    "library/arxiv-math-0405508v1/sections/sec-006",
+    "library/arxiv-math-0405508v1/sections/sec-007",
+    "library/arxiv-math-0405508v1/sections/sec-008",
+    "library/arxiv-math-0405508v1/sections/sec-009",
+    "library/arxiv-math-0405508v1/sections/sec-010",
+    "library/arxiv-math-0405508v1/sections/sec-011",
+    "library/arxiv-math-0405508v1/sections/sec-012",
+    "library/arxiv-math-0405508v1/sections/sec-013",
+    "library/arxiv-math-0405508v1/sections/sec-014",
+    "library/arxiv-math-0405508v1/sections/sec-015",
+    "library/arxiv-math-0405508v1/sections/sec-016",
+    "library/arxiv-math-0405508v1/sections/sec-017",
+    "library/arxiv-math-0405508v1/sections/sec-018",
+    "library/arxiv-math-0405508v1/sections/sec-019",
+    "library/arxiv-math-0405508v1/sections/sec-020",
+    "library/arxiv-math-0405508v1/sections/sec-021",
+    "library/arxiv-math-0405508v1/sections/sec-022",
+    "library/arxiv-math-0405508v1/sections/sec-023",
+    "library/arxiv-math-0405508v1/sections/sec-024",
+    "library/arxiv-math-0405508v1/sections/sec-025",
+    "library/arxiv-math-0405508v1/sections/sec-026",
+    "library/arxiv-math-0405508v1/sections/sec-027",
+    "library/arxiv-math-0405508v1/sections/sec-028",
+    "library/arxiv-math-0405508v1/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0405508v1",
+    "source_file": "0405508v1.pdf",
+    "source_sha256": "ef2e41cf67f3a41140521748797696003e2cfa6c48c8b68efb8edd96b08d050a",
+    "pages": 27,
+    "arxiv": {
+      "id": "math/0405508",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "26 May 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

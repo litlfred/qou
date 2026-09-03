@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope",
+  "kind": "remark",
+  "title": "Formal scope: what the Lean catalogue establishes and defers",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-delta-tau-surrogate-taylor-coefficients"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-qbeta-delta-tau-surrogate-taylor-coefficients",
+  "tags": [
+    "qbeta",
+    "delta-tau",
+    "taylor-coefficients",
+    "lean-scope"
+  ],
+  "text": "qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-logarithm",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-logarithm",
+  "kind": "definition",
+  "title": "$q$-Logarithm (categorical adjoint)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-exponential"
+  ],
+  "tags": [
+    "hopf-algebra",
+    "primitive",
+    "q-logarithm",
+    "adjoint"
+  ],
+  "leanRef": "qou:QOU.QLogarithm",
+  "text": "q-logarithm.md",
+  "leanSource": "q-logarithm.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-braid-group-n-strand-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:braid-group-n-strand-table2-data",
+  "kind": "table",
+  "title": "Table 2 from rem:braid-group-n-strand",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-braid-group-n-strand"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "braid-group-n-strand-table2-data.md",
+  "provenance": "authored"
+}

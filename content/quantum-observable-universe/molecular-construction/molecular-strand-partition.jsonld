@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-molecular-strand-partition",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:molecular-strand-partition",
+  "kind": "definition",
+  "title": "Molecular strand-partition $\\lambda$ of $N$ strands",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-braid"
+  ],
+  "tags": [
+    "strand-partition",
+    "young-subgroup",
+    "composite",
+    "molecular",
+    "parabolic"
+  ],
+  "leanRef": "qou:QOU.Molecular.StrandPartition",
+  "text": "molecular-strand-partition.md",
+  "leanSource": "molecular-strand-partition.lean",
+  "provenance": "authored"
+}

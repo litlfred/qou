@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Applications to ball packing",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-010-6-applications-to-ball-packing.md",
+  "derivedFrom": "library/18/manifest",
+  "sourceDocument": "library/18/manifest",
+  "provenance": "ingested"
+}

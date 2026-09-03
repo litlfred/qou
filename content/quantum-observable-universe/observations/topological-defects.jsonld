@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-topological-defects",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:topological-defects",
+  "kind": "remark",
+  "title": "Topological signatures in large-scale structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+  "tags": [
+    "topology",
+    "large-scale-structure",
+    "observation"
+  ],
+  "text": "topological-defects.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-parameter-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:substrate-parameter-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the substrate parameter",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-substrate-parameter-unique"
+  ],
+  "text": "substrate-parameter-unique-proof.md",
+  "provenance": "authored"
+}

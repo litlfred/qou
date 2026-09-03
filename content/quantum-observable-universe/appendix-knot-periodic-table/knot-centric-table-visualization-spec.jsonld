@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-centric-table-visualization-spec",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-centric-table-visualization-spec",
+  "kind": "remark",
+  "title": "Interactive visualization specification for the knot-centric periodic table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/rem-knot-atom-diagrams"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-shell-transition-knot",
+  "tags": [
+    "periodic-table",
+    "knot-centric",
+    "visualization",
+    "simulator",
+    "appendix"
+  ],
+  "text": "knot-centric-table-visualization-spec.md",
+  "provenance": "authored"
+}

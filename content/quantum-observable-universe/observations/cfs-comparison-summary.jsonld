@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-cfs-comparison-summary",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cfs-comparison-summary",
+  "kind": "remark",
+  "title": "External comparison: Causal Fermion Systems share carrier and universality class with QOU but are a distinct continuum theory",
+  "interprets": "papers/quantum-observable-universe/blocks/rem-non-commutative-probability-dictionary",
+  "cites": [
+    "references/finster2021",
+    "references/finster2022",
+    "references/finster2024",
+    "references/dappiaggi2024",
+    "references/biane1998"
+  ],
+  "tags": [
+    "causal-fermion-systems",
+    "external-comparison",
+    "free-probability",
+    "summary"
+  ],
+  "text": "cfs-comparison-summary.md",
+  "provenance": "authored"
+}

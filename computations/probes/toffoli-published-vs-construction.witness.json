@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T19:03:55.530321+00:00",
-  "commitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
+  "computedAt": "2026-09-03T04:57:05.813709+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "reconstruction_equals_producer_witness",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 966,
+  "durationMs": 984,
   "computation": "toffoli-published-vs-construction",
   "scriptFile": "toffoli_published_vs_construction_audit.py",
   "scriptHash": "fe05aa4d715a",
-  "scriptCommitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
+  "scriptCommitSha": "2f3e5b2f83779b1b1a86972f520587b85d162739",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -103,5 +103,7 @@
   },
   "caveats": [
     "NOT a claim that the published forms are wrong. The only recorded construction lives in a _deprecated file that neither the content blocks nor the live producer cite, so it may itself be superseded by a derivation absent from the tree. What is established: the two disagree on three of four entries, the proof block's key lemma is convention-dependent and false as the producer runs, and the corpus does not record which side is current. NOTE the universality result WEAKENS a transcription-drift reading: a structural claim (all three control pairs giving the same amplitude) cannot arise from a mistyped number. Universality is now measured under BOTH indexings and fails under both, including the target-first reading where the block's own key lemma Delta_1 = 0 does hold -- so no choice of convention rescues it. That removes one of the two branches this probe previously could not separate: the published trio does not come from this construction under any reading of it. It remains possible that a different, unrecorded derivation produces them; the probe still cannot speak to a derivation that is not in the tree."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

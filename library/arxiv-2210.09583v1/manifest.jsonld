@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2210.09583v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT",
+  "contains": [
+    "library/arxiv-2210.09583v1/sections/sec-000",
+    "library/arxiv-2210.09583v1/sections/sec-001",
+    "library/arxiv-2210.09583v1/sections/sec-002",
+    "library/arxiv-2210.09583v1/sections/sec-003",
+    "library/arxiv-2210.09583v1/sections/sec-004",
+    "library/arxiv-2210.09583v1/sections/sec-005",
+    "library/arxiv-2210.09583v1/sections/sec-006",
+    "library/arxiv-2210.09583v1/sections/sec-007",
+    "library/arxiv-2210.09583v1/sections/sec-008",
+    "library/arxiv-2210.09583v1/sections/sec-009",
+    "library/arxiv-2210.09583v1/sections/sec-010",
+    "library/arxiv-2210.09583v1/sections/sec-011",
+    "library/arxiv-2210.09583v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2210.09583v1",
+    "source_file": "2210.09583v1.pdf",
+    "source_sha256": "38fc6fa465a06a7bc25954bfd34baccc888bd93a4e20522c26eae7d1c04af841",
+    "pages": 17,
+    "arxiv": {
+      "id": "2210.09583",
+      "version": "1",
+      "primary_class": "math.QA",
+      "stamp_date": "18 Oct 2022"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

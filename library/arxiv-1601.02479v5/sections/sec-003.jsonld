@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1601.02479v5/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cohomological integrality",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-1601.02479v5/blocks/prose-sec-003",
+    "library/arxiv-1601.02479v5/blocks/thm-sec-003-01"
+  ],
+  "derivedFrom": "library/arxiv-1601.02479v5/manifest",
+  "sourceDocument": "library/arxiv-1601.02479v5/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction and statement of results",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/ising/blocks/prose-sec-001",
+    "library/ising/blocks/thm-sec-001-01",
+    "library/ising/blocks/rem-sec-001-02"
+  ],
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

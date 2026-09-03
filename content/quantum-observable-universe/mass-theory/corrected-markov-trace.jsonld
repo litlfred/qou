@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-corrected-markov-trace",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:corrected-markov-trace",
+  "kind": "proposition",
+  "title": "Corrected Markov trace of the trefoil braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "tags": [
+    "markov-trace",
+    "correction",
+    "trefoil",
+    "yang-baxter",
+    "adjacent-generators"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.corrected_markov_trace",
+  "text": "corrected-markov-trace.md",
+  "provenance": "authored"
+}

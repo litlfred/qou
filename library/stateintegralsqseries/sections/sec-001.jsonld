@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/stateintegralsqseries/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "State-integrals and their q-series",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/stateintegralsqseries/blocks/prose-sec-001",
+    "library/stateintegralsqseries/blocks/rem-sec-001-01",
+    "library/stateintegralsqseries/blocks/rem-sec-001-02",
+    "library/stateintegralsqseries/blocks/rem-sec-001-03",
+    "library/stateintegralsqseries/blocks/cor-sec-001-04"
+  ],
+  "derivedFrom": "library/stateintegralsqseries/manifest",
+  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "provenance": "ingested"
+}

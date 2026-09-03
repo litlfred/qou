@@ -1,0 +1,1 @@
+The groupW =G(l, 1,n ) is isomorphic to the wreath product (Z/lZ)≀Sn and its splitting

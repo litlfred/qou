@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-substrate-line-bundle",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:substrate-line-bundle",
+  "kind": "definition",
+  "title": "The substrate line bundle and the $\\mathbb{G}_m$-family of differentials",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "tags": [
+    "line-bundle",
+    "multiplicative-group",
+    "projective",
+    "substrate",
+    "family"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.SubstrateLineBundle",
+  "text": "substrate-line-bundle.md",
+  "leanSource": "substrate-line-bundle.lean",
+  "provenance": "authored"
+}

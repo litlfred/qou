@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Slopes",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "contains": [
+    "library/04procbryden/blocks/prose-sec-011",
+    "library/04procbryden/blocks/conj-sec-011-01",
+    "library/04procbryden/blocks/conj-sec-011-02"
+  ],
+  "derivedFrom": "library/04procbryden/manifest",
+  "sourceDocument": "library/04procbryden/manifest",
+  "provenance": "ingested"
+}

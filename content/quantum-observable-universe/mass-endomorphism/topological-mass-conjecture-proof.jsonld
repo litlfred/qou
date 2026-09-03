@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-decomposition-mass",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-decomposition-mass",
+  "kind": "proof",
+  "title": "Proof of topological mass conjecture",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-topological-decomposition-mass"
+  ],
+  "text": "topological-mass-conjecture-proof.md",
+  "provenance": "authored"
+}

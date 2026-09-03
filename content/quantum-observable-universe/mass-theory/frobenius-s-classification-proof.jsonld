@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-frobenius-s-classification",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:frobenius-s-classification",
+  "kind": "proof",
+  "title": "Proof of frobenius s classification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-s-classification"
+  ],
+  "text": "frobenius-s-classification-proof.md",
+  "provenance": "authored"
+}

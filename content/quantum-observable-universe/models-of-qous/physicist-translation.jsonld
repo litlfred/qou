@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-physicist-translation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:physicist-translation",
+  "kind": "remark",
+  "title": "Archimedean realization of the categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+  "tags": [
+    "archimedean",
+    "physicist",
+    "realization",
+    "standard-model"
+  ],
+  "text": "physicist-translation.md",
+  "provenance": "authored"
+}

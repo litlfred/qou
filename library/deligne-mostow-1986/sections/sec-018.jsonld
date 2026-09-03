@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Codimension i etaleness",
+  "pageStart": 42,
+  "pageEnd": 46,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-018",
+    "library/deligne-mostow-1986/blocks/prop-sec-018-01",
+    "library/deligne-mostow-1986/blocks/rem-sec-018-02",
+    "library/deligne-mostow-1986/blocks/rem-sec-018-03"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

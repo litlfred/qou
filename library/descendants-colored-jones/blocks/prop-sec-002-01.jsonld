@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/descendants-colored-jones/blocks/prop-sec-002-01",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "prop-sec-002-01.md",
+  "derivedFrom": "library/descendants-colored-jones/sections/sec-002",
+  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "provenance": "ingested"
+}

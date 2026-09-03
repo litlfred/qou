@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/kirbycal/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Calculus for Framed Links in S^3",
+  "contains": [
+    "library/kirbycal/sections/sec-000",
+    "library/kirbycal/sections/sec-001",
+    "library/kirbycal/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "kirbycal",
+    "source_file": "kirbycal.pdf",
+    "source_sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
+    "pages": 22,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

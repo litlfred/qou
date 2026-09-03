@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:23:36.346163+00:00",
-  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:44:55.111750+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_chain_transfer_is_rank_one",
@@ -54,7 +54,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "chain_telescopes_and_ordering_sensitivity_probe",
   "scriptFile": "chain_telescopes_and_ordering_sensitivity_probe.py",
   "scriptHash": "e15d4993614a",
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -159,5 +162,7 @@
     "THE 'TRANSFER MATRIX' IS DEGENERATE ON THE CHAIN. The owner asked for a spectral decomposition and a decay rate within the tower; for the adjacent chain there is none to find, because the transfer operator has a single nonzero eigenvalue. That is a result, not a shortcut: it is why the chain is exactly additive and why it cannot produce any distance falloff. A genuinely non-scalar transfer operator only appears once non-adjacent bonds are present, and that is precisely the case this probe cannot yet compute at A = 4.",
     "ALL-PAIRS AT A = 4 IS STILL NOT COMPUTED. Six bonds at distances 1,1,1,2,2,3 leave no prefix-independent F, so the telescoping fails and H_12 is unavoidable by this route. Reaching it needs a Hecke word reducer (greedy top-generator peeling with the quadratic relation, elements as {word: coefficient} maps), which is a build rather than a measurement. Nothing here extrapolates the saturation model to A = 4; the only A = 4 number reported is the exact chain value.",
     "The ordering dependence is a MODELLING AMBIGUITY the corpus currently resolves by convention: `ordering(Z,N)` interleaves protons first, giving pnp and pnn. A physical nucleus has no preferred nucleon order, so the 16-17% chain swing and the 4-5% all-pairs swing are both artefacts of that convention. Reporting which topology minimises the artefact is the point; neither eliminates it."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

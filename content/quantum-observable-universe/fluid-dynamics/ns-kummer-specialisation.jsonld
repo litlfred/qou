@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:ns-kummer-specialisation",
+  "kind": "proposition",
+  "title": "Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion",
+    "papers/quantum-observable-universe/blocks/prop-ns-obstruction-computation",
+    "papers/quantum-observable-universe/blocks/conj-qou-p-neq-np",
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes",
+    "papers/quantum-observable-universe/blocks/rem-skein-filtration-trichotomy"
+  ],
+  "cites": [
+    "references/aaronsonwigderson2009",
+    "references/grochow2017"
+  ],
+  "tags": [
+    "kummer",
+    "specialisation",
+    "etale",
+    "obstruction",
+    "divisibility",
+    "euler-characteristic"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.ns_kummer_specialisation",
+  "text": "ns-kummer-specialisation.md",
+  "provenance": "authored"
+}

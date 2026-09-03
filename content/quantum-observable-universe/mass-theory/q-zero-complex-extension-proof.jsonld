@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-zero-complex-extension",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-zero-complex-extension",
+  "kind": "proof",
+  "title": "Proof of q zero complex extension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-zero-complex-extension"
+  ],
+  "text": "q-zero-complex-extension-proof.md",
+  "provenance": "authored"
+}

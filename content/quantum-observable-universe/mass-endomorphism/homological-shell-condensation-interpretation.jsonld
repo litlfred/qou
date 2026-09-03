@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-homological-shell-condensation-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:homological-shell-condensation-interpretation",
+  "kind": "remark",
+  "title": "Condensation terminology, conditional categorical-neutrality, and supporting evidence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-homological-shell-condensation",
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells",
+    "papers/quantum-observable-universe/blocks/prop-graded-trace-residue-split"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-homological-shell-condensation",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "spectral-sequence",
+    "brane-tower",
+    "homological-condensation"
+  ],
+  "text": "homological-shell-condensation-interpretation.md",
+  "provenance": "authored"
+}

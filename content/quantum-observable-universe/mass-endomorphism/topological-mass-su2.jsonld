@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-topological-mass-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:topological-mass-su2",
+  "kind": "example",
+  "title": "Topological mass decomposition for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-topological-mass",
+    "papers/quantum-observable-universe/blocks/ex-descent-eigenspaces-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-topological-mass",
+  "tags": [
+    "su2",
+    "topological-mass",
+    "hopf",
+    "euler-characteristic"
+  ],
+  "text": "topological-mass-su2.md",
+  "provenance": "authored"
+}

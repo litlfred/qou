@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-binding-alpha-shift-extension-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:binding-alpha-shift-extension-context",
+  "kind": "remark",
+  "title": "Setting, candidate table, Lean structure, and open math for the A≥3 binding extension",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-alpha-shift-extension"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-binding-alpha-shift-extension",
+  "tags": [
+    "binding",
+    "alpha-shift",
+    "torus-knot",
+    "reeb-phase",
+    "open-math"
+  ],
+  "text": "binding-alpha-shift-extension-context.md",
+  "provenance": "authored"
+}

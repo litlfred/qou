@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-brings-smoothness-resolution",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:brings-smoothness-resolution",
+  "kind": "proposition",
+  "title": "Smoothness of the Bring's surface and intrinsic resolution of projection singularities",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-color-bundles"
+  ],
+  "tags": [
+    "brings-surface",
+    "smooth",
+    "resolution",
+    "branch-point",
+    "color"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.brings_smoothness_resolution",
+  "text": "brings-smoothness-resolution.md",
+  "leanSource": "brings-smoothness-resolution.lean",
+  "provenance": "authored"
+}

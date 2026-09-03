@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-006",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Discussion",
+  "pageStart": 25,
+  "pageEnd": 30,
+  "text": "../sections/sec-006-discussion.md",
+  "derivedFrom": "library/arxiv-cond-mat-9811142v1/manifest",
+  "sourceDocument": "library/arxiv-cond-mat-9811142v1/manifest",
+  "provenance": "ingested"
+}

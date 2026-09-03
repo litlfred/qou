@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1906.12122v2/blocks/prose-sec-032",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgments",
+  "pageStart": 62,
+  "pageEnd": 62,
+  "text": "../sections/sec-032-acknowledgments.md",
+  "derivedFrom": "library/arxiv-1906.12122v2/manifest",
+  "sourceDocument": "library/arxiv-1906.12122v2/manifest",
+  "provenance": "ingested"
+}

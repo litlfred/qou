@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0411505v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION",
+  "contains": [
+    "library/arxiv-math-0411505v2/sections/sec-000",
+    "library/arxiv-math-0411505v2/sections/sec-001",
+    "library/arxiv-math-0411505v2/sections/sec-002",
+    "library/arxiv-math-0411505v2/sections/sec-003",
+    "library/arxiv-math-0411505v2/sections/sec-004",
+    "library/arxiv-math-0411505v2/sections/sec-005",
+    "library/arxiv-math-0411505v2/sections/sec-006",
+    "library/arxiv-math-0411505v2/sections/sec-007",
+    "library/arxiv-math-0411505v2/sections/sec-008",
+    "library/arxiv-math-0411505v2/sections/sec-009",
+    "library/arxiv-math-0411505v2/sections/sec-010",
+    "library/arxiv-math-0411505v2/sections/sec-011",
+    "library/arxiv-math-0411505v2/sections/sec-012",
+    "library/arxiv-math-0411505v2/sections/sec-013",
+    "library/arxiv-math-0411505v2/sections/sec-014",
+    "library/arxiv-math-0411505v2/sections/sec-015",
+    "library/arxiv-math-0411505v2/sections/sec-016",
+    "library/arxiv-math-0411505v2/sections/sec-017",
+    "library/arxiv-math-0411505v2/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0411505v2",
+    "source_file": "0411505v2.pdf",
+    "source_sha256": "a38cec365e0a227ecbfd1f3feaa9910d56cc8026e406fc0148fbbb1c598e45cf",
+    "pages": 22,
+    "arxiv": {
+      "id": "math/0411505",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "7 Mar 2005"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

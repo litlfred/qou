@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
+  "pageStart": 20,
+  "pageEnd": 23,
+  "contains": [
+    "library/download/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "library/download/manifest",
+  "sourceDocument": "library/download/manifest",
+  "provenance": "ingested"
+}

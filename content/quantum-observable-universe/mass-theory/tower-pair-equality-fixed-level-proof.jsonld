@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-tower-pair-equality-fixed-level",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:tower-pair-equality-fixed-level",
+  "kind": "proof",
+  "title": "Proof of tower pair equality fixed level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-tower-pair-equality-fixed-level"
+  ],
+  "text": "tower-pair-equality-fixed-level-proof.md",
+  "provenance": "authored"
+}

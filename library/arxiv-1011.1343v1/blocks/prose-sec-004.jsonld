@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Three-nucleon interactions",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-004-42-three-nucleon-interactions.md",
+  "derivedFrom": "library/arxiv-1011.1343v1/manifest",
+  "sourceDocument": "library/arxiv-1011.1343v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/xi/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Abstract",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/xi/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/xi/manifest",
+  "sourceDocument": "library/xi/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0003017v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Random Matrix Theory and Chiral Symmetry in QCD J.J.M. Verbaarschot",
+  "contains": [
+    "library/arxiv-hep-ph-0003017v2/sections/sec-000",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-001",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-002",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-003",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-004",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-005",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-006",
+    "library/arxiv-hep-ph-0003017v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0003017v2",
+    "source_file": "0003017v2.pdf",
+    "source_sha256": "1660907865346bdf43c71b3529e742cb4d7031983c99012027040e80c7bef132",
+    "pages": 61,
+    "arxiv": {
+      "id": "hep-ph/0003017",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "26 Jun 2000"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

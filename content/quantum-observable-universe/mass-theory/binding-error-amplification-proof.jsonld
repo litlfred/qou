@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-binding-error-amplification",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:binding-error-amplification",
+  "kind": "proof",
+  "title": "Proof of binding error amplification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-error-amplification"
+  ],
+  "text": "binding-error-amplification-proof.md",
+  "provenance": "authored"
+}

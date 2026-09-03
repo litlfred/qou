@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-co-molecular-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:co-molecular-braid",
+  "kind": "definition",
+  "title": "Carbon monoxide $CO$ as a molecular braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil"
+  ],
+  "tags": [
+    "carbon-monoxide",
+    "CO",
+    "triple-bond",
+    "heteronuclear",
+    "molecular-braid"
+  ],
+  "leanRef": "qou:QOU.Molecular.COBraid",
+  "text": "co-molecular-braid.md",
+  "leanSource": "co-molecular-braid.lean",
+  "provenance": "authored"
+}

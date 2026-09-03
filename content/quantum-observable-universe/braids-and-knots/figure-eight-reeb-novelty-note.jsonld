@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-figure-eight-reeb-novelty-note",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:figure-eight-reeb-novelty-note",
+  "kind": "remark",
+  "title": "Novelty and scope of the q-Reeb-rotation reading of the figure-eight eigenvalue",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation",
+  "tags": [
+    "figure-eight",
+    "reeb-flow",
+    "mathematical-novelty",
+    "formalization-note"
+  ],
+  "text": "figure-eight-reeb-novelty-note.md",
+  "provenance": "authored"
+}

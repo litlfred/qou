@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/resur-and-mld-calc-d-sauzin-hal/blocks/prose-sec-000",
+    "library/resur-and-mld-calc-d-sauzin-hal/blocks/ex-sec-000-01"
+  ],
+  "derivedFrom": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "sourceDocument": "library/resur-and-mld-calc-d-sauzin-hal/manifest",
+  "provenance": "ingested"
+}

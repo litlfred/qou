@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:molecular-hopf-ring",
+  "kind": "definition",
+  "title": "Molecular Hopf ring (closed)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "tags": [
+    "molecular",
+    "hopf-ring",
+    "closed-ring",
+    "covalent-bond",
+    "linking-matrix",
+    "circulant",
+    "cyclic"
+  ],
+  "leanRef": "qou:QOU.Organic.MolecularHopfRing",
+  "text": "molecular-hopf-ring.md",
+  "leanSource": "molecular-hopf-ring.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1101.1563v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Composition-Diamond lemma for categories",
+  "pageStart": 8,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-1101.1563v1/blocks/prose-sec-002",
+    "library/arxiv-1101.1563v1/blocks/lem-sec-002-01",
+    "library/arxiv-1101.1563v1/blocks/lem-sec-002-02",
+    "library/arxiv-1101.1563v1/blocks/thm-sec-002-03",
+    "library/arxiv-1101.1563v1/blocks/rem-sec-002-04",
+    "library/arxiv-1101.1563v1/blocks/thm-sec-002-05",
+    "library/arxiv-1101.1563v1/blocks/cor-sec-002-06",
+    "library/arxiv-1101.1563v1/blocks/thm-sec-002-07",
+    "library/arxiv-1101.1563v1/blocks/rem-sec-002-08"
+  ],
+  "derivedFrom": "library/arxiv-1101.1563v1/manifest",
+  "sourceDocument": "library/arxiv-1101.1563v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/acsv231201/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/acsv231201/manifest",
+  "sourceDocument": "library/acsv231201/manifest",
+  "provenance": "ingested"
+}

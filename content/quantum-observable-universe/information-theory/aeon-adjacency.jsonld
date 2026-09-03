@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-aeon-adjacency",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:aeon-adjacency",
+  "kind": "definition",
+  "title": "Aeon adjacency",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-aeon",
+    "papers/quantum-observable-universe/blocks/def-aeon-boundary"
+  ],
+  "tags": [
+    "aeon",
+    "jet-horizon",
+    "adjacency",
+    "cyclic-cosmology",
+    "big-bang"
+  ],
+  "leanRef": "qou:QOU.aeonAdjacent",
+  "text": "aeon-adjacency.md",
+  "leanSource": "aeon-adjacency.lean",
+  "provenance": "authored"
+}

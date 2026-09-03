@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Fukaya category",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-013",
+    "library/arxiv-1006.1099v3/blocks/rem-sec-013-01"
+  ],
+  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

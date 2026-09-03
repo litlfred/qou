@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1002.4860v2/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Braid group",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-002-21-braid-group.md",
+  "derivedFrom": "library/arxiv-1002.4860v2/manifest",
+  "sourceDocument": "library/arxiv-1002.4860v2/manifest",
+  "provenance": "ingested"
+}

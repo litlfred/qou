@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-frobenius-lepton-meson-bridge",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:frobenius-lepton-meson-bridge",
+  "kind": "proof",
+  "title": "Proof of frobenius lepton meson bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-lepton-meson-bridge"
+  ],
+  "text": "frobenius-lepton-meson-bridge-proof.md",
+  "provenance": "authored"
+}

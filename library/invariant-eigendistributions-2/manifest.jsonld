@@ -1,0 +1,47 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/invariant-eigendistributions-2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+  "contains": [
+    "library/invariant-eigendistributions-2/sections/sec-000",
+    "library/invariant-eigendistributions-2/sections/sec-001",
+    "library/invariant-eigendistributions-2/sections/sec-002",
+    "library/invariant-eigendistributions-2/sections/sec-003",
+    "library/invariant-eigendistributions-2/sections/sec-004",
+    "library/invariant-eigendistributions-2/sections/sec-005",
+    "library/invariant-eigendistributions-2/sections/sec-006",
+    "library/invariant-eigendistributions-2/sections/sec-007",
+    "library/invariant-eigendistributions-2/sections/sec-008",
+    "library/invariant-eigendistributions-2/sections/sec-009",
+    "library/invariant-eigendistributions-2/sections/sec-010",
+    "library/invariant-eigendistributions-2/sections/sec-011",
+    "library/invariant-eigendistributions-2/sections/sec-012",
+    "library/invariant-eigendistributions-2/sections/sec-013",
+    "library/invariant-eigendistributions-2/sections/sec-014",
+    "library/invariant-eigendistributions-2/sections/sec-015",
+    "library/invariant-eigendistributions-2/sections/sec-016",
+    "library/invariant-eigendistributions-2/sections/sec-017",
+    "library/invariant-eigendistributions-2/sections/sec-018",
+    "library/invariant-eigendistributions-2/sections/sec-019",
+    "library/invariant-eigendistributions-2/sections/sec-020",
+    "library/invariant-eigendistributions-2/sections/sec-021",
+    "library/invariant-eigendistributions-2/sections/sec-022",
+    "library/invariant-eigendistributions-2/sections/sec-023",
+    "library/invariant-eigendistributions-2/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "invariant-eigendistributions-2",
+    "source_file": "Invariant_eigendistributions_2.pdf",
+    "source_sha256": "ee43c3ebeff9526549f27b92244b135534e92c95b0025cd13d0ff822253c1987",
+    "pages": 33,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

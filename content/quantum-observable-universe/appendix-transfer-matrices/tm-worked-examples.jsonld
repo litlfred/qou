@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tm-worked-examples",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-worked-examples",
+  "kind": "prose",
+  "title": "Worked examples (light nuclei)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-transfer-matrix-operator"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "worked-example",
+    "deuterium",
+    "helium",
+    "tritium",
+    "hydrogen",
+    "appendix"
+  ],
+  "text": "tm-worked-examples.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-compound-beta-shell-calibration-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:compound-beta-shell-calibration-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:compound-beta-shell-calibration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "compound-beta-shell-calibration-table2-data.md",
+  "provenance": "authored"
+}

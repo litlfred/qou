@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-assembly-shortest-production",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:assembly-shortest-production",
+  "kind": "remark",
+  "title": "The assembly path is canonical: shortest word up to symmetry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-benzene-assembly-spine",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-lp",
+  "tags": [
+    "assembly-spine",
+    "normal-form",
+    "canonical-path",
+    "min-action",
+    "retrosynthesis"
+  ],
+  "text": "assembly-shortest-production.md",
+  "provenance": "authored"
+}

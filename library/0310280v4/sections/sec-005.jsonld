@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310280v4/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A weak transversal MTWS",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "contains": [
+    "library/0310280v4/blocks/prose-sec-005",
+    "library/0310280v4/blocks/thm-sec-005-01",
+    "library/0310280v4/blocks/rem-sec-005-02"
+  ],
+  "derivedFrom": "library/0310280v4/manifest",
+  "sourceDocument": "library/0310280v4/manifest",
+  "provenance": "ingested"
+}

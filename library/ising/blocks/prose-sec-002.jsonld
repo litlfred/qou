@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Weighted dependency graphs. The theory of weighted dependency graphs, recently intro-",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-002-12-weighted-dependency-graphs-the-theory-of-weig.md",
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

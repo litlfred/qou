@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-degree-two-baryon-weight",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:degree-two-baryon-weight",
+  "kind": "proposition",
+  "title": "Degree-2 weight $\\beta_2 = -2[3]_q$ from baryon quantum number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "leanRef": "qou:QOU.BaryonWeight.beta2_approx",
+  "text": "degree-two-baryon-weight.md",
+  "leanSource": "degree-two-baryon-weight.lean",
+  "provenance": "authored"
+}

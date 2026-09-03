@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-categorical-transport",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-categorical-transport",
+  "kind": "remark",
+  "title": "Categorical transport equation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+    "papers/quantum-observable-universe/blocks/def-categorical-jet"
+  ],
+  "tags": [
+    "glossary",
+    "transport",
+    "jet-bundle",
+    "q-deformation"
+  ],
+  "defines": [
+    "categorical-transport"
+  ],
+  "leanRef": "qou:QOU.CategoricalTransport",
+  "text": "glossary-categorical-transport.md",
+  "leanSource": "glossary-categorical-transport.lean",
+  "provenance": "authored"
+}

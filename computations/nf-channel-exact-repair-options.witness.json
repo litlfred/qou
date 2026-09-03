@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-31T20:06:39.474084+00:00",
-  "commitSha": "b581797c0f55f89964f9013eb44ef74798ef8f88",
+  "computedAt": "2026-09-03T04:48:37.302913+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "std_character_is_2_h_h_minus1_minus1_0",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 56,
+  "durationMs": 57,
   "computation": "nf-channel-exact-repair-options",
   "scriptFile": "nf_channel_exact_repair_options_probe.py",
   "scriptHash": "1ef21f07ab7f",
-  "scriptCommitSha": "b581797c0f55f89964f9013eb44ef74798ef8f88",
+  "scriptCommitSha": "56b499230346e0ee6c8b854fe198ae1fc811fa8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,8 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -101,5 +103,7 @@
     "Written as diagnosis only; option B has since been APPLIED (see the module docstring). The facts below are about the algebra, not the function's state, so they are unaffected. This probe supplies the facts behind the choice, including the blast radius of option C (W_SYM/W_STD/W_ALT are consumed arithmetically by pyhecke/molecular.py lines 121/124/125, pyhecke/atom.py line 333 vertex_volume, and qou-mass/.../_internal/hecke_core.py lines 230-232).",
     "W_SYM/W_STD/W_ALT are NOT wrong in themselves — they are the q-Plancherel measure d_lam^2/sum d^2 with d = (q, q^2+1, q). The error is using them where the Markov trace weight belongs. Any fix should leave W alone and say what it is.",
     "Separate decision, whichever option is taken: the exact-Fraction path evaluates at _Q_FRAC = 111/100, not q_0, which is why the 1-dim channels differ from a q_0 computation in the 5th decimal. That is a design choice of the exact path, not part of this bug, but a caller wanting q_0 needs a q parameter."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

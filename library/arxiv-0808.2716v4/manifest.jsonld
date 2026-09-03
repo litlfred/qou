@@ -1,0 +1,50 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.2716v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "CUSP AREAS OF F AREY MANIFOLDS",
+  "contains": [
+    "library/arxiv-0808.2716v4/sections/sec-000",
+    "library/arxiv-0808.2716v4/sections/sec-001",
+    "library/arxiv-0808.2716v4/sections/sec-002",
+    "library/arxiv-0808.2716v4/sections/sec-003",
+    "library/arxiv-0808.2716v4/sections/sec-004",
+    "library/arxiv-0808.2716v4/sections/sec-005",
+    "library/arxiv-0808.2716v4/sections/sec-006",
+    "library/arxiv-0808.2716v4/sections/sec-007",
+    "library/arxiv-0808.2716v4/sections/sec-008",
+    "library/arxiv-0808.2716v4/sections/sec-009",
+    "library/arxiv-0808.2716v4/sections/sec-010",
+    "library/arxiv-0808.2716v4/sections/sec-011",
+    "library/arxiv-0808.2716v4/sections/sec-012",
+    "library/arxiv-0808.2716v4/sections/sec-013",
+    "library/arxiv-0808.2716v4/sections/sec-014",
+    "library/arxiv-0808.2716v4/sections/sec-015",
+    "library/arxiv-0808.2716v4/sections/sec-016",
+    "library/arxiv-0808.2716v4/sections/sec-017",
+    "library/arxiv-0808.2716v4/sections/sec-018",
+    "library/arxiv-0808.2716v4/sections/sec-019",
+    "library/arxiv-0808.2716v4/sections/sec-020",
+    "library/arxiv-0808.2716v4/sections/sec-021",
+    "library/arxiv-0808.2716v4/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0808.2716v4",
+    "source_file": "0808.2716v4.pdf",
+    "source_sha256": "ea66f7ddcf9e9fe68292d8334dd47fe60f8a1debcb453f00ac35a8dc183165f8",
+    "pages": 44,
+    "arxiv": {
+      "id": "0808.2716",
+      "version": "4",
+      "primary_class": "math.GT",
+      "stamp_date": "11 Feb 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

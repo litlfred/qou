@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-laplace-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-laplace-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical Laplace transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-laplace-exists",
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-unique"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-laplace-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "laplace"
+  ],
+  "leanRef": "qou:QOU.CategoricalLaplace.unique",
+  "text": "categorical-laplace-transform-unique.md",
+  "leanSource": "categorical-laplace-transform-unique.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cuspshapes/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Spaces of hyperbolic structures",
+  "pageStart": 6,
+  "pageEnd": 8,
+  "text": "../sections/sec-003-3-spaces-of-hyperbolic-structures.md",
+  "derivedFrom": "library/cuspshapes/manifest",
+  "sourceDocument": "library/cuspshapes/manifest",
+  "provenance": "ingested"
+}

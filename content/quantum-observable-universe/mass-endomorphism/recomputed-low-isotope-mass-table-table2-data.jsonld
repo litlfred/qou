@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-recomputed-low-isotope-mass-table-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:recomputed-low-isotope-mass-table-table2-data",
+  "kind": "table",
+  "title": "Table 2 from rem:recomputed-low-isotope-mass-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-recomputed-low-isotope-mass-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "recomputed-low-isotope-mass-table-table2-data.md",
+  "provenance": "authored"
+}

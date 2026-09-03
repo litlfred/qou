@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-symmetric-point-channel-collapse",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:symmetric-point-channel-collapse",
+  "kind": "remark",
+  "title": "Channel collapse across all three operator assignments",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-symmetric-point-channel-collapse",
+  "tags": [
+    "symmetric-point",
+    "hecke",
+    "degeneration"
+  ],
+  "text": "symmetric-point-channel-collapse-remark.md",
+  "provenance": "authored"
+}

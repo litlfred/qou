@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1601.02479v5/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The integrality isomorphism — Theorem A",
+  "pageStart": 37,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-1601.02479v5/blocks/prose-sec-018",
+    "library/arxiv-1601.02479v5/blocks/rem-sec-018-01",
+    "library/arxiv-1601.02479v5/blocks/rem-sec-018-02",
+    "library/arxiv-1601.02479v5/blocks/rem-sec-018-03",
+    "library/arxiv-1601.02479v5/blocks/thm-sec-018-04",
+    "library/arxiv-1601.02479v5/blocks/cor-sec-018-05"
+  ],
+  "derivedFrom": "library/arxiv-1601.02479v5/manifest",
+  "sourceDocument": "library/arxiv-1601.02479v5/manifest",
+  "provenance": "ingested"
+}

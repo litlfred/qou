@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ks-multiplicativity-via-markov",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ks-multiplicativity-via-markov",
+  "kind": "remark",
+  "title": "Algebraic shortcut: Kontsevich--Soibelman's multiplicative invariant from the Markov property",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+    "papers/unital-groebner-bases/blocks/cor-pbw"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+  "cites": [
+    "references/kontsevich-soibelman-2008",
+    "references/bergman1978"
+  ],
+  "text": "ks-multiplicativity-via-markov.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The colored Jones function for sl2",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-005",
+    "library/0309214v3/blocks/thm-sec-005-01",
+    "library/0309214v3/blocks/lem-sec-005-02",
+    "library/0309214v3/blocks/lem-sec-005-03",
+    "library/0309214v3/blocks/cor-sec-005-04",
+    "library/0309214v3/blocks/rem-sec-005-05",
+    "library/0309214v3/blocks/rem-sec-005-06"
+  ],
+  "derivedFrom": "library/0309214v3/manifest",
+  "sourceDocument": "library/0309214v3/manifest",
+  "provenance": "ingested"
+}

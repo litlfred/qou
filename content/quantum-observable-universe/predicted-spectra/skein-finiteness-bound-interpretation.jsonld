@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-finiteness-bound-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-finiteness-bound-interpretation",
+  "kind": "remark",
+  "title": "The nuclear chart lattice and particle finiteness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound",
+    "papers/quantum-observable-universe/blocks/prop-beta-stability",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skein-finiteness-bound",
+  "text": "skein-finiteness-bound-interpretation.md",
+  "provenance": "authored"
+}

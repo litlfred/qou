@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS",
+  "contains": [
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/sec-000",
+    "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co",
+    "source_file": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf",
+    "source_sha256": "cf021725c96e29ec51e9d81a6f677b169cedfcca6de5f7f43f74fd7fd0a0ee6a",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

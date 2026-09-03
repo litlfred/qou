@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-color-su3-from-g2",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:color-su3-from-g2",
+  "kind": "proposition",
+  "title": "Color $\\mathrm{SU}(3)$ from octonionic stabilization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-octonion-algebra"
+  ],
+  "cites": [
+    "references/gunaydin-gursey1973"
+  ],
+  "leanRef": "qou:QOU.Eightfold.Sym2Gate.sym2_dim_3",
+  "text": "color-su3-from-g2.md",
+  "provenance": "authored"
+}

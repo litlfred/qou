@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-momentum-properties",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-momentum-properties",
+  "kind": "proposition",
+  "title": "Additivity, Markov invariance, and parity of $q$-momentum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-momentum"
+  ],
+  "tags": [
+    "momentum",
+    "q-deformed",
+    "additivity",
+    "markov-invariance",
+    "parity"
+  ],
+  "leanRef": "qou:QOU.Archimedean.qMomentumP_additive",
+  "text": "q-momentum-properties.md",
+  "leanSource": "q-momentum-properties.lean",
+  "provenance": "authored"
+}

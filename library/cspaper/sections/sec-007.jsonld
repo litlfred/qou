@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "In",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/cspaper/blocks/prose-sec-007",
+    "library/cspaper/blocks/lem-sec-007-01",
+    "library/cspaper/blocks/prop-sec-007-02",
+    "library/cspaper/blocks/thm-sec-007-03",
+    "library/cspaper/blocks/rem-sec-007-04"
+  ],
+  "derivedFrom": "library/cspaper/manifest",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

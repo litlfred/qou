@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-ordering-jet-compatibility",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:ordering-jet-compatibility",
+  "kind": "proof",
+  "title": "Proof of ordering jet compatibility",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-ordering-jet-compatibility"
+  ],
+  "text": "ordering-jet-compatibility-proof.md",
+  "provenance": "authored"
+}

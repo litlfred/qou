@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-global-gluing",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:global-gluing",
+  "kind": "proposition",
+  "title": "Global gluing via twisted quantization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-global-gluing"
+  ],
+  "tags": [
+    "yekutieli",
+    "twisted-quantization",
+    "global-gluing"
+  ],
+  "leanRef": "qou:QOU.Torsion.global_gluing",
+  "text": "global-gluing.md",
+  "leanSource": "global-gluing.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-exterior-square-borromean",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:exterior-square-borromean",
+  "kind": "proof",
+  "title": "Proof of exterior square borromean",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-exterior-square-borromean"
+  ],
+  "text": "exterior-square-borromean-proof.md",
+  "provenance": "authored"
+}

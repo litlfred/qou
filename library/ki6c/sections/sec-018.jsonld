@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Estimate of the range of ∆′",
+  "pageStart": 30,
+  "pageEnd": 33,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-018",
+    "library/ki6c/blocks/lem-sec-018-01",
+    "library/ki6c/blocks/rem-sec-018-02"
+  ],
+  "derivedFrom": "library/ki6c/manifest",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

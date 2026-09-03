@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0401084v3/blocks/thm-sec-002-03",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Steepest Descent Method",
+  "pageStart": 4,
+  "pageEnd": 14,
+  "text": "thm-sec-002-03.md",
+  "derivedFrom": "library/arxiv-math-0401084v3/sections/sec-002",
+  "sourceDocument": "library/arxiv-math-0401084v3/manifest",
+  "provenance": "ingested"
+}

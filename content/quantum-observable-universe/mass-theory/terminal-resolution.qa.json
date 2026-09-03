@@ -8,10 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/terminal-resolution.lean"
   },
   "source_hashes": {
-    "md": "e1d06419bd32",
-    "ts": "b2d43f14fa1c",
-    "lean": "0f49b494967c",
-    "lean_statement": "1a329119bd96"
+    "md": "739c7c17635e",
+    "ts": "3e692178b44f",
+    "lean": "57b2cc494f6f",
+    "lean_statement": "4c92fe595ae9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1180,6 +1180,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs.",
         "evidence": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f",
+          "lean": "57b2cc494f6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T05:15:30Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T05:15:30Z",
+        "reviewed_sha": "e71ba7a90360c4c6aee91f9e189fb7580a99db79",
+        "notes": "PASS: archimedean-regime CODATA-comparison table (predicted-spectra consolidation, §7c R specialisation declared in .ts/.lean); MeV/keV tokens match regime; prior templated fail was wrong.",
+        "evidence": "Regime: ARCHIMEDEAN. The block is a numeric predicted-spectra / CODATA-comparison table: content/quantum-observable-universe/mass-theory/mass-theory.ts places it (line 1227) in the section 'Open problems: mass-tower structure and crystal basis' whose header comment (line 1221) says 'Consolidated from predicted-spectra', the chapter docstring (lines 6-20) lists 'archimedean, and physical faces ... mass predictions, binding energy', both its uses[] target rem:skein-mass-relation and its proof prf:terminal-resolution live in observations/ (an enumerated archimedean chapter), terminal-resolution.ts line 5 carries the AGENTS.md §7c note 'Lean sibling: archimedean specialisation over R', and terminal-resolution.lean line 30 declares 'Ground ring: R (archimedean realisation)' with substrate_q : R := 1.1097 (line 41) and codata_*_MeV literals (lines 51-54), exactly the §7c row 'CODATA / experimental value -> R' (AGENTS.md line 3950). Archimedean tokens in the .md statement: line 1 keV residuals ('6.9 keV', '1 keV') and the named (non-numeric) q_0; line 3 column headers 'QOU Result (MeV)' / 'CODATA (MeV)'; lines 5-8 MeV values 938.272 / 939.565 / 1875.613 / 2.224 vs CODATA; lines 14-15 dressed quark masses mu_u ~ 311.10, mu_d ~ 312.39 MeV. No Real.*, no numeric q value, no order hypothesis appears. These tokens are exactly what an archimedean comparison-boundary statement must carry, so the statement matches its regime (criterion PASS branch: 'correctly archimedean ... or matches its chapter regime'); the statement itself says the MeV rows are the ratio 'rendered against the m_e unit' and is unambiguously evaluated at q_0, so no WARN-level regime mixing. Per §4d (AGENTS.md lines 3671-3675) the .ts note does not render, but the pass rests on regime match, not on a banner. The prior 2026-07-07 fail ('Substrate statement contains archimedean constructs.') mis-assigned the regime as substrate and named no token; it is not correct for this block."
       }
     ],
     "wall-side-proof": [
@@ -2460,6 +2479,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:26:18.269Z",
+  "updated_at": "2026-09-03T05:24:36.616Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-trefoil-vortex-chirality-flip",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trefoil-vortex-chirality-flip",
+  "kind": "remark",
+  "title": "Chirality stability of trefoil vortices",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-vortex-intensity-modes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-antiparticle-crossing-reversal",
+  "cites": [
+    "references/kleckner2013",
+    "references/scheeler2014"
+  ],
+  "tags": [
+    "vortex",
+    "chirality",
+    "reconnection",
+    "trefoil",
+    "fluid-dynamics",
+    "stability",
+    "exceptional-divisor"
+  ],
+  "text": "trefoil-vortex-chirality-flip.md",
+  "provenance": "authored"
+}

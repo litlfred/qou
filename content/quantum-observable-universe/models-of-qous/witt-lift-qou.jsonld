@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-witt-lift-qou",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:witt-lift-qou",
+  "kind": "remark",
+  "title": "Role in the QOU lifting theorem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-skew-poisson-integration",
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+    "papers/quantum-observable-universe/blocks/ex-finite-field-realisation",
+    "papers/quantum-observable-universe/blocks/sec-enveloping-algebras-models",
+    "papers/quantum-observable-universe/blocks/ex-p-adic-realisation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-skew-poisson-integration",
+  "text": "witt-lift-qou.md",
+  "provenance": "authored"
+}

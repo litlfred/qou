@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Kau",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-000-12-the-kau.md",
+  "derivedFrom": "library/gn2/manifest",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

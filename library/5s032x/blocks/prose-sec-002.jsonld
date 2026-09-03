@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/5s032x/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Complex Case: Single Qubits",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-the-complex-case-single-qubits.md",
+  "derivedFrom": "library/5s032x/manifest",
+  "sourceDocument": "library/5s032x/manifest",
+  "provenance": "ingested"
+}

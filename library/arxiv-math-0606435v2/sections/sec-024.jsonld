@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Alexander polynomial",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-024",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-024-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-q-connection",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:q-connection",
+  "kind": "example",
+  "title": "$q$-Deformed connection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-instanton",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+  "tags": [
+    "connection",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qConnection",
+  "text": "q-connection.md",
+  "leanSource": "q-connection.lean",
+  "provenance": "authored"
+}

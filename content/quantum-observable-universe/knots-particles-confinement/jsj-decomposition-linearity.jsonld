@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-jsj-decomposition-linearity",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:jsj-decomposition-linearity",
+  "kind": "conjecture",
+  "title": "JSJ additivity of nucleon braids",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atom-knot",
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity"
+  ],
+  "cites": [
+    "references/thurston1978"
+  ],
+  "tags": [
+    "jsj-decomposition",
+    "hyperbolic-volume",
+    "atomic-knot",
+    "volume-additivity",
+    "open-conjecture"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity",
+  "text": "jsj-decomposition-linearity.md",
+  "provenance": "authored"
+}

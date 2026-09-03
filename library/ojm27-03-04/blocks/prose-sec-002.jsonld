@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ojm27-03-04/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "(b) (c)",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "text": "../sections/sec-002-00-b-c.md",
+  "derivedFrom": "library/ojm27-03-04/manifest",
+  "sourceDocument": "library/ojm27-03-04/manifest",
+  "provenance": "ingested"
+}

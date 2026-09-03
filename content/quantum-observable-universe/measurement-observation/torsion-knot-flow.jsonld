@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-torsion-knot-flow",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:torsion-knot-flow",
+  "kind": "definition",
+  "title": "Torsion-driven knot flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bundle-initial-conditions",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow"
+  ],
+  "tags": [
+    "torsion",
+    "flow",
+    "knot",
+    "geodesic",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.ParticleState",
+  "text": "torsion-knot-flow.md",
+  "leanSource": "torsion-knot-flow.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-two-row-stratum",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:two-row-stratum",
+  "kind": "definition",
+  "title": "Two-row Wedderburn stratum $\\Lambda^2(n) := \\{\\lambda \\vdash n : \\ell(\\lambda) \\le 2\\}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical"
+  ],
+  "tags": [
+    "wedderburn-decomposition",
+    "su2-schur-weyl",
+    "magic-shell",
+    "two-row",
+    "projection"
+  ],
+  "defines": [
+    "two-row-stratum"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.TwoRowStratum",
+  "text": "two-row-stratum.md",
+  "leanSource": "two-row-stratum.lean",
+  "provenance": "authored"
+}

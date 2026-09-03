@@ -1,0 +1,52 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310279v5/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Stabilization in the braid groups I: MTWS",
+  "contains": [
+    "library/0310279v5/sections/sec-000",
+    "library/0310279v5/sections/sec-001",
+    "library/0310279v5/sections/sec-002",
+    "library/0310279v5/sections/sec-003",
+    "library/0310279v5/sections/sec-004",
+    "library/0310279v5/sections/sec-005",
+    "library/0310279v5/sections/sec-006",
+    "library/0310279v5/sections/sec-007",
+    "library/0310279v5/sections/sec-008",
+    "library/0310279v5/sections/sec-009",
+    "library/0310279v5/sections/sec-010",
+    "library/0310279v5/sections/sec-011",
+    "library/0310279v5/sections/sec-012",
+    "library/0310279v5/sections/sec-013",
+    "library/0310279v5/sections/sec-014",
+    "library/0310279v5/sections/sec-015",
+    "library/0310279v5/sections/sec-016",
+    "library/0310279v5/sections/sec-017",
+    "library/0310279v5/sections/sec-018",
+    "library/0310279v5/sections/sec-019",
+    "library/0310279v5/sections/sec-020",
+    "library/0310279v5/sections/sec-021",
+    "library/0310279v5/sections/sec-022",
+    "library/0310279v5/sections/sec-023",
+    "library/0310279v5/sections/sec-024",
+    "library/0310279v5/sections/sec-025",
+    "library/0310279v5/sections/sec-026",
+    "library/0310279v5/sections/sec-027",
+    "library/0310279v5/sections/sec-028",
+    "library/0310279v5/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0310279v5",
+    "source_file": "0310279v5.pdf",
+    "source_sha256": "a1d472d37291a3331a74fb16e387bbfdbf13a41e7a8120582c1e38ad01728c9b",
+    "pages": 128,
+    "arxiv": null,
+    "doi": "10.2140/gt.2006.10.413",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

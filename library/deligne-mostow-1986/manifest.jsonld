@@ -1,0 +1,49 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
+  "contains": [
+    "library/deligne-mostow-1986/sections/sec-000",
+    "library/deligne-mostow-1986/sections/sec-001",
+    "library/deligne-mostow-1986/sections/sec-002",
+    "library/deligne-mostow-1986/sections/sec-003",
+    "library/deligne-mostow-1986/sections/sec-004",
+    "library/deligne-mostow-1986/sections/sec-005",
+    "library/deligne-mostow-1986/sections/sec-006",
+    "library/deligne-mostow-1986/sections/sec-007",
+    "library/deligne-mostow-1986/sections/sec-008",
+    "library/deligne-mostow-1986/sections/sec-009",
+    "library/deligne-mostow-1986/sections/sec-010",
+    "library/deligne-mostow-1986/sections/sec-011",
+    "library/deligne-mostow-1986/sections/sec-012",
+    "library/deligne-mostow-1986/sections/sec-013",
+    "library/deligne-mostow-1986/sections/sec-014",
+    "library/deligne-mostow-1986/sections/sec-015",
+    "library/deligne-mostow-1986/sections/sec-016",
+    "library/deligne-mostow-1986/sections/sec-017",
+    "library/deligne-mostow-1986/sections/sec-018",
+    "library/deligne-mostow-1986/sections/sec-019",
+    "library/deligne-mostow-1986/sections/sec-020",
+    "library/deligne-mostow-1986/sections/sec-021",
+    "library/deligne-mostow-1986/sections/sec-022",
+    "library/deligne-mostow-1986/sections/sec-023",
+    "library/deligne-mostow-1986/sections/sec-024",
+    "library/deligne-mostow-1986/sections/sec-025",
+    "library/deligne-mostow-1986/sections/sec-026"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "deligne-mostow-1986",
+    "source_file": "deligne-mostow-1986.pdf",
+    "source_sha256": "d9850f70ab2fecbd5f7294497ccaeb89c8f1dfe641be8ed762a2c2118ceadd3b",
+    "pages": 86,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

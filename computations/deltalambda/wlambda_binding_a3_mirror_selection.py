@@ -138,6 +138,8 @@ def main():
     ms = (time.monotonic_ns() - t0) // 1_000_000
     Path(__file__).with_name("a3-mirror-selection.witness.json").write_text(
         json.dumps({
+        "q0Anchor": "independent",
+        "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: t7qv Gap #3 (A=3 mirror): the quoted \"best structural 2.52 %\" is a menu min.",
             "probe": "a3_mirror_selection", "bean": ["t7qv"],
             "lean": "QOU.MathlibExt.SelectionBound",
             "ratio_B": nstr(ratio_B, 12), "ratio_V": nstr(ratio_V, 12),

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-braid-fluid-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:braid-fluid-table-data",
+  "kind": "table",
+  "title": "Data table from rem:braid-fluid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-braid-fluid"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "braid-fluid-table-data.md",
+  "provenance": "authored"
+}

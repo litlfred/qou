@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/90-1-219/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Appendix",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-001-appendix.md",
+  "derivedFrom": "library/90-1-219/manifest",
+  "sourceDocument": "library/90-1-219/manifest",
+  "provenance": "ingested"
+}

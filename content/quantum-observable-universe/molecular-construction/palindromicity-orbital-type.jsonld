@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-palindromicity-orbital-type",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:palindromicity-orbital-type",
+  "kind": "conjecture",
+  "title": "Palindromicity and orbital type",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-shell-closure-nf-term-count"
+  ],
+  "cites": [
+    "references/iwahori1964",
+    "references/jones1987"
+  ],
+  "tags": [
+    "tier:E",
+    "normal-form",
+    "palindromicity",
+    "orbital-type",
+    "poincare-duality"
+  ],
+  "leanRef": "qou:QOU.Molecular.PalindromicityOrbitalType",
+  "text": "palindromicity-orbital-type.md",
+  "leanSource": "palindromicity-orbital-type.lean",
+  "provenance": "authored"
+}

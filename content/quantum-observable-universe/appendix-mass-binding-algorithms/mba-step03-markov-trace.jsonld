@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/alg-markov-trace",
+  "@type": [
+    "folio:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:markov-trace",
+  "kind": "algorithm",
+  "title": "Markov trace on the Iwahori–Hecke algebra $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-recursive-reducer"
+  ],
+  "tags": [
+    "mba",
+    "step-3",
+    "markov-trace",
+    "hecke",
+    "canonical-chain",
+    "alexander-markov"
+  ],
+  "text": "mba-step03-markov-trace.md",
+  "provenance": "authored"
+}

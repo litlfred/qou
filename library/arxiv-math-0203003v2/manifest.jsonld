@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203003v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in the recent years was the discovery",
+  "contains": [
+    "library/arxiv-math-0203003v2/sections/sec-000",
+    "library/arxiv-math-0203003v2/sections/sec-001",
+    "library/arxiv-math-0203003v2/sections/sec-002",
+    "library/arxiv-math-0203003v2/sections/sec-003",
+    "library/arxiv-math-0203003v2/sections/sec-004",
+    "library/arxiv-math-0203003v2/sections/sec-005",
+    "library/arxiv-math-0203003v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0203003v2",
+    "source_file": "0203003v2.pdf",
+    "source_sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
+    "pages": 13,
+    "arxiv": {
+      "id": "math/0203003",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "24 Apr 2002"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

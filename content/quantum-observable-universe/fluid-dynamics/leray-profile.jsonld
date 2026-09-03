@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-leray-profile",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:leray-profile",
+  "kind": "proposition",
+  "title": "Discretely self-similar blowup profile: the Leray equations with $\\mathrm{SU}_q(2)$ constraints",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "tags": [
+    "leray",
+    "discretely-self-similar",
+    "blowup-profile",
+    "elliptic",
+    "representation-theory",
+    "construction"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.leray_profile",
+  "text": "leray-profile.md",
+  "provenance": "authored"
+}

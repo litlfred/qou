@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-yang-mills-mass-gap",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:yang-mills-mass-gap",
+  "kind": "conjecture",
+  "title": "Yang--Mills Existence and Mass Gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vacuum-state",
+    "papers/quantum-observable-universe/blocks/rem-substrate-gm-torsion",
+    "papers/quantum-observable-universe/blocks/rem-kummer-filtration-obstruction",
+    "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction"
+  ],
+  "tags": [
+    "tier:famous",
+    "yang-mills",
+    "mass-gap",
+    "vacuum",
+    "spectral-gap",
+    "millennium",
+    "kummer",
+    "gm-torsion"
+  ],
+  "leanRef": "qou:QOU.Torsion.YangMillsMassGap",
+  "text": "yang-mills-mass-gap.md",
+  "provenance": "authored"
+}

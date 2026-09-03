@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310279v5/blocks/thm-sec-001-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Markov’s Theorem (MT",
+  "pageStart": 1,
+  "pageEnd": 5,
+  "text": "thm-sec-001-01.md",
+  "derivedFrom": "library/0310279v5/sections/sec-001",
+  "sourceDocument": "library/0310279v5/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-0006111v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard",
+  "contains": [
+    "library/arxiv-hep-th-0006111v2/sections/sec-000",
+    "library/arxiv-hep-th-0006111v2/sections/sec-001",
+    "library/arxiv-hep-th-0006111v2/sections/sec-002",
+    "library/arxiv-hep-th-0006111v2/sections/sec-003",
+    "library/arxiv-hep-th-0006111v2/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-0006111v2",
+    "source_file": "0006111v2.pdf",
+    "source_sha256": "e024febd3d0886a3c757f96ade67e6a3449e5279d573ce577145f23670bc3fc2",
+    "pages": 6,
+    "arxiv": {
+      "id": "hep-th/0006111",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "14 Jul 2003"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration-brings",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:golden-ratio-degeneration-brings",
+  "kind": "remark",
+  "title": "Golden-ratio cusp and the sub-classical regime $q<1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
+  "tags": [
+    "elliptic-curve",
+    "descartes",
+    "golden-ratio",
+    "cusp",
+    "substrate-parameter"
+  ],
+  "text": "golden-ratio-degeneration-brings.md",
+  "provenance": "authored"
+}

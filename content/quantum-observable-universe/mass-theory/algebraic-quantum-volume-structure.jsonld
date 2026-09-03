@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-algebraic-quantum-volume-structure",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:algebraic-quantum-volume-structure",
+  "kind": "remark",
+  "title": "Structure of the algebraic quantum volume and substrate isolation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume",
+  "tags": [
+    "algebraic-quantum-volume",
+    "channel-decomposition",
+    "substrate"
+  ],
+  "text": "algebraic-quantum-volume-structure.md",
+  "provenance": "authored"
+}

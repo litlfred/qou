@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-weight-decomposition-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:weight-decomposition-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the weight decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-weight-decomposition-exists"
+  ],
+  "text": "weight-decomposition-exists-proof.md",
+  "provenance": "authored"
+}

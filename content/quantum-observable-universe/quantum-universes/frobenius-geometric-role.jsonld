@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-geometric-role",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-geometric-role",
+  "kind": "remark",
+  "title": "Frobenius structure as categorical integration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-frobenius-pairing",
+  "tags": [
+    "frobenius",
+    "integration",
+    "pedagogy"
+  ],
+  "text": "frobenius-geometric-role.md",
+  "provenance": "authored"
+}

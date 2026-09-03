@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bm-markov-j/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Document",
+  "pageStart": 1,
+  "pageEnd": 16,
+  "contains": [
+    "library/bm-markov-j/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/bm-markov-j/manifest",
+  "sourceDocument": "library/bm-markov-j/manifest",
+  "provenance": "ingested"
+}

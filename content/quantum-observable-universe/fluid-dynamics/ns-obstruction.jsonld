@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:ns-obstruction",
+  "kind": "definition",
+  "title": "NS obstruction class $\\mathrm{NS}(A)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ns-regular-qou"
+  ],
+  "tags": [
+    "definition",
+    "obstruction",
+    "navier-stokes",
+    "euler-characteristic",
+    "categorical",
+    "spectral-gap"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.NSObstruction",
+  "text": "ns-obstruction.md",
+  "leanSource": "ns-obstruction.lean",
+  "provenance": "authored"
+}

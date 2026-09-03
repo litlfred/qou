@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/blocks/prose-sec-020",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Weight three",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-020-73-weight-three.md",
+  "derivedFrom": "library/zhao-standard-2010/manifest",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Lemma 4.9 has a converse, as pointed out to us by Ted Chinburg:",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-019",
+    "library/nrarith/blocks/lem-sec-019-01",
+    "library/nrarith/blocks/thm-sec-019-02"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

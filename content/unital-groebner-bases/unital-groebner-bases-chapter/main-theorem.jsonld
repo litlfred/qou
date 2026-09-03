@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/thm-unital-groebner-decomposition",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:unital-groebner-decomposition",
+  "kind": "theorem",
+  "title": "Free module decomposition via unital Gröbner--Shirshov bases",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-groebner-basis",
+    "papers/unital-groebner-bases/blocks/def-remainder-module"
+  ],
+  "proofs": [
+    "papers/unital-groebner-bases/blocks/prf-unital-groebner-decomposition"
+  ],
+  "tags": [
+    "groebner-basis",
+    "free-module",
+    "decomposition"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.unital_groebner_decomposition",
+  "text": "main-theorem.md",
+  "leanSource": "main-theorem.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-borel-partial-resolution",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borel-partial-resolution",
+  "kind": "proposition",
+  "title": "Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-k-theory-period-rosetta"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/suslin1991"
+  ],
+  "tags": [
+    "borel-theorem",
+    "k-theory",
+    "keystone-discharge",
+    "bring-natural-fields",
+    "beilinson-conjecture",
+    "graded-mikusinski",
+    "explicit-dimensions"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.BorelPartialResolution.borel_partial",
+  "text": "borel-partial-resolution.md",
+  "provenance": "authored"
+}

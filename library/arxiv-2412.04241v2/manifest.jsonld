@@ -1,0 +1,62 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2412.04241v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "THE HABIRO RING OF A NUMBER FIELD",
+  "contains": [
+    "library/arxiv-2412.04241v2/sections/sec-000",
+    "library/arxiv-2412.04241v2/sections/sec-001",
+    "library/arxiv-2412.04241v2/sections/sec-002",
+    "library/arxiv-2412.04241v2/sections/sec-003",
+    "library/arxiv-2412.04241v2/sections/sec-004",
+    "library/arxiv-2412.04241v2/sections/sec-005",
+    "library/arxiv-2412.04241v2/sections/sec-006",
+    "library/arxiv-2412.04241v2/sections/sec-007",
+    "library/arxiv-2412.04241v2/sections/sec-008",
+    "library/arxiv-2412.04241v2/sections/sec-009",
+    "library/arxiv-2412.04241v2/sections/sec-010",
+    "library/arxiv-2412.04241v2/sections/sec-011",
+    "library/arxiv-2412.04241v2/sections/sec-012",
+    "library/arxiv-2412.04241v2/sections/sec-013",
+    "library/arxiv-2412.04241v2/sections/sec-014",
+    "library/arxiv-2412.04241v2/sections/sec-015",
+    "library/arxiv-2412.04241v2/sections/sec-016",
+    "library/arxiv-2412.04241v2/sections/sec-017",
+    "library/arxiv-2412.04241v2/sections/sec-018",
+    "library/arxiv-2412.04241v2/sections/sec-019",
+    "library/arxiv-2412.04241v2/sections/sec-020",
+    "library/arxiv-2412.04241v2/sections/sec-021",
+    "library/arxiv-2412.04241v2/sections/sec-022",
+    "library/arxiv-2412.04241v2/sections/sec-023",
+    "library/arxiv-2412.04241v2/sections/sec-024",
+    "library/arxiv-2412.04241v2/sections/sec-025",
+    "library/arxiv-2412.04241v2/sections/sec-026",
+    "library/arxiv-2412.04241v2/sections/sec-027",
+    "library/arxiv-2412.04241v2/sections/sec-028",
+    "library/arxiv-2412.04241v2/sections/sec-029",
+    "library/arxiv-2412.04241v2/sections/sec-030",
+    "library/arxiv-2412.04241v2/sections/sec-031",
+    "library/arxiv-2412.04241v2/sections/sec-032",
+    "library/arxiv-2412.04241v2/sections/sec-033",
+    "library/arxiv-2412.04241v2/sections/sec-034"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2412.04241v2",
+    "source_file": "2412.04241v2.pdf",
+    "source_sha256": "308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9",
+    "pages": 73,
+    "arxiv": {
+      "id": "2412.04241",
+      "version": "2",
+      "primary_class": "math.NT",
+      "stamp_date": "27 Aug 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

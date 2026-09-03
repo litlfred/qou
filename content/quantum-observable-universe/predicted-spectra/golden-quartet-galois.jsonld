@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-golden-quartet-galois",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:golden-quartet-galois",
+  "kind": "proposition",
+  "title": "Golden quartet $\\{1/\\varphi, -\\varphi, \\varphi, -1/\\varphi\\}$ as $\\mathrm{Gal}(\\mathbb{Q}(\\sqrt{5})/\\mathbb{Q}) \\times \\langle \\iota \\rangle$-orbit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node"
+  ],
+  "tags": [
+    "golden-ratio",
+    "galois-theory",
+    "bar-involution",
+    "skew-symmetry",
+    "minimal-polynomial",
+    "splitting-field"
+  ],
+  "leanRef": "qou:QOU.Archimedean.GoldenQuartetGalois.golden_quartet_galois",
+  "text": "golden-quartet-galois.md",
+  "leanSource": "golden-quartet-galois.lean",
+  "provenance": "authored"
+}

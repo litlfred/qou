@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Hodge decomposition theorem",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "contains": [
+    "library/candetgl/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

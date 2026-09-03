@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-mass-categorical-descent",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mass-categorical-descent",
+  "kind": "proposition",
+  "title": "QOU mass formula as descent decomposition of the mass endomorphism",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "tags": [
+    "mass",
+    "mass-formula",
+    "descent-decomposition",
+    "exceptional-divisor",
+    "casimir",
+    "wedderburn",
+    "quantum-dilogarithm"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.mass_categorical_descent",
+  "text": "mass-categorical-descent.md",
+  "provenance": "authored"
+}

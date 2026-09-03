@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-planck-limits",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:planck-limits",
+  "kind": "remark",
+  "title": "Limiting regimes of $\\hbar_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+  "tags": [
+    "planck",
+    "limits"
+  ],
+  "text": "planck-limits.md",
+  "provenance": "authored"
+}

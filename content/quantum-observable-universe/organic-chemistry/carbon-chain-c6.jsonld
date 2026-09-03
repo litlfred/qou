@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-carbon-chain-c6",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:carbon-chain-c6",
+  "kind": "example",
+  "title": "Linear $\\mathrm{C}_6$ Hopf chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-carbon-valence",
+    "papers/quantum-observable-universe/blocks/rem-chain-spring-modes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain",
+  "tags": [
+    "carbon",
+    "c6",
+    "linear-chain",
+    "carbyne",
+    "cumulene",
+    "spring",
+    "open-chain"
+  ],
+  "text": "carbon-chain-c6.md",
+  "provenance": "authored"
+}

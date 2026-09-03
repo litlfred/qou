@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hausdorff-dimension-classical-comparison",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hausdorff-dimension-classical-comparison",
+  "kind": "remark",
+  "title": "Classical Hausdorff dimension $d_H$ of the Julia set vs. the $q$-deformed $d_{H,q}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hausdorff-dimension-recurrence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-julia-set-reeb",
+  "cites": [
+    "references/bowen1979",
+    "references/ruelle1982",
+    "references/mcmullen1998",
+    "references/shishikura1998"
+  ],
+  "tags": [
+    "hausdorff-dimension",
+    "julia-set",
+    "information-theory",
+    "transfer-operator",
+    "ruelle"
+  ],
+  "text": "hausdorff-dimension-classical-comparison.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-information-paradox-incompleteness",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:information-paradox-incompleteness",
+  "kind": "remark",
+  "title": "The information paradox as a theorem of arithmetic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-incompleteness-horizon"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-hawking-radiation",
+  "cites": [
+    "references/hawking1975",
+    "references/bekenstein1973",
+    "references/goedel1931"
+  ],
+  "tags": [
+    "information-paradox",
+    "incompleteness",
+    "black-hole",
+    "hawking-radiation",
+    "goedel",
+    "degree-0-opacity",
+    "aeon-boundary"
+  ],
+  "text": "information-paradox-incompleteness.md",
+  "provenance": "authored"
+}

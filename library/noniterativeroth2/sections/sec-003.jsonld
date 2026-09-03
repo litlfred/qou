@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/noniterativeroth2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 1.1",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/noniterativeroth2/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "library/noniterativeroth2/manifest",
+  "sourceDocument": "library/noniterativeroth2/manifest",
+  "provenance": "ingested"
+}

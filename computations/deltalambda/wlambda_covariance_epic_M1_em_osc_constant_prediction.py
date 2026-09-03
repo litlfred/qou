@@ -1,47 +1,65 @@
 #!/usr/bin/env python3
-"""M_1>0 machinery (qou-k5r5 / qou-tvok): measure the V_A remainder rate and coefficient, and
-determine which Euler-Maclaurin tool can actually deliver it. HONEST NEGATIVE on my own prediction.
+"""M_1>0 machinery (qou-k5r5 / qou-tvok): the OSCILLATORY Euler-Maclaurin tool predicts the V_A
+remainder rate theta^{-1} with an explicit constant C_A = TV(g'')/48 -- CONFIRMED, and the falsifiable
+target for TV(g'') is pinned by the measured c_1.
 
-Gap qou-k5r5. Remaining: a RIGOROUS bound on |V_A(theta)/theta^2 - v_A| (Route 1). The corpus already
-has, sorry-free, the tool
+Gap qou-k5r5. Remaining: a RIGOROUS bound |V_A(theta)/theta^2 - v_A| <= C_A/theta (Route 1). The corpus
+holds, sorry-free,
 
   QOU.MathlibExt.abs_integral_sub_composite_le_osc :
     | int_a^{a+kh} g - [ h*sum_j g(a+jh) - (h/2)(g a + g(a+kh)) - (h^2/12)(g'(a+kh) - g' a) ] |
       <= h^3/12 * ( g''(a) - g''(a+kh) )          for g'' ANTITONE on the interval.
 
-whose decisive feature is that the right-hand side carries NO FACTOR OF k -- the per-cell oscillations
-telescope, so the remainder is governed by the TOTAL VARIATION of g'', not by the number of cells.
-That is exactly what the pointwise Bessel route lacked (_pointwise_bound_insufficiency.py). With the
-bulk grid x in [-2sqrt(theta), 2sqrt(theta)] at unit spacing, the rescaled step is h = 1/(2 sqrt(theta)),
-so dividing by h leaves remainder <= h^2 TV(g'')/12 = TV(g'')/(48 theta) -- a theta^{-1} rate.
+The decisive feature is that the right-hand side carries NO FACTOR OF k: the per-cell oscillations
+telescope, so the remainder is governed by the TOTAL VARIATION of g'' rather than by the number of
+grid cells, and the hypotheses are C^2 only. That is exactly what the pointwise Bessel route lacked
+(_pointwise_bound_insufficiency.py). With the bulk grid x in [-2sqrt(theta), 2sqrt(theta)] at unit
+spacing the rescaled step is h = 1/(2 sqrt(theta)), so dividing by h leaves
 
-I PREDICTED that rate for V_A and MEASURED theta^{-1/2}. The prediction is WRONG for this ingredient,
-and the reason is structural, not numerical: `_osc` requires g'' ANTITONE on the interval, and the
-Sum|c| weight's rescaled test function is |u|, which has a KINK at u = 0. The kink breaks monotonicity;
-splitting the interval there leaves an UN-CANCELLED Euler-Maclaurin boundary term at u=0 (g' jumps),
-and that term is O(h) = O(theta^{-1/2}), not O(h^2). So the clean TV(g'')/(48 theta) route applies to
-the SMOOTH ingredients (Sum c^2 and the covariance, which the corpus power-counting already puts at
-theta^{-1}), and NOT to the kink ingredient V_A.
+    remainder  <=  h^2 TV(g'')/12  =  TV(g'') / (48 theta),
+
+a theta^{-1} rate with an EXPLICIT constant C_A = TV(g'')/48.
 
 MEASURED HERE (exact descent-DPP kernel, NO float64), d(theta) := V_A/theta^2 - 8/pi^2:
 
-  theta      250        500       1000       2000       4000
-  d       0.055650   0.038941   0.027331   0.019224   0.013543
-  exponent    --       0.5151     0.5107     0.5076     0.5054     -> theta^{-1/2}
-  sqrt(th)*d 0.8799    0.8707     0.8643     0.8597     0.8565     -> C_A ~ 0.857
+  theta        250          500         1000         2000         4000
+  d       -2.5794e-4   -1.3451e-4   -6.6422e-5   -3.4320e-5   -1.6901e-5
+  exponent     --         0.9393       1.018        0.9526       1.022      -> theta^{-1}
+  theta*d   -0.06449     -0.06725     -0.06642     -0.06864     -0.06760   -> c_1 ~ -0.0678
 
-This CONFIRMS the corpus power-counting in
-docs/audits/2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md ("the kink costs half an order
-in Euler-Maclaurin ... O(theta^{-1/2}) rather than O(theta^{-1})"), and it DISAGREES with the figures
-recorded on bean qou-tvok STEP 2 ("rate theta^{-1}, c_1 ~ -0.0678, sign d<0") in BOTH rate and SIGN --
-here d > 0 (V_A/theta^2 approaches 8/pi^2 from ABOVE). This probe does not adjudicate that: the two may
-be measuring different objects (poissonized vs de-poissonized V_A, or the margin rather than V_A). The
-discrepancy is FLAGGED, not resolved, and the sibling figure is not assumed wrong.
+Rate theta^{-1}, sign d < 0 (V_A/theta^2 approaches 8/pi^2 from BELOW). This reproduces
+wlambda_covariance_epic_M1_tvok_remainder_rate.py EXACTLY (its theta=1000 value is -6.64223e-5, the
+same to every digit printed) and confirms bean qou-tvok STEP 2.
 
-Scope: this measures ONE ingredient. It does NOT give the (CS) margin's constant, which is what the
-closure needs; the margin's own empirical envelope is ~0.087 (constant-C audit) -- an order of
-magnitude BELOW V_A's own 0.857, because the ratio sigma_D/sigma_A cancels most of the common
-correction. NO float64 (mpmath.mpf). Nothing wired; no c_k; L2 unchanged. Gap qou-k5r5 OPEN.
+FALSIFIABLE TARGET FOR ROUTE 1: since |d| ~ |c_1|/theta and the EM-osc bound gives |d| <= TV(g'')/(48
+theta), a Route-1 derivation must produce
+
+    TV(g'') >= 48 * |c_1| ~ 48 * 0.0678 ~ 3.25,
+
+an O(1) number. Computing TV(g'') independently from the variance density is the REMAINING step;
+landing near 3.25 (from ABOVE -- C_A is a BOUND, c_1 a LIMIT, so C_A >= |c_1| is required, not
+equality) is a genuine test of the route rather than an assumption.
+
+CLOSURE ARITHMETIC -- CORRECTED 2026-09-03, the earlier text here was WRONG. It read: "at the
+theta^{-1} rate, m(n) >= m_inf - C/n > 0 needs only N0 = ceil(C/m_inf) <= 78, i.e. C <= 23.4 -- far
+weaker than the C <= 2.65 required under a conservative n^{-1/2} reading." Two defects: (i) the
+theta^{-1} rate measured above is V_A's, not the (CS) MARGIN's -- the margin is a ratio of square
+roots of variances plus a correlation, and nobody has propagated the one into the other; (ii) what
+is PROVED (PR #5929) is |m(n) - m_inf| <= C n^{-1/2}, so N0 = (C/m_inf)^2 (SQUARED) and the
+requirement is C <= m_inf*sqrt(79) = 2.6681 -- that is THE requirement, not "a conservative
+reading". Correct statement: under the proved shape the empirical envelope over n >= 13 is
+C_emp = 0.0580, giving a headroom factor of 46x. Probe:
+wlambda_covariance_epic_M1_margin_envelope_exponent.py.
+
+CORRECTION HISTORY (2026-09-03). An earlier version of THIS probe reported the opposite: rate
+theta^{-1/2}, C_A ~ 0.857, sign d > 0, and on that basis RETRACTED the EM-osc prediction above. That
+was a BUG IN THIS FILE, not a finding. The Sum|c| weight was written as |k|(|k|+1)/2, symmetrising the
+negative half; the descent set is the SHIFTED lattice {lambda_i - i}, whose natural involution is
+x <-> -1-x, so the correct weight is k(k+1)/2 with SIGNED k -- giving g(-1)=0, g(-2)=-1, g(-3)=-3
+(against the buggy -1, -3, -6). The tell was available and missed: every term of V_A is a product of
+two squares, hence non-negative, yet the buggy run returned a LARGER V_A from a SMALLER index range
+than the reference probe -- impossible if truncation were the only difference. The retraction is
+itself retracted; the prediction stands. NO float64 (mpmath.mpf). Gap qou-k5r5 OPEN.
 """
 from __future__ import annotations
 import mpmath as mp
@@ -51,14 +69,17 @@ V_A_POISSON = 8 / mp.pi ** 2          # leading Var(Sum|c|)/theta^2, poissonized
 
 
 def gA(k):
-    kk = abs(k)
-    v = mp.mpf(kk * (kk + 1)) / 2
-    return v if k >= 0 else -v
+    """Sum|c| linear-statistic weight on the SHIFTED descent lattice {lambda_i - i}:
+    G_A(k) = k(k+1)/2 for k >= 0 and -k(k+1)/2 for k < 0, with SIGNED k.
+    NOTE g(-1) = 0 and g(-k) = -g(k-1): the descent lattice's natural involution is
+    x <-> -1-x, NOT x <-> -x. Symmetrising to |k|(|k|+1)/2 is WRONG and was the bug
+    that produced a spurious theta^{-1/2} rate (corrected 2026-09-03)."""
+    return mp.mpf(k * (k + 1)) / 2 if k >= 0 else -mp.mpf(k * (k + 1)) / 2
 
 
 def V_A(theta):
     """Exact descent-DPP variance of Sum|c|: (1/2) Sum_{x!=y} (gA(x)-gA(y))^2 J(x,y;theta)^2."""
-    M = int(mp.floor(2 * mp.sqrt(theta) + 10 * mp.power(theta, mp.mpf(1) / 6) + 24))
+    M = int(mp.floor(2 * mp.sqrt(theta) + 12 * mp.power(theta, mp.mpf(1) / 6) + 20))
     arg = 2 * mp.sqrt(theta)
     st = mp.sqrt(theta)
     J = {0: mp.besselj(0, arg)}
@@ -78,44 +99,47 @@ def V_A(theta):
 
 
 def main():
-    print(f"# V_A remainder rate + coefficient; dps={mp.mp.dps}; NO float64")
+    print(f"# V_A remainder rate + EM-osc constant target; dps={mp.mp.dps}; NO float64")
     print(f"# v_A (poissonized, derived) = 8/pi^2 = {mp.nstr(V_A_POISSON, 12)}")
     print(f"# d(theta) := V_A/theta^2 - v_A")
-    print("#   theta        d(theta)        exponent p      sqrt(theta)*d      theta*d")
+    print("#   theta        d(theta)        exponent p        theta*d")
     prev = None
+    last = None
     for e in (250, 500, 1000, 2000, 4000):
         th = mp.mpf(e)
         d = V_A(th) / th ** 2 - V_A_POISSON
         p = ""
         if prev is not None and d != 0 and prev[1] != 0:
             p = mp.nstr(-(mp.log(abs(d)) - mp.log(abs(prev[1]))) / (mp.log(th) - mp.log(prev[0])), 4)
-        print(f"  {e:>7}  {mp.nstr(d,6):>14}  {p:>10}  {mp.nstr(mp.sqrt(th)*d,6):>14}  "
-              f"{mp.nstr(th*d,6):>12}")
+        print(f"  {e:>7}  {mp.nstr(d,6):>14}  {p:>10}  {mp.nstr(th*d,6):>14}")
         prev = (th, d)
+        last = th * d
     print("#")
-    print("# MEASURED: exponent p -> 0.505, i.e. the V_A remainder is theta^{-1/2}, NOT theta^{-1}.")
-    print("#   sqrt(theta)*d is nearly constant (0.880 -> 0.857) => C_A ~ 0.857, and it is still")
-    print("#   drifting DOWN, so 0.857 is an upper reading rather than a converged limit.")
-    print("#   theta*d GROWS (13.9 -> 54.2), which is what rules out theta^{-1} for this ingredient.")
-    print("#   SIGN: d > 0 -- V_A/theta^2 approaches 8/pi^2 from ABOVE.")
+    print("# MEASURED: exponent p ~ 1.0 across every doubling => rate theta^{-1}; theta*d is stable")
+    print("#   near -0.0678 => c_1 ~ -0.0678; sign d < 0 (approaches 8/pi^2 from BELOW).")
+    print("#   This reproduces wlambda_covariance_epic_M1_tvok_remainder_rate.py EXACTLY (theta=1000:")
+    print("#   -6.64223e-5 in both) and confirms bean qou-tvok STEP 2.")
     print("#")
-    print("# MY PREDICTION WAS WRONG, and structurally so. The EM tool _osc requires g'' ANTITONE;")
-    print("#   the Sum|c| rescaled test function is |u|, with a KINK at u=0 that breaks monotonicity.")
-    print("#   Splitting there leaves an UN-CANCELLED EM boundary term (g' jumps) of order h =")
-    print("#   1/(2 sqrt(theta)), i.e. theta^{-1/2} -- not the h^2 the telescoping bound would give.")
-    print("#   So TV(g'')/(48 theta) is the right form for the SMOOTH ingredients (Sum c^2, the")
-    print("#   covariance), and NOT for the kink ingredient V_A.")
+    if last is not None:
+        tv = 48 * abs(last)
+        print(f"# FALSIFIABLE TARGET FOR ROUTE 1: the EM-osc bound gives |d| <= TV(g'')/(48 theta), so a")
+        print(f"#   Route-1 derivation must yield TV(g'') >= 48*|c_1| ~ {mp.nstr(tv,5)} (an O(1) number).")
+        print(f"#   C_A is a BOUND and c_1 a LIMIT, so C_A >= |c_1| is required, not equality: landing")
+        print(f"#   near {mp.nstr(tv,4)} FROM ABOVE is the genuine test. Computing TV(g'') from the")
+        print(f"#   variance density is the REMAINING step.")
     print("#")
-    print("# CONSISTENT WITH: docs/audits/2026-08-29-...-rigorous-finite-n-bound.md (kink costs half")
-    print("#   an order). DISAGREES WITH the figures on bean qou-tvok STEP 2 (theta^{-1}, c_1 ~")
-    print("#   -0.0678, d<0) in BOTH rate and sign. NOT adjudicated here -- the two may measure")
-    print("#   different objects (poissonized vs de-poissonized, or the margin vs V_A). FLAGGED.")
+    print("# CLOSURE ARITHMETIC (CORRECTED 2026-09-03; the 'C <= 23.4' once printed here is RETRACTED).")
+    print("#   The theta^{-1} rate above is V_A's, NOT the (CS) margin's, and the PROVED margin bound")
+    print("#   (PR #5929) is |m - m_inf| <= C n^{-1/2}, whence N0 = (C/m_inf)^2 and the requirement is")
+    print("#   C <= m_inf*sqrt(79) = 2.6681. Empirical envelope over n >= 13 is 0.0580 => 46x headroom.")
+    print("#   See wlambda_covariance_epic_M1_margin_envelope_exponent.py.")
     print("#")
-    print("# SCOPE: this is ONE ingredient, not the (CS) margin the closure needs. The margin's own")
-    print("#   empirical envelope is ~0.087 -- 10x BELOW V_A's 0.857 -- because sigma_D/sigma_A")
-    print("#   cancels most of the common correction. Do not read C_A ~ 0.857 as the margin's C.")
-    print("RESULT: V_A remainder is theta^{-1/2}, C_A ~ 0.857, d>0; EM-osc telescoping does NOT apply")
-    print("        to the kink ingredient. Prediction retracted. qou-k5r5 OPEN.")
+    print("# CORRECTION: an earlier version of this file reported theta^{-1/2}, C_A ~ 0.857, d > 0 and")
+    print("#   retracted the EM-osc prediction. That was a BUG -- the Sum|c| weight was symmetrised to")
+    print("#   |k|(|k|+1)/2 instead of the shifted-lattice k(k+1)/2 with signed k. The retraction is")
+    print("#   retracted; the theta^{-1} prediction stands.")
+    print("RESULT: V_A remainder rate theta^{-1}, c_1 ~ -0.0678 (reproduces tvok exactly); EM-osc target")
+    print("        TV(g'') ~ 3.25 pinned. qou-k5r5 OPEN.")
     print("EXIT: 0")
     return 0
 

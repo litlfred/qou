@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s10955-022-02992-6/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Proof of Lemma 2.5",
+  "pageStart": 41,
+  "pageEnd": 46,
+  "contains": [
+    "library/s10955-022-02992-6/blocks/prose-sec-013",
+    "library/s10955-022-02992-6/blocks/prop-sec-013-01",
+    "library/s10955-022-02992-6/blocks/prop-sec-013-02",
+    "library/s10955-022-02992-6/blocks/prop-sec-013-03"
+  ],
+  "derivedFrom": "library/s10955-022-02992-6/manifest",
+  "sourceDocument": "library/s10955-022-02992-6/manifest",
+  "provenance": "ingested"
+}

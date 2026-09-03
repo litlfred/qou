@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-channel-rotation-askey-lit",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:channel-rotation-askey-lit",
+  "kind": "remark",
+  "title": "The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-obstruction-at-q0"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+  "cites": [
+    "references/askey1989qhermite",
+    "references/ismail-masson1994",
+    "references/zhedanov1991",
+    "references/terwilliger2001",
+    "references/ponsot-teschner2001",
+    "references/creutzig-milas2014",
+    "references/garoufalidis-zagier-2024",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "complex-volume",
+    "askey-scheme",
+    "q-hermite",
+    "bar-parity",
+    "leonard-pair",
+    "modular-double",
+    "fibre-level"
+  ],
+  "leanRef": "qou:QOU.MassEndomorphism.rotation_step",
+  "text": "channel-rotation-askey-lit.md",
+  "provenance": "authored"
+}

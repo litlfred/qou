@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-chirality-from-frobenius-self-pairing-scope",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chirality-from-frobenius-self-pairing-scope",
+  "kind": "remark",
+  "title": "Scope, structural value, and open ribbon-closure derivation of the chirality factor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing",
+    "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing",
+  "tags": [
+    "chirality",
+    "frobenius",
+    "scope",
+    "ribbon-category",
+    "open-problem"
+  ],
+  "text": "chirality-from-frobenius-self-pairing-scope.md",
+  "provenance": "authored"
+}

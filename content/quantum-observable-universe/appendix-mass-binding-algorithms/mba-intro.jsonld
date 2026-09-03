@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prose-mba-intro",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:mba-intro",
+  "kind": "prose",
+  "title": "Scope and conventions",
+  "tags": [
+    "appendix",
+    "algorithms",
+    "compute-bridge",
+    "canonical-chain"
+  ],
+  "text": "mba-intro.md",
+  "provenance": "authored"
+}

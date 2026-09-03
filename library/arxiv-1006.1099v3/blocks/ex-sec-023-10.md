@@ -1,0 +1,1 @@
+(Auroux) The hypothesis on dim( B) plays a deﬁnite role. Take a pencil of linear

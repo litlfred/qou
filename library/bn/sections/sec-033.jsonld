@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The period map. The period map determines an embedding",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "contains": [
+    "library/bn/blocks/prose-sec-033",
+    "library/bn/blocks/rem-sec-033-01",
+    "library/bn/blocks/rem-sec-033-02"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

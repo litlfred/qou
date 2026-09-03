@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-exact-pairing",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-exact-pairing",
+  "kind": "remark",
+  "title": "Exact pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-monoidal-category"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal",
+    "duality"
+  ],
+  "text": "glossary-exact-pairing.md",
+  "provenance": "authored"
+}

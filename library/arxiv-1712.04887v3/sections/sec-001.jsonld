@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.04887v3/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bloch groups and associated units",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-1712.04887v3/blocks/prose-sec-001",
+    "library/arxiv-1712.04887v3/blocks/thm-sec-001-01",
+    "library/arxiv-1712.04887v3/blocks/rem-sec-001-02",
+    "library/arxiv-1712.04887v3/blocks/rem-sec-001-03"
+  ],
+  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
+  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "provenance": "ingested"
+}

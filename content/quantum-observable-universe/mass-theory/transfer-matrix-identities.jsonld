@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-transfer-matrix-identities",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:transfer-matrix-identities",
+  "kind": "proposition",
+  "title": "Transfer matrix identities: $T_{pp}T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \\cdot I$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix",
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "identity",
+    "hecke-algebra",
+    "inverse",
+    "binding"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.transfer_matrix_identities",
+  "text": "transfer-matrix-identities.md",
+  "provenance": "authored"
+}

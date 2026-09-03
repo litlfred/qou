@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-chirality-dual-space-derivation-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:chirality-dual-space-derivation-table3-data",
+  "kind": "table",
+  "title": "Table 3 from prop:chirality-dual-space-derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-dual-space-derivation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "chirality-dual-space-derivation-table3-data.md",
+  "provenance": "authored"
+}

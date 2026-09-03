@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-vacuum-state-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:vacuum-state-su2",
+  "kind": "example",
+  "title": "Constructive vacuum state: the $q$-Haar integral on $\\mathrm{SU}_q(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vacuum-state"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-vacuum-state",
+  "tags": [
+    "su2",
+    "vacuum-state",
+    "constructive",
+    "haar-integral"
+  ],
+  "text": "vacuum-state-su2.md",
+  "provenance": "authored"
+}

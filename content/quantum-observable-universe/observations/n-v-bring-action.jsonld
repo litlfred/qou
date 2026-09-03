@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-n-v-bring-action",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:n-v-bring-action",
+  "kind": "conjecture",
+  "title": "S_5 action on H_n(q) at the electroweak slice",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+    "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic",
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism"
+  ],
+  "cites": [
+    "references/bring1786",
+    "references/klein1888"
+  ],
+  "tags": [
+    "tier:E",
+    "n-v",
+    "electroweak",
+    "bring",
+    "s5",
+    "substrate-axiom"
+  ],
+  "leanRef": "qou:QOU.Observations.s5_acts_on_ew_slice",
+  "text": "n-v-bring-action.md",
+  "leanSource": "n-v-bring-action.lean",
+  "provenance": "authored"
+}

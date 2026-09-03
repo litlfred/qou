@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1304.4737v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Toroidal domain walls as Hopfions",
+  "contains": [
+    "library/arxiv-1304.4737v1/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1304.4737v1",
+    "source_file": "1304.4737v1.pdf",
+    "source_sha256": "7dcfb1a25bfc0cdafa16049319fbccad7733d6347c0e83ff698d5d78ee4cc369",
+    "pages": 18,
+    "arxiv": {
+      "id": "1304.4737",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "17 Apr 2013"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

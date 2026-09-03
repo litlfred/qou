@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-gram-degeneracy-blocks-connes",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gram-degeneracy-blocks-connes",
+  "kind": "proposition",
+  "title": "A Lipschitz seminorm with nonzero kernel has no finite Connes sup",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-gram-star-positive"
+  ],
+  "tags": [
+    "connes-distance",
+    "spectral-triple",
+    "radical",
+    "convention-d",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.lip_kernel_forces_unbounded",
+  "text": "gram-degeneracy-blocks-connes.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The non-standard foliation of the digons. We have shown that A'",
+  "pageStart": 28,
+  "pageEnd": 40,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-007",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-01",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-02"
+  ],
+  "derivedFrom": "library/pjm-v161-n1-p02-p/manifest",
+  "sourceDocument": "library/pjm-v161-n1-p02-p/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0005038v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Braid groups are linear",
+  "contains": [
+    "library/arxiv-math-0005038v1/sections/sec-000",
+    "library/arxiv-math-0005038v1/sections/sec-001",
+    "library/arxiv-math-0005038v1/sections/sec-002",
+    "library/arxiv-math-0005038v1/sections/sec-003",
+    "library/arxiv-math-0005038v1/sections/sec-004",
+    "library/arxiv-math-0005038v1/sections/sec-005",
+    "library/arxiv-math-0005038v1/sections/sec-006",
+    "library/arxiv-math-0005038v1/sections/sec-007",
+    "library/arxiv-math-0005038v1/sections/sec-008",
+    "library/arxiv-math-0005038v1/sections/sec-009",
+    "library/arxiv-math-0005038v1/sections/sec-010",
+    "library/arxiv-math-0005038v1/sections/sec-011",
+    "library/arxiv-math-0005038v1/sections/sec-012",
+    "library/arxiv-math-0005038v1/sections/sec-013",
+    "library/arxiv-math-0005038v1/sections/sec-014",
+    "library/arxiv-math-0005038v1/sections/sec-015",
+    "library/arxiv-math-0005038v1/sections/sec-016",
+    "library/arxiv-math-0005038v1/sections/sec-017",
+    "library/arxiv-math-0005038v1/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0005038v1",
+    "source_file": "0005038v1.pdf",
+    "source_sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
+    "pages": 13,
+    "arxiv": {
+      "id": "math/0005038",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "4 May 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

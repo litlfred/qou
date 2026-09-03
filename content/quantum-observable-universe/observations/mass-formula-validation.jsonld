@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-mass-formula-validation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:mass-formula-validation",
+  "kind": "remark",
+  "title": "Mass formula validation: source classification and isotope coverage",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-mass-comparison-table",
+  "cites": [
+    "references/kerov1996"
+  ],
+  "tags": [
+    "mass",
+    "validation",
+    "isotope",
+    "CODATA",
+    "AME2020",
+    "certificate",
+    "hecke-engine"
+  ],
+  "text": "mass-formula-validation.md",
+  "provenance": "authored"
+}

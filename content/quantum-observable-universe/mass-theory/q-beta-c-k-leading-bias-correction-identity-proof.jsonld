@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-c-k-leading-bias-correction-identity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-beta-c-k-leading-bias-correction-identity",
+  "kind": "proof",
+  "title": "Proof of q beta c k leading bias correction identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-leading-bias-correction-identity"
+  ],
+  "text": "q-beta-c-k-leading-bias-correction-identity-proof.md",
+  "provenance": "authored"
+}

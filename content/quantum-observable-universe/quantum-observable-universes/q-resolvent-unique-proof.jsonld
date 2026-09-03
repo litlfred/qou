@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-resolvent-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-resolvent-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the $q$-resolvent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-resolvent-unique"
+  ],
+  "text": "q-resolvent-unique-proof.md",
+  "provenance": "authored"
+}

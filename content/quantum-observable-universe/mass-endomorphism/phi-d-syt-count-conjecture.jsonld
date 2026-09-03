@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-phi-d-syt-count-conjecture",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:phi-d-syt-count-conjecture",
+  "kind": "remark",
+  "title": "Conjecture: per-irrep character differences factor via $\\Phi_{4 f_\\lambda}(q)$, where $f_\\lambda$ is the SYT count — verified at $n=3$ for $V_{(3)}, V_{(2,1)}, V_{(1,1,1)}$; predicts cyclotomic structure at all $n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms",
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/hoefsmit1974",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "conjecture",
+    "cyclotomic",
+    "syt-count",
+    "per-wedderburn-block",
+    "generalization"
+  ],
+  "text": "phi-d-syt-count-conjecture.md",
+  "leanSource": "phi-d-syt-count-conjecture.lean",
+  "provenance": "authored"
+}

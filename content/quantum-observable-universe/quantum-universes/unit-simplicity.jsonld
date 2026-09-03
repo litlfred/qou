@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-unit-simplicity",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:unit-simplicity",
+  "kind": "remark",
+  "title": "Simplicity of the unit object and uniqueness of $\\epsilon$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category",
+  "tags": [
+    "category-theory",
+    "volume",
+    "pedagogy"
+  ],
+  "text": "unit-simplicity.md",
+  "provenance": "authored"
+}

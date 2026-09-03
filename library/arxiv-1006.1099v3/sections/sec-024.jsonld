@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spinning",
+  "pageStart": 49,
+  "pageEnd": 52,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-024",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-024-01",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-024-02",
+    "library/arxiv-1006.1099v3/blocks/cor-sec-024-03",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-024-04"
+  ],
+  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.4538v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Sign sequences formulae for the kappa map.",
+  "pageStart": 9,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1203.4538v1/blocks/prose-sec-005",
+    "library/arxiv-1203.4538v1/blocks/thm-sec-005-01",
+    "library/arxiv-1203.4538v1/blocks/rem-sec-005-02"
+  ],
+  "derivedFrom": "library/arxiv-1203.4538v1/manifest",
+  "sourceDocument": "library/arxiv-1203.4538v1/manifest",
+  "provenance": "ingested"
+}

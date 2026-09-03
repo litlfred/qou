@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The cusp equations",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-035",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-035-01",
+    "library/arxiv-1207.6711v1/blocks/rem-sec-035-02"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

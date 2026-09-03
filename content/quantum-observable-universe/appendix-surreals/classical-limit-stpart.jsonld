@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-classical-limit-stpart",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:classical-limit-stpart",
+  "kind": "conjecture",
+  "title": "Classical-limit functor as standard-part of evaluation at $q = 1 + \\varepsilon$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "cites": [
+    "references/robinson1966",
+    "references/berarducci-mantova2018"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "classical-limit",
+    "standard-part",
+    "nonstandard-analysis",
+    "substrate-parameter",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.ClassicalLimitStpart",
+  "text": "classical-limit-stpart.md",
+  "provenance": "authored"
+}

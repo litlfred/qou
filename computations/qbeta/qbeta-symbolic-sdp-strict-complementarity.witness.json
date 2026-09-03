@@ -1,8 +1,8 @@
 {
   "engine": "lp+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:01:04.635675+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-30T09:57:46.848048+00:00",
+  "commitSha": "234bcead8d6eb0174f7c168261faa42939731266",
   "assertions": [
     {
       "name": "lp_strong_duality",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 54,
+  "durationMs": 33,
   "computation": "qbeta-symbolic-sdp-strict-complementarity",
   "scriptFile": "qbeta_symbolic_sdp_strict_complementarity.py",
-  "scriptHash": "d4cc29756eb3",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "4da28158987d",
+  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-n-equals-1-vacuous-magic",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:n-equals-1-vacuous-magic",
+  "kind": "proof",
+  "title": "Proof of n equals 1 vacuous magic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-n-equals-1-vacuous-magic"
+  ],
+  "text": "n-equals-1-vacuous-magic-proof.md",
+  "provenance": "authored"
+}

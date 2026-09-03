@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-isospin-singlet-binds-more",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:isospin-singlet-binds-more",
+  "kind": "proof",
+  "title": "Proof: the positive numerator, and the transport to binding energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-isospin-singlet-binds-more"
+  ],
+  "tags": [
+    "isospin",
+    "nn-channel",
+    "convention-d"
+  ],
+  "leanRef": "qou:QOU.QBeta.InterfaceScalar.singlet_binds_more",
+  "text": "isospin-singlet-binds-more-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-crossing-parity-test-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:crossing-parity-test-table-data",
+  "kind": "table",
+  "title": "Data table from rem:crossing-parity-test",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-crossing-parity-test"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "crossing-parity-test-table-data.md",
+  "provenance": "authored"
+}

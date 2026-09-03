@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-frobenius-relation-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:frobenius-relation-su2",
+  "kind": "example",
+  "title": "The Frobenius relation in $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-frobenius-relation",
+  "tags": [
+    "su2",
+    "frobenius"
+  ],
+  "text": "frobenius-relation-su2.md",
+  "provenance": "authored"
+}

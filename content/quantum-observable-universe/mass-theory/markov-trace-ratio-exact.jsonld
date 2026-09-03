@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-ratio-exact",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-trace-ratio-exact",
+  "kind": "proposition",
+  "title": "Ratios of Markov traces are normalization-independent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form"
+  ],
+  "cites": [
+    "references/jones1987"
+  ],
+  "tags": [
+    "normalization",
+    "markov-trace",
+    "jones-polynomial",
+    "optimization",
+    "gram-matrix"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.markov_trace_ratio_exact",
+  "text": "markov-trace-ratio-exact.md",
+  "leanSource": "markov-trace-ratio-exact.lean",
+  "provenance": "authored"
+}

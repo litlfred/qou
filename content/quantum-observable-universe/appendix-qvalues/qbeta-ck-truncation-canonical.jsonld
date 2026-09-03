@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-qbeta-ck-truncation-canonical",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:qbeta-ck-truncation-canonical",
+  "kind": "conjecture",
+  "title": "Canonical closed form for the $\\mathfrak{Q}_\\beta$ truncation coefficients $c_k$ ($k\\geq 3$): only $c_2=-1$ is structural; $c_3=-2=J_{\\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\\geq 3}$ are cal-anchored (open)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "cites": [
+    "references/jones1985",
+    "references/habiro2002"
+  ],
+  "tags": [
+    "tier:E",
+    "q-beta",
+    "precision-ladder",
+    "truncation-order",
+    "c_k",
+    "near-match",
+    "cal-anchored",
+    "open-problem",
+    "conjecture",
+    "habiro-element",
+    "1ppb-roadmap"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.QbetaCkTruncationCanonicalClass",
+  "text": "qbeta-ck-truncation-canonical.md",
+  "leanSource": "qbeta-ck-truncation-canonical.lean",
+  "provenance": "authored"
+}

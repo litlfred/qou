@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The polytope of angle structures",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-010",
+    "library/angled-survey/blocks/def-sec-010-01"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

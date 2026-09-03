@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-hoefsmit-scattering-pipeline",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:hoefsmit-scattering-pipeline",
+  "kind": "conjecture",
+  "title": "From Hoefsmit scattering weights to physical mass via the observation frame",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-geom-yekutieli-alignment"
+  ],
+  "cites": [
+    "references/hoefsmit1974",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "hoefsmit",
+    "r-matrix",
+    "scattering",
+    "markov-trace",
+    "jones-polynomial",
+    "observation-frame",
+    "pipeline"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
+  "text": "hoefsmit-scattering-pipeline.md",
+  "leanSource": "hoefsmit-scattering-pipeline.lean",
+  "provenance": "authored"
+}

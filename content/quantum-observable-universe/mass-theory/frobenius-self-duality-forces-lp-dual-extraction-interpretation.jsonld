@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-self-duality-forces-lp-dual-extraction-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-self-duality-forces-lp-dual-extraction-interpretation",
+  "kind": "remark",
+  "title": "Categorical content: self-duality of $\\mathbf{Rep}(H_n)$ behind the LP dual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-self-duality-forces-lp-dual-extraction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-frobenius-self-duality-forces-lp-dual-extraction",
+  "tags": [
+    "frobenius",
+    "self-duality",
+    "lp-dual",
+    "rigid-monoidal",
+    "categorical-trace"
+  ],
+  "text": "frobenius-self-duality-forces-lp-dual-extraction-interpretation.md",
+  "provenance": "authored"
+}

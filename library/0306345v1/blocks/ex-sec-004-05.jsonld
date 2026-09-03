@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0306345v1/blocks/ex-sec-004-05",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "text": "ex-sec-004-05.md",
+  "derivedFrom": "library/0306345v1/sections/sec-004",
+  "sourceDocument": "library/0306345v1/manifest",
+  "provenance": "ingested"
+}

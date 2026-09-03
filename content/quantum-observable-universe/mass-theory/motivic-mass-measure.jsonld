@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-motivic-mass-measure",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:motivic-mass-measure",
+  "kind": "definition",
+  "title": "Motivic mass measure $\\mu$ on the brane arc space",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+  ],
+  "cites": [
+    "references/kontsevich1995",
+    "references/denef-loeser2001"
+  ],
+  "tags": [
+    "motivic",
+    "mass",
+    "lefschetz",
+    "grobner-shirshov",
+    "arc-space"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.MotivicMassMeasure",
+  "text": "motivic-mass-measure.md",
+  "leanSource": "motivic-mass-measure.lean",
+  "provenance": "authored"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-31T19:25:34.855381+00:00",
-  "commitSha": "1994745b6a1fd0a7020c91c1a15046142c880eb4",
+  "computedAt": "2026-09-03T04:47:29.816478+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "K_at_A2_is_the_single_pn_letter",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 51,
+  "durationMs": 44,
   "computation": "k-versus-selected-operator",
   "scriptFile": "k_versus_selected_operator_probe.py",
   "scriptHash": "19eecedc74c2",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6d2a39aa85f5b660a305d48362f83bed5180e223",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,8 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -191,5 +193,7 @@
     "CORRECTION carried in this witness: D_PN(q) is NOT negative for all q > 1. The sextic factor has a real root at q_c = 3.4580993000327971920 and D_PN > 0 beyond it. The exact statement is the interval 1 < q < q_c, which contains q_0 and the whole range swept in positive_sector_q_stability_probe.",
     "INTERPRETATION, NOT DERIVED: the entire negative content of K(2H) is D_PN, the p-n interface offset, and the deuteron is the p-n bound system. Nothing here derives that correspondence and no physical quantity enters the computation. Recorded only so a later reader finds it labelled rather than rediscovering it as a lead.",
     "K is computed in the H_3-LOCAL model of pyhecke.atom, where inter-nucleon crossings act on generator 0 of the same H_3. That is a different model from the (H_3)^(x)A tensor space the earlier probes' LP runs on; the A=2 comparison is made in the H_3-local model on both sides so it is like-for-like. Electrons are excluded throughout as the EM channel."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

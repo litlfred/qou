@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-kazhdan-lusztig-classical-limit",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:kazhdan-lusztig-classical-limit",
+  "kind": "conjecture",
+  "title": "As $q \\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-hecke-anyonic-substrate",
+    "papers/quantum-observable-universe/blocks/conj-crystal-graph-realization"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/khovanovlauda2009",
+    "references/kashiwara1991",
+    "references/lecouvey2007"
+  ],
+  "tags": [
+    "tier:S",
+    "classical-limit",
+    "kazhdan-lusztig-basis",
+    "klr-canonical-basis",
+    "symmetric-group",
+    "pauli-exclusion",
+    "bose-einstein",
+    "decategorification"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.KazhdanLusztigClassicalLimit",
+  "text": "kazhdan-lusztig-classical-limit.md",
+  "provenance": "authored"
+}

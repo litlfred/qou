@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-collatz-no-cycles",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:collatz-no-cycles",
+  "kind": "proof",
+  "title": "Proof of collatz no cycles",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles"
+  ],
+  "text": "collatz-no-cycles-proof.md",
+  "provenance": "authored"
+}

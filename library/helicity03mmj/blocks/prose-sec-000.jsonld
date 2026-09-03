@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-000-1-introduction.md",
+  "derivedFrom": "library/helicity03mmj/manifest",
+  "sourceDocument": "library/helicity03mmj/manifest",
+  "provenance": "ingested"
+}

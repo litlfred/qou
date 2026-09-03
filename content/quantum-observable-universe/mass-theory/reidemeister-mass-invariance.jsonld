@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-reidemeister-mass-invariance",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:reidemeister-mass-invariance",
+  "kind": "conjecture",
+  "title": "Reidemeister invariance of mass and binding energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark"
+  ],
+  "tags": [
+    "reidemeister",
+    "mass",
+    "binding-energy",
+    "knot-invariant",
+    "embedding",
+    "shell-transition",
+    "writhe"
+  ],
+  "leanRef": "qou:QOU.Braiding.reidemeister_mass_invariance",
+  "text": "reidemeister-mass-invariance.md",
+  "leanSource": "reidemeister-mass-invariance.lean",
+  "provenance": "authored"
+}

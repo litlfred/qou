@@ -44,11 +44,19 @@ P = X**3 + (z + 1) * X**2 + (z**2 + z + 1) * X + (z**3 + z**2 + z + 1)
 
 # ---- branch points + branch order (square-root?) -----------------------------
 disc = sp.discriminant(P, X)
-bps = mp.polyroots([complex(c) for c in sp.Poly(disc, z).all_coeffs()])
+# The discriminant's coefficients are exact integers; `complex(c)` used to push
+# them through float64 (a NO-FLOAT64 violation, AGENTS.md §probes-are-not-exempt).
+# Carry them as mpf instead.  Fixed 2026-09-03, bean qou-qx7j.
+bps = mp.polyroots([mp.mpf(int(c)) for c in sp.Poly(disc, z).all_coeffs()],
+                   maxsteps=200, extraprec=300)
 print("color-cubic branch points (disc_X=0):", [mp.nstr(b, 5) for b in bps])
-# verify order-2 branch: at z_k two cubic roots collide (gap → 0)
+# verify order-2 branch: at z_k two cubic roots collide (gap → 0).
+# The collision is the whole point, so the default maxsteps=50 cannot resolve it
+# and mpmath raised NoConvergence here -- this probe did not run at all on main.
 zk = bps[0]
-roots = sorted(mp.polyroots([1, zk + 1, zk**2 + zk + 1, zk**3 + zk**2 + zk + 1]),
+roots = sorted(mp.polyroots([mp.mpf(1), zk + 1, zk**2 + zk + 1,
+                             zk**3 + zk**2 + zk + 1],
+                            maxsteps=200, extraprec=300),
                key=lambda r: abs(r))
 gap_min = min(abs(roots[i] - roots[j]) for i in range(3) for j in range(i + 1, 3))
 print(f"min sheet-gap at a branch point = {mp.nstr(gap_min,4)} (→0 ⇒ square-root branch, exponent 1/2)")
@@ -115,4 +123,17 @@ print("depth-2 SL2 τ is an n≤4 effective fit. The q-difference recurrence for
 print("super-exp a_D^(n) is the q-Bessel-class kernel (jackson-q-bessel-contiguity).")
 print("CONFIRMED two ways: branch-point Puiseux (here) AND the corpus residue sum")
 print("(prop:sw-period-residue-sum: residues = per-block Wedderburn dim_q = lw).")
+print("=" * 70)
+print()
+print("SCOPE CORRECTION (2026-09-03, bean qou-qx7j) -- the SECOND route above is")
+print("withdrawn; the first is untouched.  prop:sw-period-residue-sum was found")
+print("(bean qou-6v5l, PR #6067) to state its residue sum over ALL poles with the")
+print("residue theorem as warrant, which runs backwards: on a compact surface the")
+print("residues SUM TO ZERO.  And the residues are not merely mis-summed, they are")
+print("individually zero -- (ddz f)(-2) = ((-2)+2)*f(0) = 0 for every f, so the")
+print("t^-2 coefficient of any z-derivative vanishes")
+print("(QOU.Brings.ColourCubicBranchLocus.ddz_residue_slot_eq_zero).  So the")
+print("residues are NOT the per-block Wedderburn dim_q, and that leg confirms")
+print("nothing.  The branch-point Puiseux argument for super-exponential GROWTH")
+print("stands on its own, as does the lw/#1765 verdict.")
 print("=" * 70)

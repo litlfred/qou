@@ -1,0 +1,129 @@
+{
+  "engine": "python-int",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T08:50:16.601834+00:00",
+  "commitSha": "d1d72e5862c7d566f43931aaaaa7972a8c65211f",
+  "assertions": [
+    {
+      "name": "the_repair_vertex_set_has_FOUR_vertices",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_acts_as_partition_conjugation_and_is_NOT_a_free_choice",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "on_ARBITRARY_rays_every_bar_symmetric_quiver_reaches_the_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "on_BAR_RELATED_rays_NOT_ONE_of_them_does",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "so_the_repair_fails_D1c_s_OWN_stipulation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_symmetry_FORBIDS_arrows_between_the_conjugate_blocks_when_acyclic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 141518,
+  "computation": "dt-d1c-v4-blocks-plus-abelian-bar-ray",
+  "scriptFile": "dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py",
+  "scriptHash": "750b2af6a597",
+  "scriptCommitSha": "d1d72e5862c7d566f43931aaaaa7972a8c65211f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py"
+  },
+  "description": "The V=4 blocks-plus-abelian repair clears the vertex bound but fails D1-c's own bar-ray stipulation: 0 of 128 bar-symmetric quivers give (4,3) on sigma-related rays, while all 128 give it on arbitrary rays.",
+  "data": {
+    "vertex_set": {
+      "vertices": [
+        "(3)",
+        "(2,1)",
+        "(1,1,1)",
+        "abelian"
+      ],
+      "V": 4,
+      "sigma": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "sigma_meaning": "bar = partition conjugation on H_3 blocks; abelian fixed"
+    },
+    "result": {
+      "bar_symmetric_quivers": 128,
+      "hits_on_sigma_related_rays": 0,
+      "hits_on_arbitrary_rays": 128,
+      "achievable_per_ray_counts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verdict": "the V=4 repair CLEARS the vertex bound and FAILS D1-c's bar-ray stipulation"
+    },
+    "acyclicity": {
+      "acyclic": 25,
+      "of_total": 128,
+      "acyclic_with_conjugate_block_arrow": 0,
+      "statement": "bar-symmetry forbids arrows between conjugate Wedderburn blocks in any acyclic quiver, since sigma-invariance turns 0->2 into a 2-cycle with 2->0"
+    },
+    "relation_to_the_landed_Lean": {
+      "theorem": "QuiverMirrorAutomorphismExcluded (sorry-free): any count-invariant mirror implementation forces every readable pair amphichiral, so (4,3) is unreachable",
+      "what_is_new_here": "not the statement but that it is checked on THE SPECIFIC vertex set the repair proposes — the repair was designed to clear a DIFFERENT bound (the vertex count) and does, so it was not obvious the same obstruction would survive"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "wired": false,
+      "is_a_fit": false,
+      "potential": "W = 0; a potential can only cut further",
+      "closes": "the blocks-plus-abelian repair UNDER D1-c's own bar-ray stipulation — not D1-c the route, and not every (Q,W)",
+      "per_ray_equality_is": "measured here; the cited Lean theorem proves the general statement"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

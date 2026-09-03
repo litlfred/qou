@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0903.0853v3/sections/sec-113",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "THE FUNDAMENTAL ISOMORPHISM 61",
+  "pageStart": 67,
+  "pageEnd": 69,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-113",
+    "library/arxiv-0903.0853v3/blocks/lem-sec-113-01",
+    "library/arxiv-0903.0853v3/blocks/lem-sec-113-02",
+    "library/arxiv-0903.0853v3/blocks/prop-sec-113-03"
+  ],
+  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
+  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "provenance": "ingested"
+}

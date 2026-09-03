@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1511.00400v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Polynomials",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-1511.00400v2/blocks/prose-sec-006",
+    "library/arxiv-1511.00400v2/blocks/rem-sec-006-01",
+    "library/arxiv-1511.00400v2/blocks/prop-sec-006-02",
+    "library/arxiv-1511.00400v2/blocks/thm-sec-006-03",
+    "library/arxiv-1511.00400v2/blocks/prop-sec-006-04",
+    "library/arxiv-1511.00400v2/blocks/prop-sec-006-05"
+  ],
+  "derivedFrom": "library/arxiv-1511.00400v2/manifest",
+  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "provenance": "ingested"
+}

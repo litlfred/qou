@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0508291v1/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Example: Cayley Graphs of the Symmetric Group",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "text": "../sections/sec-004-33-example-cayley-graphs-of-the-symmetric-group.md",
+  "derivedFrom": "library/arxiv-math-0508291v1/manifest",
+  "sourceDocument": "library/arxiv-math-0508291v1/manifest",
+  "provenance": "ingested"
+}

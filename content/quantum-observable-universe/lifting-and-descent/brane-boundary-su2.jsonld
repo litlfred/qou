@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-brane-boundary-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:brane-boundary-su2",
+  "kind": "example",
+  "title": "Brane boundary for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/ex-recursive-brane-tower-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brane-boundary",
+  "tags": [
+    "su2",
+    "brane-boundary",
+    "singular-set"
+  ],
+  "text": "brane-boundary-su2.md",
+  "provenance": "authored"
+}

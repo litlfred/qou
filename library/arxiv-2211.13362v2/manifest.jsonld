@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2211.13362v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Double-slit experiment revisited",
+  "contains": [
+    "library/arxiv-2211.13362v2/sections/sec-000",
+    "library/arxiv-2211.13362v2/sections/sec-001",
+    "library/arxiv-2211.13362v2/sections/sec-002",
+    "library/arxiv-2211.13362v2/sections/sec-003",
+    "library/arxiv-2211.13362v2/sections/sec-004",
+    "library/arxiv-2211.13362v2/sections/sec-005",
+    "library/arxiv-2211.13362v2/sections/sec-006",
+    "library/arxiv-2211.13362v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2211.13362v2",
+    "source_file": "2211.13362v2.pdf",
+    "source_sha256": "3becbeaa1135d2e1bb7eeddf3c8026586e12411ca93b963802d10ef39914f13b",
+    "pages": 15,
+    "arxiv": {
+      "id": "2211.13362",
+      "version": "2",
+      "primary_class": "quant-ph",
+      "stamp_date": "20 Nov 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

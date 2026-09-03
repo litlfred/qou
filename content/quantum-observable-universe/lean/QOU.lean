@@ -371,6 +371,11 @@ import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.HeckeSemisimpleGeneral
+import QOU.SchurWeyl.HeckeCarrierEquiv
+import QOU.SchurWeyl.HeckeCarrierSemisimpleReal
+import QOU.SchurWeyl.GenericParameter
+import QOU.SchurWeyl.GenericParameterReal
 import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeCoset
@@ -535,6 +540,7 @@ import QOU.BraidKnot.WedderburnUnconditional
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral
+import QOU.BraidKnot.KeystoneN5LevelSixSuffices
 import QOU.BraidsAndKnots.SecondMomentKernelVanishes
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
@@ -1390,6 +1396,7 @@ import QOU.Mathlib.SeparatedGauss
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
 import QOU.Mathlib.KazhdanLusztigBasis
+import QOU.Mathlib.ConcentratedColumnCollapse
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar

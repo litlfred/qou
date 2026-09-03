@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1403.4021v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS",
+  "contains": [
+    "library/arxiv-1403.4021v2/sections/sec-000",
+    "library/arxiv-1403.4021v2/sections/sec-001",
+    "library/arxiv-1403.4021v2/sections/sec-002",
+    "library/arxiv-1403.4021v2/sections/sec-003",
+    "library/arxiv-1403.4021v2/sections/sec-004",
+    "library/arxiv-1403.4021v2/sections/sec-005",
+    "library/arxiv-1403.4021v2/sections/sec-006",
+    "library/arxiv-1403.4021v2/sections/sec-007",
+    "library/arxiv-1403.4021v2/sections/sec-008",
+    "library/arxiv-1403.4021v2/sections/sec-009",
+    "library/arxiv-1403.4021v2/sections/sec-010",
+    "library/arxiv-1403.4021v2/sections/sec-011",
+    "library/arxiv-1403.4021v2/sections/sec-012",
+    "library/arxiv-1403.4021v2/sections/sec-013",
+    "library/arxiv-1403.4021v2/sections/sec-014",
+    "library/arxiv-1403.4021v2/sections/sec-015",
+    "library/arxiv-1403.4021v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1403.4021v2",
+    "source_file": "1403.4021v2.pdf",
+    "source_sha256": "046d02411e0dc0866f8355713ab3ba0038d5652e8724a0331e3cad45322761a4",
+    "pages": 46,
+    "arxiv": {
+      "id": "1403.4021",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "20 Jul 2014"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

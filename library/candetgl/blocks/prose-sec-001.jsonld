@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "PRELIMINARIES",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-ii-preliminaries.md",
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

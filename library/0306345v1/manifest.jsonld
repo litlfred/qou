@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0306345v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum",
+  "contains": [
+    "library/0306345v1/sections/sec-000",
+    "library/0306345v1/sections/sec-001",
+    "library/0306345v1/sections/sec-002",
+    "library/0306345v1/sections/sec-003",
+    "library/0306345v1/sections/sec-004",
+    "library/0306345v1/sections/sec-005",
+    "library/0306345v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0306345v1",
+    "source_file": "0306345v1.pdf",
+    "source_sha256": "936aa08026b2683b8889419e9f7364d18ed2f194804d6d99710a26b62bbd9503",
+    "pages": 20,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

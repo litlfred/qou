@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T04:44:24Z
+updated_at: 2026-09-03T11:21:36Z
 ---
 
 
@@ -581,3 +581,56 @@ The gap stays OPEN. What changed is which door is worth pushing on.
 2026-09-03 (cont., attack branch) DECISIVE NEGATIVE + RETRACTION of my own need-lit answer. I recommended 'fetch Olver's uniform Bessel remainder, then track C_A'. MEASURED that this CANNOT work: writing J=S+E, any POINTWISE bound |E|<=eps gives |dV| <= eps*U with U=Sum w|S| vs V=Sum w S^2/2 = V_A. Exact-kernel measurement: U/V = 42.8, 45.7, 53.9, 70.7, 91.9 at theta=64,78,128,256,512 (grows without bound; slope 0.33-0.39, SUB-sqrt(theta), exponent NOT pinned - do not quote U/V~sqrt(theta)). Decisive direct measurement at theta=78 (largest n the exact table reaches, where the asymptotic must take over): U/V=45.65 => pointwise eps=K theta^{-1/2} gives relative error ~5.17K on V_A; keeping it under m_inf=0.3002 forces K<0.058 vs the O(1) Debye coefficient => short by ~17x. So a sharper POINTWISE bound cannot close N0<=78 for any K; the oscillatory cancellation (summation by parts/stationary phase) is load-bearing. CONSEQUENCES: (1) need-lit answer is NO for the chosen route - retracted my earlier YES; (2) moot anyway, arxiv.org and dlmf.nist.gov are both blocked by org egress policy (403 CONNECT), reported not routed around; (3) this REINFORCES the corpus Route-1 decision (Kerov limit shape + CompositeEulerMaclaurin), which never forms |J-S| pointwise; Route 1's missing piece is an ANALYTIC BUILD (VKLS limit shape + Kerov fluctuation field as analytic objects feeding the EM remainder), not a citation. Probe: wlambda_covariance_epic_M1_pointwise_bound_insufficiency.py (exit 0, NO float64). Gap OPEN, route confirmed.
 
 2026-09-03 (attack branch, cont.) V_A REMAINDER RE-MEASURED + my own EM prediction RETRACTED. Read the corpus EM tool QOU.MathlibExt.abs_integral_sub_composite_le_osc: its bound h^3/12*(g''(a)-g''(b)) carries NO factor of k (per-cell oscillations telescope, governed by TV(g'') not cell count) -- exactly what the pointwise Bessel route lacked. With bulk grid h=1/(2sqrt th) that predicts remainder TV(g'')/(48 theta), a theta^{-1} rate. I predicted that for V_A and MEASURED theta^{-1/2}: exponent p -> 0.505 over theta=250..4000, sqrt(theta)*d nearly constant 0.880->0.857 (C_A ~ 0.857, still drifting down), theta*d GROWS 13.9->54.2. SIGN d>0 (V_A/theta^2 approaches 8/pi^2 from ABOVE). REASON is structural: _osc needs g'' ANTITONE, but the Sum|c| rescaled test function is |u| with a KINK at u=0; splitting there leaves an un-cancelled EM boundary term (g' jumps) of order h=theta^{-1/2}, not h^2. So TV(g'')/(48 theta) is right for the SMOOTH ingredients (Sum c^2, covariance) and NOT for the kink ingredient V_A. CONFIRMS the power-counting in docs/audits/2026-08-29-...-rigorous-finite-n-bound.md (kink costs half an order). DISAGREES with qou-tvok STEP 2's recorded theta^{-1}, c_1~-0.0678, d<0 in BOTH rate and sign -- FLAGGED not adjudicated (may be different objects: poissonized vs de-poissonized, or margin vs V_A); sibling figure not assumed wrong. SCOPE: one ingredient, not the (CS) margin; margin envelope ~0.087 is 10x BELOW V_A's 0.857 because sigma_D/sigma_A cancels the common correction. Probe: wlambda_covariance_epic_M1_em_osc_constant_prediction.py (exit 0, NO float64). Gap OPEN.
+
+2026-09-03 CORRECTION OF THE ENTRY ABOVE (the 'V_A REMAINDER RE-MEASURED + EM prediction RETRACTED' note). That entry is WRONG and is withdrawn. Its theta^{-1/2}, C_A~0.857, d>0 figures came from a BUG in my probe: the Sum|c| weight was written |k|(|k|+1)/2, symmetrising the negative half, whereas the descent set is the SHIFTED lattice {lambda_i - i} (involution x <-> -1-x), so the canonical weight is k(k+1)/2 with SIGNED k -- g(-1)=0, g(-2)=-1, g(-3)=-3, not -1,-3,-6. TELL I MISSED: every term of V_A is a product of two squares, hence non-negative, so more indices cannot give a SMALLER sum -- yet my M=118 run gave 0.8379 vs the reference M=121 run's 0.8105, which falsifies 'truncation is the only difference' outright; I chased truncation anyway. CORRECTED (PR #6469, merged 51bc3bd): with the canonical weight the probe reproduces wlambda_covariance_epic_M1_tvok_remainder_rate.py EXACTLY (theta=1000 -> -6.64223e-5, every printed digit): rate theta^{-1} (exponent 0.94-1.02), c_1 ~ -0.0678, sign d<0. So qou-tvok STEP 2 is CONFIRMED, not contradicted, and my 'may be measuring different objects' hedge was also wrong -- same quantity, same method. The EM-osc prediction is UN-RETRACTED: abs_integral_sub_composite_le_osc's bound carries NO factor of k (oscillations telescope, C^2 only), giving |d| <= TV(g'')/(48 theta) with explicit C_A = TV(g'')/48. FALSIFIABLE TARGET: a Route-1 derivation must give TV(g'') >= 48*|c_1| ~ 3.25, an O(1) number, approached FROM ABOVE (C_A is a bound, c_1 a limit). CLOSURE improves: at theta^{-1}, N0=ceil(C/m_inf)<=78 needs only C<=23.4, not 2.65. Blast radius: same gA in my two other probes; both re-run, both conclusions ROBUST (pointwise U/V at theta=78: 45.65->45.59, still ~17x short; deep-tail shares unchanged at ~1e-38). Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-weight-bug-retraction-retracted.md. Gap OPEN; NEXT = compute TV(g'') from the variance density and check it lands above 3.25 (no literature needed).
+
+
+2026-09-03 RETRACTION of my own 'C <= 23.4' (PR #6500). The closure-arithmetic
+sentence introduced in #6469 and repeated in 5 further sites -- 'at the theta^{-1}
+rate, N0 = ceil(C/m_inf) <= 78, i.e. C <= 23.4 -- far weaker than the C <= 2.65 a
+conservative n^{-1/2} reading demands' -- is WRONG. Two defects:
+ (i) WRONG OBJECT. The theta^{-1} rate is V_A's (d(theta)=V_A/theta^2-8/pi^2,
+     poissonized). The margin m(n) = rho_P - sigma_D/sigma_A is a RATIO OF SQUARE
+     ROOTS of two variances plus a correlation, at fixed n. Nobody has propagated
+     the V_A rate through the ratio, the sqrt and de-poissonization. I used a
+     measured rate for one object as a premise about another.
+ (ii) MISLABELLED THE PROVED BOUND. What is proved (PR #5929) is
+     |m(n)-m_inf| <= C n^{-1/2}, so N0 = (C/m_inf)^2 -- SQUARED -- and the
+     requirement is C <= m_inf*sqrt(79) = 2.6681. Calling 2.65 'a conservative
+     reading' inverts it: it is THE requirement under the bound in hand, and it was
+     already sitting in constant_C_landscape.py as C_TARGET. A corpus-grep of my
+     own epic would have caught this.
+MEASURED REPLACEMENT (wlambda_covariance_epic_M1_margin_envelope_exponent.py, exit
+0, exact Fractions, NO float64, n=4..46, 33s): running max of |m-m_inf|*n^p over
+[N,46]. p=1/2 column FALLS 0.1999 -> 0.0580 (~3.4x) => the proved n^{-1/2} shape is
+NOT TIGHT, the margin decays strictly faster. p=1 column is FLAT from N=6 at
+0.31512 (attained n=39) => consistent with n^{-1}. So the n^{-1} shape I assumed IS
+empirically supported for the margin -- it was still wrong to report the closure
+arithmetic as though that were established. LIMIT OF THE EVIDENCE: over n<=46 the
+data excludes n^{-1/2} decisively but does NOT cleanly separate n^{-1} from a
+slightly slower power (|dev|*n drifts up ~18% across outer peaks: 0.2613 at n=9,
+0.2636 at 21, 0.3094 at 38; the p=1 column is flat only because its sup sits at an
+interior n=39). Exponent NOT fitted from peaks by necessity: sign runs are 4-6(-),
+7-12(+), 13-15(-), 16-46(+), so the n=14 local max is a sub-lobe ~7x below the outer
+envelope and the last run is double-humped (21 and 38); consecutive-peak exponents
+come out 6.2, -4.7, 0.73, and hand-dropping n=14 to rescue that would be choosing
+the data to fit.
+NET EFFECT ON THE ROUTE -- IT STRENGTHENS IT, and needs no improvement to the proved
+shape: requirement C <= 2.6681 vs empirical envelope C_emp(n>=13) = 0.0580 =>
+HEADROOM 46x (N0 at C_emp would be 0.037). A rigorous constant within 46x of the
+truth closes M_1>0 for all n. That is the real 'a crude bound suffices' -- and it is
+the corpus's own position already: finite_n_cs_margin.py says the remaining
+requirement is an effective variance bound 'large enough (leading margin 0.30) that
+a crude rate suffices'. My chat recommendation to pivot to a crude bound was NOT a
+new idea; it restates what the epic held and I should have cited it.
+BLAST RADIUS (8 sites, 6 merged): em_osc_constant_prediction.py docstring + printed
+line (fixed at the producer -- it printed the claim every run); audit docs
+weight-bug-retraction-retracted (x2), tv-gpp-is-ill-posed, p2-trace-split-refuted
+(annotated, not rewritten -- dated records); beans qou-k5r5 + qou-tvok (this note).
+UNAFFECTED: V_A rate theta^{-1} and c_1 ~ -0.0678; the weight-bug fix; P2's
+refutation and the alpha=0.429421692 continuum cross-check (3.3e-10); TV(g'')
+ill-posedness. Audit:
+docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md
+NEXT unchanged in kind, now with a number: produce a RIGOROUS C <= 2.6681 in
+|m-m_inf| <= C n^{-1/2} against an empirical 0.0580 (Olver/Debye/Airy constant
+tracking, as constant_C_landscape.py has said all along). Gap qou-k5r5 OPEN.

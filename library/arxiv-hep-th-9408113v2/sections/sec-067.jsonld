@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9408113v2/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Nq",
+  "pageStart": 71,
+  "pageEnd": 76,
+  "contains": [
+    "library/arxiv-hep-th-9408113v2/blocks/prose-sec-067",
+    "library/arxiv-hep-th-9408113v2/blocks/cor-sec-067-01",
+    "library/arxiv-hep-th-9408113v2/blocks/conj-sec-067-02",
+    "library/arxiv-hep-th-9408113v2/blocks/rem-sec-067-03",
+    "library/arxiv-hep-th-9408113v2/blocks/thm-sec-067-04",
+    "library/arxiv-hep-th-9408113v2/blocks/thm-sec-067-05"
+  ],
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
+  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-boson-fermion",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-boson-fermion",
+  "kind": "remark",
+  "title": "Categorical distinction between bosons and fermions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+  "tags": [
+    "boson",
+    "fermion",
+    "schur-weyl",
+    "symmetric",
+    "braid-group"
+  ],
+  "text": "categorical-boson-fermion.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Triangles as sections",
+  "pageStart": 32,
+  "pageEnd": 40,
+  "text": "../sections/sec-010-41-triangles-as-sections.md",
+  "derivedFrom": "library/arxiv-1109.3255v2/manifest",
+  "sourceDocument": "library/arxiv-1109.3255v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0805.1447v2/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Braid Foliation",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-003-3-braid-foliation.md",
+  "derivedFrom": "library/arxiv-0805.1447v2/manifest",
+  "sourceDocument": "library/arxiv-0805.1447v2/manifest",
+  "provenance": "ingested"
+}

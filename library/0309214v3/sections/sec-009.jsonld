@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Upper bounds for initial conditions",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-009",
+    "library/0309214v3/blocks/thm-sec-009-01"
+  ],
+  "derivedFrom": "library/0309214v3/manifest",
+  "sourceDocument": "library/0309214v3/manifest",
+  "provenance": "ingested"
+}

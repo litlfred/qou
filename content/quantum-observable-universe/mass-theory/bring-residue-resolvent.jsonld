@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-bring-residue-resolvent",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bring-residue-resolvent",
+  "kind": "proposition",
+  "title": "Bring residue → canonical resolvent form 1/(1 − h_q · q^{α_shift})",
+  "cites": [
+    "references/suslin1991",
+    "references/thurston1978"
+  ],
+  "tags": [
+    "normalization",
+    "no-fitting",
+    "uniqueness",
+    "bring",
+    "residue"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.bring_residue_equation",
+  "text": "bring-residue-resolvent.md",
+  "leanSource": "bring-residue-resolvent.lean",
+  "provenance": "authored"
+}

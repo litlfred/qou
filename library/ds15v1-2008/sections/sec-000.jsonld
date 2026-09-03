@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ds15v1-2008/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Abstract",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/ds15v1-2008/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/ds15v1-2008/manifest",
+  "sourceDocument": "library/ds15v1-2008/manifest",
+  "provenance": "ingested"
+}

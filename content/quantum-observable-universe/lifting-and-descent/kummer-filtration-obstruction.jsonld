@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-kummer-filtration-obstruction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:kummer-filtration-obstruction",
+  "kind": "remark",
+  "title": "The Kummer filtration of the obstruction space",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+  "tags": [
+    "kummer",
+    "filtration",
+    "obstruction",
+    "yekutieli",
+    "gm-torsion"
+  ],
+  "text": "kummer-filtration-obstruction.md",
+  "provenance": "authored"
+}

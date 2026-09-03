@@ -147,9 +147,29 @@ replaces them.
 
 What survives is below, and it is the part that did not depend on the ordering:
 `r_pn = 1` exactly for the averaged interface (equal magnitudes either way), and
-its colour-weighted departure carrying `tanh(ln q)`. -/
-theorem like_nucleon_rates_coincide {q : ℝ} (_hq : 1 < q) :
-    (1 : ℝ) / q ^ 2 = 1 / q ^ 2 := rfl
+its colour-weighted departure carrying `tanh(ln q)`.
+
+**And `like_nucleon_rates_coincide` was empty until 2026-09-03.** The withdrawal
+above left it stated as
+
+    theorem like_nucleon_rates_coincide {q : ℝ} (_hq : 1 < q) :
+        (1 : ℝ) / q ^ 2 = 1 / q ^ 2 := rfl
+
+— literally `X = X`, closed by `rfl`, with the hypothesis bound under a `_`
+because nothing used it. It named the surviving claim and asserted none of it:
+`1/q² = 1/q²` holds for every real `q` and says nothing about nucleon bonds. That
+is the tautological conclusion AGENTS.md §5 bans, and it was found by
+`proof-no-unused-hypothesis-rfl` in the repo's vacuity audit.
+
+It now states what the name says: that the p–p and n–n rates — reached through
+**different** expressions, `|E₂|/|E₁|` at `d = 0` versus `|E₁|/|E₂|` at
+`d = −h` — are equal. That is falsifiable (the two sides are different terms; the
+ordering error this file records made them `1/q²` and `q²`), and the proof
+composes `rate_pp` and `rate_nn`, so it genuinely needs `1 < q`. -/
+theorem like_nucleon_rates_coincide {q : ℝ} (hq : 1 < q) :
+    |transferE2 q 0| / |transferE1 q 0|
+      = |transferE1 q (-(q - 1 / q))| / |transferE2 q (-(q - 1 / q))| := by
+  rw [rate_pp hq, rate_nn hq]
 
 /-! ### The electromagnetic ratio -/
 

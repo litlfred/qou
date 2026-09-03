@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Action of the braid group",
+  "pageStart": 18,
+  "pageEnd": 20,
+  "contains": [
+    "library/bn/blocks/prose-sec-012",
+    "library/bn/blocks/thm-sec-012-01",
+    "library/bn/blocks/prop-sec-012-02",
+    "library/bn/blocks/cor-sec-012-03",
+    "library/bn/blocks/thm-sec-012-04"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(ei) = −T ∗(ei) = −qei",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "contains": [
+    "library/bn/blocks/prose-sec-013",
+    "library/bn/blocks/cor-sec-013-01",
+    "library/bn/blocks/ex-sec-013-02"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

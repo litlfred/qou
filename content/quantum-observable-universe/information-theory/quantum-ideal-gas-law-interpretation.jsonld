@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-ideal-gas-law-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-ideal-gas-law-interpretation",
+  "kind": "remark",
+  "title": "Noether invariant and comparison with classical $PV = NkT$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-ideal-gas-law"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-quantum-ideal-gas-law",
+  "tags": [
+    "ideal-gas",
+    "noether",
+    "ward-identity",
+    "classical-comparison",
+    "gibbs"
+  ],
+  "text": "quantum-ideal-gas-law-interpretation.md",
+  "provenance": "authored"
+}

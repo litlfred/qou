@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-force-carrier-bring-uniqueness-novelty",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:force-carrier-bring-uniqueness-novelty",
+  "kind": "remark",
+  "title": "Mathematical novelty of the genus-saturation force-carrier derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+  "text": "force-carrier-bring-uniqueness-novelty.md",
+  "provenance": "authored"
+}

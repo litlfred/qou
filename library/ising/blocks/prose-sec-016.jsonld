@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/blocks/prose-sec-016",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "(‖i−j‖1−maxα,β∈D‖α−β‖1)≤ max",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-016-2-ij1maxαβdαβ1-max.md",
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

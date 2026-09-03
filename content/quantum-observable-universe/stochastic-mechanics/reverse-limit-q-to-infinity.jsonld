@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-reverse-limit-q-to-infinity",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:reverse-limit-q-to-infinity",
+  "kind": "conjecture",
+  "title": "Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution (algebraic fragment)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/lusztig1990"
+  ],
+  "tags": [
+    "reverse-limit",
+    "q-to-infinity",
+    "duality-d13",
+    "kashiwara-paired",
+    "bar-paired",
+    "closure-tier-b",
+    "phase-2-sprint-3-discharge",
+    "partial-closure-algebraic"
+  ],
+  "leanRef": "qou:QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity",
+  "text": "reverse-limit-q-to-infinity.md",
+  "leanSource": "reverse-limit-q-to-infinity.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Knots with unsharp MWF inequality",
+  "pageStart": 60,
+  "pageEnd": 64,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-067",
+    "library/arxiv-math-0606435v2/blocks/prop-sec-067-01",
+    "library/arxiv-math-0606435v2/blocks/prop-sec-067-02",
+    "library/arxiv-math-0606435v2/blocks/prop-sec-067-03",
+    "library/arxiv-math-0606435v2/blocks/conj-sec-067-04",
+    "library/arxiv-math-0606435v2/blocks/prop-sec-067-05"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

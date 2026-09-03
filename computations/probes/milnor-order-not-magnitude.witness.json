@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T10:54:25.459031+00:00",
-  "commitSha": "b49a63b015704661e82e779eb48f3e8db8347ace",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:48:34.550530+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "single_coupling_order_law_refuted",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "milnor-order-not-magnitude",
   "scriptFile": "milnor_order_not_magnitude_probe.py",
-  "scriptHash": "be66f3b66804",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "50a6233329c5",
+  "scriptCommitSha": "0fac84ad7f10bd14fd2b56b126c80a37a23d1f47",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -80,5 +82,7 @@
       "what_survives": "a multi-term closure where mu-bar fixes each term's SIGN and ORDER while separate coefficients carry the SIZES",
       "derives_a_magnitude": false
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

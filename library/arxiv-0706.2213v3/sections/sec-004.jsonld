@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0706.2213v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The holonomy representation of a hyperbolic twist knot",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-0706.2213v3/blocks/prose-sec-004",
+    "library/arxiv-0706.2213v3/blocks/rem-sec-004-01",
+    "library/arxiv-0706.2213v3/blocks/lem-sec-004-02"
+  ],
+  "derivedFrom": "library/arxiv-0706.2213v3/manifest",
+  "sourceDocument": "library/arxiv-0706.2213v3/manifest",
+  "provenance": "ingested"
+}

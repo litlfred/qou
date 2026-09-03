@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-z-recursion-to-ck-recursion-bridge",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-z-recursion-to-ck-recursion-bridge",
+  "kind": "proposition",
+  "title": "Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-per-block-chi-closed-forms",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
+  ],
+  "cites": [
+    "references/habiro2004",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "qbeta",
+    "z-recursion",
+    "ck-recursion",
+    "bridge",
+    "pre-archimedean",
+    "structural"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.z_recursion_forward_form",
+  "text": "qbeta-z-recursion-to-ck-recursion-bridge.md",
+  "leanSource": "qbeta-z-recursion-to-ck-recursion-bridge.lean",
+  "provenance": "authored"
+}

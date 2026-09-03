@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-brings-riemann-hurwitz",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:brings-riemann-hurwitz",
+  "kind": "proof",
+  "title": "Proof of the Riemann--Hurwitz count for $\\Sigma_4 \\to \\mathbb{P}(V)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-riemann-hurwitz"
+  ],
+  "text": "brings-riemann-hurwitz-proof.md",
+  "provenance": "authored"
+}

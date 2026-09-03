@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1211.1812v5/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Group bundles as global gauge symmetries.",
+  "pageStart": 20,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-1211.1812v5/blocks/prose-sec-008",
+    "library/arxiv-1211.1812v5/blocks/lem-sec-008-01",
+    "library/arxiv-1211.1812v5/blocks/cor-sec-008-02"
+  ],
+  "derivedFrom": "library/arxiv-1211.1812v5/manifest",
+  "sourceDocument": "library/arxiv-1211.1812v5/manifest",
+  "provenance": "ingested"
+}

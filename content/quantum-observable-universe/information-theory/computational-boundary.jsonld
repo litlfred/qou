@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-computational-boundary",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:computational-boundary",
+  "kind": "definition",
+  "title": "Computational boundary of a resolution tree",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-polynomial-observable-subcategory",
+    "papers/quantum-observable-universe/blocks/def-jet-horizon"
+  ],
+  "tags": [
+    "P-vs-NP",
+    "computational-horizon",
+    "jet-horizon",
+    "resolution-tree",
+    "complexity",
+    "information-barrier"
+  ],
+  "leanRef": "qou:QOU.PvsNPBoundary.computationalBoundary",
+  "text": "computational-boundary.md",
+  "leanSource": "computational-boundary.lean",
+  "provenance": "authored"
+}

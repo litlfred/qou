@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-observation-energy",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:observation-energy",
+  "kind": "proof",
+  "title": "Proof of Observation increases quantum energy and deforms the action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-observation-energy",
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/def-categorical-action"
+  ],
+  "text": "observation-energy-proof.md",
+  "provenance": "authored"
+}

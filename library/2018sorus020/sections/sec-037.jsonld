@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tangent space, diﬀerential forms and twisted cohomo-",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-037",
+    "library/2018sorus020/blocks/thm-sec-037-01",
+    "library/2018sorus020/blocks/thm-sec-037-02",
+    "library/2018sorus020/blocks/prop-sec-037-03"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

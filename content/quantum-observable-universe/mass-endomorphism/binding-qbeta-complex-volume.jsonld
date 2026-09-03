@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:binding-qbeta-complex-volume",
+  "kind": "conjecture",
+  "title": "Complex-volume unification: binding $\\mathfrak{E}_{\\mathrm{bind}}$ and $\\beta$-decay $\\mathfrak{Q}_\\beta$ are $\\operatorname{Re}$/$\\operatorname{Im}$ of one $\\mathfrak{V}=E_0\\,\\mathrm{tr}_M((\\Pi_{\\text{free}}-\\mathbf{1})\\circ\\mathcal{M})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/conj-block-multiplicativity-v-free"
+  ],
+  "cites": [
+    "references/neumann-zagier1985",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "tier:keystone",
+    "complex-volume",
+    "chern-simons",
+    "binding-energy",
+    "beta-decay",
+    "mass-endomorphism",
+    "bar-parity",
+    "unification",
+    "fibre-level"
+  ],
+  "leanRef": "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
+  "text": "binding-qbeta-complex-volume.md",
+  "leanSource": "binding-qbeta-complex-volume.lean",
+  "provenance": "authored"
+}

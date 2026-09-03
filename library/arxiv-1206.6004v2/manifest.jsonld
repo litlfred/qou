@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1206.6004v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Bring’s Curve: its Period Matrix and the Vector of Riemann Constants ⋆",
+  "contains": [
+    "library/arxiv-1206.6004v2/sections/sec-000",
+    "library/arxiv-1206.6004v2/sections/sec-001",
+    "library/arxiv-1206.6004v2/sections/sec-002",
+    "library/arxiv-1206.6004v2/sections/sec-003",
+    "library/arxiv-1206.6004v2/sections/sec-004",
+    "library/arxiv-1206.6004v2/sections/sec-005",
+    "library/arxiv-1206.6004v2/sections/sec-006",
+    "library/arxiv-1206.6004v2/sections/sec-007",
+    "library/arxiv-1206.6004v2/sections/sec-008",
+    "library/arxiv-1206.6004v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1206.6004v2",
+    "source_file": "1206.6004v2.pdf",
+    "source_sha256": "b490672c8c3557dda09fc2e7da4095885c3cb4d17a03f7ac7aab54dd82740f3d",
+    "pages": 20,
+    "arxiv": {
+      "id": "1206.6004",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "2 Oct 2012"
+    },
+    "doi": "10.3842/SIGMA.2012.065",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

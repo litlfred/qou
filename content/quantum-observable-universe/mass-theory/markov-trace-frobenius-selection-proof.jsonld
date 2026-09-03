@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-frobenius-selection",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-frobenius-selection",
+  "kind": "proof",
+  "title": "Proof of markov trace frobenius selection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection"
+  ],
+  "text": "markov-trace-frobenius-selection-proof.md",
+  "provenance": "authored"
+}

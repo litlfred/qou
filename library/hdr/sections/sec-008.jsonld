@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Decomposition maps and canonical basic sets",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "contains": [
+    "library/hdr/blocks/prose-sec-008",
+    "library/hdr/blocks/ex-sec-008-01",
+    "library/hdr/blocks/ex-sec-008-02",
+    "library/hdr/blocks/ex-sec-008-03"
+  ],
+  "derivedFrom": "library/hdr/manifest",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

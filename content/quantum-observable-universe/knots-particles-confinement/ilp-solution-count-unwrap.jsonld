@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ilp-solution-count-unwrap",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ilp-solution-count-unwrap",
+  "kind": "remark",
+  "title": "ILP solution count determines unwrap depth via confinement level",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-stable-atom-decidable"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-confinement-level",
+  "tags": [
+    "ilp",
+    "solution-count",
+    "unwrap-depth",
+    "confinement",
+    "computational-shortcut"
+  ],
+  "text": "ilp-solution-count-unwrap.md",
+  "provenance": "authored"
+}

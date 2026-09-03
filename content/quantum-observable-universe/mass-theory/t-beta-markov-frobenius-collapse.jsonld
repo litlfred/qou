@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:t-beta-markov-frobenius-collapse",
+  "kind": "proposition",
+  "title": "Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "frobenius",
+    "q-beta",
+    "min-norm",
+    "categorical-collapse"
+  ],
+  "leanRef": "qou:QOU.QBeta.MarkovFrobeniusCollapse.t_beta_collapse",
+  "text": "t-beta-markov-frobenius-collapse.md",
+  "leanSource": "t-beta-markov-frobenius-collapse.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-lichnerowicz",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-lichnerowicz",
+  "kind": "proposition",
+  "title": "Categorical Lichnerowicz: $\\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac{1}{4}\\,\\mathrm{Sc}_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/rem-hodge-laplacian-relation",
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-expansion",
+    "papers/quantum-observable-universe/blocks/def-q-hodge-star",
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton",
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+    "papers/quantum-observable-universe/blocks/ex-categorical-reeb-brings",
+    "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap"
+  ],
+  "cites": [
+    "references/lichnerowicz1963",
+    "references/woronowicz1989"
+  ],
+  "tags": [
+    "lichnerowicz",
+    "weitzenbock",
+    "q-laplacian",
+    "categorical-dirac",
+    "spin-geometry",
+    "self-duality",
+    "clifford"
+  ],
+  "leanRef": "qou:QOU.Lichnerowicz.qDirac",
+  "text": "categorical-lichnerowicz.md",
+  "leanSource": "categorical-lichnerowicz.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/descendants-colored-jones/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "An example",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/descendants-colored-jones/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "library/descendants-colored-jones/manifest",
+  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "provenance": "ingested"
+}

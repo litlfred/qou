@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0209324v1/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Modules. We can deﬁne cyclotomic completions also for any Z-modules",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-math-0209324v1/blocks/prose-sec-019",
+    "library/arxiv-math-0209324v1/blocks/thm-sec-019-01",
+    "library/arxiv-math-0209324v1/blocks/cor-sec-019-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0209324v1/manifest",
+  "sourceDocument": "library/arxiv-math-0209324v1/manifest",
+  "provenance": "ingested"
+}

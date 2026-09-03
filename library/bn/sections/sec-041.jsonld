@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-041",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(see §10), we ﬁnd:",
+  "pageStart": 51,
+  "pageEnd": 52,
+  "contains": [
+    "library/bn/blocks/prose-sec-041",
+    "library/bn/blocks/cor-sec-041-01"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

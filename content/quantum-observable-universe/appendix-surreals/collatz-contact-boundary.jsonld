@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-collatz-contact-boundary",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:collatz-contact-boundary",
+  "kind": "proposition",
+  "title": "The $[2]_q$-contact boundary on the Reeb bundle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-two-q-adic-valuation",
+    "papers/quantum-observable-universe/blocks/def-collatz-contact-boundary",
+    "papers/quantum-observable-universe/blocks/conj-q-collatz",
+    "papers/quantum-observable-universe/blocks/prop-root-of-unity-truncation"
+  ],
+  "tags": [
+    "collatz",
+    "contact-order",
+    "adic-valuation",
+    "reeb-bundle",
+    "kummer",
+    "boundary",
+    "divisor",
+    "hopf-fibration"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.collatz_contact_boundary",
+  "text": "collatz-contact-boundary.md",
+  "provenance": "authored"
+}

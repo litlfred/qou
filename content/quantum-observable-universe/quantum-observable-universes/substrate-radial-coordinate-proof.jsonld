@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-radial-coordinate",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:substrate-radial-coordinate",
+  "kind": "proof",
+  "title": "Proof of substrate radial coordinate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-substrate-radial-coordinate"
+  ],
+  "text": "substrate-radial-coordinate-proof.md",
+  "provenance": "authored"
+}

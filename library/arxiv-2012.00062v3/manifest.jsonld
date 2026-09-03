@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2012.00062v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY",
+  "contains": [
+    "library/arxiv-2012.00062v3/sections/sec-000",
+    "library/arxiv-2012.00062v3/sections/sec-001",
+    "library/arxiv-2012.00062v3/sections/sec-002",
+    "library/arxiv-2012.00062v3/sections/sec-003",
+    "library/arxiv-2012.00062v3/sections/sec-004",
+    "library/arxiv-2012.00062v3/sections/sec-005",
+    "library/arxiv-2012.00062v3/sections/sec-006",
+    "library/arxiv-2012.00062v3/sections/sec-007",
+    "library/arxiv-2012.00062v3/sections/sec-008",
+    "library/arxiv-2012.00062v3/sections/sec-009",
+    "library/arxiv-2012.00062v3/sections/sec-010",
+    "library/arxiv-2012.00062v3/sections/sec-011",
+    "library/arxiv-2012.00062v3/sections/sec-012",
+    "library/arxiv-2012.00062v3/sections/sec-013",
+    "library/arxiv-2012.00062v3/sections/sec-014",
+    "library/arxiv-2012.00062v3/sections/sec-015",
+    "library/arxiv-2012.00062v3/sections/sec-016",
+    "library/arxiv-2012.00062v3/sections/sec-017",
+    "library/arxiv-2012.00062v3/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2012.00062v3",
+    "source_file": "2012.00062v3.pdf",
+    "source_sha256": "2aacb7fa43f5e0da2657c6b7f7e58947baea6c3c4b37810c529e9b13b6b35039",
+    "pages": 68,
+    "arxiv": {
+      "id": "2012.00062",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "7 Apr 2022"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-assembly-projector-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:assembly-projector-exists",
+  "kind": "proposition",
+  "title": "Existence of the symmetric-block assembly projector",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "assembly-projector",
+    "existence",
+    "idempotent",
+    "q-young-symmetrizer",
+    "delocalization"
+  ],
+  "leanRef": "qou:QOU.Molecular.symmetric_assembly_projector_exists",
+  "text": "assembly-projector-exists.md",
+  "leanSource": "assembly-projector-exists.lean",
+  "provenance": "authored"
+}

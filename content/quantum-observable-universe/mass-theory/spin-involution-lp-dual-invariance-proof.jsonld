@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-spin-involution-lp-dual-invariance",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:spin-involution-lp-dual-invariance",
+  "kind": "proof",
+  "title": "Proof of spin involution lp dual invariance",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-involution-lp-dual-invariance"
+  ],
+  "text": "spin-involution-lp-dual-invariance-proof.md",
+  "provenance": "authored"
+}

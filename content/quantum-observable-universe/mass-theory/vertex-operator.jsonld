@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-vertex-operator",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:vertex-operator",
+  "kind": "definition",
+  "title": "Vertex operator on the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-reeb-bundle",
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
+    "papers/quantum-observable-universe/blocks/ex-projective-line-su2",
+    "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-skein-decomposition"
+  ],
+  "cites": [
+    "references/frenkel2004",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "vertex-operator",
+    "exceptional-divisor",
+    "reeb-bundle",
+    "state-operator-correspondence",
+    "R-matrix"
+  ],
+  "leanRef": "qou:QOU.VertexOperator",
+  "text": "vertex-operator.md",
+  "leanSource": "vertex-operator.lean",
+  "provenance": "authored"
+}

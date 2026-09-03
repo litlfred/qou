@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ds15v1-2008/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Rogers-Ramanujan Type Identities",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-005-2-rogers-ramanujan-type-identities.md",
+  "derivedFrom": "library/ds15v1-2008/manifest",
+  "sourceDocument": "library/ds15v1-2008/manifest",
+  "provenance": "ingested"
+}

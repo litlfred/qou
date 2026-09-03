@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gb-residue-spectral-sum",
+  "kind": "proposition",
+  "title": "Gröbner–Shirshov residue spectral sum for the mass trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-level-unique",
+    "papers/quantum-observable-universe/blocks/prop-residue-at-root"
+  ],
+  "tags": [
+    "mass",
+    "filtration",
+    "groebner-shirshov",
+    "residue",
+    "spectral-sequence",
+    "quantum-dilogarithm",
+    "cohomology"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.gb_residue_spectral_sum",
+  "text": "gb-residue-spectral-sum.md",
+  "leanSource": "gb-residue-spectral-sum.lean",
+  "provenance": "authored"
+}

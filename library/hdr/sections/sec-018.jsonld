@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Rational Cherednik Algebras",
+  "pageStart": 38,
+  "pageEnd": 41,
+  "contains": [
+    "library/hdr/blocks/prose-sec-018",
+    "library/hdr/blocks/ex-sec-018-01",
+    "library/hdr/blocks/rem-sec-018-02",
+    "library/hdr/blocks/thm-sec-018-03",
+    "library/hdr/blocks/rem-sec-018-04",
+    "library/hdr/blocks/prop-sec-018-05",
+    "library/hdr/blocks/rem-sec-018-06",
+    "library/hdr/blocks/rem-sec-018-07",
+    "library/hdr/blocks/prop-sec-018-08"
+  ],
+  "derivedFrom": "library/hdr/manifest",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

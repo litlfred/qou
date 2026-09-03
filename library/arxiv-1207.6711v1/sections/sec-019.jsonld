@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "From Ptolemy coordinates to shapes",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-019",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-019-01",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-019-02",
+    "library/arxiv-1207.6711v1/blocks/thm-sec-019-03",
+    "library/arxiv-1207.6711v1/blocks/cor-sec-019-04"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

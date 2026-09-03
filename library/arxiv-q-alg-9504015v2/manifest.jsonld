@@ -1,0 +1,58 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-q-alg-9504015v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
+  "contains": [
+    "library/arxiv-q-alg-9504015v2/sections/sec-000",
+    "library/arxiv-q-alg-9504015v2/sections/sec-001",
+    "library/arxiv-q-alg-9504015v2/sections/sec-002",
+    "library/arxiv-q-alg-9504015v2/sections/sec-003",
+    "library/arxiv-q-alg-9504015v2/sections/sec-004",
+    "library/arxiv-q-alg-9504015v2/sections/sec-005",
+    "library/arxiv-q-alg-9504015v2/sections/sec-006",
+    "library/arxiv-q-alg-9504015v2/sections/sec-007",
+    "library/arxiv-q-alg-9504015v2/sections/sec-008",
+    "library/arxiv-q-alg-9504015v2/sections/sec-009",
+    "library/arxiv-q-alg-9504015v2/sections/sec-010",
+    "library/arxiv-q-alg-9504015v2/sections/sec-011",
+    "library/arxiv-q-alg-9504015v2/sections/sec-012",
+    "library/arxiv-q-alg-9504015v2/sections/sec-013",
+    "library/arxiv-q-alg-9504015v2/sections/sec-014",
+    "library/arxiv-q-alg-9504015v2/sections/sec-015",
+    "library/arxiv-q-alg-9504015v2/sections/sec-016",
+    "library/arxiv-q-alg-9504015v2/sections/sec-017",
+    "library/arxiv-q-alg-9504015v2/sections/sec-018",
+    "library/arxiv-q-alg-9504015v2/sections/sec-019",
+    "library/arxiv-q-alg-9504015v2/sections/sec-020",
+    "library/arxiv-q-alg-9504015v2/sections/sec-021",
+    "library/arxiv-q-alg-9504015v2/sections/sec-022",
+    "library/arxiv-q-alg-9504015v2/sections/sec-023",
+    "library/arxiv-q-alg-9504015v2/sections/sec-024",
+    "library/arxiv-q-alg-9504015v2/sections/sec-025",
+    "library/arxiv-q-alg-9504015v2/sections/sec-026",
+    "library/arxiv-q-alg-9504015v2/sections/sec-027",
+    "library/arxiv-q-alg-9504015v2/sections/sec-028",
+    "library/arxiv-q-alg-9504015v2/sections/sec-029",
+    "library/arxiv-q-alg-9504015v2/sections/sec-030"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9504015v2",
+    "source_file": "9504015v2.pdf",
+    "source_sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
+    "pages": 33,
+    "arxiv": {
+      "id": "q-alg/9504015",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "24 Apr 1995"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

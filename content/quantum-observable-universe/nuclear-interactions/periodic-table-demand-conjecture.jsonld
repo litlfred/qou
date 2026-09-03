@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-periodic-table-demand",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:periodic-table-demand",
+  "kind": "remark",
+  "title": "The valley of stability is the demand-minimizing locus in $(Z, N)$-space",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-demand-stability"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-demand-stability",
+  "tags": [
+    "periodic-table",
+    "valley-of-stability",
+    "demand",
+    "magic-numbers",
+    "conjecture",
+    "nuclear-physics"
+  ],
+  "leanRef": "qou:QOU.PeriodicTableDemand.PeriodicTableDemand",
+  "text": "periodic-table-demand-conjecture.md",
+  "leanSource": "periodic-table-demand-conjecture.lean",
+  "provenance": "authored"
+}

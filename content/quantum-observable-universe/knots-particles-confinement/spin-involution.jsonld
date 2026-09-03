@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-spin-involution",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:spin-involution",
+  "kind": "definition",
+  "title": "Spin involution on a Frobenius $*$-algebra",
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "spin-involution",
+    "frobenius-algebra",
+    "isospin",
+    "spin-grading",
+    "hopf-antipode"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.SpinInvolution",
+  "text": "spin-involution.md",
+  "leanSource": "spin-involution.lean",
+  "provenance": "authored"
+}

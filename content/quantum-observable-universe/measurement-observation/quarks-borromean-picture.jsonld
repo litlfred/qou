@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quarks-borromean-picture",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quarks-borromean-picture",
+  "kind": "remark",
+  "title": "Quarks and hadrons in the Borromean picture",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-particle-correspondence",
+  "tags": [
+    "quark",
+    "hadron",
+    "borromean",
+    "proton",
+    "neutron",
+    "mass"
+  ],
+  "text": "quarks-borromean-picture.md",
+  "provenance": "authored"
+}

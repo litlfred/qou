@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-weak-spectral-completeness",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:weak-spectral-completeness",
+  "kind": "conjecture",
+  "title": "Plancherel completeness for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness"
+  ],
+  "tags": [
+    "tier:S",
+    "electroweak",
+    "spectral-completeness",
+    "plancherel",
+    "weak-coupling",
+    "force-carrier",
+    "nv-1",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.WeakSpectralCompleteness",
+  "text": "weak-spectral-completeness.md",
+  "leanSource": "weak-spectral-completeness.lean",
+  "provenance": "authored"
+}

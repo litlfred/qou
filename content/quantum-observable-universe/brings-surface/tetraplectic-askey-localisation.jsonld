@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-tetraplectic-askey-localisation",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:tetraplectic-askey-localisation",
+  "kind": "conjecture",
+  "title": "Local Askey-scheme approximation of the $S_5$-isotypic states on the Bring cone",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bring-cone-tetraplectic-structure"
+  ],
+  "cites": [
+    "references/askey1989qhermite",
+    "references/foth2002"
+  ],
+  "tags": [
+    "tetraplectic",
+    "askey-scheme",
+    "orthogonal-polynomials",
+    "bring-cone",
+    "open-problem",
+    "conjectural-framing"
+  ],
+  "text": "tetraplectic-askey-localisation.md",
+  "provenance": "authored"
+}

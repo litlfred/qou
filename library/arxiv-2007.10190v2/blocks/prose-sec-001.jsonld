@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2007.10190v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Asymptotic expansions in perturbative quantum field theory",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-001-11-asymptotic-expansions-in-perturbative-quantum.md",
+  "derivedFrom": "library/arxiv-2007.10190v2/manifest",
+  "sourceDocument": "library/arxiv-2007.10190v2/manifest",
+  "provenance": "ingested"
+}

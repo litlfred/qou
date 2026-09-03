@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Simplifying the cusp equations",
+  "pageStart": 42,
+  "pageEnd": 43,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-036",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-036-01",
+    "library/arxiv-1207.6711v1/blocks/rem-sec-036-02",
+    "library/arxiv-1207.6711v1/blocks/rem-sec-036-03"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

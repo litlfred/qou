@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1009.4034v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT",
+  "contains": [
+    "library/arxiv-1009.4034v1/sections/sec-000",
+    "library/arxiv-1009.4034v1/sections/sec-001",
+    "library/arxiv-1009.4034v1/sections/sec-002",
+    "library/arxiv-1009.4034v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1009.4034v1",
+    "source_file": "1009.4034v1.pdf",
+    "source_sha256": "8f8d6d786b60c279c9e3998bcee79b896ac69c4f9b3e4656e97ebb87d0818cda",
+    "pages": 23,
+    "arxiv": {
+      "id": "1009.4034",
+      "version": "1",
+      "primary_class": "math.RT",
+      "stamp_date": "21 Sep 2010"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

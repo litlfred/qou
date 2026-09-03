@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0503227v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Central limit theorem for Plancherel measure",
+  "pageStart": 3,
+  "pageEnd": 9,
+  "text": "../sections/sec-001-2-central-limit-theorem-for-plancherel-measure.md",
+  "derivedFrom": "library/arxiv-math-0503227v2/manifest",
+  "sourceDocument": "library/arxiv-math-0503227v2/manifest",
+  "provenance": "ingested"
+}

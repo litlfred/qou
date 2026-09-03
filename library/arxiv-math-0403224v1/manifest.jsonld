@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0403224v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Difference equation of the colored Jones polynomial for torus knot",
+  "contains": [
+    "library/arxiv-math-0403224v1/sections/sec-000",
+    "library/arxiv-math-0403224v1/sections/sec-001",
+    "library/arxiv-math-0403224v1/sections/sec-002",
+    "library/arxiv-math-0403224v1/sections/sec-003",
+    "library/arxiv-math-0403224v1/sections/sec-004",
+    "library/arxiv-math-0403224v1/sections/sec-005",
+    "library/arxiv-math-0403224v1/sections/sec-006",
+    "library/arxiv-math-0403224v1/sections/sec-007",
+    "library/arxiv-math-0403224v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0403224v1",
+    "source_file": "0403224v1.pdf",
+    "source_sha256": "c25ccba77da375adc5ecdc95a1f245148dc0071fc677c2c904c0d702dd4fbb84",
+    "pages": 7,
+    "arxiv": {
+      "id": "math/0403224",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "14 Mar 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

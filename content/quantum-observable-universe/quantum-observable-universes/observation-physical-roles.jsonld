@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-observation-physical-roles",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observation-physical-roles",
+  "kind": "remark",
+  "title": "Physical roles of the observation components",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observation",
+  "tags": [
+    "observation",
+    "interpretation",
+    "jet",
+    "adjoint"
+  ],
+  "text": "observation-physical-roles.md",
+  "provenance": "authored"
+}

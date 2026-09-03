@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-wenzl-bridge-applicability-qou",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:wenzl-bridge-applicability-qou",
+  "kind": "proof",
+  "title": "Proof of wenzl bridge applicability qou",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wenzl-bridge-applicability-qou"
+  ],
+  "text": "wenzl-bridge-applicability-qou-proof.md",
+  "provenance": "authored"
+}

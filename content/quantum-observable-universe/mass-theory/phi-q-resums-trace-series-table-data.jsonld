@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-phi-q-resums-trace-series-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:phi-q-resums-trace-series-table-data",
+  "kind": "table",
+  "title": "Data table from rem:phi-q-resums-trace-series",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-phi-q-resums-trace-series"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "phi-q-resums-trace-series-table-data.md",
+  "provenance": "authored"
+}

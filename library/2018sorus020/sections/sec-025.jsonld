@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Curves and valuations",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-025",
+    "library/2018sorus020/blocks/ex-sec-025-01",
+    "library/2018sorus020/blocks/rem-sec-025-02",
+    "library/2018sorus020/blocks/ex-sec-025-03"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

@@ -1330,6 +1330,40 @@ an audit doc, content block, Lean comment, or PR description — or
 asserts as fact in chat that an item is open/unresolved in the
 corpus — run the **corpus-grep checklist**:
 
+0. **`corpus_search` (MCP) — run this FIRST, because every path below
+   shares one blind spot.** Paths 1-6 are greps, and a grep finds prior
+   work only if it used *your* words. Prior work written in different
+   words is not an edge case here; it is the case that actually costs a
+   session, because the grep comes back empty and reads as a clean bill.
+
+   The knowledge graph is the structure that survives a change of
+   vocabulary: a block that never says "Temperley-Lieb" but `uses` one
+   that does is one hop from the query, and `corpus_search` seeds
+   lexically then expands structurally across the authored corpus and
+   the ingested library at once.
+
+   ```
+   corpus_search  query: "<topic>"        # 1 hop, both directions
+   corpus_search  query: "<topic>", direction: "in"   # what depends on it
+   ```
+
+   Read three things in its answer. **`why`** says whether a hit MATCHED
+   or was REACHED, and by which edge — a `~` prefix means the edge ran
+   backwards, so that node depends on the seed rather than the reverse.
+   **`seedsByProvenance`** splits authored from ingested, and the shape
+   that matters is many ingested hits with no authored ones: that means
+   *cite it*, not *derive it*, which is the distinction path 5 exists to
+   draw. **`emptyRoots`** names a directory that exists but holds no
+   graph nodes — a corpus whose `.jsonld` siblings have never been
+   generated answers every query with a silence indistinguishable from
+   "nobody has done this". If it is non-empty, generate them
+   (`gen-block-jsonld` / `gen-library-jsonld`) before reading any absence
+   as an absence.
+
+   It does **not** replace the paths below — it seeds on labels, titles,
+   kinds and tags (add `searchText: true` for companion prose), so a
+   topic named only inside a proof body is still a grep's job.
+
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    typically land as audit docs; the originating source file's
    status note may lag the audit by weeks or months.
@@ -1456,7 +1490,10 @@ corpus — run the **corpus-grep checklist**:
    i.e. through exactly the two statuses this note says to read.
 
 Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. The source
+originating file itself) may you declare the item open. Step 0 is not a
+seventh gate — it is the step that most often stops you needing the other
+six, and an empty result from it is not by itself a licence to declare
+anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 
@@ -2562,15 +2599,14 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
-     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
-     (−11.5 ppb) when the counts below were measured, and since
-     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
-     `1.109978595642739…`. The **counts are still the counts** — they
-     describe witnesses computed under the old anchor, which is exactly
-     the population the migration is about — but do not read the literal
-     as the live anchor. It fed ~72 producers / **870** witnesses — the
-     canonical 3-CAL (muon) derivation witnesses.
+     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
+     **`1.1099785956427390466817…`** (−11.6 ppb) — see the 🛑 correction
+     below; this read `1.10997859555733471…` until 2026-08-30 and that
+     value has been **retired since 2026-08-22**. The **counts below are
+     still the counts**: they describe witnesses computed under the OLD
+     anchor, which is exactly the population the migration is about — do
+     not read them as counts of the live value. It fed ~72 producers /
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -2594,7 +2630,73 @@ muon; muon-anchor → ~4000σ on proton).
      > | match on | counts | at 2026-08-16 | at 2026-08-26 |
      > |---|---|---|---|
      > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
-     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
+     > | `1.1099785955573347` (full) | ~~the canonical pin only~~ **the RETIRED pin — see below** | 468 | 149 |
+     >
+     > 🛑 **The second row's label is now WRONG, and the table is missing its
+     > largest population (corrected 2026-08-30; found by bean `qou-silm`,
+     > which did the diagnosis and deliberately did not edit this file —
+     > the CODATA-2018 row below is the one part it does not carry).** On an
+     > owner ruling — *"2022 CODATA better than 2018. A → CODATA 2022"* —
+     > commit **`fca08de7d2` (2026-08-22)** re-derived the anchor witness, so
+     > *(A sibling correction on `main` dated this **2026-08-28**. That is the
+     > `computedAt` of a LATER regeneration, `83bab99730`; the VALUE changed on
+     > 2026-08-22, verified with `git log -- <file>`. Bean `qou-silm` made and
+     > corrected the same slip. Do not revert the date — reading a `computedAt`
+     > stamp as the date a value changed is the same error class as reading a
+     > `scriptCommitSha` as provenance.)*
+     > `1.1099785955573347…` has been the **retired** pin for eight days and
+     > the live canonical value is **`1.1099785956427390466817…`**. The row
+     > above tells you to count the retired literal *while calling it
+     > canonical*, which inverts its own warning: an agent following it counts
+     > a dead value and reports it as the live one.
+     >
+     > **Re-measured 2026-08-30 with the recorded method** (`git ls-tree` on
+     > `origin/main`, 3237 tracked `computations/*.witness.json`):
+     >
+     > | match on | is | count |
+     > |---|---|---|
+     > | `1.109978595` (10 digits) | all muon spellings | **403** |
+     > | `1.1099785955541805` | **CODATA 2018** | **257** |
+     > | `1.1099785956427390` | **CODATA 2022 — the LIVE canonical anchor** | **96** |
+     > | `1.1099785955573347` | the **retired** self-certified pin | **40** |
+     > | 10-digit hit, no full muon literal | unaccounted spellings | 17 |
+     >
+     > **That 40 is a count of FILES CONTAINING THE STRING, not of stale
+     > pins — do not read it as 40 stale witnesses.** Bean `qou-silm`
+     > independently reports *"exactly one witness"* still on the old pin, and
+     > **both are right about different questions**: of the 40, only **4**
+     > carry the literal in a `q0Value`/`q` *field*, and only **one**
+     > (`hadron-knot-table.witness.json`) as the top-level `q0Value`. The
+     > other three are payload data — a `scan[]` point, a cross-anchor
+     > `residual_evaluations/muon_q0`, an `across_q[]` array — i.e.
+     > deliberate multi-q records, not stale pins; the remaining 36 carry it
+     > in prose, `description` or provenance. This is the same
+     > string-match-vs-semantics gap the row above it warns about, one level
+     > down, and it is why every row here names its method.
+     >
+     > **CODATA 2018 is 64 % of the muon population and the two-row table
+     > cannot see it at all** — it is neither "the canonical pin" nor
+     > distinguishable from the rest under a 10-digit match. That is the
+     > sharper defect here: the old table's two rows do not partition what
+     > they are counting, so *both* readings under-describe the tree. Quote
+     > four rows, or say which single literal you matched.
+     >
+     > **The shift itself is small; do not confuse it with the μ–p tension.**
+     > retired → live is **0.0769 ppb**, and it moves μ–p from 11.5371 to
+     > **11.6141 ppb**. The witness drain for it is *already scoped* under
+     > bean **`qou-3f7a`** /
+     > [`2026-08-29-q0-muon-anchor-repin-drain.md`](docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md)
+     > (83 `Q0_FLIP` + 165 NEW drift sites, all at that same −0.0769 ppb) —
+     > **do not duplicate it.** That audit cites this document nine times and
+     > never flags that this passage is itself stale, which is why the
+     > correction lands here rather than there.
+     >
+     > **This does NOT weaken rule 1 of the sweep constraints** ("NEVER re-pin
+     > an anchor-defining witness"). That rule binds *agents*; the owner
+     > re-pinned it deliberately, by ruling, having established that the old
+     > value was **self-certifying** — `q_pinning_50_digit` is listed
+     > `ideal_muon`, so `q_parameter` rebound `q_at` for that very producer and
+     > it wrote back the value it had just read.
      >
      > The **870** above is the ten-digit reading and is correct. Measured
      > with the same script at both ends (`git ls-tree` on each revision,

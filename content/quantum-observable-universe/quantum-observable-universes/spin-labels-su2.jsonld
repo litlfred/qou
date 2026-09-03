@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-spin-labels-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:spin-labels-su2",
+  "kind": "example",
+  "title": "Spin decomposition of $\\mathrm{Rep}(\\mathrm{SU}(2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-labels",
+    "papers/quantum-observable-universe/blocks/ex-qou-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-spin-labels",
+  "tags": [
+    "su2",
+    "spin"
+  ],
+  "leanRef": "qou:QOU.Examples.su2SpinLabels",
+  "text": "spin-labels-su2.md",
+  "leanSource": "spin-labels-su2.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Chapter 1 – Vanishing theorems on abelian varieties",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "text": "../sections/sec-010-14-chapter-1-vanishing-theorems-on-abelian-varie.md",
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

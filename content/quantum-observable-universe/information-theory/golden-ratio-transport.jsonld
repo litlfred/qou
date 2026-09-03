@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-golden-ratio-transport",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:golden-ratio-transport",
+  "kind": "remark",
+  "title": "Parallel transport of a golden-ratio parallelogram to $q_{\\mathrm{gold}}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-flow"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+  "tags": [
+    "golden-ratio",
+    "parallel-transport",
+    "q-connection",
+    "elliptic-curve",
+    "information-theory",
+    "degeneration"
+  ],
+  "text": "golden-ratio-transport.md",
+  "provenance": "authored"
+}

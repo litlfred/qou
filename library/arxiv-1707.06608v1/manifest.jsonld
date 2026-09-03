@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1707.06608v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential",
+  "contains": [
+    "library/arxiv-1707.06608v1/sections/sec-000",
+    "library/arxiv-1707.06608v1/sections/sec-001",
+    "library/arxiv-1707.06608v1/sections/sec-002",
+    "library/arxiv-1707.06608v1/sections/sec-003",
+    "library/arxiv-1707.06608v1/sections/sec-004",
+    "library/arxiv-1707.06608v1/sections/sec-005",
+    "library/arxiv-1707.06608v1/sections/sec-006",
+    "library/arxiv-1707.06608v1/sections/sec-007",
+    "library/arxiv-1707.06608v1/sections/sec-008",
+    "library/arxiv-1707.06608v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1707.06608v1",
+    "source_file": "1707.06608v1.pdf",
+    "source_sha256": "7b7db6dce87dc81e00aff8778db68dddfd50882a11d5be9c998b750d5ef6d016",
+    "pages": 22,
+    "arxiv": {
+      "id": "1707.06608",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "20 Jul 2017"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "In−r0",
+  "pageStart": 76,
+  "pageEnd": 79,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-058",
+    "library/2018sorus020/blocks/lem-sec-058-01",
+    "library/2018sorus020/blocks/lem-sec-058-02",
+    "library/2018sorus020/blocks/lem-sec-058-03",
+    "library/2018sorus020/blocks/lem-sec-058-04"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

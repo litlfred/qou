@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0005296v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗",
+  "contains": [
+    "library/arxiv-math-0005296v1/sections/sec-000",
+    "library/arxiv-math-0005296v1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0005296v1",
+    "source_file": "0005296v1.pdf",
+    "source_sha256": "1714653ecfdf01bccb517050f0b4d41a1b56d2462c1d74cd86e2530ede75f004",
+    "pages": 4,
+    "arxiv": {
+      "id": "math/0005296",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "31 May 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

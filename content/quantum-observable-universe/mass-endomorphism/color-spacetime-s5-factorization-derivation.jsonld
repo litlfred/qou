@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-color-spacetime-s5-factorization-derivation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:color-spacetime-s5-factorization-derivation",
+  "kind": "remark",
+  "title": "Single trace object, discreteness of the winding phase, and the Lean formalisation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-color-spacetime-s5-factorization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-color-spacetime-s5-factorization",
+  "tags": [
+    "bring-fivefold",
+    "color-grading",
+    "spacetime",
+    "s5-galois",
+    "derivation-chain"
+  ],
+  "text": "color-spacetime-s5-factorization-derivation.md",
+  "provenance": "authored"
+}

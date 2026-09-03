@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2009.03688v6/blocks/prop-sec-009-02",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "see [31], Proposition 2.5",
+  "pageStart": 16,
+  "pageEnd": 26,
+  "text": "prop-sec-009-02.md",
+  "derivedFrom": "library/arxiv-2009.03688v6/sections/sec-009",
+  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "provenance": "ingested"
+}

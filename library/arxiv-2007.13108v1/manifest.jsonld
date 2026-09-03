@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2007.13108v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "contains": [
+    "library/arxiv-2007.13108v1/sections/sec-000",
+    "library/arxiv-2007.13108v1/sections/sec-001",
+    "library/arxiv-2007.13108v1/sections/sec-002",
+    "library/arxiv-2007.13108v1/sections/sec-003",
+    "library/arxiv-2007.13108v1/sections/sec-004",
+    "library/arxiv-2007.13108v1/sections/sec-005",
+    "library/arxiv-2007.13108v1/sections/sec-006",
+    "library/arxiv-2007.13108v1/sections/sec-007",
+    "library/arxiv-2007.13108v1/sections/sec-008",
+    "library/arxiv-2007.13108v1/sections/sec-009",
+    "library/arxiv-2007.13108v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2007.13108v1",
+    "source_file": "2007.13108v1.pdf",
+    "source_sha256": "b298478f5f5b948df63ffd7aaccf2c6940ff65dcd23b1e25a39071a7dc7d40fa",
+    "pages": 17,
+    "arxiv": {
+      "id": "2007.13108",
+      "version": "1",
+      "primary_class": "math.PR",
+      "stamp_date": "26 Jul 2020"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

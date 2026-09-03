@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-indexed-convolution-grid-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-indexed-convolution-grid-context",
+  "kind": "remark",
+  "title": "Structure of the knot-indexed convolution grid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-indexed-convolution-grid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-indexed-convolution-grid",
+  "tags": [
+    "bi-filtration",
+    "convolution",
+    "knot-index",
+    "hecke-algebra"
+  ],
+  "text": "knot-indexed-convolution-grid-context.md",
+  "provenance": "authored"
+}

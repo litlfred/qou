@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1306.3655v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The Murnaghan-Nakayama rule and some virtual Sn characters",
+  "contains": [
+    "library/arxiv-1306.3655v1/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1306.3655v1",
+    "source_file": "1306.3655v1.pdf",
+    "source_sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
+    "pages": 11,
+    "arxiv": {
+      "id": "1306.3655",
+      "version": "1",
+      "primary_class": "math.RT",
+      "stamp_date": "16 Jun 2013"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

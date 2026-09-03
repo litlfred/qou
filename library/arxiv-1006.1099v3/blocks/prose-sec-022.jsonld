@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-022",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "An illustrative example",
+  "pageStart": 37,
+  "pageEnd": 41,
+  "text": "../sections/sec-022-44-an-illustrative-example.md",
+  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

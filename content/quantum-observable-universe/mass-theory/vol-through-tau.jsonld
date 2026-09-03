@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-vol-through-tau",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:vol-through-tau",
+  "kind": "proposition",
+  "title": "$\\mathrm{Vol}(K)$ factors strictly through the fibre functor $\\tau$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+    "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "fibre-functor",
+    "knot-volume",
+    "archimedean",
+    "factorization"
+  ],
+  "leanRef": "qou:QOU.BraidsKnots.vol_through_tau_of_volumeConjecture",
+  "text": "vol-through-tau.md",
+  "leanSource": "vol-through-tau.lean",
+  "provenance": "authored"
+}

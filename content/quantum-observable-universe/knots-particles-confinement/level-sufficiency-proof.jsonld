@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-level-sufficiency",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:level-sufficiency",
+  "kind": "proof",
+  "title": "Proof of level sufficiency",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-level-sufficiency"
+  ],
+  "text": "level-sufficiency-proof.md",
+  "provenance": "authored"
+}

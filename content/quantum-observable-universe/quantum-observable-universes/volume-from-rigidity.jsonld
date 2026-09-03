@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-volume-from-rigidity",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:volume-from-rigidity",
+  "kind": "lemma",
+  "title": "Volume form from rigidity and symplectic self-duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-volume-from-rigidity"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-frobenius-su2",
+    "papers/quantum-observable-universe/blocks/ex-dagger-su2",
+    "papers/quantum-observable-universe/blocks/ex-su2-volume-from-rigidity",
+    "papers/quantum-observable-universe/blocks/rem-spin-half-representation"
+  ],
+  "tags": [
+    "category-theory",
+    "volume"
+  ],
+  "leanRef": "qou:QOU.volume_from_rigidity",
+  "text": "volume-from-rigidity.md",
+  "leanSource": "volume-from-rigidity.lean",
+  "provenance": "authored"
+}

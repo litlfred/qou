@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1508.01627v4/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A Murnaghan–Nakayama rule",
+  "pageStart": 5,
+  "pageEnd": 9,
+  "text": "../sections/sec-002-a-murnaghan-nakayama-rule.md",
+  "derivedFrom": "library/arxiv-1508.01627v4/manifest",
+  "sourceDocument": "library/arxiv-1508.01627v4/manifest",
+  "provenance": "ingested"
+}

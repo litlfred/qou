@@ -167,10 +167,14 @@ def main() -> None:
     b = mpf(str(data["hoefsmit_b"]))
     hbar_q_sq = mpf(str(data["hbar_q_sq"]))
 
-    # q_0 from pinning witness (different schema)
-    with open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)) as f:
-        qp = json.load(f)
-    q_0 = mpf(str(qp["derived_50_digit"]["q"]))
+    # q_0 from `q_parameter` -- the RUNNING SCRIPT's anchor -- rather than a
+    # direct read of q-pinning-50-digit.witness.json (routed 2026-08-30, bean
+    # `qou-aj91`). The direct read hardcoded muon and made QOU_Q0_ANCHOR inert
+    # here. This stem stays `ideal_muon`, and q_parameter derives that anchor
+    # from q_muon_at(70), byte-identical to 70 digits with what was read, so
+    # the value is unchanged; only the mechanism moved to the manifest.
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    q_0 = mpf(Q_50_DIGIT_STR)
 
     # Form A · cos correction (as in qbeta_decay_sdp_full_ck.py)
     N2 = 1 + mpf(-1) * b ** 2 * hbar_q_sq ** 2

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The space ofconf ormal simplices",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "contains": [
+    "library/18/blocks/prose-sec-007",
+    "library/18/blocks/lem-sec-007-01",
+    "library/18/blocks/thm-sec-007-02",
+    "library/18/blocks/thm-sec-007-03",
+    "library/18/blocks/thm-sec-007-04"
+  ],
+  "derivedFrom": "library/18/manifest",
+  "sourceDocument": "library/18/manifest",
+  "provenance": "ingested"
+}

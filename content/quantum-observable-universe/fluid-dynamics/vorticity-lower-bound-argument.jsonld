@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-vorticity-lower-bound-argument",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vorticity-lower-bound-argument",
+  "kind": "remark",
+  "title": "Biot--Savart dynamics and vorticity concentration behind the lower bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-vorticity-lower-bound"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-vorticity-lower-bound",
+  "tags": [
+    "vorticity",
+    "biot-savart",
+    "anti-parallel",
+    "interpretation"
+  ],
+  "text": "vorticity-lower-bound-argument.md",
+  "provenance": "authored"
+}

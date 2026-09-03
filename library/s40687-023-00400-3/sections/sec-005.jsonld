@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s40687-023-00400-3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Neumann–Zagier matrices and their twisted version",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "contains": [
+    "library/s40687-023-00400-3/blocks/prose-sec-005",
+    "library/s40687-023-00400-3/blocks/rem-sec-005-01",
+    "library/s40687-023-00400-3/blocks/conj-sec-005-02",
+    "library/s40687-023-00400-3/blocks/thm-sec-005-03"
+  ],
+  "derivedFrom": "library/s40687-023-00400-3/manifest",
+  "sourceDocument": "library/s40687-023-00400-3/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0802.1072v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Solving the conjugacy problem in B3",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-solving-the-conjugacy-problem-in-b3.md",
+  "derivedFrom": "library/arxiv-0802.1072v2/manifest",
+  "sourceDocument": "library/arxiv-0802.1072v2/manifest",
+  "provenance": "ingested"
+}

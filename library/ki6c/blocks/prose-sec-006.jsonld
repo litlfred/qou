@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/blocks/prose-sec-006",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Poisson summation formula",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "../sections/sec-006-24-the-poisson-summation-formula.md",
+  "derivedFrom": "library/ki6c/manifest",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

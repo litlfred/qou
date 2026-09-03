@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1604.02688v1/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Generalised normal and spun normal surfaces",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "contains": [
+    "library/arxiv-1604.02688v1/blocks/prose-sec-014",
+    "library/arxiv-1604.02688v1/blocks/rem-sec-014-01",
+    "library/arxiv-1604.02688v1/blocks/rem-sec-014-02",
+    "library/arxiv-1604.02688v1/blocks/lem-sec-014-03",
+    "library/arxiv-1604.02688v1/blocks/lem-sec-014-04",
+    "library/arxiv-1604.02688v1/blocks/rem-sec-014-05"
+  ],
+  "derivedFrom": "library/arxiv-1604.02688v1/manifest",
+  "sourceDocument": "library/arxiv-1604.02688v1/manifest",
+  "provenance": "ingested"
+}

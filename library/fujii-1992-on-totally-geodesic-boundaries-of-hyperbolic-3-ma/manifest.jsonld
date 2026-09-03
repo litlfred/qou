@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On totally geodesic boundaries of hyperbolic 3-manifolds",
+  "contains": [
+    "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-000",
+    "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-001",
+    "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-002",
+    "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-003",
+    "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+    "source_file": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf",
+    "source_sha256": "d3d3bf68955ad7758d80d069b510192d95ca7e5a05882a2a03ebff5d25f90694",
+    "pages": 14,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

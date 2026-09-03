@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-atomic-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:atomic-braid",
+  "kind": "definition",
+  "title": "Atomic braid $H_{A+Z}(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-derived-atom"
+  ],
+  "leanRef": "qou:QOU.AtomicBraid.NeutralAtom",
+  "text": "atomic-braid.md",
+  "leanSource": "atomic-braid.lean",
+  "provenance": "authored"
+}

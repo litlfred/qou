@@ -1,0 +1,99 @@
+{
+  "schema": "witness/v1",
+  "name": "alpha-scale-is-outside-the-trace",
+  "description": "The trace channel supplies 20.6-33.8 % of one alpha-cluster unit (29.8 MeV) even at the complete graph, so the alpha-cluster scale must come from outside it; plus the two-row support of the Schur-Weyl sum, extended to n=3,12,15.",
+  "beans": [
+    "qou-n4zp",
+    "qou-59j5",
+    "qou-brng",
+    "qou-0c19",
+    "qou-lw9l"
+  ],
+  "scope": "(a) \u2014 pure-proton chains for the trace figures; 29.8 MeV/alpha is the corpus's measured mean, cited not re-derived; no mechanism proposed for the missing scale",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "L_chain_A4": "1.46969815276540455",
+    "L_K4_best_order": "2.40867875195",
+    "B_chain_A4_MeV": "6.152129077144301039229495",
+    "B_K4_best_MeV": "10.08268436582609774378299",
+    "alpha_scale_MeV_corpus": "29.8",
+    "trace_fraction_of_one_alpha_low": "0.20644728446792956507",
+    "trace_fraction_of_one_alpha_high": "0.33834511294718448805",
+    "partition_support": [
+      {
+        "n": 3,
+        "partitions": 3,
+        "nonzero": 2,
+        "max_rows": 2
+      },
+      {
+        "n": 6,
+        "partitions": 11,
+        "nonzero": 4,
+        "max_rows": 2
+      },
+      {
+        "n": 9,
+        "partitions": 30,
+        "nonzero": 5,
+        "max_rows": 2
+      },
+      {
+        "n": 12,
+        "partitions": 77,
+        "nonzero": 7,
+        "max_rows": 2
+      },
+      {
+        "n": 15,
+        "partitions": 176,
+        "nonzero": 8,
+        "max_rows": 2
+      }
+    ],
+    "support_is_two_row_everywhere": true,
+    "two_row_fact_is_new": false,
+    "representation_inference_drawn": false,
+    "a_V_MeV_per_nucleon": "15.761994142421952424",
+    "observed_peak_MeV_per_nucleon": "8.7935335741932997733",
+    "trace_fraction_of_bulk_low": "0.097578533235626789462",
+    "trace_fraction_of_bulk_high": "0.15992082402012641584",
+    "target_is_bulk_not_observed": true
+  },
+  "assertions": [
+    {
+      "name": "q_0 is the PROTON pin (the pin the L values were measured at)",
+      "passed": true,
+      "detail": "Q_50_DIGIT_STR = 1.109978582751380807..., muon pin = 1.109978595557334719...; they differ at the 9th digit and the proton prefix 1.10997858 is present."
+    },
+    {
+      "name": "the trace channel supplies under 35 % of one alpha, even at the complete graph",
+      "passed": true,
+      "detail": "33.83 % at the complete graph with every interference term included \u2014 which the preceding work showed is the most the bond topology can produce (additive capped at 20.649 MeV with per-bond values FREE; non-additive at 10.083 MeV with the A=4 many-body sign measured NEGATIVE). The missing bulk is not in this channel."
+    },
+    {
+      "name": "only two-row partitions carry weight, at every strand count tested",
+      "passed": true,
+      "detail": "NOT NEW: the t7qv witness already records that every partition with >= 3 rows carries weight exactly zero, verified there at n=6 and n=9. Added here: n=3, 12, 15 and the total-vs-nonzero counts. Incremental, and reported as such."
+    },
+    {
+      "name": "the tempting representation-theoretic inference is named and declined",
+      "passed": true,
+      "detail": "Stating it would be a stronger result and an invalid one. The numerical exclusion stands on its own and is what is claimed."
+    },
+    {
+      "name": "the extensive target is the BULK coefficient, and the trace supplies under 20 % of it",
+      "passed": true,
+      "detail": "15.99 % of the bulk requirement, against 33.83 % of the observed 4He binding. Both are reported because they answer different questions; the bulk one is what an EXTENSIVE term must meet, and it is the stricter."
+    },
+    {
+      "name": "the open target is stated as a magnitude, with no mechanism proposed",
+      "passed": true,
+      "detail": "missing fraction per alpha: 66.17 % to 79.36 %. The corpus has the STRUCTURE derived (proved SU(4) gate) and the SCALE open; this bounds the scale from below by what the trace cannot supply."
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6
+}

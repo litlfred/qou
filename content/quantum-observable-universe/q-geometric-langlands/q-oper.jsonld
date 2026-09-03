@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-oper",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-oper",
+  "kind": "definition",
+  "title": "$q$-Oper",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-flat-connection",
+    "papers/quantum-observable-universe/blocks/def-q-langlands-dual"
+  ],
+  "cites": [
+    "references/frenkel2007"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "oper",
+    "q-deformation"
+  ],
+  "leanRef": "qou:QOU.QOper",
+  "text": "q-oper.md",
+  "leanSource": "q-oper.lean",
+  "provenance": "authored"
+}

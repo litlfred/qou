@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-level-selection-not-linear",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:level-selection-not-linear",
+  "kind": "proposition",
+  "title": "Linear level-selection is excluded (exponential beats linear)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tower-geometric-lower-bound"
+  ],
+  "tags": [
+    "binding",
+    "level-selection",
+    "logarithmic",
+    "gap-a-3",
+    "brane-tower"
+  ],
+  "leanRef": "qou:QOU.Mass.LevelSelection.no_linear_selection",
+  "text": "level-selection-not-linear.md",
+  "provenance": "authored"
+}

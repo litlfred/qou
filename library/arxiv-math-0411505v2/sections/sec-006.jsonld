@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0411505v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The enhanced arc-graph and the Jones polynomial",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-math-0411505v2/blocks/prose-sec-006",
+    "library/arxiv-math-0411505v2/blocks/thm-sec-006-01",
+    "library/arxiv-math-0411505v2/blocks/thm-sec-006-02",
+    "library/arxiv-math-0411505v2/blocks/thm-sec-006-03",
+    "library/arxiv-math-0411505v2/blocks/rem-sec-006-04"
+  ],
+  "derivedFrom": "library/arxiv-math-0411505v2/manifest",
+  "sourceDocument": "library/arxiv-math-0411505v2/manifest",
+  "provenance": "ingested"
+}

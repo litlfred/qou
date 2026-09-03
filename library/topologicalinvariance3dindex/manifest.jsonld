@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/topologicalinvariance3dindex/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+  "contains": [
+    "library/topologicalinvariance3dindex/sections/sec-000",
+    "library/topologicalinvariance3dindex/sections/sec-001",
+    "library/topologicalinvariance3dindex/sections/sec-002",
+    "library/topologicalinvariance3dindex/sections/sec-003",
+    "library/topologicalinvariance3dindex/sections/sec-004",
+    "library/topologicalinvariance3dindex/sections/sec-005",
+    "library/topologicalinvariance3dindex/sections/sec-006",
+    "library/topologicalinvariance3dindex/sections/sec-007",
+    "library/topologicalinvariance3dindex/sections/sec-008",
+    "library/topologicalinvariance3dindex/sections/sec-009",
+    "library/topologicalinvariance3dindex/sections/sec-010",
+    "library/topologicalinvariance3dindex/sections/sec-011",
+    "library/topologicalinvariance3dindex/sections/sec-012",
+    "library/topologicalinvariance3dindex/sections/sec-013",
+    "library/topologicalinvariance3dindex/sections/sec-014",
+    "library/topologicalinvariance3dindex/sections/sec-015",
+    "library/topologicalinvariance3dindex/sections/sec-016",
+    "library/topologicalinvariance3dindex/sections/sec-017",
+    "library/topologicalinvariance3dindex/sections/sec-018",
+    "library/topologicalinvariance3dindex/sections/sec-019",
+    "library/topologicalinvariance3dindex/sections/sec-020",
+    "library/topologicalinvariance3dindex/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "topologicalinvariance3dindex",
+    "source_file": "topological.invariance.3Dindex.pdf",
+    "source_sha256": "22953b4eee66dca290f6b793517cc2eb020c8e862e13b54bd43329c3979f32e7",
+    "pages": 60,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

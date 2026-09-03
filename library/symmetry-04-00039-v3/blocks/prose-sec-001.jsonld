@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/symmetry-04-00039-v3/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Basic Particle Model",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-the-basic-particle-model.md",
+  "derivedFrom": "library/symmetry-04-00039-v3/manifest",
+  "sourceDocument": "library/symmetry-04-00039-v3/manifest",
+  "provenance": "ingested"
+}

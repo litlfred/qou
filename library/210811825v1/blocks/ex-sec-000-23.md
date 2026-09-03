@@ -1,0 +1,1 @@
+Using Theorem 2.12 and Theorem 2.13, we are now ready to deﬁne∆Ω

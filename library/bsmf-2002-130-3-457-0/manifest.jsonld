@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bsmf-2002-130-3-457-0/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hyperideal polyhedra in hyperbolic 3-space",
+  "contains": [
+    "library/bsmf-2002-130-3-457-0/sections/sec-000",
+    "library/bsmf-2002-130-3-457-0/sections/sec-001",
+    "library/bsmf-2002-130-3-457-0/sections/sec-002",
+    "library/bsmf-2002-130-3-457-0/sections/sec-003",
+    "library/bsmf-2002-130-3-457-0/sections/sec-004",
+    "library/bsmf-2002-130-3-457-0/sections/sec-005",
+    "library/bsmf-2002-130-3-457-0/sections/sec-006",
+    "library/bsmf-2002-130-3-457-0/sections/sec-007",
+    "library/bsmf-2002-130-3-457-0/sections/sec-008",
+    "library/bsmf-2002-130-3-457-0/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "bsmf-2002-130-3-457-0",
+    "source_file": "BSMF_2002__130_3_457_0.pdf",
+    "source_sha256": "63f79235d0c13ba886e63c0d61d69185cb979d6a0ddc1aa2cc1430a0534cb741",
+    "pages": 35,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

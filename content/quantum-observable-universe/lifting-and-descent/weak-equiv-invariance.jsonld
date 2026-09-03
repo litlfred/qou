@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-weak-equiv-invariance",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:weak-equiv-invariance",
+  "kind": "proposition",
+  "title": "Weak equivalence invariance of physical states",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
+    "papers/quantum-observable-universe/blocks/prop-vacuum-state",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-weak-equiv-invariance"
+  ],
+  "tags": [
+    "weak-equivalence",
+    "vacuum-state",
+    "physical-states"
+  ],
+  "leanRef": "qou:QOU.Torsion.weak_equiv_invariance",
+  "text": "weak-equiv-invariance.md",
+  "leanSource": "weak-equiv-invariance.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The setting 25",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-020"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

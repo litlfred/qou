@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-angular-momentum",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-angular-momentum",
+  "kind": "definition",
+  "title": "$q$-Angular momentum from the $\\mathrm{SU}_q(2)$ Casimir",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-momentum",
+    "papers/quantum-observable-universe/blocks/def-q-casimir",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-spin-parity"
+  ],
+  "tags": [
+    "angular-momentum",
+    "q-deformed",
+    "su-q-2",
+    "casimir",
+    "spin",
+    "braid",
+    "jones-wenzl"
+  ],
+  "leanRef": "qou:QOU.Archimedean.QAngularMomentum",
+  "text": "q-angular-momentum.md",
+  "leanSource": "q-angular-momentum.lean",
+  "provenance": "authored"
+}

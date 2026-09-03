@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-m-tau-knot-prediction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:m-tau-knot-prediction",
+  "kind": "remark",
+  "title": "The $m_\\tau$ knot prediction and its falsification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-calibration-inputs",
+    "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-calibration-inputs",
+  "cites": [
+    "references/codata2022"
+  ],
+  "tags": [
+    "lepton-generation",
+    "knot-volume",
+    "cohomology",
+    "falsifiable",
+    "audit-forward-reference"
+  ],
+  "text": "m-tau-knot-prediction.md",
+  "provenance": "authored"
+}

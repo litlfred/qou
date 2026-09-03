@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:wedderburn-mass-formula",
+  "kind": "theorem",
+  "title": "Three-invariant atomic mass formula",
+  "leanRef": "qou:QOU.WedderburnMass.atomicMass",
+  "text": "wedderburn-mass-formula.md",
+  "leanSource": "wedderburn-mass-formula.lean",
+  "provenance": "authored"
+}

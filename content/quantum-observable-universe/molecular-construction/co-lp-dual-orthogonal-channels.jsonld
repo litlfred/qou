@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-co-lp-dual-orthogonal-channels",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:co-lp-dual-orthogonal-channels",
+  "kind": "remark",
+  "title": "Orthogonal-channel derivation of the $CO$ bond order",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-h2-lp-dual-binding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-co-lp-dual-binding",
+  "tags": [
+    "CO",
+    "LP-dual",
+    "orthogonal-channels",
+    "bond-order"
+  ],
+  "text": "co-lp-dual-orthogonal-channels.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:adelic-substrate",
+  "kind": "definition",
+  "title": "Adelic substrate $\\mathbb{A}$",
+  "cites": [
+    "references/tate1967"
+  ],
+  "tags": [
+    "adeles",
+    "macroscopic-limit",
+    "global",
+    "non-archimedean"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.AdelicSubstrate",
+  "text": "adelic-substrate.md",
+  "leanSource": "adelic-substrate.lean",
+  "provenance": "authored"
+}

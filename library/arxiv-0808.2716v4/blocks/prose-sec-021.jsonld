@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-021",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Connections to volume",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "../sections/sec-021-62-connections-to-volume.md",
+  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
+  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "provenance": "ingested"
+}

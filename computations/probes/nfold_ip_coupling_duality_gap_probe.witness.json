@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T21:01:18.898783+00:00",
-  "commitSha": "4365b161f185645245badf12d506e9f1029930bb",
+  "computedAt": "2026-09-03T04:48:39.931984+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_gap_nonnegative_structurally",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 27,
   "computation": "nfold_ip_coupling_duality_gap_probe",
   "scriptFile": "nfold_ip_coupling_duality_gap_probe.py",
   "scriptHash": "e8d489f52c1d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ac50d02eb50bd2cf3bec4e228371a94d7679bab1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -119,5 +121,7 @@
     "The pairing law is NOT the semi-empirical mass formula. min(Z,N) = (A-|N-Z|)/2 gives a volume term and an asymmetry term with coefficients locked at ratio 1, and an asymmetry term linear in |N-Z|; the SEMF's goes as (N-Z)^2/A with an independent coefficient. The agreement claimed here is qualitative only: binding proportional to the proton-neutron pair count, and exactly zero for pure-species systems. Nothing was fitted and no B_AME value was consulted.",
     "THIS IS THE LP RELAXATION, NOT THE IP. Everything measured here runs scipy.linprog over the continuous relaxation. The n-fold AGGREGATION structure is fully exercised — it is what produces the gap, the 6^A collapse and the pairing law — but Theorem 1.1's actual content, poly-time solvability of the INTEGER program via Graver-basis stabilisation, is untouched. Since the relaxation collapses to 6 variables it is trivially tractable, so the entire complexity question lives in the integrality not built here.",
     "Window edges are 50-step bisections on a 1e-9 threshold against a float64 LP, so the last few digits quoted are the bisection's precision, not certified algebraic values. The interior gap (0.0687 at the peak) is 8 orders above the noise floor and is separately verified by three LP methods, dual certificates, and an explicit cheaper feasible point; the exact zeros at q_0 are 9 orders below the same floor."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

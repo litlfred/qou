@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0806.3105v3/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Knot Representation",
+  "pageStart": 3,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-the-knot-representation.md",
+  "derivedFrom": "library/arxiv-0806.3105v3/manifest",
+  "sourceDocument": "library/arxiv-0806.3105v3/manifest",
+  "provenance": "ingested"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-02T21:28:16.613878+00:00",
-  "commitSha": "58d32983c7aebd71a8e9ff4cbfd1fc3f6dcc0dc1",
+  "computedAt": "2026-09-03T04:54:30.814836+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_cumulative_set_is_dense",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "the_twist_is_absent_where_it_is_needed_probe",
   "scriptFile": "the_twist_is_absent_where_it_is_needed_probe.py",
   "scriptHash": "a060a428b916",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4e9d5e6cebda20f29b60b251f853248e62a3230a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -222,5 +225,7 @@
     "THIS PROBE RETRACTS PART OF qou-bq9l, WHICH IS MINE. Its mechanism (c_n^n = Delta^2, magnitude q^(2c/n), fractionality from n=5) is re-verified and stands. Its cumulative enumeration as a predictive claim, and its t = 1/3 coincidence as evidence, do not. Anyone quoting that probe should quote this one alongside it.",
     "THE PER-n ANALYSIS ASSUMES A SYSTEM'S TWIST MUST COME FROM ITS OWN STRAND COUNT. That is the natural reading — the Coxeter element of B_n is defined on n strands — but a construction could in principle embed a subsystem in a larger braid and inherit a twist from there. Nothing here rules that out; it would need the embedding exhibited, and the resulting object would no longer be the n-strand system's own Coxeter element.",
     "The eight group-theoretic ratios are used ONLY to demonstrate that the cumulative test has no power. They are not claimed as predictions, matches, or targets the substrate should meet, and no per-n check against them is offered — at the strand counts where they would be posed (n=2, n=3) there is nothing to check against."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

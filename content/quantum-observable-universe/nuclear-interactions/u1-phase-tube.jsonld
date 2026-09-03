@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-u1-phase-tube",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:u1-phase-tube",
+  "kind": "remark",
+  "title": "Physical interpretation: the single $\\mathrm{U}(1)$ phase tube",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-u1-equivariant-reduction",
+    "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-u1-equivariant-reduction",
+  "tags": [
+    "u1",
+    "phase-tube",
+    "color-tube",
+    "commutative-limit",
+    "interpretation"
+  ],
+  "text": "u1-phase-tube.md",
+  "provenance": "authored"
+}

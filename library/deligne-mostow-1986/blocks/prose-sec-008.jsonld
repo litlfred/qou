@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Reformulation of PicarcTs theorem",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-008-3-reformulation-of-picarcts-theorem.md",
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

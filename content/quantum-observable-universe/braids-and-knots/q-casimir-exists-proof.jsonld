@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-casimir-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-casimir-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the $q$-Casimir element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-casimir-exists"
+  ],
+  "text": "q-casimir-exists-proof.md",
+  "provenance": "authored"
+}

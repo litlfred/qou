@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/maximal-hoermander-q-var-revised-v03/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates",
+  "contains": [
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-000",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-001",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-002",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-003",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-004",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-005",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-006",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-007",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-008",
+    "library/maximal-hoermander-q-var-revised-v03/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "maximal-hoermander-q-var-revised-v03",
+    "source_file": "Maximal-Hoermander-q-Var-revised-v03.pdf",
+    "source_sha256": "135332c04a1b3bb87bf9d0a5e85260731ee08fbbe82c0a769c61292c68d0aa4e",
+    "pages": 43,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

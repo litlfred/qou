@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:atomic-mass-gb-nf",
+  "kind": "proposition",
+  "title": "Atomic mass as Markov trace of the Gröbner–Shirshov normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot",
+    "papers/unital-groebner-bases/blocks/cor-pbw"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/jones1987"
+  ],
+  "tags": [
+    "mass",
+    "atomic-mass",
+    "markov-trace",
+    "groebner-shirshov",
+    "normal-form",
+    "hecke-algebra",
+    "categorical-density"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.atomicMassGBNF",
+  "text": "atomic-mass-gb-nf.md",
+  "leanSource": "atomic-mass-gb-nf.lean",
+  "provenance": "authored"
+}

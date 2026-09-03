@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-figure-eight-reeb-rotation",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:figure-eight-reeb-rotation",
+  "kind": "proof",
+  "title": "Proof of figure eight reeb rotation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation"
+  ],
+  "text": "figure-eight-reeb-rotation-proof.md",
+  "provenance": "authored"
+}

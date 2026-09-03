@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-c5-color-tube",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:c5-color-tube",
+  "kind": "remark",
+  "title": "$C_5$ action in color tube coordinates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-color-tube-coordinates"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "text": "c5-color-tube.md",
+  "provenance": "authored"
+}

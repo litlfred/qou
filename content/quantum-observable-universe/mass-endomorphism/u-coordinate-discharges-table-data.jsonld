@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-u-coordinate-discharges-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:u-coordinate-discharges-table-data",
+  "kind": "table",
+  "title": "Data table from rem:u-coordinate-discharges",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-u-coordinate-discharges"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "u-coordinate-discharges-table-data.md",
+  "provenance": "authored"
+}

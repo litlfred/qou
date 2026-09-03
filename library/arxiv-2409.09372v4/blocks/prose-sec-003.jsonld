@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2409.09372v4/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Non-normalized Markov traces",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-4-non-normalized-markov-traces.md",
+  "derivedFrom": "library/arxiv-2409.09372v4/manifest",
+  "sourceDocument": "library/arxiv-2409.09372v4/manifest",
+  "provenance": "ingested"
+}

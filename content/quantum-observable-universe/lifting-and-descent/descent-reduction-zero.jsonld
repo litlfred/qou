@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-reduction-zero",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-reduction-zero",
+  "kind": "remark",
+  "title": "Reduction at dimension 0",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-vector-field"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "tags": [
+    "descent",
+    "dimension-reduction",
+    "algebraic"
+  ],
+  "text": "descent-reduction-zero.md",
+  "provenance": "authored"
+}

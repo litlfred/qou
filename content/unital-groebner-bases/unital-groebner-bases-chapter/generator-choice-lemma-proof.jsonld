@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/prf-generator-choice",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:generator-choice",
+  "kind": "proof",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/lem-generator-choice"
+  ],
+  "text": "generator-choice-lemma-proof.md",
+  "provenance": "authored"
+}

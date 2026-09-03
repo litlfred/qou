@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/blocks/lem-sec-007-01",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "lem-sec-007-01.md",
+  "derivedFrom": "library/cspaper/sections/sec-007",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

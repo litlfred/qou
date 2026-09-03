@@ -1,0 +1,48 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1801.04409v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES",
+  "contains": [
+    "library/arxiv-1801.04409v4/sections/sec-000",
+    "library/arxiv-1801.04409v4/sections/sec-001",
+    "library/arxiv-1801.04409v4/sections/sec-002",
+    "library/arxiv-1801.04409v4/sections/sec-003",
+    "library/arxiv-1801.04409v4/sections/sec-004",
+    "library/arxiv-1801.04409v4/sections/sec-005",
+    "library/arxiv-1801.04409v4/sections/sec-006",
+    "library/arxiv-1801.04409v4/sections/sec-007",
+    "library/arxiv-1801.04409v4/sections/sec-008",
+    "library/arxiv-1801.04409v4/sections/sec-009",
+    "library/arxiv-1801.04409v4/sections/sec-010",
+    "library/arxiv-1801.04409v4/sections/sec-011",
+    "library/arxiv-1801.04409v4/sections/sec-012",
+    "library/arxiv-1801.04409v4/sections/sec-013",
+    "library/arxiv-1801.04409v4/sections/sec-014",
+    "library/arxiv-1801.04409v4/sections/sec-015",
+    "library/arxiv-1801.04409v4/sections/sec-016",
+    "library/arxiv-1801.04409v4/sections/sec-017",
+    "library/arxiv-1801.04409v4/sections/sec-018",
+    "library/arxiv-1801.04409v4/sections/sec-019",
+    "library/arxiv-1801.04409v4/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1801.04409v4",
+    "source_file": "1801.04409v4.pdf",
+    "source_sha256": "db61d011e3775aca54c0cc5b4f74b48d028227bf952482c6ff47f98492ee5d3f",
+    "pages": 35,
+    "arxiv": {
+      "id": "1801.04409",
+      "version": "4",
+      "primary_class": "math.RT",
+      "stamp_date": "9 Nov 2019"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

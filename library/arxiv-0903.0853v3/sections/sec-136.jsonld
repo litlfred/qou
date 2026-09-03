@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0903.0853v3/sections/sec-136",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "We write F∈ EΛ",
+  "pageStart": 86,
+  "pageEnd": 86,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-136",
+    "library/arxiv-0903.0853v3/blocks/thm-sec-136-01",
+    "library/arxiv-0903.0853v3/blocks/lem-sec-136-02"
+  ],
+  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
+  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Representation varieties",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-004",
+    "library/arxiv-1006.1099v3/blocks/thm-sec-004-01",
+    "library/arxiv-1006.1099v3/blocks/thm-sec-004-02",
+    "library/arxiv-1006.1099v3/blocks/cor-sec-004-03"
+  ],
+  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

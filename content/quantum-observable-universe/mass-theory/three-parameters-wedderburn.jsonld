@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-three-parameters-wedderburn",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:three-parameters-wedderburn",
+  "kind": "proposition",
+  "title": "Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-calibration-inputs"
+  ],
+  "tags": [
+    "wedderburn",
+    "calibration",
+    "irrep",
+    "hecke-algebra",
+    "young-symmetrizer",
+    "on-shell"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.three_parameters_wedderburn",
+  "text": "three-parameters-wedderburn.md",
+  "provenance": "authored"
+}

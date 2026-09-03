@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "kind": "proposition",
+  "title": "$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\\xi)$ acting on $F(\\xi)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-over-e0-classical-vanishing",
+    "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-habiro-bar-involution",
+    "papers/quantum-observable-universe/blocks/rem-markov-trace-inductive-limit"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/habiro2004",
+    "references/koelink1994"
+  ],
+  "tags": [
+    "q-beta",
+    "habiro",
+    "precision-ladder",
+    "recursion",
+    "q-difference",
+    "scaffolding",
+    "categorical-derivation"
+  ],
+  "leanRef": "qou:QOU.QBeta.CKRecursion.CKRecursion",
+  "text": "q-beta-c-k-recursion-from-habiro-q-difference.md",
+  "leanSource": "q-beta-c-k-recursion-from-habiro-q-difference.lean",
+  "provenance": "authored"
+}

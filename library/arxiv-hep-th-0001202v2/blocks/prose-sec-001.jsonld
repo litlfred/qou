@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The second grading",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-2-the-second-grading.md",
+  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
+  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "provenance": "ingested"
+}

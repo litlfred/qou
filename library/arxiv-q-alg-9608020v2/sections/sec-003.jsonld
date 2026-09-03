@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-q-alg-9608020v2/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Binomial formula. Given a partition µ and a number t set",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-q-alg-9608020v2/blocks/prose-sec-003",
+    "library/arxiv-q-alg-9608020v2/blocks/thm-sec-003-01"
+  ],
+  "derivedFrom": "library/arxiv-q-alg-9608020v2/manifest",
+  "sourceDocument": "library/arxiv-q-alg-9608020v2/manifest",
+  "provenance": "ingested"
+}

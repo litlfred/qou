@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Preliminaries",
+  "pageStart": 6,
+  "pageEnd": 8,
+  "contains": [
+    "library/ising/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

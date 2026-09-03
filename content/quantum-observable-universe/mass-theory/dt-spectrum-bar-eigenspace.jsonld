@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-dt-spectrum-bar-eigenspace",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:dt-spectrum-bar-eigenspace",
+  "kind": "proposition",
+  "title": "The DT-spectrum split is the bar-eigenspace decomposition of the $q\\to0$ Stokes constants",
+  "cites": [
+    "references/garoufalidis-gu-marino2021"
+  ],
+  "tags": [
+    "g3-aomega",
+    "route-c",
+    "bar-parity",
+    "dt-invariant",
+    "chirality",
+    "stokes-constant"
+  ],
+  "leanRef": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+  "text": "dt-spectrum-bar-eigenspace.md",
+  "provenance": "authored"
+}

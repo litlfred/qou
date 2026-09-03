@@ -1,11 +1,11 @@
 ---
 # qou-img9
 title: Six Iwahori-Hecke presentations coexist in the Lean tree
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T04:13:13Z
-updated_at: 2026-08-30T06:25:59Z
+updated_at: 2026-09-03T04:28:36Z
 ---
 
 Measured 2026-08-30 with
@@ -120,3 +120,152 @@ Whether the four content-free `HeckeAlgebra` structures should be renamed or
 deleted is a **different question** from reconciling the genuine presentations,
 and the sibling is right to keep them as separate rows. Nothing is consolidated
 and no consolidation is proposed here.
+
+## 2026-09-03 — TWO more presentations proved to be one algebra (the pair that mattered)
+
+QOU/SchurWeyl/HeckeCarrierEquiv.lean (new, sorry-free):
+
+  carrierEquiv          Hecke K q qi n  =~a  IwahoriHecke K Q n   (CommRing, given the two
+                        matching conditions below)
+  skeinIwahoriEquiv     Hecke K q q^-1 n =~a IwahoriHecke K (q^2) n  (any Field, q != 0)
+  isSemisimpleRing_iwahoriHecke   1 < Q  =>  IsSemisimpleRing (IwahoriHecke R Q n), EVERY rank
+
+### Why it is short: the relations differ in ONE clause
+
+  SchurWeyl.HeckeRel K q qi n :  sigma^2 = (q - qi) sigma + (q*qi)
+  QOU.Hecke.HeckeRel  K Q  n  :  sigma^2 = (Q - 1)  sigma + Q
+
+Braid and far-commutation are VERBATIM IDENTICAL, on the same FreeAlgebra K (Fin n). So
+the entire content is the quadratic, and sigma |-> c . T moves it under exactly two
+conditions, carried as hypotheses rather than assumed:
+
+  c (Q - 1) = q - qi        and        c^2 Q = q qi
+
+The braid and commute clauses are PROVED scale-invariant (homogeneous of equal degree
+both sides), not asserted to be.
+
+At the skein normalisation qi = q^-1, Q = q^2 with c = q^-1 satisfies both identically.
+THE PARAMETER MOVES, NOT THE RING: no square root is adjoined, nothing leaves a generic
+[Field K]. Same rescaling QOU/BraidKnot/HeckeIwahoriConventionBridge.lean derives for
+GENERATOR FAMILIES; new here is the upgrade to an AlgEquiv of the two RingQuot carriers,
+which is what transports a ring-theoretic property.
+
+Independent confirmation: this is the same bridge the character-sum probe measured
+EMPIRICALLY in #6417 (Q = q^2, sigma_Iwahori = q sigma_skein) — reached there from
+numerics, here from the relations.
+
+### Also supplied
+
+The IwahoriHecke side had generators and relations but NO universal property.
+iwahoriLift / iwahoriLift_sigma / iwahori_hom_ext fill that in, mirroring what
+SchurWeyl.Hecke already had.
+
+### Count
+
+QOU/BraidKnot/HeckeTypeAPresentationEquiv.lean crosses IwahoriHeckeOfSn <->
+QOU.Hecke.IwahoriHecke. This file crosses SchurWeyl.Hecke <-> QOU.Hecke.IwahoriHecke.
+Different pairs; between them THREE of the presentations this bean counts are now
+provably one algebra.
+
+### Path correction to this bean
+
+This bean says the convention bridge is at QOU/MathlibExt/HeckeIwahoriConventionBridge.lean.
+It is at QOU/BraidKnot/HeckeIwahoriConventionBridge.lean. Corrected here so the next
+reader does not conclude it is missing.
+
+### Still open on this bean
+
+The Set.univ family (QOU/IwahoriHecke/Defn.lean, the qou-b5gu defect) is untouched, and
+the recommendation to retire rather than repair it still stands with its downstream
+consumers still uncounted. The two structure-shaped HeckeAlgebra declarations under
+braids-and-knots/ are untouched.
+
+
+## 2026-09-03 — the consumer count this bean asked for, plus three corrections to it
+
+My own recommendation ended *"Before retiring, count the downstream consumers of
+each — not done here."*  Now done, and kept as a script rather than a number,
+because every hand-kept figure in this bean has gone stale:
+`scripts/lean-hecke-presentation-consumers.py` (run from the paper root).
+
+Measured on `main` + this branch:
+
+     31 =  4 direct + 27 transitive   SchurWeyl.Hecke                      skein RingQuot, Fin n
+     18 =  5 direct + 13 transitive   Hecke.IwahoriHecke                   Iwahori RingQuot, Fin n
+      4 =  3 direct +  1 transitive   MathlibExt.IwahoriHecke.HeckeAlgebra general Coxeter matrix
+      3 =  2 direct +  1 transitive   IwahoriHecke.TypeA.IwahoriHeckeOfSn  alias of the above
+      2 =  2 direct +  0 transitive   IwahoriHecke.Quotient.IwahoriHeckeQuot
+      2 =  2 direct +  0 transitive   PathIntegrals.HeckeAlgebra
+      1 =  1 direct +  0 transitive   BraidKnot.IwahoriHeckeAPI.IwahoriHeckeAlgebra
+      0                               IwahoriHecke.IwahoriHecke            (the Set.univ one)
+      0                               Knot.HeckeTwBasis.Hecke
+      0                               Braiding.HeckeAlgebra  (CasimirShared)
+      0                               Braiding.HeckeAlgebra  (knot-eigenbasis-complete)
+      0                               BraidKnot.HeckeAlgebra (frobenius-antipode stub)
+
+### What the distribution says
+
+**The pile is not twelve-way — it is two-way plus a long tail of zeros.**  49 of
+the 63 consumers sit on `SchurWeyl.Hecke` and `Hecke.IwahoriHecke`, and those two
+are exactly the pair `QOU/SchurWeyl/HeckeCarrierEquiv.lean` proved isomorphic
+today.  So the consolidation question that looked like a twelve-object problem is
+now, for 78 % of the tree, answered.
+
+**Five presentations have ZERO consumers**, including both content-block-sibling
+`HeckeAlgebra` structures and the `Set.univ` one the retire-vs-repair argument was
+about.  A zero-consumer declaration is free to retire and free to leave alone; the
+argument was never worth its length.
+
+**`MathlibExt.IwahoriHecke.HeckeAlgebra` (4) is load-bearing out of proportion to
+its count**, because `IwahoriHeckeOfSn` (3) and `IwahoriHecke` (0) are now aliases
+*of it* — so its true reach is 7 and it is the general-Coxeter root of that family.
+
+### Correction 1 — `qou-b5gu` is CLOSED, so my retire-vs-repair argument is moot
+
+I argued repairing `QOU/IwahoriHecke/Defn.lean` "produces a seventh correct
+presentation rather than removing a wrong one", and recorded that the sibling's
+reply described their branch and not `main`.  **That is no longer true of `main`
+either**: `430d2f50c0` ("lean: IwahoriHecke IS the Hecke algebra now (closes
+qou-b5gu)") landed the repair, and both `Defn.lean` and `TypeA.lean` now forward to
+`MathlibExt.IwahoriHecke.HeckeAlgebra` at a Coxeter matrix.  The repair added a
+name, not an object — the sibling's characterisation, and it is now `main`'s.
+
+The cost of the disagreement was zero, which the count makes visible for the first
+time: the object being argued over has no consumers.
+
+### Correction 2 — the "three verbatim structures" table in this bean is wrong
+
+This bean's own table says `CasimirShared`'s `R_q` is `RatFunc ℚ` against
+`knot-eigenbasis`'s `LaurentPolynomial ℤ`.  Measured: **`CasimirShared.lean`
+declares `R_q` TWICE**, and the `HeckeAlgebra` at line 176 uses the *second* one:
+
+    line  46, namespace QOU            abbrev R_q := RatFunc ℚ
+    line 169, namespace QOU.Braiding   abbrev R_q := LaurentPolynomial ℤ
+
+Inside `namespace QOU.Braiding` the bare `R_q` resolves to the Laurent one, so
+`CasimirShared`'s `HeckeAlgebra` and `knot-eigenbasis`'s agree on the ring after
+all.  The sharper true statement is not "two files, two rings" but **"one file,
+two rings, 123 lines apart, disambiguated only by namespace"** — and the same file
+declares `q_param` / `q_inv_param` twice on the same pattern.  Worth recording as
+a legibility hazard even though it is not an error.
+
+Also: those two `HeckeAlgebra` structures are in the **same namespace**
+`QOU.Braiding` with the same field names.  No clash arises only because
+`braids-and-knots/*.lean` are content-block siblings outside the `QOU` Lake
+library, so they never co-elaborate.
+
+### Correction 3 — the declaration count is 12, and the extra two are mine to own
+
+The running counts were 6 (mine, blind to `HeckeAlgebra`) and 9 (the sibling's).
+Adding `Hecke` to the name set finds **two more**: `QOU/Knot/HeckeTwBasis.lean:72`
+(`abbrev Hecke := Perm (Fin m) →₀ R`, a free module, not an algebra) and
+`QOU/SchurWeyl/HeckeAlgebra.lean:78` — *the presentation with the most consumers in
+the tree*, which no count in this bean had ever listed.  Same detector-blindness
+class as my original six, one name over.
+
+A raw grep reports **14**, not 12: `Defn.lean:94` and `TypeA.lean:82` are the
+superseded `Set.univ` bodies quoted inside docstring ``` fences.  The script strips
+fences, comments and `import` lines before matching, which is also what takes
+`IwahoriHeckeQuot` from an apparent 4 consumers to a true 2 (two of the four
+mention it only in prose saying what it is not) and stops `QOU.lean` — which
+imports the library — from reading as a consumer of everything.

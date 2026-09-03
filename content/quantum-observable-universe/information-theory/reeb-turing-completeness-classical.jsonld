@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-reeb-turing-completeness-classical",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:reeb-turing-completeness-classical",
+  "kind": "proposition",
+  "title": "Classical Turing-completeness of steady Euler / Reeb flows (Cardona–Miranda–Peralta-Salas–Presas)",
+  "cites": [
+    "references/cardona2021",
+    "references/cardona2023"
+  ],
+  "tags": [
+    "reeb-flow",
+    "euler-flow",
+    "turing-completeness",
+    "contact-geometry",
+    "undecidability",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.Information.ReebTuringClassical",
+  "text": "reeb-turing-completeness-classical.md",
+  "provenance": "authored"
+}

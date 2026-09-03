@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1511.00400v2/blocks/prop-sec-005-01",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Mayer-Vietoris",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "prop-sec-005-01.md",
+  "derivedFrom": "library/arxiv-1511.00400v2/sections/sec-005",
+  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "provenance": "ingested"
+}

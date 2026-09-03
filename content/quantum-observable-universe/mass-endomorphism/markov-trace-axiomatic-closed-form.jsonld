@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-trace-axiomatic-closed-form",
+  "kind": "proposition",
+  "title": "Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-antipode-polynomial-symmetry"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995",
+    "references/wenzl1988",
+    "references/kauffman1991"
+  ],
+  "tags": [
+    "markov-trace",
+    "hecke-quadratic",
+    "axiomatic-reduction",
+    "closed-form",
+    "atomic-braid",
+    "proton",
+    "categorical-mass-anchor"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.markovTraceAxiomaticClosedForm",
+  "text": "markov-trace-axiomatic-closed-form.md",
+  "leanSource": "markov-trace-axiomatic-closed-form.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-spectral-decomposition-qvalue-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:spectral-decomposition-qvalue-table3-data",
+  "kind": "table",
+  "title": "Table 3 from cor:spectral-decomposition-qvalue",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "spectral-decomposition-qvalue-table3-data.md",
+  "provenance": "authored"
+}

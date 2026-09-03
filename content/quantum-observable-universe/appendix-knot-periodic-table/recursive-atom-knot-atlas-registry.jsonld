@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-recursive-atom-knot-atlas-registry",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:recursive-atom-knot-atlas-registry",
+  "kind": "remark",
+  "title": "Atlas registry — methodology, notation, braid-closure gallery, and per-element AME 2020 cross-reference",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas",
+    "papers/quantum-observable-universe/blocks/def-confined-particle",
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp",
+    "papers/quantum-observable-universe/blocks/prop-fermion-boson-knot-link"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas",
+  "cites": [
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "atlas",
+    "registry",
+    "atom-knot",
+    "particle-registry",
+    "q0",
+    "braid-word",
+    "markov-closure",
+    "hyperbolic-knot",
+    "per-element",
+    "appendix"
+  ],
+  "text": "recursive-atom-knot-atlas-registry.md",
+  "provenance": "authored"
+}

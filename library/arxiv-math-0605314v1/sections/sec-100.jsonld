@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0605314v1/sections/sec-100",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cyclotomic ﬁnite type invariants of integral homology sphe res. Kricker",
+  "pageStart": 59,
+  "pageEnd": 61,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-100",
+    "library/arxiv-math-0605314v1/blocks/thm-sec-100-01",
+    "library/arxiv-math-0605314v1/blocks/conj-sec-100-02",
+    "library/arxiv-math-0605314v1/blocks/rem-sec-100-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
+  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:breit-wheeler-vertex",
+  "kind": "remark",
+  "title": "Breit--Wheeler vertex: photon polarisation states as Hecke generators on the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-vertex-operator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+  "tags": [
+    "breit-wheeler",
+    "photon",
+    "polarisation",
+    "pair-creation",
+    "exceptional-divisor",
+    "reeb-bundle",
+    "hecke-generator",
+    "trefoil"
+  ],
+  "text": "breit-wheeler-vertex.md",
+  "provenance": "authored"
+}

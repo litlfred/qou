@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-proton-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-proton-properties",
+  "kind": "remark",
+  "title": "Proton: NF construction, mass, charge, and computational backing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-proton",
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-proton",
+  "cites": [
+    "references/manuscript"
+  ],
+  "tags": [
+    "proton",
+    "hadron",
+    "baryon",
+    "color-tube",
+    "knot",
+    "categorical"
+  ],
+  "text": "categorical-proton-properties.md",
+  "provenance": "authored"
+}

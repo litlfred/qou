@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-gram-weight-eigenstructure",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gram-weight-eigenstructure",
+  "kind": "remark",
+  "title": "Eigenstructure of the Gram weight and the adjoint character",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gram-weighted-qvalue"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gram-weighted-qvalue",
+  "tags": [
+    "gram-matrix",
+    "eigenvalue",
+    "frobenius-norm",
+    "adjoint-character",
+    "wedderburn",
+    "jucys-murphy"
+  ],
+  "text": "gram-weight-eigenstructure.md",
+  "provenance": "authored"
+}

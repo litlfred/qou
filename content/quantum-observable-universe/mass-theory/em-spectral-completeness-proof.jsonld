@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-em-spectral-completeness",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:em-spectral-completeness",
+  "kind": "proof",
+  "title": "Proof of em spectral completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness"
+  ],
+  "text": "em-spectral-completeness-proof.md",
+  "provenance": "authored"
+}

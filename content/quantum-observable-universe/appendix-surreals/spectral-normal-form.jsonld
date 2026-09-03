@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-spectral-normal-form",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:spectral-normal-form",
+  "kind": "conjecture",
+  "title": "Spectral gap closure and singularity formation as $q \\to 1$ read from normal-form exponents",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+    "papers/quantum-observable-universe/blocks/conj-classical-limit-stpart"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/berarducci-mantova2018"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "spectral-gap",
+    "conway-normal-form",
+    "leading-exponent",
+    "singularity",
+    "q-deformation",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.SpectralNormalForm",
+  "text": "spectral-normal-form.md",
+  "provenance": "authored"
+}

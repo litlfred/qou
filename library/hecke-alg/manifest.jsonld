@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hecke-alg/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hecke algebras and Schur algebras of the symmetric group",
+  "contains": [
+    "library/hecke-alg/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "hecke-alg",
+    "source_file": "hecke_alg.pdf",
+    "source_sha256": "4ac08dfd165fb366a669c54b438755590ddb074934082b97a83cdeb7f2258889",
+    "pages": 78,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

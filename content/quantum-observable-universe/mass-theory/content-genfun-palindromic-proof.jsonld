@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-content-genfun-palindromic",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:content-genfun-palindromic",
+  "kind": "proof",
+  "title": "Proof that $C_n(q)$ is palindromic and bar-even via the conjugation anti-involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-content-genfun-palindromic"
+  ],
+  "text": "content-genfun-palindromic-proof.md",
+  "provenance": "authored"
+}

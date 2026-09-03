@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Kim and Lee",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "contains": [
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-sec-002",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/lem-sec-002-01",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prop-sec-002-02",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/thm-sec-002-03",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prop-sec-002-04"
+  ],
+  "derivedFrom": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "sourceDocument": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "provenance": "ingested"
+}

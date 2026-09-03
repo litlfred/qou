@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The GNS description",
+  "pageStart": 28,
+  "pageEnd": 31,
+  "text": "../sections/sec-010-44-the-gns-description.md",
+  "derivedFrom": "library/arxiv-1108.5365v2/manifest",
+  "sourceDocument": "library/arxiv-1108.5365v2/manifest",
+  "provenance": "ingested"
+}

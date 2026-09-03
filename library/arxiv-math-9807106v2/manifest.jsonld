@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9807106v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "An Extension of the Character Ring of sl(3) and Its Quantisat ion",
+  "contains": [
+    "library/arxiv-math-9807106v2/sections/sec-000",
+    "library/arxiv-math-9807106v2/sections/sec-001",
+    "library/arxiv-math-9807106v2/sections/sec-002",
+    "library/arxiv-math-9807106v2/sections/sec-003",
+    "library/arxiv-math-9807106v2/sections/sec-004",
+    "library/arxiv-math-9807106v2/sections/sec-005",
+    "library/arxiv-math-9807106v2/sections/sec-006",
+    "library/arxiv-math-9807106v2/sections/sec-007",
+    "library/arxiv-math-9807106v2/sections/sec-008",
+    "library/arxiv-math-9807106v2/sections/sec-009",
+    "library/arxiv-math-9807106v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-9807106v2",
+    "source_file": "9807106v2.pdf",
+    "source_sha256": "e3cd089e3df5d71fe07d4530c6ed45bc90f8d23175714155ac39e9a297268c66",
+    "pages": 40,
+    "arxiv": {
+      "id": "math/9807106",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "26 Nov 1998"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

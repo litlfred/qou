@@ -1,0 +1,55 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1507.03238v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES",
+  "contains": [
+    "library/arxiv-1507.03238v3/sections/sec-000",
+    "library/arxiv-1507.03238v3/sections/sec-001",
+    "library/arxiv-1507.03238v3/sections/sec-002",
+    "library/arxiv-1507.03238v3/sections/sec-003",
+    "library/arxiv-1507.03238v3/sections/sec-004",
+    "library/arxiv-1507.03238v3/sections/sec-005",
+    "library/arxiv-1507.03238v3/sections/sec-006",
+    "library/arxiv-1507.03238v3/sections/sec-007",
+    "library/arxiv-1507.03238v3/sections/sec-008",
+    "library/arxiv-1507.03238v3/sections/sec-009",
+    "library/arxiv-1507.03238v3/sections/sec-010",
+    "library/arxiv-1507.03238v3/sections/sec-011",
+    "library/arxiv-1507.03238v3/sections/sec-012",
+    "library/arxiv-1507.03238v3/sections/sec-013",
+    "library/arxiv-1507.03238v3/sections/sec-014",
+    "library/arxiv-1507.03238v3/sections/sec-015",
+    "library/arxiv-1507.03238v3/sections/sec-016",
+    "library/arxiv-1507.03238v3/sections/sec-017",
+    "library/arxiv-1507.03238v3/sections/sec-018",
+    "library/arxiv-1507.03238v3/sections/sec-019",
+    "library/arxiv-1507.03238v3/sections/sec-020",
+    "library/arxiv-1507.03238v3/sections/sec-021",
+    "library/arxiv-1507.03238v3/sections/sec-022",
+    "library/arxiv-1507.03238v3/sections/sec-023",
+    "library/arxiv-1507.03238v3/sections/sec-024",
+    "library/arxiv-1507.03238v3/sections/sec-025",
+    "library/arxiv-1507.03238v3/sections/sec-026",
+    "library/arxiv-1507.03238v3/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1507.03238v3",
+    "source_file": "1507.03238v3.pdf",
+    "source_sha256": "1da6a5498c08a521d6f91a617336e0fd9a5aaea0fbcf8d5c0452b2c4d6f52b91",
+    "pages": 26,
+    "arxiv": {
+      "id": "1507.03238",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "7 Dec 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-vacuum-state",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:vacuum-state",
+  "kind": "proposition",
+  "title": "Existence and Uniqueness of the Vacuum State",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-direct-limit-algebra",
+    "papers/quantum-observable-universe/blocks/def-quantum-gauge-group",
+    "papers/quantum-observable-universe/blocks/lem-descent"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-vacuum-state"
+  ],
+  "tags": [
+    "vacuum-state",
+    "invariant",
+    "frobenius-trace"
+  ],
+  "leanRef": "qou:QOU.Torsion.invariant_functional_unique",
+  "text": "vacuum-state.md",
+  "leanSource": "vacuum-state.lean",
+  "provenance": "authored"
+}

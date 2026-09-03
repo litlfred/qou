@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-cal2-higgs-knot-coupling",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cal2-higgs-knot-coupling",
+  "kind": "remark",
+  "title": "The CAL-2 proxy as a Higgs-knot volume coupling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations",
+  "tags": [
+    "appendix",
+    "standard-model",
+    "higgs",
+    "calibration",
+    "mass"
+  ],
+  "text": "cal2-higgs-knot-coupling.md",
+  "provenance": "authored"
+}

@@ -26,6 +26,7 @@ Exploratory research probe (NOT canonical production).
 """
 import sys, json
 from collections import Counter, deque
+from pathlib import Path  # witness path must be FILE-relative, not cwd-relative
 
 TWO = {1: 1, 0: 1}
 THREE = {2: 1, 1: 1, 0: 1}
@@ -222,6 +223,8 @@ if __name__ == '__main__':
                         'research probe (NOT canonical production).'),
         'result': r,
     }
-    with open('qcollatz_block_structure_probe.witness.json', 'w') as f:
+    with open(Path(__file__).with_name('qcollatz_block_structure_probe.witness.json'), 'w') as f:
+        w["q0Anchor"] = "independent"
+        w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Block structure of q-Collatz orbits on D_inf, and which heights descend."
         json.dump(w, f, indent=2)
     print("wrote qcollatz_block_structure_probe.witness.json")

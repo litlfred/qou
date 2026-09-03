@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T18:19:28.072641+00:00",
-  "commitSha": "9540cd5f9cd0a230601b366ac72a4e200be2b352",
+  "computedAt": "2026-09-03T05:10:52.539235+00:00",
+  "commitSha": "189a0f879687465151441e0bf8c5fa2d4b5898bc",
   "assertions": [
     {
       "name": "h3_frobenius_constraint_is_near_vacuous",
@@ -34,7 +34,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "{'D': 7, 'T': 4, 'He3': 4, 'He4': 6}"
+      "source": "{'D': 3, 'T': 4, 'He3': 4, 'He4': 6}"
     },
     {
       "name": "T_and_He3_share_an_active_set",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "operator-selection-active-set",
   "scriptFile": "operator_selection_active_set_probe.py",
   "scriptHash": "1371346cbac6",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9e0ada93e617d9aca98ec9c8ee8a604278fff09a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,8 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -218,12 +220,8 @@
     ],
     "h3A_from_committed_witnesses": {
       "D": {
-        "y0_star": "-0.014433988",
+        "y0_star": "0.064267149",
         "active_blocks": [
-          "(2, 1, 1, 1, 1)",
-          "(2, 2, 2)",
-          "(3, 3)",
-          "(4, 1, 1)",
           "(4, 2)",
           "(5, 1)",
           "(6,)"
@@ -264,5 +262,7 @@
     "Section 2 (H_{3A}) is READ from committed nucleus-real-sdp-*.witness.json, not re-solved here. Those runs are the bar-fold symmetry-reduced bounded baseline by their own note, not the full real SDP.",
     "The H_3 measurements are f64. Every conclusion is a sign or a count on O(1) quantities, so f64 is adequate; declared, not laundered.",
     "The continuous H_3 LP's degeneracy (optimal value identically 0, y0* = 0, minimisers a positive-dimensional face) is PRIOR work, recorded in prop:operator-selection-lp. What is measured here is the distinct INTEGER program of nuclear_ilp.py, whose discrete feasible set escapes that argument but is vacuous for the separate reason above."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

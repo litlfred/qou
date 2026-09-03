@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:brings-coordinate-ring",
+  "kind": "definition",
+  "title": "Non-commutative coordinate ring of Bring's curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+  ],
+  "tags": [
+    "brings-curve",
+    "coordinate-ring",
+    "genus-4",
+    "S5-symmetry"
+  ],
+  "defines": [
+    "brings-coordinate-ring"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.BringsCoordinateRing",
+  "text": "brings-coordinate-ring.md",
+  "leanSource": "brings-coordinate-ring.lean",
+  "provenance": "authored"
+}
