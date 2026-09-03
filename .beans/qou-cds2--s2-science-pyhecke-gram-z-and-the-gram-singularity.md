@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-03T05:22:25Z
+updated_at: 2026-09-03T11:08:27Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -846,3 +846,21 @@ complement basis e_0..e_4, valid because gramRadicalD's last coordinate is 1),
 det = -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4/(q^2+1)^10 (the witness
 gram-h3-quotient-nondegeneracy-probe), hence det ≠ 0 and det < 0 for EVERY real
 q. That is the D successor to gramMatrix_det_ne_zero, stated about the quotient.
+
+
+
+## 2026-09-03 — LANDED (PR #6476, commit 338d40f57c): the Lean for the positive half
+
+QOU/Interactions/GramQuotientDetD.lean, additive. gramQuotientD :=
+(gramMatrixD q).submatrix Fin.castSucc Fin.castSucc (derived, not re-typed);
+gramQuotientD_det : det = -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4/(q^2+1)^10;
+gramQuotientD_det_neg / _det_ne_zero with NO hypothesis on q. Nine
+declarations, lean-direct exit 0, axioms [propext, Classical.choice,
+Quot.sound]; sympy cross-check parsed the 36 gramEntryD entries out of the
+Lean source and matched the witness to 3.7e-31. The 2026-08-30 'Remaining:
+Lean' item is closed; the gramMatrix→D rename (qou-zf9n) is still not done and
+was deliberately not touched. TRAP found on the way: the shared QOU olean tree
+(and the lake-cache branch it came from) is pre-convention-D for this file
+(Jul 2 olean, zero gramRadicalD) — presence of an olean is not currency;
+grep -c -a <declName> <olean> is the 1-second test. Independent skeptic pass
+pending at the time of this note.
