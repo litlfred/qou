@@ -21,6 +21,6 @@ $$
 
 At $n = 6$, the Hoefsmit identification assigns $\sigma_1^4$ to $W$, $\sigma_3^6$ to $Z$, and $\sigma_5^8$ to $H$. Pre-EWSB, the Hoefsmit slot $\sigma_5^8$ corresponds to the pre-mixing $B$ generator. The rotation by $\theta_W$ sends $(W^3, B) \mapsto (Z, \gamma)$. This rotation acts as a specific change-of-basis in the Hoefsmit projector decomposition.
 
-Evaluating $\mathrm{tr}_M(e_W^{+} \cdot \sigma_1^4) / \mathrm{tr}_M(e_B^{+} \cdot \sigma_5^8)$ at the pure pattern yields $\cot\theta_W \stackrel{?}{=} q^{-4} \approx 0.6594$. This fails to match the 1.823 CODATA target. A correct categorical derivation must apply the non-uniform pure-pattern multiplicities, incorporate the categorical-linking operation, and potentially weight the trace by the Higgs vacuum expectation value.
+Evaluating $\mathrm{tr}_M(e_W^{+} \cdot \sigma_1^4) / \mathrm{tr}_M(e_B^{+} \cdot \sigma_5^8)$ at the pure pattern yields $\cot\theta_W \stackrel{?}{=} q^{-4} \approx 0.6588$. This fails to match the 1.823 CODATA target. A correct categorical derivation must apply the non-uniform pure-pattern multiplicities, incorporate the categorical-linking operation, and potentially weight the trace by the Higgs vacuum expectation value.
 
 Expressing $\theta_W$ as a ratio of categorical scalars remains structurally consistent. Proving this conjecture supplies $\sin\theta_W, \cos\theta_W \in R$ as categorical scalars, closing the Weinberg-angle gap.
