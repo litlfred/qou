@@ -1,7 +1,7 @@
 {
   "computation": "brunnian-triple-exhaustion",
   "scriptFile": "probes/brunnian_triple_exhaustion_probe.py",
-  "computedAt": "2026-08-31T07:26:09.444165+00:00",
+  "computedAt": "2026-09-03T03:58:34.374307+00:00",
   "contentBlock": "qou-brng",
   "description": "The A=3 count-channel carrier space collapses to a single integer M = m1+m2+m3, and is exhausted: b3/b2 = M - 3 is a non-negative integer while the measured ratio is 950815/1483044, strictly between 0 and 1. Every carrier misses by at least 532229/1483044 (55.98%), attained at M=4, and the gap grows monotonically beyond -- so the exclusion is complete over every crossing number. This closes the 'search the 20 triples' step by proving there is nothing to search.",
   "measured_b3_over_b2": "950815/1483044",
@@ -113,5 +113,12 @@
     "probes/carrier-crossing-quantisation.witness.json",
     "probes/enumerator-selection-criterion-audit.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies; integer crossing counts"
+  "source": "AME2020 total nuclear binding energies; integer crossing counts",
+  "scriptHash": "dd7d0d96eba8",
+  "scriptCommitSha": "53c8624347ce711498d3341d1407eee584f472f7",
+  "commitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

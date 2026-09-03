@@ -1,7 +1,7 @@
 {
   "computation": "all-channels-b3-sign",
   "scriptFile": "probes/all_channels_b3_sign_probe.py",
-  "computedAt": "2026-09-02T22:00:41.549321+00:00",
+  "computedAt": "2026-09-03T03:58:34.625405+00:00",
   "contentBlock": "qou-brng",
   "description": "All four evaluable binding channels -- including ch1, the one binding_canonical ships -- give the Ursell three-body cumulant ratio b3/b2 a NEGATIVE value, against a measured +0.6411239316. The three bond-additive channels cluster near -1 for the reason TypeWeightedChainRatio proves; ch1 sits at -1.3995 because it is not additive, so the two structural families fail separately. Closes the qou-brng b3 arc: no channel the corpus can evaluate produces a positive b3, and a sign is not repairable by magnitude.",
   "measured_b3_over_b2": "950815/1483044",
@@ -75,5 +75,12 @@
     "probes/type-weighted-chain-ratio.witness.json",
     "probes/brunnian-triple-exhaustion.witness.json"
   ],
-  "source": "AME2020; binding_channel_taxonomy_probe B/A output"
+  "source": "AME2020; binding_channel_taxonomy_probe B/A output",
+  "scriptHash": "994f279a4d17",
+  "scriptCommitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "commitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

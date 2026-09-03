@@ -1,7 +1,7 @@
 {
   "computation": "enumerator-selection-criterion-audit",
   "scriptFile": "probes/enumerator_selection_criterion_audit.py",
-  "computedAt": "2026-09-02T21:36:35.012329+00:00",
+  "computedAt": "2026-09-03T03:58:34.233676+00:00",
   "contentBlock": "qou-brng",
   "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
   "source_witness": "_deprecated/binding-k-enumerator.witness.json",
@@ -334,5 +334,12 @@
   },
   "related": [
     "probes/carrier-crossing-quantisation.witness.json"
-  ]
+  ],
+  "scriptHash": "e95f80d54880",
+  "scriptCommitSha": "1ebf7d0038ce398808d467cd0a92012558973f9e",
+  "commitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
