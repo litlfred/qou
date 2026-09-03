@@ -7,7 +7,7 @@
   "qou-k5r5"
  ],
  "kappa": "0.0576404955831966",
- "nmax": 30,
+ "nmax": 34,
  "exact": [
   {
    "n": 2,
@@ -182,26 +182,50 @@
    "M1": "21273188872666693427636549467/72916536498337179648000000",
    "kappa_n": "0.05918387919",
    "ratio": "1.026776"
+  },
+  {
+   "n": 31,
+   "M1": "17017099163957686066664267911/53727974261932658688000000",
+   "kappa_n": "0.05919442805",
+   "ratio": "1.026959"
+  },
+  {
+   "n": 32,
+   "M1": "20302529872600910145481203194843/59208227636649789874176000000",
+   "kappa_n": "0.05919610767",
+   "ratio": "1.0269882"
+  },
+  {
+   "n": 33,
+   "M1": "318896112313052604344802812455063/861210583805815125442560000000",
+   "kappa_n": "0.05919090997",
+   "ratio": "1.026898"
+  },
+  {
+   "n": 34,
+   "M1": "4755961311886426651040883233737/11921926240319204229120000000",
+   "kappa_n": "0.05918267486",
+   "ratio": "1.0267551"
   }
  ],
  "checks": [
   {
    "name": "FINDING 1: kappa_n crosses kappa at exactly n = 13",
    "pass": true,
-   "detail": "Exact rational M_1(n) for n = 2..30. kappa_n < kappa exactly for n = 2..12, and kappa_n >= kappa for every n from 13 up. So the gap's 'n >= 13' is the crossing point of the sequence with its own limit, not a convention. kappa_13/kappa = 1.0023357 -- a 0.23 % margin, and the BINDING case of claim (b)."
+   "detail": "Exact rational M_1(n) for n = 2..34. kappa_n < kappa exactly for n = 2..12, and kappa_n >= kappa for every n from 13 up. So the gap's 'n >= 13' is the crossing point of the sequence with its own limit, not a convention. kappa_13/kappa = 1.0023357 -- a 0.23 % margin, and the BINDING case of claim (b)."
   },
   {
    "name": "FINDING 2 (my expectation FALSIFIED): rise, peak, then fall",
    "pass": true,
-   "detail": "I briefed the expectation that kappa_n DECREASES to kappa, which would have made claim (b) a corollary of monotonicity. It does not. Exactly: kappa_n rises to a peak at n = 30 (ratio 1.026776) and falls thereafter (monotone over the computed tail). Sampled continuation from ..._kappa_derivation.py: 0.0590 at n = 50 down to 0.0577 by n = 1600, i.e. back toward kappa from above. So claim (b) is NOT one statement: n = 13..30 is a finite exact check, and n > 30 needs an effective error bound on kappa_n - kappa. That is where the remaining work is."
+   "detail": "I briefed the expectation that kappa_n DECREASES to kappa, which would have made claim (b) a corollary of monotonicity. It does not. Exactly: kappa_n rises to a peak at n = 32 (ratio 1.0269882) and falls thereafter (monotone over the computed tail). Sampled continuation from ..._kappa_derivation.py: 0.0590 at n = 50 down to 0.0577 by n = 1600, i.e. back toward kappa from above. So claim (b) is NOT one statement: n = 13..34 is a finite exact check, and n > 34 needs an effective error bound on kappa_n - kappa. That is where the remaining work is."
   },
   {
    "name": "FINDING 3: (b') |kappa_n - kappa| < kappa suffices, with ~38x more room",
-   "pass": false,
-   "detail": "M_1(n) > 0 iff kappa_n > 0, since n^(5/2) > 0, so the tail needs only |kappa_n - kappa| < kappa, not kappa_n >= kappa. Measured: over n = 32..30 the ratio |kappa_n - kappa|/kappa is at most 1.0, i.e. an effective bound has a 1.0x margin under (b'), against the ~2.6 % relative accuracy (b) would need to resolve the sign. At the binding n = 13 the (b) margin is only 0.234 % -- but n = 13 is inside the exact range, so that costs nothing. Formalised as QOU.BraidKnot.M1EdgeCalculus.pos_of_check_and_tail. This does NOT close the gap; it replaces a demanding analytic requirement with an undemanding one."
+   "pass": true,
+   "detail": "M_1(n) > 0 iff kappa_n > 0, since n^(5/2) > 0, so the tail needs only |kappa_n - kappa| < kappa, not kappa_n >= kappa. Measured: over n = 32..34 the ratio |kappa_n - kappa|/kappa is at most 0.0269882, i.e. an effective bound has a 37.05x margin under (b'), against the ~2.6 % relative accuracy (b) would need to resolve the sign. At the binding n = 13 the (b) margin is only 0.234 % -- but n = 13 is inside the exact range, so that costs nothing. Formalised as QOU.BraidKnot.M1EdgeCalculus.pos_of_check_and_tail. This does NOT close the gap; it replaces a demanding analytic requirement with an undemanding one."
   }
  ],
- "passed": 2,
+ "passed": 3,
  "total": 3,
- "ms": 693
+ "ms": 1639
 }
