@@ -3,9 +3,8 @@
 Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
 **BASELINE** (a number — re-measure, never quote from here).
 
-Seeded 2026-08-29 from `AGENTS.md` + `local/lean-environment-setup.md`; the
-skill governs where they disagree. Only the first 200 lines are injected, so
-detail lives in sibling files (read on demand):
+Seeded 2026-08-29 from `AGENTS.md` + the skill (which governs where they
+disagree). Only the first 200 lines are injected; detail is in sibling files:
 
 - `verification-harness.md` — false greens, partial overlays, exit-139, cone triage, FQN guards
 - `authoring-traps-v4-24-0.md` — module moves, lexer tokens, the small-determinant recipe
@@ -21,10 +20,8 @@ you pointed at, the path is one level too shallow: oleans live in
 does not discriminate (6990 present at the moment the import failed).
 
 `#print axioms` needs no olean: append the lines to a COPY of the source and
-run `lean` on the copy. **A copy under `/tmp` dies instantly** (`no default
-toolchain configured`, exit 1) unless either the cwd is `/home/user/qou` (an
-elan override is set on that dir — verified 2026-09-03) or you export
-`ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0` (read it from `$ROOT/lean-toolchain`).
+run `lean` on it. **A copy under `/tmp` dies** (`no default toolchain configured`)
+unless cwd is `/home/user/qou` or you `export ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0`.
 
 ## TRAP — the clone is SHALLOW: git cannot date a source against its olean, and presence ≠ currency
 
@@ -41,7 +38,6 @@ newer than the QOU oleans built against it. **The 1-second currency test is
 changed file's whole QOU import cone from current source into a `cp -al`
 mirror (`verification-harness.md` §3), never the shared tree — ~4 min for a
 light 4-module cone; 207 s for one parent carrying four 40M-heartbeat proofs.
-Two sibling instances hit this the same day.
 
 ## TRAP — WHERE the QOU oleans live varies per container
 
@@ -109,15 +105,13 @@ restore never touches. First `grep -ri "<error>" .claude/skills/ AGENTS.md docs/
 
 ## TRAP — a sibling `.lean` stub shadows the real declaration
 
-`lean.ref` resolution checks the **sibling file first**; a `theorem foo : True
-:= trivial` sibling shadows the library decl. Align a mis-named library file;
-never paper over it with a stub.
+`lean.ref` resolution checks the **sibling file first**; a `: True := trivial`
+sibling shadows the library decl. Align a mis-named library file; never stub it.
 
 ## TRAP — a slow first `lean`-direct run is COLD PAGE CACHE, not a rebuild
 
-Measured repeatedly: first run 1m50s–3m34s wall but 5–30 s `user`; second run
-~5 s. **Always `time` the run; `user` is the discriminator.** Concluding
-"Mathlib is rebuilding" leads to `lake build`, which evicts the cache.
+First run 1m50s–3m34s wall but 5–30 s `user`; second ~5 s. **`time` it; `user`
+is the discriminator.** Concluding "rebuilding" leads to `lake build` = eviction.
 
 ## TRAP — a chapter-directory `.lean` DOES have a `.qa.json` sidecar
 
@@ -185,6 +179,13 @@ directory (→ `.Ring.Finset`); `Finset.sum_powerset_card` does not exist (→
 mathlib **source** tree before diagnosing the cache. `₊`/`₋` are notation
 tokens under `Mathlib.Tactic`; rename such binders.
 
+## TRAP — docstring figures inherit the probe's hardcoded constants → `verification-harness.md` §9
+
+A new file quoted CODATA-**2018** residual figures (`t = 2.0975e-7`, from
+`R_exp = 206.7682830` in its cited probe) while `constants.py` serves CODATA 2022
+(211.2 ppb); the Lean window covered both — only the prose was stale on arrival.
+Diff the probe's literal against `constants.py`; §9 has the inhabitation check.
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
@@ -194,6 +195,5 @@ tokens under `Mathlib.Tactic`; rename such binders.
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
 
-⚠ A `~2919 (healthy)` figure carried here until 2026-08-29 was **wrong and
-dangerous** — a tree evicted 6990 → 2919 would have read as healthy. Never treat
-a number here as a threshold.
+⚠ Never treat a number here as a threshold: a stale `~2919 (healthy)` row once
+made a tree evicted 6990 → 2919 read as healthy.

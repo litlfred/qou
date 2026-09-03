@@ -155,3 +155,40 @@ Measured 2026-08-30 on PR #6278, by running them rather than reading them:
 **Baselines after the fix** (re-measure, do not quote): FQN propose **0** pairs,
 `--check-baseline` **0** confirmed collisions; surface audit `L~L` **0/0** with
 **1** private pair reported as excluded, `L~S` 76/48, `S~S` 38/25.
+
+## 9. Skeptic checks beyond the compile (measured 2026-09-03, `MuPCorrectionAdmissibility.lean`)
+
+A green compile + std-3 axioms says nothing about the **prose** or about whether
+a `Prop`-class is doing any work. Four checks, each under a minute:
+
+- **Docstring numbers: find the probe's literal.** The file quoted
+  `t = 2.09754920524e-7`, `+209.755 ppb`, `9.534 σ`, citing
+  `docs/audits/scripts/mu_p_carrier_order_window_probe.py`. That probe hardcodes
+  `R_exp = mpf("206.7682830")` — CODATA **2018** — while
+  `tools/qou-substrate/python/qou_substrate/constants.py::MASS_RATIO_MU_E_STR` is
+  `206.7682827` (CODATA 2022, owner ruling 2026-08-22) and
+  `computations/mu-substrate-tension-audit-100dps.witness.json` reports 211.165
+  ppb. Re-derived at 50 dps from the proton pin `1.1099785827513808`:
+  t₂₀₁₈ = 2.0975e-7 (209.755 ppb, 9.53 σ), t₂₀₂₂ = 2.1121e-7 (211.2 ppb, 9.60 σ).
+  The theorem's window `[1.8e-7, 2.4e-7]` held both, so the Lean was untouched
+  and only the prose was stale on arrival — the "figure survives in five other
+  places" pattern, one hop earlier. Also `t = 1 − R_exp/R_pred` (probe) and
+  `(R_pred − R_exp)/R_exp` differ by t² ≈ 4e-14; do not "correct" one into the
+  other.
+- **Inhabitation `example` for any `structure … : Prop` sold as content-bearing.**
+  Appended to the scratch copy:
+  `example : C (fun _ => (2:ℝ)/10^7) ((11099:ℝ)/10000) := ⟨⟨le_refl _, by norm_num⟩, fun _ _ => rfl, ⟨by norm_num, by norm_num⟩⟩`
+  — it compiled, so `GapA4CorrectionAdmissible` is inhabited by every constant
+  in the residual window; "the class is not claimed non-empty" was true but
+  misleading. The class is a filter and membership encodes no derivation. A
+  `¬ C (monomial)` theorem stays genuine (drop `hc0` and `c = t/w³` is a
+  member), but wording must not let a later reader cite membership as evidence.
+- **`#print axioms` on a `structure … : Prop` over `ℝ` prints the std-3**
+  (`ℝ`'s construction uses them). Not a laundering signal; `sorryAx` is the only
+  axiom that matters.
+- **Interval honesty by re-derivation, not by reading.** mpmath 50 dps: q₀ sits
+  in `[1.1099, 1.11]` with margins 7.9e-5 / 2.1e-5; the window's true `w`-image
+  is `[0.010882, 0.010901]`, inside the Lean's `[0.0108, 0.011]`;
+  `(1/5)(0.0108)³ = 2.519e-7 > 2.4e-7` (5 % margin), `5(0.011)⁴ = 7.32e-8 <
+  1.8e-7`. Both pins (proton `1.10997858275`, muon-anchored `1.10997859564`) lie
+  in the window, so "at any pin in the window" covers both layers.
