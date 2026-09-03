@@ -341,3 +341,41 @@ The `muon-retired` 174 is the **producer-source** surface and is a different
 population from the ~40 witness FILES carrying the same string that AGENTS.md
 records. Re-measure before quoting; run `--selftest` first (exits non-zero if
 the matcher has stopped seeing a pin it provably used to see).
+
+## TRAP — a "before" count taken from the tree your own branch is mutating is not a before count
+
+AGENTS.md already records this for the witness-staleness sweep — *"baseline
+from git (`git show origin/main:<witness>`), never from a tree your own sweep
+writes to"* — and I broke it anyway, on 2026-09-03, in the same session where
+I was quoting that rule.
+
+**What happened.** Counting unstamped witnesses that carry a *near-miss* anchor
+key (`q0_anchor` where the audits read `q0Anchor`), I measured the working
+tree mid-session and got **14**, of which "4 are in this refill". Both numbers
+reached a PR body, an audit doc and a commit message before being re-measured.
+
+Against `origin/main`, a baseline the branch cannot write to: **17** — and this
+branch fixed **11**, not 4. My own already-landed declarations had silently
+removed their witnesses from the population I was counting.
+
+**The tell was in the breakdown, not the total.** I recorded the sub-counts as
+12 `q0_anchor` / 1 `anchor` / **1** `q0_pin`; the true split is 12 / 1 / **4**.
+Three `q0_pin` witnesses were missing because I had already fixed them. A total
+that is merely *low* looks like an honest count; a sub-count that has collapsed
+to 1 is a fingerprint of self-contamination. **Always print the breakdown, and
+look at the small buckets.**
+
+**The rule, stated so it generalises:** any figure describing "the state before
+this work" must be computed from a **revision**, not from a path. Concretely:
+
+```python
+blob = subprocess.run(['git','show',f'origin/main:{path}'], ...).stdout
+```
+
+and enumerate with `git ls-tree -r --name-only origin/main <dir>` rather than
+`Path.rglob`, so the denominator is pinned to the revision too. Report both
+ends (`before` at a named revision, `after` at `HEAD`) — a single number
+without a revision attached cannot be checked by the next reader.
+
+**Cost when it is not caught:** the wrong figure had already reached three
+durable artifacts. Two were editable; the commit message was not.
