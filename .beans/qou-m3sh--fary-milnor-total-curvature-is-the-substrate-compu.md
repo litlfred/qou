@@ -1,11 +1,11 @@
 ---
 # qou-m3sh
 title: 'Fary-Milnor: total curvature is the substrate-computable half of the serpenoid tower; the twist is the other half'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:32:27Z
-updated_at: 2026-09-03T18:02:51Z
+updated_at: 2026-09-03T19:40:59Z
 ---
 
 
@@ -253,3 +253,60 @@ Queued from the serpenoid image; delivered, all pushed:
 Not claimed anywhere: a connection from curvature to binding, or the twist.
 Left for others: whether the lemma's author amends its statement; the
 sheet-sign ↔ twist-torsor identification on the colour side.
+
+## Continuation (owner 2026-09-03: "work qou-m3sh — the Fáry–Milnor")
+
+Reopened. Two items the closed summary had left implicit:
+
+- [x] **The chain form's algebraic consequence — DONE, and it is a theorem
+  about the binding gap.** `the_canonical_mass_trace_factorises_over_the_chain_probe`
+  (4/4): the full H_{3A} Markov trace of the canonical word equals the product
+  over generators of TWO-strand traces of the per-generator Hecke polynomials
+  to 2.3e-59 (²H), 3.1e-59 (³H, ³He), 4.0e-59 (⁴He); Jones factorises over
+  the chain exactly on both branches, A ≤ 4. Interface factor = z + d, so
+  L_pp = −log z, L_nn = −log(z − h), L_pn = −log(z + d_pn) reproduce the arc's
+  200-bit H_6 bond constants to ALL 60 digits. Consequence: connected sum ⟹
+  multiplicative trace ⟹ additive L, so the canonical closure carries NO
+  many-body binding by theorem; the arc's cumulants (c₃<0, c₄<0, c₅>0, c₆)
+  belong to the all-pairs bond model, which is not a chain. The 62 % ⁴He is
+  short is absent from the canonical closure because a composite link has
+  nowhere to put it: a closure carrying many-body binding must be prime.
+  Lean `QOU.Mass.ChainTraceFactor` (sorry-free): affine law from the Wenzl
+  weights; z − h = 1/(q(q²+1)); tr₂(σ)tr₂(σ⁻¹) = 1/[2]²; L_pp + L_nn =
+  2 log(q + 1/q); positivity for q ≥ 1; −log ∏ = Σ −log. The H_{3A}
+  factorisation itself is checked, not formalised. ⁶Li not run (same engine,
+  longer; not in the CI budget — the identity is a theorem given the chain
+  form, verified through A = 12).
+- [x] **The torsion half — measured, and it closes harder than expected.**
+  `the_torsion_half_is_not_an_invariant_probe` (22/22): torus embeddings of
+  T(2,3/5/7), r ∈ {0.45 … 0.02}, mpmath 24 dps. ∫κ/4π decreases monotonically
+  to 1.0003 / 1.003 / 1.014 (floor approached, never attained); ∮τ ds and Wr
+  both move with r; Wr + Tw_F is an integer at every r (worst residual ~4e-8)
+  — BUT NOT THE SAME INTEGER: Lk_F = −2q on the fat side and −q on the thin
+  side of r* = 4/(q²+4) (4/13, 4/29, 4/53). Exact: at t = π/q,
+  γ'×γ'' = (q²r − 4(1−r))·(qrs, −qrc, −2(1−r)), so the family crosses q
+  inflections at once and the Frenet self-linking jumps by q. Even the
+  integer half of Călugăreanu is a property of the curve, not the knot type:
+  no framing datum, fractional or integral, comes from the isotopy class.
+  Lean `QOU.Mass.TorusInflection` (sorry-free): the cross-product
+  factorisation, κ(π/q) = 0 ⟺ r = 4/(q²+4), the three values, cos(qt) = −1
+  at the q distinct (2k+1)π/q. Numerics lesson recorded in the probe: the
+  Gauss integrand's complex singularity near the diagonal sits at
+  |u| ≈ 2/(rq²), and a rule refined only toward the second strand left
+  Wr + Tw_F short of −14 by 4e-4 at (7, 0.45) while looking converged; the
+  push-off linking integral (−14.000000007) caught it.
+- [x] Exposition: new section `sec:canonical-closure-as-link` in mass-theory
+  listing the five blocks this thread and `qou-wx83` produced (they had been
+  unlisted): `prop:subset-cumulant-recursion`, `prop:canonical-closure-torus-chain`,
+  `rem:canonical-trace-factorises-over-chain` (new), `rem:torus-chain-pages-on-bring`,
+  `rem:frenet-framing-is-not-an-invariant` (new). Validation clean.
+
+**Where this leaves the thread.** Fáry–Milnor delivered the curvature half
+exactly (2π(2A+1), sharp, symbolic, Lean-backed) and then showed the other
+half cannot be a knot-type invariant at all — and, separately, that the
+canonical closure's trace is a product, so the many-body binding the arc
+measures is not in this closure by theorem. The open question is no longer
+"which invariant carries the twist" but "which PRIME closure carries the
+cumulants": the next bean should ask what non-composite closure the
+all-pairs bond model's band routing actually produces (it is not a chain;
+is it prime? Borromean-type?), because that is where c₃…c₆ live.
