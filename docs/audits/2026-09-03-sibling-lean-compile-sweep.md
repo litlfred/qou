@@ -13,6 +13,8 @@ Every `.lean` under `content/quantum-observable-universe/` that is **not** in
       harness: QOU-only LEAN_PATH, file imports UGB    -1
       harness: `import Mathlib` (aggregator olean absent) -2
     REAL                                               38   (4.2 % of 908)
+      fixed on this branch                             -6
+    REMAINING                                          32
 
 **Both harness classes were confirmed by re-running, not by inspection.**
 `vertex-algebra-relations.lean` gives `unknown module prefix 'UGB'` under a
@@ -100,17 +102,34 @@ binder name.
   elaborate to a junk value for every non-unit, turning five compile errors
   into five silently wrong formulas — strictly worse.
 
-  The defect is at the five call sites, which write `(sp.field p)⁻¹` — the
-  inverse of an *arbitrary* ring element. In `ℤ[q, q⁻¹]` the inverse of the
-  indeterminate exists (`q_inv_param = T (-1)`) but the inverse of a general
-  element does not. So each site needs either `q_inv_param`, or an explicit
-  inverse field with the defining relation `q * q_inv = 1` — the pattern the
-  corpus already uses (e.g. `alternating_projection_weak_vertex (q q_inv h)
-  (h_inv : q * q_inv = 1)`). That is a per-site mathematical decision, not a
-  one-line infra fix.
+  🛑 **And that second diagnosis was wrong too.** It said the sites needed
+  `q_inv_param` or an explicit `q * q_inv = 1` field, "a per-site mathematical
+  decision". They needed neither. The actual cause is one level further up and
+  is stated in the library's own docstring: `SubstrateParameter` was split
+  across the §7c wall (bean `qou-6ome`) into
 
-  Recorded at length because the leverage framing — *five files, one root
-  cause* — is what made the wrong fix attractive.
+      SubstrateParameter M         categorical: field : M → R_q
+      ArchimedeanSubstrateField M  the former structure, renamed: M → ℝ
+
+  and these files are archimedean — they return `ℝ`, take `⁻¹`, use positivity
+  — but still named the *categorical* structure, so `sp.field p` came back as
+  `R_q`. The `Inv` error was three levels downstream of the fault.
+
+  **RESOLVED**: all five, plus `substrate-parameter-exists.lean` (the
+  `field_pos` case), migrated to `ArchimedeanSubstrateField`. Each now
+  compiles with zero errors and zero warnings. Sweep total **38 → 32**.
+
+  The same library file explains why no gate caught it, and it generalises:
+
+  > `check-wall-side` and `check-base-ring` both **PASS** on a file that is
+  > *wholly* archimedean, because they fire on files that *mix* regimes.
+  > Passing the wall gate means "not mixed", not "on the right side of the
+  > wall".
+
+  Three diagnoses of one symptom, each confident, the first two wrong and one
+  of them actively harmful. Recorded at length because the leverage framing —
+  *five files, one root cause* — is what made the wrong fix attractive, and
+  because the right answer was in a docstring the whole time.
 - **4 parse errors**, i.e. files that never got past the parser.
 - **Mathlib drift**: `Real.tendsto_log_mul_rpow_nhdsGT_zero`,
   `MonoidalCategory.whiskerRight_comp` (renamed `comp_whiskerRight`) and
