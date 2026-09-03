@@ -1,6 +1,6 @@
 {
   "rev": "origin/main",
-  "files_scanned": 2528,
+  "files_scanned": 2531,
   "sorries": [],
   "axioms": [
     {
@@ -2591,6 +2591,680 @@
       "file": "QOU/volume_from_rigidity.lean",
       "line": 21,
       "class": "SymplecticSelfDualContext"
+    }
+  ],
+  "prop_valued_fields": [
+    {
+      "line": 325,
+      "field": "holds",
+      "carrier": "GaloisPairCharacterSum",
+      "carrier_kind": "class",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 337,
+      "field": "holds",
+      "carrier": "CSCSilverIsCFLTransition",
+      "carrier_kind": "class",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 348,
+      "field": "holds",
+      "carrier": "BarMirrorPhi2CFLgCFLTransition",
+      "carrier_kind": "class",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 394,
+      "field": "holds",
+      "carrier": "SDPDegeneracyDetectsMetallic",
+      "carrier_kind": "class",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 22,
+      "field": "bloch_suslin",
+      "carrier": "B1TorusKnotRowsContext",
+      "carrier_kind": "class",
+      "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
+    },
+    {
+      "line": 24,
+      "field": "garoufalidis_le",
+      "carrier": "B1TorusKnotRowsContext",
+      "carrier_kind": "class",
+      "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
+    },
+    {
+      "line": 42,
+      "field": "diquark_favoured",
+      "carrier": "BorromeanHopfEnergyCrossoverContext",
+      "carrier_kind": "class",
+      "file": "QOU/Archimedean/borromean_hopf_energy_crossover.lean"
+    },
+    {
+      "line": 40,
+      "field": "stable",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 45,
+      "field": "IsFullOfCurls",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 47,
+      "field": "IsNobleGas",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 31,
+      "field": "parityInvariant",
+      "carrier": "ParityViolationSkeinContext",
+      "carrier_kind": "class",
+      "file": "QOU/Archimedean/parity_violation_skein.lean"
+    },
+    {
+      "line": 72,
+      "field": "is_seifert_gauss_manin",
+      "carrier": "BringWPlaneMonodromy",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/BringWPlaneMonodromy.lean"
+    },
+    {
+      "line": 27,
+      "field": "no_integer_relation_found",
+      "carrier": "Cl3Zeta5PslqIndependenceContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean"
+    },
+    {
+      "line": 61,
+      "field": "heckeQuadratic",
+      "carrier": "HeckeAnyonicSubstrate",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/HeckeAnyonicSubstrate.lean"
+    },
+    {
+      "line": 74,
+      "field": "claim_wenzl_bridge_correction",
+      "carrier": "EInfinityIdentificationsContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/e_infinity_identifications.lean"
+    },
+    {
+      "line": 42,
+      "field": "is_hyperbolic",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 44,
+      "field": "is_torus",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 46,
+      "field": "is_trivial",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 33,
+      "field": "claim_i_d1_differential",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 37,
+      "field": "claim_ii_d2_differential",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 42,
+      "field": "claim_iii_page_identifications_concretised",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 35,
+      "field": "claim_ii_miss_computes_via",
+      "carrier": "QmnRecursiveMemoizedContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidsAndKnots/qmn_recursive_memoized.lean"
+    },
+    {
+      "line": 44,
+      "field": "claim_iii_atom_knot_identification",
+      "carrier": "WenzlQmnSynergyContext",
+      "carrier_kind": "class",
+      "file": "QOU/BraidsAndKnots/wenzl_qmn_synergy.lean"
+    },
+    {
+      "line": 69,
+      "field": "isBPS",
+      "carrier": "SaddleTrajectory",
+      "carrier_kind": "structure",
+      "file": "QOU/BringsSurface/TurningPoints.lean"
+    },
+    {
+      "line": 26,
+      "field": "acoustic_horizon_formed",
+      "carrier": "AcousticHorizonConditionsContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/acoustic_horizon_conditions.lean"
+    },
+    {
+      "line": 44,
+      "field": "vortex_spectrum_discrete",
+      "carrier": "DiscreteVortexSpectrumContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/discrete_vortex_spectrum.lean"
+    },
+    {
+      "line": 34,
+      "field": "dispersion_derived",
+      "carrier": "KelvinDispersionDerivationContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/kelvin_dispersion_derivation.lean"
+    },
+    {
+      "line": 35,
+      "field": "reeb_zero_at_p",
+      "carrier": "NsObstructionComputationContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/ns_obstruction_computation.lean"
+    },
+    {
+      "line": 33,
+      "field": "is_NS_singular",
+      "carrier": "NsObstructionTowerContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/ns_obstruction_tower.lean"
+    },
+    {
+      "line": 51,
+      "field": "extendsSmoothly",
+      "carrier": "QBKMContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/q_bkm_criterion.lean"
+    },
+    {
+      "line": 53,
+      "field": "vorticityIntegralFinite",
+      "carrier": "QBKMContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/q_bkm_criterion.lean"
+    },
+    {
+      "line": 84,
+      "field": "globallyRegular",
+      "carrier": "CategoricalClassicalNSBridge",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/q_ns_classical_bridge.lean"
+    },
+    {
+      "line": 86,
+      "field": "blowsUp",
+      "carrier": "CategoricalClassicalNSBridge",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/q_ns_classical_bridge.lean"
+    },
+    {
+      "line": 77,
+      "field": "observability",
+      "carrier": "QOUFluidUniverse",
+      "carrier_kind": "structure",
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 86,
+      "field": "internalBlowup",
+      "carrier": "QOUFluidUniverse",
+      "carrier_kind": "structure",
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 155,
+      "field": "leviNonDegenerate",
+      "carrier": "QOUFluidUniverseLevi",
+      "carrier_kind": "structure",
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 127,
+      "field": "internalBlowup",
+      "carrier": "QOUNSSurrealBridge",
+      "carrier_kind": "structure",
+      "file": "QOU/FluidDynamics/qou_ns_surreal_bridge.lean"
+    },
+    {
+      "line": 130,
+      "field": "classicalRegular",
+      "carrier": "QOUNSSurrealBridge",
+      "carrier_kind": "structure",
+      "file": "QOU/FluidDynamics/qou_ns_surreal_bridge.lean"
+    },
+    {
+      "line": 22,
+      "field": "peter_weyl_holds",
+      "carrier": "QuantumPeterWeylContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/quantum_peter_weyl.lean"
+    },
+    {
+      "line": 37,
+      "field": "nsBlowsUp",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 40,
+      "field": "leviNonDeg",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 42,
+      "field": "root_unity_truncated",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 32,
+      "field": "vorticity_bounded_below",
+      "carrier": "VorticityLowerBoundContext",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/vorticity_lower_bound.lean"
+    },
+    {
+      "line": 91,
+      "field": "localCohomNonzero",
+      "carrier": "NSObstructionLeviData",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/yekutieli_levi_unification.lean"
+    },
+    {
+      "line": 93,
+      "field": "leviNonDegenerate",
+      "carrier": "NSObstructionLeviData",
+      "carrier_kind": "class",
+      "file": "QOU/FluidDynamics/yekutieli_levi_unification.lean"
+    },
+    {
+      "line": 36,
+      "field": "is_iso",
+      "carrier": "FrobeniusFormContext",
+      "carrier_kind": "class",
+      "file": "QOU/FrobeniusHopfData/frobeniusForm.lean"
+    },
+    {
+      "line": 53,
+      "field": "expQ_solves_base_reeb",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 56,
+      "field": "fourier_diagonalises_qheat",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 60,
+      "field": "liTwoQ_volumetric",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 37,
+      "field": "pEqNp",
+      "carrier": "CountingDecisionWorld",
+      "carrier_kind": "structure",
+      "file": "QOU/Information/CountingDecisionBarrier.lean"
+    },
+    {
+      "line": 40,
+      "field": "fpEqSharpP",
+      "carrier": "CountingDecisionWorld",
+      "carrier_kind": "structure",
+      "file": "QOU/Information/CountingDecisionBarrier.lean"
+    },
+    {
+      "line": 34,
+      "field": "formallyProvable",
+      "carrier": "DegreeZeroDatum",
+      "carrier_kind": "structure",
+      "file": "QOU/Information/GeometryOfIncompleteness.lean"
+    },
+    {
+      "line": 72,
+      "field": "answerBlocked",
+      "carrier": "ComplexityDictionary",
+      "carrier_kind": "class",
+      "file": "QOU/Information/JetHorizonScaffold.lean"
+    },
+    {
+      "line": 74,
+      "field": "witnessVerifiable",
+      "carrier": "ComplexityDictionary",
+      "carrier_kind": "class",
+      "file": "QOU/Information/JetHorizonScaffold.lean"
+    },
+    {
+      "line": 56,
+      "field": "degreeZeroBlocked",
+      "carrier": "JetHorizonTransfer",
+      "carrier_kind": "class",
+      "file": "QOU/Information/JetHorizonTransfer.lean"
+    },
+    {
+      "line": 64,
+      "field": "inP",
+      "carrier": "PBandwidthContext",
+      "carrier_kind": "class",
+      "file": "QOU/Information/p_bandwidth_bound.lean"
+    },
+    {
+      "line": 67,
+      "field": "bandwidthBounded",
+      "carrier": "PBandwidthContext",
+      "carrier_kind": "class",
+      "file": "QOU/Information/p_bandwidth_bound.lean"
+    },
+    {
+      "line": 54,
+      "field": "slaterStrict",
+      "carrier": "HasConfinementSDPData",
+      "carrier_kind": "class",
+      "file": "QOU/Interactions/ConfinementSDP.lean"
+    },
+    {
+      "line": 73,
+      "field": "exists_witness",
+      "carrier": "HigherStrandCharacterBifurcation",
+      "carrier_kind": "class",
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean"
+    },
+    {
+      "line": 117,
+      "field": "piecewise_closure_exists",
+      "carrier": "DeltaLambdaPiecewise",
+      "carrier_kind": "class",
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean"
+    },
+    {
+      "line": 25,
+      "field": "killing_orthogonal",
+      "carrier": "TmEigenspaceDecompContext",
+      "carrier_kind": "class",
+      "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean"
+    },
+    {
+      "line": 27,
+      "field": "mi_additive",
+      "carrier": "TmEigenspaceDecompContext",
+      "carrier_kind": "class",
+      "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean"
+    },
+    {
+      "line": 74,
+      "field": "hecke_relation",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 77,
+      "field": "braid_relation",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 80,
+      "field": "far_commute",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 98,
+      "field": "markov_axiom",
+      "carrier": "MarkovTrace",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 111,
+      "field": "squares_sum_factorial",
+      "carrier": "StandardYoungCount",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 123,
+      "field": "blocks_sum_to_one",
+      "carrier": "WedderburnDecomposition",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 126,
+      "field": "blocks_orthogonal",
+      "carrier": "WedderburnDecomposition",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 143,
+      "field": "bridge_identity",
+      "carrier": "WenzlBridge",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1129,
+      "field": "markov_axiom_holds",
+      "carrier": "MarkovTraceRecursion",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1258,
+      "field": "hecke_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1263,
+      "field": "braid_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1267,
+      "field": "far_commute_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 95,
+      "field": "stokes_holds",
+      "carrier": "NonAbelianStokes",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 101,
+      "field": "finite_slice",
+      "carrier": "NonAbelianStokes",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 370,
+      "field": "stokes_identity",
+      "carrier": "LieValuedStokes",
+      "carrier_kind": "class",
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 98,
+      "field": "isUnknot",
+      "carrier": "ClassicalMobiusEnergy",
+      "carrier_kind": "structure",
+      "file": "QOU/MobiusEnergy.lean"
+    },
+    {
+      "line": 55,
+      "field": "substrate_derived",
+      "carrier": "RungRule",
+      "carrier_kind": "structure",
+      "file": "QOU/OptionE/RungSelection.lean"
+    },
+    {
+      "line": 46,
+      "field": "is_pair_creation",
+      "carrier": "PositronCorrectionContext",
+      "carrier_kind": "class",
+      "file": "QOU/ParticleInteractions/positron_correction.lean"
+    },
+    {
+      "line": 53,
+      "field": "differential_limit",
+      "carrier": "q_gl_classical_limit",
+      "carrier_kind": "class",
+      "file": "QOU/QGeometricLanglands/q_gl_classical_limit.lean"
+    },
+    {
+      "line": 56,
+      "field": "dual_group_limit",
+      "carrier": "q_gl_classical_limit",
+      "carrier_kind": "class",
+      "file": "QOU/QGeometricLanglands/q_gl_classical_limit.lean"
+    },
+    {
+      "line": 56,
+      "field": "GloballyConsistent",
+      "carrier": "DescentCondition",
+      "carrier_kind": "structure",
+      "file": "QOU/Torsion/DescentCondition.lean"
+    },
+    {
+      "line": 27,
+      "field": "particle_spectrum_generated",
+      "carrier": "KnotParticleGenerationContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/KnotParticleGeneration.lean"
+    },
+    {
+      "line": 225,
+      "field": "mass_gap_holds",
+      "carrier": "HasYangMillsMassGap",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/MassGap.lean"
+    },
+    {
+      "line": 43,
+      "field": "crossing_reversal_holds",
+      "carrier": "AntiparticleCrossingReversalContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/antiparticle_crossing_reversal.lean"
+    },
+    {
+      "line": 39,
+      "field": "Codim_at_least_2",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 41,
+      "field": "ExceptionalKernel",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 43,
+      "field": "InvolutionSymmetric",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 45,
+      "field": "ChiralityInterface",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 47,
+      "field": "brane_boundary_regular",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 28,
+      "field": "mass_decomposes",
+      "carrier": "MassDecompositionCategoricalContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/mass_decomposition_categorical.lean"
+    },
+    {
+      "line": 27,
+      "field": "weak_equiv_invariant",
+      "carrier": "WeakEquivInvarianceContext",
+      "carrier_kind": "class",
+      "file": "QOU/Torsion/weak_equiv_invariance.lean"
+    },
+    {
+      "line": 77,
+      "field": "q_flat",
+      "carrier": "QGlObstructionCalcContext",
+      "carrier_kind": "class",
+      "file": "QOU/q_gl_obstruction_calc.lean"
+    },
+    {
+      "line": 83,
+      "field": "kappa_zero",
+      "carrier": "QGlObstructionCalcContext",
+      "carrier_kind": "class",
+      "file": "QOU/q_gl_obstruction_calc.lean"
+    },
+    {
+      "line": 40,
+      "field": "simple",
+      "carrier": "SymplecticSelfDualContext",
+      "carrier_kind": "class",
+      "file": "QOU/volume_from_rigidity.lean"
     }
   ]
 }
