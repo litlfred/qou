@@ -129,7 +129,7 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 
-from pyhecke.atom import D_PN  # noqa: E402
+from pyhecke.constants import pn_interface_offset  # noqa: E402
 from q_parameter import q_at  # noqa: E402
 
 try:
@@ -262,7 +262,10 @@ def main() -> int:
              "1/q": 1 / _Q, "q-1": _Q - 1, "1-h": 1 - _H, "(1-h)^2": (1 - _H) ** 2,
              "q/(q+1)": _Q / (_Q + 1), "1/(q+1)": 1 / (_Q + 1), "log q": LQ,
              "-log(1-h)": -LW, "sqrt(1-h)": mp.sqrt(1 - _H), "h/(1-h)": _H / (1 - _H),
-             "1-h^2": 1 - _H ** 2, "z+h": _Z + _H, "D_PN": abs(mp.mpf(str(D_PN))),
+             "1-h^2": 1 - _H ** 2, "z+h": _Z + _H,
+             # not `mp.mpf(str(D_PN))`: that module constant is built from
+             # the float64 `pyhecke.gram.q0` and carries 2.0e-16.
+             "D_PN": abs(pn_interface_offset(q_at(mp.mp.dps))),
              "1-h/2": 1 - _H / 2, "q-h": _Q - _H, "2z-h": 2 * _Z - _H,
              "5h/4": 5 * _H / 4}
     scan = sorted(((abs(float(v - e_star)) / float(e_star), k, float(v))

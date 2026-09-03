@@ -79,7 +79,7 @@ sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
 import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
-from hecke_core import build_nucleon_nf  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
 from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
@@ -124,7 +124,9 @@ def traceless(M):
 
 
 def nf(w):
-    return [mp.mpf(str(x)) for x in build_nucleon_nf(list(w))]
+    # mpf builder: `mp.mpf(str(build_nucleon_nf(...)))` reads a float64 as
+    # exact at this file's dps.
+    return build_nucleon_nf_mp(list(w), mp.mp.dps)
 
 
 def _head_sha() -> str:
