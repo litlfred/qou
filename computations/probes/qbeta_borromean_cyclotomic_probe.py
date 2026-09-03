@@ -120,7 +120,7 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(60)
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from markov_trace_recursive import (  # noqa: E402
     markov_trace_of_word, q as HECKE_Q)
 from habiro_borromean_colored_jones import (  # noqa: E402
@@ -128,11 +128,15 @@ from habiro_borromean_colored_jones import (  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
-# proton anchor — the ONLY sanctioned import point for the proton q₀
 sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"))
-from qou_substrate.constants import Q_50_DIGIT_STR as Q0_PROTON_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as Q0_PROTON_STR, q_muon_at  # noqa: E402
 
-Q0_MUON_STR = "1.1099785955573347198997632204832250266562084087802"
+# q₀ anchors read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03).
+# The muon leg was the literal 1.1099785955573… — the RETIRED self-certified
+# muon pin A, superseded 2026-08-22 by the live CODATA-2022 lepton-ratio
+# derivation q_muon_at() (+0.0769 ppb). `q_parameter` rather than
+# `qou_substrate.constants` so the witness gets its anchor stamp.
+Q0_MUON_STR = mp.nstr(q_muon_at(50), 50, strip_zeros=False)
 
 # targets (registry KC10 shadows + empirical c₃ provenance, see docstring)
 C2_SHADOW = sp.Integer(-1)
@@ -480,26 +484,28 @@ def main() -> int:
         "exclude Borromean data from a multi-term closure.")
     builder.add_assertion(
         "two_way_cross_check_exact",
-        computed=1.0 if gate_ok else 0.0, expected=1.0, tolerance=0.0,
+        computed=str(int(bool(gate_ok))), expected="1.0", tolerance="0.0",
         source="G1: GL2011 transcription == Knot Atlas L6a4 closed form "
                "(t=s², exact); G2: J_B(s) == [2]²·τ_D(q=s) (exact, sympy "
                "cancel over ℚ(s)); classical limits τ_D(1)=1, J_B(1)=4, "
                "F_Bor(1)=6.")
     builder.add_assertion(
         "documented_D_neq_C_split_reproduced",
-        computed=0.0 if not d_eq_c else 1.0, expected=0.0, tolerance=0.0,
+        computed=0.0 if not d_eq_c else 1.0, expected="0.0", tolerance="0.0",
         source="Convention D (Lean closed form) ≠ convention C (canonical "
                "z-trace) exactly, per the 2026-06-09 audit — reproduced here.")
     builder.add_assertion(
         "forced_borromean_reproduces_c2_and_c3_shadow_param_free",
-        computed=1.0 if passed_gate else 0.0,
-        expected=0.0,  # honest expected outcome is NEGATIVE
-        tolerance=0.0,
+        computed=str(int(bool(passed_gate))),
+        expected="0.0",  # honest expected outcome is NEGATIVE
+        tolerance="0.0",
         source="Kill criterion (pre-stated): PASS only if a canonical "
                "normalisation reproduces a_2=−1 ∧ a_3=−2 raw, or the C13 "
                "bridge-peel c_3 = −2 within 0.1% at both anchors, with "
                "zero free choices.")
-    builder.save()
+    builder.save(q0_comparison(
+        muon=Q0_MUON_STR, proton=Q0_PROTON_STR,
+        reason="b(q₀) and the empirical-c₃ residuals are evaluated at BOTH pins; the cyclotomic shadow coefficients are exact rationals and anchor-independent"))
     print("\n  witness → qbeta-borromean-cyclotomic.witness.json")
     print(f"  wall: {round(time.monotonic() - t0, 1)} s")
     return 0
