@@ -175,9 +175,14 @@ numerical result stands, only the scope was wrong.
 
 ## Resolved topics — where the answer actually lives
 
-A lookup table, not a thing to carry: consulted when a specific topic
-comes up. Moved to `resolved-topics.md` — read it before declaring any of
+A lookup table, consulted when a specific topic
+comes up. In `resolved-topics.md` — read it before declaring any of
 these open, and add a row whenever a sweep settles one.
+
+- **Exchange-sensitive NON-trace invariant of the six-strand two-nucleon link
+  for the T=0/T=1 ratio 33.7055?** → `resolved-topics.md` (2026-09-03). Open as
+  a *class*; the **linking-data subclass is closed** scope-(b) (`lk` IS `I₃`,
+  both channels at `I₃ = 0`); the exchange OPERATOR is closed three times over.
 
 ## BASELINE — re-measure, do not quote
 
@@ -191,5 +196,5 @@ these open, and add a row whenever a sweep settles one.
 ---
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
-- 2026-08-30 · `qou-brng` linking-vs-self-energy · **partially covered / target moved** · found on paths 1, 3, 4, 6; the citable source on path 5 was reachable only via `ocr/`.
-- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
+- 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
+- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild.
