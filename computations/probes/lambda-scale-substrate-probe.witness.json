@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:55:37.960909+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-09-03T05:01:08.736567+00:00",
+  "commitSha": "f0b20345dde32c7416302e1cb4609e26426ef851",
   "assertions": [
     {
       "name": "probe_1_proton_within_10ppm",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "lambda-scale-substrate-probe",
   "scriptFile": "lambda_scale_substrate_probe.py",
-  "scriptHash": "a0b67b7e0900",
-  "scriptCommitSha": "d997b7af05dbc43da7ab64cac36a2f0a8931bf45",
+  "scriptHash": "8654a7dd02fa",
+  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -59,9 +59,9 @@
       "diff_ppm": 5.616582447242396
     },
     "probe_2_neutron_common_form": {
-      "lambda_n_target": "2.463343637673293214538948",
+      "lambda_n_target": "2.463343637673293454432773",
       "5/2 - h²·G (same as proton)": "2.459966607787804869530325",
-      "Δ in λ (n - common form)": "0.00337702988548835",
+      "Δ in λ (n - common form)": "0.00337702988548858",
       "ΔS(n) implied (× m_e MeV)": "1.2880625 MeV",
       "interpretation": "If λ has common substrate value 5/2 − h²·G + small, the p/n split lives in S(B) Skein. ΔS(n) - ΔS(p) should equal the Δm_pn ≈ 1.293 MeV / m_e."
     },
