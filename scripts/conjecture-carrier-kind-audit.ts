@@ -129,7 +129,38 @@ for (const ts of await filesUnder(PAPER, ".ts")) {
     found = true;
     break;
   }
-  if (!found) unresolved.push({ label, ref: declPath });
+  if (!found) {
+  // A ref may name a CLASS/STRUCTURE FIELD PROJECTION, which is a real Lean
+    // declaration (auto-generated) but appears in source only as an indented
+    // `name :` inside the carrier's body — invisible to a top-level keyword
+    // match. Verified against the compiler:
+    //   #check @QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition
+    // returns a real type, while this script called that ref "resolves to no
+    // declaration". Without this branch all 3 reported dangling refs were false
+    // positives of the regex, not corpus defects.
+    const parts = declPath.split(".");
+    if (parts.length >= 2) {
+      const carrier = parts[parts.length - 2];
+      const field = parts[parts.length - 1];
+      const carrierRe = new RegExp(
+        String.raw`^\s*(?:class|structure)\s+` + esc(carrier) + String.raw`\b`, "m");
+      const fieldRe = new RegExp(String.raw`^\s+` + esc(field) + String.raw`\s*:`, "m");
+      let hit: string | null = null;
+      for (const f of cands) {
+        let text: string;
+        try { text = stripComments(await readFile(f, "utf8")); } catch { continue; }
+        if (carrierRe.test(text) && fieldRe.test(text)) { hit = f; break; }
+      }
+      if (hit) {
+        rows.push({
+          label, kind: "field", file: hit.replace(REPO + "/", ""),
+          decl: field, body: "",
+        });
+        continue;
+      }
+    }
+    unresolved.push({ label, ref: declPath });
+  }
 }
 
 const byKind = new Map<string, Row[]>();
@@ -176,6 +207,29 @@ for (const r of thms) {
 console.log(`\`theorem\` carriers: ${thms.length}, of which the FILE declares no class/structure: ${thmNoClass.length}`);
 for (const r of thmNoClass.sort((a, b) => a.label.localeCompare(b.label))) {
   console.log(`  ${r.label}\n     ${r.file}  (${r.decl})`);
+}
+console.log();
+// Named, not merely counted — this script printed only the counts until
+// 2026-09-03. But do NOT read "no declaration" as "no formalisation": §0a
+// resolves a `lean.ref` to a FILE (sibling first), not to a declaration, so
+// a block whose ref names a non-existent decl may still have a sibling full
+// of real content under different names. Measured on the three hits:
+// `hoefsmit-scattering-pipeline` (sibling: 10 declarations) and
+// `reidemeister-mass-invariance` (28) are MIS-NAMED REFS; only
+// `gs-spectral-decomposition-existence` has no sibling at all.
+if (unresolved.length) {
+  console.log(`\nlean.ref names a declaration that does not exist:`);
+  console.log(`(NOT the same as "unbacked" — AGENTS.md §0a resolves a ref to a FILE,`);
+  console.log(` sibling first, so the block may still reach a real formalisation under`);
+  console.log(` other names. Measured: 2 of 3 do. Check the sibling before concluding.)`);
+  for (const u of unresolved.sort((a, b) => a.label.localeCompare(b.label))) {
+    console.log(`  ${u.label}\n     ref -> ${u.ref}`);
+  }
+}
+if (noRef.length) {
+  console.log(`\nNo \`lean.ref\` at all (not necessarily a defect — a conjecture may`);
+  console.log(`legitimately have no formalisation yet; it means nothing is claimed):`);
+  for (const l of noRef.sort()) console.log(`  ${l}`);
 }
 console.log();
 console.log(`\`axiom\` carriers (global assumption where a class would be local):`);
