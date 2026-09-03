@@ -1,22 +1,23 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.Archimedean.BorelZagierQouVolumes — conjectural class (placeholder)
+# QOU.Archimedean.BorelZagierQouVolumes — conjecture carrier (content-bearing, no instance)
 
 **§3b-cond class axiomatisation** for content block
 [`conj:borel-zagier-qou-volumes`](../../../quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.md): *Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)*.
 
-This is a **conjecture**: the class `BorelZagierQouVolumes` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
-`[BorelZagierQouVolumes]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+This is a **conjecture**, and the honest open state is a **content-bearing class
+with no instance** (AGENTS.md §3b-tax). `BorelZagierQouVolumes` carries three real volume fields (`vol41`, `vol52`, `volBorromean`) and
+`qLinearIndependent`, which states that a vanishing rational combination of
+them forces all three coefficients to vanish — the conjecture's content, not a
+placeholder.
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+**No instance is provided anywhere in this file.** An instance *is* the
+conjecture; fabricating one would be the audit-dodge §1a forbids. A downstream
+result takes `[BorelZagierQouVolumes]` as an explicit `[Instance]` hypothesis and
+is thereby **conditional on it** — rigorous modulo this single named input, per
+§3b-cond. It is not unconditional, and calling it so would be the
+"conditional-proved ≠ premise-established" confusion AGENTS.md warns about.
 -/
 
 namespace QOU.Archimedean

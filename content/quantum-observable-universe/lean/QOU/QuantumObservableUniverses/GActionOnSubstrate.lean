@@ -1,22 +1,20 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.QuantumObservableUniverses.GActionOnSubstrate — conjectural class (placeholder)
+# QOU.QuantumObservableUniverses.GActionOnSubstrate — conjecture carrier (content-bearing, no instance)
 
 **§3b-cond class axiomatisation** for content block
 [`conj:g-action-on-substrate`](../../../quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md): *Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate*.
 
-This is a **conjecture**: the class `GActionOnSubstrate` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
-`[GActionOnSubstrate]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+This is a **conjecture**, and the honest open state is a **content-bearing class
+with no instance** (AGENTS.md §3b-tax). `GActionOnSubstrate` carries the four axioms below — the conjecture's content, not a placeholder.
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+**No instance is provided anywhere in this file.** An instance *is* the
+conjecture; fabricating one would be the audit-dodge §1a forbids. A downstream
+result takes `[GActionOnSubstrate]` as an explicit `[Instance]` hypothesis and
+is thereby **conditional on it** — rigorous modulo this single named input, per
+§3b-cond. It is not unconditional, and calling it so would be the
+"conditional-proved ≠ premise-established" confusion AGENTS.md warns about.
 -/
 
 namespace QOU.QuantumObservableUniverses
