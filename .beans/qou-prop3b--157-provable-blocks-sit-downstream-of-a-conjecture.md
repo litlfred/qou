@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-29T19:05:00Z
-updated_at: 2026-09-03T04:28:54Z
+updated_at: 2026-09-03T12:53:40Z
 ---
 
 Reached from `qou-hprp`'s revised order, which put
@@ -380,3 +380,58 @@ so it may not need the q-derivation of 𝔐 at all. If it does not, all 17 clear
 at once.
 
 Audit doc: `docs/audits/2026-09-03-propagation-audit-detector-blindness-and-the-magic-number-chokepoint.md`
+
+
+### 2026-09-03 (cont.) — 29 → 25, by fixing a `lean.ref` that named a namespace which does not exist
+
+`conj:shell-transition-knot` declared `lean.ref = "qou:QOU.Braiding.stability_pairs_correct"`.
+**There is no `QOU.Braiding` namespace anywhere in its sibling** — the file declares
+no `namespace` at all, so `stability_pairs_correct` and fifteen companions sit in
+the **root** namespace. Meanwhile the real axiomatisation was already in the
+library: `class BorromeanQuark` and `class ShellTransitionKnot [BorromeanQuark]`
+in `lean/QOU/Conjectures/ShellTransitionKnot.lean`, dependency threaded through
+the type, **no instance**.
+
+Repointed. Violators **29 → 25**, conditional-on-class 135 → 138. The four that
+clear are `prop:hook-weight-derivation`, `prop:mass-formula-regime-switching`,
+`thm:frobenius-codim-universal`, `thm:knot-mass-formula-unified` — and they clear
+*honestly*: the class exists, its fields carry content, no instance is supplied,
+so the conjecture stays open and the four are correctly conditional.
+
+**Accounting, since the axiomatised count did not move (165 → 165).** In the same
+window a sibling agent promoted `conj:tower-geometric-lower-bound` to a
+**proposition** (`53945eef2c`), removing it from the conjecture population and
+taking its one violator with it. So this repoint accounts for **4** of the
+29 → 25; do not read the whole delta as mine.
+
+**Remaining blockers: `conj:magic-numbers-from-q` 17, `conj:b1-hyperbolic-rows-theorem` 7,
+`conj:im-q-physical-role` 1.** `shell-transition-knot` is off the list.
+
+**Found on the way, NOT fixed — the sibling is the anti-pattern its own library
+file forbids.** The library file's closing comment refuses to supply a mock
+instance because *"a `mockCorrectedClosure` that hardcodes
+`{2,8,20,28,50,82,126}` and discharges `closures_match` by `decide` is FITTING the
+answer into a lookup table"*. The sibling does exactly that:
+
+```lean
+def stabilityPair : ℕ → ℕ
+  | 0 => 2 | 1 => 8 | 2 => 20 | 3 => 28 | 4 => 50 | 5 => 82 | 6 => 126 | _ => 0
+theorem stability_pairs_correct : [stabilityPair 0, …, 6] = [2,8,20,28,50,82,126] := by decide
+```
+
+`rfl` in disguise. Only the first four values link to anything; **50, 82 and 126 —
+the three that would actually test the mechanism — connect to nothing.** And the
+file does not establish its own headline: its header asserts *"the 3 crossings of
+B_3 set the threshold at N ≥ 3"*, while its only theorem on the criterion,
+`so_exceeds_spacing`, gives **N ≥ 1** and its docstring concedes *"(but empirical
+threshold is N ≥ 3 due to gap structure)"* — formalised nowhere. The `3` is a
+`def`, not a derivation.
+
+Disposition left to the owner: AGENTS.md §0a "no shadowing stubs" indicates
+preserving the genuinely-new parts (`ho_spacing`, `so_exceeds_spacing`,
+`shellTransition_threshold`) into the library file and deleting the sibling, as
+`qou-scrx` did for `scratch_skein.lean`. Not taken unilaterally — it removes a
+`theorem` a reader may be citing and changes what the block renders from. The ref
+repoint stands independently of it.
+
+Audit: `docs/audits/2026-09-03-shell-transition-knot-ref-repoint-and-the-sibling-lookup-table.md`
