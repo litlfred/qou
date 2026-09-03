@@ -75,9 +75,20 @@ instance isSemisimpleRing_blocks (n : ℕ) :
 
     Transported along `heckeWedderburn` from the block product.  For every `n`
     and every real `q ∉ {0, 1, -1}`. -/
+theorem isSemisimpleRing_hecke_generic {K : Type*} [Field K] [CharZero K] (q : K)
+    (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) :
+    IsSemisimpleRing (Hecke K q q⁻¹ n) :=
+  (heckeWedderburn q hq0 hq2 n).symm.toRingEquiv.isSemisimpleRing
+
+/-- **The `ℝ` specialisation**, in the hypothesis shape the substrate uses.
+
+Over `ℝ` — and only over `ℝ` — `q ≠ 0` together with `q ^ 2 ≠ 1` already says `q` is not a
+root of unity, which is what `QOU.SchurWeyl.GenericParameter.ofSqNeOne` supplies.  Over a
+general field that implication fails at a primitive fourth root of unity, so the generic
+statement above carries the criterion directly. -/
 theorem isSemisimpleRing_hecke (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
     IsSemisimpleRing (Hecke ℝ q q⁻¹ n) :=
-  (heckeWedderburn q hq0 hq2 n).symm.toRingEquiv.isSemisimpleRing
+  isSemisimpleRing_hecke_generic q hq0 (QOU.SchurWeyl.GenericParameter.ofSqNeOne hq0 hq2) n
 
 /-- **The substrate discharges semisimplicity at every rank (sorry-free).**
 
