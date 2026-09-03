@@ -391,6 +391,30 @@ def main() -> int:
             print(f"\n  ledger rows with `id: null`: {len(unkeyed)} — CANNOT SPLIT stale\n"
                   "    from uncitable without references.ts, which `bun` could not read.")
 
+    # "Not held" is 382 keys, and most of them are books and journal papers that
+    # a PDF library was never going to contain. What is actionable is narrower,
+    # so split it by whether the reference itself names a way to get the thing.
+    not_held = [row for name in ("ledger-external", "ledger-file-missing",
+                                 "ledger-absent") for row in buckets[name]]
+    if not_held and refs:
+        groups = {"arXiv preprint": [], "DOI only (journal)": [], "no locator": []}
+        for key, n, _ in not_held:
+            m = refs.get(key, {})
+            if re.search(r"arxiv\.org", m.get("URL") or "", re.I):
+                groups["arXiv preprint"].append((key, n))
+            elif m.get("DOI"):
+                groups["DOI only (journal)"].append((key, n))
+            else:
+                groups["no locator"].append((key, n))
+        print(f"\n  of the {len(not_held)} not-held keys, by how the reference says to "
+              f"reach it:")
+        for label, rows in groups.items():
+            print(f"    {label:22} {len(rows):4} key(s)  {sum(n for _, n in rows):5} citation(s)")
+        top = sorted(groups["arXiv preprint"], key=lambda t: -t[1])[:5]
+        if top:
+            print("    most-cited with an arXiv URL: "
+                  + ", ".join(f"{k} ({n})" for k, n in top))
+
     if args.list:
         rows = sorted(buckets[args.list], key=lambda t: -t[1])
         rows = [r for r in rows if r[1] >= args.min_cites]
