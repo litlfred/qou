@@ -142,7 +142,14 @@ def decompose(n):
 
 
 def main():
-    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 40   # ~6 min; 32 is ~12 s
+    # Default is the nmax the COMMITTED witness records as its own, so a bare
+    # `python3 <this>` reproduces the corpus value. It was 40, and check 9
+    # (the N/P peak location) needs >= 46 -- so the default invocation could
+    # not reproduce the committed witness and dropped that check to
+    # "NOT CHECKED", passed 10 -> 9. Same defect as m1-kappa-n-exact (PR
+    # #6473); this producer at least REFUSES honestly instead of reporting a
+    # different quantity under the check's own label.
+    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 46   # ~10 min; 40 is ~6 min, 32 is ~12 s
     t0 = time.monotonic_ns()
     rows, checks = [], []
 
