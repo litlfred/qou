@@ -20,6 +20,20 @@ TWO CORRECTIONS — SEE `the_alpha_spike_is_an_inverted_stagger_probe.py`
    application — nobody had used it to collapse `H_12`. Everything measured
    below stands; the framing did not.
 
+PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
+-----------------------------------------------------------------
+Every trace below is float64: `build_seminormal_matrices` returns
+`numpy.ndarray(dtype=float)`, and `q` came from `mp.mpf(str(Q0))` off a Python
+float, so it carried 17 digits. Three phrasings below are therefore over-claims:
+`sum y.dim = 1` "to `1e-15`", the band-routed bonds "identical to adjacent",
+and four triangle orderings that "agree exactly". All three are float64-floor
+agreements. The 200-bit re-run confirms the identity behind the second and third
+of them at `~1e-60` — routing a bond past spectators really is trace-neutral,
+and it is the Markov split-link factorisation that makes it so — so the
+*conclusions* stand unchanged. What does not stand is reading a `1e-15` as
+evidence: that is what float64 prints either way. The honest error on the
+magnitudes here is `~1e-13`, set by the truncated `q`.
+
 THE HOLE THIS CLOSES
 --------------------
 `three_body_term_has_the_wrong_sign_probe` (bean `qou-bc09`) bounded

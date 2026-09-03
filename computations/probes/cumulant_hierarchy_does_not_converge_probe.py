@@ -15,6 +15,29 @@ correlation is indicative of higher-order behaviour.
 
 This probe makes that precise and then measures it.
 
+PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
+-----------------------------------------------------------------
+Every number below is float64: `build_seminormal_matrices` returns
+`numpy.ndarray(dtype=float)`, and `q` came from `mp.mpf(str(Q0))` off a Python
+float, so it carried 17 digits. Two claims here were read straight off that
+floor and were **not** evidence as stated: the additivity `residual 0.000e+00`,
+and the recursive-vs-direct Mobius agreement at `2.7e-15`. Float64 prints both
+whether or not the identity holds — and note that the paragraph below correctly
+names the double-precision floor as `9.3e-15` and then quotes a `2.7e-15`
+agreement as though it were a result, which is the same mistake stated twice.
+
+The heading "THE IDENTIFICATION IS EXACT" survives, but not because of the
+`0.000e+00`. It survives because multiplicativity of the Markov trace on
+disjoint strand blocks is a *theorem*, and Mobius inversion over subsets of an
+additive set function *is* a cumulant expansion by definition. The measurement
+was only ever a consistency check on the code. The 200-bit re-run confirms it
+at `1e-60` and confirms exchangeability and the size-only recursion there too.
+
+What is NOT re-established: the `A = 5` numbers in this probe — the hierarchy,
+`c_5 > 0`, and the ratio — are still float64 measurements. Their margins are
+~1e13 above the float64 floor, so the signs are sound; they are not exact and
+must not be quoted as exact.
+
 THE IDENTIFICATION IS EXACT, NOT AN ANALOGY
 -------------------------------------------
 The Markov trace is multiplicative on disjoint strand blocks, so

@@ -21,6 +21,19 @@ TWO UPDATES — SEE `four_body_term_and_the_h12_collapse_probe.py`
    order. A1-A2 (attachment rank), A5 (no-decay) and A6 (ceiling direction) do
    not depend on bond order at all.
 
+PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
+-----------------------------------------------------------------
+Everything below ran in float64, twice over: the seminormal matrices are
+`numpy`/`scipy` `dtype=float`, and `q` came from `mp.mpf(str(Q0))` off a Python
+float, so it carried 17 digits and no more. The agreements this docstring reads
+as evidence — `5.6e-16`, `1.11e-15`, "agrees to `1e-15`", "exact to `1e-12`" —
+sit at or just above the float64 floor, which is where float64 puts them whether
+or not the identity holds. **Do not quote them as exactness.** The 200-bit
+re-run confirms the underlying identities at `~1e-60`, and puts the honest error
+on these magnitudes at `~1e-13`, set by the truncated `q` rather than by the
+matrix arithmetic. Every sign and magnitude below is unaffected; the word
+"exact" applied to them was not earned.
+
 WHY THIS WAS THE NEXT MEASUREMENT
 ---------------------------------
 The arc had established that binding is carried by inter-nucleon bonds, that the

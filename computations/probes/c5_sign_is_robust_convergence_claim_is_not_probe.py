@@ -18,6 +18,23 @@ random shuffles of the ten bonds.
 
 The two claims come apart.
 
+PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
+-----------------------------------------------------------------
+Every number below is float64, in `q` as well as in the matrices, so treat the
+table as five significant figures and no more. Nothing in this probe's argument
+needs better: the whole point is a sign that is stable over a range of `+1.60`
+to `+3.26`, and a ratio that straddles `1` between `0.71` and `1.30`. Those
+margins are ~1e13 above the float64 floor.
+
+One phrase below is an over-claim and is corrected here: `c_2` is described as
+"**exactly** ordering-independent — identical to all printed digits". "Identical
+to all printed digits" is what was measured and is fine; "exactly" was inferred
+from it, and a float64 agreement never licenses that word. As it happens the
+statement *is* exactly true, for the structural reason the same sentence gives —
+a two-element subset contains one bond and has no internal order — and the
+200-bit run confirms `L` is invariant under bond routing at `1e-60`. Right
+conclusion, wrong warrant.
+
 THE SIGN IS ROBUST
 ------------------
     trial      c2         c3         c4         c5      |c5/c4|   signs
