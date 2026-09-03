@@ -60,6 +60,35 @@ async function filesUnder(root: string, ext: string): Promise<string[]> {
 
 const KW = "class|structure|theorem|lemma|def|abbrev|instance|axiom|opaque";
 
+/**
+ * Strip Lean comments before matching declarations.
+ *
+ * REQUIRED, not hygiene.  `DispersionSuppressionScale.lean` declares
+ * `def dispersion_suppression_scale`, and its module docstring quotes the
+ * HISTORICAL defect it replaced —
+ *
+ *     theorem dispersion_suppression_scale (q : ℝ) (E_QG : ℝ) : Prop := …
+ *
+ * — inside a fenced block.  Matching raw text classified that file as a
+ * `theorem` carrier off the docstring, i.e. off a line the file exists to
+ * warn against.  A doc comment describing a defect looks exactly like the
+ * defect to a line-oriented matcher.
+ */
+function stripComments(text: string): string {
+  // Block comments `/- … -/` (covers `/-!` and `/-- … -/`), nesting-aware.
+  let out = "";
+  let depth = 0;
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === "/" && text[i + 1] === "-") { depth++; i++; continue; }
+    if (depth > 0 && text[i] === "-" && text[i + 1] === "/") { depth--; i++; continue; }
+    // keep newlines so line numbers and `^` anchors still behave
+    if (depth > 0) { out += text[i] === "\n" ? "\n" : " "; continue; }
+    out += text[i];
+  }
+  // Line comments, but never `--` inside a string literal we care about here.
+  return out.split("\n").map((l) => l.replace(/--.*$/, "")).join("\n");
+}
+
 type Row = { label: string; kind: string; file: string; decl: string; body: string };
 const rows: Row[] = [];
 const noRef: string[] = [];
@@ -86,8 +115,9 @@ for (const ts of await filesUnder(PAPER, ".ts")) {
   ];
   let found = false;
   for (const f of cands) {
-    let text: string;
-    try { text = await readFile(f, "utf8"); } catch { continue; }
+    let raw: string;
+    try { raw = await readFile(f, "utf8"); } catch { continue; }
+    const text = stripComments(raw);
     const hit = re.exec(text);
     if (!hit) continue;
     const rest = text.slice(hit.index);
@@ -140,8 +170,8 @@ console.log();
 const thms = byKind.get("theorem") ?? [];
 const thmNoClass: Row[] = [];
 for (const r of thms) {
-  const text = await readFile(join(REPO, r.file), "utf8").catch(() => "");
-  if (!/^\s*(?:class|structure)\s+\w+/m.test(text)) thmNoClass.push(r);
+  const raw = await readFile(join(REPO, r.file), "utf8").catch(() => "");
+  if (!/^\s*(?:class|structure)\s+\w+/m.test(stripComments(raw))) thmNoClass.push(r);
 }
 console.log(`\`theorem\` carriers: ${thms.length}, of which the FILE declares no class/structure: ${thmNoClass.length}`);
 for (const r of thmNoClass.sort((a, b) => a.label.localeCompare(b.label))) {
