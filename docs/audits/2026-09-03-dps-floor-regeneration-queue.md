@@ -13,6 +13,28 @@ helper and probably move.
 Regenerate ONE AT A TIME: the standing rule is no two producers at once in
 a checkout, and several of these are heavy.
 
+## What this queue does and does not cover
+
+- **Both import cones, all 264 moving producers.** 229 reach
+  `qou_substrate.constants` through the `q_parameter` shim; 35 reach it
+  directly and are listed under the "constants-only cone" headings. The
+  audit's `--list` defaults to the `q_parameter` cone, so an earlier version
+  of this document covered only those 229. The other 35 are not a residue to
+  wave at: they were precisely the argument for landing the floor in
+  `constants.py` rather than in the shim, so omitting them would have
+  reintroduced the hole that placement decision closed.
+- **Not every producer here has a resolvable witness stem.** Those that do
+  not are listed in their own section: the stem is built dynamically,
+  written by a helper, or the producer emits none. Each needs a look, not a
+  guess.
+- **Witness counts, not producer counts, are what matters downstream.** The
+  scope audit attributes 48 witnesses to tier 1 and 135 to tier 2, 183 in
+  all - and could not attribute 813 of 3104 witnesses to any producer, so
+  183 is a LOWER bound on what actually moves.
+- **Tier 2 is "probably", not "definitely".** A producer reaching mpmath
+  through a helper may or may not have its emitted numbers change. The
+  cheapest discriminator is to regenerate and diff, not to reason about it.
+
 ## Tier 1-definite — 47 producers
 
 - [ ] `computations/audits/q0_consistency_audit.py` -> `q0-consistency-audit.witness.json`
