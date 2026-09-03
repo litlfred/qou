@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T08:27:28.830047+00:00",
-  "commitSha": "b341632f7be150d0008403d1bc5edc3d3b495f2d",
+  "computedAt": "2026-09-03T08:46:50.450977+00:00",
+  "commitSha": "2d8d3408be036c5753455b8b17128eaa76d15d18",
   "assertions": [
     {
       "name": "split_is_at_most_1_6_percent_of_the_energy_at_A63",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "em-linking-upper-bound-precision-budget",
   "scriptFile": "em_linking_upper_bound_precision_budget.py",
-  "scriptHash": "9dade7cd4e86",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b3a61c9137e0",
+  "scriptCommitSha": "2d8d3408be036c5753455b8b17128eaa76d15d18",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

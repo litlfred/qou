@@ -35,6 +35,15 @@ AND THE LIBRARY HOLDS NOTHING ANYWAY -- asserted here as a live scan rather than
 a remembered grep, so that if the source is ever acquired the assertion flips and
 prompts a revisit instead of this file quietly going stale.
 
+A TRAP THIS PROBE FELL INTO, fixed and recorded rather than quietly patched: a
+probe that NAMES its own search terms writes them into its own witness, so it
+scans its own output. The first guard here excluded self-artifacts by SUBSTRING
+and matched the .py filename's underscores while the witness is spelled with
+hyphens -- so the probe passed 4/4 on its first run (no witness on disk yet) and
+failed on every run afterwards. Caught by re-verifying at merge time, not at
+commit time. Self-exclusion is now by RESOLVED PATH, and the probe is idempotent:
+running it twice in a row gives the same verdict.
+
 Nothing wired. EXPLORATORY.
 """
 
@@ -68,6 +77,21 @@ RATIOS = ["1.1", "1.5", "2", "10"]
 ACQUISITION_TERMS = re.compile(r"ropelength|ideal knot", re.IGNORECASE)
 SCAN_ROOTS = ["docs", "computations", "content", "library"]
 
+# This probe NAMES the terms it searches for, and writes them into its own
+# witness. Any artifact it owns is therefore a guaranteed self-hit and must be
+# excluded -- by RESOLVED PATH, not by substring. A substring guard is what broke
+# here first time out: it matched `upper_bound_precision_budget` (underscores, the
+# .py filename) while the witness is spelled with HYPHENS, so the scan passed on
+# the first run (no witness on disk yet) and failed on every run afterwards. A
+# probe whose verdict depends on whether it has been run before is not measuring
+# the corpus; exact paths cannot drift that way.
+SELF_ARTIFACTS = frozenset({
+    (HERE / "em_linking_upper_bound_precision_budget.py").resolve(),
+    (HERE / "em-linking-upper-bound-precision-budget.witness.json").resolve(),
+    (REPO / "content/quantum-observable-universe/lean/QOU/Mass"
+          / "MirrorSplitIsASmallFractionOfTheEnergy.lean").resolve(),
+})
+
 
 def load_ladder() -> list[dict]:
     with SERIES_WITNESS.open() as fh:
@@ -81,6 +105,9 @@ def scan_for_acquisition_terms() -> dict:
     flips the assertion rather than leaving this probe asserting a stale absence.
     """
     hits: list[str] = []
+    # Self-artifacts are excluded by resolved path (see SELF_ARTIFACTS): this
+    # probe writes the search terms into its own witness, so scanning them would
+    # make the result depend on whether the probe had been run before.
     for root in SCAN_ROOTS:
         base = REPO / root
         if not base.is_dir():
@@ -95,11 +122,9 @@ def scan_for_acquisition_terms() -> dict:
             except OSError:
                 continue
             if ACQUISITION_TERMS.search(text):
-                rel = str(path.relative_to(REPO))
-                # This probe and its own witness name the terms by construction.
-                if "upper_bound_precision_budget" in rel or "MirrorSplitIsASmall" in rel:
+                if path.resolve() in SELF_ARTIFACTS:
                     continue
-                hits.append(rel)
+                hits.append(str(path.relative_to(REPO)))
     return {"count": len(hits), "paths": sorted(hits)[:20]}
 
 
