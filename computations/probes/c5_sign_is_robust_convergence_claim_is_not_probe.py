@@ -35,6 +35,22 @@ a two-element subset contains one bond and has no internal order — and the
 200-bit run confirms `L` is invariant under bond routing at `1e-60`. Right
 conclusion, wrong warrant.
 
+ORDER SIX, IN THE ONE SYSTEM WHERE ORDERING CANNOT INTERFERE (2026-09-03)
+---------------------------------------------------------------------------
+The withdrawal above stands: at `A = 5` the mixed-nucleus ratio depends on bond
+ordering. But the homonuclear system is exchangeable, its cumulants are
+ordering-free by theorem (`QOU.Mass.SubsetCumulantRecursion.cum_eq_sizeCum`),
+and `the_size_only_recursion_reaches_order_six_probe` now has it exactly to
+order six (128-bit, minimal-n route). Single-subset cumulants
+`c_2 .. c_6 = +0.907, -0.508, -0.230, +1.955, -6.598`; totals at `A = 6`,
+`C(6,k) c_k = +13.61, -10.16, -3.45, +11.73, -6.60`, summing to `L_6 = 5.13`
+through cancellation. Signs `+ - - + -`. The magnitudes do not decay: after a
+minimum at `k = 4` the single-subset cumulant grows by `8.5x` and then `3.4x`,
+and the `k = 5` and `k = 6` totals are of the same order as `k = 2`. So in the
+exchangeable case the hierarchy is not perturbative through order six. That is
+a statement about the homonuclear bond model; it does not reinstate the
+`A = 5` mixed-nucleus claim, which remains convention-dependent.
+
 THE SIGN IS ROBUST
 ------------------
     trial      c2         c3         c4         c5      |c5/c4|   signs

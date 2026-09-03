@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T09:00:53.693052+00:00",
-  "commitSha": "b6db760c412f033d648dc55e0d3489f29d8021b9",
+  "computedAt": "2026-09-03T18:02:47.566126+00:00",
+  "commitSha": "001de5c95dbc7fd59bf08f53110663e0f044c27a",
   "assertions": [
     {
       "name": "float(Q) loses q0 below ~1e-17 (the arc's real precision ceiling)",
@@ -81,8 +81,8 @@
   "durationMs": 7,
   "computation": "the_binding_arc_was_measured_in_float64_probe",
   "scriptFile": "the_binding_arc_was_measured_in_float64_probe.py",
-  "scriptHash": "6eca89f30584",
-  "scriptCommitSha": "e5555cd18a3b40fc717f8583ed2a78a6e5cbab02",
+  "scriptHash": "b8754b5a48ca",
+  "scriptCommitSha": "942f2bcd78e9e3f230c5b4c6472f5c7fbeeae70c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -130,7 +130,7 @@
     "bond_deltas_f64_minus_200bit": "{'pp': '-1.348e-13', 'pn': '-3.434e-13', 'nn': '-2.129e-13'}"
   },
   "caveats": [
-    "A<=4 is computed here. A=5 is RE-DERIVED here from the committed 200-bit subset traces of a detached run (sidecars *.a5_exact.{pnpnn,nnnnn}.json, same engine, 2026-09-03); the probe does not recompute those traces. A=6 is pending: its numbers in the arc remain float64 measurements -- sign and magnitude claims with margins ~1e13 above the float64 floor, not exact, not to be quoted as exact. The float64 12-ordering sweep at A=5 is not re-run; its sign claim is covered by the two exact orderings, its ratio range is not.",
+    "A<=4 is computed here. A=5 is RE-DERIVED here from the committed 200-bit subset traces of a detached run (sidecars *.a5_exact.{pnpnn,nnnnn}.json, same engine, 2026-09-03); the probe does not recompute those traces. The homonuclear all-pairs A=6 is exact at 128 bits in the_size_only_recursion_reaches_order_six_probe; the MIXED A=6 (6Li) figures in the arc remain float64 measurements -- sign and magnitude claims with margins ~1e13 above the float64 floor, not exact, not to be quoted as exact. The float64 12-ordering sweep at A=5 is not re-run; its sign claim is covered by the two exact orderings, its ratio range is not.",
     "200-bit precision tests ALGEBRAIC identities, which hold for every q. It buys nothing physical: Q_ERR = 9.2e-13 is q0's own stated uncertainty, so no quantity in this arc carries physical meaning below ~1e-12 at any working precision.",
     "The float64 route is not thereby shown harmless anywhere else. It was harmless HERE because every identity tested is exact and every magnitude is O(1); a cancellation-heavy quantity would not have survived, and the arc had no way to tell the difference.",
     "The seminormal off-diagonal uses b = sqrt(|a a' + 1|). The absolute value is a no-op: a a' = -1/[rho]^2 exactly, and a branching swap forces |rho| >= 2, so the radicand is non-negative. It is retained to mirror `build_seminormal_matrices_mp` letter for letter."

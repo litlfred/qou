@@ -1,11 +1,11 @@
 ---
 # qou-wx83
 title: 'PRECISION: the t7qv binding-gap arc ran entirely in float64 — exact 200-bit re-run'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:21:57Z
-updated_at: 2026-09-03T04:22:03Z
+updated_at: 2026-09-03T18:02:16Z
 ---
 
 
@@ -74,3 +74,31 @@ Two losses, not one:
 - Nothing here shows the float64 route harmless elsewhere. It was harmless HERE
   because every identity tested is exact and every magnitude is O(1). The arc
   had no way to tell the difference, which is the point.
+
+## Summary of Changes
+
+Owner's flag "why using float?? ?forbidden!" was correct on both counts the
+arc had wrong: the seminormal matrices were float64 and, worse, `q` itself was
+`mp.mpf(str(Q))` off a Python float (17 digits). Remediation, all pushed:
+
+- `the_binding_arc_was_measured_in_float64_probe` — 200-bit MPFR engine, q from
+  `Q_50_DIGIT_STR`, faithful to `build_seminormal_matrices_mp` (9e-61); every
+  identity the arc read off the float64 floor re-measured at A ≤ 4 and found
+  to hold at ~1e-60; bond constants exact, the arc's values good to ~1e-13
+  (set by the truncated q); L_S n-independent (Markov split-link
+  factorisation), which is what made A=6 reachable.
+- Forward-pointer blocks on the four probes that had quoted a floor as
+  evidence; A=5 (both orders, 26 traces each, 200-bit) and A=6 homonuclear
+  (128-bit, minimal-n) landed with committed sidecars; probes re-derive their
+  tables from the sidecars rather than quoting logs.
+- Lean `QOU.Mass.SubsetCumulantRecursion` (reconstruction, the c_k-only
+  recursion, mixed cumulants vanish across an additive split, seminormal
+  radicand, Hecke roots), wired into the exposition as
+  `prop:subset-cumulant-recursion`.
+- Engine + runners committed under `computations/_exact_trace_engine.py` and
+  `computations/_exact_trace_runs/` (two runs had been lost to resets).
+- Order six: `the_size_only_recursion_reaches_order_six_probe` — c_6 =
+  −6.598, signs + − − + −, magnitudes not decaying in the exchangeable case.
+
+Not done, by design: the mixed-nucleus A=6 (57 exact traces at n=18) and the
+A=5 twelve-ordering sweep remain float64 measurements and are labelled so.

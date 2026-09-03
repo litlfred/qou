@@ -126,14 +126,22 @@ recursion agreement are `1.74e-59 / 2.49e-59 / 1.74e-59` and `~4e-59`. The
 `c_5` sign, the A=5 hierarchy, and the ratio straddling `1` across orderings
 are established, not measured.
 
+A = 6, LANDED SEPARATELY (128-bit, minimal-n route, 2026-09-03)
+---------------------------------------------------------------
+The homonuclear all-pairs A=6 hierarchy is exact at 128 bits: L_2..L_5 in
+their own minimal systems, L_6 from two n=18 traces, written up and re-derived
+from its committed sidecar by `the_size_only_recursion_reaches_order_six_probe`
+(cross-checked against the 200-bit A=5 ambient run at ~1e-37). Its numbers are
+there, not here.
+
 WHAT IS NOT RE-ESTABLISHED HERE
 -------------------------------
-A = 6. It is running by the minimal-n route -- two n=18 traces at 128 bits, the
-lower ones already fixed by n-independence -- and until it lands the A=6
-numbers in the arc remain float64 measurements: sign and magnitude claims with
-margins ~1e13 above the float64 floor, not exact, not to be quoted as exact.
-The float64 12-ordering sweep at A=5 is not re-run either: its sign claim is
-covered by the two exact orderings, its ratio range is not.
+The MIXED A=6 figures the arc quoted (6Li, from the chain and all-pairs
+constructions in float64) are not re-run: the full lattice at n=18 is 57 exact
+traces, out of reach. They remain float64 measurements -- sign and magnitude
+claims with margins ~1e13 above the float64 floor, not exact, not to be quoted
+as exact. The float64 12-ordering sweep at A=5 is not re-run either: its sign
+claim is covered by the two exact orderings, its ratio range is not.
 """
 from __future__ import annotations
 
@@ -623,12 +631,13 @@ def main() -> int:
             "A<=4 is computed here. A=5 is RE-DERIVED here from the committed "
             "200-bit subset traces of a detached run (sidecars "
             "*.a5_exact.{pnpnn,nnnnn}.json, same engine, 2026-09-03); the probe "
-            "does not recompute those traces. A=6 is pending: its numbers in the "
-            "arc remain float64 measurements -- sign and magnitude claims with "
-            "margins ~1e13 above the float64 floor, not exact, not to be quoted "
-            "as exact. The float64 12-ordering sweep at A=5 is not re-run; its "
-            "sign claim is covered by the two exact orderings, its ratio range "
-            "is not.")
+            "does not recompute those traces. The homonuclear all-pairs A=6 is "
+            "exact at 128 bits in the_size_only_recursion_reaches_order_six_probe; "
+            "the MIXED A=6 (6Li) figures in the arc remain float64 measurements -- "
+            "sign and magnitude claims with margins ~1e13 above the float64 floor, "
+            "not exact, not to be quoted as exact. The float64 12-ordering sweep "
+            "at A=5 is not re-run; its sign claim is covered by the two exact "
+            "orderings, its ratio range is not.")
         wb.add_caveat(
             "200-bit precision tests ALGEBRAIC identities, which hold for every "
             "q. It buys nothing physical: Q_ERR = 9.2e-13 is q0's own stated "
