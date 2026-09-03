@@ -1,8 +1,8 @@
 {
   "engine": "python+fractions",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:06:46.668377+00:00",
-  "commitSha": "c6b2667b91fd122f76a6574567e543b99e37468f",
+  "computedAt": "2026-09-03T05:02:41.425724+00:00",
+  "commitSha": "651f8d77f07cffaf3f98f8014dac3326979953f9",
   "assertions": [
     {
       "name": "h3_quotient_jet_grades",
@@ -17,156 +17,144 @@
       "passed": true
     },
     {
-      "name": "h3_grades_vs_bond_product_grades_at_A4",
-      "computed": "4 vs 7",
-      "expected": "4 vs 7",
+      "name": "bond_sweep_shape_map_is_non_injective",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
-      "name": "bond_sweep_distinct_shapes_over_configurations",
-      "computed": "107/222",
-      "expected": "107/222",
-      "passed": true
-    },
-    {
-      "name": "z2n2_shapes_over_bond_counts",
-      "computed": "6/7",
-      "expected": "6/7",
-      "passed": true
-    },
-    {
-      "name": "full_tower_max_grade_at_A2",
-      "computed": "15",
-      "expected": "15",
-      "passed": true
-    },
-    {
-      "name": "full_tower_max_grade_at_A20",
-      "computed": "1770",
-      "expected": "1770",
+      "name": "z2n2_shape_map_is_non_injective",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A2",
-      "computed": "2/1",
-      "expected": "2/1",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A3",
-      "computed": "2/2",
-      "expected": "2/2",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A4",
-      "computed": "1/4",
-      "expected": "1/4",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A5",
-      "computed": "2/4",
-      "expected": "2/4",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A6",
-      "computed": "2/5",
-      "expected": "2/5",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A7",
-      "computed": "2/6",
-      "expected": "2/6",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A8",
-      "computed": "4/5",
-      "expected": "4/5",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A9",
-      "computed": "4/6",
-      "expected": "4/6",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A10",
-      "computed": "2/9",
-      "expected": "2/9",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A11",
-      "computed": "4/8",
-      "expected": "4/8",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A12",
-      "computed": "4/9",
-      "expected": "4/9",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A13",
-      "computed": "4/10",
-      "expected": "4/10",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A14",
-      "computed": "4/11",
-      "expected": "4/11",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A15",
-      "computed": "4/12",
-      "expected": "4/12",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A16",
-      "computed": "3/14",
-      "expected": "3/14",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A17",
-      "computed": "4/14",
-      "expected": "4/14",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A18",
-      "computed": "4/15",
-      "expected": "4/15",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A19",
-      "computed": "4/16",
-      "expected": "4/16",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     },
     {
       "name": "both_groups_non_empty_at_A20",
-      "computed": "6/15",
-      "expected": "6/15",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "support_is_full_at_every_bond_count",
+      "computed": "1",
+      "expected": "1",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 551197,
+  "durationMs": 368971,
   "computation": "gs-filtration-jet-shape-magic",
   "scriptFile": "gs_filtration_jet_shape_magic_probe.py",
-  "scriptHash": "587ca1884b1e",
-  "scriptCommitSha": "c6b2667b91fd122f76a6574567e543b99e37468f",
+  "scriptHash": "33ad09c83e51",
+  "scriptCommitSha": "651f8d77f07cffaf3f98f8014dac3326979953f9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -181,13 +169,108 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
       "computations/probes/gs_filtration_jet_shape_magic_probe.py"
     ],
     "reproduce": "python3 -u computations/probes/gs_filtration_jet_shape_magic_probe.py"
+  },
+  "data": {
+    "h3_grades_vs_bond_product_grades_at_A4": {
+      "h3_quotient_grades": 4,
+      "bond_product_grades_at_A4": 7
+    },
+    "full_tower_max_grade": {
+      "A2": 15,
+      "A20": 1770
+    },
+    "bond_sweep_shape_counts": {
+      "distinct_shapes": 107,
+      "configurations": 222,
+      "collisions": 115
+    },
+    "z2n2_shape_counts": {
+      "distinct_shapes": 6,
+      "bond_counts": 7
+    },
+    "group_sizes_at_A2": {
+      "n_magic": 2,
+      "n_non_magic": 1
+    },
+    "group_sizes_at_A3": {
+      "n_magic": 2,
+      "n_non_magic": 2
+    },
+    "group_sizes_at_A4": {
+      "n_magic": 1,
+      "n_non_magic": 4
+    },
+    "group_sizes_at_A5": {
+      "n_magic": 2,
+      "n_non_magic": 4
+    },
+    "group_sizes_at_A6": {
+      "n_magic": 2,
+      "n_non_magic": 5
+    },
+    "group_sizes_at_A7": {
+      "n_magic": 2,
+      "n_non_magic": 6
+    },
+    "group_sizes_at_A8": {
+      "n_magic": 4,
+      "n_non_magic": 5
+    },
+    "group_sizes_at_A9": {
+      "n_magic": 4,
+      "n_non_magic": 6
+    },
+    "group_sizes_at_A10": {
+      "n_magic": 2,
+      "n_non_magic": 9
+    },
+    "group_sizes_at_A11": {
+      "n_magic": 4,
+      "n_non_magic": 8
+    },
+    "group_sizes_at_A12": {
+      "n_magic": 4,
+      "n_non_magic": 9
+    },
+    "group_sizes_at_A13": {
+      "n_magic": 4,
+      "n_non_magic": 10
+    },
+    "group_sizes_at_A14": {
+      "n_magic": 4,
+      "n_non_magic": 11
+    },
+    "group_sizes_at_A15": {
+      "n_magic": 4,
+      "n_non_magic": 12
+    },
+    "group_sizes_at_A16": {
+      "n_magic": 3,
+      "n_non_magic": 14
+    },
+    "group_sizes_at_A17": {
+      "n_magic": 4,
+      "n_non_magic": 14
+    },
+    "group_sizes_at_A18": {
+      "n_magic": 4,
+      "n_non_magic": 15
+    },
+    "group_sizes_at_A19": {
+      "n_magic": 4,
+      "n_non_magic": 16
+    },
+    "group_sizes_at_A20": {
+      "n_magic": 6,
+      "n_non_magic": 15
+    }
   },
   "probe": "gs_filtration_jet_shape_magic",
   "question": "does the Groebner-Shirshov filtration grading -- the jet vertical degree, indexed by Coxeter length of the normal-form word -- separate magic from non-magic nucleon configurations?",
