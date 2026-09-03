@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:17:21.758777+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-03T10:54:06.584227+00:00",
+  "commitSha": "9c8f0ca112fdb640771bcc677f0e7e457bccd464",
   "assertions": [
     {
       "name": "one_dim_block_characters_scale_as_q_pow_n",
@@ -10,15 +10,15 @@
       "expected": 10,
       "passed": true,
       "tolerance": 0,
-      "source": "For each meson row, χ_(3) scales by q^n and χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings — the Hoefsmit eigenvalue structure the mass ratios are read off, checked to 1e-9 relative."
+      "source": "For each meson row, χ_(3) scales by q^n and χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings — the Hoefsmit eigenvalue structure the mass ratios are read off, checked to 1e-40 relative in exact mpmath arithmetic."
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 19,
   "computation": "meson-spectrum-predictions",
   "scriptFile": "meson_spectrum_predictions.py",
-  "scriptHash": "7d7f3005f90e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "0cba39548626",
+  "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -49,51 +49,51 @@
         "name": "π (base)",
         "crossings": 6,
         "n_extra": 0,
-        "tr_M": 0.6870996473624156,
-        "ratio_to_pion": 1.0,
-        "m_pred_MeV": 139.57039,
-        "m_PDG_MeV": 139.57039
+        "tr_M": "0.687099647362414422985473238777856278406185673425848703383102",
+        "ratio_to_pion": "0.999999999999999999999999999999999999999999999999991981705870",
+        "m_pred_MeV": "139.570389999999999999999999999999999999999999999998918482224",
+        "m_PDG_MeV": "139.570389999999999999999999999999999999999999999999944823873"
       },
       {
         "name": "K (ūs)",
         "crossings": 8,
         "n_extra": 2,
-        "tr_M": 0.9172454693742008,
-        "ratio_to_pion": 1.3349526126163083,
-        "m_pred_MeV": 186.31985677437706,
-        "m_PDG_MeV": 493.677
+        "tr_M": "0.917245469374198665139765429613442159326114281262713581683069",
+        "ratio_to_pion": "1.33495261261630743397176623551126336862493083438334709103844",
+        "m_pred_MeV": "186.319856774376948919338662479138877751695360277908989157580",
+        "m_PDG_MeV": "493.677000000000000000000000000000000000000000000000169688486"
       },
       {
         "name": "η-like (s̄s-ūu)",
         "crossings": 10,
         "n_extra": 4,
-        "tr_M": 1.1874806131459659,
-        "ratio_to_pion": 1.72825094250066,
-        "m_pred_MeV": 241.2126580626847,
-        "m_PDG_MeV": 547.862
+        "tr_M": "1.18748061314596264610711583007920492408802557658177293619661",
+        "ratio_to_pion": "1.72825094250065824587250804329809194460097163396366317628367",
+        "m_pred_MeV": "241.212658062684446633141837881251578963816005331245635699480",
+        "m_PDG_MeV": "547.862000000000000000000000000000000000000000000000000000000"
       },
       {
         "name": "10+2 crossings",
         "crossings": 12,
         "n_extra": 6,
-        "tr_M": 1.5096160322242165,
-        "ratio_to_pion": 2.1970845684744744,
-        "m_pred_MeV": 306.6479500849641,
+        "tr_M": "1.50961603222421114333427196814588415096820559866964423676622",
+        "ratio_to_pion": "2.19708456847447049729063428779619380661024081957651904502798",
+        "m_pred_MeV": "306.647950084963552350347770895087010104175889182214526534819",
         "m_PDG_MeV": null
       },
       {
         "name": "14 crossings",
         "crossings": 14,
         "n_extra": 8,
-        "tr_M": 1.897731044410897,
-        "ratio_to_pion": 2.7619444307616203,
-        "m_pred_MeV": 385.4856613597274,
-        "m_PDG_MeV": 1869.66
+        "tr_M": "1.89773104441088944814113345678795955244868599213379949900028",
+        "ratio_to_pion": "2.76194443076161404424171063451282365480300393421389160444027",
+        "m_pred_MeV": "385.485661359726469184292807526102257502080632269766913287353",
+        "m_PDG_MeV": "1869.66000000000000000000000000000000000000000000000000000000"
       }
     ],
     "kaon_prediction": {
-      "m_pred_MeV": 186.31985677437706,
-      "m_PDG_MeV": 493.677,
+      "m_pred_MeV": "186.319856774376948919338662479138877751695360277908989157580",
+      "m_PDG_MeV": "493.677000000000000000000000000000000000000000000000169688486",
       "note": "structural ratio from character growth, not a fit; there is no independent expected value for the prediction itself",
       "has_independent_expected_value": false
     }
