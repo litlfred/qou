@@ -23,6 +23,7 @@ with axioms `[propext, Classical.choice, Quot.sound]` (no `sorryAx`).
 namespace QOU.MathlibExt.NormalizedSumUnconditional
 
 open QOU.MathlibExt.MolienFakeDegreeGeneralN
+open QOU.MathlibExt.QPartitionCombinatorics
 open QOU.Mathlib.PartitionListBridge
 
 /-- **`normalizedSum n q = 1`, unconditionally** (for `1 < q`). The general-`n` q-analogue fake-degree
@@ -40,5 +41,13 @@ theorem normalizedSum_eq_one (n : ℕ) (q : ℝ) (hq : 1 < q) :
   · -- the convention bridge on the sorted carrier
     intro p
     rw [HconvConventionBridge.hconv q (toList p) (toList_sorted p) hq, toList_sum p]
+
+/-- **The general-`n` Molien / fake-degree identity** `molienSum n q = [n]_q!`, unconditionally
+(for `1 < q`) — i.e. `Σ_{λ⊢n} f^λ · q^{−κ_λ} · qDim_q(λ) = [n]_q!`. The headline consequence of
+`normalizedSum_eq_one` via `molienSum_eq_qFactorial_iff`, whose docstring records this as the open
+content of `qou-3quc` that it "does not close, it locates". Now closed. -/
+theorem molienSum_eq_qFactorial (n : ℕ) (q : ℝ) (hq : 1 < q) :
+    molienSum n q = qFactorial q n :=
+  (molienSum_eq_qFactorial_iff n q hq).mpr (normalizedSum_eq_one n q hq)
 
 end QOU.MathlibExt.NormalizedSumUnconditional
