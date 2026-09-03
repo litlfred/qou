@@ -217,6 +217,13 @@ def main():
         "passed": sum(1 for c in checks if c["pass"]),
         "total": len(checks),
         "ms": int(ms),
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "M1 kappa correction-exponent measurement over mpmath alone. The "
+            "import cone is json, os, sys, time and mpmath; no substrate "
+            "module is reachable and the source carries no q_0 token, so the "
+            "result does not depend on which pin is in force."
+        ),
     }
     wit = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "m1-kappa-correction-exponent.witness.json")

@@ -136,6 +136,14 @@ if __name__ == '__main__':
             'S_TOO_LARGE': 'criterion evaluable but fails -- where the open problem lives',
             'EXCLUDED': 'criterion fires',
         },
+        'q0Anchor': 'independent',
+        'q0AnchorReason': (
+            'q-Collatz orbit combinatorics on D_inf. The variable q here is '
+            'the Laurent variable of D_inf, NOT the substrate modulus q_0: '
+            'the arithmetic is exact over Z and Z[w], and the import cone is '
+            'stdlib only (json, sys, collections), so no substrate constant '
+            'is reachable.'
+        ),
         'result': r,
     }
     with open(Path(__file__).with_name('qcollatz_height_criterion_coverage.witness.json'), 'w') as f:
