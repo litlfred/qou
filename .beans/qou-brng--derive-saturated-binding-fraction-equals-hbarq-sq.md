@@ -1044,6 +1044,55 @@ confined to off-diagonal cells; diagonal factors z-free unconditionally), NOT
 the degree count deg_z <= |mu| - d(mu), and NOT rank = n. Those stay measured
 (exact symbolic n=2..6, numeric to n=7), so the exclusion stays scope-(a).
 
+## 2026-09-03 — the rank bound is PROVED (the <= half); scope still (a)
+
+Commits 8a8457991f (degree bound) and 18cbcd439b (rank bound), both lean-direct
+verified, **11 declarations, zero sorryAx**.
+
+CHAIN, now end-to-end in Lean:
+
+  1. each cell's numerator factor is affine in z, coefficient q^(2j+1)-q^(2i+1)
+  2. that coefficient is ZERO on the diagonal i=j — identically, no hypothesis
+     on q at all (the two z terms cancel term-for-term)
+  3. hence deg_z(numerator) <= #off-diagonal cells = |mu| - d(mu), d = Durfee
+     (via natDegree_prod_le: product degree <= sum of factor degrees, diagonal
+     factors constant, off-diagonal linear)
+  4. every non-empty diagram has (0,0), so d >= 1 and deg <= |mu| - 1
+  5. a degree-<=d family evaluated at z lies in the span of its d+1 coefficient
+     vectors — for EVERY z, not just sampled ones
+  6. therefore the Ocneanu family at level n spans **at most n dimensions**,
+     against p(n) for the full space of trace functionals
+
+Step 6 is `ocneanuFamily_finrank_le`. Steps 5-6 are stated for an arbitrary
+finite family of polynomials — nothing about the Ocneanu weight is used, which
+is what makes the argument checkable rather than entangled with the formula.
+
+**This is the <= half only.** rank = n EXACTLY is still measured (exact
+symbolic over Q(q) at n=2..6, numeric to n=7), and so is
+deg_z = |mu| - d(mu) exactly. A proved upper bound on the rank is not a proof
+that the rank is attained, so the exclusion of the Markov-trace family stays
+**scope-(a)**. What changed: the bound direction no longer rests on
+measurement — it rests on the degree of a polynomial.
+
+AXIOM REPORT CHANGED, honestly noted: the two `ring` proofs previously showed
+[propext, Quot.sound] and now show Classical.choice too. Nothing in those
+proofs changed — the added LinearAlgebra imports changed instance resolution
+file-wide. Earlier text claiming they 'do not even need Classical.choice' was
+corrected in the same pass rather than left standing.
+
+MATHLIB TRAPS for the next agent (all cost me a cycle):
+  * Mathlib.LinearAlgebra.Finrank does NOT exist in this version;
+    Dimension/Finrank and Dimension/Constructions do.
+  * Submodule.finrank_mono and finrank_span_le_card are in
+    Dimension/Constructions — importing Dimension/Finrank alone is not enough.
+  * finrank_span_le_card needs a Fintype on the range, NOT automatic; wants
+    (Set.finite_range _).fintype plus Module.Finite.span_of_finite.
+  * natDegree_C_mul_X_le does not exist; build from natDegree_mul_le.
+  * Finset.sum_le_sum cannot infer its bounding function — name it
+    (g := fun _ => 1).
+  * `simp` distributes C across a product (C (a*b) -> C a * C b) rather than
+    discharging a natDegree goal; the diagonal case wants explicit rewrites.
+
 ## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
 
 `computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
