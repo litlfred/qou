@@ -105,6 +105,14 @@ content/todos/
 # bulk-JSON coordination queues; watcher *-ledger.md are local runtime
 # event logs — keep them gitignored (matching the prior todos/ semantics).
 .beans/*-ledger.md
+# ...but NOT a bean whose TITLE happens to end in "ledger". Bean filenames are
+# title-derived slugs minted as `<id>--<slug>.md`, so a bean called "... and the
+# ledger" produces `qou-an21--...-the-ledger.md` and vanishes from the committed
+# work-plan silently — no warning, and `beans list` still shows it locally, so
+# the loss only surfaces in the next container. Watcher runtime ledgers are
+# fixed names with no `--` (integration-audit-ledger.md,
+# canonical-watcher-ledger.md, …), which is what separates the two.
+!.beans/*--*-ledger.md
 
 # Harness runtime noise under .work/ (the directory itself is tracked). The
 # convention-C regeneration journal .work/convention-c-regen.jsonl IS
