@@ -30,13 +30,32 @@ Operationally:
   repair is to move the data to parameters.
 
 Measured on `main` 2026-09-02 over the 31 library projections:
-**19 defect, 2 accessor, 10 unresolved.** After six repairs and the three
-parser fixes below: library **7 / 4 / 10**, whole tree **9 / 12 / 15**.
+**19 defect, 2 accessor, 10 unresolved.** After eleven repairs and the five
+fixes below: library **2 / 13 / 0**, whole tree **6 / 24 / 0**.
 
-## The field parser was wrong three times, and the third one moved verdicts
+**`unresolved` is now 0, and that is where the last two library defects came
+from.** The ten unresolved rows were never "clean" — the note below said so —
+and once `find_class` handled multi-line signatures, eleven of the fifteen
+tree-wide turned out to be **accessors** and the rest real defects that had
+been invisible. `NobleGasMultiOperator` and `AtomicNfWitnessContext` (thirteen
+data fields) are both in that second group.
 
-Two of the three came out of Copilot's review of PR #6422; the third came out
-of reading a carrier whose field count I already knew.
+## The parser was wrong five times, and three of them moved verdicts
+
+Two came out of Copilot's review of PR #6422; the rest out of reading a file
+whose real answer was already known. **None was visible in the totals.**
+
+4. **Wrong carrier.** `carrier_of` returned the *first* class-shaped binder,
+   not the one the body projects. On
+   `ShellClosureStability.lean::shell_closure_monotone` that is
+   `[HasFrobeniusStability D_prev]` (one data field) rather than
+   `hi : ShellClosureMonotone …` (zero) — DEFECT for a row whose true verdict
+   is ACCESSOR. It also returned **`CommRing`** as the carrier for two rows,
+   by matching `[CommRing R]`. Now the projected variable is read out of the
+   body and *its* binder type looked up.
+5. **One-line class signatures only.** A `class … where` spanning lines read
+   as `unresolved`, which the note below correctly said was not `clean`:
+   fixing it emptied that bucket and surfaced two real library defects.
 
 1. **Under-count.** `FIELD` was `^  (\w+)\s*:`. `\w` excludes the characters
    Lean identifiers use — `'`, `!`, `?`, all of unicode — so a field named
@@ -115,10 +134,11 @@ Use this script to **order** the reading. Do not use it to skip it.
 
 ## Limits — quote them with the number
 
-- **10 are unresolved**, not clean (and the count moves with the tree). The class-declaration matcher wants
-  `class Name … where` closing on one line; a multi-line signature, an
-  `extends` chain, or a carrier declared in another form is missed. Those ten
-  need reading, not counting.
+- **`unresolved` is 0 as of 2026-09-03, and was never "clean" when it was
+  not.** Multi-line `class … where` signatures are now handled; an `extends`
+  chain or a carrier in some other form would still land there, and would
+  still need reading rather than counting. When the bucket was ten rows deep
+  it was hiding two real library defects and eight accessors.
 - **The data/claim split is heuristic.** A field counts as a *claim* when its
   type contains a relation or quantifier (`= ≤ < > ∀ ∃ ↔ ≠ ∈`, `Nonempty`,
   `IsOpen`, `Subsingleton`, or ends in `Prop`); everything else counts as
@@ -241,8 +261,17 @@ def load_tree() -> dict[str, str]:
 
 
 def find_class(tree: dict[str, str], cname: str):
+    # The signature may span lines. Continuation lines are indented, so the
+    # span allows a newline only when the next character is whitespace — that
+    # bounds the match without letting `.*?` run to some later `where`.
+    #
+    # `ShellClosureMonotone` is why: its binders occupy four lines, so the
+    # one-line matcher reported it `unresolved`, and `unresolved` is not
+    # `clean` — hand-read, it has ZERO data fields and is an ACCESSOR.
     pat = re.compile(
-        rf"^(?:class|structure)\s+{re.escape(cname)}\b([^\n]*?)\s+where\s*$", re.M
+        rf"^(?:class|structure)\s+{re.escape(cname)}\b"
+        rf"((?:[^\n]|\n(?=\s))*?)\bwhere\s*$",
+        re.M,
     )
     for f, t in tree.items():
         m = pat.search(t)
@@ -272,7 +301,33 @@ def carrier_of(tree: dict[str, str], path: str, decl: str) -> str | None:
     )
     if not m:
         return None
-    sig = m.group(1).split(":=")[0]
+    whole = m.group(1)
+    sig = whole.split(":=")[0]
+
+    # FIRST: the class the body actually PROJECTS.
+    #
+    # Taking "the first class-shaped binder" is wrong whenever the projected
+    # class is not the first one, and the miss is not cosmetic — it reports
+    # the wrong carrier's field counts and so the wrong verdict.
+    #
+    # Measured on `ShellClosureStability.lean::shell_closure_monotone`: the
+    # signature opens `[HasFrobeniusStability D_prev]` (one DATA field,
+    # `sigma`), which the old scan returned, giving `data = 1` -> DEFECT. The
+    # body is `hi.monotone`, and `hi : ShellClosureMonotone D_prev D q h` has
+    # **zero** data fields — its one field is a proposition about the class's
+    # own parameters, so a `ShellClosureMonotone D_prev D q h` hypothesis
+    # constrains what the CALLER brought. That is the accessor idiom, and the
+    # true verdict is ACCESSOR.
+    #
+    # So: read the projected variable out of the body, then look up ITS binder
+    # type. Only fall back to binder order when that fails.
+    pm = re.search(r":=\s*(?:by\s+exact\s+)?([A-Za-z_][\w']*)\.[A-Za-z_]", whole)
+    if pm:
+        var = pm.group(1)
+        bm = re.search(rf"[\[(]\s*{re.escape(var)}\s*:\s*([A-Z][\w'.]*)", sig)
+        if bm:
+            return bm.group(1).split(".")[-1]
+
     for pat in (r"\[\s*\w+\s*:\s*([A-Z][\w'.]*)", r"\[\s*([A-Z][\w'.]*)",
                 r"\(\s*\w+\s*:\s*([A-Z][\w'.]*)"):
         cm = re.search(pat, sig)
@@ -282,36 +337,66 @@ def carrier_of(tree: dict[str, str], path: str, decl: str) -> str | None:
 
 
 def selftest() -> int:
-    """Hand-counted carriers, to keep the field parser honest.
+    """Regression tests for the field parser and the carrier resolver.
 
-    Both bugs this parser has had were found by reading a carrier whose real
-    field count was already known — first an UNDER-count (`\\w` missing `S'`
-    and multi-binder lines), then an OVER-count (a docstring line with a colon
-    parsing as six fields). Neither was visible in the totals. So the counts
-    are pinned here against files, not against a previous run of this script.
+    Every bug these have had was found by reading a file whose real answer was
+    already known, and none was visible in the totals — an UNDER-count (`\\w`
+    missing `S'`, one name per line), an OVER-count (a docstring line with a
+    colon parsing as six fields), a MIS-CLASSIFICATION (a type starting on the
+    next line, so a claim counted as data), and a wrong CARRIER (the first
+    class binder rather than the projected one).
+
+    ## Fixtures, not live carriers
+
+    The first version of this selftest pinned `BindingAssemblyContext` at its
+    hand-counted `4 / 1` — and then **this drain deleted that class**, so the
+    test failed for a reason that had nothing to do with the parser. A test
+    pinned to a carrier the work is removing goes stale by construction.
+
+    So each bug shape is captured as a literal fixture. These survive the
+    drain and say what they are testing.
     """
-    tree = load_tree()
-    # (class, data, claim) — counted by hand from the source, 2026-09-03.
-    cases = [
-        # 4 data (Z, N, atomic_mass, term_weights) + 1 claim. The docstring
-        # line "Manuscript claim — atomic-mass recovery: …" is the over-count
-        # regression test: it contains a colon and must not read as 6 fields.
-        ("BindingAssemblyContext", 4, 1),
-        # 8 data incl. the bare `Type`s, 1 claim (`claim_eigenvalues`).
-        # `q : Rˣ` is data; five of the eight are unused by the claim.
-        ("SortingColorEnergyContext", 0, 0),  # deleted by this branch — absent
-    ]
     bad = 0
-    for cname, want_d, want_c in cases:
-        f, _params, d, c = find_class(tree, cname)
-        if f is None:
-            got = (0, 0)
-        else:
-            got = (d, c)
-        ok = got == (want_d, want_c)
+
+    def check(name: str, got, want) -> None:
+        nonlocal bad
+        ok = got == want
         bad += not ok
-        print(f"  {'ok  ' if ok else 'FAIL'} {cname:<34} "
-              f"data={got[0]} claim={got[1]}  (want {want_d}/{want_c})")
+        print(f"  {'ok  ' if ok else 'FAIL'} {name:<44} {got}  (want {want})")
+
+    # (1) UNDER-count: `\w` misses `'` and unicode, and captures one name per
+    #     line. `S'`, `y_λ` and the three-name binder must all be seen.
+    check("under: apostrophe / unicode / multi-binder",
+          _fields("  S' : R\n  y_λ : R\n  W_sym W_std W_alt : R\n"),
+          [(["S'"], " R"), (["y_λ"], " R"), (["W_sym", "W_std", "W_alt"], " R")])
+
+    # (2) OVER-count: a docstring line carrying a colon is not a field line.
+    check("over: docstring line with a colon",
+          _fields("  /-- Manuscript claim — atomic-mass recovery: the mass is\n"
+                  "      the sum. -/\n  atomic_mass : ℝ\n"),
+          [(["atomic_mass"], " ℝ")])
+
+    # (3) MIS-CLASSIFICATION: a type beginning on the NEXT line must still be
+    #     seen as a claim, not silently counted as data.
+    ml = _fields("  claim :\n    mass = other\n")
+    check("multi-line type is still a claim",
+          (len(ml), bool(ml and CLAIMY.search(ml[0][1]))), (1, True))
+
+    # (4) `:=` is a default value, not a field declaration.
+    check("`:=` is not a field", _fields("  foo := 3\n"), [])
+
+    # find_class must handle a signature on one line AND one spanning lines —
+    # `ShellClosureMonotone`'s occupies four, and the one-line matcher
+    # reported it `unresolved`, which is not `clean`.
+    for label, src in [
+        ("find_class: one-line signature", "class Foo where\n  a : Nat\n  h : a = a\n"),
+        ("find_class: multi-line signature",
+         "class Foo\n    (x : Nat)\n    [Bar x] : Prop where\n  h : x = x\n"),
+    ]:
+        f, _p, d, c = find_class({"fixture.lean": src}, "Foo")
+        check(label, (f is not None, d, c),
+              (True, 1, 1) if "one-line" in label else (True, 0, 1))
+
     print("selftest: PASS" if not bad else f"selftest: {bad} FAILED")
     return 1 if bad else 0
 
