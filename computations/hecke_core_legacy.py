@@ -1988,7 +1988,7 @@ def _jet_witness_path(Z, N, jet, witness_dir):
                          f'unified_jet_Z{Z}_N{N}_j{jet}.json')
 
 
-def atom_character_raw(Z, N, entry, include_inter=True):
+def atom_character_raw(Z, N, entry, include_inter=True, use_rust=None):
     """Return the raw characters of the atom braid word in partition λ.
 
     Returns (chi_q_atom, log_norm, dim) where chi_q_atom × exp(log_norm)
@@ -2025,6 +2025,41 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     first = sigmas[0]
     sparse_sigmas = _issparse(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
+    # ── Rust MPFR character kernel (bean `qou-sv7h`) ──────────────
+    #
+    # `binding_energy` is three terms — `unified_iterative_correction`,
+    # `sdp_cross_channel_contribution` and `binding_from_frobenius_pairing`.
+    # Routing only the first through Rust was not enough: measured, the
+    # nuclide table ran 21 minutes without completing deuterium, because
+    # `binding_from_frobenius_pairing` -> `atom_markov_trace` calls THIS
+    # function once per partition and it was still the O(dim^3) mpmath loop.
+    # One of three terms accelerated is no faster than the slowest term.
+    #
+    # The whole braid word is known up front (the chains depend only on
+    # `ordering`), and only the FINAL trace is wanted here, so a single
+    # `chi_q_atomic_mpfr` call replaces the entire accumulation.
+    #
+    # `log_norm` is exactly 0 on this path. The `m_max > 1e80` rescaling below
+    # exists to stop a product overflowing float range; MPFR's exponent range
+    # does not have that problem, so `chi` comes back as the true trace rather
+    # than a mantissa needing `exp(log_norm)`. Both callers multiply the two
+    # back together, so returning (trace, 0) is the same value.
+    if use_rust is None:
+        use_rust = _HAVE_RUST_CHI
+    elif use_rust and not _HAVE_RUST_CHI:
+        raise RuntimeError(
+            "atom_character_raw(use_rust=True): pyhecke_native is not "
+            "importable, or lacks `chi_q_atomic_mpfr`. Pass use_rust=False "
+            "for the pure-Python path.")
+    if use_rust:
+        _factors = []
+        for _kkk in range(A):
+            _factors.extend(_step_chain_generic(
+                ordering[_kkk], ordering[:_kkk], n_gens,
+                include_inter=include_inter))
+        return (_rust_chi_trace(entry['partition'], _factors, _mp.mp.dps),
+                _MPF_ZERO, int(dim))
+
     M = _mpf_eye(dim) if sparse_sigmas else _identity(dim)
     _sig_coo = {}   # gen -> (row, col, data) of sigma, for the object path
     log_norm = _MPF_ZERO  # mpf, not 0.0 (bean qou-9ay6)

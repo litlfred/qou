@@ -88,3 +88,71 @@ def test_explicit_use_rust_without_the_kernel_raises():
             L.unified_iterative_correction(1, 1, k_exact=4, use_rust=True)
     finally:
         L._HAVE_RUST_CHI = saved
+
+
+# ── atom_character_raw (bean `qou-sv7h`) ──────────────────────────────
+#
+# `binding_energy` is three terms and only one of them was routed through Rust
+# at first. That was not enough: the nuclide table ran 21 minutes without
+# completing deuterium, because `binding_from_frobenius_pairing` ->
+# `atom_markov_trace` calls `atom_character_raw` once per partition and it was
+# still the O(dim^3) mpmath loop. One accelerated term out of three is no
+# faster than the slowest term.
+
+
+def _active_entries(k_max, want=4):
+    """A few real partition-table entries, smallest dim first."""
+    rows = [e for e in L._PARTITION_TABLE
+            if e.get("has_ysn") and e.get("ysn") and e.get("k", 0) <= k_max]
+    rows.sort(key=lambda e: e.get("dim", 0))
+    return rows[:want]
+
+
+@pytest.mark.parametrize("include_inter", [True, False])
+def test_atom_character_raw_paths_agree(include_inter):
+    """Rust and Python must return the same character, both conventions.
+
+    Compared as `chi * exp(log_norm)`, not `chi` alone: the Python path splits
+    the value across a mantissa and a rescaling exponent, while the Rust path
+    needs no rescaling (MPFR's exponent range makes the `m_max > 1e80` guard
+    unnecessary) and returns log_norm = 0. Both callers multiply them back
+    together, so that product is the quantity that must match.
+    """
+    with mp.workdps(50):
+        entries = _active_entries(k_max=5)
+        assert entries, "no YSN partition entries available"
+        for e in entries:
+            py = L.atom_character_raw(1, 1, e, include_inter=include_inter,
+                                      use_rust=False)
+            rs = L.atom_character_raw(1, 1, e, include_inter=include_inter,
+                                      use_rust=True)
+            vp = py[0] * mp.exp(py[1])
+            vr = rs[0] * mp.exp(rs[1])
+            rel = abs(vp - vr) / abs(vp) if vp else abs(vp - vr)
+            assert rel < REL_TOL, (
+                f"{e['partition']} include_inter={include_inter}: "
+                f"py={mp.nstr(vp, 20)} rust={mp.nstr(vr, 20)} "
+                f"rel={mp.nstr(rel, 6)}")
+            assert rs[1] == 0, "the Rust path should need no rescaling"
+            assert py[2] == rs[2], "dim disagrees"
+
+
+def test_atom_character_raw_defaults_to_rust():
+    """`use_rust=None` must take the fast path, or the speedup is theoretical."""
+    with mp.workdps(50):
+        e = _active_entries(k_max=4, want=1)[0]
+        auto = L.atom_character_raw(1, 1, e)
+        rs = L.atom_character_raw(1, 1, e, use_rust=True)
+        assert auto[0] == rs[0] and auto[1] == rs[1]
+
+
+def test_atom_character_raw_explicit_rust_without_kernel_raises():
+    """Absent the kernel, asking for Rust must fail loudly, not fall back."""
+    saved = L._HAVE_RUST_CHI
+    try:
+        L._HAVE_RUST_CHI = False
+        e = _active_entries(k_max=4, want=1)[0]
+        with pytest.raises(RuntimeError, match="pyhecke_native"):
+            L.atom_character_raw(1, 1, e, use_rust=True)
+    finally:
+        L._HAVE_RUST_CHI = saved

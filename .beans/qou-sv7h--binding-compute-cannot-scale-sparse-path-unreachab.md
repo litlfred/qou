@@ -306,3 +306,50 @@ mpf, and on mpf numpy is 1.03x-1.10x AHEAD, so deleting it is a small
 regression for no gain. Object dtype means elementwise Python arithmetic on
 mpf either way — no BLAS, no precision lost — so it is a speed question, not
 a precision one. Docstring corrected to say that instead.
+
+
+## 2026-09-03 (later) — one term of three was not enough
+
+Routing `unified_iterative_correction` through Rust took deuterium's LP-dual
+term from ~40 days (estimated) to 31 s, and I restarted the nuclide table on
+that basis. **It ran 21 minutes without completing deuterium.**
+
+`binding_energy` is three terms:
+
+    unified_iterative_correction     <- routed to Rust, 31 s
+    sdp_cross_channel_contribution
+    binding_from_frobenius_pairing   <- still O(dim^3) mpmath
+
+The third goes `binding_from_frobenius_pairing` -> `atom_markov_trace` ->
+`atom_character_raw` once per partition, over the same YSN matrices. One
+accelerated term out of three is no faster than the slowest term — an obvious
+thing to have checked before starting a multi-hour run, and I did not.
+
+`atom_character_raw` now takes the same route. It needs only the FINAL trace,
+so a single `chi_q_atomic_mpfr` call replaces the whole accumulation; no
+prefix-traces kernel required. `log_norm` comes back exactly 0 because the
+`m_max > 1e80` rescaling exists to stop a float-range product overflowing and
+MPFR does not have that problem — both callers multiply `chi * exp(log_norm)`
+back together, so the product is unchanged.
+
+Measured at 50 dps, ascending dim:
+
+    partition                dim      python       rust   speedup        rel
+    (4, 3, 3)                210   10907.0ms     47.9ms    227.9x   5.157e-50
+    (3, 3, 1, 1, 1, 1, 1)    385   31870.1ms    100.3ms    317.7x   3.169e-50
+
+The speedup grows with dim, as the complexity change predicts (O(dim^3) ->
+O(dim^2 * |factors|)). The table's largest partitions are dim 2310.
+
+Four new parity tests in `tests/test_unified_correction_rust_parity.py`,
+covering both `include_inter` conventions, the `use_rust=None` default, and
+the loud failure when the kernel is absent.
+
+### The wheel really is ephemeral — confirmed the hard way
+
+The container was reclaimed mid-measurement and
+`chi_q_atomic_prefix_traces_mpfr` was gone on the next turn, exactly as the
+earlier note warned. `scripts/build-pyhecke-native.sh` has to be re-run after
+every reclaim or every Rust path silently takes the slow fallback. The
+`use_rust=True` overloads raise rather than fall back for this reason; only
+`use_rust=None` degrades quietly.
