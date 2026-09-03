@@ -47,12 +47,21 @@ main bound does not already say. The `1/A` is visible in `split_fraction_bound`
 itself — a second declaration restating it would have been a trivial-true dressed
 as monotonicity.
 
-SCOPE — **scope-(a)**, and narrower than it may look. This bounds the observable
-as a fraction of the energy *within the same model class* the sibling file
-excludes (vertex-transitive carrier, charge-only flux). It says nothing about
-eq. (43), which remains a true lower bound; and it assumes the two fluxes are
-comparable (`Φn ≤ Φp ≤ r·Φn` with `r` finite). A model in which `Φn → 0`, so the
-neutron components carry no flux at all, escapes it — and is not refuted here.
+SCOPE — **scope-(a)**. This bounds the observable as a fraction of the energy
+*within the same model class* the sibling file excludes (vertex-transitive
+carrier, charge-only flux). It says nothing about eq. (43), which remains a true
+lower bound.
+
+**The `Φn → 0` case is NOT an escape — correcting my own first reading.** The
+main bound's hypothesis is `Φn ≤ Φp ≤ r·Φn` with `Φn > 0`, which does fail as
+`Φn → 0` (`r` is unbounded). I first recorded that as a surviving escape. It is
+not: with `Φn = 0` the conclusion still holds, by direct computation rather than
+by the hypothesis. The split is `c·Φp·(Z − N)` — still constant on the `d = 1`
+ladder — and the fraction is **exactly `1/Z = 2/(A+1)`**
+(`zero_neutron_flux_fraction_is_exactly_one_over_Z`), which is the `r = 3`
+instance of the very bound it was supposed to evade
+(`zero_neutron_flux_is_the_r_eq_three_case`). A failing hypothesis is not a
+failing conclusion, and here the conclusion is fine.
 
 Base ring: an ordering and a multiplication are both genuinely required (the
 statements compare products), so a linearly-ordered commutative ring is the right
@@ -108,5 +117,32 @@ elsewhere to trade against. -/
 theorem interval_narrower_than_split_iff {B₁ U₁ B₂ U₂ split : R} :
     (U₁ - B₂) - (B₁ - U₂) < split ↔ (U₁ - B₁) + (U₂ - B₂) < split := by
   rw [interval_width]
+
+/-- **The `Φn = 0` case satisfies the same bound at `r = 3`.**
+
+The main bound needs `Φn > 0` to define a ratio, so a vanishing neutron flux
+formally escapes its hypotheses. It does not escape its conclusion: with `Φn = 0`
+and `N ≤ Z` (true on the whole `A = 2Z − 1` mirror ladder, where `N = Z − 1`), the
+same inequality holds with `r = 3`.
+
+So the limit that looked like an escape sits *inside* the excluded regime. -/
+theorem zero_neutron_flux_is_the_r_eq_three_case (Φp Φn : R) (Z N : ℕ)
+    (hzero : Φn = 0) (hp : 0 ≤ Φp) (hNZ : (N : R) ≤ (Z : R)) :
+    ((Z : R) + (N : R)) * (Φp - Φn)
+      ≤ ((3 : R) - 1) * ((Z : R) * Φp + (N : R) * Φn) := by
+  subst hzero
+  nlinarith
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **And the fraction is exactly `1/Z`, not merely bounded.**
+
+With `Φn = 0` the energy is `c·Z·Φp` and the split is `c·Φp`, so `Z` times the
+split *is* the energy. On the `A = 2Z − 1` ladder that is `2/(A + 1)` — the same
+`1/A` order the general bound gives, reached exactly rather than as an estimate. -/
+theorem zero_neutron_flux_fraction_is_exactly_one_over_Z (Φp Φn : R) (Z N : ℕ)
+    (hzero : Φn = 0) :
+    (Z : R) * (Φp - Φn) = (Z : R) * Φp + (N : R) * Φn := by
+  subst hzero
+  ring
 
 end QOU.Mass.MirrorSplitIsASmallFractionOfTheEnergy

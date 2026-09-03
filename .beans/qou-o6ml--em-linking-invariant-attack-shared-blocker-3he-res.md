@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T08:28:02Z
+updated_at: 2026-09-03T08:52:05Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1324,3 +1324,54 @@ escapes this entirely. It is not refuted here. Eq. (43) itself remains untouched
 it is a true lower bound throughout.
 
 Nothing wired.
+
+
+## 2026-09-03 (later) — the `Φn → 0` "escape" is NOT one; correcting my own entry above
+
+The entry above closed by leaving one escape open: *"a model with `Φn → 0` —
+neutron components carrying no flux at all — has unbounded `r` and escapes the
+fraction bound entirely. Not refuted here."* **That was wrong, and it was my
+error, not an open question.**
+
+What is true is only that the *hypothesis* fails: the bound is stated with
+`Φn ≤ Φp ≤ r·Φn` and `Φn > 0`, so as `Φn → 0` the ratio `r` is unbounded and the
+theorem does not apply. **A failing hypothesis is not a failing conclusion**, and
+here the conclusion survives by direct computation:
+
+- **The split is still constant.** With `Φn = 0`, `ΔE = c·Φp·(Z − N)`, which on
+  the `d = 1` ladder is `c·Φp` — independent of `A`, exactly as before. This was
+  never in doubt: `mirrorSplit_eq` (merged in #6423) assumes nothing about
+  comparability.
+- **The fraction is exactly `1/Z`.** The energy is `c·Z·Φp` and the split is
+  `c·Φp`, so `Z·split = energy` — an identity, not an estimate. On the ladder
+  `Z = (A+1)/2`, so the fraction is `2/(A+1)`.
+- **Which is the `r = 3` case of the very bound it was meant to evade.** The
+  general bound gives `(r−1)/A`; `r = 3` gives `2/A`. So the limit that looked
+  like an escape sits *inside* the excluded regime, not outside it.
+
+Both proved, sorry-free, `lean`-direct exit 0 no warnings, in
+`content/quantum-observable-universe/lean/QOU/Mass/MirrorSplitIsASmallFractionOfTheEnergy.lean`
+— `zero_neutron_flux_is_the_r_eq_three_case` (needs `N ≤ Z`, true throughout the
+`A = 2Z−1` ladder where `N = Z−1`) and
+`zero_neutron_flux_fraction_is_exactly_one_over_Z`. `#print axioms`: the first
+carries `[propext, Classical.choice, Quot.sound]`, the second **`[propext]`
+alone**.
+
+**Consequence for the arc: there is no surviving escape on this front that I
+know of.** Route (2) and its successor `qou-0hdx` are closed; the flux leg is
+closed (charge-blindness); saturation is closed (a lower bound cannot constrain a
+difference); the upper-bound repair is closed (precision, not availability); and
+the last named escape turns out to be inside the excluded regime. That is a
+stronger statement than any single entry above, and it is stated as **scope-(a)
+throughout** — eq. (43) itself is untouched and remains a true lower bound.
+
+**What I am NOT claiming.** The two escapes that remain formally open from the
+charge-blindness entry — a non-vertex-transitive carrier, and an `ac` that
+depends on the charge assignment — are *not* closed by anything here. They were
+shown to be posterior to saturation, which is closed; but posterior is not the
+same as refuted, and neither has been tested on its own terms.
+
+Also worth recording as a method note, because it nearly went the other way: I
+flagged `Φn → 0` as an escape from the *shape of the hypothesis*, without
+computing the case. One line of arithmetic settled it. Check the limit before
+recording it as open.
